@@ -4,7 +4,7 @@
 working on what. It exists so that multiple agent sessions can work on this repository at the
 same time without duplicating work or overwriting each other.
 
-Last updated: **2026-10-21T07:55:37Z** (UTC)
+Last updated: **2026-10-21T08:01:32Z** (UTC)
 
 ---
 
@@ -96,7 +96,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T37 | Line-by-line audit of all tracked repo desks + 100% live official-source verification across all 17 sports (including all 5 signed ATP/WTA Tour Supervisor draw PDFs, full 32-seed PDC draw & live 2026 AFLW R10 ladder) | done | 984d417f-olbg1 | `data/984d417f/fixtures.json`, `data/984d417f/repo_audit.json`, `data/984d417f/flagged.json`, `reports/SESSION_984D417F_AUDIT.md` | 2026-10-21T07:06Z | 145 live-verified events, 11 line-numbered repo audit groups (`AUD-984-01`..`11`), 9 upstream OLBG defects, 127 blank flags |
 | T38 | Full multi-market line origination (Win/1X2/Outright, non-pushing `.5` Spreads, Totals, Derivatives & multi-runner field boards), monotonic confidence grading, and 40 unique human High predictions | done | 984d417f-olbg1 | `scripts/s984d417f_dataset.py`, `scripts/s984d417f_model.py`, `data/984d417f/lines.json`, `data/984d417f/predictions.json`, `data/984d417f/matches.csv` | 2026-10-21T07:06Z | 145 priced boards (`40 High / 34 Medium / 71 Low`); 40 human writeups (`56–68` words each, `0` repeated 6-grams) |
 | T39 | Build 23-page dashboard (`/984d417f/`), run all 6 repository validators, non-destructively merge `origin/main`, open & merge PR to `main`, and verify live GitHub Pages deployment | done | 984d417f-olbg1 | `984d417f/**`, `scripts/s984d417f_build_site.py`, `scripts/s984d417f_validate.py`, `README.md`, `COORDINATION.md` (append-only) | 2026-10-21T07:06Z | 23 pages built (`2,946` links/anchors validated, `0` errors across all `182` repo HTML pages) |
-| T40 | Independent offline structural/provenance audit of the latest root dashboard and namespaced `/c17a9192/` + `/984d417f/` dashboards; reconcile event/market/prediction/verification joins, blank/flag coverage, rendered table links, local gates and Pages state | in progress | 5a353e83-olbg1 | `scripts/session_5a353e83_audit.py`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.md`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.html`, `COORDINATION.md` (append-only) | 2026-10-21T07:48Z | No outbound official-source fetch; no data, lines, predictions or shared dashboard files edited. Renumbered after T17/T20/T21/T36 collisions; see §30. |
+| T40 | Independent offline structural/provenance audit of the latest root dashboard and namespaced `/c17a9192/` + `/984d417f/` dashboards; reconcile event/market/prediction/verification joins, blank/flag coverage, rendered table links, local gates and Pages state | done | 5a353e83-olbg1 | `scripts/session_5a353e83_audit.py`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.md`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.html`, `COORDINATION.md` (append-only) | 2026-10-21T07:48Z | No outbound official-source fetch; no data, lines, predictions or shared dashboard files edited. Renumbered after T17/T20/T21/T36 collisions; see §30. **Completed:** 0 structural errors, 19 review notes; 5 validators + `final_audit.py` passed; PR #44 merged, Pages deployment built (workflow `39565999245`), see §30.1. |
 
 | T21 | Independent second-pass re-verification of NHL input sub-values and the F1 start time; correction of four NHL transposition errors and one timezone error; source-redirect evidence for PlusLiga and GAA | done | 4f8d032d-olbg1 | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py`, `scripts/live_verification.py`, `scripts/high_predictions.py`, `data/verification.json`, `reports/SESSION_4F8D_VERIFICATION.md`, append-only `COORDINATION.md` | 2026-10-21T07:15Z | Claimed as T17 (collision: taken by 72198d3e, which itself became T20); renumbered T21. Rebased onto `main`; earlier session's Boston fix and Vegas no-reprice policy preserved. 31 High picks retained. |
 
@@ -152,6 +152,8 @@ Sources page. Only governing bodies / official league endpoints are used for ver
 ---
 
 ## 4. Requests and conflict log
+
+**2026-10-21T08:01Z — session `5a353e83-olbg1`:** T40 audit delivered in [PR #44](https://github.com/buffedlizard55-lab/OLBG1/pull/44), merged at `08:00:09Z` as `31a8267cca4e91b0bb234950a6d25eb840aa2e98`. All five strict validators and `final_audit.py` exited 0; structural audit reported 0 errors and 19 review notes. GitHub Pages workflow `39565999245` completed successfully for that merge; Pages API reported `built` at `08:01:32Z`. No direct browser request to the published domain was made. Root T35 remains queued; PR #40 remains open/conflicting.
 
 **2026-10-21T07:55Z — session `5a353e83-olbg1`:** Integrated PR #43 (`984d417f`, merge `6d26d5e`) before freezing the audit baseline; it updates AFLW Round 11 alternate venues and prediction percentage provenance in the isolated `/984d417f/` workspace, and records PR #42 deployment metadata in §29.1. Preserved PR #43's new records verbatim. The latest baseline is `6d26d5ec28b074d2c5000f536fe67ec7f922d64e`; T40 remains limited to offline structural review of root, `/c17a9192/`, and `/984d417f/`. PR #42 owns T36–T39, so this session's provisional T36 was renumbered T40. PR #40 remains open and conflicting; root T35 remains queued.
 
@@ -1275,3 +1277,13 @@ H2H matches and 8 event/field cards; 31 high-confidence picks (31 High / 34 Medi
 **T40 scope.** Offline structural audit of the latest root dashboard and the separate `/c17a9192/` and `/984d417f/` workspaces. Reconcile match/line/prediction/verification counts and joins, review blank/unverified fields, scan rendered table source links, run relevant validators, inspect task boundaries, and record deployment metadata. No official webpages are fetched by this session. No shared fixture data, prices, predictions or generated dashboard pages are edited.
 
 **Baseline.** Latest main at `6d26d5ec28b074d2c5000f536fe67ec7f922d64e` includes PR #42 and follow-up PR #43. Root T34, `/c17a9192/` (217 events) and `/984d417f/` (145 event records) remain distinct datasets; the count or claims of one namespace do not replace another's files. PR #43's AFLW venue and prediction sync is included in the audited snapshot. PR #40 remains open/conflicting; root T35 remains queued although separate namespaces contain their own AFLW reprices.
+
+### 30.1 T40 completion and publication record
+
+**Audit result (snapshot `6d26d5ec28b074d2c5000f536fe67ec7f922d64e`).** Structural reconciliation reported **0 errors and 19 review notes**. Five strict validators passed (`validate.py`, `ebfbd966_validate.py`, `ccb6bde2_validate.py`, `c17a9192_validate.py`, `s984d417f_validate.py`); `final_audit.py` also exited 0, with its tracked report restored unchanged. The final root validator checked 208 HTML pages with 0 link errors/warnings. See `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.md` and `.html` for the saved counts and irregularities.
+
+**Integration.** [PR #44](https://github.com/buffedlizard55-lab/OLBG1/pull/44) merged to `main` at `2026-10-21T08:00:09Z`, merge SHA `31a8267cca4e91b0bb234950a6d25eb840aa2e98`.
+
+**GitHub Pages.** Workflow [`39565999245`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39565999245) completed successfully (`success`) for the PR #44 merge SHA at `2026-10-21T08:01:15Z`; Pages API returned `status=built` at `2026-10-21T08:01:32Z`. This is deployment API/workflow metadata; T40 did not fetch or browser-check `github.io` content.
+
+**Remaining boundaries.** This was an offline structural audit, not fresh sports-source verification. The 58 root `not_rechecked` rows remain, the root T35 AFLW re-price is still queued, PR #40 remains open/conflicting, and all 19 review notes are preserved without altering parallel dashboard/data files.
