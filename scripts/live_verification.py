@@ -355,7 +355,7 @@ FINDINGS: list[dict[str, str]] = [
         "severity": "low",
         "area": "Rugby league — NRL competition id in the citation",
         "detail": "The men's RLWC rows linked nrl.com/draw/?competition=175..., which the site serves as competition 131 for the same Round 2 draw.",
-        "status": "Men's citation corrected to competition=131. The women's id (176) was not re-tested and is left as published with its rows marked not re-checked.",
+        "status": "All seven rows re-sourced: both competition=175 and competition=176 render the men's page at competition=131, so each row now cites its own tournament's Round 2 draw (men's or women's) plus the IRL match record.",
         "source": "nrl",
     },
     {
