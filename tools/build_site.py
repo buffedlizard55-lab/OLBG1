@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
-"""Build the OLBG coverage site (docs/) and data files (data/) from tools/data_*.py.
+"""Build the aa4e9dbf desk (aa4e9dbf/) and data files (data/*-aa4e9dbf*) from tools/data_*.py.
 
 Single source of truth: the EVENTS_* lists. Run:  python3 tools/build_site.py
 Outputs:
-  data/sports/<slug>.json      per-sport datasets
-  data/matches.json            combined dataset
-  docs/index.html              landing dashboard
-  docs/<slug>.html             per-sport page
-  docs/predictions.html        high-confidence write-ups
-  docs/flagged.html            flagged-for-review register
-  docs/methodology.html        reverse-engineering + methodology
-  docs/assets/style.css        shared styles
+  data/sports-aa4e9dbf/<slug>.json   per-sport datasets
+  data/matches-aa4e9dbf-olbg1.json  combined dataset
+  aa4e9dbf/index.html          landing dashboard
+  aa4e9dbf/<slug>.html         per-sport page
+  aa4e9dbf/predictions.html    high-confidence write-ups
+  aa4e9dbf/flagged.html        flagged-for-review register
+  aa4e9dbf/methodology.html    reverse-engineering + methodology
+  aa4e9dbf/assets/style.css    shared styles
+
+Namespaced so this desk coexists with the other parallel-session boards
+(repo-root dashboard, docs/ board, ebfbd966/ desk) on the same Pages site.
 """
 import json, os, re, html, datetime
 
@@ -19,7 +22,7 @@ from data_b import EVENTS_B
 from data_c import EVENTS_C
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOCS = os.path.join(ROOT, "docs")
+DOCS = os.path.join(ROOT, "aa4e9dbf")
 DATA = os.path.join(ROOT, "data")
 
 CAPTURED = "2026-10-21 05:00-08:00 UTC"
@@ -165,6 +168,8 @@ color:#f8a5a5;font-size:11.5px;border-radius:6px;padding:2px 7px;margin:2px 4px 
 border-radius:12px;padding:20px;margin-bottom:18px}
 .predict-card .meta{color:var(--mut);font-size:12.5px;margin-bottom:8px}
 .predict-card p.body{margin:10px 0}
+.xboard{background:#12325e;color:#dbe7ff;font-size:13px;padding:9px 0;border-bottom:1px solid #24477f}
+.xboard a{color:#9fc3ff;text-decoration:underline}
 .facts{margin-top:10px;padding-left:18px;color:var(--mut);font-size:13px}
 .facts li{margin:4px 0}
 footer{border-top:1px solid var(--line);color:var(--mut);font-size:12.5px;padding:20px 0 40px;margin-top:30px}
@@ -194,9 +199,14 @@ def page(title, body, active=""):
 <link rel="stylesheet" href="assets/style.css">
 </head><body>
 <header class="site"><div class="wrap">
-<div class="brand"><span class="dot"></span> OLBG Coverage Dashboard <span style="font-weight:400;color:var(--mut);font-size:12.5px">independent lines &amp; picks</span></div>
+<div class="brand"><span class="dot"></span> OLBG Coverage Desk <span style="font-weight:400;color:var(--mut);font-size:12.5px">session aa4e9dbf &middot; independent lines &amp; picks</span></div>
 <nav class="top"><a href="index.html">Home</a>{NAV}</nav>
 </div></header>
+<div class="xboard"><div class="wrap">One of four independently built boards from parallel sessions on the same 2026-10-21 snapshot:
+<strong>this desk</strong> (131 events, per-fact sources),
+<a href="../index.html">root dashboard</a> (49 priced fixtures, governing-body APIs),
+<a href="../docs/index.html">docs/ board</a> (164 events, OLBG tip-share model),
+<a href="../ebfbd966/index.html">ebfbd966 desk</a> (133 matches). Different methods, no superset &mdash; read both agreement and disagreement as signal.</div></div>
 <main class="wrap">{body}</main>
 <footer class="wrap">
 Data captured from OLBG.com sport hubs on {CAPTURED}. Lines, picks and predictions are our own independent estimates -
@@ -223,7 +233,7 @@ def sport_table(evs):
 <tbody>{''.join(rows)}</tbody></table></div>"""
 
 def build():
-    os.makedirs(os.path.join(DATA, "sports"), exist_ok=True)
+    os.makedirs(os.path.join(DATA, "sports-aa4e9dbf"), exist_ok=True)
     os.makedirs(os.path.join(DOCS, "assets"), exist_ok=True)
     with open(os.path.join(DOCS, "assets", "style.css"), "w") as f:
         f.write(CSS)
@@ -231,9 +241,9 @@ def build():
     # ---------- data files ----------
     for slug, name in SPORTS:
         evs = [x for x in ALL if x["sport"] == name]
-        with open(os.path.join(DATA, "sports", slug + ".json"), "w") as f:
+        with open(os.path.join(DATA, "sports-aa4e9dbf", slug + ".json"), "w") as f:
             json.dump(dict(sport=name, captured=CAPTURED, events=evs), f, indent=1, ensure_ascii=False)
-    with open(os.path.join(DATA, "matches.json"), "w") as f:
+    with open(os.path.join(DATA, "matches-aa4e9dbf-olbg1.json"), "w") as f:
         json.dump(dict(captured=CAPTURED, events=ALL), f, indent=1, ensure_ascii=False)
 
     structure = dict(
@@ -251,7 +261,7 @@ def build():
             ("Greyhounds", 28, False)]],
         markets_by_sport=MARKET_MAP,
     )
-    with open(os.path.join(DATA, "olbg-structure.json"), "w") as f:
+    with open(os.path.join(DATA, "olbg-structure-aa4e9dbf.json"), "w") as f:
         json.dump(structure, f, indent=1, ensure_ascii=False)
 
     # ---------- stats ----------
@@ -405,7 +415,7 @@ By contrast, Austrian ICEHL and several tennis times matched UK time exactly. Tr
 American Football 11, Baseball 12, Ice Hockey 13, Motor Racing 14, Darts 15, Boxing 16, Cycling 17, Handball 20,
 Volleyball 21, Aussie Rules 22, eSports 23, Gaelic Football 25, Greyhounds 28.</li>
 <li>Per-sport market maps were extracted from OLBG's own help text and event pages (e.g. a tennis event page exposes
-Win Match, Set Betting, 1st Set Winner, Games Won handicap and Total Games markets). Full map: <code>data/olbg-structure.json</code>.</li>
+Win Match, Set Betting, 1st Set Winner, Games Won handicap and Total Games markets). Full map: <code>data/olbg-structure-aa4e9dbf.json</code>.</li>
 <li>Harvest: each covered sport's hub page was read on {CAPTURED} and every listed event recorded with its OLBG event URL.</li>
 </ul>
 <h2>2. Verification standard</h2>
