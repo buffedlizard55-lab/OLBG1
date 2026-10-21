@@ -162,7 +162,7 @@ def main() -> None:
         json.dumps({"generated": DATE_ANCHOR, "count": len(full_rows), "matches": full_rows}, indent=2) + "\n"
     )
     with (ROOT / "datasets" / "matches_full.csv").open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, fieldnames=list(csv_rows[0].keys()))
+        writer = csv.DictWriter(fh, fieldnames=list(csv_rows[0].keys()), lineterminator="\n")
         writer.writeheader()
         writer.writerows(csv_rows)
 

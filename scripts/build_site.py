@@ -86,7 +86,9 @@ def odds_span(o: dict) -> str:
 
 
 def render_markets_drawer(p: dict) -> str:
-    parts = [f'<details class="markets"><summary>All {len(p["markets"])} originated markets</summary>']
+    unavailable = p.get("unavailable_markets", [])
+    suffix = f" + {len(unavailable)} explicitly unavailable" if unavailable else ""
+    parts = [f'<details class="markets"><summary>All {len(p["markets"])} originated markets{suffix}</summary>']
     for mk in p["markets"]:
         line_lbl = f" ({mk['line']})" if mk.get("line") else ""
         parts.append(f'<div class="mkt"><div class="mkt-h"><span>{e(mk["name"])}{e(line_lbl)}</span></div><ul>')
@@ -97,6 +99,11 @@ def render_markets_drawer(p: dict) -> str:
             )
         parts.append("</ul>")
         parts.append(f'<div class="basis">{e(mk["basis"])}</div></div>')
+    for mk in unavailable:
+        parts.append(
+            f'<div class="mkt unavailable"><div class="mkt-h"><span>{e(mk["name"])} — unverified / blank</span></div>'
+            f'<div class="basis">{e(mk["reason"])}</div></div>'
+        )
     parts.append("</details>")
     return "".join(parts)
 
@@ -140,6 +147,14 @@ def render_picks_table(rows: list[tuple[dict, dict | None]], show_sport: bool, s
             if t_mk:
                 t0 = t_mk["outcomes"][0]
                 ht_lines.append(f'{e(t0["selection"])} @ {odds_span(t0)}')
+            else:
+                unavail_total = next((x for x in p.get("unavailable_markets", []) if x.get("key") == "total"), None)
+                if unavail_total:
+                    ht_lines.append(
+                        '<span class="flag-inline">Match Total blank — '
+                        + e(unavail_total["reason"])
+                        + '</span>'
+                    )
             ht_cell = "<br>".join(ht_lines) if ht_lines else "—"
             pick_out = next((o for o in w_out if o["selection"] == p["pick"]), w_out[0])
             pick_cell = (
@@ -195,6 +210,7 @@ def render_shell(title: str, body: str, active: str, site_depth: int, repo_depth
         f'<a href="{sr}{href}"{cur_attr if key == active else ""}>{label}</a>'
         for href, label, key in nav_items
     )
+    nav_html += f'<a href="{rr}2360a617/index.html">OLBG-152 Board</a>'
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -218,6 +234,7 @@ def render_shell(title: str, body: str, active: str, site_depth: int, repo_depth
       <a href="{rr}docs/index.html">4f44f7d9 Board (164 OLBG)</a>
       <a href="{rr}ebfbd966/index.html">ebfbd966 Board (133)</a>
       <a href="{rr}aa4e9dbf/index.html">aa4e9dbf Desk (131)</a>
+      <a href="{rr}2360a617/index.html">2360a617 Board (152)</a>
     </div>
   </div>
 </header>
@@ -246,6 +263,11 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
     paired = [(f, lines_by_id.get(f["id"])) for f in fixtures]
     h2h_rows = [(f, l) for f, l in paired if l is not None]
     conf_counts = Counter(l["confidence"] for _, l in h2h_rows)
+    total_priced_count = sum(1 for _, l in h2h_rows if any(m["key"] == "total" for m in l["markets"]))
+    total_unavailable_count = sum(
+        1 for _, l in h2h_rows
+        if any(m.get("key") == "total" for m in l.get("unavailable_markets", []))
+    )
 
     (target_root / "assets").mkdir(parents=True, exist_ok=True)
     (target_root / "sports").mkdir(parents=True, exist_ok=True)
@@ -285,7 +307,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
     rr0 = "../" * repo_depth_base
     index_body = f"""
 <h1>Officially Verified Multi-Sport Origination Desk</h1>
-<p class="lede">Complete reverse-engineering of <code>OLBG.com</code> across all <b>17 in-scope sports</b> (excluding soccer/football, horse racing, american football, boxing, UFC/MMA, specials, hurling, and cycling), pairing <b>134 governing-body verified events</b> with independent multi-market odds and <b>31 non-repetitive human predictions</b>.</p>
+<p class="lede">Complete reverse-engineering of <code>OLBG.com</code> across all <b>17 in-scope sports</b> (excluding soccer/football, horse racing, american football, boxing, UFC/MMA, specials, hurling, and cycling), pairing <b>134 governing-body verified events</b> with independently originated markets and <b>31 non-repetitive human predictions</b>. {total_priced_count} of {len(h2h_rows)} head-to-head matches have an Over/Under total; the remaining total is left blank and flagged because no official competition-specific baseline was captured.</p>
 
 <div class="grid kpis">
   {kpi_box(len(fixtures), "Verified Events (17 Sports)")}
@@ -314,10 +336,11 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 <div class="card">
   <p>This repository preserves every parallel session's work cleanly side by side. Explore all live builds directly:</p>
   <ul>
-    <li><b><a href="{rr0}index.html">Primary Root Desk (/)</a> &amp; <a href="{rr0}f7fa77fc/index.html">/f7fa77fc/ Mirror</a>:</b> 134 officially verified events across all 17 sports, 4 market types (Winner, Draw No Bet, Spread/Handicap, Over/Under Total), live Decimal/Fair/US odds toggle, and full repo line-by-line audit.</li>
-    <li><b><a href="{rr0}docs/index.html">4f44f7d9 Companion Board (/docs/)</a>:</b> 164-event snapshot directly mirroring active OLBG tip listings.</li>
+    <li><b><a href="{rr0}index.html">Primary Root Desk (/)</a> &amp; <a href="{rr0}f7fa77fc/index.html">/f7fa77fc/ Mirror</a>:</b> 134 officially verified events across all 17 sports, with Winner and Handicap markets for all {len(h2h_rows)} head-to-head fixtures, Over/Under totals for {total_priced_count}, Draw No Bet where regulation draws apply, a live Decimal/Fair/US odds toggle, and a full line-by-line audit.</li>
+    <li><b><a href="{rr0}docs/index.html">4f44f7d9 Companion Board (/docs/)</a>:</b> 164-event historical OLBG tip-listing snapshot; its source gaps are recorded separately in the repository audit.</li>
     <li><b><a href="{rr0}ebfbd966/index.html">ebfbd966 Companion Board (/ebfbd966/)</a>:</b> 133-match independent log-odds pricing board.</li>
     <li><b><a href="{rr0}aa4e9dbf/index.html">aa4e9dbf Companion Desk (/aa4e9dbf/)</a>:</b> 131-match multi-market analytical desk.</li>
+    <li><b><a href="{rr0}2360a617/index.html">2360a617 Board (/2360a617/)</a>:</b> 152-row historical OLBG snapshot with its own review register.</li>
   </ul>
 </div>
 """
@@ -331,8 +354,8 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
         for c in sorted(D["coverage"]["included"], key=lambda x: x["name"])
     ]
     picks_body = f"""
-<h1>All 134 Verified Matches &amp; Originated Lines</h1>
-<p class="lede">Every match carries originated <b>Match Winner</b>, <b>Handicap / Spread</b>, and <b>Over / Under Total</b> lines (plus <b>Draw No Bet</b> on 3-way sports), confidence tiering, and clickable official governing-body verification links.</p>
+<h1>All 134 Verified Events &amp; Originated Lines</h1>
+<p class="lede">Each of the {len(h2h_rows)} head-to-head matches carries originated <b>Match Winner</b> and <b>Handicap / Spread</b> lines; <b>{total_priced_count}</b> also carry an <b>Over / Under Total</b>, and <b>{total_unavailable_count}</b> is deliberately blank and flagged because a source-backed competition baseline was not captured. <b>Draw No Bet</b> is included on 3-way sports. Every fixture row has clickable governing-body verification links.</p>
 
 <div class="toolbar">
   <div class="toolbar-group" role="group" aria-label="Filter by confidence">
@@ -589,7 +612,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 
 <div class="card">
   <h2>2. Derived Spread / Handicap, Draw No Bet &amp; Over/Under Totals</h2>
-  <p>Expected margin <code>mu = -sigma * Phi^-1(1 - p_home_2way)</code> maps win probability coherently onto sport scoring units. Fixed-line sports (NHL Puck Line <code>1.5</code>, MLB Run Line <code>1.5</code>, Snooker Frames <code>1.5</code>, Volleyball Sets <code>1.5</code>) price exact normal cover probabilities at <code>+-1.5</code>; variable-spread sports round to the nearest half-point hook. Totals adjust competition baselines (e.g., NBA <code>228.5</code> vs EuroLeague <code>171.5</code> vs EuroCup <code>168.5</code>; Men's T20I <code>339.5</code> vs Women's T20I <code>289.5</code> vs List A <code>529.5</code>).</p>
+  <p>Expected margin <code>mu = -sigma * Phi^-1(1 - p_home_2way)</code> maps win probability coherently onto sport scoring units. Fixed-line sports (NHL Puck Line <code>1.5</code>, MLB Run Line <code>1.5</code>, Snooker Frames <code>1.5</code>, Volleyball Sets <code>1.5</code>) price exact normal cover probabilities at <code>+-1.5</code>; variable-spread sports round to the nearest half-point hook. Totals adjust competition baselines (e.g., NBA <code>228.5</code> vs EuroLeague <code>171.5</code> vs EuroCup <code>168.5</code>; Men's T20I <code>339.5</code> vs Women's T20I <code>289.5</code> vs List A <code>529.5</code>). A total is never invented: {total_unavailable_count} multi-innings fixture has no source-backed competition baseline, so its total is blank and marked unverified.</p>
 </div>
 
 <h2>Complete 17-Sport Parameter Table</h2>
@@ -663,7 +686,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 <p class="lede">All {len(D["sources"]["sources"])} primary authorities used to verify fixtures, kick-off times, rankings, standings, and recent match history across the repository.</p>
 
 <div class="note">
-  <b>Line-by-line audit report:</b> See <a href="{rr0}reports/REPO_LINE_BY_LINE_AUDIT.md">reports/REPO_LINE_BY_LINE_AUDIT.md</a> and <a href="{rr0}reports/OLBG_REVERSE_ENGINEERING.md">reports/OLBG_REVERSE_ENGINEERING.md</a> for full markdown audit documentation across all parallel sessions.
+  <b>Line-by-line audit report:</b> Open the current <a href="{rr0}reports/FINAL_INTEGRATION_AUDIT.md">Final Integration Audit</a> for every primary fixture, its exact governing-body links, market coverage and review flags. Historical context remains in <a href="{rr0}reports/REPO_LINE_BY_LINE_AUDIT.md">REPO_LINE_BY_LINE_AUDIT.md</a> and <a href="{rr0}reports/OLBG_REVERSE_ENGINEERING.md">OLBG_REVERSE_ENGINEERING.md</a>.
 </div>
 
 <div class="table-wrap">

@@ -1,29 +1,31 @@
 #!/usr/bin/env python3
-"""
-validate.py - Repository-wide strict build gate across root (/), /f7fa77fc/,
-and cross-linked companion trees (/docs/, /ebfbd966/, /aa4e9dbf/).
+"""Strict, dependency-free verification gate for the primary OLBG desk.
 
-Checks:
-  1. Every internal href / src across ALL HTML pages in / and /f7fa77fc/ resolves on disk
-  2. Zero orphan pages across both / and /f7fa77fc/
-  3. Zero linear-gradient rules in site_src/style.css
-  4. Zero excluded sports present in data/fixtures.json or data/lines.json
-  5. Every fixture row carries >=1 HTTPS official source link and valid status
-  6. Every two-sided match originates Winner, Handicap & Total (plus DNB on 3-way sports),
-     probabilities sum to 1.000000, and all odds lie in (1.01, 100.0)
-  7. Exact bijection between confidence == "high" and data/predictions.json,
-     >= 30 words each, selection named, sources attached, and 0 repeated 6-word n-grams
-  8. Every <tbody><tr> across index.html, picks.html, sports/*.html, and flagged.html
-     includes at least one external https:// link or internal sport route
+The gate deliberately distinguishes between two things:
+
+* source-backed facts in the primary 134-event dataset; and
+* model outputs, which are labelled as independently originated estimates.
+
+It checks every primary fixture source against a maintained official-authority host
+allowlist, market completeness (or an explicit blank/unverified exception), high-pick
+writing rules, generated-export consistency, the root/mirror data copies, and every
+relative link across every published HTML page in the repository.
+
+No network request is made here.  A successful run confirms the audited snapshot and
+its source links are structurally complete and reproducible; it does not claim that a
+remote publisher has not subsequently changed a page.
 """
 from __future__ import annotations
 
+import csv
+import hashlib
 import json
 import re
 import sys
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -36,193 +38,381 @@ EXCLUDED_SLUGS = {
     "hurling", "cycling",
 }
 
+# These are the official governing-body, league, tour, federation and organiser
+# domains actually used by data/fixtures.json.  OLBG is intentionally absent: it is
+# an upstream-discovery source and cannot verify a sporting fact in this data model.
+OFFICIAL_FIXTURE_HOSTS = {
+    "api-web.nhle.com",
+    "ehfcl.eurohandball.com",
+    "gaacork.ie",
+    "lolesports.com",
+    "munster.gaa.ie",
+    "scoring.nzc.nz",
+    "statsapi.mlb.com",
+    "top14.lnr.fr",
+    "www.afl.com.au",
+    "www.atptour.com",
+    "www.cricket.com.au",
+    "www.eurohandball.com",
+    "www.euroleaguebasketball.net",
+    "www.europeantour.com",
+    "www.formula1.com",
+    "www.galwaygaa.ie",
+    "www.gbgb.org.uk",
+    "www.icc-cricket.com",
+    "www.legavolley.it",
+    "www.lpga.com",
+    "www.mlb.com",
+    "www.nba.com",
+    "www.nhl.com",
+    "www.nrl.com",
+    "www.pdc.tv",
+    "www.pgatour.com",
+    "www.plusliga.pl",
+    "www.premrugby.com",
+    "www.unitedrugby.com",
+    "www.wst.tv",
+    "www.wtatennis.com",
+}
+
 
 class LinkAndRowCollector(HTMLParser):
+    """Collect href/src values and links occurring in each body table row."""
+
     def __init__(self) -> None:
         super().__init__()
         self.links: list[str] = []
-        self.in_tbody = False
-        self.in_tr = False
+        self._tbody_depth = 0
+        self._tr_depth = 0
         self.row_links: list[list[str]] = []
-        self.cur_row: list[str] = []
+        self._row: list[str] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         a = dict(attrs)
         if tag == "tbody":
-            self.in_tbody = True
-        elif tag == "tr" and self.in_tbody:
-            self.in_tr = True
-            self.cur_row = []
-        if tag == "a" and "href" in a and a["href"] is not None:
-            self.links.append(a["href"])
-            if self.in_tr:
-                self.cur_row.append(a["href"])
-        if tag in ("link", "script", "img"):
+            self._tbody_depth += 1
+        elif tag == "tr" and self._tbody_depth:
+            self._tr_depth += 1
+            self._row = []
+
+        if tag == "a" and a.get("href") is not None:
+            href = str(a["href"])
+            self.links.append(href)
+            if self._tr_depth:
+                self._row.append(href)
+        elif tag in ("link", "script", "img"):
             target = a.get("href") or a.get("src")
             if target is not None:
-                self.links.append(target)
+                self.links.append(str(target))
 
     def handle_endtag(self, tag: str) -> None:
-        if tag == "tbody":
-            self.in_tbody = False
-        elif tag == "tr" and self.in_tr:
-            self.in_tr = False
-            self.row_links.append(self.cur_row)
+        if tag == "tr" and self._tr_depth:
+            self._tr_depth -= 1
+            self.row_links.append(self._row)
+        elif tag == "tbody" and self._tbody_depth:
+            self._tbody_depth -= 1
 
 
-def check_site_tree(site_dir: Path, label: str) -> int:
-    pages = sorted(list(site_dir.glob("*.html")) + list((site_dir / "sports").glob("*.html")))
-    known_site = {p.relative_to(site_dir).as_posix() for p in pages}
-    inbound: Counter[str] = Counter()
+def load_json(relative: str) -> dict:
+    return json.loads((ROOT / relative).read_text(encoding="utf-8"))
 
+
+def is_official_url(url: str) -> bool:
+    parsed = urlparse(url)
+    return parsed.scheme == "https" and parsed.hostname in OFFICIAL_FIXTURE_HOSTS
+
+
+def check_official_source(source: dict, context: str) -> None:
+    name = str(source.get("name", "")).strip()
+    url = str(source.get("url", "")).strip()
+    if not name:
+        errors.append(f"{context}: official source has no name")
+    if not url.startswith("https://"):
+        errors.append(f"{context}: official source is not HTTPS -> {url!r}")
+    elif not is_official_url(url):
+        errors.append(f"{context}: source host is not in official allowlist -> {url}")
+
+
+def resolve_internal(page: Path, href: str) -> Path | None:
+    """Resolve an internal static-site path, accepting a directory's index.html."""
+    clean = href.split("#", 1)[0].split("?", 1)[0]
+    if not clean:
+        return None
+    # The project is served at /OLBG1/ on GitHub Pages.  Resolve its few base-path
+    # absolute links to the checkout while still rejecting other absolute filesystem paths.
+    if clean.startswith("/OLBG1/"):
+        candidate = ROOT / clean.removeprefix("/OLBG1/")
+    elif clean.startswith("/"):
+        return Path("/__outside_site__")
+    else:
+        candidate = (page.parent / clean).resolve()
+    if candidate.is_dir():
+        candidate = candidate / "index.html"
+    return candidate
+
+
+def check_all_html_links() -> int:
+    """Verify every relative link across all published workspaces, not just root."""
+    pages = sorted(ROOT.rglob("*.html"))
     for page in pages:
         rel = page.relative_to(ROOT).as_posix()
         parser = LinkAndRowCollector()
         parser.feed(page.read_text(encoding="utf-8"))
-
         for href in parser.links:
             if not href:
                 errors.append(f"{rel}: empty href/src")
                 continue
-            if href.startswith(("https://", "http://")):
-                if href.startswith("http://"):
-                    warnings.append(f"{rel}: non-HTTPS external URL {href}")
-                if " " in href:
-                    errors.append(f"{rel}: external URL contains whitespace -> {href}")
+            if href.startswith(("https://", "mailto:", "tel:", "javascript:", "#")):
                 continue
-            if href.startswith(("mailto:", "tel:", "javascript:", "#")):
+            if href.startswith("http://"):
+                errors.append(f"{rel}: non-HTTPS external URL -> {href}")
                 continue
-            clean = href.split("#")[0].split("?")[0]
-            if not clean:
+            dest = resolve_internal(page, href)
+            if dest is None:
                 continue
-            resolved = (page.parent / clean).resolve()
             try:
-                resolved.relative_to(ROOT.resolve())
+                dest.resolve().relative_to(ROOT.resolve())
             except ValueError:
                 errors.append(f"{rel}: link escapes repository root -> {href}")
                 continue
-            if not resolved.is_file():
-                errors.append(f"{rel}: broken internal link -> {href} (expected {resolved})")
-                continue
-            try:
-                sub_rel = resolved.relative_to(site_dir.resolve()).as_posix()
-                inbound[sub_rel] += 1
-            except ValueError:
-                pass
-
-        # Every match/flag table row on picks.html, sports/*.html, and flagged.html must carry a link
-        if page.name in ("picks.html", "flagged.html") or page.parent.name == "sports":
-            for idx, rlinks in enumerate(parser.row_links, 1):
-                if not any(u.startswith("https://") for u in rlinks):
-                    errors.append(f"{rel}: table row #{idx} has no HTTPS source link")
-
-    for sp_page in known_site:
-        if sp_page not in ("404.html", "index.html") and inbound[sp_page] == 0:
-            errors.append(f"{label}: orphan page {sp_page}")
-
+            if not dest.is_file():
+                errors.append(f"{rel}: broken internal link -> {href} (expected {dest})")
     return len(pages)
 
 
-def check_data_and_predictions() -> None:
+def check_primary_table_source_links() -> None:
+    """Every row in the primary data tables needs at least one external source link."""
+    pages = [ROOT / "picks.html", ROOT / "flagged.html", *sorted((ROOT / "sports").glob("*.html"))]
+    pages += [ROOT / "f7fa77fc" / "picks.html", ROOT / "f7fa77fc" / "flagged.html"]
+    pages += sorted((ROOT / "f7fa77fc" / "sports").glob("*.html"))
+    for page in pages:
+        parser = LinkAndRowCollector()
+        parser.feed(page.read_text(encoding="utf-8"))
+        for index, row_links in enumerate(parser.row_links, 1):
+            if not any(href.startswith("https://") for href in row_links):
+                errors.append(f"{page.relative_to(ROOT)}: table row #{index} has no HTTPS source link")
+
+
+def check_data_and_predictions() -> tuple[int, int, int]:
     css_txt = (ROOT / "site_src" / "style.css").read_text(encoding="utf-8")
     if "linear-gradient" in css_txt:
         errors.append("site_src/style.css still contains linear-gradient")
 
-    fixtures = json.loads((ROOT / "data" / "fixtures.json").read_text())["fixtures"]
-    lines = json.loads((ROOT / "data" / "lines.json").read_text())["lines"]
-    preds = json.loads((ROOT / "data" / "predictions.json").read_text())["predictions"]
-    tax = json.loads((ROOT / "data" / "olbg_taxonomy.json").read_text())["sports"]
+    fixtures_doc = load_json("data/fixtures.json")
+    lines_doc = load_json("data/lines.json")
+    predictions_doc = load_json("data/predictions.json")
+    sources_doc = load_json("data/sources.json")
+    taxonomy_doc = load_json("data/olbg_taxonomy.json")
 
-    in_scope_tax = [s for s in tax if s["in_scope"]]
+    fixtures = fixtures_doc["fixtures"]
+    lines = lines_doc["lines"]
+    preds = predictions_doc["predictions"]
+
+    if fixtures_doc.get("count") != len(fixtures):
+        errors.append("fixtures count metadata does not equal fixture rows")
+    if lines_doc.get("count") != len(lines):
+        errors.append("lines count metadata does not equal line rows")
+    if predictions_doc.get("count") != len(preds):
+        errors.append("predictions count metadata does not equal prediction rows")
+
+    in_scope_tax = [sport for sport in taxonomy_doc["sports"] if sport["in_scope"]]
     if len(in_scope_tax) != 17:
         errors.append(f"Expected 17 in-scope sports in olbg_taxonomy.json, got {len(in_scope_tax)}")
 
-    seen_ids: set[str] = set()
-    for f in fixtures:
-        fid = f.get("id")
-        if not fid or fid in seen_ids:
-            errors.append(f"Invalid or duplicate fixture id: {fid}")
-        seen_ids.add(fid)
-        if f["sport"] in EXCLUDED_SLUGS:
-            errors.append(f"{fid}: excluded sport leaked into dataset: {f['sport']}")
-        if not f.get("sources"):
-            errors.append(f"{fid}: missing official source")
-        for s in f.get("sources", []):
-            if not str(s.get("url", "")).startswith("https://"):
-                errors.append(f"{fid}: non-HTTPS source {s.get('url')}")
-        if f.get("status") not in ("verified", "cross-checked", "unverified"):
-            errors.append(f"{fid}: invalid status {f.get('status')}")
+    registry = sources_doc.get("sources", [])
+    if not registry:
+        errors.append("official source registry is empty")
+    for source in registry:
+        source_id = source.get("id", "<missing>")
+        url = str(source.get("url", ""))
+        if source_id == "olbg":
+            if urlparse(url).hostname != "www.olbg.com":
+                errors.append(f"source registry {source_id}: expected OLBG upstream URL, got {url}")
+        else:
+            check_official_source(source, f"source registry {source_id}")
 
-    lines_by_id = {l["id"]: l for l in lines}
-    h2h_ids = {f["id"] for f in fixtures if f.get("away")}
-    if set(lines_by_id.keys()) != h2h_ids:
+    seen_ids: set[str] = set()
+    fixtures_by_id: dict[str, dict] = {}
+    for fixture in fixtures:
+        fixture_id = fixture.get("id")
+        if not fixture_id or fixture_id in seen_ids:
+            errors.append(f"invalid or duplicate fixture id: {fixture_id}")
+            continue
+        seen_ids.add(fixture_id)
+        fixtures_by_id[fixture_id] = fixture
+        if fixture.get("sport") in EXCLUDED_SLUGS:
+            errors.append(f"{fixture_id}: excluded sport leaked into dataset: {fixture['sport']}")
+        if fixture.get("status") not in ("verified", "cross-checked", "unverified"):
+            errors.append(f"{fixture_id}: invalid status {fixture.get('status')}")
+        fixture_sources = fixture.get("sources", [])
+        if not fixture_sources:
+            errors.append(f"{fixture_id}: missing governing-body source")
+        for source in fixture_sources:
+            check_official_source(source, fixture_id)
+
+    lines_by_id = {line.get("id"): line for line in lines}
+    if len(lines_by_id) != len(lines) or None in lines_by_id:
+        errors.append("invalid or duplicate originated-line IDs")
+    h2h_ids = {fixture["id"] for fixture in fixtures if fixture.get("away")}
+    if set(lines_by_id) != h2h_ids:
         errors.append(f"H2H fixtures ({len(h2h_ids)}) != priced lines ({len(lines_by_id)})")
 
-    for lid, l in lines_by_id.items():
-        if l["confidence"] not in ("high", "medium", "low"):
-            errors.append(f"{lid}: invalid confidence {l['confidence']}")
-        mk_keys = {m["key"] for m in l["markets"]}
-        if not {"winner", "handicap"}.issubset(mk_keys):
-            errors.append(f"{lid}: missing required winner/handicap market ({mk_keys})")
-        win = next(m for m in l["markets"] if m["key"] == "winner")
-        if l["pick"] not in {o["selection"] for o in win["outcomes"]}:
-            errors.append(f"{lid}: pick {l['pick']} not found in winner outcomes")
-        for mk in l["markets"]:
-            psum = sum(o["probability"] for o in mk["outcomes"])
-            if abs(psum - 1.0) > 1e-5:
-                errors.append(f"{lid}/{mk['key']}: probability sum {psum} != 1.0")
-            for o in mk["outcomes"]:
-                if not (1.01 < o["odds"] < 100.0):
-                    errors.append(f"{lid}/{mk['key']}: implausible odds {o['odds']}")
+    valid_confidence = {"high", "medium", "low"}
+    valid_market_keys = {"winner", "dnb", "handicap", "total"}
+    for line_id, line in lines_by_id.items():
+        fixture = fixtures_by_id.get(line_id)
+        if fixture is None:
+            errors.append(f"{line_id}: pricing has no fixture")
+            continue
+        if line.get("confidence") not in valid_confidence:
+            errors.append(f"{line_id}: invalid confidence {line.get('confidence')}")
+        markets = line.get("markets", [])
+        market_keys = [market.get("key") for market in markets]
+        if len(market_keys) != len(set(market_keys)):
+            errors.append(f"{line_id}: duplicate market key")
+        if any(key not in valid_market_keys for key in market_keys):
+            errors.append(f"{line_id}: unknown market key(s) {market_keys}")
+        if not {"winner", "handicap"}.issubset(market_keys):
+            errors.append(f"{line_id}: missing required winner/handicap market ({market_keys})")
 
-    high_ids = {lid for lid, l in lines_by_id.items() if l["confidence"] == "high"}
-    pred_ids = {p["match_id"] for p in preds}
-    if high_ids != pred_ids:
-        errors.append(f"High picks ({len(high_ids)}) != predictions ({len(pred_ids)})")
+        winner = next((market for market in markets if market.get("key") == "winner"), None)
+        if not winner:
+            continue
+        winner_outcomes = winner.get("outcomes", [])
+        if line.get("pick") not in {outcome.get("selection") for outcome in winner_outcomes}:
+            errors.append(f"{line_id}: pick {line.get('pick')} not found in winner outcomes")
+        if len(winner_outcomes) == 3 and "dnb" not in market_keys:
+            errors.append(f"{line_id}: three-way winner market must include Draw No Bet")
+        if len(winner_outcomes) not in (2, 3):
+            errors.append(f"{line_id}: winner market must have 2 or 3 outcomes")
+
+        unavailable = line.get("unavailable_markets", [])
+        unavailable_keys = [market.get("key") for market in unavailable]
+        if len(unavailable_keys) != len(set(unavailable_keys)):
+            errors.append(f"{line_id}: duplicate unavailable market key")
+        if set(market_keys) & set(unavailable_keys):
+            errors.append(f"{line_id}: a market cannot be both priced and unavailable")
+        for market in unavailable:
+            if market.get("status") != "unverified" or not str(market.get("reason", "")).strip():
+                errors.append(f"{line_id}: unavailable market needs unverified status and a reason")
+        if "total" not in market_keys:
+            total_exception = next((market for market in unavailable if market.get("key") == "total"), None)
+            if not total_exception:
+                errors.append(f"{line_id}: missing total without explicit unverified exception")
+            elif not any("total" in flag.lower() for flag in fixture.get("flags", [])):
+                errors.append(f"{line_id}: blank total is not exposed on its fixture flag")
+
+        for market in markets:
+            outcomes = market.get("outcomes", [])
+            if len(outcomes) < 2:
+                errors.append(f"{line_id}/{market.get('key')}: fewer than two outcomes")
+                continue
+            probability_sum = sum(float(outcome.get("probability", 0)) for outcome in outcomes)
+            if abs(probability_sum - 1.0) > 1e-5:
+                errors.append(f"{line_id}/{market.get('key')}: probability sum {probability_sum} != 1.0")
+            for outcome in outcomes:
+                if not str(outcome.get("selection", "")).strip():
+                    errors.append(f"{line_id}/{market.get('key')}: blank outcome selection")
+                odds = outcome.get("odds")
+                fair_odds = outcome.get("fair_odds")
+                if not isinstance(odds, (int, float)) or not (1.01 < odds < 100.0):
+                    errors.append(f"{line_id}/{market.get('key')}: implausible odds {odds}")
+                if not isinstance(fair_odds, (int, float)) or not (1.01 <= fair_odds < 100.0):
+                    errors.append(f"{line_id}/{market.get('key')}: implausible fair odds {fair_odds}")
+
+    high_ids = {line_id for line_id, line in lines_by_id.items() if line.get("confidence") == "high"}
+    for line_id in high_ids:
+        fixture = fixtures_by_id[line_id]
+        line = lines_by_id[line_id]
+        if fixture.get("status") != "verified":
+            errors.append(f"{line_id}: high confidence requires verified fixture status")
+        if not line.get("both_measured") or line.get("rating_coverage") != 2:
+            errors.append(f"{line_id}: high confidence requires two measured official ratings")
+
+    pred_by_id = {prediction.get("match_id"): prediction for prediction in preds}
+    if len(pred_by_id) != len(preds) or None in pred_by_id:
+        errors.append("invalid or duplicate prediction match IDs")
+    if set(pred_by_id) != high_ids:
+        errors.append(f"high picks ({len(high_ids)}) != predictions ({len(pred_by_id)})")
 
     ngrams: Counter[tuple[str, ...]] = Counter()
-    for p in preds:
-        mid = p["match_id"]
-        words = p["text"].split()
+    for match_id, prediction in pred_by_id.items():
+        line = lines_by_id.get(match_id)
+        if not line:
+            errors.append(f"{match_id}: prediction has no originated line")
+            continue
+        words = prediction.get("text", "").split()
         if len(words) < 30:
-            errors.append(f"{mid}: prediction has {len(words)} words (<30 minimum)")
-        if lines_by_id[mid]["pick"].lower() not in p["text"].lower():
-            errors.append(f"{mid}: winner pick '{lines_by_id[mid]['pick']}' missing from prediction prose")
-        if not p.get("sources"):
-            errors.append(f"{mid}: prediction missing official sources")
-        toks = [re.sub(r"^[^\w]+|[^\w]+$", "", w.lower()) for w in words]
-        toks = [t for t in toks if t]
-        for i in range(len(toks) - 5):
-            ngrams[tuple(toks[i : i + 6])] += 1
+            errors.append(f"{match_id}: prediction has {len(words)} words (<30 minimum)")
+        if prediction.get("selection") != line.get("pick"):
+            errors.append(f"{match_id}: prediction selection does not equal model pick")
+        if str(line.get("pick", "")).lower() not in prediction.get("text", "").lower():
+            errors.append(f"{match_id}: winner pick missing from prediction prose")
+        sources = prediction.get("sources", [])
+        if not sources:
+            errors.append(f"{match_id}: prediction missing official source")
+        for source in sources:
+            check_official_source(source, f"prediction {match_id}")
+        tokens = [re.sub(r"^[^\w]+|[^\w]+$", "", word.lower()) for word in words]
+        tokens = [token for token in tokens if token]
+        for index in range(len(tokens) - 5):
+            ngrams[tuple(tokens[index : index + 6])] += 1
+    duplicates = {gram: count for gram, count in ngrams.items() if count > 1}
+    if duplicates:
+        errors.append(f"duplicate 6-word n-grams in predictions: {duplicates}")
 
-    dup_ngrams = {k: v for k, v in ngrams.items() if v > 1}
-    if dup_ngrams:
-        errors.append(f"Duplicate 6-word n-grams in predictions: {dup_ngrams}")
+    # The machine-readable full export must contain the same primary IDs and prices.
+    full_doc = load_json("datasets/matches_full.json")
+    full_rows = full_doc.get("matches", [])
+    if full_doc.get("count") != len(full_rows) or {row.get("id") for row in full_rows} != seen_ids:
+        errors.append("datasets/matches_full.json is not a complete primary-fixture export")
+    for row in full_rows:
+        if row.get("is_h2h") and not row.get("pricing"):
+            errors.append(f"{row.get('id')}: full export lost H2H pricing")
 
-    # Check all 17 sport pages exist in both /sports/ and /f7fa77fc/sports/
-    cov = json.loads((ROOT / "data" / "coverage.json").read_text())["included"]
-    for c in cov:
+    with (ROOT / "datasets" / "matches_full.csv").open(encoding="utf-8", newline="") as handle:
+        csv_rows = list(csv.DictReader(handle))
+    if len(csv_rows) != len(fixtures) or {row.get("id") for row in csv_rows} != seen_ids:
+        errors.append("datasets/matches_full.csv is not a complete primary-fixture export")
+
+    # The mirror is a byte-for-byte publication of primary JSON, avoiding drift.
+    for filename in ("fixtures.json", "lines.json", "predictions.json", "olbg_taxonomy.json", "sources.json", "coverage.json"):
+        primary = ROOT / "data" / filename
+        mirror = ROOT / "f7fa77fc" / "data" / filename
+        if not mirror.is_file():
+            errors.append(f"f7fa77fc mirror missing data/{filename}")
+        elif hashlib.sha256(primary.read_bytes()).digest() != hashlib.sha256(mirror.read_bytes()).digest():
+            errors.append(f"f7fa77fc mirror drift in data/{filename}")
+
+    for sport in load_json("data/coverage.json")["included"]:
+        slug = sport["sport"]
         for base in (ROOT, ROOT / "f7fa77fc"):
-            sp_file = base / "sports" / f"{c['sport']}.html"
-            if not sp_file.is_file():
-                errors.append(f"Missing sport subpage: {sp_file}")
+            page = base / "sports" / f"{slug}.html"
+            if not page.is_file():
+                errors.append(f"missing sport subpage: {page.relative_to(ROOT)}")
+
+    return len(fixtures), len(lines), len(preds)
 
 
 def main() -> int:
-    n_root = check_site_tree(ROOT, "root")
-    n_ns = check_site_tree(ROOT / "f7fa77fc", "f7fa77fc")
-    check_data_and_predictions()
+    fixture_count, line_count, prediction_count = check_data_and_predictions()
+    html_count = check_all_html_links()
+    check_primary_table_source_links()
 
-    print(f"Validated HTML pages: {n_root} at / + {n_ns} at /f7fa77fc/ = {n_root + n_ns} pages")
+    print(
+        f"Primary data: {fixture_count} fixtures | {line_count} H2H line books | "
+        f"{prediction_count} high-confidence predictions"
+    )
+    print(f"Validated relative links across {html_count} published HTML pages")
     print(f"Errors: {len(errors)}   Warnings: {len(warnings)}")
-    for w in warnings[:20]:
-        print("  WARN:", w)
-    for err in errors[:30]:
-        print("  ERR :", err)
+    for warning in warnings[:20]:
+        print("  WARN:", warning)
+    for error in errors[:40]:
+        print("  ERR :", error)
     if errors:
         print("\nVALIDATION FAILED")
         return 1
-    print("\nVALIDATION PASSED — ZERO ERRORS, ZERO BROKEN LINKS, ZERO DUPLICATE N-GRAMS")
+    print("\nVALIDATION PASSED — primary provenance, exports, markets, writing rules, and site links are consistent")
     return 0
 
 

@@ -346,6 +346,7 @@ def price_match(match: dict) -> dict:
     comp_override = COMPETITION_TOTALS.get(comp)
     tot_base = comp_override[0] if comp_override is not None else cfg["total"]
     tot_sigma = comp_override[1] if comp_override is not None else cfg["tsigma"]
+    unavailable_markets = []
     if tot_base is not None and tot_sigma is not None:
         # Slight upward shift in totals for competitive Best-of-N matches vs quick sweeps
         if sport in ("tennis", "snooker", "darts", "volleyball"):
@@ -370,6 +371,16 @@ def price_match(match: dict) -> dict:
                 _outcome(f"Under {alt_line:.1f}", alt_probs[1]),
             ],
             "basis": f"Competition baseline total ({tot_base:.1f} {cfg['total_name'].lower()}, sigma={tot_sigma:.1f})",
+        })
+    else:
+        unavailable_markets.append({
+            "key": "total",
+            "name": "Match Total",
+            "status": "unverified",
+            "reason": (
+                "No official, competition-specific total baseline is recorded for this "
+                "multi-innings format; the total is left blank rather than inferred."
+            ),
         })
 
     pick_sel = match["home"] if p_home_raw >= p_away_raw else match["away"]
@@ -396,6 +407,7 @@ def price_match(match: dict) -> dict:
         "both_rated": both_rated,
         "both_measured": both_measured,
         "markets": markets,
+        "unavailable_markets": unavailable_markets,
         "model_notes": _notes(sport, both_rated, r_home, r_away, cfg, tot_base),
     }
 
