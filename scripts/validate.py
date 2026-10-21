@@ -60,6 +60,7 @@ OFFICIAL_FIXTURE_HOSTS = {
     "www.galwaygaa.ie",
     "www.gbgb.org.uk",
     "www.icc-cricket.com",
+    "www.intrl.sport",
     "www.legavolley.it",
     "www.lpga.com",
     "www.mlb.com",

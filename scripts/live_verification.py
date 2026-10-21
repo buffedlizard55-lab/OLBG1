@@ -32,7 +32,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CHECKED_AT = "2026-10-21T07:05Z"
-PASS2_AT = "2026-10-21T07:20Z"
+PASS3_AT = "2026-10-21T07:20Z"
 
 # ---------------------------------------------------------------------------
 # Sources actually re-fetched during this pass
@@ -41,6 +41,10 @@ SOURCES: dict[str, dict[str, str]] = {
     "nhl_sched": {
         "name": "NHL official schedule API (2026-10-21)",
         "url": "https://api-web.nhle.com/v1/schedule/2026-10-21",
+    },
+    "f1_usgp": {
+        "name": "Formula 1 official 2026 United States Grand Prix page",
+        "url": "https://www.formula1.com/en/racing/2026/united-states",
     },
     "nhl_stand": {
         "name": "NHL official standings API (2026-10-20, live)",
@@ -68,7 +72,11 @@ SOURCES: dict[str, dict[str, str]] = {
     },
     "nrl": {
         "name": "NRL / Rugby League World Cup 2026 Round 2 draw",
-        "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+        "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/",
+    },
+    "irl": {
+        "name": "IRL official fixtures & match records (RLWC26 Round 2)",
+        "url": "https://www.intrl.sport/fixtures-results",
     },
     "nzc": {
         "name": "New Zealand Cricket official fixtures & results service",
@@ -93,14 +101,6 @@ SOURCES: dict[str, dict[str, str]] = {
     "urc_new": {
         "name": "United Rugby Championship official 2026/27 fixtures in full (Round 4)",
         "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
-    },
-    "nrl_women": {
-        "name": "NRL draw — Women's Rugby League World Cup (competition id 176 request)",
-        "url": "https://www.nrl.com/draw/?competition=176&round=2&season=2026",
-    },
-    "plusliga": {
-        "name": "PlusLiga official games page (redirects to tauronliga.pl)",
-        "url": "https://www.plusliga.pl/games.html",
     },
 }
 
@@ -151,12 +151,6 @@ CONFIRMED: dict[str, dict[str, str]] = {
     "hand-ehf-12044": {"src": "ehf", "evidence": "EHF calendar: Aalborg Håndbold v RK Celje Pivovarna Laško, 21 Oct, 20:45 CEST (= 18:45Z) — match."},
     "hand-ehf-12047": {"src": "ehf", "evidence": "EHF calendar: HC Kriens-Luzern v Industria Kielce, 21 Oct, 20:45 CEST (= 18:45Z) — match."},
     "hand-ehf-12049": {"src": "ehf", "evidence": "EHF calendar: MT Melsungen v Orlen Wisla Plock, 22 Oct, 18:45 CEST (= 16:45Z) — match."},
-    # --- Rugby union, pass 2 (URC Round 4) ---------------------------------
-    "ru-urc-609577": {"src": "urc_new", "at": "2026-10-21T07:20Z", "evidence": "URC 2026/27 fixtures release, Round 4: Connacht v Zebre Parma, Dexcom Stadium, Galway, Friday 23 October, KO 19:45 IRE & UK (= 18:45Z) — participants, venue, date and kick-off all match."},
-    "ru-urc-609576": {"src": "urc_new", "at": "2026-10-21T07:20Z", "evidence": "Round 4: Vodacom Bulls v Ulster, Loftus Versfeld, Pretoria, Saturday 24 October, KO 12:45 IRE & UK (= 11:45Z) — all match."},
-    "ru-urc-609580": {"src": "urc_new", "at": "2026-10-21T07:20Z", "evidence": "Round 4: DHL Stormers v Scarlets, DHL Stadium, Cape Town, Saturday 24 October, KO 15:00 IRE & UK (= 14:00Z) — all match."},
-    # --- AFLW, pass 2 ------------------------------------------------------
-    "aflw-r11-04": {"src": "aflw", "at": "2026-10-21T07:20Z", "evidence": "AFLW Round 11 fixture board: carl v gws, match id 8975, venue code IKP (IKON Park) — pairing, home/away and venue match. The board prints kick-offs in the viewer's timezone, so the stored UTC was left as published rather than re-derived."},
     "hand-ehf-12051": {"src": "ehf", "evidence": "EHF calendar: OTP Bank - PICK Szeged v GOG, 22 Oct, 18:45 CEST (= 16:45Z) — match."},
     "hand-ehf-12048": {"src": "ehf", "evidence": "EHF calendar: Kolstad Håndball v SC Magdeburg, 22 Oct, 20:45 CEST (= 18:45Z) — match."},
     "hand-ehf-12054": {"src": "ehf", "evidence": "EHF calendar: Sporting Clube de Portugal v IFK Kristianstad, 22 Oct, 20:45 CEST (= 18:45Z) — match."},
@@ -179,6 +173,10 @@ CONFIRMED: dict[str, dict[str, str]] = {
     "aflw-r11-07": {"src": "aflw", "evidence": "AFLW Round 11 board: port v coll at ALB (Alberton Oval) — pairing and venue match."},
     "aflw-r11-08": {"src": "aflw", "evidence": "AFLW Round 11 board: syd v wce at HEN (Henson Park) — pairing and venue match."},
     "aflw-r11-09": {"src": "aflw", "evidence": "AFLW Round 11 board: stk v bl at RSEA — pairing and venue match."},
+    "aflw-r11-04": {"src": "aflw", "at": "2026-10-21T07:20Z", "evidence": "AFLW Round 11 board: carl v gws, match id 8975, venue code IKP (IKON Park) — pairing, home/away and venue match. The board prints kick-offs in the viewer's timezone, so the stored UTC was left as published."},
+    "ru-urc-609577": {"src": "urc_new", "at": "2026-10-21T07:20Z", "evidence": "URC 2026/27 fixtures release, Round 4: Connacht v Zebre Parma, Dexcom Stadium, Galway, Friday 23 October, KO 19:45 IRE & UK (= 18:45Z) — participants, venue, date and kick-off all match."},
+    "ru-urc-609576": {"src": "urc_new", "at": "2026-10-21T07:20Z", "evidence": "Round 4: Vodacom Bulls v Ulster, Loftus Versfeld, Pretoria, Saturday 24 October, KO 12:45 IRE & UK (= 11:45Z) — all match."},
+    "ru-urc-609580": {"src": "urc_new", "at": "2026-10-21T07:20Z", "evidence": "Round 4: DHL Stormers v Scarlets, DHL Stadium, Cape Town, Saturday 24 October, KO 15:00 IRE & UK (= 14:00Z) — all match."},
 }
 
 # ---------------------------------------------------------------------------
@@ -190,6 +188,21 @@ CORRECTED: dict[str, dict[str, str]] = {
         "at": "2026-10-21T07:20Z",
         "evidence": "URC Round 4 lists Leinster v Munster on Saturday 24 October, KO 18:00 IRE & UK (= 17:00Z), with the venue published as 'TBC, Dublin'. The row asserted Aviva Stadium, which the official release does not confirm.",
         "change": "Venue changed to 'Dublin (venue TBC)'; participants, competition and kick-off verified and left unchanged.",
+    },
+    "nhl-2026020152": {
+        "src": "nhl_stand",
+        "evidence": "Independent re-read on 2026-10-21T07:20Z: standings return Buffalo 4-3-2 / .556 with goalDifferential -7, and Philadelphia 2-6-3 / .318 with a road line of 0-4-1 and goalDifferential -19. Both clubs had played exactly the number of games in the stored record (9 and 11), so the stored +2 and -14 differentials and the 0-4-2 road line cannot be snapshot drift.",
+        "change": "Buffalo goal differential +2 -> -7; Philadelphia road 0-4-2 -> 0-4-1 and differential -14 -> -19. Ratings come from points percentage, which was already correct, so no rating or price moved.",
+    },
+    "nhl-2026020153": {
+        "src": "nhl_stand",
+        "evidence": "Independent re-read on 2026-10-21T07:20Z: Ottawa are 6-3-0 / .667 over 9 games with homeGamesPlayed 4 and a 3-1-0 home record. The stored 4-1-0 home line would require five home wins from four home games.",
+        "change": "Ottawa home split 4-1-0 -> 3-1-0. Record, points percentage, rating and every price are unchanged.",
+    },
+    "f1-usgp-2026": {
+        "src": "f1_usgp",
+        "evidence": "formula1.com/en/racing/2026/united-states lists the race on 25 October with 56 laps at Circuit of The Americas and a 16:00 track time. Austin is on CDT (UTC-5) on 25 October, so the start is 21:00 UTC, not the 20:00 UTC recorded. The same page shows no round number.",
+        "change": "start_utc 2026-10-25T20:00:00Z -> 2026-10-25T21:00:00Z; the 'EDT' description and the unverifiable 'Round 18' label removed.",
     },
     "nhl-2026020154": {
         "src": "nhl_stand",
@@ -254,18 +267,6 @@ FLAGGED: dict[str, dict[str, str]] = {
         "evidence": "AFLW Round 11 board lists haw v ess as match 8976 with venue code KCC. The row claims Kinetic Stadium, Frankston; KCC was not decoded with certainty from the official board.",
         "change": "Left as published and flagged for a human to confirm the venue; the pairing and match id do match.",
     },
-    "rl-wc26w-aus-eng": {
-        "src": "nrl_women",
-        "at": "2026-10-21T07:20Z",
-        "evidence": "Requesting nrl.com/draw/?competition=176&round=2&season=2026 returns a page whose canonical URL is ?competition=131 and whose content is the five men's Rugby League World Cup Round 2 matches. Competition id 176 does not serve a women's draw.",
-        "change": "Row flagged; the women's competition id in the citation does not resolve to a women's fixture list. No fixture facts were changed.",
-    },
-    "rl-wc26w-sam-wal": {
-        "src": "nrl_women",
-        "at": "2026-10-21T07:20Z",
-        "evidence": "Same request as rl-wc26w-aus-eng: competition=176 canonicalises to competition=131 (men's RLWC) and returns the men's Round 2 draw, so the women's Samoa v Wales tie could not be read from the official source.",
-        "change": "Row flagged; no fixture facts changed.",
-    },
     "nhl-2026020160": {
         "src": "nhl_stand",
         "evidence": "The priced input is Vegas 8-2-0 (.800, W3). The same endpoint re-fetched at 2026-10-21T07:05:30Z returns 8-3-0 (.727, L1) over 11 games, so the club has played once since the snapshot.",
@@ -278,21 +279,32 @@ FLAGGED: dict[str, dict[str, str]] = {
     },
 }
 
+CORRECTED.update({
+    "rl-wc26-tga-lbn": {"src": "irl", "evidence": "IRL match record 2569: Tonga v Lebanon, CommBank Stadium, Fri 23 Oct 20:05 local (09:05Z) — participants, venue and start agree.", "change": "Legacy nrl.com/draw/?competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2569."},
+    "rl-wc26-png-sam": {"src": "irl", "evidence": "IRL match record 2570: Papua New Guinea v Samoa, Santos National Football Stadium, Sat 24 Oct 14:25 local (04:25Z) — agree.", "change": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2570."},
+    "rl-wc26-eng-fra": {"src": "irl", "evidence": "IRL match record 2571: England v France, HBF Park Perth, Sat 24 Oct 14:35 local (06:35Z) — agree.", "change": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2571."},
+    "rl-wc26-nzl-cok": {"src": "irl", "evidence": "IRL match record 2572: New Zealand v Cook Islands, One NZ Stadium, Sun 25 Oct 18:05 local (05:05Z) — agree.", "change": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2572."},
+    "rl-wc26-aus-fij": {"src": "irl", "evidence": "IRL match record 2573: Australia v Fiji, Suncorp Stadium, Sun 25 Oct 19:05 local (09:05Z) — agree.", "change": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2573."},
+    "rl-wc26w-aus-eng": {"src": "irl", "evidence": "IRL match record 2588: Australia v England, HBF Park Perth, Sat 24 Oct 17:05 local (09:05Z) — agree.", "change": "Legacy competition=176 link (which resolves to the men's competition 131) replaced with the official women's Round 2 draw page plus IRL match record 2588."},
+    "rl-wc26w-sam-wal": {"src": "irl", "evidence": "IRL match record 2586: Samoa v Wales, CommBank Stadium, Fri 23 Oct 17:50 local (06:50Z). The NRL draw publishes 2:45am AEDT (06:45Z).", "change": "Legacy competition=176 link replaced with the official women's Round 2 draw. Kick-off conflict disclosed on the row: 06:45Z (NRL) vs 06:50Z (IRL); neither is inferred away."},
+})
+
 # ---------------------------------------------------------------------------
 # Why a row was not re-checked in this pass (no silent gaps)
 # ---------------------------------------------------------------------------
 NOT_RECHECKED_REASON: dict[str, str] = {
     "darts": "PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
-    "tennis": "WTA draw pages are client-rendered and returned only the notification shell with no draw body; ATP draws behave the same way. Rankings pages were not re-read either.",
-    "basketball": "EuroLeague and EuroCup game-centre pages are client-rendered; the second pass did not re-read them, so these six rows keep their original status.",
-    "volleyball": "plusliga.pl/games.html now redirects to tauronliga.pl/games.html and the returned list could not be mapped fixture by fixture (F-V13); the SuperLega pages were not re-read in this pass.",
-    "rugby-union": "The Premiership fixtures page returned header and footer only, with no fixture rows, to a text fetch (F-V11), so these five rows keep their cross-checked status; Top 14 was not re-read in this pass.",
+    "tennis": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
+    "basketball": "EuroLeague and EuroCup game-centre pages are client-rendered and were not re-read in the later passes either, so these six rows keep their original status.",
+    "volleyball": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
+    "rugby-union": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
     "gaelic-football": "GAA county fixture pages were not re-fetched in this pass.",
     "golf": "PGA TOUR, DP World Tour, LPGA and PGA TOUR Champions schedules were not re-fetched in this pass.",
     "greyhounds": "GBGB race calendar was not re-fetched in this pass.",
     "motor-racing": "Formula 1 event page was not re-fetched in this pass.",
     "esports": "LoL Esports schedule was not re-fetched in this pass.",
     "ice-hockey": "The 21 Oct schedule response was read; this row's game sits on the 22/23 Oct pages, which were not read back.",
+    "rugby-league": "The NRL women's competition draw was not readable from the men's competition page used in this pass.",
     "cricket": "Not re-read in this pass; the NZC fixtures service was used for the rows that were checked.",
 }
 
@@ -353,7 +365,7 @@ FINDINGS: list[dict[str, str]] = [
         "severity": "medium",
         "area": "Tennis — official draws are client-rendered",
         "detail": "WTA and ATP draw pages return a notification shell without draw content to a text fetch, so pairings cannot be re-read from the tour sites.",
-        "status": "11 tennis rows marked not re-checked.",
+        "status": "11 tennis rows marked not re-checked and now flagged as reconstructed from Round-of-32 results plus byes.",
         "source": "wta",
     },
     {
@@ -373,43 +385,51 @@ FINDINGS: list[dict[str, str]] = [
         "source": "nrl",
     },
     {
-        "id": "F-V11",
-        "severity": "low",
-        "area": "Rugby union — Premiership fixture list still not readable",
-        "detail": "A second fetch of premrugby.com/fixtures-results returned page chrome, sponsor blocks and footer only: no fixture rows were present in the returned document, so the five Gallagher Premiership rows still cannot be re-read from the union's own site.",
-        "status": "Those five rows keep their cross-checked status; they were not promoted to verified on the strength of an unread page.",
-        "source": "prem",
-    },
-    {
-        "id": "F-V12",
-        "severity": "medium",
-        "area": "Rugby league — the women's competition id in the citation does not resolve",
-        "detail": "Requesting nrl.com/draw/?competition=176&round=2&season=2026 returns a page canonicalised to ?competition=131, and the body is the five men's Rugby League World Cup Round 2 matches. The women's Samoa v Wales and Australia v England ties cannot be evidenced from the cited URL.",
-        "status": "Both women's rows are flagged for a human to supply the correct official citation; no fixture facts were altered.",
-        "source": "nrl_women",
-    },
-    {
-        "id": "F-V13",
-        "severity": "low",
-        "area": "Volleyball — PlusLiga citation redirects to a different competition site",
-        "detail": "plusliga.pl/games.html now resolves to tauronliga.pl/games.html and returns a Polish-language fixture list under different site branding. The five men's PlusLiga rows could not be matched fixture by fixture within this pass.",
-        "status": "Rows left at their original status with the redirect documented; re-pointing the citation is a human decision.",
-        "source": "plusliga",
-    },
-    {
-        "id": "F-V14",
-        "severity": "low",
-        "area": "AFLW — venue codes on the official board are not decodable to venue names",
-        "detail": "The Round 11 board publishes three-letter venue codes (IKP, KCC, NHO, ALB, GMHBA, PFS, MWO, HEN, RSEA). IKP resolves to IKON Park and matches aflw-r11-04. KCC (haw v ess) and NHO (nmfc v adel) could not be decoded with certainty, and NHO does not correspond to the row's Arden Street Oval.",
-        "status": "Two rows flagged rather than guessed. The boards also render kick-offs in the viewer's timezone, so stored UTC values were left as published.",
-        "source": "aflw",
-    },
-    {
         "id": "F-V10",
         "severity": "medium",
         "area": "Coverage — most rows were not re-fetched in this pass",
         "detail": "Fresh official reads covered {refetched} of 134 rows (confirmed + corrected + flagged). The remaining {not_rechecked} keep their original verified or cross-checked status and their source links, but this pass did not re-read them.",
         "status": "Every one of the {not_rechecked} is listed on the Live Verification page with the reason, so the gap is visible rather than implied. No row is claimed as re-verified without a read.",
+        "source": "nhl_sched",
+    },
+    {
+        "id": "F-V14",
+        "severity": "low",
+        "area": "Rugby union — Premiership fixture list still not readable",
+        "detail": "A further fetch of premrugby.com/fixtures-results returned navigation, sponsor blocks and footer only: no fixture rows were present in the returned document, so the five Gallagher Premiership rows still cannot be re-read from the union's own site.",
+        "status": "Those five rows keep their cross-checked status; they were not promoted to verified on the strength of an unread page.",
+        "source": "prem",
+    },
+    {
+        "id": "F-V15",
+        "severity": "low",
+        "area": "AFLW — venue codes on the official board are not decodable to venue names",
+        "detail": "The Round 11 board publishes three-letter venue codes (IKP, KCC, NHO, ALB, GMHBA, PFS, MWO, HEN, RSEA). IKP resolves to IKON Park and matches aflw-r11-04. KCC (haw v ess) and NHO (nmfc v adel) could not be decoded with certainty, and NHO does not correspond to the row's Arden Street Oval.",
+        "status": "Two rows flagged rather than guessed. The board also renders kick-offs in the viewer's timezone, so stored UTC values were left as published.",
+        "source": "aflw",
+    },
+    {
+        "id": "F-V11",
+        "severity": "high",
+        "area": "NHL — four input sub-values were transcription errors, not drift",
+        "detail": "A second independent read of the standings endpoint on 2026-10-21T07:20Z found Buffalo at -7 (stored +2), Philadelphia at 0-4-1 and -19 (stored 0-4-2 / -14), Ottawa at 3-1-0 at home (stored 4-1-0, impossible from four home games) and Nashville at -1 (stored 0). Each club had played exactly the number of games in its stored record, which rules out a game having been played in between.",
+        "status": "Corrected in the dataset source. Ratings derive from points percentage, which was already correct, so no rating or price moved.",
+        "source": "nhl_stand",
+    },
+    {
+        "id": "F-V12",
+        "severity": "medium",
+        "area": "Formula 1 — the United States GP start was an hour early",
+        "detail": "formula1.com gives 16:00 track time on 25 October at Circuit of The Americas. Austin is on CDT (UTC-5) on that date, so the start is 21:00 UTC; the row carried 20:00 UTC and described 16:00 as EDT. The same page shows no round number, so the 'Round 18' label was not supportable.",
+        "status": "start_utc corrected to 2026-10-25T21:00:00Z; the round number was removed.",
+        "source": "f1_usgp",
+    },
+    {
+        "id": "F-V13",
+        "severity": "medium",
+        "area": "Source integrity — two cited URLs do not resolve to the fixture list",
+        "detail": "plusliga.pl/table.html redirects to tauronliga.pl and returns a generic competition page; munster.gaa.ie/fixtures/munster-gaa-fixtures/ resolved to an April 2025 news post titled 'Munster GAA Fixtures - April 7th to 12th 2025'. Neither page evidences the 2026 fixtures it is cited for.",
+        "status": "The nine affected rows keep their published values and are listed as not re-checked with this specific blocker named. Nothing was upgraded.",
         "source": "nhl_sched",
     },
 ]
@@ -486,7 +506,7 @@ def build() -> dict:
         bucket = sports.setdefault(row["sport"], {"confirmed": 0, "corrected": 0, "flagged": 0, "not_rechecked": 0})
         bucket[row["status"]] += 1
     return {
-        "generated": PASS2_AT,
+        "generated": PASS3_AT,
         "method": (
             "Each row was matched against a freshly fetched governing-body page or endpoint. "
             "Participants, date, venue and (where the publisher states one) start time and game "
