@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Methodology — OLBG1</title><style>
+:root{--bg:#f4f6f8;--card:#ffffff;--nav:#0f2a4a;--accent:#0b6b3c;--muted:#5b6b7b;--border:#d5dde4;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:#1f2a36;line-height:1.5}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--nav);color:#fff;padding:16px 24px}
+header h1{font-size:1.25rem;letter-spacing:-0.4px}
+header p{font-size:0.85rem;opacity:.85;margin-top:4px}
+nav{background:#173a5f;padding:6px 24px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+nav a{color:#cfe3f5;font-size:0.88rem;padding:4px 8px;border-radius:4px}
+nav a:hover{background:rgba(255,255,255,.08);text-decoration:none}
+nav a.active{background:#0b6b3c;color:#fff}
+.container{max-width:1200px;margin:0 auto;padding:24px}
+h2{font-size:1.35rem;margin:0 0 8px;padding:8px 0;border-bottom:2px solid var(--accent)}
+.sub{color:var(--muted);font-size:0.95rem;margin-bottom:18px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:6px 12px;border-radius:6px;font-size:0.85rem;margin-right:8px}
+.btn:hover{background:#095a32;text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px}
+.card h3{font-size:1.05rem;margin-bottom:6px}
+.card p{font-size:0.9rem;color:var(--muted);margin-bottom:10px}
+.tag{display:inline-block;font-size:0.75rem;padding:2px 8px;border-radius:10px;color:#fff;margin-right:6px}
+.tag.high{background:#0b8043}.tag.medium{background:#b8860b}.tag.low{background:#8a94a2}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:24px}
+th{background:#eef2f6;text-align:left;padding:10px 12px;font-size:0.82rem;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);border-bottom:1px solid var(--border)}
+td{padding:9px 12px;border-bottom:1px solid var(--border);font-size:0.88rem;vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:hover{background:#f2f6fa}
+.badge-ver{font-size:0.78rem;padding:2px 7px;border-radius:10px;color:#fff}
+.ver.verified{background:#0b8043}.ver.partial{background:#b8860b}.ver.unverified{background:#b03a2e}
+ul{margin:6px 0 14px 20px}li{margin-bottom:4px;color:#33424d}
+.small{font-size:0.85rem;color:var(--muted)}
+.sources a{font-size:0.82rem;color:#0b6b3c}
+.foot{margin-top:40px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:0.82rem}
+.excl{background:#fdecea;border:1px solid #f5c6c6;border-radius:8px;padding:14px;margin-bottom:18px}
+.excl b{color:#942b2b}
+.confpick{font-weight:bold}
+.flagrow td{background:#fdf3f3}
+</style></head><body><header><h1>OLBG1 — Methodology</h1><p>How lines were originated, picks chosen, and verification policy</p></header><nav><a href="index.html">Home</a><a href="tennis.html">Tennis</a><a href="nba.html">Basketball (NBA)</a><a href="mlb.html">Baseball (MLB)</a><a href="cricket.html">Cricket</a><a href="rugby-union.html">Rugby Union</a><a href="ice-hockey.html">Ice Hockey (NHL)</a><a href="golf.html">Golf</a><a href="snooker.html">Snooker</a><a href="darts.html">Darts</a><a href="badminton.html">Badminton</a><a href="table-tennis.html">Table Tennis</a><a href="volleyball.html">Volleyball</a><a href="handball.html">Handball</a><a href="methodology.html">Methodology</a><a href="findings.html">Findings</a><a href="flagged.html">Flagged for Review</a></nav><div class='container'><h2>1. Scope</h2><p class='sub'>Match list covers all sports on the brief EXCLUDING: soccer/football, boxing, UFC, MMA, American football, hurling, horse racing, cycling, specials.</p><h2>2. Data collection</h2><ul><li>Fixtures collected via web_search with links to official league/federation/club sites (MLB.com, NBA.com, NHL.com, ATPtour.com, unitedrugby.com, ESPNcricinfo, ITTF, BWF, PSG.fr, NCAA athletics sites, etc.).</li><li>OLBG.com itself is not reachable from this sandbox (TLS blocked; outbound limited to GitHub/npm/PyPI hosts), so no OLBG odds were viewed or copied.</li><li>Where a fixture could not be confirmed by an official source, the value is left blank and flagged.</li></ul><h2>3. Originated lines</h2><ul><li>All betting lines (moneyline pick, American odds, handicap, match total) are <b>originated by this session</b>. They are analytical estimates, not quotes from any bookmaker, and not copied from OLBG or any other sportsbook.</li><li>Markets investigated per match: win match (moneyline), handicap (spread/line), match total (over/under line). Tournament-based sports (golf, snooker, darts, badminton, table tennis) are listed as outright-tournament markets only because individual matchups are set by draw later.</li><li>Each row carries one match-winner selection.</li></ul><h2>4. Confidence levels</h2><ul><li><span class='tag high'>high</span> — strong verified basis (recent form, head-to-head, standings, home advantage confirmed by official sources). Includes a 30+ word human-written prediction.</li><li><span class='tag medium'>medium</span> — reasonable basis, some verified info, less certainty.</li><li><span class='tag low'>low</span> — speculative, tournament outright, or draw-dependent matchups not yet known.</li></ul><h2>5. Predictions (high confidence only)</h2><ul><li>Unique, human-written, at least 30 words each.</li><li>Include team/player, current form, recent match history, and a clear betting selection (who will win, or over/under).</li><li>Built from verified information from official/trusted sources; every claim links to a source. No robotic repetition, no hallucinated stats.</li></ul><h2>6. Verification policy</h2><ul><li>Every table row has at least one source link.</li><li>If a value cannot be confirmed from an official source, it is left blank and flagged <span class='badge-ver ver.unverified'>unverified</span> or <span class='badge-ver ver.partial'>partial</span>.</li><li>Nothing is inferred or filled in. Unverified items are listed on the Flagged for Review page for manual review.</li></ul><h2>7. Irregularities flagged</h2><ul><li>Tennis: individual QF/SF matchups at Almaty, Lyon, Brussels not yet determined at collection time (draw-dependent) — left blank.</li><li>URC Leinster v Munster venue: BBC lists TBC; All.Rugby lists Aviva Stadium — marked partial.</li><li>Volleyball venues inferred as home venues — marked partial.</li><li>Contingent World Series games (G5–G7) only exist if required — lines left blank.</li><li>Rugby League Super League 2026 season completed; no upcoming fixtures in window.</li></ul><div class='foot'>Generated 2026-10-21. For analysis purposes only — not betting advice. Verify independently before placing any wager.</div></body></html>
