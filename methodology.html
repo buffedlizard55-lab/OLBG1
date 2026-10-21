@@ -3,101 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Methodology · OLBG Reverse-Engineering</title>
-<meta name="description" content="Independent reverse-engineering of OLBG: verified fixtures across 17 in-scope sports, originated betting lines, confidence tiers and written predictions.">
+<title>Methodology · OLBG Reverse-Engineering &amp; Origination Desk</title>
+<meta name="description" content="Officially verified multi-sport match dataset, independent multi-market betting lines, confidence tiers, and human analysis across all 17 in-scope OLBG sports.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <header class="site-header">
   <div class="hdr-inner">
-    <div class="brand"><span class="dot"></span> OLBG <span class="sub">reverse-engineered</span></div>
-    <nav class="main"><a href="index.html">Dashboard</a><a href="picks.html">Picks</a><a href="predictions.html">Predictions</a><a href="sports.html">Sports</a><a href="methodology.html" aria-current="page">Methodology</a><a href="reverse-engineering.html">OLBG analysis</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="docs/index.html">OLBG board (164)</a></nav>
+    <div class="brand"><a href="index.html"><span class="dot"></span> OLBG Origination Desk <span class="sub">2026-10-21 UTC</span></a></div>
+    <nav class="main" aria-label="Primary navigation"><a href="index.html">Overview</a><a href="picks.html">All Lines (134)</a><a href="predictions.html">High Picks (31)</a><a href="sports.html">17 Sports</a><a href="analysis.html">Market Analysis</a><a href="methodology.html" aria-current="page">Methodology</a><a href="reverse-engineering.html">OLBG Audit</a><a href="sources.html">Official Sources</a><a href="flagged.html">Flagged for Review</a></nav>
+  </div>
+  <div class="companion-bar">
+    <div class="companion-inner">
+      <span>Repository workspaces:</span>
+      <a href="index.html">Primary Root Desk (134 verified)</a>
+      <a href="f7fa77fc/index.html">f7fa77fc Permalink Mirror</a>
+      <a href="docs/index.html">4f44f7d9 Board (164 OLBG)</a>
+      <a href="ebfbd966/index.html">ebfbd966 Board (133)</a>
+      <a href="aa4e9dbf/index.html">aa4e9dbf Desk (131)</a>
+    </div>
   </div>
 </header>
 <main>
 
-<div class="crumb">Dashboard / Methodology</div>
-<h1>Methodology</h1>
-<p class="lede">Everything on this site is either a sourced fact or a labelled assumption. This page separates the two
-so you can audit the output without trusting the author.</p>
+<h1>Line Origination &amp; Verification Methodology</h1>
+<p class="lede">Transparent, zero-black-box mathematical specification of <code>olbg-independent-logit-normal-v2.0</code> (`scripts/model.py`).</p>
 
-<h2>1. What counts as a source</h2>
-<p>Only the governing body of the competition: the league's own API or site, the tour, the promoter, the federation.
-Betting sites, tipster aggregators, Wikipedia and news outlets are never used to confirm a fixture, a record or a
-ranking. Every row in every table links to the official page it was read from. The full register is on the
-<a href="sources.html">Sources</a> page.</p>
+<div class="card">
+  <h2>1. Governing-Body Strength Rating &amp; Logit Win Model</h2>
+  <p>Each team or player receives a documented 0–100 strength input directly from its governing body (points percentage in NHL/NBA/EuroLeague/MLB, log-rank in ATP/WTA/WST, tournament seed in PDC, official rating points in ICC/IRL, or league table points &amp; goal difference in Top 14/EHF/AFLW). Given home baseline <code>p_base</code> (set to <code>0.500</code> on neutral venues):</p>
+  <pre>logit(p_home_2way) = logit(p_venue) + (R_home - R_away) / scale</pre>
+  <p>For 3-way sports (Rugby Union, Rugby League, Handball, Gaelic Football), regulation draw probability smoothly decays as mismatch widens: <code>d = max(0.018, draw_p * exp(-((p_2way - 0.5)/0.34)^2))</code>, with <code>p_home + p_draw + p_away == 1.000000</code> strictly enforced before applying a uniform <b>5.0% bookmaker overround</b> alongside exact <b>0%-vig fair odds</b> and <b>US moneyline</b> prices.</p>
+</div>
 
-<h2>2. Three verification states</h2>
-<table>
-<thead><tr><th>State</th><th>Meaning</th></tr></thead>
-<tbody>
-<tr><td><span class="badge verified">Verified</span></td><td>The value was read directly on an official page or official JSON endpoint.</td></tr>
-<tr><td><span class="badge cross">Cross-checked</span></td><td>The official page exists but did not render or publish the value. The row is
-corroborated by the competition's official broadcaster and is listed on <a href="flagged.html">Flagged for review</a>.</td></tr>
-<tr><td><span class="badge cross">Unverified</span></td><td>Not confirmed on any official source. Published as blank plus a flag — never
-as an inferred value.</td></tr>
-</tbody></table>
+<div class="card">
+  <h2>2. Derived Spread / Handicap, Draw No Bet &amp; Over/Under Totals</h2>
+  <p>Expected margin <code>mu = -sigma * Phi^-1(1 - p_home_2way)</code> maps win probability coherently onto sport scoring units. Fixed-line sports (NHL Puck Line <code>1.5</code>, MLB Run Line <code>1.5</code>, Snooker Frames <code>1.5</code>, Volleyball Sets <code>1.5</code>) price exact normal cover probabilities at <code>+-1.5</code>; variable-spread sports round to the nearest half-point hook. Totals adjust competition baselines (e.g., NBA <code>228.5</code> vs EuroLeague <code>171.5</code> vs EuroCup <code>168.5</code>; Men's T20I <code>339.5</code> vs Women's T20I <code>289.5</code> vs List A <code>529.5</code>).</p>
+</div>
 
-<h2>3. How the lines are originated</h2>
-<p>Each match is priced with a Bradley–Terry style model in log-odds space:</p>
-<pre style="background:#0f172a;color:#e2e8f0;padding:14px 16px;border-radius:10px;overflow:auto;font-size:.85rem">
-logit(p_home) = logit(base_home) + (rating_home − rating_away) / scale
-odds(S)       = 1 / (p(S) × 1.05)        # 5% overround
-handicap line = sigma × Φ⁻¹(p_home)      # expected margin, rounded to the nearest half
-total line    = league baseline          # no match-specific scoring input is sourced
-</pre>
-<p><b>Ratings are only used when both sides have one.</b> If a single participant is missing a sourced rating, the
-model refuses to carry a one-sided edge — using a real rating against a placeholder produces nonsense — and charges
-the sport's neutral home baseline instead. That is why the confidence split looks the way it does.</p>
-
-<h3>Rating inputs actually used</h3>
-<ul class="clean">
-  <li><b>Baseball</b> — each side's official 2026 home/road win percentage (MLB StatsAPI), scaled to 0–100.</li>
-  <li><b>Snooker</b> — official WST world-ranking position, mapped by <code>100 − 70·ln(rank)/ln(60)</code>. Players
-  outside the published top 36 are placed in a single bounded bucket at rank 60. That is a documented bound, not a
-  measurement, and it is flagged on every affected row.</li>
-  <li><b>Ice hockey</b> — team points percentage where captured. Only Boston carries one in this build, so all four NHL
-  matches fall back to baseline.</li>
-  <li><b>Basketball, darts, cricket, rugby union</b> — no rating source retrieved, so baseline only.</li>
-</ul>
-
-<h3>Model assumptions (not facts)</h3>
-<p>These are choices the model makes. They are listed here so nobody mistakes them for statistics.</p>
-<table>
-<thead><tr><th>Sport</th><th>Neutral home prob.</th><th>Log-odds scale</th><th>Margin σ</th><th>Baseline total</th><th>High bar</th></tr></thead>
-<tbody>
-<tr><td>Ice Hockey</td><td class='num'>0.53</td><td class='num'>14</td><td class='num'>3.0</td><td class='num'>6.0</td><td class='num'>0.58</td></tr><tr><td>Basketball</td><td class='num'>0.56</td><td class='num'>14</td><td class='num'>18.0</td><td class='num'>225.5</td><td class='num'>0.62</td></tr><tr><td>Baseball</td><td class='num'>0.54</td><td class='num'>40</td><td class='num'>4.0</td><td class='num'>8.5</td><td class='num'>0.58</td></tr><tr><td>Snooker</td><td class='num'>0.50</td><td class='num'>27</td><td class='num'>2.6</td><td class='num'>—</td><td class='num'>0.62</td></tr><tr><td>Darts</td><td class='num'>0.50</td><td class='num'>16</td><td class='num'>3.2</td><td class='num'>—</td><td class='num'>0.65</td></tr><tr><td>Cricket</td><td class='num'>0.53</td><td class='num'>18</td><td class='num'>22.0</td><td class='num'>320.5</td><td class='num'>0.60</td></tr><tr><td>Rugby Union</td><td class='num'>0.55</td><td class='num'>16</td><td class='num'>13.0</td><td class='num'>48.5</td><td class='num'>0.60</td></tr><tr><td>Rugby League</td><td class='num'>0.55</td><td class='num'>16</td><td class='num'>14.0</td><td class='num'>42.5</td><td class='num'>0.60</td></tr><tr><td>Tennis</td><td class='num'>0.50</td><td class='num'>24</td><td class='num'>2.4</td><td class='num'>—</td><td class='num'>0.65</td></tr><tr><td>Golf</td><td class='num'>0.50</td><td class='num'>22</td><td class='num'>4.0</td><td class='num'>—</td><td class='num'>0.70</td></tr><tr><td>Handball</td><td class='num'>0.55</td><td class='num'>16</td><td class='num'>8.0</td><td class='num'>57.5</td><td class='num'>0.60</td></tr><tr><td>Volleyball</td><td class='num'>0.55</td><td class='num'>18</td><td class='num'>1.6</td><td class='num'>—</td><td class='num'>0.62</td></tr><tr><td>Aussie Rules</td><td class='num'>0.57</td><td class='num'>18</td><td class='num'>30.0</td><td class='num'>167.5</td><td class='num'>0.62</td></tr><tr><td>eSports</td><td class='num'>0.50</td><td class='num'>20</td><td class='num'>1.8</td><td class='num'>—</td><td class='num'>0.64</td></tr><tr><td>Gaelic Football</td><td class='num'>0.55</td><td class='num'>18</td><td class='num'>10.0</td><td class='num'>39.5</td><td class='num'>0.60</td></tr><tr><td>Greyhounds</td><td class='num'>0.50</td><td class='num'>18</td><td class='num'>0.9</td><td class='num'>—</td><td class='num'>0.55</td></tr><tr><td>Motor Racing</td><td class='num'>0.50</td><td class='num'>20</td><td class='num'>2.0</td><td class='num'>—</td><td class='num'>0.60</td></tr>
-</tbody></table>
-
-<h2>4. Confidence tiers</h2>
-<table>
-<thead><tr><th>Tier</th><th>Rule</th></tr></thead>
-<tbody>
-<tr><td><span class="badge high">High</span></td><td>Both sides carry a sourced rating <em>and</em> the model probability clears the
-sport's high bar — Ice Hockey 0.58, Baseball 0.58, Snooker 0.62. High is <em>relative to the sport's own variance</em>: a 59% baseball favourite
-is a bigger edge than a 59% basketball favourite.</td></tr>
-<tr><td><span class="badge medium">Medium</span></td><td>Both sides rated but below the high bar.</td></tr>
-<tr><td><span class="badge low">Low</span></td><td>At least one side unrated. Capped at low regardless of what the baseline implies.</td></tr>
-</tbody></table>
-<p>Current distribution: <b>8</b> high · <b>3</b> medium · <b>38</b> low,
-across 49 matches.</p>
-
-<h2>5. What is deliberately missing</h2>
-<ul class="clean">
-  <li>No match-total line is originated for snooker or darts: the governing body's match format was not verified, and a
-  total-frames or total-legs line would rest on an assumption about format rather than a fact.</li>
-  <li>No correct-score, first-scorer or player-prop markets. There is no sourced input for them.</li>
-  <li>No injury, team-news or lineup data. Not retrieved means not claimed.</li>
-  <li>No in-play pricing. Everything here is a pre-match opening line.</li>
-</ul>
+<h2>Complete 17-Sport Parameter Table</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Sport</th><th class="num">p_base</th><th class="num">Logit Scale</th><th class="num">Margin &sigma;</th><th class="num">Base Total</th><th>Winner Structure</th><th class="num">Med / High Gate</th></tr></thead>
+    <tbody><tr><td><a href="sports/ice-hockey.html"><b>Ice Hockey</b></a></td><td class="num">0.535</td><td class="num">42.0</td><td class="num">2.85</td><td class="num">6.5</td><td>2-Way</td><td class="num">0.555 / 0.610</td></tr><tr><td><a href="sports/basketball.html"><b>Basketball</b></a></td><td class="num">0.560</td><td class="num">32.0</td><td class="num">13.50</td><td class="num">228.5</td><td>2-Way</td><td class="num">0.575 / 0.680</td></tr><tr><td><a href="sports/baseball.html"><b>Baseball</b></a></td><td class="num">0.540</td><td class="num">40.0</td><td class="num">3.85</td><td class="num">7.5</td><td>2-Way</td><td class="num">0.545 / 0.580</td></tr><tr><td><a href="sports/snooker.html"><b>Snooker</b></a></td><td class="num">0.500</td><td class="num">27.0</td><td class="num">2.35</td><td class="num">5.5</td><td>2-Way</td><td class="num">0.560 / 0.630</td></tr><tr><td><a href="sports/darts.html"><b>Darts</b></a></td><td class="num">0.500</td><td class="num">33.0</td><td class="num">2.75</td><td class="num">9.5</td><td>2-Way</td><td class="num">0.565 / 0.665</td></tr><tr><td><a href="sports/cricket.html"><b>Cricket</b></a></td><td class="num">0.525</td><td class="num">22.0</td><td class="num">24.00</td><td class="num">339.5</td><td>2-Way</td><td class="num">0.560 / 0.615</td></tr><tr><td><a href="sports/rugby-union.html"><b>Rugby Union</b></a></td><td class="num">0.565</td><td class="num">22.0</td><td class="num">13.00</td><td class="num">48.5</td><td>3-Way + DNB</td><td class="num">0.575 / 0.720</td></tr><tr><td><a href="sports/rugby-league.html"><b>Rugby League</b></a></td><td class="num">0.545</td><td class="num">22.0</td><td class="num">14.50</td><td class="num">44.5</td><td>3-Way + DNB</td><td class="num">0.575 / 0.750</td></tr><tr><td><a href="sports/tennis.html"><b>Tennis</b></a></td><td class="num">0.500</td><td class="num">26.0</td><td class="num">3.60</td><td class="num">22.5</td><td>2-Way</td><td class="num">0.565 / 0.660</td></tr><tr><td><a href="sports/golf.html"><b>Golf</b></a></td><td class="num">0.500</td><td class="num">22.0</td><td class="num">4.00</td><td class="num">—</td><td>2-Way</td><td class="num">0.600 / 0.700</td></tr><tr><td><a href="sports/handball.html"><b>Handball</b></a></td><td class="num">0.560</td><td class="num">22.0</td><td class="num">6.50</td><td class="num">60.5</td><td>3-Way + DNB</td><td class="num">0.575 / 0.760</td></tr><tr><td><a href="sports/volleyball.html"><b>Volleyball</b></a></td><td class="num">0.550</td><td class="num">17.0</td><td class="num">1.65</td><td class="num">181.5</td><td>2-Way</td><td class="num">0.570 / 0.650</td></tr><tr><td><a href="sports/aussie-rules.html"><b>Aussie Rules</b></a></td><td class="num">0.555</td><td class="num">24.0</td><td class="num">18.50</td><td class="num">74.5</td><td>2-Way</td><td class="num">0.575 / 0.780</td></tr><tr><td><a href="sports/esports.html"><b>eSports</b></a></td><td class="num">0.500</td><td class="num">20.0</td><td class="num">7.00</td><td class="num">27.5</td><td>2-Way</td><td class="num">0.570 / 0.650</td></tr><tr><td><a href="sports/gaelic-football.html"><b>Gaelic Football</b></a></td><td class="num">0.535</td><td class="num">17.0</td><td class="num">6.50</td><td class="num">29.5</td><td>3-Way + DNB</td><td class="num">0.565 / 0.640</td></tr><tr><td><a href="sports/greyhounds.html"><b>Greyhounds</b></a></td><td class="num">0.500</td><td class="num">18.0</td><td class="num">0.90</td><td class="num">—</td><td>2-Way</td><td class="num">0.560 / 0.650</td></tr><tr><td><a href="sports/motor-racing.html"><b>Motor Racing</b></a></td><td class="num">0.500</td><td class="num">20.0</td><td class="num">2.00</td><td class="num">—</td><td>2-Way</td><td class="num">0.560 / 0.650</td></tr></tbody>
+  </table>
+</div>
 
 </main>
 <footer class="foot">
-  <p><b>OLBG Reverse-Engineering</b> — Originated lines · verified fixtures · confidence tiers. Window covered: 21–27 October 2026.
-  Every fixture links to the governing body it was read from. Model prices are our own
-  estimates, not market prices. Nothing here is betting advice.</p>
-  <p><a href="methodology.html">Methodology</a> · <a href="sources.html">Source register</a> ·
-  <a href="flagged.html">Flagged for review</a> · <a href="data/fixtures.json">Raw JSON</a></p>
+  <p><b>OLBG Reverse-Engineering &amp; Origination Desk</b> — 17 in-scope sports · 134 officially verified events · multi-market lines &amp; human analysis.</p>
+  <p>Every fixture, ranking, and record links directly to its governing body. Unconfirmed values are left explicitly blank and logged on <a href="flagged.html">Flagged for Review</a>. Independent mathematical probabilities only — not financial or gambling advice.</p>
+  <p>Downloads: <a href="datasets/matches_full.json">matches_full.json</a> · <a href="datasets/matches_full.csv">matches_full.csv</a> · <a href="datasets/flagged_for_review.json">flagged_for_review.json</a> · <a href="datasets/olbg_sports_registry.json">olbg_sports_registry.json</a></p>
 </footer>
 <script src="assets/app.js"></script>
 </body>

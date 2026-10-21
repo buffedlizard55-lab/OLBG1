@@ -1,0 +1,146 @@
+{
+  "retrieved": "2026-10-21",
+  "principle": "Every match, venue, UTC start time, ranking, and record is verified directly against the official governing-body or tournament organiser feed. Where an official feed omits a field (such as a broadcast-TBD start time or opening-week table), the field is left explicitly null/blank and flagged rather than inferred.",
+  "sources": [
+    {
+      "id": "olbg",
+      "sport": "all",
+      "name": "OLBG Sports Betting Tips Sitemaps & Sport Hubs",
+      "url": "https://www.olbg.com/sitemap-betting-tips.xml",
+      "role": "Upstream taxonomy, event IDs, tip consensus, defect audit"
+    },
+    {
+      "id": "nhl",
+      "sport": "ice-hockey",
+      "name": "NHL Official Web API (Schedule & Standings)",
+      "url": "https://api-web.nhle.com/v1/schedule/2026-10-21",
+      "role": "Fixtures, venues, UTC times, W-L-OT, points %, goal diff"
+    },
+    {
+      "id": "nba",
+      "sport": "basketball",
+      "name": "NBA Official Schedule & Standings",
+      "url": "https://www.nba.com/games?date=2026-10-21",
+      "role": "2026-27 opening-week slate, arenas, prior-season baseline"
+    },
+    {
+      "id": "euroleague",
+      "sport": "basketball",
+      "name": "EuroLeague & BKT EuroCup Official Feeds",
+      "url": "https://www.euroleaguebasketball.net/en/euroleague/game-center/",
+      "role": "Round 7 EuroLeague & Round 4 EuroCup fixtures and W-L standings"
+    },
+    {
+      "id": "mlb",
+      "sport": "baseball",
+      "name": "MLB StatsAPI Official Postseason Schedule & Standings",
+      "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-28",
+      "role": "2026 World Series Games 1-4, home/road & postseason records"
+    },
+    {
+      "id": "atp",
+      "sport": "tennis",
+      "name": "ATP Tour Official Rankings & Draws (Vienna / Basel)",
+      "url": "https://www.atptour.com/en/scores/current",
+      "role": "ATP 500 draws, head-to-head match history, official PIF ATP rankings"
+    },
+    {
+      "id": "wta",
+      "sport": "tennis",
+      "name": "WTA Tour Official Rankings & Draws (Ningbo / Guangzhou / Tokyo)",
+      "url": "https://www.wtatennis.com/tournaments",
+      "role": "WTA 500 & WTA 250 draws, official PIF WTA rankings"
+    },
+    {
+      "id": "wst",
+      "sport": "snooker",
+      "name": "World Snooker Tour Official Rankings & BetVictor NI Open",
+      "url": "https://www.wst.tv/rankings/",
+      "role": "Official two-year world rankings (resolving tournament-seed confusion) & R2 draw"
+    },
+    {
+      "id": "pdc",
+      "sport": "darts",
+      "name": "Professional Darts Corporation Machineseeker European Championship",
+      "url": "https://www.pdc.tv/tournament/machineseeker-european-championship-1",
+      "role": "All 16 Round 1 ties, European Tour seeds 1-32, Westfalenhalle sessions"
+    },
+    {
+      "id": "icc-nzc",
+      "sport": "cricket",
+      "name": "ICC Official Rankings, New Zealand Cricket & Cricket Australia",
+      "url": "https://scoring.nzc.nz/fixtures",
+      "role": "Men's & Women's T20Is, ODI Tri-Series, NZ A v India A, Ford Trophy Round 1"
+    },
+    {
+      "id": "top14-urc",
+      "sport": "rugby-union",
+      "name": "LNR Top 14, United Rugby Championship & Premiership Rugby",
+      "url": "https://top14.lnr.fr/calendrier-et-resultats",
+      "role": "Top 14 J7, URC R4, plus 5 cross-checked Gallagher Premiership fixtures"
+    },
+    {
+      "id": "rlwc26",
+      "sport": "rugby-league",
+      "name": "NRL / 2026 Rugby League World Cup Official Draw & IRL Rankings",
+      "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026",
+      "role": "Men's & Women's RLWC26 Round 2 fixtures, venues, R1 scores"
+    },
+    {
+      "id": "ehf",
+      "sport": "handball",
+      "name": "European Handball Federation EHF Champions League Men",
+      "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+      "role": "All 12 Round 5 group fixtures, group tables, goal difference, H2H scores"
+    },
+    {
+      "id": "volley",
+      "sport": "volleyball",
+      "name": "PlusLiga Poland & Lega Pallavolo Serie A SuperLega",
+      "url": "https://www.plusliga.pl/games.html",
+      "role": "PlusLiga & Italian SuperLega regular-season fixtures, arenas, UTC times"
+    },
+    {
+      "id": "aflw",
+      "sport": "aussie-rules",
+      "name": "Australian Football League Official 2026 NAB AFLW Ladder & Fixture",
+      "url": "https://www.afl.com.au/aflw",
+      "role": "All 9 Round 11 AFLW fixtures, Round 10 ladder points & W-L-D records"
+    },
+    {
+      "id": "lolesports",
+      "sport": "esports",
+      "name": "Riot Games LoL Esports Worlds 2026 Official Schedule",
+      "url": "https://lolesports.com/en-US/",
+      "role": "2026 World Championship Swiss Round 1 draw & venue"
+    },
+    {
+      "id": "gaa",
+      "sport": "gaelic-football",
+      "name": "Munster GAA, Cork GAA & Galway GAA Official Championships",
+      "url": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/",
+      "role": "4 County Senior Football Finals (proving OLBG Nov 1 date bug on ID 3536)"
+    },
+    {
+      "id": "f1",
+      "sport": "motor-racing",
+      "name": "FIA Formula 1 Official 2026 United States Grand Prix",
+      "url": "https://www.formula1.com/en/racing/2026/united-states",
+      "role": "COTA Austin race timetable & 20:00 UTC lights out"
+    },
+    {
+      "id": "golf-tours",
+      "sport": "golf",
+      "name": "PGA TOUR, DP World Tour & LPGA Official Schedules",
+      "url": "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528",
+      "role": "4 active stroke-play tour events (event-only multi-runner cards)"
+    },
+    {
+      "id": "gbgb",
+      "sport": "greyhounds",
+      "name": "Greyhound Board of Great Britain Official Race Calendar",
+      "url": "https://www.gbgb.org.uk/",
+      "role": "UK licensed track cards proving OLBG 5h BST-to-EDT clock bug"
+    }
+  ]
+}
