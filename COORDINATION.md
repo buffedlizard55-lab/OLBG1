@@ -85,7 +85,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 
 | T17 | Live OLBG re-harvest of all 17 in-scope sport hubs + diff against the committed snapshot | done | 76950c25-olbg1 | `data/live_snapshot.json`, `data/live_diff.json`, `scripts/live_harvest.py` | 2026-10-21T07:10Z | Fresh fetch of every in-scope hub; per-event add/remove/consensus-change diff; no shared-file edits |
 | T18 | Official-source verification of refreshed/changed rows (MLB confirmation; other rows retain recorded governing-body sources) + unverified cards published blank | done | 76950c25-olbg1 | `scripts/dataset_rows_c.py`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `datasets/*`, `reports/SESSION_769_LIVE_REFRESH.md` | — | Blank-and-flag any value not confirmed on an official page |
-| T19 | Publish refresh on the dashboard (new Live Refresh + Flagged pages), validator gate, PR, merge and Pages deploy check | in progress | 76950c25-olbg1 | `live-refresh.html`, `flagged.html`, `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration for this session; append-only coordination log |
+| T19 | Publish refresh on the dashboard (new Live Refresh + Flagged pages), validator gate, PR, merge and Pages deploy check | done | 76950c25-olbg1 | `live-refresh.html`, `flagged.html`, `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration for this session; append-only coordination log |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -713,3 +713,23 @@ fields rather than being promoted.
 **Gates.** `python3 scripts/live_diff.py`, `build_dataset.py`, `origin_lines.py`, `build_site.py`
 (28 root + 28 mirror pages), `validate.py` (133 pages, 0 errors / 0 warnings) and
 `ebfbd966_validate.py` all pass. Full write-up: `reports/SESSION_769_LIVE_REFRESH.md`.
+
+## 17. Session `76950c25-olbg1` — publication record
+
+* **PR #26** — https://github.com/buffedlizard55-lab/OLBG1/pull/26 — merged 2026-10-21T07:10:15Z; merge commit
+  `affaa7a39dcc0b037e97e665aa18afc6b53781ef`.
+* **Pages verification:** GitHub Pages deployment run `39560126855` completed **success** for that merge commit.
+  The Pages API reports `status=built`, source branch `main`, public URL https://buffedlizard55-lab.github.io/OLBG1/.
+  The rendered page was fetched back at https://buffedlizard55-lab.github.io/OLBG1/live-refresh.html and confirms
+  the 141-card capture, the 69 verified joins with governing-body source links, and the 72 rows badged
+  **Unverified** with blank official-source cells.
+* **Delivered:** live recapture of all 17 in-scope OLBG hubs; 47 consensus/selection movements recorded with
+  `olbg.captured_utc`, `consensus_prior` and `selection_prior`; 72 upstream-only cards published blank and
+  unpriced; 18 rows logged as absent from the truncated first screen rather than as expired; six new
+  `F-LIVE-01`…`F-LIVE-06` findings including the MLB StatsAPI-confirmed clock conflict on event 160789.
+* **Gates at merge:** `scripts/validate.py` 133 pages / 0 errors / 0 warnings; `scripts/ebfbd966_validate.py`
+  PASSED; two consecutive full pipeline runs produced byte-identical `data/live_diff.json` and
+  `live-refresh.html`; `git diff --check` clean.
+* **Boundary carried forward:** aside from the MLB StatsAPI confirmation, no fixture fact was freshly re-fetched
+  in this pass. The 72 unjoined cards remain unverified by design and are excluded from the 134-event verified
+  count until an official source confirms them.
