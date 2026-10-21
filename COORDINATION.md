@@ -84,9 +84,9 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T16 | Corrective primary-desk provenance, status disclosure, integration and Pages publication | done | 4904ed05-olbg1 | `COORDINATION.md`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/flagged_for_review.json`, `scripts/validate.py`, root `*.html`, `sports/*.html`, `assets/*`, `README.md` | 2026-10-21T06:41Z | PR #24 merged; Pages workflow 39558245786 completed successfully. Remediated F1–F3 without changing independent review artifacts. |
 | T17 | Independent final-snapshot audit: reproduce structural gates, reconcile published-data counts/provenance, inspect GitHub Actions/Pages status, and record any verification limits without changing primary datasets | in progress | 5a353e83-olbg1 | `scripts/session_5a353e83_audit.py`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.md`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.html`, `COORDINATION.md` (append-only / task-board reconciliation) | 2026-10-21T07:08Z | Fresh non-overlapping audit; primary datasets and generated dashboard outputs remain untouched unless a separate integration handoff is required. |
 
-| T17 | Live OLBG re-harvest of all 17 in-scope sport hubs + diff against the committed snapshot | in progress | 76950c25-olbg1 | `data/live_snapshot.json`, `data/live_diff.json`, `scripts/live_harvest.py` | 2026-10-21T07:10Z | Fresh fetch of every in-scope hub; per-event add/remove/consensus-change diff; no shared-file edits |
-| T18 | Official-source verification of refreshed/changed rows + new verified fixtures, lines and predictions | queued | 76950c25-olbg1 | `scripts/dataset_rows_c.py`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `datasets/*`, `reports/SESSION_769_LIVE_REFRESH.md` | — | Blank-and-flag any value not confirmed on an official page |
-| T19 | Publish refresh on the dashboard (new Live Refresh + Flagged pages), validator gate, PR, merge and Pages deploy check | queued | 76950c25-olbg1 | `live-refresh.html`, `flagged.html`, `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration for this session; append-only coordination log |
+| T17 | Live OLBG re-harvest of all 17 in-scope sport hubs + diff against the committed snapshot | done | 76950c25-olbg1 | `data/live_snapshot.json`, `data/live_diff.json`, `scripts/live_harvest.py` | 2026-10-21T07:10Z | Fresh fetch of every in-scope hub; per-event add/remove/consensus-change diff; no shared-file edits |
+| T18 | Official-source verification of refreshed/changed rows (MLB confirmation; other rows retain recorded governing-body sources) + unverified cards published blank | done | 76950c25-olbg1 | `scripts/dataset_rows_c.py`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `datasets/*`, `reports/SESSION_769_LIVE_REFRESH.md` | — | Blank-and-flag any value not confirmed on an official page |
+| T19 | Publish refresh on the dashboard (new Live Refresh + Flagged pages), validator gate, PR, merge and Pages deploy check | in progress | 76950c25-olbg1 | `live-refresh.html`, `flagged.html`, `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration for this session; append-only coordination log |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -693,3 +693,29 @@ is left blank and listed on the Flagged for Review page.
   `72198d3e`, `8e12b936`, `a41abce4`, `aa4e9dbf`, `c17a9192`, `c5e985f4`, `ccb6bde2`,
   `ce5920e3`, `e92c2bf4`, `ebfbd966`, `f7fa77fc`) has commits ahead of `main` at claim time, so
   this session is the only live writer on these files.
+
+### T17–T19 execution record (session `76950c25-olbg1`)
+
+**2026-10-21T07:05Z — live recapture.** All 17 in-scope OLBG hubs were fetched and parsed into
+`data/live_snapshot.json` (141 cards; 15 sports with tips, Aussie Rules and eSports returned
+"No tips found", Rugby League returned 2027 outrights only). `scripts/live_diff.py` then compared
+the capture with the committed 134-row dataset by OLBG `event_id`: **69 joined**, **47 changed**
+(20 selection flips), **72 new/unverified**, **18 dataset rows absent from the truncated first
+screen**. The diff is reproducible from the repository (`data/live_diff.json`).
+
+**Refresh semantics.** `scripts/build_dataset.py` now overlays only OLBG's own upstream tip
+counter/selection on joined rows (with `olbg.captured_utc` and the superseded value preserved in
+`olbg.consensus_prior`). Sporting facts, prices, picks and confidence tiers are untouched; 68 rows
+were refreshed. Eighteen findings are published, six of them new (`F-LIVE-01` … `F-LIVE-06`).
+
+**Official verification performed.** The MLB World Series Game 2 card was re-verified against the
+official MLB StatsAPI (`https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24`):
+gamePk **849802**, Tampa Bay Rays at Milwaukee Brewers, American Family Field,
+`gameDate 2026-10-25T00:00:00Z`. OLBG labels the same card "24 Oct 01:00", which is flagged as
+`F-LIVE-06`. No other fixture fact was freshly re-fetched; those rows retain the governing-body
+source recorded on them, and the 72 unjoined cards are published as **Unverified** with blank
+fields rather than being promoted.
+
+**Gates.** `python3 scripts/live_diff.py`, `build_dataset.py`, `origin_lines.py`, `build_site.py`
+(28 root + 28 mirror pages), `validate.py` (133 pages, 0 errors / 0 warnings) and
+`ebfbd966_validate.py` all pass. Full write-up: `reports/SESSION_769_LIVE_REFRESH.md`.
