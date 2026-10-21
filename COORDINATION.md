@@ -633,3 +633,13 @@ Building directly on `origin/main` (`99a04c5`) while keeping every parallel dire
 * **PR #20** — https://github.com/buffedlizard55-lab/OLBG1/pull/20 — merged 2026-10-21T06:45:07Z; merge commit `a38aea253d0aba3277377e0e9c254fb44599c581`.
 * **Pages deploy:** GitHub Pages Actions run `39557381790` completed successfully; latest Pages build status `built`, error `null`. Rendered content was confirmed at https://buffedlizard55-lab.github.io/OLBG1/reports/POST_INTEGRATION_AUDIT.html (cache-busted fetch to bypass the old 404 cache).
 * **Final links gate:** 131 HTML files, 0 missing local href/src targets; both repository validators pass. No shared dashboard nav or datasets were edited.
+
+## 13. Independent second-pass market-coverage and link audit (session `e92c2bf4-olbg1`)
+
+**T15 done — report:** [`reports/SESSION_E92_SNAPSHOT_AUDIT.md`](reports/SESSION_E92_SNAPSHOT_AUDIT.md). The report documents structural verification of the snapshot and five bounded findings: dated/static fixture window; eight event-only cards without prices; `cric-nza-inda-fc1` lacks a total; validator/source-presence limits; and no field-by-field source proof. It does not claim fresh official-source verification.
+
+**Verification:** `python3 scripts/validate.py` — 54 root/mirror pages, 0 errors/warnings; `python3 scripts/ebfbd966_validate.py` — pass (133 records); independent full-tree link scan — 130 pages, 3,402 relative refs, 0 unresolved targets with directory-index handling. Fixture copies and consolidated IDs align (134 rows); 126 H2H lines and 31 high-prediction IDs align. Source-link counts are syntactic only.
+
+**Rebase/conflict log (2026-10-21):** while pushing this branch, `origin/main` advanced from `8458584` to `5b23b9a` with another session's T13/T14 audit additions. Rebase conflicted in `COORDINATION.md` because both sessions used T13 and appended adjacent audit notes. Resolution preserved the other session's T13/T14 entries verbatim, renumbered this distinct task to T15, kept this session's report and log in separate files/section, and preserved all changes from both sessions.
+
+**Integration request:** add the report's findings A–D to the root Flagged for Review page and retain the snapshot window. Those generated pages/datasets are shared integration scope and were not edited here.
