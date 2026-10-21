@@ -26,11 +26,11 @@ sessions on their own Arena branches should follow the same file-claim disciplin
 | # | Task | Status | Owner | File scope |
 |---|---|---|---|---|
 | T1 | Reverse-engineer OLBG.com structure (sports, URL patterns, markets) | done | 4f44f7d9 | `research/olbg-structure.md` |
-| T2 | Collect full match list for covered sports (excl. soccer/football, boxing/UFC/MMA, American football, hurling, horse racing, cycling, specials) from OLBG sport pages, snapshot 2026-10-21 | in progress | 4f44f7d9 | `data/matches.csv`, `data/matches.json`, `data/README.md` |
-| T3 | Originate own lines + winner pick + confidence (low/medium/high) per match; document market availability per sport | in progress | 4f44f7d9 | `data/matches.csv`, `data/matches.json`, `research/methodology.md`, `research/markets.md` |
-| T4 | High-confidence write-ups (≥30 words, verified facts only, official sources) | in progress | 4f44f7d9 | `docs/high-confidence.html`, `research/verification-log.md` |
-| T5 | GitHub Pages dashboard site (landing + per-sport subpages + markets + methodology + flagged) | in progress | 4f44f7d9 | `docs/**` |
-| T6 | Line-by-line verification pass; every row has OLBG source link; unconfirmed values blank + flagged | in progress | 4f44f7d9 | `research/verification-log.md`, `docs/flagged.html` |
+| T2 | Collect full match list for covered sports (excl. soccer/football, boxing/UFC/MMA, American football, hurling, horse racing, cycling, specials) from OLBG sport pages, snapshot 2026-10-21 | done (164 events, 15 sports) | 4f44f7d9 | `data/matches.csv`, `data/matches.json`, `data/README.md` |
+| T3 | Originate own lines + winner pick + confidence (low/medium/high) per match; document market availability per sport | done (5 High / 25 Medium / 134 Low) | 4f44f7d9 | `data/matches.csv`, `data/matches.json`, `research/methodology.md`, `research/markets.md` |
+| T4 | High-confidence write-ups (≥30 words, verified facts only, official sources) | done (5 write-ups, 108–111 words each) | 4f44f7d9 | `docs/high-confidence.html`, `research/verification-log.md` |
+| T5 | GitHub Pages dashboard site (landing + per-sport subpages + markets + methodology + flagged) | done (20 pages, link-checked) | 4f44f7d9 | `docs/**` |
+| T6 | Line-by-line verification pass; every row has OLBG source link; unconfirmed values blank + flagged | done (12 flags F-01…F-12 on Flagged page = needs review, non-blocking) | 4f44f7d9 | `research/verification-log.md`, `docs/flagged.html` |
 | T7 | Final integration: re-verify combined data, check build/links, enable Pages, PR to main + merge, confirm deploy | unclaimed → claimed by 4f44f7d9 as integrator (single-session run; no other session has claimed work) | 4f44f7d9 | all (integration only) |
 
 ## Log
@@ -44,8 +44,19 @@ sessions on their own Arena branches should follow the same file-claim disciplin
 
 ## Sources & verification record (filled on completion)
 
-_To be completed in T6/T7: sources used, verification performed, irregularities,
-PR link and merge result._
+- **Sources:** OLBG.com live pages (sport + event pages, linked per row in
+  `data/matches.csv`); official checks for High picks: NBA.com game 0022600086,
+  ICC series announcement, PDC schedule/draw (19 & 18 Oct 2026), WTA Ningbo
+  player list (+ ESPN results/rankings as corroboration).
+- **Verification performed:** `research/verification-log.md` — event-page
+  spot-checks agreed with sport-page counts; High prices hand re-derived;
+  automated checks: 0 broken internal links, 0 rows without OLBG source,
+  bookmaker-odds field blank 164/164 (prices not visible on OLBG).
+- **Irregularities:** F-01…F-12 on `docs/flagged.html` (status: needs review,
+  non-blocking per brief). Headlines: pagination limit, timezone unstated,
+  odds invisible, one contradictory darts tip (F-04), one wrong team-news
+  claim corrected via NBA.com (F-05), cricket venue conflict (F-06).
+- **PR / merge / Pages:** _recorded below after T7._
 
 ## Cross-session requests
 
