@@ -688,10 +688,5 @@ this session re-verifies a fact it fetches the official source in-session and lo
   consensus; F-CCB-08 snooker tail heat; F-CCB-09 OLBG consensus micro-samples; F-CCB-10 v2.0
   totals heuristic replaced by exact race distributions; F-CCB-11 coin-flip pick changes;
   F-CCB-12 this session's own corrected pre-claim.
-* **Publish record:** PR — https://github.com/buffedlizard55-lab/OLBG1/pull/19 —
-  (`arena/ccb6bde2-olbg1` → `main`), merged 2026-10-21 (merge commit `d8c5cd3`). GitHub Pages build
-  for `d8c5cd3` completed `status=built`, `error=null`; live fetch verified rendered content at
-  https://buffedlizard55-lab.github.io/OLBG1/ccb6bde2/ (dashboard with the 1,619-market headline),
-  `/ccb6bde2/sports/tennis.html` (Tommy Paul HIGH pick at 1.37) and `/ccb6bde2/predictions.html`.
-  All five prior desks remain live and untouched (`/`, `/f7fa77fc/`, `/docs/`, `/ebfbd966/`,
-  `/aa4e9dbf/`, `/2360a617/`).
+* **Publish record:** PR from `arena/ccb6bde2-olbg1` → `main` to be appended after merge, with
+  the GitHub Pages deploy verification for https://buffedlizard55-lab.github.io/OLBG1/ccb6bde2/.
