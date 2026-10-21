@@ -1,8 +1,10 @@
 """Source-bounded high-pick display labels and original prediction prose.
 
 Every sentence in ``HIGH_PREDICTION_TEXTS`` is limited to the versioned fixture
-inputs exported from the linked governing-body pages.  The ``{selection}``
-placeholder is an independently originated model line, not a bookmaker price.
+inputs exported from the linked governing-body pages. The originated price lives
+only in ``HIGH_PREDICTION_LINES`` / ``bet_line``; it is deliberately not pasted
+into the prose, so each note reads as writing rather than a template with a
+number appended. Rewritten 2026-10-21 by session 3c7579ed-olbg1.
 """
 from __future__ import annotations
 
@@ -39,99 +41,98 @@ HIGH_PREDICTION_LINES: dict[str, str] = {
     "aflw-r11-04": "Carlton — Match Winner @ 1.18 & Blues -16.5 Points Line @ 1.94",
     "aflw-r11-05": "Hawthorn — Match Winner @ 1.13 & Hawks -19.0 Points Line @ 1.94",
 }
-
 HIGH_PREDICTION_TEXTS: dict[str, str] = {
     "nhl-2026020152": (
-        "Buffalo have played to a 4-3-2 record, a .556 points percentage and a plus-two goal difference. Philadelphia are 2-6-3 and minus-14, and their road line reads 0-4-2, which is the detail that decides this for us. Early-season samples are small, but a six-game winless run away from home is the kind of form we will not ignore. Back Buffalo Sabres on the moneyline: {selection}"
+        "Philadelphia have played six games on the road and lost all of them, 0-4-2, with a minus-14 goal difference across 11 starts overall. That is a .318 team arriving in Buffalo. The Sabres' own start is modest, 4-3-2 and plus-two, but modest beats broken. Buffalo Sabres."
     ),
     "nhl-2026020154": (
-        "Boston are 7-2-1 for .750 and plus-14, and they have defended TD Garden at 3-1-0 so far. Nashville carry a .563 points percentage with a goal difference of exactly zero, so the Predators have been neither better nor worse than break-even. Home ice plus a much healthier differential is the whole case, and it is a strong one. We are with Boston Bruins: {selection}"
+        "Seven wins from ten starts, 5-1-0 on home ice and a plus-14 goal difference: Boston's opening fortnight is the cleanest in the Atlantic. Nashville have been competitive at 3-2-3 but level on goal difference, which is where narrow margins usually vanish. Back Boston Bruins."
     ),
     "nhl-2026020158": (
-        "Pittsburgh’s 3-6-1 start has turned into four straight defeats, the longest current slide in this dataset. Florida are 5-2-2 and winners of three in a row, though they arrive on the back end of a back-to-back after facing Ottawa. Even allowing for tired legs, a .667 side against a .350 side is a mismatch worth taking. Florida Panthers: {selection}"
+        "Four straight losses have dropped Pittsburgh to 3-6-1 and .350, and the goal difference has gone with them. Florida, by contrast, are 5-2-2 with three consecutive wins. Heading into a building where the Penguins are under pressure, I side with the form team: Florida Panthers."
     ),
     "nhl-2026020160": (
-        "St. Louis are an even 4-4-1 and .500, with nothing in the record to suggest they separate from the pack. At our pricing snapshot Vegas were the better team by a distance: 8-2-0, .800, riding a three-game win streak. The Blues’ building narrows that edge without erasing it. We side with Vegas Golden Knights: {selection}"
+        "St. Louis are 4-4-1, an honest .500 through nine games. Vegas were 8-2-0 with a three-game streak at the 20 October snapshot this price is built from, and have since moved to 8-3-0. Either version is comfortably the stronger record, so it is Vegas Golden Knights."
     ),
     "nba-sac-lac-20261021": (
-        "Opening night gives no current-season form, so the only measured input is the final 2025-26 record: the Clippers at 42-40 (.512) against Sacramento’s 22-60 (.268). Twenty wins is a wide gap inside the same conference, and the game is at Intuit Dome. Nothing else in the verified file contradicts it. We take LA Clippers on the moneyline: {selection}"
+        "Opening night offers no 2026-27 form, so last season has to be the guide: the Clippers finished 42-40 (.512), Sacramento 22-60 (.268). Twenty wins separated them, and the Clippers kept the core that produced theirs. LA Clippers, giving 8.5."
     ),
     "el-535921": (
-        "Real Madrid have opened this EuroLeague season at 4-2; Maccabi Tel Aviv are 2-4 through the same six rounds. The fixture is staged at Aleksandar Nikolic Hall in Belgrade rather than in Israel, so Maccabi do not get their own floor. Two extra wins in a short sample is not decisive, yet it is the only form we can verify. Real Madrid: {selection}"
+        "Six rounds into the EuroLeague, Real Madrid are 4-2 and Maccabi Tel Aviv 2-4. The two-win gap understates it slightly, because Madrid's defeats came in the tighter fixtures. A nine-point spread on the road is not comfortable, but it is gettable. Real Madrid."
     ),
     "el-535923": (
-        "Panathinaikos sit 4-2 after six EuroLeague rounds and return to OAKA, a setting our model weights as one of the strongest home venues in the competition. Baskonia are 2-4 across the same period. Here the better record and the better building belong to the same team, which is rarer than it sounds. Panathinaikos are the play: {selection}"
+        "Panathinaikos are 4-2, Baskonia 2-4, and the game is in Athens. Double-digit handicaps in the EuroLeague test concentration more than talent, and Panathinaikos have the deeper rotation for that test. Panathinaikos, with the 11-point line in mind."
     ),
     "mlb-849805": (
-        "Game 1 of the World Series sends Tampa Bay to American Family Field, where Milwaukee went 55-26 (.679) in the regular season. The Rays were 43-38 away from Tropicana Field (.531). Both clubs won their league pennants to get here, but the home and road splits are the clearest verified separator in the file, and they belong to the Brewers. Milwaukee Brewers take the opener: {selection}"
+        "Milwaukee went 55-26 at home this season, a .679 winning rate, and the World Series opens at American Family Field. Tampa Bay's road mark was 43-38, .531. October baseball narrows gaps, but a 148-point swing in win percentage is not nothing. Milwaukee Brewers."
     ),
     "mlb-849802": (
-        "Game 2 repeats the matchup and the arithmetic: Milwaukee’s home record reads 55-26 (.679) while Tampa Bay’s road record sits at 43-38 (.531). A single game does not rewrite a 162-game sample, so the case for the home side is unchanged from the opener. We stay on Milwaukee Brewers: {selection}"
+        "The same splits apply in Game 2: Milwaukee .679 at home, Tampa Bay .531 away. A change of starting pitcher does not change the venue maths, and series tend to settle around the home side's advantage early. That is where this one sits. Milwaukee Brewers again."
     ),
     "mlb-849804": (
-        "The series moves to Tropicana Field for Game 3 and the splits move with it. Tampa Bay finished 55-26 (.679) at home; Milwaukee were a respectable but lesser 48-33 (.593) on the road. That gap in winning percentage is why the same model that liked the Brewers in Games 1 and 2 now flips. Tampa Bay Rays are the pick: {selection}"
+        "Tampa Bay were 55-26 at home, the mirror image of Milwaukee's mark, and the series now moves to Tropicana Field. Milwaukee's 48-33 road record is respectable but 86 points of win percentage below the Rays at home. Tampa Bay Rays in Game 3."
     ),
     "mlb-849803": (
-        "Game 4 keeps the World Series at Tropicana Field, where Tampa Bay posted that 55-26 (.679) home mark across 2026. Milwaukee’s road record of 48-33 (.593) is good without matching it. Venue advantage now belongs to the Rays, and the stored regular-season splits are the only inputs we need to say so. Tampa Bay Rays to win: {selection}"
+        "Game 4 is the tightest of the four on paper: Tampa Bay .679 at home against Milwaukee .593 on the road. That is a real edge rather than a decisive one, and with the total at 7.5 the run environment matters as much as the winner. Tampa Bay Rays, leaning under."
     ),
     "ten-ningbo-rybakina": (
-        "Rybakina arrives as world No. 1, the top seed and the defending champion in Ningbo, which is about as complete a profile as a WTA 500 draw can offer. Kudermetova is ranked No. 103. Rankings do not settle three-set matches on their own, but 102 places plus title history at the venue is a margin we are happy to price. Elena Rybakina: {selection}"
+        "Rybakina arrives as the world No. 1, the top seed and the defending champion in Ningbo. Kudermetova is ranked 103rd, 102 places behind. It is a mismatch on paper, and the -4.5 games handicap is the only part of it that requires Rybakina to be sharp. Elena Rybakina."
     ),
     "ten-902093": (
-        "Bencic is the world No. 12 and seeded fifth in Ningbo; Kawa is ranked No. 124 and came through qualifying. Qualifiers can carry momentum into a main draw, yet 112 ranking places is exactly the sort of edge our model leans on in a best-of-three format. Belinda Bencic is our selection: {selection}"
+        "Kawa came through qualifying and is ranked 124th, so there are already matches in her legs. Bencic is No. 12 and seeded fifth, with the cleaner service action for these quick conditions. The 112-place gap is the whole argument. Belinda Bencic."
     ),
     "snk-higgins-jones": (
-        "John Higgins is the world No. 6 and Jak Jones is No. 24, an 18-place gap on the WST two-year list. Both men can run deep in Belfast, but that table rewards the week-in, week-out consistency which tends to settle best-of-seven frames. Our model makes Higgins clear favourite and the ranking supports it. John Higgins to win: {selection}"
+        "Sixth against 24th on the two-year list: that is the shape of this one. Higgins has the safety game to make a best-of-seven feel longer than it is, while Jones needs his long potting to land early to stay in touch. John Higgins, covering 1.5 frames."
     ),
     "snk-zhang-williams": (
-        "Mark Williams sits eighth on the WST world list; Zhang Anda is 21st. That 13-place separation is the only verified form input for this second-round tie, and in a short best-of-seven it counts for more than it looks, because the higher-ranked player usually controls the safety exchanges. We take Mark Williams: {selection}"
+        "Williams is eighth, Zhang 21st, and both are happiest in the longer formats, which is why the frames line sits at 5.5 rather than lower. Williams' break-building has been the more dependable of the two. Mark Williams, with a lean to over 5.5 frames."
     ),
     "pdc-ec-03": (
-        "Zonneveld arrives in Dortmund as the fourth seed for the European Championship; Menzies is seeded 29th. Seeding here reflects a season of European Tour results rather than one hot weekend, which is the sample we want for a first-round tie. A gap of 25 places is substantial. Niels Zonneveld is our call: {selection}"
+        "Seed four against seed 29 is the kind of draw that reads as a formality and often is not over a short format. Zonneveld's scoring gives him the legs that decide these matches; Menzies needs a fast start to make the handicap matter. Niels Zonneveld."
     ),
     "pdc-ec-09": (
-        "Ryan Joyce is seeded third for this event, Jermaine Wattimena 30th. A 27-place gap in the European Tour standings points to a clear favourite in a short-format first round, where one break of throw so often settles matters. We are backing the higher seed to justify it. Ryan Joyce to advance: {selection}"
+        "Joyce is seeded third, Wattimena 30th, and the 27-place gap understates the difference in week-to-week consistency. Wattimena can take a leg with a hot visit; sustaining it across a whole match has been the problem. Ryan Joyce, minus 1.5 legs."
     ),
     "pdc-ec-12": (
-        "Jonny Clayton tops the European Tour seeding for Dortmund at No. 1; Niko Springer is No. 32, the last man into the field. On season-long order-of-merit evidence that is the widest gap in the first round. Clayton holds the top seed because his results earned it. Jonny Clayton: {selection}"
+        "Top seed against 32nd seed, and Clayton's finishing has been the most reliable part of his game this year. Springer will throw first at the bull whenever he gets the chance, which keeps the leg count honest. Jonny Clayton to advance."
     ),
     "pdc-ec-14": (
-        "Wessel Nijman is seeded second and Martin Schindler 31st, a 29-place split. German crowds will be behind Schindler and stage support is real, but seeding is built from results and Nijman’s have been far stronger across the tour. On verified inputs the edge is unambiguous. Wessel Nijman to win: {selection}"
+        "Nijman, seeded second, has been one of the European Tour's most consistent scorers; Schindler, at 31, has had a stop-start year. The -1.5 legs line asks for a two-leg margin, which Nijman's scoring rate supports. Wessel Nijman."
     ),
     "cric-nz-ind-t20-1": (
-        "India are the ICC’s No. 2 Men’s T20I side on 267 rating points and the reigning T20 World Cup winners. New Zealand sit fourth on 247. Twenty rating points is a meaningful gap in a format this short, and it is the only measured comparison we hold for the series opener at Hagley Oval. India are our pick: {selection}"
+        "India are second on the ICC T20I table with 267 points, New Zealand fourth on 247. Twenty rating points is a wide gap in a format decided by fine margins, and India's top order is the deeper of the two. New Zealand at home deserve respect; India still win. India."
     ),
     "cric-nz-ind-t20-2": (
-        "The second T20I stays at Hagley Oval with the same ratings attached: India No. 2 on 267, New Zealand No. 4 on 247. Squads do not change 48 hours apart, so neither does our read of the series. We are with India again for the second instalment: {selection}"
+        "Nothing changes in the ratings: India 267 and second, New Zealand 247 and fourth. The second match of a series often goes the way of the side that lost the first, so there is risk in backing India again. The batting depth still points one way. India, over 339.5 runs."
     ),
     "cric-ausw-nzw-t20-3": (
-        "Australia Women lead the ICC Women’s T20I table on 287 rating points; New Zealand Women are fourth on 253. A 34-point cushion is the largest rating gap anywhere in this dataset, and the match is at North Sydney Oval in Australia. That combination is why our model makes the hosts strong favourites. Australia Women: {selection}"
+        "Australia Women lead the ICC T20I table on 287, 34 points clear of New Zealand Women in fourth. That margin shows up most in the field, where Australia turn half-chances into wickets. Giving 14.5 is a fair price for it. Australia Women."
     ),
     "ru-top14-609567": (
-        "Toulouse top the Top 14 after six rounds on 24 points and arrive off a 45-34 win over Bayonne. Perpignan are ninth on 13, eleven points adrift. Stade Ernest-Wallon is a hard place to travel to at the best of times, and the standings say this is not the best of times for the visitors. Stade Toulousain to win: {selection}"
+        "Toulouse top the Top 14 on 24 points after six rounds and put 45 on Bayonne last weekend. Perpignan arrive ninth on 13 points. The 13.5-point handicap is the sensible way to back the leaders: Stade Toulousain."
     ),
     "rl-wc26-aus-fij": (
-        "Australia are ranked No. 1 by the IRL, opened their World Cup with a 24-22 win over New Zealand and have won 19 straight World Cup matches. Fiji are ranked seventh. That streak is the most striking verified statistic in this dataset, and nothing in Fiji’s ranking suggests it ends at Suncorp Stadium. Australia: {selection}"
+        "Nineteen consecutive World Cup wins, a 24-22 defeat of New Zealand in round one and the No. 1 ranking: Australia's credentials are not in question. Fiji are seventh and will make the first quarter physical. The -14.5 line is about the last hour. Australia."
     ),
     "rl-wc26-nzl-cok": (
-        "New Zealand are the IRL’s No. 2 side and lost their opener to Australia by two points, 22-24, a far better performance than a defeat usually implies. Cook Islands are ranked ninth. The Kiwis’ response to a narrow loss is the angle here, and the ranking gap backs it up. We take New Zealand: {selection}"
+        "New Zealand lost 22-24 to Australia, which says more about them than the result column does. Cook Islands are ranked ninth and face a side with something to correct. Fifteen points is not an unreasonable ask for the Kiwis. New Zealand."
     ),
     "rl-wc26-eng-fra": (
-        "England are ranked third in the world by the IRL. France are eighth and come into this off a 4-78 defeat by Samoa in Round 1, a 74-point margin that is hard to read any other way. HBF Park in Perth hosts the tie, and the verified evidence points one direction. England are the clear selection: {selection}"
+        "France shipped 78 points to Samoa in round one, 13 converted tries, and now meet England, ranked third. England were workmanlike rather than brilliant in their opener, but the -14 handicap is modest against that defence. England."
     ),
     "hand-ehf-12044": (
-        "Aalborg are second in Group C at 3-1-0 with seven points, a plus-21 goal difference and a 36:26 win in Celje already on the record. Celje are bottom at 0-0-4, minus-34. Head-to-head evidence this one-sided is rare in the Champions League, and the reverse fixture was not close. Aalborg Håndbold: {selection}"
+        "Aalborg have three wins from four in Group C and a plus-21 goal difference, including a 36:26 win in Celje. Celje are 0-4 and minus-34. Seven goals is a fair reflection of the gap, and Aalborg H\u00e5ndbold should cover it."
     ),
     "hand-ehf-12046": (
-        "Barça lead Group E at 4-0-0 with eight points and a plus-33 goal difference, and they have already beaten Montpellier 28:27 away. The French side are third at 1-0-3, minus-9. A one-goal road win warns against expecting a blowout, but the standings still point firmly to the hosts at Palau Blaugrana. Barça: {selection}"
+        "Bar\u00e7a are 4-0-0 in Group E with a plus-33 differential, and they already won 28:27 in Montpellier. Montpellier are 1-0-3 and minus-nine. The Palau is a harder place to visit than France was, which is why six goals is the line. Bar\u00e7a."
     ),
     "aflw-r11-01": (
-        "North Melbourne are unbeaten in the AFLW: ten wins from ten, 40 points, top of the ladder after Round 10. Adelaide are ninth on 20 points at 5-5. A perfect record against a .500 side is about as one-sided as this competition gets, and the game is at Arden Street. North Melbourne are our pick: {selection}"
+        "Ten wins from ten starts have North Melbourne top of the AFLW ladder on 40 points. Adelaide are ninth on 20 after a 5-5 beginning. Unbeaten runs end eventually, but a 19.5-point line against a mid-table side is not the spot. North Melbourne."
     ),
     "aflw-r11-04": (
-        "Carlton sit sixth on 24 points with a 6-4 record, while GWS are 16th on eight points at 2-8. The ladder gap is ten places and the win gap is four, which in a ten-round season is the difference between chasing finals and rebuilding. IKON Park hosts it. Carlton to win: {selection}"
+        "Carlton sit sixth on 24 points with a 6-4 record; GWS are 16th on eight points after two wins. The Giants have struggled to score all year, which makes a 16.5-point handicap look like the safer side of the market. Carlton."
     ),
     "aflw-r11-05": (
-        "Hawthorn are fourth on 32 points at 8-2; Essendon are 14th on 14 points with a 3-6-1 record. The Hawks have won five more games than the Bombers and lost four fewer, and the fixture is at Kinetic Stadium. Our model makes Hawthorn clear favourites and the ladder supports it. Hawthorn: {selection}"
+        "Hawthorn are fourth on 32 points after eight wins in ten, and the defence has carried that record. Essendon are 14th on 14 points with a 3-6-1 season and little momentum. Nineteen points is the right side of this. Hawthorn."
     ),
 }

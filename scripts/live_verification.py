@@ -67,7 +67,11 @@ SOURCES: dict[str, dict[str, str]] = {
     },
     "nrl": {
         "name": "NRL / Rugby League World Cup 2026 Round 2 draw",
-        "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+        "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/",
+    },
+    "irl": {
+        "name": "IRL official fixtures & match records (RLWC26 Round 2)",
+        "url": "https://www.intrl.sport/fixtures-results",
     },
     "nzc": {
         "name": "New Zealand Cricket official fixtures & results service",
@@ -229,12 +233,22 @@ FLAGGED: dict[str, dict[str, str]] = {
     },
 }
 
+CORRECTED.update({
+    "rl-wc26-tga-lbn": {"src": "irl", "evidence": "IRL match record 2569: Tonga v Lebanon, CommBank Stadium, Fri 23 Oct 20:05 local (09:05Z) — participants, venue and start agree.", "change": "Legacy nrl.com/draw/?competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2569."},
+    "rl-wc26-png-sam": {"src": "irl", "evidence": "IRL match record 2570: Papua New Guinea v Samoa, Santos National Football Stadium, Sat 24 Oct 14:25 local (04:25Z) — agree.", "change": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2570."},
+    "rl-wc26-eng-fra": {"src": "irl", "evidence": "IRL match record 2571: England v France, HBF Park Perth, Sat 24 Oct 14:35 local (06:35Z) — agree.", "change": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2571."},
+    "rl-wc26-nzl-cok": {"src": "irl", "evidence": "IRL match record 2572: New Zealand v Cook Islands, One NZ Stadium, Sun 25 Oct 18:05 local (05:05Z) — agree.", "change": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2572."},
+    "rl-wc26-aus-fij": {"src": "irl", "evidence": "IRL match record 2573: Australia v Fiji, Suncorp Stadium, Sun 25 Oct 19:05 local (09:05Z) — agree.", "change": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2573."},
+    "rl-wc26w-aus-eng": {"src": "irl", "evidence": "IRL match record 2588: Australia v England, HBF Park Perth, Sat 24 Oct 17:05 local (09:05Z) — agree.", "change": "Legacy competition=176 link (which resolves to the men's competition 131) replaced with the official women's Round 2 draw page plus IRL match record 2588."},
+    "rl-wc26w-sam-wal": {"src": "irl", "evidence": "IRL match record 2586: Samoa v Wales, CommBank Stadium, Fri 23 Oct 17:50 local (06:50Z). The NRL draw publishes 2:45am AEDT (06:45Z).", "change": "Legacy competition=176 link replaced with the official women's Round 2 draw. Kick-off conflict disclosed on the row: 06:45Z (NRL) vs 06:50Z (IRL); neither is inferred away."},
+})
+
 # ---------------------------------------------------------------------------
 # Why a row was not re-checked in this pass (no silent gaps)
 # ---------------------------------------------------------------------------
 NOT_RECHECKED_REASON: dict[str, str] = {
     "darts": "PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
-    "tennis": "WTA draw pages are client-rendered and returned only the notification shell with no draw body; ATP draws behave the same way. Rankings pages were not re-read either.",
+    "tennis": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
     "euroleague": "EuroLeague / EuroCup game-centre pages are client-rendered and were not re-fetched in this pass.",
     "volleyball": "PlusLiga and SuperLega fixture pages were not re-fetched in this pass.",
     "rugby-union": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
@@ -306,7 +320,7 @@ FINDINGS: list[dict[str, str]] = [
         "severity": "medium",
         "area": "Tennis — official draws are client-rendered",
         "detail": "WTA and ATP draw pages return a notification shell without draw content to a text fetch, so pairings cannot be re-read from the tour sites.",
-        "status": "11 tennis rows marked not re-checked.",
+        "status": "11 tennis rows marked not re-checked and now flagged as reconstructed from Round-of-32 results plus byes.",
         "source": "wta",
     },
     {

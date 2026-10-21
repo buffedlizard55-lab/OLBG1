@@ -42,6 +42,13 @@ WST_RANK = {"name": "WST official Johnstone's Paint World Rankings", "url": "htt
 PDC_DRAW = {"name": "PDC official 2026 European Championship draw & schedule", "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"}
 
 
+TENNIS_RECONSTRUCTED = (
+    "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 "
+    "match, but the match has not been played so no official results feed lists it and the draw widget is "
+    "client-rendered. Start time follows rolling order of play and is blank."
+)
+
+
 def get_rows_a() -> list[dict]:
     rows: list[dict] = []
 
@@ -419,5 +426,9 @@ def get_rows_a() -> list[dict]:
             },
             "flags": ["OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"],
         })
+
+    for row in rows:
+        if row["sport"] == "tennis" and TENNIS_RECONSTRUCTED not in row["flags"]:
+            row["flags"].append(TENNIS_RECONSTRUCTED)
 
     return rows
