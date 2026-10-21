@@ -121,3 +121,28 @@ confirmed OLBG's draw (the flag had rested on a stale search snippet); its Gaeli
 fixtures (24 Oct–1 Nov, OLBG-listed) do not contradict the main build's inter-county verified
 negative for 21–25 Oct — different levels/calendars, both labelled.
 
+
+---
+
+## Parallel board: `aa4e9dbf/` desk (session `aa4e9dbf-olbg1`)
+
+A fourth independently built desk, published alongside the root dashboard, the `docs/` board
+and the `ebfbd966/` desk (see `COORDINATION.md` §9). All outputs are namespaced so nothing
+of the other sessions is touched:
+
+| Output | Where |
+|---|---|
+| 131-event dataset (14 covered sports, 2026-10-21 snapshot) | `tools/data_a.py`, `tools/data_b.py`, `tools/data_c.py` → `data/matches-aa4e9dbf-olbg1.json`, `data/sports-aa4e9dbf/*.json` |
+| OLBG structure reverse-engineering (sport IDs, URL patterns, market maps) | `data/olbg-structure-aa4e9dbf.json` |
+| Static desk (18 pages: landing, 14 sports, predictions, flagged, methodology) | `aa4e9dbf/` — served at `/OLBG1/aa4e9dbf/` |
+| Builder | `python3 tools/build_site.py` |
+
+Differences worth cross-reading: this desk embeds a **source link on every individual fact**
+(standings, H2H, seedings, results), not only per row; it verified the EHF Champions League
+round 5, EuroCup round 7, URC round 4, Top 14/ProD2, ATP/WTA draws and the PDC European
+Championship first round against official pages; and it documents OLBG's **start-time bug**
+(NBA/NHL/F1/darts/snooker times shown incorrectly on OLBG itself) as a finding.
+
+It applies stricter exclusions than the other boards (Gaelic Football, Aussie Rules and
+Greyhounds are excluded as judgment calls and flagged), which is recorded as an
+interpretation difference, not a data conflict.

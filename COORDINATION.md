@@ -406,3 +406,97 @@ integrated additively:
    Mirrored on `ebfbd966/flagged.html`.
 
 **Integration record (arena/ebfbd966, 2026-10-21):** PR [#9](https://github.com/buffedlizard55-lab/OLBG1/pull/9) **MERGED** 2026-10-21T05:30:57Z (merge commit `c19df1d`). GitHub Pages rebuilt successfully (status `built`, source `main:/` unchanged). Live verification by direct fetch: root dashboard `/OLBG1/` intact (49-match verified build), this desk live at `/OLBG1/ebfbd966/` (133 matches, HIGH previews rendering), companion board at `/OLBG1/docs/`. Combined-tree link check across 64 HTML files: zero genuinely broken internal refs (16 apparent hits are 404.html's intentional absolute `/OLBG1/` paths, correct when deployed). No other session's files deleted (`git diff --diff-filter=D origin/main..HEAD` empty at merge). Remaining needs-review items stand as listed in entry 4 above and on `ebfbd966/flagged.html`.
+
+---
+
+## 9. Parallel session `aa4e9dbf-olbg1` (branch `arena/aa4e9dbf-olbg1`) — integration record
+
+**What happened.** This session started from the same empty-repo commit (`8b43e82`) at the same
+time as the others, created its own task board (preserved in git history on its branch,
+commit `ced8b6e`), and independently completed the whole brief: OLBG structure
+reverse-engineering, harvest of all events listed on the 14 covered-sport hub pages
+(2026-10-21 ~05:00–08:00 UTC), official-source verification, independently originated lines,
+picks with confidence tiers, nine 66–92-word high-confidence predictions, and a static desk.
+The overlap with `main` was discovered at PR time (PR **#13**); per §0.4 it was resolved
+additively — **no other session's files were modified or deleted**.
+
+**Scope/files (non-overlapping after relocation):**
+
+- `aa4e9dbf/` — this session's desk (18 pages: landing, 14 sport pages, predictions,
+  flagged-for-review, methodology, assets). Served at `/OLBG1/aa4e9dbf/`.
+- `data/matches-aa4e9dbf-olbg1.json`, `data/sports-aa4e9dbf/*.json` — dataset (131 events).
+- `data/olbg-structure-aa4e9dbf.json` — OLBG taxonomy (22 sports with IDs, URL grammar,
+  per-sport market maps).
+- `tools/data_a.py`, `tools/data_b.py`, `tools/data_c.py`, `tools/build_site.py` — dataset
+  source + builder (`python3 tools/build_site.py` regenerates the desk).
+
+**Content:** 131 events (Basketball 15, Tennis 15, Ice Hockey 7, Baseball 1, Cricket 9,
+Rugby Union 15, Darts 16, Snooker 6, Golf 10, Handball 16, Volleyball 14, Motor Racing 3,
+Rugby League 3, eSports 1). Verification: **31 verified** on a governing-body page, **78
+partial** (competition/date confirmed, official league page linked), **22 unverified —
+values left blank and flagged, never inferred**. 113 events carry originated vig-free lines
+(money line / handicap / total, plus outright boards for golf/F1); every verified/partial
+event carries a pick graded low/medium/high; 9 high-confidence picks each have a written
+prediction (66–92 words) whose facts each carry their own source link.
+
+**Verification performed (official pages fetched):** nba.com (schedule + team pages),
+nhl.com gamecenter + nationally-televised release, MLB.com postseason schedule + Rays/Brewers
+WS G1 preview, atptour.com (draws: Almaty 9410, Lyon 496, Brussels 7485 + scouting report),
+wtatennis.com (Ningbo), hapoelbc.com EuroLeague schedule + euroleaguebasketball.com standings,
+EuroCup official printable calendar PDF (ftpserver.euroleague.net), championsleague.basketball,
+ehfcl.eurohandball.com + eurohandball.com R5 preview, unitedrugby.com, top14.lnr.fr,
+prod2.lnr.fr, pdc.tv draw release (cross-checked via Sky/dartsnews), wst.tv + snooker.org
+(event 2548), formula1.com (US GP timetable + 2026 drivers' standings), cricket.com.au
+(WBNI v AUSW T20I series), lpga.com (BMW Ladies Championship), internationalseries.com
+(HK Open), stifelcharityclassic.com, pgatourmedia.pgatourhq.com (Bermuda Championship),
+womensindianopen.com (LET), jgto.org, sunshinetour.com, thelegendstour.com, pga.org.au,
+ice-hockey-league.com + kac.at, shl.se, plusliga.pl, volleyball-bundesliga.de,
+legavolleyfemminile.it, lentopallo.fi, volleybal.nl, handball-bundesliga sources, nrl.com,
+superleague.co.uk, cricket.co.za, pcb.com.pk, cricketireland.ie, nzc.nz, icc-cricket.com,
+dpworldtour.com.
+
+**Interpretation difference (logged, not a data conflict):** this desk **excludes** Gaelic
+Football, Aussie Rules (football codes) and Greyhounds (animal racing, by analogy with the
+horse-racing exclusion) as flagged judgment calls, while the `ce5920e3` taxonomy keeps them
+in scope at 17 sports and the `ebfbd966` desk covers Gaelic club fixtures. All positions are
+published; the brief's exclusion list is ambiguous on these three and the difference is
+documented on this desk's Flagged page rather than resolved silently.
+
+**Findings contributed:** OLBG's displayed start times are systematically wrong for several
+sports (documented examples: NBA openers, NHL PHI–BUF, F1 US GP, PDC European Championship,
+snooker Belfast; correct for ICEHL and tennis) — time values on this desk come from official
+sources, not OLBG. Also: EuroCup fixture conflict (OLBG lists Cluj-Napoca v London Lions for
+21 Oct while contemporaneous official schedules show London Lions v Cedevita Olimpija that
+evening); OLBG "Jelcz Laskowice" volleyball naming flagged; Toulouse v Perpignan venue
+conflict flagged (OLBG shows Ernest-Wallon, Top 14 official lists MMArena).
+
+**Conflict log (this integration):**
+
+1. PR #13 was opened against a `main` predating PRs #1–#12; `git merge origin/main` produced
+   add/add conflicts on `docs/**`, `data/matches.json`, `README.md`, `COORDINATION.md`.
+   Resolution: every conflicting path resolved **in favour of `main`** (the other sessions'
+   boards are untouched); this desk relocated from `docs/` to `aa4e9dbf/` and its data to
+   `data/*-aa4e9dbf*`; `README.md` and `COORDINATION.md` resolved append-only (this section).
+   The pre-relocation state is preserved in git history (commit `68b9b3f`).
+2. Cross-board links: this desk's header links to the root dashboard, the `docs/` board and
+   the `ebfbd966/` desk. **Request to the next integration pass (§4):** add a link to
+   `/aa4e9dbf/` (131 events) in the root dashboard nav and the `docs/` board banner, so all
+   four boards are reachable from one another. Not done here because those files are shared
+   outputs owned by the integration session (§0.4).
+
+**Gates:** this desk: 18 pages, 0 broken internal links (including the three cross-board
+links). Whole-tree sweep: 3,240 relative references checked; only pre-existing absolute
+`/OLBG1/…` paths in `main`'s `404.html` are outside the filesystem check, and
+`scripts/validate.py` passes 26 pages, 0 errors, 0 warnings.
+
+**Open items for any session:** promote the 22 unverified rows (KBL fixture, CSA domestic
+T20s, Scandinavian domestic handball, some volleyball/tennis/golf rows) once official
+sources surface; reconcile the EuroCup Cluj–London Lions listing; unmerged parallel branches
+`arena/2360a617-olbg1`, `arena/a41abce4-olbg1`, `arena/f7fa77fc-olbg1` were observed and
+deliberately left alone (other sessions' claims).
+
+**Publish record.** PR #13 — https://github.com/buffedlizard55-lab/OLBG1/pull/13 —
+(branch `arena/aa4e9dbf-olbg1` → `main`), merged after this integration commit; Pages
+(legacy `main:/` root publishing) serves this desk at
+https://buffedlizard55-lab.github.io/OLBG1/aa4e9dbf/. Deploy verification to be appended
+below after the merge.
