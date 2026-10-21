@@ -281,3 +281,39 @@ matches) and companion board https://buffedlizard55-lab.github.io/OLBG1/docs/ (s
 PASSED, 26 pages, 0 errors/warnings. `docs/` internal links: 0 broken. Tasks T1–T7 complete
 across the two sessions; open follow-ups: §5.7 items + Flag F-13 harvest (IDs 22/23) + all
 `needs review` flags on both Flagged pages (non-blocking by design).
+
+---
+
+## 7. Parallel session `c5e985f4` (branch `arena/c5e985f4-olbg1`) — integration record
+
+**What happened.** This session started from the same empty-repo commit (`8b43e82`) and independently
+completed the brief with a complementary method: fixture harvest via web_search (OLBG.com itself was
+not reachable from the sandbox), originated American-style lines (moneyline/handicap/total where
+applicable), confidence tiers, six 30+ word high-confidence predictions sourced to official league
+pages, and a 17-page dashboard (root `index.html` + per-sport tables + methodology + findings +
+flagged review), generated from `data/matches.json`.
+
+**Files contributed (PR #6).** `data/matches.json` (72 entries, 13 in-scope sports), root
+`index.html`, `tennis.html`, `nba.html`, `mlb.html`, `cricket.html`, `rugby-union.html`,
+`ice-hockey.html`, `golf.html`, `snooker.html`, `darts.html`, `badminton.html`,
+`table-tennis.html`, `volleyball.html`, `handball.html`, `methodology.html`, `findings.html`,
+`flagged.html`, `COORDINATION.md` (initial board). Per the coordination convention (§0.4, append
+and keep both datasets), shared-output filename collisions with the `ce5920e3` build were resolved
+in favour of the integrated, validate.py-cleared tree currently on `main`; this session's dataset
+and pages are reflected in git history via PR #6 and are not re-published over the live root
+dashboard.
+
+**Exclusions applied:** soccer/football, boxing, UFC/MMA, American football, hurling, horse
+racing, cycling, specials (tennis, basketball, golf, cricket, snooker, rugby union, baseball, ice
+hockey, darts, badminton, table tennis, volleyball, handball covered; rugby league noted as
+season-completed).
+
+**Verification policy:** every row carries a source link to an official/governing-body endpoint;
+unconfirmed values left blank and flagged on the Flagged for Review page; originated prices labelled
+as estimates, never as bookmaker quotes.
+
+**Publish record.**
+* Pull request: #6 — https://github.com/buffedlizard55-lab/OLBG1/pull/6 (branch `arena/c5e985f4-olbg1` → `main`).
+* Merge result: merged into `main` (merge commit `f15b790`), subsequently included in `main` HEAD `4ee2564` (PR #7 merge).
+* GitHub Pages: source `main` → `/`; `status=built`, `error=null`, `https_enforced=true`; live URL https://buffedlizard55-lab.github.io/OLBG1/ (root dashboard served by the integrated `ce5920e3` build, link-integrity validated with 0 errors).
+* Flagged items: logged on the site's `flagged.html`; none block the merge.
