@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Predictions · OLBG Reverse-Engineering</title>
+<meta name="description" content="Independent reverse-engineering of OLBG: verified fixtures across 17 in-scope sports, originated betting lines, confidence tiers and written predictions.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="hdr-inner">
+    <div class="brand"><span class="dot"></span> OLBG <span class="sub">reverse-engineered</span></div>
+    <nav class="main"><a href="index.html">Dashboard</a><a href="picks.html">Picks</a><a href="predictions.html" aria-current="page">Predictions</a><a href="sports.html">Sports</a><a href="methodology.html">Methodology</a><a href="reverse-engineering.html">OLBG analysis</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a></nav>
+  </div>
+</header>
+<main>
+
+<div class="crumb">Dashboard / Predictions</div>
+<h1>Written predictions — high-confidence selections only</h1>
+<p class="lede">One bespoke write-up per high-confidence pick. Each states the selection outright, is built only from
+facts that were read on an official source, and runs to at least 30 words. Nothing here is templated: the arguments
+differ by match, and where the case is thin the prediction says so.</p>
+
+<div class="strip">
+  <span class="chip">8 predictions</span>
+  <span class="chip">Shortest <b>53</b> words</span>
+  <span class="chip">Longest <b>63</b> words</span>
+  <span class="chip">0 templates</span>
+</div>
+
+
+<article class="pred">
+  <h3>Milwaukee Brewers v Tampa Bay Rays</h3>
+  <div class="meta">MLB World Series · 24 Oct 00:00 UTC · American Family Field, Milwaukee</div>
+  <p><span class="badge high">High confidence</span> <b>Milwaukee Brewers</b>
+     <span class="sub" style="display:inline">— Match Winner @ 1.51</span></p>
+  <p>Back the Milwaukee Brewers on the money line in World Series Game 1. They finished the regular season 103-59 and were 55-26 at American Family Field, the best possible place to open a series. Tampa Bay won 98 games but were only 43-38 on the road, and the Brewers arrive 6-1 in the post-season after sweeping the Dodgers.</p>
+  <ul class="facts"><li>Brewers regular season 103-59 (.636), home 55-26 (.679)</li><li>Rays regular season 98-64 (.605), road 43-38 (.531)</li><li>Brewers post-season 6-1, including a 3-0 sweep of the Dodgers</li></ul>
+  <div class="src-links" style="margin-top:9px"><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026" target="_blank" rel="noopener">MLB StatsAPI standings 2026</a> <a href="https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&amp;season=2026" target="_blank" rel="noopener">MLB official postseason schedule</a> <a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-21&amp;endDate=2026-10-30" target="_blank" rel="noopener">MLB StatsAPI schedule (fixture)</a></div>
+</article>
+<article class="pred">
+  <h3>Milwaukee Brewers v Tampa Bay Rays</h3>
+  <div class="meta">MLB World Series · 25 Oct 00:00 UTC · American Family Field, Milwaukee</div>
+  <p><span class="badge high">High confidence</span> <b>Milwaukee Brewers</b>
+     <span class="sub" style="display:inline">— Match Winner @ 1.51</span></p>
+  <p>Milwaukee Brewers again on the money line in Game 2, this time on workload rather than venue. Milwaukee closed out the Dodgers on 14 October and have had nine days to line up their rotation, while Tampa Bay needed six games and a postponement to get past Cleveland, finishing on 19 October. A 55-26 home record behind a rested staff is the selection.</p>
+  <ul class="facts"><li>Brewers last played 2026-10-14 - nine days before Game 2</li><li>Rays last played 2026-10-19 after a six-game series that included a postponement</li><li>Brewers home record 55-26</li></ul>
+  <div class="src-links" style="margin-top:9px"><a href="https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&amp;season=2026" target="_blank" rel="noopener">MLB official postseason schedule</a> <a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026" target="_blank" rel="noopener">MLB StatsAPI standings 2026 (home/road splits)</a></div>
+</article>
+<article class="pred">
+  <h3>Tampa Bay Rays v Milwaukee Brewers</h3>
+  <div class="meta">MLB World Series · 27 Oct 00:00 UTC · Tropicana Field, St Petersburg</div>
+  <p><span class="badge high">High confidence</span> <b>Tampa Bay Rays</b>
+     <span class="sub" style="display:inline">— Match Winner @ 1.61</span></p>
+  <p>This is a Tampa Bay Rays selection for Game 4. Their 55-26 home mark is the strongest single venue input in this series, and once it replaces the neutral baseline the model makes them a 59% favourite. Milwaukee&#x27;s 6-1 post-season record was built on four home games out of seven, and their road form in the regular season was 48-33.</p>
+  <ul class="facts"><li>Rays home record 55-26 (.679)</li><li>Brewers road record 48-33 (.593)</li><li>Rays post-season 7-2, last game a 7-3 home win over Cleveland on 19 October</li></ul>
+  <div class="src-links" style="margin-top:9px"><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026" target="_blank" rel="noopener">MLB StatsAPI standings 2026</a> <a href="https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&amp;season=2026" target="_blank" rel="noopener">MLB official postseason schedule</a></div>
+</article>
+<article class="pred">
+  <h3>Tampa Bay Rays v Milwaukee Brewers</h3>
+  <div class="meta">MLB World Series · 28 Oct 00:00 UTC · Tropicana Field, St Petersburg</div>
+  <p><span class="badge high">High confidence</span> <b>Tampa Bay Rays</b>
+     <span class="sub" style="display:inline">— Match Winner @ 1.61</span></p>
+  <p>Tampa Bay Rays again in Game 3 at Tropicana Field. The Rays were 55-26 at home in 2026, the identical home record Milwaukee posted, and they are 7-2 this post-season after a 7-3 win over Cleveland that closed the series. Milwaukee were a solid but unremarkable 48-33 on the road, so the venue flips the edge.</p>
+  <ul class="facts"><li>Rays home record 55-26; Brewers road record 48-33</li><li>Brewers played four of their seven post-season games at home</li><li>Model win probability for the Rays in Game 4: 59%</li></ul>
+  <div class="src-links" style="margin-top:9px"><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026" target="_blank" rel="noopener">MLB StatsAPI standings 2026 (home/road splits)</a> <a href="https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&amp;season=2026" target="_blank" rel="noopener">MLB official postseason schedule</a></div>
+</article>
+<article class="pred">
+  <h3>Cheung Ka Wai v Stuart Bingham</h3>
+  <div class="meta">BetVictor Northern Ireland Open 2026 · 21 Oct · 05:00 · Waterfront Hall, Belfast</div>
+  <p><span class="badge high">High confidence</span> <b>Stuart Bingham</b>
+     <span class="sub" style="display:inline">— Match Winner @ 1.41</span></p>
+  <p>Stuart Bingham is the pick. He sits 19th on the official Johnstone&#x27;s Paint World Rankings with £350,550 to his name, while Cheung Ka Wai is outside the published top 36 entirely. Both men came through the first round in Belfast, but only one of them carries a verified top-20 ranking into the match.</p>
+  <ul class="facts"><li>Bingham: world No. 19, £350,550</li><li>Cheung: outside the published top 36</li><li>Both players reached Round 2, so both won a first-round match</li></ul>
+  <div class="src-links" style="margin-top:9px"><a href="https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8" target="_blank" rel="noopener">WST Johnstone&#x27;s Paint World Rankings</a> <a href="https://www.wst.tv/" target="_blank" rel="noopener">WST live &amp; upcoming matches (Round 2 draw)</a></div>
+</article>
+<article class="pred">
+  <h3>John Higgins v Jak Jones</h3>
+  <div class="meta">BetVictor Northern Ireland Open 2026 · 21 Oct · 08:00 · Waterfront Hall, Belfast</div>
+  <p><span class="badge high">High confidence</span> <b>John Higgins</b>
+     <span class="sub" style="display:inline">— Match Winner @ 1.35</span></p>
+  <p>John Higgins to win. The Scot is world No. 6 on £905,000, and although Jak Jones is a genuine threat sitting fourth on the separate One Year List, the official ranking still separates the pair by eighteen places. Higgins has banked the points across a full ranking cycle; that accumulated consistency is what the model prices.</p>
+  <ul class="facts"><li>Higgins: world No. 6, £905,000</li><li>Jak Jones: world No. 24, fourth on the One Year List</li><li>Eighteen places between them on the official ranking</li></ul>
+  <div class="src-links" style="margin-top:9px"><a href="https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8" target="_blank" rel="noopener">WST Johnstone&#x27;s Paint World Rankings</a> <a href="https://www.wst.tv/rankings/" target="_blank" rel="noopener">WST rankings hub (One Year List)</a></div>
+</article>
+<article class="pred">
+  <h3>Zhang Anda v Mark Williams</h3>
+  <div class="meta">BetVictor Northern Ireland Open 2026 · 21 Oct · 09:00 · Waterfront Hall, Belfast</div>
+  <p><span class="badge high">High confidence</span> <b>Mark Williams</b>
+     <span class="sub" style="display:inline">— Match Winner @ 1.47</span></p>
+  <p>Mark Williams is the selection. He is world No. 8 on £747,400 and finished second on the BetVictor Home Nations bonus list with £45,000, while Zhang Anda is 21st on £332,600. Zhang has been scoring heavily - eighth on the WST centuries count with 15 - but the ranking gap still makes Williams a clear favourite in Belfast.</p>
+  <ul class="facts"><li>Williams: world No. 8, £747,400; second on the Home Nations bonus list (£45,000)</li><li>Zhang Anda: world No. 21, £332,600; eighth on the centuries count with 15</li></ul>
+  <div class="src-links" style="margin-top:9px"><a href="https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8" target="_blank" rel="noopener">WST Johnstone&#x27;s Paint World Rankings</a> <a href="https://www.wst.tv/rankings/" target="_blank" rel="noopener">WST rankings hub (Home Nations bonus and centuries count)</a></div>
+</article>
+<article class="pred">
+  <h3>Elliot Slessor v Jamie Jones</h3>
+  <div class="meta">BetVictor Northern Ireland Open 2026 · 21 Oct · 15:00 · Waterfront Hall, Belfast</div>
+  <p><span class="badge high">High confidence</span> <b>Elliot Slessor</b>
+     <span class="sub" style="display:inline">— Match Winner @ 1.47</span></p>
+  <p>Elliot Slessor to progress. He is ranked 23rd in the world on £329,200 and faces Jamie Jones, who sits outside the published top 36 - a gap the model converts into a 65% win probability. Neither man appears on the One Year List, so ranking is the only verified separator here, and it points one way.</p>
+  <ul class="facts"><li>Slessor: world No. 23, £329,200</li><li>Jamie Jones: outside the published top 36</li><li>Model win probability for Slessor: 65%</li></ul>
+  <div class="src-links" style="margin-top:9px"><a href="https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8" target="_blank" rel="noopener">WST Johnstone&#x27;s Paint World Rankings</a> <a href="https://www.wst.tv/rankings/" target="_blank" rel="noopener">WST rankings hub (One Year List)</a></div>
+</article>
+
+<div class="note warn">
+  <b>Why only 8?</b> Because only 8 selections cleared the confidence bar.
+  Writing 40 confident-sounding previews when 42 of 50 matches have no strength input would be the exact thing this
+  project is meant to avoid. The other matches are priced and labelled low on the <a href="picks.html">Picks</a> page.
+</div>
+
+</main>
+<footer class="foot">
+  <p><b>OLBG Reverse-Engineering</b> — Originated lines · verified fixtures · confidence tiers. Window covered: 21–27 October 2026.
+  Every fixture links to the governing body it was read from. Model prices are our own
+  estimates, not market prices. Nothing here is betting advice.</p>
+  <p><a href="methodology.html">Methodology</a> · <a href="sources.html">Source register</a> ·
+  <a href="flagged.html">Flagged for review</a> · <a href="data/fixtures.json">Raw JSON</a></p>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

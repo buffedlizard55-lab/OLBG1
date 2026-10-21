@@ -1,0 +1,153 @@
+/* OLBG Reverse-Engineering - dashboard stylesheet
+   Plain CSS, no build step, no external fonts. */
+
+:root{
+  --bg:#f5f7fa;
+  --card:#ffffff;
+  --ink:#0f172a;
+  --muted:#5b6b82;
+  --line:#e3e8ef;
+  --accent:#0e7490;
+  --accent-2:#0f766e;
+  --nav:#0b1b2b;
+  --nav-2:#122a40;
+  --high:#047857;
+  --high-bg:#e7f6f0;
+  --med:#a16207;
+  --med-bg:#fdf5e3;
+  --low:#475569;
+  --low-bg:#eef1f6;
+  --flag:#9a3412;
+  --flag-bg:#fdeee7;
+  --radius:12px;
+  --shadow:0 1px 2px rgba(15,23,42,.06),0 8px 24px rgba(15,23,42,.05);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%}
+
+/* ---------- header ---------- */
+.site-header{background:linear-gradient(160deg,var(--nav),var(--nav-2));color:#fff;border-bottom:3px solid var(--accent-2)}
+.hdr-inner{max-width:1180px;margin:0 auto;padding:18px 22px 0;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:.2px;font-size:1.06rem}
+.brand .dot{width:11px;height:11px;border-radius:3px;background:var(--accent-2);display:inline-block;transform:rotate(45deg)}
+.brand span.sub{font-weight:400;opacity:.62;font-size:.82rem}
+nav.main{margin-left:auto;display:flex;flex-wrap:wrap;gap:2px}
+nav.main a{color:#c7d6e5;padding:8px 11px;border-radius:8px 8px 0 0;font-size:.9rem;font-weight:500}
+nav.main a:hover{background:rgba(255,255,255,.08);color:#fff;text-decoration:none}
+nav.main a[aria-current="page"]{background:var(--bg);color:var(--ink);font-weight:650}
+.subnav{max-width:1180px;margin:0 auto;padding:0 22px}
+
+/* ---------- layout ---------- */
+main{max-width:1180px;margin:0 auto;padding:26px 22px 60px}
+h1{font-size:1.72rem;line-height:1.25;margin:.2em 0 .35em;letter-spacing:-.4px}
+h2{font-size:1.16rem;margin:2em 0 .6em;letter-spacing:-.2px}
+h3{font-size:1rem;margin:1.4em 0 .4em}
+p{color:#1c2a3d}
+.lede{font-size:1.03rem;color:var(--muted);max-width:74ch;margin:0 0 1.2em}
+.crumb{font-size:.82rem;color:var(--muted);margin-bottom:2px}
+
+/* ---------- cards ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;margin:0 0 18px}
+.card>h2:first-child,.card>h3:first-child{margin-top:0}
+.grid{display:grid;gap:14px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(158px,1fr))}
+.sports-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.kpi .n{font-size:1.85rem;font-weight:750;letter-spacing:-1px;line-height:1.1}
+.kpi .l{font-size:.79rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-top:5px;font-weight:600}
+.kpi.hi .n{color:var(--high)} .kpi.md .n{color:var(--med)} .kpi.lo .n{color:var(--low)}
+.kpi.fl .n{color:var(--flag)}
+
+a.sport-card{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:15px 17px;color:inherit;box-shadow:var(--shadow);transition:transform .08s ease,border-color .12s}
+a.sport-card:hover{transform:translateY(-1px);border-color:#c4d3e2;text-decoration:none}
+a.sport-card .t{font-weight:650;font-size:.99rem;display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+a.sport-card .m{color:var(--muted);font-size:.83rem;margin-top:3px}
+
+/* ---------- badges ---------- */
+.badge{display:inline-block;font-size:.71rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  padding:3px 8px;border-radius:999px;white-space:nowrap;vertical-align:2px}
+.badge.high{background:var(--high-bg);color:var(--high)}
+.badge.medium{background:var(--med-bg);color:var(--med)}
+.badge.low{background:var(--low-bg);color:var(--low)}
+.badge.verified{background:#e6f4ea;color:#166534}
+.badge.cross{background:var(--flag-bg);color:var(--flag)}
+.badge.muted{background:var(--low-bg);color:var(--low)}
+.badge.event{background:#e8eefb;color:#1e3a8a}
+
+/* ---------- tables ---------- */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow);margin-bottom:18px}
+table{border-collapse:collapse;width:100%;font-size:.885rem}
+thead th{background:#f0f4f9;text-align:left;font-size:.73rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted);padding:11px 13px;border-bottom:1px solid var(--line);white-space:nowrap;font-weight:700}
+td{padding:11px 13px;border-bottom:1px solid #eef2f7;vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafcff}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.match-name{font-weight:640}
+.sub{color:var(--muted);font-size:.79rem;display:block;margin-top:2px}
+.odds{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.src-links a{font-size:.78rem;display:inline-block;margin-right:9px;white-space:nowrap}
+
+/* ---------- confidence summary strip ---------- */
+.strip{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 16px}
+.chip{font-size:.79rem;background:#eceff4;border-radius:8px;padding:6px 10px;color:#334155;font-weight:600}
+.chip b{font-variant-numeric:tabular-nums}
+
+/* ---------- details / markets ---------- */
+details.markets{margin-top:6px}
+details.markets>summary{cursor:pointer;color:var(--accent);font-size:.8rem;font-weight:600;list-style:none}
+details.markets>summary::-webkit-details-marker{display:none}
+details.markets>summary::before{content:"▸ ";font-size:.8rem}
+details.markets[open]>summary::before{content:"▾ "}
+.mkt{background:#f8fafc;border:1px solid var(--line);border-radius:9px;padding:10px 12px;margin:8px 0}
+.mkt .mkt-h{font-weight:700;font-size:.82rem;display:flex;justify-content:space-between;gap:10px}
+.mkt .mkt-h em{font-style:normal;color:var(--muted);font-weight:600;font-size:.78rem}
+.mkt ul{margin:6px 0 0;padding:0;list-style:none}
+.mkt li{display:flex;justify-content:space-between;gap:12px;font-size:.83rem;padding:3px 0;border-top:1px dotted #e2e8f0}
+.mkt li:first-child{border-top:none}
+.mkt .basis{color:var(--muted);font-size:.75rem;margin-top:7px}
+
+/* ---------- prediction cards ---------- */
+.pred{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--high);border-radius:var(--radius);
+  padding:18px 20px;margin:0 0 16px;box-shadow:var(--shadow)}
+.pred h3{margin:0 0 4px;font-size:1.02rem}
+.pred .meta{font-size:.79rem;color:var(--muted);margin-bottom:10px}
+.pred p{font-size:.95rem;margin:0 0 10px}
+.pred .facts{margin:0;padding-left:18px;font-size:.82rem;color:#334155}
+.pred .facts li{margin:2px 0}
+
+/* ---------- misc ---------- */
+.note{background:#f8fafc;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:12px 15px;font-size:.87rem;color:#334155;margin:14px 0}
+.note.warn{border-left-color:#c2410c;background:#fff8f4}
+.note.good{border-left-color:var(--high);background:#f5fbf8}
+ul.clean{padding-left:20px}
+ul.clean li{margin:5px 0}
+code{background:#eef2f7;border-radius:5px;padding:1px 5px;font-size:.86em}
+.foot{max-width:1180px;margin:0 auto;padding:26px 22px 44px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line)}
+.foot a{color:var(--muted);text-decoration:underline}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:760px){
+  .two-col{grid-template-columns:1fr}
+  nav.main{width:100%;margin-left:0;overflow-x:auto}
+  .hdr-inner{padding-bottom:0}
+  h1{font-size:1.45rem}
+  td,th{padding:9px 10px}
+}
+
+/* ---------- interactive chips ---------- */
+button.chip,a.chip{border:1px solid var(--line);cursor:pointer;font:inherit;font-size:.79rem;text-decoration:none}
+button.chip:hover,a.chip:hover{background:#e2e8f0;text-decoration:none}
+.chip.is-active{background:var(--nav);color:#fff;border-color:var(--nav)}
+.chip[aria-pressed="true"]{box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+input[type="search"]{font:inherit}
+pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
