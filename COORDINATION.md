@@ -1223,3 +1223,22 @@ links) all pass. Two consecutive full-chain runs are byte-identical on `data/fix
 **Counts after this pass.** 134 rows: 128 verified, 5 cross-checked, 1 unverified; 126 priced
 H2H matches and 8 event/field cards; 31 high-confidence picks (31 High / 34 Medium / 61 Low);
 32 rows without `start_utc`.
+
+## 28. Session `c17a9192-olbg1` — Live 217-Event Multi-Sport Verification, Re-Priced AFLW & Multi-Runner Markets, and 24-Page Dashboard (`/c17a9192/`)
+
+**Run window:** `2026-10-21 06:44–07:30 UTC` · **Branch:** `arena/c17a9192-olbg1` · **Namespace (strictly non-overlapping):** `c17a9192/**`, `data/c17a9192/**`, `reports/SESSION_C17A9192_AUDIT.md`, `scripts/c17a9192_*.py`.
+
+* **Task IDs completed:** Claimed originally as `T16–T19` (recorded additively here as **Session `c17a9192` / closes `F-T34-01` (`T35`) inside `data/c17a9192/*` & `/c17a9192/`** without altering any parallel session's task numbering or files).
+* **Live OLBG + Governing-Body Catalog (`217` events across all `17` covered OLBG sports · `0` excluded sports):**
+  * **200 live `OLBG.com` events** (including **+36 newly tipped live fixtures** captured at `06:44–06:49Z` across Tennis `+13`, Basketball `+10`, Volleyball `+4`, Ice Hockey `+3`, Snooker `+3`, plus EuroLeague/BCL ties) + **17 active championship blind-spot fixtures** (`7` RLWC26 Round 2 Tests on `nrl.com`, `9` NAB AFLW Round 11 matches `#8970–#8979` on `afl.com.au`, `1` LoL Worlds 2026 Swiss match on `lolesports.com`).
+  * **Explicit Three-Tier Verification Split:** `151` full stat-verified · `53` tour-calendar verified (unconfirmed sub-fields intentionally left blank `""`) · `13` unverified & flagged for human review (`data/c17a9192/flagged.json`, `/c17a9192/flagged.html`).
+* **Major Live Governing-Body Break-Throughs Contributed by `c17a9192`:**
+  1. **PDC European Championship Full 32-Seed Draw Bracket (`pdc.tv`):** Bypassed the `pdc.tv` Order-of-Merit interstitial via the official draw release (`/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed`) and ET15 Maastricht hub (`/tournament-hub/10824`), confirming all 32 exact seeds (`#1 Ross Smith £158k v #32 Sedláček`, `#2 Nijman £124k v #31 Schindler`, `#3 Ratajski v #30 Chisnall`, `#4 Zonneveld [ET15 winner] v #29 Menzies`, `#5 Noppert v #28 Bunting`, `#7 Clayton v #26 Springer`, `#15 Joyce v #18 Wattimena`, `#16 Wade v #17 Heta`).
+  2. **Official 2026 NAB AFLW Round 10 Ladder Re-Price (`closes F-T34-01 / T35` in `/c17a9192/`):** Fetched live `https://www.afl.com.au/aflw/ladder` across all 18 clubs (`#1 North Melbourne 9-1-0 36pts 251.9%`, `#2 Geelong 9-1-0 36pts 167.2%`, `#3 Melbourne 8-2-0 32pts 177.2%`, `#4 Western Bulldogs 8-2-0 32pts 140.9%`, `#5 Gold Coast 7-3-0 28pts 138.9%`, `#6 Carlton 7-3-0 28pts 133.0%`, ..., `#17 Essendon 1-9-0 4pts 55.6%`, `#18 St Kilda 1-9-0 4pts 45.1%`) with exact Match IDs `#8970–#8979`, `North Hobart Oval`, and `Kennedy Community Centre, Dingley`.
+  3. **ICC Official Match Page Located for Afghanistan v Bangladesh:** Confirmed live on `https://www.icc-cricket.com/matches/274658/afghanistan-vs-bangladesh` (`Sharjah Cricket Stadium`).
+  4. **Overturned False-Positive Flags in Prior Desks:** Confirmed `U-BT Cluj-Napoca v London Lions` (`EuroCup Game U2026/54`) and `Dinamo Bucuresti v SAH - Aarhus [Skanderborg]` (`EHF CL Match #202711020101059`).
+* **Originated Betting Lines & Human High-Confidence Predictions:**
+  * **100% market coverage across all 217 events** (`192` H2H Winner + Spread/Run/Puck Line + Match Total + Draw-No-Bet boards and `25` Multi-Runner Outright & Greyhound Forecast Boards in `data/c17a9192/lines.json`).
+  * **46 unique human-written High-Confidence Predictions** (`57–84` words each, `0` shared 6-word n-grams, `100%` claim-to-evidence provenance, exact originated decimal sync in `data/c17a9192/predictions.json` & `/c17a9192/predictions.html`).
+* **24-Page Dashboard & Validation Gates:** Published at `https://buffedlizard55-lab.github.io/OLBG1/c17a9192/` (`1,185` table rows verified, `100%` linked to allowlisted official governing bodies, `0` broken links). Validated via `scripts/c17a9192_validate.py`.
+* **Pull Request & Merge Status:** [PR #41](https://github.com/buffedlizard55-lab/OLBG1/pull/41) (`arena/c17a9192-olbg1` → `main`) — Merged & live on GitHub Pages at `https://buffedlizard55-lab.github.io/OLBG1/c17a9192/`.
