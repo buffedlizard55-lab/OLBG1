@@ -90,6 +90,8 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 
 | T21 | Independent second-pass re-verification of NHL input sub-values and the F1 start time; correction of four NHL transposition errors and one timezone error; source-redirect evidence for PlusLiga and GAA | done | 4f8d032d-olbg1 | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py`, `scripts/live_verification.py`, `scripts/high_predictions.py`, `data/verification.json`, `reports/SESSION_4F8D_VERIFICATION.md`, append-only `COORDINATION.md` | 2026-10-21T07:15Z | Claimed as T17 (collision: taken by 72198d3e, which itself became T20); renumbered T21. Rebased onto `main`; earlier session's Boston fix and Vegas no-reprice policy preserved. 31 High picks retained. |
 
+| T22 | Third independent re-check after T20/T21: RLWC26 source URLs, tennis pairing provenance, prediction prose de-templating | done | 3c7579ed-olbg1 | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py`, `scripts/high_predictions.py`, `scripts/live_verification.py`, `data/*`, `COORDINATION.md` (append-only) | 2026-10-21T08:20Z | Claimed as T17 at 07:40Z; T17/T20/T21 were taken by 72198d3e, 76950c25 and 4f8d032d while this branch was open, so the task is recorded as T22 (§19). Additive: extends T20's verification register rather than publishing a parallel page. |
+
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
 
@@ -903,3 +905,54 @@ before they can be re-certified at all.
   AFLW, PDC, WTA/ATP, EuroLeague and NBA need a headless renderer before they can be re-certified;
   PlusLiga and Munster GAA need correct per-fixture URLs; the Vegas snapshot awaits a reviewer decision
   on whether to re-price (this pass preserved the existing "disclose, do not re-price" policy).
+
+---
+
+## 19. Session `3c7579ed-olbg1` — T22 third-pass re-check (claim renumbered twice)
+
+### 19.1 Why this is T22
+
+This session claimed "T17 independent verification" at 07:40Z. While its branch was open, `main` advanced
+through four merges — `76950c25` (live OLBG re-harvest, T17–T19), `72198d3e` (T20, live re-verification,
+PRs #27/#29) and `4f8d032d` (claimed T21, PR #32) — so the number was taken twice over. The claim is
+renumbered **T22** here rather than deleting it. Nothing owned by those sessions was rewritten: this branch
+was rebased onto `main`, their register, pages and corrected inputs were kept, and only the gaps below were
+closed. The earlier T21 row attributed to this session in §1 is superseded by this entry.
+
+### 19.2 What this pass re-read, and what it changed
+
+| Official page read | Rows touched | Outcome |
+|---|---|---|
+| [IRL fixtures & results](https://www.intrl.sport/fixtures-results) + match records 2569, 2570, 2571, 2572, 2573, 2586, 2588 | 7 | Venue and venue-local kick-off confirmed for all seven RLWC26 ties; stored UTC values match |
+| [NRL women's Round 2 draw](https://www.nrl.com/draw/womens-rugby-league-world-cup/2026/round-2/) · [men's Round 2 draw](https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/) | 7 | Both resolve at their own tournament URL; the stored `?competition=175`/`?competition=176` links did not |
+| [ATP Almaty results](https://www.atptour.com/en/scores/current/almaty/9410/results) · [ATP Lyon results](https://www.atptour.com/en/scores/current/lyon/496/results) | 6 | Round-of-32 winners confirmed; Round-of-16 pairings cannot be confirmed (not played, widget client-rendered) |
+| [WST live rankings](https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8?showLive=false) | 2 High inputs | Higgins 6, Williams 8, Bingham 19, Zhang Anda 21, Slessor 23, Jak Jones 24 — all match |
+| [PDC draw release](https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed) | 16 | Still a consent wall; no seed re-read (F-V6 stands) |
+
+Corrections:
+
+1. **RLWC26 source URLs (7 rows).** `nrl.com/draw/?competition=175` (men) and `?competition=176` (women) both
+   render the page at `competition=131` — the **men's** tournament — so the women's rows pointed at the wrong
+   competition and no row pointed at its own fixture. Each row now cites its tournament's Round 2 draw plus
+   the IRL match record, and `scripts/dataset_rows_b.py` reproduces the fix on rebuild.
+2. **Samoa Women v Wales Women (1 row).** NRL publishes 2:45am AEDT (06:45Z); the IRL publishes 17:50 local
+   (06:50Z). Both are printed on the row; the five minutes are not inferred away.
+3. **Tennis pairing provenance (11 rows).** Every tennis row now carries a "reconstructed, not draw-verified"
+   flag: the pairings are consistent with the completed Round-of-32 results plus byes, but no official page
+   lists them yet. Start times stay blank.
+4. **Prediction prose (31).** The published notes ended every sentence with `: {selection}`, i.e. the price
+   pasted onto the end, producing 27 of 31 identical closers. The prices are now confined to `bet_line`; the
+   prose keeps the corrected facts (Buffalo −7, Philadelphia −19, Boston 3-1-0 at home) and ends on a varied
+   sentence naming the side. 49–82 words, zero duplicated six-word sequences.
+
+### 19.3 Findings added
+
+`F-V11` NRL competition-ID redirects (medium, corrected) · `F-V12` tennis pairings unconfirmable (medium,
+flagged) · `F-V13` five-minute kick-off disagreement (low, disclosed). The shared register now reads
+**44 confirmed, 19 corrected, 2 flagged, 69 not re-checked**.
+
+### 19.4 Gates
+
+`build_dataset.py` → 134 rows · `origin_lines.py` → 126 H2H books, 31 predictions · `live_verification.py`
+→ 44/19/2/69 · `build_site.py` → 29 pages at `/` + 29 mirrored · `validate.py` → 135 pages, 0 errors,
+0 warnings · `ebfbd966_validate.py` → passed · `final_audit.py` → regenerated.
