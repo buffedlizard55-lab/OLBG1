@@ -40,6 +40,8 @@ def load_data() -> dict:
         "sources": r("data/sources.json"),
         "coverage": r("data/coverage.json"),
         "flagged": r("datasets/flagged_for_review.json"),
+        "live": r("data/live_snapshot.json"),
+        "live_diff": r("data/live_diff.json"),
     }
 
 
@@ -196,6 +198,7 @@ def render_shell(title: str, body: str, active: str, site_depth: int, repo_depth
     rr = "../" * repo_depth
     nav_items = [
         ("index.html", "Overview", "dash"),
+        ("live-refresh.html", "Live Refresh (141)", "live"),
         ("picks.html", "All Lines (134)", "picks"),
         ("predictions.html", "High Picks (31)", "preds"),
         ("sports.html", "17 Sports", "sports"),
@@ -701,6 +704,137 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
         render_shell("Official Sources", sources_body, "src", site_depth=0, repo_depth=repo_depth_base), encoding="utf-8"
     )
 
+    # 8c. live-refresh.html — live OLBG recapture, diff and verification boundary
+    live_events = D["live"]["events"]
+    live_diff = D["live_diff"]
+    ls = live_diff["summary"]
+    fix_by_event = {
+        int(f["olbg"]["event_id"]): f
+        for f in fixtures
+        if (f.get("olbg") or {}).get("event_id")
+    }
+    live_rows = []
+    for ev in live_events:
+        fx = fix_by_event.get(int(ev["event_id"]))
+        if fx:
+            status_cell = (
+                f'{badge_status(fx["status"])}<span class="sub">'
+                f'<a href="sports/{e(fx["sport"])}.html">{e(fx["id"])}</a></span>'
+            )
+            official = "".join(
+                f'<a href="{e(s["url"])}" target="_blank" rel="noopener">{e(s["name"])} &nearr;</a><br>'
+                for s in fx.get("sources", [])[:2]
+            )
+        else:
+            status_cell = (
+                '<span class="badge unverified">Unverified</span>'
+                '<span class="sub">Upstream only - no governing-body confirmation</span>'
+            )
+            official = '<span class="sub">Blank - not confirmed from an official source</span>'
+        live_rows.append(
+            f'<tr><td><a href="sports/{e(ev["sport"])}.html">{e(ev["sport"])}</a></td>'
+            f'<td><b><a href="{e(ev["url"])}" target="_blank" rel="noopener">{e(ev["title"])} &nearr;</a></b>'
+            f'<span class="sub">{e(ev["competition"])}</span></td>'
+            f'<td>{e(ev["time_shown"])}</td>'
+            f'<td>{e(ev["market"] or "Unconfirmed")}</td>'
+            f'<td>{e(ev["selection"])}</td>'
+            f'<td>{e(ev["consensus"])}</td>'
+            f'<td>{status_cell}</td>'
+            f'<td>{official}</td></tr>'
+        )
+    changed_rows = [
+        f'<tr><td>{e(c["sport"])}</td>'
+        f'<td><b><a href="{e(c["olbg_url"])}" target="_blank" rel="noopener">{e(c["title"])} &nearr;</a></b>'
+        f'<span class="sub"><a href="sports/{e(c["sport"])}.html">{e(c["fixture_id"])}</a></span></td>'
+        f'<td>{e(c["was"]["selection"])}<span class="sub">{e(c["was"]["consensus"])}</span></td>'
+        f'<td>{e(c["now"]["selection"])}<span class="sub">{e(c["now"]["consensus"])}</span></td>'
+        f'<td>{"<b>Selection changed</b>" if c["selection_flipped"] else "Tip count moved"}</td></tr>'
+        for c in live_diff["changed"]
+    ]
+    absent_rows = [
+        f'<tr><td>{e(r["sport"])}</td>'
+        f'<td><b>{e(r["home"])} vs {e(r["away"])}</b><span class="sub">{e(r["competition"])}</span></td>'
+        f'<td>{e(r["start_utc"] or "Unconfirmed UTC")}</td>'
+        f'<td><a href="sports/{e(r["sport"])}.html">{e(r["fixture_id"])}</a></td>'
+        f'<td><a href="{e(r["olbg_url"])}" target="_blank" rel="noopener">OLBG event page &nearr;</a></td></tr>'
+        for r in live_diff["dataset_rows_absent_from_capture"]
+    ]
+    verified_live = sum(1 for ev in live_events if int(ev["event_id"]) in fix_by_event)
+    rr_live = "../" * repo_depth_base
+    live_body = f"""
+<h1>Live OLBG Refresh &mdash; Recaptured {e(D["live"]["fetched_utc"])}</h1>
+<p class="lede">All 17 in-scope OLBG sport hubs were re-fetched at <b>{e(D["live"]["fetched_utc"])}</b> and compared,
+event by event, with the committed desk snapshot. <b>{ls["live_events_captured"]} live cards</b> were captured across
+<b>{ls["sports_with_live_events"]} sports</b>. <b>{verified_live}</b> join to a source-verified dataset row by OLBG
+<code>event_id</code>; the remaining <b>{ls["new_not_in_dataset"]}</b> are published here as <b>Unverified upstream-only
+rows</b> with every sporting field left blank. Nothing on this page is inferred.</p>
+
+<div class="grid kpis">
+  {kpi_box(ls["live_events_captured"], "Live Cards Captured", "fl")}
+  {kpi_box(verified_live, "Joined To Verified Rows")}
+  {kpi_box(ls["consensus_or_selection_changed"], "Consensus / Selection Moved", "md")}
+  {kpi_box(ls["new_not_in_dataset"], "Unverified Upstream Cards", "md")}
+  {kpi_box(ls["dataset_rows_absent_from_capture"], "Dataset Rows Not On First Screen")}
+</div>
+
+<div class="card">
+  <h2>What this refresh does and does not claim</h2>
+  <ul>
+    <li><b>Refreshed:</b> OLBG's own tip counter and most-tipped selection for every card that joins to a dataset row.
+        Each refreshed row stores <code>olbg.captured_utc</code> and the superseded value in
+        <code>olbg.consensus_prior</code>.</li>
+    <li><b>Unchanged:</b> kick-off times, venues, records, ratings, prices and confidence tiers. Those still come only
+        from the governing-body sources recorded on each fixture.</li>
+    <li><b>Not claimed:</b> that an upstream-only card is real, scheduled, or correctly named. OLBG is a discovery
+        surface, not an official source, so those rows stay unverified and unpriced.</li>
+    <li><b>Known upstream limits:</b> OLBG truncates each hub at roughly 20 cards behind a "Load More Tips" control and
+        renders US-Eastern clock strings without a timezone label, so "not in capture" is logged as a coverage gap, not
+        as an expiry.</li>
+  </ul>
+</div>
+
+<h2>Full Live Capture ({len(live_rows)} cards, all 17 sports attempted)</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Sport</th><th>Event (OLBG)</th><th>OLBG Clock</th><th>Market</th><th>Most-Tipped Selection</th><th>Consensus</th><th>Dataset Verification</th><th>Official Source</th></tr></thead>
+    <tbody>{"".join(live_rows)}</tbody>
+  </table>
+</div>
+
+<h2>Consensus / Selection Changes Since The Committed Snapshot ({len(changed_rows)})</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Sport</th><th>Event</th><th>Committed Capture</th><th>{e(D["live"]["fetched_utc"])} Recapture</th><th>Change</th></tr></thead>
+    <tbody>{"".join(changed_rows)}</tbody>
+  </table>
+</div>
+
+<h2>Dataset Rows Not Present On The Recaptured First Screen ({len(absent_rows)})</h2>
+<p>These rows keep their governing-body kick-off times. Absence from OLBG's first screen is <b>not</b> treated as
+cancellation or expiry, because the hub caps its initial render.</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Sport</th><th>Fixture</th><th>Official Kick-Off (UTC)</th><th>Desk Row</th><th>Upstream Page</th></tr></thead>
+    <tbody>{"".join(absent_rows)}</tbody>
+  </table>
+</div>
+
+<h2>Sports With No Live OLBG Tips At Capture Time</h2>
+<p><b>Aussie Rules (ID 22)</b> and <b>eSports (ID 23)</b> returned "No tips found"; <b>Rugby League (ID 10)</b> returned
+2027 outright markets only. The desk's 9 AFLW fixtures, 1 League of Legends Worlds tie and 7 RLWC26 fixtures remain
+governed by their official sources and keep their earlier OLBG capture timestamp. This gap is listed on
+<a href="flagged.html">Flagged for Review</a> and is never back-filled.</p>
+
+<p class="sub">Machine-readable outputs:
+<a href="{rr_live}data/live_snapshot.json">data/live_snapshot.json</a> &middot;
+<a href="{rr_live}data/live_diff.json">data/live_diff.json</a> &middot;
+<a href="{rr_live}data/live_baseline.json">data/live_baseline.json</a> &middot;
+<a href="{rr_live}datasets/flagged_for_review.json">datasets/flagged_for_review.json</a></p>
+"""
+    (target_root / "live-refresh.html").write_text(
+        render_shell("Live Refresh", live_body, "live", site_depth=0, repo_depth=repo_depth_base), encoding="utf-8"
+    )
+
     # 9. flagged.html — Flagged for Review (Defects, Scope Notes & Row-Level Flags)
     finding_rows = [
         f'<tr><td><code>{e(fd["id"])}</code><span class="sub">{e(fd["category"])}</span></td>'
@@ -757,6 +891,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
   <ul>
     <li><a href="index.html">Executive Overview Dashboard (134 Source-Linked Events)</a></li>
     <li><a href="picks.html">All Originated Betting Lines &amp; Markets</a></li>
+    <li><a href="live-refresh.html">Live OLBG Refresh &amp; Verification Boundary</a></li>
     <li><a href="predictions.html">31 High-Confidence Human Predictions</a></li>
     <li><a href="sports.html">All 17 In-Scope Sports Directory</a></li>
     <li><a href="flagged.html">Flagged for Review</a></li>
