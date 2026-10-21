@@ -18,7 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 SITE_NAME = "OLBG Reverse-Engineering & Origination Desk"
-SITE_TAG = "17 in-scope sports · 134 officially verified events · multi-market lines & human analysis"
+SITE_TAG = "17 in-scope sports · 134 source-linked events (129 verified · 5 cross-checked) · multi-market lines & human analysis"
 
 CONF_LABEL = {"high": "High", "medium": "Medium", "low": "Low"}
 STATUS_LABEL = {"verified": "Verified", "cross-checked": "Cross-checked", "unverified": "Unverified"}
@@ -217,7 +217,7 @@ def render_shell(title: str, body: str, active: str, site_depth: int, repo_depth
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)} · {e(SITE_NAME)}</title>
-<meta name="description" content="Officially verified multi-sport match dataset, independent multi-market betting lines, confidence tiers, and human analysis across all 17 in-scope OLBG sports.">
+<meta name="description" content="Source-linked multi-sport match dataset, independent multi-market betting lines, confidence tiers, and human analysis across all 17 in-scope OLBG sports.">
 <link rel="stylesheet" href="{sr}assets/style.css">
 </head>
 <body>
@@ -229,7 +229,7 @@ def render_shell(title: str, body: str, active: str, site_depth: int, repo_depth
   <div class="companion-bar">
     <div class="companion-inner">
       <span>Repository workspaces:</span>
-      <a href="{rr}index.html">Primary Root Desk (134 verified)</a>
+      <a href="{rr}index.html">Primary Root Desk (134 source-linked)</a>
       <a href="{rr}f7fa77fc/index.html">f7fa77fc Permalink Mirror</a>
       <a href="{rr}docs/index.html">4f44f7d9 Board (164 OLBG)</a>
       <a href="{rr}ebfbd966/index.html">ebfbd966 Board (133)</a>
@@ -263,6 +263,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
     paired = [(f, lines_by_id.get(f["id"])) for f in fixtures]
     h2h_rows = [(f, l) for f, l in paired if l is not None]
     conf_counts = Counter(l["confidence"] for _, l in h2h_rows)
+    status_counts = Counter(f["status"] for f in fixtures)
     total_priced_count = sum(1 for _, l in h2h_rows if any(m["key"] == "total" for m in l["markets"]))
     total_unavailable_count = sum(
         1 for _, l in h2h_rows
@@ -306,11 +307,11 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 
     rr0 = "../" * repo_depth_base
     index_body = f"""
-<h1>Officially Verified Multi-Sport Origination Desk</h1>
-<p class="lede">Complete reverse-engineering of <code>OLBG.com</code> across all <b>17 in-scope sports</b> (excluding soccer/football, horse racing, american football, boxing, UFC/MMA, specials, hurling, and cycling), pairing <b>134 governing-body verified events</b> with independently originated markets and <b>31 non-repetitive human predictions</b>. {total_priced_count} of {len(h2h_rows)} head-to-head matches have an Over/Under total; the remaining total is left blank and flagged because no official competition-specific baseline was captured.</p>
+<h1>Source-Linked Multi-Sport Origination Desk</h1>
+<p class="lede">Complete reverse-engineering of <code>OLBG.com</code> across all <b>17 in-scope sports</b> (excluding soccer/football, horse racing, american football, boxing, UFC/MMA, specials, hurling, and cycling), pairing <b>134 source-linked events</b> (<b>{status_counts["verified"]} verified</b>; <b>{status_counts["cross-checked"]} cross-checked</b>) with independently originated markets and <b>31 non-repetitive human predictions</b>. {total_priced_count} of {len(h2h_rows)} head-to-head matches have an Over/Under total; the remaining total is left blank and flagged because no official competition-specific baseline was captured.</p>
 
 <div class="grid kpis">
-  {kpi_box(len(fixtures), "Verified Events (17 Sports)")}
+  {kpi_box(f'{len(fixtures)} ({status_counts["verified"]}V · {status_counts["cross-checked"]}C)', "Source-Linked Events") }
   {kpi_box(len(h2h_rows), "Multi-Market H2H Priced")}
   {kpi_box(conf_counts["high"], "High Confidence Picks", "hi")}
   {kpi_box(conf_counts["medium"], "Medium Confidence", "md")}
@@ -319,7 +320,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 </div>
 
 <div class="note good">
-  <b>Zero-inference verification policy:</b> Every single fixture, venue, UTC timestamp, ranking, and W-L input links directly to an official governing body (NHL API, MLB StatsAPI, NBA, EuroLeague, ATP/WTA, WST, PDC, ICC/NZC, LNR Top 14, URC, NRL/RLWC26, EHF, PlusLiga/SuperLega, AFLW, LoL Esports, GAA, FIA F1, PGA/DPWT/LPGA, GBGB). Only matches where <b>both sides hold measured official ratings</b> can reach High confidence. Unconfirmed fields are left blank and catalogued on <a href="flagged.html">Flagged for Review</a>.
+  <b>Zero-inference verification policy:</b> Every fixture row carries a direct governing-body link; this snapshot labels <b>{status_counts["verified"]}</b> rows Verified and <b>{status_counts["cross-checked"]}</b> Cross-checked. Any field that cannot be supported is blank/flagged. Inputs for our prices link directly to an official governing body (NHL API, MLB StatsAPI, NBA, EuroLeague, ATP/WTA, WST, PDC, ICC/NZC, LNR Top 14, URC, NRL/RLWC26, EHF, PlusLiga/SuperLega, AFLW, LoL Esports, GAA, FIA F1, PGA/DPWT/LPGA, GBGB). Only matches where <b>both sides hold measured official ratings</b> can reach High confidence. Unconfirmed fields are left blank and catalogued on <a href="flagged.html">Flagged for Review</a>.
 </div>
 
 <h2>Browse by Sport Category (All 17 In-Scope OLBG Sports)</h2>
@@ -336,7 +337,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 <div class="card">
   <p>This repository preserves every parallel session's work cleanly side by side. Explore all live builds directly:</p>
   <ul>
-    <li><b><a href="{rr0}index.html">Primary Root Desk (/)</a> &amp; <a href="{rr0}f7fa77fc/index.html">/f7fa77fc/ Mirror</a>:</b> 134 officially verified events across all 17 sports, with Winner and Handicap markets for all {len(h2h_rows)} head-to-head fixtures, Over/Under totals for {total_priced_count}, Draw No Bet where regulation draws apply, a live Decimal/Fair/US odds toggle, and a full line-by-line audit.</li>
+    <li><b><a href="{rr0}index.html">Primary Root Desk (/)</a> &amp; <a href="{rr0}f7fa77fc/index.html">/f7fa77fc/ Mirror</a>:</b> 134 source-linked events across all 17 sports ({status_counts["verified"]} Verified; {status_counts["cross-checked"]} Cross-checked), with Winner and Handicap markets for all {len(h2h_rows)} head-to-head fixtures, Over/Under totals for {total_priced_count}, Draw No Bet where regulation draws apply, a live Decimal/Fair/US odds toggle, and a full line-by-line audit.</li>
     <li><b><a href="{rr0}docs/index.html">4f44f7d9 Companion Board (/docs/)</a>:</b> 164-event historical OLBG tip-listing snapshot; its source gaps are recorded separately in the repository audit.</li>
     <li><b><a href="{rr0}ebfbd966/index.html">ebfbd966 Companion Board (/ebfbd966/)</a>:</b> 133-match independent log-odds pricing board.</li>
     <li><b><a href="{rr0}aa4e9dbf/index.html">aa4e9dbf Companion Desk (/aa4e9dbf/)</a>:</b> 131-match multi-market analytical desk.</li>
@@ -354,7 +355,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
         for c in sorted(D["coverage"]["included"], key=lambda x: x["name"])
     ]
     picks_body = f"""
-<h1>All 134 Verified Events &amp; Originated Lines</h1>
+<h1>All 134 Source-Linked Events &amp; Originated Lines</h1>
 <p class="lede">Each of the {len(h2h_rows)} head-to-head matches carries originated <b>Match Winner</b> and <b>Handicap / Spread</b> lines; <b>{total_priced_count}</b> also carry an <b>Over / Under Total</b>, and <b>{total_unavailable_count}</b> is deliberately blank and flagged because a source-backed competition baseline was not captured. <b>Draw No Bet</b> is included on 3-way sports. Every fixture row has clickable governing-body verification links.</p>
 
 <div class="toolbar">
@@ -406,7 +407,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
     ]
     preds_body = f"""
 <h1>31 High-Confidence Human Predictions</h1>
-<p class="lede">Every match clearing its sport's high-conviction threshold and holding measured governing-body ratings on both sides receives an original, non-repetitive human analysis (60–70 words each, 0 repeated 6-word n-grams across the entire corpus).</p>
+<p class="lede">Every match clearing its sport's high-conviction threshold and holding measured governing-body ratings on both sides receives an original, non-repetitive human analysis (at least 30 words). Each current write-up is deliberately limited to the stored, source-linked comparison facts and the clearly labelled independent model selection.</p>
 
 <div class="toolbar">
   <select id="sport-filter" class="filter-select" aria-label="Filter predictions by sport">{"".join(pred_opts)}</select>
@@ -447,7 +448,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 <h1>All 24 OLBG Sport Categories — Scope &amp; Coverage</h1>
 <p class="lede">Complete reconciliation of every active sport hub on <code>OLBG.com</code>: <b>17 in-scope sports</b> (all 17 built as dedicated subpages below) and <b>8 excluded sport specifications</b>.</p>
 
-<h2>In-Scope Sports (17 Categories · 134 Verified Events)</h2>
+<h2>In-Scope Sports (17 Categories · 134 Source-Linked Events)</h2>
 <div class="table-wrap">
   <table>
     <thead><tr><th>Sport</th><th class="num">Events</th><th class="num">Governing-Body Verified</th><th class="num">High / Med / Low</th><th>Coverage Summary</th><th>Upstream</th></tr></thead>
@@ -488,7 +489,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 
         sp_body = f"""
 <div class="crumb"><a href="../sports.html">&larr; All 17 In-Scope Sports</a></div>
-<h1>{e(cov["name"])} — Verified Fixtures &amp; Originated Markets</h1>
+<h1>{e(cov["name"])} — Source-Linked Fixtures &amp; Originated Markets</h1>
 <p class="lede">{e(cov["note"])}</p>
 
 <div class="grid kpis">
@@ -686,7 +687,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 <p class="lede">All {len(D["sources"]["sources"])} primary authorities used to verify fixtures, kick-off times, rankings, standings, and recent match history across the repository.</p>
 
 <div class="note">
-  <b>Line-by-line audit report:</b> Open the current <a href="{rr0}reports/FINAL_INTEGRATION_AUDIT.md">Final Integration Audit</a> for every primary fixture, its exact governing-body links, market coverage and review flags. Historical context remains in <a href="{rr0}reports/REPO_LINE_BY_LINE_AUDIT.md">REPO_LINE_BY_LINE_AUDIT.md</a> and <a href="{rr0}reports/OLBG_REVERSE_ENGINEERING.md">OLBG_REVERSE_ENGINEERING.md</a>.
+  <b>Line-by-line audit report:</b> Open the current <a href="{rr0}reports/FINAL_INTEGRATION_AUDIT.md">Final Integration Audit</a> for every primary fixture, its exact governing-body links, market coverage and review flags. The independently published <a href="{rr0}reports/POST_INTEGRATION_AUDIT.html">Post-Integration Review</a> records historical F1–F3 audit boundaries; its F1 prose issue was corrected in the generated predictions, while source freshness and five Cross-checked Premiership rows remain flagged. Historical context remains in <a href="{rr0}reports/REPO_LINE_BY_LINE_AUDIT.md">REPO_LINE_BY_LINE_AUDIT.md</a> and <a href="{rr0}reports/OLBG_REVERSE_ENGINEERING.md">OLBG_REVERSE_ENGINEERING.md</a>.
 </div>
 
 <div class="table-wrap">
@@ -754,7 +755,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 <p class="lede">The requested URL does not exist. Jump directly to any verified board section below:</p>
 <div class="card">
   <ul>
-    <li><a href="index.html">Executive Overview Dashboard (134 Verified Events)</a></li>
+    <li><a href="index.html">Executive Overview Dashboard (134 Source-Linked Events)</a></li>
     <li><a href="picks.html">All Originated Betting Lines &amp; Markets</a></li>
     <li><a href="predictions.html">31 High-Confidence Human Predictions</a></li>
     <li><a href="sports.html">All 17 In-Scope Sports Directory</a></li>

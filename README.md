@@ -46,10 +46,10 @@ No third-party dependencies. Python 3.10+.
 
 ## Coverage at a glance (Primary Root Desk & `/f7fa77fc/` Mirror — Session `f7fa77fc-olbg1`)
 
-- **134 officially verified events across ALL 17 in-scope OLBG sports** (`126` two-sided H2H matches priced across 4 market families — *Match Winner*, *Draw No Bet*, *Handicap/Spread*, and *Over/Under Total* — plus `8` verified multi-runner field cards across *Golf*, *Motor Racing*, and *Greyhounds*).
+- **134 source-linked events across ALL 17 in-scope OLBG sports**: `129` rows are `verified` and `5` Gallagher Premiership rows remain explicitly `cross-checked`; `126` two-sided H2H matches are priced across Winner, Draw No Bet, Handicap/Spread and (where a sourced baseline exists) Over/Under Total markets, plus `8` field cards across Golf, Motor Racing and Greyhounds.
 - **All 24 active OLBG sport IDs reconciled** (`22` sitemap-listed + unlisted active routes `Entertainment/18` and `Hurling/26`): `17` in scope (`Tennis`, `Basketball`, `Golf`, `Cricket`, `Snooker`, `Rugby Union`, `Rugby League`, `Baseball`, `Ice Hockey`, `Motor Racing`, `Darts`, `Handball`, `Volleyball`, `Aussie Rules`, `eSports`, `Gaelic Football`, `Greyhounds`) and `8` excluded (`Football/Soccer`, `Horse Racing`, `American Football`, `Boxing`, `UFC/MMA`, `Entertainment/Specials`, `Hurling`, `Cycling`).
-- **31 High-confidence picks** (requiring `status == "verified"` AND measured governing-body ratings on **both** sides — `60–70` word unique human prediction per pick, `0` duplicate 6-word n-grams), **35 Medium**, **60 Low**, **8 Field cards**.
-- **0 unverified values published as fact** and **0 broken relative links across all 130 published HTML pages** spanning all five live boards (`/` root, `/f7fa77fc/`, `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`).
+- **31 High-confidence picks** (requiring `status == "verified"` AND measured governing-body ratings on **both** sides — an original, source-bounded `30+` word prediction per pick, with `0` duplicate 6-word n-grams), **35 Medium**, **60 Low**, **8 Field cards**.
+- **0 unverified values published as fact** and **0 broken relative links across all 131 published HTML pages** spanning all five live boards (`/` root, `/f7fa77fc/`, `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`).
 
 ## Quick rebuild & repo-wide validation
 

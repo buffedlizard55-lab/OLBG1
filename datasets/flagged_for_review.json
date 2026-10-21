@@ -1,7 +1,7 @@
 {
   "generated": "2026-10-21",
   "summary": {
-    "upstream_and_audit_findings": 9,
+    "upstream_and_audit_findings": 12,
     "flagged_fixture_rows": 108,
     "cross_checked_rows": 5,
     "missing_utc_rows": 32
@@ -15,7 +15,7 @@
       "summary": "OLBG server renders UTC-4 (US Eastern Daylight Time) strings across UK/European events without timezone labels.",
       "evidence": "Event 689388 is titled '11:14 Kinsley' (11:14 BST = 10:14 UTC) yet displays 'Today 06:14' right beside the title; event 534889 ('SAC Kings @ LA Clippers', 02:30 UTC Oct 22) displays 'Today 22:30' next to 'SAC Kings (2:30am)'.",
       "official_url": "https://www.olbg.com/betting-tips/Greyhounds/28",
-      "resolution": "Every fixture in data/fixtures.json stores canonical ISO-8601 UTC verified against official governing-body feeds."
+      "resolution": "Every fixture in data/fixtures.json stores a canonical ISO-8601 UTC value linked to a governing-body source; any unconfirmed UTC is left blank and flagged."
     },
     {
       "id": "BUG-OLBG-3536-DATE",
@@ -96,6 +96,36 @@
       "evidence": "OLBG maintains distinct sport IDs for Football/Soccer (ID 1), American Football (ID 11), Aussie Rules (ID 22), and Gaelic Football (ID 25).",
       "official_url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
       "resolution": "Included all 4 official GAA County Finals with explicit borderline-scope tags so nothing is silently omitted."
+    },
+    {
+      "id": "AUDIT-PREDICTION-PROSE-REMEDIATED",
+      "category": "Provenance Correction",
+      "severity": "medium",
+      "affected": "31 High-confidence generated predictions",
+      "summary": "An independent post-integration audit found tactical prose that was not represented in the stored source facts arrays.",
+      "evidence": "The review page records the historical issue and examples; the generated text is now limited to each fixture's two stored, source-linked input values plus the explicitly labelled model selection.",
+      "official_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+      "resolution": "Re-authored all 31 predictions from the versioned official-input fields; unsupported tactical, injury, lineup and performance claims were removed. The source freshness boundary remains separately flagged."
+    },
+    {
+      "id": "AUDIT-STATUS-SPLIT",
+      "category": "Verification Status",
+      "severity": "medium",
+      "affected": "Primary snapshot: 134 source-linked events",
+      "summary": "The fixture data contains 129 Verified rows and 5 Cross-checked Gallagher Premiership rows; public summary wording must preserve that split.",
+      "evidence": "Premiership fixture rendering was client-side during the stored verification work, so those five rows were deliberately not promoted to Verified.",
+      "official_url": "https://www.premrugby.com/fixtures-results",
+      "resolution": "Dashboard, README and audit manifest now use '134 source-linked events (129 Verified; 5 Cross-checked)' instead of flattening all rows to Verified."
+    },
+    {
+      "id": "AUDIT-SOURCE-FRESHNESS",
+      "category": "Review Boundary",
+      "severity": "medium",
+      "affected": "All primary fixture source links",
+      "summary": "The final integration gate validates recorded URL authority, data structure and static output; it does not make live network requests during validation.",
+      "evidence": "A valid recorded source link is auditable provenance, not a guarantee that a remote publisher has not later changed its content.",
+      "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21",
+      "resolution": "The exact per-row source URLs are published in the Final Integration Audit. Any later discrepancy must remain blank/flagged until a governing-body source is re-opened and compared."
     }
   ],
   "rows": [
