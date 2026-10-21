@@ -187,4 +187,26 @@ and every prediction is 30+ words and agrees with the model's pick.
 
 ### 5.5 Result
 
-_Pending merge._
+* **PR #1** — https://github.com/buffedlizard55-lab/OLBG1/pull/1 — merged 2026-10-21T05:19:39Z
+  (merge commit `8b7963a`). The dataset, model, predictions and the 26-page dashboard.
+* **PR #2** — https://github.com/buffedlizard55-lab/OLBG1/pull/2 — merged 2026-10-21T05:22Z
+  (merge commit `9ef1deb`). Moved the generated site from `docs/` to the repository root because the
+  Pages settings API returns 403 for this token and Pages is already configured for `main` → `/`.
+* **Pages deploy** — build for `9ef1deb` completed with `status=built`, `error=null`, 22.8 s.
+  Live URL https://buffedlizard55-lab.github.io/OLBG1/ returned HTTP 200 with the rendered dashboard.
+* **Final gate** — `python3 scripts/validate.py` → 26 pages, 0 errors, 0 warnings.
+
+### 5.6 Post-merge correction
+
+After publication, `lines.json` was checked against the dashboard copy and one sentence was corrected:
+the index previously said four of the eight high picks relied on the bounded top-36 snooker input; the
+data shows **two** (`snk-cheung-bingham`, `snk-slessor-jones`). The copy now matches the data, and the
+check is automated in `scripts/validate.py` (predictions must agree with `lines.json`).
+
+### 5.7 Open items for a follow-up session
+
+1. Promote the five Premiership Rugby rows from `cross-checked` to `verified` using club or PRL data.
+2. Retrieve the PDC Order of Merit and re-price the seven darts ties with a real rating input.
+3. Retrieve previous-season NBA standings so the eleven opening-night games stop being baseline-only.
+4. Investigate the nine uninvestigated sports listed in §5.3 item 8.
+5. Add attendance/injury/lineup inputs if a licensed feed becomes available.

@@ -229,8 +229,8 @@ on an official page it is left blank and flagged — never filled in.</p>
   strength input — an official league record, an official world ranking, or a sourced “outside the published top 36”
   bound. {stats['both_rated']} of {stats['matches']} matches clear that bar, and {stats['both_measured']} of those
   measure both participants outright. The other {stats['baseline_only']} have no usable strength input at all: they are
-  priced from the sport's neutral home baseline and capped at low confidence, and every such row says so. Four of the
-  eight high picks lean on the published top-36 snooker bound rather than a measured rank — those are listed on the
+  priced from the sport's neutral home baseline and capped at low confidence, and every such row says so. Two of the
+  eight high picks lean on the published top-36 snooker bound rather than a measured rank — both are listed on the
   Flagged page for review.
 </div>
 
