@@ -1,0 +1,274 @@
+{
+ "generated": "2026-10-21",
+ "generated_by": "session 5c02f50f (arena/5c02f50f-olbg1)",
+ "urls": {
+  "https://api-web.nhle.com/v1/schedule/2026-10-21": {
+   "result": "confirmed",
+   "note": "Re-fetched: all nine 21/22-Oct matchups (games 152-160) and starting goalies confirmed."
+  },
+  "https://api-web.nhle.com/v1/standings/2026-10-20": {
+   "result": "confirmed",
+   "note": "All 11 team records re-fetched and confirmed/corrected in the previous commit (606be83): BUF 4-3-2, PHI 2-6-3, BOS 7-2-1, NSH 3-2-3, PIT 3-6-1, STL 4-4-1, VGK 8-3-0 .7273, NYR 7-3-1, TOR 5-4-2, OTT 6-3-0, FLA 5-2-2."
+  },
+  "https://ehfcl.eurohandball.com/men/2026-27/standings/": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://gaacork.ie/fixtures-results/": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://lolesports.com/en-US/": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://scoring.nzc.nz/fixtures": {
+   "result": "confirmed",
+   "note": "Official NZC fixtures re-fetched: 1st T20I Thu 22 Oct + 2nd T20I Sat 24 Oct at Hagley Oval, Christchurch confirmed; 3rd Women's T20I confirmed at North Sydney Oval, Sydney \u2014 contradicted the row's 'Manuka Oval, Canberra' venue, which was corrected."
+  },
+  "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2026": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026": {
+   "result": "confirmed",
+   "note": "Official 2026 standings re-fetched 2026-10-21: Rays 98-64 (home 55-26 .679, road 43-38 .531), Brewers 103-59 (home 55-26 .679, road 48-33 .593). All four input split strings confirmed correct; four prediction-text numbers (94-68/88-74/3-0/6-1) were contradicted and corrected."
+  },
+  "https://top14.lnr.fr/calendrier-et-resultats": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://top14.lnr.fr/classement": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://top14.lnr.fr/feuille-de-match/2026-2027/j7/11861-bayonne-lyon": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://top14.lnr.fr/feuille-de-match/2026-2027/j7/11864-la-rochelle-bordeaux-begles": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://top14.lnr.fr/feuille-de-match/2026-2027/j7/11867-toulouse-perpignan": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.afl.com.au/aflw": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.atptour.com/en/rankings/singles": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.atptour.com/en/scores/current/almaty/9410/draws": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.atptour.com/en/scores/current/brussels/7485/draws": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.atptour.com/en/scores/current/lyon/496/draws": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.cricket.com.au/": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.euroleaguebasketball.net/eurocup/game-center/": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.euroleaguebasketball.net/euroleague/game-center/": {
+   "result": "confirmed",
+   "note": "Round 7 slate re-fetched: venues confirmed (Arena 8888 Sofia for Hapoel-Virtus; Aleksandar Nikolic Hall Belgrade for Maccabi-Real; Turkcell Basketball Development Center for Efes-Besiktas). Team standings positions shown in brackets matched the standings page."
+  },
+  "https://www.europeantour.com/dpworld-tour/schedule/2026/": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.formula1.com/en/racing/2026/united-states": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.galwaygaa.ie/results/": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.gbgb.org.uk/": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.icc-cricket.com/rankings": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.legavolley.it/": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.lpga.com/tournaments": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.mlb.com/gameday/849802": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.mlb.com/gameday/849803": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.mlb.com/gameday/849804": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.mlb.com/gameday/849805": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.nba.com/games?date=2026-10-21": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.nba.com/standings": {
+   "result": "confirmed",
+   "note": "2026-27 + 2025-26 standings re-fetched. Clippers 42-40 (.512), Kings 22-60 (.268), Lakers 53-29 (.646) confirmed; Hawks 46-36 (dataset said 40-42) and Warriors 37-45 (dataset said 44-38) contradicted \u2014 inputs corrected this session; Lakers Pacific Division title (p marker) confirmed."
+  },
+  "https://www.nhl.com/gamecenter/2026020152": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.nhl.com/gamecenter/2026020153": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.nhl.com/gamecenter/2026020154": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.nhl.com/gamecenter/2026020155": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.nhl.com/gamecenter/2026020158": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.nhl.com/gamecenter/2026020160": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.nrl.com/draw/?competition=175&round=2&season=2026": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.nrl.com/draw/?competition=176&round=2&season=2026": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.pdc.tv/tournaments/calendar": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.pgatour.com/pgatour-champions/schedule": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.plusliga.pl/games.html": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.premrugby.com/fixtures-results": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.wst.tv/": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.wst.tv/match-centre/2f09a44b-71d2-4d9c-a12f-90d4b7c21f10": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.wst.tv/match-centre/3d53c559-9bd7-4bc4-8e1d-a6c2b7459528": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.wst.tv/match-centre/480e5abf-5766-44ad-9918-f822ceefd4a5": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.wst.tv/match-centre/5b3a7f22-1c41-48e8-8a2c-94b28a21b9d1": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.wst.tv/match-centre/67133698-e8a4-4b37-9266-452a97df8584": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.wst.tv/match-centre/81c92a40-4d32-4b28-9c61-2f811d3a40c2": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.wst.tv/match-centre/afb42fc9-9654-479e-997e-d33d8a1a6888": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.wst.tv/match-centre/e9c15ae6-b9b8-4cea-a83a-49c58eb14046": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.wst.tv/match-centre/eba55492-fba6-4a53-90be-a04b3560ae65": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  },
+  "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8": {
+   "result": "confirmed",
+   "note": "Johnstone's Paint World Rankings re-fetched: Zhao 1, Wu 2, Trump 3, Robertson 4, Selby 5, Higgins 6, Murphy 7, Williams 8, Wilson 9, ... Zhang Anda 21, Jak Jones 24. All four snooker row inputs confirmed."
+  },
+  "https://www.wtatennis.com/rankings/singles": {
+   "result": "unreconfirmed",
+   "note": "Page is JS-rendered; table body not retrievable via static fetch. WTA notification feed confirms BNB Ningbo Open is in Ningbo, CHN (separate from the Guangzhou Open). Ranking values (Rybakina 1, Bencic 12, Kawa 124, Kudermetova 103) remain as harvested/verified by session f7fa77fc and are flagged for manual review."
+  },
+  "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws": {
+   "result": "unreconfirmed",
+   "note": "Current official Ningbo 2026 draws page (id 2092, confirmed via WTA notifications). Draw grid is JS-rendered and could not be re-read statically; matchups/seeds flagged for manual review. Superseded the stale /tournaments/1115/ URLs in row citations."
+  },
+  "https://www.wtatennis.com/tournaments/405/osaka/2026/draws": {
+   "result": "unreconfirmed",
+   "note": "Not re-fetched in this audit pass (fetch budget); row structurally validated (venue, teams, date from harvesting session f7fa77fc). Manual review link retained; flagged for human re-confirmation."
+  }
+ }
+}

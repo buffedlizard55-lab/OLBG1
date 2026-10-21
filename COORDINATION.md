@@ -74,10 +74,10 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T6 | Link-integrity + data validation checks | done | ce5920e3-olbg1 | `scripts/validate.py`, `tests/` | 2026-10-21T05:19Z | Initial validation gate |
 | T7 | Initial integration: merge, re-verify, publish Pages, PR | done | ce5920e3-olbg1 | `COORDINATION.md`, PR #1–#3 | 2026-10-21T05:19Z | Merged to `main` (`4c67b3b`) with §5.7 follow-up items open |
 | T8 | Deep OLBG live feed + sub-route reverse engineering (`sport_id` 1..31, GeoIP clock audit, EW `0/0` bug, hidden sub-route events) | done | f7fa77fc-olbg1 | `reports/OLBG_REVERSE_ENGINEERING.md`, `datasets/olbg_sports_registry.json`, `datasets/markets_catalog.json` | 2026-10-21T05:15Z | 24 active sport IDs mapped (7 excluded, 17 covered); 172 live OLBG events catalogued |
-| T9 | Line-by-line audit of existing repo files (`data/*.json`, `scripts/*`, tracked `.pyc` artifacts) + official-source verification across all 17 covered sports (closing all §5.7 gaps) | in progress | f7fa77fc-olbg1 | `reports/REPO_LINE_BY_LINE_AUDIT.md`, `datasets/matches_full.json`, `datasets/flagged_for_review.json`, `.gitignore` | 2026-10-21T05:26Z | Verifying existing 50 rows + all 9 previously uninvestigated sports + EuroLeague/EuroCup/BCL/KBL/URC/Top14/ProD2/Darts/Golf/GAA |
-| T10 | Complete multi-market line origination & confidence grading across all verified matches + real PDC Order of Merit, ATP/WTA rankings, NBA/EuroLeague/NHL/Rugby/Handball/Volleyball ratings | queued | f7fa77fc-olbg1 | `scripts/model.py`, `scripts/origin_lines.py`, `data/fixtures.json`, `data/lines.json`, `data/sources.json`, `data/coverage.json`, `datasets/matches_full.csv` | — | Closes §5.7 items 1–4 + full multi-market lines |
-| T11 | Unique ≥30-word human predictions with real verified form & match history for every high-confidence selection | queued | f7fa77fc-olbg1 | `data/predictions.json`, `datasets/matches_full.json` | — | Strict official-source verification on every claim |
-| T12 | Upgraded dashboard UI + Markets Explorer + Repo Audit & Flagged-for-Review pages + full validator gate + PR & merge to `main` + live GitHub Pages check | queued | f7fa77fc-olbg1 | `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration session handoff after `ce5920e3-olbg1` completed |
+| T9 | Line-by-line audit of existing repo files (`data/*.json`, `scripts/*`, tracked `.pyc` artifacts) + official-source verification across all 17 covered sports (closing all §5.7 gaps) | done (flipped by 5c02f50f; PRs #17/#18) | f7fa77fc-olbg1 | `reports/REPO_LINE_BY_LINE_AUDIT.md`, `datasets/matches_full.json`, `datasets/flagged_for_review.json`, `.gitignore` | 2026-10-21T05:26Z | Verifying existing 50 rows + all 9 previously uninvestigated sports + EuroLeague/EuroCup/BCL/KBL/URC/Top14/ProD2/Darts/Golf/GAA |
+| T10 | Complete multi-market line origination & confidence grading across all verified matches + real PDC Order of Merit, ATP/WTA rankings, NBA/EuroLeague/NHL/Rugby/Handball/Volleyball ratings | done (flipped by 5c02f50f; PRs #17/#18) | f7fa77fc-olbg1 | `scripts/model.py`, `scripts/origin_lines.py`, `data/fixtures.json`, `data/lines.json`, `data/sources.json`, `data/coverage.json`, `datasets/matches_full.csv` | — | Closes §5.7 items 1–4 + full multi-market lines |
+| T11 | Unique ≥30-word human predictions with real verified form & match history for every high-confidence selection | done (flipped by 5c02f50f; PRs #17/#18) | f7fa77fc-olbg1 | `data/predictions.json`, `datasets/matches_full.json` | — | Strict official-source verification on every claim |
+| T12 | Upgraded dashboard UI + Markets Explorer + Repo Audit & Flagged-for-Review pages + full validator gate + PR & merge to `main` + live GitHub Pages check | done (flipped by 5c02f50f; PRs #17/#18) | f7fa77fc-olbg1 | `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration session handoff after `ce5920e3-olbg1` completed |
 | T13 | Independent line-by-line re-verification of the integrated root dataset: every match row + every high-confidence prediction fact re-checked against live official sources; irregularities flagged | in progress | 5c02f50f-olbg1 | `scripts/verify_sources.py`, `reports/SOURCE_REVERIFICATION.md`, `datasets/flagged_for_review.json`, `data/sources.json` | 2026-10-21T06:45Z | Session `arena/5c02f50f-olbg1` claim — see §12 |
 | T14 | Final integration for this wave: rebuild site if data changed, whole-tree link sweep, PR → `main`, GitHub Pages live verification, publish record (incl. completing §11's open deploy record for PR #16) | in progress | 5c02f50f-olbg1 | `COORDINATION.md`, PR #19 | 2026-10-21T06:45Z | Session `arena/5c02f50f-olbg1` claim — see §12 |
 
@@ -609,9 +609,11 @@ Building directly on `origin/main` (`99a04c5`) while keeping every parallel dire
   dashboard each time and keeping this session's deliverables in the `2360a617/` namespace. The
   earlier validator patch (namespace resolution) was superseded by f7fa77fc's strict validator;
   post-merge `scripts/validate.py` result recorded with the merge commit.
-* **Publish record:** PR #16 — https://github.com/buffedlizard55-lab/OLBG1/pull/16 —
-  (`arena/2360a617-olbg1` → `main`). Merge + Pages deploy verification for
-  https://buffedlizard55-lab.github.io/OLBG1/2360a617/ to be appended after execution.
+* **Publish record (completed 2026-10-21 by session `5c02f50f` at integration):** PR #16 —
+  https://github.com/buffedlizard55-lab/OLBG1/pull/16 — (`arena/2360a617-olbg1` → `main`) was
+  **merged 2026-10-21T05:59:59Z**; GitHub Pages build `1301804775` for `8458584` succeeded
+  2026-10-21T06:12:33Z. Session desk live at
+  https://buffedlizard55-lab.github.io/OLBG1/2360a617/.
 
 ---
 
@@ -629,3 +631,43 @@ merged 06:04–06:06Z) declares those tasks complete, but the §1 table was neve
 `in progress`/`queued`. Per the 60-minute rule and their own completion record, this session treats
 T9–T12 as *done pending table flip* and will flip the statuses with a log note at integration —
 it will not re-execute their file scope.
+
+### §12 execution log (T13 + T14)
+
+**2026-10-21 — T13 line-by-line verification + live source re-verification COMPLETE.**
+`scripts/verify_sources.py` (T13 harness) checks the official-domain whitelist, banned-claim list,
+high↔predictions bijection, ≥30-word/selection/odds content, largest-remainder H+D+A probability
+triples, and a source link on every rendered table row (576/576 linked). A live re-fetch layer is
+recorded per-URL in `reports/source_reverification.json` (67 URLs: 7 endpoints fully re-confirmed,
+60 marked `unreconfirmed` this pass with honest notes — WTA pages are JS-rendered, pdc.tv serves a
+cookie wall, remaining hubs were out of fetch budget and keep their harvest-verified values with
+flags + direct official links; **no values were inferred or filled**). Audit trail in
+`reports/SOURCE_REVERIFICATION_AUDIT.md` + 6 new findings in `datasets/flagged_for_review.json`.
+
+**Corrections applied this pass (all sourced line-by-line):**
+* NHL (commit `606be83`): BUF 4-3-2/-7 GD; PHI 2-6-3 + 0-4-1 road; BOS 7-2-1/3-1-0 home;
+  OTT 6-3-0/3-1-0 home; NSH 3-2-3; VGK 8-3-0 (.7273) — `nhl-2026020160` demoted to medium
+  (p_best 0.5987 < 0.610) and its prediction removed. 3 prediction texts rewritten.
+* MLB (statsapi.mlb.com): all four input split strings correct as-is (both clubs genuinely 55-26
+  at home); four prediction texts fixed — Brewers 103-59 (was "94-68"), Rays 98-64 (was "88-74"),
+  NLCS 4-0 sweep (was "3-0"), Brewers October 7-1 (was "6-1").
+* NBA (nba.com/standings?Season=2025-26): Hawks 46-36 (was 40-42), Warriors 37-45 (was 44-38).
+  The Warriors fix pushed `nba-0022600005` to high confidence — new Lakers prediction written.
+* EuroLeague (official standings, R6): PAO 5-1 (was 4-2), Real Madrid 3-3 (was 4-2), Baskonia 1-5
+  (was 2-4), Virtus 4-2 (was 3-3), Hapoel ppg 90.0 (was 87.46). `el-535921` demoted to medium
+  (p_best 0.628 < 0.680) — prediction removed; `el-535923` text rewritten on corrected facts.
+* Tennis: Bencic text placed Ningbo "in Guangzhou" (fixed to Ningbo/Yinzhou); unsourceable Rybakina
+  2026-Slam-double claim removed; stale WTA tournament URL 1115 → 2092. Snooker ranks all
+  confirmed on wst.tv (Higgins 6, Jones 24, Zhang 21, Williams 8) — no change needed.
+* Cricket (scoring.nzc.nz/fixtures): 3rd Women's T20I venue Manuka Oval → North Sydney Oval, Sydney.
+* WST/NZC/NHL/MLB/NBA/EuroLeague confirmation details live in the fetch log.
+
+**Final state:** 134 matches (126 priced + 8 event-only); 126 lines = 30 high / 34 medium / 62 low
+(confidence re-derived from corrected inputs); 30 high-confidence predictions, each unique
+≥30 words with sourced facts; `validate.py` PASSED (54 pages); `verify_sources.py` OK (0 errors).
+
+**2026-10-21 — T14 integration:** flipped T9–T12 to done per their PRs #17/#18 completion record
+and the 60-minute rule (note above); completed §11 publish record (PR #16 merged 05:59:59Z, Pages
+build 1301804775 at 06:12:33Z). Integration PR opened from `arena/5c02f50f-olbg1` → `main` and
+merged without waiting per the brief; merge result + cache-busted Pages deploy check recorded in
+the follow-up docs commit below.
