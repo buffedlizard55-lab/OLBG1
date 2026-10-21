@@ -12122,7 +12122,7 @@
       "away": "Bangladesh",
       "venue": "Sharjah / UAE (neutral)",
       "neutral": true,
-      "status": "verified",
+      "status": "unverified",
       "sources": [
         {
           "name": "ICC official team rankings (Men's & Women's T20I)",
@@ -12141,7 +12141,9 @@
           "rating": 64.0
         }
       },
-      "flags": [],
+      "flags": [
+        "Unverified: no official fixture page for Afghanistan v Bangladesh at Sharjah was found in two passes; the only citation is the ICC rankings table, which publishes no fixtures. Date and venue are as OLBG lists them."
+      ],
       "olbg": {
         "listed": true,
         "event_id": 188824,
@@ -12163,7 +12165,7 @@
         "away_probability": 0.3883,
         "pick": "Afghanistan",
         "pick_market": "Match Winner",
-        "confidence": "medium",
+        "confidence": "low",
         "expected_margin": 6.81,
         "rating_home": 74.0,
         "rating_away": 64.0,
@@ -12399,7 +12401,7 @@
       "competition": "Ford Trophy (List A 50-over)",
       "stage": "Round 1",
       "start_utc": null,
-      "date_local": "2026-10-24",
+      "date_local": "2026-10-27",
       "home": "Auckland Aces",
       "away": "Canterbury",
       "venue": "Kennards Hire Community Oval, Auckland",
@@ -12413,6 +12415,7 @@
       ],
       "inputs": {},
       "flags": [
+        "Corrected 2026-10-21 against scoring.nzc.nz/fixtures: Ford Trophy Round 1 sits under the TUE 27 Oct heading, not Sat 24 Oct.",
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ],
       "is_h2h": true,
@@ -12549,7 +12552,7 @@
       "competition": "Ford Trophy (List A 50-over)",
       "stage": "Round 1",
       "start_utc": null,
-      "date_local": "2026-10-24",
+      "date_local": "2026-10-27",
       "home": "Central Stags",
       "away": "Northern Districts",
       "venue": "Saxton Oval, Nelson",
@@ -12564,6 +12567,7 @@
       "inputs": {},
       "flags": [
         "Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists Central Stags v Northern Districts, Ford Trophy Round 1, at Saxton Oval, Nelson; the earlier Pukekura Park entry is not reproducible on the official service.",
+        "Corrected 2026-10-21 against scoring.nzc.nz/fixtures: Ford Trophy Round 1 is Tue 27 Oct, not Sat 24 Oct.",
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ],
       "is_h2h": true,
@@ -12700,7 +12704,7 @@
       "competition": "Ford Trophy (List A 50-over)",
       "stage": "Round 1",
       "start_utc": null,
-      "date_local": "2026-10-24",
+      "date_local": "2026-10-27",
       "home": "Wellington Firebirds",
       "away": "Otago Volts",
       "venue": "Cello Basin Reserve, Wellington",
@@ -12714,6 +12718,7 @@
       ],
       "inputs": {},
       "flags": [
+        "Corrected 2026-10-21 against scoring.nzc.nz/fixtures: Ford Trophy Round 1 is Tue 27 Oct, not Sat 24 Oct.",
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ],
       "is_h2h": true,
@@ -18560,7 +18565,7 @@
       "start_utc": "2026-10-22T18:45:00Z",
       "home": "Kolstad H\u00e5ndball",
       "away": "SC Magdeburg",
-      "venue": "Trondheim Spektrum, Trondheim",
+      "venue": "Kolstad Arena, Kolstad, Norway",
       "neutral": false,
       "status": "verified",
       "sources": [
@@ -20437,10 +20442,10 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": "2026-10-23T08:15:00Z",
+      "start_utc": "2026-10-25T02:05:00Z",
       "home": "North Melbourne",
       "away": "Adelaide Crows",
-      "venue": "Arden Street Oval, Melbourne",
+      "venue": "North Hobart Oval, Hobart",
       "neutral": false,
       "status": "verified",
       "sources": [
@@ -20462,7 +20467,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "is_h2h": true,
       "pricing": {
@@ -20614,7 +20620,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": "2026-10-24T02:05:00Z",
+      "start_utc": "2026-10-24T04:05:00Z",
       "home": "Geelong Cats",
       "away": "Fremantle",
       "venue": "GMHBA Stadium, Geelong",
@@ -20639,7 +20645,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "is_h2h": true,
       "pricing": {
@@ -20774,7 +20781,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": "2026-10-24T04:05:00Z",
+      "start_utc": "2026-10-24T08:15:00Z",
       "home": "Western Bulldogs",
       "away": "Melbourne",
       "venue": "Mission Whitten Oval, Melbourne",
@@ -20799,7 +20806,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "is_h2h": true,
       "pricing": {
@@ -20934,7 +20942,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": "2026-10-24T04:05:00Z",
+      "start_utc": "2026-10-25T06:05:00Z",
       "home": "Carlton",
       "away": "GWS GIANTS",
       "venue": "IKON Park, Melbourne",
@@ -20959,7 +20967,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "is_h2h": true,
       "pricing": {
@@ -21111,10 +21120,10 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": "2026-10-24T06:15:00Z",
+      "start_utc": "2026-10-25T04:05:00Z",
       "home": "Hawthorn",
       "away": "Essendon",
-      "venue": "Kinetic Stadium, Frankston",
+      "venue": "Kennedy Community Centre, Dingley",
       "neutral": false,
       "status": "verified",
       "sources": [
@@ -21136,7 +21145,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "is_h2h": true,
       "pricing": {
@@ -21288,7 +21298,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": "2026-10-24T08:15:00Z",
+      "start_utc": "2026-10-24T06:05:00Z",
       "home": "Gold Coast SUNS",
       "away": "Richmond",
       "venue": "People First Stadium, Gold Coast",
@@ -21313,7 +21323,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "is_h2h": true,
       "pricing": {
@@ -21448,7 +21459,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": "2026-10-25T02:05:00Z",
+      "start_utc": "2026-10-23T08:15:00Z",
       "home": "Port Adelaide",
       "away": "Collingwood",
       "venue": "Alberton Oval, Adelaide",
@@ -21473,7 +21484,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "is_h2h": true,
       "pricing": {
@@ -21608,7 +21620,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": "2026-10-25T04:05:00Z",
+      "start_utc": "2026-10-25T01:35:00Z",
       "home": "Sydney Swans",
       "away": "West Coast Eagles",
       "venue": "Henson Park, Sydney",
@@ -21633,7 +21645,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "is_h2h": true,
       "pricing": {
@@ -21768,7 +21781,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": "2026-10-25T06:05:00Z",
+      "start_utc": "2026-10-24T02:05:00Z",
       "home": "St Kilda",
       "away": "Brisbane Lions",
       "venue": "RSEA Park, Melbourne",
@@ -21793,7 +21806,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "is_h2h": true,
       "pricing": {

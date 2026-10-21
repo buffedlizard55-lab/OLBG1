@@ -259,11 +259,11 @@
       "fixed_line": null
     }
   },
-  "count": 127,
+  "count": 126,
   "confidence_counts": {
     "high": 31,
     "low": 61,
-    "medium": 35
+    "medium": 34
   },
   "lines": [
     {
@@ -896,15 +896,15 @@
       "sport": "ice-hockey",
       "sport_name": "Ice Hockey",
       "favourite": "Vegas Golden Knights",
-      "home_probability": 0.4013,
+      "home_probability": 0.3603,
       "draw_probability": 0.0,
-      "away_probability": 0.5987,
+      "away_probability": 0.6397,
       "pick": "Vegas Golden Knights",
       "pick_market": "Match Winner",
-      "confidence": "medium",
-      "expected_margin": -0.71,
+      "confidence": "high",
+      "expected_margin": -1.02,
       "rating_home": 50.0,
-      "rating_away": 72.7,
+      "rating_away": 80.0,
       "rating_measured_home": true,
       "rating_measured_away": true,
       "rating_coverage": 2,
@@ -918,21 +918,21 @@
           "outcomes": [
             {
               "selection": "St. Louis Blues",
-              "probability": 0.401253,
-              "odds": 2.37,
-              "fair_odds": 2.49,
-              "american": "+137",
-              "fair_american": "+149",
-              "implied_pct": 40
+              "probability": 0.360301,
+              "odds": 2.64,
+              "fair_odds": 2.78,
+              "american": "+164",
+              "fair_american": "+178",
+              "implied_pct": 36
             },
             {
               "selection": "Vegas Golden Knights",
-              "probability": 0.598747,
-              "odds": 1.59,
-              "fair_odds": 1.67,
-              "american": "-169",
-              "fair_american": "-149",
-              "implied_pct": 60
+              "probability": 0.639699,
+              "odds": 1.49,
+              "fair_odds": 1.56,
+              "american": "-204",
+              "fair_american": "-179",
+              "implied_pct": 64
             }
           ],
           "basis": "Official governing-body ratings + venue adjustment"
@@ -944,24 +944,24 @@
           "outcomes": [
             {
               "selection": "St. Louis Blues +1.5",
-              "probability": 0.608807,
-              "odds": 1.56,
-              "fair_odds": 1.64,
-              "american": "-179",
-              "fair_american": "-156",
-              "implied_pct": 61
+              "probability": 0.566969,
+              "odds": 1.68,
+              "fair_odds": 1.76,
+              "american": "-147",
+              "fair_american": "-132",
+              "implied_pct": 57
             },
             {
               "selection": "Vegas Golden Knights -1.5",
-              "probability": 0.391193,
-              "odds": 2.43,
-              "fair_odds": 2.56,
-              "american": "+143",
-              "fair_american": "+156",
-              "implied_pct": 39
+              "probability": 0.433031,
+              "odds": 2.2,
+              "fair_odds": 2.31,
+              "american": "+120",
+              "fair_american": "+131",
+              "implied_pct": 43
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=-0.7, sigma=2.9)"
+          "basis": "Gaussian margin projection (E[M]=-1.0, sigma=2.9)"
         },
         {
           "key": "total",
@@ -1012,7 +1012,7 @@
       ],
       "unavailable_markets": [],
       "model_notes": [
-        "Both sides carry official governing-body ratings (50.0 vs 72.7); log-odds differential scaled by k=42.",
+        "Both sides carry official governing-body ratings (50.0 vs 80.0); log-odds differential scaled by k=42.",
         "Total market centered on competition baseline 6.5 (Goals)."
       ]
     },
@@ -17200,131 +17200,6 @@
       "model_notes": [
         "One or both sides have no current official numeric rating; model falls back to the neutral home/venue baseline and strictly caps confidence at low.",
         "Total market centered on competition baseline 29.5 (Score Points (60m))."
-      ]
-    },
-    {
-      "id": "cric-nz-ind-t20-3",
-      "sport": "cricket",
-      "sport_name": "Cricket",
-      "favourite": "India",
-      "home_probability": 0.3797,
-      "draw_probability": 0.0,
-      "away_probability": 0.6203,
-      "pick": "India",
-      "pick_market": "Match Winner",
-      "confidence": "high",
-      "expected_margin": -7.35,
-      "rating_home": 68.5,
-      "rating_away": 81.5,
-      "rating_measured_home": true,
-      "rating_measured_away": true,
-      "rating_coverage": 2,
-      "both_rated": true,
-      "both_measured": true,
-      "markets": [
-        {
-          "key": "winner",
-          "name": "Match Winner",
-          "line": "",
-          "outcomes": [
-            {
-              "selection": "New Zealand",
-              "probability": 0.379699,
-              "odds": 2.51,
-              "fair_odds": 2.63,
-              "american": "+151",
-              "fair_american": "+163",
-              "implied_pct": 38
-            },
-            {
-              "selection": "India",
-              "probability": 0.620301,
-              "odds": 1.54,
-              "fair_odds": 1.61,
-              "american": "-185",
-              "fair_american": "-164",
-              "implied_pct": 62
-            }
-          ],
-          "basis": "Official governing-body ratings + venue adjustment"
-        },
-        {
-          "key": "handicap",
-          "name": "Runs / Wickets Handicap",
-          "line": "7.5",
-          "outcomes": [
-            {
-              "selection": "New Zealand +7.5",
-              "probability": 0.502485,
-              "odds": 1.9,
-              "fair_odds": 1.99,
-              "american": "-111",
-              "fair_american": "-101",
-              "implied_pct": 50
-            },
-            {
-              "selection": "India -7.5",
-              "probability": 0.497515,
-              "odds": 1.91,
-              "fair_odds": 2.01,
-              "american": "-110",
-              "fair_american": "+101",
-              "implied_pct": 50
-            }
-          ],
-          "basis": "Gaussian margin projection (E[M]=-7.4, sigma=24.0)"
-        },
-        {
-          "key": "total",
-          "name": "Match Total (Match Runs)",
-          "line": "339.5",
-          "outcomes": [
-            {
-              "selection": "Over 339.5",
-              "probability": 0.5,
-              "odds": 1.9,
-              "fair_odds": 2.0,
-              "american": "-111",
-              "fair_american": "+100",
-              "implied_pct": 50
-            },
-            {
-              "selection": "Under 339.5",
-              "probability": 0.5,
-              "odds": 1.9,
-              "fair_odds": 2.0,
-              "american": "-111",
-              "fair_american": "+100",
-              "implied_pct": 50
-            }
-          ],
-          "alternate": [
-            {
-              "selection": "Over 338.0",
-              "probability": 0.518694,
-              "odds": 1.84,
-              "fair_odds": 1.93,
-              "american": "-119",
-              "fair_american": "-108",
-              "implied_pct": 52
-            },
-            {
-              "selection": "Under 338.0",
-              "probability": 0.481306,
-              "odds": 1.98,
-              "fair_odds": 2.08,
-              "american": "-102",
-              "fair_american": "+108",
-              "implied_pct": 48
-            }
-          ],
-          "basis": "Competition baseline total (339.5 match runs, sigma=32.0)"
-        }
-      ],
-      "unavailable_markets": [],
-      "model_notes": [
-        "Both sides carry official governing-body ratings (68.5 vs 81.5); log-odds differential scaled by k=22.",
-        "Total market centered on competition baseline 339.5 (Match Runs)."
       ]
     }
   ]

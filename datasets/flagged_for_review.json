@@ -1,9 +1,9 @@
 {
   "generated": "2026-10-21",
   "summary": {
-    "upstream_and_audit_findings": 28,
+    "upstream_and_audit_findings": 36,
     "flagged_fixture_rows": 111,
-    "cross_checked_rows": 5,
+    "cross_checked_rows": 6,
     "missing_utc_rows": 32
   },
   "findings": [
@@ -286,6 +286,86 @@
       "evidence": "The card shows 'Avani Prashanth' with no tip counter, matching the previously documented 0/0 division display defect on each-way-only outright markets.",
       "official_url": "https://www.olbg.com/betting-tips/Golf/5",
       "resolution": "Consensus is recorded as unavailable for this card; no share is inferred."
+    },
+    {
+      "id": "T21-F-T21-01",
+      "category": "Second-Pass Re-Verification (T21)",
+      "severity": "high",
+      "affected": "AFLW \u2014 the ladder used to price nine rows is not the official 2026 ladder",
+      "summary": "Every AFLW row cites a 2026 R10 ladder input. Read against the official afl.com.au 2026 AFLW ladder after Round 10, the published inputs do not reconcile: the rows give North Melbourne 40 points (10-0) where the official table has 36 (9-1), Geelong 16 points at 13th where the official table has 36 at 2nd, Gold Coast 4 points at 18th where the official table has 28 at 5th, St Kilda 20 points at 10th where the official table has 4 at 18th, and so on for 16 of the 18 clubs. The fixture facts were verified in this pass and nine start times plus one venue were corrected; the pricing inputs were not.",
+      "evidence": "Read on 2026-10-21 (second pass) from AFL official 2026 AFLW ladder (after Round 10) \u2014 https://www.afl.com.au/aflw/ladder",
+      "official_url": "https://www.afl.com.au/aflw/ladder",
+      "resolution": "Disclosed, not silently re-priced. Re-pricing would rewrite nine published rows and the three AFLW high-confidence picks in the same commit that discovered the error, which is how a desk loses its audit trail. Every AFLW row now carries the mismatch as a flag, the official ladder link is on this register, and T22 in COORDINATION.md is the dedicated re-price task."
+    },
+    {
+      "id": "T21-F-T21-02",
+      "category": "Second-Pass Re-Verification (T21)",
+      "severity": "high",
+      "affected": "AFLW \u2014 nine Round 11 start times were shifted by one fixture, and one venue was wrong",
+      "summary": "The nine AFLW rows were correct about participants but had been given the Round 11 kick-off slots in chronological order rather than in their own match's order. Port Adelaide v Collingwood carried the North Melbourne slot, St Kilda v Brisbane carried Geelong's, and so on; two rows shared 2026-10-24T04:05Z, one time (06:15Z) appears in no official fixture, and Hawthorn v Essendon was placed at Kinetic Stadium, Frankston instead of the Kennedy Community Centre in Dingley.",
+      "evidence": "Read on 2026-10-21 (second pass) from AFL official AFLW hub \u2014 Round 11 fixture board & match ids \u2014 https://www.afl.com.au/aflw",
+      "official_url": "https://www.afl.com.au/aflw",
+      "resolution": "All nine start times corrected from the AFL Round 11 board, the Hawthorn venue corrected, and each corrected value carries its match id (8970-8979) in the evidence column."
+    },
+    {
+      "id": "T21-F-T21-03",
+      "category": "Second-Pass Re-Verification (T21)",
+      "severity": "medium",
+      "affected": "Cricket \u2014 Ford Trophy Round 1 is 27 October, not 24 October",
+      "summary": "The three Ford Trophy rows were dated 2026-10-24. On the NZC fixture service the Round 1 block sits under the TUE 27 Oct heading, after the 3rd T20I and before the FRI 30 Oct block that carries Round 2.",
+      "evidence": "Read on 2026-10-21 (second pass) from New Zealand Cricket official fixtures & results service \u2014 https://scoring.nzc.nz/fixtures",
+      "official_url": "https://scoring.nzc.nz/fixtures",
+      "resolution": "All three date_local values corrected to 2026-10-27; venues confirmed. Start times stay blank because NZC prints 5:30pm with no timezone."
+    },
+    {
+      "id": "T21-F-T21-04",
+      "category": "Second-Pass Re-Verification (T21)",
+      "severity": "medium",
+      "affected": "Cricket \u2014 the Afghanistan v Bangladesh ODI has no governing-body fixture page",
+      "summary": "The row's only citation is the ICC rankings table, which publishes no fixtures. Neither pass found an official page that lists the match at Sharjah, and NZC does not cover it.",
+      "evidence": "Read on 2026-10-21 (second pass) from New Zealand Cricket official fixtures & results service \u2014 https://scoring.nzc.nz/fixtures",
+      "official_url": "https://scoring.nzc.nz/fixtures",
+      "resolution": "Row status downgraded from verified to unverified and flagged; date and venue remain as OLBG lists them, with nothing invented to fill the gap."
+    },
+    {
+      "id": "T21-F-T21-05",
+      "category": "Second-Pass Re-Verification (T21)",
+      "severity": "medium",
+      "affected": "Rugby league \u2014 the women's RLWC rows could not be re-read",
+      "summary": "nrl.com serves the men's Round 2 draw for ?competition=176 as well, because the competition selector is client-side. The two women's rows therefore stay not re-checked with that reason printed.",
+      "evidence": "Read on 2026-10-21 (second pass) from NRL / Rugby League World Cup 2026 Round 2 draw (nrl.com) \u2014 https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+      "official_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+      "resolution": "Reason recorded per row; no value changed."
+    },
+    {
+      "id": "T21-F-T21-06",
+      "category": "Second-Pass Re-Verification (T21)",
+      "severity": "low",
+      "affected": "Source reachability \u2014 three publishers block a text read",
+      "summary": "pdc.tv still returns a cookie-consent interstitial. cdn.nba.com returned HTTP 500 during this pass. premrugby.com and plusliga.pl render their fixture lists client-side (plusliga.pl also redirects to the tauronliga.pl portal). None of these failures is treated as agreement.",
+      "evidence": "Read on 2026-10-21 (second pass) from NBA official scoreboard feed (cdn.nba.com) \u2014 https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json",
+      "official_url": "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json",
+      "resolution": "27 rows across darts, NBA, EuroLeague/EuroCup, Premiership and PlusLiga stay not re-checked with the blocker named."
+    },
+    {
+      "id": "T21-F-T21-07",
+      "category": "Second-Pass Re-Verification (T21)",
+      "severity": "low",
+      "affected": "Handball \u2014 one venue did not match the official playing-times sheet",
+      "summary": "Kolstad's Round 5 home fixture is listed by the EHF at Kolstad Arena (Kolstad), not Trondheim Spektrum.",
+      "evidence": "Read on 2026-10-21 (second pass) from EHF Champions League Men 2026/27 group-phase playing times (official PDF) \u2014 https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "official_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "resolution": "Venue corrected; the other eleven handball rows matched the PDF on participants, date, start time and arena."
+    },
+    {
+      "id": "T21-F-T21-08",
+      "category": "Second-Pass Re-Verification (T21)",
+      "severity": "low",
+      "affected": "Top 14 \u2014 the Sunday fixture is after the French DST change",
+      "summary": "La Rochelle v Bordeaux-B\u00e8gles is listed at 21h05 on Sunday 25 October. France leaves CEST at 03:00 that morning, so 21h05 is CET and equals 20:05Z. A naive CEST conversion would have produced 19:05Z and looked like a one-hour error in the row; the row is right.",
+      "evidence": "Read on 2026-10-21 (second pass) from LNR Top 14 official calendar, journ\u00e9e 7 \u2014 https://top14.lnr.fr/calendrier-et-resultats",
+      "official_url": "https://top14.lnr.fr/calendrier-et-resultats",
+      "resolution": "Confirmed, no change. Recorded because the same trap applies to every other Sunday European fixture after 25 October."
     }
   ],
   "rows": [
@@ -1073,10 +1153,12 @@
       "sport": "cricket",
       "competition": "Men's One-Day International",
       "match": "Afghanistan vs Bangladesh",
-      "status": "verified",
+      "status": "unverified",
       "missing_utc": true,
       "unrated_sides": 0,
-      "flags": [],
+      "flags": [
+        "Unverified: no official fixture page for Afghanistan v Bangladesh at Sharjah was found in two passes; the only citation is the ICC rankings table, which publishes no fixtures. Date and venue are as OLBG lists them."
+      ],
       "official_url": "https://www.icc-cricket.com/rankings"
     },
     {
@@ -1103,6 +1185,7 @@
       "missing_utc": true,
       "unrated_sides": 2,
       "flags": [
+        "Corrected 2026-10-21 against scoring.nzc.nz/fixtures: Ford Trophy Round 1 sits under the TUE 27 Oct heading, not Sat 24 Oct.",
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ],
       "official_url": "https://scoring.nzc.nz/fixtures"
@@ -1117,6 +1200,7 @@
       "unrated_sides": 2,
       "flags": [
         "Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists Central Stags v Northern Districts, Ford Trophy Round 1, at Saxton Oval, Nelson; the earlier Pukekura Park entry is not reproducible on the official service.",
+        "Corrected 2026-10-21 against scoring.nzc.nz/fixtures: Ford Trophy Round 1 is Tue 27 Oct, not Sat 24 Oct.",
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ],
       "official_url": "https://scoring.nzc.nz/fixtures"
@@ -1130,6 +1214,7 @@
       "missing_utc": true,
       "unrated_sides": 2,
       "flags": [
+        "Corrected 2026-10-21 against scoring.nzc.nz/fixtures: Ford Trophy Round 1 is Tue 27 Oct, not Sat 24 Oct.",
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ],
       "official_url": "https://scoring.nzc.nz/fixtures"
@@ -1470,7 +1555,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1483,7 +1569,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1496,7 +1583,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1509,7 +1597,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1522,7 +1611,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1535,7 +1625,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1548,7 +1639,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1561,7 +1653,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1574,7 +1667,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },

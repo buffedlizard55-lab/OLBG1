@@ -83,7 +83,8 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T15 | Independent second-pass market-coverage and whole-tree source-link structural audit | done | e92c2bf4-olbg1 | `reports/SESSION_E92_SNAPSHOT_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:41Z | Completed after T13; records eight unpriced field cards, one missing cricket total, snapshot window, and validator evidence limits; does not edit shared data/pages. |
 | T16 | Corrective primary-desk provenance, status disclosure, integration and Pages publication | done | 4904ed05-olbg1 | `COORDINATION.md`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/flagged_for_review.json`, `scripts/validate.py`, root `*.html`, `sports/*.html`, `assets/*`, `README.md` | 2026-10-21T06:41Z | PR #24 merged; Pages workflow 39558245786 completed successfully. Remediated F1–F3 without changing independent review artifacts. |
 | T20 | **Fresh live re-verification of every primary-desk row against official sources** (first pass in this repo to re-fetch official pages rather than audit structure), publication of a Live Verification page, corrections where fresh data disagrees, PR + merge + Pages deploy check | done | 72198d3e-olbg1 | `scripts/verify_live.py`, `reports/LIVE_VERIFICATION.md`, `live-verification.html`, `data/verification.json`, `data/fixtures.json` (corrections only), `data/predictions.json` (corrections only), `COORDINATION.md` (append-only) | 2026-10-21T07:05Z | Claimed 2026-10-21T07:05Z as T17; renumbered to T20 after a task-id collision with session 76950c25 (see §17). Independent of T13/T15/T16 which were structural audits; this task re-fetches each row's official source. Shared nav/`index.html` touched only at final integration. |
-| T21 | Second, independent fresh re-verification pass: re-open every in-scope governing-body page again on 2026-10-21 after the T20 pass, add the start times / dates / venues that T20 left blank where an official page publishes them, correct the rows that disagree, and extend the published Live Verification register | in progress | b95dbd01-olbg1 | `scripts/live_verification.py`, `data/verification.json`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `datasets/*`, `reports/LIVE_VERIFICATION.md`, root `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` (append-only) | 2026-10-21T08:10Z | Numbered T21: T20 was taken by `72198d3e-olbg1` and T17–T19 by `76950c25-olbg1`. Additive to T20 — no row, page or finding produced by T20, T17–T19 or the earlier boards is removed; this pass only raises coverage and corrects values it can source. |
+| T21 | Second, independent fresh re-verification pass over every reachable governing-body page; corrections; per-row ledger; published register | done | b95dbd01-olbg1 | `scripts/live_verification.py`, `scripts/build_dataset.py`, `scripts/dataset_rows_b.py`, `data/{fixtures,verification,lines,predictions}.json`, `datasets/*`, `reports/LIVE_VERIFICATION.md`, root `*.html`, `sports/*.html`, `README.md`, append-only `COORDINATION.md` | 2026-10-21T09:05Z | 134 rows: 54 confirmed, 14 corrected, 5 flagged, 61 not re-checked with the blocker named. 13 dataset corrections (9 AFLW kick-offs, 1 AFLW venue, 3 Ford Trophy dates, 1 EHF arena) plus 1 status downgrade and the AFLW ladder disclosed as unreconciled (T22). `validate.py`, `final_audit.py`, `ebfbd966_validate.py` pass; two-run determinism proven. |
+| T22 | Re-price the nine AFLW Round 11 rows from the official 2026 ladder after Round 10 | queued | — | `scripts/dataset_rows_b.py` (AFLW block), `scripts/high_predictions.py` (3 AFLW picks), `data/lines.json`, `data/predictions.json`, README counts | — | Required by F-T21-01: the AFLW pricing inputs do not match the official ladder. Fixture facts are already verified; only the ratings, prices, the three AFLW labels/prose and the headline counts need to move in one dedicated commit. |
 
 | T17 | Live OLBG re-harvest of all 17 in-scope sport hubs + diff against the committed snapshot | done | 76950c25-olbg1 | `data/live_snapshot.json`, `data/live_diff.json`, `scripts/live_harvest.py` | 2026-10-21T07:10Z | Fresh fetch of every in-scope hub; per-event add/remove/consensus-change diff; no shared-file edits |
 | T18 | Official-source verification of refreshed/changed rows (MLB confirmation; other rows retain recorded governing-body sources) + unverified cards published blank | done | 76950c25-olbg1 | `scripts/dataset_rows_c.py`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `datasets/*`, `reports/SESSION_769_LIVE_REFRESH.md` | — | Blank-and-flag any value not confirmed on an official page |
@@ -824,3 +825,77 @@ so they cannot be turned into UTC without a source.
 `datasets/*`, `reports/LIVE_VERIFICATION.md`, generated root `*.html` and `sports/*.html`,
 `assets/*`, `COORDINATION.md`. **Not touched:** `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`,
 `/2360a617/`, and any other session's report.
+
+## 19. Session `b95dbd01-olbg1` — T21 second-pass result
+
+**Run:** 2026-10-21T09:05Z, after the merge of `origin/main` (T17–T20). Additive to §17.
+
+**Outcome over all 134 rows.** `54` confirmed, `14` corrected, `5` flagged, `61` not
+re-checked — every not-re-checked row carries the specific blocker rather than a generic
+label. Each row now records the pass (T20 or T21) that last read it, and the same
+registers generate `data/verification.json`, the per-row `verification` block in
+`data/fixtures.json`, `live-verification.html` and `reports/LIVE_VERIFICATION.md`, so the
+four cannot disagree.
+
+**Corrections applied (13 fixture values + 1 status).**
+
+* **AFLW, nine kick-off times.** The nine rows had been given Round 11's kick-off slots in
+  chronological order rather than each fixture's own slot: Port Adelaide v Collingwood held
+  the North Melbourne time, St Kilda v Brisbane held Geelong's, two rows shared
+  `2026-10-24T04:05Z`, one time (`06:15Z`) exists in no official fixture. Every value was
+  re-read from the AFL's Round 11 board, which also supplies match ids 8970–8979 now quoted
+  in the evidence column.
+* **AFLW, one venue.** Hawthorn v Essendon is at the Kennedy Community Centre, Dingley, not
+  Kinetic Stadium, Frankston.
+* **Cricket, three dates.** Ford Trophy Round 1 is Tue 27 October, not 24 October, per the
+  NZC fixture service (the Round 1 block sits under the TUE 27 Oct heading, before the
+  FRI 30 Oct block that carries Round 2).
+* **Handball, one venue.** Kolstad's Round 5 home fixture is at Kolstad Arena (Kolstad), not
+  Trondheim Spektrum, per the EHF playing-times PDF.
+* **Cricket, one status.** Afghanistan v Bangladesh (ODI) had no governing-body fixture page
+  in either pass — its only citation is the ICC rankings table. Status downgraded from
+  `verified` to `unverified` and flagged; nothing was invented to fill the gap.
+
+**Confirmed against a re-fetched page (54 rows).** MLB World Series games 1–4 (gamePk,
+officialDate, first pitch, venue); NHL games 2026020154/155; all twelve EHF Round 5 fixtures
+(participants, date, CEST start converted to UTC, arena); all eleven WST Round 2 matches
+(pairing and match-centre id); five men's RLWC26 fixtures; Top 14 J7 (three) and URC R4
+(three); the NZC fixtures where a time is published; and the rows T20 had already read.
+
+**Notable negative results, recorded rather than papered over.** pdc.tv still serves a
+cookie-consent interstitial; `cdn.nba.com` returned HTTP 500; `premrugby.com/fixtures-results`
+and the ATP/WTA draws are client-rendered; `afl.com.au/aflw/fixtures` is a 404 and the live
+board is only at `/aflw`; `plusliga.pl` redirects to the tauronliga.pl portal; nrl.com serves
+the men's draw for `?competition=176`, so the two women's RLWC rows stay not re-checked.
+
+**Deviation from the claim, stated plainly.** §18 promised a UTC start time "wherever an
+official page publishes one". That was not achievable and was not faked: WST, NZC, the AFL
+and nrl.com all print timezone-less clock strings, and the fetch client renders publisher
+clocks at UTC-4 (pinned by five nrl.com kick-offs) — converting those renditions would be
+arithmetic on a render, not a published value. `start_utc` therefore stays blank for the 32
+rows that never had one, and the two NZ T20Is whose published time (`06:15Z`) cannot be
+reconciled with the official clock are flagged instead of rewritten.
+
+**New finding that changes what the AFLW numbers mean (F-T21-01, high).** The AFLW ladder
+inputs used to price nine rows do not reconcile with the official 2026 AFLW ladder after
+Round 10 — for example the rows give North Melbourne 40 points (10-0) against the official
+36 (9-1), Geelong 16 points at 13th against 36 at 2nd, and St Kilda 20 points at 10th
+against 4 at 18th. The fixture facts are now correct; the prices are not re-priced inside
+this pass, because rewriting nine published rows and three published picks in the same commit
+that discovers the error destroys the audit trail. Every AFLW row carries the mismatch as a
+flag, the official ladder link is on the register, and **T22** is filed as the dedicated
+re-price task. This is the one open data-quality item on this branch and it is visible on
+both `live-verification.html` and `flagged.html`.
+
+**Gates.** `build_dataset.py` → `origin_lines.py` → `live_verification.py` → `build_site.py`
+→ `validate.py`: 0 errors, 0 warnings over 137 published HTML pages. `final_audit.py` and
+`ebfbd966_validate.py` pass. Two consecutive full-chain runs produced byte-identical
+`data/fixtures.json`, `data/verification.json`, `data/lines.json`, `data/predictions.json`,
+`datasets/flagged_for_review.json`, `datasets/matches_full.json`, `index.html`,
+`live-verification.html`, `flagged.html` and `sports/aussie-rules.html` — the mirror-drift
+bug reported earlier in this session is gone, because the ledger is now stamped by one
+generator and nothing is appended on a re-run.
+
+**Counts after this pass.** 134 rows: 128 verified, 5 cross-checked, 1 unverified. 126 priced
+H2H matches, 8 event/field cards, 31 high-confidence picks (31 High / 34 Medium / 61 Low),
+32 rows without `start_utc`.
