@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A source-linked, timestamped audit of OLBG-visible non-excluded sports matches with independent fair lines and explicit uncertainty.">
+  <meta name="theme-color" content="#0d3b2e">
+  <title>Signal Ledger — Independent line audit</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script type="module" src="assets/app.js"></script>
+</head>
+<body data-page="home" data-root=".">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Signal Ledger home">
+        <span class="brand-mark">S</span><span class="brand-copy"><strong>Signal Ledger</strong><small>Independent line audit</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html" aria-current="page">Overview</a>
+        <a href="matches.html">All matches</a>
+        <a href="methodology.html">Method</a>
+        <a class="review-link" href="flagged.html">Flagged review</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">Official-source reconciliation · 21 October 2026</p>
+          <h1>Every line needs an <em>audit trail.</em></h1>
+          <p class="hero-lede">A frozen review of OLBG-visible match listings across the included sports: official fixtures first, independent no-vig prices second, and every uncertainty left visible.</p>
+          <div class="actions">
+            <a class="button button-lime" href="matches.html">Explore all match lines <span aria-hidden="true">→</span></a>
+            <a class="button button-ghost" href="methodology.html">Read the model method</a>
+          </div>
+        </div>
+        <aside class="capture-card" aria-label="Capture details">
+          <p class="capture-label">Frozen research cutoff</p>
+          <p class="capture-time" data-capture>Loading capture…</p>
+          <p class="capture-note">OLBG is used only to discover visible rows. Governing bodies and competition sites decide what is published as verified.</p>
+          <div class="capture-list">
+            <div class="capture-item"><span>Model version</span><strong>evidence-shrink v1</strong></div>
+            <div class="capture-item"><span>Price type</span><strong>No-vig fair odds</strong></div>
+            <div class="capture-item"><span>Bookmaker odds used</span><strong>None</strong></div>
+            <div class="capture-item"><span>Responsible-use status</span><strong>Research only · 18+</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="status-rail" aria-label="Dataset summary">
+      <div class="shell status-grid">
+        <div class="status-cell"><strong class="status-value" data-count="matches">—</strong><span class="status-label">Modeled matches</span></div>
+        <div class="status-cell"><strong class="status-value" data-count="categories">—</strong><span class="status-label">Included categories</span></div>
+        <div class="status-cell"><strong class="status-value" data-count="verified">—</strong><span class="status-label">Officially verified</span></div>
+        <div class="status-cell"><strong class="status-value" data-count="high">—</strong><span class="status-label">High-confidence picks</span></div>
+        <div class="status-cell"><strong class="status-value" data-count="flagged">—</strong><span class="status-label">Flagged matches</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-heading">
+          <div><p class="eyebrow">Coverage map</p><h2>Included sports</h2></div>
+          <p>Match rows, empty categories and outright-only feeds all remain visible, so absence is documented rather than quietly filled.</p>
+        </div>
+        <div class="category-grid loading" data-category-grid>Loading categories…</div>
+      </div>
+    </section>
+
+    <section class="section" style="background:#ebe8de;border-block:1px solid #d6d3c8">
+      <div class="shell">
+        <div class="section-heading">
+          <div><p class="eyebrow">Decision board</p><h2>Strongest verified signals</h2></div>
+          <a class="text-link" href="matches.html">View the full board →</a>
+        </div>
+        <div class="feature-grid">
+          <section class="panel">
+            <h3>High-confidence selections</h3>
+            <div class="pick-list loading" data-high-picks>Loading selections…</div>
+          </section>
+          <section class="panel">
+            <h3>What needs a second look</h3>
+            <div class="audit-list loading" data-audit-preview>Loading audit notes…</div>
+            <div style="margin-top:22px"><a class="button button-paper" href="flagged.html">Open Flagged for Review</a></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="shell">
+        <div class="notice">
+          <span class="notice-mark">i</span>
+          <span><strong>Timestamped visible-feed audit, not an undisclosed inventory claim.</strong> Several OLBG category pages retain “Load More Tips,” and listings can change during the day. This dashboard freezes the rows visible at the stated cutoff, adds two documented NBA schedule omissions, and never treats OLBG as fixture verification.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="dialog" id="match-dialog" aria-label="Match line details"><div data-dialog-content></div></dialog>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div class="footer-brand"><h2>Signal Ledger</h2><p>Independent research lines built from official evidence and explicit assumptions. Not affiliated with OLBG or any governing body. Not betting advice; no result is guaranteed.</p></div>
+      <div class="footer-links"><a href="matches.html">All matches</a><a href="flagged.html">Flagged for Review</a><a href="methodology.html">Methodology</a><a href="data/matches.json">Download strict JSON</a><a href="https://www.gamcare.org.uk/" target="_blank" rel="noreferrer">GamCare ↗</a><a href="https://www.begambleaware.org/" target="_blank" rel="noreferrer">GambleAware ↗</a></div>
+    </div>
+    <div class="shell footer-base"><span>Research cutoff: 21 October 2026 · Adults 18+ only</span><span>Excluded: soccer, boxing, UFC, MMA, football, American football, hurling, horse racing, cycling and specials.</span></div>
+  </footer>
+</body>
+</html>

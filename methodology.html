@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Source hierarchy, independent fair-line formula, confidence rules and strict data schema for Signal Ledger.">
+  <meta name="theme-color" content="#0d3b2e">
+  <title>Methodology — Signal Ledger</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script type="module" src="assets/app.js"></script>
+</head>
+<body data-page="methodology" data-root=".">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">S</span><span class="brand-copy"><strong>Signal Ledger</strong><small>Independent line audit</small></span></a>
+    <nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Overview</a><a href="matches.html">All matches</a><a href="methodology.html" aria-current="page">Method</a><a class="review-link" href="flagged.html">Flagged review</a></nav>
+  </div></header>
+
+  <main id="main">
+    <section class="page-hero"><div class="narrow page-hero-grid">
+      <div><p class="eyebrow">Reproducible by design</p><h1>From discovery row to independent line.</h1><p class="lede">The pipeline separates what an official source says from what the model estimates. That boundary is the core of the audit.</p></div>
+      <aside class="hero-aside"><strong data-model-version>—</strong><span>current model version</span></aside>
+    </div></section>
+
+    <article class="narrow prose section-tight">
+      <h2>1. Scope and discovery</h2>
+      <p>Each included OLBG category was inspected as a discovery feed. Soccer, boxing, UFC, MMA, football, American football, hurling, horse racing, cycling and specials were excluded exactly as requested. Tournament outrights in golf, motor racing and rugby league were classified, but they were not misrepresented as head-to-head matches.</p>
+      <p>The resulting capture contains <strong data-method-count>—</strong> modeled match records. It is timestamped because OLBG rows change and some category pages retain a “Load More Tips” control. The project does not claim access to rows that the visible response did not expose.</p>
+
+      <h2>2. Source hierarchy</h2>
+      <div class="source-ladder">
+        <div class="source-tier"><b>Tier 1 · Governing source</b><strong>Fixture identity and official facts</strong><p>League, tour, federation or governing-body sites determine participants, dates, times, venues, standings and form facts.</p></div>
+        <div class="source-tier"><b>Tier 2 · OLBG</b><strong>Discovery only</strong><p>OLBG identifies visible events and tip-market context. Its crowd percentages, selections and displayed odds never enter the independent model.</p></div>
+        <div class="source-tier"><b>Tier 3 · Derived</b><strong>Model output</strong><p>Probability, fair odds, handicap midpoint, total midpoint and confidence are labeled estimates—not official facts and not live bookmaker prices.</p></div>
+      </div>
+      <p>If Tier 1 and OLBG conflict, the official value is published and the conflict is logged on <a href="flagged.html">Flagged for Review</a>. If Tier 1 does not supply a value, the field stays empty; it is never backfilled from a search snippet or assumption.</p>
+
+      <h2>3. Independent probability model</h2>
+      <p>Every row receives three directional inputs relative to participant A: a competition-strength signal, a recent-form signal and a venue signal. Signals are documented in the JSON and transformed by a logistic curve. A reliability coefficient then shrinks the result toward 50%, preventing thin evidence from producing false precision.</p>
+      <div class="formula" data-formula>Loading formula…</div>
+      <p>Officially unverified fixtures are capped at 0.35 reliability, regardless of the requested prior. Model fair decimal odds are simply <code>1 ÷ probability</code>; there is no bookmaker overround. The model is reproducible from <a href="data/model-inputs.json">model-inputs.json</a> with <a href="scripts/build-model.mjs">build-model.mjs</a>.</p>
+
+      <h2>4. Winner, handicap and total markets</h2>
+      <h3>Winner</h3>
+      <p>The larger two-way probability becomes the selection. Handball’s displayed winner line is still a two-team research probability; users should note that many commercial handball moneylines settle in three ways during regulation. Market settlement rules always require bookmaker-specific review.</p>
+      <h3>Handicap</h3>
+      <p>The favorite’s probability edge is converted into the sport’s natural unit: runs, points, goals, games, sets, legs or frames. This is a model midpoint intended for comparison—not a claim about an available market price.</p>
+      <h3>Total</h3>
+      <p>Each sport receives a conservative format-aware midpoint (for example, 22.5 games in best-of-three tennis or 5.5 goals in hockey). A directional over/under pick is deliberately withheld when no verified pace input exists. Cricket totals are first-innings anchors and should be revisited after the toss and official XI.</p>
+
+      <h2>5. Confidence labels</h2>
+      <ul>
+        <li><strong>High:</strong> at least 70% model probability, official fixture verification, at least 0.85 applied reliability, and unique source-grounded analysis of 30 words or more.</li>
+        <li><strong>Medium:</strong> at least 58% model probability with a verified or partially verified fixture, but without all high-confidence conditions.</li>
+        <li><strong>Low:</strong> everything else, including every unverified fixture.</li>
+      </ul>
+      <p>There are <strong data-method-high>—</strong> high-confidence selections in this capture. Each analysis names the selection and cites verified form, ranking, record or recent-match context. Copy is stored on the row, validated for minimum length and tested for duplication.</p>
+
+      <h2>6. Strict row schema</h2>
+      <div class="table-card"><div class="table-scroll"><table class="schema-table">
+        <thead><tr><th>Field</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td>participants</td><td>Officially normalized participant A and B. Display order corrections are flagged.</td></tr>
+          <tr><td>schedule</td><td>Date, time, timezone, venue and verification state. Unconfirmed values are empty strings.</td></tr>
+          <tr><td>sources.official</td><td>The governing-body or competition link shown on every dashboard row.</td></tr>
+          <tr><td>sourceFacts</td><td>Short statements captured from official evidence for manual review.</td></tr>
+          <tr><td>model.winner</td><td>Selection, probability and no-vig fair decimal odds for both sides.</td></tr>
+          <tr><td>model.handicap / total</td><td>Derived research midpoints with sport-specific units.</td></tr>
+          <tr><td>model.inputs</td><td>Strength, form, venue, reliability and evidence score used by the formula.</td></tr>
+          <tr><td>flags</td><td>Zero or more coded irregularities, each with severity and plain-language detail.</td></tr>
+        </tbody>
+      </table></div></div>
+
+      <h2>7. Validation and responsible use</h2>
+      <p>The automated check rejects missing official links, duplicate IDs, excluded categories, invalid probabilities, high-confidence copy under 30 words, duplicate high-confidence analysis and non-low confidence on unverified fixtures. The GitHub Pages workflow runs build, validation and tests before publishing.</p>
+      <p>This project is research, not betting advice. Lines can be wrong; teams, venues and availability can change after the cutoff. If you choose to gamble, be 18 or older, check settlement rules, never stake money you cannot afford to lose, and seek help from <a href="https://www.gamcare.org.uk/" target="_blank" rel="noreferrer">GamCare</a> or <a href="https://www.begambleaware.org/" target="_blank" rel="noreferrer">GambleAware</a> when needed.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-grid">
+    <div class="footer-brand"><h2>Signal Ledger</h2><p>Source first, estimate second, uncertainty always visible.</p></div>
+    <div class="footer-links"><a href="index.html">Overview</a><a href="matches.html">All matches</a><a href="flagged.html">Flagged for Review</a><a href="data/matches.json">Download strict JSON</a><a href="data/model-inputs.json">Download inputs</a><a href="https://www.gamcare.org.uk/" target="_blank" rel="noreferrer">GamCare ↗</a></div>
+  </div><div class="shell footer-base"><span>Model outputs are estimates, not official facts.</span><span>Capture timestamp: <span data-capture>—</span></span></div></footer>
+</body>
+</html>

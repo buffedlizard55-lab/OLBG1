@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Flagged fixtures, source conflicts, omissions and coverage limitations in the Signal Ledger audit.">
+  <meta name="theme-color" content="#0d3b2e">
+  <title>Flagged for Review — Signal Ledger</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script type="module" src="assets/app.js"></script>
+</head>
+<body data-page="flagged" data-root=".">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">S</span><span class="brand-copy"><strong>Signal Ledger</strong><small>Independent line audit</small></span></a>
+    <nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Overview</a><a href="matches.html">All matches</a><a href="methodology.html">Method</a><a class="review-link" href="flagged.html" aria-current="page">Flagged review</a></nav>
+  </div></header>
+
+  <main id="main">
+    <section class="page-hero"><div class="shell page-hero-grid">
+      <div><p class="eyebrow">Manual review queue</p><h1>Nothing irregular is swept aside.</h1><p class="lede">Source conflicts, missing official confirmation, display-order changes, neutral venues and OLBG omissions stay attached to the affected row. A flag lowers trust; it does not silently remove the discovery record.</p></div>
+      <aside class="hero-aside"><strong data-flag-total>—</strong><span>row-level review flags</span></aside>
+    </div></section>
+
+    <section class="section-tight"><div class="shell">
+      <div class="flag-summary" aria-label="Flag summary">
+        <div class="flag-card"><strong data-flag-count="critical">—</strong><span>Critical conflicts</span></div>
+        <div class="flag-card"><strong data-flag-count="review">—</strong><span>Review items</span></div>
+        <div class="flag-card"><strong data-flag-count="info">—</strong><span>Informational</span></div>
+        <div class="flag-card"><strong data-flag-count="unverified">—</strong><span>Not fully verified</span></div>
+      </div>
+      <div class="notice" style="margin-bottom:22px"><span class="notice-mark">!</span><span><strong>Official sources control the normalized row.</strong> Where OLBG and a governing body disagree, the official value is published and the conflicting display value is recorded here. If the official source does not confirm a field, that field remains blank.</span></div>
+      <div class="table-card"><div class="table-scroll"><table>
+        <thead><tr><th scope="col">Severity</th><th scope="col">Match</th><th scope="col">Issue</th><th scope="col">What was found</th><th scope="col">Official evidence</th></tr></thead>
+        <tbody class="loading" data-flag-rows><tr><td colspan="5">Loading review queue…</td></tr></tbody>
+      </table></div></div>
+    </div></section>
+
+    <section class="section"><div class="shell">
+      <div class="section-heading"><div><p class="eyebrow">Coverage-level notes</p><h2>Categories with constraints</h2></div><p>These notes explain outright-only feeds, unavailable race-card fields and categories where one or more rows need review.</p></div>
+      <div class="category-grid loading" data-category-issues>Loading category notes…</div>
+    </div></section>
+
+    <section class="section-tight"><div class="shell">
+      <div class="panel"><h3>Global capture limitation</h3><p>OLBG pages are volatile and several retained a “Load More Tips” control. No stable hidden pagination endpoint was established. The dashboard therefore claims completeness only for the visible category rows frozen at <span data-capture>the research cutoff</span>, plus the two explicit NBA official-schedule gaps.</p><p>Earlier volleyball and Gaelic captures changed materially during research. Only the latest frozen rows appear in the match board; the fact that those slates changed is preserved in category notes and source history.</p></div>
+    </div></section>
+  </main>
+
+  <dialog class="dialog" id="match-dialog" aria-label="Match line details"><div data-dialog-content></div></dialog>
+  <footer class="site-footer"><div class="shell footer-grid">
+    <div class="footer-brand"><h2>Signal Ledger</h2><p>A public exception log makes uncertainty reviewable. It is not a promise that every irregularity can be resolved before a volatile listing moves again.</p></div>
+    <div class="footer-links"><a href="index.html">Overview</a><a href="matches.html">All matches</a><a href="methodology.html">Methodology</a><a href="data/matches.json">Download strict JSON</a><a href="https://www.gamcare.org.uk/" target="_blank" rel="noreferrer">GamCare ↗</a><a href="https://www.begambleaware.org/" target="_blank" rel="noreferrer">GambleAware ↗</a></div>
+  </div><div class="shell footer-base"><span>Research only · Adults 18+ · No result is guaranteed</span><span>Official evidence links open in a new tab.</span></div></footer>
+</body>
+</html>

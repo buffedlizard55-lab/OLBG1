@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Filter all source-linked independent match lines in the frozen Signal Ledger audit.">
+  <meta name="theme-color" content="#0d3b2e">
+  <title>All matches — Signal Ledger</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script type="module" src="assets/app.js"></script>
+</head>
+<body data-page="matches" data-root=".">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">S</span><span class="brand-copy"><strong>Signal Ledger</strong><small>Independent line audit</small></span></a>
+    <nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Overview</a><a href="matches.html" aria-current="page">All matches</a><a href="methodology.html">Method</a><a class="review-link" href="flagged.html">Flagged review</a></nav>
+  </div></header>
+
+  <main id="main">
+    <section class="page-hero"><div class="shell page-hero-grid">
+      <div><p class="eyebrow">Frozen match board</p><h1>Independent lines, source by source.</h1><p class="lede">Winner probabilities, no-vig fair odds, handicap midpoints and totals for every modeled row. Open a matchup to inspect its evidence, inputs and caveats.</p></div>
+      <aside class="hero-aside"><strong data-count="matches">—</strong><span>strict-schema match records</span></aside>
+    </div></section>
+
+    <section class="section-tight"><div class="shell">
+      <div class="toolbar" aria-label="Match filters">
+        <div class="control"><label for="search">Search</label><input id="search" type="search" placeholder="Team, player or competition…" autocomplete="off"></div>
+        <div class="control"><label for="sport">Sport</label><select id="sport"><option>Loading…</option></select></div>
+        <div class="control"><label for="confidence">Confidence</label><select id="confidence"><option value="">All levels</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select></div>
+        <div class="control"><label for="verification">Verification</label><select id="verification"><option value="">All states</option><option value="verified">Verified</option><option value="partially-verified">Partially verified</option><option value="unverified">Unverified</option></select></div>
+        <button class="toolbar-button" id="flags-only" type="button" aria-pressed="false">Flags only</button>
+      </div>
+      <div class="results-meta"><span data-results-count>Loading rows…</span><span>Fair odds contain no bookmaker margin</span></div>
+      <div class="loading" data-match-table>Loading frozen match records…</div>
+    </div></section>
+  </main>
+
+  <dialog class="dialog" id="match-dialog" aria-label="Match line details"><div data-dialog-content></div></dialog>
+  <footer class="site-footer"><div class="shell footer-grid">
+    <div class="footer-brand"><h2>Signal Ledger</h2><p>Official facts and derived lines are kept visibly separate. Blank schedule fields mean the value could not be confirmed—not that it was overlooked.</p></div>
+    <div class="footer-links"><a href="index.html">Overview</a><a href="flagged.html">Flagged for Review</a><a href="methodology.html">Methodology</a><a href="data/matches.json">Download strict JSON</a><a href="https://www.gamcare.org.uk/" target="_blank" rel="noreferrer">GamCare ↗</a><a href="https://www.begambleaware.org/" target="_blank" rel="noreferrer">GambleAware ↗</a></div>
+  </div><div class="shell footer-base"><span>Research only · Adults 18+ · Never chase losses</span><span>Capture timestamp: <span data-capture>—</span></span></div></footer>
+</body>
+</html>
