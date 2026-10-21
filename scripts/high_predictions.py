@@ -42,16 +42,16 @@ HIGH_PREDICTION_LINES: dict[str, str] = {
 
 HIGH_PREDICTION_TEXTS: dict[str, str] = {
     "nhl-2026020152": (
-        "Buffalo have played to a 4-3-2 record, a .556 points percentage and a plus-two goal difference. Philadelphia are 2-6-3 and minus-14, and their road line reads 0-4-2, which is the detail that decides this for us. Early-season samples are small, but a six-game winless run away from home is the kind of form we will not ignore. Back Buffalo Sabres on the moneyline: {selection}"
+        "Buffalo have played to a 4-3-2 record, a .556 points percentage and a minus-seven goal difference. Philadelphia are 2-6-3 and minus-19, and their road line reads 0-4-1, which is the detail that decides this for us. Early-season samples are small, but a five-game winless run away from home is the kind of form we will not ignore. Back Buffalo Sabres on the moneyline: {selection}"
     ),
     "nhl-2026020154": (
-        "Boston are 7-2-1 for .750 and plus-14, and they have defended TD Garden at 3-1-0 so far. Nashville carry a .563 points percentage with a goal difference of exactly zero, so the Predators have been neither better nor worse than break-even. Home ice plus a much healthier differential is the whole case, and it is a strong one. We are with Boston Bruins: {selection}"
+        "Boston are 7-2-1 for .750 and plus-14, and they have defended TD Garden at 3-1-0 so far. Nashville carry a .563 points percentage with a goal difference of minus one, so the Predators have been marginally below break-even. Home ice plus a much healthier differential is the whole case, and it is a strong one. We are with Boston Bruins: {selection}"
     ),
     "nhl-2026020158": (
         "Pittsburgh’s 3-6-1 start has turned into four straight defeats, the longest current slide in this dataset. Florida are 5-2-2 and winners of three in a row, though they arrive on the back end of a back-to-back after facing Ottawa. Even allowing for tired legs, a .667 side against a .350 side is a mismatch worth taking. Florida Panthers: {selection}"
     ),
     "nhl-2026020160": (
-        "St. Louis are an even 4-4-1 and .500, with nothing in the record to suggest they separate from the pack. At our pricing snapshot Vegas were the better team by a distance: 8-2-0, .800, riding a three-game win streak. The Blues’ building narrows that edge without erasing it. We side with Vegas Golden Knights: {selection}"
+        "St. Louis are an even 4-4-1 and .500, with nothing in the record to suggest they separate from the pack. At our pricing snapshot Vegas were the better team by a distance: 8-2-0, .800, riding a three-game win streak. The Blues’ building narrows that edge without erasing it. Vegas have since played once and the official table now reads 8-3-0 on an L1, a drift the fixture row and the verification register both disclose. We side with Vegas Golden Knights: {selection}"
     ),
     "nba-sac-lac-20261021": (
         "Opening night gives no current-season form, so the only measured input is the final 2025-26 record: the Clippers at 42-40 (.512) against Sacramento’s 22-60 (.268). Twenty wins is a wide gap inside the same conference, and the game is at Intuit Dome. Nothing else in the verified file contradicts it. We take LA Clippers on the moneyline: {selection}"

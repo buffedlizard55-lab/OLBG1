@@ -1,7 +1,7 @@
 {
   "generated": "2026-10-21",
   "summary": {
-    "upstream_and_audit_findings": 28,
+    "upstream_and_audit_findings": 31,
     "flagged_fixture_rows": 111,
     "cross_checked_rows": 5,
     "missing_utc_rows": 32
@@ -228,6 +228,36 @@
       "resolution": "The gap is published row by row on the Live Verification page; no row is claimed as re-verified without a recorded read."
     },
     {
+      "id": "F-V11-NHL-INPUTS",
+      "category": "Corrected Data (independent re-read)",
+      "severity": "high",
+      "affected": "Ice Hockey \u2014 nhl-2026020152, nhl-2026020153, nhl-2026020154",
+      "summary": "Four NHL input sub-values were transcription errors, not snapshot drift.",
+      "evidence": "Stored versus official: Buffalo goal differential +2 vs -7; Philadelphia road 0-4-2 and -14 vs 0-4-1 and -19; Ottawa home 4-1-0 vs 3-1-0 (only four home games played); Nashville 0 vs -1. Each club had played exactly the number of games in its stored record, so no game can have happened in between.",
+      "official_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+      "resolution": "Corrected at source in scripts/dataset_rows_a.py. Ratings derive from points percentage, which was already correct, so no rating or price moved. Each row carries a dated note."
+    },
+    {
+      "id": "F-V12-F1-START",
+      "category": "Corrected Data (independent re-read)",
+      "severity": "medium",
+      "affected": "Motor Racing \u2014 f1-usgp-2026",
+      "summary": "The United States Grand Prix start was recorded an hour early and mislabelled EDT.",
+      "evidence": "formula1.com lists 16:00 track time on 25 October at Circuit of The Americas. Austin is on CDT (UTC-5), so the start is 21:00 UTC. The page displays no round number.",
+      "official_url": "https://www.formula1.com/en/racing/2026/united-states",
+      "resolution": "start_utc corrected to 2026-10-25T21:00:00Z; the 'EDT' wording and the unverifiable 'Round 18' label removed."
+    },
+    {
+      "id": "F-V13-SOURCE-REDIRECT",
+      "category": "Source Integrity",
+      "severity": "medium",
+      "affected": "Volleyball \u2014 five PlusLiga rows; Gaelic Football \u2014 four county finals",
+      "summary": "Two cited official URLs do not resolve to the fixture list they are supposed to evidence.",
+      "evidence": "www.plusliga.pl/table.html redirects to tauronliga.pl and returns a generic competition page; munster.gaa.ie/fixtures/munster-gaa-fixtures/ resolved to an April 2025 news post headed 'Munster GAA Fixtures - April 7th to 12th 2025'.",
+      "official_url": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/",
+      "resolution": "The nine affected rows keep their published values, are listed as not re-checked on the Live Verification page with this blocker named, and are not presented as freshly verified."
+    },
+    {
       "id": "F-LIVE-01-DRIFT",
       "category": "Live Recapture",
       "severity": "medium",
@@ -298,7 +328,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG renders start time as 'Today 19:37' (EDT UTC-4) with no timezone label vs official NHL 23:30 UTC puck drop"
+        "OLBG renders start time as 'Today 19:37' (EDT UTC-4) with no timezone label vs official NHL 23:30 UTC puck drop",
+        "Inputs re-checked independently on 2026-10-21T07:20Z against api-web.nhle.com/v1/standings/2026-10-20: Buffalo goal differential is -7 (was +2) and Philadelphia's road line is 0-4-1 with a -19 differential (was 0-4-2 / -14). Both clubs had played the same number of games as the stored record, so these were transcription errors, not snapshot drift. Ratings derive from points percentage, which was already correct, so no price moved."
       ],
       "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
     },
@@ -311,7 +342,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "Starting goaltenders unconfirmed pre-skate; OLBG shows unlabelled EDT timestamp 'Today 19:37'"
+        "Starting goaltenders unconfirmed pre-skate; OLBG shows unlabelled EDT timestamp 'Today 19:37'",
+        "Home split corrected independently on 2026-10-21T07:20Z: Ottawa had played 4 home games at 3-1-0, so the stored 4-1-0 was arithmetically impossible. Rating and price unchanged."
       ],
       "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
     },
@@ -324,7 +356,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved."
+        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved.",
+        "Nashville's goal differential was also corrected from 0 to -1 in the same independent re-read; points percentage and rating are unaffected."
       ],
       "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
     },
@@ -1657,7 +1690,9 @@
       "missing_utc": false,
       "unrated_sides": 2,
       "flags": [
-        "20-car Grand Prix field market (not a two-sided fixture); race start verified at 20:00 UTC (OLBG displays 16:00 EDT)"
+        "20-car Grand Prix field market (not a two-sided fixture)",
+        "Race start re-verified independently on 2026-10-21T07:25Z at formula1.com/en/racing/2026/united-states: 25 October, 56 laps, Circuit of The Americas, 16:00 track time. Austin is on CDT (UTC-5) on that date, so the start is 21:00 UTC; the earlier 20:00 UTC value and 'EDT' label were wrong by an hour.",
+        "Round number removed: the linked official race page does not display one."
       ],
       "official_url": "https://www.formula1.com/en/racing/2026/united-states"
     },

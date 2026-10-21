@@ -88,6 +88,8 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T18 | Official-source verification of refreshed/changed rows (MLB confirmation; other rows retain recorded governing-body sources) + unverified cards published blank | done | 76950c25-olbg1 | `scripts/dataset_rows_c.py`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `datasets/*`, `reports/SESSION_769_LIVE_REFRESH.md` | — | Blank-and-flag any value not confirmed on an official page |
 | T19 | Publish refresh on the dashboard (new Live Refresh + Flagged pages), validator gate, PR, merge and Pages deploy check | in progress | 76950c25-olbg1 | `live-refresh.html`, `flagged.html`, `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration for this session; append-only coordination log |
 
+| T21 | Independent second-pass re-verification of NHL input sub-values and the F1 start time; correction of four NHL transposition errors and one timezone error; source-redirect evidence for PlusLiga and GAA | done | 4f8d032d-olbg1 | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py`, `scripts/live_verification.py`, `scripts/high_predictions.py`, `data/verification.json`, `reports/SESSION_4F8D_VERIFICATION.md`, append-only `COORDINATION.md` | 2026-10-21T07:15Z | Claimed as T17 (collision: taken by 72198d3e, which itself became T20); renumbered T21. Rebased onto `main`; earlier session's Boston fix and Vegas no-reprice policy preserved. 31 High picks retained. |
+
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
 
@@ -812,3 +814,69 @@ the corrections.
   `data/verification.json`); the 16 darts and 11 tennis rows need a browser-capable fetch or a
   publisher change before they can be re-verified; Vegas drift (F-V5) awaits a reviewer decision on
   whether to re-price or leave the snapshot; women's RLWC NRL competition id (176) untested.
+
+---
+
+**Publish record:** see §17.1 below (appended after the merge, as required).
+
+## 18. Session `4f8d032d-olbg1` — T21 second-pass verification
+
+**2026-10-21T07:15Z — claimed as T17, renumbered T21 after the task-board collision; work rebased onto `main` @ `4a3f62a`.**
+
+### Conflict and reconciliation log
+
+* This session claimed `T17` and pushed the claim before starting. While it worked, `origin/main` advanced
+  with session `76950c25`'s live refresh and session `72198d3e`'s own T17 (later renumbered T20), which
+  added `live-verification.html` and `data/verification.json`.
+* Rebasing produced a `COORDINATION.md` conflict. It was resolved by keeping **all** of the other sessions'
+  sections verbatim and appending this session under a fresh task ID (`T21`) and fresh section (§18).
+* This session's earlier draft added a second verification page (`verification.html`). That was **discarded**
+  on reconciliation: two competing verification pages would confuse reviewers. Its checks were folded into
+  the existing register instead, so there is one public source of truth.
+* Two earlier-session decisions were explicitly **preserved**, not overwritten: Boston's home-split fix and
+  the "labelled pre-game snapshot, do not re-price" treatment of Vegas.
+
+### Findings
+
+Independent re-read of <https://api-web.nhle.com/v1/standings/2026-10-20> at 07:20Z, plus
+<https://www.formula1.com/en/racing/2026/united-states> at 07:25Z:
+
+| Row | Field | Stored | Official | Classification |
+|---|---|---|---|---|
+| `nhl-2026020152` | Buffalo GD | +2 | −7 | transcription error (same 9 GP) |
+| `nhl-2026020152` | Philadelphia road / GD | 0-4-2 / −14 | 0-4-1 / −19 | transcription error (same 11 GP) |
+| `nhl-2026020153` | Ottawa home split | 4-1-0 | 3-1-0 | impossible from 4 home games |
+| `nhl-2026020154` | Nashville GD | 0 | −1 | transcription error (same 8 GP) |
+| `nhl-2026020160` | Vegas record / streak | 8-2-0 / .800 / W3 | 8-3-0 / .727 / L1 | drift — already flagged by T20; confirmed, not re-priced |
+| `f1-usgp-2026` | Race start | 20:00Z ("EDT"), "Round 18" | 16:00 CDT = 21:00Z, no round shown | timezone/time error |
+
+Also confirmed unchanged: all four MLB World Series rows (records, home/road splits, venues, game order),
+all 12 EHF Champions League fixtures, and the six NHL game matchups/start times.
+
+Source failures recorded: `plusliga.pl/table.html` redirects to `tauronliga.pl`; the cited Munster GAA
+fixtures URL resolves to an April 2025 news post. Nine rows are now listed as not re-checked **with that
+specific blocker named**, rather than a generic "not fetched".
+
+### Changes
+
+`scripts/dataset_rows_a.py` and `dataset_rows_b.py` carry the corrected values and dated notes;
+`scripts/live_verification.py` gained three `CORRECTED` entries, the `f1_usgp` source, sharper volleyball
+and Gaelic football blockers, and findings `FEEDBACK-NHL-INPUTS`, `FEEDBACK-F1-START`,
+`FEEDBACK-SOURCE-REDIRECT`; `scripts/high_predictions.py` updated the three write-ups that quoted the old
+numbers (including an explicit drift disclosure in the Vegas pick).
+
+**Register:** 134 rows — 49 confirmed, 12 corrected, 2 flagged, 71 not re-checked.
+**Confidence:** unchanged at 31 High / 35 Medium / 60 Low, because ratings derive from points percentages,
+which were already correct.
+
+### Gates
+
+`build_dataset.py` → `live_verification.py` → `origin_lines.py` → `build_site.py` → `validate.py`:
+**135 published HTML pages, 0 errors, 0 warnings, VALIDATION PASSED**; 29 pages at `/` and 29 mirrored.
+
+### Limits stated plainly
+
+This pass re-read 16 fixtures' inputs in detail and attempted 9 more. It is a second opinion on a subset,
+not a whole-dataset re-certification, and it says so on the public register. No automated freshness monitor
+exists; the client-rendered leagues (AFLW, PDC, WTA/ATP, EuroLeague, NBA) still need a headless renderer
+before they can be re-certified at all.
