@@ -365,8 +365,8 @@ HIGH_PREDICTIONS_PROSE: dict[str, dict[str, str]] = {
         "prose": (
             "North Melbourne command top spot on the live 2026 NAB AFLW Round 10 ladder with 36 premiership points (9-1-0) "
             "and a staggering 251.9% scoring percentage — outscoring opponents more than two-and-a-half times over. Ninth-placed "
-            "Adelaide Crows enter at 5-5-0 (20 points, 102.4%). Under Friday night lights at Arden Street Oval, North "
-            "Melbourne Win Match and the minus line are top selections."
+            "Adelaide Crows enter at 5-5-0 (20 points, 102.4%). At North Melbourne's Tasmanian home venue North Hobart Oval on "
+            "Sunday, North Melbourne Win Match and the minus line stand out."
         ),
     },
     "aflw-r11-04": {
@@ -397,30 +397,30 @@ HIGH_PREDICTIONS_PROSE: dict[str, dict[str, str]] = {
         ),
     },
     "aflw-r11-05": {
-        "headline": "Third-Placed Hawthorn (8-2) Host Struggling Essendon at Kinetic Stadium",
+        "headline": "Even-Record Hawthorn (5-5) Host Seventeenth-Placed Essendon in Dingley",
         "prose": (
-            "Third-placed Hawthorn have surged to 32 points (8-2-0, 133.6% percentage) on the live 2026 AFLW Round 10 ladder, "
-            "locking down a top-four trajectory behind disciplined intercept defence across four quarters. Fourteenth-placed "
-            "Essendon visit Frankston at 2-7-1 (10 points, 72.1% percentage) having averaged barely half Hawthorn's scoring "
-            "output across ten matches this season. Back Hawthorn Win Match and the minus points handicap."
+            "Tenth-placed Hawthorn hold 20 premiership points (5-5-0, 101.5% percentage) through ten rounds of the 2026 AFLW "
+            "season and step onto home turf at Kennedy Community Centre in Dingley still chasing a finals berth. Essendon "
+            "languish down in seventeenth spot at 1-9-0 (4 points, 55.6% percentage) with a porous backline. Back Hawthorn "
+            "Win Match and the minus points handicap."
         ),
     },
     "aflw-r11-08": {
-        "headline": "Fourth-Placed Sydney Swans Protect Top-Four Spot Against West Coast",
+        "headline": "Finals-Chasing Sydney Swans (7-3) Host Twelfth-Placed West Coast at Henson Park",
         "prose": (
-            "Fourth-placed Sydney Swans bring a 7-3-0 record (28 premiership points) into Sunday's round-eleven fixture armed "
-            "with an impressive 146.9% percentage that reflects heavy scoring power inside Henson Park. Twelfth-placed West "
-            "Coast Eagles (4-6-0, 16 points, 88.2% percentage) face a cross-country trip from Perth against top-four "
-            "opposition. Select Sydney Swans Win Match alongside the home minus spread."
+            "Seventh-placed Sydney Swans bring a 7-3-0 record (28 premiership points, 112.9% percentage) into Sunday's "
+            "round-eleven fixture inside Henson Park knowing home victory virtually seals finals qualification. Twelfth-placed "
+            "West Coast Eagles (4-6-0, 16 points, 75.2% percentage) face a cross-country trip from Perth with inferior scoring "
+            "efficiency. Select Sydney Swans Win Match alongside the home minus spread."
         ),
     },
     "aflw-r11-07": {
-        "headline": "Winning-Record Port Adelaide Host Sixteenth-Placed Collingwood at Alberton",
+        "headline": "Eleventh-Placed Port Adelaide Host Sixteenth-Placed Collingwood at Alberton",
         "prose": (
-            "Port Adelaide sit squarely inside finals contention after ten rounds of Australian rules women's play at 6-4-0 "
-            "(24 points, 114.6% percentage) returning home to Alberton Oval on Sunday afternoon. Collingwood arrive third "
-            "from bottom in sixteenth spot at 2-8-0 (8 points, 71.1% percentage) after enduring a bleak ten-game campaign. "
-            "Port Adelaide Win Match and the home line are our selections."
+            "Port Adelaide return home to Alberton Oval on Friday night holding eleventh spot on 16 premiership points (4-6-0, "
+            "78.8% percentage) against one of the competition's lowest-scoring sides. Collingwood travel from Melbourne sitting "
+            "sixteenth on just 4 points (1-9-0, 56.7% percentage) after nine losses in ten games. Port Adelaide Win Match "
+            "and the home line are our selections."
         ),
     },
 }
