@@ -1,0 +1,377 @@
+{
+  "snapshot_utc": "2026-10-21T05:25:00Z",
+  "source_root": "https://www.olbg.com/betting-tips",
+  "sitemap_index": "https://www.olbg.com/sitemap.xml",
+  "betting_tips_sitemap": "https://www.olbg.com/sitemap-betting-tips.xml",
+  "exclusion_filter": [
+    "soccer",
+    "boxing",
+    "ufc",
+    "mma",
+    "football",
+    "american football",
+    "hurling",
+    "horse racing",
+    "cycling",
+    "specials"
+  ],
+  "summary": {
+    "total_probed_sport_ids": 31,
+    "active_registered_sports": 24,
+    "excluded_sports_count": 7,
+    "covered_sports_count": 17,
+    "covered_sports_with_live_events": 15,
+    "covered_sports_seasonal_zero_events": 2,
+    "total_covered_events_collected": 172,
+    "head_to_head_matches_collected": 141,
+    "tournament_or_race_events_collected": 31
+  },
+  "sports": [
+    {
+      "sport_id": 1,
+      "olbg_slug": "Football",
+      "display_name": "Football (Soccer)",
+      "canonical_url": "https://www.olbg.com/betting-tips/Football/1",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Football/1",
+      "status": "excluded",
+      "exclusion_reason": "Excluded per project specification ('soccer', 'football').",
+      "active_events_count": null
+    },
+    {
+      "sport_id": 2,
+      "olbg_slug": "Horse_Racing",
+      "display_name": "Horse Racing",
+      "canonical_url": "https://www.olbg.com/betting-tips/Horse_Racing/2",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Horse_Racing/2",
+      "status": "excluded",
+      "exclusion_reason": "Excluded per project specification ('horse racing').",
+      "active_events_count": null
+    },
+    {
+      "sport_id": 3,
+      "olbg_slug": "Tennis",
+      "display_name": "Tennis",
+      "canonical_url": "https://www.olbg.com/betting-tips/Tennis/3",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Tennis/3",
+      "status": "covered",
+      "exclusion_reason": null,
+      "active_events_count": 20,
+      "h2h_count": 20,
+      "outright_count": 0,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Tennis/3",
+        "https://www.olbg.com/best-tipsters/Tennis/3"
+      ]
+    },
+    {
+      "sport_id": 4,
+      "olbg_slug": "Basketball",
+      "display_name": "Basketball",
+      "canonical_url": "https://www.olbg.com/betting-tips/Basketball/4",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Basketball/4",
+      "status": "covered",
+      "exclusion_reason": null,
+      "active_events_count": 29,
+      "h2h_count": 29,
+      "outright_count": 0,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Basketball/4",
+        "https://www.olbg.com/betting-tips/Basketball/NBA/4",
+        "https://www.olbg.com/betting-tips/Basketball/WNBA/4",
+        "https://www.olbg.com/betting-tips/Basketball/NBA/NBA_Championship/4",
+        "https://www.olbg.com/betting-tips/Basketball/European/4",
+        "https://www.olbg.com/betting-tips/Basketball/European/Euroleague/4",
+        "https://www.olbg.com/betting-tips/Basketball/European/Euro_Cup/4",
+        "https://www.olbg.com/betting-tips/Basketball/European/Basketball_Champions_League/4",
+        "https://www.olbg.com/betting-tips/Basketball/Other/4"
+      ]
+    },
+    {
+      "sport_id": 5,
+      "olbg_slug": "Golf",
+      "display_name": "Golf",
+      "canonical_url": "https://www.olbg.com/betting-tips/Golf/5",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Golf/5",
+      "status": "covered",
+      "exclusion_reason": null,
+      "active_events_count": 10,
+      "h2h_count": 0,
+      "outright_count": 10,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Golf/5"
+      ]
+    },
+    {
+      "sport_id": 7,
+      "olbg_slug": "Cricket",
+      "display_name": "Cricket",
+      "canonical_url": "https://www.olbg.com/betting-tips/Cricket/7",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Cricket/7",
+      "status": "covered",
+      "exclusion_reason": null,
+      "active_events_count": 14,
+      "h2h_count": 9,
+      "outright_count": 5,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Cricket/7"
+      ]
+    },
+    {
+      "sport_id": 8,
+      "olbg_slug": "Snooker",
+      "display_name": "Snooker",
+      "canonical_url": "https://www.olbg.com/betting-tips/Snooker/8",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Snooker/8",
+      "status": "covered",
+      "exclusion_reason": null,
+      "active_events_count": 6,
+      "h2h_count": 6,
+      "outright_count": 0,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Snooker/8"
+      ]
+    },
+    {
+      "sport_id": 9,
+      "olbg_slug": "Rugby_Union",
+      "display_name": "Rugby Union",
+      "canonical_url": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Rugby_Union/9",
+      "status": "covered",
+      "exclusion_reason": null,
+      "active_events_count": 16,
+      "h2h_count": 15,
+      "outright_count": 1,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Rugby_Union/9"
+      ]
+    },
+    {
+      "sport_id": 10,
+      "olbg_slug": "Rugby_League",
+      "display_name": "Rugby League",
+      "canonical_url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Rugby_League/10",
+      "status": "covered",
+      "exclusion_reason": null,
+      "active_events_count": 3,
+      "h2h_count": 0,
+      "outright_count": 3,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Rugby_League/10"
+      ]
+    },
+    {
+      "sport_id": 11,
+      "olbg_slug": "American_Football",
+      "display_name": "American Football",
+      "canonical_url": "https://www.olbg.com/betting-tips/American_Football/11",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/American_Football/11",
+      "status": "excluded",
+      "exclusion_reason": "Excluded per project specification ('american football').",
+      "active_events_count": null
+    },
+    {
+      "sport_id": 12,
+      "olbg_slug": "Baseball",
+      "display_name": "Baseball",
+      "canonical_url": "https://www.olbg.com/betting-tips/Baseball/12",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Baseball/12",
+      "status": "covered",
+      "exclusion_reason": null,
+      "active_events_count": 1,
+      "h2h_count": 1,
+      "outright_count": 0,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Baseball/12"
+      ]
+    },
+    {
+      "sport_id": 13,
+      "olbg_slug": "Ice_Hockey",
+      "display_name": "Ice Hockey",
+      "canonical_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Ice_Hockey/13",
+      "status": "covered",
+      "exclusion_reason": null,
+      "active_events_count": 7,
+      "h2h_count": 7,
+      "outright_count": 0,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+        "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/13",
+        "https://www.olbg.com/betting-tips/Ice_Hockey/Other/13"
+      ]
+    },
+    {
+      "sport_id": 14,
+      "olbg_slug": "Motor_Racing",
+      "display_name": "Motor Racing",
+      "canonical_url": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Motor_Racing/14",
+      "status": "covered",
+      "exclusion_reason": null,
+      "active_events_count": 3,
+      "h2h_count": 0,
+      "outright_count": 3,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Motor_Racing/14"
+      ]
+    },
+    {
+      "sport_id": 15,
+      "olbg_slug": "Darts",
+      "display_name": "Darts",
+      "canonical_url": "https://www.olbg.com/betting-tips/Darts/15",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Darts/15",
+      "status": "covered",
+      "exclusion_reason": null,
+      "active_events_count": 18,
+      "h2h_count": 16,
+      "outright_count": 2,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Darts/15"
+      ]
+    },
+    {
+      "sport_id": 16,
+      "olbg_slug": "Boxing",
+      "display_name": "Boxing, UFC & MMA",
+      "canonical_url": "https://www.olbg.com/betting-tips/Boxing/16",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Boxing/16",
+      "status": "excluded",
+      "exclusion_reason": "Excluded per project specification ('boxing', 'ufc', 'mma' — all served under sport_id=16).",
+      "active_events_count": null
+    },
+    {
+      "sport_id": 17,
+      "olbg_slug": "Cycling",
+      "display_name": "Cycling",
+      "canonical_url": "https://www.olbg.com/betting-tips/Cycling/17",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Cycling/17",
+      "status": "excluded",
+      "exclusion_reason": "Excluded per project specification ('cycling').",
+      "active_events_count": null
+    },
+    {
+      "sport_id": 18,
+      "olbg_slug": "Specials",
+      "display_name": "Specials (Entertainment, TV & Politics)",
+      "canonical_url": "https://www.olbg.com/betting-tips/Specials/18",
+      "best_tipsters_url": null,
+      "status": "excluded",
+      "exclusion_reason": "Excluded per project specification ('specials').",
+      "active_events_count": null
+    },
+    {
+      "sport_id": 20,
+      "olbg_slug": "Handball",
+      "display_name": "Handball",
+      "canonical_url": "https://www.olbg.com/betting-tips/Handball/20",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Handball/20",
+      "status": "covered",
+      "exclusion_reason": null,
+      "active_events_count": 19,
+      "h2h_count": 19,
+      "outright_count": 0,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Handball/20",
+        "https://www.olbg.com/best-tipsters/Handball/20"
+      ]
+    },
+    {
+      "sport_id": 21,
+      "olbg_slug": "Volleyball",
+      "display_name": "Volleyball",
+      "canonical_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Volleyball/21",
+      "status": "covered",
+      "exclusion_reason": null,
+      "active_events_count": 15,
+      "h2h_count": 15,
+      "outright_count": 0,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Volleyball/21",
+        "https://www.olbg.com/best-tipsters/Volleyball/21"
+      ]
+    },
+    {
+      "sport_id": 22,
+      "olbg_slug": "Aussie_Rules",
+      "display_name": "Australian Rules",
+      "canonical_url": "https://www.olbg.com/betting-tips/Aussie_Rules/22",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Aussie_Rules/22",
+      "status": "covered",
+      "exclusion_reason": null,
+      "scope_note": "Included in covered sport registry; 0 active matches on 2026-10-21 (AFL off-season following September Grand Final). Also logged on Flagged for Review for football-code naming clarity.",
+      "active_events_count": 0,
+      "h2h_count": 0,
+      "outright_count": 0,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Aussie_Rules/22",
+        "https://www.olbg.com/betting-tips/Australian_Rules/22"
+      ]
+    },
+    {
+      "sport_id": 23,
+      "olbg_slug": "eSports",
+      "display_name": "eSports",
+      "canonical_url": "https://www.olbg.com/betting-tips/eSports/23",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/eSports/23",
+      "status": "covered",
+      "exclusion_reason": null,
+      "scope_note": "Included in covered sport registry; 0 open tipster events on OLBG as of 2026-10-21 snapshot across main and game subroutes.",
+      "active_events_count": 0,
+      "h2h_count": 0,
+      "outright_count": 0,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/eSports/23",
+        "https://www.olbg.com/betting-tips/eSports/All_eSports/CSGO/23",
+        "https://www.olbg.com/betting-tips/eSports/All_eSports/DOTA2/23",
+        "https://www.olbg.com/betting-tips/eSports/All_eSports/LOL/23"
+      ]
+    },
+    {
+      "sport_id": 25,
+      "olbg_slug": "Gaelic_Football",
+      "display_name": "Gaelic Football",
+      "canonical_url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Gaelic_Football/25",
+      "status": "covered",
+      "exclusion_reason": null,
+      "scope_note": "Distinct GAA code (sport_id=25) separate from Association Football/Soccer (sport_id=1) and American Football (sport_id=11), though sister GAA code Hurling (sport_id=26) is excluded. Collected, verified, originated, and flagged on Flagged for Review for explicit reviewer visibility.",
+      "active_events_count": 5,
+      "h2h_count": 4,
+      "outright_count": 1,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Gaelic_Football/25"
+      ]
+    },
+    {
+      "sport_id": 26,
+      "olbg_slug": "Hurling",
+      "display_name": "Hurling",
+      "canonical_url": "https://www.olbg.com/betting-tips/Hurling/26",
+      "best_tipsters_url": null,
+      "status": "excluded",
+      "exclusion_reason": "Excluded per project specification ('hurling').",
+      "active_events_count": null
+    },
+    {
+      "sport_id": 28,
+      "olbg_slug": "Greyhounds",
+      "display_name": "Greyhound Racing",
+      "canonical_url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+      "best_tipsters_url": "https://www.olbg.com/best-tipsters/Greyhounds/28",
+      "status": "covered",
+      "exclusion_reason": null,
+      "active_events_count": 6,
+      "h2h_count": 0,
+      "outright_count": 6,
+      "subroutes_checked": [
+        "https://www.olbg.com/betting-tips/Greyhounds/28"
+      ]
+    }
+  ],
+  "inactive_sport_id_slots_probed": [6, 19, 24, 27, 29, 30, 31]
+}
