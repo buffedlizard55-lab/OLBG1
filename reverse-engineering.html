@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OLBG analysis · OLBG Reverse-Engineering</title>
+<meta name="description" content="Independent reverse-engineering of OLBG: verified fixtures across 17 in-scope sports, originated betting lines, confidence tiers and written predictions.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="hdr-inner">
+    <div class="brand"><span class="dot"></span> OLBG <span class="sub">reverse-engineered</span></div>
+    <nav class="main"><a href="index.html">Dashboard</a><a href="picks.html">Picks</a><a href="predictions.html">Predictions</a><a href="sports.html">Sports</a><a href="methodology.html">Methodology</a><a href="reverse-engineering.html" aria-current="page">OLBG analysis</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a></nav>
+  </div>
+</header>
+<main>
+
+<div class="crumb">Dashboard / OLBG analysis</div>
+<h1>Reverse-engineering OLBG</h1>
+<p class="lede">OLBG's betting-tips hierarchy is exposed cleanly in its XML sitemap. This is the full map, extracted
+from <a href="https://www.olbg.com/sitemap-betting-tips.xml" target="_blank" rel="noopener">sitemap-betting-tips.xml</a> — not guessed from the
+navigation, which is incomplete.</p>
+
+<h2>1. URL grammar</h2>
+<pre style="background:#0f172a;color:#e2e8f0;padding:14px 16px;border-radius:10px;overflow:auto;font-size:.85rem">
+Sport landing page : https://www.olbg.com/betting-tips/{Sport_Name}/{sport_id}
+Competition page   : https://www.olbg.com/betting-tips/{Sport}/{Region}/{Competition}/{sport_id}
+Event page         : https://www.olbg.com/betting-tips/{Sport}/…/{Home}_v_{Away}/{sport_id}?event_id={id}
+Tipster league     : https://www.olbg.com/best-tipsters/{Sport}/{sport_id}
+</pre>
+<p>The trailing digit is always the sport ID, which makes the whole tree crawlable from a single page per sport.
+Event slugs use an underscore-joined <code>Home_v_Away</code> pattern with a numeric <code>event_id</code>.</p>
+
+<h2>2. All 22 sports and their IDs</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Sport</th><th class="num">ID</th><th>Canonical path</th><th>Status</th><th>Why</th></tr></thead>
+<tbody><tr><td>Football</td><td class='num'>1</td><td><code>/betting-tips/Football/1</code></td><td><span class="badge muted">Excluded</span></td><td>Excluded by client brief: football / soccer</td></tr><tr><td>Horse Racing</td><td class='num'>2</td><td><code>/betting-tips/Horse_Racing/2</code></td><td><span class="badge muted">Excluded</span></td><td>Excluded by client brief: horse racing</td></tr><tr><td>Tennis</td><td class='num'>3</td><td><code>/betting-tips/Tennis/3</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>Basketball</td><td class='num'>4</td><td><code>/betting-tips/Basketball/4</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>Golf</td><td class='num'>5</td><td><code>/betting-tips/Golf/5</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>Cricket</td><td class='num'>7</td><td><code>/betting-tips/Cricket/7</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>Snooker</td><td class='num'>8</td><td><code>/betting-tips/Snooker/8</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>Rugby Union</td><td class='num'>9</td><td><code>/betting-tips/Rugby_Union/9</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>Rugby League</td><td class='num'>10</td><td><code>/betting-tips/Rugby_League/10</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>American Football</td><td class='num'>11</td><td><code>/betting-tips/American_Football/11</code></td><td><span class="badge muted">Excluded</span></td><td>Excluded by client brief: American football</td></tr><tr><td>Baseball</td><td class='num'>12</td><td><code>/betting-tips/Baseball/12</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>Ice Hockey</td><td class='num'>13</td><td><code>/betting-tips/Ice_Hockey/13</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>Motor Racing</td><td class='num'>14</td><td><code>/betting-tips/Motor_Racing/14</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>Darts</td><td class='num'>15</td><td><code>/betting-tips/Darts/15</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>Boxing</td><td class='num'>16</td><td><code>/betting-tips/Boxing/16</code></td><td><span class="badge muted">Excluded</span></td><td>Excluded by client brief: boxing (also the OLBG home for UFC/MMA markets)</td></tr><tr><td>Cycling</td><td class='num'>17</td><td><code>/betting-tips/Cycling/17</code></td><td><span class="badge muted">Excluded</span></td><td>Excluded by client brief: cycling</td></tr><tr><td>Handball</td><td class='num'>20</td><td><code>/betting-tips/Handball/20</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>Volleyball</td><td class='num'>21</td><td><code>/betting-tips/Volleyball/21</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>Aussie Rules</td><td class='num'>22</td><td><code>/betting-tips/Aussie_Rules/22</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>eSports</td><td class='num'>23</td><td><code>/betting-tips/eSports/23</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>Gaelic Football</td><td class='num'>25</td><td><code>/betting-tips/Gaelic_Football/25</code></td><td><span class="badge verified">In scope</span></td><td></td></tr><tr><td>Greyhounds</td><td class='num'>28</td><td><code>/betting-tips/Greyhounds/28</code></td><td><span class="badge verified">In scope</span></td><td></td></tr></tbody></table></div>
+
+<h2>3. What the sitemap does not tell you</h2>
+<ul class="clean">
+  <li><b>Hurling has no ID.</b> Gaelic games are split as “Gaelic Football” (25) with hurling folded into the wider
+  Gaelic-sports hub. Anyone scraping by numeric ID will miss hurling entirely.</li>
+  <li><b>UFC/MMA is not a sport here.</b> Those markets are filed under Boxing (16).</li>
+  <li><b>Specials have no betting-tips page at all.</b> They exist only in the blog taxonomy — TV, politics and awards
+  markets are not part of the tips tree.</li>
+  <li><b>Greyhounds (28) is inconsistent.</b> It appears in the sitemap and the tipster competition, but is absent from
+  the <code>/sitemap</code> navigation block.</li>
+</ul>
+
+<h2>4. Market vocabulary OLBG actually uses</h2>
+<p>Read off live event pages during this build. The naming matters if you are mapping to a bookmaker feed:</p>
+<table>
+<thead><tr><th>OLBG label</th><th>Standard name</th><th>Seen on</th></tr></thead>
+<tbody>
+<tr><td>Full Time Result</td><td>3-way match winner</td><td>Football event pages</td></tr>
+<tr><td>Money Line</td><td>2-way match winner (incl. OT)</td><td>NBA event pages</td></tr>
+<tr><td>Win Match</td><td>2-way match winner</td><td>Cricket, tennis, snooker</td></tr>
+<tr><td>Outright Winner</td><td>Futures / tournament winner</td><td>Cricket series, Big Bash, World Cup</td></tr>
+<tr><td>+1.50 / −1.50 style</td><td>Handicap / spread</td><td>Gaelic football event page</td></tr>
+<tr><td>Daily Racing</td><td>Per-race selection</td><td>Horse racing (excluded)</td></tr>
+</tbody></table>
+
+<h2>5. Coverage comparison — OLBG vs this dataset</h2>
+<p>What OLBG had listed for the 21–25 October window versus what could actually be verified against a governing body.</p>
+<table>
+<thead><tr><th>Sport</th><th>OLBG listing observed</th><th>Our verification</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>Cricket</td><td>New Zealand v India, 1st T20I, 22 Oct</td><td>Confirmed on NZC official fixtures — Hagley Oval,
+Christchurch</td><td><span class="badge verified">Match</span></td></tr>
+<tr><td>Cricket</td><td>Afghanistan v Bangladesh ODI, 23 Oct</td><td>No official board source retrieved in this build</td>
+<td><span class="badge cross">Unverified</span></td></tr>
+<tr><td>Cricket</td><td>Eastern Storm v Tuskers; North West Dragons v Limpopo Impalas; Northern Cape Heat v Garden
+Route Badgers; Mpumalanga Rhinos v South Africa Emerging</td><td>South African domestic fixtures — no official CSA
+source retrieved</td><td><span class="badge cross">Unverified</span></td></tr>
+<tr><td>Basketball</td><td>Milwaukee Bucks @ Washington Wizards, money line, 9/11 tips (82%)</td>
+<td>Confirmed on NBA.com — game 0022600086, 7:00 PM ET</td><td><span class="badge verified">Match</span></td></tr>
+<tr><td>Basketball</td><td>Boston Celtics @ Detroit Pistons “today”, Philadelphia @ New York Knicks “tomorrow”</td>
+<td>NBA standings corroborate a 20 October Boston/Detroit game (DET 1-0, BOS 0-1) — outside our window</td>
+<td><span class="badge muted">Out of window</span></td></tr>
+<tr><td>Gaelic football</td><td>St Finbarrs v Nemo Rangers, 25 Oct, draw and Nemo Rangers +1.50</td>
+<td>GAA official calendar shows <em>no</em> inter-county fixture that week — this is a club championship game, a tier
+the GAA calendar does not carry</td><td><span class="badge cross">Not verifiable</span></td></tr>
+<tr><td>Football, horse racing</td><td>Extensive</td><td>Excluded by the brief</td><td><span class="badge muted">N/A</span></td></tr>
+</tbody></table>
+
+<div class="note warn">
+  <b>The interesting finding.</b> OLBG's public tips board is dominated by football and racing, and its non-football
+  coverage is thin, uneven and partly unverifiable. Of the six cricket fixtures OLBG listed for this window, exactly one
+  could be confirmed on a governing body's own site. Meanwhile OLBG carried <em>nothing</em> for the two BLACKCAPS v India
+  T20s that NZC had published months in advance, nor for any of the four World Series games.
+</div>
+
+<h2>6. Structural lessons for a scraper</h2>
+<ul class="clean">
+  <li>Enumerate sports from the sitemap, not the nav — the nav omits Greyhounds and never lists the IDs.</li>
+  <li>Do not assume sport IDs are contiguous: 1–5, 7–17, 20–23, 25, 28. Six IDs in the range are unused or retired.</li>
+  <li>Tipster consensus lives on the event page as “<code>9/11 Win Tips</code>”, i.e. selections ÷ tips — parse the
+  fraction, not the percentage, because the percentage is rounded and can hide small samples.</li>
+  <li>There is no public JSON API. Everything is server-rendered HTML, which is why the sitemap is the reliable entry
+  point.</li>
+</ul>
+
+</main>
+<footer class="foot">
+  <p><b>OLBG Reverse-Engineering</b> — Originated lines · verified fixtures · confidence tiers. Window covered: 21–27 October 2026.
+  Every fixture links to the governing body it was read from. Model prices are our own
+  estimates, not market prices. Nothing here is betting advice.</p>
+  <p><a href="methodology.html">Methodology</a> · <a href="sources.html">Source register</a> ·
+  <a href="flagged.html">Flagged for review</a> · <a href="data/fixtures.json">Raw JSON</a></p>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

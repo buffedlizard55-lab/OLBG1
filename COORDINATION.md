@@ -1,63 +1,261 @@
-# COORDINATION — OLBG1 shared task board
+# COORDINATION.md — Shared Task Board
 
-> Multiple agent sessions may work on this repo. Read this file before starting.
-> Claim a task (session ID + file scope), commit + push the claim immediately,
-> never start a claimed task, keep scopes non-overlapping, small frequent commits,
-> `git pull --rebase` before every push. Log cross-session file-change requests
-> here instead of editing another session's files.
-> `needs review` = published on the Flagged for Review page; does not block merge.
-> Shared outputs (table data, site index/navigation) change only in a final
-> integration pass. Never mark anything verified without an official source link.
+**Read this before starting any work.** This file is the single source of truth for who is
+working on what. It exists so that multiple agent sessions can work on this repository at the
+same time without duplicating work or overwriting each other.
 
-**Branch note (Arena constraint):** This session must stay on `arena/4f44f7d9-olbg1`
-(Arena tracks the session by branch and forbids switching/creating other branches).
-The `session-<id>/<task>` branch pattern in the original brief therefore cannot be
-followed literally here; scope separation is by file claims below instead. Other
-sessions on their own Arena branches should follow the same file-claim discipline.
+Last updated: **2026-10-21** (UTC)
 
-## Session registry
+---
 
-| Session ID | Branch | Status |
+## 0. Conventions
+
+### 0.1 Session IDs
+
+A session ID is the Arena branch slug assigned to the session. The session that created this
+board is **`arena/ce5920e3-olbg1`**, so its ID is **`ce5920e3-olbg1`**.
+
+### 0.2 Branch naming — important deviation, read this
+
+The project brief asks for per-task branches named `session-<id>/<task>`. Arena sessions in this
+repository are **pinned to one sandbox-managed branch each**, and the agent operating a session
+must not create, switch to, or push any other branch. Therefore:
+
+* Each session works **only** on its own pinned `arena/<session-id>` branch.
+* That branch is simultaneously the session's work branch **and** its integration branch.
+* `main` is only ever advanced by the final integration session's merged pull request.
+
+This is the one deliberate deviation from the brief. It removes the merge storms that per-task
+branches would create while preserving the property the brief actually cares about: **no two
+sessions write to the same files at the same time.**
+
+### 0.3 Claiming a task
+
+1. Add a row to the table in §1 with your session ID, your file scope and the UTC time.
+2. Commit and push that claim **before** you start work.
+3. Never start a task that another live session has claimed.
+
+### 0.4 Scope rules
+
+* Scopes must not overlap. If you need a file owned by another session, log a request in §4
+  instead of editing it.
+* Shared outputs (`index.html`, the site navigation, `data/lines.json`) are written **only**
+  by the final integration session.
+* Commit small and often. `git pull --rebase` before every push.
+* On a merge conflict: stop, resolve it so that **neither** session's work is discarded, and log
+  it in §4.
+* A claim with no commit for more than 60 minutes may be taken over by another session. Log the
+  handoff in §4.
+
+### 0.5 Verification rules (non-negotiable)
+
+* Every data row must carry at least one link to an **official** source (the league, governing
+  body, tour, promoter or team itself). Media outlets, aggregators and betting sites are **not**
+  official sources.
+* If a value cannot be confirmed from an official source: **leave it blank and flag it**. Never
+  infer, interpolate or fill it in from memory.
+* Model-derived values (our originated prices) are explicitly labelled as estimates and are never
+  presented as sourced facts.
+* Nothing is marked `verified` until the official source has actually been fetched and read.
+
+---
+
+## 1. Task board
+
+Status values: `unclaimed` · `in progress` · `done` · `needs review`
+
+| # | Task | Status | Session | File scope | Started (UTC) | Notes |
+|---|------|--------|---------|------------|---------------|-------|
+| T1 | Reverse-engineer OLBG sport taxonomy and match coverage | done | ce5920e3-olbg1 | `data/olbg_taxonomy.json`, `reverse-engineering.html` | 2026-10-21T05:20Z | 22 OLBG sports enumerated with IDs; 17 in scope |
+| T2 | Harvest + verify fixtures for in-scope sports | in progress | ce5920e3-olbg1 | `data/fixtures.json` | 2026-10-21T05:35Z | Official-source verification per row |
+| T3 | Originate betting lines + confidence tiers | unclaimed | — | `data/lines.json`, `scripts/model.py`, `scripts/origin_lines.py` | — | Depends on T2 |
+| T4 | Write high-confidence predictions (≥30 words, unique) | unclaimed | — | `data/predictions.json` | — | Depends on T3 |
+| T5 | Build static dashboard site | unclaimed | — | `*.html`, `sports/`, `assets/`, `scripts/build_site.py` | — | Depends on T2–T4 |
+| T6 | Link-integrity + data validation checks | unclaimed | — | `scripts/validate.py`, `tests/` | — | Depends on T5 |
+| T7 | Final integration: merge, re-verify, publish Pages, PR | unclaimed | — | `COORDINATION.md`, PR | — | Reserved for the integration session |
+
+> **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
+> rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
+
+---
+
+## 2. Session log
+
+### Session `ce5920e3-olbg1`
+
+**2026-10-21T05:15Z — board created.**
+Repository was a single empty `README.md` at commit `8b43e82`. No prior sessions had run. This
+session claimed T1 immediately and pushed the claim in the same commit that created this file.
+
+**2026-10-21T05:20Z — T1 done.** OLBG sport taxonomy reversed from
+`https://www.olbg.com/sitemap-betting-tips.xml` and `https://www.olbg.com/sitemap`. 22 sport
+IDs enumerated. Exclusions applied per the brief:
+
+| Excluded (per brief) | OLBG ID |
+|---|---|
+| Football / soccer | 1 |
+| Horse Racing | 2 |
+| American Football | 11 |
+| Boxing | 16 |
+| Cycling | 17 |
+| Hurling | (under Gaelic Sports) |
+| Specials | (TV / Politics / Awards) |
+| UFC / MMA | (under Boxing/Specials) |
+
+In-scope sports (17): Tennis (3), Basketball (4), Golf (5), Cricket (7), Snooker (8),
+Rugby Union (9), Rugby League (10), Baseball (12), Ice Hockey (13), Motor Racing (14), Darts (15),
+Handball (20), Volleyball (21), Aussie Rules (22), eSports (23), Gaelic Football (25),
+Greyhounds (28).
+
+---
+
+## 3. Sources register
+
+Every source used is catalogued with its URL in `data/sources.json` and rendered on the site's
+Sources page. Only governing bodies / official league endpoints are used for verification.
+
+---
+
+## 4. Requests and conflict log
+
+_Nothing logged yet._
+
+---
+
+## 5. Session `ce5920e3-olbg1` — final report
+
+**Completed:** 2026-10-21. Tasks T1–T6 executed by this session; T7 (integration) executed by the
+same session because no other session was live.
+
+### 5.1 What was claimed vs delivered
+
+| # | Task | Status | Evidence |
+|---|------|--------|----------|
+| T1 | OLBG reverse-engineering | done | `data/olbg_taxonomy.json` (22 sports, 17 in scope), `reverse-engineering.html` |
+| T2 | Fixture harvest + verification | done | `data/fixtures.json` — 49 priced matches + 1 verified unpriced event |
+| T3 | Originate lines + confidence | done | `scripts/model.py`, `scripts/origin_lines.py`, `data/lines.json` |
+| T4 | High-confidence predictions | done | `data/predictions.json` — 8 predictions, 53–63 words each |
+| T5 | Static dashboard | done | repo root — 26 pages, generated by `scripts/build_site.py` |
+| T6 | Link + data integrity gate | done | `scripts/validate.py` — passes with 0 errors, 0 warnings |
+| T7 | Integration + publish | done | see §5.4 |
+
+### 5.2 Verification performed
+
+Every fixture was read on a governing-body endpoint and the exact URL is stored on the row:
+
+* **MLB** — `statsapi.mlb.com` schedule, postseason schedule and standings endpoints. Records,
+  home/road splits, the full postseason log and the conditional-game notes all come from MLB.
+* **NHL** — `api-web.nhle.com` schedule and standings endpoints (game IDs, venue, UTC start, records).
+* **NBA** — `nba.com/games?date=2026-10-21` (game IDs, tip times) and `nba.com/standings`.
+* **Snooker** — `wst.tv` live-match block (draw, per-match Match Centre URLs) and the WST
+  Johnstone's Paint World Rankings table (top 36 + prize money, plus the One Year List).
+* **Darts** — PDC schedule release for the 2026 Machineseeker European Championship and the PDC
+  calendar (venue, dates, first-round draw).
+* **Cricket** — `scoring.nzc.nz/fixtures`, New Zealand Cricket's own fixtures service (7 fixtures,
+  venues, per-match Match Centre links).
+* **Gaelic football** — `gaa.ie/fixtures-results`, used to establish a **verified negative**: no
+  Gaelic football fixture between 21 and 25 October 2026.
+* **Formula 1 / PGA TOUR** — event dates and venues only; both are recorded as *event only*.
+
+`scripts/validate.py` re-checks mechanically: every internal link resolves, every fixture has an
+https source, every pick is an outcome of its own market, probabilities sum to 1, odds are plausible,
+and every prediction is 30+ words and agrees with the model's pick.
+
+### 5.3 Irregularities logged (published on `flagged.html`)
+
+1. **Premiership Rugby** — `premrugby.com/fixtures-results` is client-rendered and returned zero rows.
+   All five rugby union fixtures are marked `cross-checked`, not `verified`.
+2. **PDC** — `pdc.tv` serves a cookie interstitial instead of article bodies. The draw was read from
+   the publisher's indexed copy of its own schedule release; the eighth Thursday tie was truncated and
+   is omitted rather than guessed.
+3. **Snooker session times** — WST renders in the viewer's timezone; only dates are recorded.
+4. **Snooker venue** — the Waterfront Hall is not stated on the fetched schedule block; flagged per row.
+5. **F1** — circuit name and start time not captured; left blank rather than assumed.
+6. **NBA** — the eleventh 21 October game had its game ID and arena truncated on the source page.
+7. **Snooker ranking bound** — players below the published top 36 share one bounded bucket (rank 60).
+   Four of the eight high picks depend on that bound; disclosed on the Methodology and Flagged pages.
+8. **Not investigated** — rugby league, handball, volleyball, tennis, AFL, esports, greyhounds. No
+   official fixture source was retrieved. Recorded as gaps, not as empty schedules.
+
+### 5.4 Publish record
+
+* Branch: `arena/ce5920e3-olbg1` (the session's pinned branch — see §0.2 for the deviation note).
+* Pull request and merge result: recorded in §5.5 below once the merge completes.
+* GitHub Pages source: `main` → `/` (the repository root). The Pages API returned **403** for this
+  token, so the site was generated directly into the root rather than `/docs`, which already matched
+  the existing configuration.
+
+### 5.5 Result
+
+* **PR #1** — https://github.com/buffedlizard55-lab/OLBG1/pull/1 — merged 2026-10-21T05:19:39Z
+  (merge commit `8b7963a`). The dataset, model, predictions and the 26-page dashboard.
+* **PR #2** — https://github.com/buffedlizard55-lab/OLBG1/pull/2 — merged 2026-10-21T05:22Z
+  (merge commit `9ef1deb`). Moved the generated site from `docs/` to the repository root because the
+  Pages settings API returns 403 for this token and Pages is already configured for `main` → `/`.
+* **Pages deploy** — build for `9ef1deb` completed with `status=built`, `error=null`, 22.8 s.
+  Live URL https://buffedlizard55-lab.github.io/OLBG1/ returned HTTP 200 with the rendered dashboard.
+* **Final gate** — `python3 scripts/validate.py` → 26 pages, 0 errors, 0 warnings.
+
+### 5.6 Post-merge correction
+
+After publication, `lines.json` was checked against the dashboard copy and one sentence was corrected:
+the index previously said four of the eight high picks relied on the bounded top-36 snooker input; the
+data shows **two** (`snk-cheung-bingham`, `snk-slessor-jones`). The copy now matches the data, and the
+check is automated in `scripts/validate.py` (predictions must agree with `lines.json`).
+
+### 5.7 Open items for a follow-up session
+
+1. Promote the five Premiership Rugby rows from `cross-checked` to `verified` using club or PRL data.
+2. Retrieve the PDC Order of Merit and re-price the seven darts ties with a real rating input.
+3. Retrieve previous-season NBA standings so the eleven opening-night games stop being baseline-only.
+4. Investigate the nine uninvestigated sports listed in §5.3 item 8.
+5. Add attendance/injury/lineup inputs if a licensed feed becomes available.
+
+---
+
+## 6. Parallel session `4f44f7d9` (branch `arena/4f44f7d9-olbg1`) — integration record
+
+**What happened.** This session started from the same empty-repo commit (`8b43e82`) at the same
+time as `ce5920e3-olbg1`, created its own COORDINATION.md (the other session's board was not yet
+on any branch it could see), and independently completed the same brief with a different,
+complementary method. The overlap was discovered when PR #4 reported CONFLICTING against the
+`ce5920e3` merges (#1–#3). Per §0.4 the conflict was resolved by **keeping both datasets** and
+logging every resolution here. Nothing from `ce5920e3` was discarded.
+
+**The two datasets (both retained — do not confuse them).**
+
+| | `ce5920e3` (repo-root site) | `4f44f7d9` (`docs/` board) |
 |---|---|---|
-| `4f44f7d9` (this session) | `arena/4f44f7d9-olbg1` | active |
+| Unit | 49 fixtures priced (+1 unpriced event) | 164 OLBG-listed events (matches + outrights/races) |
+| Verification | Governing-body APIs per fixture | OLBG tip data per row; official checks for 5 High picks (NBA/ICC/PDC/WTA) |
+| Pricing | Strength-rating model (`scripts/model.py`) | Tip-share Laplace model (`scripts/build_data.py`) |
+| Confidence | 8 High / 3 Med / 38 Low | 5 High / 25 Med / 134 Low |
+| Files | `data/fixtures.json`, `lines.json`, `predictions.json`, root `*.html`, `sports/` | `data/matches.csv/json`, `research/`, `docs/*.html` |
 
-## Task board
+Overlapping picks can be cross-read (e.g. both sessions price Wizards/Bucks and the European
+Championship darts ties by entirely different inputs) — agreement/disagreement between the two
+models is itself useful signal and neither overrides the other.
 
-| # | Task | Status | Owner | File scope |
-|---|---|---|---|---|
-| T1 | Reverse-engineer OLBG.com structure (sports, URL patterns, markets) | done | 4f44f7d9 | `research/olbg-structure.md` |
-| T2 | Collect full match list for covered sports (excl. soccer/football, boxing/UFC/MMA, American football, hurling, horse racing, cycling, specials) from OLBG sport pages, snapshot 2026-10-21 | done (164 events, 15 sports) | 4f44f7d9 | `data/matches.csv`, `data/matches.json`, `data/README.md` |
-| T3 | Originate own lines + winner pick + confidence (low/medium/high) per match; document market availability per sport | done (5 High / 25 Medium / 134 Low) | 4f44f7d9 | `data/matches.csv`, `data/matches.json`, `research/methodology.md`, `research/markets.md` |
-| T4 | High-confidence write-ups (≥30 words, verified facts only, official sources) | done (5 write-ups, 108–111 words each) | 4f44f7d9 | `docs/high-confidence.html`, `research/verification-log.md` |
-| T5 | GitHub Pages dashboard site (landing + per-sport subpages + markets + methodology + flagged) | done (20 pages, link-checked) | 4f44f7d9 | `docs/**` |
-| T6 | Line-by-line verification pass; every row has OLBG source link; unconfirmed values blank + flagged | done (12 flags F-01…F-12 on Flagged page = needs review, non-blocking) | 4f44f7d9 | `research/verification-log.md`, `docs/flagged.html` |
-| T7 | Final integration: re-verify combined data, check build/links, enable Pages, PR to main + merge, confirm deploy | unclaimed → claimed by 4f44f7d9 as integrator (single-session run; no other session has claimed work) | 4f44f7d9 | all (integration only) |
+**Conflict resolutions (merge of `origin/main` into `arena/4f44f7d9-olbg1`).**
 
-## Log
+1. `COORDINATION.md` — `ce5920e3` version kept as the board (§§0–5 untouched); this §6 appended.
+   The `4f44f7d9` board text is preserved in git history (commit `270b06c`).
+2. `index.html` (root) — `ce5920e3` dashboard kept. The `4f44f7d9` root redirect stub was dropped;
+   its board lives at `/docs/` (legacy Pages publishes the whole repo, so both are live).
+3. `scripts/build_site.py` — name collision, different programs. `ce5920e3` file kept under that
+   name; `4f44f7d9` builder renamed to `scripts/build_board.py` (references updated).
+4. `README.md` — merged: `ce5920e3` README kept, `4f44f7d9` board documented in an added section.
+5. `.github/workflows/pages.yml` (`4f44f7d9`) — **removed**: Pages is legacy `main:/` (API 403 for
+   both sessions); an Actions deploy workflow would only fail noisily. Re-add it if Pages is ever
+   switched to workflow publishing (it uploaded `docs/` only, which would then need revisiting).
+6. `scripts/__pycache__/*.pyc` — removed from the tree (build artifact, no content lost).
 
-- 2026-10-21 — Session `4f44f7d9` created this board (repo contained only `README.md`).
-  Claimed T1–T7 (no prior claims existed). File scopes above are exclusive to this
-  session until marked done. Handoff rule: a claim idle >60 min with no commits may
-  be taken over; note the handoff here.
-- 2026-10-21 — T1 done. OLBG structure documented in `research/olbg-structure.md`
-  from live fetches of `https://www.olbg.com/betting-tips` and per-sport pages.
+**Corrections owed by `4f44f7d9` (applied in this merge).** Its OLBG menu enumeration missed two
+sitemap-only sports that `ce5920e3` found — **Aussie Rules (22)** and **eSports (23)**. The
+`docs/` board therefore covers 15 of the 17 in-scope sports; the gap is now bannered on
+`docs/index.html` and logged as its Flag F-13 (`research/verification-log.md` addendum). No rows
+were invented to fill it. Follow-up: harvest OLBG IDs 22/23 tip pages into `data/matches.*`.
 
-## Sources & verification record (filled on completion)
-
-- **Sources:** OLBG.com live pages (sport + event pages, linked per row in
-  `data/matches.csv`); official checks for High picks: NBA.com game 0022600086,
-  ICC series announcement, PDC schedule/draw (19 & 18 Oct 2026), WTA Ningbo
-  player list (+ ESPN results/rankings as corroboration).
-- **Verification performed:** `research/verification-log.md` — event-page
-  spot-checks agreed with sport-page counts; High prices hand re-derived;
-  automated checks: 0 broken internal links, 0 rows without OLBG source,
-  bookmaker-odds field blank 164/164 (prices not visible on OLBG).
-- **Irregularities:** F-01…F-12 on `docs/flagged.html` (status: needs review,
-  non-blocking per brief). Headlines: pagination limit, timezone unstated,
-  odds invisible, one contradictory darts tip (F-04), one wrong team-news
-  claim corrected via NBA.com (F-05), cricket venue conflict (F-06).
-- **PR / merge / Pages:** _recorded below after T7._
-
-## Cross-session requests
-
-_None._
+**Publish record (this session).** PR #4 — https://github.com/buffedlizard55-lab/OLBG1/pull/4 —
+merged after this integration commit; Pages (legacy root publishing) serves the `ce5920e3`
+dashboard at `/` and the `4f44f7d9` board at `/docs/`. Deploy verification appended below.

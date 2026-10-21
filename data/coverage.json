@@ -1,0 +1,23 @@
+{
+  "generated": "2026-10-21",
+  "note": "Per-sport coverage status for the 21-27 October 2026 window. Every status below is what actually happened in this build - nothing is padded or assumed.",
+  "sports": {
+    "ice-hockey": {"status": "covered", "detail": "Four NHL fixtures verified directly from the NHL's official schedule API."},
+    "basketball": {"status": "covered", "detail": "Eleven NBA fixtures verified from NBA.com. All twelve clubs opened 2026-27 at 0-0, so no club carries a current-season rating and every pick is capped at low confidence."},
+    "baseball": {"status": "covered", "detail": "Four World Series games verified from MLB's official schedule and postseason endpoints, with full 2026 records and home/road splits."},
+    "snooker": {"status": "covered", "detail": "Eleven Round 2 matches at the BetVictor Northern Ireland Open verified from WST, with official world ranking positions."},
+    "darts": {"status": "covered", "detail": "Seven first-round ties at the Machineseeker European Championship verified from the PDC's published schedule. The PDC Order of Merit could not be retrieved (cookie interstitial), so no darts match carries a rating input."},
+    "cricket": {"status": "covered", "detail": "Seven fixtures verified from New Zealand Cricket's official fixtures service, including both BLACKCAPS v India T20 internationals and three Ford Trophy openers."},
+    "rugby-union": {"status": "partial", "detail": "Five Gallagher Premiership Round 4 fixtures are listed, but Premiership Rugby's own fixtures page is client-rendered and returned no rows. These rows are marked CROSS-CHECKED, not verified, and appear on the Flagged for Review page."},
+    "motor-racing": {"status": "event-only", "detail": "Round 18, the United States Grand Prix (23-25 October), is verified from the official Formula 1 calendar. The circuit name and race start time were not captured and are deliberately left blank."},
+    "golf": {"status": "event-only", "detail": "The Butterfield Bermuda Championship (22-25 October, Port Royal Golf Course) is verified from PGA TOUR. Stroke-play golf has no two-sided fixture to price, and the field was not verified, so no betting row is published."},
+    "gaelic-football": {"status": "no-fixtures", "detail": "Verified negative. The GAA's official fixtures calendar shows no Gaelic football fixture between 21 and 25 October 2026. The only October fixture published is the Shinty-Hurling international between Ireland and Scotland on 24 October, which is hurling and therefore out of scope."},
+    "rugby-league": {"status": "not-investigated", "detail": "No official Rugby League fixture source was retrieved in this build. Not claimed either way - flagged."},
+    "handball": {"status": "not-investigated", "detail": "No official handball fixture source was retrieved in this build. Flagged."},
+    "volleyball": {"status": "not-investigated", "detail": "No official volleyball fixture source was retrieved in this build. Flagged."},
+    "tennis": {"status": "not-investigated", "detail": "The official ATP scores feed was readable, but the tournament names behind this week's events were not captured and no fixture list was assembled. Flagged."},
+    "aussie-rules": {"status": "not-investigated", "detail": "No official AFL fixture source was retrieved for the window. Flagged."},
+    "esports": {"status": "not-investigated", "detail": "eSports has no single governing body and no official fixture source was retrieved. Flagged."},
+    "greyhounds": {"status": "not-investigated", "detail": "GBGB racecards were not retrieved in this build. Flagged."}
+  }
+}

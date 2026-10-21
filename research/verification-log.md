@@ -10,7 +10,7 @@
 | Bookmaker odds | Same pages | **Not visible** (`WIN @` blank) → field left empty on all 164 rows (F-03). No odds were inferred from third parties. |
 | Originated prices & confidence | Computed by `build_data.py` from tip counts only | Recomputed on every build; High rows re-derived by hand below |
 | High-pick fixtures/form | Official sites (below) | See per-pick table |
-| Site build & internal links | `build_site.py` + automated link check | 20 HTML pages generated; 0 broken internal links; 0 rows missing OLBG source URL; `bookmaker_odds` blank on 164/164 rows |
+| Site build & internal links | `build_board.py` (renamed at integration — name clashed with session ce5920e3 builder) + automated link check | 20 HTML pages generated; 0 broken internal links; 0 rows missing OLBG source URL; `bookmaker_odds` blank on 164/164 rows |
 
 ## High-confidence picks — hand re-derivation + official checks
 
@@ -32,5 +32,17 @@
 
 ```bash
 python3 scripts/build_data.py   # data/matches.csv + matches.json (164 rows)
-python3 scripts/build_site.py   # docs/*.html (20 pages)
+python3 scripts/build_board.py   # docs/*.html (20 pages)
 ```
+
+## Addendum (integration with session ce5920e3)
+
+- **F-13 — Two in-scope sports missed by this board.** Session `ce5920e3` enumerated OLBG's
+  taxonomy from the XML sitemap and found **Aussie Rules (ID 22)** and **eSports (ID 23)**,
+  which do not appear in the HTML sport menu this board used. The 164-event snapshot therefore
+  covers 15 of 17 in-scope sports. No rows were back-filled without a fetch. Follow-up: harvest
+  `https://www.olbg.com/betting-tips/Aussie_Rules/22` and the eSports equivalent (confirm exact
+  URL slug from `data/olbg_taxonomy.json`) into `scripts/build_data.py`.
+- Builder renamed `scripts/build_site.py` → `scripts/build_board.py` (filename collision with
+  the other session's site builder; both programs retained). Board publishes under `/docs/`
+  alongside the root dashboard via legacy Pages. See `COORDINATION.md` §6.
