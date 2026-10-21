@@ -14,7 +14,7 @@
 - **134** fixture/event rows across **17** in-scope sports.
 - **126** head-to-head line books: Match Winner + Handicap for all; Over/Under total for **125**; **1** total explicitly blank/unverified.
 - Confidence: **31 High**, **34 Medium**, **61 Low**.  High-pick narratives: **31**.
-- Published review registry: **39** systemic findings and **111** row annotations.
+- Published review registry: **42** systemic findings and **111** row annotations.
 
 ## Sport coverage
 
@@ -160,7 +160,7 @@ Each row retains the exact official link(s) recorded in the fixture snapshot. `T
 | `ru-urc-609577` | rugby-union — Connacht vs Zebre Parma | verified | [United Rugby Championship official 2026/27 fixtures](https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/) | winner, dnb, handicap, total; pick: Connacht (low) | URC Round 3 live standings table client-rendered on stats.unitedrugby.com; fixture, venue and UTC kick-off verified on URC site |
 | `ru-urc-609576` | rugby-union — Vodacom Bulls vs Ulster | verified | [United Rugby Championship official 2026/27 fixtures](https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/) | winner, dnb, handicap, total; pick: Vodacom Bulls (low) | URC Round 3 live standings table client-rendered on stats.unitedrugby.com; fixture, venue and UTC kick-off verified on URC site |
 | `ru-urc-609580` | rugby-union — DHL Stormers vs Scarlets | verified | [United Rugby Championship official 2026/27 fixtures](https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/) | winner, dnb, handicap, total; pick: DHL Stormers (low) | URC Round 3 live standings table client-rendered on stats.unitedrugby.com; fixture, venue and UTC kick-off verified on URC site |
-| `ru-urc-609578` | rugby-union — Leinster vs Munster | verified | [United Rugby Championship official 2026/27 fixtures](https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/) | winner, dnb, handicap, total; pick: Leinster (low) | URC Round 3 live standings table client-rendered on stats.unitedrugby.com; fixture, venue and UTC kick-off verified on URC site |
+| `ru-urc-609578` | rugby-union — Leinster vs Munster | verified | [United Rugby Championship official 2026/27 fixtures](https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/) | winner, dnb, handicap, total; pick: Leinster (low) | URC official 2026/27 fixtures release publishes this fixture as 'TBC, Dublin'; venue is not asserted beyond the city |
 | `ru-gloucester-bath` | rugby-union — Gloucester vs Bath | cross-checked | [Gallagher Premiership official fixtures hub](https://www.premrugby.com/fixtures-results) | winner, dnb, handicap, total; pick: Gloucester (low) | Premiership Rugby client-rendered schedule returned zero server DOM rows; kept cross-checked and capped at low confidence |
 | `ru-newcastle-sale` | rugby-union — Newcastle Red Bulls vs Sale Sharks | cross-checked | [Gallagher Premiership official fixtures hub](https://www.premrugby.com/fixtures-results) | winner, dnb, handicap, total; pick: Newcastle Red Bulls (low) | Premiership Rugby client-rendered schedule returned zero server DOM rows; kept cross-checked and capped at low confidence |
 | `ru-leicester-northampton` | rugby-union — Leicester Tigers vs Northampton Saints | cross-checked | [Gallagher Premiership official fixtures hub](https://www.premrugby.com/fixtures-results) | winner, dnb, handicap, total; pick: Leicester Tigers (low) | Premiership Rugby client-rendered schedule returned zero server DOM rows; kept cross-checked and capped at low confidence; Kick-off time differs by 1h across secondary listings; cross-checked |
@@ -248,9 +248,9 @@ Each row retains the exact official link(s) recorded in the fixture snapshot. `T
 | `rl-wc26-eng-fra` | England | 58 | [NRL official RLWC26 men's Round 2 draw](https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/)<br>[IRL official match record](https://www.intrl.sport/match-details/2571) |
 | `hand-ehf-12044` | Aalborg Håndbold | 52 | [EHF Champions League Men 2026/27 official standings](https://ehfcl.eurohandball.com/men/2026-27/standings/)<br>[EHF official 2026/27 group phase playing times PDF](https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf)<br>[EHF official Round 5 match preview](https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins) |
 | `hand-ehf-12046` | Barça | 54 | [EHF Champions League Men 2026/27 official standings](https://ehfcl.eurohandball.com/men/2026-27/standings/)<br>[EHF official 2026/27 group phase playing times PDF](https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf)<br>[EHF official Round 5 match preview](https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins) |
-| `aflw-r11-01` | North Melbourne | 55 | [AFL official 2026 NAB AFLW fixture & ladder](https://www.afl.com.au/aflw) |
+| `aflw-r11-01` | North Melbourne | 58 | [AFL official 2026 NAB AFLW fixture & ladder](https://www.afl.com.au/aflw) |
 | `aflw-r11-04` | Carlton | 51 | [AFL official 2026 NAB AFLW fixture & ladder](https://www.afl.com.au/aflw) |
-| `aflw-r11-05` | Hawthorn | 53 | [AFL official 2026 NAB AFLW fixture & ladder](https://www.afl.com.au/aflw) |
+| `aflw-r11-05` | Hawthorn | 57 | [AFL official 2026 NAB AFLW fixture & ladder](https://www.afl.com.au/aflw) |
 
 ## Historical-workspace review flags
 

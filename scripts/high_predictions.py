@@ -126,12 +126,12 @@ HIGH_PREDICTION_TEXTS: dict[str, str] = {
         "Bar\u00e7a lead Group E at 4-0-0 with eight points and a plus-33 goal difference, and they have already beaten Montpellier 28:27 away. The French side are third at 1-0-3, minus-9. A one-goal road win warns against expecting a blowout, but the standings still point firmly to the hosts at Palau Blaugrana. Bar\u00e7a to win."
     ),
     "aflw-r11-01": (
-        "North Melbourne are unbeaten in the AFLW: ten wins from ten, 40 points, top of the ladder after Round 10. Adelaide are ninth on 20 points at 5-5. A perfect record against a .500 side is about as one-sided as this competition gets, and the game is at Arden Street. North Melbourne are our pick."
+        "North Melbourne are unbeaten in the AFLW: ten wins from ten, 40 points, top of the ladder after Round 10. Adelaide are ninth on 20 points at 5-5. A perfect record against a .500 side is about as one-sided as this competition gets, and the game is at North Hobart Oval in Hobart. North Melbourne are our pick."
     ),
     "aflw-r11-04": (
         "Carlton sit sixth on 24 points with a 6-4 record, while GWS are 16th on eight points at 2-8. The ladder gap is ten places and the win gap is four, which in a ten-round season is the difference between chasing finals and rebuilding. IKON Park hosts it. Carlton to win."
     ),
     "aflw-r11-05": (
-        "Hawthorn are fourth on 32 points at 8-2; Essendon are 14th on 14 points with a 3-6-1 record. The Hawks have won five more games than the Bombers and lost four fewer, and the fixture is at Kinetic Stadium. Our model makes Hawthorn clear favourites and the ladder supports it. Hawthorn to win."
+        "Hawthorn are fourth on 32 points at 8-2; Essendon are 14th on 14 points with a 3-6-1 record. The Hawks have won five more games than the Bombers and lost four fewer, and the fixture is at the Kennedy Community Centre in Dingley. Our model makes Hawthorn clear favourites and the ladder supports it. Hawthorn to win."
     ),
 }

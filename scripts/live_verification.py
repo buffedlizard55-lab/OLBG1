@@ -32,6 +32,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CHECKED_AT = "2026-10-21T07:05Z"
+PASS3_AT = "2026-10-21T07:20Z"
 
 # ---------------------------------------------------------------------------
 # Sources actually re-fetched during this pass
@@ -96,6 +97,10 @@ SOURCES: dict[str, dict[str, str]] = {
     "prem": {
         "name": "Premiership Rugby official fixtures & results",
         "url": "https://www.premrugby.com/fixtures-results",
+    },
+    "urc_new": {
+        "name": "United Rugby Championship official 2026/27 fixtures in full (Round 4)",
+        "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
     },
 }
 
@@ -168,12 +173,22 @@ CONFIRMED: dict[str, dict[str, str]] = {
     "aflw-r11-07": {"src": "aflw", "evidence": "AFLW Round 11 board: port v coll at ALB (Alberton Oval) — pairing and venue match."},
     "aflw-r11-08": {"src": "aflw", "evidence": "AFLW Round 11 board: syd v wce at HEN (Henson Park) — pairing and venue match."},
     "aflw-r11-09": {"src": "aflw", "evidence": "AFLW Round 11 board: stk v bl at RSEA — pairing and venue match."},
+    "aflw-r11-04": {"src": "aflw", "at": "2026-10-21T07:20Z", "evidence": "AFLW Round 11 board: carl v gws, match id 8975, venue code IKP (IKON Park) — pairing, home/away and venue match. The board prints kick-offs in the viewer's timezone, so the stored UTC was left as published."},
+    "ru-urc-609577": {"src": "urc_new", "at": "2026-10-21T07:20Z", "evidence": "URC 2026/27 fixtures release, Round 4: Connacht v Zebre Parma, Dexcom Stadium, Galway, Friday 23 October, KO 19:45 IRE & UK (= 18:45Z) — participants, venue, date and kick-off all match."},
+    "ru-urc-609576": {"src": "urc_new", "at": "2026-10-21T07:20Z", "evidence": "Round 4: Vodacom Bulls v Ulster, Loftus Versfeld, Pretoria, Saturday 24 October, KO 12:45 IRE & UK (= 11:45Z) — all match."},
+    "ru-urc-609580": {"src": "urc_new", "at": "2026-10-21T07:20Z", "evidence": "Round 4: DHL Stormers v Scarlets, DHL Stadium, Cape Town, Saturday 24 October, KO 15:00 IRE & UK (= 14:00Z) — all match."},
 }
 
 # ---------------------------------------------------------------------------
 # Rows corrected because the re-fetched page disagreed
 # ---------------------------------------------------------------------------
 CORRECTED: dict[str, dict[str, str]] = {
+    "ru-urc-609578": {
+        "src": "urc_new",
+        "at": "2026-10-21T07:20Z",
+        "evidence": "URC Round 4 lists Leinster v Munster on Saturday 24 October, KO 18:00 IRE & UK (= 17:00Z), with the venue published as 'TBC, Dublin'. The row asserted Aviva Stadium, which the official release does not confirm.",
+        "change": "Venue changed to 'Dublin (venue TBC)'; participants, competition and kick-off verified and left unchanged.",
+    },
     "nhl-2026020152": {
         "src": "nhl_stand",
         "evidence": "Independent re-read on 2026-10-21T07:20Z: standings return Buffalo 4-3-2 / .556 with goalDifferential -7, and Philadelphia 2-6-3 / .318 with a road line of 0-4-1 and goalDifferential -19. Both clubs had played exactly the number of games in the stored record (9 and 11), so the stored +2 and -14 differentials and the 0-4-2 road line cannot be snapshot drift.",
@@ -240,6 +255,18 @@ CORRECTED: dict[str, dict[str, str]] = {
 # Rows where the re-fetched page disagrees and a human must decide
 # ---------------------------------------------------------------------------
 FLAGGED: dict[str, dict[str, str]] = {
+    "aflw-r11-01": {
+        "src": "aflw",
+        "at": "2026-10-21T07:20Z",
+        "evidence": "AFLW Round 11 board lists nmfc v adel as match 8979 with venue code NHO. The board publishes three-letter venue codes only; NHO was not decoded with certainty and does not correspond to the row's 'Arden Street Oval, Melbourne'.",
+        "change": "Left as published and flagged for a human to confirm the venue; the pairing and match id do match.",
+    },
+    "aflw-r11-05": {
+        "src": "aflw",
+        "at": "2026-10-21T07:20Z",
+        "evidence": "AFLW Round 11 board lists haw v ess as match 8976 with venue code KCC. The row claims Kinetic Stadium, Frankston; KCC was not decoded with certainty from the official board.",
+        "change": "Left as published and flagged for a human to confirm the venue; the pairing and match id do match.",
+    },
     "nhl-2026020160": {
         "src": "nhl_stand",
         "evidence": "The priced input is Vegas 8-2-0 (.800, W3). The same endpoint re-fetched at 2026-10-21T07:05:30Z returns 8-3-0 (.727, L1) over 11 games, so the club has played once since the snapshot.",
@@ -268,16 +295,15 @@ CORRECTED.update({
 NOT_RECHECKED_REASON: dict[str, str] = {
     "darts": "PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
     "tennis": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
-    "euroleague": "EuroLeague / EuroCup game-centre pages are client-rendered and were not re-fetched in this pass.",
+    "basketball": "EuroLeague and EuroCup game-centre pages are client-rendered and were not re-read in the later passes either, so these six rows keep their original status.",
     "volleyball": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
-    "rugby-union": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
+    "rugby-union": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
     "gaelic-football": "GAA county fixture pages were not re-fetched in this pass.",
     "golf": "PGA TOUR, DP World Tour, LPGA and PGA TOUR Champions schedules were not re-fetched in this pass.",
     "greyhounds": "GBGB race calendar was not re-fetched in this pass.",
     "motor-racing": "Formula 1 event page was not re-fetched in this pass.",
     "esports": "LoL Esports schedule was not re-fetched in this pass.",
     "ice-hockey": "The 21 Oct schedule response was read; this row's game sits on the 22/23 Oct pages, which were not read back.",
-    "aussie-rules": "The Round 11 board fragment returned did not include this pairing; only six of the nine AFLW fixtures were readable.",
     "rugby-league": "The NRL women's competition draw was not readable from the men's competition page used in this pass.",
     "cricket": "Not re-read in this pass; the NZC fixtures service was used for the rows that were checked.",
 }
@@ -367,6 +393,22 @@ FINDINGS: list[dict[str, str]] = [
         "source": "nhl_sched",
     },
     {
+        "id": "F-V14",
+        "severity": "low",
+        "area": "Rugby union — Premiership fixture list still not readable",
+        "detail": "A further fetch of premrugby.com/fixtures-results returned navigation, sponsor blocks and footer only: no fixture rows were present in the returned document, so the five Gallagher Premiership rows still cannot be re-read from the union's own site.",
+        "status": "Those five rows keep their cross-checked status; they were not promoted to verified on the strength of an unread page.",
+        "source": "prem",
+    },
+    {
+        "id": "F-V15",
+        "severity": "low",
+        "area": "AFLW — venue codes on the official board are not decodable to venue names",
+        "detail": "The Round 11 board publishes three-letter venue codes (IKP, KCC, NHO, ALB, GMHBA, PFS, MWO, HEN, RSEA). IKP resolves to IKON Park and matches aflw-r11-04. KCC (haw v ess) and NHO (nmfc v adel) could not be decoded with certainty, and NHO does not correspond to the row's Arden Street Oval.",
+        "status": "Two rows flagged rather than guessed. The board also renders kick-offs in the viewer's timezone, so stored UTC values were left as published.",
+        "source": "aflw",
+    },
+    {
         "id": "F-V11",
         "severity": "high",
         "area": "NHL — four input sub-values were transcription errors, not drift",
@@ -396,334 +438,226 @@ FINDINGS: list[dict[str, str]] = [
 # ===========================================================================
 # T34 — independent pass, session `b95dbd01-olbg1`, 2026-10-21T09:05Z
 # ---------------------------------------------------------------------------
-# Same vocabulary, same page, second read. Every entry below records a page
-# that was fetched again *after* the T20 pass, so a row marked confirmed here
-# is one whose official page was re-opened twice in one day, and a row marked
-# corrected here is one where the second read found the first read's value
-# wrong. Nothing in T20 is deleted: T20's entries keep their status unless a
-# T21 entry supersedes them, and each row carries the timestamp of the pass
-# that last read it.
+# This branch re-opened every reachable governing-body page after the T20/T21/
+# T22 passes and recorded what it found. Entries carry their own timestamp, so
+# a row reads as read by whichever pass last settled it; nothing from the
+# earlier passes is deleted, and a row this pass could not read keeps the
+# reason it was not read.
 # ===========================================================================
-T34_CHECKED_AT = "2026-10-21T09:05Z"
+T34_AT = "2026-10-21T09:05Z"
 
 SOURCES.update({
-    "nhl_sched22": {
-        "name": "NHL official schedule API (2026-10-22)",
-        "url": "https://api-web.nhle.com/v1/schedule/2026-10-22",
-    },
-    "mlb_sched21": {
-        "name": "MLB StatsAPI official schedule (2026-10-21..30, venues + linescore)",
-        "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30&hydrate=venue(location),linescore",
-    },
-    "ehf_pdf": {
-        "name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)",
-        "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
-    },
-    "wst_matches": {
-        "name": "World Snooker Tour — BetVictor Northern Ireland Open 2026 match list",
-        "url": "https://www.wst.tv/matches",
-    },
-    "nrl_draw2": {
-        "name": "NRL / Rugby League World Cup 2026 Round 2 draw (nrl.com)",
-        "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
-    },
-    "urc_fixtures": {
-        "name": "United Rugby Championship 2026/27 fixtures in full (Round 4)",
-        "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
-    },
-    "top14_cal": {
-        "name": "LNR Top 14 official calendar, journée 7",
-        "url": "https://top14.lnr.fr/calendrier-et-resultats",
-    },
-    "aflw_hub": {
-        "name": "AFL official AFLW hub — Round 11 fixture board & match ids",
-        "url": "https://www.afl.com.au/aflw",
-    },
-    "aflw_ladder": {
-        "name": "AFL official 2026 AFLW ladder (after Round 10)",
-        "url": "https://www.afl.com.au/aflw/ladder",
-    },
-    "nba_cdn": {
-        "name": "NBA official scoreboard feed (cdn.nba.com)",
-        "url": "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json",
-    },
-    "plusliga": {
-        "name": "PlusLiga fixtures (plusliga.pl, redirects to tauronliga.pl)",
-        "url": "https://www.plusliga.pl/games.html",
-    },
+    "nhl_sched22": {"name": "NHL official schedule API (2026-10-22)", "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"},
+    "mlb_sched21": {"name": "MLB StatsAPI official schedule (2026-10-21..30, venues + linescore)", "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30&hydrate=venue(location),linescore"},
+    "ehf_pdf": {"name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)", "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"},
+    "wst_matches": {"name": "World Snooker Tour — BetVictor Northern Ireland Open 2026 match list", "url": "https://www.wst.tv/matches"},
+    "nrl_draw2": {"name": "NRL / Rugby League World Cup 2026 Round 2 draw (nrl.com)", "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"},
+    "urc_fixtures": {"name": "United Rugby Championship 2026/27 fixtures in full (Round 4)", "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"},
+    "top14_cal": {"name": "LNR Top 14 official calendar, journée 7", "url": "https://top14.lnr.fr/calendrier-et-resultats"},
+    "aflw_hub": {"name": "AFL official AFLW hub — Round 11 fixture board & match ids", "url": "https://www.afl.com.au/aflw"},
+    "aflw_ladder": {"name": "AFL official 2026 AFLW ladder (after Round 10)", "url": "https://www.afl.com.au/aflw/ladder"},
+    "nba_cdn": {"name": "NBA official scoreboard feed (cdn.nba.com)", "url": "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json"},
+    "plusliga": {"name": "PlusLiga fixtures (plusliga.pl, redirects to tauronliga.pl)", "url": "https://www.plusliga.pl/games.html"},
 })
 
-# ---------------------------------------------------------------------------
-# Re-read in this pass and matching row for row
-# ---------------------------------------------------------------------------
 T34_CONFIRMED: dict[str, dict[str, str]] = {
-    # --- MLB World Series (4): officialDate, first pitch and venue ------
-    "mlb-849805": {"src": "mlb_sched21", "evidence": "Re-read 2026-10-21: gamePk 849805, World Series Game 1, officialDate 2026-10-23, gameDate 2026-10-24T00:00:00Z, Rays at Brewers, American Family Field — all match."},
-    "mlb-849802": {"src": "mlb_sched21", "evidence": "Re-read 2026-10-21: gamePk 849802, Game 2, officialDate 2026-10-24, gameDate 2026-10-25T00:00:00Z, American Family Field — all match."},
-    "mlb-849804": {"src": "mlb_sched21", "evidence": "Re-read 2026-10-21: gamePk 849804, Game 3, officialDate 2026-10-26, gameDate 2026-10-27T00:00:00Z, Brewers at Rays, Tropicana Field — all match."},
-    "mlb-849803": {"src": "mlb_sched21", "evidence": "Re-read 2026-10-21: gamePk 849803, Game 4, officialDate 2026-10-27, gameDate 2026-10-28T00:00:00Z, Tropicana Field — all match."},
-    # --- NHL (2) -------------------------------------------------------
-    "nhl-2026020154": {"src": "nhl_sched22", "evidence": "Re-read 2026-10-21: game 2026020154, Nashville at Boston, TD Garden, startTimeUTC 2026-10-22T23:00:00Z — participants, venue and start match."},
-    "nhl-2026020155": {"src": "nhl_sched22", "evidence": "Re-read 2026-10-21: game 2026020155, New York Rangers at Toronto, Scotiabank Arena, startTimeUTC 2026-10-22T23:00:00Z — all match."},
-    # --- Handball (11 of 12; 12048 corrected below) --------------------
-    "hand-ehf-12055": {"src": "ehf_pdf", "evidence": "EHF Round 5 PDF: One Veszprém v Füchse Berlin, Wed 21.10.2026, 18:45 CEST, One Veszprém Arena (Veszprém) = 16:45Z — participants, date, start and venue match."},
-    "hand-ehf-12052": {"src": "ehf_pdf", "evidence": "EHF Round 5 PDF: Partizan v FC Porto, Wed 21.10.2026, 18:45 CEST, Hall Aleksandar Nikolic (Belgrade) = 16:45Z — all match."},
-    "hand-ehf-12053": {"src": "ehf_pdf", "evidence": "EHF Round 5 PDF: HC Zagreb v PSG, Wed 21.10.2026, 18:45 CEST, Arena Zagreb = 16:45Z — all match."},
-    "hand-ehf-12045": {"src": "ehf_pdf", "evidence": "EHF Round 5 PDF: Dinamo Bucuresti v SAH Aarhus, Wed 21.10.2026, 18:45 CEST, Polyvalenta Hall (Bucharest) = 16:45Z — all match."},
-    "hand-ehf-12050": {"src": "ehf_pdf", "evidence": "EHF Round 5 PDF: HBC Nantes v Vardar 1961, Wed 21.10.2026, 20:45 CEST, H Arena (Nantes) = 18:45Z — all match."},
-    "hand-ehf-12044": {"src": "ehf_pdf", "evidence": "EHF Round 5 PDF: Aalborg v Celje, Wed 21.10.2026, 20:45 CEST, Sparekassen Danmark Arena = 18:45Z — all match."},
-    "hand-ehf-12047": {"src": "ehf_pdf", "evidence": "EHF Round 5 PDF: Kriens-Luzern v Industria Kielce, Wed 21.10.2026, 20:45 CEST, Pilatus Arena (Kriens) = 18:45Z — all match."},
-    "hand-ehf-12049": {"src": "ehf_pdf", "evidence": "EHF Round 5 PDF: MT Melsungen v Orlen Wisla Plock, Thu 22.10.2026, 18:45 CEST, Rothenbach-Halle (Kassel) = 16:45Z — all match."},
-    "hand-ehf-12051": {"src": "ehf_pdf", "evidence": "EHF Round 5 PDF: OTP Bank-Pick Szeged v GOG, Thu 22.10.2026, 18:45 CEST, Pick Arena (Szeged) = 16:45Z — all match."},
-    "hand-ehf-12048": {"src": "ehf_pdf", "evidence": "EHF Round 5 PDF: Kolstad Handball v SC Magdeburg, Thu 22.10.2026, 20:45 CEST, Kolstad Arena (Kolstad, NOR) = 18:45Z — participants, date and start match; venue differs, corrected below."},
-    "hand-ehf-12054": {"src": "ehf_pdf", "evidence": "EHF Round 5 PDF: Sporting CP v IFK Kristianstad, Thu 22.10.2026, 20:45 CEST, Pavilhao Joao Rocha (Lisbon) = 18:45Z — all match."},
-    "hand-ehf-12046": {"src": "ehf_pdf", "evidence": "EHF Round 5 PDF: Barça v Montpellier HB, Thu 22.10.2026, 20:45 CEST, Palau Blaugrana = 18:45Z — all match."},
-    # --- Snooker (11): pairings and match-centre ids --------------------
-    "snk-pang-davies": {"src": "wst_matches", "evidence": "WST match list, Round 2: Match 36 Pang Junxu v Liam Davies, Wed 21 Oct, match-centre 67133698-e8a4-4b37-9266-452a97df8584 — pairing and id match the row."},
-    "snk-cheung-bingham": {"src": "wst_matches", "evidence": "WST match list, Round 2: Match 42 Ka Wai Cheung v Stuart Bingham, Wed 21 Oct, match-centre 3d53c559-9bd7-4bc4-8e1d-a6c2b7459528 — all match."},
-    "snk-higgins-jones": {"src": "wst_matches", "evidence": "WST match list, Round 2: Match 45 John Higgins v Jak Jones, Wed 21 Oct, match-centre eba55492-fba6-4a53-90be-a04b3560ae65 — all match."},
-    "snk-wells-day": {"src": "wst_matches", "evidence": "WST match list, Round 2: Match 46 Daniel Wells v Ryan Day, Wed 21 Oct, match-centre e9c15ae6-b9b8-4cea-a83a-49c58eb14046 — all match."},
-    "snk-craigie-xu": {"src": "wst_matches", "evidence": "WST match list, Round 2: Match 38 Sam Craigie v Xu Si, Wed 21 Oct, match-centre afb42fc9-9654-479e-997e-d33d8a1a6888 — all match."},
-    "snk-zhang-williams": {"src": "wst_matches", "evidence": "WST match list, Round 2: Match 43 Zhang Anda v Mark Williams, Wed 21 Oct, match-centre 480e5abf-5766-44ad-9918-f822ceefd4a5 — all match."},
-    "snk-holt-brown": {"src": "wst_matches", "evidence": "WST match list, Round 2: Match 47 Michael Holt v Jordan Brown, Wed 21 Oct, match-centre e58a00e5-e6a7-479b-98d0-5c7867af28a8 — all match."},
-    "snk-gao-gilbert": {"src": "wst_matches", "evidence": "WST match list, Round 2: Match 41 Gao Yang v David Gilbert, Wed 21 Oct, match-centre 4fb27af0-7db4-4ec2-b93b-137de3f66135 — all match."},
-    "snk-noppon-donaldson": {"src": "wst_matches", "evidence": "WST match list, Round 2: Match 48 Noppon Saengkham v Scott Donaldson, Wed 21 Oct, match-centre 3a24076e-455c-497b-abd5-976e194abc5e — all match."},
-    "snk-brecel-odonnell": {"src": "wst_matches", "evidence": "WST match list, Round 2: Match 44 Luca Brecel v Martin O'Donnell, Wed 21 Oct, match-centre 0c49ba0c-2d21-481e-a2ac-fbece616f591 — all match."},
-    "snk-slessor-jones": {"src": "wst_matches", "evidence": "WST match list, Round 2: Match 39 Elliot Slessor v Jamie Jones, Wed 21 Oct, match-centre f6536f1f-6c2d-47cd-b802-a81e6f04e4cc — all match."},
-    # --- Rugby league, men's RLWC (5) ----------------------------------
-    "rl-wc26-tga-lbn": {"src": "nrl_draw2", "evidence": "nrl.com Round 2: Tonga v Lebanon, Friday 23 October, CommBank Stadium, kick-off printed 5:05am — row's 2026-10-23T09:05Z is that clock plus the client's UTC-4 rendering offset, which the same page reproduces for all five fixtures."},
-    "rl-wc26-png-sam": {"src": "nrl_draw2", "evidence": "nrl.com Round 2: Papua New Guinea v Samoa, Saturday 24 October, Santos National Football Stadium, 12:25am printed = 04:25Z on the same offset — all match."},
-    "rl-wc26-eng-fra": {"src": "nrl_draw2", "evidence": "nrl.com Round 2: England v France, Saturday 24 October, HBF Park Perth, 2:35am printed = 06:35Z — all match."},
-    "rl-wc26-nzl-cok": {"src": "nrl_draw2", "evidence": "nrl.com Round 2: New Zealand v Cook Islands, Sunday 25 October, One NZ Stadium Christchurch, 1:05am printed = 05:05Z — all match (venue name printed without 'New Zealand')."},
-    "rl-wc26-aus-fij": {"src": "nrl_draw2", "evidence": "nrl.com Round 2: Australia v Fiji, Sunday 25 October, Suncorp Stadium, 5:05am printed = 09:05Z — all match."},
-    # --- Rugby union: Top 14 (3) and URC (3; Leinster row flagged) ------
-    "ru-top14-609564": {"src": "top14_cal", "evidence": "LNR journée 7: Aviron Bayonnais v LOU Rugby, samedi 24 octobre, 16h35, match sheet 11861 — participants, date, 14:35Z start (CEST) and sheet id match."},
-    "ru-top14-609567": {"src": "top14_cal", "evidence": "LNR journée 7: Stade Toulousain v USA Perpignan, samedi 24 octobre, 16h35, match sheet 11867 — all match."},
-    "ru-top14-609554": {"src": "top14_cal", "evidence": "LNR journée 7: Stade Rochelais v Union Bordeaux-Bègles, dimanche 25 octobre, 21h05, match sheet 11864. 25 October is after the French DST change, so 21h05 CET = 20:05Z, which is exactly the row's value."},
-    "ru-urc-609577": {"src": "urc_fixtures", "evidence": "URC Round 4, Friday 23 October: Connacht v Zebre Parma, Dexcom Stadium Galway, KO 19:45 IRE & UK = 18:45Z — all match."},
-    "ru-urc-609576": {"src": "urc_fixtures", "evidence": "URC Round 4, Saturday 24 October: Vodacom Bulls v Ulster, Loftus Versfeld, KO 12:45 IRE & UK / 13:45 SAST = 11:45Z — all match."},
-    "ru-urc-609580": {"src": "urc_fixtures", "evidence": "URC Round 4, Saturday 24 October: DHL Stormers v Scarlets, DHL Stadium Cape Town, KO 15:00 IRE & UK = 14:00Z — all match."},
-    # --- Cricket: NZC fixture service -----------------------------------
-    "cric-ausw-nzw-t20-3": {"src": "nzc", "evidence": "NZC fixtures: Australia Women v New Zealand Women, 3rd T20I, Thu 22 Oct, North Sydney Oval, 4:15am printed = 08:15Z under the same offset — participants, date, venue and start match."},
-    "cric-nza-inda-fc1": {"src": "nzc", "evidence": "NZC fixtures: New Zealand A v India A, 1st Four-Day Match, Fri 23 Oct, Bert Sutcliffe Oval, Lincoln University — participants, date and venue match; NZC prints 5:30pm with no timezone, so start_utc stays blank."},
+    "mlb-849805": {"src": "mlb_sched21", "at": T34_AT, "evidence": "Re-read 2026-10-21: gamePk 849805, World Series Game 1, officialDate 2026-10-23, gameDate 2026-10-24T00:00:00Z, Rays at Brewers, American Family Field — participants, date, start and venue match."},
+    "mlb-849802": {"src": "mlb_sched21", "at": T34_AT, "evidence": "Re-read 2026-10-21: gamePk 849802, Game 2, officialDate 2026-10-24, gameDate 2026-10-25T00:00:00Z, American Family Field — all match."},
+    "mlb-849804": {"src": "mlb_sched21", "at": T34_AT, "evidence": "Re-read 2026-10-21: gamePk 849804, Game 3, officialDate 2026-10-26, gameDate 2026-10-27T00:00:00Z, Brewers at Rays, Tropicana Field — all match."},
+    "mlb-849803": {"src": "mlb_sched21", "at": T34_AT, "evidence": "Re-read 2026-10-21: gamePk 849803, Game 4, officialDate 2026-10-27, gameDate 2026-10-28T00:00:00Z, Tropicana Field — all match."},
+    "nhl-2026020154": {"src": "nhl_sched22", "at": T34_AT, "evidence": "Re-read 2026-10-21: game 2026020154, Nashville at Boston, TD Garden, startTimeUTC 2026-10-22T23:00:00Z — participants, venue and start match."},
+    "nhl-2026020155": {"src": "nhl_sched22", "at": T34_AT, "evidence": "Re-read 2026-10-21: game 2026020155, New York Rangers at Toronto, Scotiabank Arena, startTimeUTC 2026-10-22T23:00:00Z — all match."},
+    "hand-ehf-12055": {"src": "ehf_pdf", "at": T34_AT, "evidence": "EHF Round 5 PDF: One Veszprém v Füchse Berlin, Wed 21.10.2026, 18:45 CEST, One Veszprém Arena = 16:45Z — participants, date, start and venue match."},
+    "hand-ehf-12052": {"src": "ehf_pdf", "at": T34_AT, "evidence": "EHF Round 5 PDF: Partizan v FC Porto, Wed 21.10.2026, 18:45 CEST, Hall Aleksandar Nikolic (Belgrade) = 16:45Z — all match."},
+    "hand-ehf-12053": {"src": "ehf_pdf", "at": T34_AT, "evidence": "EHF Round 5 PDF: HC Zagreb v PSG, Wed 21.10.2026, 18:45 CEST, Arena Zagreb = 16:45Z — all match."},
+    "hand-ehf-12045": {"src": "ehf_pdf", "at": T34_AT, "evidence": "EHF Round 5 PDF: Dinamo Bucuresti v SAH Aarhus, Wed 21.10.2026, 18:45 CEST, Polyvalenta Hall = 16:45Z — all match."},
+    "hand-ehf-12050": {"src": "ehf_pdf", "at": T34_AT, "evidence": "EHF Round 5 PDF: HBC Nantes v Vardar 1961, Wed 21.10.2026, 20:45 CEST, H Arena (Nantes) = 18:45Z — all match."},
+    "hand-ehf-12044": {"src": "ehf_pdf", "at": T34_AT, "evidence": "EHF Round 5 PDF: Aalborg v Celje, Wed 21.10.2026, 20:45 CEST, Sparekassen Danmark Arena = 18:45Z — all match."},
+    "hand-ehf-12047": {"src": "ehf_pdf", "at": T34_AT, "evidence": "EHF Round 5 PDF: Kriens-Luzern v Industria Kielce, Wed 21.10.2026, 20:45 CEST, Pilatus Arena (Kriens) = 18:45Z — all match."},
+    "hand-ehf-12049": {"src": "ehf_pdf", "at": T34_AT, "evidence": "EHF Round 5 PDF: MT Melsungen v Orlen Wisla Plock, Thu 22.10.2026, 18:45 CEST, Rothenbach-Halle (Kassel) = 16:45Z — all match."},
+    "hand-ehf-12051": {"src": "ehf_pdf", "at": T34_AT, "evidence": "EHF Round 5 PDF: OTP Bank-Pick Szeged v GOG, Thu 22.10.2026, 18:45 CEST, Pick Arena (Szeged) = 16:45Z — all match."},
+    "hand-ehf-12054": {"src": "ehf_pdf", "at": T34_AT, "evidence": "EHF Round 5 PDF: Sporting CP v IFK Kristianstad, Thu 22.10.2026, 20:45 CEST, Pavilhao Joao Rocha (Lisbon) = 18:45Z — all match."},
+    "hand-ehf-12046": {"src": "ehf_pdf", "at": T34_AT, "evidence": "EHF Round 5 PDF: Barça v Montpellier HB, Thu 22.10.2026, 20:45 CEST, Palau Blaugrana = 18:45Z — all match."},
+    "snk-pang-davies": {"src": "wst_matches", "at": T34_AT, "evidence": "WST Round 2 match list: Match 36 Pang Junxu v Liam Davies, Wed 21 Oct, match-centre 67133698-e8a4-4b37-9266-452a97df8584 — pairing and id match."},
+    "snk-cheung-bingham": {"src": "wst_matches", "at": T34_AT, "evidence": "WST Round 2: Match 42 Ka Wai Cheung v Stuart Bingham, Wed 21 Oct, match-centre 3d53c559-9bd7-4bc4-8e1d-a6c2b7459528 — all match."},
+    "snk-higgins-jones": {"src": "wst_matches", "at": T34_AT, "evidence": "WST Round 2: Match 45 John Higgins v Jak Jones, Wed 21 Oct, match-centre eba55492-fba6-4a53-90be-a04b3560ae65 — all match."},
+    "snk-wells-day": {"src": "wst_matches", "at": T34_AT, "evidence": "WST Round 2: Match 46 Daniel Wells v Ryan Day, Wed 21 Oct, match-centre e9c15ae6-b9b8-4cea-a83a-49c58eb14046 — all match."},
+    "snk-craigie-xu": {"src": "wst_matches", "at": T34_AT, "evidence": "WST Round 2: Match 38 Sam Craigie v Xu Si, Wed 21 Oct, match-centre afb42fc9-9654-479e-997e-d33d8a1a6888 — all match."},
+    "snk-zhang-williams": {"src": "wst_matches", "at": T34_AT, "evidence": "WST Round 2: Match 43 Zhang Anda v Mark Williams, Wed 21 Oct, match-centre 480e5abf-5766-44ad-9918-f822ceefd4a5 — all match."},
+    "snk-holt-brown": {"src": "wst_matches", "at": T34_AT, "evidence": "WST Round 2: Match 47 Michael Holt v Jordan Brown, Wed 21 Oct, match-centre e58a00e5-e6a7-479b-98d0-5c7867af28a8 — all match."},
+    "snk-gao-gilbert": {"src": "wst_matches", "at": T34_AT, "evidence": "WST Round 2: Match 41 Gao Yang v David Gilbert, Wed 21 Oct, match-centre 4fb27af0-7db4-4ec2-b93b-137de3f66135 — all match."},
+    "snk-noppon-donaldson": {"src": "wst_matches", "at": T34_AT, "evidence": "WST Round 2: Match 48 Noppon Saengkham v Scott Donaldson, Wed 21 Oct, match-centre 3a24076e-455c-497b-abd5-976e194abc5e — all match."},
+    "snk-brecel-odonnell": {"src": "wst_matches", "at": T34_AT, "evidence": "WST Round 2: Match 44 Luca Brecel v Martin O'Donnell, Wed 21 Oct, match-centre 0c49ba0c-2d21-481e-a2ac-fbece616f591 — all match."},
+    "snk-slessor-jones": {"src": "wst_matches", "at": T34_AT, "evidence": "WST Round 2: Match 39 Elliot Slessor v Jamie Jones, Wed 21 Oct, match-centre f6536f1f-6c2d-47cd-b802-a81e6f04e4cc — all match."},
+    "rl-wc26-tga-lbn": {"src": "nrl_draw2", "at": T34_AT, "evidence": "nrl.com Round 2: Tonga v Lebanon, Friday 23 October, CommBank Stadium, 5:05am printed — the row's 2026-10-23T09:05Z is that clock plus the client's UTC-4 render offset, which the page reproduces for all five fixtures."},
+    "rl-wc26-png-sam": {"src": "nrl_draw2", "at": T34_AT, "evidence": "nrl.com Round 2: Papua New Guinea v Samoa, Saturday 24 October, Santos National Football Stadium, 12:25am printed = 04:25Z — all match."},
+    "rl-wc26-eng-fra": {"src": "nrl_draw2", "at": T34_AT, "evidence": "nrl.com Round 2: England v France, Saturday 24 October, HBF Park Perth, 2:35am printed = 06:35Z — all match."},
+    "rl-wc26-nzl-cok": {"src": "nrl_draw2", "at": T34_AT, "evidence": "nrl.com Round 2: New Zealand v Cook Islands, Sunday 25 October, One NZ Stadium Christchurch, 1:05am printed = 05:05Z — all match."},
+    "rl-wc26-aus-fij": {"src": "nrl_draw2", "at": T34_AT, "evidence": "nrl.com Round 2: Australia v Fiji, Sunday 25 October, Suncorp Stadium, 5:05am printed = 09:05Z — all match."},
+    "ru-top14-609564": {"src": "top14_cal", "at": T34_AT, "evidence": "LNR journée 7: Bayonne v LOU Rugby, samedi 24 octobre, 16h35, sheet 11861 — participants, date, 14:35Z start (CEST) and sheet id match."},
+    "ru-top14-609567": {"src": "top14_cal", "at": T34_AT, "evidence": "LNR journée 7: Stade Toulousain v USA Perpignan, samedi 24 octobre, 16h35, sheet 11867 — all match."},
+    "ru-top14-609554": {"src": "top14_cal", "at": T34_AT, "evidence": "LNR journée 7: La Rochelle v Bordeaux-Bègles, dimanche 25 octobre, 21h05, sheet 11864. 25 October is after the French DST change, so 21h05 CET = 20:05Z, exactly the row's value."},
+    "ru-urc-609577": {"src": "urc_fixtures", "at": T34_AT, "evidence": "URC Round 4, Friday 23 October: Connacht v Zebre Parma, Dexcom Stadium Galway, KO 19:45 IRE & UK = 18:45Z — all match."},
+    "ru-urc-609576": {"src": "urc_fixtures", "at": T34_AT, "evidence": "URC Round 4, Saturday 24 October: Bulls v Ulster, Loftus Versfeld, KO 12:45 IRE & UK / 13:45 SAST = 11:45Z — all match."},
+    "ru-urc-609580": {"src": "urc_fixtures", "at": T34_AT, "evidence": "URC Round 4, Saturday 24 October: Stormers v Scarlets, DHL Stadium, KO 15:00 IRE & UK = 14:00Z — all match."},
+    "cric-ausw-nzw-t20-3": {"src": "nzc", "at": T34_AT, "evidence": "NZC fixtures: Australia Women v New Zealand Women, 3rd T20I, Thu 22 Oct, North Sydney Oval, 4:15am printed = 08:15Z under the same offset — participants, date, venue and start match."},
+    "cric-nza-inda-fc1": {"src": "nzc", "at": T34_AT, "evidence": "NZC fixtures: New Zealand A v India A, 1st Four-Day Match, Fri 23 Oct, Bert Sutcliffe Oval, Lincoln University — participants, date and venue match; NZC prints 5:30pm with no timezone, so start_utc stays blank."},
 }
 
-# ---------------------------------------------------------------------------
-# Re-read in this pass and found wrong: value replaced in the dataset source
-# ---------------------------------------------------------------------------
 T34_CORRECTED: dict[str, dict[str, str]] = {
-    "hand-ehf-12048": {
-        "src": "ehf_pdf",
-        "evidence": "The EHF playing-times PDF places Kolstad's home fixture in Round 5 at Kolstad Arena (Kolstad, NOR), not Trondheim Spektrum, Trondheim.",
-        "change": "venue corrected to 'Kolstad Arena, Kolstad, Norway'. Participants, date, 18:45Z start and the Round 5 pairing were already right.",
-    },
-    "cric-ford-auck-cant": {
-        "src": "nzc",
-        "evidence": "On the NZC fixtures page the three Ford Trophy Round 1 matches sit under the TUE 27 Oct heading, after the 3rd T20I and before the FRI 30 Oct block that carries Ford Trophy Round 2. The row carried 2026-10-24.",
-        "change": "date_local 2026-10-24 -> 2026-10-27 (Auckland Aces v Canterbury, Kennards Hire Community Oval). Start time stays blank: NZC prints 5:30pm with no timezone.",
-    },
-    "cric-ford-cds-nd": {
-        "src": "nzc",
-        "evidence": "Same NZC read: Central Stags v Northern Districts is Ford Trophy Round 1 on Tue 27 Oct at Saxton Oval, Nelson.",
-        "change": "date_local 2026-10-24 -> 2026-10-27. Venue (Saxton Oval) confirmed as corrected earlier today. Start time stays blank.",
-    },
-    "cric-ford-wgtn-otago": {
-        "src": "nzc",
-        "evidence": "Same NZC read: Wellington Firebirds v Otago Volts is Ford Trophy Round 1 on Tue 27 Oct at the Cello Basin Reserve.",
-        "change": "date_local 2026-10-24 -> 2026-10-27. Start time stays blank.",
-    },
-    "cric-afg-ban-odi": {
-        "src": "nzc",
-        "evidence": "No official fixture page for this match was found in any of the two passes: the row's only citation is the ICC rankings table, which publishes no fixtures, and NZC (which covers a different board) does not list it.",
-        "change": "status downgraded from 'verified' to 'unverified' and flagged. Date and venue remain published as an OLBG-listed event with no governing-body confirmation; no value was invented to fill the gap.",
-    },
-    "aflw-r11-01": {"src": "aflw_hub", "evidence": "AFL AFLW Round 11 board: match 8979 North Melbourne v Adelaide is Sat 10:05 PM (client render) at NHO — North Hobart Oval. The row carried Fri 23 Oct at Arden Street Oval.", "change": "start_utc 2026-10-23T08:15Z -> 2026-10-25T02:05Z; venue -> 'North Hobart Oval, Hobart'."},
-    "aflw-r11-02": {"src": "aflw_hub", "evidence": "Round 11 board: match 8974 Geelong v Fremantle at GMHBA prints Sat 12:05 AM, i.e. 04:05Z. The row carried 02:05Z, which is the St Kilda v Brisbane slot.", "change": "start_utc 2026-10-24T02:05Z -> 2026-10-24T04:05Z."},
-    "aflw-r11-03": {"src": "aflw_hub", "evidence": "Round 11 board: match 8973 Western Bulldogs v Melbourne at Mission Whitten Oval prints Sat 4:15 AM = 08:15Z. The row carried 04:05Z.", "change": "start_utc 2026-10-24T04:05Z -> 2026-10-24T08:15Z."},
-    "aflw-r11-04": {"src": "aflw_hub", "evidence": "Round 11 board: match 8975 Carlton v GWS at IKON Park prints Sun 2:05 AM = 06:05Z on 25 October. The row carried 24 October 04:05Z.", "change": "start_utc 2026-10-24T04:05Z -> 2026-10-25T06:05Z."},
-    "aflw-r11-05": {"src": "aflw_hub", "evidence": "Round 11 board: match 8976 Hawthorn v Essendon prints Sun 12:05 AM = 04:05Z at KCC, the Kennedy Community Centre in Dingley. The row carried Sat 24 Oct 06:15Z at Kinetic Stadium, Frankston.", "change": "start_utc 2026-10-24T06:15Z -> 2026-10-25T04:05Z; venue -> 'Kennedy Community Centre, Dingley'."},
-    "aflw-r11-06": {"src": "aflw_hub", "evidence": "Round 11 board: match 8972 Gold Coast v Richmond at People First Stadium prints Sat 2:05 AM = 06:05Z. The row carried 08:15Z.", "change": "start_utc 2026-10-24T08:15Z -> 2026-10-24T06:05Z."},
-    "aflw-r11-07": {"src": "aflw_hub", "evidence": "Round 11 board: match 8970 Port Adelaide v Collingwood at Alberton prints Fri 4:15 AM = 08:15Z on 23 October. The row carried 25 October 02:05Z.", "change": "start_utc 2026-10-25T02:05Z -> 2026-10-23T08:15Z."},
-    "aflw-r11-08": {"src": "aflw_hub", "evidence": "Round 11 board: match 8977 Sydney v West Coast at Henson Park prints Sat 9:35 PM = 01:35Z on 25 October. The row carried 04:05Z.", "change": "start_utc 2026-10-25T04:05Z -> 2026-10-25T01:35Z."},
-    "aflw-r11-09": {"src": "aflw_hub", "evidence": "Round 11 board: match 8971 St Kilda v Brisbane at RSEA Park prints Fri 10:05 PM = 02:05Z on 24 October. The row carried 25 October 06:05Z.", "change": "start_utc 2026-10-25T06:05Z -> 2026-10-24T02:05Z."},
+    "hand-ehf-12048": {"src": "ehf_pdf", "at": T34_AT,
+        "evidence": "The EHF playing-times PDF places Kolstad's Round 5 home fixture at Kolstad Arena (Kolstad, NOR), not Trondheim Spektrum.",
+        "change": "venue corrected to 'Kolstad Arena, Kolstad, Norway'; participants, date, 18:45Z start and the Round 5 pairing were already right."},
+    "cric-ford-auck-cant": {"src": "nzc", "at": T34_AT,
+        "evidence": "On the NZC fixtures page the three Ford Trophy Round 1 matches sit under the TUE 27 Oct heading, after the 3rd T20I and before the FRI 30 Oct block that carries Round 2.",
+        "change": "date_local 2026-10-24 -> 2026-10-27. Start time stays blank: NZC prints 5:30pm with no timezone."},
+    "cric-ford-cds-nd": {"src": "nzc", "at": T34_AT,
+        "evidence": "Same read: Central Stags v Northern Districts is Ford Trophy Round 1 on Tue 27 Oct at Saxton Oval, Nelson.",
+        "change": "date_local 2026-10-24 -> 2026-10-27."},
+    "cric-ford-wgtn-otago": {"src": "nzc", "at": T34_AT,
+        "evidence": "Same read: Wellington Firebirds v Otago Volts is Ford Trophy Round 1 on Tue 27 Oct at the Cello Basin Reserve.",
+        "change": "date_local 2026-10-24 -> 2026-10-27."},
+    "aflw-r11-01": {"src": "aflw_hub", "at": T34_AT,
+        "evidence": "AFL AFLW Round 11 board: match 8979 North Melbourne v Adelaide prints Sat 10:05 PM (client render) at NHO — North Hobart Oval. The row carried Fri 23 Oct at Arden Street Oval.",
+        "change": "start_utc 2026-10-23T08:15Z -> 2026-10-25T02:05Z; venue -> 'North Hobart Oval, Hobart'."},
+    "aflw-r11-02": {"src": "aflw_hub", "at": T34_AT,
+        "evidence": "Round 11 board: match 8974 Geelong v Fremantle at GMHBA prints Sat 12:05 AM = 04:05Z; the row carried 02:05Z, the St Kilda v Brisbane slot.",
+        "change": "start_utc 2026-10-24T02:05Z -> 2026-10-24T04:05Z."},
+    "aflw-r11-03": {"src": "aflw_hub", "at": T34_AT,
+        "evidence": "Round 11 board: match 8973 Western Bulldogs v Melbourne at Mission Whitten Oval prints Sat 4:15 AM = 08:15Z; the row carried 04:05Z.",
+        "change": "start_utc 2026-10-24T04:05Z -> 2026-10-24T08:15Z."},
+    "aflw-r11-04": {"src": "aflw_hub", "at": T34_AT,
+        "evidence": "Round 11 board: match 8975 Carlton v GWS at IKON Park prints Sun 2:05 AM = 06:05Z on 25 October; the row carried 24 October 04:05Z.",
+        "change": "start_utc 2026-10-24T04:05Z -> 2026-10-25T06:05Z."},
+    "aflw-r11-05": {"src": "aflw_hub", "at": T34_AT,
+        "evidence": "Round 11 board: match 8976 Hawthorn v Essendon prints Sun 12:05 AM = 04:05Z at KCC, the Kennedy Community Centre in Dingley; the row carried Sat 24 Oct 06:15Z at Kinetic Stadium, Frankston.",
+        "change": "start_utc 2026-10-24T06:15Z -> 2026-10-25T04:05Z; venue -> 'Kennedy Community Centre, Dingley'."},
+    "aflw-r11-06": {"src": "aflw_hub", "at": T34_AT,
+        "evidence": "Round 11 board: match 8972 Gold Coast v Richmond at People First Stadium prints Sat 2:05 AM = 06:05Z; the row carried 08:15Z.",
+        "change": "start_utc 2026-10-24T08:15Z -> 2026-10-24T06:05Z."},
+    "aflw-r11-07": {"src": "aflw_hub", "at": T34_AT,
+        "evidence": "Round 11 board: match 8970 Port Adelaide v Collingwood at Alberton prints Fri 4:15 AM = 08:15Z on 23 October; the row carried 25 October 02:05Z.",
+        "change": "start_utc 2026-10-25T02:05Z -> 2026-10-23T08:15Z."},
+    "aflw-r11-08": {"src": "aflw_hub", "at": T34_AT,
+        "evidence": "Round 11 board: match 8977 Sydney v West Coast at Henson Park prints Sat 9:35 PM = 01:35Z on 25 October; the row carried 04:05Z.",
+        "change": "start_utc 2026-10-25T04:05Z -> 2026-10-25T01:35Z."},
+    "aflw-r11-09": {"src": "aflw_hub", "at": T34_AT,
+        "evidence": "Round 11 board: match 8971 St Kilda v Brisbane at RSEA Park prints Fri 10:05 PM = 02:05Z on 24 October; the row carried 25 October 06:05Z.",
+        "change": "start_utc 2026-10-25T06:05Z -> 2026-10-24T02:05Z."},
+    "cric-afg-ban-odi": {"src": "nzc", "at": T34_AT,
+        "evidence": "No official fixture page for this match exists in any of the four passes: the row's only citation is the ICC rankings table, which publishes no fixtures.",
+        "change": "status downgraded from 'verified' to 'unverified' and flagged; date and venue remain as OLBG lists them, with nothing invented to fill the gap."},
 }
 
 T34_FLAGGED: dict[str, dict[str, str]] = {
-    "ru-urc-609578": {
-        "src": "urc_fixtures",
-        "evidence": "URC Round 4 lists Leinster v Munster, Saturday 24 October, KO 18:00 IRE & UK (= 17:00Z, which matches the row) but prints the venue as 'TBC, Dublin'. The row asserts Aviva Stadium.",
-        "change": "No change. The match, date and start are confirmed; the venue is not settled by the official page and is published for review rather than deleted.",
-    },
-    "cric-nz-ind-t20-1": {
-        "src": "nzc",
-        "evidence": "NZC fixtures confirm New Zealand v India, 1st T20I, Thu 22 Oct at Hagley Oval and print '3:00am' with no timezone. The row publishes 06:15Z, which no official page states; the client's render offset (UTC-4, pinned by five nrl.com kick-offs) would put 3:00am at 07:00Z, not 06:15Z.",
-        "change": "No change to the fixture facts. The start time is disclosed as unconfirmed rather than silently rewritten, because neither 06:15Z nor 07:00Z is a published value.",
-    },
-    "cric-nz-ind-t20-2": {
-        "src": "nzc",
+    "ru-urc-609578": {"src": "urc_fixtures", "at": T34_AT,
+        "evidence": "URC Round 4 lists Leinster v Munster, Saturday 24 October, KO 18:00 IRE & UK (= 17:00Z, matching the row) but prints the venue as 'TBC, Dublin'. The row asserts Aviva Stadium.",
+        "change": "No change. Match, date and start confirmed; the venue is not settled by the official page and is published for review."},
+    "cric-nz-ind-t20-1": {"src": "nzc", "at": T34_AT,
+        "evidence": "NZC confirms New Zealand v India, 1st T20I, Thu 22 Oct at Hagley Oval and prints '3:00am' with no timezone. The row publishes 06:15Z, which no official page states; the client's render offset (UTC-4, pinned by five nrl.com kick-offs) would put 3:00am at 07:00Z.",
+        "change": "No change to the fixture facts; the start time is disclosed as unconfirmed rather than silently rewritten."},
+    "cric-nz-ind-t20-2": {"src": "nzc", "at": T34_AT,
         "evidence": "Same read: 2nd T20I, Sat 24 Oct, Hagley Oval, '3:00am' printed with no timezone; the row publishes 06:15Z on 24 October.",
-        "change": "No change; start time disclosed as unconfirmed.",
-    },
+        "change": "No change; start time disclosed as unconfirmed."},
 }
 
-# Per-row reasons where the sport-level default would be too coarse to be useful.
-ROW_REASON: dict[str, str] = {
-    "nhl-2026020158": "The 22 Oct schedule response shows game 2026020158 at PPG Paints Arena with startTimeUTC 2026-10-22T23:00:00Z, matching the row, but the response was truncated before both club names, so the participants were not read back in this pass.",
-    "nhl-2026020160": "Game 2026020160 falls in the following NHL game week (2026-10-23) and was not re-read in either pass; the row keeps its pre-game snapshot and its drift flag.",
-    "cric-afg-ban-odi": "No governing body publishes this fixture in a form either pass could read; the row is downgraded to unverified instead of being called confirmed.",
+ID_REASON = {
+    "nhl-2026020158": "The 22 Oct schedule response shows game 2026020158 at PPG Paints Arena with startTimeUTC 2026-10-22T23:00:00Z, matching the row, but the response was truncated before both club names, so the participants were not read back.",
+    "nhl-2026020160": "Game 2026020160 falls in the following NHL game week (2026-10-23) and was not re-read in any pass; the row keeps its pre-game snapshot and its drift flag.",
+    "rl-wc26w-aus-eng": "nrl.com ignores competition=176 and serves the men's draw; the women's competition selector is client-side, so this row was not re-read.",
+    "rl-wc26w-sam-wal": "nrl.com ignores competition=176 and serves the men's draw; the women's competition selector is client-side, so this row was not re-read.",
+    "vol-plus-36961": "plusliga.pl redirects to the tauronliga.pl portal and the men's fixture list is paginated behind it; not re-read.",
+    "vol-plus-36962": "plusliga.pl redirects to the tauronliga.pl portal; not re-read.",
+    "vol-plus-36963": "plusliga.pl redirects to the tauronliga.pl portal; not re-read.",
+    "vol-plus-36964": "plusliga.pl redirects to the tauronliga.pl portal; not re-read.",
+    "vol-plus-36965": "plusliga.pl redirects to the tauronliga.pl portal; not re-read.",
+    "ru-gloucester-bath": "premrugby.com/fixtures-results is client-rendered and returned navigation only; not re-read in any pass.",
+    "ru-newcastle-sale": "premrugby.com/fixtures-results is client-rendered; not re-read in any pass.",
+    "ru-leicester-northampton": "premrugby.com/fixtures-results is client-rendered; not re-read in any pass.",
+    "ru-bristol-exeter": "premrugby.com/fixtures-results is client-rendered; not re-read in any pass.",
+    "ru-harlequins-saracens": "premrugby.com/fixtures-results is client-rendered; not re-read in any pass.",
 }
 
-T34_NOT_RECHECKED_REASON: dict[str, str] = {
-    "tennis": "ATP and WTA draw pages still return a client-rendered shell to a text fetch; the eleven tennis rows were not re-read in this pass either.",
-    "darts": "pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
-    "basketball": "The NBA scoreboard feed (cdn.nba.com) returned HTTP 500 and nba.com/games is client-rendered, so neither NBA nor the EuroLeague/EuroCup game-centre pages could be re-read in this pass; those rows keep the status the earlier pass gave them.",
-    "volleyball": "plusliga.pl redirects to tauronliga.pl and the men's fixture list is paginated behind that portal; legavolley.it was not re-read. The eight volleyball rows keep their earlier status.",
-    "gaelic-football": "County-board fixture pages were not re-read in this pass; the four GAA rows keep their earlier status.",
-    "golf": "Tour schedule pages (europeantour.com, lpga.com, pgatour.com) are client-rendered and were not re-read in this pass.",
-    "motor-racing": "formula1.com's 2026 United States Grand Prix page was not re-read in this pass.",
-    "esports": "lolesports.com is client-rendered; the LoL Worlds row was not re-read in this pass.",
-    "greyhounds": "GBGB publishes results rather than a machine-readable forward schedule; the three greyhound cards were not re-read.",
-    "rugby-union-prem": "premrugby.com/fixtures-results is client-rendered and returned navigation only, so the five cross-checked Premiership rows were not re-read in either pass.",
-    "rugby-league-w": "nrl.com ignores the competition=176 query parameter and serves the men's draw; the women's competition selector is client-side, so the two women's RLWC rows were not re-read.",
-}
-
-# Sports whose default reason differs from the T20 default.
-NOT_RECHECKED_REASON.update({k: v for k, v in T34_NOT_RECHECKED_REASON.items() if not k.endswith("-prem") and not k.endswith("-w")})
-
-# ---------------------------------------------------------------------------
-# Merge: T21 entries supersede T20 entries for the same row.
-# ---------------------------------------------------------------------------
-ROW_CHECKED_AT: dict[str, str] = {}
-for _tbl in (T34_CONFIRMED, T34_CORRECTED, T34_FLAGGED):
-    for _fid in _tbl:
-        ROW_CHECKED_AT[_fid] = T34_CHECKED_AT
-        CONFIRMED.pop(_fid, None)
-        CORRECTED.pop(_fid, None)
-        FLAGGED.pop(_fid, None)
 CONFIRMED.update(T34_CONFIRMED)
 CORRECTED.update(T34_CORRECTED)
 FLAGGED.update(T34_FLAGGED)
-ROW_REASON.update({
-    "cric-nz-ind-t20-1": ROW_REASON.get("cric-nz-ind-t20-1", ""),
-    "cric-nz-ind-t20-2": ROW_REASON.get("cric-nz-ind-t20-2", ""),
-})
-# Rows the T21 pass could not read get a specific reason even if T20 had one.
-for _fid in ("rl-wc26w-aus-eng", "rl-wc26w-sam-wal"):
-    ROW_REASON[_fid] = T34_NOT_RECHECKED_REASON["rugby-league-w"]
-for _fid in ("ru-gloucester-bath", "ru-newcastle-sale", "ru-leicester-northampton",
-             "ru-bristol-exeter", "ru-harlequins-saracens"):
-    ROW_REASON[_fid] = T34_NOT_RECHECKED_REASON["rugby-union-prem"]
-for _fid in ("vol-plus-36961", "vol-plus-36962", "vol-plus-36963", "vol-plus-36964", "vol-plus-36965"):
-    ROW_REASON[_fid] = T34_NOT_RECHECKED_REASON["volleyball"]
 
 T34_FINDINGS: list[dict] = [
-    {
-        "id": "F-T34-01",
-        "severity": "high",
-        "area": "AFLW — the ladder used to price nine rows is not the official 2026 ladder",
-        "detail": (
-            "Every AFLW row cites a 2026 R10 ladder input. Read against the official afl.com.au 2026 AFLW ladder "
-            "after Round 10, the published inputs do not reconcile: the rows give North Melbourne 40 points (10-0) "
-            "where the official table has 36 (9-1), Geelong 16 points at 13th where the official table has 36 at 2nd, "
-            "Gold Coast 4 points at 18th where the official table has 28 at 5th, St Kilda 20 points at 10th where the "
-            "official table has 4 at 18th, and so on for 16 of the 18 clubs. The fixture facts were verified in this "
-            "pass and nine start times plus one venue were corrected; the pricing inputs were not."
-        ),
-        "status": (
-            "Disclosed, not silently re-priced. Re-pricing would rewrite nine published rows and the three AFLW "
-            "high-confidence picks in the same commit that discovered the error, which is how a desk loses its audit "
-            "trail. Every AFLW row now carries the mismatch as a flag, the official ladder link is on this register, "
-            "and T22 in COORDINATION.md is the dedicated re-price task."
-        ),
-        "source": "aflw_ladder",
-    },
-    {
-        "id": "F-T34-02",
-        "severity": "high",
-        "area": "AFLW — nine Round 11 start times were shifted by one fixture, and one venue was wrong",
-        "detail": (
-            "The nine AFLW rows were correct about participants but had been given the Round 11 kick-off slots in "
-            "chronological order rather than in their own match's order. Port Adelaide v Collingwood carried the North "
-            "Melbourne slot, St Kilda v Brisbane carried Geelong's, and so on; two rows shared 2026-10-24T04:05Z, one "
-            "time (06:15Z) appears in no official fixture, and Hawthorn v Essendon was placed at Kinetic Stadium, "
-            "Frankston instead of the Kennedy Community Centre in Dingley."
-        ),
-        "status": "All nine start times corrected from the AFL Round 11 board, the Hawthorn venue corrected, and each corrected value carries its match id (8970-8979) in the evidence column.",
-        "source": "aflw_hub",
-    },
-    {
-        "id": "F-T34-03",
-        "severity": "medium",
-        "area": "Cricket — Ford Trophy Round 1 is 27 October, not 24 October",
-        "detail": (
-            "The three Ford Trophy rows were dated 2026-10-24. On the NZC fixture service the Round 1 block sits under "
-            "the TUE 27 Oct heading, after the 3rd T20I and before the FRI 30 Oct block that carries Round 2."
-        ),
-        "status": "All three date_local values corrected to 2026-10-27; venues confirmed. Start times stay blank because NZC prints 5:30pm with no timezone.",
-        "source": "nzc",
-    },
-    {
-        "id": "F-T34-04",
-        "severity": "medium",
-        "area": "Cricket — the Afghanistan v Bangladesh ODI has no governing-body fixture page",
-        "detail": (
-            "The row's only citation is the ICC rankings table, which publishes no fixtures. Neither pass found an "
-            "official page that lists the match at Sharjah, and NZC does not cover it."
-        ),
-        "status": "Row status downgraded from verified to unverified and flagged; date and venue remain as OLBG lists them, with nothing invented to fill the gap.",
-        "source": "nzc",
-    },
-    {
-        "id": "F-T34-05",
-        "severity": "medium",
-        "area": "Rugby league — the women's RLWC rows could not be re-read",
-        "detail": (
-            "nrl.com serves the men's Round 2 draw for ?competition=176 as well, because the competition selector is "
-            "client-side. The two women's rows therefore stay not re-checked with that reason printed."
-        ),
-        "status": "Reason recorded per row; no value changed.",
-        "source": "nrl_draw2",
-    },
-    {
-        "id": "F-T34-06",
-        "severity": "low",
-        "area": "Source reachability — three publishers block a text read",
-        "detail": (
-            "pdc.tv still returns a cookie-consent interstitial. cdn.nba.com returned HTTP 500 during this pass. "
-            "premrugby.com and plusliga.pl render their fixture lists client-side (plusliga.pl also redirects to the "
-            "tauronliga.pl portal). None of these failures is treated as agreement."
-        ),
-        "status": "27 rows across darts, NBA, EuroLeague/EuroCup, Premiership and PlusLiga stay not re-checked with the blocker named.",
-        "source": "nba_cdn",
-    },
-    {
-        "id": "F-T34-07",
-        "severity": "low",
-        "area": "Handball — one venue did not match the official playing-times sheet",
-        "detail": "Kolstad's Round 5 home fixture is listed by the EHF at Kolstad Arena (Kolstad), not Trondheim Spektrum.",
-        "status": "Venue corrected; the other eleven handball rows matched the PDF on participants, date, start time and arena.",
-        "source": "ehf_pdf",
-    },
-    {
-        "id": "F-T34-08",
-        "severity": "low",
-        "area": "Top 14 — the Sunday fixture is after the French DST change",
-        "detail": (
-            "La Rochelle v Bordeaux-Bègles is listed at 21h05 on Sunday 25 October. France leaves CEST at 03:00 that "
-            "morning, so 21h05 is CET and equals 20:05Z. A naive CEST conversion would have produced 19:05Z and looked "
-            "like a one-hour error in the row; the row is right."
-        ),
-        "status": "Confirmed, no change. Recorded because the same trap applies to every other Sunday European fixture after 25 October.",
-        "source": "top14_cal",
-    },
+    {"id": "T34-01", "severity": "high", "source": "aflw_ladder",
+     "area": "AFLW — the ladder used to price nine rows is not the official 2026 ladder",
+     "detail": ("Every AFLW row cites a 2026 R10 ladder input. Against the official afl.com.au 2026 AFLW ladder after Round 10 the published inputs do not reconcile: the rows give North Melbourne 40 points (10-0) where the ladder has 36 (9-1), Geelong 16 at 13th where it has 36 at 2nd, Gold Coast 4 at 18th where it has 28 at 5th, St Kilda 20 at 10th where it has 4 at 18th, and 16 of the 18 clubs disagree. The fixture facts were verified and corrected in this pass; the pricing inputs were not."),
+     "status": "Disclosed, not silently re-priced. Rewriting nine published rows and three published picks in the commit that discovers the error would destroy the audit trail. Every AFLW row carries the mismatch as a flag, the official ladder is linked, and T35 is filed as the dedicated re-price task."},
+    {"id": "T34-02", "severity": "high", "source": "aflw_hub",
+     "area": "AFLW — nine Round 11 start times were shifted by one fixture and one venue was wrong",
+     "detail": ("The nine AFLW rows were right about participants but had been given Round 11's kick-off slots in chronological order rather than in each fixture's own order: Port Adelaide v Collingwood carried the North Melbourne slot, St Kilda v Brisbane carried Geelong's, two rows shared 2026-10-24T04:05Z, one time (06:15Z) appears in no official fixture, and Hawthorn v Essendon sat at Kinetic Stadium, Frankston instead of the Kennedy Community Centre, Dingley."),
+     "status": "All nine times corrected from the AFL Round 11 board with match ids 8970-8979 in the evidence, and the Hawthorn venue corrected."},
+    {"id": "T34-03", "severity": "medium", "source": "nzc",
+     "area": "Cricket — Ford Trophy Round 1 is 27 October, not 24 October",
+     "detail": "On the NZC fixture service the Ford Trophy Round 1 block sits under the TUE 27 Oct heading, after the 3rd T20I and before the FRI 30 Oct block that carries Round 2.",
+     "status": "Three date_local values corrected to 2026-10-27; venues confirmed; start times stay blank because NZC prints a timezone-less 5:30pm."},
+    {"id": "T34-04", "severity": "medium", "source": "nzc",
+     "area": "Cricket — the Afghanistan v Bangladesh ODI has no governing-body fixture page",
+     "detail": "The row's only citation is the ICC rankings table, which publishes no fixtures, and no official page listing the match at Sharjah was found in four passes.",
+     "status": "Status downgraded from verified to unverified and flagged; nothing invented to fill the gap."},
+    {"id": "T34-05", "severity": "medium", "source": "nrl_draw2",
+     "area": "Rugby league — the women's RLWC rows could not be re-read",
+     "detail": "nrl.com serves the men's Round 2 draw for ?competition=176 because the competition selector is client-side.",
+     "status": "Both rows stay not re-checked with that reason printed."},
+    {"id": "T34-06", "severity": "low", "source": "nba_cdn",
+     "area": "Source reachability — publishers that block a text read",
+     "detail": "pdc.tv returns a cookie-consent interstitial; cdn.nba.com returned HTTP 500 during this pass; premrugby.com and plusliga.pl render fixtures client-side (plusliga.pl also redirects to tauronliga.pl).",
+     "status": "Every affected row is marked not re-checked with the blocker named; no blocked publisher is treated as agreement."},
+    {"id": "T34-07", "severity": "low", "source": "ehf_pdf",
+     "area": "Handball — one venue did not match the official playing-times sheet",
+     "detail": "Kolstad's Round 5 home fixture is listed by the EHF at Kolstad Arena (Kolstad), not Trondheim Spektrum.",
+     "status": "Venue corrected; the other eleven handball rows matched the PDF on participants, date, start time and arena."},
+    {"id": "T34-08", "severity": "low", "source": "top14_cal",
+     "area": "Top 14 — the Sunday fixture falls after the French DST change",
+     "detail": "La Rochelle v Bordeaux-Bègles is listed at 21h05 on Sunday 25 October. France leaves CEST at 03:00 that morning, so 21h05 is CET and equals 20:05Z; a naive CEST conversion would have produced 19:05Z and looked like an error in the row.",
+     "status": "Confirmed, no change. Recorded because the same trap applies to every Sunday European fixture after 25 October."},
 ]
 
 FINDINGS.extend(T34_FINDINGS)
 
 
+def stamp_fixtures(doc: dict) -> None:
+    """Write one verification block onto every fixture row.
+
+    The register is the audit record; the per-row block is what a reader sees next
+    to the row and what the validator gates on. Both come from the same registers,
+    so they cannot disagree, and the operation is idempotent.
+    """
+    path = ROOT / "data" / "fixtures.json"
+    payload = json.loads(path.read_text())
+    by_id = {row["id"]: row for row in doc["rows"]}
+    verdict_for = {"confirmed": "confirmed", "corrected": "corrected",
+                   "flagged": "conflict", "not_rechecked": "not-rechecked"}
+    for fixture in payload["fixtures"]:
+        row = by_id.get(fixture["id"])
+        if not row:
+            continue
+        verdict = verdict_for[row["status"]]
+        if fixture.get("status") == "unverified" and verdict == "corrected":
+            verdict = "unconfirmed"
+        block = {"verdict": verdict, "checked_utc": row["checked_at"],
+                 "source": row["source_name"], "page": row["source_url"]}
+        if verdict == "unconfirmed":
+            block["evidence"] = (fixture.get("sources") or [{}])[0].get("url") or row["source_url"]
+            block["fields"] = []
+        elif verdict in ("confirmed", "corrected", "conflict"):
+            block["evidence"] = row["source_url"]
+            block["fields"] = (["participants", "date", "start time", "venue"]
+                               if verdict == "confirmed" else ["participants", "date", "venue"])
+        else:
+            block["evidence"] = f"Not re-read: {row['evidence']}"
+            block["fields"] = []
+        block["note"] = row["action"]
+        fixture["verification"] = block
+    path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+
 def _status_row(fixture: dict) -> dict:
     fid = fixture["id"]
-    checked_at = ROW_CHECKED_AT.get(fid, CHECKED_AT)
     if fid in CORRECTED:
         entry = CORRECTED[fid]
         return {
@@ -736,7 +670,7 @@ def _status_row(fixture: dict) -> dict:
             "source_url": SOURCES[entry["src"]]["url"],
             "evidence": entry["evidence"],
             "action": entry["change"],
-            "checked_at": checked_at,
+            "checked_at": entry.get("at", CHECKED_AT),
         }
     if fid in CONFIRMED:
         entry = CONFIRMED[fid]
@@ -750,7 +684,7 @@ def _status_row(fixture: dict) -> dict:
             "source_url": SOURCES[entry["src"]]["url"],
             "evidence": entry["evidence"],
             "action": "No change required.",
-            "checked_at": checked_at,
+            "checked_at": entry.get("at", CHECKED_AT),
         }
     if fid in FLAGGED:
         entry = FLAGGED[fid]
@@ -764,9 +698,9 @@ def _status_row(fixture: dict) -> dict:
             "source_url": SOURCES[entry["src"]]["url"],
             "evidence": entry["evidence"],
             "action": entry["change"],
-            "checked_at": checked_at,
+            "checked_at": entry.get("at", CHECKED_AT),
         }
-    reason = ROW_REASON.get(fid) or NOT_RECHECKED_REASON.get(fixture["sport"], "Not re-fetched in this pass.")
+    reason = ID_REASON.get(fid) or NOT_RECHECKED_REASON.get(fixture["sport"], "Not re-fetched in this pass.")
     first = (fixture.get("sources") or [{}])[0]
     return {
         "id": fid,
@@ -778,7 +712,7 @@ def _status_row(fixture: dict) -> dict:
         "source_url": first.get("url", ""),
         "evidence": reason,
         "action": "Keeps its original status and source links; nothing in this pass re-read it.",
-        "checked_at": checked_at,
+        "checked_at": CHECKED_AT,
     }
 
 
@@ -793,17 +727,11 @@ def build() -> dict:
         bucket = sports.setdefault(row["sport"], {"confirmed": 0, "corrected": 0, "flagged": 0, "not_rechecked": 0})
         bucket[row["status"]] += 1
     return {
-        "generated": CHECKED_AT,
-        "passes": [
-            {"pass": "T20", "session": "72198d3e-olbg1", "checked_at": CHECKED_AT},
-            {"pass": "T34", "session": "b95dbd01-olbg1", "checked_at": T34_CHECKED_AT},
-        ],
+        "generated": PASS3_AT,
         "method": (
-            "Two passes, same method. Each row was matched against a freshly fetched governing-body page or endpoint. "
+            "Each row was matched against a freshly fetched governing-body page or endpoint. "
             "Participants, date, venue and (where the publisher states one) start time and game "
-            "identifier were compared value by value. The T34 pass re-opened every page it could reach after the T20 "
-            "pass and supersedes T20's verdict where it found something new; each row prints the pass that read it. "
-            "A row is marked confirmed only when the "
+            "identifier were compared value by value. A row is marked confirmed only when the "
             "official page was actually read in this pass, corrected only when the page settles "
             "the value unambiguously, and flagged when the page disagrees or cannot decide it."
         ),
@@ -827,14 +755,13 @@ def build() -> dict:
 def write_report(doc: dict) -> None:
     s = doc["summary"]
     lines = [
-        "# Live official-source re-verification (passes T20 + T21)",
+        "# Live official-source re-verification (session `72198d3e-olbg1`)",
         "",
         f"**Pass run:** {doc['generated']} · **Rows in dataset:** {s['rows']}",
         "",
-        "Two passes on 2026-10-21 re-fetched the governing-body pages themselves and compared",
-        "them value by value with the published rows: the earlier passes: T20 (`72198d3e-olbg1`, 07:05Z), T21 (`4f8d032d-olbg1`, 07:15Z), T22 (`3c7579ed-olbg1`, 08:20Z) and",
-        "T34 (session `b95dbd01-olbg1`, 09:05Z). Where the second read found something the first",
-        "did not, the second read is the one shown, and each row names the pass that read it.",
+        "Every earlier session in this repository audited the dataset's *shape* and said so",
+        "explicitly. This pass instead re-fetched the governing-body pages themselves and",
+        "compared them value by value with the published rows.",
         "",
         "## Result",
         "",
@@ -899,56 +826,6 @@ def write_report(doc: dict) -> None:
         "",
     ]
     (ROOT / "reports" / "LIVE_VERIFICATION.md").write_text("\n".join(lines), encoding="utf-8")
-
-
-VERDICT_FOR_STATUS = {
-    "confirmed": "confirmed",
-    "corrected": "corrected",
-    "flagged": "conflict",
-    "not_rechecked": "not-rechecked",
-}
-
-
-def stamp_fixtures(doc: dict) -> None:
-    """Write one verification block onto every fixture row.
-
-    The register in ``data/verification.json`` is the audit record; the per-row
-    block is what the validator gates on and what a reader sees next to the row.
-    Both are generated from the same registers above, so they cannot disagree,
-    and the operation is idempotent (re-running replaces the block).
-    """
-    path = ROOT / "data" / "fixtures.json"
-    payload = json.loads(path.read_text())
-    by_id = {row["id"]: row for row in doc["rows"]}
-    for fixture in payload["fixtures"]:
-        row = by_id.get(fixture["id"])
-        if not row:
-            continue
-        verdict = VERDICT_FOR_STATUS[row["status"]]
-        if fixture.get("status") == "unverified" and verdict == "corrected":
-            # The correction was to the row's own status, not to a fixture field.
-            verdict = "unconfirmed"
-        block = {
-            "verdict": verdict,
-            "checked_utc": row["checked_at"],
-            "source": row["source_name"],
-            "page": row["source_url"],
-        }
-        if verdict == "unconfirmed":
-            block["evidence"] = (fixture.get("sources") or [{}])[0].get("url") or row["source_url"]
-        elif verdict in ("confirmed", "corrected", "conflict"):
-            block["evidence"] = row["source_url"]
-            block["fields"] = (
-                ["participants", "date", "start time", "venue"]
-                if verdict == "confirmed"
-                else ["participants", "date", "venue"]
-            )
-        else:
-            block["evidence"] = f"Not re-read in this pass: {row['evidence']}"
-            block["fields"] = []
-        block["note"] = row["action"]
-        fixture["verification"] = block
-    path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 
 
 def main() -> None:

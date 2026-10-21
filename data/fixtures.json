@@ -3364,7 +3364,7 @@
       "start_utc": "2026-10-24T17:00:00Z",
       "home": "Leinster",
       "away": "Munster",
-      "venue": "Aviva Stadium, Dublin",
+      "venue": "Dublin (venue TBC)",
       "neutral": false,
       "status": "verified",
       "sources": [
@@ -3384,7 +3384,7 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [
-        "URC Round 3 live standings table client-rendered on stats.unitedrugby.com; fixture, venue and UTC kick-off verified on URC site"
+        "URC official 2026/27 fixtures release publishes this fixture as 'TBC, Dublin'; venue is not asserted beyond the city"
       ]
     },
     {
@@ -5490,18 +5490,17 @@
         "Nashville's goal differential was also corrected from 0 to -1 in the same independent re-read; points percentage and rating are unaffected."
       ],
       "verification": {
-        "verdict": "confirmed",
-        "checked_utc": "2026-10-21T09:05Z",
-        "source": "NHL official schedule API (2026-10-22)",
-        "page": "https://api-web.nhle.com/v1/schedule/2026-10-22",
-        "evidence": "https://api-web.nhle.com/v1/schedule/2026-10-22",
+        "verdict": "corrected",
+        "checked_utc": "2026-10-21T07:05Z",
+        "source": "NHL official standings API (2026-10-20, live)",
+        "page": "https://api-web.nhle.com/v1/standings/2026-10-20",
+        "evidence": "https://api-web.nhle.com/v1/standings/2026-10-20",
         "fields": [
           "participants",
           "date",
-          "start time",
           "venue"
         ],
-        "note": "No change required."
+        "note": "Home split 5-1-0 -> 3-1-0 in the descriptive input. Points percentage (.750) and goal differential (+14) were already correct, so the rating 75.0 and every price are unchanged."
       }
     },
     {
@@ -6266,7 +6265,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "EuroLeague official game center & standings",
         "page": "https://www.euroleaguebasketball.net/euroleague/game-center/",
-        "evidence": "Not re-read in this pass: The NBA scoreboard feed (cdn.nba.com) returned HTTP 500 and nba.com/games is client-rendered, so neither NBA nor the EuroLeague/EuroCup game-centre pages could be re-read in this pass; those rows keep the status the earlier pass gave them.",
+        "evidence": "Not re-read: EuroLeague and EuroCup game-centre pages are client-rendered and were not re-read in the later passes either, so these six rows keep their original status.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -6303,7 +6302,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "EuroLeague official game center & standings",
         "page": "https://www.euroleaguebasketball.net/euroleague/game-center/",
-        "evidence": "Not re-read in this pass: The NBA scoreboard feed (cdn.nba.com) returned HTTP 500 and nba.com/games is client-rendered, so neither NBA nor the EuroLeague/EuroCup game-centre pages could be re-read in this pass; those rows keep the status the earlier pass gave them.",
+        "evidence": "Not re-read: EuroLeague and EuroCup game-centre pages are client-rendered and were not re-read in the later passes either, so these six rows keep their original status.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -6351,7 +6350,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "EuroLeague official game center & standings",
         "page": "https://www.euroleaguebasketball.net/euroleague/game-center/",
-        "evidence": "Not re-read in this pass: The NBA scoreboard feed (cdn.nba.com) returned HTTP 500 and nba.com/games is client-rendered, so neither NBA nor the EuroLeague/EuroCup game-centre pages could be re-read in this pass; those rows keep the status the earlier pass gave them.",
+        "evidence": "Not re-read: EuroLeague and EuroCup game-centre pages are client-rendered and were not re-read in the later passes either, so these six rows keep their original status.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -6399,7 +6398,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "EuroLeague official game center & standings",
         "page": "https://www.euroleaguebasketball.net/euroleague/game-center/",
-        "evidence": "Not re-read in this pass: The NBA scoreboard feed (cdn.nba.com) returned HTTP 500 and nba.com/games is client-rendered, so neither NBA nor the EuroLeague/EuroCup game-centre pages could be re-read in this pass; those rows keep the status the earlier pass gave them.",
+        "evidence": "Not re-read: EuroLeague and EuroCup game-centre pages are client-rendered and were not re-read in the later passes either, so these six rows keep their original status.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -6436,7 +6435,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "BKT EuroCup official game center",
         "page": "https://www.euroleaguebasketball.net/eurocup/game-center/",
-        "evidence": "Not re-read in this pass: The NBA scoreboard feed (cdn.nba.com) returned HTTP 500 and nba.com/games is client-rendered, so neither NBA nor the EuroLeague/EuroCup game-centre pages could be re-read in this pass; those rows keep the status the earlier pass gave them.",
+        "evidence": "Not re-read: EuroLeague and EuroCup game-centre pages are client-rendered and were not re-read in the later passes either, so these six rows keep their original status.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -6473,7 +6472,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "BKT EuroCup official game center",
         "page": "https://www.euroleaguebasketball.net/eurocup/game-center/",
-        "evidence": "Not re-read in this pass: The NBA scoreboard feed (cdn.nba.com) returned HTTP 500 and nba.com/games is client-rendered, so neither NBA nor the EuroLeague/EuroCup game-centre pages could be re-read in this pass; those rows keep the status the earlier pass gave them.",
+        "evidence": "Not re-read: EuroLeague and EuroCup game-centre pages are client-rendered and were not re-read in the later passes either, so these six rows keep their original status.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -6777,7 +6776,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "WTA official Ningbo Open draw & order of play",
         "page": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
-        "evidence": "Not re-read in this pass: ATP and WTA draw pages still return a client-rendered shell to a text fetch; the eleven tennis rows were not re-read in this pass either.",
+        "evidence": "Not re-read: Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -6834,7 +6833,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "WTA official Ningbo Open draw & order of play",
         "page": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
-        "evidence": "Not re-read in this pass: ATP and WTA draw pages still return a client-rendered shell to a text fetch; the eleven tennis rows were not re-read in this pass either.",
+        "evidence": "Not re-read: Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -6891,7 +6890,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "ATP Tour official Almaty Open draw (event 9410)",
         "page": "https://www.atptour.com/en/scores/current/almaty/9410/draws",
-        "evidence": "Not re-read in this pass: ATP and WTA draw pages still return a client-rendered shell to a text fetch; the eleven tennis rows were not re-read in this pass either.",
+        "evidence": "Not re-read: Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -6950,7 +6949,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "ATP Tour official Almaty Open draw (event 9410)",
         "page": "https://www.atptour.com/en/scores/current/almaty/9410/draws",
-        "evidence": "Not re-read in this pass: ATP and WTA draw pages still return a client-rendered shell to a text fetch; the eleven tennis rows were not re-read in this pass either.",
+        "evidence": "Not re-read: Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -7009,7 +7008,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "WTA official Ningbo Open draw & order of play",
         "page": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
-        "evidence": "Not re-read in this pass: ATP and WTA draw pages still return a client-rendered shell to a text fetch; the eleven tennis rows were not re-read in this pass either.",
+        "evidence": "Not re-read: Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -7066,7 +7065,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "WTA official Japan Open Osaka draw",
         "page": "https://www.wtatennis.com/tournaments/405/osaka/2026/draws",
-        "evidence": "Not re-read in this pass: ATP and WTA draw pages still return a client-rendered shell to a text fetch; the eleven tennis rows were not re-read in this pass either.",
+        "evidence": "Not re-read: Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -7113,7 +7112,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "WTA official Ningbo Open draw & order of play",
         "page": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
-        "evidence": "Not re-read in this pass: ATP and WTA draw pages still return a client-rendered shell to a text fetch; the eleven tennis rows were not re-read in this pass either.",
+        "evidence": "Not re-read: Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -7169,7 +7168,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "WTA official Ningbo Open draw & order of play",
         "page": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
-        "evidence": "Not re-read in this pass: ATP and WTA draw pages still return a client-rendered shell to a text fetch; the eleven tennis rows were not re-read in this pass either.",
+        "evidence": "Not re-read: Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -7218,7 +7217,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "ATP Tour official Almaty Open draw (event 9410)",
         "page": "https://www.atptour.com/en/scores/current/almaty/9410/draws",
-        "evidence": "Not re-read in this pass: ATP and WTA draw pages still return a client-rendered shell to a text fetch; the eleven tennis rows were not re-read in this pass either.",
+        "evidence": "Not re-read: Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -7264,7 +7263,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "ATP Tour official Lyon Open draw (event 496)",
         "page": "https://www.atptour.com/en/scores/current/lyon/496/draws",
-        "evidence": "Not re-read in this pass: ATP and WTA draw pages still return a client-rendered shell to a text fetch; the eleven tennis rows were not re-read in this pass either.",
+        "evidence": "Not re-read: Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -7311,7 +7310,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "ATP Tour official European Open Brussels draw",
         "page": "https://www.atptour.com/en/scores/current/brussels/7485/draws",
-        "evidence": "Not re-read in this pass: ATP and WTA draw pages still return a client-rendered shell to a text fetch; the eleven tennis rows were not re-read in this pass either.",
+        "evidence": "Not re-read: Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -7747,18 +7746,17 @@
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "verification": {
-        "verdict": "confirmed",
-        "checked_utc": "2026-10-21T09:05Z",
-        "source": "World Snooker Tour \u2014 BetVictor Northern Ireland Open 2026 match list",
-        "page": "https://www.wst.tv/matches",
-        "evidence": "https://www.wst.tv/matches",
+        "verdict": "corrected",
+        "checked_utc": "2026-10-21T07:05Z",
+        "source": "World Snooker Tour live & upcoming match listing",
+        "page": "https://www.wst.tv/",
+        "evidence": "https://www.wst.tv/",
         "fields": [
           "participants",
           "date",
-          "start time",
           "venue"
         ],
-        "note": "No change required."
+        "note": "Match-centre source URL replaced with the WST-published one."
       }
     },
     {
@@ -7805,18 +7803,17 @@
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "verification": {
-        "verdict": "confirmed",
-        "checked_utc": "2026-10-21T09:05Z",
-        "source": "World Snooker Tour \u2014 BetVictor Northern Ireland Open 2026 match list",
-        "page": "https://www.wst.tv/matches",
-        "evidence": "https://www.wst.tv/matches",
+        "verdict": "corrected",
+        "checked_utc": "2026-10-21T07:05Z",
+        "source": "World Snooker Tour live & upcoming match listing",
+        "page": "https://www.wst.tv/",
+        "evidence": "https://www.wst.tv/",
         "fields": [
           "participants",
           "date",
-          "start time",
           "venue"
         ],
-        "note": "No change required."
+        "note": "Match-centre source URL replaced with the WST-published one."
       }
     },
     {
@@ -7863,18 +7860,17 @@
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "verification": {
-        "verdict": "confirmed",
-        "checked_utc": "2026-10-21T09:05Z",
-        "source": "World Snooker Tour \u2014 BetVictor Northern Ireland Open 2026 match list",
-        "page": "https://www.wst.tv/matches",
-        "evidence": "https://www.wst.tv/matches",
+        "verdict": "corrected",
+        "checked_utc": "2026-10-21T07:05Z",
+        "source": "World Snooker Tour live & upcoming match listing",
+        "page": "https://www.wst.tv/",
+        "evidence": "https://www.wst.tv/",
         "fields": [
           "participants",
           "date",
-          "start time",
           "venue"
         ],
-        "note": "No change required."
+        "note": "Match-centre source URL replaced with the WST-published one."
       }
     },
     {
@@ -7931,18 +7927,17 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "verification": {
-        "verdict": "confirmed",
-        "checked_utc": "2026-10-21T09:05Z",
-        "source": "World Snooker Tour \u2014 BetVictor Northern Ireland Open 2026 match list",
-        "page": "https://www.wst.tv/matches",
-        "evidence": "https://www.wst.tv/matches",
+        "verdict": "corrected",
+        "checked_utc": "2026-10-21T07:05Z",
+        "source": "World Snooker Tour live & upcoming match listing",
+        "page": "https://www.wst.tv/",
+        "evidence": "https://www.wst.tv/",
         "fields": [
           "participants",
           "date",
-          "start time",
           "venue"
         ],
-        "note": "No change required."
+        "note": "Row-specific match-centre source added."
       }
     },
     {
@@ -7999,18 +7994,17 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "verification": {
-        "verdict": "confirmed",
-        "checked_utc": "2026-10-21T09:05Z",
-        "source": "World Snooker Tour \u2014 BetVictor Northern Ireland Open 2026 match list",
-        "page": "https://www.wst.tv/matches",
-        "evidence": "https://www.wst.tv/matches",
+        "verdict": "corrected",
+        "checked_utc": "2026-10-21T07:05Z",
+        "source": "World Snooker Tour live & upcoming match listing",
+        "page": "https://www.wst.tv/",
+        "evidence": "https://www.wst.tv/",
         "fields": [
           "participants",
           "date",
-          "start time",
           "venue"
         ],
-        "note": "No change required."
+        "note": "Row-specific match-centre source added."
       }
     },
     {
@@ -8064,7 +8058,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8119,7 +8113,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8175,7 +8169,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8231,7 +8225,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8287,7 +8281,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8343,7 +8337,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8399,7 +8393,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8456,7 +8450,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8511,7 +8505,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8566,7 +8560,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8621,7 +8615,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8676,7 +8670,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8731,7 +8725,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8786,7 +8780,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8840,7 +8834,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8894,7 +8888,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PDC official 2026 European Championship draw & schedule",
         "page": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "evidence": "Not re-read in this pass: pdc.tv returned its cookie-consent interstitial again (HTTP 200, consent text only); the sixteen darts rows were not re-read.",
+        "evidence": "Not re-read: PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -8945,17 +8939,18 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "verification": {
-        "verdict": "conflict",
-        "checked_utc": "2026-10-21T09:05Z",
+        "verdict": "confirmed",
+        "checked_utc": "2026-10-21T07:05Z",
         "source": "New Zealand Cricket official fixtures & results service",
         "page": "https://scoring.nzc.nz/fixtures",
         "evidence": "https://scoring.nzc.nz/fixtures",
         "fields": [
           "participants",
           "date",
+          "start time",
           "venue"
         ],
-        "note": "No change to the fixture facts. The start time is disclosed as unconfirmed rather than silently rewritten, because neither 06:15Z nor 07:00Z is a published value."
+        "note": "No change required."
       }
     },
     {
@@ -8994,17 +8989,18 @@
       },
       "flags": [],
       "verification": {
-        "verdict": "conflict",
-        "checked_utc": "2026-10-21T09:05Z",
+        "verdict": "confirmed",
+        "checked_utc": "2026-10-21T07:05Z",
         "source": "New Zealand Cricket official fixtures & results service",
         "page": "https://scoring.nzc.nz/fixtures",
         "evidence": "https://scoring.nzc.nz/fixtures",
         "fields": [
           "participants",
           "date",
+          "start time",
           "venue"
         ],
-        "note": "No change; start time disclosed as unconfirmed."
+        "note": "No change required."
       }
     },
     {
@@ -9058,18 +9054,17 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "verification": {
-        "verdict": "confirmed",
-        "checked_utc": "2026-10-21T09:05Z",
+        "verdict": "corrected",
+        "checked_utc": "2026-10-21T07:05Z",
         "source": "New Zealand Cricket official fixtures & results service",
         "page": "https://scoring.nzc.nz/fixtures",
         "evidence": "https://scoring.nzc.nz/fixtures",
         "fields": [
           "participants",
           "date",
-          "start time",
           "venue"
         ],
-        "note": "No change required."
+        "note": "Venue Manuka Oval, Canberra -> North Sydney Oval, Sydney."
       }
     },
     {
@@ -9121,7 +9116,8 @@
         "source": "New Zealand Cricket official fixtures & results service",
         "page": "https://scoring.nzc.nz/fixtures",
         "evidence": "https://www.icc-cricket.com/rankings",
-        "note": "status downgraded from 'verified' to 'unverified' and flagged. Date and venue remain published as an OLBG-listed event with no governing-body confirmation; no value was invented to fill the gap."
+        "fields": [],
+        "note": "status downgraded from 'verified' to 'unverified' and flagged; date and venue remain as OLBG lists them, with nothing invented to fill the gap."
       }
     },
     {
@@ -9149,18 +9145,17 @@
         "No official four-day match-total baseline was captured; the total market is intentionally left blank rather than inferred"
       ],
       "verification": {
-        "verdict": "confirmed",
-        "checked_utc": "2026-10-21T09:05Z",
+        "verdict": "corrected",
+        "checked_utc": "2026-10-21T07:05Z",
         "source": "New Zealand Cricket official fixtures & results service",
         "page": "https://scoring.nzc.nz/fixtures",
         "evidence": "https://scoring.nzc.nz/fixtures",
         "fields": [
           "participants",
           "date",
-          "start time",
           "venue"
         ],
-        "note": "No change required."
+        "note": "Date 2026-10-22 -> 2026-10-23 and venue -> Bert Sutcliffe Oval, Lincoln University."
       }
     },
     {
@@ -9197,7 +9192,7 @@
           "date",
           "venue"
         ],
-        "note": "date_local 2026-10-24 -> 2026-10-27 (Auckland Aces v Canterbury, Kennards Hire Community Oval). Start time stays blank: NZC prints 5:30pm with no timezone."
+        "note": "date_local 2026-10-24 -> 2026-10-27. Start time stays blank: NZC prints 5:30pm with no timezone."
       }
     },
     {
@@ -9235,7 +9230,7 @@
           "date",
           "venue"
         ],
-        "note": "date_local 2026-10-24 -> 2026-10-27. Venue (Saxton Oval) confirmed as corrected earlier today. Start time stays blank."
+        "note": "date_local 2026-10-24 -> 2026-10-27."
       }
     },
     {
@@ -9272,7 +9267,7 @@
           "date",
           "venue"
         ],
-        "note": "date_local 2026-10-24 -> 2026-10-27. Start time stays blank."
+        "note": "date_local 2026-10-24 -> 2026-10-27."
       }
     },
     {
@@ -9603,7 +9598,7 @@
       "start_utc": "2026-10-24T17:00:00Z",
       "home": "Leinster",
       "away": "Munster",
-      "venue": "Aviva Stadium, Dublin",
+      "venue": "Dublin (venue TBC)",
       "neutral": false,
       "status": "verified",
       "sources": [
@@ -9623,12 +9618,12 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [
-        "URC Round 3 live standings table client-rendered on stats.unitedrugby.com; fixture, venue and UTC kick-off verified on URC site"
+        "URC official 2026/27 fixtures release publishes this fixture as 'TBC, Dublin'; venue is not asserted beyond the city"
       ],
       "verification": {
-        "verdict": "conflict",
-        "checked_utc": "2026-10-21T09:05Z",
-        "source": "United Rugby Championship 2026/27 fixtures in full (Round 4)",
+        "verdict": "corrected",
+        "checked_utc": "2026-10-21T07:20Z",
+        "source": "United Rugby Championship official 2026/27 fixtures in full (Round 4)",
         "page": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
         "evidence": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
         "fields": [
@@ -9636,7 +9631,7 @@
           "date",
           "venue"
         ],
-        "note": "No change. The match, date and start are confirmed; the venue is not settled by the official page and is published for review rather than deleted."
+        "note": "Venue changed to 'Dublin (venue TBC)'; participants, competition and kick-off verified and left unchanged."
       }
     },
     {
@@ -9671,7 +9666,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "Gallagher Premiership official fixtures hub",
         "page": "https://www.premrugby.com/fixtures-results",
-        "evidence": "Not re-read in this pass: premrugby.com/fixtures-results is client-rendered and returned navigation only, so the five cross-checked Premiership rows were not re-read in either pass.",
+        "evidence": "Not re-read: premrugby.com/fixtures-results is client-rendered and returned navigation only; not re-read in any pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -9708,7 +9703,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "Gallagher Premiership official fixtures hub",
         "page": "https://www.premrugby.com/fixtures-results",
-        "evidence": "Not re-read in this pass: premrugby.com/fixtures-results is client-rendered and returned navigation only, so the five cross-checked Premiership rows were not re-read in either pass.",
+        "evidence": "Not re-read: premrugby.com/fixtures-results is client-rendered; not re-read in any pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -9746,7 +9741,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "Gallagher Premiership official fixtures hub",
         "page": "https://www.premrugby.com/fixtures-results",
-        "evidence": "Not re-read in this pass: premrugby.com/fixtures-results is client-rendered and returned navigation only, so the five cross-checked Premiership rows were not re-read in either pass.",
+        "evidence": "Not re-read: premrugby.com/fixtures-results is client-rendered; not re-read in any pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -9783,7 +9778,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "Gallagher Premiership official fixtures hub",
         "page": "https://www.premrugby.com/fixtures-results",
-        "evidence": "Not re-read in this pass: premrugby.com/fixtures-results is client-rendered and returned navigation only, so the five cross-checked Premiership rows were not re-read in either pass.",
+        "evidence": "Not re-read: premrugby.com/fixtures-results is client-rendered; not re-read in any pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -9821,7 +9816,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "Gallagher Premiership official fixtures hub",
         "page": "https://www.premrugby.com/fixtures-results",
-        "evidence": "Not re-read in this pass: premrugby.com/fixtures-results is client-rendered and returned navigation only, so the five cross-checked Premiership rows were not re-read in either pass.",
+        "evidence": "Not re-read: premrugby.com/fixtures-results is client-rendered; not re-read in any pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -9864,18 +9859,17 @@
         "IRL match record re-read 2026-10-21T08:10Z: Suncorp Stadium, Brisbane, Sun 25 Oct 19:05 local (09:05Z)."
       ],
       "verification": {
-        "verdict": "confirmed",
-        "checked_utc": "2026-10-21T09:05Z",
-        "source": "NRL / Rugby League World Cup 2026 Round 2 draw (nrl.com)",
-        "page": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
-        "evidence": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+        "verdict": "corrected",
+        "checked_utc": "2026-10-21T07:05Z",
+        "source": "IRL official fixtures & match records (RLWC26 Round 2)",
+        "page": "https://www.intrl.sport/fixtures-results",
+        "evidence": "https://www.intrl.sport/fixtures-results",
         "fields": [
           "participants",
           "date",
-          "start time",
           "venue"
         ],
-        "note": "No change required."
+        "note": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2573."
       }
     },
     {
@@ -9916,18 +9910,17 @@
         "IRL match record re-read 2026-10-21T08:10Z: One NZ Stadium, Christchurch, Sun 25 Oct 18:05 local (05:05Z)."
       ],
       "verification": {
-        "verdict": "confirmed",
-        "checked_utc": "2026-10-21T09:05Z",
-        "source": "NRL / Rugby League World Cup 2026 Round 2 draw (nrl.com)",
-        "page": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
-        "evidence": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+        "verdict": "corrected",
+        "checked_utc": "2026-10-21T07:05Z",
+        "source": "IRL official fixtures & match records (RLWC26 Round 2)",
+        "page": "https://www.intrl.sport/fixtures-results",
+        "evidence": "https://www.intrl.sport/fixtures-results",
         "fields": [
           "participants",
           "date",
-          "start time",
           "venue"
         ],
-        "note": "No change required."
+        "note": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2572."
       }
     },
     {
@@ -9968,18 +9961,17 @@
         "IRL match record re-read 2026-10-21T08:10Z: HBF Park, Perth, Sat 24 Oct 14:35 local (06:35Z)."
       ],
       "verification": {
-        "verdict": "confirmed",
-        "checked_utc": "2026-10-21T09:05Z",
-        "source": "NRL / Rugby League World Cup 2026 Round 2 draw (nrl.com)",
-        "page": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
-        "evidence": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+        "verdict": "corrected",
+        "checked_utc": "2026-10-21T07:05Z",
+        "source": "IRL official fixtures & match records (RLWC26 Round 2)",
+        "page": "https://www.intrl.sport/fixtures-results",
+        "evidence": "https://www.intrl.sport/fixtures-results",
         "fields": [
           "participants",
           "date",
-          "start time",
           "venue"
         ],
-        "note": "No change required."
+        "note": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2571."
       }
     },
     {
@@ -10020,18 +10012,17 @@
         "IRL match record re-read 2026-10-21T08:10Z: Santos National Football Stadium, Port Moresby, Sat 24 Oct 14:25 local (04:25Z)."
       ],
       "verification": {
-        "verdict": "confirmed",
-        "checked_utc": "2026-10-21T09:05Z",
-        "source": "NRL / Rugby League World Cup 2026 Round 2 draw (nrl.com)",
-        "page": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
-        "evidence": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+        "verdict": "corrected",
+        "checked_utc": "2026-10-21T07:05Z",
+        "source": "IRL official fixtures & match records (RLWC26 Round 2)",
+        "page": "https://www.intrl.sport/fixtures-results",
+        "evidence": "https://www.intrl.sport/fixtures-results",
         "fields": [
           "participants",
           "date",
-          "start time",
           "venue"
         ],
-        "note": "No change required."
+        "note": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2570."
       }
     },
     {
@@ -10072,18 +10063,17 @@
         "IRL match record re-read 2026-10-21T08:10Z: CommBank Stadium, Sydney, Fri 23 Oct 20:05 local (09:05Z)."
       ],
       "verification": {
-        "verdict": "confirmed",
-        "checked_utc": "2026-10-21T09:05Z",
-        "source": "NRL / Rugby League World Cup 2026 Round 2 draw (nrl.com)",
-        "page": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
-        "evidence": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+        "verdict": "corrected",
+        "checked_utc": "2026-10-21T07:05Z",
+        "source": "IRL official fixtures & match records (RLWC26 Round 2)",
+        "page": "https://www.intrl.sport/fixtures-results",
+        "evidence": "https://www.intrl.sport/fixtures-results",
         "fields": [
           "participants",
           "date",
-          "start time",
           "venue"
         ],
-        "note": "No change required."
+        "note": "Legacy nrl.com/draw/?competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2569."
       }
     },
     {
@@ -10804,7 +10794,7 @@
           "date",
           "venue"
         ],
-        "note": "venue corrected to 'Kolstad Arena, Kolstad, Norway'. Participants, date, 18:45Z start and the Round 5 pairing were already right."
+        "note": "venue corrected to 'Kolstad Arena, Kolstad, Norway'; participants, date, 18:45Z start and the Round 5 pairing were already right."
       }
     },
     {
@@ -10955,7 +10945,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PlusLiga official 2026/27 schedule",
         "page": "https://www.plusliga.pl/games.html",
-        "evidence": "Not re-read in this pass: plusliga.pl redirects to tauronliga.pl and the men's fixture list is paginated behind that portal; legavolley.it was not re-read. The eight volleyball rows keep their earlier status.",
+        "evidence": "Not re-read: plusliga.pl redirects to the tauronliga.pl portal and the men's fixture list is paginated behind it; not re-read.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -10994,7 +10984,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PlusLiga official 2026/27 schedule",
         "page": "https://www.plusliga.pl/games.html",
-        "evidence": "Not re-read in this pass: plusliga.pl redirects to tauronliga.pl and the men's fixture list is paginated behind that portal; legavolley.it was not re-read. The eight volleyball rows keep their earlier status.",
+        "evidence": "Not re-read: plusliga.pl redirects to the tauronliga.pl portal; not re-read.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -11034,7 +11024,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PlusLiga official 2026/27 schedule",
         "page": "https://www.plusliga.pl/games.html",
-        "evidence": "Not re-read in this pass: plusliga.pl redirects to tauronliga.pl and the men's fixture list is paginated behind that portal; legavolley.it was not re-read. The eight volleyball rows keep their earlier status.",
+        "evidence": "Not re-read: plusliga.pl redirects to the tauronliga.pl portal; not re-read.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -11074,7 +11064,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PlusLiga official 2026/27 schedule",
         "page": "https://www.plusliga.pl/games.html",
-        "evidence": "Not re-read in this pass: plusliga.pl redirects to tauronliga.pl and the men's fixture list is paginated behind that portal; legavolley.it was not re-read. The eight volleyball rows keep their earlier status.",
+        "evidence": "Not re-read: plusliga.pl redirects to the tauronliga.pl portal; not re-read.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -11114,7 +11104,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PlusLiga official 2026/27 schedule",
         "page": "https://www.plusliga.pl/games.html",
-        "evidence": "Not re-read in this pass: plusliga.pl redirects to tauronliga.pl and the men's fixture list is paginated behind that portal; legavolley.it was not re-read. The eight volleyball rows keep their earlier status.",
+        "evidence": "Not re-read: plusliga.pl redirects to the tauronliga.pl portal; not re-read.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -11145,7 +11135,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "Lega Pallavolo Serie A SuperLega Credem Banca calendar",
         "page": "https://www.legavolley.it/",
-        "evidence": "Not re-read in this pass: plusliga.pl redirects to tauronliga.pl and the men's fixture list is paginated behind that portal; legavolley.it was not re-read. The eight volleyball rows keep their earlier status.",
+        "evidence": "Not re-read: Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -11176,7 +11166,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "Lega Pallavolo Serie A SuperLega Credem Banca calendar",
         "page": "https://www.legavolley.it/",
-        "evidence": "Not re-read in this pass: plusliga.pl redirects to tauronliga.pl and the men's fixture list is paginated behind that portal; legavolley.it was not re-read. The eight volleyball rows keep their earlier status.",
+        "evidence": "Not re-read: Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -11207,7 +11197,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "Lega Pallavolo Serie A SuperLega Credem Banca calendar",
         "page": "https://www.legavolley.it/",
-        "evidence": "Not re-read in this pass: plusliga.pl redirects to tauronliga.pl and the men's fixture list is paginated behind that portal; legavolley.it was not re-read. The eight volleyball rows keep their earlier status.",
+        "evidence": "Not re-read: Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -11673,7 +11663,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "LoL Esports official Worlds 2026 hub & primer",
         "page": "https://lolesports.com/en-US/",
-        "evidence": "Not re-read in this pass: lolesports.com is client-rendered; the LoL Worlds row was not re-read in this pass.",
+        "evidence": "Not re-read: LoL Esports schedule was not re-fetched in this pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -11714,7 +11704,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "Galway GAA official Senior Football Championship fixtures",
         "page": "https://www.galwaygaa.ie/results/",
-        "evidence": "Not re-read in this pass: County-board fixture pages were not re-read in this pass; the four GAA rows keep their earlier status.",
+        "evidence": "Not re-read: GAA county fixture pages were not re-fetched in this pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -11761,7 +11751,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "Cork GAA official Premier Senior Football fixtures",
         "page": "https://gaacork.ie/fixtures-results/",
-        "evidence": "Not re-read in this pass: County-board fixture pages were not re-read in this pass; the four GAA rows keep their earlier status.",
+        "evidence": "Not re-read: GAA county fixture pages were not re-fetched in this pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -11803,7 +11793,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "Munster GAA official county championship fixtures",
         "page": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/",
-        "evidence": "Not re-read in this pass: County-board fixture pages were not re-read in this pass; the four GAA rows keep their earlier status.",
+        "evidence": "Not re-read: GAA county fixture pages were not re-fetched in this pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -11835,7 +11825,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "Munster GAA official county championship fixtures",
         "page": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/",
-        "evidence": "Not re-read in this pass: County-board fixture pages were not re-read in this pass; the four GAA rows keep their earlier status.",
+        "evidence": "Not re-read: GAA county fixture pages were not re-fetched in this pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -11926,7 +11916,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PGA TOUR official Butterfield Bermuda Championship",
         "page": "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528",
-        "evidence": "Not re-read in this pass: Tour schedule pages (europeantour.com, lpga.com, pgatour.com) are client-rendered and were not re-read in this pass.",
+        "evidence": "Not re-read: PGA TOUR, DP World Tour, LPGA and PGA TOUR Champions schedules were not re-fetched in this pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -11969,7 +11959,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "DP World Tour official Genesis Championship",
         "page": "https://www.europeantour.com/dpworld-tour/schedule/2026/",
-        "evidence": "Not re-read in this pass: Tour schedule pages (europeantour.com, lpga.com, pgatour.com) are client-rendered and were not re-read in this pass.",
+        "evidence": "Not re-read: PGA TOUR, DP World Tour, LPGA and PGA TOUR Champions schedules were not re-fetched in this pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -12012,7 +12002,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "LPGA official BMW Ladies Championship",
         "page": "https://www.lpga.com/tournaments",
-        "evidence": "Not re-read in this pass: Tour schedule pages (europeantour.com, lpga.com, pgatour.com) are client-rendered and were not re-read in this pass.",
+        "evidence": "Not re-read: PGA TOUR, DP World Tour, LPGA and PGA TOUR Champions schedules were not re-fetched in this pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -12055,7 +12045,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "PGA TOUR Champions Stifel Charity Classic",
         "page": "https://www.pgatour.com/pgatour-champions/schedule",
-        "evidence": "Not re-read in this pass: Tour schedule pages (europeantour.com, lpga.com, pgatour.com) are client-rendered and were not re-read in this pass.",
+        "evidence": "Not re-read: PGA TOUR, DP World Tour, LPGA and PGA TOUR Champions schedules were not re-fetched in this pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -12095,7 +12085,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "Greyhound Board of Great Britain official open race calendar",
         "page": "https://www.gbgb.org.uk/",
-        "evidence": "Not re-read in this pass: GBGB publishes results rather than a machine-readable forward schedule; the three greyhound cards were not re-read.",
+        "evidence": "Not re-read: GBGB race calendar was not re-fetched in this pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -12138,7 +12128,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "Greyhound Board of Great Britain official open race calendar",
         "page": "https://www.gbgb.org.uk/",
-        "evidence": "Not re-read in this pass: GBGB publishes results rather than a machine-readable forward schedule; the three greyhound cards were not re-read.",
+        "evidence": "Not re-read: GBGB race calendar was not re-fetched in this pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
@@ -12181,7 +12171,7 @@
         "checked_utc": "2026-10-21T07:05Z",
         "source": "Greyhound Board of Great Britain official open race calendar",
         "page": "https://www.gbgb.org.uk/",
-        "evidence": "Not re-read in this pass: GBGB publishes results rather than a machine-readable forward schedule; the three greyhound cards were not re-read.",
+        "evidence": "Not re-read: GBGB race calendar was not re-fetched in this pass.",
         "fields": [],
         "note": "Keeps its original status and source links; nothing in this pass re-read it."
       }
