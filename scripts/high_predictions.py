@@ -219,7 +219,7 @@ HIGH_PREDICTIONS: dict[str, dict] = {
         "text": (
             "Sitting alone atop the ICC Women's T20I table on a commanding 287 rating—34 points clear "
             "of fourth-ranked New Zealand Women (253)—Australia Women rarely surrender trans-Tasman "
-            "ground on true Canberra batting decks at Manuka Oval. All-round batting depth down to number "
+            "ground on the true-bouncing drop-in deck at North Sydney Oval in Sydney. All-round batting depth down to number "
             "eight insulates the hosts against powerplay wobbles. Back Australia Women Match Winner at "
             "1.32, or lay -14.5 on the handicap at 1.92."
         ),
