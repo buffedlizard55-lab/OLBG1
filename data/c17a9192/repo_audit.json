@@ -1,0 +1,211 @@
+[
+  {
+    "audit_id": "REPO-ERR-01",
+    "severity": "critical",
+    "file": "data/predictions.json [07..10] & data/fixtures.json [mlb-849805..849803]",
+    "workstream": "ce5920e3 / f7fa77fc (Root Dashboard)",
+    "category": "Hard Numerical Error vs Governing-Body API",
+    "prior_claim": "Claims Milwaukee Brewers went '94-68' (and '3-0 NLCS sweep') and Tampa Bay Rays went '88-74' across all 4 World Series writeups, despite listing 55-26 home + 48-33 road (= 103-59!) and 55-26 home + 43-38 road (= 98-64!) inside the same JSON object.",
+    "official_truth": "MLB StatsAPI confirms Milwaukee Brewers went 103-59 (.636, +214 RD: 832 RS / 618 RA) and Tampa Bay Rays went 98-64 (.605, +86 RD: 736 RS / 650 RA).",
+    "status_in_c17a9192": "Fixed in data/c17a9192/* & flagged in COORDINATION.md §4",
+    "official_url": "https://statsapi.mlb.com/api/v1/standings?leagueId=104&season=2026"
+  },
+  {
+    "audit_id": "REPO-ERR-02",
+    "severity": "critical",
+    "file": "data/fixtures.json [pdc-ec-01..16] & data/predictions.json [16, 17]",
+    "workstream": "ce5920e3 / f7fa77fc (Root Dashboard)",
+    "category": "Scrambled Tournament Seedings (10 of 16 Ties Wrong)",
+    "prior_claim": "Assigns Seed #1 to Jonny Clayton v #32 Springer, Seed #3 to Ryan Joyce v #30 Jermaine Wattimena (promoted to a fake 'high' pick!), Seed #7 to Ross Smith v #26 Sedlacek, #16 to Noppert v #17 Bunting, #5 to Ratajski v #28 Chisnall, etc.",
+    "official_truth": "Official PDC draw bracket confirms: (1) Ross Smith v (32) Karel Sedláček, (2) Wessel Nijman v (31) Martin Schindler, (3) Krzysztof Ratajski v (30) Dave Chisnall, (5) Danny Noppert v (28) Stephen Bunting, (7) Jonny Clayton v (26) Niko Springer, (15) Ryan Joyce v (18) Jermaine Wattimena, (16) James Wade v (17) Damon Heta.",
+    "status_in_c17a9192": "All 32 seeds (1)..(32) verified verbatim from pdc.tv & recalibrated",
+    "official_url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+  },
+  {
+    "audit_id": "REPO-ERR-03",
+    "severity": "high",
+    "file": "data/fixtures.json [000..002] & data/predictions.json [00, 01]",
+    "workstream": "ce5920e3 / f7fa77fc (Root Dashboard)",
+    "category": "Hard Standings & Goal-Differential Contradictions vs NHL API",
+    "prior_claim": "Claims Buffalo Sabres are '+2 GD', Philadelphia Flyers are '0-4-2 road, -14 GD', Ottawa Senators are '4-1-0 home', and Nashville Predators are '3-2-3, 0 GD' in facts[] yet '4-3-1' inside prose two lines below.",
+    "official_truth": "api-web.nhle.com/v1/standings/2026-10-20 confirms BUF is -7 GD (27 GF / 34 GA), PHI is 0-4-1 road (5 GP) and -19 GD (17 GF / 36 GA), OTT is 3-1-0 home (9 GF / 11 GA), and NSH is 3-2-3 with -1 GD (23 GF / 24 GA).",
+    "status_in_c17a9192": "Fixed verbatim from NHL API in data/c17a9192/*",
+    "official_url": "https://api-web.nhle.com/v1/standings/2026-10-20"
+  },
+  {
+    "audit_id": "REPO-ERR-04",
+    "severity": "high",
+    "file": "data/fixtures.json [017, 019, 020] & data/predictions.json [05, 06]",
+    "workstream": "ce5920e3 / f7fa77fc (Root Dashboard)",
+    "category": "Wrong 2026-27 EuroLeague Standings Records",
+    "prior_claim": "Lists Panathinaikos as 4-2, Baskonia as 2-4, Real Madrid as 4-2 (high pick), and Virtus Bologna as 3-3.",
+    "official_truth": "Official EuroLeague standings after Round 6 show #1 Panathinaikos at 5-1 (+90), #20 Baskonia at 1-5 (-60), #9 Real Madrid at 3-3 (+23), and #7 Virtus Bologna at 4-2 (+7).",
+    "status_in_c17a9192": "Fixed verbatim from euroleaguebasketball.net; Real Madrid downgraded high -> medium",
+    "official_url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+  },
+  {
+    "audit_id": "REPO-ERR-05",
+    "severity": "high",
+    "file": "data/fixtures.json [nba-0022600085, nba-0022600005]",
+    "workstream": "ce5920e3 / f7fa77fc (Root Dashboard)",
+    "category": "Wrong 2025-26 Official NBA Standings Records",
+    "prior_claim": "Lists Atlanta Hawks as 40-42 (.488) and Golden State Warriors as 44-38 (.537).",
+    "official_truth": "nba.com/standings?Season=2025-26 confirms #9 East Atlanta Hawks went 46-36 (.561) and #10 West Golden State Warriors went 37-45 (.451; 44-38 belonged to #7 East Charlotte Hornets).",
+    "status_in_c17a9192": "Fixed across all 13 NBA games in data/c17a9192/*",
+    "official_url": "https://www.nba.com/standings"
+  },
+  {
+    "audit_id": "REPO-ERR-06",
+    "severity": "high",
+    "file": "data/fixtures.json [hand-ehf-12050, hand-ehf-12049, hand-ehf-12054]",
+    "workstream": "ce5920e3 / f7fa77fc (Root Dashboard)",
+    "category": "Wrong EHF Champions League Group B Standings & Missing Group D Data",
+    "prior_claim": "Lists HC Vardar 1961 as '1-0-3 (2 pts)' and MT Melsungen as '1-0-3 (2 pts)', and leaves Group D leaders Sporting CP vs IFK Kristianstad blank.",
+    "official_truth": "ehfcl.eurohandball.com/men/2026-27/standings/ confirms HC Vardar 1961 is winless 0-0-4 (0 pts, -10 GD), MT Melsungen is 2-0-2 (4 pts, -2 GD), Sporting CP is 3-1-0 (7 pts, +24 GD), and IFK Kristianstad is 0-0-4 (0 pts, -33 GD).",
+    "status_in_c17a9192": "All 24 clubs across Groups A-F verified verbatim",
+    "official_url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+  },
+  {
+    "audit_id": "REPO-ERR-07",
+    "severity": "high",
+    "file": "data/predictions.json [12] & data/fixtures.json [ten-902093, ten-902074]",
+    "workstream": "ce5920e3 / f7fa77fc (Root Dashboard)",
+    "category": "Wrong WTA Rankings, Wrong City in Prose & Wrong Tournament URL Slug",
+    "prior_claim": "Calls Belinda Bencic 'world No. 12' playing in 'Guangzhou' inside prose while row metadata cites WTA 500 Ningbo Open at slug 1115/ningbo; lists Sorana Cîrstea as #16.",
+    "official_truth": "wtatennis.com/rankings/singles (19 Oct 2026) ranks Belinda Bencic #14 (2,662 pts; Clara Tauson is #12), Sorana Cîrstea #17 (2,380 pts), and hosts the Ningbo Open draw under tournament ID 2092/ningbo.",
+    "status_in_c17a9192": "Fixed rankings, venue city & canonical wtatennis.com URLs",
+    "official_url": "https://www.wtatennis.com/rankings/singles"
+  },
+  {
+    "audit_id": "REPO-ERR-08",
+    "severity": "high",
+    "file": "data/predictions.json [19..21] & data/fixtures.json [cric-ausw-nzw-t20-3, cric-nz-ind-t20-1]",
+    "workstream": "ce5920e3 / f7fa77fc (Root Dashboard)",
+    "category": "Wrong Stadium City & ICC Rating / Start Time",
+    "prior_claim": "Places Australia Women v New Zealand Women 3rd T20I in Canberra ('Manuka Oval, Canberra'), and lists NZ v India 1st T20I at 06:15Z with India #2 (267).",
+    "official_truth": "scoring.nzc.nz confirms 3rd Women's T20I is at North Sydney Oval, Sydney; icc-cricket.com match #271646 confirms NZ v India 1st T20I starts 07:00 UTC with India #1 (268 rating).",
+    "status_in_c17a9192": "Fixed venue, UTC start time & ICC ratings",
+    "official_url": "https://scoring.nzc.nz/fixtures"
+  },
+  {
+    "audit_id": "REPO-ERR-09",
+    "severity": "medium",
+    "file": "data/fixtures.json [golf-*, grey-*]",
+    "workstream": "ce5920e3 / f7fa77fc (Root Dashboard)",
+    "category": "Permuted OLBG event_id Links Across Golf & Greyhounds",
+    "prior_claim": "Maps Genesis Championship -> 101903, Bermuda -> 101904, Stifel -> 101907, Kinsley -> 689388, Monmore -> 689386, Nottingham -> 689390.",
+    "official_truth": "Live OLBG.com URLs map Stifel -> 101903, Bermuda -> 101904, Genesis -> 101905, Players Series SA -> 101907, Nottingham -> 689386, Monmore -> 689387, Kinsley -> 689390.",
+    "status_in_c17a9192": "Reconciled every event_id directly against live OLBG event URLs",
+    "official_url": "https://www.olbg.com/betting-tips/Golf/5"
+  },
+  {
+    "audit_id": "REPO-ERR-10",
+    "severity": "medium",
+    "file": "data/matches-aa4e9dbf-olbg1.json [event 535949 / 535950]",
+    "workstream": "aa4e9dbf-olbg1 (/aa4e9dbf/ Desk)",
+    "category": "False-Positive Anomaly Flag Overturned by Governing Body",
+    "prior_claim": "Flagged 'U-BT Cluj-Napoca v London Lions' as a non-existent phantom match on EuroCup Round 4 schedule.",
+    "official_truth": "euroleaguebasketball.net/en/eurocup/game-center/ confirms official Game U2026/54 is U-BT Cluj-Napoca vs London Lions (Group B, BTarena, 21 Oct 2026) while Cedevita Olimpija vs Le Mans is Game U2026/51.",
+    "status_in_c17a9192": "Overturned false flag & verified all 10 live EuroCup ties",
+    "official_url": "https://www.euroleaguebasketball.net/en/eurocup/game-center/"
+  },
+  {
+    "audit_id": "REPO-ERR-11",
+    "severity": "medium",
+    "file": "data/picks.json & 2360a617/flagged.html [event 12045]",
+    "workstream": "2360a617-olbg1 (/2360a617/ Desk)",
+    "category": "False-Positive Anomaly Flag Overturned by Governing Body",
+    "prior_claim": "Claimed 'Dinamo Bucuresti v Skanderborg' could not be an EHF Champions League tie because 'Skanderborg is not in the verified CL field'.",
+    "official_truth": "ehfcl.eurohandball.com confirms 'SAH - Aarhus' (2nd in Group E at 2-1-1, 5 pts) IS Skanderborg-Aarhus Håndbold, playing Dinamo Bucuresti in official Match #202711020101059 on 21 Oct 2026.",
+    "status_in_c17a9192": "Overturned false flag & priced from official Group E standings",
+    "official_url": "https://ehfcl.eurohandball.com/men/2026-27/matches/"
+  },
+  {
+    "audit_id": "REPO-ERR-12",
+    "severity": "high",
+    "file": "data/picks.json ['Snooker'][0] (event_id 9933)",
+    "workstream": "2360a617-olbg1 (/2360a617/ Desk)",
+    "category": "Leaked Internal Scratchpad Monologue & Impossible Total Line",
+    "prior_claim": "Publishes 'Total frames: O/U 8.5 (best-of-7 hmm — use frame HC only)'—an impossible 8.5 total in a 7-frame match plus raw scratchpad text—and backs #106 Cheung Ka Wai at 'high' confidence over #19 former World Champion Stuart Bingham.",
+    "official_truth": "Best-of-7 maximum frames is 7 (canonical total line 5.5 frames), and WST ranks Bingham #19 (£384,300) vs Cheung #106 (£18,600).",
+    "status_in_c17a9192": "Priced cleanly at Total 5.5 Frames with Bingham high-confidence favourite",
+    "official_url": "https://www.wst.tv/rankings/"
+  },
+  {
+    "audit_id": "REPO-ERR-13",
+    "severity": "medium",
+    "file": "data/ebfbd966_writeups.json ['SNO-02']",
+    "workstream": "ebfbd966-olbg1 (/ebfbd966/ Desk)",
+    "category": "Unpatched Ranking Claim in Writeup JSON",
+    "prior_claim": "Although REPO_LINE_BY_LINE_AUDIT.md reported fixing ebfbd966's Snooker rankings, data/ebfbd966_writeups.json['SNO-02']['text'] still asserts 'Pang Junxu, listed at 26 in the world... meets Liam Davies, listed 89th'.",
+    "official_truth": "Official WST Johnstone's Paint World Rankings list Pang Junxu at #29 (£247,400) and Liam Davies at #68 (£83,700).",
+    "status_in_c17a9192": "Verified & cited accurately in c17a9192 Snooker predictions",
+    "official_url": "https://www.wst.tv/rankings/"
+  },
+  {
+    "audit_id": "REPO-ERR-14",
+    "severity": "low",
+    "file": "site/__pycache__/picks_data.cpython-311.pyc",
+    "workstream": "2360a617-olbg1 (PR #16, commit 8458584)",
+    "category": "Tracked 76,025-Byte Binary Bytecode Artifact in Git",
+    "prior_claim": "Binary Python 3.11 bytecode committed into repository history despite repository hygiene rules.",
+    "official_truth": "Flagged for removal by site owner in COORDINATION.md §4; zero __pycache__ files created in c17a9192.",
+    "status_in_c17a9192": "Flagged in audit & enforced by c17a9192_validate.py",
+    "official_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/COORDINATION.md"
+  },
+  {
+    "audit_id": "REPO-ERR-15",
+    "severity": "medium",
+    "file": "data/matches-c5e985f4-olbg1.json",
+    "workstream": "c5e985f4-olbg1 (Archived JSON)",
+    "category": "Non-OLBG Sports & Non-Official Third-Party Citations",
+    "prior_claim": "Includes non-OLBG sports ('badminton', 'table-tennis'), cites wikipedia.org / kalshi.com / espn.com, and marks Rugby League off-season during active RLWC26 Round 2.",
+    "official_truth": "OLBG covers neither badminton nor table tennis; RLWC26 Round 2 has 7 active international fixtures on nrl.com.",
+    "status_in_c17a9192": "Strict 17-sport taxonomy + 100% governing-body allowlist",
+    "official_url": "https://www.olbg.com/sitemap-betting-tips.xml"
+  },
+  {
+    "audit_id": "REPO-ERR-16",
+    "severity": "medium",
+    "file": "data/matches.json & data/matches-aa4e9dbf-olbg1.json",
+    "workstream": "4f44f7d9 (/docs/) & aa4e9dbf (/aa4e9dbf/)",
+    "category": "Inherited Upstream OLBG Date & Crowd-Share Pricing Distortion",
+    "prior_claim": "data/matches.json inherits '2026-11-01' on Rathgormack v The Nire; aa4e9dbf converts 82% crowd tips on 17-65 Washington Wizards directly into WAS -4.5 spread chalk.",
+    "official_truth": "Munster GAA schedules Rathgormack v The Nire for 25 Oct 2026 (14:30 UTC), and independent NBA ratings make Milwaukee -4.5 road favourites.",
+    "status_in_c17a9192": "Independent ratings-based lines completely decoupled from tipster popularity",
+    "official_url": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/"
+  },
+  {
+    "audit_id": "REPO-ERR-17",
+    "severity": "medium",
+    "file": "All pre-06:00Z repository datasets",
+    "workstream": "Cross-Repository Snapshot Freshness",
+    "category": "+36 Newly Tipped Live OLBG Events Rotated In at 06:44-06:49Z",
+    "prior_claim": "Earlier snapshots captured 131-164 OLBG events before Wednesday morning European/Asian tipster activity peaked.",
+    "official_truth": "Live OLBG re-probe at 06:44-06:49Z captured 200 live OLBG events (+13 Tennis, +10 Basketball, +4 Volleyball, +3 Ice Hockey, +3 Snooker, plus EuroLeague/BCL ties).",
+    "status_in_c17a9192": "All 200 live OLBG events + 17 active blind-spot matches reconciled = 217 events",
+    "official_url": "https://www.olbg.com/sitemap-betting-tips.xml"
+  },
+  {
+    "audit_id": "REPO-ERR-18",
+    "severity": "high",
+    "file": "reports/POST_INTEGRATION_AUDIT.md (F1-F3) & reports/SESSION_E92_SNAPSHOT_AUDIT.md (A-E)",
+    "workstream": "8e12b936-olbg1 & e92c2bf4-olbg1 Audits",
+    "category": "Complete Closure of All Open Post-Integration Audit Items",
+    "prior_claim": "Flagged (F1) unsubstantiated stylistic clauses in predictions, (F2) blurred verified vs cross-checked status counts, (F3) no fresh live fetches, (B) unpriced multi-runner cards, (C) missing cricket total, (D) no host allowlist in validator, (E) unverified sub-fields.",
+    "official_truth": "Session c17a9192 resolves every single item: live fetches across all 17 sports, 1-to-1 claim provenance in verified_evidence[], explicit 151/53/13 status split, 100% market coverage across all 217 events, strict host allowlist validator, and explicit '' blanks on unconfirmed sub-fields.",
+    "status_in_c17a9192": "100% Closed & Validated",
+    "official_url": "https://buffedlizard55-lab.github.io/OLBG1/reports/POST_INTEGRATION_AUDIT.html"
+  },
+  {
+    "audit_id": "REPO-ERR-19",
+    "severity": "critical",
+    "file": "data/fixtures.json & data/lines.json [aflw-r11-01..09] (Open Item F-T34-01 / T35)",
+    "workstream": "ce5920e3 / f7fa77fc / b95dbd01 (Root AFLW Pricing)",
+    "category": "All 9 AFLW Round 11 Matches Priced off Stale Non-2026 Ladder (16 of 18 Clubs Wrong!)",
+    "prior_claim": "Priced all 9 AFLW matches using stale non-2026 standings (listing Geelong 13th at 4-6 instead of 2nd at 9-1, Gold Coast 18th at 1-9 instead of 5th at 7-3, North Melbourne 10-0 at Arden Street, and Hawthorn at Kinetic Stadium).",
+    "official_truth": "Live fetch of https://www.afl.com.au/aflw/ladder confirms exact 18-club 2026 Round 10 table (#1 North Melbourne 9-1 251.9%, #2 Geelong 9-1 167.2%, #3 Melbourne 8-2 177.2%, #4 Western Bulldogs 8-2 140.9%, #5 Gold Coast 7-3 138.9%, #6 Carlton 7-3 133.0%) + exact Match IDs #8970-#8979, North Hobart Oval & Kennedy Community Centre venues.",
+    "status_in_c17a9192": "All 9 AFLW matches freshly re-priced from live 2026 ladder (closes F-T34-01 / T35)",
+    "official_url": "https://www.afl.com.au/aflw/ladder"
+  }
+]
