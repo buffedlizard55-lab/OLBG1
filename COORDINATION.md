@@ -83,7 +83,10 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T15 | Independent second-pass market-coverage and whole-tree source-link structural audit | done | e92c2bf4-olbg1 | `reports/SESSION_E92_SNAPSHOT_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:41Z | Completed after T13; records eight unpriced field cards, one missing cricket total, snapshot window, and validator evidence limits; does not edit shared data/pages. |
 | T16 | Corrective primary-desk provenance, status disclosure, integration and Pages publication | done | 4904ed05-olbg1 | `COORDINATION.md`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/flagged_for_review.json`, `scripts/validate.py`, root `*.html`, `sports/*.html`, `assets/*`, `README.md` | 2026-10-21T06:41Z | PR #24 merged; Pages workflow 39558245786 completed successfully. Remediated F1–F3 without changing independent review artifacts. |
 
-| T17 | Fresh official-source re-verification of every published row (fetch each governing-body page today, row-by-row), corrected data, unified dashboard rebuild, publication | in progress | b95dbd01-olbg1 | `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/*`, `scripts/{build_site,validate,final_audit}.py`, root `*.html`, `sports/*.html`, `assets/*`, `reports/VERIFICATION_2026-10-21.md`, `README.md`, append-only `COORDINATION.md` | 2026-10-21T07:10Z | Re-fetch scope: all 30 registered source URLs + per-row checks; correct or downgrade anything the source does not confirm; publish a per-row verification table with links. Does **not** touch `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`, `/2360a617/`, `/f7fa77fc/`. |
+| T17 | Live OLBG re-harvest of all 17 in-scope sport hubs + diff against the committed snapshot | done | 76950c25-olbg1 | `data/live_snapshot.json`, `data/live_diff.json`, `scripts/live_harvest.py` | 2026-10-21T07:10Z | Fresh fetch of every in-scope hub; per-event add/remove/consensus-change diff; no shared-file edits |
+| T18 | Official-source verification of refreshed/changed rows (MLB confirmation; other rows retain recorded governing-body sources) + unverified cards published blank | done | 76950c25-olbg1 | `scripts/dataset_rows_c.py`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `datasets/*`, `reports/SESSION_769_LIVE_REFRESH.md` | — | Blank-and-flag any value not confirmed on an official page |
+| T19 | Publish refresh on the dashboard (new Live Refresh + Flagged pages), validator gate, PR, merge and Pages deploy check | in progress | 76950c25-olbg1 | `live-refresh.html`, `flagged.html`, `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration for this session; append-only coordination log |
+| T20 | Fresh official-source re-verification of every published row (fetch each governing-body page today, row-by-row), corrected data, unified dashboard rebuild, publication | done | b95dbd01-olbg1 | `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/verification.json`, `datasets/*`, `scripts/{verify_pass,build_flagged,build_site,validate}.py`, root `*.html`, `sports/*.html`, `assets/*`, `reports/VERIFICATION_2026-10-21.md`, `README.md`, append-only `COORDINATION.md` | 2026-10-21T07:10Z | Numbered T20 after `76950c25-olbg1` claimed T17–T19. 59 rows re-read on official pages; 7 corrected; 6 time conflicts, 1 unconfirmed, 16 blocked, 54 not re-checked. Does not touch `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`, `/2360a617/`. |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -669,7 +672,50 @@ The rebased implementation commit is `674eb1c` (`fix: remediate audit provenance
 * **Delivered correction:** 31 distinct 48–61-word source-bounded High predictions; dashboard/mirror/README status wording split to 129 Verified plus 5 Cross-checked; F1–F3 remediation and source-freshness boundary published on Flagged for Review and linked in the source register.
 * **Final pre-merge gates:** `python3 scripts/validate.py` (131 HTML pages, 0 errors/warnings), `python3 scripts/ebfbd966_validate.py` (passed), `python3 scripts/final_audit.py`, `py_compile`, `git diff --check`, deterministic rebuild comparison, root/mirror data parity, and zero repeated normalized six-grams across High prose. No source page was freshly fetched in this corrective pass; that limitation remains visible to reviewers.
 
-## 16. Session `b95dbd01-olbg1` — T17 claim (fresh official-source re-verification)
+
+## 16. Session `76950c25-olbg1` — live refresh, verification and publication
+
+**2026-10-21T07:10Z — claims filed (T17–T19).** This session re-fetches the live OLBG sport hubs
+for every in-scope sport and diffs the result against the committed 134-event snapshot, so the
+published desk reflects **today's** cards rather than the earlier snapshot. Per the brief, only
+values confirmed on an official governing-body page are progressed to `verified`; everything else
+is left blank and listed on the Flagged for Review page.
+
+* **Scope:** new files `data/live_snapshot.json`, `data/live_diff.json`, `scripts/live_harvest.py`,
+  `scripts/dataset_rows_c.py`, `reports/SESSION_769_LIVE_REFRESH.md`; plus the integration-owned
+  generated pages/datasets listed in T19.
+* **Non-overlap:** no other branch (`arena/2360a617`, `4904ed05`, `4f44f7d9`, `5c02f50f`,
+  `72198d3e`, `8e12b936`, `a41abce4`, `aa4e9dbf`, `c17a9192`, `c5e985f4`, `ccb6bde2`,
+  `ce5920e3`, `e92c2bf4`, `ebfbd966`, `f7fa77fc`) has commits ahead of `main` at claim time, so
+  this session is the only live writer on these files.
+
+### T17–T19 execution record (session `76950c25-olbg1`)
+
+**2026-10-21T07:05Z — live recapture.** All 17 in-scope OLBG hubs were fetched and parsed into
+`data/live_snapshot.json` (141 cards; 15 sports with tips, Aussie Rules and eSports returned
+"No tips found", Rugby League returned 2027 outrights only). `scripts/live_diff.py` then compared
+the capture with the committed 134-row dataset by OLBG `event_id`: **69 joined**, **47 changed**
+(20 selection flips), **72 new/unverified**, **18 dataset rows absent from the truncated first
+screen**. The diff is reproducible from the repository (`data/live_diff.json`).
+
+**Refresh semantics.** `scripts/build_dataset.py` now overlays only OLBG's own upstream tip
+counter/selection on joined rows (with `olbg.captured_utc` and the superseded value preserved in
+`olbg.consensus_prior`). Sporting facts, prices, picks and confidence tiers are untouched; 68 rows
+were refreshed. Eighteen findings are published, six of them new (`F-LIVE-01` … `F-LIVE-06`).
+
+**Official verification performed.** The MLB World Series Game 2 card was re-verified against the
+official MLB StatsAPI (`https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24`):
+gamePk **849802**, Tampa Bay Rays at Milwaukee Brewers, American Family Field,
+`gameDate 2026-10-25T00:00:00Z`. OLBG labels the same card "24 Oct 01:00", which is flagged as
+`F-LIVE-06`. No other fixture fact was freshly re-fetched; those rows retain the governing-body
+source recorded on them, and the 72 unjoined cards are published as **Unverified** with blank
+fields rather than being promoted.
+
+**Gates.** `python3 scripts/live_diff.py`, `build_dataset.py`, `origin_lines.py`, `build_site.py`
+(28 root + 28 mirror pages), `validate.py` (133 pages, 0 errors / 0 warnings) and
+`ebfbd966_validate.py` all pass. Full write-up: `reports/SESSION_769_LIVE_REFRESH.md`.
+
+## 17. Session `b95dbd01-olbg1` — T20 claim (fresh official-source re-verification)
 
 **2026-10-21T07:10Z — claim pushed before work started.** Nothing in this section replaces any
 earlier record. T13–T16 established that the published 134 rows are *source-linked* but that no
@@ -687,14 +733,14 @@ Method fixed before the first fetch:
    `unconfirmed`, which is published on the Flagged for Review page.
 4. Never upgrade a row on the strength of another session's note, a search snippet or memory.
 
-File scope is listed in §1 T17. All parallel boards (`/docs/`, `/ebfbd966/`, `/aa4e9dbf/`,
+File scope is listed in §1 T20. All parallel boards (`/docs/`, `/ebfbd966/`, `/aa4e9dbf/`,
 `/2360a617/`, `/f7fa77fc/`) are read-only for this session.
 
-## 17. Session `b95dbd01-olbg1` — T17 fresh official-source re-verification (result)
+## 18. Session `b95dbd01-olbg1` — T20 fresh official-source re-verification (result)
 
 **2026-10-21T07:10Z** claim pushed. **2026-10-21T08:05Z** work complete and published.
 
-### 17.1 What this pass did
+### 18.1 What this pass did
 
 T13–T16 all disclosed the same limitation: the rows carried official-source *links* but no pass had
 re-opened those pages and compared them with the published values (see `reports/POST_INTEGRATION_AUDIT.md`
@@ -709,7 +755,7 @@ F3). This pass did that comparison, field by field, and made the result auditabl
   `scripts/validate.py` now **fails** if a row has no verification ledger entry, so a rebuild that
   skips the verification step cannot pass the gate.
 
-### 17.2 Outcome
+### 18.2 Outcome
 
 | Verdict | Rows |
 |---|---:|
@@ -723,7 +769,7 @@ F3). This pass did that comparison, field by field, and made the result auditabl
 Dataset now: **136 rows** (130 verified / 5 cross-checked / 1 unverified), **127 priced H2H** lines,
 31 High / 35 Medium / 61 Low picks, 31 hand-written predictions, 9 event or field cards.
 
-### 17.3 Corrections (all sourced)
+### 18.3 Corrections (all sourced)
 
 1. Vegas Golden Knights record corrected `8-2-0 (.800, W3)` → `8-3-0 (.727, L1)` from the live NHL
    standings feed; the game re-priced to 59.9% and the pick dropped High → Medium, and its High
@@ -740,14 +786,14 @@ Dataset now: **136 rows** (130 verified / 5 cross-checked / 1 unverified), **127
 8. AFLW: nine kick-off times withheld after the AFL listing could not be reconciled; calendar dates
    retained from the withdrawn stamps, match-ups confirmed where the official widget showed them.
 
-### 17.4 Blocked / not re-checked
+### 18.4 Blocked / not re-checked
 
 `pdc.tv` returns a cookie-consent shell for both the draw article and `/calendar/`, so all 16 darts
 rows are marked **blocked** rather than re-asserted. Tennis, volleyball, rugby union, Gaelic
 football, golf, greyhounds, eSports, motor racing, EuroCup and the RLWC26 women's draw were outside
 this pass's fetch budget and are marked **not re-checked** (prior-session provenance only).
 
-### 17.5 Gates run
+### 18.5 Gates run
 
 ```
 python3 scripts/build_dataset.py && python3 scripts/verify_pass.py && python3 scripts/origin_lines.py
@@ -761,10 +807,10 @@ rows. Two consecutive full pipeline runs produced byte-identical `data/fixtures.
 `data/lines.json`, `data/predictions.json`, `datasets/matches_full.json`, `index.html` and
 `verification.html`.
 
-### 17.6 Publish record
+### 18.6 Publish record
 
 * Files touched: root `*.html`, `sports/*`, `assets/*` (regenerated), `data/*`, `datasets/*`,
   `scripts/*`, `reports/VERIFICATION_2026-10-21.md`, `README.md`, this file, and the `/f7fa77fc/`
   mirror (regenerated by `build_site.py` as its mirror of the primary desk).
 * Parallel boards `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`, `/2360a617/` were **not modified**.
-* Pull request and merge result: recorded in §17.7 below.
+* Pull request and merge result: recorded in §18.7 below.

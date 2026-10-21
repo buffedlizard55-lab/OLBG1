@@ -1,7 +1,7 @@
 {
   "generated": "2026-10-21",
   "summary": {
-    "upstream_and_audit_findings": 24,
+    "upstream_and_audit_findings": 30,
     "flagged_fixture_rows": 136,
     "cross_checked_rows": 5,
     "missing_utc_rows": 45,
@@ -132,6 +132,66 @@
       "evidence": "A valid recorded source link is auditable provenance, not a guarantee that a remote publisher has not later changed its content.",
       "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21",
       "resolution": "The exact per-row source URLs are published in the Final Integration Audit. Any later discrepancy must remain blank/flagged until a governing-body source is re-opened and compared."
+    },
+    {
+      "id": "F-LIVE-01-DRIFT",
+      "category": "Live Recapture",
+      "severity": "medium",
+      "affected": "47 of 69 dataset rows matched to a live OLBG card",
+      "summary": "OLBG tip consensus and/or most-tipped selection moved between the committed capture and the 2026-10-21T07:05Z recapture.",
+      "evidence": "20 cards changed the selection OLBG highlights, e.g. Sorana Cirstea vs Sara Bejlek (Sara Bejlek -> Sorana Cirstea); Stefanos Tsitsipas vs Mikhail Kukushkin (Stefanos Tsitsipas 2-0 -> Mikhail Kukushkin); TB Rays @ MIL Brewers (MIL Brewers -> Over 5.50); MIL Bucks @ WAS Wizards (Washington Wizards -> WAS Wizards), and 27 kept the same selection with a different tip count/share. Consensus is an upstream opinion counter, not a verified sporting fact, so this changes no fixture, price or confidence tier.",
+      "official_url": "https://www.olbg.com/betting-tips",
+      "resolution": "Every matched row carries the recaptured consensus plus olbg.captured_utc and the superseded value in olbg.consensus_prior; the full before/after list is published on the Live Refresh page and in data/live_diff.json."
+    },
+    {
+      "id": "F-LIVE-02-NO-OFFICIAL",
+      "category": "Verification Boundary",
+      "severity": "high",
+      "affected": "72 live OLBG cards not present in the verified dataset",
+      "summary": "These events are listed because OLBG publishes them, but none of their kick-off times, participant records or ratings have been confirmed against a governing body in this pass.",
+      "evidence": "The 2026-10-21T07:05Z capture returned 141 cards across 15 sports; 69 join to an existing source-verified row by OLBG event_id and 72 do not. No price, winner pick or confidence tier is originated for an unjoined card.",
+      "official_url": "https://www.olbg.com/betting-tips",
+      "resolution": "Published as upstream-only rows on the Live Refresh page with every sporting field left blank and marked Unverified; they are excluded from data/fixtures.json, data/lines.json and the 134-event verified count until an official source confirms each one."
+    },
+    {
+      "id": "F-LIVE-03-TRUNCATION",
+      "category": "Upstream OLBG Defect",
+      "severity": "medium",
+      "affected": "18 dataset rows with an OLBG event_id",
+      "summary": "Dataset rows whose OLBG event page exists were not visible on the recaptured hub first screen.",
+      "evidence": "OLBG hubs render roughly 20 cards before a 'Load More Tips' control, so absence from the first screen is not evidence that OLBG has delisted or completed the event. Examples include basketball 535918/535921/535923 and darts 32331/32336, all still future-dated in the dataset.",
+      "official_url": "https://www.olbg.com/betting-tips/Basketball/4",
+      "resolution": "Recorded as 'not in capture' rather than deleted or expired; the rows stay in the dataset with their governing-body kick-off times and are listed with this caveat in data/live_diff.json."
+    },
+    {
+      "id": "F-LIVE-04-EMPTY-HUBS",
+      "category": "Upstream OLBG Coverage",
+      "severity": "medium",
+      "affected": "Aussie Rules (ID 22), eSports (ID 23), Rugby League (ID 10)",
+      "summary": "Two in-scope hubs returned 'No tips found', and the Rugby League hub returned only 2027 outright markets while the desk still carries 9 AFLW fixtures, 1 LoL Worlds tie and 7 RLWC26 fixtures.",
+      "evidence": "Fetched hubs for Aussie_Rules/22 and eSports/23 returned 'No tips found' at the capture time; Rugby_League/10 listed State of Origin 2027, Super League 2027 and NRL 2027 outrights only. Absence of OLBG tips does not invalidate the governing-body fixtures, but it does mean OLBG consensus cannot be refreshed for those sports.",
+      "official_url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+      "resolution": "Consensus for those three sports is retained from the earlier capture and labelled with its capture timestamp; the gap is published rather than back-filled."
+    },
+    {
+      "id": "F-LIVE-06-MLB-CLOCK",
+      "category": "Upstream OLBG Defect",
+      "severity": "medium",
+      "affected": "Baseball - TB Rays @ MIL Brewers (event_id=160789)",
+      "summary": "OLBG's baseball hub card shows '24 Oct 01:00' for a game the official MLB StatsAPI schedules for 2026-10-25T00:00:00Z.",
+      "evidence": "Verified against the official MLB StatsAPI schedule for 2026-10-24, which returns gamePk 849802, 'World Series Game 2', Tampa Bay Rays at Milwaukee Brewers, American Family Field, gameDate 2026-10-25T00:00:00Z. Even reading OLBG's clock as UTC-4, its label maps to 2026-10-24T05:00:00Z - roughly 19 hours before the official first pitch.",
+      "official_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24",
+      "resolution": "The desk keeps the official MLB time on mlb-849802 and treats the OLBG label as a display defect; the OLBG link is retained only as the upstream discovery reference."
+    },
+    {
+      "id": "F-LIVE-05-ZERO-TIPS",
+      "category": "Upstream OLBG Defect",
+      "severity": "low",
+      "affected": "Golf - Hero Womens Indian Open (event_id=101909)",
+      "summary": "The each-way outright card still renders an empty tip count / 0% share on the hub.",
+      "evidence": "The card shows 'Avani Prashanth' with no tip counter, matching the previously documented 0/0 division display defect on each-way-only outright markets.",
+      "official_url": "https://www.olbg.com/betting-tips/Golf/5",
+      "resolution": "Consensus is recorded as unavailable for this card; no share is inferred."
     },
     {
       "id": "T17-F1",
