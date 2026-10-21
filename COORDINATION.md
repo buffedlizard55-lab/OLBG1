@@ -1072,3 +1072,53 @@ this session re-verifies a fact it fetches the official source in-session and lo
 * **Publish record:** PR #31 — https://github.com/buffedlizard55-lab/OLBG1/pull/31 —
   (`arena/ccb6bde2-olbg1` → `main`). Merge result and GitHub Pages deploy verification for
   https://buffedlizard55-lab.github.io/OLBG1/ccb6bde2/ appended after execution.
+---
+
+## 26. Session `72198d3e-olbg1` — URC / AFLW gap-closing pass (fourth live pass)
+
+**Claim (2026-10-21T07:19Z).** Session `72198d3e-olbg1` claims **T23 — fourth live-verification pass** (section numbered **26** because `main` had already published §25 for session `ccb6bde2` while this branch was open; §20–§24 were left unused rather than renumbering another session's section),
+file scope: `scripts/live_verification.py`, `scripts/dataset_rows_b.py` (one row, `ru-urc-609578`),
+`scripts/build_dataset.py` (finding register only), plus the outputs those scripts regenerate. No file
+owned by another session was rewritten: this branch merged `origin/main` (through PR #34) and every
+shared output was regenerated from source, so T21's (§18) and T22's (§19) corrections — RLWC26 URLs,
+tennis provenance flags, de-templated prose, the NHL input fixes and the F1 start — are all preserved.
+
+### 26.1 What this pass re-read
+
+| Official page read | Rows touched | Outcome |
+|---|---|---|
+| [URC 2026/27 fixtures in full](https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/) | 4 Round 4 rows | 3 confirmed, 1 corrected |
+| [AFL official AFLW Round 11 board](https://www.afl.com.au/aflw) | 3 remaining rows | 1 confirmed, 2 flagged |
+| [Premiership Rugby fixtures](https://www.premrugby.com/fixtures-results) | 5 | chrome only, still cross-checked |
+| [NRL women's draw `?competition=176`](https://www.nrl.com/draw/?competition=176&round=2&season=2026) | 2 | canonicalises to `competition=131` (men's) — T22 has since re-pointed both rows to the IRL records, and that fix is kept |
+| [PDC draw release](https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed) (4 attempts incl. a reader proxy) | 16 | consent wall only, unchanged |
+
+### 26.2 Correction landed
+
+**`ru-urc-609578` Leinster v Munster.** The official URC release publishes the Round 4 venue as
+**"TBC, Dublin"**, not Aviva Stadium. `dataset_rows_b.py` now writes `Dublin (venue TBC)` and the row
+carries a flag until a ground is confirmed. Participants, competition and the 17:00Z kick-off were
+confirmed against the same page and left untouched.
+
+**Flags added:** `aflw-r11-01` (board code `NHO`, which is not the published Arden Street Oval) and
+`aflw-r11-05` (code `KCC`, not decodable to Kinetic Stadium). Pairings and match ids 8979 / 8976 were
+confirmed; the venue is not guessed.
+
+**Findings:** `LIVE-F-V11-URC-VENUE-TBC`, `LIVE-F-V12-AFLW-VENUE-CODES`, `LIVE-F-V13-PREMIERSHIP-SHELL`
+on the Flagged page; `F-V14` (Premiership list still unreadable) and `F-V15` (AFLW venue codes) in the
+verification register. Published findings 31 → 34.
+
+**Gap after this pass:** 62 rows remain not re-read — darts 16 (PDC consent wall), tennis 11
+(client-rendered draws, already flagged as reconstructed by T22), Premiership 5, volleyball 8
+(PlusLiga redirect to tauronliga.pl, SuperLega not read), EuroLeague/EuroCup 6, Gaelic football 4,
+golf 4, greyhounds 3, cricket 1, esports 1, motor racing 1. Every one names its blocker on the page.
+
+### 26.3 Register after the pass
+
+**48 confirmed, 20 corrected, 4 flagged, 62 not re-checked** of 134 rows (was 44 / 19 / 2 / 69 before
+this pass). Gates: `build_dataset.py` → 134 rows, 34 findings · `origin_lines.py` → 126 H2H books,
+31 High picks · `live_verification.py` → 48/20/4/62 · `build_site.py` → 29 root + 29 mirror pages ·
+`validate.py` → **135 pages, 0 errors, 0 warnings** · `final_audit.py`, `ebfbd966_validate.py` → passed.
+Confidence distribution unchanged at 31 High / 35 Medium / 60 Low.
+
+**Publish record:** see §26.4.
