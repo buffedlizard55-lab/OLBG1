@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-21T07:05Z",
+  "generated": "2026-10-21T07:20Z",
   "method": "Each row was matched against a freshly fetched governing-body page or endpoint. Participants, date, venue and (where the publisher states one) start time and game identifier were compared value by value. A row is marked confirmed only when the official page was actually read in this pass, corrected only when the page settles the value unambiguously, and flagged when the page disagrees or cannot decide it.",
   "sources": {
     "nhl_sched": {
@@ -61,14 +61,18 @@
     "prem": {
       "name": "Premiership Rugby official fixtures & results",
       "url": "https://www.premrugby.com/fixtures-results"
+    },
+    "urc_new": {
+      "name": "United Rugby Championship official 2026/27 fixtures in full (Round 4)",
+      "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
     }
   },
   "summary": {
     "rows": 134,
-    "confirmed": 44,
-    "corrected": 19,
-    "flagged": 2,
-    "not_rechecked": 69
+    "confirmed": 48,
+    "corrected": 20,
+    "flagged": 4,
+    "not_rechecked": 62
   },
   "by_sport": {
     "ice-hockey": {
@@ -114,10 +118,10 @@
       "not_rechecked": 1
     },
     "rugby-union": {
-      "confirmed": 0,
-      "corrected": 0,
+      "confirmed": 3,
+      "corrected": 1,
       "flagged": 0,
-      "not_rechecked": 12
+      "not_rechecked": 8
     },
     "rugby-league": {
       "confirmed": 0,
@@ -138,10 +142,10 @@
       "not_rechecked": 8
     },
     "aussie-rules": {
-      "confirmed": 6,
+      "confirmed": 7,
       "corrected": 0,
-      "flagged": 0,
-      "not_rechecked": 3
+      "flagged": 2,
+      "not_rechecked": 0
     },
     "esports": {
       "confirmed": 0,
@@ -387,7 +391,7 @@
       "status": "not_rechecked",
       "source_name": "EuroLeague official game center & standings",
       "source_url": "https://www.euroleaguebasketball.net/euroleague/game-center/",
-      "evidence": "Not re-fetched in this pass.",
+      "evidence": "EuroLeague and EuroCup game-centre pages are client-rendered and were not re-read in the later passes either, so these six rows keep their original status.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -399,7 +403,7 @@
       "status": "not_rechecked",
       "source_name": "EuroLeague official game center & standings",
       "source_url": "https://www.euroleaguebasketball.net/euroleague/game-center/",
-      "evidence": "Not re-fetched in this pass.",
+      "evidence": "EuroLeague and EuroCup game-centre pages are client-rendered and were not re-read in the later passes either, so these six rows keep their original status.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -411,7 +415,7 @@
       "status": "not_rechecked",
       "source_name": "EuroLeague official game center & standings",
       "source_url": "https://www.euroleaguebasketball.net/euroleague/game-center/",
-      "evidence": "Not re-fetched in this pass.",
+      "evidence": "EuroLeague and EuroCup game-centre pages are client-rendered and were not re-read in the later passes either, so these six rows keep their original status.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -423,7 +427,7 @@
       "status": "not_rechecked",
       "source_name": "EuroLeague official game center & standings",
       "source_url": "https://www.euroleaguebasketball.net/euroleague/game-center/",
-      "evidence": "Not re-fetched in this pass.",
+      "evidence": "EuroLeague and EuroCup game-centre pages are client-rendered and were not re-read in the later passes either, so these six rows keep their original status.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -435,7 +439,7 @@
       "status": "not_rechecked",
       "source_name": "BKT EuroCup official game center",
       "source_url": "https://www.euroleaguebasketball.net/eurocup/game-center/",
-      "evidence": "Not re-fetched in this pass.",
+      "evidence": "EuroLeague and EuroCup game-centre pages are client-rendered and were not re-read in the later passes either, so these six rows keep their original status.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -447,7 +451,7 @@
       "status": "not_rechecked",
       "source_name": "BKT EuroCup official game center",
       "source_url": "https://www.euroleaguebasketball.net/eurocup/game-center/",
-      "evidence": "Not re-fetched in this pass.",
+      "evidence": "EuroLeague and EuroCup game-centre pages are client-rendered and were not re-read in the later passes either, so these six rows keep their original status.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1059,7 +1063,7 @@
       "status": "not_rechecked",
       "source_name": "LNR official Top 14 2026-2027 calendar & standings",
       "source_url": "https://top14.lnr.fr/calendrier-et-resultats",
-      "evidence": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
+      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1071,7 +1075,7 @@
       "status": "not_rechecked",
       "source_name": "LNR official Top 14 2026-2027 calendar & standings",
       "source_url": "https://top14.lnr.fr/calendrier-et-resultats",
-      "evidence": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
+      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1083,7 +1087,7 @@
       "status": "not_rechecked",
       "source_name": "LNR official Top 14 2026-2027 calendar & standings",
       "source_url": "https://top14.lnr.fr/calendrier-et-resultats",
-      "evidence": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
+      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1092,48 +1096,48 @@
       "sport": "rugby-union",
       "competition": "United Rugby Championship",
       "match": "Connacht v Zebre Parma",
-      "status": "not_rechecked",
-      "source_name": "United Rugby Championship official 2026/27 fixtures",
+      "status": "confirmed",
+      "source_name": "United Rugby Championship official 2026/27 fixtures in full (Round 4)",
       "source_url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
-      "evidence": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "URC 2026/27 fixtures release, Round 4: Connacht v Zebre Parma, Dexcom Stadium, Galway, Friday 23 October, KO 19:45 IRE & UK (= 18:45Z) \u2014 participants, venue, date and kick-off all match.",
+      "action": "No change required.",
+      "checked_at": "2026-10-21T07:20Z"
     },
     {
       "id": "ru-urc-609576",
       "sport": "rugby-union",
       "competition": "United Rugby Championship",
       "match": "Vodacom Bulls v Ulster",
-      "status": "not_rechecked",
-      "source_name": "United Rugby Championship official 2026/27 fixtures",
+      "status": "confirmed",
+      "source_name": "United Rugby Championship official 2026/27 fixtures in full (Round 4)",
       "source_url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
-      "evidence": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "Round 4: Vodacom Bulls v Ulster, Loftus Versfeld, Pretoria, Saturday 24 October, KO 12:45 IRE & UK (= 11:45Z) \u2014 all match.",
+      "action": "No change required.",
+      "checked_at": "2026-10-21T07:20Z"
     },
     {
       "id": "ru-urc-609580",
       "sport": "rugby-union",
       "competition": "United Rugby Championship",
       "match": "DHL Stormers v Scarlets",
-      "status": "not_rechecked",
-      "source_name": "United Rugby Championship official 2026/27 fixtures",
+      "status": "confirmed",
+      "source_name": "United Rugby Championship official 2026/27 fixtures in full (Round 4)",
       "source_url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
-      "evidence": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "Round 4: DHL Stormers v Scarlets, DHL Stadium, Cape Town, Saturday 24 October, KO 15:00 IRE & UK (= 14:00Z) \u2014 all match.",
+      "action": "No change required.",
+      "checked_at": "2026-10-21T07:20Z"
     },
     {
       "id": "ru-urc-609578",
       "sport": "rugby-union",
       "competition": "United Rugby Championship",
       "match": "Leinster v Munster",
-      "status": "not_rechecked",
-      "source_name": "United Rugby Championship official 2026/27 fixtures",
+      "status": "corrected",
+      "source_name": "United Rugby Championship official 2026/27 fixtures in full (Round 4)",
       "source_url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
-      "evidence": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "URC Round 4 lists Leinster v Munster on Saturday 24 October, KO 18:00 IRE & UK (= 17:00Z), with the venue published as 'TBC, Dublin'. The row asserted Aviva Stadium, which the official release does not confirm.",
+      "action": "Venue changed to 'Dublin (venue TBC)'; participants, competition and kick-off verified and left unchanged.",
+      "checked_at": "2026-10-21T07:20Z"
     },
     {
       "id": "ru-gloucester-bath",
@@ -1143,7 +1147,7 @@
       "status": "not_rechecked",
       "source_name": "Gallagher Premiership official fixtures hub",
       "source_url": "https://www.premrugby.com/fixtures-results",
-      "evidence": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
+      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1155,7 +1159,7 @@
       "status": "not_rechecked",
       "source_name": "Gallagher Premiership official fixtures hub",
       "source_url": "https://www.premrugby.com/fixtures-results",
-      "evidence": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
+      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1167,7 +1171,7 @@
       "status": "not_rechecked",
       "source_name": "Gallagher Premiership official fixtures hub",
       "source_url": "https://www.premrugby.com/fixtures-results",
-      "evidence": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
+      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1179,7 +1183,7 @@
       "status": "not_rechecked",
       "source_name": "Gallagher Premiership official fixtures hub",
       "source_url": "https://www.premrugby.com/fixtures-results",
-      "evidence": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
+      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1191,7 +1195,7 @@
       "status": "not_rechecked",
       "source_name": "Gallagher Premiership official fixtures hub",
       "source_url": "https://www.premrugby.com/fixtures-results",
-      "evidence": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
+      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1524,12 +1528,12 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "match": "North Melbourne v Adelaide Crows",
-      "status": "not_rechecked",
-      "source_name": "AFL official 2026 NAB AFLW fixture & ladder",
+      "status": "flagged",
+      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board",
       "source_url": "https://www.afl.com.au/aflw",
-      "evidence": "The Round 11 board fragment returned did not include this pairing; only six of the nine AFLW fixtures were readable.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "AFLW Round 11 board lists nmfc v adel as match 8979 with venue code NHO. The board publishes three-letter venue codes only; NHO was not decoded with certainty and does not correspond to the row's 'Arden Street Oval, Melbourne'.",
+      "action": "Left as published and flagged for a human to confirm the venue; the pairing and match id do match.",
+      "checked_at": "2026-10-21T07:20Z"
     },
     {
       "id": "aflw-r11-02",
@@ -1560,24 +1564,24 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "match": "Carlton v GWS GIANTS",
-      "status": "not_rechecked",
-      "source_name": "AFL official 2026 NAB AFLW fixture & ladder",
+      "status": "confirmed",
+      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board",
       "source_url": "https://www.afl.com.au/aflw",
-      "evidence": "The Round 11 board fragment returned did not include this pairing; only six of the nine AFLW fixtures were readable.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "AFLW Round 11 board: carl v gws, match id 8975, venue code IKP (IKON Park) \u2014 pairing, home/away and venue match. The board prints kick-offs in the viewer's timezone, so the stored UTC was left as published.",
+      "action": "No change required.",
+      "checked_at": "2026-10-21T07:20Z"
     },
     {
       "id": "aflw-r11-05",
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "match": "Hawthorn v Essendon",
-      "status": "not_rechecked",
-      "source_name": "AFL official 2026 NAB AFLW fixture & ladder",
+      "status": "flagged",
+      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board",
       "source_url": "https://www.afl.com.au/aflw",
-      "evidence": "The Round 11 board fragment returned did not include this pairing; only six of the nine AFLW fixtures were readable.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "AFLW Round 11 board lists haw v ess as match 8976 with venue code KCC. The row claims Kinetic Stadium, Frankston; KCC was not decoded with certainty from the official board.",
+      "action": "Left as published and flagged for a human to confirm the venue; the pairing and match id do match.",
+      "checked_at": "2026-10-21T07:20Z"
     },
     {
       "id": "aflw-r11-06",
@@ -1879,11 +1883,31 @@
       "id": "F-V10",
       "severity": "medium",
       "area": "Coverage \u2014 most rows were not re-fetched in this pass",
-      "detail": "Fresh official reads covered 65 of 134 rows (confirmed + corrected + flagged). The remaining 69 keep their original verified or cross-checked status and their source links, but this pass did not re-read them.",
-      "status": "Every one of the 69 is listed on the Live Verification page with the reason, so the gap is visible rather than implied. No row is claimed as re-verified without a read.",
+      "detail": "Fresh official reads covered 72 of 134 rows (confirmed + corrected + flagged). The remaining 62 keep their original verified or cross-checked status and their source links, but this pass did not re-read them.",
+      "status": "Every one of the 62 is listed on the Live Verification page with the reason, so the gap is visible rather than implied. No row is claimed as re-verified without a read.",
       "source": "nhl_sched",
       "source_name": "NHL official schedule API (2026-10-21)",
       "source_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+    },
+    {
+      "id": "F-V14",
+      "severity": "low",
+      "area": "Rugby union \u2014 Premiership fixture list still not readable",
+      "detail": "A further fetch of premrugby.com/fixtures-results returned navigation, sponsor blocks and footer only: no fixture rows were present in the returned document, so the five Gallagher Premiership rows still cannot be re-read from the union's own site.",
+      "status": "Those five rows keep their cross-checked status; they were not promoted to verified on the strength of an unread page.",
+      "source": "prem",
+      "source_name": "Premiership Rugby official fixtures & results",
+      "source_url": "https://www.premrugby.com/fixtures-results"
+    },
+    {
+      "id": "F-V15",
+      "severity": "low",
+      "area": "AFLW \u2014 venue codes on the official board are not decodable to venue names",
+      "detail": "The Round 11 board publishes three-letter venue codes (IKP, KCC, NHO, ALB, GMHBA, PFS, MWO, HEN, RSEA). IKP resolves to IKON Park and matches aflw-r11-04. KCC (haw v ess) and NHO (nmfc v adel) could not be decoded with certainty, and NHO does not correspond to the row's Arden Street Oval.",
+      "status": "Two rows flagged rather than guessed. The board also renders kick-offs in the viewer's timezone, so stored UTC values were left as published.",
+      "source": "aflw",
+      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board",
+      "source_url": "https://www.afl.com.au/aflw"
     },
     {
       "id": "F-V11",
