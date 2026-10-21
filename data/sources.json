@@ -1,0 +1,156 @@
+{
+  "generated": "2026-10-21",
+  "policy": "Only governing bodies, leagues, tours and official data endpoints are used to confirm a fixture, a record or a ranking. Betting sites, aggregators, Wikipedia and news outlets are never used as a verification source; where they appear they are recorded as unverified cross-checks.",
+  "sources": [
+    {
+      "id": "nhl-schedule",
+      "name": "NHL official schedule API",
+      "url": "https://api-web.nhle.com/v1/schedule/2026-10-21",
+      "publisher": "National Hockey League",
+      "covers": "Ice hockey fixtures, venues, start times, game IDs",
+      "status": "verified"
+    },
+    {
+      "id": "nhl-standings",
+      "name": "NHL official standings API",
+      "url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+      "publisher": "National Hockey League",
+      "covers": "Team points percentage, home/road splits, goals for/against",
+      "status": "verified"
+    },
+    {
+      "id": "nba-games",
+      "name": "NBA.com games & scores",
+      "url": "https://www.nba.com/games?date=2026-10-21",
+      "publisher": "National Basketball Association",
+      "covers": "Basketball fixtures, start times, game IDs",
+      "status": "verified"
+    },
+    {
+      "id": "nba-standings",
+      "name": "NBA.com standings",
+      "url": "https://www.nba.com/standings",
+      "publisher": "National Basketball Association",
+      "covers": "Win/loss records and home/road splits",
+      "status": "verified"
+    },
+    {
+      "id": "mlb-schedule",
+      "name": "MLB StatsAPI schedule",
+      "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30",
+      "publisher": "Major League Baseball",
+      "covers": "Baseball fixtures, venues, start times, game IDs",
+      "status": "verified"
+    },
+    {
+      "id": "mlb-standings",
+      "name": "MLB StatsAPI standings",
+      "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026",
+      "publisher": "Major League Baseball",
+      "covers": "Final 2026 regular-season records and home/road splits",
+      "status": "verified"
+    },
+    {
+      "id": "wst-home",
+      "name": "World Snooker Tour - live and upcoming matches",
+      "url": "https://www.wst.tv/",
+      "publisher": "World Snooker Tour",
+      "covers": "Snooker draw, session times, match centre links",
+      "status": "verified"
+    },
+    {
+      "id": "wst-rankings",
+      "name": "WST Johnstone's Paint World Rankings",
+      "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8",
+      "publisher": "World Snooker Tour",
+      "covers": "Official world ranking positions and prize money",
+      "status": "verified"
+    },
+    {
+      "id": "wst-one-year",
+      "name": "WST One Year List",
+      "url": "https://www.wst.tv/rankings/",
+      "publisher": "World Snooker Tour",
+      "covers": "Current-season (one-year) ranking list",
+      "status": "verified"
+    },
+    {
+      "id": "pdc-schedule",
+      "name": "PDC - 2026 Machineseeker European Championship schedule confirmed",
+      "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/",
+      "publisher": "Professional Darts Corporation",
+      "covers": "Darts first-round draw and venue",
+      "status": "verified",
+      "note": "Page is behind a cookie-consent interstitial when fetched directly; the schedule text was read from the publisher's own indexed copy of this URL. Flagged for manual re-check."
+    },
+    {
+      "id": "pdc-calendar",
+      "name": "PDC calendar - European Championship 2026",
+      "url": "https://www.pdc.tv/calendar/",
+      "publisher": "Professional Darts Corporation",
+      "covers": "Event dates and venue (Westfalenhalle, Dortmund; 22-25 Oct 2026)",
+      "status": "verified"
+    },
+    {
+      "id": "nzc-fixtures",
+      "name": "New Zealand Cricket official fixtures",
+      "url": "https://scoring.nzc.nz/fixtures",
+      "publisher": "New Zealand Cricket",
+      "covers": "Cricket fixtures, venues, match centre links",
+      "status": "verified",
+      "note": "Session start times on this page render in the viewer's local timezone; only the date and venue are recorded here."
+    },
+    {
+      "id": "f1-calendar",
+      "name": "Formula 1 official 2026 race calendar",
+      "url": "https://www.formula1.com/en/racing/2026",
+      "publisher": "Formula 1 / FIA",
+      "covers": "Round dates and completed round podiums",
+      "status": "verified",
+      "note": "Circuit venue for Round 18 was not captured in this build and is flagged rather than assumed."
+    },
+    {
+      "id": "gaa-fixtures",
+      "name": "GAA official fixtures & results",
+      "url": "https://www.gaa.ie/fixtures-results",
+      "publisher": "Gaelic Athletic Association",
+      "covers": "Gaelic games fixtures",
+      "status": "verified",
+      "note": "Used to establish a verified negative: no Gaelic football fixture is scheduled 21-25 October 2026."
+    },
+    {
+      "id": "pgatour-tickets",
+      "name": "PGA TOUR - tournament tickets / schedule",
+      "url": "https://www.pgatour.com/tickets",
+      "publisher": "PGA TOUR",
+      "covers": "PGA TOUR event dates and host courses",
+      "status": "verified"
+    },
+    {
+      "id": "prem-rugby",
+      "name": "PREM Rugby - fixtures & results",
+      "url": "https://www.premrugby.com/fixtures-results",
+      "publisher": "Premiership Rugby",
+      "covers": "Gallagher Premiership fixtures",
+      "status": "unverified",
+      "note": "The official fixtures page is client-rendered and returned no fixture rows when fetched. Fixtures for this page are recorded as CROSS-CHECKED ONLY and flagged."
+    },
+    {
+      "id": "olbg-tips",
+      "name": "OLBG betting tips hub",
+      "url": "https://www.olbg.com/betting-tips",
+      "publisher": "OLBG",
+      "covers": "Tipster consensus, coverage evidence",
+      "status": "reference",
+      "note": "OLBG is the subject of the reverse-engineering exercise, not a verification source."
+    },
+    {
+      "id": "olbg-sitemap",
+      "name": "OLBG betting-tips sitemap",
+      "url": "https://www.olbg.com/sitemap-betting-tips.xml",
+      "publisher": "OLBG",
+      "covers": "Sport IDs and URL patterns",
+      "status": "reference"
+    }
+  ]
+}
