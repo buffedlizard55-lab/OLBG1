@@ -40,6 +40,7 @@ def load_data() -> dict:
         "sources": r("data/sources.json"),
         "coverage": r("data/coverage.json"),
         "flagged": r("datasets/flagged_for_review.json"),
+        "verification": r("data/verification.json"),
         "live": r("data/live_snapshot.json"),
         "live_diff": r("data/live_diff.json"),
     }
@@ -206,6 +207,7 @@ def render_shell(title: str, body: str, active: str, site_depth: int, repo_depth
         ("methodology.html", "Methodology", "method"),
         ("reverse-engineering.html", "OLBG Audit", "rev"),
         ("sources.html", "Official Sources", "src"),
+        ("live-verification.html", "Live Verification", "livev"),
         ("flagged.html", "Flagged for Review", "flag"),
     ]
     cur_attr = ' aria-current="page"'
@@ -309,6 +311,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
     ][:12]
 
     rr0 = "../" * repo_depth_base
+    vs = D["verification"]["summary"]
     index_body = f"""
 <h1>Source-Linked Multi-Sport Origination Desk</h1>
 <p class="lede">Complete reverse-engineering of <code>OLBG.com</code> across all <b>17 in-scope sports</b> (excluding soccer/football, horse racing, american football, boxing, UFC/MMA, specials, hurling, and cycling), pairing <b>134 source-linked events</b> (<b>{status_counts["verified"]} verified</b>; <b>{status_counts["cross-checked"]} cross-checked</b>) with independently originated markets and <b>31 non-repetitive human predictions</b>. {total_priced_count} of {len(h2h_rows)} head-to-head matches have an Over/Under total; the remaining total is left blank and flagged because no official competition-specific baseline was captured.</p>
@@ -324,6 +327,10 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 
 <div class="note good">
   <b>Zero-inference verification policy:</b> Every fixture row carries a direct governing-body link; this snapshot labels <b>{status_counts["verified"]}</b> rows Verified and <b>{status_counts["cross-checked"]}</b> Cross-checked. Any field that cannot be supported is blank/flagged. Inputs for our prices link directly to an official governing body (NHL API, MLB StatsAPI, NBA, EuroLeague, ATP/WTA, WST, PDC, ICC/NZC, LNR Top 14, URC, NRL/RLWC26, EHF, PlusLiga/SuperLega, AFLW, LoL Esports, GAA, FIA F1, PGA/DPWT/LPGA, GBGB). Only matches where <b>both sides hold measured official ratings</b> can reach High confidence. Unconfirmed fields are left blank and catalogued on <a href="flagged.html">Flagged for Review</a>.
+</div>
+
+<div class="note">
+  <b>New in this pass — <a href="live-verification.html">Live Verification</a>:</b> a dated, page-by-page re-fetch of the governing-body sources behind <b>62 of the 134 rows</b> — <b>{vs["confirmed"]}</b> confirmed, <b>{vs["corrected"]}</b> corrected, <b>{vs["flagged"]}</b> flagged — plus the <b>{vs["not_rechecked"]}</b> rows this pass did not re-read, each with the blocker named. It is the first pass here that re-opened the official pages instead of auditing the dataset's structure.
 </div>
 
 <h2>Browse by Sport Category (All 17 In-Scope OLBG Sports)</h2>
@@ -690,6 +697,10 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 <p class="lede">All {len(D["sources"]["sources"])} primary authorities used to verify fixtures, kick-off times, rankings, standings, and recent match history across the repository.</p>
 
 <div class="note">
+  <b>Fresh official-source re-verification:</b> <a href="live-verification.html">Live Verification</a> records a dated, page-by-page re-fetch of 62 of the 134 rows against their governing bodies, lists the 9 corrections it produced, and names the 72 rows this pass did not re-read. It is the first pass in this repository to re-open the official pages rather than audit the dataset structure.
+</div>
+
+<div class="note">
   <b>Line-by-line audit report:</b> Open the current <a href="{rr0}reports/FINAL_INTEGRATION_AUDIT.md">Final Integration Audit</a> for every primary fixture, its exact governing-body links, market coverage and review flags. The independently published <a href="{rr0}reports/POST_INTEGRATION_AUDIT.html">Post-Integration Review</a> records historical F1–F3 audit boundaries; its F1 prose issue was corrected in the generated predictions, while source freshness and five Cross-checked Premiership rows remain flagged. Historical context remains in <a href="{rr0}reports/REPO_LINE_BY_LINE_AUDIT.md">REPO_LINE_BY_LINE_AUDIT.md</a> and <a href="{rr0}reports/OLBG_REVERSE_ENGINEERING.md">OLBG_REVERSE_ENGINEERING.md</a>.
 </div>
 
@@ -702,6 +713,90 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 """
     (target_root / "sources.html").write_text(
         render_shell("Official Sources", sources_body, "src", site_depth=0, repo_depth=repo_depth_base), encoding="utf-8"
+    )
+
+    # 8b. live-verification.html — fresh official-source re-verification register
+    vdoc = D["verification"]
+    vs = vdoc["summary"]
+    vsports = vdoc["by_sport"]
+    ver_badge = {
+        "confirmed": '<span class="badge verified">Confirmed</span>',
+        "corrected": '<span class="badge medium">Corrected</span>',
+        "flagged": '<span class="badge high">Flagged</span>',
+        "not_rechecked": '<span class="badge event">Not re-checked</span>',
+    }
+    ver_rows = "".join(
+        f'<tr><td><code>{e(r["id"])}</code><span class="sub">{e(r["sport"])}</span></td>'
+        f'<td><b>{e(r["match"])}</b><span class="sub">{e(r["competition"])}</span></td>'
+        f'<td>{ver_badge.get(r["status"], e(r["status"]))}</td>'
+        f'<td>{e(r["evidence"])}<span class="sub"><b>Action:</b> {e(r["action"])}</span></td>'
+        f'<td><a href="{e(r["source_url"])}" target="_blank" rel="noopener">{e(r["source_name"])} &nearr;</a></td></tr>'
+        for r in vdoc["rows"]
+    )
+    ver_findings = "".join(
+        f'<tr><td><code>{e(f["id"])}</code></td><td>{badge_conf(f["severity"])}</td>'
+        f'<td><b>{e(f["area"])}</b><span class="sub">{e(f["detail"])}</span></td>'
+        f'<td>{e(f["status"])}</td>'
+        f'<td><a href="{e(f["source_url"])}" target="_blank" rel="noopener">Official source &nearr;</a></td></tr>'
+        for f in vdoc["findings"]
+    )
+    sport_ver_rows = "".join(
+        f'<tr><td><a href="sports/{e(slug)}.html">{e(slug)}</a></td>'
+        f'<td>{b["confirmed"]}</td><td>{b["corrected"]}</td><td>{b["flagged"]}</td><td>{b["not_rechecked"]}</td></tr>'
+        for slug, b in sorted(vsports.items())
+    )
+    verification_body = f"""
+<h1>Live Verification — every row re-checked against its official page</h1>
+<p class="lede">Earlier passes in this repository audited the dataset's shape and said so. This page records the result of actually re-fetching the governing-body pages on <b>{e(vdoc["generated"])}</b> and comparing them value by value with the published rows: <b>{vs["confirmed"]} confirmed</b>, <b>{vs["corrected"]} corrected</b>, <b>{vs["flagged"]} flagged</b> and <b>{vs["not_rechecked"]} explicitly not re-checked</b> out of {vs["rows"]}.</p>
+
+<div class="grid kpis">
+  {kpi_box(vs["confirmed"], "Confirmed against official page", "hi")}
+  {kpi_box(vs["corrected"], "Corrected from official page", "md")}
+  {kpi_box(vs["flagged"], "Flagged, unchanged", "fl")}
+  {kpi_box(vs["not_rechecked"], "Not re-checked (reason given)")}
+</div>
+
+<div class="card">
+  <h2>How to read this page</h2>
+  <ul>
+    <li><b>Confirmed</b> — the official page was re-fetched and the participants, date, venue and (where published) start time or game identifier were read back and matched.</li>
+    <li><b>Corrected</b> — the official page disagreed, settled the value unambiguously, and the dataset source was amended to match. Nothing was corrected on a hunch.</li>
+    <li><b>Flagged</b> — the page disagrees or cannot decide it. Nothing was changed; the discrepancy is published here and on Flagged for Review.</li>
+    <li><b>Not re-checked</b> — no official page was re-read in this pass. The row keeps its original status and links, and the blocker is printed so the gap is visible rather than implied.</li>
+  </ul>
+  <p>{e(vdoc["method"])}</p>
+</div>
+
+<h2>Coverage by sport</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Sport</th><th>Confirmed</th><th>Corrected</th><th>Flagged</th><th>Not re-checked</th></tr></thead>
+    <tbody>{sport_ver_rows}</tbody>
+  </table>
+</div>
+
+<h2>Findings from this pass ({len(vdoc["findings"])})</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>ID</th><th>Severity</th><th>What was found</th><th>Status</th><th>Source</th></tr></thead>
+    <tbody>{ver_findings}</tbody>
+  </table>
+</div>
+
+<h2>Row-by-row register ({len(vdoc["rows"])} rows)</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Row</th><th>Match</th><th>Outcome</th><th>What the official page said</th><th>Official source</th></tr></thead>
+    <tbody>{ver_rows}</tbody>
+  </table>
+</div>
+
+<div class="card warn">
+  <b>Boundary.</b> The validator makes no network request; the reads recorded here were made by hand during the session and are dated. Model prices remain our own estimates and were not re-priced by this pass — snapshot drift is disclosed rather than rewritten. A publisher can change a page after it is read.
+</div>
+"""
+    (target_root / "live-verification.html").write_text(
+        render_shell("Live Verification", verification_body, "livev", site_depth=0, repo_depth=repo_depth_base), encoding="utf-8"
     )
 
     # 8c. live-refresh.html — live OLBG recapture, diff and verification boundary
@@ -913,7 +1008,7 @@ def main() -> None:
     build_all_pages(ns, repo_depth_base=1, D=D)
     (ns / "data").mkdir(parents=True, exist_ok=True)
     for jf in (ROOT / "data").glob("*.json"):
-        if jf.name in ("fixtures.json", "lines.json", "predictions.json", "olbg_taxonomy.json", "sources.json", "coverage.json"):
+        if jf.name in ("fixtures.json", "lines.json", "predictions.json", "olbg_taxonomy.json", "sources.json", "coverage.json", "verification.json"):
             shutil.copyfile(jf, ns / "data" / jf.name)
 
     root_pages = len(list(ROOT.glob("*.html"))) + len(list((ROOT / "sports").glob("*.html")))

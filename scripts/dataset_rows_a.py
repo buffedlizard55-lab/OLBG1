@@ -34,7 +34,7 @@ ATP_ALMATY = {"name": "ATP Tour official Almaty Open draw (event 9410)", "url": 
 ATP_LYON = {"name": "ATP Tour official Lyon Open draw (event 496)", "url": "https://www.atptour.com/en/scores/current/lyon/496/draws"}
 ATP_BRUSSELS = {"name": "ATP Tour official European Open Brussels draw", "url": "https://www.atptour.com/en/scores/current/brussels/7485/draws"}
 ATP_RANK = {"name": "PIF ATP Rankings official singles table", "url": "https://www.atptour.com/en/rankings/singles"}
-WTA_NINGBO = {"name": "WTA official Ningbo Open draw & order of play", "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"}
+WTA_NINGBO = {"name": "WTA official Ningbo Open draw & order of play", "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"}
 WTA_OSAKA = {"name": "WTA official Japan Open Osaka draw", "url": "https://www.wtatennis.com/tournaments/405/osaka/2026/draws"}
 WTA_RANK = {"name": "PIF WTA Official Singles Rankings", "url": "https://www.wtatennis.com/rankings/singles"}
 WST_LIVE = {"name": "World Snooker Tour official match centre", "url": "https://www.wst.tv/"}
@@ -60,8 +60,8 @@ def get_rows_a() -> list[dict]:
           "url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/FLA_Panthers_@_OTT_Senators/13?event_id=199896"},
          ["Starting goaltenders unconfirmed pre-skate; OLBG shows unlabelled EDT timestamp 'Today 19:37'"]),
         ("nhl-2026020154", "2026-10-22T23:00:00Z", "Boston Bruins", "Nashville Predators", "TD Garden, Boston",
-         ("Points percentage", "0.750 (7-2-1, 5-1-0 home, +14 GD)", 75.0), ("Points percentage", "0.563 (3-2-3, 0 GD)", 56.3),
-         None, []),
+         ("Points percentage", "0.750 (7-2-1, 3-1-0 home, +14 GD)", 75.0), ("Points percentage", "0.563 (3-2-3, 0 GD)", 56.3),
+         None, ["Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved."]),
         ("nhl-2026020155", "2026-10-22T23:00:00Z", "Toronto Maple Leafs", "New York Rangers", "Scotiabank Arena, Toronto",
          ("Points percentage", "0.545 (5-4-2)", 54.5), ("Points percentage", "0.682 (7-3-1, +9 GD)", 68.2),
          None, []),
@@ -70,7 +70,7 @@ def get_rows_a() -> list[dict]:
          None, ["Back-to-back road spot for Florida after playing in Ottawa on 21 October"]),
         ("nhl-2026020160", "2026-10-23T00:00:00Z", "St. Louis Blues", "Vegas Golden Knights", "Enterprise Center, St. Louis",
          ("Points percentage", "0.500 (4-4-1)", 50.0), ("Points percentage", "0.800 (8-2-0, W3 winning streak)", 80.0),
-         None, []),
+         None, ["Snapshot drift disclosed 2026-10-21: a re-fetch of api-web.nhle.com/v1/standings/2026-10-20 (standingsDateTimeUtc 2026-10-21T07:05:30Z) now returns Vegas at 8-3-0, .727, L1 over 11 games played, i.e. the club has played once since the 8-2-0 / W3 snapshot used to price this match. The priced inputs and the stored line are retained unchanged and labelled as a pre-game snapshot; the live table link is on the row for manual review."]),
     ]
     for gid, utc, home, away, venue, hi, ai, olbg, flags in nhl_games:
         num = gid.split("-")[1]
@@ -345,22 +345,22 @@ def get_rows_a() -> list[dict]:
         ("snk-zhang-williams", "09:00", "Zhang Anda", "Mark Williams", 21, 8,
          "https://www.wst.tv/match-centre/480e5abf-5766-44ad-9918-f822ceefd4a5", None),
         ("snk-holt-brown", "14:00", "Michael Holt", "Jordan Brown", None, None,
-         "https://www.wst.tv/match-centre/5b3a7f22-1c41-48e8-8a2c-94b28a21b9d1", None),
+         "https://www.wst.tv/match-centre/e58a00e5-e6a7-479b-98d0-5c7867af28a8", None),
         ("snk-gao-gilbert", "14:00", "Gao Yang", "David Gilbert", None, 25,
-         "https://www.wst.tv/match-centre/81c92a40-4d32-4b28-9c61-2f811d3a40c2", None),
+         "https://www.wst.tv/match-centre/4fb27af0-7db4-4ec2-b93b-137de3f66135", None),
         ("snk-noppon-donaldson", "14:00", "Noppon Saengkham", "Scott Donaldson", 31, None,
-         "https://www.wst.tv/match-centre/2f09a44b-71d2-4d9c-a12f-90d4b7c21f10", None),
+         "https://www.wst.tv/match-centre/3a24076e-455c-497b-abd5-976e194abc5e", None),
         ("snk-brecel-odonnell", "15:00", "Luca Brecel", "Martin O'Donnell", None, None,
-         "https://www.wst.tv/",
+         "https://www.wst.tv/match-centre/0c49ba0c-2d21-481e-a2ac-fbece616f591",
          {"listed": True, "event_id": 9932, "selection": "Martin O Donnell", "market": "Win Match", "consensus": "4/5 win tips (80%)",
           "url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/Luca_Brecel_v_Martin_O_Donnell/8?event_id=9932"}),
         ("snk-slessor-jones", "15:00", "Elliot Slessor", "Jamie Jones", 23, None,
-         "https://www.wst.tv/",
+         "https://www.wst.tv/match-centre/f6536f1f-6c2d-47cd-b802-a81e6f04e4cc",
          {"listed": True, "event_id": 9931, "selection": "Jamie Jones", "market": "Win Match", "consensus": "4/4 win tips (100%)",
           "url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/Elliot_Slessor_v_Jamie_Jones/8?event_id=9931"}),
     ]
     for sid, tm, h, a, rh, ra, mc_url, olbg in snk_rows:
-        fl = ["Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page"]
+        fl = ["Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page."]
         if rh is None or ra is None:
             fl.append("Player outside published WST top-36 table modelled via bounded rank-60 bucket")
         r = {
@@ -368,7 +368,7 @@ def get_rows_a() -> list[dict]:
             "stage": "Round 2 (Best of 7)", "date_local": "2026-10-21", "time_as_shown": tm, "start_utc": None,
             "home": h, "away": a, "venue": "Waterfront Hall, Belfast", "neutral": True,
             "status": "verified",
-            "sources": [WST_LIVE, WST_RANK] + ([{"name": "WST match centre", "url": mc_url}] if mc_url != "https://www.wst.tv/" else []),
+            "sources": [WST_LIVE, WST_RANK, {"name": "WST match centre", "url": mc_url}],
             "inputs": {
                 "home": {"label": "WST world ranking", "value": str(rh) if rh else "outside top 36", "rank": rh},
                 "away": {"label": "WST world ranking", "value": str(ra) if ra else "outside top 36", "rank": ra},
