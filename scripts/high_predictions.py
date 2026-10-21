@@ -89,41 +89,25 @@ HIGH_PREDICTIONS: dict[str, dict] = {
     "mlb-849805": {
         "selection": "Milwaukee Brewers — Game 1 Moneyline @ 1.51 (Under/Over 7.5 priced @ 1.90)",
         "text": (
-            "National League pennant winners Milwaukee enter Game 1 fresh off a dominant 3-0 NLCS sweep "
-            "of the Dodgers that pushed their postseason record to 6-1, backed by a 94-68 regular season "
-            "and a sparkling .679 home mark at American Family Field. Tampa Bay (88-74, .531 road split) "
-            "needed six ALCS games past Cleveland and now face fully rested bullpen arms. Milwaukee "
-            "Brewers Moneyline at 1.51 gets the nod."
+            'National League pennant winners Milwaukee swept the Dodgers 4-0 in the NLCS to reach the World Series at 7-1 this October, having taken the Division Series 3-1 from San Diego behind a 103-59 regular season. Tampa Bay (98-64) are 7-2 in the playoffs after needing six games to beat Cleveland 4-2. At American Family Field, where Milwaukee went 55-26 (.679), take the Milwaukee Brewers moneyline at 1.51.'
         ),
     },
     "mlb-849802": {
         "selection": "Milwaukee Brewers — Game 2 Moneyline @ 1.51 (Brewers -1.5 Run Line @ 2.00)",
         "text": (
-            "Depth across the middle innings is where Milwaukee's 94-win roster separates itself in a "
-            "back-to-back home spot before the series shifts south. Winning 55 of 81 home dates (.679) "
-            "and dropping just one game all October (6-1) highlights how cleanly the Brewers leverage "
-            "matchup platoons at American Family Field against a .531 road club. Stick with Milwaukee "
-            "Brewers on the Game 2 Moneyline at 1.51."
+            "Milwaukee's 103-win roster has been at its best at American Family Field, going 55-26 (.679) at home, and the Brewers carry a 7-1 October record into a second straight home game before the series shifts to Florida. Tampa Bay's .531 road split (43-38) underlines the task ahead. Stick with the Milwaukee Brewers on the Game 2 moneyline at 1.51, with the -1.5 run line at 2.00 the value angle."
         ),
     },
     "mlb-849804": {
         "selection": "Tampa Bay Rays — Game 3 Moneyline @ 1.61 (Rays +1.5 / ML home split edge)",
         "text": (
-            "Shifting the Fall Classic indoors to Tropicana Field completely flips the run-prevention "
-            "calculus in Tampa Bay's favour: the Rays posted an identical .679 home winning percentage "
-            "under the dome during their 88-74 campaign and went 7-2 tearing through the American League "
-            "bracket past Cleveland (4-2). Even against a 94-win Milwaukee lineup (.593 road clip), "
-            "Tampa Bay Rays Moneyline at 1.61 captures real home-park value."
+            "Home advantage flips to Tampa Bay as the World Series moves under the Tropicana Field roof: the Rays went 55-26 (.679) there during a 98-64 season and are 7-2 this October after settling the ALCS with Cleveland 4-2 in six games. Milwaukee's 103-59 record includes a .593 road split (48-33), so respect the visitors, but the Tampa Bay Rays moneyline at 1.61 is the call in Game 3."
         ),
     },
     "mlb-849803": {
         "selection": "Tampa Bay Rays — Game 4 Moneyline @ 1.61 (paired with Under 7.5 @ 1.90 lean)",
         "text": (
-            "Game 4 inside Tropicana Field magnifies bullpen leverage, the exact phase Tampa Bay have "
-            "owned throughout a 7-2 October run that dispatched Cleveland in six games. Back on fast "
-            "indoor turf where they won more than two-thirds of their regular-season games (.679), the "
-            "Rays match up cleanly against Milwaukee's road split (.593). Take Tampa Bay Rays in "
-            "Game 4 at 1.61 to hold serve indoors."
+            "A second straight night indoors at Tropicana Field suits a Rays club that posted 55 home wins (55-26, .679) in the regular season and has already banked a 7-2 October, including the 4-2 ALCS verdict over Cleveland. Milwaukee's 48-33 road record (.593) keeps this tight, yet the home-park edge belongs to Tampa Bay, so back the Tampa Bay Rays at 1.61 in Game 4."
         ),
     },
 
