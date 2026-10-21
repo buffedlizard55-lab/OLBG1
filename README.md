@@ -11,19 +11,19 @@ transparent pricing model that originates our own betting lines for every fixtur
 
 | Output | Where |
 |---|---|
-| Sport taxonomy + URL grammar for all 22 OLBG sports | `data/olbg_taxonomy.json`, `docs/reverse-engineering.html` |
+| Sport taxonomy + URL grammar for all 22 OLBG sports | `data/olbg_taxonomy.json`, `reverse-engineering.html` |
 | Verified fixture set, 21–27 October 2026 | `data/fixtures.json` |
 | Originated lines (winner, handicap, total) + confidence tier per match | `data/lines.json` |
-| Written predictions for every high-confidence pick | `data/predictions.json`, `docs/predictions.html` |
-| Source register with status per source | `data/sources.json`, `docs/sources.html` |
-| Every unverified value and coverage gap | `docs/flagged.html` |
-| Static dashboard (GitHub Pages source) | `docs/` |
+| Written predictions for every high-confidence pick | `data/predictions.json`, `predictions.html` |
+| Source register with status per source | `data/sources.json`, `sources.html` |
+| Every unverified value and coverage gap | `flagged.html` |
+| Static dashboard (GitHub Pages source, served from repo root) | `index.html`, `*.html`, `sports/`, `assets/` |
 
 ## Quick start
 
 ```bash
 python3 scripts/origin_lines.py    # fixtures -> priced markets (writes data/lines.json)
-python3 scripts/build_site.py      # data -> static site (writes docs/)
+python3 scripts/build_site.py      # data -> static site (writes the repo root)
 python3 scripts/validate.py        # link + data integrity gate; must print VALIDATION PASSED
 ```
 
@@ -50,14 +50,14 @@ No third-party dependencies. Python 3.10+.
 - **17 sports in scope** after the brief's exclusions; 9 have no priced rows and the reason for each is
   stated rather than hidden.
 - **8 high-confidence picks**, **3 medium**, **38 low**. The low tier is large on purpose — see
-  `docs/methodology.html` for why.
+  `methodology.html` for why.
 - **0 unverified values published as fact.**
 
 ## Repository layout
 
 ```
 data/            machine-readable dataset (fixtures, lines, predictions, taxonomy, sources)
-docs/            the published static site (generated — do not hand-edit)
+index.html, *.html, sports/, assets/   the published static site (generated — do not hand-edit)
 scripts/         model.py, origin_lines.py, build_site.py, validate.py
 site_src/        stylesheet and small progressive-enhancement script
 COORDINATION.md  shared task board and verification log
