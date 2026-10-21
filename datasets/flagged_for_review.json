@@ -1,9 +1,9 @@
 {
   "generated": "2026-10-21",
   "summary": {
-    "upstream_and_audit_findings": 9,
-    "flagged_fixture_rows": 108,
-    "cross_checked_rows": 5,
+    "upstream_and_audit_findings": 42,
+    "flagged_fixture_rows": 111,
+    "cross_checked_rows": 6,
     "missing_utc_rows": 32
   },
   "findings": [
@@ -15,7 +15,7 @@
       "summary": "OLBG server renders UTC-4 (US Eastern Daylight Time) strings across UK/European events without timezone labels.",
       "evidence": "Event 689388 is titled '11:14 Kinsley' (11:14 BST = 10:14 UTC) yet displays 'Today 06:14' right beside the title; event 534889 ('SAC Kings @ LA Clippers', 02:30 UTC Oct 22) displays 'Today 22:30' next to 'SAC Kings (2:30am)'.",
       "official_url": "https://www.olbg.com/betting-tips/Greyhounds/28",
-      "resolution": "Every fixture in data/fixtures.json stores canonical ISO-8601 UTC verified against official governing-body feeds."
+      "resolution": "Every fixture in data/fixtures.json stores a canonical ISO-8601 UTC value linked to a governing-body source; any unconfirmed UTC is left blank and flagged."
     },
     {
       "id": "BUG-OLBG-3536-DATE",
@@ -74,7 +74,7 @@
       "affected": "Rugby League (ID 10), Aussie Rules (ID 22), eSports (ID 23)",
       "summary": "OLBG shows zero live match tips across 17 active top-flight fixtures (7 RLWC26 Round 2, 9 NAB AFLW Round 11, 1 LoL Worlds Swiss).",
       "evidence": "Verified live on nrl.com, afl.com.au, and lolesports.com on 2026-10-21.",
-      "official_url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026",
+      "official_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
       "resolution": "All 17 missing fixtures captured directly from official governing bodies and fully priced."
     },
     {
@@ -96,6 +96,336 @@
       "evidence": "OLBG maintains distinct sport IDs for Football/Soccer (ID 1), American Football (ID 11), Aussie Rules (ID 22), and Gaelic Football (ID 25).",
       "official_url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
       "resolution": "Included all 4 official GAA County Finals with explicit borderline-scope tags so nothing is silently omitted."
+    },
+    {
+      "id": "AUDIT-PREDICTION-PROSE-REMEDIATED",
+      "category": "Provenance Correction",
+      "severity": "medium",
+      "affected": "31 High-confidence generated predictions",
+      "summary": "An independent post-integration audit found tactical prose that was not represented in the stored source facts arrays.",
+      "evidence": "The review page records the historical issue and examples; the generated text is now limited to each fixture's two stored, source-linked input values plus the explicitly labelled model selection.",
+      "official_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+      "resolution": "Re-authored all 31 predictions from the versioned official-input fields; unsupported tactical, injury, lineup and performance claims were removed. The source freshness boundary remains separately flagged."
+    },
+    {
+      "id": "AUDIT-STATUS-SPLIT",
+      "category": "Verification Status",
+      "severity": "medium",
+      "affected": "Primary snapshot: 134 source-linked events",
+      "summary": "The fixture data contains 129 Verified rows and 5 Cross-checked Gallagher Premiership rows; public summary wording must preserve that split.",
+      "evidence": "Premiership fixture rendering was client-side during the stored verification work, so those five rows were deliberately not promoted to Verified.",
+      "official_url": "https://www.premrugby.com/fixtures-results",
+      "resolution": "Dashboard, README and audit manifest now use '134 source-linked events (129 Verified; 5 Cross-checked)' instead of flattening all rows to Verified."
+    },
+    {
+      "id": "AUDIT-SOURCE-FRESHNESS",
+      "category": "Review Boundary",
+      "severity": "medium",
+      "affected": "All primary fixture source links",
+      "summary": "The final integration gate validates recorded URL authority, data structure and static output; it does not make live network requests during validation.",
+      "evidence": "A valid recorded source link is auditable provenance, not a guarantee that a remote publisher has not later changed its content.",
+      "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21",
+      "resolution": "The exact per-row source URLs are published in the Final Integration Audit. Any later discrepancy must remain blank/flagged until a governing-body source is re-opened and compared."
+    },
+    {
+      "id": "LIVE-F-V1-SNK-LINKS",
+      "category": "Live Re-Verification Correction",
+      "severity": "high",
+      "affected": "Snooker \u2014 5 of 11 Northern Ireland Open Round 2 rows",
+      "summary": "Three rows cited WST match-centre UUIDs that bind to no match, and two rows cited only the generic site even though WST publishes a match centre for both ties.",
+      "evidence": "Re-fetching 5b3a7f22-1c41-48e8-8a2c-94b28a21b9d1 returns an unbound template with no players. The WST live listing binds Holt-Brown to e58a00e5, Gao-Gilbert to 4fb27af0, Noppon-Donaldson to 3a24076e, Brecel-O'Donnell to 0c49ba0c and Slessor-Jones to f6536f1f.",
+      "official_url": "https://www.wst.tv/",
+      "resolution": "All eleven rows now cite the match centre WST actually binds to the pairing."
+    },
+    {
+      "id": "LIVE-F-V2-WTA-ID",
+      "category": "Live Re-Verification Correction",
+      "severity": "medium",
+      "affected": "Tennis \u2014 6 WTA 500 Ningbo Open rows",
+      "summary": "The rows cited tournament 1115 for Ningbo; WTA's own site links the BNB Ningbo Open draws at tournament 2092.",
+      "evidence": "The wta.com notification panel links https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws for both the singles and doubles draw releases.",
+      "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
+      "resolution": "Citation corrected to 2092. The draw body is client-rendered, so the pairings could not be re-read and those rows are listed as not re-checked."
+    },
+    {
+      "id": "LIVE-F-V3-CRIC-VENUE",
+      "category": "Live Re-Verification Correction",
+      "severity": "high",
+      "affected": "Cricket \u2014 cric-ausw-nzw-t20-3, cric-nza-inda-fc1, cric-ford-cds-nd",
+      "summary": "Three NZC fixtures carried a venue or date that the official service does not publish.",
+      "evidence": "scoring.nzc.nz/fixtures lists the 3rd Women's T20I at North Sydney Oval, New Zealand A v India A on 23 Oct at Bert Sutcliffe Oval (Lincoln University), and Central Stags v Northern Districts at Saxton Oval, Nelson.",
+      "official_url": "https://scoring.nzc.nz/fixtures",
+      "resolution": "All three corrected in the dataset source from the re-fetched official service and flagged on their rows."
+    },
+    {
+      "id": "LIVE-F-V4-BOS-SPLIT",
+      "category": "Live Re-Verification Correction",
+      "severity": "medium",
+      "affected": "Ice hockey \u2014 nhl-2026020154 Boston Bruins v Nashville Predators",
+      "summary": "The row claimed a 5-1-0 home record; the official standings return four home games at 3-1-0 for the same 7-2-1 record.",
+      "evidence": "api-web.nhle.com/v1/standings/2026-10-20: homeGamesPlayed 4, homeWins 3, homeLosses 1, homeOtLosses 0, while overall 7-2-1, pointPctg .750 and goalDifferential +14 already matched the row.",
+      "official_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+      "resolution": "Descriptive split corrected to 3-1-0. Because points percentage and goal differential drove the rating, no price moved."
+    },
+    {
+      "id": "LIVE-F-V5-NHL-DRIFT",
+      "category": "Snapshot Drift Disclosure",
+      "severity": "medium",
+      "affected": "Ice hockey \u2014 nhl-2026020160 St. Louis Blues v Vegas Golden Knights",
+      "summary": "Vegas was priced at 8-2-0 (.800, W3); the same live endpoint now returns 8-3-0 (.727, L1) over 11 games played.",
+      "evidence": "The standings endpoint reports standingsDateTimeUtc 2026-10-21T07:05:30Z, i.e. it is a live table, so any club that plays after a snapshot will drift the same way.",
+      "official_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+      "resolution": "Deliberately not re-priced: the published line is a labelled pre-game snapshot and rewriting a pick after the fact would be worse than disclosing it. Row flag records both values."
+    },
+    {
+      "id": "LIVE-F-V6-PDC-WALL",
+      "category": "Source Access Limit",
+      "severity": "medium",
+      "affected": "Darts \u2014 all 16 Machineseeker European Championship rows",
+      "summary": "The official PDC draw release still returns only a cookie-consent interstitial to a text fetch.",
+      "evidence": "Two fetches on 2026-10-21 (start of document and mid-document) returned Consent Management Platform text with no draw content.",
+      "official_url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
+      "resolution": "The 16 darts rows are marked not re-checked on the Live Verification page instead of being implied verified."
+    },
+    {
+      "id": "LIVE-F-V7-WTA-ATP-JS",
+      "category": "Source Access Limit",
+      "severity": "medium",
+      "affected": "Tennis \u2014 all 11 ATP/WTA rows",
+      "summary": "WTA and ATP draw pages are client-rendered and return a notification shell without draw content to a text fetch.",
+      "evidence": "Re-fetching /tournaments/2092/ningbo/2026/draws returned the site's notification panel only, with no draw body.",
+      "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
+      "resolution": "The tennis rows keep their source links but are published as not re-checked in this pass."
+    },
+    {
+      "id": "LIVE-F-V8-WST-CLOCK",
+      "category": "Rendering Limit",
+      "severity": "low",
+      "affected": "Snooker \u2014 all 11 rows (session start)",
+      "summary": "WST publishes no UTC session time and renders the clock in the viewer's timezone, so a scraped clock cannot be a fixture start time.",
+      "evidence": "The fetch client renders publisher clocks at UTC-4: all five RLWC kick-offs displayed on nrl.com map exactly to the published UTC values under that offset, and the WST listing showed 05:00/08:00/09:00/14:00/15:00 for a Belfast afternoon and evening card.",
+      "official_url": "https://www.wst.tv/",
+      "resolution": "start_utc stays blank on all eleven rows. The flag now explains the rendering rather than asserting a local session time."
+    },
+    {
+      "id": "LIVE-F-V9-NRL-ID",
+      "category": "Live Re-Verification Correction",
+      "severity": "low",
+      "affected": "Rugby league \u2014 5 men's RLWC26 rows and the zero-tips blind-spot finding",
+      "summary": "The men's World Cup rows cited nrl.com competition 175; the site serves the same Round 2 draw as competition 131.",
+      "evidence": "Requesting ?competition=175&round=2&season=2026 returns the draw page with canonical competition=131 and the full five-match Round 2 list.",
+      "official_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+      "resolution": "Men's citation corrected to 131. The women's id 176 was not re-tested and is left as published with its rows marked not re-checked."
+    },
+    {
+      "id": "LIVE-F-V11-URC-VENUE-TBC",
+      "category": "Live Re-Verification Correction",
+      "severity": "low",
+      "affected": "Rugby union \u2014 Leinster v Munster (ru-urc-609578)",
+      "summary": "The row asserted Aviva Stadium, Dublin; the official URC 2026/27 fixtures release publishes the Round 4 venue as 'TBC, Dublin'.",
+      "evidence": "Round 4 entry: 'Leinster v Munster \u2014 TBC, Dublin, KO 18.00 IRE & UK / 19.00 ITA & SA'. Participants, date and kick-off match the row; the venue does not.",
+      "official_url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
+      "resolution": "Venue replaced with 'Dublin (venue TBC)' in the dataset source; the row carries a flag until the URC confirms a ground."
+    },
+    {
+      "id": "LIVE-F-V12-AFLW-VENUE-CODES",
+      "category": "Review Boundary",
+      "severity": "low",
+      "affected": "Aussie rules \u2014 North Melbourne v Adelaide, Hawthorn v Essendon",
+      "summary": "The official AFLW Round 11 board publishes three-letter venue codes only; KCC and NHO could not be decoded, and NHO does not correspond to the published Arden Street Oval.",
+      "evidence": "Board tiles: 'nmfc adel ... match 8979 ... NHO' and 'haw ess ... match 8976 ... KCC'. IKP, ALB, GMHBA, PFS, MWO, HEN and RSEA all decoded cleanly to the stored venues.",
+      "official_url": "https://www.afl.com.au/aflw",
+      "resolution": "Both rows flagged rather than guessed; participants and match ids were confirmed."
+    },
+    {
+      "id": "LIVE-F-V13-PREMIERSHIP-SHELL",
+      "category": "Review Boundary",
+      "severity": "low",
+      "affected": "Rugby union \u2014 5 Gallagher Premiership rows",
+      "summary": "The Premiership fixtures page returned page chrome only, with no fixture rows, so the five Premiership rows stay cross-checked rather than verified.",
+      "evidence": "premrugby.com/fixtures-results returned navigation, sponsor blocks and footer; the fixture list is rendered client-side.",
+      "official_url": "https://www.premrugby.com/fixtures-results",
+      "resolution": "Cross-checked status retained and the reason published; no row was promoted on the strength of an unread page."
+    },
+    {
+      "id": "LIVE-F-V10-COVERAGE",
+      "category": "Review Boundary",
+      "severity": "medium",
+      "affected": "134 primary rows",
+      "summary": "Successive passes re-fetched official pages for 72 rows. The remainder were not re-read and are listed individually as not re-checked with the blocker for each sport.",
+      "evidence": "Counts come from data/verification.json, which is generated by scripts/live_verification.py and contains one row per fixture.",
+      "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21",
+      "resolution": "The gap is published row by row on the Live Verification page; no row is claimed as re-verified without a recorded read."
+    },
+    {
+      "id": "F-V11-NHL-INPUTS",
+      "category": "Corrected Data (independent re-read)",
+      "severity": "high",
+      "affected": "Ice Hockey \u2014 nhl-2026020152, nhl-2026020153, nhl-2026020154",
+      "summary": "Four NHL input sub-values were transcription errors, not snapshot drift.",
+      "evidence": "Stored versus official: Buffalo goal differential +2 vs -7; Philadelphia road 0-4-2 and -14 vs 0-4-1 and -19; Ottawa home 4-1-0 vs 3-1-0 (only four home games played); Nashville 0 vs -1. Each club had played exactly the number of games in its stored record, so no game can have happened in between.",
+      "official_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+      "resolution": "Corrected at source in scripts/dataset_rows_a.py. Ratings derive from points percentage, which was already correct, so no rating or price moved. Each row carries a dated note."
+    },
+    {
+      "id": "F-V12-F1-START",
+      "category": "Corrected Data (independent re-read)",
+      "severity": "medium",
+      "affected": "Motor Racing \u2014 f1-usgp-2026",
+      "summary": "The United States Grand Prix start was recorded an hour early and mislabelled EDT.",
+      "evidence": "formula1.com lists 16:00 track time on 25 October at Circuit of The Americas. Austin is on CDT (UTC-5), so the start is 21:00 UTC. The page displays no round number.",
+      "official_url": "https://www.formula1.com/en/racing/2026/united-states",
+      "resolution": "start_utc corrected to 2026-10-25T21:00:00Z; the 'EDT' wording and the unverifiable 'Round 18' label removed."
+    },
+    {
+      "id": "F-V13-SOURCE-REDIRECT",
+      "category": "Source Integrity",
+      "severity": "medium",
+      "affected": "Volleyball \u2014 five PlusLiga rows; Gaelic Football \u2014 four county finals",
+      "summary": "Two cited official URLs do not resolve to the fixture list they are supposed to evidence.",
+      "evidence": "www.plusliga.pl/table.html redirects to tauronliga.pl and returns a generic competition page; munster.gaa.ie/fixtures/munster-gaa-fixtures/ resolved to an April 2025 news post headed 'Munster GAA Fixtures - April 7th to 12th 2025'.",
+      "official_url": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/",
+      "resolution": "The nine affected rows keep their published values, are listed as not re-checked on the Live Verification page with this blocker named, and are not presented as freshly verified."
+    },
+    {
+      "id": "F-LIVE-01-DRIFT",
+      "category": "Live Recapture",
+      "severity": "medium",
+      "affected": "47 of 69 dataset rows matched to a live OLBG card",
+      "summary": "OLBG tip consensus and/or most-tipped selection moved between the committed capture and the 2026-10-21T07:05Z recapture.",
+      "evidence": "20 cards changed the selection OLBG highlights, e.g. Sorana Cirstea vs Sara Bejlek (Sara Bejlek -> Sorana Cirstea); Stefanos Tsitsipas vs Mikhail Kukushkin (Stefanos Tsitsipas 2-0 -> Mikhail Kukushkin); TB Rays @ MIL Brewers (MIL Brewers -> Over 5.50); MIL Bucks @ WAS Wizards (Washington Wizards -> WAS Wizards), and 27 kept the same selection with a different tip count/share. Consensus is an upstream opinion counter, not a verified sporting fact, so this changes no fixture, price or confidence tier.",
+      "official_url": "https://www.olbg.com/betting-tips",
+      "resolution": "Every matched row carries the recaptured consensus plus olbg.captured_utc and the superseded value in olbg.consensus_prior; the full before/after list is published on the Live Refresh page and in data/live_diff.json."
+    },
+    {
+      "id": "F-LIVE-02-NO-OFFICIAL",
+      "category": "Verification Boundary",
+      "severity": "high",
+      "affected": "72 live OLBG cards not present in the verified dataset",
+      "summary": "These events are listed because OLBG publishes them, but none of their kick-off times, participant records or ratings have been confirmed against a governing body in this pass.",
+      "evidence": "The 2026-10-21T07:05Z capture returned 141 cards across 15 sports; 69 join to an existing source-verified row by OLBG event_id and 72 do not. No price, winner pick or confidence tier is originated for an unjoined card.",
+      "official_url": "https://www.olbg.com/betting-tips",
+      "resolution": "Published as upstream-only rows on the Live Refresh page with every sporting field left blank and marked Unverified; they are excluded from data/fixtures.json, data/lines.json and the 134-event verified count until an official source confirms each one."
+    },
+    {
+      "id": "F-LIVE-03-TRUNCATION",
+      "category": "Upstream OLBG Defect",
+      "severity": "medium",
+      "affected": "18 dataset rows with an OLBG event_id",
+      "summary": "Dataset rows whose OLBG event page exists were not visible on the recaptured hub first screen.",
+      "evidence": "OLBG hubs render roughly 20 cards before a 'Load More Tips' control, so absence from the first screen is not evidence that OLBG has delisted or completed the event. Examples include basketball 535918/535921/535923 and darts 32331/32336, all still future-dated in the dataset.",
+      "official_url": "https://www.olbg.com/betting-tips/Basketball/4",
+      "resolution": "Recorded as 'not in capture' rather than deleted or expired; the rows stay in the dataset with their governing-body kick-off times and are listed with this caveat in data/live_diff.json."
+    },
+    {
+      "id": "F-LIVE-04-EMPTY-HUBS",
+      "category": "Upstream OLBG Coverage",
+      "severity": "medium",
+      "affected": "Aussie Rules (ID 22), eSports (ID 23), Rugby League (ID 10)",
+      "summary": "Two in-scope hubs returned 'No tips found', and the Rugby League hub returned only 2027 outright markets while the desk still carries 9 AFLW fixtures, 1 LoL Worlds tie and 7 RLWC26 fixtures.",
+      "evidence": "Fetched hubs for Aussie_Rules/22 and eSports/23 returned 'No tips found' at the capture time; Rugby_League/10 listed State of Origin 2027, Super League 2027 and NRL 2027 outrights only. Absence of OLBG tips does not invalidate the governing-body fixtures, but it does mean OLBG consensus cannot be refreshed for those sports.",
+      "official_url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+      "resolution": "Consensus for those three sports is retained from the earlier capture and labelled with its capture timestamp; the gap is published rather than back-filled."
+    },
+    {
+      "id": "F-LIVE-06-MLB-CLOCK",
+      "category": "Upstream OLBG Defect",
+      "severity": "medium",
+      "affected": "Baseball - TB Rays @ MIL Brewers (event_id=160789)",
+      "summary": "OLBG's baseball hub card shows '24 Oct 01:00' for a game the official MLB StatsAPI schedules for 2026-10-25T00:00:00Z.",
+      "evidence": "Verified against the official MLB StatsAPI schedule for 2026-10-24, which returns gamePk 849802, 'World Series Game 2', Tampa Bay Rays at Milwaukee Brewers, American Family Field, gameDate 2026-10-25T00:00:00Z. Even reading OLBG's clock as UTC-4, its label maps to 2026-10-24T05:00:00Z - roughly 19 hours before the official first pitch.",
+      "official_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24",
+      "resolution": "The desk keeps the official MLB time on mlb-849802 and treats the OLBG label as a display defect; the OLBG link is retained only as the upstream discovery reference."
+    },
+    {
+      "id": "F-LIVE-05-ZERO-TIPS",
+      "category": "Upstream OLBG Defect",
+      "severity": "low",
+      "affected": "Golf - Hero Womens Indian Open (event_id=101909)",
+      "summary": "The each-way outright card still renders an empty tip count / 0% share on the hub.",
+      "evidence": "The card shows 'Avani Prashanth' with no tip counter, matching the previously documented 0/0 division display defect on each-way-only outright markets.",
+      "official_url": "https://www.olbg.com/betting-tips/Golf/5",
+      "resolution": "Consensus is recorded as unavailable for this card; no share is inferred."
+    },
+    {
+      "id": "T34-01",
+      "category": "Independent Re-Verification (T34)",
+      "severity": "high",
+      "affected": "AFLW \u2014 the ladder used to price nine rows is not the official 2026 ladder",
+      "summary": "Every AFLW row cites a 2026 R10 ladder input. Against the official afl.com.au 2026 AFLW ladder after Round 10 the published inputs do not reconcile: the rows give North Melbourne 40 points (10-0) where the ladder has 36 (9-1), Geelong 16 at 13th where it has 36 at 2nd, Gold Coast 4 at 18th where it has 28 at 5th, St Kilda 20 at 10th where it has 4 at 18th, and 16 of the 18 clubs disagree. The fixture facts were verified and corrected in this pass; the pricing inputs were not.",
+      "evidence": "Read on 2026-10-21 (independent pass T34) from AFL official 2026 AFLW ladder (after Round 10) \u2014 https://www.afl.com.au/aflw/ladder",
+      "official_url": "https://www.afl.com.au/aflw/ladder",
+      "resolution": "Disclosed, not silently re-priced. Rewriting nine published rows and three published picks in the commit that discovers the error would destroy the audit trail. Every AFLW row carries the mismatch as a flag, the official ladder is linked, and T35 is filed as the dedicated re-price task."
+    },
+    {
+      "id": "T34-02",
+      "category": "Independent Re-Verification (T34)",
+      "severity": "high",
+      "affected": "AFLW \u2014 nine Round 11 start times were shifted by one fixture and one venue was wrong",
+      "summary": "The nine AFLW rows were right about participants but had been given Round 11's kick-off slots in chronological order rather than in each fixture's own order: Port Adelaide v Collingwood carried the North Melbourne slot, St Kilda v Brisbane carried Geelong's, two rows shared 2026-10-24T04:05Z, one time (06:15Z) appears in no official fixture, and Hawthorn v Essendon sat at Kinetic Stadium, Frankston instead of the Kennedy Community Centre, Dingley.",
+      "evidence": "Read on 2026-10-21 (independent pass T34) from AFL official AFLW hub \u2014 Round 11 fixture board & match ids \u2014 https://www.afl.com.au/aflw",
+      "official_url": "https://www.afl.com.au/aflw",
+      "resolution": "All nine times corrected from the AFL Round 11 board with match ids 8970-8979 in the evidence, and the Hawthorn venue corrected."
+    },
+    {
+      "id": "T34-03",
+      "category": "Independent Re-Verification (T34)",
+      "severity": "medium",
+      "affected": "Cricket \u2014 Ford Trophy Round 1 is 27 October, not 24 October",
+      "summary": "On the NZC fixture service the Ford Trophy Round 1 block sits under the TUE 27 Oct heading, after the 3rd T20I and before the FRI 30 Oct block that carries Round 2.",
+      "evidence": "Read on 2026-10-21 (independent pass T34) from New Zealand Cricket official fixtures & results service \u2014 https://scoring.nzc.nz/fixtures",
+      "official_url": "https://scoring.nzc.nz/fixtures",
+      "resolution": "Three date_local values corrected to 2026-10-27; venues confirmed; start times stay blank because NZC prints a timezone-less 5:30pm."
+    },
+    {
+      "id": "T34-04",
+      "category": "Independent Re-Verification (T34)",
+      "severity": "medium",
+      "affected": "Cricket \u2014 the Afghanistan v Bangladesh ODI has no governing-body fixture page",
+      "summary": "The row's only citation is the ICC rankings table, which publishes no fixtures, and no official page listing the match at Sharjah was found in four passes.",
+      "evidence": "Read on 2026-10-21 (independent pass T34) from New Zealand Cricket official fixtures & results service \u2014 https://scoring.nzc.nz/fixtures",
+      "official_url": "https://scoring.nzc.nz/fixtures",
+      "resolution": "Status downgraded from verified to unverified and flagged; nothing invented to fill the gap."
+    },
+    {
+      "id": "T34-05",
+      "category": "Independent Re-Verification (T34)",
+      "severity": "medium",
+      "affected": "Rugby league \u2014 the women's RLWC rows could not be re-read",
+      "summary": "nrl.com serves the men's Round 2 draw for ?competition=176 because the competition selector is client-side.",
+      "evidence": "Read on 2026-10-21 (independent pass T34) from NRL / Rugby League World Cup 2026 Round 2 draw (nrl.com) \u2014 https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+      "official_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+      "resolution": "Both rows stay not re-checked with that reason printed."
+    },
+    {
+      "id": "T34-06",
+      "category": "Independent Re-Verification (T34)",
+      "severity": "low",
+      "affected": "Source reachability \u2014 publishers that block a text read",
+      "summary": "pdc.tv returns a cookie-consent interstitial; cdn.nba.com returned HTTP 500 during this pass; premrugby.com and plusliga.pl render fixtures client-side (plusliga.pl also redirects to tauronliga.pl).",
+      "evidence": "Read on 2026-10-21 (independent pass T34) from NBA official scoreboard feed (cdn.nba.com) \u2014 https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json",
+      "official_url": "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json",
+      "resolution": "Every affected row is marked not re-checked with the blocker named; no blocked publisher is treated as agreement."
+    },
+    {
+      "id": "T34-07",
+      "category": "Independent Re-Verification (T34)",
+      "severity": "low",
+      "affected": "Handball \u2014 one venue did not match the official playing-times sheet",
+      "summary": "Kolstad's Round 5 home fixture is listed by the EHF at Kolstad Arena (Kolstad), not Trondheim Spektrum.",
+      "evidence": "Read on 2026-10-21 (independent pass T34) from EHF Champions League Men 2026/27 group-phase playing times (official PDF) \u2014 https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "official_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "resolution": "Venue corrected; the other eleven handball rows matched the PDF on participants, date, start time and arena."
+    },
+    {
+      "id": "T34-08",
+      "category": "Independent Re-Verification (T34)",
+      "severity": "low",
+      "affected": "Top 14 \u2014 the Sunday fixture falls after the French DST change",
+      "summary": "La Rochelle v Bordeaux-B\u00e8gles is listed at 21h05 on Sunday 25 October. France leaves CEST at 03:00 that morning, so 21h05 is CET and equals 20:05Z; a naive CEST conversion would have produced 19:05Z and looked like an error in the row.",
+      "evidence": "Read on 2026-10-21 (independent pass T34) from LNR Top 14 official calendar, journ\u00e9e 7 \u2014 https://top14.lnr.fr/calendrier-et-resultats",
+      "official_url": "https://top14.lnr.fr/calendrier-et-resultats",
+      "resolution": "Confirmed, no change. Recorded because the same trap applies to every Sunday European fixture after 25 October."
     }
   ],
   "rows": [
@@ -108,7 +438,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG renders start time as 'Today 19:37' (EDT UTC-4) with no timezone label vs official NHL 23:30 UTC puck drop"
+        "OLBG renders start time as 'Today 19:37' (EDT UTC-4) with no timezone label vs official NHL 23:30 UTC puck drop",
+        "Inputs re-checked independently on 2026-10-21T07:20Z against api-web.nhle.com/v1/standings/2026-10-20: Buffalo goal differential is -7 (was +2) and Philadelphia's road line is 0-4-1 with a -19 differential (was 0-4-2 / -14). Both clubs had played the same number of games as the stored record, so these were transcription errors, not snapshot drift. Ratings derive from points percentage, which was already correct, so no price moved."
       ],
       "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
     },
@@ -121,7 +452,22 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "Starting goaltenders unconfirmed pre-skate; OLBG shows unlabelled EDT timestamp 'Today 19:37'"
+        "Starting goaltenders unconfirmed pre-skate; OLBG shows unlabelled EDT timestamp 'Today 19:37'",
+        "Home split corrected independently on 2026-10-21T07:20Z: Ottawa had played 4 home games at 3-1-0, so the stored 4-1-0 was arithmetically impossible. Rating and price unchanged."
+      ],
+      "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+    },
+    {
+      "match_id": "nhl-2026020154",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "match": "Boston Bruins vs Nashville Predators",
+      "status": "verified",
+      "missing_utc": false,
+      "unrated_sides": 0,
+      "flags": [
+        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved.",
+        "Nashville's goal differential was also corrected from 0 to -1 in the same independent re-read; points percentage and rating are unaffected."
       ],
       "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
     },
@@ -135,6 +481,19 @@
       "unrated_sides": 0,
       "flags": [
         "Back-to-back road spot for Florida after playing in Ottawa on 21 October"
+      ],
+      "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+    },
+    {
+      "match_id": "nhl-2026020160",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "match": "St. Louis Blues vs Vegas Golden Knights",
+      "status": "verified",
+      "missing_utc": false,
+      "unrated_sides": 0,
+      "flags": [
+        "Snapshot drift disclosed 2026-10-21: a re-fetch of api-web.nhle.com/v1/standings/2026-10-20 (standingsDateTimeUtc 2026-10-21T07:05:30Z) now returns Vegas at 8-3-0, .727, L1 over 11 games played, i.e. the club has played once since the 8-2-0 / W3 snapshot used to price this match. The priced inputs and the stored line are retained unchanged and labelled as a pre-game snapshot; the live table link is on the row for manual review."
       ],
       "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
     },
@@ -343,9 +702,10 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
-      "official_url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+      "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
     },
     {
       "match_id": "ten-902093",
@@ -356,9 +716,10 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
-      "official_url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+      "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
     },
     {
       "match_id": "ten-902038",
@@ -369,7 +730,8 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "official_url": "https://www.atptour.com/en/scores/current/almaty/9410/draws"
     },
@@ -382,7 +744,8 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "official_url": "https://www.atptour.com/en/scores/current/almaty/9410/draws"
     },
@@ -395,9 +758,10 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
-      "official_url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+      "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
     },
     {
       "match_id": "ten-902065",
@@ -408,7 +772,8 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "official_url": "https://www.wtatennis.com/tournaments/405/osaka/2026/draws"
     },
@@ -422,9 +787,10 @@
       "unrated_sides": 2,
       "flags": [
         "Exact live weekly WTA rankings for both players not captured in same snapshot; priced neutral rather than inferred",
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
-      "official_url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+      "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
     },
     {
       "match_id": "ten-902074",
@@ -436,9 +802,10 @@
       "unrated_sides": 1,
       "flags": [
         "Opponent weekly rank not captured verbatim; model refuses one-sided rating",
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
-      "official_url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+      "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
     },
     {
       "match_id": "ten-902083",
@@ -449,7 +816,8 @@
       "missing_utc": true,
       "unrated_sides": 2,
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "official_url": "https://www.atptour.com/en/scores/current/almaty/9410/draws"
     },
@@ -462,7 +830,8 @@
       "missing_utc": true,
       "unrated_sides": 2,
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "official_url": "https://www.atptour.com/en/scores/current/lyon/496/draws"
     },
@@ -475,7 +844,8 @@
       "missing_utc": true,
       "unrated_sides": 2,
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "official_url": "https://www.atptour.com/en/scores/current/brussels/7485/draws"
     },
@@ -488,7 +858,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -502,7 +872,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -516,7 +886,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page"
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page."
       ],
       "official_url": "https://www.wst.tv/"
     },
@@ -529,7 +899,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -543,7 +913,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -557,7 +927,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page"
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page."
       ],
       "official_url": "https://www.wst.tv/"
     },
@@ -570,7 +940,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -584,7 +954,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -598,7 +968,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -612,7 +982,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -626,7 +996,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -840,14 +1210,29 @@
       "official_url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
     },
     {
+      "match_id": "cric-ausw-nzw-t20-3",
+      "sport": "cricket",
+      "competition": "Women's T20I Series",
+      "match": "Australia Women vs New Zealand Women",
+      "status": "verified",
+      "missing_utc": false,
+      "unrated_sides": 0,
+      "flags": [
+        "Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists this 3rd T20I at North Sydney Oval, Sydney; the earlier Manuka Oval entry is not reproducible on the official service."
+      ],
+      "official_url": "https://www.cricket.com.au/"
+    },
+    {
       "match_id": "cric-afg-ban-odi",
       "sport": "cricket",
       "competition": "Men's One-Day International",
       "match": "Afghanistan vs Bangladesh",
-      "status": "verified",
+      "status": "unverified",
       "missing_utc": true,
       "unrated_sides": 0,
-      "flags": [],
+      "flags": [
+        "Unverified: no official fixture page for Afghanistan v Bangladesh at Sharjah was found in two passes; the only citation is the ICC rankings table, which publishes no fixtures. Date and venue are as OLBG lists them."
+      ],
       "official_url": "https://www.icc-cricket.com/rankings"
     },
     {
@@ -859,7 +1244,9 @@
       "missing_utc": true,
       "unrated_sides": 2,
       "flags": [
-        "No official ICC rating for 'A' representative sides; baseline pricing"
+        "Corrected 2026-10-21 against a direct re-fetch of scoring.nzc.nz/fixtures, which now lists this match on Friday 23 October at Bert Sutcliffe Oval, Lincoln University; the earlier 22 October / Saxton Oval entry is not reproducible.",
+        "No official ICC rating for 'A' representative sides; baseline pricing",
+        "No official four-day match-total baseline was captured; the total market is intentionally left blank rather than inferred"
       ],
       "official_url": "https://scoring.nzc.nz/fixtures"
     },
@@ -872,6 +1259,7 @@
       "missing_utc": true,
       "unrated_sides": 2,
       "flags": [
+        "Corrected 2026-10-21 against scoring.nzc.nz/fixtures: Ford Trophy Round 1 sits under the TUE 27 Oct heading, not Sat 24 Oct.",
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ],
       "official_url": "https://scoring.nzc.nz/fixtures"
@@ -885,6 +1273,8 @@
       "missing_utc": true,
       "unrated_sides": 2,
       "flags": [
+        "Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists Central Stags v Northern Districts, Ford Trophy Round 1, at Saxton Oval, Nelson; the earlier Pukekura Park entry is not reproducible on the official service.",
+        "Corrected 2026-10-21 against scoring.nzc.nz/fixtures: Ford Trophy Round 1 is Tue 27 Oct, not Sat 24 Oct.",
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ],
       "official_url": "https://scoring.nzc.nz/fixtures"
@@ -898,6 +1288,7 @@
       "missing_utc": true,
       "unrated_sides": 2,
       "flags": [
+        "Corrected 2026-10-21 against scoring.nzc.nz/fixtures: Ford Trophy Round 1 is Tue 27 Oct, not Sat 24 Oct.",
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ],
       "official_url": "https://scoring.nzc.nz/fixtures"
@@ -950,7 +1341,7 @@
       "missing_utc": false,
       "unrated_sides": 2,
       "flags": [
-        "URC Round 3 live standings table client-rendered on stats.unitedrugby.com; fixture, venue and UTC kick-off verified on URC site"
+        "URC official 2026/27 fixtures release publishes this fixture as 'TBC, Dublin'; venue is not asserted beyond the city"
       ],
       "official_url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
     },
@@ -1030,9 +1421,10 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: Suncorp Stadium, Brisbane, Sun 25 Oct 19:05 local (09:05Z)."
       ],
-      "official_url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+      "official_url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
     },
     {
       "match_id": "rl-wc26-nzl-cok",
@@ -1043,9 +1435,10 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: One NZ Stadium, Christchurch, Sun 25 Oct 18:05 local (05:05Z)."
       ],
-      "official_url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+      "official_url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
     },
     {
       "match_id": "rl-wc26-eng-fra",
@@ -1056,9 +1449,10 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: HBF Park, Perth, Sat 24 Oct 14:35 local (06:35Z)."
       ],
-      "official_url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+      "official_url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
     },
     {
       "match_id": "rl-wc26-png-sam",
@@ -1069,9 +1463,10 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: Santos National Football Stadium, Port Moresby, Sat 24 Oct 14:25 local (04:25Z)."
       ],
-      "official_url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+      "official_url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
     },
     {
       "match_id": "rl-wc26-tga-lbn",
@@ -1082,9 +1477,10 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: CommBank Stadium, Sydney, Fri 23 Oct 20:05 local (09:05Z)."
       ],
-      "official_url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+      "official_url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
     },
     {
       "match_id": "rl-wc26w-aus-eng",
@@ -1095,9 +1491,10 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: HBF Park, Perth, Sat 24 Oct 17:05 local (09:05Z)."
       ],
-      "official_url": "https://www.nrl.com/draw/?competition=176&round=2&season=2026"
+      "official_url": "https://www.nrl.com/draw/womens-rugby-league-world-cup/2026/round-2/"
     },
     {
       "match_id": "rl-wc26w-sam-wal",
@@ -1108,9 +1505,11 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "Kick-off conflict: the NRL draw lists 2:45am AEDT (06:45Z) while the IRL match record lists 17:50 local (06:50Z). Both values are published; the five-minute difference is not resolved by inference.",
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: CommBank Stadium, Sydney, Fri 23 Oct 17:50 local (06:50Z)."
       ],
-      "official_url": "https://www.nrl.com/draw/?competition=176&round=2&season=2026"
+      "official_url": "https://www.nrl.com/draw/womens-rugby-league-world-cup/2026/round-2/"
     },
     {
       "match_id": "hand-ehf-12045",
@@ -1238,7 +1637,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1251,7 +1651,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1264,7 +1665,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1277,7 +1679,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1290,7 +1693,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1303,7 +1707,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1316,7 +1721,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1329,7 +1735,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1342,7 +1749,8 @@
       "missing_utc": false,
       "unrated_sides": 0,
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1425,7 +1833,9 @@
       "missing_utc": false,
       "unrated_sides": 2,
       "flags": [
-        "20-car Grand Prix field market (not a two-sided fixture); race start verified at 20:00 UTC (OLBG displays 16:00 EDT)"
+        "20-car Grand Prix field market (not a two-sided fixture)",
+        "Race start re-verified independently on 2026-10-21T07:25Z at formula1.com/en/racing/2026/united-states: 25 October, 56 laps, Circuit of The Americas, 16:00 track time. Austin is on CDT (UTC-5) on that date, so the start is 21:00 UTC; the earlier 20:00 UTC value and 'EDT' label were wrong by an hour.",
+        "Round number removed: the linked official race page does not display one."
       ],
       "official_url": "https://www.formula1.com/en/racing/2026/united-states"
     },

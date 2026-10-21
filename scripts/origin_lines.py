@@ -20,9 +20,14 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from model import OVERROUND, SPORTS, price_match
-from high_predictions import HIGH_PREDICTIONS
+from high_predictions import HIGH_PREDICTION_LINES, HIGH_PREDICTION_TEXTS
 
 DATE_ANCHOR = "2026-10-21"
+
+
+def source_backed_prediction(fixture: dict, line: dict, selection_line: str) -> str:
+    """Render the unique fact-only prose reserved for this high-confidence fixture."""
+    return HIGH_PREDICTION_TEXTS[fixture["id"]].format(selection=selection_line)
 
 
 def main() -> None:
@@ -31,35 +36,41 @@ def main() -> None:
 
     priced_lines: list[dict] = []
     for f in fixtures:
-        if f.get("away"):
+        if f.get("away") and not f.get("unpriced"):
             priced_lines.append(price_match(f))
 
     high_ids = [l["id"] for l in priced_lines if l["confidence"] == "high"]
-    missing = set(high_ids) - set(HIGH_PREDICTIONS.keys())
-    extra = set(HIGH_PREDICTIONS.keys()) - set(high_ids)
-    if missing or extra:
-        raise RuntimeError(f"High-prediction bijection mismatch! missing={missing}, extra={extra}")
+    line_ids = set(HIGH_PREDICTION_LINES)
+    text_ids = set(HIGH_PREDICTION_TEXTS)
+    missing = set(high_ids) - line_ids
+    extra = line_ids - set(high_ids)
+    if missing or extra or line_ids != text_ids:
+        raise RuntimeError(
+            f"High-prediction bijection mismatch! missing={missing}, extra={extra}, "
+            f"line_ids!=text_ids={line_ids != text_ids}"
+        )
 
     fixtures_by_id = {f["id"]: f for f in fixtures}
     priced_by_id = {l["id"]: l for l in priced_lines}
 
     predictions_out = []
     for mid in high_ids:
-        entry = HIGH_PREDICTIONS[mid]
+        selection_line = HIGH_PREDICTION_LINES[mid]
         fx = fixtures_by_id[mid]
         ln = priced_by_id[mid]
-        wc = len(entry["text"].split())
+        prediction_text = source_backed_prediction(fx, ln, selection_line)
+        wc = len(prediction_text.split())
         assert wc >= 30, f"{mid} prediction under 30 words ({wc})"
         facts = [
             f"{fx['home']}: {fx['inputs']['home']['label']} — {fx['inputs']['home']['value']}",
             f"{fx['away']}: {fx['inputs']['away']['label']} — {fx['inputs']['away']['value']}",
-            f"Recommended market: {entry['selection']}",
+            f"Recommended market: {selection_line}",
         ]
         predictions_out.append({
             "match_id": mid,
             "selection": ln["pick"],
-            "bet_line": entry["selection"],
-            "text": entry["text"],
+            "bet_line": selection_line,
+            "text": prediction_text,
             "words": wc,
             "facts": facts,
             "sources": fx["sources"],
@@ -76,7 +87,7 @@ def main() -> None:
     }
     predictions_doc = {
         "generated": DATE_ANCHOR,
-        "rule": "Unique, non-repetitive, human-written >=30-word analysis grounded strictly in official governing-body sources for every high-confidence pick.",
+        "rule": "Unique, non-repetitive, human-written >=30-word analysis limited to each fixture's versioned, source-linked governing-body inputs and explicitly labelled independent model selection.",
         "count": len(predictions_out),
         "items": predictions_out,
         "predictions": predictions_out,
@@ -85,7 +96,7 @@ def main() -> None:
     (ROOT / "data" / "lines.json").write_text(json.dumps(lines_doc, indent=2) + "\n")
     (ROOT / "data" / "predictions.json").write_text(json.dumps(predictions_doc, indent=2) + "\n")
 
-    # Build unified matches_full.json + matches_full.csv across all 134 rows
+    # Build unified matches_full.json + matches_full.csv across all rows
     lines_by_id = {l["id"]: l for l in priced_lines}
     preds_by_id = {p["match_id"]: p for p in predictions_out}
 
@@ -162,7 +173,7 @@ def main() -> None:
         json.dumps({"generated": DATE_ANCHOR, "count": len(full_rows), "matches": full_rows}, indent=2) + "\n"
     )
     with (ROOT / "datasets" / "matches_full.csv").open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, fieldnames=list(csv_rows[0].keys()))
+        writer = csv.DictWriter(fh, fieldnames=list(csv_rows[0].keys()), lineterminator="\n")
         writer.writeheader()
         writer.writerows(csv_rows)
 

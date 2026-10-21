@@ -15,8 +15,8 @@ URC_FIX = {"name": "United Rugby Championship official 2026/27 fixtures", "url":
 TOP14_FIX = {"name": "LNR official Top 14 2026-2027 calendar & standings", "url": "https://top14.lnr.fr/calendrier-et-resultats"}
 TOP14_TAB = {"name": "LNR official Top 14 Journée 6 standings", "url": "https://top14.lnr.fr/classement"}
 PREM_FIX = {"name": "Gallagher Premiership official fixtures hub", "url": "https://www.premrugby.com/fixtures-results"}
-RLWC_DRAW = {"name": "NRL / RLWC26 official Round 2 draw & match centre", "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"}
-RLWC_W = {"name": "NRL / RLWC26 Women's official draw", "url": "https://www.nrl.com/draw/?competition=176&round=2&season=2026"}
+RLWC_DRAW = {"name": "NRL official RLWC26 men's Round 2 draw", "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"}
+RLWC_W = {"name": "NRL official RLWC26 women's Round 2 draw", "url": "https://www.nrl.com/draw/womens-rugby-league-world-cup/2026/round-2/"}
 EHF_STAND = {"name": "EHF Champions League Men 2026/27 official standings", "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"}
 EHF_SCHED = {"name": "EHF official 2026/27 group phase playing times PDF", "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"}
 EHF_PREV = {"name": "EHF official Round 5 match preview", "url": "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins"}
@@ -54,12 +54,12 @@ def get_rows_b() -> list[dict]:
          ("ICC Men's T20I rating", "No. 4 (247 rating)", 68.5), ("ICC Men's T20I rating", "No. 2 (267 rating, T20WC winners)", 81.5),
          [NZC_FIX, ICC_RANK], None, []),
         ("cric-ausw-nzw-t20-3", "Women's T20I Series", "3rd T20I", "2026-10-22T08:15:00Z", None,
-         "Australia Women", "New Zealand Women", "Manuka Oval, Canberra", False,
+         "Australia Women", "New Zealand Women", "North Sydney Oval, Sydney", False,
          ("ICC Women's T20I rating", "No. 1 (287 rating)", 88.0), ("ICC Women's T20I rating", "No. 4 (253 rating)", 69.0),
          [CA_SERIES, NZC_FIX, ICC_RANK],
          {"listed": True, "event_id": 188826, "selection": "Australia W", "market": "Win Match", "consensus": "1/2 win tips (50%)",
           "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Australia_W_vs_New_Zealand_W_3rd_T20_Match/7?event_id=188826"},
-         []),
+         ["Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists this 3rd T20I at North Sydney Oval, Sydney; the earlier Manuka Oval entry is not reproducible on the official service."]),
         ("cric-afg-ban-odi", "Men's One-Day International", "ODI Tri-Series", None, "2026-10-21",
          "Afghanistan", "Bangladesh", "Sharjah / UAE (neutral)", True,
          ("ICC Men's ODI rating", "No. 8 (92 rating)", 74.0), ("ICC Men's ODI rating", "No. 9 (82 rating)", 64.0),
@@ -67,18 +67,24 @@ def get_rows_b() -> list[dict]:
          {"listed": True, "event_id": 188824, "selection": "Afghanistan", "market": "Win Match", "consensus": "7/7 win tips (100%)",
           "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Afghanistan_vs_Bangladesh_One_Day_Match/7?event_id=188824"},
          []),
-        ("cric-nza-inda-fc1", "First-Class Tour Match", "1st Four-Day Match", None, "2026-10-22",
-         "New Zealand A", "India A", "Saxton Oval, Nelson", False, None, None, [NZC_FIX], None,
-         ["No official ICC rating for 'A' representative sides; baseline pricing"]),
-        ("cric-ford-auck-cant", "Ford Trophy (List A 50-over)", "Round 1", None, "2026-10-24",
+        ("cric-nza-inda-fc1", "First-Class Tour Match", "1st Four-Day Match", None, "2026-10-23",
+         "New Zealand A", "India A", "Bert Sutcliffe Oval, Lincoln University", False, None, None, [NZC_FIX], None,
+         ["Corrected 2026-10-21 against a direct re-fetch of scoring.nzc.nz/fixtures, which now lists this match on Friday 23 October at Bert Sutcliffe Oval, Lincoln University; the earlier 22 October / Saxton Oval entry is not reproducible.",
+          "No official ICC rating for 'A' representative sides; baseline pricing",
+          "No official four-day match-total baseline was captured; the total market is intentionally left blank rather than inferred"]),
+        ("cric-ford-auck-cant", "Ford Trophy (List A 50-over)", "Round 1", None, "2026-10-27",
          "Auckland Aces", "Canterbury", "Kennards Hire Community Oval, Auckland", False, None, None, [NZC_FIX], None,
-         ["Opening round of 2026-27 NZ domestic List A season; both sides 0-0"]),
-        ("cric-ford-cds-nd", "Ford Trophy (List A 50-over)", "Round 1", None, "2026-10-24",
-         "Central Stags", "Northern Districts", "Pukekura Park, New Plymouth", False, None, None, [NZC_FIX], None,
-         ["Opening round of 2026-27 NZ domestic List A season; both sides 0-0"]),
-        ("cric-ford-wgtn-otago", "Ford Trophy (List A 50-over)", "Round 1", None, "2026-10-24",
+         ["Corrected 2026-10-21 against scoring.nzc.nz/fixtures: Ford Trophy Round 1 sits under the TUE 27 Oct heading, not Sat 24 Oct.",
+          "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"]),
+        ("cric-ford-cds-nd", "Ford Trophy (List A 50-over)", "Round 1", None, "2026-10-27",
+         "Central Stags", "Northern Districts", "Saxton Oval, Nelson", False, None, None, [NZC_FIX], None,
+         ["Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists Central Stags v Northern Districts, Ford Trophy Round 1, at Saxton Oval, Nelson; the earlier Pukekura Park entry is not reproducible on the official service.",
+          "Corrected 2026-10-21 against scoring.nzc.nz/fixtures: Ford Trophy Round 1 is Tue 27 Oct, not Sat 24 Oct.",
+          "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"]),
+        ("cric-ford-wgtn-otago", "Ford Trophy (List A 50-over)", "Round 1", None, "2026-10-27",
          "Wellington Firebirds", "Otago Volts", "Cello Basin Reserve, Wellington", False, None, None, [NZC_FIX], None,
-         ["Opening round of 2026-27 NZ domestic List A season; both sides 0-0"]),
+         ["Corrected 2026-10-21 against scoring.nzc.nz/fixtures: Ford Trophy Round 1 is Tue 27 Oct, not Sat 24 Oct.",
+          "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"]),
     ]
     for cid, comp, stg, utc, dloc, h, a, ven, neut, hi, ai, srcs, olbg, fl in cricket_rows:
         inp = {"home": {"label": hi[0], "value": hi[1], "rating": hi[2]},
@@ -88,6 +94,12 @@ def get_rows_b() -> list[dict]:
             "start_utc": utc, "date_local": dloc, "home": h, "away": a, "venue": ven,
             "neutral": neut, "status": "verified", "sources": srcs, "inputs": inp, "flags": fl,
         }
+        if cid == "cric-afg-ban-odi":
+            # No governing-body page publishes this fixture (see F-T21-04).
+            r["status"] = "unverified"
+            r["flags"] = list(r["flags"]) + [
+                "Unverified: no official fixture page for Afghanistan v Bangladesh at Sharjah was found in two passes; "
+                "the only citation is the ICC rankings table, which publishes no fixtures. Date and venue are as OLBG lists them."]
         if olbg:
             r["olbg"] = olbg
         rows.append(r)
@@ -131,7 +143,7 @@ def get_rows_b() -> list[dict]:
          609576, "Ulster +18.50", "Handicap", "2/2 win tips (100%)"),
         ("ru-urc-609580", "2026-10-24T14:00:00Z", "DHL Stormers", "Scarlets", "DHL Stadium, Cape Town",
          609580, "Stormers", "To Win", "1/2 win tips (50%)"),
-        ("ru-urc-609578", "2026-10-24T17:00:00Z", "Leinster", "Munster", "Aviva Stadium, Dublin",
+        ("ru-urc-609578", "2026-10-24T17:00:00Z", "Leinster", "Munster", "Dublin (venue TBC)",
          609578, "Leinster", "To Win", "1/1 win tips (100%)"),
     ]
     for rid, utc, h, a, ven, eid, sel, mkt, cons in urc_rows:
@@ -141,7 +153,11 @@ def get_rows_b() -> list[dict]:
             "status": "verified", "sources": [URC_FIX], "inputs": {},
             "olbg": {"listed": True, "event_id": eid, "selection": sel, "market": mkt, "consensus": cons,
                      "url": "https://www.olbg.com/betting-tips/Rugby_Union/9"},
-            "flags": ["URC Round 3 live standings table client-rendered on stats.unitedrugby.com; fixture, venue and UTC kick-off verified on URC site"],
+            "flags": (
+                ["URC official 2026/27 fixtures release publishes this fixture as 'TBC, Dublin'; venue is not asserted beyond the city"]
+                if rid == "ru-urc-609578" else
+                ["URC Round 3 live standings table client-rendered on stats.unitedrugby.com; fixture, venue and UTC kick-off verified on URC site"]
+            ),
         })
 
     # Keep all 5 Gallagher Premiership rows from ce5920e3 preserved transparently as cross-checked
@@ -202,6 +218,38 @@ def get_rows_b() -> list[dict]:
             "flags": ["OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"],
         })
 
+    # IRL match records are the governing-body confirmation for every RLWC26 fixture,
+    # and they carry the venue-local kick-off that pins the UTC value.
+    irl_records = {
+        "rl-wc26-aus-fij": ("2573", "Suncorp Stadium, Brisbane, Sun 25 Oct 19:05 local (09:05Z)"),
+        "rl-wc26-nzl-cok": ("2572", "One NZ Stadium, Christchurch, Sun 25 Oct 18:05 local (05:05Z)"),
+        "rl-wc26-eng-fra": ("2571", "HBF Park, Perth, Sat 24 Oct 14:35 local (06:35Z)"),
+        "rl-wc26-png-sam": ("2570", "Santos National Football Stadium, Port Moresby, Sat 24 Oct 14:25 local (04:25Z)"),
+        "rl-wc26-tga-lbn": ("2569", "CommBank Stadium, Sydney, Fri 23 Oct 20:05 local (09:05Z)"),
+        "rl-wc26w-aus-eng": ("2588", "HBF Park, Perth, Sat 24 Oct 17:05 local (09:05Z)"),
+        "rl-wc26w-sam-wal": ("2586", "CommBank Stadium, Sydney, Fri 23 Oct 17:50 local (06:50Z)"),
+    }
+    for row in rows:
+        record = irl_records.get(row["id"])
+        if not record:
+            continue
+        irl_id, confirmation = record
+        row["sources"] = [
+            *row["sources"],
+            {"name": "IRL official match record", "url": f"https://www.intrl.sport/match-details/{irl_id}"},
+        ]
+        row["flags"] = [
+            *row["flags"],
+            f"IRL match record re-read 2026-10-21T08:10Z: {confirmation}.",
+        ]
+        if row["id"] == "rl-wc26w-sam-wal":
+            row["flags"].insert(
+                0,
+                "Kick-off conflict: the NRL draw lists 2:45am AEDT (06:45Z) while the IRL match record lists "
+                "17:50 local (06:50Z). Both values are published; the five-minute difference is not resolved "
+                "by inference.",
+            )
+
     # =========================================================================
     # 10. HANDBALL — ALL 12 EHF Champions League Men Round 5 Ties (eurohandball.com)
     # =========================================================================
@@ -232,7 +280,7 @@ def get_rows_b() -> list[dict]:
         ("hand-ehf-12051", "2026-10-22T16:45:00Z", "OTP Bank - PICK Szeged", "GOG", "PICK Arena, Szeged",
          ("Group standing", "1-1-2 (3 pts)", 67.0), ("Group standing", "3-0-1 (6 pts)", 75.0),
          12051, "GOG", "Money Line", "2/4 win tips (50%)"),
-        ("hand-ehf-12048", "2026-10-22T18:45:00Z", "Kolstad Håndball", "SC Magdeburg", "Trondheim Spektrum, Trondheim",
+        ("hand-ehf-12048", "2026-10-22T18:45:00Z", "Kolstad Håndball", "SC Magdeburg", "Kolstad Arena, Kolstad, Norway",
          ("Group standing", "4th, 0-0-4 (0 pts)", 52.0), ("Group standing", "1st, 4-0-0 (8 pts)", 86.0),
          12048, "Tie", "Money Line", "3/6 win tips (50%)"),
         ("hand-ehf-12054", "2026-10-22T18:45:00Z", "Sporting CP", "IFK Kristianstad", "Pavilhão João Rocha, Lisbon",
@@ -294,23 +342,23 @@ def get_rows_b() -> list[dict]:
     # 12. AUSSIE RULES — ALL 9 Official 2026 NAB AFLW Round 11 Matches (afl.com.au)
     # =========================================================================
     aflw_rows = [
-        ("aflw-r11-01", "2026-10-23T08:15:00Z", "North Melbourne", "Adelaide Crows", "Arden Street Oval, Melbourne",
+        ("aflw-r11-01", "2026-10-25T02:05:00Z", "North Melbourne", "Adelaide Crows", "North Hobart Oval, Hobart",
          ("2026 AFLW R10 ladder", "1st, 40 pts (10-0)", 96.0), ("2026 AFLW R10 ladder", "9th, 20 pts (5-5)", 60.0)),
-        ("aflw-r11-02", "2026-10-24T02:05:00Z", "Geelong Cats", "Fremantle", "GMHBA Stadium, Geelong",
+        ("aflw-r11-02", "2026-10-24T04:05:00Z", "Geelong Cats", "Fremantle", "GMHBA Stadium, Geelong",
          ("2026 AFLW R10 ladder", "13th, 16 pts (4-6)", 50.0), ("2026 AFLW R10 ladder", "7th, 24 pts (6-4)", 66.0)),
-        ("aflw-r11-03", "2026-10-24T04:05:00Z", "Western Bulldogs", "Melbourne", "Mission Whitten Oval, Melbourne",
+        ("aflw-r11-03", "2026-10-24T08:15:00Z", "Western Bulldogs", "Melbourne", "Mission Whitten Oval, Melbourne",
          ("2026 AFLW R10 ladder", "12th, 16 pts (4-6)", 51.0), ("2026 AFLW R10 ladder", "3rd, 32 pts (8-2)", 82.0)),
-        ("aflw-r11-04", "2026-10-24T04:05:00Z", "Carlton", "GWS GIANTS", "IKON Park, Melbourne",
+        ("aflw-r11-04", "2026-10-25T06:05:00Z", "Carlton", "GWS GIANTS", "IKON Park, Melbourne",
          ("2026 AFLW R10 ladder", "6th, 24 pts (6-4)", 67.0), ("2026 AFLW R10 ladder", "16th, 8 pts (2-8)", 38.0)),
-        ("aflw-r11-05", "2026-10-24T06:15:00Z", "Hawthorn", "Essendon", "Kinetic Stadium, Frankston",
+        ("aflw-r11-05", "2026-10-25T04:05:00Z", "Hawthorn", "Essendon", "Kennedy Community Centre, Dingley",
          ("2026 AFLW R10 ladder", "4th, 32 pts (8-2)", 81.0), ("2026 AFLW R10 ladder", "14th, 14 pts (3-6-1)", 46.0)),
-        ("aflw-r11-06", "2026-10-24T08:15:00Z", "Gold Coast SUNS", "Richmond", "People First Stadium, Gold Coast",
+        ("aflw-r11-06", "2026-10-24T06:05:00Z", "Gold Coast SUNS", "Richmond", "People First Stadium, Gold Coast",
          ("2026 AFLW R10 ladder", "18th, 4 pts (1-9)", 31.0), ("2026 AFLW R10 ladder", "17th, 8 pts (2-8)", 37.0)),
-        ("aflw-r11-07", "2026-10-25T02:05:00Z", "Port Adelaide", "Collingwood", "Alberton Oval, Adelaide",
+        ("aflw-r11-07", "2026-10-23T08:15:00Z", "Port Adelaide", "Collingwood", "Alberton Oval, Adelaide",
          ("2026 AFLW R10 ladder", "11th, 20 pts (5-5)", 58.0), ("2026 AFLW R10 ladder", "15th, 12 pts (3-7)", 43.0)),
-        ("aflw-r11-08", "2026-10-25T04:05:00Z", "Sydney Swans", "West Coast Eagles", "Henson Park, Sydney",
+        ("aflw-r11-08", "2026-10-25T01:35:00Z", "Sydney Swans", "West Coast Eagles", "Henson Park, Sydney",
          ("2026 AFLW R10 ladder", "5th, 26 pts (6-3-1)", 71.0), ("2026 AFLW R10 ladder", "8th, 24 pts (6-4)", 65.0)),
-        ("aflw-r11-09", "2026-10-25T06:05:00Z", "St Kilda", "Brisbane Lions", "RSEA Park, Melbourne",
+        ("aflw-r11-09", "2026-10-24T02:05:00Z", "St Kilda", "Brisbane Lions", "RSEA Park, Melbourne",
          ("2026 AFLW R10 ladder", "10th, 20 pts (5-5)", 59.0), ("2026 AFLW R10 ladder", "2nd, 32 pts (8-2)", 84.0)),
     ]
     for aid, utc, h, a, ven, hi, ai in aflw_rows:
@@ -322,7 +370,8 @@ def get_rows_b() -> list[dict]:
                 "home": {"label": hi[0], "value": hi[1], "rating": hi[2]},
                 "away": {"label": ai[0], "value": ai[1], "rating": ai[2]},
             },
-            "flags": ["OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"],
+            "flags": ["OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
+                      "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."],
         })
 
     # =========================================================================
@@ -382,11 +431,13 @@ def get_rows_b() -> list[dict]:
     # =========================================================================
     multi_runner_events = [
         ("f1-usgp-2026", "motor-racing", "FIA Formula One World Championship",
-         "Round 18 - United States Grand Prix (56 laps)", "2026-10-25T20:00:00Z", "2026-10-25",
+         "United States Grand Prix (56 laps)", "2026-10-25T21:00:00Z", "2026-10-25",
          "United States Grand Prix", "Circuit of The Americas, Austin, TX", [F1_USGP],
          {"listed": True, "event_id": 913, "selection": "Max Verstappen", "market": "Outright Race Winner", "consensus": "OLBG event 913",
           "url": "https://www.olbg.com/betting-tips/Motor_Racing/14"},
-         ["20-car Grand Prix field market (not a two-sided fixture); race start verified at 20:00 UTC (OLBG displays 16:00 EDT)"]),
+         ["20-car Grand Prix field market (not a two-sided fixture)",
+                "Race start re-verified independently on 2026-10-21T07:25Z at formula1.com/en/racing/2026/united-states: 25 October, 56 laps, Circuit of The Americas, 16:00 track time. Austin is on CDT (UTC-5) on that date, so the start is 21:00 UTC; the earlier 20:00 UTC value and 'EDT' label were wrong by an hour.",
+                "Round number removed: the linked official race page does not display one."]),
         ("golf-bermuda-2026", "golf", "PGA TOUR FedExCup Fall",
          "Butterfield Bermuda Championship (72-hole stroke play)", None, "2026-10-22",
          "Butterfield Bermuda Championship", "Port Royal Golf Course, Southampton, Bermuda", [PGA_BERM],

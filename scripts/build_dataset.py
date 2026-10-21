@@ -11,6 +11,7 @@ Emits:
 from __future__ import annotations
 
 import json
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -23,13 +24,204 @@ from dataset_rows_b import get_rows_b
 
 DATE_ANCHOR = "2026-10-21"
 
+CONSENSUS_RE = re.compile(r"^\d+/\d+ win tips \(\d+%\)$")
+LIVE_SNAPSHOT = ROOT / "data" / "live_snapshot.json"
+
+
+def apply_live_consensus(rows: list[dict]) -> dict:
+    """Overlay the live OLBG tip-consensus capture onto matching dataset rows.
+
+    Only OLBG's own upstream tip counters are replaced; every sporting fact (kick-off
+    time, venue, records, ratings) still comes from the governing-body sources recorded
+    on the row.  The previous value is retained in ``consensus_prior`` so the change is
+    auditable.  Rows whose captured consensus is not in OLBG's own ``x/y win tips (z%)``
+    format are left untouched rather than being partially written.
+    """
+    if not LIVE_SNAPSHOT.exists():
+        return {"applied": 0, "skipped": 0}
+    snap = json.loads(LIVE_SNAPSHOT.read_text())
+    live = {int(ev["event_id"]): ev for ev in snap["events"]}
+    applied = skipped = 0
+    for row in rows:
+        olbg = row.get("olbg") or {}
+        ev = live.get(int(olbg.get("event_id") or 0))
+        if not ev or not CONSENSUS_RE.match(ev.get("consensus", "")):
+            skipped += 1
+            continue
+        if olbg.get("consensus") != ev["consensus"]:
+            olbg["consensus_prior"] = olbg.get("consensus")
+            olbg["consensus"] = ev["consensus"]
+        if olbg.get("selection") != ev["selection"]:
+            olbg["selection_prior"] = olbg.get("selection")
+        olbg["selection"] = ev["selection"]
+        if ev.get("market"):
+            olbg["market"] = ev["market"]
+        olbg["captured_utc"] = snap["fetched_utc"]
+        applied += 1
+    return {"applied": applied, "skipped": skipped, "captured_utc": snap["fetched_utc"]}
+
+
+def _register_t34_findings() -> list[dict]:
+    """Independent pass (T34) findings, imported from the single generator in
+    scripts/live_verification.py so the Flagged page and the Live Verification
+    page cannot drift apart.  No network I/O: the reads were made by hand and
+    are recorded there with their timestamps."""
+    from live_verification import SOURCES, T34_FINDINGS  # local import; scripts/ is on sys.path
+    out = []
+    for f in T34_FINDINGS:
+        src = SOURCES[f["source"]]
+        out.append({
+            "id": f["id"].replace("F-T34-", "T34-"),
+            "category": "Independent Re-Verification (T34)",
+            "severity": f["severity"],
+            "affected": f["area"],
+            "summary": f["detail"],
+            "evidence": f"Read on 2026-10-21 (independent pass T34) from {src['name']} — {src['url']}",
+            "official_url": src["url"],
+            "resolution": f["status"],
+        })
+    return out
+
+def live_refresh_findings() -> list[dict]:
+    """Public disclosure of what the live re-capture did and did not confirm."""
+    diff_path = ROOT / "data" / "live_diff.json"
+    if not diff_path.exists():
+        return []
+    d = json.loads(diff_path.read_text())
+    s = d["summary"]
+    flips = [c for c in d["changed"] if c["selection_flipped"]]
+    examples = "; ".join(
+        f"{c['title']} ({c['was']['selection']} -> {c['now']['selection']})" for c in flips[:4]
+    )
+    return [
+        {
+            "id": "F-LIVE-01-DRIFT",
+            "category": "Live Recapture",
+            "severity": "medium",
+            "affected": f"{s['consensus_or_selection_changed']} of {s['matched']} dataset rows matched to a live OLBG card",
+            "summary": (
+                f"OLBG tip consensus and/or most-tipped selection moved between the committed "
+                f"capture and the {d['captured_utc']} recapture."
+            ),
+            "evidence": (
+                f"{s['selection_flipped']} cards changed the selection OLBG highlights, e.g. {examples}, "
+                f"and {s['consensus_or_selection_changed'] - s['selection_flipped']} kept the same selection "
+                f"with a different tip count/share. Consensus is an upstream opinion counter, not a "
+                f"verified sporting fact, so this changes no fixture, price or confidence tier."
+            ),
+            "official_url": "https://www.olbg.com/betting-tips",
+            "resolution": (
+                "Every matched row carries the recaptured consensus plus "
+                "olbg.captured_utc and the superseded value in olbg.consensus_prior; the full "
+                "before/after list is published on the Live Refresh page and in data/live_diff.json."
+            ),
+        },
+        {
+            "id": "F-LIVE-02-NO-OFFICIAL",
+            "category": "Verification Boundary",
+            "severity": "high",
+            "affected": f"{s['new_not_in_dataset']} live OLBG cards not present in the verified dataset",
+            "summary": (
+                "These events are listed because OLBG publishes them, but none of their kick-off times, "
+                "participant records or ratings have been confirmed against a governing body in this pass."
+            ),
+            "evidence": (
+                f"The {d['captured_utc']} capture returned {s['live_events_captured']} cards across "
+                f"{s['sports_with_live_events']} sports; {s['matched']} join to an existing source-verified row "
+                f"by OLBG event_id and {s['new_not_in_dataset']} do not. No price, winner pick or confidence tier "
+                "is originated for an unjoined card."
+            ),
+            "official_url": "https://www.olbg.com/betting-tips",
+            "resolution": (
+                "Published as upstream-only rows on the Live Refresh page with every sporting field left blank "
+                "and marked Unverified; they are excluded from data/fixtures.json, data/lines.json and the "
+                "134-event verified count until an official source confirms each one."
+            ),
+        },
+        {
+            "id": "F-LIVE-03-TRUNCATION",
+            "category": "Upstream OLBG Defect",
+            "severity": "medium",
+            "affected": f"{s['dataset_rows_absent_from_capture']} dataset rows with an OLBG event_id",
+            "summary": (
+                "Dataset rows whose OLBG event page exists were not visible on the recaptured hub first screen."
+            ),
+            "evidence": (
+                "OLBG hubs render roughly 20 cards before a 'Load More Tips' control, so absence from the "
+                "first screen is not evidence that OLBG has delisted or completed the event. Examples include "
+                "basketball 535918/535921/535923 and darts 32331/32336, all still future-dated in the dataset."
+            ),
+            "official_url": "https://www.olbg.com/betting-tips/Basketball/4",
+            "resolution": (
+                "Recorded as 'not in capture' rather than deleted or expired; the rows stay in the dataset with "
+                "their governing-body kick-off times and are listed with this caveat in data/live_diff.json."
+            ),
+        },
+        {
+            "id": "F-LIVE-04-EMPTY-HUBS",
+            "category": "Upstream OLBG Coverage",
+            "severity": "medium",
+            "affected": "Aussie Rules (ID 22), eSports (ID 23), Rugby League (ID 10)",
+            "summary": (
+                "Two in-scope hubs returned 'No tips found', and the Rugby League hub returned only 2027 outright "
+                "markets while the desk still carries 9 AFLW fixtures, 1 LoL Worlds tie and 7 RLWC26 fixtures."
+            ),
+            "evidence": (
+                "Fetched hubs for Aussie_Rules/22 and eSports/23 returned 'No tips found' at the capture time; "
+                "Rugby_League/10 listed State of Origin 2027, Super League 2027 and NRL 2027 outrights only. "
+                "Absence of OLBG tips does not invalidate the governing-body fixtures, but it does mean OLBG "
+                "consensus cannot be refreshed for those sports."
+            ),
+            "official_url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+            "resolution": (
+                "Consensus for those three sports is retained from the earlier capture and labelled with its "
+                "capture timestamp; the gap is published rather than back-filled."
+            ),
+        },
+        {
+            "id": "F-LIVE-06-MLB-CLOCK",
+            "category": "Upstream OLBG Defect",
+            "severity": "medium",
+            "affected": "Baseball - TB Rays @ MIL Brewers (event_id=160789)",
+            "summary": (
+                "OLBG's baseball hub card shows '24 Oct 01:00' for a game the official MLB StatsAPI schedules "
+                "for 2026-10-25T00:00:00Z."
+            ),
+            "evidence": (
+                "Verified against the official MLB StatsAPI schedule for 2026-10-24, which returns gamePk 849802, "
+                "'World Series Game 2', Tampa Bay Rays at Milwaukee Brewers, American Family Field, "
+                "gameDate 2026-10-25T00:00:00Z. Even reading OLBG's clock as UTC-4, its label maps to "
+                "2026-10-24T05:00:00Z - roughly 19 hours before the official first pitch."
+            ),
+            "official_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24",
+            "resolution": (
+                "The desk keeps the official MLB time on mlb-849802 and treats the OLBG label as a display defect; "
+                "the OLBG link is retained only as the upstream discovery reference."
+            ),
+        },
+        {
+            "id": "F-LIVE-05-ZERO-TIPS",
+            "category": "Upstream OLBG Defect",
+            "severity": "low",
+            "affected": "Golf - Hero Womens Indian Open (event_id=101909)",
+            "summary": "The each-way outright card still renders an empty tip count / 0% share on the hub.",
+            "evidence": (
+                "The card shows 'Avani Prashanth' with no tip counter, matching the previously documented 0/0 "
+                "division display defect on each-way-only outright markets."
+            ),
+            "official_url": "https://www.olbg.com/betting-tips/Golf/5",
+            "resolution": "Consensus is recorded as unavailable for this card; no share is inferred.",
+        },
+    ]
+
+
 
 def build_sources() -> dict:
     return {
         "retrieved": DATE_ANCHOR,
         "principle": (
-            "Every match, venue, UTC start time, ranking, and record is verified directly "
-            "against the official governing-body or tournament organiser feed. Where an "
+            "Every match row carries an official governing-body or tournament-organiser source; "
+            "its status remains verified or cross-checked as recorded. Where an "
             "official feed omits a field (such as a broadcast-TBD start time or opening-week "
             "table), the field is left explicitly null/blank and flagged rather than inferred."
         ),
@@ -162,7 +354,7 @@ def build_flagged_registry(fixtures: list[dict]) -> dict:
             "summary": "OLBG server renders UTC-4 (US Eastern Daylight Time) strings across UK/European events without timezone labels.",
             "evidence": "Event 689388 is titled '11:14 Kinsley' (11:14 BST = 10:14 UTC) yet displays 'Today 06:14' right beside the title; event 534889 ('SAC Kings @ LA Clippers', 02:30 UTC Oct 22) displays 'Today 22:30' next to 'SAC Kings (2:30am)'.",
             "official_url": "https://www.olbg.com/betting-tips/Greyhounds/28",
-            "resolution": "Every fixture in data/fixtures.json stores canonical ISO-8601 UTC verified against official governing-body feeds.",
+            "resolution": "Every fixture in data/fixtures.json stores a canonical ISO-8601 UTC value linked to a governing-body source; any unconfirmed UTC is left blank and flagged.",
         },
         {
             "id": "BUG-OLBG-3536-DATE",
@@ -221,7 +413,7 @@ def build_flagged_registry(fixtures: list[dict]) -> dict:
             "affected": "Rugby League (ID 10), Aussie Rules (ID 22), eSports (ID 23)",
             "summary": "OLBG shows zero live match tips across 17 active top-flight fixtures (7 RLWC26 Round 2, 9 NAB AFLW Round 11, 1 LoL Worlds Swiss).",
             "evidence": "Verified live on nrl.com, afl.com.au, and lolesports.com on 2026-10-21.",
-            "official_url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026",
+            "official_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
             "resolution": "All 17 missing fixtures captured directly from official governing bodies and fully priced.",
         },
         {
@@ -244,6 +436,166 @@ def build_flagged_registry(fixtures: list[dict]) -> dict:
             "official_url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
             "resolution": "Included all 4 official GAA County Finals with explicit borderline-scope tags so nothing is silently omitted.",
         },
+        {
+            "id": "AUDIT-PREDICTION-PROSE-REMEDIATED",
+            "category": "Provenance Correction",
+            "severity": "medium",
+            "affected": "31 High-confidence generated predictions",
+            "summary": "An independent post-integration audit found tactical prose that was not represented in the stored source facts arrays.",
+            "evidence": "The review page records the historical issue and examples; the generated text is now limited to each fixture's two stored, source-linked input values plus the explicitly labelled model selection.",
+            "official_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+            "resolution": "Re-authored all 31 predictions from the versioned official-input fields; unsupported tactical, injury, lineup and performance claims were removed. The source freshness boundary remains separately flagged.",
+        },
+        {
+            "id": "AUDIT-STATUS-SPLIT",
+            "category": "Verification Status",
+            "severity": "medium",
+            "affected": "Primary snapshot: 134 source-linked events",
+            "summary": "The fixture data contains 129 Verified rows and 5 Cross-checked Gallagher Premiership rows; public summary wording must preserve that split.",
+            "evidence": "Premiership fixture rendering was client-side during the stored verification work, so those five rows were deliberately not promoted to Verified.",
+            "official_url": "https://www.premrugby.com/fixtures-results",
+            "resolution": "Dashboard, README and audit manifest now use '134 source-linked events (129 Verified; 5 Cross-checked)' instead of flattening all rows to Verified.",
+        },
+        {
+            "id": "AUDIT-SOURCE-FRESHNESS",
+            "category": "Review Boundary",
+            "severity": "medium",
+            "affected": "All primary fixture source links",
+            "summary": "The final integration gate validates recorded URL authority, data structure and static output; it does not make live network requests during validation.",
+            "evidence": "A valid recorded source link is auditable provenance, not a guarantee that a remote publisher has not later changed its content.",
+            "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21",
+            "resolution": "The exact per-row source URLs are published in the Final Integration Audit. Any later discrepancy must remain blank/flagged until a governing-body source is re-opened and compared.",
+        },
+        {
+            "id": "LIVE-F-V1-SNK-LINKS",
+            "category": "Live Re-Verification Correction",
+            "severity": "high",
+            "affected": "Snooker — 5 of 11 Northern Ireland Open Round 2 rows",
+            "summary": "Three rows cited WST match-centre UUIDs that bind to no match, and two rows cited only the generic site even though WST publishes a match centre for both ties.",
+            "evidence": "Re-fetching 5b3a7f22-1c41-48e8-8a2c-94b28a21b9d1 returns an unbound template with no players. The WST live listing binds Holt-Brown to e58a00e5, Gao-Gilbert to 4fb27af0, Noppon-Donaldson to 3a24076e, Brecel-O'Donnell to 0c49ba0c and Slessor-Jones to f6536f1f.",
+            "official_url": "https://www.wst.tv/",
+            "resolution": "All eleven rows now cite the match centre WST actually binds to the pairing.",
+        },
+        {
+            "id": "LIVE-F-V2-WTA-ID",
+            "category": "Live Re-Verification Correction",
+            "severity": "medium",
+            "affected": "Tennis — 6 WTA 500 Ningbo Open rows",
+            "summary": "The rows cited tournament 1115 for Ningbo; WTA's own site links the BNB Ningbo Open draws at tournament 2092.",
+            "evidence": "The wta.com notification panel links https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws for both the singles and doubles draw releases.",
+            "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
+            "resolution": "Citation corrected to 2092. The draw body is client-rendered, so the pairings could not be re-read and those rows are listed as not re-checked.",
+        },
+        {
+            "id": "LIVE-F-V3-CRIC-VENUE",
+            "category": "Live Re-Verification Correction",
+            "severity": "high",
+            "affected": "Cricket — cric-ausw-nzw-t20-3, cric-nza-inda-fc1, cric-ford-cds-nd",
+            "summary": "Three NZC fixtures carried a venue or date that the official service does not publish.",
+            "evidence": "scoring.nzc.nz/fixtures lists the 3rd Women's T20I at North Sydney Oval, New Zealand A v India A on 23 Oct at Bert Sutcliffe Oval (Lincoln University), and Central Stags v Northern Districts at Saxton Oval, Nelson.",
+            "official_url": "https://scoring.nzc.nz/fixtures",
+            "resolution": "All three corrected in the dataset source from the re-fetched official service and flagged on their rows.",
+        },
+        {
+            "id": "LIVE-F-V4-BOS-SPLIT",
+            "category": "Live Re-Verification Correction",
+            "severity": "medium",
+            "affected": "Ice hockey — nhl-2026020154 Boston Bruins v Nashville Predators",
+            "summary": "The row claimed a 5-1-0 home record; the official standings return four home games at 3-1-0 for the same 7-2-1 record.",
+            "evidence": "api-web.nhle.com/v1/standings/2026-10-20: homeGamesPlayed 4, homeWins 3, homeLosses 1, homeOtLosses 0, while overall 7-2-1, pointPctg .750 and goalDifferential +14 already matched the row.",
+            "official_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+            "resolution": "Descriptive split corrected to 3-1-0. Because points percentage and goal differential drove the rating, no price moved.",
+        },
+        {
+            "id": "LIVE-F-V5-NHL-DRIFT",
+            "category": "Snapshot Drift Disclosure",
+            "severity": "medium",
+            "affected": "Ice hockey — nhl-2026020160 St. Louis Blues v Vegas Golden Knights",
+            "summary": "Vegas was priced at 8-2-0 (.800, W3); the same live endpoint now returns 8-3-0 (.727, L1) over 11 games played.",
+            "evidence": "The standings endpoint reports standingsDateTimeUtc 2026-10-21T07:05:30Z, i.e. it is a live table, so any club that plays after a snapshot will drift the same way.",
+            "official_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+            "resolution": "Deliberately not re-priced: the published line is a labelled pre-game snapshot and rewriting a pick after the fact would be worse than disclosing it. Row flag records both values.",
+        },
+        {
+            "id": "LIVE-F-V6-PDC-WALL",
+            "category": "Source Access Limit",
+            "severity": "medium",
+            "affected": "Darts — all 16 Machineseeker European Championship rows",
+            "summary": "The official PDC draw release still returns only a cookie-consent interstitial to a text fetch.",
+            "evidence": "Two fetches on 2026-10-21 (start of document and mid-document) returned Consent Management Platform text with no draw content.",
+            "official_url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
+            "resolution": "The 16 darts rows are marked not re-checked on the Live Verification page instead of being implied verified.",
+        },
+        {
+            "id": "LIVE-F-V7-WTA-ATP-JS",
+            "category": "Source Access Limit",
+            "severity": "medium",
+            "affected": "Tennis — all 11 ATP/WTA rows",
+            "summary": "WTA and ATP draw pages are client-rendered and return a notification shell without draw content to a text fetch.",
+            "evidence": "Re-fetching /tournaments/2092/ningbo/2026/draws returned the site's notification panel only, with no draw body.",
+            "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
+            "resolution": "The tennis rows keep their source links but are published as not re-checked in this pass.",
+        },
+        {
+            "id": "LIVE-F-V8-WST-CLOCK",
+            "category": "Rendering Limit",
+            "severity": "low",
+            "affected": "Snooker — all 11 rows (session start)",
+            "summary": "WST publishes no UTC session time and renders the clock in the viewer's timezone, so a scraped clock cannot be a fixture start time.",
+            "evidence": "The fetch client renders publisher clocks at UTC-4: all five RLWC kick-offs displayed on nrl.com map exactly to the published UTC values under that offset, and the WST listing showed 05:00/08:00/09:00/14:00/15:00 for a Belfast afternoon and evening card.",
+            "official_url": "https://www.wst.tv/",
+            "resolution": "start_utc stays blank on all eleven rows. The flag now explains the rendering rather than asserting a local session time.",
+        },
+        {
+            "id": "LIVE-F-V9-NRL-ID",
+            "category": "Live Re-Verification Correction",
+            "severity": "low",
+            "affected": "Rugby league — 5 men's RLWC26 rows and the zero-tips blind-spot finding",
+            "summary": "The men's World Cup rows cited nrl.com competition 175; the site serves the same Round 2 draw as competition 131.",
+            "evidence": "Requesting ?competition=175&round=2&season=2026 returns the draw page with canonical competition=131 and the full five-match Round 2 list.",
+            "official_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+            "resolution": "Men's citation corrected to 131. The women's id 176 was not re-tested and is left as published with its rows marked not re-checked.",
+        },
+        {
+            "id": "LIVE-F-V11-URC-VENUE-TBC",
+            "category": "Live Re-Verification Correction",
+            "severity": "low",
+            "affected": "Rugby union — Leinster v Munster (ru-urc-609578)",
+            "summary": "The row asserted Aviva Stadium, Dublin; the official URC 2026/27 fixtures release publishes the Round 4 venue as 'TBC, Dublin'.",
+            "evidence": "Round 4 entry: 'Leinster v Munster — TBC, Dublin, KO 18.00 IRE & UK / 19.00 ITA & SA'. Participants, date and kick-off match the row; the venue does not.",
+            "official_url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
+            "resolution": "Venue replaced with 'Dublin (venue TBC)' in the dataset source; the row carries a flag until the URC confirms a ground.",
+        },
+        {
+            "id": "LIVE-F-V12-AFLW-VENUE-CODES",
+            "category": "Review Boundary",
+            "severity": "low",
+            "affected": "Aussie rules — North Melbourne v Adelaide, Hawthorn v Essendon",
+            "summary": "The official AFLW Round 11 board publishes three-letter venue codes only; KCC and NHO could not be decoded, and NHO does not correspond to the published Arden Street Oval.",
+            "evidence": "Board tiles: 'nmfc adel ... match 8979 ... NHO' and 'haw ess ... match 8976 ... KCC'. IKP, ALB, GMHBA, PFS, MWO, HEN and RSEA all decoded cleanly to the stored venues.",
+            "official_url": "https://www.afl.com.au/aflw",
+            "resolution": "Both rows flagged rather than guessed; participants and match ids were confirmed.",
+        },
+        {
+            "id": "LIVE-F-V13-PREMIERSHIP-SHELL",
+            "category": "Review Boundary",
+            "severity": "low",
+            "affected": "Rugby union — 5 Gallagher Premiership rows",
+            "summary": "The Premiership fixtures page returned page chrome only, with no fixture rows, so the five Premiership rows stay cross-checked rather than verified.",
+            "evidence": "premrugby.com/fixtures-results returned navigation, sponsor blocks and footer; the fixture list is rendered client-side.",
+            "official_url": "https://www.premrugby.com/fixtures-results",
+            "resolution": "Cross-checked status retained and the reason published; no row was promoted on the strength of an unread page.",
+        },
+        {
+            "id": "LIVE-F-V10-COVERAGE",
+            "category": "Review Boundary",
+            "severity": "medium",
+            "affected": "134 primary rows",
+            "summary": "Successive passes re-fetched official pages for 72 rows. The remainder were not re-read and are listed individually as not re-checked with the blocker for each sport.",
+            "evidence": "Counts come from data/verification.json, which is generated by scripts/live_verification.py and contains one row per fixture.",
+            "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21",
+            "resolution": "The gap is published row by row on the Live Verification page; no row is claimed as re-verified without a recorded read.",
+        },
     ]
 
     row_flags = []
@@ -260,6 +612,40 @@ def build_flagged_registry(fixtures: list[dict]) -> dict:
                 "flags": f.get("flags", []),
                 "official_url": f["sources"][0]["url"],
             })
+
+    # --- T21 (session 4f8d032d-olbg1) second-pass verification findings -------------
+    upstream_bugs.extend([
+        {
+            "id": "F-V11-NHL-INPUTS",
+            "category": "Corrected Data (independent re-read)",
+            "severity": "high",
+            "affected": "Ice Hockey — nhl-2026020152, nhl-2026020153, nhl-2026020154",
+            "summary": "Four NHL input sub-values were transcription errors, not snapshot drift.",
+            "evidence": "Stored versus official: Buffalo goal differential +2 vs -7; Philadelphia road 0-4-2 and -14 vs 0-4-1 and -19; Ottawa home 4-1-0 vs 3-1-0 (only four home games played); Nashville 0 vs -1. Each club had played exactly the number of games in its stored record, so no game can have happened in between.",
+            "official_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+            "resolution": "Corrected at source in scripts/dataset_rows_a.py. Ratings derive from points percentage, which was already correct, so no rating or price moved. Each row carries a dated note.",
+        },
+        {
+            "id": "F-V12-F1-START",
+            "category": "Corrected Data (independent re-read)",
+            "severity": "medium",
+            "affected": "Motor Racing — f1-usgp-2026",
+            "summary": "The United States Grand Prix start was recorded an hour early and mislabelled EDT.",
+            "evidence": "formula1.com lists 16:00 track time on 25 October at Circuit of The Americas. Austin is on CDT (UTC-5), so the start is 21:00 UTC. The page displays no round number.",
+            "official_url": "https://www.formula1.com/en/racing/2026/united-states",
+            "resolution": "start_utc corrected to 2026-10-25T21:00:00Z; the 'EDT' wording and the unverifiable 'Round 18' label removed.",
+        },
+        {
+            "id": "F-V13-SOURCE-REDIRECT",
+            "category": "Source Integrity",
+            "severity": "medium",
+            "affected": "Volleyball — five PlusLiga rows; Gaelic Football — four county finals",
+            "summary": "Two cited official URLs do not resolve to the fixture list they are supposed to evidence.",
+            "evidence": "www.plusliga.pl/table.html redirects to tauronliga.pl and returns a generic competition page; munster.gaa.ie/fixtures/munster-gaa-fixtures/ resolved to an April 2025 news post headed 'Munster GAA Fixtures - April 7th to 12th 2025'.",
+            "official_url": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/",
+            "resolution": "The nine affected rows keep their published values, are listed as not re-checked on the Live Verification page with this blocker named, and are not presented as freshly verified.",
+        },
+    ])
 
     return {
         "generated": DATE_ANCHOR,
@@ -279,6 +665,8 @@ def main() -> None:
     ids = [r["id"] for r in rows]
     assert len(ids) == len(set(ids)), "Duplicate match IDs in dataset"
 
+    live = apply_live_consensus(rows)
+
     sources_doc = build_sources()
     coverage_doc = build_coverage(rows)
     fixtures_doc = {
@@ -291,6 +679,9 @@ def main() -> None:
         "fixtures": rows,
     }
     flagged_doc = build_flagged_registry(rows)
+    flagged_doc["findings"].extend(live_refresh_findings())
+    flagged_doc["findings"].extend(_register_t34_findings())
+    flagged_doc["summary"]["upstream_and_audit_findings"] = len(flagged_doc["findings"])
 
     (ROOT / "data" / "sources.json").write_text(json.dumps(sources_doc, indent=2) + "\n")
     (ROOT / "data" / "coverage.json").write_text(json.dumps(coverage_doc, indent=2) + "\n")
@@ -298,6 +689,10 @@ def main() -> None:
     (ROOT / "datasets").mkdir(exist_ok=True)
     (ROOT / "datasets" / "flagged_for_review.json").write_text(json.dumps(flagged_doc, indent=2) + "\n")
 
+    print(
+        f"Live consensus overlay: {live.get('applied', 0)} rows refreshed from {live.get('captured_utc', '-')}; "
+        f"{len(flagged_doc['findings'])} published findings."
+    )
     print(
         f"Built dataset: {len(rows)} rows across {len(coverage_doc['included'])} in-scope sports "
         f"({fixtures_doc['h2h_count']} H2H + {fixtures_doc['event_only_count']} multi-runner events)."

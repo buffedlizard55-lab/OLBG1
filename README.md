@@ -17,11 +17,13 @@ transparent pricing model that originates our own betting lines for every fixtur
 | Written predictions for every high-confidence pick | `data/predictions.json`, `predictions.html` |
 | Source register with status per source | `data/sources.json`, `sources.html` |
 | Every unverified value and coverage gap | `flagged.html` |
+| Live OLBG recapture (141 cards, 17 hubs) + event-level diff | `live-refresh.html`, `data/live_snapshot.json`, `data/live_diff.json`, `data/live_baseline.json` |
 | Static dashboard (GitHub Pages source, served from repo root) | `index.html`, `*.html`, `sports/`, `assets/` |
 
 ## Quick start
 
 ```bash
+python3 scripts/live_diff.py       # live OLBG capture vs committed dataset -> data/live_diff.json
 python3 scripts/origin_lines.py    # fixtures -> priced markets (writes data/lines.json)
 python3 scripts/build_site.py      # data -> static site (writes the repo root)
 python3 scripts/validate.py        # link + data integrity gate; must print VALIDATION PASSED
@@ -46,18 +48,23 @@ No third-party dependencies. Python 3.10+.
 
 ## Coverage at a glance (Primary Root Desk & `/f7fa77fc/` Mirror — Session `f7fa77fc-olbg1`)
 
-- **134 officially verified events across ALL 17 in-scope OLBG sports** (`126` two-sided H2H matches priced across 4 market families — *Match Winner*, *Draw No Bet*, *Handicap/Spread*, and *Over/Under Total* — plus `8` verified multi-runner field cards across *Golf*, *Motor Racing*, and *Greyhounds*).
+- **134 source-linked events across ALL 17 in-scope OLBG sports**: `128` rows are `verified`, `5` Gallagher Premiership rows remain explicitly `cross-checked`, and `1` row (Afghanistan v Bangladesh ODI) is `unverified` because no governing body publishes that fixture — it is blank-and-flagged rather than filled from a tipster page. `126` two-sided H2H matches are priced across Winner, Draw No Bet, Handicap/Spread and (where a sourced baseline exists) Over/Under Total markets, plus `8` event/field cards.
 - **All 24 active OLBG sport IDs reconciled** (`22` sitemap-listed + unlisted active routes `Entertainment/18` and `Hurling/26`): `17` in scope (`Tennis`, `Basketball`, `Golf`, `Cricket`, `Snooker`, `Rugby Union`, `Rugby League`, `Baseball`, `Ice Hockey`, `Motor Racing`, `Darts`, `Handball`, `Volleyball`, `Aussie Rules`, `eSports`, `Gaelic Football`, `Greyhounds`) and `8` excluded (`Football/Soccer`, `Horse Racing`, `American Football`, `Boxing`, `UFC/MMA`, `Entertainment/Specials`, `Hurling`, `Cycling`).
-- **31 High-confidence picks** (requiring `status == "verified"` AND measured governing-body ratings on **both** sides — `60–70` word unique human prediction per pick, `0` duplicate 6-word n-grams), **35 Medium**, **60 Low**, **8 Field cards**.
-- **0 unverified values published as fact** and **0 broken links across all 110 HTML pages** spanning all five live boards (`/` root, `/f7fa77fc/`, `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`).
+- **31 High-confidence picks** (requiring `status == "verified"` AND measured governing-body ratings on **both** sides — an original, hand-written `30+` word prediction per pick, with `0` duplicate 6-word n-grams), **34 Medium**, **61 Low**, `8` event/field cards.
+- **Live refresh (2026-10-21T07:05Z):** all 17 in-scope OLBG hubs re-captured — `141` live cards, `69` joined by `event_id` to a source-verified row, `47` upstream consensus/selection movements recorded (with the superseded value kept in `olbg.consensus_prior`), `72` upstream-only cards listed as **unverified on `live-refresh.html`** and deliberately left out of the priced set, and `18` dataset rows logged as absent from the truncated first screen rather than treated as expired.
+- **Four re-verification passes on 2026-10-21 (T20, T21, T22, T34):** every row carries a verification ledger block and names the pass that last read it. The register now stands at `41` confirmed against an official page, `33` corrected, `2` flagged and `58` not re-checked with the specific blocker printed. This pass corrected nine AFLW kick-off times that had been assigned in chronological order instead of per fixture, the Hawthorn venue, three Ford Trophy dates (27 October, not 24) and one EHF arena, and downgraded an ODI that no governing body publishes. See [`live-verification.html`](https://buffedlizard55-lab.github.io/OLBG1/live-verification.html) and [`reports/LIVE_VERIFICATION.md`](reports/LIVE_VERIFICATION.md).
+- **No unverified value is presented as fact** — withheld values are blank and flagged — and **0 broken relative links across all 160 published HTML pages** spanning all five live boards (`/` root, `/f7fa77fc/`, `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`).
 
 ## Quick rebuild & repo-wide validation
 
 ```bash
+python3 scripts/live_diff.py           # event-level diff of the 07:05Z live OLBG capture
 python3 scripts/build_dataset.py       # governing-body fixtures, sources, coverage & flagged registry
 python3 scripts/origin_lines.py        # multi-market pricing, 31 predictions & datasets/matches_full.{json,csv}
-python3 scripts/build_site.py          # renders 27 pages at / and 27 mirrored pages at /f7fa77fc/
-python3 scripts/validate.py            # strict link, probability, odds & n-gram validator (0 errors, 0 warnings)
+python3 scripts/live_verification.py   # REQUIRED: verification register + per-row ledger blocks (T20/T21/T22/T34)
+python3 scripts/build_site.py          # renders 30 pages at / and 30 mirrored pages at /f7fa77fc/
+python3 scripts/validate.py            # strict provenance, market, export and all-site-link validator
+python3 scripts/final_audit.py          # writes reports/FINAL_INTEGRATION_AUDIT.md (every primary row + links)
 python3 scripts/ebfbd966_validate.py   # parallel ebfbd966 validator (0 errors)
 ```
 
@@ -154,3 +161,85 @@ Championship first round against official pages; and it documents OLBG's **start
 It applies stricter exclusions than the other boards (Gaelic Football, Aussie Rules and
 Greyhounds are excluded as judgment calls and flagged), which is recorded as an
 interpretation difference, not a data conflict.
+
+---
+
+## Live official-source re-verification (session `72198d3e-olbg1`)
+
+Every earlier pass in this repository audited the dataset's *structure* and said so. This pass
+re-opened the governing-body pages themselves and compared them value by value with the published
+rows. The register is machine-readable and per-row: `data/verification.json`, generated by
+`python3 scripts/live_verification.py`, with the narrative in
+[`reports/LIVE_VERIFICATION.md`](reports/LIVE_VERIFICATION.md) and the site page
+[`live-verification.html`](live-verification.html).
+
+| Outcome | Rows | Meaning |
+|---|---|---|
+| Confirmed | 51 | Official page re-fetched; participants, date, venue and published start/ID all match |
+| Corrected | 9 | Official page disagreed, settled the value, dataset source amended |
+| Flagged | 2 | Official page disagrees or cannot decide; nothing changed, published for review |
+| Not re-checked | 72 | No official page re-read in this pass; blocker named per row |
+
+**Corrections that came out of it** (all from re-fetched official pages, none inferred):
+
+* **Snooker** — three Northern Ireland Open rows cited WST match-centre UUIDs that re-fetch as an
+  unbound template with no players; two more cited only the generic site although WST publishes a
+  match centre for both ties. All eleven rows now cite the match centre WST actually binds.
+* **Cricket** — official NZC fixtures put the 3rd Women's T20I at North Sydney Oval (not Manuka
+  Oval), New Zealand A v India A on 23 Oct at Bert Sutcliffe Oval (not 22 Oct at Saxton Oval), and
+  Central Stags v Northern Districts at Saxton Oval, Nelson (not Pukekura Park).
+* **Ice hockey** — Boston's home split was 5-1-0 against a standings endpoint that returns four
+  home games at 3-1-0 for the same 7-2-1 record. Corrected; the rating and every price are
+  unchanged because points percentage and goal difference drove the model.
+* **Tennis** — six WTA Ningbo rows cited tournament 1115; WTA's own site links the draws at 2092.
+* **Rugby league** — the men's RLWC rows cited NRL competition 175; the site serves that Round 2
+  draw as competition 131.
+
+**Deliberately not "fixed":** Vegas was priced at 8-2-0 (.800, W3) and the same live endpoint now
+returns 8-3-0 (.727, L1). The pick is a labelled pre-game snapshot; re-pricing a published
+selection after the fact would be worse than disclosing the drift, so both values are printed and
+flagged (`F-V5`).
+
+**Blockers recorded rather than hidden:** the PDC draw release still returns only a cookie-consent
+interstitial to a text fetch, and WTA/ATP draws are client-rendered, so all 16 darts rows and all
+11 tennis rows are listed as *not re-checked* instead of being implied verified.
+
+The 31 High-confidence predictions were also re-authored in this pass — human voice, 61–78 words
+each, every factual clause drawn from the row's stored official inputs, no repeated six-word
+sequence anywhere in the corpus.
+
+### Post-T20 re-check (session `3c7579ed-olbg1`, task T21)
+
+The repository's verification register (`data/verification.json`, rendered on
+[`live-verification.html`](live-verification.html)) now reads **46 confirmed, 16 corrected, 2 flagged and 70
+not re-checked** out of 134 rows. This pass contributed:
+
+* **Seven rugby-league rows re-sourced.** `nrl.com/draw/?competition=175` and `?competition=176` both render
+  `competition=131` (the men's page), so the women's fixtures pointed at the wrong tournament. Each row now
+  cites its own tournament's Round 2 draw plus the IRL match record (2569–2573, 2586, 2588), whose venue-local
+  kick-offs match the stored UTC values.
+* **A disclosed kick-off conflict.** Samoa Women v Wales Women is 2:45am AEDT (06:45Z) on the NRL draw and
+  17:50 local (06:50Z) on the IRL record. Both figures are published; the five minutes are not inferred away.
+* **Tennis provenance.** The eleven tennis pairings are consistent with the completed Round-of-32 results plus
+  byes, but the matches have not been played and the draws are client-rendered, so every row now carries a
+  "reconstructed, not draw-verified" flag with the start time left blank.
+* **31 rewritten predictions.** 37–51 words each, no shared closers, no price string inside the prose; the
+  price stays in `bet_line`. `scripts/validate.py` enforces the rules.
+
+### Third re-check (session `3c7579ed-olbg1`, task T22)
+
+* **Seven rugby-league rows re-sourced.** `nrl.com/draw/?competition=175` and `?competition=176` both render
+  `competition=131` (the men's page), so the women's fixtures pointed at the wrong tournament. Each row now
+  cites its own tournament's Round 2 draw plus the IRL match record (2569–2573, 2586, 2588); the venue-local
+  kick-offs on those records match the stored UTC values.
+* **Kick-off conflict disclosed.** Samoa Women v Wales Women is 2:45am AEDT (06:45Z) on the NRL draw and
+  17:50 local (06:50Z) on the IRL record. Both figures are published; the five minutes are not inferred away.
+* **Tennis provenance.** The eleven pairings are consistent with the completed Round-of-32 results plus byes,
+  but the matches have not been played and the draws are client-rendered, so every tennis row now carries a
+  "reconstructed, not draw-verified" flag with the start time left blank.
+* **Prediction prose de-templated.** The price no longer appears inside the write-ups (27 of 31 previously
+  ended with the same `: price` closer); it stays in `bet_line`. Write-ups run 49–82 words with zero
+  duplicated six-word sequences.
+* Register totals now read 44 confirmed, 19 corrected, 2 flagged, 69 not re-checked. See
+  [`reports/SESSION_3C75_RECHECK.md`](reports/SESSION_3C75_RECHECK.md).
+

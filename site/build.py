@@ -100,7 +100,7 @@ def srcs_html(p):
     return '<span class="flagpill">UNVERIFIED</span><div class="srcs small">No independent source captured — OLBG listing only.</div>'
 
 def header(active, prefix=""):
-    navlinks = [("", "Home"), ("flagged.html", "Flagged for Review"), ("methodology.html", "Methodology & Sources")]
+    navlinks = [("index.html", "Home"), ("flagged.html", "Flagged for Review"), ("methodology.html", "Methodology & Sources")]
     nav = ""
     for href, label in navlinks:
         cls = ' style="color:var(--ink)"' if href == active else ""
@@ -161,7 +161,7 @@ def build():
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>OLBG Reverse-Engineered — Lines &amp; Picks Dashboard (21 Oct 2026)</title>
 <style>{CSS}</style></head><body>
-{header("")}
+{header("index.html")}
 <div class="wrap">
 <div class="cards">
 <div class="card"><div class="t">Events collected</div><div class="n">{total}</div><div class="d">17 covered sports · snapshot 2026-10-21</div></div>
@@ -199,7 +199,7 @@ def build():
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(meta[0])} — Lines &amp; Picks (OLBG reverse-engineered)</title>
 <style>{CSS}</style></head><body>
-{header("", prefix="../")}
+{header("index.html", prefix="../")}
 <div class="wrap">
 <h1>{esc(meta[0])} <span class="small">({len(d["events"])} events)</span></h1>
 <div class="sub">{esc(meta[1])} — OLBG page: <a href="{esc(d.get("olbg_page",""))}" rel="noopener">{esc(d.get("olbg_page",""))}</a> · fetched {esc(d.get("fetched_utc",""))} · displayed times ET</div>
