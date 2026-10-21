@@ -48,6 +48,10 @@ for (const match of data.matches) {
     errors.push(`${match.id} lacks an HTTPS official source`);
   }
   if (official?.url?.includes('olbg.com')) errors.push(`${match.id} treats OLBG as official evidence`);
+  if (!match.sources.discovery?.url?.startsWith('https://www.olbg.com/')) {
+    errors.push(`${match.id} lacks a labeled OLBG discovery source`);
+  }
+  if (match.schedule.time && !match.schedule.timezone) errors.push(`${match.id} has a time without a timezone`);
   if (!Array.isArray(match.sourceFacts) || match.sourceFacts.length === 0) {
     errors.push(`${match.id} has no source-fact audit note`);
   }
@@ -81,6 +85,10 @@ for (const match of data.matches) {
 for (const category of categories) {
   if (!category.slug || !category.name || !category.description || !category.status) {
     errors.push(`incomplete category record ${category.slug || 'unknown'}`);
+  }
+  if (excluded.has(category.slug)) errors.push(`excluded category record ${category.slug}`);
+  if (category.emptyReason && (!category.officialSource?.label || !category.officialSource?.url?.startsWith('https://'))) {
+    errors.push(`empty category ${category.slug} lacks an HTTPS official review source`);
   }
 }
 

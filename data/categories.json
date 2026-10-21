@@ -42,7 +42,11 @@
       "kicker": "Outrights only",
       "description": "No head-to-head match rows were visible. Seven event outrights were classified separately and excluded from match-line counts.",
       "status": "review",
-      "emptyReason": "OUTRIGHTS_ONLY"
+      "emptyReason": "OUTRIGHTS_ONLY",
+      "officialSource": {
+        "label": "PGA Tour official schedule",
+        "url": "https://www.pgatour.com/schedule/2026"
+      }
     },
     {
       "slug": "greyhounds",
@@ -50,7 +54,11 @@
       "kicker": "Race cards unavailable",
       "description": "No reproducible official future-card feed exposed runners, traps or grades. Those values remain blank and flagged.",
       "status": "review",
-      "emptyReason": "UNVERIFIED_RACECARDS"
+      "emptyReason": "UNVERIFIED_RACECARDS",
+      "officialSource": {
+        "label": "Greyhound Board of Great Britain race cards",
+        "url": "https://www.gbgb.org.uk/racing/race-cards/"
+      }
     },
     {
       "slug": "handball",
@@ -72,7 +80,11 @@
       "kicker": "Outright only",
       "description": "The US Grand Prix outright was classified as an event market, not a match, and excluded from match-line counts.",
       "status": "verified",
-      "emptyReason": "OUTRIGHTS_ONLY"
+      "emptyReason": "OUTRIGHTS_ONLY",
+      "officialSource": {
+        "label": "Formula 1 official 2026 United States Grand Prix page",
+        "url": "https://www.formula1.com/en/racing/2026/united-states"
+      }
     },
     {
       "slug": "rugby-league",
@@ -80,7 +92,11 @@
       "kicker": "Future outrights only",
       "description": "Three 2027 tournament outrights were visible; no current head-to-head match row was published.",
       "status": "verified",
-      "emptyReason": "OUTRIGHTS_ONLY"
+      "emptyReason": "OUTRIGHTS_ONLY",
+      "officialSource": {
+        "label": "Rugby Football League official fixtures",
+        "url": "https://www.rugby-league.com/fixtures"
+      }
     },
     {
       "slug": "rugby-union",

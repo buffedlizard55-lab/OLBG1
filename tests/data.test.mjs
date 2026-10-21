@@ -23,6 +23,40 @@ test('frozen capture has the expected included scope', () => {
   );
 });
 
+test('volatile Rugby Union capture matches the latest line-by-line recapture', () => {
+  const rugby = data.matches
+    .filter((row) => row.categorySlug === 'rugby-union')
+    .map((row) => `${row.participants.a}—${row.participants.b}`);
+  assert.deepEqual(rugby, [
+    'Montauban—Oyonnax', 'Agen—Nissa', 'Soyaux-Angoulême—Dax', 'Connacht—Zebre Parma',
+    'Narbonne—Brive', 'Aurillac—Nevers', 'Bulls—Ulster', 'Valence Romans—Colomiers',
+    'Grenoble—Biarritz', 'Provence Rugby—Béziers', 'Stormers—Scarlets', 'Bayonne—Lyon',
+    'Stade Toulousain—Perpignan', 'Leinster—Munster', 'La Rochelle—Bordeaux-Bègles',
+  ]);
+  assert.ok(data.matches.filter((row) => row.categorySlug === 'rugby-union').every((row) => row.schedule.time && row.schedule.timezone));
+});
+
+test('known Gaelic Football start times use official county-board values', () => {
+  const times = Object.fromEntries(data.matches
+    .filter((row) => row.categorySlug === 'gaelic-football')
+    .map((row) => [row.id, row.schedule.time]));
+  assert.deepEqual(times, {
+    '2026-10-25-nemo-rangers-st-finbarrs': '16:00',
+    '2026-10-24-salthill-knocknacarra-maigh-cuilinn': '19:00',
+    '2026-11-01-ire-g-kanturk': '14:00',
+    '2026-10-25-rathgormack-the-nire': '14:30',
+  });
+});
+
+test('every non-match category has an official manual-review source', () => {
+  const empty = categoryData.categories.filter((category) => category.emptyReason);
+  assert.equal(empty.length, 4);
+  for (const category of empty) {
+    assert.match(category.officialSource.url, /^https:\/\//, category.slug);
+    assert.ok(category.officialSource.label, category.slug);
+  }
+});
+
 test('all table rows expose official evidence and three modeled markets', () => {
   for (const row of data.matches) {
     assert.match(row.sources.official.url, /^https:\/\//, row.id);
