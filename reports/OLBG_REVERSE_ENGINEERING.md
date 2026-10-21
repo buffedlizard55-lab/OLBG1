@@ -1,57 +1,66 @@
-# Reverse Engineering `OLBG.com` — Technical Architecture, Routing & Anomalies
+# OLBG.com Reverse-Engineering & Platform Audit (2026-10-21 UTC)
 
-**Snapshot Date (UTC):** `2026-10-21`  
-**Primary Target:** [`https://www.olbg.com/betting-tips`](https://www.olbg.com/betting-tips)  
-**Sitemap Index Inspected:** [`https://www.olbg.com/sitemap.xml`](https://www.olbg.com/sitemap.xml) & [`https://www.olbg.com/sitemap-betting-tips.xml`](https://www.olbg.com/sitemap-betting-tips.xml)
+## 1. Canonical URL Grammar & Router Mechanics
 
----
+`OLBG.com` serves server-rendered HTML with **no public JSON feed**. Every betting-tips URL resolves through four route layers keyed on both `{Sport_Slug}` (case-sensitive) and integer `{sport_id}`:
 
-## 1. Platform Architecture & URL Routing Schema
+```text
+1. Sport Hub        : https://www.olbg.com/betting-tips/{Sport_Slug}/{sport_id}
+2. Competition Hub  : https://www.olbg.com/betting-tips/{Sport_Slug}/{Region}/{Competition_Slug}/{sport_id}
+3. Event Market Card: https://www.olbg.com/betting-tips/{Sport_Slug}/{Region}/{Comp}/{Participant_A}_v_{Participant_B}/{sport_id}?event_id={event_id}
+4. Tipster Rankings : https://www.olbg.com/best-tipsters/{Sport_Slug}/{sport_id}
+```
 
-`OLBG.com` runs a hybrid server-rendered PHP / OctoberCMS application backed by relational `sport_id` and `event_id` integer keys, paired with client-side JavaScript hydration for live bookmaker odds and dynamic pagination.
-
-### 1.1 Canonical Route Patterns
-
-| Route Layer | URL Pattern | Example | Backend Behavior |
-| :--- | :--- | :--- | :--- |
-| **Global Hot Tips Feed** | `/betting-tips` | [`/betting-tips`](https://www.olbg.com/betting-tips) | Top 20 most-tipped selections across all sports ordered by `win_tips DESC`. |
-| **Sport Hub Feed** | `/betting-tips/{Sport_Slug}/{sport_id}` | [`/betting-tips/Basketball/4`](https://www.olbg.com/betting-tips/Basketball/4) | Queries open events for integer `sport_id` (`4`), rendering up to **20 match cards** (9 above mid-page promo banner + 11 below) plus open ante-post markets. |
-| **Competition Sub-Hub** | `/betting-tips/{Sport}/{Region}/{Comp}/{sport_id}` | [`/betting-tips/Basketball/NBA/4`](https://www.olbg.com/betting-tips/Basketball/NBA/4) | Filters `sport_id` by competition hierarchy — **exposing lower-tip-count matches cut off at row #20 on the main sport feed**. |
-| **Individual Event Page** | `/betting-tips/{Sport}/{Region}/{Comp}/{Event_Slug}/{sport_id}?event_id={event_id}` | [`...?event_id=534889`](https://www.olbg.com/betting-tips/Basketball/NBA/NBA/MIL_Bucks_@_WAS_Wizards/4?event_id=534889) | Primary lookup key is `?event_id={int}`. Renders `Most Popular Tip`, `Best Tipster's Tip`, full market accordions (`Money Line`, `Pointspread`, `Game Totals`, etc.), tip counts, percentages, and tipster comments. |
-| **Profitable Tipster Hub** | `/best-tipsters/{Sport_Slug}/{sport_id}` | [`/best-tipsters/Tennis/3`](https://www.olbg.com/best-tipsters/Tennis/3) | Lists positive-annual-profit tipsters who currently hold open tips in `sport_id`. |
-| **Individual Tipster Open Tips** | `/best-tipsters/{Sport_Slug}/{sport_id}/{member_id}` | [`/best-tipsters/Tennis/3/620242`](https://www.olbg.com/best-tipsters/Tennis/3/620242) | Displays every open selection, market handicap (`WIN @ / -0.50 hcap`), and written rationale by member ID. |
-
-### 1.2 Discovery via Integer `sport_id` Probing (`1..31`)
-
-Probing synthetic slugs `/betting-tips/Probe/{id}` across `1..31` revealed that OLBG's router ignores arbitrary `{Sport_Slug}` text when executing its event query and only renders a custom CMS article when `{Sport_Slug}/{sport_id}` matches an OctoberCMS entry (falling back to double-spaced `<title>{Slug}  Tips - OLBG.com</title>` on unmapped slugs). This allowed complete verification of all 31 numeric slots:
-
-- **Excluded Sports (6 IDs covering all 10 excluded terms):**
-  - `1` = `Football` (*soccer / association football*)
-  - `2` = `Horse_Racing` (*horse racing*)
-  - `11` = `American_Football` (*american football*)
-  - `16` = `Boxing` (*combines Boxing, UFC, and MMA on a single unified feed*)
-  - `17` = `Cycling` (*cycling*)
-  - `18` = `Specials` (*entertainment, TV, awards, politics*)
-  - `26` = `Hurling` (*hurling*)
-  *(7 excluded sport IDs total: `1, 2, 11, 16, 17, 18, 26` — mapping cleanly onto all 10 excluded labels in the specification.)*
-- **Covered Sports (17 IDs):**
-  - **Active Match/Event Feeds (15 sports, 172 total events — 141 head-to-head matches + 31 tournament/race/ante-post events):** `3` Tennis (20), `4` Basketball (29 across main + subroutes), `5` Golf (10), `7` Cricket (14: 9 matches + 5 outrights), `8` Snooker (6), `9` Rugby Union (16: 15 matches + 1 outright), `10` Rugby League (3 outrights), `12` Baseball (1), `13` Ice Hockey (7), `14` Motor Racing (3), `15` Darts (18: 16 matches + 2 outrights), `20` Handball (19), `21` Volleyball (15), `25` Gaelic Football (5: 4 matches + 1 outright — included + flagged for scope review), `28` Greyhounds (6 races).
-  - **Seasonal / Zero-Open-Tip Covered Feeds (2 sports, 0 open events):** `22` Aussie Rules (0 — AFL off-season) and `23` eSports (0 open tips on snapshot).
-- **Unassigned / Legacy Empty IDs:** `6, 19, 24, 27, 29, 30, 31`.
+### Key Router Behaviours Verified Live
+1. **Case-sensitive `{Sport_Slug}` enforcement:** `/betting-tips/eSports/23` renders the canonical eSports hub (`<title>eSports Betting Tips - Dota 2, CSGO, LoL Predictions and more - OLBG.com</title>`), whereas `/betting-tips/ESports/23` falls back to a soft error screen while still returning HTTP `200`.
+2. **Non-contiguous IDs (`1..28`) + 2 Unlisted Active Hubs (`18`, `26`):** `https://www.olbg.com/sitemap-betting-tips.xml` exposes **22** sport hubs, omitting two live HTTP `200` hubs discovered by probing IDs `1..31`:
+   - **`18` = `Specials`** (`/betting-tips/Specials/18` — active hub, excluded by brief)
+   - **`26` = `Hurling`** (`/betting-tips/Hurling/26` — cross-linked directly from `/betting-tips/Gaelic_Football/25`, carrying live match `event_id=714` `Ballyhale Shamrocks v Tullaroan` and outright `event_id=675` `All Ireland Hurling Championship 2027`, excluded by brief)
+   - Unused / retired IDs in `1..31`: `6, 19, 24, 27, 29, 30, 31`.
 
 ---
 
-## 2. Five Production Quirks & Irregularities Uncovered on `OLBG.com`
+## 2. All 24 Active OLBG Sports (`17` In Scope · `7` Excluded)
 
-1. **Silent GeoIP Timezone Shifting Without Timezone Labels (`EDT` vs `BST`):**
-   - Server-rendered event timestamps on `OLBG.com` localize dynamically by requester IP geolocation **without printing a timezone suffix**.
-   - Proof: `2:25 Newmarket` (`event_id=1134655`) renders `Today 09:25` from a US-East (`America/New_York`, `UTC-4`) egress IP (`14:25 BST - 5h = 09:25 EDT`), while `MIL Bucks @ WAS Wizards` (`event_id=534889`, official tipoff `2026-10-21T23:10:00Z` / `7:10 PM EDT`) renders `Today 19:10` on US-East egress and `Tomorrow 00:10` (`BST`, `UTC+1`) on UK egress.
-   - **Impact & Mitigation:** Every row in our dataset normalizes timestamps explicitly to **ISO-8601 UTC** verified against official league schedules while also recording OLBG's raw display string.
-2. **20-Row Top-Level Feed Truncation Hiding Valid Open Matches:**
-   - Top-level sport pages (`/betting-tips/Basketball/4`) cap initial server-rendered match cards at **20 rows** ordered by `win_tips DESC`. Querying competition sub-routes (`/Basketball/NBA/4`, `/Basketball/European/Euroleague/4`, `/Basketball/European/Euro_Cup/4`, `/Basketball/European/Basketball_Champions_League/4`) uncovered **9 additional live basketball matches** (`UTA Jazz @ MEM Grizzlies`, `SAC Kings @ LA Clippers`, `CLE Cavaliers @ PHI 76ers`, `Anadolu Efes vs Besiktas`, `Maccabi Tel Aviv vs Real Madrid`, `Zalgiris vs Asvel Lyon Villeurbanne`, `Napoli vs Tofas`, `Maxima Roma vs Venezia`, `Reggio Emilia vs Juventus`).
-3. **Division-by-Zero / Blank Counter Bug on Each-Way-Only Outright Events (`0 / 0 Win Tips`):**
-   - On `Hero Womens Indian Open` ([`event_id=101909`](https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Hero_Womens_Indian_Open/5?event_id=101909)) and `T20 Blast 2027` ([`event_id=188350`](https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/T20_Blast_2027/7?event_id=188350)), tipsters placed **Each-Way (`EW @`)** selections with zero straight-win selections. OLBG promotes the golfer/team to the sport feed card with **blank tip counts**, and renders `0 / 0 Win Tips (0%)` directly above the active `EW @` tip on the event page.
-4. **Client-Side Odds Hydration Suppression (`WIN @ [blank]`):**
-   - Static HTML intentionally omits live bookmaker decimal prices (`WIN @ ` empty text node; `/api/` blocked in `robots.txt`), preventing stale odds indexing by search crawlers and requiring independent mathematical line origination across all markets.
-5. **Duplicate Event Cards on Main Feed Across Markets (`event_id=3530`):**
-   - On `/betting-tips`, `St Finbarrs v Nemo Rangers` (`event_id=3530`) appears **twice** in consecutive rows once for `Draw` (`10/20 Win Tips`) and once for `Nemo Rangers +1.50` (`10/12 Win Tips`), showing that the global feed ranks `(event_id, market_selection)` pairs rather than deduplicating by `event_id`.
+| ID | Canonical Slug | Sport Name | XML Sitemap | Scope | Live OLBG Events (`2026-10-21`) | Governing-Body Verification |
+|---:|---|---|---|---|---:|---|
+| 1 | `Football` | Football | Yes | **Excluded** | 20+ | Excluded (`football` / `soccer`) |
+| 2 | `Horse_Racing` | Horse Racing | Yes | **Excluded** | 20+ | Excluded (`horse racing`) |
+| 3 | `Tennis` | Tennis | Yes | **In Scope** | 20 | Verified on `atptour.com` & `wtatennis.com` (Almaty, Lyon, Brussels, Ningbo, Osaka) |
+| 4 | `Basketball` | Basketball | Yes | **In Scope** | 29 (20 hub + 9 sub-route) | Verified on `nba.com` & `euroleaguebasketball.net` (NBA, EuroLeague R7, EuroCup R4) |
+| 5 | `Golf` | Golf | Yes | **In Scope** | 10 outrights | Verified on `pgatour.com` & `europeantour.com` (Bermuda, Genesis, Stifel Charity Classic) |
+| 7 | `Cricket` | Cricket | Yes | **In Scope** | 9 matches + 5 outrights | Verified on `icc-cricket.com`, `scoring.nzc.nz` & `cricket.com.au` |
+| 8 | `Snooker` | Snooker | Yes | **In Scope** | 6 matches | Verified on `wst.tv` (BetVictor Northern Ireland Open, Waterfront Hall, Belfast) |
+| 9 | `Rugby_Union` | Rugby Union | Yes | **In Scope** | 15 matches + 1 outright | Verified on `unitedrugby.com` (URC R4) & `top14.lnr.fr` (Top 14 J7) |
+| 10 | `Rugby_League` | Rugby League | Yes | **In Scope** | 3 ante-post outrights (0 matches) | **OLBG Blind Spot #1:** Verified **7 RLWC26 Round 2 ties** live on `nrl.com` (23–25 Oct) |
+| 11 | `American_Football` | American Football | Yes | **Excluded** | 20+ | Excluded (`american football`) |
+| 12 | `Baseball` | Baseball | Yes | **In Scope** | 1 match (`event_id=160789`) | Verified Games 1–4 of 2026 World Series (`TB @ MIL` / `MIL @ TB`) on `statsapi.mlb.com` |
+| 13 | `Ice_Hockey` | Ice Hockey | Yes | **In Scope** | 7 matches (`event_id=199896..901`) | Verified NHL schedule & full standings on `api-web.nhle.com` |
+| 14 | `Motor_Racing` | Motor Racing | Yes | **In Scope** | 1 GP + 2 outrights | Verified F1 Round 18 US GP at Circuit of The Americas (`2026-10-25T20:00:00Z`) on `formula1.com` |
+| 15 | `Darts` | Darts | Yes | **In Scope** | 16 matches + 2 outrights | Verified all **16** European Championship R1 ties + seeds `1..32` on `pdc.tv` |
+| 16 | `Boxing` | Boxing (incl. UFC/MMA) | Yes | **Excluded** | 12 | Excluded (`boxing` / `ufc` / `mma`) |
+| 17 | `Cycling` | Cycling | Yes | **Excluded** | 1 | Excluded (`cycling`) |
+| 18 | `Specials` | Specials | **No** | **Excluded** | 0 | Excluded (`specials`) |
+| 20 | `Handball` | Handball | Yes | **In Scope** | 20 matches (`event_id=12044..55`) | Verified all **12** EHF Champions League Men Round 5 ties + standings on `eurohandball.com` |
+| 21 | `Volleyball` | Volleyball | Yes | **In Scope** | 15 matches (`event_id=36945..86`) | Verified SuperLega Credem Banca R2 (`legavolley.it`) & Polish PlusLiga (`plusliga.pl`) |
+| 22 | `Aussie_Rules` | Aussie Rules | Yes | **In Scope** | 0 (`No tips found`) | **OLBG Blind Spot #2:** Verified all **9** 2026 NAB AFLW Round 11 fixtures on `afl.com.au/aflw` |
+| 23 | `eSports` | eSports | Yes | **In Scope** | 0 (`No tips found`) | **OLBG Blind Spot #3:** Verified LoL Worlds 2026 Swiss Round 1 (`TSW vs LYON`) on `lolesports.com` |
+| 25 | `Gaelic_Football` | Gaelic Football | Yes | **In Scope*** | 4 matches + 1 outright | Verified 4 County SFC Finals on `munster.gaa.ie`, `gaacork.ie` & `galwaygaa.ie` (*borderline flagged*) |
+| 26 | `Hurling` | Hurling | **No** | **Excluded** | 1 match + 1 outright | Excluded (`hurling`) |
+| 28 | `Greyhounds` | Greyhounds | Yes | **In Scope** | 6 racecards (`event_id=689383..90`) | Verified UK racecards & GBGB Category 1 Open Calendar on `gbgb.org.uk` |
+
+---
+
+## 3. Five Platform Anomalies Proven Reproducibly on Live `OLBG.com`
+
+1. **Unlabelled `EDT (UTC-4)` vs `BST (UTC+1)` 5-Hour Clock Split:**
+   - On `/betting-tips/Basketball/4`, `event_id=534889` (`MIL Bucks @ WAS Wizards`) renders **`Today 19:10`** (`America/New_York`, `UTC-4`), whereas `/betting-tips/Basketball/NBA/4` renders the exact same `event_id=534889` as **`Tomorrow 00:10`** (`Europe/London`, `UTC+1`) — with **no timezone label on either page**.
+   - Definitive proof on `/betting-tips/Greyhounds/28`: race **`11:14 Kinsley`** (`event_id=689388`, 11:14 BST = `10:14 UTC`) renders start time **`Today 06:14`** (`10:14 UTC − 4h = 06:14 EDT`).
+2. **Upstream Fixture Date Error (`event_id=3536`, Waterford SFC Final):**
+   - `/betting-tips/Gaelic_Football/25` displays `Rathgormack v The Nire` at **`01 Nov 10:30`**, whereas official Munster GAA (`https://munster.gaa.ie/fixtures/munster-gaa-fixtures/`) confirms the Waterford County Senior Football Championship Final kicks off **Sunday 25 October 2026 at `14:30 UTC`** at Fraher Field, Dungarvan.
+3. **Outdated Club Name (`event_id=12045`, EHF Champions League Group E):**
+   - `/betting-tips/Handball/20` lists **`Dinamo Bucuresti vs Skanderborg Handbold`**, whereas the European Handball Federation (`eurohandball.com`) registers the Danish club as **`SAH Aarhus`**.
+4. **Each-Way Outright `0/0` Consensus Bug:**
+   - Outright markets with Each-Way-only tips and zero straight Win tips render `0/0 Win Tips (0%)` on hub cards.
+5. **Zero-Tip Suppression Hiding Major Active Championships:**
+   - Because OLBG hides matches until at least one tipster posts a pick, three major international/national championships active during `21–25 Oct 2026` — **2026 Rugby League World Cup Round 2**, **2026 NAB AFLW Round 11**, and **LoL Worlds 2026 Swiss Stage** — are completely invisible on `OLBG.com`.
