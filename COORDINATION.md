@@ -4,7 +4,7 @@
 working on what. It exists so that multiple agent sessions can work on this repository at the
 same time without duplicating work or overwriting each other.
 
-Last updated: **2026-10-21T05:26:00Z** (UTC)
+Last updated: **2026-10-21T06:45:00Z** (UTC)
 
 ---
 
@@ -78,6 +78,8 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T10 | Complete multi-market line origination & confidence grading across all verified matches + real PDC Order of Merit, ATP/WTA rankings, NBA/EuroLeague/NHL/Rugby/Handball/Volleyball ratings | queued | f7fa77fc-olbg1 | `scripts/model.py`, `scripts/origin_lines.py`, `data/fixtures.json`, `data/lines.json`, `data/sources.json`, `data/coverage.json`, `datasets/matches_full.csv` | — | Closes §5.7 items 1–4 + full multi-market lines |
 | T11 | Unique ≥30-word human predictions with real verified form & match history for every high-confidence selection | queued | f7fa77fc-olbg1 | `data/predictions.json`, `datasets/matches_full.json` | — | Strict official-source verification on every claim |
 | T12 | Upgraded dashboard UI + Markets Explorer + Repo Audit & Flagged-for-Review pages + full validator gate + PR & merge to `main` + live GitHub Pages check | queued | f7fa77fc-olbg1 | `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration session handoff after `ce5920e3-olbg1` completed |
+| T13 | Independent line-by-line re-verification of the integrated root dataset: every match row + every high-confidence prediction fact re-checked against live official sources; irregularities flagged | in progress | 5c02f50f-olbg1 | `scripts/verify_sources.py`, `reports/SOURCE_REVERIFICATION.md`, `datasets/flagged_for_review.json`, `data/sources.json` | 2026-10-21T06:45Z | Session `arena/5c02f50f-olbg1` claim — see §12 |
+| T14 | Final integration for this wave: rebuild site if data changed, whole-tree link sweep, PR → `main`, GitHub Pages live verification, publish record (incl. completing §11's open deploy record for PR #16) | in progress | 5c02f50f-olbg1 | `COORDINATION.md`, PR #19 | 2026-10-21T06:45Z | Session `arena/5c02f50f-olbg1` claim — see §12 |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -610,3 +612,20 @@ Building directly on `origin/main` (`99a04c5`) while keeping every parallel dire
 * **Publish record:** PR #16 — https://github.com/buffedlizard55-lab/OLBG1/pull/16 —
   (`arena/2360a617-olbg1` → `main`). Merge + Pages deploy verification for
   https://buffedlizard55-lab.github.io/OLBG1/2360a617/ to be appended after execution.
+
+---
+
+## 12. Session `5c02f50f` (arena/5c02f50f-olbg1) — claim + execution log
+
+**2026-10-21T06:45Z — session start; claims T13 + T14 pushed before any task work (per §0.3).**
+Branched from `main` HEAD `8458584` (merge of PR #16). Read this board in full first. Scope is
+deliberately non-overlapping: T13 touches only new audit artifacts (`scripts/verify_sources.py`,
+`reports/SOURCE_REVERIFICATION.md`) plus append-only flags in `datasets/flagged_for_review.json`
+and `data/sources.json`; T14 is integration-only (this file, rebuild, PR). No other session's desk
+directories (`docs/`, `ebfbd966/`, `aa4e9dbf/`, `2360a617/`, `f7fa77fc/`) will be modified.
+
+**Boundary note on T9–T12 (`f7fa77fc-olbg1`):** their §10 execution + publish record (PRs #17/#18,
+merged 06:04–06:06Z) declares those tasks complete, but the §1 table was never flipped out of
+`in progress`/`queued`. Per the 60-minute rule and their own completion record, this session treats
+T9–T12 as *done pending table flip* and will flip the statuses with a log note at integration —
+it will not re-execute their file scope.
