@@ -1070,8 +1070,13 @@ this session re-verifies a fact it fetches the official source in-session and lo
   written and then removed before the PR existed); each was detected by grep-verification and
   rewritten. **Edit a given file in exactly one tool call per block.**
 * **Publish record:** PR #31 — https://github.com/buffedlizard55-lab/OLBG1/pull/31 —
-  (`arena/ccb6bde2-olbg1` → `main`). Merge result and GitHub Pages deploy verification for
-  https://buffedlizard55-lab.github.io/OLBG1/ccb6bde2/ appended after execution.
+  (`arena/ccb6bde2-olbg1` → `main`) **merged 2026-10-21T07:22:03Z**, merge commit `11503d1`.
+  GitHub Pages build for `11503d1` completed `status=built`, `error=null`. Live fetch verified
+  rendered content at https://buffedlizard55-lab.github.io/OLBG1/ccb6bde2/ (dashboard: 134
+  events, 1,619 expanded markets, 19 v2.1 highs; WTA source links now point at the corrected
+  `tournaments/2092` URL via the merged T20 fix). All prior desks remain live and untouched
+  (`/`, `/f7fa77fc/`, `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`, `/2360a617/`). This record itself
+  lands via a small follow-up PR from the same branch.
 ---
 
 ## 26. Session `72198d3e-olbg1` — URC / AFLW gap-closing pass (fourth live pass)
