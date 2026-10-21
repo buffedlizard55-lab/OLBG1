@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology — OLBG1 Originated Lines</title>
+<meta name="description" content="Independent originated betting lines for OLBG-listed matches, snapshot 2026-10-21. Model estimates, not bookmaker odds. 18+">
+<link rel="stylesheet" href="assets/style.css"></head>
+<body>
+<header class="top"><div class="wrap">
+<div class="brand">OLBG1 <span>Originated Lines Desk</span></div>
+<div class="snap">Fixture snapshot: <strong>2026-10-21</strong> · 133 matches · 11 sports priced<br>
+<span class="muted">Our own model lines — not bookmaker odds. Every row links OLBG + an official source.</span></div>
+</div><nav class="wrap nav"><a href="index.html">Dashboard</a><a href="sports/tennis.html">Tennis</a><a href="sports/darts.html">Darts</a><a href="sports/snooker.html">Snooker</a><a href="sports/basketball.html">Basketball</a><a href="sports/baseball.html">Baseball</a><a href="sports/ice-hockey.html">Ice Hockey</a><a href="sports/cricket.html">Cricket</a><a href="sports/rugby-union.html">Rugby Union</a><a href="sports/volleyball.html">Volleyball</a><a href="sports/handball.html">Handball</a><a href="sports/gaelic-football.html">Gaelic Football</a><a href="sports/rugby-league.html">Rugby League</a><a href="high-confidence.html">High Confidence</a><a href="methodology.html">Methodology</a><a href="markets.html">OLBG Markets Map</a><a href="flagged.html">Flagged for Review</a><a href="sources.html">Sources</a></nav></header>
+<main class="wrap"><h1>Methodology — how every line was originated</h1>
+<p class="lede">No bookmaker odds are used anywhere on this site. OLBG's odds columns were not present in the fetched pages, and the brief is independent origination. Fair odds = 1 ÷ probability (zero margin). The engine is <code>scripts/originate.py</code> in the repo — deterministic and re-runnable.</p>
+<h2>Inputs (the only ones)</h2>
+<ol>
+<li><strong>OLBG crowd signal</strong> — for each match, the share of OLBG win tips behind the most-tipped selection, <em>with its sample size</em>, transcribed line by line from OLBG's sport feeds on 2026-10-21. Smoothed toward 50% for small samples: <code>s = (tips_for + 2) / (tips_total + 4)</code>.</li>
+<li><strong>Official seeding/rating gaps</strong> — only where verified against an official source this session: PDC European Championship draw (pdc.tv, 18 Oct 2026), snooker world-rank numbers published alongside the WST draw, ICC ODI team ratings (19 Oct 2026 update). Better-ranked side gains <code>min(12, 0.5 × gap)</code> percentage points (ICC ratings: 0.5pp per point, capped at 6pp — one match only).</li>
+<li><strong>Home edge</strong> — small fixed allowances per league (NBA/European basketball +2–3pp, NHL +2pp, rugby union +4pp reflecting OLBG's published 64–74% home-win rates, handball +3pp, volleyball +2pp, MLB +2pp). Neutral-venue individual sports (tennis, darts, snooker) get zero.</li>
+<li><strong>Published league scoring averages</strong> for totals/handicap baselines: OLBG's five-season rugby union averages (URC 48.9 total points; Top 14 49.7), OLBG's EHF Champions League handball averages (60.82 goals, 5.04 margin, 9.8% ties), and OLBG market standards (NHL puck line 1.5, MLB run line 1.5, darts best-of-11 total-legs line 9.5). Where no published average was fetched (e.g. NBA game totals), the line is tagged <strong>MODEL-BASELINE</strong> in the Derivation column — our estimate, openly.</li>
+</ol>
+<h2>From inputs to a price</h2>
+<ul>
+<li><strong>Winner markets</strong> (Win Match / Money Line / To Win): the named side starts at the smoothed share <code>s</code>.</li>
+<li><strong>Directional markets</strong> (Set Betting, 1st Set Winner, Set Score): imply an eventual winner at half strength — <code>p = 0.5 + 0.5×(s−0.5)</code>.</li>
+<li><strong>Handicap markets</strong>: a backed '+' side is the underdog by that many units; the favourite's probability comes from inverting the sport's margin map, nudged by crowd enthusiasm <code>(s−0.5)×0.1</code>. A backed '−' side is the favourite, same map.</li>
+<li><strong>Totals-only markets</strong> (e.g. NHL Over 5.5): winner probability starts 50/50; the crowd's Over/Under becomes our total pick at that line.</li>
+<li><strong>Tie/Draw most-tipped</strong> (handball): OLBG's feed does not reveal the home/away split of the remaining tips, so the winner pick falls back to a 52% home lean, forced LOW and flagged — never a sub-10% tie dressed up as a 'winner pick'.</li>
+<li>Ranking and home adjustments are added, the favourite's probability is capped to [52%, 88%], and exact coin flips lean to the first-named side at 52% (documented, arbitrary, flagged LOW by construction).</li>
+<li><strong>3-way sports</strong> (rugby union, handball, Gaelic football) carry a draw allowance: rugby 2.3% (OLBG published), handball 9.0% (OLBG EHF CL tie rate), Gaelic 8% (model assumption). Two-way probabilities are scaled by (1 − draw rate).</li>
+<li><strong>Handicap line</strong> = expected margin from win probability (NBA 28 pts, European basketball 24, rugby union 45, handball 16 goals, tennis 12 games, Gaelic 30 pts per full probability unit; fixed/stepped in NHL, MLB, darts, snooker, volleyball). We lay the favourite only at ≥62% win probability; otherwise we take the underdog's head start — the standard 'take the points in a close one' heuristic, stated as such.</li>
+<li><strong>Total pick</strong>: follows the OLBG crowd where the crowd tipped a total; otherwise Over in competitive-match probability bands and Under in mismatch/coin-flip bands (bands per sport in code). Totals without team-level pace data are the weakest part of any such model — treat accordingly.</li>
+<li><strong>Cricket</strong> handicap/total = n/a: OLBG covers Win Match, Top Batter and Man of the Match. We do not invent markets that don't exist.</li>
+</ul>
+<h2>Confidence — deterministic rules</h2>
+<table class="grid"><thead><tr><th>Level</th><th>Rule</th></tr></thead><tbody>
+<tr><td><span class="chip high">HIGH</span></td><td>Path A: win probability ≥70% <em>and</em> ≥6 OLBG tips in a winner market <em>and</em> a corroborating official seeding/rating gap that agrees with the pick. Path B: probability ≥80% with an official gap of ≥11 seeds (darts) or ≥40 ranking places (snooker) at a verified event. Any conflict/contested flag disqualifies.</td></tr>
+<tr><td><span class="chip medium">MEDIUM</span></td><td>Probability ≥60% on ≥4 tips, or ≥70% on ≥2 tips; no conflicts. NBA opening week is capped here regardless (no form base — season started 20 Oct).</td></tr>
+<tr><td><span class="chip low">LOW</span></td><td>Everything else, plus forced LOW for: crowd-vs-seeding conflicts, CONTESTED fixtures, Tie-most-tipped matches, and rows whose tip counts OLBG's page fetch cut off (left blank, never estimated).</td></tr>
+</tbody></table>
+<h2>What 'verified' means on each row</h2>
+<ul>
+<li><strong>Fixture confirmed on official source</strong> — the exact fixture appears in an official schedule/draw fetched this session (MLB, PDC, WST, ICC, URC, NBA slate).</li>
+<li><strong>Fixture on OLBG; official link for manual check</strong> — fixture confirmed on OLBG's feed; the governing-body/league link is provided so a human can re-check. We do not claim more than we checked.</li>
+<li><strong>CONTESTED</strong> — OLBG's pairing could not be reconciled with the official draw at harvest. Shown as listed, flagged, LOW.</li>
+</ul>
+<h2>Known limitations (also on the Flagged page)</h2>
+<ul>
+<li>OLBG hides zero-tip and lower-ranked fixtures behind a 'Load More' control; coverage is every event visible in the fetched feeds, not a promise about fixtures with no tips at all.</li>
+<li>OLBG does not state a timezone for displayed times in the fetched text; times are reproduced 'as shown on OLBG'.</li>
+<li>ATP/WTA per-player ranking gaps were not verified this pass, so no tennis pick can reach HIGH yet. Same for team standings in European basketball/hockey/handball domestic leagues.</li>
+<li>Starting pitchers (MLB) and goalie starters (NHL) were unconfirmed at harvest and are left blank.</li>
+</ul></main>
+<footer class="wrap foot">
+<p><strong>18+ only.</strong> This site publishes independent statistical estimates for information and research. Originated lines are model outputs, not bookmaker prices, and no outcome is guaranteed. Only ever stake what you can afford to lose. Free, confidential help: <a href="https://www.gamcare.org.uk/" rel="noopener">GamCare</a> · <a href="https://www.gambleaware.org/" rel="noopener">GambleAware</a>.</p>
+<p>Fixtures transcribed from <a href="https://www.olbg.com/betting-tips" rel="noopener">OLBG.com</a> sport feeds on 2026-10-21. Excluded per brief: football/soccer, boxing, UFC/MMA, American football, hurling, horse racing, cycling, specials. Data: <a href="data/matches.csv">matches.csv</a> · <a href="data/matches.json">matches.json</a> · Build scripts in the <a href="https://github.com/buffedlizard55-lab/OLBG1" rel="noopener">GitHub repo</a>.</p>
+</footer>
+<script src="assets/app.js"></script></body></html>
