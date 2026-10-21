@@ -381,9 +381,9 @@ def price_match(match: dict) -> dict:
         "sport": sport,
         "sport_name": cfg["name"],
         "favourite": match["home"] if p_home_raw >= p_away_raw else match["away"],
-        "home_probability": round(p_home_raw, 4),
-        "draw_probability": round(p_draw, 4),
-        "away_probability": round(p_away_raw, 4),
+        # 4dp display triple, normalized (largest remainder) so H+D+A sums to exactly 1.0000.
+        # Authoritative 6dp probabilities live in markets[].outcomes[].probability.
+        **_prob_summary_triple(p_home_raw, p_draw, p_away_raw),
         "pick": pick_sel,
         "pick_market": markets[0]["name"],
         "confidence": confidence,
@@ -397,6 +397,24 @@ def price_match(match: dict) -> dict:
         "both_measured": both_measured,
         "markets": markets,
         "model_notes": _notes(sport, both_rated, r_home, r_away, cfg, tot_base),
+    }
+
+
+def _prob_summary_triple(p_h: float, p_d: float, p_a: float) -> dict:
+    """Round a probability triple to 4dp with largest-remainder correction so the
+    displayed summary sums to exactly 1.0000 (each component within 1 display ulp
+    of its exact value). Session 5c02f50f, T13 — see reports/SOURCE_REVERIFICATION_AUDIT.md."""
+    from decimal import Decimal, ROUND_FLOOR
+
+    exact = [p_h, p_d, p_a]
+    flo = [int(Decimal(str(x)).scaleb(4).to_integral_value(rounding=ROUND_FLOOR)) for x in exact]
+    order = sorted(range(3), key=lambda i: (Decimal(str(exact[i])).scaleb(4) - flo[i], -i), reverse=True)
+    for k in range(10000 - sum(flo)):
+        flo[order[k % 3]] += 1
+    return {
+        "home_probability": flo[0] / 10000,
+        "draw_probability": flo[1] / 10000,
+        "away_probability": flo[2] / 10000,
     }
 
 

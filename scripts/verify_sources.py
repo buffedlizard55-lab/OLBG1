@@ -134,8 +134,8 @@ def check_lines_and_predictions() -> None:
         pick = row.get("pick", "")
         ok = False
         for mk in row.get("markets") or []:
-            blob = json.dumps(mk)
-            if pick and pick in blob:
+            sels = [o.get("selection", "") for o in mk.get("outcomes") or []]
+            if pick and any(pick == s or pick in s or s in pick for s in sels):
                 ok = True
                 break
         if pick and not ok and row.get("pick_market") != "Tournament Winner":

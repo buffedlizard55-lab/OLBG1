@@ -6,10 +6,7 @@
 
 ## Mechanical results
 * **0 errors** — every row has an official-domain https source; every prediction is >=30 words, unique, sourced and consistent with its line; every rendered table row carries a link.
-* 4 warnings
-  * `[hand-ehf-12055] pick 'One Veszprém HC' not found verbatim inside markets block`
-  * `[hand-ehf-12044] pick 'Aalborg Håndbold' not found verbatim inside markets block`
-  * `[hand-ehf-12046] pick 'Barça' not found verbatim inside markets block`
+* 1 warnings
   * `reports/source_reverification.json not present — live re-fetch layer not ingested`
 
 ## Live re-fetch outcomes (see reports/source_reverification.json)

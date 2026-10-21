@@ -15,43 +15,39 @@ HIGH_PREDICTIONS: dict[str, dict] = {
     "nhl-2026020152": {
         "selection": "Buffalo Sabres — Match Winner @ 1.42 (also Sabres -1.5 Puck Line @ 2.05)",
         "text": (
-            "Philadelphia's early travel log tells a grim story: zero wins from six road trips (0-4-2) "
-            "and a league-worst minus-14 goal differential through eleven outings (2-6-3 overall). "
-            "Buffalo return to KeyBank Center above .500 at 4-3-2 with far steadier five-on-five control "
-            "after banking four wins from their opening nine skates. Take the Buffalo Sabres on the "
-            "Moneyline at 1.42, with Sabres -1.5 at 2.05 appealing if empty-net pressure widens the margin."
+            "Philadelphia's season has been built on shaky road foundations: the Flyers are winless in "
+            "five away games (0-4-1) and carry a minus-19 goal differential through eleven outings "
+            "(2-6-3, seven points). Buffalo (4-3-2, ten points) are much steadier at 3-2-1 inside "
+            "KeyBank Center, where Tage Thompson has five goals and Ukko-Pekka Luukkonen has three "
+            "wins. Take the Buffalo Sabres on the moneyline at 1.42, with Sabres -1.5 at 2.05 the "
+            "bolder call."
         ),
     },
     "nhl-2026020154": {
         "selection": "Boston Bruins — Match Winner @ 1.48 (lean Bruins -1.5 @ 2.19)",
         "text": (
-            "Seven victories from their opening ten games (7-2-1, .750 points percentage) and a crisp "
-            "plus-14 goal differential have turned TD Garden right back into a fortress for Boston. "
-            "Nashville arrive respectable enough at 4-3-1 (.563), yet their road penalty kill faces a "
-            "major step up in class against a Bruins roster rolling four balanced lines. Boston Bruins "
-            "to win on the Moneyline at 1.48 is the confident play."
+            "Boston's opening stretch could hardly look better: seven wins in ten games (7-2-1), a "
+            ".750 points percentage, and a plus-14 goal differential with David Pastrnak leading the "
+            "club at four goals and eight assists. Nashville (3-2-3, .563) carry a minus-1 "
+            "differential and lost last time out, with Juuse Saros on three wins. Back the Boston "
+            "Bruins on the moneyline at 1.48 to win it at TD Garden."
         ),
     },
     "nhl-2026020158": {
         "selection": "Florida Panthers — Match Winner @ 1.47 (secondary Panthers -1.5 @ 2.15)",
         "text": (
-            "Momentum between these two Eastern Conference clubs could scarcely point in more opposite "
-            "directions entering Saturday night at PPG Paints Arena. Pittsburgh have dropped four straight "
-            "decisions to slide to 3-6-1 (.350), bleeding high-danger slot looks late in periods, while "
-            "Florida hit town riding a three-game winning streak at 5-2-2 (.667). Back the visiting "
-            "Florida Panthers to take the two points on the Moneyline at 1.47."
+            "Thursday night at PPG Paints Arena brings together two teams at opposite ends of the "
+            "early form chart. Pittsburgh have dropped four straight to sit 3-6-1 (.350), with "
+            "Evgeni Malkin their top marksman on five goals. Florida arrive 5-2-2 (.667) on a "
+            "three-game winning streak, Brady Tkachuk pacing the attack with six goals and Matthew "
+            "Tkachuk dishing eleven assists. Back the visiting Florida Panthers on the moneyline at "
+            "1.47."
         ),
     },
-    "nhl-2026020160": {
-        "selection": "Vegas Golden Knights — Match Winner @ 1.49 (puck line -1.5 @ 2.20)",
-        "text": (
-            "Eight wins from ten starts (8-2-0, .800 points clip) and three consecutive victories underline "
-            "just how effortlessly Vegas have dictated pace across the first month of the NHL campaign. "
-            "St. Louis sit bang on .500 at Enterprise Center, trading wins and losses without stringing "
-            "together sixty-minute defensive performances. Even on the road, Vegas Golden Knights Moneyline "
-            "at 1.49 stands out as the sharpest side on Sunday's slate."
-        ),
-    },
+    # nhl-2026020160 removed 2026-10-21 (session 5c02f50f): the official NHL standings
+    # (api-web.nhle.com/v1/standings/2026-10-20) give Vegas 8-3-0 (.727, L1) — not 8-2-0 (.800).
+    # With the corrected rating the model grades this match medium (p_best ~0.599 < 0.610),
+    # so it no longer qualifies for a high-confidence prediction.
 
     # =========================================================================
     # BASKETBALL — NBA & EuroLeague Round 7 (nba.com & euroleaguebasketball.net)

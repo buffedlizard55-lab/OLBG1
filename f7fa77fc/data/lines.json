@@ -261,9 +261,9 @@
   },
   "count": 126,
   "confidence_counts": {
-    "high": 31,
+    "high": 30,
     "low": 60,
-    "medium": 35
+    "medium": 36
   },
   "lines": [
     {
@@ -891,15 +891,15 @@
       "sport": "ice-hockey",
       "sport_name": "Ice Hockey",
       "favourite": "Vegas Golden Knights",
-      "home_probability": 0.3603,
+      "home_probability": 0.4013,
       "draw_probability": 0.0,
-      "away_probability": 0.6397,
+      "away_probability": 0.5987,
       "pick": "Vegas Golden Knights",
       "pick_market": "Match Winner",
-      "confidence": "high",
-      "expected_margin": -1.02,
+      "confidence": "medium",
+      "expected_margin": -0.71,
       "rating_home": 50.0,
-      "rating_away": 80.0,
+      "rating_away": 72.7,
       "rating_measured_home": true,
       "rating_measured_away": true,
       "rating_coverage": 2,
@@ -913,21 +913,21 @@
           "outcomes": [
             {
               "selection": "St. Louis Blues",
-              "probability": 0.360301,
-              "odds": 2.64,
-              "fair_odds": 2.78,
-              "american": "+164",
-              "fair_american": "+178",
-              "implied_pct": 36
+              "probability": 0.401253,
+              "odds": 2.37,
+              "fair_odds": 2.49,
+              "american": "+137",
+              "fair_american": "+149",
+              "implied_pct": 40
             },
             {
               "selection": "Vegas Golden Knights",
-              "probability": 0.639699,
-              "odds": 1.49,
-              "fair_odds": 1.56,
-              "american": "-204",
-              "fair_american": "-179",
-              "implied_pct": 64
+              "probability": 0.598747,
+              "odds": 1.59,
+              "fair_odds": 1.67,
+              "american": "-169",
+              "fair_american": "-149",
+              "implied_pct": 60
             }
           ],
           "basis": "Official governing-body ratings + venue adjustment"
@@ -939,24 +939,24 @@
           "outcomes": [
             {
               "selection": "St. Louis Blues +1.5",
-              "probability": 0.566969,
-              "odds": 1.68,
-              "fair_odds": 1.76,
-              "american": "-147",
-              "fair_american": "-132",
-              "implied_pct": 57
+              "probability": 0.608807,
+              "odds": 1.56,
+              "fair_odds": 1.64,
+              "american": "-179",
+              "fair_american": "-156",
+              "implied_pct": 61
             },
             {
               "selection": "Vegas Golden Knights -1.5",
-              "probability": 0.433031,
-              "odds": 2.2,
-              "fair_odds": 2.31,
-              "american": "+120",
-              "fair_american": "+131",
-              "implied_pct": 43
+              "probability": 0.391193,
+              "odds": 2.43,
+              "fair_odds": 2.56,
+              "american": "+143",
+              "fair_american": "+156",
+              "implied_pct": 39
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=-1.0, sigma=2.9)"
+          "basis": "Gaussian margin projection (E[M]=-0.7, sigma=2.9)"
         },
         {
           "key": "total",
@@ -1006,7 +1006,7 @@
         }
       ],
       "model_notes": [
-        "Both sides carry official governing-body ratings (50.0 vs 80.0); log-odds differential scaled by k=42.",
+        "Both sides carry official governing-body ratings (50.0 vs 72.7); log-odds differential scaled by k=42.",
         "Total market centered on competition baseline 6.5 (Goals)."
       ]
     },
@@ -9437,7 +9437,7 @@
       "sport_name": "Rugby Union",
       "favourite": "Aviron Bayonnais",
       "home_probability": 0.6561,
-      "draw_probability": 0.0232,
+      "draw_probability": 0.0233,
       "away_probability": 0.3206,
       "pick": "Aviron Bayonnais",
       "pick_market": "Match Winner (3-Way)",
@@ -13252,7 +13252,7 @@
       "sport": "handball",
       "sport_name": "Handball",
       "favourite": "HC Kriens-Luzern",
-      "home_probability": 0.4789,
+      "home_probability": 0.4788,
       "draw_probability": 0.0699,
       "away_probability": 0.4513,
       "pick": "HC Kriens-Luzern",
@@ -13572,7 +13572,7 @@
       "favourite": "GOG",
       "home_probability": 0.4368,
       "draw_probability": 0.0694,
-      "away_probability": 0.4937,
+      "away_probability": 0.4938,
       "pick": "GOG",
       "pick_market": "Match Winner (3-Way)",
       "confidence": "low",
