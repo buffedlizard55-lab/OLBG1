@@ -224,3 +224,20 @@ not re-checked** out of 134 rows. This pass contributed:
 * **31 rewritten predictions.** 37–51 words each, no shared closers, no price string inside the prose; the
   price stays in `bet_line`. `scripts/validate.py` enforces the rules.
 
+### Third re-check (session `3c7579ed-olbg1`, task T22)
+
+* **Seven rugby-league rows re-sourced.** `nrl.com/draw/?competition=175` and `?competition=176` both render
+  `competition=131` (the men's page), so the women's fixtures pointed at the wrong tournament. Each row now
+  cites its own tournament's Round 2 draw plus the IRL match record (2569–2573, 2586, 2588); the venue-local
+  kick-offs on those records match the stored UTC values.
+* **Kick-off conflict disclosed.** Samoa Women v Wales Women is 2:45am AEDT (06:45Z) on the NRL draw and
+  17:50 local (06:50Z) on the IRL record. Both figures are published; the five minutes are not inferred away.
+* **Tennis provenance.** The eleven pairings are consistent with the completed Round-of-32 results plus byes,
+  but the matches have not been played and the draws are client-rendered, so every tennis row now carries a
+  "reconstructed, not draw-verified" flag with the start time left blank.
+* **Prediction prose de-templated.** The price no longer appears inside the write-ups (27 of 31 previously
+  ended with the same `: price` closer); it stays in `bet_line`. Write-ups run 49–82 words with zero
+  duplicated six-word sequences.
+* Register totals now read 44 confirmed, 19 corrected, 2 flagged, 69 not re-checked. See
+  [`reports/SESSION_3C75_RECHECK.md`](reports/SESSION_3C75_RECHECK.md).
+

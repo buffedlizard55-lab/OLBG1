@@ -33,17 +33,18 @@
       "inputs": {
         "home": {
           "label": "Points percentage",
-          "value": "0.556 (4-3-2, +2 GD)",
+          "value": "0.556 (4-3-2, -7 GD)",
           "rating": 55.6
         },
         "away": {
           "label": "Points percentage",
-          "value": "0.318 (2-6-3, 0-4-2 road, -14 GD)",
+          "value": "0.318 (2-6-3, 0-4-1 road, -19 GD)",
           "rating": 31.8
         }
       },
       "flags": [
-        "OLBG renders start time as 'Today 19:37' (EDT UTC-4) with no timezone label vs official NHL 23:30 UTC puck drop"
+        "OLBG renders start time as 'Today 19:37' (EDT UTC-4) with no timezone label vs official NHL 23:30 UTC puck drop",
+        "Inputs re-checked independently on 2026-10-21T07:20Z against api-web.nhle.com/v1/standings/2026-10-20: Buffalo goal differential is -7 (was +2) and Philadelphia's road line is 0-4-1 with a -19 differential (was 0-4-2 / -14). Both clubs had played the same number of games as the stored record, so these were transcription errors, not snapshot drift. Ratings derive from points percentage, which was already correct, so no price moved."
       ],
       "olbg": {
         "listed": true,
@@ -84,7 +85,7 @@
       "inputs": {
         "home": {
           "label": "Points percentage",
-          "value": "0.667 (6-3-0, 4-1-0 home)",
+          "value": "0.667 (6-3-0, 3-1-0 home)",
           "rating": 66.7
         },
         "away": {
@@ -94,7 +95,8 @@
         }
       },
       "flags": [
-        "Starting goaltenders unconfirmed pre-skate; OLBG shows unlabelled EDT timestamp 'Today 19:37'"
+        "Starting goaltenders unconfirmed pre-skate; OLBG shows unlabelled EDT timestamp 'Today 19:37'",
+        "Home split corrected independently on 2026-10-21T07:20Z: Ottawa had played 4 home games at 3-1-0, so the stored 4-1-0 was arithmetically impossible. Rating and price unchanged."
       ],
       "olbg": {
         "listed": true,
@@ -140,12 +142,13 @@
         },
         "away": {
           "label": "Points percentage",
-          "value": "0.563 (3-2-3, 0 GD)",
+          "value": "0.563 (3-2-3, -1 GD)",
           "rating": 56.3
         }
       },
       "flags": [
-        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved."
+        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved.",
+        "Nashville's goal differential was also corrected from 0 to -1 in the same independent re-read; points percentage and rating are unaffected."
       ]
     },
     {
@@ -5033,8 +5036,8 @@
       "id": "f1-usgp-2026",
       "sport": "motor-racing",
       "competition": "FIA Formula One World Championship",
-      "stage": "Round 18 - United States Grand Prix (56 laps)",
-      "start_utc": "2026-10-25T20:00:00Z",
+      "stage": "United States Grand Prix (56 laps)",
+      "start_utc": "2026-10-25T21:00:00Z",
       "date_local": "2026-10-25",
       "home": "United States Grand Prix",
       "away": "",
@@ -5059,7 +5062,9 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [
-        "20-car Grand Prix field market (not a two-sided fixture); race start verified at 20:00 UTC (OLBG displays 16:00 EDT)"
+        "20-car Grand Prix field market (not a two-sided fixture)",
+        "Race start re-verified independently on 2026-10-21T07:25Z at formula1.com/en/racing/2026/united-states: 25 October, 56 laps, Circuit of The Americas, 16:00 track time. Austin is on CDT (UTC-5) on that date, so the start is 21:00 UTC; the earlier 20:00 UTC value and 'EDT' label were wrong by an hour.",
+        "Round number removed: the linked official race page does not display one."
       ]
     },
     {
@@ -5327,17 +5332,18 @@
       "inputs": {
         "home": {
           "label": "Points percentage",
-          "value": "0.556 (4-3-2, +2 GD)",
+          "value": "0.556 (4-3-2, -7 GD)",
           "rating": 55.6
         },
         "away": {
           "label": "Points percentage",
-          "value": "0.318 (2-6-3, 0-4-2 road, -14 GD)",
+          "value": "0.318 (2-6-3, 0-4-1 road, -19 GD)",
           "rating": 31.8
         }
       },
       "flags": [
-        "OLBG renders start time as 'Today 19:37' (EDT UTC-4) with no timezone label vs official NHL 23:30 UTC puck drop"
+        "OLBG renders start time as 'Today 19:37' (EDT UTC-4) with no timezone label vs official NHL 23:30 UTC puck drop",
+        "Inputs re-checked independently on 2026-10-21T07:20Z against api-web.nhle.com/v1/standings/2026-10-20: Buffalo goal differential is -7 (was +2) and Philadelphia's road line is 0-4-1 with a -19 differential (was 0-4-2 / -14). Both clubs had played the same number of games as the stored record, so these were transcription errors, not snapshot drift. Ratings derive from points percentage, which was already correct, so no price moved."
       ],
       "olbg": {
         "listed": true,
@@ -5378,7 +5384,7 @@
       "inputs": {
         "home": {
           "label": "Points percentage",
-          "value": "0.667 (6-3-0, 4-1-0 home)",
+          "value": "0.667 (6-3-0, 3-1-0 home)",
           "rating": 66.7
         },
         "away": {
@@ -5388,7 +5394,8 @@
         }
       },
       "flags": [
-        "Starting goaltenders unconfirmed pre-skate; OLBG shows unlabelled EDT timestamp 'Today 19:37'"
+        "Starting goaltenders unconfirmed pre-skate; OLBG shows unlabelled EDT timestamp 'Today 19:37'",
+        "Home split corrected independently on 2026-10-21T07:20Z: Ottawa had played 4 home games at 3-1-0, so the stored 4-1-0 was arithmetically impossible. Rating and price unchanged."
       ],
       "olbg": {
         "listed": true,
@@ -5434,12 +5441,13 @@
         },
         "away": {
           "label": "Points percentage",
-          "value": "0.563 (3-2-3, 0 GD)",
+          "value": "0.563 (3-2-3, -1 GD)",
           "rating": 56.3
         }
       },
       "flags": [
-        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved."
+        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved.",
+        "Nashville's goal differential was also corrected from 0 to -1 in the same independent re-read; points percentage and rating are unaffected."
       ]
     },
     {
@@ -10327,8 +10335,8 @@
       "id": "f1-usgp-2026",
       "sport": "motor-racing",
       "competition": "FIA Formula One World Championship",
-      "stage": "Round 18 - United States Grand Prix (56 laps)",
-      "start_utc": "2026-10-25T20:00:00Z",
+      "stage": "United States Grand Prix (56 laps)",
+      "start_utc": "2026-10-25T21:00:00Z",
       "date_local": "2026-10-25",
       "home": "United States Grand Prix",
       "away": "",
@@ -10353,7 +10361,9 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [
-        "20-car Grand Prix field market (not a two-sided fixture); race start verified at 20:00 UTC (OLBG displays 16:00 EDT)"
+        "20-car Grand Prix field market (not a two-sided fixture)",
+        "Race start re-verified independently on 2026-10-21T07:25Z at formula1.com/en/racing/2026/united-states: 25 October, 56 laps, Circuit of The Americas, 16:00 track time. Austin is on CDT (UTC-5) on that date, so the start is 21:00 UTC; the earlier 20:00 UTC value and 'EDT' label were wrong by an hour.",
+        "Round number removed: the linked official race page does not display one."
       ]
     },
     {

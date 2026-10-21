@@ -10,10 +10,10 @@ compared them value by value with the published rows.
 
 | Outcome | Rows | Meaning |
 |---|---|---|
-| Confirmed | 46 | Official page re-fetched; participants, date, venue and published start/ID all match. |
-| Corrected | 16 | Official page disagreed and settled the value; dataset source amended. |
+| Confirmed | 44 | Official page re-fetched; participants, date, venue and published start/ID all match. |
+| Corrected | 19 | Official page disagreed and settled the value; dataset source amended. |
 | Flagged | 2 | Official page disagrees or cannot decide; nothing changed, published for review. |
-| Not re-checked | 70 | No official page re-read in this pass; reason listed per row. |
+| Not re-checked | 69 | No official page re-read in this pass; reason listed per row. |
 
 A row is never marked confirmed because it *looks* right. Where the publisher blocks a
 text fetch (darts, tennis draws) or the site is client-rendered, the row is left as
@@ -23,6 +23,8 @@ not re-checked and the reason is printed.
 
 | Row | Correction | Official page |
 |---|---|---|
+| `nhl-2026020152` | Buffalo goal differential +2 -> -7; Philadelphia road 0-4-2 -> 0-4-1 and differential -14 -> -19. Ratings come from points percentage, which was already correct, so no rating or price moved. | [NHL official standings API (2026-10-20, live)](https://api-web.nhle.com/v1/standings/2026-10-20) |
+| `nhl-2026020153` | Ottawa home split 4-1-0 -> 3-1-0. Record, points percentage, rating and every price are unchanged. | [NHL official standings API (2026-10-20, live)](https://api-web.nhle.com/v1/standings/2026-10-20) |
 | `nhl-2026020154` | Home split 5-1-0 -> 3-1-0 in the descriptive input. Points percentage (.750) and goal differential (+14) were already correct, so the rating 75.0 and every price are unchanged. | [NHL official standings API (2026-10-20, live)](https://api-web.nhle.com/v1/standings/2026-10-20) |
 | `nhl-2026020158` | Fixture facts left as published; only the back-to-back relationship was corroborated. Not promoted to confirmed. | [NHL official schedule API (2026-10-21)](https://api-web.nhle.com/v1/schedule/2026-10-21) |
 | `nhl-2026020160` | No change. The line and its rating are a labelled pre-game snapshot and are retained; re-pricing would silently rewrite a published pick. Disclosed on the row and on Flagged for Review for a reviewer decision. | [NHL official standings API (2026-10-20, live)](https://api-web.nhle.com/v1/standings/2026-10-20) |
@@ -41,6 +43,7 @@ not re-checked and the reason is printed.
 | `rl-wc26-tga-lbn` | Legacy nrl.com/draw/?competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2569. | [IRL official fixtures & match records (RLWC26 Round 2)](https://www.intrl.sport/fixtures-results) |
 | `rl-wc26w-aus-eng` | Legacy competition=176 link (which resolves to the men's competition 131) replaced with the official women's Round 2 draw page plus IRL match record 2588. | [IRL official fixtures & match records (RLWC26 Round 2)](https://www.intrl.sport/fixtures-results) |
 | `rl-wc26w-sam-wal` | Legacy competition=176 link replaced with the official women's Round 2 draw. Kick-off conflict disclosed on the row: 06:45Z (NRL) vs 06:50Z (IRL); neither is inferred away. | [IRL official fixtures & match records (RLWC26 Round 2)](https://www.intrl.sport/fixtures-results) |
+| `f1-usgp-2026` | start_utc 2026-10-25T20:00:00Z -> 2026-10-25T21:00:00Z; the 'EDT' description and the unverifiable 'Round 18' label removed. | [Formula 1 official 2026 United States Grand Prix page](https://www.formula1.com/en/racing/2026/united-states) |
 
 ## Findings
 
@@ -118,9 +121,33 @@ The men's RLWC rows linked nrl.com/draw/?competition=175..., which the site serv
 
 ### F-V10 — Coverage — most rows were not re-fetched in this pass (medium)
 
-Fresh official reads covered 64 of 134 rows (confirmed + corrected + flagged). The remaining 70 keep their original verified or cross-checked status and their source links, but this pass did not re-read them.
+Fresh official reads covered 65 of 134 rows (confirmed + corrected + flagged). The remaining 69 keep their original verified or cross-checked status and their source links, but this pass did not re-read them.
 
-**Status:** Every one of the 70 is listed on the Live Verification page with the reason, so the gap is visible rather than implied. No row is claimed as re-verified without a read.
+**Status:** Every one of the 69 is listed on the Live Verification page with the reason, so the gap is visible rather than implied. No row is claimed as re-verified without a read.
+
+**Source:** [NHL official schedule API (2026-10-21)](https://api-web.nhle.com/v1/schedule/2026-10-21)
+
+### F-V11 — NHL — four input sub-values were transcription errors, not drift (high)
+
+A second independent read of the standings endpoint on 2026-10-21T07:20Z found Buffalo at -7 (stored +2), Philadelphia at 0-4-1 and -19 (stored 0-4-2 / -14), Ottawa at 3-1-0 at home (stored 4-1-0, impossible from four home games) and Nashville at -1 (stored 0). Each club had played exactly the number of games in its stored record, which rules out a game having been played in between.
+
+**Status:** Corrected in the dataset source. Ratings derive from points percentage, which was already correct, so no rating or price moved.
+
+**Source:** [NHL official standings API (2026-10-20, live)](https://api-web.nhle.com/v1/standings/2026-10-20)
+
+### F-V12 — Formula 1 — the United States GP start was an hour early (medium)
+
+formula1.com gives 16:00 track time on 25 October at Circuit of The Americas. Austin is on CDT (UTC-5) on that date, so the start is 21:00 UTC; the row carried 20:00 UTC and described 16:00 as EDT. The same page shows no round number, so the 'Round 18' label was not supportable.
+
+**Status:** start_utc corrected to 2026-10-25T21:00:00Z; the round number was removed.
+
+**Source:** [Formula 1 official 2026 United States Grand Prix page](https://www.formula1.com/en/racing/2026/united-states)
+
+### F-V13 — Source integrity — two cited URLs do not resolve to the fixture list (medium)
+
+plusliga.pl/table.html redirects to tauronliga.pl and returns a generic competition page; munster.gaa.ie/fixtures/munster-gaa-fixtures/ resolved to an April 2025 news post titled 'Munster GAA Fixtures - April 7th to 12th 2025'. Neither page evidences the 2026 fixtures it is cited for.
+
+**Status:** The nine affected rows keep their published values and are listed as not re-checked with this specific blocker named. Nothing was upgraded.
 
 **Source:** [NHL official schedule API (2026-10-21)](https://api-web.nhle.com/v1/schedule/2026-10-21)
 
@@ -128,8 +155,8 @@ Fresh official reads covered 64 of 134 rows (confirmed + corrected + flagged). T
 
 | Row | Match | Competition | Outcome | What the official page said | Source |
 |---|---|---|---|---|---|
-| `nhl-2026020152` | Buffalo Sabres v Philadelphia Flyers | NHL | confirmed | Game 2026020152: Philadelphia at Buffalo, KeyBank Center, startTimeUTC 2026-10-21T23:30:00Z — participants, venue and start all match. No change required. | [NHL official schedule API (2026-10-21)](https://api-web.nhle.com/v1/schedule/2026-10-21) |
-| `nhl-2026020153` | Ottawa Senators v Florida Panthers | NHL | confirmed | Game 2026020153: Florida at Ottawa, Canadian Tire Centre, startTimeUTC 2026-10-21T23:30:00Z — all match. No change required. | [NHL official schedule API (2026-10-21)](https://api-web.nhle.com/v1/schedule/2026-10-21) |
+| `nhl-2026020152` | Buffalo Sabres v Philadelphia Flyers | NHL | corrected | Independent re-read on 2026-10-21T07:20Z: standings return Buffalo 4-3-2 / .556 with goalDifferential -7, and Philadelphia 2-6-3 / .318 with a road line of 0-4-1 and goalDifferential -19. Both clubs had played exactly the number of games in the stored record (9 and 11), so the stored +2 and -14 differentials and the 0-4-2 road line cannot be snapshot drift. Buffalo goal differential +2 -> -7; Philadelphia road 0-4-2 -> 0-4-1 and differential -14 -> -19. Ratings come from points percentage, which was already correct, so no rating or price moved. | [NHL official standings API (2026-10-20, live)](https://api-web.nhle.com/v1/standings/2026-10-20) |
+| `nhl-2026020153` | Ottawa Senators v Florida Panthers | NHL | corrected | Independent re-read on 2026-10-21T07:20Z: Ottawa are 6-3-0 / .667 over 9 games with homeGamesPlayed 4 and a 3-1-0 home record. The stored 4-1-0 home line would require five home wins from four home games. Ottawa home split 4-1-0 -> 3-1-0. Record, points percentage, rating and every price are unchanged. | [NHL official standings API (2026-10-20, live)](https://api-web.nhle.com/v1/standings/2026-10-20) |
 | `nhl-2026020154` | Boston Bruins v Nashville Predators | NHL | corrected | Standings 2026-10-20 return 7-2-1, .750, +14 — but over 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0), not the 5-1-0 the row carried. Home games cannot decrease, so the old figure was an error rather than drift. Home split 5-1-0 -> 3-1-0 in the descriptive input. Points percentage (.750) and goal differential (+14) were already correct, so the rating 75.0 and every price are unchanged. | [NHL official standings API (2026-10-20, live)](https://api-web.nhle.com/v1/standings/2026-10-20) |
 | `nhl-2026020155` | Toronto Maple Leafs v New York Rangers | NHL | confirmed | Game 2026020155: New York Rangers at Toronto, Scotiabank Arena, startTimeUTC 2026-10-22T23:00:00Z — all match. No change required. | [NHL official schedule API (2026-10-21)](https://api-web.nhle.com/v1/schedule/2026-10-21) |
 | `nhl-2026020158` | Pittsburgh Penguins v Florida Panthers | NHL | flagged | Florida's back-to-back is real (they play Ottawa on 21 Oct and Pittsburgh on 22 Oct), but the 21 Oct schedule read back only two games, so this row's own game record was not re-read. Fixture facts left as published; only the back-to-back relationship was corroborated. Not promoted to confirmed. | [NHL official schedule API (2026-10-21)](https://api-web.nhle.com/v1/schedule/2026-10-21) |
@@ -232,14 +259,14 @@ Fresh official reads covered 64 of 134 rows (confirmed + corrected + flagged). T
 | `hand-ehf-12048` | Kolstad Håndball v SC Magdeburg | EHF Champions League Men | confirmed | EHF calendar: Kolstad Håndball v SC Magdeburg, 22 Oct, 20:45 CEST (= 18:45Z) — match. No change required. | [EHF Champions League Men 2026/27 standings & match calendar](https://ehfcl.eurohandball.com/men/2026-27/standings/) |
 | `hand-ehf-12054` | Sporting CP v IFK Kristianstad | EHF Champions League Men | confirmed | EHF calendar: Sporting Clube de Portugal v IFK Kristianstad, 22 Oct, 20:45 CEST (= 18:45Z) — match. No change required. | [EHF Champions League Men 2026/27 standings & match calendar](https://ehfcl.eurohandball.com/men/2026-27/standings/) |
 | `hand-ehf-12046` | Barça v Montpellier Handball | EHF Champions League Men | confirmed | EHF calendar: Barça v Montpellier Handball, 22 Oct, 20:45 CEST (= 18:45Z) — match. No change required. | [EHF Champions League Men 2026/27 standings & match calendar](https://ehfcl.eurohandball.com/men/2026-27/standings/) |
-| `vol-plus-36961` | BOGDANKA LUK Lublin v Trefl Gdansk | Polish PlusLiga | not_rechecked | PlusLiga and SuperLega fixture pages were not re-fetched in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [PlusLiga official 2026/27 schedule](https://www.plusliga.pl/games.html) |
-| `vol-plus-36962` | Aluron CMC Warta Zawiercie v ZAKSA Kedzierzyn-Kozle | Polish PlusLiga | not_rechecked | PlusLiga and SuperLega fixture pages were not re-fetched in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [PlusLiga official 2026/27 schedule](https://www.plusliga.pl/games.html) |
-| `vol-plus-36963` | Slepsk Malow Suwalki v GKS Katowice | Polish PlusLiga | not_rechecked | PlusLiga and SuperLega fixture pages were not re-fetched in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [PlusLiga official 2026/27 schedule](https://www.plusliga.pl/games.html) |
-| `vol-plus-36964` | PGE GiEK Skra Belchatow v PGE Projekt Warszawa | Polish PlusLiga | not_rechecked | PlusLiga and SuperLega fixture pages were not re-fetched in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [PlusLiga official 2026/27 schedule](https://www.plusliga.pl/games.html) |
-| `vol-plus-36965` | InPost ChKS Chelm v Asseco Resovia Rzeszow | Polish PlusLiga | not_rechecked | PlusLiga and SuperLega fixture pages were not re-fetched in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [PlusLiga official 2026/27 schedule](https://www.plusliga.pl/games.html) |
-| `vol-lega-perugia` | Sir Susa Scai Perugia v Tinet Prata di Pordenone | SuperLega Credem Banca | not_rechecked | PlusLiga and SuperLega fixture pages were not re-fetched in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [Lega Pallavolo Serie A SuperLega Credem Banca calendar](https://www.legavolley.it/) |
-| `vol-lega-trentino` | Itas Trentino v Cisterna Volley | SuperLega Credem Banca | not_rechecked | PlusLiga and SuperLega fixture pages were not re-fetched in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [Lega Pallavolo Serie A SuperLega Credem Banca calendar](https://www.legavolley.it/) |
-| `vol-lega-lube` | Cucine Lube Civitanova v Sonepar Padova | SuperLega Credem Banca | not_rechecked | PlusLiga and SuperLega fixture pages were not re-fetched in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [Lega Pallavolo Serie A SuperLega Credem Banca calendar](https://www.legavolley.it/) |
+| `vol-plus-36961` | BOGDANKA LUK Lublin v Trefl Gdansk | Polish PlusLiga | not_rechecked | Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched. Keeps its original status and source links; nothing in this pass re-read it. | [PlusLiga official 2026/27 schedule](https://www.plusliga.pl/games.html) |
+| `vol-plus-36962` | Aluron CMC Warta Zawiercie v ZAKSA Kedzierzyn-Kozle | Polish PlusLiga | not_rechecked | Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched. Keeps its original status and source links; nothing in this pass re-read it. | [PlusLiga official 2026/27 schedule](https://www.plusliga.pl/games.html) |
+| `vol-plus-36963` | Slepsk Malow Suwalki v GKS Katowice | Polish PlusLiga | not_rechecked | Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched. Keeps its original status and source links; nothing in this pass re-read it. | [PlusLiga official 2026/27 schedule](https://www.plusliga.pl/games.html) |
+| `vol-plus-36964` | PGE GiEK Skra Belchatow v PGE Projekt Warszawa | Polish PlusLiga | not_rechecked | Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched. Keeps its original status and source links; nothing in this pass re-read it. | [PlusLiga official 2026/27 schedule](https://www.plusliga.pl/games.html) |
+| `vol-plus-36965` | InPost ChKS Chelm v Asseco Resovia Rzeszow | Polish PlusLiga | not_rechecked | Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched. Keeps its original status and source links; nothing in this pass re-read it. | [PlusLiga official 2026/27 schedule](https://www.plusliga.pl/games.html) |
+| `vol-lega-perugia` | Sir Susa Scai Perugia v Tinet Prata di Pordenone | SuperLega Credem Banca | not_rechecked | Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched. Keeps its original status and source links; nothing in this pass re-read it. | [Lega Pallavolo Serie A SuperLega Credem Banca calendar](https://www.legavolley.it/) |
+| `vol-lega-trentino` | Itas Trentino v Cisterna Volley | SuperLega Credem Banca | not_rechecked | Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched. Keeps its original status and source links; nothing in this pass re-read it. | [Lega Pallavolo Serie A SuperLega Credem Banca calendar](https://www.legavolley.it/) |
+| `vol-lega-lube` | Cucine Lube Civitanova v Sonepar Padova | SuperLega Credem Banca | not_rechecked | Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched. Keeps its original status and source links; nothing in this pass re-read it. | [Lega Pallavolo Serie A SuperLega Credem Banca calendar](https://www.legavolley.it/) |
 | `aflw-r11-01` | North Melbourne v Adelaide Crows | NAB AFLW Premiership Season | not_rechecked | The Round 11 board fragment returned did not include this pairing; only six of the nine AFLW fixtures were readable. Keeps its original status and source links; nothing in this pass re-read it. | [AFL official 2026 NAB AFLW fixture & ladder](https://www.afl.com.au/aflw) |
 | `aflw-r11-02` | Geelong Cats v Fremantle | NAB AFLW Premiership Season | confirmed | AFLW Round 11 board: geel v fre at GMHBA — pairing and venue match. No change required. | [AFL official AFLW hub — Round 11 fixture board](https://www.afl.com.au/aflw) |
 | `aflw-r11-03` | Western Bulldogs v Melbourne | NAB AFLW Premiership Season | confirmed | AFLW Round 11 board: wb v melb at MWO (Mission Whitten Oval) — pairing and venue match. No change required. | [AFL official AFLW hub — Round 11 fixture board](https://www.afl.com.au/aflw) |
@@ -254,7 +281,7 @@ Fresh official reads covered 64 of 134 rows (confirmed + corrected + flagged). T
 | `gaa-cork-3530` | St Finbarrs v Nemo Rangers | Cork Premier Senior Football Championship | not_rechecked | GAA county fixture pages were not re-fetched in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [Cork GAA official Premier Senior Football fixtures](https://gaacork.ie/fixtures-results/) |
 | `gaa-waterford-3536` | Rathgormack v The Nire | Waterford Senior Football Championship | not_rechecked | GAA county fixture pages were not re-fetched in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [Munster GAA official county championship fixtures](https://munster.gaa.ie/fixtures/munster-gaa-fixtures/) |
 | `gaa-kerry-sfc` | Dr. Crokes v Kenmare Shamrocks | Kerry Senior Football Championship | not_rechecked | GAA county fixture pages were not re-fetched in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [Munster GAA official county championship fixtures](https://munster.gaa.ie/fixtures/munster-gaa-fixtures/) |
-| `f1-usgp-2026` | United States Grand Prix | FIA Formula One World Championship | not_rechecked | Formula 1 event page was not re-fetched in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [Formula 1 official 2026 United States Grand Prix hub](https://www.formula1.com/en/racing/2026/united-states) |
+| `f1-usgp-2026` | United States Grand Prix | FIA Formula One World Championship | corrected | formula1.com/en/racing/2026/united-states lists the race on 25 October with 56 laps at Circuit of The Americas and a 16:00 track time. Austin is on CDT (UTC-5) on 25 October, so the start is 21:00 UTC, not the 20:00 UTC recorded. The same page shows no round number. start_utc 2026-10-25T20:00:00Z -> 2026-10-25T21:00:00Z; the 'EDT' description and the unverifiable 'Round 18' label removed. | [Formula 1 official 2026 United States Grand Prix page](https://www.formula1.com/en/racing/2026/united-states) |
 | `golf-bermuda-2026` | Butterfield Bermuda Championship | PGA TOUR FedExCup Fall | not_rechecked | PGA TOUR, DP World Tour, LPGA and PGA TOUR Champions schedules were not re-fetched in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [PGA TOUR official Butterfield Bermuda Championship](https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528) |
 | `golf-genesis-2026` | Genesis Championship | DP World Tour & KPGA Co-Sanctioned | not_rechecked | PGA TOUR, DP World Tour, LPGA and PGA TOUR Champions schedules were not re-fetched in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [DP World Tour official Genesis Championship](https://www.europeantour.com/dpworld-tour/schedule/2026/) |
 | `golf-bmw-ladies-2026` | BMW Ladies Championship | LPGA Tour | not_rechecked | PGA TOUR, DP World Tour, LPGA and PGA TOUR Champions schedules were not re-fetched in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [LPGA official BMW Ladies Championship](https://www.lpga.com/tournaments) |

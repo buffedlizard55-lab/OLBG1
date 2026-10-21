@@ -1,18 +1,18 @@
 # Session `3c7579ed-olbg1` — independent re-check after T20 (task T21)
 
-**Date:** 2026-10-21. **Branch:** `arena/3c7579ed-olbg1`. **Base:** `main` @ `e843356`.
+**Date:** 2026-10-21. **Branch:** `arena/3c7579ed-olbg1`. **Task:** T22 (claim renumbered twice; see §1).
 
 This is a second, independent read of the primary desk, run after session `72198d3e` published T20. It does
 not replace T20's register: it corrects what T20 left wrong and discloses what neither pass could confirm.
 
 ## 1. Claim collision (disclosed, not hidden)
 
-This session claimed "T17 independent verification" on its own branch at 07:40Z. Before it could merge,
-`main` advanced by three merges — session `76950c25` (live OLBG re-harvest) and session `72198d3e` (T20,
-live official-source re-verification, PRs #27 and #29) — which had claimed that task number earlier, at
-07:05Z. Rather than publish a parallel page and a duplicate claim, this session rebased onto `main`, kept
-T20's pages and register intact, and reduced its scope to what T20 had not fixed. The task is recorded as
-**T21** in `COORDINATION.md` §1 and the collision is written up in §18.
+This session claimed "T17 independent verification" on its own branch at 07:40Z. While the branch was open,
+`main` advanced through four merges — `76950c25` (live OLBG re-harvest, T17–T19), `72198d3e` (T20, live
+re-verification, PRs #27/#29) and `4f8d032d` (claimed T21, PR #32). The number was therefore taken twice.
+Rather than publish a parallel page and a duplicate claim, this session rebased onto `main`, kept those
+sessions' register, pages and corrected inputs intact, and reduced its scope to what they had not fixed. The
+task is recorded as **T22** in `COORDINATION.md` §1 and the collision is written up in §19.
 
 ## 2. What was re-read, and what it settled
 
@@ -57,10 +57,11 @@ draw widgets are client-rendered. Every tennis row now carries a "reconstructed,
 keeps a blank start time. They are **not** claimed as verified.
 
 ### 3.4 High-prediction prose (31)
-T20's notes each ended with `: {selection}`, pasting the price onto the end of every sentence — 31 identical
-closers and a robotic read. All 31 are rewritten at 37–51 words, each naming the side, the verified input and
-the market, with the price confined to `bet_line`. `scripts/validate.py` enforces the 30-word floor, pick
-presence and six-word uniqueness, and reports zero duplicated six-grams.
+27 of 31 notes ended with `: {selection}`, pasting the price onto the end of the sentence, which produced a
+near-identical closer across the corpus. The price is now confined to `bet_line`; the prose keeps the
+corrected inputs (Buffalo −7, Philadelphia −19, Boston 3-1-0 at home) and ends on a varied sentence naming
+the side. 49–82 words, zero duplicated six-word sequences, and `scripts/validate.py` enforces the 30-word
+floor, pick presence and six-gram uniqueness.
 
 ## 4. Findings added to the shared register
 
@@ -69,7 +70,7 @@ presence and six-word uniqueness, and reports zero duplicated six-grams.
 * **F-V13** — five-minute RLWC kick-off disagreement (low, disclosed).
 
 These extend `data/verification.json` (rendered on `live-verification.html`) rather than adding a parallel
-register: the page now reads 46 confirmed, 16 corrected, 2 flagged, 70 not re-checked.
+register: the page now reads 44 confirmed, 19 corrected, 2 flagged, 69 not re-checked.
 
 ## 5. Gates
 
@@ -77,13 +78,13 @@ register: the page now reads 46 confirmed, 16 corrected, 2 flagged, 70 not re-ch
 |---|---|
 | `python3 scripts/origin_lines.py` | 126 H2H books, 31 predictions |
 | `python3 scripts/build_dataset.py` | 134 rows, 126 H2H, 8 field cards |
-| `python3 scripts/live_verification.py` | 46 confirmed / 16 corrected / 2 flagged / 70 not re-checked |
-| `python3 scripts/build_site.py` | 29 pages at `/` + 29 mirrored in `/f7fa77fc/` |
+| `python3 scripts/live_verification.py` | 44 confirmed / 19 corrected / 2 flagged / 69 not re-checked |
+| `python3 scripts/build_site.py` | 29 pages at `/` + 29 mirrored in `/f7fa77fc/` (135 validated) |
 | `python3 scripts/validate.py` | 0 errors, 0 warnings |
 | `python3 scripts/ebfbd966_validate.py` | passed |
 | `python3 scripts/final_audit.py` | regenerated (134 rows, 31 high picks) |
 
 ## 6. Boundary
 
-No model price, handicap or total was re-derived. 70 rows were not re-opened in this pass and T20's named
-blockers stand for them. Nothing here was inferred, interpolated or filled from memory.
+No model price, handicap or total was re-derived. 69 rows were not re-opened in this pass and the earlier
+passes' named blockers stand for them. Nothing here was inferred, interpolated or filled from memory.

@@ -417,11 +417,13 @@ def get_rows_b() -> list[dict]:
     # =========================================================================
     multi_runner_events = [
         ("f1-usgp-2026", "motor-racing", "FIA Formula One World Championship",
-         "Round 18 - United States Grand Prix (56 laps)", "2026-10-25T20:00:00Z", "2026-10-25",
+         "United States Grand Prix (56 laps)", "2026-10-25T21:00:00Z", "2026-10-25",
          "United States Grand Prix", "Circuit of The Americas, Austin, TX", [F1_USGP],
          {"listed": True, "event_id": 913, "selection": "Max Verstappen", "market": "Outright Race Winner", "consensus": "OLBG event 913",
           "url": "https://www.olbg.com/betting-tips/Motor_Racing/14"},
-         ["20-car Grand Prix field market (not a two-sided fixture); race start verified at 20:00 UTC (OLBG displays 16:00 EDT)"]),
+         ["20-car Grand Prix field market (not a two-sided fixture)",
+                "Race start re-verified independently on 2026-10-21T07:25Z at formula1.com/en/racing/2026/united-states: 25 October, 56 laps, Circuit of The Americas, 16:00 track time. Austin is on CDT (UTC-5) on that date, so the start is 21:00 UTC; the earlier 20:00 UTC value and 'EDT' label were wrong by an hour.",
+                "Round number removed: the linked official race page does not display one."]),
         ("golf-bermuda-2026", "golf", "PGA TOUR FedExCup Fall",
          "Butterfield Bermuda Championship (72-hole stroke play)", None, "2026-10-22",
          "Butterfield Bermuda Championship", "Port Royal Golf Course, Southampton, Bermuda", [PGA_BERM],
