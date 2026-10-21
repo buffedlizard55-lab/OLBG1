@@ -15,7 +15,7 @@ URC_FIX = {"name": "United Rugby Championship official 2026/27 fixtures", "url":
 TOP14_FIX = {"name": "LNR official Top 14 2026-2027 calendar & standings", "url": "https://top14.lnr.fr/calendrier-et-resultats"}
 TOP14_TAB = {"name": "LNR official Top 14 Journée 6 standings", "url": "https://top14.lnr.fr/classement"}
 PREM_FIX = {"name": "Gallagher Premiership official fixtures hub", "url": "https://www.premrugby.com/fixtures-results"}
-RLWC_DRAW = {"name": "NRL / RLWC26 official Round 2 draw & match centre", "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"}
+RLWC_DRAW = {"name": "NRL / RLWC26 official Round 2 draw & match centre", "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"}
 RLWC_W = {"name": "NRL / RLWC26 Women's official draw", "url": "https://www.nrl.com/draw/?competition=176&round=2&season=2026"}
 EHF_STAND = {"name": "EHF Champions League Men 2026/27 official standings", "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"}
 EHF_SCHED = {"name": "EHF official 2026/27 group phase playing times PDF", "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"}
@@ -54,12 +54,12 @@ def get_rows_b() -> list[dict]:
          ("ICC Men's T20I rating", "No. 4 (247 rating)", 68.5), ("ICC Men's T20I rating", "No. 2 (267 rating, T20WC winners)", 81.5),
          [NZC_FIX, ICC_RANK], None, []),
         ("cric-ausw-nzw-t20-3", "Women's T20I Series", "3rd T20I", "2026-10-22T08:15:00Z", None,
-         "Australia Women", "New Zealand Women", "Manuka Oval, Canberra", False,
+         "Australia Women", "New Zealand Women", "North Sydney Oval, Sydney", False,
          ("ICC Women's T20I rating", "No. 1 (287 rating)", 88.0), ("ICC Women's T20I rating", "No. 4 (253 rating)", 69.0),
          [CA_SERIES, NZC_FIX, ICC_RANK],
          {"listed": True, "event_id": 188826, "selection": "Australia W", "market": "Win Match", "consensus": "1/2 win tips (50%)",
           "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Australia_W_vs_New_Zealand_W_3rd_T20_Match/7?event_id=188826"},
-         []),
+         ["Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists this 3rd T20I at North Sydney Oval, Sydney; the earlier Manuka Oval entry is not reproducible on the official service."]),
         ("cric-afg-ban-odi", "Men's One-Day International", "ODI Tri-Series", None, "2026-10-21",
          "Afghanistan", "Bangladesh", "Sharjah / UAE (neutral)", True,
          ("ICC Men's ODI rating", "No. 8 (92 rating)", 74.0), ("ICC Men's ODI rating", "No. 9 (82 rating)", 64.0),
@@ -67,16 +67,18 @@ def get_rows_b() -> list[dict]:
          {"listed": True, "event_id": 188824, "selection": "Afghanistan", "market": "Win Match", "consensus": "7/7 win tips (100%)",
           "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Afghanistan_vs_Bangladesh_One_Day_Match/7?event_id=188824"},
          []),
-        ("cric-nza-inda-fc1", "First-Class Tour Match", "1st Four-Day Match", None, "2026-10-22",
-         "New Zealand A", "India A", "Saxton Oval, Nelson", False, None, None, [NZC_FIX], None,
-         ["No official ICC rating for 'A' representative sides; baseline pricing",
+        ("cric-nza-inda-fc1", "First-Class Tour Match", "1st Four-Day Match", None, "2026-10-23",
+         "New Zealand A", "India A", "Bert Sutcliffe Oval, Lincoln University", False, None, None, [NZC_FIX], None,
+         ["Corrected 2026-10-21 against a direct re-fetch of scoring.nzc.nz/fixtures, which now lists this match on Friday 23 October at Bert Sutcliffe Oval, Lincoln University; the earlier 22 October / Saxton Oval entry is not reproducible.",
+          "No official ICC rating for 'A' representative sides; baseline pricing",
           "No official four-day match-total baseline was captured; the total market is intentionally left blank rather than inferred"]),
         ("cric-ford-auck-cant", "Ford Trophy (List A 50-over)", "Round 1", None, "2026-10-24",
          "Auckland Aces", "Canterbury", "Kennards Hire Community Oval, Auckland", False, None, None, [NZC_FIX], None,
          ["Opening round of 2026-27 NZ domestic List A season; both sides 0-0"]),
         ("cric-ford-cds-nd", "Ford Trophy (List A 50-over)", "Round 1", None, "2026-10-24",
-         "Central Stags", "Northern Districts", "Pukekura Park, New Plymouth", False, None, None, [NZC_FIX], None,
-         ["Opening round of 2026-27 NZ domestic List A season; both sides 0-0"]),
+         "Central Stags", "Northern Districts", "Saxton Oval, Nelson", False, None, None, [NZC_FIX], None,
+         ["Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists Central Stags v Northern Districts, Ford Trophy Round 1, at Saxton Oval, Nelson; the earlier Pukekura Park entry is not reproducible on the official service.",
+          "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"]),
         ("cric-ford-wgtn-otago", "Ford Trophy (List A 50-over)", "Round 1", None, "2026-10-24",
          "Wellington Firebirds", "Otago Volts", "Cello Basin Reserve, Wellington", False, None, None, [NZC_FIX], None,
          ["Opening round of 2026-27 NZ domestic List A season; both sides 0-0"]),

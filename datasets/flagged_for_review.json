@@ -1,8 +1,8 @@
 {
   "generated": "2026-10-21",
   "summary": {
-    "upstream_and_audit_findings": 18,
-    "flagged_fixture_rows": 108,
+    "upstream_and_audit_findings": 28,
+    "flagged_fixture_rows": 111,
     "cross_checked_rows": 5,
     "missing_utc_rows": 32
   },
@@ -74,7 +74,7 @@
       "affected": "Rugby League (ID 10), Aussie Rules (ID 22), eSports (ID 23)",
       "summary": "OLBG shows zero live match tips across 17 active top-flight fixtures (7 RLWC26 Round 2, 9 NAB AFLW Round 11, 1 LoL Worlds Swiss).",
       "evidence": "Verified live on nrl.com, afl.com.au, and lolesports.com on 2026-10-21.",
-      "official_url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026",
+      "official_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
       "resolution": "All 17 missing fixtures captured directly from official governing bodies and fully priced."
     },
     {
@@ -126,6 +126,106 @@
       "evidence": "A valid recorded source link is auditable provenance, not a guarantee that a remote publisher has not later changed its content.",
       "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21",
       "resolution": "The exact per-row source URLs are published in the Final Integration Audit. Any later discrepancy must remain blank/flagged until a governing-body source is re-opened and compared."
+    },
+    {
+      "id": "LIVE-F-V1-SNK-LINKS",
+      "category": "Live Re-Verification Correction",
+      "severity": "high",
+      "affected": "Snooker \u2014 5 of 11 Northern Ireland Open Round 2 rows",
+      "summary": "Three rows cited WST match-centre UUIDs that bind to no match, and two rows cited only the generic site even though WST publishes a match centre for both ties.",
+      "evidence": "Re-fetching 5b3a7f22-1c41-48e8-8a2c-94b28a21b9d1 returns an unbound template with no players. The WST live listing binds Holt-Brown to e58a00e5, Gao-Gilbert to 4fb27af0, Noppon-Donaldson to 3a24076e, Brecel-O'Donnell to 0c49ba0c and Slessor-Jones to f6536f1f.",
+      "official_url": "https://www.wst.tv/",
+      "resolution": "All eleven rows now cite the match centre WST actually binds to the pairing."
+    },
+    {
+      "id": "LIVE-F-V2-WTA-ID",
+      "category": "Live Re-Verification Correction",
+      "severity": "medium",
+      "affected": "Tennis \u2014 6 WTA 500 Ningbo Open rows",
+      "summary": "The rows cited tournament 1115 for Ningbo; WTA's own site links the BNB Ningbo Open draws at tournament 2092.",
+      "evidence": "The wta.com notification panel links https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws for both the singles and doubles draw releases.",
+      "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
+      "resolution": "Citation corrected to 2092. The draw body is client-rendered, so the pairings could not be re-read and those rows are listed as not re-checked."
+    },
+    {
+      "id": "LIVE-F-V3-CRIC-VENUE",
+      "category": "Live Re-Verification Correction",
+      "severity": "high",
+      "affected": "Cricket \u2014 cric-ausw-nzw-t20-3, cric-nza-inda-fc1, cric-ford-cds-nd",
+      "summary": "Three NZC fixtures carried a venue or date that the official service does not publish.",
+      "evidence": "scoring.nzc.nz/fixtures lists the 3rd Women's T20I at North Sydney Oval, New Zealand A v India A on 23 Oct at Bert Sutcliffe Oval (Lincoln University), and Central Stags v Northern Districts at Saxton Oval, Nelson.",
+      "official_url": "https://scoring.nzc.nz/fixtures",
+      "resolution": "All three corrected in the dataset source from the re-fetched official service and flagged on their rows."
+    },
+    {
+      "id": "LIVE-F-V4-BOS-SPLIT",
+      "category": "Live Re-Verification Correction",
+      "severity": "medium",
+      "affected": "Ice hockey \u2014 nhl-2026020154 Boston Bruins v Nashville Predators",
+      "summary": "The row claimed a 5-1-0 home record; the official standings return four home games at 3-1-0 for the same 7-2-1 record.",
+      "evidence": "api-web.nhle.com/v1/standings/2026-10-20: homeGamesPlayed 4, homeWins 3, homeLosses 1, homeOtLosses 0, while overall 7-2-1, pointPctg .750 and goalDifferential +14 already matched the row.",
+      "official_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+      "resolution": "Descriptive split corrected to 3-1-0. Because points percentage and goal differential drove the rating, no price moved."
+    },
+    {
+      "id": "LIVE-F-V5-NHL-DRIFT",
+      "category": "Snapshot Drift Disclosure",
+      "severity": "medium",
+      "affected": "Ice hockey \u2014 nhl-2026020160 St. Louis Blues v Vegas Golden Knights",
+      "summary": "Vegas was priced at 8-2-0 (.800, W3); the same live endpoint now returns 8-3-0 (.727, L1) over 11 games played.",
+      "evidence": "The standings endpoint reports standingsDateTimeUtc 2026-10-21T07:05:30Z, i.e. it is a live table, so any club that plays after a snapshot will drift the same way.",
+      "official_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+      "resolution": "Deliberately not re-priced: the published line is a labelled pre-game snapshot and rewriting a pick after the fact would be worse than disclosing it. Row flag records both values."
+    },
+    {
+      "id": "LIVE-F-V6-PDC-WALL",
+      "category": "Source Access Limit",
+      "severity": "medium",
+      "affected": "Darts \u2014 all 16 Machineseeker European Championship rows",
+      "summary": "The official PDC draw release still returns only a cookie-consent interstitial to a text fetch.",
+      "evidence": "Two fetches on 2026-10-21 (start of document and mid-document) returned Consent Management Platform text with no draw content.",
+      "official_url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
+      "resolution": "The 16 darts rows are marked not re-checked on the Live Verification page instead of being implied verified."
+    },
+    {
+      "id": "LIVE-F-V7-WTA-ATP-JS",
+      "category": "Source Access Limit",
+      "severity": "medium",
+      "affected": "Tennis \u2014 all 11 ATP/WTA rows",
+      "summary": "WTA and ATP draw pages are client-rendered and return a notification shell without draw content to a text fetch.",
+      "evidence": "Re-fetching /tournaments/2092/ningbo/2026/draws returned the site's notification panel only, with no draw body.",
+      "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
+      "resolution": "The tennis rows keep their source links but are published as not re-checked in this pass."
+    },
+    {
+      "id": "LIVE-F-V8-WST-CLOCK",
+      "category": "Rendering Limit",
+      "severity": "low",
+      "affected": "Snooker \u2014 all 11 rows (session start)",
+      "summary": "WST publishes no UTC session time and renders the clock in the viewer's timezone, so a scraped clock cannot be a fixture start time.",
+      "evidence": "The fetch client renders publisher clocks at UTC-4: all five RLWC kick-offs displayed on nrl.com map exactly to the published UTC values under that offset, and the WST listing showed 05:00/08:00/09:00/14:00/15:00 for a Belfast afternoon and evening card.",
+      "official_url": "https://www.wst.tv/",
+      "resolution": "start_utc stays blank on all eleven rows. The flag now explains the rendering rather than asserting a local session time."
+    },
+    {
+      "id": "LIVE-F-V9-NRL-ID",
+      "category": "Live Re-Verification Correction",
+      "severity": "low",
+      "affected": "Rugby league \u2014 5 men's RLWC26 rows and the zero-tips blind-spot finding",
+      "summary": "The men's World Cup rows cited nrl.com competition 175; the site serves the same Round 2 draw as competition 131.",
+      "evidence": "Requesting ?competition=175&round=2&season=2026 returns the draw page with canonical competition=131 and the full five-match Round 2 list.",
+      "official_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+      "resolution": "Men's citation corrected to 131. The women's id 176 was not re-tested and is left as published with its rows marked not re-checked."
+    },
+    {
+      "id": "LIVE-F-V10-COVERAGE",
+      "category": "Review Boundary",
+      "severity": "medium",
+      "affected": "134 primary rows",
+      "summary": "This pass re-fetched official pages for 62 rows (51 confirmed, 9 corrected, 2 flagged). The other 72 were not re-read and are listed individually as not re-checked with the blocker for each sport.",
+      "evidence": "Counts come from data/verification.json, which is generated by scripts/live_verification.py and contains one row per fixture.",
+      "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21",
+      "resolution": "The gap is published row by row on the Live Verification page; no row is claimed as re-verified without a recorded read."
     },
     {
       "id": "F-LIVE-01-DRIFT",
@@ -216,6 +316,19 @@
       "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
     },
     {
+      "match_id": "nhl-2026020154",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "match": "Boston Bruins vs Nashville Predators",
+      "status": "verified",
+      "missing_utc": false,
+      "unrated_sides": 0,
+      "flags": [
+        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved."
+      ],
+      "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+    },
+    {
       "match_id": "nhl-2026020158",
       "sport": "ice-hockey",
       "competition": "NHL",
@@ -225,6 +338,19 @@
       "unrated_sides": 0,
       "flags": [
         "Back-to-back road spot for Florida after playing in Ottawa on 21 October"
+      ],
+      "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+    },
+    {
+      "match_id": "nhl-2026020160",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "match": "St. Louis Blues vs Vegas Golden Knights",
+      "status": "verified",
+      "missing_utc": false,
+      "unrated_sides": 0,
+      "flags": [
+        "Snapshot drift disclosed 2026-10-21: a re-fetch of api-web.nhle.com/v1/standings/2026-10-20 (standingsDateTimeUtc 2026-10-21T07:05:30Z) now returns Vegas at 8-3-0, .727, L1 over 11 games played, i.e. the club has played once since the 8-2-0 / W3 snapshot used to price this match. The priced inputs and the stored line are retained unchanged and labelled as a pre-game snapshot; the live table link is on the row for manual review."
       ],
       "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
     },
@@ -435,7 +561,7 @@
       "flags": [
         "Court start times follow rolling tournament order of play"
       ],
-      "official_url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+      "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
     },
     {
       "match_id": "ten-902093",
@@ -448,7 +574,7 @@
       "flags": [
         "Court start times follow rolling tournament order of play"
       ],
-      "official_url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+      "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
     },
     {
       "match_id": "ten-902038",
@@ -487,7 +613,7 @@
       "flags": [
         "Court start times follow rolling tournament order of play"
       ],
-      "official_url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+      "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
     },
     {
       "match_id": "ten-902065",
@@ -514,7 +640,7 @@
         "Exact live weekly WTA rankings for both players not captured in same snapshot; priced neutral rather than inferred",
         "Court start times follow rolling tournament order of play"
       ],
-      "official_url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+      "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
     },
     {
       "match_id": "ten-902074",
@@ -528,7 +654,7 @@
         "Opponent weekly rank not captured verbatim; model refuses one-sided rating",
         "Court start times follow rolling tournament order of play"
       ],
-      "official_url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+      "official_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
     },
     {
       "match_id": "ten-902083",
@@ -578,7 +704,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -592,7 +718,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -606,7 +732,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page"
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page."
       ],
       "official_url": "https://www.wst.tv/"
     },
@@ -619,7 +745,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -633,7 +759,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -647,7 +773,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page"
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page."
       ],
       "official_url": "https://www.wst.tv/"
     },
@@ -660,7 +786,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -674,7 +800,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -688,7 +814,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -702,7 +828,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -716,7 +842,7 @@
       "missing_utc": true,
       "unrated_sides": 0,
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "official_url": "https://www.wst.tv/"
@@ -930,6 +1056,19 @@
       "official_url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
     },
     {
+      "match_id": "cric-ausw-nzw-t20-3",
+      "sport": "cricket",
+      "competition": "Women's T20I Series",
+      "match": "Australia Women vs New Zealand Women",
+      "status": "verified",
+      "missing_utc": false,
+      "unrated_sides": 0,
+      "flags": [
+        "Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists this 3rd T20I at North Sydney Oval, Sydney; the earlier Manuka Oval entry is not reproducible on the official service."
+      ],
+      "official_url": "https://www.cricket.com.au/"
+    },
+    {
       "match_id": "cric-afg-ban-odi",
       "sport": "cricket",
       "competition": "Men's One-Day International",
@@ -949,6 +1088,7 @@
       "missing_utc": true,
       "unrated_sides": 2,
       "flags": [
+        "Corrected 2026-10-21 against a direct re-fetch of scoring.nzc.nz/fixtures, which now lists this match on Friday 23 October at Bert Sutcliffe Oval, Lincoln University; the earlier 22 October / Saxton Oval entry is not reproducible.",
         "No official ICC rating for 'A' representative sides; baseline pricing",
         "No official four-day match-total baseline was captured; the total market is intentionally left blank rather than inferred"
       ],
@@ -976,6 +1116,7 @@
       "missing_utc": true,
       "unrated_sides": 2,
       "flags": [
+        "Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists Central Stags v Northern Districts, Ford Trophy Round 1, at Saxton Oval, Nelson; the earlier Pukekura Park entry is not reproducible on the official service.",
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ],
       "official_url": "https://scoring.nzc.nz/fixtures"
@@ -1123,7 +1264,7 @@
       "flags": [
         "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
       ],
-      "official_url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+      "official_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
     },
     {
       "match_id": "rl-wc26-nzl-cok",
@@ -1136,7 +1277,7 @@
       "flags": [
         "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
       ],
-      "official_url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+      "official_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
     },
     {
       "match_id": "rl-wc26-eng-fra",
@@ -1149,7 +1290,7 @@
       "flags": [
         "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
       ],
-      "official_url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+      "official_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
     },
     {
       "match_id": "rl-wc26-png-sam",
@@ -1162,7 +1303,7 @@
       "flags": [
         "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
       ],
-      "official_url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+      "official_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
     },
     {
       "match_id": "rl-wc26-tga-lbn",
@@ -1175,7 +1316,7 @@
       "flags": [
         "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
       ],
-      "official_url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+      "official_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
     },
     {
       "match_id": "rl-wc26w-aus-eng",

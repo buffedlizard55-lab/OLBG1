@@ -135,7 +135,7 @@
       "inputs": {
         "home": {
           "label": "Points percentage",
-          "value": "0.750 (7-2-1, 5-1-0 home, +14 GD)",
+          "value": "0.750 (7-2-1, 3-1-0 home, +14 GD)",
           "rating": 75.0
         },
         "away": {
@@ -144,7 +144,9 @@
           "rating": 56.3
         }
       },
-      "flags": []
+      "flags": [
+        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved."
+      ]
     },
     {
       "id": "nhl-2026020155",
@@ -263,7 +265,9 @@
           "rating": 80.0
         }
       },
-      "flags": []
+      "flags": [
+        "Snapshot drift disclosed 2026-10-21: a re-fetch of api-web.nhle.com/v1/standings/2026-10-20 (standingsDateTimeUtc 2026-10-21T07:05:30Z) now returns Vegas at 8-3-0, .727, L1 over 11 games played, i.e. the club has played once since the 8-2-0 / W3 snapshot used to price this match. The priced inputs and the stored line are retained unchanged and labelled as a pre-game snapshot; the live table link is on the row for manual review."
+      ]
     },
     {
       "id": "nba-0022600085",
@@ -1085,7 +1089,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -1124,7 +1128,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -1267,7 +1271,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -1363,7 +1367,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -1400,7 +1404,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -1582,7 +1586,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -1636,7 +1640,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -1690,7 +1694,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page"
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page."
       ],
       "olbg": {
         "listed": true,
@@ -1744,7 +1748,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ]
     },
@@ -1788,7 +1792,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -1842,7 +1846,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page"
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page."
       ]
     },
     {
@@ -1869,7 +1873,7 @@
         },
         {
           "name": "WST match centre",
-          "url": "https://www.wst.tv/match-centre/5b3a7f22-1c41-48e8-8a2c-94b28a21b9d1"
+          "url": "https://www.wst.tv/match-centre/e58a00e5-e6a7-479b-98d0-5c7867af28a8"
         }
       ],
       "inputs": {
@@ -1885,7 +1889,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ]
     },
@@ -1913,7 +1917,7 @@
         },
         {
           "name": "WST match centre",
-          "url": "https://www.wst.tv/match-centre/81c92a40-4d32-4b28-9c61-2f811d3a40c2"
+          "url": "https://www.wst.tv/match-centre/4fb27af0-7db4-4ec2-b93b-137de3f66135"
         }
       ],
       "inputs": {
@@ -1929,7 +1933,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ]
     },
@@ -1957,7 +1961,7 @@
         },
         {
           "name": "WST match centre",
-          "url": "https://www.wst.tv/match-centre/2f09a44b-71d2-4d9c-a12f-90d4b7c21f10"
+          "url": "https://www.wst.tv/match-centre/3a24076e-455c-497b-abd5-976e194abc5e"
         }
       ],
       "inputs": {
@@ -1973,7 +1977,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ]
     },
@@ -1998,6 +2002,10 @@
         {
           "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+        },
+        {
+          "name": "WST match centre",
+          "url": "https://www.wst.tv/match-centre/0c49ba0c-2d21-481e-a2ac-fbece616f591"
         }
       ],
       "inputs": {
@@ -2013,7 +2021,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -2048,6 +2056,10 @@
         {
           "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+        },
+        {
+          "name": "WST match centre",
+          "url": "https://www.wst.tv/match-centre/f6536f1f-6c2d-47cd-b802-a81e6f04e4cc"
         }
       ],
       "inputs": {
@@ -2063,7 +2075,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -2910,7 +2922,7 @@
       "date_local": null,
       "home": "Australia Women",
       "away": "New Zealand Women",
-      "venue": "Manuka Oval, Canberra",
+      "venue": "North Sydney Oval, Sydney",
       "neutral": false,
       "status": "verified",
       "sources": [
@@ -2939,7 +2951,9 @@
           "rating": 69.0
         }
       },
-      "flags": [],
+      "flags": [
+        "Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists this 3rd T20I at North Sydney Oval, Sydney; the earlier Manuka Oval entry is not reproducible on the official service."
+      ],
       "olbg": {
         "listed": true,
         "event_id": 188826,
@@ -2998,10 +3012,10 @@
       "competition": "First-Class Tour Match",
       "stage": "1st Four-Day Match",
       "start_utc": null,
-      "date_local": "2026-10-22",
+      "date_local": "2026-10-23",
       "home": "New Zealand A",
       "away": "India A",
-      "venue": "Saxton Oval, Nelson",
+      "venue": "Bert Sutcliffe Oval, Lincoln University",
       "neutral": false,
       "status": "verified",
       "sources": [
@@ -3012,6 +3026,7 @@
       ],
       "inputs": {},
       "flags": [
+        "Corrected 2026-10-21 against a direct re-fetch of scoring.nzc.nz/fixtures, which now lists this match on Friday 23 October at Bert Sutcliffe Oval, Lincoln University; the earlier 22 October / Saxton Oval entry is not reproducible.",
         "No official ICC rating for 'A' representative sides; baseline pricing",
         "No official four-day match-total baseline was captured; the total market is intentionally left blank rather than inferred"
       ]
@@ -3048,7 +3063,7 @@
       "date_local": "2026-10-24",
       "home": "Central Stags",
       "away": "Northern Districts",
-      "venue": "Pukekura Park, New Plymouth",
+      "venue": "Saxton Oval, Nelson",
       "neutral": false,
       "status": "verified",
       "sources": [
@@ -3059,6 +3074,7 @@
       ],
       "inputs": {},
       "flags": [
+        "Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists Central Stags v Northern Districts, Ford Trophy Round 1, at Saxton Oval, Nelson; the earlier Pukekura Park entry is not reproducible on the official service.",
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ]
     },
@@ -3508,7 +3524,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -3541,7 +3557,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -3574,7 +3590,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -3607,7 +3623,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -3640,7 +3656,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -5366,7 +5382,7 @@
       "inputs": {
         "home": {
           "label": "Points percentage",
-          "value": "0.750 (7-2-1, 5-1-0 home, +14 GD)",
+          "value": "0.750 (7-2-1, 3-1-0 home, +14 GD)",
           "rating": 75.0
         },
         "away": {
@@ -5375,7 +5391,9 @@
           "rating": 56.3
         }
       },
-      "flags": []
+      "flags": [
+        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved."
+      ]
     },
     {
       "id": "nhl-2026020155",
@@ -5494,7 +5512,9 @@
           "rating": 80.0
         }
       },
-      "flags": []
+      "flags": [
+        "Snapshot drift disclosed 2026-10-21: a re-fetch of api-web.nhle.com/v1/standings/2026-10-20 (standingsDateTimeUtc 2026-10-21T07:05:30Z) now returns Vegas at 8-3-0, .727, L1 over 11 games played, i.e. the club has played once since the 8-2-0 / W3 snapshot used to price this match. The priced inputs and the stored line are retained unchanged and labelled as a pre-game snapshot; the live table link is on the row for manual review."
+      ]
     },
     {
       "id": "nba-0022600085",
@@ -6316,7 +6336,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -6355,7 +6375,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -6498,7 +6518,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -6594,7 +6614,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -6631,7 +6651,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -6813,7 +6833,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -6867,7 +6887,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -6921,7 +6941,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page"
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page."
       ],
       "olbg": {
         "listed": true,
@@ -6975,7 +6995,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ]
     },
@@ -7019,7 +7039,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -7073,7 +7093,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page"
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page."
       ]
     },
     {
@@ -7100,7 +7120,7 @@
         },
         {
           "name": "WST match centre",
-          "url": "https://www.wst.tv/match-centre/5b3a7f22-1c41-48e8-8a2c-94b28a21b9d1"
+          "url": "https://www.wst.tv/match-centre/e58a00e5-e6a7-479b-98d0-5c7867af28a8"
         }
       ],
       "inputs": {
@@ -7116,7 +7136,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ]
     },
@@ -7144,7 +7164,7 @@
         },
         {
           "name": "WST match centre",
-          "url": "https://www.wst.tv/match-centre/81c92a40-4d32-4b28-9c61-2f811d3a40c2"
+          "url": "https://www.wst.tv/match-centre/4fb27af0-7db4-4ec2-b93b-137de3f66135"
         }
       ],
       "inputs": {
@@ -7160,7 +7180,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ]
     },
@@ -7188,7 +7208,7 @@
         },
         {
           "name": "WST match centre",
-          "url": "https://www.wst.tv/match-centre/2f09a44b-71d2-4d9c-a12f-90d4b7c21f10"
+          "url": "https://www.wst.tv/match-centre/3a24076e-455c-497b-abd5-976e194abc5e"
         }
       ],
       "inputs": {
@@ -7204,7 +7224,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ]
     },
@@ -7229,6 +7249,10 @@
         {
           "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+        },
+        {
+          "name": "WST match centre",
+          "url": "https://www.wst.tv/match-centre/0c49ba0c-2d21-481e-a2ac-fbece616f591"
         }
       ],
       "inputs": {
@@ -7244,7 +7268,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -7279,6 +7303,10 @@
         {
           "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+        },
+        {
+          "name": "WST match centre",
+          "url": "https://www.wst.tv/match-centre/f6536f1f-6c2d-47cd-b802-a81e6f04e4cc"
         }
       ],
       "inputs": {
@@ -7294,7 +7322,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -8141,7 +8169,7 @@
       "date_local": null,
       "home": "Australia Women",
       "away": "New Zealand Women",
-      "venue": "Manuka Oval, Canberra",
+      "venue": "North Sydney Oval, Sydney",
       "neutral": false,
       "status": "verified",
       "sources": [
@@ -8170,7 +8198,9 @@
           "rating": 69.0
         }
       },
-      "flags": [],
+      "flags": [
+        "Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists this 3rd T20I at North Sydney Oval, Sydney; the earlier Manuka Oval entry is not reproducible on the official service."
+      ],
       "olbg": {
         "listed": true,
         "event_id": 188826,
@@ -8229,10 +8259,10 @@
       "competition": "First-Class Tour Match",
       "stage": "1st Four-Day Match",
       "start_utc": null,
-      "date_local": "2026-10-22",
+      "date_local": "2026-10-23",
       "home": "New Zealand A",
       "away": "India A",
-      "venue": "Saxton Oval, Nelson",
+      "venue": "Bert Sutcliffe Oval, Lincoln University",
       "neutral": false,
       "status": "verified",
       "sources": [
@@ -8243,6 +8273,7 @@
       ],
       "inputs": {},
       "flags": [
+        "Corrected 2026-10-21 against a direct re-fetch of scoring.nzc.nz/fixtures, which now lists this match on Friday 23 October at Bert Sutcliffe Oval, Lincoln University; the earlier 22 October / Saxton Oval entry is not reproducible.",
         "No official ICC rating for 'A' representative sides; baseline pricing",
         "No official four-day match-total baseline was captured; the total market is intentionally left blank rather than inferred"
       ]
@@ -8279,7 +8310,7 @@
       "date_local": "2026-10-24",
       "home": "Central Stags",
       "away": "Northern Districts",
-      "venue": "Pukekura Park, New Plymouth",
+      "venue": "Saxton Oval, Nelson",
       "neutral": false,
       "status": "verified",
       "sources": [
@@ -8290,6 +8321,7 @@
       ],
       "inputs": {},
       "flags": [
+        "Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists Central Stags v Northern Districts, Ford Trophy Round 1, at Saxton Oval, Nelson; the earlier Pukekura Park entry is not reproducible on the official service.",
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ]
     },
@@ -8739,7 +8771,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -8772,7 +8804,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -8805,7 +8837,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -8838,7 +8870,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -8871,7 +8903,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {

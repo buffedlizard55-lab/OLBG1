@@ -182,8 +182,8 @@
         "match_id": "nhl-2026020152",
         "selection": "Buffalo Sabres",
         "bet_line": "Buffalo Sabres \u2014 Match Winner @ 1.42 (also Sabres -1.5 Puck Line @ 2.05)",
-        "text": "Buffalo\u2019s recorded NHL mark is 4-3-2, a .556 points percentage with a plus-two goal differential. Philadelphia\u2019s source-linked record is 2-6-3, .318, including 0-4-2 away and minus-14 overall. That documented early-season contrast leads to Buffalo Sabres Match Winner: Buffalo Sabres \u2014 Match Winner @ 1.42 (also Sabres -1.5 Puck Line @ 2.05).",
-        "words": 51,
+        "text": "Buffalo have played to a 4-3-2 record, a .556 points percentage and a plus-two goal difference. Philadelphia are 2-6-3 and minus-14, and their road line reads 0-4-2, which is the detail that decides this for us. Early-season samples are small, but a six-game winless run away from home is the kind of form we will not ignore. Back Buffalo Sabres on the moneyline: Buffalo Sabres \u2014 Match Winner @ 1.42 (also Sabres -1.5 Puck Line @ 2.05)",
+        "words": 77,
         "facts": [
           "Buffalo Sabres: Points percentage \u2014 0.556 (4-3-2, +2 GD)",
           "Philadelphia Flyers: Points percentage \u2014 0.318 (2-6-3, 0-4-2 road, -14 GD)",
@@ -411,7 +411,7 @@
       "inputs": {
         "home": {
           "label": "Points percentage",
-          "value": "0.750 (7-2-1, 5-1-0 home, +14 GD)",
+          "value": "0.750 (7-2-1, 3-1-0 home, +14 GD)",
           "rating": 75.0
         },
         "away": {
@@ -420,7 +420,9 @@
           "rating": 56.3
         }
       },
-      "flags": [],
+      "flags": [
+        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved."
+      ],
       "is_h2h": true,
       "pricing": {
         "id": "nhl-2026020154",
@@ -551,10 +553,10 @@
         "match_id": "nhl-2026020154",
         "selection": "Boston Bruins",
         "bet_line": "Boston Bruins \u2014 Match Winner @ 1.48 (lean Bruins -1.5 @ 2.19)",
-        "text": "Boston\u2019s official snapshot shows 7-2-1, a .750 points percentage, 5-1-0 at home and plus-14 goal difference. Nashville are listed at 3-2-3 with a .563 percentage and level goal difference. The recorded Bruins advantage supports this Boston Bruins selection: Boston Bruins \u2014 Match Winner @ 1.48 (lean Bruins -1.5 @ 2.19).",
-        "words": 50,
+        "text": "Boston are 7-2-1 for .750 and plus-14, and they have defended TD Garden at 3-1-0 so far. Nashville carry a .563 points percentage with a goal difference of exactly zero, so the Predators have been neither better nor worse than break-even. Home ice plus a much healthier differential is the whole case, and it is a strong one. We are with Boston Bruins: Boston Bruins \u2014 Match Winner @ 1.48 (lean Bruins -1.5 @ 2.19)",
+        "words": 75,
         "facts": [
-          "Boston Bruins: Points percentage \u2014 0.750 (7-2-1, 5-1-0 home, +14 GD)",
+          "Boston Bruins: Points percentage \u2014 0.750 (7-2-1, 3-1-0 home, +14 GD)",
           "Nashville Predators: Points percentage \u2014 0.563 (3-2-3, 0 GD)",
           "Recommended market: Boston Bruins \u2014 Match Winner @ 1.48 (lean Bruins -1.5 @ 2.19)"
         ],
@@ -910,8 +912,8 @@
         "match_id": "nhl-2026020158",
         "selection": "Florida Panthers",
         "bet_line": "Florida Panthers \u2014 Match Winner @ 1.47 (secondary Panthers -1.5 @ 2.15)",
-        "text": "Pittsburgh arrive with a 3-6-1 record, .350 points percentage and an L4 losing streak in the official table. Florida\u2019s corresponding entry is 5-2-2, .667, with a W3 winning streak. For this fixture, the stored current form comparison backs Florida Panthers Match Winner: Florida Panthers \u2014 Match Winner @ 1.47 (secondary Panthers -1.5 @ 2.15).",
-        "words": 54,
+        "text": "Pittsburgh\u2019s 3-6-1 start has turned into four straight defeats, the longest current slide in this dataset. Florida are 5-2-2 and winners of three in a row, though they arrive on the back end of a back-to-back after facing Ottawa. Even allowing for tired legs, a .667 side against a .350 side is a mismatch worth taking. Florida Panthers: Florida Panthers \u2014 Match Winner @ 1.47 (secondary Panthers -1.5 @ 2.15)",
+        "words": 70,
         "facts": [
           "Pittsburgh Penguins: Points percentage \u2014 0.350 (3-6-1, L4 losing streak)",
           "Florida Panthers: Points percentage \u2014 0.667 (5-2-2, W3 winning streak)",
@@ -970,7 +972,9 @@
           "rating": 80.0
         }
       },
-      "flags": [],
+      "flags": [
+        "Snapshot drift disclosed 2026-10-21: a re-fetch of api-web.nhle.com/v1/standings/2026-10-20 (standingsDateTimeUtc 2026-10-21T07:05:30Z) now returns Vegas at 8-3-0, .727, L1 over 11 games played, i.e. the club has played once since the 8-2-0 / W3 snapshot used to price this match. The priced inputs and the stored line are retained unchanged and labelled as a pre-game snapshot; the live table link is on the row for manual review."
+      ],
       "is_h2h": true,
       "pricing": {
         "id": "nhl-2026020160",
@@ -1101,8 +1105,8 @@
         "match_id": "nhl-2026020160",
         "selection": "Vegas Golden Knights",
         "bet_line": "Vegas Golden Knights \u2014 Match Winner @ 1.49 (puck line -1.5 @ 2.20)",
-        "text": "St. Louis are recorded at 4-4-1 and a .500 points percentage, while Vegas carry an 8-2-0 record, .800, plus a W3 streak. Those are the full source-linked form inputs retained for the matchup. The independent model therefore selects Vegas Golden Knights: Vegas Golden Knights \u2014 Match Winner @ 1.49 (puck line -1.5 @ 2.20).",
-        "words": 54,
+        "text": "St. Louis are an even 4-4-1 and .500, with nothing in the record to suggest they separate from the pack. At our pricing snapshot Vegas were the better team by a distance: 8-2-0, .800, riding a three-game win streak. The Blues\u2019 building narrows that edge without erasing it. We side with Vegas Golden Knights: Vegas Golden Knights \u2014 Match Winner @ 1.49 (puck line -1.5 @ 2.20)",
+        "words": 67,
         "facts": [
           "St. Louis Blues: Points percentage \u2014 0.500 (4-4-1)",
           "Vegas Golden Knights: Points percentage \u2014 0.800 (8-2-0, W3 winning streak)",
@@ -1168,6 +1172,7 @@
         "consensus": "4/6 win tips (67%)",
         "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/ATL_Hawks_@_ORL_Magic/4?event_id=534888",
         "consensus_prior": "3/5 win tips (60%)",
+        "selection_prior": "ATL Hawks (3/5 hub) / Under 235.50 (3/3 NBA sub-page)",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "is_h2h": true,
@@ -1331,6 +1336,7 @@
         "market": "Money Line",
         "consensus": "9/11 win tips (82%)",
         "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/MIL_Bucks_@_WAS_Wizards/4?event_id=534889",
+        "selection_prior": "Washington Wizards",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "is_h2h": true,
@@ -1647,6 +1653,7 @@
         "consensus": "2/3 win tips (67%)",
         "url": "https://www.olbg.com/betting-tips/Basketball/4",
         "consensus_prior": "2/4 win tips (50%)",
+        "selection_prior": "CHA Hornets",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "is_h2h": true,
@@ -1973,6 +1980,7 @@
         "consensus": "3/5 win tips (60%)",
         "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/IND_Pacers_@_NO_Pelicans/4?event_id=534892",
         "consensus_prior": "2/4 win tips (50%)",
+        "selection_prior": "IND Pacers",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "is_h2h": true,
@@ -2136,6 +2144,7 @@
         "consensus": "3/5 win tips (60%)",
         "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/UTA_Jazz_@_MEM_Grizzlies/4?event_id=534894",
         "consensus_prior": "1/1 win tips (100%)",
+        "selection_prior": "Over 240.50",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "is_h2h": true,
@@ -2920,8 +2929,8 @@
         "match_id": "nba-sac-lac-20261021",
         "selection": "LA Clippers",
         "bet_line": "LA Clippers \u2014 Match Winner @ 1.30 & Clippers -8.5 Point Spread @ 1.92",
-        "text": "The prior-season NBA records stored for this opening-week comparison are 42-40 (.512) for the LA Clippers and 22-60 (.268) for Sacramento. No additional lineup or tactical claim is used in this note. The resulting LA Clippers Match Winner model line is LA Clippers \u2014 Match Winner @ 1.30 & Clippers -8.5 Point Spread @ 1.92.",
-        "words": 55,
+        "text": "Opening night gives no current-season form, so the only measured input is the final 2025-26 record: the Clippers at 42-40 (.512) against Sacramento\u2019s 22-60 (.268). Twenty wins is a wide gap inside the same conference, and the game is at Intuit Dome. Nothing else in the verified file contradicts it. We take LA Clippers on the moneyline: LA Clippers \u2014 Match Winner @ 1.30 & Clippers -8.5 Point Spread @ 1.92",
+        "words": 71,
         "facts": [
           "LA Clippers: 2025-26 NBA record \u2014 42-40 (.512)",
           "Sacramento Kings: 2025-26 NBA record \u2014 22-60 (.268)",
@@ -3430,8 +3439,8 @@
         "match_id": "el-535921",
         "selection": "Real Madrid",
         "bet_line": "Real Madrid \u2014 Match Winner @ 1.29 & Real Madrid -9.0 Spread @ 1.94",
-        "text": "Maccabi Tel Aviv\u2019s official EuroLeague entry is 2-4 (.333), whereas Real Madrid\u2019s is 4-2 (.667). This six-game record split is the only current form evidence cited for the Round 7 matchup. The selection is Real Madrid Match Winner: Real Madrid \u2014 Match Winner @ 1.29 & Real Madrid -9.0 Spread @ 1.94.",
-        "words": 52,
+        "text": "Real Madrid have opened this EuroLeague season at 4-2; Maccabi Tel Aviv are 2-4 through the same six rounds. The fixture is staged at Aleksandar Nikolic Hall in Belgrade rather than in Israel, so Maccabi do not get their own floor. Two extra wins in a short sample is not decisive, yet it is the only form we can verify. Real Madrid: Real Madrid \u2014 Match Winner @ 1.29 & Real Madrid -9.0 Spread @ 1.94",
+        "words": 76,
         "facts": [
           "Maccabi Tel Aviv: EuroLeague 2026-27 \u2014 2-4 (.333)",
           "Real Madrid: EuroLeague 2026-27 \u2014 4-2 (.667)",
@@ -3613,8 +3622,8 @@
         "match_id": "el-535923",
         "selection": "Panathinaikos",
         "bet_line": "Panathinaikos \u2014 Match Winner @ 1.22 (also Panathinaikos -11.0 @ 1.95)",
-        "text": "Panathinaikos are listed 4-2 (.667) in the EuroLeague snapshot; Baskonia are listed 2-4 (.333). The write-up relies on that published league comparison and does not add an unsupported playing-style judgment. Panathinaikos Match Winner is the model choice: Panathinaikos \u2014 Match Winner @ 1.22 (also Panathinaikos -11.0 @ 1.95).",
-        "words": 48,
+        "text": "Panathinaikos sit 4-2 after six EuroLeague rounds and return to OAKA, a setting our model weights as one of the strongest home venues in the competition. Baskonia are 2-4 across the same period. Here the better record and the better building belong to the same team, which is rarer than it sounds. Panathinaikos are the play: Panathinaikos \u2014 Match Winner @ 1.22 (also Panathinaikos -11.0 @ 1.95)",
+        "words": 67,
         "facts": [
           "Panathinaikos: EuroLeague 2026-27 \u2014 4-2 (.667)",
           "Baskonia: EuroLeague 2026-27 \u2014 2-4 (.333)",
@@ -3992,6 +4001,7 @@
         "consensus": "4/4 win tips (100%)",
         "url": "https://www.olbg.com/betting-tips/Baseball/Major_League_Baseball/MLB/TB_Rays_@_MIL_Brewers/12?event_id=160789",
         "consensus_prior": "4/5 win tips (80%)",
+        "selection_prior": "MIL Brewers",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "is_h2h": true,
@@ -4124,8 +4134,8 @@
         "match_id": "mlb-849805",
         "selection": "Milwaukee Brewers",
         "bet_line": "Milwaukee Brewers \u2014 Game 1 Moneyline @ 1.51 (Under/Over 7.5 priced @ 1.90)",
-        "text": "For World Series Game 1, Milwaukee\u2019s stored 2026 home record is 55-26 (.679), while Tampa Bay\u2019s stored road record is 43-38 (.531). These home-road figures are the documented form split used by the model. Milwaukee Brewers Game 1 Moneyline is the selection: Milwaukee Brewers \u2014 Game 1 Moneyline @ 1.51 (Under/Over 7.5 priced @ 1.90).",
-        "words": 55,
+        "text": "Game 1 of the World Series sends Tampa Bay to American Family Field, where Milwaukee went 55-26 (.679) in the regular season. The Rays were 43-38 away from Tropicana Field (.531). Both clubs won their league pennants to get here, but the home and road splits are the clearest verified separator in the file, and they belong to the Brewers. Milwaukee Brewers take the opener: Milwaukee Brewers \u2014 Game 1 Moneyline @ 1.51 (Under/Over 7.5 priced @ 1.90)",
+        "words": 78,
         "facts": [
           "Milwaukee Brewers: 2026 home record \u2014 55-26 at home (.679)",
           "Tampa Bay Rays: 2026 road record \u2014 43-38 on the road (.531)",
@@ -4327,8 +4337,8 @@
         "match_id": "mlb-849802",
         "selection": "Milwaukee Brewers",
         "bet_line": "Milwaukee Brewers \u2014 Game 2 Moneyline @ 1.51 (Brewers -1.5 Run Line @ 2.00)",
-        "text": "Game 2 retains Milwaukee\u2019s recorded 55-26 home mark (.679) against Tampa Bay\u2019s recorded 43-38 road mark (.531). The source-linked split is presented without a starter, bullpen or matchup assertion. The Milwaukee Brewers model preference for this second game is Milwaukee Brewers \u2014 Game 2 Moneyline @ 1.51 (Brewers -1.5 Run Line @ 2.00).",
-        "words": 53,
+        "text": "Game 2 repeats the matchup and the arithmetic: Milwaukee\u2019s home record reads 55-26 (.679) while Tampa Bay\u2019s road record sits at 43-38 (.531). A single game does not rewrite a 162-game sample, so the case for the home side is unchanged from the opener. We stay on Milwaukee Brewers: Milwaukee Brewers \u2014 Game 2 Moneyline @ 1.51 (Brewers -1.5 Run Line @ 2.00)",
+        "words": 63,
         "facts": [
           "Milwaukee Brewers: 2026 home record \u2014 55-26 at home (.679)",
           "Tampa Bay Rays: 2026 road record \u2014 43-38 on the road (.531)",
@@ -4530,8 +4540,8 @@
         "match_id": "mlb-849804",
         "selection": "Tampa Bay Rays",
         "bet_line": "Tampa Bay Rays \u2014 Game 3 Moneyline @ 1.61 (Rays +1.5 / ML home split edge)",
-        "text": "Tampa Bay\u2019s Game 3 entry carries a 55-26 home record (.679); Milwaukee\u2019s paired road entry is 48-33 (.593). Those published splits are the only historical record comparison stated here. For the third contest, the originated Tampa Bay Rays selection is Tampa Bay Rays \u2014 Game 3 Moneyline @ 1.61 (Rays +1.5 / ML home split edge).",
-        "words": 56,
+        "text": "The series moves to Tropicana Field for Game 3 and the splits move with it. Tampa Bay finished 55-26 (.679) at home; Milwaukee were a respectable but lesser 48-33 (.593) on the road. That gap in winning percentage is why the same model that liked the Brewers in Games 1 and 2 now flips. Tampa Bay Rays are the pick: Tampa Bay Rays \u2014 Game 3 Moneyline @ 1.61 (Rays +1.5 / ML home split edge)",
+        "words": 76,
         "facts": [
           "Tampa Bay Rays: 2026 home record \u2014 55-26 at home (.679)",
           "Milwaukee Brewers: 2026 road record \u2014 48-33 on the road (.593)",
@@ -4733,8 +4743,8 @@
         "match_id": "mlb-849803",
         "selection": "Tampa Bay Rays",
         "bet_line": "Tampa Bay Rays \u2014 Game 4 Moneyline @ 1.61 (paired with Under 7.5 @ 1.90 lean)",
-        "text": "The Game 4 source snapshot again places Tampa Bay at 55-26 at home (.679) and Milwaukee at 48-33 away (.593). No pitching, injury or tactical information has been added beyond those records. The desk\u2019s fourth-game Tampa Bay Rays choice is Tampa Bay Rays \u2014 Game 4 Moneyline @ 1.61 (paired with Under 7.5 @ 1.90 lean).",
-        "words": 56,
+        "text": "Game 4 keeps the World Series at Tropicana Field, where Tampa Bay posted that 55-26 (.679) home mark across 2026. Milwaukee\u2019s road record of 48-33 (.593) is good without matching it. Venue advantage now belongs to the Rays, and the stored regular-season splits are the only inputs we need to say so. Tampa Bay Rays to win: Tampa Bay Rays \u2014 Game 4 Moneyline @ 1.61 (paired with Under 7.5 @ 1.90 lean)",
+        "words": 73,
         "facts": [
           "Tampa Bay Rays: 2026 home record \u2014 55-26 at home (.679)",
           "Milwaukee Brewers: 2026 road record \u2014 48-33 on the road (.593)",
@@ -4776,7 +4786,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -4928,8 +4938,8 @@
         "match_id": "ten-ningbo-rybakina",
         "selection": "Elena Rybakina",
         "bet_line": "Elena Rybakina \u2014 Match Winner @ 1.08 & Rybakina -4.5 Games Handicap @ 2.01",
-        "text": "Elena Rybakina is recorded No. 1, seed 1 and defending champion, while Polina Kudermetova is recorded No. 103. Those WTA ranking descriptors are the full source-backed player form context in this preview. The Match Winner selection is Elena Rybakina: Elena Rybakina \u2014 Match Winner @ 1.08 & Rybakina -4.5 Games Handicap @ 2.01.",
-        "words": 53,
+        "text": "Rybakina arrives as world No. 1, the top seed and the defending champion in Ningbo, which is about as complete a profile as a WTA 500 draw can offer. Kudermetova is ranked No. 103. Rankings do not settle three-set matches on their own, but 102 places plus title history at the venue is a margin we are happy to price. Elena Rybakina: Elena Rybakina \u2014 Match Winner @ 1.08 & Rybakina -4.5 Games Handicap @ 2.01",
+        "words": 76,
         "facts": [
           "Elena Rybakina: WTA world ranking \u2014 No. 1 (seed 1, defending champion)",
           "Polina Kudermetova: WTA world ranking \u2014 No. 103",
@@ -4938,7 +4948,7 @@
         "sources": [
           {
             "name": "WTA official Ningbo Open draw & order of play",
-            "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+            "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
           },
           {
             "name": "PIF WTA Official Singles Rankings",
@@ -4963,7 +4973,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -5123,8 +5133,8 @@
         "match_id": "ten-902093",
         "selection": "Belinda Bencic",
         "bet_line": "Belinda Bencic \u2014 Match Winner @ 1.30 & Bencic -2.5 Games Handicap @ 2.02",
-        "text": "Katarzyna Kawa is listed as No. 124 and a qualifier; Belinda Bencic is listed No. 12 and seed 5. The note uses that official rankings contrast without making a surface or injury claim. Belinda Bencic is the proposed Match Winner selection: Belinda Bencic \u2014 Match Winner @ 1.30 & Bencic -2.5 Games Handicap @ 2.02.",
-        "words": 55,
+        "text": "Bencic is the world No. 12 and seeded fifth in Ningbo; Kawa is ranked No. 124 and came through qualifying. Qualifiers can carry momentum into a main draw, yet 112 ranking places is exactly the sort of edge our model leans on in a best-of-three format. Belinda Bencic is our selection: Belinda Bencic \u2014 Match Winner @ 1.30 & Bencic -2.5 Games Handicap @ 2.02",
+        "words": 65,
         "facts": [
           "Katarzyna Kawa: WTA world ranking \u2014 No. 124 (qualifier)",
           "Belinda Bencic: WTA world ranking \u2014 No. 12 (seed 5)",
@@ -5133,7 +5143,7 @@
         "sources": [
           {
             "name": "WTA official Ningbo Open draw & order of play",
-            "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+            "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
           },
           {
             "name": "PIF WTA Official Singles Rankings",
@@ -5508,7 +5518,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -5858,7 +5868,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -6022,7 +6032,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -6048,6 +6058,7 @@
         "consensus": "5/8 win tips (63%)",
         "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Sorana_Cirstea_vs_Sara_Bejlek/3?event_id=902074",
         "consensus_prior": "3/6 win tips (50%)",
+        "selection_prior": "Sara Bejlek",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "is_h2h": true,
@@ -6213,6 +6224,7 @@
         "consensus": "2/2 win tips (100%)",
         "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Stefanos_Tsitsipas_vs_Mikhail_Kukushkin/3?event_id=902083",
         "consensus_prior": "1/1 win tips (100%)",
+        "selection_prior": "Stefanos Tsitsipas 2-0",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "is_h2h": true,
@@ -6710,7 +6722,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -6891,7 +6903,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -7072,7 +7084,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page"
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page."
       ],
       "olbg": {
         "listed": true,
@@ -7082,6 +7094,7 @@
         "consensus": "7/9 win tips (78%)",
         "url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/John_Higgins_v_Jak_Jones/8?event_id=9934",
         "consensus_prior": "3/6 win tips (50%)",
+        "selection_prior": "John Higgins",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "is_h2h": true,
@@ -7214,8 +7227,8 @@
         "match_id": "snk-higgins-jones",
         "selection": "John Higgins",
         "bet_line": "John Higgins \u2014 Match Winner @ 1.35 (secondary Higgins -1.5 Frames @ 2.06)",
-        "text": "The WST rankings recorded for this Round 2 match are John Higgins at No. 6 and Jak Jones at No. 24. That is the complete player-comparison evidence used for the best-of-seven fixture. The independent line identifies John Higgins Match Winner as John Higgins \u2014 Match Winner @ 1.35 (secondary Higgins -1.5 Frames @ 2.06).",
-        "words": 54,
+        "text": "John Higgins is the world No. 6 and Jak Jones is No. 24, an 18-place gap on the WST two-year list. Both men can run deep in Belfast, but that table rewards the week-in, week-out consistency which tends to settle best-of-seven frames. Our model makes Higgins clear favourite and the ranking supports it. John Higgins to win: John Higgins \u2014 Match Winner @ 1.35 (secondary Higgins -1.5 Frames @ 2.06)",
+        "words": 70,
         "facts": [
           "John Higgins: WST world ranking \u2014 6",
           "Jak Jones: WST world ranking \u2014 24",
@@ -7277,7 +7290,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "is_h2h": true,
@@ -7448,7 +7461,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -7629,7 +7642,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page"
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page."
       ],
       "is_h2h": true,
       "pricing": {
@@ -7761,8 +7774,8 @@
         "match_id": "snk-zhang-williams",
         "selection": "Mark Williams",
         "bet_line": "Mark Williams \u2014 Match Winner @ 1.47 (value lean Over 5.5 Frames @ 1.77)",
-        "text": "Zhang Anda\u2019s stored WST rank is 21, while Mark Williams\u2019 stored WST rank is 8. No potting, safety or tactical statistic is claimed outside the published ranking pair. The model\u2019s match-winner call is Mark Williams: Mark Williams \u2014 Match Winner @ 1.47 (value lean Over 5.5 Frames @ 1.77).",
-        "words": 49,
+        "text": "Mark Williams sits eighth on the WST world list; Zhang Anda is 21st. That 13-place separation is the only verified form input for this second-round tie, and in a short best-of-seven it counts for more than it looks, because the higher-ranked player usually controls the safety exchanges. We take Mark Williams: Mark Williams \u2014 Match Winner @ 1.47 (value lean Over 5.5 Frames @ 1.77)",
+        "words": 65,
         "facts": [
           "Zhang Anda: WST world ranking \u2014 21",
           "Mark Williams: WST world ranking \u2014 8",
@@ -7808,7 +7821,7 @@
         },
         {
           "name": "WST match centre",
-          "url": "https://www.wst.tv/match-centre/5b3a7f22-1c41-48e8-8a2c-94b28a21b9d1"
+          "url": "https://www.wst.tv/match-centre/e58a00e5-e6a7-479b-98d0-5c7867af28a8"
         }
       ],
       "inputs": {
@@ -7824,7 +7837,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "is_h2h": true,
@@ -7979,7 +7992,7 @@
         },
         {
           "name": "WST match centre",
-          "url": "https://www.wst.tv/match-centre/81c92a40-4d32-4b28-9c61-2f811d3a40c2"
+          "url": "https://www.wst.tv/match-centre/4fb27af0-7db4-4ec2-b93b-137de3f66135"
         }
       ],
       "inputs": {
@@ -7995,7 +8008,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "is_h2h": true,
@@ -8150,7 +8163,7 @@
         },
         {
           "name": "WST match centre",
-          "url": "https://www.wst.tv/match-centre/2f09a44b-71d2-4d9c-a12f-90d4b7c21f10"
+          "url": "https://www.wst.tv/match-centre/3a24076e-455c-497b-abd5-976e194abc5e"
         }
       ],
       "inputs": {
@@ -8166,7 +8179,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "is_h2h": true,
@@ -8318,6 +8331,10 @@
         {
           "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+        },
+        {
+          "name": "WST match centre",
+          "url": "https://www.wst.tv/match-centre/0c49ba0c-2d21-481e-a2ac-fbece616f591"
         }
       ],
       "inputs": {
@@ -8333,7 +8350,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -8495,6 +8512,10 @@
         {
           "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+        },
+        {
+          "name": "WST match centre",
+          "url": "https://www.wst.tv/match-centre/f6536f1f-6c2d-47cd-b802-a81e6f04e4cc"
         }
       ],
       "inputs": {
@@ -8510,7 +8531,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -9174,8 +9195,8 @@
         "match_id": "pdc-ec-03",
         "selection": "Niels Zonneveld",
         "bet_line": "Niels Zonneveld \u2014 Match Winner @ 1.41 (also Zonneveld -1.5 Legs @ 2.05)",
-        "text": "Niels Zonneveld enters with the recorded European Tour seed of No. 4; Cameron Menzies is recorded as seed No. 29. Those official seed positions provide the limited comparison for this best-of-11 opener. Niels Zonneveld Match Winner is the originated selection: Niels Zonneveld \u2014 Match Winner @ 1.41 (also Zonneveld -1.5 Legs @ 2.05).",
-        "words": 53,
+        "text": "Zonneveld arrives in Dortmund as the fourth seed for the European Championship; Menzies is seeded 29th. Seeding here reflects a season of European Tour results rather than one hot weekend, which is the sample we want for a first-round tie. A gap of 25 places is substantial. Niels Zonneveld is our call: Niels Zonneveld \u2014 Match Winner @ 1.41 (also Zonneveld -1.5 Legs @ 2.05)",
+        "words": 65,
         "facts": [
           "Niels Zonneveld: European Tour seed \u2014 Seed #4",
           "Cameron Menzies: European Tour seed \u2014 Seed #29",
@@ -9930,6 +9951,7 @@
         "consensus": "5/9 win tips (56%)",
         "url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Ross_Smith_vs_Karel_Sedlacek/15?event_id=32329",
         "consensus_prior": "4/8 win tips (50%)",
+        "selection_prior": "Ross Smith",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [
@@ -10238,8 +10260,8 @@
         "match_id": "pdc-ec-09",
         "selection": "Ryan Joyce",
         "bet_line": "Ryan Joyce \u2014 Match Winner @ 1.38 & Joyce -1.5 Legs Handicap @ 1.99",
-        "text": "Ryan Joyce is listed as European Tour seed No. 3, and Jermaine Wattimena as seed No. 30. The preview keeps to those published seed values rather than asserting checkout or scoring statistics. The model points to Ryan Joyce Match Winner: Ryan Joyce \u2014 Match Winner @ 1.38 & Joyce -1.5 Legs Handicap @ 1.99.",
-        "words": 54,
+        "text": "Ryan Joyce is seeded third for this event, Jermaine Wattimena 30th. A 27-place gap in the European Tour standings points to a clear favourite in a short-format first round, where one break of throw so often settles matters. We are backing the higher seed to justify it. Ryan Joyce to advance: Ryan Joyce \u2014 Match Winner @ 1.38 & Joyce -1.5 Legs Handicap @ 1.99",
+        "words": 65,
         "facts": [
           "Ryan Joyce: European Tour seed \u2014 Seed #3",
           "Jermaine Wattimena: European Tour seed \u2014 Seed #30",
@@ -10778,8 +10800,8 @@
         "match_id": "pdc-ec-12",
         "selection": "Jonny Clayton",
         "bet_line": "Jonny Clayton \u2014 Match Winner @ 1.34 (lean Clayton -2.0 Legs @ 2.19)",
-        "text": "The PDC source inputs show Jonny Clayton at seed No. 1 and Niko Springer at seed No. 32. That seeding spread is the sole documented current tournament context retained here. For the opening round, Jonny Clayton is selected: Jonny Clayton \u2014 Match Winner @ 1.34 (lean Clayton -2.0 Legs @ 2.19).",
-        "words": 51,
+        "text": "Jonny Clayton tops the European Tour seeding for Dortmund at No. 1; Niko Springer is No. 32, the last man into the field. On season-long order-of-merit evidence that is the widest gap in the first round. Clayton holds the top seed because his results earned it. Jonny Clayton: Jonny Clayton \u2014 Match Winner @ 1.34 (lean Clayton -2.0 Legs @ 2.19)",
+        "words": 61,
         "facts": [
           "Jonny Clayton: European Tour seed \u2014 Seed #1",
           "Niko Springer: European Tour seed \u2014 Seed #32",
@@ -11145,8 +11167,8 @@
         "match_id": "pdc-ec-14",
         "selection": "Wessel Nijman",
         "bet_line": "Wessel Nijman \u2014 Match Winner @ 1.36 & Nijman -1.5 Legs @ 1.93",
-        "text": "Wessel Nijman\u2019s official European Tour seed is No. 2, compared with Martin Schindler\u2019s No. 31. This text does not infer crowd, scoring or finishing performance beyond that seed gap. The resulting Wessel Nijman Match Winner line is Wessel Nijman \u2014 Match Winner @ 1.36 & Nijman -1.5 Legs @ 1.93.",
-        "words": 50,
+        "text": "Wessel Nijman is seeded second and Martin Schindler 31st, a 29-place split. German crowds will be behind Schindler and stage support is real, but seeding is built from results and Nijman\u2019s have been far stronger across the tour. On verified inputs the edge is unambiguous. Wessel Nijman to win: Wessel Nijman \u2014 Match Winner @ 1.36 & Nijman -1.5 Legs @ 1.93",
+        "words": 62,
         "facts": [
           "Wessel Nijman: European Tour seed \u2014 Seed #2",
           "Martin Schindler: European Tour seed \u2014 Seed #31",
@@ -11683,8 +11705,8 @@
         "match_id": "cric-nz-ind-t20-1",
         "selection": "India",
         "bet_line": "India \u2014 1st T20I Match Winner @ 1.54 (also India -7.5 Runs/Eq @ 1.91)",
-        "text": "New Zealand are recorded No. 4 on 247 in the men\u2019s T20I rating, while India are No. 2 on 267 and labelled T20 World Cup winners. Those published team markers are the current-series context used for the first T20I. India Match Winner is the source-bounded selection: India \u2014 1st T20I Match Winner @ 1.54 (also India -7.5 Runs/Eq @ 1.91).",
-        "words": 60,
+        "text": "India are the ICC\u2019s No. 2 Men\u2019s T20I side on 267 rating points and the reigning T20 World Cup winners. New Zealand sit fourth on 247. Twenty rating points is a meaningful gap in a format this short, and it is the only measured comparison we hold for the series opener at Hagley Oval. India are our pick: India \u2014 1st T20I Match Winner @ 1.54 (also India -7.5 Runs/Eq @ 1.91)",
+        "words": 72,
         "facts": [
           "New Zealand: ICC Men's T20I rating \u2014 No. 4 (247 rating)",
           "India: ICC Men's T20I rating \u2014 No. 2 (267 rating, T20WC winners)",
@@ -11867,8 +11889,8 @@
         "match_id": "cric-nz-ind-t20-2",
         "selection": "India",
         "bet_line": "India \u2014 2nd T20I Match Winner @ 1.54 (paired with Over 339.5 Runs @ 1.90 lean)",
-        "text": "For the second T20I, the stored ICC values remain New Zealand No. 4 (247) and India No. 2 (267), with India labelled T20 World Cup winners. No player availability or tactical statement is added to that ratings comparison. The model again selects India Match Winner: India \u2014 2nd T20I Match Winner @ 1.54 (paired with Over 339.5 Runs @ 1.90 lean).",
-        "words": 61,
+        "text": "The second T20I stays at Hagley Oval with the same ratings attached: India No. 2 on 267, New Zealand No. 4 on 247. Squads do not change 48 hours apart, so neither does our read of the series. We are with India again for the second instalment: India \u2014 2nd T20I Match Winner @ 1.54 (paired with Over 339.5 Runs @ 1.90 lean)",
+        "words": 63,
         "facts": [
           "New Zealand: ICC Men's T20I rating \u2014 No. 4 (247 rating)",
           "India: ICC Men's T20I rating \u2014 No. 2 (267 rating, T20WC winners)",
@@ -11895,7 +11917,7 @@
       "date_local": null,
       "home": "Australia Women",
       "away": "New Zealand Women",
-      "venue": "Manuka Oval, Canberra",
+      "venue": "North Sydney Oval, Sydney",
       "neutral": false,
       "status": "verified",
       "sources": [
@@ -11924,7 +11946,9 @@
           "rating": 69.0
         }
       },
-      "flags": [],
+      "flags": [
+        "Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists this 3rd T20I at North Sydney Oval, Sydney; the earlier Manuka Oval entry is not reproducible on the official service."
+      ],
       "olbg": {
         "listed": true,
         "event_id": 188826,
@@ -12064,8 +12088,8 @@
         "match_id": "cric-ausw-nzw-t20-3",
         "selection": "Australia Women",
         "bet_line": "Australia Women \u2014 Match Winner @ 1.32 & Australia W -14.5 @ 1.92",
-        "text": "Australia Women are listed No. 1 on 287 in the women\u2019s T20I ratings, and New Zealand Women No. 4 on 253. The 34-point ranking separation is the recorded form context kept for this third T20I. Australia Women Match Winner is the independent selection: Australia Women \u2014 Match Winner @ 1.32 & Australia W -14.5 @ 1.92.",
-        "words": 56,
+        "text": "Australia Women lead the ICC Women\u2019s T20I table on 287 rating points; New Zealand Women are fourth on 253. A 34-point cushion is the largest rating gap anywhere in this dataset, and the match is at North Sydney Oval in Australia. That combination is why our model makes the hosts strong favourites. Australia Women: Australia Women \u2014 Match Winner @ 1.32 & Australia W -14.5 @ 1.92",
+        "words": 67,
         "facts": [
           "Australia Women: ICC Women's T20I rating \u2014 No. 1 (287 rating)",
           "New Zealand Women: ICC Women's T20I rating \u2014 No. 4 (253 rating)",
@@ -12262,10 +12286,10 @@
       "competition": "First-Class Tour Match",
       "stage": "1st Four-Day Match",
       "start_utc": null,
-      "date_local": "2026-10-22",
+      "date_local": "2026-10-23",
       "home": "New Zealand A",
       "away": "India A",
-      "venue": "Saxton Oval, Nelson",
+      "venue": "Bert Sutcliffe Oval, Lincoln University",
       "neutral": false,
       "status": "verified",
       "sources": [
@@ -12276,6 +12300,7 @@
       ],
       "inputs": {},
       "flags": [
+        "Corrected 2026-10-21 against a direct re-fetch of scoring.nzc.nz/fixtures, which now lists this match on Friday 23 October at Bert Sutcliffe Oval, Lincoln University; the earlier 22 October / Saxton Oval entry is not reproducible.",
         "No official ICC rating for 'A' representative sides; baseline pricing",
         "No official four-day match-total baseline was captured; the total market is intentionally left blank rather than inferred"
       ],
@@ -12527,7 +12552,7 @@
       "date_local": "2026-10-24",
       "home": "Central Stags",
       "away": "Northern Districts",
-      "venue": "Pukekura Park, New Plymouth",
+      "venue": "Saxton Oval, Nelson",
       "neutral": false,
       "status": "verified",
       "sources": [
@@ -12538,6 +12563,7 @@
       ],
       "inputs": {},
       "flags": [
+        "Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists Central Stags v Northern Districts, Ford Trophy Round 1, at Saxton Oval, Nelson; the earlier Pukekura Park entry is not reproducible on the official service.",
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ],
       "is_h2h": true,
@@ -13030,8 +13056,8 @@
         "match_id": "ru-top14-609567",
         "selection": "Stade Toulousain",
         "bet_line": "Stade Toulousain \u2014 Match Winner @ 1.15 & Toulouse -13.5 Handicap @ 1.96",
-        "text": "Stade Toulousain are first after six Top 14 rounds with 24 points and a recorded 45-34 win over Bayonne; USA Perpignan are ninth on 13 points. Those official table details are the complete recent-result comparison used in this preview. The model selects Stade Toulousain Match Winner: Stade Toulousain \u2014 Match Winner @ 1.15 & Toulouse -13.5 Handicap @ 1.96.",
-        "words": 59,
+        "text": "Toulouse top the Top 14 after six rounds on 24 points and arrive off a 45-34 win over Bayonne. Perpignan are ninth on 13, eleven points adrift. Stade Ernest-Wallon is a hard place to travel to at the best of times, and the standings say this is not the best of times for the visitors. Stade Toulousain to win: Stade Toulousain \u2014 Match Winner @ 1.15 & Toulouse -13.5 Handicap @ 1.96",
+        "words": 72,
         "facts": [
           "Stade Toulousain: Top 14 standings (J6) \u2014 1st, 24 pts (beat Bayonne 45-34)",
           "USA Perpignan: Top 14 standings (J6) \u2014 9th, 13 pts",
@@ -15210,7 +15236,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -15393,8 +15419,8 @@
         "match_id": "rl-wc26-aus-fij",
         "selection": "Australia",
         "bet_line": "Australia \u2014 Match Winner @ 1.16 & Kangaroos -14.5 Handicap @ 1.93",
-        "text": "Australia are recorded No. 1, having beaten New Zealand 24-22 in Round 1 and carrying 19 straight World Cup wins; Fiji are No. 7. That published ranking and tournament-history information is the basis used here. Australia Match Winner is the model selection: Australia \u2014 Match Winner @ 1.16 & Kangaroos -14.5 Handicap @ 1.93.",
-        "words": 54,
+        "text": "Australia are ranked No. 1 by the IRL, opened their World Cup with a 24-22 win over New Zealand and have won 19 straight World Cup matches. Fiji are ranked seventh. That streak is the most striking verified statistic in this dataset, and nothing in Fiji\u2019s ranking suggests it ends at Suncorp Stadium. Australia: Australia \u2014 Match Winner @ 1.16 & Kangaroos -14.5 Handicap @ 1.93",
+        "words": 66,
         "facts": [
           "Australia: IRL World Ranking \u2014 No. 1 (beat NZ 24-22 R1; 19 straight WC wins)",
           "Fiji: IRL World Ranking \u2014 No. 7",
@@ -15403,7 +15429,7 @@
         "sources": [
           {
             "name": "NRL / RLWC26 official Round 2 draw & match centre",
-            "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+            "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
           }
         ]
       }
@@ -15422,7 +15448,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -15605,8 +15631,8 @@
         "match_id": "rl-wc26-nzl-cok",
         "selection": "New Zealand",
         "bet_line": "New Zealand \u2014 Match Winner @ 1.15 & Kiwis -15.0 Handicap @ 1.95",
-        "text": "New Zealand are recorded No. 2 after a 22-24 opening loss to Australia, while Cook Islands are No. 9. The official Round 1 result and ranking difference form the stated recent-match comparison. The selection for this fixture is New Zealand Match Winner: New Zealand \u2014 Match Winner @ 1.15 & Kiwis -15.0 Handicap @ 1.95.",
-        "words": 55,
+        "text": "New Zealand are the IRL\u2019s No. 2 side and lost their opener to Australia by two points, 22-24, a far better performance than a defeat usually implies. Cook Islands are ranked ninth. The Kiwis\u2019 response to a narrow loss is the angle here, and the ranking gap backs it up. We take New Zealand: New Zealand \u2014 Match Winner @ 1.15 & Kiwis -15.0 Handicap @ 1.95",
+        "words": 67,
         "facts": [
           "New Zealand: IRL World Ranking \u2014 No. 2 (narrow 22-24 loss to AUS in opener)",
           "Cook Islands: IRL World Ranking \u2014 No. 9",
@@ -15615,7 +15641,7 @@
         "sources": [
           {
             "name": "NRL / RLWC26 official Round 2 draw & match centre",
-            "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+            "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
           }
         ]
       }
@@ -15634,7 +15660,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -15817,8 +15843,8 @@
         "match_id": "rl-wc26-eng-fra",
         "selection": "England",
         "bet_line": "England \u2014 Match Winner @ 1.18 & England -14.0 Handicap @ 1.96",
-        "text": "England\u2019s listed IRL ranking is No. 3; France are No. 8 and their stored Round 1 result is a 4-78 loss to Samoa. These are the only tournament-history facts carried into the model note. England Match Winner receives the desk\u2019s selection: England \u2014 Match Winner @ 1.18 & England -14.0 Handicap @ 1.96.",
-        "words": 53,
+        "text": "England are ranked third in the world by the IRL. France are eighth and come into this off a 4-78 defeat by Samoa in Round 1, a 74-point margin that is hard to read any other way. HBF Park in Perth hosts the tie, and the verified evidence points one direction. England are the clear selection: England \u2014 Match Winner @ 1.18 & England -14.0 Handicap @ 1.96",
+        "words": 68,
         "facts": [
           "England: IRL World Ranking \u2014 No. 3",
           "France: IRL World Ranking \u2014 No. 8 (lost 4-78 to Samoa in R1)",
@@ -15827,7 +15853,7 @@
         "sources": [
           {
             "name": "NRL / RLWC26 official Round 2 draw & match centre",
-            "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+            "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
           }
         ]
       }
@@ -15846,7 +15872,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -16041,7 +16067,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -16868,6 +16894,7 @@
         "consensus": "3/9 win tips (33%)",
         "url": "https://www.olbg.com/betting-tips/Handball/20",
         "consensus_prior": "3/8 win tips (38%)",
+        "selection_prior": "RK Partizan",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [],
@@ -17279,6 +17306,7 @@
         "consensus": "5/12 win tips (42%)",
         "url": "https://www.olbg.com/betting-tips/Handball/20",
         "consensus_prior": "4/11 win tips (36%)",
+        "selection_prior": "Dinamo Bucuresti",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [
@@ -17871,8 +17899,8 @@
         "match_id": "hand-ehf-12044",
         "selection": "Aalborg H\u00e5ndbold",
         "bet_line": "Aalborg H\u00e5ndbold \u2014 Match Winner @ 1.15 & Aalborg -7.0 Goals @ 1.96",
-        "text": "Aalborg are second in Group C at 3-1-0, seven points and plus-21, with a recorded 36-26 win at Celje. Celje are fourth at 0-0-4, zero points and minus-34. That table and prior-result evidence supports Aalborg H\u00e5ndbold Match Winner: Aalborg H\u00e5ndbold \u2014 Match Winner @ 1.15 & Aalborg -7.0 Goals @ 1.96.",
-        "words": 51,
+        "text": "Aalborg are second in Group C at 3-1-0 with seven points, a plus-21 goal difference and a 36:26 win in Celje already on the record. Celje are bottom at 0-0-4, minus-34. Head-to-head evidence this one-sided is rare in the Champions League, and the reverse fixture was not close. Aalborg H\u00e5ndbold: Aalborg H\u00e5ndbold \u2014 Match Winner @ 1.15 & Aalborg -7.0 Goals @ 1.96",
+        "words": 63,
         "facts": [
           "Aalborg H\u00e5ndbold: Group C standing \u2014 2nd, 3-1-0 (7 pts, +21 GD, won 36:26 at Celje)",
           "RK Celje Pivovarna La\u0161ko: Group C standing \u2014 4th, 0-0-4 (0 pts, -34 GD)",
@@ -17939,6 +17967,7 @@
         "consensus": "3/7 win tips (43%)",
         "url": "https://www.olbg.com/betting-tips/Handball/20",
         "consensus_prior": "3/6 win tips (50%)",
+        "selection_prior": "Tie",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [],
@@ -19143,8 +19172,8 @@
         "match_id": "hand-ehf-12046",
         "selection": "Bar\u00e7a",
         "bet_line": "Bar\u00e7a \u2014 Match Winner @ 1.22 & Bar\u00e7a -6.0 Goals Handicap @ 2.00",
-        "text": "Bar\u00e7a lead Group E at 4-0-0, eight points and plus-33, including a recorded 28-27 win over Montpellier. Montpellier are third at 1-0-3, two points and minus-nine. The source-linked group comparison leads to Bar\u00e7a Match Winner: Bar\u00e7a \u2014 Match Winner @ 1.22 & Bar\u00e7a -6.0 Goals Handicap @ 2.00.",
-        "words": 48,
+        "text": "Bar\u00e7a lead Group E at 4-0-0 with eight points and a plus-33 goal difference, and they have already beaten Montpellier 28:27 away. The French side are third at 1-0-3, minus-9. A one-goal road win warns against expecting a blowout, but the standings still point firmly to the hosts at Palau Blaugrana. Bar\u00e7a: Bar\u00e7a \u2014 Match Winner @ 1.22 & Bar\u00e7a -6.0 Goals Handicap @ 2.00",
+        "words": 65,
         "facts": [
           "Bar\u00e7a: Group E standing \u2014 1st, 4-0-0 (8 pts, +33 GD, beat Montpellier 28:27)",
           "Montpellier Handball: Group E standing \u2014 3rd, 1-0-3 (2 pts, -9 GD)",
@@ -20565,8 +20594,8 @@
         "match_id": "aflw-r11-01",
         "selection": "North Melbourne",
         "bet_line": "North Melbourne \u2014 Match Winner @ 1.12 & Kangaroos -19.5 Line @ 1.94",
-        "text": "North Melbourne top the recorded AFLW Round 10 ladder on 40 points at 10-0; Adelaide Crows are ninth on 20 points at 5-5. Those ladder records are the complete current-season form comparison used. The North Melbourne model preference is Match Winner: North Melbourne \u2014 Match Winner @ 1.12 & Kangaroos -19.5 Line @ 1.94.",
-        "words": 54,
+        "text": "North Melbourne are unbeaten in the AFLW: ten wins from ten, 40 points, top of the ladder after Round 10. Adelaide are ninth on 20 points at 5-5. A perfect record against a .500 side is about as one-sided as this competition gets, and the game is at Arden Street. North Melbourne are our pick: North Melbourne \u2014 Match Winner @ 1.12 & Kangaroos -19.5 Line @ 1.94",
+        "words": 68,
         "facts": [
           "North Melbourne: 2026 AFLW R10 ladder \u2014 1st, 40 pts (10-0)",
           "Adelaide Crows: 2026 AFLW R10 ladder \u2014 9th, 20 pts (5-5)",
@@ -21062,8 +21091,8 @@
         "match_id": "aflw-r11-04",
         "selection": "Carlton",
         "bet_line": "Carlton \u2014 Match Winner @ 1.18 & Blues -16.5 Points Line @ 1.94",
-        "text": "Carlton sit sixth in the stored Round 10 AFLW ladder with 24 points from 6-4, whereas GWS GIANTS are sixteenth on eight points from 2-8. No extra roster or playing-style conclusion is attached to that table gap. The independent call is Carlton Match Winner: Carlton \u2014 Match Winner @ 1.18 & Blues -16.5 Points Line @ 1.94.",
-        "words": 57,
+        "text": "Carlton sit sixth on 24 points with a 6-4 record, while GWS are 16th on eight points at 2-8. The ladder gap is ten places and the win gap is four, which in a ten-round season is the difference between chasing finals and rebuilding. IKON Park hosts it. Carlton to win: Carlton \u2014 Match Winner @ 1.18 & Blues -16.5 Points Line @ 1.94",
+        "words": 64,
         "facts": [
           "Carlton: 2026 AFLW R10 ladder \u2014 6th, 24 pts (6-4)",
           "GWS GIANTS: 2026 AFLW R10 ladder \u2014 16th, 8 pts (2-8)",
@@ -21239,8 +21268,8 @@
         "match_id": "aflw-r11-05",
         "selection": "Hawthorn",
         "bet_line": "Hawthorn \u2014 Match Winner @ 1.13 & Hawks -19.0 Points Line @ 1.94",
-        "text": "Hawthorn are fourth on the official Round 10 ladder with 32 points at 8-2; Essendon are fourteenth on 14 points at 3-6-1. This recorded ladder split is the current form detail behind the model. Hawthorn Match Winner is the nominated selection: Hawthorn \u2014 Match Winner @ 1.13 & Hawks -19.0 Points Line @ 1.94.",
-        "words": 54,
+        "text": "Hawthorn are fourth on 32 points at 8-2; Essendon are 14th on 14 points with a 3-6-1 record. The Hawks have won five more games than the Bombers and lost four fewer, and the fixture is at Kinetic Stadium. Our model makes Hawthorn clear favourites and the ladder supports it. Hawthorn: Hawthorn \u2014 Match Winner @ 1.13 & Hawks -19.0 Points Line @ 1.94",
+        "words": 64,
         "facts": [
           "Hawthorn: 2026 AFLW R10 ladder \u2014 4th, 32 pts (8-2)",
           "Essendon: 2026 AFLW R10 ladder \u2014 14th, 14 pts (3-6-1)",
@@ -22283,6 +22312,7 @@
         "consensus": "10/12 win tips (83%)",
         "url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/St_Finbarrs_v_Nemo_Rangers/25?event_id=3530",
         "consensus_prior": "10/12 handicap tips (83%)",
+        "selection_prior": "Draw (10/20 FT) / Nemo Rangers +1.50 (10/12 Hcap)",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "is_h2h": true,
@@ -22891,6 +22921,7 @@
         "consensus": "3/12 win tips (25%)",
         "url": "https://www.olbg.com/betting-tips/Golf/5",
         "consensus_prior": "OLBG event 101904",
+        "selection_prior": "Outright field market",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [
@@ -22927,6 +22958,7 @@
         "consensus": "2/7 win tips (29%)",
         "url": "https://www.olbg.com/betting-tips/Golf/5",
         "consensus_prior": "OLBG event 101903",
+        "selection_prior": "Outright field market",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [
@@ -22963,6 +22995,7 @@
         "consensus": "2/8 win tips (25%)",
         "url": "https://www.olbg.com/betting-tips/Golf/5",
         "consensus_prior": "OLBG event 101906",
+        "selection_prior": "Outright field market",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [
@@ -22999,6 +23032,7 @@
         "consensus": "2/2 win tips (100%)",
         "url": "https://www.olbg.com/betting-tips/Golf/5",
         "consensus_prior": "OLBG event 101907",
+        "selection_prior": "Outright field market",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [
@@ -23069,6 +23103,7 @@
         "consensus": "1/1 win tips (100%)",
         "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
         "consensus_prior": "OLBG event 689386",
+        "selection_prior": "Trap selection",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [
@@ -23105,6 +23140,7 @@
         "consensus": "2/2 win tips (100%)",
         "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
         "consensus_prior": "OLBG event 689390",
+        "selection_prior": "Trap selection",
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [
