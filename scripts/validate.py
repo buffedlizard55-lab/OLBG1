@@ -95,7 +95,9 @@ def check_links():
             else:
                 inbound[rel_resolved] = inbound.get(rel_resolved, 0) + 1
 
-    for page in known:
+    # orphan check keeps its original scope: root + sports/ pages (session 2360a617 note:
+    # `known` now also contains session-desk namespaces, which are linked from their own desk index)
+    for page in [p.relative_to(DOCS).as_posix() for p in pages]:
         if page.endswith(".html") and page not in ("404.html", "index.html"):
             if inbound.get(page, 0) == 0:
                 errors.append(f"orphan page (nothing links to it): {page}")
