@@ -4,7 +4,7 @@
 working on what. It exists so that multiple agent sessions can work on this repository at the
 same time without duplicating work or overwriting each other.
 
-Last updated: **2026-10-21T07:15:27Z** (UTC)
+Last updated: **2026-10-21T07:30:43Z** (UTC)
 
 ---
 
@@ -87,7 +87,16 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T17 | Live OLBG re-harvest of all 17 in-scope sport hubs + diff against the committed snapshot | done | 76950c25-olbg1 | `data/live_snapshot.json`, `data/live_diff.json`, `scripts/live_harvest.py` | 2026-10-21T07:10Z | Fresh fetch of every in-scope hub; per-event add/remove/consensus-change diff; no shared-file edits |
 | T18 | Official-source verification of refreshed/changed rows (MLB confirmation; other rows retain recorded governing-body sources) + unverified cards published blank | done | 76950c25-olbg1 | `scripts/dataset_rows_c.py`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `datasets/*`, `reports/SESSION_769_LIVE_REFRESH.md` | — | Blank-and-flag any value not confirmed on an official page |
 | T19 | Publish refresh on the dashboard (new Live Refresh + Flagged pages), validator gate, PR, merge and Pages deploy check | in progress | 76950c25-olbg1 | `live-refresh.html`, `flagged.html`, `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration for this session; append-only coordination log |
-| T21 | Independent structural audit of the latest live-refresh and official-source re-verification integration; reconcile counts/statuses, rerun repository gates, inspect Pages deployment, and document verification boundaries without editing fixture/line/prediction datasets | in progress | 5a353e83-olbg1 | `scripts/session_5a353e83_audit.py`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.md`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.html`, `COORDINATION.md` (append-only) | 2026-10-21T07:08Z | Structural review only; no duplicate official-source fetch or shared dashboard/data edits. Renumbered from a provisional T17/T20 after two live task-ID collisions; see §18. |
+| T31 | Deep market investigation per sport (winner, handicap, totals, correct score, frames/legs, O/U 180s, touchdown/first-try etc.) — per-match expanded market coverage | done | ccb6bde2-olbg1 | `data/market_taxonomy-ccb6bde2.json`, `data/market_expansion-ccb6bde2.json`, `scripts/ccb6bde2_market_engine.py`, `scripts/ccb6bde2_expand_markets.py` | 2026-10-21T06:45Z | 1,619 expanded markets across 126 matches; non-derivable markets registered as investigated-not-priced with missing official input named |
+| T32 | Model calibration audit + fix. Original hypothesis (logit slope too gentle) **refuted by measurement** — see F-CCB-12. Actual defects fixed: unshrunk small-sample record ratings, baseball venue double-count, stale/missing ATP ratings | done | ccb6bde2-olbg1 | `data/model_calibration-ccb6bde2.json`, `scripts/ccb6bde2_audit.py`, `scripts/ccb6bde2_expand_markets.py`, `data/market_expansion-ccb6bde2.json`, `data/predictions-ccb6bde2.json` | 2026-10-21T06:45Z | v2.1 in new files only; `data/lines.json` untouched. Highs 31→19, 3 pick changes, 4 fresh predictions |
+| T33 | New namespaced desk `ccb6bde2/` (landing + 17 sport subpages + markets explorer + predictions + flagged + methodology) + validator + PR & merge + Pages check | done | ccb6bde2-olbg1 | `ccb6bde2/**`, `scripts/ccb6bde2_build_site.py`, `scripts/ccb6bde2_validate.py`, `COORDINATION.md` (append-only) | 2026-10-21T06:45Z | 23 pages; all 3 repo validators pass; whole-tree sweep 153 pages / 4,038 refs / 0 broken |
+| T34 | Independent re-verification pass over every reachable governing-body page, after T20/T21/T22/fourth pass; AFLW kick-off/venue, Ford Trophy date, EHF arena corrections; per-row verification ledger stamped from one generator; AFLW ladder mismatch disclosed | done | b95dbd01-olbg1 | `scripts/live_verification.py`, `scripts/dataset_rows_b.py`, `scripts/high_predictions.py`, `data/{fixtures,verification,lines,predictions}.json`, `datasets/*`, `reports/LIVE_VERIFICATION.md`, root `*.html`, `sports/*.html`, `README.md`, append-only `COORDINATION.md` | 2026-10-21T09:05Z | Claimed as T21 at 08:10Z; T21-T33 were taken by 4f8d032d, 3c7579ed, ccb6bde2 and 72198d3e while this branch was open, so the task is recorded as T34 (§27). 134 rows: 41 confirmed, 33 corrected, 2 flagged, 58 not re-checked. 13 dataset corrections + 1 status downgrade. Open item T35: AFLW re-price. |
+| T35 | Re-price the nine AFLW Round 11 rows from the official 2026 ladder after Round 10 | queued | — | `scripts/dataset_rows_b.py` (AFLW block), `scripts/high_predictions.py` (3 AFLW picks), `data/lines.json`, `data/predictions.json`, README counts | — | Required by F-T34-01. Fixture facts are verified; only the ratings, prices, the three AFLW labels/prose and the headline counts need to move, in one dedicated commit. |
+| T36 | Independent structural audit of the post-T34 snapshot and current integration: reconcile fixture/line/prediction/verification/live-feed counts, rerun local gates, scan table/source-link integrity, and record boundaries and deployment status | in progress | 5a353e83-olbg1 | `scripts/session_5a353e83_audit.py`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.md`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.html`, `COORDINATION.md` (append-only) | 2026-10-21T07:08Z | Structural review only; no official-source fetch, pricing/prediction/data edits, or shared dashboard edits. Renumbered from provisional T17/T20/T21 after parallel task-ID collisions; see §28. |
+
+| T21 | Independent second-pass re-verification of NHL input sub-values and the F1 start time; correction of four NHL transposition errors and one timezone error; source-redirect evidence for PlusLiga and GAA | done | 4f8d032d-olbg1 | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py`, `scripts/live_verification.py`, `scripts/high_predictions.py`, `data/verification.json`, `reports/SESSION_4F8D_VERIFICATION.md`, append-only `COORDINATION.md` | 2026-10-21T07:15Z | Claimed as T17 (collision: taken by 72198d3e, which itself became T20); renumbered T21. Rebased onto `main`; earlier session's Boston fix and Vegas no-reprice policy preserved. 31 High picks retained. |
+
+| T22 | Third independent re-check after T20/T21: RLWC26 source URLs, tennis pairing provenance, prediction prose de-templating | done | 3c7579ed-olbg1 | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py`, `scripts/high_predictions.py`, `scripts/live_verification.py`, `data/*`, `COORDINATION.md` (append-only) | 2026-10-21T08:20Z | Claimed as T17 at 07:40Z; T17/T20/T21 were taken by 72198d3e, 76950c25 and 4f8d032d while this branch was open, so the task is recorded as T22 (§19). Additive: extends T20's verification register rather than publishing a parallel page. |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -140,9 +149,7 @@ Sources page. Only governing bodies / official league endpoints are used for ver
 
 ## 4. Requests and conflict log
 
-**2026-10-21T07:15Z — session `5a353e83-olbg1`:** A second task-ID collision surfaced after PR #27 merged: session `72198d3e-olbg1` owns T20 for fresh official-source re-verification. This session has not begun implementation; its distinct structural-only task is renumbered T21. PR #28 is open from session `b95dbd01-olbg1` with an overlapping live-source verification scope; this session will not edit, merge, or duplicate that work. During merge of the latest `origin/main`, `COORDINATION.md` conflicted on the T20 entry; the resolution preserves the merged T20, T17–T19 and all of PR #27, then appends T21. Pages API reports `built`; workflow run 39560515752 completed successfully for merge commit `4a3f62a`.
-
-**2026-10-21T07:16Z — upstream whitespace note:** `git diff --cached --check` reports one `README.md:208` extra blank line at EOF introduced by the latest `origin/main` integration. `README.md` is outside T21 scope and this session did not edit it; the issue is cosmetic and will be listed in the audit report rather than silently changed.
+**2026-10-21T07:30Z — session `5a353e83-olbg1`:** This session’s structural-audit claim was initially numbered T17, then T20 and T21 as concurrent work claimed each ID. Current `origin/main` assigns T21 to session `4f8d032d-olbg1`, T22 to `3c7579ed-olbg1`, T34 to `b95dbd01-olbg1`, and T35 to the pending AFLW re-price; this session is now T36. Merged latest `origin/main` (`cd45900`, PR #39) and preserved its content; PR #40 from session `5c02f50f-olbg1` remains open with source-verification/integration work. T36 touches only its own audit script/report plus append-only coordination, and will not edit or duplicate those sessions’ scopes. Pages API reports `built`; workflow `39562141016` succeeded for `cd45900`.
 
 **2026-10-21T06:55Z — session `8e12b936-olbg1` to site integration owner:** please surface F1–F3 from `reports/POST_INTEGRATION_AUDIT.md` on the generated root `flagged.html` and correct any summary that calls all 134 rows verified; underlying fixture statuses are 129 `verified` and 5 `cross-checked`. No shared generated page or dataset was edited in this audit because its scope is owned by the integration task.
 
@@ -792,12 +799,438 @@ fixtures; afl.com.au/aflw Round 11 board; wta.com Ningbo draws (shell only) and 
 confidence distribution unchanged at 31 High / 35 Medium / 60 Low, so no pick moved as a result of
 the corrections.
 
+**Publish record:** see §17.1 below.
+
+### 17.1 Result (session `72198d3e-olbg1`, final)
+
+* **PR #27** — https://github.com/buffedlizard55-lab/OLBG1/pull/27 — **MERGED** 2026-10-21T07:13:42Z,
+  merge commit `4a3f62a40fa34d96e89f9cd3efea3c641887b1c2`.
+* **Nothing from session `76950c25` was discarded.** Their PR #26 landed on `main` after this branch
+  forked, so `origin/main` was merged in and every shared output was **regenerated from source**
+  instead of hand-merged: their `data/live_snapshot.json` overlay still refreshes 68 rows and keeps
+  43 superseded values in `olbg.consensus_prior`, and both site sections (`live-refresh.html` and
+  `live-verification.html`) are published with their own nav entries.
+* **Gates after the merge:** `build_dataset.py` → `origin_lines.py` → `live_verification.py` →
+  `build_site.py` → `validate.py` → **135 published HTML pages, 0 errors, 0 warnings**;
+  `final_audit.py`, `ebfbd966_validate.py`, `live_diff.py` all pass. Confidence distribution
+  unchanged at 31 High / 35 Medium / 60 Low.
+* **Pages deploy:** build for `4a3f62a` reached `status=built` (error `null`) at
+  2026-10-21T07:14:37Z. Live fetches confirmed rendered content at
+  https://buffedlizard55-lab.github.io/OLBG1/live-verification.html (51 confirmed / 9 corrected /
+  2 flagged / 72 not re-checked) and https://buffedlizard55-lab.github.io/OLBG1/live-refresh.html.
+  The refreshed refresh page already shows the corrected WTA Ningbo citation (tournament 2092),
+  which confirms the correction propagated into the shared dataset rather than living only on one page.
+* **Open items handed to a future session:** 72 rows not re-fetched here (list and blockers in
+  `data/verification.json`); the 16 darts and 11 tennis rows need a browser-capable fetch or a
+  publisher change before they can be re-verified; Vegas drift (F-V5) awaits a reviewer decision on
+  whether to re-price or leave the snapshot; women's RLWC NRL competition id (176) untested.
+
+---
+
 **Publish record:** see §17.1 below (appended after the merge, as required).
 
-## 18. Session `5a353e83-olbg1` — independent structural review
+## 18. Session `4f8d032d-olbg1` — T21 second-pass verification
 
-**2026-10-21T07:08Z — provisional claim created.** This session initially numbered its distinct structural-audit task T17, then renumbered it T20 when session `76950c25-olbg1`'s live-feed recapture claim appeared on `origin/main`; after PR #27 established session `72198d3e-olbg1` as T20 owner for official-source re-verification, this session renumbered the non-overlapping structural task T21. The original claim commits and the collision resolutions are retained in branch history.
+**2026-10-21T07:15Z — claimed as T17, renumbered T21 after the task-board collision; work rebased onto `main` @ `4a3f62a`.**
 
-**T21 scope.** Reproduce the local validation gates on the latest merged snapshot, independently reconcile fixture / line / prediction / live-feed / verification-register counts and publication status, inspect whole-tree static links, and report exact scope limitations. No source page will be called freshly re-verified by this session; the official-source fetches documented by session 72198d3e are treated as its evidence, not this session's. No primary datasets, pricing, prediction prose, or shared dashboard pages are owned by this task.
+### Conflict and reconciliation log
 
-**2026-10-21T07:15Z — latest integration base observed.** PR #27 (session `72198d3e-olbg1`) merged as `4a3f62a`; GitHub Pages workflow `39560515752` completed successfully and the Pages API reports `status=built`. PR #28 from session `b95dbd01-olbg1` remains open and touches overlapping verification data; it is explicitly outside T21.
+* This session claimed `T17` and pushed the claim before starting. While it worked, `origin/main` advanced
+  with session `76950c25`'s live refresh and session `72198d3e`'s own T17 (later renumbered T20), which
+  added `live-verification.html` and `data/verification.json`.
+* Rebasing produced a `COORDINATION.md` conflict. It was resolved by keeping **all** of the other sessions'
+  sections verbatim and appending this session under a fresh task ID (`T21`) and fresh section (§18).
+* This session's earlier draft added a second verification page (`verification.html`). That was **discarded**
+  on reconciliation: two competing verification pages would confuse reviewers. Its checks were folded into
+  the existing register instead, so there is one public source of truth.
+* Two earlier-session decisions were explicitly **preserved**, not overwritten: Boston's home-split fix and
+  the "labelled pre-game snapshot, do not re-price" treatment of Vegas.
+
+### Findings
+
+Independent re-read of <https://api-web.nhle.com/v1/standings/2026-10-20> at 07:20Z, plus
+<https://www.formula1.com/en/racing/2026/united-states> at 07:25Z:
+
+| Row | Field | Stored | Official | Classification |
+|---|---|---|---|---|
+| `nhl-2026020152` | Buffalo GD | +2 | −7 | transcription error (same 9 GP) |
+| `nhl-2026020152` | Philadelphia road / GD | 0-4-2 / −14 | 0-4-1 / −19 | transcription error (same 11 GP) |
+| `nhl-2026020153` | Ottawa home split | 4-1-0 | 3-1-0 | impossible from 4 home games |
+| `nhl-2026020154` | Nashville GD | 0 | −1 | transcription error (same 8 GP) |
+| `nhl-2026020160` | Vegas record / streak | 8-2-0 / .800 / W3 | 8-3-0 / .727 / L1 | drift — already flagged by T20; confirmed, not re-priced |
+| `f1-usgp-2026` | Race start | 20:00Z ("EDT"), "Round 18" | 16:00 CDT = 21:00Z, no round shown | timezone/time error |
+
+Also confirmed unchanged: all four MLB World Series rows (records, home/road splits, venues, game order),
+all 12 EHF Champions League fixtures, and the six NHL game matchups/start times.
+
+Source failures recorded: `plusliga.pl/table.html` redirects to `tauronliga.pl`; the cited Munster GAA
+fixtures URL resolves to an April 2025 news post. Nine rows are now listed as not re-checked **with that
+specific blocker named**, rather than a generic "not fetched".
+
+### Changes
+
+`scripts/dataset_rows_a.py` and `dataset_rows_b.py` carry the corrected values and dated notes;
+`scripts/live_verification.py` gained three `CORRECTED` entries, the `f1_usgp` source, sharper volleyball
+and Gaelic football blockers, and findings `FEEDBACK-NHL-INPUTS`, `FEEDBACK-F1-START`,
+`FEEDBACK-SOURCE-REDIRECT`; `scripts/high_predictions.py` updated the three write-ups that quoted the old
+numbers (including an explicit drift disclosure in the Vegas pick).
+
+**Register:** 134 rows — 49 confirmed, 12 corrected, 2 flagged, 71 not re-checked.
+**Confidence:** unchanged at 31 High / 35 Medium / 60 Low, because ratings derive from points percentages,
+which were already correct.
+
+### Gates
+
+`build_dataset.py` → `live_verification.py` → `origin_lines.py` → `build_site.py` → `validate.py`:
+**135 published HTML pages, 0 errors, 0 warnings, VALIDATION PASSED**; 29 pages at `/` and 29 mirrored.
+
+### Limits stated plainly
+
+This pass re-read 16 fixtures' inputs in detail and attempted 9 more. It is a second opinion on a subset,
+not a whole-dataset re-certification, and it says so on the public register. No automated freshness monitor
+exists; the client-rendered leagues (AFLW, PDC, WTA/ATP, EuroLeague, NBA) still need a headless renderer
+before they can be re-certified at all.
+
+### Publication record
+
+* **PR #32** — https://github.com/buffedlizard55-lab/OLBG1/pull/32 — **MERGED** 2026-10-21T07:17:38Z,
+  merge commit `3ffcfc5c4d476f61d698a7604d8ab7c072bb48eb`.
+* **Pre-merge reconciliation:** `origin/main` advanced twice while this branch was open (PR #30 and a
+  styling commit). Both were merged in; the only conflict was `COORDINATION.md`, resolved by keeping
+  session `72198d3e`'s §17.1 publish record verbatim and appending this session's §18 under a distinct
+  task id. Every generated page and dataset was then **rebuilt from source** rather than hand-merged.
+* **Gates on the merged tree:** `build_dataset.py` → `live_verification.py` → `origin_lines.py` →
+  `build_site.py` → `validate.py` → **135 published HTML pages, 0 errors, 0 warnings, VALIDATION PASSED**;
+  `ebfbd966_validate.py` PASSED; `final_audit.py` 134 rows / 31 high picks. Rebuild byte-identical.
+* **Pages deploy:** build for `3ffcfc5` reached `status=built`, error `null` (legacy `main:/` publishing,
+  HTTPS enforced). The CDN served a stale copy on the first fetch; a cache-busted fetch confirmed the new
+  register live at https://buffedlizard55-lab.github.io/OLBG1/live-verification.html —
+  **49 confirmed / 12 corrected / 2 flagged / 71 not re-checked, 13 findings**, including `F-V11`
+  (NHL inputs), `F-V12` (F1 start) and `F-V13` (source redirects). The live ice-hockey page shows the
+  corrected Boston note, the Vegas drift disclosure and the re-verified inputs; `f1-usgp-2026` now reads
+  `2026-10-25T21:00:00Z`.
+* **Open items handed on:** 71 rows still not re-fetched (list and blockers in `data/verification.json`);
+  AFLW, PDC, WTA/ATP, EuroLeague and NBA need a headless renderer before they can be re-certified;
+  PlusLiga and Munster GAA need correct per-fixture URLs; the Vegas snapshot awaits a reviewer decision
+  on whether to re-price (this pass preserved the existing "disclose, do not re-price" policy).
+
+---
+
+## 19. Session `3c7579ed-olbg1` — T22 third-pass re-check (claim renumbered twice)
+
+### 19.1 Why this is T22
+
+This session claimed "T17 independent verification" at 07:40Z. While its branch was open, `main` advanced
+through four merges — `76950c25` (live OLBG re-harvest, T17–T19), `72198d3e` (T20, live re-verification,
+PRs #27/#29) and `4f8d032d` (claimed T21, PR #32) — so the number was taken twice over. The claim is
+renumbered **T22** here rather than deleting it. Nothing owned by those sessions was rewritten: this branch
+was rebased onto `main`, their register, pages and corrected inputs were kept, and only the gaps below were
+closed. The earlier T21 row attributed to this session in §1 is superseded by this entry.
+
+### 19.2 What this pass re-read, and what it changed
+
+| Official page read | Rows touched | Outcome |
+|---|---|---|
+| [IRL fixtures & results](https://www.intrl.sport/fixtures-results) + match records 2569, 2570, 2571, 2572, 2573, 2586, 2588 | 7 | Venue and venue-local kick-off confirmed for all seven RLWC26 ties; stored UTC values match |
+| [NRL women's Round 2 draw](https://www.nrl.com/draw/womens-rugby-league-world-cup/2026/round-2/) · [men's Round 2 draw](https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/) | 7 | Both resolve at their own tournament URL; the stored `?competition=175`/`?competition=176` links did not |
+| [ATP Almaty results](https://www.atptour.com/en/scores/current/almaty/9410/results) · [ATP Lyon results](https://www.atptour.com/en/scores/current/lyon/496/results) | 6 | Round-of-32 winners confirmed; Round-of-16 pairings cannot be confirmed (not played, widget client-rendered) |
+| [WST live rankings](https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8?showLive=false) | 2 High inputs | Higgins 6, Williams 8, Bingham 19, Zhang Anda 21, Slessor 23, Jak Jones 24 — all match |
+| [PDC draw release](https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed) | 16 | Still a consent wall; no seed re-read (F-V6 stands) |
+
+Corrections:
+
+1. **RLWC26 source URLs (7 rows).** `nrl.com/draw/?competition=175` (men) and `?competition=176` (women) both
+   render the page at `competition=131` — the **men's** tournament — so the women's rows pointed at the wrong
+   competition and no row pointed at its own fixture. Each row now cites its tournament's Round 2 draw plus
+   the IRL match record, and `scripts/dataset_rows_b.py` reproduces the fix on rebuild.
+2. **Samoa Women v Wales Women (1 row).** NRL publishes 2:45am AEDT (06:45Z); the IRL publishes 17:50 local
+   (06:50Z). Both are printed on the row; the five minutes are not inferred away.
+3. **Tennis pairing provenance (11 rows).** Every tennis row now carries a "reconstructed, not draw-verified"
+   flag: the pairings are consistent with the completed Round-of-32 results plus byes, but no official page
+   lists them yet. Start times stay blank.
+4. **Prediction prose (31).** The published notes ended every sentence with `: {selection}`, i.e. the price
+   pasted onto the end, producing 27 of 31 identical closers. The prices are now confined to `bet_line`; the
+   prose keeps the corrected facts (Buffalo −7, Philadelphia −19, Boston 3-1-0 at home) and ends on a varied
+   sentence naming the side. 49–82 words, zero duplicated six-word sequences.
+
+### 19.3 Findings added
+
+`F-V11` NRL competition-ID redirects (medium, corrected) · `F-V12` tennis pairings unconfirmable (medium,
+flagged) · `F-V13` five-minute kick-off disagreement (low, disclosed). The shared register now reads
+**44 confirmed, 19 corrected, 2 flagged, 69 not re-checked**.
+
+### 19.4 Gates
+
+`build_dataset.py` → 134 rows · `origin_lines.py` → 126 H2H books, 31 predictions · `live_verification.py`
+→ 44/19/2/69 · `build_site.py` → 29 pages at `/` + 29 mirrored · `validate.py` → 135 pages, 0 errors,
+0 warnings · `ebfbd966_validate.py` → passed · `final_audit.py` → regenerated.
+
+### 19.5 Publication record
+
+* **PR:** [#34](https://github.com/buffedlizard55-lab/OLBG1/pull/34) — merged into `main` at 2026-10-21T07:19:43Z,
+  merge commit `624ec21`.
+* **Conflicts during merge:** `COORDINATION.md` only (main had gained §18 from session `4f8d032d`). Resolved by
+  keeping that section verbatim and appending this one under a new heading; no other session's record was edited
+  or dropped. Generated pages and data were regenerated from source after the merge rather than hand-merged.
+* **Pages deploy:** workflow run `39561204469` (`pages build and deployment`, head `624ec21`) — **completed,
+  success**. Live pages checked afterwards: `live-verification.html` renders 44 confirmed / 19 corrected /
+  2 flagged / 69 not re-checked with 13 findings; `predictions.html` renders write-ups with no price string
+  inside the prose.
+* **Post-merge gate:** `scripts/validate.py` → passed, 0 errors, 0 warnings.
+
+## 25. Session `ccb6bde2` (branch `arena/ccb6bde2-olbg1`) — deep market investigation + model recalibration
+
+**2026-10-21T06:41Z — board read; claim filed.** This session branched from `main` at `8458584`
+(all 18 prior PRs merged/closed; no live claims on un-merged branches — verified via
+`gh pr list --state all --limit 20` and `git branch -r`). Per §0.4 this session does **not** touch
+any existing desk's files (`/`, `/f7fa77fc/`, `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`, `/2360a617/`) or
+their data files. Scope is strictly additive under the new `ccb6bde2/` namespace + new
+`data/*-ccb6bde2*.json` + `scripts/ccb6bde2_*.py` files (see §1 rows T31–T33, claimed as T13–T15 before the ID collision below).
+
+**Gap analysis driving T13/T14 (verified from the repo itself, not assumed):** the root desk
+(`data/lines.json`, model `olbg-independent-logit-normal-v2.0`) prices 126 H2H matches across
+only 4 market families (Match Winner, Draw No Bet, Handicap, Over/Under Total). The brief asks to
+*"investigate every available market such as win match, handicap, match total, etc."* — no prior
+session catalogued or priced **Correct Score, Both Teams to Score, Winning Margin, Team Totals,
+Tie/No-Tie, Over/Under Frames/Legs/Sets, Over/Under 180s, highest break/checkout, golden goal,
+first team to score, Half-Time/Full-Time, Race to X points, Over/Under Runs, Total Sixes/Fours**
+etc. T31 does that. Second, the v2.0 logit slope is too gentle for individual sports: a #1 vs #30
+tennis matchup prices at ~53% — calibration flagged as T32. Both findings are documented with
+numbers in `data/model_calibration-ccb6bde2.json` before any re-pricing.
+
+> **CORRECTION (2026-10-21T07:05Z, finding F-CCB-12):** the "~53%" sentence above was this
+> session's pre-audit hypothesis and it was **wrong**. Measured from the shipped code, the v2.0
+> tennis curve gives #1 vs #25 = 0.802 and #1 vs #50 = 0.845; the snooker curve is hot only at
+> the extreme tail (#1 vs #57 = 0.928, F-CCB-08). The real calibration defects found by the
+> line-by-line audit were (R1) 56 record-derived ratings built from ≤12 games and taken at face
+> value, (R2) a baseball home/road-split venue double-count, and (R3) missing/stale ATP ratings
+> (4 matches priced 50/50). T32 fixed those three; slopes were deliberately NOT refitted —
+> without outcome data a new slope would be invention, not calibration. Full numbers:
+> `data/model_calibration-ccb6bde2.json` and the desk's `calibration.html`.
+
+**Data foundation:** all pricing inputs come from the 2026-10-21 verified dataset already in
+`main` (`data/fixtures.json` + `data/lines.json` + `datasets/matches_full.json`, all stamped
+2026-10-21 — today, so fixtures 2026-10-21→28 are current). No new fixtures are invented; where
+this session re-verifies a fact it fetches the official source in-session and logs the URL.
+
+*Execution, verification and publish records appended below as work proceeds.*
+
+### 25.1 Execution record (`ccb6bde2`, 2026-10-21T06:41–07:15Z)
+
+* **Audit first (`scripts/ccb6bde2_audit.py` → `data/model_calibration-ccb6bde2.json`):** all 134
+  fixtures / 126 lines / 31 predictions re-checked line by line — every fixture carries an
+  official source URL, every market sums to 1, every prediction ≥30 words and matching its pick:
+  **0 integrity errors**. Calibration curves re-measured from the shipped `model.py`. One live
+  re-verification failure found: the WTA draws URL cited for `ten-ningbo-rybakina`
+  (`tournaments/1115/…`) soft-404s; canonical is `tournaments/2092/…` (F-CCB-01, left for the
+  owning desk to patch — request logged here per §0.4).
+* **Official re-verification this session:** the official PIF ATP Rankings of 2026-10-19 read at
+  atptour.com (ranks 1–190): Tommy Paul **15**, S. Tsitsipas **39**, A. Rublev **22**, L. Darderi **23**,
+  J. Duckworth **73**, A. Mannarino **79**, B. Bonzi **100**; Kukushkin/Goffin/Bertola verified
+  **outside the top 190**. WTA table is script-rendered (no rows returned) → Leylah Fernandez/Sasnovich/
+  Bejlek ranks left blank, not inferred. PDC rankings sit behind a consent wall → darts seed
+  ratings kept, divergence flagged (F-CCB-07).
+* **T31 market expansion (`scripts/ccb6bde2_market_engine.py`):** **1,619 new markets** across
+  126 matches (≈13/match, 2,031 including core markets): correct scores & unit ladders for
+  race formats (darts legs, snooker frames, tennis/volleyball sets — per-unit q inverted from the
+  winner price so books are exactly consistent), winning-margin bands, alternate handicap/total
+  ladders, team totals, 1st-half markets, hockey 60-minute 3-way + OT Y/N, baseball First-5,
+  cricket 1st-innings totals, tennis set betting/1st set/total games. Markets needing an
+  unsourced per-player rate (180s, centuries, aces, top batter, player props, full-field
+  golf/greyhound/F1 books) are **not priced** and are registered with the missing official input
+  in `data/market_taxonomy-ccb6bde2.json` and the desk's Markets Explorer.
+* **T32 recalibration (v2.1, new files only):** R1 shrinkage of record ratings (67 adjustments
+  logged), R2 baseball venue fix, R3 ATP backfill. Result: confidence **31H/35M/60L → 19H/42M/65L**;
+  19 tier changes; 3 pick changes (two sub-52% coin flips, one verified-data fix: Tommy Paul over
+  Benjamin Bonzi, now HIGH with a fresh 30+-word prediction in `data/predictions-ccb6bde2.json`, joined
+  by fresh write-ups for the two Brewers games and Stade Toulousain whose v2.0 texts quoted
+  now-stale prices). The other 15 v2.1 highs keep their v2.0 texts; the validator asserts every
+  quoted winner price still matches the v2.1 book.
+* **T33 desk (`ccb6bde2/`):** 23 pages — dashboard, Markets Explorer, 17 sport pages (full
+  per-match books, official source link on every row), predictions, calibration audit, flagged
+  (F-CCB-01…12), methodology. Gates: `ccb6bde2_validate.py` PASSED (126 matches, 2,031 markets
+  sum to exactly 1 in integer micro-units, 19 predictions ≥30 words, 0 shared 6-grams, 636
+  internal links 0 broken); root `scripts/validate.py` PASSED (0 errors, 0 warnings);
+  `ebfbd966_validate.py` PASSED; whole-tree sweep **153 pages / 4,038 relative refs / 0 broken**.
+  Local `http.server` smoke test: all desk pages HTTP 200.
+* **Irregularities (published, non-blocking):** F-CCB-01 WTA wrong-ID link (fix requested from
+  owning desk via this log); F-CCB-02 markets-catalog over-claim; F-CCB-03 small-sample highs;
+  F-CCB-04 baseball double-count; F-CCB-05 inconsistent confidence bars (0.58–0.78, recommend a
+  uniform policy in a future model version); F-CCB-06 ATP label drift; F-CCB-07 darts seed vs
+  consensus; F-CCB-08 snooker tail heat; F-CCB-09 OLBG consensus micro-samples; F-CCB-10 v2.0
+  totals heuristic replaced by exact race distributions; F-CCB-11 coin-flip pick changes;
+  F-CCB-12 this session's own corrected pre-claim.
+* **Merge-conflict log (brief §"Parallel sessions"):** PR #31 initially conflicted because
+  sessions `8e12b936`/`e92c2bf4`/`4904ed05`/`76950c25`/`72198d3e` merged PRs #19–#30 into `main`
+  while this session worked, taking task IDs T13–T20 and sections §12–§17. Resolution:
+  `origin/main` merged into this branch; the single conflicted file (`COORDINATION.md`) was
+  resolved preserving **100% of main's text verbatim**, with this session's rows/section
+  renumbered twice (T13–T15 → T21–T23 → **T31–T33 / §25**) as merging sessions kept taking the next free IDs (same churn `3c7579ed` logged for its T22). Main's corrected
+  `data/fixtures.json` (incl. the WTA 2092 URL fix — closing F-CCB-01 upstream) was accepted
+  wholesale; the full ccb6bde2 pipeline was re-run against merged data (identical headline
+  numbers: 19 highs, 19 tier changes, 3 pick changes) and all three repo validators re-passed,
+  plus a whole-tree sweep (158 pages, 4,968 refs, 0 broken). No session's work was discarded.
+  A tooling note for future sessions: several same-file edits issued in one parallel tool block
+  raced and clobbered each other during §25 drafting (one premature publish-record line was
+  written and then removed before the PR existed); each was detected by grep-verification and
+  rewritten. **Edit a given file in exactly one tool call per block.**
+* **Publish record:** PR #31 — https://github.com/buffedlizard55-lab/OLBG1/pull/31 —
+  (`arena/ccb6bde2-olbg1` → `main`) **merged 2026-10-21T07:22:03Z**, merge commit `11503d1`.
+  GitHub Pages build for `11503d1` completed `status=built`, `error=null`. Live fetch verified
+  rendered content at https://buffedlizard55-lab.github.io/OLBG1/ccb6bde2/ (dashboard: 134
+  events, 1,619 expanded markets, 19 v2.1 highs; WTA source links now point at the corrected
+  `tournaments/2092` URL via the merged T20 fix). All prior desks remain live and untouched
+  (`/`, `/f7fa77fc/`, `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`, `/2360a617/`). This record itself
+  lands via a small follow-up PR from the same branch.
+---
+
+## 26. Session `72198d3e-olbg1` — URC / AFLW gap-closing pass (fourth live pass)
+
+**Claim (2026-10-21T07:19Z).** Session `72198d3e-olbg1` claims **T23 — fourth live-verification pass** (section numbered **26** because `main` had already published §25 for session `ccb6bde2` while this branch was open; §20–§24 were left unused rather than renumbering another session's section),
+file scope: `scripts/live_verification.py`, `scripts/dataset_rows_b.py` (one row, `ru-urc-609578`),
+`scripts/build_dataset.py` (finding register only), plus the outputs those scripts regenerate. No file
+owned by another session was rewritten: this branch merged `origin/main` (through PR #34) and every
+shared output was regenerated from source, so T21's (§18) and T22's (§19) corrections — RLWC26 URLs,
+tennis provenance flags, de-templated prose, the NHL input fixes and the F1 start — are all preserved.
+
+### 26.1 What this pass re-read
+
+| Official page read | Rows touched | Outcome |
+|---|---|---|
+| [URC 2026/27 fixtures in full](https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/) | 4 Round 4 rows | 3 confirmed, 1 corrected |
+| [AFL official AFLW Round 11 board](https://www.afl.com.au/aflw) | 3 remaining rows | 1 confirmed, 2 flagged |
+| [Premiership Rugby fixtures](https://www.premrugby.com/fixtures-results) | 5 | chrome only, still cross-checked |
+| [NRL women's draw `?competition=176`](https://www.nrl.com/draw/?competition=176&round=2&season=2026) | 2 | canonicalises to `competition=131` (men's) — T22 has since re-pointed both rows to the IRL records, and that fix is kept |
+| [PDC draw release](https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed) (4 attempts incl. a reader proxy) | 16 | consent wall only, unchanged |
+
+### 26.2 Correction landed
+
+**`ru-urc-609578` Leinster v Munster.** The official URC release publishes the Round 4 venue as
+**"TBC, Dublin"**, not Aviva Stadium. `dataset_rows_b.py` now writes `Dublin (venue TBC)` and the row
+carries a flag until a ground is confirmed. Participants, competition and the 17:00Z kick-off were
+confirmed against the same page and left untouched.
+
+**Flags added:** `aflw-r11-01` (board code `NHO`, which is not the published Arden Street Oval) and
+`aflw-r11-05` (code `KCC`, not decodable to Kinetic Stadium). Pairings and match ids 8979 / 8976 were
+confirmed; the venue is not guessed.
+
+**Findings:** `LIVE-F-V11-URC-VENUE-TBC`, `LIVE-F-V12-AFLW-VENUE-CODES`, `LIVE-F-V13-PREMIERSHIP-SHELL`
+on the Flagged page; `F-V14` (Premiership list still unreadable) and `F-V15` (AFLW venue codes) in the
+verification register. Published findings 31 → 34.
+
+**Gap after this pass:** 62 rows remain not re-read — darts 16 (PDC consent wall), tennis 11
+(client-rendered draws, already flagged as reconstructed by T22), Premiership 5, volleyball 8
+(PlusLiga redirect to tauronliga.pl, SuperLega not read), EuroLeague/EuroCup 6, Gaelic football 4,
+golf 4, greyhounds 3, cricket 1, esports 1, motor racing 1. Every one names its blocker on the page.
+
+### 26.3 Register after the pass
+
+**48 confirmed, 20 corrected, 4 flagged, 62 not re-checked** of 134 rows (was 44 / 19 / 2 / 69 before
+this pass). Gates: `build_dataset.py` → 134 rows, 34 findings · `origin_lines.py` → 126 H2H books,
+31 High picks · `live_verification.py` → 48/20/4/62 · `build_site.py` → 29 root + 29 mirror pages ·
+`validate.py` → **135 pages, 0 errors, 0 warnings** · `final_audit.py`, `ebfbd966_validate.py` → passed.
+Confidence distribution unchanged at 31 High / 35 Medium / 60 Low.
+
+**Publish record (executed):**
+
+* **PR #35** — https://github.com/buffedlizard55-lab/OLBG1/pull/35 — **MERGED** 2026-10-21,
+  merge commit `90b41c620d14e70a13c47be67e97135c88571976`. The PR was opened, conflicted twice as
+  `main` advanced (T21 §18, T22 §20/§19, then `ccb6bde2` §25 + PR #31), and each time `origin/main`
+  was merged in and every shared output regenerated from source. Nothing from T21, T22 or `ccb6bde2`
+  was reverted: their IRL citations, tennis provenance flags, de-templated prose, NHL input
+  corrections, F1 start fix and market-recalibration pages are all still in the tree.
+* **Pages deploy:** build for `90b41c6` reached `status=built` with `error: null`. The page first
+  served from the CDN was still the previous revision (51/9/2/72); a cache-busted fetch
+  (`live-verification.html?v=90b41c6`) returned the new revision — **48 confirmed / 20 corrected /
+  4 flagged / 62 not re-checked, 15 findings** — with `aussie-rules 7/0/2/0` and
+  `rugby-union 3/1/0/8` in the per-sport table, so the URC and AFLW work is live.
+* **Open items for the next session:** 62 rows still not re-read — darts 16 and tennis 11 need a
+  browser-capable fetch; Premiership 5 need a rendered fixture list; volleyball 8 need a working
+  PlusLiga citation (the current one redirects to tauronliga.pl); EuroLeague/EuroCup 6 are
+  client-rendered; the remaining 16 are single-hub citations (GAA, golf, greyhounds, cricket,
+  esports) that name no fixture page.
+
+## 27. Session `b95dbd01-olbg1` — T34 independent re-verification pass (result)
+
+**Run:** 2026-10-21T09:05Z. Merged on top of §17 (T20, `72198d3e`), §18 (T21,
+`4f8d032d`), §19 (T22, `3c7579ed`), §25 (T31–T33, `ccb6bde2`) and §26 (fourth pass,
+`72198d3e`). Additive throughout: no earlier row, finding, page or prose block was removed,
+and the earlier passes' corrections survive this one (F1 `21:00Z`, the NHL input fixes and
+the tennis/RLWC source corrections are all still in the published data).
+
+**Task id.** Claimed as T21 at 08:10Z. T21–T33 were claimed by other sessions while the
+branch was open, so this record is filed as **T34** under the append-only rule rather than
+renumbering anyone else's work.
+
+**Outcome over 134 rows.** `41` confirmed, `33` corrected, `2` flagged, `58` not re-checked,
+each row naming the pass that last read it. The register, the per-row `verification` block in
+`data/fixtures.json`, `live-verification.html` and `reports/LIVE_VERIFICATION.md` are now all
+generated from the same two dictionaries in `scripts/live_verification.py`, so they cannot
+disagree, and `stamp_fixtures()` makes the per-row block idempotent.
+
+**Corrections contributed by this pass (13 values + 1 status).**
+
+* **AFLW, nine kick-off times.** The nine Round 11 rows were right about participants but had
+  been given the round's kick-off slots in chronological order rather than each fixture's own:
+  Port Adelaide v Collingwood carried the North Melbourne slot, St Kilda v Brisbane carried
+  Geelong's, two rows shared `2026-10-24T04:05Z`, and one time (`06:15Z`) matches no official
+  fixture. Re-read from the AFL's Round 11 board, whose match ids 8970–8979 are quoted in the
+  evidence column, and the two affected prose blocks were re-pointed at the corrected venues.
+* **AFLW, one venue.** Hawthorn v Essendon is at the Kennedy Community Centre, Dingley — not
+  Kinetic Stadium, Frankston.
+* **Cricket, three dates.** Ford Trophy Round 1 is Tue 27 October, not 24 October: on the NZC
+  service the Round 1 block sits under the TUE 27 Oct heading, ahead of the FRI 30 Oct block
+  that carries Round 2.
+* **Handball, one venue.** Kolstad's Round 5 home fixture is at Kolstad Arena (Kolstad) per the
+  EHF playing-times PDF, not Trondheim Spektrum.
+* **Cricket, one status.** Afghanistan v Bangladesh has no governing-body fixture page in any
+  pass; its only citation is the ICC rankings table. Downgraded to `unverified` and flagged.
+
+**Confirmed by this pass (41 rows carry a re-read from it).** MLB World Series games 1–4
+(gamePk, officialDate, first pitch, venue); NHL 2026020154/155; all twelve EHF Round 5 fixtures
+(CEST → UTC conversions exact, one arena wrong); all eleven WST Round 2 pairings with their
+match-centre ids; five men's RLWC26 fixtures; Top 14 J7 (3) and URC R4 (3); the NZC fixtures
+whose published clock reconciles.
+
+**Recorded refusals, not silent gaps.** pdc.tv still serves a cookie-consent interstitial;
+`cdn.nba.com` returned HTTP 500; `premrugby.com/fixtures-results` and the ATP/WTA draws are
+client-rendered; `afl.com.au/aflw/fixtures` is a 404 (the live board is `/aflw`);
+`plusliga.pl` redirects to the tauronliga.pl portal; nrl.com serves the men's draw for
+`?competition=176`, so the two women's RLWC rows stay not re-checked. No blocked publisher is
+treated as agreement.
+
+**Deviation from the claim.** The claim promised a UTC start wherever an official page
+publishes one. WST, NZC, the AFL and nrl.com all print timezone-less clocks, and the fetch
+client renders them at UTC-4 (pinned by five nrl.com kick-offs), so converting a rendition
+would be arithmetic on a render, not a published value. `start_utc` therefore stays blank for
+the 32 rows that never had one, and the two NZ T20Is whose published time cannot be reconciled
+with the official clock are flagged rather than rewritten.
+
+**Open data-quality item (F-T34-01, high).** The AFLW ladder inputs used to price nine rows do
+not reconcile with the official 2026 AFLW ladder after Round 10 — the rows give North Melbourne
+40 points (10-0) where the ladder has 36 (9-1), Geelong 16 at 13th where it has 36 at 2nd, and
+St Kilda 20 at 10th where it has 4 at 18th, with 16 of the 18 clubs disagreeing. The fixture
+facts are now correct; the prices are **not** re-priced inside this pass, because rewriting
+nine published rows and three published picks in the commit that finds the error destroys the
+audit trail. Every AFLW row carries the mismatch as a flag, the official ladder link is on the
+register and on `flagged.html`, and **T35** is filed for the dedicated re-price.
+
+**Gates.** `build_dataset.py` → `origin_lines.py` → `live_verification.py` → `build_site.py` →
+`validate.py`: 0 errors, 0 warnings across 160 published HTML pages. `final_audit.py`,
+`ebfbd966_validate.py` and `ccb6bde2_validate.py` (126 matches, 2031 markets, 636 internal
+links) all pass. Two consecutive full-chain runs are byte-identical on `data/fixtures.json`,
+`data/verification.json`, `data/lines.json`, `data/predictions.json`,
+`datasets/flagged_for_review.json`, `datasets/matches_full.json`, `index.html`,
+`live-verification.html`, `flagged.html` and `sports/aussie-rules.html`.
+
+**Counts after this pass.** 134 rows: 128 verified, 5 cross-checked, 1 unverified; 126 priced
+H2H matches and 8 event/field cards; 31 high-confidence picks (31 High / 34 Medium / 61 Low);
+32 rows without `start_utc`.
+
+## 28. Session `5a353e83-olbg1` — independent structural audit (T36)
+
+**Claim history.** Claimed a non-overlapping structural review of the final OLBG snapshot. The task ID was successively renumbered from T17 (collision with `76950c25-olbg1`), to T20 (collision with `72198d3e-olbg1`), to T21 (collision with `4f8d032d-olbg1`); the current unique task is **T36**. The earlier claim commits remain in branch history.
+
+**T36 scope.** Read the latest committed datasets and generated pages, independently reconcile counts and status joins, scan primary source links and all HTML table rows, rerun local structural validators, and record the source-fetch and Pages-publication boundaries. This task does not fetch official webpages, alter fixture facts, reprice lines, rewrite predictions, or edit shared dashboard pages. It does not certify source content as freshly verified.
+
+**Baseline observed.** Latest main at claim reconciliation: `cd45900` (PR #39, T34 follow-up). GitHub Pages build/deployment workflow `39562141016` completed successfully; Pages API returned `status=built`. T35 remains queued to re-price AFLW from official ladder inputs. PR #40 (`5c02f50f-olbg1`) is open with overlapping source-verification and integration work; T36 remains limited to an independent structural report.
