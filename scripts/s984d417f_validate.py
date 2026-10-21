@@ -124,6 +124,10 @@ def main() -> None:
         assert p["selection"] in p["prediction"] or p["selection"].split()[-1] in p["prediction"], (
             f"Selection not named in prose for {p['id']}: {p['selection']}"
         )
+        # Ensure every W-L-D or percentage cited in prose exists in the row's official verified inputs
+        ev_blob = f"{p['verified_home_form']} {p['verified_away_form']} {p['venue']}"
+        for pct in re.findall(r"\b\d+\.\d+%", p["prediction"]):
+            assert pct in ev_blob, f"Unverified percentage {pct} in {p['id']} vs {ev_blob}"
         toks = [w for w in re.sub(r"[^a-z0-9\s]", "", p["prediction"].lower()).split() if w]
         for i in range(len(toks) - 5):
             ng = tuple(toks[i:i + 6])

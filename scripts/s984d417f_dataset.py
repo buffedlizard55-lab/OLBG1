@@ -738,23 +738,23 @@ def compile_fixtures() -> list[dict]:
 
     # 12. AUSSIE RULES — All 9 Official 2026 NAB AFLW Round 11 Matches (100% REAL LIVE 2026 R10 LADDER!)
     aflw = [
-        ("aflw-r11-01", "2026-10-23T08:15:00Z", "North Melbourne", "Adelaide Crows", "Arden Street Oval, Melbourne",
+        ("aflw-r11-01", "2026-10-25T02:05:00Z", "North Melbourne", "Adelaide Crows", "North Hobart Oval, Hobart",
          ("2026 AFLW R10 ladder", "1st, 36 pts (9-1-0, 251.9%)", 93.0), ("2026 AFLW R10 ladder", "9th, 20 pts (5-5-0, 102.4%)", 58.0)),
-        ("aflw-r11-02", "2026-10-24T02:05:00Z", "Geelong Cats", "Fremantle", "GMHBA Stadium, Geelong",
+        ("aflw-r11-02", "2026-10-24T04:05:00Z", "Geelong Cats", "Fremantle", "GMHBA Stadium, Geelong",
          ("2026 AFLW R10 ladder", "2nd, 36 pts (9-1-0, 167.2%)", 86.0), ("2026 AFLW R10 ladder", "8th, 20 pts (5-5-0, 104.9%)", 59.0)),
-        ("aflw-r11-03", "2026-10-24T04:05:00Z", "Western Bulldogs", "Melbourne", "Mission Whitten Oval, Melbourne",
+        ("aflw-r11-03", "2026-10-24T08:15:00Z", "Western Bulldogs", "Melbourne", "Mission Whitten Oval, Melbourne",
          ("2026 AFLW R10 ladder", "4th, 32 pts (8-2-0, 140.9%)", 76.0), ("2026 AFLW R10 ladder", "3rd, 32 pts (8-2-0, 177.2%)", 81.0)),
-        ("aflw-r11-04", "2026-10-24T04:05:00Z", "Carlton", "GWS GIANTS", "IKON Park, Melbourne",
+        ("aflw-r11-04", "2026-10-25T06:05:00Z", "Carlton", "GWS GIANTS", "IKON Park, Melbourne",
          ("2026 AFLW R10 ladder", "6th, 28 pts (7-3-0, 133.0%)", 73.0), ("2026 AFLW R10 ladder", "15th, 8 pts (2-8-0, 68.2%)", 39.0)),
-        ("aflw-r11-05", "2026-10-24T06:15:00Z", "Hawthorn", "Essendon", "Kinetic Stadium, Frankston",
+        ("aflw-r11-05", "2026-10-25T04:05:00Z", "Hawthorn", "Essendon", "Kennedy Community Centre, Dingley",
          ("2026 AFLW R10 ladder", "10th, 20 pts (5-5-0, 101.5%)", 57.5), ("2026 AFLW R10 ladder", "17th, 4 pts (1-9-0, 55.6%)", 33.0)),
-        ("aflw-r11-06", "2026-10-24T08:15:00Z", "Gold Coast SUNS", "Richmond", "People First Stadium, Gold Coast",
+        ("aflw-r11-06", "2026-10-24T06:05:00Z", "Gold Coast SUNS", "Richmond", "People First Stadium, Gold Coast",
          ("2026 AFLW R10 ladder", "5th, 28 pts (7-3-0, 138.9%)", 74.0), ("2026 AFLW R10 ladder", "13th, 16 pts (4-6-0, 68.9%)", 46.0)),
-        ("aflw-r11-07", "2026-10-25T02:05:00Z", "Port Adelaide", "Collingwood", "Alberton Oval, Adelaide",
+        ("aflw-r11-07", "2026-10-23T08:15:00Z", "Port Adelaide", "Collingwood", "Alberton Oval, Adelaide",
          ("2026 AFLW R10 ladder", "11th, 16 pts (4-6-0, 78.8%)", 49.0), ("2026 AFLW R10 ladder", "16th, 4 pts (1-9-0, 56.7%)", 34.0)),
-        ("aflw-r11-08", "2026-10-25T04:05:00Z", "Sydney Swans", "West Coast Eagles", "Henson Park, Sydney",
+        ("aflw-r11-08", "2026-10-25T01:35:00Z", "Sydney Swans", "West Coast Eagles", "Henson Park, Sydney",
          ("2026 AFLW R10 ladder", "7th, 28 pts (7-3-0, 112.9%)", 71.0), ("2026 AFLW R10 ladder", "12th, 16 pts (4-6-0, 75.2%)", 47.0)),
-        ("aflw-r11-09", "2026-10-25T06:05:00Z", "St Kilda", "Brisbane Lions", "RSEA Park, Melbourne",
+        ("aflw-r11-09", "2026-10-24T02:05:00Z", "St Kilda", "Brisbane Lions", "RSEA Park, Melbourne",
          ("2026 AFLW R10 ladder", "18th, 4 pts (1-9-0, 45.1%)", 31.0), ("2026 AFLW R10 ladder", "14th, 12 pts (3-7-0, 89.7%)", 45.0)),
     ]
     for aid, utc, h, a, ven, hi, ai in aflw:
