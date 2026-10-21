@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ice Hockey — Lines &amp; Picks (OLBG reverse-engineered)</title>
+<style>
+:root{--bg:#0f1420;--card:#1a2233;--ink:#e8ecf4;--mut:#9aa7bd;--acc:#4da3ff;--hi:#2ecc8f;--md:#f5b942;--lo:#8b98ad;--warn:#ff6b6b;--line:#2a3550}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1280px;margin:0 auto;padding:20px}
+header{border-bottom:1px solid var(--line);padding:18px 0;margin-bottom:22px}
+h1{font-size:1.5rem;margin:0 0 4px}h2{font-size:1.2rem;margin:26px 0 10px;color:var(--acc)}
+.sub{color:var(--mut);font-size:.92rem}
+nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:.95rem}
+nav.top a{font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:16px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:block;color:var(--ink)}
+.card:hover{border-color:var(--acc);text-decoration:none}
+.card .n{font-size:1.6rem;font-weight:700;color:var(--acc)}
+.card .t{font-weight:600;margin-bottom:2px}.card .d{color:var(--mut);font-size:.82rem}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:.88rem}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+th{background:#141b2b;color:var(--mut);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+tr:last-child td{border-bottom:none}
+.badge{display:inline-block;padding:1px 9px;border-radius:20px;font-size:.75rem;font-weight:700}
+.b-high{background:rgba(46,204,143,.15);color:var(--hi);border:1px solid var(--hi)}
+.b-medium{background:rgba(245,185,66,.13);color:var(--md);border:1px solid var(--md)}
+.b-low{background:rgba(139,152,173,.15);color:var(--lo);border:1px solid var(--lo)}
+.flagpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(255,107,107,.12);color:var(--warn);border:1px solid var(--warn)}
+.okpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(46,204,143,.12);color:var(--hi);border:1px solid var(--hi)}
+details{margin:2px 0}summary{cursor:pointer;color:var(--acc);font-size:.82rem}
+.pred{background:#10182a;border-left:3px solid var(--hi);padding:8px 10px;border-radius:6px;margin:6px 0;font-size:.86rem}
+.note{background:#141b2b;border:1px solid var(--line);border-left:3px solid var(--md);padding:10px 14px;border-radius:8px;margin:14px 0;color:var(--ink);font-size:.9rem}
+.small{color:var(--mut);font-size:.8rem}
+.mono{font-variant-numeric:tabular-nums}
+footer{margin-top:36px;border-top:1px solid var(--line);padding:16px 0;color:var(--mut);font-size:.8rem}
+.srcs{font-size:.78rem;line-height:1.7}
+</style></head><body>
+<header><div class="wrap">
+<h1>OLBG Reverse-Engineered Lines &amp; Picks</h1>
+<div class="sub">152 events across 17 covered sports — collected from OLBG.com on 21 Oct 2026, re-priced with our own originated lines, verified against official sources. Times are US Eastern (ET) as displayed on OLBG.</div>
+<nav class="top"><a href="../" style="color:var(--ink)">Home</a> <a href="../flagged.html">Flagged for Review</a> <a href="../methodology.html">Methodology & Sources</a> <a href="https://github.com/buffedlizard55-lab/OLBG1" rel="noopener">GitHub repo</a></nav>
+</div></header>
+<div class="wrap">
+<h1>Ice Hockey <span class="small">(7 events)</span></h1>
+<div class="sub">NHL + ICE Hockey League (Austria) + SHL (Sweden) — OLBG page: <a href="https://www.olbg.com/betting-tips/Ice_Hockey/13" rel="noopener">https://www.olbg.com/betting-tips/Ice_Hockey/13</a> · fetched 2026-10-21T05:50Z · displayed times ET</div>
+<div class="note small"><b>Timezone note:</b> times as displayed by OLBG (assumed US Eastern)</div>
+<table><tr><th>Match / Event</th><th>OLBG community tip</th><th>Our originated line</th><th>Our pick</th><th>Confidence</th><th>Verification</th><th>Analysis</th><th>Sources</th></tr><tr>
+<td><b>Pustertal vs Pioneers Vorarlberg</b><br><span class="small mono">Today 13:45 (ET)</span><br><span class="small">Austria EHL (ICE Hockey League)</span></td>
+<td>Pustertal <b>2/2</b> <span class="small">(100% of tips, top mkt: Money Line)</span></td>
+<td class="small">ML: consensus side short (est.) | Puck Line -1.5/+1.5 at ~+130/-155 | Total: O/U 5.5 default</td>
+<td><b>Pustertal ML</b></td>
+<td><span class="badge b-low">low</span></td>
+<td><span class="flagpill">UNVERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> ICE Hockey League standings not verified today. 100% consensus Pustertal. Line is a model default, not data-driven.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: ICE Hockey League fixture/standings per OLBG only.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Ice_Hockey/Other/Austria_EHL/Pustertal_vs_Pioneers_Vorarlberg/13?event_id=199881" rel="noopener">OLBG event</a></td>
+</tr><tr>
+<td><b>HCB Sudtirol Alperia vs HC TWK Innsbruck</b><br><span class="small mono">Today 13:45 (ET)</span><br><span class="small">Austria EHL (ICE Hockey League)</span></td>
+<td>HCB Sudtirol Alperia <b>2/2</b> <span class="small">(100% of tips, top mkt: Money Line)</span></td>
+<td class="small">ML: consensus side short (est.) | Puck Line -1.5/+1.5 at ~+130/-155 | Total: O/U 5.5 default</td>
+<td><b>HCB Sudtirol ML</b></td>
+<td><span class="badge b-low">low</span></td>
+<td><span class="flagpill">UNVERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> ICE Hockey League standings not verified today. 100% consensus Bolzano. Line is a model default, not data-driven.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: ICE Hockey League fixture/standings per OLBG only.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Ice_Hockey/Other/Austria_EHL/HCB_Sudtirol_Alperia_vs_HC_TWK_Innsbruck/13?event_id=199878" rel="noopener">OLBG event</a></td>
+</tr><tr>
+<td><b>Timra IK vs Farjestad BK</b><br><span class="small mono">Tomorrow 13:00 (ET)</span><br><span class="small">Swedish Hockey League</span></td>
+<td>Farjestad BK <b>2/2</b> <span class="small">(100% of tips, top mkt: Money Line)</span></td>
+<td class="small">ML: consensus side short (est.) | Puck Line -1.5/+1.5 at ~+130/-155 | Total: O/U 5.5 default</td>
+<td><b>Farjestad BK ML</b></td>
+<td><span class="badge b-low">low</span></td>
+<td><span class="flagpill">UNVERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Swedish Hockey League (22 Oct) standings not verified today. 100% consensus Farjestad. Line is a model default, not data-driven.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Swedish Hockey League (22 Oct) fixture/standings per OLBG only.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Ice_Hockey/Other/Swedish_Hockey_League/Timra_IK_vs_Farjestad_BK/13?event_id=199901" rel="noopener">OLBG event</a></td>
+</tr><tr>
+<td><b>Graz 99ers vs Milano HC</b><br><span class="small mono">Today 12:30 (ET)</span><br><span class="small">Austria EHL (ICE Hockey League)</span></td>
+<td>Graz 99ers -1.50 <b>1/1</b> <span class="small">(100% of tips, top mkt: Puck Line)</span></td>
+<td class="small">ML: consensus side short (est.) | Puck Line -1.5/+1.5 at ~+130/-155 | Total: O/U 5.5 default</td>
+<td><b>Graz 99ers -1.5 puck line</b></td>
+<td><span class="badge b-low">low</span></td>
+<td><span class="flagpill">UNVERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> ICE Hockey League standings not verified today. 100% consensus on Graz -1.5. Line is a model default, not data-driven.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: ICE Hockey League fixture/standings per OLBG only.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Ice_Hockey/Other/Austria_EHL/Graz_99ers_vs_Milano_HC/13?event_id=199876" rel="noopener">OLBG event</a></td>
+</tr><tr>
+<td><b>KAC Klagenfurt vs Fehervar AV19</b><br><span class="small mono">Today 13:15 (ET)</span><br><span class="small">Austria EHL (ICE Hockey League)</span></td>
+<td>KAC Klagenfurt <b>1/1</b> <span class="small">(100% of tips, top mkt: Money Line)</span></td>
+<td class="small">ML: consensus side short (est.) | Puck Line -1.5/+1.5 at ~+130/-155 | Total: O/U 5.5 default</td>
+<td><b>KAC Klagenfurt ML</b></td>
+<td><span class="badge b-low">low</span></td>
+<td><span class="flagpill">UNVERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> ICE Hockey League standings not verified today. 100% consensus KAC. Line is a model default, not data-driven.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: ICE Hockey League fixture/standings per OLBG only.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Ice_Hockey/Other/Austria_EHL/KAC_Klagenfurt_vs_Fehervar_AV19/13?event_id=199880" rel="noopener">OLBG event</a></td>
+</tr><tr>
+<td><b>PHI Flyers @ BUF Sabres</b><br><span class="small mono">Today 19:37 (ET)</span><br><span class="small">NHL</span></td>
+<td>Over 5.50 <b>1/1</b> <span class="small">(100% of tips, top mkt: Game Totals)</span></td>
+<td class="small">ML: BUF -140 / PHI +120 | Puck Line: BUF -1.5 (+130) | Total: O/U 5.5 (over -110)</td>
+<td><b>BUF Sabres ML</b></td>
+<td><span class="badge b-medium">medium</span></td>
+<td><span class="okpill">VERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified: Sabres 4-3-2 (10 pts, 8th East) host Flyers 2-6-3 (7 pts, 15th East) at 7:30pm ET on TNT. Philly have won two straight (3-1 v OTT, 3-2 v COL) but sit 2-6-3 overall; Buffalo at home is the cleaner side.</div><div class="small"><span class="flagpill">FLAG</span> OLBG lists 19:37; official puck drop 7:30pm ET — time discrepancy.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/PHI_Flyers_@_BUF_Sabres/13?event_id=199897" rel="noopener">OLBG event</a><br><a href="https://www.hockey-reference.com/teams/PHI/2027_games.html" rel="noopener">Hockey-Reference — 2026-27 Flyers schedule/results</a><br><a href="https://www.espn.com/nhl/team/schedule/_/name/phi" rel="noopener">ESPN — Flyers schedule</a><br><a href="https://www.dailyfaceoff.com/nhl-daily-schedule/2026-10-21" rel="noopener">Daily Faceoff — NHL daily schedule Oct 21</a><br><a href="https://foxphlgambler.iheart.com/content/2026-10-21-flyers-vs-sabres-time-tv-live-stream-10212026/" rel="noopener">iHeart/FOX Philly — game preview with records</a></td>
+</tr><tr>
+<td><b>FLA Panthers @ OTT Senators</b><br><span class="small mono">Today 19:37 (ET)</span><br><span class="small">NHL</span></td>
+<td>Over 5.50 <b>1/1</b> <span class="small">(100% of tips, top mkt: Game Totals)</span></td>
+<td class="small">ML: OTT -120 / FLA +100 | Puck Line: pick&#x27;em | Total: O/U 5.5 (over -105)</td>
+<td><b>OTT Senators ML</b></td>
+<td><span class="badge b-low">low</span></td>
+<td><span class="okpill">VERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified: Senators 6-3 (5th East) host Panthers 5-2-2 (6th East) — near-identical starts. Ottawa&#x27;s home ice is the only tilt; Florida&#x27;s deeper roster argues the other way. OLBG consensus took Over 5.5 instead of a side.</div><div class="small"><span class="flagpill">FLAG</span> OLBG lists 19:37; official puck drop 7:30pm ET — time discrepancy.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/FLA_Panthers_@_OTT_Senators/13?event_id=199896" rel="noopener">OLBG event</a><br><a href="https://www.hockey-reference.com/teams/PHI/2027_games.html" rel="noopener">Hockey-Reference — 2026-27 Flyers schedule/results</a><br><a href="https://www.espn.com/nhl/team/schedule/_/name/phi" rel="noopener">ESPN — Flyers schedule</a><br><a href="https://www.dailyfaceoff.com/nhl-daily-schedule/2026-10-21" rel="noopener">Daily Faceoff — NHL daily schedule Oct 21</a><br><a href="https://1070thezone.iheart.com/content/2026-10-21-panthers-vs-senators-time-tv-live-stream-10212026/" rel="noopener">iHeart 1070 The Zone — game preview with records</a></td>
+</tr></table>
+</div><footer><div class="wrap">Built by session 2360a617 · Data snapshot 2026-10-21 05:25–06:05 UTC · For research/entertainment only — not betting advice. Unverified rows are flagged, never inferred.</div></footer></body></html>

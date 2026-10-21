@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Motor Racing — Lines &amp; Picks (OLBG reverse-engineered)</title>
+<style>
+:root{--bg:#0f1420;--card:#1a2233;--ink:#e8ecf4;--mut:#9aa7bd;--acc:#4da3ff;--hi:#2ecc8f;--md:#f5b942;--lo:#8b98ad;--warn:#ff6b6b;--line:#2a3550}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1280px;margin:0 auto;padding:20px}
+header{border-bottom:1px solid var(--line);padding:18px 0;margin-bottom:22px}
+h1{font-size:1.5rem;margin:0 0 4px}h2{font-size:1.2rem;margin:26px 0 10px;color:var(--acc)}
+.sub{color:var(--mut);font-size:.92rem}
+nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:.95rem}
+nav.top a{font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:16px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:block;color:var(--ink)}
+.card:hover{border-color:var(--acc);text-decoration:none}
+.card .n{font-size:1.6rem;font-weight:700;color:var(--acc)}
+.card .t{font-weight:600;margin-bottom:2px}.card .d{color:var(--mut);font-size:.82rem}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:.88rem}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+th{background:#141b2b;color:var(--mut);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+tr:last-child td{border-bottom:none}
+.badge{display:inline-block;padding:1px 9px;border-radius:20px;font-size:.75rem;font-weight:700}
+.b-high{background:rgba(46,204,143,.15);color:var(--hi);border:1px solid var(--hi)}
+.b-medium{background:rgba(245,185,66,.13);color:var(--md);border:1px solid var(--md)}
+.b-low{background:rgba(139,152,173,.15);color:var(--lo);border:1px solid var(--lo)}
+.flagpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(255,107,107,.12);color:var(--warn);border:1px solid var(--warn)}
+.okpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(46,204,143,.12);color:var(--hi);border:1px solid var(--hi)}
+details{margin:2px 0}summary{cursor:pointer;color:var(--acc);font-size:.82rem}
+.pred{background:#10182a;border-left:3px solid var(--hi);padding:8px 10px;border-radius:6px;margin:6px 0;font-size:.86rem}
+.note{background:#141b2b;border:1px solid var(--line);border-left:3px solid var(--md);padding:10px 14px;border-radius:8px;margin:14px 0;color:var(--ink);font-size:.9rem}
+.small{color:var(--mut);font-size:.8rem}
+.mono{font-variant-numeric:tabular-nums}
+footer{margin-top:36px;border-top:1px solid var(--line);padding:16px 0;color:var(--mut);font-size:.8rem}
+.srcs{font-size:.78rem;line-height:1.7}
+</style></head><body>
+<header><div class="wrap">
+<h1>OLBG Reverse-Engineered Lines &amp; Picks</h1>
+<div class="sub">152 events across 17 covered sports — collected from OLBG.com on 21 Oct 2026, re-priced with our own originated lines, verified against official sources. Times are US Eastern (ET) as displayed on OLBG.</div>
+<nav class="top"><a href="../" style="color:var(--ink)">Home</a> <a href="../flagged.html">Flagged for Review</a> <a href="../methodology.html">Methodology & Sources</a> <a href="https://github.com/buffedlizard55-lab/OLBG1" rel="noopener">GitHub repo</a></nav>
+</div></header>
+<div class="wrap">
+<h1>Motor Racing <span class="small">(3 events)</span></h1>
+<div class="sub">Formula 1 — United States GP (COTA) + Drivers&#x27; Championship outrights — OLBG page: <a href="https://www.olbg.com/betting-tips/Motor_Racing/14" rel="noopener">https://www.olbg.com/betting-tips/Motor_Racing/14</a> · fetched 2026-10-21T05:50Z · displayed times ET</div>
+<div class="note small"><b>Timezone note:</b> times as displayed by OLBG (assumed US Eastern)</div>
+<table><tr><th>Match / Event</th><th>OLBG community tip</th><th>Our originated line</th><th>Our pick</th><th>Confidence</th><th>Verification</th><th>Analysis</th><th>Sources</th></tr><tr>
+<td><b>USA Grand Prix</b><br><span class="small mono">25 Oct 16:00 (ET)</span><br><span class="small">Formula 1 2026 (round at Circuit of the Americas)</span></td>
+<td>Max Verstappen <b>10/31</b> <span class="small">(32% of tips, top mkt: Win Race)</span></td>
+<td class="small">Win Race: Antonelli 15/8 | Verstappen 11/4 | Russell 9/2 | Hamilton 8/1 | Podium: Antonelli 4/6</td>
+<td><b>Kimi Antonelli to win the race</b></td>
+<td><span class="badge b-medium">medium</span></td>
+<td><span class="okpill">VERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified: US GP at COTA Oct 23-25, race Sunday (f1timezone: 4:00pm EDT). Antonelli leads the title race with 8 wins from 17 rounds (340 pts) and can clinch the crown in Austin. Single-race variance keeps this medium despite the form gap.</div><div class="small"><span class="flagpill">FLAG</span> Divergence: OLBG consensus is Verstappen (32%) for the race; season data points to Antonelli. Single-race noise is why we stay medium.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Motor_Racing/All_Motor_Racing/All_Events/USA_Grand_Prix/14?event_id=913" rel="noopener">OLBG event</a><br><a href="https://www.formula1.com/en/results/2026/drivers" rel="noopener">Formula1.com — 2026 drivers standings (official)</a><br><a href="https://www.espn.com/f1/standings" rel="noopener">ESPN — F1 standings</a><br><a href="https://www.bbc.com/sport/formula1/standings" rel="noopener">BBC Sport — F1 standings</a><br><a href="https://autoaction.com.au/2026-10-20/kimi-antonelli-f1-title-austin-2026-scenarios" rel="noopener">autoaction — Antonelli Austin title scenarios</a><br><a href="https://f1timezone.com/standings.html" rel="noopener">f1timezone — standings &amp; calendar</a></td>
+</tr><tr>
+<td><b>Formula 1 Drivers Championship 2026</b><br><span class="small mono">06 Dec 08:00 (ET)</span><br><span class="small">Formula 1 season outright</span></td>
+<td>Max Verstappen <b>9/33</b> <span class="small">(27% of tips, top mkt: Win Tournament)</span></td>
+<td class="small">Championship: Antonelli 1/12 | Russell 8/1 | Hamilton 12/1 | Verstappen 16/1</td>
+<td><b>Kimi Antonelli champion</b></td>
+<td><span class="badge b-high">high</span></td>
+<td><span class="okpill">VERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="pred"><b>Prediction:</b> Kimi Antonelli has owned the 2026 season since round three in Japan: eight wins, fourteen podiums and 340 points on Formula1.com&#x27;s official board, 102 clear of Mercedes team-mate George Russell with just six races left. The Italian can even clinch the title at COTA this weekend depending on results, and the constructors&#x27; picture (Mercedes 578) confirms the machinery edge is structural, not a hot streak. If your book still prices Antonelli outside 1/10 for the championship, that price is simply wrong against the official math.</div><div class="small"><b>Basis:</b> Verified on Formula1.com (official): Antonelli 340 pts v Russell 238, Hamilton 229, Verstappen 221 — a 102-point lead with six rounds left, 8 wins and 14 podiums. Mercedes also lead the constructors on 578. He can mathematically seal it in Austin this weekend.</div><div class="small"><span class="flagpill">FLAG</span> Anomaly: OLBG&#x27;s most-tipped championship selection is Verstappen (27%) despite Antonelli&#x27;s verified 102-point lead — likely stale or contrarian money.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Motor_Racing/All_Motor_Racing/All_Events/Formula_1_Drivers_Championship_2026/14?event_id=828" rel="noopener">OLBG event</a><br><a href="https://www.formula1.com/en/results/2026/drivers" rel="noopener">Formula1.com — 2026 drivers standings (official)</a><br><a href="https://www.espn.com/f1/standings" rel="noopener">ESPN — F1 standings</a><br><a href="https://www.bbc.com/sport/formula1/standings" rel="noopener">BBC Sport — F1 standings</a><br><a href="https://www.forbes.com/sites/yaraelshebiny/2026-10-12/f1-standings-2026-after-the-singapore-grand-prix/" rel="noopener">Forbes — standings after Singapore</a></td>
+</tr><tr>
+<td><b>Formula 1 Drivers Championship 2026 Without Kimi Antonelli</b><br><span class="small mono">06 Dec 08:00 (ET)</span><br><span class="small">Formula 1 season outright (Without market)</span></td>
+<td>Max Verstappen <b>4/6</b> <span class="small">(67% of tips, top mkt: Win Tournament)</span></td>
+<td class="small">Without Antonelli: Russell 15/8 | Hamilton 5/2 | Verstappen 3/1 | Leclerc 4/1</td>
+<td><b>George Russell</b></td>
+<td><span class="badge b-medium">medium</span></td>
+<td><span class="okpill">VERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified official standings: excluding Antonelli, Russell (238 pts, 3 wins, 8 podiums) outranks Hamilton (229, 1 win) and Verstappen (221, 2 wins). Russell is the correct &#x27;without&#x27; favourite on points AND wins.</div><div class="small"><span class="flagpill">FLAG</span> Divergence: OLBG tip is Verstappen (4/6, 67%) — verified standings say Russell should head this market.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Motor_Racing/All_Motor_Racing/All_Events/Formula_1_Drivers_Championship_2026_Without_Kimi_Antonelli/14?event_id=912" rel="noopener">OLBG event</a><br><a href="https://www.formula1.com/en/results/2026/drivers" rel="noopener">Formula1.com — 2026 drivers standings (official)</a><br><a href="https://www.espn.com/f1/standings" rel="noopener">ESPN — F1 standings</a><br><a href="https://www.bbc.com/sport/formula1/standings" rel="noopener">BBC Sport — F1 standings</a></td>
+</tr></table>
+</div><footer><div class="wrap">Built by session 2360a617 · Data snapshot 2026-10-21 05:25–06:05 UTC · For research/entertainment only — not betting advice. Unverified rows are flagged, never inferred.</div></footer></body></html>
