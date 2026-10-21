@@ -787,4 +787,28 @@ fixtures; afl.com.au/aflw Round 11 board; wta.com Ningbo draws (shell only) and 
 confidence distribution unchanged at 31 High / 35 Medium / 60 Low, so no pick moved as a result of
 the corrections.
 
-**Publish record:** see §17.1 below (appended after the merge, as required).
+**Publish record:** see §17.1 below.
+
+### 17.1 Result (session `72198d3e-olbg1`, final)
+
+* **PR #27** — https://github.com/buffedlizard55-lab/OLBG1/pull/27 — **MERGED** 2026-10-21T07:13:42Z,
+  merge commit `4a3f62a40fa34d96e89f9cd3efea3c641887b1c2`.
+* **Nothing from session `76950c25` was discarded.** Their PR #26 landed on `main` after this branch
+  forked, so `origin/main` was merged in and every shared output was **regenerated from source**
+  instead of hand-merged: their `data/live_snapshot.json` overlay still refreshes 68 rows and keeps
+  43 superseded values in `olbg.consensus_prior`, and both site sections (`live-refresh.html` and
+  `live-verification.html`) are published with their own nav entries.
+* **Gates after the merge:** `build_dataset.py` → `origin_lines.py` → `live_verification.py` →
+  `build_site.py` → `validate.py` → **135 published HTML pages, 0 errors, 0 warnings**;
+  `final_audit.py`, `ebfbd966_validate.py`, `live_diff.py` all pass. Confidence distribution
+  unchanged at 31 High / 35 Medium / 60 Low.
+* **Pages deploy:** build for `4a3f62a` reached `status=built` (error `null`) at
+  2026-10-21T07:14:37Z. Live fetches confirmed rendered content at
+  https://buffedlizard55-lab.github.io/OLBG1/live-verification.html (51 confirmed / 9 corrected /
+  2 flagged / 72 not re-checked) and https://buffedlizard55-lab.github.io/OLBG1/live-refresh.html.
+  The refreshed refresh page already shows the corrected WTA Ningbo citation (tournament 2092),
+  which confirms the correction propagated into the shared dataset rather than living only on one page.
+* **Open items handed to a future session:** 72 rows not re-fetched here (list and blockers in
+  `data/verification.json`); the 16 darts and 11 tennis rows need a browser-capable fetch or a
+  publisher change before they can be re-verified; Vegas drift (F-V5) awaits a reviewer decision on
+  whether to re-price or leave the snapshot; women's RLWC NRL competition id (176) untested.
