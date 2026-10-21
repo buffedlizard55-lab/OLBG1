@@ -1,0 +1,3995 @@
+{
+  "snapshot_date_utc": "2026-10-21",
+  "summary": {
+    "unverified_events": 13,
+    "partial_blank_calendar_events": 53,
+    "flagged_or_partial_total": 137,
+    "upstream_olbg_defects": 12,
+    "prior_repo_audit_findings": 19
+  },
+  "olbg_irregularities": [
+    {
+      "code": "OLBG-DEFECT-01",
+      "severity": "high",
+      "scope": "Global Server Rendering (All 17 Covered Sports)",
+      "title": "Silent GeoIP Clock Localization to US EDT (UTC-4) Without Timezone Labels",
+      "detail": "When queried from US infrastructure, OLBG server-renders timestamps in US Eastern Daylight Time (UTC-4) with zero timezone badge, creating grotesque self-contradictions directly beside UK BST event titles—e.g. '11:14 Kinsley' (10:14 UTC) displays 'Today 06:14', and '10:32 Harlow' displays 'Today 05:32'.",
+      "official_url": "https://www.olbg.com/betting-tips/Greyhounds/28"
+    },
+    {
+      "code": "OLBG-DEFECT-02",
+      "severity": "high",
+      "scope": "Gaelic Football — Rathgormack v The Nire (event_id=3536)",
+      "title": "County Final Scheduled One Full Week Late on OLBG ('01 Nov 10:30')",
+      "detail": "OLBG lists the Waterford Senior Football Championship Final for Sunday 1 November, seven days after the official Munster GAA fixture date of Sunday 25 October 2026 at 14:30 UTC at Fraher Field, Dungarvan.",
+      "official_url": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/"
+    },
+    {
+      "code": "OLBG-DEFECT-03",
+      "severity": "medium",
+      "scope": "Golf (event_id=101909) & Cricket (event_id=188350)",
+      "title": "Each-Way-Only Division-by-Zero Display Bug ('0 / 0 Win Tips — 0%')",
+      "detail": "On Hero Women's Indian Open (Avani Prashanth) and T20 Blast 2027 (Sussex), tipsters staked Each-Way tips without Win-only tips, causing OLBG's card component to render '0 / 0 Win Tips (0%)' while still promoting a top selection.",
+      "official_url": "https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Hero_Womens_Indian_Open/5?event_id=101909"
+    },
+    {
+      "code": "OLBG-DEFECT-04",
+      "severity": "high",
+      "scope": "Rugby League (10), Aussie Rules (22), eSports (23)",
+      "title": "Complete Zero-Match Blind Spot Across Three Active Major Championships",
+      "detail": "OLBG displays 0 active match markets across Rugby League, Aussie Rules, and eSports while RLWC26 Round 2 (7 Tests on nrl.com), NAB AFLW Round 11 (9 matches on afl.com.au), and LoL Worlds 2026 Swiss Stage (lolesports.com) are actively in progress—alongside stale 2023 AFL and CS:GO/FIFA boilerplate copy.",
+      "official_url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+    },
+    {
+      "code": "OLBG-DEFECT-05",
+      "severity": "medium",
+      "scope": "Motor Racing — Formula 1 2026 Outrights (event_id=828 & 912)",
+      "title": "Severe Cumulative Stale-Tip Distortion on Season-Long Outrights",
+      "detail": "OLBG aggregates un-decayed pre-season tips alongside October tips, leaving Max Verstappen (4th on 221 pts) as OLBG's #1 Championship tip ahead of runaway leader Kimi Antonelli (340 pts, +119 cushion on formula1.com) AND ahead of George Russell (238 pts) in the 'Without Antonelli' market.",
+      "official_url": "https://www.formula1.com/en/results/2026/drivers"
+    },
+    {
+      "code": "OLBG-DEFECT-06",
+      "severity": "medium",
+      "scope": "Handball — EHF Champions League Men (event_id=12044, 12047, 12048, 12054)",
+      "title": "Systematic Tipster Competition Gaming on 8/1–14/1 Handball 60m Draws",
+      "detail": "Because OLBG tipster tables rank by theoretical level-stake profit, 43%–80% of tips on lopsided EHF ties (e.g. 4/5 on Aalborg vs 0-0-4 Celje; 3/6 on Kolstad vs 4-0-0 Magdeburg) back the 60-minute Tie despite a ~6–10% true base rate.",
+      "official_url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+      "code": "OLBG-DEFECT-07",
+      "severity": "medium",
+      "scope": "Basketball Hub Truncation (/betting-tips/Basketball/4)",
+      "title": "Top-Level Sport Hub Truncates Active Events Behind Sub-Route Silos",
+      "detail": "Querying only /betting-tips/Basketball/4 omits live NBA, EuroLeague, EuroCup, and BCL fixtures visible only when crawling /Basketball/NBA/4 and /Basketball/European/4.",
+      "official_url": "https://www.olbg.com/betting-tips/Basketball/4"
+    },
+    {
+      "code": "OLBG-DEFECT-08",
+      "severity": "low",
+      "scope": "Tennis (/betting-tips/Tennis/3) & Snooker (/betting-tips/Snooker/8)",
+      "title": "Missing Tournament Header Metadata on Individual Match Cards",
+      "detail": "OLBG strips tournament names under generic 'All_Events' URLs across Tennis and Snooker, requiring cross-referencing against ATP, WTA, and WST draws to separate Ningbo, Osaka, Almaty, Lyon, and Brussels ties.",
+      "official_url": "https://www.olbg.com/betting-tips/Tennis/3"
+    },
+    {
+      "code": "OLBG-DEFECT-09",
+      "severity": "low",
+      "scope": "Ice Hockey (199896, 199897) & NBA Tip Clocks",
+      "title": "Broadcast Warmup vs Official Puck-Drop / Tip-Off Minute Drift (+7 to +10 mins)",
+      "detail": "OLBG lists NHL puck drops at :37 past the hour ('19:37' vs api-web.nhle.com 23:30 UTC) and NBA games at :10/:40 past the hour vs official top/half-hour NBA schedule slots.",
+      "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+    },
+    {
+      "code": "OLBG-DEFECT-10",
+      "severity": "medium",
+      "scope": "Gaelic Football — Kanturk v Éire Óg (event_id=3531)",
+      "title": "Unconfirmed Club Fixture Held Strictly as 'Unverified'",
+      "detail": "OLBG lists 'Kanturk v Eire Og Cor' for 01 Nov 09:00, which does not appear on the Cork Premier Senior FC Final card (St Finbarr's v Nemo Rangers); start UTC and venue are left blank and flagged unverified.",
+      "official_url": "https://gaacork.ie/fixtures-results/"
+    },
+    {
+      "code": "OLBG-DEFECT-11",
+      "severity": "low",
+      "scope": "Handball — Dinamo Bucuresti vs Skanderborg (event_id=12045)",
+      "title": "Deprecated Pre-Merger Club Naming ('Skanderborg Handbold' vs 'SAH - Aarhus')",
+      "detail": "OLBG displays legacy 'Skanderborg Handbold' rather than official EHF club name 'SAH - Aarhus' (Skanderborg-Aarhus Håndbold), which misled prior session 2360a617 into falsely claiming the club was outside the EHF CL.",
+      "official_url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+      "code": "OLBG-DEFECT-12",
+      "severity": "medium",
+      "scope": "Greyhounds UK Daily Races (689383..689390)",
+      "title": "Single-Selection Summary Without Trap Numbers & HTTP 404 Public GBGB API",
+      "detail": "OLBG hub cards expose only the single most-tipped runner per race without full 6-dog trap sheets, and api.gbgb.org.uk/api/results/meeting?date=2026-10-21 returned HTTP 404; runner form fields are left blank and flagged unverified.",
+      "official_url": "https://www.gbgb.org.uk/"
+    }
+  ],
+  "events_for_manual_review": [
+    {
+      "event_id": "mlb-ws-g1-160789",
+      "sport": "Baseball",
+      "matchup": "Milwaukee Brewers vs Tampa Bay Rays",
+      "competition": "MLB 2026 World Series — Game 1 (gamePk 849805)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/predictions.json [07..10] misstated Brewers as 94-68 and Rays as 88-74 despite citing 55-26 + 48-33 = 103-59 home/road splits"
+      ],
+      "official_sources": [
+        {
+          "label": "MLB StatsAPI Postseason Schedule",
+          "url": "https://statsapi.mlb.com/api/v1/schedule/postseason?season=2026"
+        },
+        {
+          "label": "MLB StatsAPI NL Standings",
+          "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=104&season=2026"
+        },
+        {
+          "label": "MLB StatsAPI AL Standings",
+          "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103&season=2026"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 160789,
+        "url": "https://www.olbg.com/betting-tips/Baseball/MLB/MLB/TB_Rays_@_MIL_Brewers/12?event_id=160789",
+        "market": "Money Line",
+        "selection": "TB Rays",
+        "tips": "3/6 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "nhl-buf-phi-199897",
+      "sport": "Ice Hockey",
+      "matchup": "Buffalo Sabres vs Philadelphia Flyers",
+      "competition": "NHL Regular Season (Game #2026020152)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "OLBG displays 'Today 19:37' (EDT) without timezone label vs 23:30 UTC puck drop; prior repo misstated BUF GD as +2 and PHI road/GD as 0-4-2 / -14"
+      ],
+      "official_sources": [
+        {
+          "label": "NHL Schedule API",
+          "url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+        },
+        {
+          "label": "NHL Standings API",
+          "url": "https://api-web.nhle.com/v1/standings/2026-10-20"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 199897,
+        "url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/PHI_Flyers_@_BUF_Sabres/13?event_id=199897",
+        "market": "Game Totals",
+        "selection": "Over 5.50",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "nhl-ott-fla-199896",
+      "sport": "Ice Hockey",
+      "matchup": "Ottawa Senators vs Florida Panthers",
+      "competition": "NHL Regular Season (Game #2026020153)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/fixtures.json misstated Ottawa home record as 4-1-0 instead of official 3-1-0"
+      ],
+      "official_sources": [
+        {
+          "label": "NHL Schedule API",
+          "url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+        },
+        {
+          "label": "NHL Standings API",
+          "url": "https://api-web.nhle.com/v1/standings/2026-10-20"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 199896,
+        "url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/FLA_Panthers_@_OTT_Senators/13?event_id=199896",
+        "market": "Game Totals",
+        "selection": "Over 5.50",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "icehl-grz-mil-199876",
+      "sport": "Ice Hockey",
+      "matchup": "Moser Medical Graz99ers vs Milano HC",
+      "competition": "win2day ICE Hockey League",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_b"
+      ],
+      "flags": [
+        "Away club listed as 'Milano HC' on OLBG; exact visitors' season GD left blank pending official sheet"
+      ],
+      "official_sources": [
+        {
+          "label": "win2day ICE Hockey League",
+          "url": "https://www.ice.hockey/en/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 199876,
+        "url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Austria_EHL/Graz_99ers_vs_Milano_HC/13?event_id=199876",
+        "market": "Puck Line",
+        "selection": "Graz 99ers -1.50",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "icehl-rbs-oli-199879",
+      "sport": "Ice Hockey",
+      "matchup": "EC Red Bull Salzburg vs HK Olimpija Ljubljana",
+      "competition": "win2day ICE Hockey League",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Newly tipped live OLBG fixture captured at 06:48Z (absent from all pre-06:00Z snapshots)"
+      ],
+      "official_sources": [
+        {
+          "label": "win2day ICE Hockey League",
+          "url": "https://www.ice.hockey/en/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 199879,
+        "url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Austria_EHL/Red_Bull_Salzburg_vs_HK_Olimpija_Ljubljana/13?event_id=199879",
+        "market": "Money Line",
+        "selection": "Red Bull Salzburg",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "liiga-kes-koo-199913",
+      "sport": "Ice Hockey",
+      "matchup": "Kiekko-Espoo vs KooKoo",
+      "competition": "Finnish Liiga Regular Season",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "Newly tipped live OLBG fixture captured at 06:48Z; exact Liiga table points left blank (not directly fetched)"
+      ],
+      "official_sources": [
+        {
+          "label": "Finnish Liiga Official Schedule",
+          "url": "https://www.ice.hockey/en/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 199913,
+        "url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Finland_SM_Liiga/Kiekko_Espoo_vs_KooKoo/13?event_id=199913",
+        "market": "Money Line",
+        "selection": "Kiekko-Espoo",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "liiga-tap-ass-199914",
+      "sport": "Ice Hockey",
+      "matchup": "Tappara vs Ässät",
+      "competition": "Finnish Liiga Regular Season",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "Newly tipped live OLBG fixture captured at 06:48Z; exact Liiga table points left blank"
+      ],
+      "official_sources": [
+        {
+          "label": "Finnish Liiga Context",
+          "url": "https://www.ice.hockey/en/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 199914,
+        "url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Finland_SM_Liiga/Tappara_vs_Assat/13?event_id=199914",
+        "market": "Money Line",
+        "selection": "Tappara",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "nba-orl-atl-534888",
+      "sport": "Basketball",
+      "matchup": "Orlando Magic vs Atlanta Hawks",
+      "competition": "NBA Regular Season (Game #0022600085)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/fixtures.json misstated Atlanta Hawks 2025-26 record as 40-42 instead of official 46-36"
+      ],
+      "official_sources": [
+        {
+          "label": "NBA Official Schedule",
+          "url": "https://www.nba.com/games?date=2026-10-21"
+        },
+        {
+          "label": "NBA 2025-26 Official Standings",
+          "url": "https://www.nba.com/standings"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 534888,
+        "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/ATL_Hawks_@_ORL_Magic/4?event_id=534888",
+        "market": "Money Line",
+        "selection": "ATL Hawks",
+        "tips": "3/5 (60%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "nba-was-mil-534889",
+      "sport": "Basketball",
+      "matchup": "Washington Wizards vs Milwaukee Bucks",
+      "competition": "NBA Regular Season (Game #0022600086)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Sharp model-vs-crowd divergence: 82% of OLBG tips back 17-65 Washington; prior desk aa4e9dbf copied crowd share into WAS -4.5"
+      ],
+      "official_sources": [
+        {
+          "label": "NBA Official Schedule",
+          "url": "https://www.nba.com/games?date=2026-10-21"
+        },
+        {
+          "label": "NBA 2025-26 Official Standings",
+          "url": "https://www.nba.com/standings"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 534889,
+        "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/MIL_Bucks_@_WAS_Wizards/4?event_id=534889",
+        "market": "Money Line",
+        "selection": "WAS Wizards",
+        "tips": "9/11 (82%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "nba-mia-min-535671",
+      "sport": "Basketball",
+      "matchup": "Miami Heat vs Minnesota Timberwolves",
+      "competition": "NBA Regular Season (Game #0022600004)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Newly tipped live OLBG fixture captured at 06:46Z (unlisted in pre-06:00Z snapshots)"
+      ],
+      "official_sources": [
+        {
+          "label": "NBA Official Schedule",
+          "url": "https://www.nba.com/games?date=2026-10-21"
+        },
+        {
+          "label": "NBA 2025-26 Official Standings",
+          "url": "https://www.nba.com/standings"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 535671,
+        "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/MIN_Timberwolves_@_MIA_Heat/4?event_id=535671",
+        "market": "Money Line",
+        "selection": "MIN Timberwolves",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "nba-bkn-cha-534890",
+      "sport": "Basketball",
+      "matchup": "Brooklyn Nets vs Charlotte Hornets",
+      "competition": "NBA Regular Season (Game #0022600087)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Newly tipped live on OLBG at 06:46Z"
+      ],
+      "official_sources": [
+        {
+          "label": "NBA Official Schedule",
+          "url": "https://www.nba.com/games?date=2026-10-21"
+        },
+        {
+          "label": "NBA 2025-26 Official Standings",
+          "url": "https://www.nba.com/standings"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 534890,
+        "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/CHA_Hornets_@_BKN_Nets/4?event_id=534890",
+        "market": "Point Spread",
+        "selection": "CHA Hornets -6.5",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "nba-hou-dal-534891",
+      "sport": "Basketball",
+      "matchup": "Houston Rockets vs Dallas Mavericks",
+      "competition": "NBA Regular Season (Game #0022600091)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Newly tipped live on OLBG at 06:46Z; +26-win 2025-26 differential"
+      ],
+      "official_sources": [
+        {
+          "label": "NBA Official Schedule",
+          "url": "https://www.nba.com/games?date=2026-10-21"
+        },
+        {
+          "label": "NBA 2025-26 Official Standings",
+          "url": "https://www.nba.com/standings"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 534891,
+        "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/DAL_Mavericks_@_HOU_Rockets/4?event_id=534891",
+        "market": "Money Line",
+        "selection": "HOU Rockets",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "nba-lal-gsw-535672",
+      "sport": "Basketball",
+      "matchup": "Los Angeles Lakers vs Golden State Warriors",
+      "competition": "NBA Regular Season (Game #0022600005)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/fixtures.json misstated Golden State Warriors 2025-26 record as 44-38 instead of official 37-45"
+      ],
+      "official_sources": [
+        {
+          "label": "NBA Official Schedule",
+          "url": "https://www.nba.com/games?date=2026-10-21"
+        },
+        {
+          "label": "NBA 2025-26 Official Standings",
+          "url": "https://www.nba.com/standings"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 535672,
+        "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/GS_Warriors_@_LA_Lakers/4?event_id=535672",
+        "market": "Money Line",
+        "selection": "LA Lakers",
+        "tips": "7/12 (58%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "nba-cle-nyk-534844",
+      "sport": "Basketball",
+      "matchup": "Cleveland Cavaliers vs New York Knicks",
+      "competition": "NBA Regular Season (Game #0022600007)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Newly tipped live on OLBG at 06:46Z"
+      ],
+      "official_sources": [
+        {
+          "label": "NBA Official Schedule",
+          "url": "https://www.nba.com/games?date=2026-10-22"
+        },
+        {
+          "label": "NBA 2025-26 Official Standings",
+          "url": "https://www.nba.com/standings"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 534844,
+        "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/NY_Knicks_@_CLE_Cavaliers/4?event_id=534844",
+        "market": "Money Line",
+        "selection": "CLE Cavaliers",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "el-hta-vir-535919",
+      "sport": "Basketball",
+      "matchup": "Hapoel IBI Tel Aviv vs Virtus Segafredo Bologna",
+      "competition": "EuroLeague Regular Season — Round 7 (Game E2026/61)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/fixtures.json misstated Virtus Bologna record as 3-3 instead of official 4-2 (+7)"
+      ],
+      "official_sources": [
+        {
+          "label": "EuroLeague Standings",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+        },
+        {
+          "label": "EuroLeague Game Center",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/game-center/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 535919,
+        "url": "https://www.olbg.com/betting-tips/Basketball/European/Euroleague/Hapoel_Tel_Aviv_vs_Virtus_Bologna/4?event_id=535919",
+        "market": "Money Line",
+        "selection": "Hapoel Tel Aviv",
+        "tips": "5/8 (63%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "el-mac-rmb-535921",
+      "sport": "Basketball",
+      "matchup": "Maccabi Playtika Tel Aviv vs Real Madrid",
+      "competition": "EuroLeague Regular Season — Round 7 (Game E2026/62)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/predictions.json [05] misstated Real Madrid as 4-2 instead of official 3-3 (+23); downgraded to medium after true record check"
+      ],
+      "official_sources": [
+        {
+          "label": "EuroLeague Standings",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+        },
+        {
+          "label": "EuroLeague Game Center",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/game-center/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 535921,
+        "url": "https://www.olbg.com/betting-tips/Basketball/European/Euroleague/Maccabi_Tel_Aviv_vs_Real_Madrid/4?event_id=535921",
+        "market": "Money Line",
+        "selection": "Real Madrid",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "el-pao-bkn-535923",
+      "sport": "Basketball",
+      "matchup": "Panathinaikos AKTOR Athens vs Kosner Baskonia Vitoria-Gasteiz",
+      "competition": "EuroLeague Regular Season — Round 7 (Game E2026/67)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/predictions.json [06] understated gap as 4-2 vs 2-4; official table is #1 PAO (5-1, +90) vs #20 Baskonia (1-5, -60)"
+      ],
+      "official_sources": [
+        {
+          "label": "EuroLeague Standings",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+        },
+        {
+          "label": "EuroLeague Game Center",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/game-center/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 535923,
+        "url": "https://www.olbg.com/betting-tips/Basketball/European/Euroleague/Panathinaikos_vs_Baskonia/4?event_id=535923",
+        "market": "Money Line",
+        "selection": "Panathinaikos",
+        "tips": "2/3 (67%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "el-zal-asv-535924",
+      "sport": "Basketball",
+      "matchup": "Zalgiris Kaunas vs LDLC ASVEL Villeurbanne",
+      "competition": "EuroLeague Regular Season — Round 7 (Game E2026/68)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Newly tipped live on OLBG at 06:47Z"
+      ],
+      "official_sources": [
+        {
+          "label": "EuroLeague Standings",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+        },
+        {
+          "label": "EuroLeague Game Center",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/game-center/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 535924,
+        "url": "https://www.olbg.com/betting-tips/Basketball/European/Euroleague/Zalgiris_Kaunas_vs_ASVEL_Lyon_Villeurbanne/4?event_id=535924",
+        "market": "Money Line",
+        "selection": "Zalgiris Kaunas",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "ec-clu-lon-535949",
+      "sport": "Basketball",
+      "matchup": "U-BT Cluj-Napoca vs London Lions",
+      "competition": "BKT EuroCup — Round 4 Group B (Game U2026/54)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Overturned false-positive flag from session aa4e9dbf: officially confirmed as EuroCup Game U2026/54 at BTarena on 21 Oct 2026"
+      ],
+      "official_sources": [
+        {
+          "label": "BKT EuroCup Game Center",
+          "url": "https://www.euroleaguebasketball.net/en/eurocup/game-center/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 535949,
+        "url": "https://www.olbg.com/betting-tips/Basketball/European/Euro_Cup/U_BT_Cluj_Napoca_vs_London_Lions/4?event_id=535949",
+        "market": "Money Line",
+        "selection": "London Lions",
+        "tips": "1/2 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ec-hje-rig-535956",
+      "sport": "Basketball",
+      "matchup": "Hapoel Bank Yahav Jerusalem vs Rīgas Zeļļi",
+      "competition": "BKT EuroCup — Round 4 (Game U2026/52)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Confirmed neutral venue in Belgrade via EuroCup Game U2026/52 (prior data/fixtures.json listed Samokov)"
+      ],
+      "official_sources": [
+        {
+          "label": "BKT EuroCup Game Center",
+          "url": "https://www.euroleaguebasketball.net/en/eurocup/game-center/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 535956,
+        "url": "https://www.olbg.com/betting-tips/Basketball/European/Euro_Cup/Hapoel_Jerusalem_vs_Rigas_Zelli/4?event_id=535956",
+        "market": "Money Line",
+        "selection": "Hapoel Jerusalem",
+        "tips": "2/3 (67%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ec-oli-lem-535957",
+      "sport": "Basketball",
+      "matchup": "Cedevita Olimpija Ljubljana vs Le Mans Sarthe Basket",
+      "competition": "BKT EuroCup — Round 4 Group A (Game U2026/51)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Newly tipped live on OLBG at 06:47Z; verified as Game U2026/51"
+      ],
+      "official_sources": [
+        {
+          "label": "BKT EuroCup Game Center",
+          "url": "https://www.euroleaguebasketball.net/en/eurocup/game-center/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 535957,
+        "url": "https://www.olbg.com/betting-tips/Basketball/European/Euro_Cup/Cedevita_Olimpija_vs_Le_Mans/4?event_id=535957",
+        "market": "Money Line",
+        "selection": "Cedevita Olimpija",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "ec-nap-tof-535959",
+      "sport": "Basketball",
+      "matchup": "Napoli Basket vs Tofas Bursa",
+      "competition": "BKT EuroCup — Round 4 (Game U2026/60)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Newly tipped live on OLBG at 06:47Z; verified as Game U2026/60"
+      ],
+      "official_sources": [
+        {
+          "label": "BKT EuroCup Game Center",
+          "url": "https://www.euroleaguebasketball.net/en/eurocup/game-center/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 535959,
+        "url": "https://www.olbg.com/betting-tips/Basketball/European/Euro_Cup/Napoli_vs_Tofas/4?event_id=535959",
+        "market": "Money Line",
+        "selection": "Tofas",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "bcl-reg-juv-535972",
+      "sport": "Basketball",
+      "matchup": "UNAHOTELS Reggio Emilia vs Uniclub Bet - Juventus Utena",
+      "competition": "FIBA Basketball Champions League Regular Season",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Newly tipped live on OLBG at 06:47Z; verified on championsleague.basketball"
+      ],
+      "official_sources": [
+        {
+          "label": "FIBA BCL Official Games",
+          "url": "https://www.championsleague.basketball/en/games"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 535972,
+        "url": "https://www.olbg.com/betting-tips/Basketball/European/Basketball_Champions_League/Reggiana_vs_Juventus/4?event_id=535972",
+        "market": "Money Line",
+        "selection": "Reggiana",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "kbl-seo-kcc-535966",
+      "sport": "Basketball",
+      "matchup": "Seoul Samsung Thunders vs Busan KCC Egis",
+      "competition": "Korean Basketball League (KBL)",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "Exact October 2026 KBL win-loss records not directly fetched; left blank"
+      ],
+      "official_sources": [
+        {
+          "label": "KBL Official Portal",
+          "url": "https://www.kbl.or.kr/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 535966,
+        "url": "https://www.olbg.com/betting-tips/Basketball/Other/Korea_KBL/Seoul_Thunders_vs_KCC_Egis/4?event_id=535966",
+        "market": "Money Line",
+        "selection": "Seoul Thunders",
+        "tips": "3/5 (60%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-paul-bonzi-902102",
+      "sport": "Tennis",
+      "matchup": "Tommy Paul vs Benjamin Bonzi",
+      "competition": "ATP 250 Grand Prix Auvergne-Rhône-Alpes (Lyon) — Round of 16",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [
+        "Exact court start UTC time unconfirmed on ATP daily order; left blank per zero-inference rule"
+      ],
+      "official_sources": [
+        {
+          "label": "ATP Official Rankings",
+          "url": "https://www.atptour.com/en/rankings/singles"
+        },
+        {
+          "label": "ATP Lyon Official Draw",
+          "url": "https://www.atptour.com/en/scores/current/lyon/496/draws"
+        },
+        {
+          "label": "ATP Shanghai Results Archive",
+          "url": "https://www.atptour.com/en/scores/archive/shanghai/5014/2026/results"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902102,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Benjamin_Bonzi_vs_Tommy_Paul/3?event_id=902102",
+        "market": "Set Betting",
+        "selection": "Tommy Paul 2-1",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-rublev-mannarino-902037",
+      "sport": "Tennis",
+      "matchup": "Andrey Rublev vs Adrian Mannarino",
+      "competition": "ATP 250 Almaty Open — Round of 16",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [
+        "Exact court start UTC time left blank"
+      ],
+      "official_sources": [
+        {
+          "label": "ATP Official Rankings",
+          "url": "https://www.atptour.com/en/rankings/singles"
+        },
+        {
+          "label": "ATP Almaty Official Draw",
+          "url": "https://www.atptour.com/en/scores/current/almaty/9410/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902037,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Adrian_Mannarino_vs_Andrey_Rublev/3?event_id=902037",
+        "market": "Win Match",
+        "selection": "Andrey Rublev",
+        "tips": "4/5 (80%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-cerundolo-damm-902048",
+      "sport": "Tennis",
+      "matchup": "Francisco Cerundolo vs Martin Damm",
+      "competition": "ATP 250 European Open Brussels — Round of 16",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "ATP Official Rankings",
+          "url": "https://www.atptour.com/en/rankings/singles"
+        },
+        {
+          "label": "ATP Brussels Schedule",
+          "url": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902048,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Martin_Damm_vs_Francisco_Cerundolo/3?event_id=902048",
+        "market": "Set Betting",
+        "selection": "Francisco Cerundolo 2-1",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-musetti-kouame-902059",
+      "sport": "Tennis",
+      "matchup": "Lorenzo Musetti vs Moïse Kouamé",
+      "competition": "ATP 250 Grand Prix Auvergne-Rhône-Alpes (Lyon) — Round of 16",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "ATP Official Rankings",
+          "url": "https://www.atptour.com/en/rankings/singles"
+        },
+        {
+          "label": "ATP Lyon Official Draw",
+          "url": "https://www.atptour.com/en/scores/current/lyon/496/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902059,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Moise_Kouame_vs_Lorenzo_Musetti/3?event_id=902059",
+        "market": "Win Match",
+        "selection": "Moise Kouame",
+        "tips": "1/2 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-tsitsipas-kukushkin-902083",
+      "sport": "Tennis",
+      "matchup": "Stefanos Tsitsipas vs Mikhail Kukushkin",
+      "competition": "ATP 250 Almaty Open — Round of 16",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "ATP Official Rankings",
+          "url": "https://www.atptour.com/en/rankings/singles"
+        },
+        {
+          "label": "ATP Almaty Official Draw",
+          "url": "https://www.atptour.com/en/scores/current/almaty/9410/draws"
+        },
+        {
+          "label": "ATP Shanghai Results Archive",
+          "url": "https://www.atptour.com/en/scores/archive/shanghai/5014/2026/results"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902083,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Stefanos_Tsitsipas_vs_Mikhail_Kukushkin/3?event_id=902083",
+        "market": "Set Betting",
+        "selection": "Stefanos Tsitsipas 2-0",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-navone-griekspoor-902085",
+      "sport": "Tennis",
+      "matchup": "Mariano Navone vs Tallon Griekspoor",
+      "competition": "ATP 250 European Open Brussels — Round of 16",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "ATP Official Rankings",
+          "url": "https://www.atptour.com/en/rankings/singles"
+        },
+        {
+          "label": "ATP Brussels Schedule",
+          "url": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902085,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Mariano_Navone_vs_Tallon_Griekspoor/3?event_id=902085",
+        "market": "Win Match",
+        "selection": "Tallon Griekspoor",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-darderi-duckworth-902038",
+      "sport": "Tennis",
+      "matchup": "Luciano Darderi vs James Duckworth",
+      "competition": "ATP 250 Almaty Open — Round of 16",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "ATP Official Rankings",
+          "url": "https://www.atptour.com/en/rankings/singles"
+        },
+        {
+          "label": "ATP Almaty Official Draw",
+          "url": "https://www.atptour.com/en/scores/current/almaty/9410/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902038,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/James_Duckworth_vs_Luciano_Darderi/3?event_id=902038",
+        "market": "Win Match",
+        "selection": "Luciano Darderi",
+        "tips": "4/5 (80%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-machac-nurlanuly-901935",
+      "sport": "Tennis",
+      "matchup": "Tomáš Macháč vs Zangar Nurlanuly",
+      "competition": "ATP 250 Almaty Open — Round of 32",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [
+        "Longshot OLBG tipster bias: 3/4 tips chase unranked home wildcard for 1st Set vs Tour pro Tomáš Macháč"
+      ],
+      "official_sources": [
+        {
+          "label": "ATP Almaty Official Draw",
+          "url": "https://www.atptour.com/en/scores/current/almaty/9410/draws"
+        },
+        {
+          "label": "ATP Official Rankings",
+          "url": "https://www.atptour.com/en/rankings/singles"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 901935,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Zangar_Nurlanuly_vs_Tomas_Machac/3?event_id=901935",
+        "market": "1st Set Winner",
+        "selection": "Zangar Nurlanuly",
+        "tips": "3/4 (75%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-bencic-kawa-902093",
+      "sport": "Tennis",
+      "matchup": "Belinda Bencic vs Katarzyna Kawa",
+      "competition": "WTA 500 Ningbo Open — Round of 16",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [
+        "Prior repo data/predictions.json [12] misstated Bencic rank as #12 (actual #14 on wtatennis.com) and wrote 'Guangzhou' inside prose while citing Ningbo draw"
+      ],
+      "official_sources": [
+        {
+          "label": "WTA Official Singles Rankings",
+          "url": "https://www.wtatennis.com/rankings/singles"
+        },
+        {
+          "label": "WTA 500 Ningbo Official Draw",
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902093,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Katarzyna_Kawa_vs_Belinda_Bencic/3?event_id=902093",
+        "market": "1st Set Winner",
+        "selection": "Belinda Bencic",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-kostyuk-alexandrova-902084",
+      "sport": "Tennis",
+      "matchup": "Marta Kostyuk vs Ekaterina Alexandrova",
+      "competition": "WTA 500 Ningbo Open — Round of 16",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "WTA Official Singles Rankings",
+          "url": "https://www.wtatennis.com/rankings/singles"
+        },
+        {
+          "label": "WTA 500 Ningbo Official Draw",
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902084,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Ekaterina_Alexandrova_vs_Marta_Kostyuk/3?event_id=902084",
+        "market": "Win Match",
+        "selection": "Marta Kostyuk",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-cirstea-bejlek-902074",
+      "sport": "Tennis",
+      "matchup": "Sorana Cîrstea vs Sára Bejlek",
+      "competition": "WTA 500 Ningbo / Asian Swing — Round of 16",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [
+        "Prior repo data/fixtures.json listed Cîrstea as #16 instead of official WTA #17 (2,380 pts)"
+      ],
+      "official_sources": [
+        {
+          "label": "WTA Official Singles Rankings",
+          "url": "https://www.wtatennis.com/rankings/singles"
+        },
+        {
+          "label": "WTA 500 Ningbo Official Draw",
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902074,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Sorana_Cirstea_vs_Sara_Bejlek/3?event_id=902074",
+        "market": "Win Match",
+        "selection": "Sara Bejlek",
+        "tips": "3/6 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-fernandez-sasnovich-902039",
+      "sport": "Tennis",
+      "matchup": "Leylah Fernandez vs Aliaksandra Sasnovich",
+      "competition": "WTA 500 Ningbo Open — Round of 16",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "WTA 500 Ningbo Official Draw",
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902039,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Leylah_Fernandez_vs_Aliaksandra_Sasnovich/3?event_id=902039",
+        "market": "Win Match",
+        "selection": "Leylah Fernandez",
+        "tips": "6/7 (86%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-boulter-golubic-902065",
+      "sport": "Tennis",
+      "matchup": "Katie Boulter vs Viktorija Golubic",
+      "competition": "WTA 250 Japan Open (Osaka)",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "WTA 250 Osaka Official Draw",
+          "url": "https://www.wtatennis.com/tournaments/405/osaka/2026/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902065,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Katie_Boulter_vs_Viktorija_Golubic/3?event_id=902065",
+        "market": "Win Match",
+        "selection": "Katie Boulter",
+        "tips": "5/8 (63%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-prizmic-dzumhur-901896",
+      "sport": "Tennis",
+      "matchup": "Dino Prižmić vs Damir Džumhur",
+      "competition": "ATP Tour / Challenger Indoor Hard",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc",
+        "venue",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "OLBG Tennis hub omits tournament label; exact venue & UTC time left blank"
+      ],
+      "official_sources": [
+        {
+          "label": "ATP Official Rankings",
+          "url": "https://www.atptour.com/en/rankings/singles"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 901896,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Dino_Prizmic_vs_Damir_Dzumhur/3?event_id=901896",
+        "market": "Win Match",
+        "selection": "Damir Dzumhur",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-wawrinka-landaluce-901974",
+      "sport": "Tennis",
+      "matchup": "Martín Landaluce vs Stan Wawrinka",
+      "competition": "ATP Indoor Hard Event",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc",
+        "venue"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "ATP Official Rankings",
+          "url": "https://www.atptour.com/en/rankings/singles"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 901974,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Stan_Wawrinka_vs_Martin_Landaluce/3?event_id=901974",
+        "market": "Win Match",
+        "selection": "Stan Wawrinka",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-etcheverry-bellucci-901993",
+      "sport": "Tennis",
+      "matchup": "Tomás Martín Etcheverry vs Mattia Bellucci",
+      "competition": "ATP 250 European Indoor Swing",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc",
+        "venue",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "ATP Official Rankings",
+          "url": "https://www.atptour.com/en/rankings/singles"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 901993,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Mattia_Bellucci_vs_Tomas_Martin_Etcheverry/3?event_id=901993",
+        "market": "Set Betting",
+        "selection": "Etcheverry 2-1",
+        "tips": "2/3 (67%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-goffin-bertola-902028",
+      "sport": "Tennis",
+      "matchup": "David Goffin vs Rémy Bertola",
+      "competition": "ATP 250 European Open Brussels",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "ATP Brussels Schedule",
+          "url": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902028,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/David_Goffin_vs_Remy_Bertola/3?event_id=902028",
+        "market": "Win Match",
+        "selection": "David Goffin",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-basilashvili-diazacosta-902040",
+      "sport": "Tennis",
+      "matchup": "Nikoloz Basilashvili vs Facundo Díaz Acosta",
+      "competition": "ATP 250 Almaty Open",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "ATP Almaty Official Draw",
+          "url": "https://www.atptour.com/en/scores/current/almaty/9410/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902040,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Facundo_Diaz_Acosta_vs_Nikoloz_Basilashvili/3?event_id=902040",
+        "market": "Set Betting",
+        "selection": "Basilashvili 2-1",
+        "tips": "1/2 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-fearnley-chidekh-902094",
+      "sport": "Tennis",
+      "matchup": "Jacob Fearnley vs Clément Chidekh",
+      "competition": "ATP Indoor Hard",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc",
+        "venue",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "ATP Official Rankings",
+          "url": "https://www.atptour.com/en/rankings/singles"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902094,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Clement_Chidekh_vs_Jacob_Fearnley/3?event_id=902094",
+        "market": "Set Betting",
+        "selection": "Clement Chidekh 2-1",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-moutet-balshaw-902095",
+      "sport": "Tennis",
+      "matchup": "Corentin Moutet vs Félix Balshaw",
+      "competition": "ATP 250 Lyon Open",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "ATP Lyon Official Draw",
+          "url": "https://www.atptour.com/en/scores/current/lyon/496/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902095,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Corentin_Moutet_vs_Felix_Balshaw/3?event_id=902095",
+        "market": "Set Betting",
+        "selection": "Corentin Moutet 2-1",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ten-jovic-paolini-902075",
+      "sport": "Tennis",
+      "matchup": "Iva Jovic vs Jasmine Paolini",
+      "competition": "WTA 500 Ningbo Open — Round of 16",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [
+        "Newly tipped live on OLBG at 06:45Z"
+      ],
+      "official_sources": [
+        {
+          "label": "WTA Official Singles Rankings",
+          "url": "https://www.wtatennis.com/rankings/singles"
+        },
+        {
+          "label": "WTA 500 Ningbo Official Draw",
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902075,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Iva_Jovic_vs_Jasmine_Paolini/3?event_id=902075",
+        "market": "Win Match",
+        "selection": "Jasmine Paolini",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "ten-li-sonmez-902063",
+      "sport": "Tennis",
+      "matchup": "Ann Li vs Zeynep Sönmez",
+      "competition": "WTA 250 Japan Open (Osaka)",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "Newly tipped live on OLBG at 06:45Z"
+      ],
+      "official_sources": [
+        {
+          "label": "WTA 250 Osaka Official Draw",
+          "url": "https://www.wtatennis.com/tournaments/405/osaka/2026/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902063,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Ann_Li_vs_Zeynep_Sonmez/3?event_id=902063",
+        "market": "Win Match",
+        "selection": "Ann Li",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "ten-uchijima-stoiana-902067",
+      "sport": "Tennis",
+      "matchup": "Moyuka Uchijima vs Mary Stoiana",
+      "competition": "WTA 250 Japan Open (Osaka)",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "Newly tipped live on OLBG at 06:45Z"
+      ],
+      "official_sources": [
+        {
+          "label": "WTA 250 Osaka Official Draw",
+          "url": "https://www.wtatennis.com/tournaments/405/osaka/2026/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902067,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Mary_Stoiana_vs_Moyuka_Uchijima/3?event_id=902067",
+        "market": "Win Match",
+        "selection": "Moyuka Uchijima",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "ten-linette-siniakova-902071",
+      "sport": "Tennis",
+      "matchup": "Kateřina Siniaková vs Magda Linette",
+      "competition": "WTA Asian Swing Hard Court",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc",
+        "venue",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "Newly tipped live on OLBG at 06:45Z"
+      ],
+      "official_sources": [
+        {
+          "label": "WTA Official Calendar",
+          "url": "https://www.wtatennis.com/tournaments"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902071,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Magda_Linette_vs_Katerina_Siniakova/3?event_id=902071",
+        "market": "Win Match",
+        "selection": "Katerina Siniakova",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "ten-diallo-collignon-902049",
+      "sport": "Tennis",
+      "matchup": "Gabriel Diallo vs Raphaël Collignon",
+      "competition": "ATP 250 European Open Brussels",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "Newly tipped live on OLBG at 06:45Z"
+      ],
+      "official_sources": [
+        {
+          "label": "ATP Brussels Schedule",
+          "url": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902049,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Gabriel_Diallo_vs_Raphael_Collignon/3?event_id=902049",
+        "market": "Win Match",
+        "selection": "Gabriel Diallo",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "ten-bublik-shevchenko-902081",
+      "sport": "Tennis",
+      "matchup": "Alexander Bublik vs Alexander Shevchenko",
+      "competition": "ATP 250 Almaty Open — Round of 16",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [
+        "Newly tipped live on OLBG at 06:45Z"
+      ],
+      "official_sources": [
+        {
+          "label": "ATP Almaty Official Draw",
+          "url": "https://www.atptour.com/en/scores/current/almaty/9410/draws"
+        },
+        {
+          "label": "ATP Official Rankings",
+          "url": "https://www.atptour.com/en/rankings/singles"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902081,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Alexander_Bublik_vs_Alexander_Shevchenko/3?event_id=902081",
+        "market": "Win Match",
+        "selection": "Alexander Bublik",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "ten-khachanov-virtanen-902082",
+      "sport": "Tennis",
+      "matchup": "Karen Khachanov vs Otto Virtanen",
+      "competition": "ATP 250 Almaty Open — Round of 16",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [
+        "Newly tipped live on OLBG at 06:45Z"
+      ],
+      "official_sources": [
+        {
+          "label": "ATP Almaty Official Draw",
+          "url": "https://www.atptour.com/en/scores/current/almaty/9410/draws"
+        },
+        {
+          "label": "ATP Official Rankings",
+          "url": "https://www.atptour.com/en/rankings/singles"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902082,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Karen_Khachanov_vs_Otto_Virtanen/3?event_id=902082",
+        "market": "Win Match",
+        "selection": "Karen Khachanov",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "ten-mpetshi-halys-902096",
+      "sport": "Tennis",
+      "matchup": "Giovanni Mpetshi Perricard vs Quentin Halys",
+      "competition": "ATP 250 Lyon Open — Round of 16",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [
+        "Newly tipped live on OLBG at 06:45Z"
+      ],
+      "official_sources": [
+        {
+          "label": "ATP Lyon Official Draw",
+          "url": "https://www.atptour.com/en/scores/current/lyon/496/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902096,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Giovanni_Mpetshi_Perricard_vs_Quentin_Halys/3?event_id=902096",
+        "market": "Win Match",
+        "selection": "Giovanni Mpetshi Perricard",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "ten-rinderknech-gaston-902097",
+      "sport": "Tennis",
+      "matchup": "Arthur Rinderknech vs Hugo Gaston",
+      "competition": "ATP 250 Lyon Open — Round of 16",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "Newly tipped live on OLBG at 06:45Z"
+      ],
+      "official_sources": [
+        {
+          "label": "ATP Lyon Official Draw",
+          "url": "https://www.atptour.com/en/scores/current/lyon/496/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902097,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Arthur_Rinderknech_vs_Hugo_Gaston/3?event_id=902097",
+        "market": "Win Match",
+        "selection": "Arthur Rinderknech",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "ten-cazaux-muller-902098",
+      "sport": "Tennis",
+      "matchup": "Arthur Cazaux vs Alexandre Müller",
+      "competition": "ATP 250 Lyon Open",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "Newly tipped live on OLBG at 06:45Z"
+      ],
+      "official_sources": [
+        {
+          "label": "ATP Lyon Official Draw",
+          "url": "https://www.atptour.com/en/scores/current/lyon/496/draws"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902098,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Arthur_Cazaux_vs_Alexandre_Muller/3?event_id=902098",
+        "market": "Win Match",
+        "selection": "Arthur Cazaux",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "ten-berg-lehecka-902050",
+      "sport": "Tennis",
+      "matchup": "Jiří Lehečka vs Zizou Bergs",
+      "competition": "ATP 250 European Open Brussels",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [
+        "Newly tipped live on OLBG at 06:45Z"
+      ],
+      "official_sources": [
+        {
+          "label": "ATP Brussels Schedule",
+          "url": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902050,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Jiri_Lehecka_vs_Zizou_Bergs/3?event_id=902050",
+        "market": "Win Match",
+        "selection": "Jiri Lehecka",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "ten-auger-cobolli-902051",
+      "sport": "Tennis",
+      "matchup": "Félix Auger-Aliassime vs Flavio Cobolli",
+      "competition": "ATP 250 European Open Brussels",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [
+        "Newly tipped live on OLBG at 06:45Z"
+      ],
+      "official_sources": [
+        {
+          "label": "ATP Brussels Schedule",
+          "url": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902051,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Felix_Auger_Aliassime_vs_Flavio_Cobolli/3?event_id=902051",
+        "market": "Win Match",
+        "selection": "Felix Auger-Aliassime",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "ten-medvedev-marozsan-902080",
+      "sport": "Tennis",
+      "matchup": "Daniil Medvedev vs Fábián Marozsán",
+      "competition": "ATP 250 Almaty Open — Round of 16",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [
+        "Newly tipped live on OLBG at 06:45Z"
+      ],
+      "official_sources": [
+        {
+          "label": "ATP Almaty Official Draw",
+          "url": "https://www.atptour.com/en/scores/current/almaty/9410/draws"
+        },
+        {
+          "label": "ATP Official Rankings",
+          "url": "https://www.atptour.com/en/rankings/singles"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 902080,
+        "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Daniil_Medvedev_vs_Fabian_Marozsan/3?event_id=902080",
+        "market": "Win Match",
+        "selection": "Daniil Medvedev",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "snk-pang-davies-9929",
+      "sport": "Snooker",
+      "matchup": "Pang Junxu vs Liam Davies",
+      "competition": "BetVictor Northern Ireland Open — Last 32 (Best of 7)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior file data/ebfbd966_writeups.json ['SNO-02'] still cited outdated #26 vs #89 ranks instead of WST #29 vs #68"
+      ],
+      "official_sources": [
+        {
+          "label": "WST Official World Rankings",
+          "url": "https://www.wst.tv/rankings/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 9929,
+        "url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/Pang_Junxu_v_Liam_Davies/8?event_id=9929",
+        "market": "Win Match",
+        "selection": "Pang Junxu",
+        "tips": "6/9 (67%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "snk-bingham-cheung-9933",
+      "sport": "Snooker",
+      "matchup": "Stuart Bingham vs Cheung Ka Wai",
+      "competition": "BetVictor Northern Ireland Open — Last 32 (Best of 7)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior file data/picks.json leaked scratchpad 'O/U 8.5 (best-of-7 hmm — use frame HC only)' AND backed #106 Cheung at high confidence over #19 Bingham"
+      ],
+      "official_sources": [
+        {
+          "label": "WST Official World Rankings",
+          "url": "https://www.wst.tv/rankings/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 9933,
+        "url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/Cheung_Ka_Wai_v_Stuart_Bingham/8?event_id=9933",
+        "market": "Win Match",
+        "selection": "Cheung Ka Wai",
+        "tips": "8/11 (73%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "snk-williams-zhang-9936",
+      "sport": "Snooker",
+      "matchup": "Mark Williams vs Zhang Anda",
+      "competition": "BetVictor Northern Ireland Open — Last 32 (Best of 7)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Newly tipped live on OLBG at 06:47Z (unlisted in pre-06:00Z snapshots)"
+      ],
+      "official_sources": [
+        {
+          "label": "WST Official World Rankings",
+          "url": "https://www.wst.tv/rankings/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 9936,
+        "url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/Zhang_Anda_v_Mark_Williams/8?event_id=9936",
+        "market": "Win Match",
+        "selection": "Mark Williams",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "snk-day-wells-9937",
+      "sport": "Snooker",
+      "matchup": "Ryan Day vs Daniel Wells",
+      "competition": "BetVictor Northern Ireland Open — Last 32 (Best of 7)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Newly tipped live on OLBG at 06:47Z"
+      ],
+      "official_sources": [
+        {
+          "label": "WST Official World Rankings",
+          "url": "https://www.wst.tv/rankings/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 9937,
+        "url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/Daniel_Wells_v_Ryan_Day/8?event_id=9937",
+        "market": "Win Match",
+        "selection": "Ryan Day",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "snk-brown-holt-9935",
+      "sport": "Snooker",
+      "matchup": "Jordan Brown vs Michael Holt",
+      "competition": "BetVictor Northern Ireland Open — Last 32 (Best of 7)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Newly tipped live on OLBG at 06:47Z"
+      ],
+      "official_sources": [
+        {
+          "label": "WST Official World Rankings",
+          "url": "https://www.wst.tv/rankings/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 9935,
+        "url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/Michael_Holt_v_Jordan_Brown/8?event_id=9935",
+        "market": "Win Match",
+        "selection": "Jordan Brown",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "pdc-ec-rsmith-sedlacek-32329",
+      "sport": "Darts",
+      "matchup": "Ross Smith vs Karel Sedláček",
+      "competition": "PDC Machineseeker European Championship — Round 1 (Best of 11)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/fixtures.json falsely demoted #1 seed Ross Smith (£158k) to Seed #7 and gave his #1 seed to Jonny Clayton"
+      ],
+      "official_sources": [
+        {
+          "label": "PDC Official Draw Bracket",
+          "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+        },
+        {
+          "label": "PDC Official Schedule",
+          "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 32329,
+        "url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Ross_Smith_vs_Karel_Sedlacek/15?event_id=32329",
+        "market": "Win Match 2-way",
+        "selection": "Ross Smith",
+        "tips": "4/8 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "pdc-ec-ratajski-chisnall-32333",
+      "sport": "Darts",
+      "matchup": "Krzysztof Ratajski vs Dave Chisnall",
+      "competition": "PDC Machineseeker European Championship — Round 1 (Best of 11)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/fixtures.json listed Ratajski as Seed #5 and Chisnall as #28 instead of official (3) vs (30)"
+      ],
+      "official_sources": [
+        {
+          "label": "PDC Official Draw Bracket",
+          "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 32333,
+        "url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Krzysztof_Ratajski_vs_Dave_Chisnall/15?event_id=32333",
+        "market": "Win Match 2-way",
+        "selection": "Krzysztof Ratajski",
+        "tips": "2/4 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "pdc-ec-noppert-bunting-32330",
+      "sport": "Darts",
+      "matchup": "Danny Noppert vs Stephen Bunting",
+      "competition": "PDC Machineseeker European Championship — Round 1 (Best of 11)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/fixtures.json listed Noppert as Seed #16 vs Bunting #17 instead of official (5) vs (28)"
+      ],
+      "official_sources": [
+        {
+          "label": "PDC Official Draw Bracket",
+          "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+        },
+        {
+          "label": "PDC ET15 Maastricht Hub",
+          "url": "https://www.pdc.tv/tournament-hub/10824"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 32330,
+        "url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Danny_Noppert_vs_Stephen_Bunting/15?event_id=32330",
+        "market": "Total Legs",
+        "selection": "Over 9.50",
+        "tips": "4/4 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "pdc-ec-clayton-springer-32335",
+      "sport": "Darts",
+      "matchup": "Jonny Clayton vs Niko Springer",
+      "competition": "PDC Machineseeker European Championship — Round 1 (Best of 11)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/predictions.json [17] falsely called Clayton Seed #1 and Springer Seed #32"
+      ],
+      "official_sources": [
+        {
+          "label": "PDC Official Draw Bracket",
+          "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 32335,
+        "url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Jonny_Clayton_vs_Niko_Springer/15?event_id=32335",
+        "market": "Win Match 2-way",
+        "selection": "Jonny Clayton",
+        "tips": "4/6 (67%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "pdc-ec-joyce-wattimena-32332",
+      "sport": "Darts",
+      "matchup": "Ryan Joyce vs Jermaine Wattimena",
+      "competition": "PDC Machineseeker European Championship — Round 1 (Best of 11)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Major fix vs prior data/predictions.json [16]: Joyce is Seed #15 vs #18 Wattimena, NOT #3 vs #30!"
+      ],
+      "official_sources": [
+        {
+          "label": "PDC Official Draw Bracket",
+          "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 32332,
+        "url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Ryan_Joyce_vs_Jermaine_Wattimena/15?event_id=32332",
+        "market": "Win Match 2-way",
+        "selection": "Ryan Joyce",
+        "tips": "2/3 (67%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "hand-ehf-aal-cel-12044",
+      "sport": "Handball",
+      "matchup": "Aalborg Håndbold vs RK Celje Pivovarna Laško",
+      "competition": "EHF Champions League Men — Group C Round 5",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Extreme OLBG longshot anomaly: 4/5 (80%) of OLBG tips back a 60-minute Draw (~5.5% model prob) on unbeaten Aalborg vs 0-0-4 Celje"
+      ],
+      "official_sources": [
+        {
+          "label": "EHF CL Standings",
+          "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+        },
+        {
+          "label": "EHF CL Matches",
+          "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 12044,
+        "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Aalborg_Handbold_vs_RK_Celje/20?event_id=12044",
+        "market": "Money Line",
+        "selection": "Tie",
+        "tips": "4/5 (80%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "hand-ehf-din-sah-12045",
+      "sport": "Handball",
+      "matchup": "CS Dinamo Bucuresti vs SAH - Aarhus (Skanderborg-Aarhus)",
+      "competition": "EHF Champions League Men — Group E Round 5 (Match #202711020101059)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Overturned false-positive flag from session 2360a617: Skanderborg-Aarhus Håndbold ('SAH - Aarhus') IS officially in Group E (2-1-1, 5 pts)"
+      ],
+      "official_sources": [
+        {
+          "label": "EHF CL Standings",
+          "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+        },
+        {
+          "label": "EHF CL Matches",
+          "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 12045,
+        "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Dinamo_Bucuresti_vs_Skanderborg_Handbold/20?event_id=12045",
+        "market": "Money Line",
+        "selection": "Dinamo Bucuresti",
+        "tips": "4/11 (36%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "hand-ehf-kol-mag-12048",
+      "sport": "Handball",
+      "matchup": "Kolstad Håndball vs SC Magdeburg",
+      "competition": "EHF Champions League Men — Group F Round 5",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "50% of OLBG tips back a 60m Tie despite Magdeburg sitting 4-0-0 (+33 GD) vs winless 0-0-4 Kolstad (-32 GD)"
+      ],
+      "official_sources": [
+        {
+          "label": "EHF CL Standings",
+          "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+        },
+        {
+          "label": "EHF CL Matches",
+          "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 12048,
+        "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Kolstad_vs_SC_Magdeburg/20?event_id=12048",
+        "market": "Money Line",
+        "selection": "Tie",
+        "tips": "3/6 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "hand-ehf-mel-wis-12049",
+      "sport": "Handball",
+      "matchup": "MT Melsungen vs Orlen Wisla Plock",
+      "competition": "EHF Champions League Men — Group B Round 5",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/fixtures.json misstated MT Melsungen as 1-0-3 (2 pts) instead of official 2-0-2 (4 pts)"
+      ],
+      "official_sources": [
+        {
+          "label": "EHF CL Standings",
+          "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 12049,
+        "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/MT_Melsungen_vs_Wisla_Plock/20?event_id=12049",
+        "market": "Money Line",
+        "selection": "MT Melsungen",
+        "tips": "2/4 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "hand-ehf-nan-var-12050",
+      "sport": "Handball",
+      "matchup": "HBC Nantes vs HC Vardar 1961",
+      "competition": "EHF Champions League Men — Group B Round 5",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/fixtures.json misstated HC Vardar 1961 as 1-0-3 (2 pts) instead of official winless 0-0-4 (0 pts)"
+      ],
+      "official_sources": [
+        {
+          "label": "EHF CL Standings",
+          "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 12050,
+        "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Nantes_vs_HC_Vardar/20?event_id=12050",
+        "market": "Money Line",
+        "selection": "Nantes",
+        "tips": "6/10 (60%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "hand-ehf-spo-kri-12054",
+      "sport": "Handball",
+      "matchup": "Sporting Clube de Portugal vs IFK Kristianstad",
+      "competition": "EHF Champions League Men — Group D Round 5",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/fixtures.json left Sporting CP and IFK Kristianstad Group D standings completely blank"
+      ],
+      "official_sources": [
+        {
+          "label": "EHF CL Standings",
+          "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+        },
+        {
+          "label": "EHF CL Matches",
+          "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 12054,
+        "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Sporting_CP_vs_IFK_Kristianstad/20?event_id=12054",
+        "market": "Money Line",
+        "selection": "Tie",
+        "tips": "3/7 (43%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "hand-den-mor-bje-12072",
+      "sport": "Handball",
+      "matchup": "Mors-Thy Håndbold vs Bjerringbro-Silkeborg",
+      "competition": "Danish Herreligaen",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "venue",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "Domestic Herreligaen standings not directly fetched; left blank"
+      ],
+      "official_sources": [
+        {
+          "label": "EHF National Federation Hub",
+          "url": "https://www.eurohandball.com/en/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 12072,
+        "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Mors_Thy_Handbold_vs_Bjerringbro_Silkeborg/20?event_id=12072",
+        "market": "Match Handicap",
+        "selection": "Mors Thy +3.50",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "hand-den-ski-aal-12076",
+      "sport": "Handball",
+      "matchup": "Skive fH vs Aalborg Håndbold",
+      "competition": "Danish Herreligaen",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "venue",
+        "stat_a"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "EHF Club Profile (Aalborg)",
+          "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 12076,
+        "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Skive_FH_vs_Aalborg_Handbold/20?event_id=12076",
+        "market": "Money Line",
+        "selection": "Aalborg Handbold",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "hand-ehfw-bel-ltu-12108",
+      "sport": "Handball",
+      "matchup": "Belgium Women vs Lithuania Women",
+      "competition": "Women's EHF EURO Qualification",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "venue",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "EHF EURO Portal",
+          "url": "https://ehfeuro.eurohandball.com/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 12108,
+        "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Belgium_W_vs_Lithuania_W/20?event_id=12108",
+        "market": "Money Line",
+        "selection": "Belgium (W)",
+        "tips": "1/2 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "hand-ehfw-est-kos-12110",
+      "sport": "Handball",
+      "matchup": "Estonia Women vs Kosovo Women",
+      "competition": "Women's EHF EURO Qualification",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "venue",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "EHF EURO Portal",
+          "url": "https://ehfeuro.eurohandball.com/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 12110,
+        "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Estonia_W_vs_Kosovo_W/20?event_id=12110",
+        "market": "Money Line",
+        "selection": "Kosovo (W)",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "hand-swe-ham-ali-12112",
+      "sport": "Handball",
+      "matchup": "Hammarby IF HF vs Alingsås HK",
+      "competition": "Swedish Handbollsligan",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "EHF National Federation Hub",
+          "url": "https://www.eurohandball.com/en/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 12112,
+        "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Hammarby_IF_HF_vs_Alingsas_HK/20?event_id=12112",
+        "market": "Money Line",
+        "selection": "Hammarby IF HF",
+        "tips": "2/3 (67%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "hand-swe-mal-lug-12113",
+      "sport": "Handball",
+      "matchup": "HK Malmö vs LUGI HF",
+      "competition": "Swedish Handbollsligan",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "EHF National Federation Hub",
+          "url": "https://www.eurohandball.com/en/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 12113,
+        "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/HK_Malmo_vs_Lugi_HF/20?event_id=12113",
+        "market": "Money Line",
+        "selection": "HK Malmo",
+        "tips": "1/2 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "hand-swe-hal-sav-12114",
+      "sport": "Handball",
+      "matchup": "IF Hallby HK vs IK Sävehof",
+      "competition": "Swedish Handbollsligan",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "EHF National Federation Hub",
+          "url": "https://www.eurohandball.com/en/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 12114,
+        "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/IF_Hallby_HK_vs_IK_Savehof/20?event_id=12114",
+        "market": "Money Line",
+        "selection": "IK Savehof",
+        "tips": "2/3 (67%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "hand-nor-san-run-12115",
+      "sport": "Handball",
+      "matchup": "Sandefjord Håndball vs Runar Sandefjord",
+      "competition": "Norwegian REMA 1000-ligaen",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "EHF National Federation Hub",
+          "url": "https://www.eurohandball.com/en/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 12115,
+        "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Sandefjord_vs_Runar/20?event_id=12115",
+        "market": "Money Line",
+        "selection": "Runar",
+        "tips": "4/5 (80%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "vol-ger-ber-fre-36983",
+      "sport": "Volleyball",
+      "matchup": "BERLIN RECYCLING Volleys vs FT 1844 Freiburg",
+      "competition": "German 1. Volleyball Bundesliga Men",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Newly tipped live OLBG fixture captured at 06:48Z; verified against official 1. Bundesliga opening week"
+      ],
+      "official_sources": [
+        {
+          "label": "1. Volleyball Bundesliga Official",
+          "url": "https://www.volleyball-bundesliga.de/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 36983,
+        "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Berlin_Volleys_vs_FT_1844_Freiburg/21?event_id=36983",
+        "market": "Win Match",
+        "selection": "Berlin Volleys",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "vol-fin-pui-orp-36981",
+      "sport": "Volleyball",
+      "matchup": "Puijo Wolley vs Oriveden Ponnistus (OrPo)",
+      "competition": "Finnish Mestaruusliiga Women",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "CEV National Leagues",
+          "url": "https://www.cev.eu/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 36981,
+        "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Puijo_W_vs_Orpo_W/21?event_id=36981",
+        "market": "Win Match",
+        "selection": "Puijo W",
+        "tips": "3/3 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "vol-ned-sne-utr-36968",
+      "sport": "Volleyball",
+      "matchup": "Friso Sneek vs  Booleans / VV Utrecht",
+      "competition": "Dutch Eredivisie Women",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "CEV National Leagues",
+          "url": "https://www.cev.eu/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 36968,
+        "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/VC_Sneek_W_vs_VV_Utrecht_W/21?event_id=36968",
+        "market": "Win Match",
+        "selection": "VC Sneek W",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "vol-pol1-jel-nys-36979",
+      "sport": "Volleyball",
+      "matchup": "IM Rekord Volley Jelcz-Laskowice vs PSG Stal Nysa",
+      "competition": "Polish PLS 1. Liga Men",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "PLS / PlusLiga Portal",
+          "url": "https://www.plusliga.pl/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 36979,
+        "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Jelcz_Laskowice_vs_Stal_Nysa/21?event_id=36979",
+        "market": "Win Match",
+        "selection": "Stal Nysa",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "vol-pol1-gwa-bed-36980",
+      "sport": "Volleyball",
+      "matchup": "Gwardia Wrocław vs Nowak-Mosty MKS Będzin",
+      "competition": "Polish PLS 1. Liga Men",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "Newly tipped live OLBG fixture captured at 06:48Z"
+      ],
+      "official_sources": [
+        {
+          "label": "PLS / PlusLiga Portal",
+          "url": "https://www.plusliga.pl/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 36980,
+        "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Gwardia_Wroclaw_vs_MKS_Bedzin/21?event_id=36980",
+        "market": "Win Match",
+        "selection": "MKS Bedzin",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "vol-pol1-bel-rad-36982",
+      "sport": "Volleyball",
+      "matchup": "SPS Chrobry / Belsk Duży vs Enea Czarni Radom",
+      "competition": "Polish PLS 1. Liga / Cup Men",
+      "verification_status": "unverified",
+      "blank_fields": [
+        "venue",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "Newly tipped lower-tier tie on OLBG at 06:48Z; official lower-division match sheet unconfirmed so venue & standings left blank"
+      ],
+      "official_sources": [
+        {
+          "label": "PZPS Polish Volleyball Federation",
+          "url": "https://www.pzps.pl/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 36982,
+        "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Belsk_Duzy_vs_Czarni_Radom/21?event_id=36982",
+        "market": "Win Match",
+        "selection": "Czarni Radom",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "vol-pol2-szc-sed-36988",
+      "sport": "Volleyball",
+      "matchup": "SMS PZPS Szczyrk II W vs Marba Sędziszów Małopolski W",
+      "competition": "Polish Lower-Division Women",
+      "verification_status": "unverified",
+      "blank_fields": [
+        "start_utc",
+        "venue",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "Newly tipped lower-division women's fixture on OLBG; flagged unverified with venue/UTC/standings blank"
+      ],
+      "official_sources": [
+        {
+          "label": "PZPS Polish Volleyball Federation",
+          "url": "https://www.pzps.pl/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 36988,
+        "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/SMS_PZPS_Szczyrk_II_W_vs_Marba_Sedziszow_Malopolski_W/21?event_id=36988",
+        "market": "Win Match",
+        "selection": "SMS PZPS Szczyrk II W",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": true
+      }
+    },
+    {
+      "event_id": "cric-afg-ban-188824",
+      "sport": "Cricket",
+      "matchup": "Afghanistan vs Bangladesh",
+      "competition": "UAE Men's ODI Tri-Nation Series — Match #274658 (50 Overs)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Resolved session 2360a617 venue conflict ('Sharjah vs Abu Dhabi'): official icc-cricket.com match #274658 confirms Sharjah Cricket Stadium at 11:30 UTC"
+      ],
+      "official_sources": [
+        {
+          "label": "ICC Match Center #274658",
+          "url": "https://www.icc-cricket.com/matches/274658/afghanistan-vs-bangladesh"
+        },
+        {
+          "label": "ICC Team Rankings",
+          "url": "https://www.icc-cricket.com/rankings"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 188824,
+        "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Afghanistan_vs_Bangladesh_One_Day_Match/7?event_id=188824",
+        "market": "Win Match",
+        "selection": "Afghanistan",
+        "tips": "7/7 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "cric-nzl-ind-188814",
+      "sport": "Cricket",
+      "matchup": "New Zealand vs India",
+      "competition": "India Tour of New Zealand — 1st Men's T20I (Match #271646)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/fixtures.json listed start as 06:15Z and India as #2 (267); official icc-cricket.com has 07:00Z and India #1 (268)"
+      ],
+      "official_sources": [
+        {
+          "label": "ICC Match Center #271646",
+          "url": "https://www.icc-cricket.com/matches/271646/new-zealand-vs-india"
+        },
+        {
+          "label": "NZC Official Fixtures",
+          "url": "https://scoring.nzc.nz/fixtures"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 188814,
+        "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/New_Zealand_vs_India_1st_T20_Match/7?event_id=188814",
+        "market": "Win Match",
+        "selection": "India",
+        "tips": "5/7 (71%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "cric-ausw-nzw-188826",
+      "sport": "Cricket",
+      "matchup": "Australia Women vs New Zealand Women",
+      "competition": "Trans-Tasman Women's T20I Series — 3rd T20I",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Major venue error caught in prior data/predictions.json [21]: 3rd T20I is at North Sydney Oval, Sydney (scoring.nzc.nz), NOT Manuka Oval, Canberra!"
+      ],
+      "official_sources": [
+        {
+          "label": "NZC Official Match Center",
+          "url": "https://scoring.nzc.nz/fixtures"
+        },
+        {
+          "label": "ICC Women's T20I Rankings",
+          "url": "https://www.icc-cricket.com/rankings"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 188826,
+        "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Australia_W_vs_New_Zealand_W_3rd_T20_Match/7?event_id=188826",
+        "market": "Win Match",
+        "selection": "Australia W",
+        "tips": "1/2 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "cric-nam-ire-188828",
+      "sport": "Cricket",
+      "matchup": "Namibia vs Ireland",
+      "competition": "Ireland Tour / Bilateral Men's 1st ODI (50 Overs)",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "venue"
+      ],
+      "flags": [
+        "Exact ground left blank pending final ICC match card"
+      ],
+      "official_sources": [
+        {
+          "label": "ICC Men's ODI Rankings",
+          "url": "https://www.icc-cricket.com/rankings"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 188828,
+        "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Namibia_vs_Ireland_1st_ODI/7?event_id=188828",
+        "market": "Win Match",
+        "selection": "Ireland",
+        "tips": "3/3 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "cric-eng-slk-188829",
+      "sport": "Cricket",
+      "matchup": "Sri Lanka vs England",
+      "competition": "England vs Sri Lanka One-Day International (50 Overs)",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "venue"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "ICC Men's ODI Rankings",
+          "url": "https://www.icc-cricket.com/rankings"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 188829,
+        "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/England_vs_Sri_Lanka_One_Day_Match/7?event_id=188829",
+        "market": "Win Match",
+        "selection": "England",
+        "tips": "1/2 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "cric-csa-nch-grb-188823",
+      "sport": "Cricket",
+      "matchup": "Northern Cape Heat vs Garden Route Badgers",
+      "competition": "CSA Provincial T20 Knock-Out (South Africa)",
+      "verification_status": "unverified",
+      "blank_fields": [
+        "venue",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "CSA Division 2 T20 fixture sheet not directly fetched on cricket.co.za; flagged unverified with stats/venue blank"
+      ],
+      "official_sources": [
+        {
+          "label": "Cricket South Africa Official",
+          "url": "https://cricket.co.za/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 188823,
+        "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Northern_Cape_Heat_vs_Garden_Route_Badgers_T20/7?event_id=188823",
+        "market": "Win Match",
+        "selection": "Garden Route Badgers",
+        "tips": "5/8 (63%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "cric-csa-nwd-lim-188810",
+      "sport": "Cricket",
+      "matchup": "North West Dragons vs Limpopo Impalas",
+      "competition": "CSA Provincial T20 Challenge (South Africa)",
+      "verification_status": "unverified",
+      "blank_fields": [
+        "venue",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "CSA domestic T20 standings unconfirmed online; stats & ground left blank"
+      ],
+      "official_sources": [
+        {
+          "label": "Cricket South Africa Official",
+          "url": "https://cricket.co.za/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 188810,
+        "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/North_West_Dragons_vs_Limpopo_Impalas_T20/7?event_id=188810",
+        "market": "Win Match",
+        "selection": "North West Dragons",
+        "tips": "5/6 (83%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "cric-csa-est-tus-188811",
+      "sport": "Cricket",
+      "matchup": "Eastern Storm vs Tuskers",
+      "competition": "CSA Provincial T20 Knock-Out (South Africa)",
+      "verification_status": "unverified",
+      "blank_fields": [
+        "venue",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "CSA domestic T20 standings unconfirmed online; stats & ground left blank"
+      ],
+      "official_sources": [
+        {
+          "label": "Cricket South Africa Official",
+          "url": "https://cricket.co.za/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 188811,
+        "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Eastern_Storm_vs_Tuskers_T20/7?event_id=188811",
+        "market": "Win Match",
+        "selection": "Eastern Storm",
+        "tips": "4/4 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "cric-csa-mpu-sae-188825",
+      "sport": "Cricket",
+      "matchup": "Mpumalanga Rhinos vs South Africa Emerging",
+      "competition": "CSA Provincial T20 Knock-Out (South Africa)",
+      "verification_status": "unverified",
+      "blank_fields": [
+        "venue",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "CSA domestic T20 standings unconfirmed online; stats & ground left blank"
+      ],
+      "official_sources": [
+        {
+          "label": "Cricket South Africa Official",
+          "url": "https://cricket.co.za/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 188825,
+        "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Mpumalanga_Rhinos_vs_South_Africa_Emerging_T20/7?event_id=188825",
+        "market": "Win Match",
+        "selection": "South Africa Emerging",
+        "tips": "1/2 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "cric-out-wbbl26-187184",
+      "sport": "Cricket",
+      "matchup": "Sydney Sixers Women (Outright) vs The Field (7 Franchises)",
+      "competition": "Weber WBBL|12 (2026) — Outright Winner",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "Cricket Australia / ICC",
+          "url": "https://www.icc-cricket.com/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 187184,
+        "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Big_Bash_Women_2026/7?event_id=187184",
+        "market": "Outright Winner",
+        "selection": "Sydney Sixers W",
+        "tips": "2/3 (67%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "cric-out-bbl2627-187503",
+      "sport": "Cricket",
+      "matchup": "Perth Scorchers / Brisbane Heat Co-Favs (Adelaide Strikers OLBG Lead) vs The Field (7 Franchises)",
+      "competition": "KFC Big Bash League 2026-27 — Outright Winner",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "ICC / Australian Domestic Calendar",
+          "url": "https://www.icc-cricket.com/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 187503,
+        "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/T20_Big_Bash_2026-27/7?event_id=187503",
+        "market": "Outright Winner",
+        "selection": "Adelaide Strikers",
+        "tips": "1/2 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "cric-out-sa20-187504",
+      "sport": "Cricket",
+      "matchup": "Sunrisers Eastern Cape / MI Cape Town (Pretoria Capitals OLBG Lead) vs The Field (5 Franchises)",
+      "competition": "Betway SA20 2026-27 — Outright Winner",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "Cricket South Africa Official",
+          "url": "https://cricket.co.za/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 187504,
+        "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/SA20_2026-27/7?event_id=187504",
+        "market": "Outright Winner",
+        "selection": "Pretoria Capitals",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "cric-out-blast27-188350",
+      "sport": "Cricket",
+      "matchup": "Surrey / Somerset (Sussex EW OLBG Lead) vs The Field (17 Counties)",
+      "competition": "Vitality T20 Blast 2027 — Outright Winner",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [],
+      "flags": [
+        "Upstream OLBG bug BUG-OLBG-EW-DIVZERO: displays '0 / 0 Win Tips' (0%) when tipsters place Each-Way-only tips"
+      ],
+      "official_sources": [
+        {
+          "label": "ICC / ECB Calendar Context",
+          "url": "https://www.icc-cricket.com/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 188350,
+        "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/T20_Blast_2027/7?event_id=188350",
+        "market": "Outright Winner",
+        "selection": "Sussex",
+        "tips": "0/0 Win Tips (EW only bug!)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ru-prod2-mon-oyo-609556",
+      "sport": "Rugby Union",
+      "matchup": "US Montauban vs Oyonnax Rugby",
+      "competition": "French Pro D2 — Round 8",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "Pro D2 Round 8 schedule verified on prod2.lnr.fr; exact J7 club points left blank"
+      ],
+      "official_sources": [
+        {
+          "label": "LNR Pro D2 Official Calendar",
+          "url": "https://prod2.lnr.fr/calendrier-et-resultats"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 609556,
+        "url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/Montauban_v_Oyonnax/9?event_id=609556",
+        "market": "To Win",
+        "selection": "Oyonnax",
+        "tips": "5/7 (71%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ru-prod2-nar-bri-609557",
+      "sport": "Rugby Union",
+      "matchup": "RC Narbonne vs CA Brive",
+      "competition": "French Pro D2 — Round 8",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "LNR Pro D2 Official Calendar",
+          "url": "https://prod2.lnr.fr/calendrier-et-resultats"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 609557,
+        "url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/Narbonne_v_Brive/9?event_id=609557",
+        "market": "To Win",
+        "selection": "Narbonne",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ru-prod2-age-nic-609558",
+      "sport": "Rugby Union",
+      "matchup": "SU Agen vs Stade Niçois (Nice)",
+      "competition": "French Pro D2 — Round 8",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "LNR Pro D2 Official Calendar",
+          "url": "https://prod2.lnr.fr/calendrier-et-resultats"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 609558,
+        "url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/Agen_v_Nissa/9?event_id=609558",
+        "market": "To Win",
+        "selection": "Nissa",
+        "tips": "3/4 (75%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ru-prod2-val-col-609559",
+      "sport": "Rugby Union",
+      "matchup": "Valence Romans Drôme vs Colomiers Rugby",
+      "competition": "French Pro D2 — Round 8",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "LNR Pro D2 Official Calendar",
+          "url": "https://prod2.lnr.fr/calendrier-et-resultats"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 609559,
+        "url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/Valence_Romans_v_Colomiers/9?event_id=609559",
+        "market": "To Win",
+        "selection": "Colomiers",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ru-prod2-aur-nev-609560",
+      "sport": "Rugby Union",
+      "matchup": "Stade Aurillacois vs USON Nevers",
+      "competition": "French Pro D2 — Round 8",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "LNR Pro D2 Official Calendar",
+          "url": "https://prod2.lnr.fr/calendrier-et-resultats"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 609560,
+        "url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/Aurillac_v_Nevers/9?event_id=609560",
+        "market": "To Win",
+        "selection": "Nevers",
+        "tips": "2/4 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ru-prod2-gre-bia-609561",
+      "sport": "Rugby Union",
+      "matchup": "FC Grenoble Rugby vs Biarritz Olympique",
+      "competition": "French Pro D2 — Round 8",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "LNR Pro D2 Official Calendar",
+          "url": "https://prod2.lnr.fr/calendrier-et-resultats"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 609561,
+        "url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/Grenoble_v_Biarritz/9?event_id=609561",
+        "market": "Handicap",
+        "selection": "Biarritz +11.50",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ru-prod2-pro-bez-609562",
+      "sport": "Rugby Union",
+      "matchup": "Provence Rugby vs AS Béziers Hérault",
+      "competition": "French Pro D2 — Round 8",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "LNR Pro D2 Official Calendar",
+          "url": "https://prod2.lnr.fr/calendrier-et-resultats"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 609562,
+        "url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/Provence_v_Beziers/9?event_id=609562",
+        "market": "Handicap",
+        "selection": "Beziers +28.50",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "ru-prod2-sax-dax-609563",
+      "sport": "Rugby Union",
+      "matchup": "Soyaux-Angoulême XV vs US Dax",
+      "competition": "French Pro D2 — Round 8",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "LNR Pro D2 Official Calendar",
+          "url": "https://prod2.lnr.fr/calendrier-et-resultats"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 609563,
+        "url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/Soyaux_Angouleme_v_Dax/9?event_id=609563",
+        "market": "To Win",
+        "selection": "Dax",
+        "tips": "3/3 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "rl-wc26-aus-fij",
+      "sport": "Rugby League",
+      "matchup": "Australia Kangaroos vs Fiji Bati",
+      "competition": "2026 Rugby League World Cup Men — Round 2",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Active RLWC26 Round 2 match verified on nrl.com; OLBG Rugby League hub displays 0 match markets"
+      ],
+      "official_sources": [
+        {
+          "label": "NRL / RLWC26 Official Draw",
+          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+        }
+      ],
+      "olbg": {
+        "listed": false,
+        "event_id": null,
+        "url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+        "market": "OLBG Blind Spot (0 match tips)",
+        "selection": "Unlisted on OLBG",
+        "tips": "0/0",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "rl-wc26-nzl-cok",
+      "sport": "Rugby League",
+      "matchup": "New Zealand Kiwis vs Cook Islands Aitu",
+      "competition": "2026 Rugby League World Cup Men — Round 2",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Active RLWC26 Round 2 match verified on nrl.com; unlisted on OLBG"
+      ],
+      "official_sources": [
+        {
+          "label": "NRL / RLWC26 Official Draw",
+          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+        }
+      ],
+      "olbg": {
+        "listed": false,
+        "event_id": null,
+        "url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+        "market": "OLBG Blind Spot (0 match tips)",
+        "selection": "Unlisted on OLBG",
+        "tips": "0/0",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "rl-wc26-eng-fra",
+      "sport": "Rugby League",
+      "matchup": "England vs France",
+      "competition": "2026 Rugby League World Cup Men — Round 2",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Active RLWC26 Round 2 match verified on nrl.com; unlisted on OLBG"
+      ],
+      "official_sources": [
+        {
+          "label": "NRL / RLWC26 Official Draw",
+          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+        }
+      ],
+      "olbg": {
+        "listed": false,
+        "event_id": null,
+        "url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+        "market": "OLBG Blind Spot (0 match tips)",
+        "selection": "Unlisted on OLBG",
+        "tips": "0/0",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "golf-genesis-101905",
+      "sport": "Golf",
+      "matchup": "Si Woo Kim (Tournament Outright) vs The Field (119 Players)",
+      "competition": "Genesis Championship (DP World Tour & KPGA Co-Sanctioned, $4M)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/fixtures.json swapped event_id to 101903 (Stifel Charity Classic) instead of 101905"
+      ],
+      "official_sources": [
+        {
+          "label": "DP World Tour 2026 Schedule",
+          "url": "https://www.europeantour.com/dpworld-tour/schedule/2026/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 101905,
+        "url": "https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Genesis_Championship/5?event_id=101905",
+        "market": "Win Tournament",
+        "selection": "Si Woo Kim",
+        "tips": "5/18 (28%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "golf-stifel-101903",
+      "sport": "Golf",
+      "matchup": "Steven Alker vs The Field (Playoff Qualifiers)",
+      "competition": "Stifel Charity Classic (PGA TOUR Champions Charles Schwab Cup Playoffs)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Prior repo data/fixtures.json swapped Stifel event_id to 101907 instead of live OLBG 101903"
+      ],
+      "official_sources": [
+        {
+          "label": "PGA TOUR Champions Schedule",
+          "url": "https://www.pgatour.com/pgatour-champions/schedule"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 101903,
+        "url": "https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Stifel_Charity_Classic/5?event_id=101903",
+        "market": "Win Tournament",
+        "selection": "Steven Alker",
+        "tips": "2/7 (29%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "golf-players-sa-101907",
+      "sport": "Golf",
+      "matchup": "Josh Armstrong vs The Field",
+      "competition": "Webex Players Series South Australia (PGA Tour of Australasia)",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "PGA Tour of Australasia",
+          "url": "https://pga.org.au/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 101907,
+        "url": "https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Players_Series_SA/5?event_id=101907",
+        "market": "Win Tournament",
+        "selection": "Josh Armstrong",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "golf-fortinet-101908",
+      "sport": "Golf",
+      "matchup": "Ryosuke Kinoshita vs The Field",
+      "competition": "Fortinet Players Cup (Japan Golf Tour / JGTO)",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "JGTO Official Schedule",
+          "url": "https://www.jgto.org/en/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 101908,
+        "url": "https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Fortinet_Players_Cup/5?event_id=101908",
+        "market": "Win Tournament",
+        "selection": "Ryosuke Kinoshita",
+        "tips": "1/2 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "golf-indiaw-101909",
+      "sport": "Golf",
+      "matchup": "Avani Prashanth vs The Field",
+      "competition": "Hero Women's Indian Open (Ladies European Tour)",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [],
+      "flags": [
+        "Upstream OLBG bug BUG-OLBG-EW-DIVZERO: displays '0 / 0 Win Tips' (0%) despite active Each-Way tips"
+      ],
+      "official_sources": [
+        {
+          "label": "Ladies European Tour Schedule",
+          "url": "https://ladieseuropeantour.com/schedule/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 101909,
+        "url": "https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Hero_Womens_Indian_Open/5?event_id=101909",
+        "market": "Win Tournament",
+        "selection": "Avani Prashanth",
+        "tips": "0/0 Win Tips (EW only bug!)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "golf-hkopen-101910",
+      "sport": "Golf",
+      "matchup": "Paul Casey vs The Field",
+      "competition": "Link Hong Kong Open (Asian Tour International Series)",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "Asian Tour Official Portal",
+          "url": "https://www.asiantour.com/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 101910,
+        "url": "https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Hong_Kong_Open/5?event_id=101910",
+        "market": "Win Tournament",
+        "selection": "Paul Casey",
+        "tips": "1/3 (33%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "golf-sen-ita-101911",
+      "sport": "Golf",
+      "matchup": "Mikael Lundberg vs The Field",
+      "competition": "Senior Italian Open (Legends Tour)",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "European / Legends Tour Portal",
+          "url": "https://www.europeantour.com/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 101911,
+        "url": "https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Senior_Italian_Open/5?event_id=101911",
+        "market": "Win Tournament",
+        "selection": "Mikael Lundberg",
+        "tips": "1/2 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "golf-stella-sa-101912",
+      "sport": "Golf",
+      "matchup": "Daniel van Tonder vs The Field",
+      "competition": "Stella Artois Players Championship (Sunshine Tour)",
+      "verification_status": "tour_calendar_verified",
+      "blank_fields": [],
+      "flags": [],
+      "official_sources": [
+        {
+          "label": "Sunshine Tour Official Portal",
+          "url": "https://sunshinetour.com/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 101912,
+        "url": "https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Stella_Artois_Players_Championship/5?event_id=101912",
+        "market": "Win Tournament",
+        "selection": "Daniel van Tonder",
+        "tips": "1/2 (50%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "f1-drivers-title-828",
+      "sport": "Motor Racing",
+      "matchup": "Kimi Antonelli (Mercedes) vs The Field (Russell 238, Hamilton 229, Verstappen 221)",
+      "competition": "2026 FIA Formula 1 World Drivers' Championship — Outright",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Massive stale-tip crowd anomaly on OLBG: 9/33 tipsters still sit on pre-season/early-season Max Verstappen (4th on 221 pts, 119 pts behind Antonelli's 340 pts)"
+      ],
+      "official_sources": [
+        {
+          "label": "Formula1.com Official 2026 Drivers' Standings",
+          "url": "https://www.formula1.com/en/results/2026/drivers"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 828,
+        "url": "https://www.olbg.com/betting-tips/Motor_Racing/All_Motor_Racing/All_Events/Formula_1_Drivers_Championship_2026/14?event_id=828",
+        "market": "Win Tournament",
+        "selection": "Max Verstappen",
+        "tips": "9/33 (27%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "aflw-r11-nmfc-adel",
+      "sport": "Aussie Rules",
+      "matchup": "North Melbourne Tasmanian Kangaroos vs Adelaide Crows",
+      "competition": "2026 NAB AFLW Premiership Season — Round 11 (Match #8979)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Re-priced from live official 2026 AFLW R10 ladder (closes repo open item F-T34-01 / T35); North Hobart Oval venue confirmed"
+      ],
+      "official_sources": [
+        {
+          "label": "NAB AFLW Official R11 Board",
+          "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "label": "NAB AFLW Official 2026 Ladder",
+          "url": "https://www.afl.com.au/aflw/ladder"
+        }
+      ],
+      "olbg": {
+        "listed": false,
+        "event_id": null,
+        "url": "https://www.olbg.com/betting-tips/Aussie_Rules/22",
+        "market": "OLBG Blind Spot (0 match tips)",
+        "selection": "Unlisted on OLBG",
+        "tips": "0/0",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "aflw-r11-carl-gws",
+      "sport": "Aussie Rules",
+      "matchup": "Carlton vs GWS GIANTS",
+      "competition": "2026 NAB AFLW Premiership Season — Round 11 (Match #8975)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Re-priced from live official 2026 AFLW R10 ladder (7-3-0, 28 pts, 133.0% vs 2-8-0, 8 pts, 68.2%)"
+      ],
+      "official_sources": [
+        {
+          "label": "NAB AFLW Official R11 Board",
+          "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "label": "NAB AFLW Official 2026 Ladder",
+          "url": "https://www.afl.com.au/aflw/ladder"
+        }
+      ],
+      "olbg": {
+        "listed": false,
+        "event_id": null,
+        "url": "https://www.olbg.com/betting-tips/Aussie_Rules/22",
+        "market": "OLBG Blind Spot (0 match tips)",
+        "selection": "Unlisted on OLBG",
+        "tips": "0/0",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "aflw-r11-haw-ess",
+      "sport": "Aussie Rules",
+      "matchup": "Hawthorn vs Essendon",
+      "competition": "2026 NAB AFLW Premiership Season — Round 11 (Match #8976)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Re-priced from live official 2026 AFLW R10 ladder; venue corrected to Kennedy Community Centre, Dingley"
+      ],
+      "official_sources": [
+        {
+          "label": "NAB AFLW Official R11 Board",
+          "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "label": "NAB AFLW Official 2026 Ladder",
+          "url": "https://www.afl.com.au/aflw/ladder"
+        }
+      ],
+      "olbg": {
+        "listed": false,
+        "event_id": null,
+        "url": "https://www.olbg.com/betting-tips/Aussie_Rules/22",
+        "market": "OLBG Blind Spot (0 match tips)",
+        "selection": "Unlisted on OLBG",
+        "tips": "0/0",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "aflw-r11-geel-fre",
+      "sport": "Aussie Rules",
+      "matchup": "Geelong Cats vs Fremantle",
+      "competition": "2026 NAB AFLW Premiership Season — Round 11 (Match #8974)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Major T35 re-price fix: Geelong sit 2nd on 36 pts (9-1-0, 167.2%), flipping wrong prior underdog price into strong home favourite"
+      ],
+      "official_sources": [
+        {
+          "label": "NAB AFLW Official R11 Board",
+          "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "label": "NAB AFLW Official 2026 Ladder",
+          "url": "https://www.afl.com.au/aflw/ladder"
+        }
+      ],
+      "olbg": {
+        "listed": false,
+        "event_id": null,
+        "url": "https://www.olbg.com/betting-tips/Aussie_Rules/22",
+        "market": "OLBG Blind Spot (0 match tips)",
+        "selection": "Unlisted on OLBG",
+        "tips": "0/0",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "aflw-r11-wb-melb",
+      "sport": "Aussie Rules",
+      "matchup": "Western Bulldogs vs Melbourne",
+      "competition": "2026 NAB AFLW Premiership Season — Round 11 (Match #8973)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Major T35 re-price fix: Western Bulldogs sit 4th on 32 pts (8-2-0) facing 3rd Melbourne (32 pts, 177.2%) — tight top-four clash"
+      ],
+      "official_sources": [
+        {
+          "label": "NAB AFLW Official R11 Board",
+          "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "label": "NAB AFLW Official 2026 Ladder",
+          "url": "https://www.afl.com.au/aflw/ladder"
+        }
+      ],
+      "olbg": {
+        "listed": false,
+        "event_id": null,
+        "url": "https://www.olbg.com/betting-tips/Aussie_Rules/22",
+        "market": "OLBG Blind Spot (0 match tips)",
+        "selection": "Unlisted on OLBG",
+        "tips": "0/0",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "aflw-r11-gcfc-rich",
+      "sport": "Aussie Rules",
+      "matchup": "Gold Coast SUNS vs Richmond",
+      "competition": "2026 NAB AFLW Premiership Season — Round 11 (Match #8972)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Major T35 re-price fix: Gold Coast sit 5th on 28 pts (7-3-0, 138.9%), overturning wrong prior 18th-place 1-9 pricing"
+      ],
+      "official_sources": [
+        {
+          "label": "NAB AFLW Official R11 Board",
+          "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "label": "NAB AFLW Official 2026 Ladder",
+          "url": "https://www.afl.com.au/aflw/ladder"
+        }
+      ],
+      "olbg": {
+        "listed": false,
+        "event_id": null,
+        "url": "https://www.olbg.com/betting-tips/Aussie_Rules/22",
+        "market": "OLBG Blind Spot (0 match tips)",
+        "selection": "Unlisted on OLBG",
+        "tips": "0/0",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "aflw-r11-stk-bl",
+      "sport": "Aussie Rules",
+      "matchup": "St Kilda vs Brisbane Lions",
+      "competition": "2026 NAB AFLW Premiership Season — Round 11 (Match #8971)",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Re-priced from live official 2026 AFLW R10 ladder: 18th St Kilda (1-9-0, 4 pts) vs 14th Brisbane (3-7-0, 12 pts, 89.7%)"
+      ],
+      "official_sources": [
+        {
+          "label": "NAB AFLW Official R11 Board",
+          "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "label": "NAB AFLW Official 2026 Ladder",
+          "url": "https://www.afl.com.au/aflw/ladder"
+        }
+      ],
+      "olbg": {
+        "listed": false,
+        "event_id": null,
+        "url": "https://www.olbg.com/betting-tips/Aussie_Rules/22",
+        "market": "OLBG Blind Spot (0 match tips)",
+        "selection": "Unlisted on OLBG",
+        "tips": "0/0",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "esports-lol-tsw-lyon",
+      "sport": "eSports",
+      "matchup": "Team Secret Whales vs LYON",
+      "competition": "2026 League of Legends World Championship — Swiss Stage",
+      "verification_status": "verified",
+      "blank_fields": [
+        "start_utc"
+      ],
+      "flags": [
+        "OLBG eSports hub displays legacy CS:GO/FIFA copy & 0 active match tips during LoL Worlds 2026 Swiss Stage"
+      ],
+      "official_sources": [
+        {
+          "label": "LoL Esports Official Hub",
+          "url": "https://lolesports.com/en-US/"
+        }
+      ],
+      "olbg": {
+        "listed": false,
+        "event_id": null,
+        "url": "https://www.olbg.com/betting-tips/eSports/23",
+        "market": "OLBG Blind Spot (0 match tips)",
+        "selection": "Unlisted on OLBG",
+        "tips": "0/0",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "gaa-wat-rat-nir-3536",
+      "sport": "Gaelic Football",
+      "matchup": "Rathgormack vs The Nire",
+      "competition": "Waterford Senior Football Championship — Final",
+      "verification_status": "verified",
+      "blank_fields": [],
+      "flags": [
+        "Upstream OLBG defect BUG-OLBG-3536-DATE: OLBG lists 01 Nov 10:30, a full week after official Munster GAA fixture (Sun 25 Oct 2026, 14:30 UTC at Fraher Field)"
+      ],
+      "official_sources": [
+        {
+          "label": "Munster GAA Official Championship Fixtures",
+          "url": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 3536,
+        "url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/Rathgormack_v_The_Nire/25?event_id=3536",
+        "market": "Handicap",
+        "selection": "Rathgormack -2.50",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "gaa-cork-kan-eir-3531",
+      "sport": "Gaelic Football",
+      "matchup": "Kanturk vs Éire Óg (Cork)",
+      "competition": "Cork Senior A / Club Football (OLBG Listing)",
+      "verification_status": "unverified",
+      "blank_fields": [
+        "start_utc",
+        "venue",
+        "stat_a",
+        "stat_b"
+      ],
+      "flags": [
+        "Flagged unverified: OLBG lists 'Kanturk v Eire Og Cor' on 01 Nov 09:00, unconfirmed on current Cork GAA Senior PSFC final sheet; UTC & venue left blank"
+      ],
+      "official_sources": [
+        {
+          "label": "Cork GAA Official Fixtures",
+          "url": "https://gaacork.ie/fixtures-results/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 3531,
+        "url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/Kanturk_v_Eire_Og_Cor/25?event_id=3531",
+        "market": "To Win",
+        "selection": "Kanturk",
+        "tips": "3/4 (75%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "grey-harlow-1032-689384",
+      "sport": "Greyhounds",
+      "matchup": "Makeit Sway (OLBG Most-Tipped Runner) vs The Field (5 Graded Runners)",
+      "competition": "GBGB UK Graded Greyhound Race — 10:32 BST Harlow",
+      "verification_status": "unverified",
+      "blank_fields": [
+        "stat_b"
+      ],
+      "flags": [
+        "OLBG renders '05:32' (EDT -5h from BST) beside '10:32 Harlow' with zero timezone label; GBGB API returned 404 so trap/form left blank & flagged unverified"
+      ],
+      "official_sources": [
+        {
+          "label": "GBGB Official Regulator Portal",
+          "url": "https://www.gbgb.org.uk/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 689384,
+        "url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/10:32_Harlow/28?event_id=689384",
+        "market": "Daily Races",
+        "selection": "Makeit Sway",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "grey-harlow-1048-689385",
+      "sport": "Greyhounds",
+      "matchup": "Moaning Cashout (OLBG Most-Tipped Runner) vs The Field (5 Graded Runners)",
+      "competition": "GBGB UK Graded Greyhound Race — 10:48 BST Harlow",
+      "verification_status": "unverified",
+      "blank_fields": [
+        "stat_b"
+      ],
+      "flags": [
+        "Unlabelled -5h EDT display ('05:48' for 10:48 BST = 09:48 UTC); runner form flagged unverified"
+      ],
+      "official_sources": [
+        {
+          "label": "GBGB Official Regulator Portal",
+          "url": "https://www.gbgb.org.uk/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 689385,
+        "url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/10:48_Harlow/28?event_id=689385",
+        "market": "Daily Races",
+        "selection": "Moaning Cashout",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "grey-monmore-1103-689387",
+      "sport": "Greyhounds",
+      "matchup": "Relentless I Am (OLBG Most-Tipped Runner) vs The Field (5 Graded Runners)",
+      "competition": "GBGB UK Graded Greyhound Race — 11:03 BST Monmore",
+      "verification_status": "unverified",
+      "blank_fields": [
+        "stat_b"
+      ],
+      "flags": [
+        "Prior repo data/fixtures.json wrote wrong event_id=689386 on Monmore (live OLBG has 689387); runner trap form flagged unverified"
+      ],
+      "official_sources": [
+        {
+          "label": "GBGB Official Regulator Portal",
+          "url": "https://www.gbgb.org.uk/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 689387,
+        "url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/11:03_Monmore/28?event_id=689387",
+        "market": "Daily Races",
+        "selection": "Relentless I Am",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "grey-harlow-1104-689383",
+      "sport": "Greyhounds",
+      "matchup": "Muinteoir Jane (OLBG Most-Tipped Runner) vs The Field (5 Graded Runners)",
+      "competition": "GBGB UK Graded Greyhound Race — 11:04 BST Harlow",
+      "verification_status": "unverified",
+      "blank_fields": [
+        "stat_b"
+      ],
+      "flags": [
+        "Unlabelled -5h EDT display ('06:04' for 11:04 BST = 10:04 UTC); runner form flagged unverified"
+      ],
+      "official_sources": [
+        {
+          "label": "GBGB Official Regulator Portal",
+          "url": "https://www.gbgb.org.uk/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 689383,
+        "url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/11:04_Harlow/28?event_id=689383",
+        "market": "Daily Races",
+        "selection": "Muinteoir Jane",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "grey-nott-1109-689386",
+      "sport": "Greyhounds",
+      "matchup": "Bluejig Polly (OLBG Most-Tipped Runner) vs The Field (5 Graded Runners)",
+      "competition": "GBGB UK Graded Greyhound Race — 11:09 BST Nottingham",
+      "verification_status": "unverified",
+      "blank_fields": [
+        "stat_b"
+      ],
+      "flags": [
+        "Prior repo data/fixtures.json swapped Nottingham event_id to 689390 (live OLBG has 689386); runner form flagged unverified"
+      ],
+      "official_sources": [
+        {
+          "label": "GBGB Official Regulator Portal",
+          "url": "https://www.gbgb.org.uk/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 689386,
+        "url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/11:09_Nottingham/28?event_id=689386",
+        "market": "Daily Races",
+        "selection": "Bluejig Polly",
+        "tips": "1/1 (100%)",
+        "newly_captured_0649z": false
+      }
+    },
+    {
+      "event_id": "grey-kinsley-1114-689390",
+      "sport": "Greyhounds",
+      "matchup": "Swift Perry (OLBG Consensus Runner) vs The Field (5 Graded Runners)",
+      "competition": "GBGB UK Graded Greyhound Race — 11:14 BST Kinsley",
+      "verification_status": "unverified",
+      "blank_fields": [
+        "stat_b"
+      ],
+      "flags": [
+        "Prior repo data/fixtures.json swapped Kinsley event_id to 689388 (live OLBG has 689390); runner form flagged unverified"
+      ],
+      "official_sources": [
+        {
+          "label": "GBGB Official Regulator Portal",
+          "url": "https://www.gbgb.org.uk/"
+        }
+      ],
+      "olbg": {
+        "listed": true,
+        "event_id": 689390,
+        "url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/11:14_Kinsley/28?event_id=689390",
+        "market": "Daily Races",
+        "selection": "Swift Perry",
+        "tips": "2/2 (100%)",
+        "newly_captured_0649z": false
+      }
+    }
+  ]
+}
