@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "1.0.0",
+  "categories": [
+    {
+      "slug": "baseball",
+      "name": "Baseball",
+      "kicker": "World Series",
+      "description": "Official MLB postseason reconciliation and a pitcher-uncertainty-aware Game 1 line.",
+      "status": "verified"
+    },
+    {
+      "slug": "basketball",
+      "name": "Basketball",
+      "kicker": "NBA + international clubs",
+      "description": "The 20-row visible feed plus two official NBA schedule omissions, separated and labeled.",
+      "status": "review"
+    },
+    {
+      "slug": "cricket",
+      "name": "Cricket",
+      "kicker": "International + CSA",
+      "description": "Nine current rows from the latest capture; older stale rows were superseded, not blended in.",
+      "status": "verified"
+    },
+    {
+      "slug": "darts",
+      "name": "Darts",
+      "kicker": "PDC European Championship",
+      "description": "All 16 first-round ties matched line by line to the official PDC schedule.",
+      "status": "verified"
+    },
+    {
+      "slug": "gaelic-football",
+      "name": "Gaelic Football",
+      "kicker": "Four club finals",
+      "description": "Official county-board ordering and dates replace conflicting display values in every row.",
+      "status": "review"
+    },
+    {
+      "slug": "golf",
+      "name": "Golf",
+      "kicker": "Outrights only",
+      "description": "No head-to-head match rows were visible. Seven event outrights were classified separately and excluded from match-line counts.",
+      "status": "review",
+      "emptyReason": "OUTRIGHTS_ONLY"
+    },
+    {
+      "slug": "greyhounds",
+      "name": "Greyhounds",
+      "kicker": "Race cards unavailable",
+      "description": "No reproducible official future-card feed exposed runners, traps or grades. Those values remain blank and flagged.",
+      "status": "review",
+      "emptyReason": "UNVERIFIED_RACECARDS"
+    },
+    {
+      "slug": "handball",
+      "name": "Handball",
+      "kicker": "EHF + domestic leagues",
+      "description": "Twenty fixtures with official competition links; the Estonia–Kosovo time conflict is preserved.",
+      "status": "review"
+    },
+    {
+      "slug": "ice-hockey",
+      "name": "Ice Hockey",
+      "kicker": "NHL + ICEHL + SHL",
+      "description": "Six fixtures verified; Timrå–Färjestad remains deliberately unconfirmed and low confidence.",
+      "status": "review"
+    },
+    {
+      "slug": "motor-racing",
+      "name": "Motor Racing",
+      "kicker": "Outright only",
+      "description": "The US Grand Prix outright was classified as an event market, not a match, and excluded from match-line counts.",
+      "status": "verified",
+      "emptyReason": "OUTRIGHTS_ONLY"
+    },
+    {
+      "slug": "rugby-league",
+      "name": "Rugby League",
+      "kicker": "Future outrights only",
+      "description": "Three 2027 tournament outrights were visible; no current head-to-head match row was published.",
+      "status": "verified",
+      "emptyReason": "OUTRIGHTS_ONLY"
+    },
+    {
+      "slug": "rugby-union",
+      "name": "Rugby Union",
+      "kicker": "Pro D2 + Top 14 + URC",
+      "description": "Fifteen official fixtures, with competition-specific totals and uncertainty-aware winner lines.",
+      "status": "verified"
+    },
+    {
+      "slug": "snooker",
+      "name": "Snooker",
+      "kicker": "Northern Ireland Open",
+      "description": "All six visible matches are linked to the official World Snooker Tour match centre.",
+      "status": "verified"
+    },
+    {
+      "slug": "tennis",
+      "name": "Tennis",
+      "kicker": "ATP + WTA",
+      "description": "Twenty timestamped rows across Almaty, Lyon, Ningbo and other official tour draws.",
+      "status": "verified"
+    },
+    {
+      "slug": "volleyball",
+      "name": "Volleyball",
+      "kicker": "Latest volatile snapshot",
+      "description": "The latest 15-row capture supersedes an earlier slate; three rows remain not fully confirmed.",
+      "status": "review"
+    }
+  ]
+}
