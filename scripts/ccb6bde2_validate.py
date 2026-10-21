@@ -81,7 +81,7 @@ def main() -> None:
                   f"{r['id']}: prediction quotes {nums[0]} but v2.1 winner price is {pick_odds}")
 
     def ngrams(t: str, n: int = 6):
-        w = re.findall(r"[a-z]+(?:'[a-z]+)?|\d+(?:\.\d+)?", t.lower())
+        w = re.findall(r"[a-z0-9]+(?:\.[0-9]+)?(?:'[a-z]+)?", t.lower())
         return {" ".join(w[i:i + n]) for i in range(len(w) - n + 1)}
     for i in range(len(texts)):
         for j in range(i + 1, len(texts)):

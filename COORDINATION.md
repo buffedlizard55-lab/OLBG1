@@ -77,10 +77,19 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T9 | Line-by-line audit of existing repo files (`data/*.json`, `scripts/*`, tracked `.pyc` artifacts) + official-source verification across all 17 covered sports (closing all §5.7 gaps) | in progress | f7fa77fc-olbg1 | `reports/REPO_LINE_BY_LINE_AUDIT.md`, `datasets/matches_full.json`, `datasets/flagged_for_review.json`, `.gitignore` | 2026-10-21T05:26Z | Verifying existing 50 rows + all 9 previously uninvestigated sports + EuroLeague/EuroCup/BCL/KBL/URC/Top14/ProD2/Darts/Golf/GAA |
 | T10 | Complete multi-market line origination & confidence grading across all verified matches + real PDC Order of Merit, ATP/WTA rankings, NBA/EuroLeague/NHL/Rugby/Handball/Volleyball ratings | queued | f7fa77fc-olbg1 | `scripts/model.py`, `scripts/origin_lines.py`, `data/fixtures.json`, `data/lines.json`, `data/sources.json`, `data/coverage.json`, `datasets/matches_full.csv` | — | Closes §5.7 items 1–4 + full multi-market lines |
 | T11 | Unique ≥30-word human predictions with real verified form & match history for every high-confidence selection | queued | f7fa77fc-olbg1 | `data/predictions.json`, `datasets/matches_full.json` | — | Strict official-source verification on every claim |
-| T12 | Upgraded dashboard UI + Markets Explorer + Repo Audit & Flagged-for-Review pages + full validator gate + PR & merge to `main` + live GitHub Pages check | done | f7fa77fc-olbg1 | `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration session handoff after `ce5920e3-olbg1` completed (executed via PRs #17–#18) |
-| T13 | Deep market investigation per sport (winner, handicap, totals, correct score, frames/legs, O/U 180s, touchdown/first-try etc.) — per-match expanded market coverage | done | ccb6bde2-olbg1 | `data/market_taxonomy-ccb6bde2.json`, `data/market_expansion-ccb6bde2.json`, `scripts/ccb6bde2_market_engine.py`, `scripts/ccb6bde2_expand_markets.py` | 2026-10-21T06:45Z | 1,619 expanded markets across 126 matches; non-derivable markets registered as investigated-not-priced with missing official input named |
-| T14 | Model calibration audit + fix. Original hypothesis (logit slope too gentle) **refuted by measurement** — see F-CCB-12. Actual defects fixed: unshrunk small-sample record ratings, baseball venue double-count, stale/missing ATP ratings | done | ccb6bde2-olbg1 | `data/model_calibration-ccb6bde2.json`, `scripts/ccb6bde2_audit.py`, `scripts/ccb6bde2_expand_markets.py`, `data/market_expansion-ccb6bde2.json`, `data/predictions-ccb6bde2.json` | 2026-10-21T06:45Z | v2.1 in new files only; `data/lines.json` untouched. Highs 31→19, 3 pick changes, 4 fresh predictions |
-| T15 | New namespaced desk `ccb6bde2/` (landing + 17 sport subpages + markets explorer + predictions + flagged + methodology) + validator + PR & merge + Pages check | done | ccb6bde2-olbg1 | `ccb6bde2/**`, `scripts/ccb6bde2_build_site.py`, `scripts/ccb6bde2_validate.py`, `COORDINATION.md` (append-only) | 2026-10-21T06:45Z | 23 pages; all 3 repo validators pass; whole-tree sweep 153 pages / 4,038 refs / 0 broken |
+| T12 | Upgraded dashboard UI + Markets Explorer + Repo Audit & Flagged-for-Review pages + full validator gate + PR & merge to `main` + live GitHub Pages check | queued | f7fa77fc-olbg1 | `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration session handoff after `ce5920e3-olbg1` completed |
+| T13 | Post-integration reproducibility, count-consistency and provenance-shape audit (no live source re-certification) | done | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:45Z | Structural checks passed; F1–F3 and scope limits documented in report and §12. |
+| T14 | Publish audit findings as a standalone GitHub Pages review subpage | done | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.html`, append-only `COORDINATION.md` | 2026-10-21T06:56Z | Standalone additive page; PR #20 merged and Pages deploy verified. |
+| T15 | Independent second-pass market-coverage and whole-tree source-link structural audit | done | e92c2bf4-olbg1 | `reports/SESSION_E92_SNAPSHOT_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:41Z | Completed after T13; records eight unpriced field cards, one missing cricket total, snapshot window, and validator evidence limits; does not edit shared data/pages. |
+| T16 | Corrective primary-desk provenance, status disclosure, integration and Pages publication | done | 4904ed05-olbg1 | `COORDINATION.md`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/flagged_for_review.json`, `scripts/validate.py`, root `*.html`, `sports/*.html`, `assets/*`, `README.md` | 2026-10-21T06:41Z | PR #24 merged; Pages workflow 39558245786 completed successfully. Remediated F1–F3 without changing independent review artifacts. |
+| T20 | **Fresh live re-verification of every primary-desk row against official sources** (first pass in this repo to re-fetch official pages rather than audit structure), publication of a Live Verification page, corrections where fresh data disagrees, PR + merge + Pages deploy check | done | 72198d3e-olbg1 | `scripts/verify_live.py`, `reports/LIVE_VERIFICATION.md`, `live-verification.html`, `data/verification.json`, `data/fixtures.json` (corrections only), `data/predictions.json` (corrections only), `COORDINATION.md` (append-only) | 2026-10-21T07:05Z | Claimed 2026-10-21T07:05Z as T17; renumbered to T20 after a task-id collision with session 76950c25 (see §17). Independent of T13/T15/T16 which were structural audits; this task re-fetches each row's official source. Shared nav/`index.html` touched only at final integration. |
+
+| T17 | Live OLBG re-harvest of all 17 in-scope sport hubs + diff against the committed snapshot | done | 76950c25-olbg1 | `data/live_snapshot.json`, `data/live_diff.json`, `scripts/live_harvest.py` | 2026-10-21T07:10Z | Fresh fetch of every in-scope hub; per-event add/remove/consensus-change diff; no shared-file edits |
+| T18 | Official-source verification of refreshed/changed rows (MLB confirmation; other rows retain recorded governing-body sources) + unverified cards published blank | done | 76950c25-olbg1 | `scripts/dataset_rows_c.py`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `datasets/*`, `reports/SESSION_769_LIVE_REFRESH.md` | — | Blank-and-flag any value not confirmed on an official page |
+| T19 | Publish refresh on the dashboard (new Live Refresh + Flagged pages), validator gate, PR, merge and Pages deploy check | in progress | 76950c25-olbg1 | `live-refresh.html`, `flagged.html`, `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration for this session; append-only coordination log |
+| T21 | Deep market investigation per sport (winner, handicap, totals, correct score, frames/legs, O/U 180s, touchdown/first-try etc.) — per-match expanded market coverage | done | ccb6bde2-olbg1 | `data/market_taxonomy-ccb6bde2.json`, `data/market_expansion-ccb6bde2.json`, `scripts/ccb6bde2_market_engine.py`, `scripts/ccb6bde2_expand_markets.py` | 2026-10-21T06:45Z | 1,619 expanded markets across 126 matches; non-derivable markets registered as investigated-not-priced with missing official input named |
+| T22 | Model calibration audit + fix. Original hypothesis (logit slope too gentle) **refuted by measurement** — see F-CCB-12. Actual defects fixed: unshrunk small-sample record ratings, baseball venue double-count, stale/missing ATP ratings | done | ccb6bde2-olbg1 | `data/model_calibration-ccb6bde2.json`, `scripts/ccb6bde2_audit.py`, `scripts/ccb6bde2_expand_markets.py`, `data/market_expansion-ccb6bde2.json`, `data/predictions-ccb6bde2.json` | 2026-10-21T06:45Z | v2.1 in new files only; `data/lines.json` untouched. Highs 31→19, 3 pick changes, 4 fresh predictions |
+| T23 | New namespaced desk `ccb6bde2/` (landing + 17 sport subpages + markets explorer + predictions + flagged + methodology) + validator + PR & merge + Pages check | done | ccb6bde2-olbg1 | `ccb6bde2/**`, `scripts/ccb6bde2_build_site.py`, `scripts/ccb6bde2_validate.py`, `COORDINATION.md` (append-only) | 2026-10-21T06:45Z | 23 pages; all 3 repo validators pass; whole-tree sweep 153 pages / 4,038 refs / 0 broken |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -132,6 +141,8 @@ Sources page. Only governing bodies / official league endpoints are used for ver
 ---
 
 ## 4. Requests and conflict log
+
+**2026-10-21T06:55Z — session `8e12b936-olbg1` to site integration owner:** please surface F1–F3 from `reports/POST_INTEGRATION_AUDIT.md` on the generated root `flagged.html` and correct any summary that calls all 134 rows verified; underlying fixture statuses are 129 `verified` and 5 `cross-checked`. No shared generated page or dataset was edited in this audit because its scope is owned by the integration task.
 
 **2026-10-21T05:30Z — parallel workstream observed.**
 PR **#4** (`OLBG match board: 164 events, originated lines, confidence picks + Pages dashboard`) was opened
@@ -614,16 +625,207 @@ Building directly on `origin/main` (`99a04c5`) while keeping every parallel dire
   (`arena/2360a617-olbg1` → `main`). Merge + Pages deploy verification for
   https://buffedlizard55-lab.github.io/OLBG1/2360a617/ to be appended after execution.
 
+
+
+## 12. Session `8e12b936-olbg1` — independent post-integration audit
+
+* **T13 completed:** audited checked-in root JSON counts, ID joins, confidence/prediction coverage, market families/probability sums, source-link presence, and the prose-to-structured-evidence traceability limitation. Report: [`reports/POST_INTEGRATION_AUDIT.md`](reports/POST_INTEGRATION_AUDIT.md).
+* **Gates:** `python3 scripts/validate.py` — 54 pages, 0 errors, 0 warnings; `python3 scripts/ebfbd966_validate.py` — passed (133 matches, 4 High / 31 Medium / 98 Low); independent whole-repository HTML link sweep — 130 files, 0 missing local `href`/`src` targets. Cross-file check: 134 fixture rows (129 `verified`, 5 `cross-checked`), 126 line rows, 31 high-confidence predictions; all High lines have predictions and all prediction IDs resolve to High lines; 8 event-only field cards have no matchup line; market probability sums pass.
+* **Verification boundary:** this is a structural audit and did not freshly fetch every official source page. It does not represent new line-by-line confirmation of event facts. In particular, prediction prose includes claims that are not evidenced in the associated structured `facts` (examples documented as F1); those clauses require official-source review or removal.
+* **Irregularities:** F1 claim-level prediction sourcing, F2 summary wording that can blur 129 `verified` vs 5 `cross-checked`, F3 no source-page re-fetch in this pass. See the report for examples and official source links.
+* **Request to the site integration owner:** surface F1–F3 on the existing root `flagged.html` (shared generated output) and align any “134 verified” summary to the underlying status split. This session did not alter shared site pages or datasets.
+* **PR #19** — https://github.com/buffedlizard55-lab/OLBG1/pull/19 — merged 2026-10-21T06:43:22Z; merge commit `71824c28d92103a969b3ec4b304e2748a8af8c3a`. GitHub Pages build status `built`, error `null`; Pages publish from `main:/` confirmed. The Markdown report was not served as a page by legacy Pages, so T14 adds a dedicated HTML review page.
+
+## 13. Session `8e12b936-olbg1` — public review page
+
+* **T14 completed:** added [`reports/POST_INTEGRATION_AUDIT.html`](reports/POST_INTEGRATION_AUDIT.html) with clearly labeled F1–F3 findings, official source links on every table row, and explicit verification limits. Also corrected F2 to call out the live 404-page label “134 Verified Events” vs. 129 `verified` and 5 `cross-checked` source records.
+* **PR #20** — https://github.com/buffedlizard55-lab/OLBG1/pull/20 — merged 2026-10-21T06:45:07Z; merge commit `a38aea253d0aba3277377e0e9c254fb44599c581`.
+* **Pages deploy:** GitHub Pages Actions run `39557381790` completed successfully; latest Pages build status `built`, error `null`. Rendered content was confirmed at https://buffedlizard55-lab.github.io/OLBG1/reports/POST_INTEGRATION_AUDIT.html (cache-busted fetch to bypass the old 404 cache).
+* **Final links gate:** 131 HTML files, 0 missing local href/src targets; both repository validators pass. No shared dashboard nav or datasets were edited.
+
+## 13. Independent second-pass market-coverage and link audit (session `e92c2bf4-olbg1`)
+
+**T15 done — report:** [`reports/SESSION_E92_SNAPSHOT_AUDIT.md`](reports/SESSION_E92_SNAPSHOT_AUDIT.md). The report documents structural verification of the snapshot and five bounded findings: dated/static fixture window; eight event-only cards without prices; `cric-nza-inda-fc1` lacks a total; validator/source-presence limits; and no field-by-field source proof. It does not claim fresh official-source verification.
+
+**Verification:** `python3 scripts/validate.py` — 54 root/mirror pages, 0 errors/warnings; `python3 scripts/ebfbd966_validate.py` — pass (133 records); independent full-tree link scan — 130 pages, 3,402 relative refs, 0 unresolved targets with directory-index handling. Fixture copies and consolidated IDs align (134 rows); 126 H2H lines and 31 high-prediction IDs align. Source-link counts are syntactic only.
+
+**Rebase/conflict log (2026-10-21):** while pushing this branch, `origin/main` advanced from `8458584` to `5b23b9a` with another session's T13/T14 audit additions. Rebase conflicted in `COORDINATION.md` because both sessions used T13 and appended adjacent audit notes. Resolution preserved the other session's T13/T14 entries verbatim, renumbered this distinct task to T15, kept this session's report and log in separate files/section, and preserved all changes from both sessions.
+
+**Integration request:** add the report's findings A–D to the root Flagged for Review page and retain the snapshot window. Those generated pages/datasets are shared integration scope and were not edited here.
+
+**Publish record:** PR #21 — https://github.com/buffedlizard55-lab/OLBG1/pull/21 — merged 2026-10-21T06:47:48Z (merge commit `ea4140eebb9ef3384205a4e8d53bb0d907a43ff9`). GitHub Pages build/deploy run #39557663895 completed successfully; latest Pages build reports `status=built`, `error=null`. The audit is Markdown and is available in the repository; this PR did not alter generated dashboard navigation or publish it as a linked site subpage.
+
+## 14. Session `4904ed05-olbg1` — T16 corrective integration handoff
+
+**2026-10-21T06:51Z — implementation complete locally; publication pending.** This corrective pass preserved the independent T13/T14 review artifacts and implemented their F1–F3 handoff in the primary desk and `/f7fa77fc/` mirror:
+
+* **F1 (prediction provenance):** replaced all 31 High-pick write-ups with distinct, source-bounded prose from the versioned fixture `facts` plus the explicitly labelled independent selection. The current corpus is 48–61 words per pick and has zero duplicated normalized six-word sequences. Tactical, injury, lineup, matchup and market assertions not in those stored inputs were removed.
+* **F2 (status accuracy):** public dashboard, mirror, source register, README, data-source principle and audit manifest now describe **134 source-linked events (129 Verified; 5 Cross-checked)**. The five Gallagher Premiership rows remain visibly Cross-checked and are not promoted to Verified.
+* **F3 (freshness/review boundary):** added three visible Flagged-for-Review records for the historic prose correction, the status split, and source freshness. The source register links the independent Post-Integration Review and says that the strict structural gate does not freshly fetch remote sources.
+* **Rebuilt deterministic outputs:** root/mirror datasets and 27-page builds were regenerated. A before/after full-patch comparison across a second complete build was byte-identical.
+* **Local gates:** `python3 scripts/validate.py` (131 published HTML pages, 0 errors, 0 warnings); `python3 scripts/ebfbd966_validate.py` (passed); `python3 scripts/final_audit.py`; `py_compile`; `git diff --check`; root/mirror data checksums matched for fixtures, lines and predictions.
+
+The rebased implementation commit is `674eb1c` (`fix: remediate audit provenance findings`). Next: rebase this branch, push, open/merge the required PR, then verify the GitHub Pages deployment before marking T16 done.
+
+
+## 15. Session `4904ed05-olbg1` — T16 publication record
+
+* **PR #24** — https://github.com/buffedlizard55-lab/OLBG1/pull/24 — merged 2026-10-21T06:53:16Z; merge commit `8d6590aaea291bad31b0fcf83e2e16e006efe82c`.
+* **Pages verification:** GitHub Pages deployment workflow [`39558245786`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39558245786) completed successfully for that merge commit. The Pages API reports `status=built`, HTTPS enforced, source `main:/`, and public URL https://buffedlizard55-lab.github.io/OLBG1/.
+* **Delivered correction:** 31 distinct 48–61-word source-bounded High predictions; dashboard/mirror/README status wording split to 129 Verified plus 5 Cross-checked; F1–F3 remediation and source-freshness boundary published on Flagged for Review and linked in the source register.
+* **Final pre-merge gates:** `python3 scripts/validate.py` (131 HTML pages, 0 errors/warnings), `python3 scripts/ebfbd966_validate.py` (passed), `python3 scripts/final_audit.py`, `py_compile`, `git diff --check`, deterministic rebuild comparison, root/mirror data parity, and zero repeated normalized six-grams across High prose. No source page was freshly fetched in this corrective pass; that limitation remains visible to reviewers.
+
+
+## 16. Session `76950c25-olbg1` — live refresh, verification and publication
+
+**2026-10-21T07:10Z — claims filed (T17–T19).** This session re-fetches the live OLBG sport hubs
+for every in-scope sport and diffs the result against the committed 134-event snapshot, so the
+published desk reflects **today's** cards rather than the earlier snapshot. Per the brief, only
+values confirmed on an official governing-body page are progressed to `verified`; everything else
+is left blank and listed on the Flagged for Review page.
+
+* **Scope:** new files `data/live_snapshot.json`, `data/live_diff.json`, `scripts/live_harvest.py`,
+  `scripts/dataset_rows_c.py`, `reports/SESSION_769_LIVE_REFRESH.md`; plus the integration-owned
+  generated pages/datasets listed in T19.
+* **Non-overlap:** no other branch (`arena/2360a617`, `4904ed05`, `4f44f7d9`, `5c02f50f`,
+  `72198d3e`, `8e12b936`, `a41abce4`, `aa4e9dbf`, `c17a9192`, `c5e985f4`, `ccb6bde2`,
+  `ce5920e3`, `e92c2bf4`, `ebfbd966`, `f7fa77fc`) has commits ahead of `main` at claim time, so
+  this session is the only live writer on these files.
+
+### T17–T19 execution record (session `76950c25-olbg1`)
+
+**2026-10-21T07:05Z — live recapture.** All 17 in-scope OLBG hubs were fetched and parsed into
+`data/live_snapshot.json` (141 cards; 15 sports with tips, Aussie Rules and eSports returned
+"No tips found", Rugby League returned 2027 outrights only). `scripts/live_diff.py` then compared
+the capture with the committed 134-row dataset by OLBG `event_id`: **69 joined**, **47 changed**
+(20 selection flips), **72 new/unverified**, **18 dataset rows absent from the truncated first
+screen**. The diff is reproducible from the repository (`data/live_diff.json`).
+
+**Refresh semantics.** `scripts/build_dataset.py` now overlays only OLBG's own upstream tip
+counter/selection on joined rows (with `olbg.captured_utc` and the superseded value preserved in
+`olbg.consensus_prior`). Sporting facts, prices, picks and confidence tiers are untouched; 68 rows
+were refreshed. Eighteen findings are published, six of them new (`F-LIVE-01` … `F-LIVE-06`).
+
+**Official verification performed.** The MLB World Series Game 2 card was re-verified against the
+official MLB StatsAPI (`https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24`):
+gamePk **849802**, Tampa Bay Rays at Milwaukee Brewers, American Family Field,
+`gameDate 2026-10-25T00:00:00Z`. OLBG labels the same card "24 Oct 01:00", which is flagged as
+`F-LIVE-06`. No other fixture fact was freshly re-fetched; those rows retain the governing-body
+source recorded on them, and the 72 unjoined cards are published as **Unverified** with blank
+fields rather than being promoted.
+
+**Gates.** `python3 scripts/live_diff.py`, `build_dataset.py`, `origin_lines.py`, `build_site.py`
+(28 root + 28 mirror pages), `validate.py` (133 pages, 0 errors / 0 warnings) and
+`ebfbd966_validate.py` all pass. Full write-up: `reports/SESSION_769_LIVE_REFRESH.md`.
+
+## 17. Session `72198d3e-olbg1` — T20 fresh official-source re-verification
+
+> **Task-id collision, resolved additively.** Session `76950c25-olbg1` filed a `T17` claim for a live
+> OLBG re-harvest at 07:05Z while this session held `T17` for the official-source re-verification.
+> Neither claim was overwritten: the board now carries both rows, and the two passes are
+> complementary — `76950c25` re-captures the **upstream OLBG tip counters**, this session re-fetches
+> the **governing-body pages** behind the same fixtures. Their work is preserved in full at §16 and
+> in `reports/SESSION_769_LIVE_REFRESH.md`; this section documents only the verification pass.
+
+**What this pass did that the others did not.** Sessions T13, T15 and T16 each audited the
+dataset's *structure* and recorded that limitation in so many words ("did not freshly fetch every
+official source page", "no source-page re-fetch in this pass"). T17 re-opened the governing-body
+pages themselves, row by row, and published the outcome per row.
+
+**Deliverables (all additive; no other session's files rewritten).**
+
+| Output | Where |
+|---|---|
+| Machine-readable per-row register (134 rows, one status each) | `data/verification.json` ← `python3 scripts/live_verification.py` |
+| Narrative report with every evidence string and source link | `reports/LIVE_VERIFICATION.md` |
+| Site page (root + `/f7fa77fc/` mirror, new nav item) | `live-verification.html` |
+| Row-level corrections at the dataset source | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py` |
+| Ten new findings surfaced on the existing Flagged page | `scripts/build_dataset.py` → `datasets/flagged_for_review.json` (`LIVE-F-V1`…`LIVE-F-V10`) |
+| Re-authored High-pick prose | `scripts/high_predictions.py` |
+
+**Result:** 51 confirmed, 9 corrected, 2 flagged, 72 explicitly not re-checked. Official pages were
+re-fetched for 62 of 134 rows; the other 72 keep their prior status and carry a named blocker, so
+the gap is visible instead of implied.
+
+**Corrections applied (each from a re-fetched official page, none inferred):**
+
+1. **F-V1 Snooker links** — `snk-holt-brown`, `snk-gao-gilbert`, `snk-noppon-donaldson` cited WST
+   match-centre UUIDs that re-fetch as an unbound template with no players attached;
+   `snk-brecel-odonnell` and `snk-slessor-jones` carried no match centre although WST publishes
+   one. All five replaced/added with the bindings on `https://www.wst.tv/`.
+2. **F-V2 Tennis citation** — six WTA Ningbo rows cited tournament 1115; WTA's own notification
+   panel links the draws at 2092. Citation corrected.
+3. **F-V3 Cricket** — `scoring.nzc.nz/fixtures` places the 3rd Women's T20I at North Sydney Oval,
+   NZ A v India A on 23 Oct at Bert Sutcliffe Oval (Lincoln University), and Central Stags v
+   Northern Districts at Saxton Oval, Nelson. Three rows corrected.
+4. **F-V4 Boston home split** — `api-web.nhle.com/v1/standings/2026-10-20` returns 7-2-1 with four
+   home games at 3-1-0; the row said 5-1-0. Home games cannot decrease, so this was an error, not
+   drift. Descriptive split corrected; rating 75.0 and all prices unchanged.
+5. **F-V9 NRL competition id** — `nrl.com/draw/?competition=175…` is served as competition 131 for
+   the same Round 2 draw. Men's citation corrected; the women's id 176 was not re-tested and those
+   two rows stay `not_rechecked`.
+
+**Flagged, deliberately not changed.**
+
+* **F-V5 NHL drift** — Vegas priced at 8-2-0 (.800, W3); the live endpoint now returns 8-3-0
+  (.727, L1). The line is a labelled pre-game snapshot. Re-pricing a published pick after the fact
+  would be worse than disclosing it, so both values are printed on the row.
+* **F-V6 PDC cookie wall** — two fetches of the official draw release returned consent text only.
+  16 darts rows are `not_rechecked`.
+* **F-V7 WTA/ATP client-side draws** — 11 tennis rows are `not_rechecked`.
+* **F-V8 WST clock** — WST publishes no UTC; the fetch client renders publisher clocks at UTC-4
+  (all five RLWC kick-offs on nrl.com map exactly under that offset), so the scraped 05:00/08:00/
+  09:00/14:00/15:00 displays are a rendering, not a session time. `start_utc` stays blank.
+* **F-V10 coverage** — 72 rows were not re-read in this pass and are listed individually.
+
+**Verification performed.** Live reads of: NHL schedule + standings APIs; MLB StatsAPI schedule +
+AL/NL standings; nba.com/games?date=2026-10-21; wst.tv live listing and one match-centre page;
+EHF Champions League 2026/27 standings/calendar; nrl.com RLWC Round 2 draw; scoring.nzc.nz
+fixtures; afl.com.au/aflw Round 11 board; wta.com Ningbo draws (shell only) and pdc.tv draw release
+(consent wall). Full URLs are in `data/verification.json` and on the page.
+
+**Gates run after the rebuild:** `scripts/build_dataset.py` → `scripts/origin_lines.py` →
+`scripts/live_verification.py` → `scripts/build_site.py` → `scripts/validate.py` (133 HTML pages,
+0 errors, 0 warnings); `scripts/final_audit.py`; `scripts/ebfbd966_validate.py` (passed). High-pick
+confidence distribution unchanged at 31 High / 35 Medium / 60 Low, so no pick moved as a result of
+the corrections.
+
+**Publish record:** see §17.1 below.
+
+### 17.1 Result (session `72198d3e-olbg1`, final)
+
+* **PR #27** — https://github.com/buffedlizard55-lab/OLBG1/pull/27 — **MERGED** 2026-10-21T07:13:42Z,
+  merge commit `4a3f62a40fa34d96e89f9cd3efea3c641887b1c2`.
+* **Nothing from session `76950c25` was discarded.** Their PR #26 landed on `main` after this branch
+  forked, so `origin/main` was merged in and every shared output was **regenerated from source**
+  instead of hand-merged: their `data/live_snapshot.json` overlay still refreshes 68 rows and keeps
+  43 superseded values in `olbg.consensus_prior`, and both site sections (`live-refresh.html` and
+  `live-verification.html`) are published with their own nav entries.
+* **Gates after the merge:** `build_dataset.py` → `origin_lines.py` → `live_verification.py` →
+  `build_site.py` → `validate.py` → **135 published HTML pages, 0 errors, 0 warnings**;
+  `final_audit.py`, `ebfbd966_validate.py`, `live_diff.py` all pass. Confidence distribution
+  unchanged at 31 High / 35 Medium / 60 Low.
+* **Pages deploy:** build for `4a3f62a` reached `status=built` (error `null`) at
+  2026-10-21T07:14:37Z. Live fetches confirmed rendered content at
+  https://buffedlizard55-lab.github.io/OLBG1/live-verification.html (51 confirmed / 9 corrected /
+  2 flagged / 72 not re-checked) and https://buffedlizard55-lab.github.io/OLBG1/live-refresh.html.
+  The refreshed refresh page already shows the corrected WTA Ningbo citation (tournament 2092),
+  which confirms the correction propagated into the shared dataset rather than living only on one page.
+* **Open items handed to a future session:** 72 rows not re-fetched here (list and blockers in
+  `data/verification.json`); the 16 darts and 11 tennis rows need a browser-capable fetch or a
+  publisher change before they can be re-verified; Vegas drift (F-V5) awaits a reviewer decision on
+  whether to re-price or leave the snapshot; women's RLWC NRL competition id (176) untested.
+
 ---
 
-## 12. Session `ccb6bde2` (branch `arena/ccb6bde2-olbg1`) — deep market investigation + model recalibration
+## 18. Session `ccb6bde2` (branch `arena/ccb6bde2-olbg1`) — deep market investigation + model recalibration
 
 **2026-10-21T06:41Z — board read; claim filed.** This session branched from `main` at `8458584`
 (all 18 prior PRs merged/closed; no live claims on un-merged branches — verified via
 `gh pr list --state all --limit 20` and `git branch -r`). Per §0.4 this session does **not** touch
 any existing desk's files (`/`, `/f7fa77fc/`, `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`, `/2360a617/`) or
 their data files. Scope is strictly additive under the new `ccb6bde2/` namespace + new
-`data/*-ccb6bde2*.json` + `scripts/ccb6bde2_*.py` files (see §1 rows T13–T15).
+`data/*-ccb6bde2*.json` + `scripts/ccb6bde2_*.py` files (see §1 rows T21–T23, claimed as T13–T15 before the ID collision below).
 
 **Gap analysis driving T13/T14 (verified from the repo itself, not assumed):** the root desk
 (`data/lines.json`, model `olbg-independent-logit-normal-v2.0`) prices 126 H2H matches across
@@ -632,8 +834,8 @@ only 4 market families (Match Winner, Draw No Bet, Handicap, Over/Under Total). 
 session catalogued or priced **Correct Score, Both Teams to Score, Winning Margin, Team Totals,
 Tie/No-Tie, Over/Under Frames/Legs/Sets, Over/Under 180s, highest break/checkout, golden goal,
 first team to score, Half-Time/Full-Time, Race to X points, Over/Under Runs, Total Sixes/Fours**
-etc. T13 does that. Second, the v2.0 logit slope is too gentle for individual sports: a #1 vs #30
-tennis matchup prices at ~53% — calibration flagged as T14. Both findings are documented with
+etc. T21 does that. Second, the v2.0 logit slope is too gentle for individual sports: a #1 vs #30
+tennis matchup prices at ~53% — calibration flagged as T22. Both findings are documented with
 numbers in `data/model_calibration-ccb6bde2.json` before any re-pricing.
 
 > **CORRECTION (2026-10-21T07:05Z, finding F-CCB-12):** the "~53%" sentence above was this
@@ -642,7 +844,7 @@ numbers in `data/model_calibration-ccb6bde2.json` before any re-pricing.
 > the extreme tail (#1 vs #57 = 0.928, F-CCB-08). The real calibration defects found by the
 > line-by-line audit were (R1) 56 record-derived ratings built from ≤12 games and taken at face
 > value, (R2) a baseball home/road-split venue double-count, and (R3) missing/stale ATP ratings
-> (4 matches priced 50/50). T14 fixed those three; slopes were deliberately NOT refitted —
+> (4 matches priced 50/50). T22 fixed those three; slopes were deliberately NOT refitted —
 > without outcome data a new slope would be invention, not calibration. Full numbers:
 > `data/model_calibration-ccb6bde2.json` and the desk's `calibration.html`.
 
@@ -653,7 +855,7 @@ this session re-verifies a fact it fetches the official source in-session and lo
 
 *Execution, verification and publish records appended below as work proceeds.*
 
-### 12.1 Execution record (`ccb6bde2`, 2026-10-21T06:41–07:15Z)
+### 18.1 Execution record (`ccb6bde2`, 2026-10-21T06:41–07:15Z)
 
 * **Audit first (`scripts/ccb6bde2_audit.py` → `data/model_calibration-ccb6bde2.json`):** all 134
   fixtures / 126 lines / 31 predictions re-checked line by line — every fixture carries an
@@ -668,7 +870,7 @@ this session re-verifies a fact it fetches the official source in-session and lo
   **outside the top 190**. WTA table is script-rendered (no rows returned) → Leylah Fernandez/Sasnovich/
   Bejlek ranks left blank, not inferred. PDC rankings sit behind a consent wall → darts seed
   ratings kept, divergence flagged (F-CCB-07).
-* **T13 market expansion (`scripts/ccb6bde2_market_engine.py`):** **1,619 new markets** across
+* **T21 market expansion (`scripts/ccb6bde2_market_engine.py`):** **1,619 new markets** across
   126 matches (≈13/match, 2,031 including core markets): correct scores & unit ladders for
   race formats (darts legs, snooker frames, tennis/volleyball sets — per-unit q inverted from the
   winner price so books are exactly consistent), winning-margin bands, alternate handicap/total
@@ -677,14 +879,14 @@ this session re-verifies a fact it fetches the official source in-session and lo
   unsourced per-player rate (180s, centuries, aces, top batter, player props, full-field
   golf/greyhound/F1 books) are **not priced** and are registered with the missing official input
   in `data/market_taxonomy-ccb6bde2.json` and the desk's Markets Explorer.
-* **T14 recalibration (v2.1, new files only):** R1 shrinkage of record ratings (67 adjustments
+* **T22 recalibration (v2.1, new files only):** R1 shrinkage of record ratings (67 adjustments
   logged), R2 baseball venue fix, R3 ATP backfill. Result: confidence **31H/35M/60L → 19H/42M/65L**;
   19 tier changes; 3 pick changes (two sub-52% coin flips, one verified-data fix: Tommy Paul over
   Benjamin Bonzi, now HIGH with a fresh 30+-word prediction in `data/predictions-ccb6bde2.json`, joined
   by fresh write-ups for the two Brewers games and Stade Toulousain whose v2.0 texts quoted
   now-stale prices). The other 15 v2.1 highs keep their v2.0 texts; the validator asserts every
   quoted winner price still matches the v2.1 book.
-* **T15 desk (`ccb6bde2/`):** 23 pages — dashboard, Markets Explorer, 17 sport pages (full
+* **T23 desk (`ccb6bde2/`):** 23 pages — dashboard, Markets Explorer, 17 sport pages (full
   per-match books, official source link on every row), predictions, calibration audit, flagged
   (F-CCB-01…12), methodology. Gates: `ccb6bde2_validate.py` PASSED (126 matches, 2,031 markets
   sum to exactly 1 in integer micro-units, 19 predictions ≥30 words, 0 shared 6-grams, 636
@@ -698,5 +900,20 @@ this session re-verifies a fact it fetches the official source in-session and lo
   consensus; F-CCB-08 snooker tail heat; F-CCB-09 OLBG consensus micro-samples; F-CCB-10 v2.0
   totals heuristic replaced by exact race distributions; F-CCB-11 coin-flip pick changes;
   F-CCB-12 this session's own corrected pre-claim.
-* **Publish record:** PR from `arena/ccb6bde2-olbg1` → `main` to be appended after merge, with
-  the GitHub Pages deploy verification for https://buffedlizard55-lab.github.io/OLBG1/ccb6bde2/.
+* **Merge-conflict log (brief §"Parallel sessions"):** PR #31 initially conflicted because
+  sessions `8e12b936`/`e92c2bf4`/`4904ed05`/`76950c25`/`72198d3e` merged PRs #19–#30 into `main`
+  while this session worked, taking task IDs T13–T20 and sections §12–§17. Resolution:
+  `origin/main` merged into this branch; the single conflicted file (`COORDINATION.md`) was
+  resolved preserving **100% of main's text verbatim**, with this session's rows/section
+  renumbered to **T21–T23 / §18** (same precedent as `72198d3e`'s T17→T20). Main's corrected
+  `data/fixtures.json` (incl. the WTA 2092 URL fix — closing F-CCB-01 upstream) was accepted
+  wholesale; the full ccb6bde2 pipeline was re-run against merged data (identical headline
+  numbers: 19 highs, 19 tier changes, 3 pick changes) and all three repo validators re-passed,
+  plus a whole-tree sweep (158 pages, 4,968 refs, 0 broken). No session's work was discarded.
+  A tooling note for future sessions: several same-file edits issued in one parallel tool block
+  raced and clobbered each other during §18 drafting (one premature publish-record line was
+  written and then removed before the PR existed); each was detected by grep-verification and
+  rewritten. **Edit a given file in exactly one tool call per block.**
+* **Publish record:** PR #31 — https://github.com/buffedlizard55-lab/OLBG1/pull/31 —
+  (`arena/ccb6bde2-olbg1` → `main`). Merge result and GitHub Pages deploy verification for
+  https://buffedlizard55-lab.github.io/OLBG1/ccb6bde2/ appended after execution.

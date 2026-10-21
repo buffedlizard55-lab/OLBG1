@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for Review — Post-integration audit | OLBG1</title>
+<style>
+:root{color-scheme:light;--ink:#142536;--muted:#526579;--line:#d8e1e9;--paper:#f4f7fa;--white:#fff;--navy:#12283f;--blue:#1764a0;--amber:#8a4b00;--amber-bg:#fff4df;--red:#9a2c30;--red-bg:#fff0ef;--green:#1f6849}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}header{background:var(--navy);color:white;padding:30px max(20px,calc((100% - 1120px)/2))}header p{color:#d3dfeb;margin:.4rem 0}main{max-width:1120px;margin:28px auto;padding:0 20px 50px}.bar{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0 26px}.bar a{background:#fff;color:var(--blue);border:1px solid var(--line);border-radius:8px;padding:9px 13px;text-decoration:none;font-weight:650}.bar a:hover{text-decoration:underline}.panel{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px;margin:16px 0;box-shadow:0 2px 10px #1936530a}h1{font-size:clamp(1.8rem,3vw,2.5rem);margin:0}h2{margin:0 0 12px;font-size:1.25rem}p{margin:.45rem 0}.callout{border-left:4px solid var(--amber);background:var(--amber-bg);padding:13px 15px;border-radius:6px}.warning{border-left-color:var(--red);background:var(--red-bg)}.good{color:var(--green);font-weight:700}.muted{color:var(--muted)}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:820px}th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid var(--line)}th{background:#edf2f6;font-size:.88rem}td a{color:#075b9a}code{background:#edf2f6;padding:2px 5px;border-radius:4px}footer{color:var(--muted);font-size:.92rem;margin-top:28px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Flagged for Review</h1>
+  <p>Independent post-integration audit · 21 October 2026 · Root dataset and dashboard</p>
+</header>
+<main>
+<nav class="bar" aria-label="Site navigation">
+  <a href="https://buffedlizard55-lab.github.io/OLBG1/">Dashboard</a>
+  <a href="https://buffedlizard55-lab.github.io/OLBG1/flagged.html">Main Flagged for Review</a>
+  <a href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/reports/POST_INTEGRATION_AUDIT.md">Full audit report</a>
+  <a href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/COORDINATION.md">Coordination log</a>
+</nav>
+<section class="panel callout warning">
+  <strong>Verification boundary:</strong> this page records audit findings, not newly verified match facts. We checked repository consistency and that source URLs are present, but did not freshly fetch every linked official page. Do not treat unsupported prose or a source link alone as confirmation.
+</section>
+<section class="panel">
+  <h2>Audit status</h2>
+  <p><span class="good">Structural checks passed:</span> 134 fixtures (129 marked <code>verified</code>, 5 <code>cross-checked</code>), 126 priced match rows, 31 high-confidence predictions, 8 event-only field cards, consistent ID joins and market probability sums.</p>
+  <p>Both repository validators passed. A separate local-link sweep found no missing href/src targets in 131 HTML files (including this review page). These checks do not establish that every match value or sentence is supported by a currently accessible official source.</p>
+</section>
+<section class="panel">
+  <h2>Findings needing review</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Flag</th><th>What was observed</th><th>Next action</th><th>Official source links to check</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>F1 · Prediction prose</strong></td>
+        <td>Some of the 31 high-confidence narratives contain specific tactical or performance assertions that are not represented in their structured <code>facts</code> fields. Examples: “five-on-five control” and “empty-net pressure” (NHL Sabres–Flyers); “road penalty kill” and “four balanced lines” (Bruins–Predators); “high-danger slot looks” (Penguins–Panthers); “half-court physicality” and “low turnover rates” (Clippers–Kings). These are unsubstantiated by the stored evidence fields here, not declared false.</td>
+        <td>Check every clause against the linked official pages. Keep only supported claims, cite the exact source, or remove/rephrase them. Apply this review to all 31 writeups.</td>
+        <td><a href="https://api-web.nhle.com/v1/standings/2026-10-20">NHL official standings</a> · <a href="https://www.nhl.com/gamecenter/2026020152">NHL gamecenter</a> · <a href="https://www.nba.com/games?date=2026-10-21">NBA official schedule</a></td>
+      </tr>
+      <tr>
+        <td><strong>F2 · Status wording</strong></td>
+        <td>The published 404-page link labels the dashboard “134 Verified Events,” while the data labels 129 rows <code>verified</code> and 5 Gallagher Premiership rows <code>cross-checked</code>. Preserve the distinction; do not silently promote the five rows.</td>
+        <td>Update summary wording to “134 events (129 verified; 5 cross-checked)” unless and until each status is re-evaluated against the project’s official-source rule.</td>
+        <td><a href="https://www.premrugby.com/fixtures-results">Official Premiership fixtures and results</a></td>
+      </tr>
+      <tr>
+        <td><strong>F3 · Fresh source check</strong></td>
+        <td>The repository contains non-OLBG official source URLs for every root fixture, but this audit did not re-fetch source pages and compare every name, date, venue, ranking, record and prediction claim to its page. Presence of a link is not fresh verification.</td>
+        <td>Re-open relevant governing-body pages and check each published value. Leave uncertain values blank and retain the issue here or on the main flagged page.</td>
+        <td><a href="https://api-web.nhle.com/v1/schedule/2026-10-21">NHL schedule API</a> · <a href="https://www.wtatennis.com/tournaments">WTA official tournaments</a> · <a href="https://www.wst.tv/rankings/">World Snooker Tour rankings</a> · <a href="https://top14.lnr.fr/calendrier-et-resultats">LNR Top 14 calendar</a></td>
+      </tr>
+    </tbody>
+  </table></div>
+</section>
+<section class="panel">
+  <h2>Cross-checked Premiership rows</h2>
+  <p class="muted">Each row below remains marked <code>cross-checked</code> in the fixture data. This list is supplied for review; it is not a claim that this audit freshly verified the page contents.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Fixture</th><th>Stored status</th><th>Official source</th></tr></thead>
+    <tbody>
+      <tr><td>Gloucester vs Bath</td><td>cross-checked</td><td><a href="https://www.premrugby.com/fixtures-results">Premiership official fixtures/results</a></td></tr>
+      <tr><td>Newcastle Red Bulls vs Sale Sharks</td><td>cross-checked</td><td><a href="https://www.premrugby.com/fixtures-results">Premiership official fixtures/results</a></td></tr>
+      <tr><td>Leicester Tigers vs Northampton Saints</td><td>cross-checked</td><td><a href="https://www.premrugby.com/fixtures-results">Premiership official fixtures/results</a></td></tr>
+      <tr><td>Bristol Bears vs Exeter Chiefs</td><td>cross-checked</td><td><a href="https://www.premrugby.com/fixtures-results">Premiership official fixtures/results</a></td></tr>
+      <tr><td>Harlequins vs Saracens</td><td>cross-checked</td><td><a href="https://www.premrugby.com/fixtures-results">Premiership official fixtures/results</a></td></tr>
+    </tbody>
+  </table></div>
+</section>
+<section class="panel">
+  <h2>What passed</h2>
+  <ul>
+    <li>Every root fixture has a source link outside OLBG.</li>
+    <li>All 31 high-confidence line IDs have matching predictions; no prediction points to a non-high line.</li>
+    <li>All market outcome probabilities sum to 1.0 within the 0.002 tolerance.</li>
+    <li>No fixture, line or prediction IDs are duplicated; joins resolve.</li>
+    <li>Both validators pass and all 131 HTML files have existing local link targets.</li>
+  </ul>
+  <p class="muted">Prices are model estimates, not bookmaker quotes or betting advice. High confidence is a model tier, not a guarantee.</p>
+</section>
+<footer>Data files and methods: <a href="https://github.com/buffedlizard55-lab/OLBG1/tree/main/data">data directory</a> · <a href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/reports/POST_INTEGRATION_AUDIT.md">audit details</a>.</footer>
+</main>
+</body>
+</html>

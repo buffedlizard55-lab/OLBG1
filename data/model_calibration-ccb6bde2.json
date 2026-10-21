@@ -719,7 +719,7 @@
       "id": "F-CCB-01",
       "severity": "medium",
       "title": "WTA source link for ten-ningbo-rybakina points at the wrong tournament ID",
-      "detail": "data/fixtures.json cites https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws, which soft-404s to the WTA homepage (verified live 2026-10-21). The canonical draws page is /tournaments/2092/ningbo/2026/draws (title 'BNB Ningbo Open 2026 Draws'). The fixture itself is corroborated by the PIF WTA Rankings link; the draws URL should be corrected by the owning desk.",
+      "detail": "data/fixtures.json cited https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws, which soft-404s to the WTA homepage (verified live this session). The canonical draws page is /tournaments/2092/ningbo/2026/draws (title 'BNB Ningbo Open 2026 Draws'). CLOSED during this session's merge: session 72198d3e's T20 live re-verification had already corrected the URL in main; confirmed 2092 present post-merge.",
       "evidence": [
         "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
       ]
