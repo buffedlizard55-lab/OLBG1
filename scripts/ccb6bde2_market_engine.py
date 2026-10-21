@@ -96,8 +96,10 @@ def market(key: str, name: str, line: str, pairs: list[tuple[str, float]],
     """Build one market from (selection, raw_p) pairs; renormalised to sum 1."""
     ps = [min(max(p, 1e-6), 1.0 - 1e-6) for _, p in pairs]
     s = sum(ps)
-    ps = [p / s for p in ps]
-    ps[-1] = 1.0 - sum(ps[:-1])
+    micro = [int(round(p / s * 1_000_000)) for p in ps]  # integer micro-units
+    biggest = max(range(len(micro)), key=lambda i: micro[i])
+    micro[biggest] += 1_000_000 - sum(micro)
+    ps = [mu / 1_000_000 for mu in micro]
     return {
         "key": key, "name": name, "line": line, "group": group,
         "outcomes": [outcome(sel, p) for (sel, _), p in zip(pairs, ps)],

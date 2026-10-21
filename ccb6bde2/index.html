@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard — OLBG1 Markets Desk (ccb6bde2)</title><style>
+:root{--ink:#182230;--mut:#5b6b7e;--line:#d9e0ea;--bg:#f6f8fb;--card:#fff;
+--acc:#0b5394;--hi:#0a7d43;--med:#b7791f;--lo:#8a93a3;--flag:#b3261e}
+*{box-sizing:border-box}body{margin:0;font:15px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+header.top{background:#10243e;color:#eaf1f9;padding:18px 0 12px}
+header.top .wrap,main.wrap,footer .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+header.top h1{margin:0 0 2px;font-size:22px}header.top p{margin:0;color:#b9cadd;font-size:13px}
+nav.main{background:#0b1b30;padding:0}nav.main .wrap{max-width:1180px;margin:0 auto;padding:0 16px;display:flex;flex-wrap:wrap;gap:2px}
+nav.main a{color:#cfe1f2;padding:9px 12px;font-size:13px;display:inline-block}
+nav.main a:hover{background:#12325a;text-decoration:none}
+nav.main a.on{background:#eaf1f9;color:#10243e;font-weight:600}
+main{padding:20px 0 40px}
+h2{font-size:19px;margin:22px 0 8px}h3{font-size:16px;margin:18px 0 6px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px}
+.card .n{font-size:26px;font-weight:700}.card .t{color:var(--mut);font-size:12.5px}
+table{border-collapse:collapse;width:100%;background:var(--card);border:1px solid var(--line);margin:10px 0;font-size:13.5px}
+th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#eef3f9;font-size:12.5px;color:#33465e}
+tr:last-child td{border-bottom:none}
+.conf{font-weight:700;padding:1px 7px;border-radius:9px;font-size:11.5px;white-space:nowrap}
+.c-high{background:#e2f4e9;color:var(--hi)}.c-medium{background:#fdf1d7;color:var(--med)}.c-low{background:#eef0f4;color:var(--lo)}
+.match{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:14px 0;padding:12px 14px}
+.match h3{margin:2px 0 4px;font-size:15.5px}
+.meta{color:var(--mut);font-size:12.5px;margin:2px 0 8px}
+details{border-top:1px solid var(--line);margin-top:8px;padding-top:6px}
+summary{cursor:pointer;font-weight:600;font-size:13px;color:#24354a;padding:3px 0}
+.mkt{margin:8px 0 2px;font-weight:600;font-size:13px}.basis{color:var(--mut);font-size:12px;margin:2px 0 6px}
+.odds td.num,.odds th.num{text-align:right;font-variant-numeric:tabular-nums}
+.note{background:#fff8e6;border:1px solid #eadfae;border-radius:8px;padding:10px 14px;font-size:13.5px;margin:12px 0}
+.flagbox{background:#fdf0ef;border:1px solid #efc4c0;border-radius:8px;padding:10px 14px;margin:12px 0}
+.flagbox h3{color:var(--flag);margin-top:0}
+.pred{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--hi);border-radius:8px;padding:12px 16px;margin:14px 0}
+.pred p{margin:6px 0}.pred .facts{color:var(--mut);font-size:12.5px}
+footer{background:#10243e;color:#b9cadd;padding:18px 0;font-size:12.5px}
+small.mut{color:var(--mut)} .up{color:var(--hi)} .down{color:var(--flag)}
+code{background:#eef3f9;padding:0 4px;border-radius:3px;font-size:12.5px}
+</style></head>
+<body>
+<header class="top"><div class="wrap">
+<h1>OLBG1 — Deep Markets Desk</h1>
+<p>Reverse-engineered OLBG coverage for 17 sports (football/soccer, horse racing, boxing, UFC/MMA, American football, hurling, cycling &amp; specials excluded). Recalibrated own lines (model v2.1) across every derivable market. Snapshot 21 Oct 2026.</p>
+</div></header>
+<nav class="main"><div class="wrap"><a href="index.html" class="on">Dashboard</a><a href="markets.html">Markets Explorer</a><a href="predictions.html">High-Confidence Predictions</a><a href="calibration.html">Calibration Audit</a><a href="flagged.html">Flagged for Review</a><a href="methodology.html">Methodology</a>
+<a href="../">Root dashboard</a><a href="../docs/">164-event board</a><a href="../ebfbd966/">Crowd desk</a><a href="../aa4e9dbf/">131-event desk</a><a href="../2360a617/">152-event board</a>
+</div></nav>
+<main><div class="wrap">
+
+<h2>Dashboard — 21 October 2026 snapshot</h2>
+<div class="note">This desk builds on the repo's verified 134-event governing-body dataset (21–28 Oct 2026). It <b>recalibrates</b> the v2.0 pricing model (small-sample shrinkage, a baseball venue fix, official ATP re-verification) and <b>originates 1619 additional markets</b> — correct scores, winning-margin bands, team totals, alternate ladders, set/frame/leg betting, regulation &amp; first-half markets — each derived exactly from the same sourced inputs. Markets that would need an unverified statistic are <a href="flagged.html">flagged, not priced</a>.</div>
+<div class="cards">
+<div class="card"><div class="n">134</div><div class="t">verified events across 17 in-scope sports</div></div>
+<div class="card"><div class="n">126</div><div class="t">two-sided matches repriced (v2.1)</div></div>
+<div class="card"><div class="n">1619</div><div class="t">expanded markets originated (plus 3–4 core markets per match)</div></div>
+<div class="card"><div class="n">19</div><div class="t">high-confidence picks after recalibration (31 before)</div></div>
+<div class="card"><div class="n">12</div><div class="t">audit findings published for review</div></div>
+</div>
+<h2>Sports</h2>
+<table><tr><th>Sport</th><th>Matches</th><th>Field events</th><th>Expanded markets</th><th>High</th><th>Medium</th><th>Low</th></tr><tr><td><a href="sports/tennis.html">Tennis</a></td><td>11</td><td>0</td><td>143</td><td>3</td><td>3</td><td>5</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td><td>17</td><td>0</td><td>255</td><td>1</td><td>4</td><td>12</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td><td>6</td><td>0</td><td>90</td><td>0</td><td>3</td><td>3</td></tr><tr><td><a href="sports/baseball.html">Baseball</a></td><td>4</td><td>0</td><td>60</td><td>2</td><td>2</td><td>0</td></tr><tr><td><a href="sports/cricket.html">Cricket</a></td><td>8</td><td>0</td><td>104</td><td>3</td><td>1</td><td>4</td></tr><tr><td><a href="sports/snooker.html">Snooker</a></td><td>11</td><td>0</td><td>88</td><td>2</td><td>5</td><td>4</td></tr><tr><td><a href="sports/darts.html">Darts</a></td><td>16</td><td>0</td><td>160</td><td>4</td><td>8</td><td>4</td></tr><tr><td><a href="sports/rugby-union.html">Rugby Union</a></td><td>12</td><td>0</td><td>180</td><td>1</td><td>1</td><td>10</td></tr><tr><td><a href="sports/rugby-league.html">Rugby League</a></td><td>7</td><td>0</td><td>105</td><td>3</td><td>4</td><td>0</td></tr><tr><td><a href="sports/handball.html">Handball</a></td><td>12</td><td>0</td><td>180</td><td>0</td><td>3</td><td>9</td></tr><tr><td><a href="sports/volleyball.html">Volleyball</a></td><td>8</td><td>0</td><td>72</td><td>0</td><td>0</td><td>8</td></tr><tr><td><a href="sports/aussie-rules.html">Aussie Rules (AFLW)</a></td><td>9</td><td>0</td><td>117</td><td>0</td><td>7</td><td>2</td></tr><tr><td><a href="sports/gaelic-football.html">Gaelic Football</a></td><td>4</td><td>0</td><td>52</td><td>0</td><td>0</td><td>4</td></tr><tr><td><a href="sports/esports.html">eSports</a></td><td>1</td><td>0</td><td>13</td><td>0</td><td>1</td><td>0</td></tr><tr><td><a href="sports/golf.html">Golf</a></td><td>0</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td><a href="sports/greyhounds.html">Greyhounds</a></td><td>0</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td><a href="sports/motor-racing.html">Motor Racing</a></td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></table>
+<h2>High-confidence picks (v2.1)</h2>
+<p>High requires a verified fixture, measured governing-body ratings on <b>both</b> sides, and a pick probability over the sport's documented bar — now computed on shrinkage-adjusted ratings. Full written predictions: <a href="predictions.html">predictions page</a>.</p>
+<table><tr><th>Sport</th><th>Match</th><th>Pick</th><th>Model %</th><th>Links</th></tr><tr><td>Tennis</td><td>Elena Rybakina v Polina Kudermetova</td><td><b>Elena Rybakina</b></td><td>88%</td><td><a href="sports/tennis.html">full book</a> · <a href="https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws">official source</a></td></tr><tr><td>Rugby League</td><td>New Zealand v Cook Islands</td><td><b>New Zealand</b></td><td>83%</td><td><a href="sports/rugby-league.html">full book</a> · <a href="https://www.nrl.com/draw/?competition=175&amp;round=2&amp;season=2026">official source</a></td></tr><tr><td>Rugby League</td><td>Australia v Fiji</td><td><b>Australia</b></td><td>82%</td><td><a href="sports/rugby-league.html">full book</a> · <a href="https://www.nrl.com/draw/?competition=175&amp;round=2&amp;season=2026">official source</a></td></tr><tr><td>Rugby League</td><td>England v France</td><td><b>England</b></td><td>81%</td><td><a href="sports/rugby-league.html">full book</a> · <a href="https://www.nrl.com/draw/?competition=175&amp;round=2&amp;season=2026">official source</a></td></tr><tr><td>Tennis</td><td>Katarzyna Kawa v Belinda Bencic</td><td><b>Belinda Bencic</b></td><td>73%</td><td><a href="sports/tennis.html">full book</a> · <a href="https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws">official source</a></td></tr><tr><td>Basketball</td><td>LA Clippers v Sacramento Kings</td><td><b>LA Clippers</b></td><td>73%</td><td><a href="sports/basketball.html">full book</a> · <a href="https://www.nba.com/games?date=2026-10-21">official source</a></td></tr><tr><td>Cricket</td><td>Australia Women v New Zealand Women</td><td><b>Australia Women</b></td><td>72%</td><td><a href="sports/cricket.html">full book</a> · <a href="https://www.cricket.com.au/">official source</a></td></tr><tr><td>Rugby Union</td><td>Stade Toulousain v USA Perpignan</td><td><b>Stade Toulousain</b></td><td>72%</td><td><a href="sports/rugby-union.html">full book</a> · <a href="https://top14.lnr.fr/calendrier-et-resultats">official source</a></td></tr><tr><td>Darts</td><td>Jonny Clayton v Niko Springer</td><td><b>Jonny Clayton</b></td><td>71%</td><td><a href="sports/darts.html">full book</a> · <a href="https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed">official source</a></td></tr><tr><td>Snooker</td><td>John Higgins v Jak Jones</td><td><b>John Higgins</b></td><td>71%</td><td><a href="sports/snooker.html">full book</a> · <a href="https://www.wst.tv/">official source</a></td></tr><tr><td>Darts</td><td>Wessel Nijman v Martin Schindler</td><td><b>Wessel Nijman</b></td><td>70%</td><td><a href="sports/darts.html">full book</a> · <a href="https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed">official source</a></td></tr><tr><td>Tennis</td><td>Benjamin Bonzi v Tommy Paul</td><td><b>Tommy Paul</b></td><td>70%</td><td><a href="sports/tennis.html">full book</a> · <a href="https://www.atptour.com/en/scores/current/lyon/496/draws">official source</a></td></tr><tr><td>Darts</td><td>Ryan Joyce v Jermaine Wattimena</td><td><b>Ryan Joyce</b></td><td>69%</td><td><a href="sports/darts.html">full book</a> · <a href="https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed">official source</a></td></tr><tr><td>Darts</td><td>Niels Zonneveld v Cameron Menzies</td><td><b>Niels Zonneveld</b></td><td>68%</td><td><a href="sports/darts.html">full book</a> · <a href="https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed">official source</a></td></tr><tr><td>Snooker</td><td>Zhang Anda v Mark Williams</td><td><b>Mark Williams</b></td><td>65%</td><td><a href="sports/snooker.html">full book</a> · <a href="https://www.wst.tv/">official source</a></td></tr><tr><td>Cricket</td><td>New Zealand v India</td><td><b>India</b></td><td>62%</td><td><a href="sports/cricket.html">full book</a> · <a href="https://scoring.nzc.nz/fixtures">official source</a></td></tr><tr><td>Cricket</td><td>New Zealand v India</td><td><b>India</b></td><td>62%</td><td><a href="sports/cricket.html">full book</a> · <a href="https://scoring.nzc.nz/fixtures">official source</a></td></tr><tr><td>Baseball</td><td>Milwaukee Brewers v Tampa Bay Rays</td><td><b>Milwaukee Brewers</b></td><td>59%</td><td><a href="sports/baseball.html">full book</a> · <a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-21&amp;endDate=2026-10-30">official source</a></td></tr><tr><td>Baseball</td><td>Milwaukee Brewers v Tampa Bay Rays</td><td><b>Milwaukee Brewers</b></td><td>59%</td><td><a href="sports/baseball.html">full book</a> · <a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-21&amp;endDate=2026-10-30">official source</a></td></tr></table>
+<h2>What changed vs the root dashboard (v2.0)</h2>
+<ul>
+<li><b>R1 — small-sample shrinkage:</b> 56 ratings were built from ≤12 games (EuroLeague 6, handball groups 4, NHL 8–11). At face value they manufactured false certainty — a 74% “high” on Real Madrid from six games. v2.1 shrinks record ratings toward neutral; 12 of 31 v2.0 highs demote.</li>
+<li><b>R2 — baseball venue fix:</b> home/road split ratings already contain home advantage; v2.0 added it twice.</li>
+<li><b>R3 — official ATP re-verification:</b> Tommy Paul No.15 / Benjamin Bonzi No.100 (atptour.com, 19 Oct 2026) turns a 50/50 baseline row into a rated high-confidence pick. Four fixture ranking labels corrected; WTA rows that could not be verified stay blank.</li>
+<li><b>Market depth:</b> from 4 market families to a full book per match — see the <a href="markets.html">Markets Explorer</a>.</li>
+</ul>
+<p>Excluded per brief (not covered anywhere in this repo): soccer/football, horse racing, boxing, UFC/MMA, American football, hurling, cycling, specials/entertainment.</p>
+
+</div></main>
+<footer><div class="wrap">Model output only — originated estimates with a documented 5% overround, not market prices and not betting advice. Facts are from official governing-body sources linked on every row; anything that could not be verified is on the Flagged for Review page.</div></footer>
+</body></html>

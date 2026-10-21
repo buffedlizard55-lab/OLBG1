@@ -642,3 +642,56 @@ numbers in `data/model_calibration-ccb6bde2.json` before any re-pricing.
 this session re-verifies a fact it fetches the official source in-session and logs the URL.
 
 *Execution, verification and publish records appended below as work proceeds.*
+
+### 12.1 Execution record (`ccb6bde2`, 2026-10-21T06:41–07:15Z)
+
+* **Audit first (`scripts/ccb6bde2_audit.py` → `data/model_calibration-ccb6bde2.json`):** all 134
+  fixtures / 126 lines / 31 predictions re-checked line by line — every fixture carries an
+  official source URL, every market sums to 1, every prediction ≥30 words and matching its pick:
+  **0 integrity errors**. Calibration curves re-measured from the shipped `model.py`. One live
+  re-verification failure found: the WTA draws URL cited for `ten-ningbo-rybakina`
+  (`tournaments/1115/…`) soft-404s; canonical is `tournaments/2092/…` (F-CCB-01, left for the
+  owning desk to patch — request logged here per §0.4).
+* **Official re-verification this session:** the official PIF ATP Rankings of 2026-10-19 read at
+  atptour.com (ranks 1–190): Tommy Paul **15**, S. Tsitsipas **39**, A. Rublev **22**, L. Darderi **23**,
+  J. Duckworth **73**, A. Mannarino **79**, B. Bonzi **100**; Kukushkin/Goffin/Bertola verified
+  **outside the top 190**. WTA table is script-rendered (no rows returned) → Leylah Fernandez/Sasnovich/
+  Bejlek ranks left blank, not inferred. PDC rankings sit behind a consent wall → darts seed
+  ratings kept, divergence flagged (F-CCB-07).
+* **T13 market expansion (`scripts/ccb6bde2_market_engine.py`):** **1,619 new markets** across
+  126 matches (≈13/match, 2,031 including core markets): correct scores & unit ladders for
+  race formats (darts legs, snooker frames, tennis/volleyball sets — per-unit q inverted from the
+  winner price so books are exactly consistent), winning-margin bands, alternate handicap/total
+  ladders, team totals, 1st-half markets, hockey 60-minute 3-way + OT Y/N, baseball First-5,
+  cricket 1st-innings totals, tennis set betting/1st set/total games. Markets needing an
+  unsourced per-player rate (180s, centuries, aces, top batter, player props, full-field
+  golf/greyhound/F1 books) are **not priced** and are registered with the missing official input
+  in `data/market_taxonomy-ccb6bde2.json` and the desk's Markets Explorer.
+* **T14 recalibration (v2.1, new files only):** R1 shrinkage of record ratings (67 adjustments
+  logged), R2 baseball venue fix, R3 ATP backfill. Result: confidence **31H/35M/60L → 19H/42M/65L**;
+  19 tier changes; 3 pick changes (two sub-52% coin flips, one verified-data fix: Tommy Paul over
+  Benjamin Bonzi, now HIGH with a fresh 30+-word prediction in `data/predictions-ccb6bde2.json`, joined
+  by fresh write-ups for the two Brewers games and Stade Toulousain whose v2.0 texts quoted
+  now-stale prices). The other 15 v2.1 highs keep their v2.0 texts; the validator asserts every
+  quoted winner price still matches the v2.1 book.
+* **T15 desk (`ccb6bde2/`):** 23 pages — dashboard, Markets Explorer, 17 sport pages (full
+  per-match books, official source link on every row), predictions, calibration audit, flagged
+  (F-CCB-01…12), methodology. Gates: `ccb6bde2_validate.py` PASSED (126 matches, 2,031 markets
+  sum to exactly 1 in integer micro-units, 19 predictions ≥30 words, 0 shared 6-grams, 636
+  internal links 0 broken); root `scripts/validate.py` PASSED (0 errors, 0 warnings);
+  `ebfbd966_validate.py` PASSED; whole-tree sweep **153 pages / 4,038 relative refs / 0 broken**.
+  Local `http.server` smoke test: all desk pages HTTP 200.
+* **Irregularities (published, non-blocking):** F-CCB-01 WTA wrong-ID link (fix requested from
+  owning desk via this log); F-CCB-02 markets-catalog over-claim; F-CCB-03 small-sample highs;
+  F-CCB-04 baseball double-count; F-CCB-05 inconsistent confidence bars (0.58–0.78, recommend a
+  uniform policy in a future model version); F-CCB-06 ATP label drift; F-CCB-07 darts seed vs
+  consensus; F-CCB-08 snooker tail heat; F-CCB-09 OLBG consensus micro-samples; F-CCB-10 v2.0
+  totals heuristic replaced by exact race distributions; F-CCB-11 coin-flip pick changes;
+  F-CCB-12 this session's own corrected pre-claim.
+* **Publish record:** PR — https://github.com/buffedlizard55-lab/OLBG1/pull/19 —
+  (`arena/ccb6bde2-olbg1` → `main`), merged 2026-10-21 (merge commit `d8c5cd3`). GitHub Pages build
+  for `d8c5cd3` completed `status=built`, `error=null`; live fetch verified rendered content at
+  https://buffedlizard55-lab.github.io/OLBG1/ccb6bde2/ (dashboard with the 1,619-market headline),
+  `/ccb6bde2/sports/tennis.html` (Tommy Paul HIGH pick at 1.37) and `/ccb6bde2/predictions.html`.
+  All five prior desks remain live and untouched (`/`, `/f7fa77fc/`, `/docs/`, `/ebfbd966/`,
+  `/aa4e9dbf/`, `/2360a617/`).
