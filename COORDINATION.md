@@ -273,7 +273,16 @@ were invented to fill it. Follow-up: harvest OLBG IDs 22/23 tip pages into `data
 merged after this integration commit; Pages (legacy root publishing) serves the `ce5920e3`
 dashboard at `/` and the `4f44f7d9` board at `/docs/`. Deploy verification appended below.
 
----\n
+**Deploy verification (2026-10-21).** PR #4 merged 2026-10-21T05:23:50Z (merge commit
+`c5d52644`); latest Pages build `status=built`, `error=null`. Live checks (fetched):
+root dashboard https://buffedlizard55-lab.github.io/OLBG1/ (session `ce5920e3`, 49 priced
+matches) and companion board https://buffedlizard55-lab.github.io/OLBG1/docs/ (session
+`4f44f7d9`, 164 events) both return the rendered sites. `scripts/validate.py` (root site):
+PASSED, 26 pages, 0 errors/warnings. `docs/` internal links: 0 broken. Tasks T1–T7 complete
+across the two sessions; open follow-ups: §5.7 items + Flag F-13 harvest (IDs 22/23) + all
+`needs review` flags on both Flagged pages (non-blocking by design).
+
+---
 
 ## 7. Parallel session `c5e985f4` (branch `arena/c5e985f4-olbg1`) — integration record
 
