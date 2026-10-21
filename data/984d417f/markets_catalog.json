@@ -1,0 +1,117 @@
+{
+  "generated": "2026-10-21",
+  "principles": [
+    "Every market's zero-vig fair probabilities sum to exactly 1.0000 (verified within 1e-6).",
+    "Fair decimal price = round(1.0 / p_fair, 2); market display price applies transparent sport-specific overround (4.0%–5.5% two-way, 5.5%–6.5% three-way, 12%–18% large multi-runner outright books) while keeping the fair zero-vig probability explicit.",
+    "Unconfirmed parameters (e.g., 4-day first-class cricket match total runs, unconfirmed starting pitchers/goalies, unconfirmed trap draw) are left blank and flagged rather than guessed.",
+    "Every covered sport — including multi-runner field sports (Golf, Motor Racing, Greyhounds) — receives originated probabilities, secondary derivative markets, a clear winner selection, and an explicit confidence grade (low / medium / high)."
+  ],
+  "sports_markets": {
+    "tennis": [
+      "Win Match (2-way)",
+      "Games Handicap (+/- games)",
+      "Total Games Over/Under",
+      "Set Betting (2-0 / 2-1 / 0-2 / 1-2)",
+      "1st Set Winner"
+    ],
+    "basketball": [
+      "Money Line (incl. OT)",
+      "Point Spread / Handicap",
+      "Game Total Points Over/Under",
+      "1st Half Spread & Total"
+    ],
+    "golf": [
+      "Tournament Outright Winner (Fair & EW 1/5 1-8 Places)",
+      "Top 5 Finish",
+      "Top 10 Finish",
+      "Tournament Head-to-Head Matchbet (72-Hole)",
+      "Winning Score Total Over/Under"
+    ],
+    "cricket": [
+      "Win Match (2-way incl. Super Over / 3-way First-Class)",
+      "Runs / Wickets Handicap Equivalent",
+      "Match Total Runs Over/Under (blank where unverified)",
+      "Top Team Batter / Opening Partnership Total"
+    ],
+    "snooker": [
+      "Win Match (Best-of-7 Frames)",
+      "Frame Handicap (+/- 1.5 or 2.5 frames)",
+      "Total Frames Over/Under 5.5",
+      "Deciding Frame Reached (Yes/No)"
+    ],
+    "rugby-union": [
+      "Match Result 1X2 (80 mins)",
+      "Draw No Bet (2-way)",
+      "2-Way Point Handicap",
+      "Total Match Points Over/Under",
+      "Winning Margin 1–12 / 13+"
+    ],
+    "rugby-league": [
+      "Match Result 1X2 (80 mins)",
+      "Draw No Bet (2-way)",
+      "2-Way Point Handicap",
+      "Total Match Points Over/Under"
+    ],
+    "baseball": [
+      "Money Line (incl. Extra Innings)",
+      "Run Line (-1.5 / +1.5)",
+      "Game Total Runs Over/Under",
+      "First 5 Innings (F5) Money Line & Total"
+    ],
+    "ice-hockey": [
+      "Money Line (incl. OT & Shootout)",
+      "Puck Line (-1.5 / +1.5)",
+      "Total Goals Over/Under (incl. OT/SO)",
+      "60-Minute Regulation 1X2"
+    ],
+    "motor-racing": [
+      "Grand Prix Race Winner",
+      "Podium Finish (Top 3)",
+      "Points Finish (Top 10)",
+      "Driver Head-to-Head Matchbet",
+      "Winning Margin Over/Under 5.5 Seconds"
+    ],
+    "darts": [
+      "Win Match (Best-of-11 Legs)",
+      "Leg Handicap (+/- 1.5 or 2.5 legs)",
+      "Total Legs Over/Under 9.5",
+      "Most 180s / Match Checkout Derivative"
+    ],
+    "handball": [
+      "Match Result 1X2 (60 mins)",
+      "Draw No Bet (2-way)",
+      "Goal Handicap (Asian 2-way)",
+      "Total Goals Over/Under"
+    ],
+    "volleyball": [
+      "Win Match (Best-of-5 Sets)",
+      "Set Handicap (-1.5 / +1.5 sets)",
+      "Total Points Over/Under",
+      "Total Sets Over/Under 3.5"
+    ],
+    "aussie-rules": [
+      "Win Match (Head-to-Head)",
+      "Line / Point Handicap",
+      "Total Match Points Over/Under",
+      "Winning Margin 1–24 / 25+"
+    ],
+    "esports": [
+      "Win Match (Best-of-1 Swiss Map)",
+      "Kill Handicap (+/- kills)",
+      "Total Kills Over/Under",
+      "Map Duration Over/Under 32.5 Minutes"
+    ],
+    "gaelic-football": [
+      "Match Result 1X2 (60 mins)",
+      "Draw No Bet (2-way)",
+      "Point Handicap (2-way)",
+      "Total Combined Score Points Over/Under"
+    ],
+    "greyhounds": [
+      "Race Winner (6-Trap Book)",
+      "Forecast / Top-2 Finish",
+      "Verified Semi-Final Clock Head-to-Head Matchbet",
+      "Winning Time Over/Under"
+    ]
+  }
+}

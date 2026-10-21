@@ -206,3 +206,30 @@ The 31 High-confidence predictions were also re-authored in this pass — human 
 each, every factual clause drawn from the row's stored official inputs, no repeated six-word
 sequence anywhere in the corpus.
 
+---
+
+## Complete 17-Sport Live Official-Source Suite & Repo Audit (`/984d417f/` — session `984d417f-olbg1`)
+
+Published side by side at [`/984d417f/`](984d417f/index.html) (`https://buffedlizard55-lab.github.io/OLBG1/984d417f/`),
+session `984d417f-olbg1` resolves the remaining PDC and ATP/WTA verification blockers above via primary governing-body
+documents and publishes a self-contained 23-page dashboard, multi-market origination engine, and line-by-line audit across all
+tracked repository desks:
+
+| Deliverable | Path | Summary |
+|---|---|---|
+| Interactive 23-page dashboard | `984d417f/index.html` + `984d417f/sports/<slug>.html` | Master 145-event filterable/sortable board, all 17 sport category pages, Decimal/American/Fair-% switcher, Dark/Light theme |
+| High-confidence human predictions | `984d417f/predictions.html`, `data/984d417f/predictions.json` | 40 unique human-written predictions (56–68 words each, `0` repeated 6-grams) across 10 sports |
+| Multi-market lines & CSV export | `data/984d417f/{fixtures,lines}.json`, `data/984d417f/matches.csv` | Zero-vig + bookmaker-equivalent Win/1X2/Outright, non-pushing `.5` Spreads, Totals, Derivatives & full multi-runner field boards |
+| Line-by-line repo & OLBG audit | `984d417f/audit.html`, `reports/SESSION_984D417F_AUDIT.md` | 11 line-numbered repository audit groups (`AUD-984-01`..`11`) + 9 upstream `OLBG.com` defects (`OLBG-DEF-01`..`09`) |
+| Flagged for Manual Review | `984d417f/flagged.html`, `data/984d417f/flagged.json` | 127 blank/flagged field entries held uninferred with direct official review URLs |
+
+Reproduce & validate:
+
+```bash
+python3 scripts/s984d417f_dataset.py     # compiles data/984d417f/{olbg_taxonomy,markets_catalog,sources,fixtures,repo_audit,flagged}.json
+python3 scripts/s984d417f_model.py       # originates lines.json, predictions.json & matches.csv
+python3 scripts/s984d417f_build_site.py  # renders 23 pages in 984d417f/ + reports/SESSION_984D417F_AUDIT.md
+python3 scripts/s984d417f_validate.py    # verifies all 145 rows, 40 writeups, 2,946 links & anchors (0 errors)
+```
+
+
