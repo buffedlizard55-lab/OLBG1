@@ -80,19 +80,54 @@ hurling, horse racing, cycling, specials.
 
 ## Task records
 
-### T1 — Reverse-engineer OLBG.com (owner: arena-aa4e9dbf)
-- Status: in progress
-- Findings so far:
-  - Sitemap index: https://www.olbg.com/sitemap.xml → sub-sitemaps incl. `sitemap-betting-tips.xml`
-  - URL pattern for events: `https://www.olbg.com/betting-tips/{Sport}/{Region}/{Competition}/{Match}/{market_id}?event_id={event_id}`
-  - Sport hub pages: `https://www.olbg.com/betting-tips/{Sport}/{sport_id}`
-  - 20+ sports listed (see table above).
-- (record updated as work proceeds)
+### T1 — Reverse-engineer OLBG.com (owner: arena-aa4e9dbf) — DONE
+- Sitemap index `https://www.olbg.com/sitemap.xml` → `sitemap-betting-tips.xml` lists all sport hubs with stable sport IDs (see table above).
+- Event URL pattern: `https://www.olbg.com/betting-tips/{Sport}/{Region}/{Competition}/{Match}/{market_id}?event_id={id}`; hub pattern `/betting-tips/{Sport}/{sport_id}`.
+- Per-sport market maps extracted from OLBG help text + a sample tennis event page (Win Match, Set Betting, 1st Set Winner, Games handicap, Total Games) → saved in `data/olbg-structure.json`.
+- Irregularity found: OLBG displayed start times are unreliable across sports (wrong for NBA/NHL/F1/darts/snooker; correct for ICEHL/tennis). Documented on Flagged page with examples.
+
+### T2 — Harvest match list (owner: arena-aa4e9dbf) — DONE
+- All 14 covered-sport hub pages read 2026-10-21 ~05:00-08:00 UTC; 131 events recorded with OLBG event URLs (see `data/matches.json`, `tools/data_*.py`).
+- Findings: eSports hub empty ("No tips found"); Rugby League has no match events (2027 futures only); Baseball lists only World Series G1.
+
+### T3 — Verify matches against official sources (owner: arena-aa4e9dbf) — DONE
+- 31 events verified directly on official sources (NBA.com, NHL.com, MLB.com, ATP/WTA, EHF/eurohandball.com, hapoelbc.com, EuroCup official calendar PDF, LNR (top14/prod2), kac.at, formula1.com, lpga.com, internationalseries.com, stifelcharityclassic.com, pgatourmedia, womensindianopen.com, cricket.com.au, nhl.com gamecenter, euroleaguebasketball.com standings).
+- 78 partial (competition/date cross-checked via multiple listings; official league page linked).
+- 22 unverified → fields left blank and flagged (KBL game, 4 CSA domestic T20s, 4 Scandinavian domestic handball, some volleyball/tennis/golf rows, Cluj–London Lions conflict).
+- Key verified facts used for picks/predictions are embedded in `tools/data_*.py` with per-fact source URLs.
+
+### T4 — Originate lines (owner: arena-aa4e9dbf) — DONE
+- 113 of 131 events carry our own fair (vig-free) lines across money line / handicap / total (and outright boards for golf/F1). Unverified fixtures intentionally have blank lines. Methodology documented on the site's Methodology page (power ratings from verified standings/results/H2H/seedings + home advantage).
+
+### T5 — Picks + confidence (owner: arena-aa4e9dbf) — DONE
+- Every verified/partial event has a pick with low/medium/high label; unverified events have no pick (blank + flag). 9 high-confidence picks: MLB WS G1 Under 6.5; Panathinaikos ML; Veszprem ML; PSG Handball ML; Aalborg ML; van Veen ML; Higgins ML; Australia Women ML; Toulouse ML.
+
+### T6 — High-confidence predictions (owner: arena-aa4e9dbf) — DONE
+- 9 written predictions, 66-92 words each, each stating the betting selection explicitly, with per-fact source links (see `docs/predictions.html`).
+
+### T7 — Data tables with source links (owner: arena-aa4e9dbf) — DONE
+- `data/sports/*.json` (14 files) + `data/matches.json` generated from `tools/data_*.py`.
+
+### T8 — GitHub Pages site (owner: arena-aa4e9dbf) — DONE
+- `docs/`: landing dashboard, 14 sport subpages, predictions.html, flagged.html, methodology.html, assets/style.css. Pure static HTML/CSS (no build deps). Internal link check: 18 HTML files, 0 broken links; 187 distinct external URLs, all pattern-valid.
+
+### T9 — Final integration & verification (owner: arena-aa4e9dbf) — DONE
+- Line-by-line re-check of the generated tables against the captured sources; verification badges per row (verified/partial/unverified); blanks confirmed blank; review-flag classification implemented; site builds reproducibly via `python3 tools/build_site.py`.
+
+### T10 — PR, merge, Pages deploy (owner: arena-aa4e9dbf) — see final status below
 
 ## Cross-session requests
 
 - (none)
 
+## Final integration report (arena-aa4e9dbf, acting as final integration session)
+
+- Branch: `arena/aa4e9dbf-olbg1` (this session's fixed branch) → PR to `main`.
+- Combined data re-verified; site built; internal links checked (0 broken); Pages served from `/docs` on `main`.
+- PR link and deploy result recorded below when complete.
+
 ## Change log
 
 - 2026-10-21: arena-aa4e9dbf created board, claimed T1–T10 (no other sessions registered).
+- 2026-10-21: arena-aa4e9dbf completed T1–T9 (see task records for sources, verification and irregularities). T10 in progress.
+
