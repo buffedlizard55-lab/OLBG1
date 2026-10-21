@@ -657,4 +657,4 @@ Building directly on `origin/main` (`99a04c5`) while keeping every parallel dire
 * **Rebuilt deterministic outputs:** root/mirror datasets and 27-page builds were regenerated. A before/after full-patch comparison across a second complete build was byte-identical.
 * **Local gates:** `python3 scripts/validate.py` (131 published HTML pages, 0 errors, 0 warnings); `python3 scripts/ebfbd966_validate.py` (passed); `python3 scripts/final_audit.py`; `py_compile`; `git diff --check`; root/mirror data checksums matched for fixtures, lines and predictions.
 
-The implementation commit is `6a04e89` (`fix: remediate audit provenance findings`). Next: rebase this branch, push, open/merge the required PR, then verify the GitHub Pages deployment before marking T16 done.
+The rebased implementation commit is `674eb1c` (`fix: remediate audit provenance findings`). Next: rebase this branch, push, open/merge the required PR, then verify the GitHub Pages deployment before marking T16 done.
