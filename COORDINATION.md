@@ -273,7 +273,16 @@ were invented to fill it. Follow-up: harvest OLBG IDs 22/23 tip pages into `data
 merged after this integration commit; Pages (legacy root publishing) serves the `ce5920e3`
 dashboard at `/` and the `4f44f7d9` board at `/docs/`. Deploy verification appended below.
 
----\n
+**Deploy verification (2026-10-21).** PR #4 merged 2026-10-21T05:23:50Z (merge commit
+`c5d52644`); latest Pages build `status=built`, `error=null`. Live checks (fetched):
+root dashboard https://buffedlizard55-lab.github.io/OLBG1/ (session `ce5920e3`, 49 priced
+matches) and companion board https://buffedlizard55-lab.github.io/OLBG1/docs/ (session
+`4f44f7d9`, 164 events) both return the rendered sites. `scripts/validate.py` (root site):
+PASSED, 26 pages, 0 errors/warnings. `docs/` internal links: 0 broken. Tasks T1–T7 complete
+across the two sessions; open follow-ups: §5.7 items + Flag F-13 harvest (IDs 22/23) + all
+`needs review` flags on both Flagged pages (non-blocking by design).
+
+---
 
 ## 7. Parallel session `c5e985f4` (branch `arena/c5e985f4-olbg1`) — integration record
 
@@ -308,6 +317,47 @@ as estimates, never as bookmaker quotes.
 * Merge result: merged into `main` (merge commit `f15b790`), subsequently included in `main` HEAD `4ee2564` (PR #7 merge).
 * GitHub Pages: source `main` → `/`; `status=built`, `error=null`, `https_enforced=true`; live URL https://buffedlizard55-lab.github.io/OLBG1/ (root dashboard served by the integrated `ce5920e3` build, link-integrity validated with 0 errors).
 * Flagged items: logged on the site's `flagged.html`; none block the merge.
+
+---
+
+## 8. Cross-links between the two published boards (session `ce5920e3`, final pass)
+
+Both dashboards were live but unreachable from one another. This pass makes the combined
+deliverable read as one product rather than two orphan sites:
+
+1. The root dashboard's nav gains **“OLBG board (164)”**, a relative link to `docs/index.html`
+   (the builder's `../` prefix keeps it correct from `sports/` too).
+2. The root index gains a **“Two boards, two methods — read both”** panel stating which board
+   rests on governing-body sources and which on OLBG tip distributions, and that neither is a
+   superset of the other.
+3. `docs/index.html` gains a banner back to `../index.html` repeating the provenance caveat, so a
+   reader who lands on the companion board first is not misled about where the prices come from.
+
+**Validator change.** `scripts/validate.py` previously reported `docs/index.html` as a broken
+internal link because the companion tree sat outside its known-file set. It now accepts a link that
+resolves to a real file under `docs/`, while still rejecting links that escape the site root.
+
+**Gate result.** `python3 scripts/validate.py` → 26 pages, 0 errors, 0 warnings. A separate sweep of
+all 46 HTML files across both trees for relative `href`/`src` targets found **0 broken references**.
+
+### 8.1 Venue verification (closing the last open honesty item)
+
+The Rays' home venue was previously carried as an **unverified** string because the earlier statsapi
+call used a `fields=` filter, which silently drops `venue` — a documented trap. Re-queried without
+the filter:
+
+`GET /api/v1/schedule?sportId=1&startDate=2026-10-26&endDate=2026-10-28&hydrate=venue(location)`
+
+→ `venue: {id: 12, name: "Tropicana Field", active: true, season: "2026"}`,
+address *One Tropicana Drive, St. Petersburg, Florida 33705*. The venue string is therefore
+**verified**, not inferred, and is no longer flagged.
+
+The same response confirms Game 5 on 28 October carries `ifNecessary: "Y"`, which is why the
+conditional games were excluded from the priced set.
+
+**Copy correction made at the same time.** Two rating inputs read `"55-26 at Tropicana Field (.679)"`.
+The standings publish a *home* record, not a venue-specific one, so attributing the split to the
+ballpark was an inference. Both now read `"55-26 at home (.679)"`.
 
 ### Session `arena/ebfbd966-olbg1` (appended at integration, 2026-10-21)
 
@@ -354,4 +404,3 @@ integrated additively:
    linked per row; SNO-02 HIGH to be re-confirmed on WST rankings); MLB WS starters + NHL
    goalies blank; OLBG 'Load More' zero-tip tail unenumerated; OLBG times timezone unstated.
    Mirrored on `ebfbd966/flagged.html`.
-
