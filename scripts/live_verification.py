@@ -32,6 +32,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CHECKED_AT = "2026-10-21T07:05Z"
+PASS2_AT = "2026-10-21T07:20Z"
 
 # ---------------------------------------------------------------------------
 # Sources actually re-fetched during this pass
@@ -89,6 +90,18 @@ SOURCES: dict[str, dict[str, str]] = {
         "name": "Premiership Rugby official fixtures & results",
         "url": "https://www.premrugby.com/fixtures-results",
     },
+    "urc_new": {
+        "name": "United Rugby Championship official 2026/27 fixtures in full (Round 4)",
+        "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
+    },
+    "nrl_women": {
+        "name": "NRL draw — Women's Rugby League World Cup (competition id 176 request)",
+        "url": "https://www.nrl.com/draw/?competition=176&round=2&season=2026",
+    },
+    "plusliga": {
+        "name": "PlusLiga official games page (redirects to tauronliga.pl)",
+        "url": "https://www.plusliga.pl/games.html",
+    },
 }
 
 # ---------------------------------------------------------------------------
@@ -138,6 +151,12 @@ CONFIRMED: dict[str, dict[str, str]] = {
     "hand-ehf-12044": {"src": "ehf", "evidence": "EHF calendar: Aalborg Håndbold v RK Celje Pivovarna Laško, 21 Oct, 20:45 CEST (= 18:45Z) — match."},
     "hand-ehf-12047": {"src": "ehf", "evidence": "EHF calendar: HC Kriens-Luzern v Industria Kielce, 21 Oct, 20:45 CEST (= 18:45Z) — match."},
     "hand-ehf-12049": {"src": "ehf", "evidence": "EHF calendar: MT Melsungen v Orlen Wisla Plock, 22 Oct, 18:45 CEST (= 16:45Z) — match."},
+    # --- Rugby union, pass 2 (URC Round 4) ---------------------------------
+    "ru-urc-609577": {"src": "urc_new", "at": "2026-10-21T07:20Z", "evidence": "URC 2026/27 fixtures release, Round 4: Connacht v Zebre Parma, Dexcom Stadium, Galway, Friday 23 October, KO 19:45 IRE & UK (= 18:45Z) — participants, venue, date and kick-off all match."},
+    "ru-urc-609576": {"src": "urc_new", "at": "2026-10-21T07:20Z", "evidence": "Round 4: Vodacom Bulls v Ulster, Loftus Versfeld, Pretoria, Saturday 24 October, KO 12:45 IRE & UK (= 11:45Z) — all match."},
+    "ru-urc-609580": {"src": "urc_new", "at": "2026-10-21T07:20Z", "evidence": "Round 4: DHL Stormers v Scarlets, DHL Stadium, Cape Town, Saturday 24 October, KO 15:00 IRE & UK (= 14:00Z) — all match."},
+    # --- AFLW, pass 2 ------------------------------------------------------
+    "aflw-r11-04": {"src": "aflw", "at": "2026-10-21T07:20Z", "evidence": "AFLW Round 11 fixture board: carl v gws, match id 8975, venue code IKP (IKON Park) — pairing, home/away and venue match. The board prints kick-offs in the viewer's timezone, so the stored UTC was left as published rather than re-derived."},
     "hand-ehf-12051": {"src": "ehf", "evidence": "EHF calendar: OTP Bank - PICK Szeged v GOG, 22 Oct, 18:45 CEST (= 16:45Z) — match."},
     "hand-ehf-12048": {"src": "ehf", "evidence": "EHF calendar: Kolstad Håndball v SC Magdeburg, 22 Oct, 20:45 CEST (= 18:45Z) — match."},
     "hand-ehf-12054": {"src": "ehf", "evidence": "EHF calendar: Sporting Clube de Portugal v IFK Kristianstad, 22 Oct, 20:45 CEST (= 18:45Z) — match."},
@@ -166,6 +185,12 @@ CONFIRMED: dict[str, dict[str, str]] = {
 # Rows corrected because the re-fetched page disagreed
 # ---------------------------------------------------------------------------
 CORRECTED: dict[str, dict[str, str]] = {
+    "ru-urc-609578": {
+        "src": "urc_new",
+        "at": "2026-10-21T07:20Z",
+        "evidence": "URC Round 4 lists Leinster v Munster on Saturday 24 October, KO 18:00 IRE & UK (= 17:00Z), with the venue published as 'TBC, Dublin'. The row asserted Aviva Stadium, which the official release does not confirm.",
+        "change": "Venue changed to 'Dublin (venue TBC)'; participants, competition and kick-off verified and left unchanged.",
+    },
     "nhl-2026020154": {
         "src": "nhl_stand",
         "evidence": "Standings 2026-10-20 return 7-2-1, .750, +14 — but over 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0), not the 5-1-0 the row carried. Home games cannot decrease, so the old figure was an error rather than drift.",
@@ -217,6 +242,30 @@ CORRECTED: dict[str, dict[str, str]] = {
 # Rows where the re-fetched page disagrees and a human must decide
 # ---------------------------------------------------------------------------
 FLAGGED: dict[str, dict[str, str]] = {
+    "aflw-r11-01": {
+        "src": "aflw",
+        "at": "2026-10-21T07:20Z",
+        "evidence": "AFLW Round 11 board lists nmfc v adel as match 8979 with venue code NHO. The board publishes three-letter venue codes only; NHO was not decoded with certainty and does not correspond to the row's 'Arden Street Oval, Melbourne'.",
+        "change": "Left as published and flagged for a human to confirm the venue; the pairing and match id do match.",
+    },
+    "aflw-r11-05": {
+        "src": "aflw",
+        "at": "2026-10-21T07:20Z",
+        "evidence": "AFLW Round 11 board lists haw v ess as match 8976 with venue code KCC. The row claims Kinetic Stadium, Frankston; KCC was not decoded with certainty from the official board.",
+        "change": "Left as published and flagged for a human to confirm the venue; the pairing and match id do match.",
+    },
+    "rl-wc26w-aus-eng": {
+        "src": "nrl_women",
+        "at": "2026-10-21T07:20Z",
+        "evidence": "Requesting nrl.com/draw/?competition=176&round=2&season=2026 returns a page whose canonical URL is ?competition=131 and whose content is the five men's Rugby League World Cup Round 2 matches. Competition id 176 does not serve a women's draw.",
+        "change": "Row flagged; the women's competition id in the citation does not resolve to a women's fixture list. No fixture facts were changed.",
+    },
+    "rl-wc26w-sam-wal": {
+        "src": "nrl_women",
+        "at": "2026-10-21T07:20Z",
+        "evidence": "Same request as rl-wc26w-aus-eng: competition=176 canonicalises to competition=131 (men's RLWC) and returns the men's Round 2 draw, so the women's Samoa v Wales tie could not be read from the official source.",
+        "change": "Row flagged; no fixture facts changed.",
+    },
     "nhl-2026020160": {
         "src": "nhl_stand",
         "evidence": "The priced input is Vegas 8-2-0 (.800, W3). The same endpoint re-fetched at 2026-10-21T07:05:30Z returns 8-3-0 (.727, L1) over 11 games, so the club has played once since the snapshot.",
@@ -235,17 +284,15 @@ FLAGGED: dict[str, dict[str, str]] = {
 NOT_RECHECKED_REASON: dict[str, str] = {
     "darts": "PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
     "tennis": "WTA draw pages are client-rendered and returned only the notification shell with no draw body; ATP draws behave the same way. Rankings pages were not re-read either.",
-    "euroleague": "EuroLeague / EuroCup game-centre pages are client-rendered and were not re-fetched in this pass.",
-    "volleyball": "PlusLiga and SuperLega fixture pages were not re-fetched in this pass.",
-    "rugby-union": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
+    "basketball": "EuroLeague and EuroCup game-centre pages are client-rendered; the second pass did not re-read them, so these six rows keep their original status.",
+    "volleyball": "plusliga.pl/games.html now redirects to tauronliga.pl/games.html and the returned list could not be mapped fixture by fixture (F-V13); the SuperLega pages were not re-read in this pass.",
+    "rugby-union": "The Premiership fixtures page returned header and footer only, with no fixture rows, to a text fetch (F-V11), so these five rows keep their cross-checked status; Top 14 was not re-read in this pass.",
     "gaelic-football": "GAA county fixture pages were not re-fetched in this pass.",
     "golf": "PGA TOUR, DP World Tour, LPGA and PGA TOUR Champions schedules were not re-fetched in this pass.",
     "greyhounds": "GBGB race calendar was not re-fetched in this pass.",
     "motor-racing": "Formula 1 event page was not re-fetched in this pass.",
     "esports": "LoL Esports schedule was not re-fetched in this pass.",
     "ice-hockey": "The 21 Oct schedule response was read; this row's game sits on the 22/23 Oct pages, which were not read back.",
-    "aussie-rules": "The Round 11 board fragment returned did not include this pairing; only six of the nine AFLW fixtures were readable.",
-    "rugby-league": "The NRL women's competition draw was not readable from the men's competition page used in this pass.",
     "cricket": "Not re-read in this pass; the NZC fixtures service was used for the rows that were checked.",
 }
 
@@ -326,6 +373,38 @@ FINDINGS: list[dict[str, str]] = [
         "source": "nrl",
     },
     {
+        "id": "F-V11",
+        "severity": "low",
+        "area": "Rugby union — Premiership fixture list still not readable",
+        "detail": "A second fetch of premrugby.com/fixtures-results returned page chrome, sponsor blocks and footer only: no fixture rows were present in the returned document, so the five Gallagher Premiership rows still cannot be re-read from the union's own site.",
+        "status": "Those five rows keep their cross-checked status; they were not promoted to verified on the strength of an unread page.",
+        "source": "prem",
+    },
+    {
+        "id": "F-V12",
+        "severity": "medium",
+        "area": "Rugby league — the women's competition id in the citation does not resolve",
+        "detail": "Requesting nrl.com/draw/?competition=176&round=2&season=2026 returns a page canonicalised to ?competition=131, and the body is the five men's Rugby League World Cup Round 2 matches. The women's Samoa v Wales and Australia v England ties cannot be evidenced from the cited URL.",
+        "status": "Both women's rows are flagged for a human to supply the correct official citation; no fixture facts were altered.",
+        "source": "nrl_women",
+    },
+    {
+        "id": "F-V13",
+        "severity": "low",
+        "area": "Volleyball — PlusLiga citation redirects to a different competition site",
+        "detail": "plusliga.pl/games.html now resolves to tauronliga.pl/games.html and returns a Polish-language fixture list under different site branding. The five men's PlusLiga rows could not be matched fixture by fixture within this pass.",
+        "status": "Rows left at their original status with the redirect documented; re-pointing the citation is a human decision.",
+        "source": "plusliga",
+    },
+    {
+        "id": "F-V14",
+        "severity": "low",
+        "area": "AFLW — venue codes on the official board are not decodable to venue names",
+        "detail": "The Round 11 board publishes three-letter venue codes (IKP, KCC, NHO, ALB, GMHBA, PFS, MWO, HEN, RSEA). IKP resolves to IKON Park and matches aflw-r11-04. KCC (haw v ess) and NHO (nmfc v adel) could not be decoded with certainty, and NHO does not correspond to the row's Arden Street Oval.",
+        "status": "Two rows flagged rather than guessed. The boards also render kick-offs in the viewer's timezone, so stored UTC values were left as published.",
+        "source": "aflw",
+    },
+    {
         "id": "F-V10",
         "severity": "medium",
         "area": "Coverage — most rows were not re-fetched in this pass",
@@ -350,7 +429,7 @@ def _status_row(fixture: dict) -> dict:
             "source_url": SOURCES[entry["src"]]["url"],
             "evidence": entry["evidence"],
             "action": entry["change"],
-            "checked_at": CHECKED_AT,
+            "checked_at": entry.get("at", CHECKED_AT),
         }
     if fid in CONFIRMED:
         entry = CONFIRMED[fid]
@@ -364,7 +443,7 @@ def _status_row(fixture: dict) -> dict:
             "source_url": SOURCES[entry["src"]]["url"],
             "evidence": entry["evidence"],
             "action": "No change required.",
-            "checked_at": CHECKED_AT,
+            "checked_at": entry.get("at", CHECKED_AT),
         }
     if fid in FLAGGED:
         entry = FLAGGED[fid]
@@ -378,7 +457,7 @@ def _status_row(fixture: dict) -> dict:
             "source_url": SOURCES[entry["src"]]["url"],
             "evidence": entry["evidence"],
             "action": entry["change"],
-            "checked_at": CHECKED_AT,
+            "checked_at": entry.get("at", CHECKED_AT),
         }
     reason = NOT_RECHECKED_REASON.get(fixture["sport"], "Not re-fetched in this pass.")
     first = (fixture.get("sources") or [{}])[0]
@@ -407,7 +486,7 @@ def build() -> dict:
         bucket = sports.setdefault(row["sport"], {"confirmed": 0, "corrected": 0, "flagged": 0, "not_rechecked": 0})
         bucket[row["status"]] += 1
     return {
-        "generated": CHECKED_AT,
+        "generated": PASS2_AT,
         "method": (
             "Each row was matched against a freshly fetched governing-body page or endpoint. "
             "Participants, date, venue and (where the publisher states one) start time and game "

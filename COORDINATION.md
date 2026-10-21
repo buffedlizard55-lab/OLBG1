@@ -812,3 +812,57 @@ the corrections.
   `data/verification.json`); the 16 darts and 11 tennis rows need a browser-capable fetch or a
   publisher change before they can be re-verified; Vegas drift (F-V5) awaits a reviewer decision on
   whether to re-price or leave the snapshot; women's RLWC NRL competition id (176) untested.
+
+---
+
+## 18. Second live-verification pass — session `72198d3e-olbg1`
+
+**Claim (2026-10-21T07:19Z).** Session `72198d3e-olbg1` claims task **T21 — second live-verification
+pass**, file scope: `scripts/live_verification.py`, `scripts/dataset_rows_b.py` (single row
+`ru-urc-609578`), `scripts/build_dataset.py` (finding register only), `scripts/build_site.py`
+(two copy strings), plus the outputs those scripts regenerate (`data/verification.json`,
+`data/fixtures.json`, `datasets/*`, `reports/LIVE_VERIFICATION.md`, root + `f7fa77fc/` HTML).
+No other session's files are touched. §17 / §17.1 remain as published by the first pass.
+
+### 18.1 What was re-fetched in this pass
+
+| Official page | Rows affected | Read |
+|---|---|---|
+| `unitedrugby.com/latest/news/2026-27-fixtures-in-full/` | 4 URC Round 4 | fixture list returned in full |
+| `afl.com.au/aflw` Round 11 board | 3 AFLW | nine Round 11 tiles with match ids and venue codes |
+| `nrl.com/draw/?competition=176&round=2&season=2026` | 2 women's RLWC | canonicalised to competition 131 (men's) |
+| `premrugby.com/fixtures-results` | 5 Premiership | chrome only — no fixture rows |
+| `plusliga.pl/games.html` | 5 PlusLiga | 302 to `tauronliga.pl/games.html` |
+| `pdc.tv` draw release (4 fetch attempts, incl. a reader proxy) | 16 darts | consent interstitial only |
+
+### 18.2 Result
+
+`55 confirmed, 10 corrected, 6 flagged, 63 not re-checked` (was 51 / 9 / 2 / 72).
+
+* **Confirmed (+4):** `ru-urc-609577` Connacht v Zebre (Dexcom Stadium, 18:45Z), `ru-urc-609576`
+  Bulls v Ulster (Loftus Versfeld, 11:45Z), `ru-urc-609580` Stormers v Scarlets (DHL Stadium,
+  14:00Z), `aflw-r11-04` Carlton v GWS (match 8975, IKP = IKON Park).
+* **Corrected (+1):** `ru-urc-609578` Leinster v Munster — the official URC release publishes the
+  venue as "TBC, Dublin", not Aviva Stadium. Dataset source changed to `Dublin (venue TBC)` and the
+  row now carries a flag. Participants, date and 17:00Z kick-off were confirmed and left alone.
+* **Flagged (+4):** `aflw-r11-01` (board code `NHO`, not the row's Arden Street Oval),
+  `aflw-r11-05` (code `KCC`, not decoded to Kinetic Stadium), and both women's RLWC rows
+  (`competition=176` does not serve a women's draw).
+* **New findings on the Flagged page:** `LIVE-F-V12-NRL-WOMEN-ID`,
+  `LIVE-F-V13-PREMIERSHIP-UNREADABLE`, `LIVE-F-V14-URC-VENUE-TBC`; and on the Live Verification page
+  `F-V11`–`F-V14` (Premiership still unreadable, NRL women's id, PlusLiga redirect, AFLW venue codes).
+  Published finding count 28 → 31.
+* **Copy fixed:** the dashboard and sources pages now compute the re-verification coverage from
+  `data/verification.json` instead of hard-coding "62 of 134", so the numbers cannot drift again.
+* **Still not re-read (63):** darts 16 (PDC consent wall, unchanged), tennis 11 (client-rendered
+  draws), rugby union 5 (Premiership), volleyball 8 (PlusLiga redirect + SuperLega not read),
+  basketball 6 (EuroLeague/EuroCup game centre), gaelic football 4, golf 4, greyhounds 3,
+  cricket 1, esports 1, motor racing 1. Each row names its blocker.
+
+### 18.3 Gates
+
+`build_dataset.py` → `origin_lines.py` → `live_verification.py` → `build_site.py` → `validate.py` →
+`final_audit.py`. Confirmed: 134 rows, 31 High / 35 Medium / 60 Low, 29 root + 29 mirror pages,
+135 published HTML pages, **0 errors / 0 warnings**.
+
+**Publish record:** see §18.4.

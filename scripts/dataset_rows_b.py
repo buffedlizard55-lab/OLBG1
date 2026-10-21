@@ -134,7 +134,7 @@ def get_rows_b() -> list[dict]:
          609576, "Ulster +18.50", "Handicap", "2/2 win tips (100%)"),
         ("ru-urc-609580", "2026-10-24T14:00:00Z", "DHL Stormers", "Scarlets", "DHL Stadium, Cape Town",
          609580, "Stormers", "To Win", "1/2 win tips (50%)"),
-        ("ru-urc-609578", "2026-10-24T17:00:00Z", "Leinster", "Munster", "Aviva Stadium, Dublin",
+        ("ru-urc-609578", "2026-10-24T17:00:00Z", "Leinster", "Munster", "Dublin (venue TBC)",
          609578, "Leinster", "To Win", "1/1 win tips (100%)"),
     ]
     for rid, utc, h, a, ven, eid, sel, mkt, cons in urc_rows:
@@ -144,7 +144,11 @@ def get_rows_b() -> list[dict]:
             "status": "verified", "sources": [URC_FIX], "inputs": {},
             "olbg": {"listed": True, "event_id": eid, "selection": sel, "market": mkt, "consensus": cons,
                      "url": "https://www.olbg.com/betting-tips/Rugby_Union/9"},
-            "flags": ["URC Round 3 live standings table client-rendered on stats.unitedrugby.com; fixture, venue and UTC kick-off verified on URC site"],
+            "flags": (
+                ["URC official 2026/27 fixtures release publishes this fixture as 'TBC, Dublin'; venue not asserted beyond the city"]
+                if rid == "ru-urc-609578" else
+                ["URC Round 3 live standings table client-rendered on stats.unitedrugby.com; fixture, venue and UTC kick-off verified on URC site"]
+            ),
         })
 
     # Keep all 5 Gallagher Premiership rows from ce5920e3 preserved transparently as cross-checked

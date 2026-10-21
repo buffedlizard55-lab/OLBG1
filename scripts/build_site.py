@@ -330,7 +330,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 </div>
 
 <div class="note">
-  <b>New in this pass — <a href="live-verification.html">Live Verification</a>:</b> a dated, page-by-page re-fetch of the governing-body sources behind <b>62 of the 134 rows</b> — <b>{vs["confirmed"]}</b> confirmed, <b>{vs["corrected"]}</b> corrected, <b>{vs["flagged"]}</b> flagged — plus the <b>{vs["not_rechecked"]}</b> rows this pass did not re-read, each with the blocker named. It is the first pass here that re-opened the official pages instead of auditing the dataset's structure.
+  <b>New in this pass — <a href="live-verification.html">Live Verification</a>:</b> a dated, two-pass re-fetch of the governing-body sources behind <b>{vs["confirmed"] + vs["corrected"] + vs["flagged"]} of the 134 rows</b> — <b>{vs["confirmed"]}</b> confirmed, <b>{vs["corrected"]}</b> corrected, <b>{vs["flagged"]}</b> flagged — plus the <b>{vs["not_rechecked"]}</b> rows this pass did not re-read, each with the blocker named. It is the first pass here that re-opened the official pages instead of auditing the dataset's structure.
 </div>
 
 <h2>Browse by Sport Category (All 17 In-Scope OLBG Sports)</h2>
@@ -697,7 +697,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 <p class="lede">All {len(D["sources"]["sources"])} primary authorities used to verify fixtures, kick-off times, rankings, standings, and recent match history across the repository.</p>
 
 <div class="note">
-  <b>Fresh official-source re-verification:</b> <a href="live-verification.html">Live Verification</a> records a dated, page-by-page re-fetch of 62 of the 134 rows against their governing bodies, lists the 9 corrections it produced, and names the 72 rows this pass did not re-read. It is the first pass in this repository to re-open the official pages rather than audit the dataset structure.
+  <b>Fresh official-source re-verification:</b> <a href="live-verification.html">Live Verification</a> records a dated, two-pass re-fetch of {vs["confirmed"] + vs["corrected"] + vs["flagged"]} of the 134 rows against their governing bodies, lists the {vs["corrected"]} corrections it produced, and names the {vs["not_rechecked"]} rows still not re-read. It is the first pass in this repository to re-open the official pages rather than audit the dataset structure.
 </div>
 
 <div class="note">
