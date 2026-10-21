@@ -44,19 +44,30 @@ No third-party dependencies. Python 3.10+.
 5. **Every high-confidence pick gets its own written prediction** — 30+ words, stating the selection,
    built only from sourced facts.
 
-## Coverage at a glance (Primary Root Desk & `/f7fa77fc/` Mirror — Session `f7fa77fc-olbg1`)
+## Coverage at a glance (primary desk + `/f7fa77fc/` mirror)
 
-- **134 source-linked events across ALL 17 in-scope OLBG sports**: `129` rows are `verified` and `5` Gallagher Premiership rows remain explicitly `cross-checked`; `126` two-sided H2H matches are priced across Winner, Draw No Bet, Handicap/Spread and (where a sourced baseline exists) Over/Under Total markets, plus `8` field cards across Golf, Motor Racing and Greyhounds.
-- **All 24 active OLBG sport IDs reconciled** (`22` sitemap-listed + unlisted active routes `Entertainment/18` and `Hurling/26`): `17` in scope (`Tennis`, `Basketball`, `Golf`, `Cricket`, `Snooker`, `Rugby Union`, `Rugby League`, `Baseball`, `Ice Hockey`, `Motor Racing`, `Darts`, `Handball`, `Volleyball`, `Aussie Rules`, `eSports`, `Gaelic Football`, `Greyhounds`) and `8` excluded (`Football/Soccer`, `Horse Racing`, `American Football`, `Boxing`, `UFC/MMA`, `Entertainment/Specials`, `Hurling`, `Cycling`).
-- **31 High-confidence picks** (requiring `status == "verified"` AND measured governing-body ratings on **both** sides — an original, source-bounded `30+` word prediction per pick, with `0` duplicate 6-word n-grams), **35 Medium**, **60 Low**, **8 Field cards**.
-- **0 unverified values published as fact** and **0 broken relative links across all 131 published HTML pages** spanning all five live boards (`/` root, `/f7fa77fc/`, `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`).
+- **136 source-linked events across all 17 in-scope OLBG sports** — `130` `verified`, `5` Gallagher
+  Premiership rows `cross-checked`, `1` row (`cric-afg-ban-odi`) explicitly `unverified` because no
+  governing-body fixture page exists for it.
+- **127 two-sided H2H matches priced** across Winner, Draw No Bet, Handicap/Spread and (where a
+  source-backed baseline exists) Over/Under Total — plus `9` event/field cards, including World
+  Series Game 5, which is deliberately unpriced rather than given a guessed line.
+- **31 High-confidence picks** (each requires `status == "verified"` and measured governing-body
+  ratings on both sides, with its own 30+ word hand-written prediction), **35 Medium**, **61 Low**.
+- **Fresh verification pass, 2026-10-21:** every row carries a verification ledger block. **59 rows
+  were re-read against official pages today** (52 confirmed, 7 corrected); 6 carry a time conflict,
+  1 is unconfirmed, 16 are blocked by a gated publisher and 54 are labelled "not re-checked".
+  See [`verification.html`](https://buffedlizard55-lab.github.io/OLBG1/verification.html) and
+  [`reports/VERIFICATION_2026-10-21.md`](reports/VERIFICATION_2026-10-21.md).
 
 ## Quick rebuild & repo-wide validation
 
 ```bash
-python3 scripts/build_dataset.py       # governing-body fixtures, sources, coverage & flagged registry
+python3 scripts/build_dataset.py       # seed snapshot of fixtures, sources and coverage
+python3 scripts/verify_pass.py         # REQUIRED: apply the 2026-10-21 verification ledger + corrections
 python3 scripts/origin_lines.py        # multi-market pricing, 31 predictions & datasets/matches_full.{json,csv}
-python3 scripts/build_site.py          # renders 27 pages at / and 27 mirrored pages at /f7fa77fc/
+python3 scripts/build_flagged.py       # regenerate the Flagged for Review register from the live data
+python3 scripts/build_site.py          # renders 28 pages at / and 28 mirrored pages at /f7fa77fc/
 python3 scripts/validate.py            # strict provenance, market, export and all-site-link validator
 python3 scripts/final_audit.py          # writes reports/FINAL_INTEGRATION_AUDIT.md (every primary row + links)
 python3 scripts/ebfbd966_validate.py   # parallel ebfbd966 validator (0 errors)

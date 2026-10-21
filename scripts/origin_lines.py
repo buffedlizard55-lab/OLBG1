@@ -36,7 +36,7 @@ def main() -> None:
 
     priced_lines: list[dict] = []
     for f in fixtures:
-        if f.get("away"):
+        if f.get("away") and not f.get("unpriced"):
             priced_lines.append(price_match(f))
 
     high_ids = [l["id"] for l in priced_lines if l["confidence"] == "high"]
@@ -96,7 +96,7 @@ def main() -> None:
     (ROOT / "data" / "lines.json").write_text(json.dumps(lines_doc, indent=2) + "\n")
     (ROOT / "data" / "predictions.json").write_text(json.dumps(predictions_doc, indent=2) + "\n")
 
-    # Build unified matches_full.json + matches_full.csv across all 134 rows
+    # Build unified matches_full.json + matches_full.csv across all rows
     lines_by_id = {l["id"]: l for l in priced_lines}
     preds_by_id = {p["match_id"]: p for p in predictions_out}
 
