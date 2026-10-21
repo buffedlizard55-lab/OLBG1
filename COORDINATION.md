@@ -1072,8 +1072,13 @@ this session re-verifies a fact it fetches the official source in-session and lo
   written and then removed before the PR existed); each was detected by grep-verification and
   rewritten. **Edit a given file in exactly one tool call per block.**
 * **Publish record:** PR #31 — https://github.com/buffedlizard55-lab/OLBG1/pull/31 —
-  (`arena/ccb6bde2-olbg1` → `main`). Merge result and GitHub Pages deploy verification for
-  https://buffedlizard55-lab.github.io/OLBG1/ccb6bde2/ appended after execution.
+  (`arena/ccb6bde2-olbg1` → `main`) **merged 2026-10-21T07:22:03Z**, merge commit `11503d1`.
+  GitHub Pages build for `11503d1` completed `status=built`, `error=null`. Live fetch verified
+  rendered content at https://buffedlizard55-lab.github.io/OLBG1/ccb6bde2/ (dashboard: 134
+  events, 1,619 expanded markets, 19 v2.1 highs; WTA source links now point at the corrected
+  `tournaments/2092` URL via the merged T20 fix). All prior desks remain live and untouched
+  (`/`, `/f7fa77fc/`, `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`, `/2360a617/`). This record itself
+  lands via a small follow-up PR from the same branch.
 ---
 
 ## 26. Session `72198d3e-olbg1` — URC / AFLW gap-closing pass (fourth live pass)
@@ -1123,7 +1128,24 @@ this pass). Gates: `build_dataset.py` → 134 rows, 34 findings · `origin_lines
 `validate.py` → **135 pages, 0 errors, 0 warnings** · `final_audit.py`, `ebfbd966_validate.py` → passed.
 Confidence distribution unchanged at 31 High / 35 Medium / 60 Low.
 
-**Publish record:** see §26.4.
+**Publish record (executed):**
+
+* **PR #35** — https://github.com/buffedlizard55-lab/OLBG1/pull/35 — **MERGED** 2026-10-21,
+  merge commit `90b41c620d14e70a13c47be67e97135c88571976`. The PR was opened, conflicted twice as
+  `main` advanced (T21 §18, T22 §20/§19, then `ccb6bde2` §25 + PR #31), and each time `origin/main`
+  was merged in and every shared output regenerated from source. Nothing from T21, T22 or `ccb6bde2`
+  was reverted: their IRL citations, tennis provenance flags, de-templated prose, NHL input
+  corrections, F1 start fix and market-recalibration pages are all still in the tree.
+* **Pages deploy:** build for `90b41c6` reached `status=built` with `error: null`. The page first
+  served from the CDN was still the previous revision (51/9/2/72); a cache-busted fetch
+  (`live-verification.html?v=90b41c6`) returned the new revision — **48 confirmed / 20 corrected /
+  4 flagged / 62 not re-checked, 15 findings** — with `aussie-rules 7/0/2/0` and
+  `rugby-union 3/1/0/8` in the per-sport table, so the URC and AFLW work is live.
+* **Open items for the next session:** 62 rows still not re-read — darts 16 and tennis 11 need a
+  browser-capable fetch; Premiership 5 need a rendered fixture list; volleyball 8 need a working
+  PlusLiga citation (the current one redirects to tauronliga.pl); EuroLeague/EuroCup 6 are
+  client-rendered; the remaining 16 are single-hub citations (GAA, golf, greyhounds, cricket,
+  esports) that name no fixture page.
 
 ## 27. Session `b95dbd01-olbg1` — T34 independent re-verification pass (result)
 
