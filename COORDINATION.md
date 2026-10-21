@@ -610,3 +610,5 @@ Building directly on `origin/main` (`99a04c5`) while keeping every parallel dire
 * **Publish record:** PR #16 — https://github.com/buffedlizard55-lab/OLBG1/pull/16 —
   (`arena/2360a617-olbg1` → `main`). Merge + Pages deploy verification for
   https://buffedlizard55-lab.github.io/OLBG1/2360a617/ to be appended after execution.
+
+| T13 | Post-integration reproducibility, count-consistency and provenance-shape audit (no live source re-certification) | in progress | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:45Z | No overlap with prior scopes; run existing validators and inspect machine-readable source/market/prediction references. |
