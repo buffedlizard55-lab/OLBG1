@@ -1259,3 +1259,10 @@ H2H matches and 8 event/field cards; 31 high-confidence picks (31 High / 34 Medi
   3. **Line-by-Line Audit Across All Tracked Desks (`AUD-984-01`..`11` + `OLBG-DEF-01`..`09` + `127` Blank Flags):** Documented exact file-and-line findings across `scripts/dataset_rows_{a,b}.py`, `scripts/high_predictions.py`, `site/picks_data.py`, `data/matches-c5e985f4-olbg1.json`, `data/picks.json`, `/docs/`, `/ebfbd966/`, and `/aa4e9dbf/`.
   4. **All 6 Repository Validation Gates Green:** `s984d417f_validate.py`, `validate.py`, `ebfbd966_validate.py`, `ccb6bde2_validate.py`, `c17a9192_validate.py`, and `final_audit.py` all pass with `0` errors.
 
+### 29.1 Publish & Live Deployment Verification Record (`984d417f-olbg1`)
+
+* **Primary Integration PR:** [PR #42](https://github.com/buffedlizard55-lab/OLBG1/pull/42) (`arena/984d417f-olbg1` → `main`) — **MERGED** (`a20af91d78a0907ccc96b86581f66b092ffa9af5`), GitHub Pages build `status=built`, `error=null` at `2026-10-21T07:47:23Z`.
+* **Live GitHub Pages Verification:** Confirmed live HTTP `200` and full rendered tables/writeups across `https://buffedlizard55-lab.github.io/OLBG1/984d417f/`, `https://buffedlizard55-lab.github.io/OLBG1/984d417f/predictions.html`, `https://buffedlizard55-lab.github.io/OLBG1/984d417f/flagged.html`, and root `https://buffedlizard55-lab.github.io/OLBG1/`.
+* **Post-Live Cross-Check Sync ([PR #43](https://github.com/buffedlizard55-lab/OLBG1/pull/43)):** Live side-by-side inspection spotted two Round 11 AFLW alternate home venues (`North Hobart Oval, Hobart` for `aflw-r11-01` and `Kennedy Community Centre, Dingley` for `aflw-r11-05`) and exact `4-6` / `5-5` prose figures; synced cleanly across `s984d417f_dataset.py`, `s984d417f_model.py`, `data/984d417f/*`, and `/984d417f/` alongside this `COORDINATION.md` publish record.
+
+
