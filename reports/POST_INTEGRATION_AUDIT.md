@@ -59,7 +59,7 @@ These examples are not asserted false; they are **unsubstantiated by the evidenc
 
 ### F2 — Status wording is easy to overstate (needs review)
 
-The root dashboard/README summaries describe 134 events as officially verified, while the underlying fixture data distinguishes 129 `verified` from 5 `cross-checked` rows. Preserve the distinction in public summaries and in exports. Do not change the five statuses without actually confirming each fixture against a source that meets the project's verification rule.
+The live 404-page dashboard link labels the destination “134 Verified Events,” while the underlying fixture data distinguishes 129 `verified` from 5 `cross-checked` rows. Preserve the distinction in public summaries and exports. Do not change the five statuses without confirming each fixture against a source that meets the project’s verification rule.
 
 ### F3 — Official-source page content was not re-fetched in this pass (needs review)
 
@@ -75,3 +75,5 @@ Every root fixture row carries at least one source URL outside OLBG, and the reg
 ## Source register and verification performed
 
 The dataset's source register, including official provider names, roles and links, is [`data/sources.json`](../data/sources.json). This audit verified JSON consistency and source-link presence by reading the checked-in files, and reran the two validators listed above. It did not make a fresh official-site fetch; see F1–F3 before treating source-dependent prose or values as newly verified.
+
+After publishing this review page, a whole-repository relative-link sweep covered **131 HTML files with 0 missing local targets**. PR #20 merged the standalone page (`a38aea2`); GitHub Actions Pages deployment succeeded, and the rendered public page was confirmed at [the review-page URL](https://buffedlizard55-lab.github.io/OLBG1/reports/POST_INTEGRATION_AUDIT.html).

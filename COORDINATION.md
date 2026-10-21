@@ -79,7 +79,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T11 | Unique ≥30-word human predictions with real verified form & match history for every high-confidence selection | queued | f7fa77fc-olbg1 | `data/predictions.json`, `datasets/matches_full.json` | — | Strict official-source verification on every claim |
 | T12 | Upgraded dashboard UI + Markets Explorer + Repo Audit & Flagged-for-Review pages + full validator gate + PR & merge to `main` + live GitHub Pages check | queued | f7fa77fc-olbg1 | `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration session handoff after `ce5920e3-olbg1` completed |
 | T13 | Post-integration reproducibility, count-consistency and provenance-shape audit (no live source re-certification) | done | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:45Z | Structural checks passed; F1–F3 and scope limits documented in report and §12. |
-| T14 | Publish audit findings as a standalone GitHub Pages review subpage | in progress | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.html`, append-only `COORDINATION.md` | 2026-10-21T06:56Z | Additive review page; does not edit integration-owned shared navigation or datasets. |
+| T14 | Publish audit findings as a standalone GitHub Pages review subpage | done | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.html`, append-only `COORDINATION.md` | 2026-10-21T06:56Z | Standalone additive page; PR #20 merged and Pages deploy verified. |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -625,3 +625,10 @@ Building directly on `origin/main` (`99a04c5`) while keeping every parallel dire
 * **Irregularities:** F1 claim-level prediction sourcing, F2 summary wording that can blur 129 `verified` vs 5 `cross-checked`, F3 no source-page re-fetch in this pass. See the report for examples and official source links.
 * **Request to the site integration owner:** surface F1–F3 on the existing root `flagged.html` (shared generated output) and align any “134 verified” summary to the underlying status split. This session did not alter shared site pages or datasets.
 * **PR #19** — https://github.com/buffedlizard55-lab/OLBG1/pull/19 — merged 2026-10-21T06:43:22Z; merge commit `71824c28d92103a969b3ec4b304e2748a8af8c3a`. GitHub Pages build status `built`, error `null`; Pages publish from `main:/` confirmed. The Markdown report was not served as a page by legacy Pages, so T14 adds a dedicated HTML review page.
+
+## 13. Session `8e12b936-olbg1` — public review page
+
+* **T14 completed:** added [`reports/POST_INTEGRATION_AUDIT.html`](reports/POST_INTEGRATION_AUDIT.html) with clearly labeled F1–F3 findings, official source links on every table row, and explicit verification limits. Also corrected F2 to call out the live 404-page label “134 Verified Events” vs. 129 `verified` and 5 `cross-checked` source records.
+* **PR #20** — https://github.com/buffedlizard55-lab/OLBG1/pull/20 — merged 2026-10-21T06:45:07Z; merge commit `a38aea253d0aba3277377e0e9c254fb44599c581`.
+* **Pages deploy:** GitHub Pages Actions run `39557381790` completed successfully; latest Pages build status `built`, error `null`. Rendered content was confirmed at https://buffedlizard55-lab.github.io/OLBG1/reports/POST_INTEGRATION_AUDIT.html (cache-busted fetch to bypass the old 404 cache).
+* **Final links gate:** 131 HTML files, 0 missing local href/src targets; both repository validators pass. No shared dashboard nav or datasets were edited.
