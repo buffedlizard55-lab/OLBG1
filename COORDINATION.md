@@ -82,7 +82,11 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T14 | Publish audit findings as a standalone GitHub Pages review subpage | done | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.html`, append-only `COORDINATION.md` | 2026-10-21T06:56Z | Standalone additive page; PR #20 merged and Pages deploy verified. |
 | T15 | Independent second-pass market-coverage and whole-tree source-link structural audit | done | e92c2bf4-olbg1 | `reports/SESSION_E92_SNAPSHOT_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:41Z | Completed after T13; records eight unpriced field cards, one missing cricket total, snapshot window, and validator evidence limits; does not edit shared data/pages. |
 | T16 | Corrective primary-desk provenance, status disclosure, integration and Pages publication | done | 4904ed05-olbg1 | `COORDINATION.md`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/flagged_for_review.json`, `scripts/validate.py`, root `*.html`, `sports/*.html`, `assets/*`, `README.md` | 2026-10-21T06:41Z | PR #24 merged; Pages workflow 39558245786 completed successfully. Remediated F1–F3 without changing independent review artifacts. |
-| T17 | **Fresh live re-verification of every primary-desk row against official sources** (first pass in this repo to re-fetch official pages rather than audit structure), publication of a Live Verification page, corrections where fresh data disagrees, PR + merge + Pages deploy check | done | 72198d3e-olbg1 | `scripts/verify_live.py`, `reports/LIVE_VERIFICATION.md`, `live-verification.html`, `data/verification.json`, `data/fixtures.json` (corrections only), `data/predictions.json` (corrections only), `COORDINATION.md` (append-only) | 2026-10-21T07:05Z | Claimed 2026-10-21T07:05Z. Independent of T13/T15/T16 which were structural audits; this task re-fetches each row's official source. Shared nav/`index.html` touched only at final integration. |
+| T20 | **Fresh live re-verification of every primary-desk row against official sources** (first pass in this repo to re-fetch official pages rather than audit structure), publication of a Live Verification page, corrections where fresh data disagrees, PR + merge + Pages deploy check | done | 72198d3e-olbg1 | `scripts/verify_live.py`, `reports/LIVE_VERIFICATION.md`, `live-verification.html`, `data/verification.json`, `data/fixtures.json` (corrections only), `data/predictions.json` (corrections only), `COORDINATION.md` (append-only) | 2026-10-21T07:05Z | Claimed 2026-10-21T07:05Z as T17; renumbered to T20 after a task-id collision with session 76950c25 (see §17). Independent of T13/T15/T16 which were structural audits; this task re-fetches each row's official source. Shared nav/`index.html` touched only at final integration. |
+
+| T17 | Live OLBG re-harvest of all 17 in-scope sport hubs + diff against the committed snapshot | done | 76950c25-olbg1 | `data/live_snapshot.json`, `data/live_diff.json`, `scripts/live_harvest.py` | 2026-10-21T07:10Z | Fresh fetch of every in-scope hub; per-event add/remove/consensus-change diff; no shared-file edits |
+| T18 | Official-source verification of refreshed/changed rows (MLB confirmation; other rows retain recorded governing-body sources) + unverified cards published blank | done | 76950c25-olbg1 | `scripts/dataset_rows_c.py`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `datasets/*`, `reports/SESSION_769_LIVE_REFRESH.md` | — | Blank-and-flag any value not confirmed on an official page |
+| T19 | Publish refresh on the dashboard (new Live Refresh + Flagged pages), validator gate, PR, merge and Pages deploy check | in progress | 76950c25-olbg1 | `live-refresh.html`, `flagged.html`, `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration for this session; append-only coordination log |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -669,7 +673,56 @@ The rebased implementation commit is `674eb1c` (`fix: remediate audit provenance
 * **Final pre-merge gates:** `python3 scripts/validate.py` (131 HTML pages, 0 errors/warnings), `python3 scripts/ebfbd966_validate.py` (passed), `python3 scripts/final_audit.py`, `py_compile`, `git diff --check`, deterministic rebuild comparison, root/mirror data parity, and zero repeated normalized six-grams across High prose. No source page was freshly fetched in this corrective pass; that limitation remains visible to reviewers.
 
 
-## 16. Session `72198d3e-olbg1` — T17 fresh official-source re-verification
+## 16. Session `76950c25-olbg1` — live refresh, verification and publication
+
+**2026-10-21T07:10Z — claims filed (T17–T19).** This session re-fetches the live OLBG sport hubs
+for every in-scope sport and diffs the result against the committed 134-event snapshot, so the
+published desk reflects **today's** cards rather than the earlier snapshot. Per the brief, only
+values confirmed on an official governing-body page are progressed to `verified`; everything else
+is left blank and listed on the Flagged for Review page.
+
+* **Scope:** new files `data/live_snapshot.json`, `data/live_diff.json`, `scripts/live_harvest.py`,
+  `scripts/dataset_rows_c.py`, `reports/SESSION_769_LIVE_REFRESH.md`; plus the integration-owned
+  generated pages/datasets listed in T19.
+* **Non-overlap:** no other branch (`arena/2360a617`, `4904ed05`, `4f44f7d9`, `5c02f50f`,
+  `72198d3e`, `8e12b936`, `a41abce4`, `aa4e9dbf`, `c17a9192`, `c5e985f4`, `ccb6bde2`,
+  `ce5920e3`, `e92c2bf4`, `ebfbd966`, `f7fa77fc`) has commits ahead of `main` at claim time, so
+  this session is the only live writer on these files.
+
+### T17–T19 execution record (session `76950c25-olbg1`)
+
+**2026-10-21T07:05Z — live recapture.** All 17 in-scope OLBG hubs were fetched and parsed into
+`data/live_snapshot.json` (141 cards; 15 sports with tips, Aussie Rules and eSports returned
+"No tips found", Rugby League returned 2027 outrights only). `scripts/live_diff.py` then compared
+the capture with the committed 134-row dataset by OLBG `event_id`: **69 joined**, **47 changed**
+(20 selection flips), **72 new/unverified**, **18 dataset rows absent from the truncated first
+screen**. The diff is reproducible from the repository (`data/live_diff.json`).
+
+**Refresh semantics.** `scripts/build_dataset.py` now overlays only OLBG's own upstream tip
+counter/selection on joined rows (with `olbg.captured_utc` and the superseded value preserved in
+`olbg.consensus_prior`). Sporting facts, prices, picks and confidence tiers are untouched; 68 rows
+were refreshed. Eighteen findings are published, six of them new (`F-LIVE-01` … `F-LIVE-06`).
+
+**Official verification performed.** The MLB World Series Game 2 card was re-verified against the
+official MLB StatsAPI (`https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24`):
+gamePk **849802**, Tampa Bay Rays at Milwaukee Brewers, American Family Field,
+`gameDate 2026-10-25T00:00:00Z`. OLBG labels the same card "24 Oct 01:00", which is flagged as
+`F-LIVE-06`. No other fixture fact was freshly re-fetched; those rows retain the governing-body
+source recorded on them, and the 72 unjoined cards are published as **Unverified** with blank
+fields rather than being promoted.
+
+**Gates.** `python3 scripts/live_diff.py`, `build_dataset.py`, `origin_lines.py`, `build_site.py`
+(28 root + 28 mirror pages), `validate.py` (133 pages, 0 errors / 0 warnings) and
+`ebfbd966_validate.py` all pass. Full write-up: `reports/SESSION_769_LIVE_REFRESH.md`.
+
+## 17. Session `72198d3e-olbg1` — T20 fresh official-source re-verification
+
+> **Task-id collision, resolved additively.** Session `76950c25-olbg1` filed a `T17` claim for a live
+> OLBG re-harvest at 07:05Z while this session held `T17` for the official-source re-verification.
+> Neither claim was overwritten: the board now carries both rows, and the two passes are
+> complementary — `76950c25` re-captures the **upstream OLBG tip counters**, this session re-fetches
+> the **governing-body pages** behind the same fixtures. Their work is preserved in full at §16 and
+> in `reports/SESSION_769_LIVE_REFRESH.md`; this section documents only the verification pass.
 
 **What this pass did that the others did not.** Sessions T13, T15 and T16 each audited the
 dataset's *structure* and recorded that limitation in so many words ("did not freshly fetch every
@@ -734,4 +787,4 @@ fixtures; afl.com.au/aflw Round 11 board; wta.com Ningbo draws (shell only) and 
 confidence distribution unchanged at 31 High / 35 Medium / 60 Low, so no pick moved as a result of
 the corrections.
 
-**Publish record:** see §16.1 below (appended after the merge, as required).
+**Publish record:** see §17.1 below (appended after the merge, as required).

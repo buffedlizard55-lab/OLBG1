@@ -11,6 +11,7 @@ Emits:
 from __future__ import annotations
 
 import json
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -22,6 +23,176 @@ from dataset_rows_a import get_rows_a
 from dataset_rows_b import get_rows_b
 
 DATE_ANCHOR = "2026-10-21"
+
+CONSENSUS_RE = re.compile(r"^\d+/\d+ win tips \(\d+%\)$")
+LIVE_SNAPSHOT = ROOT / "data" / "live_snapshot.json"
+
+
+def apply_live_consensus(rows: list[dict]) -> dict:
+    """Overlay the live OLBG tip-consensus capture onto matching dataset rows.
+
+    Only OLBG's own upstream tip counters are replaced; every sporting fact (kick-off
+    time, venue, records, ratings) still comes from the governing-body sources recorded
+    on the row.  The previous value is retained in ``consensus_prior`` so the change is
+    auditable.  Rows whose captured consensus is not in OLBG's own ``x/y win tips (z%)``
+    format are left untouched rather than being partially written.
+    """
+    if not LIVE_SNAPSHOT.exists():
+        return {"applied": 0, "skipped": 0}
+    snap = json.loads(LIVE_SNAPSHOT.read_text())
+    live = {int(ev["event_id"]): ev for ev in snap["events"]}
+    applied = skipped = 0
+    for row in rows:
+        olbg = row.get("olbg") or {}
+        ev = live.get(int(olbg.get("event_id") or 0))
+        if not ev or not CONSENSUS_RE.match(ev.get("consensus", "")):
+            skipped += 1
+            continue
+        if olbg.get("consensus") != ev["consensus"]:
+            olbg["consensus_prior"] = olbg.get("consensus")
+            olbg["consensus"] = ev["consensus"]
+        if olbg.get("selection") != ev["selection"]:
+            olbg["selection_prior"] = olbg.get("selection")
+        olbg["selection"] = ev["selection"]
+        if ev.get("market"):
+            olbg["market"] = ev["market"]
+        olbg["captured_utc"] = snap["fetched_utc"]
+        applied += 1
+    return {"applied": applied, "skipped": skipped, "captured_utc": snap["fetched_utc"]}
+
+
+def live_refresh_findings() -> list[dict]:
+    """Public disclosure of what the live re-capture did and did not confirm."""
+    diff_path = ROOT / "data" / "live_diff.json"
+    if not diff_path.exists():
+        return []
+    d = json.loads(diff_path.read_text())
+    s = d["summary"]
+    flips = [c for c in d["changed"] if c["selection_flipped"]]
+    examples = "; ".join(
+        f"{c['title']} ({c['was']['selection']} -> {c['now']['selection']})" for c in flips[:4]
+    )
+    return [
+        {
+            "id": "F-LIVE-01-DRIFT",
+            "category": "Live Recapture",
+            "severity": "medium",
+            "affected": f"{s['consensus_or_selection_changed']} of {s['matched']} dataset rows matched to a live OLBG card",
+            "summary": (
+                f"OLBG tip consensus and/or most-tipped selection moved between the committed "
+                f"capture and the {d['captured_utc']} recapture."
+            ),
+            "evidence": (
+                f"{s['selection_flipped']} cards changed the selection OLBG highlights, e.g. {examples}, "
+                f"and {s['consensus_or_selection_changed'] - s['selection_flipped']} kept the same selection "
+                f"with a different tip count/share. Consensus is an upstream opinion counter, not a "
+                f"verified sporting fact, so this changes no fixture, price or confidence tier."
+            ),
+            "official_url": "https://www.olbg.com/betting-tips",
+            "resolution": (
+                "Every matched row carries the recaptured consensus plus "
+                "olbg.captured_utc and the superseded value in olbg.consensus_prior; the full "
+                "before/after list is published on the Live Refresh page and in data/live_diff.json."
+            ),
+        },
+        {
+            "id": "F-LIVE-02-NO-OFFICIAL",
+            "category": "Verification Boundary",
+            "severity": "high",
+            "affected": f"{s['new_not_in_dataset']} live OLBG cards not present in the verified dataset",
+            "summary": (
+                "These events are listed because OLBG publishes them, but none of their kick-off times, "
+                "participant records or ratings have been confirmed against a governing body in this pass."
+            ),
+            "evidence": (
+                f"The {d['captured_utc']} capture returned {s['live_events_captured']} cards across "
+                f"{s['sports_with_live_events']} sports; {s['matched']} join to an existing source-verified row "
+                f"by OLBG event_id and {s['new_not_in_dataset']} do not. No price, winner pick or confidence tier "
+                "is originated for an unjoined card."
+            ),
+            "official_url": "https://www.olbg.com/betting-tips",
+            "resolution": (
+                "Published as upstream-only rows on the Live Refresh page with every sporting field left blank "
+                "and marked Unverified; they are excluded from data/fixtures.json, data/lines.json and the "
+                "134-event verified count until an official source confirms each one."
+            ),
+        },
+        {
+            "id": "F-LIVE-03-TRUNCATION",
+            "category": "Upstream OLBG Defect",
+            "severity": "medium",
+            "affected": f"{s['dataset_rows_absent_from_capture']} dataset rows with an OLBG event_id",
+            "summary": (
+                "Dataset rows whose OLBG event page exists were not visible on the recaptured hub first screen."
+            ),
+            "evidence": (
+                "OLBG hubs render roughly 20 cards before a 'Load More Tips' control, so absence from the "
+                "first screen is not evidence that OLBG has delisted or completed the event. Examples include "
+                "basketball 535918/535921/535923 and darts 32331/32336, all still future-dated in the dataset."
+            ),
+            "official_url": "https://www.olbg.com/betting-tips/Basketball/4",
+            "resolution": (
+                "Recorded as 'not in capture' rather than deleted or expired; the rows stay in the dataset with "
+                "their governing-body kick-off times and are listed with this caveat in data/live_diff.json."
+            ),
+        },
+        {
+            "id": "F-LIVE-04-EMPTY-HUBS",
+            "category": "Upstream OLBG Coverage",
+            "severity": "medium",
+            "affected": "Aussie Rules (ID 22), eSports (ID 23), Rugby League (ID 10)",
+            "summary": (
+                "Two in-scope hubs returned 'No tips found', and the Rugby League hub returned only 2027 outright "
+                "markets while the desk still carries 9 AFLW fixtures, 1 LoL Worlds tie and 7 RLWC26 fixtures."
+            ),
+            "evidence": (
+                "Fetched hubs for Aussie_Rules/22 and eSports/23 returned 'No tips found' at the capture time; "
+                "Rugby_League/10 listed State of Origin 2027, Super League 2027 and NRL 2027 outrights only. "
+                "Absence of OLBG tips does not invalidate the governing-body fixtures, but it does mean OLBG "
+                "consensus cannot be refreshed for those sports."
+            ),
+            "official_url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+            "resolution": (
+                "Consensus for those three sports is retained from the earlier capture and labelled with its "
+                "capture timestamp; the gap is published rather than back-filled."
+            ),
+        },
+        {
+            "id": "F-LIVE-06-MLB-CLOCK",
+            "category": "Upstream OLBG Defect",
+            "severity": "medium",
+            "affected": "Baseball - TB Rays @ MIL Brewers (event_id=160789)",
+            "summary": (
+                "OLBG's baseball hub card shows '24 Oct 01:00' for a game the official MLB StatsAPI schedules "
+                "for 2026-10-25T00:00:00Z."
+            ),
+            "evidence": (
+                "Verified against the official MLB StatsAPI schedule for 2026-10-24, which returns gamePk 849802, "
+                "'World Series Game 2', Tampa Bay Rays at Milwaukee Brewers, American Family Field, "
+                "gameDate 2026-10-25T00:00:00Z. Even reading OLBG's clock as UTC-4, its label maps to "
+                "2026-10-24T05:00:00Z - roughly 19 hours before the official first pitch."
+            ),
+            "official_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24",
+            "resolution": (
+                "The desk keeps the official MLB time on mlb-849802 and treats the OLBG label as a display defect; "
+                "the OLBG link is retained only as the upstream discovery reference."
+            ),
+        },
+        {
+            "id": "F-LIVE-05-ZERO-TIPS",
+            "category": "Upstream OLBG Defect",
+            "severity": "low",
+            "affected": "Golf - Hero Womens Indian Open (event_id=101909)",
+            "summary": "The each-way outright card still renders an empty tip count / 0% share on the hub.",
+            "evidence": (
+                "The card shows 'Avani Prashanth' with no tip counter, matching the previously documented 0/0 "
+                "division display defect on each-way-only outright markets."
+            ),
+            "official_url": "https://www.olbg.com/betting-tips/Golf/5",
+            "resolution": "Consensus is recorded as unavailable for this card; no share is inferred.",
+        },
+    ]
+
 
 
 def build_sources() -> dict:
@@ -409,6 +580,8 @@ def main() -> None:
     ids = [r["id"] for r in rows]
     assert len(ids) == len(set(ids)), "Duplicate match IDs in dataset"
 
+    live = apply_live_consensus(rows)
+
     sources_doc = build_sources()
     coverage_doc = build_coverage(rows)
     fixtures_doc = {
@@ -421,6 +594,8 @@ def main() -> None:
         "fixtures": rows,
     }
     flagged_doc = build_flagged_registry(rows)
+    flagged_doc["findings"].extend(live_refresh_findings())
+    flagged_doc["summary"]["upstream_and_audit_findings"] = len(flagged_doc["findings"])
 
     (ROOT / "data" / "sources.json").write_text(json.dumps(sources_doc, indent=2) + "\n")
     (ROOT / "data" / "coverage.json").write_text(json.dumps(coverage_doc, indent=2) + "\n")
@@ -428,6 +603,10 @@ def main() -> None:
     (ROOT / "datasets").mkdir(exist_ok=True)
     (ROOT / "datasets" / "flagged_for_review.json").write_text(json.dumps(flagged_doc, indent=2) + "\n")
 
+    print(
+        f"Live consensus overlay: {live.get('applied', 0)} rows refreshed from {live.get('captured_utc', '-')}; "
+        f"{len(flagged_doc['findings'])} published findings."
+    )
     print(
         f"Built dataset: {len(rows)} rows across {len(coverage_doc['included'])} in-scope sports "
         f"({fixtures_doc['h2h_count']} H2H + {fixtures_doc['event_only_count']} multi-runner events)."
