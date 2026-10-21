@@ -81,7 +81,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T13 | Post-integration reproducibility, count-consistency and provenance-shape audit (no live source re-certification) | done | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:45Z | Structural checks passed; F1–F3 and scope limits documented in report and §12. |
 | T14 | Publish audit findings as a standalone GitHub Pages review subpage | done | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.html`, append-only `COORDINATION.md` | 2026-10-21T06:56Z | Standalone additive page; PR #20 merged and Pages deploy verified. |
 | T15 | Independent second-pass market-coverage and whole-tree source-link structural audit | done | e92c2bf4-olbg1 | `reports/SESSION_E92_SNAPSHOT_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:41Z | Completed after T13; records eight unpriced field cards, one missing cricket total, snapshot window, and validator evidence limits; does not edit shared data/pages. |
-| T16 | Corrective primary-desk provenance, status disclosure, integration and Pages publication | in progress | 4904ed05-olbg1 | `COORDINATION.md`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/flagged_for_review.json`, `scripts/validate.py`, root `*.html`, `sports/*.html`, `assets/*`, `README.md` | 2026-10-21T06:41Z | Follow-up integration after independently completed T13–T15. Remediates the F1–F3 audit handoff in the primary generated desk without changing their review artifacts. |
+| T16 | Corrective primary-desk provenance, status disclosure, integration and Pages publication | done | 4904ed05-olbg1 | `COORDINATION.md`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/flagged_for_review.json`, `scripts/validate.py`, root `*.html`, `sports/*.html`, `assets/*`, `README.md` | 2026-10-21T06:41Z | PR #24 merged; Pages workflow 39558245786 completed successfully. Remediated F1–F3 without changing independent review artifacts. |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -658,3 +658,11 @@ Building directly on `origin/main` (`99a04c5`) while keeping every parallel dire
 * **Local gates:** `python3 scripts/validate.py` (131 published HTML pages, 0 errors, 0 warnings); `python3 scripts/ebfbd966_validate.py` (passed); `python3 scripts/final_audit.py`; `py_compile`; `git diff --check`; root/mirror data checksums matched for fixtures, lines and predictions.
 
 The rebased implementation commit is `674eb1c` (`fix: remediate audit provenance findings`). Next: rebase this branch, push, open/merge the required PR, then verify the GitHub Pages deployment before marking T16 done.
+
+
+## 15. Session `4904ed05-olbg1` — T16 publication record
+
+* **PR #24** — https://github.com/buffedlizard55-lab/OLBG1/pull/24 — merged 2026-10-21T06:53:16Z; merge commit `8d6590aaea291bad31b0fcf83e2e16e006efe82c`.
+* **Pages verification:** GitHub Pages deployment workflow [`39558245786`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39558245786) completed successfully for that merge commit. The Pages API reports `status=built`, HTTPS enforced, source `main:/`, and public URL https://buffedlizard55-lab.github.io/OLBG1/.
+* **Delivered correction:** 31 distinct 48–61-word source-bounded High predictions; dashboard/mirror/README status wording split to 129 Verified plus 5 Cross-checked; F1–F3 remediation and source-freshness boundary published on Flagged for Review and linked in the source register.
+* **Final pre-merge gates:** `python3 scripts/validate.py` (131 HTML pages, 0 errors/warnings), `python3 scripts/ebfbd966_validate.py` (passed), `python3 scripts/final_audit.py`, `py_compile`, `git diff --check`, deterministic rebuild comparison, root/mirror data parity, and zero repeated normalized six-grams across High prose. No source page was freshly fetched in this corrective pass; that limitation remains visible to reviewers.
