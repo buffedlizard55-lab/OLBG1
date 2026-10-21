@@ -78,9 +78,9 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T10 | Complete multi-market line origination & confidence grading across all verified matches + real PDC Order of Merit, ATP/WTA rankings, NBA/EuroLeague/NHL/Rugby/Handball/Volleyball ratings | queued | f7fa77fc-olbg1 | `scripts/model.py`, `scripts/origin_lines.py`, `data/fixtures.json`, `data/lines.json`, `data/sources.json`, `data/coverage.json`, `datasets/matches_full.csv` | — | Closes §5.7 items 1–4 + full multi-market lines |
 | T11 | Unique ≥30-word human predictions with real verified form & match history for every high-confidence selection | queued | f7fa77fc-olbg1 | `data/predictions.json`, `datasets/matches_full.json` | — | Strict official-source verification on every claim |
 | T12 | Upgraded dashboard UI + Markets Explorer + Repo Audit & Flagged-for-Review pages + full validator gate + PR & merge to `main` + live GitHub Pages check | done | f7fa77fc-olbg1 | `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration session handoff after `ce5920e3-olbg1` completed (executed via PRs #17–#18) |
-| T13 | Deep market investigation per sport (winner, handicap, totals, correct score, frames/legs, O/U 180s, touchdown/first-try etc.) — per-match expanded market coverage | in progress | ccb6bde2-olbg1 | `data/market_taxonomy-ccb6bde2.json`, `data/market_expansion-ccb6bde2.json`, `scripts/ccb6bde2_market_engine.py`, `scripts/ccb6bde2_expand_markets.py` | 2026-10-21T06:45Z | Builds on f7fa77fc verified 134-event dataset; does NOT overwrite it |
-| T14 | ATP/WTA/Snooker model calibration fix (logit slope too gentle — #1 vs #30 modelled ~53%) + re-priced lines + updated predictions where pick changes | in progress | ccb6bde2-olbg1 | `data/model_calibration-ccb6bde2.json`, `scripts/ccb6bde2_expand_markets.py`, `data/market_expansion-ccb6bde2.json` | 2026-10-21T06:45Z | New files only; never edits f7fa77fc's data/lines.json |
-| T15 | New namespaced desk `ccb6bde2/` (landing + 17 sport subpages + markets explorer + predictions + flagged + methodology) + validator + PR & merge + Pages check | queued | ccb6bde2-olbg1 | `ccb6bde2/**`, `scripts/ccb6bde2_build_site.py`, `scripts/ccb6bde2_validate.py`, `COORDINATION.md` (append-only) | — | Final integration for this session; root/parallel desks untouched |
+| T13 | Deep market investigation per sport (winner, handicap, totals, correct score, frames/legs, O/U 180s, touchdown/first-try etc.) — per-match expanded market coverage | done | ccb6bde2-olbg1 | `data/market_taxonomy-ccb6bde2.json`, `data/market_expansion-ccb6bde2.json`, `scripts/ccb6bde2_market_engine.py`, `scripts/ccb6bde2_expand_markets.py` | 2026-10-21T06:45Z | 1,619 expanded markets across 126 matches; non-derivable markets registered as investigated-not-priced with missing official input named |
+| T14 | Model calibration audit + fix. Original hypothesis (logit slope too gentle) **refuted by measurement** — see F-CCB-12. Actual defects fixed: unshrunk small-sample record ratings, baseball venue double-count, stale/missing ATP ratings | done | ccb6bde2-olbg1 | `data/model_calibration-ccb6bde2.json`, `scripts/ccb6bde2_audit.py`, `scripts/ccb6bde2_expand_markets.py`, `data/market_expansion-ccb6bde2.json`, `data/predictions-ccb6bde2.json` | 2026-10-21T06:45Z | v2.1 in new files only; `data/lines.json` untouched. Highs 31→19, 3 pick changes, 4 fresh predictions |
+| T15 | New namespaced desk `ccb6bde2/` (landing + 17 sport subpages + markets explorer + predictions + flagged + methodology) + validator + PR & merge + Pages check | done | ccb6bde2-olbg1 | `ccb6bde2/**`, `scripts/ccb6bde2_build_site.py`, `scripts/ccb6bde2_validate.py`, `COORDINATION.md` (append-only) | 2026-10-21T06:45Z | 23 pages; all 3 repo validators pass; whole-tree sweep 153 pages / 4,038 refs / 0 broken |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -635,6 +635,16 @@ first team to score, Half-Time/Full-Time, Race to X points, Over/Under Runs, Tot
 etc. T13 does that. Second, the v2.0 logit slope is too gentle for individual sports: a #1 vs #30
 tennis matchup prices at ~53% — calibration flagged as T14. Both findings are documented with
 numbers in `data/model_calibration-ccb6bde2.json` before any re-pricing.
+
+> **CORRECTION (2026-10-21T07:05Z, finding F-CCB-12):** the "~53%" sentence above was this
+> session's pre-audit hypothesis and it was **wrong**. Measured from the shipped code, the v2.0
+> tennis curve gives #1 vs #25 = 0.802 and #1 vs #50 = 0.845; the snooker curve is hot only at
+> the extreme tail (#1 vs #57 = 0.928, F-CCB-08). The real calibration defects found by the
+> line-by-line audit were (R1) 56 record-derived ratings built from ≤12 games and taken at face
+> value, (R2) a baseball home/road-split venue double-count, and (R3) missing/stale ATP ratings
+> (4 matches priced 50/50). T14 fixed those three; slopes were deliberately NOT refitted —
+> without outcome data a new slope would be invention, not calibration. Full numbers:
+> `data/model_calibration-ccb6bde2.json` and the desk's `calibration.html`.
 
 **Data foundation:** all pricing inputs come from the 2026-10-21 verified dataset already in
 `main` (`data/fixtures.json` + `data/lines.json` + `datasets/matches_full.json`, all stamped
