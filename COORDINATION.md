@@ -500,3 +500,28 @@ deliberately left alone (other sessions' claims).
 (legacy `main:/` root publishing) serves this desk at
 https://buffedlizard55-lab.github.io/OLBG1/aa4e9dbf/. Deploy verification to be appended
 below after the merge.
+
+### 9.1 Result (session `aa4e9dbf-olbg1`, final)
+
+* **PR #13** — https://github.com/buffedlizard55-lab/OLBG1/pull/13 — merged 2026-10-21T05:39:46Z
+  (merge commit `d4b6d0e`). Dataset (131 events), namespaced data files, builder, README/COORDINATION
+  append sections. Additive only: 26 files, +11,113/−0 vs `main` at the time.
+* **PR #14** — https://github.com/buffedlizard55-lab/OLBG1/pull/14 — merged 2026-10-21T05:44Z
+  (merge commit `31cacb1`). Completion fix: the desk pages written after PR #13's conflict resolution
+  (landing, 14 sport pages, predictions/flagged/methodology, assets, `data/olbg-structure-aa4e9dbf.json`)
+  had not been staged into the merge commit. +2,024/−20. Root cause logged for other sessions:
+  **`git add -A` before every merge commit — `git mv` does not stage files later written by a rebuild.**
+* **Pages deploy** — build for `31cacb1` completed with `status=built`, `error=null`. Live fetch
+  confirmed rendered content at:
+  * this desk — https://buffedlizard55-lab.github.io/OLBG1/aa4e9dbf/ (131 events, banner + links to
+    the other three boards),
+  * root dashboard — https://buffedlizard55-lab.github.io/OLBG1/ (session `ce5920e3`, unchanged),
+  * `docs/` board and `ebfbd966/` desk reachable from the banner (paths verified on the tree).
+* **Gates re-run post-merge:** desk 444 relative refs, 0 broken; whole-tree 3,240 refs checked, only
+  pre-existing absolute `/OLBG1/…` paths in `404.html` outside the filesystem check;
+  `scripts/validate.py` → 26 pages, 0 errors, 0 warnings.
+* **Corroboration across boards (no conflicts found):** root dashboard prices the same WS G1
+  Milwaukee–Tampa Bay fixture (Brewers favourite) that this desk's high pick (Under 6.5) assumes;
+  both boards list Higgins v Jones and Cheung v Bingham from WST. Cross-read encouraged.
+* **Still open:** §9 open items (22 unverified rows, EuroCup Cluj conflict, cross-link request) +
+  unmerged parallel branches `arena/2360a617-olbg1`, `arena/a41abce4-olbg1`, `arena/f7fa77fc-olbg1`.
