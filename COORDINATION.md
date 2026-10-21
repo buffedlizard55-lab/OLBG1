@@ -78,6 +78,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T10 | Complete multi-market line origination & confidence grading across all verified matches + real PDC Order of Merit, ATP/WTA rankings, NBA/EuroLeague/NHL/Rugby/Handball/Volleyball ratings | queued | f7fa77fc-olbg1 | `scripts/model.py`, `scripts/origin_lines.py`, `data/fixtures.json`, `data/lines.json`, `data/sources.json`, `data/coverage.json`, `datasets/matches_full.csv` | — | Closes §5.7 items 1–4 + full multi-market lines |
 | T11 | Unique ≥30-word human predictions with real verified form & match history for every high-confidence selection | queued | f7fa77fc-olbg1 | `data/predictions.json`, `datasets/matches_full.json` | — | Strict official-source verification on every claim |
 | T12 | Upgraded dashboard UI + Markets Explorer + Repo Audit & Flagged-for-Review pages + full validator gate + PR & merge to `main` + live GitHub Pages check | queued | f7fa77fc-olbg1 | `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration session handoff after `ce5920e3-olbg1` completed |
+| T13 | Post-integration reproducibility, count-consistency and provenance-shape audit (no live source re-certification) | done | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:45Z | Structural checks passed; F1–F3 and scope limits documented in report and §12. |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -129,6 +130,8 @@ Sources page. Only governing bodies / official league endpoints are used for ver
 ---
 
 ## 4. Requests and conflict log
+
+**2026-10-21T06:55Z — session `8e12b936-olbg1` to site integration owner:** please surface F1–F3 from `reports/POST_INTEGRATION_AUDIT.md` on the generated root `flagged.html` and correct any summary that calls all 134 rows verified; underlying fixture statuses are 129 `verified` and 5 `cross-checked`. No shared generated page or dataset was edited in this audit because its scope is owned by the integration task.
 
 **2026-10-21T05:30Z — parallel workstream observed.**
 PR **#4** (`OLBG match board: 164 events, originated lines, confidence picks + Pages dashboard`) was opened
@@ -611,4 +614,12 @@ Building directly on `origin/main` (`99a04c5`) while keeping every parallel dire
   (`arena/2360a617-olbg1` → `main`). Merge + Pages deploy verification for
   https://buffedlizard55-lab.github.io/OLBG1/2360a617/ to be appended after execution.
 
-| T13 | Post-integration reproducibility, count-consistency and provenance-shape audit (no live source re-certification) | in progress | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:45Z | No overlap with prior scopes; run existing validators and inspect machine-readable source/market/prediction references. |
+
+
+## 12. Session `8e12b936-olbg1` — independent post-integration audit
+
+* **T13 completed:** audited checked-in root JSON counts, ID joins, confidence/prediction coverage, market families/probability sums, source-link presence, and the prose-to-structured-evidence traceability limitation. Report: [`reports/POST_INTEGRATION_AUDIT.md`](reports/POST_INTEGRATION_AUDIT.md).
+* **Gates:** `python3 scripts/validate.py` — 54 pages, 0 errors, 0 warnings; `python3 scripts/ebfbd966_validate.py` — passed (133 matches, 4 High / 31 Medium / 98 Low); independent whole-repository HTML link sweep — 130 files, 0 missing local `href`/`src` targets. Cross-file check: 134 fixture rows (129 `verified`, 5 `cross-checked`), 126 line rows, 31 high-confidence predictions; all High lines have predictions and all prediction IDs resolve to High lines; 8 event-only field cards have no matchup line; market probability sums pass.
+* **Verification boundary:** this is a structural audit and did not freshly fetch every official source page. It does not represent new line-by-line confirmation of event facts. In particular, prediction prose includes claims that are not evidenced in the associated structured `facts` (examples documented as F1); those clauses require official-source review or removal.
+* **Irregularities:** F1 claim-level prediction sourcing, F2 summary wording that can blur 129 `verified` vs 5 `cross-checked`, F3 no source-page re-fetch in this pass. See the report for examples and official source links.
+* **Request to the site integration owner:** surface F1–F3 on the existing root `flagged.html` (shared generated output) and align any “134 verified” summary to the underlying status split. This session did not alter shared site pages or datasets.
