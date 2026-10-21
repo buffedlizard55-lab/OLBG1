@@ -114,21 +114,13 @@ HIGH_PREDICTIONS: dict[str, dict] = {
     "ten-ningbo-rybakina": {
         "selection": "Elena Rybakina — Match Winner @ 1.08 & Rybakina -4.5 Games Handicap @ 2.01",
         "text": (
-            "World No. 1 Elena Rybakina returns to Ningbo not just as defending champion from 2025, "
-            "but having captured both hard-court Grand Slams in 2026 at Melbourne Park and Flushing "
-            "Meadows. Facing world No. 103 Polina Kudermetova on medium-fast outdoor plexicushion gives "
-            "Rybakina overwhelming free points behind her first delivery. Rybakina to win at 1.08 is "
-            "automatic, while laying -4.5 games at 2.01 offers the standalone single."
+            "World No. 1 Elena Rybakina is the top seed and defending champion at the Ningbo Open, where she faces world No. 103 Polina Kudermetova at Yinzhou Tennis Center — a gap of 102 ranking places between them. On paper the result is a formality. Rybakina to win at 1.08 is automatic, while laying -4.5 games at 2.01 offers the standalone value."
         ),
     },
     "ten-902093": {
         "selection": "Belinda Bencic — Match Winner @ 1.30 & Bencic -2.5 Games Handicap @ 2.02",
         "text": (
-            "More than a hundred WTA ranking spots separate top-15 mainstay Belinda Bencic (world No. 12) "
-            "from world No. 124 Katarzyna Kawa on outdoor hard courts in Guangzhou. Bencic takes the ball "
-            "early on return and punishes second serves relentlessly, whereas Kawa spent much of the autumn "
-            "grinding qualifying draws outside the top hundred. Take Belinda Bencic to win at 1.30 or "
-            "-2.5 games at 2.02."
+            "More than a hundred WTA ranking spots separate top-15 mainstay Belinda Bencic (world No. 12) from world No. 124 Katarzyna Kawa on the outdoor hard courts in Ningbo. Kawa came through qualifying to reach this main draw, whereas Bencic enters as the No. 5 seed. Take Belinda Bencic to win at 1.30 or -2.5 games at 2.02."
         ),
     },
 
