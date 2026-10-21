@@ -959,6 +959,20 @@ flagged) · `F-V13` five-minute kick-off disagreement (low, disclosed). The shar
 `build_dataset.py` → 134 rows · `origin_lines.py` → 126 H2H books, 31 predictions · `live_verification.py`
 → 44/19/2/69 · `build_site.py` → 29 pages at `/` + 29 mirrored · `validate.py` → 135 pages, 0 errors,
 0 warnings · `ebfbd966_validate.py` → passed · `final_audit.py` → regenerated.
+
+### 19.5 Publication record
+
+* **PR:** [#34](https://github.com/buffedlizard55-lab/OLBG1/pull/34) — merged into `main` at 2026-10-21T07:19:43Z,
+  merge commit `624ec21`.
+* **Conflicts during merge:** `COORDINATION.md` only (main had gained §18 from session `4f8d032d`). Resolved by
+  keeping that section verbatim and appending this one under a new heading; no other session's record was edited
+  or dropped. Generated pages and data were regenerated from source after the merge rather than hand-merged.
+* **Pages deploy:** workflow run `39561204469` (`pages build and deployment`, head `624ec21`) — **completed,
+  success**. Live pages checked afterwards: `live-verification.html` renders 44 confirmed / 19 corrected /
+  2 flagged / 69 not re-checked with 13 findings; `predictions.html` renders write-ups with no price string
+  inside the prose.
+* **Post-merge gate:** `scripts/validate.py` → passed, 0 errors, 0 warnings.
+
 ## 25. Session `ccb6bde2` (branch `arena/ccb6bde2-olbg1`) — deep market investigation + model recalibration
 
 **2026-10-21T06:41Z — board read; claim filed.** This session branched from `main` at `8458584`
