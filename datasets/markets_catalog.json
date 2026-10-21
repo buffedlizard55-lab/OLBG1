@@ -1,0 +1,111 @@
+{
+  "snapshot_utc": "2026-10-21T05:25:00Z",
+  "source": "https://www.olbg.com/betting-tips",
+  "sports_markets": [
+    {
+      "sport": "Basketball",
+      "sport_id": 4,
+      "olbg_markets": ["Money Line", "Pointspread", "Game Totals", "Win Tournament (Ante-Post)"],
+      "settlement_rules": "2-way markets include overtime unless stated otherwise in European domestic rules. Whole-number spreads/totals push on exact margin.",
+      "originated_markets_covered": ["Moneyline (Win Match)", "Point Spread (Handicap)", "Game Total (Over/Under)", "1st Half Spread & Total"]
+    },
+    {
+      "sport": "Tennis",
+      "sport_id": 3,
+      "olbg_markets": ["Win Match", "Set Betting", "Games Won (Game Handicap)", "Total Games", "1st Set Winner", "Tournament Winner"],
+      "settlement_rules": "Best-of-3 sets on ATP/WTA Tour and Challenger events in October. Set Betting covers 2-0, 2-1, 0-2, 1-2.",
+      "originated_markets_covered": ["Win Match (Moneyline)", "Game Handicap (Games Won)", "Total Games (Over/Under)", "Set Betting & 1st Set Winner"]
+    },
+    {
+      "sport": "Handball",
+      "sport_id": 20,
+      "olbg_markets": ["Money Line (3-Way 60m)", "Match Handicap (2-Way)", "Points Total (Over/Under 60m)"],
+      "settlement_rules": "Regular 60-minute time only for 3-Way Money Line (Home / Tie / Away), Match Handicap, and Points Total; extra time excluded.",
+      "originated_markets_covered": ["3-Way Match Result & 2-Way Draw-No-Bet", "Goal Handicap", "Total Goals (Over/Under)"]
+    },
+    {
+      "sport": "Darts",
+      "sport_id": 15,
+      "olbg_markets": ["Win Match 2-way", "Handicap 2-way (Legs/Sets)", "Total Legs (Over/Under)", "Win Tournament (Each-Way 1/2 1-2)"],
+      "settlement_rules": "PDC European Championship Round 1 is Best of 11 legs (first to 6 legs); standard totals line is 9.5 legs and leg handicap is +/-1.5 to +/-3.5.",
+      "originated_markets_covered": ["Win Match 2-Way", "Leg Handicap", "Total Legs (Over/Under)", "Most 180s / Outright Win & Each-Way"]
+    },
+    {
+      "sport": "Rugby Union",
+      "sport_id": 9,
+      "olbg_markets": ["To Win (3-Way 80m)", "Handicap (2-Way/3-Way)", "Total Points", "Win Tournament (Ante-Post)"],
+      "settlement_rules": "Settled on 80 minutes regulation play across Pro D2, Top 14, and United Rugby Championship (URC). Draws occur in ~2.0–2.6% of matches.",
+      "originated_markets_covered": ["Match Result (80m Win / Draw)", "Points Handicap", "Total Points (Over/Under)", "Winning Margin Band"]
+    },
+    {
+      "sport": "Volleyball",
+      "sport_id": 21,
+      "olbg_markets": ["Win Match", "Set Score (3-0, 3-1, 3-2, 0-3, 1-3, 2-3)", "Point/Set Handicap", "Total Points"],
+      "settlement_rules": "Best-of-5 sets rally scoring (Sets 1–4 to 25 win by 2; Set 5 to 15 win by 2). No draws possible.",
+      "originated_markets_covered": ["Win Match", "Set Handicap (+/-1.5 Sets)", "Total Points & Total Sets (Over/Under)", "Most Likely Set Score"]
+    },
+    {
+      "sport": "Cricket",
+      "sport_id": 7,
+      "olbg_markets": ["Win Match", "Innings Runs / Match Totals", "Top Batter / Top Bowler", "Outright Winner"],
+      "settlement_rules": "2-way in limited-overs T20I/ODI fixtures including Super Over per standard bookmaker rules; weather/DLS rules apply.",
+      "originated_markets_covered": ["Win Match", "Runs / Wickets Handicap", "1st Innings Score Total (Over/Under)", "Outright Tournament Winner"]
+    },
+    {
+      "sport": "Golf",
+      "sport_id": 5,
+      "olbg_markets": ["Win Tournament", "Each-Way (Top 5 / Top 6 / Top 8 Places)", "Top 10 / Top 20 Finish", "72-Hole Matchups"],
+      "settlement_rules": "72-hole (or 54-hole Champions/Legends Tour) stroke play including playoff for Win; dead-heat rules apply to place markets.",
+      "originated_markets_covered": ["Win Tournament Fair Odds", "Each-Way / Top-5 Fair Odds", "Top-10 Finish Fair Probability", "Featured Tournament Matchup / Field vs Favourite"]
+    },
+    {
+      "sport": "Ice Hockey",
+      "sport_id": 13,
+      "olbg_markets": ["Money Line (Incl. OT/SO)", "Puck Line (+/-1.5)", "Game Totals (Over/Under 5.5 / 6.0)"],
+      "settlement_rules": "NHL Money Line, Puck Line, and Game Totals include overtime and shootout (SO counts as 1 goal). European leagues check 2-way vs 60m settlement.",
+      "originated_markets_covered": ["Money Line (2-Way Incl. OT/SO)", "Puck Line (+/-1.5 Goals)", "Game Total Goals (Over/Under)", "60-Minute Regulation Win"]
+    },
+    {
+      "sport": "Snooker",
+      "sport_id": 8,
+      "olbg_markets": ["Win Match", "Handicap Betting (Frames)", "Frame Betting (Correct Score)", "Total Frames", "Win Tournament"],
+      "settlement_rules": "Northern Ireland Open main stages Round of 32 / Last 16 are Best of 7 frames (first to 4 frames; max 7 frames).",
+      "originated_markets_covered": ["Win Match", "Frame Handicap (+/-1.5 Frames)", "Total Frames (Over/Under 5.5)", "Highest Break / Century Angle"]
+    },
+    {
+      "sport": "Greyhound Racing",
+      "sport_id": 28,
+      "olbg_markets": ["Daily Races (Win)", "Each-Way (1/4 Odds Places 1-2)", "Forecast / Tricast"],
+      "settlement_rules": "6-trap UK GBGB graded and open races; vacant traps and non-runners revert to SP/trap rules.",
+      "originated_markets_covered": ["Race Win Fair Odds", "Place (Top 2) Fair Probability", "Inside Traps (1-3) vs Outside Traps (4-6)", "Forecast Angle"]
+    },
+    {
+      "sport": "Gaelic Football",
+      "sport_id": 25,
+      "olbg_markets": ["Match Betting (3-Way 60m)", "Handicap (+/- Points)", "Total Points (Over/Under)", "Outright Championship Winner"],
+      "settlement_rules": "60-minute normal time settlement (goals = 3 pts, two-point arc scores = 2 pts under 2025-26 GAA rules, standard points = 1 pt).",
+      "originated_markets_covered": ["Match Result (60m)", "Points Handicap", "Total Combined Points (Over/Under)"]
+    },
+    {
+      "sport": "Motor Racing",
+      "sport_id": 14,
+      "olbg_markets": ["Win Race", "Fastest Qualifier (Pole)", "Podium Finish", "Top 6 / Points Finish", "Fastest Lap", "Win Tournament / Without Favourite"],
+      "settlement_rules": "FIA official classification at podium presentation.",
+      "originated_markets_covered": ["Win Race / Championship Fair Odds", "Podium Finish Probability", "Head-to-Head / Field vs Favourite Total Points"]
+    },
+    {
+      "sport": "Rugby League",
+      "sport_id": 10,
+      "olbg_markets": ["Match Betting (80m)", "Handicap", "Total Points", "Win Tournament / Grand Final Winner"],
+      "settlement_rules": "Match markets settle at 80 minutes excluding golden point; Grand Final Winner settles on championship winner.",
+      "originated_markets_covered": ["Outright Series / Grand Final Winner Fair Odds", "Series Handicap / Regular Season Shield", "Series Total Points Band"]
+    },
+    {
+      "sport": "Baseball",
+      "sport_id": 12,
+      "olbg_markets": ["Money Line", "Run Line (+/-1.5)", "Game Totals (Over/Under Runs)", "Ante-Post World Series"],
+      "settlement_rules": "Full game including extra innings (8.5 innings if home team leads). Action vs Listed pitcher rules noted.",
+      "originated_markets_covered": ["Money Line", "Run Line (+/-1.5 Runs)", "Game Total Runs (Over/Under)", "First 5 Innings (F5) Line"]
+    }
+  ]
+}
