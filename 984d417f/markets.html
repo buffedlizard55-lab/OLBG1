@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Markets Catalog &amp; Pricing Model — OLBG Multi-Sport Intelligence Desk</title>
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-badge">OLBG · 984D417F</span>
+        <span>Multi-Sport Odds Origination &amp; Verification Desk</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="./index.html" class="">Master Board</a><a href="./predictions.html" class="">High-Confidence Picks (40)</a><a href="./markets.html" class="active ">Markets &amp; Model</a><a href="./reverse-engineering.html" class="">OLBG Reverse-Eng</a><a href="./audit.html" class="">Line-by-Line Repo Audit</a><a href="./flagged.html" class="flag-nav">Flagged for Review</a>
+      </nav>
+      <div class="utility-controls">
+        <select id="odds-format" class="ctrl-select" aria-label="Odds Display Format">
+          <option value="decimal">Decimal Odds (1.91)</option>
+          <option value="american">American Odds (-110)</option>
+          <option value="prob">Fair Probability (%)</option>
+        </select>
+        <button id="theme-toggle" type="button" class="btn-ctrl">Dark / Light</button>
+      </div>
+    </div>
+    <div class="sport-ribbon" aria-label="17 Covered Sports">
+      <div class="sport-ribbon-inner">
+        <a href="./sports/tennis.html" class="sport-pill">Tennis (16)</a><a href="./sports/basketball.html" class="sport-pill">Basketball (20)</a><a href="./sports/golf.html" class="sport-pill">Golf (5)</a><a href="./sports/cricket.html" class="sport-pill">Cricket (8)</a><a href="./sports/snooker.html" class="sport-pill">Snooker (11)</a><a href="./sports/rugby-union.html" class="sport-pill">Rugby Union (12)</a><a href="./sports/rugby-league.html" class="sport-pill">Rugby League (7)</a><a href="./sports/baseball.html" class="sport-pill">Baseball (4)</a><a href="./sports/ice-hockey.html" class="sport-pill">Ice Hockey (6)</a><a href="./sports/motor-racing.html" class="sport-pill">Motor Racing (2)</a><a href="./sports/darts.html" class="sport-pill">Darts (16)</a><a href="./sports/handball.html" class="sport-pill">Handball (12)</a><a href="./sports/volleyball.html" class="sport-pill">Volleyball (8)</a><a href="./sports/aussie-rules.html" class="sport-pill">Aussie Rules (9)</a><a href="./sports/esports.html" class="sport-pill">eSports (1)</a><a href="./sports/gaelic-football.html" class="sport-pill">Gaelic Football (4)</a><a href="./sports/greyhounds.html" class="sport-pill">Greyhounds (4)</a>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    
+    <section class="hero">
+      <span class="eyebrow">Multi-Market Origination Architecture · 72 Sport-Market Definitions</span>
+      <h1>Betting Markets Catalog, Pricing Methodology &amp; Multi-Runner Boards</h1>
+      <p>
+        Whereas <code>OLBG.com</code> restricts tipsters to a single headline selection on most non-football sports, our origination
+        engine prices four coordinated markets per event: zero-vig + bookmaker-equivalent <strong>Win / 1X2 / Outright</strong>,
+        non-pushing <code>.5</code> <strong>Handicap / Spread / Puck / Run / Frame / Leg / Games</strong> lines,
+        <strong>Match Total Over/Under</strong>, and sport-specific <strong>Derivatives / Top-5 / Head-to-Head Matchbets</strong>.
+      </p>
+    </section>
+
+    <div class="section-head">
+      <h2>Complete 17-Sport Market Catalog (72 Originated Markets)</h2>
+      <span class="meta">Zero-vig probabilities sum to 1.0000 on every event prior to stated bookmaker margin</span>
+    </div>
+    <div class="table-wrap" id="markets-cat-tbl">
+      <table data-sortable>
+        <thead>
+          <tr>
+            <th data-sort="str">Sport ↕</th>
+            <th data-sort="str">Market Tier ↕</th>
+            <th data-sort="str">Originated Market Definition ↕</th>
+            <th>Model Overround</th>
+            <th>Upstream Hub Reference</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr class="data-row" data-filter-item data-sport="tennis">
+              <td><a href="./sports/tennis.html"><strong>Tennis</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Win Match (2-way)</strong></td>
+              <td><code>4.8%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Tennis/3" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="tennis">
+              <td><a href="./sports/tennis.html"><strong>Tennis</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Games Handicap (+/- games)</strong></td>
+              <td><code>4.8%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Tennis/3" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="tennis">
+              <td><a href="./sports/tennis.html"><strong>Tennis</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>Total Games Over/Under</strong></td>
+              <td><code>4.8%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Tennis/3" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="tennis">
+              <td><a href="./sports/tennis.html"><strong>Tennis</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>Set Betting (2-0 / 2-1 / 0-2 / 1-2)</strong></td>
+              <td><code>4.8%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Tennis/3" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="tennis">
+              <td><a href="./sports/tennis.html"><strong>Tennis</strong></a></td>
+              <td><code>M5 · Derivative</code></td>
+              <td><strong>1st Set Winner</strong></td>
+              <td><code>4.8%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Tennis/3" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="basketball">
+              <td><a href="./sports/basketball.html"><strong>Basketball</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Money Line (incl. OT)</strong></td>
+              <td><code>4.5%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Basketball/4" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="basketball">
+              <td><a href="./sports/basketball.html"><strong>Basketball</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Point Spread / Handicap</strong></td>
+              <td><code>4.5%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Basketball/4" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="basketball">
+              <td><a href="./sports/basketball.html"><strong>Basketball</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>Game Total Points Over/Under</strong></td>
+              <td><code>4.5%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Basketball/4" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="basketball">
+              <td><a href="./sports/basketball.html"><strong>Basketball</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>1st Half Spread &amp; Total</strong></td>
+              <td><code>4.5%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Basketball/4" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="golf">
+              <td><a href="./sports/golf.html"><strong>Golf</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Tournament Outright Winner (Fair &amp; EW 1/5 1-8 Places)</strong></td>
+              <td><code>8.0%–14.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="golf">
+              <td><a href="./sports/golf.html"><strong>Golf</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Top 5 Finish</strong></td>
+              <td><code>8.0%–14.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="golf">
+              <td><a href="./sports/golf.html"><strong>Golf</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>Top 10 Finish</strong></td>
+              <td><code>8.0%–14.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="golf">
+              <td><a href="./sports/golf.html"><strong>Golf</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>Tournament Head-to-Head Matchbet (72-Hole)</strong></td>
+              <td><code>8.0%–14.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="golf">
+              <td><a href="./sports/golf.html"><strong>Golf</strong></a></td>
+              <td><code>M5 · Derivative</code></td>
+              <td><strong>Winning Score Total Over/Under</strong></td>
+              <td><code>8.0%–14.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="cricket">
+              <td><a href="./sports/cricket.html"><strong>Cricket</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Win Match (2-way incl. Super Over / 3-way First-Class)</strong></td>
+              <td><code>4.8%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Cricket/7" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="cricket">
+              <td><a href="./sports/cricket.html"><strong>Cricket</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Runs / Wickets Handicap Equivalent</strong></td>
+              <td><code>4.8%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Cricket/7" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="cricket">
+              <td><a href="./sports/cricket.html"><strong>Cricket</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>Match Total Runs Over/Under (blank where unverified)</strong></td>
+              <td><code>4.8%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Cricket/7" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="cricket">
+              <td><a href="./sports/cricket.html"><strong>Cricket</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>Top Team Batter / Opening Partnership Total</strong></td>
+              <td><code>4.8%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Cricket/7" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="snooker">
+              <td><a href="./sports/snooker.html"><strong>Snooker</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Win Match (Best-of-7 Frames)</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Snooker/8" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="snooker">
+              <td><a href="./sports/snooker.html"><strong>Snooker</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Frame Handicap (+/- 1.5 or 2.5 frames)</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Snooker/8" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="snooker">
+              <td><a href="./sports/snooker.html"><strong>Snooker</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>Total Frames Over/Under 5.5</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Snooker/8" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="snooker">
+              <td><a href="./sports/snooker.html"><strong>Snooker</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>Deciding Frame Reached (Yes/No)</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Snooker/8" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="rugby-union">
+              <td><a href="./sports/rugby-union.html"><strong>Rugby Union</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Match Result 1X2 (80 mins)</strong></td>
+              <td><code>5.8%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Rugby_Union/9" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="rugby-union">
+              <td><a href="./sports/rugby-union.html"><strong>Rugby Union</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Draw No Bet (2-way)</strong></td>
+              <td><code>5.8%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Rugby_Union/9" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="rugby-union">
+              <td><a href="./sports/rugby-union.html"><strong>Rugby Union</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>2-Way Point Handicap</strong></td>
+              <td><code>5.8%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Rugby_Union/9" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="rugby-union">
+              <td><a href="./sports/rugby-union.html"><strong>Rugby Union</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>Total Match Points Over/Under</strong></td>
+              <td><code>5.8%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Rugby_Union/9" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="rugby-union">
+              <td><a href="./sports/rugby-union.html"><strong>Rugby Union</strong></a></td>
+              <td><code>M5 · Derivative</code></td>
+              <td><strong>Winning Margin 1–12 / 13+</strong></td>
+              <td><code>5.8%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Rugby_Union/9" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="rugby-league">
+              <td><a href="./sports/rugby-league.html"><strong>Rugby League</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Match Result 1X2 (80 mins)</strong></td>
+              <td><code>5.5%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Rugby_League/10" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="rugby-league">
+              <td><a href="./sports/rugby-league.html"><strong>Rugby League</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Draw No Bet (2-way)</strong></td>
+              <td><code>5.5%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Rugby_League/10" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="rugby-league">
+              <td><a href="./sports/rugby-league.html"><strong>Rugby League</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>2-Way Point Handicap</strong></td>
+              <td><code>5.5%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Rugby_League/10" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="rugby-league">
+              <td><a href="./sports/rugby-league.html"><strong>Rugby League</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>Total Match Points Over/Under</strong></td>
+              <td><code>5.5%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Rugby_League/10" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="baseball">
+              <td><a href="./sports/baseball.html"><strong>Baseball</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Money Line (incl. Extra Innings)</strong></td>
+              <td><code>4.2%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Baseball/12" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="baseball">
+              <td><a href="./sports/baseball.html"><strong>Baseball</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Run Line (-1.5 / +1.5)</strong></td>
+              <td><code>4.2%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Baseball/12" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="baseball">
+              <td><a href="./sports/baseball.html"><strong>Baseball</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>Game Total Runs Over/Under</strong></td>
+              <td><code>4.2%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Baseball/12" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="baseball">
+              <td><a href="./sports/baseball.html"><strong>Baseball</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>First 5 Innings (F5) Money Line &amp; Total</strong></td>
+              <td><code>4.2%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Baseball/12" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="ice-hockey">
+              <td><a href="./sports/ice-hockey.html"><strong>Ice Hockey</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Money Line (incl. OT &amp; Shootout)</strong></td>
+              <td><code>4.5%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="ice-hockey">
+              <td><a href="./sports/ice-hockey.html"><strong>Ice Hockey</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Puck Line (-1.5 / +1.5)</strong></td>
+              <td><code>4.5%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="ice-hockey">
+              <td><a href="./sports/ice-hockey.html"><strong>Ice Hockey</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>Total Goals Over/Under (incl. OT/SO)</strong></td>
+              <td><code>4.5%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="ice-hockey">
+              <td><a href="./sports/ice-hockey.html"><strong>Ice Hockey</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>60-Minute Regulation 1X2</strong></td>
+              <td><code>4.5%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="motor-racing">
+              <td><a href="./sports/motor-racing.html"><strong>Motor Racing</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Grand Prix Race Winner</strong></td>
+              <td><code>8.0%–14.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Motor_Racing/14" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="motor-racing">
+              <td><a href="./sports/motor-racing.html"><strong>Motor Racing</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Podium Finish (Top 3)</strong></td>
+              <td><code>8.0%–14.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Motor_Racing/14" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="motor-racing">
+              <td><a href="./sports/motor-racing.html"><strong>Motor Racing</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>Points Finish (Top 10)</strong></td>
+              <td><code>8.0%–14.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Motor_Racing/14" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="motor-racing">
+              <td><a href="./sports/motor-racing.html"><strong>Motor Racing</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>Driver Head-to-Head Matchbet</strong></td>
+              <td><code>8.0%–14.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Motor_Racing/14" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="motor-racing">
+              <td><a href="./sports/motor-racing.html"><strong>Motor Racing</strong></a></td>
+              <td><code>M5 · Derivative</code></td>
+              <td><strong>Winning Margin Over/Under 5.5 Seconds</strong></td>
+              <td><code>8.0%–14.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Motor_Racing/14" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="darts">
+              <td><a href="./sports/darts.html"><strong>Darts</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Win Match (Best-of-11 Legs)</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Darts/15" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="darts">
+              <td><a href="./sports/darts.html"><strong>Darts</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Leg Handicap (+/- 1.5 or 2.5 legs)</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Darts/15" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="darts">
+              <td><a href="./sports/darts.html"><strong>Darts</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>Total Legs Over/Under 9.5</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Darts/15" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="darts">
+              <td><a href="./sports/darts.html"><strong>Darts</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>Most 180s / Match Checkout Derivative</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Darts/15" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="handball">
+              <td><a href="./sports/handball.html"><strong>Handball</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Match Result 1X2 (60 mins)</strong></td>
+              <td><code>6.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Handball/20" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="handball">
+              <td><a href="./sports/handball.html"><strong>Handball</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Draw No Bet (2-way)</strong></td>
+              <td><code>6.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Handball/20" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="handball">
+              <td><a href="./sports/handball.html"><strong>Handball</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>Goal Handicap (Asian 2-way)</strong></td>
+              <td><code>6.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Handball/20" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="handball">
+              <td><a href="./sports/handball.html"><strong>Handball</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>Total Goals Over/Under</strong></td>
+              <td><code>6.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Handball/20" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="volleyball">
+              <td><a href="./sports/volleyball.html"><strong>Volleyball</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Win Match (Best-of-5 Sets)</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Volleyball/21" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="volleyball">
+              <td><a href="./sports/volleyball.html"><strong>Volleyball</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Set Handicap (-1.5 / +1.5 sets)</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Volleyball/21" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="volleyball">
+              <td><a href="./sports/volleyball.html"><strong>Volleyball</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>Total Points Over/Under</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Volleyball/21" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="volleyball">
+              <td><a href="./sports/volleyball.html"><strong>Volleyball</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>Total Sets Over/Under 3.5</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Volleyball/21" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="aussie-rules">
+              <td><a href="./sports/aussie-rules.html"><strong>Aussie Rules</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Win Match (Head-to-Head)</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Aussie_Rules/22" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="aussie-rules">
+              <td><a href="./sports/aussie-rules.html"><strong>Aussie Rules</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Line / Point Handicap</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Aussie_Rules/22" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="aussie-rules">
+              <td><a href="./sports/aussie-rules.html"><strong>Aussie Rules</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>Total Match Points Over/Under</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Aussie_Rules/22" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="aussie-rules">
+              <td><a href="./sports/aussie-rules.html"><strong>Aussie Rules</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>Winning Margin 1–24 / 25+</strong></td>
+              <td><code>5.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Aussie_Rules/22" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="esports">
+              <td><a href="./sports/esports.html"><strong>eSports</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Win Match (Best-of-1 Swiss Map)</strong></td>
+              <td><code>5.2%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/eSports/23" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="esports">
+              <td><a href="./sports/esports.html"><strong>eSports</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Kill Handicap (+/- kills)</strong></td>
+              <td><code>5.2%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/eSports/23" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="esports">
+              <td><a href="./sports/esports.html"><strong>eSports</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>Total Kills Over/Under</strong></td>
+              <td><code>5.2%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/eSports/23" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="esports">
+              <td><a href="./sports/esports.html"><strong>eSports</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>Map Duration Over/Under 32.5 Minutes</strong></td>
+              <td><code>5.2%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/eSports/23" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="gaelic-football">
+              <td><a href="./sports/gaelic-football.html"><strong>Gaelic Football</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Match Result 1X2 (60 mins)</strong></td>
+              <td><code>6.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Gaelic_Football/25" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="gaelic-football">
+              <td><a href="./sports/gaelic-football.html"><strong>Gaelic Football</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Draw No Bet (2-way)</strong></td>
+              <td><code>6.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Gaelic_Football/25" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="gaelic-football">
+              <td><a href="./sports/gaelic-football.html"><strong>Gaelic Football</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>Point Handicap (2-way)</strong></td>
+              <td><code>6.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Gaelic_Football/25" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="gaelic-football">
+              <td><a href="./sports/gaelic-football.html"><strong>Gaelic Football</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>Total Combined Score Points Over/Under</strong></td>
+              <td><code>6.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Gaelic_Football/25" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="greyhounds">
+              <td><a href="./sports/greyhounds.html"><strong>Greyhounds</strong></a></td>
+              <td><code>M1 · Primary Headline</code></td>
+              <td><strong>Race Winner (6-Trap Book)</strong></td>
+              <td><code>8.0%–14.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="greyhounds">
+              <td><a href="./sports/greyhounds.html"><strong>Greyhounds</strong></a></td>
+              <td><code>M2 · Secondary Spread/H2H</code></td>
+              <td><strong>Forecast / Top-2 Finish</strong></td>
+              <td><code>8.0%–14.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="greyhounds">
+              <td><a href="./sports/greyhounds.html"><strong>Greyhounds</strong></a></td>
+              <td><code>M3 · Totals / Place</code></td>
+              <td><strong>Verified Semi-Final Clock Head-to-Head Matchbet</strong></td>
+              <td><code>8.0%–14.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr>
+            <tr class="data-row" data-filter-item data-sport="greyhounds">
+              <td><a href="./sports/greyhounds.html"><strong>Greyhounds</strong></a></td>
+              <td><code>M4 · Derivative</code></td>
+              <td><strong>Winning Time Over/Under</strong></td>
+              <td><code>8.0%–14.0%</code></td>
+              <td><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+            </tr></tbody>
+      </table>
+    </div>
+
+    <div class="section-head">
+      <h2>Multi-Runner Championship &amp; Outright Boards (Golf, Formula 1, Greyhounds)</h2>
+      <span class="meta">Click "View all priced runners" on any row to expand full zero-vig + bookmaker-equivalent field probabilities</span>
+    </div>
+    
+    <div class="filter-bar" data-filter-bar="field-boards-tbl">
+      <input type="search" data-f-q placeholder="Search team, player, competition, venue, market, or source..." aria-label="Search rows">
+      <select data-f-sport aria-label="Filter by Sport"><option value="">All 17 Covered Sports</option><option value="aussie-rules">Aussie Rules</option><option value="baseball">Baseball</option><option value="basketball">Basketball</option><option value="cricket">Cricket</option><option value="darts">Darts</option><option value="gaelic-football">Gaelic Football</option><option value="golf">Golf</option><option value="greyhounds">Greyhounds</option><option value="handball">Handball</option><option value="ice-hockey">Ice Hockey</option><option value="motor-racing">Motor Racing</option><option value="rugby-league">Rugby League</option><option value="rugby-union">Rugby Union</option><option value="snooker">Snooker</option><option value="tennis">Tennis</option><option value="volleyball">Volleyball</option><option value="esports">eSports</option></select>
+      <select data-f-conf aria-label="Filter by Confidence">
+        <option value="">All Confidence Tiers</option>
+        <option value="high">High Confidence</option>
+        <option value="medium">Medium Confidence</option>
+        <option value="low">Low Confidence</option>
+      </select>
+      <select data-f-status aria-label="Filter by Verification Completeness">
+        <option value="">All Verification States</option>
+        <option value="clean">100% Complete Fields</option>
+        <option value="flagged">Has Unconfirmed Blank Field(s)</option>
+      </select>
+      <span class="filter-count" data-f-count></span>
+    </div>
+    <div class="table-wrap" id="field-boards-tbl">
+      <table data-sortable>
+        <thead>
+          <tr>
+            <th data-sort="str">Sport &amp; Competition ↕</th>
+            <th data-sort="str">Start (UTC) ↕</th>
+            <th data-sort="str">Fixture / Event &amp; Venue ↕</th>
+            <th>Verified Form / Ranking Inputs</th>
+            <th>Originated Primary Odds</th>
+            <th>Handicap &amp; Total Markets</th>
+            <th data-sort="num">Winner Pick &amp; Edge ↕</th>
+            <th>Official Verified Sources</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        <tr id="f1-usgp-2026" class="data-row flagged-row" data-filter-item data-sport="motor-racing" data-conf="medium" data-status="flagged">
+          <td data-val="Motor Racing"><a href="./sports/motor-racing.html"><strong>Motor Racing</strong></a><div style="font-size:0.75rem;color:var(--text-muted)">FIA Formula One World Championship 2026</div></td>
+          <td data-val="2026-10-25T20:00:00Z"><span class="mono">2026-10-25T20:00:00Z</span></td>
+          <td data-val="Kimi Antonelli (Mercedes, #1 — 340 pts)">
+            <strong>Kimi Antonelli (Mercedes, #1 — 340 pts)</strong>
+            <div style="font-size:0.75rem;color:var(--text-muted)">Round 18 — United States Grand Prix (56 Laps) · Circuit of The Americas, Austin, TX</div>
+            <div style="margin-top:0.28rem"><a href="./flagged.html#f1-usgp-2026" class="blank-cell">Flagged: saturday_qualifying_grid</a></div>
+          </td>
+          <td><details class="runner-drawer"><summary>View all 7 priced runners &amp; official splits</summary><ul style="margin:0.4rem 0 0;padding-left:1.1rem;font-size:0.78rem"><li><strong>Max Verstappen (Red Bull)</strong>: fair <code>3.70</code> (27.0%) · mkt <code>3.25</code> (+225) — 4th WDC (221 pts); back-to-back wins in Sepang &amp; Singapore</li><li><strong>Kimi Antonelli (Mercedes)</strong>: fair <code>4.00</code> (25.0%) · mkt <code>3.51</code> (+251) — 1st WDC (340 pts, +102 lead)</li><li><strong>George Russell (Mercedes)</strong>: fair <code>7.14</code> (14.0%) · mkt <code>6.27</code> (+527) — 2nd WDC (238 pts)</li><li><strong>Lando Norris (McLaren)</strong>: fair <code>9.09</code> (11.0%) · mkt <code>7.97</code> (+697) — 6th WDC (201 pts)</li><li><strong>Lewis Hamilton (Ferrari)</strong>: fair <code>11.11</code> (9.0%) · mkt <code>9.75</code> (+875) — 3rd WDC (229 pts)</li><li><strong>Charles Leclerc (Ferrari)</strong>: fair <code>12.50</code> (8.0%) · mkt <code>10.96</code> (+996) — 5th WDC (215 pts)</li><li><strong>Rest of 20-Car Field</strong>: fair <code>16.67</code> (6.0%) · mkt <code>14.62</code> (+1362) — Piastri (138), Hadjar (97), Lawson (75), others</li></ul></details></td>
+          <td><div><strong>Max Verstappen (Red Bull)</strong>: <span class="mono" data-dec="3.25" data-amer="+225" data-prob="0.2700">3.25</span> <span style="color:var(--text-muted);font-size:0.75rem">(fair 3.70)</span></div></td>
+          <td style="font-size:0.78rem">
+            <div><strong>Head-to-Head Matchbet:</strong> Max Verstappen (Red Bull) vs Kimi Antonelli (Mercedes)</div>
+            <div style="margin-top:0.2rem"><strong>Total / Place:</strong> Podium / Top-2 Finish: Max Verstappen (Red Bull) — Yes @ 1.49</div>
+          </td>
+          <td data-val="0.2700">
+            <div><strong>Max Verstappen (Red Bull)</strong></div>
+            <div style="font-size:0.76rem;color:var(--text-muted)">
+              Fair <code>3.70</code> (27.0%) · Mkt
+              <strong class="mono" data-dec="3.25" data-amer="+225" data-prob="0.2700">3.25</strong>
+            </div>
+            <div style="margin-top:0.25rem"><span class="badge badge-medium">medium</span></div>
+            
+          </td>
+          <td><div class="src-list"><a class="src-pill" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 Official 2026 United States Grand Prix Hub ↗</a><a class="src-pill" href="https://www.formula1.com/en/results/2026/drivers" target="_blank" rel="noopener noreferrer">Formula 1 Official 2026 Drivers&#x27; Standings ↗</a><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Motor_Racing/14" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></div></td>
+        </tr>
+        <tr id="f1-wdc-without-antonelli-2026" class="data-row" data-filter-item data-sport="motor-racing" data-conf="medium" data-status="clean">
+          <td data-val="Motor Racing"><a href="./sports/motor-racing.html"><strong>Motor Racing</strong></a><div style="font-size:0.75rem;color:var(--text-muted)">FIA Formula One World Championship 2026</div></td>
+          <td data-val="2026-10-25T20:00:00Z"><span class="mono">2026-10-25T20:00:00Z</span></td>
+          <td data-val="George Russell (Mercedes, 238 pts)">
+            <strong>George Russell (Mercedes, 238 pts)</strong>
+            <div style="font-size:0.75rem;color:var(--text-muted)">Drivers&#x27; Championship — &#x27;Without Kimi Antonelli&#x27; Outright · Season Classification (5 Rounds Remaining)</div>
+            
+          </td>
+          <td><details class="runner-drawer"><summary>View all 5 priced runners &amp; official splits</summary><ul style="margin:0.4rem 0 0;padding-left:1.1rem;font-size:0.78rem"><li><strong>George Russell (Mercedes)</strong>: fair <code>2.27</code> (44.0%) · mkt <code>1.99</code> (-101) — 2nd WDC on 238 pts (+9 over Hamilton, +17 over Verstappen)</li><li><strong>Max Verstappen (Red Bull)</strong>: fair <code>3.70</code> (27.0%) · mkt <code>3.25</code> (+225) — 4th WDC on 221 pts (consecutive recent race wins)</li><li><strong>Lewis Hamilton (Ferrari)</strong>: fair <code>5.26</code> (19.0%) · mkt <code>4.62</code> (+362) — 3rd WDC on 229 pts</li><li><strong>Charles Leclerc (Ferrari)</strong>: fair <code>16.67</code> (6.0%) · mkt <code>14.62</code> (+1362) — 5th WDC on 215 pts</li><li><strong>Lando Norris &amp; Rest</strong>: fair <code>25.00</code> (4.0%) · mkt <code>21.93</code> (+2093) — Norris 201 pts, Piastri 138 pts</li></ul></details></td>
+          <td><div><strong>George Russell (Mercedes)</strong>: <span class="mono" data-dec="1.99" data-amer="-101" data-prob="0.4400">1.99</span> <span style="color:var(--text-muted);font-size:0.75rem">(fair 2.27)</span></div></td>
+          <td style="font-size:0.78rem">
+            <div><strong>Head-to-Head Matchbet:</strong> George Russell (Mercedes) vs Max Verstappen (Red Bull)</div>
+            <div style="margin-top:0.2rem"><strong>Total / Place:</strong> Podium / Top-2 Finish: George Russell (Mercedes) — Yes @ 1.07</div>
+          </td>
+          <td data-val="0.4400">
+            <div><strong>George Russell (Mercedes)</strong></div>
+            <div style="font-size:0.76rem;color:var(--text-muted)">
+              Fair <code>2.27</code> (44.0%) · Mkt
+              <strong class="mono" data-dec="1.99" data-amer="-101" data-prob="0.4400">1.99</strong>
+            </div>
+            <div style="margin-top:0.25rem"><span class="badge badge-medium">medium</span></div>
+            
+          </td>
+          <td><div class="src-list"><a class="src-pill" href="https://www.formula1.com/en/results/2026/drivers" target="_blank" rel="noopener noreferrer">Formula 1 Official 2026 Drivers&#x27; Standings ↗</a><a class="src-pill" href="https://www.olbg.com/betting-tips/Motor_Racing/14" target="_blank" rel="noopener noreferrer">OLBG Motor Racing Hub ↗</a><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Motor_Racing/14" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></div></td>
+        </tr>
+        <tr id="golf-genesis-2026" class="data-row flagged-row" data-filter-item data-sport="golf" data-conf="low" data-status="flagged">
+          <td data-val="Golf"><a href="./sports/golf.html"><strong>Golf</strong></a><div style="font-size:0.75rem;color:var(--text-muted)">DP World Tour &amp; KPGA</div></td>
+          <td data-val="2026-10-22T99:99Z"><div><span class="mono">2026-10-22</span></div><span class="blank-cell" title="Exact court/throw/off start time unconfirmed — intentionally left blank">Time BLANK (unverified)</span></td>
+          <td data-val="Si Woo Kim">
+            <strong>Si Woo Kim</strong>
+            <div style="font-size:0.75rem;color:var(--text-muted)">Genesis Championship (72-Hole Stroke Play) · Woo Jeong Hills Country Club, Republic of Korea</div>
+            <div style="margin-top:0.28rem"><a href="./flagged.html#golf-genesis-2026" class="blank-cell">Flagged: round_1_tee_times_utc</a></div>
+          </td>
+          <td><details class="runner-drawer"><summary>View all 5 priced runners &amp; official splits</summary><ul style="margin:0.4rem 0 0;padding-left:1.1rem;font-size:0.78rem"><li><strong>Si Woo Kim</strong>: fair <code>7.69</code> (13.0%) · mkt <code>6.75</code> (+575) — Home Korean star &amp; market leader</li><li><strong>Sungjae Im</strong>: fair <code>9.09</code> (11.0%) · mkt <code>7.97</code> (+697) — Two-time PGA TOUR winner</li><li><strong>Eugenio Chacarra</strong>: fair <code>11.11</code> (9.0%) · mkt <code>9.75</code> (+875) — 2026 Race to Dubai leader</li><li><strong>Tom McKibbin</strong>: fair <code>16.67</code> (6.0%) · mkt <code>14.62</code> (+1362) — DP World Tour contender</li><li><strong>Rest of 120-Player Field</strong>: fair <code>1.64</code> (61.0%) · mkt <code>1.44</code> (-227) — Remaining verified field entries</li></ul></details></td>
+          <td><div><strong>Si Woo Kim</strong>: <span class="mono" data-dec="6.75" data-amer="+575" data-prob="0.1300">6.75</span> <span style="color:var(--text-muted);font-size:0.75rem">(fair 7.69)</span></div></td>
+          <td style="font-size:0.78rem">
+            <div><strong>Head-to-Head Matchbet:</strong> Si Woo Kim vs Sungjae Im</div>
+            <div style="margin-top:0.2rem"><strong>Total / Place:</strong> Top-5 Finish: Si Woo Kim — Yes @ 1.86</div>
+          </td>
+          <td data-val="0.1300">
+            <div><strong>Si Woo Kim</strong></div>
+            <div style="font-size:0.76rem;color:var(--text-muted)">
+              Fair <code>7.69</code> (13.0%) · Mkt
+              <strong class="mono" data-dec="6.75" data-amer="+575" data-prob="0.1300">6.75</strong>
+            </div>
+            <div style="margin-top:0.25rem"><span class="badge badge-low">low</span></div>
+            
+          </td>
+          <td><div class="src-list"><a class="src-pill" href="https://www.europeantour.com/dpworld-tour/schedule/2026/" target="_blank" rel="noopener noreferrer">DP World Tour Official Genesis Championship ↗</a><a class="src-pill" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Golf Event #101905 ↗</a><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></div></td>
+        </tr>
+        <tr id="golf-bermuda-2026" class="data-row flagged-row" data-filter-item data-sport="golf" data-conf="low" data-status="flagged">
+          <td data-val="Golf"><a href="./sports/golf.html"><strong>Golf</strong></a><div style="font-size:0.75rem;color:var(--text-muted)">PGA TOUR FedExCup Fall</div></td>
+          <td data-val="2026-10-22T99:99Z"><div><span class="mono">2026-10-22</span></div><span class="blank-cell" title="Exact court/throw/off start time unconfirmed — intentionally left blank">Time BLANK (unverified)</span></td>
+          <td data-val="Ben James">
+            <strong>Ben James</strong>
+            <div style="font-size:0.75rem;color:var(--text-muted)">Butterfield Bermuda Championship (72-Hole Stroke Play) · Port Royal Golf Course, Southampton, Bermuda</div>
+            <div style="margin-top:0.28rem"><a href="./flagged.html#golf-bermuda-2026" class="blank-cell">Flagged: round_1_tee_times_utc</a></div>
+          </td>
+          <td><details class="runner-drawer"><summary>View all 5 priced runners &amp; official splits</summary><ul style="margin:0.4rem 0 0;padding-left:1.1rem;font-size:0.78rem"><li><strong>Ben James</strong>: fair <code>12.50</code> (8.0%) · mkt <code>10.96</code> (+996) — Tournament favourite at Port Royal</li><li><strong>Corey Conners</strong>: fair <code>16.67</code> (6.0%) · mkt <code>14.62</code> (+1362) — Two-time PGA TOUR ball-striking leader</li><li><strong>Seamus Power</strong>: fair <code>20.00</code> (5.0%) · mkt <code>17.54</code> (+1654) — Former Butterfield Bermuda champion</li><li><strong>Mackenzie Hughes</strong>: fair <code>20.00</code> (5.0%) · mkt <code>17.54</code> (+1654) — PGA TOUR Fall contender</li><li><strong>Rest of 120-Player Field</strong>: fair <code>1.32</code> (76.0%) · mkt <code>1.15</code> (-667) — Remaining verified field entries</li></ul></details></td>
+          <td><div><strong>Ben James</strong>: <span class="mono" data-dec="10.96" data-amer="+996" data-prob="0.0800">10.96</span> <span style="color:var(--text-muted);font-size:0.75rem">(fair 12.50)</span></div></td>
+          <td style="font-size:0.78rem">
+            <div><strong>Head-to-Head Matchbet:</strong> Ben James vs Corey Conners</div>
+            <div style="margin-top:0.2rem"><strong>Total / Place:</strong> Top-5 Finish: Ben James — Yes @ 3.02</div>
+          </td>
+          <td data-val="0.0800">
+            <div><strong>Ben James</strong></div>
+            <div style="font-size:0.76rem;color:var(--text-muted)">
+              Fair <code>12.50</code> (8.0%) · Mkt
+              <strong class="mono" data-dec="10.96" data-amer="+996" data-prob="0.0800">10.96</strong>
+            </div>
+            <div style="margin-top:0.25rem"><span class="badge badge-low">low</span></div>
+            
+          </td>
+          <td><div class="src-list"><a class="src-pill" href="https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528" target="_blank" rel="noopener noreferrer">PGA TOUR Official Butterfield Bermuda Championship ↗</a><a class="src-pill" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Golf Event #101904 ↗</a><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></div></td>
+        </tr>
+        <tr id="golf-bmw-ladies-2026" class="data-row flagged-row" data-filter-item data-sport="golf" data-conf="low" data-status="flagged">
+          <td data-val="Golf"><a href="./sports/golf.html"><strong>Golf</strong></a><div style="font-size:0.75rem;color:var(--text-muted)">LPGA Tour</div></td>
+          <td data-val="2026-10-22T99:99Z"><div><span class="mono">2026-10-22</span></div><span class="blank-cell" title="Exact court/throw/off start time unconfirmed — intentionally left blank">Time BLANK (unverified)</span></td>
+          <td data-val="Jeeno Thitikul">
+            <strong>Jeeno Thitikul</strong>
+            <div style="font-size:0.75rem;color:var(--text-muted)">BMW Ladies Championship (72-Hole Stroke Play) · Pine Beach Golf Links, Haenam-gun, Republic of Korea</div>
+            <div style="margin-top:0.28rem"><a href="./flagged.html#golf-bmw-ladies-2026" class="blank-cell">Flagged: round_1_tee_times_utc</a></div>
+          </td>
+          <td><details class="runner-drawer"><summary>View all 5 priced runners &amp; official splits</summary><ul style="margin:0.4rem 0 0;padding-left:1.1rem;font-size:0.78rem"><li><strong>Jeeno Thitikul</strong>: fair <code>6.67</code> (15.0%) · mkt <code>5.85</code> (+485) — Top-ranked entrant in field</li><li><strong>Ruoning Yin</strong>: fair <code>8.33</code> (12.0%) · mkt <code>7.31</code> (+631) — Recent LPGA Shanghai winner</li><li><strong>Haeran Ryu</strong>: fair <code>9.09</code> (11.0%) · mkt <code>7.97</code> (+697) — Leading Korean LPGA contender</li><li><strong>Sei Young Kim</strong>: fair <code>12.50</code> (8.0%) · mkt <code>10.96</code> (+996) — Defending BMW Ladies champion</li><li><strong>Rest of 78-Player Field</strong>: fair <code>1.85</code> (54.0%) · mkt <code>1.62</code> (-161) — Remaining verified field entries</li></ul></details></td>
+          <td><div><strong>Jeeno Thitikul</strong>: <span class="mono" data-dec="5.85" data-amer="+485" data-prob="0.1500">5.85</span> <span style="color:var(--text-muted);font-size:0.75rem">(fair 6.67)</span></div></td>
+          <td style="font-size:0.78rem">
+            <div><strong>Head-to-Head Matchbet:</strong> Jeeno Thitikul vs Ruoning Yin</div>
+            <div style="margin-top:0.2rem"><strong>Total / Place:</strong> Top-5 Finish: Jeeno Thitikul — Yes @ 1.61</div>
+          </td>
+          <td data-val="0.1500">
+            <div><strong>Jeeno Thitikul</strong></div>
+            <div style="font-size:0.76rem;color:var(--text-muted)">
+              Fair <code>6.67</code> (15.0%) · Mkt
+              <strong class="mono" data-dec="5.85" data-amer="+485" data-prob="0.1500">5.85</strong>
+            </div>
+            <div style="margin-top:0.25rem"><span class="badge badge-low">low</span></div>
+            
+          </td>
+          <td><div class="src-list"><a class="src-pill" href="https://www.lpga.com/tournaments" target="_blank" rel="noopener noreferrer">LPGA Official BMW Ladies Championship ↗</a><a class="src-pill" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Golf Event #101906 ↗</a><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></div></td>
+        </tr>
+        <tr id="golf-stifel-2026" class="data-row flagged-row" data-filter-item data-sport="golf" data-conf="low" data-status="flagged">
+          <td data-val="Golf"><a href="./sports/golf.html"><strong>Golf</strong></a><div style="font-size:0.75rem;color:var(--text-muted)">PGA TOUR Champions</div></td>
+          <td data-val="2026-10-23T99:99Z"><div><span class="mono">2026-10-23</span></div><span class="blank-cell" title="Exact court/throw/off start time unconfirmed — intentionally left blank">Time BLANK (unverified)</span></td>
+          <td data-val="Steven Alker">
+            <strong>Steven Alker</strong>
+            <div style="font-size:0.75rem;color:var(--text-muted)">Stifel Charity Classic (54-Hole Stroke Play) · Norwood Hills Country Club, St. Louis, MO</div>
+            <div style="margin-top:0.28rem"><a href="./flagged.html#golf-stifel-2026" class="blank-cell">Flagged: round_1_tee_times_utc</a></div>
+          </td>
+          <td><details class="runner-drawer"><summary>View all 5 priced runners &amp; official splits</summary><ul style="margin:0.4rem 0 0;padding-left:1.1rem;font-size:0.78rem"><li><strong>Steven Alker</strong>: fair <code>6.25</code> (16.0%) · mkt <code>5.48</code> (+448) — Charles Schwab Cup leader &amp; OLBG consensus pick</li><li><strong>Padraig Harrington</strong>: fair <code>8.33</code> (12.0%) · mkt <code>7.31</code> (+631) — Multiple senior major winner</li><li><strong>Ernie Els</strong>: fair <code>11.11</code> (9.0%) · mkt <code>9.75</code> (+875) — PGA TOUR Champions contender</li><li><strong>Stewart Cink</strong>: fair <code>11.11</code> (9.0%) · mkt <code>9.75</code> (+875) — PGA TOUR Champions winner</li><li><strong>Rest of 78-Player Field</strong>: fair <code>1.85</code> (54.0%) · mkt <code>1.62</code> (-161) — Remaining verified field entries</li></ul></details></td>
+          <td><div><strong>Steven Alker</strong>: <span class="mono" data-dec="5.48" data-amer="+448" data-prob="0.1600">5.48</span> <span style="color:var(--text-muted);font-size:0.75rem">(fair 6.25)</span></div></td>
+          <td style="font-size:0.78rem">
+            <div><strong>Head-to-Head Matchbet:</strong> Steven Alker vs Padraig Harrington</div>
+            <div style="margin-top:0.2rem"><strong>Total / Place:</strong> Top-5 Finish: Steven Alker — Yes @ 1.51</div>
+          </td>
+          <td data-val="0.1600">
+            <div><strong>Steven Alker</strong></div>
+            <div style="font-size:0.76rem;color:var(--text-muted)">
+              Fair <code>6.25</code> (16.0%) · Mkt
+              <strong class="mono" data-dec="5.48" data-amer="+448" data-prob="0.1600">5.48</strong>
+            </div>
+            <div style="margin-top:0.25rem"><span class="badge badge-low">low</span></div>
+            
+          </td>
+          <td><div class="src-list"><a class="src-pill" href="https://www.pgatour.com/pgatour-champions/schedule" target="_blank" rel="noopener noreferrer">PGA TOUR Champions Stifel Charity Classic ↗</a><a class="src-pill" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Golf Event #101903 ↗</a><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></div></td>
+        </tr>
+        <tr id="golf-players-sa-2026" class="data-row flagged-row" data-filter-item data-sport="golf" data-conf="low" data-status="flagged">
+          <td data-val="Golf"><a href="./sports/golf.html"><strong>Golf</strong></a><div style="font-size:0.75rem;color:var(--text-muted)">PGA Tour of Australasia</div></td>
+          <td data-val="2026-10-22T99:99Z"><div><span class="mono">2026-10-22</span></div><span class="blank-cell" title="Exact court/throw/off start time unconfirmed — intentionally left blank">Time BLANK (unverified)</span></td>
+          <td data-val="Josh Armstrong">
+            <strong>Josh Armstrong</strong>
+            <div style="font-size:0.75rem;color:var(--text-muted)">Webex Players Series SA (72-Hole Mixed Stroke Play) · Willunga Golf Course, South Australia</div>
+            <div style="margin-top:0.28rem"><a href="./flagged.html#golf-players-sa-2026" class="blank-cell">Flagged: round_1_tee_times_utc</a></div>
+          </td>
+          <td><details class="runner-drawer"><summary>View all 3 priced runners &amp; official splits</summary><ul style="margin:0.4rem 0 0;padding-left:1.1rem;font-size:0.78rem"><li><strong>Josh Armstrong</strong>: fair <code>10.00</code> (10.0%) · mkt <code>9.26</code> (+826) — 100% OLBG expert consensus leader</li><li><strong>Jak Carter</strong>: fair <code>14.29</code> (7.0%) · mkt <code>13.23</code> (+1223) — Australasian Tour contender</li><li><strong>Rest of Mixed Field</strong>: fair <code>1.20</code> (83.0%) · mkt <code>1.12</code> (-833) — Remaining verified field entries</li></ul></details></td>
+          <td><div><strong>Josh Armstrong</strong>: <span class="mono" data-dec="9.26" data-amer="+826" data-prob="0.1000">9.26</span> <span style="color:var(--text-muted);font-size:0.75rem">(fair 10.00)</span></div></td>
+          <td style="font-size:0.78rem">
+            <div><strong>Head-to-Head Matchbet:</strong> Josh Armstrong vs Jak Carter</div>
+            <div style="margin-top:0.2rem"><strong>Total / Place:</strong> Top-5 Finish: Josh Armstrong — Yes @ 2.42</div>
+          </td>
+          <td data-val="0.1000">
+            <div><strong>Josh Armstrong</strong></div>
+            <div style="font-size:0.76rem;color:var(--text-muted)">
+              Fair <code>10.00</code> (10.0%) · Mkt
+              <strong class="mono" data-dec="9.26" data-amer="+826" data-prob="0.1000">9.26</strong>
+            </div>
+            <div style="margin-top:0.25rem"><span class="badge badge-low">low</span></div>
+            
+          </td>
+          <td><div class="src-list"><a class="src-pill" href="https://pga.org.au/" target="_blank" rel="noopener noreferrer">PGA of Australia Official Players Series SA ↗</a><a class="src-pill" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Golf Event #101907 ↗</a><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></div></td>
+        </tr>
+        <tr id="grey-romford-champ-stakes-2026" class="data-row flagged-row" data-filter-item data-sport="greyhounds" data-conf="medium" data-status="flagged">
+          <td data-val="Greyhounds"><a href="./sports/greyhounds.html"><strong>Greyhounds</strong></a><div style="font-size:0.75rem;color:var(--text-muted)">GBGB Category 1 — Coral 100 Champion Stakes Final (575m)</div></td>
+          <td data-val="2026-10-23T20:11:00Z"><span class="mono">2026-10-23T20:11:00Z</span></td>
+          <td data-val="Grouchos Gregor">
+            <strong>Grouchos Gregor</strong>
+            <div style="font-size:0.75rem;color:var(--text-muted)">Category 1 Final (6 Traps) · Romford Greyhound Stadium, London</div>
+            <div style="margin-top:0.28rem"><a href="./flagged.html#grey-romford-champ-stakes-2026" class="blank-cell">Flagged: reserve_replacement_after_newinn_jolly_withdrawal</a></div>
+          </td>
+          <td><details class="runner-drawer"><summary>View all 6 priced runners &amp; official splits</summary><ul style="margin:0.4rem 0 0;padding-left:1.1rem;font-size:0.78rem"><li><strong>Grouchos Gregor</strong>: fair <code>2.94</code> (34.0%) · mkt <code>2.58</code> (+158) — Fastest semi-final winner in 35.36s over 575m</li><li><strong>Aayamza Legend</strong>: fair <code>4.17</code> (24.0%) · mkt <code>3.65</code> (+265) — Semi-final heat winner in 35.75s</li><li><strong>Bubbly Holly</strong>: fair <code>5.88</code> (17.0%) · mkt <code>5.16</code> (+416) — Semi-final heat winner in 35.95s</li><li><strong>Fortanach Col</strong>: fair <code>9.09</code> (11.0%) · mkt <code>7.97</code> (+697) — Qualified semi-final runner-up</li><li><strong>Don Cici</strong>: fair <code>12.50</code> (8.0%) · mkt <code>10.96</code> (+996) — Qualified semi-finalist</li><li><strong>6th Finalist Slot</strong>: fair <code>16.67</code> (6.0%) · mkt <code>14.62</code> (+1362) — Slot following Newinn Jolly withdrawal</li></ul></details></td>
+          <td><div><strong>Grouchos Gregor</strong>: <span class="mono" data-dec="2.58" data-amer="+158" data-prob="0.3400">2.58</span> <span style="color:var(--text-muted);font-size:0.75rem">(fair 2.94)</span></div></td>
+          <td style="font-size:0.78rem">
+            <div><strong>Head-to-Head Matchbet:</strong> Grouchos Gregor vs Aayamza Legend</div>
+            <div style="margin-top:0.2rem"><strong>Total / Place:</strong> Podium / Top-2 Finish: Grouchos Gregor — Yes @ 1.19</div>
+          </td>
+          <td data-val="0.3400">
+            <div><strong>Grouchos Gregor</strong></div>
+            <div style="font-size:0.76rem;color:var(--text-muted)">
+              Fair <code>2.94</code> (34.0%) · Mkt
+              <strong class="mono" data-dec="2.58" data-amer="+158" data-prob="0.3400">2.58</strong>
+            </div>
+            <div style="margin-top:0.25rem"><span class="badge badge-medium">medium</span></div>
+            
+          </td>
+          <td><div class="src-list"><a class="src-pill" href="https://www.gbgb.org.uk/category-one-glory-beckons-in-coral-100-champion-stakes-final/" target="_blank" rel="noopener noreferrer">GBGB Official Coral 100 Champion Stakes Final Preview ↗</a><a class="src-pill" href="https://www.gbgb.org.uk/" target="_blank" rel="noopener noreferrer">Greyhound Board of Great Britain Official Open Race Calendar ↗</a></div></td>
+        </tr>
+        <tr id="grey-monmore-1103" class="data-row flagged-row" data-filter-item data-sport="greyhounds" data-conf="low" data-status="flagged">
+          <td data-val="Greyhounds"><a href="./sports/greyhounds.html"><strong>Greyhounds</strong></a><div style="font-size:0.75rem;color:var(--text-muted)">GBGB UK Licensed Graded Card</div></td>
+          <td data-val="2026-10-21T10:03:00Z"><span class="mono">2026-10-21T10:03:00Z</span></td>
+          <td data-val="Trap 1 (Uniform Prior)">
+            <strong>Trap 1 (Uniform Prior)</strong>
+            <div style="font-size:0.75rem;color:var(--text-muted)">6-Trap Graded Race · Monmore Green Stadium, Wolverhampton</div>
+            <div style="margin-top:0.28rem"><a href="./flagged.html#grey-monmore-1103" class="blank-cell">Flagged: individual_dog_sectional_times</a></div>
+          </td>
+          <td><details class="runner-drawer"><summary>View all 6 priced runners &amp; official splits</summary><ul style="margin:0.4rem 0 0;padding-left:1.1rem;font-size:0.78rem"><li><strong>Trap 1</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li><li><strong>Trap 2</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li><li><strong>Trap 3</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li><li><strong>Trap 4</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li><li><strong>Trap 5</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li><li><strong>Trap 6</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li></ul></details></td>
+          <td><div><strong>Trap 1</strong>: <span class="mono" data-dec="5.26" data-amer="+426" data-prob="0.1667">5.26</span> <span style="color:var(--text-muted);font-size:0.75rem">(fair 6.00)</span></div></td>
+          <td style="font-size:0.78rem">
+            <div><strong>Head-to-Head Matchbet:</strong> Trap 1 vs Trap 2</div>
+            <div style="margin-top:0.2rem"><strong>Total / Place:</strong> Podium / Top-2 Finish: Trap 1 — Yes @ 2.42</div>
+          </td>
+          <td data-val="0.1667">
+            <div><strong>Trap 1</strong></div>
+            <div style="font-size:0.76rem;color:var(--text-muted)">
+              Fair <code>6.00</code> (16.7%) · Mkt
+              <strong class="mono" data-dec="5.26" data-amer="+426" data-prob="0.1667">5.26</strong>
+            </div>
+            <div style="margin-top:0.25rem"><span class="badge badge-low">low</span></div>
+            
+          </td>
+          <td><div class="src-list"><a class="src-pill" href="https://www.gbgb.org.uk/" target="_blank" rel="noopener noreferrer">Greyhound Board of Great Britain Official Open Race Calendar ↗</a><a class="src-pill" href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener noreferrer">OLBG Greyhounds #689386 ↗</a><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></div></td>
+        </tr>
+        <tr id="grey-kinsley-1114" class="data-row flagged-row" data-filter-item data-sport="greyhounds" data-conf="low" data-status="flagged">
+          <td data-val="Greyhounds"><a href="./sports/greyhounds.html"><strong>Greyhounds</strong></a><div style="font-size:0.75rem;color:var(--text-muted)">GBGB UK Licensed Graded Card</div></td>
+          <td data-val="2026-10-21T10:14:00Z"><span class="mono">2026-10-21T10:14:00Z</span></td>
+          <td data-val="Trap 1 (Uniform Prior)">
+            <strong>Trap 1 (Uniform Prior)</strong>
+            <div style="font-size:0.75rem;color:var(--text-muted)">6-Trap Graded Race · Kinsley Greyhound Stadium, Pontefract</div>
+            <div style="margin-top:0.28rem"><a href="./flagged.html#grey-kinsley-1114" class="blank-cell">Flagged: individual_dog_sectional_times</a></div>
+          </td>
+          <td><details class="runner-drawer"><summary>View all 6 priced runners &amp; official splits</summary><ul style="margin:0.4rem 0 0;padding-left:1.1rem;font-size:0.78rem"><li><strong>Trap 1</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li><li><strong>Trap 2</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li><li><strong>Trap 3</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li><li><strong>Trap 4</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li><li><strong>Trap 5</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li><li><strong>Trap 6</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li></ul></details></td>
+          <td><div><strong>Trap 1</strong>: <span class="mono" data-dec="5.26" data-amer="+426" data-prob="0.1667">5.26</span> <span style="color:var(--text-muted);font-size:0.75rem">(fair 6.00)</span></div></td>
+          <td style="font-size:0.78rem">
+            <div><strong>Head-to-Head Matchbet:</strong> Trap 1 vs Trap 2</div>
+            <div style="margin-top:0.2rem"><strong>Total / Place:</strong> Podium / Top-2 Finish: Trap 1 — Yes @ 2.42</div>
+          </td>
+          <td data-val="0.1667">
+            <div><strong>Trap 1</strong></div>
+            <div style="font-size:0.76rem;color:var(--text-muted)">
+              Fair <code>6.00</code> (16.7%) · Mkt
+              <strong class="mono" data-dec="5.26" data-amer="+426" data-prob="0.1667">5.26</strong>
+            </div>
+            <div style="margin-top:0.25rem"><span class="badge badge-low">low</span></div>
+            
+          </td>
+          <td><div class="src-list"><a class="src-pill" href="https://www.gbgb.org.uk/" target="_blank" rel="noopener noreferrer">Greyhound Board of Great Britain Official Open Race Calendar ↗</a><a class="src-pill" href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener noreferrer">OLBG Greyhounds #689388 ↗</a><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></div></td>
+        </tr>
+        <tr id="grey-nottingham-1109" class="data-row flagged-row" data-filter-item data-sport="greyhounds" data-conf="low" data-status="flagged">
+          <td data-val="Greyhounds"><a href="./sports/greyhounds.html"><strong>Greyhounds</strong></a><div style="font-size:0.75rem;color:var(--text-muted)">GBGB UK Licensed Graded Card</div></td>
+          <td data-val="2026-10-21T10:09:00Z"><span class="mono">2026-10-21T10:09:00Z</span></td>
+          <td data-val="Trap 1 (Uniform Prior)">
+            <strong>Trap 1 (Uniform Prior)</strong>
+            <div style="font-size:0.75rem;color:var(--text-muted)">6-Trap Graded Race · Nottingham Greyhound Stadium, Colwick Park</div>
+            <div style="margin-top:0.28rem"><a href="./flagged.html#grey-nottingham-1109" class="blank-cell">Flagged: individual_dog_sectional_times</a></div>
+          </td>
+          <td><details class="runner-drawer"><summary>View all 6 priced runners &amp; official splits</summary><ul style="margin:0.4rem 0 0;padding-left:1.1rem;font-size:0.78rem"><li><strong>Trap 1</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li><li><strong>Trap 2</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li><li><strong>Trap 3</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li><li><strong>Trap 4</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li><li><strong>Trap 5</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li><li><strong>Trap 6</strong>: fair <code>6.00</code> (16.7%) · mkt <code>5.26</code> (+426) — Unverified individual sectional form — uniform 1/6 trap prior</li></ul></details></td>
+          <td><div><strong>Trap 1</strong>: <span class="mono" data-dec="5.26" data-amer="+426" data-prob="0.1667">5.26</span> <span style="color:var(--text-muted);font-size:0.75rem">(fair 6.00)</span></div></td>
+          <td style="font-size:0.78rem">
+            <div><strong>Head-to-Head Matchbet:</strong> Trap 1 vs Trap 2</div>
+            <div style="margin-top:0.2rem"><strong>Total / Place:</strong> Podium / Top-2 Finish: Trap 1 — Yes @ 2.42</div>
+          </td>
+          <td data-val="0.1667">
+            <div><strong>Trap 1</strong></div>
+            <div style="font-size:0.76rem;color:var(--text-muted)">
+              Fair <code>6.00</code> (16.7%) · Mkt
+              <strong class="mono" data-dec="5.26" data-amer="+426" data-prob="0.1667">5.26</strong>
+            </div>
+            <div style="margin-top:0.25rem"><span class="badge badge-low">low</span></div>
+            
+          </td>
+          <td><div class="src-list"><a class="src-pill" href="https://www.gbgb.org.uk/" target="_blank" rel="noopener noreferrer">Greyhound Board of Great Britain Official Open Race Calendar ↗</a><a class="src-pill" href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener noreferrer">OLBG Greyhounds #689390 ↗</a><a class="src-pill olbg-pill" href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></div></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <strong>OLBG Reverse-Engineering, Multi-Market Odds Origination &amp; Official Audit Suite</strong> ·
+        Snapshot Date: <code>2026-10-21 UTC</code> · 17 In-Scope Sports · 7 Excluded Hubs Enforced ·
+        <a href="./data/matches.csv">Download CSV</a> ·
+        <a href="./data/fixtures.json">Fixtures JSON</a> ·
+        <a href="./data/lines.json">Originated Lines JSON</a> ·
+        <a href="./data/predictions.json">Predictions JSON</a>
+      </div>
+      <div>
+        All odds are quantitative model estimates (zero-vig fair + stated overround bookmaker-equivalent), never scraped bookmaker quotes.
+        <a href="../index.html">Repository Root Hub</a>
+      </div>
+    </div>
+  </footer>
+  <script src="./assets/app.js"></script>
+</body>
+</html>

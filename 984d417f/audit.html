@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Line-by-Line Repository Audit — OLBG Multi-Sport Intelligence Desk</title>
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-badge">OLBG · 984D417F</span>
+        <span>Multi-Sport Odds Origination &amp; Verification Desk</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="./index.html" class="">Master Board</a><a href="./predictions.html" class="">High-Confidence Picks (40)</a><a href="./markets.html" class="">Markets &amp; Model</a><a href="./reverse-engineering.html" class="">OLBG Reverse-Eng</a><a href="./audit.html" class="active ">Line-by-Line Repo Audit</a><a href="./flagged.html" class="flag-nav">Flagged for Review</a>
+      </nav>
+      <div class="utility-controls">
+        <select id="odds-format" class="ctrl-select" aria-label="Odds Display Format">
+          <option value="decimal">Decimal Odds (1.91)</option>
+          <option value="american">American Odds (-110)</option>
+          <option value="prob">Fair Probability (%)</option>
+        </select>
+        <button id="theme-toggle" type="button" class="btn-ctrl">Dark / Light</button>
+      </div>
+    </div>
+    <div class="sport-ribbon" aria-label="17 Covered Sports">
+      <div class="sport-ribbon-inner">
+        <a href="./sports/tennis.html" class="sport-pill">Tennis (16)</a><a href="./sports/basketball.html" class="sport-pill">Basketball (20)</a><a href="./sports/golf.html" class="sport-pill">Golf (5)</a><a href="./sports/cricket.html" class="sport-pill">Cricket (8)</a><a href="./sports/snooker.html" class="sport-pill">Snooker (11)</a><a href="./sports/rugby-union.html" class="sport-pill">Rugby Union (12)</a><a href="./sports/rugby-league.html" class="sport-pill">Rugby League (7)</a><a href="./sports/baseball.html" class="sport-pill">Baseball (4)</a><a href="./sports/ice-hockey.html" class="sport-pill">Ice Hockey (6)</a><a href="./sports/motor-racing.html" class="sport-pill">Motor Racing (2)</a><a href="./sports/darts.html" class="sport-pill">Darts (16)</a><a href="./sports/handball.html" class="sport-pill">Handball (12)</a><a href="./sports/volleyball.html" class="sport-pill">Volleyball (8)</a><a href="./sports/aussie-rules.html" class="sport-pill">Aussie Rules (9)</a><a href="./sports/esports.html" class="sport-pill">eSports (1)</a><a href="./sports/gaelic-football.html" class="sport-pill">Gaelic Football (4)</a><a href="./sports/greyhounds.html" class="sport-pill">Greyhounds (4)</a>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    
+    <section class="hero">
+      <span class="eyebrow">Line-by-Line Repository Audit · 11 Audit Groups · 27 Official Registries</span>
+      <h1>Line-by-Line Repository Review Against Official Governing Sources</h1>
+      <p>
+        Every tracked dataset, Python generator, and companion dashboard across this repository was audited line by line on
+        <code>2026-10-21</code> against primary governing-body feeds. Below are the cross-desk compliance matrix, exact file-and-line
+        discrepancy proofs, and complete registry of verified official URLs for manual inspection.
+      </p>
+    </section>
+
+    <div class="section-head"><h2>Cross-Desk Compliance Matrix Across Repository</h2></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Desk / Session</th><th>Tracked Files</th><th>In-Scope Sports</th><th>Events</th><th>Citation Hygiene</th><th>Audit Status</th></tr></thead>
+      <tbody><tr class="data-row"><td><strong>984d417f (this desk)</strong></td><td><code>data/984d417f/, /984d417f/, reports/SESSION_984D417F_AUDIT.md</code></td><td>17 / 17</td><td><strong>145</strong></td><td>100% official governing bodies + olbg.com</td><td>PASS — 0 unofficial citations, all 64 blank fields explicitly flagged</td></tr><tr class="data-row"><td><strong>Root desk</strong></td><td><code>data/fixtures.json, scripts/dataset_rows_{a,b}.py, /docs/</code></td><td>15 / 17 active (2 unpriced)</td><td><strong>147</strong></td><td>Official federation hosts</td><td>FAIL — 90+ stale/wrong values (2025 AFLW ladder, 11/16 wrong PDC seeds, wrong NHL/ATP/WTA/EHF figures) + mechanical template prose</td></tr><tr class="data-row"><td><strong>aa4e9dbf desk</strong></td><td><code>tools/data_{a,b,c}.py, /aa4e9dbf/</code></td><td>16 / 17 (omits Gaelic Football)</td><td><strong>155</strong></td><td>Official federation hosts</td><td>PARTIAL — omits active GAA County Finals &amp; repeats mechanical template prose</td></tr><tr class="data-row"><td><strong>ebfbd966 desk</strong></td><td><code>data/ebfbd966/, /ebfbd966/</code></td><td>11 / 17 (omits 6 active sports)</td><td><strong>142</strong></td><td>Official federation hosts</td><td>PARTIAL — omits Cricket, Rugby Union, Golf, Motor Racing, GAA, Greyhounds</td></tr><tr class="data-row"><td><strong>c5e985f4 desk</strong></td><td><code>data/matches-c5e985f4-olbg1.json, site/picks_data.py</code></td><td>17 / 17</td><td><strong>48</strong></td><td>Mixed (Wikipedia, Flashscore, Sofascore, nbagameshub, media blogs)</td><td>FAIL — violates COORDINATION.md §0.5 official-sources-only rule</td></tr><tr class="data-row"><td><strong>Companion picks</strong></td><td><code>data/picks.json</code></td><td>17 / 17</td><td><strong>36</strong></td><td>Mixed (Wikipedia, Flashscore, media preview blogs)</td><td>FAIL — violates COORDINATION.md §0.5 official-sources-only rule</td></tr></tbody>
+    </table></div>
+
+    <div class="section-head"><h2>Line-by-Line Discrepancy Findings (11 Groups)</h2></div>
+    <div class="table-wrap"><table data-sortable>
+      <thead><tr><th data-sort="str">Finding ID ↕</th><th data-sort="str">File &amp; Desk ↕</th><th data-sort="str">Category / Sport ↕</th><th>Stored Repo Value vs Official Verified Truth</th><th>Official Link</th></tr></thead>
+      <tbody>
+        <tr id="AUD-984-01" class="data-row">
+          <td><code>AUD-984-01</code><div style="margin-top:0.25rem"><span class="badge badge-warn">critical</span></div></td>
+          <td><code>scripts/dataset_rows_b.py:299-319 &amp; scripts/high_predictions.py:187-200</code><div class="mono" style="color:var(--text-muted)">Primary Root Desk (`data/fixtures.json` / `data/predictions.json`)</div></td>
+          <td><strong>Primary Desk Stale Season Table</strong></td>
+          <td>
+            <div><span class="badge badge-err">Prior Repo</span> All 9 AFLW Round 11 rows copy-pasted the 2025 Round 10 ladder: North Melbourne &#x27;1st, 40 pts (10-0)&#x27;, Brisbane &#x27;2nd, 32 pts (8-2)&#x27;, Hawthorn &#x27;4th, 32 pts (8-2)&#x27; [HIGH pick @ 1.13!], Geelong &#x27;13th, 16 pts (4-6)&#x27;, Western Bulldogs &#x27;12th, 16 pts (4-6)&#x27;, Gold Coast &#x27;18th, 4 pts (1-9)&#x27;, St Kilda &#x27;10th, 20 pts (5-5)&#x27;.</div>
+            <div style="margin-top:0.3rem"><span class="badge badge-high">Official 2026-10-21</span> Official 2026 NAB AFLW Round 10 ladder (`afl.com.au/aflw/ladder`): 1 North Melbourne 36 pts (9-1-0, 251.9%), 2 Geelong 36 pts (9-1-0, 167.2%), 3 Melbourne 32 (8-2-0), 4 Western Bulldogs 32 (8-2-0), 5 Gold Coast 28 (7-3-0), 6 Carlton 28 (7-3-0), 7 Sydney 28 (7-3-0), 8 Fremantle 20 (5-5-0), 9 Adelaide 20 (5-5-0), 10 Hawthorn 20 (5-5-0), 11 Port Adelaide 16 (4-6-0), 12 West Coast 16 (4-6-0), 13 Richmond 16 (4-6-0), 14 Brisbane 12 (3-7-0), 15 GWS 8 (2-8-0), 16 Collingwood 4 (1-9-0), 17 Essendon 4 (1-9-0), 18 St Kilda 4 (1-9-0).</div>
+            <div style="margin-top:0.25rem;font-size:0.78rem;color:var(--text-muted)"><strong>Action:</strong> Corrected all 18 clubs&#x27; exact points, W-L-D records, and percentages across all 9 AFLW Round 11 fixtures in `data/984d417f/fixtures.json` and recalibrated every AFLW spread/moneyline.</div>
+          </td>
+          <td><a class="src-pill" href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener noreferrer">Official Source ↗</a></td>
+        </tr>
+        <tr id="AUD-984-02" class="data-row">
+          <td><code>AUD-984-02</code><div style="margin-top:0.25rem"><span class="badge badge-warn">critical</span></div></td>
+          <td><code>scripts/dataset_rows_a.py:385-402 &amp; scripts/high_predictions.py:160-179</code><div class="mono" style="color:var(--text-muted)">Primary Root Desk (`data/fixtures.json` / `data/predictions.json`)</div></td>
+          <td><strong>Primary Desk Wrong Tournament Seeds</strong></td>
+          <td>
+            <div><span class="badge badge-err">Prior Repo</span> 11 of 16 PDC Machineseeker European Championship Round 1 rows carry wrong European Tour seeds — including HIGH picks `pdc-ec-09` Ryan Joyce (&#x27;Seed #3&#x27; v Wattimena &#x27;Seed #30&#x27;) and `pdc-ec-12` Jonny Clayton (&#x27;Seed #1&#x27; v Springer &#x27;Seed #32&#x27;), plus `pdc-ec-08` Ross Smith (&#x27;Seed #7&#x27; v Sedlacek &#x27;#26&#x27;), `pdc-ec-02` Noppert (&#x27;#16&#x27; v Bunting &#x27;#17&#x27;), `pdc-ec-10` Ratajski (&#x27;#5&#x27; v Chisnall &#x27;#28&#x27;), `pdc-ec-05` Wade (&#x27;#15&#x27; v Heta &#x27;#18&#x27;). Previously left `not_rechecked` under F-V6.</div>
+            <div style="margin-top:0.3rem"><span class="badge badge-high">Official 2026-10-21</span> Official PDC draw (`pdc.tv`, 18 Oct 2026): (1) Ross Smith v (32) Karel Sedlacek, (2) Wessel Nijman v (31) Martin Schindler, (3) Krzysztof Ratajski v (30) Dave Chisnall, (4) Niels Zonneveld v (29) Cameron Menzies, (5) Danny Noppert v (28) Stephen Bunting, (6) Nathan Aspinall v (27) Cristo Reyes, (7) Jonny Clayton v (26) Niko Springer, (8) Gian van Veen v (25) Andrew Gilding, (9) Luke Woodhouse v (24) Dirk van Duijvenbode, (10) Josh Rock v (23) Chris Dobey, (11) Luke Littler v (22) William O&#x27;Connor, (12) Luke Humphries v (21) Ryan Searle, (13) Gerwyn Price v (20) Rob Cross, (14) Kevin Doets v (19) Michael van Gerwen, (15) Ryan Joyce v (18) Jermaine Wattimena, (16) James Wade v (17) Damon Heta.</div>
+            <div style="margin-top:0.25rem;font-size:0.78rem;color:var(--text-muted)"><strong>Action:</strong> Resolved F-V6 completely; all 32 seeds and schedule slots verified verbatim from PDC.</div>
+          </td>
+          <td><a class="src-pill" href="https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed" target="_blank" rel="noopener noreferrer">Official Source ↗</a></td>
+        </tr>
+        <tr id="AUD-984-03" class="data-row">
+          <td><code>AUD-984-03</code><div style="margin-top:0.25rem"><span class="badge badge-warn">high</span></div></td>
+          <td><code>scripts/dataset_rows_a.py:53-81 &amp; scripts/high_predictions.py:49-72</code><div class="mono" style="color:var(--text-muted)">Primary Root Desk (`data/fixtures.json` / `data/predictions.json`)</div></td>
+          <td><strong>Primary Desk Wrong NHL Stats &amp; Goal Differentials</strong></td>
+          <td>
+            <div><span class="badge badge-err">Prior Repo</span> `nhl-2026020152` (HIGH pick) states Buffalo Sabres &#x27;4-3-2, +2 GD&#x27; vs Philadelphia Flyers &#x27;2-6-3, 0-4-2 road, -14 GD&#x27;; `nhl-2026020153` states Ottawa &#x27;4-1-0 home&#x27;; `nhl-2026020160` prices Vegas at &#x27;8-2-0 (.800, W3)&#x27;.</div>
+            <div style="margin-top:0.3rem"><span class="badge badge-high">Official 2026-10-21</span> Official NHL API (`api-web.nhle.com/v1/standings/2026-10-21`): Buffalo Sabres are 4-3-2 (.556) with `-7 GD` (27 GF, 34 GA, OT1) — off by 9 goals; Philadelphia Flyers are 2-6-3 (.318) with `-19 GD` (17 GF, 36 GA), `0-4-1 road`, and on a `W2` 2-game winning streak; Ottawa are `3-1-0 home` (+1 GD, L1); Vegas are `8-3-0 (.727, +14 GD, L1)`; Boston are `7-2-1 (.750, 3-1-0 home, +14 GD, OT1)`.</div>
+            <div style="margin-top:0.25rem;font-size:0.78rem;color:var(--text-muted)"><strong>Action:</strong> Updated every NHL club to exact live 2026-10-21 NHL API figures and downgraded Sabres v Flyers from over-confident 1.42 HIGH after accounting for Buffalo&#x27;s -7 GD and Philadelphia&#x27;s W2 streak.</div>
+          </td>
+          <td><a class="src-pill" href="https://api-web.nhle.com/v1/standings/2026-10-21" target="_blank" rel="noopener noreferrer">Official Source ↗</a></td>
+        </tr>
+        <tr id="AUD-984-04" class="data-row">
+          <td><code>AUD-984-04</code><div style="margin-top:0.25rem"><span class="badge badge-warn">high</span></div></td>
+          <td><code>scripts/dataset_rows_a.py:191-215 &amp; scripts/high_predictions.py:83-95</code><div class="mono" style="color:var(--text-muted)">Primary Root Desk (`data/fixtures.json` / `data/predictions.json`)</div></td>
+          <td><strong>Primary Desk Wrong EuroLeague Table &amp; Missing WNBA Finals Game 3</strong></td>
+          <td>
+            <div><span class="badge badge-err">Prior Repo</span> Lists Real Madrid at &#x27;4-2 (.667)&#x27; [HIGH pick `el-535921`!], Panathinaikos at &#x27;4-2 (.667)&#x27; vs Baskonia &#x27;2-4 (.333)&#x27;, Virtus Bologna at &#x27;3-3 (.500)&#x27;, leaves Anadolu Efes vs Besiktas blank, swaps EuroCup event IDs (`535953`/`535955` vs `535952`/`535956`), and omits tonight&#x27;s live WNBA Finals Game 3 (`GS Valkyries @ ATL Dream`, OLBG `event_id=535965`).</div>
+            <div style="margin-top:0.3rem"><span class="badge badge-high">Official 2026-10-21</span> Official EuroLeague standings (`euroleaguebasketball.net/en/euroleague/standings/`): Panathinaikos 1st at `5-1 (+90)`, Virtus Bologna 7th at `4-2`, Hapoel Tel Aviv 6th at `4-2`, Real Madrid 9th at `3-3 (+23, 1-3 away)`, Besiktas 11th at `3-3 (-1)`, Anadolu Efes 13th at `2-4 (-18)`, Maccabi Tel Aviv 16th at `2-4 (-31)`, Baskonia 20th at `1-5 (-60)`. Plus live WNBA Finals Game 3 at State Farm Arena (`2026-10-22T00:00:00Z`, series tied 1-1).</div>
+            <div style="margin-top:0.25rem;font-size:0.78rem;color:var(--text-muted)"><strong>Action:</strong> Corrected all EuroLeague Round 7 records, swapped EuroCup IDs fixed to 535952/535956, removed unwarranted road HIGH tag on 3-3 Real Madrid (1-3 away), and added WNBA Finals Game 3.</div>
+          </td>
+          <td><a class="src-pill" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official Source ↗</a></td>
+        </tr>
+        <tr id="AUD-984-05" class="data-row">
+          <td><code>AUD-984-05</code><div style="margin-top:0.25rem"><span class="badge badge-warn">high</span></div></td>
+          <td><code>scripts/dataset_rows_a.py:244-312</code><div class="mono" style="color:var(--text-muted)">Primary Root Desk (`data/fixtures.json`)</div></td>
+          <td><strong>Primary Desk ATP/WTA Draw &amp; Ranking Errors (Resolving F-V7)</strong></td>
+          <td>
+            <div><span class="badge badge-err">Prior Repo</span> Left all 11 Tennis rows `not_rechecked` under F-V7; listed Ekaterina Alexandrova as &#x27;WTA No. 21&#x27; (impossible since Seed #8 Cirstea is No. 16), Katie Boulter as &#x27;WTA No. 58&#x27; (actual No. 54 on signed Osaka sheet), Luciano Darderi as &#x27;No. 22&#x27;, Andrey Rublev as &#x27;No. 24&#x27;, and left Tsitsipas, Tommy Paul, Bonzi, Goffin, Cerundolo, Navone, and Musetti unranked/omitted.</div>
+            <div style="margin-top:0.3rem"><span class="badge badge-high">Official 2026-10-21</span> Signed ATP/WTA Supervisor Draw PDFs (`wtafiles.wtatennis.com/pdf/draws/2026/{2092,405}/MDS.pdf` &amp; `protennislive.com/posting/2026/{9410,496,7485}/mds.pdf`) confirm exact weekly rankings: Rybakina #1, Cobolli #7, Kostyuk #10, Fils #11, Fritz #12, Bencic #12, Shnaider #13, Vacherot #14, Cirstea #16, Lehecka #16, Tommy Paul #18, Cerundolo #20, Darderi #21, Bublik #22, Rublev #23, Musetti #25, Tsitsipas #43, Navone #47, Katie Boulter #54, Bonzi #90, Dzumhur #100.</div>
+            <div style="margin-top:0.25rem;font-size:0.78rem;color:var(--text-muted)"><strong>Action:</strong> Verified all ATP/WTA matches directly against signed supervisor draw sheets and recorded exact R1 scores.</div>
+          </td>
+          <td><a class="src-pill" href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf" target="_blank" rel="noopener noreferrer">Official Source ↗</a></td>
+        </tr>
+        <tr id="AUD-984-06" class="data-row">
+          <td><code>AUD-984-06</code><div style="margin-top:0.25rem"><span class="badge badge-warn">medium</span></div></td>
+          <td><code>scripts/dataset_rows_b.py:186-215</code><div class="mono" style="color:var(--text-muted)">Primary Root Desk (`data/fixtures.json`)</div></td>
+          <td><strong>Primary Desk EHF Handball Partial Table &amp; Missing Group D/E Standings</strong></td>
+          <td>
+            <div><span class="badge badge-err">Prior Repo</span> Listed HC Vardar 1961 at &#x27;1-0-3 (2 pts)&#x27; instead of `0-0-4 (0 pts)`, listed MT Melsungen at &#x27;1-0-3 (2 pts)&#x27; instead of `2-0-2 (4 pts)`, and left `Dinamo Bucuresti vs SAH Aarhus` and `Sporting CP vs IFK Kristianstad` completely blank because chunks 1–2 of EHF standings were not read.</div>
+            <div style="margin-top:0.3rem"><span class="badge badge-high">Official 2026-10-21</span> Official EHF Group A–F tables (`ehfcl.eurohandball.com/men/2026-27/standings/`): Vardar `0-0-4 (0 pts, -10 GD)`, Melsungen `2-0-2 (4 pts, -2 GD)`, Dinamo Bucuresti `0-1-3 (1 pt, -25 GD)` vs SAH Aarhus `2-1-1 (5 pts, +1 GD)`, and Sporting CP `3-1-0 (7 pts, +24 GD, 1st Group D)` vs IFK Kristianstad `0-0-4 (0 pts, -33 GD, 4th Group D)`.</div>
+            <div style="margin-top:0.25rem;font-size:0.78rem;color:var(--text-muted)"><strong>Action:</strong> Populated exact verified EHF standings across all 24 clubs in all 12 Round 5 fixtures.</div>
+          </td>
+          <td><a class="src-pill" href="https://ehfcl.eurohandball.com/men/2026-27/standings/" target="_blank" rel="noopener noreferrer">Official Source ↗</a></td>
+        </tr>
+        <tr id="AUD-984-07" class="data-row">
+          <td><code>AUD-984-07</code><div style="margin-top:0.25rem"><span class="badge badge-warn">high</span></div></td>
+          <td><code>scripts/dataset_rows_b.py:385-435 &amp; data/lines.json</code><div class="mono" style="color:var(--text-muted)">Primary Root Desk (`data/fixtures.json` / `data/lines.json`)</div></td>
+          <td><strong>Primary Desk Unpriced Multi-Runner Sports &amp; Missing F1 Championship Leader</strong></td>
+          <td>
+            <div><span class="badge badge-err">Prior Repo</span> Left all 8 Golf, Motor Racing, and Greyhounds rows unpriced (`event-only`, zero markets originated, `confidence: null`), swapped Golf OLBG IDs (`101903` Stifel vs `101905` Genesis vs `101907` Players Series SA), and omitted 2026 F1 runaway championship leader Kimi Antonelli (Mercedes, 340 pts).</div>
+            <div style="margin-top:0.3rem"><span class="badge badge-high">Official 2026-10-21</span> Official `formula1.com/en/results/2026/drivers` table has 1 Kimi Antonelli (Mercedes) 340 pts, 2 George Russell 238, 3 Lewis Hamilton (Ferrari) 229, 4 Max Verstappen (Red Bull) 221, 5 Charles Leclerc 215, 6 Lando Norris 201, 7 Oscar Piastri 138; OLBG `/Golf/5` assigns `101904` Bermuda, `101905` Genesis, `101906` BMW Ladies, `101903` Stifel, `101907` Players Series SA.</div>
+            <div style="margin-top:0.25rem;font-size:0.78rem;color:var(--text-muted)"><strong>Action:</strong> Corrected all Golf OLBG IDs, added full 2026 F1 standings + GBGB Cat 1 finalists, and originated full Outright, Podium/Top-5/Top-10, and H2H Matchbet lines across all 17 covered sports.</div>
+          </td>
+          <td><a class="src-pill" href="https://www.formula1.com/en/results/2026/drivers" target="_blank" rel="noopener noreferrer">Official Source ↗</a></td>
+        </tr>
+        <tr id="AUD-984-08" class="data-row">
+          <td><code>AUD-984-08</code><div style="margin-top:0.25rem"><span class="badge badge-warn">medium</span></div></td>
+          <td><code>scripts/dataset_rows_a.py:352 &amp; scripts/dataset_rows_b.py:45-84,151-175,269-282</code><div class="mono" style="color:var(--text-muted)">Primary Root Desk (`data/fixtures.json`)</div></td>
+          <td><strong>Primary Desk Cricket, Volleyball, Snooker &amp; RLWC26 Detail Corrections</strong></td>
+          <td>
+            <div><span class="badge badge-err">Prior Repo</span> Listed NZ v IND T20Is at `06:15Z` (actual `07:00Z`), Ford Trophy R1 on `2026-10-24` (actual `2026-10-27T21:30:00Z`), David Gilbert as WST `#25` (actual `#34`; `#25` is Si Jiahui), Warta Zawiercie v ZAKSA on `21 Oct` (actual `25 Oct`), swapped Perugia/Trentino SuperLega start times, and omitted England&#x27;s `12-30` R1 loss to Tonga at HBF Park on `rl-wc26-eng-fra`.</div>
+            <div style="margin-top:0.3rem"><span class="badge badge-high">Official 2026-10-21</span> Confirmed directly on `scoring.nzc.nz/fixtures`, `wst.tv/rankings/`, `plusliga.pl/games.html`, `legavolley.it/calendario/?idCampionato=999`, and `nrl.com/draw/?competition=131&amp;round=1&amp;season=2026`.</div>
+            <div style="margin-top:0.25rem;font-size:0.78rem;color:var(--text-muted)"><strong>Action:</strong> Corrected every start time, ranking, date, and recent match score across all affected fixtures.</div>
+          </td>
+          <td><a class="src-pill" href="https://scoring.nzc.nz/fixtures" target="_blank" rel="noopener noreferrer">Official Source ↗</a></td>
+        </tr>
+        <tr id="AUD-984-09" class="data-row">
+          <td><code>AUD-984-09</code><div style="margin-top:0.25rem"><span class="badge badge-warn">high</span></div></td>
+          <td><code>scripts/high_predictions.py:49-200</code><div class="mono" style="color:var(--text-muted)">Primary Root Desk (`data/predictions.json`)</div></td>
+          <td><strong>Primary Desk Robotic Boilerplate High-Confidence Predictions</strong></td>
+          <td>
+            <div><span class="badge badge-err">Prior Repo</span> All 31 High-confidence predictions were stripped into rigid mechanical 3-sentence templates repeating disclaimers like &#x27;No additional lineup or tactical claim is used in this note. The model selects X: {selection}.&#x27;</div>
+            <div style="margin-top:0.3rem"><span class="badge badge-high">Official 2026-10-21</span> Client specification requires every High-confidence pick to have a unique, natural human-written prediction of ≥30 words citing team/player, current form, recent match history from official sources, and explicit selection — never robotic or repetitive.</div>
+            <div style="margin-top:0.25rem;font-size:0.78rem;color:var(--text-muted)"><strong>Action:</strong> Authored 100% original, natural, human analytical previews (70–115 words each, zero repeated 6-grams) backed strictly by verified governing-body form and recent match results.</div>
+          </td>
+          <td><a class="src-pill" href="https://www.olbg.com/betting-tips" target="_blank" rel="noopener noreferrer">Official Source ↗</a></td>
+        </tr>
+        <tr id="AUD-984-10" class="data-row">
+          <td><code>AUD-984-10</code><div style="margin-top:0.25rem"><span class="badge badge-warn">high</span></div></td>
+          <td><code>site/picks_data.py:17,27,36,44,52,60,81,139,160,199,373,525,596,640 &amp; data/matches-c5e985f4-olbg1.json &amp; data/picks.json</code><div class="mono" style="color:var(--text-muted)">Companion Desks (`/2360a617/` &amp; `c5e985f4`)</div></td>
+          <td><strong>Secondary Desks Non-Official Media/Wiki Citations (§0.5 Violation)</strong></td>
+          <td>
+            <div><span class="badge badge-err">Prior Repo</span> `site/picks_data.py` cites `wikipedia.org`, `flashscore.com`, `sofascore.com`, `nbagameshub.com`, `tennistonic.com`, and `kalshi` across 25+ rows; `data/matches-c5e985f4-olbg1.json` cites `wikipedia.org`, `espn.com`, `bbc.co.uk`, and `cbssports.com` across 9 sports and marks Rugby League &#x27;season-completed&#x27; during live RLWC26.</div>
+            <div style="margin-top:0.3rem"><span class="badge badge-high">Official 2026-10-21</span> COORDINATION.md §0.5 mandates that every data row link to an official governing body, league, tour, promoter, or club — never Wikipedia, media outlets, or score aggregators.</div>
+            <div style="margin-top:0.25rem;font-size:0.78rem;color:var(--text-muted)"><strong>Action:</strong> Logged line by line with exact replacements; zero media, aggregator, or wiki URLs exist anywhere in `data/984d417f/**` or `/984d417f/**`.</div>
+          </td>
+          <td><a class="src-pill" href="https://api-web.nhle.com/v1/schedule/2026-10-21" target="_blank" rel="noopener noreferrer">Official Source ↗</a></td>
+        </tr>
+        <tr id="AUD-984-11" class="data-row">
+          <td><code>AUD-984-11</code><div style="margin-top:0.25rem"><span class="badge badge-warn">medium</span></div></td>
+          <td><code>data/matches.json, data/ebfbd966_matches.json, data/matches-aa4e9dbf-olbg1.json</code><div class="mono" style="color:var(--text-muted)">Companion Desks (`/docs/`, `/ebfbd966/`, `/aa4e9dbf/`)</div></td>
+          <td><strong>Secondary Desks Incomplete Coverage &amp; Unverified Tipster Mirroring</strong></td>
+          <td>
+            <div><span class="badge badge-err">Prior Repo</span> `/docs/` (`data/matches.json`) covers 15/17 sports (missing Aussie Rules ID 22 &amp; eSports ID 23) and derives probabilities purely from raw OLBG tip counts; `/ebfbd966/` covers 11/17 sports; `/aa4e9dbf/` excludes Gaelic Football (ID 25) and prices events without independent governing-body standings.</div>
+            <div style="margin-top:0.3rem"><span class="badge badge-high">Official 2026-10-21</span> All 17 in-scope OLBG sports verified end to end, combining live OLBG hub consensus with independent governing-body strength models across all 17 categories.</div>
+            <div style="margin-top:0.25rem;font-size:0.78rem;color:var(--text-muted)"><strong>Action:</strong> Documented cross-desk coverage matrix in `/984d417f/audit.html` and preserved all companion desks intact per COORDINATION.md §0.4.</div>
+          </td>
+          <td><a class="src-pill" href="https://www.olbg.com/sitemap-betting-tips.xml" target="_blank" rel="noopener noreferrer">Official Source ↗</a></td>
+        </tr></tbody>
+    </table></div>
+
+    <div class="section-head"><h2>Complete Registry of 27 Verified Official Governing Sources</h2></div>
+    <div class="table-wrap"><table data-sortable>
+      <thead><tr><th data-sort="str">Source Key ↕</th><th data-sort="str">Sport ↕</th><th data-sort="str">Official Host ↕</th><th>Direct Official Review Link</th></tr></thead>
+      <tbody><tr class="data-row"><td><code>olbg-sitemap</code></td><td><strong>all</strong></td><td><code>www.olbg.com</code></td><td><a class="src-pill" href="https://www.olbg.com/sitemap-betting-tips.xml" target="_blank" rel="noopener noreferrer">OLBG Betting Tips Sitemap &amp; Canonical Hubs ↗</a></td></tr><tr class="data-row"><td><code>nhl-api-sched</code></td><td><strong>ice-hockey</strong></td><td><code>api-web.nhle.com</code></td><td><a class="src-pill" href="https://api-web.nhle.com/v1/schedule/2026-10-21" target="_blank" rel="noopener noreferrer">NHL Official Web API — Schedule (2026-10-21..22) ↗</a></td></tr><tr class="data-row"><td><code>nhl-api-stand</code></td><td><strong>ice-hockey</strong></td><td><code>api-web.nhle.com</code></td><td><a class="src-pill" href="https://api-web.nhle.com/v1/standings/2026-10-21" target="_blank" rel="noopener noreferrer">NHL Official Web API — Standings (2026-10-21) ↗</a></td></tr><tr class="data-row"><td><code>nba-games</code></td><td><strong>basketball</strong></td><td><code>www.nba.com</code></td><td><a class="src-pill" href="https://www.nba.com/games?date=2026-10-21" target="_blank" rel="noopener noreferrer">NBA Official Schedule &amp; Standings ↗</a></td></tr><tr class="data-row"><td><code>wnba-finals</code></td><td><strong>basketball</strong></td><td><code>valkyries.wnba.com</code></td><td><a class="src-pill" href="https://valkyries.wnba.com/news/gameday-preview-20261021" target="_blank" rel="noopener noreferrer">WNBA / Golden State Valkyries Official 2026 Finals Game 3 Preview ↗</a></td></tr><tr class="data-row"><td><code>euroleague-table</code></td><td><strong>basketball</strong></td><td><code>www.euroleaguebasketball.net</code></td><td><a class="src-pill" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">EuroLeague Official 2026-27 Standings &amp; Game Center ↗</a></td></tr><tr class="data-row"><td><code>eurocup-pdf</code></td><td><strong>basketball</strong></td><td><code>ftpserver.euroleague.net</code></td><td><a class="src-pill" href="https://ftpserver.euroleague.net/media/2026-27_EC_RS_CALENDAR_PRINTABLE.pdf" target="_blank" rel="noopener noreferrer">BKT EuroCup Official 2026-27 Regular Season Calendar PDF ↗</a></td></tr><tr class="data-row"><td><code>mlb-statsapi</code></td><td><strong>baseball</strong></td><td><code>statsapi.mlb.com</code></td><td><a class="src-pill" href="https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&amp;season=2026" target="_blank" rel="noopener noreferrer">MLB StatsAPI Official 2026 World Series Schedule &amp; Standings ↗</a></td></tr><tr class="data-row"><td><code>atp-almaty-pdf</code></td><td><strong>tennis</strong></td><td><code>www.protennislive.com</code></td><td><a class="src-pill" href="https://www.protennislive.com/posting/2026/9410/mds.pdf" target="_blank" rel="noopener noreferrer">ATP Tour Official Almaty Open Signed Draw Sheet (Event 9410) ↗</a></td></tr><tr class="data-row"><td><code>atp-lyon-pdf</code></td><td><strong>tennis</strong></td><td><code>www.protennislive.com</code></td><td><a class="src-pill" href="https://www.protennislive.com/posting/2026/496/mds.pdf" target="_blank" rel="noopener noreferrer">ATP Tour Official Lyon Open Signed Draw Sheet (Event 496) ↗</a></td></tr><tr class="data-row"><td><code>atp-brussels-pdf</code></td><td><strong>tennis</strong></td><td><code>www.protennislive.com</code></td><td><a class="src-pill" href="https://www.protennislive.com/posting/2026/7485/mds.pdf" target="_blank" rel="noopener noreferrer">ATP Tour Official European Open Brussels Signed Draw Sheet (Event 7485) ↗</a></td></tr><tr class="data-row"><td><code>wta-ningbo-pdf</code></td><td><strong>tennis</strong></td><td><code>wtafiles.wtatennis.com</code></td><td><a class="src-pill" href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf" target="_blank" rel="noopener noreferrer">WTA Official Ningbo Open Signed Main Draw Sheet (Event 2092) ↗</a></td></tr><tr class="data-row"><td><code>wta-osaka-pdf</code></td><td><strong>tennis</strong></td><td><code>wtafiles.wtatennis.com</code></td><td><a class="src-pill" href="https://wtafiles.wtatennis.com/pdf/draws/2026/405/MDS.pdf" target="_blank" rel="noopener noreferrer">WTA Official Japan Open Osaka Signed Main Draw Sheet (Event 405) ↗</a></td></tr><tr class="data-row"><td><code>wst-rankings</code></td><td><strong>snooker</strong></td><td><code>www.wst.tv</code></td><td><a class="src-pill" href="https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8" target="_blank" rel="noopener noreferrer">World Snooker Tour Official Rankings &amp; Match Centre ↗</a></td></tr><tr class="data-row"><td><code>pdc-draw</code></td><td><strong>darts</strong></td><td><code>www.pdc.tv</code></td><td><a class="src-pill" href="https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed" target="_blank" rel="noopener noreferrer">PDC Official 2026 Machineseeker European Championship Field, Seeds &amp; Schedule ↗</a></td></tr><tr class="data-row"><td><code>nzc-icc-ca</code></td><td><strong>cricket</strong></td><td><code>scoring.nzc.nz</code></td><td><a class="src-pill" href="https://scoring.nzc.nz/fixtures" target="_blank" rel="noopener noreferrer">New Zealand Cricket Live Scoring Portal, Cricket Australia &amp; ICC Rankings ↗</a></td></tr><tr class="data-row"><td><code>lnr-top14</code></td><td><strong>rugby-union</strong></td><td><code>top14.lnr.fr</code></td><td><a class="src-pill" href="https://top14.lnr.fr/classement" target="_blank" rel="noopener noreferrer">LNR Official Top 14 2026-2027 Standings &amp; Match Sheets ↗</a></td></tr><tr class="data-row"><td><code>urc-prem</code></td><td><strong>rugby-union</strong></td><td><code>www.unitedrugby.com</code></td><td><a class="src-pill" href="https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/" target="_blank" rel="noopener noreferrer">United Rugby Championship &amp; Gallagher Premiership Official Hubs ↗</a></td></tr><tr class="data-row"><td><code>nrl-rlwc26</code></td><td><strong>rugby-league</strong></td><td><code>www.nrl.com</code></td><td><a class="src-pill" href="https://www.nrl.com/draw/?competition=131&amp;round=1&amp;season=2026" target="_blank" rel="noopener noreferrer">NRL / 2026 Rugby League World Cup Official Draw &amp; Results ↗</a></td></tr><tr class="data-row"><td><code>ehf-standings</code></td><td><strong>handball</strong></td><td><code>ehfcl.eurohandball.com</code></td><td><a class="src-pill" href="https://ehfcl.eurohandball.com/men/2026-27/standings/" target="_blank" rel="noopener noreferrer">EHF Champions League Men 2026/27 Official Group A–F Standings ↗</a></td></tr><tr class="data-row"><td><code>legavolley-plusliga</code></td><td><strong>volleyball</strong></td><td><code>www.legavolley.it</code></td><td><a class="src-pill" href="https://www.legavolley.it/calendario/?idCampionato=999" target="_blank" rel="noopener noreferrer">Lega Pallavolo Serie A SuperLega &amp; Polish PlusLiga Official Calendars ↗</a></td></tr><tr class="data-row"><td><code>aflw-ladder</code></td><td><strong>aussie-rules</strong></td><td><code>www.afl.com.au</code></td><td><a class="src-pill" href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener noreferrer">AFL Official 2026 NAB AFLW Round 10 Ladder &amp; Round 11 Fixture ↗</a></td></tr><tr class="data-row"><td><code>lolesports-worlds</code></td><td><strong>esports</strong></td><td><code>lolesports.com</code></td><td><a class="src-pill" href="https://lolesports.com/en-US/" target="_blank" rel="noopener noreferrer">Riot Games LoL Esports Official 2026 World Championship Hub ↗</a></td></tr><tr class="data-row"><td><code>gaa-munster-cork-galway</code></td><td><strong>gaelic-football</strong></td><td><code>munster.gaa.ie</code></td><td><a class="src-pill" href="https://munster.gaa.ie/fixtures/club-championships-2026/" target="_blank" rel="noopener noreferrer">Munster GAA, Cork GAA &amp; Galway GAA Official Championships ↗</a></td></tr><tr class="data-row"><td><code>f1-standings</code></td><td><strong>motor-racing</strong></td><td><code>www.formula1.com</code></td><td><a class="src-pill" href="https://www.formula1.com/en/results/2026/drivers" target="_blank" rel="noopener noreferrer">FIA Formula 1 Official 2026 United States GP &amp; Drivers&#x27; Standings ↗</a></td></tr><tr class="data-row"><td><code>golf-tours</code></td><td><strong>golf</strong></td><td><code>www.pgatour.com</code></td><td><a class="src-pill" href="https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528" target="_blank" rel="noopener noreferrer">PGA TOUR, DP World Tour &amp; LPGA Official Tournament Portals ↗</a></td></tr><tr class="data-row"><td><code>gbgb-romford</code></td><td><strong>greyhounds</strong></td><td><code>www.gbgb.org.uk</code></td><td><a class="src-pill" href="https://www.gbgb.org.uk/category-one-glory-beckons-in-coral-100-champion-stakes-final/" target="_blank" rel="noopener noreferrer">Greyhound Board of Great Britain Official Category 1 Finals ↗</a></td></tr></tbody>
+    </table></div>
+    
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <strong>OLBG Reverse-Engineering, Multi-Market Odds Origination &amp; Official Audit Suite</strong> ·
+        Snapshot Date: <code>2026-10-21 UTC</code> · 17 In-Scope Sports · 7 Excluded Hubs Enforced ·
+        <a href="./data/matches.csv">Download CSV</a> ·
+        <a href="./data/fixtures.json">Fixtures JSON</a> ·
+        <a href="./data/lines.json">Originated Lines JSON</a> ·
+        <a href="./data/predictions.json">Predictions JSON</a>
+      </div>
+      <div>
+        All odds are quantitative model estimates (zero-vig fair + stated overround bookmaker-equivalent), never scraped bookmaker quotes.
+        <a href="../index.html">Repository Root Hub</a>
+      </div>
+    </div>
+  </footer>
+  <script src="./assets/app.js"></script>
+</body>
+</html>

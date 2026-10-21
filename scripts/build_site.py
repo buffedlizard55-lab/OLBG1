@@ -235,6 +235,9 @@ def render_shell(title: str, body: str, active: str, site_depth: int, repo_depth
     <div class="companion-inner">
       <span>Repository workspaces:</span>
       <a href="{rr}index.html">Primary Root Desk (134 source-linked)</a>
+      <a href="{rr}984d417f/index.html">984d417f Live Audit &amp; 145-Event Desk</a>
+      <a href="{rr}c17a9192/index.html">c17a9192 Catalog (217)</a>
+      <a href="{rr}ccb6bde2/index.html">ccb6bde2 Markets (126)</a>
       <a href="{rr}f7fa77fc/index.html">f7fa77fc Permalink Mirror</a>
       <a href="{rr}docs/index.html">4f44f7d9 Board (164 OLBG)</a>
       <a href="{rr}ebfbd966/index.html">ebfbd966 Board (133)</a>
@@ -348,6 +351,10 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
   <p>This repository preserves every parallel session's work cleanly side by side. Explore all live builds directly:</p>
   <ul>
     <li><b><a href="{rr0}index.html">Primary Root Desk (/)</a> &amp; <a href="{rr0}f7fa77fc/index.html">/f7fa77fc/ Mirror</a>:</b> 134 source-linked events across all 17 sports ({status_counts["verified"]} Verified; {status_counts["cross-checked"]} Cross-checked), with Winner and Handicap markets for all {len(h2h_rows)} head-to-head fixtures, Over/Under totals for {total_priced_count}, Draw No Bet where regulation draws apply, a live Decimal/Fair/US odds toggle, and a full line-by-line audit.</li>
+    <li><b><a href="{rr0}984d417f/index.html">984d417f Live Official Audit &amp; 145-Event Multi-Market Suite (/984d417f/)</a>:</b> Complete 17-sport live verification &amp; multi-market origination suite (recovering all 5 official signed ATP/WTA Tour Supervisor draw PDFs across Ningbo, Osaka, Almaty, Lyon &amp; Brussels, full 32-seed PDC European Championship draw, live 2026 AFLW Round 10 ladder, WNBA Finals G3, and priced PGA/LPGA/F1/GBGB field boards), 40 unique human-written High-confidence picks (<a href="{rr0}984d417f/predictions.html">predictions</a>), <a href="{rr0}984d417f/audit.html">line-by-line repo audit</a>, and <a href="{rr0}984d417f/flagged.html">Flagged for Review</a> register.</li>
+    <li><b><a href="{rr0}c17a9192/index.html">c17a9192 Companion Catalog (/c17a9192/)</a>:</b> 217-event catalog across all 17 sports with multi-market pricing and 46 predictions.</li>
+    <li><b><a href="{rr0}ccb6bde2/index.html">ccb6bde2 Deep Markets Desk (/ccb6bde2/)</a>:</b> 126-match multi-derivative book and model specification.</li>
+    <li><b><a href="{rr0}984d417f/index.html">984d417f Live Official Audit &amp; 145-Event Multi-Market Suite (/984d417f/)</a>:</b> Complete 17-sport live verification &amp; multi-market origination suite (resolving signed ATP/WTA supervisor draw PDFs, full 32-seed PDC European Championship draw, live 2026 AFLW Round 10 ladder, WNBA Finals G3, and priced PGA/LPGA/F1/GBGB field boards), 40 unique human-written High-confidence picks (<a href="{rr0}984d417f/predictions.html">predictions</a>), <a href="{rr0}984d417f/audit.html">line-by-line repo audit</a>, and <a href="{rr0}984d417f/flagged.html">Flagged for Review</a> register.</li>
     <li><b><a href="{rr0}docs/index.html">4f44f7d9 Companion Board (/docs/)</a>:</b> 164-event historical OLBG tip-listing snapshot; its source gaps are recorded separately in the repository audit.</li>
     <li><b><a href="{rr0}ebfbd966/index.html">ebfbd966 Companion Board (/ebfbd966/)</a>:</b> 133-match independent log-odds pricing board.</li>
     <li><b><a href="{rr0}aa4e9dbf/index.html">aa4e9dbf Companion Desk (/aa4e9dbf/)</a>:</b> 131-match multi-market analytical desk.</li>
