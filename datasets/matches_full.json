@@ -1120,8 +1120,8 @@
         },
         "away": {
           "label": "2025-26 NBA record",
-          "value": "40-42 (.488)",
-          "rating": 48.8
+          "value": "46-36 (.561)",
+          "rating": 56.1
         }
       },
       "flags": [
@@ -1141,15 +1141,15 @@
         "sport": "basketball",
         "sport_name": "Basketball",
         "favourite": "Orlando Magic",
-        "home_probability": 0.6063,
+        "home_probability": 0.5507,
         "draw_probability": 0.0,
-        "away_probability": 0.3937,
+        "away_probability": 0.4493,
         "pick": "Orlando Magic",
         "pick_market": "Match Winner",
-        "confidence": "medium",
-        "expected_margin": 3.64,
+        "confidence": "low",
+        "expected_margin": 1.72,
         "rating_home": 54.9,
-        "rating_away": 48.8,
+        "rating_away": 56.1,
         "rating_measured_home": true,
         "rating_measured_away": true,
         "rating_coverage": 2,
@@ -1163,21 +1163,21 @@
             "outcomes": [
               {
                 "selection": "Orlando Magic",
-                "probability": 0.6063,
-                "odds": 1.57,
-                "fair_odds": 1.65,
-                "american": "-175",
-                "fair_american": "-154",
-                "implied_pct": 61
+                "probability": 0.55074,
+                "odds": 1.73,
+                "fair_odds": 1.82,
+                "american": "-137",
+                "fair_american": "-122",
+                "implied_pct": 55
               },
               {
                 "selection": "Atlanta Hawks",
-                "probability": 0.3937,
-                "odds": 2.42,
-                "fair_odds": 2.54,
-                "american": "+142",
-                "fair_american": "+154",
-                "implied_pct": 39
+                "probability": 0.44926,
+                "odds": 2.12,
+                "fair_odds": 2.23,
+                "american": "+112",
+                "fair_american": "+123",
+                "implied_pct": 45
               }
             ],
             "basis": "Official governing-body ratings + venue adjustment"
@@ -1185,28 +1185,28 @@
           {
             "key": "handicap",
             "name": "Point Spread",
-            "line": "4.0",
+            "line": "2.0",
             "outcomes": [
               {
-                "selection": "Orlando Magic -4.0",
-                "probability": 0.489387,
-                "odds": 1.95,
-                "fair_odds": 2.04,
-                "american": "-105",
-                "fair_american": "+104",
+                "selection": "Orlando Magic -2.0",
+                "probability": 0.491776,
+                "odds": 1.94,
+                "fair_odds": 2.03,
+                "american": "-106",
+                "fair_american": "+103",
                 "implied_pct": 49
               },
               {
-                "selection": "Atlanta Hawks +4.0",
-                "probability": 0.510613,
+                "selection": "Atlanta Hawks +2.0",
+                "probability": 0.508224,
                 "odds": 1.87,
-                "fair_odds": 1.96,
+                "fair_odds": 1.97,
                 "american": "-115",
-                "fair_american": "-104",
+                "fair_american": "-103",
                 "implied_pct": 51
               }
             ],
-            "basis": "Gaussian margin projection (E[M]=+3.6, sigma=13.5)"
+            "basis": "Gaussian margin projection (E[M]=+1.7, sigma=13.5)"
           },
           {
             "key": "total",
@@ -1256,7 +1256,7 @@
           }
         ],
         "model_notes": [
-          "Both sides carry official governing-body ratings (54.9 vs 48.8); log-odds differential scaled by k=32.",
+          "Both sides carry official governing-body ratings (54.9 vs 56.1); log-odds differential scaled by k=32.",
           "Total market centered on competition baseline 228.5 (Points)."
         ]
       },
@@ -2396,8 +2396,8 @@
         },
         "away": {
           "label": "2025-26 NBA record",
-          "value": "44-38 (.537)",
-          "rating": 53.7
+          "value": "37-45 (.451)",
+          "rating": 45.1
         }
       },
       "flags": [
@@ -2409,15 +2409,15 @@
         "sport": "basketball",
         "sport_name": "Basketball",
         "favourite": "Los Angeles Lakers",
-        "home_probability": 0.6415,
+        "home_probability": 0.7007,
         "draw_probability": 0.0,
-        "away_probability": 0.3585,
+        "away_probability": 0.2993,
         "pick": "Los Angeles Lakers",
         "pick_market": "Match Winner",
-        "confidence": "medium",
-        "expected_margin": 4.89,
+        "confidence": "high",
+        "expected_margin": 7.11,
         "rating_home": 64.6,
-        "rating_away": 53.7,
+        "rating_away": 45.1,
         "rating_measured_home": true,
         "rating_measured_away": true,
         "rating_coverage": 2,
@@ -2431,21 +2431,21 @@
             "outcomes": [
               {
                 "selection": "Los Angeles Lakers",
-                "probability": 0.641479,
-                "odds": 1.48,
-                "fair_odds": 1.56,
-                "american": "-208",
-                "fair_american": "-179",
-                "implied_pct": 64
+                "probability": 0.70068,
+                "odds": 1.36,
+                "fair_odds": 1.43,
+                "american": "-278",
+                "fair_american": "-233",
+                "implied_pct": 70
               },
               {
                 "selection": "Golden State Warriors",
-                "probability": 0.358521,
-                "odds": 2.66,
-                "fair_odds": 2.79,
-                "american": "+166",
-                "fair_american": "+179",
-                "implied_pct": 36
+                "probability": 0.29932,
+                "odds": 3.18,
+                "fair_odds": 3.34,
+                "american": "+218",
+                "fair_american": "+234",
+                "implied_pct": 30
               }
             ],
             "basis": "Official governing-body ratings + venue adjustment"
@@ -2453,28 +2453,28 @@
           {
             "key": "handicap",
             "name": "Point Spread",
-            "line": "5.0",
+            "line": "7.5",
             "outcomes": [
               {
-                "selection": "Los Angeles Lakers -5.0",
-                "probability": 0.496826,
-                "odds": 1.92,
-                "fair_odds": 2.01,
-                "american": "-109",
-                "fair_american": "+101",
-                "implied_pct": 50
+                "selection": "Los Angeles Lakers -7.5",
+                "probability": 0.488353,
+                "odds": 1.95,
+                "fair_odds": 2.05,
+                "american": "-105",
+                "fair_american": "+105",
+                "implied_pct": 49
               },
               {
-                "selection": "Golden State Warriors +5.0",
-                "probability": 0.503174,
-                "odds": 1.89,
-                "fair_odds": 1.99,
-                "american": "-112",
-                "fair_american": "-101",
-                "implied_pct": 50
+                "selection": "Golden State Warriors +7.5",
+                "probability": 0.511647,
+                "odds": 1.86,
+                "fair_odds": 1.95,
+                "american": "-116",
+                "fair_american": "-105",
+                "implied_pct": 51
               }
             ],
-            "basis": "Gaussian margin projection (E[M]=+4.9, sigma=13.5)"
+            "basis": "Gaussian margin projection (E[M]=+7.1, sigma=13.5)"
           },
           {
             "key": "total",
@@ -2524,11 +2524,32 @@
           }
         ],
         "model_notes": [
-          "Both sides carry official governing-body ratings (64.6 vs 53.7); log-odds differential scaled by k=32.",
+          "Both sides carry official governing-body ratings (64.6 vs 45.1); log-odds differential scaled by k=32.",
           "Total market centered on competition baseline 228.5 (Points)."
         ]
       },
-      "prediction": null
+      "prediction": {
+        "match_id": "nba-0022600005",
+        "selection": "Los Angeles Lakers",
+        "bet_line": "Los Angeles Lakers \u2014 Match Winner @ 1.36 (also Lakers -7.5 Point Spread @ 1.95)",
+        "text": "The Los Angeles Lakers open at Crypto.com Arena as Pacific Division champions after a 53-29 (.646) season, hosting a Golden State side that finished 37-45 (.451) a year ago. Sixteen wins separated these rivals in 2025-26, and the gap shows in the early prices. Take the Los Angeles Lakers at 1.36 on the moneyline, with Lakers -7.5 at 1.95 the sharper line.",
+        "words": 62,
+        "facts": [
+          "Los Angeles Lakers: 2025-26 NBA record \u2014 53-29 (.646)",
+          "Golden State Warriors: 2025-26 NBA record \u2014 37-45 (.451)",
+          "Recommended market: Los Angeles Lakers \u2014 Match Winner @ 1.36 (also Lakers -7.5 Point Spread @ 1.95)"
+        ],
+        "sources": [
+          {
+            "name": "NBA.com official schedule (2026-10-21)",
+            "url": "https://www.nba.com/games?date=2026-10-21"
+          },
+          {
+            "name": "NBA.com official standings (2025-26 prior-season benchmark)",
+            "url": "https://www.nba.com/standings"
+          }
+        ]
+      }
     },
     {
       "id": "nba-0022600092",
@@ -2863,8 +2884,8 @@
         "match_id": "nba-sac-lac-20261021",
         "selection": "LA Clippers",
         "bet_line": "LA Clippers \u2014 Match Winner @ 1.30 & Clippers -8.5 Point Spread @ 1.92",
-        "text": "Opening night at Intuit Dome hands the LA Clippers an ideal Pacific Division matchup against a rebuilding Sacramento roster coming off a brutal 22-60 campaign (.268). Los Angeles finished 20 games clearer at 42-40 (.512) by leaning on half-court physicality and low turnover rates that punish young backcourts in season openers. Back the LA Clippers to win at 1.30 and cover the -8.5 spread at 1.92.",
-        "words": 66,
+        "text": "The LA Clippers open at Intuit Dome against a Sacramento side that finished 22-60 (.268) last season, eliminated from playoff contention. The Clippers went 42-40 (.512) to claim a Play-In place \u2014 a 20-win gap between these Pacific Division rivals. Back the LA Clippers to win at 1.30 and cover the -8.5 spread at 1.92.",
+        "words": 55,
         "facts": [
           "LA Clippers: 2025-26 NBA record \u2014 42-40 (.512)",
           "Sacramento Kings: 2025-26 NBA record \u2014 22-60 (.268)",
@@ -2902,13 +2923,13 @@
       "inputs": {
         "home": {
           "label": "EuroLeague 2026-27",
-          "value": "4-2 (.667, #6, 87.46 ppg)",
+          "value": "4-2 (.667, #6, 90.0 ppg)",
           "rating": 66.7
         },
         "away": {
           "label": "EuroLeague 2026-27",
-          "value": "3-3 (.500, #7)",
-          "rating": 50.0
+          "value": "4-2 (.667, #7, 87.5 ppg)",
+          "rating": 66.7
         }
       },
       "olbg": {
@@ -2926,15 +2947,15 @@
         "sport": "basketball",
         "sport_name": "Basketball",
         "favourite": "Hapoel Tel Aviv",
-        "home_probability": 0.6276,
+        "home_probability": 0.5,
         "draw_probability": 0.0,
-        "away_probability": 0.3724,
+        "away_probability": 0.5,
         "pick": "Hapoel Tel Aviv",
         "pick_market": "Match Winner",
-        "confidence": "medium",
-        "expected_margin": 4.39,
+        "confidence": "low",
+        "expected_margin": 0.0,
         "rating_home": 66.7,
-        "rating_away": 50.0,
+        "rating_away": 66.7,
         "rating_measured_home": true,
         "rating_measured_away": true,
         "rating_coverage": 2,
@@ -2948,21 +2969,21 @@
             "outcomes": [
               {
                 "selection": "Hapoel Tel Aviv",
-                "probability": 0.627586,
-                "odds": 1.52,
-                "fair_odds": 1.59,
-                "american": "-192",
-                "fair_american": "-169",
-                "implied_pct": 63
+                "probability": 0.5,
+                "odds": 1.9,
+                "fair_odds": 2.0,
+                "american": "-111",
+                "fair_american": "+100",
+                "implied_pct": 50
               },
               {
                 "selection": "Virtus Bologna",
-                "probability": 0.372414,
-                "odds": 2.56,
-                "fair_odds": 2.69,
-                "american": "+156",
-                "fair_american": "+169",
-                "implied_pct": 37
+                "probability": 0.5,
+                "odds": 1.9,
+                "fair_odds": 2.0,
+                "american": "-111",
+                "fair_american": "+100",
+                "implied_pct": 50
               }
             ],
             "basis": "Official governing-body ratings + venue adjustment"
@@ -2970,28 +2991,28 @@
           {
             "key": "handicap",
             "name": "Point Spread",
-            "line": "4.5",
+            "line": "0.5",
             "outcomes": [
               {
-                "selection": "Hapoel Tel Aviv -4.5",
-                "probability": 0.496862,
-                "odds": 1.92,
-                "fair_odds": 2.01,
-                "american": "-109",
-                "fair_american": "+101",
-                "implied_pct": 50
+                "selection": "Hapoel Tel Aviv -0.5",
+                "probability": 0.485228,
+                "odds": 1.96,
+                "fair_odds": 2.06,
+                "american": "-104",
+                "fair_american": "+106",
+                "implied_pct": 49
               },
               {
-                "selection": "Virtus Bologna +4.5",
-                "probability": 0.503138,
-                "odds": 1.89,
-                "fair_odds": 1.99,
-                "american": "-112",
-                "fair_american": "-101",
-                "implied_pct": 50
+                "selection": "Virtus Bologna +0.5",
+                "probability": 0.514772,
+                "odds": 1.85,
+                "fair_odds": 1.94,
+                "american": "-118",
+                "fair_american": "-106",
+                "implied_pct": 51
               }
             ],
-            "basis": "Gaussian margin projection (E[M]=+4.4, sigma=13.5)"
+            "basis": "Gaussian margin projection (E[M]=+0.0, sigma=13.5)"
           },
           {
             "key": "total",
@@ -3041,7 +3062,7 @@
           }
         ],
         "model_notes": [
-          "Both sides carry official governing-body ratings (66.7 vs 50.0); log-odds differential scaled by k=32.",
+          "Both sides carry official governing-body ratings (66.7 vs 66.7); log-odds differential scaled by k=32.",
           "Total market centered on competition baseline 171.5 (Points)."
         ]
       },
@@ -3226,8 +3247,8 @@
         },
         "away": {
           "label": "EuroLeague 2026-27",
-          "value": "4-2 (.667)",
-          "rating": 66.7
+          "value": "3-3 (.500)",
+          "rating": 50.0
         }
       },
       "olbg": {
@@ -3245,15 +3266,15 @@
         "sport": "basketball",
         "sport_name": "Basketball",
         "favourite": "Real Madrid",
-        "home_probability": 0.2604,
+        "home_probability": 0.3724,
         "draw_probability": 0.0,
-        "away_probability": 0.7396,
+        "away_probability": 0.6276,
         "pick": "Real Madrid",
         "pick_market": "Match Winner",
-        "confidence": "high",
-        "expected_margin": -8.67,
+        "confidence": "medium",
+        "expected_margin": -4.39,
         "rating_home": 33.3,
-        "rating_away": 66.7,
+        "rating_away": 50.0,
         "rating_measured_home": true,
         "rating_measured_away": true,
         "rating_coverage": 2,
@@ -3267,21 +3288,21 @@
             "outcomes": [
               {
                 "selection": "Maccabi Tel Aviv",
-                "probability": 0.260427,
-                "odds": 3.66,
-                "fair_odds": 3.84,
-                "american": "+266",
-                "fair_american": "+284",
-                "implied_pct": 26
+                "probability": 0.372414,
+                "odds": 2.56,
+                "fair_odds": 2.69,
+                "american": "+156",
+                "fair_american": "+169",
+                "implied_pct": 37
               },
               {
                 "selection": "Real Madrid",
-                "probability": 0.739573,
-                "odds": 1.29,
-                "fair_odds": 1.35,
-                "american": "-345",
-                "fair_american": "-286",
-                "implied_pct": 74
+                "probability": 0.627586,
+                "odds": 1.52,
+                "fair_odds": 1.59,
+                "american": "-192",
+                "fair_american": "-169",
+                "implied_pct": 63
               }
             ],
             "basis": "Official governing-body ratings + venue adjustment"
@@ -3289,28 +3310,28 @@
           {
             "key": "handicap",
             "name": "Point Spread",
-            "line": "9.0",
+            "line": "4.5",
             "outcomes": [
               {
-                "selection": "Maccabi Tel Aviv +9.0",
-                "probability": 0.509828,
-                "odds": 1.87,
-                "fair_odds": 1.96,
-                "american": "-115",
-                "fair_american": "-104",
-                "implied_pct": 51
+                "selection": "Maccabi Tel Aviv +4.5",
+                "probability": 0.503138,
+                "odds": 1.89,
+                "fair_odds": 1.99,
+                "american": "-112",
+                "fair_american": "-101",
+                "implied_pct": 50
               },
               {
-                "selection": "Real Madrid -9.0",
-                "probability": 0.490172,
-                "odds": 1.94,
-                "fair_odds": 2.04,
-                "american": "-106",
-                "fair_american": "+104",
-                "implied_pct": 49
+                "selection": "Real Madrid -4.5",
+                "probability": 0.496862,
+                "odds": 1.92,
+                "fair_odds": 2.01,
+                "american": "-109",
+                "fair_american": "+101",
+                "implied_pct": 50
               }
             ],
-            "basis": "Gaussian margin projection (E[M]=-8.7, sigma=13.5)"
+            "basis": "Gaussian margin projection (E[M]=-4.4, sigma=13.5)"
           },
           {
             "key": "total",
@@ -3360,28 +3381,11 @@
           }
         ],
         "model_notes": [
-          "Both sides carry official governing-body ratings (33.3 vs 66.7); log-odds differential scaled by k=32.",
+          "Both sides carry official governing-body ratings (33.3 vs 50.0); log-odds differential scaled by k=32.",
           "Total market centered on competition baseline 171.5 (Points)."
         ]
       },
-      "prediction": {
-        "match_id": "el-535921",
-        "selection": "Real Madrid",
-        "bet_line": "Real Madrid \u2014 Match Winner @ 1.29 & Real Madrid -9.0 Spread @ 1.94",
-        "text": "Playing away from Tel Aviv on neutral Belgrade hardwood strips Maccabi Tel Aviv of their traditional home edge, a handicap already reflected in their sluggish 2-4 EuroLeague start. Real Madrid arrive at 4-2 with championship-tested half-court execution and superior size on the defensive glass across all four quarters. Real Madrid on the Moneyline at 1.29\u2014paired with Madrid -9.0 at 1.94\u2014is firmly justified on neutral floor.",
-        "words": 65,
-        "facts": [
-          "Maccabi Tel Aviv: EuroLeague 2026-27 \u2014 2-4 (.333)",
-          "Real Madrid: EuroLeague 2026-27 \u2014 4-2 (.667)",
-          "Recommended market: Real Madrid \u2014 Match Winner @ 1.29 & Real Madrid -9.0 Spread @ 1.94"
-        ],
-        "sources": [
-          {
-            "name": "EuroLeague official game center & standings",
-            "url": "https://www.euroleaguebasketball.net/euroleague/game-center/"
-          }
-        ]
-      }
+      "prediction": null
     },
     {
       "id": "el-535923",
@@ -3403,13 +3407,13 @@
       "inputs": {
         "home": {
           "label": "EuroLeague 2026-27",
-          "value": "4-2 (.667)",
-          "rating": 66.7
+          "value": "5-1 (.833)",
+          "rating": 83.3
         },
         "away": {
           "label": "EuroLeague 2026-27",
-          "value": "2-4 (.333)",
-          "rating": 33.3
+          "value": "1-5 (.167)",
+          "rating": 16.7
         }
       },
       "olbg": {
@@ -3427,15 +3431,15 @@
         "sport": "basketball",
         "sport_name": "Basketball",
         "favourite": "Panathinaikos",
-        "home_probability": 0.7833,
+        "home_probability": 0.9107,
         "draw_probability": 0.0,
-        "away_probability": 0.2167,
+        "away_probability": 0.0893,
         "pick": "Panathinaikos",
         "pick_market": "Match Winner",
         "confidence": "high",
-        "expected_margin": 10.58,
-        "rating_home": 66.7,
-        "rating_away": 33.3,
+        "expected_margin": 18.16,
+        "rating_home": 83.3,
+        "rating_away": 16.7,
         "rating_measured_home": true,
         "rating_measured_away": true,
         "rating_coverage": 2,
@@ -3449,21 +3453,21 @@
             "outcomes": [
               {
                 "selection": "Panathinaikos",
-                "probability": 0.783285,
-                "odds": 1.22,
-                "fair_odds": 1.28,
-                "american": "-455",
-                "fair_american": "-357",
-                "implied_pct": 78
+                "probability": 0.910716,
+                "odds": 1.05,
+                "fair_odds": 1.1,
+                "american": "-2000",
+                "fair_american": "-1000",
+                "implied_pct": 91
               },
               {
                 "selection": "Baskonia",
-                "probability": 0.216715,
-                "odds": 4.39,
-                "fair_odds": 4.61,
-                "american": "+339",
-                "fair_american": "+361",
-                "implied_pct": 22
+                "probability": 0.089284,
+                "odds": 10.67,
+                "fair_odds": 11.2,
+                "american": "+967",
+                "fair_american": "+1020",
+                "implied_pct": 9
               }
             ],
             "basis": "Official governing-body ratings + venue adjustment"
@@ -3471,28 +3475,28 @@
           {
             "key": "handicap",
             "name": "Point Spread",
-            "line": "11.0",
+            "line": "18.5",
             "outcomes": [
               {
-                "selection": "Panathinaikos -11.0",
-                "probability": 0.487443,
-                "odds": 1.95,
-                "fair_odds": 2.05,
-                "american": "-105",
-                "fair_american": "+105",
+                "selection": "Panathinaikos -18.5",
+                "probability": 0.489951,
+                "odds": 1.94,
+                "fair_odds": 2.04,
+                "american": "-106",
+                "fair_american": "+104",
                 "implied_pct": 49
               },
               {
-                "selection": "Baskonia +11.0",
-                "probability": 0.512557,
-                "odds": 1.86,
-                "fair_odds": 1.95,
-                "american": "-116",
-                "fair_american": "-105",
+                "selection": "Baskonia +18.5",
+                "probability": 0.510049,
+                "odds": 1.87,
+                "fair_odds": 1.96,
+                "american": "-115",
+                "fair_american": "-104",
                 "implied_pct": 51
               }
             ],
-            "basis": "Gaussian margin projection (E[M]=+10.6, sigma=13.5)"
+            "basis": "Gaussian margin projection (E[M]=+18.2, sigma=13.5)"
           },
           {
             "key": "total",
@@ -3542,7 +3546,7 @@
           }
         ],
         "model_notes": [
-          "Both sides carry official governing-body ratings (66.7 vs 33.3); log-odds differential scaled by k=32.",
+          "Both sides carry official governing-body ratings (83.3 vs 16.7); log-odds differential scaled by k=32.",
           "Total market centered on competition baseline 171.5 (Points)."
         ]
       },
@@ -3550,11 +3554,11 @@
         "match_id": "el-535923",
         "selection": "Panathinaikos",
         "bet_line": "Panathinaikos \u2014 Match Winner @ 1.22 (also Panathinaikos -11.0 @ 1.95)",
-        "text": "Few venues in European basketball suffocate visiting guards quite like OAKA in Athens, where Panathinaikos have surged out to a 4-2 EuroLeague mark behind relentless perimeter pressure. Baskonia travel east sitting at 2-4 after struggling to string stops together away from Vitoria-Gasteiz over the opening six rounds. Panathinaikos Match Winner at 1.22 is rock-solid anchor material, and laying -11.0 at 1.95 carries clear upside.",
-        "words": 64,
+        "text": "Panathinaikos lead the EuroLeague at 5-1 after six rounds, and Telecom Center Athens (OAKA) has been a fortress with four wins in five home games. Baskonia sit bottom at 1-5 with the league's weakest scoring margin (-60). Panathinaikos Match Winner at 1.22 is the anchor selection, and laying -11.0 at 1.95 carries clear upside.",
+        "words": 54,
         "facts": [
-          "Panathinaikos: EuroLeague 2026-27 \u2014 4-2 (.667)",
-          "Baskonia: EuroLeague 2026-27 \u2014 2-4 (.333)",
+          "Panathinaikos: EuroLeague 2026-27 \u2014 5-1 (.833)",
+          "Baskonia: EuroLeague 2026-27 \u2014 1-5 (.167)",
           "Recommended market: Panathinaikos \u2014 Match Winner @ 1.22 (also Panathinaikos -11.0 @ 1.95)"
         ],
         "sources": [

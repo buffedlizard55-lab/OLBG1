@@ -55,31 +55,28 @@ HIGH_PREDICTIONS: dict[str, dict] = {
     "nba-sac-lac-20261021": {
         "selection": "LA Clippers — Match Winner @ 1.30 & Clippers -8.5 Point Spread @ 1.92",
         "text": (
-            "Opening night at Intuit Dome hands the LA Clippers an ideal Pacific Division matchup against "
-            "a rebuilding Sacramento roster coming off a brutal 22-60 campaign (.268). Los Angeles finished "
-            "20 games clearer at 42-40 (.512) by leaning on half-court physicality and low turnover rates "
-            "that punish young backcourts in season openers. Back the LA Clippers to win at 1.30 and "
-            "cover the -8.5 spread at 1.92."
+            "The LA Clippers open at Intuit Dome against a Sacramento side that finished 22-60 (.268) last season, eliminated from playoff contention. The Clippers went 42-40 (.512) to claim a Play-In place — a 20-win gap between these Pacific Division rivals. Back the LA Clippers to win at 1.30 and cover the -8.5 spread at 1.92."
         ),
     },
-    "el-535921": {
-        "selection": "Real Madrid — Match Winner @ 1.29 & Real Madrid -9.0 Spread @ 1.94",
-        "text": (
-            "Playing away from Tel Aviv on neutral Belgrade hardwood strips Maccabi Tel Aviv of their "
-            "traditional home edge, a handicap already reflected in their sluggish 2-4 EuroLeague start. "
-            "Real Madrid arrive at 4-2 with championship-tested half-court execution and superior size on "
-            "the defensive glass across all four quarters. Real Madrid on the Moneyline at 1.29—paired "
-            "with Madrid -9.0 at 1.94—is firmly justified on neutral floor."
-        ),
-    },
+    # el-535921 removed 2026-10-21 (session 5c02f50f): the official EuroLeague standings
+    # (euroleaguebasketball.net/en/euroleague/standings/) give Real Madrid 3-3 after six
+    # rounds — not 4-2. Re-priced, the model grades this neutral-floor match medium
+    # (p_best ~0.628 < 0.680), so it no longer qualifies for a high-confidence prediction.
     "el-535923": {
         "selection": "Panathinaikos — Match Winner @ 1.22 (also Panathinaikos -11.0 @ 1.95)",
         "text": (
-            "Few venues in European basketball suffocate visiting guards quite like OAKA in Athens, where "
-            "Panathinaikos have surged out to a 4-2 EuroLeague mark behind relentless perimeter pressure. "
-            "Baskonia travel east sitting at 2-4 after struggling to string stops together away from "
-            "Vitoria-Gasteiz over the opening six rounds. Panathinaikos Match Winner at 1.22 is rock-solid "
-            "anchor material, and laying -11.0 at 1.95 carries clear upside."
+            "Panathinaikos lead the EuroLeague at 5-1 after six rounds, and Telecom Center Athens (OAKA) has been a fortress with four wins in five home games. Baskonia sit bottom at 1-5 with the league's weakest scoring margin (-60). Panathinaikos Match Winner at 1.22 is the anchor selection, and laying -11.0 at 1.95 carries clear upside."
+        ),
+    },
+
+    "nba-0022600005": {
+        "selection": "Los Angeles Lakers — Match Winner @ 1.36 (also Lakers -7.5 Point Spread @ 1.95)",
+        "text": (
+            "The Los Angeles Lakers open at Crypto.com Arena as Pacific Division champions after a "
+            "53-29 (.646) season, hosting a Golden State side that finished 37-45 (.451) a year ago. "
+            "Sixteen wins separated these rivals in 2025-26, and the gap shows in the early prices. "
+            "Take the Los Angeles Lakers at 1.36 on the moneyline, with Lakers -7.5 at 1.95 the "
+            "sharper line."
         ),
     },
 
