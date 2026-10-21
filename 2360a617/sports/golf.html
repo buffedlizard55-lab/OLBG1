@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Golf — Lines &amp; Picks (OLBG reverse-engineered)</title>
+<style>
+:root{--bg:#0f1420;--card:#1a2233;--ink:#e8ecf4;--mut:#9aa7bd;--acc:#4da3ff;--hi:#2ecc8f;--md:#f5b942;--lo:#8b98ad;--warn:#ff6b6b;--line:#2a3550}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1280px;margin:0 auto;padding:20px}
+header{border-bottom:1px solid var(--line);padding:18px 0;margin-bottom:22px}
+h1{font-size:1.5rem;margin:0 0 4px}h2{font-size:1.2rem;margin:26px 0 10px;color:var(--acc)}
+.sub{color:var(--mut);font-size:.92rem}
+nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:.95rem}
+nav.top a{font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:16px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:block;color:var(--ink)}
+.card:hover{border-color:var(--acc);text-decoration:none}
+.card .n{font-size:1.6rem;font-weight:700;color:var(--acc)}
+.card .t{font-weight:600;margin-bottom:2px}.card .d{color:var(--mut);font-size:.82rem}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:.88rem}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+th{background:#141b2b;color:var(--mut);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+tr:last-child td{border-bottom:none}
+.badge{display:inline-block;padding:1px 9px;border-radius:20px;font-size:.75rem;font-weight:700}
+.b-high{background:rgba(46,204,143,.15);color:var(--hi);border:1px solid var(--hi)}
+.b-medium{background:rgba(245,185,66,.13);color:var(--md);border:1px solid var(--md)}
+.b-low{background:rgba(139,152,173,.15);color:var(--lo);border:1px solid var(--lo)}
+.flagpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(255,107,107,.12);color:var(--warn);border:1px solid var(--warn)}
+.okpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(46,204,143,.12);color:var(--hi);border:1px solid var(--hi)}
+details{margin:2px 0}summary{cursor:pointer;color:var(--acc);font-size:.82rem}
+.pred{background:#10182a;border-left:3px solid var(--hi);padding:8px 10px;border-radius:6px;margin:6px 0;font-size:.86rem}
+.note{background:#141b2b;border:1px solid var(--line);border-left:3px solid var(--md);padding:10px 14px;border-radius:8px;margin:14px 0;color:var(--ink);font-size:.9rem}
+.small{color:var(--mut);font-size:.8rem}
+.mono{font-variant-numeric:tabular-nums}
+footer{margin-top:36px;border-top:1px solid var(--line);padding:16px 0;color:var(--mut);font-size:.8rem}
+.srcs{font-size:.78rem;line-height:1.7}
+</style></head><body>
+<header><div class="wrap">
+<h1>OLBG Reverse-Engineered Lines &amp; Picks</h1>
+<div class="sub">152 events across 17 covered sports — collected from OLBG.com on 21 Oct 2026, re-priced with our own originated lines, verified against official sources. Times are US Eastern (ET) as displayed on OLBG.</div>
+<nav class="top"><a href="../" style="color:var(--ink)">Home</a> <a href="../flagged.html">Flagged for Review</a> <a href="../methodology.html">Methodology & Sources</a> <a href="https://github.com/buffedlizard55-lab/OLBG1" rel="noopener">GitHub repo</a></nav>
+</div></header>
+<div class="wrap">
+<h1>Golf <span class="small">(10 events)</span></h1>
+<div class="sub">Genesis Championship, BMW Ladies, Bermuda + minor/senior tour outrights — OLBG page: <a href="https://www.olbg.com/betting-tips/Golf/5" rel="noopener">https://www.olbg.com/betting-tips/Golf/5</a> · fetched 2026-10-21T05:25Z · displayed times ET</div>
+<div class="note small"><b>Timezone note:</b> times as displayed by OLBG (assumed US Eastern)</div>
+<table><tr><th>Match / Event</th><th>OLBG community tip</th><th>Our originated line</th><th>Our pick</th><th>Confidence</th><th>Verification</th><th>Analysis</th><th>Sources</th></tr><tr>
+<td><b>Genesis Championship</b><br><span class="small mono">25 Oct 04:00 (ET)</span><br><span class="small">Genesis Championship — KPGA/DP World Tour, Cheonan (verified)</span></td>
+<td>Si Woo Kim <b>5/18</b> <span class="small">(28% of tips, top mkt: Win Tournament)</span></td>
+<td class="small">Outright: Si Woo Kim short-price lead (est. 10/3) | Each-way: Ryan Fox, Im Sung-jae | Top-10 leans per world ranking</td>
+<td><b>Si Woo Kim to win</b></td>
+<td><span class="badge b-medium">medium</span></td>
+<td><span class="okpill">VERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified: Oct 22-25, Woojeong Hills CC (par 71, 7,367 yds), $4m purse, 10th edition, co-sanctioned KPGA/DP World Tour. Kim Si-woo is world No.13 with three 2026 PGA Tour runner-ups; Im Sung-jae (No.59) and Open champion Ryan Fox also confirmed. Outrights stay medium by nature — 126-man field.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Genesis_Championship/5?event_id=101905" rel="noopener">OLBG event</a><br><a href="https://news.sbs.co.kr/english/article.do?news_id=N1008805966" rel="noopener">SBS News — Genesis Championship preview (official Korean broadcaster)</a><br><a href="https://en.sedaily.com/sports/2026-10-19/korea-hosts-two-global-golf-events-as-kpga-lpga-tours-open" rel="noopener">Seoul Economic Daily — Korea hosts two global golf events</a><br><a href="https://www.racingpost.com/sport/golf-tips/dp-world-tour/genesis-championship-woo-jeong-hills-country-club-course-guide-start-time-odds-and-how-to-watch-a3nV27G7vpFz/" rel="noopener">Racing Post — course guide</a><br><a href="https://apnews.com/article/pga-tour-bermuda-lpga-european-tour-asia-cc8d85ef7a726c2150184a314999baa" rel="noopener">AP News — tour roundup</a></td>
+</tr><tr>
+<td><b>Bermuda Championship</b><br><span class="small mono">25 Oct 17:45 (ET)</span><br><span class="small">Bermuda Championship — PGA Tour (event verified, field not)</span></td>
+<td>Ben James <b>3/12</b> <span class="small">(25% of tips, top mkt: Win Tournament)</span></td>
+<td class="small">Outright: Ben James per consensus (est. 12/1) | Others left blank</td>
+<td><b>Ben James to win</b></td>
+<td><span class="badge b-low">low</span></td>
+<td><span class="okpill">VERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> AP confirms a PGA Tour Bermuda event this week; Ben James&#x27; entry/form not verified today. Consensus 25%.</div><div class="small"><span class="flagpill">FLAG</span> Field entry unverified.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Bermuda_Championship/5?event_id=101904" rel="noopener">OLBG event</a><br><a href="https://apnews.com/article/pga-tour-bermuda-lpga-european-tour-asia-cc8d85ef7a726c2150184a314999baa" rel="noopener">AP News — PGA Tour goes to Bermuda</a></td>
+</tr><tr>
+<td><b>Players Series SA</b><br><span class="small mono">25 Oct 02:45 (ET)</span><br><span class="small">Minor/senior tour outright — per OLBG listing</span></td>
+<td>Josh Armstrong <b>2/2</b> <span class="small">(100% of tips, top mkt: Win Tournament)</span></td>
+<td class="small">Outright only; no numeric line originated (insufficient verified data)</td>
+<td><b>Josh Armstrong to win</b></td>
+<td><span class="badge b-low">low</span></td>
+<td><span class="flagpill">UNVERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> 100% consensus Armstrong (AusPGA-affiliated series per OLBG). Tournament dates/fields not independently verified today.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: event, field and dates per OLBG only.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Players_Series_SA/5?event_id=101907" rel="noopener">OLBG event</a></td>
+</tr><tr>
+<td><b>BMW Ladies Championship</b><br><span class="small mono">25 Oct 04:00 (ET)</span><br><span class="small">BMW Ladies Championship — LPGA, Haenam (verified)</span></td>
+<td>Sei Young Kim <b>2/8</b> <span class="small">(25% of tips, top mkt: Win Tournament)</span></td>
+<td class="small">Outright: Sei Young Kim headline price (est. 12/1) | Each-way: top CME Globe names | Top-10: KLPGA contingent value</td>
+<td><b>Sei Young Kim to win</b></td>
+<td><span class="badge b-medium">medium</span></td>
+<td><span class="okpill">VERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified via LPGA.com: Oct 22-25, Pine Beach Golf Links, $2.35m, 84 players incl. 15 KLPGA; Sei Young Kim is the defending 2025 champion returning home. OLBG consensus 25% (single tipster).</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/BMW_Ladies_Championship/5?event_id=101906" rel="noopener">OLBG event</a><br><a href="https://www.lpga.com/tournaments" rel="noopener">LPGA.com — tournaments (official)</a><br><a href="https://www.golfchannel.com/lpga/news/bmw-ladies-championship-2026-how-to-watch-tv-streaming" rel="noopener">Golf Channel — BMW Ladies preview</a><br><a href="https://apnews.com/article/pga-tour-bermuda-lpga-european-tour-asia-cc8d85ef7a726c2150184a314999baa" rel="noopener">AP News — LPGA Korea event</a></td>
+</tr><tr>
+<td><b>Stifel Charity Classic</b><br><span class="small mono">25 Oct 17:45 (ET)</span><br><span class="small">Minor/senior tour outright — per OLBG listing</span></td>
+<td>Steven Alker <b>2/7</b> <span class="small">(29% of tips, top mkt: Win Tournament)</span></td>
+<td class="small">Outright only; no numeric line originated (insufficient verified data)</td>
+<td><b>Steven Alker to win</b></td>
+<td><span class="badge b-low">low</span></td>
+<td><span class="flagpill">UNVERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> 29% consensus Alker (PGA Tour Champions event per OLBG). Tournament dates/fields not independently verified today.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: event, field and dates per OLBG only.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Stifel_Charity_Classic/5?event_id=101903" rel="noopener">OLBG event</a></td>
+</tr><tr>
+<td><b>Senior Italian Open</b><br><span class="small mono">24 Oct 11:45 (ET)</span><br><span class="small">Minor/senior tour outright — per OLBG listing</span></td>
+<td>Mikael Lundberg <b>1/2</b> <span class="small">(50% of tips, top mkt: Win Tournament)</span></td>
+<td class="small">Outright only; no numeric line originated (insufficient verified data)</td>
+<td><b>Mikael Lundberg to win</b></td>
+<td><span class="badge b-low">low</span></td>
+<td><span class="flagpill">UNVERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> 50% consensus Lundberg ( Legends/European Senior per OLBG). Tournament dates/fields not independently verified today.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: event, field and dates per OLBG only.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Senior_Italian_Open/5?event_id=101911" rel="noopener">OLBG event</a></td>
+</tr><tr>
+<td><b>Fortinet Players Cup</b><br><span class="small mono">25 Oct 02:45 (ET)</span><br><span class="small">Minor/senior tour outright — per OLBG listing</span></td>
+<td>Ryosuke Kinoshita <b>1/2</b> <span class="small">(50% of tips, top mkt: Win Tournament)</span></td>
+<td class="small">Outright only; no numeric line originated (insufficient verified data)</td>
+<td><b>Ryosuke Kinoshita to win</b></td>
+<td><span class="badge b-low">low</span></td>
+<td><span class="flagpill">UNVERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> 50% consensus Kinoshita (Japan series per OLBG). Tournament dates/fields not independently verified today.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: event, field and dates per OLBG only.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Fortinet_Players_Cup/5?event_id=101908" rel="noopener">OLBG event</a></td>
+</tr><tr>
+<td><b>Hong Kong Open</b><br><span class="small mono">25 Oct 03:45 (ET)</span><br><span class="small">Minor/senior tour outright — per OLBG listing</span></td>
+<td>Paul Casey <b>1/3</b> <span class="small">(33% of tips, top mkt: Win Tournament)</span></td>
+<td class="small">Outright only; no numeric line originated (insufficient verified data)</td>
+<td><b>Paul Casey to win</b></td>
+<td><span class="badge b-low">low</span></td>
+<td><span class="flagpill">UNVERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> 33% consensus Casey (European Tour &amp; Asian Tour event per OLBG). Tournament dates/fields not independently verified today.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: event, field and dates per OLBG only.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Hong_Kong_Open/5?event_id=101910" rel="noopener">OLBG event</a></td>
+</tr><tr>
+<td><b>Stella Artois Players Championship</b><br><span class="small mono">25 Oct 10:45 (ET)</span><br><span class="small">Minor/senior tour outright — per OLBG listing</span></td>
+<td>Daniel van Tonder <b>1/2</b> <span class="small">(50% of tips, top mkt: Win Tournament)</span></td>
+<td class="small">Outright only; no numeric line originated (insufficient verified data)</td>
+<td><b>Daniel van Tonder to win</b></td>
+<td><span class="badge b-low">low</span></td>
+<td><span class="flagpill">UNVERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> 50% consensus van Tonder (Sunshine Tour per OLBG). Tournament dates/fields not independently verified today.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: event, field and dates per OLBG only.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Stella_Artois_Players_Championship/5?event_id=101912" rel="noopener">OLBG event</a></td>
+</tr><tr>
+<td><b>Hero Womens Indian Open</b><br><span class="small mono">25 Oct 08:00 (ET)</span><br><span class="small">Minor/senior tour outright — per OLBG listing</span></td>
+<td>Avani Prashanth <b>0/0</b> <span class="small">(0% of tips, top mkt: Win Tournament)</span></td>
+<td class="small">Outright only; no numeric line originated (insufficient verified data)</td>
+<td><b>Avani Prashanth to win</b></td>
+<td><span class="badge b-low">low</span></td>
+<td><span class="flagpill">UNVERIFIED</span></td>
+<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> 0% — no OLBG tips at all (odds shown 0/0). Tournament dates/fields not independently verified today.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: event, field and dates per OLBG only. Also: OLBG shows 0/0 odds with no tips — data quality issue.</div></details></td>
+<td class="srcs"><a href="https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/Hero_Womens_Indian_Open/5?event_id=101909" rel="noopener">OLBG event</a></td>
+</tr></table>
+</div><footer><div class="wrap">Built by session 2360a617 · Data snapshot 2026-10-21 05:25–06:05 UTC · For research/entertainment only — not betting advice. Unverified rows are flagged, never inferred.</div></footer></body></html>

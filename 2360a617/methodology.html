@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology &amp; Sources — OLBG reverse-engineered</title>
+<style>
+:root{--bg:#0f1420;--card:#1a2233;--ink:#e8ecf4;--mut:#9aa7bd;--acc:#4da3ff;--hi:#2ecc8f;--md:#f5b942;--lo:#8b98ad;--warn:#ff6b6b;--line:#2a3550}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1280px;margin:0 auto;padding:20px}
+header{border-bottom:1px solid var(--line);padding:18px 0;margin-bottom:22px}
+h1{font-size:1.5rem;margin:0 0 4px}h2{font-size:1.2rem;margin:26px 0 10px;color:var(--acc)}
+.sub{color:var(--mut);font-size:.92rem}
+nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:.95rem}
+nav.top a{font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:16px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:block;color:var(--ink)}
+.card:hover{border-color:var(--acc);text-decoration:none}
+.card .n{font-size:1.6rem;font-weight:700;color:var(--acc)}
+.card .t{font-weight:600;margin-bottom:2px}.card .d{color:var(--mut);font-size:.82rem}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:.88rem}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+th{background:#141b2b;color:var(--mut);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+tr:last-child td{border-bottom:none}
+.badge{display:inline-block;padding:1px 9px;border-radius:20px;font-size:.75rem;font-weight:700}
+.b-high{background:rgba(46,204,143,.15);color:var(--hi);border:1px solid var(--hi)}
+.b-medium{background:rgba(245,185,66,.13);color:var(--md);border:1px solid var(--md)}
+.b-low{background:rgba(139,152,173,.15);color:var(--lo);border:1px solid var(--lo)}
+.flagpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(255,107,107,.12);color:var(--warn);border:1px solid var(--warn)}
+.okpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(46,204,143,.12);color:var(--hi);border:1px solid var(--hi)}
+details{margin:2px 0}summary{cursor:pointer;color:var(--acc);font-size:.82rem}
+.pred{background:#10182a;border-left:3px solid var(--hi);padding:8px 10px;border-radius:6px;margin:6px 0;font-size:.86rem}
+.note{background:#141b2b;border:1px solid var(--line);border-left:3px solid var(--md);padding:10px 14px;border-radius:8px;margin:14px 0;color:var(--ink);font-size:.9rem}
+.small{color:var(--mut);font-size:.8rem}
+.mono{font-variant-numeric:tabular-nums}
+footer{margin-top:36px;border-top:1px solid var(--line);padding:16px 0;color:var(--mut);font-size:.8rem}
+.srcs{font-size:.78rem;line-height:1.7}
+</style></head><body>
+<header><div class="wrap">
+<h1>OLBG Reverse-Engineered Lines &amp; Picks</h1>
+<div class="sub">152 events across 17 covered sports — collected from OLBG.com on 21 Oct 2026, re-priced with our own originated lines, verified against official sources. Times are US Eastern (ET) as displayed on OLBG.</div>
+<nav class="top"><a href="">Home</a> <a href="flagged.html">Flagged for Review</a> <a href="methodology.html" style="color:var(--ink)">Methodology & Sources</a> <a href="https://github.com/buffedlizard55-lab/OLBG1" rel="noopener">GitHub repo</a></nav>
+</div></header>
+<div class="wrap">
+<h1>Methodology, verification &amp; source log</h1>
+<h2>1. Collection</h2>
+<p>All match lists were scraped from OLBG.com's public betting-tips pages on <b>21 Oct 2026, 05:25–06:05 UTC</b> (raw snapshots committed under <code>data/raw/</code>). Covered sports (17): Tennis, Basketball, Golf, Cricket, Snooker, Darts, Rugby Union, Rugby League, Baseball, Ice Hockey, Motor Racing, Handball, Volleyball, Aussie Rules, eSports, Gaelic Football, Greyhounds. Excluded per brief: Football (soccer), Horse Racing, American Football (NFL), Boxing, Cycling, MMA/UFC, Hurling, Specials. Rugby League, Aussie Rules and eSports had zero match events (documented on <a href="flagged.html">Flagged</a>).</p>
+<h2>2. Timezone determination</h2>
+<p>OLBG displayed times are <b>US Eastern</b>, not UK: the greyhound race titled “11:14 Kinsley” (UK) displayed as “Today 06:14” — exactly BST−5h. Corroborated by Littler–O'Connor (15:15 ET = 21:15 Dortmund local, per Sky/Sportingnews) and India–NZ T20I (03:00 ET = 07:00 GMT = 20:00 NZDT, per BCCI/ICC). All tables show ET as displayed.</p>
+<h2>3. Originating our lines</h2>
+<p>For each event we investigated the market landscape OLBG exposes (win/moneyline, handicaps &amp; point/puck/game/leg spreads, totals, set/first-set/frame markets, outrights) and originated our own line from: (a) verified records/standings/rankings, (b) verified recent results, (c) OLBG's own published historical base rates (e.g. Top 14 home win 74.4%, EHF CL draw ~9.8%, volleyball favourites 77.9–84.4%), and (d) consensus odds as a market prior. Where no verified data existed, numeric lines are <b>left blank or explicitly labelled “model estimate”</b> — never presented as fact.</p>
+<h2>4. Confidence policy</h2>
+<p><b>High</b> (12 picks): verified official-grade evidence (league standings, official rankings, governing-body schedules) pointing one way; each carries a unique ≥30-word prediction. <b>Medium</b> (42): partial verification (event + one or two verified facts). <b>Low</b> (98): consensus/model only — honest uncertainty, often deliberately diverging from OLBG's crowd tip with a stated reason.</p>
+<h2>5. Verification &amp; irregularities</h2>
+<p>Every row links its OLBG source event page. Independent sources consulted (all accessed 21 Oct 2026): official bodies — <b>MLB.com, NBA.com, Formula1.com, LPGA.com, BCCI.tv, ICC-cricket.com, WTA (draws + rankings PDFs), ATP Tour draw pages, eurohandball.com/EHFCL, URC stats site</b>; reference/data — ESPN, BBC Sport, Sky Sports, Wikipedia event pages, ESPNcricinfo, Hockey-Reference, Basketball-Reference, Sofascore, L'Equipe, all.rugby, Planet Rugby, Racing Post, AP, Seoul Economic Daily/SBS, Kalshi/lineups (model cross-checks), Tennis Tonic/Britwatch (draw results). Where values could not be confirmed the cells say so and the row is flagged. Notable irregularities logged on the <a href="flagged.html">Flagged page</a>: OLBG consensus backing Verstappen for the F1 title despite Antonelli's verified 102-point lead; handball “Tie” tips at 43–80% against a ~10% base rate; a wildcard backed for first set at 75% vs a top-100 seed (Almaty); stale CS:GO/FIFA and 2023-era AFL content; minor tip-off clock offsets; a competition label (Dinamo Bucuresti v Skanderborg) that doesn't match the verified EHF CL field.</p>
+<h2>6. Machine-readable data</h2>
+<p>Full pick set: <code>data/picks.json</code> (regenerated by <code>site/build.py</code>). Raw OLBG captures: <code>data/raw/*.json</code>. Coordination log: <code>COORDINATION.md</code>.</p>
+<div class="note"><b>Disclaimer:</b> research/entertainment only; not betting advice. Odds shown are fractional as listed on OLBG at capture time and move constantly.</div>
+</div><footer><div class="wrap">Built by session 2360a617 · Data snapshot 2026-10-21 05:25–06:05 UTC · For research/entertainment only — not betting advice. Unverified rows are flagged, never inferred.</div></footer></body></html>

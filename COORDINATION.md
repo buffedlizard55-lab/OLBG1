@@ -575,3 +575,38 @@ Building directly on `origin/main` (`99a04c5`) while keeping every parallel dire
   * Parallel Companion Desks Preserved Intact: `/OLBG1/docs/`, `/OLBG1/ebfbd966/`, `/OLBG1/aa4e9dbf/`
 
 
+
+## 11. Session `2360a617` (arena/2360a617-olbg1) — execution + publish record
+
+* **Scope executed (T1–T8, all DONE):** enumerated OLBG's 17 covered sports from
+  `sitemap-betting-tips.xml`; captured **152 match events** live 2026-10-21T05:25–06:05Z to
+  `data/raw/*.json` (commit `88a730a`) — Rugby League/Aussie Rules/eSports had zero match events
+  (documented); originated own lines (ML/handicap/total/set-frame-leg markets, outrights) + winner
+  pick + low/medium/high confidence for **every** event (`data/picks.json`, `site/picks_data.py`,
+  commit `aa2f091`); **12 high-confidence picks** each with a unique ≥30-word prediction sourced
+  only from facts verified the same day (MLB.com, NBA.com, Formula1.com, LPGA.com, BCCI.tv, ICC,
+  WTA/ATP official draws + rankings PDFs, eurohandball.com, BBC/Sky/ESPN, Wikipedia event pages,
+  ESPNcricinfo, Hockey-Reference, Basketball-Reference, all.rugby, Planet Rugby, SBS/Seoul Economic
+  Daily/Racing Post/AP).
+* **Desk (this session's site):** `2360a617/index.html` + 17 sport subpages + `flagged.html` +
+  `methodology.html` (self-contained inline CSS, 152 rows). Lives in the session-namespace
+  convention; one additive nav link ("OLBG-152 board (2360a617)") points to it from the root
+  dashboard. Raw captures `data/raw/` and `data/picks.json` are additive — no filename collisions.
+* **Flagged (123 rows on desk `2360a617/flagged.html`, non-blocking per brief):** OLBG consensus on
+  Verstappen for the F1 title despite Antonelli's verified 102-pt lead (and "Without Antonelli"
+  market tipping Verstappen vs standings-correct Russell); handball Tie tips 43–80% vs ~9.8% base
+  rate; Almaty wildcard tipped to win 1st set vs Macháč (75%); Wawrinka 100% consensus vs model 62%
+  Landaluce; Goffin WC at listed rank 461; Dinamo Bucuresti v Skanderborg filed as EHF CL though
+  Skanderborg is not in the verified CL field; NBA/NHL displayed clocks ~7–10 min hot; stale
+  CS:GO/FIFA + 2023 AFL content; greyhound fields not capturable (most-tipped dog only); URC
+  official stats table one round behind Sky/all.rugby/Wikipedia; AFG v BAN venue conflict
+  (Sharjah vs Abu Dhabi) left unresolved. Unverified values left blank / labelled estimates —
+  never inferred.
+* **Merge integration:** merged `origin/main` twice into this branch (99a04c5-era PRs #13–#15 and
+  6651b2b-era PRs #17–#18), resolving root HTML/COORDINATION conflicts in favour of the newer root
+  dashboard each time and keeping this session's deliverables in the `2360a617/` namespace. The
+  earlier validator patch (namespace resolution) was superseded by f7fa77fc's strict validator;
+  post-merge `scripts/validate.py` result recorded with the merge commit.
+* **Publish record:** PR #16 — https://github.com/buffedlizard55-lab/OLBG1/pull/16 —
+  (`arena/2360a617-olbg1` → `main`). Merge + Pages deploy verification for
+  https://buffedlizard55-lab.github.io/OLBG1/2360a617/ to be appended after execution.
