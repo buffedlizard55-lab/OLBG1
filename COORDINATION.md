@@ -81,6 +81,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T13 | Post-integration reproducibility, count-consistency and provenance-shape audit (no live source re-certification) | done | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:45Z | Structural checks passed; F1–F3 and scope limits documented in report and §12. |
 | T14 | Publish audit findings as a standalone GitHub Pages review subpage | done | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.html`, append-only `COORDINATION.md` | 2026-10-21T06:56Z | Standalone additive page; PR #20 merged and Pages deploy verified. |
 | T15 | Independent second-pass market-coverage and whole-tree source-link structural audit | done | e92c2bf4-olbg1 | `reports/SESSION_E92_SNAPSHOT_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:41Z | Completed after T13; records eight unpriced field cards, one missing cricket total, snapshot window, and validator evidence limits; does not edit shared data/pages. |
+| T16 | Corrective primary-desk provenance, status disclosure, integration and Pages publication | in progress | 4904ed05-olbg1 | `COORDINATION.md`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/flagged_for_review.json`, `scripts/validate.py`, root `*.html`, `sports/*.html`, `assets/*`, `README.md` | 2026-10-21T06:41Z | Follow-up integration after independently completed T13–T15. Remediates the F1–F3 audit handoff in the primary generated desk without changing their review artifacts. |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -645,3 +646,15 @@ Building directly on `origin/main` (`99a04c5`) while keeping every parallel dire
 **Integration request:** add the report's findings A–D to the root Flagged for Review page and retain the snapshot window. Those generated pages/datasets are shared integration scope and were not edited here.
 
 **Publish record:** PR #21 — https://github.com/buffedlizard55-lab/OLBG1/pull/21 — merged 2026-10-21T06:47:48Z (merge commit `ea4140eebb9ef3384205a4e8d53bb0d907a43ff9`). GitHub Pages build/deploy run #39557663895 completed successfully; latest Pages build reports `status=built`, `error=null`. The audit is Markdown and is available in the repository; this PR did not alter generated dashboard navigation or publish it as a linked site subpage.
+
+## 14. Session `4904ed05-olbg1` — T16 corrective integration handoff
+
+**2026-10-21T06:51Z — implementation complete locally; publication pending.** This corrective pass preserved the independent T13/T14 review artifacts and implemented their F1–F3 handoff in the primary desk and `/f7fa77fc/` mirror:
+
+* **F1 (prediction provenance):** replaced all 31 High-pick write-ups with distinct, source-bounded prose from the versioned fixture `facts` plus the explicitly labelled independent selection. The current corpus is 48–61 words per pick and has zero duplicated normalized six-word sequences. Tactical, injury, lineup, matchup and market assertions not in those stored inputs were removed.
+* **F2 (status accuracy):** public dashboard, mirror, source register, README, data-source principle and audit manifest now describe **134 source-linked events (129 Verified; 5 Cross-checked)**. The five Gallagher Premiership rows remain visibly Cross-checked and are not promoted to Verified.
+* **F3 (freshness/review boundary):** added three visible Flagged-for-Review records for the historic prose correction, the status split, and source freshness. The source register links the independent Post-Integration Review and says that the strict structural gate does not freshly fetch remote sources.
+* **Rebuilt deterministic outputs:** root/mirror datasets and 27-page builds were regenerated. A before/after full-patch comparison across a second complete build was byte-identical.
+* **Local gates:** `python3 scripts/validate.py` (131 published HTML pages, 0 errors, 0 warnings); `python3 scripts/ebfbd966_validate.py` (passed); `python3 scripts/final_audit.py`; `py_compile`; `git diff --check`; root/mirror data checksums matched for fixtures, lines and predictions.
+
+The rebased implementation commit is `674eb1c` (`fix: remediate audit provenance findings`). Next: rebase this branch, push, open/merge the required PR, then verify the GitHub Pages deployment before marking T16 done.

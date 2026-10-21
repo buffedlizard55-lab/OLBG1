@@ -4,42 +4,43 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Overview · OLBG Reverse-Engineering &amp; Origination Desk</title>
-<meta name="description" content="Officially verified multi-sport match dataset, independent multi-market betting lines, confidence tiers, and human analysis across all 17 in-scope OLBG sports.">
+<meta name="description" content="Source-linked multi-sport match dataset, independent multi-market betting lines, confidence tiers, and human analysis across all 17 in-scope OLBG sports.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <header class="site-header">
   <div class="hdr-inner">
     <div class="brand"><a href="index.html"><span class="dot"></span> OLBG Origination Desk <span class="sub">2026-10-21 UTC</span></a></div>
-    <nav class="main" aria-label="Primary navigation"><a href="index.html" aria-current="page">Overview</a><a href="picks.html">All Lines (134)</a><a href="predictions.html">High Picks (31)</a><a href="sports.html">17 Sports</a><a href="analysis.html">Market Analysis</a><a href="methodology.html">Methodology</a><a href="reverse-engineering.html">OLBG Audit</a><a href="sources.html">Official Sources</a><a href="flagged.html">Flagged for Review</a></nav>
+    <nav class="main" aria-label="Primary navigation"><a href="index.html" aria-current="page">Overview</a><a href="picks.html">All Lines (134)</a><a href="predictions.html">High Picks (31)</a><a href="sports.html">17 Sports</a><a href="analysis.html">Market Analysis</a><a href="methodology.html">Methodology</a><a href="reverse-engineering.html">OLBG Audit</a><a href="sources.html">Official Sources</a><a href="flagged.html">Flagged for Review</a><a href="../2360a617/index.html">OLBG-152 Board</a></nav>
   </div>
   <div class="companion-bar">
     <div class="companion-inner">
       <span>Repository workspaces:</span>
-      <a href="../index.html">Primary Root Desk (134 verified)</a>
+      <a href="../index.html">Primary Root Desk (134 source-linked)</a>
       <a href="../f7fa77fc/index.html">f7fa77fc Permalink Mirror</a>
       <a href="../docs/index.html">4f44f7d9 Board (164 OLBG)</a>
       <a href="../ebfbd966/index.html">ebfbd966 Board (133)</a>
       <a href="../aa4e9dbf/index.html">aa4e9dbf Desk (131)</a>
+      <a href="../2360a617/index.html">2360a617 Board (152)</a>
     </div>
   </div>
 </header>
 <main>
 
-<h1>Officially Verified Multi-Sport Origination Desk</h1>
-<p class="lede">Complete reverse-engineering of <code>OLBG.com</code> across all <b>17 in-scope sports</b> (excluding soccer/football, horse racing, american football, boxing, UFC/MMA, specials, hurling, and cycling), pairing <b>134 governing-body verified events</b> with independent multi-market odds and <b>31 non-repetitive human predictions</b>.</p>
+<h1>Source-Linked Multi-Sport Origination Desk</h1>
+<p class="lede">Complete reverse-engineering of <code>OLBG.com</code> across all <b>17 in-scope sports</b> (excluding soccer/football, horse racing, american football, boxing, UFC/MMA, specials, hurling, and cycling), pairing <b>134 source-linked events</b> (<b>129 verified</b>; <b>5 cross-checked</b>) with independently originated markets and <b>31 non-repetitive human predictions</b>. 125 of 126 head-to-head matches have an Over/Under total; the remaining total is left blank and flagged because no official competition-specific baseline was captured.</p>
 
 <div class="grid kpis">
-  <div class="kpi "><div class="n">134</div><div class="l">Verified Events (17 Sports)</div></div>
+  <div class="kpi "><div class="n">134 (129V · 5C)</div><div class="l">Source-Linked Events</div></div>
   <div class="kpi "><div class="n">126</div><div class="l">Multi-Market H2H Priced</div></div>
   <div class="kpi hi"><div class="n">31</div><div class="l">High Confidence Picks</div></div>
   <div class="kpi md"><div class="n">35</div><div class="l">Medium Confidence</div></div>
   <div class="kpi lo"><div class="n">60</div><div class="l">Low Confidence</div></div>
-  <div class="kpi fl"><div class="n">9</div><div class="l">Upstream / Audit Flags</div></div>
+  <div class="kpi fl"><div class="n">12</div><div class="l">Upstream / Audit Flags</div></div>
 </div>
 
 <div class="note good">
-  <b>Zero-inference verification policy:</b> Every single fixture, venue, UTC timestamp, ranking, and W-L input links directly to an official governing body (NHL API, MLB StatsAPI, NBA, EuroLeague, ATP/WTA, WST, PDC, ICC/NZC, LNR Top 14, URC, NRL/RLWC26, EHF, PlusLiga/SuperLega, AFLW, LoL Esports, GAA, FIA F1, PGA/DPWT/LPGA, GBGB). Only matches where <b>both sides hold measured official ratings</b> can reach High confidence. Unconfirmed fields are left blank and catalogued on <a href="flagged.html">Flagged for Review</a>.
+  <b>Zero-inference verification policy:</b> Every fixture row carries a direct governing-body link; this snapshot labels <b>129</b> rows Verified and <b>5</b> Cross-checked. Any field that cannot be supported is blank/flagged. Inputs for our prices link directly to an official governing body (NHL API, MLB StatsAPI, NBA, EuroLeague, ATP/WTA, WST, PDC, ICC/NZC, LNR Top 14, URC, NRL/RLWC26, EHF, PlusLiga/SuperLega, AFLW, LoL Esports, GAA, FIA F1, PGA/DPWT/LPGA, GBGB). Only matches where <b>both sides hold measured official ratings</b> can reach High confidence. Unconfirmed fields are left blank and catalogued on <a href="flagged.html">Flagged for Review</a>.
 </div>
 
 <h2>Browse by Sport Category (All 17 In-Scope OLBG Sports)</h2>
@@ -56,16 +57,17 @@
 <div class="card">
   <p>This repository preserves every parallel session's work cleanly side by side. Explore all live builds directly:</p>
   <ul>
-    <li><b><a href="../index.html">Primary Root Desk (/)</a> &amp; <a href="../f7fa77fc/index.html">/f7fa77fc/ Mirror</a>:</b> 134 officially verified events across all 17 sports, 4 market types (Winner, Draw No Bet, Spread/Handicap, Over/Under Total), live Decimal/Fair/US odds toggle, and full repo line-by-line audit.</li>
-    <li><b><a href="../docs/index.html">4f44f7d9 Companion Board (/docs/)</a>:</b> 164-event snapshot directly mirroring active OLBG tip listings.</li>
+    <li><b><a href="../index.html">Primary Root Desk (/)</a> &amp; <a href="../f7fa77fc/index.html">/f7fa77fc/ Mirror</a>:</b> 134 source-linked events across all 17 sports (129 Verified; 5 Cross-checked), with Winner and Handicap markets for all 126 head-to-head fixtures, Over/Under totals for 125, Draw No Bet where regulation draws apply, a live Decimal/Fair/US odds toggle, and a full line-by-line audit.</li>
+    <li><b><a href="../docs/index.html">4f44f7d9 Companion Board (/docs/)</a>:</b> 164-event historical OLBG tip-listing snapshot; its source gaps are recorded separately in the repository audit.</li>
     <li><b><a href="../ebfbd966/index.html">ebfbd966 Companion Board (/ebfbd966/)</a>:</b> 133-match independent log-odds pricing board.</li>
     <li><b><a href="../aa4e9dbf/index.html">aa4e9dbf Companion Desk (/aa4e9dbf/)</a>:</b> 131-match multi-market analytical desk.</li>
+    <li><b><a href="../2360a617/index.html">2360a617 Board (/2360a617/)</a>:</b> 152-row historical OLBG snapshot with its own review register.</li>
   </ul>
 </div>
 
 </main>
 <footer class="foot">
-  <p><b>OLBG Reverse-Engineering &amp; Origination Desk</b> — 17 in-scope sports · 134 officially verified events · multi-market lines &amp; human analysis.</p>
+  <p><b>OLBG Reverse-Engineering &amp; Origination Desk</b> — 17 in-scope sports · 134 source-linked events (129 verified · 5 cross-checked) · multi-market lines &amp; human analysis.</p>
   <p>Every fixture, ranking, and record links directly to its governing body. Unconfirmed values are left explicitly blank and logged on <a href="flagged.html">Flagged for Review</a>. Independent mathematical probabilities only — not financial or gambling advice.</p>
   <p>Downloads: <a href="../datasets/matches_full.json">matches_full.json</a> · <a href="../datasets/matches_full.csv">matches_full.csv</a> · <a href="../datasets/flagged_for_review.json">flagged_for_review.json</a> · <a href="../datasets/olbg_sports_registry.json">olbg_sports_registry.json</a></p>
 </footer>
