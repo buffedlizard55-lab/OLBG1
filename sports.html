@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sports · OLBG Reverse-Engineering</title>
+<meta name="description" content="Independent reverse-engineering of OLBG: verified fixtures across 17 in-scope sports, originated betting lines, confidence tiers and written predictions.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="hdr-inner">
+    <div class="brand"><span class="dot"></span> OLBG <span class="sub">reverse-engineered</span></div>
+    <nav class="main"><a href="index.html">Dashboard</a><a href="picks.html">Picks</a><a href="predictions.html">Predictions</a><a href="sports.html" aria-current="page">Sports</a><a href="methodology.html">Methodology</a><a href="reverse-engineering.html">OLBG analysis</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a></nav>
+  </div>
+</header>
+<main>
+
+<div class="crumb">Dashboard / Sports</div>
+<h1>The 17 in-scope sports</h1>
+<p class="lede">OLBG lists 22 sports in its betting-tips sitemap. After applying the brief's exclusions — football,
+boxing, UFC/MMA, American football, hurling, horse racing, cycling and specials — 17 remain. Each has its own page.</p>
+<div class="grid sports-grid"><a class="sport-card" href="sports/tennis.html"><div class="t"><span>Tennis</span><span class="badge cross">Not investigated</span></div><div class="m">0 priced matches · OLBG ID 3</div></a><a class="sport-card" href="sports/basketball.html"><div class="t"><span>Basketball</span><span class="badge verified">Covered</span></div><div class="m">11 priced matches · OLBG ID 4</div></a><a class="sport-card" href="sports/golf.html"><div class="t"><span>Golf</span><span class="badge event">Event only</span></div><div class="m">0 priced matches · OLBG ID 5</div></a><a class="sport-card" href="sports/cricket.html"><div class="t"><span>Cricket</span><span class="badge verified">Covered</span></div><div class="m">7 priced matches · OLBG ID 7</div></a><a class="sport-card" href="sports/snooker.html"><div class="t"><span>Snooker</span><span class="badge verified">Covered</span></div><div class="m">11 priced matches · OLBG ID 8</div></a><a class="sport-card" href="sports/rugby-union.html"><div class="t"><span>Rugby Union</span><span class="badge cross">Partial</span></div><div class="m">5 priced matches · OLBG ID 9</div></a><a class="sport-card" href="sports/rugby-league.html"><div class="t"><span>Rugby League</span><span class="badge cross">Not investigated</span></div><div class="m">0 priced matches · OLBG ID 10</div></a><a class="sport-card" href="sports/baseball.html"><div class="t"><span>Baseball</span><span class="badge verified">Covered</span></div><div class="m">4 priced matches · OLBG ID 12</div></a><a class="sport-card" href="sports/ice-hockey.html"><div class="t"><span>Ice Hockey</span><span class="badge verified">Covered</span></div><div class="m">4 priced matches · OLBG ID 13</div></a><a class="sport-card" href="sports/motor-racing.html"><div class="t"><span>Motor Racing</span><span class="badge event">Event only</span></div><div class="m">0 priced matches · OLBG ID 14</div></a><a class="sport-card" href="sports/darts.html"><div class="t"><span>Darts</span><span class="badge verified">Covered</span></div><div class="m">7 priced matches · OLBG ID 15</div></a><a class="sport-card" href="sports/handball.html"><div class="t"><span>Handball</span><span class="badge cross">Not investigated</span></div><div class="m">0 priced matches · OLBG ID 20</div></a><a class="sport-card" href="sports/volleyball.html"><div class="t"><span>Volleyball</span><span class="badge cross">Not investigated</span></div><div class="m">0 priced matches · OLBG ID 21</div></a><a class="sport-card" href="sports/aussie-rules.html"><div class="t"><span>Aussie Rules</span><span class="badge cross">Not investigated</span></div><div class="m">0 priced matches · OLBG ID 22</div></a><a class="sport-card" href="sports/esports.html"><div class="t"><span>eSports</span><span class="badge cross">Not investigated</span></div><div class="m">0 priced matches · OLBG ID 23</div></a><a class="sport-card" href="sports/gaelic-football.html"><div class="t"><span>Gaelic Football</span><span class="badge muted">No fixtures</span></div><div class="m">0 priced matches · OLBG ID 25</div></a><a class="sport-card" href="sports/greyhounds.html"><div class="t"><span>Greyhounds</span><span class="badge cross">Not investigated</span></div><div class="m">0 priced matches · OLBG ID 28</div></a></div>
+<div class="note">
+  <b>On status words.</b> <em>Covered</em> means fixtures were read from the governing body.
+  <em>Partial</em> means the governing body's page did not render, so rows are cross-checked only.
+  <em>Event only</em> means the event is verified but has no two-sided fixture to price.
+  <em>No fixtures</em> is a verified negative. <em>Not investigated</em> is an honest gap.
+</div>
+
+</main>
+<footer class="foot">
+  <p><b>OLBG Reverse-Engineering</b> — Originated lines · verified fixtures · confidence tiers. Window covered: 21–27 October 2026.
+  Every fixture links to the governing body it was read from. Model prices are our own
+  estimates, not market prices. Nothing here is betting advice.</p>
+  <p><a href="methodology.html">Methodology</a> · <a href="sources.html">Source register</a> ·
+  <a href="flagged.html">Flagged for review</a> · <a href="data/fixtures.json">Raw JSON</a></p>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology · OLBG Reverse-Engineering</title>
+<meta name="description" content="Independent reverse-engineering of OLBG: verified fixtures across 17 in-scope sports, originated betting lines, confidence tiers and written predictions.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="hdr-inner">
+    <div class="brand"><span class="dot"></span> OLBG <span class="sub">reverse-engineered</span></div>
+    <nav class="main"><a href="index.html">Dashboard</a><a href="picks.html">Picks</a><a href="predictions.html">Predictions</a><a href="sports.html">Sports</a><a href="methodology.html" aria-current="page">Methodology</a><a href="reverse-engineering.html">OLBG analysis</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a></nav>
+  </div>
+</header>
+<main>
+
+<div class="crumb">Dashboard / Methodology</div>
+<h1>Methodology</h1>
+<p class="lede">Everything on this site is either a sourced fact or a labelled assumption. This page separates the two
+so you can audit the output without trusting the author.</p>
+
+<h2>1. What counts as a source</h2>
+<p>Only the governing body of the competition: the league's own API or site, the tour, the promoter, the federation.
+Betting sites, tipster aggregators, Wikipedia and news outlets are never used to confirm a fixture, a record or a
+ranking. Every row in every table links to the official page it was read from. The full register is on the
+<a href="sources.html">Sources</a> page.</p>
+
+<h2>2. Three verification states</h2>
+<table>
+<thead><tr><th>State</th><th>Meaning</th></tr></thead>
+<tbody>
+<tr><td><span class="badge verified">Verified</span></td><td>The value was read directly on an official page or official JSON endpoint.</td></tr>
+<tr><td><span class="badge cross">Cross-checked</span></td><td>The official page exists but did not render or publish the value. The row is
+corroborated by the competition's official broadcaster and is listed on <a href="flagged.html">Flagged for review</a>.</td></tr>
+<tr><td><span class="badge cross">Unverified</span></td><td>Not confirmed on any official source. Published as blank plus a flag — never
+as an inferred value.</td></tr>
+</tbody></table>
+
+<h2>3. How the lines are originated</h2>
+<p>Each match is priced with a Bradley–Terry style model in log-odds space:</p>
+<pre style="background:#0f172a;color:#e2e8f0;padding:14px 16px;border-radius:10px;overflow:auto;font-size:.85rem">
+logit(p_home) = logit(base_home) + (rating_home − rating_away) / scale
+odds(S)       = 1 / (p(S) × 1.05)        # 5% overround
+handicap line = sigma × Φ⁻¹(p_home)      # expected margin, rounded to the nearest half
+total line    = league baseline          # no match-specific scoring input is sourced
+</pre>
+<p><b>Ratings are only used when both sides have one.</b> If a single participant is missing a sourced rating, the
+model refuses to carry a one-sided edge — using a real rating against a placeholder produces nonsense — and charges
+the sport's neutral home baseline instead. That is why the confidence split looks the way it does.</p>
+
+<h3>Rating inputs actually used</h3>
+<ul class="clean">
+  <li><b>Baseball</b> — each side's official 2026 home/road win percentage (MLB StatsAPI), scaled to 0–100.</li>
+  <li><b>Snooker</b> — official WST world-ranking position, mapped by <code>100 − 70·ln(rank)/ln(60)</code>. Players
+  outside the published top 36 are placed in a single bounded bucket at rank 60. That is a documented bound, not a
+  measurement, and it is flagged on every affected row.</li>
+  <li><b>Ice hockey</b> — team points percentage where captured. Only Boston carries one in this build, so all four NHL
+  matches fall back to baseline.</li>
+  <li><b>Basketball, darts, cricket, rugby union</b> — no rating source retrieved, so baseline only.</li>
+</ul>
+
+<h3>Model assumptions (not facts)</h3>
+<p>These are choices the model makes. They are listed here so nobody mistakes them for statistics.</p>
+<table>
+<thead><tr><th>Sport</th><th>Neutral home prob.</th><th>Log-odds scale</th><th>Margin σ</th><th>Baseline total</th><th>High bar</th></tr></thead>
+<tbody>
+<tr><td>Ice Hockey</td><td class='num'>0.53</td><td class='num'>14</td><td class='num'>3.0</td><td class='num'>6.0</td><td class='num'>0.58</td></tr><tr><td>Basketball</td><td class='num'>0.56</td><td class='num'>14</td><td class='num'>18.0</td><td class='num'>225.5</td><td class='num'>0.62</td></tr><tr><td>Baseball</td><td class='num'>0.54</td><td class='num'>40</td><td class='num'>4.0</td><td class='num'>8.5</td><td class='num'>0.58</td></tr><tr><td>Snooker</td><td class='num'>0.50</td><td class='num'>27</td><td class='num'>2.6</td><td class='num'>—</td><td class='num'>0.62</td></tr><tr><td>Darts</td><td class='num'>0.50</td><td class='num'>16</td><td class='num'>3.2</td><td class='num'>—</td><td class='num'>0.65</td></tr><tr><td>Cricket</td><td class='num'>0.53</td><td class='num'>18</td><td class='num'>22.0</td><td class='num'>320.5</td><td class='num'>0.60</td></tr><tr><td>Rugby Union</td><td class='num'>0.55</td><td class='num'>16</td><td class='num'>13.0</td><td class='num'>48.5</td><td class='num'>0.60</td></tr><tr><td>Rugby League</td><td class='num'>0.55</td><td class='num'>16</td><td class='num'>14.0</td><td class='num'>42.5</td><td class='num'>0.60</td></tr><tr><td>Tennis</td><td class='num'>0.50</td><td class='num'>24</td><td class='num'>2.4</td><td class='num'>—</td><td class='num'>0.65</td></tr><tr><td>Golf</td><td class='num'>0.50</td><td class='num'>22</td><td class='num'>4.0</td><td class='num'>—</td><td class='num'>0.70</td></tr><tr><td>Handball</td><td class='num'>0.55</td><td class='num'>16</td><td class='num'>8.0</td><td class='num'>57.5</td><td class='num'>0.60</td></tr><tr><td>Volleyball</td><td class='num'>0.55</td><td class='num'>18</td><td class='num'>1.6</td><td class='num'>—</td><td class='num'>0.62</td></tr><tr><td>Aussie Rules</td><td class='num'>0.57</td><td class='num'>18</td><td class='num'>30.0</td><td class='num'>167.5</td><td class='num'>0.62</td></tr><tr><td>eSports</td><td class='num'>0.50</td><td class='num'>20</td><td class='num'>1.8</td><td class='num'>—</td><td class='num'>0.64</td></tr><tr><td>Gaelic Football</td><td class='num'>0.55</td><td class='num'>18</td><td class='num'>10.0</td><td class='num'>39.5</td><td class='num'>0.60</td></tr><tr><td>Greyhounds</td><td class='num'>0.50</td><td class='num'>18</td><td class='num'>0.9</td><td class='num'>—</td><td class='num'>0.55</td></tr><tr><td>Motor Racing</td><td class='num'>0.50</td><td class='num'>20</td><td class='num'>2.0</td><td class='num'>—</td><td class='num'>0.60</td></tr>
+</tbody></table>
+
+<h2>4. Confidence tiers</h2>
+<table>
+<thead><tr><th>Tier</th><th>Rule</th></tr></thead>
+<tbody>
+<tr><td><span class="badge high">High</span></td><td>Both sides carry a sourced rating <em>and</em> the model probability clears the
+sport's high bar — Ice Hockey 0.58, Baseball 0.58, Snooker 0.62. High is <em>relative to the sport's own variance</em>: a 59% baseball favourite
+is a bigger edge than a 59% basketball favourite.</td></tr>
+<tr><td><span class="badge medium">Medium</span></td><td>Both sides rated but below the high bar.</td></tr>
+<tr><td><span class="badge low">Low</span></td><td>At least one side unrated. Capped at low regardless of what the baseline implies.</td></tr>
+</tbody></table>
+<p>Current distribution: <b>8</b> high · <b>3</b> medium · <b>38</b> low,
+across 49 matches.</p>
+
+<h2>5. What is deliberately missing</h2>
+<ul class="clean">
+  <li>No match-total line is originated for snooker or darts: the governing body's match format was not verified, and a
+  total-frames or total-legs line would rest on an assumption about format rather than a fact.</li>
+  <li>No correct-score, first-scorer or player-prop markets. There is no sourced input for them.</li>
+  <li>No injury, team-news or lineup data. Not retrieved means not claimed.</li>
+  <li>No in-play pricing. Everything here is a pre-match opening line.</li>
+</ul>
+
+</main>
+<footer class="foot">
+  <p><b>OLBG Reverse-Engineering</b> — Originated lines · verified fixtures · confidence tiers. Window covered: 21–27 October 2026.
+  Every fixture links to the governing body it was read from. Model prices are our own
+  estimates, not market prices. Nothing here is betting advice.</p>
+  <p><a href="methodology.html">Methodology</a> · <a href="sources.html">Source register</a> ·
+  <a href="flagged.html">Flagged for review</a> · <a href="data/fixtures.json">Raw JSON</a></p>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+{
+  "generated": "2026-10-21",
+  "policy": "One bespoke written prediction per HIGH-confidence selection. Each is at least 30 words, states the selection explicitly, and is built only from facts that were read on an official source. No two predictions reuse the same sentence structure or the same single argument.",
+  "items": [
+    {
+      "match_id": "mlb-849805",
+      "selection": "Milwaukee Brewers",
+      "market": "Match Winner",
+      "text": "Back the Milwaukee Brewers on the money line in World Series Game 1. They finished the regular season 103-59 and were 55-26 at American Family Field, the best possible place to open a series. Tampa Bay won 98 games but were only 43-38 on the road, and the Brewers arrive 6-1 in the post-season after sweeping the Dodgers.",
+      "facts": [
+        "Brewers regular season 103-59 (.636), home 55-26 (.679)",
+        "Rays regular season 98-64 (.605), road 43-38 (.531)",
+        "Brewers post-season 6-1, including a 3-0 sweep of the Dodgers"
+      ],
+      "sources": [
+        {
+          "name": "MLB StatsAPI standings 2026",
+          "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"
+        },
+        {
+          "name": "MLB official postseason schedule",
+          "url": "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2026"
+        },
+        {
+          "name": "MLB StatsAPI schedule (fixture)",
+          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30"
+        }
+      ]
+    },
+    {
+      "match_id": "mlb-849802",
+      "selection": "Milwaukee Brewers",
+      "market": "Match Winner",
+      "text": "Milwaukee Brewers again on the money line in Game 2, this time on workload rather than venue. Milwaukee closed out the Dodgers on 14 October and have had nine days to line up their rotation, while Tampa Bay needed six games and a postponement to get past Cleveland, finishing on 19 October. A 55-26 home record behind a rested staff is the selection.",
+      "facts": [
+        "Brewers last played 2026-10-14 - nine days before Game 2",
+        "Rays last played 2026-10-19 after a six-game series that included a postponement",
+        "Brewers home record 55-26"
+      ],
+      "sources": [
+        {
+          "name": "MLB official postseason schedule",
+          "url": "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2026"
+        },
+        {
+          "name": "MLB StatsAPI standings 2026 (home/road splits)",
+          "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"
+        }
+      ]
+    },
+    {
+      "match_id": "mlb-849804",
+      "selection": "Tampa Bay Rays",
+      "market": "Match Winner",
+      "text": "Tampa Bay Rays again in Game 3 at Tropicana Field. The Rays were 55-26 at home in 2026, the identical home record Milwaukee posted, and they are 7-2 this post-season after a 7-3 win over Cleveland that closed the series. Milwaukee were a solid but unremarkable 48-33 on the road, so the venue flips the edge.",
+      "facts": [
+        "Rays home record 55-26 (.679)",
+        "Brewers road record 48-33 (.593)",
+        "Rays post-season 7-2, last game a 7-3 home win over Cleveland on 19 October"
+      ],
+      "sources": [
+        {
+          "name": "MLB StatsAPI standings 2026",
+          "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"
+        },
+        {
+          "name": "MLB official postseason schedule",
+          "url": "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2026"
+        }
+      ]
+    },
+    {
+      "match_id": "mlb-849803",
+      "selection": "Tampa Bay Rays",
+      "market": "Match Winner",
+      "text": "This is a Tampa Bay Rays selection for Game 4. Their 55-26 home mark is the strongest single venue input in this series, and once it replaces the neutral baseline the model makes them a 59% favourite. Milwaukee's 6-1 post-season record was built on four home games out of seven, and their road form in the regular season was 48-33.",
+      "facts": [
+        "Rays home record 55-26; Brewers road record 48-33",
+        "Brewers played four of their seven post-season games at home",
+        "Model win probability for the Rays in Game 4: 59%"
+      ],
+      "sources": [
+        {
+          "name": "MLB StatsAPI standings 2026 (home/road splits)",
+          "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"
+        },
+        {
+          "name": "MLB official postseason schedule",
+          "url": "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2026"
+        }
+      ]
+    },
+    {
+      "match_id": "snk-cheung-bingham",
+      "selection": "Stuart Bingham",
+      "market": "Match Winner",
+      "text": "Stuart Bingham is the pick. He sits 19th on the official Johnstone's Paint World Rankings with \u00a3350,550 to his name, while Cheung Ka Wai is outside the published top 36 entirely. Both men came through the first round in Belfast, but only one of them carries a verified top-20 ranking into the match.",
+      "facts": [
+        "Bingham: world No. 19, \u00a3350,550",
+        "Cheung: outside the published top 36",
+        "Both players reached Round 2, so both won a first-round match"
+      ],
+      "sources": [
+        {
+          "name": "WST Johnstone's Paint World Rankings",
+          "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+        },
+        {
+          "name": "WST live & upcoming matches (Round 2 draw)",
+          "url": "https://www.wst.tv/"
+        }
+      ]
+    },
+    {
+      "match_id": "snk-higgins-jones",
+      "selection": "John Higgins",
+      "market": "Match Winner",
+      "text": "John Higgins to win. The Scot is world No. 6 on \u00a3905,000, and although Jak Jones is a genuine threat sitting fourth on the separate One Year List, the official ranking still separates the pair by eighteen places. That eighteen-place gap is the input the model prices; Jones' one-year form is the counter-argument worth weighing against it.",
+      "facts": [
+        "Higgins: world No. 6, \u00a3905,000",
+        "Jak Jones: world No. 24, fourth on the One Year List",
+        "Eighteen places between them on the official ranking"
+      ],
+      "sources": [
+        {
+          "name": "WST Johnstone's Paint World Rankings",
+          "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+        },
+        {
+          "name": "WST rankings hub (One Year List)",
+          "url": "https://www.wst.tv/rankings/"
+        }
+      ]
+    },
+    {
+      "match_id": "snk-zhang-williams",
+      "selection": "Mark Williams",
+      "market": "Match Winner",
+      "text": "Mark Williams is the selection. He is world No. 8 on \u00a3747,400 and finished second on the BetVictor Home Nations bonus list with \u00a345,000, while Zhang Anda is 21st on \u00a3332,600. Zhang has been scoring heavily - eighth on the WST centuries count with 15 - but the ranking gap still makes Williams a clear favourite in Belfast.",
+      "facts": [
+        "Williams: world No. 8, \u00a3747,400; second on the Home Nations bonus list (\u00a345,000)",
+        "Zhang Anda: world No. 21, \u00a3332,600; eighth on the centuries count with 15"
+      ],
+      "sources": [
+        {
+          "name": "WST Johnstone's Paint World Rankings",
+          "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+        },
+        {
+          "name": "WST rankings hub (Home Nations bonus and centuries count)",
+          "url": "https://www.wst.tv/rankings/"
+        }
+      ]
+    },
+    {
+      "match_id": "snk-slessor-jones",
+      "selection": "Elliot Slessor",
+      "market": "Match Winner",
+      "text": "Elliot Slessor to progress. He is ranked 23rd in the world on \u00a3329,200 and faces Jamie Jones, who sits outside the published top 36 - a gap the model converts into a 65% win probability. Beyond that ranking difference the model holds no verified separator, so the edge is real but modest.",
+      "facts": [
+        "Slessor: world No. 23, \u00a3329,200",
+        "Jamie Jones: outside the published top 36",
+        "Model win probability for Slessor: 65%"
+      ],
+      "sources": [
+        {
+          "name": "WST Johnstone's Paint World Rankings",
+          "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+        },
+        {
+          "name": "WST rankings hub (One Year List)",
+          "url": "https://www.wst.tv/rankings/"
+        }
+      ]
+    }
+  ]
+}
