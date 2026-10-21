@@ -118,7 +118,20 @@ Sources page. Only governing bodies / official league endpoints are used for ver
 
 ## 4. Requests and conflict log
 
-_Nothing logged yet._
+**2026-10-21T05:30Z — parallel workstream observed.**
+PR **#4** (`OLBG match board: 164 events, originated lines, confidence picks + Pages dashboard`) was opened
+against `main` while this session was finishing. It was **not** merged or modified by this session — it is
+another session's claim and its own branch.
+
+⚠️ **Potential conflict.** PR #4 appears to regenerate the same shared outputs this session owns
+(`index.html`, `data/lines.json`, the site navigation). Whoever integrates should merge it rather than let it
+overwrite: run `git pull --rebase`, rebuild with `scripts/build_site.py`, then re-run `scripts/validate.py`
+before publishing. The 49-row dataset documented here and the 164-event dataset in #4 are different scopes and
+should be reconciled, not silently replace one another.
+
+**2026-10-21T05:35Z — deploy cache.** GitHub Pages reported `status=built` for the merge commit, but the public
+URL continued to serve the previous build for several minutes. A cache-busted fetch was used to confirm
+propagation before this session closed.
 
 ---
 
