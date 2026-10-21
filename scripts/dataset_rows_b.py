@@ -371,7 +371,7 @@ def get_rows_b() -> list[dict]:
                 "away": {"label": ai[0], "value": ai[1], "rating": ai[2]},
             },
             "flags": ["OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-                      "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see F-T21-01). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."],
+                      "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."],
         })
 
     # =========================================================================
