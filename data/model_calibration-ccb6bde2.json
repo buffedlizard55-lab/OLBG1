@@ -1,0 +1,873 @@
+{
+  "audited": "2026-10-21",
+  "session": "ccb6bde2-olbg1",
+  "model_under_audit": "olbg-independent-logit-normal-v2.0",
+  "tennis_rank_pairs": [
+    {
+      "rank_a": 1,
+      "rank_b": 5,
+      "rating_a": 100.0,
+      "rating_b": 81.83,
+      "p_favourite": 0.668
+    },
+    {
+      "rank_a": 1,
+      "rank_b": 25,
+      "rating_a": 100.0,
+      "rating_b": 63.65,
+      "p_favourite": 0.802
+    },
+    {
+      "rank_a": 1,
+      "rank_b": 50,
+      "rating_a": 100.0,
+      "rating_b": 55.83,
+      "p_favourite": 0.845
+    },
+    {
+      "rank_a": 1,
+      "rank_b": 100,
+      "rating_a": 100.0,
+      "rating_b": 48.0,
+      "p_favourite": 0.881
+    },
+    {
+      "rank_a": 5,
+      "rank_b": 25,
+      "rating_a": 81.83,
+      "rating_b": 63.65,
+      "p_favourite": 0.668
+    },
+    {
+      "rank_a": 5,
+      "rank_b": 50,
+      "rating_a": 81.83,
+      "rating_b": 55.83,
+      "p_favourite": 0.731
+    },
+    {
+      "rank_a": 10,
+      "rank_b": 25,
+      "rating_a": 74.0,
+      "rating_b": 63.65,
+      "p_favourite": 0.598
+    },
+    {
+      "rank_a": 10,
+      "rank_b": 50,
+      "rating_a": 74.0,
+      "rating_b": 55.83,
+      "p_favourite": 0.668
+    },
+    {
+      "rank_a": 20,
+      "rank_b": 50,
+      "rating_a": 66.17,
+      "rating_b": 55.83,
+      "p_favourite": 0.598
+    },
+    {
+      "rank_a": 30,
+      "rank_b": 80,
+      "rating_a": 61.59,
+      "rating_b": 50.52,
+      "p_favourite": 0.605
+    },
+    {
+      "rank_a": 50,
+      "rank_b": 100,
+      "rating_a": 55.83,
+      "rating_b": 48.0,
+      "p_favourite": 0.575
+    }
+  ],
+  "snooker_rank_pairs": [
+    {
+      "rank_a": 1,
+      "rank_b": 8,
+      "rating_a": 100.0,
+      "rating_b": 64.45,
+      "p_favourite": 0.789
+    },
+    {
+      "rank_a": 1,
+      "rank_b": 16,
+      "rating_a": 100.0,
+      "rating_b": 52.6,
+      "p_favourite": 0.853
+    },
+    {
+      "rank_a": 1,
+      "rank_b": 32,
+      "rating_a": 100.0,
+      "rating_b": 40.75,
+      "p_favourite": 0.9
+    },
+    {
+      "rank_a": 1,
+      "rank_b": 57,
+      "rating_a": 100.0,
+      "rating_b": 30.88,
+      "p_favourite": 0.928
+    },
+    {
+      "rank_a": 5,
+      "rank_b": 16,
+      "rating_a": 72.48,
+      "rating_b": 52.6,
+      "p_favourite": 0.676
+    },
+    {
+      "rank_a": 5,
+      "rank_b": 32,
+      "rating_a": 72.48,
+      "rating_b": 40.75,
+      "p_favourite": 0.764
+    },
+    {
+      "rank_a": 10,
+      "rank_b": 30,
+      "rating_a": 60.63,
+      "rating_b": 41.85,
+      "p_favourite": 0.667
+    },
+    {
+      "rank_a": 20,
+      "rank_b": 40,
+      "rating_a": 48.78,
+      "rating_b": 36.93,
+      "p_favourite": 0.608
+    },
+    {
+      "rank_a": 25,
+      "rank_b": 57,
+      "rating_a": 44.97,
+      "rating_b": 30.88,
+      "p_favourite": 0.628
+    }
+  ],
+  "rating_gap_curves": {
+    "ice-hockey": {
+      "scale": 42.0,
+      "p_base": 0.535,
+      "high_threshold": 0.61,
+      "med_threshold": 0.555,
+      "p_home_by_gap": {
+        "5": 0.564,
+        "10": 0.593,
+        "15": 0.622,
+        "20": 0.649,
+        "30": 0.702,
+        "40": 0.749
+      }
+    },
+    "basketball": {
+      "scale": 32.0,
+      "p_base": 0.56,
+      "high_threshold": 0.68,
+      "med_threshold": 0.575,
+      "p_home_by_gap": {
+        "5": 0.598,
+        "10": 0.635,
+        "15": 0.67,
+        "20": 0.704,
+        "30": 0.765,
+        "40": 0.816
+      }
+    },
+    "baseball": {
+      "scale": 40.0,
+      "p_base": 0.54,
+      "high_threshold": 0.58,
+      "med_threshold": 0.545,
+      "p_home_by_gap": {
+        "5": 0.571,
+        "10": 0.601,
+        "15": 0.631,
+        "20": 0.659,
+        "30": 0.713,
+        "40": 0.761
+      }
+    },
+    "snooker": {
+      "scale": 27.0,
+      "p_base": 0.5,
+      "high_threshold": 0.63,
+      "med_threshold": 0.56,
+      "p_home_by_gap": {
+        "5": 0.546,
+        "10": 0.592,
+        "15": 0.635,
+        "20": 0.677,
+        "30": 0.752,
+        "40": 0.815
+      }
+    },
+    "darts": {
+      "scale": 33.0,
+      "p_base": 0.5,
+      "high_threshold": 0.665,
+      "med_threshold": 0.565,
+      "p_home_by_gap": {
+        "5": 0.538,
+        "10": 0.575,
+        "15": 0.612,
+        "20": 0.647,
+        "30": 0.713,
+        "40": 0.771
+      }
+    },
+    "cricket": {
+      "scale": 22.0,
+      "p_base": 0.525,
+      "high_threshold": 0.615,
+      "med_threshold": 0.56,
+      "p_home_by_gap": {
+        "5": 0.581,
+        "10": 0.635,
+        "15": 0.686,
+        "20": 0.733,
+        "30": 0.812,
+        "40": 0.872
+      }
+    },
+    "rugby-union": {
+      "scale": 22.0,
+      "p_base": 0.565,
+      "high_threshold": 0.72,
+      "med_threshold": 0.575,
+      "p_home_by_gap": {
+        "5": 0.62,
+        "10": 0.672,
+        "15": 0.72,
+        "20": 0.763,
+        "30": 0.835,
+        "40": 0.889
+      }
+    },
+    "rugby-league": {
+      "scale": 22.0,
+      "p_base": 0.545,
+      "high_threshold": 0.75,
+      "med_threshold": 0.575,
+      "p_home_by_gap": {
+        "5": 0.601,
+        "10": 0.654,
+        "15": 0.703,
+        "20": 0.748,
+        "30": 0.824,
+        "40": 0.881
+      }
+    },
+    "tennis": {
+      "scale": 26.0,
+      "p_base": 0.5,
+      "high_threshold": 0.66,
+      "med_threshold": 0.565,
+      "p_home_by_gap": {
+        "5": 0.548,
+        "10": 0.595,
+        "15": 0.64,
+        "20": 0.683,
+        "30": 0.76,
+        "40": 0.823
+      }
+    },
+    "golf": {
+      "scale": 22.0,
+      "p_base": 0.5,
+      "high_threshold": 0.7,
+      "med_threshold": 0.6,
+      "p_home_by_gap": {
+        "5": 0.557,
+        "10": 0.612,
+        "15": 0.664,
+        "20": 0.713,
+        "30": 0.796,
+        "40": 0.86
+      }
+    },
+    "handball": {
+      "scale": 22.0,
+      "p_base": 0.56,
+      "high_threshold": 0.76,
+      "med_threshold": 0.575,
+      "p_home_by_gap": {
+        "5": 0.615,
+        "10": 0.667,
+        "15": 0.716,
+        "20": 0.76,
+        "30": 0.833,
+        "40": 0.887
+      }
+    },
+    "volleyball": {
+      "scale": 17.0,
+      "p_base": 0.55,
+      "high_threshold": 0.65,
+      "med_threshold": 0.57,
+      "p_home_by_gap": {
+        "5": 0.621,
+        "10": 0.688,
+        "15": 0.747,
+        "20": 0.799,
+        "30": 0.877,
+        "40": 0.928
+      }
+    },
+    "aussie-rules": {
+      "scale": 24.0,
+      "p_base": 0.555,
+      "high_threshold": 0.78,
+      "med_threshold": 0.575,
+      "p_home_by_gap": {
+        "5": 0.606,
+        "10": 0.654,
+        "15": 0.7,
+        "20": 0.742,
+        "30": 0.813,
+        "40": 0.868
+      }
+    },
+    "esports": {
+      "scale": 20.0,
+      "p_base": 0.5,
+      "high_threshold": 0.65,
+      "med_threshold": 0.57,
+      "p_home_by_gap": {
+        "5": 0.562,
+        "10": 0.622,
+        "15": 0.679,
+        "20": 0.731,
+        "30": 0.818,
+        "40": 0.881
+      }
+    },
+    "gaelic-football": {
+      "scale": 17.0,
+      "p_base": 0.535,
+      "high_threshold": 0.64,
+      "med_threshold": 0.565,
+      "p_home_by_gap": {
+        "5": 0.607,
+        "10": 0.674,
+        "15": 0.735,
+        "20": 0.789,
+        "30": 0.87,
+        "40": 0.924
+      }
+    },
+    "greyhounds": {
+      "scale": 18.0,
+      "p_base": 0.5,
+      "high_threshold": 0.65,
+      "med_threshold": 0.56,
+      "p_home_by_gap": {
+        "5": 0.569,
+        "10": 0.635,
+        "15": 0.697,
+        "20": 0.752,
+        "30": 0.841,
+        "40": 0.902
+      }
+    },
+    "motor-racing": {
+      "scale": 20.0,
+      "p_base": 0.5,
+      "high_threshold": 0.65,
+      "med_threshold": 0.56,
+      "p_home_by_gap": {
+        "5": 0.562,
+        "10": 0.622,
+        "15": 0.679,
+        "20": 0.731,
+        "30": 0.818,
+        "40": 0.881
+      }
+    }
+  },
+  "confidence_threshold_range": {
+    "high_min": 0.58,
+    "high_max": 0.78,
+    "by_sport": {
+      "ice-hockey": {
+        "high": 0.61,
+        "med": 0.555
+      },
+      "basketball": {
+        "high": 0.68,
+        "med": 0.575
+      },
+      "baseball": {
+        "high": 0.58,
+        "med": 0.545
+      },
+      "snooker": {
+        "high": 0.63,
+        "med": 0.56
+      },
+      "darts": {
+        "high": 0.665,
+        "med": 0.565
+      },
+      "cricket": {
+        "high": 0.615,
+        "med": 0.56
+      },
+      "rugby-union": {
+        "high": 0.72,
+        "med": 0.575
+      },
+      "rugby-league": {
+        "high": 0.75,
+        "med": 0.575
+      },
+      "tennis": {
+        "high": 0.66,
+        "med": 0.565
+      },
+      "golf": {
+        "high": 0.7,
+        "med": 0.6
+      },
+      "handball": {
+        "high": 0.76,
+        "med": 0.575
+      },
+      "volleyball": {
+        "high": 0.65,
+        "med": 0.57
+      },
+      "aussie-rules": {
+        "high": 0.78,
+        "med": 0.575
+      },
+      "esports": {
+        "high": 0.65,
+        "med": 0.57
+      },
+      "gaelic-football": {
+        "high": 0.64,
+        "med": 0.565
+      },
+      "greyhounds": {
+        "high": 0.65,
+        "med": 0.56
+      },
+      "motor-racing": {
+        "high": 0.65,
+        "med": 0.56
+      }
+    }
+  },
+  "confidence_counts_by_sport": {
+    "aussie-rules/high": 3,
+    "aussie-rules/low": 1,
+    "aussie-rules/medium": 5,
+    "baseball/high": 4,
+    "basketball/high": 3,
+    "basketball/low": 11,
+    "basketball/medium": 3,
+    "cricket/high": 3,
+    "cricket/low": 4,
+    "cricket/medium": 1,
+    "darts/high": 4,
+    "darts/low": 4,
+    "darts/medium": 8,
+    "esports/medium": 1,
+    "gaelic-football/low": 4,
+    "handball/high": 2,
+    "handball/low": 6,
+    "handball/medium": 4,
+    "ice-hockey/high": 4,
+    "ice-hockey/low": 2,
+    "rugby-league/high": 3,
+    "rugby-league/medium": 4,
+    "rugby-union/high": 1,
+    "rugby-union/low": 10,
+    "rugby-union/medium": 1,
+    "snooker/high": 2,
+    "snooker/low": 4,
+    "snooker/medium": 5,
+    "tennis/high": 2,
+    "tennis/low": 6,
+    "tennis/medium": 3,
+    "volleyball/low": 8
+  },
+  "market_families_by_sport": {
+    "aussie-rules/handicap": 9,
+    "aussie-rules/total": 9,
+    "aussie-rules/winner": 9,
+    "baseball/handicap": 4,
+    "baseball/total": 4,
+    "baseball/winner": 4,
+    "basketball/handicap": 17,
+    "basketball/total": 17,
+    "basketball/winner": 17,
+    "cricket/handicap": 8,
+    "cricket/total": 7,
+    "cricket/winner": 8,
+    "darts/handicap": 16,
+    "darts/total": 16,
+    "darts/winner": 16,
+    "esports/handicap": 1,
+    "esports/total": 1,
+    "esports/winner": 1,
+    "gaelic-football/dnb": 4,
+    "gaelic-football/handicap": 4,
+    "gaelic-football/total": 4,
+    "gaelic-football/winner": 4,
+    "handball/dnb": 12,
+    "handball/handicap": 12,
+    "handball/total": 12,
+    "handball/winner": 12,
+    "ice-hockey/handicap": 6,
+    "ice-hockey/total": 6,
+    "ice-hockey/winner": 6,
+    "rugby-league/dnb": 7,
+    "rugby-league/handicap": 7,
+    "rugby-league/total": 7,
+    "rugby-league/winner": 7,
+    "rugby-union/dnb": 12,
+    "rugby-union/handicap": 12,
+    "rugby-union/total": 12,
+    "rugby-union/winner": 12,
+    "snooker/handicap": 11,
+    "snooker/total": 11,
+    "snooker/winner": 11,
+    "tennis/handicap": 11,
+    "tennis/total": 11,
+    "tennis/winner": 11,
+    "volleyball/handicap": 8,
+    "volleyball/total": 8,
+    "volleyball/winner": 8
+  },
+  "strongest_favourites": [
+    {
+      "id": "ten-ningbo-rybakina",
+      "sport": "tennis",
+      "pick": "Elena Rybakina",
+      "p": 0.8821,
+      "confidence": "high",
+      "rating_home": 100.0,
+      "rating_away": 47.67
+    },
+    {
+      "id": "aflw-r11-01",
+      "sport": "aussie-rules",
+      "pick": "North Melbourne",
+      "p": 0.8482,
+      "confidence": "high",
+      "rating_home": 96.0,
+      "rating_away": 60.0
+    },
+    {
+      "id": "aflw-r11-05",
+      "sport": "aussie-rules",
+      "pick": "Hawthorn",
+      "p": 0.8428,
+      "confidence": "high",
+      "rating_home": 81.0,
+      "rating_away": 46.0
+    },
+    {
+      "id": "hand-ehf-12044",
+      "sport": "handball",
+      "pick": "Aalborg H\u00e5ndbold",
+      "p": 0.8303,
+      "confidence": "high",
+      "rating_home": 84.0,
+      "rating_away": 51.0
+    },
+    {
+      "id": "rl-wc26-nzl-cok",
+      "sport": "rugby-league",
+      "pick": "New Zealand",
+      "p": 0.8278,
+      "confidence": "high",
+      "rating_home": 89.0,
+      "rating_away": 56.0
+    },
+    {
+      "id": "ru-top14-609567",
+      "sport": "rugby-union",
+      "pick": "Stade Toulousain",
+      "p": 0.8265,
+      "confidence": "high",
+      "rating_home": 86.0,
+      "rating_away": 55.0
+    },
+    {
+      "id": "rl-wc26-aus-fij",
+      "sport": "rugby-league",
+      "pick": "Australia",
+      "p": 0.8218,
+      "confidence": "high",
+      "rating_home": 95.0,
+      "rating_away": 63.0
+    },
+    {
+      "id": "rl-wc26-eng-fra",
+      "sport": "rugby-league",
+      "pick": "England",
+      "p": 0.8094,
+      "confidence": "high",
+      "rating_home": 84.0,
+      "rating_away": 50.0
+    },
+    {
+      "id": "aflw-r11-04",
+      "sport": "aussie-rules",
+      "pick": "Carlton",
+      "p": 0.8068,
+      "confidence": "high",
+      "rating_home": 67.0,
+      "rating_away": 38.0
+    },
+    {
+      "id": "el-535923",
+      "sport": "basketball",
+      "pick": "Panathinaikos",
+      "p": 0.7833,
+      "confidence": "high",
+      "rating_home": 66.7,
+      "rating_away": 33.3
+    },
+    {
+      "id": "hand-ehf-12046",
+      "sport": "handball",
+      "pick": "Bar\u00e7a",
+      "p": 0.7807,
+      "confidence": "high",
+      "rating_home": 90.0,
+      "rating_away": 64.0
+    },
+    {
+      "id": "hand-ehf-12048",
+      "sport": "handball",
+      "pick": "SC Magdeburg",
+      "p": 0.7595,
+      "confidence": "medium",
+      "rating_home": 52.0,
+      "rating_away": 86.0
+    },
+    {
+      "id": "aflw-r11-03",
+      "sport": "aussie-rules",
+      "pick": "Melbourne",
+      "p": 0.7447,
+      "confidence": "medium",
+      "rating_home": 51.0,
+      "rating_away": 82.0
+    },
+    {
+      "id": "el-535921",
+      "sport": "basketball",
+      "pick": "Real Madrid",
+      "p": 0.7396,
+      "confidence": "high",
+      "rating_home": 33.3,
+      "rating_away": 66.7
+    },
+    {
+      "id": "hand-ehf-12050",
+      "sport": "handball",
+      "pick": "HBC Nantes",
+      "p": 0.7389,
+      "confidence": "medium",
+      "rating_home": 78.0,
+      "rating_away": 57.0
+    }
+  ],
+  "integrity_issues": [],
+  "missing_start_utc": [
+    "ten-ningbo-rybakina",
+    "ten-902093",
+    "ten-902038",
+    "ten-902037",
+    "ten-902084",
+    "ten-902065",
+    "ten-902039",
+    "ten-902074",
+    "ten-902083",
+    "ten-902102",
+    "ten-902028",
+    "snk-pang-davies",
+    "snk-cheung-bingham",
+    "snk-higgins-jones",
+    "snk-wells-day",
+    "snk-craigie-xu",
+    "snk-zhang-williams",
+    "snk-holt-brown",
+    "snk-gao-gilbert",
+    "snk-noppon-donaldson",
+    "snk-brecel-odonnell",
+    "snk-slessor-jones",
+    "cric-afg-ban-odi",
+    "cric-nza-inda-fc1",
+    "cric-ford-auck-cant",
+    "cric-ford-cds-nd",
+    "cric-ford-wgtn-otago",
+    "lol-worlds26-tsw-lyon",
+    "golf-bermuda-2026",
+    "golf-genesis-2026",
+    "golf-bmw-ladies-2026",
+    "golf-stifel-2026"
+  ],
+  "findings": [
+    {
+      "id": "F-CCB-01",
+      "severity": "medium",
+      "title": "WTA source link for ten-ningbo-rybakina points at the wrong tournament ID",
+      "detail": "data/fixtures.json cited https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws, which soft-404s to the WTA homepage (verified live this session). The canonical draws page is /tournaments/2092/ningbo/2026/draws (title 'BNB Ningbo Open 2026 Draws'). CLOSED during this session's merge: session 72198d3e's T20 live re-verification had already corrected the URL in main; confirmed 2092 present post-merge.",
+      "evidence": [
+        "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
+      ]
+    },
+    {
+      "id": "F-CCB-02",
+      "severity": "high",
+      "title": "datasets/markets_catalog.json over-claims originated market coverage",
+      "detail": "The catalog lists e.g. tennis 'Set Betting & 1st Set Winner', darts 'Most 180s', baseball 'First 5 Innings', golf 'Each-Way / Top-5 Fair Odds' as originated_markets_covered, but data/lines.json (model v2.0) prices only winner / draw-no-bet / handicap / total. This session originates the derivable subset (1,619 markets) and registers the rest as investigated-not-priced in data/market_taxonomy-ccb6bde2.json.",
+      "evidence": [
+        "datasets/markets_catalog.json",
+        "data/lines.json"
+      ]
+    },
+    {
+      "id": "F-CCB-03",
+      "severity": "high",
+      "title": "Small-sample record ratings unshrunk in v2.0 (56 ratings from <=12 games)",
+      "detail": "Win%/points% from 4-11 games were fed in at face value: EuroLeague 4-2 vs 2-4 (6 games) produced a 33.4-point rating gap and a HIGH-confidence 74% on Real Madrid; NHL 0.800 points% from 10 games rated 80.0. v2.1 applies empirical-Bayes shrinkage toward 50 (factor n/(n+10); composite standings ratings count games double). 12 of the 31 v2.0 highs came from such inputs; v2.1 retains 19 highs.",
+      "evidence": [
+        "data/model_calibration-ccb6bde2.json",
+        "data/market_expansion-ccb6bde2.json"
+      ]
+    },
+    {
+      "id": "F-CCB-04",
+      "severity": "medium",
+      "title": "Baseball venue double-count in v2.0",
+      "detail": "World Series fixtures use home-record vs road-record split ratings (which already embed venue effects) and v2.0 then added the 0.540 home logit on top. v2.1 prices split-input fixtures at a neutral 0.500 venue term; Brewers Game 1/2 moved 1.51 -> 1.61 and Rays Games 3/4 dropped from high to medium.",
+      "evidence": [
+        "scripts/model.py price_match",
+        "data/fixtures.json mlb-849802..849805"
+      ]
+    },
+    {
+      "id": "F-CCB-05",
+      "severity": "medium",
+      "title": "Confidence thresholds inconsistent across sports (high bar 0.580-0.780)",
+      "detail": "A 58% baseball favourite was 'high' in v2.0 while an Aussie Rules favourite needed 78% and handball 76%. Thresholds were left unchanged in v2.1 for comparability, but the desk displays the pick probability next to every tier so the inconsistency is visible, and this finding recommends a uniform policy in a future model version.",
+      "evidence": [
+        "scripts/model.py SPORTS config"
+      ]
+    },
+    {
+      "id": "F-CCB-06",
+      "severity": "medium",
+      "title": "Tennis ranking labels disagree with the official ATP list of 2026-10-19; four ATP rows unrated",
+      "detail": "Verified on atptour.com this session: Tommy Paul No.15, B. Bonzi No.100, S. Tsitsipas No.39, A. Rublev No.22, L. Darderi No.23, J. Duckworth No.73, A. Mannarino No.79. Fixtures said Mannarino 67 / Duckworth 71 / Darderi 22 / Rublev 24 (seedings use an earlier list) and left Bonzi-Paul, Tsitsipas-Kukushkin, Goffin-Bertola unrated (priced 50/50). Kukushkin, Goffin and Bertola are all outside the official top 190 (full 1-190 list read), so those two matches correctly stay baseline-priced under the no-one-sided rule. Bonzi-Paul is now rated and becomes a high-confidence Tommy Paul pick. WTA ranks for Leylah Fernandez / Aliaksandra Sasnovich / Bejlek could not be verified (script-rendered table) and remain blank.",
+      "evidence": [
+        "https://www.atptour.com/en/rankings/singles?rankDate=2026-10-19&rankRange=0-100"
+      ]
+    },
+    {
+      "id": "F-CCB-07",
+      "severity": "low",
+      "title": "Darts European Championship seeds used as strength ratings diverge from OLBG consensus",
+      "detail": "pdc-ec-01: model favours Luke Woodhouse (seed 9, rating 86.26) over Dirk van Duijvenbode (seed 24, 71.74) at 61%, while OLBG tipsters were 7/8 (88%) on van Duijvenbode. Seeds come from the European Tour Order of Merit, not the two-year world ranking; pdc.tv's rankings table is not machine-readable (consent wall), so no official replacement rating was substituted. Kept as-is, flagged.",
+      "evidence": [
+        "data/fixtures.json pdc-ec-01",
+        "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Luke_Woodhouse_vs_Dirk_van_Duijvenbode/15?event_id=32324"
+      ]
+    },
+    {
+      "id": "F-CCB-08",
+      "severity": "low",
+      "title": "Snooker ranking curve is hot at the extreme tail for short formats",
+      "detail": "The WST rank curve implies #1 beats #57 at 92.8% in a best-of-7 (per-frame q~0.78). Plausible directionally but almost certainly too strong for a race to 4; refitting the slope needs outcome data the repo does not hold, so v2.1 leaves slopes unchanged and flags the tail instead of inventing a correction.",
+      "evidence": [
+        "data/model_calibration-ccb6bde2.json snooker_rank_pairs"
+      ]
+    },
+    {
+      "id": "F-CCB-09",
+      "severity": "low",
+      "title": "OLBG consensus samples are often 1-3 tips; consensus % is not a calibration target",
+      "detail": "Of 55 comparable rows the model sided with the OLBG consensus favourite in 34; many '100%' consensuses are 1/1 or 2/2 tips, and several reference handicap/set markets rather than the winner market. Consensus is displayed for transparency but never fitted to.",
+      "evidence": [
+        "data/fixtures.json olbg.consensus fields"
+      ]
+    },
+    {
+      "id": "F-CCB-10",
+      "severity": "low",
+      "title": "Best-of totals in v2.0 used an ad-hoc closeness heuristic",
+      "detail": "model.py priced tennis/snooker/darts/volleyball totals as 0.44+0.14*closeness rather than from the unit-score distribution, so the totals book was not consistent with the winner price. The expansion derives totals, correct scores and unit handicaps from the exact race-to-N distribution implied by the winner price.",
+      "evidence": [
+        "scripts/model.py total market block",
+        "scripts/ccb6bde2_market_engine.py"
+      ]
+    },
+    {
+      "id": "F-CCB-11",
+      "severity": "low",
+      "title": "Three near-coin-flip picks change under shrinkage (all low confidence)",
+      "detail": "hand-ehf-12051 (GOG 0.4837 home prob -> Szeged pick at 51.6% two-way... see expansion file), aflw-r11-06 (Gold Coast SUNS 0.5136) flip only because the shrunk rating gap no longer outweighs home advantage; both were and remain low confidence. ten-902102 flips on verified data (Paul No.15 vs Bonzi No.100), not on shrinkage.",
+      "evidence": [
+        "data/market_expansion-ccb6bde2.json pick_changes"
+      ]
+    },
+    {
+      "id": "F-CCB-12",
+      "severity": "medium",
+      "title": "This session's own COORDINATION pre-claim about the tennis slope was wrong and is corrected",
+      "detail": "The \u00a712 claim filed before the audit ('#1 vs #30 modelled ~53%') was refuted by measurement: the v2.0 curve gives #1 vs #25 = 0.802 and #1 vs #50 = 0.845. The audit numbers, not the pre-claim, are what v2.1 acts on; COORDINATION.md \u00a712 carries the correction.",
+      "evidence": [
+        "data/model_calibration-ccb6bde2.json tennis_rank_pairs"
+      ]
+    }
+  ],
+  "v21_summary": {
+    "changes_applied": [
+      "R1 small-sample shrinkage of record-derived ratings (k=10 toward 50; composite ratings count games double)",
+      "R2 baseball home/road split fixtures priced at neutral venue term",
+      "R3 tennis ratings re-verified/backfilled from official ATP list 2026-10-19"
+    ],
+    "not_changed": "logit scales and confidence thresholds (see F-CCB-05, F-CCB-08)",
+    "confidence_counts_v20": {
+      "high": 31,
+      "low": 60,
+      "medium": 35
+    },
+    "confidence_counts_v21": {
+      "medium": 42,
+      "low": 65,
+      "high": 19
+    },
+    "tier_changes": 19,
+    "pick_changes": [
+      {
+        "id": "ten-902102",
+        "sport": "tennis",
+        "old_pick": "Benjamin Bonzi",
+        "new_pick": "Tommy Paul"
+      },
+      {
+        "id": "hand-ehf-12051",
+        "sport": "handball",
+        "old_pick": "GOG",
+        "new_pick": "OTP Bank - PICK Szeged"
+      },
+      {
+        "id": "aflw-r11-06",
+        "sport": "aussie-rules",
+        "old_pick": "Richmond",
+        "new_pick": "Gold Coast SUNS"
+      }
+    ],
+    "calibration_changes_logged": 67,
+    "expanded_markets_originated": 1619
+  }
+}
