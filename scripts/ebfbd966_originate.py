@@ -68,7 +68,7 @@ def true_home_is_first(m):
     return True                                   # 'A vs B' / 'A v B': first-named at home
 
 def frac(dec):
-    f = Fraction(dec-1).limit_denominator(100)
+    f = Fraction(dec-1).limit_denominator(20)  # bookmaker-style small denominators (decimal is primary)
     return f"{f.numerator}/{f.denominator}"
 
 def r5(x):  # round to nearest 0.5, min 0.5
