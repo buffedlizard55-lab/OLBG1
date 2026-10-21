@@ -95,3 +95,29 @@ prices from verified OLBG tip counts.
 
 Rebuild: `python3 scripts/build_data.py && python3 scripts/build_board.py`
 (5 High / 25 Medium / 134 Low; High picks checked against NBA.com, ICC, PDC, WTA.)
+
+---
+
+## Addition (session ebfbd966, 2026-10-21): OLBG-crowd Originated Lines Desk
+
+A second, complementary desk lives in `ebfbd966/` (live at `/OLBG1/ebfbd966/` on the Pages
+site): 133 OLBG-listed matches from the same 2026-10-21 snapshot priced from OLBG crowd-share
+decoding (winner/directional/handicap/totals/tie markets) plus verified official seed/rating
+gaps — every row links its OLBG event page and an official source, with the full derivation
+printed. It covers Tennis, Handball, Volleyball, Gaelic Football and a verified-zero Rugby
+League check that this README's main build had flagged as not-investigated, plus verified-zero
+checks for eSports (OLBG 23) and Aussie Rules (OLBG 22). Reproduce:
+
+```bash
+python3 scripts/ebfbd966_seed_data.py    # data/ebfbd966_matches.json
+python3 scripts/ebfbd966_originate.py    # data/ebfbd966_lines.json
+python3 scripts/ebfbd966_build_site.py   # ebfbd966/ (static pages)
+python3 scripts/ebfbd966_validate.py     # sourcing / writeups / internal-link gate
+```
+
+Integration cross-checks (details in `COORDINATION.md` §4): this desk's early CONTESTED flags on
+two snooker pairings were **retracted** after a direct fetch of the official WST Match Centre
+confirmed OLBG's draw (the flag had rested on a stale search snippet); its Gaelic *club*
+fixtures (24 Oct–1 Nov, OLBG-listed) do not contradict the main build's inter-county verified
+negative for 21–25 Oct — different levels/calendars, both labelled.
+

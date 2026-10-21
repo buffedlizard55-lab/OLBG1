@@ -358,3 +358,49 @@ conditional games were excluded from the priced set.
 **Copy correction made at the same time.** Two rating inputs read `"55-26 at Tropicana Field (.679)"`.
 The standings publish a *home* record, not a venue-specific one, so attributing the split to the
 ballpark was an inference. Both now read `"55-26 at home (.679)"`.
+
+### Session `arena/ebfbd966-olbg1` (appended at integration, 2026-10-21)
+
+This session started before the other sessions' work landed on `main` and built an independent,
+OLBG-first desk on the same 2026-10-21 snapshot. Rather than overwrite shared outputs, it
+integrated additively:
+
+- **Scope/files (non-overlapping after relocation):** `ebfbd966/` (site section, 18 pages),
+  `data/ebfbd966_matches.json`, `data/ebfbd966_lines.json`, `data/ebfbd966_writeups.json`,
+  `scripts/ebfbd966_seed_data.py`, `scripts/ebfbd966_originate.py`,
+  `scripts/ebfbd966_build_site.py`, `scripts/ebfbd966_validate.py`.
+- **Content:** 133 OLBG-listed matches (Tennis 20, Basketball 20, Handball 20, Darts 16,
+  Rugby Union 15, Volleyball 15, Cricket 9, Ice Hockey 7, Snooker 6, Gaelic Football 4,
+  Baseball 1) → 4 HIGH / 31 MEDIUM / 98 LOW; hand-written previews (117–130 words) for the
+  4 HIGH picks. Fills main-build gaps: Tennis, Handball, Volleyball, Gaelic club fixtures,
+  Rugby League verified-zero; adds verified-zero fetches for eSports (23) and Aussie Rules
+  (22) using this board's sitemap taxonomy (IDs 22/23 — credit session ce5920e3 T1).
+- **Verification performed:** PDC official draw (16/16 darts ties), WST Match Centre (direct
+  fetch), MLB official World Series schedule, ICC NZ–India itinerary + ODI ratings
+  (19 Oct), URC official fixtures (4 ties), NBA official (season start 20 Oct;
+  Antetokounmpo→Miami), ATP official calendar. Validator enforces: OLBG+official link per
+  row, probabilities sum to 1, HIGH rules, writeup ≥30 words + no repeated 8-word passages,
+  zero broken internal links. **Result: PASSED pre-merge; re-run post-merge (see PR #9).**
+
+**Conflict log (§4 entries, appended here to avoid rewriting §4):**
+1. PR #9 initially unmergeable (add/add collisions on `COORDINATION.md`, `README.md`,
+   `scripts/build_site.py`, `scripts/validate.py`, `data/matches.json`, `data/lines.json`,
+   `docs/**`). Resolution: this session relocated all its outputs to `ebfbd966`-scoped paths,
+   deleted its GitHub Pages workflow (main's Pages source is `main:/` root — an artifact
+   deploy would have broken the live site), and merged `origin/main` in. Only
+   `COORDINATION.md`/`README.md` needed manual resolution, done append-only. **No other
+   session's files were modified or deleted.**
+2. **Snooker correction (self-caught):** this desk initially flagged SNO-01/SNO-04 CONTESTED
+   from a stale search-engine snippet of wst.tv. A direct fetch of the official WST Match
+   Centre at integration confirms Cheung Ka Wai v Stuart Bingham (21 Oct R2); flags retracted
+   (SNO-01 → VERIFIED, SNO-04 → OLBG-ONLY as the 15:00 tie was outside the fetched listing).
+   Main's 164-row board had the same pairings unflagged (OLBG-sourced) — now corroborated.
+3. **Gaelic reconciliation:** main build = verified negative for *inter-county* fixtures
+   21–25 Oct (GAA calendar); this desk = OLBG-listed *club* fixtures 24 Oct–1 Nov. No
+   contradiction; both labelled as such.
+4. **Known remaining gaps (needs review, non-blocking):** no ATP/WTA per-player ranking gaps
+   (tennis capped below HIGH); PDC seeds beyond PDC-stated #4/#12 and snooker ranks
+   Pang 26/Davies 89/Higgins 7/J.Jones 30 rest on published draw summaries (official pages
+   linked per row; SNO-02 HIGH to be re-confirmed on WST rankings); MLB WS starters + NHL
+   goalies blank; OLBG 'Load More' zero-tip tail unenumerated; OLBG times timezone unstated.
+   Mirrored on `ebfbd966/flagged.html`.
