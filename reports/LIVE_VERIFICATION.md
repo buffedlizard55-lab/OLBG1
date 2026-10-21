@@ -3,18 +3,18 @@
 **Pass run:** 2026-10-21T07:05Z · **Rows in dataset:** 134
 
 Two passes on 2026-10-21 re-fetched the governing-body pages themselves and compared
-them value by value with the published rows: T20 (session `72198d3e-olbg1`, 07:05Z) and
-T21 (session `b95dbd01-olbg1`, 09:05Z). Where the second read found something the first
+them value by value with the published rows: the earlier passes: T20 (`72198d3e-olbg1`, 07:05Z), T21 (`4f8d032d-olbg1`, 07:15Z), T22 (`3c7579ed-olbg1`, 08:20Z) and
+T34 (session `b95dbd01-olbg1`, 09:05Z). Where the second read found something the first
 did not, the second read is the one shown, and each row names the pass that read it.
 
 ## Result
 
 | Outcome | Rows | Meaning |
 |---|---|---|
-| Confirmed | 54 | Official page re-fetched; participants, date, venue and published start/ID all match. |
-| Corrected | 14 | Official page disagreed and settled the value; dataset source amended. |
+| Confirmed | 52 | Official page re-fetched; participants, date, venue and published start/ID all match. |
+| Corrected | 19 | Official page disagreed and settled the value; dataset source amended. |
 | Flagged | 5 | Official page disagrees or cannot decide; nothing changed, published for review. |
-| Not re-checked | 61 | No official page re-read in this pass; reason listed per row. |
+| Not re-checked | 58 | No official page re-read in this pass; reason listed per row. |
 
 A row is never marked confirmed because it *looks* right. Where the publisher blocks a
 text fetch (darts, tennis draws) or the site is client-rendered, the row is left as
@@ -24,6 +24,8 @@ not re-checked and the reason is printed.
 
 | Row | Correction | Official page |
 |---|---|---|
+| `nhl-2026020152` | Buffalo goal differential +2 -> -7; Philadelphia road 0-4-2 -> 0-4-1 and differential -14 -> -19. Ratings come from points percentage, which was already correct, so no rating or price moved. | [NHL official standings API (2026-10-20, live)](https://api-web.nhle.com/v1/standings/2026-10-20) |
+| `nhl-2026020153` | Ottawa home split 4-1-0 -> 3-1-0. Record, points percentage, rating and every price are unchanged. | [NHL official standings API (2026-10-20, live)](https://api-web.nhle.com/v1/standings/2026-10-20) |
 | `nhl-2026020158` | Fixture facts left as published; only the back-to-back relationship was corroborated. Not promoted to confirmed. | [NHL official schedule API (2026-10-21)](https://api-web.nhle.com/v1/schedule/2026-10-21) |
 | `nhl-2026020160` | No change. The line and its rating are a labelled pre-game snapshot and are retained; re-pricing would silently rewrite a published pick. Disclosed on the row and on Flagged for Review for a reviewer decision. | [NHL official standings API (2026-10-20, live)](https://api-web.nhle.com/v1/standings/2026-10-20) |
 | `cric-nz-ind-t20-1` | No change to the fixture facts. The start time is disclosed as unconfirmed rather than silently rewritten, because neither 06:15Z nor 07:00Z is a published value. | [New Zealand Cricket official fixtures & results service](https://scoring.nzc.nz/fixtures) |
@@ -33,6 +35,8 @@ not re-checked and the reason is printed.
 | `cric-ford-cds-nd` | date_local 2026-10-24 -> 2026-10-27. Venue (Saxton Oval) confirmed as corrected earlier today. Start time stays blank. | [New Zealand Cricket official fixtures & results service](https://scoring.nzc.nz/fixtures) |
 | `cric-ford-wgtn-otago` | date_local 2026-10-24 -> 2026-10-27. Start time stays blank. | [New Zealand Cricket official fixtures & results service](https://scoring.nzc.nz/fixtures) |
 | `ru-urc-609578` | No change. The match, date and start are confirmed; the venue is not settled by the official page and is published for review rather than deleted. | [United Rugby Championship 2026/27 fixtures in full (Round 4)](https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/) |
+| `rl-wc26w-aus-eng` | Legacy competition=176 link (which resolves to the men's competition 131) replaced with the official women's Round 2 draw page plus IRL match record 2588. | [IRL official fixtures & match records (RLWC26 Round 2)](https://www.intrl.sport/fixtures-results) |
+| `rl-wc26w-sam-wal` | Legacy competition=176 link replaced with the official women's Round 2 draw. Kick-off conflict disclosed on the row: 06:45Z (NRL) vs 06:50Z (IRL); neither is inferred away. | [IRL official fixtures & match records (RLWC26 Round 2)](https://www.intrl.sport/fixtures-results) |
 | `hand-ehf-12048` | venue corrected to 'Kolstad Arena, Kolstad, Norway'. Participants, date, 18:45Z start and the Round 5 pairing were already right. | [EHF Champions League Men 2026/27 group-phase playing times (official PDF)](https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf) |
 | `aflw-r11-01` | start_utc 2026-10-23T08:15Z -> 2026-10-25T02:05Z; venue -> 'North Hobart Oval, Hobart'. | [AFL official AFLW hub — Round 11 fixture board & match ids](https://www.afl.com.au/aflw) |
 | `aflw-r11-02` | start_utc 2026-10-24T02:05Z -> 2026-10-24T04:05Z. | [AFL official AFLW hub — Round 11 fixture board & match ids](https://www.afl.com.au/aflw) |
@@ -43,6 +47,7 @@ not re-checked and the reason is printed.
 | `aflw-r11-07` | start_utc 2026-10-25T02:05Z -> 2026-10-23T08:15Z. | [AFL official AFLW hub — Round 11 fixture board & match ids](https://www.afl.com.au/aflw) |
 | `aflw-r11-08` | start_utc 2026-10-25T04:05Z -> 2026-10-25T01:35Z. | [AFL official AFLW hub — Round 11 fixture board & match ids](https://www.afl.com.au/aflw) |
 | `aflw-r11-09` | start_utc 2026-10-25T06:05Z -> 2026-10-24T02:05Z. | [AFL official AFLW hub — Round 11 fixture board & match ids](https://www.afl.com.au/aflw) |
+| `f1-usgp-2026` | start_utc 2026-10-25T20:00:00Z -> 2026-10-25T21:00:00Z; the 'EDT' description and the unverifiable 'Round 18' label removed. | [Formula 1 official 2026 United States Grand Prix page](https://www.formula1.com/en/racing/2026/united-states) |
 
 ## Findings
 
@@ -98,7 +103,7 @@ Two fetches of the official draw release returned only a cookie-consent intersti
 
 WTA and ATP draw pages return a notification shell without draw content to a text fetch, so pairings cannot be re-read from the tour sites.
 
-**Status:** 11 tennis rows marked not re-checked.
+**Status:** 11 tennis rows marked not re-checked and now flagged as reconstructed from Round-of-32 results plus byes.
 
 **Source:** [WTA official BNB Ningbo Open 2026 draws](https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws)
 
@@ -114,19 +119,43 @@ WST publishes no UTC session time. The fetch client renders publisher clocks at 
 
 The men's RLWC rows linked nrl.com/draw/?competition=175..., which the site serves as competition 131 for the same Round 2 draw.
 
-**Status:** Men's citation corrected to competition=131. The women's id (176) was not re-tested and is left as published with its rows marked not re-checked.
+**Status:** All seven rows re-sourced: both competition=175 and competition=176 render the men's page at competition=131, so each row now cites its own tournament's Round 2 draw (men's or women's) plus the IRL match record.
 
-**Source:** [NRL / Rugby League World Cup 2026 Round 2 draw](https://www.nrl.com/draw/?competition=131&round=2&season=2026)
+**Source:** [NRL / Rugby League World Cup 2026 Round 2 draw](https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/)
 
 ### F-V10 — Coverage — most rows were not re-fetched in this pass (medium)
 
-Fresh official reads covered 73 of 134 rows (confirmed + corrected + flagged). The remaining 61 keep their original verified or cross-checked status and their source links, but this pass did not re-read them.
+Fresh official reads covered 76 of 134 rows (confirmed + corrected + flagged). The remaining 58 keep their original verified or cross-checked status and their source links, but this pass did not re-read them.
 
-**Status:** Every one of the 61 is listed on the Live Verification page with the reason, so the gap is visible rather than implied. No row is claimed as re-verified without a read.
+**Status:** Every one of the 58 is listed on the Live Verification page with the reason, so the gap is visible rather than implied. No row is claimed as re-verified without a read.
 
 **Source:** [NHL official schedule API (2026-10-21)](https://api-web.nhle.com/v1/schedule/2026-10-21)
 
-### F-T21-01 — AFLW — the ladder used to price nine rows is not the official 2026 ladder (high)
+### F-V11 — NHL — four input sub-values were transcription errors, not drift (high)
+
+A second independent read of the standings endpoint on 2026-10-21T07:20Z found Buffalo at -7 (stored +2), Philadelphia at 0-4-1 and -19 (stored 0-4-2 / -14), Ottawa at 3-1-0 at home (stored 4-1-0, impossible from four home games) and Nashville at -1 (stored 0). Each club had played exactly the number of games in its stored record, which rules out a game having been played in between.
+
+**Status:** Corrected in the dataset source. Ratings derive from points percentage, which was already correct, so no rating or price moved.
+
+**Source:** [NHL official standings API (2026-10-20, live)](https://api-web.nhle.com/v1/standings/2026-10-20)
+
+### F-V12 — Formula 1 — the United States GP start was an hour early (medium)
+
+formula1.com gives 16:00 track time on 25 October at Circuit of The Americas. Austin is on CDT (UTC-5) on that date, so the start is 21:00 UTC; the row carried 20:00 UTC and described 16:00 as EDT. The same page shows no round number, so the 'Round 18' label was not supportable.
+
+**Status:** start_utc corrected to 2026-10-25T21:00:00Z; the round number was removed.
+
+**Source:** [Formula 1 official 2026 United States Grand Prix page](https://www.formula1.com/en/racing/2026/united-states)
+
+### F-V13 — Source integrity — two cited URLs do not resolve to the fixture list (medium)
+
+plusliga.pl/table.html redirects to tauronliga.pl and returns a generic competition page; munster.gaa.ie/fixtures/munster-gaa-fixtures/ resolved to an April 2025 news post titled 'Munster GAA Fixtures - April 7th to 12th 2025'. Neither page evidences the 2026 fixtures it is cited for.
+
+**Status:** The nine affected rows keep their published values and are listed as not re-checked with this specific blocker named. Nothing was upgraded.
+
+**Source:** [NHL official schedule API (2026-10-21)](https://api-web.nhle.com/v1/schedule/2026-10-21)
+
+### F-T34-01 — AFLW — the ladder used to price nine rows is not the official 2026 ladder (high)
 
 Every AFLW row cites a 2026 R10 ladder input. Read against the official afl.com.au 2026 AFLW ladder after Round 10, the published inputs do not reconcile: the rows give North Melbourne 40 points (10-0) where the official table has 36 (9-1), Geelong 16 points at 13th where the official table has 36 at 2nd, Gold Coast 4 points at 18th where the official table has 28 at 5th, St Kilda 20 points at 10th where the official table has 4 at 18th, and so on for 16 of the 18 clubs. The fixture facts were verified in this pass and nine start times plus one venue were corrected; the pricing inputs were not.
 
@@ -134,7 +163,7 @@ Every AFLW row cites a 2026 R10 ladder input. Read against the official afl.com.
 
 **Source:** [AFL official 2026 AFLW ladder (after Round 10)](https://www.afl.com.au/aflw/ladder)
 
-### F-T21-02 — AFLW — nine Round 11 start times were shifted by one fixture, and one venue was wrong (high)
+### F-T34-02 — AFLW — nine Round 11 start times were shifted by one fixture, and one venue was wrong (high)
 
 The nine AFLW rows were correct about participants but had been given the Round 11 kick-off slots in chronological order rather than in their own match's order. Port Adelaide v Collingwood carried the North Melbourne slot, St Kilda v Brisbane carried Geelong's, and so on; two rows shared 2026-10-24T04:05Z, one time (06:15Z) appears in no official fixture, and Hawthorn v Essendon was placed at Kinetic Stadium, Frankston instead of the Kennedy Community Centre in Dingley.
 
@@ -142,7 +171,7 @@ The nine AFLW rows were correct about participants but had been given the Round 
 
 **Source:** [AFL official AFLW hub — Round 11 fixture board & match ids](https://www.afl.com.au/aflw)
 
-### F-T21-03 — Cricket — Ford Trophy Round 1 is 27 October, not 24 October (medium)
+### F-T34-03 — Cricket — Ford Trophy Round 1 is 27 October, not 24 October (medium)
 
 The three Ford Trophy rows were dated 2026-10-24. On the NZC fixture service the Round 1 block sits under the TUE 27 Oct heading, after the 3rd T20I and before the FRI 30 Oct block that carries Round 2.
 
@@ -150,7 +179,7 @@ The three Ford Trophy rows were dated 2026-10-24. On the NZC fixture service the
 
 **Source:** [New Zealand Cricket official fixtures & results service](https://scoring.nzc.nz/fixtures)
 
-### F-T21-04 — Cricket — the Afghanistan v Bangladesh ODI has no governing-body fixture page (medium)
+### F-T34-04 — Cricket — the Afghanistan v Bangladesh ODI has no governing-body fixture page (medium)
 
 The row's only citation is the ICC rankings table, which publishes no fixtures. Neither pass found an official page that lists the match at Sharjah, and NZC does not cover it.
 
@@ -158,7 +187,7 @@ The row's only citation is the ICC rankings table, which publishes no fixtures. 
 
 **Source:** [New Zealand Cricket official fixtures & results service](https://scoring.nzc.nz/fixtures)
 
-### F-T21-05 — Rugby league — the women's RLWC rows could not be re-read (medium)
+### F-T34-05 — Rugby league — the women's RLWC rows could not be re-read (medium)
 
 nrl.com serves the men's Round 2 draw for ?competition=176 as well, because the competition selector is client-side. The two women's rows therefore stay not re-checked with that reason printed.
 
@@ -166,7 +195,7 @@ nrl.com serves the men's Round 2 draw for ?competition=176 as well, because the 
 
 **Source:** [NRL / Rugby League World Cup 2026 Round 2 draw (nrl.com)](https://www.nrl.com/draw/?competition=131&round=2&season=2026)
 
-### F-T21-06 — Source reachability — three publishers block a text read (low)
+### F-T34-06 — Source reachability — three publishers block a text read (low)
 
 pdc.tv still returns a cookie-consent interstitial. cdn.nba.com returned HTTP 500 during this pass. premrugby.com and plusliga.pl render their fixture lists client-side (plusliga.pl also redirects to the tauronliga.pl portal). None of these failures is treated as agreement.
 
@@ -174,7 +203,7 @@ pdc.tv still returns a cookie-consent interstitial. cdn.nba.com returned HTTP 50
 
 **Source:** [NBA official scoreboard feed (cdn.nba.com)](https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json)
 
-### F-T21-07 — Handball — one venue did not match the official playing-times sheet (low)
+### F-T34-07 — Handball — one venue did not match the official playing-times sheet (low)
 
 Kolstad's Round 5 home fixture is listed by the EHF at Kolstad Arena (Kolstad), not Trondheim Spektrum.
 
@@ -182,7 +211,7 @@ Kolstad's Round 5 home fixture is listed by the EHF at Kolstad Arena (Kolstad), 
 
 **Source:** [EHF Champions League Men 2026/27 group-phase playing times (official PDF)](https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf)
 
-### F-T21-08 — Top 14 — the Sunday fixture is after the French DST change (low)
+### F-T34-08 — Top 14 — the Sunday fixture is after the French DST change (low)
 
 La Rochelle v Bordeaux-Bègles is listed at 21h05 on Sunday 25 October. France leaves CEST at 03:00 that morning, so 21h05 is CET and equals 20:05Z. A naive CEST conversion would have produced 19:05Z and looked like a one-hour error in the row; the row is right.
 
@@ -194,8 +223,8 @@ La Rochelle v Bordeaux-Bègles is listed at 21h05 on Sunday 25 October. France l
 
 | Row | Match | Competition | Outcome | What the official page said | Source |
 |---|---|---|---|---|---|
-| `nhl-2026020152` | Buffalo Sabres v Philadelphia Flyers | NHL | confirmed | Game 2026020152: Philadelphia at Buffalo, KeyBank Center, startTimeUTC 2026-10-21T23:30:00Z — participants, venue and start all match. No change required. | [NHL official schedule API (2026-10-21)](https://api-web.nhle.com/v1/schedule/2026-10-21) |
-| `nhl-2026020153` | Ottawa Senators v Florida Panthers | NHL | confirmed | Game 2026020153: Florida at Ottawa, Canadian Tire Centre, startTimeUTC 2026-10-21T23:30:00Z — all match. No change required. | [NHL official schedule API (2026-10-21)](https://api-web.nhle.com/v1/schedule/2026-10-21) |
+| `nhl-2026020152` | Buffalo Sabres v Philadelphia Flyers | NHL | corrected | Independent re-read on 2026-10-21T07:20Z: standings return Buffalo 4-3-2 / .556 with goalDifferential -7, and Philadelphia 2-6-3 / .318 with a road line of 0-4-1 and goalDifferential -19. Both clubs had played exactly the number of games in the stored record (9 and 11), so the stored +2 and -14 differentials and the 0-4-2 road line cannot be snapshot drift. Buffalo goal differential +2 -> -7; Philadelphia road 0-4-2 -> 0-4-1 and differential -14 -> -19. Ratings come from points percentage, which was already correct, so no rating or price moved. | [NHL official standings API (2026-10-20, live)](https://api-web.nhle.com/v1/standings/2026-10-20) |
+| `nhl-2026020153` | Ottawa Senators v Florida Panthers | NHL | corrected | Independent re-read on 2026-10-21T07:20Z: Ottawa are 6-3-0 / .667 over 9 games with homeGamesPlayed 4 and a 3-1-0 home record. The stored 4-1-0 home line would require five home wins from four home games. Ottawa home split 4-1-0 -> 3-1-0. Record, points percentage, rating and every price are unchanged. | [NHL official standings API (2026-10-20, live)](https://api-web.nhle.com/v1/standings/2026-10-20) |
 | `nhl-2026020154` | Boston Bruins v Nashville Predators | NHL | confirmed | Re-read 2026-10-21: game 2026020154, Nashville at Boston, TD Garden, startTimeUTC 2026-10-22T23:00:00Z — participants, venue and start match. No change required. | [NHL official schedule API (2026-10-22)](https://api-web.nhle.com/v1/schedule/2026-10-22) |
 | `nhl-2026020155` | Toronto Maple Leafs v New York Rangers | NHL | confirmed | Re-read 2026-10-21: game 2026020155, New York Rangers at Toronto, Scotiabank Arena, startTimeUTC 2026-10-22T23:00:00Z — all match. No change required. | [NHL official schedule API (2026-10-22)](https://api-web.nhle.com/v1/schedule/2026-10-22) |
 | `nhl-2026020158` | Pittsburgh Penguins v Florida Panthers | NHL | flagged | Florida's back-to-back is real (they play Ottawa on 21 Oct and Pittsburgh on 22 Oct), but the 21 Oct schedule read back only two games, so this row's own game record was not re-read. Fixture facts left as published; only the back-to-back relationship was corroborated. Not promoted to confirmed. | [NHL official schedule API (2026-10-21)](https://api-web.nhle.com/v1/schedule/2026-10-21) |
@@ -284,8 +313,8 @@ La Rochelle v Bordeaux-Bègles is listed at 21h05 on Sunday 25 October. France l
 | `rl-wc26-eng-fra` | England v France | RLWC26 Men's Tournament | confirmed | nrl.com Round 2: England v France, Saturday 24 October, HBF Park Perth, 2:35am printed = 06:35Z — all match. No change required. | [NRL / Rugby League World Cup 2026 Round 2 draw (nrl.com)](https://www.nrl.com/draw/?competition=131&round=2&season=2026) |
 | `rl-wc26-png-sam` | Papua New Guinea v Samoa | RLWC26 Men's Tournament | confirmed | nrl.com Round 2: Papua New Guinea v Samoa, Saturday 24 October, Santos National Football Stadium, 12:25am printed = 04:25Z on the same offset — all match. No change required. | [NRL / Rugby League World Cup 2026 Round 2 draw (nrl.com)](https://www.nrl.com/draw/?competition=131&round=2&season=2026) |
 | `rl-wc26-tga-lbn` | Tonga v Lebanon | RLWC26 Men's Tournament | confirmed | nrl.com Round 2: Tonga v Lebanon, Friday 23 October, CommBank Stadium, kick-off printed 5:05am — row's 2026-10-23T09:05Z is that clock plus the client's UTC-4 rendering offset, which the same page reproduces for all five fixtures. No change required. | [NRL / Rugby League World Cup 2026 Round 2 draw (nrl.com)](https://www.nrl.com/draw/?competition=131&round=2&season=2026) |
-| `rl-wc26w-aus-eng` | Australia Jillaroos v England Women | RLWC26 Women's Tournament | not_rechecked | nrl.com ignores the competition=176 query parameter and serves the men's draw; the women's competition selector is client-side, so the two women's RLWC rows were not re-read. Keeps its original status and source links; nothing in this pass re-read it. | [NRL / RLWC26 Women's official draw](https://www.nrl.com/draw/?competition=176&round=2&season=2026) |
-| `rl-wc26w-sam-wal` | Samoa Women v Wales Women | RLWC26 Women's Tournament | not_rechecked | nrl.com ignores the competition=176 query parameter and serves the men's draw; the women's competition selector is client-side, so the two women's RLWC rows were not re-read. Keeps its original status and source links; nothing in this pass re-read it. | [NRL / RLWC26 Women's official draw](https://www.nrl.com/draw/?competition=176&round=2&season=2026) |
+| `rl-wc26w-aus-eng` | Australia Jillaroos v England Women | RLWC26 Women's Tournament | corrected | IRL match record 2588: Australia v England, HBF Park Perth, Sat 24 Oct 17:05 local (09:05Z) — agree. Legacy competition=176 link (which resolves to the men's competition 131) replaced with the official women's Round 2 draw page plus IRL match record 2588. | [IRL official fixtures & match records (RLWC26 Round 2)](https://www.intrl.sport/fixtures-results) |
+| `rl-wc26w-sam-wal` | Samoa Women v Wales Women | RLWC26 Women's Tournament | corrected | IRL match record 2586: Samoa v Wales, CommBank Stadium, Fri 23 Oct 17:50 local (06:50Z). The NRL draw publishes 2:45am AEDT (06:45Z). Legacy competition=176 link replaced with the official women's Round 2 draw. Kick-off conflict disclosed on the row: 06:45Z (NRL) vs 06:50Z (IRL); neither is inferred away. | [IRL official fixtures & match records (RLWC26 Round 2)](https://www.intrl.sport/fixtures-results) |
 | `hand-ehf-12055` | One Veszprém HC v Füchse Berlin | EHF Champions League Men | confirmed | EHF Round 5 PDF: One Veszprém v Füchse Berlin, Wed 21.10.2026, 18:45 CEST, One Veszprém Arena (Veszprém) = 16:45Z — participants, date, start and venue match. No change required. | [EHF Champions League Men 2026/27 group-phase playing times (official PDF)](https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf) |
 | `hand-ehf-12052` | RK Partizan AdmiralBet v FC Porto | EHF Champions League Men | confirmed | EHF Round 5 PDF: Partizan v FC Porto, Wed 21.10.2026, 18:45 CEST, Hall Aleksandar Nikolic (Belgrade) = 16:45Z — all match. No change required. | [EHF Champions League Men 2026/27 group-phase playing times (official PDF)](https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf) |
 | `hand-ehf-12053` | HC Zagreb v Paris Saint-Germain | EHF Champions League Men | confirmed | EHF Round 5 PDF: HC Zagreb v PSG, Wed 21.10.2026, 18:45 CEST, Arena Zagreb = 16:45Z — all match. No change required. | [EHF Champions League Men 2026/27 group-phase playing times (official PDF)](https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf) |
@@ -320,7 +349,7 @@ La Rochelle v Bordeaux-Bègles is listed at 21h05 on Sunday 25 October. France l
 | `gaa-cork-3530` | St Finbarrs v Nemo Rangers | Cork Premier Senior Football Championship | not_rechecked | County-board fixture pages were not re-read in this pass; the four GAA rows keep their earlier status. Keeps its original status and source links; nothing in this pass re-read it. | [Cork GAA official Premier Senior Football fixtures](https://gaacork.ie/fixtures-results/) |
 | `gaa-waterford-3536` | Rathgormack v The Nire | Waterford Senior Football Championship | not_rechecked | County-board fixture pages were not re-read in this pass; the four GAA rows keep their earlier status. Keeps its original status and source links; nothing in this pass re-read it. | [Munster GAA official county championship fixtures](https://munster.gaa.ie/fixtures/munster-gaa-fixtures/) |
 | `gaa-kerry-sfc` | Dr. Crokes v Kenmare Shamrocks | Kerry Senior Football Championship | not_rechecked | County-board fixture pages were not re-read in this pass; the four GAA rows keep their earlier status. Keeps its original status and source links; nothing in this pass re-read it. | [Munster GAA official county championship fixtures](https://munster.gaa.ie/fixtures/munster-gaa-fixtures/) |
-| `f1-usgp-2026` | United States Grand Prix | FIA Formula One World Championship | not_rechecked | formula1.com's 2026 United States Grand Prix page was not re-read in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [Formula 1 official 2026 United States Grand Prix hub](https://www.formula1.com/en/racing/2026/united-states) |
+| `f1-usgp-2026` | United States Grand Prix | FIA Formula One World Championship | corrected | formula1.com/en/racing/2026/united-states lists the race on 25 October with 56 laps at Circuit of The Americas and a 16:00 track time. Austin is on CDT (UTC-5) on 25 October, so the start is 21:00 UTC, not the 20:00 UTC recorded. The same page shows no round number. start_utc 2026-10-25T20:00:00Z -> 2026-10-25T21:00:00Z; the 'EDT' description and the unverifiable 'Round 18' label removed. | [Formula 1 official 2026 United States Grand Prix page](https://www.formula1.com/en/racing/2026/united-states) |
 | `golf-bermuda-2026` | Butterfield Bermuda Championship | PGA TOUR FedExCup Fall | not_rechecked | Tour schedule pages (europeantour.com, lpga.com, pgatour.com) are client-rendered and were not re-read in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [PGA TOUR official Butterfield Bermuda Championship](https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528) |
 | `golf-genesis-2026` | Genesis Championship | DP World Tour & KPGA Co-Sanctioned | not_rechecked | Tour schedule pages (europeantour.com, lpga.com, pgatour.com) are client-rendered and were not re-read in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [DP World Tour official Genesis Championship](https://www.europeantour.com/dpworld-tour/schedule/2026/) |
 | `golf-bmw-ladies-2026` | BMW Ladies Championship | LPGA Tour | not_rechecked | Tour schedule pages (europeantour.com, lpga.com, pgatour.com) are client-rendered and were not re-read in this pass. Keeps its original status and source links; nothing in this pass re-read it. | [LPGA official BMW Ladies Championship](https://www.lpga.com/tournaments) |

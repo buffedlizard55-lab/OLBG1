@@ -1,0 +1,71 @@
+{
+  "generated": "2026-10-21",
+  "session": "ccb6bde2-olbg1",
+  "note": "Fresh write-ups for v2.1 high-confidence picks whose v2.0 text was missing or whose quoted price went stale under recalibration (baseball venue double-count fix, Top 14 small-sample shrinkage, ATP ranking backfill). The other 16 v2.1 high picks retain their v2.0 texts in data/predictions.json, whose quoted winner prices the validator re-checks against v2.1. Facts below come only from the fixture's governing-body inputs and, for tennis, the official PIF ATP Rankings of 2026-10-19 read at atptour.com during this session.",
+  "items": [
+    {
+      "match_id": "ten-902102",
+      "selection": "Tommy Paul",
+      "bet_line": "Tommy Paul — Match Winner @ 1.37 (Paul 2-0 Set Betting @ 2.38 for a bigger price)",
+      "text": "Eighty-five ranking places separate these two in Lyon: Tommy Paul sits No.15 on the official ATP list of 19 October with 2,575 points and momentum behind him, up three places, while Benjamin Bonzi has slid eight spots to No.100 on 605 points. That class gap is exactly the profile best-of-three indoor tennis rewards. Back Tommy Paul to win the match at 1.37, with Paul 2-0 in Set Betting at 2.38 the bolder route.",
+      "facts": [
+        "Tommy Paul: official PIF ATP Ranking No.15 (2,575 pts, 22 tournaments, up 3 places) — atptour.com list of 2026-10-19",
+        "Benjamin Bonzi: official PIF ATP Ranking No.100 (605 pts, down 8 places) — atptour.com list of 2026-10-19",
+        "ATP 250 Lyon Open, Round of 16, Palais des Sports de Gerland (official ATP draw)",
+        "v2.0 priced this match at the unrated baseline because neither ranking had been harvested; v2.1 backfills both from the official list"
+      ],
+      "sources": [
+        {"name": "PIF ATP Rankings (Singles), list of 2026-10-19", "url": "https://www.atptour.com/en/rankings/singles?rankDate=2026-10-19&rankRange=0-100"},
+        {"name": "ATP Lyon official draw", "url": "https://www.atptour.com/en/scores/current/lyon/496/draws"}
+      ]
+    },
+    {
+      "match_id": "mlb-849805",
+      "selection": "Milwaukee Brewers",
+      "bet_line": "Milwaukee Brewers — Game 1 Moneyline @ 1.61 (Brewers -0.5 after 5 innings also fair at F5 prices)",
+      "text": "Milwaukee open the World Series at American Family Field, where their official 2026 home split reads 55-26 (.679) — the strongest home mark feeding this series. Tampa Bay Rays' corresponding road split is a far more modest 43-38 (.531), and October openers rarely forgive that kind of split disadvantage. Take the Milwaukee Brewers to win Game 1 on the Moneyline at 1.61; the first-five-innings line points the same way if you want the shorter route.",
+      "facts": [
+        "Milwaukee Brewers: 55-26 at home (.679) — official MLB 2026 standings splits (statsapi.mlb.com)",
+        "Tampa Bay Rays: 43-38 on the road (.531) — official MLB 2026 standings splits (statsapi.mlb.com)",
+        "World Series Game 1, 2026-10-24, American Family Field, Milwaukee (official MLB postseason schedule)",
+        "Probable starters unconfirmed pre-series (fixture flag, unchanged at pricing time)"
+      ],
+      "sources": [
+        {"name": "MLB official standings API (2026)", "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"},
+        {"name": "MLB Gameday 849805", "url": "https://www.mlb.com/gameday/849805"}
+      ]
+    },
+    {
+      "match_id": "mlb-849802",
+      "selection": "Milwaukee Brewers",
+      "bet_line": "Milwaukee Brewers — Game 2 Moneyline @ 1.61 (saver: Tampa Bay Rays +1.5 Run Line @ 1.69)",
+      "text": "Game 2 stays in Milwaukee on 25 October, so the same verified split story applies: the Brewers went 55-26 (.679) at American Family Field during the 2026 regular season, against a Tampa Bay Rays road mark of 43-38 (.531). World Series Game 2s between split-mismatched clubs tend to follow the home script. The selection is the Milwaukee Brewers on the Game 2 Moneyline at 1.61, with Tampa Bay Rays +1.5 at 1.69 the natural cover if you expect it tight late.",
+      "facts": [
+        "Milwaukee Brewers: 55-26 at home (.679) — official MLB 2026 standings splits (statsapi.mlb.com)",
+        "Tampa Bay Rays: 43-38 on the road (.531) — official MLB 2026 standings splits (statsapi.mlb.com)",
+        "World Series Game 2, 2026-10-25, American Family Field, Milwaukee (official MLB postseason schedule)",
+        "Probable starters unconfirmed pre-series (fixture flag, unchanged at pricing time)"
+      ],
+      "sources": [
+        {"name": "MLB official standings API (2026)", "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"},
+        {"name": "MLB Gameday 849802", "url": "https://www.mlb.com/gameday/849802"}
+      ]
+    },
+    {
+      "match_id": "ru-top14-609567",
+      "selection": "Stade Toulousain",
+      "bet_line": "Stade Toulousain — Match Winner (3-Way) @ 1.32 & Stade Toulousain -8.5 Handicap @ 1.94",
+      "text": "Table-topping Stade Toulousain host this Journée 7 fixture at Stade Ernest-Wallon with 24 points banked from the opening six rounds, fresh from putting 45 on Bayonne in a 45-34 win. USA Perpignan arrive ninth on 13 points, less than half the leaders' haul, and nothing in the early table suggests they close that gap on the road. Stade Toulousain are the bet at 1.32, and giving up the 8.5-point start at 1.94 is the fuller-priced way to side with the leaders.",
+      "facts": [
+        "Stade Toulousain: 1st in Top 14 with 24 pts after J6, beat Bayonne 45-34 (official LNR standings top14.lnr.fr/classement)",
+        "USA Perpignan: 9th with 13 pts after J6 (official LNR standings)",
+        "Journée 7, Stade Ernest-Wallon, 2026-10-24 14:35 UTC (official LNR match sheet 11867)",
+        "v2.1 shrinks both 6-round standings ratings toward neutral, trimming the winner price from 1.15 to 1.32"
+      ],
+      "sources": [
+        {"name": "LNR official Top 14 standings", "url": "https://top14.lnr.fr/classement"},
+        {"name": "LNR official match sheet 11867 (Toulouse v Perpignan)", "url": "https://top14.lnr.fr/feuille-de-match/2026-2027/j7/11867-toulouse-perpignan"}
+      ]
+    }
+  ]
+}

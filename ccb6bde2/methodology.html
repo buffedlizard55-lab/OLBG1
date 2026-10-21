@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology — OLBG1 Markets Desk (ccb6bde2)</title><style>
+:root{--ink:#182230;--mut:#5b6b7e;--line:#d9e0ea;--bg:#f6f8fb;--card:#fff;
+--acc:#0b5394;--hi:#0a7d43;--med:#b7791f;--lo:#8a93a3;--flag:#b3261e}
+*{box-sizing:border-box}body{margin:0;font:15px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+header.top{background:#10243e;color:#eaf1f9;padding:18px 0 12px}
+header.top .wrap,main.wrap,footer .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+header.top h1{margin:0 0 2px;font-size:22px}header.top p{margin:0;color:#b9cadd;font-size:13px}
+nav.main{background:#0b1b30;padding:0}nav.main .wrap{max-width:1180px;margin:0 auto;padding:0 16px;display:flex;flex-wrap:wrap;gap:2px}
+nav.main a{color:#cfe1f2;padding:9px 12px;font-size:13px;display:inline-block}
+nav.main a:hover{background:#12325a;text-decoration:none}
+nav.main a.on{background:#eaf1f9;color:#10243e;font-weight:600}
+main{padding:20px 0 40px}
+h2{font-size:19px;margin:22px 0 8px}h3{font-size:16px;margin:18px 0 6px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px}
+.card .n{font-size:26px;font-weight:700}.card .t{color:var(--mut);font-size:12.5px}
+table{border-collapse:collapse;width:100%;background:var(--card);border:1px solid var(--line);margin:10px 0;font-size:13.5px}
+th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#eef3f9;font-size:12.5px;color:#33465e}
+tr:last-child td{border-bottom:none}
+.conf{font-weight:700;padding:1px 7px;border-radius:9px;font-size:11.5px;white-space:nowrap}
+.c-high{background:#e2f4e9;color:var(--hi)}.c-medium{background:#fdf1d7;color:var(--med)}.c-low{background:#eef0f4;color:var(--lo)}
+.match{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:14px 0;padding:12px 14px}
+.match h3{margin:2px 0 4px;font-size:15.5px}
+.meta{color:var(--mut);font-size:12.5px;margin:2px 0 8px}
+details{border-top:1px solid var(--line);margin-top:8px;padding-top:6px}
+summary{cursor:pointer;font-weight:600;font-size:13px;color:#24354a;padding:3px 0}
+.mkt{margin:8px 0 2px;font-weight:600;font-size:13px}.basis{color:var(--mut);font-size:12px;margin:2px 0 6px}
+.odds td.num,.odds th.num{text-align:right;font-variant-numeric:tabular-nums}
+.note{background:#fff8e6;border:1px solid #eadfae;border-radius:8px;padding:10px 14px;font-size:13.5px;margin:12px 0}
+.flagbox{background:#fdf0ef;border:1px solid #efc4c0;border-radius:8px;padding:10px 14px;margin:12px 0}
+.flagbox h3{color:var(--flag);margin-top:0}
+.pred{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--hi);border-radius:8px;padding:12px 16px;margin:14px 0}
+.pred p{margin:6px 0}.pred .facts{color:var(--mut);font-size:12.5px}
+footer{background:#10243e;color:#b9cadd;padding:18px 0;font-size:12.5px}
+small.mut{color:var(--mut)} .up{color:var(--hi)} .down{color:var(--flag)}
+code{background:#eef3f9;padding:0 4px;border-radius:3px;font-size:12.5px}
+</style></head>
+<body>
+<header class="top"><div class="wrap">
+<h1>OLBG1 — Deep Markets Desk</h1>
+<p>Reverse-engineered OLBG coverage for 17 sports (football/soccer, horse racing, boxing, UFC/MMA, American football, hurling, cycling &amp; specials excluded). Recalibrated own lines (model v2.1) across every derivable market. Snapshot 21 Oct 2026.</p>
+</div></header>
+<nav class="main"><div class="wrap"><a href="index.html">Dashboard</a><a href="markets.html">Markets Explorer</a><a href="predictions.html">High-Confidence Predictions</a><a href="calibration.html">Calibration Audit</a><a href="flagged.html">Flagged for Review</a><a href="methodology.html" class="on">Methodology</a>
+<a href="../">Root dashboard</a><a href="../docs/">164-event board</a><a href="../ebfbd966/">Crowd desk</a><a href="../aa4e9dbf/">131-event desk</a><a href="../2360a617/">152-event board</a>
+</div></nav>
+<main><div class="wrap">
+<h2>Methodology — how every price on this desk is derived</h2>
+<h3>Inputs (sourced facts only)</h3>
+<p>Fixtures, rankings, records and seeds come from governing bodies (league/tour/federation sites and APIs) as recorded per-row in <code>data/fixtures.json</code>, plus this session's ATP re-verification from the official PIF ATP Rankings of 2026-10-19. Every match block links its official source. If a value could not be confirmed, it is blank and flagged — e.g. the WTA rankings table returned no rows (script-rendered), so Leylah Fernandez, Aliaksandra Sasnovich and Bejlek stay unrated on this desk.</p>
+<h3>Winner model (v2.1)</h3>
+<p>Logistic in rating points: <code>p_home = sigmoid(logit(p_venue) + (r_home − r_away)/scale)</code>, per-sport scale and venue baselines in <code>scripts/model.py</code>, draw mass for draw-sports as in v2.0. A strength edge is applied only when <b>both</b> sides carry a sourced rating; otherwise the match is priced at the venue baseline and capped at LOW.</p>
+<h3>Recalibration R1–R3</h3>
+<ul>
+<li><b>R1 shrinkage:</b> record-derived ratings from ≤40 games are shrunk toward 50 by <code>n/(n+10)</code> (composite standings-mapped ratings count each game double). Rankings that aggregate long histories (ATP/WTA/WST/PDC/ICC/IRL) are not shrunk.</li>
+<li><b>R2 baseball:</b> home/road split inputs priced at a neutral 0.500 venue term (splits already embed venue).</li>
+<li><b>R3 tennis:</b> ratings re-derived from the official ATP list of 2026-10-19.</li>
+<li><b>Not changed:</b> logit scales, confidence thresholds. The audit found the scales plausible (Calibration page) and refitting without outcome data would be invention, not calibration.</li>
+</ul>
+<h3>Expanded-market derivations</h3>
+<ul>
+<li><b>Race formats</b> (darts Bo11 legs, snooker Bo7 frames, tennis Bo3 sets, volleyball Bo5 sets): the per-unit win probability q is solved from the match price by inverting the negative-binomial race formula, so correct scores, total-unit ladders and unit handicaps are exactly consistent with the winner price. Units are assumed i.i.d. (A2).</li>
+<li><b>Margin/total sports:</b> margin and total are independent normals with the sport's documented sigmas (A1). Winning-margin bands, alternate ladders, and team totals (score = (Total ± Margin)/2) are closed-form integrals of those normals.</li>
+<li><b>Tennis games</b> (A3): expected sets from the exact set distribution × 9.7 games/set, blended 50/50 with the documented baseline total; <b>volleyball points</b> (A4): set distribution × 44.0 points/set.</li>
+<li><b>Half / First-5 markets</b> (A5): expectation split pro-rata, sigma by the square root of the time share.</li>
+<li><b>Hockey regulation:</b> continuity-corrected normal margin (|margin| &lt; 0.5 goals = regulation draw).</li>
+</ul>
+<h3>What is deliberately not priced</h3>
+<p>Any market needing a per-player rate we cannot source officially — 180s, centuries, aces, top batter, anytime scorers, player props, full-field golf/greyhound/F1 books. Each is listed in the <a href="markets.html">Markets Explorer</a> with the missing official input named. An empty price is honest; an invented one is not.</p>
+<h3>Odds conventions</h3>
+<p>Book prices include a symmetric 5% overround (fair and US formats shown alongside). Every market is a true partition: probabilities sum to 1 (validated). Lines end in .5 — no pushes.</p>
+<h3>Reproduce</h3>
+<p><code>python3 scripts/ccb6bde2_audit.py</code> → <code>python3 scripts/ccb6bde2_expand_markets.py</code> → <code>python3 scripts/ccb6bde2_taxonomy.py</code> → <code>python3 scripts/ccb6bde2_build_site.py</code> → <code>python3 scripts/ccb6bde2_validate.py</code></p>
+</div></main>
+<footer><div class="wrap">Model output only — originated estimates with a documented 5% overround, not market prices and not betting advice. Facts are from official governing-body sources linked on every row; anything that could not be verified is on the Flagged for Review page.</div></footer>
+</body></html>

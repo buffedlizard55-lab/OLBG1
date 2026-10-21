@@ -15,8 +15,8 @@ URC_FIX = {"name": "United Rugby Championship official 2026/27 fixtures", "url":
 TOP14_FIX = {"name": "LNR official Top 14 2026-2027 calendar & standings", "url": "https://top14.lnr.fr/calendrier-et-resultats"}
 TOP14_TAB = {"name": "LNR official Top 14 Journée 6 standings", "url": "https://top14.lnr.fr/classement"}
 PREM_FIX = {"name": "Gallagher Premiership official fixtures hub", "url": "https://www.premrugby.com/fixtures-results"}
-RLWC_DRAW = {"name": "NRL / RLWC26 official Round 2 draw & match centre", "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"}
-RLWC_W = {"name": "NRL / RLWC26 Women's official draw", "url": "https://www.nrl.com/draw/?competition=176&round=2&season=2026"}
+RLWC_DRAW = {"name": "NRL official RLWC26 men's Round 2 draw", "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"}
+RLWC_W = {"name": "NRL official RLWC26 women's Round 2 draw", "url": "https://www.nrl.com/draw/womens-rugby-league-world-cup/2026/round-2/"}
 EHF_STAND = {"name": "EHF Champions League Men 2026/27 official standings", "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"}
 EHF_SCHED = {"name": "EHF official 2026/27 group phase playing times PDF", "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"}
 EHF_PREV = {"name": "EHF official Round 5 match preview", "url": "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins"}
@@ -214,6 +214,38 @@ def get_rows_b() -> list[dict]:
             "flags": ["OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"],
         })
 
+    # IRL match records are the governing-body confirmation for every RLWC26 fixture,
+    # and they carry the venue-local kick-off that pins the UTC value.
+    irl_records = {
+        "rl-wc26-aus-fij": ("2573", "Suncorp Stadium, Brisbane, Sun 25 Oct 19:05 local (09:05Z)"),
+        "rl-wc26-nzl-cok": ("2572", "One NZ Stadium, Christchurch, Sun 25 Oct 18:05 local (05:05Z)"),
+        "rl-wc26-eng-fra": ("2571", "HBF Park, Perth, Sat 24 Oct 14:35 local (06:35Z)"),
+        "rl-wc26-png-sam": ("2570", "Santos National Football Stadium, Port Moresby, Sat 24 Oct 14:25 local (04:25Z)"),
+        "rl-wc26-tga-lbn": ("2569", "CommBank Stadium, Sydney, Fri 23 Oct 20:05 local (09:05Z)"),
+        "rl-wc26w-aus-eng": ("2588", "HBF Park, Perth, Sat 24 Oct 17:05 local (09:05Z)"),
+        "rl-wc26w-sam-wal": ("2586", "CommBank Stadium, Sydney, Fri 23 Oct 17:50 local (06:50Z)"),
+    }
+    for row in rows:
+        record = irl_records.get(row["id"])
+        if not record:
+            continue
+        irl_id, confirmation = record
+        row["sources"] = [
+            *row["sources"],
+            {"name": "IRL official match record", "url": f"https://www.intrl.sport/match-details/{irl_id}"},
+        ]
+        row["flags"] = [
+            *row["flags"],
+            f"IRL match record re-read 2026-10-21T08:10Z: {confirmation}.",
+        ]
+        if row["id"] == "rl-wc26w-sam-wal":
+            row["flags"].insert(
+                0,
+                "Kick-off conflict: the NRL draw lists 2:45am AEDT (06:45Z) while the IRL match record lists "
+                "17:50 local (06:50Z). Both values are published; the five-minute difference is not resolved "
+                "by inference.",
+            )
+
     # =========================================================================
     # 10. HANDBALL — ALL 12 EHF Champions League Men Round 5 Ties (eurohandball.com)
     # =========================================================================
@@ -395,11 +427,13 @@ def get_rows_b() -> list[dict]:
     # =========================================================================
     multi_runner_events = [
         ("f1-usgp-2026", "motor-racing", "FIA Formula One World Championship",
-         "Round 18 - United States Grand Prix (56 laps)", "2026-10-25T20:00:00Z", "2026-10-25",
+         "United States Grand Prix (56 laps)", "2026-10-25T21:00:00Z", "2026-10-25",
          "United States Grand Prix", "Circuit of The Americas, Austin, TX", [F1_USGP],
          {"listed": True, "event_id": 913, "selection": "Max Verstappen", "market": "Outright Race Winner", "consensus": "OLBG event 913",
           "url": "https://www.olbg.com/betting-tips/Motor_Racing/14"},
-         ["20-car Grand Prix field market (not a two-sided fixture); race start verified at 20:00 UTC (OLBG displays 16:00 EDT)"]),
+         ["20-car Grand Prix field market (not a two-sided fixture)",
+                "Race start re-verified independently on 2026-10-21T07:25Z at formula1.com/en/racing/2026/united-states: 25 October, 56 laps, Circuit of The Americas, 16:00 track time. Austin is on CDT (UTC-5) on that date, so the start is 21:00 UTC; the earlier 20:00 UTC value and 'EDT' label were wrong by an hour.",
+                "Round number removed: the linked official race page does not display one."]),
         ("golf-bermuda-2026", "golf", "PGA TOUR FedExCup Fall",
          "Butterfield Bermuda Championship (72-hole stroke play)", None, "2026-10-22",
          "Butterfield Bermuda Championship", "Port Royal Golf Course, Southampton, Bermuda", [PGA_BERM],
