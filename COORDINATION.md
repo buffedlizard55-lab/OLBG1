@@ -562,3 +562,16 @@ Building directly on `origin/main` (`99a04c5`) while keeping every parallel dire
    * Static pages: `27` root HTML pages (`index.html`, `picks.html`, `predictions.html`, `sports.html`, `analysis.html`, `methodology.html`, `reverse-engineering.html`, `sources.html`, `flagged.html`, `404.html`, `sports/*.html`) + `27` mirrored pages under `/f7fa77fc/`.
    * Validation: `python3 scripts/validate.py` (`54` pages, `0` errors, `0` warnings, `0` repeated 6-word n-grams across all `31` high-confidence predictions), `python3 scripts/ebfbd966_validate.py` (`0` errors), and whole-repo HTML sweep across **all `110` HTML files** (`0` broken links).
 
+### 10.2 Publish & Live GitHub Pages Verification Record (`f7fa77fc-olbg1`)
+
+* **PR #17** — https://github.com/buffedlizard55-lab/OLBG1/pull/17 — merged cleanly to `main` (merge commit `9b16cf0`) from branch `arena/f7fa77fc-olbg1`.
+* **GitHub Pages Build (`9b16cf0`)** — `status=built`, `error=null`.
+* **Live Production HTTP 200 Verification:**
+  * Primary Root Dashboard: https://buffedlizard55-lab.github.io/OLBG1/
+  * Namespaced Mirror: https://buffedlizard55-lab.github.io/OLBG1/f7fa77fc/
+  * All Originated Lines: https://buffedlizard55-lab.github.io/OLBG1/picks.html
+  * 31 High-Confidence Predictions: https://buffedlizard55-lab.github.io/OLBG1/predictions.html
+  * Flagged for Review: https://buffedlizard55-lab.github.io/OLBG1/flagged.html
+  * Parallel Companion Desks Preserved Intact: `/OLBG1/docs/`, `/OLBG1/ebfbd966/`, `/OLBG1/aa4e9dbf/`
+
+
