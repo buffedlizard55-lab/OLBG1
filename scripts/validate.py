@@ -22,7 +22,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DOCS = ROOT / "docs"
+DOCS = ROOT  # Pages serves main:/ so the site root is the repo root
 
 errors: list[str] = []
 warnings: list[str] = []
@@ -46,9 +46,12 @@ class LinkCollector(HTMLParser):
 
 
 def check_links():
-    pages = sorted(DOCS.rglob("*.html"))
+    pages = sorted(list(DOCS.glob("*.html")) + list((DOCS / "sports").glob("*.html")))
     known = {p.relative_to(DOCS).as_posix() for p in pages}
-    known |= {p.relative_to(DOCS).as_posix() for p in DOCS.rglob("*") if p.is_file()}
+    for sub in ("assets", "data"):
+        for f in (DOCS / sub).rglob("*"):
+            if f.is_file():
+                known.add(f.relative_to(DOCS).as_posix())
 
     inbound: dict[str, int] = {}
     for page in pages:
@@ -181,7 +184,8 @@ def main() -> int:
     in_scope = check_data()
     check_pages(in_scope)
 
-    print(f"pages: {len(list(DOCS.rglob('*.html')))}")
+    n = len(list(DOCS.glob("*.html"))) + len(list((DOCS / "sports").glob("*.html")))
+    print(f"pages: {n}")
     print(f"errors: {len(errors)}   warnings: {len(warnings)}")
     for w in warnings[:20]:
         print("  WARN ", w)

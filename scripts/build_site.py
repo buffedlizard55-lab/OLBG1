@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "docs"
+OUT = ROOT                 # Pages is configured to serve main:/ so the site root is the repo root
 ASSETS = OUT / "assets"
 
 SITE_NAME = "OLBG Reverse-Engineering"
@@ -776,18 +776,12 @@ def main() -> int:
     for m, _ in rows:
         stats["by_sport"][m["sport"]] = stats["by_sport"].get(m["sport"], 0) + 1
 
-    if OUT.exists():
-        shutil.rmtree(OUT)
-    (OUT / "sports").mkdir(parents=True)
-    ASSETS.mkdir(parents=True)
-    (OUT / "data").mkdir()
+    (OUT / "sports").mkdir(parents=True, exist_ok=True)
+    ASSETS.mkdir(parents=True, exist_ok=True)
 
     shutil.copy(ROOT / "site_src/style.css", ASSETS / "style.css")
     shutil.copy(ROOT / "site_src/app.js", ASSETS / "app.js")
     (OUT / ".nojekyll").write_text("")
-
-    for name in ("fixtures", "lines", "predictions", "olbg_taxonomy", "sources", "coverage"):
-        shutil.copy(ROOT / f"data/{name}.json", OUT / f"data/{name}.json")
 
     def write(rel, html_text):
         (OUT / rel).write_text(html_text, encoding="utf-8")
@@ -806,7 +800,8 @@ def main() -> int:
     for sp in D["model_sports"]:
         write(f"sports/{sp['slug']}.html", build_sport_page(D, sp["slug"], sp, rows, stats))
 
-    print(f"\n{len(list(OUT.rglob('*.html')))} html files, {stats['matches']} priced matches")
+    pages = [p for p in OUT.glob("*.html")] + list((OUT / "sports").glob("*.html"))
+    print(f"\n{len(pages)} html files, {stats['matches']} priced matches")
     return 0
 
 
