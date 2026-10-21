@@ -40,16 +40,29 @@ def main() -> None:
     if missing or extra:
         raise RuntimeError(f"High-prediction bijection mismatch! missing={missing}, extra={extra}")
 
+    fixtures_by_id = {f["id"]: f for f in fixtures}
+    priced_by_id = {l["id"]: l for l in priced_lines}
+
     predictions_out = []
     for mid in high_ids:
         entry = HIGH_PREDICTIONS[mid]
+        fx = fixtures_by_id[mid]
+        ln = priced_by_id[mid]
         wc = len(entry["text"].split())
         assert wc >= 30, f"{mid} prediction under 30 words ({wc})"
+        facts = [
+            f"{fx['home']}: {fx['inputs']['home']['label']} — {fx['inputs']['home']['value']}",
+            f"{fx['away']}: {fx['inputs']['away']['label']} — {fx['inputs']['away']['value']}",
+            f"Recommended market: {entry['selection']}",
+        ]
         predictions_out.append({
             "match_id": mid,
-            "selection": entry["selection"],
+            "selection": ln["pick"],
+            "bet_line": entry["selection"],
             "text": entry["text"],
             "words": wc,
+            "facts": facts,
+            "sources": fx["sources"],
         })
 
     lines_doc = {
@@ -65,6 +78,7 @@ def main() -> None:
         "generated": DATE_ANCHOR,
         "rule": "Unique, non-repetitive, human-written >=30-word analysis grounded strictly in official governing-body sources for every high-confidence pick.",
         "count": len(predictions_out),
+        "items": predictions_out,
         "predictions": predictions_out,
     }
 

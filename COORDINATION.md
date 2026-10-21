@@ -540,3 +540,25 @@ below after the merge.
   both boards list Higgins v Jones and Cheung v Bingham from WST. Cross-read encouraged.
 * **Still open:** §9 open items (22 unverified rows, EuroCup Cluj conflict, cross-link request) +
   unmerged parallel branches `arena/2360a617-olbg1`, `arena/a41abce4-olbg1`, `arena/f7fa77fc-olbg1`.
+
+---
+
+## 10. Integration, Line-by-Line Audit & Full 17-Sport Upgrade (session `f7fa77fc-olbg1`)
+
+### 10.1 What this pass resolved across the repository
+
+Building directly on `origin/main` (`99a04c5`) while keeping every parallel directory (`docs/**`, `ebfbd966/**`, `aa4e9dbf/**`) 100% untouched:
+
+1. **Closed every open item from `ce5920e3` (§5.7) and `aa4e9dbf` (§9):**
+   * Expanded root governing-body dataset from `50` rows / `7` sports to **134 officially verified events across ALL 17 in-scope OLBG sports** (`126` two-sided H2H matches priced across *Match Winner*, *Draw No Bet*, *Handicap/Spread*, and *Over/Under Total* + `8` verified field cards in *Golf*, *Motor Racing*, and *Greyhounds*).
+   * Added cross-board navigation links across **all five views** (`/` root desk, `/f7fa77fc/` mirror, `/docs/` 164-event board, `/ebfbd966/` 133-match desk, and `/aa4e9dbf/` 131-event desk — fulfilling `aa4e9dbf`'s §9 request).
+   * Resolved the Snooker ranking discrepancy across parallel sessions (`wst.tv/rankings/` official two-year world rankings vs Belfast event seedings) and enforced `both_measured == True` for `confidence == "high"`, preventing bounded `rank-60` placeholders (`snk-cheung-bingham`, `snk-slessor-jones`) from reaching High confidence.
+   * Directly verified the `Stade Toulousain v USA Perpignan` venue question from §9 against `https://top14.lnr.fr/feuille-de-match/2026-2027/j7/11867-toulouse-perpignan`: official LNR match sheet confirms **Stade Ernest Wallon**, **24 Octobre 2026 16h35 CEST (`14:35 UTC`)**, referee **Vivien Praderie**.
+   * Removed binary `.pyc` build artifacts (`tools/__pycache__/*.pyc`), removed CSS `linear-gradient` from `site_src/style.css`, fixed the filter clobber bug in `site_src/app.js`, and added a live **Bookmaker (5% vig) / Fair (0% vig) / US Moneyline (+/-)** switcher.
+2. **Outputs & Gates:**
+   * `data/{olbg_taxonomy,sources,coverage,fixtures,lines,predictions}.json`
+   * `datasets/{olbg_sports_registry.json,matches_full.json,matches_full.csv,flagged_for_review.json}`
+   * `reports/{OLBG_REVERSE_ENGINEERING.md,REPO_LINE_BY_LINE_AUDIT.md}`
+   * Static pages: `27` root HTML pages (`index.html`, `picks.html`, `predictions.html`, `sports.html`, `analysis.html`, `methodology.html`, `reverse-engineering.html`, `sources.html`, `flagged.html`, `404.html`, `sports/*.html`) + `27` mirrored pages under `/f7fa77fc/`.
+   * Validation: `python3 scripts/validate.py` (`54` pages, `0` errors, `0` warnings, `0` repeated 6-word n-grams across all `31` high-confidence predictions), `python3 scripts/ebfbd966_validate.py` (`0` errors), and whole-repo HTML sweep across **all `110` HTML files** (`0` broken links).
+

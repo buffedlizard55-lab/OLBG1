@@ -126,8 +126,8 @@ HIGH_PREDICTIONS: dict[str, dict] = {
             "Game 4 inside Tropicana Field magnifies bullpen leverage, the exact phase Tampa Bay have "
             "owned throughout a 7-2 October run that dispatched Cleveland in six games. Back on fast "
             "indoor turf where they won more than two-thirds of their regular-season games (.679), the "
-            "Rays match up cleanly against Milwaukee's road split (.593). Back Tampa Bay to win "
-            "Game 4 at 1.61 and defend home turf."
+            "Rays match up cleanly against Milwaukee's road split (.593). Take Tampa Bay Rays in "
+            "Game 4 at 1.61 to hold serve indoors."
         ),
     },
 

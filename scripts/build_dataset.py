@@ -287,6 +287,7 @@ def main() -> None:
         "count": len(rows),
         "h2h_count": sum(1 for r in rows if r.get("away")),
         "event_only_count": sum(1 for r in rows if not r.get("away")),
+        "matches": rows,
         "fixtures": rows,
     }
     flagged_doc = build_flagged_registry(rows)
