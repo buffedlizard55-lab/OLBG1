@@ -1,227 +1,39 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Handball — Lines &amp; Picks (OLBG reverse-engineered)</title>
-<style>
-:root{--bg:#0f1420;--card:#1a2233;--ink:#e8ecf4;--mut:#9aa7bd;--acc:#4da3ff;--hi:#2ecc8f;--md:#f5b942;--lo:#8b98ad;--warn:#ff6b6b;--line:#2a3550}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
-a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:1280px;margin:0 auto;padding:20px}
-header{border-bottom:1px solid var(--line);padding:18px 0;margin-bottom:22px}
-h1{font-size:1.5rem;margin:0 0 4px}h2{font-size:1.2rem;margin:26px 0 10px;color:var(--acc)}
-.sub{color:var(--mut);font-size:.92rem}
-nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:.95rem}
-nav.top a{font-weight:600}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:16px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:block;color:var(--ink)}
-.card:hover{border-color:var(--acc);text-decoration:none}
-.card .n{font-size:1.6rem;font-weight:700;color:var(--acc)}
-.card .t{font-weight:600;margin-bottom:2px}.card .d{color:var(--mut);font-size:.82rem}
-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:.88rem}
-th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
-th{background:#141b2b;color:var(--mut);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
-tr:last-child td{border-bottom:none}
-.badge{display:inline-block;padding:1px 9px;border-radius:20px;font-size:.75rem;font-weight:700}
-.b-high{background:rgba(46,204,143,.15);color:var(--hi);border:1px solid var(--hi)}
-.b-medium{background:rgba(245,185,66,.13);color:var(--md);border:1px solid var(--md)}
-.b-low{background:rgba(139,152,173,.15);color:var(--lo);border:1px solid var(--lo)}
-.flagpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(255,107,107,.12);color:var(--warn);border:1px solid var(--warn)}
-.okpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(46,204,143,.12);color:var(--hi);border:1px solid var(--hi)}
-details{margin:2px 0}summary{cursor:pointer;color:var(--acc);font-size:.82rem}
-.pred{background:#10182a;border-left:3px solid var(--hi);padding:8px 10px;border-radius:6px;margin:6px 0;font-size:.86rem}
-.note{background:#141b2b;border:1px solid var(--line);border-left:3px solid var(--md);padding:10px 14px;border-radius:8px;margin:14px 0;color:var(--ink);font-size:.9rem}
-.small{color:var(--mut);font-size:.8rem}
-.mono{font-variant-numeric:tabular-nums}
-footer{margin-top:36px;border-top:1px solid var(--line);padding:16px 0;color:var(--mut);font-size:.8rem}
-.srcs{font-size:.78rem;line-height:1.7}
-</style></head><body>
-<header><div class="wrap">
-<h1>OLBG Reverse-Engineered Lines &amp; Picks</h1>
-<div class="sub">152 events across 17 covered sports — collected from OLBG.com on 21 Oct 2026, re-priced with our own originated lines, verified against official sources. Times are US Eastern (ET) as displayed on OLBG.</div>
-<nav class="top"><a href="../" style="color:var(--ink)">Home</a> <a href="../flagged.html">Flagged for Review</a> <a href="../methodology.html">Methodology & Sources</a> <a href="https://github.com/buffedlizard55-lab/OLBG1" rel="noopener">GitHub repo</a></nav>
-</div></header>
-<div class="wrap">
-<h1>Handball <span class="small">(20 events)</span></h1>
-<div class="sub">EHF Champions League group phase + Nordic domestic leagues — OLBG page: <a href="https://www.olbg.com/betting-tips/Handball/20" rel="noopener">https://www.olbg.com/betting-tips/Handball/20</a> · fetched 2026-10-21T05:55Z · displayed times ET</div>
-<div class="note small"><b>Timezone note:</b> times as displayed by OLBG (assumed US Eastern)</div>
-<table><tr><th>Match / Event</th><th>OLBG community tip</th><th>Our originated line</th><th>Our pick</th><th>Confidence</th><th>Verification</th><th>Analysis</th><th>Sources</th></tr><tr>
-<td><b>RK Zagreb vs PSG Handball</b><br><span class="small mono">Today 12:45 (ET)</span><br><span class="small">EHF Champions League (men)</span></td>
-<td>PSG Handball <b>8/13</b> <span class="small">(62% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: PSG -180 / Zagreb +150 | Handicap: PSG -3.5 | Total: O/U 58.5</td>
-<td><b>PSG Handball ML</b></td>
-<td><span class="badge b-medium">medium</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Both verified as CL group-phase entrants (PSG French champions, pot 2; Zagreb Croatian champions, pot 3). Neither team&#x27;s group results appeared in the standings snapshot captured — pick follows champion pedigree + 62% consensus.</div><div class="small"><span class="flagpill">FLAG</span> Current group positions of PSG/Zagreb not captured — medium at best.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/RK_Zagreb_vs_PSG_Handball/20?event_id=12053" rel="noopener">OLBG event</a><br><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" rel="noopener">EHF Champions League standings (official)</a><br><a href="https://old.eurohandball.com/ec/00-01/cl/men/2026-27/round" rel="noopener">eurohandball.com CL round page (official, legacy)</a><br><a href="https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League_group_stage" rel="noopener">Wikipedia — 2026-27 EHF Champions League group stage</a></td>
-</tr><tr>
-<td><b>Nantes vs HC Vardar</b><br><span class="small mono">Today 14:45 (ET)</span><br><span class="small">EHF Champions League (men)</span></td>
-<td>Nantes <b>6/10</b> <span class="small">(60% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Nantes -260 / Vardar +210 | Handicap: Nantes -5.5 | Total: O/U 58.5</td>
-<td><b>HBC Nantes ML</b></td>
-<td><span class="badge b-high">high</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="pred"><b>Prediction:</b> Nantes host Vardar with a spotless-adjacent 3-1 start in Group B while the Macedonians are still hunting their first point after four rounds, outscored 131-121 across a fixture list that hasn&#x27;t exactly been brutal. The French side&#x27;s defensive structure — 110 goals conceded in four, second-best in the group — pairs badly with a Vardar attack averaging under 31. Take Nantes on the moneyline, and their -5.5 handicap as the value expression; both follow directly from the EHF&#x27;s verified table.</div><div class="small"><b>Basis:</b> EHF Champions League men 2026-27 group phase (verified via eurohandball.com): GrpA Veszprem 4-0 (+35), Fuchse Berlin 3-1 (+16), Porto 1-3, Partizan 0-4 (-36); GrpB Plock 3-1, Nantes 3-1, Melsungen 2-2, Vardar 0-4; Barca 4-0 (+33, 104 goals conceded only ~104:137 reversed — 137 for), Montpellier 1-3 (-9); SAH Aarhus 1-1-2. Nantes 3-1 (+5, Group B second); Vardar 0-4 (-10, last, 121:131).</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Nantes_vs_HC_Vardar/20?event_id=12050" rel="noopener">OLBG event</a><br><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" rel="noopener">EHF Champions League standings (official)</a><br><a href="https://old.eurohandball.com/ec/00-01/cl/men/2026-27/round" rel="noopener">eurohandball.com CL round page (official, legacy)</a><br><a href="https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League_group_stage" rel="noopener">Wikipedia — 2026-27 EHF Champions League group stage</a></td>
-</tr><tr>
-<td><b>Veszprem vs Fuchse Berlin</b><br><span class="small mono">Today 12:45 (ET)</span><br><span class="small">EHF Champions League (men)</span></td>
-<td>Veszprem <b>5/11</b> <span class="small">(45% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Veszprem -160 / Berlin +135 | Handicap: Veszprem -2.5 | Total: O/U 60.5</td>
-<td><b>One Veszprem HC ML</b></td>
-<td><span class="badge b-medium">medium</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> EHF Champions League men 2026-27 group phase (verified via eurohandball.com): GrpA Veszprem 4-0 (+35), Fuchse Berlin 3-1 (+16), Porto 1-3, Partizan 0-4 (-36); GrpB Plock 3-1, Nantes 3-1, Melsungen 2-2, Vardar 0-4; Barca 4-0 (+33, 104 goals conceded only ~104:137 reversed — 137 for), Montpellier 1-3 (-9); SAH Aarhus 1-1-2. Group A 1v2 showdown dated 21 Oct in the official matrix. Berlin&#x27;s 40-32 win over Porto and +16 diff make this closer than the table top suggests.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Veszprem_vs_Fuchse_Berlin/20?event_id=12055" rel="noopener">OLBG event</a><br><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" rel="noopener">EHF Champions League standings (official)</a><br><a href="https://old.eurohandball.com/ec/00-01/cl/men/2026-27/round" rel="noopener">eurohandball.com CL round page (official, legacy)</a><br><a href="https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League_group_stage" rel="noopener">Wikipedia — 2026-27 EHF Champions League group stage</a></td>
-</tr><tr>
-<td><b>Sandefjord vs Runar</b><br><span class="small mono">Today 12:15 (ET)</span><br><span class="small">Norway domestic league</span></td>
-<td>Runar <b>4/5</b> <span class="small">(80% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Runar -140 (model est. from consensus) | Handicap: Runar -2.5 | Total: O/U 57.5</td>
-<td><b>Runar ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Consensus 80% Runar; league standings not verified today.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: domestic fixture per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Sandefjord_vs_Runar/20?event_id=12115" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Dinamo Bucuresti vs Skanderborg Handbold</b><br><span class="small mono">Today 12:45 (ET)</span><br><span class="small">EHF Champions League (men)</span></td>
-<td>Dinamo Bucuresti <b>4/11</b> <span class="small">(36% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Dinamo Bucuresti -170 (est.) | Handicap -3.5 | Total O/U 58.5</td>
-<td><b>Dinamo Bucuresti ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Dinamo Bucuresti verified as CL entrant (pot 3), but Skanderborg does NOT appear among the 36 verified CL group-phase clubs — this is likely EHF European League, not Champions League as OLBG&#x27;s listing implies.</div><div class="small"><span class="flagpill">FLAG</span> Irregularity: OLBG files this under EHF Champions League; opponent not in verified CL field.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Dinamo_Bucuresti_vs_Skanderborg_Handbold/20?event_id=12045" rel="noopener">OLBG event</a><br><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" rel="noopener">EHF Champions League standings (official)</a><br><a href="https://old.eurohandball.com/ec/00-01/cl/men/2026-27/round" rel="noopener">eurohandball.com CL round page (official, legacy)</a><br><a href="https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League_group_stage" rel="noopener">Wikipedia — 2026-27 EHF Champions League group stage</a></td>
-</tr><tr>
-<td><b>Aalborg Handbold vs RK Celje</b><br><span class="small mono">Today 14:45 (ET)</span><br><span class="small">EHF Champions League (men)</span></td>
-<td>Tie <b>4/5</b> <span class="small">(80% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Aalborg -170 / Celje +140 | Handicap: Aalborg -3.5 | Total: O/U 59.5 | 3-way draw fair ~9/2</td>
-<td><b>Aalborg Handbold ML</b></td>
-<td><span class="badge b-medium">medium</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Aalborg (Danish champions, pot 1) host Celje (pot 4) — pedigree gap verified via Wikipedia pots; exact group rows not captured. OLBG consensus is TIE (80%) — historically draws land ~9.8% in EHF CL per OLBG&#x27;s own 5-season stats, so we reject it.</div><div class="small"><span class="flagpill">FLAG</span> Anomaly: community tipped the 3-way DRAW at 80% despite ~10% historical base rate — likely odds-chasing. We pick Aalborg.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Aalborg_Handbold_vs_RK_Celje/20?event_id=12044" rel="noopener">OLBG event</a><br><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" rel="noopener">EHF Champions League standings (official)</a><br><a href="https://old.eurohandball.com/ec/00-01/cl/men/2026-27/round" rel="noopener">eurohandball.com CL round page (official, legacy)</a><br><a href="https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League_group_stage" rel="noopener">Wikipedia — 2026-27 EHF Champions League group stage</a></td>
-</tr><tr>
-<td><b>RK Partizan vs FC Porto</b><br><span class="small mono">Today 12:45 (ET)</span><br><span class="small">EHF Champions League (men)</span></td>
-<td>RK Partizan <b>3/8</b> <span class="small">(38% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Porto -220 / Partizan +180 | Handicap: Porto -4.5 | Total: O/U 55.5 (both sides concede heavily)</td>
-<td><b>FC Porto ML</b></td>
-<td><span class="badge b-high">high</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="pred"><b>Prediction:</b> Partizan&#x27;s group campaign has been a rout in reverse: four losses, a minus-36 goal difference, 151 conceded — and Porto already put 32 past them while conceding 28 in the reverse fixture. The Belgrade crowd gives Partizan lift, but a backline leaking nearly 38 a night cannot hold a Porto side fighting to keep its EHF European League transfer berth alive. Porto moneyline is the play; -4.5 goals prices the demonstrated head-to-head gap almost exactly.</div><div class="small"><b>Basis:</b> EHF Champions League men 2026-27 group phase (verified via eurohandball.com): GrpA Veszprem 4-0 (+35), Fuchse Berlin 3-1 (+16), Porto 1-3, Partizan 0-4 (-36); GrpB Plock 3-1, Nantes 3-1, Melsungen 2-2, Vardar 0-4; Barca 4-0 (+33, 104 goals conceded only ~104:137 reversed — 137 for), Montpellier 1-3 (-9); SAH Aarhus 1-1-2. Porto (1-3) already beat Partizan 32-28 this group phase; Partizan 0-4 with a -36 differential — the competition&#x27;s worst.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/RK_Partizan_vs_FC_Porto/20?event_id=12052" rel="noopener">OLBG event</a><br><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" rel="noopener">EHF Champions League standings (official)</a><br><a href="https://old.eurohandball.com/ec/00-01/cl/men/2026-27/round" rel="noopener">eurohandball.com CL round page (official, legacy)</a><br><a href="https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League_group_stage" rel="noopener">Wikipedia — 2026-27 EHF Champions League group stage</a></td>
-</tr><tr>
-<td><b>HC Kriens Luzern vs KS Kielce</b><br><span class="small mono">Today 14:45 (ET)</span><br><span class="small">EHF Champions League (men)</span></td>
-<td>Tie <b>3/6</b> <span class="small">(50% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Kielce -200 / Kriens +165 | Handicap: Kielce -4.5 | Total: O/U 59.5</td>
-<td><b>Industria Kielce ML</b></td>
-<td><span class="badge b-medium">medium</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Kielce (Polish champions, pot 2) v Kriens-Luzern (Swiss, pot 4) — pots verified. OLBG consensus TIE (50%) rejected on the same base-rate logic.</div><div class="small"><span class="flagpill">FLAG</span> Anomaly: community tipped DRAW (50%) vs ~10% historical rate.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/HC_Kriens_Luzern_vs_KS_Kielce/20?event_id=12047" rel="noopener">OLBG event</a><br><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" rel="noopener">EHF Champions League standings (official)</a><br><a href="https://old.eurohandball.com/ec/00-01/cl/men/2026-27/round" rel="noopener">eurohandball.com CL round page (official, legacy)</a><br><a href="https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League_group_stage" rel="noopener">Wikipedia — 2026-27 EHF Champions League group stage</a></td>
-</tr><tr>
-<td><b>Kolstad vs SC Magdeburg</b><br><span class="small mono">Tomorrow (22 Oct) 14:45 (ET)</span><br><span class="small">EHF Champions League (men)</span></td>
-<td>Tie <b>3/6</b> <span class="small">(50% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Magdeburg -155 / Kolstad +130 | Handicap: Magdeburg -2.5 | Total: O/U 60.5</td>
-<td><b>SC Magdeburg ML</b></td>
-<td><span class="badge b-medium">medium</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Magdeburg (German champions, pot 1) at Kolstad (Norwegian champions, pot 3) — pots verified; Kolstad&#x27;s home fortress keeps the line tight. Consensus TIE (50%) rejected.</div><div class="small"><span class="flagpill">FLAG</span> Anomaly: community tipped DRAW (50%) vs ~10% historical rate.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Kolstad_vs_SC_Magdeburg/20?event_id=12048" rel="noopener">OLBG event</a><br><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" rel="noopener">EHF Champions League standings (official)</a><br><a href="https://old.eurohandball.com/ec/00-01/cl/men/2026-27/round" rel="noopener">eurohandball.com CL round page (official, legacy)</a><br><a href="https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League_group_stage" rel="noopener">Wikipedia — 2026-27 EHF Champions League group stage</a></td>
-</tr><tr>
-<td><b>Sporting CP vs IFK Kristianstad</b><br><span class="small mono">Tomorrow (22 Oct) 14:45 (ET)</span><br><span class="small">EHF Champions League (men)</span></td>
-<td>Tie <b>3/7</b> <span class="small">(43% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Sporting -185 / Kristianstad +150 | Handicap: Sporting -3.5 | Total: O/U 57.5</td>
-<td><b>Sporting CP ML</b></td>
-<td><span class="badge b-medium">medium</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Sporting (Portuguese champions, pot 1) host Swedish champions (pot 4) — pots verified. Consensus TIE (43%) rejected.</div><div class="small"><span class="flagpill">FLAG</span> Anomaly: community tipped DRAW (43%) vs ~10% historical rate.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Sporting_CP_vs_IFK_Kristianstad/20?event_id=12054" rel="noopener">OLBG event</a><br><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" rel="noopener">EHF Champions League standings (official)</a><br><a href="https://old.eurohandball.com/ec/00-01/cl/men/2026-27/round" rel="noopener">eurohandball.com CL round page (official, legacy)</a><br><a href="https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League_group_stage" rel="noopener">Wikipedia — 2026-27 EHF Champions League group stage</a></td>
-</tr><tr>
-<td><b>IF Hallby HK vs IK Savehof</b><br><span class="small mono">Today 13:00 (ET)</span><br><span class="small">Sweden domestic league</span></td>
-<td>IK Savehof <b>2/3</b> <span class="small">(67% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Savehof -150 (est.) | Handicap -2.5 | Total O/U 56.5</td>
-<td><b>IK Savehof ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Consensus 67%; unverified.</div><div class="small"><span class="flagpill">FLAG</span> Unverified per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/IF_Hallby_HK_vs_IK_Savehof/20?event_id=12114" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Hammarby IF HF vs Alingsas HK</b><br><span class="small mono">Today 13:00 (ET)</span><br><span class="small">Sweden domestic league</span></td>
-<td>Hammarby IF HF <b>2/3</b> <span class="small">(67% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Hammarby -130 (est.) | Handicap -1.5 | Total O/U 57.5</td>
-<td><b>Hammarby IF HF ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Consensus 67%; unverified.</div><div class="small"><span class="flagpill">FLAG</span> Unverified per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Hammarby_IF_HF_vs_Alingsas_HK/20?event_id=12112" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Mors Thy Handbold vs Bjerringbro Silkeborg</b><br><span class="small mono">Today 14:00 (ET)</span><br><span class="small">Denmark domestic league</span></td>
-<td>Mors Thy Handbold +3.50 <b>2/2</b> <span class="small">(100% of tips, top mkt: Match Handicap)</span></td>
-<td class="small">ML: Bjerringbro-Silkeborg -150 (est.) | Handicap: Mors-Thy +3.5 (consensus line)</td>
-<td><b>Bjerringbro-Silkeborg ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Consensus took Mors-Thy +3.5 (100%) implying a close BSV win; our ML lean follows. Unverified standings.</div><div class="small"><span class="flagpill">FLAG</span> Unverified per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Mors_Thy_Handbold_vs_Bjerringbro_Silkeborg/20?event_id=12072" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>MT Melsungen vs Wisla Plock</b><br><span class="small mono">Tomorrow (22 Oct) 12:45 (ET)</span><br><span class="small">EHF Champions League (men)</span></td>
-<td>MT Melsungen <b>2/4</b> <span class="small">(50% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Melsungen -125 / Plock +105 | Handicap: Melsungen -1.5 | Total: O/U 57.5</td>
-<td><b>MT Melsungen ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> EHF Champions League men 2026-27 group phase (verified via eurohandball.com): GrpA Veszprem 4-0 (+35), Fuchse Berlin 3-1 (+16), Porto 1-3, Partizan 0-4 (-36); GrpB Plock 3-1, Nantes 3-1, Melsungen 2-2, Vardar 0-4; Barca 4-0 (+33, 104 goals conceded only ~104:137 reversed — 137 for), Montpellier 1-3 (-9); SAH Aarhus 1-1-2. Standings favour Plock (6 pts v 4), but Melsungen are home in a 3-way-consensus split (OLBG 50% Melsungen). Coin flip — low.</div><div class="small"><span class="flagpill">FLAG</span> Pick mildly against verified standings — home edge only; low confidence.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/MT_Melsungen_vs_Wisla_Plock/20?event_id=12049" rel="noopener">OLBG event</a><br><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" rel="noopener">EHF Champions League standings (official)</a><br><a href="https://old.eurohandball.com/ec/00-01/cl/men/2026-27/round" rel="noopener">eurohandball.com CL round page (official, legacy)</a><br><a href="https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League_group_stage" rel="noopener">Wikipedia — 2026-27 EHF Champions League group stage</a></td>
-</tr><tr>
-<td><b>Pick Szeged vs GOG</b><br><span class="small mono">Tomorrow (22 Oct) 12:45 (ET)</span><br><span class="small">EHF Champions League (men)</span></td>
-<td>GOG <b>2/4</b> <span class="small">(50% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Szeged -150 / GOG +125 | Handicap: Szeged -2.5 | Total: O/U 59.5</td>
-<td><b>Pick Szeged ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Szeged (Hungarian powerhouse, pot 2) v GOG (Danish, pot 3) — pots verified; OLBG consensus backs GOG (50%). Genuinely close; low confidence on home side.</div><div class="small"><span class="flagpill">FLAG</span> Divergence from consensus (GOG 50%).</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Pick_Szeged_vs_GOG/20?event_id=12051" rel="noopener">OLBG event</a><br><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" rel="noopener">EHF Champions League standings (official)</a><br><a href="https://old.eurohandball.com/ec/00-01/cl/men/2026-27/round" rel="noopener">eurohandball.com CL round page (official, legacy)</a><br><a href="https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League_group_stage" rel="noopener">Wikipedia — 2026-27 EHF Champions League group stage</a></td>
-</tr><tr>
-<td><b>FC Barcelona vs Montpellier</b><br><span class="small mono">Tomorrow (22 Oct) 14:45 (ET)</span><br><span class="small">EHF Champions League (men)</span></td>
-<td>Montpellier <b>2/6</b> <span class="small">(33% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Barca -600 / Montpellier +400 | Handicap: Barca -7.5 goals (-105) | Total: O/U 62.5</td>
-<td><b>FC Barcelona ML</b></td>
-<td><span class="badge b-high">high</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="pred"><b>Prediction:</b> Barcelona have opened their Champions League campaign 4-0 with a +33 goal difference per the EHF&#x27;s own standings, scoring 137 in four matches while Montpellier sit 1-3 and nine goals underwater. The Palau Blaugrana is the hardest building in European handball, and Montpellier&#x27;s away form (they&#x27;ve slipped to third in the French league) offers no lever here. Lay the OLBG community&#x27;s contrarian Montpellier lean — it is a price chase, not a form read — and take Barca to win, with -7.5 the honest expression of the gap.</div><div class="small"><b>Basis:</b> EHF Champions League men 2026-27 group phase (verified via eurohandball.com): GrpA Veszprem 4-0 (+35), Fuchse Berlin 3-1 (+16), Porto 1-3, Partizan 0-4 (-36); GrpB Plock 3-1, Nantes 3-1, Melsungen 2-2, Vardar 0-4; Barca 4-0 (+33, 104 goals conceded only ~104:137 reversed — 137 for), Montpellier 1-3 (-9); SAH Aarhus 1-1-2. Barca are 4-0 with the competition&#x27;s best attack; Montpellier 1-3 (-9). Barca at home in the Palau.</div><div class="small"><span class="flagpill">FLAG</span> Divergence: OLBG top tip is Montpellier (33%) — we reject it on verified standings.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/FC_Barcelona_vs_Montpellier/20?event_id=12046" rel="noopener">OLBG event</a><br><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" rel="noopener">EHF Champions League standings (official)</a><br><a href="https://old.eurohandball.com/ec/00-01/cl/men/2026-27/round" rel="noopener">eurohandball.com CL round page (official, legacy)</a><br><a href="https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League_group_stage" rel="noopener">Wikipedia — 2026-27 EHF Champions League group stage</a></td>
-</tr><tr>
-<td><b>Estonia W vs Kosovo W</b><br><span class="small mono">23 Oct 14:00 (ET)</span><br><span class="small">Women&#x27;s international</span></td>
-<td>Kosovo (W) <b>2/2</b> <span class="small">(100% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Kosovo W -160 (est.) | Handicap -3.5 | Total O/U 54.5</td>
-<td><b>Kosovo W ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Consensus 100% Kosovo; fixture not verified.</div><div class="small"><span class="flagpill">FLAG</span> Unverified per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Estonia_W_vs_Kosovo_W/20?event_id=12110" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Skive FH vs Aalborg Handbold</b><br><span class="small mono">24 Oct 09:00 (ET)</span><br><span class="small">Denmark domestic league</span></td>
-<td>Aalborg Handbold <b>2/2</b> <span class="small">(100% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Aalborg -260 (est.) | Handicap: Aalborg -5.5 | Total: O/U 58.5</td>
-<td><b>Aalborg Handbold ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Aalborg&#x27;s elite status verified (Danish champions, CL pot 1) but this domestic fixture and Skive&#x27;s record are unverified.</div><div class="small"><span class="flagpill">FLAG</span> Domestic fixture unverified; pedigree-only basis.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Skive_FH_vs_Aalborg_Handbold/20?event_id=12076" rel="noopener">OLBG event</a><br><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" rel="noopener">EHF Champions League standings (official)</a></td>
-</tr><tr>
-<td><b>Belgium W vs Lithuania W</b><br><span class="small mono">Today 11:15 (ET)</span><br><span class="small">Women&#x27;s international</span></td>
-<td>Belgium (W) <b>1/2</b> <span class="small">(50% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Belgium W -220 (est.) | Handicap -6.5 | Total O/U 53.5</td>
-<td><b>Belgium W ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Consensus 50%; likely EHF EURO qualifier block — fixture not verified.</div><div class="small"><span class="flagpill">FLAG</span> Unverified per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Belgium_W_vs_Lithuania_W/20?event_id=12108" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>HK Malmo vs Lugi HF</b><br><span class="small mono">Today 13:00 (ET)</span><br><span class="small">Sweden domestic league</span></td>
-<td>HK Malmo <b>1/2</b> <span class="small">(50% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Malmo -120 (est.) | Pick&#x27;em handicap | Total O/U 56.5</td>
-<td><b>HK Malmo ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Consensus 50%; unverified.</div><div class="small"><span class="flagpill">FLAG</span> Unverified per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/HK_Malmo_vs_Lugi_HF/20?event_id=12113" rel="noopener">OLBG event</a></td>
-</tr></table>
-</div><footer><div class="wrap">Built by session 2360a617 · Data snapshot 2026-10-21 05:25–06:05 UTC · For research/entertainment only — not betting advice. Unverified rows are flagged, never inferred.</div></footer></body></html>
+<title>Handball · OLBG Reverse-Engineering</title>
+<meta name="description" content="Independent reverse-engineering of OLBG: verified fixtures across 17 in-scope sports, originated betting lines, confidence tiers and written predictions.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="hdr-inner">
+    <div class="brand"><span class="dot"></span> OLBG <span class="sub">reverse-engineered</span></div>
+    <nav class="main"><a href="../index.html">Dashboard</a><a href="../picks.html">Picks</a><a href="../predictions.html">Predictions</a><a href="../sports.html" aria-current="page">Sports</a><a href="../methodology.html">Methodology</a><a href="../reverse-engineering.html">OLBG analysis</a><a href="../sources.html">Sources</a><a href="../flagged.html">Flagged</a><a href="../docs/index.html">OLBG board (164)</a></nav>
+  </div>
+</header>
+<main>
+
+<div class="crumb">Dashboard / Sports / Handball</div>
+<h1>Handball <span class="badge cross" style="vertical-align:8px">Not investigated</span></h1>
+<p class="lede">No official handball fixture source was retrieved in this build. Flagged.</p>
+<p class="sub">OLBG sport ID <b>20</b> ·
+OLBG page <a href="https://www.olbg.com/betting-tips/Handball/20"
+target="_blank" rel="noopener">/betting-tips/Handball/20</a></p>
+
+<div class="note warn">No priced row is published for this sport in the current window. The reason is stated above rather than filled with an invented schedule.</div>
+
+
+</main>
+<footer class="foot">
+  <p><b>OLBG Reverse-Engineering</b> — Originated lines · verified fixtures · confidence tiers. Window covered: 21–27 October 2026.
+  Every fixture links to the governing body it was read from. Model prices are our own
+  estimates, not market prices. Nothing here is betting advice.</p>
+  <p><a href="../methodology.html">Methodology</a> · <a href="../sources.html">Source register</a> ·
+  <a href="../flagged.html">Flagged for review</a> · <a href="../data/fixtures.json">Raw JSON</a></p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

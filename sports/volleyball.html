@@ -1,182 +1,39 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Volleyball — Lines &amp; Picks (OLBG reverse-engineered)</title>
-<style>
-:root{--bg:#0f1420;--card:#1a2233;--ink:#e8ecf4;--mut:#9aa7bd;--acc:#4da3ff;--hi:#2ecc8f;--md:#f5b942;--lo:#8b98ad;--warn:#ff6b6b;--line:#2a3550}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
-a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:1280px;margin:0 auto;padding:20px}
-header{border-bottom:1px solid var(--line);padding:18px 0;margin-bottom:22px}
-h1{font-size:1.5rem;margin:0 0 4px}h2{font-size:1.2rem;margin:26px 0 10px;color:var(--acc)}
-.sub{color:var(--mut);font-size:.92rem}
-nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:.95rem}
-nav.top a{font-weight:600}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:16px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:block;color:var(--ink)}
-.card:hover{border-color:var(--acc);text-decoration:none}
-.card .n{font-size:1.6rem;font-weight:700;color:var(--acc)}
-.card .t{font-weight:600;margin-bottom:2px}.card .d{color:var(--mut);font-size:.82rem}
-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:.88rem}
-th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
-th{background:#141b2b;color:var(--mut);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
-tr:last-child td{border-bottom:none}
-.badge{display:inline-block;padding:1px 9px;border-radius:20px;font-size:.75rem;font-weight:700}
-.b-high{background:rgba(46,204,143,.15);color:var(--hi);border:1px solid var(--hi)}
-.b-medium{background:rgba(245,185,66,.13);color:var(--md);border:1px solid var(--md)}
-.b-low{background:rgba(139,152,173,.15);color:var(--lo);border:1px solid var(--lo)}
-.flagpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(255,107,107,.12);color:var(--warn);border:1px solid var(--warn)}
-.okpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(46,204,143,.12);color:var(--hi);border:1px solid var(--hi)}
-details{margin:2px 0}summary{cursor:pointer;color:var(--acc);font-size:.82rem}
-.pred{background:#10182a;border-left:3px solid var(--hi);padding:8px 10px;border-radius:6px;margin:6px 0;font-size:.86rem}
-.note{background:#141b2b;border:1px solid var(--line);border-left:3px solid var(--md);padding:10px 14px;border-radius:8px;margin:14px 0;color:var(--ink);font-size:.9rem}
-.small{color:var(--mut);font-size:.8rem}
-.mono{font-variant-numeric:tabular-nums}
-footer{margin-top:36px;border-top:1px solid var(--line);padding:16px 0;color:var(--mut);font-size:.8rem}
-.srcs{font-size:.78rem;line-height:1.7}
-</style></head><body>
-<header><div class="wrap">
-<h1>OLBG Reverse-Engineered Lines &amp; Picks</h1>
-<div class="sub">152 events across 17 covered sports — collected from OLBG.com on 21 Oct 2026, re-priced with our own originated lines, verified against official sources. Times are US Eastern (ET) as displayed on OLBG.</div>
-<nav class="top"><a href="../" style="color:var(--ink)">Home</a> <a href="../flagged.html">Flagged for Review</a> <a href="../methodology.html">Methodology & Sources</a> <a href="https://github.com/buffedlizard55-lab/OLBG1" rel="noopener">GitHub repo</a></nav>
-</div></header>
-<div class="wrap">
-<h1>Volleyball <span class="small">(15 events)</span></h1>
-<div class="sub">Poland PlusLiga, German Bundesliga, Italy Serie A1 (W), Nordic leagues — OLBG page: <a href="https://www.olbg.com/betting-tips/Volleyball/21" rel="noopener">https://www.olbg.com/betting-tips/Volleyball/21</a> · fetched 2026-10-21T06:00Z · displayed times ET</div>
-<div class="note small"><b>Timezone note:</b> times as displayed by OLBG (assumed US Eastern)</div>
-<table><tr><th>Match / Event</th><th>OLBG community tip</th><th>Our originated line</th><th>Our pick</th><th>Confidence</th><th>Verification</th><th>Analysis</th><th>Sources</th></tr><tr>
-<td><b>Puijo W vs Orpo W</b><br><span class="small mono">Today 15:00 (ET)</span><br><span class="small">Finland women&#x27;s league</span></td>
-<td>Puijo W <b>3/3</b> <span class="small">(100% of tips, top mkt: Win Match)</span></td>
-<td class="small">ML: consensus side (est. -150 to -350) | Set handicap -1.5 | Total sets: O/U 3.5 (OLBG 5-season avg 3.61-3.78 sets)</td>
-<td><b>Puijo W ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> League standings not verified today. 100% consensus Puijo. OLBG&#x27;s own model stats (favourites win 77.9-84.4% in CL/EC-level volleyball) support chalk, but these are domestic fixtures.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Finland women&#x27;s league fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Puijo_W_vs_Orpo_W/21?event_id=36981" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>LUK Lublin vs Trefl Gdansk</b><br><span class="small mono">Today 16:30 (ET)</span><br><span class="small">Poland PlusLiga</span></td>
-<td>LUK Lublin <b>3/3</b> <span class="small">(100% of tips, top mkt: Win Match)</span></td>
-<td class="small">ML: consensus side (est. -150 to -350) | Set handicap -1.5 | Total sets: O/U 3.5 (OLBG 5-season avg 3.61-3.78 sets)</td>
-<td><b>LUK Lublin ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> League standings not verified today. 100% consensus Lublin. OLBG&#x27;s own model stats (favourites win 77.9-84.4% in CL/EC-level volleyball) support chalk, but these are domestic fixtures.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Poland PlusLiga fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/LUK_Lublin_vs_Trefl_Gdansk/21?event_id=36961" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Schweriner W vs Erfurt W</b><br><span class="small mono">Today 17:00 (ET)</span><br><span class="small">Germany women&#x27;s Bundesliga</span></td>
-<td>Schweriner W <b>3/3</b> <span class="small">(100% of tips, top mkt: Win Match)</span></td>
-<td class="small">ML: consensus side (est. -150 to -350) | Set handicap -1.5 | Total sets: O/U 3.5 (OLBG 5-season avg 3.61-3.78 sets)</td>
-<td><b>Schweriner W ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> League standings not verified today. 100% consensus Schwerin (historically dominant club — unverified this season). OLBG&#x27;s own model stats (favourites win 77.9-84.4% in CL/EC-level volleyball) support chalk, but these are domestic fixtures.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Germany women&#x27;s Bundesliga fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Schweriner_W_vs_Erfurt_W/21?event_id=36945" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Slepsk Suwalki vs GKS Katowice</b><br><span class="small mono">23 Oct 16:30 (ET)</span><br><span class="small">Poland PlusLiga</span></td>
-<td>Slepsk Suwalki <b>2/2</b> <span class="small">(100% of tips, top mkt: Win Match)</span></td>
-<td class="small">ML: consensus side (est. -150 to -350) | Set handicap -1.5 | Total sets: O/U 3.5 (OLBG 5-season avg 3.61-3.78 sets)</td>
-<td><b>Slepsk Suwalki ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> League standings not verified today. 100% consensus Slepsk. OLBG&#x27;s own model stats (favourites win 77.9-84.4% in CL/EC-level volleyball) support chalk, but these are domestic fixtures.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Poland PlusLiga (23 Oct) fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Slepsk_Suwalki_vs_GKS_Katowice/21?event_id=36963" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>PGE Skra Belchatow vs Projekt Warszawa</b><br><span class="small mono">24 Oct 17:00 (ET)</span><br><span class="small">Poland PlusLiga</span></td>
-<td>Projekt Warszawa <b>2/2</b> <span class="small">(100% of tips, top mkt: Win Match)</span></td>
-<td class="small">ML: consensus side (est. -150 to -350) | Set handicap -1.5 | Total sets: O/U 3.5 (OLBG 5-season avg 3.61-3.78 sets)</td>
-<td><b>Projekt Warszawa ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> League standings not verified today. 100% consensus Projekt. OLBG&#x27;s own model stats (favourites win 77.9-84.4% in CL/EC-level volleyball) support chalk, but these are domestic fixtures.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Poland PlusLiga (24 Oct) fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/PGE_Skra_Belchatow_vs_Projekt_Warszawa/21?event_id=36964" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>CHKS Chelm vs Resovia Rzeszow</b><br><span class="small mono">25 Oct 17:00 (ET)</span><br><span class="small">Poland PlusLiga</span></td>
-<td>Resovia Rzeszow <b>2/2</b> <span class="small">(100% of tips, top mkt: Win Match)</span></td>
-<td class="small">ML: consensus side (est. -150 to -350) | Set handicap -1.5 | Total sets: O/U 3.5 (OLBG 5-season avg 3.61-3.78 sets)</td>
-<td><b>Resovia Rzeszow ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> League standings not verified today. 100% consensus Resovia. OLBG&#x27;s own model stats (favourites win 77.9-84.4% in CL/EC-level volleyball) support chalk, but these are domestic fixtures.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Poland PlusLiga (25 Oct) fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/CHKS_Chelm_vs_Resovia_Rzeszow/21?event_id=36965" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Jelcz Laskowice vs Stal Nysa</b><br><span class="small mono">Today 17:00 (ET)</span><br><span class="small">Poland domestic</span></td>
-<td>Stal Nysa <b>1/1</b> <span class="small">(100% of tips, top mkt: Win Match)</span></td>
-<td class="small">ML: consensus side (est. -150 to -350) | Set handicap -1.5 | Total sets: O/U 3.5 (OLBG 5-season avg 3.61-3.78 sets)</td>
-<td><b>Stal Nysa ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> League standings not verified today. 100% consensus Stal Nysa. OLBG&#x27;s own model stats (favourites win 77.9-84.4% in CL/EC-level volleyball) support chalk, but these are domestic fixtures.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Poland domestic fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Jelcz_Laskowice_vs_Stal_Nysa/21?event_id=36979" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Netzhoppers KW vs Helios Grizzlys Giesen</b><br><span class="small mono">Today 18:00 (ET)</span><br><span class="small">Germany Bundesliga</span></td>
-<td>Helios Grizzlys Giesen <b>1/1</b> <span class="small">(100% of tips, top mkt: Win Match)</span></td>
-<td class="small">ML: consensus side (est. -150 to -350) | Set handicap -1.5 | Total sets: O/U 3.5 (OLBG 5-season avg 3.61-3.78 sets)</td>
-<td><b>Giesen ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> League standings not verified today. 100% consensus Giesen. OLBG&#x27;s own model stats (favourites win 77.9-84.4% in CL/EC-level volleyball) support chalk, but these are domestic fixtures.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Germany Bundesliga fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Netzhoppers_KW_vs_Helios_Grizzlys_Giesen/21?event_id=36984" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>WWK Volleys Munchen vs VfB Friedrichshafen</b><br><span class="small mono">Today 18:30 (ET)</span><br><span class="small">Germany Bundesliga</span></td>
-<td>VfB Friedrichshafen <b>1/1</b> <span class="small">(100% of tips, top mkt: Win Match)</span></td>
-<td class="small">ML: consensus side (est. -150 to -350) | Set handicap -1.5 | Total sets: O/U 3.5 (OLBG 5-season avg 3.61-3.78 sets)</td>
-<td><b>Friedrichshafen ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> League standings not verified today. 100% consensus Friedrichshafen. OLBG&#x27;s own model stats (favourites win 77.9-84.4% in CL/EC-level volleyball) support chalk, but these are domestic fixtures.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Germany Bundesliga fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/WWK_Volleys_Munchen_vs_VfB_Friedrichshafen/21?event_id=36985" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>SSC Karlsruhe vs SVG Luneburg</b><br><span class="small mono">Today 19:00 (ET)</span><br><span class="small">Germany Bundesliga</span></td>
-<td>SVG Luneburg <b>1/1</b> <span class="small">(100% of tips, top mkt: Win Match)</span></td>
-<td class="small">ML: consensus side (est. -150 to -350) | Set handicap -1.5 | Total sets: O/U 3.5 (OLBG 5-season avg 3.61-3.78 sets)</td>
-<td><b>SVG Luneburg ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> League standings not verified today. 100% consensus Luneburg. OLBG&#x27;s own model stats (favourites win 77.9-84.4% in CL/EC-level volleyball) support chalk, but these are domestic fixtures.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Germany Bundesliga fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/SSC_Karlsruhe_vs_SVG_Luneburg/21?event_id=36986" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>VC Sneek W vs VV Utrecht W</b><br><span class="small mono">Today 19:00 (ET)</span><br><span class="small">Netherlands women&#x27;s league</span></td>
-<td>VC Sneek W <b>1/1</b> <span class="small">(100% of tips, top mkt: Win Match)</span></td>
-<td class="small">ML: consensus side (est. -150 to -350) | Set handicap -1.5 | Total sets: O/U 3.5 (OLBG 5-season avg 3.61-3.78 sets)</td>
-<td><b>VC Sneek W ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> League standings not verified today. 100% consensus Sneek. OLBG&#x27;s own model stats (favourites win 77.9-84.4% in CL/EC-level volleyball) support chalk, but these are domestic fixtures.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Netherlands women&#x27;s league fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/VC_Sneek_W_vs_VV_Utrecht_W/21?event_id=36968" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Warta Zawiercie vs Kedzierzyn Kozle</b><br><span class="small mono">Today 19:30 (ET)</span><br><span class="small">Poland PlusLiga</span></td>
-<td>Warta Zawiercie <b>1/1</b> <span class="small">(100% of tips, top mkt: Win Match)</span></td>
-<td class="small">ML: consensus side (est. -150 to -350) | Set handicap -1.5 | Total sets: O/U 3.5 (OLBG 5-season avg 3.61-3.78 sets)</td>
-<td><b>Warta Zawiercie ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> League standings not verified today. 100% consensus Warta in a top-of-table-style clash. OLBG&#x27;s own model stats (favourites win 77.9-84.4% in CL/EC-level volleyball) support chalk, but these are domestic fixtures.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Poland PlusLiga fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Warta_Zawiercie_vs_Kedzierzyn_Kozle/21?event_id=36962" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Vallefoglia W vs Cuneo W</b><br><span class="small mono">Today 19:30 (ET)</span><br><span class="small">Italy women&#x27;s Serie A1</span></td>
-<td>Cuneo W to win 3-0 <b>1/1</b> <span class="small">(100% of tips, top mkt: Set Score)</span></td>
-<td class="small">ML: consensus side (est. -150 to -350) | Set handicap -1.5 | Total sets: O/U 3.5 (OLBG 5-season avg 3.61-3.78 sets)</td>
-<td><b>Cuneo W to win 3-0</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> League standings not verified today. consensus tip is the 3-0 set score (aggressive). OLBG&#x27;s own model stats (favourites win 77.9-84.4% in CL/EC-level volleyball) support chalk, but these are domestic fixtures.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Italy women&#x27;s Serie A1 fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Vallefoglia_W_vs_Cuneo_W/21?event_id=36977" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Bergamo W vs Milano W</b><br><span class="small mono">Today 19:30 (ET)</span><br><span class="small">Italy women&#x27;s Serie A1</span></td>
-<td>Milano W <b>1/1</b> <span class="small">(100% of tips, top mkt: Win Match)</span></td>
-<td class="small">ML: consensus side (est. -150 to -350) | Set handicap -1.5 | Total sets: O/U 3.5 (OLBG 5-season avg 3.61-3.78 sets)</td>
-<td><b>Milano W ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> League standings not verified today. 100% consensus Milano. OLBG&#x27;s own model stats (favourites win 77.9-84.4% in CL/EC-level volleyball) support chalk, but these are domestic fixtures.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Italy women&#x27;s Serie A1 fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Bergamo_W_vs_Milano_W/21?event_id=36974" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Novara W vs Marignano W</b><br><span class="small mono">Today 19:30 (ET)</span><br><span class="small">Italy women&#x27;s Serie A1</span></td>
-<td>Novara W <b>1/1</b> <span class="small">(100% of tips, top mkt: Win Match)</span></td>
-<td class="small">ML: consensus side (est. -150 to -350) | Set handicap -1.5 | Total sets: O/U 3.5 (OLBG 5-season avg 3.61-3.78 sets)</td>
-<td><b>Novara W ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> League standings not verified today. 100% consensus Novara. OLBG&#x27;s own model stats (favourites win 77.9-84.4% in CL/EC-level volleyball) support chalk, but these are domestic fixtures.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: Italy women&#x27;s Serie A1 fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Novara_W_vs_Marignano_W/21?event_id=36976" rel="noopener">OLBG event</a></td>
-</tr></table>
-</div><footer><div class="wrap">Built by session 2360a617 · Data snapshot 2026-10-21 05:25–06:05 UTC · For research/entertainment only — not betting advice. Unverified rows are flagged, never inferred.</div></footer></body></html>
+<title>Volleyball · OLBG Reverse-Engineering</title>
+<meta name="description" content="Independent reverse-engineering of OLBG: verified fixtures across 17 in-scope sports, originated betting lines, confidence tiers and written predictions.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="hdr-inner">
+    <div class="brand"><span class="dot"></span> OLBG <span class="sub">reverse-engineered</span></div>
+    <nav class="main"><a href="../index.html">Dashboard</a><a href="../picks.html">Picks</a><a href="../predictions.html">Predictions</a><a href="../sports.html" aria-current="page">Sports</a><a href="../methodology.html">Methodology</a><a href="../reverse-engineering.html">OLBG analysis</a><a href="../sources.html">Sources</a><a href="../flagged.html">Flagged</a><a href="../docs/index.html">OLBG board (164)</a></nav>
+  </div>
+</header>
+<main>
+
+<div class="crumb">Dashboard / Sports / Volleyball</div>
+<h1>Volleyball <span class="badge cross" style="vertical-align:8px">Not investigated</span></h1>
+<p class="lede">No official volleyball fixture source was retrieved in this build. Flagged.</p>
+<p class="sub">OLBG sport ID <b>21</b> ·
+OLBG page <a href="https://www.olbg.com/betting-tips/Volleyball/21"
+target="_blank" rel="noopener">/betting-tips/Volleyball/21</a></p>
+
+<div class="note warn">No priced row is published for this sport in the current window. The reason is stated above rather than filled with an invented schedule.</div>
+
+
+</main>
+<footer class="foot">
+  <p><b>OLBG Reverse-Engineering</b> — Originated lines · verified fixtures · confidence tiers. Window covered: 21–27 October 2026.
+  Every fixture links to the governing body it was read from. Model prices are our own
+  estimates, not market prices. Nothing here is betting advice.</p>
+  <p><a href="../methodology.html">Methodology</a> · <a href="../sources.html">Source register</a> ·
+  <a href="../flagged.html">Flagged for review</a> · <a href="../data/fixtures.json">Raw JSON</a></p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

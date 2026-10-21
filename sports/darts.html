@@ -1,191 +1,39 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Darts — Lines &amp; Picks (OLBG reverse-engineered)</title>
-<style>
-:root{--bg:#0f1420;--card:#1a2233;--ink:#e8ecf4;--mut:#9aa7bd;--acc:#4da3ff;--hi:#2ecc8f;--md:#f5b942;--lo:#8b98ad;--warn:#ff6b6b;--line:#2a3550}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
-a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:1280px;margin:0 auto;padding:20px}
-header{border-bottom:1px solid var(--line);padding:18px 0;margin-bottom:22px}
-h1{font-size:1.5rem;margin:0 0 4px}h2{font-size:1.2rem;margin:26px 0 10px;color:var(--acc)}
-.sub{color:var(--mut);font-size:.92rem}
-nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:.95rem}
-nav.top a{font-weight:600}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:16px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:block;color:var(--ink)}
-.card:hover{border-color:var(--acc);text-decoration:none}
-.card .n{font-size:1.6rem;font-weight:700;color:var(--acc)}
-.card .t{font-weight:600;margin-bottom:2px}.card .d{color:var(--mut);font-size:.82rem}
-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:.88rem}
-th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
-th{background:#141b2b;color:var(--mut);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
-tr:last-child td{border-bottom:none}
-.badge{display:inline-block;padding:1px 9px;border-radius:20px;font-size:.75rem;font-weight:700}
-.b-high{background:rgba(46,204,143,.15);color:var(--hi);border:1px solid var(--hi)}
-.b-medium{background:rgba(245,185,66,.13);color:var(--md);border:1px solid var(--md)}
-.b-low{background:rgba(139,152,173,.15);color:var(--lo);border:1px solid var(--lo)}
-.flagpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(255,107,107,.12);color:var(--warn);border:1px solid var(--warn)}
-.okpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(46,204,143,.12);color:var(--hi);border:1px solid var(--hi)}
-details{margin:2px 0}summary{cursor:pointer;color:var(--acc);font-size:.82rem}
-.pred{background:#10182a;border-left:3px solid var(--hi);padding:8px 10px;border-radius:6px;margin:6px 0;font-size:.86rem}
-.note{background:#141b2b;border:1px solid var(--line);border-left:3px solid var(--md);padding:10px 14px;border-radius:8px;margin:14px 0;color:var(--ink);font-size:.9rem}
-.small{color:var(--mut);font-size:.8rem}
-.mono{font-variant-numeric:tabular-nums}
-footer{margin-top:36px;border-top:1px solid var(--line);padding:16px 0;color:var(--mut);font-size:.8rem}
-.srcs{font-size:.78rem;line-height:1.7}
-</style></head><body>
-<header><div class="wrap">
-<h1>OLBG Reverse-Engineered Lines &amp; Picks</h1>
-<div class="sub">152 events across 17 covered sports — collected from OLBG.com on 21 Oct 2026, re-priced with our own originated lines, verified against official sources. Times are US Eastern (ET) as displayed on OLBG.</div>
-<nav class="top"><a href="../" style="color:var(--ink)">Home</a> <a href="../flagged.html">Flagged for Review</a> <a href="../methodology.html">Methodology & Sources</a> <a href="https://github.com/buffedlizard55-lab/OLBG1" rel="noopener">GitHub repo</a></nav>
-</div></header>
-<div class="wrap">
-<h1>Darts <span class="small">(16 events)</span></h1>
-<div class="sub">PDC European Championship, Dortmund — Round 1 (best of 11), Oct 22-23 — OLBG page: <a href="https://www.olbg.com/betting-tips/Darts/15" rel="noopener">https://www.olbg.com/betting-tips/Darts/15</a> · fetched 2026-10-21T05:40Z · displayed times ET</div>
-<div class="note small"><b>Timezone note:</b> times as displayed by OLBG (assumed US Eastern)</div>
-<table><tr><th>Match / Event</th><th>OLBG community tip</th><th>Our originated line</th><th>Our pick</th><th>Confidence</th><th>Verification</th><th>Analysis</th><th>Sources</th></tr><tr>
-<td><b>Luke Woodhouse vs Dirk van Duijvenbode</b><br><span class="small mono">Tomorrow (22 Oct) 13:15 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>Dirk van Duijvenbode <b>7/8</b> <span class="small">(88% of tips, top mkt: Win Match 2-way)</span></td>
-<td class="small">ML: van Duijvenbode -190 / Woodhouse +155 | Handicap: DVD -2.5 legs (+110) | Total legs: O/U 9.5</td>
-<td><b>Dirk van Duijvenbode ML</b></td>
-<td><span class="badge b-medium">medium</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> 2026 PDC European Championship, Westfalenhallen Dortmund, Oct 22-25, £750k, top-32 from European Tour Order of Merit; R1 best-of-11 across Thu-Fri sessions. Verified draw seeds: Humphries(1), van Veen(2, defending champion), Ratajski(3), Aspinall(6), Rock(10), Littler(11), Doets(14), van Gerwen(19), O&#x27;Connor(22), Dobey(23), Reyes(27), Chisnall(30). Consensus 88% van Duijvenbode; individual R1 form unverified.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Luke_Woodhouse_vs_Dirk_van_Duijvenbode/15?event_id=32324" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a></td>
-</tr><tr>
-<td><b>Niels Zonneveld vs Cameron Menzies</b><br><span class="small mono">Tomorrow (22 Oct) 14:15 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>Niels Zonneveld <b>6/7</b> <span class="small">(86% of tips, top mkt: Win Match 2-way)</span></td>
-<td class="small">ML: Zonneveld -165 / Menzies +140 | Handicap: Zonneveld -1.5 legs | Total legs: O/U 9.5 over lean</td>
-<td><b>Niels Zonneveld ML</b></td>
-<td><span class="badge b-medium">medium</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified: Zonneveld claimed his first senior PDC ranking title at the European Tour season finale in Maastricht (live-darts.com coverage) — form player. Consensus 86%.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Niels_Zonneveld_vs_Cameron_Menzies/15?event_id=32334" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a><br><a href="https://www.live-darts.com" rel="noopener">live-darts.com — European Tour finale</a></td>
-</tr><tr>
-<td><b>Gerwyn Price vs Rob Cross</b><br><span class="small mono">Tomorrow (22 Oct) 14:45 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>Gerwyn Price <b>5/7</b> <span class="small">(71% of tips, top mkt: Win Match 2-way)</span></td>
-<td class="small">ML: Price -160 / Cross +135 | Handicap: Price -1.5 legs | Total legs: O/U 9.5</td>
-<td><b>Gerwyn Price ML</b></td>
-<td><span class="badge b-medium">medium</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified: Price reached two 2026 major finals — World Matchplay (lost 18-9 to Littler) and World Grand Prix (lost 6-4 to Humphries). Deep-run consistency backs him over Cross, whose 2026 form we could not verify.</div><div class="small"><span class="flagpill">FLAG</span> Rob Cross form unverified — pick rests on Price&#x27;s verified major finals.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Gerwyn_Price_vs_Rob_Cross/15?event_id=32325" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a></td>
-</tr><tr>
-<td><b>James Wade vs Damon Heta</b><br><span class="small mono">Tomorrow (22 Oct) 15:15 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>James Wade <b>5/8</b> <span class="small">(63% of tips, top mkt: Win Match 2-way)</span></td>
-<td class="small">ML: Wade -125 / Heta +105 | Handicap: pick&#x27;em | Total legs: O/U 9.5</td>
-<td><b>James Wade ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Neither player&#x27;s current form verified today. Consensus 63% Wade; treat as near coin flip.</div><div class="small"><span class="flagpill">FLAG</span> Form unverified for both players.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/James_Wade_vs_Damon_Heta/15?event_id=32322" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a></td>
-</tr><tr>
-<td><b>Luke Humphries vs Ryan Searle</b><br><span class="small mono">Tomorrow (22 Oct) 15:45 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>Luke Humphries <b>5/7</b> <span class="small">(71% of tips, top mkt: Win Match 2-way)</span></td>
-<td class="small">ML: Humphries -210 / Searle +170 | Handicap: Humphries -2.5 legs (-105) | Total legs: O/U 9.5 over lean</td>
-<td><b>Luke Humphries ML</b></td>
-<td><span class="badge b-high">high</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="pred"><b>Prediction:</b> Luke Humphries arrives in Dortmund as the reigning World Grand Prix champion, having outlasted Gerwyn Price 6-4 in the Leicester final earlier this month — a title that underlines his standing as world number one material. Ryan Searle is a dangerous floater on his day, but best-of-eleven first rounds reward the sharper starter, and Humphries&#x27; autumn form has been the tour&#x27;s most consistent. Back Humphries on the moneyline; the -2.5 leg handicap at around evens is the more aggressive way to price the same view.</div><div class="small"><b>Basis:</b> Verified: Luke Humphries won the 2026 World Grand Prix (Sept 28-Oct 4, Leicester), beating Gerwyn Price 6-4 in the final — his second major of the cycle. Searle&#x27;s recent results unverified. Consensus 71% Humphries.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Luke_Humphries_vs_Ryan_Searle/15?event_id=32337" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a></td>
-</tr><tr>
-<td><b>Danny Noppert vs Stephen Bunting</b><br><span class="small mono">Tomorrow (22 Oct) 13:45 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>Over 9.50 <b>4/4</b> <span class="small">(100% of tips, top mkt: Total Legs)</span></td>
-<td class="small">Total legs: O/U 9.5 (Over -110) | ML lean: Bunting -130 (low conf.)</td>
-<td><b>Over 9.5 total legs</b></td>
-<td><span class="badge b-medium">medium</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Best-of-11 R1 format verified; two methodical scorers in Noppert and Bunting make a 10-leg+ contest the modal outcome. OLBG consensus 100% Over 9.5.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Danny_Noppert_vs_Stephen_Bunting/15?event_id=32330" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a></td>
-</tr><tr>
-<td><b>Gian van Veen vs Andrew Gilding</b><br><span class="small mono">Tomorrow (22 Oct) 16:15 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>Gian van Veen <b>4/6</b> <span class="small">(67% of tips, top mkt: Win Match 2-way)</span></td>
-<td class="small">ML: van Veen -240 / Gilding +195 | Handicap: van Veen -3.5 legs (+105) | Total legs: O/U 8.5 under lean</td>
-<td><b>Gian van Veen ML</b></td>
-<td><span class="badge b-medium">medium</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified: van Veen is the DEFENDING European Champion — won his first major title 12 months ago (sportingnews/Sky coverage of the 2026 draw). Consensus 67%.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Gian_van_Veen_vs_Andrew_Gilding/15?event_id=32323" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a></td>
-</tr><tr>
-<td><b>Ross Smith vs Karel Sedlacek</b><br><span class="small mono">Tomorrow (22 Oct) 16:45 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>Ross Smith <b>4/8</b> <span class="small">(50% of tips, top mkt: Win Match 2-way)</span></td>
-<td class="small">ML: R. Smith -155 / Sedlacek +130 | Handicap: R. Smith -1.5 legs | Total legs: O/U 9.5</td>
-<td><b>Ross Smith ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Consensus only 50% on R. Smith — market itself undecided. No verified form edge either way.</div><div class="small"><span class="flagpill">FLAG</span> Genuinely close per consensus (50%) — low confidence.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Ross_Smith_vs_Karel_Sedlacek/15?event_id=32329" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a></td>
-</tr><tr>
-<td><b>Jonny Clayton vs Niko Springer</b><br><span class="small mono">23 Oct 14:45 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>Jonny Clayton <b>4/6</b> <span class="small">(67% of tips, top mkt: Win Match 2-way)</span></td>
-<td class="small">ML: Clayton -165 / Springer +140 | Handicap: Clayton -1.5 legs | Total legs: O/U 9.5</td>
-<td><b>Jonny Clayton ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Consensus 67% Clayton; neither player&#x27;s 2026 form independently verified today.</div><div class="small"><span class="flagpill">FLAG</span> Form unverified for both players.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Jonny_Clayton_vs_Niko_Springer/15?event_id=32335" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a></td>
-</tr><tr>
-<td><b>Ryan Joyce vs Jermaine Wattimena</b><br><span class="small mono">23 Oct 13:15 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>Ryan Joyce <b>2/3</b> <span class="small">(67% of tips, top mkt: Win Match 2-way)</span></td>
-<td class="small">ML: Wattimena -120 / Joyce +100 | Handicap: pick&#x27;em | Total legs: O/U 9.5</td>
-<td><b>Jermaine Wattimena ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> OLBG consensus backs Joyce (67%) but Wattimena&#x27;s 2026 European Tour record (unverified in detail) makes this close. We side against consensus at low confidence rather than fabricate certainty.</div><div class="small"><span class="flagpill">FLAG</span> Divergence from OLBG consensus (Joyce 67%) — deliberate low-confidence contrarian lean.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Ryan_Joyce_vs_Jermaine_Wattimena/15?event_id=32332" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a></td>
-</tr><tr>
-<td><b>Krzysztof Ratajski vs Dave Chisnall</b><br><span class="small mono">23 Oct 13:45 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>Krzysztof Ratajski <b>2/4</b> <span class="small">(50% of tips, top mkt: Win Match 2-way)</span></td>
-<td class="small">ML: Ratajski -150 / Chisnall +125 | Handicap: Ratajski -1.5 legs | Total legs: O/U 9.5</td>
-<td><b>Krzysztof Ratajski ML</b></td>
-<td><span class="badge b-medium">medium</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified draw seeding: Ratajski(3) v Chisnall(30) on the European Tour Order of Merit — a 27-seed gap. Consensus only 50%, but the seeding edge is objective.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Krzysztof_Ratajski_vs_Dave_Chisnall/15?event_id=32333" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a></td>
-</tr><tr>
-<td><b>Nathan Aspinall vs Cristo Reyes</b><br><span class="small mono">23 Oct 14:15 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>Cristo Reyes <b>2/3</b> <span class="small">(67% of tips, top mkt: Win Match 2-way)</span></td>
-<td class="small">ML: Aspinall -145 / Reyes +120 | Handicap: pick&#x27;em | Total legs: O/U 9.5</td>
-<td><b>Nathan Aspinall ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified draw seeding: Aspinall(6) v Reyes(27). OLBG consensus backs REYES (67%) against the seedings — we follow the verified seeding gap at low confidence and flag the divergence.</div><div class="small"><span class="flagpill">FLAG</span> Divergence: consensus 67% Cristo Reyes vs verified seed gap favouring Aspinall(6). Reyes form unverified.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Nathan_Aspinall_vs_Cristo_Reyes/15?event_id=32327" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a></td>
-</tr><tr>
-<td><b>Luke Littler vs William OConnor</b><br><span class="small mono">23 Oct 15:15 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>William OConnor +3.50 <b>2/2</b> <span class="small">(100% of tips, top mkt: Handicap 2-way)</span></td>
-<td class="small">ML: Littler -550 / O&#x27;Connor +400 | Handicap: Littler -3.5 legs (-115) | Total legs: O/U 8.5 (Under -110)</td>
-<td><b>Luke Littler ML</b></td>
-<td><span class="badge b-high">high</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="pred"><b>Prediction:</b> Luke Littler treats Dortmund as the missing piece of his major collection — the 19-year-old already owns the World Matchplay crown he defended in Blackpool by demolishing Gerwyn Price 18-9 at a 111.53 average, the highest of the modern final era. William O&#x27;Connor qualifies 22nd on the European Tour Order of Merit and will have his moments in a best-of-eleven, but Littler&#x27;s scoring ceiling is simply a tier above on stage finals. Take Littler straight up at whatever short price stands; the -3.5 leg handicap prices the same reality with a little more juice.</div><div class="small"><b>Basis:</b> Verified: Littler(11) v O&#x27;Connor(22), Friday 21:15 local in Dortmund. Littler won the 2026 World Matchplay in Blackpool beating Gerwyn Price 18-9 at a 111.53 three-dart average, and is chasing the European Championship to complete his major set (Wikipedia 2026 in PDC / Sky Sports).</div><div class="small"><span class="flagpill">FLAG</span> OLBG top tip is O&#x27;Connor +3.5 (100%) — consensus concedes Littler wins but buys the handicap; we take the cleaner ML view.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Luke_Littler_vs_William_OConnor/15?event_id=32328" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a><br><a href="https://www.sportingnews.com/uk/darts" rel="noopener">sportingnews — EC day-by-day schedule</a></td>
-</tr><tr>
-<td><b>Wessel Nijman vs Martin Schindler</b><br><span class="small mono">23 Oct 15:45 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>Martin Schindler <b>2/3</b> <span class="small">(67% of tips, top mkt: Win Match 2-way)</span></td>
-<td class="small">ML: Schindler -130 / Nijman +110 | Handicap: pick&#x27;em | Total legs: O/U 9.5</td>
-<td><b>Martin Schindler ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Consensus 67% Schindler; individual form not verified today.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Wessel_Nijman_vs_Martin_Schindler/15?event_id=32326" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a></td>
-</tr><tr>
-<td><b>Kevin Doets vs Michael van Gerwen</b><br><span class="small mono">23 Oct 16:15 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>Over 9.50 <b>1/1</b> <span class="small">(100% of tips, top mkt: Total Legs)</span></td>
-<td class="small">ML: van Gerwen -175 / Doets +145 | Handicap: MVG -1.5 legs | Total legs: O/U 9.5 (OLBG tip: Over)</td>
-<td><b>Michael van Gerwen ML</b></td>
-<td><span class="badge b-medium">medium</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified draw seeding: Doets(14) v van Gerwen(19) — closer than name value suggests, hence medium. MVG&#x27;s floor in best-of-11 openers edges Doets. Consensus tip took Over 9.5 legs; we prefer the ML.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Kevin_Doets_vs_Michael_van_Gerwen/15?event_id=32331" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a></td>
-</tr><tr>
-<td><b>Josh Rock vs Chris Dobey</b><br><span class="small mono">23 Oct 16:45 (ET)</span><br><span class="small">European Championship R1</span></td>
-<td>Chris Dobey <b>1/2</b> <span class="small">(50% of tips, top mkt: Win Match 2-way)</span></td>
-<td class="small">ML: Rock -125 / Dobey +105 | Handicap: pick&#x27;em | Total legs: O/U 9.5</td>
-<td><b>Josh Rock ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified draw seeding: Rock(10) v Dobey(23). OLBG consensus backs Dobey (50%) — Dobey&#x27;s autumn form is real but unverified in detail; we follow the seeding edge at low confidence.</div><div class="small"><span class="flagpill">FLAG</span> Divergence: consensus leans Dobey vs seed gap favouring Rock(10).</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Josh_Rock_vs_Chris_Dobey/15?event_id=32336" rel="noopener">OLBG event</a><br><a href="https://en.wikipedia.org/wiki/2026_in_PDC_darts" rel="noopener">Wikipedia — 2026 in PDC darts</a><br><a href="https://www.skysports.com/darts" rel="noopener">Sky Sports — darts</a><br><a href="https://www.olbg.com/blogs/european-championship-darts-preview-betting-guide" rel="noopener">OLBG blog — European Championship draw &amp; preview</a></td>
-</tr></table>
-</div><footer><div class="wrap">Built by session 2360a617 · Data snapshot 2026-10-21 05:25–06:05 UTC · For research/entertainment only — not betting advice. Unverified rows are flagged, never inferred.</div></footer></body></html>
+<title>Darts · OLBG Reverse-Engineering</title>
+<meta name="description" content="Independent reverse-engineering of OLBG: verified fixtures across 17 in-scope sports, originated betting lines, confidence tiers and written predictions.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="hdr-inner">
+    <div class="brand"><span class="dot"></span> OLBG <span class="sub">reverse-engineered</span></div>
+    <nav class="main"><a href="../index.html">Dashboard</a><a href="../picks.html">Picks</a><a href="../predictions.html">Predictions</a><a href="../sports.html" aria-current="page">Sports</a><a href="../methodology.html">Methodology</a><a href="../reverse-engineering.html">OLBG analysis</a><a href="../sources.html">Sources</a><a href="../flagged.html">Flagged</a><a href="../docs/index.html">OLBG board (164)</a></nav>
+  </div>
+</header>
+<main>
+
+<div class="crumb">Dashboard / Sports / Darts</div>
+<h1>Darts <span class="badge verified" style="vertical-align:8px">Covered</span></h1>
+<p class="lede">Seven first-round ties at the Machineseeker European Championship verified from the PDC&#x27;s published schedule. The PDC Order of Merit could not be retrieved (cookie interstitial), so no darts match carries a rating input.</p>
+<p class="sub">OLBG sport ID <b>15</b> ·
+OLBG page <a href="https://www.olbg.com/betting-tips/Darts/15"
+target="_blank" rel="noopener">/betting-tips/Darts/15</a></p>
+<div class="strip"><span class="chip">7 matches</span><span class="chip">High <b>0</b></span><span class="chip">Medium <b>0</b></span><span class="chip">Low <b>7</b></span></div>
+<div class="table-wrap"><table id=""><thead><tr><th>When</th><th>Match</th><th>Competition</th><th>Our line (H / D / A)</th><th>Selection</th><th>Conf.</th><th>Verified from</th></tr></thead><tbody><tr data-conf="low"><td style="white-space:nowrap">22 Oct</td><td><span class="match-name">Luke Woodhouse v Dirk van Duijvenbode</span><span class="sub">Westfalenhalle, Dortmund</span></td><td>2026 Machineseeker European Championship<span class="sub">Round 1</span></td><td class="odds">1.90 / 1.90</td><td><b>Luke Woodhouse</b><span class="sub">Match Winner @ 1.9</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Luke Woodhouse</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Dirk van Duijvenbode</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Legs handicap · line 0.5</span></div><ul><li><span>Luke Woodhouse -0.5</span><span><b class="odds">2.17</b> <span class="sub" style="display:inline">(44%)</span></span></li><li><span>Dirk van Duijvenbode +0.5</span><span><b class="odds">1.69</b> <span class="sub" style="display:inline">(56%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">PDC schedule release</a><a href="https://www.pdc.tv/calendar/" target="_blank" rel="noopener">PDC calendar</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">22 Oct</td><td><span class="match-name">Danny Noppert v Stephen Bunting</span><span class="sub">Westfalenhalle, Dortmund</span></td><td>2026 Machineseeker European Championship<span class="sub">Round 1</span></td><td class="odds">1.90 / 1.90</td><td><b>Danny Noppert</b><span class="sub">Match Winner @ 1.9</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Danny Noppert</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Stephen Bunting</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Legs handicap · line 0.5</span></div><ul><li><span>Danny Noppert -0.5</span><span><b class="odds">2.17</b> <span class="sub" style="display:inline">(44%)</span></span></li><li><span>Stephen Bunting +0.5</span><span><b class="odds">1.69</b> <span class="sub" style="display:inline">(56%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">PDC schedule release</a><a href="https://www.pdc.tv/calendar/" target="_blank" rel="noopener">PDC calendar</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">22 Oct</td><td><span class="match-name">Niels Zonneveld v Cameron Menzies</span><span class="sub">Westfalenhalle, Dortmund</span></td><td>2026 Machineseeker European Championship<span class="sub">Round 1</span></td><td class="odds">1.90 / 1.90</td><td><b>Niels Zonneveld</b><span class="sub">Match Winner @ 1.9</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Niels Zonneveld</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Cameron Menzies</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Legs handicap · line 0.5</span></div><ul><li><span>Niels Zonneveld -0.5</span><span><b class="odds">2.17</b> <span class="sub" style="display:inline">(44%)</span></span></li><li><span>Cameron Menzies +0.5</span><span><b class="odds">1.69</b> <span class="sub" style="display:inline">(56%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">PDC schedule release</a><a href="https://www.pdc.tv/calendar/" target="_blank" rel="noopener">PDC calendar</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">22 Oct</td><td><span class="match-name">Gerwyn Price v Rob Cross</span><span class="sub">Westfalenhalle, Dortmund</span></td><td>2026 Machineseeker European Championship<span class="sub">Round 1</span></td><td class="odds">1.90 / 1.90</td><td><b>Gerwyn Price</b><span class="sub">Match Winner @ 1.9</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Gerwyn Price</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Rob Cross</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Legs handicap · line 0.5</span></div><ul><li><span>Gerwyn Price -0.5</span><span><b class="odds">2.17</b> <span class="sub" style="display:inline">(44%)</span></span></li><li><span>Rob Cross +0.5</span><span><b class="odds">1.69</b> <span class="sub" style="display:inline">(56%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">PDC schedule release</a><a href="https://www.pdc.tv/calendar/" target="_blank" rel="noopener">PDC calendar</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">22 Oct</td><td><span class="match-name">James Wade v Damon Heta</span><span class="sub">Westfalenhalle, Dortmund</span></td><td>2026 Machineseeker European Championship<span class="sub">Round 1</span></td><td class="odds">1.90 / 1.90</td><td><b>James Wade</b><span class="sub">Match Winner @ 1.9</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>James Wade</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Damon Heta</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Legs handicap · line 0.5</span></div><ul><li><span>James Wade -0.5</span><span><b class="odds">2.17</b> <span class="sub" style="display:inline">(44%)</span></span></li><li><span>Damon Heta +0.5</span><span><b class="odds">1.69</b> <span class="sub" style="display:inline">(56%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">PDC schedule release</a><a href="https://www.pdc.tv/calendar/" target="_blank" rel="noopener">PDC calendar</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">22 Oct</td><td><span class="match-name">Luke Humphries v Ryan Searle</span><span class="sub">Westfalenhalle, Dortmund</span></td><td>2026 Machineseeker European Championship<span class="sub">Round 1</span></td><td class="odds">1.90 / 1.90</td><td><b>Luke Humphries</b><span class="sub">Match Winner @ 1.9</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Luke Humphries</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Ryan Searle</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Legs handicap · line 0.5</span></div><ul><li><span>Luke Humphries -0.5</span><span><b class="odds">2.17</b> <span class="sub" style="display:inline">(44%)</span></span></li><li><span>Ryan Searle +0.5</span><span><b class="odds">1.69</b> <span class="sub" style="display:inline">(56%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">PDC schedule release</a><a href="https://www.pdc.tv/calendar/" target="_blank" rel="noopener">PDC calendar</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">22 Oct</td><td><span class="match-name">Gian van Veen v Andrew Gilding</span><span class="sub">Westfalenhalle, Dortmund</span></td><td>2026 Machineseeker European Championship<span class="sub">Round 1</span></td><td class="odds">1.90 / 1.90</td><td><b>Gian van Veen</b><span class="sub">Match Winner @ 1.9</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Gian van Veen</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Andrew Gilding</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Legs handicap · line 0.5</span></div><ul><li><span>Gian van Veen -0.5</span><span><b class="odds">2.17</b> <span class="sub" style="display:inline">(44%)</span></span></li><li><span>Andrew Gilding +0.5</span><span><b class="odds">1.69</b> <span class="sub" style="display:inline">(56%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">PDC schedule release</a><a href="https://www.pdc.tv/calendar/" target="_blank" rel="noopener">PDC calendar</a></div></td></tr></tbody></table></div>
+
+
+</main>
+<footer class="foot">
+  <p><b>OLBG Reverse-Engineering</b> — Originated lines · verified fixtures · confidence tiers. Window covered: 21–27 October 2026.
+  Every fixture links to the governing body it was read from. Model prices are our own
+  estimates, not market prices. Nothing here is betting advice.</p>
+  <p><a href="../methodology.html">Methodology</a> · <a href="../sources.html">Source register</a> ·
+  <a href="../flagged.html">Flagged for review</a> · <a href="../data/fixtures.json">Raw JSON</a></p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

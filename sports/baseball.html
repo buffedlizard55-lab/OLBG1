@@ -1,56 +1,39 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Baseball — Lines &amp; Picks (OLBG reverse-engineered)</title>
-<style>
-:root{--bg:#0f1420;--card:#1a2233;--ink:#e8ecf4;--mut:#9aa7bd;--acc:#4da3ff;--hi:#2ecc8f;--md:#f5b942;--lo:#8b98ad;--warn:#ff6b6b;--line:#2a3550}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
-a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:1280px;margin:0 auto;padding:20px}
-header{border-bottom:1px solid var(--line);padding:18px 0;margin-bottom:22px}
-h1{font-size:1.5rem;margin:0 0 4px}h2{font-size:1.2rem;margin:26px 0 10px;color:var(--acc)}
-.sub{color:var(--mut);font-size:.92rem}
-nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:.95rem}
-nav.top a{font-weight:600}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:16px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:block;color:var(--ink)}
-.card:hover{border-color:var(--acc);text-decoration:none}
-.card .n{font-size:1.6rem;font-weight:700;color:var(--acc)}
-.card .t{font-weight:600;margin-bottom:2px}.card .d{color:var(--mut);font-size:.82rem}
-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:.88rem}
-th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
-th{background:#141b2b;color:var(--mut);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
-tr:last-child td{border-bottom:none}
-.badge{display:inline-block;padding:1px 9px;border-radius:20px;font-size:.75rem;font-weight:700}
-.b-high{background:rgba(46,204,143,.15);color:var(--hi);border:1px solid var(--hi)}
-.b-medium{background:rgba(245,185,66,.13);color:var(--md);border:1px solid var(--md)}
-.b-low{background:rgba(139,152,173,.15);color:var(--lo);border:1px solid var(--lo)}
-.flagpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(255,107,107,.12);color:var(--warn);border:1px solid var(--warn)}
-.okpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(46,204,143,.12);color:var(--hi);border:1px solid var(--hi)}
-details{margin:2px 0}summary{cursor:pointer;color:var(--acc);font-size:.82rem}
-.pred{background:#10182a;border-left:3px solid var(--hi);padding:8px 10px;border-radius:6px;margin:6px 0;font-size:.86rem}
-.note{background:#141b2b;border:1px solid var(--line);border-left:3px solid var(--md);padding:10px 14px;border-radius:8px;margin:14px 0;color:var(--ink);font-size:.9rem}
-.small{color:var(--mut);font-size:.8rem}
-.mono{font-variant-numeric:tabular-nums}
-footer{margin-top:36px;border-top:1px solid var(--line);padding:16px 0;color:var(--mut);font-size:.8rem}
-.srcs{font-size:.78rem;line-height:1.7}
-</style></head><body>
-<header><div class="wrap">
-<h1>OLBG Reverse-Engineered Lines &amp; Picks</h1>
-<div class="sub">152 events across 17 covered sports — collected from OLBG.com on 21 Oct 2026, re-priced with our own originated lines, verified against official sources. Times are US Eastern (ET) as displayed on OLBG.</div>
-<nav class="top"><a href="../" style="color:var(--ink)">Home</a> <a href="../flagged.html">Flagged for Review</a> <a href="../methodology.html">Methodology & Sources</a> <a href="https://github.com/buffedlizard55-lab/OLBG1" rel="noopener">GitHub repo</a></nav>
-</div></header>
-<div class="wrap">
-<h1>Baseball <span class="small">(1 events)</span></h1>
-<div class="sub">MLB — 2026 World Series Game 1 (Rays @ Brewers) — OLBG page: <a href="https://www.olbg.com/betting-tips/Baseball/12" rel="noopener">https://www.olbg.com/betting-tips/Baseball/12</a> · fetched 2026-10-21T05:50Z · displayed times ET</div>
-<div class="note small"><b>Timezone note:</b> times as displayed by OLBG (assumed US Eastern)</div>
-<table><tr><th>Match / Event</th><th>OLBG community tip</th><th>Our originated line</th><th>Our pick</th><th>Confidence</th><th>Verification</th><th>Analysis</th><th>Sources</th></tr><tr>
-<td><b>TB Rays @ MIL Brewers</b><br><span class="small mono">23 Oct 20:00 (ET)</span><br><span class="small">MLB (postseason — stage to verify)</span></td>
-<td>TB Rays <b>3/6</b> <span class="small">(50% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: MIL -135 / TB +115 | Run Line: MIL -1.5 (+125) / TB +1.5 (-150) | Total: O/U 7.5 (incl. extra innings)</td>
-<td><b>MIL Brewers ML</b></td>
-<td><span class="badge b-medium">medium</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified: this is 2026 World Series Game 1, Fri Oct 23, 8pm ET, American Family Field. Brewers 103-59 (best MLB record, swept Dodgers in NLCS) hold home-field over Rays 98-64 (beat Guardians 4-2 in ALCS, clinching 7-3 on Monday). Neither franchise has ever won a World Series.</div><div class="small"><span class="flagpill">FLAG</span> OLBG top tip is TB Rays ML (50%) — consensus sides with Tampa Bay; we side with Milwaukee&#x27;s home-field and 103-win season.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Baseball/MLB/MLB/TB_Rays_@_MIL_Brewers/12?event_id=160789" rel="noopener">OLBG event</a><br><a href="https://www.mlb.com/news/2026-mlb-playoff-and-world-series-schedule" rel="noopener">MLB.com — 2026 playoff &amp; World Series schedule</a><br><a href="https://en.wikipedia.org/wiki/2026_World_Series" rel="noopener">Wikipedia — 2026 World Series</a></td>
-</tr></table>
-</div><footer><div class="wrap">Built by session 2360a617 · Data snapshot 2026-10-21 05:25–06:05 UTC · For research/entertainment only — not betting advice. Unverified rows are flagged, never inferred.</div></footer></body></html>
+<title>Baseball · OLBG Reverse-Engineering</title>
+<meta name="description" content="Independent reverse-engineering of OLBG: verified fixtures across 17 in-scope sports, originated betting lines, confidence tiers and written predictions.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="hdr-inner">
+    <div class="brand"><span class="dot"></span> OLBG <span class="sub">reverse-engineered</span></div>
+    <nav class="main"><a href="../index.html">Dashboard</a><a href="../picks.html">Picks</a><a href="../predictions.html">Predictions</a><a href="../sports.html" aria-current="page">Sports</a><a href="../methodology.html">Methodology</a><a href="../reverse-engineering.html">OLBG analysis</a><a href="../sources.html">Sources</a><a href="../flagged.html">Flagged</a><a href="../docs/index.html">OLBG board (164)</a></nav>
+  </div>
+</header>
+<main>
+
+<div class="crumb">Dashboard / Sports / Baseball</div>
+<h1>Baseball <span class="badge verified" style="vertical-align:8px">Covered</span></h1>
+<p class="lede">Four World Series games verified from MLB&#x27;s official schedule and postseason endpoints, with full 2026 records and home/road splits.</p>
+<p class="sub">OLBG sport ID <b>12</b> ·
+OLBG page <a href="https://www.olbg.com/betting-tips/Baseball/12"
+target="_blank" rel="noopener">/betting-tips/Baseball/12</a></p>
+<div class="strip"><span class="chip">4 matches</span><span class="chip">High <b>4</b></span><span class="chip">Medium <b>0</b></span><span class="chip">Low <b>0</b></span></div>
+<div class="table-wrap"><table id=""><thead><tr><th>When</th><th>Match</th><th>Competition</th><th>Our line (H / D / A)</th><th>Selection</th><th>Conf.</th><th>Verified from</th></tr></thead><tbody><tr data-conf="high"><td style="white-space:nowrap">24 Oct 00:00 UTC</td><td><span class="match-name">Milwaukee Brewers v Tampa Bay Rays</span><span class="sub">American Family Field, Milwaukee</span></td><td>MLB World Series<span class="sub">Game 1</span></td><td class="odds">1.51 / 2.57</td><td><b>Milwaukee Brewers</b><span class="sub">Match Winner @ 1.51</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Milwaukee Brewers</span><span><b class="odds">1.51</b> <span class="sub" style="display:inline">(63%)</span></span></li><li><span>Tampa Bay Rays</span><span><b class="odds">2.57</b> <span class="sub" style="display:inline">(37%)</span></span></li></ul><div class="basis">Sourced ratings</div></div><div class="mkt"><div class="mkt-h"><span>Run line · line 1.5</span></div><ul><li><span>Milwaukee Brewers -1.5</span><span><b class="odds">1.97</b> <span class="sub" style="display:inline">(48%)</span></span></li><li><span>Tampa Bay Rays +1.5</span><span><b class="odds">1.84</b> <span class="sub" style="display:inline">(52%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div><div class="mkt"><div class="mkt-h"><span>Match Total (Runs) · line 8.5</span></div><ul><li><span>Over 8.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Under 8.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">Alternate line: Over 7.0 1.42 / Under 7.0 2.89</div><div class="basis">League baseline total - no match-specific total input was sourced</div></div></details></td><td><span class="badge high">High</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-21&amp;endDate=2026-10-30" target="_blank" rel="noopener">MLB StatsAPI schedule</a><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026" target="_blank" rel="noopener">MLB StatsAPI standings (Brewers 103-59 .636; Rays 98-64 .605)</a><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=104&amp;season=2026" target="_blank" rel="noopener">MLB StatsAPI standings - home/road splits</a></div></td></tr><tr data-conf="high"><td style="white-space:nowrap">25 Oct 00:00 UTC</td><td><span class="match-name">Milwaukee Brewers v Tampa Bay Rays</span><span class="sub">American Family Field, Milwaukee</span></td><td>MLB World Series<span class="sub">Game 2</span></td><td class="odds">1.51 / 2.57</td><td><b>Milwaukee Brewers</b><span class="sub">Match Winner @ 1.51</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Milwaukee Brewers</span><span><b class="odds">1.51</b> <span class="sub" style="display:inline">(63%)</span></span></li><li><span>Tampa Bay Rays</span><span><b class="odds">2.57</b> <span class="sub" style="display:inline">(37%)</span></span></li></ul><div class="basis">Sourced ratings</div></div><div class="mkt"><div class="mkt-h"><span>Run line · line 1.5</span></div><ul><li><span>Milwaukee Brewers -1.5</span><span><b class="odds">1.97</b> <span class="sub" style="display:inline">(48%)</span></span></li><li><span>Tampa Bay Rays +1.5</span><span><b class="odds">1.84</b> <span class="sub" style="display:inline">(52%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div><div class="mkt"><div class="mkt-h"><span>Match Total (Runs) · line 8.5</span></div><ul><li><span>Over 8.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Under 8.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">Alternate line: Over 7.0 1.42 / Under 7.0 2.89</div><div class="basis">League baseline total - no match-specific total input was sourced</div></div></details></td><td><span class="badge high">High</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-21&amp;endDate=2026-10-30" target="_blank" rel="noopener">MLB StatsAPI schedule</a><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026" target="_blank" rel="noopener">MLB StatsAPI standings (Brewers 103-59 .636; Rays 98-64 .605)</a><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=104&amp;season=2026" target="_blank" rel="noopener">MLB StatsAPI standings - home/road splits</a></div></td></tr><tr data-conf="high"><td style="white-space:nowrap">27 Oct 00:00 UTC</td><td><span class="match-name">Tampa Bay Rays v Milwaukee Brewers</span><span class="sub">Tropicana Field, St Petersburg</span></td><td>MLB World Series<span class="sub">Game 3</span></td><td class="odds">1.61 / 2.34</td><td><b>Tampa Bay Rays</b><span class="sub">Match Winner @ 1.61</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Tampa Bay Rays</span><span><b class="odds">1.61</b> <span class="sub" style="display:inline">(59%)</span></span></li><li><span>Milwaukee Brewers</span><span><b class="odds">2.34</b> <span class="sub" style="display:inline">(41%)</span></span></li></ul><div class="basis">Sourced ratings</div></div><div class="mkt"><div class="mkt-h"><span>Run line · line 1.0</span></div><ul><li><span>Tampa Bay Rays -1.0</span><span><b class="odds">1.93</b> <span class="sub" style="display:inline">(49%)</span></span></li><li><span>Milwaukee Brewers +1.0</span><span><b class="odds">1.88</b> <span class="sub" style="display:inline">(51%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div><div class="mkt"><div class="mkt-h"><span>Match Total (Runs) · line 8.5</span></div><ul><li><span>Over 8.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Under 8.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">Alternate line: Over 7.0 1.42 / Under 7.0 2.89</div><div class="basis">League baseline total - no match-specific total input was sourced</div></div></details></td><td><span class="badge high">High</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-21&amp;endDate=2026-10-30" target="_blank" rel="noopener">MLB StatsAPI schedule</a><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026" target="_blank" rel="noopener">MLB StatsAPI standings - records and home/road splits</a><a href="https://www.mlb.com/gameday/849804" target="_blank" rel="noopener">MLB.com Gameday</a></div></td></tr><tr data-conf="high"><td style="white-space:nowrap">28 Oct 00:00 UTC</td><td><span class="match-name">Tampa Bay Rays v Milwaukee Brewers</span><span class="sub">Tropicana Field, St Petersburg</span></td><td>MLB World Series<span class="sub">Game 4</span></td><td class="odds">1.61 / 2.34</td><td><b>Tampa Bay Rays</b><span class="sub">Match Winner @ 1.61</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Tampa Bay Rays</span><span><b class="odds">1.61</b> <span class="sub" style="display:inline">(59%)</span></span></li><li><span>Milwaukee Brewers</span><span><b class="odds">2.34</b> <span class="sub" style="display:inline">(41%)</span></span></li></ul><div class="basis">Sourced ratings</div></div><div class="mkt"><div class="mkt-h"><span>Run line · line 1.0</span></div><ul><li><span>Tampa Bay Rays -1.0</span><span><b class="odds">1.93</b> <span class="sub" style="display:inline">(49%)</span></span></li><li><span>Milwaukee Brewers +1.0</span><span><b class="odds">1.88</b> <span class="sub" style="display:inline">(51%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div><div class="mkt"><div class="mkt-h"><span>Match Total (Runs) · line 8.5</span></div><ul><li><span>Over 8.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Under 8.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">Alternate line: Over 7.0 1.42 / Under 7.0 2.89</div><div class="basis">League baseline total - no match-specific total input was sourced</div></div></details></td><td><span class="badge high">High</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-21&amp;endDate=2026-10-30" target="_blank" rel="noopener">MLB StatsAPI schedule</a><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026" target="_blank" rel="noopener">MLB StatsAPI standings - records and home/road splits</a><a href="https://www.mlb.com/gameday/849803" target="_blank" rel="noopener">MLB.com Gameday</a></div></td></tr></tbody></table></div>
+
+
+</main>
+<footer class="foot">
+  <p><b>OLBG Reverse-Engineering</b> — Originated lines · verified fixtures · confidence tiers. Window covered: 21–27 October 2026.
+  Every fixture links to the governing body it was read from. Model prices are our own
+  estimates, not market prices. Nothing here is betting advice.</p>
+  <p><a href="../methodology.html">Methodology</a> · <a href="../sources.html">Source register</a> ·
+  <a href="../flagged.html">Flagged for review</a> · <a href="../data/fixtures.json">Raw JSON</a></p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

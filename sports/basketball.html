@@ -1,227 +1,39 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Basketball — Lines &amp; Picks (OLBG reverse-engineered)</title>
-<style>
-:root{--bg:#0f1420;--card:#1a2233;--ink:#e8ecf4;--mut:#9aa7bd;--acc:#4da3ff;--hi:#2ecc8f;--md:#f5b942;--lo:#8b98ad;--warn:#ff6b6b;--line:#2a3550}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
-a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:1280px;margin:0 auto;padding:20px}
-header{border-bottom:1px solid var(--line);padding:18px 0;margin-bottom:22px}
-h1{font-size:1.5rem;margin:0 0 4px}h2{font-size:1.2rem;margin:26px 0 10px;color:var(--acc)}
-.sub{color:var(--mut);font-size:.92rem}
-nav.top{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:.95rem}
-nav.top a{font-weight:600}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:16px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:block;color:var(--ink)}
-.card:hover{border-color:var(--acc);text-decoration:none}
-.card .n{font-size:1.6rem;font-weight:700;color:var(--acc)}
-.card .t{font-weight:600;margin-bottom:2px}.card .d{color:var(--mut);font-size:.82rem}
-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:.88rem}
-th,td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
-th{background:#141b2b;color:var(--mut);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
-tr:last-child td{border-bottom:none}
-.badge{display:inline-block;padding:1px 9px;border-radius:20px;font-size:.75rem;font-weight:700}
-.b-high{background:rgba(46,204,143,.15);color:var(--hi);border:1px solid var(--hi)}
-.b-medium{background:rgba(245,185,66,.13);color:var(--md);border:1px solid var(--md)}
-.b-low{background:rgba(139,152,173,.15);color:var(--lo);border:1px solid var(--lo)}
-.flagpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(255,107,107,.12);color:var(--warn);border:1px solid var(--warn)}
-.okpill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:.72rem;font-weight:700;background:rgba(46,204,143,.12);color:var(--hi);border:1px solid var(--hi)}
-details{margin:2px 0}summary{cursor:pointer;color:var(--acc);font-size:.82rem}
-.pred{background:#10182a;border-left:3px solid var(--hi);padding:8px 10px;border-radius:6px;margin:6px 0;font-size:.86rem}
-.note{background:#141b2b;border:1px solid var(--line);border-left:3px solid var(--md);padding:10px 14px;border-radius:8px;margin:14px 0;color:var(--ink);font-size:.9rem}
-.small{color:var(--mut);font-size:.8rem}
-.mono{font-variant-numeric:tabular-nums}
-footer{margin-top:36px;border-top:1px solid var(--line);padding:16px 0;color:var(--mut);font-size:.8rem}
-.srcs{font-size:.78rem;line-height:1.7}
-</style></head><body>
-<header><div class="wrap">
-<h1>OLBG Reverse-Engineered Lines &amp; Picks</h1>
-<div class="sub">152 events across 17 covered sports — collected from OLBG.com on 21 Oct 2026, re-priced with our own originated lines, verified against official sources. Times are US Eastern (ET) as displayed on OLBG.</div>
-<nav class="top"><a href="../" style="color:var(--ink)">Home</a> <a href="../flagged.html">Flagged for Review</a> <a href="../methodology.html">Methodology & Sources</a> <a href="https://github.com/buffedlizard55-lab/OLBG1" rel="noopener">GitHub repo</a></nav>
-</div></header>
-<div class="wrap">
-<h1>Basketball <span class="small">(20 events)</span></h1>
-<div class="sub">NBA opening week + EuroLeague R7 + EuroCup/BCL/KBL — OLBG page: <a href="https://www.olbg.com/betting-tips/Basketball/4" rel="noopener">https://www.olbg.com/betting-tips/Basketball/4</a> · fetched 2026-10-21T05:25Z · displayed times ET</div>
-<div class="note small"><b>Timezone note:</b> times as displayed by OLBG (assumed US Eastern)</div>
-<table><tr><th>Match / Event</th><th>OLBG community tip</th><th>Our originated line</th><th>Our pick</th><th>Confidence</th><th>Verification</th><th>Analysis</th><th>Sources</th></tr><tr>
-<td><b>MIL Bucks @ WAS Wizards</b><br><span class="small mono">Today 19:10 (ET)</span><br><span class="small">NBA</span></td>
-<td>WAS Wizards <b>9/11</b> <span class="small">(82% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: WAS -105 / MIL -115 | Spread: MIL -1.5 | Total: O/U 231.5</td>
-<td><b>WAS Wizards ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified: Wizards host Bucks Oct 21, 7:00pm ET (nba.com). Both 0-0; 2025-26 records MIL 32-50, WAS 17-65 (nbagameshub). WAS out: Jamir Watkins, Tristan Vukcevic. No verified 2026-27 form data — pick follows home court + OLBG consensus (82% WAS).</div><div class="small"><span class="flagpill">FLAG</span> OLBG lists tip-off 19:10 ET; NBA.com says 7:00pm ET. Time discrepancy noted.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/NBA/NBA/MIL_Bucks_@_WAS_Wizards/4?event_id=534889" rel="noopener">OLBG event</a><br><a href="https://www.nba.com/team/1610612764/wizards" rel="noopener">NBA.com — Washington Wizards</a><br><a href="https://nbagameshub.com/nba-opening-night/" rel="noopener">NBA Games Hub — opening week</a></td>
-</tr><tr>
-<td><b>Hapoel Tel Aviv vs Virtus Bologna</b><br><span class="small mono">Today 12:00 (ET)</span><br><span class="small">Euroleague</span></td>
-<td>Hapoel Tel Aviv <b>5/8</b> <span class="small">(63% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Hapoel TA -120 / Virtus +100 | Spread: HTA -1.5 | Total: O/U 176.5</td>
-<td><b>Hapoel Tel Aviv ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified: both sides 4-2 in the EuroLeague table (basketball-reference/L&#x27;Equipe/Sofascore). Virtus ride a four-game winning streak (incl. 96-94 at Paris, 86-78 vs Baskonia); Hapoel won two straight (100-82 vs Besiktas). Genuine coin flip — home edge tips it, but low confidence.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/European/Euroleague/Hapoel_Tel_Aviv_vs_Virtus_Bologna/4?event_id=535919" rel="noopener">OLBG event</a><br><a href="https://www.basketball-reference.com/international/euroleague/2027.html" rel="noopener">Basketball-Reference — EuroLeague 2026-27</a><br><a href="https://www.lequipe.fr/Basket/CLA_EUH.html" rel="noopener">L&#x27;Equipe — EuroLeague table</a><br><a href="https://www.sofascore.com/basketball/tournament/international/euroleague/138" rel="noopener">Sofascore — EuroLeague</a></td>
-</tr><tr>
-<td><b>Seoul Thunders vs KCC Egis</b><br><span class="small mono">Today 06:00 (ET)</span><br><span class="small">Korea KBL</span></td>
-<td>Seoul Thunders <b>3/5</b> <span class="small">(60% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Seoul Thunders -135 (model est.) | Spread: -2.5 | Total: O/U 158.5</td>
-<td><b>Seoul Thunders ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> No independent verification of KBL fixtures, records or form was possible today. Line is a model estimate aligned to OLBG consensus (60% Thunders).</div><div class="small"><span class="flagpill">FLAG</span> Unverified: competition listing per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/Other/Korea_KBL/Seoul_Thunders_vs_KCC_Egis/4?event_id=535966" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>ATL Hawks @ ORL Magic</b><br><span class="small mono">Today 19:10 (ET)</span><br><span class="small">NBA</span></td>
-<td>ATL Hawks <b>3/5</b> <span class="small">(60% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: ATL -125 / ORL +105 | Spread: ATL -2.5 | Total: O/U 233.5</td>
-<td><b>ATL Hawks ML</b></td>
-<td><span class="badge b-medium">medium</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Verified: Hawks at Magic Oct 21, 7pm ET. 2025-26 records ATL 46-36 vs ORL 45-37; Magic without Henri Veesaar and Mouhamed Gueye (nbagameshub injury list). Hawks slight talent edge + Magic injuries back the short price.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/NBA/NBA/ATL_Hawks_@_ORL_Magic/4?event_id=534888" rel="noopener">OLBG event</a><br><a href="https://nbagameshub.com/nba-opening-night/" rel="noopener">NBA Games Hub — opening week</a><br><a href="https://www.flashscore.com/basketball/usa/nba/" rel="noopener">Flashscore — NBA fixtures</a></td>
-</tr><tr>
-<td><b>CHI Bulls @ TOR Raptors</b><br><span class="small mono">Today 19:40 (ET)</span><br><span class="small">NBA</span></td>
-<td>TOR Raptors <b>3/4</b> <span class="small">(75% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: TOR -160 / CHI +135 | Spread: TOR -3.5 | Total: O/U 236.5</td>
-<td><b>TOR Raptors ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Fixture verified on the Oct 21 slate (Flashscore/nbagameshub). No verified 2026-27 form or injury data for either side — line is a home-court model estimate; pick follows OLBG consensus (75% TOR).</div><div class="small"><span class="flagpill">FLAG</span> Team form/records unverified — estimate only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/NBA/NBA/CHI_Bulls_@_TOR_Raptors/4?event_id=535673" rel="noopener">OLBG event</a><br><a href="https://www.flashscore.com/basketball/usa/nba/" rel="noopener">Flashscore — NBA fixtures</a></td>
-</tr><tr>
-<td><b>PAOK vs Ratiopharm Ulm</b><br><span class="small mono">Today 13:00 (ET)</span><br><span class="small">Euro Cup</span></td>
-<td>PAOK <b>2/2</b> <span class="small">(100% of tips, top mkt: Money Line)</span></td>
-<td class="small">PAOK -150 | Spread -3.5 | Total O/U 161.5</td>
-<td><b>PAOK ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Fixture/pick follow OLBG consensus (100% PAOK); no independent verification of EuroCup standings captured today.</div><div class="small"><span class="flagpill">FLAG</span> Home-court lean.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/European/Euro_Cup/PAOK_vs_Ratiopharm_Ulm/4?event_id=535952" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Bosna Sarajevo vs Bahcesehir Koleji</b><br><span class="small mono">Today 13:30 (ET)</span><br><span class="small">Euro Cup</span></td>
-<td>Bahcesehir Koleji <b>2/3</b> <span class="small">(67% of tips, top mkt: Money Line)</span></td>
-<td class="small">BKC -130 | Spread -2.5 | Total O/U 163.5</td>
-<td><b>Bahcesehir Koleji ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> OLBG consensus 67% Bahcesehir; unverified beyond listing.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/European/Euro_Cup/Bosna_Sarajevo_vs_Bahcesehir_Koleji/4?event_id=535950" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Hapoel Jerusalem vs Rigas Zelli</b><br><span class="small mono">Today 14:00 (ET)</span><br><span class="small">Euro Cup</span></td>
-<td>Hapoel Jerusalem <b>2/3</b> <span class="small">(67% of tips, top mkt: Money Line)</span></td>
-<td class="small">HJ -190 | Spread -5.5 | Total O/U 165.5</td>
-<td><b>Hapoel Jerusalem ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> OLBG consensus 67% Hapoel Jerusalem; unverified beyond listing.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/European/Euro_Cup/Hapoel_Jerusalem_vs_Rigas_Zelli/4?event_id=535956" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>IND Pacers @ NO Pelicans</b><br><span class="small mono">Today 20:10 (ET)</span><br><span class="small">NBA</span></td>
-<td>NO Pelicans <b>2/4</b> <span class="small">(50% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: NO -145 / IND +125 | Spread: NO -2.5 | Total: O/U 241.5</td>
-<td><b>NO Pelicans ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Fixture verified on the Oct 21 slate. Pacers lost at New Orleans 106-107 in preseason (Oct 16, nba.com Wizards/Pelicans box listing) — thin evidence. No verified regular-season form; pick follows home court + consensus (50%).</div><div class="small"><span class="flagpill">FLAG</span> Team form unverified — estimate only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/NBA/NBA/IND_Pacers_@_NO_Pelicans/4?event_id=534892" rel="noopener">OLBG event</a><br><a href="https://www.flashscore.com/basketball/usa/nba/" rel="noopener">Flashscore — NBA fixtures</a></td>
-</tr><tr>
-<td><b>PHX Suns @ POR Trail Blazers</b><br><span class="small mono">Today 22:10 (ET)</span><br><span class="small">NBA</span></td>
-<td>PHX Suns <b>2/3</b> <span class="small">(67% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: PHX -130 / POR +110 | Spread: PHX -2.5 | Total: O/U 232.5</td>
-<td><b>PHX Suns ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> Fixture verified on the Oct 21 slate (Trail Blazers host Suns). No verified form/injury data — model estimate; consensus 67% PHX.</div><div class="small"><span class="flagpill">FLAG</span> Team form unverified — estimate only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/NBA/NBA/PHX_Suns_@_POR_Trail_Blazers/4?event_id=534893" rel="noopener">OLBG event</a><br><a href="https://www.flashscore.com/basketball/usa/nba/" rel="noopener">Flashscore — NBA fixtures</a></td>
-</tr><tr>
-<td><b>Panathinaikos vs Baskonia</b><br><span class="small mono">Tomorrow 14:15 (ET)</span><br><span class="small">Euroleague</span></td>
-<td>Panathinaikos <b>2/3</b> <span class="small">(67% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: Panathinaikos -280 / Baskonia +230 | Spread: PAO -9.5 | Total: O/U 168.5</td>
-<td><b>Panathinaikos ML</b></td>
-<td><span class="badge b-high">high</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="pred"><b>Prediction:</b> Panathinaikos have been the class of the EuroLeague through six rounds, sitting 5-1 with the tournament&#x27;s stingiest defence — 73.0 points allowed per night — and a +15.0 scoring margin nobody else touches. Baskonia arrive bottom of the table on 1-5, leaking 94.0 a game and freshly beaten at home by both Dubai and Virtus Bologna. At OAKA this is a mismatch: back the Greens on the moneyline, and -9.5 looks live against a team that has lost three of four by double figures.</div><div class="small"><b>Basis:</b> Verified: Panathinaikos top the EuroLeague at 5-1, scoring 88.0 vs 73.0 allowed — the competition&#x27;s best point differential (basketball-reference, L&#x27;Equipe: 4-1 at OAKA). Baskonia are last at 1-5, conceding 94.0 per game, and just dropped home games to Dubai (79-93) and Virtus (78-86).</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/European/Euroleague/Panathinaikos_vs_Baskonia/4?event_id=535923" rel="noopener">OLBG event</a><br><a href="https://www.basketball-reference.com/international/euroleague/2027.html" rel="noopener">Basketball-Reference — EuroLeague 2026-27</a><br><a href="https://www.lequipe.fr/Basket/CLA_EUH.html" rel="noopener">L&#x27;Equipe — EuroLeague table</a><br><a href="https://basketnews.com/leagues/25-euroleague/standings.html" rel="noopener">Basketnews — EuroLeague results</a></td>
-</tr><tr>
-<td><b>DEN Nuggets @ OKC Thunder</b><br><span class="small mono">Tomorrow 21:40 (ET)</span><br><span class="small">NBA</span></td>
-<td>OKC Thunder <b>2/2</b> <span class="small">(100% of tips, top mkt: Money Line)</span></td>
-<td class="small">ML: OKC -165 / DEN +140 | Spread: OKC -4.5 | Total: O/U 229.5</td>
-<td><b>OKC Thunder ML</b></td>
-<td><span class="badge b-high">high</span></td>
-<td><span class="okpill">VERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="pred"><b>Prediction:</b> The Thunder looked every inch a title contender in their opener, brushing aside San Antonio 116-104 with Shai Gilgeous-Alexander cruising to 32 points in the Western Conference finals rematch. Denver visit Paycom Center cold — they sat out Tuesday&#x27;s eleven-game slate — while OKC&#x27;s defence held the Spurs to 104 on the road night one. Take the Thunder moneyline; if the price drifts past -170, the -4.5 spread still offers room given how comfortably they closed out the opener.</div><div class="small"><b>Basis:</b> Verified: Thunder opened 2026-27 with a 116-104 statement win over San Antonio (Oct 20) — SGA 32 points — avenging the 2026 WCF loss to the Spurs (The Athletic/Oklahoman). OKC 1-0; Denver did not play on the 11-game Oct 21 slate (Flashscore). OLBG consensus 100% OKC.</div><div class="small"><span class="flagpill">FLAG</span> Exact date (Oct 22) per OLBG only — NBA.com confirmation not captured; opponent/venue verified via opening-week coverage.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/NBA/NBA/DEN_Nuggets_@_OKC_Thunder/4?event_id=534843" rel="noopener">OLBG event</a><br><a href="https://www.nytimes.com/athletic/live-blogs/nba-season-start-live-updates-latest-news-schedule-games-scores/iAdFcCak0Nx8/6BuO7F4tVIwf/" rel="noopener">The Athletic — NBA opening night live blog</a><br><a href="https://www.oklahoman.com/story/sports/nba/thunder/2026-10-20/thunder-spurs-score-live-updates-nba-opening-night-game-highlights-stats-injury-report--live/92353116007/" rel="noopener">The Oklahoman — Thunder 116-104 Spurs</a><br><a href="https://www.flashscore.com/basketball/usa/nba/" rel="noopener">Flashscore — NBA fixtures</a></td>
-</tr><tr>
-<td><b>U BT Cluj Napoca vs London Lions</b><br><span class="small mono">Today 12:00 (ET)</span><br><span class="small">Euro Cup</span></td>
-<td>London Lions <b>1/2</b> <span class="small">(50% of tips, top mkt: Money Line)</span></td>
-<td class="small">LL -120 | Spread -1.5 | Total O/U 166.5</td>
-<td><b>London Lions ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> OLBG consensus 50% Lions; unverified beyond listing.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/European/Euro_Cup/U_BT_Cluj_Napoca_vs_London_Lions/4?event_id=535949" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>AEK vs Antwerp Giants</b><br><span class="small mono">Today 12:00 (ET)</span><br><span class="small">Basketball Champions League</span></td>
-<td>Antwerp Giants <b>1/2</b> <span class="small">(50% of tips, top mkt: Money Line)</span></td>
-<td class="small">AG -110 | Pick&#x27;em spread | Total O/U 160.5</td>
-<td><b>Antwerp Giants ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> OLBG consensus 50% Antwerp; unverified beyond listing.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/European/Basketball_Champions_League/AEK_vs_Antwerp_Giants/4?event_id=535969" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Bnei Herzliya vs FC Porto</b><br><span class="small mono">Today 12:30 (ET)</span><br><span class="small">Basketball Champions League</span></td>
-<td>FC Porto <b>1/1</b> <span class="small">(100% of tips, top mkt: Money Line)</span></td>
-<td class="small">POR -140 | Spread -2.5 | Total O/U 158.5</td>
-<td><b>FC Porto ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> OLBG consensus 100% Porto; unverified beyond listing.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/European/Basketball_Champions_League/Bnei_Herzliya_vs_FC_Porto/4?event_id=535970" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Chemnitz 99 vs Slask Wroclaw</b><br><span class="small mono">Today 13:00 (ET)</span><br><span class="small">Euro Cup</span></td>
-<td>Slask Wroclaw <b>1/1</b> <span class="small">(100% of tips, top mkt: Money Line)</span></td>
-<td class="small">SLA -115 | Pick&#x27;em spread | Total O/U 162.5</td>
-<td><b>Slask Wroclaw ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> OLBG consensus 100% Slask; unverified beyond listing.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/European/Euro_Cup/Chemnitz_99_vs_Slask_Wroclaw/4?event_id=535951" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Tortona vs San Pablo Burgos</b><br><span class="small mono">Today 13:00 (ET)</span><br><span class="small">Euro Cup</span></td>
-<td>San Pablo Burgos <b>1/1</b> <span class="small">(100% of tips, top mkt: Money Line)</span></td>
-<td class="small">SPB -125 | Spread -1.5 | Total O/U 163.5</td>
-<td><b>San Pablo Burgos ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> OLBG consensus 100% Burgos; unverified beyond listing.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/European/Euro_Cup/Tortona_vs_San_Pablo_Burgos/4?event_id=535953" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Bourg vs Trento</b><br><span class="small mono">Today 13:30 (ET)</span><br><span class="small">Euro Cup</span></td>
-<td>Trento <b>1/1</b> <span class="small">(100% of tips, top mkt: Money Line)</span></td>
-<td class="small">TRE -115 | Pick&#x27;em spread | Total O/U 164.5</td>
-<td><b>Trento ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> OLBG consensus 100% Trento; unverified beyond listing.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/European/Euro_Cup/Bourg_vs_Trento/4?event_id=535954" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Frankfurt Skyliners vs Tenerife</b><br><span class="small mono">Today 13:30 (ET)</span><br><span class="small">Euro Cup</span></td>
-<td>Frankfurt Skyliners <b>1/1</b> <span class="small">(100% of tips, top mkt: Money Line)</span></td>
-<td class="small">FRA -110 | Pick&#x27;em spread | Total O/U 159.5</td>
-<td><b>Frankfurt Skyliners ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> OLBG consensus 100% Frankfurt; unverified beyond listing.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/European/Euro_Cup/Frankfurt_Skyliners_vs_Tenerife/4?event_id=535955" rel="noopener">OLBG event</a></td>
-</tr><tr>
-<td><b>Joventut vs Telekom Bonn</b><br><span class="small mono">Today 14:00 (ET)</span><br><span class="small">Basketball Champions League</span></td>
-<td>Joventut <b>1/1</b> <span class="small">(100% of tips, top mkt: Money Line)</span></td>
-<td class="small">JOV -160 | Spread -4.5 | Total O/U 165.5</td>
-<td><b>Joventut ML</b></td>
-<td><span class="badge b-low">low</span></td>
-<td><span class="flagpill">UNVERIFIED</span></td>
-<td><details><summary>Analysis</summary><div class="small"><b>Basis:</b> OLBG consensus 100% Joventut (Beat Besiktas-class form per Basketnews club listing); standings not verified for this competition.</div><div class="small"><span class="flagpill">FLAG</span> Unverified: fixture/standings per OLBG only.</div></details></td>
-<td class="srcs"><a href="https://www.olbg.com/betting-tips/Basketball/European/Basketball_Champions_League/Joventut_vs_Telekom_Bonn/4?event_id=535971" rel="noopener">OLBG event</a></td>
-</tr></table>
-</div><footer><div class="wrap">Built by session 2360a617 · Data snapshot 2026-10-21 05:25–06:05 UTC · For research/entertainment only — not betting advice. Unverified rows are flagged, never inferred.</div></footer></body></html>
+<title>Basketball · OLBG Reverse-Engineering</title>
+<meta name="description" content="Independent reverse-engineering of OLBG: verified fixtures across 17 in-scope sports, originated betting lines, confidence tiers and written predictions.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="hdr-inner">
+    <div class="brand"><span class="dot"></span> OLBG <span class="sub">reverse-engineered</span></div>
+    <nav class="main"><a href="../index.html">Dashboard</a><a href="../picks.html">Picks</a><a href="../predictions.html">Predictions</a><a href="../sports.html" aria-current="page">Sports</a><a href="../methodology.html">Methodology</a><a href="../reverse-engineering.html">OLBG analysis</a><a href="../sources.html">Sources</a><a href="../flagged.html">Flagged</a><a href="../docs/index.html">OLBG board (164)</a></nav>
+  </div>
+</header>
+<main>
+
+<div class="crumb">Dashboard / Sports / Basketball</div>
+<h1>Basketball <span class="badge verified" style="vertical-align:8px">Covered</span></h1>
+<p class="lede">Eleven NBA fixtures verified from NBA.com. All twelve clubs opened 2026-27 at 0-0, so no club carries a current-season rating and every pick is capped at low confidence.</p>
+<p class="sub">OLBG sport ID <b>4</b> ·
+OLBG page <a href="https://www.olbg.com/betting-tips/Basketball/4"
+target="_blank" rel="noopener">/betting-tips/Basketball/4</a></p>
+<div class="strip"><span class="chip">11 matches</span><span class="chip">High <b>0</b></span><span class="chip">Medium <b>0</b></span><span class="chip">Low <b>11</b></span></div>
+<div class="table-wrap"><table id=""><thead><tr><th>When</th><th>Match</th><th>Competition</th><th>Our line (H / D / A)</th><th>Selection</th><th>Conf.</th><th>Verified from</th></tr></thead><tbody><tr data-conf="low"><td style="white-space:nowrap">21 Oct 23:00 UTC</td><td><span class="match-name">Orlando Magic v Atlanta Hawks</span><span class="sub">Kia Center, Orlando</span></td><td>NBA<span class="sub">Regular season</span></td><td class="odds">1.70 / 2.16</td><td><b>Orlando Magic</b><span class="sub">Match Winner @ 1.7</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Orlando Magic</span><span><b class="odds">1.70</b> <span class="sub" style="display:inline">(56%)</span></span></li><li><span>Atlanta Hawks</span><span><b class="odds">2.16</b> <span class="sub" style="display:inline">(44%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Points handicap · line 3.0</span></div><ul><li><span>Orlando Magic -3.0</span><span><b class="odds">1.93</b> <span class="sub" style="display:inline">(49%)</span></span></li><li><span>Atlanta Hawks +3.0</span><span><b class="odds">1.88</b> <span class="sub" style="display:inline">(51%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div><div class="mkt"><div class="mkt-h"><span>Match Total (Points) · line 225.5</span></div><ul><li><span>Over 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Under 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">Alternate line: Over 224.0 1.79 / Under 224.0 2.04</div><div class="basis">League baseline total - no match-specific total input was sourced</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.nba.com/games?date=2026-10-21" target="_blank" rel="noopener">NBA.com games</a><a href="https://www.nba.com/game/atl-vs-orl-0022600085" target="_blank" rel="noopener">NBA game</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">21 Oct 23:00 UTC</td><td><span class="match-name">Washington Wizards v Milwaukee Bucks</span><span class="sub">Capital One Arena, Washington</span></td><td>NBA<span class="sub">Regular season</span></td><td class="odds">1.70 / 2.16</td><td><b>Washington Wizards</b><span class="sub">Match Winner @ 1.7</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Washington Wizards</span><span><b class="odds">1.70</b> <span class="sub" style="display:inline">(56%)</span></span></li><li><span>Milwaukee Bucks</span><span><b class="odds">2.16</b> <span class="sub" style="display:inline">(44%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Points handicap · line 3.0</span></div><ul><li><span>Washington Wizards -3.0</span><span><b class="odds">1.93</b> <span class="sub" style="display:inline">(49%)</span></span></li><li><span>Milwaukee Bucks +3.0</span><span><b class="odds">1.88</b> <span class="sub" style="display:inline">(51%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div><div class="mkt"><div class="mkt-h"><span>Match Total (Points) · line 225.5</span></div><ul><li><span>Over 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Under 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">Alternate line: Over 224.0 1.79 / Under 224.0 2.04</div><div class="basis">League baseline total - no match-specific total input was sourced</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.nba.com/games?date=2026-10-21" target="_blank" rel="noopener">NBA.com games</a><a href="https://www.nba.com/game/mil-vs-was-0022600086" target="_blank" rel="noopener">NBA game</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">21 Oct 23:30 UTC</td><td><span class="match-name">Miami Heat v Minnesota Timberwolves</span><span class="sub">Kaseya Center, Miami</span></td><td>NBA<span class="sub">Regular season</span></td><td class="odds">1.70 / 2.16</td><td><b>Miami Heat</b><span class="sub">Match Winner @ 1.7</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Miami Heat</span><span><b class="odds">1.70</b> <span class="sub" style="display:inline">(56%)</span></span></li><li><span>Minnesota Timberwolves</span><span><b class="odds">2.16</b> <span class="sub" style="display:inline">(44%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Points handicap · line 3.0</span></div><ul><li><span>Miami Heat -3.0</span><span><b class="odds">1.93</b> <span class="sub" style="display:inline">(49%)</span></span></li><li><span>Minnesota Timberwolves +3.0</span><span><b class="odds">1.88</b> <span class="sub" style="display:inline">(51%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div><div class="mkt"><div class="mkt-h"><span>Match Total (Points) · line 225.5</span></div><ul><li><span>Over 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Under 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">Alternate line: Over 224.0 1.79 / Under 224.0 2.04</div><div class="basis">League baseline total - no match-specific total input was sourced</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.nba.com/games?date=2026-10-21" target="_blank" rel="noopener">NBA.com games</a><a href="https://www.nba.com/game/min-vs-mia-0022600004" target="_blank" rel="noopener">NBA game</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">21 Oct 23:30 UTC</td><td><span class="match-name">Brooklyn Nets v Charlotte Hornets</span><span class="sub">Barclays Center, Brooklyn</span></td><td>NBA<span class="sub">Regular season</span></td><td class="odds">1.70 / 2.16</td><td><b>Brooklyn Nets</b><span class="sub">Match Winner @ 1.7</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Brooklyn Nets</span><span><b class="odds">1.70</b> <span class="sub" style="display:inline">(56%)</span></span></li><li><span>Charlotte Hornets</span><span><b class="odds">2.16</b> <span class="sub" style="display:inline">(44%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Points handicap · line 3.0</span></div><ul><li><span>Brooklyn Nets -3.0</span><span><b class="odds">1.93</b> <span class="sub" style="display:inline">(49%)</span></span></li><li><span>Charlotte Hornets +3.0</span><span><b class="odds">1.88</b> <span class="sub" style="display:inline">(51%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div><div class="mkt"><div class="mkt-h"><span>Match Total (Points) · line 225.5</span></div><ul><li><span>Over 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Under 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">Alternate line: Over 224.0 1.79 / Under 224.0 2.04</div><div class="basis">League baseline total - no match-specific total input was sourced</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.nba.com/games?date=2026-10-21" target="_blank" rel="noopener">NBA.com games</a><a href="https://www.nba.com/game/cha-vs-bkn-0022600087" target="_blank" rel="noopener">NBA game</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">21 Oct 23:30 UTC</td><td><span class="match-name">Toronto Raptors v Chicago Bulls</span><span class="sub">Scotiabank Arena, Toronto</span></td><td>NBA<span class="sub">Regular season</span></td><td class="odds">1.70 / 2.16</td><td><b>Toronto Raptors</b><span class="sub">Match Winner @ 1.7</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Toronto Raptors</span><span><b class="odds">1.70</b> <span class="sub" style="display:inline">(56%)</span></span></li><li><span>Chicago Bulls</span><span><b class="odds">2.16</b> <span class="sub" style="display:inline">(44%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Points handicap · line 3.0</span></div><ul><li><span>Toronto Raptors -3.0</span><span><b class="odds">1.93</b> <span class="sub" style="display:inline">(49%)</span></span></li><li><span>Chicago Bulls +3.0</span><span><b class="odds">1.88</b> <span class="sub" style="display:inline">(51%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div><div class="mkt"><div class="mkt-h"><span>Match Total (Points) · line 225.5</span></div><ul><li><span>Over 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Under 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">Alternate line: Over 224.0 1.79 / Under 224.0 2.04</div><div class="basis">League baseline total - no match-specific total input was sourced</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.nba.com/games?date=2026-10-21" target="_blank" rel="noopener">NBA.com games</a><a href="https://www.nba.com/game/chi-vs-tor-0022600088" target="_blank" rel="noopener">NBA game</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">22 Oct 00:00 UTC</td><td><span class="match-name">New Orleans Pelicans v Indiana Pacers</span><span class="sub">Smoothie King Center, New Orleans</span></td><td>NBA<span class="sub">Regular season</span></td><td class="odds">1.70 / 2.16</td><td><b>New Orleans Pelicans</b><span class="sub">Match Winner @ 1.7</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>New Orleans Pelicans</span><span><b class="odds">1.70</b> <span class="sub" style="display:inline">(56%)</span></span></li><li><span>Indiana Pacers</span><span><b class="odds">2.16</b> <span class="sub" style="display:inline">(44%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Points handicap · line 3.0</span></div><ul><li><span>New Orleans Pelicans -3.0</span><span><b class="odds">1.93</b> <span class="sub" style="display:inline">(49%)</span></span></li><li><span>Indiana Pacers +3.0</span><span><b class="odds">1.88</b> <span class="sub" style="display:inline">(51%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div><div class="mkt"><div class="mkt-h"><span>Match Total (Points) · line 225.5</span></div><ul><li><span>Over 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Under 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">Alternate line: Over 224.0 1.79 / Under 224.0 2.04</div><div class="basis">League baseline total - no match-specific total input was sourced</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.nba.com/games?date=2026-10-21" target="_blank" rel="noopener">NBA.com games</a><a href="https://www.nba.com/game/ind-vs-nop-0022600090" target="_blank" rel="noopener">NBA game</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">22 Oct 00:00 UTC</td><td><span class="match-name">Memphis Grizzlies v Utah Jazz</span><span class="sub">FedExForum, Memphis</span></td><td>NBA<span class="sub">Regular season</span></td><td class="odds">1.70 / 2.16</td><td><b>Memphis Grizzlies</b><span class="sub">Match Winner @ 1.7</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Memphis Grizzlies</span><span><b class="odds">1.70</b> <span class="sub" style="display:inline">(56%)</span></span></li><li><span>Utah Jazz</span><span><b class="odds">2.16</b> <span class="sub" style="display:inline">(44%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Points handicap · line 3.0</span></div><ul><li><span>Memphis Grizzlies -3.0</span><span><b class="odds">1.93</b> <span class="sub" style="display:inline">(49%)</span></span></li><li><span>Utah Jazz +3.0</span><span><b class="odds">1.88</b> <span class="sub" style="display:inline">(51%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div><div class="mkt"><div class="mkt-h"><span>Match Total (Points) · line 225.5</span></div><ul><li><span>Over 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Under 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">Alternate line: Over 224.0 1.79 / Under 224.0 2.04</div><div class="basis">League baseline total - no match-specific total input was sourced</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.nba.com/games?date=2026-10-21" target="_blank" rel="noopener">NBA.com games</a><a href="https://www.nba.com/game/uta-vs-mem-0022600089" target="_blank" rel="noopener">NBA game</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">22 Oct 00:30 UTC</td><td><span class="match-name">Houston Rockets v Dallas Mavericks</span><span class="sub">Toyota Center, Houston</span></td><td>NBA<span class="sub">Regular season</span></td><td class="odds">1.70 / 2.16</td><td><b>Houston Rockets</b><span class="sub">Match Winner @ 1.7</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Houston Rockets</span><span><b class="odds">1.70</b> <span class="sub" style="display:inline">(56%)</span></span></li><li><span>Dallas Mavericks</span><span><b class="odds">2.16</b> <span class="sub" style="display:inline">(44%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Points handicap · line 3.0</span></div><ul><li><span>Houston Rockets -3.0</span><span><b class="odds">1.93</b> <span class="sub" style="display:inline">(49%)</span></span></li><li><span>Dallas Mavericks +3.0</span><span><b class="odds">1.88</b> <span class="sub" style="display:inline">(51%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div><div class="mkt"><div class="mkt-h"><span>Match Total (Points) · line 225.5</span></div><ul><li><span>Over 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Under 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">Alternate line: Over 224.0 1.79 / Under 224.0 2.04</div><div class="basis">League baseline total - no match-specific total input was sourced</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.nba.com/games?date=2026-10-21" target="_blank" rel="noopener">NBA.com games</a><a href="https://www.nba.com/game/dal-vs-hou-0022600091" target="_blank" rel="noopener">NBA game</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">22 Oct 02:00 UTC</td><td><span class="match-name">Los Angeles Lakers v Golden State Warriors</span><span class="sub">Crypto.com Arena, Los Angeles</span></td><td>NBA<span class="sub">Regular season</span></td><td class="odds">1.70 / 2.16</td><td><b>Los Angeles Lakers</b><span class="sub">Match Winner @ 1.7</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Los Angeles Lakers</span><span><b class="odds">1.70</b> <span class="sub" style="display:inline">(56%)</span></span></li><li><span>Golden State Warriors</span><span><b class="odds">2.16</b> <span class="sub" style="display:inline">(44%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Points handicap · line 3.0</span></div><ul><li><span>Los Angeles Lakers -3.0</span><span><b class="odds">1.93</b> <span class="sub" style="display:inline">(49%)</span></span></li><li><span>Golden State Warriors +3.0</span><span><b class="odds">1.88</b> <span class="sub" style="display:inline">(51%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div><div class="mkt"><div class="mkt-h"><span>Match Total (Points) · line 225.5</span></div><ul><li><span>Over 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Under 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">Alternate line: Over 224.0 1.79 / Under 224.0 2.04</div><div class="basis">League baseline total - no match-specific total input was sourced</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.nba.com/games?date=2026-10-21" target="_blank" rel="noopener">NBA.com games</a><a href="https://www.nba.com/game/gsw-vs-lal-0022600005" target="_blank" rel="noopener">NBA game</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">22 Oct 02:00 UTC</td><td><span class="match-name">Portland Trail Blazers v Phoenix Suns</span><span class="sub">Moda Center, Portland</span></td><td>NBA<span class="sub">Regular season</span></td><td class="odds">1.70 / 2.16</td><td><b>Portland Trail Blazers</b><span class="sub">Match Winner @ 1.7</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>Portland Trail Blazers</span><span><b class="odds">1.70</b> <span class="sub" style="display:inline">(56%)</span></span></li><li><span>Phoenix Suns</span><span><b class="odds">2.16</b> <span class="sub" style="display:inline">(44%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Points handicap · line 3.0</span></div><ul><li><span>Portland Trail Blazers -3.0</span><span><b class="odds">1.93</b> <span class="sub" style="display:inline">(49%)</span></span></li><li><span>Phoenix Suns +3.0</span><span><b class="odds">1.88</b> <span class="sub" style="display:inline">(51%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div><div class="mkt"><div class="mkt-h"><span>Match Total (Points) · line 225.5</span></div><ul><li><span>Over 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Under 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">Alternate line: Over 224.0 1.79 / Under 224.0 2.04</div><div class="basis">League baseline total - no match-specific total input was sourced</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.nba.com/games?date=2026-10-21" target="_blank" rel="noopener">NBA.com games</a><a href="https://www.nba.com/game/phx-vs-por-0022600092" target="_blank" rel="noopener">NBA game</a></div></td></tr><tr data-conf="low"><td style="white-space:nowrap">22 Oct 02:30 UTC</td><td><span class="match-name">LA Clippers v Sacramento Kings</span><span class="sub">Intuit Dome, Inglewood</span></td><td>NBA<span class="sub">Regular season</span></td><td class="odds">1.70 / 2.16</td><td><b>LA Clippers</b><span class="sub">Match Winner @ 1.7</span><details class="markets"><summary>All originated markets</summary><div class="mkt"><div class="mkt-h"><span>Match Winner</span></div><ul><li><span>LA Clippers</span><span><b class="odds">1.70</b> <span class="sub" style="display:inline">(56%)</span></span></li><li><span>Sacramento Kings</span><span><b class="odds">2.16</b> <span class="sub" style="display:inline">(44%)</span></span></li></ul><div class="basis">No strength input - neutral baseline plus home edge</div></div><div class="mkt"><div class="mkt-h"><span>Points handicap · line 3.0</span></div><ul><li><span>LA Clippers -3.0</span><span><b class="odds">1.93</b> <span class="sub" style="display:inline">(49%)</span></span></li><li><span>Sacramento Kings +3.0</span><span><b class="odds">1.88</b> <span class="sub" style="display:inline">(51%)</span></span></li></ul><div class="basis">Expected margin derived from the match-winner probability</div></div><div class="mkt"><div class="mkt-h"><span>Match Total (Points) · line 225.5</span></div><ul><li><span>Over 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li><li><span>Under 225.5</span><span><b class="odds">1.90</b> <span class="sub" style="display:inline">(50%)</span></span></li></ul><div class="basis">Alternate line: Over 224.0 1.79 / Under 224.0 2.04</div><div class="basis">League baseline total - no match-specific total input was sourced</div></div></details></td><td><span class="badge low">Low</span><span class="sub"><span class="badge cross">Cross-checked</span></span></td><td><div class="src-links"><a href="https://www.nba.com/games?date=2026-10-21" target="_blank" rel="noopener">NBA.com games</a></div></td></tr></tbody></table></div>
+
+
+</main>
+<footer class="foot">
+  <p><b>OLBG Reverse-Engineering</b> — Originated lines · verified fixtures · confidence tiers. Window covered: 21–27 October 2026.
+  Every fixture links to the governing body it was read from. Model prices are our own
+  estimates, not market prices. Nothing here is betting advice.</p>
+  <p><a href="../methodology.html">Methodology</a> · <a href="../sources.html">Source register</a> ·
+  <a href="../flagged.html">Flagged for review</a> · <a href="../data/fixtures.json">Raw JSON</a></p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>
