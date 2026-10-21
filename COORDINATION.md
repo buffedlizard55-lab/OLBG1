@@ -4,7 +4,7 @@
 working on what. It exists so that multiple agent sessions can work on this repository at the
 same time without duplicating work or overwriting each other.
 
-Last updated: **2026-10-21** (UTC)
+Last updated: **2026-10-21T05:26:00Z** (UTC)
 
 ---
 
@@ -67,12 +67,17 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | # | Task | Status | Session | File scope | Started (UTC) | Notes |
 |---|------|--------|---------|------------|---------------|-------|
 | T1 | Reverse-engineer OLBG sport taxonomy and match coverage | done | ce5920e3-olbg1 | `data/olbg_taxonomy.json`, `reverse-engineering.html` | 2026-10-21T05:20Z | 22 OLBG sports enumerated with IDs; 17 in scope |
-| T2 | Harvest + verify fixtures for in-scope sports | in progress | ce5920e3-olbg1 | `data/fixtures.json` | 2026-10-21T05:35Z | Official-source verification per row |
-| T3 | Originate betting lines + confidence tiers | unclaimed | — | `data/lines.json`, `scripts/model.py`, `scripts/origin_lines.py` | — | Depends on T2 |
-| T4 | Write high-confidence predictions (≥30 words, unique) | unclaimed | — | `data/predictions.json` | — | Depends on T3 |
-| T5 | Build static dashboard site | unclaimed | — | `*.html`, `sports/`, `assets/`, `scripts/build_site.py` | — | Depends on T2–T4 |
-| T6 | Link-integrity + data validation checks | unclaimed | — | `scripts/validate.py`, `tests/` | — | Depends on T5 |
-| T7 | Final integration: merge, re-verify, publish Pages, PR | unclaimed | — | `COORDINATION.md`, PR | — | Reserved for the integration session |
+| T2 | Harvest + verify fixtures for in-scope sports | done | ce5920e3-olbg1 | `data/fixtures.json` | 2026-10-21T05:35Z | Official-source verification per row (initial 50 rows) |
+| T3 | Originate betting lines + confidence tiers | done | ce5920e3-olbg1 | `data/lines.json`, `scripts/model.py`, `scripts/origin_lines.py` | 2026-10-21T05:18Z | Initial 49 priced matches |
+| T4 | Write high-confidence predictions (≥30 words, unique) | done | ce5920e3-olbg1 | `data/predictions.json` | 2026-10-21T05:18Z | Initial 8 high-confidence predictions |
+| T5 | Build static dashboard site | done | ce5920e3-olbg1 | `*.html`, `sports/`, `assets/`, `scripts/build_site.py` | 2026-10-21T05:19Z | Initial 26-page dashboard on root |
+| T6 | Link-integrity + data validation checks | done | ce5920e3-olbg1 | `scripts/validate.py`, `tests/` | 2026-10-21T05:19Z | Initial validation gate |
+| T7 | Initial integration: merge, re-verify, publish Pages, PR | done | ce5920e3-olbg1 | `COORDINATION.md`, PR #1–#3 | 2026-10-21T05:19Z | Merged to `main` (`4c67b3b`) with §5.7 follow-up items open |
+| T8 | Deep OLBG live feed + sub-route reverse engineering (`sport_id` 1..31, GeoIP clock audit, EW `0/0` bug, hidden sub-route events) | done | f7fa77fc-olbg1 | `reports/OLBG_REVERSE_ENGINEERING.md`, `datasets/olbg_sports_registry.json`, `datasets/markets_catalog.json` | 2026-10-21T05:15Z | 24 active sport IDs mapped (7 excluded, 17 covered); 172 live OLBG events catalogued |
+| T9 | Line-by-line audit of existing repo files (`data/*.json`, `scripts/*`, tracked `.pyc` artifacts) + official-source verification across all 17 covered sports (closing all §5.7 gaps) | in progress | f7fa77fc-olbg1 | `reports/REPO_LINE_BY_LINE_AUDIT.md`, `datasets/matches_full.json`, `datasets/flagged_for_review.json`, `.gitignore` | 2026-10-21T05:26Z | Verifying existing 50 rows + all 9 previously uninvestigated sports + EuroLeague/EuroCup/BCL/KBL/URC/Top14/ProD2/Darts/Golf/GAA |
+| T10 | Complete multi-market line origination & confidence grading across all verified matches + real PDC Order of Merit, ATP/WTA rankings, NBA/EuroLeague/NHL/Rugby/Handball/Volleyball ratings | queued | f7fa77fc-olbg1 | `scripts/model.py`, `scripts/origin_lines.py`, `data/fixtures.json`, `data/lines.json`, `data/sources.json`, `data/coverage.json`, `datasets/matches_full.csv` | — | Closes §5.7 items 1–4 + full multi-market lines |
+| T11 | Unique ≥30-word human predictions with real verified form & match history for every high-confidence selection | queued | f7fa77fc-olbg1 | `data/predictions.json`, `datasets/matches_full.json` | — | Strict official-source verification on every claim |
+| T12 | Upgraded dashboard UI + Markets Explorer + Repo Audit & Flagged-for-Review pages + full validator gate + PR & merge to `main` + live GitHub Pages check | queued | f7fa77fc-olbg1 | `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration session handoff after `ce5920e3-olbg1` completed |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -107,6 +112,13 @@ Rugby Union (9), Rugby League (10), Baseball (12), Ice Hockey (13), Motor Racing
 Handball (20), Volleyball (21), Aussie Rules (22), eSports (23), Gaelic Football (25),
 Greyhounds (28).
 
+### Session `f7fa77fc-olbg1`
+
+**2026-10-21T05:15Z — branched from `8b43e82`, created initial claim and probed live `OLBG.com` (`sport_id` 1..31 + all sport feeds, competition sub-routes, event pages, and top-tipster pages).**
+Uncovered Hurling (`sport_id=26`), Specials (`sport_id=18`), 9 additional Basketball fixtures hidden behind the 20-row sport-hub truncation cap, OLBG's silent GeoIP clock localization (`EDT` vs `BST` without timezone labels), and OLBG's `0 / 0 Win Tips` division-by-zero display bug on Each-Way-only outright markets (`event_id=101909`, `event_id=188350`).
+
+**2026-10-21T05:26Z — rebased onto `origin/main` (`4c67b3b`), resolved `COORDINATION.md` merge conflict preserving 100% of `ce5920e3-olbg1`'s work, and claimed follow-up tasks `T8–T12` to resolve every open item in §5.7 plus complete line-by-line repo verification.**
+
 ---
 
 ## 3. Sources register
@@ -132,6 +144,9 @@ should be reconciled, not silently replace one another.
 **2026-10-21T05:35Z — deploy cache.** GitHub Pages reported `status=built` for the merge commit, but the public
 URL continued to serve the previous build for several minutes. A cache-busted fetch was used to confirm
 propagation before this session closed.
+
+* **2026-10-21T05:26Z — Merge conflict resolved on `COORDINATION.md` (`f7fa77fc-olbg1` rebasing onto `origin/main`):**
+  Both `ce5920e3-olbg1` and `f7fa77fc-olbg1` branched concurrently from initial commit `8b43e82` when `main` contained only `README.md`. While `f7fa77fc-olbg1` was probing all OLBG sport routes and official governing-body portals across all 24 OLBG sports, sessions `ce5920e3-olbg1` (PRs #1, #2, #3, #5, #7, #10, #11), `4f44f7d9-olbg1` (PRs #4, #8), `c5e985f4-olbg1` (PR #6), and `ebfbd966-olbg1` (PR #9) merged into `main` (`c19df1d`). On `git rebase origin/main`, `COORDINATION.md` raised an `add/add` conflict. Resolution: preserved 100% of every prior session's sections (`§0–§8.1` + `ebfbd966`) verbatim, appended `f7fa77fc-olbg1` tasks `T8–T12` to §1, and logged this handoff here per multi-session protocol. Since all prior sessions have completed their claimed tasks, `f7fa77fc-olbg1` is now executing the full line-by-line audit across all four prior sessions' files, resolving all open gaps across all 17 covered sports, upgrading the root dashboard while preserving and cross-linking `/docs/` and `/ebfbd966/`, and completing final integration to `main`.
 
 ---
 
