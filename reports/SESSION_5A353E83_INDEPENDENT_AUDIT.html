@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Independent Structural Audit · OLBG Origination Desk</title>
+<meta name="description" content="Offline structural audit of provenance, verification coverage, table links and publication status for the OLBG dashboard.">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.audit-wrap{max-width:1100px;margin:0 auto;padding:32px 22px 70px}
+.audit-wrap h1{font-size:clamp(2rem,4vw,3.25rem);line-height:1.08;margin:.4rem 0 1rem}
+.audit-wrap h2{margin:2rem 0 .7rem;border-bottom:1px solid #283244;padding-bottom:.45rem}
+.audit-wrap h3{margin:1rem 0 .5rem}
+.audit-wrap p,.audit-wrap li{line-height:1.65;color:#c7cfdb}
+.audit-wrap a{color:#8bc5ff}
+.audit-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:1.4rem 0}
+.audit-kpi,.audit-card{border:1px solid #283244;background:#121a27;border-radius:14px;padding:16px}
+.audit-kpi strong{display:block;font-size:1.65rem;color:#f1f5f9}
+.audit-kpi span,.muted{font-size:.88rem;color:#9caabd}
+.audit-card{margin:12px 0}
+.audit-card.warning{border-color:#795a29;background:#251d10}
+.audit-card.danger{border-color:#713f49;background:#25151a}
+.audit-wrap code{overflow-wrap:anywhere}
+.audit-wrap pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0b111a;border:1px solid #283244;padding:14px;border-radius:10px;color:#c7cfdb}
+.audit-wrap .lead{font-size:1.08rem;color:#dce5ef}
+.audit-nav{display:flex;flex-wrap:wrap;gap:10px;margin:1rem 0 1.6rem}
+.audit-nav a{display:inline-block;border:1px solid #344258;border-radius:999px;padding:8px 12px;text-decoration:none}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="hdr-inner"><div class="brand"><a href="../index.html"><span class="dot"></span> OLBG Origination Desk <span class="sub">Independent Audit</span></a></div></div></header>
+<main class="audit-wrap">
+<p class="eyebrow">T40 · offline structural review · 2026-10-21T07:57Z UTC · main 6d26d5ec28b074d2c5000f536fe67ec7f922d64e</p>
+<h1>Independent Structural Audit</h1>
+<p class="lead"><strong>Boundary:</strong> This session made no outbound fetches to OLBG or any governing body. It inspected repository files and ran local validators. A source URL's presence or allowlisted host does not prove the linked page was opened or still supports the claim.</p>
+<nav class="audit-nav" aria-label="Audit links"><a href="../index.html">Dashboard</a><a href="../picks.html">All Lines</a><a href="../live-refresh.html">Live Refresh</a><a href="../live-verification.html">Live Verification</a><a href="../flagged.html">Flagged for Review</a><a href="../sources.html">Official Sources</a><a href="../c17a9192/index.html">c17 dashboard</a><a href="../984d417f/index.html">984 dashboard</a></nav>
+<div class="audit-kpis">
+<div class="audit-kpi"><strong>134</strong><span>fixture/event rows</span></div>
+<div class="audit-kpi"><strong>126</strong><span>originated H2H books</span></div>
+<div class="audit-kpi"><strong>31</strong><span>High-pick write-ups</span></div>
+<div class="audit-kpi"><strong>58</strong><span>source rows not re-read in T34</span></div>
+<div class="audit-kpi"><strong>141</strong><span>OLBG cards in saved capture</span></div>
+<div class="audit-kpi"><strong>145</strong><span>events in separate 984d417f snapshot</span></div>
+<div class="audit-kpi"><strong>206</strong><span>of 4894 table rows without HTTPS</span></div>
+</div>
+<section class="audit-card warning"><h2>Freshness boundary</h2>
+<p>The saved T34 register records <strong>41 confirmed, 33 corrected, 2 flagged, and 58 not re-checked</strong> (134 rows total). 76 rows were classified as read/corrected/flagged, but “corrected” includes a status downgrade. T40 did not re-fetch sources.</p>
+<p>The main validator checks embedded per-fixture verification blocks, allows <code>not-rechecked</code>, and does not load the separate <code>data/verification.json</code> register. A passing result is not proof of fresh source reads.</p>
+</section>
+<section class="audit-card"><h2>Snapshot reconciliation</h2>
+<ul>
+<li>Primary data: 134 rows across 17 sports; 126 H2H fixtures and 8 event-only cards.</li>
+<li>Fixture status labels: 128 verified, 5 cross-checked, 1 unverified.</li>
+<li>Model confidence counts: High 31, Low 61, Medium 34; 31 High-pick texts of 49–82 words.</li>
+<li>OLBG capture: 141 cards; 69 joined, 47 consensus/selection changes, 20 selection flips, 72 upstream-only, 18 absent from the truncated first screen.</li>
+<li>Flagged registry: 42 systemic findings and 111 row annotations; 32 rows have missing UTC explicitly recorded.</li>
+<li>Taxonomy ambiguity: aussie-rules: 9, gaelic-football: 4. The word “football” remains unresolved; the c17 and 984 namespaces also include Aussie Rules and Gaelic Football.</li>
+<li>Task-ID collision: this session's provisional T36 collided with PR #42's T36–T39. The current audit is T40, appended in COORDINATION.md §30.</li>
+</ul></section>
+<section class="audit-card"><h2>Separate /c17a9192/ dashboard (PR #41)</h2>
+<p>The newer namespace contains <strong>217 events</strong>: 151 fully verified, 53 calendar-verified with partial blanks, and 13 unverified; 137 manual-review entries. It has 46 high-confidence picks and 24 pages with 1185 table rows; all 1185 rows have HTTPS, while 1151 have a recognized governing-body host. The remaining 34 rows link to non-governing-body sources such as OLBG taxonomy or repository-audit notes.</p>
+<p>The structured event types are 121 two-way H2H + 65 three-way H2H = 186 H2H, plus 25 outrights + 6 races = 31 non-H2H. The coordination headline instead states 192 H2H + 25 multi-runner. These classifications disagree, although both totals equal 217.</p>
+<p>Rows with overall <code>unverified</code> status still have populated values for: start_utc 11, venue 6, stat_a 6. T40 did not fetch sources, so each populated field needs confirmation or a blank.</p>
+<p><a href="../c17a9192/index.html">Open the separate dashboard</a> · <a href="../c17a9192/markets.html">Markets</a> · <a href="../c17a9192/predictions.html">Predictions</a> · <a href="SESSION_C17A9192_AUDIT.md">Session audit</a></p></section>
+<section class="audit-card warning"><h2>Separate /984d417f/ dashboard (PR #42)</h2>
+<p><a href="https://github.com/buffedlizard55-lab/OLBG1/pull/42">PR #42</a> merged at <code>2026-10-21T07:47:01Z</code> and introduced this separate namespace. <a href="https://github.com/buffedlizard55-lab/OLBG1/pull/43">PR #43</a> merged at <code>2026-10-21T07:49:42Z</code> and synced Round 11 AFLW alternate venues and prediction percentage provenance. It contains <strong>145 fixture/event rows and 145 line books</strong> across 17 sports; status labels are 140 verified and 5 cross-checked. Kinds: 134 H2H and 11 field events. Confidence: 40 High / 34 Medium / 71 Low; 40 predictions.</p>
+<p>Stored event data has 258 source links: 248 to recognized official authority hosts and 10 to OLBG upstream discovery. Each of the 145 fixture records has at least one recognized authority source. The source register has 27 records; these are URL/host checks only, not fresh source verification.</p>
+<p><strong>Repository review and blank markers:</strong> 11 line-by-line repo-audit groups, 6 upstream OLBG defects and 127 flagged rows. 84 fixtures list 100 field-level uncertainty markers, and all named values are absent/empty in fixture and line JSON. The session report headline says 64 fields, so the count is inconsistent (stored marker total: 100).</p>
+<p><strong>Rendered rows:</strong> 23 pages, 591 table rows; 585 with HTTPS, 478 with recognized governing-body hosts. 113 lack such a host, concentrated in 984d417f/audit.html (9), 984d417f/flagged.html (5), 984d417f/markets.html (72), 984d417f/reverse-engineering.html (27). 6 rows have no HTTPS, in 984d417f/audit.html (6). All 290 of 290 index/sport fixture table rows have a recognized authority link.</p>
+<p><a href="../984d417f/index.html">Dashboard</a> · <a href="../984d417f/markets.html">Markets</a> · <a href="../984d417f/flagged.html">Flags</a> · <a href="../984d417f/audit.html">Repository audit</a> · <a href="SESSION_984D417F_AUDIT.md">Session report</a></p></section>
+<section class="audit-card danger"><h2>Unverified Afghanistan–Bangladesh ODI row</h2>
+<p><code>cric-afg-ban-odi</code> is marked unverified and the T34 finding says no official fixture page was found. However, the primary row still contains the date, participants and venue sourced from OLBG; its only fixture source link is an ICC rankings page that does not publish fixtures. The saved verification action ledger labels the status downgrade “corrected,” while the embedded verdict is “unconfirmed.” Under the standing instruction, those unconfirmed fixture values should be blank; this structural task records but does not edit the row.</p>
+<ul><li><code>cric-afg-ban-odi</code>: ledger source <a href="https://scoring.nzc.nz/fixtures">New Zealand Cricket official fixtures &amp; results service</a> is absent from the fixture source list; its evidence says no official fixture page was found.</li></ul></section>
+<section class="audit-card warning"><h2>Verification chronology</h2>
+<p>The separate ledger says it was generated at <code>2026-10-21T07:20Z</code>; COORDINATION §27 reports a T34 run at <code>2026-10-21T09:05Z</code>. PR #39 merged at <code>2026-10-21T07:27:45Z</code>. These timestamps conflict:</p>
+<ul><li>42 embedded fixture verification blocks have checked_utc later than data/verification.json generated 2026-10-21T07:20Z (sample IDs: aflw-r11-01, aflw-r11-02, aflw-r11-03, aflw-r11-04, aflw-r11-05)</li>
+<li>COORDINATION.md §27 reports T34 run at 2026-10-21T09:05Z, later than verification.json generated 2026-10-21T07:20Z</li>
+<li>COORDINATION.md §27 T34 run time 2026-10-21T09:05Z postdates PR #39 merge 2026-10-21T07:27:45Z</li></ul>
+<p>The audit preserves the discrepancy rather than guessing which timestamp is wrong.</p></section>
+<section class="audit-card"><h2>Source-link structure</h2>
+<p>Every primary match row in the root <a href="../picks.html">All Lines</a> and sport pages, plus the <a href="../f7fa77fc/index.html">mirror</a>, has at least one HTTPS host accepted by the validator's allowlist. This is only a host/shape check.</p>
+<p>Live Refresh capture: 141 rows, 69 with a recognized governing-body link, 72 OLBG-only. Across capture/change/absent tables: 206 rows, 69 with recognized official links, 137 OLBG-only.</p>
+<p>Live Verification detail table: 134 rows, 134 with recognized official links. Sport-summary table: 17 rows, 17 without a row-level HTTPS link.</p>
+<p>Whole-tree scan: <strong>4894 table rows across 208 HTML pages</strong>; 206 have no HTTPS link. The count includes summary, methodology and historical companion pages.</p>
+<ul><li><a href="../aa4e9dbf/flagged.html"><code>aa4e9dbf/flagged.html</code></a> — 27 row(s) without HTTPS.</li>
+<li><a href="../f7fa77fc/live-verification.html"><code>f7fa77fc/live-verification.html</code></a> — 17 row(s) without HTTPS.</li>
+<li><a href="../f7fa77fc/methodology.html"><code>f7fa77fc/methodology.html</code></a> — 17 row(s) without HTTPS.</li>
+<li><a href="../live-verification.html"><code>live-verification.html</code></a> — 17 row(s) without HTTPS.</li>
+<li><a href="../methodology.html"><code>methodology.html</code></a> — 17 row(s) without HTTPS.</li>
+<li><a href="../docs/markets.html"><code>docs/markets.html</code></a> — 15 row(s) without HTTPS.</li>
+<li><a href="../analysis.html"><code>analysis.html</code></a> — 14 row(s) without HTTPS.</li>
+<li><a href="../f7fa77fc/analysis.html"><code>f7fa77fc/analysis.html</code></a> — 14 row(s) without HTTPS.</li>
+<li><a href="../docs/flagged.html"><code>docs/flagged.html</code></a> — 13 row(s) without HTTPS.</li>
+<li><a href="../ebfbd966/markets.html"><code>ebfbd966/markets.html</code></a> — 11 row(s) without HTTPS.</li>
+<li><a href="../ebfbd966/index.html"><code>ebfbd966/index.html</code></a> — 7 row(s) without HTTPS.</li>
+<li><a href="../984d417f/audit.html"><code>984d417f/audit.html</code></a> — 6 row(s) without HTTPS.</li>
+<li><a href="../aa4e9dbf/tennis.html"><code>aa4e9dbf/tennis.html</code></a> — 6 row(s) without HTTPS.</li>
+<li><a href="../aa4e9dbf/cricket.html"><code>aa4e9dbf/cricket.html</code></a> — 4 row(s) without HTTPS.</li>
+<li><a href="../aa4e9dbf/handball.html"><code>aa4e9dbf/handball.html</code></a> — 4 row(s) without HTTPS.</li>
+<li><a href="../ebfbd966/high-confidence.html"><code>ebfbd966/high-confidence.html</code></a> — 4 row(s) without HTTPS.</li>
+<li><a href="../docs/methodology.html"><code>docs/methodology.html</code></a> — 3 row(s) without HTTPS.</li>
+<li><a href="../ebfbd966/methodology.html"><code>ebfbd966/methodology.html</code></a> — 3 row(s) without HTTPS.</li>
+<li><a href="../aa4e9dbf/basketball.html"><code>aa4e9dbf/basketball.html</code></a> — 2 row(s) without HTTPS.</li>
+<li><a href="../ebfbd966/sports/darts.html"><code>ebfbd966/sports/darts.html</code></a> — 2 row(s) without HTTPS.</li>
+<li><a href="../aa4e9dbf/volleyball.html"><code>aa4e9dbf/volleyball.html</code></a> — 1 row(s) without HTTPS.</li>
+<li><a href="../ebfbd966/sports/cricket.html"><code>ebfbd966/sports/cricket.html</code></a> — 1 row(s) without HTTPS.</li>
+<li><a href="../ebfbd966/sports/snooker.html"><code>ebfbd966/sports/snooker.html</code></a> — 1 row(s) without HTTPS.</li></ul></section>
+<section class="audit-card danger"><h2>Outstanding work and coordination</h2>
+<ul>
+<li><strong>Root T35 AFLW re-price remains queued:</strong> nine root lines and three picks await the official 2026 Round 10 re-price (16 of 18 club inputs disagree). PR #41 and PR #42 carry separate alternatives only inside <code>/c17a9192/</code> and <code>/984d417f/</code>; root data is unchanged.</li>
+<li><strong><a href="https://github.com/buffedlizard55-lab/OLBG1/pull/40">PR #40</a></strong> was <code>open (conflicting)</code> at 2026-10-21T07:57:28Z UTC. It overlaps source/data/validator/site integration; T40 did not modify those paths.</li>
+<li><strong>Board statuses:</strong> T9 in progress, T10 queued, T11 queued, T12 queued, T19 in progress remain pending/queued at the audited snapshot. PR #40 proposes updates to T9–T12; T19 is separate.</li>
+<li><strong>Scope ambiguity:</strong> aussie-rules: 9, gaelic-football: 4 remain in the taxonomy despite the brief's “football” exclusion; both new namespaces also include Gaelic Football and Aussie Rules. This audit did not infer the intended code.</li>
+<li><strong>Whole-table source rule:</strong> aggregate/methodology/companion rows without HTTPS remain listed above; they are not silently called fixture claims.</li>
+</ul></section>
+<section class="audit-card"><h2>GitHub Pages observation</h2><p>Pages API <code>built</code>; <a href="https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39564737670">workflow run 39564737670</a> (<code>success</code>) for main SHA <code>6d26d5ec28b074d2c5000f536fe67ec7f922d64e</code>, observed 2026-10-21T07:57:28Z UTC.</p><p class="muted">GitHub API/workflow metadata only; no direct browser request was made to <code>github.io</code>.</p></section>
+<section><h2>Local gates reproduced</h2><section class="gate"><h3><code>/usr/bin/python3 scripts/validate.py</code></h3><p>Exit code: <strong>0</strong></p><pre>Primary data: 134 fixtures | 126 H2H line books | 31 high-confidence predictions
+Validated relative links across 208 published HTML pages
+Errors: 0   Warnings: 0
+
+VALIDATION PASSED — primary provenance, exports, markets, writing rules, and site links are consistent</pre></section>
+<section class="gate"><h3><code>/usr/bin/python3 scripts/ebfbd966_validate.py</code></h3><p>Exit code: <strong>0</strong></p><pre>Matches: 133 | HIGH/MED/LOW: Counter({&#x27;LOW&#x27;: 98, &#x27;MEDIUM&#x27;: 31, &#x27;HIGH&#x27;: 4})
+Pages: 18 | Writeups: 4 (words: [117, 129, 119, 130])
+VALIDATION PASSED</pre></section>
+<section class="gate"><h3><code>/usr/bin/python3 scripts/ccb6bde2_validate.py</code></h3><p>Exit code: <strong>0</strong></p><pre>validated 126 matches, 2031 markets, 19 high-confidence predictions, 636 internal links
+VALIDATION PASSED</pre></section>
+<section class="gate"><h3><code>/usr/bin/python3 scripts/c17a9192_validate.py</code></h3><p>Exit code: <strong>0</strong></p><pre>PASS: 217 events across all 17 sports | 100% official allowlist | 46 unique human high-confidence predictions (min 57w, 0 shared 6-grams) | 19 repo audit items | 12 OLBG defects | 24 HTML pages &amp; 1185 table rows verified with 0 broken links!</pre></section>
+<section class="gate"><h3><code>/usr/bin/python3 scripts/s984d417f_validate.py</code></h3><p>Exit code: <strong>0</strong></p><pre>VALIDATION PASSED 100%: 145 verified events across 17 sports | 40 unique human High predictions | 127 blank flags | 11 repo audit groups | 23 HTML pages | 2946 links &amp; anchors verified with 0 errors.</pre></section>
+<section class="gate"><h3><code>/usr/bin/python3 scripts/final_audit.py</code></h3><p>Exit code: <strong>0</strong></p><pre>Wrote reports/FINAL_INTEGRATION_AUDIT.md: 134 primary rows, 31 high-pick rows, 16 archival table-link review entries.</pre></section></section>
+<section class="audit-card"><h2>Limits</h2><p>This audit did not fetch official pages, certify the completeness of OLBG's truncated feeds, reprice the model, or verify predictive performance. Saved links and ledgers were inspected structurally only.</p></section>
+<footer class="muted"><p>Task T40 · <code>scripts/session_5a353e83_audit.py</code> · <a href="../COORDINATION.md">COORDINATION.md</a> records task ownership and history.</p></footer>
+</main>
+</body>
+</html>
