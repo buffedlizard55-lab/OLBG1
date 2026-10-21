@@ -77,7 +77,10 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T9 | Line-by-line audit of existing repo files (`data/*.json`, `scripts/*`, tracked `.pyc` artifacts) + official-source verification across all 17 covered sports (closing all §5.7 gaps) | in progress | f7fa77fc-olbg1 | `reports/REPO_LINE_BY_LINE_AUDIT.md`, `datasets/matches_full.json`, `datasets/flagged_for_review.json`, `.gitignore` | 2026-10-21T05:26Z | Verifying existing 50 rows + all 9 previously uninvestigated sports + EuroLeague/EuroCup/BCL/KBL/URC/Top14/ProD2/Darts/Golf/GAA |
 | T10 | Complete multi-market line origination & confidence grading across all verified matches + real PDC Order of Merit, ATP/WTA rankings, NBA/EuroLeague/NHL/Rugby/Handball/Volleyball ratings | queued | f7fa77fc-olbg1 | `scripts/model.py`, `scripts/origin_lines.py`, `data/fixtures.json`, `data/lines.json`, `data/sources.json`, `data/coverage.json`, `datasets/matches_full.csv` | — | Closes §5.7 items 1–4 + full multi-market lines |
 | T11 | Unique ≥30-word human predictions with real verified form & match history for every high-confidence selection | queued | f7fa77fc-olbg1 | `data/predictions.json`, `datasets/matches_full.json` | — | Strict official-source verification on every claim |
-| T12 | Upgraded dashboard UI + Markets Explorer + Repo Audit & Flagged-for-Review pages + full validator gate + PR & merge to `main` + live GitHub Pages check | queued | f7fa77fc-olbg1 | `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration session handoff after `ce5920e3-olbg1` completed |
+| T12 | Upgraded dashboard UI + Markets Explorer + Repo Audit & Flagged-for-Review pages + full validator gate + PR & merge to `main` + live GitHub Pages check | done | f7fa77fc-olbg1 | `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration session handoff after `ce5920e3-olbg1` completed (executed via PRs #17–#18) |
+| T13 | Deep market investigation per sport (winner, handicap, totals, correct score, frames/legs, O/U 180s, touchdown/first-try etc.) — per-match expanded market coverage | in progress | ccb6bde2-olbg1 | `data/market_taxonomy-ccb6bde2.json`, `data/market_expansion-ccb6bde2.json`, `scripts/ccb6bde2_market_engine.py`, `scripts/ccb6bde2_expand_markets.py` | 2026-10-21T06:45Z | Builds on f7fa77fc verified 134-event dataset; does NOT overwrite it |
+| T14 | ATP/WTA/Snooker model calibration fix (logit slope too gentle — #1 vs #30 modelled ~53%) + re-priced lines + updated predictions where pick changes | in progress | ccb6bde2-olbg1 | `data/model_calibration-ccb6bde2.json`, `scripts/ccb6bde2_expand_markets.py`, `data/market_expansion-ccb6bde2.json` | 2026-10-21T06:45Z | New files only; never edits f7fa77fc's data/lines.json |
+| T15 | New namespaced desk `ccb6bde2/` (landing + 17 sport subpages + markets explorer + predictions + flagged + methodology) + validator + PR & merge + Pages check | queued | ccb6bde2-olbg1 | `ccb6bde2/**`, `scripts/ccb6bde2_build_site.py`, `scripts/ccb6bde2_validate.py`, `COORDINATION.md` (append-only) | — | Final integration for this session; root/parallel desks untouched |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -610,3 +613,32 @@ Building directly on `origin/main` (`99a04c5`) while keeping every parallel dire
 * **Publish record:** PR #16 — https://github.com/buffedlizard55-lab/OLBG1/pull/16 —
   (`arena/2360a617-olbg1` → `main`). Merge + Pages deploy verification for
   https://buffedlizard55-lab.github.io/OLBG1/2360a617/ to be appended after execution.
+
+---
+
+## 12. Session `ccb6bde2` (branch `arena/ccb6bde2-olbg1`) — deep market investigation + model recalibration
+
+**2026-10-21T06:41Z — board read; claim filed.** This session branched from `main` at `8458584`
+(all 18 prior PRs merged/closed; no live claims on un-merged branches — verified via
+`gh pr list --state all --limit 20` and `git branch -r`). Per §0.4 this session does **not** touch
+any existing desk's files (`/`, `/f7fa77fc/`, `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`, `/2360a617/`) or
+their data files. Scope is strictly additive under the new `ccb6bde2/` namespace + new
+`data/*-ccb6bde2*.json` + `scripts/ccb6bde2_*.py` files (see §1 rows T13–T15).
+
+**Gap analysis driving T13/T14 (verified from the repo itself, not assumed):** the root desk
+(`data/lines.json`, model `olbg-independent-logit-normal-v2.0`) prices 126 H2H matches across
+only 4 market families (Match Winner, Draw No Bet, Handicap, Over/Under Total). The brief asks to
+*"investigate every available market such as win match, handicap, match total, etc."* — no prior
+session catalogued or priced **Correct Score, Both Teams to Score, Winning Margin, Team Totals,
+Tie/No-Tie, Over/Under Frames/Legs/Sets, Over/Under 180s, highest break/checkout, golden goal,
+first team to score, Half-Time/Full-Time, Race to X points, Over/Under Runs, Total Sixes/Fours**
+etc. T13 does that. Second, the v2.0 logit slope is too gentle for individual sports: a #1 vs #30
+tennis matchup prices at ~53% — calibration flagged as T14. Both findings are documented with
+numbers in `data/model_calibration-ccb6bde2.json` before any re-pricing.
+
+**Data foundation:** all pricing inputs come from the 2026-10-21 verified dataset already in
+`main` (`data/fixtures.json` + `data/lines.json` + `datasets/matches_full.json`, all stamped
+2026-10-21 — today, so fixtures 2026-10-21→28 are current). No new fixtures are invented; where
+this session re-verifies a fact it fetches the official source in-session and logs the URL.
+
+*Execution, verification and publish records appended below as work proceeds.*
