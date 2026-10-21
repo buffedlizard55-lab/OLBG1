@@ -883,6 +883,29 @@ not a whole-dataset re-certification, and it says so on the public register. No 
 exists; the client-rendered leagues (AFLW, PDC, WTA/ATP, EuroLeague, NBA) still need a headless renderer
 before they can be re-certified at all.
 
+### Publication record
+
+* **PR #32** — https://github.com/buffedlizard55-lab/OLBG1/pull/32 — **MERGED** 2026-10-21T07:17:38Z,
+  merge commit `3ffcfc5c4d476f61d698a7604d8ab7c072bb48eb`.
+* **Pre-merge reconciliation:** `origin/main` advanced twice while this branch was open (PR #30 and a
+  styling commit). Both were merged in; the only conflict was `COORDINATION.md`, resolved by keeping
+  session `72198d3e`'s §17.1 publish record verbatim and appending this session's §18 under a distinct
+  task id. Every generated page and dataset was then **rebuilt from source** rather than hand-merged.
+* **Gates on the merged tree:** `build_dataset.py` → `live_verification.py` → `origin_lines.py` →
+  `build_site.py` → `validate.py` → **135 published HTML pages, 0 errors, 0 warnings, VALIDATION PASSED**;
+  `ebfbd966_validate.py` PASSED; `final_audit.py` 134 rows / 31 high picks. Rebuild byte-identical.
+* **Pages deploy:** build for `3ffcfc5` reached `status=built`, error `null` (legacy `main:/` publishing,
+  HTTPS enforced). The CDN served a stale copy on the first fetch; a cache-busted fetch confirmed the new
+  register live at https://buffedlizard55-lab.github.io/OLBG1/live-verification.html —
+  **49 confirmed / 12 corrected / 2 flagged / 71 not re-checked, 13 findings**, including `F-V11`
+  (NHL inputs), `F-V12` (F1 start) and `F-V13` (source redirects). The live ice-hockey page shows the
+  corrected Boston note, the Vegas drift disclosure and the re-verified inputs; `f1-usgp-2026` now reads
+  `2026-10-25T21:00:00Z`.
+* **Open items handed on:** 71 rows still not re-fetched (list and blockers in `data/verification.json`);
+  AFLW, PDC, WTA/ATP, EuroLeague and NBA need a headless renderer before they can be re-certified;
+  PlusLiga and Munster GAA need correct per-fixture URLs; the Vegas snapshot awaits a reviewer decision
+  on whether to re-price (this pass preserved the existing "disclose, do not re-price" policy).
+
 ---
 
 ## 19. Session `3c7579ed-olbg1` — T22 third-pass re-check (claim renumbered twice)
@@ -933,4 +956,3 @@ flagged) · `F-V13` five-minute kick-off disagreement (low, disclosed). The shar
 `build_dataset.py` → 134 rows · `origin_lines.py` → 126 H2H books, 31 predictions · `live_verification.py`
 → 44/19/2/69 · `build_site.py` → 29 pages at `/` + 29 mirrored · `validate.py` → 135 pages, 0 errors,
 0 warnings · `ebfbd966_validate.py` → passed · `final_audit.py` → regenerated.
-
