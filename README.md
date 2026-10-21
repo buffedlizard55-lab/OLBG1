@@ -243,3 +243,35 @@ not re-checked** out of 134 rows. This pass contributed:
 * Register totals now read 44 confirmed, 19 corrected, 2 flagged, 69 not re-checked. See
   [`reports/SESSION_3C75_RECHECK.md`](reports/SESSION_3C75_RECHECK.md).
 
+---
+
+## Complete 17-Sport Live Official-Source Suite & Signed ATP/WTA Draw Verification (`/984d417f/` — session `984d417f-olbg1`)
+
+Published side by side at [`/984d417f/`](984d417f/index.html) (`https://buffedlizard55-lab.github.io/OLBG1/984d417f/`),
+session `984d417f-olbg1` closes the client-rendered ATP/WTA draw blocker above by directly retrieving all **five official signed
+Tour Supervisor draw PDFs** (`https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf`,
+`https://wtafiles.wtatennis.com/pdf/draws/2026/405/MDS.pdf`,
+`https://www.protennislive.com/posting/2026/9410/mds.pdf`,
+`https://www.protennislive.com/posting/2026/496/mds.pdf`,
+`https://www.protennislive.com/posting/2026/7485/mds.pdf`), alongside the live 32-seed PDC European Championship bracket,
+the live 2026 NAB AFLW Round 10 ladder, WNBA Finals Game 3, and full multi-runner field boards across PGA, LPGA, Formula 1,
+and GBGB Greyhounds:
+
+| Deliverable | Path | Summary |
+|---|---|---|
+| Interactive 23-page dashboard | `984d417f/index.html` + `984d417f/sports/<slug>.html` | Master 145-event filterable/sortable board, all 17 sport category pages, Decimal/American/Fair-% switcher, Dark/Light theme |
+| High-confidence human predictions | `984d417f/predictions.html`, `data/984d417f/predictions.json` | 40 unique human-written predictions (`56–68` words each, `0` repeated 6-grams) across 10 sports |
+| Multi-market lines & CSV export | `data/984d417f/{fixtures,lines}.json`, `data/984d417f/matches.csv` | Zero-vig + bookmaker-equivalent Win/1X2/Outright, non-pushing `.5` Spreads, Totals, Derivatives & full multi-runner field boards |
+| Line-by-line repo & OLBG audit | `984d417f/audit.html`, `reports/SESSION_984D417F_AUDIT.md` | 11 line-numbered repository audit groups (`AUD-984-01`..`11`) + 9 upstream `OLBG.com` defects (`OLBG-DEF-01`..`09`) |
+| Flagged for Manual Review | `984d417f/flagged.html`, `data/984d417f/flagged.json` | 127 blank/flagged field entries held uninferred with direct official review URLs |
+
+Reproduce & validate:
+
+```bash
+python3 scripts/s984d417f_dataset.py     # compiles data/984d417f/{olbg_taxonomy,markets_catalog,sources,fixtures,repo_audit,flagged}.json
+python3 scripts/s984d417f_model.py       # originates lines.json, predictions.json & matches.csv
+python3 scripts/s984d417f_build_site.py  # renders 23 pages in 984d417f/ + reports/SESSION_984D417F_AUDIT.md
+python3 scripts/s984d417f_validate.py    # verifies all 145 rows, 40 writeups, 2,946 links & anchors (0 errors)
+```
+
+
