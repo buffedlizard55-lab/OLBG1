@@ -110,10 +110,10 @@ for i,(h,a,d,t,mk,sel,f,tt,ex,eid,sh,sa,facts) in enumerate(DAR,1):
 
 # ---------------- SNOOKER (OLBG id 8) — BetVictor Northern Ireland Open, Belfast, R2 best of 7 ----------------
 SNO = [
- ("Cheung Ka Wai","Stuart Bingham","2026-10-21","05:00","Win Match","Cheung Ka Wai",8,11,0,9933,"CONTESTED"),
+ ("Cheung Ka Wai","Stuart Bingham","2026-10-21","05:00","Win Match","Cheung Ka Wai",8,11,0,9933,"VERIFIED"),
  ("Pang Junxu","Liam Davies","2026-10-21","05:00","Win Match","Pang Junxu",6,9,0,9929,"VERIFIED"),
  ("Elliot Slessor","Jamie Jones","2026-10-21","15:00","Win Match","Jamie Jones",4,4,0,9931,"OLBG-ONLY"),
- ("Luca Brecel","Martin O Donnell","2026-10-21","15:00","Win Match","Martin O Donnell",4,5,0,9932,"CONTESTED"),
+ ("Luca Brecel","Martin O Donnell","2026-10-21","15:00","Win Match","Martin O Donnell",4,5,0,9932,"OLBG-ONLY"),
  ("John Higgins","Jak Jones","2026-10-21","08:00","Win Match","John Higgins",3,6,0,9934,"VERIFIED"),
  ("Sam Craigie","Xu Si","2026-10-21","09:00","Win Match","Sam Craigie",3,3,0,9930,"VERIFIED"),
 ]
@@ -122,9 +122,11 @@ for i,(h,a,d,t,mk,sel,f,tt,ex,eid,ver) in enumerate(SNO,1):
     slug = f"{h}_v_{a}".replace(" ","_").replace("'","")
     fl=[]
     facts="BetVictor Northern Ireland Open 2026, Waterfront Hall Belfast, 18–25 Oct 2026; Round 2 on 21 Oct is best of 7 frames; defending champion Jack Lisowski; winner receives £100,000 of a £550,400 fund (WST / tournament record)."
-    if ver=="CONTESTED":
-        fl.append("IRREGULARITY: this exact pairing could not be confirmed on the official WST Match Centre at harvest time (WST showed Cheung Ka Wai vs 'Winner of match 20' and listed other Round-2 ties). Fixture shown as OLBG lists it; do not treat as confirmed until re-checked on WST.")
-        facts += " WST Match Centre at harvest listed Pang Junxu v Liam Davies, Sam Craigie v Xu Si and John Higgins v Winner of match 26 among 21 Oct Round-2 ties."
+    if h=="Cheung Ka Wai":
+        facts += " CORRECTION LOG (21 Oct): this desk initially marked this pairing CONTESTED based on a stale search-engine snippet of the WST site ('Winner of match 20', indexed before Round 1 finished). A direct fetch of the official WST Match Centre during integration shows Cheung Ka Wai v Stuart Bingham, 21 Oct 05:00, Round 2 — OLBG was correct. Flag retracted; fixture VERIFIED. Lesson logged on the Flagged page: never flag from a search snippet when the official page itself is fetchable."
+    if h=="Luca Brecel":
+        fl.append("Pairing not visible in this desk's fetches of the WST Match Centre (which listed the day's earlier Round-2 ties); not contradicted by any official source either. Shown as OLBG lists it — re-check on WST before use.")
+        facts += " The day's 05:00–14:00 Round-2 ties (Pang v Davies, Cheung v Bingham, Higgins v Jones, Craigie v Xu) were confirmed directly on WST; this 15:00 tie was outside the fetched listing."
     if h in SNO_RANK and a in SNO_RANK:
         facts += f" World ranking numbers shown alongside the draw: {h} [{SNO_RANK[h]}] v {a} [{SNO_RANK[a]}] (secondary listing of the official draw — see WST for the live ranking list)."
     add(id=f"SNO-{i:02d}", sport="Snooker", league="BetVictor Northern Ireland Open 2026 — Round 2 (best of 7 frames)",
@@ -343,12 +345,14 @@ out = {
      {"sport":"Rugby League","reason":"Off-season on 21 Oct 2026: OLBG's Rugby League feed shows only outright markets (State of Origin 2027, Super League 2027, NRL 2027) and no upcoming matches. No fixtures invented.","olbg_url":"https://www.olbg.com/betting-tips/Rugby_League/10","official_label":"Rugby Football League (official)","official_url":"https://www.rugby-league.com/"},
      {"sport":"Golf","reason":"OLBG covers golf as tournament outrights, not head-to-head matches — there is no win-match / handicap / match-total market to originate. Out of match scope; see Flagged page.","olbg_url":"https://www.olbg.com/betting-tips","official_label":"PGA Tour (official)","official_url":"https://www.pgatour.com/"},
      {"sport":"Greyhound Racing","reason":"Races with multiple runners, not two-sided matches — no match winner/handicap/total market exists. Out of match scope; see Flagged page.","olbg_url":"https://www.olbg.com/betting-tips","official_label":"Greyhound Board of Great Britain (official)","official_url":"https://gbgb.org.uk/"},
-     {"sport":"Motor Racing","reason":"Races/outrights, not two-sided matches — no match handicap or match total. Out of match scope; see Flagged page.","olbg_url":"https://www.olbg.com/betting-tips","official_label":"Formula 1 (official)","official_url":"https://www.formula1.com/"}
+     {"sport":"Motor Racing","reason":"Races/outrights, not two-sided matches — no match handicap or match total. Out of match scope; see Flagged page.","olbg_url":"https://www.olbg.com/betting-tips","official_label":"Formula 1 (official)","official_url":"https://www.formula1.com/"},
+     {"sport":"eSports","reason":"OLBG sport ID 23 (taxonomy per main-branch sitemap reverse-engineering). Fetched 2026-10-21 during integration: feed states 'No tips found.' — no matches with tips open to price. Verified zero for this snapshot.","olbg_url":"https://www.olbg.com/betting-tips/ESports/23","official_label":"OLBG eSports feed (no single governing body exists for eSports)","official_url":"https://www.olbg.com/betting-tips/ESports/23"},
+     {"sport":"Aussie Rules","reason":"OLBG sport ID 22 (taxonomy per main-branch sitemap reverse-engineering). Fetched 2026-10-21 during integration: feed states 'No tips found.' — AFL off-season; no matches with tips open. Verified zero for this snapshot.","olbg_url":"https://www.olbg.com/betting-tips/Aussie_Rules/22","official_label":"AFL (official)","official_url":"https://www.afl.com.au/"}
    ]
  },
  "matches": M
 }
-p = pathlib.Path(__file__).resolve().parent.parent / "data" / "matches.json"
+p = pathlib.Path(__file__).resolve().parent.parent / "data" / "ebfbd966_matches.json"
 p.write_text(json.dumps(out, indent=1, ensure_ascii=False))
 print(f"Wrote {len(M)} matches -> {p}")
 from collections import Counter

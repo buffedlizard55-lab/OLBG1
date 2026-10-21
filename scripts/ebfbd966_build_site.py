@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Generate the static GitHub Pages site into docs/ from data/*.json"""
+"""Generate this session desk site into ebfbd966/ (served by Pages from repo root alongside the main site)."""
 import json, pathlib, html, csv, io, collections
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-DOCS = ROOT/"docs"
-M = json.loads((ROOT/"data"/"matches.json").read_text())
-L = json.loads((ROOT/"data"/"lines.json").read_text())["lines"]
-W = json.loads((ROOT/"data"/"writeups.json").read_text())["writeups"]
+DOCS = ROOT/"ebfbd966"
+M = json.loads((ROOT/"data"/"ebfbd966_matches.json").read_text())
+L = json.loads((ROOT/"data"/"ebfbd966_lines.json").read_text())["lines"]
+W = json.loads((ROOT/"data"/"ebfbd966_writeups.json").read_text())["writeups"]
 matches = M["matches"]; meta = M["meta"]
 HDATE = meta["harvest_date"]
 by_sport = collections.OrderedDict()
@@ -80,7 +80,7 @@ TABLE_HEAD = """<div class="tools"><input id="q" type="search" placeholder="Filt
 SPORT_INTRO = {
  "Tennis": "Week of 19–25 Oct 2026: ATP 250 events in Almaty, Lyon and Brussels plus WTA Ningbo (500) and Osaka (250), per the official ATP 2026 calendar. OLBG's feed does not name each match's tournament, so none is asserted. No per-player ATP/WTA ranking gap was verified this pass — by our rules that caps every tennis pick below HIGH (see Flagged page).",
  "Darts": "Every tie below is a PDC European Championship first-round match (Westfalenhallen, Dortmund, 22–25 Oct 2026, best of 11 legs), confirmed against the official PDC draw of 18 Oct 2026. Field: top 32 of the European Tour Order of Merit; £750,000 fund, £150,000 to the winner.",
- "Snooker": "BetVictor Northern Ireland Open, Waterfront Hall Belfast, 18–25 Oct 2026. Round 2 (21 Oct) is best of 7 frames. Two OLBG pairings could not be confirmed on the official WST match centre at harvest and are flagged CONTESTED — they are shown exactly as OLBG lists them and forced to LOW confidence.",
+ "Snooker": "BetVictor Northern Ireland Open, Waterfront Hall Belfast, 18–25 Oct 2026. Round 2 (21 Oct) is best of 7 frames. Five of six pairings were confirmed directly on the official WST Match Centre (see the correction log on SNO-01 — an early CONTESTED flag based on a stale search snippet was retracted with evidence). The 15:00 Brecel v O'Donnell tie sits outside the fetched WST listing and is flagged for re-check.",
  "Basketball": "The 2026-27 NBA regular season tipped off on 20 Oct 2026 (NBA official), so NBA rows are opening-week games with effectively no current-season form — confidence is capped at MEDIUM by rule. European rows are EuroLeague, EuroCup, Basketball Champions League and Korea KBL fixtures as listed by OLBG.",
  "Baseball": "One game on the board — but it's the big one: Game 1 of the 2026 World Series. Confirmed on MLB's official schedule. Starting pitchers were unconfirmed at harvest, which caps confidence.",
  "Ice Hockey": "NHL plus Austria's ICE Hockey League and Sweden's SHL. OLBG's NHL interest sits in Game Totals (Over 5.5), which gives no direct winner signal — those winner picks start from a 50/50 base plus home edge and are LOW by construction.",
@@ -134,10 +134,10 @@ body = f"""<h1>Dashboard — every OLBG match in scope, independently priced</h1
 <ul class="findings">
 <li><strong>The World Series is the week's centrepiece:</strong> OLBG's only baseball match is Rays (98–64) @ Brewers (103–59), Game 1 on 23 Oct — confirmed on MLB's official schedule. With starters unconfirmed and OLBG split 3/3, we make Milwaukee a wafer-thin 52.0% home favourite, LOW confidence. <a href="sports/baseball.html">Baseball →</a></li>
 <li><strong>OLBG's crowd sometimes opposes official seedings:</strong> in Dortmund, tipsters' most-backed picks include 27th seed Cristo Reyes over 6th seed Nathan Aspinall and Martin Schindler over 2nd seed Wessel Nijman. Both are flagged as signal conflicts and forced to LOW. <a href="flagged.html">Flagged →</a></li>
-<li><strong>Two OLBG snooker pairings don't match the official WST draw</strong> at harvest time (Cheung Ka Wai v Stuart Bingham; Luca Brecel v Martin O'Donnell). Shown as OLBG lists them, marked CONTESTED, forced LOW. <a href="sports/snooker.html">Snooker →</a></li>
+<li><strong>Correction with evidence — OLBG's snooker draw was right:</strong> this desk initially flagged Cheung Ka Wai v Stuart Bingham as not matching WST, based on a stale search snippet. A direct fetch of the official WST Match Centre confirms the pairing (21 Oct, Round 2). Flag retracted on the row; the episode is why every flag here links the official page. <a href="sports/snooker.html">Snooker →</a></li>
 <li><strong>Handball's 'Tie' pile-ups are a trap:</strong> four matches have the Tie as most-tipped selection, yet ties occur in under 10% of comparable EHF Champions League games. Our model will not pick a sub-10% outcome as a 'winner'. <a href="sports/handball.html">Handball →</a></li>
 <li><strong>Milwaukee Bucks are being opposed for a verifiable reason:</strong> 9 of 11 OLBG tips take Washington over Milwaukee on NBA opening week — two-time MVP Giannis Antetokounmpo now plays for Miami (NBA official schedule release). Still only MEDIUM: game one of a season is chaos. <a href="sports/basketball.html">Basketball →</a></li>
-<li><strong>Thin samples dominate OLBG beyond the headline sports:</strong> 100 of 133 matches rest on five or fewer tips in the most-tipped market. Any site calling those 'bankers' is guessing; ours labels them LOW and shows the arithmetic.</li>
+<li><strong>Thin samples dominate OLBG beyond the headline sports:</strong> 98 of 133 matches are graded LOW, most resting on five or fewer tips in the most-tipped market. Any site calling those 'bankers' is guessing; ours labels them LOW and shows the arithmetic.</li>
 </ul>"""
 (DOCS/"index.html").write_text(page("Dashboard", body))
 

@@ -8,10 +8,10 @@ no linear-gradient CSS (design rule); flagged/contested rows are LOW; blank stay
 import json, pathlib, re, sys, csv, collections
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-DOCS = ROOT/"docs"
-M = json.loads((ROOT/"data"/"matches.json").read_text())
-L = json.loads((ROOT/"data"/"lines.json").read_text())["lines"]
-W = json.loads((ROOT/"data"/"writeups.json").read_text())["writeups"]
+DOCS = ROOT/"ebfbd966"
+M = json.loads((ROOT/"data"/"ebfbd966_matches.json").read_text())
+L = json.loads((ROOT/"data"/"ebfbd966_lines.json").read_text())["lines"]
+W = json.loads((ROOT/"data"/"ebfbd966_writeups.json").read_text())["writeups"]
 errors, warns = [], []
 EXCLUDED = ["football","soccer","boxing","ufc","mma","american football","hurling","horse racing","cycling","specials"]
 

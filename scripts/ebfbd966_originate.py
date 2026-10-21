@@ -45,7 +45,7 @@ import json, pathlib
 from fractions import Fraction
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-data = json.loads((ROOT/"data"/"matches.json").read_text())
+data = json.loads((ROOT/"data"/"ebfbd966_matches.json").read_text())
 
 WINNER_MARKETS = {"Win Match","Money Line","To Win","Win Match 2-way"}
 DIRECTIONAL = {"Set Betting","1st Set Winner","Set Score"}
@@ -247,7 +247,7 @@ def originate(m):
     }
 
 lines = {m["id"]: originate(m) for m in data["matches"]}
-(ROOT/"data"/"lines.json").write_text(json.dumps({"meta":{"generated_from":"data/matches.json + scripts/originate.py","harvest_date":data["meta"]["harvest_date"]},"lines":lines}, indent=1, ensure_ascii=False))
+(ROOT/"data"/"ebfbd966_lines.json").write_text(json.dumps({"meta":{"generated_from":"data/ebfbd966_matches.json + scripts/ebfbd966_originate.py","harvest_date":data["meta"]["harvest_date"]},"lines":lines}, indent=1, ensure_ascii=False))
 from collections import Counter
 print(Counter(v["confidence"] for v in lines.values()))
 print("HIGH:", [k for k,v in lines.items() if v["confidence"]=="HIGH"])

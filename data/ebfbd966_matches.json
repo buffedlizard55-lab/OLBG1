@@ -41,6 +41,20 @@
     "olbg_url": "https://www.olbg.com/betting-tips",
     "official_label": "Formula 1 (official)",
     "official_url": "https://www.formula1.com/"
+   },
+   {
+    "sport": "eSports",
+    "reason": "OLBG sport ID 23 (taxonomy per main-branch sitemap reverse-engineering). Fetched 2026-10-21 during integration: feed states 'No tips found.' — no matches with tips open to price. Verified zero for this snapshot.",
+    "olbg_url": "https://www.olbg.com/betting-tips/ESports/23",
+    "official_label": "OLBG eSports feed (no single governing body exists for eSports)",
+    "official_url": "https://www.olbg.com/betting-tips/ESports/23"
+   },
+   {
+    "sport": "Aussie Rules",
+    "reason": "OLBG sport ID 22 (taxonomy per main-branch sitemap reverse-engineering). Fetched 2026-10-21 during integration: feed states 'No tips found.' — AFL off-season; no matches with tips open. Verified zero for this snapshot.",
+    "olbg_url": "https://www.olbg.com/betting-tips/Aussie_Rules/22",
+    "official_label": "AFL (official)",
+    "official_url": "https://www.afl.com.au/"
    }
   ]
  },
@@ -843,13 +857,11 @@
    "experts": 0,
    "official_label": "World Snooker Tour — Match Centre (official)",
    "official_url": "https://www.wst.tv/match-centre/9a737c9a-19aa-4281-8c31-6a07b796e806",
-   "verification": "CONTESTED",
+   "verification": "VERIFIED",
    "seed_home": null,
    "seed_away": null,
-   "verified_facts": "BetVictor Northern Ireland Open 2026, Waterfront Hall Belfast, 18–25 Oct 2026; Round 2 on 21 Oct is best of 7 frames; defending champion Jack Lisowski; winner receives £100,000 of a £550,400 fund (WST / tournament record). WST Match Centre at harvest listed Pang Junxu v Liam Davies, Sam Craigie v Xu Si and John Higgins v Winner of match 26 among 21 Oct Round-2 ties.",
-   "flags": [
-    "IRREGULARITY: this exact pairing could not be confirmed on the official WST Match Centre at harvest time (WST showed Cheung Ka Wai vs 'Winner of match 20' and listed other Round-2 ties). Fixture shown as OLBG lists it; do not treat as confirmed until re-checked on WST."
-   ]
+   "verified_facts": "BetVictor Northern Ireland Open 2026, Waterfront Hall Belfast, 18–25 Oct 2026; Round 2 on 21 Oct is best of 7 frames; defending champion Jack Lisowski; winner receives £100,000 of a £550,400 fund (WST / tournament record). CORRECTION LOG (21 Oct): this desk initially marked this pairing CONTESTED based on a stale search-engine snippet of the WST site ('Winner of match 20', indexed before Round 1 finished). A direct fetch of the official WST Match Centre during integration shows Cheung Ka Wai v Stuart Bingham, 21 Oct 05:00, Round 2 — OLBG was correct. Flag retracted; fixture VERIFIED. Lesson logged on the Flagged page: never flag from a search snippet when the official page itself is fetchable.",
+   "flags": []
   },
   {
    "id": "SNO-02",
@@ -911,12 +923,12 @@
    "experts": 0,
    "official_label": "World Snooker Tour — Match Centre (official)",
    "official_url": "https://www.wst.tv/match-centre/9a737c9a-19aa-4281-8c31-6a07b796e806",
-   "verification": "CONTESTED",
+   "verification": "OLBG-ONLY",
    "seed_home": null,
    "seed_away": null,
-   "verified_facts": "BetVictor Northern Ireland Open 2026, Waterfront Hall Belfast, 18–25 Oct 2026; Round 2 on 21 Oct is best of 7 frames; defending champion Jack Lisowski; winner receives £100,000 of a £550,400 fund (WST / tournament record). WST Match Centre at harvest listed Pang Junxu v Liam Davies, Sam Craigie v Xu Si and John Higgins v Winner of match 26 among 21 Oct Round-2 ties.",
+   "verified_facts": "BetVictor Northern Ireland Open 2026, Waterfront Hall Belfast, 18–25 Oct 2026; Round 2 on 21 Oct is best of 7 frames; defending champion Jack Lisowski; winner receives £100,000 of a £550,400 fund (WST / tournament record). The day's 05:00–14:00 Round-2 ties (Pang v Davies, Cheung v Bingham, Higgins v Jones, Craigie v Xu) were confirmed directly on WST; this 15:00 tie was outside the fetched listing.",
    "flags": [
-    "IRREGULARITY: this exact pairing could not be confirmed on the official WST Match Centre at harvest time (WST showed Cheung Ka Wai vs 'Winner of match 20' and listed other Round-2 ties). Fixture shown as OLBG lists it; do not treat as confirmed until re-checked on WST."
+    "Pairing not visible in this desk's fetches of the WST Match Centre (which listed the day's earlier Round-2 ties); not contradicted by any official source either. Shown as OLBG lists it — re-check on WST before use."
    ]
   },
   {
