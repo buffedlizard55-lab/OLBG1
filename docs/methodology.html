@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology · OLBG1 Match Board</title><link rel="stylesheet" href="assets/style.css"></head><body><header><nav><a class="" href="index.html">Dashboard</a><a class="" href="high-confidence.html">High confidence</a><a class="" href="markets.html">Markets</a><a class="on" href="methodology.html">Methodology</a><a class="" href="flagged.html">Flagged for Review</a><a class="" href="tennis.html">Tennis</a><a class="" href="basketball.html">Basketball</a><a class="" href="golf.html">Golf</a><a class="" href="cricket.html">Cricket</a><a class="" href="snooker.html">Snooker</a><a class="" href="rugby-union.html">Rugby Union</a><a class="" href="rugby-league.html">Rugby League</a><a class="" href="baseball.html">Baseball</a><a class="" href="ice-hockey.html">Ice Hockey</a><a class="" href="motor-racing.html">Motor Racing</a><a class="" href="darts.html">Darts</a><a class="" href="handball.html">Handball</a><a class="" href="volleyball.html">Volleyball</a><a class="" href="gaelic-football.html">Gaelic Football</a><a class="" href="greyhounds.html">Greyhounds</a></nav></header>
+<main class="wrap">
+<h1>Methodology — how every number was produced</h1>
+<h2>Originated fair price</h2>
+<p>For a 2-way winner market with <code>k</code> tips for the leading selection from <code>n</code> total tips:</p>
+<ul><li>Model probability <code>p = (k+1)/(n+2)</code> (Laplace smoothing toward 50%, so 1/1 cannot produce a fake 1.00 price)</li>
+<li>Originated fair decimal price <code>= 1/p</code>; opponent price <code>= 1/(1-p)</code></li>
+<li>Handball 3-way: <code>p = (k+1)/(n+3)</code>. Multi-runner outrights/races: no win price — tip-share index only. Zero-tip rows: no price.</li></ul>
+<h2>Winner pick rules</h2>
+<ul><li>Winner-market leader → that side. Set-score leader → implied winner (Low cap). Handicap leader → "lean only", never sold as a winner bet. Totals leader → <b>no winner pick</b>. 1st-set leader → "1st-set lean only".</li></ul>
+<h2>Confidence rubric</h2>
+<div class="tbl"><table><thead><tr><th>Level</th><th>Rule (winner markets; all else Low)</th></tr></thead><tbody>
+<tr><td><span class="pill High">High</span></td><td>n ≥ 7 and share ≥ 80%</td></tr>
+<tr><td><span class="pill Medium">Medium</span></td><td>(n ≥ 5 and share 60–79%) or (n = 4–6 and share ≥ 80%)</td></tr>
+<tr><td><span class="pill Low">Low</span></td><td>Everything else — including "100%" from 1–3 tips</td></tr></tbody></table></div>
+<h2>Verification standard</h2>
+<ul><li>Every row links to its OLBG event page (source of record for tip data). High picks were additionally checked on official sites (NBA, ICC, PDC, WTA).</li>
+<li>OLBG tipster comments are user opinion. They were never copied as facts; two were found wrong/contradictory and are flagged (F-04, F-05).</li>
+<li>Bookmaker odds were not visible on fetched OLBG pages, so that field is blank on every row by design.</li>
+<li>Reproduce everything: <code>python3 scripts/build_data.py && python3 scripts/build_board.py</code> in the repo. Full text: <code>research/methodology.md</code>, <code>research/verification-log.md</code>.</li></ul>
+<div class="note">Tip-share is popularity, not proof of value. This board is research/organisation of public tip data with a transparent model on top — not a guarantee of winners and not financial advice.</div>
+<footer><p class="small mut">OLBG1 independent research snapshot 2026-10-21. Originated prices are model outputs from OLBG tip counts only — not bookmaker odds and not financial advice. Fixture/tip data: OLBG (linked per row). 18+ Gamble responsibly: <a href="https://www.begambleaware.org/">BeGambleAware</a> · <a href="https://www.gamcare.org.uk/">GamCare</a>.</p></footer>
+</main><script src="assets/site.js"></script></body></html>

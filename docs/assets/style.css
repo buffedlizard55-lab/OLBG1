@@ -1,0 +1,19 @@
+
+:root{--bg:#0b1220;--card:#111a2e;--line:#22304d;--txt:#e8eefc;--mut:#9db0d1;--acc:#38bdf8;--ok:#34d399;--mid:#fbbf24;--low:#94a3b8;--bad:#f87171}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt)}
+a{color:var(--acc)}header{position:sticky;top:0;background:#0b1220f2;border-bottom:1px solid var(--line);z-index:5}
+.wrap{max-width:1240px;margin:0 auto;padding:16px}nav{display:flex;flex-wrap:wrap;gap:8px;padding:10px 16px;max-width:1240px;margin:0 auto}
+nav a{color:var(--txt);text-decoration:none;padding:6px 10px;border:1px solid var(--line);border-radius:999px;font-size:13px;background:var(--card)}
+nav a:hover{border-color:var(--acc)}nav a.on{background:var(--acc);color:#04121f;font-weight:700}
+h1{font-size:28px;margin:8px 0}h2{font-size:20px;margin:26px 0 10px}.mut{color:var(--mut)}.small{font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:14px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}.big{font-size:26px;font-weight:800}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13px}
+th,td{padding:8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#0e1730;position:sticky;top:0}
+.tbl{overflow-x:auto;border-radius:12px}.pill{display:inline-block;padding:2px 8px;border-radius:999px;font-weight:700;font-size:12px}
+.High{background:#064e3b;color:#6ee7b7}.Medium{background:#4a2f04;color:#fcd34d}.Low{background:#1e293b;color:#cbd5e1}
+input,select{background:var(--card);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:9px}
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.note{background:#1a1207;border:1px solid #7c5c1e;border-radius:12px;padding:12px 14px}
+.err{background:#2a0f14;border:1px solid #7f1d2d;border-radius:12px;padding:12px 14px}.ok{background:#07281d;border:1px solid #065f46;border-radius:12px;padding:12px 14px}
+footer{border-top:1px solid var(--line);margin-top:36px}.pick{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+code{background:#0e1730;padding:2px 5px;border-radius:6px}ul{line-height:1.6}p{line-height:1.6}

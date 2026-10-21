@@ -210,3 +210,52 @@ check is automated in `scripts/validate.py` (predictions must agree with `lines.
 3. Retrieve previous-season NBA standings so the eleven opening-night games stop being baseline-only.
 4. Investigate the nine uninvestigated sports listed in §5.3 item 8.
 5. Add attendance/injury/lineup inputs if a licensed feed becomes available.
+
+---
+
+## 6. Parallel session `4f44f7d9` (branch `arena/4f44f7d9-olbg1`) — integration record
+
+**What happened.** This session started from the same empty-repo commit (`8b43e82`) at the same
+time as `ce5920e3-olbg1`, created its own COORDINATION.md (the other session's board was not yet
+on any branch it could see), and independently completed the same brief with a different,
+complementary method. The overlap was discovered when PR #4 reported CONFLICTING against the
+`ce5920e3` merges (#1–#3). Per §0.4 the conflict was resolved by **keeping both datasets** and
+logging every resolution here. Nothing from `ce5920e3` was discarded.
+
+**The two datasets (both retained — do not confuse them).**
+
+| | `ce5920e3` (repo-root site) | `4f44f7d9` (`docs/` board) |
+|---|---|---|
+| Unit | 49 fixtures priced (+1 unpriced event) | 164 OLBG-listed events (matches + outrights/races) |
+| Verification | Governing-body APIs per fixture | OLBG tip data per row; official checks for 5 High picks (NBA/ICC/PDC/WTA) |
+| Pricing | Strength-rating model (`scripts/model.py`) | Tip-share Laplace model (`scripts/build_data.py`) |
+| Confidence | 8 High / 3 Med / 38 Low | 5 High / 25 Med / 134 Low |
+| Files | `data/fixtures.json`, `lines.json`, `predictions.json`, root `*.html`, `sports/` | `data/matches.csv/json`, `research/`, `docs/*.html` |
+
+Overlapping picks can be cross-read (e.g. both sessions price Wizards/Bucks and the European
+Championship darts ties by entirely different inputs) — agreement/disagreement between the two
+models is itself useful signal and neither overrides the other.
+
+**Conflict resolutions (merge of `origin/main` into `arena/4f44f7d9-olbg1`).**
+
+1. `COORDINATION.md` — `ce5920e3` version kept as the board (§§0–5 untouched); this §6 appended.
+   The `4f44f7d9` board text is preserved in git history (commit `270b06c`).
+2. `index.html` (root) — `ce5920e3` dashboard kept. The `4f44f7d9` root redirect stub was dropped;
+   its board lives at `/docs/` (legacy Pages publishes the whole repo, so both are live).
+3. `scripts/build_site.py` — name collision, different programs. `ce5920e3` file kept under that
+   name; `4f44f7d9` builder renamed to `scripts/build_board.py` (references updated).
+4. `README.md` — merged: `ce5920e3` README kept, `4f44f7d9` board documented in an added section.
+5. `.github/workflows/pages.yml` (`4f44f7d9`) — **removed**: Pages is legacy `main:/` (API 403 for
+   both sessions); an Actions deploy workflow would only fail noisily. Re-add it if Pages is ever
+   switched to workflow publishing (it uploaded `docs/` only, which would then need revisiting).
+6. `scripts/__pycache__/*.pyc` — removed from the tree (build artifact, no content lost).
+
+**Corrections owed by `4f44f7d9` (applied in this merge).** Its OLBG menu enumeration missed two
+sitemap-only sports that `ce5920e3` found — **Aussie Rules (22)** and **eSports (23)**. The
+`docs/` board therefore covers 15 of the 17 in-scope sports; the gap is now bannered on
+`docs/index.html` and logged as its Flag F-13 (`research/verification-log.md` addendum). No rows
+were invented to fill it. Follow-up: harvest OLBG IDs 22/23 tip pages into `data/matches.*`.
+
+**Publish record (this session).** PR #4 — https://github.com/buffedlizard55-lab/OLBG1/pull/4 —
+merged after this integration commit; Pages (legacy root publishing) serves the `ce5920e3`
+dashboard at `/` and the `4f44f7d9` board at `/docs/`. Deploy verification appended below.

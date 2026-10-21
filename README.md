@@ -74,3 +74,24 @@ disagrees with the model's pick, or a probability that does not sum to 1.
 Prices in this repository are **our own model output**, not market prices and not betting advice.
 They are estimates derived from published league records and world rankings, with a documented
 5% overround. Do not treat them as a recommendation.
+
+---
+
+## Second board (parallel session `4f44f7d9`) — OLBG tip-share snapshot
+
+A second agent session completed the same brief in parallel by a different route; both results
+are kept (integration logged in `COORDINATION.md` §6). Where the root dashboard prices 49
+officially-verified fixtures with a strength model, this companion board snapshots **all 164
+events listed on OLBG's tip pages** on 2026-10-21 (15 of the 17 in-scope sports — Aussie Rules
+and eSports, found via sitemap by the first session, are a logged gap) and originates fair
+prices from verified OLBG tip counts.
+
+| Output | Where |
+|---|---|
+| 164-event table (winner pick + confidence + originated price per row) | `data/matches.csv`, `data/matches.json` |
+| Board site (20 pages) | `docs/` — live at https://buffedlizard55-lab.github.io/OLBG1/docs/ |
+| Method, markets, verification | `research/methodology.md`, `research/markets.md`, `research/verification-log.md` |
+| Irregularities F-01…F-13 | `docs/flagged.html` |
+
+Rebuild: `python3 scripts/build_data.py && python3 scripts/build_board.py`
+(5 High / 25 Medium / 134 Low; High picks checked against NBA.com, ICC, PDC, WTA.)
