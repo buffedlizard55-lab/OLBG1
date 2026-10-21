@@ -82,6 +82,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T14 | Publish audit findings as a standalone GitHub Pages review subpage | done | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.html`, append-only `COORDINATION.md` | 2026-10-21T06:56Z | Standalone additive page; PR #20 merged and Pages deploy verified. |
 | T15 | Independent second-pass market-coverage and whole-tree source-link structural audit | done | e92c2bf4-olbg1 | `reports/SESSION_E92_SNAPSHOT_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:41Z | Completed after T13; records eight unpriced field cards, one missing cricket total, snapshot window, and validator evidence limits; does not edit shared data/pages. |
 | T16 | Corrective primary-desk provenance, status disclosure, integration and Pages publication | done | 4904ed05-olbg1 | `COORDINATION.md`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/flagged_for_review.json`, `scripts/validate.py`, root `*.html`, `sports/*.html`, `assets/*`, `README.md` | 2026-10-21T06:41Z | PR #24 merged; Pages workflow 39558245786 completed successfully. Remediated F1–F3 without changing independent review artifacts. |
+| T17 | Independent final-snapshot audit: reproduce structural gates, reconcile published-data counts/provenance, inspect GitHub Actions/Pages status, and record any verification limits without changing primary datasets | in progress | 5a353e83-olbg1 | `scripts/session_5a353e83_audit.py`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.md`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.html`, `COORDINATION.md` (append-only / task-board reconciliation) | 2026-10-21T07:08Z | Fresh non-overlapping audit; primary datasets and generated dashboard outputs remain untouched unless a separate integration handoff is required. |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -89,6 +90,11 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 ---
 
 ## 2. Session log
+
+### Session `5a353e83-olbg1`
+
+**2026-10-21T07:08Z — T17 claimed.** Scope is limited to a reproducible independent audit script and its Markdown/HTML report, plus append-only coordination updates. This does not overlap the primary data or generated dashboard files claimed by earlier sessions. The audit will distinguish structural validation from fresh official-source fetches and will not label any source as freshly verified without actually accessing and reading it.
+
 
 ### Session `ce5920e3-olbg1`
 
