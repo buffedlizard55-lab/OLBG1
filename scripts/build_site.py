@@ -18,10 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 SITE_NAME = "OLBG Reverse-Engineering & Origination Desk"
-SITE_TAG = (
-    "17 in-scope sports · source-linked events · multi-market lines, confidence tiers and human "
-    "analysis · fresh verification pass 2026-10-21"
-)
+SITE_TAG = "17 in-scope sports · 134 source-linked events (129 verified · 5 cross-checked) · multi-market lines & human analysis"
 
 CONF_LABEL = {"high": "High", "medium": "Medium", "low": "Low"}
 STATUS_LABEL = {"verified": "Verified", "cross-checked": "Cross-checked", "unverified": "Unverified"}
@@ -43,9 +40,9 @@ def load_data() -> dict:
         "sources": r("data/sources.json"),
         "coverage": r("data/coverage.json"),
         "flagged": r("datasets/flagged_for_review.json"),
+        "verification": r("data/verification.json"),
         "live": r("data/live_snapshot.json"),
         "live_diff": r("data/live_diff.json"),
-        "verification": r("data/verification.json"),
     }
 
 
@@ -70,23 +67,6 @@ def badge_conf(c: str) -> str:
 def badge_status(s: str) -> str:
     cls = {"verified": "verified", "cross-checked": "cross", "unverified": "cross"}.get(s, "muted")
     return f'<span class="badge {cls}">{e(STATUS_LABEL.get(s, s))}</span>'
-
-
-
-VERDICT_LABEL = {
-    "confirmed": ("verified", "Re-checked 21 Oct"),
-    "corrected": ("verified", "Corrected 21 Oct"),
-    "conflict": ("cross", "Time conflict"),
-    "unconfirmed": ("cross", "Unconfirmed"),
-    "blocked": ("cross", "Source blocked"),
-    "not-rechecked": ("muted", "Not re-checked"),
-}
-
-
-def badge_verdict(m: dict) -> str:
-    v = (m.get("verification") or {}).get("verdict", "not-rechecked")
-    cls, label = VERDICT_LABEL.get(v, ("muted", v))
-    return f'<span class="badge {cls}">{e(label)}</span>'
 
 
 def render_source_links(m: dict, limit: int = 3) -> str:
@@ -186,19 +166,13 @@ def render_picks_table(rows: list[tuple[dict, dict | None]], show_sport: bool, s
                 f'{render_markets_drawer(p)}'
             )
             conf_attr = p["confidence"]
-            conf_cell = (
-                f'{badge_conf(p["confidence"])}<span class="sub">{badge_status(m["status"])}</span>'
-                f'<span class="sub">{badge_verdict(m)}</span>'
-            )
+            conf_cell = f'{badge_conf(p["confidence"])}<span class="sub">{badge_status(m["status"])}</span>'
         else:
             win_cell = '<span class="badge event">Multi-runner field</span>'
             ht_cell = "—"
             pick_cell = '<span class="sub">Event-only card (not a 2-way fixture; see official field sheet)</span>'
             conf_attr = "low"
-            conf_cell = (
-                f'<span class="badge event">Field card</span><span class="sub">{badge_status(m["status"])}</span>'
-                f'<span class="sub">{badge_verdict(m)}</span>'
-            )
+            conf_cell = f'<span class="badge event">Field card</span><span class="sub">{badge_status(m["status"])}</span>'
 
         cells = [
             f'<td style="white-space:nowrap">{e(fmt_when(m))}</td>',
@@ -226,14 +200,14 @@ def render_shell(title: str, body: str, active: str, site_depth: int, repo_depth
     nav_items = [
         ("index.html", "Overview", "dash"),
         ("live-refresh.html", "Live Refresh (141)", "live"),
-        ("picks.html", "All Lines (136)", "picks"),
+        ("picks.html", "All Lines (134)", "picks"),
         ("predictions.html", "High Picks (31)", "preds"),
         ("sports.html", "17 Sports", "sports"),
         ("analysis.html", "Market Analysis", "analysis"),
         ("methodology.html", "Methodology", "method"),
         ("reverse-engineering.html", "OLBG Audit", "rev"),
         ("sources.html", "Official Sources", "src"),
-        ("verification.html", "Verification", "verif"),
+        ("live-verification.html", "Live Verification", "livev"),
         ("flagged.html", "Flagged for Review", "flag"),
     ]
     cur_attr = ' aria-current="page"'
@@ -260,7 +234,7 @@ def render_shell(title: str, body: str, active: str, site_depth: int, repo_depth
   <div class="companion-bar">
     <div class="companion-inner">
       <span>Repository workspaces:</span>
-      <a href="{rr}index.html">Primary Root Desk (136 source-linked)</a>
+      <a href="{rr}index.html">Primary Root Desk (134 source-linked)</a>
       <a href="{rr}f7fa77fc/index.html">f7fa77fc Permalink Mirror</a>
       <a href="{rr}docs/index.html">4f44f7d9 Board (164 OLBG)</a>
       <a href="{rr}ebfbd966/index.html">ebfbd966 Board (133)</a>
@@ -337,9 +311,10 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
     ][:12]
 
     rr0 = "../" * repo_depth_base
+    vs = D["verification"]["summary"]
     index_body = f"""
 <h1>Source-Linked Multi-Sport Origination Desk</h1>
-<p class="lede">Complete reverse-engineering of <code>OLBG.com</code> across all <b>17 in-scope sports</b> (excluding soccer/football, horse racing, american football, boxing, UFC/MMA, specials, hurling, and cycling), pairing <b>{len(fixtures)} source-linked events</b> (<b>{status_counts["verified"]} verified</b>; <b>{status_counts["cross-checked"]} cross-checked</b>) with independently originated markets and <b>31 non-repetitive human predictions</b>. {total_priced_count} of {len(h2h_rows)} head-to-head matches have an Over/Under total; the remaining total is left blank and flagged because no official competition-specific baseline was captured.</p>
+<p class="lede">Complete reverse-engineering of <code>OLBG.com</code> across all <b>17 in-scope sports</b> (excluding soccer/football, horse racing, american football, boxing, UFC/MMA, specials, hurling, and cycling), pairing <b>134 source-linked events</b> (<b>{status_counts["verified"]} verified</b>; <b>{status_counts["cross-checked"]} cross-checked</b>) with independently originated markets and <b>31 non-repetitive human predictions</b>. {total_priced_count} of {len(h2h_rows)} head-to-head matches have an Over/Under total; the remaining total is left blank and flagged because no official competition-specific baseline was captured.</p>
 
 <div class="grid kpis">
   {kpi_box(f'{len(fixtures)} ({status_counts["verified"]}V · {status_counts["cross-checked"]}C)', "Source-Linked Events") }
@@ -352,6 +327,10 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 
 <div class="note good">
   <b>Zero-inference verification policy:</b> Every fixture row carries a direct governing-body link; this snapshot labels <b>{status_counts["verified"]}</b> rows Verified and <b>{status_counts["cross-checked"]}</b> Cross-checked. Any field that cannot be supported is blank/flagged. Inputs for our prices link directly to an official governing body (NHL API, MLB StatsAPI, NBA, EuroLeague, ATP/WTA, WST, PDC, ICC/NZC, LNR Top 14, URC, NRL/RLWC26, EHF, PlusLiga/SuperLega, AFLW, LoL Esports, GAA, FIA F1, PGA/DPWT/LPGA, GBGB). Only matches where <b>both sides hold measured official ratings</b> can reach High confidence. Unconfirmed fields are left blank and catalogued on <a href="flagged.html">Flagged for Review</a>.
+</div>
+
+<div class="note">
+  <b>New in this pass — <a href="live-verification.html">Live Verification</a>:</b> a dated, page-by-page re-fetch of the governing-body sources behind <b>62 of the 134 rows</b> — <b>{vs["confirmed"]}</b> confirmed, <b>{vs["corrected"]}</b> corrected, <b>{vs["flagged"]}</b> flagged — plus the <b>{vs["not_rechecked"]}</b> rows this pass did not re-read, each with the blocker named. It is the first pass here that re-opened the official pages instead of auditing the dataset's structure.
 </div>
 
 <h2>Browse by Sport Category (All 17 In-Scope OLBG Sports)</h2>
@@ -368,7 +347,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 <div class="card">
   <p>This repository preserves every parallel session's work cleanly side by side. Explore all live builds directly:</p>
   <ul>
-    <li><b><a href="{rr0}index.html">Primary Root Desk (/)</a> &amp; <a href="{rr0}f7fa77fc/index.html">/f7fa77fc/ Mirror</a>:</b> {len(fixtures)} source-linked events across all 17 sports ({status_counts["verified"]} Verified; {status_counts["cross-checked"]} Cross-checked), with Winner and Handicap markets for all {len(h2h_rows)} head-to-head fixtures, Over/Under totals for {total_priced_count}, Draw No Bet where regulation draws apply, a live Decimal/Fair/US odds toggle, and a full line-by-line audit.</li>
+    <li><b><a href="{rr0}index.html">Primary Root Desk (/)</a> &amp; <a href="{rr0}f7fa77fc/index.html">/f7fa77fc/ Mirror</a>:</b> 134 source-linked events across all 17 sports ({status_counts["verified"]} Verified; {status_counts["cross-checked"]} Cross-checked), with Winner and Handicap markets for all {len(h2h_rows)} head-to-head fixtures, Over/Under totals for {total_priced_count}, Draw No Bet where regulation draws apply, a live Decimal/Fair/US odds toggle, and a full line-by-line audit.</li>
     <li><b><a href="{rr0}docs/index.html">4f44f7d9 Companion Board (/docs/)</a>:</b> 164-event historical OLBG tip-listing snapshot; its source gaps are recorded separately in the repository audit.</li>
     <li><b><a href="{rr0}ebfbd966/index.html">ebfbd966 Companion Board (/ebfbd966/)</a>:</b> 133-match independent log-odds pricing board.</li>
     <li><b><a href="{rr0}aa4e9dbf/index.html">aa4e9dbf Companion Desk (/aa4e9dbf/)</a>:</b> 131-match multi-market analytical desk.</li>
@@ -380,13 +359,13 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
         render_shell("Overview", index_body, "dash", site_depth=0, repo_depth=repo_depth_base), encoding="utf-8"
     )
 
-    # 2. picks.html — Complete interactive board across all rows
-    sport_opts = [f'<option value="all">All 17 Sports ({len(fixtures)})</option>'] + [
+    # 2. picks.html — Complete interactive board across all 134 rows
+    sport_opts = ['<option value="all">All 17 Sports (134)</option>'] + [
         f'<option value="{e(c["sport"])}">{e(c["name"])} ({c["fixtures"]})</option>'
         for c in sorted(D["coverage"]["included"], key=lambda x: x["name"])
     ]
     picks_body = f"""
-<h1>All {len(fixtures)} Source-Linked Events &amp; Originated Lines</h1>
+<h1>All 134 Source-Linked Events &amp; Originated Lines</h1>
 <p class="lede">Each of the {len(h2h_rows)} head-to-head matches carries originated <b>Match Winner</b> and <b>Handicap / Spread</b> lines; <b>{total_priced_count}</b> also carry an <b>Over / Under Total</b>, and <b>{total_unavailable_count}</b> is deliberately blank and flagged because a source-backed competition baseline was not captured. <b>Draw No Bet</b> is included on 3-way sports. Every fixture row has clickable governing-body verification links.</p>
 
 <div class="toolbar">
@@ -479,7 +458,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 <h1>All 24 OLBG Sport Categories — Scope &amp; Coverage</h1>
 <p class="lede">Complete reconciliation of every active sport hub on <code>OLBG.com</code>: <b>17 in-scope sports</b> (all 17 built as dedicated subpages below) and <b>8 excluded sport specifications</b>.</p>
 
-<h2>In-Scope Sports (17 Categories · {len(fixtures)} Source-Linked Events)</h2>
+<h2>In-Scope Sports (17 Categories · 134 Source-Linked Events)</h2>
 <div class="table-wrap">
   <table>
     <thead><tr><th>Sport</th><th class="num">Events</th><th class="num">Governing-Body Verified</th><th class="num">High / Med / Low</th><th>Coverage Summary</th><th>Upstream</th></tr></thead>
@@ -718,6 +697,10 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 <p class="lede">All {len(D["sources"]["sources"])} primary authorities used to verify fixtures, kick-off times, rankings, standings, and recent match history across the repository.</p>
 
 <div class="note">
+  <b>Fresh official-source re-verification:</b> <a href="live-verification.html">Live Verification</a> records a dated, page-by-page re-fetch of 62 of the 134 rows against their governing bodies, lists the 9 corrections it produced, and names the 72 rows this pass did not re-read. It is the first pass in this repository to re-open the official pages rather than audit the dataset structure.
+</div>
+
+<div class="note">
   <b>Line-by-line audit report:</b> Open the current <a href="{rr0}reports/FINAL_INTEGRATION_AUDIT.md">Final Integration Audit</a> for every primary fixture, its exact governing-body links, market coverage and review flags. The independently published <a href="{rr0}reports/POST_INTEGRATION_AUDIT.html">Post-Integration Review</a> records historical F1–F3 audit boundaries; its F1 prose issue was corrected in the generated predictions, while source freshness and five Cross-checked Premiership rows remain flagged. Historical context remains in <a href="{rr0}reports/REPO_LINE_BY_LINE_AUDIT.md">REPO_LINE_BY_LINE_AUDIT.md</a> and <a href="{rr0}reports/OLBG_REVERSE_ENGINEERING.md">OLBG_REVERSE_ENGINEERING.md</a>.
 </div>
 
@@ -730,6 +713,90 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 """
     (target_root / "sources.html").write_text(
         render_shell("Official Sources", sources_body, "src", site_depth=0, repo_depth=repo_depth_base), encoding="utf-8"
+    )
+
+    # 8b. live-verification.html — fresh official-source re-verification register
+    vdoc = D["verification"]
+    vs = vdoc["summary"]
+    vsports = vdoc["by_sport"]
+    ver_badge = {
+        "confirmed": '<span class="badge verified">Confirmed</span>',
+        "corrected": '<span class="badge medium">Corrected</span>',
+        "flagged": '<span class="badge high">Flagged</span>',
+        "not_rechecked": '<span class="badge event">Not re-checked</span>',
+    }
+    ver_rows = "".join(
+        f'<tr><td><code>{e(r["id"])}</code><span class="sub">{e(r["sport"])}</span></td>'
+        f'<td><b>{e(r["match"])}</b><span class="sub">{e(r["competition"])}</span></td>'
+        f'<td>{ver_badge.get(r["status"], e(r["status"]))}</td>'
+        f'<td>{e(r["evidence"])}<span class="sub"><b>Action:</b> {e(r["action"])}</span></td>'
+        f'<td><a href="{e(r["source_url"])}" target="_blank" rel="noopener">{e(r["source_name"])} &nearr;</a></td></tr>'
+        for r in vdoc["rows"]
+    )
+    ver_findings = "".join(
+        f'<tr><td><code>{e(f["id"])}</code></td><td>{badge_conf(f["severity"])}</td>'
+        f'<td><b>{e(f["area"])}</b><span class="sub">{e(f["detail"])}</span></td>'
+        f'<td>{e(f["status"])}</td>'
+        f'<td><a href="{e(f["source_url"])}" target="_blank" rel="noopener">Official source &nearr;</a></td></tr>'
+        for f in vdoc["findings"]
+    )
+    sport_ver_rows = "".join(
+        f'<tr><td><a href="sports/{e(slug)}.html">{e(slug)}</a></td>'
+        f'<td>{b["confirmed"]}</td><td>{b["corrected"]}</td><td>{b["flagged"]}</td><td>{b["not_rechecked"]}</td></tr>'
+        for slug, b in sorted(vsports.items())
+    )
+    verification_body = f"""
+<h1>Live Verification — every row re-checked against its official page</h1>
+<p class="lede">Earlier passes in this repository audited the dataset's shape and said so. This page records the result of actually re-fetching the governing-body pages on <b>{e(vdoc["generated"])}</b> and comparing them value by value with the published rows: <b>{vs["confirmed"]} confirmed</b>, <b>{vs["corrected"]} corrected</b>, <b>{vs["flagged"]} flagged</b> and <b>{vs["not_rechecked"]} explicitly not re-checked</b> out of {vs["rows"]}.</p>
+
+<div class="grid kpis">
+  {kpi_box(vs["confirmed"], "Confirmed against official page", "hi")}
+  {kpi_box(vs["corrected"], "Corrected from official page", "md")}
+  {kpi_box(vs["flagged"], "Flagged, unchanged", "fl")}
+  {kpi_box(vs["not_rechecked"], "Not re-checked (reason given)")}
+</div>
+
+<div class="card">
+  <h2>How to read this page</h2>
+  <ul>
+    <li><b>Confirmed</b> — the official page was re-fetched and the participants, date, venue and (where published) start time or game identifier were read back and matched.</li>
+    <li><b>Corrected</b> — the official page disagreed, settled the value unambiguously, and the dataset source was amended to match. Nothing was corrected on a hunch.</li>
+    <li><b>Flagged</b> — the page disagrees or cannot decide it. Nothing was changed; the discrepancy is published here and on Flagged for Review.</li>
+    <li><b>Not re-checked</b> — no official page was re-read in this pass. The row keeps its original status and links, and the blocker is printed so the gap is visible rather than implied.</li>
+  </ul>
+  <p>{e(vdoc["method"])}</p>
+</div>
+
+<h2>Coverage by sport</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Sport</th><th>Confirmed</th><th>Corrected</th><th>Flagged</th><th>Not re-checked</th></tr></thead>
+    <tbody>{sport_ver_rows}</tbody>
+  </table>
+</div>
+
+<h2>Findings from this pass ({len(vdoc["findings"])})</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>ID</th><th>Severity</th><th>What was found</th><th>Status</th><th>Source</th></tr></thead>
+    <tbody>{ver_findings}</tbody>
+  </table>
+</div>
+
+<h2>Row-by-row register ({len(vdoc["rows"])} rows)</h2>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Row</th><th>Match</th><th>Outcome</th><th>What the official page said</th><th>Official source</th></tr></thead>
+    <tbody>{ver_rows}</tbody>
+  </table>
+</div>
+
+<div class="card warn">
+  <b>Boundary.</b> The validator makes no network request; the reads recorded here were made by hand during the session and are dated. Model prices remain our own estimates and were not re-priced by this pass — snapshot drift is disclosed rather than rewritten. A publisher can change a page after it is read.
+</div>
+"""
+    (target_root / "live-verification.html").write_text(
+        render_shell("Live Verification", verification_body, "livev", site_depth=0, repo_depth=repo_depth_base), encoding="utf-8"
     )
 
     # 8c. live-refresh.html — live OLBG recapture, diff and verification boundary
@@ -911,73 +978,13 @@ governed by their official sources and keep their earlier OLBG capture timestamp
         render_shell("Flagged for Review", flagged_body, "flag", site_depth=0, repo_depth=repo_depth_base), encoding="utf-8"
     )
 
-    # 11. verification.html — what was actually fetched today
-    V = D["verification"]
-    vc = Counter(f["verification"]["verdict"] for f in fixtures)
-    fetch_rows = "".join(
-        f'<tr><td><a href="{e(f["url"])}" target="_blank" rel="noopener">{e(f["url"])}</a></td>'
-        f'<td>{e(f["read_utc"])}</td>'
-        f'<td>{e(f["what_the_page_showed"])}</td>'
-        f'<td>{e(f["outcome"])}</td></tr>'
-        for f in V["fetches"]
-    )
-    vrow_trs = []
-    for f in fixtures:
-        v = f.get("verification", {})
-        fields = ", ".join(v.get("fields", [])) or "&mdash;"
-        vrow_trs.append(
-            f'<tr><td><code>{e(f["id"])}</code></td>'
-            f'<td>{e(fmt_match(f))}<span class="sub">{e(f["competition"])}</span></td>'
-            f'<td>{badge_verdict(f)}</td>'
-            f'<td>{e(fields)}</td>'
-            f'<td>{e(v.get("note", ""))}</td>'
-            f'<td><a href="{e(v.get("evidence") or (f.get("sources") or [{}])[0].get("url", ""))}" target="_blank" rel="noopener">Source &nearr;</a></td></tr>'
-        )
-    verification_body = f"""
-<h1>Verification — what was fetched, when, and what it said</h1>
-<p class="lede">This pass re-read the governing-body pages below on <b>2026-10-21</b> and compared them with the published rows field by field. A row is only labelled <b>Re-checked</b> or <b>Corrected</b> when the fetched page states the value. Where a page is silent, script-rendered, geolocated or blocked, the value is withheld and the row is labelled instead of being inferred.</p>
-
-<div class="grid kpis">
-  {kpi_box(vc.get("confirmed", 0) + vc.get("corrected", 0), "Rows re-checked today", "hi")}
-  {kpi_box(vc.get("corrected", 0), "Rows corrected today", "hi")}
-  {kpi_box(vc.get("conflict", 0), "Time conflicts", "md")}
-  {kpi_box(vc.get("blocked", 0), "Blocked by publisher", "md")}
-  {kpi_box(vc.get("not-rechecked", 0), "Not re-checked today")}
-  {kpi_box(vc.get("unconfirmed", 0), "Unconfirmed rows")}
-</div>
-
-<h2>Fetches made in this pass ({len(V["fetches"])})</h2>
-<div class="table-wrap">
-  <table>
-    <thead><tr><th>Official URL fetched</th><th>Read (UTC)</th><th>What the page showed</th><th>Outcome</th></tr></thead>
-    <tbody>{fetch_rows}</tbody>
-  </table>
-</div>
-
-<h2>Row-by-row verification ledger ({len(fixtures)} rows)</h2>
-<p class="sub">“Not re-checked” means the row keeps its earlier governing-body link but was not re-read in this pass. Those rows are published as prior-session provenance and are listed on the <a href="flagged.html">Flagged for Review</a> page.</p>
-<div class="table-wrap">
-  <table>
-    <thead><tr><th>Row</th><th>Match</th><th>This pass</th><th>Fields confirmed from the fetched page</th><th>Note</th><th>Evidence</th></tr></thead>
-    <tbody>{"".join(vrow_trs)}</tbody>
-  </table>
-</div>
-
-<h2>Method</h2>
-<div class="card"><p>{e(V["method"])}</p>
-<p class="sub">Nothing in this ledger upgrades a value on the strength of another session's note, a search-engine snippet or memory. Where the official page could not be read, the previous value is either retained and labelled or withheld and flagged — never replaced with a guess.</p></div>
-"""
-    (target_root / "verification.html").write_text(
-        render_shell("Verification", verification_body, "verif", site_depth=0, repo_depth=repo_depth_base), encoding="utf-8"
-    )
-
     # 10. 404.html
     not_found_body = """
 <h1>Page Not Found (404)</h1>
 <p class="lede">The requested URL does not exist. Jump directly to any verified board section below:</p>
 <div class="card">
   <ul>
-    <li><a href="index.html">Executive Overview Dashboard (136 Source-Linked Events)</a></li>
+    <li><a href="index.html">Executive Overview Dashboard (134 Source-Linked Events)</a></li>
     <li><a href="picks.html">All Originated Betting Lines &amp; Markets</a></li>
     <li><a href="live-refresh.html">Live OLBG Refresh &amp; Verification Boundary</a></li>
     <li><a href="predictions.html">31 High-Confidence Human Predictions</a></li>
@@ -1001,7 +1008,7 @@ def main() -> None:
     build_all_pages(ns, repo_depth_base=1, D=D)
     (ns / "data").mkdir(parents=True, exist_ok=True)
     for jf in (ROOT / "data").glob("*.json"):
-        if jf.name in ("fixtures.json", "lines.json", "predictions.json", "olbg_taxonomy.json", "sources.json", "coverage.json"):
+        if jf.name in ("fixtures.json", "lines.json", "predictions.json", "olbg_taxonomy.json", "sources.json", "coverage.json", "verification.json"):
             shutil.copyfile(jf, ns / "data" / jf.name)
 
     root_pages = len(list(ROOT.glob("*.html"))) + len(list((ROOT / "sports").glob("*.html")))

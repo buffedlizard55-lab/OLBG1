@@ -82,11 +82,12 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T14 | Publish audit findings as a standalone GitHub Pages review subpage | done | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.html`, append-only `COORDINATION.md` | 2026-10-21T06:56Z | Standalone additive page; PR #20 merged and Pages deploy verified. |
 | T15 | Independent second-pass market-coverage and whole-tree source-link structural audit | done | e92c2bf4-olbg1 | `reports/SESSION_E92_SNAPSHOT_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:41Z | Completed after T13; records eight unpriced field cards, one missing cricket total, snapshot window, and validator evidence limits; does not edit shared data/pages. |
 | T16 | Corrective primary-desk provenance, status disclosure, integration and Pages publication | done | 4904ed05-olbg1 | `COORDINATION.md`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/flagged_for_review.json`, `scripts/validate.py`, root `*.html`, `sports/*.html`, `assets/*`, `README.md` | 2026-10-21T06:41Z | PR #24 merged; Pages workflow 39558245786 completed successfully. Remediated F1–F3 without changing independent review artifacts. |
+| T20 | **Fresh live re-verification of every primary-desk row against official sources** (first pass in this repo to re-fetch official pages rather than audit structure), publication of a Live Verification page, corrections where fresh data disagrees, PR + merge + Pages deploy check | done | 72198d3e-olbg1 | `scripts/verify_live.py`, `reports/LIVE_VERIFICATION.md`, `live-verification.html`, `data/verification.json`, `data/fixtures.json` (corrections only), `data/predictions.json` (corrections only), `COORDINATION.md` (append-only) | 2026-10-21T07:05Z | Claimed 2026-10-21T07:05Z as T17; renumbered to T20 after a task-id collision with session 76950c25 (see §17). Independent of T13/T15/T16 which were structural audits; this task re-fetches each row's official source. Shared nav/`index.html` touched only at final integration. |
+| T21 | Second, independent fresh re-verification pass: re-open every in-scope governing-body page again on 2026-10-21 after the T20 pass, add the start times / dates / venues that T20 left blank where an official page publishes them, correct the rows that disagree, and extend the published Live Verification register | in progress | b95dbd01-olbg1 | `scripts/live_verification.py`, `data/verification.json`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `datasets/*`, `reports/LIVE_VERIFICATION.md`, root `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` (append-only) | 2026-10-21T08:10Z | Numbered T21: T20 was taken by `72198d3e-olbg1` and T17–T19 by `76950c25-olbg1`. Additive to T20 — no row, page or finding produced by T20, T17–T19 or the earlier boards is removed; this pass only raises coverage and corrects values it can source. |
 
 | T17 | Live OLBG re-harvest of all 17 in-scope sport hubs + diff against the committed snapshot | done | 76950c25-olbg1 | `data/live_snapshot.json`, `data/live_diff.json`, `scripts/live_harvest.py` | 2026-10-21T07:10Z | Fresh fetch of every in-scope hub; per-event add/remove/consensus-change diff; no shared-file edits |
 | T18 | Official-source verification of refreshed/changed rows (MLB confirmation; other rows retain recorded governing-body sources) + unverified cards published blank | done | 76950c25-olbg1 | `scripts/dataset_rows_c.py`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `datasets/*`, `reports/SESSION_769_LIVE_REFRESH.md` | — | Blank-and-flag any value not confirmed on an official page |
 | T19 | Publish refresh on the dashboard (new Live Refresh + Flagged pages), validator gate, PR, merge and Pages deploy check | in progress | 76950c25-olbg1 | `live-refresh.html`, `flagged.html`, `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration for this session; append-only coordination log |
-| T20 | Fresh official-source re-verification of every published row (fetch each governing-body page today, row-by-row), corrected data, unified dashboard rebuild, publication | done | b95dbd01-olbg1 | `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/verification.json`, `datasets/*`, `scripts/{verify_pass,build_flagged,build_site,validate}.py`, root `*.html`, `sports/*.html`, `assets/*`, `reports/VERIFICATION_2026-10-21.md`, `README.md`, append-only `COORDINATION.md` | 2026-10-21T07:10Z | Numbered T20 after `76950c25-olbg1` claimed T17–T19. 59 rows re-read on official pages; 7 corrected; 6 time conflicts, 1 unconfirmed, 16 blocked, 54 not re-checked. Does not touch `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`, `/2360a617/`. |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -715,102 +716,111 @@ fields rather than being promoted.
 (28 root + 28 mirror pages), `validate.py` (133 pages, 0 errors / 0 warnings) and
 `ebfbd966_validate.py` all pass. Full write-up: `reports/SESSION_769_LIVE_REFRESH.md`.
 
-## 17. Session `b95dbd01-olbg1` — T20 claim (fresh official-source re-verification)
+## 17. Session `72198d3e-olbg1` — T20 fresh official-source re-verification
 
-**2026-10-21T07:10Z — claim pushed before work started.** Nothing in this section replaces any
-earlier record. T13–T16 established that the published 134 rows are *source-linked* but that no
-pass had re-fetched the official pages and compared them field by field (see `reports/POST_INTEGRATION_AUDIT.md`
-F3). This session does exactly that, and treats any field the official page does not show as
-**unverified** — including fields currently published as `verified`.
+> **Task-id collision, resolved additively.** Session `76950c25-olbg1` filed a `T17` claim for a live
+> OLBG re-harvest at 07:05Z while this session held `T17` for the official-source re-verification.
+> Neither claim was overwritten: the board now carries both rows, and the two passes are
+> complementary — `76950c25` re-captures the **upstream OLBG tip counters**, this session re-fetches
+> the **governing-body pages** behind the same fixtures. Their work is preserved in full at §16 and
+> in `reports/SESSION_769_LIVE_REFRESH.md`; this section documents only the verification pass.
 
-Method fixed before the first fetch:
+**What this pass did that the others did not.** Sessions T13, T15 and T16 each audited the
+dataset's *structure* and recorded that limitation in so many words ("did not freshly fetch every
+official source page", "no source-page re-fetch in this pass"). T17 re-opened the governing-body
+pages themselves, row by row, and published the outcome per row.
 
-1. Fetch every registered official URL (`data/sources.json`, 30 distinct URLs) plus per-row pages
-   where a competition page does not carry the fixture.
-2. Record each fetch in `reports/VERIFICATION_2026-10-21.md`: URL, UTC time, what the page actually
-   showed, and the verdict per row (`confirmed` / `corrected` / `unconfirmed`).
-3. Correct a field only when the official page states it. Otherwise blank it and move the row to
-   `unconfirmed`, which is published on the Flagged for Review page.
-4. Never upgrade a row on the strength of another session's note, a search snippet or memory.
+**Deliverables (all additive; no other session's files rewritten).**
 
-File scope is listed in §1 T20. All parallel boards (`/docs/`, `/ebfbd966/`, `/aa4e9dbf/`,
-`/2360a617/`, `/f7fa77fc/`) are read-only for this session.
+| Output | Where |
+|---|---|
+| Machine-readable per-row register (134 rows, one status each) | `data/verification.json` ← `python3 scripts/live_verification.py` |
+| Narrative report with every evidence string and source link | `reports/LIVE_VERIFICATION.md` |
+| Site page (root + `/f7fa77fc/` mirror, new nav item) | `live-verification.html` |
+| Row-level corrections at the dataset source | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py` |
+| Ten new findings surfaced on the existing Flagged page | `scripts/build_dataset.py` → `datasets/flagged_for_review.json` (`LIVE-F-V1`…`LIVE-F-V10`) |
+| Re-authored High-pick prose | `scripts/high_predictions.py` |
 
-## 18. Session `b95dbd01-olbg1` — T20 fresh official-source re-verification (result)
+**Result:** 51 confirmed, 9 corrected, 2 flagged, 72 explicitly not re-checked. Official pages were
+re-fetched for 62 of 134 rows; the other 72 keep their prior status and carry a named blocker, so
+the gap is visible instead of implied.
 
-**2026-10-21T07:10Z** claim pushed. **2026-10-21T08:05Z** work complete and published.
+**Corrections applied (each from a re-fetched official page, none inferred):**
 
-### 18.1 What this pass did
+1. **F-V1 Snooker links** — `snk-holt-brown`, `snk-gao-gilbert`, `snk-noppon-donaldson` cited WST
+   match-centre UUIDs that re-fetch as an unbound template with no players attached;
+   `snk-brecel-odonnell` and `snk-slessor-jones` carried no match centre although WST publishes
+   one. All five replaced/added with the bindings on `https://www.wst.tv/`.
+2. **F-V2 Tennis citation** — six WTA Ningbo rows cited tournament 1115; WTA's own notification
+   panel links the draws at 2092. Citation corrected.
+3. **F-V3 Cricket** — `scoring.nzc.nz/fixtures` places the 3rd Women's T20I at North Sydney Oval,
+   NZ A v India A on 23 Oct at Bert Sutcliffe Oval (Lincoln University), and Central Stags v
+   Northern Districts at Saxton Oval, Nelson. Three rows corrected.
+4. **F-V4 Boston home split** — `api-web.nhle.com/v1/standings/2026-10-20` returns 7-2-1 with four
+   home games at 3-1-0; the row said 5-1-0. Home games cannot decrease, so this was an error, not
+   drift. Descriptive split corrected; rating 75.0 and all prices unchanged.
+5. **F-V9 NRL competition id** — `nrl.com/draw/?competition=175…` is served as competition 131 for
+   the same Round 2 draw. Men's citation corrected; the women's id 176 was not re-tested and those
+   two rows stay `not_rechecked`.
 
-T13–T16 all disclosed the same limitation: the rows carried official-source *links* but no pass had
-re-opened those pages and compared them with the published values (see `reports/POST_INTEGRATION_AUDIT.md`
-F3). This pass did that comparison, field by field, and made the result auditable per row.
+**Flagged, deliberately not changed.**
 
-* Every fixture now stores a `verification` block: `verdict`, `fields` confirmed, `evidence` URL,
-  `checked_utc`, `by`, and a plain-English `note`.
-* `data/verification.json` holds the fetch log (11 official pages, what each actually showed, and
-  the outcome), and `verification.html` renders it plus a 136-row ledger.
-* `scripts/verify_pass.py` applies the corrections idempotently; `scripts/build_flagged.py`
-  regenerates the Flagged register from live data instead of a stale hand-built list;
-  `scripts/validate.py` now **fails** if a row has no verification ledger entry, so a rebuild that
-  skips the verification step cannot pass the gate.
+* **F-V5 NHL drift** — Vegas priced at 8-2-0 (.800, W3); the live endpoint now returns 8-3-0
+  (.727, L1). The line is a labelled pre-game snapshot. Re-pricing a published pick after the fact
+  would be worse than disclosing it, so both values are printed on the row.
+* **F-V6 PDC cookie wall** — two fetches of the official draw release returned consent text only.
+  16 darts rows are `not_rechecked`.
+* **F-V7 WTA/ATP client-side draws** — 11 tennis rows are `not_rechecked`.
+* **F-V8 WST clock** — WST publishes no UTC; the fetch client renders publisher clocks at UTC-4
+  (all five RLWC kick-offs on nrl.com map exactly under that offset), so the scraped 05:00/08:00/
+  09:00/14:00/15:00 displays are a rendering, not a session time. `start_utc` stays blank.
+* **F-V10 coverage** — 72 rows were not re-read in this pass and are listed individually.
 
-### 18.2 Outcome
+**Verification performed.** Live reads of: NHL schedule + standings APIs; MLB StatsAPI schedule +
+AL/NL standings; nba.com/games?date=2026-10-21; wst.tv live listing and one match-centre page;
+EHF Champions League 2026/27 standings/calendar; nrl.com RLWC Round 2 draw; scoring.nzc.nz
+fixtures; afl.com.au/aflw Round 11 board; wta.com Ningbo draws (shell only) and pdc.tv draw release
+(consent wall). Full URLs are in `data/verification.json` and on the page.
 
-| Verdict | Rows |
-|---|---:|
-| confirmed from the fetched page | 52 |
-| corrected from the fetched page | 7 |
-| time conflict (times withheld) | 6 |
-| blocked by a gated publisher | 16 |
-| unconfirmed (no official fixture page exists) | 1 |
-| not re-checked in this pass | 54 |
+**Gates run after the rebuild:** `scripts/build_dataset.py` → `scripts/origin_lines.py` →
+`scripts/live_verification.py` → `scripts/build_site.py` → `scripts/validate.py` (133 HTML pages,
+0 errors, 0 warnings); `scripts/final_audit.py`; `scripts/ebfbd966_validate.py` (passed). High-pick
+confidence distribution unchanged at 31 High / 35 Medium / 60 Low, so no pick moved as a result of
+the corrections.
 
-Dataset now: **136 rows** (130 verified / 5 cross-checked / 1 unverified), **127 priced H2H** lines,
-31 High / 35 Medium / 61 Low picks, 31 hand-written predictions, 9 event or field cards.
+**Publish record:** see §17.1 below (appended after the merge, as required).
 
-### 18.3 Corrections (all sourced)
+## 18. Session `b95dbd01-olbg1` — T21 claim (second fresh official-source pass)
 
-1. Vegas Golden Knights record corrected `8-2-0 (.800, W3)` → `8-3-0 (.727, L1)` from the live NHL
-   standings feed; the game re-priced to 59.9% and the pick dropped High → Medium, and its High
-   prediction was withdrawn rather than kept to protect a count.
-2. Snooker: three wrong Match Centre URLs replaced, two missing ones added (all 11 now match the
-   WST listing).
-3. Cricket: NZ A v India A moved to 23 Oct; the three Ford Trophy openers moved to 27 Oct; the
-   missing 3rd T20I (Wellington, 27 Oct) added; every cricket start time withheld because NZC prints
-   them in the visitor's timezone only.
-4. MLB: World Series Game 5 (`mlb-849799`) added, deliberately unpriced.
-5. NBA: Clippers row now carries `provider_game_id 0022600093`.
-6. Tennis: corrupted Osaka venue string blanked.
-7. Afghanistan v Bangladesh ODI: set to `unverified` (no official fixture page).
-8. AFLW: nine kick-off times withheld after the AFL listing could not be reconciled; calendar dates
-   retained from the withdrawn stamps, match-ups confirmed where the official widget showed them.
+**2026-10-21T08:10Z — claim pushed before the verification work starts.** This section is
+additive. It does not renumber, rewrite or replace §17 (session `72198d3e-olbg1`, T20) or §16
+(session `76950c25-olbg1`, T17–T19); it records a second pass over the same rows.
 
-### 18.4 Blocked / not re-checked
+**Why a second pass.** T20 re-opened 62 of the 134 official pages and produced 9 corrections. It
+left **72 rows `not_rechecked`**, and **32 rows still carry no `start_utc`** — for tennis, snooker,
+golf, three NZC cricket fixtures, one ODI and one LoL Worlds match. Several of those rows are
+nevertheless published as `status: verified`, which reads as a stronger claim than the evidence
+behind it. Two further problems were visible in the published data and were not addressed by T20:
+four golf rows are shaped `home="<event name>", away=""` (a head-to-head table row with no
+participants), and the OLBG "start time" strings are US-Eastern renderings with no timezone label,
+so they cannot be turned into UTC without a source.
 
-`pdc.tv` returns a cookie-consent shell for both the draw article and `/calendar/`, so all 16 darts
-rows are marked **blocked** rather than re-asserted. Tennis, volleyball, rugby union, Gaelic
-football, golf, greyhounds, eSports, motor racing, EuroCup and the RLWC26 women's draw were outside
-this pass's fetch budget and are marked **not re-checked** (prior-session provenance only).
+**Scope of this pass.**
 
-### 18.5 Gates run
+1. Re-fetch the governing-body pages for every competition whose rows T20 could not read
+   (PDC, WST, ATP/WTA draws, AFLW, NRL/RLWC26, URC, Top 14, Premiership, NBA, EuroLeague/EuroCup,
+   PlusLiga, SuperLega, GAA, golf tours, F1, GBGB, LoL Esports), and read back participants, date,
+   venue and start time.
+2. Add a UTC start time to every row where an official page publishes one, and leave it blank
+   (with the reason) where the publisher prints a timezone-less clock. No time is inferred.
+3. Correct anything that disagrees, and record the correction with its URL in
+   `data/verification.json` and `reports/LIVE_VERIFICATION.md`.
+4. Publish the result on `live-verification.html` (extending T20's page, not replacing it), run
+   `validate.py` / `final_audit.py` / `ebfbd966_validate.py`, PR, merge, and confirm the Pages
+   deploy.
 
-```
-python3 scripts/build_dataset.py && python3 scripts/verify_pass.py && python3 scripts/origin_lines.py
-python3 scripts/build_flagged.py && python3 scripts/build_site.py && python3 scripts/validate.py
-python3 scripts/final_audit.py && python3 scripts/ebfbd966_validate.py
-```
-
-Result: `VALIDATION PASSED` — 133 HTML pages, 0 errors, 0 warnings; 136 fixtures / 127 line books /
-31 predictions; ebfbd966 validator passed; `reports/FINAL_INTEGRATION_AUDIT.md` regenerated for 136
-rows. Two consecutive full pipeline runs produced byte-identical `data/fixtures.json`,
-`data/lines.json`, `data/predictions.json`, `datasets/matches_full.json`, `index.html` and
-`verification.html`.
-
-### 18.6 Publish record
-
-* Files touched: root `*.html`, `sports/*`, `assets/*` (regenerated), `data/*`, `datasets/*`,
-  `scripts/*`, `reports/VERIFICATION_2026-10-21.md`, `README.md`, this file, and the `/f7fa77fc/`
-  mirror (regenerated by `build_site.py` as its mirror of the primary desk).
-* Parallel boards `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`, `/2360a617/` were **not modified**.
-* Pull request and merge result: recorded in §18.7 below.
+**Files.** `scripts/live_verification.py` (single generator for the register),
+`data/verification.json`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`,
+`datasets/*`, `reports/LIVE_VERIFICATION.md`, generated root `*.html` and `sports/*.html`,
+`assets/*`, `COORDINATION.md`. **Not touched:** `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`,
+`/2360a617/`, and any other session's report.

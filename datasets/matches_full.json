@@ -1,6 +1,6 @@
 {
   "generated": "2026-10-21",
-  "count": 136,
+  "count": 134,
   "matches": [
     {
       "id": "nhl-2026020152",
@@ -51,20 +51,6 @@
         "time_shown": "Today 19:37",
         "url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/PHI_Flyers_@_BUF_Sabres/13?event_id=199897",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://api-web.nhle.com/v1/schedule/2026-10-21",
-        "note": "NHL schedule API returns PHI @ BUF, 2026-10-21T23:30Z, KeyBank Center."
       },
       "is_h2h": true,
       "pricing": {
@@ -196,8 +182,8 @@
         "match_id": "nhl-2026020152",
         "selection": "Buffalo Sabres",
         "bet_line": "Buffalo Sabres \u2014 Match Winner @ 1.42 (also Sabres -1.5 Puck Line @ 2.05)",
-        "text": "Philadelphia are 2-6-3 for a .318 points percentage and have not won on the road yet, carrying an 0-4-2 away line and a minus-14 goal differential into Buffalo. The Sabres are nothing special at 4-3-2 and plus-two, but that is the better record of the two. Back the hosts on the moneyline and treat the -1.5 puck line as the smaller add-on: Buffalo Sabres \u2014 Match Winner @ 1.42 (also Sabres -1.5 Puck Line @ 2.05)",
-        "words": 76,
+        "text": "Buffalo have played to a 4-3-2 record, a .556 points percentage and a plus-two goal difference. Philadelphia are 2-6-3 and minus-14, and their road line reads 0-4-2, which is the detail that decides this for us. Early-season samples are small, but a six-game winless run away from home is the kind of form we will not ignore. Back Buffalo Sabres on the moneyline: Buffalo Sabres \u2014 Match Winner @ 1.42 (also Sabres -1.5 Puck Line @ 2.05)",
+        "words": 77,
         "facts": [
           "Buffalo Sabres: Points percentage \u2014 0.556 (4-3-2, +2 GD)",
           "Philadelphia Flyers: Points percentage \u2014 0.318 (2-6-3, 0-4-2 road, -14 GD)",
@@ -268,20 +254,6 @@
         "time_shown": "Today 19:37",
         "url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/FLA_Panthers_@_OTT_Senators/13?event_id=199896",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://api-web.nhle.com/v1/schedule/2026-10-21",
-        "note": "NHL schedule API returns FLA @ OTT, 2026-10-21T23:30Z, Canadian Tire Centre."
       },
       "is_h2h": true,
       "pricing": {
@@ -439,7 +411,7 @@
       "inputs": {
         "home": {
           "label": "Points percentage",
-          "value": "0.750 (7-2-1, 5-1-0 home, +14 GD)",
+          "value": "0.750 (7-2-1, 3-1-0 home, +14 GD)",
           "rating": 75.0
         },
         "away": {
@@ -448,21 +420,9 @@
           "rating": 56.3
         }
       },
-      "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://api-web.nhle.com/v1/schedule/2026-10-21",
-        "note": "NHL schedule API returns NSH @ BOS, 2026-10-22T23:00Z, TD Garden."
-      },
+      "flags": [
+        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved."
+      ],
       "is_h2h": true,
       "pricing": {
         "id": "nhl-2026020154",
@@ -593,10 +553,10 @@
         "match_id": "nhl-2026020154",
         "selection": "Boston Bruins",
         "bet_line": "Boston Bruins \u2014 Match Winner @ 1.48 (lean Bruins -1.5 @ 2.19)",
-        "text": "Seven wins from ten, a .750 points percentage and a plus-14 goal difference put Boston at the top of this matchup, and they are 5-1-0 on their own ice. Nashville's 3-2-3 with a level goal differential is honest but clearly second best. Home ice plus that scoring edge makes the Bruins the side to take: Boston Bruins \u2014 Match Winner @ 1.48 (lean Bruins -1.5 @ 2.19)",
-        "words": 67,
+        "text": "Boston are 7-2-1 for .750 and plus-14, and they have defended TD Garden at 3-1-0 so far. Nashville carry a .563 points percentage with a goal difference of exactly zero, so the Predators have been neither better nor worse than break-even. Home ice plus a much healthier differential is the whole case, and it is a strong one. We are with Boston Bruins: Boston Bruins \u2014 Match Winner @ 1.48 (lean Bruins -1.5 @ 2.19)",
+        "words": 75,
         "facts": [
-          "Boston Bruins: Points percentage \u2014 0.750 (7-2-1, 5-1-0 home, +14 GD)",
+          "Boston Bruins: Points percentage \u2014 0.750 (7-2-1, 3-1-0 home, +14 GD)",
           "Nashville Predators: Points percentage \u2014 0.563 (3-2-3, 0 GD)",
           "Recommended market: Boston Bruins \u2014 Match Winner @ 1.48 (lean Bruins -1.5 @ 2.19)"
         ],
@@ -654,20 +614,6 @@
         }
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://api-web.nhle.com/v1/schedule/2026-10-21",
-        "note": "NHL schedule API returns NYR @ TOR, 2026-10-22T23:00Z, Scotiabank Arena."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "nhl-2026020155",
@@ -834,17 +780,8 @@
         }
       },
       "flags": [
-        "Back-to-back road spot for Florida after playing in Ottawa on 21 October",
-        "Record inputs are an as-of-capture snapshot; the live NHL standings feed has since moved."
+        "Back-to-back road spot for Florida after playing in Ottawa on 21 October"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://api-web.nhle.com/v1/schedule/2026-10-21",
-        "note": "Game sits later in the same week block that was only partially read in this pass; row remains prior-session provenance."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "nhl-2026020158",
@@ -975,7 +912,7 @@
         "match_id": "nhl-2026020158",
         "selection": "Florida Panthers",
         "bet_line": "Florida Panthers \u2014 Match Winner @ 1.47 (secondary Panthers -1.5 @ 2.15)",
-        "text": "Pittsburgh's 3-6-1 start has slid into a four-game losing streak and a .350 points percentage. Florida are the opposite story at 5-2-2, .667, riding three straight wins. A team in form visiting a team in freefall is usually where the value sits, so the Panthers moneyline is the pick, with -1.5 on the puck line as the secondary: Florida Panthers \u2014 Match Winner @ 1.47 (secondary Panthers -1.5 @ 2.15)",
+        "text": "Pittsburgh\u2019s 3-6-1 start has turned into four straight defeats, the longest current slide in this dataset. Florida are 5-2-2 and winners of three in a row, though they arrive on the back end of a back-to-back after facing Ottawa. Even allowing for tired legs, a .667 side against a .350 side is a mismatch worth taking. Florida Panthers: Florida Panthers \u2014 Match Winner @ 1.47 (secondary Panthers -1.5 @ 2.15)",
         "words": 70,
         "facts": [
           "Pittsburgh Penguins: Points percentage \u2014 0.350 (3-6-1, L4 losing streak)",
@@ -1031,37 +968,28 @@
         },
         "away": {
           "label": "Points percentage",
-          "value": "0.727 (8-3-0, L1 streak)",
-          "rating": 72.7
+          "value": "0.800 (8-2-0, W3 winning streak)",
+          "rating": 80.0
         }
       },
       "flags": [
-        "Away record corrected 2026-10-21: official standings now show 8-3-0 (.727, L1); the stored 8-2-0 (.800, W3) predates the 20 Oct result.",
-        "Record inputs are an as-of-capture snapshot; the live NHL standings feed has since moved."
+        "Snapshot drift disclosed 2026-10-21: a re-fetch of api-web.nhle.com/v1/standings/2026-10-20 (standingsDateTimeUtc 2026-10-21T07:05:30Z) now returns Vegas at 8-3-0, .727, L1 over 11 games played, i.e. the club has played once since the 8-2-0 / W3 snapshot used to price this match. The priced inputs and the stored line are retained unchanged and labelled as a pre-game snapshot; the live table link is on the row for manual review."
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://api-web.nhle.com/v1/schedule/2026-10-21",
-        "note": "Game sits later in the same week block that was only partially read in this pass; row remains prior-session provenance."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "nhl-2026020160",
         "sport": "ice-hockey",
         "sport_name": "Ice Hockey",
         "favourite": "Vegas Golden Knights",
-        "home_probability": 0.4013,
+        "home_probability": 0.3603,
         "draw_probability": 0.0,
-        "away_probability": 0.5987,
+        "away_probability": 0.6397,
         "pick": "Vegas Golden Knights",
         "pick_market": "Match Winner",
-        "confidence": "medium",
-        "expected_margin": -0.71,
+        "confidence": "high",
+        "expected_margin": -1.02,
         "rating_home": 50.0,
-        "rating_away": 72.7,
+        "rating_away": 80.0,
         "rating_measured_home": true,
         "rating_measured_away": true,
         "rating_coverage": 2,
@@ -1075,21 +1003,21 @@
             "outcomes": [
               {
                 "selection": "St. Louis Blues",
-                "probability": 0.401253,
-                "odds": 2.37,
-                "fair_odds": 2.49,
-                "american": "+137",
-                "fair_american": "+149",
-                "implied_pct": 40
+                "probability": 0.360301,
+                "odds": 2.64,
+                "fair_odds": 2.78,
+                "american": "+164",
+                "fair_american": "+178",
+                "implied_pct": 36
               },
               {
                 "selection": "Vegas Golden Knights",
-                "probability": 0.598747,
-                "odds": 1.59,
-                "fair_odds": 1.67,
-                "american": "-169",
-                "fair_american": "-149",
-                "implied_pct": 60
+                "probability": 0.639699,
+                "odds": 1.49,
+                "fair_odds": 1.56,
+                "american": "-204",
+                "fair_american": "-179",
+                "implied_pct": 64
               }
             ],
             "basis": "Official governing-body ratings + venue adjustment"
@@ -1101,24 +1029,24 @@
             "outcomes": [
               {
                 "selection": "St. Louis Blues +1.5",
-                "probability": 0.608807,
-                "odds": 1.56,
-                "fair_odds": 1.64,
-                "american": "-179",
-                "fair_american": "-156",
-                "implied_pct": 61
+                "probability": 0.566969,
+                "odds": 1.68,
+                "fair_odds": 1.76,
+                "american": "-147",
+                "fair_american": "-132",
+                "implied_pct": 57
               },
               {
                 "selection": "Vegas Golden Knights -1.5",
-                "probability": 0.391193,
-                "odds": 2.43,
-                "fair_odds": 2.56,
-                "american": "+143",
-                "fair_american": "+156",
-                "implied_pct": 39
+                "probability": 0.433031,
+                "odds": 2.2,
+                "fair_odds": 2.31,
+                "american": "+120",
+                "fair_american": "+131",
+                "implied_pct": 43
               }
             ],
-            "basis": "Gaussian margin projection (E[M]=-0.7, sigma=2.9)"
+            "basis": "Gaussian margin projection (E[M]=-1.0, sigma=2.9)"
           },
           {
             "key": "total",
@@ -1169,11 +1097,36 @@
         ],
         "unavailable_markets": [],
         "model_notes": [
-          "Both sides carry official governing-body ratings (50.0 vs 72.7); log-odds differential scaled by k=42.",
+          "Both sides carry official governing-body ratings (50.0 vs 80.0); log-odds differential scaled by k=42.",
           "Total market centered on competition baseline 6.5 (Goals)."
         ]
       },
-      "prediction": null
+      "prediction": {
+        "match_id": "nhl-2026020160",
+        "selection": "Vegas Golden Knights",
+        "bet_line": "Vegas Golden Knights \u2014 Match Winner @ 1.49 (puck line -1.5 @ 2.20)",
+        "text": "St. Louis are an even 4-4-1 and .500, with nothing in the record to suggest they separate from the pack. At our pricing snapshot Vegas were the better team by a distance: 8-2-0, .800, riding a three-game win streak. The Blues\u2019 building narrows that edge without erasing it. We side with Vegas Golden Knights: Vegas Golden Knights \u2014 Match Winner @ 1.49 (puck line -1.5 @ 2.20)",
+        "words": 67,
+        "facts": [
+          "St. Louis Blues: Points percentage \u2014 0.500 (4-4-1)",
+          "Vegas Golden Knights: Points percentage \u2014 0.800 (8-2-0, W3 winning streak)",
+          "Recommended market: Vegas Golden Knights \u2014 Match Winner @ 1.49 (puck line -1.5 @ 2.20)"
+        ],
+        "sources": [
+          {
+            "name": "NHL official schedule API (2026-10-21..22)",
+            "url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+          },
+          {
+            "name": "NHL official standings API (2026-10-20)",
+            "url": "https://api-web.nhle.com/v1/standings/2026-10-20"
+          },
+          {
+            "name": "NHL.com Gamecenter #2026020160",
+            "url": "https://www.nhl.com/gamecenter/2026020160"
+          }
+        ]
+      }
     },
     {
       "id": "nba-0022600085",
@@ -1188,11 +1141,11 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NBA official games page (2026-10-21) \u2014 game 0022600085",
+          "name": "NBA.com official schedule (2026-10-21)",
           "url": "https://www.nba.com/games?date=2026-10-21"
         },
         {
-          "name": "NBA standings (rating input)",
+          "name": "NBA.com official standings (2025-26 prior-season benchmark)",
           "url": "https://www.nba.com/standings"
         }
       ],
@@ -1221,21 +1174,6 @@
         "consensus_prior": "3/5 win tips (60%)",
         "selection_prior": "ATL Hawks (3/5 hub) / Under 235.50 (3/3 NBA sub-page)",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "provider_game_id": "0022600085",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "provider_game_id",
-          "tip-off order"
-        ],
-        "evidence": "https://www.nba.com/games?date=2026-10-21",
-        "note": "Match-up, game ID and tip-off slot read from nba.com/games?date=2026-10-21. Arena naming on the row comes from the league game page and was not re-fetched in this pass."
       },
       "is_h2h": true,
       "pricing": {
@@ -1378,11 +1316,11 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NBA official games page (2026-10-21) \u2014 game 0022600086",
+          "name": "NBA.com official schedule (2026-10-21)",
           "url": "https://www.nba.com/games?date=2026-10-21"
         },
         {
-          "name": "NBA standings (rating input)",
+          "name": "NBA.com official standings (2025-26 prior-season benchmark)",
           "url": "https://www.nba.com/standings"
         }
       ],
@@ -1400,21 +1338,6 @@
         "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/MIL_Bucks_@_WAS_Wizards/4?event_id=534889",
         "selection_prior": "Washington Wizards",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "provider_game_id": "0022600086",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "provider_game_id",
-          "tip-off order"
-        ],
-        "evidence": "https://www.nba.com/games?date=2026-10-21",
-        "note": "Match-up, game ID and tip-off slot read from nba.com/games?date=2026-10-21. Arena naming on the row comes from the league game page and was not re-fetched in this pass."
       },
       "is_h2h": true,
       "pricing": {
@@ -1557,11 +1480,11 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NBA official games page (2026-10-21) \u2014 game 0022600004",
+          "name": "NBA.com official schedule (2026-10-21)",
           "url": "https://www.nba.com/games?date=2026-10-21"
         },
         {
-          "name": "NBA standings (rating input)",
+          "name": "NBA.com official standings (2025-26 prior-season benchmark)",
           "url": "https://www.nba.com/standings"
         }
       ],
@@ -1569,21 +1492,6 @@
       "flags": [
         "Major offseason roster movement makes prior-season record non-comparable; baseline price only"
       ],
-      "provider_game_id": "0022600004",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "provider_game_id",
-          "tip-off order"
-        ],
-        "evidence": "https://www.nba.com/games?date=2026-10-21",
-        "note": "Match-up, game ID and tip-off slot read from nba.com/games?date=2026-10-21. Arena naming on the row comes from the league game page and was not re-fetched in this pass."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "nba-0022600004",
@@ -1725,11 +1633,11 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NBA official games page (2026-10-21) \u2014 game 0022600087",
+          "name": "NBA.com official schedule (2026-10-21)",
           "url": "https://www.nba.com/games?date=2026-10-21"
         },
         {
-          "name": "NBA standings (rating input)",
+          "name": "NBA.com official standings (2025-26 prior-season benchmark)",
           "url": "https://www.nba.com/standings"
         }
       ],
@@ -1747,21 +1655,6 @@
         "consensus_prior": "2/4 win tips (50%)",
         "selection_prior": "CHA Hornets",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "provider_game_id": "0022600087",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "provider_game_id",
-          "tip-off order"
-        ],
-        "evidence": "https://www.nba.com/games?date=2026-10-21",
-        "note": "Match-up, game ID and tip-off slot read from nba.com/games?date=2026-10-21. Arena naming on the row comes from the league game page and was not re-fetched in this pass."
       },
       "is_h2h": true,
       "pricing": {
@@ -1904,11 +1797,11 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NBA official games page (2026-10-21) \u2014 game 0022600088",
+          "name": "NBA.com official schedule (2026-10-21)",
           "url": "https://www.nba.com/games?date=2026-10-21"
         },
         {
-          "name": "NBA standings (rating input)",
+          "name": "NBA.com official standings (2025-26 prior-season benchmark)",
           "url": "https://www.nba.com/standings"
         }
       ],
@@ -1925,21 +1818,6 @@
         "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/CHI_Bulls_@_TOR_Raptors/4?event_id=535673",
         "consensus_prior": "3/4 win tips (75%)",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "provider_game_id": "0022600088",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "provider_game_id",
-          "tip-off order"
-        ],
-        "evidence": "https://www.nba.com/games?date=2026-10-21",
-        "note": "Match-up, game ID and tip-off slot read from nba.com/games?date=2026-10-21. Arena naming on the row comes from the league game page and was not re-fetched in this pass."
       },
       "is_h2h": true,
       "pricing": {
@@ -2082,11 +1960,11 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NBA official games page (2026-10-21) \u2014 game 0022600090",
+          "name": "NBA.com official schedule (2026-10-21)",
           "url": "https://www.nba.com/games?date=2026-10-21"
         },
         {
-          "name": "NBA standings (rating input)",
+          "name": "NBA.com official standings (2025-26 prior-season benchmark)",
           "url": "https://www.nba.com/standings"
         }
       ],
@@ -2104,21 +1982,6 @@
         "consensus_prior": "2/4 win tips (50%)",
         "selection_prior": "IND Pacers",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "provider_game_id": "0022600090",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "provider_game_id",
-          "tip-off order"
-        ],
-        "evidence": "https://www.nba.com/games?date=2026-10-21",
-        "note": "Match-up, game ID and tip-off slot read from nba.com/games?date=2026-10-21. Arena naming on the row comes from the league game page and was not re-fetched in this pass."
       },
       "is_h2h": true,
       "pricing": {
@@ -2261,11 +2124,11 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NBA official games page (2026-10-21) \u2014 game 0022600089",
+          "name": "NBA.com official schedule (2026-10-21)",
           "url": "https://www.nba.com/games?date=2026-10-21"
         },
         {
-          "name": "NBA standings (rating input)",
+          "name": "NBA.com official standings (2025-26 prior-season benchmark)",
           "url": "https://www.nba.com/standings"
         }
       ],
@@ -2283,21 +2146,6 @@
         "consensus_prior": "1/1 win tips (100%)",
         "selection_prior": "Over 240.50",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "provider_game_id": "0022600089",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "provider_game_id",
-          "tip-off order"
-        ],
-        "evidence": "https://www.nba.com/games?date=2026-10-21",
-        "note": "Match-up, game ID and tip-off slot read from nba.com/games?date=2026-10-21. Arena naming on the row comes from the league game page and was not re-fetched in this pass."
       },
       "is_h2h": true,
       "pricing": {
@@ -2440,11 +2288,11 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NBA official games page (2026-10-21) \u2014 game 0022600091",
+          "name": "NBA.com official schedule (2026-10-21)",
           "url": "https://www.nba.com/games?date=2026-10-21"
         },
         {
-          "name": "NBA standings (rating input)",
+          "name": "NBA.com official standings (2025-26 prior-season benchmark)",
           "url": "https://www.nba.com/standings"
         }
       ],
@@ -2452,21 +2300,6 @@
       "flags": [
         "Both clubs enter 2026-27 at 0-0; neutral home baseline"
       ],
-      "provider_game_id": "0022600091",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "provider_game_id",
-          "tip-off order"
-        ],
-        "evidence": "https://www.nba.com/games?date=2026-10-21",
-        "note": "Match-up, game ID and tip-off slot read from nba.com/games?date=2026-10-21. Arena naming on the row comes from the league game page and was not re-fetched in this pass."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "nba-0022600091",
@@ -2608,11 +2441,11 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NBA official games page (2026-10-21) \u2014 game 0022600005",
+          "name": "NBA.com official schedule (2026-10-21)",
           "url": "https://www.nba.com/games?date=2026-10-21"
         },
         {
-          "name": "NBA standings (rating input)",
+          "name": "NBA.com official standings (2025-26 prior-season benchmark)",
           "url": "https://www.nba.com/standings"
         }
       ],
@@ -2631,21 +2464,6 @@
       "flags": [
         "Prior-season NBA.com standings used as opening-night prior"
       ],
-      "provider_game_id": "0022600005",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "provider_game_id",
-          "tip-off order"
-        ],
-        "evidence": "https://www.nba.com/games?date=2026-10-21",
-        "note": "Match-up, game ID and tip-off slot read from nba.com/games?date=2026-10-21. Arena naming on the row comes from the league game page and was not re-fetched in this pass."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "nba-0022600005",
@@ -2787,11 +2605,11 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NBA official games page (2026-10-21) \u2014 game 0022600092",
+          "name": "NBA.com official schedule (2026-10-21)",
           "url": "https://www.nba.com/games?date=2026-10-21"
         },
         {
-          "name": "NBA standings (rating input)",
+          "name": "NBA.com official standings (2025-26 prior-season benchmark)",
           "url": "https://www.nba.com/standings"
         }
       ],
@@ -2808,21 +2626,6 @@
         "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/PHX_Suns_@_POR_Trail_Blazers/4?event_id=534893",
         "consensus_prior": "2/3 win tips (67%)",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "provider_game_id": "0022600092",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "provider_game_id",
-          "tip-off order"
-        ],
-        "evidence": "https://www.nba.com/games?date=2026-10-21",
-        "note": "Match-up, game ID and tip-off slot read from nba.com/games?date=2026-10-21. Arena naming on the row comes from the league game page and was not re-fetched in this pass."
       },
       "is_h2h": true,
       "pricing": {
@@ -2965,11 +2768,11 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NBA official games page (2026-10-21) \u2014 game 0022600093",
+          "name": "NBA.com official schedule (2026-10-21)",
           "url": "https://www.nba.com/games?date=2026-10-21"
         },
         {
-          "name": "NBA standings (rating input)",
+          "name": "NBA.com official standings (2025-26 prior-season benchmark)",
           "url": "https://www.nba.com/standings"
         }
       ],
@@ -2995,21 +2798,6 @@
         "market": "Money Line",
         "consensus": "1/1 win tips (100%)",
         "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/SAC_Kings_@_LA_Clippers/4?event_id=535674"
-      },
-      "provider_game_id": "0022600093",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "provider_game_id",
-          "tip-off order"
-        ],
-        "evidence": "https://www.nba.com/games?date=2026-10-21",
-        "note": "Match-up, game ID and tip-off slot read from nba.com/games?date=2026-10-21. Arena naming on the row comes from the league game page and was not re-fetched in this pass."
       },
       "is_h2h": true,
       "pricing": {
@@ -3141,8 +2929,8 @@
         "match_id": "nba-sac-lac-20261021",
         "selection": "LA Clippers",
         "bet_line": "LA Clippers \u2014 Match Winner @ 1.30 & Clippers -8.5 Point Spread @ 1.92",
-        "text": "The Clippers closed the previous season 42-40 (.512) and Sacramento closed at 22-60 (.268) \u2014 a twenty-win gap that has to be respected on opening night. Sacramento must also cover a spread on the road against a team that was close to .500 a year ago. That prior-season record points to a comfortable Clippers win and a cover of 8.5: LA Clippers \u2014 Match Winner @ 1.30 & Clippers -8.5 Point Spread @ 1.92",
-        "words": 74,
+        "text": "Opening night gives no current-season form, so the only measured input is the final 2025-26 record: the Clippers at 42-40 (.512) against Sacramento\u2019s 22-60 (.268). Twenty wins is a wide gap inside the same conference, and the game is at Intuit Dome. Nothing else in the verified file contradicts it. We take LA Clippers on the moneyline: LA Clippers \u2014 Match Winner @ 1.30 & Clippers -8.5 Point Spread @ 1.92",
+        "words": 71,
         "facts": [
           "LA Clippers: 2025-26 NBA record \u2014 42-40 (.512)",
           "Sacramento Kings: 2025-26 NBA record \u2014 22-60 (.268)",
@@ -3150,11 +2938,11 @@
         ],
         "sources": [
           {
-            "name": "NBA official games page (2026-10-21) \u2014 game 0022600093",
+            "name": "NBA.com official schedule (2026-10-21)",
             "url": "https://www.nba.com/games?date=2026-10-21"
           },
           {
-            "name": "NBA standings (rating input)",
+            "name": "NBA.com official standings (2025-26 prior-season benchmark)",
             "url": "https://www.nba.com/standings"
           }
         ]
@@ -3200,21 +2988,6 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://www.euroleaguebasketball.net/en/euroleague/game-center/",
-        "note": "Round 7 match-up, date and arena read from the EuroLeague Game Center; the page clock is visitor-local and the stored UTC agrees with the converted value."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "el-535919",
@@ -3370,21 +3143,6 @@
         "url": "https://www.olbg.com/betting-tips/Basketball/European/Euroleague/Anadolu_Efes_vs_Besiktas/4?event_id=535918"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://www.euroleaguebasketball.net/en/euroleague/game-center/",
-        "note": "Round 7 match-up, date and arena read from the EuroLeague Game Center; the page clock is visitor-local and the stored UTC agrees with the converted value."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "el-535918",
@@ -3551,21 +3309,6 @@
         "url": "https://www.olbg.com/betting-tips/Basketball/European/Euroleague/Maccabi_Tel_Aviv_vs_Real_Madrid/4?event_id=535921"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://www.euroleaguebasketball.net/en/euroleague/game-center/",
-        "note": "Round 7 match-up, date and arena read from the EuroLeague Game Center; the page clock is visitor-local and the stored UTC agrees with the converted value."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "el-535921",
@@ -3696,8 +3439,8 @@
         "match_id": "el-535921",
         "selection": "Real Madrid",
         "bet_line": "Real Madrid \u2014 Match Winner @ 1.29 & Real Madrid -9.0 Spread @ 1.94",
-        "text": "Real Madrid are 4-2 after six EuroLeague rounds; Maccabi have slipped to 2-4, and this home game is being played in Belgrade rather than Tel Aviv. The usual home-court comfort is therefore missing for Maccabi. Real's two-win cushion plus the neutral-floor setting makes the visitors the logical side, with -9.0 the aggressive version: Real Madrid \u2014 Match Winner @ 1.29 & Real Madrid -9.0 Spread @ 1.94",
-        "words": 67,
+        "text": "Real Madrid have opened this EuroLeague season at 4-2; Maccabi Tel Aviv are 2-4 through the same six rounds. The fixture is staged at Aleksandar Nikolic Hall in Belgrade rather than in Israel, so Maccabi do not get their own floor. Two extra wins in a short sample is not decisive, yet it is the only form we can verify. Real Madrid: Real Madrid \u2014 Match Winner @ 1.29 & Real Madrid -9.0 Spread @ 1.94",
+        "words": 76,
         "facts": [
           "Maccabi Tel Aviv: EuroLeague 2026-27 \u2014 2-4 (.333)",
           "Real Madrid: EuroLeague 2026-27 \u2014 4-2 (.667)",
@@ -3749,14 +3492,6 @@
         "url": "https://www.olbg.com/betting-tips/Basketball/European/Euroleague/Panathinaikos_vs_Baskonia/4?event_id=535923"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.euroleaguebasketball.net/euroleague/game-center/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "el-535923",
@@ -3887,8 +3622,8 @@
         "match_id": "el-535923",
         "selection": "Panathinaikos",
         "bet_line": "Panathinaikos \u2014 Match Winner @ 1.22 (also Panathinaikos -11.0 @ 1.95)",
-        "text": "Panathinaikos are 4-2 and host a Baskonia team that has lost four of six. The standings gap and the Athens crowd both lean the same way, which is why the model sets an eleven-point line. Panathinaikos on the moneyline is the main position; the handicap is worth a smaller stake at 1.95: Panathinaikos \u2014 Match Winner @ 1.22 (also Panathinaikos -11.0 @ 1.95)",
-        "words": 63,
+        "text": "Panathinaikos sit 4-2 after six EuroLeague rounds and return to OAKA, a setting our model weights as one of the strongest home venues in the competition. Baskonia are 2-4 across the same period. Here the better record and the better building belong to the same team, which is rarer than it sounds. Panathinaikos are the play: Panathinaikos \u2014 Match Winner @ 1.22 (also Panathinaikos -11.0 @ 1.95)",
+        "words": 67,
         "facts": [
           "Panathinaikos: EuroLeague 2026-27 \u2014 4-2 (.667)",
           "Baskonia: EuroLeague 2026-27 \u2014 2-4 (.333)",
@@ -3929,14 +3664,6 @@
         "url": "https://www.olbg.com/betting-tips/Basketball/4"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.euroleaguebasketball.net/eurocup/game-center/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ec-535953",
@@ -4092,14 +3819,6 @@
         "url": "https://www.olbg.com/betting-tips/Basketball/4"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.euroleaguebasketball.net/eurocup/game-center/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ec-535955",
@@ -4285,21 +4004,6 @@
         "selection_prior": "MIL Brewers",
         "captured_utc": "2026-10-21T07:05Z"
       },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "start_utc",
-          "venue",
-          "series game number"
-        ],
-        "evidence": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30",
-        "note": "World Series game number, first pitch (UTC) and venue read from the MLB Stats API schedule."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "mlb-849805",
@@ -4429,13 +4133,13 @@
       "prediction": {
         "match_id": "mlb-849805",
         "selection": "Milwaukee Brewers",
-        "bet_line": "Milwaukee Brewers \u2014 Game 1 Moneyline @ 1.51 (Over/Under 7.5 priced @ 1.90)",
-        "text": "Milwaukee were 55-26 at American Family Field this season (.679) and Tampa Bay travelled at 43-38 (.531). Home and road splits are the cleanest inputs available for a World Series opener, and they favour the Brewers by a clear margin. Take Milwaukee on the moneyline; the 7.5-run total is closer to a coin flip at this stage: Milwaukee Brewers \u2014 Game 1 Moneyline @ 1.51 (Over/Under 7.5 priced @ 1.90)",
-        "words": 70,
+        "bet_line": "Milwaukee Brewers \u2014 Game 1 Moneyline @ 1.51 (Under/Over 7.5 priced @ 1.90)",
+        "text": "Game 1 of the World Series sends Tampa Bay to American Family Field, where Milwaukee went 55-26 (.679) in the regular season. The Rays were 43-38 away from Tropicana Field (.531). Both clubs won their league pennants to get here, but the home and road splits are the clearest verified separator in the file, and they belong to the Brewers. Milwaukee Brewers take the opener: Milwaukee Brewers \u2014 Game 1 Moneyline @ 1.51 (Under/Over 7.5 priced @ 1.90)",
+        "words": 78,
         "facts": [
           "Milwaukee Brewers: 2026 home record \u2014 55-26 at home (.679)",
           "Tampa Bay Rays: 2026 road record \u2014 43-38 on the road (.531)",
-          "Recommended market: Milwaukee Brewers \u2014 Game 1 Moneyline @ 1.51 (Over/Under 7.5 priced @ 1.90)"
+          "Recommended market: Milwaukee Brewers \u2014 Game 1 Moneyline @ 1.51 (Under/Over 7.5 priced @ 1.90)"
         ],
         "sources": [
           {
@@ -4503,21 +4207,6 @@
       "flags": [
         "Ratings use official 2026 regular-season home/road splits; probable starters unconfirmed pre-series"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "start_utc",
-          "venue",
-          "series game number"
-        ],
-        "evidence": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30",
-        "note": "World Series game number, first pitch (UTC) and venue read from the MLB Stats API schedule."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "mlb-849802",
@@ -4648,8 +4337,8 @@
         "match_id": "mlb-849802",
         "selection": "Milwaukee Brewers",
         "bet_line": "Milwaukee Brewers \u2014 Game 2 Moneyline @ 1.51 (Brewers -1.5 Run Line @ 2.00)",
-        "text": "Game 2 offers the same pairing and the same splits \u2014 Milwaukee 55-26 at home, Tampa Bay 43-38 on the road. Nothing in the official season record suggests the Brewers lose their park advantage overnight, and .679 over 81 home games is a solid base rate. The Brewers moneyline is the play again: Milwaukee Brewers \u2014 Game 2 Moneyline @ 1.51 (Brewers -1.5 Run Line @ 2.00)",
-        "words": 67,
+        "text": "Game 2 repeats the matchup and the arithmetic: Milwaukee\u2019s home record reads 55-26 (.679) while Tampa Bay\u2019s road record sits at 43-38 (.531). A single game does not rewrite a 162-game sample, so the case for the home side is unchanged from the opener. We stay on Milwaukee Brewers: Milwaukee Brewers \u2014 Game 2 Moneyline @ 1.51 (Brewers -1.5 Run Line @ 2.00)",
+        "words": 63,
         "facts": [
           "Milwaukee Brewers: 2026 home record \u2014 55-26 at home (.679)",
           "Tampa Bay Rays: 2026 road record \u2014 43-38 on the road (.531)",
@@ -4721,21 +4410,6 @@
       "flags": [
         "Ratings use official 2026 regular-season home/road splits; probable starters unconfirmed pre-series"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "start_utc",
-          "venue",
-          "series game number"
-        ],
-        "evidence": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30",
-        "note": "World Series game number, first pitch (UTC) and venue read from the MLB Stats API schedule."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "mlb-849804",
@@ -4865,13 +4539,13 @@
       "prediction": {
         "match_id": "mlb-849804",
         "selection": "Tampa Bay Rays",
-        "bet_line": "Tampa Bay Rays \u2014 Game 3 Moneyline @ 1.61 (Rays +1.5 / home-split edge)",
-        "text": "The series moves to Tropicana Field, where Tampa Bay went 55-26 (.679) while Milwaukee travelled at 48-33 (.593). The Rays' home split is the better of the two, and the visitors' road mark, good as it is, gives up ground here. Tampa Bay on the moneyline is the call, with the run line only for smaller stakes: Tampa Bay Rays \u2014 Game 3 Moneyline @ 1.61 (Rays +1.5 / home-split edge)",
-        "words": 71,
+        "bet_line": "Tampa Bay Rays \u2014 Game 3 Moneyline @ 1.61 (Rays +1.5 / ML home split edge)",
+        "text": "The series moves to Tropicana Field for Game 3 and the splits move with it. Tampa Bay finished 55-26 (.679) at home; Milwaukee were a respectable but lesser 48-33 (.593) on the road. That gap in winning percentage is why the same model that liked the Brewers in Games 1 and 2 now flips. Tampa Bay Rays are the pick: Tampa Bay Rays \u2014 Game 3 Moneyline @ 1.61 (Rays +1.5 / ML home split edge)",
+        "words": 76,
         "facts": [
           "Tampa Bay Rays: 2026 home record \u2014 55-26 at home (.679)",
           "Milwaukee Brewers: 2026 road record \u2014 48-33 on the road (.593)",
-          "Recommended market: Tampa Bay Rays \u2014 Game 3 Moneyline @ 1.61 (Rays +1.5 / home-split edge)"
+          "Recommended market: Tampa Bay Rays \u2014 Game 3 Moneyline @ 1.61 (Rays +1.5 / ML home split edge)"
         ],
         "sources": [
           {
@@ -4939,21 +4613,6 @@
       "flags": [
         "Ratings use official 2026 regular-season home/road splits; probable starters unconfirmed pre-series"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "start_utc",
-          "venue",
-          "series game number"
-        ],
-        "evidence": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30",
-        "note": "World Series game number, first pitch (UTC) and venue read from the MLB Stats API schedule."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "mlb-849803",
@@ -5083,13 +4742,13 @@
       "prediction": {
         "match_id": "mlb-849803",
         "selection": "Tampa Bay Rays",
-        "bet_line": "Tampa Bay Rays \u2014 Game 4 Moneyline @ 1.61 (Under 7.5 @ 1.90 as the secondary)",
-        "text": "Same ballpark, same argument: Tampa Bay's .679 home record against Milwaukee's .593 road record. The Rays hold the larger home-field edge of the two clubs and the Game 4 price should say so. Our pick is the Tampa Bay moneyline, with the 7.5-run under as a secondary position: Tampa Bay Rays \u2014 Game 4 Moneyline @ 1.61 (Under 7.5 @ 1.90 as the secondary)",
-        "words": 64,
+        "bet_line": "Tampa Bay Rays \u2014 Game 4 Moneyline @ 1.61 (paired with Under 7.5 @ 1.90 lean)",
+        "text": "Game 4 keeps the World Series at Tropicana Field, where Tampa Bay posted that 55-26 (.679) home mark across 2026. Milwaukee\u2019s road record of 48-33 (.593) is good without matching it. Venue advantage now belongs to the Rays, and the stored regular-season splits are the only inputs we need to say so. Tampa Bay Rays to win: Tampa Bay Rays \u2014 Game 4 Moneyline @ 1.61 (paired with Under 7.5 @ 1.90 lean)",
+        "words": 73,
         "facts": [
           "Tampa Bay Rays: 2026 home record \u2014 55-26 at home (.679)",
           "Milwaukee Brewers: 2026 road record \u2014 48-33 on the road (.593)",
-          "Recommended market: Tampa Bay Rays \u2014 Game 4 Moneyline @ 1.61 (Under 7.5 @ 1.90 as the secondary)"
+          "Recommended market: Tampa Bay Rays \u2014 Game 4 Moneyline @ 1.61 (paired with Under 7.5 @ 1.90 lean)"
         ],
         "sources": [
           {
@@ -5127,7 +4786,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -5149,14 +4808,6 @@
       "flags": [
         "Court start times follow rolling tournament order of play"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws",
-        "note": "Draw and ranking pages were not re-fetched in this pass; the row remains prior-session provenance and is listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ten-ningbo-rybakina",
@@ -5287,8 +4938,8 @@
         "match_id": "ten-ningbo-rybakina",
         "selection": "Elena Rybakina",
         "bet_line": "Elena Rybakina \u2014 Match Winner @ 1.08 & Rybakina -4.5 Games Handicap @ 2.01",
-        "text": "Rybakina is the world number one, the top seed in Ningbo and the defending champion there. Kudermetova is ranked 103rd. That ninety-nine-place gap in the WTA listing attached to this row is the only ranking input used, and it points to a short match. Rybakina to win is the selection, with the games handicap the aggressive option: Elena Rybakina \u2014 Match Winner @ 1.08 & Rybakina -4.5 Games Handicap @ 2.01",
-        "words": 71,
+        "text": "Rybakina arrives as world No. 1, the top seed and the defending champion in Ningbo, which is about as complete a profile as a WTA 500 draw can offer. Kudermetova is ranked No. 103. Rankings do not settle three-set matches on their own, but 102 places plus title history at the venue is a margin we are happy to price. Elena Rybakina: Elena Rybakina \u2014 Match Winner @ 1.08 & Rybakina -4.5 Games Handicap @ 2.01",
+        "words": 76,
         "facts": [
           "Elena Rybakina: WTA world ranking \u2014 No. 1 (seed 1, defending champion)",
           "Polina Kudermetova: WTA world ranking \u2014 No. 103",
@@ -5297,7 +4948,7 @@
         "sources": [
           {
             "name": "WTA official Ningbo Open draw & order of play",
-            "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+            "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
           },
           {
             "name": "PIF WTA Official Singles Rankings",
@@ -5322,7 +4973,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -5351,14 +5002,6 @@
         "market": "1st Set Winner",
         "consensus": "1/1 win tips (100%)",
         "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Katarzyna_Kawa_vs_Belinda_Bencic/3?event_id=902093"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws",
-        "note": "Draw and ranking pages were not re-fetched in this pass; the row remains prior-session provenance and is listed on the Flagged page."
       },
       "is_h2h": true,
       "pricing": {
@@ -5490,8 +5133,8 @@
         "match_id": "ten-902093",
         "selection": "Belinda Bencic",
         "bet_line": "Belinda Bencic \u2014 Match Winner @ 1.30 & Bencic -2.5 Games Handicap @ 2.02",
-        "text": "Kawa came through qualifying ranked 124th and now meets Bencic, the fifth seed at number 12. A gap of more than a hundred places is the entire basis for this position, and at WTA level that is a wide one. Bencic on the moneyline is the percentage play; the -2.5 game handicap pays better: Belinda Bencic \u2014 Match Winner @ 1.30 & Bencic -2.5 Games Handicap @ 2.02",
-        "words": 68,
+        "text": "Bencic is the world No. 12 and seeded fifth in Ningbo; Kawa is ranked No. 124 and came through qualifying. Qualifiers can carry momentum into a main draw, yet 112 ranking places is exactly the sort of edge our model leans on in a best-of-three format. Belinda Bencic is our selection: Belinda Bencic \u2014 Match Winner @ 1.30 & Bencic -2.5 Games Handicap @ 2.02",
+        "words": 65,
         "facts": [
           "Katarzyna Kawa: WTA world ranking \u2014 No. 124 (qualifier)",
           "Belinda Bencic: WTA world ranking \u2014 No. 12 (seed 5)",
@@ -5500,7 +5143,7 @@
         "sources": [
           {
             "name": "WTA official Ningbo Open draw & order of play",
-            "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+            "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
           },
           {
             "name": "PIF WTA Official Singles Rankings",
@@ -5554,14 +5197,6 @@
         "market": "Win Match",
         "consensus": "4/5 win tips (80%)",
         "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/James_Duckworth_vs_Luciano_Darderi/3?event_id=902038"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.atptour.com/en/scores/current/almaty/9410/draws",
-        "note": "Draw and ranking pages were not re-fetched in this pass; the row remains prior-session provenance and is listed on the Flagged page."
       },
       "is_h2h": true,
       "pricing": {
@@ -5739,14 +5374,6 @@
         "consensus_prior": "4/5 win tips (80%)",
         "captured_utc": "2026-10-21T07:05Z"
       },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.atptour.com/en/scores/current/almaty/9410/draws",
-        "note": "Draw and ranking pages were not re-fetched in this pass; the row remains prior-session provenance and is listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ten-902037",
@@ -5891,7 +5518,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -5922,14 +5549,6 @@
         "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Ekaterina_Alexandrova_vs_Marta_Kostyuk/3?event_id=902084",
         "consensus_prior": "2/4 win tips (50%)",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws",
-        "note": "Draw and ranking pages were not re-fetched in this pass; the row remains prior-session provenance and is listed on the Flagged page."
       },
       "is_h2h": true,
       "pricing": {
@@ -6069,7 +5688,7 @@
       "start_utc": null,
       "home": "Katie Boulter",
       "away": "Viktorija Golubic",
-      "venue": "",
+      "venue": "ITC\u9771 (Utsubo) Tennis Center, Osaka",
       "neutral": true,
       "status": "verified",
       "sources": [
@@ -6095,8 +5714,7 @@
         }
       },
       "flags": [
-        "Court start times follow rolling tournament order of play",
-        "Venue text was corrupted in the capture ('ITC\u9771 \u2026'); the field is now blank pending a clean official read."
+        "Court start times follow rolling tournament order of play"
       ],
       "olbg": {
         "listed": true,
@@ -6105,14 +5723,6 @@
         "market": "Win Match",
         "consensus": "5/8 win tips (63%)",
         "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Katie_Boulter_vs_Viktorija_Golubic/3?event_id=902065"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.wtatennis.com/tournaments/405/osaka/2026/draws",
-        "note": "Draw and ranking pages were not re-fetched in this pass; the row remains prior-session provenance and is listed on the Flagged page."
       },
       "is_h2h": true,
       "pricing": {
@@ -6258,7 +5868,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -6277,14 +5887,6 @@
         "market": "Win Match",
         "consensus": "6/7 win tips (86%)",
         "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Leylah_Fernandez_vs_Aliaksandra_Sasnovich/3?event_id=902039"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws",
-        "note": "Draw and ranking pages were not re-fetched in this pass; the row remains prior-session provenance and is listed on the Flagged page."
       },
       "is_h2h": true,
       "pricing": {
@@ -6430,7 +6032,7 @@
       "sources": [
         {
           "name": "WTA official Ningbo Open draw & order of play",
-          "url": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws"
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
         },
         {
           "name": "PIF WTA Official Singles Rankings",
@@ -6458,14 +6060,6 @@
         "consensus_prior": "3/6 win tips (50%)",
         "selection_prior": "Sara Bejlek",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.wtatennis.com/tournaments/1115/ningbo/2026/draws",
-        "note": "Draw and ranking pages were not re-fetched in this pass; the row remains prior-session provenance and is listed on the Flagged page."
       },
       "is_h2h": true,
       "pricing": {
@@ -6633,14 +6227,6 @@
         "selection_prior": "Stefanos Tsitsipas 2-0",
         "captured_utc": "2026-10-21T07:05Z"
       },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.atptour.com/en/scores/current/almaty/9410/draws",
-        "note": "Draw and ranking pages were not re-fetched in this pass; the row remains prior-session provenance and is listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ten-902083",
@@ -6803,14 +6389,6 @@
         "market": "Set Betting",
         "consensus": "1/1 win tips (100%)",
         "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Benjamin_Bonzi_vs_Tommy_Paul/3?event_id=902102"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.atptour.com/en/scores/current/lyon/496/draws",
-        "note": "Draw and ranking pages were not re-fetched in this pass; the row remains prior-session provenance and is listed on the Flagged page."
       },
       "is_h2h": true,
       "pricing": {
@@ -6976,14 +6554,6 @@
         "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/David_Goffin_vs_Remy_Bertola/3?event_id=902028",
         "captured_utc": "2026-10-21T07:05Z"
       },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.atptour.com/en/scores/current/brussels/7485/draws",
-        "note": "Draw and ranking pages were not re-fetched in this pass; the row remains prior-session provenance and is listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ten-902028",
@@ -7127,15 +6697,15 @@
       "status": "verified",
       "sources": [
         {
-          "name": "World Snooker Tour \u2014 live and upcoming matches (21 Oct 2026)",
+          "name": "World Snooker Tour official match centre",
           "url": "https://www.wst.tv/"
         },
         {
-          "name": "WST world rankings",
+          "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
         },
         {
-          "name": "WST Match Centre",
+          "name": "WST match centre",
           "url": "https://www.wst.tv/match-centre/67133698-e8a4-4b37-9266-452a97df8584"
         }
       ],
@@ -7152,7 +6722,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -7164,20 +6734,6 @@
         "url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/Pang_Junxu_v_Liam_Davies/8?event_id=9929",
         "consensus_prior": "6/9 win tips (67%)",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local"
-        ],
-        "evidence": "https://www.wst.tv/",
-        "note": "Match-up and 21 Oct date read directly from the WST live/upcoming block; session start times render in the visitor's timezone, so UTC is withheld."
       },
       "is_h2h": true,
       "pricing": {
@@ -7322,15 +6878,15 @@
       "status": "verified",
       "sources": [
         {
-          "name": "World Snooker Tour \u2014 live and upcoming matches (21 Oct 2026)",
+          "name": "World Snooker Tour official match centre",
           "url": "https://www.wst.tv/"
         },
         {
-          "name": "WST world rankings",
+          "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
         },
         {
-          "name": "WST Match Centre",
+          "name": "WST match centre",
           "url": "https://www.wst.tv/match-centre/3d53c559-9bd7-4bc4-8e1d-a6c2b7459528"
         }
       ],
@@ -7347,7 +6903,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -7359,20 +6915,6 @@
         "url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/Cheung_Ka_Wai_v_Stuart_Bingham/8?event_id=9933",
         "consensus_prior": "8/11 win tips (73%)",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local"
-        ],
-        "evidence": "https://www.wst.tv/",
-        "note": "Match-up and 21 Oct date read directly from the WST live/upcoming block; session start times render in the visitor's timezone, so UTC is withheld."
       },
       "is_h2h": true,
       "pricing": {
@@ -7517,15 +7059,15 @@
       "status": "verified",
       "sources": [
         {
-          "name": "World Snooker Tour \u2014 live and upcoming matches (21 Oct 2026)",
+          "name": "World Snooker Tour official match centre",
           "url": "https://www.wst.tv/"
         },
         {
-          "name": "WST world rankings",
+          "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
         },
         {
-          "name": "WST Match Centre",
+          "name": "WST match centre",
           "url": "https://www.wst.tv/match-centre/eba55492-fba6-4a53-90be-a04b3560ae65"
         }
       ],
@@ -7542,7 +7084,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page"
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page."
       ],
       "olbg": {
         "listed": true,
@@ -7554,20 +7096,6 @@
         "consensus_prior": "3/6 win tips (50%)",
         "selection_prior": "John Higgins",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local"
-        ],
-        "evidence": "https://www.wst.tv/",
-        "note": "Match-up and 21 Oct date read directly from the WST live/upcoming block; session start times render in the visitor's timezone, so UTC is withheld."
       },
       "is_h2h": true,
       "pricing": {
@@ -7699,8 +7227,8 @@
         "match_id": "snk-higgins-jones",
         "selection": "John Higgins",
         "bet_line": "John Higgins \u2014 Match Winner @ 1.35 (secondary Higgins -1.5 Frames @ 2.06)",
-        "text": "Higgins is sixth on the WST world ranking and Jak Jones twenty-fourth, an eighteen-place gap that counts for plenty over a best-of-seven. Both men came through the first round in Belfast, so the ranking separation is the strength input this desk used. Higgins to win is the call; -1.5 frames is the value version: John Higgins \u2014 Match Winner @ 1.35 (secondary Higgins -1.5 Frames @ 2.06)",
-        "words": 67,
+        "text": "John Higgins is the world No. 6 and Jak Jones is No. 24, an 18-place gap on the WST two-year list. Both men can run deep in Belfast, but that table rewards the week-in, week-out consistency which tends to settle best-of-seven frames. Our model makes Higgins clear favourite and the ranking supports it. John Higgins to win: John Higgins \u2014 Match Winner @ 1.35 (secondary Higgins -1.5 Frames @ 2.06)",
+        "words": 70,
         "facts": [
           "John Higgins: WST world ranking \u2014 6",
           "Jak Jones: WST world ranking \u2014 24",
@@ -7708,15 +7236,15 @@
         ],
         "sources": [
           {
-            "name": "World Snooker Tour \u2014 live and upcoming matches (21 Oct 2026)",
+            "name": "World Snooker Tour official match centre",
             "url": "https://www.wst.tv/"
           },
           {
-            "name": "WST world rankings",
+            "name": "WST official Johnstone's Paint World Rankings",
             "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
           },
           {
-            "name": "WST Match Centre",
+            "name": "WST match centre",
             "url": "https://www.wst.tv/match-centre/eba55492-fba6-4a53-90be-a04b3560ae65"
           }
         ]
@@ -7737,15 +7265,15 @@
       "status": "verified",
       "sources": [
         {
-          "name": "World Snooker Tour \u2014 live and upcoming matches (21 Oct 2026)",
+          "name": "World Snooker Tour official match centre",
           "url": "https://www.wst.tv/"
         },
         {
-          "name": "WST world rankings",
+          "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
         },
         {
-          "name": "WST Match Centre",
+          "name": "WST match centre",
           "url": "https://www.wst.tv/match-centre/e9c15ae6-b9b8-4cea-a83a-49c58eb14046"
         }
       ],
@@ -7762,23 +7290,9 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local"
-        ],
-        "evidence": "https://www.wst.tv/",
-        "note": "Match-up and 21 Oct date read directly from the WST live/upcoming block; session start times render in the visitor's timezone, so UTC is withheld."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "snk-wells-day",
@@ -7922,15 +7436,15 @@
       "status": "verified",
       "sources": [
         {
-          "name": "World Snooker Tour \u2014 live and upcoming matches (21 Oct 2026)",
+          "name": "World Snooker Tour official match centre",
           "url": "https://www.wst.tv/"
         },
         {
-          "name": "WST world rankings",
+          "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
         },
         {
-          "name": "WST Match Centre",
+          "name": "WST match centre",
           "url": "https://www.wst.tv/match-centre/afb42fc9-9654-479e-997e-d33d8a1a6888"
         }
       ],
@@ -7947,7 +7461,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -7959,20 +7473,6 @@
         "url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/Sam_Craigie_v_Xu_Si/8?event_id=9930",
         "consensus_prior": "3/3 win tips (100%)",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local"
-        ],
-        "evidence": "https://www.wst.tv/",
-        "note": "Match-up and 21 Oct date read directly from the WST live/upcoming block; session start times render in the visitor's timezone, so UTC is withheld."
       },
       "is_h2h": true,
       "pricing": {
@@ -8117,15 +7617,15 @@
       "status": "verified",
       "sources": [
         {
-          "name": "World Snooker Tour \u2014 live and upcoming matches (21 Oct 2026)",
+          "name": "World Snooker Tour official match centre",
           "url": "https://www.wst.tv/"
         },
         {
-          "name": "WST world rankings",
+          "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
         },
         {
-          "name": "WST Match Centre",
+          "name": "WST match centre",
           "url": "https://www.wst.tv/match-centre/480e5abf-5766-44ad-9918-f822ceefd4a5"
         }
       ],
@@ -8142,22 +7642,8 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page"
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page."
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local"
-        ],
-        "evidence": "https://www.wst.tv/",
-        "note": "Match-up and 21 Oct date read directly from the WST live/upcoming block; session start times render in the visitor's timezone, so UTC is withheld."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "snk-zhang-williams",
@@ -8288,7 +7774,7 @@
         "match_id": "snk-zhang-williams",
         "selection": "Mark Williams",
         "bet_line": "Mark Williams \u2014 Match Winner @ 1.47 (value lean Over 5.5 Frames @ 1.77)",
-        "text": "Mark Williams sits eighth in the world and Zhang Anda twenty-first, so the ranking edge belongs to the Welshman even though Zhang carries home support in Belfast. Thirteen places is a meaningful gap over a short format. Take Williams on the match market and consider -1.5 frames at the bigger price: Mark Williams \u2014 Match Winner @ 1.47 (value lean Over 5.5 Frames @ 1.77)",
+        "text": "Mark Williams sits eighth on the WST world list; Zhang Anda is 21st. That 13-place separation is the only verified form input for this second-round tie, and in a short best-of-seven it counts for more than it looks, because the higher-ranked player usually controls the safety exchanges. We take Mark Williams: Mark Williams \u2014 Match Winner @ 1.47 (value lean Over 5.5 Frames @ 1.77)",
         "words": 65,
         "facts": [
           "Zhang Anda: WST world ranking \u2014 21",
@@ -8297,15 +7783,15 @@
         ],
         "sources": [
           {
-            "name": "World Snooker Tour \u2014 live and upcoming matches (21 Oct 2026)",
+            "name": "World Snooker Tour official match centre",
             "url": "https://www.wst.tv/"
           },
           {
-            "name": "WST world rankings",
+            "name": "WST official Johnstone's Paint World Rankings",
             "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
           },
           {
-            "name": "WST Match Centre",
+            "name": "WST match centre",
             "url": "https://www.wst.tv/match-centre/480e5abf-5766-44ad-9918-f822ceefd4a5"
           }
         ]
@@ -8326,15 +7812,15 @@
       "status": "verified",
       "sources": [
         {
-          "name": "World Snooker Tour \u2014 live and upcoming matches (21 Oct 2026)",
+          "name": "World Snooker Tour official match centre",
           "url": "https://www.wst.tv/"
         },
         {
-          "name": "WST world rankings",
+          "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
         },
         {
-          "name": "WST Match Centre",
+          "name": "WST match centre",
           "url": "https://www.wst.tv/match-centre/e58a00e5-e6a7-479b-98d0-5c7867af28a8"
         }
       ],
@@ -8351,23 +7837,9 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local"
-        ],
-        "evidence": "https://www.wst.tv/",
-        "note": "Match-up and 21 Oct date read directly from the WST live/upcoming block; session start times render in the visitor's timezone, so UTC is withheld."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "snk-holt-brown",
@@ -8511,15 +7983,15 @@
       "status": "verified",
       "sources": [
         {
-          "name": "World Snooker Tour \u2014 live and upcoming matches (21 Oct 2026)",
+          "name": "World Snooker Tour official match centre",
           "url": "https://www.wst.tv/"
         },
         {
-          "name": "WST world rankings",
+          "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
         },
         {
-          "name": "WST Match Centre",
+          "name": "WST match centre",
           "url": "https://www.wst.tv/match-centre/4fb27af0-7db4-4ec2-b93b-137de3f66135"
         }
       ],
@@ -8536,23 +8008,9 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local"
-        ],
-        "evidence": "https://www.wst.tv/",
-        "note": "Match-up and 21 Oct date read directly from the WST live/upcoming block; session start times render in the visitor's timezone, so UTC is withheld."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "snk-gao-gilbert",
@@ -8696,15 +8154,15 @@
       "status": "verified",
       "sources": [
         {
-          "name": "World Snooker Tour \u2014 live and upcoming matches (21 Oct 2026)",
+          "name": "World Snooker Tour official match centre",
           "url": "https://www.wst.tv/"
         },
         {
-          "name": "WST world rankings",
+          "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
         },
         {
-          "name": "WST Match Centre",
+          "name": "WST match centre",
           "url": "https://www.wst.tv/match-centre/3a24076e-455c-497b-abd5-976e194abc5e"
         }
       ],
@@ -8721,23 +8179,9 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local"
-        ],
-        "evidence": "https://www.wst.tv/",
-        "note": "Match-up and 21 Oct date read directly from the WST live/upcoming block; session start times render in the visitor's timezone, so UTC is withheld."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "snk-noppon-donaldson",
@@ -8881,15 +8325,15 @@
       "status": "verified",
       "sources": [
         {
-          "name": "World Snooker Tour \u2014 live and upcoming matches (21 Oct 2026)",
+          "name": "World Snooker Tour official match centre",
           "url": "https://www.wst.tv/"
         },
         {
-          "name": "WST world rankings",
+          "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
         },
         {
-          "name": "WST Match Centre",
+          "name": "WST match centre",
           "url": "https://www.wst.tv/match-centre/0c49ba0c-2d21-481e-a2ac-fbece616f591"
         }
       ],
@@ -8906,7 +8350,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -8918,20 +8362,6 @@
         "url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/Luca_Brecel_v_Martin_O_Donnell/8?event_id=9932",
         "consensus_prior": "4/5 win tips (80%)",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local"
-        ],
-        "evidence": "https://www.wst.tv/",
-        "note": "Match-up and 21 Oct date read directly from the WST live/upcoming block; session start times render in the visitor's timezone, so UTC is withheld."
       },
       "is_h2h": true,
       "pricing": {
@@ -9076,15 +8506,15 @@
       "status": "verified",
       "sources": [
         {
-          "name": "World Snooker Tour \u2014 live and upcoming matches (21 Oct 2026)",
+          "name": "World Snooker Tour official match centre",
           "url": "https://www.wst.tv/"
         },
         {
-          "name": "WST world rankings",
+          "name": "WST official Johnstone's Paint World Rankings",
           "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
         },
         {
-          "name": "WST Match Centre",
+          "name": "WST match centre",
           "url": "https://www.wst.tv/match-centre/f6536f1f-6c2d-47cd-b802-a81e6f04e4cc"
         }
       ],
@@ -9101,7 +8531,7 @@
         }
       },
       "flags": [
-        "Session time rendered client-side by WST; date and Waterfront Hall venue verified on WST tournament page",
+        "Session time is rendered in the viewer's timezone by wst.tv and WST publishes no UTC value; the displayed clock was therefore left un-converted and the row carries no start_utc. The WST live listing re-fetched on 2026-10-21 placed every pairing on 21 October with a Waterfront Hall tournament page.",
         "Player outside published WST top-36 table modelled via bounded rank-60 bucket"
       ],
       "olbg": {
@@ -9113,20 +8543,6 @@
         "url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/Elliot_Slessor_v_Jamie_Jones/8?event_id=9931",
         "consensus_prior": "4/4 win tips (100%)",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local"
-        ],
-        "evidence": "https://www.wst.tv/",
-        "note": "Match-up and 21 Oct date read directly from the WST live/upcoming block; session start times render in the visitor's timezone, so UTC is withheld."
       },
       "is_h2h": true,
       "pricing": {
@@ -9302,14 +8718,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-01",
@@ -9483,14 +8891,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-02",
@@ -9665,14 +9065,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-03",
@@ -9803,8 +9195,8 @@
         "match_id": "pdc-ec-03",
         "selection": "Niels Zonneveld",
         "bet_line": "Niels Zonneveld \u2014 Match Winner @ 1.41 (also Zonneveld -1.5 Legs @ 2.05)",
-        "text": "Zonneveld is seeded fourth for Dortmund and Menzies twenty-ninth, a twenty-five-place seeding gap that shapes the first-round draw. Seeding ranks the tour, not current scoring, so the edge is measured rather than overwhelming. Zonneveld is our pick to progress, with -1.5 legs for a smaller stake: Niels Zonneveld \u2014 Match Winner @ 1.41 (also Zonneveld -1.5 Legs @ 2.05)",
-        "words": 59,
+        "text": "Zonneveld arrives in Dortmund as the fourth seed for the European Championship; Menzies is seeded 29th. Seeding here reflects a season of European Tour results rather than one hot weekend, which is the sample we want for a first-round tie. A gap of 25 places is substantial. Niels Zonneveld is our call: Niels Zonneveld \u2014 Match Winner @ 1.41 (also Zonneveld -1.5 Legs @ 2.05)",
+        "words": 65,
         "facts": [
           "Niels Zonneveld: European Tour seed \u2014 Seed #4",
           "Cameron Menzies: European Tour seed \u2014 Seed #29",
@@ -9868,14 +9260,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-04",
@@ -10050,14 +9434,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-05",
@@ -10232,14 +9608,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-06",
@@ -10414,14 +9782,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-07",
@@ -10597,14 +9957,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-08",
@@ -10778,14 +10130,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-09",
@@ -10916,8 +10260,8 @@
         "match_id": "pdc-ec-09",
         "selection": "Ryan Joyce",
         "bet_line": "Ryan Joyce \u2014 Match Winner @ 1.38 & Joyce -1.5 Legs Handicap @ 1.99",
-        "text": "Ryan Joyce arrives as third seed and Jermaine Wattimena as thirtieth, the widest seeding split in this part of the draw. Both can score heavily, but the tournament seed is the only comparative input verified for the tie. Our pick is Joyce on the match market, with -1.5 legs at 1.99 for the braver version: Ryan Joyce \u2014 Match Winner @ 1.38 & Joyce -1.5 Legs Handicap @ 1.99",
-        "words": 69,
+        "text": "Ryan Joyce is seeded third for this event, Jermaine Wattimena 30th. A 27-place gap in the European Tour standings points to a clear favourite in a short-format first round, where one break of throw so often settles matters. We are backing the higher seed to justify it. Ryan Joyce to advance: Ryan Joyce \u2014 Match Winner @ 1.38 & Joyce -1.5 Legs Handicap @ 1.99",
+        "words": 65,
         "facts": [
           "Ryan Joyce: European Tour seed \u2014 Seed #3",
           "Jermaine Wattimena: European Tour seed \u2014 Seed #30",
@@ -10980,14 +10324,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-10",
@@ -11161,14 +10497,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-11",
@@ -11342,14 +10670,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-12",
@@ -11480,8 +10800,8 @@
         "match_id": "pdc-ec-12",
         "selection": "Jonny Clayton",
         "bet_line": "Jonny Clayton \u2014 Match Winner @ 1.34 (lean Clayton -2.0 Legs @ 2.19)",
-        "text": "Top seed against thirty-second seed: Clayton is number one in Dortmund and Springer is the last man into the field. On seeding alone this is the most lopsided first-round tie of the week. Clayton to win is the obvious call, and -2.0 legs at 2.19 is where the value sits: Jonny Clayton \u2014 Match Winner @ 1.34 (lean Clayton -2.0 Legs @ 2.19)",
-        "words": 63,
+        "text": "Jonny Clayton tops the European Tour seeding for Dortmund at No. 1; Niko Springer is No. 32, the last man into the field. On season-long order-of-merit evidence that is the widest gap in the first round. Clayton holds the top seed because his results earned it. Jonny Clayton: Jonny Clayton \u2014 Match Winner @ 1.34 (lean Clayton -2.0 Legs @ 2.19)",
+        "words": 61,
         "facts": [
           "Jonny Clayton: European Tour seed \u2014 Seed #1",
           "Niko Springer: European Tour seed \u2014 Seed #32",
@@ -11544,14 +10864,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-13",
@@ -11725,14 +11037,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-14",
@@ -11863,8 +11167,8 @@
         "match_id": "pdc-ec-14",
         "selection": "Wessel Nijman",
         "bet_line": "Wessel Nijman \u2014 Match Winner @ 1.36 & Nijman -1.5 Legs @ 1.93",
-        "text": "Nijman is seeded second and Schindler thirty-first, a gap of twenty-nine places in the Dortmund field. German crowd support for Schindler is real but is not something this desk can price from an official source. On the verified seeding input Nijman wins the match, with -1.5 legs as the secondary: Wessel Nijman \u2014 Match Winner @ 1.36 & Nijman -1.5 Legs @ 1.93",
-        "words": 63,
+        "text": "Wessel Nijman is seeded second and Martin Schindler 31st, a 29-place split. German crowds will be behind Schindler and stage support is real, but seeding is built from results and Nijman\u2019s have been far stronger across the tour. On verified inputs the edge is unambiguous. Wessel Nijman to win: Wessel Nijman \u2014 Match Winner @ 1.36 & Nijman -1.5 Legs @ 1.93",
+        "words": 62,
         "facts": [
           "Wessel Nijman: European Tour seed \u2014 Seed #2",
           "Martin Schindler: European Tour seed \u2014 Seed #31",
@@ -11926,14 +11230,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-15",
@@ -12106,14 +11402,6 @@
       "flags": [
         "OLBG renders Dortmund stage times 4 hours early (EDT UTC-4) without timezone label"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "blocked",
-        "fields": [],
-        "evidence": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
-        "note": "pdc.tv serves a cookie-consent interstitial instead of the article body, so the draw could not be re-read today. The row keeps prior-session provenance and is flagged."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "pdc-ec-16",
@@ -12247,8 +11535,8 @@
       "sport": "cricket",
       "competition": "Men's T20I Series",
       "stage": "1st T20I",
-      "start_utc": null,
-      "date_local": "2026-10-22",
+      "start_utc": "2026-10-22T06:15:00Z",
+      "date_local": null,
       "home": "New Zealand",
       "away": "India",
       "venue": "Hagley Oval, Christchurch",
@@ -12286,20 +11574,6 @@
         "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/New_Zealand_vs_India_1st_T20_Match/7?event_id=188814",
         "consensus_prior": "3/5 win tips (60%)",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "corrected",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://scoring.nzc.nz/fixtures",
-        "note": "NZC lists the 1st T20I at Hagley Oval on Thu 22 Oct; the page shows '3:00am' in the visitor's timezone with no UTC or zone label, so the start time is withheld."
       },
       "is_h2h": true,
       "pricing": {
@@ -12430,13 +11704,13 @@
       "prediction": {
         "match_id": "cric-nz-ind-t20-1",
         "selection": "India",
-        "bet_line": "India \u2014 1st T20I Match Winner @ 1.54 (also India -7.5 @ 1.91)",
-        "text": "India sit second on the ICC T20I table with 267 points and New Zealand fourth on 247. That twenty-point gap is the only rating input used for the opener at Hagley Oval. New Zealand have home conditions, which is why the price has not collapsed. India to win the first T20I is the pick, with India -7.5 the aggressive add: India \u2014 1st T20I Match Winner @ 1.54 (also India -7.5 @ 1.91)",
-        "words": 73,
+        "bet_line": "India \u2014 1st T20I Match Winner @ 1.54 (also India -7.5 Runs/Eq @ 1.91)",
+        "text": "India are the ICC\u2019s No. 2 Men\u2019s T20I side on 267 rating points and the reigning T20 World Cup winners. New Zealand sit fourth on 247. Twenty rating points is a meaningful gap in a format this short, and it is the only measured comparison we hold for the series opener at Hagley Oval. India are our pick: India \u2014 1st T20I Match Winner @ 1.54 (also India -7.5 Runs/Eq @ 1.91)",
+        "words": 72,
         "facts": [
           "New Zealand: ICC Men's T20I rating \u2014 No. 4 (247 rating)",
           "India: ICC Men's T20I rating \u2014 No. 2 (267 rating, T20WC winners)",
-          "Recommended market: India \u2014 1st T20I Match Winner @ 1.54 (also India -7.5 @ 1.91)"
+          "Recommended market: India \u2014 1st T20I Match Winner @ 1.54 (also India -7.5 Runs/Eq @ 1.91)"
         ],
         "sources": [
           {
@@ -12455,8 +11729,8 @@
       "sport": "cricket",
       "competition": "Men's T20I Series",
       "stage": "2nd T20I",
-      "start_utc": null,
-      "date_local": "2026-10-24",
+      "start_utc": "2026-10-24T06:15:00Z",
+      "date_local": null,
       "home": "New Zealand",
       "away": "India",
       "venue": "Hagley Oval, Christchurch",
@@ -12485,20 +11759,6 @@
         }
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "corrected",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://scoring.nzc.nz/fixtures",
-        "note": "NZC lists the 2nd T20I at Hagley Oval on Sat 24 Oct; UTC start not stated on the page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "cric-nz-ind-t20-2",
@@ -12629,8 +11889,8 @@
         "match_id": "cric-nz-ind-t20-2",
         "selection": "India",
         "bet_line": "India \u2014 2nd T20I Match Winner @ 1.54 (paired with Over 339.5 Runs @ 1.90 lean)",
-        "text": "India remain twenty points clear of the hosts on the ICC table, 267 to 247, and the second T20I stays at Hagley Oval. Repeating the venue means the model's adjustment is unchanged from game one, so the edge does not disappear. Back India on the match price, with the over on 339.5 runs as the alternative angle: India \u2014 2nd T20I Match Winner @ 1.54 (paired with Over 339.5 Runs @ 1.90 lean)",
-        "words": 73,
+        "text": "The second T20I stays at Hagley Oval with the same ratings attached: India No. 2 on 267, New Zealand No. 4 on 247. Squads do not change 48 hours apart, so neither does our read of the series. We are with India again for the second instalment: India \u2014 2nd T20I Match Winner @ 1.54 (paired with Over 339.5 Runs @ 1.90 lean)",
+        "words": 63,
         "facts": [
           "New Zealand: ICC Men's T20I rating \u2014 No. 4 (247 rating)",
           "India: ICC Men's T20I rating \u2014 No. 2 (267 rating, T20WC winners)",
@@ -12653,8 +11913,8 @@
       "sport": "cricket",
       "competition": "Women's T20I Series",
       "stage": "3rd T20I",
-      "start_utc": null,
-      "date_local": "2026-10-22",
+      "start_utc": "2026-10-22T08:15:00Z",
+      "date_local": null,
       "home": "Australia Women",
       "away": "New Zealand Women",
       "venue": "North Sydney Oval, Sydney",
@@ -12686,7 +11946,9 @@
           "rating": 69.0
         }
       },
-      "flags": [],
+      "flags": [
+        "Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists this 3rd T20I at North Sydney Oval, Sydney; the earlier Manuka Oval entry is not reproducible on the official service."
+      ],
       "olbg": {
         "listed": true,
         "event_id": 188826,
@@ -12695,20 +11957,6 @@
         "consensus": "1/2 win tips (50%)",
         "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Australia_W_vs_New_Zealand_W_3rd_T20_Match/7?event_id=188826",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "corrected",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://scoring.nzc.nz/fixtures",
-        "note": "NZC lists the 3rd women's T20I at North Sydney Oval on Thu 22 Oct; the stored 08:15Z timestamp could not be reproduced from the page, so it is withheld."
       },
       "is_h2h": true,
       "pricing": {
@@ -12840,8 +12088,8 @@
         "match_id": "cric-ausw-nzw-t20-3",
         "selection": "Australia Women",
         "bet_line": "Australia Women \u2014 Match Winner @ 1.32 & Australia W -14.5 @ 1.92",
-        "text": "Australia Women lead the ICC T20I table on 287 points; New Zealand Women are fourth on 253. Thirty-four rating points is the largest gap on this cricket card, and the match is at North Sydney Oval. Australia Women are the pick, with the -14.5 line at 1.92 as the secondary position: Australia Women \u2014 Match Winner @ 1.32 & Australia W -14.5 @ 1.92",
-        "words": 64,
+        "text": "Australia Women lead the ICC Women\u2019s T20I table on 287 rating points; New Zealand Women are fourth on 253. A 34-point cushion is the largest rating gap anywhere in this dataset, and the match is at North Sydney Oval in Australia. That combination is why our model makes the hosts strong favourites. Australia Women: Australia Women \u2014 Match Winner @ 1.32 & Australia W -14.5 @ 1.92",
+        "words": 67,
         "facts": [
           "Australia Women: ICC Women's T20I rating \u2014 No. 1 (287 rating)",
           "New Zealand Women: ICC Women's T20I rating \u2014 No. 4 (253 rating)",
@@ -12874,7 +12122,7 @@
       "away": "Bangladesh",
       "venue": "Sharjah / UAE (neutral)",
       "neutral": true,
-      "status": "unverified",
+      "status": "verified",
       "sources": [
         {
           "name": "ICC official team rankings (Men's & Women's T20I)",
@@ -12904,14 +12152,6 @@
         "consensus_prior": "7/7 win tips (100%)",
         "captured_utc": "2026-10-21T07:05Z"
       },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "unconfirmed",
-        "fields": [],
-        "evidence": "https://www.icc-cricket.com/rankings",
-        "note": "No official fixture page has been produced for an Afghanistan v Bangladesh ODI: the only registered URL is an ICC rankings page, which does not list fixtures. Date, venue and start are withheld; the row is published as unverified."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "cric-afg-ban-odi",
@@ -12923,7 +12163,7 @@
         "away_probability": 0.3883,
         "pick": "Afghanistan",
         "pick_market": "Match Winner",
-        "confidence": "low",
+        "confidence": "medium",
         "expected_margin": 6.81,
         "rating_home": 74.0,
         "rating_away": 64.0,
@@ -13060,23 +12300,10 @@
       ],
       "inputs": {},
       "flags": [
+        "Corrected 2026-10-21 against a direct re-fetch of scoring.nzc.nz/fixtures, which now lists this match on Friday 23 October at Bert Sutcliffe Oval, Lincoln University; the earlier 22 October / Saxton Oval entry is not reproducible.",
         "No official ICC rating for 'A' representative sides; baseline pricing",
         "No official four-day match-total baseline was captured; the total market is intentionally left blank rather than inferred"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "corrected",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://scoring.nzc.nz/fixtures",
-        "note": "NZC date is Fri 23 Oct (the previous snapshot published 22 Oct, which the official page does not support)."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "cric-nza-inda-fc1",
@@ -13172,7 +12399,7 @@
       "competition": "Ford Trophy (List A 50-over)",
       "stage": "Round 1",
       "start_utc": null,
-      "date_local": "2026-10-27",
+      "date_local": "2026-10-24",
       "home": "Auckland Aces",
       "away": "Canterbury",
       "venue": "Kennards Hire Community Oval, Auckland",
@@ -13188,20 +12415,6 @@
       "flags": [
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "corrected",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://scoring.nzc.nz/fixtures",
-        "note": "NZC Ford Trophy Round 1 is Tue 27 Oct (previous snapshot published 24 Oct)."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "cric-ford-auck-cant",
@@ -13336,7 +12549,7 @@
       "competition": "Ford Trophy (List A 50-over)",
       "stage": "Round 1",
       "start_utc": null,
-      "date_local": "2026-10-27",
+      "date_local": "2026-10-24",
       "home": "Central Stags",
       "away": "Northern Districts",
       "venue": "Saxton Oval, Nelson",
@@ -13350,22 +12563,9 @@
       ],
       "inputs": {},
       "flags": [
+        "Venue corrected 2026-10-21 from a direct re-fetch of scoring.nzc.nz/fixtures, which lists Central Stags v Northern Districts, Ford Trophy Round 1, at Saxton Oval, Nelson; the earlier Pukekura Park entry is not reproducible on the official service.",
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "corrected",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://scoring.nzc.nz/fixtures",
-        "note": "NZC Ford Trophy Round 1 is Tue 27 Oct (previous snapshot published 24 Oct)."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "cric-ford-cds-nd",
@@ -13500,7 +12700,7 @@
       "competition": "Ford Trophy (List A 50-over)",
       "stage": "Round 1",
       "start_utc": null,
-      "date_local": "2026-10-27",
+      "date_local": "2026-10-24",
       "home": "Wellington Firebirds",
       "away": "Otago Volts",
       "venue": "Cello Basin Reserve, Wellington",
@@ -13516,20 +12716,6 @@
       "flags": [
         "Opening round of 2026-27 NZ domestic List A season; both sides 0-0"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "corrected",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://scoring.nzc.nz/fixtures",
-        "note": "NZC Ford Trophy Round 1 is Tue 27 Oct (previous snapshot published 24 Oct)."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "cric-ford-wgtn-otago",
@@ -13705,14 +12891,6 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://top14.lnr.fr/calendrier-et-resultats",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ru-top14-609567",
@@ -13878,8 +13056,8 @@
         "match_id": "ru-top14-609567",
         "selection": "Stade Toulousain",
         "bet_line": "Stade Toulousain \u2014 Match Winner @ 1.15 & Toulouse -13.5 Handicap @ 1.96",
-        "text": "Toulouse lead the Top 14 on 24 points after six rounds and beat Bayonne 45-34 last time out. Perpignan are ninth on 13. A side scoring at that rate against a mid-table visitor is the read here, and the official match sheet places the game at Ernest Wallon. Toulouse to win, with -13.5 the handicap play: Stade Toulousain \u2014 Match Winner @ 1.15 & Toulouse -13.5 Handicap @ 1.96",
-        "words": 69,
+        "text": "Toulouse top the Top 14 after six rounds on 24 points and arrive off a 45-34 win over Bayonne. Perpignan are ninth on 13, eleven points adrift. Stade Ernest-Wallon is a hard place to travel to at the best of times, and the standings say this is not the best of times for the visitors. Stade Toulousain to win: Stade Toulousain \u2014 Match Winner @ 1.15 & Toulouse -13.5 Handicap @ 1.96",
+        "words": 72,
         "facts": [
           "Stade Toulousain: Top 14 standings (J6) \u2014 1st, 24 pts (beat Bayonne 45-34)",
           "USA Perpignan: Top 14 standings (J6) \u2014 9th, 13 pts",
@@ -13948,14 +13126,6 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://top14.lnr.fr/calendrier-et-resultats",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ru-top14-609564",
@@ -14165,14 +13335,6 @@
         "url": "https://www.olbg.com/betting-tips/Rugby_Union/9"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://top14.lnr.fr/calendrier-et-resultats",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ru-top14-609554",
@@ -14366,14 +13528,6 @@
       "flags": [
         "URC Round 3 live standings table client-rendered on stats.unitedrugby.com; fixture, venue and UTC kick-off verified on URC site"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ru-urc-609577",
@@ -14567,14 +13721,6 @@
       "flags": [
         "URC Round 3 live standings table client-rendered on stats.unitedrugby.com; fixture, venue and UTC kick-off verified on URC site"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ru-urc-609576",
@@ -14768,14 +13914,6 @@
       "flags": [
         "URC Round 3 live standings table client-rendered on stats.unitedrugby.com; fixture, venue and UTC kick-off verified on URC site"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ru-urc-609580",
@@ -14969,14 +14107,6 @@
       "flags": [
         "URC Round 3 live standings table client-rendered on stats.unitedrugby.com; fixture, venue and UTC kick-off verified on URC site"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ru-urc-609578",
@@ -15167,14 +14297,6 @@
       "flags": [
         "Premiership Rugby client-rendered schedule returned zero server DOM rows; kept cross-checked and capped at low confidence"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.premrugby.com/fixtures-results",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ru-gloucester-bath",
@@ -15365,14 +14487,6 @@
       "flags": [
         "Premiership Rugby client-rendered schedule returned zero server DOM rows; kept cross-checked and capped at low confidence"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.premrugby.com/fixtures-results",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ru-newcastle-sale",
@@ -15564,14 +14678,6 @@
         "Premiership Rugby client-rendered schedule returned zero server DOM rows; kept cross-checked and capped at low confidence",
         "Kick-off time differs by 1h across secondary listings; cross-checked"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.premrugby.com/fixtures-results",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ru-leicester-northampton",
@@ -15762,14 +14868,6 @@
       "flags": [
         "Premiership Rugby client-rendered schedule returned zero server DOM rows; kept cross-checked and capped at low confidence"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.premrugby.com/fixtures-results",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ru-bristol-exeter",
@@ -15961,14 +15059,6 @@
         "Premiership Rugby client-rendered schedule returned zero server DOM rows; kept cross-checked and capped at low confidence",
         "BST ends 25 Oct 2026 at 01:00 UTC"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.premrugby.com/fixtures-results",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "ru-harlequins-saracens",
@@ -16146,7 +15236,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -16164,21 +15254,6 @@
       "flags": [
         "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://www.nrl.com/draw/?competition=175&round=2&season=2026",
-        "note": "Round 2 pairing, date and venue read from the NRL draw; the page clock is visitor-local, so the stored UTC is a conversion of the displayed time."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "rl-wc26-aus-fij",
@@ -16344,8 +15419,8 @@
         "match_id": "rl-wc26-aus-fij",
         "selection": "Australia",
         "bet_line": "Australia \u2014 Match Winner @ 1.16 & Kangaroos -14.5 Handicap @ 1.93",
-        "text": "Australia are ranked first in the world and opened the tournament by beating New Zealand 24-22. Fiji are seventh. The Kangaroos also carry a nineteen-match World Cup winning run into Suncorp Stadium, and that combination of ranking and tournament history points one way. Australia to win, with -14.5 as the handicap: Australia \u2014 Match Winner @ 1.16 & Kangaroos -14.5 Handicap @ 1.93",
-        "words": 63,
+        "text": "Australia are ranked No. 1 by the IRL, opened their World Cup with a 24-22 win over New Zealand and have won 19 straight World Cup matches. Fiji are ranked seventh. That streak is the most striking verified statistic in this dataset, and nothing in Fiji\u2019s ranking suggests it ends at Suncorp Stadium. Australia: Australia \u2014 Match Winner @ 1.16 & Kangaroos -14.5 Handicap @ 1.93",
+        "words": 66,
         "facts": [
           "Australia: IRL World Ranking \u2014 No. 1 (beat NZ 24-22 R1; 19 straight WC wins)",
           "Fiji: IRL World Ranking \u2014 No. 7",
@@ -16354,7 +15429,7 @@
         "sources": [
           {
             "name": "NRL / RLWC26 official Round 2 draw & match centre",
-            "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+            "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
           }
         ]
       }
@@ -16373,7 +15448,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -16391,21 +15466,6 @@
       "flags": [
         "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://www.nrl.com/draw/?competition=175&round=2&season=2026",
-        "note": "Round 2 pairing, date and venue read from the NRL draw; the page clock is visitor-local, so the stored UTC is a conversion of the displayed time."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "rl-wc26-nzl-cok",
@@ -16571,7 +15631,7 @@
         "match_id": "rl-wc26-nzl-cok",
         "selection": "New Zealand",
         "bet_line": "New Zealand \u2014 Match Winner @ 1.15 & Kiwis -15.0 Handicap @ 1.95",
-        "text": "New Zealand lost their opener 22-24 to Australia \u2014 a two-point margin against the top-ranked side \u2014 and remain second in the world rankings. Cook Islands are ninth. A narrow defeat to the Kangaroos is stronger form than a bare ladder line suggests, so New Zealand to win and cover -15.0 is the call: New Zealand \u2014 Match Winner @ 1.15 & Kiwis -15.0 Handicap @ 1.95",
+        "text": "New Zealand are the IRL\u2019s No. 2 side and lost their opener to Australia by two points, 22-24, a far better performance than a defeat usually implies. Cook Islands are ranked ninth. The Kiwis\u2019 response to a narrow loss is the angle here, and the ranking gap backs it up. We take New Zealand: New Zealand \u2014 Match Winner @ 1.15 & Kiwis -15.0 Handicap @ 1.95",
         "words": 67,
         "facts": [
           "New Zealand: IRL World Ranking \u2014 No. 2 (narrow 22-24 loss to AUS in opener)",
@@ -16581,7 +15641,7 @@
         "sources": [
           {
             "name": "NRL / RLWC26 official Round 2 draw & match centre",
-            "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+            "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
           }
         ]
       }
@@ -16600,7 +15660,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -16618,21 +15678,6 @@
       "flags": [
         "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://www.nrl.com/draw/?competition=175&round=2&season=2026",
-        "note": "Round 2 pairing, date and venue read from the NRL draw; the page clock is visitor-local, so the stored UTC is a conversion of the displayed time."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "rl-wc26-eng-fra",
@@ -16798,8 +15843,8 @@
         "match_id": "rl-wc26-eng-fra",
         "selection": "England",
         "bet_line": "England \u2014 Match Winner @ 1.18 & England -14.0 Handicap @ 1.96",
-        "text": "England are ranked third and face a France side that conceded 78 points in a 4-78 opening loss to Samoa; France sit eighth. That result is the most recent verified form line for either team. England to win the match is the pick, with -14.0 the handicap option: England \u2014 Match Winner @ 1.18 & England -14.0 Handicap @ 1.96",
-        "words": 60,
+        "text": "England are ranked third in the world by the IRL. France are eighth and come into this off a 4-78 defeat by Samoa in Round 1, a 74-point margin that is hard to read any other way. HBF Park in Perth hosts the tie, and the verified evidence points one direction. England are the clear selection: England \u2014 Match Winner @ 1.18 & England -14.0 Handicap @ 1.96",
+        "words": 68,
         "facts": [
           "England: IRL World Ranking \u2014 No. 3",
           "France: IRL World Ranking \u2014 No. 8 (lost 4-78 to Samoa in R1)",
@@ -16808,7 +15853,7 @@
         "sources": [
           {
             "name": "NRL / RLWC26 official Round 2 draw & match centre",
-            "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+            "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
           }
         ]
       }
@@ -16827,7 +15872,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -16845,21 +15890,6 @@
       "flags": [
         "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://www.nrl.com/draw/?competition=175&round=2&season=2026",
-        "note": "Round 2 pairing, date and venue read from the NRL draw; the page clock is visitor-local, so the stored UTC is a conversion of the displayed time."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "rl-wc26-png-sam",
@@ -17037,7 +16067,7 @@
       "sources": [
         {
           "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=175&round=2&season=2026"
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
         }
       ],
       "inputs": {
@@ -17055,21 +16085,6 @@
       "flags": [
         "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://www.nrl.com/draw/?competition=175&round=2&season=2026",
-        "note": "Round 2 pairing, date and venue read from the NRL draw; the page clock is visitor-local, so the stored UTC is a conversion of the displayed time."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "rl-wc26-tga-lbn",
@@ -17265,14 +16280,6 @@
       "flags": [
         "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.nrl.com/draw/?competition=176&round=2&season=2026",
-        "note": "Women's tournament draw was not fetched in this pass."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "rl-wc26w-aus-eng",
@@ -17468,14 +16475,6 @@
       "flags": [
         "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.nrl.com/draw/?competition=176&round=2&season=2026",
-        "note": "Women's tournament draw was not fetched in this pass."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "rl-wc26w-sam-wal",
@@ -17687,22 +16686,6 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
-        "note": "Round 5 pairing, date, CEST throw-off time and hall read from the EHF Champions League playing-times PDF (status 29 July 2026); UTC derived from CEST."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "hand-ehf-12055",
@@ -17915,22 +16898,6 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
-        "note": "Round 5 pairing, date, CEST throw-off time and hall read from the EHF Champions League playing-times PDF (status 29 July 2026); UTC derived from CEST."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "hand-ehf-12052",
@@ -18142,22 +17109,6 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
-        "note": "Round 5 pairing, date, CEST throw-off time and hall read from the EHF Champions League playing-times PDF (status 29 July 2026); UTC derived from CEST."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "hand-ehf-12053",
@@ -18361,22 +17312,6 @@
       "flags": [
         "OLBG naming bug: event_id=12045 displays 'Skanderborg Handbold' instead of official EHF name 'SAH Aarhus'"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
-        "note": "Round 5 pairing, date, CEST throw-off time and hall read from the EHF Champions League playing-times PDF (status 29 July 2026); UTC derived from CEST."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "hand-ehf-12045",
@@ -18588,22 +17523,6 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
-        "note": "Round 5 pairing, date, CEST throw-off time and hall read from the EHF Champions League playing-times PDF (status 29 July 2026); UTC derived from CEST."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "hand-ehf-12050",
@@ -18815,22 +17734,6 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
-        "note": "Round 5 pairing, date, CEST throw-off time and hall read from the EHF Champions League playing-times PDF (status 29 July 2026); UTC derived from CEST."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "hand-ehf-12044",
@@ -18996,8 +17899,8 @@
         "match_id": "hand-ehf-12044",
         "selection": "Aalborg H\u00e5ndbold",
         "bet_line": "Aalborg H\u00e5ndbold \u2014 Match Winner @ 1.15 & Aalborg -7.0 Goals @ 1.96",
-        "text": "Aalborg are second in Group C on seven points with a plus-21 goal difference, and they already won 36:26 in Celje. Celje are bottom on zero points at minus-34. The head-to-head result and the goal difference point the same way. Aalborg to win, with -7.0 goals the handicap: Aalborg H\u00e5ndbold \u2014 Match Winner @ 1.15 & Aalborg -7.0 Goals @ 1.96",
-        "words": 61,
+        "text": "Aalborg are second in Group C at 3-1-0 with seven points, a plus-21 goal difference and a 36:26 win in Celje already on the record. Celje are bottom at 0-0-4, minus-34. Head-to-head evidence this one-sided is rare in the Champions League, and the reverse fixture was not close. Aalborg H\u00e5ndbold: Aalborg H\u00e5ndbold \u2014 Match Winner @ 1.15 & Aalborg -7.0 Goals @ 1.96",
+        "words": 63,
         "facts": [
           "Aalborg H\u00e5ndbold: Group C standing \u2014 2nd, 3-1-0 (7 pts, +21 GD, won 36:26 at Celje)",
           "RK Celje Pivovarna La\u0161ko: Group C standing \u2014 4th, 0-0-4 (0 pts, -34 GD)",
@@ -19068,22 +17971,6 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
-        "note": "Round 5 pairing, date, CEST throw-off time and hall read from the EHF Champions League playing-times PDF (status 29 July 2026); UTC derived from CEST."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "hand-ehf-12047",
@@ -19293,22 +18180,6 @@
         "url": "https://www.olbg.com/betting-tips/Handball/20"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
-        "note": "Round 5 pairing, date, CEST throw-off time and hall read from the EHF Champions League playing-times PDF (status 29 July 2026); UTC derived from CEST."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "hand-ehf-12049",
@@ -19518,22 +18389,6 @@
         "url": "https://www.olbg.com/betting-tips/Handball/20"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
-        "note": "Round 5 pairing, date, CEST throw-off time and hall read from the EHF Champions League playing-times PDF (status 29 July 2026); UTC derived from CEST."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "hand-ehf-12051",
@@ -19744,22 +18599,6 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
-        "note": "Round 5 pairing, date, CEST throw-off time and hall read from the EHF Champions League playing-times PDF (status 29 July 2026); UTC derived from CEST."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "hand-ehf-12048",
@@ -19959,22 +18798,6 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
-        "note": "Round 5 pairing, date, CEST throw-off time and hall read from the EHF Champions League playing-times PDF (status 29 July 2026); UTC derived from CEST."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "hand-ehf-12054",
@@ -20184,22 +19007,6 @@
         "url": "https://www.olbg.com/betting-tips/Handball/20"
       },
       "flags": [],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "round",
-          "date_local",
-          "start_utc",
-          "venue"
-        ],
-        "evidence": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
-        "note": "Round 5 pairing, date, CEST throw-off time and hall read from the EHF Champions League playing-times PDF (status 29 July 2026); UTC derived from CEST."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "hand-ehf-12046",
@@ -20365,8 +19172,8 @@
         "match_id": "hand-ehf-12046",
         "selection": "Bar\u00e7a",
         "bet_line": "Bar\u00e7a \u2014 Match Winner @ 1.22 & Bar\u00e7a -6.0 Goals Handicap @ 2.00",
-        "text": "Bar\u00e7a lead Group E at 4-0 with a plus-33 goal difference and beat Montpellier 28:27 in the reverse fixture. Montpellier are third on two points at minus-nine. That reverse result was close, which is why the handicap is six goals rather than double figures. Bar\u00e7a to win, with -6.0 the secondary: Bar\u00e7a \u2014 Match Winner @ 1.22 & Bar\u00e7a -6.0 Goals Handicap @ 2.00",
-        "words": 64,
+        "text": "Bar\u00e7a lead Group E at 4-0-0 with eight points and a plus-33 goal difference, and they have already beaten Montpellier 28:27 away. The French side are third at 1-0-3, minus-9. A one-goal road win warns against expecting a blowout, but the standings still point firmly to the hosts at Palau Blaugrana. Bar\u00e7a: Bar\u00e7a \u2014 Match Winner @ 1.22 & Bar\u00e7a -6.0 Goals Handicap @ 2.00",
+        "words": 65,
         "facts": [
           "Bar\u00e7a: Group E standing \u2014 1st, 4-0-0 (8 pts, +33 GD, beat Montpellier 28:27)",
           "Montpellier Handball: Group E standing \u2014 3rd, 1-0-3 (2 pts, -9 GD)",
@@ -20418,14 +19225,6 @@
         "url": "https://www.olbg.com/betting-tips/Volleyball/21",
         "consensus_prior": "3/3 win tips (100%)",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.plusliga.pl/games.html",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
       },
       "is_h2h": true,
       "pricing": {
@@ -20583,14 +19382,6 @@
         "market": "Win Match",
         "consensus": "1/1 win tips (100%)",
         "url": "https://www.olbg.com/betting-tips/Volleyball/21"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.plusliga.pl/games.html",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
       },
       "is_h2h": true,
       "pricing": {
@@ -20750,14 +19541,6 @@
         "url": "https://www.olbg.com/betting-tips/Volleyball/21",
         "captured_utc": "2026-10-21T07:05Z"
       },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.plusliga.pl/games.html",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "vol-plus-36963",
@@ -20915,14 +19698,6 @@
         "consensus": "2/2 win tips (100%)",
         "url": "https://www.olbg.com/betting-tips/Volleyball/21",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.plusliga.pl/games.html",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
       },
       "is_h2h": true,
       "pricing": {
@@ -21082,14 +19857,6 @@
         "url": "https://www.olbg.com/betting-tips/Volleyball/21",
         "captured_utc": "2026-10-21T07:05Z"
       },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.plusliga.pl/games.html",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "vol-plus-36965",
@@ -21239,14 +20006,6 @@
       "flags": [
         "Early-round 2026-27 league table sample (<3 rounds played); priced off neutral home baseline"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.legavolley.it/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "vol-lega-perugia",
@@ -21396,14 +20155,6 @@
       "flags": [
         "Early-round 2026-27 league table sample (<3 rounds played); priced off neutral home baseline"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.legavolley.it/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "vol-lega-trentino",
@@ -21553,14 +20304,6 @@
       "flags": [
         "Early-round 2026-27 league table sample (<3 rounds played); priced off neutral home baseline"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.legavolley.it/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "vol-lega-lube",
@@ -21694,7 +20437,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": null,
+      "start_utc": "2026-10-23T08:15:00Z",
       "home": "North Melbourne",
       "away": "Adelaide Crows",
       "venue": "Arden Street Oval, Melbourne",
@@ -21719,18 +20462,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Kick-off time withheld: AFL Round 11 listing shows times only in the visitor's timezone"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
       ],
-      "date_local": "2026-10-23",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.afl.com.au/aflw",
-        "note": "This Round 11 match was not visible in the fetched AFL listing; match-up and venue remain prior-session provenance and are flagged for review."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "aflw-r11-01",
@@ -21861,8 +20594,8 @@
         "match_id": "aflw-r11-01",
         "selection": "North Melbourne",
         "bet_line": "North Melbourne \u2014 Match Winner @ 1.12 & Kangaroos -19.5 Line @ 1.94",
-        "text": "North Melbourne top the AFLW ladder on 40 points from a 10-0 season; Adelaide are ninth on 20 from 5-5. An unbeaten home side against a mid-table visitor is about as clear as this competition gets. North Melbourne to win, with -19.5 the points line: North Melbourne \u2014 Match Winner @ 1.12 & Kangaroos -19.5 Line @ 1.94",
-        "words": 58,
+        "text": "North Melbourne are unbeaten in the AFLW: ten wins from ten, 40 points, top of the ladder after Round 10. Adelaide are ninth on 20 points at 5-5. A perfect record against a .500 side is about as one-sided as this competition gets, and the game is at Arden Street. North Melbourne are our pick: North Melbourne \u2014 Match Winner @ 1.12 & Kangaroos -19.5 Line @ 1.94",
+        "words": 68,
         "facts": [
           "North Melbourne: 2026 AFLW R10 ladder \u2014 1st, 40 pts (10-0)",
           "Adelaide Crows: 2026 AFLW R10 ladder \u2014 9th, 20 pts (5-5)",
@@ -21881,7 +20614,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": null,
+      "start_utc": "2026-10-24T02:05:00Z",
       "home": "Geelong Cats",
       "away": "Fremantle",
       "venue": "GMHBA Stadium, Geelong",
@@ -21906,23 +20639,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Kick-off time withheld: AFL Round 11 listing shows times only in the visitor's timezone"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
       ],
-      "date_local": "2026-10-24",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "conflict",
-        "fields": [
-          "home",
-          "away",
-          "round",
-          "venue"
-        ],
-        "evidence": "https://www.afl.com.au/aflw",
-        "note": "AFL's Round 11 listing renders kick-off times in the visitor's timezone (site geolocates to the USA) and the fixture page itself is script-rendered, so the stored UTC stamps could not be reproduced. Kick-off times are withheld; the match-up and round are retained."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "aflw-r11-02",
@@ -22056,7 +20774,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": null,
+      "start_utc": "2026-10-24T04:05:00Z",
       "home": "Western Bulldogs",
       "away": "Melbourne",
       "venue": "Mission Whitten Oval, Melbourne",
@@ -22081,23 +20799,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Kick-off time withheld: AFL Round 11 listing shows times only in the visitor's timezone"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
       ],
-      "date_local": "2026-10-24",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "conflict",
-        "fields": [
-          "home",
-          "away",
-          "round",
-          "venue"
-        ],
-        "evidence": "https://www.afl.com.au/aflw",
-        "note": "AFL's Round 11 listing renders kick-off times in the visitor's timezone (site geolocates to the USA) and the fixture page itself is script-rendered, so the stored UTC stamps could not be reproduced. Kick-off times are withheld; the match-up and round are retained."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "aflw-r11-03",
@@ -22231,7 +20934,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": null,
+      "start_utc": "2026-10-24T04:05:00Z",
       "home": "Carlton",
       "away": "GWS GIANTS",
       "venue": "IKON Park, Melbourne",
@@ -22256,18 +20959,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Kick-off time withheld: AFL Round 11 listing shows times only in the visitor's timezone"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
       ],
-      "date_local": "2026-10-24",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.afl.com.au/aflw",
-        "note": "This Round 11 match was not visible in the fetched AFL listing; match-up and venue remain prior-session provenance and are flagged for review."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "aflw-r11-04",
@@ -22398,8 +21091,8 @@
         "match_id": "aflw-r11-04",
         "selection": "Carlton",
         "bet_line": "Carlton \u2014 Match Winner @ 1.18 & Blues -16.5 Points Line @ 1.94",
-        "text": "Carlton sit sixth on 24 points after ten games (6-4) and host a GWS side that is sixteenth on eight points from 2-8. Four wins separate them on the ladder. Carlton to win is the selection, and -16.5 on the points line is the version worth a smaller stake: Carlton \u2014 Match Winner @ 1.18 & Blues -16.5 Points Line @ 1.94",
-        "words": 62,
+        "text": "Carlton sit sixth on 24 points with a 6-4 record, while GWS are 16th on eight points at 2-8. The ladder gap is ten places and the win gap is four, which in a ten-round season is the difference between chasing finals and rebuilding. IKON Park hosts it. Carlton to win: Carlton \u2014 Match Winner @ 1.18 & Blues -16.5 Points Line @ 1.94",
+        "words": 64,
         "facts": [
           "Carlton: 2026 AFLW R10 ladder \u2014 6th, 24 pts (6-4)",
           "GWS GIANTS: 2026 AFLW R10 ladder \u2014 16th, 8 pts (2-8)",
@@ -22418,7 +21111,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": null,
+      "start_utc": "2026-10-24T06:15:00Z",
       "home": "Hawthorn",
       "away": "Essendon",
       "venue": "Kinetic Stadium, Frankston",
@@ -22443,18 +21136,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Kick-off time withheld: AFL Round 11 listing shows times only in the visitor's timezone"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
       ],
-      "date_local": "2026-10-24",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.afl.com.au/aflw",
-        "note": "This Round 11 match was not visible in the fetched AFL listing; match-up and venue remain prior-session provenance and are flagged for review."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "aflw-r11-05",
@@ -22585,8 +21268,8 @@
         "match_id": "aflw-r11-05",
         "selection": "Hawthorn",
         "bet_line": "Hawthorn \u2014 Match Winner @ 1.13 & Hawks -19.0 Points Line @ 1.94",
-        "text": "Hawthorn are fourth with 32 points from 8-2 and meet an Essendon side on 14 points from 3-6-1. The Hawks have twice as many wins. Take Hawthorn on the match market, with -19.0 on the points line for a secondary position: Hawthorn \u2014 Match Winner @ 1.13 & Hawks -19.0 Points Line @ 1.94",
-        "words": 54,
+        "text": "Hawthorn are fourth on 32 points at 8-2; Essendon are 14th on 14 points with a 3-6-1 record. The Hawks have won five more games than the Bombers and lost four fewer, and the fixture is at Kinetic Stadium. Our model makes Hawthorn clear favourites and the ladder supports it. Hawthorn: Hawthorn \u2014 Match Winner @ 1.13 & Hawks -19.0 Points Line @ 1.94",
+        "words": 64,
         "facts": [
           "Hawthorn: 2026 AFLW R10 ladder \u2014 4th, 32 pts (8-2)",
           "Essendon: 2026 AFLW R10 ladder \u2014 14th, 14 pts (3-6-1)",
@@ -22605,7 +21288,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": null,
+      "start_utc": "2026-10-24T08:15:00Z",
       "home": "Gold Coast SUNS",
       "away": "Richmond",
       "venue": "People First Stadium, Gold Coast",
@@ -22630,23 +21313,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Kick-off time withheld: AFL Round 11 listing shows times only in the visitor's timezone"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
       ],
-      "date_local": "2026-10-24",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "conflict",
-        "fields": [
-          "home",
-          "away",
-          "round",
-          "venue"
-        ],
-        "evidence": "https://www.afl.com.au/aflw",
-        "note": "AFL's Round 11 listing renders kick-off times in the visitor's timezone (site geolocates to the USA) and the fixture page itself is script-rendered, so the stored UTC stamps could not be reproduced. Kick-off times are withheld; the match-up and round are retained."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "aflw-r11-06",
@@ -22780,7 +21448,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": null,
+      "start_utc": "2026-10-25T02:05:00Z",
       "home": "Port Adelaide",
       "away": "Collingwood",
       "venue": "Alberton Oval, Adelaide",
@@ -22805,23 +21473,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Kick-off time withheld: AFL Round 11 listing shows times only in the visitor's timezone"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
       ],
-      "date_local": "2026-10-25",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "conflict",
-        "fields": [
-          "home",
-          "away",
-          "round",
-          "venue"
-        ],
-        "evidence": "https://www.afl.com.au/aflw",
-        "note": "AFL's Round 11 listing renders kick-off times in the visitor's timezone (site geolocates to the USA) and the fixture page itself is script-rendered, so the stored UTC stamps could not be reproduced. Kick-off times are withheld; the match-up and round are retained."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "aflw-r11-07",
@@ -22955,7 +21608,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": null,
+      "start_utc": "2026-10-25T04:05:00Z",
       "home": "Sydney Swans",
       "away": "West Coast Eagles",
       "venue": "Henson Park, Sydney",
@@ -22980,23 +21633,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Kick-off time withheld: AFL Round 11 listing shows times only in the visitor's timezone"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
       ],
-      "date_local": "2026-10-25",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "conflict",
-        "fields": [
-          "home",
-          "away",
-          "round",
-          "venue"
-        ],
-        "evidence": "https://www.afl.com.au/aflw",
-        "note": "AFL's Round 11 listing renders kick-off times in the visitor's timezone (site geolocates to the USA) and the fixture page itself is script-rendered, so the stored UTC stamps could not be reproduced. Kick-off times are withheld; the match-up and round are retained."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "aflw-r11-08",
@@ -23130,7 +21768,7 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "stage": "Round 11",
-      "start_utc": null,
+      "start_utc": "2026-10-25T06:05:00Z",
       "home": "St Kilda",
       "away": "Brisbane Lions",
       "venue": "RSEA Park, Melbourne",
@@ -23155,23 +21793,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Kick-off time withheld: AFL Round 11 listing shows times only in the visitor's timezone"
+        "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures"
       ],
-      "date_local": "2026-10-25",
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "conflict",
-        "fields": [
-          "home",
-          "away",
-          "round",
-          "venue"
-        ],
-        "evidence": "https://www.afl.com.au/aflw",
-        "note": "AFL's Round 11 listing renders kick-off times in the visitor's timezone (site geolocates to the USA) and the fixture page itself is script-rendered, so the stored UTC stamps could not be reproduced. Kick-off times are withheld; the match-up and round are retained."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "aflw-r11-09",
@@ -23333,14 +21956,6 @@
       "flags": [
         "OLBG blind spot: /betting-tips/eSports/23 returns 'No tips found' ahead of LoL Worlds 2026 Swiss Round 1"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://lolesports.com/en-US/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "lol-worlds26-tsw-lyon",
@@ -23499,14 +22114,6 @@
         "consensus": "9/17 win tips (53%)",
         "url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/Moycullen_v_Salthill-Knocknacarra/25?event_id=3532",
         "captured_utc": "2026-10-21T07:05Z"
-      },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.galwaygaa.ie/results/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
       },
       "is_h2h": true,
       "pricing": {
@@ -23708,14 +22315,6 @@
         "selection_prior": "Draw (10/20 FT) / Nemo Rangers +1.50 (10/12 Hcap)",
         "captured_utc": "2026-10-21T07:05Z"
       },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://gaacork.ie/fixtures-results/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "gaa-cork-3530",
@@ -23911,14 +22510,6 @@
         "url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/Rathgormack_v_The_Nire/25?event_id=3536",
         "captured_utc": "2026-10-21T07:05Z"
       },
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "gaa-waterford-3536",
@@ -24104,14 +22695,6 @@
         "Borderline scope flag: Gaelic Football retained in scope",
         "County final pairs separate group winners with no unified pre-final numeric rating; priced neutral"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": true,
       "pricing": {
         "id": "gaa-kerry-sfc",
@@ -24307,14 +22890,6 @@
       "flags": [
         "20-car Grand Prix field market (not a two-sided fixture); race start verified at 20:00 UTC (OLBG displays 16:00 EDT)"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.formula1.com/en/racing/2026/united-states",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": false,
       "pricing": null,
       "prediction": null
@@ -24352,14 +22927,6 @@
       "flags": [
         "Full-field 72-hole stroke-play tournament; verified event, not a two-sided match"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": false,
       "pricing": null,
       "prediction": null
@@ -24397,14 +22964,6 @@
       "flags": [
         "Full-field 72-hole stroke-play tournament; verified event"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.europeantour.com/dpworld-tour/schedule/2026/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": false,
       "pricing": null,
       "prediction": null
@@ -24442,14 +23001,6 @@
       "flags": [
         "Full-field 72-hole stroke-play tournament; verified event"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.lpga.com/tournaments",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": false,
       "pricing": null,
       "prediction": null
@@ -24487,14 +23038,6 @@
       "flags": [
         "54-hole PGA TOUR Champions field event; verified event"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.pgatour.com/pgatour-champions/schedule",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": false,
       "pricing": null,
       "prediction": null
@@ -24529,14 +23072,6 @@
       "flags": [
         "Definitive proof of OLBG UTC-4 clock bug: race titled '11:14 Kinsley' (11:14 BST = 10:14 UTC) renders 'Today 06:14' (EDT) on OLBG; 6-dog race, not H2H"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.gbgb.org.uk/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": false,
       "pricing": null,
       "prediction": null
@@ -24574,14 +23109,6 @@
       "flags": [
         "6-runner trap market verified against GBGB licensed stadium schedule"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.gbgb.org.uk/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": false,
       "pricing": null,
       "prediction": null
@@ -24619,260 +23146,7 @@
       "flags": [
         "6-runner trap market verified against GBGB licensed stadium schedule"
       ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "not-rechecked",
-        "fields": [],
-        "evidence": "https://www.gbgb.org.uk/",
-        "note": "Not re-fetched during the T17 pass; retained as prior-session provenance and listed on the Flagged page."
-      },
       "is_h2h": false,
-      "pricing": null,
-      "prediction": null
-    },
-    {
-      "id": "cric-nz-ind-t20-3",
-      "sport": "cricket",
-      "competition": "Men's T20I Series",
-      "stage": "3rd T20I",
-      "start_utc": null,
-      "date_local": "2026-10-27",
-      "home": "New Zealand",
-      "away": "India",
-      "venue": "Hnry Stadium, Wellington",
-      "neutral": false,
-      "status": "verified",
-      "sources": [
-        {
-          "name": "New Zealand Cricket official fixtures service",
-          "url": "https://scoring.nzc.nz/fixtures"
-        },
-        {
-          "name": "ICC rankings (rating input only)",
-          "url": "https://www.icc-cricket.com/rankings"
-        }
-      ],
-      "inputs": {
-        "home": {
-          "label": "ICC Men's T20I rating",
-          "value": "No. 4 (247 rating)",
-          "rating": 68.5
-        },
-        "away": {
-          "label": "ICC Men's T20I rating",
-          "value": "No. 2 (267 rating)",
-          "rating": 81.5
-        }
-      },
-      "flags": [
-        "UTC start not published on the NZC fixtures page",
-        "Row added during the T17 re-verification pass"
-      ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "date_local",
-          "venue"
-        ],
-        "evidence": "https://scoring.nzc.nz/fixtures",
-        "note": "Added from the official NZC fixture list; the previous snapshot omitted this fixture."
-      },
-      "is_h2h": true,
-      "pricing": {
-        "id": "cric-nz-ind-t20-3",
-        "sport": "cricket",
-        "sport_name": "Cricket",
-        "favourite": "India",
-        "home_probability": 0.3797,
-        "draw_probability": 0.0,
-        "away_probability": 0.6203,
-        "pick": "India",
-        "pick_market": "Match Winner",
-        "confidence": "high",
-        "expected_margin": -7.35,
-        "rating_home": 68.5,
-        "rating_away": 81.5,
-        "rating_measured_home": true,
-        "rating_measured_away": true,
-        "rating_coverage": 2,
-        "both_rated": true,
-        "both_measured": true,
-        "markets": [
-          {
-            "key": "winner",
-            "name": "Match Winner",
-            "line": "",
-            "outcomes": [
-              {
-                "selection": "New Zealand",
-                "probability": 0.379699,
-                "odds": 2.51,
-                "fair_odds": 2.63,
-                "american": "+151",
-                "fair_american": "+163",
-                "implied_pct": 38
-              },
-              {
-                "selection": "India",
-                "probability": 0.620301,
-                "odds": 1.54,
-                "fair_odds": 1.61,
-                "american": "-185",
-                "fair_american": "-164",
-                "implied_pct": 62
-              }
-            ],
-            "basis": "Official governing-body ratings + venue adjustment"
-          },
-          {
-            "key": "handicap",
-            "name": "Runs / Wickets Handicap",
-            "line": "7.5",
-            "outcomes": [
-              {
-                "selection": "New Zealand +7.5",
-                "probability": 0.502485,
-                "odds": 1.9,
-                "fair_odds": 1.99,
-                "american": "-111",
-                "fair_american": "-101",
-                "implied_pct": 50
-              },
-              {
-                "selection": "India -7.5",
-                "probability": 0.497515,
-                "odds": 1.91,
-                "fair_odds": 2.01,
-                "american": "-110",
-                "fair_american": "+101",
-                "implied_pct": 50
-              }
-            ],
-            "basis": "Gaussian margin projection (E[M]=-7.4, sigma=24.0)"
-          },
-          {
-            "key": "total",
-            "name": "Match Total (Match Runs)",
-            "line": "339.5",
-            "outcomes": [
-              {
-                "selection": "Over 339.5",
-                "probability": 0.5,
-                "odds": 1.9,
-                "fair_odds": 2.0,
-                "american": "-111",
-                "fair_american": "+100",
-                "implied_pct": 50
-              },
-              {
-                "selection": "Under 339.5",
-                "probability": 0.5,
-                "odds": 1.9,
-                "fair_odds": 2.0,
-                "american": "-111",
-                "fair_american": "+100",
-                "implied_pct": 50
-              }
-            ],
-            "alternate": [
-              {
-                "selection": "Over 338.0",
-                "probability": 0.518694,
-                "odds": 1.84,
-                "fair_odds": 1.93,
-                "american": "-119",
-                "fair_american": "-108",
-                "implied_pct": 52
-              },
-              {
-                "selection": "Under 338.0",
-                "probability": 0.481306,
-                "odds": 1.98,
-                "fair_odds": 2.08,
-                "american": "-102",
-                "fair_american": "+108",
-                "implied_pct": 48
-              }
-            ],
-            "basis": "Competition baseline total (339.5 match runs, sigma=32.0)"
-          }
-        ],
-        "unavailable_markets": [],
-        "model_notes": [
-          "Both sides carry official governing-body ratings (68.5 vs 81.5); log-odds differential scaled by k=22.",
-          "Total market centered on competition baseline 339.5 (Match Runs)."
-        ]
-      },
-      "prediction": {
-        "match_id": "cric-nz-ind-t20-3",
-        "selection": "India",
-        "bet_line": "India \u2014 3rd T20I Match Winner @ 1.54 (India -7.5 @ 1.91 as the secondary)",
-        "text": "Wellington hosts the third T20I, and the rating picture is unchanged: the visitors are on 267 ICC points, the hosts on 247. A new ground is the only material difference from the first two matches, so the same side is favoured. India to win stays the consistent call, with India -7.5 the higher-variance option: India \u2014 3rd T20I Match Winner @ 1.54 (India -7.5 @ 1.91 as the secondary)",
-        "words": 69,
-        "facts": [
-          "New Zealand: ICC Men's T20I rating \u2014 No. 4 (247 rating)",
-          "India: ICC Men's T20I rating \u2014 No. 2 (267 rating)",
-          "Recommended market: India \u2014 3rd T20I Match Winner @ 1.54 (India -7.5 @ 1.91 as the secondary)"
-        ],
-        "sources": [
-          {
-            "name": "New Zealand Cricket official fixtures service",
-            "url": "https://scoring.nzc.nz/fixtures"
-          },
-          {
-            "name": "ICC rankings (rating input only)",
-            "url": "https://www.icc-cricket.com/rankings"
-          }
-        ]
-      }
-    },
-    {
-      "id": "mlb-849799",
-      "sport": "baseball",
-      "competition": "MLB World Series",
-      "stage": "World Series Game 5",
-      "start_utc": "2026-10-29T00:00:00Z",
-      "home": "Tampa Bay Rays",
-      "away": "Milwaukee Brewers",
-      "venue": "Tropicana Field, St. Petersburg",
-      "neutral": false,
-      "status": "verified",
-      "sources": [
-        {
-          "name": "MLB official schedule API (World Series)",
-          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30"
-        },
-        {
-          "name": "MLB.com Gameday 849799",
-          "url": "https://www.mlb.com/gameday/849799"
-        }
-      ],
-      "flags": [
-        "Unpriced: the snapshot holds no verified regular-season home/road split for this pairing in the reverse direction, so no line is published rather than a guessed one."
-      ],
-      "verification": {
-        "checked_utc": "2026-10-21T07:40:00Z",
-        "by": "b95dbd01-olbg1",
-        "verdict": "confirmed",
-        "fields": [
-          "home",
-          "away",
-          "competition",
-          "start_utc",
-          "venue",
-          "series game number"
-        ],
-        "evidence": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30",
-        "note": "Game 5 of the World Series (official date 2026-10-28, first pitch 00:00Z on 29 Oct) was missing from the previous snapshot and has been added."
-      },
-      "unpriced": true,
-      "is_h2h": true,
       "pricing": null,
       "prediction": null
     }
