@@ -83,6 +83,8 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T15 | Independent second-pass market-coverage and whole-tree source-link structural audit | done | e92c2bf4-olbg1 | `reports/SESSION_E92_SNAPSHOT_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:41Z | Completed after T13; records eight unpriced field cards, one missing cricket total, snapshot window, and validator evidence limits; does not edit shared data/pages. |
 | T16 | Corrective primary-desk provenance, status disclosure, integration and Pages publication | done | 4904ed05-olbg1 | `COORDINATION.md`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/flagged_for_review.json`, `scripts/validate.py`, root `*.html`, `sports/*.html`, `assets/*`, `README.md` | 2026-10-21T06:41Z | PR #24 merged; Pages workflow 39558245786 completed successfully. Remediated F1–F3 without changing independent review artifacts. |
 
+| T17 | Fresh official-source re-verification of every published row (fetch each governing-body page today, row-by-row), corrected data, unified dashboard rebuild, publication | in progress | b95dbd01-olbg1 | `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/*`, `scripts/{build_site,validate,final_audit}.py`, root `*.html`, `sports/*.html`, `assets/*`, `reports/VERIFICATION_2026-10-21.md`, `README.md`, append-only `COORDINATION.md` | 2026-10-21T07:10Z | Re-fetch scope: all 30 registered source URLs + per-row checks; correct or downgrade anything the source does not confirm; publish a per-row verification table with links. Does **not** touch `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`, `/2360a617/`, `/f7fa77fc/`. |
+
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
 
@@ -666,3 +668,24 @@ The rebased implementation commit is `674eb1c` (`fix: remediate audit provenance
 * **Pages verification:** GitHub Pages deployment workflow [`39558245786`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39558245786) completed successfully for that merge commit. The Pages API reports `status=built`, HTTPS enforced, source `main:/`, and public URL https://buffedlizard55-lab.github.io/OLBG1/.
 * **Delivered correction:** 31 distinct 48–61-word source-bounded High predictions; dashboard/mirror/README status wording split to 129 Verified plus 5 Cross-checked; F1–F3 remediation and source-freshness boundary published on Flagged for Review and linked in the source register.
 * **Final pre-merge gates:** `python3 scripts/validate.py` (131 HTML pages, 0 errors/warnings), `python3 scripts/ebfbd966_validate.py` (passed), `python3 scripts/final_audit.py`, `py_compile`, `git diff --check`, deterministic rebuild comparison, root/mirror data parity, and zero repeated normalized six-grams across High prose. No source page was freshly fetched in this corrective pass; that limitation remains visible to reviewers.
+
+## 16. Session `b95dbd01-olbg1` — T17 claim (fresh official-source re-verification)
+
+**2026-10-21T07:10Z — claim pushed before work started.** Nothing in this section replaces any
+earlier record. T13–T16 established that the published 134 rows are *source-linked* but that no
+pass had re-fetched the official pages and compared them field by field (see `reports/POST_INTEGRATION_AUDIT.md`
+F3). This session does exactly that, and treats any field the official page does not show as
+**unverified** — including fields currently published as `verified`.
+
+Method fixed before the first fetch:
+
+1. Fetch every registered official URL (`data/sources.json`, 30 distinct URLs) plus per-row pages
+   where a competition page does not carry the fixture.
+2. Record each fetch in `reports/VERIFICATION_2026-10-21.md`: URL, UTC time, what the page actually
+   showed, and the verdict per row (`confirmed` / `corrected` / `unconfirmed`).
+3. Correct a field only when the official page states it. Otherwise blank it and move the row to
+   `unconfirmed`, which is published on the Flagged for Review page.
+4. Never upgrade a row on the strength of another session's note, a search snippet or memory.
+
+File scope is listed in §1 T17. All parallel boards (`/docs/`, `/ebfbd966/`, `/aa4e9dbf/`,
+`/2360a617/`, `/f7fa77fc/`) are read-only for this session.
