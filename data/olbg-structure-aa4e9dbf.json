@@ -1,0 +1,120 @@
+{
+ "captured": "2026-10-21 05:00-08:00 UTC",
+ "sitemap_index": "https://www.olbg.com/sitemap.xml",
+ "sitemap_betting_tips": "https://www.olbg.com/sitemap-betting-tips.xml",
+ "sport_hub_pattern": "https://www.olbg.com/betting-tips/{Sport}/{sport_id}",
+ "event_pattern": "https://www.olbg.com/betting-tips/{Sport}/{Region}/{Competition}/{Match}/{market_id}?event_id={event_id}",
+ "sports": [
+  {
+   "name": "Football",
+   "sport_id": 1,
+   "covered": false
+  },
+  {
+   "name": "Horse Racing",
+   "sport_id": 2,
+   "covered": false
+  },
+  {
+   "name": "Tennis",
+   "sport_id": 3,
+   "covered": true
+  },
+  {
+   "name": "Golf",
+   "sport_id": 5,
+   "covered": true
+  },
+  {
+   "name": "Rugby Union",
+   "sport_id": 9,
+   "covered": true
+  },
+  {
+   "name": "Rugby League",
+   "sport_id": 10,
+   "covered": true
+  },
+  {
+   "name": "American Football",
+   "sport_id": 11,
+   "covered": false
+  },
+  {
+   "name": "Baseball",
+   "sport_id": 12,
+   "covered": true
+  },
+  {
+   "name": "Ice Hockey",
+   "sport_id": 13,
+   "covered": true
+  },
+  {
+   "name": "Motor Racing",
+   "sport_id": 14,
+   "covered": true
+  },
+  {
+   "name": "Darts",
+   "sport_id": 15,
+   "covered": true
+  },
+  {
+   "name": "Boxing",
+   "sport_id": 16,
+   "covered": false
+  },
+  {
+   "name": "Cycling",
+   "sport_id": 17,
+   "covered": false
+  },
+  {
+   "name": "Handball",
+   "sport_id": 20,
+   "covered": true
+  },
+  {
+   "name": "Volleyball",
+   "sport_id": 21,
+   "covered": true
+  },
+  {
+   "name": "Aussie Rules",
+   "sport_id": 22,
+   "covered": false
+  },
+  {
+   "name": "eSports",
+   "sport_id": 23,
+   "covered": true
+  },
+  {
+   "name": "Gaelic Football",
+   "sport_id": 25,
+   "covered": false
+  },
+  {
+   "name": "Greyhounds",
+   "sport_id": 28,
+   "covered": false
+  }
+ ],
+ "markets_by_sport": {
+  "Tennis": "Win Match; Set Betting (2-0/2-1 etc.); 1st Set Winner; Games Won (+/- games handicap); Total Games (O/U)",
+  "Basketball": "Money Line; Handicap (spread); Game Totals (O/U points)",
+  "Ice Hockey": "Money Line (incl. OT/SO); Puck Line; Game Totals (O/U goals)",
+  "Baseball": "Money Line; Run Line; Game Totals (O/U runs)",
+  "Cricket": "Win Match; plus batter/bowler and innings runs markets",
+  "Rugby Union": "To Win (match winner); Handicap; Total Points",
+  "Rugby League": "Match winner; handicap; Grand Final winner (outright)",
+  "Darts": "Win Match 2-way; Handicap 2-way (legs); Total Legs (O/U)",
+  "Snooker": "Win Match; Handicap (frames); Frame Betting; Win Tournament (outright)",
+  "Golf": "Win Tournament (outright); top-5/10/20; matchups",
+  "Handball": "Money Line (3-way); Match Handicap; Total Goals",
+  "Volleyball": "Win Match; Set Score; Total Sets; set handicap",
+  "Motor Racing": "Win Race; Fastest Qualifier; Podium; Top 6; Points Finish; Fastest Lap; championship outrights",
+  "eSports": "Win Match; map handicap; total maps (none listed at capture)"
+ }
+}
