@@ -6,6 +6,10 @@
       "name": "NHL official schedule API (2026-10-21)",
       "url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
     },
+    "f1_usgp": {
+      "name": "Formula 1 official 2026 United States Grand Prix page",
+      "url": "https://www.formula1.com/en/racing/2026/united-states"
+    },
     "nhl_stand": {
       "name": "NHL official standings API (2026-10-20, live)",
       "url": "https://api-web.nhle.com/v1/standings/2026-10-20"
@@ -32,7 +36,11 @@
     },
     "nrl": {
       "name": "NRL / Rugby League World Cup 2026 Round 2 draw",
-      "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+      "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+    },
+    "irl": {
+      "name": "IRL official fixtures & match records (RLWC26 Round 2)",
+      "url": "https://www.intrl.sport/fixtures-results"
     },
     "nzc": {
       "name": "New Zealand Cricket official fixtures & results service",
@@ -57,15 +65,15 @@
   },
   "summary": {
     "rows": 134,
-    "confirmed": 51,
-    "corrected": 9,
+    "confirmed": 44,
+    "corrected": 19,
     "flagged": 2,
-    "not_rechecked": 72
+    "not_rechecked": 69
   },
   "by_sport": {
     "ice-hockey": {
-      "confirmed": 3,
-      "corrected": 1,
+      "confirmed": 1,
+      "corrected": 3,
       "flagged": 2,
       "not_rechecked": 0
     },
@@ -112,10 +120,10 @@
       "not_rechecked": 12
     },
     "rugby-league": {
-      "confirmed": 5,
-      "corrected": 0,
+      "confirmed": 0,
+      "corrected": 7,
       "flagged": 0,
-      "not_rechecked": 2
+      "not_rechecked": 0
     },
     "handball": {
       "confirmed": 12,
@@ -149,9 +157,9 @@
     },
     "motor-racing": {
       "confirmed": 0,
-      "corrected": 0,
+      "corrected": 1,
       "flagged": 0,
-      "not_rechecked": 1
+      "not_rechecked": 0
     },
     "golf": {
       "confirmed": 0,
@@ -172,11 +180,11 @@
       "sport": "ice-hockey",
       "competition": "NHL",
       "match": "Buffalo Sabres v Philadelphia Flyers",
-      "status": "confirmed",
-      "source_name": "NHL official schedule API (2026-10-21)",
-      "source_url": "https://api-web.nhle.com/v1/schedule/2026-10-21",
-      "evidence": "Game 2026020152: Philadelphia at Buffalo, KeyBank Center, startTimeUTC 2026-10-21T23:30:00Z \u2014 participants, venue and start all match.",
-      "action": "No change required.",
+      "status": "corrected",
+      "source_name": "NHL official standings API (2026-10-20, live)",
+      "source_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+      "evidence": "Independent re-read on 2026-10-21T07:20Z: standings return Buffalo 4-3-2 / .556 with goalDifferential -7, and Philadelphia 2-6-3 / .318 with a road line of 0-4-1 and goalDifferential -19. Both clubs had played exactly the number of games in the stored record (9 and 11), so the stored +2 and -14 differentials and the 0-4-2 road line cannot be snapshot drift.",
+      "action": "Buffalo goal differential +2 -> -7; Philadelphia road 0-4-2 -> 0-4-1 and differential -14 -> -19. Ratings come from points percentage, which was already correct, so no rating or price moved.",
       "checked_at": "2026-10-21T07:05Z"
     },
     {
@@ -184,11 +192,11 @@
       "sport": "ice-hockey",
       "competition": "NHL",
       "match": "Ottawa Senators v Florida Panthers",
-      "status": "confirmed",
-      "source_name": "NHL official schedule API (2026-10-21)",
-      "source_url": "https://api-web.nhle.com/v1/schedule/2026-10-21",
-      "evidence": "Game 2026020153: Florida at Ottawa, Canadian Tire Centre, startTimeUTC 2026-10-21T23:30:00Z \u2014 all match.",
-      "action": "No change required.",
+      "status": "corrected",
+      "source_name": "NHL official standings API (2026-10-20, live)",
+      "source_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+      "evidence": "Independent re-read on 2026-10-21T07:20Z: Ottawa are 6-3-0 / .667 over 9 games with homeGamesPlayed 4 and a 3-1-0 home record. The stored 4-1-0 home line would require five home wins from four home games.",
+      "action": "Ottawa home split 4-1-0 -> 3-1-0. Record, points percentage, rating and every price are unchanged.",
       "checked_at": "2026-10-21T07:05Z"
     },
     {
@@ -499,7 +507,7 @@
       "status": "not_rechecked",
       "source_name": "WTA official Ningbo Open draw & order of play",
       "source_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
-      "evidence": "WTA draw pages are client-rendered and returned only the notification shell with no draw body; ATP draws behave the same way. Rankings pages were not re-read either.",
+      "evidence": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -511,7 +519,7 @@
       "status": "not_rechecked",
       "source_name": "WTA official Ningbo Open draw & order of play",
       "source_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
-      "evidence": "WTA draw pages are client-rendered and returned only the notification shell with no draw body; ATP draws behave the same way. Rankings pages were not re-read either.",
+      "evidence": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -523,7 +531,7 @@
       "status": "not_rechecked",
       "source_name": "ATP Tour official Almaty Open draw (event 9410)",
       "source_url": "https://www.atptour.com/en/scores/current/almaty/9410/draws",
-      "evidence": "WTA draw pages are client-rendered and returned only the notification shell with no draw body; ATP draws behave the same way. Rankings pages were not re-read either.",
+      "evidence": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -535,7 +543,7 @@
       "status": "not_rechecked",
       "source_name": "ATP Tour official Almaty Open draw (event 9410)",
       "source_url": "https://www.atptour.com/en/scores/current/almaty/9410/draws",
-      "evidence": "WTA draw pages are client-rendered and returned only the notification shell with no draw body; ATP draws behave the same way. Rankings pages were not re-read either.",
+      "evidence": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -547,7 +555,7 @@
       "status": "not_rechecked",
       "source_name": "WTA official Ningbo Open draw & order of play",
       "source_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
-      "evidence": "WTA draw pages are client-rendered and returned only the notification shell with no draw body; ATP draws behave the same way. Rankings pages were not re-read either.",
+      "evidence": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -559,7 +567,7 @@
       "status": "not_rechecked",
       "source_name": "WTA official Japan Open Osaka draw",
       "source_url": "https://www.wtatennis.com/tournaments/405/osaka/2026/draws",
-      "evidence": "WTA draw pages are client-rendered and returned only the notification shell with no draw body; ATP draws behave the same way. Rankings pages were not re-read either.",
+      "evidence": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -571,7 +579,7 @@
       "status": "not_rechecked",
       "source_name": "WTA official Ningbo Open draw & order of play",
       "source_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
-      "evidence": "WTA draw pages are client-rendered and returned only the notification shell with no draw body; ATP draws behave the same way. Rankings pages were not re-read either.",
+      "evidence": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -583,7 +591,7 @@
       "status": "not_rechecked",
       "source_name": "WTA official Ningbo Open draw & order of play",
       "source_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
-      "evidence": "WTA draw pages are client-rendered and returned only the notification shell with no draw body; ATP draws behave the same way. Rankings pages were not re-read either.",
+      "evidence": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -595,7 +603,7 @@
       "status": "not_rechecked",
       "source_name": "ATP Tour official Almaty Open draw (event 9410)",
       "source_url": "https://www.atptour.com/en/scores/current/almaty/9410/draws",
-      "evidence": "WTA draw pages are client-rendered and returned only the notification shell with no draw body; ATP draws behave the same way. Rankings pages were not re-read either.",
+      "evidence": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -607,7 +615,7 @@
       "status": "not_rechecked",
       "source_name": "ATP Tour official Lyon Open draw (event 496)",
       "source_url": "https://www.atptour.com/en/scores/current/lyon/496/draws",
-      "evidence": "WTA draw pages are client-rendered and returned only the notification shell with no draw body; ATP draws behave the same way. Rankings pages were not re-read either.",
+      "evidence": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -619,7 +627,7 @@
       "status": "not_rechecked",
       "source_name": "ATP Tour official European Open Brussels draw",
       "source_url": "https://www.atptour.com/en/scores/current/brussels/7485/draws",
-      "evidence": "WTA draw pages are client-rendered and returned only the notification shell with no draw body; ATP draws behave the same way. Rankings pages were not re-read either.",
+      "evidence": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1192,11 +1200,11 @@
       "sport": "rugby-league",
       "competition": "RLWC26 Men's Tournament",
       "match": "Australia v Fiji",
-      "status": "confirmed",
-      "source_name": "NRL / Rugby League World Cup 2026 Round 2 draw",
-      "source_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
-      "evidence": "NRL RLWC Round 2: Australia v Fiji, Sun 25 Oct, Suncorp Stadium Brisbane, 5:05am UTC-4 (= 09:05Z) \u2014 match.",
-      "action": "No change required.",
+      "status": "corrected",
+      "source_name": "IRL official fixtures & match records (RLWC26 Round 2)",
+      "source_url": "https://www.intrl.sport/fixtures-results",
+      "evidence": "IRL match record 2573: Australia v Fiji, Suncorp Stadium, Sun 25 Oct 19:05 local (09:05Z) \u2014 agree.",
+      "action": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2573.",
       "checked_at": "2026-10-21T07:05Z"
     },
     {
@@ -1204,11 +1212,11 @@
       "sport": "rugby-league",
       "competition": "RLWC26 Men's Tournament",
       "match": "New Zealand v Cook Islands",
-      "status": "confirmed",
-      "source_name": "NRL / Rugby League World Cup 2026 Round 2 draw",
-      "source_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
-      "evidence": "NRL RLWC Round 2: New Zealand v Cook Islands, Sun 25 Oct, One NZ Stadium Christchurch, 1:05am UTC-4 (= 05:05Z) \u2014 match.",
-      "action": "No change required.",
+      "status": "corrected",
+      "source_name": "IRL official fixtures & match records (RLWC26 Round 2)",
+      "source_url": "https://www.intrl.sport/fixtures-results",
+      "evidence": "IRL match record 2572: New Zealand v Cook Islands, One NZ Stadium, Sun 25 Oct 18:05 local (05:05Z) \u2014 agree.",
+      "action": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2572.",
       "checked_at": "2026-10-21T07:05Z"
     },
     {
@@ -1216,11 +1224,11 @@
       "sport": "rugby-league",
       "competition": "RLWC26 Men's Tournament",
       "match": "England v France",
-      "status": "confirmed",
-      "source_name": "NRL / Rugby League World Cup 2026 Round 2 draw",
-      "source_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
-      "evidence": "NRL RLWC Round 2: England v France, Sat 24 Oct, HBF Park Perth, 2:35am UTC-4 (= 06:35Z) \u2014 match.",
-      "action": "No change required.",
+      "status": "corrected",
+      "source_name": "IRL official fixtures & match records (RLWC26 Round 2)",
+      "source_url": "https://www.intrl.sport/fixtures-results",
+      "evidence": "IRL match record 2571: England v France, HBF Park Perth, Sat 24 Oct 14:35 local (06:35Z) \u2014 agree.",
+      "action": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2571.",
       "checked_at": "2026-10-21T07:05Z"
     },
     {
@@ -1228,11 +1236,11 @@
       "sport": "rugby-league",
       "competition": "RLWC26 Men's Tournament",
       "match": "Papua New Guinea v Samoa",
-      "status": "confirmed",
-      "source_name": "NRL / Rugby League World Cup 2026 Round 2 draw",
-      "source_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
-      "evidence": "NRL RLWC Round 2: Papua New Guinea v Samoa, Sat 24 Oct, Santos National Football Stadium Port Moresby, 12:25am UTC-4 (= 04:25Z) \u2014 match.",
-      "action": "No change required.",
+      "status": "corrected",
+      "source_name": "IRL official fixtures & match records (RLWC26 Round 2)",
+      "source_url": "https://www.intrl.sport/fixtures-results",
+      "evidence": "IRL match record 2570: Papua New Guinea v Samoa, Santos National Football Stadium, Sat 24 Oct 14:25 local (04:25Z) \u2014 agree.",
+      "action": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2570.",
       "checked_at": "2026-10-21T07:05Z"
     },
     {
@@ -1240,11 +1248,11 @@
       "sport": "rugby-league",
       "competition": "RLWC26 Men's Tournament",
       "match": "Tonga v Lebanon",
-      "status": "confirmed",
-      "source_name": "NRL / Rugby League World Cup 2026 Round 2 draw",
-      "source_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
-      "evidence": "NRL RLWC Round 2: Tonga v Lebanon, Fri 23 Oct, CommBank Stadium Sydney, 5:05am UTC-4 (= 09:05Z) \u2014 match.",
-      "action": "No change required.",
+      "status": "corrected",
+      "source_name": "IRL official fixtures & match records (RLWC26 Round 2)",
+      "source_url": "https://www.intrl.sport/fixtures-results",
+      "evidence": "IRL match record 2569: Tonga v Lebanon, CommBank Stadium, Fri 23 Oct 20:05 local (09:05Z) \u2014 participants, venue and start agree.",
+      "action": "Legacy nrl.com/draw/?competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2569.",
       "checked_at": "2026-10-21T07:05Z"
     },
     {
@@ -1252,11 +1260,11 @@
       "sport": "rugby-league",
       "competition": "RLWC26 Women's Tournament",
       "match": "Australia Jillaroos v England Women",
-      "status": "not_rechecked",
-      "source_name": "NRL / RLWC26 Women's official draw",
-      "source_url": "https://www.nrl.com/draw/?competition=176&round=2&season=2026",
-      "evidence": "The NRL women's competition draw was not readable from the men's competition page used in this pass.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
+      "status": "corrected",
+      "source_name": "IRL official fixtures & match records (RLWC26 Round 2)",
+      "source_url": "https://www.intrl.sport/fixtures-results",
+      "evidence": "IRL match record 2588: Australia v England, HBF Park Perth, Sat 24 Oct 17:05 local (09:05Z) \u2014 agree.",
+      "action": "Legacy competition=176 link (which resolves to the men's competition 131) replaced with the official women's Round 2 draw page plus IRL match record 2588.",
       "checked_at": "2026-10-21T07:05Z"
     },
     {
@@ -1264,11 +1272,11 @@
       "sport": "rugby-league",
       "competition": "RLWC26 Women's Tournament",
       "match": "Samoa Women v Wales Women",
-      "status": "not_rechecked",
-      "source_name": "NRL / RLWC26 Women's official draw",
-      "source_url": "https://www.nrl.com/draw/?competition=176&round=2&season=2026",
-      "evidence": "The NRL women's competition draw was not readable from the men's competition page used in this pass.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
+      "status": "corrected",
+      "source_name": "IRL official fixtures & match records (RLWC26 Round 2)",
+      "source_url": "https://www.intrl.sport/fixtures-results",
+      "evidence": "IRL match record 2586: Samoa v Wales, CommBank Stadium, Fri 23 Oct 17:50 local (06:50Z). The NRL draw publishes 2:45am AEDT (06:45Z).",
+      "action": "Legacy competition=176 link replaced with the official women's Round 2 draw. Kick-off conflict disclosed on the row: 06:45Z (NRL) vs 06:50Z (IRL); neither is inferred away.",
       "checked_at": "2026-10-21T07:05Z"
     },
     {
@@ -1423,7 +1431,7 @@
       "status": "not_rechecked",
       "source_name": "PlusLiga official 2026/27 schedule",
       "source_url": "https://www.plusliga.pl/games.html",
-      "evidence": "PlusLiga and SuperLega fixture pages were not re-fetched in this pass.",
+      "evidence": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1435,7 +1443,7 @@
       "status": "not_rechecked",
       "source_name": "PlusLiga official 2026/27 schedule",
       "source_url": "https://www.plusliga.pl/games.html",
-      "evidence": "PlusLiga and SuperLega fixture pages were not re-fetched in this pass.",
+      "evidence": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1447,7 +1455,7 @@
       "status": "not_rechecked",
       "source_name": "PlusLiga official 2026/27 schedule",
       "source_url": "https://www.plusliga.pl/games.html",
-      "evidence": "PlusLiga and SuperLega fixture pages were not re-fetched in this pass.",
+      "evidence": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1459,7 +1467,7 @@
       "status": "not_rechecked",
       "source_name": "PlusLiga official 2026/27 schedule",
       "source_url": "https://www.plusliga.pl/games.html",
-      "evidence": "PlusLiga and SuperLega fixture pages were not re-fetched in this pass.",
+      "evidence": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1471,7 +1479,7 @@
       "status": "not_rechecked",
       "source_name": "PlusLiga official 2026/27 schedule",
       "source_url": "https://www.plusliga.pl/games.html",
-      "evidence": "PlusLiga and SuperLega fixture pages were not re-fetched in this pass.",
+      "evidence": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1483,7 +1491,7 @@
       "status": "not_rechecked",
       "source_name": "Lega Pallavolo Serie A SuperLega Credem Banca calendar",
       "source_url": "https://www.legavolley.it/",
-      "evidence": "PlusLiga and SuperLega fixture pages were not re-fetched in this pass.",
+      "evidence": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1495,7 +1503,7 @@
       "status": "not_rechecked",
       "source_name": "Lega Pallavolo Serie A SuperLega Credem Banca calendar",
       "source_url": "https://www.legavolley.it/",
-      "evidence": "PlusLiga and SuperLega fixture pages were not re-fetched in this pass.",
+      "evidence": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1507,7 +1515,7 @@
       "status": "not_rechecked",
       "source_name": "Lega Pallavolo Serie A SuperLega Credem Banca calendar",
       "source_url": "https://www.legavolley.it/",
-      "evidence": "PlusLiga and SuperLega fixture pages were not re-fetched in this pass.",
+      "evidence": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1684,11 +1692,11 @@
       "sport": "motor-racing",
       "competition": "FIA Formula One World Championship",
       "match": "United States Grand Prix",
-      "status": "not_rechecked",
-      "source_name": "Formula 1 official 2026 United States Grand Prix hub",
+      "status": "corrected",
+      "source_name": "Formula 1 official 2026 United States Grand Prix page",
       "source_url": "https://www.formula1.com/en/racing/2026/united-states",
-      "evidence": "Formula 1 event page was not re-fetched in this pass.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
+      "evidence": "formula1.com/en/racing/2026/united-states lists the race on 25 October with 56 laps at Circuit of The Americas and a 16:00 track time. Austin is on CDT (UTC-5) on 25 October, so the start is 21:00 UTC, not the 20:00 UTC recorded. The same page shows no round number.",
+      "action": "start_utc 2026-10-25T20:00:00Z -> 2026-10-25T21:00:00Z; the 'EDT' description and the unverifiable 'Round 18' label removed.",
       "checked_at": "2026-10-21T07:05Z"
     },
     {
@@ -1842,7 +1850,7 @@
       "severity": "medium",
       "area": "Tennis \u2014 official draws are client-rendered",
       "detail": "WTA and ATP draw pages return a notification shell without draw content to a text fetch, so pairings cannot be re-read from the tour sites.",
-      "status": "11 tennis rows marked not re-checked.",
+      "status": "11 tennis rows marked not re-checked and now flagged as reconstructed from Round-of-32 results plus byes.",
       "source": "wta",
       "source_name": "WTA official BNB Ningbo Open 2026 draws",
       "source_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
@@ -1865,14 +1873,44 @@
       "status": "Men's citation corrected to competition=131. The women's id (176) was not re-tested and is left as published with its rows marked not re-checked.",
       "source": "nrl",
       "source_name": "NRL / Rugby League World Cup 2026 Round 2 draw",
-      "source_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+      "source_url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
     },
     {
       "id": "F-V10",
       "severity": "medium",
       "area": "Coverage \u2014 most rows were not re-fetched in this pass",
-      "detail": "Fresh official reads covered 62 of 134 rows (confirmed + corrected + flagged). The remaining 72 keep their original verified or cross-checked status and their source links, but this pass did not re-read them.",
-      "status": "Every one of the 72 is listed on the Live Verification page with the reason, so the gap is visible rather than implied. No row is claimed as re-verified without a read.",
+      "detail": "Fresh official reads covered 65 of 134 rows (confirmed + corrected + flagged). The remaining 69 keep their original verified or cross-checked status and their source links, but this pass did not re-read them.",
+      "status": "Every one of the 69 is listed on the Live Verification page with the reason, so the gap is visible rather than implied. No row is claimed as re-verified without a read.",
+      "source": "nhl_sched",
+      "source_name": "NHL official schedule API (2026-10-21)",
+      "source_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+    },
+    {
+      "id": "F-V11",
+      "severity": "high",
+      "area": "NHL \u2014 four input sub-values were transcription errors, not drift",
+      "detail": "A second independent read of the standings endpoint on 2026-10-21T07:20Z found Buffalo at -7 (stored +2), Philadelphia at 0-4-1 and -19 (stored 0-4-2 / -14), Ottawa at 3-1-0 at home (stored 4-1-0, impossible from four home games) and Nashville at -1 (stored 0). Each club had played exactly the number of games in its stored record, which rules out a game having been played in between.",
+      "status": "Corrected in the dataset source. Ratings derive from points percentage, which was already correct, so no rating or price moved.",
+      "source": "nhl_stand",
+      "source_name": "NHL official standings API (2026-10-20, live)",
+      "source_url": "https://api-web.nhle.com/v1/standings/2026-10-20"
+    },
+    {
+      "id": "F-V12",
+      "severity": "medium",
+      "area": "Formula 1 \u2014 the United States GP start was an hour early",
+      "detail": "formula1.com gives 16:00 track time on 25 October at Circuit of The Americas. Austin is on CDT (UTC-5) on that date, so the start is 21:00 UTC; the row carried 20:00 UTC and described 16:00 as EDT. The same page shows no round number, so the 'Round 18' label was not supportable.",
+      "status": "start_utc corrected to 2026-10-25T21:00:00Z; the round number was removed.",
+      "source": "f1_usgp",
+      "source_name": "Formula 1 official 2026 United States Grand Prix page",
+      "source_url": "https://www.formula1.com/en/racing/2026/united-states"
+    },
+    {
+      "id": "F-V13",
+      "severity": "medium",
+      "area": "Source integrity \u2014 two cited URLs do not resolve to the fixture list",
+      "detail": "plusliga.pl/table.html redirects to tauronliga.pl and returns a generic competition page; munster.gaa.ie/fixtures/munster-gaa-fixtures/ resolved to an April 2025 news post titled 'Munster GAA Fixtures - April 7th to 12th 2025'. Neither page evidences the 2026 fixtures it is cited for.",
+      "status": "The nine affected rows keep their published values and are listed as not re-checked with this specific blocker named. Nothing was upgraded.",
       "source": "nhl_sched",
       "source_name": "NHL official schedule API (2026-10-21)",
       "source_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"

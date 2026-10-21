@@ -41,6 +41,10 @@ SOURCES: dict[str, dict[str, str]] = {
         "name": "NHL official schedule API (2026-10-21)",
         "url": "https://api-web.nhle.com/v1/schedule/2026-10-21",
     },
+    "f1_usgp": {
+        "name": "Formula 1 official 2026 United States Grand Prix page",
+        "url": "https://www.formula1.com/en/racing/2026/united-states",
+    },
     "nhl_stand": {
         "name": "NHL official standings API (2026-10-20, live)",
         "url": "https://api-web.nhle.com/v1/standings/2026-10-20",
@@ -67,7 +71,11 @@ SOURCES: dict[str, dict[str, str]] = {
     },
     "nrl": {
         "name": "NRL / Rugby League World Cup 2026 Round 2 draw",
-        "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+        "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/",
+    },
+    "irl": {
+        "name": "IRL official fixtures & match records (RLWC26 Round 2)",
+        "url": "https://www.intrl.sport/fixtures-results",
     },
     "nzc": {
         "name": "New Zealand Cricket official fixtures & results service",
@@ -166,6 +174,21 @@ CONFIRMED: dict[str, dict[str, str]] = {
 # Rows corrected because the re-fetched page disagreed
 # ---------------------------------------------------------------------------
 CORRECTED: dict[str, dict[str, str]] = {
+    "nhl-2026020152": {
+        "src": "nhl_stand",
+        "evidence": "Independent re-read on 2026-10-21T07:20Z: standings return Buffalo 4-3-2 / .556 with goalDifferential -7, and Philadelphia 2-6-3 / .318 with a road line of 0-4-1 and goalDifferential -19. Both clubs had played exactly the number of games in the stored record (9 and 11), so the stored +2 and -14 differentials and the 0-4-2 road line cannot be snapshot drift.",
+        "change": "Buffalo goal differential +2 -> -7; Philadelphia road 0-4-2 -> 0-4-1 and differential -14 -> -19. Ratings come from points percentage, which was already correct, so no rating or price moved.",
+    },
+    "nhl-2026020153": {
+        "src": "nhl_stand",
+        "evidence": "Independent re-read on 2026-10-21T07:20Z: Ottawa are 6-3-0 / .667 over 9 games with homeGamesPlayed 4 and a 3-1-0 home record. The stored 4-1-0 home line would require five home wins from four home games.",
+        "change": "Ottawa home split 4-1-0 -> 3-1-0. Record, points percentage, rating and every price are unchanged.",
+    },
+    "f1-usgp-2026": {
+        "src": "f1_usgp",
+        "evidence": "formula1.com/en/racing/2026/united-states lists the race on 25 October with 56 laps at Circuit of The Americas and a 16:00 track time. Austin is on CDT (UTC-5) on 25 October, so the start is 21:00 UTC, not the 20:00 UTC recorded. The same page shows no round number.",
+        "change": "start_utc 2026-10-25T20:00:00Z -> 2026-10-25T21:00:00Z; the 'EDT' description and the unverifiable 'Round 18' label removed.",
+    },
     "nhl-2026020154": {
         "src": "nhl_stand",
         "evidence": "Standings 2026-10-20 return 7-2-1, .750, +14 — but over 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0), not the 5-1-0 the row carried. Home games cannot decrease, so the old figure was an error rather than drift.",
@@ -229,14 +252,24 @@ FLAGGED: dict[str, dict[str, str]] = {
     },
 }
 
+CORRECTED.update({
+    "rl-wc26-tga-lbn": {"src": "irl", "evidence": "IRL match record 2569: Tonga v Lebanon, CommBank Stadium, Fri 23 Oct 20:05 local (09:05Z) — participants, venue and start agree.", "change": "Legacy nrl.com/draw/?competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2569."},
+    "rl-wc26-png-sam": {"src": "irl", "evidence": "IRL match record 2570: Papua New Guinea v Samoa, Santos National Football Stadium, Sat 24 Oct 14:25 local (04:25Z) — agree.", "change": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2570."},
+    "rl-wc26-eng-fra": {"src": "irl", "evidence": "IRL match record 2571: England v France, HBF Park Perth, Sat 24 Oct 14:35 local (06:35Z) — agree.", "change": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2571."},
+    "rl-wc26-nzl-cok": {"src": "irl", "evidence": "IRL match record 2572: New Zealand v Cook Islands, One NZ Stadium, Sun 25 Oct 18:05 local (05:05Z) — agree.", "change": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2572."},
+    "rl-wc26-aus-fij": {"src": "irl", "evidence": "IRL match record 2573: Australia v Fiji, Suncorp Stadium, Sun 25 Oct 19:05 local (09:05Z) — agree.", "change": "Legacy competition=175 link replaced with the official men's Round 2 draw page plus IRL match record 2573."},
+    "rl-wc26w-aus-eng": {"src": "irl", "evidence": "IRL match record 2588: Australia v England, HBF Park Perth, Sat 24 Oct 17:05 local (09:05Z) — agree.", "change": "Legacy competition=176 link (which resolves to the men's competition 131) replaced with the official women's Round 2 draw page plus IRL match record 2588."},
+    "rl-wc26w-sam-wal": {"src": "irl", "evidence": "IRL match record 2586: Samoa v Wales, CommBank Stadium, Fri 23 Oct 17:50 local (06:50Z). The NRL draw publishes 2:45am AEDT (06:45Z).", "change": "Legacy competition=176 link replaced with the official women's Round 2 draw. Kick-off conflict disclosed on the row: 06:45Z (NRL) vs 06:50Z (IRL); neither is inferred away."},
+})
+
 # ---------------------------------------------------------------------------
 # Why a row was not re-checked in this pass (no silent gaps)
 # ---------------------------------------------------------------------------
 NOT_RECHECKED_REASON: dict[str, str] = {
     "darts": "PDC draw release returns a cookie-consent interstitial to a non-browser fetch; re-tested on 2026-10-21 at two offsets and returned consent text only. The 16 ties could not be re-read from the publisher page.",
-    "tennis": "WTA draw pages are client-rendered and returned only the notification shell with no draw body; ATP draws behave the same way. Rankings pages were not re-read either.",
+    "tennis": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
     "euroleague": "EuroLeague / EuroCup game-centre pages are client-rendered and were not re-fetched in this pass.",
-    "volleyball": "PlusLiga and SuperLega fixture pages were not re-fetched in this pass.",
+    "volleyball": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
     "rugby-union": "Top 14, URC and Premiership pages were not re-fetched in this pass; the five Premiership rows keep their existing cross-checked status.",
     "gaelic-football": "GAA county fixture pages were not re-fetched in this pass.",
     "golf": "PGA TOUR, DP World Tour, LPGA and PGA TOUR Champions schedules were not re-fetched in this pass.",
@@ -306,7 +339,7 @@ FINDINGS: list[dict[str, str]] = [
         "severity": "medium",
         "area": "Tennis — official draws are client-rendered",
         "detail": "WTA and ATP draw pages return a notification shell without draw content to a text fetch, so pairings cannot be re-read from the tour sites.",
-        "status": "11 tennis rows marked not re-checked.",
+        "status": "11 tennis rows marked not re-checked and now flagged as reconstructed from Round-of-32 results plus byes.",
         "source": "wta",
     },
     {
@@ -331,6 +364,30 @@ FINDINGS: list[dict[str, str]] = [
         "area": "Coverage — most rows were not re-fetched in this pass",
         "detail": "Fresh official reads covered {refetched} of 134 rows (confirmed + corrected + flagged). The remaining {not_rechecked} keep their original verified or cross-checked status and their source links, but this pass did not re-read them.",
         "status": "Every one of the {not_rechecked} is listed on the Live Verification page with the reason, so the gap is visible rather than implied. No row is claimed as re-verified without a read.",
+        "source": "nhl_sched",
+    },
+    {
+        "id": "F-V11",
+        "severity": "high",
+        "area": "NHL — four input sub-values were transcription errors, not drift",
+        "detail": "A second independent read of the standings endpoint on 2026-10-21T07:20Z found Buffalo at -7 (stored +2), Philadelphia at 0-4-1 and -19 (stored 0-4-2 / -14), Ottawa at 3-1-0 at home (stored 4-1-0, impossible from four home games) and Nashville at -1 (stored 0). Each club had played exactly the number of games in its stored record, which rules out a game having been played in between.",
+        "status": "Corrected in the dataset source. Ratings derive from points percentage, which was already correct, so no rating or price moved.",
+        "source": "nhl_stand",
+    },
+    {
+        "id": "F-V12",
+        "severity": "medium",
+        "area": "Formula 1 — the United States GP start was an hour early",
+        "detail": "formula1.com gives 16:00 track time on 25 October at Circuit of The Americas. Austin is on CDT (UTC-5) on that date, so the start is 21:00 UTC; the row carried 20:00 UTC and described 16:00 as EDT. The same page shows no round number, so the 'Round 18' label was not supportable.",
+        "status": "start_utc corrected to 2026-10-25T21:00:00Z; the round number was removed.",
+        "source": "f1_usgp",
+    },
+    {
+        "id": "F-V13",
+        "severity": "medium",
+        "area": "Source integrity — two cited URLs do not resolve to the fixture list",
+        "detail": "plusliga.pl/table.html redirects to tauronliga.pl and returns a generic competition page; munster.gaa.ie/fixtures/munster-gaa-fixtures/ resolved to an April 2025 news post titled 'Munster GAA Fixtures - April 7th to 12th 2025'. Neither page evidences the 2026 fixtures it is cited for.",
+        "status": "The nine affected rows keep their published values and are listed as not re-checked with this specific blocker named. Nothing was upgraded.",
         "source": "nhl_sched",
     },
 ]

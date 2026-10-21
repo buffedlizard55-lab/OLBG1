@@ -33,17 +33,18 @@
       "inputs": {
         "home": {
           "label": "Points percentage",
-          "value": "0.556 (4-3-2, +2 GD)",
+          "value": "0.556 (4-3-2, -7 GD)",
           "rating": 55.6
         },
         "away": {
           "label": "Points percentage",
-          "value": "0.318 (2-6-3, 0-4-2 road, -14 GD)",
+          "value": "0.318 (2-6-3, 0-4-1 road, -19 GD)",
           "rating": 31.8
         }
       },
       "flags": [
-        "OLBG renders start time as 'Today 19:37' (EDT UTC-4) with no timezone label vs official NHL 23:30 UTC puck drop"
+        "OLBG renders start time as 'Today 19:37' (EDT UTC-4) with no timezone label vs official NHL 23:30 UTC puck drop",
+        "Inputs re-checked independently on 2026-10-21T07:20Z against api-web.nhle.com/v1/standings/2026-10-20: Buffalo goal differential is -7 (was +2) and Philadelphia's road line is 0-4-1 with a -19 differential (was 0-4-2 / -14). Both clubs had played the same number of games as the stored record, so these were transcription errors, not snapshot drift. Ratings derive from points percentage, which was already correct, so no price moved."
       ],
       "olbg": {
         "listed": true,
@@ -84,7 +85,7 @@
       "inputs": {
         "home": {
           "label": "Points percentage",
-          "value": "0.667 (6-3-0, 4-1-0 home)",
+          "value": "0.667 (6-3-0, 3-1-0 home)",
           "rating": 66.7
         },
         "away": {
@@ -94,7 +95,8 @@
         }
       },
       "flags": [
-        "Starting goaltenders unconfirmed pre-skate; OLBG shows unlabelled EDT timestamp 'Today 19:37'"
+        "Starting goaltenders unconfirmed pre-skate; OLBG shows unlabelled EDT timestamp 'Today 19:37'",
+        "Home split corrected independently on 2026-10-21T07:20Z: Ottawa had played 4 home games at 3-1-0, so the stored 4-1-0 was arithmetically impossible. Rating and price unchanged."
       ],
       "olbg": {
         "listed": true,
@@ -140,12 +142,13 @@
         },
         "away": {
           "label": "Points percentage",
-          "value": "0.563 (3-2-3, 0 GD)",
+          "value": "0.563 (3-2-3, -1 GD)",
           "rating": 56.3
         }
       },
       "flags": [
-        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved."
+        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved.",
+        "Nashville's goal differential was also corrected from 0 to -1 in the same independent re-read; points percentage and rating are unaffected."
       ]
     },
     {
@@ -1109,7 +1112,8 @@
         }
       },
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ]
     },
     {
@@ -1148,7 +1152,8 @@
         }
       },
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -1195,7 +1200,8 @@
         }
       },
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -1242,7 +1248,8 @@
         }
       },
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -1291,7 +1298,8 @@
         }
       },
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -1340,7 +1348,8 @@
         }
       },
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -1377,7 +1386,8 @@
       "inputs": {},
       "flags": [
         "Exact live weekly WTA rankings for both players not captured in same snapshot; priced neutral rather than inferred",
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -1420,7 +1430,8 @@
       },
       "flags": [
         "Opponent weekly rank not captured verbatim; model refuses one-sided rating",
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -1459,7 +1470,8 @@
       ],
       "inputs": {},
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -1498,7 +1510,8 @@
       ],
       "inputs": {},
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -1534,7 +1547,8 @@
       ],
       "inputs": {},
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -3523,8 +3537,12 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+          "name": "NRL official RLWC26 men's Round 2 draw",
+          "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+        },
+        {
+          "name": "IRL official match record",
+          "url": "https://www.intrl.sport/match-details/2573"
         }
       ],
       "inputs": {
@@ -3540,7 +3558,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: Suncorp Stadium, Brisbane, Sun 25 Oct 19:05 local (09:05Z)."
       ]
     },
     {
@@ -3556,8 +3575,12 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+          "name": "NRL official RLWC26 men's Round 2 draw",
+          "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+        },
+        {
+          "name": "IRL official match record",
+          "url": "https://www.intrl.sport/match-details/2572"
         }
       ],
       "inputs": {
@@ -3573,7 +3596,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: One NZ Stadium, Christchurch, Sun 25 Oct 18:05 local (05:05Z)."
       ]
     },
     {
@@ -3589,8 +3613,12 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+          "name": "NRL official RLWC26 men's Round 2 draw",
+          "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+        },
+        {
+          "name": "IRL official match record",
+          "url": "https://www.intrl.sport/match-details/2571"
         }
       ],
       "inputs": {
@@ -3606,7 +3634,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: HBF Park, Perth, Sat 24 Oct 14:35 local (06:35Z)."
       ]
     },
     {
@@ -3622,8 +3651,12 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+          "name": "NRL official RLWC26 men's Round 2 draw",
+          "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+        },
+        {
+          "name": "IRL official match record",
+          "url": "https://www.intrl.sport/match-details/2570"
         }
       ],
       "inputs": {
@@ -3639,7 +3672,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: Santos National Football Stadium, Port Moresby, Sat 24 Oct 14:25 local (04:25Z)."
       ]
     },
     {
@@ -3655,8 +3689,12 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+          "name": "NRL official RLWC26 men's Round 2 draw",
+          "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+        },
+        {
+          "name": "IRL official match record",
+          "url": "https://www.intrl.sport/match-details/2569"
         }
       ],
       "inputs": {
@@ -3672,7 +3710,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: CommBank Stadium, Sydney, Fri 23 Oct 20:05 local (09:05Z)."
       ]
     },
     {
@@ -3688,8 +3727,12 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NRL / RLWC26 Women's official draw",
-          "url": "https://www.nrl.com/draw/?competition=176&round=2&season=2026"
+          "name": "NRL official RLWC26 women's Round 2 draw",
+          "url": "https://www.nrl.com/draw/womens-rugby-league-world-cup/2026/round-2/"
+        },
+        {
+          "name": "IRL official match record",
+          "url": "https://www.intrl.sport/match-details/2588"
         }
       ],
       "inputs": {
@@ -3705,7 +3748,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: HBF Park, Perth, Sat 24 Oct 17:05 local (09:05Z)."
       ]
     },
     {
@@ -3721,8 +3765,12 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NRL / RLWC26 Women's official draw",
-          "url": "https://www.nrl.com/draw/?competition=176&round=2&season=2026"
+          "name": "NRL official RLWC26 women's Round 2 draw",
+          "url": "https://www.nrl.com/draw/womens-rugby-league-world-cup/2026/round-2/"
+        },
+        {
+          "name": "IRL official match record",
+          "url": "https://www.intrl.sport/match-details/2586"
         }
       ],
       "inputs": {
@@ -3738,7 +3786,9 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "Kick-off conflict: the NRL draw lists 2:45am AEDT (06:45Z) while the IRL match record lists 17:50 local (06:50Z). Both values are published; the five-minute difference is not resolved by inference.",
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: CommBank Stadium, Sydney, Fri 23 Oct 17:50 local (06:50Z)."
       ]
     },
     {
@@ -4986,8 +5036,8 @@
       "id": "f1-usgp-2026",
       "sport": "motor-racing",
       "competition": "FIA Formula One World Championship",
-      "stage": "Round 18 - United States Grand Prix (56 laps)",
-      "start_utc": "2026-10-25T20:00:00Z",
+      "stage": "United States Grand Prix (56 laps)",
+      "start_utc": "2026-10-25T21:00:00Z",
       "date_local": "2026-10-25",
       "home": "United States Grand Prix",
       "away": "",
@@ -5012,7 +5062,9 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [
-        "20-car Grand Prix field market (not a two-sided fixture); race start verified at 20:00 UTC (OLBG displays 16:00 EDT)"
+        "20-car Grand Prix field market (not a two-sided fixture)",
+        "Race start re-verified independently on 2026-10-21T07:25Z at formula1.com/en/racing/2026/united-states: 25 October, 56 laps, Circuit of The Americas, 16:00 track time. Austin is on CDT (UTC-5) on that date, so the start is 21:00 UTC; the earlier 20:00 UTC value and 'EDT' label were wrong by an hour.",
+        "Round number removed: the linked official race page does not display one."
       ]
     },
     {
@@ -5280,17 +5332,18 @@
       "inputs": {
         "home": {
           "label": "Points percentage",
-          "value": "0.556 (4-3-2, +2 GD)",
+          "value": "0.556 (4-3-2, -7 GD)",
           "rating": 55.6
         },
         "away": {
           "label": "Points percentage",
-          "value": "0.318 (2-6-3, 0-4-2 road, -14 GD)",
+          "value": "0.318 (2-6-3, 0-4-1 road, -19 GD)",
           "rating": 31.8
         }
       },
       "flags": [
-        "OLBG renders start time as 'Today 19:37' (EDT UTC-4) with no timezone label vs official NHL 23:30 UTC puck drop"
+        "OLBG renders start time as 'Today 19:37' (EDT UTC-4) with no timezone label vs official NHL 23:30 UTC puck drop",
+        "Inputs re-checked independently on 2026-10-21T07:20Z against api-web.nhle.com/v1/standings/2026-10-20: Buffalo goal differential is -7 (was +2) and Philadelphia's road line is 0-4-1 with a -19 differential (was 0-4-2 / -14). Both clubs had played the same number of games as the stored record, so these were transcription errors, not snapshot drift. Ratings derive from points percentage, which was already correct, so no price moved."
       ],
       "olbg": {
         "listed": true,
@@ -5331,7 +5384,7 @@
       "inputs": {
         "home": {
           "label": "Points percentage",
-          "value": "0.667 (6-3-0, 4-1-0 home)",
+          "value": "0.667 (6-3-0, 3-1-0 home)",
           "rating": 66.7
         },
         "away": {
@@ -5341,7 +5394,8 @@
         }
       },
       "flags": [
-        "Starting goaltenders unconfirmed pre-skate; OLBG shows unlabelled EDT timestamp 'Today 19:37'"
+        "Starting goaltenders unconfirmed pre-skate; OLBG shows unlabelled EDT timestamp 'Today 19:37'",
+        "Home split corrected independently on 2026-10-21T07:20Z: Ottawa had played 4 home games at 3-1-0, so the stored 4-1-0 was arithmetically impossible. Rating and price unchanged."
       ],
       "olbg": {
         "listed": true,
@@ -5387,12 +5441,13 @@
         },
         "away": {
           "label": "Points percentage",
-          "value": "0.563 (3-2-3, 0 GD)",
+          "value": "0.563 (3-2-3, -1 GD)",
           "rating": 56.3
         }
       },
       "flags": [
-        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved."
+        "Home split corrected 2026-10-21 after a direct re-fetch of api-web.nhle.com/v1/standings/2026-10-20: Boston had played 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0); the earlier 5-1-0 entry was not reproducible. Points percentage and goal differential were unchanged, so no rating or price moved.",
+        "Nashville's goal differential was also corrected from 0 to -1 in the same independent re-read; points percentage and rating are unaffected."
       ]
     },
     {
@@ -6356,7 +6411,8 @@
         }
       },
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ]
     },
     {
@@ -6395,7 +6451,8 @@
         }
       },
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -6442,7 +6499,8 @@
         }
       },
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -6489,7 +6547,8 @@
         }
       },
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -6538,7 +6597,8 @@
         }
       },
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -6587,7 +6647,8 @@
         }
       },
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -6624,7 +6685,8 @@
       "inputs": {},
       "flags": [
         "Exact live weekly WTA rankings for both players not captured in same snapshot; priced neutral rather than inferred",
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -6667,7 +6729,8 @@
       },
       "flags": [
         "Opponent weekly rank not captured verbatim; model refuses one-sided rating",
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -6706,7 +6769,8 @@
       ],
       "inputs": {},
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -6745,7 +6809,8 @@
       ],
       "inputs": {},
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -6781,7 +6846,8 @@
       ],
       "inputs": {},
       "flags": [
-        "Court start times follow rolling tournament order of play"
+        "Court start times follow rolling tournament order of play",
+        "Pairing reconstructed, not draw-verified: Round-of-32 results plus byes point to this Round-of-16 match, but the match has not been played so no official results feed lists it and the draw widget is client-rendered. Start time follows rolling order of play and is blank."
       ],
       "olbg": {
         "listed": true,
@@ -8770,8 +8836,12 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+          "name": "NRL official RLWC26 men's Round 2 draw",
+          "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+        },
+        {
+          "name": "IRL official match record",
+          "url": "https://www.intrl.sport/match-details/2573"
         }
       ],
       "inputs": {
@@ -8787,7 +8857,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: Suncorp Stadium, Brisbane, Sun 25 Oct 19:05 local (09:05Z)."
       ]
     },
     {
@@ -8803,8 +8874,12 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+          "name": "NRL official RLWC26 men's Round 2 draw",
+          "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+        },
+        {
+          "name": "IRL official match record",
+          "url": "https://www.intrl.sport/match-details/2572"
         }
       ],
       "inputs": {
@@ -8820,7 +8895,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: One NZ Stadium, Christchurch, Sun 25 Oct 18:05 local (05:05Z)."
       ]
     },
     {
@@ -8836,8 +8912,12 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+          "name": "NRL official RLWC26 men's Round 2 draw",
+          "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+        },
+        {
+          "name": "IRL official match record",
+          "url": "https://www.intrl.sport/match-details/2571"
         }
       ],
       "inputs": {
@@ -8853,7 +8933,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: HBF Park, Perth, Sat 24 Oct 14:35 local (06:35Z)."
       ]
     },
     {
@@ -8869,8 +8950,12 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+          "name": "NRL official RLWC26 men's Round 2 draw",
+          "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+        },
+        {
+          "name": "IRL official match record",
+          "url": "https://www.intrl.sport/match-details/2570"
         }
       ],
       "inputs": {
@@ -8886,7 +8971,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: Santos National Football Stadium, Port Moresby, Sat 24 Oct 14:25 local (04:25Z)."
       ]
     },
     {
@@ -8902,8 +8988,12 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NRL / RLWC26 official Round 2 draw & match centre",
-          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+          "name": "NRL official RLWC26 men's Round 2 draw",
+          "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+        },
+        {
+          "name": "IRL official match record",
+          "url": "https://www.intrl.sport/match-details/2569"
         }
       ],
       "inputs": {
@@ -8919,7 +9009,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: CommBank Stadium, Sydney, Fri 23 Oct 20:05 local (09:05Z)."
       ]
     },
     {
@@ -8935,8 +9026,12 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NRL / RLWC26 Women's official draw",
-          "url": "https://www.nrl.com/draw/?competition=176&round=2&season=2026"
+          "name": "NRL official RLWC26 women's Round 2 draw",
+          "url": "https://www.nrl.com/draw/womens-rugby-league-world-cup/2026/round-2/"
+        },
+        {
+          "name": "IRL official match record",
+          "url": "https://www.intrl.sport/match-details/2588"
         }
       ],
       "inputs": {
@@ -8952,7 +9047,8 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: HBF Park, Perth, Sat 24 Oct 17:05 local (09:05Z)."
       ]
     },
     {
@@ -8968,8 +9064,12 @@
       "status": "verified",
       "sources": [
         {
-          "name": "NRL / RLWC26 Women's official draw",
-          "url": "https://www.nrl.com/draw/?competition=176&round=2&season=2026"
+          "name": "NRL official RLWC26 women's Round 2 draw",
+          "url": "https://www.nrl.com/draw/womens-rugby-league-world-cup/2026/round-2/"
+        },
+        {
+          "name": "IRL official match record",
+          "url": "https://www.intrl.sport/match-details/2586"
         }
       ],
       "inputs": {
@@ -8985,7 +9085,9 @@
         }
       },
       "flags": [
-        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches"
+        "Kick-off conflict: the NRL draw lists 2:45am AEDT (06:45Z) while the IRL match record lists 17:50 local (06:50Z). Both values are published; the five-minute difference is not resolved by inference.",
+        "OLBG blind spot: /betting-tips/Rugby_League/10 lists only 2027 ante-post markets and zero RLWC26 Round 2 matches",
+        "IRL match record re-read 2026-10-21T08:10Z: CommBank Stadium, Sydney, Fri 23 Oct 17:50 local (06:50Z)."
       ]
     },
     {
@@ -10233,8 +10335,8 @@
       "id": "f1-usgp-2026",
       "sport": "motor-racing",
       "competition": "FIA Formula One World Championship",
-      "stage": "Round 18 - United States Grand Prix (56 laps)",
-      "start_utc": "2026-10-25T20:00:00Z",
+      "stage": "United States Grand Prix (56 laps)",
+      "start_utc": "2026-10-25T21:00:00Z",
       "date_local": "2026-10-25",
       "home": "United States Grand Prix",
       "away": "",
@@ -10259,7 +10361,9 @@
         "captured_utc": "2026-10-21T07:05Z"
       },
       "flags": [
-        "20-car Grand Prix field market (not a two-sided fixture); race start verified at 20:00 UTC (OLBG displays 16:00 EDT)"
+        "20-car Grand Prix field market (not a two-sided fixture)",
+        "Race start re-verified independently on 2026-10-21T07:25Z at formula1.com/en/racing/2026/united-states: 25 October, 56 laps, Circuit of The Americas, 16:00 track time. Austin is on CDT (UTC-5) on that date, so the start is 21:00 UTC; the earlier 20:00 UTC value and 'EDT' label were wrong by an hour.",
+        "Round number removed: the linked official race page does not display one."
       ]
     },
     {

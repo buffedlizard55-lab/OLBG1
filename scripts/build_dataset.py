@@ -562,6 +562,40 @@ def build_flagged_registry(fixtures: list[dict]) -> dict:
                 "official_url": f["sources"][0]["url"],
             })
 
+    # --- T21 (session 4f8d032d-olbg1) second-pass verification findings -------------
+    upstream_bugs.extend([
+        {
+            "id": "F-V11-NHL-INPUTS",
+            "category": "Corrected Data (independent re-read)",
+            "severity": "high",
+            "affected": "Ice Hockey — nhl-2026020152, nhl-2026020153, nhl-2026020154",
+            "summary": "Four NHL input sub-values were transcription errors, not snapshot drift.",
+            "evidence": "Stored versus official: Buffalo goal differential +2 vs -7; Philadelphia road 0-4-2 and -14 vs 0-4-1 and -19; Ottawa home 4-1-0 vs 3-1-0 (only four home games played); Nashville 0 vs -1. Each club had played exactly the number of games in its stored record, so no game can have happened in between.",
+            "official_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
+            "resolution": "Corrected at source in scripts/dataset_rows_a.py. Ratings derive from points percentage, which was already correct, so no rating or price moved. Each row carries a dated note.",
+        },
+        {
+            "id": "F-V12-F1-START",
+            "category": "Corrected Data (independent re-read)",
+            "severity": "medium",
+            "affected": "Motor Racing — f1-usgp-2026",
+            "summary": "The United States Grand Prix start was recorded an hour early and mislabelled EDT.",
+            "evidence": "formula1.com lists 16:00 track time on 25 October at Circuit of The Americas. Austin is on CDT (UTC-5), so the start is 21:00 UTC. The page displays no round number.",
+            "official_url": "https://www.formula1.com/en/racing/2026/united-states",
+            "resolution": "start_utc corrected to 2026-10-25T21:00:00Z; the 'EDT' wording and the unverifiable 'Round 18' label removed.",
+        },
+        {
+            "id": "F-V13-SOURCE-REDIRECT",
+            "category": "Source Integrity",
+            "severity": "medium",
+            "affected": "Volleyball — five PlusLiga rows; Gaelic Football — four county finals",
+            "summary": "Two cited official URLs do not resolve to the fixture list they are supposed to evidence.",
+            "evidence": "www.plusliga.pl/table.html redirects to tauronliga.pl and returns a generic competition page; munster.gaa.ie/fixtures/munster-gaa-fixtures/ resolved to an April 2025 news post headed 'Munster GAA Fixtures - April 7th to 12th 2025'.",
+            "official_url": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/",
+            "resolution": "The nine affected rows keep their published values, are listed as not re-checked on the Live Verification page with this blocker named, and are not presented as freshly verified.",
+        },
+    ])
+
     return {
         "generated": DATE_ANCHOR,
         "summary": {
