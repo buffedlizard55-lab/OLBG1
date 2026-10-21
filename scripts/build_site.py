@@ -791,7 +791,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
   </table>
 </div>
 
-<div class="card warn">
+<div class="note warn">
   <b>Boundary.</b> The validator makes no network request; the reads recorded here were made by hand during the session and are dated. Model prices remain our own estimates and were not re-priced by this pass — snapshot drift is disclosed rather than rewritten. A publisher can change a page after it is read.
 </div>
 """
