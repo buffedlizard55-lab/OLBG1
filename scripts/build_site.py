@@ -141,6 +141,7 @@ def shell(title: str, body: str, active: str, depth: int = 0, base: str = "") ->
         ("reverse-engineering.html", "OLBG analysis", "rev"),
         ("sources.html", "Sources", "src"),
         ("flagged.html", "Flagged", "flag"),
+        ("docs/index.html", "OLBG board (164)", "board"),
     ]
     anchor = ' aria-current="page"'
     links = "".join(
@@ -232,6 +233,20 @@ on an official page it is left blank and flagged — never filled in.</p>
   priced from the sport's neutral home baseline and capped at low confidence, and every such row says so. Two of the
   eight high picks lean on the published top-36 snooker bound rather than a measured rank — both are listed on the
   Flagged page for review.
+</div>
+
+<h2>Two boards, two methods — read both</h2>
+<div class="note">
+  <b>This dashboard</b> prices {stats['matches']} fixtures that were verified line by line against a governing body
+  (MLB, NHL, NBA, WST, PDC, NZC, F1, PGA Tour). Every row cites the official page it was read from, and a pick is only
+  <b>high</b> when both sides carry a sourced strength input.
+  <br><br>
+  <b><a href="docs/index.html">The companion OLBG board</a></b> takes the opposite approach: a snapshot of 164 events
+  listed on OLBG's own sport pages, across 15 sports. Its prices are derived from OLBG's tip distribution rather than
+  from official records, so it covers far more ground but carries a weaker evidence base. It says so on every page.
+  <br><br>
+  Neither board is a superset of the other: {stats['matches']} verified fixtures here, 164 OLBG-listed events there.
+  Where the same match appears on both, the price here is the one built from official data.
 </div>
 
 <h2>Highest-conviction card</h2>

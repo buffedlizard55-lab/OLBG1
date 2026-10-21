@@ -83,6 +83,8 @@ def check_links():
             except ValueError:
                 errors.append(f"{rel}: link escapes site root -> {href}")
                 continue
+            if rel_resolved.startswith("docs/") and (DOCS / rel_resolved).is_file():
+                continue  # companion board is a separate static tree
             if rel_resolved not in known:
                 errors.append(f"{rel}: broken internal link -> {href}")
             else:

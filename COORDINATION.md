@@ -317,3 +317,25 @@ as estimates, never as bookmaker quotes.
 * Merge result: merged into `main` (merge commit `f15b790`), subsequently included in `main` HEAD `4ee2564` (PR #7 merge).
 * GitHub Pages: source `main` → `/`; `status=built`, `error=null`, `https_enforced=true`; live URL https://buffedlizard55-lab.github.io/OLBG1/ (root dashboard served by the integrated `ce5920e3` build, link-integrity validated with 0 errors).
 * Flagged items: logged on the site's `flagged.html`; none block the merge.
+
+---
+
+## 8. Cross-links between the two published boards (session `ce5920e3`, final pass)
+
+Both dashboards were live but unreachable from one another. This pass makes the combined
+deliverable read as one product rather than two orphan sites:
+
+1. The root dashboard's nav gains **“OLBG board (164)”**, a relative link to `docs/index.html`
+   (the builder's `../` prefix keeps it correct from `sports/` too).
+2. The root index gains a **“Two boards, two methods — read both”** panel stating which board
+   rests on governing-body sources and which on OLBG tip distributions, and that neither is a
+   superset of the other.
+3. `docs/index.html` gains a banner back to `../index.html` repeating the provenance caveat, so a
+   reader who lands on the companion board first is not misled about where the prices come from.
+
+**Validator change.** `scripts/validate.py` previously reported `docs/index.html` as a broken
+internal link because the companion tree sat outside its known-file set. It now accepts a link that
+resolves to a real file under `docs/`, while still rejecting links that escape the site root.
+
+**Gate result.** `python3 scripts/validate.py` → 26 pages, 0 errors, 0 warnings. A separate sweep of
+all 46 HTML files across both trees for relative `href`/`src` targets found **0 broken references**.
