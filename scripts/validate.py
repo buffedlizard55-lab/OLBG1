@@ -154,6 +154,12 @@ def check_data():
         words = len(it["text"].split())
         if words < 30:
             errors.append(f"{mid}: prediction is {words} words, minimum is 30")
+        stage = next((x.get("stage", "") for x in json.loads((ROOT / "data/fixtures.json").read_text())["matches"]
+                      if x["id"] == mid), "")
+        game_no = re.search(r"Game (\d+)", stage)
+        if game_no and "Game" in it["text"]:
+            if f"Game {game_no.group(1)}" not in it["text"]:
+                errors.append(f"{mid}: prediction mentions a Game number that does not match the fixture stage '{stage}'")
         if it["selection"].lower() not in it["text"].lower():
             warnings.append(f"{mid}: selection name not spelled out verbatim in the text")
         if not it.get("sources"):
