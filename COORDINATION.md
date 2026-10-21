@@ -82,7 +82,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T14 | Publish audit findings as a standalone GitHub Pages review subpage | done | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.html`, append-only `COORDINATION.md` | 2026-10-21T06:56Z | Standalone additive page; PR #20 merged and Pages deploy verified. |
 | T15 | Independent second-pass market-coverage and whole-tree source-link structural audit | done | e92c2bf4-olbg1 | `reports/SESSION_E92_SNAPSHOT_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:41Z | Completed after T13; records eight unpriced field cards, one missing cricket total, snapshot window, and validator evidence limits; does not edit shared data/pages. |
 | T16 | Corrective primary-desk provenance, status disclosure, integration and Pages publication | done | 4904ed05-olbg1 | `COORDINATION.md`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/flagged_for_review.json`, `scripts/validate.py`, root `*.html`, `sports/*.html`, `assets/*`, `README.md` | 2026-10-21T06:41Z | PR #24 merged; Pages workflow 39558245786 completed successfully. Remediated F1–F3 without changing independent review artifacts. |
-| T17 | **Fresh live re-verification of every primary-desk row against official sources** (first pass in this repo to re-fetch official pages rather than audit structure), publication of a Live Verification page, corrections where fresh data disagrees, PR + merge + Pages deploy check | in progress | 72198d3e-olbg1 | `scripts/verify_live.py`, `reports/LIVE_VERIFICATION.md`, `live-verification.html`, `data/verification.json`, `data/fixtures.json` (corrections only), `data/predictions.json` (corrections only), `COORDINATION.md` (append-only) | 2026-10-21T07:05Z | Claimed 2026-10-21T07:05Z. Independent of T13/T15/T16 which were structural audits; this task re-fetches each row's official source. Shared nav/`index.html` touched only at final integration. |
+| T17 | **Fresh live re-verification of every primary-desk row against official sources** (first pass in this repo to re-fetch official pages rather than audit structure), publication of a Live Verification page, corrections where fresh data disagrees, PR + merge + Pages deploy check | done | 72198d3e-olbg1 | `scripts/verify_live.py`, `reports/LIVE_VERIFICATION.md`, `live-verification.html`, `data/verification.json`, `data/fixtures.json` (corrections only), `data/predictions.json` (corrections only), `COORDINATION.md` (append-only) | 2026-10-21T07:05Z | Claimed 2026-10-21T07:05Z. Independent of T13/T15/T16 which were structural audits; this task re-fetches each row's official source. Shared nav/`index.html` touched only at final integration. |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
@@ -667,3 +667,71 @@ The rebased implementation commit is `674eb1c` (`fix: remediate audit provenance
 * **Pages verification:** GitHub Pages deployment workflow [`39558245786`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39558245786) completed successfully for that merge commit. The Pages API reports `status=built`, HTTPS enforced, source `main:/`, and public URL https://buffedlizard55-lab.github.io/OLBG1/.
 * **Delivered correction:** 31 distinct 48–61-word source-bounded High predictions; dashboard/mirror/README status wording split to 129 Verified plus 5 Cross-checked; F1–F3 remediation and source-freshness boundary published on Flagged for Review and linked in the source register.
 * **Final pre-merge gates:** `python3 scripts/validate.py` (131 HTML pages, 0 errors/warnings), `python3 scripts/ebfbd966_validate.py` (passed), `python3 scripts/final_audit.py`, `py_compile`, `git diff --check`, deterministic rebuild comparison, root/mirror data parity, and zero repeated normalized six-grams across High prose. No source page was freshly fetched in this corrective pass; that limitation remains visible to reviewers.
+
+
+## 16. Session `72198d3e-olbg1` — T17 fresh official-source re-verification
+
+**What this pass did that the others did not.** Sessions T13, T15 and T16 each audited the
+dataset's *structure* and recorded that limitation in so many words ("did not freshly fetch every
+official source page", "no source-page re-fetch in this pass"). T17 re-opened the governing-body
+pages themselves, row by row, and published the outcome per row.
+
+**Deliverables (all additive; no other session's files rewritten).**
+
+| Output | Where |
+|---|---|
+| Machine-readable per-row register (134 rows, one status each) | `data/verification.json` ← `python3 scripts/live_verification.py` |
+| Narrative report with every evidence string and source link | `reports/LIVE_VERIFICATION.md` |
+| Site page (root + `/f7fa77fc/` mirror, new nav item) | `live-verification.html` |
+| Row-level corrections at the dataset source | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py` |
+| Ten new findings surfaced on the existing Flagged page | `scripts/build_dataset.py` → `datasets/flagged_for_review.json` (`LIVE-F-V1`…`LIVE-F-V10`) |
+| Re-authored High-pick prose | `scripts/high_predictions.py` |
+
+**Result:** 51 confirmed, 9 corrected, 2 flagged, 72 explicitly not re-checked. Official pages were
+re-fetched for 62 of 134 rows; the other 72 keep their prior status and carry a named blocker, so
+the gap is visible instead of implied.
+
+**Corrections applied (each from a re-fetched official page, none inferred):**
+
+1. **F-V1 Snooker links** — `snk-holt-brown`, `snk-gao-gilbert`, `snk-noppon-donaldson` cited WST
+   match-centre UUIDs that re-fetch as an unbound template with no players attached;
+   `snk-brecel-odonnell` and `snk-slessor-jones` carried no match centre although WST publishes
+   one. All five replaced/added with the bindings on `https://www.wst.tv/`.
+2. **F-V2 Tennis citation** — six WTA Ningbo rows cited tournament 1115; WTA's own notification
+   panel links the draws at 2092. Citation corrected.
+3. **F-V3 Cricket** — `scoring.nzc.nz/fixtures` places the 3rd Women's T20I at North Sydney Oval,
+   NZ A v India A on 23 Oct at Bert Sutcliffe Oval (Lincoln University), and Central Stags v
+   Northern Districts at Saxton Oval, Nelson. Three rows corrected.
+4. **F-V4 Boston home split** — `api-web.nhle.com/v1/standings/2026-10-20` returns 7-2-1 with four
+   home games at 3-1-0; the row said 5-1-0. Home games cannot decrease, so this was an error, not
+   drift. Descriptive split corrected; rating 75.0 and all prices unchanged.
+5. **F-V9 NRL competition id** — `nrl.com/draw/?competition=175…` is served as competition 131 for
+   the same Round 2 draw. Men's citation corrected; the women's id 176 was not re-tested and those
+   two rows stay `not_rechecked`.
+
+**Flagged, deliberately not changed.**
+
+* **F-V5 NHL drift** — Vegas priced at 8-2-0 (.800, W3); the live endpoint now returns 8-3-0
+  (.727, L1). The line is a labelled pre-game snapshot. Re-pricing a published pick after the fact
+  would be worse than disclosing it, so both values are printed on the row.
+* **F-V6 PDC cookie wall** — two fetches of the official draw release returned consent text only.
+  16 darts rows are `not_rechecked`.
+* **F-V7 WTA/ATP client-side draws** — 11 tennis rows are `not_rechecked`.
+* **F-V8 WST clock** — WST publishes no UTC; the fetch client renders publisher clocks at UTC-4
+  (all five RLWC kick-offs on nrl.com map exactly under that offset), so the scraped 05:00/08:00/
+  09:00/14:00/15:00 displays are a rendering, not a session time. `start_utc` stays blank.
+* **F-V10 coverage** — 72 rows were not re-read in this pass and are listed individually.
+
+**Verification performed.** Live reads of: NHL schedule + standings APIs; MLB StatsAPI schedule +
+AL/NL standings; nba.com/games?date=2026-10-21; wst.tv live listing and one match-centre page;
+EHF Champions League 2026/27 standings/calendar; nrl.com RLWC Round 2 draw; scoring.nzc.nz
+fixtures; afl.com.au/aflw Round 11 board; wta.com Ningbo draws (shell only) and pdc.tv draw release
+(consent wall). Full URLs are in `data/verification.json` and on the page.
+
+**Gates run after the rebuild:** `scripts/build_dataset.py` → `scripts/origin_lines.py` →
+`scripts/live_verification.py` → `scripts/build_site.py` → `scripts/validate.py` (133 HTML pages,
+0 errors, 0 warnings); `scripts/final_audit.py`; `scripts/ebfbd966_validate.py` (passed). High-pick
+confidence distribution unchanged at 31 High / 35 Medium / 60 Low, so no pick moved as a result of
+the corrections.
+
+**Publish record:** see §16.1 below (appended after the merge, as required).
