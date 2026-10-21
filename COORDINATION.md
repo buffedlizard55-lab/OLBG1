@@ -79,6 +79,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T11 | Unique ≥30-word human predictions with real verified form & match history for every high-confidence selection | queued | f7fa77fc-olbg1 | `data/predictions.json`, `datasets/matches_full.json` | — | Strict official-source verification on every claim |
 | T12 | Upgraded dashboard UI + Markets Explorer + Repo Audit & Flagged-for-Review pages + full validator gate + PR & merge to `main` + live GitHub Pages check | queued | f7fa77fc-olbg1 | `index.html`, `*.html`, `sports/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/validate.py`, `COORDINATION.md` | — | Final integration session handoff after `ce5920e3-olbg1` completed |
 | T13 | Post-integration reproducibility, count-consistency and provenance-shape audit (no live source re-certification) | done | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:45Z | Structural checks passed; F1–F3 and scope limits documented in report and §12. |
+| T14 | Publish audit findings as a standalone GitHub Pages review subpage | in progress | 8e12b936-olbg1 | `reports/POST_INTEGRATION_AUDIT.html`, append-only `COORDINATION.md` | 2026-10-21T06:56Z | Separate additive page; does not edit integration-owned shared navigation or datasets. |
 
 > **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
 > rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
