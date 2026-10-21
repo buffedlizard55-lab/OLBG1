@@ -339,3 +339,22 @@ resolves to a real file under `docs/`, while still rejecting links that escape t
 
 **Gate result.** `python3 scripts/validate.py` → 26 pages, 0 errors, 0 warnings. A separate sweep of
 all 46 HTML files across both trees for relative `href`/`src` targets found **0 broken references**.
+
+### 8.1 Venue verification (closing the last open honesty item)
+
+The Rays' home venue was previously carried as an **unverified** string because the earlier statsapi
+call used a `fields=` filter, which silently drops `venue` — a documented trap. Re-queried without
+the filter:
+
+`GET /api/v1/schedule?sportId=1&startDate=2026-10-26&endDate=2026-10-28&hydrate=venue(location)`
+
+→ `venue: {id: 12, name: "Tropicana Field", active: true, season: "2026"}`,
+address *One Tropicana Drive, St. Petersburg, Florida 33705*. The venue string is therefore
+**verified**, not inferred, and is no longer flagged.
+
+The same response confirms Game 5 on 28 October carries `ifNecessary: "Y"`, which is why the
+conditional games were excluded from the priced set.
+
+**Copy correction made at the same time.** Two rating inputs read `"55-26 at Tropicana Field (.679)"`.
+The standings publish a *home* record, not a venue-specific one, so attributing the split to the
+ballpark was an inference. Both now read `"55-26 at home (.679)"`.
