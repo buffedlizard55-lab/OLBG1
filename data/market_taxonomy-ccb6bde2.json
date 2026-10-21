@@ -1,0 +1,833 @@
+{
+  "generated": "2026-10-21",
+  "session": "ccb6bde2-olbg1",
+  "principle": "A market is originated only if its probabilities are exact mathematical consequences of sourced inputs already in the verified dataset (ratings, margin/total sigmas, race formats). Everything else is listed as investigated-not-priced with the missing official input named \u2014 never filled with an invented rate.",
+  "sports": [
+    {
+      "sport": "tennis",
+      "olbg_markets_observed": [
+        "Win Match",
+        "Set Betting",
+        "Games Won (Game Handicap)",
+        "Total Games",
+        "1st Set Winner",
+        "Tournament Winner"
+      ],
+      "catalog_claimed_originated": [
+        "Win Match (Moneyline)",
+        "Game Handicap (Games Won)",
+        "Total Games (Over/Under)",
+        "Set Betting & 1st Set Winner"
+      ],
+      "v20_actually_priced": [
+        "Match Winner",
+        "Draw No Bet (draw sports)",
+        "Handicap (single line)",
+        "Match Total (single line + 1 alt)"
+      ],
+      "expansion_priced_here": [
+        {
+          "family": "1st Set Winner",
+          "derivation": "per-set q"
+        },
+        {
+          "family": "Alternate Handicap Ladder",
+          "derivation": "normal margin at five lines"
+        },
+        {
+          "family": "Both Players Win a Set",
+          "derivation": "set-count distribution"
+        },
+        {
+          "family": "Set Betting (Correct Set Score)",
+          "derivation": "per-set q inverted from match price"
+        },
+        {
+          "family": "Total Sets O/U",
+          "derivation": "set-count distribution"
+        },
+        {
+          "family": "Total Units Ladder",
+          "derivation": "race/blended units distribution"
+        }
+      ],
+      "expanded_markets_originated": 143,
+      "investigated_not_priced": [
+        {
+          "market": "Tiebreak in Match / in 1st Set",
+          "missing_official_input": "needs official per-player hold/break serve percentages (ATP/WTA stats)"
+        },
+        {
+          "market": "Total Aces / Double Faults",
+          "missing_official_input": "needs official per-player ace rates per service game"
+        },
+        {
+          "market": "Player to Win 1st Set & Match combos beyond 1st-set price",
+          "missing_official_input": "needs set-to-set correlation; independence assumption would misprice combos silently"
+        }
+      ]
+    },
+    {
+      "sport": "basketball",
+      "olbg_markets_observed": [
+        "Money Line",
+        "Pointspread",
+        "Game Totals",
+        "Win Tournament (Ante-Post)"
+      ],
+      "catalog_claimed_originated": [
+        "Moneyline (Win Match)",
+        "Point Spread (Handicap)",
+        "Game Total (Over/Under)",
+        "1st Half Spread & Total"
+      ],
+      "v20_actually_priced": [
+        "Match Winner",
+        "Draw No Bet (draw sports)",
+        "Handicap (single line)",
+        "Match Total (single line + 1 alt)"
+      ],
+      "expansion_priced_here": [
+        {
+          "family": "1st Half Total",
+          "derivation": "A5 half split of total"
+        },
+        {
+          "family": "1st Half Winner",
+          "derivation": "A5 half split of margin"
+        },
+        {
+          "family": "Alternate Handicap Ladder",
+          "derivation": "normal margin at five lines"
+        },
+        {
+          "family": "Alternate Totals Ladder",
+          "derivation": "normal total at five lines"
+        },
+        {
+          "family": "Team Totals",
+          "derivation": "A1 score decomposition"
+        },
+        {
+          "family": "Winning Margin Bands",
+          "derivation": "normal margin band integrals"
+        }
+      ],
+      "expanded_markets_originated": 255,
+      "investigated_not_priced": [
+        {
+          "market": "Player Points/Rebounds/Assists props",
+          "missing_official_input": "needs official per-player season stats and minutes projections"
+        },
+        {
+          "market": "Race to 20/50 Points",
+          "missing_official_input": "needs possession-level pace interaction between the two offences; margin/total split (A1) is too coarse and would be silently wrong"
+        }
+      ]
+    },
+    {
+      "sport": "ice-hockey",
+      "olbg_markets_observed": [
+        "Money Line (Incl. OT/SO)",
+        "Puck Line (+/-1.5)",
+        "Game Totals (Over/Under 5.5 / 6.0)"
+      ],
+      "catalog_claimed_originated": [
+        "Money Line (2-Way Incl. OT/SO)",
+        "Puck Line (+/-1.5 Goals)",
+        "Game Total Goals (Over/Under)",
+        "60-Minute Regulation Win"
+      ],
+      "v20_actually_priced": [
+        "Match Winner",
+        "Draw No Bet (draw sports)",
+        "Handicap (single line)",
+        "Match Total (single line + 1 alt)"
+      ],
+      "expansion_priced_here": [
+        {
+          "family": "60-Minute Regulation Result",
+          "derivation": "continuity-corrected margin"
+        },
+        {
+          "family": "Alternate Handicap Ladder",
+          "derivation": "normal margin at five lines"
+        },
+        {
+          "family": "Alternate Totals Ladder",
+          "derivation": "normal total at five lines"
+        },
+        {
+          "family": "Game to Overtime Y/N",
+          "derivation": "regulation draw probability"
+        },
+        {
+          "family": "Team Totals",
+          "derivation": "A1 score decomposition"
+        },
+        {
+          "family": "Winning Margin Bands",
+          "derivation": "normal margin band integrals"
+        }
+      ],
+      "expanded_markets_originated": 90,
+      "investigated_not_priced": [
+        {
+          "market": "Player Shots/Points props",
+          "missing_official_input": "needs official per-player stats (NHL API has them; not harvested into this dataset)"
+        },
+        {
+          "market": "Correct Score (exact goals)",
+          "missing_official_input": "needs a discrete (Poisson) goals model; the dataset carries only a continuous margin sigma"
+        }
+      ]
+    },
+    {
+      "sport": "baseball",
+      "olbg_markets_observed": [
+        "Money Line",
+        "Run Line (+/-1.5)",
+        "Game Totals (Over/Under Runs)",
+        "Ante-Post World Series"
+      ],
+      "catalog_claimed_originated": [
+        "Money Line",
+        "Run Line (+/-1.5 Runs)",
+        "Game Total Runs (Over/Under)",
+        "First 5 Innings (F5) Line"
+      ],
+      "v20_actually_priced": [
+        "Match Winner",
+        "Draw No Bet (draw sports)",
+        "Handicap (single line)",
+        "Match Total (single line + 1 alt)"
+      ],
+      "expansion_priced_here": [
+        {
+          "family": "Alternate Handicap Ladder",
+          "derivation": "normal margin at five lines"
+        },
+        {
+          "family": "Alternate Totals Ladder",
+          "derivation": "normal total at five lines"
+        },
+        {
+          "family": "First 5 Innings Total",
+          "derivation": "A5 time-scaling of total"
+        },
+        {
+          "family": "First 5 Innings Winner",
+          "derivation": "A5 time-scaling of margin"
+        },
+        {
+          "family": "Team Totals",
+          "derivation": "A1 score decomposition"
+        },
+        {
+          "family": "Winning Margin Bands",
+          "derivation": "normal margin band integrals"
+        }
+      ],
+      "expanded_markets_originated": 60,
+      "investigated_not_priced": [
+        {
+          "market": "Player props (hits, total bases, pitcher strikeouts)",
+          "missing_official_input": "needs confirmed probable starters and lineups (fixture itself flags starters unconfirmed) plus per-player stats"
+        },
+        {
+          "market": "Inning-by-inning lines beyond F5",
+          "missing_official_input": "needs bullpen/lineup-turnover sequencing inputs"
+        }
+      ]
+    },
+    {
+      "sport": "cricket",
+      "olbg_markets_observed": [
+        "Win Match",
+        "Innings Runs / Match Totals",
+        "Top Batter / Top Bowler",
+        "Outright Winner"
+      ],
+      "catalog_claimed_originated": [
+        "Win Match",
+        "Runs / Wickets Handicap",
+        "1st Innings Score Total (Over/Under)",
+        "Outright Tournament Winner"
+      ],
+      "v20_actually_priced": [
+        "Match Winner",
+        "Draw No Bet (draw sports)",
+        "Handicap (single line)",
+        "Match Total (single line + 1 alt)"
+      ],
+      "expansion_priced_here": [
+        {
+          "family": "1st Innings Total Runs",
+          "derivation": "innings split of match total"
+        },
+        {
+          "family": "Alternate Handicap Ladder",
+          "derivation": "normal margin at five lines"
+        },
+        {
+          "family": "Alternate Totals Ladder",
+          "derivation": "normal total at five lines"
+        },
+        {
+          "family": "Team Totals",
+          "derivation": "A1 score decomposition"
+        },
+        {
+          "family": "Winning Margin Bands",
+          "derivation": "normal margin band integrals"
+        }
+      ],
+      "expanded_markets_originated": 104,
+      "investigated_not_priced": [
+        {
+          "market": "Top Team Batter / Top Bowler",
+          "missing_official_input": "needs official playing XIs and player-level batting/bowling records (ICC player rankings exist but XIs are announced at the toss)"
+        },
+        {
+          "market": "Method of First Dismissal / Fall of Next Wicket",
+          "missing_official_input": "needs ball-by-ball dismissal distributions"
+        },
+        {
+          "market": "Win by Wickets margin",
+          "missing_official_input": "the originated margin is in runs; a wickets margin needs a separate chase model with wickets-in-hand distributions"
+        },
+        {
+          "market": "Player Performance Points",
+          "missing_official_input": "needs player-level inputs as above"
+        }
+      ]
+    },
+    {
+      "sport": "snooker",
+      "olbg_markets_observed": [
+        "Win Match",
+        "Handicap Betting (Frames)",
+        "Frame Betting (Correct Score)",
+        "Total Frames",
+        "Win Tournament"
+      ],
+      "catalog_claimed_originated": [
+        "Win Match",
+        "Frame Handicap (+/-1.5 Frames)",
+        "Total Frames (Over/Under 5.5)",
+        "Highest Break / Century Angle"
+      ],
+      "v20_actually_priced": [
+        "Match Winner",
+        "Draw No Bet (draw sports)",
+        "Handicap (single line)",
+        "Match Total (single line + 1 alt)"
+      ],
+      "expansion_priced_here": [
+        {
+          "family": "Correct Score",
+          "derivation": "exact race-to-N scoreline distribution"
+        },
+        {
+          "family": "Total Units Ladder",
+          "derivation": "race/blended units distribution"
+        },
+        {
+          "family": "Unit Handicap Ladder",
+          "derivation": "exact scoreline distribution"
+        }
+      ],
+      "expanded_markets_originated": 88,
+      "investigated_not_priced": [
+        {
+          "market": "Total Centuries / 50+ Breaks",
+          "missing_official_input": "needs official per-player break-building rates (WST publishes season centuries lists, not per-frame rates)"
+        },
+        {
+          "market": "Highest Break (player/match)",
+          "missing_official_input": "needs per-player break distribution, not in dataset"
+        },
+        {
+          "market": "First Frame Winner",
+          "missing_official_input": "derivable as per-frame q but snooker frames are not i.i.d. around the break-off; priced deliberately conservatively as NOT originated \u2014 the race approximation is weakest for single-frame markets"
+        }
+      ]
+    },
+    {
+      "sport": "darts",
+      "olbg_markets_observed": [
+        "Win Match 2-way",
+        "Handicap 2-way (Legs/Sets)",
+        "Total Legs (Over/Under)",
+        "Win Tournament (Each-Way 1/2 1-2)"
+      ],
+      "catalog_claimed_originated": [
+        "Win Match 2-Way",
+        "Leg Handicap",
+        "Total Legs (Over/Under)",
+        "Most 180s / Outright Win & Each-Way"
+      ],
+      "v20_actually_priced": [
+        "Match Winner",
+        "Draw No Bet (draw sports)",
+        "Handicap (single line)",
+        "Match Total (single line + 1 alt)"
+      ],
+      "expansion_priced_here": [
+        {
+          "family": "Correct Score",
+          "derivation": "exact race-to-N scoreline distribution"
+        },
+        {
+          "family": "Total Units Ladder",
+          "derivation": "race/blended units distribution"
+        },
+        {
+          "family": "Unit Handicap Ladder",
+          "derivation": "exact scoreline distribution"
+        }
+      ],
+      "expanded_markets_originated": 160,
+      "investigated_not_priced": [
+        {
+          "market": "Total 180s / Most 180s / Player 180s",
+          "missing_official_input": "needs official per-player 180-per-leg rates (PDC does not publish a free per-match 180s feed)"
+        },
+        {
+          "market": "Highest Checkout / Checkout markets",
+          "missing_official_input": "needs official per-player checkout-percentage and out-shot distributions"
+        },
+        {
+          "market": "King of the Oche / Match trebles",
+          "missing_official_input": "compound of 180s + checkout + winner; blocked by the two gaps above"
+        }
+      ]
+    },
+    {
+      "sport": "rugby-union",
+      "olbg_markets_observed": [
+        "To Win (3-Way 80m)",
+        "Handicap (2-Way/3-Way)",
+        "Total Points",
+        "Win Tournament (Ante-Post)"
+      ],
+      "catalog_claimed_originated": [
+        "Match Result (80m Win / Draw)",
+        "Points Handicap",
+        "Total Points (Over/Under)",
+        "Winning Margin Band"
+      ],
+      "v20_actually_priced": [
+        "Match Winner",
+        "Draw No Bet (draw sports)",
+        "Handicap (single line)",
+        "Match Total (single line + 1 alt)"
+      ],
+      "expansion_priced_here": [
+        {
+          "family": "1st Half Total",
+          "derivation": "A5 half split of total"
+        },
+        {
+          "family": "1st Half Winner",
+          "derivation": "A5 half split of margin"
+        },
+        {
+          "family": "Alternate Handicap Ladder",
+          "derivation": "normal margin at five lines"
+        },
+        {
+          "family": "Alternate Totals Ladder",
+          "derivation": "normal total at five lines"
+        },
+        {
+          "family": "Team Totals",
+          "derivation": "A1 score decomposition"
+        },
+        {
+          "family": "Winning Margin Bands",
+          "derivation": "normal margin band integrals"
+        }
+      ],
+      "expanded_markets_originated": 180,
+      "investigated_not_priced": [
+        {
+          "market": "First/Anytime Tryscorer",
+          "missing_official_input": "needs confirmed team lineups and player try-rate history"
+        },
+        {
+          "market": "Total Tries",
+          "missing_official_input": "points margin/total does not separate tries from penalties; needs competition scoring composition"
+        }
+      ]
+    },
+    {
+      "sport": "rugby-league",
+      "olbg_markets_observed": [
+        "Match Betting (80m)",
+        "Handicap",
+        "Total Points",
+        "Win Tournament / Grand Final Winner"
+      ],
+      "catalog_claimed_originated": [
+        "Outright Series / Grand Final Winner Fair Odds",
+        "Series Handicap / Regular Season Shield",
+        "Series Total Points Band"
+      ],
+      "v20_actually_priced": [
+        "Match Winner",
+        "Draw No Bet (draw sports)",
+        "Handicap (single line)",
+        "Match Total (single line + 1 alt)"
+      ],
+      "expansion_priced_here": [
+        {
+          "family": "1st Half Total",
+          "derivation": "A5 half split of total"
+        },
+        {
+          "family": "1st Half Winner",
+          "derivation": "A5 half split of margin"
+        },
+        {
+          "family": "Alternate Handicap Ladder",
+          "derivation": "normal margin at five lines"
+        },
+        {
+          "family": "Alternate Totals Ladder",
+          "derivation": "normal total at five lines"
+        },
+        {
+          "family": "Team Totals",
+          "derivation": "A1 score decomposition"
+        },
+        {
+          "family": "Winning Margin Bands",
+          "derivation": "normal margin band integrals"
+        }
+      ],
+      "expanded_markets_originated": 105,
+      "investigated_not_priced": [
+        {
+          "market": "First/Anytime Tryscorer",
+          "missing_official_input": "needs confirmed lineups and player try rates"
+        },
+        {
+          "market": "Total Tries",
+          "missing_official_input": "needs tries-vs-goals scoring composition per competition"
+        }
+      ]
+    },
+    {
+      "sport": "handball",
+      "olbg_markets_observed": [
+        "Money Line (3-Way 60m)",
+        "Match Handicap (2-Way)",
+        "Points Total (Over/Under 60m)"
+      ],
+      "catalog_claimed_originated": [
+        "3-Way Match Result & 2-Way Draw-No-Bet",
+        "Goal Handicap",
+        "Total Goals (Over/Under)"
+      ],
+      "v20_actually_priced": [
+        "Match Winner",
+        "Draw No Bet (draw sports)",
+        "Handicap (single line)",
+        "Match Total (single line + 1 alt)"
+      ],
+      "expansion_priced_here": [
+        {
+          "family": "1st Half Total",
+          "derivation": "A5 half split of total"
+        },
+        {
+          "family": "1st Half Winner",
+          "derivation": "A5 half split of margin"
+        },
+        {
+          "family": "Alternate Handicap Ladder",
+          "derivation": "normal margin at five lines"
+        },
+        {
+          "family": "Alternate Totals Ladder",
+          "derivation": "normal total at five lines"
+        },
+        {
+          "family": "Team Totals",
+          "derivation": "A1 score decomposition"
+        },
+        {
+          "family": "Winning Margin Bands",
+          "derivation": "normal margin band integrals"
+        }
+      ],
+      "expanded_markets_originated": 180,
+      "investigated_not_priced": [
+        {
+          "market": "Player Goals props",
+          "missing_official_input": "needs per-player scoring rates (EHF publishes top-scorer lists; not in dataset)"
+        }
+      ]
+    },
+    {
+      "sport": "volleyball",
+      "olbg_markets_observed": [
+        "Win Match",
+        "Set Score (3-0, 3-1, 3-2, 0-3, 1-3, 2-3)",
+        "Point/Set Handicap",
+        "Total Points"
+      ],
+      "catalog_claimed_originated": [
+        "Win Match",
+        "Set Handicap (+/-1.5 Sets)",
+        "Total Points & Total Sets (Over/Under)",
+        "Most Likely Set Score"
+      ],
+      "v20_actually_priced": [
+        "Match Winner",
+        "Draw No Bet (draw sports)",
+        "Handicap (single line)",
+        "Match Total (single line + 1 alt)"
+      ],
+      "expansion_priced_here": [
+        {
+          "family": "Correct Score",
+          "derivation": "exact race-to-N scoreline distribution"
+        },
+        {
+          "family": "Total Points Ladder",
+          "derivation": "set distribution x mean points/set (A4)"
+        },
+        {
+          "family": "Unit Handicap Ladder",
+          "derivation": "exact scoreline distribution"
+        },
+        {
+          "family": "total_sets_3.5",
+          "derivation": ""
+        },
+        {
+          "family": "total_sets_4.5",
+          "derivation": ""
+        }
+      ],
+      "expanded_markets_originated": 72,
+      "investigated_not_priced": [
+        {
+          "market": "Set Correct Score (points within a set)",
+          "missing_official_input": "needs rally-level point-win distributions per rotation"
+        },
+        {
+          "market": "Player Points props",
+          "missing_official_input": "needs per-player attack/block stats"
+        }
+      ]
+    },
+    {
+      "sport": "aussie-rules",
+      "olbg_markets_observed": [],
+      "catalog_claimed_originated": [],
+      "v20_actually_priced": [
+        "Match Winner",
+        "Draw No Bet (draw sports)",
+        "Handicap (single line)",
+        "Match Total (single line + 1 alt)"
+      ],
+      "expansion_priced_here": [
+        {
+          "family": "Alternate Handicap Ladder",
+          "derivation": "normal margin at five lines"
+        },
+        {
+          "family": "Alternate Totals Ladder",
+          "derivation": "normal total at five lines"
+        },
+        {
+          "family": "Team Totals",
+          "derivation": "A1 score decomposition"
+        },
+        {
+          "family": "Winning Margin Bands",
+          "derivation": "normal margin band integrals"
+        }
+      ],
+      "expanded_markets_originated": 117,
+      "investigated_not_priced": [
+        {
+          "market": "First Goalkicker / Player Disposals",
+          "missing_official_input": "needs team sheets and player stats (AFLW stats exist on afl.com.au; not harvested)"
+        },
+        {
+          "market": "Quarter-by-quarter lines",
+          "missing_official_input": "needs quarter scoring distribution inputs"
+        }
+      ]
+    },
+    {
+      "sport": "gaelic-football",
+      "olbg_markets_observed": [
+        "Match Betting (3-Way 60m)",
+        "Handicap (+/- Points)",
+        "Total Points (Over/Under)",
+        "Outright Championship Winner"
+      ],
+      "catalog_claimed_originated": [
+        "Match Result (60m)",
+        "Points Handicap",
+        "Total Combined Points (Over/Under)"
+      ],
+      "v20_actually_priced": [
+        "Match Winner",
+        "Draw No Bet (draw sports)",
+        "Handicap (single line)",
+        "Match Total (single line + 1 alt)"
+      ],
+      "expansion_priced_here": [
+        {
+          "family": "Alternate Handicap Ladder",
+          "derivation": "normal margin at five lines"
+        },
+        {
+          "family": "Alternate Totals Ladder",
+          "derivation": "normal total at five lines"
+        },
+        {
+          "family": "Team Totals",
+          "derivation": "A1 score decomposition"
+        },
+        {
+          "family": "Winning Margin Bands",
+          "derivation": "normal margin band integrals"
+        }
+      ],
+      "expanded_markets_originated": 52,
+      "investigated_not_priced": [
+        {
+          "market": "First Goalscorer / Total Goals",
+          "missing_official_input": "no official per-player scoring data harvested; goals-vs-points split not in dataset"
+        }
+      ]
+    },
+    {
+      "sport": "esports",
+      "olbg_markets_observed": [],
+      "catalog_claimed_originated": [],
+      "v20_actually_priced": [
+        "Match Winner",
+        "Draw No Bet (draw sports)",
+        "Handicap (single line)",
+        "Match Total (single line + 1 alt)"
+      ],
+      "expansion_priced_here": [
+        {
+          "family": "Alternate Handicap Ladder",
+          "derivation": "normal margin at five lines"
+        },
+        {
+          "family": "Alternate Totals Ladder",
+          "derivation": "normal total at five lines"
+        },
+        {
+          "family": "Team Totals",
+          "derivation": "A1 score decomposition"
+        },
+        {
+          "family": "Winning Margin Bands",
+          "derivation": "normal margin band integrals"
+        }
+      ],
+      "expanded_markets_originated": 13,
+      "investigated_not_priced": [
+        {
+          "market": "First Blood / First Dragon / First Baron",
+          "missing_official_input": "needs official per-team objective rates from match histories (LoL Esports publishes results, not an objective-rate feed)"
+        },
+        {
+          "market": "Total Dragons/Barons/Towers",
+          "missing_official_input": "same objective-rate gap"
+        }
+      ]
+    },
+    {
+      "sport": "golf",
+      "olbg_markets_observed": [
+        "Win Tournament",
+        "Each-Way (Top 5 / Top 6 / Top 8 Places)",
+        "Top 10 / Top 20 Finish",
+        "72-Hole Matchups"
+      ],
+      "catalog_claimed_originated": [
+        "Win Tournament Fair Odds",
+        "Each-Way / Top-5 Fair Odds",
+        "Top-10 Finish Fair Probability",
+        "Featured Tournament Matchup / Field vs Favourite"
+      ],
+      "v20_actually_priced": [],
+      "expansion_priced_here": [],
+      "expanded_markets_originated": 0,
+      "investigated_not_priced": [
+        {
+          "market": "Outright Winner / Each-Way / Top-5/10/20",
+          "missing_official_input": "no sourced full-field player ratings (OWGR points per entrant) in dataset \u2014 field cards stay informational"
+        },
+        {
+          "market": "72-Hole Matchups / Two-Balls",
+          "missing_official_input": "needs paired official player ratings for named entrants"
+        }
+      ]
+    },
+    {
+      "sport": "greyhounds",
+      "olbg_markets_observed": [
+        "Daily Races (Win)",
+        "Each-Way (1/4 Odds Places 1-2)",
+        "Forecast / Tricast"
+      ],
+      "catalog_claimed_originated": [
+        "Race Win Fair Odds",
+        "Place (Top 2) Fair Probability",
+        "Inside Traps (1-3) vs Outside Traps (4-6)",
+        "Forecast Angle"
+      ],
+      "v20_actually_priced": [],
+      "expansion_priced_here": [],
+      "expanded_markets_originated": 0,
+      "investigated_not_priced": [
+        {
+          "market": "Win / Each-Way / Forecast / Tricast",
+          "missing_official_input": "no sourced per-runner form (official racecards with sectional times) in dataset"
+        }
+      ]
+    },
+    {
+      "sport": "motor-racing",
+      "olbg_markets_observed": [
+        "Win Race",
+        "Fastest Qualifier (Pole)",
+        "Podium Finish",
+        "Top 6 / Points Finish",
+        "Fastest Lap",
+        "Win Tournament / Without Favourite"
+      ],
+      "catalog_claimed_originated": [
+        "Win Race / Championship Fair Odds",
+        "Podium Finish Probability",
+        "Head-to-Head / Field vs Favourite Total Points"
+      ],
+      "v20_actually_priced": [],
+      "expansion_priced_here": [],
+      "expanded_markets_originated": 0,
+      "investigated_not_priced": [
+        {
+          "market": "Race Winner / Podium / Points Finish",
+          "missing_official_input": "no sourced per-driver strength ratings (championship points alone do not price a 20-car field honestly without a full-field model)"
+        },
+        {
+          "market": "Fastest Lap / Pole Position",
+          "missing_official_input": "needs qualifying-pace and tyre-strategy inputs"
+        }
+      ]
+    }
+  ]
+}

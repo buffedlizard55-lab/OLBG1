@@ -118,7 +118,7 @@ WST publishes no UTC session time. The fetch client renders publisher clocks at 
 
 The men's RLWC rows linked nrl.com/draw/?competition=175..., which the site serves as competition 131 for the same Round 2 draw.
 
-**Status:** Men's citation corrected to competition=131. The women's id (176) was not re-tested and is left as published with its rows marked not re-checked.
+**Status:** All seven rows re-sourced: both competition=175 and competition=176 render the men's page at competition=131, so each row now cites its own tournament's Round 2 draw (men's or women's) plus the IRL match record.
 
 **Source:** [NRL / Rugby League World Cup 2026 Round 2 draw](https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/)
 
