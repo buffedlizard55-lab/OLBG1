@@ -160,6 +160,7 @@ function openMatch(id) {
         <h3>Official evidence recorded</h3>
         <ul>${facts}</ul>
         <p>${sourceLink(match.sources.official, match.sources.official.label)}</p>
+        <p><a class="source-link" href="${escapeHtml(match.sources.discovery.url)}" target="_blank" rel="noreferrer">OLBG discovery row (not verification) ↗</a></p>
       </section>
       <section class="dialog-section">
         <h3>Reproducible model inputs</h3>
@@ -267,7 +268,7 @@ function renderCategory() {
   renderTable(container, rows, {
     emptyTitle: 'No match-level rows to model',
     emptyText: category.description,
-    emptyAction: `<a class="button button-paper" href="${root}/flagged.html">Open review log</a>`,
+    emptyAction: `<div class="actions" style="justify-content:center">${category.officialSource ? sourceLink(category.officialSource, category.officialSource.label) : ''}<a class="button button-paper" href="${root}/flagged.html">Open review log</a></div>`,
   });
 }
 
@@ -331,6 +332,7 @@ async function init() {
     if (page === 'category') renderCategory();
     if (page === 'flagged') renderFlagged();
     if (page === 'methodology') renderMethodology();
+    document.querySelectorAll('.loading').forEach((node) => node.classList.remove('loading'));
   } catch (error) {
     console.error(error);
     document.querySelectorAll('.loading').forEach((node) => {
