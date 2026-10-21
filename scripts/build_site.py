@@ -307,7 +307,7 @@ model's 5% overround applied. Open “All originated markets” on any row for t
     return shell("Picks", body, "picks")
 
 
-def build_predictions(D, rows, preds) -> str:
+def build_predictions(D, rows, preds, stats) -> str:
     by_id = {p["id"]: p for _, p in rows}
     cards = []
     for it in preds["items"]:
@@ -349,8 +349,9 @@ differ by match, and where the case is thin the prediction says so.</p>
 
 <div class="note warn">
   <b>Why only {len(preds['items'])}?</b> Because only {len(preds['items'])} selections cleared the confidence bar.
-  Writing 40 confident-sounding previews when 42 of 50 matches have no strength input would be the exact thing this
-  project is meant to avoid. The other matches are priced and labelled low on the <a href="picks.html">Picks</a> page.
+  Writing confident-sounding previews for the other {stats['matches'] - len(preds['items'])} matches — of which
+  {stats['baseline_only']} have no usable strength input at all — would be the exact thing this project is meant to
+  avoid. They are priced and labelled on the <a href="picks.html">Picks</a> page.
 </div>
 """
     return shell("Predictions", body, "preds")
@@ -789,7 +790,7 @@ def main() -> int:
 
     write("index.html", build_index(D, rows, stats))
     write("picks.html", build_picks(D, rows))
-    write("predictions.html", build_predictions(D, rows, preds))
+    write("predictions.html", build_predictions(D, rows, preds, stats))
     write("sports.html", build_sports_index(D, stats))
     write("methodology.html", build_methodology(D, stats))
     write("reverse-engineering.html", build_reverse(D))
