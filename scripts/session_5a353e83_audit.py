@@ -154,6 +154,19 @@ def run_gate(command: list[str]) -> dict[str, object]:
     return {"command": " ".join(command), "returncode": result.returncode, "output": result.stdout.strip()}
 
 
+def run_final_audit_preserving_report() -> dict[str, object]:
+    """Run the report generator while restoring its tracked output byte-for-byte."""
+    report = ROOT / "reports" / "FINAL_INTEGRATION_AUDIT.md"
+    existed = report.exists()
+    original = report.read_bytes() if existed else b""
+    result = run_gate([sys.executable, "scripts/final_audit.py"])
+    if existed:
+        report.write_bytes(original)
+    elif report.exists():
+        report.unlink()
+    return result
+
+
 def word_count(text: str) -> int:
     return len(text.split())
 
@@ -324,6 +337,8 @@ def audit_s984_data() -> dict[str, object]:
         "kind_counts": dict(sorted(kind_counts.items())),
         "sport_count": len(sport_counts),
         "source_record_count": len(source_records),
+        "repo_finding_count": len(repo_findings),
+        "upstream_defect_count": len(upstream_defects),
         "event_source_links": event_source_links,
         "official_source_links": official_source_links,
         "olbg_source_links": olbg_source_links,
@@ -1072,6 +1087,9 @@ def render_markdown(a: dict[str, object], args: argparse.Namespace, gates: list[
     pr42_info = (
         f"PR [#42]({args.pr42_url}) merged at `{args.pr42_merged_at}`; its separate dashboard lives at [`/984d417f/`](../984d417f/index.html)."
     )
+    pr43_info = (
+        f"PR [#43]({args.pr43_url}) merged at `{args.pr43_merged_at}`; it syncs Round 11 AFLW alternate venues and prediction percentage provenance in the same separate namespace."
+    )
     fresh_reads = a["verification_fresh_read_count"]
     embedded_counts = a["embedded_verification_verdict_counts"]
     exception_text = "\n".join(
@@ -1090,7 +1108,7 @@ def render_markdown(a: dict[str, object], args: argparse.Namespace, gates: list[
 
 **Audit session:** `5a353e83-olbg1` (**T40**)<br>
 **Audit time:** `{args.audit_time}` UTC<br>
-**Snapshot:** latest merged-main baseline `{args.snapshot_main_sha}` (PR #42 / session `984d417f`); PR #40 state: `{args.pr40_state}`.<br>
+**Snapshot:** latest merged-main baseline `{args.snapshot_main_sha}` (PR #43 / session `984d417f`, including PR #42); PR #40 state: `{args.pr40_state}`.<br>
 **Scope:** root T34 desk + `/f7fa77fc/` mirror, separate `/c17a9192/` (217 events) and `/984d417f/` (145 events) dashboards, saved verification register, and all static HTML workspaces.
 **Boundary:** this session performed **no outbound fetches** to OLBG or any governing body. It reviewed repository content and ran local gates. An HTTPS link or allowlisted host is not proof that the linked page was opened or supports the claim.
 
@@ -1119,11 +1137,11 @@ def render_markdown(a: dict[str, object], args: argparse.Namespace, gates: list[
 
 ### Separate, newest `/984d417f/` dashboard (PR #42)
 
-{pr42_info}
+{pr42_info} {pr43_info}
 
 - **145 fixtures and 145 line books** across 17 sports, with **{s984_status.get('verified',0)} `verified` and {s984_status.get('cross-checked',0)} `cross-checked`** status labels. Event kind counts are {s984_kind.get('h2h',0)} H2H and {s984_kind.get('field',0)} field events. Lines carry {s984_confidence.get('high',0)} High / {s984_confidence.get('medium',0)} Medium / {s984_confidence.get('low',0)} Low confidence; {s984['prediction_count']} prediction write-ups. These labels are in the repository snapshot and were not freshly source-checked here.
 - Event records contain {s984['event_source_links']} source links: {s984['official_source_links']} to 33 recognized governing-body/tour hosts and {s984['olbg_source_links']} to OLBG upstream-discovery pages. All 145 fixture rows have at least one recognized governing-body source in the stored JSON. The source registry has {s984['source_record_count']} records; host recognition does not prove a link was opened or supports the claim.
-- `flagged.json` has {s984['flagged_row_count']} rows. {s984['unverified_rows']} fixtures list {s984['unverified_field_entries']} individual `unverified_fields` markers; all named values are absent/empty in both the fixture and line JSON. However, the session report claims {s984['claimed_unverified_field_count']} unconfirmed fields explicitly blank. The stored markers total {s984['unverified_field_entries']}, not {s984['claimed_unverified_field_count']}; reconcile whether those are different metrics before repeating the headline.
+- The line-by-line review records {s984['repo_finding_count']} repository-audit groups and {s984['upstream_defect_count']} upstream OLBG defects. `flagged.json` has {s984['flagged_row_count']} rows. {s984['unverified_rows']} fixtures list {s984['unverified_field_entries']} individual `unverified_fields` markers; all named values are absent/empty in both the fixture and line JSON. However, the session report claims {s984['claimed_unverified_field_count']} unconfirmed fields explicitly blank. The stored markers total {s984['unverified_field_entries']}, not {s984['claimed_unverified_field_count']}; reconcile whether those are different metrics before repeating the headline.
 - The independent HTML scan found **{s984_html['page_count']} pages and {s984_html['tbody_rows']} `<tbody>` rows**: {s984_html['rows_with_https']} have HTTPS and {s984_html['rows_with_official_source']} have a recognized governing-body host. The {s984_html['tbody_rows']-s984_html['rows_with_official_source']} rows without such a host are concentrated in {s984_official_gap}, largely OLBG taxonomy/market, upstream-defect, and repository-audit tables. The {sum(s984_html['rows_missing_https_by_page'].values())} rows with no HTTPS are in {s984_https_gap}, in the cross-desk compliance matrix. The index and 17 sport-page fixture tables have {s984_html['fixture_rows_with_official_source']}/{s984_html['fixture_table_rows']} rows with recognized official hosts; the five flagged-page rows without one are repository/OLBG-defect records, not fixture data. The local 984 validator checks HTTPS on selected table pages, not an official governing-body host on every table row. See [dashboard](../984d417f/index.html), [markets](../984d417f/markets.html), [flags](../984d417f/flagged.html), [repository audit](../984d417f/audit.html), and [session report](SESSION_984D417F_AUDIT.md).
 
 ## Saved official-source re-verification — not re-certified here
@@ -1162,7 +1180,7 @@ Pages with rows lacking any HTTPS anchor:
 ## Remaining work and coordination boundaries
 
 - **Root-scope AFLW repricing remains queued as T35.** T34 flags a mismatch between the root Round 10 ladder inputs and the official 2026 ladder for 16 of 18 clubs; nine root lines and three picks await the dedicated re-price. PR #41 and PR #42 contain re-priced alternatives only inside their separate namespaces; neither changed root `data/lines.json` or `data/predictions.json`.
-- **New dashboards:** {pr41_info} {pr42_info} Both are separate from the root T34 dataset.
+- **New dashboards:** {pr41_info} {pr42_info} {pr43_info} Both dashboard namespaces remain separate from the root T34 dataset.
 - **Parallel integration:** {pr40_info} It overlaps source/data/validator/site/coordination work; T40 did not edit those shared files. Current task-board entries still show {pending_tasks}; PR #40 proposes updates to T9–T12, but T19 remains a separate board item.
 - **Local structural gates do not certify fresh source reads.** The primary validator checks each fixture's embedded verification block and source-host policy, but it does not load the separate `data/verification.json` file; its allowed verdicts include `not-rechecked`. It makes no live HTTP request. The 58 `not_rechecked` rows therefore remain an explicit verification gap despite a passing gate.
 - **Table-link rule is not satisfied everywhere.** Primary fixture rows have recognized HTTPS sources, but the unlinked aggregate/methodology/companion rows listed above remain. No blanket claim is made that all such rows are sports facts.
@@ -1200,6 +1218,8 @@ python3 scripts/session_5a353e83_audit.py \\
   --pr41-url {args.pr41_url} \\
   --pr42-merged-at {args.pr42_merged_at} \\
   --pr42-url {args.pr42_url} \\
+  --pr43-merged-at {args.pr43_merged_at} \\
+  --pr43-url {args.pr43_url} \\
   --pages-api-status {args.pages_api_status} \\
   --pages-run-id {args.pages_run_id} \\
   --pages-run-status {args.pages_run_status} \\
@@ -1213,6 +1233,8 @@ python3 scripts/session_5a353e83_audit.py \\
 def render_html(a: dict[str, object], args: argparse.Namespace, gates: list[dict[str, object]]) -> str:
     status = a["verification_status_counts"]
     fixture_status = a["fixture_status_counts"]
+    confidence = a["line_confidence_counts"]
+    confidence_text = ", ".join(f"{key.title()} {value}" for key, value in sorted(confidence.items()))
     c17_status = a["c17_status_counts"]
     c17_kind = a["c17_kind_counts"]
     s984 = a["s984_metrics"]
@@ -1327,9 +1349,9 @@ def render_html(a: dict[str, object], args: argparse.Namespace, gates: list[dict
 <p>Rows with overall <code>unverified</code> status still have populated values for: {html.escape(', '.join(f'{field} {count}' for field,count in a['c17_unverified_nonblank_fields'].items() if count))}. T40 did not fetch sources, so each populated field needs confirmation or a blank.</p>
 <p><a href="../c17a9192/index.html">Open the separate dashboard</a> · <a href="../c17a9192/markets.html">Markets</a> · <a href="../c17a9192/predictions.html">Predictions</a> · <a href="SESSION_C17A9192_AUDIT.md">Session audit</a></p></section>
 <section class="audit-card warning"><h2>Separate /984d417f/ dashboard (PR #42)</h2>
-<p><a href="{html.escape(args.pr42_url, quote=True)}">PR #42</a> merged at <code>{html.escape(args.pr42_merged_at)}</code> and introduced this separate namespace. It contains <strong>{s984['event_count']} fixture/event rows and {s984['line_count']} line books</strong> across 17 sports; status labels are {s984_status.get('verified',0)} verified and {s984_status.get('cross-checked',0)} cross-checked. Kinds: {s984_kind.get('h2h',0)} H2H and {s984_kind.get('field',0)} field events. Confidence: {s984_confidence.get('high',0)} High / {s984_confidence.get('medium',0)} Medium / {s984_confidence.get('low',0)} Low; {s984['prediction_count']} predictions.</p>
+<p><a href="{html.escape(args.pr42_url, quote=True)}">PR #42</a> merged at <code>{html.escape(args.pr42_merged_at)}</code> and introduced this separate namespace. <a href="{html.escape(args.pr43_url, quote=True)}">PR #43</a> merged at <code>{html.escape(args.pr43_merged_at)}</code> and synced Round 11 AFLW alternate venues and prediction percentage provenance. It contains <strong>{s984['event_count']} fixture/event rows and {s984['line_count']} line books</strong> across 17 sports; status labels are {s984_status.get('verified',0)} verified and {s984_status.get('cross-checked',0)} cross-checked. Kinds: {s984_kind.get('h2h',0)} H2H and {s984_kind.get('field',0)} field events. Confidence: {s984_confidence.get('high',0)} High / {s984_confidence.get('medium',0)} Medium / {s984_confidence.get('low',0)} Low; {s984['prediction_count']} predictions.</p>
 <p>Stored event data has {s984['event_source_links']} source links: {s984['official_source_links']} to recognized official authority hosts and {s984['olbg_source_links']} to OLBG upstream discovery. Each of the 145 fixture records has at least one recognized authority source. The source register has {s984['source_record_count']} records; these are URL/host checks only, not fresh source verification.</p>
-<p><strong>Blank markers:</strong> {s984['flagged_row_count']} flagged rows; {s984['unverified_rows']} fixtures list {s984['unverified_field_entries']} field-level uncertainty markers, and all named values are absent/empty in fixture and line JSON. The session report headline says {s984['claimed_unverified_field_count']} fields, so the count is inconsistent (stored marker total: {s984['unverified_field_entries']}).</p>
+<p><strong>Repository review and blank markers:</strong> {s984['repo_finding_count']} line-by-line repo-audit groups, {s984['upstream_defect_count']} upstream OLBG defects and {s984['flagged_row_count']} flagged rows. {s984['unverified_rows']} fixtures list {s984['unverified_field_entries']} field-level uncertainty markers, and all named values are absent/empty in fixture and line JSON. The session report headline says {s984['claimed_unverified_field_count']} fields, so the count is inconsistent (stored marker total: {s984['unverified_field_entries']}).</p>
 <p><strong>Rendered rows:</strong> {s984_html['page_count']} pages, {s984_html['tbody_rows']} table rows; {s984_html['rows_with_https']} with HTTPS, {s984_html['rows_with_official_source']} with recognized governing-body hosts. {s984_html['tbody_rows']-s984_html['rows_with_official_source']} lack such a host, concentrated in {html.escape(s984_official_gap_text)}. {sum(s984_html['rows_missing_https_by_page'].values())} rows have no HTTPS, in {html.escape(s984_https_gap_text)}. All {s984_html['fixture_rows_with_official_source']} of {s984_html['fixture_table_rows']} index/sport fixture table rows have a recognized authority link.</p>
 <p><a href="../984d417f/index.html">Dashboard</a> · <a href="../984d417f/markets.html">Markets</a> · <a href="../984d417f/flagged.html">Flags</a> · <a href="../984d417f/audit.html">Repository audit</a> · <a href="SESSION_984D417F_AUDIT.md">Session report</a></p></section>
 <section class="audit-card danger"><h2>Unverified Afghanistan–Bangladesh ODI row</h2>
@@ -1382,6 +1404,8 @@ def main() -> int:
     parser.add_argument("--pr41-url", default="https://github.com/buffedlizard55-lab/OLBG1/pull/41")
     parser.add_argument("--pr42-merged-at", default="not supplied")
     parser.add_argument("--pr42-url", default="https://github.com/buffedlizard55-lab/OLBG1/pull/42")
+    parser.add_argument("--pr43-merged-at", default="not supplied")
+    parser.add_argument("--pr43-url", default="https://github.com/buffedlizard55-lab/OLBG1/pull/43")
     args = parser.parse_args()
 
     audit = audit_snapshot(args)
@@ -1395,6 +1419,7 @@ def main() -> int:
         run_gate([sys.executable, "scripts/ccb6bde2_validate.py"]),
         run_gate([sys.executable, "scripts/c17a9192_validate.py"]),
         run_gate([sys.executable, "scripts/s984d417f_validate.py"]),
+        run_final_audit_preserving_report(),
     ]
     if any(int(gate["returncode"]) != 0 for gate in gates):
         audit["errors"].append("one or more repository validators failed; see captured output")
