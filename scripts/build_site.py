@@ -134,7 +134,7 @@ def render_picks_table(rows: list[tuple[dict, dict | None]], show_sport: bool, s
         sp_slug = m["sport"]
         sp_name = p["sport_name"] if p else sp_slug.replace("-", " ").title()
         flag_note = (
-            f'<span class="flag-inline">{e(m["flags"][0])}</span>' if m.get("flags") else ""
+            "".join(f'<span class="flag-inline">{e(fl)}</span>' for fl in m.get("flags") or [])
         )
 
         if p:
