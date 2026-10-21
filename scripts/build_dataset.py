@@ -61,6 +61,27 @@ def apply_live_consensus(rows: list[dict]) -> dict:
     return {"applied": applied, "skipped": skipped, "captured_utc": snap["fetched_utc"]}
 
 
+def _register_t34_findings() -> list[dict]:
+    """Independent pass (T34) findings, imported from the single generator in
+    scripts/live_verification.py so the Flagged page and the Live Verification
+    page cannot drift apart.  No network I/O: the reads were made by hand and
+    are recorded there with their timestamps."""
+    from live_verification import SOURCES, T34_FINDINGS  # local import; scripts/ is on sys.path
+    out = []
+    for f in T34_FINDINGS:
+        src = SOURCES[f["source"]]
+        out.append({
+            "id": f["id"].replace("F-T34-", "T34-"),
+            "category": "Independent Re-Verification (T34)",
+            "severity": f["severity"],
+            "affected": f["area"],
+            "summary": f["detail"],
+            "evidence": f"Read on 2026-10-21 (independent pass T34) from {src['name']} — {src['url']}",
+            "official_url": src["url"],
+            "resolution": f["status"],
+        })
+    return out
+
 def live_refresh_findings() -> list[dict]:
     """Public disclosure of what the live re-capture did and did not confirm."""
     diff_path = ROOT / "data" / "live_diff.json"
@@ -659,6 +680,7 @@ def main() -> None:
     }
     flagged_doc = build_flagged_registry(rows)
     flagged_doc["findings"].extend(live_refresh_findings())
+    flagged_doc["findings"].extend(_register_t34_findings())
     flagged_doc["summary"]["upstream_and_audit_findings"] = len(flagged_doc["findings"])
 
     (ROOT / "data" / "sources.json").write_text(json.dumps(sources_doc, indent=2) + "\n")

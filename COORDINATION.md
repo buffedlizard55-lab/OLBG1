@@ -90,6 +90,8 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T31 | Deep market investigation per sport (winner, handicap, totals, correct score, frames/legs, O/U 180s, touchdown/first-try etc.) — per-match expanded market coverage | done | ccb6bde2-olbg1 | `data/market_taxonomy-ccb6bde2.json`, `data/market_expansion-ccb6bde2.json`, `scripts/ccb6bde2_market_engine.py`, `scripts/ccb6bde2_expand_markets.py` | 2026-10-21T06:45Z | 1,619 expanded markets across 126 matches; non-derivable markets registered as investigated-not-priced with missing official input named |
 | T32 | Model calibration audit + fix. Original hypothesis (logit slope too gentle) **refuted by measurement** — see F-CCB-12. Actual defects fixed: unshrunk small-sample record ratings, baseball venue double-count, stale/missing ATP ratings | done | ccb6bde2-olbg1 | `data/model_calibration-ccb6bde2.json`, `scripts/ccb6bde2_audit.py`, `scripts/ccb6bde2_expand_markets.py`, `data/market_expansion-ccb6bde2.json`, `data/predictions-ccb6bde2.json` | 2026-10-21T06:45Z | v2.1 in new files only; `data/lines.json` untouched. Highs 31→19, 3 pick changes, 4 fresh predictions |
 | T33 | New namespaced desk `ccb6bde2/` (landing + 17 sport subpages + markets explorer + predictions + flagged + methodology) + validator + PR & merge + Pages check | done | ccb6bde2-olbg1 | `ccb6bde2/**`, `scripts/ccb6bde2_build_site.py`, `scripts/ccb6bde2_validate.py`, `COORDINATION.md` (append-only) | 2026-10-21T06:45Z | 23 pages; all 3 repo validators pass; whole-tree sweep 153 pages / 4,038 refs / 0 broken |
+| T34 | Independent re-verification pass over every reachable governing-body page, after T20/T21/T22/fourth pass; AFLW kick-off/venue, Ford Trophy date, EHF arena corrections; per-row verification ledger stamped from one generator; AFLW ladder mismatch disclosed | done | b95dbd01-olbg1 | `scripts/live_verification.py`, `scripts/dataset_rows_b.py`, `scripts/high_predictions.py`, `data/{fixtures,verification,lines,predictions}.json`, `datasets/*`, `reports/LIVE_VERIFICATION.md`, root `*.html`, `sports/*.html`, `README.md`, append-only `COORDINATION.md` | 2026-10-21T09:05Z | Claimed as T21 at 08:10Z; T21-T33 were taken by 4f8d032d, 3c7579ed, ccb6bde2 and 72198d3e while this branch was open, so the task is recorded as T34 (§27). 134 rows: 41 confirmed, 33 corrected, 2 flagged, 58 not re-checked. 13 dataset corrections + 1 status downgrade. Open item T35: AFLW re-price. |
+| T35 | Re-price the nine AFLW Round 11 rows from the official 2026 ladder after Round 10 | queued | — | `scripts/dataset_rows_b.py` (AFLW block), `scripts/high_predictions.py` (3 AFLW picks), `data/lines.json`, `data/predictions.json`, README counts | — | Required by F-T34-01. Fixture facts are verified; only the ratings, prices, the three AFLW labels/prose and the headline counts need to move, in one dedicated commit. |
 
 | T21 | Independent second-pass re-verification of NHL input sub-values and the F1 start time; correction of four NHL transposition errors and one timezone error; source-redirect evidence for PlusLiga and GAA | done | 4f8d032d-olbg1 | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py`, `scripts/live_verification.py`, `scripts/high_predictions.py`, `data/verification.json`, `reports/SESSION_4F8D_VERIFICATION.md`, append-only `COORDINATION.md` | 2026-10-21T07:15Z | Claimed as T17 (collision: taken by 72198d3e, which itself became T20); renumbered T21. Rebased onto `main`; earlier session's Boston fix and Vegas no-reprice policy preserved. 31 High picks retained. |
 
@@ -1144,3 +1146,80 @@ Confidence distribution unchanged at 31 High / 35 Medium / 60 Low.
   PlusLiga citation (the current one redirects to tauronliga.pl); EuroLeague/EuroCup 6 are
   client-rendered; the remaining 16 are single-hub citations (GAA, golf, greyhounds, cricket,
   esports) that name no fixture page.
+
+## 27. Session `b95dbd01-olbg1` — T34 independent re-verification pass (result)
+
+**Run:** 2026-10-21T09:05Z. Merged on top of §17 (T20, `72198d3e`), §18 (T21,
+`4f8d032d`), §19 (T22, `3c7579ed`), §25 (T31–T33, `ccb6bde2`) and §26 (fourth pass,
+`72198d3e`). Additive throughout: no earlier row, finding, page or prose block was removed,
+and the earlier passes' corrections survive this one (F1 `21:00Z`, the NHL input fixes and
+the tennis/RLWC source corrections are all still in the published data).
+
+**Task id.** Claimed as T21 at 08:10Z. T21–T33 were claimed by other sessions while the
+branch was open, so this record is filed as **T34** under the append-only rule rather than
+renumbering anyone else's work.
+
+**Outcome over 134 rows.** `41` confirmed, `33` corrected, `2` flagged, `58` not re-checked,
+each row naming the pass that last read it. The register, the per-row `verification` block in
+`data/fixtures.json`, `live-verification.html` and `reports/LIVE_VERIFICATION.md` are now all
+generated from the same two dictionaries in `scripts/live_verification.py`, so they cannot
+disagree, and `stamp_fixtures()` makes the per-row block idempotent.
+
+**Corrections contributed by this pass (13 values + 1 status).**
+
+* **AFLW, nine kick-off times.** The nine Round 11 rows were right about participants but had
+  been given the round's kick-off slots in chronological order rather than each fixture's own:
+  Port Adelaide v Collingwood carried the North Melbourne slot, St Kilda v Brisbane carried
+  Geelong's, two rows shared `2026-10-24T04:05Z`, and one time (`06:15Z`) matches no official
+  fixture. Re-read from the AFL's Round 11 board, whose match ids 8970–8979 are quoted in the
+  evidence column, and the two affected prose blocks were re-pointed at the corrected venues.
+* **AFLW, one venue.** Hawthorn v Essendon is at the Kennedy Community Centre, Dingley — not
+  Kinetic Stadium, Frankston.
+* **Cricket, three dates.** Ford Trophy Round 1 is Tue 27 October, not 24 October: on the NZC
+  service the Round 1 block sits under the TUE 27 Oct heading, ahead of the FRI 30 Oct block
+  that carries Round 2.
+* **Handball, one venue.** Kolstad's Round 5 home fixture is at Kolstad Arena (Kolstad) per the
+  EHF playing-times PDF, not Trondheim Spektrum.
+* **Cricket, one status.** Afghanistan v Bangladesh has no governing-body fixture page in any
+  pass; its only citation is the ICC rankings table. Downgraded to `unverified` and flagged.
+
+**Confirmed by this pass (41 rows carry a re-read from it).** MLB World Series games 1–4
+(gamePk, officialDate, first pitch, venue); NHL 2026020154/155; all twelve EHF Round 5 fixtures
+(CEST → UTC conversions exact, one arena wrong); all eleven WST Round 2 pairings with their
+match-centre ids; five men's RLWC26 fixtures; Top 14 J7 (3) and URC R4 (3); the NZC fixtures
+whose published clock reconciles.
+
+**Recorded refusals, not silent gaps.** pdc.tv still serves a cookie-consent interstitial;
+`cdn.nba.com` returned HTTP 500; `premrugby.com/fixtures-results` and the ATP/WTA draws are
+client-rendered; `afl.com.au/aflw/fixtures` is a 404 (the live board is `/aflw`);
+`plusliga.pl` redirects to the tauronliga.pl portal; nrl.com serves the men's draw for
+`?competition=176`, so the two women's RLWC rows stay not re-checked. No blocked publisher is
+treated as agreement.
+
+**Deviation from the claim.** The claim promised a UTC start wherever an official page
+publishes one. WST, NZC, the AFL and nrl.com all print timezone-less clocks, and the fetch
+client renders them at UTC-4 (pinned by five nrl.com kick-offs), so converting a rendition
+would be arithmetic on a render, not a published value. `start_utc` therefore stays blank for
+the 32 rows that never had one, and the two NZ T20Is whose published time cannot be reconciled
+with the official clock are flagged rather than rewritten.
+
+**Open data-quality item (F-T34-01, high).** The AFLW ladder inputs used to price nine rows do
+not reconcile with the official 2026 AFLW ladder after Round 10 — the rows give North Melbourne
+40 points (10-0) where the ladder has 36 (9-1), Geelong 16 at 13th where it has 36 at 2nd, and
+St Kilda 20 at 10th where it has 4 at 18th, with 16 of the 18 clubs disagreeing. The fixture
+facts are now correct; the prices are **not** re-priced inside this pass, because rewriting
+nine published rows and three published picks in the commit that finds the error destroys the
+audit trail. Every AFLW row carries the mismatch as a flag, the official ladder link is on the
+register and on `flagged.html`, and **T35** is filed for the dedicated re-price.
+
+**Gates.** `build_dataset.py` → `origin_lines.py` → `live_verification.py` → `build_site.py` →
+`validate.py`: 0 errors, 0 warnings across 160 published HTML pages. `final_audit.py`,
+`ebfbd966_validate.py` and `ccb6bde2_validate.py` (126 matches, 2031 markets, 636 internal
+links) all pass. Two consecutive full-chain runs are byte-identical on `data/fixtures.json`,
+`data/verification.json`, `data/lines.json`, `data/predictions.json`,
+`datasets/flagged_for_review.json`, `datasets/matches_full.json`, `index.html`,
+`live-verification.html`, `flagged.html` and `sports/aussie-rules.html`.
+
+**Counts after this pass.** 134 rows: 128 verified, 5 cross-checked, 1 unverified; 126 priced
+H2H matches and 8 event/field cards; 31 high-confidence picks (31 High / 34 Medium / 61 Low);
+32 rows without `start_utc`.

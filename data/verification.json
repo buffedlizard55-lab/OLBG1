@@ -65,14 +65,58 @@
     "urc_new": {
       "name": "United Rugby Championship official 2026/27 fixtures in full (Round 4)",
       "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
+    },
+    "nhl_sched22": {
+      "name": "NHL official schedule API (2026-10-22)",
+      "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    },
+    "mlb_sched21": {
+      "name": "MLB StatsAPI official schedule (2026-10-21..30, venues + linescore)",
+      "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30&hydrate=venue(location),linescore"
+    },
+    "ehf_pdf": {
+      "name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)",
+      "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"
+    },
+    "wst_matches": {
+      "name": "World Snooker Tour \u2014 BetVictor Northern Ireland Open 2026 match list",
+      "url": "https://www.wst.tv/matches"
+    },
+    "nrl_draw2": {
+      "name": "NRL / Rugby League World Cup 2026 Round 2 draw (nrl.com)",
+      "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+    },
+    "urc_fixtures": {
+      "name": "United Rugby Championship 2026/27 fixtures in full (Round 4)",
+      "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
+    },
+    "top14_cal": {
+      "name": "LNR Top 14 official calendar, journ\u00e9e 7",
+      "url": "https://top14.lnr.fr/calendrier-et-resultats"
+    },
+    "aflw_hub": {
+      "name": "AFL official AFLW hub \u2014 Round 11 fixture board & match ids",
+      "url": "https://www.afl.com.au/aflw"
+    },
+    "aflw_ladder": {
+      "name": "AFL official 2026 AFLW ladder (after Round 10)",
+      "url": "https://www.afl.com.au/aflw/ladder"
+    },
+    "nba_cdn": {
+      "name": "NBA official scoreboard feed (cdn.nba.com)",
+      "url": "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json"
+    },
+    "plusliga": {
+      "name": "PlusLiga fixtures (plusliga.pl, redirects to tauronliga.pl)",
+      "url": "https://www.plusliga.pl/games.html"
     }
   },
   "summary": {
     "rows": 134,
-    "confirmed": 48,
-    "corrected": 20,
-    "flagged": 4,
-    "not_rechecked": 62
+    "confirmed": 41,
+    "corrected": 33,
+    "flagged": 2,
+    "not_rechecked": 58
   },
   "by_sport": {
     "ice-hockey": {
@@ -112,16 +156,16 @@
       "not_rechecked": 16
     },
     "cricket": {
-      "confirmed": 4,
-      "corrected": 3,
+      "confirmed": 2,
+      "corrected": 6,
       "flagged": 0,
-      "not_rechecked": 1
+      "not_rechecked": 0
     },
     "rugby-union": {
-      "confirmed": 3,
+      "confirmed": 6,
       "corrected": 1,
       "flagged": 0,
-      "not_rechecked": 8
+      "not_rechecked": 5
     },
     "rugby-league": {
       "confirmed": 0,
@@ -130,8 +174,8 @@
       "not_rechecked": 0
     },
     "handball": {
-      "confirmed": 12,
-      "corrected": 0,
+      "confirmed": 11,
+      "corrected": 1,
       "flagged": 0,
       "not_rechecked": 0
     },
@@ -142,9 +186,9 @@
       "not_rechecked": 8
     },
     "aussie-rules": {
-      "confirmed": 7,
-      "corrected": 0,
-      "flagged": 2,
+      "confirmed": 0,
+      "corrected": 9,
+      "flagged": 0,
       "not_rechecked": 0
     },
     "esports": {
@@ -221,11 +265,11 @@
       "competition": "NHL",
       "match": "Toronto Maple Leafs v New York Rangers",
       "status": "confirmed",
-      "source_name": "NHL official schedule API (2026-10-21)",
-      "source_url": "https://api-web.nhle.com/v1/schedule/2026-10-21",
-      "evidence": "Game 2026020155: New York Rangers at Toronto, Scotiabank Arena, startTimeUTC 2026-10-22T23:00:00Z \u2014 all match.",
+      "source_name": "NHL official schedule API (2026-10-22)",
+      "source_url": "https://api-web.nhle.com/v1/schedule/2026-10-22",
+      "evidence": "Re-read 2026-10-21: game 2026020155, New York Rangers at Toronto, Scotiabank Arena, startTimeUTC 2026-10-22T23:00:00Z \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "nhl-2026020158",
@@ -461,11 +505,11 @@
       "competition": "MLB World Series",
       "match": "Milwaukee Brewers v Tampa Bay Rays",
       "status": "confirmed",
-      "source_name": "MLB StatsAPI official schedule (2026-10-20..30)",
-      "source_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-20&endDate=2026-10-30&hydrate=venue(location)",
-      "evidence": "gamePk 849805, World Series Game 1, officialDate 2026-10-23, first pitch 2026-10-24T00:00Z, American Family Field, Rays at Brewers \u2014 all match.",
+      "source_name": "MLB StatsAPI official schedule (2026-10-21..30, venues + linescore)",
+      "source_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30&hydrate=venue(location),linescore",
+      "evidence": "Re-read 2026-10-21: gamePk 849805, World Series Game 1, officialDate 2026-10-23, gameDate 2026-10-24T00:00:00Z, Rays at Brewers, American Family Field \u2014 participants, date, start and venue match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "mlb-849802",
@@ -473,11 +517,11 @@
       "competition": "MLB World Series",
       "match": "Milwaukee Brewers v Tampa Bay Rays",
       "status": "confirmed",
-      "source_name": "MLB StatsAPI official schedule (2026-10-20..30)",
-      "source_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-20&endDate=2026-10-30&hydrate=venue(location)",
-      "evidence": "gamePk 849802, World Series Game 2, officialDate 2026-10-24, 2026-10-25T00:00Z, American Family Field \u2014 all match.",
+      "source_name": "MLB StatsAPI official schedule (2026-10-21..30, venues + linescore)",
+      "source_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30&hydrate=venue(location),linescore",
+      "evidence": "Re-read 2026-10-21: gamePk 849802, Game 2, officialDate 2026-10-24, gameDate 2026-10-25T00:00:00Z, American Family Field \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "mlb-849804",
@@ -485,11 +529,11 @@
       "competition": "MLB World Series",
       "match": "Tampa Bay Rays v Milwaukee Brewers",
       "status": "confirmed",
-      "source_name": "MLB StatsAPI official schedule (2026-10-20..30)",
-      "source_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-20&endDate=2026-10-30&hydrate=venue(location)",
-      "evidence": "gamePk 849804, World Series Game 3, officialDate 2026-10-26, 2026-10-27T00:00Z, Tropicana Field, Brewers at Rays \u2014 all match.",
+      "source_name": "MLB StatsAPI official schedule (2026-10-21..30, venues + linescore)",
+      "source_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30&hydrate=venue(location),linescore",
+      "evidence": "Re-read 2026-10-21: gamePk 849804, Game 3, officialDate 2026-10-26, gameDate 2026-10-27T00:00:00Z, Brewers at Rays, Tropicana Field \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "mlb-849803",
@@ -497,11 +541,11 @@
       "competition": "MLB World Series",
       "match": "Tampa Bay Rays v Milwaukee Brewers",
       "status": "confirmed",
-      "source_name": "MLB StatsAPI official schedule (2026-10-20..30)",
-      "source_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-20&endDate=2026-10-30&hydrate=venue(location)",
-      "evidence": "gamePk 849803, World Series Game 4, officialDate 2026-10-27, 2026-10-28T00:00Z, Tropicana Field \u2014 all match.",
+      "source_name": "MLB StatsAPI official schedule (2026-10-21..30, venues + linescore)",
+      "source_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30&hydrate=venue(location),linescore",
+      "evidence": "Re-read 2026-10-21: gamePk 849803, Game 4, officialDate 2026-10-27, gameDate 2026-10-28T00:00:00Z, Tropicana Field \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "ten-ningbo-rybakina",
@@ -641,11 +685,11 @@
       "competition": "BetVictor Northern Ireland Open 2026",
       "match": "Pang Junxu v Liam Davies",
       "status": "confirmed",
-      "source_name": "World Snooker Tour live & upcoming match listing",
-      "source_url": "https://www.wst.tv/",
-      "evidence": "WST live listing: Pang Junxu v Liam Davies, Round 2, BetVictor Northern Ireland Open, 21 Oct.",
+      "source_name": "World Snooker Tour \u2014 BetVictor Northern Ireland Open 2026 match list",
+      "source_url": "https://www.wst.tv/matches",
+      "evidence": "WST Round 2 match list: Match 36 Pang Junxu v Liam Davies, Wed 21 Oct, match-centre 67133698-e8a4-4b37-9266-452a97df8584 \u2014 pairing and id match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "snk-cheung-bingham",
@@ -653,11 +697,11 @@
       "competition": "BetVictor Northern Ireland Open 2026",
       "match": "Cheung Ka Wai v Stuart Bingham",
       "status": "confirmed",
-      "source_name": "World Snooker Tour live & upcoming match listing",
-      "source_url": "https://www.wst.tv/",
-      "evidence": "WST live listing: Cheung Ka Wai v Stuart Bingham, Round 2, 21 Oct.",
+      "source_name": "World Snooker Tour \u2014 BetVictor Northern Ireland Open 2026 match list",
+      "source_url": "https://www.wst.tv/matches",
+      "evidence": "WST Round 2: Match 42 Ka Wai Cheung v Stuart Bingham, Wed 21 Oct, match-centre 3d53c559-9bd7-4bc4-8e1d-a6c2b7459528 \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "snk-higgins-jones",
@@ -665,11 +709,11 @@
       "competition": "BetVictor Northern Ireland Open 2026",
       "match": "John Higgins v Jak Jones",
       "status": "confirmed",
-      "source_name": "World Snooker Tour live & upcoming match listing",
-      "source_url": "https://www.wst.tv/",
-      "evidence": "WST live listing: John Higgins v Jak Jones, Round 2, 21 Oct.",
+      "source_name": "World Snooker Tour \u2014 BetVictor Northern Ireland Open 2026 match list",
+      "source_url": "https://www.wst.tv/matches",
+      "evidence": "WST Round 2: Match 45 John Higgins v Jak Jones, Wed 21 Oct, match-centre eba55492-fba6-4a53-90be-a04b3560ae65 \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "snk-wells-day",
@@ -677,11 +721,11 @@
       "competition": "BetVictor Northern Ireland Open 2026",
       "match": "Daniel Wells v Ryan Day",
       "status": "confirmed",
-      "source_name": "World Snooker Tour live & upcoming match listing",
-      "source_url": "https://www.wst.tv/",
-      "evidence": "WST live listing: Daniel Wells v Ryan Day, Round 2, 21 Oct.",
+      "source_name": "World Snooker Tour \u2014 BetVictor Northern Ireland Open 2026 match list",
+      "source_url": "https://www.wst.tv/matches",
+      "evidence": "WST Round 2: Match 46 Daniel Wells v Ryan Day, Wed 21 Oct, match-centre e9c15ae6-b9b8-4cea-a83a-49c58eb14046 \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "snk-craigie-xu",
@@ -689,11 +733,11 @@
       "competition": "BetVictor Northern Ireland Open 2026",
       "match": "Sam Craigie v Xu Si",
       "status": "confirmed",
-      "source_name": "World Snooker Tour live & upcoming match listing",
-      "source_url": "https://www.wst.tv/",
-      "evidence": "WST live listing: Sam Craigie v Xu Si, Round 2, 21 Oct.",
+      "source_name": "World Snooker Tour \u2014 BetVictor Northern Ireland Open 2026 match list",
+      "source_url": "https://www.wst.tv/matches",
+      "evidence": "WST Round 2: Match 38 Sam Craigie v Xu Si, Wed 21 Oct, match-centre afb42fc9-9654-479e-997e-d33d8a1a6888 \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "snk-zhang-williams",
@@ -701,11 +745,11 @@
       "competition": "BetVictor Northern Ireland Open 2026",
       "match": "Zhang Anda v Mark Williams",
       "status": "confirmed",
-      "source_name": "World Snooker Tour live & upcoming match listing",
-      "source_url": "https://www.wst.tv/",
-      "evidence": "WST live listing: Zhang Anda v Mark Williams, Round 2, 21 Oct.",
+      "source_name": "World Snooker Tour \u2014 BetVictor Northern Ireland Open 2026 match list",
+      "source_url": "https://www.wst.tv/matches",
+      "evidence": "WST Round 2: Match 43 Zhang Anda v Mark Williams, Wed 21 Oct, match-centre 480e5abf-5766-44ad-9918-f822ceefd4a5 \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "snk-holt-brown",
@@ -1000,12 +1044,12 @@
       "sport": "cricket",
       "competition": "Men's One-Day International",
       "match": "Afghanistan v Bangladesh",
-      "status": "not_rechecked",
-      "source_name": "ICC official team rankings (Men's & Women's T20I)",
-      "source_url": "https://www.icc-cricket.com/rankings",
-      "evidence": "Not re-read in this pass; the NZC fixtures service was used for the rows that were checked.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
-      "checked_at": "2026-10-21T07:05Z"
+      "status": "corrected",
+      "source_name": "New Zealand Cricket official fixtures & results service",
+      "source_url": "https://scoring.nzc.nz/fixtures",
+      "evidence": "No official fixture page for this match exists in any of the four passes: the row's only citation is the ICC rankings table, which publishes no fixtures.",
+      "action": "status downgraded from 'verified' to 'unverified' and flagged; date and venue remain as OLBG lists them, with nothing invented to fill the gap.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "cric-nza-inda-fc1",
@@ -1024,12 +1068,12 @@
       "sport": "cricket",
       "competition": "Ford Trophy (List A 50-over)",
       "match": "Auckland Aces v Canterbury",
-      "status": "confirmed",
+      "status": "corrected",
       "source_name": "New Zealand Cricket official fixtures & results service",
       "source_url": "https://scoring.nzc.nz/fixtures",
-      "evidence": "NZC fixtures: Auckland Aces v Canterbury, Ford Trophy Round 1, Sat 24 Oct, Kennards Hire Community Oval Auckland \u2014 match.",
-      "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "On the NZC fixtures page the three Ford Trophy Round 1 matches sit under the TUE 27 Oct heading, after the 3rd T20I and before the FRI 30 Oct block that carries Round 2.",
+      "action": "date_local 2026-10-24 -> 2026-10-27. Start time stays blank: NZC prints 5:30pm with no timezone.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "cric-ford-cds-nd",
@@ -1039,57 +1083,57 @@
       "status": "corrected",
       "source_name": "New Zealand Cricket official fixtures & results service",
       "source_url": "https://scoring.nzc.nz/fixtures",
-      "evidence": "NZC fixtures list Central Stags v Northern Districts, Ford Trophy Round 1, Sat 24 Oct at Saxton Oval, Nelson. The row said Pukekura Park, New Plymouth.",
-      "action": "Venue Pukekura Park, New Plymouth -> Saxton Oval, Nelson.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "Same read: Central Stags v Northern Districts is Ford Trophy Round 1 on Tue 27 Oct at Saxton Oval, Nelson.",
+      "action": "date_local 2026-10-24 -> 2026-10-27.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "cric-ford-wgtn-otago",
       "sport": "cricket",
       "competition": "Ford Trophy (List A 50-over)",
       "match": "Wellington Firebirds v Otago Volts",
-      "status": "confirmed",
+      "status": "corrected",
       "source_name": "New Zealand Cricket official fixtures & results service",
       "source_url": "https://scoring.nzc.nz/fixtures",
-      "evidence": "NZC fixtures: Wellington Firebirds v Otago Volts, Ford Trophy Round 1, Sat 24 Oct, Cello Basin Reserve Wellington \u2014 match.",
-      "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "Same read: Wellington Firebirds v Otago Volts is Ford Trophy Round 1 on Tue 27 Oct at the Cello Basin Reserve.",
+      "action": "date_local 2026-10-24 -> 2026-10-27.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "ru-top14-609567",
       "sport": "rugby-union",
       "competition": "French Top 14",
       "match": "Stade Toulousain v USA Perpignan",
-      "status": "not_rechecked",
-      "source_name": "LNR official Top 14 2026-2027 calendar & standings",
+      "status": "confirmed",
+      "source_name": "LNR Top 14 official calendar, journ\u00e9e 7",
       "source_url": "https://top14.lnr.fr/calendrier-et-resultats",
-      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "LNR journ\u00e9e 7: Stade Toulousain v USA Perpignan, samedi 24 octobre, 16h35, sheet 11867 \u2014 all match.",
+      "action": "No change required.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "ru-top14-609564",
       "sport": "rugby-union",
       "competition": "French Top 14",
       "match": "Aviron Bayonnais v LOU Rugby",
-      "status": "not_rechecked",
-      "source_name": "LNR official Top 14 2026-2027 calendar & standings",
+      "status": "confirmed",
+      "source_name": "LNR Top 14 official calendar, journ\u00e9e 7",
       "source_url": "https://top14.lnr.fr/calendrier-et-resultats",
-      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "LNR journ\u00e9e 7: Bayonne v LOU Rugby, samedi 24 octobre, 16h35, sheet 11861 \u2014 participants, date, 14:35Z start (CEST) and sheet id match.",
+      "action": "No change required.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "ru-top14-609554",
       "sport": "rugby-union",
       "competition": "French Top 14",
       "match": "Stade Rochelais v Union Bordeaux-B\u00e8gles",
-      "status": "not_rechecked",
-      "source_name": "LNR official Top 14 2026-2027 calendar & standings",
+      "status": "confirmed",
+      "source_name": "LNR Top 14 official calendar, journ\u00e9e 7",
       "source_url": "https://top14.lnr.fr/calendrier-et-resultats",
-      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "LNR journ\u00e9e 7: La Rochelle v Bordeaux-B\u00e8gles, dimanche 25 octobre, 21h05, sheet 11864. 25 October is after the French DST change, so 21h05 CET = 20:05Z, exactly the row's value.",
+      "action": "No change required.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "ru-urc-609577",
@@ -1097,11 +1141,11 @@
       "competition": "United Rugby Championship",
       "match": "Connacht v Zebre Parma",
       "status": "confirmed",
-      "source_name": "United Rugby Championship official 2026/27 fixtures in full (Round 4)",
+      "source_name": "United Rugby Championship 2026/27 fixtures in full (Round 4)",
       "source_url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
-      "evidence": "URC 2026/27 fixtures release, Round 4: Connacht v Zebre Parma, Dexcom Stadium, Galway, Friday 23 October, KO 19:45 IRE & UK (= 18:45Z) \u2014 participants, venue, date and kick-off all match.",
+      "evidence": "URC Round 4, Friday 23 October: Connacht v Zebre Parma, Dexcom Stadium Galway, KO 19:45 IRE & UK = 18:45Z \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:20Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "ru-urc-609576",
@@ -1109,11 +1153,11 @@
       "competition": "United Rugby Championship",
       "match": "Vodacom Bulls v Ulster",
       "status": "confirmed",
-      "source_name": "United Rugby Championship official 2026/27 fixtures in full (Round 4)",
+      "source_name": "United Rugby Championship 2026/27 fixtures in full (Round 4)",
       "source_url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
-      "evidence": "Round 4: Vodacom Bulls v Ulster, Loftus Versfeld, Pretoria, Saturday 24 October, KO 12:45 IRE & UK (= 11:45Z) \u2014 all match.",
+      "evidence": "URC Round 4, Saturday 24 October: Bulls v Ulster, Loftus Versfeld, KO 12:45 IRE & UK / 13:45 SAST = 11:45Z \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:20Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "ru-urc-609580",
@@ -1121,11 +1165,11 @@
       "competition": "United Rugby Championship",
       "match": "DHL Stormers v Scarlets",
       "status": "confirmed",
-      "source_name": "United Rugby Championship official 2026/27 fixtures in full (Round 4)",
+      "source_name": "United Rugby Championship 2026/27 fixtures in full (Round 4)",
       "source_url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
-      "evidence": "Round 4: DHL Stormers v Scarlets, DHL Stadium, Cape Town, Saturday 24 October, KO 15:00 IRE & UK (= 14:00Z) \u2014 all match.",
+      "evidence": "URC Round 4, Saturday 24 October: Stormers v Scarlets, DHL Stadium, KO 15:00 IRE & UK = 14:00Z \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:20Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "ru-urc-609578",
@@ -1147,7 +1191,7 @@
       "status": "not_rechecked",
       "source_name": "Gallagher Premiership official fixtures hub",
       "source_url": "https://www.premrugby.com/fixtures-results",
-      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
+      "evidence": "premrugby.com/fixtures-results is client-rendered and returned navigation only; not re-read in any pass.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1159,7 +1203,7 @@
       "status": "not_rechecked",
       "source_name": "Gallagher Premiership official fixtures hub",
       "source_url": "https://www.premrugby.com/fixtures-results",
-      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
+      "evidence": "premrugby.com/fixtures-results is client-rendered; not re-read in any pass.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1171,7 +1215,7 @@
       "status": "not_rechecked",
       "source_name": "Gallagher Premiership official fixtures hub",
       "source_url": "https://www.premrugby.com/fixtures-results",
-      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
+      "evidence": "premrugby.com/fixtures-results is client-rendered; not re-read in any pass.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1183,7 +1227,7 @@
       "status": "not_rechecked",
       "source_name": "Gallagher Premiership official fixtures hub",
       "source_url": "https://www.premrugby.com/fixtures-results",
-      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
+      "evidence": "premrugby.com/fixtures-results is client-rendered; not re-read in any pass.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1195,7 +1239,7 @@
       "status": "not_rechecked",
       "source_name": "Gallagher Premiership official fixtures hub",
       "source_url": "https://www.premrugby.com/fixtures-results",
-      "evidence": "The Premiership fixtures page returned page chrome only, with no fixture rows, to a text fetch (F-V14), so these five rows keep their cross-checked status; the Top 14 pages were not re-read.",
+      "evidence": "premrugby.com/fixtures-results is client-rendered; not re-read in any pass.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1289,11 +1333,11 @@
       "competition": "EHF Champions League Men",
       "match": "One Veszpr\u00e9m HC v F\u00fcchse Berlin",
       "status": "confirmed",
-      "source_name": "EHF Champions League Men 2026/27 standings & match calendar",
-      "source_url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
-      "evidence": "EHF calendar: One Veszpr\u00e9m HC v F\u00fcchse Berlin, 21 Oct, 18:45 CEST (= 16:45Z) \u2014 match.",
+      "source_name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)",
+      "source_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "evidence": "EHF Round 5 PDF: One Veszpr\u00e9m v F\u00fcchse Berlin, Wed 21.10.2026, 18:45 CEST, One Veszpr\u00e9m Arena = 16:45Z \u2014 participants, date, start and venue match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "hand-ehf-12052",
@@ -1301,11 +1345,11 @@
       "competition": "EHF Champions League Men",
       "match": "RK Partizan AdmiralBet v FC Porto",
       "status": "confirmed",
-      "source_name": "EHF Champions League Men 2026/27 standings & match calendar",
-      "source_url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
-      "evidence": "EHF calendar: RK Partizan AdmiralBet v FC Porto, 21 Oct, 18:45 CEST (= 16:45Z) \u2014 match.",
+      "source_name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)",
+      "source_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "evidence": "EHF Round 5 PDF: Partizan v FC Porto, Wed 21.10.2026, 18:45 CEST, Hall Aleksandar Nikolic (Belgrade) = 16:45Z \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "hand-ehf-12053",
@@ -1313,11 +1357,11 @@
       "competition": "EHF Champions League Men",
       "match": "HC Zagreb v Paris Saint-Germain",
       "status": "confirmed",
-      "source_name": "EHF Champions League Men 2026/27 standings & match calendar",
-      "source_url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
-      "evidence": "EHF calendar: HC Zagreb v Paris Saint-Germain, 21 Oct, 18:45 CEST (= 16:45Z) \u2014 match.",
+      "source_name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)",
+      "source_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "evidence": "EHF Round 5 PDF: HC Zagreb v PSG, Wed 21.10.2026, 18:45 CEST, Arena Zagreb = 16:45Z \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "hand-ehf-12045",
@@ -1325,11 +1369,11 @@
       "competition": "EHF Champions League Men",
       "match": "CS Dinamo Bucuresti v SAH Aarhus",
       "status": "confirmed",
-      "source_name": "EHF Champions League Men 2026/27 standings & match calendar",
-      "source_url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
-      "evidence": "EHF calendar: Dinamo Bucuresti v SAH Aarhus, 21 Oct, 18:45 CEST (= 16:45Z) \u2014 match.",
+      "source_name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)",
+      "source_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "evidence": "EHF Round 5 PDF: Dinamo Bucuresti v SAH Aarhus, Wed 21.10.2026, 18:45 CEST, Polyvalenta Hall = 16:45Z \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "hand-ehf-12050",
@@ -1337,11 +1381,11 @@
       "competition": "EHF Champions League Men",
       "match": "HBC Nantes v HC Vardar 1961",
       "status": "confirmed",
-      "source_name": "EHF Champions League Men 2026/27 standings & match calendar",
-      "source_url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
-      "evidence": "EHF calendar: HBC Nantes v HC Vardar 1961, 21 Oct, 20:45 CEST (= 18:45Z) \u2014 match.",
+      "source_name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)",
+      "source_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "evidence": "EHF Round 5 PDF: HBC Nantes v Vardar 1961, Wed 21.10.2026, 20:45 CEST, H Arena (Nantes) = 18:45Z \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "hand-ehf-12044",
@@ -1349,11 +1393,11 @@
       "competition": "EHF Champions League Men",
       "match": "Aalborg H\u00e5ndbold v RK Celje Pivovarna La\u0161ko",
       "status": "confirmed",
-      "source_name": "EHF Champions League Men 2026/27 standings & match calendar",
-      "source_url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
-      "evidence": "EHF calendar: Aalborg H\u00e5ndbold v RK Celje Pivovarna La\u0161ko, 21 Oct, 20:45 CEST (= 18:45Z) \u2014 match.",
+      "source_name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)",
+      "source_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "evidence": "EHF Round 5 PDF: Aalborg v Celje, Wed 21.10.2026, 20:45 CEST, Sparekassen Danmark Arena = 18:45Z \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "hand-ehf-12047",
@@ -1361,11 +1405,11 @@
       "competition": "EHF Champions League Men",
       "match": "HC Kriens-Luzern v Industria Kielce",
       "status": "confirmed",
-      "source_name": "EHF Champions League Men 2026/27 standings & match calendar",
-      "source_url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
-      "evidence": "EHF calendar: HC Kriens-Luzern v Industria Kielce, 21 Oct, 20:45 CEST (= 18:45Z) \u2014 match.",
+      "source_name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)",
+      "source_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "evidence": "EHF Round 5 PDF: Kriens-Luzern v Industria Kielce, Wed 21.10.2026, 20:45 CEST, Pilatus Arena (Kriens) = 18:45Z \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "hand-ehf-12049",
@@ -1373,11 +1417,11 @@
       "competition": "EHF Champions League Men",
       "match": "MT Melsungen v Orlen Wisla Plock",
       "status": "confirmed",
-      "source_name": "EHF Champions League Men 2026/27 standings & match calendar",
-      "source_url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
-      "evidence": "EHF calendar: MT Melsungen v Orlen Wisla Plock, 22 Oct, 18:45 CEST (= 16:45Z) \u2014 match.",
+      "source_name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)",
+      "source_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "evidence": "EHF Round 5 PDF: MT Melsungen v Orlen Wisla Plock, Thu 22.10.2026, 18:45 CEST, Rothenbach-Halle (Kassel) = 16:45Z \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "hand-ehf-12051",
@@ -1385,23 +1429,23 @@
       "competition": "EHF Champions League Men",
       "match": "OTP Bank - PICK Szeged v GOG",
       "status": "confirmed",
-      "source_name": "EHF Champions League Men 2026/27 standings & match calendar",
-      "source_url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
-      "evidence": "EHF calendar: OTP Bank - PICK Szeged v GOG, 22 Oct, 18:45 CEST (= 16:45Z) \u2014 match.",
+      "source_name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)",
+      "source_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "evidence": "EHF Round 5 PDF: OTP Bank-Pick Szeged v GOG, Thu 22.10.2026, 18:45 CEST, Pick Arena (Szeged) = 16:45Z \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "hand-ehf-12048",
       "sport": "handball",
       "competition": "EHF Champions League Men",
       "match": "Kolstad H\u00e5ndball v SC Magdeburg",
-      "status": "confirmed",
-      "source_name": "EHF Champions League Men 2026/27 standings & match calendar",
-      "source_url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
-      "evidence": "EHF calendar: Kolstad H\u00e5ndball v SC Magdeburg, 22 Oct, 20:45 CEST (= 18:45Z) \u2014 match.",
-      "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "status": "corrected",
+      "source_name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)",
+      "source_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "evidence": "The EHF playing-times PDF places Kolstad's Round 5 home fixture at Kolstad Arena (Kolstad, NOR), not Trondheim Spektrum.",
+      "action": "venue corrected to 'Kolstad Arena, Kolstad, Norway'; participants, date, 18:45Z start and the Round 5 pairing were already right.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "hand-ehf-12054",
@@ -1409,11 +1453,11 @@
       "competition": "EHF Champions League Men",
       "match": "Sporting CP v IFK Kristianstad",
       "status": "confirmed",
-      "source_name": "EHF Champions League Men 2026/27 standings & match calendar",
-      "source_url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
-      "evidence": "EHF calendar: Sporting Clube de Portugal v IFK Kristianstad, 22 Oct, 20:45 CEST (= 18:45Z) \u2014 match.",
+      "source_name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)",
+      "source_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "evidence": "EHF Round 5 PDF: Sporting CP v IFK Kristianstad, Thu 22.10.2026, 20:45 CEST, Pavilhao Joao Rocha (Lisbon) = 18:45Z \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "hand-ehf-12046",
@@ -1421,11 +1465,11 @@
       "competition": "EHF Champions League Men",
       "match": "Bar\u00e7a v Montpellier Handball",
       "status": "confirmed",
-      "source_name": "EHF Champions League Men 2026/27 standings & match calendar",
-      "source_url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
-      "evidence": "EHF calendar: Bar\u00e7a v Montpellier Handball, 22 Oct, 20:45 CEST (= 18:45Z) \u2014 match.",
+      "source_name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)",
+      "source_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "evidence": "EHF Round 5 PDF: Bar\u00e7a v Montpellier HB, Thu 22.10.2026, 20:45 CEST, Palau Blaugrana = 18:45Z \u2014 all match.",
       "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "vol-plus-36961",
@@ -1435,7 +1479,7 @@
       "status": "not_rechecked",
       "source_name": "PlusLiga official 2026/27 schedule",
       "source_url": "https://www.plusliga.pl/games.html",
-      "evidence": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
+      "evidence": "plusliga.pl redirects to the tauronliga.pl portal and the men's fixture list is paginated behind it; not re-read.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1447,7 +1491,7 @@
       "status": "not_rechecked",
       "source_name": "PlusLiga official 2026/27 schedule",
       "source_url": "https://www.plusliga.pl/games.html",
-      "evidence": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
+      "evidence": "plusliga.pl redirects to the tauronliga.pl portal; not re-read.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1459,7 +1503,7 @@
       "status": "not_rechecked",
       "source_name": "PlusLiga official 2026/27 schedule",
       "source_url": "https://www.plusliga.pl/games.html",
-      "evidence": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
+      "evidence": "plusliga.pl redirects to the tauronliga.pl portal; not re-read.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1471,7 +1515,7 @@
       "status": "not_rechecked",
       "source_name": "PlusLiga official 2026/27 schedule",
       "source_url": "https://www.plusliga.pl/games.html",
-      "evidence": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
+      "evidence": "plusliga.pl redirects to the tauronliga.pl portal; not re-read.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1483,7 +1527,7 @@
       "status": "not_rechecked",
       "source_name": "PlusLiga official 2026/27 schedule",
       "source_url": "https://www.plusliga.pl/games.html",
-      "evidence": "Re-tested on 2026-10-21: www.plusliga.pl redirects to tauronliga.pl and returns a generic competition page rather than the cited fixture list, so the five PlusLiga rows could not be re-read. SuperLega pages were not fetched.",
+      "evidence": "plusliga.pl redirects to the tauronliga.pl portal; not re-read.",
       "action": "Keeps its original status and source links; nothing in this pass re-read it.",
       "checked_at": "2026-10-21T07:05Z"
     },
@@ -1528,108 +1572,108 @@
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "match": "North Melbourne v Adelaide Crows",
-      "status": "flagged",
-      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board",
+      "status": "corrected",
+      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board & match ids",
       "source_url": "https://www.afl.com.au/aflw",
-      "evidence": "AFLW Round 11 board lists nmfc v adel as match 8979 with venue code NHO. The board publishes three-letter venue codes only; NHO was not decoded with certainty and does not correspond to the row's 'Arden Street Oval, Melbourne'.",
-      "action": "Left as published and flagged for a human to confirm the venue; the pairing and match id do match.",
-      "checked_at": "2026-10-21T07:20Z"
+      "evidence": "AFL AFLW Round 11 board: match 8979 North Melbourne v Adelaide prints Sat 10:05 PM (client render) at NHO \u2014 North Hobart Oval. The row carried Fri 23 Oct at Arden Street Oval.",
+      "action": "start_utc 2026-10-23T08:15Z -> 2026-10-25T02:05Z; venue -> 'North Hobart Oval, Hobart'.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "aflw-r11-02",
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "match": "Geelong Cats v Fremantle",
-      "status": "confirmed",
-      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board",
+      "status": "corrected",
+      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board & match ids",
       "source_url": "https://www.afl.com.au/aflw",
-      "evidence": "AFLW Round 11 board: geel v fre at GMHBA \u2014 pairing and venue match.",
-      "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "Round 11 board: match 8974 Geelong v Fremantle at GMHBA prints Sat 12:05 AM = 04:05Z; the row carried 02:05Z, the St Kilda v Brisbane slot.",
+      "action": "start_utc 2026-10-24T02:05Z -> 2026-10-24T04:05Z.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "aflw-r11-03",
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "match": "Western Bulldogs v Melbourne",
-      "status": "confirmed",
-      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board",
+      "status": "corrected",
+      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board & match ids",
       "source_url": "https://www.afl.com.au/aflw",
-      "evidence": "AFLW Round 11 board: wb v melb at MWO (Mission Whitten Oval) \u2014 pairing and venue match.",
-      "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "Round 11 board: match 8973 Western Bulldogs v Melbourne at Mission Whitten Oval prints Sat 4:15 AM = 08:15Z; the row carried 04:05Z.",
+      "action": "start_utc 2026-10-24T04:05Z -> 2026-10-24T08:15Z.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "aflw-r11-04",
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "match": "Carlton v GWS GIANTS",
-      "status": "confirmed",
-      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board",
+      "status": "corrected",
+      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board & match ids",
       "source_url": "https://www.afl.com.au/aflw",
-      "evidence": "AFLW Round 11 board: carl v gws, match id 8975, venue code IKP (IKON Park) \u2014 pairing, home/away and venue match. The board prints kick-offs in the viewer's timezone, so the stored UTC was left as published.",
-      "action": "No change required.",
-      "checked_at": "2026-10-21T07:20Z"
+      "evidence": "Round 11 board: match 8975 Carlton v GWS at IKON Park prints Sun 2:05 AM = 06:05Z on 25 October; the row carried 24 October 04:05Z.",
+      "action": "start_utc 2026-10-24T04:05Z -> 2026-10-25T06:05Z.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "aflw-r11-05",
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "match": "Hawthorn v Essendon",
-      "status": "flagged",
-      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board",
+      "status": "corrected",
+      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board & match ids",
       "source_url": "https://www.afl.com.au/aflw",
-      "evidence": "AFLW Round 11 board lists haw v ess as match 8976 with venue code KCC. The row claims Kinetic Stadium, Frankston; KCC was not decoded with certainty from the official board.",
-      "action": "Left as published and flagged for a human to confirm the venue; the pairing and match id do match.",
-      "checked_at": "2026-10-21T07:20Z"
+      "evidence": "Round 11 board: match 8976 Hawthorn v Essendon prints Sun 12:05 AM = 04:05Z at KCC, the Kennedy Community Centre in Dingley; the row carried Sat 24 Oct 06:15Z at Kinetic Stadium, Frankston.",
+      "action": "start_utc 2026-10-24T06:15Z -> 2026-10-25T04:05Z; venue -> 'Kennedy Community Centre, Dingley'.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "aflw-r11-06",
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "match": "Gold Coast SUNS v Richmond",
-      "status": "confirmed",
-      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board",
+      "status": "corrected",
+      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board & match ids",
       "source_url": "https://www.afl.com.au/aflw",
-      "evidence": "AFLW Round 11 board: gcfc v rich at PFS (People First Stadium) \u2014 pairing and venue match.",
-      "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "Round 11 board: match 8972 Gold Coast v Richmond at People First Stadium prints Sat 2:05 AM = 06:05Z; the row carried 08:15Z.",
+      "action": "start_utc 2026-10-24T08:15Z -> 2026-10-24T06:05Z.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "aflw-r11-07",
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "match": "Port Adelaide v Collingwood",
-      "status": "confirmed",
-      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board",
+      "status": "corrected",
+      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board & match ids",
       "source_url": "https://www.afl.com.au/aflw",
-      "evidence": "AFLW Round 11 board: port v coll at ALB (Alberton Oval) \u2014 pairing and venue match.",
-      "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "Round 11 board: match 8970 Port Adelaide v Collingwood at Alberton prints Fri 4:15 AM = 08:15Z on 23 October; the row carried 25 October 02:05Z.",
+      "action": "start_utc 2026-10-25T02:05Z -> 2026-10-23T08:15Z.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "aflw-r11-08",
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "match": "Sydney Swans v West Coast Eagles",
-      "status": "confirmed",
-      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board",
+      "status": "corrected",
+      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board & match ids",
       "source_url": "https://www.afl.com.au/aflw",
-      "evidence": "AFLW Round 11 board: syd v wce at HEN (Henson Park) \u2014 pairing and venue match.",
-      "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "Round 11 board: match 8977 Sydney v West Coast at Henson Park prints Sat 9:35 PM = 01:35Z on 25 October; the row carried 04:05Z.",
+      "action": "start_utc 2026-10-25T04:05Z -> 2026-10-25T01:35Z.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "aflw-r11-09",
       "sport": "aussie-rules",
       "competition": "NAB AFLW Premiership Season",
       "match": "St Kilda v Brisbane Lions",
-      "status": "confirmed",
-      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board",
+      "status": "corrected",
+      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board & match ids",
       "source_url": "https://www.afl.com.au/aflw",
-      "evidence": "AFLW Round 11 board: stk v bl at RSEA \u2014 pairing and venue match.",
-      "action": "No change required.",
-      "checked_at": "2026-10-21T07:05Z"
+      "evidence": "Round 11 board: match 8971 St Kilda v Brisbane at RSEA Park prints Fri 10:05 PM = 02:05Z on 24 October; the row carried 25 October 06:05Z.",
+      "action": "start_utc 2026-10-25T06:05Z -> 2026-10-24T02:05Z.",
+      "checked_at": "2026-10-21T09:05Z"
     },
     {
       "id": "lol-worlds26-tsw-lyon",
@@ -1883,8 +1927,8 @@
       "id": "F-V10",
       "severity": "medium",
       "area": "Coverage \u2014 most rows were not re-fetched in this pass",
-      "detail": "Fresh official reads covered 72 of 134 rows (confirmed + corrected + flagged). The remaining 62 keep their original verified or cross-checked status and their source links, but this pass did not re-read them.",
-      "status": "Every one of the 62 is listed on the Live Verification page with the reason, so the gap is visible rather than implied. No row is claimed as re-verified without a read.",
+      "detail": "Fresh official reads covered 76 of 134 rows (confirmed + corrected + flagged). The remaining 58 keep their original verified or cross-checked status and their source links, but this pass did not re-read them.",
+      "status": "Every one of the 58 is listed on the Live Verification page with the reason, so the gap is visible rather than implied. No row is claimed as re-verified without a read.",
       "source": "nhl_sched",
       "source_name": "NHL official schedule API (2026-10-21)",
       "source_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
@@ -1938,6 +1982,86 @@
       "source": "nhl_sched",
       "source_name": "NHL official schedule API (2026-10-21)",
       "source_url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+    },
+    {
+      "id": "T34-01",
+      "severity": "high",
+      "source": "aflw_ladder",
+      "area": "AFLW \u2014 the ladder used to price nine rows is not the official 2026 ladder",
+      "detail": "Every AFLW row cites a 2026 R10 ladder input. Against the official afl.com.au 2026 AFLW ladder after Round 10 the published inputs do not reconcile: the rows give North Melbourne 40 points (10-0) where the ladder has 36 (9-1), Geelong 16 at 13th where it has 36 at 2nd, Gold Coast 4 at 18th where it has 28 at 5th, St Kilda 20 at 10th where it has 4 at 18th, and 16 of the 18 clubs disagree. The fixture facts were verified and corrected in this pass; the pricing inputs were not.",
+      "status": "Disclosed, not silently re-priced. Rewriting nine published rows and three published picks in the commit that discovers the error would destroy the audit trail. Every AFLW row carries the mismatch as a flag, the official ladder is linked, and T35 is filed as the dedicated re-price task.",
+      "source_name": "AFL official 2026 AFLW ladder (after Round 10)",
+      "source_url": "https://www.afl.com.au/aflw/ladder"
+    },
+    {
+      "id": "T34-02",
+      "severity": "high",
+      "source": "aflw_hub",
+      "area": "AFLW \u2014 nine Round 11 start times were shifted by one fixture and one venue was wrong",
+      "detail": "The nine AFLW rows were right about participants but had been given Round 11's kick-off slots in chronological order rather than in each fixture's own order: Port Adelaide v Collingwood carried the North Melbourne slot, St Kilda v Brisbane carried Geelong's, two rows shared 2026-10-24T04:05Z, one time (06:15Z) appears in no official fixture, and Hawthorn v Essendon sat at Kinetic Stadium, Frankston instead of the Kennedy Community Centre, Dingley.",
+      "status": "All nine times corrected from the AFL Round 11 board with match ids 8970-8979 in the evidence, and the Hawthorn venue corrected.",
+      "source_name": "AFL official AFLW hub \u2014 Round 11 fixture board & match ids",
+      "source_url": "https://www.afl.com.au/aflw"
+    },
+    {
+      "id": "T34-03",
+      "severity": "medium",
+      "source": "nzc",
+      "area": "Cricket \u2014 Ford Trophy Round 1 is 27 October, not 24 October",
+      "detail": "On the NZC fixture service the Ford Trophy Round 1 block sits under the TUE 27 Oct heading, after the 3rd T20I and before the FRI 30 Oct block that carries Round 2.",
+      "status": "Three date_local values corrected to 2026-10-27; venues confirmed; start times stay blank because NZC prints a timezone-less 5:30pm.",
+      "source_name": "New Zealand Cricket official fixtures & results service",
+      "source_url": "https://scoring.nzc.nz/fixtures"
+    },
+    {
+      "id": "T34-04",
+      "severity": "medium",
+      "source": "nzc",
+      "area": "Cricket \u2014 the Afghanistan v Bangladesh ODI has no governing-body fixture page",
+      "detail": "The row's only citation is the ICC rankings table, which publishes no fixtures, and no official page listing the match at Sharjah was found in four passes.",
+      "status": "Status downgraded from verified to unverified and flagged; nothing invented to fill the gap.",
+      "source_name": "New Zealand Cricket official fixtures & results service",
+      "source_url": "https://scoring.nzc.nz/fixtures"
+    },
+    {
+      "id": "T34-05",
+      "severity": "medium",
+      "source": "nrl_draw2",
+      "area": "Rugby league \u2014 the women's RLWC rows could not be re-read",
+      "detail": "nrl.com serves the men's Round 2 draw for ?competition=176 because the competition selector is client-side.",
+      "status": "Both rows stay not re-checked with that reason printed.",
+      "source_name": "NRL / Rugby League World Cup 2026 Round 2 draw (nrl.com)",
+      "source_url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+    },
+    {
+      "id": "T34-06",
+      "severity": "low",
+      "source": "nba_cdn",
+      "area": "Source reachability \u2014 publishers that block a text read",
+      "detail": "pdc.tv returns a cookie-consent interstitial; cdn.nba.com returned HTTP 500 during this pass; premrugby.com and plusliga.pl render fixtures client-side (plusliga.pl also redirects to tauronliga.pl).",
+      "status": "Every affected row is marked not re-checked with the blocker named; no blocked publisher is treated as agreement.",
+      "source_name": "NBA official scoreboard feed (cdn.nba.com)",
+      "source_url": "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json"
+    },
+    {
+      "id": "T34-07",
+      "severity": "low",
+      "source": "ehf_pdf",
+      "area": "Handball \u2014 one venue did not match the official playing-times sheet",
+      "detail": "Kolstad's Round 5 home fixture is listed by the EHF at Kolstad Arena (Kolstad), not Trondheim Spektrum.",
+      "status": "Venue corrected; the other eleven handball rows matched the PDF on participants, date, start time and arena.",
+      "source_name": "EHF Champions League Men 2026/27 group-phase playing times (official PDF)",
+      "source_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"
+    },
+    {
+      "id": "T34-08",
+      "severity": "low",
+      "source": "top14_cal",
+      "area": "Top 14 \u2014 the Sunday fixture falls after the French DST change",
+      "detail": "La Rochelle v Bordeaux-B\u00e8gles is listed at 21h05 on Sunday 25 October. France leaves CEST at 03:00 that morning, so 21h05 is CET and equals 20:05Z; a naive CEST conversion would have produced 19:05Z and looked like an error in the row.",
+      "status": "Confirmed, no change. Recorded because the same trap applies to every Sunday European fixture after 25 October.",
+      "source_name": "LNR Top 14 official calendar, journ\u00e9e 7",
+      "source_url": "https://top14.lnr.fr/calendrier-et-resultats"
     }
   ]
 }

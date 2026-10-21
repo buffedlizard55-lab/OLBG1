@@ -3,7 +3,7 @@
 
 The gate deliberately distinguishes between two things:
 
-* source-backed facts in the primary 134-event dataset; and
+* source-backed facts in the primary dataset, row by row, including each row's verification ledger; and
 * model outputs, which are labelled as independently originated estimates.
 
 It checks every primary fixture source against a maintained official-authority host
@@ -250,11 +250,32 @@ def check_data_and_predictions() -> tuple[int, int, int]:
             errors.append(f"{fixture_id}: missing governing-body source")
         for source in fixture_sources:
             check_official_source(source, fixture_id)
+        # Every row must carry a verification ledger entry, and any row claiming to have
+        # been re-checked must point at the HTTPS page that was actually read.
+        vblock = fixture.get("verification")
+        if not isinstance(vblock, dict):
+            errors.append(f"{fixture_id}: missing verification ledger block")
+        else:
+            verdict = vblock.get("verdict")
+            if verdict not in ("confirmed", "corrected", "conflict", "unconfirmed", "blocked", "not-rechecked"):
+                errors.append(f"{fixture_id}: invalid verification verdict {verdict!r}")
+            if verdict in ("confirmed", "corrected", "conflict", "blocked", "unconfirmed"):
+                ev = str(vblock.get("evidence", ""))
+                if not ev.startswith("https://"):
+                    errors.append(f"{fixture_id}: verification evidence is not an HTTPS page -> {ev!r}")
+                if not vblock.get("checked_utc"):
+                    errors.append(f"{fixture_id}: verification block has no checked_utc")
+            if verdict in ("confirmed", "corrected") and not vblock.get("fields"):
+                errors.append(f"{fixture_id}: confirmed row lists no confirmed fields")
 
     lines_by_id = {line.get("id"): line for line in lines}
     if len(lines_by_id) != len(lines) or None in lines_by_id:
         errors.append("invalid or duplicate originated-line IDs")
-    h2h_ids = {fixture["id"] for fixture in fixtures if fixture.get("away")}
+    # A fixture carrying both sides is normally priced; rows explicitly marked unpriced
+    # (no verified inputs yet) are published as event cards instead of guessed lines.
+    h2h_ids = {
+        fixture["id"] for fixture in fixtures if fixture.get("away") and not fixture.get("unpriced")
+    }
     if set(lines_by_id) != h2h_ids:
         errors.append(f"H2H fixtures ({len(h2h_ids)}) != priced lines ({len(lines_by_id)})")
 
@@ -368,7 +389,7 @@ def check_data_and_predictions() -> tuple[int, int, int]:
     if full_doc.get("count") != len(full_rows) or {row.get("id") for row in full_rows} != seen_ids:
         errors.append("datasets/matches_full.json is not a complete primary-fixture export")
     for row in full_rows:
-        if row.get("is_h2h") and not row.get("pricing"):
+        if row.get("is_h2h") and not row.get("pricing") and not row.get("unpriced"):
             errors.append(f"{row.get('id')}: full export lost H2H pricing")
 
     with (ROOT / "datasets" / "matches_full.csv").open(encoding="utf-8", newline="") as handle:

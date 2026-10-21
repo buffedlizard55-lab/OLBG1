@@ -48,11 +48,12 @@ No third-party dependencies. Python 3.10+.
 
 ## Coverage at a glance (Primary Root Desk & `/f7fa77fc/` Mirror — Session `f7fa77fc-olbg1`)
 
-- **134 source-linked events across ALL 17 in-scope OLBG sports**: `129` rows are `verified` and `5` Gallagher Premiership rows remain explicitly `cross-checked`; `126` two-sided H2H matches are priced across Winner, Draw No Bet, Handicap/Spread and (where a sourced baseline exists) Over/Under Total markets, plus `8` field cards across Golf, Motor Racing and Greyhounds.
+- **134 source-linked events across ALL 17 in-scope OLBG sports**: `128` rows are `verified`, `5` Gallagher Premiership rows remain explicitly `cross-checked`, and `1` row (Afghanistan v Bangladesh ODI) is `unverified` because no governing body publishes that fixture — it is blank-and-flagged rather than filled from a tipster page. `126` two-sided H2H matches are priced across Winner, Draw No Bet, Handicap/Spread and (where a sourced baseline exists) Over/Under Total markets, plus `8` event/field cards.
 - **All 24 active OLBG sport IDs reconciled** (`22` sitemap-listed + unlisted active routes `Entertainment/18` and `Hurling/26`): `17` in scope (`Tennis`, `Basketball`, `Golf`, `Cricket`, `Snooker`, `Rugby Union`, `Rugby League`, `Baseball`, `Ice Hockey`, `Motor Racing`, `Darts`, `Handball`, `Volleyball`, `Aussie Rules`, `eSports`, `Gaelic Football`, `Greyhounds`) and `8` excluded (`Football/Soccer`, `Horse Racing`, `American Football`, `Boxing`, `UFC/MMA`, `Entertainment/Specials`, `Hurling`, `Cycling`).
-- **31 High-confidence picks** (requiring `status == "verified"` AND measured governing-body ratings on **both** sides — an original, source-bounded `30+` word prediction per pick, with `0` duplicate 6-word n-grams), **35 Medium**, **60 Low**, **8 Field cards**.
-- **Live refresh (2026-10-21T07:05Z):** all 17 in-scope OLBG hubs re-captured — `141` live cards, `69` joined by `event_id` to a source-verified row, `47` upstream consensus/selection movements recorded (with the superseded value kept in `olbg.consensus_prior`), `72` upstream-only cards published as **Unverified** and left unpriced, and `18` dataset rows logged as absent from the truncated first screen rather than treated as expired. See `live-refresh.html`.
-- **0 unverified values published as fact** and **0 broken relative links across all 133 published HTML pages** spanning all five live boards (`/` root, `/f7fa77fc/`, `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`).
+- **31 High-confidence picks** (requiring `status == "verified"` AND measured governing-body ratings on **both** sides — an original, hand-written `30+` word prediction per pick, with `0` duplicate 6-word n-grams), **34 Medium**, **61 Low**, `8` event/field cards.
+- **Live refresh (2026-10-21T07:05Z):** all 17 in-scope OLBG hubs re-captured — `141` live cards, `69` joined by `event_id` to a source-verified row, `47` upstream consensus/selection movements recorded (with the superseded value kept in `olbg.consensus_prior`), `72` upstream-only cards listed as **unverified on `live-refresh.html`** and deliberately left out of the priced set, and `18` dataset rows logged as absent from the truncated first screen rather than treated as expired.
+- **Four re-verification passes on 2026-10-21 (T20, T21, T22, T34):** every row carries a verification ledger block and names the pass that last read it. The register now stands at `41` confirmed against an official page, `33` corrected, `2` flagged and `58` not re-checked with the specific blocker printed. This pass corrected nine AFLW kick-off times that had been assigned in chronological order instead of per fixture, the Hawthorn venue, three Ford Trophy dates (27 October, not 24) and one EHF arena, and downgraded an ODI that no governing body publishes. See [`live-verification.html`](https://buffedlizard55-lab.github.io/OLBG1/live-verification.html) and [`reports/LIVE_VERIFICATION.md`](reports/LIVE_VERIFICATION.md).
+- **No unverified value is presented as fact** — withheld values are blank and flagged — and **0 broken relative links across all 160 published HTML pages** spanning all five live boards (`/` root, `/f7fa77fc/`, `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`).
 
 ## Quick rebuild & repo-wide validation
 
@@ -60,7 +61,8 @@ No third-party dependencies. Python 3.10+.
 python3 scripts/live_diff.py           # event-level diff of the 07:05Z live OLBG capture
 python3 scripts/build_dataset.py       # governing-body fixtures, sources, coverage & flagged registry
 python3 scripts/origin_lines.py        # multi-market pricing, 31 predictions & datasets/matches_full.{json,csv}
-python3 scripts/build_site.py          # renders 27 pages at / and 27 mirrored pages at /f7fa77fc/
+python3 scripts/live_verification.py   # REQUIRED: verification register + per-row ledger blocks (T20/T21/T22/T34)
+python3 scripts/build_site.py          # renders 30 pages at / and 30 mirrored pages at /f7fa77fc/
 python3 scripts/validate.py            # strict provenance, market, export and all-site-link validator
 python3 scripts/final_audit.py          # writes reports/FINAL_INTEGRATION_AUDIT.md (every primary row + links)
 python3 scripts/ebfbd966_validate.py   # parallel ebfbd966 validator (0 errors)
