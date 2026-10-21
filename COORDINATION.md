@@ -404,3 +404,5 @@ integrated additively:
    linked per row; SNO-02 HIGH to be re-confirmed on WST rankings); MLB WS starters + NHL
    goalies blank; OLBG 'Load More' zero-tip tail unenumerated; OLBG times timezone unstated.
    Mirrored on `ebfbd966/flagged.html`.
+
+**Integration record (arena/ebfbd966, 2026-10-21):** PR [#9](https://github.com/buffedlizard55-lab/OLBG1/pull/9) **MERGED** 2026-10-21T05:30:57Z (merge commit `c19df1d`). GitHub Pages rebuilt successfully (status `built`, source `main:/` unchanged). Live verification by direct fetch: root dashboard `/OLBG1/` intact (49-match verified build), this desk live at `/OLBG1/ebfbd966/` (133 matches, HIGH previews rendering), companion board at `/OLBG1/docs/`. Combined-tree link check across 64 HTML files: zero genuinely broken internal refs (16 apparent hits are 404.html's intentional absolute `/OLBG1/` paths, correct when deployed). No other session's files deleted (`git diff --diff-filter=D origin/main..HEAD` empty at merge). Remaining needs-review items stand as listed in entry 4 above and on `ebfbd966/flagged.html`.

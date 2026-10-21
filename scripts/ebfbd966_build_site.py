@@ -110,7 +110,7 @@ high = [m for m in matches if L[m["id"]]["confidence"]=="HIGH"]
 cards = ""
 for s in SPORT_ORDER:
     ms = by_sport[s]; c = collections.Counter(L[m["id"]]["confidence"] for m in ms)
-    cards += f'<a class="card" href="sports/{SLUG[s]}.html"><strong>{s}</strong><span>{len(ms)} matches</span><span class="muted">{c["HIGH"]} high · {c["MEDIUM"]} med · {c["LOW"]} low</span></a>'
+    cards += f'<a class="card" href="sports/{SLUG[s]}.html"><strong>{s}</strong><span>{len(ms)} match{"es" if len(ms)!=1 else ""}</span><span class="muted">{c["HIGH"]} high · {c["MEDIUM"]} med · {c["LOW"]} low</span></a>'
 cards += '<a class="card" href="sports/rugby-league.html"><strong>Rugby League</strong><span>0 matches</span><span class="muted">off-season — verified</span></a>'
 high_rows = "".join(row_html(m, with_sport=True) for m in high)
 best = sorted(matches, key=lambda m: -L[m["id"]]["pick_prob"])[:12]
