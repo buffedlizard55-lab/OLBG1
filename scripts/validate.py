@@ -52,6 +52,11 @@ def check_links():
         for f in (DOCS / sub).rglob("*"):
             if f.is_file():
                 known.add(f.relative_to(DOCS).as_posix())
+    # additive (session 2360a617): session-desk namespaces (aa4e9dbf/, ebfbd966/, 2360a617/, docs/, …)
+    # also resolve on disk — check every repo file so cross-board nav links validate
+    for f in DOCS.rglob("*"):
+        if f.is_file() and ".git" not in f.parts:
+            known.add(f.relative_to(DOCS).as_posix())
 
     inbound: dict[str, int] = {}
     for page in pages:
