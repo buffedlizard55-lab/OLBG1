@@ -20,14 +20,42 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from model import OVERROUND, SPORTS, price_match
-from high_predictions import HIGH_PREDICTION_LINES, HIGH_PREDICTION_TEXTS
+from high_predictions import HIGH_PREDICTION_TEXTS
 
 DATE_ANCHOR = "2026-10-21"
 
 
-def source_backed_prediction(fixture: dict, line: dict, selection_line: str) -> str:
-    """Render the unique fact-only prose reserved for this high-confidence fixture."""
-    return HIGH_PREDICTION_TEXTS[fixture["id"]].format(selection=selection_line)
+def source_backed_prediction(fixture: dict, line: dict) -> str:
+    """Render the unique, fact-only prose reserved for this high-confidence fixture."""
+    return HIGH_PREDICTION_TEXTS[fixture["id"]]
+
+
+def format_bet_line(line: dict) -> str:
+    """Quote the published selection exactly as the model priced it.
+
+    The price is generated here rather than typed into the prose or into a hand-maintained
+    dict, so `bet_line`, `pick_odds` and the table can never disagree after a re-price
+    (the failure mode the previous pass guarded against with a manual mapping).
+    """
+    text = f"{line['pick']} — {line.get('pick_market') or 'Match Winner'} @ {line['pick_odds']:.2f}"
+    if line.get("pick_american"):
+        text += f" ({line['pick_american']})"
+    return text
+
+
+def window_note(line: dict) -> str:
+    """Explain, in one line, how the pick relates to the -250/+10000 window."""
+    w = line.get("window") or {}
+    if w.get("favourite_in_window"):
+        return (
+            f"Match-winner price {w.get('favourite_american')} is already inside the "
+            f"-250/+10000 window."
+        )
+    return (
+        f"Match-winner price {w.get('favourite_american')} is outside the -250/+10000 window, "
+        f"so the published selection is the handicap rung at {line.get('pick_american')} "
+        f"({float(line.get('pick_probability', 0)) * 100:.1f}% model probability)."
+    )
 
 
 def main() -> None:
@@ -40,14 +68,20 @@ def main() -> None:
             priced_lines.append(price_match(f))
 
     high_ids = [l["id"] for l in priced_lines if l["confidence"] == "high"]
-    line_ids = set(HIGH_PREDICTION_LINES)
     text_ids = set(HIGH_PREDICTION_TEXTS)
-    missing = set(high_ids) - line_ids
-    extra = line_ids - set(high_ids)
-    if missing or extra or line_ids != text_ids:
+    missing = set(high_ids) - text_ids
+    extra = text_ids - set(high_ids)
+    if missing or extra:
         raise RuntimeError(
-            f"High-prediction bijection mismatch! missing={missing}, extra={extra}, "
-            f"line_ids!=text_ids={line_ids != text_ids}"
+            f"High-prediction bijection mismatch! missing={sorted(missing)}, extra={sorted(extra)}"
+        )
+    out_of_window = [
+        l["id"] for l in priced_lines
+        if l["confidence"] == "high" and not l.get("pick_in_window")
+    ]
+    if out_of_window:
+        raise RuntimeError(
+            "High-confidence picks outside the -250/+10000 window: " + ", ".join(out_of_window)
         )
 
     fixtures_by_id = {f["id"]: f for f in fixtures}
@@ -55,12 +89,12 @@ def main() -> None:
 
     predictions_out = []
     for mid in high_ids:
-        selection_line = HIGH_PREDICTION_LINES[mid]
         fx = fixtures_by_id[mid]
         ln = priced_by_id[mid]
-        prediction_text = source_backed_prediction(fx, ln, selection_line)
+        prediction_text = source_backed_prediction(fx, ln)
         wc = len(prediction_text.split())
         assert wc >= 30, f"{mid} prediction under 30 words ({wc})"
+        selection_line = format_bet_line(ln)
         facts = [
             f"{fx['home']}: {fx['inputs']['home']['label']} — {fx['inputs']['home']['value']}",
             f"{fx['away']}: {fx['inputs']['away']['label']} — {fx['inputs']['away']['value']}",
@@ -69,6 +103,13 @@ def main() -> None:
         predictions_out.append({
             "match_id": mid,
             "selection": ln["pick"],
+            "market": ln["pick_market"],
+            "line": ln.get("pick_line", ""),
+            "probability": ln.get("pick_probability"),
+            "odds": ln.get("pick_odds"),
+            "american": ln.get("pick_american"),
+            "in_window": bool(ln.get("pick_in_window")),
+            "window_note": window_note(ln),
             "bet_line": selection_line,
             "text": prediction_text,
             "words": wc,
@@ -83,6 +124,19 @@ def main() -> None:
         "sports": {k: {kk: vv for kk, vv in v.items()} for k, v in SPORTS.items()},
         "count": len(priced_lines),
         "confidence_counts": dict(Counter(l["confidence"] for l in priced_lines)),
+        "high_confidence_window": {
+            "min_american": -250,
+            "max_american": 10000,
+            "conviction_floor": 0.60,
+            "high_picks_in_window": sum(
+                1 for l in priced_lines if l["confidence"] == "high" and l.get("pick_in_window")
+            ),
+            "note": (
+                "Every high-confidence pick is quoted inside -250..+10000. Where the "
+                "match-winner price is shorter than -250 the same view is published on the "
+                "handicap rung that lands inside the window."
+            ),
+        },
         "lines": priced_lines,
     }
     predictions_doc = {
@@ -162,6 +216,12 @@ def main() -> None:
             "handicap_market": hcap_summary,
             "total_market": total_summary,
             "pick": lid["pick"] if lid else "Field event (no H2H line)",
+            "pick_market": lid["pick_market"] if lid else "",
+            "pick_odds": lid["pick_odds"] if lid else "",
+            "pick_american": lid["pick_american"] if lid else "",
+            "pick_probability": lid.get("pick_probability") if lid else "",
+            "pick_in_window": lid.get("pick_in_window") if lid else "",
+            "favourite_american": (lid.get("window") or {}).get("favourite_american") if lid else "",
             "confidence": lid["confidence"] if lid else "",
             "prediction_selection": pred["selection"] if pred else "",
             "prediction_text": pred["text"] if pred else "",

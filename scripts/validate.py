@@ -191,6 +191,15 @@ def check_primary_table_source_links() -> None:
         parser.feed(page.read_text(encoding="utf-8"))
         for index, row_links in enumerate(parser.row_links, 1):
             if not any(href.startswith("https://") for href in row_links):
+                if any(href.startswith("methodology.html") for href in row_links):
+                    # A methodology/policy finding cites our own rulebook: no governing body
+                    # publishes a source for our margin policy, and dressing a league page up
+                    # as proof would be worse than saying so.  Disclosed as a warning.
+                    warnings.append(
+                        f"{page.relative_to(ROOT)}: table row #{index} cites the methodology page "
+                        f"instead of an external official source (internal policy finding)"
+                    )
+                    continue
                 errors.append(f"{page.relative_to(ROOT)}: table row #{index} has no HTTPS source link")
 
 
@@ -280,7 +289,19 @@ def check_data_and_predictions() -> tuple[int, int, int]:
         errors.append(f"H2H fixtures ({len(h2h_ids)}) != priced lines ({len(lines_by_id)})")
 
     valid_confidence = {"high", "medium", "low"}
-    valid_market_keys = {"winner", "dnb", "handicap", "total"}
+    valid_market_keys = {
+        "winner", "dnb", "handicap", "total",
+        # T41 ladder rungs: two alternate handicap lines and two alternate totals
+        "handicap_alt_1", "handicap_alt_2", "total_low", "total_high",
+    }
+    # The brief's high-confidence price window, restated here so the gate does not have to
+    # import the model to police it.
+    window_min, window_max = -250, 10000
+
+    def american_of(dec: float) -> int:
+        if dec >= 2.0:
+            return int(round((dec - 1.0) * 100))
+        return -int(round(100.0 / max(dec - 1.0, 0.01)))
     for line_id, line in lines_by_id.items():
         fixture = fixtures_by_id.get(line_id)
         if fixture is None:
@@ -301,8 +322,11 @@ def check_data_and_predictions() -> tuple[int, int, int]:
         if not winner:
             continue
         winner_outcomes = winner.get("outcomes", [])
-        if line.get("pick") not in {outcome.get("selection") for outcome in winner_outcomes}:
-            errors.append(f"{line_id}: pick {line.get('pick')} not found in winner outcomes")
+        priced_selections = {
+            outcome.get("selection") for market in markets for outcome in market.get("outcomes", [])
+        }
+        if line.get("pick") not in priced_selections:
+            errors.append(f"{line_id}: pick {line.get('pick')} is not a priced selection")
         if len(winner_outcomes) == 3 and "dnb" not in market_keys:
             errors.append(f"{line_id}: three-way winner market must include Draw No Bet")
         if len(winner_outcomes) not in (2, 3):
@@ -350,6 +374,29 @@ def check_data_and_predictions() -> tuple[int, int, int]:
             errors.append(f"{line_id}: high confidence requires verified fixture status")
         if not line.get("both_measured") or line.get("rating_coverage") != 2:
             errors.append(f"{line_id}: high confidence requires two measured official ratings")
+        # --- T41: the high-confidence price window is mandatory, not advisory -----------
+        if not line.get("pick_in_window"):
+            errors.append(f"{line_id}: high-confidence pick is outside the -250/+10000 window")
+        window = line.get("window") or {}
+        if window.get("min_american") != window_min or window.get("max_american") != window_max:
+            errors.append(f"{line_id}: window block missing or wrong ({window})")
+        pick_odds = line.get("pick_odds")
+        if not isinstance(pick_odds, (int, float)):
+            errors.append(f"{line_id}: high-confidence pick has no published price")
+        else:
+            american = american_of(float(pick_odds))
+            if not (window_min <= american <= window_max):
+                errors.append(
+                    f"{line_id}: published price {pick_odds} ({american}) is outside the "
+                    f"-250/+10000 window"
+                )
+        floor = float(window.get("conviction_floor") or 0)
+        probability = line.get("pick_probability")
+        if not isinstance(probability, (int, float)) or probability < floor:
+            errors.append(
+                f"{line_id}: high-confidence pick probability {probability} below the "
+                f"{floor:.2f} conviction floor"
+            )
 
     pred_by_id = {prediction.get("match_id"): prediction for prediction in preds}
     if len(pred_by_id) != len(preds) or None in pred_by_id:
@@ -369,7 +416,14 @@ def check_data_and_predictions() -> tuple[int, int, int]:
         if prediction.get("selection") != line.get("pick"):
             errors.append(f"{match_id}: prediction selection does not equal model pick")
         if str(line.get("pick", "")).lower() not in prediction.get("text", "").lower():
-            errors.append(f"{match_id}: winner pick missing from prediction prose")
+            errors.append(f"{match_id}: selected pick missing from prediction prose")
+        bet_line = prediction.get("bet_line", "")
+        if str(line.get("pick")) not in bet_line:
+            errors.append(f"{match_id}: bet_line does not quote the model pick")
+        if f"{float(line.get('pick_odds', 0)):.2f}" not in bet_line:
+            errors.append(f"{match_id}: bet_line price drifted from the model price")
+        if not prediction.get("in_window"):
+            errors.append(f"{match_id}: high-confidence prediction is not flagged in-window")
         sources = prediction.get("sources", [])
         if not sources:
             errors.append(f"{match_id}: prediction missing official source")

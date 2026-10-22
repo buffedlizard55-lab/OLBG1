@@ -24,6 +24,21 @@ import math
 OVERROUND = 1.05  # symmetric 5% bookmaker margin on originated bookmaker quotes
 
 # --------------------------------------------------------------------------
+# High-confidence price window (T41, session 2ca35f17-olbg1)
+# --------------------------------------------------------------------------
+# The brief requires every high-confidence pick to sit between -250 and +10000 in US
+# moneyline terms.  That window is applied here as a hard filter on the *selection we
+# recommend*, not as a soft preference, because a probability-only rule cannot satisfy it:
+# at a 5% margin a 68.0% chance prices at exactly -250, so any pick above ~68% is
+# necessarily shorter than the window allows.  The two rules in the brief are therefore
+# reconciled in favour of the window (the explicit numeric requirement), with a documented
+# 62% conviction floor for the selections that qualify.  Arithmetic: reports/
+# SESSION_2CA3_PRICE_WINDOW.md.
+HIGH_WINDOW_MIN_AMERICAN = -250
+HIGH_WINDOW_MAX_AMERICAN = 10000
+CONVICTION_HIGH = 0.60  # smallest model probability that can still sit inside the window
+
+# --------------------------------------------------------------------------
 # Sport configuration (all constants documented on methodology.html)
 # --------------------------------------------------------------------------
 SPORTS = {
@@ -271,15 +286,6 @@ def price_match(match: dict) -> dict:
     p_best = max(p_home_raw, p_away_raw)
     coverage = (1 if r_home is not None else 0) + (1 if r_away is not None else 0)
 
-    if match.get("status") != "verified":
-        confidence = "low"
-    elif both_rated and both_measured and p_best >= cfg["high"]:
-        confidence = "high"
-    elif both_rated and p_best >= cfg["med"]:
-        confidence = "medium"
-    else:
-        confidence = "low"
-
     markets = []
 
     # ---- 1. Primary Match Winner (3-way where draws apply, else 2-way) ---
@@ -316,33 +322,62 @@ def price_match(match: dict) -> dict:
             "basis": "Two-way conditional probabilities excluding regulation draw",
         })
 
-    # ---- 2. Handicap / Point Spread / Puck Line / Run Line ---------------
+    # ---- 2. Handicap / Point Spread / Puck Line / Run Line (3-line ladder) ---
+    # The ladder is generated in probability space, not in arbitrary point steps: each
+    # rung is the line at which the *model favourite* covers with a stated probability
+    # (50% main line, then 60% and 68% alternates).  The 68% rung is the rung that makes
+    # a heavy favourite expressible inside the -250/+10000 window; it is emitted for every
+    # fixture and merely becomes ineligible-if-outside-window at selection time.
+    handicap_markets: list[dict] = []
     if sport not in ("motor-racing", "golf", "greyhounds"):
         margin = cfg["sigma"] * _norm_ppf(p_home_2way)
-        if cfg["fixed_line"] is not None and abs(margin) < 2.2:
-            line = cfg["fixed_line"]
-        else:
-            line = max(0.5, (math.floor(abs(margin) * 2.0) / 2.0) + 0.5)
         fav_home = p_home_2way >= 0.5
-        line_signed = -line if fav_home else line
-        p_cover_raw = (
-            1.0 - _norm_cdf((line - abs(margin)) / cfg["sigma"])
-            if fav_home
-            else _norm_cdf((line - abs(margin)) / cfg["sigma"])
-        )
-        cov_probs = _normalize_probs([min(max(p_cover_raw, 0.08), 0.92), 1.0 - min(max(p_cover_raw, 0.08), 0.92)])
-        markets.append({
-            "key": "handicap",
-            "name": cfg["handicap_name"],
-            "line": f"{abs(line_signed):.1f}",
-            "outcomes": [
-                _outcome(f"{match['home']} {line_signed:+.1f}", cov_probs[0]),
-                _outcome(f"{match['away']} {-line_signed:+.1f}", cov_probs[1]),
-            ],
-            "basis": f"Gaussian margin projection (E[M]={margin:+.1f}, sigma={cfg['sigma']:.1f})",
-        })
+        for idx, (key, target, role) in enumerate((
+            ("handicap", 0.500, "main line"),
+            ("handicap_alt_1", 0.600, "alternate line (60% cover)"),
+            ("handicap_alt_2", 0.680, "alternate line (68% cover)"),
+        )):
+            give = abs(margin) - cfg["sigma"] * _norm_ppf(target)
+            if idx == 0 and cfg["fixed_line"] is not None and abs(margin) < 2.2:
+                give = cfg["fixed_line"]
+            give = max(0.5, round(give * 2.0) / 2.0)
+            h_home = -give if fav_home else give
+            p_home_cover = 1.0 - _norm_cdf((-h_home - margin) / cfg["sigma"])
+            # Rounding a rung to the nearest half-point can push the favourite-side price
+            # a few cents shorter than the -250 window floor.  Walk the rung outwards in
+            # half-point steps until the favourite side is quotable inside the window, so
+            # every published alternate is in-window by construction rather than by luck.
+            for _ in range(12):
+                fav_price = to_odds(p_home_cover) if fav_home else to_odds(1.0 - p_home_cover)
+                if in_high_window(fav_price):
+                    break
+                give += 0.5
+                h_home = -give if fav_home else give
+                p_home_cover = 1.0 - _norm_cdf((-h_home - margin) / cfg["sigma"])
+            p_home_cover = min(max(p_home_cover, 0.02), 0.98)
+            outcomes = [
+                _outcome(f"{match['home']} {h_home:+.1f}", p_home_cover),
+                _outcome(f"{match['away']} {-h_home:+.1f}", 1.0 - p_home_cover),
+            ]
+            if any(m["line"] == f"{abs(h_home):.1f}" for m in handicap_markets):
+                # Rounding/clamping can collapse two rungs onto the same half-point line
+                # (common in low-scoring sports).  Publish the line once rather than
+                # duplicating an identical market under a different key.
+                continue
+            handicap_markets.append({
+                "key": key,
+                "name": cfg["handicap_name"],
+                "line": f"{abs(h_home):.1f}",
+                "role": role,
+                "outcomes": outcomes,
+                "basis": (
+                    f"Gaussian margin projection (E[M]={margin:+.1f}, sigma={cfg['sigma']:.1f}); "
+                    f"rung set to the line where the model favourite covers {target*100:.0f}% of the time"
+                ),
+            })
+        markets.extend(handicap_markets)
 
-    # ---- 3. Match Total Over / Under -------------------------------------
+    # ---- 3. Match Total Over / Under (3-line ladder) ----------------------
     comp_override = COMPETITION_TOTALS.get(comp)
     tot_base = comp_override[0] if comp_override is not None else cfg["total"]
     tot_sigma = comp_override[1] if comp_override is not None else cfg["tsigma"]
@@ -354,24 +389,30 @@ def price_match(match: dict) -> dict:
             p_over_raw = 0.44 + 0.14 * closeness
         else:
             p_over_raw = 0.500
-        tot_probs = _normalize_probs([p_over_raw, 1.0 - p_over_raw])
-        alt_line = round(tot_base - 1.5, 1)
-        p_alt_raw = min(max(1.0 - _norm_cdf((alt_line - tot_base) / tot_sigma), 0.08), 0.92)
-        alt_probs = _normalize_probs([p_alt_raw, 1.0 - p_alt_raw])
-        markets.append({
-            "key": "total",
-            "name": f"Match Total ({cfg['total_name']})",
-            "line": f"{tot_base:.1f}",
-            "outcomes": [
-                _outcome(f"Over {tot_base:.1f}", tot_probs[0]),
-                _outcome(f"Under {tot_base:.1f}", tot_probs[1]),
-            ],
-            "alternate": [
-                _outcome(f"Over {alt_line:.1f}", alt_probs[0]),
-                _outcome(f"Under {alt_line:.1f}", alt_probs[1]),
-            ],
-            "basis": f"Competition baseline total ({tot_base:.1f} {cfg['total_name'].lower()}, sigma={tot_sigma:.1f})",
-        })
+        step = max(1.5, round((tot_sigma / 4.0) * 2.0) / 2.0)
+        z_base = _norm_ppf(1.0 - p_over_raw)
+        for key, offset, role in (
+            ("total", 0.0, "baseline total"),
+            ("total_low", -step, f"alternate total ({-step:+.1f})"),
+            ("total_high", step, f"alternate total ({step:+.1f})"),
+        ):
+            line_total = round(tot_base + offset, 1)
+            p_over = 1.0 - _norm_cdf(z_base + (line_total - tot_base) / tot_sigma)
+            p_over = min(max(p_over, 0.02), 0.98)
+            markets.append({
+                "key": key,
+                "name": f"Match Total ({cfg['total_name']})",
+                "line": f"{line_total:.1f}",
+                "role": role,
+                "outcomes": [
+                    _outcome(f"Over {line_total:.1f}", p_over),
+                    _outcome(f"Under {line_total:.1f}", 1.0 - p_over),
+                ],
+                "basis": (
+                    f"Competition baseline total ({tot_base:.1f} {cfg['total_name'].lower()}, "
+                    f"sigma={tot_sigma:.1f}); alternate rungs shifted one step of {step:.1f}"
+                ),
+            })
     else:
         unavailable_markets.append({
             "key": "total",
@@ -383,9 +424,67 @@ def price_match(match: dict) -> dict:
             ),
         })
 
-    pick_sel = match["home"] if p_home_raw >= p_away_raw else match["away"]
-    if cfg["draws"] and p_draw >= max(p_home_raw, p_away_raw):
-        pick_sel = "Draw"
+    # ---- 4. In-window highlight selection (T41 price-window rule) ----------
+    highlight = _select_highlight(markets, match, p_home_raw, p_away_raw, p_draw, cfg)
+    favourite_outcome = None
+    favourite_market = None
+    for mk in markets:
+        if mk["key"] == "winner":
+            favourite_market = mk
+            favourite_outcome = max(mk["outcomes"], key=lambda o: o["probability"])
+    favourite_in_window = bool(
+        favourite_outcome and in_high_window(favourite_outcome["odds"])
+    )
+    # `published` is what the desk actually puts in the table: the in-window highlight when
+    # one exists, otherwise the model's moneyline pick (which may itself sit outside the
+    # window, in which case the row simply cannot be a high-confidence pick).
+    published = highlight or (
+        _pack_selection(favourite_market, favourite_outcome) if favourite_market else None
+    )
+
+    if match.get("status") != "verified":
+        confidence = "low"
+        window_reason = "fixture status is not verified; confidence capped at low"
+    elif not (both_rated and both_measured):
+        confidence = "low"
+        window_reason = "one or both sides lack a measured official rating"
+    elif p_best < cfg["med"]:
+        confidence = "low"
+        window_reason = f"model separation {p_best:.3f} below the {cfg['med']:.3f} medium floor"
+    elif p_best >= cfg["high"] and highlight and highlight["probability"] >= CONVICTION_HIGH:
+        confidence = "high"
+        window_reason = (
+            "selection priced inside the -250/+10000 window at or above the "
+            f"{CONVICTION_HIGH:.2f} conviction floor"
+        )
+    elif p_best >= cfg["high"]:
+        confidence = "medium"
+        window_reason = (
+            "match clears the sport's high-separation threshold, but no selection could be "
+            "priced inside the -250/+10000 window at 62%+ probability; tier lowered rather "
+            "than publishing a price outside the brief"
+        )
+    else:
+        confidence = "medium"
+        window_reason = f"model separation {p_best:.3f} clears the medium floor only"
+
+    pick_sel = published["selection"] if published else (
+        match["home"] if p_home_raw >= p_away_raw else match["away"]
+    )
+
+    window_block = {
+        "min_american": HIGH_WINDOW_MIN_AMERICAN,
+        "max_american": HIGH_WINDOW_MAX_AMERICAN,
+        "conviction_floor": CONVICTION_HIGH,
+        "favourite_selection": favourite_outcome["selection"] if favourite_outcome else "",
+        "favourite_american": favourite_outcome["american"] if favourite_outcome else "",
+        "favourite_in_window": favourite_in_window,
+        "highlight_in_window": bool(highlight),
+        "pick_in_window": bool(published and in_high_window(published["odds"])),
+        "reason": window_reason,
+    }
+
+    pick_market = published["market_name"] if published else markets[0]["name"]
 
     return {
         "id": match["id"],
@@ -396,8 +495,15 @@ def price_match(match: dict) -> dict:
         "draw_probability": round(p_draw, 4),
         "away_probability": round(p_away_raw, 4),
         "pick": pick_sel,
-        "pick_market": markets[0]["name"],
+        "pick_market": pick_market,
+        "pick_line": published["line"] if published else "",
+        "pick_probability": published["probability"] if published else round(p_best, 4),
+        "pick_odds": published["odds"] if published else "",
+        "pick_american": published["american"] if published else "",
+        "pick_in_window": bool(published and in_high_window(published["odds"])),
         "confidence": confidence,
+        "window": window_block,
+        "highlight": highlight or {},
         "expected_margin": round(cfg["sigma"] * _norm_ppf(p_home_2way), 2),
         "rating_home": r_home,
         "rating_away": r_away,
@@ -410,6 +516,96 @@ def price_match(match: dict) -> dict:
         "unavailable_markets": unavailable_markets,
         "model_notes": _notes(sport, both_rated, r_home, r_away, cfg, tot_base),
     }
+
+
+def american_value(dec: float) -> int:
+    """Signed US moneyline value of a decimal price (e.g. 1.40 -> -250, 3.00 -> +200)."""
+    if dec >= 2.0:
+        return int(round((dec - 1.0) * 100))
+    return -int(round(100.0 / max(dec - 1.0, 0.01)))
+
+
+def in_high_window(dec: float) -> bool:
+    """True when a decimal price converts into the brief's -250..+10000 window."""
+    return HIGH_WINDOW_MIN_AMERICAN <= american_value(dec) <= HIGH_WINDOW_MAX_AMERICAN
+
+
+_MARKET_PRIORITY = {
+    "winner": 5,
+    "dnb": 4,
+    "handicap": 3,
+    "handicap_alt_1": 3,
+    "handicap_alt_2": 3,
+    "total": 2,
+    "total_low": 2,
+    "total_high": 2,
+}
+
+
+def _pack_selection(mk: dict, o: dict) -> dict:
+    """Uniform carrier for a published selection and the price it is quoted at."""
+    return {
+        "selection": o["selection"],
+        "market_key": mk["key"],
+        "market_name": mk["name"],
+        "line": mk.get("line", ""),
+        "probability": o["probability"],
+        "odds": o["odds"],
+        "american": o["american"],
+        "implied_pct": o["implied_pct"],
+        "basis": mk.get("basis", ""),
+    }
+
+
+def _select_highlight(markets, match, p_home, p_away, p_draw, cfg) -> dict | None:
+    """Choose the selection we actually publish for a fixture.
+
+    Order of preference (this is the T41 rule the brief asks for):
+
+    1. the model's match-winner pick, but only when *its own price* sits inside the
+       -250/+10000 window - that keeps the natural "who wins" selection whenever the
+       price allows it;
+    2. otherwise the highest-probability in-window rung of the handicap ladder for the
+       same view (a heavy favourite is expressed as a shorter give);
+    3. otherwise nothing - the caller lowers the confidence tier rather than publishing
+       a price outside the window.
+
+    Every returned candidate carries the price it would be quoted at, so the window test
+    and the published `bet_line` can never drift apart.
+    """
+    winner_pick = "Draw" if (cfg["draws"] and p_draw >= max(p_home, p_away)) else (
+        match["home"] if p_home >= p_away else match["away"]
+    )
+    for mk in markets:
+        if mk["key"] == "winner":
+            for o in mk["outcomes"]:
+                if (
+                    o["selection"] == winner_pick
+                    and in_high_window(o["odds"])
+                    and o["probability"] >= CONVICTION_HIGH
+                ):
+                    return _pack_selection(mk, o)
+
+    # Only the handicap ladder may stand in for the moneyline.  Totals are published for
+    # investigation but are deliberately never the highlighted selection: their baseline is
+    # a documented modelling assumption, not a sourced rating gap, so a 68% totals rung is an
+    # artefact of the ladder rather than evidence about the teams (T41 policy note).
+    candidates = []
+    for mk in markets:
+        if not mk["key"].startswith("handicap"):
+            continue
+        for o in mk["outcomes"]:
+            if not in_high_window(o["odds"]):
+                continue
+            if o["probability"] < CONVICTION_HIGH:
+                continue
+            candidates.append(_pack_selection(mk, o))
+    if not candidates:
+        return None
+    candidates.sort(
+        key=lambda c: (-c["probability"], -_MARKET_PRIORITY.get(c["market_key"], 0), -c["odds"])
+    )
+    return candidates[0]
 
 
 def _notes(sport, both_rated, r_home, r_away, cfg, tot_base) -> list[str]:

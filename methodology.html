@@ -11,7 +11,7 @@
 <header class="site-header">
   <div class="hdr-inner">
     <div class="brand"><a href="index.html"><span class="dot"></span> OLBG Origination Desk <span class="sub">2026-10-21 UTC</span></a></div>
-    <nav class="main" aria-label="Primary navigation"><a href="index.html">Overview</a><a href="live-refresh.html">Live Refresh (141)</a><a href="picks.html">All Lines (134)</a><a href="predictions.html">High Picks (31)</a><a href="sports.html">17 Sports</a><a href="analysis.html">Market Analysis</a><a href="methodology.html" aria-current="page">Methodology</a><a href="reverse-engineering.html">OLBG Audit</a><a href="sources.html">Official Sources</a><a href="live-verification.html">Live Verification</a><a href="flagged.html">Flagged for Review</a><a href="2360a617/index.html">OLBG-152 Board</a></nav>
+    <nav class="main" aria-label="Primary navigation"><a href="index.html">Overview</a><a href="live-refresh.html">Live Refresh (141)</a><a href="picks.html">All Lines (126)</a><a href="predictions.html">High Picks (29)</a><a href="sports.html">17 Sports</a><a href="analysis.html">Market Analysis</a><a href="methodology.html" aria-current="page">Methodology</a><a href="reverse-engineering.html">OLBG Audit</a><a href="sources.html">Official Sources</a><a href="live-verification.html">Live Verification</a><a href="flagged.html">Flagged for Review</a><a href="2360a617/index.html">OLBG-152 Board</a></nav>
   </div>
   <div class="companion-bar">
     <div class="companion-inner">
@@ -24,6 +24,7 @@
       <a href="docs/index.html">4f44f7d9 Board (164 OLBG)</a>
       <a href="ebfbd966/index.html">ebfbd966 Board (133)</a>
       <a href="aa4e9dbf/index.html">aa4e9dbf Desk (131)</a>
+      <a href="7a5b5360/index.html">7a5b5360 Fresh Desk (32 &middot; 22&ndash;26 Oct 2026)</a>
       <a href="2360a617/index.html">2360a617 Board (152)</a>
     </div>
   </div>
@@ -42,7 +43,22 @@
 
 <div class="card">
   <h2>2. Derived Spread / Handicap, Draw No Bet &amp; Over/Under Totals</h2>
-  <p>Expected margin <code>mu = -sigma * Phi^-1(1 - p_home_2way)</code> maps win probability coherently onto sport scoring units. Fixed-line sports (NHL Puck Line <code>1.5</code>, MLB Run Line <code>1.5</code>, Snooker Frames <code>1.5</code>, Volleyball Sets <code>1.5</code>) price exact normal cover probabilities at <code>+-1.5</code>; variable-spread sports round to the nearest half-point hook. Totals adjust competition baselines (e.g., NBA <code>228.5</code> vs EuroLeague <code>171.5</code> vs EuroCup <code>168.5</code>; Men's T20I <code>339.5</code> vs Women's T20I <code>289.5</code> vs List A <code>529.5</code>). A total is never invented: 1 multi-innings fixture has no source-backed competition baseline, so its total is blank and marked unverified.</p>
+  <p>Expected margin <code>mu = -sigma * Phi^-1(1 - p_home_2way)</code> maps win probability coherently onto sport scoring units. Each fixture carries a <b>three-rung handicap ladder</b> generated in probability space — the line at which the model favourite covers 50%, 60% and 68% of the time (<code>give = |mu| - sigma * Phi^-1(target)</code>) — with each rung rounded to the nearest half-point hook and then walked outwards until its favourite side is quotable inside the -250/+10000 window. Fixed-line sports (NHL Puck Line, MLB Run Line, Snooker Frames, Volleyball Sets) keep their conventional <code>1.5</code> main line. Totals adjust competition baselines (e.g., NBA <code>228.5</code> vs EuroLeague <code>171.5</code> vs EuroCup <code>168.5</code>; Men's T20I <code>339.5</code> vs Women's T20I <code>289.5</code> vs List A <code>529.5</code>) and are published as a three-rung ladder one step either side of the baseline. A total is never invented: 1 multi-innings fixture has no source-backed competition baseline, so its total is blank and marked unverified.</p>
+</div>
+
+<div class="card" id="price-window">
+  <h2>3. High-Confidence Price Window (-250 to +10000)</h2>
+  <p>The brief asks for high-confidence picks on matches priced between <code>-250</code> and <code>+10000</code> in US moneyline terms. This desk applies that window as a hard filter on the selection it publishes, not as a preference.</p>
+  <table>
+    <thead><tr><th>Rule</th><th>Implementation</th></tr></thead>
+    <tbody>
+      <tr><td>Window floor</td><td><code>-250</code> American. At the documented 5% overround this equals a <b>68.0%</b> model probability: <code>1 / (0.68 x 1.05) = 1.400</code> decimal.</td></tr>
+      <tr><td>Selection order</td><td>1) the model's match winner when its own price is inside the window and at 60%+; 2) otherwise the highest-probability <b>handicap rung</b> inside the window at 60%+; 3) otherwise no high-confidence pick at all.</td></tr>
+      <tr><td>Why handicaps, not totals</td><td>Handicap rungs are tied to the sourced rating gap. Totals rest on a modelling baseline constant, so a 68% totals rung would be an artefact of the ladder rather than evidence. Totals stay published for investigation but are never the highlighted pick.</td></tr>
+      <tr><td>Tier consequences</td><td>A match can clear its separation threshold and still be <b>Medium</b> if no selection inside the window reaches 60%. That is disclosed per row in the <code>window</code> block and on <a href="flagged.html">Flagged for Review</a> (T41-01…T41-04).</td></tr>
+    </tbody>
+  </table>
+  <p><b>Known contradiction in the brief, disclosed rather than hidden.</b> A pick with a greater than 70% chance cannot sit inside a window whose floor is -250, because 70% prices at about -277 with vig. The two rules cannot both hold. The window wins because it is the explicit numeric instruction; 60% is the conviction floor actually applied. Full arithmetic: <code>reports/SESSION_2CA3_PRICE_WINDOW.md</code>.</p>
 </div>
 
 <h2>Complete 17-Sport Parameter Table</h2>

@@ -308,3 +308,46 @@ python3 scripts/validate.py             # repository-wide link/data gate
 The desk publishes one finding about the brief itself (`F-7A-01`): a 70% probability is a 1.43 fair price,
 so it is already shorter than the -250 floor the brief pairs it with. Every selection therefore carries its
 probability, its fair price and an in-band yes/no rather than one rule being silently dropped.
+
+---
+
+## High-confidence price-window compliance (session `2ca35f17-olbg1`, T41, 2026-10-22)
+
+The brief asks for high-confidence picks on matches priced **between −250 and +10000**. The inherited build did not
+do that: **19 of its 31 high-confidence picks were shorter than −250** (−263 to −1250). This pass makes the window a
+hard gate and documents the contradiction it exposes.
+
+| Before | After |
+|---|---|
+| 31 high picks, 12 inside the window | **29 high picks, 29 inside the window** (−189 to −250) |
+| 3 markets per match (winner, handicap, total) | **8 markets per match** (winner, draw-no-bet, 3 handicap rungs, 3 totals rungs) |
+| Prices typed into a hand-maintained `bet_line` dict | `bet_line` generated from the priced selection (drift impossible) |
+| Confidence = win probability only | Confidence = verified + two measured ratings + separation **+ in-window price at 60%+** |
+
+**The rule that could not be satisfied as written:** at the documented 5% overround, a 68.0% chance prices at exactly
+−250 and a 70.0% chance prices at −277. ">70% chance" and "≥ −250" cannot both hold. The window is treated as binding,
+conviction is floored at 60%, and the arithmetic is published on the Methodology page and as finding `T41-01` on the
+Flagged for Review page. Full detail, the 19-row repricing table and the live-read log:
+[`reports/SESSION_2CA3_PRICE_WINDOW.md`](reports/SESSION_2CA3_PRICE_WINDOW.md).
+
+Where a moneyline breached the floor, the same view is published on the handicap rung that lands inside the window
+(Stade Toulousain −7.0 at 1.40 rather than a −667 moneyline; Hawthorn −10.0 rather than −769). Totals are never the
+highlighted pick: their baseline is a modelling constant, so a 68% totals rung would be an artefact of the ladder
+rather than evidence (finding `T41-03`).
+
+**Verification added in this pass (2026-10-22):** the two Ningbo tennis pairings were confirmed against the
+[official signed WTA draw PDF](https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf) (released 21 Oct 2026
+22:13Z), which also resolves the long-standing "WTA draws are client-rendered" blocker; Boston's record and the
+already-disclosed Vegas drift were re-confirmed against the
+[NHL standings API](https://api-web.nhle.com/v1/standings/2026-10-21). The PDC cookie wall and the EuroLeague
+client-rendered game centre were re-attempted and remain blocked, so those six rows stay labelled `not_rechecked`
+rather than being implied verified.
+
+Reproduce:
+
+```bash
+python3 scripts/apply_t41_verification.py   # T41 evidence layer over data/verification.json
+python3 scripts/origin_lines.py             # market ladders + window filter + predictions
+python3 scripts/build_site.py               # 30 pages at / and 30 mirrored at /f7fa77fc/
+python3 scripts/validate.py                 # fails the build if any high pick leaves the window
+```
