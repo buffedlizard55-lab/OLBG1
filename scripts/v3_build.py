@@ -171,14 +171,29 @@ def build() -> dict:
         "matches": [
             {k: p[k] for k in ("id", "sport", "competition", "stage", "home", "away", "start_utc",
                                "date_local", "venue", "status", "verified_at", "sources", "flags",
-                               "home_input", "away_input", "event_only", "time_note")}
+                               "home_input", "away_input", "event_only", "time_note",
+                               "assumptions")}
             for p in priced
         ],
     }
     (DATA / "fixtures.json").write_text(json.dumps(fixtures_out, indent=1), encoding="utf-8")
 
+    # Publish the assumptions actually used, per sport, so a reader can reproduce every price
+    # without reading the generator. These are modelling choices, never sourced facts.
+    sport_assumptions: dict[str, dict] = {}
+    for p in priced:
+        if p["event_only"]:
+            continue
+        a = p["assumptions"]
+        sport_assumptions.setdefault(p["sport"], {
+            "sigma": a["sigma"], "slope": a["slope"], "hfa": a["hfa"],
+            "hc_max": a["hc_max"], "total_line": a["total_line"],
+            "total_sigma": a["total_sigma"], "model": a["model"],
+        })
     lines_out = {"model": "v3-independent-normal-and-binomial", "margin": "none (fair prices)",
-                 "generated_utc": SNAPSHOT, "books": []}
+                 "us_odds": "exact conversion of the published decimal price",
+                 "generated_utc": SNAPSHOT,
+                 "sport_assumptions": sport_assumptions, "books": []}
     for p in priced:
         if p["event_only"]:
             continue

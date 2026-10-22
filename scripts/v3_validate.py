@@ -94,6 +94,14 @@ def main() -> int:
             for mk in p["markets"]:
                 check(1.02 <= mk["price"] <= 60, f"{p['id']}: implausible price {mk['price']}")
                 check(0 < mk["model_prob"] < 1, f"{p['id']}: bad probability")
+                # The US price shown must be the exact conversion of the decimal beside it,
+                # otherwise a 1.40 line can print as -251 and breach the -250 floor.
+                expect = (int(round((mk["price"] - 1) * 100)) if mk["price"] >= 2.0
+                          else -int(round(100 / (mk["price"] - 1))))
+                check(mk["us"] == expect, f"{p['id']}: us {mk['us']} does not match price {mk['price']}")
+            # Every priced row must publish the assumptions used to price it.
+            for key in ("model", "sigma", "slope", "hfa", "hc_max", "total_line", "total_sigma"):
+                check(key in (p.get("assumptions") or {}), f"{p['id']}: assumptions missing {key}")
             b = p["best_market"]
             if b and b["confidence"] == "High":
                 check(b["model_prob"] >= 0.70, f"{p['id']}: High below 70%")

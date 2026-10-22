@@ -27,7 +27,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": true,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "golf-bermuda-2026",
@@ -53,7 +63,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": true,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "golf-genesis-2026",
@@ -79,7 +99,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": true,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "golf-bmw-ladies-2026",
@@ -105,7 +135,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": true,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "golf-stifel-2026",
@@ -131,7 +171,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": true,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "gbgb-meetings-1022",
@@ -157,7 +207,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": true,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "ten-atp-medvedev-shimabukuro",
@@ -193,7 +253,20 @@
     "rating": null
    },
    "event_only": false,
-   "time_note": "Followed by; no clock time published"
+   "time_note": "Followed by; no clock time published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 3,
+     "unit": "sets"
+    }
+   }
   },
   {
    "id": "ten-wta-kawa-bencic",
@@ -229,7 +302,20 @@
     "rating": 87.5
    },
    "event_only": false,
-   "time_note": "Followed by; no clock time published"
+   "time_note": "Followed by; no clock time published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 3,
+     "unit": "sets"
+    }
+   }
   },
   {
    "id": "ten-wta-eala-shnaider",
@@ -265,7 +351,20 @@
     "rating": 85.0
    },
    "event_only": false,
-   "time_note": "Followed by; no clock time published"
+   "time_note": "Followed by; no clock time published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 3,
+     "unit": "sets"
+    }
+   }
   },
   {
    "id": "ten-wta-jovic-paolini",
@@ -301,7 +400,20 @@
     "rating": null
    },
    "event_only": false,
-   "time_note": "13:00 local (UTC+8)"
+   "time_note": "13:00 local (UTC+8)",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 3,
+     "unit": "sets"
+    }
+   }
   },
   {
    "id": "ten-atp-atmane-bellucci",
@@ -337,7 +449,20 @@
     "rating": null
    },
    "event_only": false,
-   "time_note": "11:30 local (UTC+5)"
+   "time_note": "11:30 local (UTC+5)",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 3,
+     "unit": "sets"
+    }
+   }
   },
   {
    "id": "snk-r3-wilson-pang",
@@ -373,7 +498,20 @@
     "rating": null
    },
    "event_only": false,
-   "time_note": "WST session clock 08:00 (local UK time, BST); converted to UTC by subtracting one hour"
+   "time_note": "WST session clock 08:00 (local UK time, BST); converted to UTC by subtracting one hour",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 7,
+     "unit": "frames"
+    }
+   }
   },
   {
    "id": "snk-r3-selt-craigie",
@@ -409,7 +547,20 @@
     "rating": null
    },
    "event_only": false,
-   "time_note": "WST session clock 08:00 (local UK time, BST); converted to UTC by subtracting one hour"
+   "time_note": "WST session clock 08:00 (local UK time, BST); converted to UTC by subtracting one hour",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 7,
+     "unit": "frames"
+    }
+   }
   },
   {
    "id": "snk-r3-slessor-walden",
@@ -445,7 +596,20 @@
     "rating": null
    },
    "event_only": false,
-   "time_note": "WST session clock 09:00 (local UK time, BST); converted to UTC by subtracting one hour"
+   "time_note": "WST session clock 09:00 (local UK time, BST); converted to UTC by subtracting one hour",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 7,
+     "unit": "frames"
+    }
+   }
   },
   {
    "id": "snk-r3-mcgill-baranowski",
@@ -481,7 +645,20 @@
     "rating": null
    },
    "event_only": false,
-   "time_note": "WST session clock 09:00 (local UK time, BST); converted to UTC by subtracting one hour"
+   "time_note": "WST session clock 09:00 (local UK time, BST); converted to UTC by subtracting one hour",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 7,
+     "unit": "frames"
+    }
+   }
   },
   {
    "id": "ten-atp-machac-khachanov",
@@ -517,7 +694,20 @@
     "rating": 87.5
    },
    "event_only": false,
-   "time_note": "Not before 13:00 local (UTC+5)"
+   "time_note": "Not before 13:00 local (UTC+5)",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 3,
+     "unit": "sets"
+    }
+   }
   },
   {
    "id": "ten-wta-rybakina-kudermetova",
@@ -553,7 +743,20 @@
     "rating": null
    },
    "event_only": false,
-   "time_note": "Not before 19:00 local (UTC+8)"
+   "time_note": "Not before 19:00 local (UTC+8)",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 3,
+     "unit": "sets"
+    }
+   }
   },
   {
    "id": "snk-r3-williams-odonnell",
@@ -589,7 +792,20 @@
     "rating": null
    },
    "event_only": false,
-   "time_note": "WST session clock 14:00 (local UK time, BST); converted to UTC by subtracting one hour"
+   "time_note": "WST session clock 14:00 (local UK time, BST); converted to UTC by subtracting one hour",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 7,
+     "unit": "frames"
+    }
+   }
   },
   {
    "id": "snk-r3-gilbert-cheung",
@@ -625,7 +841,20 @@
     "rating": null
    },
    "event_only": false,
-   "time_note": "WST session clock 14:00 (local UK time, BST); converted to UTC by subtracting one hour"
+   "time_note": "WST session clock 14:00 (local UK time, BST); converted to UTC by subtracting one hour",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 7,
+     "unit": "frames"
+    }
+   }
   },
   {
    "id": "snk-r3-brown-donaldson",
@@ -661,7 +890,20 @@
     "rating": null
    },
    "event_only": false,
-   "time_note": "WST session clock 15:00 (local UK time, BST); converted to UTC by subtracting one hour"
+   "time_note": "WST session clock 15:00 (local UK time, BST); converted to UTC by subtracting one hour",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 7,
+     "unit": "frames"
+    }
+   }
   },
   {
    "id": "snk-r3-jones-wells",
@@ -697,7 +939,20 @@
     "rating": null
    },
    "event_only": false,
-   "time_note": "WST session clock 15:00 (local UK time, BST); converted to UTC by subtracting one hour"
+   "time_note": "WST session clock 15:00 (local UK time, BST); converted to UTC by subtracting one hour",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 7,
+     "unit": "frames"
+    }
+   }
   },
   {
    "id": "ten-atp-bublik-marozsan",
@@ -733,7 +988,20 @@
     "rating": null
    },
    "event_only": false,
-   "time_note": "Not before 19:30 local (UTC+5)"
+   "time_note": "Not before 19:30 local (UTC+5)",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 3,
+     "unit": "sets"
+    }
+   }
   },
   {
    "id": "hand-ehf-12049",
@@ -765,7 +1033,17 @@
     "rating": 76.0
    },
    "event_only": false,
-   "time_note": "18:45 CEST converted to UTC"
+   "time_note": "18:45 CEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 7.0,
+    "slope": 0.15,
+    "hfa": 1.5,
+    "hc_max": 12.5,
+    "total_line": 61.5,
+    "total_sigma": 7.5,
+    "series": null
+   }
   },
   {
    "id": "hand-ehf-12051",
@@ -797,7 +1075,17 @@
     "rating": 75.0
    },
    "event_only": false,
-   "time_note": "18:45 CEST converted to UTC"
+   "time_note": "18:45 CEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 7.0,
+    "slope": 0.15,
+    "hfa": 1.5,
+    "hc_max": 12.5,
+    "total_line": 61.5,
+    "total_sigma": 7.5,
+    "series": null
+   }
   },
   {
    "id": "pdc-ec-01",
@@ -833,7 +1121,20 @@
     "rating": 76.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "pdc-ec-02",
@@ -869,7 +1170,20 @@
     "rating": 72.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "pdc-ec-03",
@@ -905,7 +1219,20 @@
     "rating": 71.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "pdc-ec-04",
@@ -941,7 +1268,20 @@
     "rating": 80.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "pdc-ec-05",
@@ -977,7 +1317,20 @@
     "rating": 83.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "pdc-ec-06",
@@ -1013,7 +1366,20 @@
     "rating": 79.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "pdc-ec-07",
@@ -1049,7 +1415,20 @@
     "rating": 75.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "pdc-ec-08",
@@ -1085,7 +1464,20 @@
     "rating": 68.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "el-bes-efs-1022",
@@ -1121,7 +1513,17 @@
     "rating": 41.75
    },
    "event_only": false,
-   "time_note": "19:30 CEST converted to UTC"
+   "time_note": "19:30 CEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 10.5,
+    "slope": 0.18,
+    "hfa": 2.0,
+    "hc_max": 16.5,
+    "total_line": 163.5,
+    "total_sigma": 18.0,
+    "series": null
+   }
   },
   {
    "id": "el-dub-bay-1022",
@@ -1157,7 +1559,17 @@
     "rating": 41.208333333333336
    },
    "event_only": false,
-   "time_note": "20:00 CEST converted to UTC"
+   "time_note": "20:00 CEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 10.5,
+    "slope": 0.18,
+    "hfa": 2.0,
+    "hc_max": 16.5,
+    "total_line": 163.5,
+    "total_sigma": 18.0,
+    "series": null
+   }
   },
   {
    "id": "el-mta-rmb-1022",
@@ -1193,7 +1605,17 @@
     "rating": 50.958333333333336
    },
    "event_only": false,
-   "time_note": "20:05 CEST converted to UTC"
+   "time_note": "20:05 CEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 10.5,
+    "slope": 0.18,
+    "hfa": 2.0,
+    "hc_max": 16.5,
+    "total_line": 163.5,
+    "total_sigma": 18.0,
+    "series": null
+   }
   },
   {
    "id": "el-pao-bas-1022",
@@ -1229,7 +1651,17 @@
     "rating": 32.5
    },
    "event_only": false,
-   "time_note": "20:15 CEST converted to UTC"
+   "time_note": "20:15 CEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 10.5,
+    "slope": 0.18,
+    "hfa": 2.0,
+    "hc_max": 16.5,
+    "total_line": 163.5,
+    "total_sigma": 18.0,
+    "series": null
+   }
   },
   {
    "id": "el-mil-bar-1022",
@@ -1265,7 +1697,17 @@
     "rating": 50.375
    },
    "event_only": false,
-   "time_note": "20:30 CEST converted to UTC"
+   "time_note": "20:30 CEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 10.5,
+    "slope": 0.18,
+    "hfa": 2.0,
+    "hc_max": 16.5,
+    "total_line": 163.5,
+    "total_sigma": 18.0,
+    "series": null
+   }
   },
   {
    "id": "el-par-czv-1022",
@@ -1301,7 +1743,17 @@
     "rating": 58.666666666666664
    },
    "event_only": false,
-   "time_note": "20:45 CEST converted to UTC"
+   "time_note": "20:45 CEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 10.5,
+    "slope": 0.18,
+    "hfa": 2.0,
+    "hc_max": 16.5,
+    "total_line": 163.5,
+    "total_sigma": 18.0,
+    "series": null
+   }
   },
   {
    "id": "hand-ehf-12054",
@@ -1333,7 +1785,17 @@
     "rating": null
    },
    "event_only": false,
-   "time_note": "20:45 CEST converted to UTC"
+   "time_note": "20:45 CEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 7.0,
+    "slope": 0.15,
+    "hfa": 1.5,
+    "hc_max": 12.5,
+    "total_line": 61.5,
+    "total_sigma": 7.5,
+    "series": null
+   }
   },
   {
    "id": "hand-ehf-12046",
@@ -1365,7 +1827,17 @@
     "rating": 64.0
    },
    "event_only": false,
-   "time_note": "20:45 CEST converted to UTC"
+   "time_note": "20:45 CEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 7.0,
+    "slope": 0.15,
+    "hfa": 1.5,
+    "hc_max": 12.5,
+    "total_line": 61.5,
+    "total_sigma": 7.5,
+    "series": null
+   }
   },
   {
    "id": "hand-ehf-12048",
@@ -1397,7 +1869,17 @@
     "rating": 86.0
    },
    "event_only": false,
-   "time_note": "20:45 CEST converted to UTC"
+   "time_note": "20:45 CEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 7.0,
+    "slope": 0.15,
+    "hfa": 1.5,
+    "hc_max": 12.5,
+    "total_line": 61.5,
+    "total_sigma": 7.5,
+    "series": null
+   }
   },
   {
    "id": "nba-0022600006",
@@ -1433,7 +1915,17 @@
     "rating": 50.0
    },
    "event_only": false,
-   "time_note": "19:00 ET converted to UTC"
+   "time_note": "19:00 ET converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 15.0,
+    "slope": 0.5,
+    "hfa": 2.5,
+    "hc_max": 16.5,
+    "total_line": 228.5,
+    "total_sigma": 19.0,
+    "series": null
+   }
   },
   {
    "id": "nhl-2026020154",
@@ -1469,7 +1961,17 @@
     "rating": 56.3
    },
    "event_only": false,
-   "time_note": "19:00 EDT (ET) converted to UTC"
+   "time_note": "19:00 EDT (ET) converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 2.0,
+    "slope": 0.038,
+    "hfa": 2.5,
+    "hc_max": 3.5,
+    "total_line": 6.5,
+    "total_sigma": 1.9,
+    "series": null
+   }
   },
   {
    "id": "nhl-2026020155",
@@ -1505,7 +2007,17 @@
     "rating": 68.2
    },
    "event_only": false,
-   "time_note": "19:00 EDT (ET) converted to UTC"
+   "time_note": "19:00 EDT (ET) converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 2.0,
+    "slope": 0.038,
+    "hfa": 2.5,
+    "hc_max": 3.5,
+    "total_line": 6.5,
+    "total_sigma": 1.9,
+    "series": null
+   }
   },
   {
    "id": "nhl-2026020156",
@@ -1541,7 +2053,17 @@
     "rating": 55.00000000000001
    },
    "event_only": false,
-   "time_note": "19:00 EDT (ET) converted to UTC"
+   "time_note": "19:00 EDT (ET) converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 2.0,
+    "slope": 0.038,
+    "hfa": 2.5,
+    "hc_max": 3.5,
+    "total_line": 6.5,
+    "total_sigma": 1.9,
+    "series": null
+   }
   },
   {
    "id": "nhl-2026020157",
@@ -1577,7 +2099,17 @@
     "rating": 44.4
    },
    "event_only": false,
-   "time_note": "19:00 EDT (ET) converted to UTC"
+   "time_note": "19:00 EDT (ET) converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 2.0,
+    "slope": 0.038,
+    "hfa": 2.5,
+    "hc_max": 3.5,
+    "total_line": 6.5,
+    "total_sigma": 1.9,
+    "series": null
+   }
   },
   {
    "id": "nhl-2026020158",
@@ -1613,7 +2145,17 @@
     "rating": 66.7
    },
    "event_only": false,
-   "time_note": "19:00 EDT (ET) converted to UTC"
+   "time_note": "19:00 EDT (ET) converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 2.0,
+    "slope": 0.038,
+    "hfa": 2.5,
+    "hc_max": 3.5,
+    "total_line": 6.5,
+    "total_sigma": 1.9,
+    "series": null
+   }
   },
   {
    "id": "nhl-2026020159",
@@ -1649,7 +2191,17 @@
     "rating": 28.599999999999998
    },
    "event_only": false,
-   "time_note": "19:30 EDT (ET) converted to UTC"
+   "time_note": "19:30 EDT (ET) converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 2.0,
+    "slope": 0.038,
+    "hfa": 2.5,
+    "hc_max": 3.5,
+    "total_line": 6.5,
+    "total_sigma": 1.9,
+    "series": null
+   }
   },
   {
    "id": "cric-nza-inda-fc1",
@@ -1679,7 +2231,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": "NZC lists Fri 23 Oct, 6.00pm local"
+   "time_note": "NZC lists Fri 23 Oct, 6.00pm local",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 22.0,
+    "slope": 0.4,
+    "hfa": 2.0,
+    "hc_max": 40.5,
+    "total_line": 170.5,
+    "total_sigma": 24.0,
+    "series": null
+   }
   },
   {
    "id": "nhl-2026020160",
@@ -1715,7 +2277,17 @@
     "rating": 72.7
    },
    "event_only": false,
-   "time_note": "20:00 EDT (ET) converted to UTC"
+   "time_note": "20:00 EDT (ET) converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 2.0,
+    "slope": 0.038,
+    "hfa": 2.5,
+    "hc_max": 3.5,
+    "total_line": 6.5,
+    "total_sigma": 1.9,
+    "series": null
+   }
   },
   {
    "id": "nhl-2026020161",
@@ -1751,7 +2323,17 @@
     "rating": 55.60000000000001
    },
    "event_only": false,
-   "time_note": "20:00 EDT (ET) converted to UTC"
+   "time_note": "20:00 EDT (ET) converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 2.0,
+    "slope": 0.038,
+    "hfa": 2.5,
+    "hc_max": 3.5,
+    "total_line": 6.5,
+    "total_sigma": 1.9,
+    "series": null
+   }
   },
   {
    "id": "nhl-2026020162",
@@ -1787,7 +2369,17 @@
     "rating": 70.0
    },
    "event_only": false,
-   "time_note": "21:00 EDT (ET) converted to UTC"
+   "time_note": "21:00 EDT (ET) converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 2.0,
+    "slope": 0.038,
+    "hfa": 2.5,
+    "hc_max": 3.5,
+    "total_line": 6.5,
+    "total_sigma": 1.9,
+    "series": null
+   }
   },
   {
    "id": "nhl-2026020163",
@@ -1823,7 +2415,17 @@
     "rating": 77.3
    },
    "event_only": false,
-   "time_note": "21:00 EDT (ET) converted to UTC"
+   "time_note": "21:00 EDT (ET) converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 2.0,
+    "slope": 0.038,
+    "hfa": 2.5,
+    "hc_max": 3.5,
+    "total_line": 6.5,
+    "total_sigma": 1.9,
+    "series": null
+   }
   },
   {
    "id": "nba-0022600007",
@@ -1859,7 +2461,17 @@
     "rating": 50.0
    },
    "event_only": false,
-   "time_note": "21:30 ET converted to UTC"
+   "time_note": "21:30 ET converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 15.0,
+    "slope": 0.5,
+    "hfa": 2.5,
+    "hc_max": 16.5,
+    "total_line": 228.5,
+    "total_sigma": 19.0,
+    "series": null
+   }
   },
   {
    "id": "nhl-2026020164",
@@ -1895,7 +2507,17 @@
     "rating": 70.0
    },
    "event_only": false,
-   "time_note": "22:00 EDT (ET) converted to UTC"
+   "time_note": "22:00 EDT (ET) converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 2.0,
+    "slope": 0.038,
+    "hfa": 2.5,
+    "hc_max": 3.5,
+    "total_line": 6.5,
+    "total_sigma": 1.9,
+    "series": null
+   }
   },
   {
    "id": "nhl-2026020165",
@@ -1931,7 +2553,17 @@
     "rating": 50.0
    },
    "event_only": false,
-   "time_note": "22:00 EDT (ET) converted to UTC"
+   "time_note": "22:00 EDT (ET) converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 2.0,
+    "slope": 0.038,
+    "hfa": 2.5,
+    "hc_max": 3.5,
+    "total_line": 6.5,
+    "total_sigma": 1.9,
+    "series": null
+   }
   },
   {
    "id": "rl-wc26w-sam-wal",
@@ -1969,7 +2601,17 @@
     "rating": 51.0
    },
    "event_only": false,
-   "time_note": "Friday 5.45pm AEDT converted to UTC"
+   "time_note": "Friday 5.45pm AEDT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 16.0,
+    "slope": 0.5,
+    "hfa": 2.0,
+    "hc_max": 30.5,
+    "total_line": 42.5,
+    "total_sigma": 10.0,
+    "series": null
+   }
   },
   {
    "id": "aflw-r11-07",
@@ -2007,7 +2649,17 @@
     "rating": 43.0
    },
    "event_only": false,
-   "time_note": "7.15pm ACDT converted to UTC"
+   "time_note": "7.15pm ACDT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 17.0,
+    "slope": 0.55,
+    "hfa": 2.0,
+    "hc_max": 40.5,
+    "total_line": 75.5,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "rl-wc26-tga-lbn",
@@ -2043,7 +2695,17 @@
     "rating": 56.0
    },
    "event_only": false,
-   "time_note": "Friday 8.05pm AEDT converted to UTC"
+   "time_note": "Friday 8.05pm AEDT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 16.0,
+    "slope": 0.5,
+    "hfa": 2.0,
+    "hc_max": 30.5,
+    "total_line": 42.5,
+    "total_sigma": 10.0,
+    "series": null
+   }
   },
   {
    "id": "vol-plus-36963",
@@ -2070,7 +2732,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 9.0,
+    "slope": 0.25,
+    "hfa": 1.5,
+    "hc_max": 9.5,
+    "total_line": 175.5,
+    "total_sigma": 18.0,
+    "series": null
+   }
   },
   {
    "id": "el-zal-asv-1023",
@@ -2106,7 +2778,17 @@
     "rating": 40.625
    },
    "event_only": false,
-   "time_note": "20:00 EEST converted to UTC"
+   "time_note": "20:00 EEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 10.5,
+    "slope": 0.18,
+    "hfa": 2.0,
+    "hc_max": 16.5,
+    "total_line": 163.5,
+    "total_sigma": 18.0,
+    "series": null
+   }
   },
   {
    "id": "pdc-ec-09",
@@ -2142,7 +2824,20 @@
     "rating": 82.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "pdc-ec-10",
@@ -2178,7 +2873,20 @@
     "rating": 70.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "pdc-ec-11",
@@ -2214,7 +2922,20 @@
     "rating": 73.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "pdc-ec-12",
@@ -2250,7 +2971,20 @@
     "rating": 74.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "pdc-ec-13",
@@ -2286,7 +3020,20 @@
     "rating": 78.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "pdc-ec-14",
@@ -2322,7 +3069,20 @@
     "rating": 69.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "pdc-ec-15",
@@ -2358,7 +3118,20 @@
     "rating": 81.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "pdc-ec-16",
@@ -2394,7 +3167,20 @@
     "rating": 77.0
    },
    "event_only": false,
-   "time_note": "Session start 17:00 UTC; per-match walk-on not published"
+   "time_note": "Session start 17:00 UTC; per-match walk-on not published",
+   "assumptions": {
+    "model": "binomial",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": {
+     "legs": 11,
+     "unit": "legs"
+    }
+   }
   },
   {
    "id": "el-oly-fen-1023",
@@ -2430,7 +3216,17 @@
     "rating": 67.25
    },
    "event_only": false,
-   "time_note": "21:15 EEST converted to UTC"
+   "time_note": "21:15 EEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 10.5,
+    "slope": 0.18,
+    "hfa": 2.0,
+    "hc_max": 16.5,
+    "total_line": 163.5,
+    "total_sigma": 18.0,
+    "series": null
+   }
   },
   {
    "id": "el-par-val-1023",
@@ -2466,7 +3262,17 @@
     "rating": 59.416666666666664
    },
    "event_only": false,
-   "time_note": "20:45 CEST converted to UTC"
+   "time_note": "20:45 CEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 10.5,
+    "slope": 0.18,
+    "hfa": 2.0,
+    "hc_max": 16.5,
+    "total_line": 163.5,
+    "total_sigma": 18.0,
+    "series": null
+   }
   },
   {
    "id": "ru-urc-609577",
@@ -2492,7 +3298,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": "19:45 IRE & UK converted to UTC"
+   "time_note": "19:45 IRE & UK converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 11.0,
+    "slope": 0.35,
+    "hfa": 2.5,
+    "hc_max": 20.5,
+    "total_line": 48.5,
+    "total_sigma": 9.0,
+    "series": null
+   }
   },
   {
    "id": "ru-gloucester-bath",
@@ -2518,7 +3334,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": "19:45 BST converted to UTC"
+   "time_note": "19:45 BST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 11.0,
+    "slope": 0.35,
+    "hfa": 2.5,
+    "hc_max": 20.5,
+    "total_line": 48.5,
+    "total_sigma": 9.0,
+    "series": null
+   }
   },
   {
    "id": "ru-newcastle-sale",
@@ -2544,7 +3370,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": "19:45 BST converted to UTC"
+   "time_note": "19:45 BST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 11.0,
+    "slope": 0.35,
+    "hfa": 2.5,
+    "hc_max": 20.5,
+    "total_line": 48.5,
+    "total_sigma": 9.0,
+    "series": null
+   }
   },
   {
    "id": "nba-1023-chi-mil",
@@ -2580,7 +3416,17 @@
     "rating": 50.0
    },
    "event_only": false,
-   "time_note": "16:00 ET converted to UTC"
+   "time_note": "16:00 ET converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 15.0,
+    "slope": 0.5,
+    "hfa": 2.5,
+    "hc_max": 16.5,
+    "total_line": 228.5,
+    "total_sigma": 19.0,
+    "series": null
+   }
   },
   {
    "id": "nba-1023-nyk-bos",
@@ -2616,7 +3462,17 @@
     "rating": 43.0
    },
    "event_only": false,
-   "time_note": "19:00 ET converted to UTC"
+   "time_note": "19:00 ET converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 15.0,
+    "slope": 0.5,
+    "hfa": 2.5,
+    "hc_max": 16.5,
+    "total_line": 228.5,
+    "total_sigma": 19.0,
+    "series": null
+   }
   },
   {
    "id": "nba-1023-atl-cha",
@@ -2652,7 +3508,17 @@
     "rating": 50.0
    },
    "event_only": false,
-   "time_note": "19:00 ET converted to UTC"
+   "time_note": "19:00 ET converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 15.0,
+    "slope": 0.5,
+    "hfa": 2.5,
+    "hc_max": 16.5,
+    "total_line": 228.5,
+    "total_sigma": 19.0,
+    "series": null
+   }
   },
   {
    "id": "nba-1023-dal-ind",
@@ -2688,7 +3554,17 @@
     "rating": 50.0
    },
    "event_only": false,
-   "time_note": "19:00 ET converted to UTC"
+   "time_note": "19:00 ET converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 15.0,
+    "slope": 0.5,
+    "hfa": 2.5,
+    "hc_max": 16.5,
+    "total_line": 228.5,
+    "total_sigma": 19.0,
+    "series": null
+   }
   },
   {
    "id": "nba-1023-min-orl",
@@ -2724,7 +3600,17 @@
     "rating": 50.0
    },
    "event_only": false,
-   "time_note": "19:00 ET converted to UTC"
+   "time_note": "19:00 ET converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 15.0,
+    "slope": 0.5,
+    "hfa": 2.5,
+    "hc_max": 16.5,
+    "total_line": 228.5,
+    "total_sigma": 19.0,
+    "series": null
+   }
   },
   {
    "id": "nba-1023-tor-was",
@@ -2760,7 +3646,17 @@
     "rating": 50.0
    },
    "event_only": false,
-   "time_note": "19:00 ET converted to UTC"
+   "time_note": "19:00 ET converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 15.0,
+    "slope": 0.5,
+    "hfa": 2.5,
+    "hc_max": 16.5,
+    "total_line": 228.5,
+    "total_sigma": 19.0,
+    "series": null
+   }
   },
   {
    "id": "cric-nz-ind-t20-2",
@@ -2798,7 +3694,17 @@
     "rating": 81.5
    },
    "event_only": false,
-   "time_note": "NZC lists Sat 24 Oct; clock time not converted"
+   "time_note": "NZC lists Sat 24 Oct; clock time not converted",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 22.0,
+    "slope": 0.4,
+    "hfa": 2.0,
+    "hc_max": 40.5,
+    "total_line": 170.5,
+    "total_sigma": 24.0,
+    "series": null
+   }
   },
   {
    "id": "rl-wc26w-aus-eng",
@@ -2837,7 +3743,17 @@
     "rating": 82.0
    },
    "event_only": false,
-   "time_note": "Saturday 24 October; kick-off time not published converted to UTC"
+   "time_note": "Saturday 24 October; kick-off time not published converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 16.0,
+    "slope": 0.5,
+    "hfa": 2.0,
+    "hc_max": 30.5,
+    "total_line": 42.5,
+    "total_sigma": 10.0,
+    "series": null
+   }
   },
   {
    "id": "mlb-849805",
@@ -2877,7 +3793,17 @@
     "kind": "road split"
    },
    "event_only": false,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 3.0,
+    "slope": 0.035,
+    "hfa": 0.0,
+    "hc_max": 2.5,
+    "total_line": 8.5,
+    "total_sigma": 2.4,
+    "series": null
+   }
   },
   {
    "id": "nba-1023-det-mia",
@@ -2913,7 +3839,17 @@
     "rating": 57.0
    },
    "event_only": false,
-   "time_note": "20:00 ET converted to UTC"
+   "time_note": "20:00 ET converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 15.0,
+    "slope": 0.5,
+    "hfa": 2.5,
+    "hc_max": 16.5,
+    "total_line": 228.5,
+    "total_sigma": 19.0,
+    "series": null
+   }
   },
   {
    "id": "nhl-2026020166",
@@ -2949,7 +3885,17 @@
     "rating": 55.60000000000001
    },
    "event_only": false,
-   "time_note": "20:00 EDT (ET) converted to UTC"
+   "time_note": "20:00 EDT (ET) converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 2.0,
+    "slope": 0.038,
+    "hfa": 2.5,
+    "hc_max": 3.5,
+    "total_line": 6.5,
+    "total_sigma": 1.9,
+    "series": null
+   }
   },
   {
    "id": "nhl-2026020167",
@@ -2985,7 +3931,17 @@
     "rating": 77.8
    },
    "event_only": false,
-   "time_note": "21:00 EDT (ET) converted to UTC"
+   "time_note": "21:00 EDT (ET) converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 2.0,
+    "slope": 0.038,
+    "hfa": 2.5,
+    "hc_max": 3.5,
+    "total_line": 6.5,
+    "total_sigma": 1.9,
+    "series": null
+   }
   },
   {
    "id": "nba-1023-hou-sas",
@@ -3021,7 +3977,17 @@
     "rating": 50.0
    },
    "event_only": false,
-   "time_note": "21:30 ET converted to UTC"
+   "time_note": "21:30 ET converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 15.0,
+    "slope": 0.5,
+    "hfa": 2.5,
+    "hc_max": 16.5,
+    "total_line": 228.5,
+    "total_sigma": 19.0,
+    "series": null
+   }
   },
   {
    "id": "nba-1023-nop-uta",
@@ -3057,7 +4023,17 @@
     "rating": 50.0
    },
    "event_only": false,
-   "time_note": "21:30 ET converted to UTC"
+   "time_note": "21:30 ET converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 15.0,
+    "slope": 0.5,
+    "hfa": 2.5,
+    "hc_max": 16.5,
+    "total_line": 228.5,
+    "total_sigma": 19.0,
+    "series": null
+   }
   },
   {
    "id": "nba-1023-mem-gsw",
@@ -3093,7 +4069,17 @@
     "rating": 50.0
    },
    "event_only": false,
-   "time_note": "22:00 ET converted to UTC"
+   "time_note": "22:00 ET converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 15.0,
+    "slope": 0.5,
+    "hfa": 2.5,
+    "hc_max": 16.5,
+    "total_line": 228.5,
+    "total_sigma": 19.0,
+    "series": null
+   }
   },
   {
    "id": "nba-1023-lac-lal",
@@ -3129,7 +4115,17 @@
     "rating": 50.0
    },
    "event_only": false,
-   "time_note": "22:00 ET converted to UTC"
+   "time_note": "22:00 ET converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 15.0,
+    "slope": 0.5,
+    "hfa": 2.5,
+    "hc_max": 16.5,
+    "total_line": 228.5,
+    "total_sigma": 19.0,
+    "series": null
+   }
   },
   {
    "id": "nba-1023-por-sac",
@@ -3165,7 +4161,17 @@
     "rating": 50.0
    },
    "event_only": false,
-   "time_note": "22:00 ET converted to UTC"
+   "time_note": "22:00 ET converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 15.0,
+    "slope": 0.5,
+    "hfa": 2.5,
+    "hc_max": 16.5,
+    "total_line": 228.5,
+    "total_sigma": 19.0,
+    "series": null
+   }
   },
   {
    "id": "aflw-r11-09",
@@ -3201,7 +4207,17 @@
     "rating": 84.0
    },
    "event_only": false,
-   "time_note": "1.05pm AEDT converted to UTC"
+   "time_note": "1.05pm AEDT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 17.0,
+    "slope": 0.55,
+    "hfa": 2.0,
+    "hc_max": 40.5,
+    "total_line": 75.5,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "aflw-r11-02",
@@ -3237,7 +4253,17 @@
     "rating": 66.0
    },
    "event_only": false,
-   "time_note": "3.05pm AEDT converted to UTC"
+   "time_note": "3.05pm AEDT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 17.0,
+    "slope": 0.55,
+    "hfa": 2.0,
+    "hc_max": 40.5,
+    "total_line": 75.5,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "rl-wc26-png-sam",
@@ -3273,7 +4299,17 @@
     "rating": 80.0
    },
    "event_only": false,
-   "time_note": "Saturday 3.25pm AEDT converted to UTC"
+   "time_note": "Saturday 3.25pm AEDT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 16.0,
+    "slope": 0.5,
+    "hfa": 2.0,
+    "hc_max": 30.5,
+    "total_line": 42.5,
+    "total_sigma": 10.0,
+    "series": null
+   }
   },
   {
    "id": "aflw-r11-06",
@@ -3309,7 +4345,17 @@
     "rating": 37.0
    },
    "event_only": false,
-   "time_note": "5.05pm AEDT converted to UTC"
+   "time_note": "5.05pm AEDT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 17.0,
+    "slope": 0.55,
+    "hfa": 2.0,
+    "hc_max": 40.5,
+    "total_line": 75.5,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "rl-wc26-eng-fra",
@@ -3345,7 +4391,17 @@
     "rating": 50.0
    },
    "event_only": false,
-   "time_note": "Saturday 5.35pm AEDT converted to UTC"
+   "time_note": "Saturday 5.35pm AEDT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 16.0,
+    "slope": 0.5,
+    "hfa": 2.0,
+    "hc_max": 30.5,
+    "total_line": 42.5,
+    "total_sigma": 10.0,
+    "series": null
+   }
   },
   {
    "id": "aflw-r11-03",
@@ -3381,7 +4437,17 @@
     "rating": 82.0
    },
    "event_only": false,
-   "time_note": "7.15pm AEDT converted to UTC"
+   "time_note": "7.15pm AEDT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 17.0,
+    "slope": 0.55,
+    "hfa": 2.0,
+    "hc_max": 40.5,
+    "total_line": 75.5,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "ru-urc-609576",
@@ -3407,7 +4473,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": "12:45 IRE & UK / 13:45 SA converted to UTC"
+   "time_note": "12:45 IRE & UK / 13:45 SA converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 11.0,
+    "slope": 0.35,
+    "hfa": 2.5,
+    "hc_max": 20.5,
+    "total_line": 48.5,
+    "total_sigma": 9.0,
+    "series": null
+   }
   },
   {
    "id": "ru-urc-609580",
@@ -3433,7 +4509,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": "15:00 IRE & UK / 16:00 SA converted to UTC"
+   "time_note": "15:00 IRE & UK / 16:00 SA converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 11.0,
+    "slope": 0.35,
+    "hfa": 2.5,
+    "hc_max": 20.5,
+    "total_line": 48.5,
+    "total_sigma": 9.0,
+    "series": null
+   }
   },
   {
    "id": "ru-leicester-northampton",
@@ -3459,7 +4545,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": "15:05 BST converted to UTC"
+   "time_note": "15:05 BST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 11.0,
+    "slope": 0.35,
+    "hfa": 2.5,
+    "hc_max": 20.5,
+    "total_line": 48.5,
+    "total_sigma": 9.0,
+    "series": null
+   }
   },
   {
    "id": "ru-bristol-exeter",
@@ -3485,7 +4581,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": "15:05 BST converted to UTC"
+   "time_note": "15:05 BST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 11.0,
+    "slope": 0.35,
+    "hfa": 2.5,
+    "hc_max": 20.5,
+    "total_line": 48.5,
+    "total_sigma": 9.0,
+    "series": null
+   }
   },
   {
    "id": "ru-top14-609567",
@@ -3519,7 +4625,17 @@
     "rating": 55.0
    },
    "event_only": false,
-   "time_note": "16:35 CEST converted to UTC"
+   "time_note": "16:35 CEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 11.0,
+    "slope": 0.35,
+    "hfa": 2.5,
+    "hc_max": 20.5,
+    "total_line": 48.5,
+    "total_sigma": 9.0,
+    "series": null
+   }
   },
   {
    "id": "ru-top14-609564",
@@ -3553,7 +4669,17 @@
     "rating": 58.0
    },
    "event_only": false,
-   "time_note": "16:35 CEST converted to UTC"
+   "time_note": "16:35 CEST converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 11.0,
+    "slope": 0.35,
+    "hfa": 2.5,
+    "hc_max": 20.5,
+    "total_line": 48.5,
+    "total_sigma": 9.0,
+    "series": null
+   }
   },
   {
    "id": "vol-plus-36964",
@@ -3580,7 +4706,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 9.0,
+    "slope": 0.25,
+    "hfa": 1.5,
+    "hc_max": 9.5,
+    "total_line": 175.5,
+    "total_sigma": 18.0,
+    "series": null
+   }
   },
   {
    "id": "ru-urc-609578",
@@ -3606,7 +4742,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": "18:00 IRE & UK converted to UTC"
+   "time_note": "18:00 IRE & UK converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 11.0,
+    "slope": 0.35,
+    "hfa": 2.5,
+    "hc_max": 20.5,
+    "total_line": 48.5,
+    "total_sigma": 9.0,
+    "series": null
+   }
   },
   {
    "id": "gaa-galway-3532",
@@ -3633,7 +4779,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 6.0,
+    "slope": 0.25,
+    "hfa": 1.0,
+    "hc_max": 12.5,
+    "total_line": 31.5,
+    "total_sigma": 6.5,
+    "series": null
+   }
   },
   {
    "id": "mlb-849802",
@@ -3673,7 +4829,17 @@
     "kind": "road split"
    },
    "event_only": false,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 3.0,
+    "slope": 0.035,
+    "hfa": 0.0,
+    "hc_max": 2.5,
+    "total_line": 8.5,
+    "total_sigma": 2.4,
+    "series": null
+   }
   },
   {
    "id": "aflw-r11-08",
@@ -3709,7 +4875,17 @@
     "rating": 65.0
    },
    "event_only": false,
-   "time_note": "12.35pm AEDT converted to UTC"
+   "time_note": "12.35pm AEDT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 17.0,
+    "slope": 0.55,
+    "hfa": 2.0,
+    "hc_max": 40.5,
+    "total_line": 75.5,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "aflw-r11-01",
@@ -3745,7 +4921,17 @@
     "rating": 60.0
    },
    "event_only": false,
-   "time_note": "1.05pm AEDT converted to UTC"
+   "time_note": "1.05pm AEDT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 17.0,
+    "slope": 0.55,
+    "hfa": 2.0,
+    "hc_max": 40.5,
+    "total_line": 75.5,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "aflw-r11-05",
@@ -3781,7 +4967,17 @@
     "rating": 46.0
    },
    "event_only": false,
-   "time_note": "3.05pm AEDT converted to UTC"
+   "time_note": "3.05pm AEDT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 17.0,
+    "slope": 0.55,
+    "hfa": 2.0,
+    "hc_max": 40.5,
+    "total_line": 75.5,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "rl-wc26-nzl-cok",
@@ -3817,7 +5013,17 @@
     "rating": 56.0
    },
    "event_only": false,
-   "time_note": "Sunday 4.05pm AEDT converted to UTC"
+   "time_note": "Sunday 4.05pm AEDT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 16.0,
+    "slope": 0.5,
+    "hfa": 2.0,
+    "hc_max": 30.5,
+    "total_line": 42.5,
+    "total_sigma": 10.0,
+    "series": null
+   }
   },
   {
    "id": "aflw-r11-04",
@@ -3853,7 +5059,17 @@
     "rating": 38.0
    },
    "event_only": false,
-   "time_note": "5.05pm AEDT converted to UTC"
+   "time_note": "5.05pm AEDT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 17.0,
+    "slope": 0.55,
+    "hfa": 2.0,
+    "hc_max": 40.5,
+    "total_line": 75.5,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "rl-wc26-aus-fij",
@@ -3889,7 +5105,17 @@
     "rating": 63.0
    },
    "event_only": false,
-   "time_note": "Sunday 8.05pm AEDT converted to UTC"
+   "time_note": "Sunday 8.05pm AEDT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 16.0,
+    "slope": 0.5,
+    "hfa": 2.0,
+    "hc_max": 30.5,
+    "total_line": 42.5,
+    "total_sigma": 10.0,
+    "series": null
+   }
   },
   {
    "id": "gaa-kerry-sfc",
@@ -3916,7 +5142,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 6.0,
+    "slope": 0.25,
+    "hfa": 1.0,
+    "hc_max": 12.5,
+    "total_line": 31.5,
+    "total_sigma": 6.5,
+    "series": null
+   }
   },
   {
    "id": "gaa-waterford-3536",
@@ -3943,7 +5179,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 6.0,
+    "slope": 0.25,
+    "hfa": 1.0,
+    "hc_max": 12.5,
+    "total_line": 31.5,
+    "total_sigma": 6.5,
+    "series": null
+   }
   },
   {
    "id": "ru-harlequins-saracens",
@@ -3969,7 +5215,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": "15:00 GMT converted to UTC"
+   "time_note": "15:00 GMT converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 11.0,
+    "slope": 0.35,
+    "hfa": 2.5,
+    "hc_max": 20.5,
+    "total_line": 48.5,
+    "total_sigma": 9.0,
+    "series": null
+   }
   },
   {
    "id": "gaa-cork-3530",
@@ -4000,7 +5256,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 6.0,
+    "slope": 0.25,
+    "hfa": 1.0,
+    "hc_max": 12.5,
+    "total_line": 31.5,
+    "total_sigma": 6.5,
+    "series": null
+   }
   },
   {
    "id": "vol-lega-perugia",
@@ -4026,7 +5292,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 9.0,
+    "slope": 0.25,
+    "hfa": 1.5,
+    "hc_max": 9.5,
+    "total_line": 175.5,
+    "total_sigma": 18.0,
+    "series": null
+   }
   },
   {
    "id": "vol-plus-36965",
@@ -4053,7 +5329,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 9.0,
+    "slope": 0.25,
+    "hfa": 1.5,
+    "hc_max": 9.5,
+    "total_line": 175.5,
+    "total_sigma": 18.0,
+    "series": null
+   }
   },
   {
    "id": "vol-lega-trentino",
@@ -4079,7 +5365,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 9.0,
+    "slope": 0.25,
+    "hfa": 1.5,
+    "hc_max": 9.5,
+    "total_line": 175.5,
+    "total_sigma": 18.0,
+    "series": null
+   }
   },
   {
    "id": "vol-lega-lube",
@@ -4105,7 +5401,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 9.0,
+    "slope": 0.25,
+    "hfa": 1.5,
+    "hc_max": 9.5,
+    "total_line": 175.5,
+    "total_sigma": 18.0,
+    "series": null
+   }
   },
   {
    "id": "ru-top14-609554",
@@ -4139,7 +5445,17 @@
     "rating": 74.0
    },
    "event_only": false,
-   "time_note": "21:05 CET converted to UTC"
+   "time_note": "21:05 CET converted to UTC",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 11.0,
+    "slope": 0.35,
+    "hfa": 2.5,
+    "hc_max": 20.5,
+    "total_line": 48.5,
+    "total_sigma": 9.0,
+    "series": null
+   }
   },
   {
    "id": "f1-usgp-2026",
@@ -4165,7 +5481,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": true,
-   "time_note": "16:00 track time (CDT, UTC-5)"
+   "time_note": "16:00 track time (CDT, UTC-5)",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 14.0,
+    "slope": 0.05,
+    "hfa": 0.0,
+    "hc_max": 6.5,
+    "total_line": 45.0,
+    "total_sigma": 14.0,
+    "series": null
+   }
   },
   {
    "id": "cric-nz-ind-t20-3",
@@ -4195,7 +5521,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": "NZC lists Tue 27 Oct; clock time not converted"
+   "time_note": "NZC lists Tue 27 Oct; clock time not converted",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 22.0,
+    "slope": 0.4,
+    "hfa": 2.0,
+    "hc_max": 40.5,
+    "total_line": 170.5,
+    "total_sigma": 24.0,
+    "series": null
+   }
   },
   {
    "id": "cric-ford-auck-cant",
@@ -4225,7 +5561,17 @@
    "home_input": null,
    "away_input": null,
    "event_only": false,
-   "time_note": "NZC lists Tue 27 Oct, 5.30pm local"
+   "time_note": "NZC lists Tue 27 Oct, 5.30pm local",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 22.0,
+    "slope": 0.4,
+    "hfa": 2.0,
+    "hc_max": 40.5,
+    "total_line": 170.5,
+    "total_sigma": 24.0,
+    "series": null
+   }
   },
   {
    "id": "mlb-849804",
@@ -4266,7 +5612,17 @@
     "kind": "road split"
    },
    "event_only": false,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 3.0,
+    "slope": 0.035,
+    "hfa": 0.0,
+    "hc_max": 2.5,
+    "total_line": 8.5,
+    "total_sigma": 2.4,
+    "series": null
+   }
   },
   {
    "id": "mlb-849803",
@@ -4307,7 +5663,17 @@
     "kind": "road split"
    },
    "event_only": false,
-   "time_note": ""
+   "time_note": "",
+   "assumptions": {
+    "model": "normal",
+    "sigma": 3.0,
+    "slope": 0.035,
+    "hfa": 0.0,
+    "hc_max": 2.5,
+    "total_line": 8.5,
+    "total_sigma": 2.4,
+    "series": null
+   }
   }
  ]
 }

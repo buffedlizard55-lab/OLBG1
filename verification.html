@@ -2,60 +2,78 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Verification (moved) · OLBG Reverse-Engineering &amp; Origination Desk</title>
-<meta name="description" content="Source-linked multi-sport match dataset, independent multi-market betting lines, confidence tiers, and human analysis across all 17 in-scope OLBG sports.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verification · OLBG Independent Desk</title>
+<meta name="description" content="Which official page was read for each row, when it was read, and what this pass could verify offline.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="hdr-inner">
-    <div class="brand"><a href="index.html"><span class="dot"></span> OLBG Origination Desk <span class="sub">2026-10-21 UTC</span></a></div>
-    <nav class="main" aria-label="Primary navigation"><a href="index.html">Overview</a><a href="live-refresh.html">Live Refresh (141)</a><a href="picks.html">All Lines (126)</a><a href="predictions.html">High Picks (29)</a><a href="sports.html">17 Sports</a><a href="analysis.html">Market Analysis</a><a href="methodology.html">Methodology</a><a href="reverse-engineering.html">OLBG Audit</a><a href="sources.html">Official Sources</a><a href="live-verification.html" aria-current="page">Live Verification</a><a href="flagged.html">Flagged for Review</a><a href="2360a617/index.html">OLBG-152 Board</a></nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">OLBG <span>Independent Desk</span></a>
+    <span class="snap">Snapshot 22 Oct 2026 · 03:30 UTC</span>
   </div>
-  <div class="companion-bar">
-    <div class="companion-inner">
-      <span>Repository workspaces:</span>
-      <a href="index.html">Primary Root Desk (134 source-linked)</a>
-      <a href="984d417f/index.html">984d417f Live Audit &amp; 145-Event Desk</a>
-      <a href="c17a9192/index.html">c17a9192 Catalog (217)</a>
-      <a href="ccb6bde2/index.html">ccb6bde2 Markets (126)</a>
-      <a href="f7fa77fc/index.html">f7fa77fc Permalink Mirror</a>
-      <a href="docs/index.html">4f44f7d9 Board (164 OLBG)</a>
-      <a href="ebfbd966/index.html">ebfbd966 Board (133)</a>
-      <a href="aa4e9dbf/index.html">aa4e9dbf Desk (131)</a>
-      <a href="7a5b5360/index.html">7a5b5360 Fresh Desk (32 &middot; 22&ndash;26 Oct 2026)</a>
-      <a href="2360a617/index.html">2360a617 Board (152)</a>
-    </div>
-  </div>
+  <nav class="wrap nav" aria-label="Primary"><a href="index.html">Overview</a><a href="picks.html">All matches</a><a href="markets.html">Markets</a><a href="predictions.html">High picks</a><a href="sports.html">Sports</a><a href="flagged.html">Flagged</a><a href="verification.html" class="on">Verification</a><a href="sources.html">Sources</a><a href="methodology.html">Method</a><a href="analysis.html">Analysis</a><a href="archive.html">Archive</a></nav>
 </header>
-<main>
+<main id="main" class="wrap">
 
-<h1>Verification — register moved</h1>
-<p class="lede">This URL is kept alive because it was published in an earlier pass. It now points at the
-current register rather than repeating a snapshot.</p>
-<div class="note">
-  <b>Current register:</b> 134 rows —
-  <b>44</b> confirmed, <b>32</b> corrected,
-  <b>2</b> flagged, <b>56</b> not re-checked.
-  Read the full row-by-row evidence on <a href="live-verification.html">Live Verification</a>,
-  including the per-row source URL, the timestamp of the read and the blocker where a page could
-  not be re-read.
+<h1>Verification</h1>
+<p class="lede">What &ldquo;verified&rdquo; means here, which page was read, when it was read, and what this integration
+pass could and could not check for itself.</p>
+
+<div class="callout">
+  <b>Two different things are being measured.</b><br>
+  <b>Verified</b> (99 rows) &mdash; the participants, competition, venue and start were read from an
+  official page on 22 October 2026 by the session that built this snapshot.<br>
+  <b>Carried</b> (28 rows) &mdash; the row keeps the official URL it was read from on 21 October, but was
+  not re-read for this snapshot. Carried rows can never be graded High.
 </div>
-<div class="card">
-  <h2>Why this page changed</h2>
-  <p>The earlier version of this file carried a navigation bar advertising 136 priced lines and 31
-  high-confidence picks while the dataset holds 126 priced head-to-head lines and
-  29 high-confidence picks. Rather than hand-patch generated HTML, the page is now rendered
-  from the same data as every other page. The superseded content remains in git history.</p>
+
+<h2 id="limits">This pass&rsquo;s own limits</h2>
+<div class="callout warn">
+  <b>No official page was re-fetched during the integration pass.</b> The sandbox used to consolidate this site can
+  reach <code>github.com</code>, <code>api.github.com</code> and the package registries only; every league, tour and
+  governing-body host was unreachable. Nothing on this site is presented as re-certified by this pass.
+  What was checked offline, and is re-runnable, is:
+  <ul class="notes">
+    <li>every price reproduces from the model and the exported per-row assumptions;</li>
+    <li>US odds are the exact conversion of the decimal beside them, and no High pick sits outside &minus;250 to +10,000;</li>
+    <li>every one of the 127 rows carries at least one HTTPS link to a host on the official allowlist;</li>
+    <li>every high-confidence prediction is a unique 30+ word preview whose figures appear in that row&rsquo;s sourced input;</li>
+    <li>all 3,176 prices and every internal link on every page resolve.</li>
+  </ul>
 </div>
+
+<h2>Source pages read for this snapshot (13)</h2>
+<p class="sub">Recorded by the reading session with the UTC time each page was opened, and what was taken from it.</p>
+<div class="tablewrap"><table class="grid">
+<thead><tr><th>Official page</th><th>Read at (UTC)</th><th>What was taken</th></tr></thead>
+<tbody><tr><td><a href="https://www.nhl.com/schedule/2026-10-22" target="_blank" rel="noopener">NHL</a></td><td class="nowrap">2026-10-22T02:30Z</td><td class="sm">12 games on 22 October and 2 on 23 October, with ET start times; all 32 clubs&#x27; GP/W/L/OT/PTS/P%/DIFF from the wildcard table current as of 21 Oct 9:21 PM EDT.</td></tr><tr><td><a href="https://www.nba.com/schedule?date=10%2F22%2F2026" target="_blank" rel="noopener">NBA</a></td><td class="nowrap">2026-10-22T02:35Z</td><td class="sm">2 games on 22 October and 12 on 23 October with ET tip times and arenas; 2026-27 standings (only DET, PHI and OKC at 1-0, SAS/NYK/BOS at 0-1).</td></tr><tr><td><a href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener">EuroLeague</a></td><td class="nowrap">2026-10-22T02:40Z</td><td class="sm">Full 20-club table with GP/W/L/PF/PA and rank, plus the Round 7 game centre with all nine fixtures and arenas.</td></tr><tr><td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-22&amp;endDate=2026-10-29" target="_blank" rel="noopener">MLB</a></td><td class="nowrap">2026-10-22T02:45Z</td><td class="sm">Only the World Series remains: Games 1-4 with venues and dates; regular-season home/road splits for TB and MIL.</td></tr><tr><td><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">PDC</a></td><td class="nowrap">2026-10-22T02:50Z</td><td class="sm">All 16 first-round ties in draw order, 19:00 CEST session start, best-of-11 format and the 1-32 seed bracket.</td></tr><tr><td><a href="https://www.wst.tv/match-centre/67133698-e8a4-4b37-9266-452a97df8584" target="_blank" rel="noopener">WST</a></td><td class="nowrap">2026-10-22T02:55Z</td><td class="sm">Eight Round 3 matches on 22 October with session clocks, and the completed Round 2 result Pang 4-3 Davies (14-69, 33-103(112), 112-0, 56-61, 73-35, 56-31, 81-60).</td></tr><tr><td><a href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener">ATP Almaty</a></td><td class="nowrap">2026-10-22T03:00Z</td><td class="sm">Four Round of 16 singles matches with seeds and local start times.</td></tr><tr><td><a href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf" target="_blank" rel="noopener">WTA Ningbo</a></td><td class="nowrap">2026-10-22T03:00Z</td><td class="sm">Four Round of 16 singles matches with seeds and local start times, released 21 October 22:13.</td></tr><tr><td><a href="https://scoring.nzc.nz/fixtures" target="_blank" rel="noopener">NZC</a></td><td class="nowrap">2026-10-22T03:20Z</td><td class="sm">NZ v India T20I series dates/venues, Australia Women v NZ Women 3rd T20I, NZ A v India A, Ford Trophy Round 1.</td></tr><tr><td><a href="https://www.nrl.com/news/2026/10/20/world-cup-team-lists-mens-round-2/" target="_blank" rel="noopener">RLWC</a></td><td class="nowrap">2026-10-22T03:10Z</td><td class="sm">Five men&#x27;s Round 2 matches and the women&#x27;s Round 2 schedule with venues and AEDT kick-offs; late mail including J Strange out of the tournament.</td></tr><tr><td><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" target="_blank" rel="noopener">EHF</a></td><td class="nowrap">2026-10-22T03:15Z</td><td class="sm">Five Round 5 matches on 22 October with 18:45/20:45 CEST throw-offs and venues.</td></tr><tr><td><a href="https://www.afl.com.au/aflw/news/1523395/full-fixture-no-re-match-for-former-melbourne-coach-mick-stinear-at-geelong-west-coast-eagles-get-a-break-by-avoiding-north-melbourne" target="_blank" rel="noopener">AFLW</a></td><td class="nowrap">2026-10-22T03:05Z</td><td class="sm">All nine Round 11 matches with venues and local times; Port Adelaide v Collingwood is 7.15pm ACDT.</td></tr><tr><td><a href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener">Formula 1</a></td><td class="nowrap">2026-10-22T03:25Z</td><td class="sm">Grand Prix start 16:00 track time on Sunday 25 October; 56 laps over 5.513 km.</td></tr></tbody></table></div>
+
+<h2>Row status by sport</h2>
+<div class="tablewrap"><table class="grid">
+<thead><tr><th>Sport</th><th>Rows</th><th>Verified 22 Oct</th><th>Carried</th><th>Prices</th><th>High</th></tr></thead>
+<tbody><tr><td><a href="sports/tennis.html">Tennis</a></td><td class="nowrap">8</td><td class="nowrap">8</td><td class="nowrap">0</td><td class="nowrap">64</td><td class="nowrap">0</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td><td class="nowrap">23</td><td class="nowrap">23</td><td class="nowrap">0</td><td class="nowrap">774</td><td class="nowrap">1</td></tr><tr><td><a href="sports/golf.html">Golf</a></td><td class="nowrap">4</td><td class="nowrap">0</td><td class="nowrap">4</td><td class="nowrap">0</td><td class="nowrap">0</td></tr><tr><td><a href="sports/cricket.html">Cricket</a></td><td class="nowrap">4</td><td class="nowrap">4</td><td class="nowrap">0</td><td class="nowrap">161</td><td class="nowrap">0</td></tr><tr><td><a href="sports/snooker.html">Snooker</a></td><td class="nowrap">8</td><td class="nowrap">8</td><td class="nowrap">0</td><td class="nowrap">122</td><td class="nowrap">0</td></tr><tr><td><a href="sports/rugby-union.html">Rugby Union</a></td><td class="nowrap">12</td><td class="nowrap">0</td><td class="nowrap">12</td><td class="nowrap">405</td><td class="nowrap">0</td></tr><tr><td><a href="sports/rugby-league.html">Rugby League</a></td><td class="nowrap">7</td><td class="nowrap">7</td><td class="nowrap">0</td><td class="nowrap">249</td><td class="nowrap">3</td></tr><tr><td><a href="sports/baseball.html">Baseball</a></td><td class="nowrap">4</td><td class="nowrap">4</td><td class="nowrap">0</td><td class="nowrap">80</td><td class="nowrap">0</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td><td class="nowrap">14</td><td class="nowrap">14</td><td class="nowrap">0</td><td class="nowrap">301</td><td class="nowrap">1</td></tr><tr><td><a href="sports/motor-racing.html">Motor Racing</a></td><td class="nowrap">1</td><td class="nowrap">1</td><td class="nowrap">0</td><td class="nowrap">0</td><td class="nowrap">0</td></tr><tr><td><a href="sports/darts.html">Darts</a></td><td class="nowrap">16</td><td class="nowrap">16</td><td class="nowrap">0</td><td class="nowrap">240</td><td class="nowrap">1</td></tr><tr><td><a href="sports/handball.html">Handball</a></td><td class="nowrap">5</td><td class="nowrap">5</td><td class="nowrap">0</td><td class="nowrap">151</td><td class="nowrap">1</td></tr><tr><td><a href="sports/volleyball.html">Volleyball</a></td><td class="nowrap">6</td><td class="nowrap">0</td><td class="nowrap">6</td><td class="nowrap">180</td><td class="nowrap">0</td></tr><tr><td><a href="sports/aussie-rules.html">Aussie Rules</a></td><td class="nowrap">9</td><td class="nowrap">9</td><td class="nowrap">0</td><td class="nowrap">329</td><td class="nowrap">3</td></tr><tr><td><a href="sports/esports.html">eSports</a></td><td class="nowrap">1</td><td class="nowrap">0</td><td class="nowrap">1</td><td class="nowrap">0</td><td class="nowrap">0</td></tr><tr><td><a href="sports/gaelic-football.html">Gaelic Football</a></td><td class="nowrap">4</td><td class="nowrap">0</td><td class="nowrap">4</td><td class="nowrap">120</td><td class="nowrap">0</td></tr><tr><td><a href="sports/greyhounds.html">Greyhounds</a></td><td class="nowrap">1</td><td class="nowrap">0</td><td class="nowrap">1</td><td class="nowrap">0</td><td class="nowrap">0</td></tr></tbody></table></div>
+
+<h2>Hosts cited (29)</h2>
+<div class="tablewrap"><table class="grid">
+<thead><tr><th>Official host</th><th>Organisation / page</th><th>Rows</th><th>Sports</th></tr></thead>
+<tbody><tr><td><a href="https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed" target="_blank" rel="noopener"><b>www.pdc.tv</b></a></td><td>PDC official field and draw (seed order)</td><td class="nowrap">32</td><td class="sm">Darts</td></tr><tr><td><a href="https://www.nba.com/schedule?date=10%2F22%2F2026" target="_blank" rel="noopener"><b>www.nba.com</b></a></td><td>NBA official 2026-27 standings</td><td class="nowrap">28</td><td class="sm">Basketball</td></tr><tr><td><a href="https://www.nhl.com/schedule/2026-10-22" target="_blank" rel="noopener"><b>www.nhl.com</b></a></td><td>NHL official schedule, 22-23 October 2026</td><td class="nowrap">28</td><td class="sm">Ice Hockey</td></tr><tr><td><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener"><b>www.afl.com.au</b></a></td><td>AFL official 2026 NAB AFLW fixture release (Round 11)</td><td class="nowrap">18</td><td class="sm">Aussie Rules</td></tr><tr><td><a href="https://www.euroleaguebasketball.net/en/euroleague/game-center/" target="_blank" rel="noopener"><b>www.euroleaguebasketball.net</b></a></td><td>EuroLeague official 2026-27 regular-season standings</td><td class="nowrap">18</td><td class="sm">Basketball</td></tr><tr><td><a href="https://www.wst.tv/match-centre/67133698-e8a4-4b37-9266-452a97df8584" target="_blank" rel="noopener"><b>www.wst.tv</b></a></td><td>WST official match centre / Thursday order of play</td><td class="nowrap">16</td><td class="sm">Snooker</td></tr><tr><td><a href="https://www.nrl.com/RLWC2026/" target="_blank" rel="noopener"><b>www.nrl.com</b></a></td><td>NRL official Round 2 men&#x27;s team lists</td><td class="nowrap">14</td><td class="sm">Rugby League</td></tr><tr><td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-22&amp;endDate=2026-10-29" target="_blank" rel="noopener"><b>statsapi.mlb.com</b></a></td><td>MLB official 2026 regular-season standings (home/road splits)</td><td class="nowrap">8</td><td class="sm">Baseball</td></tr><tr><td><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" target="_blank" rel="noopener"><b>ehfcl.eurohandball.com</b></a></td><td>EHF Champions League Men official standings and calendar</td><td class="nowrap">5</td><td class="sm">Handball</td></tr><tr><td><a href="https://www.premrugby.com/fixtures-results" target="_blank" rel="noopener"><b>www.premrugby.com</b></a></td><td>Premiership Rugby official fixtures</td><td class="nowrap">5</td><td class="sm">Rugby Union</td></tr><tr><td><a href="https://scoring.nzc.nz/fixtures" target="_blank" rel="noopener"><b>scoring.nzc.nz</b></a></td><td>New Zealand Cricket official fixtures and results</td><td class="nowrap">4</td><td class="sm">Cricket</td></tr><tr><td><a href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf" target="_blank" rel="noopener"><b>wtafiles.wtatennis.com</b></a></td><td>WTA official order of play, Thursday 22 October</td><td class="nowrap">4</td><td class="sm">Tennis</td></tr><tr><td><a href="https://www.atptour.com/en/rankings/singles" target="_blank" rel="noopener"><b>www.atptour.com</b></a></td><td>PIF ATP rankings</td><td class="nowrap">4</td><td class="sm">Tennis</td></tr><tr><td><a href="https://www.icc-cricket.com/rankings" target="_blank" rel="noopener"><b>www.icc-cricket.com</b></a></td><td>ICC official team rankings (used for the international rating)</td><td class="nowrap">4</td><td class="sm">Cricket</td></tr><tr><td><a href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener"><b>www.protennislive.com</b></a></td><td>ATP official order of play, Thursday 22 October</td><td class="nowrap">4</td><td class="sm">Tennis</td></tr><tr><td><a href="https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/" target="_blank" rel="noopener"><b>www.unitedrugby.com</b></a></td><td>URC official 2026/27 fixtures in full</td><td class="nowrap">4</td><td class="sm">Rugby Union</td></tr><tr><td><a href="https://www.wtatennis.com/rankings/singles" target="_blank" rel="noopener"><b>www.wtatennis.com</b></a></td><td>PIF WTA rankings</td><td class="nowrap">4</td><td class="sm">Tennis</td></tr><tr><td><a href="https://munster.gaa.ie/fixtures/munster-gaa-fixtures/" target="_blank" rel="noopener"><b>munster.gaa.ie</b></a></td><td>Provincial / county board official fixtures</td><td class="nowrap">3</td><td class="sm">Gaelic Football</td></tr><tr><td><a href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener"><b>top14.lnr.fr</b></a></td><td>LNR official Top 14 calendar</td><td class="nowrap">3</td><td class="sm">Rugby Union</td></tr><tr><td><a href="https://www.legavolley.it/" target="_blank" rel="noopener"><b>www.legavolley.it</b></a></td><td>Lega Volley official fixtures</td><td class="nowrap">3</td><td class="sm">Volleyball</td></tr><tr><td><a href="https://www.plusliga.pl/games.html" target="_blank" rel="noopener"><b>www.plusliga.pl</b></a></td><td>PlusLiga official fixtures</td><td class="nowrap">3</td><td class="sm">Volleyball</td></tr><tr><td><a href="https://www.pgatour.com/pgatour-champions/schedule" target="_blank" rel="noopener"><b>www.pgatour.com</b></a></td><td>PGA TOUR Champions official schedule</td><td class="nowrap">2</td><td class="sm">Golf</td></tr><tr><td><a href="https://gaacork.ie/fixtures-results/" target="_blank" rel="noopener"><b>gaacork.ie</b></a></td><td>Provincial / county board official fixtures</td><td class="nowrap">1</td><td class="sm">Gaelic Football</td></tr><tr><td><a href="https://lolesports.com/en-US/tournament/115660540725177488" target="_blank" rel="noopener"><b>lolesports.com</b></a></td><td>Riot Games LoL Esports official Worlds 2026 hub</td><td class="nowrap">1</td><td class="sm">eSports</td></tr><tr><td><a href="https://www.europeantour.com/dpworld-tour/schedule/2026/" target="_blank" rel="noopener"><b>www.europeantour.com</b></a></td><td>DP World Tour official 2026 schedule</td><td class="nowrap">1</td><td class="sm">Golf</td></tr><tr><td><a href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener"><b>www.formula1.com</b></a></td><td>Formula 1 official United States Grand Prix schedule</td><td class="nowrap">1</td><td class="sm">Motor Racing</td></tr><tr><td><a href="https://www.galwaygaa.ie/results/" target="_blank" rel="noopener"><b>www.galwaygaa.ie</b></a></td><td>Provincial / county board official fixtures</td><td class="nowrap">1</td><td class="sm">Gaelic Football</td></tr><tr><td><a href="https://www.gbgb.org.uk/" target="_blank" rel="noopener"><b>www.gbgb.org.uk</b></a></td><td>Greyhound Board of Great Britain official site</td><td class="nowrap">1</td><td class="sm">Greyhounds</td></tr><tr><td><a href="https://www.lpga.com/tournaments" target="_blank" rel="noopener"><b>www.lpga.com</b></a></td><td>LPGA official tournament schedule</td><td class="nowrap">1</td><td class="sm">Golf</td></tr></tbody></table></div>
+
+<p class="sub">Every row on this site links to at least one of these hosts. Earlier verification passes are preserved
+verbatim in <a href="v3/index.html">the 22 October board</a>, <a href="7a5b5360/verification.html">the 21 October
+verification ledger</a> and <code>reports/LIVE_VERIFICATION.md</code>.</p>
 
 </main>
 <footer class="foot">
-  <p><b>OLBG Reverse-Engineering &amp; Origination Desk</b> — 17 in-scope sports · 134 source-linked events (129 verified · 5 cross-checked) · multi-market lines &amp; human analysis.</p>
-  <p>Every fixture, ranking, and record links directly to its governing body. Unconfirmed values are left explicitly blank and logged on <a href="flagged.html">Flagged for Review</a>. Independent mathematical probabilities only — not financial or gambling advice.</p>
-  <p>Downloads: <a href="datasets/matches_full.json">matches_full.json</a> · <a href="datasets/matches_full.csv">matches_full.csv</a> · <a href="datasets/flagged_for_review.json">flagged_for_review.json</a> · <a href="datasets/olbg_sports_registry.json">olbg_sports_registry.json</a></p>
+  <div class="wrap">
+    <p><b>One desk, one snapshot.</b> Every row links to the official league, tour or governing-body page it was read from.
+    Prices are the desk's own fair-price estimates, not quoted market odds. Nothing here is a tip-off service or a guarantee.</p>
+    <p class="mut">Snapshot 2026-10-22T03:30:00Z · built by <code>scripts/final_site.py</code> ·
+    verified by <code>scripts/final_validate.py</code>, <code>scripts/validate.py</code> and <code>scripts/v3_validate.py</code>.
+    Older boards are preserved on the <a href="archive.html">archive page</a>.</p>
+  </div>
 </footer>
-<script src="assets/app.js"></script>
 </body>
 </html>

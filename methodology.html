@@ -2,79 +2,88 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Methodology · OLBG Reverse-Engineering &amp; Origination Desk</title>
-<meta name="description" content="Source-linked multi-sport match dataset, independent multi-market betting lines, confidence tiers, and human analysis across all 17 in-scope OLBG sports.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology · OLBG Independent Desk</title>
+<meta name="description" content="The pricing model, per-sport assumptions, confidence rules, price window and known limits.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="hdr-inner">
-    <div class="brand"><a href="index.html"><span class="dot"></span> OLBG Origination Desk <span class="sub">2026-10-21 UTC</span></a></div>
-    <nav class="main" aria-label="Primary navigation"><a href="index.html">Overview</a><a href="live-refresh.html">Live Refresh (141)</a><a href="picks.html">All Lines (126)</a><a href="predictions.html">High Picks (29)</a><a href="sports.html">17 Sports</a><a href="analysis.html">Market Analysis</a><a href="methodology.html" aria-current="page">Methodology</a><a href="reverse-engineering.html">OLBG Audit</a><a href="sources.html">Official Sources</a><a href="live-verification.html">Live Verification</a><a href="flagged.html">Flagged for Review</a><a href="2360a617/index.html">OLBG-152 Board</a></nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">OLBG <span>Independent Desk</span></a>
+    <span class="snap">Snapshot 22 Oct 2026 · 03:30 UTC</span>
   </div>
-  <div class="companion-bar">
-    <div class="companion-inner">
-      <span>Repository workspaces:</span>
-      <a href="index.html">Primary Root Desk (134 source-linked)</a>
-      <a href="984d417f/index.html">984d417f Live Audit &amp; 145-Event Desk</a>
-      <a href="c17a9192/index.html">c17a9192 Catalog (217)</a>
-      <a href="ccb6bde2/index.html">ccb6bde2 Markets (126)</a>
-      <a href="f7fa77fc/index.html">f7fa77fc Permalink Mirror</a>
-      <a href="docs/index.html">4f44f7d9 Board (164 OLBG)</a>
-      <a href="ebfbd966/index.html">ebfbd966 Board (133)</a>
-      <a href="aa4e9dbf/index.html">aa4e9dbf Desk (131)</a>
-      <a href="7a5b5360/index.html">7a5b5360 Fresh Desk (32 &middot; 22&ndash;26 Oct 2026)</a>
-      <a href="2360a617/index.html">2360a617 Board (152)</a>
-    </div>
-  </div>
+  <nav class="wrap nav" aria-label="Primary"><a href="index.html">Overview</a><a href="picks.html">All matches</a><a href="markets.html">Markets</a><a href="predictions.html">High picks</a><a href="sports.html">Sports</a><a href="flagged.html">Flagged</a><a href="verification.html">Verification</a><a href="sources.html">Sources</a><a href="methodology.html" class="on">Method</a><a href="analysis.html">Analysis</a><a href="archive.html">Archive</a></nav>
 </header>
-<main>
+<main id="main" class="wrap">
 
-<h1>Line Origination &amp; Verification Methodology</h1>
-<p class="lede">Transparent, zero-black-box mathematical specification of <code>olbg-independent-logit-normal-v2.0</code> (`scripts/model.py`).</p>
+<h1>Methodology</h1>
+<p class="lede">One rating per side, one normal distribution per match, fair prices with no margin. Everything on this
+page is a modelling choice, and every number in it is published so a price can be reproduced by hand.</p>
 
-<div class="card">
-  <h2>1. Governing-Body Strength Rating &amp; Logit Win Model</h2>
-  <p>Each team or player receives a documented 0–100 strength input directly from its governing body (points percentage in NHL/NBA/EuroLeague/MLB, log-rank in ATP/WTA/WST, tournament seed in PDC, official rating points in ICC/IRL, or league table points &amp; goal difference in Top 14/EHF/AFLW). Given home baseline <code>p_base</code> (set to <code>0.500</code> on neutral venues):</p>
-  <pre>logit(p_home_2way) = logit(p_venue) + (R_home - R_away) / scale</pre>
-  <p>For 3-way sports (Rugby Union, Rugby League, Handball, Gaelic Football), regulation draw probability smoothly decays as mismatch widens: <code>d = max(0.018, draw_p * exp(-((p_2way - 0.5)/0.34)^2))</code>, with <code>p_home + p_draw + p_away == 1.000000</code> strictly enforced before applying a uniform <b>5.0% bookmaker overround</b> alongside exact <b>0%-vig fair odds</b> and <b>US moneyline</b> prices.</p>
-</div>
+<h2 id="model">1. How a rating becomes a price</h2>
+<ol class="steps">
+  <li><b>One rating per side (0&ndash;100).</b> Derived only from the official input on that row &mdash; ladder position, record, ranking, seed or points differential. No tipster odds are read, and no rating is copied from a bookmaker.</li>
+  <li><b>Edge = (home rating &minus; away rating) + home-field adjustment.</b> Both components are printed per sport below.</li>
+  <li><b>Expected margin &mu; = edge &times; slope.</b> The slope converts a rating point into the sport&rsquo;s own scoring unit, which is why a basketball price and a hockey price are not the same number.</li>
+  <li><b>P(home wins) = &Phi;(&mu; / &sigma;).</b> &sigma; is the sport&rsquo;s scoring spread; a 17-point rating gap is a coin flip at a neutral venue before the home adjustment.</li>
+  <li><b>Handicaps come from the same distribution:</b> P(covers &minus;L) = &Phi;((&mu; &minus; L) / &sigma;). The ladder is therefore internally consistent with the moneyline.</li>
+  <li><b>Totals</b> are priced around the sport&rsquo;s own baseline total, with their own spread.</li>
+  <li><b>Best-of-N sports</b> (darts, snooker, tennis) use a binomial leg model instead of a margin, which produces correct-score and set/frame/leg handicaps.</li>
+  <li><b>Price = 1 / probability</b>, rounded to two decimals. No margin is added; the overround a bookmaker would charge is a separate business decision and is not baked in.</li>
+</ol>
 
-<div class="card">
-  <h2>2. Derived Spread / Handicap, Draw No Bet &amp; Over/Under Totals</h2>
-  <p>Expected margin <code>mu = -sigma * Phi^-1(1 - p_home_2way)</code> maps win probability coherently onto sport scoring units. Each fixture carries a <b>three-rung handicap ladder</b> generated in probability space — the line at which the model favourite covers 50%, 60% and 68% of the time (<code>give = |mu| - sigma * Phi^-1(target)</code>) — with each rung rounded to the nearest half-point hook and then walked outwards until its favourite side is quotable inside the -250/+10000 window. Fixed-line sports (NHL Puck Line, MLB Run Line, Snooker Frames, Volleyball Sets) keep their conventional <code>1.5</code> main line. Totals adjust competition baselines (e.g., NBA <code>228.5</code> vs EuroLeague <code>171.5</code> vs EuroCup <code>168.5</code>; Men's T20I <code>339.5</code> vs Women's T20I <code>289.5</code> vs List A <code>529.5</code>) and are published as a three-rung ladder one step either side of the baseline. A total is never invented: 1 multi-innings fixture has no source-backed competition baseline, so its total is blank and marked unverified.</p>
-</div>
+<h2 id="assumptions">2. Per-sport assumptions</h2>
+<p class="sub">These are the values used for every row in that sport. They are modelling choices, not statistics.
+&sigma; and total spread are in the sport&rsquo;s scoring unit; slope is rating points &rarr; scoring unit; the total
+column is baseline total / total spread.</p>
+<div class="tablewrap"><table class="grid">
+<thead><tr><th>Sport</th><th>Model</th><th>&sigma;</th><th>Slope</th><th>Home adj.</th><th>Total base / spread</th></tr></thead>
+<tbody><tr><td><a href="sports/tennis.html">Tennis</a></td><td class="nowrap">binomial</td><td class="nowrap">14</td><td class="nowrap">0.05</td><td class="nowrap">0</td><td class="nowrap">45 / 14</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td><td class="nowrap">normal</td><td class="nowrap">10.5</td><td class="nowrap">0.18</td><td class="nowrap">2</td><td class="nowrap">163.5 / 18</td></tr><tr><td><a href="sports/golf.html">Golf</a></td><td class="nowrap">normal</td><td class="nowrap">14</td><td class="nowrap">0.05</td><td class="nowrap">0</td><td class="nowrap">45 / 14</td></tr><tr><td><a href="sports/cricket.html">Cricket</a></td><td class="nowrap">normal</td><td class="nowrap">22</td><td class="nowrap">0.4</td><td class="nowrap">2</td><td class="nowrap">170.5 / 24</td></tr><tr><td><a href="sports/snooker.html">Snooker</a></td><td class="nowrap">binomial</td><td class="nowrap">14</td><td class="nowrap">0.05</td><td class="nowrap">0</td><td class="nowrap">45 / 14</td></tr><tr><td><a href="sports/rugby-union.html">Rugby Union</a></td><td class="nowrap">normal</td><td class="nowrap">11</td><td class="nowrap">0.35</td><td class="nowrap">2.5</td><td class="nowrap">48.5 / 9</td></tr><tr><td><a href="sports/rugby-league.html">Rugby League</a></td><td class="nowrap">normal</td><td class="nowrap">16</td><td class="nowrap">0.5</td><td class="nowrap">2</td><td class="nowrap">42.5 / 10</td></tr><tr><td><a href="sports/baseball.html">Baseball</a></td><td class="nowrap">normal</td><td class="nowrap">3</td><td class="nowrap">0.035</td><td class="nowrap">0</td><td class="nowrap">8.5 / 2.4</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td><td class="nowrap">normal</td><td class="nowrap">2</td><td class="nowrap">0.038</td><td class="nowrap">2.5</td><td class="nowrap">6.5 / 1.9</td></tr><tr><td><a href="sports/motor-racing.html">Motor Racing</a></td><td class="nowrap">normal</td><td class="nowrap">14</td><td class="nowrap">0.05</td><td class="nowrap">0</td><td class="nowrap">45 / 14</td></tr><tr><td><a href="sports/darts.html">Darts</a></td><td class="nowrap">binomial</td><td class="nowrap">14</td><td class="nowrap">0.05</td><td class="nowrap">0</td><td class="nowrap">45 / 14</td></tr><tr><td><a href="sports/handball.html">Handball</a></td><td class="nowrap">normal</td><td class="nowrap">7</td><td class="nowrap">0.15</td><td class="nowrap">1.5</td><td class="nowrap">61.5 / 7.5</td></tr><tr><td><a href="sports/volleyball.html">Volleyball</a></td><td class="nowrap">normal</td><td class="nowrap">9</td><td class="nowrap">0.25</td><td class="nowrap">1.5</td><td class="nowrap">175.5 / 18</td></tr><tr><td><a href="sports/aussie-rules.html">Aussie Rules</a></td><td class="nowrap">normal</td><td class="nowrap">17</td><td class="nowrap">0.55</td><td class="nowrap">2</td><td class="nowrap">75.5 / 14</td></tr><tr><td><a href="sports/esports.html">eSports</a></td><td class="nowrap">normal</td><td class="nowrap">14</td><td class="nowrap">0.05</td><td class="nowrap">0</td><td class="nowrap">45 / 14</td></tr><tr><td><a href="sports/gaelic-football.html">Gaelic Football</a></td><td class="nowrap">normal</td><td class="nowrap">6</td><td class="nowrap">0.25</td><td class="nowrap">1</td><td class="nowrap">31.5 / 6.5</td></tr><tr><td><a href="sports/greyhounds.html">Greyhounds</a></td><td class="nowrap">normal</td><td class="nowrap">14</td><td class="nowrap">0.05</td><td class="nowrap">0</td><td class="nowrap">45 / 14</td></tr></tbody></table></div>
 
-<div class="card" id="price-window">
-  <h2>3. High-Confidence Price Window (-250 to +10000)</h2>
-  <p>The brief asks for high-confidence picks on matches priced between <code>-250</code> and <code>+10000</code> in US moneyline terms. This desk applies that window as a hard filter on the selection it publishes, not as a preference.</p>
-  <table>
-    <thead><tr><th>Rule</th><th>Implementation</th></tr></thead>
-    <tbody>
-      <tr><td>Window floor</td><td><code>-250</code> American. At the documented 5% overround this equals a <b>68.0%</b> model probability: <code>1 / (0.68 x 1.05) = 1.400</code> decimal.</td></tr>
-      <tr><td>Selection order</td><td>1) the model's match winner when its own price is inside the window and at 60%+; 2) otherwise the highest-probability <b>handicap rung</b> inside the window at 60%+; 3) otherwise no high-confidence pick at all.</td></tr>
-      <tr><td>Why handicaps, not totals</td><td>Handicap rungs are tied to the sourced rating gap. Totals rest on a modelling baseline constant, so a 68% totals rung would be an artefact of the ladder rather than evidence. Totals stay published for investigation but are never the highlighted pick.</td></tr>
-      <tr><td>Tier consequences</td><td>A match can clear its separation threshold and still be <b>Medium</b> if no selection inside the window reaches 60%. That is disclosed per row in the <code>window</code> block and on <a href="flagged.html">Flagged for Review</a> (T41-01…T41-04).</td></tr>
-    </tbody>
-  </table>
-  <p><b>Known contradiction in the brief, disclosed rather than hidden.</b> A pick with a greater than 70% chance cannot sit inside a window whose floor is -250, because 70% prices at about -277 with vig. The two rules cannot both hold. The window wins because it is the explicit numeric instruction; 60% is the conviction floor actually applied. Full arithmetic: <code>reports/SESSION_2CA3_PRICE_WINDOW.md</code>.</p>
-</div>
+<h2 id="confidence">3. Confidence and the price window</h2>
+<p>The brief sets two rules that cannot both hold literally: a selection with a 70% chance prices at about
+&minus;233, and a &minus;250 line is a 71.4% chance. The window is treated as the binding constraint.</p>
+<ul class="notes">
+  <li><b>High</b> &mdash; model probability &ge; 70% <i>and</i> price inside &minus;250 to +10,000 (decimal 1.40 to 101.00), <i>and</i> the row was verified on 22 October, <i>and</i> both sides carry a measured official rating.</li>
+  <li><b>Medium</b> &mdash; 55&ndash;70%, or a High selection that a cap (carried row, unrated side) holds down.</li>
+  <li><b>Low</b> &mdash; below 55%.</li>
+  <li><b>No bet</b> &mdash; nothing on the card clears a 52% coin flip inside the window. Published as no bet rather than forced.</li>
+  <li><b>One grading scale.</b> The grade shown against a match-winner call uses exactly the same rules as a selection, so a
+  77% favourite priced at 1.30 is graded Medium: the view is strong, but it cannot be a High pick because the brief&rsquo;s
+  &minus;250 floor excludes it. That is why the High count on the landing page equals the number of bettable selections,
+  not the number of strong opinions.</li>
+  <li><b>Every priced match carries a labelled match-winner call</b> with its own grade, so no match is left without a view of who wins.</li>
+  <li><b>Only the match winner and handicap ladders are eligible</b> to become the desk selection. A total ladder can always manufacture a 70% quote by moving the line, which would be a fake edge; totals are published for reference.</li>
+</ul>
 
-<h2>Complete 17-Sport Parameter Table</h2>
-<div class="table-wrap">
-  <table>
-    <thead><tr><th>Sport</th><th class="num">p_base</th><th class="num">Logit Scale</th><th class="num">Margin &sigma;</th><th class="num">Base Total</th><th>Winner Structure</th><th class="num">Med / High Gate</th></tr></thead>
-    <tbody><tr><td><a href="sports/ice-hockey.html"><b>Ice Hockey</b></a></td><td class="num">0.535</td><td class="num">42.0</td><td class="num">2.85</td><td class="num">6.5</td><td>2-Way</td><td class="num">0.555 / 0.610</td></tr><tr><td><a href="sports/basketball.html"><b>Basketball</b></a></td><td class="num">0.560</td><td class="num">32.0</td><td class="num">13.50</td><td class="num">228.5</td><td>2-Way</td><td class="num">0.575 / 0.680</td></tr><tr><td><a href="sports/baseball.html"><b>Baseball</b></a></td><td class="num">0.540</td><td class="num">40.0</td><td class="num">3.85</td><td class="num">7.5</td><td>2-Way</td><td class="num">0.545 / 0.580</td></tr><tr><td><a href="sports/snooker.html"><b>Snooker</b></a></td><td class="num">0.500</td><td class="num">27.0</td><td class="num">2.35</td><td class="num">5.5</td><td>2-Way</td><td class="num">0.560 / 0.630</td></tr><tr><td><a href="sports/darts.html"><b>Darts</b></a></td><td class="num">0.500</td><td class="num">33.0</td><td class="num">2.75</td><td class="num">9.5</td><td>2-Way</td><td class="num">0.565 / 0.665</td></tr><tr><td><a href="sports/cricket.html"><b>Cricket</b></a></td><td class="num">0.525</td><td class="num">22.0</td><td class="num">24.00</td><td class="num">339.5</td><td>2-Way</td><td class="num">0.560 / 0.615</td></tr><tr><td><a href="sports/rugby-union.html"><b>Rugby Union</b></a></td><td class="num">0.565</td><td class="num">22.0</td><td class="num">13.00</td><td class="num">48.5</td><td>3-Way + DNB</td><td class="num">0.575 / 0.720</td></tr><tr><td><a href="sports/rugby-league.html"><b>Rugby League</b></a></td><td class="num">0.545</td><td class="num">22.0</td><td class="num">14.50</td><td class="num">44.5</td><td>3-Way + DNB</td><td class="num">0.575 / 0.750</td></tr><tr><td><a href="sports/tennis.html"><b>Tennis</b></a></td><td class="num">0.500</td><td class="num">26.0</td><td class="num">3.60</td><td class="num">22.5</td><td>2-Way</td><td class="num">0.565 / 0.660</td></tr><tr><td><a href="sports/golf.html"><b>Golf</b></a></td><td class="num">0.500</td><td class="num">22.0</td><td class="num">4.00</td><td class="num">—</td><td>2-Way</td><td class="num">0.600 / 0.700</td></tr><tr><td><a href="sports/handball.html"><b>Handball</b></a></td><td class="num">0.560</td><td class="num">22.0</td><td class="num">6.50</td><td class="num">60.5</td><td>3-Way + DNB</td><td class="num">0.575 / 0.760</td></tr><tr><td><a href="sports/volleyball.html"><b>Volleyball</b></a></td><td class="num">0.550</td><td class="num">17.0</td><td class="num">1.65</td><td class="num">181.5</td><td>2-Way</td><td class="num">0.570 / 0.650</td></tr><tr><td><a href="sports/aussie-rules.html"><b>Aussie Rules</b></a></td><td class="num">0.555</td><td class="num">24.0</td><td class="num">18.50</td><td class="num">74.5</td><td>2-Way</td><td class="num">0.575 / 0.780</td></tr><tr><td><a href="sports/esports.html"><b>eSports</b></a></td><td class="num">0.500</td><td class="num">20.0</td><td class="num">7.00</td><td class="num">27.5</td><td>2-Way</td><td class="num">0.570 / 0.650</td></tr><tr><td><a href="sports/gaelic-football.html"><b>Gaelic Football</b></a></td><td class="num">0.535</td><td class="num">17.0</td><td class="num">6.50</td><td class="num">29.5</td><td>3-Way + DNB</td><td class="num">0.565 / 0.640</td></tr><tr><td><a href="sports/greyhounds.html"><b>Greyhounds</b></a></td><td class="num">0.500</td><td class="num">18.0</td><td class="num">0.90</td><td class="num">—</td><td>2-Way</td><td class="num">0.560 / 0.650</td></tr><tr><td><a href="sports/motor-racing.html"><b>Motor Racing</b></a></td><td class="num">0.500</td><td class="num">20.0</td><td class="num">2.00</td><td class="num">—</td><td>2-Way</td><td class="num">0.560 / 0.650</td></tr></tbody>
-  </table>
-</div>
+<h2 id="limits">4. What the model does not do</h2>
+<ul class="notes">
+  <li><b>It does not price draws.</b> Every non-binomial sport is priced two-way, so a draw is never quoted and a favourite&rsquo;s probability is very slightly overstated. Draw-capable sports here are handball, Gaelic football, rugby union, rugby league and AFLW. Flagged as F-26B-06 and left for the next pricing pass rather than changed mid-snapshot.</li>
+  <li><b>It does not read market prices.</b> These are our own lines; no bookmaker or exchange price is loaded, so nothing here is a value bet against a market.</li>
+  <li><b>It does not know about injuries, team news, weather or travel.</b> The only inputs are the official record fields printed on each row.</li>
+  <li><b>It is a snapshot.</b> 28 rows are carried from 21 October and capped at Medium; prices do not move after publication.</li>
+  <li><b>It is not a prediction service.</b> A High grade means the model and the window agree, not that the selection will win.</li>
+</ul>
+
+<h2 id="scope">5. Scope</h2>
+<p><b>In scope (17 sports):</b> Tennis, Basketball, Golf, Cricket, Snooker, Rugby Union, Rugby League, Baseball, Ice Hockey, Motor Racing, Darts, Handball, Volleyball, Aussie Rules, eSports, Gaelic Football, Greyhounds.</p>
+<p><b>Excluded by the brief (7):</b> Football, Horse Racing, American Football, Boxing, Cycling, Specials, Hurling. These were enumerated
+during the reverse-engineering pass &mdash; they are real OLBG hubs (sport ids 1, 2, 11, 16, 17, 18, 26) &mdash;
+but nothing in them is priced or listed here.</p>
+<p class="sub">The OLBG taxonomy, including the two active-but-unlisted hubs (Specials/18 and Hurling/26), is preserved
+in <code>data/olbg_taxonomy.json</code> and on the <a href="archive.html">archive page</a>.</p>
 
 </main>
 <footer class="foot">
-  <p><b>OLBG Reverse-Engineering &amp; Origination Desk</b> — 17 in-scope sports · 134 source-linked events (129 verified · 5 cross-checked) · multi-market lines &amp; human analysis.</p>
-  <p>Every fixture, ranking, and record links directly to its governing body. Unconfirmed values are left explicitly blank and logged on <a href="flagged.html">Flagged for Review</a>. Independent mathematical probabilities only — not financial or gambling advice.</p>
-  <p>Downloads: <a href="datasets/matches_full.json">matches_full.json</a> · <a href="datasets/matches_full.csv">matches_full.csv</a> · <a href="datasets/flagged_for_review.json">flagged_for_review.json</a> · <a href="datasets/olbg_sports_registry.json">olbg_sports_registry.json</a></p>
+  <div class="wrap">
+    <p><b>One desk, one snapshot.</b> Every row links to the official league, tour or governing-body page it was read from.
+    Prices are the desk's own fair-price estimates, not quoted market odds. Nothing here is a tip-off service or a guarantee.</p>
+    <p class="mut">Snapshot 2026-10-22T03:30:00Z · built by <code>scripts/final_site.py</code> ·
+    verified by <code>scripts/final_validate.py</code>, <code>scripts/validate.py</code> and <code>scripts/v3_validate.py</code>.
+    Older boards are preserved on the <a href="archive.html">archive page</a>.</p>
+  </div>
 </footer>
-<script src="assets/app.js"></script>
 </body>
 </html>

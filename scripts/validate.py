@@ -73,6 +73,8 @@ OFFICIAL_FIXTURE_HOSTS = {
     "www.premrugby.com",
     "www.unitedrugby.com",
     "www.wst.tv",
+    "wtafiles.wtatennis.com",
+    "www.protennislive.com",
     "www.wtatennis.com",
 }
 

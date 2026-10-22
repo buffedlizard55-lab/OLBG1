@@ -28,10 +28,19 @@ def dec(p: float) -> float:
 
 
 def american(p: float) -> int:
-    d = 1.0 / min(max(p, 1e-6), 1 - 1e-6)
-    if d >= 2.0:
-        return int(round((d - 1) * 100))
-    return -int(round(100 / (d - 1)))
+    return american_from_price(dec(p))
+
+
+def american_from_price(price: float) -> int:
+    """US odds of the *published* decimal price.
+
+    Deriving US odds from the probability instead of from the rounded price produced
+    displays such as 1.40 / -251, which contradicts the brief's -250 floor. Every
+    published moneyline is now the exact conversion of the decimal next to it.
+    """
+    if price >= 2.0:
+        return int(round((price - 1) * 100))
+    return -int(round(100 / (price - 1)))
 
 
 def band(price: float) -> bool:
@@ -77,6 +86,16 @@ def price_fixture(f: dict) -> dict:
         "home_input": f.get("home_input"),
         "away_input": f.get("away_input"),
         "event_only": bool(f.get("event_only")),
+        "assumptions": {
+            "model": f.get("model") or "normal",
+            "sigma": float(f.get("sigma") or 14.0),
+            "slope": float(f.get("slope") or 0.05),
+            "hfa": float(f.get("hfa") or 0.0),
+            "hc_max": float(f.get("hc_max") or 6.5),
+            "total_line": float(f.get("total_line") or 45.0),
+            "total_sigma": float(f.get("total_sigma") or f.get("sigma") or 14.0),
+            "series": f.get("series"),
+        },
         "defaulted": defaulted,
         "edge": round(edge, 2),
         "markets": [],
@@ -103,7 +122,7 @@ def price_fixture(f: dict) -> dict:
             "selection": selection,
             "model_prob": round(p, 4),
             "price": price,
-            "us": american(p),
+            "us": american_from_price(price),
             "prob_pct": round(p * 100, 1),
             "in_band": band(price),
         }

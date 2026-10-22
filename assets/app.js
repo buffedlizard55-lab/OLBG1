@@ -1,5 +1,7 @@
-// Interactive progressive enhancement: composable filters (confidence + sport + text search),
-// live odds format toggle (Bookmaker 5% Vig / Vig-Free Fair / US Moneyline), and market drawer controls.
+/* OLBG Independent Desk - small progressive enhancement.
+   The site is complete without this file: tables, links and prices are all in the HTML.
+   This only adds filtering on the all-matches page and a "show/hide all" control. */
+
 (function () {
   "use strict";
 
@@ -9,84 +11,60 @@
   }
 
   ready(function () {
-    var activeConf = "all";
-    var activeSport = "all";
-    var searchInput = document.getElementById("pick-search");
-    var sportSelect = document.getElementById("sport-filter");
-    var confButtons = document.querySelectorAll("[data-filter]");
-    var filterableRows = document.querySelectorAll("[data-conf]");
-    var visibleCounter = document.querySelector("[data-visible-count]");
+    var table = document.querySelector("table.grid");
+    var sport = document.getElementById("f-sport");
+    var conf = document.getElementById("f-conf");
+    var query = document.getElementById("f-q");
+    var count = document.getElementById("f-count");
 
-    function applyFilters() {
-      var q = searchInput ? searchInput.value.trim().toLowerCase() : "";
-      var shown = 0;
-      filterableRows.forEach(function (el) {
-        var cOk = activeConf === "all" || el.getAttribute("data-conf") === activeConf;
-        var sOk = activeSport === "all" || el.getAttribute("data-sport") === activeSport;
-        var qOk = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
-        var visible = cOk && sOk && qOk;
-        el.style.display = visible ? "" : "none";
-        if (visible) shown++;
-      });
-      if (visibleCounter) visibleCounter.textContent = String(shown);
-    }
+    if (table && sport && conf) {
+      var rows = Array.prototype.slice.call(table.querySelectorAll("tbody tr"));
+      var total = rows.length;
 
-    if (confButtons.length) {
-      confButtons.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          activeConf = btn.getAttribute("data-filter") || "all";
-          confButtons.forEach(function (b) {
-            b.classList.remove("is-active");
-            b.setAttribute("aria-pressed", "false");
-          });
-          btn.classList.add("is-active");
-          btn.setAttribute("aria-pressed", "true");
-          applyFilters();
+      var apply = function () {
+        var s = sport.value;
+        var c = conf.value;
+        var q = (query && query.value ? query.value : "").toLowerCase().trim();
+        var shown = 0;
+
+        rows.forEach(function (row) {
+          var text = row.textContent.toLowerCase();
+          var rowSport = row.getAttribute("data-sport") || "";
+          var rowConf = row.getAttribute("data-conf") || "";
+          var ok = true;
+          if (s && rowSport !== s) ok = false;
+          if (ok && c && rowConf !== c) ok = false;
+          if (ok && q && text.indexOf(q) === -1) ok = false;
+          row.style.display = ok ? "" : "none";
+          if (ok) shown += 1;
         });
+
+        if (count) count.textContent = shown + " of " + total + " rows shown";
+      };
+
+      [sport, conf, query].forEach(function (el) {
+        if (el) el.addEventListener("input", apply);
       });
+      apply();
     }
 
-    if (sportSelect) {
-      sportSelect.addEventListener("change", function () {
-        activeSport = sportSelect.value || "all";
-        applyFilters();
+    var sheets = document.querySelectorAll("details.mkt");
+    if (sheets.length > 12) {
+      var bar = document.createElement("p");
+      bar.className = "sub";
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = "Expand all market sheets";
+      btn.className = "tag lo";
+      btn.style.cursor = "pointer";
+      var open = false;
+      btn.addEventListener("click", function () {
+        open = !open;
+        Array.prototype.forEach.call(sheets, function (d) { d.open = open; });
+        btn.textContent = open ? "Collapse all market sheets" : "Expand all market sheets";
       });
-    }
-
-    if (searchInput) {
-      searchInput.addEventListener("input", applyFilters);
-    }
-
-    // Live Odds Format Switcher (dec = 5% overround decimal, fair = vig-free decimal, us = American moneyline)
-    var fmtButtons = document.querySelectorAll("[data-odds-fmt]");
-    if (fmtButtons.length) {
-      fmtButtons.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          var mode = btn.getAttribute("data-odds-fmt") || "dec";
-          fmtButtons.forEach(function (b) {
-            b.classList.remove("is-active");
-            b.setAttribute("aria-pressed", "false");
-          });
-          btn.classList.add("is-active");
-          btn.setAttribute("aria-pressed", "true");
-          document.querySelectorAll("[data-dec]").forEach(function (span) {
-            var val = span.getAttribute("data-" + mode);
-            if (val) span.textContent = val;
-          });
-        });
-      });
-    }
-
-    // Open / Collapse All Market Drawers
-    var openAll = document.getElementById("open-all");
-    if (openAll) {
-      openAll.addEventListener("click", function (e) {
-        e.preventDefault();
-        var nextOpen = openAll.getAttribute("data-state") !== "open";
-        document.querySelectorAll("details.markets").forEach(function (d) { d.open = nextOpen; });
-        openAll.setAttribute("data-state", nextOpen ? "open" : "closed");
-        openAll.textContent = nextOpen ? "Collapse all markets" : "Expand all markets";
-      });
+      bar.appendChild(btn);
+      sheets[0].parentNode.insertBefore(bar, sheets[0]);
     }
   });
 })();
