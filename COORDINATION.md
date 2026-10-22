@@ -1557,3 +1557,15 @@ PR (#52):
 Also fixed: the overview's "Next start (UTC)" column now falls back to the official local date for rows
 whose governing body publishes a date but no clock (Golf, Cricket), instead of rendering blank.
 Gates re-run: `scripts/v3_validate.py` PASS (0 errors), `scripts/validate.py` PASSED (0 errors).
+
+### 33.3 Follow-up publish record (2026-10-22T02:35Z)
+
+**PR #55** — https://github.com/buffedlizard55-lab/OLBG1/pull/55 — one `COORDINATION.md` conflict against
+§31.3.1 was resolved by keeping this session's §33.2 block verbatim after the §31.3.1 text; nothing else in
+that commit was rewritten. **MERGED** as `9bf6638` after the Pages build for it reported `completed success`.
+
+Live verification with cache-busters (`?v=3`, `?v=4`): `/v3/picks.html` now shows **31 no-bet cards** with
+the reason string and the sport-specific units (`-1.5 sets`, `-1.5 frames`); `/v3/flagged.html` renders the
+full flag register; `/` still serves the root landing with the hand-added v3 banner and the three
+companion links. The earlier `/v3/picks.html` 404 was a per-path edge-cache entry: the same path returns
+200 once a query string is appended.

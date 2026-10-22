@@ -430,8 +430,9 @@ opens the full ladder for each match.</p>
                   f'<td>{conf_tag(p["confidence"], p.get("cap_reason"))}</td></tr>')
     pr_no_pick = sum(1 for p in picks if not p["selection"])
     body = f"""<h1>Picks</h1>
-<p class="lede">One selection per priced match. The desk picks the strongest line that still clears
--250, because anything shorter is excluded by policy. {len(highs)} selections meet both tests for a
+<p class="lede">At most one selection per priced match, and only where a line the desk can defend clears
+-250: anything shorter is excluded by policy, and where every in-band line is a coin flip or worse the
+desk publishes <strong>no bet</strong> rather than a forced tip. {len(highs)} selections meet both tests for a
 High grade (model probability at least 70% and a price inside the band); the rest are capped and the
 reason is shown.</p>
 <h2>High confidence ({len(highs)})</h2>{hrows or '<p class="mut">None qualified.</p>'}
