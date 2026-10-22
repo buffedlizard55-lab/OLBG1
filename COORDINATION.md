@@ -135,6 +135,10 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | TD7D19 | **Independent live desk `d7d19a67-olbg1` (22 Oct 2026):** fresh official-source harvest and line-by-line verification of in-scope fixtures (all 17 covered sports; soccer/football, American football, boxing, UFC/MMA, hurling, horse racing, cycling and specials excluded); own multi-market line origination (match winner, handicap/spread, match and team totals, plus sport-specific markets where an official input exists); confidence tiers with the High band **expressed inside −250…+10000** and earned by verified evidence rather than a >70% market-price shortcut (both readings published and the intersection flagged); unique hand-written ≥30-word predictions for every High pick citing only facts read from official pages this session; line-by-line repository audit with per-finding source links; namespaced dashboard `/d7d19a67/` (landing + 17 sport subpages + matches + markets + high-confidence + predictions + analysis + sources + Flagged for Review + repo audit); validator gate; PR, merge and live GitHub Pages verification | done | d7d19a67-olbg1 | `data/d7d19a67/**`, `scripts/sd7d19a67_*.py`, `d7d19a67/**`, `reports/SESSION_D7D19A67.md`, append-only `COORDINATION.md` (this row + §59) | 2026-10-22T12:20Z | Claimed at TD7D19 because T1–T64, T257E and T354E are all taken. Strictly namespaced: **no** edit to root `*.html`, `sports/**`, `assets/**`, `README.md`, `scripts/build_site.py`, `scripts/validate.py`, `pipeline/**`, `.github/workflows/**`, `data/current/**`, `data/release/**` or any other session's `<id>/` desk. Root-navigation request logged in §4/§59 instead of editing shared files. **DONE:** 55 officially-read listings across 6 sports (ice hockey 14, rugby league 13, tennis 10, basketball 9, baseball 5, cricket 4), 26 priced with **99** originated markets / **215** priced outcomes, winner tiers **7 High / 15 Medium / 4 Low**, **1** literal Gate A selection (Pittsburgh +1.5 goals, 70.21%, −236), **13** out-of-window favourites disclosed, **2** picks downgraded by contradicting official context with the citation, **8** hand-written predictions (84–116 words, 34 numeric claims re-checked at build time), **16** official source reads, **12** coverage gaps, **16** flags, **13** repository-audit findings with file:line evidence, **27** pages at `/d7d19a67/`. Gates: 95 pipeline tests OK, 38 preserved tests OK, `pipeline.validate --site .` 0 errors, `scripts/validate.py` PASSED (0 errors / 3 pre-existing warnings in `f7fa77fc/flagged.html`, 633 pages link-checked), `pipeline.build --out _site` 78 canonical pages with `_site/d7d19a67/` present, `pipeline.validate --site _site` 0 errors, `scripts/sd7d19a67_validate.py` VALIDATION PASSED (8 checks, 0 errors). Merge and Pages receipts appended below post-merge. **Renumbered at merge:** claimed as **T65** at 2026-10-22T12:20Z; while this branch was open `ac872b16-olbg1` merged **T65** (PR #117, its record at §52) and `9dc28d1e-olbg1` took **§51**, so this session adopts the collision-resistant id **TD7D19** (the pattern already used by `T7F00`, `T9DC`, `TEE3C`, `T-FEC` and `T97DC`) and records itself at **§59**, the next free section number after upstream's §58. Every other session's row and section is preserved verbatim; nothing was renumbered except this session's own identifiers. |
 | T546F | **Independent live desk `546fc70f-olbg1` (22 Oct 2026, claimed 2026-10-22T20:55Z):** live OLBG hub harvest of upcoming in-scope matches (17 covered sports; soccer/football, boxing, UFC/MMA, American football, hurling, horse racing, cycling, specials excluded); official-source verification of each included fixture where an official page/API is fetchable, blank + flag otherwise; own match-winner / handicap / total lines labelled as model estimates; High tier only if p>0.70 AND fair price inside −250…+10000 AND official evidence; unique ≥30-word predictions for High picks only; namespaced dashboard `/546fc70f/` (landing + category subpages + analysis + Flagged for Review); validator; PR, merge, Pages read-back | done (EuroLeague + NHL priced; 0 High; 15 of 17 categories not covered; see §57) | 546fc70f-olbg1 | `data/546fc70f/**`, `scripts/s546fc70f_*.py`, `546fc70f/**`, `reports/SESSION_546FC70F.md`, append-only `COORDINATION.md` §57 | 2026-10-22T20:55Z | Claim only: no shared outputs (root `*.html`, `data/current/**`, `pipeline/**`, `data/lines.json`, `data/predictions.json`, nav/index) are touched. |
 
+| T2988 | **DONE (PR pending merge) — independent live desk `2988bd19-olbg1` (22 Oct 2026):** fresh official-source reads of the in-scope fixture slate (soccer/football, American football, boxing, UFC/MMA, hurling, horse racing, cycling, specials excluded); own multi-market line origination (winner, handicap/spread, match and team totals); confidence tiers where a High pick must clear **both** published readings — model probability above 70% **and** fair price inside −250…+10000; unique hand-written ≥30-word predictions citing only facts read from official pages this session; line-by-line repository review with per-item source links; namespaced dashboard `/2988bd19/` (landing + sport subpages + matches + markets + high-confidence + predictions + analysis + sources + Flagged for Review); validator gate; PR, merge and live GitHub Pages verification | done | 2988bd19-olbg1 | `data/2988bd19/**`, `scripts/s2988bd19_*.py`, `2988bd19/**`, `reports/SESSION_2988BD19.md`, append-only `COORDINATION.md` (this row + §60) | 2026-10-22T20:55Z | Collision-resistant id (T65/T66 and §§51–59 already taken on `main`). Strictly namespaced: **no** edit to root `*.html`, `sports/**`, `assets/**`, `README.md`, `scripts/build_site.py`, `scripts/validate.py`, `pipeline/**`, `.github/workflows/**`, `data/current/**`, `data/release/**` or any other session's `<id>/` desk. Sandbox egress is limited to GitHub/PyPI/npm, so every live read goes through the page-fetch tool layer and is logged with its URL and read time. |
+
+| T2AEE | **Fresh 22 Oct 2026 20:50Z evidence desk:** OLBG discovery across all 17 in-scope sports; independent official-source re-verification of every published fixture and High-pick fact; own multi-market fair lines; High only when selected probability is >70% and fair American price is within −250…+10000; unique ≥30-word predictions; clean namespaced dashboard `/2aeea682/` + category, markets, analysis, sources and Flagged pages; validators, PR/merge and live Pages read-back | done | 2aeea682-olbg1 | `data/2aeea682/**`, `scripts/s2aeea682_*.py`, `2aeea682/**`, `reports/SESSION_2AEEA682.md`, append-only `COORDINATION.md` (this row + §61); no canonical root, pipeline, workflow or historical desk edits | 2026-10-22T20:50Z | Collision-resistant ID. Pinned Arena branch is also the integration branch per §0.2. Historical data are leads only and will not be represented as freshly verified. Originally claimed §60; renumbered §61 after T2988 merged during rebase. **DONE:** 71 officially read listings / 17 category pages, 7 priced fixtures, 87 markets / 178 outcomes, 4 featured High (all 70.04%, fair −234) and 4 unique 75–77 word predictions; 64 unpriced rows and 21 source flags + 6 repo findings published. 30 pages. Gates: 5,220 desk checks, 135+38 tests, root/staged canonical validation, 823-page link check and both browser suites. PR #144 merged `ead18eb`; production run 39854325138 and legacy run 39854324388 succeeded; live desk, predictions, flagged page, corrected NHL links and archive entry read back. See §61 and `reports/SESSION_2AEEA682.md`. |
+
 ---
 
 ## 2. Session log
@@ -3816,3 +3820,135 @@ Claimed T546F (independent namespaced desk). Scope: `data/546fc70f/**`, `scripts
 **Scope compliance:** only `data/546fc70f/**`, `scripts/s546fc70f_*.py`, `546fc70f/**`, `reports/SESSION_546FC70F.md` and this append-only section were written. Nothing shared was edited.
 
 **Publication:** PR and merge receipts appended below after the pull request is opened and merged.
+
+---
+
+## 60. Session `2988bd19-olbg1` — T2988 independent live desk (22 Oct 2026)
+
+**Claim.** Written before any data work. Task id **T2988** is collision-resistant (T65/T66 and sections
+§51–§59 are already held on `main`); this record is **§60**, the next free section number at claim time.
+Scope is `data/2988bd19/**`, `scripts/s2988bd19_*.py`, `2988bd19/**`, `reports/SESSION_2988BD19.md` and
+append-only additions to this file. No root page, `pipeline/**`, workflow, canonical data file or other
+session's desk is edited. Arena pins this session to `arena/2988bd19-olbg1` (§0.2 deviation).
+
+**Channel limitation, stated up front.** The sandbox has outbound access only to GitHub/PyPI/npm hosts, so
+`curl` cannot reach a governing body. Every official read in this session therefore goes through the
+Arena page-fetch tool, one URL at a time, and each read is logged with its URL, read time and the exact
+fields transcribed. Anything that could not be read is left blank and flagged; nothing is filled from
+memory or from another session's file.
+
+### 60.1 Completion record (2026-10-22T21:45Z)
+
+**Scope held.** Only `data/2988bd19/**`, `scripts/s2988bd19_*.py`, `2988bd19/**`,
+`reports/SESSION_2988BD19.md` and append-only additions to this file were written. No root page, `pipeline/**`,
+workflow, canonical data file or other session's desk was edited.
+
+**What was read (official).** NHL schedule feed (all 12 games on 22 Oct, with ids, venues and
+`startTimeUTC`), NHL club summary for 26 clubs plus single-club re-reads for Nashville and Winnipeg, NHL
+skater summaries for Toronto, the Rangers, San Jose and Boston, the NHL scoreboard for the 19–20 Oct results,
+the NHL standings stamp, MLB StatsAPI schedule/standings and Milwaukee's hitting and pitching splits, the NBA
+schedule and standings pages, and the EuroLeague standings page. OLBG hubs were used for discovery only; the
+PDC consent wall, the ATP current-scores page (completed matches only), the EuroLeague game centre (no fixture
+rows) and the URC fixtures URL (404) are recorded as failed reads rather than worked around.
+
+**What was published.** 43 listings, 20 officially verified, 18 priced with **90 market lines / 600 priced
+selections**, **2 High picks**, 2 written predictions, 13 flags, 28 sources and 28 pages at `/2988bd19/`.
+
+**The gate result.** The brief's two rules (p > 70% and fair price inside −250…+10000) intersect only at
+70.00%–71.43%. 127 selections clear 70%, 7 sit inside the window, and 2 also have player-, form- and
+recent-result evidence: Toronto +1.5 vs the Rangers (70.64%, −241) and San Jose over 1.5 team goals at Ottawa
+(71.27%, −248). The strongest favourite on the slate (Minnesota, 73.08%, −271) is excluded by the price floor
+and published as such.
+
+**Gates.** `scripts/s2988bd19_validate.py` → PASSED (0 errors, 1 warning; it re-derives all 600 prices from
+the published inputs and link-checks the desk). `scripts/validate.py` → PASSED, 0 errors, 3 pre-existing
+warnings in `f7fa77fc/flagged.html`, 793 pages link-checked. `pipeline.validate --site .` → 0 errors.
+`tests/pipeline` → OK.
+
+**Nothing certified beyond what was read.** Eleven in-scope sports had no official read this session and are
+published as gaps. NBA and EuroLeague fixtures are unpriced for the reasons stated in F-2988-02 and
+F-2988-03. The prices are our own fair estimates, not bookmaker offers.
+
+### 60.2 Publication receipts, and one defect found after the merge
+
+**PR #141** — https://github.com/buffedlizard55-lab/OLBG1/pull/141 — opened and **merged**
+2026-10-22T20:59:26Z as **`2962aa8`** without waiting for approval, per the brief. Pre-merge CI
+`Evidence, model, site and browser gates` **passed in 43 s** (run 39853404956). Post-merge the legacy
+`pages build and deployment` run **39853531710** completed successfully for `2962aa8`, and the canonical
+`Canonical research checks and Pages` run 39853532952 was still in progress at the time of this record.
+
+**Live read-back (deployed bytes, not `_site`).** `https://buffedlizard55-lab.github.io/OLBG1/2988bd19/index.html`
+was fetched at 21:00Z and served this merge's own content: 43 listings, 20 officially verified, 18 priced,
+90 market lines, 600 priced selections, 2 High picks, 2 predictions, 12 flags (the count at merge time) and
+28 sources. The two High rows read `TOR +1.5 — 70.64% — −241` and `SJS over 1.5 — 71.27% — −248`, and all
+seventeen sport cards rendered. That path exists only in `2962aa8`.
+
+**Defect found by that read-back, and fixed in a follow-up commit:** the first build stamped every source
+with a minute-level read time (for example 21:04Z) while the sandbox clock at the time of the read-back was
+21:00Z — i.e. some published timestamps were *after* the page that carried them. The cause is that the fetch
+tool does not expose per-request HTTP metadata, so the stamps were reconstructed rather than observed.
+Correction: all per-source `read_at` values are removed and replaced by one honest observation window
+(2026-10-22T20:48Z to 20:59Z) plus the order in which the reads were issued; the desk's build stamp is now
+2026-10-22T21:00:00Z. This is published as **F-2988-13**. Two cosmetic copy defects from the same read-back
+are fixed with it: the overview said "seven other selections" where five were capped, and the overview
+notice understated how many sports lack an officially verified fixture. No fixture, probability, price, tier
+or prediction changed; the validator still re-derives all 600 prices with 0 errors.
+
+### 60.3 Follow-up receipts and corrections (#142, #145, #146)
+
+**PR #142** — https://github.com/buffedlizard55-lab/OLBG1/pull/142 — merged 2026-10-22T21:12Z as
+**`24f2001`**. Carried the honest read-window correction (F-2988-13) and two overview copy fixes. Pre-merge
+CI passed in 45 s (run 39853838563); post-merge legacy Pages run **39853986099** completed successfully and
+the canonical run 39853987310 followed. Live read-back of `/OLBG1/2988bd19/sources.html` at 21:19Z showed
+the published read window `2026-10-22T20:48Z to 2026-10-22T20:59Z` and all 28 source rows — the correction is
+what GitHub Pages serves, not the pre-correction bytes.
+
+**PR #145** — https://github.com/buffedlizard55-lab/OLBG1/pull/145 — merged 2026-10-22T21:31Z as
+**`b0898de`**. Source-page headline and tennis read count. CI passed in 52 s (run 39854241533); legacy Pages
+run **39854398120** completed successfully.
+
+**PR #146 (this record).** Reading the deployed `flagged.html` at 21:24Z exposed three defects that neither
+validator could see, because each one was consistent with the data it was generated from:
+
+1. **The coverage register printed `High = 0` for ice hockey.** `coverage()` counted fixtures only and never
+   learned about High selections, so the one sport with High picks displayed zero. Fixed by counting High
+   selections per sport from the same summary the rest of the desk uses.
+2. **F-2988-05 still said "Fifteen tennis listings".** The source row had been corrected to fourteen; the
+   flag prose had not. Fixed.
+3. **F-2988-13 was published before F-2988-12.** An insertion-order slip in the flag list. Reordered.
+
+No fixture, probability, price, tier or prediction changed; `scripts/s2988bd19_validate.py` re-derives all
+600 prices and still reports 0 errors (1 warning, the San Jose pick sitting within 0.01 of the −250 decimal
+floor).
+
+---
+
+## 61. Session `2aeea682-olbg1` — T2AEE fresh evidence desk
+
+**2026-10-22T20:50Z — claim filed before implementation.** This session read the board and found the latest merged desk (`d7d19a67`) explicitly time-bounded, with fixture evidence expiring at 18:55Z. It therefore claims a strictly isolated fresh desk in `data/2aeea682/**`, `scripts/s2aeea682_*.py`, `2aeea682/**` and `reports/SESSION_2AEEA682.md`. No canonical root, pipeline, workflow or other session namespace will be edited. The pinned branch rule in §0.2 applies.
+
+Verification distinguishes OLBG discovery from official confirmation. A source URL alone is not verification. Values not directly observed on an official publisher page are null/blank and flagged. Originated prices are labelled model estimates, never bookmaker quotes. High requires both `p > 0.70` and an unrounded fair American price inside −250…+10000; failure to qualify produces no speculative prose. The build includes all 17 category routes even where the verified fixture set is empty, with an explicit coverage limitation and official recheck link.
+
+**Rebase conflict resolved without discarding work.** The original claim used §60. While this branch was open, `2988bd19-olbg1` merged PR #141 with its own T2988 row and §60 completion record. On `git pull --rebase origin main`, `COORDINATION.md` conflicted at the adjacent task row and final section. Resolution retains T2988's row and §60 verbatim, moves only this session's own record to **§61**, and preserves this session's independent namespace. No other session's text or files were discarded.
+
+**Second rebase conflict resolved the same way.** PR #142 subsequently appended T2988’s §60.2 timestamp/copy correction while this branch was open. The upstream §60.2 text is preserved verbatim and this §61 record is appended after it; again no peer work was discarded.
+
+
+### 61.1 Completion, sources, verification and publication
+
+**Done 2026-10-22T21:07Z.** The isolated desk at `/2aeea682/` is complete and live. It contains **71 officially read listings across 10 sports** (all 17 category routes retained), **7 priced fixtures**, **87 originated markets / 178 outcome prices**, **4 featured High selections**, **4 unique predictions**, **21 data/source flags** and **6 repository findings** on **30 HTML pages**. The other 64 listings are unpriced with row-level reasons; no worldwide complete-list claim is made.
+
+**Sources.** Twenty-seven official source records document successful reads and bounded failed attempts involving NHL, MLB, Euroleague Basketball, WTA, IRL, PCB, WST, URC, EHF, Formula 1, NBA, PGA TOUR, AFL, GAA, GBGB, PDC, TAURON/PlusLiga and LoL Esports. Five OLBG reads are labelled discovery only. Full URLs, observed fields and limitations are in `data/2aeea682/desk.json`, `/2aeea682/sources.html` and `reports/SESSION_2AEEA682.md`.
+
+**Model and High gate.** Four separate World Series fixtures have the same Under-10-push model outcome at **70.0400% / fair −234**, satisfying `p>70%` and −250…+10000. Each prediction is 75–77 words with team, active-roster player, current form and recent results; no repeated eight-word passage occurs. The 0.04-point clearance, identical inputs and missing pitcher/park/postseason adjustments are prominently flagged. Conditional Game 5 is unpriced. Exact 50/50 EuroLeague games have no arbitrary winner.
+
+**Verification.** `s2aeea682_validate.py` passed **5,220 checks / 0 errors / 0 warnings**; 135 pipeline + 38 preserved tests passed; canonical root and staged `_site` validation returned 0 errors; historical validation passed 0 errors / 3 pre-existing warnings across 823 pages; both canonical and desk Chromium suites passed desktop/mobile/filter/resource checks. The 83-page staged build contains the new desk, its data and an archive link. A direct external probe also caught dashed-date NHL links redirecting to an error, so all 19 new links use the official slash-date form; the historical pattern is published as A-2AEE-06.
+
+**PR / merge / deploy receipts.** [PR #144](https://github.com/buffedlizard55-lab/OLBG1/pull/144) passed pre-merge CI run 39854180704 and was **merged 2026-10-22T21:05:01Z** as `ead18ebc5aa7f78931c52871f2303f0f668a4116`. Production [`Canonical research checks and Pages` run 39854325138](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39854325138) completed successfully at 21:06:31Z with both validation and `Publish canonical GitHub Pages` jobs green; legacy `pages build and deployment` run 39854324388 also succeeded.
+
+**Live byte read-back at 21:07Z (not a status-only claim).**
+* [Desk](https://buffedlizard55-lab.github.io/OLBG1/2aeea682/index.html) serves 71 / 10 / 7 / 87 / 4 / 64 KPI values and all 17 sport cards.
+* [Predictions](https://buffedlizard55-lab.github.io/OLBG1/2aeea682/predictions.html) serves the four Under-10 selections at 70.04% / −234 and their official fact tables.
+* [Flagged for Review](https://buffedlizard55-lab.github.io/OLBG1/2aeea682/flagged.html) serves all 21 findings with review links.
+* [Ice hockey](https://buffedlizard55-lab.github.io/OLBG1/2aeea682/sports/ice-hockey.html) serves all 19 corrected `/2026/10/…` NHL game-center links.
+* [Canonical archive](https://buffedlizard55-lab.github.io/OLBG1/archive.html) includes the `2aeea682` route.

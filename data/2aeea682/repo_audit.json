@@ -1,0 +1,62 @@
+[
+ {
+  "id": "A-2AEE-01",
+  "severity": "high",
+  "title": "Stale task-board claims remain open",
+  "file": "COORDINATION.md",
+  "line": 77,
+  "locator": "COORDINATION.md:77",
+  "detail": "T9 started on 21 October and remains 'in progress'. Other old open rows are also present. This session uses a collision-resistant ID and does not edit those claims; a later board cleanup should reconcile status with merged PRs.",
+  "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/cf187e20299b72aa29c3537a9cc624953aaa703b/COORDINATION.md#L77"
+ },
+ {
+  "id": "A-2AEE-02",
+  "severity": "medium",
+  "title": "A completed desk is still labelled in progress",
+  "file": "COORDINATION.md",
+  "line": 133,
+  "locator": "COORDINATION.md:133",
+  "detail": "The row begins DONE but its status column remains in progress. It is retained verbatim under the append-only coordination rule and flagged for board maintenance.",
+  "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/cf187e20299b72aa29c3537a9cc624953aaa703b/COORDINATION.md#L133"
+ },
+ {
+  "id": "A-2AEE-03",
+  "severity": "medium",
+  "title": "Previous fresh desk has expired",
+  "file": "COORDINATION.md",
+  "line": 3723,
+  "locator": "COORDINATION.md:3723",
+  "detail": "The d7d19a67 handoff states a six-hour fixture expiry after 12:55Z. At this session's 20:55Z read it must not be presented as current without new official reads.",
+  "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/cf187e20299b72aa29c3537a9cc624953aaa703b/COORDINATION.md#L3723"
+ },
+ {
+  "id": "A-2AEE-04",
+  "severity": "info",
+  "title": "Canonical root deliberately has no High picks",
+  "file": "README.md",
+  "line": 11,
+  "locator": "README.md:11",
+  "detail": "The canonical README says its compatible inputs support only Low preferences. This desk does not overwrite that release; it publishes a separate, fresh evidence window and its own model limitations.",
+  "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/cf187e20299b72aa29c3537a9cc624953aaa703b/README.md#L11"
+ },
+ {
+  "id": "A-2AEE-05",
+  "severity": "medium",
+  "title": "Historical evidence is not blanket recertification",
+  "file": "README.md",
+  "line": 13,
+  "locator": "README.md:13",
+  "detail": "The repository explicitly says worldwide coverage, all markets, current player context and calibration are incomplete. Any site-wide claim of a fully verified complete list would contradict this limitation.",
+  "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/cf187e20299b72aa29c3537a9cc624953aaa703b/README.md#L13"
+ },
+ {
+  "id": "A-2AEE-06",
+  "severity": "high",
+  "title": "Historical NHL game-center links use a broken date format",
+  "file": "scripts/sd7d19a67_data.py",
+  "line": 354,
+  "locator": "scripts/sd7d19a67_data.py:354",
+  "detail": "A fresh read of this dashed-date URL redirected to NHL /errors/not-found. The official schedule's slash-date form /2026/10/23/ works. This session corrected all 19 of its own links; the historical desk is left untouched and flagged for its owner.",
+  "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/cf187e20299b72aa29c3537a9cc624953aaa703b/scripts/sd7d19a67_data.py#L354"
+ }
+]
