@@ -1,0 +1,100 @@
+{
+ "nhl-standings": {
+  "publisher": "NHL",
+  "title": "NHL 2026-27 standings (payload date 2026-10-21)",
+  "url": "https://api-web.nhle.com/v1/standings/now",
+  "read_utc": "2026-10-22T12:06:00Z",
+  "note": "Returned HTTP 200 JSON. standingsDateTimeUtc 2026-10-22T12:00:45Z."
+ },
+ "nhl-team-summary": {
+  "publisher": "NHL",
+  "title": "NHL 2026-27 club summary statistics",
+  "url": "https://api.nhle.com/stats/rest/en/team/summary?cayenneExp=seasonId=20262027%20and%20gameTypeId=2",
+  "read_utc": "2026-10-22T12:10:00Z",
+  "note": "32 clubs; goals for/against and per-game rates used for the margin model."
+ },
+ "nhl-schedule-20261022": {
+  "publisher": "NHL",
+  "title": "NHL schedule, 22 October 2026",
+  "url": "https://api-web.nhle.com/v1/schedule/2026-10-22",
+  "read_utc": "2026-10-22T12:07:00Z",
+  "note": "numberOfGames 12; gameState FUT; startTimeUTC and venues."
+ },
+ "euroleague-standings": {
+  "publisher": "Euroleague Basketball",
+  "title": "EuroLeague 2026-27 regular-season standings",
+  "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/",
+  "read_utc": "2026-10-22T12:12:00Z",
+  "note": "All 20 clubs; GP, W, L, PTS+, PTS-, L10 read from the official table."
+ },
+ "euroleague-round7": {
+  "publisher": "Euroleague Basketball",
+  "title": "Game Center, Round 7, 2026-27",
+  "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/",
+  "read_utc": "2026-10-22T07:17:00Z",
+  "note": "Fixture dates and CEST tip-off times; UTC converted from the published CEST."
+ },
+ "nba-standings": {
+  "publisher": "NBA",
+  "title": "NBA 2026-27 regular-season standings",
+  "url": "https://www.nba.com/standings",
+  "read_utc": "2026-10-22T12:20:00Z",
+  "note": "Opening week: every club has played at most one game, so no NBA price is originated."
+ },
+ "aflw-fixture": {
+  "publisher": "Australian Football League",
+  "title": "2026 NAB AFLW fixture",
+  "url": "https://www.afl.com.au/aflw/fixture",
+  "read_utc": "2026-10-22T07:36:00Z",
+  "note": "Read by the T63 desk and recorded in data/92af340c/dataset.json; re-used with provenance."
+ },
+ "aflw-ladder": {
+  "publisher": "Australian Football League",
+  "title": "2026 AFLW ladder after Round 10",
+  "url": "https://www.afl.com.au/aflw/ladder",
+  "read_utc": "2026-10-22T07:36:00Z",
+  "note": "Ladder values captured by T63. The page is client-rendered; a fresh 12:1xZ fetch returned 'Loading' with no rows, so values are cross-checked, not re-verified."
+ },
+ "pdc-draw": {
+  "publisher": "Professional Darts Corporation",
+  "title": "2026 Machineseeker European Championship field and draw",
+  "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed",
+  "read_utc": "2026-10-22T07:34:00Z",
+  "note": "Draw and seed order captured by T63; used only for carried Medium/Low prices."
+ },
+ "top14-classement": {
+  "publisher": "Ligue Nationale de Rugby",
+  "title": "Top 14 2026-27 classement",
+  "url": "https://top14.lnr.fr/classement",
+  "read_utc": "2026-10-22T07:40:00Z",
+  "note": "Captured by T63; ratings carried at Medium confidence."
+ },
+ "urc": {
+  "publisher": "United Rugby Championship",
+  "title": "United Rugby Championship fixtures and table",
+  "url": "https://www.unitedrugby.com/",
+  "read_utc": "2026-10-22T07:41:00Z",
+  "note": "T63 captured URC fixtures. A fresh /standings request at 12:2xZ returned HTTP 404, so no URC rating is used."
+ },
+ "ehf-cl": {
+  "publisher": "European Handball Federation",
+  "title": "EHF Champions League Men 2026-27 standings",
+  "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+  "read_utc": "2026-10-22T07:45:00Z",
+  "note": "Captured by T63; carried at Medium confidence."
+ },
+ "wst-matches": {
+  "publisher": "World Snooker Tour",
+  "title": "BetVictor Northern Ireland Open 2026 match results",
+  "url": "https://www.wst.tv/matches/",
+  "read_utc": "2026-10-22T01:30:00Z",
+  "note": "Frames won/lost in the event and world ranking captured by the T41 desk; no start timezone is published."
+ },
+ "mlb-standings": {
+  "publisher": "MLB",
+  "title": "MLB 2026 regular-season standings",
+  "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason",
+  "read_utc": "2026-10-22T12:15:00Z",
+  "note": "AL records read directly this session; NL records carried from the T41/T354E readings."
+ }
+}
