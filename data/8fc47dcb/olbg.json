@@ -1,0 +1,208 @@
+{
+ "taxonomy_source": "https://www.olbg.com/sitemap-betting-tips.xml",
+ "reread": "2026-10-22 (this session): sitemap entries dated 2026-10-22 still list the 17 in-scope hubs with the same sport IDs as the committed taxonomy (Tennis/3, Basketball/4, Golf/5, Cricket/7, Snooker/8, Rugby Union/9, Rugby League/10, Baseball/12, Ice Hockey/13, Motor Racing/14, Darts/15, Handball/20, Volleyball/21, Aussie Rules/22, eSports/23, Gaelic Football/25, Greyhounds/28); excluded hubs remain Football/1, Horse Racing/2, American Football/11, Boxing/16, Cycling/17 plus unlisted Specials/18 and Hurling/26 recorded previously.",
+ "live_hub_evidence": [
+  {
+   "hub": "Basketball (sport 4)",
+   "url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "read": "2026-10-22",
+   "observation": "Live cards read this session include Maccabi Tel Aviv vs Real Madrid (event_id=535921, selection Real Madrid, market 'Money Line', 4/6 win tips 67%, shown 'Today 14:05') and Panathinaikos vs Baskonia (event_id=535923, Panathinaikos, Money Line, 4/6 67%, 'Today 14:15'); sub-routes linked from the hub include NBA, WNBA and European/Euroleague. Hub times carry no timezone label (EDT vs the 18:05Z/18:15Z official tip-offs)."
+  }
+ ],
+ "excluded_note": "Excluded per brief: soccer/football, boxing, UFC/MMA, american football, hurling, horse racing, cycling, specials.",
+ "sports": [
+  {
+   "name": "Football",
+   "slug": "Football",
+   "id": 1,
+   "in_sitemap": true,
+   "in_scope": false,
+   "exclusion_reason": "Excluded by client brief: football / soccer"
+  },
+  {
+   "name": "Horse Racing",
+   "slug": "Horse_Racing",
+   "id": 2,
+   "in_sitemap": true,
+   "in_scope": false,
+   "exclusion_reason": "Excluded by client brief: horse racing"
+  },
+  {
+   "name": "Tennis",
+   "slug": "Tennis",
+   "id": 3,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 20
+  },
+  {
+   "name": "Basketball",
+   "slug": "Basketball",
+   "id": 4,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 29
+  },
+  {
+   "name": "Golf",
+   "slug": "Golf",
+   "id": 5,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 10
+  },
+  {
+   "name": "Cricket",
+   "slug": "Cricket",
+   "id": 7,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 14
+  },
+  {
+   "name": "Snooker",
+   "slug": "Snooker",
+   "id": 8,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 6
+  },
+  {
+   "name": "Rugby Union",
+   "slug": "Rugby_Union",
+   "id": 9,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 16
+  },
+  {
+   "name": "Rugby League",
+   "slug": "Rugby_League",
+   "id": 10,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 3
+  },
+  {
+   "name": "American Football",
+   "slug": "American_Football",
+   "id": 11,
+   "in_sitemap": true,
+   "in_scope": false,
+   "exclusion_reason": "Excluded by client brief: American football"
+  },
+  {
+   "name": "Baseball",
+   "slug": "Baseball",
+   "id": 12,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 1
+  },
+  {
+   "name": "Ice Hockey",
+   "slug": "Ice_Hockey",
+   "id": 13,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 7
+  },
+  {
+   "name": "Motor Racing",
+   "slug": "Motor_Racing",
+   "id": 14,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 3
+  },
+  {
+   "name": "Darts",
+   "slug": "Darts",
+   "id": 15,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 18
+  },
+  {
+   "name": "Boxing",
+   "slug": "Boxing",
+   "id": 16,
+   "in_sitemap": true,
+   "in_scope": false,
+   "exclusion_reason": "Excluded by client brief: boxing (also houses UFC / MMA markets on OLBG)"
+  },
+  {
+   "name": "Cycling",
+   "slug": "Cycling",
+   "id": 17,
+   "in_sitemap": true,
+   "in_scope": false,
+   "exclusion_reason": "Excluded by client brief: cycling"
+  },
+  {
+   "name": "Specials",
+   "slug": "Specials",
+   "id": 18,
+   "in_sitemap": false,
+   "in_scope": false,
+   "exclusion_reason": "Excluded by client brief: specials (active HTTP 200 hub at /betting-tips/Specials/18, omitted from XML sitemap)"
+  },
+  {
+   "name": "Handball",
+   "slug": "Handball",
+   "id": 20,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 20
+  },
+  {
+   "name": "Volleyball",
+   "slug": "Volleyball",
+   "id": 21,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 15
+  },
+  {
+   "name": "Aussie Rules",
+   "slug": "Aussie_Rules",
+   "id": 22,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 0
+  },
+  {
+   "name": "eSports",
+   "slug": "eSports",
+   "id": 23,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 0
+  },
+  {
+   "name": "Gaelic Football",
+   "slug": "Gaelic_Football",
+   "id": 25,
+   "in_sitemap": true,
+   "in_scope": true,
+   "borderline_scope_flag": "Named 'Football' under GAA rules while Football/Soccer (ID 1) and American Football (ID 11) are excluded; retained in scope across all repository builds and explicitly logged on Flagged for Review.",
+   "olbg_events_2026_10_21": 5
+  },
+  {
+   "name": "Hurling",
+   "slug": "Hurling",
+   "id": 26,
+   "in_sitemap": false,
+   "in_scope": false,
+   "exclusion_reason": "Excluded by client brief: hurling (active HTTP 200 hub at /betting-tips/Hurling/26 with 2 live events: event_id=714 & event_id=675)"
+  },
+  {
+   "name": "Greyhounds",
+   "slug": "Greyhounds",
+   "id": 28,
+   "in_sitemap": true,
+   "in_scope": true,
+   "olbg_events_2026_10_21": 6
+  }
+ ]
+}

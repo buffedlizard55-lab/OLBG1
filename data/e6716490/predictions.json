@@ -1,0 +1,3662 @@
+{
+ "session": "e6716490-olbg1",
+ "generated_utc": "2026-10-22T07:47:49Z",
+ "rules": [
+  "one hand-written prediction per High-confidence pick, never templated across picks",
+  "at least 30 words, stating the team, the form, the recent record and the exact selection",
+  "no player detail unless the official page read published it",
+  "no fact appears in the prose that is not in the verified inputs beside it"
+ ],
+ "counts": {
+  "high_picks": 9,
+  "predictions": 9,
+  "min_words": 74,
+  "max_words": 89,
+  "shared_sixgrams": 0,
+  "band_excluded": 105
+ },
+ "missing": [],
+ "predictions": [
+  {
+   "fixture_id": "nhl-2026020154",
+   "sport": "ice-hockey",
+   "competition": "NHL Regular Season",
+   "home": "Boston Bruins",
+   "away": "Nashville Predators",
+   "start_utc": "2026-10-22T23:00:00Z",
+   "selection": "Nashville Predators +1.5",
+   "market": "Goals handicap 1.5",
+   "line": 1.5,
+   "prob": 0.7098,
+   "price": 1.41,
+   "us": -245,
+   "book_price": 1.34,
+   "book_us": -293,
+   "confidence": "High",
+   "unit": "goals",
+   "headline": "Predators can stay inside a goal and a half in Boston",
+   "text": "Boston have started 7-2-1 for a .750 points percentage and are 3-1-0 on home ice with a plus-14 goal difference, but their last outing ended in overtime, not a clean win. Nashville arrive 3-2-3, 1-0-2 on the road and only minus-1 overall, having won their most recent game. Taking the Predators on the puck-line at +1.5 means they only have to avoid a two-goal defeat, and a team that has lost once in regulation across eight starts is a fair ask at those terms. Selection: Nashville Predators +1.5 goals.",
+   "words": 89,
+   "verified_inputs": [
+    {
+     "side": "home",
+     "label": "NHL 2026-27 points %",
+     "value": "0.750 (7-2-1, 3-1-0 home, +14 GD, OT1)",
+     "rating": 75.0
+    },
+    {
+     "side": "away",
+     "label": "NHL 2026-27 points %",
+     "value": "0.563 (3-2-3, 1-0-2 road, -1 GD, W1)",
+     "rating": 56.3
+    }
+   ],
+   "sources": [
+    {
+     "name": "NHL official standings API — 2026-10-22 — re-read live by session e6716490-olbg1 (2026-10-22T07:40:00Z)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-22",
+     "read": "2026-10-22T07:40:00Z"
+    },
+    {
+     "name": "NHL Official Web API — Schedule (2026-10-21..22)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+    },
+    {
+     "name": "NHL Official Web API — Standings (2026-10-21)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-21"
+    },
+    {
+     "name": "NHL Gamecenter #2026020154",
+     "url": "https://www.nhl.com/gamecenter/2026020154"
+    },
+    {
+     "name": "NHL official schedule API - 2026-10-22 slate (game IDs, arenas, UTC start)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home"
+    ],
+    "results": [
+     "partial"
+    ]
+   },
+   "row_checks": [
+    {
+     "fixture_id": "nhl-2026020154",
+     "sport": "ice-hockey",
+     "fixture": "Boston Bruins v Nashville Predators",
+     "side": "home",
+     "team": "Boston Bruins",
+     "register_value": "0.750 (7-2-1, 3-1-0 home, +14 GD, OT1)",
+     "official_value": "7-2-1 (10 GP), 0.750 points percentage, +14 goal differential, streak OT1",
+     "result": "partial",
+     "reason": "corroborated record, pct, gd, streak; not quoted by the register: gp",
+     "source_id": "V1",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-22"
+    }
+   ],
+   "flags": [
+    "Starting goaltenders unconfirmed pre-game",
+    "Season goals for and against were published in the same standings payload but could not be reconciled against that payload's own last-ten block for at least one club, so no goals value is used anywhere on this desk and no NHL match total is priced.",
+    "Two repository registers describe this fixture in different words; both readings and both source lists are shown on the row and the disagreement is logged as a cross-desk irregularity.",
+    "Register lists more than one meeting of this pairing (2026-10-22, 2026-10-22); this row is the earliest."
+   ]
+  },
+  {
+   "fixture_id": "ru-top14-609567",
+   "sport": "rugby-union",
+   "competition": "French Top 14",
+   "home": "Stade Toulousain",
+   "away": "USA Perpignan",
+   "start_utc": "2026-10-24T14:35:00Z",
+   "selection": "USA Perpignan +13.5",
+   "market": "Points handicap 13.5",
+   "line": 13.5,
+   "prob": 0.7002,
+   "price": 1.43,
+   "us": -234,
+   "book_price": 1.36,
+   "book_us": -278,
+   "confidence": "High",
+   "unit": "points",
+   "headline": "Perpignan's points cushion is worth backing at Toulouse",
+   "text": "Toulouse lead the Top 14 on 24 points from a 5-0-1 record, a plus-73 differential and a five-match winning run that includes 45-34 over Bayonne, so they deserve favouritism. Perpignan are ninth on 13 points, 3-0-3 and minus-33 after scoring 166 and conceding 199, and they were beaten 55-25 by Racing in round five. The question is not who wins but by how much, and 13.5 points is a wide margin for a side that has already won three times this season. Selection: USA Perpignan +13.5 points.",
+   "words": 87,
+   "verified_inputs": [
+    {
+     "side": "home",
+     "label": "Top 14 J6 standings",
+     "value": "1st, 24 pts (5-0-1, +73 diff, W5 streak incl. 45-34 vs Bayonne)",
+     "rating": 87.0
+    },
+    {
+     "side": "away",
+     "label": "Top 14 J6 standings",
+     "value": "9th, 13 pts (3-0-3, -33 diff, 166:199)",
+     "rating": 54.0
+    }
+   ],
+   "sources": [
+    {
+     "name": "LNR Official Top 14 2026-2027 Classement (J6)",
+     "url": "https://top14.lnr.fr/classement"
+    },
+    {
+     "name": "LNR Official J7 Match Sheet",
+     "url": "https://top14.lnr.fr/feuille-de-match/2026-2027/j7/11867-toulouse-perpignan"
+    },
+    {
+     "name": "LNR official Stade Toulousain club page - Top 14 table after round 6 and published match probabilities",
+     "url": "https://top14.lnr.fr/club/toulouse"
+    },
+    {
+     "name": "LNR official Top 14 round 7 calendar (24-25 October kick-offs)",
+     "url": "https://top14.lnr.fr/calendrier-et-resultats"
+    },
+    {
+     "name": "LNR official Top 14 2026-27 statistics (points for and against by club)",
+     "url": "https://top14.lnr.fr/statistiques"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   },
+   "row_checks": [],
+   "flags": [
+    "Two repository registers describe this fixture in different words; both readings and both source lists are shown on the row and the disagreement is logged as a cross-desk irregularity.",
+    "Register lists more than one meeting of this pairing (2026-10-24, 2026-10-24); this row is the earliest."
+   ]
+  },
+  {
+   "fixture_id": "hand-ehf-12046",
+   "sport": "handball",
+   "competition": "EHF Champions League Men 2026/27",
+   "home": "Barça",
+   "away": "Montpellier Handball",
+   "start_utc": "2026-10-22T18:45:00Z",
+   "selection": "Barça +0.5",
+   "market": "Goals handicap 0.5",
+   "line": 0.5,
+   "prob": 0.7022,
+   "price": 1.42,
+   "us": -236,
+   "book_price": 1.36,
+   "book_us": -281,
+   "confidence": "High",
+   "unit": "goals",
+   "headline": "Barça's unbeaten group run merits the half-goal start",
+   "text": "Barça top EHF Champions League Group E with a perfect 4-0-0 record, eight points and a plus-33 goal difference from 137 scored and 104 conceded. Montpellier sit third on two points from 1-0-3, with 116 scored and 125 conceded across four rounds. The two registers held by this repository disagree on the score of the earlier meeting between them, so no scoreline is quoted here. Backing Barça at +0.5 goals simply needs the group leaders to avoid defeat at home. Selection: Barça +0.5 goals.",
+   "words": 87,
+   "verified_inputs": [
+    {
+     "side": "home",
+     "label": "EHF Group E",
+     "value": "1st, 4-0-0 (8 pts, 137:104, +33 GD, beat Montpellier 28-27 away)",
+     "rating": 90.0
+    },
+    {
+     "side": "away",
+     "label": "EHF Group E",
+     "value": "3rd, 1-0-3 (2 pts, 116:125, -9 GD)",
+     "rating": 63.0
+    }
+   ],
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 Official Group A–F Standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+     "name": "EHF Official Match Centre",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101049/Bar%C3%A7a-MontpellierHandball/"
+    },
+    {
+     "name": "EHF official Champions League Men 2026/27 group-phase playing times PDF (22 October matches, arenas)",
+     "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"
+    },
+    {
+     "name": "EHF official FC Barcelona club results - 2026/27 group phase (Barca 34-27 Montpellier, 8 October)",
+     "url": "https://www.eurohandball.com/en/club/ZkfCu81QMPee22wu_nX_jQ/DinamoBucuresti/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   },
+   "row_checks": [],
+   "flags": [
+    "Two repository registers describe this fixture in different words; both readings and both source lists are shown on the row and the disagreement is logged as a cross-desk irregularity.",
+    "Register lists more than one meeting of this pairing (2026-10-22, 2026-10-22); this row is the earliest."
+   ]
+  },
+  {
+   "fixture_id": "aflw-r11-04",
+   "sport": "aussie-rules",
+   "competition": "2026 NAB AFLW Premiership Season",
+   "home": "Carlton",
+   "away": "GWS GIANTS",
+   "start_utc": "2026-10-25T06:05:00Z",
+   "selection": "GWS GIANTS +22.5",
+   "market": "Points handicap 22.5",
+   "line": 22.5,
+   "prob": 0.7019,
+   "price": 1.42,
+   "us": -236,
+   "book_price": 1.36,
+   "book_us": -280,
+   "confidence": "High",
+   "unit": "points",
+   "headline": "GWS hold a generous 22.5-point buffer against Carlton",
+   "text": "Carlton are sixth on the AFLW ladder with 28 points from 7-3-0 and a percentage of 133.0, while GWS are fifteenth on eight points from 2-8-0 at 68.2 per cent, so the Blues are clear favourites. The handicap asks GWS to stay within 22.5 points, roughly four goals, which is a big cushion even for a struggling side. Carlton's scoring rate is the only thing carrying a percentage that high, and a four-goal margin is not automatic. Selection: GWS GIANTS +22.5 points.",
+   "words": 82,
+   "verified_inputs": [
+    {
+     "side": "home",
+     "label": "2026 AFLW R10 ladder",
+     "value": "6th, 28 pts (7-3-0, 133.0%)",
+     "rating": 73.0
+    },
+    {
+     "side": "away",
+     "label": "2026 AFLW R10 ladder",
+     "value": "15th, 8 pts (2-8-0, 68.2%)",
+     "rating": 39.0
+    }
+   ],
+   "sources": [
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 10 Ladder",
+     "url": "https://www.afl.com.au/aflw/ladder"
+    },
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 11 Fixture",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   },
+   "row_checks": [],
+   "flags": [
+    "Corrected main-desk bug: updated all 18 clubs from stale 2025 R10 ladder to live 2026 R10 ladder on afl.com.au"
+   ]
+  },
+  {
+   "fixture_id": "el-535921",
+   "sport": "basketball",
+   "competition": "EuroLeague",
+   "home": "Maccabi Tel Aviv",
+   "away": "Real Madrid",
+   "start_utc": "2026-10-22T18:05:00Z",
+   "selection": "Maccabi Tel Aviv +10.5",
+   "market": "Points handicap 10.5",
+   "line": 10.5,
+   "prob": 0.7103,
+   "price": 1.41,
+   "us": -245,
+   "book_price": 1.34,
+   "book_us": -293,
+   "confidence": "High",
+   "unit": "points",
+   "headline": "Maccabi's home floor keeps this inside ten and a half",
+   "text": "Real Madrid are 3-3 in the EuroLeague with a plus-23 differential from 554 points scored and 531 conceded, but they are 1-3 on the road this season. Maccabi are 2-4, sixteenth in the twenty-team table on 509:540, a minus-31 differential, and they have split their two home games. A double-digit handicap on a visiting side that has lost three of four away from home is generous, especially in a league where margins compress. Selection: Maccabi Tel Aviv +10.5 points.",
+   "words": 80,
+   "verified_inputs": [
+    {
+     "side": "home",
+     "label": "EuroLeague R6 table",
+     "value": "2-4 (#16, 509:540, -31 diff)",
+     "rating": 41.0
+    },
+    {
+     "side": "away",
+     "label": "EuroLeague R6 table",
+     "value": "3-3 (#9, 554:531, +23 diff, 1-3 away)",
+     "rating": 58.5
+    }
+   ],
+   "sources": [
+    {
+     "name": "EuroLeague Official 2026-27 Standings & Game Center",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "name": "EuroLeague official Game Center Round 7 (records, points per game, kick-offs)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    },
+    {
+     "name": "EuroLeague official Round 7 injury report (confirmed club availability lists)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-fantasy/"
+    },
+    {
+     "name": "EuroLeague official 2026-27 schedule announcement (Round 7 = 22 October)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/the-2026-27-euroleague-schedule-is-official/"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "match",
+     "partial"
+    ]
+   },
+   "row_checks": [
+    {
+     "fixture_id": "el-535921",
+     "sport": "basketball",
+     "fixture": "Maccabi Tel Aviv v Real Madrid",
+     "side": "home",
+     "team": "Maccabi Rapyd Tel Aviv",
+     "register_value": "2-4 (#16, 509:540, -31 diff)",
+     "official_value": "2-4 (6 GP), 509:540 (-31)",
+     "result": "match",
+     "reason": "every field read from the official page appears in the register value",
+     "source_id": "V3",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "fixture_id": "el-535921",
+     "sport": "basketball",
+     "fixture": "Maccabi Tel Aviv v Real Madrid",
+     "side": "away",
+     "team": "Real Madrid",
+     "register_value": "3-3 (#9, 554:531, +23 diff, 1-3 away)",
+     "official_value": "3-3 (6 GP), 554:531 (+23)",
+     "result": "partial",
+     "reason": "corroborated record, diff; not quoted by the register: gp",
+     "source_id": "V3",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    }
+   ],
+   "flags": [
+    "Corrected main-desk bug: Real Madrid are 3-3 (1-3 away), not 4-2 — downgraded from overconfident HIGH",
+    "Arena read as a neutral Belgrade venue in the official preview text; the specific hall name was not printed on the page read, so it is left blank.",
+    "Two repository registers describe this fixture in different words; both readings and both source lists are shown on the row and the disagreement is logged as a cross-desk irregularity.",
+    "Register lists more than one meeting of this pairing (2026-10-22, 2026-10-22); this row is the earliest."
+   ]
+  },
+  {
+   "fixture_id": "el-r7-bay-dub",
+   "sport": "basketball",
+   "competition": "EuroLeague 2026-27",
+   "home": "FC Bayern Munich",
+   "away": "Dubai Basketball",
+   "start_utc": "2026-10-22T18:00:00Z",
+   "selection": "Dubai Basketball +3.5",
+   "market": "Points handicap 3.5",
+   "line": 3.5,
+   "prob": 0.703,
+   "price": 1.42,
+   "us": -237,
+   "book_price": 1.35,
+   "book_us": -282,
+   "confidence": "High",
+   "unit": "points",
+   "headline": "Dubai's defence travels better than Bayern's home form",
+   "text": "Dubai are 4-2 in EuroLeague play and hold opponents to 82.2 points a game, the fifth-best defence in the competition, with Dwayne Bacon third in the scoring charts at 17.8 points per game. Bayern are 2-4, 0-2 at home, scoring 521 and conceding 552 for a minus-31 differential, although Duane Washington gives them 16.8 points off the bench. Backing Dubai at +3.5 points covers a close game and a road win. Selection: Dubai Basketball +3.5 points.",
+   "words": 76,
+   "verified_inputs": [
+    {
+     "side": "home",
+     "label": "euroleague",
+     "value": "Bayern 2-4 at home after a two-round week in Turkiye; Dubai 4-2 on the road with the fifth-best defence (82.2 ppg allowed) and Dwayne Bacon third in scoring at 17.8 ppg. Bayern's Duane Washington is sixth in scoring at 16.8 ppg off the bench.",
+     "rating": 41.67
+    },
+    {
+     "side": "away",
+     "label": "euroleague",
+     "value": "Bayern 2-4 at home after a two-round week in Turkiye; Dubai 4-2 on the road with the fifth-best defence (82.2 ppg allowed) and Dwayne Bacon third in scoring at 17.8 ppg. Bayern's Duane Washington is sixth in scoring at 16.8 ppg off the bench.",
+     "rating": 58.33
+    }
+   ],
+   "sources": [
+    {
+     "name": "EuroLeague official 2026-27 regular-season standings — re-read live by session e6716490-olbg1 (2026-10-22T07:40:00Z)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/",
+     "read": "2026-10-22T07:40:00Z"
+    },
+    {
+     "name": "EuroLeague official Game Center Round 7 (records, points per game, kick-offs)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    },
+    {
+     "name": "EuroLeague official Round 7 injury report (confirmed club availability lists)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-fantasy/"
+    },
+    {
+     "name": "EuroLeague official 2026-27 schedule announcement (Round 7 = 22 October)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/the-2026-27-euroleague-schedule-is-official/"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "partial",
+     "partial"
+    ]
+   },
+   "row_checks": [
+    {
+     "fixture_id": "el-r7-bay-dub",
+     "sport": "basketball",
+     "fixture": "FC Bayern Munich v Dubai Basketball",
+     "side": "home",
+     "team": "FC Bayern Munich",
+     "register_value": "Bayern 2-4 at home after a two-round week in Turkiye; Dubai 4-2 on the road with the fifth-best defence (82.2 ppg allowed) and Dwayne Bacon third in scoring at 17.8 ppg. Bayern's Duane Washington is sixth in scoring at 16.8 ppg off the bench.",
+     "official_value": "2-4 (6 GP), 521:552 (-31)",
+     "result": "partial",
+     "reason": "corroborated record, gp; not quoted by the register: diff",
+     "source_id": "V3",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "fixture_id": "el-r7-bay-dub",
+     "sport": "basketball",
+     "fixture": "FC Bayern Munich v Dubai Basketball",
+     "side": "away",
+     "team": "Dubai Basketball",
+     "register_value": "Bayern 2-4 at home after a two-round week in Turkiye; Dubai 4-2 on the road with the fifth-best defence (82.2 ppg allowed) and Dwayne Bacon third in scoring at 17.8 ppg. Bayern's Duane Washington is sixth in scoring at 16.8 ppg off the bench.",
+     "official_value": "4-2 (6 GP), 490:493 (-3)",
+     "result": "partial",
+     "reason": "corroborated record, gp; not quoted by the register: diff",
+     "source_id": "V3",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    }
+   ],
+   "flags": []
+  },
+  {
+   "fixture_id": "cric-nz-ind-t20-2",
+   "sport": "cricket",
+   "competition": "Men's T20I Series",
+   "home": "New Zealand",
+   "away": "India",
+   "start_utc": "2026-10-24T07:00:00Z",
+   "selection": "New Zealand +20.5",
+   "market": "Runs handicap 20.5",
+   "line": 20.5,
+   "prob": 0.7106,
+   "price": 1.41,
+   "us": -245,
+   "book_price": 1.34,
+   "book_us": -294,
+   "confidence": "High",
+   "unit": "runs",
+   "headline": "New Zealand's rating gap is smaller than a 20.5-run handicap",
+   "text": "India sit second in the ICC Men's T20I rankings on 267 points and arrived as reigning world champions, while New Zealand are fourth on 247. That is a twenty-point rating gap between two of the top four sides in the format, and the second T20I of the series hands New Zealand a 20.5-run cushion. Ratings of that order translate to a narrow margin much more often than a three-wicket-and-twenty-run blowout. Selection: New Zealand +20.5 runs.",
+   "words": 75,
+   "verified_inputs": [
+    {
+     "side": "home",
+     "label": "ICC Men's T20I rating",
+     "value": "World No. 4 (247 rating)",
+     "rating": 68.5
+    },
+    {
+     "side": "away",
+     "label": "ICC Men's T20I rating",
+     "value": "World No. 2 (267 rating, reigning T20WC champions)",
+     "rating": 81.5
+    }
+   ],
+   "sources": [
+    {
+     "name": "New Zealand Cricket Official Scoring & Fixtures Portal",
+     "url": "https://scoring.nzc.nz/fixtures"
+    },
+    {
+     "name": "ICC Official Men's & Women's Team Rankings",
+     "url": "https://www.icc-cricket.com/rankings"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   },
+   "row_checks": [],
+   "flags": [
+    "Corrected start time to 07:00 UTC per scoring.nzc.nz",
+    "No ICC rating for 'A' sides and no verified 4-day first-class match runs baseline: total runs market intentionally left blank",
+    "Two repository registers describe this fixture in different words; both readings and both source lists are shown on the row and the disagreement is logged as a cross-desk irregularity.",
+    "Register lists more than one meeting of this pairing (2026-10-24, 2026-10-24); this row is the earliest."
+   ]
+  },
+  {
+   "fixture_id": "el-535918",
+   "sport": "basketball",
+   "competition": "EuroLeague",
+   "home": "Anadolu Efes",
+   "away": "Besiktas Istanbul",
+   "start_utc": "2026-10-22T17:30:00Z",
+   "selection": "Anadolu Efes +7.5",
+   "market": "Points handicap 7.5",
+   "line": 7.5,
+   "prob": 0.7063,
+   "price": 1.42,
+   "us": -240,
+   "book_price": 1.35,
+   "book_us": -287,
+   "confidence": "High",
+   "unit": "points",
+   "headline": "Efes with a seven-and-a-half point start looks the value side",
+   "text": "Anadolu Efes are 2-4 with 492 points scored and 510 conceded, a minus-18 differential, and they are 1-1 at home. Besiktas are 3-3 on 554:555, minus-1 overall and 2-1 on the road, so the visitors hold the better record but not by a wide margin. A 7.5-point start for the home side in a game between two mid-table clubs is the value side of the board, because home advantage in the EuroLeague is worth several points on its own. Selection: Anadolu Efes +7.5 points.",
+   "words": 85,
+   "verified_inputs": [
+    {
+     "side": "home",
+     "label": "EuroLeague R6 table",
+     "value": "2-4 (#13, 492:510, -18 diff)",
+     "rating": 44.0
+    },
+    {
+     "side": "away",
+     "label": "EuroLeague R6 table",
+     "value": "3-3 (#11, 554:555, -1 diff)",
+     "rating": 52.0
+    }
+   ],
+   "sources": [
+    {
+     "name": "EuroLeague Official 2026-27 Standings & Game Center",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "name": "EuroLeague official Game Center Round 7 (records, points per game, kick-offs)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    },
+    {
+     "name": "EuroLeague official Round 7 injury report (confirmed club availability lists)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-fantasy/"
+    },
+    {
+     "name": "EuroLeague official 2026-27 schedule announcement (Round 7 = 22 October)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/the-2026-27-euroleague-schedule-is-official/"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "partial",
+     "partial"
+    ]
+   },
+   "row_checks": [
+    {
+     "fixture_id": "el-535918",
+     "sport": "basketball",
+     "fixture": "Anadolu Efes v Besiktas Istanbul",
+     "side": "home",
+     "team": "Anadolu Efes Istanbul",
+     "register_value": "2-4 (#13, 492:510, -18 diff)",
+     "official_value": "2-4 (6 GP), 492:510 (-18)",
+     "result": "partial",
+     "reason": "corroborated record, diff; not quoted by the register: gp",
+     "source_id": "V3",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "fixture_id": "el-535918",
+     "sport": "basketball",
+     "fixture": "Anadolu Efes v Besiktas Istanbul",
+     "side": "away",
+     "team": "Besiktas Istanbul",
+     "register_value": "3-3 (#11, 554:555, -1 diff)",
+     "official_value": "3-3 (6 GP), 554:555 (-1)",
+     "result": "partial",
+     "reason": "corroborated record, diff; not quoted by the register: gp",
+     "source_id": "V3",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    }
+   ],
+   "flags": [
+    "Two repository registers describe this fixture in different words; both readings and both source lists are shown on the row and the disagreement is logged as a cross-desk irregularity.",
+    "Register lists more than one meeting of this pairing (2026-10-22, 2026-10-22); this row is the earliest."
+   ]
+  },
+  {
+   "fixture_id": "mlb-849803",
+   "sport": "baseball",
+   "competition": "2026 MLB World Series",
+   "home": "Tampa Bay Rays",
+   "away": "Milwaukee Brewers",
+   "start_utc": "2026-10-28T00:00:00Z",
+   "selection": "Milwaukee Brewers +2.5",
+   "market": "Runs handicap 2.5",
+   "line": 2.5,
+   "prob": 0.7004,
+   "price": 1.43,
+   "us": -234,
+   "book_price": 1.36,
+   "book_us": -278,
+   "confidence": "High",
+   "unit": "runs",
+   "headline": "Milwaukee's road record earns the runs cushion in Tampa Bay",
+   "text": "The Brewers finished 103-59, went 48-33 on the road for a .593 rate and swept the Dodgers 4-0 in the NLCS. Tampa Bay were 98-64 and 55-26 at home, beating the Guardians 4-2 in the ALCS to reach this World Series game. A 2.5-run start for the stronger regular-season team in a post-season game is a wide line, because October games are decided late and rarely by three runs. Selection: Milwaukee Brewers +2.5 runs.",
+   "words": 74,
+   "verified_inputs": [
+    {
+     "side": "home",
+     "label": "MLB 2026 home & playoff record",
+     "value": "98-64 overall, 55-26 home (.679), beat Guardians 4-2 in ALCS",
+     "rating": 65.5
+    },
+    {
+     "side": "away",
+     "label": "MLB 2026 road & playoff record",
+     "value": "103-59 overall, 48-33 road (.593), swept Dodgers 4-0 in NLCS",
+     "rating": 59.5
+    }
+   ],
+   "sources": [
+    {
+     "name": "MLB StatsAPI — 2026 regular-season standings, both leagues — re-read live by session e6716490-olbg1 (2026-10-22T07:40:00Z)",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason",
+     "read": "2026-10-22T07:40:00Z"
+    },
+    {
+     "name": "MLB StatsAPI Official 2026 World Series Postseason Feed",
+     "url": "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2026"
+    },
+    {
+     "name": "MLB StatsAPI Official 2026 Standings & Home/Road Splits",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"
+    },
+    {
+     "name": "MLB Gameday #849803",
+     "url": "https://www.mlb.com/gameday/849803"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "partial",
+     "partial"
+    ]
+   },
+   "row_checks": [
+    {
+     "fixture_id": "mlb-849803",
+     "sport": "baseball",
+     "fixture": "Tampa Bay Rays v Milwaukee Brewers",
+     "side": "home",
+     "team": "Tampa Bay Rays",
+     "register_value": "98-64 overall, 55-26 home (.679), beat Guardians 4-2 in ALCS",
+     "official_value": "98-64 (162 GP), 0.605 points percentage, home 55-26 (.679), away 43-38 (.531), 736 runs scored / 650 allowed, streak L1",
+     "result": "partial",
+     "reason": "corroborated record; not quoted by the register: pct, home, away, gp, runs_scored, streak",
+     "source_id": "V2",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+    },
+    {
+     "fixture_id": "mlb-849803",
+     "sport": "baseball",
+     "fixture": "Tampa Bay Rays v Milwaukee Brewers",
+     "side": "away",
+     "team": "Milwaukee Brewers",
+     "register_value": "103-59 overall, 48-33 road (.593), swept Dodgers 4-0 in NLCS",
+     "official_value": "103-59 (162 GP), 0.636 points percentage, home 55-26 (.679), away 48-33 (.593), 736 runs scored / 650 allowed, streak W5",
+     "result": "partial",
+     "reason": "corroborated record; not quoted by the register: pct, home, away, gp, runs_scored, streak",
+     "source_id": "V2",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+    }
+   ],
+   "flags": [
+    "Probable starting pitchers not yet officially named by MLB clubs (left blank rather than inferred)"
+   ]
+  }
+ ],
+ "band_excluded": [
+  {
+   "id": "el-535921",
+   "sport": "basketball",
+   "home": "Maccabi Tel Aviv",
+   "away": "Real Madrid",
+   "selection": "Real Madrid",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "EuroLeague Official 2026-27 Standings & Game Center",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "name": "EuroLeague official Game Center Round 7 (records, points per game, kick-offs)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "match",
+     "partial"
+    ]
+   }
+  },
+  {
+   "id": "el-535923",
+   "sport": "basketball",
+   "home": "Panathinaikos",
+   "away": "Kosner Baskonia",
+   "selection": "Panathinaikos",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "EuroLeague Official 2026-27 Standings & Game Center",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "name": "EuroLeague official Game Center Round 7 (records, points per game, kick-offs)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "partial",
+     "match"
+    ]
+   }
+  },
+  {
+   "id": "pdc-ec-03",
+   "sport": "darts",
+   "home": "Niels Zonneveld",
+   "away": "Cameron Menzies",
+   "selection": "Niels Zonneveld",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "hand-ehf-12046",
+   "sport": "handball",
+   "home": "Barça",
+   "away": "Montpellier Handball",
+   "selection": "Barça",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 Official Group A–F Standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+     "name": "EHF Official Match Centre",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101049/Bar%C3%A7a-MontpellierHandball/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "hand-ehf-12048",
+   "sport": "handball",
+   "home": "Kolstad Håndball",
+   "away": "SC Magdeburg",
+   "selection": "SC Magdeburg",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 Official Group A–F Standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+     "name": "EHF Official Match Centre",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101064/KolstadH%C3%A5ndball-SCMagdeburg/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "hand-ehf-12054",
+   "sport": "handball",
+   "home": "Sporting CP",
+   "away": "IFK Kristianstad",
+   "selection": "Sporting CP",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 Official Group A–F Standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+     "name": "EHF Official Match Centre",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101041/SportingClubedePortugal-IFKKristianstad/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "pdc-ec-08",
+   "sport": "darts",
+   "home": "Ross Smith",
+   "away": "Karel Sedlacek",
+   "selection": "Ross Smith",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "nhl-2026020154",
+   "sport": "ice-hockey",
+   "home": "Boston Bruins",
+   "away": "Nashville Predators",
+   "selection": "Boston Bruins",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NHL official standings API — 2026-10-22 — re-read live by session e6716490-olbg1 (2026-10-22T07:40:00Z)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-22",
+     "read": "2026-10-22T07:40:00Z"
+    },
+    {
+     "name": "NHL Official Web API — Schedule (2026-10-21..22)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home"
+    ],
+    "results": [
+     "partial"
+    ]
+   }
+  },
+  {
+   "id": "nhl-2026020158",
+   "sport": "ice-hockey",
+   "home": "Pittsburgh Penguins",
+   "away": "Florida Panthers",
+   "selection": "Florida Panthers",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NHL Official Web API — Schedule (2026-10-21..22)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+    },
+    {
+     "name": "NHL Official Web API — Standings (2026-10-21)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-21"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "nhl-2026020159",
+   "sport": "ice-hockey",
+   "home": "New York Islanders",
+   "away": "Los Angeles Kings",
+   "selection": "New York Islanders",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NHL official schedule API - 2026-10-22 slate (game IDs, arenas, UTC start)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    },
+    {
+     "name": "NHL official standings API - as of 2026-10-21 (GP, W, L, OTL, PTS, GF, GA, home/road splits, streak)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-21"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "nhl-2026020162",
+   "sport": "ice-hockey",
+   "home": "Calgary Flames",
+   "away": "Minnesota Wild",
+   "selection": "Minnesota Wild",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NHL official schedule API - 2026-10-22 slate (game IDs, arenas, UTC start)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    },
+    {
+     "name": "NHL official standings API - as of 2026-10-21 (GP, W, L, OTL, PTS, GF, GA, home/road splits, streak)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-21"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "nhl-2026020164",
+   "sport": "ice-hockey",
+   "home": "Seattle Kraken",
+   "away": "Utah Mammoth",
+   "selection": "Seattle Kraken +3.5",
+   "market": "Goals handicap 3.5",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NHL official schedule API - 2026-10-22 slate (game IDs, arenas, UTC start)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    },
+    {
+     "name": "NHL official standings API - as of 2026-10-21 (GP, W, L, OTL, PTS, GF, GA, home/road splits, streak)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-21"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "nhl-2026020165",
+   "sport": "ice-hockey",
+   "home": "Vancouver Canucks",
+   "away": "Detroit Red Wings",
+   "selection": "Detroit Red Wings",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NHL official schedule API - 2026-10-22 slate (game IDs, arenas, UTC start)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    },
+    {
+     "name": "NHL official standings API - as of 2026-10-21 (GP, W, L, OTL, PTS, GF, GA, home/road splits, streak)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-21"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "rl-wc26-tga-lbn",
+   "sport": "rugby-league",
+   "home": "Tonga",
+   "away": "Lebanon",
+   "selection": "Tonga",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NRL / RLWC26 Official Round 1 Results",
+     "url": "https://www.nrl.com/draw/?competition=131&round=1&season=2026"
+    },
+    {
+     "name": "NRL / RLWC26 Official Round 2 Draw",
+     "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "vol-plus-36963",
+   "sport": "volleyball",
+   "home": "Slepsk Malow Suwalki",
+   "away": "GKS Katowice",
+   "selection": "GKS Katowice +2.5",
+   "market": "Sets handicap 2.5",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Polish PlusLiga Official 2026/27 Games Schedule",
+     "url": "https://www.plusliga.pl/games.html"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "pdc-ec-14",
+   "sport": "darts",
+   "home": "Wessel Nijman",
+   "away": "Martin Schindler",
+   "selection": "Wessel Nijman",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "aflw-r11-02",
+   "sport": "aussie-rules",
+   "home": "Geelong Cats",
+   "away": "Fremantle",
+   "selection": "Geelong Cats",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 10 Ladder",
+     "url": "https://www.afl.com.au/aflw/ladder"
+    },
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 11 Fixture",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "aflw-r11-06",
+   "sport": "aussie-rules",
+   "home": "Gold Coast SUNS",
+   "away": "Richmond",
+   "selection": "Gold Coast SUNS",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 10 Ladder",
+     "url": "https://www.afl.com.au/aflw/ladder"
+    },
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 11 Fixture",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "rl-wc26-eng-fra",
+   "sport": "rugby-league",
+   "home": "England",
+   "away": "France",
+   "selection": "England",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NRL / RLWC26 Official Round 1 Results",
+     "url": "https://www.nrl.com/draw/?competition=131&round=1&season=2026"
+    },
+    {
+     "name": "NRL / RLWC26 Official Round 2 Draw",
+     "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "ru-top14-609567",
+   "sport": "rugby-union",
+   "home": "Stade Toulousain",
+   "away": "USA Perpignan",
+   "selection": "Stade Toulousain",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "LNR Official Top 14 2026-2027 Classement (J6)",
+     "url": "https://top14.lnr.fr/classement"
+    },
+    {
+     "name": "LNR Official J7 Match Sheet",
+     "url": "https://top14.lnr.fr/feuille-de-match/2026-2027/j7/11867-toulouse-perpignan"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "vol-plus-36964",
+   "sport": "volleyball",
+   "home": "PGE GiEK Skra Belchatow",
+   "away": "PGE Projekt Warszawa",
+   "selection": "PGE Projekt Warszawa +2.5",
+   "market": "Sets handicap 2.5",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Polish PlusLiga Official 2026/27 Games Schedule",
+     "url": "https://www.plusliga.pl/games.html"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "aflw-r11-08",
+   "sport": "aussie-rules",
+   "home": "Sydney Swans",
+   "away": "West Coast Eagles",
+   "selection": "Sydney Swans",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 10 Ladder",
+     "url": "https://www.afl.com.au/aflw/ladder"
+    },
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 11 Fixture",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "aflw-r11-01",
+   "sport": "aussie-rules",
+   "home": "North Melbourne",
+   "away": "Adelaide Crows",
+   "selection": "North Melbourne",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 10 Ladder",
+     "url": "https://www.afl.com.au/aflw/ladder"
+    },
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 11 Fixture",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "aflw-r11-05",
+   "sport": "aussie-rules",
+   "home": "Hawthorn",
+   "away": "Essendon",
+   "selection": "Hawthorn",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 10 Ladder",
+     "url": "https://www.afl.com.au/aflw/ladder"
+    },
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 11 Fixture",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "rl-wc26-nzl-cok",
+   "sport": "rugby-league",
+   "home": "New Zealand",
+   "away": "Cook Islands",
+   "selection": "New Zealand",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NRL / RLWC26 Official Round 1 Results",
+     "url": "https://www.nrl.com/draw/?competition=131&round=1&season=2026"
+    },
+    {
+     "name": "NRL / RLWC26 Official Round 2 Draw",
+     "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "aflw-r11-04",
+   "sport": "aussie-rules",
+   "home": "Carlton",
+   "away": "GWS GIANTS",
+   "selection": "Carlton",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 10 Ladder",
+     "url": "https://www.afl.com.au/aflw/ladder"
+    },
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 11 Fixture",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "rl-wc26-aus-fij",
+   "sport": "rugby-league",
+   "home": "Australia",
+   "away": "Fiji",
+   "selection": "Australia",
+   "market": "Match winner",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NRL / RLWC26 Official Round 1 Results",
+     "url": "https://www.nrl.com/draw/?competition=131&round=1&season=2026"
+    },
+    {
+     "name": "NRL / RLWC26 Official Round 2 Draw",
+     "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "vol-plus-36962",
+   "sport": "volleyball",
+   "home": "Aluron CMC Warta Zawiercie",
+   "away": "ZAKSA Kedzierzyn-Kozle",
+   "selection": "ZAKSA Kedzierzyn-Kozle +2.5",
+   "market": "Sets handicap 2.5",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Polish PlusLiga Official 2026/27 Games Schedule",
+     "url": "https://www.plusliga.pl/games.html"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "vol-lega-trentino",
+   "sport": "volleyball",
+   "home": "Itas Trentino",
+   "away": "Cisterna Volley",
+   "selection": "Cisterna Volley +2.5",
+   "market": "Sets handicap 2.5",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Lega Pallavolo Serie A SuperLega Credem Banca Official Calendar",
+     "url": "https://www.legavolley.it/calendario/?idCampionato=999"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "vol-lega-lube",
+   "sport": "volleyball",
+   "home": "Cucine Lube Civitanova",
+   "away": "Sonepar Padova",
+   "selection": "Sonepar Padova +2.5",
+   "market": "Sets handicap 2.5",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Lega Pallavolo Serie A SuperLega Credem Banca Official Calendar",
+     "url": "https://www.legavolley.it/calendario/?idCampionato=999"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "vol-plus-36965",
+   "sport": "volleyball",
+   "home": "InPost ChKS Chelm",
+   "away": "Asseco Resovia Rzeszow",
+   "selection": "Asseco Resovia Rzeszow +2.5",
+   "market": "Sets handicap 2.5",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Polish PlusLiga Official 2026/27 Games Schedule",
+     "url": "https://www.plusliga.pl/games.html"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "vol-lega-perugia",
+   "sport": "volleyball",
+   "home": "Sir Susa Scai Perugia",
+   "away": "Tinet Prata di Pordenone",
+   "selection": "Tinet Prata di Pordenone +2.5",
+   "market": "Sets handicap 2.5",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Lega Pallavolo Serie A SuperLega Credem Banca Official Calendar",
+     "url": "https://www.legavolley.it/calendario/?idCampionato=999"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "ten-902093",
+   "sport": "tennis",
+   "home": "Katarzyna Kawa",
+   "away": "Belinda Bencic",
+   "selection": "Belinda Bencic +2.5",
+   "market": "Sets handicap 2.5",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "WTA Ningbo Open Official Signed Main Draw Sheet (Event 2092)",
+     "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "lol-worlds26-tsw-lyon",
+   "sport": "esports",
+   "home": "Team Secret Whales",
+   "away": "LYON",
+   "selection": "LYON +3.5",
+   "market": "Maps handicap 3.5",
+   "prob": 0.995,
+   "price": 1.01,
+   "us": -19900,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Riot Games LoL Esports Official 2026 World Championship Hub",
+     "url": "https://lolesports.com/en-US/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "nba-okc-den-20261022",
+   "sport": "basketball",
+   "home": "Oklahoma City Thunder",
+   "away": "Denver Nuggets",
+   "selection": "Oklahoma City Thunder",
+   "market": "Match winner",
+   "prob": 0.9939,
+   "price": 1.01,
+   "us": -16379,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NBA Official Schedule (2026-10-21..22)",
+     "url": "https://www.nba.com/games?date=2026-10-21"
+    },
+    {
+     "name": "NBA Official Standings",
+     "url": "https://www.nba.com/standings"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "cric-ausw-nzw-t20-3",
+   "sport": "cricket",
+   "home": "Australia Women",
+   "away": "New Zealand Women",
+   "selection": "Australia Women",
+   "market": "Match winner",
+   "prob": 0.9937,
+   "price": 1.01,
+   "us": -15849,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Cricket Australia Official International Series Hub",
+     "url": "https://www.cricket.com.au/"
+    },
+    {
+     "name": "New Zealand Cricket Official Scoring & Fixtures Portal",
+     "url": "https://scoring.nzc.nz/fixtures"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "nhl-2026020160",
+   "sport": "ice-hockey",
+   "home": "St. Louis Blues",
+   "away": "Vegas Golden Knights",
+   "selection": "Vegas Golden Knights",
+   "market": "Match winner",
+   "prob": 0.9936,
+   "price": 1.01,
+   "us": -15449,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NHL official standings API — 2026-10-22 — re-read live by session e6716490-olbg1 (2026-10-22T07:40:00Z)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-22",
+     "read": "2026-10-22T07:40:00Z"
+    },
+    {
+     "name": "NHL Official Web API — Schedule (2026-10-21..22)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "away"
+    ],
+    "results": [
+     "partial"
+    ]
+   }
+  },
+  {
+   "id": "pdc-ec-10",
+   "sport": "darts",
+   "home": "Krzysztof Ratajski",
+   "away": "Dave Chisnall",
+   "selection": "Krzysztof Ratajski",
+   "market": "Match winner",
+   "prob": 0.9934,
+   "price": 1.01,
+   "us": -15066,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "nhl-2026020161",
+   "sport": "ice-hockey",
+   "home": "Dallas Stars",
+   "away": "Winnipeg Jets",
+   "selection": "Winnipeg Jets +3.5",
+   "market": "Goals handicap 3.5",
+   "prob": 0.993,
+   "price": 1.01,
+   "us": -14117,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NHL official schedule API - 2026-10-22 slate (game IDs, arenas, UTC start)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    },
+    {
+     "name": "NHL official standings API - as of 2026-10-21 (GP, W, L, OTL, PTS, GF, GA, home/road splits, streak)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-21"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "nhl-2026020163",
+   "sport": "ice-hockey",
+   "home": "Edmonton Oilers",
+   "away": "Carolina Hurricanes",
+   "selection": "Carolina Hurricanes +3.5",
+   "market": "Goals handicap 3.5",
+   "prob": 0.9927,
+   "price": 1.01,
+   "us": -13571,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NHL official standings API — 2026-10-22 — re-read live by session e6716490-olbg1 (2026-10-22T07:40:00Z)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-22",
+     "read": "2026-10-22T07:40:00Z"
+    },
+    {
+     "name": "NHL official schedule API - 2026-10-22 slate (game IDs, arenas, UTC start)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "partial",
+     "partial"
+    ]
+   }
+  },
+  {
+   "id": "nhl-2026020156",
+   "sport": "ice-hockey",
+   "home": "Ottawa Senators",
+   "away": "San Jose Sharks",
+   "selection": "Ottawa Senators +2.5",
+   "market": "Goals handicap 2.5",
+   "prob": 0.9923,
+   "price": 1.01,
+   "us": -12841,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NHL official schedule API - 2026-10-22 slate (game IDs, arenas, UTC start)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    },
+    {
+     "name": "NHL official standings API - as of 2026-10-21 (GP, W, L, OTL, PTS, GF, GA, home/road splits, streak)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-21"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "nhl-2026020155",
+   "sport": "ice-hockey",
+   "home": "Toronto Maple Leafs",
+   "away": "New York Rangers",
+   "selection": "Toronto Maple Leafs +3.5",
+   "market": "Goals handicap 3.5",
+   "prob": 0.9917,
+   "price": 1.01,
+   "us": -11966,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NHL Official Web API — Schedule (2026-10-21..22)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+    },
+    {
+     "name": "NHL Official Web API — Standings (2026-10-21)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-21"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "mlb-849805",
+   "sport": "baseball",
+   "home": "Milwaukee Brewers",
+   "away": "Tampa Bay Rays",
+   "selection": "Milwaukee Brewers",
+   "market": "Match winner",
+   "prob": 0.9901,
+   "price": 1.01,
+   "us": -10000,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "MLB StatsAPI Official 2026 World Series Postseason Feed",
+     "url": "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2026"
+    },
+    {
+     "name": "MLB StatsAPI Official 2026 Standings & Home/Road Splits",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "partial",
+     "partial"
+    ]
+   }
+  },
+  {
+   "id": "pdc-ec-13",
+   "sport": "darts",
+   "home": "Luke Littler",
+   "away": "William O'Connor",
+   "selection": "Luke Littler",
+   "market": "Match winner",
+   "prob": 0.9898,
+   "price": 1.01,
+   "us": -9727,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "nhl-2026020157",
+   "sport": "ice-hockey",
+   "home": "New Jersey Devils",
+   "away": "Anaheim Ducks",
+   "selection": "New Jersey Devils +2.5",
+   "market": "Goals handicap 2.5",
+   "prob": 0.9897,
+   "price": 1.01,
+   "us": -9579,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NHL official schedule API - 2026-10-22 slate (game IDs, arenas, UTC start)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    },
+    {
+     "name": "NHL official standings API - as of 2026-10-21 (GP, W, L, OTL, PTS, GF, GA, home/road splits, streak)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-21"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "rl-wc26w-sam-wal",
+   "sport": "rugby-league",
+   "home": "Samoa Women",
+   "away": "Wales Women",
+   "selection": "Samoa Women",
+   "market": "Match winner",
+   "prob": 0.9894,
+   "price": 1.01,
+   "us": -9345,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NRL / RLWC26 Official Round 1 Results",
+     "url": "https://www.nrl.com/draw/?competition=131&round=1&season=2026"
+    },
+    {
+     "name": "NRL / RLWC26 Official Round 2 Draw",
+     "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "el-r7-bay-dub",
+   "sport": "basketball",
+   "home": "FC Bayern Munich",
+   "away": "Dubai Basketball",
+   "selection": "Dubai Basketball",
+   "market": "Match winner",
+   "prob": 0.987,
+   "price": 1.01,
+   "us": -7586,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "EuroLeague official 2026-27 regular-season standings — re-read live by session e6716490-olbg1 (2026-10-22T07:40:00Z)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/",
+     "read": "2026-10-22T07:40:00Z"
+    },
+    {
+     "name": "EuroLeague official Game Center Round 7 (records, points per game, kick-offs)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "partial",
+     "partial"
+    ]
+   }
+  },
+  {
+   "id": "pdc-ec-02",
+   "sport": "darts",
+   "home": "Danny Noppert",
+   "away": "Stephen Bunting",
+   "selection": "Danny Noppert",
+   "market": "Match winner",
+   "prob": 0.9862,
+   "price": 1.01,
+   "us": -7145,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "wst-nio-r3-04",
+   "sport": "snooker",
+   "home": "Anthony McGill",
+   "away": "Mateusz Baranowski",
+   "selection": "Anthony McGill +3.5",
+   "market": "Frames handicap 3.5",
+   "prob": 0.9856,
+   "price": 1.01,
+   "us": -6867,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre - BetVictor Northern Ireland Open 2026 Round 3 (22 October, eight ties, local start times)",
+     "url": "https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5"
+    },
+    {
+     "name": "World Snooker Tour official Day Four report (Round 2 scores, top 16 remaining, break details)",
+     "url": "https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "wst-nio-r3-06",
+   "sport": "snooker",
+   "home": "David Gilbert",
+   "away": "Cheung Ka Wai",
+   "selection": "David Gilbert +3.5",
+   "market": "Frames handicap 3.5",
+   "prob": 0.9856,
+   "price": 1.01,
+   "us": -6867,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre - BetVictor Northern Ireland Open 2026 Round 3 (22 October, eight ties, local start times)",
+     "url": "https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5"
+    },
+    {
+     "name": "World Snooker Tour official Day Four report (Round 2 scores, top 16 remaining, break details)",
+     "url": "https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "wst-nio-r3-03",
+   "sport": "snooker",
+   "home": "Elliot Slessor",
+   "away": "Ricky Walden",
+   "selection": "Elliot Slessor +3.5",
+   "market": "Frames handicap 3.5",
+   "prob": 0.9856,
+   "price": 1.01,
+   "us": -6867,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre - BetVictor Northern Ireland Open 2026 Round 3 (22 October, eight ties, local start times)",
+     "url": "https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5"
+    },
+    {
+     "name": "World Snooker Tour official Day Four report (Round 2 scores, top 16 remaining, break details)",
+     "url": "https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "wst-nio-r3-08",
+   "sport": "snooker",
+   "home": "Jak Jones",
+   "away": "Daniel Wells",
+   "selection": "Jak Jones +3.5",
+   "market": "Frames handicap 3.5",
+   "prob": 0.9856,
+   "price": 1.01,
+   "us": -6867,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre - BetVictor Northern Ireland Open 2026 Round 3 (22 October, eight ties, local start times)",
+     "url": "https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5"
+    },
+    {
+     "name": "World Snooker Tour official Day Four report (Round 2 scores, top 16 remaining, break details)",
+     "url": "https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "wst-nio-r3-07",
+   "sport": "snooker",
+   "home": "Jordan Brown",
+   "away": "Scott Donaldson",
+   "selection": "Jordan Brown +3.5",
+   "market": "Frames handicap 3.5",
+   "prob": 0.9856,
+   "price": 1.01,
+   "us": -6867,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre - BetVictor Northern Ireland Open 2026 Round 3 (22 October, eight ties, local start times)",
+     "url": "https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5"
+    },
+    {
+     "name": "World Snooker Tour official Day Four report (Round 2 scores, top 16 remaining, break details)",
+     "url": "https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "wst-nio-r3-02",
+   "sport": "snooker",
+   "home": "Matthew Selt",
+   "away": "Sam Craigie",
+   "selection": "Matthew Selt +3.5",
+   "market": "Frames handicap 3.5",
+   "prob": 0.9856,
+   "price": 1.01,
+   "us": -6867,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre - BetVictor Northern Ireland Open 2026 Round 3 (22 October, eight ties, local start times)",
+     "url": "https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5"
+    },
+    {
+     "name": "World Snooker Tour official Day Four report (Round 2 scores, top 16 remaining, break details)",
+     "url": "https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "mlb-849802",
+   "sport": "baseball",
+   "home": "Milwaukee Brewers",
+   "away": "Tampa Bay Rays",
+   "selection": "Milwaukee Brewers",
+   "market": "Match winner",
+   "prob": 0.9855,
+   "price": 1.01,
+   "us": -6813,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "MLB StatsAPI Official 2026 World Series Postseason Feed",
+     "url": "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2026"
+    },
+    {
+     "name": "MLB StatsAPI Official 2026 Standings & Home/Road Splits",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "partial",
+     "partial"
+    ]
+   }
+  },
+  {
+   "id": "wst-nio-r3-01",
+   "sport": "snooker",
+   "home": "Kyren Wilson",
+   "away": "Pang Junxu",
+   "selection": "Kyren Wilson",
+   "market": "Match winner",
+   "prob": 0.985,
+   "price": 1.02,
+   "us": -6579,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre - BetVictor Northern Ireland Open 2026 Round 3 (22 October, eight ties, local start times)",
+     "url": "https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5"
+    },
+    {
+     "name": "World Snooker Tour official Day Four report (Round 2 scores, top 16 remaining, break details)",
+     "url": "https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "wst-nio-r3-05",
+   "sport": "snooker",
+   "home": "Mark Williams",
+   "away": "Martin O'Donnell",
+   "selection": "Mark Williams",
+   "market": "Match winner",
+   "prob": 0.985,
+   "price": 1.02,
+   "us": -6579,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre - BetVictor Northern Ireland Open 2026 Round 3 (22 October, eight ties, local start times)",
+     "url": "https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5"
+    },
+    {
+     "name": "World Snooker Tour official Day Four report (Round 2 scores, top 16 remaining, break details)",
+     "url": "https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "pdc-ec-07",
+   "sport": "darts",
+   "home": "Gian van Veen",
+   "away": "Andrew Gilding",
+   "selection": "Gian van Veen",
+   "market": "Match winner",
+   "prob": 0.9813,
+   "price": 1.02,
+   "us": -5248,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "pdc-ec-11",
+   "sport": "darts",
+   "home": "Nathan Aspinall",
+   "away": "Cristo Reyes",
+   "selection": "Nathan Aspinall",
+   "market": "Match winner",
+   "prob": 0.9802,
+   "price": 1.02,
+   "us": -4943,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "el-535928",
+   "sport": "basketball",
+   "home": "Zalgiris Kaunas",
+   "away": "LDLC ASVEL Villeurbanne",
+   "selection": "Zalgiris Kaunas",
+   "market": "Match winner",
+   "prob": 0.9777,
+   "price": 1.02,
+   "us": -4394,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "EuroLeague Official 2026-27 Standings & Game Center",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "name": "EuroLeague official Game Center Round 7 (records, points per game, kick-offs)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "partial",
+     "partial"
+    ]
+   }
+  },
+  {
+   "id": "aflw-r11-07",
+   "sport": "aussie-rules",
+   "home": "Port Adelaide",
+   "away": "Collingwood",
+   "selection": "Port Adelaide",
+   "market": "Match winner",
+   "prob": 0.977,
+   "price": 1.02,
+   "us": -4244,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 10 Ladder",
+     "url": "https://www.afl.com.au/aflw/ladder"
+    },
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 11 Fixture",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "pdc-ec-15",
+   "sport": "darts",
+   "home": "Kevin Doets",
+   "away": "Michael van Gerwen",
+   "selection": "Michael van Gerwen +3.5",
+   "market": "Legs handicap 3.5",
+   "prob": 0.974,
+   "price": 1.03,
+   "us": -3747,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "pdc-ec-05",
+   "sport": "darts",
+   "home": "James Wade",
+   "away": "Damon Heta",
+   "selection": "Damon Heta +3.5",
+   "market": "Legs handicap 3.5",
+   "prob": 0.9726,
+   "price": 1.03,
+   "us": -3546,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "pdc-ec-12",
+   "sport": "darts",
+   "home": "Jonny Clayton",
+   "away": "Niko Springer",
+   "selection": "Jonny Clayton",
+   "market": "Match winner",
+   "prob": 0.9715,
+   "price": 1.03,
+   "us": -3404,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "pdc-ec-09",
+   "sport": "darts",
+   "home": "Ryan Joyce",
+   "away": "Jermaine Wattimena",
+   "selection": "Jermaine Wattimena +3.5",
+   "market": "Legs handicap 3.5",
+   "prob": 0.9693,
+   "price": 1.03,
+   "us": -3157,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "pdc-ec-06",
+   "sport": "darts",
+   "home": "Luke Humphries",
+   "away": "Ryan Searle",
+   "selection": "Luke Humphries +2.5",
+   "market": "Legs handicap 2.5",
+   "prob": 0.9624,
+   "price": 1.04,
+   "us": -2557,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "pdc-ec-04",
+   "sport": "darts",
+   "home": "Gerwyn Price",
+   "away": "Rob Cross",
+   "selection": "Rob Cross +3.5",
+   "market": "Legs handicap 3.5",
+   "prob": 0.9618,
+   "price": 1.04,
+   "us": -2519,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "pdc-ec-01",
+   "sport": "darts",
+   "home": "Luke Woodhouse",
+   "away": "Dirk van Duijvenbode",
+   "selection": "Luke Woodhouse +2.5",
+   "market": "Legs handicap 2.5",
+   "prob": 0.9607,
+   "price": 1.04,
+   "us": -2443,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "pdc-ec-16",
+   "sport": "darts",
+   "home": "Josh Rock",
+   "away": "Chris Dobey",
+   "selection": "Josh Rock +2.5",
+   "market": "Legs handicap 2.5",
+   "prob": 0.9563,
+   "price": 1.05,
+   "us": -2188,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PDC Official 2026 European Championship Field & Seeds",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC Official 2026 European Championship Schedule of Play",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "rl-wc26w-aus-eng",
+   "sport": "rugby-league",
+   "home": "Australia Jillaroos",
+   "away": "England Women",
+   "selection": "Australia Jillaroos",
+   "market": "Match winner",
+   "prob": 0.9367,
+   "price": 1.07,
+   "us": -1481,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NRL / RLWC26 Official Round 1 Results",
+     "url": "https://www.nrl.com/draw/?competition=131&round=1&season=2026"
+    },
+    {
+     "name": "NRL / RLWC26 Official Round 2 Draw",
+     "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "ru-top14-609564",
+   "sport": "rugby-union",
+   "home": "Aviron Bayonnais",
+   "away": "LOU Rugby",
+   "selection": "Aviron Bayonnais",
+   "market": "Match winner",
+   "prob": 0.9351,
+   "price": 1.07,
+   "us": -1440,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "LNR Official Top 14 2026-2027 Classement (J6)",
+     "url": "https://top14.lnr.fr/classement"
+    },
+    {
+     "name": "LNR Official J7 Match Sheet",
+     "url": "https://top14.lnr.fr/feuille-de-match/2026-2027/j7/11861-bayonne-lyon"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "cric-nz-ind-t20-2",
+   "sport": "cricket",
+   "home": "New Zealand",
+   "away": "India",
+   "selection": "India",
+   "market": "Match winner",
+   "prob": 0.9264,
+   "price": 1.08,
+   "us": -1259,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "New Zealand Cricket Official Scoring & Fixtures Portal",
+     "url": "https://scoring.nzc.nz/fixtures"
+    },
+    {
+     "name": "ICC Official Men's & Women's Team Rankings",
+     "url": "https://www.icc-cricket.com/rankings"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "aflw-r11-09",
+   "sport": "aussie-rules",
+   "home": "St Kilda",
+   "away": "Brisbane Lions",
+   "selection": "Brisbane Lions",
+   "market": "Match winner",
+   "prob": 0.9074,
+   "price": 1.1,
+   "us": -980,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 10 Ladder",
+     "url": "https://www.afl.com.au/aflw/ladder"
+    },
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 11 Fixture",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "mlb-849804",
+   "sport": "baseball",
+   "home": "Tampa Bay Rays",
+   "away": "Milwaukee Brewers",
+   "selection": "Tampa Bay Rays",
+   "market": "Match winner",
+   "prob": 0.898,
+   "price": 1.11,
+   "us": -880,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "MLB StatsAPI Official 2026 World Series Postseason Feed",
+     "url": "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2026"
+    },
+    {
+     "name": "MLB StatsAPI Official 2026 Standings & Home/Road Splits",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "partial",
+     "partial"
+    ]
+   }
+  },
+  {
+   "id": "mlb-849803",
+   "sport": "baseball",
+   "home": "Tampa Bay Rays",
+   "away": "Milwaukee Brewers",
+   "selection": "Milwaukee Brewers +5.5",
+   "market": "Runs handicap 5.5",
+   "prob": 0.8894,
+   "price": 1.12,
+   "us": -804,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "MLB StatsAPI — 2026 regular-season standings, both leagues — re-read live by session e6716490-olbg1 (2026-10-22T07:40:00Z)",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason",
+     "read": "2026-10-22T07:40:00Z"
+    },
+    {
+     "name": "MLB StatsAPI Official 2026 World Series Postseason Feed",
+     "url": "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2026"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "partial",
+     "partial"
+    ]
+   }
+  },
+  {
+   "id": "rl-wc26-png-sam",
+   "sport": "rugby-league",
+   "home": "Papua New Guinea",
+   "away": "Samoa",
+   "selection": "Samoa",
+   "market": "Match winner",
+   "prob": 0.8812,
+   "price": 1.13,
+   "us": -742,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NRL / RLWC26 Official Round 1 Results",
+     "url": "https://www.nrl.com/draw/?competition=131&round=1&season=2026"
+    },
+    {
+     "name": "NRL / RLWC26 Official Round 2 Draw",
+     "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "ru-top14-609554",
+   "sport": "rugby-union",
+   "home": "Stade Rochelais",
+   "away": "Union Bordeaux-Bègles",
+   "selection": "Union Bordeaux-Bègles +13.5",
+   "market": "Points handicap 13.5",
+   "prob": 0.8643,
+   "price": 1.16,
+   "us": -637,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "LNR Official Top 14 2026-2027 Classement (J6)",
+     "url": "https://top14.lnr.fr/classement"
+    },
+    {
+     "name": "LNR Official J7 Match Sheet",
+     "url": "https://top14.lnr.fr/feuille-de-match/2026-2027/j7/11864-la-rochelle-bordeaux-begles"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "cri-sl-eng-odi3",
+   "sport": "cricket",
+   "home": "Sri Lanka",
+   "away": "England",
+   "selection": "Sri Lanka +30.5",
+   "market": "Runs handicap 30.5",
+   "prob": 0.8453,
+   "price": 1.18,
+   "us": -547,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "PCB official Pakistan-England-Sri Lanka ODI tri-series tournament page (all seven fixtures, venues)",
+     "url": "https://www.pcb.com.pk/pakistan-england-and-sri-lanka-trination-odi-series-202627/tournament/1465.html"
+    },
+    {
+     "name": "PCB official media advisory - 22 October Sri Lanka v England, 1pm PKT, Rawalpindi, plus both squads",
+     "url": "https://www.pcb.com.pk/press-release-detail/media-advisory-men-s-odi-tri-series-pakistan-england-sri-lanka-rawalpindi-leg.html"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "cric-ford-auck-cant",
+   "sport": "cricket",
+   "home": "Auckland Aces",
+   "away": "Canterbury",
+   "selection": "Auckland Aces +30.5",
+   "market": "Runs handicap 30.5",
+   "prob": 0.8453,
+   "price": 1.18,
+   "us": -547,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "New Zealand Cricket Official Scoring & Fixtures Portal",
+     "url": "https://scoring.nzc.nz/fixtures"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "cric-ford-cds-nd",
+   "sport": "cricket",
+   "home": "Central Stags",
+   "away": "Northern Districts",
+   "selection": "Central Stags +30.5",
+   "market": "Runs handicap 30.5",
+   "prob": 0.8453,
+   "price": 1.18,
+   "us": -547,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "New Zealand Cricket Official Scoring & Fixtures Portal",
+     "url": "https://scoring.nzc.nz/fixtures"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "cric-ford-wgtn-otago",
+   "sport": "cricket",
+   "home": "Wellington Firebirds",
+   "away": "Otago Volts",
+   "selection": "Wellington Firebirds +30.5",
+   "market": "Runs handicap 30.5",
+   "prob": 0.8453,
+   "price": 1.18,
+   "us": -547,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "New Zealand Cricket Official Scoring & Fixtures Portal",
+     "url": "https://scoring.nzc.nz/fixtures"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "cri-nam-ire-odi1",
+   "sport": "cricket",
+   "home": "Namibia",
+   "away": "Ireland",
+   "selection": "Namibia +30.5",
+   "market": "Runs handicap 30.5",
+   "prob": 0.8453,
+   "price": 1.18,
+   "us": -547,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Cricket Ireland official tour page - five ODIs in Namibia, 22 October to 1 November, full squad",
+     "url": "https://cricketireland.ie/tour-of-namibia-2026/"
+    },
+    {
+     "name": "Cricket Ireland official tour announcement and squad release",
+     "url": "https://cricketireland.ie/news/africa-bound"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "el-535918",
+   "sport": "basketball",
+   "home": "Anadolu Efes",
+   "away": "Besiktas Istanbul",
+   "selection": "Besiktas Istanbul +10.5",
+   "market": "Points handicap 10.5",
+   "prob": 0.8308,
+   "price": 1.2,
+   "us": -491,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "EuroLeague Official 2026-27 Standings & Game Center",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "name": "EuroLeague official Game Center Round 7 (records, points per game, kick-offs)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    }
+   ],
+   "verification": {
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "partial",
+     "partial"
+    ]
+   }
+  },
+  {
+   "id": "hand-ehf-12049",
+   "sport": "handball",
+   "home": "MT Melsungen",
+   "away": "Orlen Wisla Plock",
+   "selection": "Orlen Wisla Plock",
+   "market": "Match winner",
+   "prob": 0.8286,
+   "price": 1.21,
+   "us": -483,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 Official Group A–F Standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+     "name": "EHF Official Match Centre",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101019/MTMelsungen-OrlenWislaPlock/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "gaa-galway-3532",
+   "sport": "gaelic-football",
+   "home": "Moycullen",
+   "away": "Salthill-Knocknacarra",
+   "selection": "Salthill-Knocknacarra +7.5",
+   "market": "Points handicap 7.5",
+   "prob": 0.8257,
+   "price": 1.21,
+   "us": -474,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Galway GAA Official Senior Football Championship",
+     "url": "https://www.galwaygaa.ie/results/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "gaa-kerry-sfc",
+   "sport": "gaelic-football",
+   "home": "Kenmare Shamrocks",
+   "away": "Dr. Crokes",
+   "selection": "Dr. Crokes +7.5",
+   "market": "Points handicap 7.5",
+   "prob": 0.8257,
+   "price": 1.21,
+   "us": -474,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Munster GAA Official 2026 Club Championships Schedule",
+     "url": "https://munster.gaa.ie/fixtures/club-championships-2026/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "gaa-waterford-3536",
+   "sport": "gaelic-football",
+   "home": "Rathgormack",
+   "away": "The Nire",
+   "selection": "The Nire +7.5",
+   "market": "Points handicap 7.5",
+   "prob": 0.8257,
+   "price": 1.21,
+   "us": -474,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Munster GAA Official 2026 Club Championships Schedule",
+     "url": "https://munster.gaa.ie/fixtures/club-championships-2026/"
+    },
+    {
+     "name": "Waterford GAA official fixtures - Rathgormack v The Nire, 25 October, 14:30, Cappoquin Logistics Fraher Field",
+     "url": "https://www.waterfordgaa.ie/fixtures/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "gaa-cork-3530",
+   "sport": "gaelic-football",
+   "home": "St Finbarrs",
+   "away": "Nemo Rangers",
+   "selection": "Nemo Rangers +7.5",
+   "market": "Points handicap 7.5",
+   "prob": 0.8257,
+   "price": 1.21,
+   "us": -474,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Cork GAA Official Premier Senior Football Championship",
+     "url": "https://gaacork.ie/fixtures-results/"
+    },
+    {
+     "name": "Munster GAA Official 2026 Club Championships Schedule",
+     "url": "https://munster.gaa.ie/fixtures/club-championships-2026/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "gaa-cork-safc-final",
+   "sport": "gaelic-football",
+   "home": "Eire Og",
+   "away": "Kanturk",
+   "selection": "Kanturk +7.5",
+   "market": "Points handicap 7.5",
+   "prob": 0.8257,
+   "price": 1.21,
+   "us": -474,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Cork GAA official fixtures - Senior 'A' Football Championship Final, Eire Og v Kanturk, 1 November, 14:00, SuperValu Pairc Ui Chaoimh, referee James Regan",
+     "url": "https://gaacork.ie/fixtures/"
+    },
+    {
+     "name": "Cork GAA official championship weekend round-up (semi-final scores for Nemo Rangers and St Finbarr's)",
+     "url": "https://gaacork.ie/2026-10-11/mccarthy-insurance-group-club-championship-weekend-round-up/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "gaa-lim-sfc-final",
+   "sport": "gaelic-football",
+   "home": "Fr Caseys",
+   "away": "Kildimo Pallaskenry",
+   "selection": "Kildimo Pallaskenry +7.5",
+   "market": "Points handicap 7.5",
+   "prob": 0.8257,
+   "price": 1.21,
+   "us": -474,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Limerick GAA official results - senior football championship semi-finals, 17 October (Kildimo/Pallaskenry 2-16 Mungret/St Pauls 0-20 AET; Fr Caseys 3-12 Monaleen 1-06)",
+     "url": "https://limerickgaa.ie/limerick-gaa-saturday-club-results-32/"
+    },
+    {
+     "name": "Limerick GAA official semi-final fixture notice - venues, times and referee",
+     "url": "https://limerickgaa.ie/senior-football-fixtures/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "gaa-gal-sfc-final",
+   "sport": "gaelic-football",
+   "home": "Maigh Cuilinn",
+   "away": "Salthill-Knocknacarra",
+   "selection": "Salthill-Knocknacarra +7.5",
+   "market": "Points handicap 7.5",
+   "prob": 0.8257,
+   "price": 1.21,
+   "us": -474,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Maigh Cuilinn (Moycullen) official club site - Galway Senior Football Championship Final, 7pm Saturday 24 October, Pearse Stadium",
+     "url": "https://www.maighcuilinn.com/"
+    },
+    {
+     "name": "Maigh Cuilinn official club report - county semi-final, Maigh Cuilinn 4-26 Annaghdown 0-8, Dessie Conneely personal tally",
+     "url": "https://www.maighcuilinn.com/stellar-performance-against-annaghdown-sets-up-repeat-county-final/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "hand-ehf-12051",
+   "sport": "handball",
+   "home": "OTP Bank - PICK Szeged",
+   "away": "GOG",
+   "selection": "GOG +5.5",
+   "market": "Goals handicap 5.5",
+   "prob": 0.822,
+   "price": 1.22,
+   "us": -462,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 Official Group A–F Standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+     "name": "EHF Official Match Centre",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101043/OTPBankPICKSzeged-GOG/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "aflw-r11-03",
+   "sport": "aussie-rules",
+   "home": "Western Bulldogs",
+   "away": "Melbourne",
+   "selection": "Melbourne +22.5",
+   "market": "Points handicap 22.5",
+   "prob": 0.8212,
+   "price": 1.22,
+   "us": -459,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 10 Ladder",
+     "url": "https://www.afl.com.au/aflw/ladder"
+    },
+    {
+     "name": "AFL Official 2026 NAB AFLW Round 11 Fixture",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "prod2-j8-mont-oyo",
+   "sport": "rugby-union",
+   "home": "US Montauban",
+   "away": "Oyonnax Rugby",
+   "selection": "Oyonnax Rugby +10.5",
+   "market": "Points handicap 10.5",
+   "prob": 0.8092,
+   "price": 1.24,
+   "us": -424,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "LNR official Pro D2 round 8 calendar (Montauban v Oyonnax, Thursday 22 October, 21h00)",
+     "url": "https://prod2.lnr.fr/calendrier-et-resultats"
+    },
+    {
+     "name": "LNR official Oyonnax club page - Pro D2 table after round 7 and published match probabilities",
+     "url": "https://prod2.lnr.fr/club/oyonnax"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "nba-0022600006",
+   "sport": "basketball",
+   "home": "Philadelphia 76ers",
+   "away": "Cleveland Cavaliers",
+   "selection": "Cleveland Cavaliers +10.5",
+   "market": "Points handicap 10.5",
+   "prob": 0.8092,
+   "price": 1.24,
+   "us": -424,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "NBA.com official games page for 2026-10-22 (matchups, ET start, game ids)",
+     "url": "https://www.nba.com/games?date=2026-10-22"
+    },
+    {
+     "name": "NBA.com official 2026-27 standings (W-L, home/road, streak, last 10)",
+     "url": "https://www.nba.com/standings"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "ru-urc-609577",
+   "sport": "rugby-union",
+   "home": "Connacht",
+   "away": "Zebre Parma",
+   "selection": "Zebre Parma +10.5",
+   "market": "Points handicap 10.5",
+   "prob": 0.8092,
+   "price": 1.24,
+   "us": -424,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "United Rugby Championship Official 2026/27 Fixtures",
+     "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "ru-gloucester-bath",
+   "sport": "rugby-union",
+   "home": "Gloucester",
+   "away": "Bath",
+   "selection": "Bath +10.5",
+   "market": "Points handicap 10.5",
+   "prob": 0.8092,
+   "price": 1.24,
+   "us": -424,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Gallagher Premiership Official Standings & Fixtures",
+     "url": "https://www.premrugby.com/fixtures-results"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "ru-newcastle-sale",
+   "sport": "rugby-union",
+   "home": "Newcastle Red Bulls",
+   "away": "Sale Sharks",
+   "selection": "Sale Sharks +10.5",
+   "market": "Points handicap 10.5",
+   "prob": 0.8092,
+   "price": 1.24,
+   "us": -424,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Gallagher Premiership Official Standings & Fixtures",
+     "url": "https://www.premrugby.com/fixtures-results"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "ru-urc-609576",
+   "sport": "rugby-union",
+   "home": "Vodacom Bulls",
+   "away": "Ulster",
+   "selection": "Ulster +10.5",
+   "market": "Points handicap 10.5",
+   "prob": 0.8092,
+   "price": 1.24,
+   "us": -424,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "United Rugby Championship Official 2026/27 Fixtures",
+     "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "ru-urc-609580",
+   "sport": "rugby-union",
+   "home": "DHL Stormers",
+   "away": "Scarlets",
+   "selection": "Scarlets +10.5",
+   "market": "Points handicap 10.5",
+   "prob": 0.8092,
+   "price": 1.24,
+   "us": -424,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "United Rugby Championship Official 2026/27 Fixtures",
+     "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "ru-bristol-exeter",
+   "sport": "rugby-union",
+   "home": "Bristol Bears",
+   "away": "Exeter Chiefs",
+   "selection": "Exeter Chiefs +10.5",
+   "market": "Points handicap 10.5",
+   "prob": 0.8092,
+   "price": 1.24,
+   "us": -424,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Gallagher Premiership Official Standings & Fixtures",
+     "url": "https://www.premrugby.com/fixtures-results"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "ru-leicester-northampton",
+   "sport": "rugby-union",
+   "home": "Leicester Tigers",
+   "away": "Northampton Saints",
+   "selection": "Northampton Saints +10.5",
+   "market": "Points handicap 10.5",
+   "prob": 0.8092,
+   "price": 1.24,
+   "us": -424,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Gallagher Premiership Official Standings & Fixtures",
+     "url": "https://www.premrugby.com/fixtures-results"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "ru-urc-609578",
+   "sport": "rugby-union",
+   "home": "Leinster",
+   "away": "Munster",
+   "selection": "Munster +10.5",
+   "market": "Points handicap 10.5",
+   "prob": 0.8092,
+   "price": 1.24,
+   "us": -424,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "United Rugby Championship Official 2026/27 Fixtures",
+     "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "ru-harlequins-saracens",
+   "sport": "rugby-union",
+   "home": "Harlequins",
+   "away": "Saracens",
+   "selection": "Saracens +10.5",
+   "market": "Points handicap 10.5",
+   "prob": 0.8092,
+   "price": 1.24,
+   "us": -424,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "Gallagher Premiership Official Standings & Fixtures",
+     "url": "https://www.premrugby.com/fixtures-results"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "984d417f-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  },
+  {
+   "id": "rlwc26w-nzl-fra",
+   "sport": "rugby-league",
+   "home": "New Zealand (Women)",
+   "away": "France (Women)",
+   "selection": "France (Women) +10.5",
+   "market": "Points handicap 10.5",
+   "prob": 0.8092,
+   "price": 1.24,
+   "us": -424,
+   "reason": "fair price shorter than -250, so outside the brief's window",
+   "sources": [
+    {
+     "name": "IRL official fixtures and results - RLWC2026 Round 2 (Tonga v Lebanon 23 Oct, England v France 24 Oct, Australia v England 24 Oct, New Zealand v France 25 Oct)",
+     "url": "https://www.intrl.sport/fixtures-results"
+    }
+   ],
+   "verification": {
+    "status": "carried",
+    "pass": "f71557b5-olbg1 register read 2026-10-22",
+    "sides_checked": [],
+    "results": []
+   }
+  }
+ ]
+}

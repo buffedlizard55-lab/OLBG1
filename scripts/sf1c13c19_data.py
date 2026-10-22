@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """sf1c13c19_data.py - build the f1c13c19 desk's verified fixture dataset.
 
-Session: arena/f1c13c19-olbg1 (T56).  Harvested OLBG live on 2026-10-22 ~07:27-07:45 UTC
+Session: arena/f1c13c19-olbg1 (T57).  Harvested OLBG live on 2026-10-22 ~07:27-07:45 UTC
 via Arena fetch_page (17 in-scope hubs).  Every row below was verified line-by-line
 against official sources this session; verification metadata travels with each event.
 
@@ -164,7 +164,7 @@ for id_, h, hr, hrt, a, ar, art, st, ven, tips, clock, neut, fl in EL:
        olbg={"hub": "Basketball/4", "clock": clock, "tips": tips}, neutral=neut, flags=fl)
 
 json_out = {
-    "desk": "f1c13c19", "task": "T56", "built_utc": NOW,
+    "desk": "f1c13c19", "task": "T57", "built_utc": NOW,
     "harvest_window": "OLBG hubs fetched 2026-10-22T07:27-07:45Z (Arena fetch_page)",
     "events": EVENTS,
 }

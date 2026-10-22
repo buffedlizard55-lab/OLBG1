@@ -1,0 +1,1949 @@
+{
+ "cutoff_utc": "2026-10-22T07:30:00Z",
+ "items": [
+  {
+   "kind": "systemic",
+   "match_id": "olbg-clock-display",
+   "match": "OLBG hub clock vs official UTC",
+   "detail": "OLBG's basketball hub read on 2026-10-22 shows Maccabi Tel Aviv vs Real Madrid at 'Today 14:05' and Panathinaikos vs Baskonia at 'Today 14:15' with no timezone label; the stored official tip-offs are 18:05Z and 18:15Z (EDT display, UTC-4). Readers should not treat OLBG card times as UTC.",
+   "sources": [
+    {
+     "name": "OLBG basketball hub (live, read 2026-10-22)",
+     "url": "https://www.olbg.com/betting-tips/Basketball/4"
+    },
+    {
+     "name": "EuroLeague official game center",
+     "url": "https://www.euroleaguebasketball.net/euroleague/game-center/"
+    }
+   ]
+  },
+  {
+   "kind": "systemic",
+   "match_id": "root-high-prose-arithmetic",
+   "match": "Root-desk expired High prose: Buffalo Sabres v Philadelphia Flyers (21 Oct, expired here)",
+   "detail": "The root prediction text says 'A fourteen-goal swing in goal differential' while its own stored inputs are Buffalo -7 and Philadelphia -19, a 12-goal swing (also noted by sessions T56/PR #76). The fixture is expired at this desk's cutoff so no live pick is affected; the root text itself is not edited from this namespace \u2014 flagged for the root desk owner.",
+   "sources": [
+    {
+     "name": "NHL official standings API (2026-10-20)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-20"
+    },
+    {
+     "name": "NHL.com Gamecenter #2026020152",
+     "url": "https://www.nhl.com/gamecenter/2026020152"
+    }
+   ]
+  },
+  {
+   "kind": "corrected-on-recheck",
+   "match_id": "cric-ausw-nzw-t20-3",
+   "match": "Australia Women v New Zealand Women",
+   "detail": "NZC official fixtures list Australia Women v WHITE FERNS, 3rd T20I, Thu 22 Oct, North Sydney Oval, Sydney \u2014 fixture and venue confirmed. ICC women's T20I team rankings now read Australia No. 1 (292) and New Zealand No. 4 (248); stored points (287 / 253) corrected in the labels. The root 0-100 model ratings are retained because no points-to-rating formula is published; disclosed here.",
+   "sources": [
+    {
+     "name": "ICC official rankings",
+     "url": "https://www.icc-cricket.com/rankings"
+    },
+    {
+     "name": "NZC official fixtures (scoring.nzc.nz)",
+     "url": "https://scoring.nzc.nz/fixtures"
+    }
+   ]
+  },
+  {
+   "kind": "corrected-on-recheck",
+   "match_id": "hand-ehf-12049",
+   "match": "MT Melsungen v Orlen Wisla Plock",
+   "detail": "EHF Group B: Orlen Wisla Plock 1st, 3-0-1, 6 pts \u2014 stored correct; MT Melsungen 3rd but 2-0-2 with 4 pts (110:112), not the stored 1-0-3 (2 pts). Record corrected in the label; hand rating retained (no published mapping) and disclosed.",
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-01",
+   "match": "Luke Woodhouse v Dirk van Duijvenbode",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "corrected-on-recheck",
+   "match_id": "el-535918",
+   "match": "Anadolu Efes v Besiktas",
+   "detail": "Root desk stored no ratings for this row (unrated). EuroLeague official standings read this session: Anadolu Efes Istanbul 2-4 (.333, -18); Besiktas Istanbul 3-3 (.500, -1). Ratings added as official win% (33.3 / 50.0), the same definition the other EuroLeague rows use, so the match is now priced on measured inputs.",
+   "sources": [
+    {
+     "name": "EuroLeague official standings 2026-27",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-02",
+   "match": "Danny Noppert v Stephen Bunting",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "corrected-on-recheck",
+   "match_id": "el-535921",
+   "match": "Maccabi Tel Aviv v Real Madrid",
+   "detail": "EuroLeague official standings (2026-27, read 2026-10-22): Maccabi Rapyd Tel Aviv 2-4 (.333, -31) \u2014 stored correct; Real Madrid 3-3 (.500, +23, away 1-3) \u2014 stored 4-2 (.667) is wrong/stale. Away rating corrected 66.7 -> 50.0 and re-priced. OLBG's basketball hub independently lists this fixture today as event 535921 (Real Madrid, Money Line, 4/6 win tips).",
+   "sources": [
+    {
+     "name": "EuroLeague official standings 2026-27",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    }
+   ]
+  },
+  {
+   "kind": "corrected-on-recheck",
+   "match_id": "el-535923",
+   "match": "Panathinaikos v Baskonia",
+   "detail": "EuroLeague official standings: Panathinaikos AKTOR Athens 1st, 5-1 (.833, 528-438, +90, home 4-1) \u2014 stored 4-2 corrected; Kosner Baskonia Vitoria-Gasteiz 20th, 1-5 (.167, 504-564, -60, away 0-2) \u2014 stored 2-4 corrected. Ratings corrected 66.7 -> 83.3 and 33.3 -> 16.7 (rating = official win%). OLBG hub lists the game today as event 535923 (Panathinaikos, Money Line, 4/6).",
+   "sources": [
+    {
+     "name": "EuroLeague official standings 2026-27",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-03",
+   "match": "Niels Zonneveld v Cameron Menzies",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-04",
+   "match": "Gerwyn Price v Rob Cross",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "hand-ehf-12054",
+   "match": "Sporting CP v IFK Kristianstad",
+   "detail": "EHF Group D table was read (Sporting Clube de Portugal 1st, 3-1-0, 7 pts, 149:125; IFK Kristianstad 4th, 0-0-4, 0 pts, 122:155) but the root row carries no ratings and publishes no record-to-rating mapping for handball, so no rating was invented. Row stays unrated / Low; the official table is linked for manual review.",
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 official standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+     "name": "EHF official 2026/27 group phase playing times PDF",
+     "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"
+    },
+    {
+     "name": "EHF official Round 5 match preview",
+     "url": "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins"
+    }
+   ]
+  },
+  {
+   "kind": "corrected-on-recheck",
+   "match_id": "hand-ehf-12046",
+   "match": "Bar\u00e7a v Montpellier Handball",
+   "detail": "EHF Group E: Bar\u00e7a 1st, 4-0-0, 137:104 (+33), 8 pts \u2014 stored correct. Montpellier Handball are 4th (not 3rd as stored; Dinamo Bucuresti are 3rd on 3 pts from 5 games), 1-0-3, 116:125 (-9), 2 pts \u2014 record/points/GD stored correctly, position corrected. The stored 28:27 head-to-head score was not on the page read and is not used. No hand-rating formula is published by the root desk, so ratings are retained and the corrected position is disclosed here.",
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-05",
+   "match": "James Wade v Damon Heta",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-06",
+   "match": "Luke Humphries v Ryan Searle",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-07",
+   "match": "Gian van Veen v Andrew Gilding",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-08",
+   "match": "Ross Smith v Karel Sedlacek",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "corrected-on-recheck",
+   "match_id": "nhl-2026020160",
+   "match": "St. Louis Blues v Vegas Golden Knights",
+   "detail": "NHL schedule API lists game 2026020160 as Vegas Golden Knights @ St. Louis Blues, Enterprise Center, 2026-10-23T00:00:00Z, FUT. Standings 2026-10-20 (standingsDateTimeUtc 2026-10-22T07:32:20Z on re-read): St. Louis Blues 4-4-1, .500 (stored correct); Vegas Golden Knights 8-3-0, .727, GD +14, streak L1 \u2014 the stored 8-2-0 / .800 / W3 snapshot is superseded (root desk already disclosed this drift). Away rating corrected 80.0 -> 72.7 and the match re-priced.",
+   "sources": [
+    {
+     "name": "NHL official schedule API (2026-10-22)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    },
+    {
+     "name": "NHL official standings API (2026-10-20)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-20"
+    }
+   ]
+  },
+  {
+   "kind": "corrected-on-recheck",
+   "match_id": "rl-wc26w-sam-wal",
+   "match": "Samoa Women v Wales Women",
+   "detail": "NRL women's RLWC26 Round 2 draw lists Samoa vs Wales, Friday 23 October, CommBank Stadium, Sydney. IRL official world rankings read live this session; stored ranks/ratings superseded: Samoa Women: stored 'No. 5' (hand rating 70.0) -> IRL live No. 5 (22%), rating := 22; Wales Women: stored 'No. 7 (lost 6-70 to England W in R1)' (hand rating 51.0) -> IRL live No. 9 (17%), rating := 17. Stored R1 scorelines in the old labels were not on the pages read and are not used.",
+   "sources": [
+    {
+     "name": "IRL official world rankings",
+     "url": "https://www.intrl.sport/world-rankings"
+    },
+    {
+     "name": "NRL official RLWC26 draw (Round 2)",
+     "url": "https://www.nrl.com/draw/womens-rugby-league-world-cup/2026/round-2/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "aflw-r11-07",
+   "match": "Port Adelaide v Collingwood",
+   "detail": "The official AFLW ladder (afl.com.au/aflw/ladder) is client-rendered: both fetched chunks returned the page shell with no ladder rows on 2026-10-22, so neither positions nor points could be re-read (pre-existing root finding F-T34-01 also questions the stored ladder). Rows are not-rechecked and capped below High.",
+   "sources": [
+    {
+     "name": "AFL official 2026 NAB AFLW fixture & ladder",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ]
+  },
+  {
+   "kind": "corrected-on-recheck",
+   "match_id": "rl-wc26-tga-lbn",
+   "match": "Tonga v Lebanon",
+   "detail": "NRL official RLWC26 Round 2 draw lists Tonga vs Lebanon, Friday 23 October, CommBank Stadium, Sydney. IRL official world rankings read live this session; stored ranks/ratings superseded: Tonga: stored 'No. 5' (hand rating 77.0) -> IRL live No. 5 (54%), rating := 54; Lebanon: stored 'No. 11' (hand rating 56.0) -> IRL live No. 23 (7%), rating := 7. Stored R1 scorelines in the old labels were not on the pages read and are not used.",
+   "sources": [
+    {
+     "name": "IRL official world rankings",
+     "url": "https://www.intrl.sport/world-rankings"
+    },
+    {
+     "name": "NRL official RLWC26 draw (Round 2)",
+     "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "vol-plus-36963",
+   "match": "Slepsk Malow Suwalki v GKS Katowice",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "PlusLiga official 2026/27 schedule",
+     "url": "https://www.plusliga.pl/games.html"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-09",
+   "match": "Ryan Joyce v Jermaine Wattimena",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-10",
+   "match": "Krzysztof Ratajski v Dave Chisnall",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-11",
+   "match": "Nathan Aspinall v Cristo Reyes",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-12",
+   "match": "Jonny Clayton v Niko Springer",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "ru-urc-609577",
+   "match": "Connacht v Zebre Parma",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "United Rugby Championship official 2026/27 fixtures",
+     "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "ru-gloucester-bath",
+   "match": "Gloucester v Bath",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "Gallagher Premiership official fixtures hub",
+     "url": "https://www.premrugby.com/fixtures-results"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "ru-newcastle-sale",
+   "match": "Newcastle Red Bulls v Sale Sharks",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "Gallagher Premiership official fixtures hub",
+     "url": "https://www.premrugby.com/fixtures-results"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-13",
+   "match": "Luke Littler v William O'Connor",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-14",
+   "match": "Wessel Nijman v Martin Schindler",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-15",
+   "match": "Kevin Doets v Michael van Gerwen",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "pdc-ec-16",
+   "match": "Josh Rock v Chris Dobey",
+   "detail": "PDC official draw page returned only its cookie-consent wall in every fetched chunk (7/7) on 2026-10-22; seeds and pairings could not be re-read. Rows retain their recorded PDC source link, are marked not-rechecked, and are capped below High.",
+   "sources": [
+    {
+     "name": "PDC official 2026 European Championship draw & schedule",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "PDC tournament calendar",
+     "url": "https://www.pdc.tv/tournaments/calendar"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "mlb-849805",
+   "match": "Milwaukee Brewers v Tampa Bay Rays",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "MLB StatsAPI schedule (2026 World Series)",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30"
+    },
+    {
+     "name": "MLB StatsAPI 2026 standings & home/road splits",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"
+    },
+    {
+     "name": "MLB official 2026 postseason schedule & results",
+     "url": "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2026"
+    },
+    {
+     "name": "MLB.com Gameday #849805",
+     "url": "https://www.mlb.com/gameday/849805"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "aflw-r11-09",
+   "match": "St Kilda v Brisbane Lions",
+   "detail": "The official AFLW ladder (afl.com.au/aflw/ladder) is client-rendered: both fetched chunks returned the page shell with no ladder rows on 2026-10-22, so neither positions nor points could be re-read (pre-existing root finding F-T34-01 also questions the stored ladder). Rows are not-rechecked and capped below High.",
+   "sources": [
+    {
+     "name": "AFL official 2026 NAB AFLW fixture & ladder",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "aflw-r11-02",
+   "match": "Geelong Cats v Fremantle",
+   "detail": "The official AFLW ladder (afl.com.au/aflw/ladder) is client-rendered: both fetched chunks returned the page shell with no ladder rows on 2026-10-22, so neither positions nor points could be re-read (pre-existing root finding F-T34-01 also questions the stored ladder). Rows are not-rechecked and capped below High.",
+   "sources": [
+    {
+     "name": "AFL official 2026 NAB AFLW fixture & ladder",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ]
+  },
+  {
+   "kind": "corrected-on-recheck",
+   "match_id": "rl-wc26-png-sam",
+   "match": "Papua New Guinea v Samoa",
+   "detail": "NRL draw lists Papua New Guinea vs Samoa, Saturday 24 October, Santos National Football Stadium, Port Moresby. IRL official world rankings read live this session; stored ranks/ratings superseded: Papua New Guinea: stored 'No. 6' (hand rating 68.0) -> IRL live No. 6 (47%), rating := 47; Samoa: stored 'No. 4 (beat France 78-4 in R1)' (hand rating 80.0) -> IRL live No. 4 (56%), rating := 56. Stored R1 scorelines in the old labels were not on the pages read and are not used.",
+   "sources": [
+    {
+     "name": "IRL official world rankings",
+     "url": "https://www.intrl.sport/world-rankings"
+    },
+    {
+     "name": "NRL official RLWC26 draw (Round 2)",
+     "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "aflw-r11-06",
+   "match": "Gold Coast SUNS v Richmond",
+   "detail": "The official AFLW ladder (afl.com.au/aflw/ladder) is client-rendered: both fetched chunks returned the page shell with no ladder rows on 2026-10-22, so neither positions nor points could be re-read (pre-existing root finding F-T34-01 also questions the stored ladder). Rows are not-rechecked and capped below High.",
+   "sources": [
+    {
+     "name": "AFL official 2026 NAB AFLW fixture & ladder",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ]
+  },
+  {
+   "kind": "corrected-on-recheck",
+   "match_id": "rl-wc26-eng-fra",
+   "match": "England v France",
+   "detail": "NRL draw lists England vs France, Saturday 24 October, HBF Park, Perth. IRL official world rankings read live this session; stored ranks/ratings superseded: England: stored 'No. 3' (hand rating 84.0) -> IRL live No. 3 (70%), rating := 70; France: stored 'No. 8 (lost 4-78 to Samoa in R1)' (hand rating 50.0) -> IRL live No. 11 (21%), rating := 21. Stored R1 scorelines in the old labels were not on the pages read and are not used.",
+   "sources": [
+    {
+     "name": "IRL official world rankings",
+     "url": "https://www.intrl.sport/world-rankings"
+    },
+    {
+     "name": "NRL official RLWC26 draw (Round 2)",
+     "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "aflw-r11-03",
+   "match": "Western Bulldogs v Melbourne",
+   "detail": "The official AFLW ladder (afl.com.au/aflw/ladder) is client-rendered: both fetched chunks returned the page shell with no ladder rows on 2026-10-22, so neither positions nor points could be re-read (pre-existing root finding F-T34-01 also questions the stored ladder). Rows are not-rechecked and capped below High.",
+   "sources": [
+    {
+     "name": "AFL official 2026 NAB AFLW fixture & ladder",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ]
+  },
+  {
+   "kind": "corrected-on-recheck",
+   "match_id": "rl-wc26w-aus-eng",
+   "match": "Australia Jillaroos v England Women",
+   "detail": "NRL women's draw lists Australia vs England, Saturday 24 October, HBF Park, Perth. IRL official world rankings read live this session; stored ranks/ratings superseded: Australia Jillaroos: stored 'No. 1' (hand rating 92.0) -> IRL live No. 1 (100%), rating := 100; England Women: stored 'No. 2 (beat Wales 70-6 in R1)' (hand rating 82.0) -> IRL live No. 3 (40%), rating := 40. Stored R1 scorelines in the old labels were not on the pages read and are not used.",
+   "sources": [
+    {
+     "name": "IRL official world rankings",
+     "url": "https://www.intrl.sport/world-rankings"
+    },
+    {
+     "name": "NRL official RLWC26 draw (Round 2)",
+     "url": "https://www.nrl.com/draw/womens-rugby-league-world-cup/2026/round-2/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "ru-urc-609576",
+   "match": "Vodacom Bulls v Ulster",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "United Rugby Championship official 2026/27 fixtures",
+     "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "ru-urc-609580",
+   "match": "DHL Stormers v Scarlets",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "United Rugby Championship official 2026/27 fixtures",
+     "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "ru-leicester-northampton",
+   "match": "Leicester Tigers v Northampton Saints",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "Gallagher Premiership official fixtures hub",
+     "url": "https://www.premrugby.com/fixtures-results"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "ru-bristol-exeter",
+   "match": "Bristol Bears v Exeter Chiefs",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "Gallagher Premiership official fixtures hub",
+     "url": "https://www.premrugby.com/fixtures-results"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "vol-plus-36964",
+   "match": "PGE GiEK Skra Belchatow v PGE Projekt Warszawa",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "PlusLiga official 2026/27 schedule",
+     "url": "https://www.plusliga.pl/games.html"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "ru-urc-609578",
+   "match": "Leinster v Munster",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "United Rugby Championship official 2026/27 fixtures",
+     "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "gaa-galway-3532",
+   "match": "Moycullen v Salthill-Knocknacarra",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "Galway GAA official Senior Football Championship fixtures",
+     "url": "https://www.galwaygaa.ie/results/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "mlb-849802",
+   "match": "Milwaukee Brewers v Tampa Bay Rays",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "MLB StatsAPI schedule (2026 World Series)",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30"
+    },
+    {
+     "name": "MLB StatsAPI 2026 standings & home/road splits",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"
+    },
+    {
+     "name": "MLB official 2026 postseason schedule & results",
+     "url": "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2026"
+    },
+    {
+     "name": "MLB.com Gameday #849802",
+     "url": "https://www.mlb.com/gameday/849802"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "aflw-r11-08",
+   "match": "Sydney Swans v West Coast Eagles",
+   "detail": "The official AFLW ladder (afl.com.au/aflw/ladder) is client-rendered: both fetched chunks returned the page shell with no ladder rows on 2026-10-22, so neither positions nor points could be re-read (pre-existing root finding F-T34-01 also questions the stored ladder). Rows are not-rechecked and capped below High.",
+   "sources": [
+    {
+     "name": "AFL official 2026 NAB AFLW fixture & ladder",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "aflw-r11-01",
+   "match": "North Melbourne v Adelaide Crows",
+   "detail": "The official AFLW ladder (afl.com.au/aflw/ladder) is client-rendered: both fetched chunks returned the page shell with no ladder rows on 2026-10-22, so neither positions nor points could be re-read (pre-existing root finding F-T34-01 also questions the stored ladder). Rows are not-rechecked and capped below High.",
+   "sources": [
+    {
+     "name": "AFL official 2026 NAB AFLW fixture & ladder",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "aflw-r11-05",
+   "match": "Hawthorn v Essendon",
+   "detail": "The official AFLW ladder (afl.com.au/aflw/ladder) is client-rendered: both fetched chunks returned the page shell with no ladder rows on 2026-10-22, so neither positions nor points could be re-read (pre-existing root finding F-T34-01 also questions the stored ladder). Rows are not-rechecked and capped below High.",
+   "sources": [
+    {
+     "name": "AFL official 2026 NAB AFLW fixture & ladder",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ]
+  },
+  {
+   "kind": "corrected-on-recheck",
+   "match_id": "rl-wc26-nzl-cok",
+   "match": "New Zealand v Cook Islands",
+   "detail": "NRL draw lists New Zealand vs Cook Islands, Sunday 25 October, One NZ Stadium, Christchurch. IRL official world rankings read live this session; stored ranks/ratings superseded: New Zealand: stored 'No. 2 (narrow 22-24 loss to AUS in opener)' (hand rating 89.0) -> IRL live No. 2 (82%), rating := 82; Cook Islands: stored 'No. 9' (hand rating 56.0) -> IRL live No. 8 (24%), rating := 24. Stored R1 scorelines in the old labels were not on the pages read and are not used.",
+   "sources": [
+    {
+     "name": "IRL official world rankings",
+     "url": "https://www.intrl.sport/world-rankings"
+    },
+    {
+     "name": "NRL official RLWC26 draw (Round 2)",
+     "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "aflw-r11-04",
+   "match": "Carlton v GWS GIANTS",
+   "detail": "The official AFLW ladder (afl.com.au/aflw/ladder) is client-rendered: both fetched chunks returned the page shell with no ladder rows on 2026-10-22, so neither positions nor points could be re-read (pre-existing root finding F-T34-01 also questions the stored ladder). Rows are not-rechecked and capped below High.",
+   "sources": [
+    {
+     "name": "AFL official 2026 NAB AFLW fixture & ladder",
+     "url": "https://www.afl.com.au/aflw"
+    }
+   ]
+  },
+  {
+   "kind": "corrected-on-recheck",
+   "match_id": "rl-wc26-aus-fij",
+   "match": "Australia v Fiji",
+   "detail": "NRL draw lists Australia vs Fiji, Sunday 25 October, Suncorp Stadium, Brisbane. IRL official world rankings read live this session; stored ranks/ratings superseded: Australia: stored 'No. 1 (beat NZ 24-22 R1; 19 straight WC wins)' (hand rating 95.0) -> IRL live No. 1 (100%), rating := 100; Fiji: stored 'No. 7' (hand rating 63.0) -> IRL live No. 7 (34%), rating := 34. Stored R1 scorelines in the old labels were not on the pages read and are not used.",
+   "sources": [
+    {
+     "name": "IRL official world rankings",
+     "url": "https://www.intrl.sport/world-rankings"
+    },
+    {
+     "name": "NRL official RLWC26 draw (Round 2)",
+     "url": "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "gaa-kerry-sfc",
+   "match": "Dr. Crokes v Kenmare Shamrocks",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "Munster GAA official county championship fixtures",
+     "url": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "gaa-waterford-3536",
+   "match": "Rathgormack v The Nire",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "Munster GAA official county championship fixtures",
+     "url": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "ru-harlequins-saracens",
+   "match": "Harlequins v Saracens",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "Gallagher Premiership official fixtures hub",
+     "url": "https://www.premrugby.com/fixtures-results"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "vol-lega-perugia",
+   "match": "Sir Susa Scai Perugia v Tinet Prata di Pordenone",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "Lega Pallavolo Serie A SuperLega Credem Banca calendar",
+     "url": "https://www.legavolley.it/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "gaa-cork-3530",
+   "match": "St Finbarrs v Nemo Rangers",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "Cork GAA official Premier Senior Football fixtures",
+     "url": "https://gaacork.ie/fixtures-results/"
+    },
+    {
+     "name": "Munster GAA official county championship fixtures",
+     "url": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "vol-plus-36965",
+   "match": "InPost ChKS Chelm v Asseco Resovia Rzeszow",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "PlusLiga official 2026/27 schedule",
+     "url": "https://www.plusliga.pl/games.html"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "vol-lega-trentino",
+   "match": "Itas Trentino v Cisterna Volley",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "Lega Pallavolo Serie A SuperLega Credem Banca calendar",
+     "url": "https://www.legavolley.it/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "vol-lega-lube",
+   "match": "Cucine Lube Civitanova v Sonepar Padova",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "Lega Pallavolo Serie A SuperLega Credem Banca calendar",
+     "url": "https://www.legavolley.it/"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "f1-usgp-2026",
+   "match": "United States Grand Prix v ",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "Formula 1 official 2026 United States Grand Prix hub",
+     "url": "https://www.formula1.com/en/racing/2026/united-states"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "mlb-849804",
+   "match": "Tampa Bay Rays v Milwaukee Brewers",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "MLB StatsAPI schedule (2026 World Series)",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30"
+    },
+    {
+     "name": "MLB StatsAPI 2026 standings & home/road splits",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"
+    },
+    {
+     "name": "MLB official 2026 postseason schedule & results",
+     "url": "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2026"
+    },
+    {
+     "name": "MLB.com Gameday #849804",
+     "url": "https://www.mlb.com/gameday/849804"
+    }
+   ]
+  },
+  {
+   "kind": "not-rechecked",
+   "match_id": "mlb-849803",
+   "match": "Tampa Bay Rays v Milwaukee Brewers",
+   "detail": "Not re-fetched in this session: the row's recorded governing-body source from the primary desk is retained and linked, the stored values are published unchanged as a dated snapshot, and the row is capped below High. This session re-read official pages only for the rows listed as confirmed/corrected in verification.json.",
+   "sources": [
+    {
+     "name": "MLB StatsAPI schedule (2026 World Series)",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-30"
+    },
+    {
+     "name": "MLB StatsAPI 2026 standings & home/road splits",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"
+    },
+    {
+     "name": "MLB official 2026 postseason schedule & results",
+     "url": "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2026"
+    },
+    {
+     "name": "MLB.com Gameday #849803",
+     "url": "https://www.mlb.com/gameday/849803"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "nhl-2026020152",
+   "match": "Buffalo Sabres v Philadelphia Flyers",
+   "detail": "Stored start 2026-10-21T23:30:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "NHL official schedule API (2026-10-21..22)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+    },
+    {
+     "name": "NHL official standings API (2026-10-20)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-20"
+    },
+    {
+     "name": "NHL.com Gamecenter #2026020152",
+     "url": "https://www.nhl.com/gamecenter/2026020152"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "nhl-2026020153",
+   "match": "Ottawa Senators v Florida Panthers",
+   "detail": "Stored start 2026-10-21T23:30:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "NHL official schedule API (2026-10-21..22)",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
+    },
+    {
+     "name": "NHL official standings API (2026-10-20)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-20"
+    },
+    {
+     "name": "NHL.com Gamecenter #2026020153",
+     "url": "https://www.nhl.com/gamecenter/2026020153"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "nba-0022600085",
+   "match": "Orlando Magic v Atlanta Hawks",
+   "detail": "Stored start 2026-10-21T23:00:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "NBA.com official schedule (2026-10-21)",
+     "url": "https://www.nba.com/games?date=2026-10-21"
+    },
+    {
+     "name": "NBA.com official standings (2025-26 prior-season benchmark)",
+     "url": "https://www.nba.com/standings"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "nba-0022600086",
+   "match": "Washington Wizards v Milwaukee Bucks",
+   "detail": "Stored start 2026-10-21T23:00:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "NBA.com official schedule (2026-10-21)",
+     "url": "https://www.nba.com/games?date=2026-10-21"
+    },
+    {
+     "name": "NBA.com official standings (2025-26 prior-season benchmark)",
+     "url": "https://www.nba.com/standings"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "nba-0022600004",
+   "match": "Miami Heat v Minnesota Timberwolves",
+   "detail": "Stored start 2026-10-21T23:30:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "NBA.com official schedule (2026-10-21)",
+     "url": "https://www.nba.com/games?date=2026-10-21"
+    },
+    {
+     "name": "NBA.com official standings (2025-26 prior-season benchmark)",
+     "url": "https://www.nba.com/standings"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "nba-0022600087",
+   "match": "Brooklyn Nets v Charlotte Hornets",
+   "detail": "Stored start 2026-10-21T23:30:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "NBA.com official schedule (2026-10-21)",
+     "url": "https://www.nba.com/games?date=2026-10-21"
+    },
+    {
+     "name": "NBA.com official standings (2025-26 prior-season benchmark)",
+     "url": "https://www.nba.com/standings"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "nba-0022600088",
+   "match": "Toronto Raptors v Chicago Bulls",
+   "detail": "Stored start 2026-10-21T23:30:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "NBA.com official schedule (2026-10-21)",
+     "url": "https://www.nba.com/games?date=2026-10-21"
+    },
+    {
+     "name": "NBA.com official standings (2025-26 prior-season benchmark)",
+     "url": "https://www.nba.com/standings"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "nba-0022600090",
+   "match": "New Orleans Pelicans v Indiana Pacers",
+   "detail": "Stored start 2026-10-22T00:00:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "NBA.com official schedule (2026-10-21)",
+     "url": "https://www.nba.com/games?date=2026-10-21"
+    },
+    {
+     "name": "NBA.com official standings (2025-26 prior-season benchmark)",
+     "url": "https://www.nba.com/standings"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "nba-0022600089",
+   "match": "Memphis Grizzlies v Utah Jazz",
+   "detail": "Stored start 2026-10-22T00:00:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "NBA.com official schedule (2026-10-21)",
+     "url": "https://www.nba.com/games?date=2026-10-21"
+    },
+    {
+     "name": "NBA.com official standings (2025-26 prior-season benchmark)",
+     "url": "https://www.nba.com/standings"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "nba-0022600091",
+   "match": "Houston Rockets v Dallas Mavericks",
+   "detail": "Stored start 2026-10-22T00:30:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "NBA.com official schedule (2026-10-21)",
+     "url": "https://www.nba.com/games?date=2026-10-21"
+    },
+    {
+     "name": "NBA.com official standings (2025-26 prior-season benchmark)",
+     "url": "https://www.nba.com/standings"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "nba-0022600005",
+   "match": "Los Angeles Lakers v Golden State Warriors",
+   "detail": "Stored start 2026-10-22T02:00:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "NBA.com official schedule (2026-10-21)",
+     "url": "https://www.nba.com/games?date=2026-10-21"
+    },
+    {
+     "name": "NBA.com official standings (2025-26 prior-season benchmark)",
+     "url": "https://www.nba.com/standings"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "nba-0022600092",
+   "match": "Portland Trail Blazers v Phoenix Suns",
+   "detail": "Stored start 2026-10-22T02:00:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "NBA.com official schedule (2026-10-21)",
+     "url": "https://www.nba.com/games?date=2026-10-21"
+    },
+    {
+     "name": "NBA.com official standings (2025-26 prior-season benchmark)",
+     "url": "https://www.nba.com/standings"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "nba-sac-lac-20261021",
+   "match": "LA Clippers v Sacramento Kings",
+   "detail": "Stored start 2026-10-22T02:30:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "NBA.com official schedule (2026-10-21)",
+     "url": "https://www.nba.com/games?date=2026-10-21"
+    },
+    {
+     "name": "NBA.com official standings (2025-26 prior-season benchmark)",
+     "url": "https://www.nba.com/standings"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "el-535919",
+   "match": "Hapoel Tel Aviv v Virtus Bologna",
+   "detail": "Stored start 2026-10-21T16:00:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "EuroLeague official game center & standings",
+     "url": "https://www.euroleaguebasketball.net/euroleague/game-center/"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "ec-535953",
+   "match": "PAOK v ratiopharm ulm",
+   "detail": "Stored start 2026-10-21T17:00:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "BKT EuroCup official game center",
+     "url": "https://www.euroleaguebasketball.net/eurocup/game-center/"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "ec-535955",
+   "match": "Hapoel Bank Yahav Jerusalem v Rigas Zelli",
+   "detail": "Stored start 2026-10-21T18:00:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "BKT EuroCup official game center",
+     "url": "https://www.euroleaguebasketball.net/eurocup/game-center/"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "cric-nz-ind-t20-1",
+   "match": "New Zealand v India",
+   "detail": "Stored start 2026-10-22T06:15:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "New Zealand Cricket official fixtures",
+     "url": "https://scoring.nzc.nz/fixtures"
+    },
+    {
+     "name": "ICC official team rankings (Men's & Women's T20I)",
+     "url": "https://www.icc-cricket.com/rankings"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "hand-ehf-12055",
+   "match": "One Veszpr\u00e9m HC v F\u00fcchse Berlin",
+   "detail": "Stored start 2026-10-21T16:45:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 official standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+     "name": "EHF official 2026/27 group phase playing times PDF",
+     "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"
+    },
+    {
+     "name": "EHF official Round 5 match preview",
+     "url": "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "hand-ehf-12052",
+   "match": "RK Partizan AdmiralBet v FC Porto",
+   "detail": "Stored start 2026-10-21T16:45:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 official standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+     "name": "EHF official 2026/27 group phase playing times PDF",
+     "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"
+    },
+    {
+     "name": "EHF official Round 5 match preview",
+     "url": "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "hand-ehf-12053",
+   "match": "HC Zagreb v Paris Saint-Germain",
+   "detail": "Stored start 2026-10-21T16:45:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 official standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+     "name": "EHF official 2026/27 group phase playing times PDF",
+     "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"
+    },
+    {
+     "name": "EHF official Round 5 match preview",
+     "url": "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "hand-ehf-12045",
+   "match": "CS Dinamo Bucuresti v SAH Aarhus",
+   "detail": "Stored start 2026-10-21T16:45:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 official standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+     "name": "EHF official 2026/27 group phase playing times PDF",
+     "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"
+    },
+    {
+     "name": "EHF official Round 5 match preview",
+     "url": "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "hand-ehf-12050",
+   "match": "HBC Nantes v HC Vardar 1961",
+   "detail": "Stored start 2026-10-21T18:45:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 official standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+     "name": "EHF official 2026/27 group phase playing times PDF",
+     "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"
+    },
+    {
+     "name": "EHF official Round 5 match preview",
+     "url": "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "hand-ehf-12044",
+   "match": "Aalborg H\u00e5ndbold v RK Celje Pivovarna La\u0161ko",
+   "detail": "Stored start 2026-10-21T18:45:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 official standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+     "name": "EHF official 2026/27 group phase playing times PDF",
+     "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"
+    },
+    {
+     "name": "EHF official Round 5 match preview",
+     "url": "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "hand-ehf-12047",
+   "match": "HC Kriens-Luzern v Industria Kielce",
+   "detail": "Stored start 2026-10-21T18:45:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "EHF Champions League Men 2026/27 official standings",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+     "name": "EHF official 2026/27 group phase playing times PDF",
+     "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"
+    },
+    {
+     "name": "EHF official Round 5 match preview",
+     "url": "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "vol-plus-36961",
+   "match": "BOGDANKA LUK Lublin v Trefl Gdansk",
+   "detail": "Stored start 2026-10-21T15:30:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "PlusLiga official 2026/27 schedule",
+     "url": "https://www.plusliga.pl/games.html"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "vol-plus-36962",
+   "match": "Aluron CMC Warta Zawiercie v ZAKSA Kedzierzyn-Kozle",
+   "detail": "Stored start 2026-10-21T18:30:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "PlusLiga official 2026/27 schedule",
+     "url": "https://www.plusliga.pl/games.html"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "grey-kinsley-1114",
+   "match": "11:14 Kinsley Card v ",
+   "detail": "Stored start 2026-10-21T10:14:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "Greyhound Board of Great Britain official open race calendar",
+     "url": "https://www.gbgb.org.uk/"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "grey-monmore-1103",
+   "match": "11:03 Monmore Card v ",
+   "detail": "Stored start 2026-10-21T10:03:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "Greyhound Board of Great Britain official open race calendar",
+     "url": "https://www.gbgb.org.uk/"
+    }
+   ]
+  },
+  {
+   "kind": "expired-at-cutoff",
+   "match_id": "grey-nottingham-1109",
+   "match": "11:09 Nottingham Card v ",
+   "detail": "Stored start 2026-10-21T10:09:00Z is before the explicit cutoff 2026-10-22T07:30:00Z; excluded from the future desk by timestamp arithmetic only \u2014 no result is asserted.",
+   "sources": [
+    {
+     "name": "Greyhound Board of Great Britain official open race calendar",
+     "url": "https://www.gbgb.org.uk/"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "ten-ningbo-rybakina",
+   "match": "Elena Rybakina v Polina Kudermetova",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "WTA official Ningbo Open draw & order of play",
+     "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
+    },
+    {
+     "name": "PIF WTA Official Singles Rankings",
+     "url": "https://www.wtatennis.com/rankings/singles"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "ten-902093",
+   "match": "Katarzyna Kawa v Belinda Bencic",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "WTA official Ningbo Open draw & order of play",
+     "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
+    },
+    {
+     "name": "PIF WTA Official Singles Rankings",
+     "url": "https://www.wtatennis.com/rankings/singles"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "ten-902038",
+   "match": "James Duckworth v Luciano Darderi",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "ATP Tour official Almaty Open draw (event 9410)",
+     "url": "https://www.atptour.com/en/scores/current/almaty/9410/draws"
+    },
+    {
+     "name": "PIF ATP Rankings official singles table",
+     "url": "https://www.atptour.com/en/rankings/singles"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "ten-902037",
+   "match": "Adrian Mannarino v Andrey Rublev",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "ATP Tour official Almaty Open draw (event 9410)",
+     "url": "https://www.atptour.com/en/scores/current/almaty/9410/draws"
+    },
+    {
+     "name": "PIF ATP Rankings official singles table",
+     "url": "https://www.atptour.com/en/rankings/singles"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "ten-902084",
+   "match": "Ekaterina Alexandrova v Marta Kostyuk",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "WTA official Ningbo Open draw & order of play",
+     "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
+    },
+    {
+     "name": "PIF WTA Official Singles Rankings",
+     "url": "https://www.wtatennis.com/rankings/singles"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "ten-902065",
+   "match": "Katie Boulter v Viktorija Golubic",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "WTA official Japan Open Osaka draw",
+     "url": "https://www.wtatennis.com/tournaments/405/osaka/2026/draws"
+    },
+    {
+     "name": "PIF WTA Official Singles Rankings",
+     "url": "https://www.wtatennis.com/rankings/singles"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "ten-902039",
+   "match": "Leylah Fernandez v Aliaksandra Sasnovich",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "WTA official Ningbo Open draw & order of play",
+     "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
+    },
+    {
+     "name": "PIF WTA Official Singles Rankings",
+     "url": "https://www.wtatennis.com/rankings/singles"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "ten-902074",
+   "match": "Sorana Cirstea v Sara Bejlek",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "WTA official Ningbo Open draw & order of play",
+     "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
+    },
+    {
+     "name": "PIF WTA Official Singles Rankings",
+     "url": "https://www.wtatennis.com/rankings/singles"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "ten-902083",
+   "match": "Stefanos Tsitsipas v Mikhail Kukushkin",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "ATP Tour official Almaty Open draw (event 9410)",
+     "url": "https://www.atptour.com/en/scores/current/almaty/9410/draws"
+    },
+    {
+     "name": "PIF ATP Rankings official singles table",
+     "url": "https://www.atptour.com/en/rankings/singles"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "ten-902102",
+   "match": "Benjamin Bonzi v Tommy Paul",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "ATP Tour official Lyon Open draw (event 496)",
+     "url": "https://www.atptour.com/en/scores/current/lyon/496/draws"
+    },
+    {
+     "name": "PIF ATP Rankings official singles table",
+     "url": "https://www.atptour.com/en/rankings/singles"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "ten-902028",
+   "match": "David Goffin v Remy Bertola",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "ATP Tour official European Open Brussels draw",
+     "url": "https://www.atptour.com/en/scores/current/brussels/7485/draws"
+    },
+    {
+     "name": "PIF ATP Rankings official singles table",
+     "url": "https://www.atptour.com/en/rankings/singles"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "snk-pang-davies",
+   "match": "Pang Junxu v Liam Davies",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre",
+     "url": "https://www.wst.tv/"
+    },
+    {
+     "name": "WST official Johnstone's Paint World Rankings",
+     "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+    },
+    {
+     "name": "WST match centre",
+     "url": "https://www.wst.tv/match-centre/67133698-e8a4-4b37-9266-452a97df8584"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "snk-cheung-bingham",
+   "match": "Cheung Ka Wai v Stuart Bingham",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre",
+     "url": "https://www.wst.tv/"
+    },
+    {
+     "name": "WST official Johnstone's Paint World Rankings",
+     "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+    },
+    {
+     "name": "WST match centre",
+     "url": "https://www.wst.tv/match-centre/3d53c559-9bd7-4bc4-8e1d-a6c2b7459528"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "snk-higgins-jones",
+   "match": "John Higgins v Jak Jones",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre",
+     "url": "https://www.wst.tv/"
+    },
+    {
+     "name": "WST official Johnstone's Paint World Rankings",
+     "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+    },
+    {
+     "name": "WST match centre",
+     "url": "https://www.wst.tv/match-centre/eba55492-fba6-4a53-90be-a04b3560ae65"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "snk-wells-day",
+   "match": "Daniel Wells v Ryan Day",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre",
+     "url": "https://www.wst.tv/"
+    },
+    {
+     "name": "WST official Johnstone's Paint World Rankings",
+     "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+    },
+    {
+     "name": "WST match centre",
+     "url": "https://www.wst.tv/match-centre/e9c15ae6-b9b8-4cea-a83a-49c58eb14046"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "snk-craigie-xu",
+   "match": "Sam Craigie v Xu Si",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre",
+     "url": "https://www.wst.tv/"
+    },
+    {
+     "name": "WST official Johnstone's Paint World Rankings",
+     "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+    },
+    {
+     "name": "WST match centre",
+     "url": "https://www.wst.tv/match-centre/afb42fc9-9654-479e-997e-d33d8a1a6888"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "snk-zhang-williams",
+   "match": "Zhang Anda v Mark Williams",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre",
+     "url": "https://www.wst.tv/"
+    },
+    {
+     "name": "WST official Johnstone's Paint World Rankings",
+     "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+    },
+    {
+     "name": "WST match centre",
+     "url": "https://www.wst.tv/match-centre/480e5abf-5766-44ad-9918-f822ceefd4a5"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "snk-holt-brown",
+   "match": "Michael Holt v Jordan Brown",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre",
+     "url": "https://www.wst.tv/"
+    },
+    {
+     "name": "WST official Johnstone's Paint World Rankings",
+     "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+    },
+    {
+     "name": "WST match centre",
+     "url": "https://www.wst.tv/match-centre/e58a00e5-e6a7-479b-98d0-5c7867af28a8"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "snk-gao-gilbert",
+   "match": "Gao Yang v David Gilbert",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre",
+     "url": "https://www.wst.tv/"
+    },
+    {
+     "name": "WST official Johnstone's Paint World Rankings",
+     "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+    },
+    {
+     "name": "WST match centre",
+     "url": "https://www.wst.tv/match-centre/4fb27af0-7db4-4ec2-b93b-137de3f66135"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "snk-noppon-donaldson",
+   "match": "Noppon Saengkham v Scott Donaldson",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre",
+     "url": "https://www.wst.tv/"
+    },
+    {
+     "name": "WST official Johnstone's Paint World Rankings",
+     "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+    },
+    {
+     "name": "WST match centre",
+     "url": "https://www.wst.tv/match-centre/3a24076e-455c-497b-abd5-976e194abc5e"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "snk-brecel-odonnell",
+   "match": "Luca Brecel v Martin O'Donnell",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre",
+     "url": "https://www.wst.tv/"
+    },
+    {
+     "name": "WST official Johnstone's Paint World Rankings",
+     "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+    },
+    {
+     "name": "WST match centre",
+     "url": "https://www.wst.tv/match-centre/0c49ba0c-2d21-481e-a2ac-fbece616f591"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "snk-slessor-jones",
+   "match": "Elliot Slessor v Jamie Jones",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "World Snooker Tour official match centre",
+     "url": "https://www.wst.tv/"
+    },
+    {
+     "name": "WST official Johnstone's Paint World Rankings",
+     "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8"
+    },
+    {
+     "name": "WST match centre",
+     "url": "https://www.wst.tv/match-centre/f6536f1f-6c2d-47cd-b802-a81e6f04e4cc"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "cric-afg-ban-odi",
+   "match": "Afghanistan v Bangladesh",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "ICC official team rankings (Men's & Women's T20I)",
+     "url": "https://www.icc-cricket.com/rankings"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "cric-nza-inda-fc1",
+   "match": "New Zealand A v India A",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "New Zealand Cricket official fixtures",
+     "url": "https://scoring.nzc.nz/fixtures"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "cric-ford-auck-cant",
+   "match": "Auckland Aces v Canterbury",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "New Zealand Cricket official fixtures",
+     "url": "https://scoring.nzc.nz/fixtures"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "cric-ford-cds-nd",
+   "match": "Central Stags v Northern Districts",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "New Zealand Cricket official fixtures",
+     "url": "https://scoring.nzc.nz/fixtures"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "cric-ford-wgtn-otago",
+   "match": "Wellington Firebirds v Otago Volts",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "New Zealand Cricket official fixtures",
+     "url": "https://scoring.nzc.nz/fixtures"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "lol-worlds26-tsw-lyon",
+   "match": "Team Secret Whales v LYON",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "LoL Esports official Worlds 2026 hub & primer",
+     "url": "https://lolesports.com/en-US/"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "golf-bermuda-2026",
+   "match": "Butterfield Bermuda Championship v ",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "PGA TOUR official Butterfield Bermuda Championship",
+     "url": "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "golf-genesis-2026",
+   "match": "Genesis Championship v ",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "DP World Tour official Genesis Championship",
+     "url": "https://www.europeantour.com/dpworld-tour/schedule/2026/"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "golf-bmw-ladies-2026",
+   "match": "BMW Ladies Championship v ",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "LPGA official BMW Ladies Championship",
+     "url": "https://www.lpga.com/tournaments"
+    }
+   ]
+  },
+  {
+   "kind": "undated",
+   "match_id": "golf-stifel-2026",
+   "match": "Stifel Charity Classic v ",
+   "detail": "No start time is recorded on the primary desk (left blank there because no official page stated one); a fixture without a confirmed start cannot be listed as upcoming, so it is excluded from pricing and published here instead.",
+   "sources": [
+    {
+     "name": "PGA TOUR Champions Stifel Charity Classic",
+     "url": "https://www.pgatour.com/pgatour-champions/schedule"
+    }
+   ]
+  }
+ ]
+}

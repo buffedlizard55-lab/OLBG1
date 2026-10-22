@@ -1,0 +1,19 @@
+:root{--bg:#0b1220;--panel:#121c30;--line:#243352;--txt:#e8eefb;--mut:#9fb0d0;--acc:#5eead4;--hi:#34d399;--med:#fbbf24;--low:#94a3b8;--bad:#f87171}
+*{box-sizing:border-box}body{margin:0;font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+a{color:var(--acc)}header{background:#0e1830;border-bottom:1px solid var(--line);padding:14px 20px;position:sticky;top:0;z-index:5}
+header h1{font-size:19px;margin:0 0 4px}header p{margin:0;color:var(--mut);font-size:13px}
+nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}nav a{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px 12px;text-decoration:none;font-size:13px;color:var(--txt)}
+nav a:hover{border-color:var(--acc)}main{max-width:1180px;margin:0 auto;padding:20px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px}.kpi b{font-size:24px;display:block}.kpi span{color:var(--mut);font-size:12px}
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);font-size:13.5px}
+th,td{border-bottom:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}th{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.badge{display:inline-block;border-radius:999px;padding:1px 9px;font-size:12px;font-weight:700}.high{background:#064e3b;color:var(--hi)}.medium{background:#451a03;color:var(--med)}.low{background:#1e293b;color:var(--low)}
+.v-confirmed{color:var(--hi)}.v-corrected{color:var(--med)}.v-not-rechecked{color:var(--bad)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.small{color:var(--mut);font-size:12.5px}details summary{cursor:pointer;color:var(--acc);font-size:13px}
+input[type=search]{background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:8px 12px;width:min(460px,100%)}
+select{background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:8px}
+footer{max-width:1180px;margin:0 auto;padding:18px 20px 34px;color:var(--mut);font-size:12.5px;border-top:1px solid var(--line)}
+.warn{border-left:4px solid var(--bad);background:#1c1226;padding:10px 14px;border-radius:6px}
