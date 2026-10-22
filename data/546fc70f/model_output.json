@@ -1,0 +1,3637 @@
+{
+  "generated_utc": "2026-10-22",
+  "backtest_euroleague": {
+    "n_predictions": 46,
+    "log_loss_model": 0.6351,
+    "log_loss_coin_flip_baseline": 0.6931,
+    "brier_model": 0.2217,
+    "accuracy_model": 0.6522,
+    "calibration_by_favourite_band": {
+      "50-60%": {
+        "n": 22,
+        "mean_fav_p": 0.5521,
+        "observed_fav_win_rate": 0.5455
+      },
+      "60-70%": {
+        "n": 20,
+        "mean_fav_p": 0.6367,
+        "observed_fav_win_rate": 0.8
+      },
+      ">=70%": {
+        "n": 4,
+        "mean_fav_p": 0.767,
+        "observed_fav_win_rate": 0.5
+      }
+    },
+    "note": "Walk-forward on played games only (rounds 3-7). Small sample; no home term; model has no injury, rest or roster data."
+  },
+  "assumptions": {
+    "EL_SHRINK_K": 6,
+    "NHL_SHRINK_K": 5,
+    "EL_sigma_margin_sample_sd": 11.931,
+    "EL_sigma_total_sample_sd": 17.88,
+    "EL_league_pts_per_team_per_game": 87.114,
+    "EL_games_used": 66,
+    "NHL_league_goals_per_team_per_game": 3.118,
+    "home_advantage_term": "none (no official value sourced)",
+    "high_rule": "p > 0.70 AND American price within -250..+10000 (strict reading) AND official evidence; reading B (p>0.70 only) also recorded"
+  },
+  "fixtures": [
+    {
+      "sport": "EuroLeague basketball",
+      "game_no": "66",
+      "round": "7",
+      "date_as_published": "Oct 22 2026",
+      "time_as_published": "20:45",
+      "home": "PARTIZAN MOZZART BET BELGRADE",
+      "away": "CRVENA ZVEZDA",
+      "fixture_source": "https://api-live.euroleague.net/v1/schedules?seasonCode=E2026&limit=5",
+      "home_record": "3-3",
+      "away_record": "4-2",
+      "home_pts_pg": 77.67,
+      "home_pa_pg": 78.5,
+      "away_pts_pg": 80.83,
+      "away_pa_pg": 76.17,
+      "expected_margin_home": -2.75,
+      "expected_total": 156.58,
+      "markets": [
+        {
+          "market": "Match winner",
+          "selection": "PARTIZAN MOZZART BET BELGRADE",
+          "p": 0.4089,
+          "american": 145,
+          "decimal": 2.4459,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner",
+          "selection": "CRVENA ZVEZDA",
+          "p": 0.5911,
+          "american": -145,
+          "decimal": 1.6916,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PARTIZAN MOZZART BET BELGRADE -5.5",
+          "selection": "PARTIZAN MOZZART BET BELGRADE -5.5",
+          "p": 0.2446,
+          "american": 309,
+          "decimal": 4.0878,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PARTIZAN MOZZART BET BELGRADE -3.5",
+          "selection": "PARTIZAN MOZZART BET BELGRADE -3.5",
+          "p": 0.3002,
+          "american": 233,
+          "decimal": 3.3312,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PARTIZAN MOZZART BET BELGRADE -1.5",
+          "selection": "PARTIZAN MOZZART BET BELGRADE -1.5",
+          "p": 0.3608,
+          "american": 177,
+          "decimal": 2.7713,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PARTIZAN MOZZART BET BELGRADE +1.5",
+          "selection": "PARTIZAN MOZZART BET BELGRADE +1.5",
+          "p": 0.4583,
+          "american": 118,
+          "decimal": 2.1821,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PARTIZAN MOZZART BET BELGRADE +3.5",
+          "selection": "PARTIZAN MOZZART BET BELGRADE +3.5",
+          "p": 0.5251,
+          "american": -111,
+          "decimal": 1.9045,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PARTIZAN MOZZART BET BELGRADE +5.5",
+          "selection": "PARTIZAN MOZZART BET BELGRADE +5.5",
+          "p": 0.5911,
+          "american": -145,
+          "decimal": 1.6916,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 146.5",
+          "selection": "Over 146.5",
+          "p": 0.7136,
+          "american": -249,
+          "decimal": 1.4013,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 146.5",
+          "selection": "Under 146.5",
+          "p": 0.2864,
+          "american": 249,
+          "decimal": 3.4917,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 151.5",
+          "selection": "Over 151.5",
+          "p": 0.6119,
+          "american": -158,
+          "decimal": 1.6342,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 151.5",
+          "selection": "Under 151.5",
+          "p": 0.3881,
+          "american": 158,
+          "decimal": 2.5767,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 154.0",
+          "selection": "Over 154.0",
+          "p": 0.5574,
+          "american": -126,
+          "decimal": 1.7939,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 154.0",
+          "selection": "Under 154.0",
+          "p": 0.4426,
+          "american": 126,
+          "decimal": 2.2596,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 159.0",
+          "selection": "Over 159.0",
+          "p": 0.4462,
+          "american": 124,
+          "decimal": 2.2409,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 159.0",
+          "selection": "Under 159.0",
+          "p": 0.5538,
+          "american": -124,
+          "decimal": 1.8058,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 161.5",
+          "selection": "Over 161.5",
+          "p": 0.3917,
+          "american": 155,
+          "decimal": 2.5532,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 161.5",
+          "selection": "Under 161.5",
+          "p": 0.6083,
+          "american": -155,
+          "decimal": 1.6438,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 166.5",
+          "selection": "Over 166.5",
+          "p": 0.2896,
+          "american": 245,
+          "decimal": 3.4534,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 166.5",
+          "selection": "Under 166.5",
+          "p": 0.7104,
+          "american": -245,
+          "decimal": 1.4076,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "EuroLeague basketball",
+      "game_no": "68",
+      "round": "7",
+      "date_as_published": "Oct 23 2026",
+      "time_as_published": "19:00",
+      "home": "ZALGIRIS KAUNAS",
+      "away": "LDLC ASVEL VILLEURBANNE",
+      "fixture_source": "https://api-live.euroleague.net/v1/schedules?seasonCode=E2026&limit=5",
+      "home_record": "2-4",
+      "away_record": "2-4",
+      "home_pts_pg": 81.67,
+      "home_pa_pg": 86.17,
+      "away_pts_pg": 87.83,
+      "away_pa_pg": 95.33,
+      "expected_margin_home": 1.5,
+      "expected_total": 175.5,
+      "markets": [
+        {
+          "market": "Match winner",
+          "selection": "ZALGIRIS KAUNAS",
+          "p": 0.55,
+          "american": -122,
+          "decimal": 1.8181,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner",
+          "selection": "LDLC ASVEL VILLEURBANNE",
+          "p": 0.45,
+          "american": 122,
+          "decimal": 2.2223,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap ZALGIRIS KAUNAS -5.5",
+          "selection": "ZALGIRIS KAUNAS -5.5",
+          "p": 0.3687,
+          "american": 171,
+          "decimal": 2.7121,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap ZALGIRIS KAUNAS -3.5",
+          "selection": "ZALGIRIS KAUNAS -3.5",
+          "p": 0.4334,
+          "american": 131,
+          "decimal": 2.3071,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap ZALGIRIS KAUNAS -1.5",
+          "selection": "ZALGIRIS KAUNAS -1.5",
+          "p": 0.5,
+          "american": -100,
+          "decimal": 2.0,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap ZALGIRIS KAUNAS +1.5",
+          "selection": "ZALGIRIS KAUNAS +1.5",
+          "p": 0.5993,
+          "american": -150,
+          "decimal": 1.6687,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap ZALGIRIS KAUNAS +3.5",
+          "selection": "ZALGIRIS KAUNAS +3.5",
+          "p": 0.6624,
+          "american": -196,
+          "decimal": 1.5096,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap ZALGIRIS KAUNAS +5.5",
+          "selection": "ZALGIRIS KAUNAS +5.5",
+          "p": 0.7213,
+          "american": -259,
+          "decimal": 1.3864,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 165.5",
+          "selection": "Over 165.5",
+          "p": 0.712,
+          "american": -247,
+          "decimal": 1.4045,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 165.5",
+          "selection": "Under 165.5",
+          "p": 0.288,
+          "american": 247,
+          "decimal": 3.4724,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 170.5",
+          "selection": "Over 170.5",
+          "p": 0.6101,
+          "american": -156,
+          "decimal": 1.639,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 170.5",
+          "selection": "Under 170.5",
+          "p": 0.3899,
+          "american": 156,
+          "decimal": 2.5649,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 173.0",
+          "selection": "Over 173.0",
+          "p": 0.5556,
+          "american": -125,
+          "decimal": 1.7999,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 173.0",
+          "selection": "Under 173.0",
+          "p": 0.4444,
+          "american": 125,
+          "decimal": 2.2502,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 178.0",
+          "selection": "Over 178.0",
+          "p": 0.4444,
+          "american": 125,
+          "decimal": 2.2502,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 178.0",
+          "selection": "Under 178.0",
+          "p": 0.5556,
+          "american": -125,
+          "decimal": 1.7999,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 180.5",
+          "selection": "Over 180.5",
+          "p": 0.3899,
+          "american": 156,
+          "decimal": 2.5649,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 180.5",
+          "selection": "Under 180.5",
+          "p": 0.6101,
+          "american": -156,
+          "decimal": 1.639,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 185.5",
+          "selection": "Over 185.5",
+          "p": 0.288,
+          "american": 247,
+          "decimal": 3.4724,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 185.5",
+          "selection": "Under 185.5",
+          "p": 0.712,
+          "american": -247,
+          "decimal": 1.4045,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "EuroLeague basketball",
+      "game_no": "69",
+      "round": "7",
+      "date_as_published": "Oct 23 2026",
+      "time_as_published": "20:45",
+      "home": "PARIS BASKETBALL",
+      "away": "VALENCIA BASKET",
+      "fixture_source": "https://api-live.euroleague.net/v1/schedules?seasonCode=E2026&limit=5",
+      "home_record": "1-5",
+      "away_record": "4-2",
+      "home_pts_pg": 84.0,
+      "home_pa_pg": 90.83,
+      "away_pts_pg": 98.33,
+      "away_pa_pg": 91.5,
+      "expected_margin_home": -6.83,
+      "expected_total": 182.33,
+      "markets": [
+        {
+          "market": "Match winner",
+          "selection": "PARIS BASKETBALL",
+          "p": 0.2834,
+          "american": 253,
+          "decimal": 3.5285,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner",
+          "selection": "VALENCIA BASKET",
+          "p": 0.7166,
+          "american": -253,
+          "decimal": 1.3955,
+          "tier": "Medium",
+          "tier_note": "p>70% but price beyond -250 window: downgraded to Medium",
+          "in_window_strict": false,
+          "in_window_reading_B": true
+        },
+        {
+          "market": "Handicap PARIS BASKETBALL -5.5",
+          "selection": "PARIS BASKETBALL -5.5",
+          "p": 0.1506,
+          "american": 564,
+          "decimal": 6.6388,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PARIS BASKETBALL -3.5",
+          "selection": "PARIS BASKETBALL -3.5",
+          "p": 0.1932,
+          "american": 418,
+          "decimal": 5.1755,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PARIS BASKETBALL -1.5",
+          "selection": "PARIS BASKETBALL -1.5",
+          "p": 0.2424,
+          "american": 312,
+          "decimal": 4.1247,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PARIS BASKETBALL +1.5",
+          "selection": "PARIS BASKETBALL +1.5",
+          "p": 0.3274,
+          "american": 205,
+          "decimal": 3.0541,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PARIS BASKETBALL +3.5",
+          "selection": "PARIS BASKETBALL +3.5",
+          "p": 0.39,
+          "american": 156,
+          "decimal": 2.5643,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PARIS BASKETBALL +5.5",
+          "selection": "PARIS BASKETBALL +5.5",
+          "p": 0.4555,
+          "american": 120,
+          "decimal": 2.1953,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 172.5",
+          "selection": "Over 172.5",
+          "p": 0.7088,
+          "american": -243,
+          "decimal": 1.4108,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 172.5",
+          "selection": "Under 172.5",
+          "p": 0.2912,
+          "american": 243,
+          "decimal": 3.4344,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 177.5",
+          "selection": "Over 177.5",
+          "p": 0.6065,
+          "american": -154,
+          "decimal": 1.6487,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 177.5",
+          "selection": "Under 177.5",
+          "p": 0.3935,
+          "american": 154,
+          "decimal": 2.5416,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 180.0",
+          "selection": "Over 180.0",
+          "p": 0.5519,
+          "american": -123,
+          "decimal": 1.8119,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 180.0",
+          "selection": "Under 180.0",
+          "p": 0.4481,
+          "american": 123,
+          "decimal": 2.2317,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 185.0",
+          "selection": "Over 185.0",
+          "p": 0.4407,
+          "american": 127,
+          "decimal": 2.269,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 185.0",
+          "selection": "Under 185.0",
+          "p": 0.5593,
+          "american": -127,
+          "decimal": 1.788,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 187.5",
+          "selection": "Over 187.5",
+          "p": 0.3863,
+          "american": 159,
+          "decimal": 2.5886,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 187.5",
+          "selection": "Under 187.5",
+          "p": 0.6137,
+          "american": -159,
+          "decimal": 1.6295,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 192.5",
+          "selection": "Over 192.5",
+          "p": 0.2848,
+          "american": 251,
+          "decimal": 3.5111,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 192.5",
+          "selection": "Under 192.5",
+          "p": 0.7152,
+          "american": -251,
+          "decimal": 1.3982,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "EuroLeague basketball",
+      "game_no": "70",
+      "round": "7",
+      "date_as_published": "Oct 23 2026",
+      "time_as_published": "20:15",
+      "home": "OLYMPIACOS PIRAEUS",
+      "away": "FENERBAHCE TARFIN ISTANBUL",
+      "fixture_source": "https://api-live.euroleague.net/v1/schedules?seasonCode=E2026&limit=5",
+      "home_record": "5-1",
+      "away_record": "5-1",
+      "home_pts_pg": 98.17,
+      "home_pa_pg": 89.83,
+      "away_pts_pg": 83.5,
+      "away_pa_pg": 74.5,
+      "expected_margin_home": -0.33,
+      "expected_total": 173.0,
+      "markets": [
+        {
+          "market": "Match winner",
+          "selection": "OLYMPIACOS PIRAEUS",
+          "p": 0.4889,
+          "american": 105,
+          "decimal": 2.0456,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner",
+          "selection": "FENERBAHCE TARFIN ISTANBUL",
+          "p": 0.5111,
+          "american": -105,
+          "decimal": 1.9564,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap OLYMPIACOS PIRAEUS -5.5",
+          "selection": "OLYMPIACOS PIRAEUS -5.5",
+          "p": 0.3124,
+          "american": 220,
+          "decimal": 3.2006,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap OLYMPIACOS PIRAEUS -3.5",
+          "selection": "OLYMPIACOS PIRAEUS -3.5",
+          "p": 0.374,
+          "american": 167,
+          "decimal": 2.6738,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap OLYMPIACOS PIRAEUS -1.5",
+          "selection": "OLYMPIACOS PIRAEUS -1.5",
+          "p": 0.4389,
+          "american": 128,
+          "decimal": 2.2782,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap OLYMPIACOS PIRAEUS +1.5",
+          "selection": "OLYMPIACOS PIRAEUS +1.5",
+          "p": 0.5389,
+          "american": -117,
+          "decimal": 1.8555,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap OLYMPIACOS PIRAEUS +3.5",
+          "selection": "OLYMPIACOS PIRAEUS +3.5",
+          "p": 0.6047,
+          "american": -153,
+          "decimal": 1.6538,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap OLYMPIACOS PIRAEUS +5.5",
+          "selection": "OLYMPIACOS PIRAEUS +5.5",
+          "p": 0.6675,
+          "american": -201,
+          "decimal": 1.4981,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 162.5",
+          "selection": "Over 162.5",
+          "p": 0.7215,
+          "american": -259,
+          "decimal": 1.386,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 162.5",
+          "selection": "Under 162.5",
+          "p": 0.2785,
+          "american": 259,
+          "decimal": 3.5905,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 167.5",
+          "selection": "Over 167.5",
+          "p": 0.6208,
+          "american": -164,
+          "decimal": 1.6108,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 167.5",
+          "selection": "Under 167.5",
+          "p": 0.3792,
+          "american": 164,
+          "decimal": 2.6372,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 170.0",
+          "selection": "Over 170.0",
+          "p": 0.5666,
+          "american": -131,
+          "decimal": 1.7648,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 170.0",
+          "selection": "Under 170.0",
+          "p": 0.4334,
+          "american": 131,
+          "decimal": 2.3075,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 175.0",
+          "selection": "Over 175.0",
+          "p": 0.4555,
+          "american": 120,
+          "decimal": 2.1955,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 175.0",
+          "selection": "Under 175.0",
+          "p": 0.5445,
+          "american": -120,
+          "decimal": 1.8364,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 177.5",
+          "selection": "Over 177.5",
+          "p": 0.4006,
+          "american": 150,
+          "decimal": 2.496,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 177.5",
+          "selection": "Under 177.5",
+          "p": 0.5994,
+          "american": -150,
+          "decimal": 1.6685,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 182.5",
+          "selection": "Over 182.5",
+          "p": 0.2976,
+          "american": 236,
+          "decimal": 3.3603,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 182.5",
+          "selection": "Under 182.5",
+          "p": 0.7024,
+          "american": -236,
+          "decimal": 1.4237,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "EuroLeague basketball",
+      "game_no": "71",
+      "round": "8",
+      "date_as_published": "Oct 27 2026",
+      "time_as_published": "20:00",
+      "home": "CRVENA ZVEZDA",
+      "away": "MACCABI RAPYD TEL AVIV",
+      "fixture_source": "https://api-live.euroleague.net/v1/schedules?seasonCode=E2026&limit=5",
+      "home_record": "4-2",
+      "away_record": "2-5",
+      "home_pts_pg": 80.83,
+      "home_pa_pg": 76.17,
+      "away_pts_pg": 86.86,
+      "away_pa_pg": 93.29,
+      "expected_margin_home": 5.79,
+      "expected_total": 168.8,
+      "markets": [
+        {
+          "market": "Match winner",
+          "selection": "CRVENA ZVEZDA",
+          "p": 0.6864,
+          "american": -219,
+          "decimal": 1.4569,
+          "tier": "Medium",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner",
+          "selection": "MACCABI RAPYD TEL AVIV",
+          "p": 0.3136,
+          "american": 219,
+          "decimal": 3.1889,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap CRVENA ZVEZDA -5.5",
+          "selection": "CRVENA ZVEZDA -5.5",
+          "p": 0.5099,
+          "american": -104,
+          "decimal": 1.9613,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap CRVENA ZVEZDA -3.5",
+          "selection": "CRVENA ZVEZDA -3.5",
+          "p": 0.5763,
+          "american": -136,
+          "decimal": 1.7353,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap CRVENA ZVEZDA -1.5",
+          "selection": "CRVENA ZVEZDA -1.5",
+          "p": 0.6406,
+          "american": -178,
+          "decimal": 1.5611,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap CRVENA ZVEZDA +1.5",
+          "selection": "CRVENA ZVEZDA +1.5",
+          "p": 0.7295,
+          "american": -270,
+          "decimal": 1.3707,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap CRVENA ZVEZDA +3.5",
+          "selection": "CRVENA ZVEZDA +3.5",
+          "p": 0.782,
+          "american": -359,
+          "decimal": 1.2787,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap CRVENA ZVEZDA +5.5",
+          "selection": "CRVENA ZVEZDA +5.5",
+          "p": 0.8281,
+          "american": -482,
+          "decimal": 1.2076,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 158.5",
+          "selection": "Over 158.5",
+          "p": 0.7177,
+          "american": -254,
+          "decimal": 1.3933,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 158.5",
+          "selection": "Under 158.5",
+          "p": 0.2823,
+          "american": 254,
+          "decimal": 3.5423,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 163.5",
+          "selection": "Over 163.5",
+          "p": 0.6165,
+          "american": -161,
+          "decimal": 1.622,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 163.5",
+          "selection": "Under 163.5",
+          "p": 0.3835,
+          "american": 161,
+          "decimal": 2.6077,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 166.0",
+          "selection": "Over 166.0",
+          "p": 0.5622,
+          "american": -128,
+          "decimal": 1.7787,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 166.0",
+          "selection": "Under 166.0",
+          "p": 0.4378,
+          "american": 128,
+          "decimal": 2.2841,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 171.0",
+          "selection": "Over 171.0",
+          "p": 0.451,
+          "american": 122,
+          "decimal": 2.2172,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 171.0",
+          "selection": "Under 171.0",
+          "p": 0.549,
+          "american": -122,
+          "decimal": 1.8215,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 173.5",
+          "selection": "Over 173.5",
+          "p": 0.3963,
+          "american": 152,
+          "decimal": 2.5233,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 173.5",
+          "selection": "Under 173.5",
+          "p": 0.6037,
+          "american": -152,
+          "decimal": 1.6565,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 178.5",
+          "selection": "Over 178.5",
+          "p": 0.2937,
+          "american": 240,
+          "decimal": 3.4047,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 178.5",
+          "selection": "Under 178.5",
+          "p": 0.7063,
+          "american": -240,
+          "decimal": 1.4159,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "EuroLeague basketball",
+      "game_no": "72",
+      "round": "8",
+      "date_as_published": "Oct 27 2026",
+      "time_as_published": "17:00",
+      "home": "DUBAI",
+      "away": "PARIS BASKETBALL",
+      "fixture_source": "https://api-live.euroleague.net/v1/schedules?seasonCode=E2026&limit=5",
+      "home_record": "5-2",
+      "away_record": "1-5",
+      "home_pts_pg": 85.29,
+      "home_pa_pg": 83.43,
+      "away_pts_pg": 84.0,
+      "away_pa_pg": 90.83,
+      "expected_margin_home": 4.42,
+      "expected_total": 171.56,
+      "markets": [
+        {
+          "market": "Match winner",
+          "selection": "DUBAI",
+          "p": 0.6444,
+          "american": -181,
+          "decimal": 1.5519,
+          "tier": "Medium",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner",
+          "selection": "PARIS BASKETBALL",
+          "p": 0.3556,
+          "american": 181,
+          "decimal": 2.812,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap DUBAI -5.5",
+          "selection": "DUBAI -5.5",
+          "p": 0.4638,
+          "american": 116,
+          "decimal": 2.156,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap DUBAI -3.5",
+          "selection": "DUBAI -3.5",
+          "p": 0.5306,
+          "american": -113,
+          "decimal": 1.8846,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap DUBAI -1.5",
+          "selection": "DUBAI -1.5",
+          "p": 0.5966,
+          "american": -148,
+          "decimal": 1.6763,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap DUBAI +1.5",
+          "selection": "DUBAI +1.5",
+          "p": 0.69,
+          "american": -223,
+          "decimal": 1.4492,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap DUBAI +3.5",
+          "selection": "DUBAI +3.5",
+          "p": 0.7465,
+          "american": -294,
+          "decimal": 1.3396,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap DUBAI +5.5",
+          "selection": "DUBAI +5.5",
+          "p": 0.7971,
+          "american": -393,
+          "decimal": 1.2546,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 161.5",
+          "selection": "Over 161.5",
+          "p": 0.7132,
+          "american": -249,
+          "decimal": 1.4021,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 161.5",
+          "selection": "Under 161.5",
+          "p": 0.2868,
+          "american": 249,
+          "decimal": 3.4867,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 166.5",
+          "selection": "Over 166.5",
+          "p": 0.6115,
+          "american": -157,
+          "decimal": 1.6355,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 166.5",
+          "selection": "Under 166.5",
+          "p": 0.3885,
+          "american": 157,
+          "decimal": 2.5737,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 169.0",
+          "selection": "Over 169.0",
+          "p": 0.557,
+          "american": -126,
+          "decimal": 1.7954,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 169.0",
+          "selection": "Under 169.0",
+          "p": 0.443,
+          "american": 126,
+          "decimal": 2.2572,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 174.0",
+          "selection": "Over 174.0",
+          "p": 0.4458,
+          "american": 124,
+          "decimal": 2.2433,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 174.0",
+          "selection": "Under 174.0",
+          "p": 0.5542,
+          "american": -124,
+          "decimal": 1.8043,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 176.5",
+          "selection": "Over 176.5",
+          "p": 0.3912,
+          "american": 156,
+          "decimal": 2.5562,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 176.5",
+          "selection": "Under 176.5",
+          "p": 0.6088,
+          "american": -156,
+          "decimal": 1.6426,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 181.5",
+          "selection": "Over 181.5",
+          "p": 0.2892,
+          "american": 246,
+          "decimal": 3.4583,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 181.5",
+          "selection": "Under 181.5",
+          "p": 0.7108,
+          "american": -246,
+          "decimal": 1.4068,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "EuroLeague basketball",
+      "game_no": "73",
+      "round": "8",
+      "date_as_published": "Oct 27 2026",
+      "time_as_published": "21:00",
+      "home": "KOSNER BASKONIA",
+      "away": "REAL MADRID",
+      "fixture_source": "https://api-live.euroleague.net/v1/schedules?seasonCode=E2026&limit=5",
+      "home_record": "1-6",
+      "away_record": "4-3",
+      "home_pts_pg": 83.29,
+      "home_pa_pg": 92.71,
+      "away_pts_pg": 95.29,
+      "away_pa_pg": 90.0,
+      "expected_margin_home": -7.92,
+      "expected_total": 181.14,
+      "markets": [
+        {
+          "market": "Match winner",
+          "selection": "KOSNER BASKONIA",
+          "p": 0.2533,
+          "american": 295,
+          "decimal": 3.9476,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner",
+          "selection": "REAL MADRID",
+          "p": 0.7467,
+          "american": -295,
+          "decimal": 1.3393,
+          "tier": "Medium",
+          "tier_note": "p>70% but price beyond -250 window: downgraded to Medium",
+          "in_window_strict": false,
+          "in_window_reading_B": true
+        },
+        {
+          "market": "Handicap KOSNER BASKONIA -5.5",
+          "selection": "KOSNER BASKONIA -5.5",
+          "p": 0.1303,
+          "american": 668,
+          "decimal": 7.6758,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap KOSNER BASKONIA -3.5",
+          "selection": "KOSNER BASKONIA -3.5",
+          "p": 0.1692,
+          "american": 491,
+          "decimal": 5.9111,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap KOSNER BASKONIA -1.5",
+          "selection": "KOSNER BASKONIA -1.5",
+          "p": 0.2148,
+          "american": 366,
+          "decimal": 4.6551,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap KOSNER BASKONIA +1.5",
+          "selection": "KOSNER BASKONIA +1.5",
+          "p": 0.2952,
+          "american": 239,
+          "decimal": 3.3879,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap KOSNER BASKONIA +3.5",
+          "selection": "KOSNER BASKONIA +3.5",
+          "p": 0.3554,
+          "american": 181,
+          "decimal": 2.8136,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap KOSNER BASKONIA +5.5",
+          "selection": "KOSNER BASKONIA +5.5",
+          "p": 0.4195,
+          "american": 138,
+          "decimal": 2.3836,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 171.5",
+          "selection": "Over 171.5",
+          "p": 0.705,
+          "american": -239,
+          "decimal": 1.4184,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 171.5",
+          "selection": "Under 171.5",
+          "p": 0.295,
+          "american": 239,
+          "decimal": 3.3903,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 176.5",
+          "selection": "Over 176.5",
+          "p": 0.6023,
+          "american": -151,
+          "decimal": 1.6603,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 176.5",
+          "selection": "Under 176.5",
+          "p": 0.3977,
+          "american": 151,
+          "decimal": 2.5145,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 179.0",
+          "selection": "Over 179.0",
+          "p": 0.5476,
+          "american": -121,
+          "decimal": 1.8263,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 179.0",
+          "selection": "Under 179.0",
+          "p": 0.4524,
+          "american": 121,
+          "decimal": 2.2102,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 184.0",
+          "selection": "Over 184.0",
+          "p": 0.4364,
+          "american": 129,
+          "decimal": 2.2916,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 184.0",
+          "selection": "Under 184.0",
+          "p": 0.5636,
+          "american": -129,
+          "decimal": 1.7742,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 186.5",
+          "selection": "Over 186.5",
+          "p": 0.3821,
+          "american": 162,
+          "decimal": 2.6172,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 186.5",
+          "selection": "Under 186.5",
+          "p": 0.6179,
+          "american": -162,
+          "decimal": 1.6184,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 191.5",
+          "selection": "Over 191.5",
+          "p": 0.2811,
+          "american": 256,
+          "decimal": 3.5577,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 191.5",
+          "selection": "Under 191.5",
+          "p": 0.7189,
+          "american": -256,
+          "decimal": 1.391,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "EuroLeague basketball",
+      "game_no": "74",
+      "round": "8",
+      "date_as_published": "Oct 27 2026",
+      "time_as_published": "20:00",
+      "home": "FC BAYERN MUNICH",
+      "away": "FC BARCELONA",
+      "fixture_source": "https://api-live.euroleague.net/v1/schedules?seasonCode=E2026&limit=5",
+      "home_record": "2-5",
+      "away_record": "4-3",
+      "home_pts_pg": 87.43,
+      "home_pa_pg": 94.14,
+      "away_pts_pg": 90.14,
+      "away_pa_pg": 88.43,
+      "expected_margin_home": -4.54,
+      "expected_total": 180.52,
+      "markets": [
+        {
+          "market": "Match winner",
+          "selection": "FC BAYERN MUNICH",
+          "p": 0.3518,
+          "american": 184,
+          "decimal": 2.8423,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner",
+          "selection": "FC BARCELONA",
+          "p": 0.6482,
+          "american": -184,
+          "decimal": 1.5428,
+          "tier": "Medium",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap FC BAYERN MUNICH -5.5",
+          "selection": "FC BAYERN MUNICH -5.5",
+          "p": 0.2001,
+          "american": 400,
+          "decimal": 4.9984,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap FC BAYERN MUNICH -3.5",
+          "selection": "FC BAYERN MUNICH -3.5",
+          "p": 0.2502,
+          "american": 300,
+          "decimal": 3.9963,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap FC BAYERN MUNICH -1.5",
+          "selection": "FC BAYERN MUNICH -1.5",
+          "p": 0.3064,
+          "american": 226,
+          "decimal": 3.2639,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap FC BAYERN MUNICH +1.5",
+          "selection": "FC BAYERN MUNICH +1.5",
+          "p": 0.3995,
+          "american": 150,
+          "decimal": 2.5032,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap FC BAYERN MUNICH +3.5",
+          "selection": "FC BAYERN MUNICH +3.5",
+          "p": 0.4653,
+          "american": 115,
+          "decimal": 2.1491,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap FC BAYERN MUNICH +5.5",
+          "selection": "FC BAYERN MUNICH +5.5",
+          "p": 0.5321,
+          "american": -114,
+          "decimal": 1.8793,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 170.5",
+          "selection": "Over 170.5",
+          "p": 0.7124,
+          "american": -248,
+          "decimal": 1.4037,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 170.5",
+          "selection": "Under 170.5",
+          "p": 0.2876,
+          "american": 248,
+          "decimal": 3.4773,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 175.5",
+          "selection": "Over 175.5",
+          "p": 0.6106,
+          "american": -157,
+          "decimal": 1.6378,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 175.5",
+          "selection": "Under 175.5",
+          "p": 0.3894,
+          "american": 157,
+          "decimal": 2.5679,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 178.0",
+          "selection": "Over 178.0",
+          "p": 0.5561,
+          "american": -125,
+          "decimal": 1.7984,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 178.0",
+          "selection": "Under 178.0",
+          "p": 0.4439,
+          "american": 125,
+          "decimal": 2.2526,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 183.0",
+          "selection": "Over 183.0",
+          "p": 0.4449,
+          "american": 125,
+          "decimal": 2.2479,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 183.0",
+          "selection": "Under 183.0",
+          "p": 0.5551,
+          "american": -125,
+          "decimal": 1.8014,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 185.5",
+          "selection": "Over 185.5",
+          "p": 0.3903,
+          "american": 156,
+          "decimal": 2.562,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 185.5",
+          "selection": "Under 185.5",
+          "p": 0.6097,
+          "american": -156,
+          "decimal": 1.6402,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 190.5",
+          "selection": "Over 190.5",
+          "p": 0.2884,
+          "american": 247,
+          "decimal": 3.4676,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 190.5",
+          "selection": "Under 190.5",
+          "p": 0.7116,
+          "american": -247,
+          "decimal": 1.4052,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "EuroLeague basketball",
+      "game_no": "75",
+      "round": "8",
+      "date_as_published": "Oct 27 2026",
+      "time_as_published": "20:30",
+      "home": "VALENCIA BASKET",
+      "away": "FENERBAHCE TARFIN ISTANBUL",
+      "fixture_source": "https://api-live.euroleague.net/v1/schedules?seasonCode=E2026&limit=5",
+      "home_record": "4-2",
+      "away_record": "5-1",
+      "home_pts_pg": 98.33,
+      "home_pa_pg": 91.5,
+      "away_pts_pg": 83.5,
+      "away_pa_pg": 74.5,
+      "expected_margin_home": -1.08,
+      "expected_total": 173.92,
+      "markets": [
+        {
+          "market": "Match winner",
+          "selection": "VALENCIA BASKET",
+          "p": 0.4638,
+          "american": 116,
+          "decimal": 2.156,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner",
+          "selection": "FENERBAHCE TARFIN ISTANBUL",
+          "p": 0.5362,
+          "american": -116,
+          "decimal": 1.8651,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap VALENCIA BASKET -5.5",
+          "selection": "VALENCIA BASKET -5.5",
+          "p": 0.2905,
+          "american": 244,
+          "decimal": 3.4418,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap VALENCIA BASKET -3.5",
+          "selection": "VALENCIA BASKET -3.5",
+          "p": 0.3504,
+          "american": 185,
+          "decimal": 2.8536,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap VALENCIA BASKET -1.5",
+          "selection": "VALENCIA BASKET -1.5",
+          "p": 0.4143,
+          "american": 141,
+          "decimal": 2.4138,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap VALENCIA BASKET +1.5",
+          "selection": "VALENCIA BASKET +1.5",
+          "p": 0.5139,
+          "american": -106,
+          "decimal": 1.9458,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap VALENCIA BASKET +3.5",
+          "selection": "VALENCIA BASKET +3.5",
+          "p": 0.5803,
+          "american": -138,
+          "decimal": 1.7234,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap VALENCIA BASKET +5.5",
+          "selection": "VALENCIA BASKET +5.5",
+          "p": 0.6444,
+          "american": -181,
+          "decimal": 1.5519,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 163.5",
+          "selection": "Over 163.5",
+          "p": 0.7199,
+          "american": -257,
+          "decimal": 1.389,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 163.5",
+          "selection": "Under 163.5",
+          "p": 0.2801,
+          "american": 257,
+          "decimal": 3.5704,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 168.5",
+          "selection": "Over 168.5",
+          "p": 0.619,
+          "american": -162,
+          "decimal": 1.6154,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 168.5",
+          "selection": "Under 168.5",
+          "p": 0.381,
+          "american": 162,
+          "decimal": 2.6249,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 171.0",
+          "selection": "Over 171.0",
+          "p": 0.5648,
+          "american": -130,
+          "decimal": 1.7706,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 171.0",
+          "selection": "Under 171.0",
+          "p": 0.4352,
+          "american": 130,
+          "decimal": 2.2977,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 176.0",
+          "selection": "Over 176.0",
+          "p": 0.4536,
+          "american": 120,
+          "decimal": 2.2045,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 176.0",
+          "selection": "Under 176.0",
+          "p": 0.5464,
+          "american": -120,
+          "decimal": 1.8302,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 178.5",
+          "selection": "Over 178.5",
+          "p": 0.3988,
+          "american": 151,
+          "decimal": 2.5072,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 178.5",
+          "selection": "Under 178.5",
+          "p": 0.6012,
+          "american": -151,
+          "decimal": 1.6635,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 183.5",
+          "selection": "Over 183.5",
+          "p": 0.296,
+          "american": 238,
+          "decimal": 3.3786,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 183.5",
+          "selection": "Under 183.5",
+          "p": 0.704,
+          "american": -238,
+          "decimal": 1.4204,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "EuroLeague basketball",
+      "game_no": "76",
+      "round": "8",
+      "date_as_published": "Oct 27 2026",
+      "time_as_published": "20:15",
+      "home": "PANATHINAIKOS AKTOR ATHENS",
+      "away": "ARMANI OLIMPIA MILAN",
+      "fixture_source": "https://api-live.euroleague.net/v1/schedules?seasonCode=E2026&limit=5",
+      "home_record": "6-1",
+      "away_record": "1-6",
+      "home_pts_pg": 87.57,
+      "home_pa_pg": 73.86,
+      "away_pts_pg": 83.57,
+      "away_pa_pg": 92.57,
+      "expected_margin_home": 12.23,
+      "expected_total": 168.37,
+      "markets": [
+        {
+          "market": "Match winner",
+          "selection": "PANATHINAIKOS AKTOR ATHENS",
+          "p": 0.8474,
+          "american": -555,
+          "decimal": 1.1801,
+          "tier": "Medium",
+          "tier_note": "p>70% but price beyond -250 window: downgraded to Medium",
+          "in_window_strict": false,
+          "in_window_reading_B": true
+        },
+        {
+          "market": "Match winner",
+          "selection": "ARMANI OLIMPIA MILAN",
+          "p": 0.1526,
+          "american": 555,
+          "decimal": 6.551,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PANATHINAIKOS AKTOR ATHENS -5.5",
+          "selection": "PANATHINAIKOS AKTOR ATHENS -5.5",
+          "p": 0.7137,
+          "american": -249,
+          "decimal": 1.4012,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PANATHINAIKOS AKTOR ATHENS -3.5",
+          "selection": "PANATHINAIKOS AKTOR ATHENS -3.5",
+          "p": 0.7678,
+          "american": -331,
+          "decimal": 1.3023,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PANATHINAIKOS AKTOR ATHENS -1.5",
+          "selection": "PANATHINAIKOS AKTOR ATHENS -1.5",
+          "p": 0.8158,
+          "american": -443,
+          "decimal": 1.2258,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PANATHINAIKOS AKTOR ATHENS +1.5",
+          "selection": "PANATHINAIKOS AKTOR ATHENS +1.5",
+          "p": 0.8751,
+          "american": -701,
+          "decimal": 1.1427,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PANATHINAIKOS AKTOR ATHENS +3.5",
+          "selection": "PANATHINAIKOS AKTOR ATHENS +3.5",
+          "p": 0.9063,
+          "american": -968,
+          "decimal": 1.1033,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap PANATHINAIKOS AKTOR ATHENS +5.5",
+          "selection": "PANATHINAIKOS AKTOR ATHENS +5.5",
+          "p": 0.9314,
+          "american": -1357,
+          "decimal": 1.0737,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 158.5",
+          "selection": "Over 158.5",
+          "p": 0.7095,
+          "american": -244,
+          "decimal": 1.4095,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 158.5",
+          "selection": "Under 158.5",
+          "p": 0.2905,
+          "american": 244,
+          "decimal": 3.4421,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 163.5",
+          "selection": "Over 163.5",
+          "p": 0.6073,
+          "american": -155,
+          "decimal": 1.6467,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 163.5",
+          "selection": "Under 163.5",
+          "p": 0.3927,
+          "american": 155,
+          "decimal": 2.5463,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 166.0",
+          "selection": "Over 166.0",
+          "p": 0.5527,
+          "american": -124,
+          "decimal": 1.8094,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 166.0",
+          "selection": "Under 166.0",
+          "p": 0.4473,
+          "american": 124,
+          "decimal": 2.2354,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 171.0",
+          "selection": "Over 171.0",
+          "p": 0.4415,
+          "american": 127,
+          "decimal": 2.2652,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 171.0",
+          "selection": "Under 171.0",
+          "p": 0.5585,
+          "american": -127,
+          "decimal": 1.7904,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 173.5",
+          "selection": "Over 173.5",
+          "p": 0.387,
+          "american": 158,
+          "decimal": 2.5838,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 173.5",
+          "selection": "Under 173.5",
+          "p": 0.613,
+          "american": -158,
+          "decimal": 1.6314,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 178.5",
+          "selection": "Over 178.5",
+          "p": 0.2855,
+          "american": 250,
+          "decimal": 3.5032,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 178.5",
+          "selection": "Under 178.5",
+          "p": 0.7145,
+          "american": -250,
+          "decimal": 1.3995,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "EuroLeague basketball",
+      "game_no": "77",
+      "round": "8",
+      "date_as_published": "Oct 28 2026",
+      "time_as_published": "19:00",
+      "home": "HAPOEL IBI TEL AVIV",
+      "away": "ANADOLU EFES ISTANBUL",
+      "fixture_source": "https://api-live.euroleague.net/v1/schedules?seasonCode=E2026&limit=5",
+      "home_record": "5-2",
+      "away_record": "3-4",
+      "home_pts_pg": 90.0,
+      "home_pa_pg": 85.86,
+      "away_pts_pg": 83.0,
+      "away_pa_pg": 84.29,
+      "expected_margin_home": 2.92,
+      "expected_total": 171.37,
+      "markets": [
+        {
+          "market": "Match winner",
+          "selection": "HAPOEL IBI TEL AVIV",
+          "p": 0.5968,
+          "american": -148,
+          "decimal": 1.6757,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner",
+          "selection": "ANADOLU EFES ISTANBUL",
+          "p": 0.4032,
+          "american": 148,
+          "decimal": 2.48,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap HAPOEL IBI TEL AVIV -5.5",
+          "selection": "HAPOEL IBI TEL AVIV -5.5",
+          "p": 0.4145,
+          "american": 141,
+          "decimal": 2.4126,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap HAPOEL IBI TEL AVIV -3.5",
+          "selection": "HAPOEL IBI TEL AVIV -3.5",
+          "p": 0.4807,
+          "american": 108,
+          "decimal": 2.0802,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap HAPOEL IBI TEL AVIV -1.5",
+          "selection": "HAPOEL IBI TEL AVIV -1.5",
+          "p": 0.5475,
+          "american": -121,
+          "decimal": 1.8266,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap HAPOEL IBI TEL AVIV +1.5",
+          "selection": "HAPOEL IBI TEL AVIV +1.5",
+          "p": 0.6446,
+          "american": -181,
+          "decimal": 1.5514,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap HAPOEL IBI TEL AVIV +3.5",
+          "selection": "HAPOEL IBI TEL AVIV +3.5",
+          "p": 0.7048,
+          "american": -239,
+          "decimal": 1.4188,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap HAPOEL IBI TEL AVIV +5.5",
+          "selection": "HAPOEL IBI TEL AVIV +5.5",
+          "p": 0.7599,
+          "american": -316,
+          "decimal": 1.316,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 161.5",
+          "selection": "Over 161.5",
+          "p": 0.7095,
+          "american": -244,
+          "decimal": 1.4095,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 161.5",
+          "selection": "Under 161.5",
+          "p": 0.2905,
+          "american": 244,
+          "decimal": 3.4421,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 166.5",
+          "selection": "Over 166.5",
+          "p": 0.6073,
+          "american": -155,
+          "decimal": 1.6467,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 166.5",
+          "selection": "Under 166.5",
+          "p": 0.3927,
+          "american": 155,
+          "decimal": 2.5463,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 169.0",
+          "selection": "Over 169.0",
+          "p": 0.5527,
+          "american": -124,
+          "decimal": 1.8094,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 169.0",
+          "selection": "Under 169.0",
+          "p": 0.4473,
+          "american": 124,
+          "decimal": 2.2354,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 174.0",
+          "selection": "Over 174.0",
+          "p": 0.4415,
+          "american": 127,
+          "decimal": 2.2652,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 174.0",
+          "selection": "Under 174.0",
+          "p": 0.5585,
+          "american": -127,
+          "decimal": 1.7904,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 176.5",
+          "selection": "Over 176.5",
+          "p": 0.387,
+          "american": 158,
+          "decimal": 2.5838,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 176.5",
+          "selection": "Under 176.5",
+          "p": 0.613,
+          "american": -158,
+          "decimal": 1.6314,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 181.5",
+          "selection": "Over 181.5",
+          "p": 0.2855,
+          "american": 250,
+          "decimal": 3.5032,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 181.5",
+          "selection": "Under 181.5",
+          "p": 0.7145,
+          "american": -250,
+          "decimal": 1.3995,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "EuroLeague basketball",
+      "game_no": "78",
+      "round": "8",
+      "date_as_published": "Oct 28 2026",
+      "time_as_published": "20:00",
+      "home": "LDLC ASVEL VILLEURBANNE",
+      "away": "PARTIZAN MOZZART BET BELGRADE",
+      "fixture_source": "https://api-live.euroleague.net/v1/schedules?seasonCode=E2026&limit=5",
+      "home_record": "2-4",
+      "away_record": "3-3",
+      "home_pts_pg": 87.83,
+      "home_pa_pg": 95.33,
+      "away_pts_pg": 77.67,
+      "away_pa_pg": 78.5,
+      "expected_margin_home": -3.33,
+      "expected_total": 169.67,
+      "markets": [
+        {
+          "market": "Match winner",
+          "selection": "LDLC ASVEL VILLEURBANNE",
+          "p": 0.39,
+          "american": 156,
+          "decimal": 2.5643,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner",
+          "selection": "PARTIZAN MOZZART BET BELGRADE",
+          "p": 0.61,
+          "american": -156,
+          "decimal": 1.6393,
+          "tier": "Medium",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap LDLC ASVEL VILLEURBANNE -5.5",
+          "selection": "LDLC ASVEL VILLEURBANNE -5.5",
+          "p": 0.2295,
+          "american": 336,
+          "decimal": 4.3566,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap LDLC ASVEL VILLEURBANNE -3.5",
+          "selection": "LDLC ASVEL VILLEURBANNE -3.5",
+          "p": 0.2834,
+          "american": 253,
+          "decimal": 3.5285,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap LDLC ASVEL VILLEURBANNE -1.5",
+          "selection": "LDLC ASVEL VILLEURBANNE -1.5",
+          "p": 0.3427,
+          "american": 192,
+          "decimal": 2.918,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap LDLC ASVEL VILLEURBANNE +1.5",
+          "selection": "LDLC ASVEL VILLEURBANNE +1.5",
+          "p": 0.4389,
+          "american": 128,
+          "decimal": 2.2782,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap LDLC ASVEL VILLEURBANNE +3.5",
+          "selection": "LDLC ASVEL VILLEURBANNE +3.5",
+          "p": 0.5056,
+          "american": -102,
+          "decimal": 1.978,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap LDLC ASVEL VILLEURBANNE +5.5",
+          "selection": "LDLC ASVEL VILLEURBANNE +5.5",
+          "p": 0.5721,
+          "american": -134,
+          "decimal": 1.7481,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 159.5",
+          "selection": "Over 159.5",
+          "p": 0.7152,
+          "american": -251,
+          "decimal": 1.3982,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 159.5",
+          "selection": "Under 159.5",
+          "p": 0.2848,
+          "american": 251,
+          "decimal": 3.5111,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 164.5",
+          "selection": "Over 164.5",
+          "p": 0.6137,
+          "american": -159,
+          "decimal": 1.6295,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 164.5",
+          "selection": "Under 164.5",
+          "p": 0.3863,
+          "american": 159,
+          "decimal": 2.5886,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 167.0",
+          "selection": "Over 167.0",
+          "p": 0.5593,
+          "american": -127,
+          "decimal": 1.788,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 167.0",
+          "selection": "Under 167.0",
+          "p": 0.4407,
+          "american": 127,
+          "decimal": 2.269,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 172.0",
+          "selection": "Over 172.0",
+          "p": 0.4481,
+          "american": 123,
+          "decimal": 2.2317,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 172.0",
+          "selection": "Under 172.0",
+          "p": 0.5519,
+          "american": -123,
+          "decimal": 1.8119,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 174.5",
+          "selection": "Over 174.5",
+          "p": 0.3935,
+          "american": 154,
+          "decimal": 2.5416,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 174.5",
+          "selection": "Under 174.5",
+          "p": 0.6065,
+          "american": -154,
+          "decimal": 1.6487,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 179.5",
+          "selection": "Over 179.5",
+          "p": 0.2912,
+          "american": 243,
+          "decimal": 3.4344,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 179.5",
+          "selection": "Under 179.5",
+          "p": 0.7088,
+          "american": -243,
+          "decimal": 1.4108,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "EuroLeague basketball",
+      "game_no": "79",
+      "round": "8",
+      "date_as_published": "Oct 28 2026",
+      "time_as_published": "18:30",
+      "home": "BESIKTAS ISTANBUL",
+      "away": "OLYMPIACOS PIRAEUS",
+      "fixture_source": "https://api-live.euroleague.net/v1/schedules?seasonCode=E2026&limit=5",
+      "home_record": "3-4",
+      "away_record": "5-1",
+      "home_pts_pg": 90.57,
+      "home_pa_pg": 92.0,
+      "away_pts_pg": 98.17,
+      "away_pa_pg": 89.83,
+      "expected_margin_home": -4.94,
+      "expected_total": 185.61,
+      "markets": [
+        {
+          "market": "Match winner",
+          "selection": "BESIKTAS ISTANBUL",
+          "p": 0.3395,
+          "american": 195,
+          "decimal": 2.9451,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner",
+          "selection": "OLYMPIACOS PIRAEUS",
+          "p": 0.6605,
+          "american": -195,
+          "decimal": 1.5141,
+          "tier": "Medium",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap BESIKTAS ISTANBUL -5.5",
+          "selection": "BESIKTAS ISTANBUL -5.5",
+          "p": 0.1909,
+          "american": 424,
+          "decimal": 5.2392,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap BESIKTAS ISTANBUL -3.5",
+          "selection": "BESIKTAS ISTANBUL -3.5",
+          "p": 0.2398,
+          "american": 317,
+          "decimal": 4.1708,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap BESIKTAS ISTANBUL -1.5",
+          "selection": "BESIKTAS ISTANBUL -1.5",
+          "p": 0.2948,
+          "american": 239,
+          "decimal": 3.3922,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap BESIKTAS ISTANBUL +1.5",
+          "selection": "BESIKTAS ISTANBUL +1.5",
+          "p": 0.3867,
+          "american": 159,
+          "decimal": 2.5861,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap BESIKTAS ISTANBUL +3.5",
+          "selection": "BESIKTAS ISTANBUL +3.5",
+          "p": 0.4521,
+          "american": 121,
+          "decimal": 2.2119,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap BESIKTAS ISTANBUL +5.5",
+          "selection": "BESIKTAS ISTANBUL +5.5",
+          "p": 0.5189,
+          "american": -108,
+          "decimal": 1.9273,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 175.5",
+          "selection": "Over 175.5",
+          "p": 0.7141,
+          "american": -250,
+          "decimal": 1.4005,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 175.5",
+          "selection": "Under 175.5",
+          "p": 0.2859,
+          "american": 250,
+          "decimal": 3.4971,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 180.5",
+          "selection": "Over 180.5",
+          "p": 0.6124,
+          "american": -158,
+          "decimal": 1.6329,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 180.5",
+          "selection": "Under 180.5",
+          "p": 0.3876,
+          "american": 158,
+          "decimal": 2.5801,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 183.0",
+          "selection": "Over 183.0",
+          "p": 0.558,
+          "american": -126,
+          "decimal": 1.7923,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 183.0",
+          "selection": "Under 183.0",
+          "p": 0.442,
+          "american": 126,
+          "decimal": 2.2622,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 188.0",
+          "selection": "Over 188.0",
+          "p": 0.4468,
+          "american": 124,
+          "decimal": 2.2384,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 188.0",
+          "selection": "Under 188.0",
+          "p": 0.5532,
+          "american": -124,
+          "decimal": 1.8075,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 190.5",
+          "selection": "Over 190.5",
+          "p": 0.3922,
+          "american": 155,
+          "decimal": 2.5499,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 190.5",
+          "selection": "Under 190.5",
+          "p": 0.6078,
+          "american": -155,
+          "decimal": 1.6452,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 195.5",
+          "selection": "Over 195.5",
+          "p": 0.29,
+          "american": 245,
+          "decimal": 3.448,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 195.5",
+          "selection": "Under 195.5",
+          "p": 0.71,
+          "american": -245,
+          "decimal": 1.4085,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "EuroLeague basketball",
+      "game_no": "80",
+      "round": "8",
+      "date_as_published": "Oct 28 2026",
+      "time_as_published": "20:30",
+      "home": "VIRTUS BOLOGNA",
+      "away": "ZALGIRIS KAUNAS",
+      "fixture_source": "https://api-live.euroleague.net/v1/schedules?seasonCode=E2026&limit=5",
+      "home_record": "4-3",
+      "away_record": "2-4",
+      "home_pts_pg": 86.57,
+      "home_pa_pg": 86.86,
+      "away_pts_pg": 81.67,
+      "away_pa_pg": 86.17,
+      "expected_margin_home": 2.1,
+      "expected_total": 170.6,
+      "markets": [
+        {
+          "market": "Match winner",
+          "selection": "VIRTUS BOLOGNA",
+          "p": 0.5697,
+          "american": -132,
+          "decimal": 1.7552,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner",
+          "selection": "ZALGIRIS KAUNAS",
+          "p": 0.4303,
+          "american": 132,
+          "decimal": 2.3241,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap VIRTUS BOLOGNA -5.5",
+          "selection": "VIRTUS BOLOGNA -5.5",
+          "p": 0.3877,
+          "american": 158,
+          "decimal": 2.5793,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap VIRTUS BOLOGNA -3.5",
+          "selection": "VIRTUS BOLOGNA -3.5",
+          "p": 0.4532,
+          "american": 121,
+          "decimal": 2.2067,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap VIRTUS BOLOGNA -1.5",
+          "selection": "VIRTUS BOLOGNA -1.5",
+          "p": 0.5199,
+          "american": -108,
+          "decimal": 1.9234,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap VIRTUS BOLOGNA +1.5",
+          "selection": "VIRTUS BOLOGNA +1.5",
+          "p": 0.6185,
+          "american": -162,
+          "decimal": 1.6169,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap VIRTUS BOLOGNA +3.5",
+          "selection": "VIRTUS BOLOGNA +3.5",
+          "p": 0.6805,
+          "american": -213,
+          "decimal": 1.4695,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Handicap VIRTUS BOLOGNA +5.5",
+          "selection": "VIRTUS BOLOGNA +5.5",
+          "p": 0.7378,
+          "american": -281,
+          "decimal": 1.3553,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 160.5",
+          "selection": "Over 160.5",
+          "p": 0.7139,
+          "american": -250,
+          "decimal": 1.4007,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 160.5",
+          "selection": "Under 160.5",
+          "p": 0.2861,
+          "american": 250,
+          "decimal": 3.4956,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 165.5",
+          "selection": "Over 165.5",
+          "p": 0.6123,
+          "american": -158,
+          "decimal": 1.6333,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 165.5",
+          "selection": "Under 165.5",
+          "p": 0.3877,
+          "american": 158,
+          "decimal": 2.5791,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 168.0",
+          "selection": "Over 168.0",
+          "p": 0.5578,
+          "american": -126,
+          "decimal": 1.7927,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 168.0",
+          "selection": "Under 168.0",
+          "p": 0.4422,
+          "american": 126,
+          "decimal": 2.2615,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 173.0",
+          "selection": "Over 173.0",
+          "p": 0.4466,
+          "american": 124,
+          "decimal": 2.2391,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 173.0",
+          "selection": "Under 173.0",
+          "p": 0.5534,
+          "american": -124,
+          "decimal": 1.8071,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 175.5",
+          "selection": "Over 175.5",
+          "p": 0.392,
+          "american": 155,
+          "decimal": 2.5508,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 175.5",
+          "selection": "Under 175.5",
+          "p": 0.608,
+          "american": -155,
+          "decimal": 1.6448,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 180.5",
+          "selection": "Over 180.5",
+          "p": 0.2899,
+          "american": 245,
+          "decimal": 3.4495,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total points 180.5",
+          "selection": "Under 180.5",
+          "p": 0.7101,
+          "american": -245,
+          "decimal": 1.4082,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "NHL ice hockey",
+      "game_no": "2026020154",
+      "round": "",
+      "date_as_published": "2026-10-22",
+      "time_as_published": "2026-10-22T23:00:00Z",
+      "home": "BOS",
+      "away": "NSH",
+      "fixture_source": "https://api-web.nhle.com/v1/score/2026-10-22",
+      "home_record": "7-2-1",
+      "away_record": "3-2-3",
+      "home_pts_pg": 3.36,
+      "home_pa_pg": "",
+      "away_pts_pg": 2.39,
+      "away_pa_pg": "",
+      "expected_margin_home": 0.97,
+      "expected_total": 5.75,
+      "markets": [
+        {
+          "market": "Match winner (incl. OT)",
+          "selection": "BOS",
+          "p": 0.6682,
+          "american": -201,
+          "decimal": 1.4966,
+          "tier": "Medium",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner (incl. OT)",
+          "selection": "NSH",
+          "p": 0.3318,
+          "american": 201,
+          "decimal": 3.0138,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "BOS -1.5",
+          "p": 0.4056,
+          "american": 147,
+          "decimal": 2.4655,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "NSH +1.5",
+          "p": 0.8547,
+          "american": -588,
+          "decimal": 1.17,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "NSH -1.5",
+          "p": 0.1453,
+          "american": 588,
+          "decimal": 6.8823,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "BOS +1.5",
+          "p": 0.5944,
+          "american": -147,
+          "decimal": 1.6824,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 5.5",
+          "selection": "Over 5.5",
+          "p": 0.5126,
+          "american": -105,
+          "decimal": 1.9509,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 5.5",
+          "selection": "Under 5.5",
+          "p": 0.4874,
+          "american": 105,
+          "decimal": 2.0516,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 6.5",
+          "selection": "Over 6.5",
+          "p": 0.3528,
+          "american": 183,
+          "decimal": 2.8341,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 6.5",
+          "selection": "Under 6.5",
+          "p": 0.6472,
+          "american": -183,
+          "decimal": 1.5452,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "NHL ice hockey",
+      "game_no": "2026020155",
+      "round": "",
+      "date_as_published": "2026-10-22",
+      "time_as_published": "2026-10-22T23:00:00Z",
+      "home": "TOR",
+      "away": "NYR",
+      "fixture_source": "https://api-web.nhle.com/v1/score/2026-10-22",
+      "home_record": "5-4-2",
+      "away_record": "7-3-1",
+      "home_pts_pg": 2.66,
+      "home_pa_pg": "",
+      "away_pts_pg": 3.08,
+      "away_pa_pg": "",
+      "expected_margin_home": -0.42,
+      "expected_total": 5.74,
+      "markets": [
+        {
+          "market": "Match winner (incl. OT)",
+          "selection": "TOR",
+          "p": 0.4255,
+          "american": 135,
+          "decimal": 2.3503,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner (incl. OT)",
+          "selection": "NYR",
+          "p": 0.5745,
+          "american": -135,
+          "decimal": 1.7406,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "TOR -1.5",
+          "p": 0.2056,
+          "american": 386,
+          "decimal": 4.8627,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "NYR +1.5",
+          "p": 0.6802,
+          "american": -213,
+          "decimal": 1.4702,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "NYR -1.5",
+          "p": 0.3198,
+          "american": 213,
+          "decimal": 3.1267,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "TOR +1.5",
+          "p": 0.7944,
+          "american": -386,
+          "decimal": 1.2589,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 5.5",
+          "selection": "Over 5.5",
+          "p": 0.5113,
+          "american": -105,
+          "decimal": 1.9556,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 5.5",
+          "selection": "Under 5.5",
+          "p": 0.4887,
+          "american": 105,
+          "decimal": 2.0464,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 6.5",
+          "selection": "Over 6.5",
+          "p": 0.3517,
+          "american": 184,
+          "decimal": 2.8436,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 6.5",
+          "selection": "Under 6.5",
+          "p": 0.6483,
+          "american": -184,
+          "decimal": 1.5424,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "NHL ice hockey",
+      "game_no": "2026020156",
+      "round": "",
+      "date_as_published": "2026-10-22",
+      "time_as_published": "2026-10-22T23:00:00Z",
+      "home": "OTT",
+      "away": "SJS",
+      "fixture_source": "https://api-web.nhle.com/v1/schedule/2026-10-22",
+      "home_record": "7-3-0",
+      "away_record": "5-4-1",
+      "home_pts_pg": 3.22,
+      "home_pa_pg": "",
+      "away_pts_pg": 2.4,
+      "away_pa_pg": "",
+      "expected_margin_home": 0.81,
+      "expected_total": 5.62,
+      "markets": [
+        {
+          "market": "Match winner (incl. OT)",
+          "selection": "OTT",
+          "p": 0.6432,
+          "american": -180,
+          "decimal": 1.5548,
+          "tier": "Medium",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner (incl. OT)",
+          "selection": "SJS",
+          "p": 0.3568,
+          "american": 180,
+          "decimal": 2.8026,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "OTT -1.5",
+          "p": 0.3784,
+          "american": 164,
+          "decimal": 2.6426,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "SJS +1.5",
+          "p": 0.8411,
+          "american": -529,
+          "decimal": 1.1889,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "SJS -1.5",
+          "p": 0.1589,
+          "american": 529,
+          "decimal": 6.2931,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "OTT +1.5",
+          "p": 0.6216,
+          "american": -164,
+          "decimal": 1.6088,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 5.5",
+          "selection": "Over 5.5",
+          "p": 0.4914,
+          "american": 104,
+          "decimal": 2.0351,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 5.5",
+          "selection": "Under 5.5",
+          "p": 0.5086,
+          "american": -104,
+          "decimal": 1.9661,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 6.5",
+          "selection": "Over 6.5",
+          "p": 0.3328,
+          "american": 201,
+          "decimal": 3.0051,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 6.5",
+          "selection": "Under 6.5",
+          "p": 0.6672,
+          "american": -201,
+          "decimal": 1.4987,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    },
+    {
+      "sport": "NHL ice hockey",
+      "game_no": "2026020157",
+      "round": "",
+      "date_as_published": "2026-10-22",
+      "time_as_published": "2026-10-22T23:00:00Z",
+      "home": "NJD",
+      "away": "ANA",
+      "fixture_source": "https://api-web.nhle.com/v1/schedule/2026-10-22",
+      "home_record": "5-4-0",
+      "away_record": "4-5-0",
+      "home_pts_pg": 3.25,
+      "home_pa_pg": "",
+      "away_pts_pg": 3.1,
+      "away_pa_pg": "",
+      "expected_margin_home": 0.15,
+      "expected_total": 6.36,
+      "markets": [
+        {
+          "market": "Match winner (incl. OT)",
+          "selection": "NJD",
+          "p": 0.5253,
+          "american": -111,
+          "decimal": 1.9037,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Match winner (incl. OT)",
+          "selection": "ANA",
+          "p": 0.4747,
+          "american": 111,
+          "decimal": 2.1065,
+          "tier": "Low",
+          "tier_note": "",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "NJD -1.5",
+          "p": 0.291,
+          "american": 244,
+          "decimal": 3.4365,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "ANA +1.5",
+          "p": 0.7487,
+          "american": -298,
+          "decimal": 1.3356,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "ANA -1.5",
+          "p": 0.2513,
+          "american": 298,
+          "decimal": 3.9796,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Puck line 1.5",
+          "selection": "NJD +1.5",
+          "p": 0.709,
+          "american": -244,
+          "decimal": 1.4104,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 5.5",
+          "selection": "Over 5.5",
+          "p": 0.6097,
+          "american": -156,
+          "decimal": 1.6401,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 5.5",
+          "selection": "Under 5.5",
+          "p": 0.3903,
+          "american": 156,
+          "decimal": 2.5623,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 6.5",
+          "selection": "Over 6.5",
+          "p": 0.4507,
+          "american": 122,
+          "decimal": 2.2187,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        },
+        {
+          "market": "Total goals 6.5",
+          "selection": "Under 6.5",
+          "p": 0.5493,
+          "american": -122,
+          "decimal": 1.8206,
+          "tier": "n/a (not a winner pick)",
+          "in_window_strict": false,
+          "in_window_reading_B": false
+        }
+      ]
+    }
+  ]
+}
