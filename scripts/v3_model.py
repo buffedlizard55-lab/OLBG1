@@ -208,7 +208,10 @@ def price_fixture(f: dict) -> dict:
         best["cap_reason"] = cap
     out["best_market"] = best
     out["high_candidates"] = [best] if (best and best["confidence"] == "High") else []
-    out["markets"] = sorted(mkts, key=lambda m: -m["model_prob"])
+    # Alternate rungs priced below 5% (or above 95%) are not useful to a reader and the
+    # binomial floor can make both sides of a rung quote 3.0%, so drop those rungs.
+    kept = [m for m in mkts if m["market"] == "Match winner" or 0.05 <= m["model_prob"] <= 0.95]
+    out["markets"] = sorted(kept, key=lambda m: -m["model_prob"])
     return out
 
 
