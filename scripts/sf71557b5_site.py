@@ -397,11 +397,19 @@ page("predictions.html", "High Picks", body,
 rej_by_fix = {}
 for x in WIN["rejected_highs"]:
     rej_by_fix.setdefault(x["id"], []).append(x)
-mw_rej = []
+# Two distinct measures, kept apart on purpose:
+#   mw_rej  - the fixture's MATCH WINNER is above 70% and the window rejects it (the
+#             "trivial favourite" case the brief is about)
+#   rung_rej - only deeper handicap/total rungs were rejected; the winner itself was in-window
+mw_rej, rung_rej = [], []
 for rid, items in rej_by_fix.items():
-    best = max([i for i in items if i["market"] == "Match winner"] or items, key=lambda y: y["prob"])
-    mw_rej.append((rid, best, len(items)))
+    winners = [i for i in items if i["market"] == "Match winner"]
+    if winners:
+        mw_rej.append((rid, max(winners, key=lambda y: y["prob"]), len(items)))
+    else:
+        rung_rej.append((rid, max(items, key=lambda y: y["prob"]), len(items)))
 mw_rej.sort(key=lambda x: -x[1]["prob"])
+rung_rej.sort(key=lambda x: -x[1]["prob"])
 body = f"""<p class="lede">This page is the answer to the brief's central complaint: that most "high
 confidence" picks are simply anything above 70%, which prices shorter than −250 and carries no value. Here
 is the arithmetic, and both sides of the ledger.</p>
@@ -415,7 +423,8 @@ both rules can bind on a margined line. Recorded as finding
 <a href="flagged.html">F-F7-01</a>.
 </div>
 <div class="grid">
-<div class="kpi"><b>{len(mw_rej)}</b><span>fixtures with a &gt;70% winner the window rejects</span></div>
+<div class="kpi"><b>{len(mw_rej)}</b><span>fixtures whose &gt;70% match winner the window rejects</span></div>
+<div class="kpi"><b>{len(rung_rej)}</b><span>fixtures rejecting only deeper rungs</span></div>
 <div class="kpi"><b>{len(WIN['rejected_highs'])}</b><span>individual rungs rejected</span></div>
 <div class="kpi"><b>{C['high']}</b><span>selections that cleared both gates</span></div>
 <div class="kpi"><b>{C['no_bet']}</b><span>fixtures with no bet at all</span></div>
@@ -434,6 +443,25 @@ for rid, best, n in mw_rej:
     body += (f'<tr><td><a href="picks.html#{e(rid)}">{e(r["home"])}'
              f'{(" v " + e(r["away"])) if r["away"] else ""}</a></td>'
              f'<td>{e(SLUG[r["sport"]][1])}</td><td>{e(best["selection"])}</td>'
+             f'<td class="odds">{best["prob"]*100:.1f}%</td><td class="odds">{best["price"]:.2f}</td>'
+             f'<td class="odds"><span class="badge x">{money(best["us"])}</span></td><td>{n}</td>'
+             f'<td>{srcs(r, 1)}</td></tr>\n')
+body += """</tbody></table></div>
+
+<h2>Fixtures where only the deeper rungs were rejected</h2>
+<p class="lede">On these fixtures the match winner itself was inside the window, so nothing about the
+favourite is being hidden — only alternate handicap and total rungs priced shorter than −250 were dropped.
+Rows whose ratings are one-sided are excluded from both tables entirely: a 94% rung on a deliberately
+neutral line is an artefact of that neutrality, not conviction (repository rule 4).</p>
+<div class="tw"><table><thead><tr><th>Fixture</th><th>Sport</th><th>Deepest rejected rung</th>
+<th>Model</th><th>Fair</th><th>US</th><th>Rungs rejected</th><th>Official source</th></tr></thead><tbody>
+"""
+for rid, best, n in rung_rej:
+    r = ROWS[rid]
+    body += (f'<tr><td><a href="picks.html#{e(rid)}">{e(r["home"])}'
+             f'{(" v " + e(r["away"])) if r["away"] else ""}</a></td>'
+             f'<td>{e(SLUG[r["sport"]][1])}</td><td>{e(best["selection"])}'
+             f'<br><span class="muted small">{e(best["market"])}</span></td>'
              f'<td class="odds">{best["prob"]*100:.1f}%</td><td class="odds">{best["price"]:.2f}</td>'
              f'<td class="odds"><span class="badge x">{money(best["us"])}</span></td><td>{n}</td>'
              f'<td>{srcs(r, 1)}</td></tr>\n')

@@ -61,7 +61,7 @@ EuroLeague, EuroCup, WNBA and NHL sub-routes and `sitemap-betting-tips.xml`. A c
 
 **Totals:** 72 rows — 61 with a sourced rating on both sides, 6 published at a neutral baseline under rule 4,
 5 event cards — carrying **1,622 originated prices** from **100 official source URLs** read today: 811
-market rungs across 60 tips (**15 High / 28 Medium / 17 Low**), 7 no-bet cards and 454 rejected rungs.
+market rungs across 60 tips (**15 High / 28 Medium / 17 Low**), 7 no-bet cards and 338 rejected rungs across 45 fixtures.
 Match-winner calls are published separately for all 67 priced fixtures (**3 High / 38 Medium / 26 Low**),
 so every match carries the explicit winner pick the brief requires. **19 rows** carry a rule-4 cap because
 only one side has a sourced rating.
@@ -86,9 +86,9 @@ Two further rules keep that band honest:
 1. **The tightest qualifying rung wins, not the highest probability.** A 71% call on a 3.5-point handicap is
    a real bet; a 71% call on a 66.5-point alternate is an artefact of the ladder. No model-calibrated
    alternate lines are generated. Rungs outside 5%–95% are dropped entirely.
-2. **Rejected Highs are published, not hidden.** 20 fixtures produced a match-winner above 70% whose fair
+2. **Rejected Highs are published, not hidden.** 19 fixtures produced a match-winner above 70% whose fair
    price is shorter than −250 — Panathinaikos 0.913 (−1000), Stade Toulousain 0.857 (−588), Barça 0.829
-   (−476), India 0.803 (−417), Boston Bruins 0.779 (−357) and 15 more. They appear on
+   (−476), India 0.803 (−417), Boston Bruins 0.779 (−357) and 14 more. They appear on
    `f71557b5/window.html` with their prices. These are exactly the "trivial favourite" picks the brief asks
    us not to dress up as high confidence.
 
@@ -195,7 +195,7 @@ on the same page), **F-F7-12** (OLBG tips Kanturk 4/5 against the verified champ
 
 ```
 python3 scripts/sf71557b5_data.py       # 72 rows, 100 official source URLs, 15 register flags
-python3 scripts/sf71557b5_model.py      # 1,622 prices, 15 High, 7 no-bet, 454 rejected rungs
+python3 scripts/sf71557b5_model.py      # 1,622 prices, 15 High, 7 no-bet, 338 rejected rungs / 45 fixtures
 python3 scripts/sf71557b5_audit.py      # 14 findings (4 high)
 python3 scripts/sf71557b5_site.py       # 30 pages
 python3 scripts/sf71557b5_validate.py   # PASS, 0 errors

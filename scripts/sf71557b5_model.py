@@ -448,7 +448,10 @@ def build():
                 row["selection"]["prose_missing"] = f["id"] not in PROSE
 
         # ---- rejected highs: >=70% but outside the window -------------------
-        for mk in row["markets"]:
+        # Rows whose ratings are one-sided carry a deliberately neutral baseline under
+        # rule 4; a 94% deep-handicap rung on a neutral line is an artefact of that
+        # neutrality, not conviction, so those rows are excluded from this ledger.
+        for mk in (row["markets"] if both else []):
             for o in mk["outcomes"]:
                 if not o["capped"] and o["prob"] >= HIGH_P and not o["in_band"]:
                     row["rejected_highs"].append({"market": mk["market"], "selection": o["selection"],

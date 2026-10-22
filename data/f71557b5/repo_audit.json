@@ -2,7 +2,7 @@
  "session": "f71557b5-olbg1",
  "audited": "2026-10-22",
  "counts": {
-  "html_pages": 279,
+  "html_pages": 319,
   "archived_pages": 0,
   "tracked_pyc": 0,
   "desk_row_counts": {
@@ -21,7 +21,7 @@
    "severity": "info",
    "kind": "count",
    "title": "Published page count in README is stale",
-   "text": "README.md line 56 states '0 broken relative links across all 160 published HTML pages'. A filesystem count on this commit finds 279 HTML pages outside archive/ (plus 0 archived), and scripts/validate.py reports 245. The README figure predates at least four merged desks and should be regenerated rather than edited by hand.",
+   "text": "README.md line 56 states '0 broken relative links across all 160 published HTML pages'. A filesystem count on this commit finds 319 HTML pages outside archive/ (plus 0 archived), and scripts/validate.py reports 245. The README figure predates at least four merged desks and should be regenerated rather than edited by hand.",
    "files": [
     "README.md"
    ],
@@ -52,7 +52,7 @@
    "severity": "info",
    "kind": "line",
    "title": "COORDINATION.md header timestamp lags the board body",
-   "text": "The header reads 'Last updated: 2026-10-22T03:05:00Z' while the newest timestamp anywhere in the body is 2026-10-25T21:00. Cosmetic, but it makes the board look older than it is.",
+   "text": "The header reads 'Last updated: 2026-10-22T03:50:00Z' while the newest timestamp anywhere in the body is 2026-10-25T21:00. Cosmetic, but it makes the board look older than it is.",
    "files": [
     "COORDINATION.md"
    ],
