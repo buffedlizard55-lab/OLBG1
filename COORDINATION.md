@@ -3442,7 +3442,7 @@ no official player-level source was available).
 
 ### 56.6 Publication record (filled from the deployed bytes, not from a local build)
 
-**PR:** #116 → `main` — https://github.com/buffedlizard55-lab/OLBG1/pull/116
+**PR:** #116 → `main` — https://github.com/buffedlizard55-lab/OLBG1/pull/116 (follow-ups: #126, #128 — see §56.7)
 **Outcome:** **MERGED** 2026-10-22T12:29:33Z, merge commit **`f3e0e61`** (`Merge pull request #116 from
 buffedlizard55-lab/arena/40214dfd-olbg1`). Merge performed with `gh pr merge 116 --merge`, no approval
 wait, after the branch's own CI run `39778393001` passed every gate (evidence/model/site, historical
@@ -3520,3 +3520,30 @@ F-9DC-01 gate width · F-9DC-02 capped EuroLeague pick · F-9DC-03 excluded best
 EuroLeague tip-off times · F-9DC-05 no game-level recent results · F-9DC-06 fourteen empty categories ·
 F-9DC-07 seven blank NHL venues · F-9DC-08 MLB totals rest on two clubs' rates · F-9DC-09 uncalibrated
 models · F-9DC-10 the EuroLeague recalibration.
+
+### 56.7 Follow-up merges after publication (same session)
+
+Two small follow-ups were merged so the record and the pages agree with each other. Neither touches
+fixtures, prices, model parameters or predictions.
+
+| PR | Merge SHA | What it changed | Deploy |
+|---|---|---|---|
+| #126 | `96caf15` | publication receipt (§56.6), F-402-10 evidence reference corrected from a shifting section number to the section title | Pages run `39779499776`, green |
+| #128 | `07aab40` | coverage arithmetic reconciled and gated (see below) | Pages run `39780023892`, green |
+
+**Why #128 existed.** A self-check found two of this desk's own headline numbers disagreed with its
+coverage table: the dashboard printed “13 of the seventeen” (computed as `17 - sports_listed`) and
+`coverage.html` hard-coded “Why eleven sports have no rows”, while the table actually holds 3 priced,
+1 listed-without-a-price (Snooker), 1 with no in-scope fixture (Gaelic football) and 12 not verified.
+All three numbers are now derived from `desk.json` at build time, and
+`scripts/s40214dfd_validate.py::check_coverage_arithmetic` re-derives them, asserts they sum to the
+in-scope total, and asserts both rendered headlines still contain them. Negative control: forcing
+“13 of the 17” into the dashboard makes the gate exit 1 with
+`index.html does not state the reconciled coverage headline (14 of 17)`.
+
+**Live re-verification after #128** (deployed bytes, `?v=3` to bypass the CDN cache): the dashboard
+reads “14 of the 17 in-scope sports carry no priced row in this session (12 could not be verified at
+all, 1 is listed without a price, 1 had no in-scope fixture)”, the six KPI tiles still read
+26 / 299 / 598 / 7 / 7 / 10, and the seven High rows are unchanged at −236…−247 and 70.26…71.19%.
+`coverage.html` reads “Why 14 sports carry no price” and “12 of the 17 in-scope sports produced no
+publishable row”. The earlier `13` was a genuine error in this session's own output, not a stale cache.
