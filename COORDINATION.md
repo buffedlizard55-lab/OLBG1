@@ -2382,3 +2382,12 @@ legacy; the Arena integration's Pages-settings update returned API403 (restricte
 not an expired GitHub login). Repository content/PR writes succeed. Do not claim an Actions
 artifact deployment until GitHub confirms it; the validated static root remains compatible
 with the existing branch-based Pages source.
+
+### 45.2 Live deployment verification (2026-10-22T08:25Z)
+
+- Follow-up **PR #89** (this §45.1 record) merged as `72f261d`; its Pages build, and two more from other sessions' merges (#84 `6e8570c`, #91 `96f5606`), queued behind each other — each earlier build shows `Page build failed` in the builds API after being superseded (updated timestamp equals the next build's creation), i.e. the failure mode was merge churn cancelling legacy builds, not a content error (repo 39 MB / 703 files, validators green).
+- **Live check passed ~08:25Z** by fetching the published URLs directly (GitHub REST was rate-limiting): `/8fc47dcb/index.html?v=96f5606` serves “Overview — OLBG1 T60 desk” with 73 future / 72 priced / 7 High KPIs, and `/8fc47dcb/predictions.html?v=96f5606` serves all 7 predictions with their official source links. The root companion bar link to this desk is in `main`'s `index.html` (auto-merged alongside the `e6716490` link).
+- Two self-caught defects fixed immediately after the live read, in the same follow-up that carries this section: (1) register counts in §45/report stated 11/15/47 — recomputed truth is **9 confirmed / 14 corrected / 50 not re-checked** (the site's dynamic KPIs were already correct); (2) the Tonga preview's “widest gap” claim was true by ranking places (18) but not by ranking points (Australia–Fiji is wider) — reworded to “eighteen ranking places” and the data/site rebuilt + revalidated.
+- Task **T60 done**. Remaining open items for other sessions untouched: T35 (AFLW re-price — blocked on a readable official ladder), PRs #40/#63.
+
+---
