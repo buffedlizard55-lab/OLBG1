@@ -219,10 +219,13 @@ page("index.html", "Dashboard", body, "index.html")
 
 # --------------------------------------------------------------- matches ----
 ordered = sorted(FX["fixtures"], key=lambda f: (f["sport_name"], f["date"] or "9999", f["id"]))
+n_olbg = sum(1 for f in FX["fixtures"] if f["discovery"] == "olbg" and f["verified"])
+n_off = sum(1 for f in FX["fixtures"] if f["discovery"] == "official-only")
+n_unv = sum(1 for f in FX["fixtures"] if not f["verified"])
 body = (f"<h2>All fixtures — {len(FX['fixtures'])} rows</h2>"
-        f'<div class="note">72 rows were discovered on OLBG and then verified against official sources; '
-        f'29 rows exist only on official sources (OLBG visible capture missed them, flag F-8F6D-12); '
-        f'33 rows could not be confirmed officially and keep blank official fields with flags.</div>'
+        f'<div class="note">{n_olbg} rows were discovered on OLBG and then verified against official sources; '
+        f'{n_off} rows exist only on official sources (OLBG visible capture missed them, flag F-8F6D-12); '
+        f'{n_unv} rows could not be confirmed officially and keep blank official fields with flags.</div>'
         + match_rows(ordered))
 page("matches.html", "Matches", body)
 

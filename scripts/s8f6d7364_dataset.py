@@ -524,20 +524,20 @@ fx("nb-den-okc", "basketball", "Basketball", "NBA", "DEN Nuggets", "OKC Thunder"
 fx("gb-chi-mil", "basketball", "Basketball", "NBA", "CHI Bulls", "MIL Bucks",
    "2026-10-23", None, None, None, None, None,
    ["src-nba-cal23"], "2026-10-22T21:31Z (calendar: 12 games on 23 Oct; matchups not retrievable)",
-   "olbg", olbg_of("basketball", 536041),
+   "discovery-only-unverified", olbg_of("basketball", 536041),
    flags_=["F-8F6D-04", "F-8F6D-15"],
    blank=["official participant confirmation", "official time", "status"],
    notes=["Participants from OLBG discovery only; official row-level fields blank."])
 fx("gb-nyk-bos", "basketball", "Basketball", "NBA", "NY Knicks", "BOS Celtics",
    "2026-10-23", None, None, None, None, None,
    ["src-nba-cal23"], "2026-10-22T21:31Z (calendar: 12 games on 23 Oct; matchups not retrievable)",
-   "olbg", olbg_of("basketball", 534842),
+   "discovery-only-unverified", olbg_of("basketball", 534842),
    flags_=["F-8F6D-04", "F-8F6D-15"],
    blank=["official participant confirmation", "official time", "status"])
 fx("gb-hou-sa", "basketball", "Basketball", "NBA", "HOU Rockets", "SA Spurs",
    "2026-10-23", None, None, None, None, None,
    ["src-nba-cal23"], "2026-10-22T21:31Z (calendar: 12 games on 23 Oct; matchups not retrievable)",
-   "olbg", olbg_of("basketball", 534841),
+   "discovery-only-unverified", olbg_of("basketball", 534841),
    flags_=["F-8F6D-04", "F-8F6D-15"],
    blank=["official participant confirmation", "official time", "status"],
    notes=["OLBG text reads '24 Oct 02:40' (BST); the official calendar counts this game under 23 Oct US dates."])
@@ -634,7 +634,7 @@ for eid, a, b, comp, tt in [
     (188830, "India W", "Zimbabwe W", "International Women's ODI (1st)", "Tomorrow 04:30")]:
     fx(f"ck-{eid}", "cricket", "Cricket", comp, a, b, None, None, None, None, None, None,
        ["src-icc"], "2026-10-22T21:09Z (ICC page: JS shell, no data)",
-       "olbg", olbg_of("cricket", eid), flags_=["F-8F6D-05", "F-8F6D-15"],
+       "discovery-only-unverified", olbg_of("cricket", eid), flags_=["F-8F6D-05", "F-8F6D-15"],
        blank=["date", "start time", "participant confirmation", "status"],
        notes=["Also attempted: NZC (fetch failure), Cricket South Africa (stale 2025 widget). Official verification unresolved."])
 
@@ -723,7 +723,7 @@ for fid, a, b, pa, pb, miss in P2:
        notes=[f"Official table positions on the fixture page: {a} {pa}e, {b} {pb}e."])
 fx("prem-new-sale", "rugby-union", "Rugby Union", "Gallagher Premiership", "Newcastle Red Bulls",
    "Sale Sharks", None, None, None, None, None, None, ["src-premrugby"],
-   "2026-10-22T21:48Z (JS shell, no fixture rows)", "olbg", olbg_of("rugby-union", 609573),
+   "2026-10-22T21:48Z (JS shell, no fixture rows)", "discovery-only-unverified", olbg_of("rugby-union", 609573),
    flags_=["F-8F6D-05"], blank=["date", "start time", "participant confirmation", "status"])
 
 # ================================================================ GOLF ===

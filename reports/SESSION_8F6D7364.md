@@ -11,9 +11,9 @@
    `data/8f6d7364/harvest.json` (event ids, displayed time text, most-tipped selection, tip
    counts, hub links). OLBG treated as discovery only.
 3. **Official verification, line by line** — 46 sources with observation windows in
-   `sources.json`. Result: **134 fixture rows**: 72 OLBG-discovered + officially verified,
-   29 official-only (OLBG visible capture missed them), 33 discovery rows that could **not**
-   be confirmed officially — published with blank official fields and flags (never inferred).
+   `sources.json`. Result: **134 fixture rows**: 64 OLBG-discovered + officially verified,
+   29 official-only (OLBG visible capture missed them), 41 discovery rows that could **not**
+   be confirmed officially (93 verified total / 41 unverified after the post-merge correction below) — published with blank official fields and flags (never inferred).
 4. **Own lines** — model `8f6d7364-v1.0` (zero margin) priced **69 fixtures / 136 selections**
    (winner + MLB totals/run-line + URC totals/handicap + StarLigue totals/handicap):
    2 High / 49 Medium / 18 Low. 65 rows investigated and recorded as *not priced* with the
@@ -90,3 +90,15 @@ Only `data/8f6d7364/**`, `scripts/s8f6d7364_*.py`, `8f6d7364/**`,
 `reports/SESSION_8F6D7364.md` and append-only COORDINATION.md were touched. No root page,
 `pipeline/**`, workflow, `data/current/**` or other session's desk was modified (§0.4).
 PR/merge/Pages receipts are appended to COORDINATION.md §60 post-merge.
+
+## Post-merge correction (found by the live byte read-back, 22:11Z)
+
+Reading the deployed `/8f6d7364/index.html` after PR #159 merged surfaced a contradiction: the
+coverage tiles counted the four cricket rows, the three 23-Oct NBA rows and the Premiership row as
+"official-verified" while every official field on those rows was blank and flagged (F-8F6D-04/05).
+The desk's own flags were right and the `verified` classification was wrong. Fix shipped in the
+follow-up receipts PR: those 8 rows reclassified `discovery-only-unverified` (now 93 verified /
+41 unverified), and the matches-page note made **computed** from the data instead of hardcoded so
+the prose can never drift from the tables again. Validator, `scripts/validate.py` and all gates were
+re-run green on the corrected tree. Same lesson as COORDINATION §0.4's new rule: only a read of the
+deployed bytes catches presentation defects.
