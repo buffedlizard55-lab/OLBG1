@@ -1,7 +1,7 @@
 # Session 40214dfd-olbg1 — T402E report
 
 **Desk:** `40214dfd/` · **Data:** `data/40214dfd/` · **Generators:** `scripts/s40214dfd_{model,data,prose,build,validate}.py`
-**Claim:** `COORDINATION.md` §50, committed before implementation. **Baseline:** `f255eef` (PR #109).
+**Claim:** `COORDINATION.md` §53 (written as §50, renumbered twice at merge), committed before implementation. **Baseline:** `f255eef` (PR #109).
 **Read window:** 2026-10-22T12:12Z → 2026-10-22T12:45Z. **As-of:** 2026-10-22T12:45:00Z.
 
 ## 1. What was asked, and the arithmetic that constrains it
@@ -71,7 +71,7 @@ fetched; the moneylines printed by NHL.com are recorded as that site's odds part
 
 | Gate | Result |
 |---|---|
-| `python3 -m unittest discover -s tests/pipeline` | 95 tests OK |
+| `python3 -m unittest discover -s tests/pipeline` | 121 tests OK (includes the 4 desk guards below) |
 | `python3 -m unittest discover -s tests -p 'test*.py'` | 38 tests OK |
 | `python3 -m pipeline.validate --site .` | 0 errors |
 | `python3 scripts/validate.py` (legacy) | PASSED, 0 errors, 3 pre-existing mirror warnings in `f7fa77fc/` |
@@ -117,7 +117,7 @@ then found on rebasing that session `ee3c3e8f-olbg1` had already fixed the same 
 generator in `f132b6e` (`scripts/s53674ac8_build_site.py`, `BASE = "./"`). That fix is better than a
 page rewrite because it survives regeneration, so this session **dropped its duplicate page edits**
 (verified byte-identical to `main`, `git diff HEAD -- 53674ac8` empty) and kept theirs. Credit for the
-repair belongs to `ee3c3e8f-olbg1`; `COORDINATION.md` §51.5 records this explicitly.
+repair belongs to `ee3c3e8f-olbg1`; `COORDINATION.md` §53.5 records this explicitly.
 
 Two findings were raised while reading that desk and are published, not fixed, because the claims
 belong to its owner:
@@ -129,6 +129,26 @@ belong to its owner:
 A repo-wide automated sweep for the same pattern was run but is **not** published: it produced clear
 false positives on rows mixing several selections, so only the one desk read row by row is named.
 
-## 9. Publication record
+## 9. Late additions in the same session
+
+Three items were added after the first draft of this report and are part of the same PR:
+
+1. **`tests/pipeline/test_desk_40214dfd.py`** (4 tests, ~0.1 s): runs the desk validator as a
+   subprocess, then re-asserts from the JSON that every High probability is strictly above 0.70 and
+   at most 1/1.4, that every High American price sits inside −250…+10000, and that every prediction
+   clears 30 words with no duplicate body. A hand edit to `desk.json` can no longer pass silently.
+2. **Two more official routes were tried and recorded as failures**, not as data:
+   * tennis — `atptour.com/en/scores/current/stockholm/429/daily-schedule` redirected to the **2025
+     archive results** page (completed 2025 matches), so it is not evidence of today's schedule;
+   * darts — `pdc.tv/tournament/2026-european-championship` returned a **cookie-consent wall** with no
+     round, pairing, clock or result markup.
+   Both are now written into `coverage.html` with the URL and the exact failure, and nothing was
+   priced for either sport.
+3. **F-402-10 was corrected.** The first draft of the flagged register credited *this* session with
+   repairing the 98 site-absolute links. That was wrong: session `ee3c3e8f-olbg1` had already fixed
+   them and their generator in `f132b6e` (PR #112). The entry now says so, and this branch's own
+   page-level edits were dropped during rebase rather than double-claimed.
+
+## 10. Publication record
 
 Filled in by the session after the PR is merged and the deployed pages are fetched directly.

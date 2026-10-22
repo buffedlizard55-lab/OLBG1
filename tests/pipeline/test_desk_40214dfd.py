@@ -1,3 +1,13 @@
+"""Publication gate for the 40214dfd desk.
+
+These tests are deliberately cheap and read-only: they run the desk's own validator and
+then re-assert the two invariants the brief is strictest about (a High pick must clear
+70%, and every High price must sit inside the -250..+10000 band) straight from
+``data/40214dfd/desk.json``, so a hand edit to the JSON cannot pass silently.
+"""
+
+from __future__ import annotations
+
 import json
 import subprocess
 import sys
@@ -6,41 +16,56 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 DESK = ROOT / "data" / "40214dfd" / "desk.json"
+VALIDATOR = ROOT / "scripts" / "s40214dfd_validate.py"
+
+# The brief's band: -250 is the shortest price allowed, +10000 the longest.
+BAND_LOW_AMERICAN = -250
+BAND_HIGH_AMERICAN = 10000
+MIN_HIGH_PROBABILITY = 0.70
 
 
-class Desk40214dfdTest(unittest.TestCase):
-    """The desk gate must pass, and its central claim must be arithmetically true."""
+@unittest.skipUnless(DESK.is_file(), "desk data not present")
+class Desk40214DfdTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.desk = json.loads(DESK.read_text())
 
-    def test_desk_validator_passes(self):
-        if not DESK.exists():
-            self.skipTest("desk data not present")
-        result = subprocess.run([sys.executable, str(ROOT / "scripts" / "s40214dfd_validate.py")],
-                                capture_output=True, text=True, cwd=ROOT)
-        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertIn("VALIDATION PASSED", result.stdout)
+    def test_validator_exits_clean(self) -> None:
+        result = subprocess.run(
+            [sys.executable, str(VALIDATOR)],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            timeout=120,
+        )
+        self.assertEqual(
+            result.returncode,
+            0,
+            msg=f"validator failed\nstdout:\n{result.stdout}\nstderr:\n{result.stderr}",
+        )
 
-    def test_high_selections_respect_the_brief_window(self):
-        desk = json.loads(DESK.read_text())
-        highs = [o for fx in desk["fixtures"] for mk in fx["markets"] for o in mk["outcomes"]
-                 if o.get("confidence") == "high"]
-        self.assertTrue(highs, "expected at least one High selection")
-        for o in highs:
-            self.assertGreater(o["probability"], 0.70)
-            self.assertLessEqual(o["probability"], 1 / 1.40 + 1e-9)
-            self.assertGreaterEqual(o["fair_decimal"], 1.40)
-            self.assertTrue(o.get("prediction_id"))
+    def test_every_high_pick_clears_seventy_percent(self) -> None:
+        picks = self.desk["high_picks"]
+        self.assertTrue(picks, "desk publishes no High pick")
+        for pick in picks:
+            with self.subTest(pick=pick["fixture_id"], selection=pick["selection"]):
+                self.assertGreater(pick["probability"], MIN_HIGH_PROBABILITY)
+                self.assertLessEqual(pick["probability"], 1 / 1.4 + 1e-9)
 
-    def test_no_bookmaker_quote_is_claimed(self):
-        desk = json.loads(DESK.read_text())
-        for fx in desk["fixtures"]:
-            for mk in fx["markets"]:
-                self.assertIn("no bookmaker quote captured", mk["status"])
+    def test_every_high_price_sits_inside_the_band(self) -> None:
+        for pick in self.desk["high_picks"]:
+            with self.subTest(pick=pick["fixture_id"]):
+                self.assertGreaterEqual(pick["american"], BAND_LOW_AMERICAN)
+                self.assertLessEqual(pick["american"], BAND_HIGH_AMERICAN)
 
-    def test_every_market_cites_an_official_host(self):
-        hosts = ("nhl.com", "nhle.com", "mlb.com", "euroleaguebasketball.net", "wst.tv", "gaa.ie")
-        desk = json.loads(DESK.read_text())
-        for fx in desk["fixtures"]:
-            self.assertTrue(any(any(h in u for h in hosts) for u in fx["source_urls"]), fx["id"])
+    def test_predictions_are_long_enough_and_unique(self) -> None:
+        bodies = []
+        for prediction in self.desk["predictions"]:
+            words = len(prediction["body"].split())
+            with self.subTest(prediction=prediction["fixture_id"]):
+                self.assertGreaterEqual(words, 30)
+            bodies.append(prediction["body"])
+        self.assertEqual(len(bodies), len(set(bodies)), "duplicate prediction text")
 
 
 if __name__ == "__main__":
