@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+import hashlib
 import json
 import re
 import sys
@@ -31,6 +32,8 @@ def get_json(url: str, raw_path: Path):
         raise ValueError("Collector URL is not an official allowlisted structured API")
     req = Request(url, headers={"User-Agent": "OLBG1-evidence-desk/1.0 (public research; source-linked)", "Accept": "application/json"})
     with urlopen(req, timeout=20) as response:
+        if urlparse(response.url).hostname not in ALLOWED_HOSTS:
+            raise ValueError("Official collector redirected outside its allowlist")
         body = response.read(4_000_001)
         if len(body) > 4_000_000:
             raise ValueError("Official response exceeds safe capture limit")
@@ -81,10 +84,10 @@ def nhl_rows(payload, sid):
         names = []
         records = []
         for team in teams:
-            name = localized(team.get("placeName")) + " " + localized(team.get("commonName"))
-            if not name.strip():
-                raise ValueError("No NHL team name")
-            names.append(name.strip())
+            place, common = localized(team.get("placeName")), localized(team.get("commonName"))
+            if not place or not common:
+                raise ValueError("No complete NHL team name")
+            names.append((place + " " + common).strip())
             record = team.get("record", "")
             if not re.fullmatch(r"\d+-\d+-\d+", record):
                 records.append(None)
@@ -123,6 +126,8 @@ def mlb_rows(payload, sid, records):
         for game in day.get("games", []):
             if game.get("status", {}).get("abstractGameState") != "Preview" or game["status"].get("startTimeTBD"):
                 continue
+            if game["status"].get("detailedState") not in (None, "Scheduled", "Pre-Game", "Warmup"):
+                continue
             if game.get("ifNecessary") == "Y":
                 continue  # conditional games stay out of a current firm fixture slate
             home, away = (game["teams"][s]["team"] for s in ("home", "away"))
@@ -138,6 +143,40 @@ def mlb_rows(payload, sid, records):
     return rows
 
 
+def apply_schedule_snapshot(fixtures, sources, sid, url, payload, rows, today, end):
+    """Withdraw stale pregame claims when a successful official snapshot contradicts them.
+
+    Absence is labelled not-returned, never a fabricated cancellation or final score.
+    All old observations/starts are retained for auditability, but no longer called pregame.
+    """
+    active = {row["id"] for row in rows}
+    observed = {}
+    candidates = set()
+    if urlparse(url).hostname == "api-web.nhle.com":
+        for g in payload["games"]:
+            observed["nhl-" + str(g["id"])] = g.get("gameScheduleState") if g.get("gameScheduleState") not in (None, "OK") else g.get("gameState", "unconfirmed")
+        for fid, old in fixtures.items():
+            if old["sport"] == "ice-hockey" and any(sources.get(ref, {}).get("url") == url for ref in old["fixture_evidence"]):
+                candidates.add(fid)
+    elif "schedule" in urlparse(url).path:
+        for day in payload["dates"]:
+            for g in day.get("games", []):
+                observed["mlb-" + str(g["gamePk"])] = "conditional" if g.get("ifNecessary") == "Y" else g.get("status", {}).get("detailedState", "unconfirmed")
+        for fid, old in fixtures.items():
+            if old["sport"] == "baseball" and today.isoformat() <= old["event_date"] < end.isoformat():
+                candidates.add(fid)
+    withdrawn = []
+    for fid in candidates - active:
+        old = fixtures[fid]
+        old["official_state"] = observed.get(fid, "not-returned")
+        old.setdefault("field_sources", {})["official_state"] = [sid]
+        old["notes"] += " Latest successful official schedule did not confirm this as a firm pregame fixture; retained for history only. Absence is not asserted to mean cancellation."
+        withdrawn.append(fid)
+    for row in rows:
+        fixtures[row["id"]] = row
+    return sorted(withdrawn)
+
+
 def refresh(path: Path, today=None):
     data = json.loads(path.read_text())
     current = datetime.now(timezone.utc)
@@ -149,19 +188,28 @@ def refresh(path: Path, today=None):
     raw_dir = path.parent / "raw"
 
     def attempt(label, url, parser):
-        sid = label if re.search(r"\d{4}-\d{2}-\d{2}$", label) else label + "-" + today.isoformat()
-        raw_path = raw_dir / (sid + ".json")
+        base_sid = label if re.search(r"\d{4}-\d{2}-\d{2}$", label) else label + "-" + today.isoformat()
+        sid = base_sid
+        raw_path = raw_dir / (base_sid + "-capture.json")
         try:
             payload, retrieved = get_json(url, raw_path)
+            # Immutable observation IDs: a later pull must not re-stamp fields from a prior body.
+            digest = hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()[:10]
+            sid = base_sid + "-" + re.sub(r"\D", "", retrieved) + "-" + digest
+            final_raw = raw_dir / (sid + ".json")
+            raw_path.replace(final_raw)
+            raw_path = final_raw
             parsed = parser(payload, sid)
             sources[sid] = official_source(sid, label.replace("-", " ").upper(), url, retrieved,
                                             str(raw_path.relative_to(ROOT)))
+            withdrawn = []
             if isinstance(parsed, list):
-                for row in parsed:
-                    fixtures[row["id"]] = row
+                withdrawn = apply_schedule_snapshot(fixtures, sources, sid, url, payload, parsed, today, end)
                 sources[sid]["extracted_fixture_ids"] = [r["id"] for r in parsed]
+                sources[sid]["withdrawn_fixture_ids"] = withdrawn
             attempts.append({"source": sid, "url": url, "status": "success", "retrieved_at_utc": retrieved,
-                             "fixture_count": len(parsed) if isinstance(parsed, list) else None})
+                             "fixture_count": len(parsed) if isinstance(parsed, list) else None,
+                             "withdrawn_fixture_ids": withdrawn})
             return parsed
         except (HTTPError, URLError, TimeoutError, ValueError, KeyError, TypeError, OSError) as exc:
             attempts.append({"source": sid, "url": url, "status": "failed", "attempted_at_utc": iso(datetime.now(timezone.utc)),

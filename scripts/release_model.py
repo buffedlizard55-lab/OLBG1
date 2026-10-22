@@ -8,6 +8,7 @@ model is independent Poisson scoring, not a claim that real goals are independen
 from __future__ import annotations
 
 import math
+from urllib.parse import urlsplit
 from datetime import datetime, timedelta, timezone
 
 UTC = timezone.utc
@@ -180,7 +181,7 @@ def temporal_status(fixture: dict, sources: dict, as_of: datetime, window: dict)
 
 
 def high_gate(fixture: dict, market: dict, selection: dict, status: str, calibrated: bool = False,
-              preview: str = "") -> list[str]:
+              preview: str = "", as_of: datetime | None = None) -> list[str]:
     """Every reason for abstention is exposed. No approved picks in the initial release."""
     reasons = []
     if status != "scheduled":
@@ -192,8 +193,25 @@ def high_gate(fixture: dict, market: dict, selection: dict, status: str, calibra
     if not odds_in_high_window(selection["probability"]):
         reasons.append("Unrounded fair odds outside −250…+10000")
     quote = fixture.get("bookmaker_quote")
-    if not quote or market["availability"] != "verified":
+    if not isinstance(quote, dict) or market["availability"] != "verified":
         reasons.append("No verified available quote with matching market and settlement")
+    else:
+        if (quote.get("market_id") != market["id"] or quote.get("selection") != selection["selection"]
+                or quote.get("settlement") != market["settlement"] or quote.get("confirmed_available") is not True):
+            reasons.append("Quoted market, selection, availability and settlement must match exactly")
+        price = quote.get("american")
+        if (isinstance(price, bool) or not isinstance(price, (int, float)) or not math.isfinite(price)
+                or not -250 <= price <= 10000 or -100 < price < 100):
+            reasons.append("Actual quoted American price outside valid −250…+10000 range")
+        try:
+            age = ((as_of or datetime.now(timezone.utc)) - timestamp(quote["retrieved_at_utc"])).total_seconds()
+            if not 0 <= age <= 300:
+                reasons.append("Verified quote must be no more than five minutes old, not future-dated")
+        except (KeyError, TypeError, ValueError):
+            reasons.append("Exact quote retrieval time missing or invalid")
+        parsed_url = urlsplit(quote.get("source_url") or "")
+        if parsed_url.scheme != "https" or not parsed_url.hostname:
+            reasons.append("Direct quoted-market source URL missing")
     if not fixture.get("head_to_head") or not fixture.get("lineups_confirmed"):
         reasons.append("Relevant recent history / participant availability not fully confirmed")
     if len(preview.split()) < 30:
@@ -221,7 +239,7 @@ def enrich(fixture: dict, sources: dict, as_of: datetime, window: dict) -> dict:
         row["winner_projection"] = dict(selected)
         n = min(fixture["inputs"][s]["games"] for s in ("a", "b"))
         row["confidence"] = "Medium" if selected["probability"] >= 0.60 and n >= 8 else "Low"
-        row["high_gate_rejections"] = high_gate(fixture, winner_market, selected, status)
+        row["high_gate_rejections"] = high_gate(fixture, winner_market, selected, status, as_of=as_of)
         for m in row["markets"]:
             for o in m["outcomes"]:
                 o["confidence"] = "Low" if model == "independent-poisson-regulation" else row["confidence"]

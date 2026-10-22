@@ -1,2 +1,8 @@
 __pycache__/
 *.pyc
+
+# Transient build/test tools and raw responses are deployment artifacts, not repository datasets.
+.output/
+.cache/
+data/release/raw/
+reports/release_line_findings.csv

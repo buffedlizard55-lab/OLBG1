@@ -83,7 +83,7 @@ def shell(title, description, body, path, bundle, active=""):
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)} · OLBG1</title><meta name="description" content="{e(description)}">
-<link rel="stylesheet" href="{prefix}assets/release.css"><script src="{prefix}assets/release.js" defer></script>
+<link rel="icon" type="image/svg+xml" href="{prefix}assets/release-mark.svg"><link rel="stylesheet" href="{prefix}assets/release.css"><script src="{prefix}assets/release.js" defer></script>
 </head><body><a class="skip" href="#main">Skip to content</a>
 <header class="mast"><div class="mast-inner"><a class="brand" href="{prefix}index.html">OLBG1<span>INDEPENDENT RESEARCH DESK</span></a>
 <nav aria-label="Main navigation">{nav}</nav></div></header>
@@ -102,7 +102,7 @@ Missing facts remain blank. <a href="{prefix}flagged.html">See all review items<
 
 
 def table(headers, rows, caption="", attrs=""):
-    return f'<div class="table-wrap"><table {attrs}>' + (f'<caption>{caption}</caption>' if caption else "") + '<thead><tr>' + "".join(f'<th scope="col">{e(h)}</th>' for h in headers) + '</tr></thead><tbody>' + "".join(rows) + '</tbody></table></div>'
+    return f'<div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable data table"><table {attrs}>' + (f'<caption>{caption}</caption>' if caption else "") + '<thead><tr>' + "".join(f'<th scope="col">{e(h)}</th>' for h in headers) + '</tr></thead><tbody>' + "".join(rows) + '</tbody></table></div>'
 
 
 def toolbar(bundle, sport_select=True):
@@ -154,8 +154,8 @@ def index_page(bundle):
 {warning()}<div class="stats"><div class="stat"><strong>{counts['fixtures']}</strong><span>Officially supported fixture / event extracts</span></div>
 <div class="stat"><strong>17</strong><span>Sport reviews · all partial or blocked</span></div><div class="stat"><strong>{counts['model_outcomes']}</strong><span>Experimental fair prices · not offers</span></div>
 <div class="stat"><strong>0</strong><span>Approved bets · 0 High selections</span></div></div>
-<div class="section-head"><h2>Upcoming research watchlist</h2><p>Exact future UTC starts + paired model inputs</p></div>
-{fixtures_table(watch, bundle)}
+<div class="section-head"><h2>Upcoming research watchlist</h2><p>Exact future UTC starts + paired inputs · scroll for all models</p></div>
+<div class="watchlist">{fixtures_table(watch, bundle)}</div>
 <div class="section"><div class="section-head"><h2>Explore the sports</h2><a href="coverage.html">Coverage & blockers →</a></div>{sport_cards(bundle)}</div>
 <div class="section two-col"><div class="panel"><h3>What changed in this release</h3><p class="small muted">Official rereads corrected the Efes and Bayern home/away orientation and Nashville’s record. Unclear display clocks, unverified inherited ratings and stale recommendations are not carried onto the current board.</p><a class="small" href="flagged.html">Open the review ledger →</a></div>
 <div class="panel"><h3>All prior desks are retained</h3><p class="small muted">The old primary pages and every session’s namespaced work remain available as unrecertified history, rather than competing live dashboards.</p><a class="small" href="archive/index.html">Browse historical work →</a></div></div>
@@ -173,10 +173,16 @@ def coverage_page(bundle):
     if automatic:
         ok = sum(r['status'] == 'success' for r in automatic['attempts'])
         auto_note += f'<p>Last automatic attempt: {e(automatic["attempted_at_utc"])}. {ok}/{len(automatic["attempts"])} requests succeeded. Failures are listed in the JSON download; a failed request never renews an old observation.</p>'
+    auto_table = ''
+    if automatic:
+        attempt_rows = []
+        for a in automatic['attempts']:
+            attempt_rows.append(f'<tr><td>{e(a["source"])}</td><td>{e(a["status"])}</td><td>{e(a.get("retrieved_at_utc") or a.get("attempted_at_utc"))}</td><td>{e(a.get("error") or str(a.get("fixture_count")) + " extracted fixtures")}</td><td><a href="{e(a["url"])}">Official API request</a></td></tr>')
+        auto_table = '<div class="section"><h2>Automatic collection attempts</h2>' + table(['Request','Result','UTC','Observed count / error','Official source'],attempt_rows) + '</div>'
     return f'''<h1>Coverage, honestly measured.</h1><p class="lede">Every eligible OLBG category has a review. None is labelled complete merely because a hub or official homepage loaded.</p>{warning()}
 <div class="panel small"><strong>UTC window:</strong> {e(bundle['coverage_window']['from_utc'])} to {e(bundle['coverage_window']['to_utc_exclusive'])} (exclusive). Local schedule dates may differ.
 {auto_note}<p>OLBG first rendered chunks are discovery only. Load More, every bookmaker, every competition, every market and all seven days have <strong>not</strong> been exhausted. Empty text is a retrieval limitation, not evidence that a sport has no fixtures.</p></div>
-<div class="section">{toolbar(bundle)}{table(['Sport', 'Extracts', 'Status', 'Unresolved collection / model scope', 'Official review + discovery'], rows)}</div>'''
+<div class="section">{toolbar(bundle)}{table(['Sport', 'Extracts', 'Status', 'Unresolved collection / model scope', 'Official review + discovery'], rows)}</div>{auto_table}'''
 
 
 def market_tables(rows, bundle, prefix=""):
@@ -222,7 +228,7 @@ def sport_page(category, bundle):
         facts = ''.join('<li>' + e(fact) + '</li>' for fact in row['form'])
         inputs = '<pre>' + e(json.dumps(row['inputs'], ensure_ascii=False, indent=2)) + '</pre>' if row['inputs'] else '<p class="muted small">Paired performance inputs: unconfirmed. Winner, confidence and fair odds remain blank.</p>'
         note = bundle['commentary'].get(row['id'])
-        prose = f'<h3>{e(note["title"])}</h3><p>{e(note["text"])}</p>' if note else ''
+        prose = f'<p class="small muted">Editorial observation: 2026-10-22. Not automatically updated.</p><h3>{e(note["title"])}</h3><p>{e(note["text"])}</p>' if note else ''
         details.append(f'''<article class="research-card" id="{e(row['id'])}" data-start="{e(row.get('start_utc') or '')}" data-expires="{e(row['evidence_expires_utc'])}"><h3>{e(title)}</h3>
 <div class="kicker"><span data-live-status>{badge(LABELS[row['status']], row['status'])}</span><span class="small muted">{e(row['competition'])} · {e(row['event_date'])}</span></div>
 <p class="small"><strong>Participant order:</strong> {e(row['participant_order'])}. <strong>Exact UTC:</strong> {e(row.get('start_utc'))}.
@@ -259,7 +265,8 @@ def sources_page(bundle):
     rows = []
     for s in bundle['sources']:
         official = [c['official_source'] for c in bundle['coverage'] if c['olbg_source'] == s['id']]
-        rows.append(f'''<tr data-search="{e(s['name']+' '+s['scope'])}" data-sport=""><td><strong>{e(s['name'])}</strong><br><small>{e(s['id'])}</small></td><td>{e(s['kind'])}<br>{badge(s['status'])}</td><td class="small nowrap">{e(s['read_on'])}<br>{e(s.get('retrieved_at_utc'))}</td><td>{e(s['scope'])}<br><small class="muted">{e(s['limitations'])}</small></td><td>{source_links([s['id']] + official,bundle['source_map'])}</td></tr>''')
+        raw_link = f'<a class="small" href="{e(s["raw_path"])}">Raw official JSON</a>' if s.get('raw_path') else ''
+        rows.append(f'''<tr data-search="{e(s['name']+' '+s['scope'])}" data-sport=""><td><strong>{e(s['name'])}</strong><br><small>{e(s['id'])}</small></td><td>{e(s['kind'])}<br>{badge(s['status'])}</td><td class="small nowrap">{e(s['read_on'])}<br>{e(s.get('retrieved_at_utc'))}</td><td>{e(s['scope'])}<br><small class="muted">{e(s['limitations'])}</small></td><td>{source_links([s['id']] + official,bundle['source_map'])}{raw_link}</td></tr>''')
     return f'''<h1>A source is a trail, not a stamp.</h1><p class="lede">Each entry names exactly what was read. An official URL alone does not verify every claim made about its event.</p>
 <div class="notice"><strong>Observation precision:</strong> manual reads have a date, not an invented per-page UTC timestamp. The ledger transcription time is {e(bundle['captured_at_utc'])}. Only automatic API responses carry exact retrieval times and raw JSON. Partial chunks, consent walls and empty JS shells are disclosed.</div>
 {toolbar(bundle,False)}{table(['Source / ID','Role / read status','Observed date / exact retrieval','Observed fields & limitations','Source link'],rows)}
@@ -314,7 +321,7 @@ def analysis_page(bundle):
         if fid not in lookup:
             continue
         row = lookup[fid]
-        cards.append(f'''<article class="research-card" data-start="{e(row.get('start_utc') or '')}" data-expires="{e(row['evidence_expires_utc'])}"><h2>{e(note['title'])}</h2><p>{e(note['text'])}</p>
+        cards.append(f'''<article class="research-card" data-start="{e(row.get('start_utc') or '')}" data-expires="{e(row['evidence_expires_utc'])}"><p class="small muted">Editorial observation: 2026-10-22 · not automatically updated</p><h2>{e(note['title'])}</h2><p>{e(note['text'])}</p>
 <p><span data-live-status>{badge(LABELS[row['status']],row['status'])}</span> <a class="small" href="sports/{e(row['sport'])}.html#{e(fid)}">Fixture inputs & model →</a></p>{source_links(note['evidence'],bundle['source_map'])}</article>''')
     return f'''<h1>Context before conviction.</h1><p class="lede">Individual research notes grounded in the observed official records. These are not High-confidence betting previews.</p>{warning()}{''.join(cards)}'''
 
@@ -326,7 +333,7 @@ def audit_page(bundle):
 <h2>Executable gates</h2><p>The current validator checks eligible categories, source roles, paired inputs, probability complements, fair-odds arithmetic, past-start handling, freshness, no neutral missing-data prices, absent approved bets, unique commentary and local links including fragments. Unit tests exercise malformed data, timezone ambiguity, draw handling, score-grid mass, boundary odds and failed refreshes. Live external URLs are not certified merely by structural tests.</p>
 <h2>Preservation</h2><p>Prior root HTML is archived; every namespaced desk and dataset is retained unchanged. The independent T56/T57 audit scripts and reports are not overwritten. The old generators remain historical and are no longer the canonical publishing command.</p>
 <h2>Unresolved user goals</h2><p>Exhaustive all-market, all-match coverage and empirically supported new High selections are not completed. Rather than disguise those gaps with verification labels, the release exposes them and approves zero bets.</p></div>
-<div class="section downloads"><a href="reports/RELEASE_T58.md">Release audit report</a><a href="reports/release_file_inventory.csv">File-by-file line inventory</a><a href="reports/release_line_findings.csv">Line-level URL / risk register</a><a href="data/release/bundle.json">Every current row & gate reason</a></div>'''
+<div class="section downloads"><a href="reports/RELEASE_T61.md">Release audit report</a><a href="reports/release_file_inventory.csv">File-by-file line inventory</a><a href="reports/release_line_findings.csv.gz">Line-level URL / risk register (CSV.gz)</a><a href="data/release/bundle.json">Every current row & gate reason</a></div>'''
 
 
 def build(as_of=None):
