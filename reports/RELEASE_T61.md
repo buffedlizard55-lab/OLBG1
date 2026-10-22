@@ -150,3 +150,11 @@ HTML pages**, **38 tests PASS**, full desktop/mobile browser smoke PASS. All ups
 rows/sections and every namespace (including later `e6716490` corrections) were retained.
 The root/sport HTML replacement is intentional; prior states remain archived and the new
 `8fc47dcb` namespace is included automatically in the current archive directory index.
+
+### Hosting/queue observation
+
+At 08:05Z, PR #84's hosted validation job had no runner assigned. Pinned Ubuntu 24.04 rather
+than the moving latest label; no local gate failed. The existing `main:/` Pages configuration
+is branch-based. Direct Pages-settings changes return API403 for the Arena integration,
+although repository and PR writes work. The validated static root supports that legacy mode;
+custom artifact deployment success is not presumed from the presence of a workflow file.
