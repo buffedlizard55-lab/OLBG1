@@ -97,6 +97,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T38 | Full multi-market line origination (Win/1X2/Outright, non-pushing `.5` Spreads, Totals, Derivatives & multi-runner field boards), monotonic confidence grading, and 40 unique human High predictions | done | 984d417f-olbg1 | `scripts/s984d417f_dataset.py`, `scripts/s984d417f_model.py`, `data/984d417f/lines.json`, `data/984d417f/predictions.json`, `data/984d417f/matches.csv` | 2026-10-21T07:06Z | 145 priced boards (`40 High / 34 Medium / 71 Low`); 40 human writeups (`56–68` words each, `0` repeated 6-grams) |
 | T39 | Build 23-page dashboard (`/984d417f/`), run all 6 repository validators, non-destructively merge `origin/main`, open & merge PR to `main`, and verify live GitHub Pages deployment | done | 984d417f-olbg1 | `984d417f/**`, `scripts/s984d417f_build_site.py`, `scripts/s984d417f_validate.py`, `README.md`, `COORDINATION.md` (append-only) | 2026-10-21T07:06Z | 23 pages built (`2,946` links/anchors validated, `0` errors across all `182` repo HTML pages) |
 | T40 | Independent offline structural/provenance audit of the latest root dashboard and namespaced `/c17a9192/` + `/984d417f/` dashboards; reconcile event/market/prediction/verification joins, blank/flag coverage, rendered table links, local gates and Pages state | done | 5a353e83-olbg1 | `scripts/session_5a353e83_audit.py`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.md`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.html`, `COORDINATION.md` (append-only) | 2026-10-21T07:48Z | No outbound official-source fetch; no data, lines, predictions or shared dashboard files edited. Renumbered after T17/T20/T21/T36 collisions; see §30. **Completed:** 0 structural errors, 19 review notes; 5 validators + `final_audit.py` passed; PR #44 merged, Pages deployment built (workflow `39565999245`), see §30.1. |
+| T41 | Fresh 22–26 Oct 2026 matchday desk: live official-source fixture harvest, own multi-market lines, confidence tiers, unique ≥30-word high-confidence predictions, own dashboard + Flagged page, validator gate, PR + merge + Pages check | in progress | 7a5b5360-olbg1 | `data/7a5b5360/**`, `scripts/s7a5b5360_*.py`, `7a5b5360/**`, `reports/SESSION_7A5B5360.md`, `COORDINATION.md` (append-only) | 2026-10-22T00:00Z | Claimed after T40. Non-overlapping namespace; no shared data file edited. |
 
 | T21 | Independent second-pass re-verification of NHL input sub-values and the F1 start time; correction of four NHL transposition errors and one timezone error; source-redirect evidence for PlusLiga and GAA | done | 4f8d032d-olbg1 | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py`, `scripts/live_verification.py`, `scripts/high_predictions.py`, `data/verification.json`, `reports/SESSION_4F8D_VERIFICATION.md`, append-only `COORDINATION.md` | 2026-10-21T07:15Z | Claimed as T17 (collision: taken by 72198d3e, which itself became T20); renumbered T21. Rebased onto `main`; earlier session's Boston fix and Vegas no-reprice policy preserved. 31 High picks retained. |
 
@@ -1287,3 +1288,31 @@ H2H matches and 8 event/field cards; 31 high-confidence picks (31 High / 34 Medi
 **GitHub Pages.** Workflow [`39565999245`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39565999245) completed successfully (`success`) for the PR #44 merge SHA at `2026-10-21T08:01:15Z`; Pages API returned `status=built` at `2026-10-21T08:01:32Z`. This is deployment API/workflow metadata; T40 did not fetch or browser-check `github.io` content.
 
 **Remaining boundaries.** This was an offline structural audit, not fresh sports-source verification. The 58 root `not_rechecked` rows remain, the root T35 AFLW re-price is still queued, PR #40 remains open/conflicting, and all 19 review notes are preserved without altering parallel dashboard/data files.
+
+---
+
+## 31. Session `7a5b5360-olbg1` — T41 fresh matchday desk (22–26 Oct 2026), own lines, multi-market, predictions, own dashboard
+
+**Claim (2026-10-22T00:00Z).** This session claims **T41 — fresh official-source matchday desk for the
+current window**, using the next free task id after T40 (§30). Section numbered **31** because §31 is
+the next unused heading.
+
+**File scope (entirely new, nothing owned by another session is edited):**
+
+* `data/7a5b5360/**` (new namespace: verified fixtures, sourced form inputs, originated markets, predictions, flags)
+* `scripts/s7a5b5360_*.py` (harvest/model/site-validate scripts for this desk only)
+* `7a5b5360/**` (new dashboard tree published under the `/7a5b5360/` path)
+* `reports/SESSION_7A5B5360.md`
+* `COORDINATION.md` — **append-only** (§31) and one new row in the §1 task table.
+* Additive links only in `README.md` and `scripts/build_site.py` navigation, added **after** the desk is
+  built and only if they cannot collide (single small commit).
+
+**Why this is not a duplicate of T20/T34/`c17a9192`/`984d417f`.** Every prior desk priced the
+21–27 October window as harvested before 2026-10-22T00:00Z. This desk re-harvests the **live** official
+fixture lists for 22–26 October 2026 and prices only fixtures confirmed on an official page in this
+session, with the fetched value and the exact official URL recorded per field.
+
+**Verification rule restated for this desk.** Every fixture row must carry the official URL that was
+actually fetched in this session. Any field not read on an official page stays blank and is listed on
+`7a5b5360/flagged.html`. Model prices are labelled as estimates, never as sourced facts.
+
