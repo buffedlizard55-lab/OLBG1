@@ -56,3 +56,18 @@ All **7 excluded OLBG sport routes** (`Football/1`, `Horse_Racing/2`, `American_
   12. `P-3EE-12` · `HC Vardar 1961 vs MT Melsungen` — **HC Vardar 1961 +2.5** (`-240`, `1.4161`, `70.62%`, 97w)
   13. `P-3EE-13` · `Montpellier Handball vs Dinamo Bucuresti` — **Montpellier Handball +2.5** (`-243`, `1.4108`, `70.88%`, 90w)
 - **57 Out-of-Window Chalk Outcomes (`p > 71.43%`, shorter than `−250`)** are capped at `Medium` and itemized on `/3ee30bba/high-confidence.html`.
+
+---
+
+## 4. Publication & Live GitHub Pages Verification Receipt
+
+- **Pull Request:** [PR #156](https://github.com/buffedlizard55-lab/OLBG1/pull/156) (`arena/3ee30bba-olbg1` → `main`)
+- **Pre-Merge CI:** Run `39859480070` (*Evidence, model, site and browser gates*) — **pass** (46s)
+- **Merge Commit:** `a18e80905d0a17fdb5ac319813a74b93bde94a60` (`2026-10-22T21:44:22Z`)
+- **Post-Merge Pages Deployment:** Canonical workflow run `39859662561` (**success**, 1m32s; deploy job `120107343046`) & `pages-build-deployment` run `39859661696` (**success**, 27s)
+- **Live Byte-Readback Confirmed:**
+  - `https://buffedlizard55-lab.github.io/OLBG1/3ee30bba/index.html` (HTTP 200)
+  - `https://buffedlizard55-lab.github.io/OLBG1/3ee30bba/predictions.html` (HTTP 200)
+  - `https://buffedlizard55-lab.github.io/OLBG1/3ee30bba/flagged.html` (HTTP 200)
+  - `https://buffedlizard55-lab.github.io/OLBG1/archive.html` (HTTP 200 — `Preserved 3ee30bba` auto-indexed)
+
