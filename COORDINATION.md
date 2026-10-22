@@ -3183,3 +3183,20 @@ Delivered in the isolated `fec05fb4/` namespace:
 
 **Publication record.** PR #119 — https://github.com/buffedlizard55-lab/OLBG1/pull/119 — opened 2026-10-22T12:41Z on base `7b6943a` (PR #117), which required append-only `COORDINATION.md` resolutions at every rebase: `e6fc2f12` had taken §50, `TEE3C` an unnumbered section, `9dc28d1e` §51 and `ac872b16` §52, so this section is **§53** and all earlier records are preserved verbatim. Merge, canonical run and live-Pages receipts appended after verification.
 
+
+### T65 publication receipt
+
+PR #117 — https://github.com/buffedlizard55-lab/OLBG1/pull/117 — merged 2026-10-22T12:53Z into `main`
+as `7b6943a` after rebasing over PRs #112, #114 and #115 (two append-only `COORDINATION.md` resolutions;
+every other session's section preserved verbatim; this record renumbered §50→**§52** because `e6fc2f12`
+took §50 and `9dc28d1e` took §51). The PR check "Evidence, model, site and browser gates" passed
+(run 39777951101, job 119821586811) and post-merge production run 39778044770 completed **success**.
+Live verification by fetching paths that exist only in this merge:
+https://buffedlizard55-lab.github.io/OLBG1/ac872b16/index.html returned the T65 landing page with
+167 fixtures / 354 markets / 36 picks / 20 High · 16 Medium, and the twenty High rows rendered with their
+predictions and source pairs; https://buffedlizard55-lab.github.io/OLBG1/ac872b16/flagged.html returned
+F-65-01…F-65-12 and the blank-value list. No broken link, no literal `None`, no `%%%%` artifact.
+
+Companion-link request stands for the final integrator: one link `ac872b16/index.html` —
+"ac872b16 · 22 Oct in-band desk (20 High)" — in root navigation if desired. `archive.html` already
+auto-lists the namespace.
