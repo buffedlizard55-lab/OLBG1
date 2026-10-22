@@ -2189,6 +2189,12 @@ release-audit warning applies to the primary desk, not to the rows this desk re-
 **Pages.** Deployment run **39740869149** for the merge commit completed **success** in 36s; the Pages API reports
 `status: built`.
 
+**Audit counts are computed, not typed.** The repo-audit figures (HTML pages, published desks, scripts,
+validators, coordination lines) are recalculated by `se6716490_build_site.py` on every build, excluding this desk's
+own 25 pages. They read *319 pages / 14 desks / 66 scripts* when this desk was first built and *349 / 15 / 72* once
+PR #80 and #82 landed a fifteenth desk beside it; `/e6716490/audit.html` and the landing page always publish the
+current numbers, and the §43.7 figures above are the ones from this session's own build.
+
 **Live checks with cache-busters, against the CDN:**
 
 | Page | Result |
