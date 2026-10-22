@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model &amp; Grading Rules · OLBG Desk a0b04058</title>
+<link rel="stylesheet" href="assets/style.css">
+<script defer src="assets/app.js"></script>
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="Primary">
+<a class="brand" href="index.html">OLBG Desk · a0b04058<small>Official-Source Audit & Lines</small></a>
+<div class="nav-group"><div class="nav-title">Desk Views</div><a class="nav-link" href="index.html"><span>Overview &amp; Match List</span><span class="nav-count">133</span></a><a class="nav-link" href="matches.html"><span>All Matches</span><span class="nav-count">133</span></a><a class="nav-link" href="markets.html"><span>Originated Markets</span><span class="nav-count">208</span></a><a class="nav-link" href="high-confidence.html"><span>High-Confidence Picks</span><span class="nav-count">44</span></a><a class="nav-link" href="daily-top5.html"><span>Daily Top-5 Per Sport</span><span class="nav-count">85</span></a><a class="nav-link" href="predictions.html"><span>Predictions (≥30 words)</span><span class="nav-count">85</span></a><a class="nav-link" href="sports.html"><span>17 Sport Categories</span><span class="nav-count">17</span></a><a class="nav-link" href="flagged.html"><span>Flagged for Review</span><span class="nav-count">27</span></a></div>
+<div class="nav-group"><div class="nav-title">Verification & Audit</div><a class="nav-link" href="sources.html"><span>Official Sources</span><span class="nav-count">38</span></a><a class="nav-link" href="reverse-engineering.html"><span>OLBG Reverse Engineering</span><span class="nav-count">6 findings</span></a><a class="nav-link" href="repo-audit.html"><span>Repo Audit</span><span class="nav-count">3</span></a><a class="nav-link" href="analysis.html"><span>Analysis &amp; Findings</span></a><a class="nav-link active" href="methodology.html"><span>Model &amp; Grading</span></a><a class="nav-link" href="../index.html"><span>← Canonical Root</span></a><a class="nav-link" href="../archive.html"><span>Archive (All Desks)</span></a></div>
+<div class="nav-group"><div class="nav-title">17 Covered Sports</div><a class="nav-link" href="sports/ice-hockey.html"><span>Ice Hockey</span><span class="nav-count">14</span></a><a class="nav-link" href="sports/basketball.html"><span>Basketball</span><span class="nav-count">9</span></a><a class="nav-link" href="sports/tennis.html"><span>Tennis</span><span class="nav-count">20</span></a><a class="nav-link" href="sports/baseball.html"><span>Baseball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/darts.html"><span>Darts</span><span class="nav-count">8</span></a><a class="nav-link" href="sports/snooker.html"><span>Snooker</span><span class="nav-count">4</span></a><a class="nav-link" href="sports/rugby-union.html"><span>Rugby Union</span><span class="nav-count">18</span></a><a class="nav-link" href="sports/rugby-league.html"><span>Rugby League</span><span class="nav-count">12</span></a><a class="nav-link" href="sports/cricket.html"><span>Cricket</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/volleyball.html"><span>Volleyball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/handball.html"><span>Handball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/aussie-rules.html"><span>Aussie Rules</span><span class="nav-count">7</span></a><a class="nav-link" href="sports/esports.html"><span>eSports</span><span class="nav-count">8</span></a><a class="nav-link" href="sports/gaelic-football.html"><span>Gaelic Football</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/golf.html"><span>Golf</span><span class="nav-count">3</span></a><a class="nav-link" href="sports/motor-racing.html"><span>Motor Racing</span><span class="nav-count">2</span></a><a class="nav-link" href="sports/greyhounds.html"><span>Greyhounds</span><span class="nav-count">3</span></a></div>
+</aside>
+<div class="content">
+<header class="topbar">
+<div><button class="menu-btn" id="menu-btn" type="button">☰ Menu</button><strong>TA0B04 · Model &amp; Grading Rules</strong> · 22 Oct 2026 ~21:00Z UTC</div>
+<div class="topbar-meta"><span>Snapshot: <code>2026-10-22T21:00:00Z</code></span><span>Model: a0b04058-evidence-v1.0</span><a href="exports/matches.csv">CSV ↓</a></div>
+</header>
+<main id="main">
+
+<h1>Model & Grading Rules — methodology</h1>
+<p class="subtitle">Evidence-first, zero-vig fair prices, no invented inputs.</p>
+<div class="notice">Every official URL resolves to exact host in pipeline.config.PUBLISHERS. OLBG URLs are discovery only. Values not directly observed on official publisher page remain null/blank and flagged. Originated prices labelled model estimates, never bookmaker quotes. High requires both p>0.60 and fair American inside -250…+10000, plus verified two-sided inputs and unique ≥30-word prediction.</div>
+<h2>Verification rules (non-negotiable)</h2>
+<ul>
+<li>Every data row carries at least one link to an official source (league, governing body, tour, promoter or team itself). Media outlets, aggregators and betting sites are not official sources.</li>
+<li>If a value cannot be confirmed from an official source: leave it blank and flag it. Never infer, interpolate or fill it in from memory.</li>
+<li>Model-derived values (originated prices) are explicitly labelled as estimates and never presented as sourced facts.</li>
+<li>Nothing marked verified until official source actually fetched and read.</li>
+</ul>
+<h2>Pricing models</h2>
+<p>See Analysis page for per-sport model table. All models are zero-vig: decimal = 1/p, American derived from unrounded decimal, no margin, no clipping. Probability_exact preserved unrounded so reviewer can re-derive prices. Tier boundaries applied to probability rounded to 6 decimals to avoid binary noise (log5 on 4-2 vs 3-3 is exactly 3/5 and binary noise 0.5999999999999999 had silently dropped picks in earlier desk d7d19a67).</p>
+<h2>Confidence tiers</h2>
+<div class="table-wrap"><table><thead><tr><th>Tier</th><th>Rule</th></tr></thead><tbody>
+<tr><td>High</td><td>p>=0.60 AND in-window (-250…+10000) AND both sides verified official inputs AND unique ≥30-word prediction AND no contradicting official context</td></tr>
+<tr><td>Medium (in-window below High floor)</td><td>p>=0.52 AND in-window but below High floor</td></tr>
+<tr><td>Medium (out-of-window chalk)</td><td>p>71.43% (fair American steeper than -250) capped at Medium and disclosed in Out-of-Window Chalk Register</td></tr>
+<tr><td>Medium (blocked)</td><td>Official context sentence contradicts lean, capped at Medium with citation</td></tr>
+<tr><td>Low</td><td>p<0.52 or no lean</td></tr>
+</tbody></table></div>
+<h2>Market investigation inventory</h2>
+<p>Investigated every available market where official inputs exist: winner, handicap/spread ladders, match and team total ladders, period/set/frame derivatives, outright, placement. Withheld markets listed with reason rather than invented. No assertion that bookmakers offer these markets.</p>
+
+</main>
+<footer><span>Independent research, not betting guarantees. 18+ · Never stake what you cannot afford to lose.</span><span>Built 2026-10-22T21:00:00Z · a0b04058 · <a href="methodology.html">How this works</a></span></footer>
+</div>
+</div>
+</body>
+</html>

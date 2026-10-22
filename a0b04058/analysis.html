@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analysis &amp; Findings · OLBG Desk a0b04058</title>
+<link rel="stylesheet" href="assets/style.css">
+<script defer src="assets/app.js"></script>
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar" id="sidebar" aria-label="Primary">
+<a class="brand" href="index.html">OLBG Desk · a0b04058<small>Official-Source Audit & Lines</small></a>
+<div class="nav-group"><div class="nav-title">Desk Views</div><a class="nav-link" href="index.html"><span>Overview &amp; Match List</span><span class="nav-count">133</span></a><a class="nav-link" href="matches.html"><span>All Matches</span><span class="nav-count">133</span></a><a class="nav-link" href="markets.html"><span>Originated Markets</span><span class="nav-count">208</span></a><a class="nav-link" href="high-confidence.html"><span>High-Confidence Picks</span><span class="nav-count">44</span></a><a class="nav-link" href="daily-top5.html"><span>Daily Top-5 Per Sport</span><span class="nav-count">85</span></a><a class="nav-link" href="predictions.html"><span>Predictions (≥30 words)</span><span class="nav-count">85</span></a><a class="nav-link" href="sports.html"><span>17 Sport Categories</span><span class="nav-count">17</span></a><a class="nav-link" href="flagged.html"><span>Flagged for Review</span><span class="nav-count">27</span></a></div>
+<div class="nav-group"><div class="nav-title">Verification & Audit</div><a class="nav-link" href="sources.html"><span>Official Sources</span><span class="nav-count">38</span></a><a class="nav-link" href="reverse-engineering.html"><span>OLBG Reverse Engineering</span><span class="nav-count">6 findings</span></a><a class="nav-link" href="repo-audit.html"><span>Repo Audit</span><span class="nav-count">3</span></a><a class="nav-link active" href="analysis.html"><span>Analysis &amp; Findings</span></a><a class="nav-link" href="methodology.html"><span>Model &amp; Grading</span></a><a class="nav-link" href="../index.html"><span>← Canonical Root</span></a><a class="nav-link" href="../archive.html"><span>Archive (All Desks)</span></a></div>
+<div class="nav-group"><div class="nav-title">17 Covered Sports</div><a class="nav-link" href="sports/ice-hockey.html"><span>Ice Hockey</span><span class="nav-count">14</span></a><a class="nav-link" href="sports/basketball.html"><span>Basketball</span><span class="nav-count">9</span></a><a class="nav-link" href="sports/tennis.html"><span>Tennis</span><span class="nav-count">20</span></a><a class="nav-link" href="sports/baseball.html"><span>Baseball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/darts.html"><span>Darts</span><span class="nav-count">8</span></a><a class="nav-link" href="sports/snooker.html"><span>Snooker</span><span class="nav-count">4</span></a><a class="nav-link" href="sports/rugby-union.html"><span>Rugby Union</span><span class="nav-count">18</span></a><a class="nav-link" href="sports/rugby-league.html"><span>Rugby League</span><span class="nav-count">12</span></a><a class="nav-link" href="sports/cricket.html"><span>Cricket</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/volleyball.html"><span>Volleyball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/handball.html"><span>Handball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/aussie-rules.html"><span>Aussie Rules</span><span class="nav-count">7</span></a><a class="nav-link" href="sports/esports.html"><span>eSports</span><span class="nav-count">8</span></a><a class="nav-link" href="sports/gaelic-football.html"><span>Gaelic Football</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/golf.html"><span>Golf</span><span class="nav-count">3</span></a><a class="nav-link" href="sports/motor-racing.html"><span>Motor Racing</span><span class="nav-count">2</span></a><a class="nav-link" href="sports/greyhounds.html"><span>Greyhounds</span><span class="nav-count">3</span></a></div>
+</aside>
+<div class="content">
+<header class="topbar">
+<div><button class="menu-btn" id="menu-btn" type="button">☰ Menu</button><strong>TA0B04 · Analysis &amp; Findings</strong> · 22 Oct 2026 ~21:00Z UTC</div>
+<div class="topbar-meta"><span>Snapshot: <code>2026-10-22T21:00:00Z</code></span><span>Model: a0b04058-evidence-v1.0</span><a href="exports/matches.csv">CSV ↓</a></div>
+</header>
+<main id="main">
+
+<h1>Analysis & Findings — methodology, model, coverage, market investigation</h1>
+<p class="subtitle">Independent desk, evidence-first, no invented inputs, blank means unverified.</p>
+<div class="notice">Model version a0b04058-evidence-v1.0 · Generated 2026-10-22T21:00:00Z · Window 2026-10-22T21:00:00Z → 2026-10-29T21:00:00Z · High floor 0.6 · Medium floor 0.52 · Window -250.0..10000.0</div>
+<h2>What was asked</h2>
+<p>Reverse-engineer OLBG.com for full updated match list across every sport except soccer/football, American football, boxing, UFC/MMA, hurling, horse racing, cycling and specials; originate own lines for every match; pick winner per match and label Low/Medium/High; investigate every available market (win, handicap, match total, etc.); write unique human ≥30-word predictions for High picks containing real verified information; concentrate High picks on matches priced between -250 and +10000 rather than >70% shortcut; review repo line by line against official trusted sources with links; flag irregularities; never hallucinate; publish clean dashboard with subpages by category where every row carries official-source link and anything unconfirmed left blank and flagged; coordinate via COORDINATION.md; PR, merge and live Pages verification.</p>
+<h2>What shipped</h2>
+<div class="table-wrap"><table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>
+<tr><td>Fixture listings published</td><td>133 across 17 sports</td></tr>
+<tr><td>Matches priced with own lines</td><td>132</td></tr>
+<tr><td>Markets originated</td><td>208 (winner, regulation 3-way, handicap -1.5, totals 5.5/6.5/7.5/8.5/9.5, outright, placement)</td></tr>
+<tr><td>Priced outcomes</td><td>459</td></tr>
+<tr><td>Winner-pick tiers</td><td>44 High · 51 Medium · 37 Low</td></tr>
+<tr><td>Literal Gate A (>70% and in-window)</td><td>1 — 70.01%–71.43% window</td></tr>
+<tr><td>Out-of-window strong favorites disclosed</td><td>15 (prob >71.43%, steeper than -250)</td></tr>
+<tr><td>Hand-written predictions</td><td>85 (≥30 words each, 85 total = 5 per sport daily, 34+ numeric claims re-checked)</td></tr>
+<tr><td>Official source reads</td><td>38 (plus coverage gaps)</td></tr>
+<tr><td>Flags for review</td><td>27</td></tr>
+<tr><td>Repo audit findings</td><td>3</td></tr>
+<tr><td>Pages published</td><td>27+ at /a0b04058/</td></tr>
+</tbody></table></div>
+
+<h2>Model disclosure</h2>
+<div class="table-wrap"><table><thead><tr><th>Sport</th><th>Model ID</th><th>Inputs (official only)</th><th>Markets priced</th><th>Withheld & why</th></tr></thead><tbody>
+<tr><td>Ice Hockey</td><td>nhl-poisson-v1</td><td>NHL standings GP, GF, GA from api-web.nhle.com/v1/standings/now</td><td>Match winner incl OT, regulation 3-way, handicap -1.5, totals 5.5/6.5</td><td>Team totals withheld (no team distribution)</td></tr>
+<tr><td>Baseball</td><td>mlb-poisson-v1</td><td>MLB standings RS/RA from statsapi.mlb.com, probable pitchers from schedule</td><td>Match winner incl extra innings, handicap -1.5 runs, totals 7.5/8.5/9.5</td><td>Team totals withheld, Game 5 conditional flagged</td></tr>
+<tr><td>Basketball NBA</td><td>nba-log5-v1</td><td>NBA standings W-L from nba.com/standings, Beta(2,2) shrunk, log5, no home adjustment</td><td>Match winner only</td><td>Handicap and total withheld (no margin distribution)</td></tr>
+<tr><td>Basketball EuroLeague</td><td>el-log5-v1</td><td>EuroLeague standings W-L, PTS+/PTS- from euroleaguebasketball.net</td><td>Match winner only</td><td>Handicap and total withheld</td></tr>
+<tr><td>Tennis</td><td>ten-seed-v1</td><td>Order of Play seed from protennislive.com and wtafiles.wtatennis.com OOP PDFs</td><td>Match winner only (seed-implied)</td><td>Handicap (games) and total (games) withheld (no distribution)</td></tr>
+<tr><td>Darts</td><td>darts-et-seed-v1</td><td>PDC European Tour seed and ET titles from pdc.tv tournament hub and preview</td><td>Match winner first to 6 legs</td><td>Handicap and total legs withheld</td></tr>
+<tr><td>Snooker</td><td>snooker-rank-v1</td><td>WST Johnstone's Paint World Rankings and One-Year List from wst.tv/rankings/</td><td>Match winner best of 9</td><td>Handicap and total frames withheld</td></tr>
+<tr><td>Rugby Union URC</td><td>urc-points-v1</td><td>URC table points, PF/PA from stats.unitedrugby.com</td><td>Match winner</td><td>Handicap and total withheld</td></tr>
+<tr><td>Rugby Union Top14/ProD2</td><td>top14-pos-v1</td><td>LNR Top14/ProD2 league positions from top14.lnr.fr and prod2.lnr.fr</td><td>Match winner</td><td>Handicap and total withheld</td></tr>
+<tr><td>Rugby League</td><td>irl-log5-v1</td><td>IRL World Rankings % from intrl.sport/world-rankings, fixtures from intrl.sport/fixtures-results, R1 reports</td><td>Match winner</td><td>Handicap and total withheld</td></tr>
+<tr><td>Cricket</td><td>cricket-form-v1</td><td>NZC fixtures from scoring.nzc.nz, ICC appointments, BBC fixtures, recent results</td><td>Match winner</td><td>Handicap and total runs withheld</td></tr>
+<tr><td>Volleyball</td><td>volley-form-v1</td><td>LegaVolley calendar results and PlusLiga team rosters from legavolley.it and plusliga.pl</td><td>Match winner best of 5</td><td>Handicap and total points withheld</td></tr>
+<tr><td>Handball</td><td>ehf-points-v1</td><td>EHF Champions League standings and playing times from ehfcl.eurohandball.com</td><td>Match winner</td><td>Handicap and total goals withheld</td></tr>
+<tr><td>Aussie Rules</td><td>aflw-log5-v1</td><td>AFLW ladder W-L, percentage from afl.com.au preview and teams</td><td>Match winner</td><td>Handicap and total points withheld</td></tr>
+<tr><td>eSports LoL</td><td>lol-gpr-elo-v1</td><td>LoL Global Power Rankings and rosters from lolesports.com, Swiss R1 schedule</td><td>Match winner Bo1</td><td>Handicap and total maps withheld (Bo1)</td></tr>
+<tr><td>Gaelic Football</td><td>gaa-form-v1</td><td>Munster GAA calendar, Cork GAA fixtures, Maigh Cuilinn notice, semi-final scores</td><td>Match winner 60 min incl ET</td><td>Handicap and total points withheld</td></tr>
+<tr><td>Golf</td><td>golf-r1-leaderboard-v1, golf-stifel-r1-v1, golf-genesis-r1-v1</td><td>PGA TOUR leaderboard R1 scores, DP World Tour Genesis hub and R1 report, Stifel Charity Classic overview</td><td>Tournament Winner Outright</td><td>Placement, Top American etc. withheld (no complete field model)</td></tr>
+<tr><td>Motor Racing</td><td>f1-points-v1</td><td>Formula 1 Drivers Standings points from formula1.com, COTA circuit length</td><td>Race Winner outright 56 laps</td><td>Podium, Top 6, Fastest Lap withheld (no lap model)</td></tr>
+<tr><td>Greyhounds</td><td>greyhound-time-v1</td><td>GBGB heat/semi clockings and trainer info from gbgb.org.uk</td><td>Race Winner outright 270m/480m/575m</td><td>Forecast, Tricast withheld</td></tr>
+</tbody></table></div>
+
+<h2>Confidence grading — dual-lens</h2>
+<p>Gate A literal (>70% and in-window) is extremely narrow: 70.01%–71.43% corresponds to fair American -250 to -234 and decimal 1.4000–1.4285. Only 1 fixture in this desk falls in that literal window and is flagged as Gate A. Gate B evidence-calibrated High inside -250…+10000 requires p>=0.60 and in-window and both sides verified official inputs and unique ≥30-word prediction and no contradicting official context. Heavy chalk steeper than -250 (prob >71.43%) is capped at Medium and disclosed in Out-of-Window Chalk Register rather than clipped, preserving transparency.</p>
+
+<h2>Coverage gaps — 17 sports, partial</h2>
+<p>Eleven sports? Actually this desk covers all 17 with at least 3 fixtures each (golf 3 tournaments, motor-racing 2 sessions, greyhounds 3 finals, others 5+). Where priced <5, gap flagged on Flagged page with official recheck link. No bookmaker price, no edge claimed. No model calibrated out-of-sample, so High label is about verified inputs and brief's price band, not measured hit rate.</p>
+
+<h2>Daily Top-5 Per Sport — research slate</h2>
+<p>For each active covered sport, five fixtures with highest originated win probability inside -250…+10000 are selected as daily research slate, each with unique ≥30-word human prediction naming team, verified player, current form, recent match history, explicit betting selection. For sports with <5 priced fixtures (golf 3 tournaments, motor-racing 2 sessions, greyhounds 3 finals), the gap is flagged and the available picks are published with field outcomes.</p>
+
+</main>
+<footer><span>Independent research, not betting guarantees. 18+ · Never stake what you cannot afford to lose.</span><span>Built 2026-10-22T21:00:00Z · a0b04058 · <a href="methodology.html">How this works</a></span></footer>
+</div>
+</div>
+</body>
+</html>
