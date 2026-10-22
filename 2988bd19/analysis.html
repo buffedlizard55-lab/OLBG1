@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="The band arithmetic, tier distribution and model sensitivity.">
+<title>Analysis · OLBG independent desk 2988bd19</title>
+<link rel="stylesheet" href="assets/style.css"></head><body><div class="shell">
+<aside class="side"><a class="brand" href="index.html"><b>OLBG · independent desk</b><span>SESSION 2988bd19 · T2988</span></a>
+<div class="grp">WORKSPACE</div><a class="nav" href="index.html">Overview</a><a class="nav" href="matches.html">Match list<span class=count>43</span></a><a class="nav" href="markets.html">Markets</a><a class="nav" href="high-confidence.html">High confidence<span class=count>2</span></a><a class="nav" href="predictions.html">Predictions</a><a class="nav" href="analysis.html" aria-current=page>Analysis</a><a class="nav" href="flagged.html">Coverage & flags<span class=count>12</span></a><a class="nav" href="sources.html">Sources</a><a class="nav" href="methodology.html">Methodology</a><a class="nav" href="repo-review.html">Repo review</a><a class="nav" href="sports/index.html">Sport pages</a>
+<div class="foot">Official-source fixtures, our own lines.<br>Blank means unverified.<br><br>
+18+ · No guarantees. Prices are estimates, not bookmaker offers.<br><br>
+<a style="color:#93c5fd" href="https://github.com/buffedlizard55-lab/OLBG1">Repository</a></div></aside>
+<main class="main"><div class="top"><span class="pill">Snapshot 2026-10-22T21:40:00Z</span>
+<span class="pill">17 in-scope sports · 8 excluded</span>
+<a class="pill" href="flagged.html">Flags do not block publication</a></div>
+<p class="eyebrow">Analysis</p><h1>The window is 1.43 points wide</h1>
+<p class="lede">The brief asks for selections that are both above 70% and priced between −250 and +10000.
+Those two conditions overlap in a very small range, and that range — not a shortage of favourites — is what
+limits the High tier.</p>
+<div class="card"><h2 style="margin-top:0">The arithmetic, worked in full</h2>
+<ul class="clean">
+<li>A 70% chance has fair decimal <span class="mono">1/0.70 = 1.4286</span>, which is American
+<span class="mono">−233.33</span>. Anything more likely is a shorter price than that.</li>
+<li>The brief's floor of −250 is a decimal price of 1.40, which is a chance of
+<span class="mono">1/1.40 = 71.4286%</span>.</li>
+<li>So the only probabilities that satisfy both are <strong>70.00% &lt; p ≤ 71.4286%</strong> — a band
+1.43 percentage points wide.</li>
+<li>+10000 corresponds to 0.99%. No two-way match market on this slate reaches it, so the upper half of the
+brief's range cannot bind for a selection that is also above 70%.</li>
+</ul></div>
+<h2>What happened to 600 prices</h2>
+<div class="tablewrap"><table class=""><thead><tr><th class="">Measure</th><th class="num">Count</th><th class="num">Share</th></tr></thead><tbody><tr><td class="">Priced selections</td><td class="num">600</td><td class="num">100.00%</td></tr><tr><td class="">Above 70%</td><td class="num">127</td><td class="num">21.2%</td></tr><tr><td class="">Above 70% but price shorter than −250</td><td class="num">120</td><td class="num">20.0%</td></tr><tr><td class="">Inside the 1.43-point window</td><td class="num">7</td><td class="num">1.17%</td></tr><tr><td class="">Of those, labelled High</td><td class="num">2</td><td class="num">28.6% of the window</td></tr></tbody></table></div>
+<h2>Confidence tiers across every priced selection</h2>
+<div class="tablewrap"><table class=""><thead><tr><th class="">Tier</th><th class="num">Selections</th><th class="">Rule applied</th></tr></thead><tbody><tr><td class="">High</td><td class="num">2</td><td class="">inside the window and a complete written case exists</td></tr><tr><td class="">Medium</td><td class="num">222</td><td class="">60-70%, or in the window but capped, or above the window</td></tr><tr><td class="">Low</td><td class="num">376</td><td class="">below 60%</td></tr></tbody></table></div>
+<h2>How fragile the two High picks are</h2>
+<p class="small">If both expected-goal rates move together by 5%, does the pick stay in the window? This is a
+sensitivity check on the model input, not a confidence interval.</p>
+<div class="tablewrap"><table class=""><thead><tr><th class="">Selection</th><th class="">Fixture</th><th class="num">−10%</th><th class="num">−5%</th><th class="num">as built</th><th class="num">+5%</th><th class="num">+10%</th></tr></thead><tbody><tr><td class="">TOR · home_+1.5</td><td class="">nhl-2026020155</td><td class="num">72.04% <span class="badge b-low">out</span></td><td class="num">71.32% <span class="badge b-high">in</span></td><td class="num">70.64% <span class="badge b-high">in</span></td><td class="num">70.00% <span class="badge b-high">in</span></td><td class="num">69.40% <span class="badge b-low">out</span></td></tr><tr><td class="">OTT · away_over_1.5</td><td class="">nhl-2026020156</td><td class="num">65.75% <span class="badge b-low">out</span></td><td class="num">68.61% <span class="badge b-low">out</span></td><td class="num">71.27% <span class="badge b-high">in</span></td><td class="num">73.74% <span class="badge b-low">out</span></td><td class="num">76.03% <span class="badge b-low">out</span></td></tr></tbody></table></div>
+<p class="small muted">The check is deliberately blunt: it scales both teams' expected goals by the same
+factor. A goaltender change or an injury to a top-six forward could move one side only, which this test does
+not capture.</p>
+<h2>League context</h2>
+<p class="small">Across the 26 NHL clubs whose totals were read, the average is
+<strong>3.08 goals per team per game</strong>. A model line of 5.7 goals in a match is therefore
+close to league average, and the totals rungs around 5.5 and 6.5 are where most of the close probabilities
+land. The MLB model line is 8.75 runs, built from 162-game rates for both teams.</p>
+<h2>Why the NBA and EuroLeague are not priced</h2>
+<p class="small">The NBA has played one game per club. A model built on that sample would be a default rating
+in disguise, which this repository's evidence rules forbid. EuroLeague has six or seven games per club — enough
+for a record, not enough for this session to confirm the fixtures themselves, because the official game centre
+rendered no schedule rows. Both are published as gaps with their official links intact.</p>
+<div class="foot"><span>Independent research · not affiliated with OLBG · no betting advice.</span>
+<span>Session 2988bd19-olbg1 · task T2988 · <a href="https://github.com/buffedlizard55-lab/OLBG1">source</a></span></div>
+</main></div></body></html>
