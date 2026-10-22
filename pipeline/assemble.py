@@ -28,7 +28,7 @@ COVERAGE_NOTES = {
 }
 
 
-def assemble(at=None, directory=CURRENT):
+def assemble(at=None, directory=CURRENT, *, write=True):
     at = at or now_utc()
     imported = load(directory/'session_import.json')
     captures = {p.stem:load(p) for p in sorted((directory/'evidence').glob('*.json'))}
@@ -54,7 +54,7 @@ def assemble(at=None, directory=CURRENT):
     start_day, end_day = at.date().isoformat(), (at.date()+timedelta(days=HORIZON_DAYS-1)).isoformat()
     for row in fixtures:
         row['state'] = fixture_state(row, at)
-        row['missing_fields'] = [k for k in ('competition','date','start_utc','venue') if row['facts'][k] is None]
+        row['missing_fields'] = [k for k in ('competition','date','start_utc','venue','official_status') if row['facts'][k] is None]
         if row['kind']=='match':
             row['missing_fields'] += [k for k in ('participant_a','participant_b') if row['facts'][k] is None]
         row['field_status'] = {k: ('verified in captured source' if v is not None else 'unverified') for k,v in row['facts'].items()}
@@ -69,7 +69,7 @@ def assemble(at=None, directory=CURRENT):
     coverage = []
     for sport, meta in SPORT_INDEX.items():
         rows = [r for r in fixtures if r['sport']==sport and r['in_window']]
-        fresh = [r for r in rows if r['state'] not in ('stale','closed','date elapsed','start elapsed')]
+        fresh = [r for r in rows if r['state'] not in ('stale','closed','date elapsed','start elapsed','observation not yet available','status not pre-match')]
         used = {sid for r in rows for sid in r['source_ids']}
         checks = [c for c in captures.values() if c.get('sport')==sport and c['role']=='official']
         coverage.append({**meta, 'status':'partial' if fresh else 'unverified', 'scope_complete':False,
@@ -78,7 +78,7 @@ def assemble(at=None, directory=CURRENT):
                          'source_ids':sorted(used or {c['id'] for c in checks}), 'note':COVERAGE_NOTES[sport]})
     counts = {
         'captured_listings':len(fixtures),
-        'current_listings':sum(r['in_window'] and r['state'] not in ('stale','closed','date elapsed','start elapsed') for r in fixtures),
+        'current_listings':sum(r['in_window'] and r['state'] not in ('stale','closed','date elapsed','start elapsed','observation not yet available','status not pre-match') for r in fixtures),
         'upcoming_exact':sum(r['in_window'] and r['state']=='upcoming' for r in fixtures),
         'categories':len(SPORT_INDEX), 'categories_with_listings':sum(c['listing_count']>0 for c in coverage),
         'fully_covered_categories':0, 'sources':sum(c['role']=='official' for c in captures.values()),
@@ -98,7 +98,8 @@ def assemble(at=None, directory=CURRENT):
                 'fixtures':fixtures,'statistics':stats,'prices':prices,'predictions':[],
                 'source_ids':sorted(captures),'network_attempts':network.get('attempts',[]),
                 'input_sha256':digest({'import':imported,'network':network,'captures':captures})}
-    save(directory/'snapshot.json',snapshot)
+    if write:
+        save(directory/'snapshot.json',snapshot)
     return snapshot
 
 if __name__=='__main__':

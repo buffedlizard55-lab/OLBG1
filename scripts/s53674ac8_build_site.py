@@ -3,7 +3,7 @@
 import json, os
 
 SID = "53674ac8"
-BASE = f"/{SID}/"
+BASE = "./"  # Project-relative: works under /OLBG1/ and preview prefixes.
 
 with open(f"data/{SID}/fixtures.json") as f: fixtures = json.load(f)
 with open(f"data/{SID}/lines.json") as f: lines = json.load(f)
@@ -50,15 +50,16 @@ footer{text-align:center;padding:40px 0;color:#94a3b8;font-size:.8rem}
 .sport-card .count{font-size:1.6rem;font-weight:700;color:#2563eb}
 """
 
-def page(title, content, active=""):
+def page(title, content, active="", depth=0):
+    prefix = "../" * depth or "./"
     nav_items = [("index.html","Dashboard",""),("matches.html","Matches",""),("lines.html","Lines & Odds",""),
                  ("predictions.html","Predictions",""),("flagged.html","Flagged",""),("methodology.html","Methodology","")]
-    nav = "".join(f'<a href="{BASE}{u}" class="{"font-bold" if a==active else ""}">{l}</a>' for u,l,a in nav_items)
+    nav = "".join(f'<a href="{prefix}{u}" class="{"font-bold" if a==active else ""}">{l}</a>' for u,l,a in nav_items)
     return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title} — Session {SID}</title><style>{CSS}</style></head><body>
 <header><div class="wrap"><h1>🎯 OLBG Picks Dashboard</h1><nav>{nav}</nav></div></header>
 <div class="wrap">{content}</div>
-<footer>Session {SID} · Generated {fixtures['generated']} · Data sourced from official governing bodies · <a href="{BASE}">Back to desk</a></footer>
+<footer>Session {SID} · Generated {fixtures['generated']} · Data sourced from official governing bodies · <a href="{prefix}">Back to desk</a></footer>
 </body></html>"""
 
 def conf_badge(c):
@@ -169,7 +170,7 @@ for sport_key, d in DATA_sports.items():
         sp += '</div>'
     
     with open(f"{SID}/sports/{slug}.html","w") as f:
-        f.write(page(d["name"], sp))
+        f.write(page(d["name"], sp, depth=1))
 
 # ── FLAGGED ──────────────────────────────────────────────────────────────
 flag_content = '<div class="card"><h2>Flagged for Review</h2>'

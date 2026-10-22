@@ -56,7 +56,7 @@ def line_for(text,field,value,used):
     return None
 
 
-def build_audit(at):
+def build_audit(at, *, write=True):
     tracked=subprocess.check_output(['git','ls-files'],cwd=ROOT,text=True).splitlines()
     baseline=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     files=[];rows=[];hashes={};python_errors=[]
@@ -115,7 +115,8 @@ def build_audit(at):
                       'start_elapsed_occurrences':sum(r['stored_start_elapsed'] is True for r in rows),
                       'findings':len(findings)},
             'files':files,'rows':rows,'findings':findings,'input_sha256':digest(hashes)}
-    save(CURRENT/'audit.json',output)
+    if write:
+        save(CURRENT/'audit.json',output)
     return output
 
 
@@ -189,6 +190,27 @@ def make_findings(baseline):
     add(19,'high','Valencia record conflicts across two current official pages',
         'Independently re-read after the T62 audit lead: the EuroLeague Game Center preview still says Valencia 5-1; the 2026-27 standings table says GP6, W4, L2. Neither disputed overall record is accepted as a current input. The Paris–Valencia listing remains source-linked, but its estimate and selection are withheld. Both selected observations are retained; no fixture observation was restamped.',
         'https://www.euroleaguebasketball.net/en/euroleague/standings/',status='input quarantined; needs review')
+    add(20,'high','A future schedule cannot fill in missing pre-match status',
+        'TEE3C reproduced pricing on EuroLeague rows whose official_status is null. The official start remains a captured schedule fact, not proof the match is still pre-match. Canonical origination now requires an explicit supported pre-match state; blank/new/unsupported states withhold every price and selection. Missing status is listed in the field-gap table. No Scheduled value was inferred.',
+        el,'pipeline/model.py','def prematch_status_verified','resolved in canonical model; status gaps need review')
+    add(21,'high','An estimate must expire with its statistical inputs',
+        'TEE3C found the browser only checked the fixture expiry/start, so a freshly refreshed fixture could outlive the 24-hour statistical input limit. Every price book now carries the minimum of fixture expiry, start and both statistical observation deadlines. Table and market views withdraw estimates at that deadline without mislabelling a still-supported fixture as stale. The exact 24-hour boundary is expired.',
+        nhl,'pipeline/model.py',"result['expires_at']",'resolved; Python and browser regression tests')
+    add(22,'medium','Displayed counts and provenance scope need independent release gates',
+        'TEE3C added rejection of duplicate price books, unsupported rolling-window flags, inflated KPI/coverage counts and field references hidden outside the source set used to calculate expiry. Future observations cannot justify retrospective pricing. These gates validate internal consistency, not independent confirmation of every legacy statement or worldwide source completeness.',
+        'https://api-web.nhle.com/v1/schedule/2026-10-22','pipeline/validate.py','def validate_data','resolved; regression tests')
+    add(23,'medium','Scratch builds must not rewrite the checked-in snapshot',
+        'Parallel audit PR #107 (E3-03) identified that pipeline.build --out a scratch directory rewrote tracked snapshot/audit JSON while leaving the checked-in pages unchanged. TEE3C made assembly/audit read-only during builds and writes the resulting snapshot and audit only into the selected output. Release checks also compare manifest metadata against the exported snapshot. Explicit assemble/refresh commands still persist their outputs.',
+        'https://api.github.com/repos/buffedlizard55-lab/OLBG1','pipeline/build.py','def build_site','resolved; non-mutating build regression tests')
+    add(24,'medium','Pages hosting mode could not be changed with this integration token',
+        'Parallel audit PR #107 (E3-01/E3-02/E3-05) raised the risk of the legacy main:/ build and workflow artifact deployment replacing one another. The Pages API confirms legacy mode; the TEE3C attempt to set build_type=workflow returned HTTP 403 Resource not accessible by integration. Do not claim the setting changed or that an artifact-only publisher is enforced. Both outputs use canonical expiry/status gates, but may have different observation windows and counts. Verify actual deployment jobs and the live manifest after publication; configuration risk remains for review.',
+        'https://api.github.com/repos/buffedlizard55-lab/OLBG1/pages',status='needs review; Pages configuration permission unavailable')
+    add(25,'high','Merged historical desk navigation escaped the Pages project',
+        'PR #111 introduced 98 /53674ac8/... links missing the /OLBG1 deployment prefix. PR #112 CI rejected the combined tree; a clean git archive reproduced the failure. Final integration changed only the completed desk generator routing and its 13 generated HTML pages to relative links, with a regression test. Original fixture, odds, confidence and prediction data are untouched and not endorsed as current canonical evidence.',
+        'https://api.github.com/repos/buffedlizard55-lab/OLBG1','scripts/s53674ac8_build_site.py','BASE =','resolved; clean-checkout link gate and routing test')
+    add(26,'medium','Historical desk generator cannot run standalone',
+        'During the scoped routing repair, running scripts/s53674ac8_build_site.py failed at its dashboard expression len(DATA_sports): DATA_sports is not defined by that standalone generator. Published pages were mechanically repaired only in href attributes, with all other content unchanged. Generator routing is corrected, but this separate legacy reproducibility defect remains for its owner to review; no pricing or sporting value was inferred to repair it.',
+        'https://api.github.com/repos/buffedlizard55-lab/OLBG1','scripts/s53674ac8_build_site.py','len(DATA_sports)','needs review; legacy generator standalone NameError')
     return findings
 
 if __name__=='__main__':

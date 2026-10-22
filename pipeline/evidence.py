@@ -56,6 +56,8 @@ def fixture_from_observation(capture, observation, sport, official_id, **meta):
 def fixture_state(row, at):
     """An elapsed start is NOT a verified final result. Date-only never means live."""
     f = row['facts']
+    if parse_time(row['verified_before']) > at:
+        return 'observation not yet available'
     if f['official_status'] in ('Final', 'OFF', 'FINAL', 'completed', 'cancelled', 'postponed', 'Cancelled', 'Postponed'):
         return 'closed'
     if f['official_status'] in ('LIVE', 'CRIT', 'In Progress', 'Delayed', 'Suspended', 'unknown'):
