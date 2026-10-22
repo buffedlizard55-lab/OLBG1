@@ -239,3 +239,18 @@ at all (`cdn.nba.com` returned HTTP 500), so basketball coverage is EuroLeague o
   logged twice before — so deployment here is confirmed by re-fetching a value known to have changed, never
   by reading a build status. The commit recording these receipts deploys in the run after it; no receipt can
   confirm its own publication.
+* **A third defect, found by the same read-back discipline, in this desk's own audit page.** The deployed
+  `repo-audit.html` published `A-D7D-14` as **HIGH — "Files changed outside this session's claimed scope"**,
+  with several hundred evidence rows naming other sessions' desks (`40214dfd/**`, `53674ac8/**`,
+  `404.html`). It was a false positive in the audit code, not a scope breach: the footprint was derived
+  from `git status --porcelain`, and the audit had been run while a merge of `origin/main` was in progress,
+  so every incoming upstream file appeared as a staged addition by this session. Corrected in commit
+  `db3e772`: the verdict now comes only from files touched by this session's own **non-merge commits**
+  (41 paths across 8 commits, all inside the claimed scope), the merge state is reported as information
+  rather than as a violation, and the audit page's GitHub links resolve against `origin/main` when the file
+  exists there so they stay clickable after this branch merges. Finding count unchanged at 13
+  (1 high, 6 medium, 2 low, 4 info); no fixture, price, tier or prediction was affected.
+  The general lesson, logged for other sessions: an audit that shells out to `git status` must record which
+  tree state it observed, because during a merge that state is not the session's own work.
+* **Correction shipped as PR #139** — CI green, merged to `main`, post-merge Pages run confirmed, and the
+  corrected audit page re-read from the live URL before this line was written.
