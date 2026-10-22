@@ -318,7 +318,7 @@ total ladder and, where the sport allows, the correct score. No tipster price wa
 <div class="card"><h3>Corrections and new findings</h3><ul class="notes">
 <li>Port Adelaide v Collingwood (AFLW) moves from 08:15Z to 08:45Z: the official release is 7.15pm ACDT, not 7.15pm AEST.</li>
 <li>The NHL IDs previously stored for 22 October did not match the league schedule; all fourteen rows are re-keyed to the official game IDs.</li>
-<li>MLB is now a single World Series series, Tampa Bay at Milwaukee for Games 1 and 2.</li>
+<li>MLB is now a single World Series series: Tampa Bay at Milwaukee for Games 1 and 2, then the Rays host Games 3 and 4 at Tropicana Field.</li>
 <li>EuroLeague home/away was re-read from each Round 7 match page rather than from the game-centre cards.</li>
 <li>The band rule retired nineteen previously published High picks that sat shorter than -250.</li>
 </ul></div>
@@ -342,11 +342,11 @@ the official page the participants, venue and start were read from.</p>
             if p["event_only"]:
                 trs += (f'<tr><td>{esc(day(p["start_utc"], p["date_local"]))}</td>'
                         f'<td><b>{esc(p["home"])}</b></td><td>{esc(p["competition"])}<br>'
-                        f'<span class="sm mut">{esc(p["stage"])}</span></td>'
-                        f'<td class="sm">{esc(p["venue"])}</td>'
-                        f'<td colspan="3" class="sm mut">Event card only - no head-to-head market priced</td>'
+                        f'<span class="sm mut">{esc(p["stage"])}</span><br>'
+                        f'<span class="sm mut">{esc(p["venue"])}</span></td>'
+                        f'<td colspan="2" class="sm mut">Event card only - no head-to-head market priced</td>'
                         f'<td><span class="tag lo">n/a</span></td>'
-                        f'<td class="sm"><a href="{esc(p["sources"][0]["url"])}" target="_blank" rel="noopener">official</a></td></tr>')
+                        f'<td class="sm"><a href="{esc(p["sources"][0]["url"])}" target="_blank" rel="noopener">official</a></td><td></td></tr>')
                 continue
             b = p["best_market"]
             mk = ""
@@ -507,7 +507,7 @@ nineteen sub -250 High grades were a policy breach rather than a strength.</p></
 <li><b>Snooker:</b> all eleven stored rows were second-round pairings. Pang Junxu beat Liam Davies 4-3 (14-69, 33-103(112), 112-0, 56-61, 73-35, 56-31, 81-60), so the card rolled to eight third-round matches.</li>
 <li><b>Tennis:</b> three Almaty rows (Duckworth/Darderi, Mannarino/Rublev, Tsitsipas/Kukushkin) are absent from the day-six order of play and have expired; four Round of 16 matches replace them.</li>
 <li><b>NBA:</b> the 21 October slate is finished and 22 October carries only two games, Cleveland at Philadelphia and Denver at Oklahoma City.</li>
-<li><b>MLB:</b> only the World Series remains, Tampa Bay at Milwaukee for Games 1 and 2, then the series moves to Tropicana Field.</li>
+<li><b>MLB:</b> only the World Series remains. Tampa Bay are at Milwaukee for Games 1 and 2 on 24 and 25 October, then the series moves to Tropicana Field for Games 3 and 4 on 27 and 28 October.</li>
 </ul></div>
 <h2>3. Coverage</h2>
 <div class="card"><p>{summary['fixtures']} rows across all seventeen in-scope sports:

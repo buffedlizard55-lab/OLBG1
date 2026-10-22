@@ -1569,3 +1569,14 @@ the reason string and the sport-specific units (`-1.5 sets`, `-1.5 frames`); `/v
 full flag register; `/` still serves the root landing with the hand-added v3 banner and the three
 companion links. The earlier `/v3/picks.html` 404 was a per-path edge-cache entry: the same path returns
 200 once a query string is appended.
+
+### 33.4 Table-integrity follow-up (2026-10-22T02:58Z)
+
+The golf event card rendered one cell too many (the `colspan` row was sized for a five-column table that no
+longer existed), which pushed the source link out of alignment. Fixed by folding the venue into the
+"Competition / venue" cell and spanning two columns for the no-market note.
+
+To stop this recurring, `scripts/v3_validate.py` now parses every `v3/*.html` and the root `index.html`
+with `html.parser` and fails the release if any table row's cell count (with `colspan` expanded) differs
+from its header row. The check is nested-table aware, so the per-match market sheets inside a cell do not
+produce false positives. Gate run after the fix: PASS, 0 errors.

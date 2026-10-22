@@ -7,6 +7,8 @@ Exit code 0 only when every gate passes. Any failure prints the offending row.
 from __future__ import annotations
 
 import json
+import os
+from html.parser import HTMLParser
 import re
 import sys
 from datetime import datetime, timezone
@@ -21,6 +23,41 @@ from v3_prose import HIGH_PROSE  # noqa: E402
 
 errors: list[str] = []
 warnings: list[str] = []
+
+
+class _Tbl(HTMLParser):
+    def __init__(self):
+        super().__init__(); self.tables = []; self.done = []
+
+    def handle_starttag(self, tag, attrs):
+        d = dict(attrs)
+        if tag == "table":
+            self.tables.append({"h": 0, "rows": []})
+        elif tag == "tr" and self.tables:
+            self.tables[-1]["rows"].append(0)
+        elif tag == "th" and self.tables:
+            self.tables[-1]["h"] += 1
+        elif tag == "td" and self.tables:
+            self.tables[-1]["rows"][-1] += int(d.get("colspan", 1))
+
+    def handle_endtag(self, tag):
+        if tag == "table" and self.tables:
+            self.done.append(self.tables.pop())
+
+
+def check_tables():
+    import glob
+    bad = []
+    for f in sorted(glob.glob(str(ROOT / "v3" / "*.html"))) + [str(ROOT / "index.html")]:
+        p = _Tbl()
+        p.feed(open(f, encoding="utf-8").read())
+        for i, t in enumerate(p.done):
+            if not t["h"]:
+                continue
+            for r in t["rows"]:
+                if r not in (t["h"], 0):
+                    bad.append(f"{os.path.basename(f)} table{i}: {t['h']} cols, row with {r}")
+    return bad
 
 
 def check(cond, msg):
@@ -110,6 +147,9 @@ def main() -> int:
           f"markets {sum(len(p['markets']) for p in priced)} | High {len(highs)} | pages {len(pages)}")
     for w in warnings:
         print("WARN " + w)
+    for b in check_tables():
+        errors.append("ragged table — " + b)
+
     if errors:
         for e in errors[:40]:
             print("FAIL " + e)
