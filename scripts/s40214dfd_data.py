@@ -618,7 +618,7 @@ def main():
                     "DROPPED its duplicate page edits (the 13 files are byte-identical to main here, git diff "
                     "HEAD -- 53674ac8 is empty) and credits ee3c3e8f-olbg1 / PR #112 with the repair. Re-verified "
                     "on this branch: zero remaining matches for the absolute form, scripts/validate.py 0 errors."),
-         "source": "53674ac8/*.html, scripts/s53674ac8_build_site.py, COORDINATION.md section 51.5"},
+         "source": "53674ac8/*.html, scripts/s53674ac8_build_site.py, COORDINATION.md - this session's \"red gate on main\" subsection"},
         {"id": "F-402-07", "severity": "medium",
          "title": "Eleven in-scope sports have no verified fixture in this session",
          "detail": ("Tennis, darts, Australian rules, both rugby codes, cricket, handball, volleyball, "
