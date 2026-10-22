@@ -609,8 +609,12 @@ def build_carried() -> list:
                        probability=win["probability"], fair_decimal=win["fair_decimal"],
                        fair_american=win["fair_american"], offered_american=win["offered_american"],
                        in_band=win["in_band"], tier=tier, prediction_id=None,
-                       note=("Favourite is shorter than -250, outside the requested window" if win["fair_decimal"] < BAND
-                             else "Below the 70% High threshold"))
+                       note=("Winner sits in the 70-71.43% band, but the evidence is carried, so this stays Medium (F-FEC-02)."
+                             if win["in_band"] else
+                             ("Favourite is shorter than -250, outside the requested window" if win["fair_decimal"] < BAND
+                              else "Below the 70% High threshold")))
+        if win["in_band"]:
+            row["flags"].append("Winner sits inside the 70-71.43% band on carried evidence; capped at Medium (F-FEC-02).")
         row.update(winner=dict(selection=win["selection"], probability=win["probability"],
                               fair_decimal=win["fair_decimal"], fair_american=win["fair_american"],
                               in_band=win["in_band"], note="Winner view"),
