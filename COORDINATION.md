@@ -1907,7 +1907,7 @@ root `index.html` and `README.md` at integration. No other session's data, gener
 
 ### 40.1 What was built
 
-The repository had sixteen published desks by the time this session started, each re-solving the same problem
+The repository had fourteen published desks by the time this session started, each re-solving the same problem
 with its own constants and its own numbers. This session built **one desk that reconciles them**:
 
 | Output | Detail |

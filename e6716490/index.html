@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OLBG1 consolidated desk · OLBG1 consolidated desk</title>
+<title>Dashboard · OLBG1 consolidated desk</title>
 <link rel="stylesheet" href="assets/style.css">
 <meta name="description" content="OLBG1 consolidated desk: 17 in-scope sports, originated lines, confidence tiers and official-source verification.">
 </head>
@@ -11,13 +11,13 @@
 <header class="topbar"><a class="brand" href="index.html">OLBG1 <span>consolidated desk</span></a><nav><a href="index.html" class="active">Dashboard</a><a href="predictions.html">High picks</a><a href="markets.html">Markets</a><a href="verification.html">Verification</a><a href="flagged.html">Flagged</a><a href="methodology.html">Methodology</a><a href="sources.html">Sources</a><a href="audit.html">Repo audit</a><a class="back" href="../index.html">All desks</a></nav></header>
 <main>
 <header class="pagehead">
-<h1>OLBG1 consolidated desk</h1>
+<h1>Dashboard</h1>
 <p class="lede">Every in-scope sport, our own lines, confidence tiers and a source link on every row — read 22 October 2026.</p>
 </header>
 
 <section class="cards">
 <div class="card stat"><div class="value">122</div><div class="label">fixtures on the desk</div><div class=hint>17 in-scope sports, 22–28 Oct 2026</div></div>
-<div class="card stat"><div class="value">105</div><div class="label">priced matches</div><div class=hint>17 unpriced, 7 already started</div></div>
+<div class="card stat"><div class="value">105</div><div class="label">priced matches</div><div class=hint>17 unpriced (7 already started)</div></div>
 <div class="card stat"><div class="value">1575</div><div class="label">markets originated</div><div class=hint>1722 priced selections</div></div>
 <div class="card stat"><div class="value">9</div><div class="label">High-confidence picks</div><div class=hint>one High per match, every one hand-written</div></div>
 <div class="card stat"><div class="value">42</div><div class="label">selections inside the band</div><div class=hint>p ≥ 70% and fair price −250…+10000</div></div>
@@ -69,7 +69,7 @@ margin; a 5% book-equivalent is shown on every match page so the margin is visib
 <li>Re-read three official endpoints live: the NHL standings feed for 2026-10-22, the MLB StatsAPI 2026
 standings and the EuroLeague 2026-27 standings. 22 row-side comparisons are
 published with their results on the <a href="verification.html">Verification</a> page.</li>
-<li>Merged sixteen repository registers into one desk, reconciling club-name variants and logging
+<li>Merged two source registers (and their fourteen sibling desks&rsquo; context) into one desk, reconciling club-name variants and logging
 10 cross-desk disagreements instead of silently picking a winner.</li>
 <li>Dropped 7 fixtures that had already started before the publish cut-off rather than
 pricing games already in play.</li>
@@ -82,7 +82,7 @@ separately on the <a href="markets.html#band">Markets</a> page.</li>
 
 <h2>Repository review</h2>
 <p>The <a href="audit.html">Repo audit</a> page records what a line-by-line read of this repository found:
-344 HTML pages, sixteen namespaced desks, eleven validators, and the
+319 HTML pages, 14 published desks, 11 validators, and the
 duplication and staleness that follow from that. Irregularities are not fixed here where they belong to
 another session's files; they are listed with links so they can be reviewed.</p>
 

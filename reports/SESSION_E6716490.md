@@ -108,7 +108,7 @@ moved to manufacture a qualifying price.
 | F-E67-05 | 17 cards published unpriced | 7 golf field cards, 3 motor-racing/F1 rows, 2 eSports Swiss-stage cards, 1 greyhound field, plus fixtures lacking a two-sided strength input. Reasons are printed per row. |
 | F-E67-06 | Clocks not published | Darts, snooker, golf and one tennis match publish a session window or rolling order of play; those rows show “clock not published” and carry no kick-off. |
 | F-E67-07 | 7 fixtures already started | Dropped from the priced set at the desk cut-off of 2026-10-22T07:2xZ rather than priced in play. |
-| F-E67-08 | Repo-wide duplication | 16 published desks; 180 pairings priced in two or more registers, some with different constants and therefore different prices for the same match. Detailed on `/e6716490/audit.html`. |
+| F-E67-08 | Repo-wide duplication | 14 published desks; 180 pairings priced in two or more registers, some with different constants and therefore different prices for the same match. Detailed on `/e6716490/audit.html`. |
 | F-E67-09 | Stale pricing on older desks | The root register still prices 44 fixtures dated before 22 October 2026. Not corrected here — those files belong to earlier sessions. |
 | F-E67-10 | README drift | The root README's headline counts (134 events, 160 pages) no longer match the tree (319 pages before this desk). Logged, not rewritten beyond this session's own section. |
 

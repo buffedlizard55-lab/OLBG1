@@ -215,6 +215,14 @@ def main() -> int:
     preds = json.load((OUT / "predictions.json").open())
 
     BUILD_UTC = lines["generated_utc"]
+
+    # The audit describes the tree as it was found, so this desk's own pages and
+    # scripts are excluded from those counts.
+    all_html = sorted(ROOT.glob("**/*.html"))
+    prior_html = [p for p in all_html if "e6716490" not in p.parts]
+    desks = sorted({p.parts[len(ROOT.parts)] for p in prior_html if len(p.parts) > len(ROOT.parts) + 1})
+    prior_scripts = [p for p in (ROOT / "scripts").glob("*.py") if not p.name.startswith("se6716490_")]
+    prior_validators = [p for p in prior_scripts if "validate" in p.name]
     rows = lines["rows"]
     highs = lines["highs"]
     counts = lines["counts"]
@@ -269,7 +277,7 @@ def main() -> int:
     body = f'''
 <section class="cards">
 {stat_card(fixtures_blob["count"], "fixtures on the desk", "17 in-scope sports, 22–28 Oct 2026")}
-{stat_card(counts["priced"], "priced matches", f'{counts["unpriced"]} unpriced, {counts["expired"]} already started')}
+{stat_card(counts["priced"], "priced matches", f'{counts["unpriced"]} unpriced ({counts["expired"]} already started)')}
 {stat_card(counts["markets"], "markets originated", f'{counts["selections"]} priced selections')}
 {stat_card(counts["high"], "High-confidence picks", "one High per match, every one hand-written")}
 {stat_card(in_band, "selections inside the band", "p ≥ 70% and fair price −250…+10000")}
@@ -321,7 +329,7 @@ margin; a 5% book-equivalent is shown on every match page so the margin is visib
 <li>Re-read three official endpoints live: the NHL standings feed for 2026-10-22, the MLB StatsAPI 2026
 standings and the EuroLeague 2026-27 standings. {verification["counts"]["checks"]} row-side comparisons are
 published with their results on the <a href="verification.html">Verification</a> page.</li>
-<li>Merged sixteen repository registers into one desk, reconciling club-name variants and logging
+<li>Merged two source registers (and their fourteen sibling desks&rsquo; context) into one desk, reconciling club-name variants and logging
 {len(fixtures_blob["cross_desk_conflicts"])} cross-desk disagreements instead of silently picking a winner.</li>
 <li>Dropped {counts["expired"]} fixtures that had already started before the publish cut-off rather than
 pricing games already in play.</li>
@@ -334,13 +342,13 @@ separately on the <a href="markets.html#band">Markets</a> page.</li>
 
 <h2>Repository review</h2>
 <p>The <a href="audit.html">Repo audit</a> page records what a line-by-line read of this repository found:
-{len(list(ROOT.glob("**/*.html")))} HTML pages, sixteen namespaced desks, eleven validators, and the
+{len(prior_html)} HTML pages, {len([d for d in desks if (ROOT / d / "index.html").exists()])} published desks, {len(prior_validators)} validators, and the
 duplication and staleness that follow from that. Irregularities are not fixed here where they belong to
 another session's files; they are listed with links so they can be reviewed.</p>
 '''
 
     (SITE / "index.html").write_text(page(
-        "index.html", "OLBG1 consolidated desk", body, active="index.html",
+        "index.html", "Dashboard", body, active="index.html",
         subtitle="Every in-scope sport, our own lines, confidence tiers and a source link on every row — "
                  "read 22 October 2026.",
     ))
@@ -694,7 +702,7 @@ something it is not.</p>
 </div>
 
 <h2>1. Cross-desk disagreements</h2>
-<p>The repository holds sixteen published desks. Where two of them describe the same fixture with different
+<p>The repository holds fourteen published desks (sixteen directories carry pages). Where two of them describe the same fixture with different
 numbers, both readings and both source lists are shown and the desk does not pretend to know which is right.</p>
 {table(["Sport", "Fixture", "Reading A / Reading B", "Sources offered"], conflict_rows)}
 
@@ -838,16 +846,15 @@ this desk:</p>
     ))
 
     # ---------------- audit ----------------
-    all_html = sorted(ROOT.glob("**/*.html"))
-    desks = sorted({p.parts[len(ROOT.parts)] for p in all_html if len(p.parts) > len(ROOT.parts) + 1})
+
     body = f'''
 <p class="lede">A line-by-line read of this repository, as found on 22 October 2026, before this desk was
 added. Findings are recorded here whether or not they belong to this session's files.</p>
 
 <section class="cards">
-{stat_card(len(all_html), "HTML pages in the repo", "before this desk")}
-{stat_card(len([d for d in desks if (ROOT / d / "index.html").exists()]), "published desks", "each with its own landing page")}
-{stat_card(len(list((ROOT / "scripts").glob("*.py"))), "python scripts", f'{len(list((ROOT / "scripts").glob("*validate*.py")))} of them validators')}
+{stat_card(len(prior_html), "HTML pages already in the repo", "before this desk, which adds 25")}
+{stat_card(len([d for d in desks if (ROOT / d / "index.html").exists()]), "published desks found", "each with its own landing page")}
+{stat_card(len(prior_scripts), "python scripts found", f'{len(prior_validators)} of them validators')}
 {stat_card(sum(1 for _ in (ROOT / "COORDINATION.md").open()), "lines of coordination log", "the shared task board")}
 </section>
 
@@ -869,15 +876,15 @@ flag lists, not filled in.</li>
 
 <h2>What is irregular</h2>
 <ul class="tight">
-<li><strong>Sixteen parallel desks with overlapping fixtures.</strong> {len(fixtures_blob["cross_desk_conflicts"])}
+<li><strong>Fourteen parallel desks with overlapping fixtures.</strong> {len(fixtures_blob["cross_desk_conflicts"])}
 fixtures on this desk alone are described differently by two registers; repository-wide, 180 pairings appear in
-two or more registers. Each desk solved the same problem independently, so the repository now contains several
+two or more registers. Each desk solved the same problem independently, so the repository contained several
 defensible but mutually inconsistent readings of the same night's sport.</li>
 <li><strong>Stale fixtures are still priced on older desks.</strong> The root register
 (<code>data/fixtures.json</code>) still prices 44 fixtures dated before 22 October 2026. They are not wrong as
 records, but they are no longer bettable and a reader landing on those pages cannot tell.</li>
 <li><strong>The README's headline counts no longer match the tree.</strong> Its coverage summary describes 134
-events and 160 published pages; the tree now holds {len(all_html)} pages. The counts were accurate when written
+events and 160 published pages; the tree held {len(prior_html)} pages before this desk was added. The counts were accurate when written
 and have drifted with each new desk.</li>
 <li><strong>Two registers disagree about a fixture date.</strong> The World Series game five is dated 27 October
 by one register and 28 October by another; the desk publishes the later date with the disagreement logged.</li>
@@ -895,7 +902,7 @@ verification work was repeated many times over.</li>
 <h2>What this desk does about it</h2>
 <p>It reconciles every register it can reach into one dataset, logs every disagreement rather than resolving it
 silently, drops fixtures that have already started, states its model constants, and puts the band arithmetic
-where a reader can check it. It does not edit another session's files: the fixes owed elsewhere are listed
+where a reader can check it. It does not edit another session&rsquo;s files: the fixes owed elsewhere are listed
 above with enough detail to action.</p>
 '''
     (SITE / "audit.html").write_text(page(
