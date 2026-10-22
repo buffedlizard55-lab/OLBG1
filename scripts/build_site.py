@@ -248,7 +248,7 @@ def render_shell(title: str, body: str, active: str, site_depth: int, repo_depth
 <body>
 <header class="site-header">
   <div class="hdr-inner">
-    <div class="brand"><a href="{sr}index.html"><span class="dot"></span> OLBG Origination Desk <span class="sub">2026-10-21 UTC</span></a></div>
+    <div class="brand"><a href="{sr}index.html"><span class="dot"></span> OLBG Origination Desk <span class="sub">2026-10-22 UTC</span></a></div>
     <nav class="main" aria-label="Primary navigation">{nav_html}</nav>
   </div>
   <div class="companion-bar">
@@ -265,6 +265,9 @@ def render_shell(title: str, body: str, active: str, site_depth: int, repo_depth
       <a href="{rr}7a5b5360/index.html">7a5b5360 Fresh Desk (32 &middot; 22&ndash;26 Oct 2026)</a>
       <a href="{rr}a570c470/index.html">a570c470 Desk (141 &middot; 22&ndash;28 Oct 2026)</a>
       <a href="{rr}9dfd0b48/index.html">9dfd0b48 Matchday Desk (29 &middot; 22&ndash;24 Oct 2026)</a>
+      <a href="{rr}f71557b5/index.html">f71557b5 Desk (72 &middot; 15 High in -250..+10000)</a>
+      <a href="{rr}v3/index.html">v3 Consolidated (127 &middot; 10 High 70%+ in window)</a>
+      <a href="{rr}6a081cf6/index.html">6a081cf6 Strict Band (9 High)</a>
       <a href="{rr}2360a617/index.html">2360a617 Board (152)</a>
     </div>
   </div>
