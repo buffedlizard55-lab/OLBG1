@@ -1,6 +1,6 @@
 # Session `2988bd19-olbg1` — T2988 independent live desk, 22 October 2026
 
-**Desk:** `/2988bd19/` · **Data:** `data/2988bd19/desk.json` · **Task:** T2988 (board §60)
+**Desk:** `/2988bd19/` · **Data:** `data/2988bd19/desk.json` · **Task:** T2988 (board §62)
 
 ## 1. What was built
 
