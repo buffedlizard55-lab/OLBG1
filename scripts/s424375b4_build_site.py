@@ -171,7 +171,8 @@ def build():
     med = [p for p in priced if p['tier'] == 'medium']
     low = [p for p in priced if p['tier'] == 'low']
     unpriced = [p for p in picks.values() if p.get('p') is None]
-    n_markets = sum(1 + len(m.get('score_markets', [])) for m in markets.values())
+    n_markets = sum(len(m.get('winner', [])) + len(m.get('score_markets', []))
+                    for m in markets.values())
 
     # ------------------------------------------------------------ index ---
     kpis = [
@@ -533,10 +534,10 @@ rebuilds do not rejuvenate them. Nothing on this desk is current beyond those wi
 <h2>Analysis &amp; findings</h2>
 <h3>1. The brief's High band is genuinely narrow</h3>
 <p>Requiring both p ≥ 70% and a price no shorter than −250 caps the band at a fair
-price of −233…−250 (p between 70.0% and 71.43%). Exactly two of {len(priced)} priced
-picks sit in it today — Vegas Golden Knights and Toulouse, both at precisely 70.0% /
-−233. Six further 70%+ favourites exist and are published with full disclosure
-instead of being squeezed into the band.</p>
+price of −233…−250 (p between 70.0% and 71.43%). Exactly {len(high)} of {len(priced)}
+priced picks sit in it today — Vegas Golden Knights and Toulouse, both at precisely
+70.0% / −233. {len(oow)} further 70%+ favourites exist and are published with full
+disclosure instead of being squeezed into the band.</p>
 <h3>2. Where the model got its confidence</h3>
 <p>The strongest signals on the card are structural: Provence (7-0-0) versus Béziers
 (2-0-5, −93), Aurillac versus winless Nevers (0-0-7), and Pau's league-best 239-point
