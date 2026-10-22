@@ -1671,4 +1671,6 @@ Goffin v Michelsen verified but unpriced (opponent outside ranks read). Repo fin
 `scripts/build_site.py` updated so a future regeneration keeps the link); README section. Gates: desk validator OK, `validate.py` PASSED, `final_audit.py` OK.
 T35 (AFLW) not taken: AFL ladder not fetched this session — remains queued.
 
+**Conflict log.** Session 6a081cf6 claimed the same id T44 at 02:55Z and merged (PRs #61/#62) while this session was working; on `git pull --rebase` COORDINATION.md conflicted in §1 and §34. Resolved by keeping both entries and renumbering this session to **T45 / §35**; no data or page files overlapped.
+
 **Merge / Pages.** recorded below after merge.

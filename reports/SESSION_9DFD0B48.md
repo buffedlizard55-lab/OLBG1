@@ -1,4 +1,4 @@
-# Session 9dfd0b48-olbg1 — matchday desk 22–24 October 2026 (task T44)
+# Session 9dfd0b48-olbg1 — matchday desk 22–24 October 2026 (task T45 — claimed as T44, renumbered after a concurrent claim by session 6a081cf6)
 
 **Board:** https://buffedlizard55-lab.github.io/OLBG1/9dfd0b48/ · **Data:** `data/9dfd0b48/` · **Build:** `python3 scripts/s9dfd0b48_build.py && python3 scripts/s9dfd0b48_validate.py`
 

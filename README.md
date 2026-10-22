@@ -352,7 +352,7 @@ python3 scripts/build_site.py               # 30 pages at / and 30 mirrored at /
 python3 scripts/validate.py                 # fails the build if any high pick leaves the window
 ```
 
-## Matchday desk — 22–24 October 2026 (session `9dfd0b48-olbg1`, task T44)
+## Matchday desk — 22–24 October 2026 (session `9dfd0b48-olbg1`, task T45)
 
 **Live board:** https://buffedlizard55-lab.github.io/OLBG1/9dfd0b48/ · report: `reports/SESSION_9DFD0B48.md`
 

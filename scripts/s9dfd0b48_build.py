@@ -23,7 +23,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "9dfd0b48")
 SITE = os.path.join(ROOT, "9dfd0b48")
 SESSION = "9dfd0b48-olbg1"
-TASK = "T44"
+TASK = "T45"
 VIG = 0.045  # total overround applied symmetrically to two-way markets
 WINDOW = (-250, 10000)
 
@@ -277,7 +277,7 @@ def page(title, body, active, depth=0):
     nav += "".join(f'<a href="{rr}sports/{s}.html" class="{"on" if active == "sports/" + s + ".html" else ""}">{n}</a>' for n, s in SPORT_PAGES)
     return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)} — OLBG desk 9dfd0b48</title><link rel="stylesheet" href="{rr}assets/style.css"></head><body>
-<header><div class="wrap"><div class="brand">OLBG<span>1</span> · desk 9dfd0b48 · T44</div><nav>{nav}<a href="{rr}../index.html">Root site</a></nav></div></header>
+<header><div class="wrap"><div class="brand">OLBG<span>1</span> · desk 9dfd0b48 · T45</div><nav>{nav}<a href="{rr}../index.html">Root site</a></nav></div></header>
 <main><div class="wrap">{body}</div></main>
 <footer><div class="wrap">Session {SESSION} · harvest {D.HARVEST_UTC} · all prices are independently originated model estimates, not quotes. Times UTC.</div></footer></body></html>"""
 
