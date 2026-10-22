@@ -351,3 +351,19 @@ python3 scripts/origin_lines.py             # market ladders + window filter + p
 python3 scripts/build_site.py               # 30 pages at / and 30 mirrored at /f7fa77fc/
 python3 scripts/validate.py                 # fails the build if any high pick leaves the window
 ```
+
+## Matchday desk — 22–24 October 2026 (session `9dfd0b48-olbg1`, task T45)
+
+**Live board:** https://buffedlizard55-lab.github.io/OLBG1/9dfd0b48/ · report: `reports/SESSION_9DFD0B48.md`
+
+| What | Where |
+|---|---|
+| 29 fixtures verified on ATP Tour (Almaty/Brussels/Lyon R16), WST (NI Open R3), EuroLeague (Round 7) and MLB (World Series G1) pages | `data/9dfd0b48/fixtures.json` |
+| 81 two-way markets (winner, handicap, total) = 162 originated selections | `data/9dfd0b48/markets.json` |
+| 27 picks (3 High / 11 Medium / 13 Low); High write-ups ≥30 words, featured price inside −250/+10000 | `data/9dfd0b48/picks.json`, `predictions.json` |
+| 70-item flag register: every OLBG listing across all 17 hubs that could not be verified, blank and reasoned | `data/9dfd0b48/flags.json`, `9dfd0b48/flagged.html` |
+
+```bash
+python3 scripts/s9dfd0b48_build.py      # data + 12-page site
+python3 scripts/s9dfd0b48_validate.py   # desk gate
+```

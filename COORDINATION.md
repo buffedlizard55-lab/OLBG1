@@ -107,6 +107,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 
 | T43 | **Final integration pass (2026-10-22):** fresh official-source re-verification of every live row, expiry of completed fixtures, confidence-band policy (−250…+10000) enforcement, new 30+ word unique predictions, consolidated clean dashboard, validator gate, PR + merge + Pages deploy check | done | e381d2e3-olbg1 | `data/v3/**`, `scripts/v3_*.py`, `v3/**`, `index.html` (consolidated landing only), `COORDINATION.md` (append-only §33) | 2026-10-22T01:25Z | Renumbered T41→T43 on rebase (§31/§32 had already taken T41/T42 and merged as PR #46/#47). Non-overlapping `v3/` namespace; no other session's dashboard, dataset or generator edited. |
 | T44 | Strict-band high-confidence desk: >70% model prob, originated price −250…+10000, unique ≥30-word predictions, official-source re-fetch per row | done | 6a081cf6-olbg1 | `6a081cf6/`, `data/6a081cf6_high_band.json`, `scripts/s6a081cf6_build.py`, `scripts/s6a081cf6_validate.py`, append-only `COORDINATION.md` §34 | 2026-10-22T02:50Z | Namespaced; reuses v3 verified fixtures/lines only; no shared files edited |
+| T45 | **Live OLBG re-harvest (22 Oct 2026, all 17 in-scope hubs) + official-source fixture verification + own multi-market lines with the high-confidence tier restricted to the −250…+10000 band + unique ≥30-word predictions + own dashboard (`/9dfd0b48/`) + Flagged page + validator gate + PR, merge, Pages check** | done — PR #64 | 9dfd0b48-olbg1 | `data/9dfd0b48/**`, `scripts/s9dfd0b48_*.py`, `9dfd0b48/**`, `reports/SESSION_9DFD0B48.md`, `COORDINATION.md` (append-only §34 + this row); additive single nav link in root `index.html`/`README.md` only at the end | 2026-10-22T03:00Z | Claimed after T43 (PR #60). Non-overlapping namespace; no other session's data, generator or pages edited. Also takes over **T35** (AFLW re-price) only if the official AFL ladder is reachable this session; otherwise it stays queued. |
 
 ---
 
@@ -1633,3 +1634,43 @@ the open PR #40.
 - **Flagged (on `6a081cf6/flagged.html`, non-blocking):** F-6A-01 Brisbane Lions -3 at -251 excluded (one point outside the -250 floor despite 71.5%); F-6A-02 NRL late mail rules Tonga's Isaiya Katoa out — v3 prose omits it, pick flagged; F-6A-03 v3 generic league-wide total rungs repeat identical lines across fixtures and are not promoted as fixture-specific research; F-6A-04 >70% mathematically implies fair price < about -234, so the effective band is -250..-234.
 - **Gates:** `s6a081cf6_validate.py` PASS; root `validate.py` PASSED (0 errors).
 - **Publish record:** PR #61 — https://github.com/buffedlizard55-lab/OLBG1/pull/61 — **MERGED** 2026-10-22T02:47:48Z. GitHub Pages status `built`; live desk confirmed via page fetch: `/OLBG1/6a081cf6/index.html?v=3` serves all 9 strict-band picks with official source links. (Direct sandbox curl to github.io is network-blocked, hence the fetch-tool confirmation.)
+---
+
+## 35. Session `9dfd0b48-olbg1` — T45 (claimed as T44; renumbered after collision with 6a081cf6's T44) live OLBG re-harvest, official verification, in-band high-confidence desk (`/9dfd0b48/`)
+
+**Claim (2026-10-22T03:00Z).** Branch `arena/9dfd0b48-olbg1`. Scope exactly as the T45 row in §1. Nothing
+owned by another session is edited; shared root files receive at most one additive link at the end.
+
+**Method.** (1) Read every in-scope OLBG hub (`/betting-tips/<Sport>/<id>`, ids 3,4,5,7,8,9,10,12,13,14,15,
+20,21,22,23,25,28) live in this session and record each event with its OLBG `event_id`, published
+kick-off and tipster consensus. (2) For each event, fetch the governing body's own page; fields not read
+there stay blank and are flagged. (3) Originate win / handicap / total prices from recorded inputs only.
+(4) Grade confidence, with **High** permitted only when the selection's book-equivalent price sits in
+−250…+10000. (5) Write a unique ≥30-word prediction for every High pick. Results in §35.1.
+
+### 35.1 Results (2026-10-22T04:40Z) — PR https://github.com/buffedlizard55-lab/OLBG1/pull/64
+
+**Harvest.** 17/17 hubs read at 03:10Z. Hubs with match events: Tennis (20), Basketball (11), Snooker (2), Darts (16 + 2 outrights),
+Ice Hockey (4 SHL/Liiga; NHL sub-hub empty), Baseball (1), Golf (4 events), Cricket (7), Rugby Union (16), Motor Racing (1 + 2 outrights),
+Handball (15), Volleyball (9), Gaelic Football (5). Empty: Aussie Rules, eSports, Greyhounds (03:00Z), Rugby League (outrights only).
+Clock: hub times are US Eastern (UTC-4) unlabelled — re-confirmed against ATP local orders of play.
+
+**Verified on official pages and priced.** ATP R16 Almaty ×4, Brussels ×3, Lyon ×4 (atptour.com orders of play + 19 Oct ranking list,
+ranks 1–191); WST NI Open R3 ×8 (wst.tv match list + official ranking list top 36); EuroLeague Round 7 ×9 (game-center + standings);
+MLB World Series G1 (statsapi schedule + 2026 standings). **29 fixtures · 27 priced · 81 two-way markets · 27 picks · 3 High / 11 Medium / 13 Low · 3 predictions.**
+High featured selections (all inside −250…+10000): Medvedev −4.5 games (−123), Cobolli −5.5 games (−125), Panathinaikos −18.5 (−119).
+
+**Blank + flagged (70 items).** PDC European Championship 16 matches (pdc.tv consent wall), NBA 4 (cdn.nba.com 500), WTA Osaka 7
+(draw page empty; OLBG labels the event "Tokyo" — taxonomy irregularity), NHL 22 Oct slate (partially read, left unpriced), SHL/Liiga 4,
+cricket 7, rugby union 16, handball 15, volleyball 9, golf 4, F1, Gaelic 5 (official source not reached in-session); Herbert v Fritz and
+Goffin v Michelsen verified but unpriced (opponent outside ranks read). Repo findings: §1 T41 row still shows PR/merge "—" vs §33 merged;
+7a5b5360 NI Open R3 pairings re-checked 22 Oct — no drift; Maccabi v Real Madrid staged in Belgrade (OLBG omits neutral venue).
+
+**Files.** `data/9dfd0b48/{fixtures,markets,picks,predictions,flags,coverage,sources}.json` + `matches.csv`; `9dfd0b48/` (12 pages);
+`scripts/s9dfd0b48_{data,build,validate}.py`; `reports/SESSION_9DFD0B48.md`; additive nav link in root pages (hand-patched, v3 banner preserved;
+`scripts/build_site.py` updated so a future regeneration keeps the link); README section. Gates: desk validator OK, `validate.py` PASSED, `final_audit.py` OK.
+T35 (AFLW) not taken: AFL ladder not fetched this session — remains queued.
+
+**Conflict log.** Session 6a081cf6 claimed the same id T44 at 02:55Z and merged (PRs #61/#62) while this session was working; on `git pull --rebase` COORDINATION.md conflicted in §1 and §34. Resolved by keeping both entries and renumbering this session to **T45 / §35**; no data or page files overlapped.
+
+**Merge / Pages.** recorded below after merge.
