@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quantitative Analysis &amp; Origination Methodology · OLBG1 Live Research Desk (3ee30bba)</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Desk navigation">
+      <a class="brand" href="index.html">
+        <strong>OLBG1 · Desk 3ee30bba</strong>
+        <small>2026-10-22T21:10:00Z · T3EE30</small>
+      </a>
+      <div class="nav-group">Desk Views</div>
+      <a class="nav-link" href="index.html"><span>Dashboard Overview</span></a><a class="nav-link" href="matches.html"><span>Match Ledger</span><span class="pill">140</span></a><a class="nav-link" href="markets.html"><span>Markets Explorer</span><span class="pill">294</span></a><a class="nav-link" href="high-confidence.html"><span>High Confidence</span><span class="pill">13</span></a><a class="nav-link" href="predictions.html"><span>Human Predictions</span><span class="pill">13</span></a><a class="nav-link" href="sports.html"><span>17 Sport Categories</span><span class="pill">17</span></a>
+      <div class="nav-group">Verification & Audit</div>
+      <a class="nav-link active" href="analysis.html"><span>Analysis &amp; Models</span></a><a class="nav-link" href="reverse-engineering.html"><span>OLBG Reverse Eng.</span><span class="pill">24</span></a><a class="nav-link" href="sources.html"><span>Official Sources</span><span class="pill">28</span></a><a class="nav-link" href="repo-audit.html"><span>Repo Line Audit</span><span class="pill">13</span></a><a class="nav-link" href="flagged.html"><span>Flagged for Review</span><span class="pill">16</span></a>
+      <div class="nav-group">17 Covered Sports</div>
+      <a class="nav-link" href="sports/ice-hockey.html"><span>Ice Hockey</span><span class="pill">26</span></a><a class="nav-link" href="sports/baseball.html"><span>Baseball</span><span class="pill">5</span></a><a class="nav-link" href="sports/basketball.html"><span>Basketball</span><span class="pill">5</span></a><a class="nav-link" href="sports/handball.html"><span>Handball</span><span class="pill">12</span></a><a class="nav-link" href="sports/tennis.html"><span>Tennis</span><span class="pill">16</span></a><a class="nav-link" href="sports/rugby-union.html"><span>Rugby Union</span><span class="pill">22</span></a><a class="nav-link" href="sports/rugby-league.html"><span>Rugby League</span><span class="pill">13</span></a><a class="nav-link" href="sports/snooker.html"><span>Snooker</span><span class="pill">4</span></a><a class="nav-link" href="sports/darts.html"><span>Darts</span><span class="pill">8</span></a><a class="nav-link" href="sports/cricket.html"><span>Cricket</span><span class="pill">4</span></a><a class="nav-link" href="sports/volleyball.html"><span>Volleyball</span><span class="pill">6</span></a><a class="nav-link" href="sports/motor-racing.html"><span>Motor Racing</span><span class="pill">1</span></a><a class="nav-link" href="sports/golf.html"><span>Golf</span><span class="pill">1</span></a><a class="nav-link" href="sports/aussie-rules.html"><span>Aussie Rules</span><span class="pill">3</span></a><a class="nav-link" href="sports/esports.html"><span>eSports</span><span class="pill">8</span></a><a class="nav-link" href="sports/gaelic-football.html"><span>Gaelic Football</span><span class="pill">3</span></a><a class="nav-link" href="sports/greyhounds.html"><span>Greyhounds</span><span class="pill">3</span></a>
+      <div class="nav-group">Repository</div>
+      <a class="nav-link" href="../index.html"><span>← Canonical Root</span></a>
+    </aside>
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Live Official-Source Origination Desk · Session 3ee30bba-olbg1</p>
+          <h1>Quantitative Analysis &amp; Origination Methodology</h1>
+          <p class="sub">Closed-system data conservation proofs, zero-vig probability-to-price arithmetic, and multi-market calibration discipline.</p>
+        </div>
+        <div class="btn-row">
+          <label class="meta">Odds:
+            <select id="odds-format" aria-label="Odds format">
+              <option value="american">American</option>
+              <option value="decimal">Decimal</option>
+            </select>
+          </label>
+          <a class="btn" href="../data/3ee30bba/fixtures.csv" download>Fixtures CSV</a>
+          <a class="btn primary" href="../data/3ee30bba/markets.csv" download>Markets CSV</a>
+        </div>
+      </header>
+      <div class="card"><h3>Resolving the &gt;70% vs −250..+10000 High-Confidence Problem</h3><p>A zero-vig probability above 70.00% corresponds to fair decimal odds shorter than 1.4286 (−233 American), whereas the −250 odds floor corresponds to 1.4000 decimal (5/7 = 71.4286%). Systems that equate High confidence with &gt;70% win chance flood their picks with −350 to −1200 moneylines. By originating full multi-market ladders (Moneyline, Puck/Run/Goal Handicaps, Game Totals, and Team Totals) from unified score distributions and enforcing <code>0.7000 &lt; p &lt;= 0.714286</code> (−250 to −234 fair), we surface 13 genuine in-window High selections while capping all 57 steeper favourites (&lt; −250) at Medium.</p></div><h2>Closed-System Official Standings Conservation Proofs</h2><div class="table-wrap"><table><thead><tr><th>Official League Table</th><th>Team-Games</th><th>Win / Loss Balance</th><th>Scoring Balance (For = Against)</th><th>Observed Mean</th><th>Official Source</th></tr></thead><tbody><tr><td>NHL Regular Season 2026-27 (32 Clubs)</td><td>306</td><td>153 = 153 (incl. OTL)</td><td>954 = 954</td><td>3.1176 goals/team-game</td><td><a href="https://api-web.nhle.com/v1/standings/2026-10-22" target="_blank" rel="noopener noreferrer">NHL Standings API ↗</a></td></tr><tr><td>EuroLeague 2026-27 Post-Thu R7 (20 Clubs)</td><td>132</td><td>66 = 66</td><td>11459 = 11459</td><td>86.8106 pts/team-game</td><td><a href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">EuroLeague Standings ↗</a></td></tr><tr><td>EHF Champions League Men Post-Thu R5 (24 Clubs)</td><td>120</td><td>55W = 55L (+10D)</td><td>3844 = 3844</td><td>32.0333 goals/team-game</td><td><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" target="_blank" rel="noopener noreferrer">EHF CL Standings ↗</a></td></tr><tr><td>2026 MLB World Series Clubs (TB vs MIL)</td><td>324 (162 each)</td><td>TB 98–64 · MIL 103–59</td><td>TB 736:650 · MIL 832:618</td><td>4.40 MLB baseline runs/team</td><td><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason" target="_blank" rel="noopener noreferrer">MLB StatsAPI Standings ↗</a></td></tr></tbody></table></div><h2>Origination Model Specifications</h2><div class="table-wrap"><table><thead><tr><th>Sport</th><th>Model ID</th><th>Mathematical Specification</th><th>Market Output</th><th>Official Input Source</th></tr></thead><tbody><tr><td>Ice Hockey (NHL)</td><td>nhl-shrunk-poisson-v1</td><td>Empirical-Bayes k=10 goal-rate regression to 3.1176 mean, home ice ×1.035, 26×26 reg. Poisson + Beta(3,3) Log5 OT/SO</td><td>7 markets / 14 outcomes per game (26 games = 182 markets)</td><td><a href="https://api-web.nhle.com/v1/standings/2026-10-22" target="_blank" rel="noopener noreferrer">NHL Official API ↗</a></td></tr><tr><td>Baseball (MLB WS)</td><td>mlb-shrunk-poisson-v1</td><td>162-game RS/RA multiplicative run rates vs 4.40 baseline, home ×1.025, 31×31 conditioned non-tie Poisson grid</td><td>7 markets / 14 outcomes per game (4 games = 28 markets; G5 withheld)</td><td><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason" target="_blank" rel="noopener noreferrer">MLB Official API ↗</a></td></tr><tr><td>Basketball (EuroLeague)</td><td>el-shrunk-normal-v1</td><td>Empirical-Bayes k=6 PF/PA regression to 86.81 mean, +2.5 pt home court, Normal(σ_margin=11.5, σ_total=15.0)</td><td>6 markets / 12 outcomes per game (2 games = 12 markets; Valencia quarantined)</td><td><a href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">EuroLeague Official ↗</a></td></tr><tr><td>Handball (EHF CL Men)</td><td>ehf-shrunk-poisson-v1</td><td>Empirical-Bayes k=5 GF/GA regression to 32.0333 mean, home arena ×1.035, 61×61 60-min Poisson grid (exact draw mass)</td><td>6 markets / 13 outcomes per game (12 games = 72 markets)</td><td><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" target="_blank" rel="noopener noreferrer">EHF Official ↗</a></td></tr></tbody></table></div>
+      <footer class="footer">
+        <span>Session <code>3ee30bba-olbg1</code> (T3EE30) · Verified live 2026-10-22T21:10:00Z · Zero-vig fair model estimates, not bookmaker offers.</span>
+        <span><a href="flagged.html">Flagged for Review</a> · <a href="sources.html">Official Sources</a> · <a href="https://github.com/buffedlizard55-lab/OLBG1" target="_blank" rel="noopener noreferrer">GitHub Repo ↗</a></span>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
