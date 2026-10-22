@@ -144,6 +144,9 @@ def hang_lines(margin: float, sigma: float, granularity: float) -> list[float]:
     return sorted(set(lines))
 
 
+NOW_UTC = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
 def build_fixture(row: dict) -> dict:
     sport = row["sport"]
     params = PARAMS.get(sport)
@@ -174,6 +177,11 @@ def build_fixture(row: dict) -> dict:
         "conviction": 0.0,
     }
 
+    if row.get("start_utc") and row["start_utc"] <= NOW_UTC:
+        out["expired"] = True
+        out["reason"] = (f"Started at {row['start_utc']}, before this desk's publish cut-off of {NOW_UTC}. "
+                         "Kept on the record, not priced.")
+        return out
     if row["kind"] == "field":
         out["reason"] = ("Outright / multi-runner card: a field cannot be priced from one official "
                          "strength input per side, so it is published unpriced and flagged.")
@@ -345,6 +353,7 @@ def main() -> int:
         "fixtures": len(rows),
         "priced": sum(1 for r in rows if r["priced"]),
         "unpriced": sum(1 for r in rows if not r["priced"]),
+        "expired": sum(1 for r in rows if r.get("expired")),
         "markets": sum(len(r["markets"]) for r in rows),
         "selections": sum(len(m["selections"]) for r in rows for m in r["markets"]),
         "high": len(highs),
@@ -361,7 +370,8 @@ def main() -> int:
 
     out = {
         "session": "e6716490-olbg1",
-        "generated_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "generated_utc": NOW_UTC,
+        "cut_off_utc": NOW_UTC,
         "policy": {
             "fair_price": "zero-vig model probability inverted; 5% book-equivalent shown alongside",
             "band_decimal": [BAND_MIN_DECIMAL, BAND_MAX_DECIMAL],

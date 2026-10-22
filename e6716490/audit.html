@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repository audit · OLBG1 consolidated desk</title>
+<link rel="stylesheet" href="assets/style.css">
+<meta name="description" content="OLBG1 consolidated desk: 17 in-scope sports, originated lines, confidence tiers and official-source verification.">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html">OLBG1 <span>consolidated desk</span></a><nav><a href="index.html">Dashboard</a><a href="predictions.html">High picks</a><a href="markets.html">Markets</a><a href="verification.html">Verification</a><a href="flagged.html">Flagged</a><a href="methodology.html">Methodology</a><a href="sources.html">Sources</a><a href="audit.html" class="active">Repo audit</a><a class="back" href="../index.html">All desks</a></nav></header>
+<main>
+<header class="pagehead">
+<h1>Repository audit</h1>
+<p class="lede">What the line-by-line read of this repo found, sound and unsound, with links.</p>
+</header>
+
+<p class="lede">A line-by-line read of this repository, as found on 22 October 2026, before this desk was
+added. Findings are recorded here whether or not they belong to this session's files.</p>
+
+<section class="cards">
+<div class="card stat"><div class="value">344</div><div class="label">HTML pages in the repo</div><div class=hint>before this desk</div></div>
+<div class="card stat"><div class="value">15</div><div class="label">published desks</div><div class=hint>each with its own landing page</div></div>
+<div class="card stat"><div class="value">72</div><div class="label">python scripts</div><div class=hint>12 of them validators</div></div>
+<div class="card stat"><div class="value">1897</div><div class="label">lines of coordination log</div><div class=hint>the shared task board</div></div>
+</section>
+
+<h2>What is sound</h2>
+<ul class="tight">
+<li><strong>Every register carries official links.</strong> The root desk and all namespaced desks link each row
+to a governing body, tour, federation or league endpoint. No aggregator is used to verify a fact.</li>
+<li><strong>Eleven validators, all passing.</strong> <code>scripts/validate.py</code> checks whole-tree link
+integrity, source-host allowlists and the primary desk's writing rules; <code>scripts/final_audit.py</code> and
+the per-session validators re-check their own namespaces. All of them pass on the tree this desk was built from.</li>
+<li><strong>No broken relative links.</strong> The gate resolves every anchor across every page in the
+repository; adding this desk's pages keeps that at zero.</li>
+<li><strong>Blank-and-flag discipline is real.</strong> Unconfirmed fields — starting goalies, probable pitchers,
+kick-off clocks for rolling sessions, ranks outside a published page — are empty on the rows and named in the
+flag lists, not filled in.</li>
+<li><strong>No stray build artefacts.</strong> No <code>.pyc</code> files are tracked, and
+<code>.gitignore</code> excludes them.</li>
+</ul>
+
+<h2>What is irregular</h2>
+<ul class="tight">
+<li><strong>Sixteen parallel desks with overlapping fixtures.</strong> 10
+fixtures on this desk alone are described differently by two registers; repository-wide, 180 pairings appear in
+two or more registers. Each desk solved the same problem independently, so the repository now contains several
+defensible but mutually inconsistent readings of the same night's sport.</li>
+<li><strong>Stale fixtures are still priced on older desks.</strong> The root register
+(<code>data/fixtures.json</code>) still prices 44 fixtures dated before 22 October 2026. They are not wrong as
+records, but they are no longer bettable and a reader landing on those pages cannot tell.</li>
+<li><strong>The README's headline counts no longer match the tree.</strong> Its coverage summary describes 134
+events and 160 published pages; the tree now holds 344 pages. The counts were accurate when written
+and have drifted with each new desk.</li>
+<li><strong>Two registers disagree about a fixture date.</strong> The World Series game five is dated 27 October
+by one register and 28 October by another; the desk publishes the later date with the disagreement logged.</li>
+<li><strong>Barça v Montpellier has two different scorelines.</strong> One register records the earlier meeting as
+28-27, another as 34-27. Both cite the EHF. The desk quotes neither in its write-up.</li>
+<li><strong>Duplicate market families across desks.</strong> Handicap ladders, totals and outright boards are
+re-originated in several styles with different constants, so the same match can carry three different prices
+depending on which page a reader opens. This desk states its constants on
+<a href="methodology.html">Methodology</a> for exactly that reason.</li>
+<li><strong>Coordination, not code, is the bottleneck.</strong> 1897
+lines of task board record a dozen renumberings and collision resolutions. The structure held, but the same
+verification work was repeated many times over.</li>
+</ul>
+
+<h2>What this desk does about it</h2>
+<p>It reconciles every register it can reach into one dataset, logs every disagreement rather than resolving it
+silently, drops fixtures that have already started, states its model constants, and puts the band arithmetic
+where a reader can check it. It does not edit another session's files: the fixes owed elsewhere are listed
+above with enough detail to action.</p>
+
+</main>
+<footer>
+<p>Session <code>e6716490-olbg1</code> · built 2026-10-22T07:26:54Z · every price on this desk is the desk's own
+estimate, never a copied bookmaker price. Facts come from the official page linked on the row.</p>
+<p><a href="../index.html">All desks</a> · <a href="methodology.html">methodology</a> ·
+<a href="flagged.html">flagged for review</a></p>
+</footer>
+</body>
+</html>

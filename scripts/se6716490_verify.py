@@ -233,8 +233,19 @@ def main() -> int:
         entry["sides"].append(c["side"])
         entry["results"].append(c["result"])
 
+    fetch_by_id = {f["id"]: f for f in FETCHES}
     for row in lines["rows"]:
         entry = per_fixture.get(row["id"])
+        if entry:
+            # the page this session actually read goes to the front of the row's sources
+            for source_id in {c["source_id"] for c in checks if c["fixture_id"] == row["id"]}:
+                fetch = fetch_by_id[source_id]
+                if not any(s["url"] == fetch["url"] for s in row["sources"]):
+                    row["sources"].insert(0, {
+                        "name": f'{fetch["title"]} — re-read live by session e6716490-olbg1 ({READ_AT})',
+                        "url": fetch["url"],
+                        "read": READ_AT,
+                    })
         if entry:
             row["verification"] = {
                 "status": "re-fetched",

@@ -20,6 +20,35 @@ transparent pricing model that originates our own betting lines for every fixtur
 | Live OLBG recapture (141 cards, 17 hubs) + event-level diff | `live-refresh.html`, `data/live_snapshot.json`, `data/live_diff.json`, `data/live_baseline.json` |
 | Static dashboard (GitHub Pages source, served from repo root) | `index.html`, `*.html`, `sports/`, `assets/` |
 
+## Consolidated desk (session `e6716490-olbg1`, 22 October 2026)
+
+**[Open the consolidated desk →](https://buffedlizard55-lab.github.io/OLBG1/e6716490/)** — the newest and
+broadest board in this repository, and the one to read first.
+
+| | |
+|---|---|
+| Fixtures | 122 across all **17 in-scope sports**, 22–28 October 2026 (7 already-started fixtures dropped) |
+| Priced | 105 matches · **1,575 originated markets** · 1,722 priced selections |
+| Confidence | **9 High**, 490 Medium, 1,223 Low — High requires ≥70% model probability *and* a fair price inside −250…+10000 |
+| Predictions | 9 hand-written write-ups, 74–89 words each, **0 shared six-grams** |
+| Verification | 3 official endpoints re-read live today (NHL standings, MLB StatsAPI, EuroLeague standings); 22 row-side comparisons published row by row |
+| Flagged | 10 cross-desk conflicts, 17 cards published unpriced, 105 band-excluded ≥70% picks, every blanked field named |
+| Gate | `python3 scripts/se6716490_validate.py` → VALIDATION PASSED; repo-wide `scripts/validate.py` → VALIDATION PASSED (0 errors) |
+
+Rebuild it end to end:
+
+```bash
+python3 scripts/se6716490_dataset.py      # merge the repository registers into one dataset
+python3 scripts/se6716490_model.py        # originate prices and confidence tiers
+python3 scripts/se6716490_verify.py       # apply the live re-read ledger
+python3 scripts/se6716490_predictions.py  # attach the hand-written High picks
+python3 scripts/se6716490_build_site.py   # build /e6716490/
+python3 scripts/se6716490_validate.py     # gate: links, sources, band, prose
+```
+
+The order matters: the verification step stamps each row with what was re-read today, so it must run after
+the model and before the site build.
+
 ## Quick start
 
 ```bash
