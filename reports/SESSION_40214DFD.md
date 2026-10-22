@@ -158,6 +158,7 @@ Three items were added after the first draft of this report and are part of the 
 | CI on the branch | run `39778393001` — all gates green (evidence/model/site, historical structural gate, field integrity, browser) |
 | Deploy | Pages run `39778774282` (push, `main` @ `f3e0e61`), publish job `119825526923`, 30 s, green |
 | Live URL | <https://buffedlizard55-lab.github.io/OLBG1/40214dfd/index.html> |
+| Follow-ups | #126 (\`96caf15\`, receipt + evidence reference) and #128 (\`07aab40\`, coverage arithmetic); both merged and deployed (runs \`39779499776\`, \`39780023892\`) |
 
 **Counts read back from the deployed bytes** (12:36Z, not from a local build): 26 priced fixtures,
 299 markets, 598 priced outcomes, 7 High selections, 7 predictions, 10 flagged findings. The seven
