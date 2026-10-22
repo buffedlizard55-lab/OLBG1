@@ -119,7 +119,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T58 | **Consolidated final desk (2026-10-22):** independent live re-fetch of key governing-body sources, cross-desk reconciliation into one clean dashboard (`/e6716490/`, landing + 17 category subpages + predictions + Flagged + methodology + sources + repo audit), own line origination across every covered match, strict −250…+10000 High band, unique ≥30-word human predictions, repo validator gate, PR + merge + Pages deploy check | done | e6716490-olbg1 | `data/e6716490/**`, `scripts/se6716490_*.py`, `e6716490/**`, `reports/SESSION_E6716490.md`, `COORDINATION.md` (append-only §43), additive nav entry in root `index.html`/`README.md` at integration only | 2026-10-22T07:20Z | Claimed as `T55`/`§40`; renumbered to `T58`/`§43` after `8cab6428-olbg1` took T55 and `cccb414e`/`3d2d578a` took T56/T57 (see §43). 122 fixtures / 17 sports, 1,575 markets, 9 High, 9 predictions, 3 live re-reads, 25-page site, gates pass. |
 | T59 | **Independent live 22 Oct 2026 re-verification of all 17 in-scope sports (excluding soccer, horse racing, american football, boxing, UFC/MMA, specials, hurling, cycling), full 68-market taxonomy, continuous multi-market origination with strict −250…+10000 high-confidence band, unique 30+ word human predictions with verified team/player/form/history, and 26-page clean dashboard (`/7ad0d336/`) + validator + PR/merge/Pages check** | done | 7ad0d336-olbg1 | `data/7ad0d336/**`, `scripts/s7ad0d336_*.py`, `7ad0d336/**`, `reports/SESSION_7AD0D336.md`, append-only `COORDINATION.md` | 2026-10-22T07:35Z | 127 fixtures / 13 High (all in-window, 0 dups) / 1,386 markets / 29 pages / gates PASS. See §44 for publish record. |
 | T60 | **Fresh 22-Oct future-only desk**: live OLBG sitemap/hub re-read, expiry of all started primary rows at an explicit cutoff, in-session re-fetch (via page-fetch tool) of official governing-body pages for every remaining candidate High pick, strict High rule (selected-line model prob >=0.70 AND originated price inside -250..+10000), new unique >=30-word predictions built only from facts read this session, clean namespaced dashboard + Flagged page, validator gate, PR + merge + Pages check | done | 8fc47dcb-olbg1 | `8fc47dcb/**`, `data/8fc47dcb/**`, `scripts/s8fc47dcb_*.py`, `reports/SESSION_8FC47DCB.md`, append-only `COORDINATION.md` (§45); root `index.html`/`scripts/build_site.py`/`README.md` touched only as a single additive companion link at final integration if conflict-free, otherwise logged in §4 | 2026-10-22T07:26Z | Claimed as T57/§42 at 07:26Z when those were free; renumbered T60/§45 at merge because 3d2d578a (T57/§42), e6716490 (T58/§43) and 7ad0d336 (T59/§44) merged first (PRs #79–#86). No session's work discarded. No other session's data, generator or pages edited. |
-| T61 | **Final root integration takeover:** reconcile the stale PR #63 consolidation, freshly read official sources, quarantine unsupported/completed rows, publish one source-linked dashboard with strict confidence/odds/freshness gates, automated refresh checks, tests, PR + merge + Pages confirmation | in progress | 6ad5a3a8-olbg1 | `data/release/**`, `scripts/release_*.py`, `scripts/final_*.py` (adopted from PR #63 if useful), `tests/release/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`, `.github/workflows/**`, append-only `COORDINATION.md`; historic session namespaces remain unchanged | 2026-10-22T07:20Z | Final integration session. PR #63 last commit 03:00Z (>60 min); root owners T19/T12 are also stale. Assigned Arena branch retained. No fresh parallel desk. |
+| T61 | **Final root integration takeover:** reconcile the stale PR #63 consolidation, freshly read official sources, quarantine unsupported/completed rows, publish one source-linked dashboard with strict confidence/odds/freshness gates, automated refresh checks, tests, PR + merge + Pages confirmation | done | 6ad5a3a8-olbg1 | `data/release/**`, `scripts/release_*.py`, `scripts/final_*.py` (adopted from PR #63 if useful), `tests/release/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`, `.github/workflows/**`, append-only `COORDINATION.md`; historic session namespaces remain unchanged | 2026-10-22T07:20Z | Final integration session. PR #63 last commit 03:00Z (>60 min); root owners T19/T12 are also stale. Assigned Arena branch retained. No fresh parallel desk. PR #84 merged as 6e8570c; production artifact run 39745549884 and deployment 7247180107 succeeded; live root/data/coverage/tennis/archive confirmed. Full-market/coverage/calibration gaps remain openly flagged. |
 
 ---
 
@@ -2395,3 +2395,38 @@ a runner and began the build. Its deployment result is not assumed from a succes
 Follow-up hardening: only superseded PR runs are cancelled. Later main documentation
 pushes must not interrupt an already-started production deployment. All work remains on
 `arena/6ad5a3a8-olbg1`; this follow-up will use the same branch and a new PR as required.
+
+### 46.5 Confirmed production deployment and live-content receipt
+
+**Production workflow 39745549884 — SUCCESS**, for merge
+`6e8570c6605e711376ab48045beba88dfcac22e6`:
+https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39745549884 . Hosted build, strict
+validation, 38 tests, public packaging, artifact upload and Pages deployment all succeeded.
+Build job `119712960477` completed at 08:13:29Z; deploy job `119714983504` at 08:17:31Z.
+GitHub environment deployment **7247180107** has **state=success** at
+**2026-10-22T08:17:32Z**, environment URL https://buffedlizard55-lab.github.io/OLBG1/ .
+
+Independent public fetches confirmed the new “A clearer view of the slate” root, the exact
+33-page build manifest with cutoff **2026-10-22T08:13:14Z**, coverage page, tennis page's
+blank unconfirmed UTC/model fields and archive links for all preserved desks. Published
+counts: **97 extracts / 17 sport reviews / 30 models / 75 model markets / 165 fair outcomes /
+0 approved bets / 0 High**. Production collector ledger reports **2/9** successful requests;
+that does not certify the failed sources or make coverage complete. Old observations were
+not renewed on failure. The ATP order-of-play PDF was also re-read; listed pairings still
+match the saved extract and its timezone remains unstated.
+
+The separate automatic **legacy** Pages run `39745550531` built successfully but its deploy
+job was **cancelled**, not a failing test. That cancellation leaves the legacy Pages summary
+API showing an error/building state at times. The custom Actions artifact's explicit successful
+environment deployment and independently retrieved live content above are the publication
+receipt; no failed factual/model/link gate was waived and no settings permission was assumed.
+The workflow's scoped GITHUB_TOKEN can deploy the artifact despite the Arena integration's
+restricted direct Pages-settings permission. Do not repeatedly retrigger legacy builds to
+“fix” the stale summary at the expense of a working production artifact.
+
+**T61 final integration is done.** Remaining global collection, available-market, calibration,
+lineup and confidence objectives are **not falsely closed**: the canonical coverage and
+Flagged for Review pages explicitly retain them. This is an evidence-first partial research
+release, not a claim of exhaustive/all-market or profitable betting coverage. Receipt-only
+PR **#90** uses the same assigned branch; its public record links the confirmed primary
+merge/deployment without creating a parallel desk or overwriting another session's files.

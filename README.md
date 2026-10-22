@@ -132,8 +132,11 @@ their original observation date; they are not silently rewritten by a schedule r
 Pinned action revisions were resolved from the official `actions/*` repositories. The
 static site has no external JavaScript, analytics, remote font dependency or browser-facing
 localhost service. The Pages artifact includes source-linked data and the review register.
-Final PR, merge and deployment confirmation are recorded in `COORDINATION.md` §46 and the
-release report after GitHub reports success.
+Publication confirmed: [PR #84](https://github.com/buffedlizard55-lab/OLBG1/pull/84), merge
+`6e8570c`, [successful production run 39745549884](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39745549884),
+Pages deployment `7247180107` succeeded at **2026-10-22T08:17:32Z**. Live root and build metadata
+were checked independently. Receipt follow-up: PR #90. Full records are in `COORDINATION.md`
+§46 and [the release report](reports/RELEASE_T61.md).
 
 ## Files and audit scope
 
