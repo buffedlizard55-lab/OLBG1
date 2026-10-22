@@ -1,0 +1,99 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overview | OLBG Reverse-Engineered Desk</title>
+<style>
+:root{--bg:#0d1117;--panel:#151b23;--panel2:#1c2430;--line:#2a3441;--txt:#e6edf3;--dim:#93a1b1;
+--hi:#3fb950;--md:#d29922;--lo:#8b949e;--acc:#58a6ff;--red:#f85149}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);
+font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line);background:#0b0f14;position:sticky;top:0;z-index:9}
+header.top .wrap{display:flex;gap:18px;align-items:center;height:56px;flex-wrap:wrap}
+.brand{font-weight:700;letter-spacing:.3px}.brand span{color:var(--acc)}
+nav a{color:var(--dim);font-size:13.5px;margin-right:14px}
+nav a.on{color:var(--txt);border-bottom:2px solid var(--acc);padding-bottom:2px}
+main{padding:28px 0 64px}
+h1{font-size:27px;margin:6px 0 6px;letter-spacing:-.3px}
+h2{font-size:19px;margin:34px 0 10px}
+h3{font-size:15.5px;margin:20px 0 6px}
+p.lede{color:var(--dim);max-width:820px;margin:0 0 18px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0 6px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi .n{font-size:23px;font-weight:700}.kpi .l{font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.6px}
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);
+border-radius:10px;overflow:hidden;font-size:13.6px}
+th{background:var(--panel2);text-align:left;padding:9px 10px;font-size:11.5px;letter-spacing:.5px;
+text-transform:uppercase;color:var(--dim);border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#19212b}
+.mut{color:var(--dim)}.sm{font-size:12px}
+.tag{display:inline-block;padding:1px 7px;border-radius:999px;font-size:11px;font-weight:600;white-space:nowrap}
+.hi{background:rgba(63,185,80,.15);color:var(--hi);border:1px solid rgba(63,185,80,.35)}
+.md{background:rgba(210,153,34,.14);color:var(--md);border:1px solid rgba(210,153,34,.35)}
+.lo{background:rgba(139,148,158,.14);color:var(--lo);border:1px solid rgba(139,148,158,.35)}
+.flag{background:rgba(248,81,73,.12);color:#ff9d97;border:1px solid rgba(248,81,73,.3)}
+.ver{background:rgba(88,166,255,.12);color:#8cc7ff;border:1px solid rgba(88,166,255,.3)}
+details summary{cursor:pointer;color:var(--acc);font-size:12.5px;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details[open] summary{margin-bottom:8px}
+.mkt{font-size:12.4px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:14px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+ul.notes{margin:8px 0 0 18px;padding:0}ul.notes li{margin:4px 0;color:var(--dim)}
+code{background:#0b0f14;border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:12px}
+footer{border-top:1px solid var(--line);color:var(--dim);font-size:12.5px;padding:20px 0}
+.pill{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:2px 8px;margin-left:6px}
+</style></head><body>
+<header class="top"><div class="wrap"><div class="brand">OLBG <span>Independent Desk</span></div>
+<nav><a href="../v3/tennis.html" class="">Tennis</a><a href="../v3/basketball.html" class="">Basketball</a><a href="../v3/golf.html" class="">Golf</a><a href="../v3/cricket.html" class="">Cricket</a><a href="../v3/snooker.html" class="">Snooker</a><a href="../v3/rugby-union.html" class="">Rugby Union</a><a href="../v3/picks.html" class="">Picks</a><a href="../v3/flagged.html" class="">Flagged</a><a href="../v3/analysis.html" class="">Analysis</a><a href="../v3/methodology.html" class="">Method</a><a href="../v3/sources.html" class="">Sources</a></nav></div></header>
+<main class="wrap"><h1>Independent match list, priced from official sources only</h1>
+<p class="lede">A rebuilt OLBG-style board for every in-scope sport except soccer, boxing, MMA, American
+football, hurling, horse racing, cycling and specials. Each row was checked against a league, tour or
+governing-body page on 22 October 2026; the desk then priced the match winner, a handicap ladder, a
+total ladder and, where the sport allows, the correct score. No tipster price was read.</p>
+<div class="kpis">
+<div class="kpi"><div class="n">127</div><div class="l">fixtures &amp; cards</div></div>
+<div class="kpi"><div class="n">120</div><div class="l">priced head-to-heads</div></div>
+<div class="kpi"><div class="n">3,468</div><div class="l">originated prices</div></div>
+<div class="kpi"><div class="n">10</div><div class="l">High-band picks</div></div>
+<div class="kpi"><div class="n">13</div><div class="l">official pages read</div></div>
+<div class="kpi"><div class="n">50</div><div class="l">open flags</div></div>
+</div>
+<h2>Sports</h2>
+<table><thead><tr><th>Sport</th><th>Rows</th><th>Re-verified today</th><th>Prices</th><th>High picks</th><th>Next start (UTC)</th></tr></thead>
+<tbody><tr><td><a href="tennis.html">Tennis</a><span class="pill">OLBG #3</span></td><td>8</td><td>8</td><td>96</td><td><span class="mut">-</span></td><td class="sm mut">Thu 22 Oct, 05:00</td></tr><tr><td><a href="basketball.html">Basketball</a><span class="pill">OLBG #4</span></td><td>23</td><td>23</td><td>782</td><td><span class="tag hi">1 High</span></td><td class="sm mut">Thu 22 Oct, 17:30</td></tr><tr><td><a href="golf.html">Golf</a><span class="pill">OLBG #5</span></td><td>4</td><td>0</td><td>0</td><td><span class="mut">-</span></td><td class="sm mut"></td></tr><tr><td><a href="cricket.html">Cricket</a><span class="pill">OLBG #7</span></td><td>4</td><td>4</td><td>168</td><td><span class="mut">-</span></td><td class="sm mut"></td></tr><tr><td><a href="snooker.html">Snooker</a><span class="pill">OLBG #8</span></td><td>8</td><td>8</td><td>128</td><td><span class="mut">-</span></td><td class="sm mut">Thu 22 Oct, 07:00</td></tr><tr><td><a href="rugby-union.html">Rugby Union</a><span class="pill">OLBG #9</span></td><td>12</td><td>0</td><td>432</td><td><span class="mut">-</span></td><td class="sm mut">Fri 23 Oct, 18:45</td></tr><tr><td><a href="rugby-league.html">Rugby League</a><span class="pill">OLBG #10</span></td><td>7</td><td>7</td><td>280</td><td><span class="tag hi">3 High</span></td><td class="sm mut">Fri 23 Oct, 06:45</td></tr><tr><td><a href="baseball.html">Baseball</a><span class="pill">OLBG #12</span></td><td>4</td><td>4</td><td>80</td><td><span class="mut">-</span></td><td class="sm mut">Sat 24 Oct, 00:00</td></tr><tr><td><a href="ice-hockey.html">Ice Hockey</a><span class="pill">OLBG #13</span></td><td>14</td><td>14</td><td>336</td><td><span class="tag hi">1 High</span></td><td class="sm mut">Thu 22 Oct, 23:00</td></tr><tr><td><a href="motor-racing.html">Motor Racing</a><span class="pill">OLBG #14</span></td><td>1</td><td>1</td><td>0</td><td><span class="mut">-</span></td><td class="sm mut">Sun 25 Oct, 21:00</td></tr><tr><td><a href="darts.html">Darts</a><span class="pill">OLBG #15</span></td><td>16</td><td>16</td><td>320</td><td><span class="tag hi">1 High</span></td><td class="sm mut">Thu 22 Oct, 17:00</td></tr><tr><td><a href="handball.html">Handball</a><span class="pill">OLBG #20</span></td><td>5</td><td>5</td><td>160</td><td><span class="tag hi">1 High</span></td><td class="sm mut">Thu 22 Oct, 16:45</td></tr><tr><td><a href="volleyball.html">Volleyball</a><span class="pill">OLBG #21</span></td><td>6</td><td>0</td><td>180</td><td><span class="mut">-</span></td><td class="sm mut">Fri 23 Oct, 15:30</td></tr><tr><td><a href="aussie-rules.html">Aussie Rules</a><span class="pill">OLBG #22</span></td><td>9</td><td>9</td><td>378</td><td><span class="tag hi">3 High</span></td><td class="sm mut">Fri 23 Oct, 08:45</td></tr><tr><td><a href="esports.html">eSports</a><span class="pill">OLBG #23</span></td><td>1</td><td>0</td><td>0</td><td><span class="mut">-</span></td><td class="sm mut"></td></tr><tr><td><a href="gaelic-football.html">Gaelic Football</a><span class="pill">OLBG #25</span></td><td>4</td><td>0</td><td>128</td><td><span class="mut">-</span></td><td class="sm mut">Sat 24 Oct, 18:00</td></tr><tr><td><a href="greyhounds.html">Greyhounds</a><span class="pill">OLBG #28</span></td><td>1</td><td>0</td><td>0</td><td><span class="mut">-</span></td><td class="sm mut"></td></tr></tbody></table>
+<h2>What changed in this snapshot</h2>
+<div class="grid2">
+<div class="card"><h3>Expired, not carried forward</h3><ul class="notes">
+<li>All 21 October NHL games, including the Sabres-Flyers and Senators-Panthers fixtures that were still open at the previous snapshot.</li>
+<li>All 21 October NBA games and the Sacramento-LA Clippers row.</li>
+<li>Three GBGB greyhound cards that had already run.</li>
+<li>Eleven Northern Ireland Open second-round snooker ties, replaced by the eight third-round matches on the official Thursday card.</li>
+<li>Three Almaty tennis rows that no longer appear on the day-six order of play.</li>
+<li>New Zealand v India first T20I and Australia Women v New Zealand Women third T20I: both had started before this snapshot.</li>
+</ul></div>
+<div class="card"><h3>Corrections and new findings</h3><ul class="notes">
+<li>Port Adelaide v Collingwood (AFLW) moves from 08:15Z to 08:45Z: the official release is 7.15pm ACDT, not 7.15pm AEST.</li>
+<li>The NHL IDs previously stored for 22 October did not match the league schedule; all fourteen rows are re-keyed to the official game IDs.</li>
+<li>MLB is now a single World Series series, Tampa Bay at Milwaukee for Games 1 and 2.</li>
+<li>EuroLeague home/away was re-read from each Round 7 match page rather than from the game-centre cards.</li>
+<li>The band rule retired nineteen previously published High picks that sat shorter than -250.</li>
+</ul></div>
+</div>
+<h2>How to read a row</h2>
+<div class="card"><p><b>Desk pick</b> is the strongest selection on that match whose fair price still
+clears -250 (decimal 1.40). <b>Model %</b> is the desk's own probability for that selection.
+<b>Confidence</b> is High only when the probability is at least 70% and the price sits inside the
+-250 to +10000 band; below that band the pick is capped at Medium and labelled. <b>Source</b> opens
+the official page the participants, venue and start were read from.</p>
+<p class="sm mut">Jump to <a href="picks.html">the High picks</a>,
+<a href="flagged.html">the 50 flagged items</a>,
+<a href="analysis.html">the analysis</a> or <a href="sources.html">the source register</a>.</p></div></main>
+<footer><div class="wrap">Snapshot 2026-10-22T03:30:00Z. Every row carries an official source link. Values an official
+page does not publish are left blank and flagged rather than inferred. Prices are the desk's own fair
+lines, not bookmaker quotes, and are not betting advice. Published at
+<a href="https://buffedlizard55-lab.github.io/OLBG1/">buffedlizard55-lab.github.io/OLBG1</a>.</div></footer>
+</body></html>
