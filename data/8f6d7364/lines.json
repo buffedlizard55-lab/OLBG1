@@ -1,0 +1,4288 @@
+{
+ "generated_at": "2026-10-22T22:05:00Z",
+ "model_version": "8f6d7364-v1.0",
+ "high_gate": "model p >= 0.70 AND fair American in [-250,+10000] AND official-verified fixture",
+ "fixtures": [
+  {
+   "id": "nhl-ns-h",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "NSH Predators",
+     "line": null,
+     "p": 0.259091,
+     "fair_decimal": 3.8596,
+     "fair_american": 286.0,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "winner",
+     "selection": "BOS Bruins",
+     "line": null,
+     "p": 0.740909,
+     "fair_decimal": 1.3497,
+     "fair_american": -286.0,
+     "in_window": false,
+     "note": "shrunk log5 + home edge .025"
+    }
+   ],
+   "pick": "BOS Bruins",
+   "pick_p": 0.740909,
+   "pick_american": -286.0,
+   "tier": "Medium",
+   "priceable_note": "winner only: per-team scoring rates were not carried into this dataset from the standings read (totals/handicaps withheld)"
+  },
+  {
+   "id": "nhl-ny-tor",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "NY Rangers",
+     "line": null,
+     "p": 0.606579,
+     "fair_decimal": 1.6486,
+     "fair_american": -154.2,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "winner",
+     "selection": "TOR Maple Leafs",
+     "line": null,
+     "p": 0.393421,
+     "fair_decimal": 2.5418,
+     "fair_american": 154.2,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    }
+   ],
+   "pick": "NY Rangers",
+   "pick_p": 0.606579,
+   "pick_american": -154.2,
+   "tier": "Medium",
+   "priceable_note": "winner only: per-team scoring rates were not carried into this dataset from the standings read (totals/handicaps withheld)"
+  },
+  {
+   "id": "nhl-sjs-ott",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "SJ Sharks",
+     "line": null,
+     "p": 0.332143,
+     "fair_decimal": 3.0108,
+     "fair_american": 201.1,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "winner",
+     "selection": "OTT Senators",
+     "line": null,
+     "p": 0.667857,
+     "fair_decimal": 1.4973,
+     "fair_american": -201.1,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    }
+   ],
+   "pick": "OTT Senators",
+   "pick_p": 0.667857,
+   "pick_american": -201.1,
+   "tier": "Medium",
+   "priceable_note": "winner only: per-team scoring rates were not carried into this dataset from the standings read (totals/handicaps withheld)"
+  },
+  {
+   "id": "nhl-ana-njd",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "ANA Ducks",
+     "line": null,
+     "p": 0.398529,
+     "fair_decimal": 2.5092,
+     "fair_american": 150.9,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "winner",
+     "selection": "NJ Devils",
+     "line": null,
+     "p": 0.601471,
+     "fair_decimal": 1.6626,
+     "fair_american": -150.9,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    }
+   ],
+   "pick": "NJ Devils",
+   "pick_p": 0.601471,
+   "pick_american": -150.9,
+   "tier": "Medium",
+   "priceable_note": "winner only: per-team scoring rates were not carried into this dataset from the standings read (totals/handicaps withheld)"
+  },
+  {
+   "id": "nhl-fla-pit",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "FLA Panthers",
+     "line": null,
+     "p": 0.617857,
+     "fair_decimal": 1.6185,
+     "fair_american": -161.7,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "winner",
+     "selection": "PIT Penguins",
+     "line": null,
+     "p": 0.382143,
+     "fair_decimal": 2.6168,
+     "fair_american": 161.7,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    }
+   ],
+   "pick": "FLA Panthers",
+   "pick_p": 0.617857,
+   "pick_american": -161.7,
+   "tier": "Medium",
+   "priceable_note": "winner only: per-team scoring rates were not carried into this dataset from the standings read (totals/handicaps withheld)"
+  },
+  {
+   "id": "nhl-lak-nyi",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "LA Kings",
+     "line": null,
+     "p": 0.218243,
+     "fair_decimal": 4.582,
+     "fair_american": 358.2,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "winner",
+     "selection": "NY Islanders",
+     "line": null,
+     "p": 0.781757,
+     "fair_decimal": 1.2792,
+     "fair_american": -358.2,
+     "in_window": false,
+     "note": "shrunk log5 + home edge .025"
+    }
+   ],
+   "pick": "NY Islanders",
+   "pick_p": 0.781757,
+   "pick_american": -358.2,
+   "tier": "Medium",
+   "priceable_note": "winner only: per-team scoring rates were not carried into this dataset from the standings read (totals/handicaps withheld)"
+  },
+  {
+   "id": "nhl-vgk-stl",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "VGS Golden Knights",
+     "line": null,
+     "p": 0.675,
+     "fair_decimal": 1.4815,
+     "fair_american": -207.7,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "winner",
+     "selection": "STL Blues",
+     "line": null,
+     "p": 0.325,
+     "fair_decimal": 3.0769,
+     "fair_american": 207.7,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    }
+   ],
+   "pick": "VGS Golden Knights",
+   "pick_p": 0.675,
+   "pick_american": -207.7,
+   "tier": "Medium",
+   "priceable_note": "winner only: per-team scoring rates were not carried into this dataset from the standings read (totals/handicaps withheld)"
+  },
+  {
+   "id": "nhl-wpg-dal",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "WPG Jets",
+     "line": null,
+     "p": 0.366304,
+     "fair_decimal": 2.73,
+     "fair_american": 173.0,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "winner",
+     "selection": "DAL Stars",
+     "line": null,
+     "p": 0.633696,
+     "fair_decimal": 1.578,
+     "fair_american": -173.0,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    }
+   ],
+   "pick": "DAL Stars",
+   "pick_p": 0.633696,
+   "pick_american": -173.0,
+   "tier": "Medium",
+   "priceable_note": "winner only: per-team scoring rates were not carried into this dataset from the standings read (totals/handicaps withheld)"
+  },
+  {
+   "id": "nhl-min-cgy",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "MIN Wild",
+     "line": null,
+     "p": 0.702273,
+     "fair_decimal": 1.4239,
+     "fair_american": -235.9,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "winner",
+     "selection": "CGY Flames",
+     "line": null,
+     "p": 0.297727,
+     "fair_decimal": 3.3588,
+     "fair_american": 235.9,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    }
+   ],
+   "pick": "MIN Wild",
+   "pick_p": 0.702273,
+   "pick_american": -235.9,
+   "tier": "High",
+   "priceable_note": "winner only: per-team scoring rates were not carried into this dataset from the standings read (totals/handicaps withheld)"
+  },
+  {
+   "id": "nhl-car-edm",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "CAR Hurricanes",
+     "line": null,
+     "p": 0.445588,
+     "fair_decimal": 2.2442,
+     "fair_american": 124.4,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "winner",
+     "selection": "EDM Oilers",
+     "line": null,
+     "p": 0.554412,
+     "fair_decimal": 1.8037,
+     "fair_american": -124.4,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    }
+   ],
+   "pick": "EDM Oilers",
+   "pick_p": 0.554412,
+   "pick_american": -124.4,
+   "tier": "Medium",
+   "priceable_note": "winner only: per-team scoring rates were not carried into this dataset from the standings read (totals/handicaps withheld)"
+  },
+  {
+   "id": "nhl-uta-sea",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "UTA Mammoth",
+     "line": null,
+     "p": 0.549468,
+     "fair_decimal": 1.8199,
+     "fair_american": -122.0,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "winner",
+     "selection": "SEA Kraken",
+     "line": null,
+     "p": 0.450532,
+     "fair_decimal": 2.2196,
+     "fair_american": 122.0,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    }
+   ],
+   "pick": "UTA Mammoth",
+   "pick_p": 0.549468,
+   "pick_american": -122.0,
+   "tier": "Low",
+   "priceable_note": "winner only: per-team scoring rates were not carried into this dataset from the standings read (totals/handicaps withheld)"
+  },
+  {
+   "id": "nhl-det-van",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "DET Red Wings",
+     "line": null,
+     "p": 0.607184,
+     "fair_decimal": 1.6469,
+     "fair_american": -154.6,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "winner",
+     "selection": "VAN Canucks",
+     "line": null,
+     "p": 0.392816,
+     "fair_decimal": 2.5457,
+     "fair_american": 154.6,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    }
+   ],
+   "pick": "DET Red Wings",
+   "pick_p": 0.607184,
+   "pick_american": -154.6,
+   "tier": "Medium",
+   "priceable_note": "winner only: per-team scoring rates were not carried into this dataset from the standings read (totals/handicaps withheld)"
+  },
+  {
+   "id": "mlb-ws-g1",
+   "sport": "baseball",
+   "competition": "MLB World Series",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "TB Rays",
+     "line": null,
+     "p": 0.44315,
+     "fair_decimal": 2.2566,
+     "fair_american": 125.7,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "winner",
+     "selection": "MIL Brewers",
+     "line": null,
+     "p": 0.55685,
+     "fair_decimal": 1.7958,
+     "fair_american": -125.7,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "total",
+     "selection": "Over 7.5",
+     "line": 7.5,
+     "p": 0.646404,
+     "fair_decimal": 1.547,
+     "fair_american": -182.8,
+     "in_window": true,
+     "note": "Poisson totals from official season run rates (lambda=8.753)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 7.5",
+     "line": 7.5,
+     "p": 0.353596,
+     "fair_decimal": 2.8281,
+     "fair_american": 182.8,
+     "in_window": true,
+     "note": "Poisson totals (lambda=8.753)"
+    },
+    {
+     "market": "total",
+     "selection": "Over 8.5",
+     "line": 8.5,
+     "p": 0.511399,
+     "fair_decimal": 1.9554,
+     "fair_american": -104.7,
+     "in_window": true,
+     "note": "Poisson totals from official season run rates (lambda=8.753)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 8.5",
+     "line": 8.5,
+     "p": 0.488601,
+     "fair_decimal": 2.0467,
+     "fair_american": 104.7,
+     "in_window": true,
+     "note": "Poisson totals (lambda=8.753)"
+    },
+    {
+     "market": "total",
+     "selection": "Over 9.5",
+     "line": 9.5,
+     "p": 0.380097,
+     "fair_decimal": 2.6309,
+     "fair_american": 163.1,
+     "in_window": true,
+     "note": "Poisson totals from official season run rates (lambda=8.753)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 9.5",
+     "line": 9.5,
+     "p": 0.619903,
+     "fair_decimal": 1.6132,
+     "fair_american": -163.1,
+     "in_window": true,
+     "note": "Poisson totals (lambda=8.753)"
+    },
+    {
+     "market": "handicap",
+     "selection": "TB Rays -1.5",
+     "line": -1.5,
+     "p": 0.576557,
+     "fair_decimal": 1.7344,
+     "fair_american": -136.2,
+     "in_window": true,
+     "note": "Poisson score-difference, tie mass split pro-rata"
+    },
+    {
+     "market": "handicap",
+     "selection": "MIL Brewers +1.5",
+     "line": 1.5,
+     "p": 0.423443,
+     "fair_decimal": 2.3616,
+     "fair_american": 136.2,
+     "in_window": true,
+     "note": "Poisson score-difference, tie mass split pro-rata"
+    }
+   ],
+   "pick": "MIL Brewers",
+   "pick_p": 0.55685,
+   "pick_american": -125.7,
+   "tier": "Medium",
+   "priceable_note": "season run rates: lambda_total=8.75"
+  },
+  {
+   "id": "mlb-ws-g2",
+   "sport": "baseball",
+   "competition": "MLB World Series",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "TB Rays",
+     "line": null,
+     "p": 0.44315,
+     "fair_decimal": 2.2566,
+     "fair_american": 125.7,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "winner",
+     "selection": "MIL Brewers",
+     "line": null,
+     "p": 0.55685,
+     "fair_decimal": 1.7958,
+     "fair_american": -125.7,
+     "in_window": true,
+     "note": "shrunk log5 + home edge .025"
+    },
+    {
+     "market": "total",
+     "selection": "Over 7.5",
+     "line": 7.5,
+     "p": 0.646404,
+     "fair_decimal": 1.547,
+     "fair_american": -182.8,
+     "in_window": true,
+     "note": "Poisson totals from official season run rates (lambda=8.753)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 7.5",
+     "line": 7.5,
+     "p": 0.353596,
+     "fair_decimal": 2.8281,
+     "fair_american": 182.8,
+     "in_window": true,
+     "note": "Poisson totals (lambda=8.753)"
+    },
+    {
+     "market": "total",
+     "selection": "Over 8.5",
+     "line": 8.5,
+     "p": 0.511399,
+     "fair_decimal": 1.9554,
+     "fair_american": -104.7,
+     "in_window": true,
+     "note": "Poisson totals from official season run rates (lambda=8.753)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 8.5",
+     "line": 8.5,
+     "p": 0.488601,
+     "fair_decimal": 2.0467,
+     "fair_american": 104.7,
+     "in_window": true,
+     "note": "Poisson totals (lambda=8.753)"
+    },
+    {
+     "market": "total",
+     "selection": "Over 9.5",
+     "line": 9.5,
+     "p": 0.380097,
+     "fair_decimal": 2.6309,
+     "fair_american": 163.1,
+     "in_window": true,
+     "note": "Poisson totals from official season run rates (lambda=8.753)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 9.5",
+     "line": 9.5,
+     "p": 0.619903,
+     "fair_decimal": 1.6132,
+     "fair_american": -163.1,
+     "in_window": true,
+     "note": "Poisson totals (lambda=8.753)"
+    },
+    {
+     "market": "handicap",
+     "selection": "TB Rays -1.5",
+     "line": -1.5,
+     "p": 0.576557,
+     "fair_decimal": 1.7344,
+     "fair_american": -136.2,
+     "in_window": true,
+     "note": "Poisson score-difference, tie mass split pro-rata"
+    },
+    {
+     "market": "handicap",
+     "selection": "MIL Brewers +1.5",
+     "line": 1.5,
+     "p": 0.423443,
+     "fair_decimal": 2.3616,
+     "fair_american": 136.2,
+     "in_window": true,
+     "note": "Poisson score-difference, tie mass split pro-rata"
+    }
+   ],
+   "pick": "MIL Brewers",
+   "pick_p": 0.55685,
+   "pick_american": -125.7,
+   "tier": "Medium",
+   "priceable_note": "season run rates: lambda_total=8.75"
+  },
+  {
+   "id": "el-zal-asv",
+   "sport": "basketball",
+   "competition": "EuroLeague Round 7",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Zalgiris Kaunas",
+     "line": null,
+     "p": 0.525,
+     "fair_decimal": 1.9048,
+     "fair_american": -110.5,
+     "in_window": true,
+     "note": "shrunk log5 (records from official game-center) + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "LDLC ASVEL Villeurbanne",
+     "line": null,
+     "p": 0.475,
+     "fair_decimal": 2.1053,
+     "fair_american": 110.5,
+     "in_window": true,
+     "note": "shrunk log5"
+    }
+   ],
+   "pick": "Zalgiris Kaunas",
+   "pick_p": 0.525,
+   "pick_american": -110.5,
+   "tier": "Low",
+   "priceable_note": "winner only; not both teams' ppg appeared in the fetched article so totals are withheld"
+  },
+  {
+   "id": "el-oly-fen",
+   "sport": "basketball",
+   "competition": "EuroLeague Round 7",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Olympiacos Piraeus",
+     "line": null,
+     "p": 0.525,
+     "fair_decimal": 1.9048,
+     "fair_american": -110.5,
+     "in_window": true,
+     "note": "shrunk log5 (records from official game-center) + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "Fenerbahce Tarfin Istanbul",
+     "line": null,
+     "p": 0.475,
+     "fair_decimal": 2.1053,
+     "fair_american": 110.5,
+     "in_window": true,
+     "note": "shrunk log5"
+    }
+   ],
+   "pick": "Olympiacos Piraeus",
+   "pick_p": 0.525,
+   "pick_american": -110.5,
+   "tier": "Low",
+   "priceable_note": "winner only; not both teams' ppg appeared in the fetched article so totals are withheld"
+  },
+  {
+   "id": "el-par-val",
+   "sport": "basketball",
+   "competition": "EuroLeague Round 7",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Paris Basketball",
+     "line": null,
+     "p": 0.180172,
+     "fair_decimal": 5.5502,
+     "fair_american": 455.0,
+     "in_window": true,
+     "note": "shrunk log5 (records from official game-center) + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "Valencia Basket",
+     "line": null,
+     "p": 0.819828,
+     "fair_decimal": 1.2198,
+     "fair_american": -455.0,
+     "in_window": false,
+     "note": "shrunk log5"
+    }
+   ],
+   "pick": "Valencia Basket",
+   "pick_p": 0.819828,
+   "pick_american": -455.0,
+   "tier": "Medium",
+   "priceable_note": "winner only; not both teams' ppg appeared in the fetched article so totals are withheld"
+  },
+  {
+   "id": "tn-osaka-li-tagger",
+   "sport": "tennis",
+   "competition": "WTA Japan Open (Osaka)",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Ann Li",
+     "line": null,
+     "p": 0.610755,
+     "fair_decimal": 1.6373,
+     "fair_american": -156.9,
+     "in_window": true,
+     "note": "Bradley-Terry rank model, slots 31 v 59 (rank/seed from official draws)"
+    },
+    {
+     "market": "winner",
+     "selection": "Lilli Tagger",
+     "line": null,
+     "p": 0.389245,
+     "fair_decimal": 2.5691,
+     "fair_american": 156.9,
+     "in_window": true,
+     "note": "complement"
+    }
+   ],
+   "pick": "Ann Li",
+   "pick_p": 0.610755,
+   "pick_american": -156.9,
+   "tier": "Medium",
+   "priceable_note": "winner only; set-score/game-total inputs are not published in official draws"
+  },
+  {
+   "id": "tn-osaka-gibson-krueger",
+   "sport": "tennis",
+   "competition": "WTA Japan Open (Osaka)",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Talia Gibson",
+     "line": null,
+     "p": 0.563352,
+     "fair_decimal": 1.7751,
+     "fair_american": -129.0,
+     "in_window": true,
+     "note": "Bradley-Terry rank model, slots 41 v 59 (rank/seed from official draws)"
+    },
+    {
+     "market": "winner",
+     "selection": "Ashlyn Krueger",
+     "line": null,
+     "p": 0.436648,
+     "fair_decimal": 2.2902,
+     "fair_american": 129.0,
+     "in_window": true,
+     "note": "complement"
+    }
+   ],
+   "pick": "Talia Gibson",
+   "pick_p": 0.563352,
+   "pick_american": -129.0,
+   "tier": "Medium",
+   "priceable_note": "winner only; set-score/game-total inputs are not published in official draws"
+  },
+  {
+   "id": "tn-osaka-stoiana-siniakova",
+   "sport": "tennis",
+   "competition": "WTA Japan Open (Osaka)",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Mary Stoiana",
+     "line": null,
+     "p": 0.472628,
+     "fair_decimal": 2.1158,
+     "fair_american": 111.6,
+     "in_window": true,
+     "note": "Bradley-Terry rank model, slots 69 v 59 (rank/seed from official draws)"
+    },
+    {
+     "market": "winner",
+     "selection": "Katerina Siniakova",
+     "line": null,
+     "p": 0.527372,
+     "fair_decimal": 1.8962,
+     "fair_american": -111.6,
+     "in_window": true,
+     "note": "complement"
+    }
+   ],
+   "pick": "Katerina Siniakova",
+   "pick_p": 0.527372,
+   "pick_american": -111.6,
+   "tier": "Low",
+   "priceable_note": "winner only; set-score/game-total inputs are not published in official draws"
+  },
+  {
+   "id": "tn-osaka-boulter-ruzic",
+   "sport": "tennis",
+   "competition": "WTA Japan Open (Osaka)",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Katie Boulter",
+     "line": null,
+     "p": 0.515492,
+     "fair_decimal": 1.9399,
+     "fair_american": -106.4,
+     "in_window": true,
+     "note": "Bradley-Terry rank model, slots 54 v 59 (rank/seed from official draws)"
+    },
+    {
+     "market": "winner",
+     "selection": "Antonia Ruzic",
+     "line": null,
+     "p": 0.484508,
+     "fair_decimal": 2.0639,
+     "fair_american": 106.4,
+     "in_window": true,
+     "note": "complement"
+    }
+   ],
+   "pick": "Katie Boulter",
+   "pick_p": 0.515492,
+   "pick_american": -106.4,
+   "tier": "Low",
+   "priceable_note": "winner only; set-score/game-total inputs are not published in official draws"
+  },
+  {
+   "id": "tn-ningbo-bejlek-bouzkova",
+   "sport": "tennis",
+   "competition": "WTA Ningbo Open",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Sara Bejlek",
+     "line": null,
+     "p": 0.5,
+     "fair_decimal": 2.0,
+     "fair_american": -100.0,
+     "in_window": true,
+     "note": "Bradley-Terry rank model, slots 21 v 21 (rank/seed from official draws)"
+    },
+    {
+     "market": "winner",
+     "selection": "Marie Bouzkova",
+     "line": null,
+     "p": 0.5,
+     "fair_decimal": 2.0,
+     "fair_american": -100.0,
+     "in_window": true,
+     "note": "complement"
+    }
+   ],
+   "pick": "Sara Bejlek",
+   "pick_p": 0.5,
+   "pick_american": -100.0,
+   "tier": "Low",
+   "priceable_note": "winner only; set-score/game-total inputs are not published in official draws"
+  },
+  {
+   "id": "tn-ningbo-fernandez-alexandrova",
+   "sport": "tennis",
+   "competition": "WTA Ningbo Open",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Leylah Fernandez",
+     "line": null,
+     "p": 0.5,
+     "fair_decimal": 2.0,
+     "fair_american": -100.0,
+     "in_window": true,
+     "note": "Bradley-Terry rank model, slots 21 v 21 (rank/seed from official draws)"
+    },
+    {
+     "market": "winner",
+     "selection": "Ekaterina Alexandrova",
+     "line": null,
+     "p": 0.5,
+     "fair_decimal": 2.0,
+     "fair_american": -100.0,
+     "in_window": true,
+     "note": "complement"
+    }
+   ],
+   "pick": "Leylah Fernandez",
+   "pick_p": 0.5,
+   "pick_american": -100.0,
+   "tier": "Low",
+   "priceable_note": "winner only; set-score/game-total inputs are not published in official draws"
+  },
+  {
+   "id": "tn-ningbo-jovic-shnaider",
+   "sport": "tennis",
+   "competition": "WTA Ningbo Open",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Iva Jovic",
+     "line": null,
+     "p": 0.529201,
+     "fair_decimal": 1.8896,
+     "fair_american": -112.4,
+     "in_window": true,
+     "note": "Bradley-Terry rank model, slots 11 v 13 (rank/seed from official draws)"
+    },
+    {
+     "market": "winner",
+     "selection": "Diana Shnaider",
+     "line": null,
+     "p": 0.470799,
+     "fair_decimal": 2.124,
+     "fair_american": 112.4,
+     "in_window": true,
+     "note": "complement"
+    }
+   ],
+   "pick": "Iva Jovic",
+   "pick_p": 0.529201,
+   "pick_american": -112.4,
+   "tier": "Low",
+   "priceable_note": "winner only; set-score/game-total inputs are not published in official draws"
+  },
+  {
+   "id": "tn-ningbo-rybakina-kawa",
+   "sport": "tennis",
+   "competition": "WTA Ningbo Open",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Elena Rybakina",
+     "line": null,
+     "p": 0.917116,
+     "fair_decimal": 1.0904,
+     "fair_american": -1106.5,
+     "in_window": false,
+     "note": "Bradley-Terry rank model, slots 1 v 31 (rank/seed from official draws)"
+    },
+    {
+     "market": "winner",
+     "selection": "Katarzyna Kawa",
+     "line": null,
+     "p": 0.082884,
+     "fair_decimal": 12.065,
+     "fair_american": 1106.5,
+     "in_window": true,
+     "note": "complement"
+    }
+   ],
+   "pick": "Elena Rybakina",
+   "pick_p": 0.917116,
+   "pick_american": -1106.5,
+   "tier": "Medium",
+   "priceable_note": "winner only; set-score/game-total inputs are not published in official draws"
+  },
+  {
+   "id": "tn-almaty-basil-mann",
+   "sport": "tennis",
+   "competition": "ATP Almaty Open",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Nikoloz Basilashvili",
+     "line": null,
+     "p": 0.432263,
+     "fair_decimal": 2.3134,
+     "fair_american": 131.3,
+     "in_window": true,
+     "note": "Bradley-Terry rank model, slots 31 v 21 (rank/seed from official draws)"
+    },
+    {
+     "market": "winner",
+     "selection": "Adrian Mannarino",
+     "line": null,
+     "p": 0.567737,
+     "fair_decimal": 1.7614,
+     "fair_american": -131.3,
+     "in_window": true,
+     "note": "complement"
+    }
+   ],
+   "pick": "Adrian Mannarino",
+   "pick_p": 0.567737,
+   "pick_american": -131.3,
+   "tier": "Medium",
+   "priceable_note": "winner only; set-score/game-total inputs are not published in official draws"
+  },
+  {
+   "id": "tn-almaty-tsitsi-duck",
+   "sport": "tennis",
+   "competition": "ATP Almaty Open",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Stefanos Tsitsipas",
+     "line": null,
+     "p": 0.683311,
+     "fair_decimal": 1.4635,
+     "fair_american": -215.8,
+     "in_window": true,
+     "note": "Bradley-Terry rank model, slots 7 v 21 (rank/seed from official draws)"
+    },
+    {
+     "market": "winner",
+     "selection": "James Duckworth",
+     "line": null,
+     "p": 0.316689,
+     "fair_decimal": 3.1577,
+     "fair_american": 215.8,
+     "in_window": true,
+     "note": "complement"
+    }
+   ],
+   "pick": "Stefanos Tsitsipas",
+   "pick_p": 0.683311,
+   "pick_american": -215.8,
+   "tier": "Medium",
+   "priceable_note": "winner only; set-score/game-total inputs are not published in official draws"
+  },
+  {
+   "id": "tn-almaty-medv-atmane",
+   "sport": "tennis",
+   "competition": "ATP Almaty Open",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Daniil Medvedev",
+     "line": null,
+     "p": 0.893896,
+     "fair_decimal": 1.1187,
+     "fair_american": -842.5,
+     "in_window": false,
+     "note": "Bradley-Terry rank model, slots 1 v 21 (rank/seed from official draws)"
+    },
+    {
+     "market": "winner",
+     "selection": "Terence Atmane",
+     "line": null,
+     "p": 0.106104,
+     "fair_decimal": 9.4247,
+     "fair_american": 842.5,
+     "in_window": true,
+     "note": "complement"
+    }
+   ],
+   "pick": "Daniil Medvedev",
+   "pick_p": 0.893896,
+   "pick_american": -842.5,
+   "tier": "Medium",
+   "priceable_note": "winner only; set-score/game-total inputs are not published in official draws"
+  },
+  {
+   "id": "tn-brussels-griek-leheck",
+   "sport": "tennis",
+   "competition": "ATP European Open (Brussels)",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Tallon Griekspoor",
+     "line": null,
+     "p": 0.161655,
+     "fair_decimal": 6.186,
+     "fair_american": 518.6,
+     "in_window": true,
+     "note": "Bradley-Terry rank model, slots 21 v 2 (rank/seed from official draws)"
+    },
+    {
+     "market": "winner",
+     "selection": "Jiri Lehecka",
+     "line": null,
+     "p": 0.838345,
+     "fair_decimal": 1.1928,
+     "fair_american": -518.6,
+     "in_window": false,
+     "note": "complement"
+    }
+   ],
+   "pick": "Jiri Lehecka",
+   "pick_p": 0.838345,
+   "pick_american": -518.6,
+   "tier": "Medium",
+   "priceable_note": "winner only; set-score/game-total inputs are not published in official draws"
+  },
+  {
+   "id": "tn-lyon-moutet-paul",
+   "sport": "tennis",
+   "competition": "ATP Lyon Open",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Corentin Moutet",
+     "line": null,
+     "p": 0.238529,
+     "fair_decimal": 4.1924,
+     "fair_american": 319.2,
+     "in_window": true,
+     "note": "Bradley-Terry rank model, slots 21 v 4 (rank/seed from official draws)"
+    },
+    {
+     "market": "winner",
+     "selection": "Tommy Paul",
+     "line": null,
+     "p": 0.761471,
+     "fair_decimal": 1.3132,
+     "fair_american": -319.2,
+     "in_window": false,
+     "note": "complement"
+    }
+   ],
+   "pick": "Tommy Paul",
+   "pick_p": 0.761471,
+   "pick_american": -319.2,
+   "tier": "Medium",
+   "priceable_note": "winner only; set-score/game-total inputs are not published in official draws"
+  },
+  {
+   "id": "tn-lyon-altmaier-fritz",
+   "sport": "tennis",
+   "competition": "ATP Lyon Open",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Daniel Altmaier",
+     "line": null,
+     "p": 0.161655,
+     "fair_decimal": 6.186,
+     "fair_american": 518.6,
+     "in_window": true,
+     "note": "Bradley-Terry rank model, slots 21 v 2 (rank/seed from official draws)"
+    },
+    {
+     "market": "winner",
+     "selection": "Taylor Fritz",
+     "line": null,
+     "p": 0.838345,
+     "fair_decimal": 1.1928,
+     "fair_american": -518.6,
+     "in_window": false,
+     "note": "complement"
+    }
+   ],
+   "pick": "Taylor Fritz",
+   "pick_p": 0.838345,
+   "pick_american": -518.6,
+   "tier": "Medium",
+   "priceable_note": "winner only; set-score/game-total inputs are not published in official draws"
+  },
+  {
+   "id": "urc-car-sha",
+   "sport": "rugby-union",
+   "competition": "United Rugby Championship",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Cardiff Rugby",
+     "line": null,
+     "p": 0.525,
+     "fair_decimal": 1.9048,
+     "fair_american": -110.5,
+     "in_window": true,
+     "note": "shrunk log5 on official table + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "Hollywoodbets Sharks",
+     "line": null,
+     "p": 0.475,
+     "fair_decimal": 2.1053,
+     "fair_american": 110.5,
+     "in_window": true,
+     "note": "shrunk log5"
+    },
+    {
+     "market": "handicap",
+     "selection": "Cardiff Rugby -2",
+     "line": -2,
+     "p": 0.506649,
+     "fair_decimal": 1.9738,
+     "fair_american": -102.7,
+     "in_window": true,
+     "note": "normal margin model, sigma=10 (disclosed)"
+    },
+    {
+     "market": "handicap",
+     "selection": "Hollywoodbets Sharks +2",
+     "line": 2,
+     "p": 0.493351,
+     "fair_decimal": 2.027,
+     "fair_american": 102.7,
+     "in_window": true,
+     "note": "complement of the same line"
+    },
+    {
+     "market": "total",
+     "selection": "Over 47.5",
+     "line": 47.5,
+     "p": 0.630559,
+     "fair_decimal": 1.5859,
+     "fair_american": -170.7,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 47.5",
+     "line": 47.5,
+     "p": 0.369441,
+     "fair_decimal": 2.7068,
+     "fair_american": 170.7,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 51.5",
+     "line": 51.5,
+     "p": 0.5,
+     "fair_decimal": 2.0,
+     "fair_american": -100.0,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 51.5",
+     "line": 51.5,
+     "p": 0.5,
+     "fair_decimal": 2.0,
+     "fair_american": -100.0,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 55.5",
+     "line": 55.5,
+     "p": 0.369441,
+     "fair_decimal": 2.7068,
+     "fair_american": 170.7,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 55.5",
+     "line": 55.5,
+     "p": 0.630559,
+     "fair_decimal": 1.5859,
+     "fair_american": -170.7,
+     "in_window": true,
+     "note": "same"
+    }
+   ],
+   "pick": "Cardiff Rugby",
+   "pick_p": 0.525,
+   "pick_american": -110.5,
+   "tier": "Low",
+   "priceable_note": "model margin -1.8 pts, lambda 51.5"
+  },
+  {
+   "id": "urc-con-zeb",
+   "sport": "rugby-union",
+   "competition": "United Rugby Championship",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Connacht Rugby",
+     "line": null,
+     "p": 0.677174,
+     "fair_decimal": 1.4767,
+     "fair_american": -209.8,
+     "in_window": true,
+     "note": "shrunk log5 on official table + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "Zebre Parma",
+     "line": null,
+     "p": 0.322826,
+     "fair_decimal": 3.0976,
+     "fair_american": 209.8,
+     "in_window": true,
+     "note": "shrunk log5"
+    },
+    {
+     "market": "handicap",
+     "selection": "Connacht Rugby +6",
+     "line": 6,
+     "p": 0.5,
+     "fair_decimal": 2.0,
+     "fair_american": -100.0,
+     "in_window": true,
+     "note": "normal margin model, sigma=10 (disclosed)"
+    },
+    {
+     "market": "handicap",
+     "selection": "Zebre Parma -6",
+     "line": -6,
+     "p": 0.5,
+     "fair_decimal": 2.0,
+     "fair_american": -100.0,
+     "in_window": true,
+     "note": "complement of the same line"
+    },
+    {
+     "market": "total",
+     "selection": "Over 47.5",
+     "line": 47.5,
+     "p": 0.625305,
+     "fair_decimal": 1.5992,
+     "fair_american": -166.9,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 47.5",
+     "line": 47.5,
+     "p": 0.374695,
+     "fair_decimal": 2.6688,
+     "fair_american": 166.9,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 51.5",
+     "line": 51.5,
+     "p": 0.494459,
+     "fair_decimal": 2.0224,
+     "fair_american": 102.2,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 51.5",
+     "line": 51.5,
+     "p": 0.505541,
+     "fair_decimal": 1.9781,
+     "fair_american": -102.2,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 55.5",
+     "line": 55.5,
+     "p": 0.364212,
+     "fair_decimal": 2.7457,
+     "fair_american": 174.6,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 55.5",
+     "line": 55.5,
+     "p": 0.635788,
+     "fair_decimal": 1.5729,
+     "fair_american": -174.6,
+     "in_window": true,
+     "note": "same"
+    }
+   ],
+   "pick": "Connacht Rugby",
+   "pick_p": 0.677174,
+   "pick_american": -209.8,
+   "tier": "Medium",
+   "priceable_note": "model margin +6.0 pts, lambda 51.3"
+  },
+  {
+   "id": "urc-edi-lio",
+   "sport": "rugby-union",
+   "competition": "United Rugby Championship",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Edinburgh Rugby",
+     "line": null,
+     "p": 0.677174,
+     "fair_decimal": 1.4767,
+     "fair_american": -209.8,
+     "in_window": true,
+     "note": "shrunk log5 on official table + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "10bet Lions",
+     "line": null,
+     "p": 0.322826,
+     "fair_decimal": 3.0976,
+     "fair_american": 209.8,
+     "in_window": true,
+     "note": "shrunk log5"
+    },
+    {
+     "market": "handicap",
+     "selection": "Edinburgh Rugby +8",
+     "line": 8,
+     "p": 0.519939,
+     "fair_decimal": 1.9233,
+     "fair_american": -108.3,
+     "in_window": true,
+     "note": "normal margin model, sigma=10 (disclosed)"
+    },
+    {
+     "market": "handicap",
+     "selection": "10bet Lions -8",
+     "line": -8,
+     "p": 0.480061,
+     "fair_decimal": 2.0831,
+     "fair_american": 108.3,
+     "in_window": true,
+     "note": "complement of the same line"
+    },
+    {
+     "market": "total",
+     "selection": "Over 48.5",
+     "line": 48.5,
+     "p": 0.620028,
+     "fair_decimal": 1.6128,
+     "fair_american": -163.2,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 48.5",
+     "line": 48.5,
+     "p": 0.379972,
+     "fair_decimal": 2.6318,
+     "fair_american": 163.2,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 52.5",
+     "line": 52.5,
+     "p": 0.48892,
+     "fair_decimal": 2.0453,
+     "fair_american": 104.5,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 52.5",
+     "line": 52.5,
+     "p": 0.51108,
+     "fair_decimal": 1.9566,
+     "fair_american": -104.5,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 56.5",
+     "line": 56.5,
+     "p": 0.359008,
+     "fair_decimal": 2.7855,
+     "fair_american": 178.5,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 56.5",
+     "line": 56.5,
+     "p": 0.640992,
+     "fair_decimal": 1.5601,
+     "fair_american": -178.5,
+     "in_window": true,
+     "note": "same"
+    }
+   ],
+   "pick": "Edinburgh Rugby",
+   "pick_p": 0.677174,
+   "pick_american": -209.8,
+   "tier": "Medium",
+   "priceable_note": "model margin +8.5 pts, lambda 52.2"
+  },
+  {
+   "id": "urc-bul-uls",
+   "sport": "rugby-union",
+   "competition": "United Rugby Championship",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Vodacom Bulls",
+     "line": null,
+     "p": 0.794231,
+     "fair_decimal": 1.2591,
+     "fair_american": -386.0,
+     "in_window": false,
+     "note": "shrunk log5 on official table + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "Ulster Rugby",
+     "line": null,
+     "p": 0.205769,
+     "fair_decimal": 4.8598,
+     "fair_american": 386.0,
+     "in_window": true,
+     "note": "shrunk log5"
+    },
+    {
+     "market": "handicap",
+     "selection": "Vodacom Bulls +13",
+     "line": 13,
+     "p": 0.493351,
+     "fair_decimal": 2.027,
+     "fair_american": 102.7,
+     "in_window": true,
+     "note": "normal margin model, sigma=10 (disclosed)"
+    },
+    {
+     "market": "handicap",
+     "selection": "Ulster Rugby -13",
+     "line": -13,
+     "p": 0.506649,
+     "fair_decimal": 1.9738,
+     "fair_american": -102.7,
+     "in_window": true,
+     "note": "complement of the same line"
+    },
+    {
+     "market": "total",
+     "selection": "Over 56.5",
+     "line": 56.5,
+     "p": 0.620028,
+     "fair_decimal": 1.6128,
+     "fair_american": -163.2,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 56.5",
+     "line": 56.5,
+     "p": 0.379972,
+     "fair_decimal": 2.6318,
+     "fair_american": 163.2,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 60.5",
+     "line": 60.5,
+     "p": 0.48892,
+     "fair_decimal": 2.0453,
+     "fair_american": 104.5,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 60.5",
+     "line": 60.5,
+     "p": 0.51108,
+     "fair_decimal": 1.9566,
+     "fair_american": -104.5,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 64.5",
+     "line": 64.5,
+     "p": 0.359008,
+     "fair_decimal": 2.7855,
+     "fair_american": 178.5,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 64.5",
+     "line": 64.5,
+     "p": 0.640992,
+     "fair_decimal": 1.5601,
+     "fair_american": -178.5,
+     "in_window": true,
+     "note": "same"
+    }
+   ],
+   "pick": "Vodacom Bulls",
+   "pick_p": 0.794231,
+   "pick_american": -386.0,
+   "tier": "Medium",
+   "priceable_note": "model margin +12.8 pts, lambda 60.2"
+  },
+  {
+   "id": "urc-sto-sca",
+   "sport": "rugby-union",
+   "competition": "United Rugby Championship",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "DHL Stormers",
+     "line": null,
+     "p": 0.665,
+     "fair_decimal": 1.5038,
+     "fair_american": -198.5,
+     "in_window": true,
+     "note": "shrunk log5 on official table + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "Scarlets",
+     "line": null,
+     "p": 0.335,
+     "fair_decimal": 2.9851,
+     "fair_american": 198.5,
+     "in_window": true,
+     "note": "shrunk log5"
+    },
+    {
+     "market": "handicap",
+     "selection": "DHL Stormers +7",
+     "line": 7,
+     "p": 0.513296,
+     "fair_decimal": 1.9482,
+     "fair_american": -105.5,
+     "in_window": true,
+     "note": "normal margin model, sigma=10 (disclosed)"
+    },
+    {
+     "market": "handicap",
+     "selection": "Scarlets -7",
+     "line": -7,
+     "p": 0.486704,
+     "fair_decimal": 2.0546,
+     "fair_american": 105.5,
+     "in_window": true,
+     "note": "complement of the same line"
+    },
+    {
+     "market": "total",
+     "selection": "Over 44.5",
+     "line": 44.5,
+     "p": 0.614729,
+     "fair_decimal": 1.6267,
+     "fair_american": -159.6,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 44.5",
+     "line": 44.5,
+     "p": 0.385271,
+     "fair_decimal": 2.5956,
+     "fair_american": 159.6,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 48.5",
+     "line": 48.5,
+     "p": 0.483382,
+     "fair_decimal": 2.0688,
+     "fair_american": 106.9,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 48.5",
+     "line": 48.5,
+     "p": 0.516618,
+     "fair_decimal": 1.9357,
+     "fair_american": -106.9,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 52.5",
+     "line": 52.5,
+     "p": 0.35383,
+     "fair_decimal": 2.8262,
+     "fair_american": 182.6,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 52.5",
+     "line": 52.5,
+     "p": 0.64617,
+     "fair_decimal": 1.5476,
+     "fair_american": -182.6,
+     "in_window": true,
+     "note": "same"
+    }
+   ],
+   "pick": "DHL Stormers",
+   "pick_p": 0.665,
+   "pick_american": -198.5,
+   "tier": "Medium",
+   "priceable_note": "model margin +7.3 pts, lambda 48.0"
+  },
+  {
+   "id": "urc-ben-gla",
+   "sport": "rugby-union",
+   "competition": "United Rugby Championship",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Benetton Rugby",
+     "line": null,
+     "p": 0.255769,
+     "fair_decimal": 3.9098,
+     "fair_american": 291.0,
+     "in_window": true,
+     "note": "shrunk log5 on official table + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "Glasgow Warriors",
+     "line": null,
+     "p": 0.744231,
+     "fair_decimal": 1.3437,
+     "fair_american": -291.0,
+     "in_window": false,
+     "note": "shrunk log5"
+    },
+    {
+     "market": "handicap",
+     "selection": "Benetton Rugby -5",
+     "line": -5,
+     "p": 0.519939,
+     "fair_decimal": 1.9233,
+     "fair_american": -108.3,
+     "in_window": true,
+     "note": "normal margin model, sigma=10 (disclosed)"
+    },
+    {
+     "market": "handicap",
+     "selection": "Glasgow Warriors +5",
+     "line": 5,
+     "p": 0.480061,
+     "fair_decimal": 2.0831,
+     "fair_american": 108.3,
+     "in_window": true,
+     "note": "complement of the same line"
+    },
+    {
+     "market": "total",
+     "selection": "Over 45.5",
+     "line": 45.5,
+     "p": 0.640992,
+     "fair_decimal": 1.5601,
+     "fair_american": -178.5,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 45.5",
+     "line": 45.5,
+     "p": 0.359008,
+     "fair_decimal": 2.7855,
+     "fair_american": 178.5,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 49.5",
+     "line": 49.5,
+     "p": 0.51108,
+     "fair_decimal": 1.9566,
+     "fair_american": -104.5,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 49.5",
+     "line": 49.5,
+     "p": 0.48892,
+     "fair_decimal": 2.0453,
+     "fair_american": 104.5,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 53.5",
+     "line": 53.5,
+     "p": 0.379972,
+     "fair_decimal": 2.6318,
+     "fair_american": 163.2,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 53.5",
+     "line": 53.5,
+     "p": 0.620028,
+     "fair_decimal": 1.6128,
+     "fair_american": -163.2,
+     "in_window": true,
+     "note": "same"
+    }
+   ],
+   "pick": "Glasgow Warriors",
+   "pick_p": 0.744231,
+   "pick_american": -291.0,
+   "tier": "Medium",
+   "priceable_note": "model margin -4.5 pts, lambda 49.8"
+  },
+  {
+   "id": "urc-lei-mun",
+   "sport": "rugby-union",
+   "competition": "United Rugby Championship",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Leinster Rugby",
+     "line": null,
+     "p": 0.525,
+     "fair_decimal": 1.9048,
+     "fair_american": -110.5,
+     "in_window": true,
+     "note": "shrunk log5 on official table + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "Munster Rugby",
+     "line": null,
+     "p": 0.475,
+     "fair_decimal": 2.1053,
+     "fair_american": 110.5,
+     "in_window": true,
+     "note": "shrunk log5"
+    },
+    {
+     "market": "handicap",
+     "selection": "Leinster Rugby +3",
+     "line": 3,
+     "p": 0.506649,
+     "fair_decimal": 1.9738,
+     "fair_american": -102.7,
+     "in_window": true,
+     "note": "normal margin model, sigma=10 (disclosed)"
+    },
+    {
+     "market": "handicap",
+     "selection": "Munster Rugby -3",
+     "line": -3,
+     "p": 0.493351,
+     "fair_decimal": 2.027,
+     "fair_american": 102.7,
+     "in_window": true,
+     "note": "complement of the same line"
+    },
+    {
+     "market": "total",
+     "selection": "Over 42.5",
+     "line": 42.5,
+     "p": 0.630559,
+     "fair_decimal": 1.5859,
+     "fair_american": -170.7,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 42.5",
+     "line": 42.5,
+     "p": 0.369441,
+     "fair_decimal": 2.7068,
+     "fair_american": 170.7,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 46.5",
+     "line": 46.5,
+     "p": 0.5,
+     "fair_decimal": 2.0,
+     "fair_american": -100.0,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 46.5",
+     "line": 46.5,
+     "p": 0.5,
+     "fair_decimal": 2.0,
+     "fair_american": -100.0,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 50.5",
+     "line": 50.5,
+     "p": 0.369441,
+     "fair_decimal": 2.7068,
+     "fair_american": 170.7,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 50.5",
+     "line": 50.5,
+     "p": 0.630559,
+     "fair_decimal": 1.5859,
+     "fair_american": -170.7,
+     "in_window": true,
+     "note": "same"
+    }
+   ],
+   "pick": "Leinster Rugby",
+   "pick_p": 0.525,
+   "pick_american": -110.5,
+   "tier": "Low",
+   "priceable_note": "model margin +3.2 pts, lambda 46.5"
+  },
+  {
+   "id": "urc-osp-dra",
+   "sport": "rugby-union",
+   "competition": "United Rugby Championship",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Ospreys",
+     "line": null,
+     "p": 0.525,
+     "fair_decimal": 1.9048,
+     "fair_american": -110.5,
+     "in_window": true,
+     "note": "shrunk log5 on official table + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "Dragons RFC",
+     "line": null,
+     "p": 0.475,
+     "fair_decimal": 2.1053,
+     "fair_american": 110.5,
+     "in_window": true,
+     "note": "shrunk log5"
+    },
+    {
+     "market": "handicap",
+     "selection": "Ospreys -5",
+     "line": -5,
+     "p": 0.493351,
+     "fair_decimal": 2.027,
+     "fair_american": 102.7,
+     "in_window": true,
+     "note": "normal margin model, sigma=10 (disclosed)"
+    },
+    {
+     "market": "handicap",
+     "selection": "Dragons RFC +5",
+     "line": 5,
+     "p": 0.506649,
+     "fair_decimal": 1.9738,
+     "fair_american": -102.7,
+     "in_window": true,
+     "note": "complement of the same line"
+    },
+    {
+     "market": "total",
+     "selection": "Over 55.5",
+     "line": 55.5,
+     "p": 0.640992,
+     "fair_decimal": 1.5601,
+     "fair_american": -178.5,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 55.5",
+     "line": 55.5,
+     "p": 0.359008,
+     "fair_decimal": 2.7855,
+     "fair_american": 178.5,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 59.5",
+     "line": 59.5,
+     "p": 0.51108,
+     "fair_decimal": 1.9566,
+     "fair_american": -104.5,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 59.5",
+     "line": 59.5,
+     "p": 0.48892,
+     "fair_decimal": 2.0453,
+     "fair_american": 104.5,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 63.5",
+     "line": 63.5,
+     "p": 0.379972,
+     "fair_decimal": 2.6318,
+     "fair_american": 163.2,
+     "in_window": true,
+     "note": "normal totals model, sigma=12 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 63.5",
+     "line": 63.5,
+     "p": 0.620028,
+     "fair_decimal": 1.6128,
+     "fair_american": -163.2,
+     "in_window": true,
+     "note": "same"
+    }
+   ],
+   "pick": "Ospreys",
+   "pick_p": 0.525,
+   "pick_american": -110.5,
+   "tier": "Low",
+   "priceable_note": "model margin -5.2 pts, lambda 59.8"
+  },
+  {
+   "id": "t14-van-clm",
+   "sport": "rugby-union",
+   "competition": "Top 14 Round 7",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "RC Vannes",
+     "line": null,
+     "p": 0.47,
+     "fair_decimal": 2.1277,
+     "fair_american": 112.8,
+     "in_window": true,
+     "note": "linear official-position model (pos 14 v 11), home +.03"
+    },
+    {
+     "market": "winner",
+     "selection": "ASM Clermont",
+     "line": null,
+     "p": 0.53,
+     "fair_decimal": 1.8868,
+     "fair_american": -112.8,
+     "in_window": true,
+     "note": "linear official-position model (pos 14 v 11), home +.03"
+    }
+   ],
+   "pick": "ASM Clermont",
+   "pick_p": 0.53,
+   "pick_american": -112.8,
+   "tier": "Low",
+   "priceable_note": "winner only (no official PF/PA fetched for this competition)"
+  },
+  {
+   "id": "t14-bay-lou",
+   "sport": "rugby-union",
+   "competition": "Top 14 Round 7",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Aviron Bayonnais",
+     "line": null,
+     "p": 0.59,
+     "fair_decimal": 1.6949,
+     "fair_american": -143.9,
+     "in_window": true,
+     "note": "linear official-position model (pos 5 v 8), home +.03"
+    },
+    {
+     "market": "winner",
+     "selection": "LOU Rugby",
+     "line": null,
+     "p": 0.41,
+     "fair_decimal": 2.439,
+     "fair_american": 143.9,
+     "in_window": true,
+     "note": "linear official-position model (pos 5 v 8), home +.03"
+    }
+   ],
+   "pick": "Aviron Bayonnais",
+   "pick_p": 0.59,
+   "pick_american": -143.9,
+   "tier": "Medium",
+   "priceable_note": "winner only (no official PF/PA fetched for this competition)"
+  },
+  {
+   "id": "t14-cas-par",
+   "sport": "rugby-union",
+   "competition": "Top 14 Round 7",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Castres Olympique",
+     "line": null,
+     "p": 0.39,
+     "fair_decimal": 2.5641,
+     "fair_american": 156.4,
+     "in_window": true,
+     "note": "linear official-position model (pos 13 v 6), home +.03"
+    },
+    {
+     "market": "winner",
+     "selection": "Stade Français Paris",
+     "line": null,
+     "p": 0.61,
+     "fair_decimal": 1.6393,
+     "fair_american": -156.4,
+     "in_window": true,
+     "note": "linear official-position model (pos 13 v 6), home +.03"
+    }
+   ],
+   "pick": "Stade Français Paris",
+   "pick_p": 0.61,
+   "pick_american": -156.4,
+   "tier": "Medium",
+   "priceable_note": "winner only (no official PF/PA fetched for this competition)"
+  },
+  {
+   "id": "t14-rac-mon",
+   "sport": "rugby-union",
+   "competition": "Top 14 Round 7",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Racing 92",
+     "line": null,
+     "p": 0.43,
+     "fair_decimal": 2.3256,
+     "fair_american": 132.6,
+     "in_window": true,
+     "note": "linear official-position model (pos 12 v 7), home +.03"
+    },
+    {
+     "market": "winner",
+     "selection": "Montpellier Hérault Rugby",
+     "line": null,
+     "p": 0.57,
+     "fair_decimal": 1.7544,
+     "fair_american": -132.6,
+     "in_window": true,
+     "note": "linear official-position model (pos 12 v 7), home +.03"
+    }
+   ],
+   "pick": "Montpellier Hérault Rugby",
+   "pick_p": 0.57,
+   "pick_american": -132.6,
+   "tier": "Medium",
+   "priceable_note": "winner only (no official PF/PA fetched for this competition)"
+  },
+  {
+   "id": "t14-tou-per",
+   "sport": "rugby-union",
+   "competition": "Top 14 Round 7",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Stade Toulousain",
+     "line": null,
+     "p": 0.69,
+     "fair_decimal": 1.4493,
+     "fair_american": -222.6,
+     "in_window": true,
+     "note": "linear official-position model (pos 1 v 9), home +.03"
+    },
+    {
+     "market": "winner",
+     "selection": "USA Perpignan",
+     "line": null,
+     "p": 0.31,
+     "fair_decimal": 3.2258,
+     "fair_american": 222.6,
+     "in_window": true,
+     "note": "linear official-position model (pos 1 v 9), home +.03"
+    }
+   ],
+   "pick": "Stade Toulousain",
+   "pick_p": 0.69,
+   "pick_american": -222.6,
+   "tier": "Medium",
+   "priceable_note": "winner only (no official PF/PA fetched for this competition)"
+  },
+  {
+   "id": "t14-tou-pau",
+   "sport": "rugby-union",
+   "competition": "Top 14 Round 7",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "RC Toulon",
+     "line": null,
+     "p": 0.37,
+     "fair_decimal": 2.7027,
+     "fair_american": 170.3,
+     "in_window": true,
+     "note": "linear official-position model (pos 10 v 2), home +.03"
+    },
+    {
+     "market": "winner",
+     "selection": "Section Paloise",
+     "line": null,
+     "p": 0.63,
+     "fair_decimal": 1.5873,
+     "fair_american": -170.3,
+     "in_window": true,
+     "note": "linear official-position model (pos 10 v 2), home +.03"
+    }
+   ],
+   "pick": "Section Paloise",
+   "pick_p": 0.63,
+   "pick_american": -170.3,
+   "tier": "Medium",
+   "priceable_note": "winner only (no official PF/PA fetched for this competition)"
+  },
+  {
+   "id": "t14-lar-ubb",
+   "sport": "rugby-union",
+   "competition": "Top 14 Round 7",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Stade Rochelais",
+     "line": null,
+     "p": 0.51,
+     "fair_decimal": 1.9608,
+     "fair_american": -104.1,
+     "in_window": true,
+     "note": "linear official-position model (pos 4 v 3), home +.03"
+    },
+    {
+     "market": "winner",
+     "selection": "Union Bordeaux-Bègles",
+     "line": null,
+     "p": 0.49,
+     "fair_decimal": 2.0408,
+     "fair_american": 104.1,
+     "in_window": true,
+     "note": "linear official-position model (pos 4 v 3), home +.03"
+    }
+   ],
+   "pick": "Stade Rochelais",
+   "pick_p": 0.51,
+   "pick_american": -104.1,
+   "tier": "Low",
+   "priceable_note": "winner only (no official PF/PA fetched for this competition)"
+  },
+  {
+   "id": "p2-nar-bri",
+   "sport": "rugby-union",
+   "competition": "Pro D2 Round 8",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "RC Narbonnais",
+     "line": null,
+     "p": 0.33,
+     "fair_decimal": 3.0303,
+     "fair_american": 203.0,
+     "in_window": true,
+     "note": "linear official-position model (pos 15 v 5), home +.03"
+    },
+    {
+     "market": "winner",
+     "selection": "CA Brive",
+     "line": null,
+     "p": 0.67,
+     "fair_decimal": 1.4925,
+     "fair_american": -203.0,
+     "in_window": true,
+     "note": "linear official-position model (pos 15 v 5), home +.03"
+    }
+   ],
+   "pick": "CA Brive",
+   "pick_p": 0.67,
+   "pick_american": -203.0,
+   "tier": "Medium",
+   "priceable_note": "winner only (no official PF/PA fetched for this competition)"
+  },
+  {
+   "id": "p2-agen-nis",
+   "sport": "rugby-union",
+   "competition": "Pro D2 Round 8",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "SU Agen",
+     "line": null,
+     "p": 0.59,
+     "fair_decimal": 1.6949,
+     "fair_american": -143.9,
+     "in_window": true,
+     "note": "linear official-position model (pos 10 v 13), home +.03"
+    },
+    {
+     "market": "winner",
+     "selection": "Nissa Rugby",
+     "line": null,
+     "p": 0.41,
+     "fair_decimal": 2.439,
+     "fair_american": 143.9,
+     "in_window": true,
+     "note": "linear official-position model (pos 10 v 13), home +.03"
+    }
+   ],
+   "pick": "SU Agen",
+   "pick_p": 0.59,
+   "pick_american": -143.9,
+   "tier": "Medium",
+   "priceable_note": "winner only (no official PF/PA fetched for this competition)"
+  },
+  {
+   "id": "p2-soy-dax",
+   "sport": "rugby-union",
+   "competition": "Pro D2 Round 8",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Soyaux-Angoulême XV",
+     "line": null,
+     "p": 0.51,
+     "fair_decimal": 1.9608,
+     "fair_american": -104.1,
+     "in_window": true,
+     "note": "linear official-position model (pos 8 v 7), home +.03"
+    },
+    {
+     "market": "winner",
+     "selection": "US Dax",
+     "line": null,
+     "p": 0.49,
+     "fair_decimal": 2.0408,
+     "fair_american": 104.1,
+     "in_window": true,
+     "note": "linear official-position model (pos 8 v 7), home +.03"
+    }
+   ],
+   "pick": "Soyaux-Angoulême XV",
+   "pick_p": 0.51,
+   "pick_american": -104.1,
+   "tier": "Low",
+   "priceable_note": "winner only (no official PF/PA fetched for this competition)"
+  },
+  {
+   "id": "p2-aur-nev",
+   "sport": "rugby-union",
+   "competition": "Pro D2 Round 8",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Stade Aurillacois",
+     "line": null,
+     "p": 0.67,
+     "fair_decimal": 1.4925,
+     "fair_american": -203.0,
+     "in_window": true,
+     "note": "linear official-position model (pos 9 v 16), home +.03"
+    },
+    {
+     "market": "winner",
+     "selection": "USON Nevers",
+     "line": null,
+     "p": 0.33,
+     "fair_decimal": 3.0303,
+     "fair_american": 203.0,
+     "in_window": true,
+     "note": "linear official-position model (pos 9 v 16), home +.03"
+    }
+   ],
+   "pick": "Stade Aurillacois",
+   "pick_p": 0.67,
+   "pick_american": -203.0,
+   "tier": "Medium",
+   "priceable_note": "winner only (no official PF/PA fetched for this competition)"
+  },
+  {
+   "id": "p2-val-col",
+   "sport": "rugby-union",
+   "competition": "Pro D2 Round 8",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Valence Romans",
+     "line": null,
+     "p": 0.55,
+     "fair_decimal": 1.8182,
+     "fair_american": -122.2,
+     "in_window": true,
+     "note": "linear official-position model (pos 11 v 12), home +.03"
+    },
+    {
+     "market": "winner",
+     "selection": "Colomiers Rugby",
+     "line": null,
+     "p": 0.45,
+     "fair_decimal": 2.2222,
+     "fair_american": 122.2,
+     "in_window": true,
+     "note": "linear official-position model (pos 11 v 12), home +.03"
+    }
+   ],
+   "pick": "Valence Romans",
+   "pick_p": 0.55,
+   "pick_american": -122.2,
+   "tier": "Medium",
+   "priceable_note": "winner only (no official PF/PA fetched for this competition)"
+  },
+  {
+   "id": "p2-pro-bez",
+   "sport": "rugby-union",
+   "competition": "Pro D2 Round 8",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Provence Rugby",
+     "line": null,
+     "p": 0.77,
+     "fair_decimal": 1.2987,
+     "fair_american": -334.8,
+     "in_window": false,
+     "note": "linear official-position model (pos 2 v 14), home +.03"
+    },
+    {
+     "market": "winner",
+     "selection": "AS Béziers Hérault",
+     "line": null,
+     "p": 0.23,
+     "fair_decimal": 4.3478,
+     "fair_american": 334.8,
+     "in_window": true,
+     "note": "linear official-position model (pos 2 v 14), home +.03"
+    }
+   ],
+   "pick": "Provence Rugby",
+   "pick_p": 0.77,
+   "pick_american": -334.8,
+   "tier": "Medium",
+   "priceable_note": "winner only (no official PF/PA fetched for this competition)"
+  },
+  {
+   "id": "p2-gre-bia",
+   "sport": "rugby-union",
+   "competition": "Pro D2 Round 8",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "FC Grenoble Rugby",
+     "line": null,
+     "p": 0.59,
+     "fair_decimal": 1.6949,
+     "fair_american": -143.9,
+     "in_window": true,
+     "note": "linear official-position model (pos 3 v 6), home +.03"
+    },
+    {
+     "market": "winner",
+     "selection": "Biarritz Olympique PB",
+     "line": null,
+     "p": 0.41,
+     "fair_decimal": 2.439,
+     "fair_american": 143.9,
+     "in_window": true,
+     "note": "linear official-position model (pos 3 v 6), home +.03"
+    }
+   ],
+   "pick": "FC Grenoble Rugby",
+   "pick_p": 0.59,
+   "pick_american": -143.9,
+   "tier": "Medium",
+   "priceable_note": "winner only (no official PF/PA fetched for this competition)"
+  },
+  {
+   "id": "hb-lim-dun",
+   "sport": "handball",
+   "competition": "Daikin StarLigue J08",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Limoges 87",
+     "line": null,
+     "p": 0.525,
+     "fair_decimal": 1.9048,
+     "fair_american": -110.5,
+     "in_window": true,
+     "note": "shrunk log5 on official StarLigue W-D-L + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "Dunkerque",
+     "line": null,
+     "p": 0.475,
+     "fair_decimal": 2.1053,
+     "fair_american": 110.5,
+     "in_window": true,
+     "note": "shrunk log5 on official StarLigue W-D-L + home .025"
+    },
+    {
+     "market": "handicap",
+     "selection": "Limoges 87 +3",
+     "line": 3,
+     "p": 0.495251,
+     "fair_decimal": 2.0192,
+     "fair_american": 101.9,
+     "in_window": true,
+     "note": "normal margin, sigma=6 (disclosed)"
+    },
+    {
+     "market": "handicap",
+     "selection": "Dunkerque -3",
+     "line": -3,
+     "p": 0.504749,
+     "fair_decimal": 1.9812,
+     "fair_american": -101.9,
+     "in_window": true,
+     "note": "complement"
+    },
+    {
+     "market": "total",
+     "selection": "Over 56",
+     "line": 56,
+     "p": 0.62267,
+     "fair_decimal": 1.606,
+     "fair_american": -165.0,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 56",
+     "line": 56,
+     "p": 0.37733,
+     "fair_decimal": 2.6502,
+     "fair_american": 165.0,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 58",
+     "line": 58,
+     "p": 0.524918,
+     "fair_decimal": 1.9051,
+     "fair_american": -110.5,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 58",
+     "line": 58,
+     "p": 0.475082,
+     "fair_decimal": 2.1049,
+     "fair_american": 110.5,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 60",
+     "line": 60,
+     "p": 0.425634,
+     "fair_decimal": 2.3494,
+     "fair_american": 134.9,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 60",
+     "line": 60,
+     "p": 0.574366,
+     "fair_decimal": 1.7411,
+     "fair_american": -134.9,
+     "in_window": true,
+     "note": "same"
+    }
+   ],
+   "pick": "Limoges 87",
+   "pick_p": 0.525,
+   "pick_american": -110.5,
+   "tier": "Low",
+   "priceable_note": "model margin +2.9 goals, lambda 58.5"
+  },
+  {
+   "id": "hb-aix-tou",
+   "sport": "handball",
+   "competition": "Daikin StarLigue J08",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Pays dAix UC",
+     "line": null,
+     "p": 0.525,
+     "fair_decimal": 1.9048,
+     "fair_american": -110.5,
+     "in_window": true,
+     "note": "shrunk log5 on official StarLigue W-D-L + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "Toulouse",
+     "line": null,
+     "p": 0.475,
+     "fair_decimal": 2.1053,
+     "fair_american": 110.5,
+     "in_window": true,
+     "note": "shrunk log5 on official StarLigue W-D-L + home .025"
+    },
+    {
+     "market": "handicap",
+     "selection": "Pays dAix UC +1",
+     "line": 1,
+     "p": 0.466793,
+     "fair_decimal": 2.1423,
+     "fair_american": 114.2,
+     "in_window": true,
+     "note": "normal margin, sigma=6 (disclosed)"
+    },
+    {
+     "market": "handicap",
+     "selection": "Toulouse -1",
+     "line": -1,
+     "p": 0.533207,
+     "fair_decimal": 1.8754,
+     "fair_american": -114.2,
+     "in_window": true,
+     "note": "complement"
+    },
+    {
+     "market": "total",
+     "selection": "Over 59",
+     "line": 59,
+     "p": 0.581353,
+     "fair_decimal": 1.7201,
+     "fair_american": -138.9,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 59",
+     "line": 59,
+     "p": 0.418647,
+     "fair_decimal": 2.3886,
+     "fair_american": 138.9,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 61",
+     "line": 61,
+     "p": 0.482196,
+     "fair_decimal": 2.0738,
+     "fair_american": 107.4,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 61",
+     "line": 61,
+     "p": 0.517804,
+     "fair_decimal": 1.9312,
+     "fair_american": -107.4,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 63",
+     "line": 63,
+     "p": 0.384133,
+     "fair_decimal": 2.6033,
+     "fair_american": 160.3,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 63",
+     "line": 63,
+     "p": 0.615867,
+     "fair_decimal": 1.6237,
+     "fair_american": -160.3,
+     "in_window": true,
+     "note": "same"
+    }
+   ],
+   "pick": "Pays dAix UC",
+   "pick_p": 0.525,
+   "pick_american": -110.5,
+   "tier": "Low",
+   "priceable_note": "model margin +0.5 goals, lambda 60.6"
+  },
+  {
+   "id": "hb-cha-nim",
+   "sport": "handball",
+   "competition": "Daikin StarLigue J08",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Chartres",
+     "line": null,
+     "p": 0.397093,
+     "fair_decimal": 2.5183,
+     "fair_american": 151.8,
+     "in_window": true,
+     "note": "shrunk log5 on official StarLigue W-D-L + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "USAM Nimes",
+     "line": null,
+     "p": 0.602907,
+     "fair_decimal": 1.6586,
+     "fair_american": -151.8,
+     "in_window": true,
+     "note": "shrunk log5 on official StarLigue W-D-L + home .025"
+    },
+    {
+     "market": "handicap",
+     "selection": "Chartres -1",
+     "line": -1,
+     "p": 0.471528,
+     "fair_decimal": 2.1208,
+     "fair_american": 112.1,
+     "in_window": true,
+     "note": "normal margin, sigma=6 (disclosed)"
+    },
+    {
+     "market": "handicap",
+     "selection": "USAM Nimes +1",
+     "line": 1,
+     "p": 0.528472,
+     "fair_decimal": 1.8922,
+     "fair_american": -112.1,
+     "in_window": true,
+     "note": "complement"
+    },
+    {
+     "market": "total",
+     "selection": "Over 61",
+     "line": 61,
+     "p": 0.605595,
+     "fair_decimal": 1.6513,
+     "fair_american": -153.5,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 61",
+     "line": 61,
+     "p": 0.394405,
+     "fair_decimal": 2.5355,
+     "fair_american": 153.5,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 63",
+     "line": 63,
+     "p": 0.507124,
+     "fair_decimal": 1.9719,
+     "fair_american": -102.9,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 63",
+     "line": 63,
+     "p": 0.492876,
+     "fair_decimal": 2.0289,
+     "fair_american": 102.9,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 65",
+     "line": 65,
+     "p": 0.408214,
+     "fair_decimal": 2.4497,
+     "fair_american": 145.0,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 65",
+     "line": 65,
+     "p": 0.591786,
+     "fair_decimal": 1.6898,
+     "fair_american": -145.0,
+     "in_window": true,
+     "note": "same"
+    }
+   ],
+   "pick": "USAM Nimes",
+   "pick_p": 0.602907,
+   "pick_american": -151.8,
+   "tier": "Medium",
+   "priceable_note": "model margin -1.4 goals, lambda 63.1"
+  },
+  {
+   "id": "hb-sel-cae",
+   "sport": "handball",
+   "competition": "Daikin StarLigue J08",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Selestat Alsace",
+     "line": null,
+     "p": 0.525,
+     "fair_decimal": 1.9048,
+     "fair_american": -110.5,
+     "in_window": true,
+     "note": "shrunk log5 on official StarLigue W-D-L + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "Caen",
+     "line": null,
+     "p": 0.475,
+     "fair_decimal": 2.1053,
+     "fair_american": 110.5,
+     "in_window": true,
+     "note": "shrunk log5 on official StarLigue W-D-L + home .025"
+    },
+    {
+     "market": "handicap",
+     "selection": "Selestat Alsace +2",
+     "line": 2,
+     "p": 0.5,
+     "fair_decimal": 2.0,
+     "fair_american": -100.0,
+     "in_window": true,
+     "note": "normal margin, sigma=6 (disclosed)"
+    },
+    {
+     "market": "handicap",
+     "selection": "Caen -2",
+     "line": -2,
+     "p": 0.5,
+     "fair_decimal": 2.0,
+     "fair_american": -100.0,
+     "in_window": true,
+     "note": "complement"
+    },
+    {
+     "market": "total",
+     "selection": "Over 59",
+     "line": 59,
+     "p": 0.612452,
+     "fair_decimal": 1.6328,
+     "fair_american": -158.0,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 59",
+     "line": 59,
+     "p": 0.387548,
+     "fair_decimal": 2.5803,
+     "fair_american": 158.0,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 61",
+     "line": 61,
+     "p": 0.514245,
+     "fair_decimal": 1.9446,
+     "fair_american": -105.9,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 61",
+     "line": 61,
+     "p": 0.485755,
+     "fair_decimal": 2.0587,
+     "fair_american": 105.9,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 63",
+     "line": 63,
+     "p": 0.415162,
+     "fair_decimal": 2.4087,
+     "fair_american": 140.9,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 63",
+     "line": 63,
+     "p": 0.584838,
+     "fair_decimal": 1.7099,
+     "fair_american": -140.9,
+     "in_window": true,
+     "note": "same"
+    }
+   ],
+   "pick": "Selestat Alsace",
+   "pick_p": 0.525,
+   "pick_american": -110.5,
+   "tier": "Low",
+   "priceable_note": "model margin +2.0 goals, lambda 61.3"
+  },
+  {
+   "id": "hb-tre-ces",
+   "sport": "handball",
+   "competition": "Daikin StarLigue J08",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Tremblay",
+     "line": null,
+     "p": 0.397093,
+     "fair_decimal": 2.5183,
+     "fair_american": 151.8,
+     "in_window": true,
+     "note": "shrunk log5 on official StarLigue W-D-L + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "Cesson Rennes",
+     "line": null,
+     "p": 0.602907,
+     "fair_decimal": 1.6586,
+     "fair_american": -151.8,
+     "in_window": true,
+     "note": "shrunk log5 on official StarLigue W-D-L + home .025"
+    },
+    {
+     "market": "handicap",
+     "selection": "Tremblay +2",
+     "line": 2,
+     "p": 0.471528,
+     "fair_decimal": 2.1208,
+     "fair_american": 112.1,
+     "in_window": true,
+     "note": "normal margin, sigma=6 (disclosed)"
+    },
+    {
+     "market": "handicap",
+     "selection": "Cesson Rennes -2",
+     "line": -2,
+     "p": 0.528472,
+     "fair_decimal": 1.8922,
+     "fair_american": -112.1,
+     "in_window": true,
+     "note": "complement"
+    },
+    {
+     "market": "total",
+     "selection": "Over 62",
+     "line": 62,
+     "p": 0.591786,
+     "fair_decimal": 1.6898,
+     "fair_american": -145.0,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 62",
+     "line": 62,
+     "p": 0.408214,
+     "fair_decimal": 2.4497,
+     "fair_american": 145.0,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 64",
+     "line": 64,
+     "p": 0.492876,
+     "fair_decimal": 2.0289,
+     "fair_american": 102.9,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 64",
+     "line": 64,
+     "p": 0.507124,
+     "fair_decimal": 1.9719,
+     "fair_american": -102.9,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 66",
+     "line": 66,
+     "p": 0.394405,
+     "fair_decimal": 2.5355,
+     "fair_american": 153.5,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 66",
+     "line": 66,
+     "p": 0.605595,
+     "fair_decimal": 1.6513,
+     "fair_american": -153.5,
+     "in_window": true,
+     "note": "same"
+    }
+   ],
+   "pick": "Cesson Rennes",
+   "pick_p": 0.602907,
+   "pick_american": -151.8,
+   "tier": "Medium",
+   "priceable_note": "model margin +1.6 goals, lambda 63.9"
+  },
+  {
+   "id": "hb-nan-cha",
+   "sport": "handball",
+   "competition": "Daikin StarLigue J08",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Nantes",
+     "line": null,
+     "p": 0.745,
+     "fair_decimal": 1.3423,
+     "fair_american": -292.2,
+     "in_window": false,
+     "note": "shrunk log5 on official StarLigue W-D-L + home .025"
+    },
+    {
+     "market": "winner",
+     "selection": "Chambery Savoie",
+     "line": null,
+     "p": 0.255,
+     "fair_decimal": 3.9216,
+     "fair_american": 292.2,
+     "in_window": true,
+     "note": "shrunk log5 on official StarLigue W-D-L + home .025"
+    },
+    {
+     "market": "handicap",
+     "selection": "Nantes +3",
+     "line": 3,
+     "p": 0.528472,
+     "fair_decimal": 1.8922,
+     "fair_american": -112.1,
+     "in_window": true,
+     "note": "normal margin, sigma=6 (disclosed)"
+    },
+    {
+     "market": "handicap",
+     "selection": "Chambery Savoie -3",
+     "line": -3,
+     "p": 0.471528,
+     "fair_decimal": 2.1208,
+     "fair_american": 112.1,
+     "in_window": true,
+     "note": "complement"
+    },
+    {
+     "market": "total",
+     "selection": "Over 62",
+     "line": 62,
+     "p": 0.619273,
+     "fair_decimal": 1.6148,
+     "fair_american": -162.7,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 62",
+     "line": 62,
+     "p": 0.380727,
+     "fair_decimal": 2.6266,
+     "fair_american": 162.7,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 64",
+     "line": 64,
+     "p": 0.521362,
+     "fair_decimal": 1.9181,
+     "fair_american": -108.9,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 64",
+     "line": 64,
+     "p": 0.478638,
+     "fair_decimal": 2.0893,
+     "fair_american": 108.9,
+     "in_window": true,
+     "note": "same"
+    },
+    {
+     "market": "total",
+     "selection": "Over 66",
+     "line": 66,
+     "p": 0.422137,
+     "fair_decimal": 2.3689,
+     "fair_american": 136.9,
+     "in_window": true,
+     "note": "Poisson-mean totals, sigma=8 (disclosed)"
+    },
+    {
+     "market": "total",
+     "selection": "Under 66",
+     "line": 66,
+     "p": 0.577863,
+     "fair_decimal": 1.7305,
+     "fair_american": -136.9,
+     "in_window": true,
+     "note": "same"
+    }
+   ],
+   "pick": "Nantes",
+   "pick_p": 0.745,
+   "pick_american": -292.2,
+   "tier": "Medium",
+   "priceable_note": "model margin +3.4 goals, lambda 64.4"
+  },
+  {
+   "id": "rugby-league-rl-men-1",
+   "sport": "rugby-league",
+   "competition": "IRL Men's Rugby League World Cup",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Tonga",
+     "line": null,
+     "p": 0.885246,
+     "fair_decimal": 1.1296,
+     "fair_american": -771.4,
+     "in_window": false,
+     "note": "linear share of official IRL strength ratings"
+    },
+    {
+     "market": "winner",
+     "selection": "Lebanon",
+     "line": null,
+     "p": 0.114754,
+     "fair_decimal": 8.7143,
+     "fair_american": 771.4,
+     "in_window": true,
+     "note": "linear share of official IRL strength ratings"
+    }
+   ],
+   "pick": "Tonga",
+   "pick_p": 0.885246,
+   "pick_american": -771.4,
+   "tier": "Medium",
+   "priceable_note": "official ratings 54 v 7"
+  },
+  {
+   "id": "rugby-league-rl-women-1",
+   "sport": "rugby-league",
+   "competition": "IRL Women's Rugby League World Cup",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Samoa",
+     "line": null,
+     "p": 0.564103,
+     "fair_decimal": 1.7727,
+     "fair_american": -129.4,
+     "in_window": true,
+     "note": "linear share of official IRL strength ratings"
+    },
+    {
+     "market": "winner",
+     "selection": "Wales",
+     "line": null,
+     "p": 0.435897,
+     "fair_decimal": 2.2941,
+     "fair_american": 129.4,
+     "in_window": true,
+     "note": "linear share of official IRL strength ratings"
+    }
+   ],
+   "pick": "Samoa",
+   "pick_p": 0.564103,
+   "pick_american": -129.4,
+   "tier": "Medium",
+   "priceable_note": "official ratings 22 v 17"
+  },
+  {
+   "id": "rugby-league-rl-int-1",
+   "sport": "rugby-league",
+   "competition": "Senior International Matches (Men)",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Scotland",
+     "line": null,
+     "p": 0.307692,
+     "fair_decimal": 3.25,
+     "fair_american": 225.0,
+     "in_window": true,
+     "note": "linear share of official IRL strength ratings"
+    },
+    {
+     "market": "winner",
+     "selection": "Wales",
+     "line": null,
+     "p": 0.692308,
+     "fair_decimal": 1.4444,
+     "fair_american": -225.0,
+     "in_window": true,
+     "note": "linear share of official IRL strength ratings"
+    }
+   ],
+   "pick": "Wales",
+   "pick_p": 0.692308,
+   "pick_american": -225.0,
+   "tier": "Medium",
+   "priceable_note": "official ratings 8 v 18"
+  },
+  {
+   "id": "rugby-league-rl-int-2",
+   "sport": "rugby-league",
+   "competition": "European Championship B (Men)",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Netherlands",
+     "line": null,
+     "p": 0.534884,
+     "fair_decimal": 1.8696,
+     "fair_american": -115.0,
+     "in_window": true,
+     "note": "linear share of official IRL strength ratings"
+    },
+    {
+     "market": "winner",
+     "selection": "Serbia",
+     "line": null,
+     "p": 0.465116,
+     "fair_decimal": 2.15,
+     "fair_american": 115.0,
+     "in_window": true,
+     "note": "linear share of official IRL strength ratings"
+    }
+   ],
+   "pick": "Netherlands",
+   "pick_p": 0.534884,
+   "pick_american": -115.0,
+   "tier": "Low",
+   "priceable_note": "official ratings 23 v 20"
+  },
+  {
+   "id": "rugby-league-rl-men-3",
+   "sport": "rugby-league",
+   "competition": "IRL Men's Rugby League World Cup",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "England",
+     "line": null,
+     "p": 0.769231,
+     "fair_decimal": 1.3,
+     "fair_american": -333.3,
+     "in_window": false,
+     "note": "linear share of official IRL strength ratings"
+    },
+    {
+     "market": "winner",
+     "selection": "France",
+     "line": null,
+     "p": 0.230769,
+     "fair_decimal": 4.3333,
+     "fair_american": 333.3,
+     "in_window": true,
+     "note": "linear share of official IRL strength ratings"
+    }
+   ],
+   "pick": "England",
+   "pick_p": 0.769231,
+   "pick_american": -333.3,
+   "tier": "Medium",
+   "priceable_note": "official ratings 70 v 21"
+  },
+  {
+   "id": "rugby-league-rl-women-3",
+   "sport": "rugby-league",
+   "competition": "IRL Women's Rugby League World Cup",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Australia",
+     "line": null,
+     "p": 0.714286,
+     "fair_decimal": 1.4,
+     "fair_american": -250.0,
+     "in_window": true,
+     "note": "linear share of official IRL strength ratings"
+    },
+    {
+     "market": "winner",
+     "selection": "England",
+     "line": null,
+     "p": 0.285714,
+     "fair_decimal": 3.5,
+     "fair_american": 250.0,
+     "in_window": true,
+     "note": "linear share of official IRL strength ratings"
+    }
+   ],
+   "pick": "Australia",
+   "pick_p": 0.714286,
+   "pick_american": -250.0,
+   "tier": "High",
+   "priceable_note": "official ratings 100 v 40"
+  },
+  {
+   "id": "rugby-league-rl-int-4",
+   "sport": "rugby-league",
+   "competition": "Senior International Matches (Women)",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Malta",
+     "line": null,
+     "p": 0.333333,
+     "fair_decimal": 3.0,
+     "fair_american": 200.0,
+     "in_window": true,
+     "note": "linear share of official IRL strength ratings"
+    },
+    {
+     "market": "winner",
+     "selection": "Philippines",
+     "line": null,
+     "p": 0.666667,
+     "fair_decimal": 1.5,
+     "fair_american": -200.0,
+     "in_window": true,
+     "note": "linear share of official IRL strength ratings"
+    }
+   ],
+   "pick": "Philippines",
+   "pick_p": 0.666667,
+   "pick_american": -200.0,
+   "tier": "Medium",
+   "priceable_note": "official ratings 1 v 2"
+  },
+  {
+   "id": "rugby-league-rl-women-4",
+   "sport": "rugby-league",
+   "competition": "IRL Women's Rugby League World Cup",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "New Zealand",
+     "line": null,
+     "p": 0.719101,
+     "fair_decimal": 1.3906,
+     "fair_american": -256.0,
+     "in_window": false,
+     "note": "linear share of official IRL strength ratings"
+    },
+    {
+     "market": "winner",
+     "selection": "France",
+     "line": null,
+     "p": 0.280899,
+     "fair_decimal": 3.56,
+     "fair_american": 256.0,
+     "in_window": true,
+     "note": "linear share of official IRL strength ratings"
+    }
+   ],
+   "pick": "New Zealand",
+   "pick_p": 0.719101,
+   "pick_american": -256.0,
+   "tier": "Medium",
+   "priceable_note": "official ratings 64 v 25"
+  },
+  {
+   "id": "rugby-league-rl-men-4",
+   "sport": "rugby-league",
+   "competition": "IRL Men's Rugby League World Cup",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "New Zealand",
+     "line": null,
+     "p": 0.773585,
+     "fair_decimal": 1.2927,
+     "fair_american": -341.7,
+     "in_window": false,
+     "note": "linear share of official IRL strength ratings"
+    },
+    {
+     "market": "winner",
+     "selection": "Cook Islands",
+     "line": null,
+     "p": 0.226415,
+     "fair_decimal": 4.4167,
+     "fair_american": 341.7,
+     "in_window": true,
+     "note": "linear share of official IRL strength ratings"
+    }
+   ],
+   "pick": "New Zealand",
+   "pick_p": 0.773585,
+   "pick_american": -341.7,
+   "tier": "Medium",
+   "priceable_note": "official ratings 82 v 24"
+  },
+  {
+   "id": "rugby-league-rl-men-5",
+   "sport": "rugby-league",
+   "competition": "IRL Men's Rugby League World Cup",
+   "markets": [
+    {
+     "market": "winner",
+     "selection": "Australia",
+     "line": null,
+     "p": 0.746269,
+     "fair_decimal": 1.34,
+     "fair_american": -294.1,
+     "in_window": false,
+     "note": "linear share of official IRL strength ratings"
+    },
+    {
+     "market": "winner",
+     "selection": "Fiji",
+     "line": null,
+     "p": 0.253731,
+     "fair_decimal": 3.9412,
+     "fair_american": 294.1,
+     "in_window": true,
+     "note": "linear share of official IRL strength ratings"
+    }
+   ],
+   "pick": "Australia",
+   "pick_p": 0.746269,
+   "pick_american": -294.1,
+   "tier": "Medium",
+   "priceable_note": "official ratings 100 v 34"
+  }
+ ],
+ "ledgers": {
+  "high_selections": [
+   {
+    "fixture_id": "nhl-min-cgy",
+    "market": "winner",
+    "selection": "MIN Wild",
+    "line": null,
+    "p": 0.702273,
+    "fair_decimal": 1.4239,
+    "fair_american": -235.9,
+    "in_window": true,
+    "note": "shrunk log5 + home edge .025",
+    "match": "MIN Wild v CGY Flames",
+    "competition": "NHL",
+    "sport": "ice-hockey"
+   },
+   {
+    "fixture_id": "rugby-league-rl-women-3",
+    "market": "winner",
+    "selection": "Australia",
+    "line": null,
+    "p": 0.714286,
+    "fair_decimal": 1.4,
+    "fair_american": -250.0,
+    "in_window": true,
+    "note": "linear share of official IRL strength ratings",
+    "match": "Australia v England",
+    "competition": "IRL Women's Rugby League World Cup",
+    "sport": "rugby-league"
+   }
+  ],
+  "out_of_window_ge70_winners": [
+   {
+    "fixture_id": "nhl-ns-h",
+    "competition": "NHL",
+    "match": "NSH Predators v BOS Bruins",
+    "market": "winner",
+    "selection": "BOS Bruins",
+    "line": null,
+    "p": 0.740909,
+    "fair_american": -286.0,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "nhl-lak-nyi",
+    "competition": "NHL",
+    "match": "LA Kings v NY Islanders",
+    "market": "winner",
+    "selection": "NY Islanders",
+    "line": null,
+    "p": 0.781757,
+    "fair_american": -358.2,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "el-par-val",
+    "competition": "EuroLeague Round 7",
+    "match": "Paris Basketball v Valencia Basket",
+    "market": "winner",
+    "selection": "Valencia Basket",
+    "line": null,
+    "p": 0.819828,
+    "fair_american": -455.0,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "tn-ningbo-rybakina-kawa",
+    "competition": "WTA Ningbo Open",
+    "match": "Elena Rybakina v Katarzyna Kawa",
+    "market": "winner",
+    "selection": "Elena Rybakina",
+    "line": null,
+    "p": 0.917116,
+    "fair_american": -1106.5,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "tn-almaty-medv-atmane",
+    "competition": "ATP Almaty Open",
+    "match": "Daniil Medvedev v Terence Atmane",
+    "market": "winner",
+    "selection": "Daniil Medvedev",
+    "line": null,
+    "p": 0.893896,
+    "fair_american": -842.5,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "tn-brussels-griek-leheck",
+    "competition": "ATP European Open (Brussels)",
+    "match": "Tallon Griekspoor v Jiri Lehecka",
+    "market": "winner",
+    "selection": "Jiri Lehecka",
+    "line": null,
+    "p": 0.838345,
+    "fair_american": -518.6,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "tn-lyon-moutet-paul",
+    "competition": "ATP Lyon Open",
+    "match": "Corentin Moutet v Tommy Paul",
+    "market": "winner",
+    "selection": "Tommy Paul",
+    "line": null,
+    "p": 0.761471,
+    "fair_american": -319.2,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "tn-lyon-altmaier-fritz",
+    "competition": "ATP Lyon Open",
+    "match": "Daniel Altmaier v Taylor Fritz",
+    "market": "winner",
+    "selection": "Taylor Fritz",
+    "line": null,
+    "p": 0.838345,
+    "fair_american": -518.6,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "urc-bul-uls",
+    "competition": "United Rugby Championship",
+    "match": "Vodacom Bulls v Ulster Rugby",
+    "market": "winner",
+    "selection": "Vodacom Bulls",
+    "line": null,
+    "p": 0.794231,
+    "fair_american": -386.0,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "urc-ben-gla",
+    "competition": "United Rugby Championship",
+    "match": "Benetton Rugby v Glasgow Warriors",
+    "market": "winner",
+    "selection": "Glasgow Warriors",
+    "line": null,
+    "p": 0.744231,
+    "fair_american": -291.0,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "p2-pro-bez",
+    "competition": "Pro D2 Round 8",
+    "match": "Provence Rugby v AS Béziers Hérault",
+    "market": "winner",
+    "selection": "Provence Rugby",
+    "line": null,
+    "p": 0.77,
+    "fair_american": -334.8,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "hb-nan-cha",
+    "competition": "Daikin StarLigue J08",
+    "match": "Nantes v Chambery Savoie",
+    "market": "winner",
+    "selection": "Nantes",
+    "line": null,
+    "p": 0.745,
+    "fair_american": -292.2,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "rugby-league-rl-men-1",
+    "competition": "IRL Men's Rugby League World Cup",
+    "match": "Tonga v Lebanon",
+    "market": "winner",
+    "selection": "Tonga",
+    "line": null,
+    "p": 0.885246,
+    "fair_american": -771.4,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "rugby-league-rl-men-3",
+    "competition": "IRL Men's Rugby League World Cup",
+    "match": "England v France",
+    "market": "winner",
+    "selection": "England",
+    "line": null,
+    "p": 0.769231,
+    "fair_american": -333.3,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "rugby-league-rl-women-4",
+    "competition": "IRL Women's Rugby League World Cup",
+    "match": "New Zealand v France",
+    "market": "winner",
+    "selection": "New Zealand",
+    "line": null,
+    "p": 0.719101,
+    "fair_american": -256.0,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "rugby-league-rl-men-4",
+    "competition": "IRL Men's Rugby League World Cup",
+    "match": "New Zealand v Cook Islands",
+    "market": "winner",
+    "selection": "New Zealand",
+    "line": null,
+    "p": 0.773585,
+    "fair_american": -341.7,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "rugby-league-rl-men-5",
+    "competition": "IRL Men's Rugby League World Cup",
+    "match": "Australia v Fiji",
+    "market": "winner",
+    "selection": "Australia",
+    "line": null,
+    "p": 0.746269,
+    "fair_american": -294.1,
+    "tier_if_in_window": "Medium"
+   }
+  ],
+  "near_band_winners_685_700": [
+   {
+    "fixture_id": "t14-tou-per",
+    "competition": "Top 14 Round 7",
+    "match": "Stade Toulousain v USA Perpignan",
+    "market": "winner",
+    "selection": "Stade Toulousain",
+    "line": null,
+    "p": 0.69,
+    "fair_american": -222.6,
+    "tier_if_in_window": "Medium"
+   },
+   {
+    "fixture_id": "rugby-league-rl-int-1",
+    "competition": "Senior International Matches (Men)",
+    "match": "Scotland v Wales",
+    "market": "winner",
+    "selection": "Wales",
+    "line": null,
+    "p": 0.692308,
+    "fair_american": -225.0,
+    "tier_if_in_window": "Medium"
+   }
+  ],
+  "nhl_official_market_cross_check": [
+   {
+    "fixture_id": "nhl-ns-h",
+    "match": "NSH Predators v BOS Bruins",
+    "official_devig": {
+     "NSH Predators": 0.4199,
+     "BOS Bruins": 0.5801
+    },
+    "model": {
+     "NSH Predators": 0.2591,
+     "BOS Bruins": 0.7409
+    }
+   },
+   {
+    "fixture_id": "nhl-ny-tor",
+    "match": "NY Rangers v TOR Maple Leafs",
+    "official_devig": {
+     "NY Rangers": 0.5022,
+     "TOR Maple Leafs": 0.4978
+    },
+    "model": {
+     "NY Rangers": 0.6066,
+     "TOR Maple Leafs": 0.3934
+    }
+   },
+   {
+    "fixture_id": "nhl-sjs-ott",
+    "match": "SJ Sharks v OTT Senators",
+    "official_devig": {
+     "SJ Sharks": 0.4534,
+     "OTT Senators": 0.5466
+    },
+    "model": {
+     "SJ Sharks": 0.3321,
+     "OTT Senators": 0.6679
+    }
+   },
+   {
+    "fixture_id": "nhl-ana-njd",
+    "match": "ANA Ducks v NJ Devils",
+    "official_devig": {
+     "ANA Ducks": 0.3405,
+     "NJ Devils": 0.6595
+    },
+    "model": {
+     "ANA Ducks": 0.3985,
+     "NJ Devils": 0.6015
+    }
+   },
+   {
+    "fixture_id": "nhl-fla-pit",
+    "match": "FLA Panthers v PIT Penguins",
+    "official_devig": {
+     "FLA Panthers": 0.4943,
+     "PIT Penguins": 0.5057
+    },
+    "model": {
+     "FLA Panthers": 0.6179,
+     "PIT Penguins": 0.3821
+    }
+   },
+   {
+    "fixture_id": "nhl-lak-nyi",
+    "match": "LA Kings v NY Islanders",
+    "official_devig": {
+     "LA Kings": 0.5043,
+     "NY Islanders": 0.4957
+    },
+    "model": {
+     "LA Kings": 0.2182,
+     "NY Islanders": 0.7818
+    }
+   },
+   {
+    "fixture_id": "nhl-vgk-stl",
+    "match": "VGS Golden Knights v STL Blues",
+    "official_devig": {
+     "VGS Golden Knights": 0.5394,
+     "STL Blues": 0.4606
+    },
+    "model": {
+     "VGS Golden Knights": 0.675,
+     "STL Blues": 0.325
+    }
+   },
+   {
+    "fixture_id": "nhl-wpg-dal",
+    "match": "WPG Jets v DAL Stars",
+    "official_devig": {
+     "WPG Jets": 0.3614,
+     "DAL Stars": 0.6386
+    },
+    "model": {
+     "WPG Jets": 0.3663,
+     "DAL Stars": 0.6337
+    }
+   },
+   {
+    "fixture_id": "nhl-min-cgy",
+    "match": "MIN Wild v CGY Flames",
+    "official_devig": {
+     "MIN Wild": 0.6488,
+     "CGY Flames": 0.3512
+    },
+    "model": {
+     "MIN Wild": 0.7023,
+     "CGY Flames": 0.2977
+    }
+   },
+   {
+    "fixture_id": "nhl-car-edm",
+    "match": "CAR Hurricanes v EDM Oilers",
+    "official_devig": {
+     "CAR Hurricanes": 0.5195,
+     "EDM Oilers": 0.4805
+    },
+    "model": {
+     "CAR Hurricanes": 0.4456,
+     "EDM Oilers": 0.5544
+    }
+   },
+   {
+    "fixture_id": "nhl-uta-sea",
+    "match": "UTA Mammoth v SEA Kraken",
+    "official_devig": {
+     "UTA Mammoth": 0.6072,
+     "SEA Kraken": 0.3928
+    },
+    "model": {
+     "UTA Mammoth": 0.5495,
+     "SEA Kraken": 0.4505
+    }
+   },
+   {
+    "fixture_id": "nhl-det-van",
+    "match": "DET Red Wings v VAN Canucks",
+    "official_devig": {
+     "DET Red Wings": 0.6007,
+     "VAN Canucks": 0.3993
+    },
+    "model": {
+     "DET Red Wings": 0.6072,
+     "VAN Canucks": 0.3928
+    }
+   }
+  ],
+  "unpriced": [
+   {
+    "id": "nhl-euro-199946",
+    "sport": "ice-hockey",
+    "verified": false,
+    "reason": "European club rows: no official league source fetched this session"
+   },
+   {
+    "id": "nhl-euro-199969",
+    "sport": "ice-hockey",
+    "verified": false,
+    "reason": "European club rows: no official league source fetched this session"
+   },
+   {
+    "id": "nhl-euro-199947",
+    "sport": "ice-hockey",
+    "verified": false,
+    "reason": "European club rows: no official league source fetched this session"
+   },
+   {
+    "id": "nhl-euro-199968",
+    "sport": "ice-hockey",
+    "verified": false,
+    "reason": "European club rows: no official league source fetched this session"
+   },
+   {
+    "id": "mlb-ws-g3",
+    "sport": "baseball",
+    "verified": true,
+    "reason": "participant_b blank (payload chunk cut) — no price without both teams"
+   },
+   {
+    "id": "nb-cle-phi",
+    "sport": "basketball",
+    "verified": true,
+    "reason": "official team records/strength input not retrievable (NBA JS blocks; NBB federation not fetched)"
+   },
+   {
+    "id": "nb-den-okc",
+    "sport": "basketball",
+    "verified": true,
+    "reason": "official team records/strength input not retrievable (NBA JS blocks; NBB federation not fetched)"
+   },
+   {
+    "id": "gb-chi-mil",
+    "sport": "basketball",
+    "verified": true,
+    "reason": "official team records/strength input not retrievable (NBA JS blocks; NBB federation not fetched)"
+   },
+   {
+    "id": "gb-nyk-bos",
+    "sport": "basketball",
+    "verified": true,
+    "reason": "official team records/strength input not retrievable (NBA JS blocks; NBB federation not fetched)"
+   },
+   {
+    "id": "gb-hou-sa",
+    "sport": "basketball",
+    "verified": true,
+    "reason": "official team records/strength input not retrievable (NBA JS blocks; NBB federation not fetched)"
+   },
+   {
+    "id": "nb-nbb-536019",
+    "sport": "basketball",
+    "verified": false,
+    "reason": "official team records/strength input not retrievable (NBA JS blocks; NBB federation not fetched)"
+   },
+   {
+    "id": "nb-nbb-536020",
+    "sport": "basketball",
+    "verified": false,
+    "reason": "official team records/strength input not retrievable (NBA JS blocks; NBB federation not fetched)"
+   },
+   {
+    "id": "nb-nbb-536052",
+    "sport": "basketball",
+    "verified": false,
+    "reason": "official team records/strength input not retrievable (NBA JS blocks; NBB federation not fetched)"
+   },
+   {
+    "id": "ck-188831",
+    "sport": "cricket",
+    "verified": true,
+    "reason": "fixture itself not officially verified (ICC JS, NZC failure, CSA stale widget) and no official strength input"
+   },
+   {
+    "id": "ck-188833",
+    "sport": "cricket",
+    "verified": true,
+    "reason": "fixture itself not officially verified (ICC JS, NZC failure, CSA stale widget) and no official strength input"
+   },
+   {
+    "id": "ck-188832",
+    "sport": "cricket",
+    "verified": true,
+    "reason": "fixture itself not officially verified (ICC JS, NZC failure, CSA stale widget) and no official strength input"
+   },
+   {
+    "id": "ck-188830",
+    "sport": "cricket",
+    "verified": true,
+    "reason": "fixture itself not officially verified (ICC JS, NZC failure, CSA stale widget) and no official strength input"
+   },
+   {
+    "id": "rugby-league-rl-women-2",
+    "sport": "rugby-league",
+    "verified": true,
+    "reason": "no official strength input this session"
+   },
+   {
+    "id": "rugby-league-rl-men-2",
+    "sport": "rugby-league",
+    "verified": true,
+    "reason": "no official strength input this session"
+   },
+   {
+    "id": "rugby-league-rl-int-3",
+    "sport": "rugby-league",
+    "verified": true,
+    "reason": "no official strength input this session"
+   },
+   {
+    "id": "prem-new-sale",
+    "sport": "rugby-union",
+    "verified": true,
+    "reason": "Premiership row not officially verified (JS) — no price"
+   },
+   {
+    "id": "gf-stifel",
+    "sport": "golf",
+    "verified": true,
+    "reason": "field-outright markets: no official per-player stroke input; investigated, not priced"
+   },
+   {
+    "id": "gf-bermuda",
+    "sport": "golf",
+    "verified": true,
+    "reason": "field-outright markets: no official per-player stroke input; investigated, not priced"
+   },
+   {
+    "id": "mr-us-gp",
+    "sport": "motor-racing",
+    "verified": true,
+    "reason": "race-outright market: no official per-driver performance input beyond the entry; investigated, not priced"
+   },
+   {
+    "id": "gd-1",
+    "sport": "darts",
+    "verified": true,
+    "reason": "PDC Order of Merit/rankings not retrievable (official site consent wall, F-8F6D-03) — no official strength input"
+   },
+   {
+    "id": "gd-2",
+    "sport": "darts",
+    "verified": true,
+    "reason": "PDC Order of Merit/rankings not retrievable (official site consent wall, F-8F6D-03) — no official strength input"
+   },
+   {
+    "id": "gd-3",
+    "sport": "darts",
+    "verified": true,
+    "reason": "PDC Order of Merit/rankings not retrievable (official site consent wall, F-8F6D-03) — no official strength input"
+   },
+   {
+    "id": "gd-4",
+    "sport": "darts",
+    "verified": true,
+    "reason": "PDC Order of Merit/rankings not retrievable (official site consent wall, F-8F6D-03) — no official strength input"
+   },
+   {
+    "id": "gd-5",
+    "sport": "darts",
+    "verified": true,
+    "reason": "PDC Order of Merit/rankings not retrievable (official site consent wall, F-8F6D-03) — no official strength input"
+   },
+   {
+    "id": "gd-6",
+    "sport": "darts",
+    "verified": true,
+    "reason": "PDC Order of Merit/rankings not retrievable (official site consent wall, F-8F6D-03) — no official strength input"
+   },
+   {
+    "id": "gd-7",
+    "sport": "darts",
+    "verified": true,
+    "reason": "PDC Order of Merit/rankings not retrievable (official site consent wall, F-8F6D-03) — no official strength input"
+   },
+   {
+    "id": "gd-8",
+    "sport": "darts",
+    "verified": true,
+    "reason": "PDC Order of Merit/rankings not retrievable (official site consent wall, F-8F6D-03) — no official strength input"
+   },
+   {
+    "id": "hb-skive-aal",
+    "sport": "handball",
+    "verified": false,
+    "reason": "unverified federation rows; French rows priced separately"
+   },
+   {
+    "id": "hb-gop-eis",
+    "sport": "handball",
+    "verified": false,
+    "reason": "unverified federation rows; French rows priced separately"
+   },
+   {
+    "id": "hb-han-lem",
+    "sport": "handball",
+    "verified": false,
+    "reason": "unverified federation rows; French rows priced separately"
+   },
+   {
+    "id": "hb-erl-kiel",
+    "sport": "handball",
+    "verified": false,
+    "reason": "unverified federation rows; French rows priced separately"
+   },
+   {
+    "id": "hb-skj-rib",
+    "sport": "handball",
+    "verified": false,
+    "reason": "unverified federation rows; French rows priced separately"
+   },
+   {
+    "id": "hb-vep-psa",
+    "sport": "handball",
+    "verified": false,
+    "reason": "unverified federation rows; French rows priced separately"
+   },
+   {
+    "id": "hb-bid-crd",
+    "sport": "handball",
+    "verified": false,
+    "reason": "unverified federation rows; French rows priced separately"
+   },
+   {
+    "id": "hb-nav-val",
+    "sport": "handball",
+    "verified": false,
+    "reason": "unverified federation rows; French rows priced separately"
+   },
+   {
+    "id": "hb-est-kos",
+    "sport": "handball",
+    "verified": false,
+    "reason": "unverified federation rows; French rows priced separately"
+   },
+   {
+    "id": "vb-bra-ses",
+    "sport": "volleyball",
+    "verified": false,
+    "reason": "fixture not officially verified (federation pages not completed) — no price on an unverified fixture"
+   },
+   {
+    "id": "vb-sle-gks",
+    "sport": "volleyball",
+    "verified": false,
+    "reason": "fixture not officially verified (federation pages not completed) — no price on an unverified fixture"
+   },
+   {
+    "id": "vb-pau-min",
+    "sport": "volleyball",
+    "verified": false,
+    "reason": "fixture not officially verified (federation pages not completed) — no price on an unverified fixture"
+   },
+   {
+    "id": "vb-skra-pro",
+    "sport": "volleyball",
+    "verified": false,
+    "reason": "fixture not officially verified (federation pages not completed) — no price on an unverified fixture"
+   },
+   {
+    "id": "vb-mac-osa",
+    "sport": "volleyball",
+    "verified": false,
+    "reason": "fixture not officially verified (federation pages not completed) — no price on an unverified fixture"
+   },
+   {
+    "id": "vb-abp-pra",
+    "sport": "volleyball",
+    "verified": false,
+    "reason": "fixture not officially verified (federation pages not completed) — no price on an unverified fixture"
+   },
+   {
+    "id": "vb-tre-cis",
+    "sport": "volleyball",
+    "verified": false,
+    "reason": "fixture not officially verified (federation pages not completed) — no price on an unverified fixture"
+   },
+   {
+    "id": "vb-per-por",
+    "sport": "volleyball",
+    "verified": false,
+    "reason": "fixture not officially verified (federation pages not completed) — no price on an unverified fixture"
+   },
+   {
+    "id": "vb-chk-res",
+    "sport": "volleyball",
+    "verified": false,
+    "reason": "fixture not officially verified (federation pages not completed) — no price on an unverified fixture"
+   },
+   {
+    "id": "vb-tii-kyk",
+    "sport": "volleyball",
+    "verified": false,
+    "reason": "fixture not officially verified (federation pages not completed) — no price on an unverified fixture"
+   },
+   {
+    "id": "vb-atl-lin",
+    "sport": "volleyball",
+    "verified": false,
+    "reason": "fixture not officially verified (federation pages not completed) — no price on an unverified fixture"
+   },
+   {
+    "id": "vb-sok-har",
+    "sport": "volleyball",
+    "verified": false,
+    "reason": "fixture not officially verified (federation pages not completed) — no price on an unverified fixture"
+   },
+   {
+    "id": "vb-fri-kar",
+    "sport": "volleyball",
+    "verified": false,
+    "reason": "fixture not officially verified (federation pages not completed) — no price on an unverified fixture"
+   },
+   {
+    "id": "vb-lun-warn",
+    "sport": "volleyball",
+    "verified": false,
+    "reason": "fixture not officially verified (federation pages not completed) — no price on an unverified fixture"
+   },
+   {
+    "id": "af-port-col",
+    "sport": "aussie-rules",
+    "verified": true,
+    "reason": "official AFLW ladder not retrievable (JS loading) — fixture verified, pricing withheld"
+   },
+   {
+    "id": "gf-cork-final",
+    "sport": "gaelic-football",
+    "verified": true,
+    "reason": "no official strength input (county ladders/forms not fetched) — fixture verified rows stay unpriced"
+   },
+   {
+    "id": "gf-kerry-final",
+    "sport": "gaelic-football",
+    "verified": true,
+    "reason": "no official strength input (county ladders/forms not fetched) — fixture verified rows stay unpriced"
+   },
+   {
+    "id": "gf-waterford-final",
+    "sport": "gaelic-football",
+    "verified": true,
+    "reason": "no official strength input (county ladders/forms not fetched) — fixture verified rows stay unpriced"
+   },
+   {
+    "id": "gf-moy-sal",
+    "sport": "gaelic-football",
+    "verified": false,
+    "reason": "no official strength input (county ladders/forms not fetched) — fixture verified rows stay unpriced"
+   },
+   {
+    "id": "gf-kant-eog",
+    "sport": "gaelic-football",
+    "verified": false,
+    "reason": "no official strength input (county ladders/forms not fetched) — fixture verified rows stay unpriced"
+   },
+   {
+    "id": "gf-frc-kil",
+    "sport": "gaelic-football",
+    "verified": false,
+    "reason": "no official strength input (county ladders/forms not fetched) — fixture verified rows stay unpriced"
+   },
+   {
+    "id": "sn-qf-1",
+    "sport": "snooker",
+    "verified": true,
+    "reason": "no official ranking/strength input fetched (WST rankings not read) — fixture verified, pricing withheld"
+   },
+   {
+    "id": "sn-qf-2",
+    "sport": "snooker",
+    "verified": true,
+    "reason": "no official ranking/strength input fetched (WST rankings not read) — fixture verified, pricing withheld"
+   },
+   {
+    "id": "sn-qf-3",
+    "sport": "snooker",
+    "verified": true,
+    "reason": "no official ranking/strength input fetched (WST rankings not read) — fixture verified, pricing withheld"
+   }
+  ]
+ },
+ "counts": {
+  "priced_fixtures": 69,
+  "High": 2,
+  "Medium": 49,
+  "Low": 18,
+  "high_selections": 2,
+  "unpriced": 65,
+  "out_of_window_ge70": 17,
+  "near_band": 2
+ }
+}

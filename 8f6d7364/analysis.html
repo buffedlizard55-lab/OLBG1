@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Analysis · OLBG desk 8f6d7364 (T66)</title><style>
+:root{--bg:#0f1420;--panel:#171d2c;--panel2:#1d2436;--line:#2a3350;--txt:#e7ecf6;--mut:#9aa7c4;
+--acc:#5aa9ff;--ok:#2fbf71;--warn:#e8b03a;--bad:#e05d5d;--high:#ff7a59;--med:#5aa9ff;--low:#8a94ad;}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--panel);border-bottom:1px solid var(--line);padding:14px 22px;position:sticky;top:0;z-index:5}
+header h1{font-size:18px;margin:0}header .sub{color:var(--mut);font-size:12.5px}
+nav{background:var(--panel2);border-bottom:1px solid var(--line);padding:8px 22px;position:sticky;top:57px;z-index:4}
+nav a{margin-right:14px;font-size:13.5px;color:var(--mut)}nav a.on{color:var(--txt);font-weight:600}
+main{max-width:1280px;margin:18px auto;padding:0 18px 60px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0 20px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.tile b{display:block;font-size:22px}.tile span{color:var(--mut);font-size:12px}
+h2{font-size:17px;margin:26px 0 10px}h3{font-size:15px;margin:18px 0 8px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:13.2px;background:var(--panel);border:1px solid var(--line)}
+th{background:var(--panel2);text-align:left;padding:8px 9px;border-bottom:1px solid var(--line);position:sticky;top:0}
+td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}td.num,th.num{text-align:right;white-space:nowrap}
+.bad{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11.5px;font-weight:600;white-space:nowrap}
+.v{background:#123826;color:#7ee2b0;border:1px solid #1f5c3f}.u{background:#3a2a12;color:#f3cf7e;border:1px solid #6b4d1d}
+.nv{background:#33161a;color:#f0a1a1;border:1px solid #6b2b31}
+.high{background:#40201a;color:#ff9c80;border:1px solid #7a3b2e}.med{background:#152a44;color:#9cc7ff;border:1px solid #2b4a75}
+.low{background:#242a38;color:#b7c0d6;border:1px solid #3a4258}
+.mut{color:var(--mut)}.mono{font-family:ui-monospace,Consolas,monospace;font-size:12.5px}
+.note{background:#14203a;border:1px solid #27406e;border-radius:8px;padding:10px 12px;margin:10px 0;font-size:13.4px}
+.warnbox{background:#2b2210;border:1px solid #6b541d;border-radius:8px;padding:10px 12px;margin:10px 0;font-size:13.4px}
+footer{color:var(--mut);font-size:12px;padding:20px;text-align:center;border-top:1px solid var(--line);margin-top:30px}
+.pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:8px 11px;margin:4px 6px 4px 0;font-size:12.6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+@media(max-width:760px){table{font-size:12px}th,td{padding:5px 6px}}
+</style></head><body>
+<header><h1>OLBG research desk · session 8f6d7364 (T66)</h1>
+<div class="sub">Fresh 22 Oct 2026 21:00Z harvest · 17 in-scope sports · official-source verified line by line · generated 2026-10-22T21:55:00Z · not affiliated with OLBG · no betting advice</div></header>
+<nav><a href="index.html">Dashboard</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="high-confidence.html">High confidence</a><a href="predictions.html">Predictions</a><a href="analysis.html" class=on>Analysis</a><a href="flagged.html">Flagged</a><a href="sources.html">Sources</a><a href="methodology.html">Methodology</a></nav>
+<nav style="top:99px"><a href="sports/ice-hockey.html">Ice Hockey</a><a href="sports/baseball.html">Baseball</a><a href="sports/basketball.html">Basketball</a><a href="sports/tennis.html">Tennis</a><a href="sports/cricket.html">Cricket</a><a href="sports/rugby-league.html">Rugby League</a><a href="sports/rugby-union.html">Rugby Union</a><a href="sports/golf.html">Golf</a><a href="sports/motor-racing.html">Motor Racing</a><a href="sports/darts.html">Darts</a><a href="sports/handball.html">Handball</a><a href="sports/volleyball.html">Volleyball</a><a href="sports/aussie-rules.html">Aussie Rules</a><a href="sports/esports.html">eSports</a><a href="sports/gaelic-football.html">Gaelic Football</a><a href="sports/greyhounds.html">Greyhounds</a><a href="sports/snooker.html">Snooker</a></nav>
+<main>
+<h2>Findings (this session)</h2>
+<div class="card"><b>1. OLBG time-zone conventions are inconsistent across sports</b> (F-8F6D-01, high).
+Official times were compared against OLBG's displayed text hub by hub: NHL/MLB/tennis/darts text tracks
+US Eastern (and carries a small start pad: NBA +10 min, NHL +7 min vs official nominal times), EuroLeague text
+equals BST exactly, rugby-union text equals venue-local times exactly. Official UTC values are published;
+OLBG text stays in the discovery column. Rows touched: 14.</div>
+<div class="card"><b>2. The brief's literal High conjunction (≥70% AND −250…+10000) is a knife edge.</b>
+Favourites above 71.43% are priced shorter than −250 and therefore excluded; favourites below 70% fail the first
+test. Tonight's verified, priced board (69 fixtures) yields 2 High selections,
+17 disclosed ≥70% out-of-window winners and 2 near-band watch items.
+Nothing was nudged across the boundary.</div>
+<div class="card"><b>3. No tonight's NHL game reaches 70% by the official embedded market either</b> —
+the strongest de-vigged quote is New Jersey ≈ 0.66. The model and the official market agree on direction in
+most games but diverge most on NY Islanders (model 0.78 vs market ≈0.53) and Minnesota (model 0.70 vs ≈0.65);
+both readings are shown in the table below, and the model — not the market — decides our tiers.</div>
+<div class="card"><b>4. Discovery gaps on both sides.</b> OLBG's visible hub list missed 29 fixtures that official
+sources confirm (URC, Top 14, rugby-league World Cup, AFLW, snooker, MLB, GAA Kerry); conversely 33 discovery
+rows could not be confirmed officially and are published blank + flagged instead of quietly kept.</div>
+<div class="card"><b>5. Source-health irregularities.</b> hbl.de no longer serves handball content (F-8F6D-06);
+pdc.tv walls direct fetches behind consent (F-8F6D-03); nba.com, premrugby.com, WTA rankings and the ICC fixtures
+page are JS-rendered and resist line-by-line fetch verification (F-8F6D-04/05); OLBG's own Rathgormack v The Nire
+date contradicts the official Munster GAA calendar (F-8F6D-02).</div>
+<h2>Model vs official embedded market — NHL (12 games)</h2>
+<table><tr><th>match</th><th class="num">model p (a / b)</th><th class="num">official devig (a / b)</th><th>note</th></tr><tr><td>NSH Predators v BOS Bruins</td><td class="num">0.259 / 0.741</td><td class="num">0.420 / 0.580</td><td class="mut">our model vs de-vigged official embedded odds (providers 7/8/9)</td></tr><tr><td>NY Rangers v TOR Maple Leafs</td><td class="num">0.607 / 0.393</td><td class="num">0.502 / 0.498</td><td class="mut">our model vs de-vigged official embedded odds (providers 7/8/9)</td></tr><tr><td>SJ Sharks v OTT Senators</td><td class="num">0.332 / 0.668</td><td class="num">0.453 / 0.547</td><td class="mut">our model vs de-vigged official embedded odds (providers 7/8/9)</td></tr><tr><td>ANA Ducks v NJ Devils</td><td class="num">0.399 / 0.602</td><td class="num">0.341 / 0.659</td><td class="mut">our model vs de-vigged official embedded odds (providers 7/8/9)</td></tr><tr><td>FLA Panthers v PIT Penguins</td><td class="num">0.618 / 0.382</td><td class="num">0.494 / 0.506</td><td class="mut">our model vs de-vigged official embedded odds (providers 7/8/9)</td></tr><tr><td>LA Kings v NY Islanders</td><td class="num">0.218 / 0.782</td><td class="num">0.504 / 0.496</td><td class="mut">our model vs de-vigged official embedded odds (providers 7/8/9)</td></tr><tr><td>VGS Golden Knights v STL Blues</td><td class="num">0.675 / 0.325</td><td class="num">0.539 / 0.461</td><td class="mut">our model vs de-vigged official embedded odds (providers 7/8/9)</td></tr><tr><td>WPG Jets v DAL Stars</td><td class="num">0.366 / 0.634</td><td class="num">0.361 / 0.639</td><td class="mut">our model vs de-vigged official embedded odds (providers 7/8/9)</td></tr><tr><td>MIN Wild v CGY Flames</td><td class="num">0.702 / 0.298</td><td class="num">0.649 / 0.351</td><td class="mut">our model vs de-vigged official embedded odds (providers 7/8/9)</td></tr><tr><td>CAR Hurricanes v EDM Oilers</td><td class="num">0.446 / 0.554</td><td class="num">0.519 / 0.480</td><td class="mut">our model vs de-vigged official embedded odds (providers 7/8/9)</td></tr><tr><td>UTA Mammoth v SEA Kraken</td><td class="num">0.549 / 0.451</td><td class="num">0.607 / 0.393</td><td class="mut">our model vs de-vigged official embedded odds (providers 7/8/9)</td></tr><tr><td>DET Red Wings v VAN Canucks</td><td class="num">0.607 / 0.393</td><td class="num">0.601 / 0.399</td><td class="mut">our model vs de-vigged official embedded odds (providers 7/8/9)</td></tr></table>
+<h2>Cross-cutting counts</h2>
+<div>
+<span class="pill">verified rows 101</span><span class="pill">unverified rows 33</span>
+<span class="pill">priced 69</span><span class="pill">unpriced 65</span>
+<span class="pill">High 2</span><span class="pill">Medium 49</span><span class="pill">Low 18</span>
+<span class="pill">markets priced 266</span>
+<span class="pill">flags 21</span><span class="pill">sources 46</span>
+</div>
+</main>
+<footer>T66 · <span class="mono">data/8f6d7364</span> · every row links an official source or is flagged unverified · model values are estimates, never sourced facts</footer>
+</body></html>

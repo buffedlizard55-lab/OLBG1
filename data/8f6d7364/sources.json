@@ -1,0 +1,466 @@
+{
+ "generated_at": "2026-10-22T21:55:00Z",
+ "count": 46,
+ "sources": [
+  {
+   "id": "src-olbg-hubs",
+   "org": "OLBG (discovery only, not a source of fact)",
+   "url": "https://www.olbg.com/betting-tips/",
+   "observed": "2026-10-22T20:50Z/2026-10-22T20:57Z",
+   "method": "Arena page-fetch, chunk 0 of each of 17 in-scope hub pages",
+   "observed_by": "this-session",
+   "role": "discovery",
+   "note": "Server-rendered top list per hub; 'Load More Tips' XHR pagination beyond capture."
+  },
+  {
+   "id": "src-nhl-schedule",
+   "org": "National Hockey League",
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-22",
+   "observed": "2026-10-22T20:53Z/2026-10-22T21:00Z",
+   "method": "Arena page-fetch, chunks 0-3 (JSON)",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "12 games on 2026-10-22 with startTimeUTC, gameState FUT/OK and embedded official odds arrays."
+  },
+  {
+   "id": "src-nhl-standings",
+   "org": "National Hockey League",
+   "url": "https://api-web.nhle.com/v1/standings/now",
+   "observed": "2026-10-22T20:56Z/2026-10-22T21:04Z",
+   "method": "Arena page-fetch, chunks 0-7 (JSON); standingsDateTimeUtc=2026-10-22T20:57:30Z",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "All 32 clubs: W-L-OTL, points, L10 and streak fields read verbatim."
+  },
+  {
+   "id": "src-mlb-schedule",
+   "org": "Major League Baseball",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-26&hydrate=probablePitcher,team,venue,seriesStatus",
+   "observed": "2026-10-22T21:02Z/2026-10-22T21:03Z",
+   "method": "Arena page-fetch, chunk 0 (JSON)",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "World Series games 849805 (G1), 849802 (G2), 849804 (G3); ifNecessary flags as read."
+  },
+  {
+   "id": "src-mlb-records",
+   "org": "Major League Baseball",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason",
+   "observed": "2026-10-22T07:17:40Z/2026-10-22T07:30:30Z",
+   "method": "canonical same-day capture (data/current/evidence/mlb-records-2026.json)",
+   "observed_by": "canonical-same-day",
+   "role": "official",
+   "note": "2026 regular-season records: Rays 98-64 (736 RS / 650 RA), Brewers 103-59 (832 RS / 618 RA)."
+  },
+  {
+   "id": "src-el-gamecenter",
+   "org": "Euroleague Basketball",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/",
+   "observed": "2026-10-22T21:05Z/2026-10-22T21:08Z",
+   "method": "Arena page-fetch, chunks 0-1",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Round 7: Friday fixtures with CEST tip times and both teams' records; Thursday results as form."
+  },
+  {
+   "id": "src-nba-games22",
+   "org": "National Basketball Association",
+   "url": "https://www.nba.com/games?date=2026-10-22",
+   "observed": "2026-10-22T07:17:40Z/2026-10-22T07:30:30Z (card details); 2026-10-22T21:30Z (this session's re-read: calendar day count only, matchup cards JS-blocked)",
+   "method": "canonical same-day capture (data/current/evidence/nba-games-20261022.json) + this session re-fetch",
+   "observed_by": "canonical-same-day",
+   "role": "official",
+   "note": "Game ids 0022600006 Cavaliers @ 76ers '7:00 PM ET', 0022600007 Nuggets @ Thunder '9:30 PM ET'; official calendar confirms 2 games on 22 Oct and 12 on 23 Oct."
+  },
+  {
+   "id": "src-nba-cal23",
+   "org": "National Basketball Association",
+   "url": "https://www.nba.com/games?date=2026-10-23",
+   "observed": "2026-10-22T21:31Z/2026-10-22T21:31Z",
+   "method": "Arena page-fetch (calendar only; matchup cards JS-blocked)",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Official calendar confirms 12 games on 2026-10-23; individual matchups/times NOT retrievable."
+  },
+  {
+   "id": "src-wta-osaka-op",
+   "org": "Women's Tennis Association",
+   "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/405/OP.pdf",
+   "observed": "2026-10-22T21:12Z/2026-10-22T21:13Z",
+   "method": "Arena page-fetch (order-of-play PDF)",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "ORDER OF PLAY Friday 23 October 2026, RELEASED 22 Oct 2026 4:20 PM; four quarter-finals with starting/not-before times (tournament local)."
+  },
+  {
+   "id": "src-wta-osaka-draw",
+   "org": "Women's Tennis Association",
+   "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/405/MDS.pdf",
+   "observed": "2026-10-22T21:11Z/2026-10-22T21:12Z",
+   "method": "Arena page-fetch (main-draw PDF)",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Main draw with per-seed official ranks, R32/R16 scores, withdrawals/retirements."
+  },
+  {
+   "id": "src-wta-ningbo-op",
+   "org": "Women's Tennis Association",
+   "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf",
+   "observed": "2026-10-22T21:39Z/2026-10-22T21:40Z",
+   "method": "Arena page-fetch (order-of-play PDF)",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "ORDER OF PLAY Friday 23 October 2026; four quarter-finals with starting/not-before times (tournament local)."
+  },
+  {
+   "id": "src-wta-ningbo-draw",
+   "org": "Women's Tennis Association",
+   "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf",
+   "observed": "2026-10-22T21:24Z/2026-10-22T21:25Z",
+   "method": "Arena page-fetch (main-draw PDF)",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Main draw with per-seed official ranks, R32/R16 scores, 'RELEASED 22 Oct 2026 7:46 PM', retirements."
+  },
+  {
+   "id": "src-atp-almaty-sched",
+   "org": "ATP Tour",
+   "url": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule",
+   "observed": "2026-10-22T21:17Z/2026-10-22T21:18Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Fri 23 Oct Day 7 order of play, Center Court 'Starts At 11:30' / 'Not Before 13:00' (local, page states Use Local Time Zone)."
+  },
+  {
+   "id": "src-atp-almaty-draw",
+   "org": "ATP Tour",
+   "url": "https://www.atptour.com/en/scores/current/almaty/9410/draws",
+   "observed": "2026-10-22T21:16Z/2026-10-22T21:17Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "R32 results and seed markers; official print link protennisliv mds.pdf."
+  },
+  {
+   "id": "src-atp-brussels-sched",
+   "org": "ATP Tour",
+   "url": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule",
+   "observed": "2026-10-22T21:36Z/2026-10-22T21:37Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Fri 23 Oct Centre Court: Starts At 14:00, 'Not Before 16:00' Griekspoor-Lehecka (local)."
+  },
+  {
+   "id": "src-atp-lyon-sched",
+   "org": "ATP Tour",
+   "url": "https://www.atptour.com/en/scores/current/lyon/496/daily-schedule",
+   "observed": "2026-10-22T21:37Z/2026-10-22T21:38Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Fri 23 Oct Court Central: Starts At 12:00, 'Not Before 14:00' Moutet-Paul, 'Followed By' Altmaier-Fritz (local)."
+  },
+  {
+   "id": "src-atp-current",
+   "org": "ATP Tour",
+   "url": "https://www.atptour.com/en/scores/current",
+   "observed": "2026-10-22T21:38Z/2026-10-22T21:39Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Live R16 results used as form: Medvedev d. Shimabukuro 6-2 6-1; Lehecka d. Collignon 6-4 6-2; Fritz d. Herbert 6-2 7-5; Michelsen d. Goffin 6-3 6-4; Cobolli d. Wawrinka 6-2 6-4."
+  },
+  {
+   "id": "src-pdc-ec-schedule",
+   "org": "Professional Darts Corporation",
+   "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/",
+   "observed": "2026-10-22T07:17:40Z/2026-10-22T07:30:30Z (canonical capture) + 2026-10-22T21:2xZ (this session's indexed reads of the same official URL and pdc.tv/live; 8 direct fetch chunks returned only the consent wall)",
+   "method": "canonical same-day capture (data/current/evidence/pdc-extraction.json) + indexed reads; direct fetch blocked",
+   "observed_by": "pdc-same-day",
+   "role": "official",
+   "note": "Friday 23 Oct 1900-2300 CEST, Round One x8 — all eight OLBG pairs listed verbatim; Thu update: Humphries out, Huybrechts in (pdc.tv, 22 Oct)."
+  },
+  {
+   "id": "src-urc-fixtures",
+   "org": "United Rugby Championship",
+   "url": "https://stats.unitedrugby.com/match-centre/2026-27/4",
+   "observed": "2026-10-22T21:08Z/2026-10-22T21:10Z",
+   "method": "Arena page-fetch, chunks 0-1",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Round 4 fixtures; page states 'All times shown are Local'."
+  },
+  {
+   "id": "src-urc-table",
+   "org": "United Rugby Championship",
+   "url": "https://stats.unitedrugby.com/match-centre/table/2026-27",
+   "observed": "2026-10-22T21:32Z/2026-10-22T21:33Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Full league table: PTS/PL/W/D/L/PF/PA/FORM for all 16 clubs."
+  },
+  {
+   "id": "src-lnr-top14",
+   "org": "Ligue Nationale de Rugby (Top 14)",
+   "url": "https://top14.lnr.fr/calendrier-et-resultats",
+   "observed": "2026-10-22T21:32Z/2026-10-22T21:33Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Round 7 fixtures (Sat 24 / Sun 25 Oct) with club table positions as displayed."
+  },
+  {
+   "id": "src-lnr-prod2",
+   "org": "Ligue Nationale de Rugby (Pro D2)",
+   "url": "https://prod2.lnr.fr/calendrier-et-resultats",
+   "observed": "2026-10-22T21:34Z/2026-10-22T21:35Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Round 8 fixtures (Fri 23 Oct) with club table positions as displayed; Thu result Montauban 24-23 Oyonnax."
+  },
+  {
+   "id": "src-irl-fixtures",
+   "org": "International Rugby League",
+   "url": "https://www.intrl.sport/fixtures-results",
+   "observed": "2026-10-22T21:09Z/2026-10-22T21:10Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Fixtures 23-31 Oct with venue and time text; page does not state a timezone (flagged)."
+  },
+  {
+   "id": "src-irl-rankings",
+   "org": "International Rugby League",
+   "url": "https://www.intrl.sport/world-rankings",
+   "observed": "2026-10-22T21:34Z/2026-10-22T21:35Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Official men's and women's world rankings with published strength percentages."
+  },
+  {
+   "id": "src-lnh-starligue-cal",
+   "org": "Ligue Nationale de Handball",
+   "url": "https://www.lnh.fr/daikin-starligue/calendrier",
+   "observed": "2026-10-22T21:39Z/2026-10-22T21:44Z",
+   "method": "Arena page-fetch, chunks 0-1",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Daikin StarLigue J08 fixtures (per-match official 'Infos' links)."
+  },
+  {
+   "id": "src-lnh-starligue-table",
+   "org": "Ligue Nationale de Handball",
+   "url": "https://www.lnh.fr/daikin-starligue/classement",
+   "observed": "2026-10-22T21:54Z/2026-10-22T21:56Z",
+   "method": "Arena page-fetch, chunks 0-1",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "2026/27 table after 7 rounds: pts/mj/V-D-N and goals for/against for all 16 clubs."
+  },
+  {
+   "id": "src-munster-gaa",
+   "org": "Munster GAA",
+   "url": "https://munster.gaa.ie/fixtures/events-calendar/",
+   "observed": "2026-10-22T21:10Z/2026-10-22T21:11Z and 2026-10-22T21:44Z/2026-10-22T21:45Z",
+   "method": "Arena page-fetch, chunks 0-1",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Cork, Kerry and Waterford senior football championship finals with date/time/venue."
+  },
+  {
+   "id": "src-aflw-match",
+   "org": "Australian Football League",
+   "url": "https://www.afl.com.au/aflw/matches/8970",
+   "observed": "2026-10-22T21:41Z/2026-10-22T21:42Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Port Adelaide v Collingwood, Round 11, Friday 23 October 2026, 4:15 AM (EDT), Alberton Oval."
+  },
+  {
+   "id": "src-wst-ni-open",
+   "org": "World Snooker Tour",
+   "url": "https://www.wst.tv/matches/",
+   "observed": "2026-10-22T21:09Z/2026-10-22T21:12Z",
+   "method": "Arena page-fetch, chunks 0-2",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "BetVictor Northern Ireland Open: Round 3 (Thu) results incl. Wilson 4-3 Pang; scheduled quarter-finals Fri 23 Oct; page does not state a timezone (flagged)."
+  },
+  {
+   "id": "src-f1-usgp",
+   "org": "Formula 1",
+   "url": "https://www.formula1.com/en/racing/2026/united-states",
+   "observed": "2026-10-22T21:01Z/2026-10-22T21:02Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "United States Grand Prix 2026 schedule rows incl. '25Oct Race 16:00' (page MY TIME/TRACK TIME toggle — timezone context ambiguous, flagged)."
+  },
+  {
+   "id": "src-pgc-hub",
+   "org": "PGA TOUR Champions",
+   "url": "https://www.pgatour.com/pgatour-champions",
+   "observed": "2026-10-22T21:40Z/2026-10-22T21:41Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Stifel Charity Classic pre-tournament article at Norwood Hills CC, St Louis; Schwab Cup top-10 through SAS Championship (18 Oct): 1 Cink (16 top-10s, 5 wins), 2 Z. Johnson, 3 Alker/McNeill, 5 Goosen."
+  },
+  {
+   "id": "src-pga-schedule",
+   "org": "PGA TOUR",
+   "url": "https://www.pgatour.com/schedule",
+   "observed": "2026-10-22T07:17:40Z/2026-10-22T07:30:30Z",
+   "method": "canonical same-day capture (data/current/evidence/pga-schedule.json)",
+   "observed_by": "canonical-same-day",
+   "role": "official",
+   "note": "Butterfield Bermuda Championship, 22-25 October 2026, Port Royal Golf Course."
+  },
+  {
+   "id": "src-gbgb",
+   "org": "Greyhound Board of Great Britain",
+   "url": "https://www.gbgb.org.uk/racing/",
+   "observed": "2026-10-22T21:45Z/2026-10-22T21:46Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Official race reports dated Thu 22 Oct 2026 (Scurry Gold Cup, Dunstall Park; Oaks, Dunstall Park; Doncaster Puppy Derby). Structured race cards are JS-rendered and not retrievable."
+  },
+  {
+   "id": "src-lol-worlds",
+   "org": "Riot Games (LoL Esports)",
+   "url": "https://lolesports.com/en-GB/tournament/115660540725177488/overview",
+   "observed": "2026-10-22T21:45Z/2026-10-22T21:46Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Worlds 2026 'IN PROGRESS', Oct-Nov, phase format and qualified teams; no match-level fixtures exposed on the overview."
+  },
+  {
+   "id": "src-plusliga",
+   "org": "PlusLiga / TAURON Liga portal",
+   "url": "https://www.plusliga.pl/games.html",
+   "observed": "2026-10-22T21:45Z/2026-10-22T21:46Z",
+   "method": "Arena page-fetch (chunk 0 of 16; page serves completed 16-17 Oct matches first)",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Page reachable; future-dated fixtures not reached inside fetched chunks — per-row verification not completed (flagged)."
+  },
+  {
+   "id": "src-hbl",
+   "org": "Handball-Bundesliga domain observed",
+   "url": "https://www.hbl.de/",
+   "observed": "2026-10-22T21:45Z/2026-10-22T21:46Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "IRREGULARITY: hbl.de redirected to an unrelated steel-company site (europeanstaal.de) — not a handball source this session; German handball rows left unverified."
+  },
+  {
+   "id": "src-icc",
+   "org": "International Cricket Council",
+   "url": "https://www.icc-cricket.com/fixtures-results",
+   "observed": "2026-10-22T21:09Z/2026-10-22T21:09Z",
+   "method": "Arena page-fetch (JS shell only, no fixture data)",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Fixture list not retrievable (client-side rendering)."
+  },
+  {
+   "id": "src-nzc",
+   "org": "New Zealand Cricket",
+   "url": "https://www.nzc.co.nz/fixtures/",
+   "observed": "2026-10-22T21:48Z/2026-10-22T21:48Z",
+   "method": "Arena page-fetch — transport failure",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Fetch failed; no content read."
+  },
+  {
+   "id": "src-csa",
+   "org": "Cricket South Africa",
+   "url": "https://www.cricket.co.za/",
+   "observed": "2026-10-22T21:48Z/2026-10-22T21:49Z",
+   "method": "Arena page-fetch",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Site reachable but live widget displayed a stale 'Tour of England 2025' card; no 2026 fixture retrievable."
+  },
+  {
+   "id": "src-premrugby",
+   "org": "PREM Rugby",
+   "url": "https://www.premrugby.com/fixtures-results",
+   "observed": "2026-10-22T21:48Z/2026-10-22T21:49Z",
+   "method": "Arena page-fetch (JS shell: filters only, no fixture rows)",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Fixture rows not retrievable."
+  },
+  {
+   "id": "src-wta-rankings",
+   "org": "Women's Tennis Association",
+   "url": "https://www.wtatennis.com/",
+   "observed": "2026-10-22T21:50Z/2026-10-22T21:50Z",
+   "method": "not fetched — draw PDFs used instead",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Official per-seed ranks read from the two draw PDFs instead."
+  },
+  {
+   "id": "src-gaagalway",
+   "org": "Galway GAA",
+   "url": "https://www.gaagalway.ie/fixtures/",
+   "observed": "2026-10-22T21:50Z/2026-10-22T21:50Z",
+   "method": "Arena page-fetch — transport failure",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Fetch failed; Moycullen v Salthill-Knocknacarra left unverified."
+  },
+  {
+   "id": "src-aflw-ladder",
+   "org": "Australian Football League",
+   "url": "https://www.afl.com.au/aflw/ladder",
+   "observed": "2026-10-22T21:52Z/2026-10-22T21:53Z",
+   "method": "Arena page-fetch (JS: 'Loading', no ladder rows)",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Ladder not retrievable — no AFLW strength input, pricing withheld."
+  },
+  {
+   "id": "src-atp-rankings",
+   "org": "ATP Tour",
+   "url": "https://www.atptour.com/en/rankings/singles",
+   "observed": "2026-10-22T21:47Z/2026-10-22T21:49Z",
+   "method": "Arena page-fetch, chunks 0-2 (date-selector only; ranked table deeper and not reached)",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Official seeds from event draw/schedule pages used; player rank table not retrieved (flagged)."
+  },
+  {
+   "id": "src-nba-standings",
+   "org": "National Basketball Association",
+   "url": "https://www.nba.com/standings",
+   "observed": "2026-10-22T21:50Z/2026-10-22T21:50Z",
+   "method": "not attempted after nba.com/schedule and /games JS-blocked twice",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "No NBA strength input obtained; NBA rows unpriced."
+  },
+  {
+   "id": "src-euroleague-standings",
+   "org": "Euroleague Basketball",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/",
+   "observed": "2026-10-22T21:05Z/2026-10-22T21:05Z",
+   "method": "not fetched — team records read from the official game-center article instead",
+   "observed_by": "this-session",
+   "role": "official",
+   "note": "Records for the six Friday teams taken from the Round 7 game-center article."
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard · OLBG desk 8f6d7364 (T66)</title><style>
+:root{--bg:#0f1420;--panel:#171d2c;--panel2:#1d2436;--line:#2a3350;--txt:#e7ecf6;--mut:#9aa7c4;
+--acc:#5aa9ff;--ok:#2fbf71;--warn:#e8b03a;--bad:#e05d5d;--high:#ff7a59;--med:#5aa9ff;--low:#8a94ad;}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--panel);border-bottom:1px solid var(--line);padding:14px 22px;position:sticky;top:0;z-index:5}
+header h1{font-size:18px;margin:0}header .sub{color:var(--mut);font-size:12.5px}
+nav{background:var(--panel2);border-bottom:1px solid var(--line);padding:8px 22px;position:sticky;top:57px;z-index:4}
+nav a{margin-right:14px;font-size:13.5px;color:var(--mut)}nav a.on{color:var(--txt);font-weight:600}
+main{max-width:1280px;margin:18px auto;padding:0 18px 60px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0 20px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.tile b{display:block;font-size:22px}.tile span{color:var(--mut);font-size:12px}
+h2{font-size:17px;margin:26px 0 10px}h3{font-size:15px;margin:18px 0 8px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:13.2px;background:var(--panel);border:1px solid var(--line)}
+th{background:var(--panel2);text-align:left;padding:8px 9px;border-bottom:1px solid var(--line);position:sticky;top:0}
+td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}td.num,th.num{text-align:right;white-space:nowrap}
+.bad{display:inline-block;padding:1px 8px;border-radius:10px;font-size:11.5px;font-weight:600;white-space:nowrap}
+.v{background:#123826;color:#7ee2b0;border:1px solid #1f5c3f}.u{background:#3a2a12;color:#f3cf7e;border:1px solid #6b4d1d}
+.nv{background:#33161a;color:#f0a1a1;border:1px solid #6b2b31}
+.high{background:#40201a;color:#ff9c80;border:1px solid #7a3b2e}.med{background:#152a44;color:#9cc7ff;border:1px solid #2b4a75}
+.low{background:#242a38;color:#b7c0d6;border:1px solid #3a4258}
+.mut{color:var(--mut)}.mono{font-family:ui-monospace,Consolas,monospace;font-size:12.5px}
+.note{background:#14203a;border:1px solid #27406e;border-radius:8px;padding:10px 12px;margin:10px 0;font-size:13.4px}
+.warnbox{background:#2b2210;border:1px solid #6b541d;border-radius:8px;padding:10px 12px;margin:10px 0;font-size:13.4px}
+footer{color:var(--mut);font-size:12px;padding:20px;text-align:center;border-top:1px solid var(--line);margin-top:30px}
+.pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:8px 11px;margin:4px 6px 4px 0;font-size:12.6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+@media(max-width:760px){table{font-size:12px}th,td{padding:5px 6px}}
+</style></head><body>
+<header><h1>OLBG research desk · session 8f6d7364 (T66)</h1>
+<div class="sub">Fresh 22 Oct 2026 21:00Z harvest · 17 in-scope sports · official-source verified line by line · generated 2026-10-22T21:55:00Z · not affiliated with OLBG · no betting advice</div></header>
+<nav><a href="index.html" class=on>Dashboard</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="high-confidence.html">High confidence</a><a href="predictions.html">Predictions</a><a href="analysis.html">Analysis</a><a href="flagged.html">Flagged</a><a href="sources.html">Sources</a><a href="methodology.html">Methodology</a></nav>
+<nav style="top:99px"><a href="sports/ice-hockey.html">Ice Hockey</a><a href="sports/baseball.html">Baseball</a><a href="sports/basketball.html">Basketball</a><a href="sports/tennis.html">Tennis</a><a href="sports/cricket.html">Cricket</a><a href="sports/rugby-league.html">Rugby League</a><a href="sports/rugby-union.html">Rugby Union</a><a href="sports/golf.html">Golf</a><a href="sports/motor-racing.html">Motor Racing</a><a href="sports/darts.html">Darts</a><a href="sports/handball.html">Handball</a><a href="sports/volleyball.html">Volleyball</a><a href="sports/aussie-rules.html">Aussie Rules</a><a href="sports/esports.html">eSports</a><a href="sports/gaelic-football.html">Gaelic Football</a><a href="sports/greyhounds.html">Greyhounds</a><a href="sports/snooker.html">Snooker</a></nav>
+<main>
+<div class="tiles">
+<div class="tile"><b>134</b><span>fixture rows (window 22–29 Oct)</span></div>
+<div class="tile"><b>101</b><span>official-verified rows</span></div>
+<div class="tile"><b>33</b><span>unverified (blank + flagged)</span></div>
+<div class="tile"><b>69</b><span>fixtures with our own lines</span></div>
+<div class="tile"><b>2</b><span>High picks (−250…+10000 gate)</span></div>
+<div class="tile"><b>49</b><span>Medium</span></div>
+<div class="tile"><b>18</b><span>Low</span></div>
+<div class="tile"><b>2</b><span>hand-written predictions</span></div>
+<div class="tile"><b>17</b><span>≥70% but outside window (disclosed)</span></div>
+<div class="tile"><b>46</b><span>official / discovery sources</span></div>
+<div class="tile"><b>21</b><span>flags on the Flagged page</span></div>
+<div class="tile"><b>17</b><span>in-scope sports (8 excluded)</span></div>
+</div>
+<div class="note"><b>What this is.</b> A fresh reverse-engineered discovery pass of OLBG's 17 in-scope sport hubs
+(fetched 2026-10-22T20:50Z/2026-10-22T20:57Z), re-verified line by line against league/governing-body pages fetched by this
+session the same evening. OLBG is discovery only — times, picks and tip counts there are never promoted to facts.
+Every published value either carries an <a href="sources.html">official source link with its observation window</a>
+or is left blank and listed on the <a href="flagged.html">Flagged for Review</a> page. Our prices are model
+estimates (<a href="methodology.html">methodology</a>); High = model p ≥ 0.70 with a fair price inside
+−250…+10000 on a verified fixture, and every ≥70% favourite that the window excludes is disclosed on
+<a href="high-confidence.html">High confidence</a> instead of being quietly dropped.</div>
+<h2>Coverage by sport</h2>
+<table><tr><th>sport</th><th>status</th><th class="num">High</th></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td><td>16 rows · 12 official-verified · 12 priced</td><td class="num">1</td></tr><tr><td><a href="sports/baseball.html">Baseball</a></td><td>3 rows · 3 official-verified · 2 priced</td><td class="num">0</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td><td>11 rows · 8 official-verified · 3 priced</td><td class="num">0</td></tr><tr><td><a href="sports/tennis.html">Tennis</a></td><td>14 rows · 14 official-verified · 14 priced</td><td class="num">0</td></tr><tr><td><a href="sports/cricket.html">Cricket</a></td><td>4 rows · 4 official-verified · 0 priced</td><td class="num">0</td></tr><tr><td><a href="sports/rugby-league.html">Rugby League</a></td><td>13 rows · 13 official-verified · 10 priced</td><td class="num">1</td></tr><tr><td><a href="sports/rugby-union.html">Rugby Union</a></td><td>23 rows · 23 official-verified · 22 priced</td><td class="num">0</td></tr><tr><td><a href="sports/golf.html">Golf</a></td><td>2 rows · 2 official-verified · 0 priced</td><td class="num">0</td></tr><tr><td><a href="sports/motor-racing.html">Motor Racing</a></td><td>1 rows · 1 official-verified · 0 priced</td><td class="num">0</td></tr><tr><td><a href="sports/darts.html">Darts</a></td><td>8 rows · 8 official-verified · 0 priced</td><td class="num">0</td></tr><tr><td><a href="sports/handball.html">Handball</a></td><td>15 rows · 6 official-verified · 6 priced</td><td class="num">0</td></tr><tr><td><a href="sports/volleyball.html">Volleyball</a></td><td>14 rows · 0 official-verified · 0 priced</td><td class="num">0</td></tr><tr><td><a href="sports/aussie-rules.html">Aussie Rules</a></td><td>1 rows · 1 official-verified · 0 priced</td><td class="num">0</td></tr><tr><td><a href="sports/esports.html">eSports</a></td><td>no listings from either source — coverage gap (flagged)</td><td class="num">0</td></tr><tr><td><a href="sports/gaelic-football.html">Gaelic Football</a></td><td>6 rows · 3 official-verified · 0 priced</td><td class="num">0</td></tr><tr><td><a href="sports/greyhounds.html">Greyhounds</a></td><td>no listings from either source — coverage gap (flagged)</td><td class="num">0</td></tr><tr><td><a href="sports/snooker.html">Snooker</a></td><td>3 rows · 3 official-verified · 0 priced</td><td class="num">0</td></tr></table>
+<h2>Excluded by the brief (not harvested)</h2>
+<div><span class="pill">soccer / football — excluded by brief</span><span class="pill">American football — excluded by brief</span><span class="pill">boxing — excluded by brief</span><span class="pill">UFC / MMA — excluded by brief</span><span class="pill">hurling — excluded by brief</span><span class="pill">horse racing — excluded by brief</span><span class="pill">cycling — excluded by brief</span><span class="pill">specials — excluded by brief</span></div>
+<h2>Start here</h2>
+<div class="pill"><a href="matches.html">All 134 matches</a></div>
+<div class="pill"><a href="high-confidence.html">High-confidence gate + ≥70% ledgers</a></div>
+<div class="pill"><a href="predictions.html">2 predictions</a></div>
+<div class="pill"><a href="markets.html">Every market we investigated</a></div>
+<div class="pill"><a href="analysis.html">Analysis &amp; findings</a></div>
+<div class="pill"><a href="flagged.html">21 flagged items</a></div>
+</main>
+<footer>T66 · <span class="mono">data/8f6d7364</span> · every row links an official source or is flagged unverified · model values are estimates, never sourced facts</footer>
+</body></html>
