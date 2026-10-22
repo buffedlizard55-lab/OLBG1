@@ -36,6 +36,11 @@ def fixture_from_observation(capture, observation, sport, official_id, **meta):
         raise ValueError('Discovery is not fixture verification')
     values = observation['values']
     facts = {field: values.get(field) for field in FACT_FIELDS}
+    placeholders={'tbd','tba','tbc','unknown','to be determined','n/a','?'}
+    for key,value in list(facts.items()):
+        if isinstance(value,str) and not value.strip():facts[key]=None
+        elif key not in ('official_status','time_text') and isinstance(value,str) and value.strip().lower() in placeholders:facts[key]=None
+        elif key.endswith('_id') and value in (0,'0'):facts[key]=None
     ref = f"{capture['id']}#{observation['id']}"
     return {
         'id': official_id, 'sport': sport, 'facts': facts,

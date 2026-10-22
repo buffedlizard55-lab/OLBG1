@@ -59,7 +59,11 @@ def assemble(at=None, directory=CURRENT):
             row['missing_fields'] += [k for k in ('participant_a','participant_b') if row['facts'][k] is None]
         row['field_status'] = {k: ('verified in captured source' if v is not None else 'unverified') for k,v in row['facts'].items()}
         d=row['facts']['date']
-        row['in_window'] = d is None or start_day<=d<=end_day
+        if row['facts']['start_utc']:
+            start=parse_time(row['facts']['start_utc'])
+            row['in_window'] = at <= start < at+timedelta(days=HORIZON_DAYS)
+        else:
+            row['in_window'] = d is None or start_day<=d<=end_day
     fixtures.sort(key=lambda r: (r['facts']['start_utc'] or (r['facts']['date'] or '9999')+'T99',r['sport'],r['id']))
     prices = [originate(row,stats,at) for row in fixtures]
     coverage = []
@@ -87,7 +91,8 @@ def assemble(at=None, directory=CURRENT):
         'unpriced':sum(not p['markets'] for p in prices),
     }
     snapshot = {'schema_version':SCHEMA_VERSION,'generated_at':iso(at),
-                'window':{'source_date_from':start_day,'source_date_through':end_day,'days':HORIZON_DAYS},
+                'window':{'source_date_from':start_day,'source_date_through':end_day,'days':HORIZON_DAYS,'utc_from':iso(at),'utc_until_exclusive':iso(at+timedelta(days=HORIZON_DAYS)),
+                          'rule':'Exact UTC starts use the rolling UTC interval; undated/date-only rows use the declared source-calendar window with explicit flags.'},
                 'complete':False,'facts_policy':'Only captured official-source fields. Blank = unverified. A published schedule is not proof of current match status.',
                 'model_version':MODEL_VERSION,'assumptions':ASSUMPTIONS,'counts':counts,'coverage':coverage,
                 'fixtures':fixtures,'statistics':stats,'prices':prices,'predictions':[],

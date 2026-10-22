@@ -26,18 +26,30 @@ def refresh(directory=CURRENT,timeout=10,probe=True):
     for path in (directory/'evidence').glob('http-*.json'):path.unlink()
     specs=[
         ('http-nhl-schedule','ice-hockey','nhl',f'https://api-web.nhle.com/v1/schedule/{first}',nhl_schedule,()),
-        ('http-mlb-schedule','baseball','mlb',f'https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate={first}&endDate={last}&hydrate=team,venue',mlb_schedule,(season,)),
+        ('http-mlb-schedule','baseball','mlb',f'https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate={prior}&endDate={last}&hydrate=team,venue',mlb_schedule,(season,)),
         ('http-nba-schedule','basketball','nba','https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json',nba_schedule,()),
     ]
     for cid,sport,prefix,url,parser,extra in specs:
         try:
             resp=fetch.get(url,cid)
             c=envelope(resp,cid,sport,f'{prefix.upper()} schedule {first} through {last}')
-            rows=parser(json.loads(resp.body),c,first,last,*extra)
+            # Full-season NBA feed and MLB range include previous local date
+            # to retain still-future UTC overnight starts.
+            rows=parser(json.loads(resp.body),c,prior if prefix in ('mlb','nba') else first,last,*extra)
             save(directory/'evidence'/f'{cid}.json',seal_capture(c))
             output['fixtures']+=rows;output['successful_feeds'].append(prefix)
         except (FetchError,ValueError,TypeError,KeyError) as e:
             output['attempts'].append({'url':url,'source_id':cid,'status':'unverified','error':'Fixture feed not accepted: '+str(e)[:250],'at':iso(now_utc())})
+    # A previous NHL league-date can still contain a future UTC start. Read it
+    # separately without declaring a successful full-slate replacement on failure.
+    cid='http-nhl-overnight';url=f'https://api-web.nhle.com/v1/schedule/{prior}'
+    try:
+        resp=fetch.get(url,cid)
+        c=envelope(resp,cid,'ice-hockey',f'Previous league-date {prior}; overnight UTC bridge only')
+        rows=nhl_schedule(json.loads(resp.body),c,prior,prior)
+        save(directory/'evidence'/f'{cid}.json',seal_capture(c));output['fixtures']+=rows
+    except (FetchError,ValueError,TypeError,KeyError) as e:
+        output['attempts'].append({'url':url,'source_id':cid,'status':'unverified','error':'Overnight bridge not accepted: '+str(e)[:250],'at':iso(now_utc())})
     for cid,sport,comp,url,parser,args in [
         ('http-nhl-standings','ice-hockey','NHL',f'https://api-web.nhle.com/v1/standings/{prior}',nhl_statistics,([r for r in output['fixtures'] if r['sport']=='ice-hockey'],prior)),
         ('http-mlb-standings','baseball','MLB',f'https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season={season}&standingsTypes=regularSeason',mlb_statistics,(season,first)),

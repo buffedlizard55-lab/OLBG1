@@ -18,7 +18,7 @@ P(scores) = Poisson(λ_A) × Poisson(λ_B), conditional on A ≠ B</code></pre>
 <p>Research handicaps are fixed at side A −1.5 and +1.5 runs. Three half-run totals are centered at floor(λ_A + λ_B) + 0.5. These are originated lines, not claims of bookmaker availability. No alternate is searched to manufacture a 70% pick. Two-way probabilities are complementary and fair prices add zero margin. An equal estimate has no arbitrary preferred side.</p>
 <h3>Other markets</h3><p>Props, correct scores, sets, frames, maps, wickets, placements and outrights need compatible histories, complete fields and settlement rules. Unsupported distributions cannot be derived from a single winner rating. Every category/market family has explicit requirements in the review register.</p>
 <h2 id="price-window">The −250 to +10000 window</h2>
-<p>American −250 equals decimal 1.40; +10000 equals 101.00. Fair zero-margin probabilities are 71.4286% and 0.9901%. Requiring a probability above 70% leaves only about 70%–71.43% overlap. A heavy favorite is not automatically High, and changing a handicap is not evidence of predictive reliability.</p>
+<p>American −250 equals decimal 1.40; +10000 equals 101.00. Fair zero-margin probabilities are 71.4286% and 0.9901%. Adding a >70% probability cutoff would leave only about 70%–71.43% overlap. We do NOT use that cutoff as a High-confidence rule: confidence concerns calibrated evidence and an eligible available price, not merely a favorite’s chance. A heavy favorite is not automatically High, and changing a handicap is not evidence of reliability.</p>
 <pre><code>fair decimal = 1 / model probability
 American = 100 × (decimal − 1)      if decimal ≥ 2
 American = −100 / (decimal − 1)     if 1 &lt; decimal &lt; 2</code></pre>

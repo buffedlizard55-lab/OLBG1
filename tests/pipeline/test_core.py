@@ -16,7 +16,7 @@ class Seeds(unittest.TestCase):
     def setUpClass(cls):
         seed.seed(write=False)
         cls.rows=copy.deepcopy(seed.FIXTURES);cls.stats=copy.deepcopy(seed.STATS);cls.caps={c['id']:seal_capture(c) for c in seed.CAPTURES}
-        cls.at=parse_time(seed.BEFORE)+timedelta(minutes=1)
+        cls.at=max(parse_time(c['observed_before']) for c in seed.CAPTURES)+timedelta(minutes=1)
     def fixture(self,prefix='nhl-2026020154'):return copy.deepcopy(next(r for r in self.rows if r['id']==prefix))
     def test_seventeen_category_policy(self):
         from pipeline.config import SPORT_INDEX,EXCLUDED_IDS
@@ -41,6 +41,11 @@ class Seeds(unittest.TestCase):
                 if not r['id'].startswith('wta-osaka'):self.assertIsNone(r['facts']['competition'])
     def test_retired_tennis_not_upcoming(self):
         self.assertFalse(any('KAYLA DAY' in str(r['facts']).upper() for r in self.rows))
+    def test_placeholder_participant_is_not_verified_identity(self):
+        c=copy.deepcopy(self.caps['nhl-schedule-20261022']);o=copy.deepcopy(c['observations'][0]);o['values']['participant_a']='TBD';o['values']['participant_a_id']='0';r=fixture_from_observation(c,o,'ice-hockey','test')
+        self.assertIsNone(r['facts']['participant_a']);self.assertIsNone(r['facts']['participant_a_id']);self.assertNotIn('participant_a',r['field_evidence'])
+    def test_unknown_status_is_not_cleared_into_prematch(self):
+        r=self.fixture();r['facts']['official_status']='unknown';self.assertEqual(fixture_state(r,self.at),'status not pre-match')
     def test_nashville_record_corrected(self):
         r=next(r for r in self.stats if r['team']=='Nashville Predators')
         self.assertEqual((r['wins'],r['losses'],r['ot_losses'],r['points']),(3,2,3,9))
@@ -83,6 +88,8 @@ class Seeds(unittest.TestCase):
     def test_no_automatic_high(self):
         p=originate(self.fixture(),self.stats,self.at);self.assertEqual(p['confidence'],'low');self.assertIsNone(p['market_quote'])
     def test_calibrated_boolean_cannot_unlock_high(self):self.assertEqual(confidence_gate(.71,1/.71,True,True,True)[0],'low')
+    def test_no_seventy_percent_confidence_rule(self):
+        self.assertFalse(any('70%' in reason for reason in confidence_gate(.4,2.5)[1]))
     def test_nhl_ot_losses_used_as_binary_defeats(self):
         a=next(r for r in self.stats if r['team']=='Boston Bruins');b=next(r for r in self.stats if r['team']=='Nashville Predators')
         self.assertAlmostEqual(log5(a,b),63/88)  # posterior strengths 9/14 vs 5/12

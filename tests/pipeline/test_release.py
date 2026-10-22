@@ -14,7 +14,7 @@ class ReleaseIntegrity(unittest.TestCase):
         seed.seed(write=False)
         for c in seed.CAPTURES:save(self.dir/'evidence'/f'{c["id"]}.json',seal_capture(c))
         save(self.dir/'session_import.json',{'fixtures':copy.deepcopy(seed.FIXTURES),'statistics':copy.deepcopy(seed.STATS)})
-        self.at=parse_time(seed.BEFORE)+timedelta(minutes=1)
+        self.at=max(parse_time(c['observed_before']) for c in seed.CAPTURES)+timedelta(minutes=1)
         self.s=assemble(self.at,self.dir)
     def persist(self):save(self.dir/'snapshot.json',self.s)
     def test_original_evidence_reconciles(self):self.assertEqual(validate_data(self.dir),[])
@@ -35,6 +35,9 @@ class ReleaseIntegrity(unittest.TestCase):
     def test_contradictory_new_stats_do_not_fallback(self):
         save(self.dir/'network.json',{'attempts':[],'fixtures':[],'statistics':[],'successful_feeds':[],'replace_stat_scopes':['NHL']})
         after=assemble(self.at,self.dir);self.assertTrue(all(not p['markets'] for p in after['prices'] if p['fixture_id'].startswith('nhl-')))
+    def test_overnight_future_utc_not_lost_to_old_local_date(self):
+        doc=load(self.dir/'session_import.json');r=doc['fixtures'][0];r['facts']['date']=(self.at.date()-timedelta(days=1)).isoformat();r['facts']['start_utc']=(self.at+timedelta(hours=1)).isoformat();save(self.dir/'session_import.json',doc)
+        after=assemble(self.at,self.dir);self.assertTrue(next(x for x in after['fixtures'] if x['id']==r['id'])['in_window'])
     def test_coverage_does_not_become_complete(self):self.assertFalse(self.s['complete']);self.assertTrue(all(not c['scope_complete'] for c in self.s['coverage']))
     def test_every_fixture_has_price_or_explicit_withholding(self):
         self.assertEqual(len(self.s['fixtures']),len(self.s['prices']))

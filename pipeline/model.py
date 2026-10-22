@@ -118,8 +118,6 @@ def confidence_gate(probability, fair_decimal, calibration=None, quote=None, con
     not a freeform flag or imported legacy label.
     """
     reasons = ['No validated out-of-sample calibration for '+MODEL_VERSION]
-    if not .70 < probability:
-        reasons.append('Model probability does not exceed 70%')
     if not 1.4 <= fair_decimal <= 101.0:
         reasons.append('Originated fair price outside −250…+10000')
     if not quote:

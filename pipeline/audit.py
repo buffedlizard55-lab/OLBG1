@@ -62,7 +62,7 @@ def build_audit(at):
     files=[];rows=[];hashes={};python_errors=[]
     for rel in tracked:
         path=ROOT/rel
-        if rel.startswith(('data/current/','pipeline/','tests/pipeline/')) or not path.is_file():continue
+        if rel.startswith(('data/current/','pipeline/','tests/pipeline/','archive/root-20261022/')) or not path.is_file():continue
         if path.suffix not in ('.json','.py'):continue
         raw=path.read_bytes();hashes[rel]=digest(raw)
         entry={'path':rel,'sha256':digest(raw),'line_count':len(raw.splitlines()),'bytes':len(raw),'status':'parsed','records':0}
@@ -151,7 +151,7 @@ def make_findings(baseline):
         'Historical generators can leave scheduled dates and predictions displayed after the stored start. Canonical sources expire after six hours; elapsed starts are not offered as pre-match picks, and the browser rechecks expiry without waiting for a deployment.',
         'https://api-web.nhle.com/v1/schedule/2026-10-22','scripts/build_site.py','def fmt_when','resolved in canonical site')
     add(7,'medium','Fair-price eligibility is not a bookmaker quote',
-        '−250 means decimal 1.40; +10000 means 101.00. The fair-probability band is about 0.99%–71.43%. Only a narrow part overlaps >70%. No bookmaker prices were verified, so quote/edge fields remain blank. No alternate is searched merely to reach 70%.',
+        '−250 means decimal 1.40; +10000 means 101.00. The fair-probability band is about 0.99%–71.43%. A >70% probability cutoff would admit only a narrow slice, so that is NOT this release’s confidence rule. No bookmaker prices were verified; quote/edge fields stay blank. No alternate is searched to manufacture confidence.',
         'https://www.olbg.com/betting-tips/Darts/15',status='disclosed; quotes unverified')
     add(8,'high','Old NHL record is internally inconsistent',
         'The f71557b5 Boston–Nashville row says Nashville 3-3-2 and 9 points. Three wins plus two overtime losses is 8 points. The freshly read NHL table instead shows 3-2-3, 9 points, 8 games. Old text is not inherited.',

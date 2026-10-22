@@ -1078,7 +1078,8 @@ governed by their official sources and keep their earlier OLBG capture timestamp
     )
 
 
-def main() -> None:
+def _legacy_main() -> None:
+    """Historical reproduction only. The public entrypoint below cannot overwrite the canonical desk."""
     D = load_data()
     h2h = [(m, l) for m, l in zip(
         [f for f in D["fixtures"]["fixtures"] if f.get("away") and not f.get("unpriced")],
@@ -1138,6 +1139,14 @@ current register rather than repeating a snapshot.</p>
     root_pages = len(list(ROOT.glob("*.html"))) + len(list((ROOT / "sports").glob("*.html")))
     ns_pages = len(list(ns.glob("*.html"))) + len(list((ns / "sports").glob("*.html")))
     print(f"Built {root_pages} HTML pages at / and {ns_pages} mirrored HTML pages at /f7fa77fc/.")
+
+
+def main() -> None:
+    """Delegate the historic command to the evidence-first canonical builder."""
+    import sys
+    sys.path.insert(0, str(ROOT))
+    from pipeline.build import build_site
+    build_site(ROOT)
 
 
 if __name__ == "__main__":

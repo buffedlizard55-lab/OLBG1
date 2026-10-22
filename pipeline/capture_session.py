@@ -84,11 +84,11 @@ def seed(write=True):
     ]:
         quote = f'gamePk {gid}; date {date}; gameDate {utc}; away team {aid} {away}; home team {hid} {home}; venue {venue}; abstractGameState Preview; detailedState Scheduled.'
         fixture(mlb, gid, quote, participant_a=home, participant_b=away, participant_a_id=str(hid), participant_b_id=str(aid),
-                date=date, start_utc=utc, venue=venue, competition='MLB', season='2026', official_status='Scheduled', notes=['Series games may be conditional; starting pitchers not verified.'])
+                date=date, start_utc=utc, venue=venue, competition='MLB', season=None, official_status='Scheduled', notes=['Series games may be conditional; starting pitchers not verified.'])
     nba = capture('nba-games-20261022', 'https://www.nba.com/games?date=2026-10-22', 'basketball', 'Both games displayed for 22 October; not the full week.')
     for gid, a, b, when in [('0022600006','Cavaliers','76ers','7:00 PM ET'), ('0022600007','Nuggets','Thunder','9:30 PM ET')]:
         fixture(nba, gid, f'October 2026, Thu22: {a} 0-0 — {when} — {b} 1-0; game {gid}.',
-                participant_a=a, participant_b=b, date='2026-10-22', time_text=when, competition='NBA', season='2026-27',
+                participant_a=a, participant_b=b, date='2026-10-22', time_text=when, competition='NBA', season=None,
                 notes=['Time retained as published. No UTC start or venue imported from an assumed timezone. Zero-game records cannot justify a price.'])
     el = capture('euroleague-round7', 'https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/', 'basketball',
                  'Nine upcoming Round 7 match headings and associated W–L records from chunks 0–1; completed Hapoel–Virtus excluded.',
@@ -223,7 +223,7 @@ def seed(write=True):
         return
     for c in CAPTURES:
         save(CURRENT/'evidence'/f'{c["id"]}.json',seal_capture(c))
-    save(CURRENT/'session_import.json',{'schema_version':1,'session':'257e6674-olbg1','observed_after':AFTER,'observed_before':BEFORE,
+    save(CURRENT/'session_import.json',{'schema_version':1,'session':'257e6674-olbg1','observed_after':AFTER,'observed_before':max(c['observed_before'] for c in CAPTURES),
           'method':'Selected excerpts of actually read official pages; not a raw HTTP archive; no legacy row recertification.',
           'fixtures':FIXTURES,'statistics':STATS,'source_ids':[c['id'] for c in CAPTURES]})
 
@@ -287,6 +287,17 @@ def seed_additional():
     ]:
         c=capture(cid,url,sport,scope,'Not fixture verification; missing content is not proof of no fixtures.')
         obs(c,'retrieval',quote,{})
+    # A separate complete field projection confirms the MLB season explicitly;
+    # do not infer it from an October calendar date or refresh earlier fields.
+    season_source=capture('mlb-season-20261022','https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-28&fields=totalGames,dates,date,games,gamePk,season,gameType','baseball',
+                          'Complete five-game field projection: official gamePk, gameType and season. Season field only is promoted.')
+    season_source.update(observed_after='2026-10-22T08:20:34Z',observed_before='2026-10-22T08:29:13Z',complete=True)
+    for i,gid in enumerate((849805,849802,849804,849803,849799)):
+        obs(season_source,gid,'{"gamePk":'+str(gid)+',"gameType":"W","season":"2026"}',{'season':'2026'},locator=f'/dates/{i}/games/0')
+        row=next(r for r in FIXTURES if r['id']==f'mlb-{gid}')
+        row['facts']['season']='2026';row['field_evidence']['season']=[season_source['id']+'#'+str(gid)]
+        row['source_ids'].append(season_source['id']);row['verified_before']=season_source['observed_before']
+        row['notes'].append('Season explicitly rechecked in a separate game-ID projection. Earlier matchup/start observations and expiry are not rejuvenated.')
     robots=capture('olbg-robots','https://www.olbg.com/robots.txt',None,'Public robots policy read in full.',
                    'Respect /api/ and /storage/app/json_data/ disallows; do not use hidden-worker endpoints or rotate identities.',role='discovery')
     obs(robots,'policy','User-agent: *\nDisallow: /api/\nDisallow: /storage/app/json_data/\nDisallow: /premium/\nUser-agent: Python-urllib\nDisallow: /',{})
