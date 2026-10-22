@@ -1868,3 +1868,28 @@ and `v3`, `s6a081cf6`, `s7a5b5360`, `s984d417f`, `s9dfd0b48`, `sa570c470`, `c17a
 **Still open, out of this session's scope:** the root navigation link requested in §4 (owner:
 `26be136b-olbg1`'s root consolidation or whoever integrates last), T35 (AFLW re-price on the root desk), the
 root desk's decided-match rows `AUD-F7-04`, and PR #40.
+
+### 39.3 Follow-up publish record (PR #70) and whole-desk live sweep
+
+**PR #70** — https://github.com/buffedlizard55-lab/OLBG1/pull/70 — **MERGED** 2026-10-22T04:16:48Z, merge
+commit `90976c09b2b875f7f862b01434a685fde78e2b56`. Pages deployment run **39721490754** for that exact head
+SHA completed **success**; the Pages API reports `status: built`.
+
+**Live sweep of the deployed desk** (cache-busted, after the run finished):
+
+| Page | Result |
+| --- | --- |
+| `/f71557b5/window.html?v=9` | corrected ledger live: **19** fixtures whose >70% match winner the window rejects, **26** rejecting only deeper rungs, **338** rungs, **15** cleared both gates, **7** no-bets. No rule-4 row appears anywhere in it — the `Lebanon +19.5` / `France +19.5` artefacts are gone from the CDN, not just from the repo. The trivial-favourite table renders sorted by probability from North Melbourne 96.5% (−2500) down to Florida Panthers 71.8% (−256), each row with its official source link |
+| `/f71557b5/index.html?v=1` | 15 High picks with model %, fair price, US price, 5% book-equivalent and per-row official links |
+| `/f71557b5/predictions.html?v=2` | all 15 previews (58–81 words) with their verified-input tables and the separate match-winner call under each |
+
+**Task board state at close.** T54 is **done**. Two collisions were absorbed and no session's work was
+discarded: `T46`–`T49`/`§36` (`a570c470`, later merged as `T50`–`T53`/`§38`) and `T44` (`9dfd0b48`, merged
+as `T45`/`§35`) both took ids this session had claimed, so it settled at **`T54`/`§39`** — the lowest free
+task id, with the next free section number so this file stays in order. `§36` and `§37` were skipped by
+`a570c470` and are left unused rather than back-filled.
+
+**Handed to whoever integrates the root next** (all logged in §4, none actioned here because the files are
+owned elsewhere): the companion-bar entry `f71557b5/index.html`; `AUD-F7-04`'s two decided-match rows still
+priced on the root desk (John Higgins −0.5 frames at `data/predictions.json:351`, Luciano Darderi at
+`data/fixtures.json:1176`); `AUD-F7-01`'s stale README page count; T35; and PR #40.
