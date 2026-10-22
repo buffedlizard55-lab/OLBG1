@@ -3981,3 +3981,34 @@ Pages after run 39854948528.
 **Scope compliance.** Files touched by this session: `data/2988bd19/**`, `scripts/s2988bd19_*.py`,
 `2988bd19/**`, `reports/SESSION_2988BD19.md` and append-only additions to this file. No root page,
 `pipeline/**`, workflow, canonical data file or other session's desk was edited.
+
+### 62.5 Final receipts (#148, #149, #151) and one observed deploy race
+
+| PR | Merged (GitHub) | Merge commit | Purpose |
+|---|---|---|---|
+| #148 | 2026-10-22T21:14:51Z | `672daec` | Final receipts with queried merge times; evidence-window pill |
+| #149 | 2026-10-22T21:17:10Z | `ff7d04c` | Own board record renumbered to §62 after the §60 collision |
+| #151 | 2026-10-22T21:22:33Z | `aeba1c3` | High-pick cards print the full selection label; sources link wording |
+
+All three passed the pre-merge `Evidence, model, site and browser gates` (43 s, 31 s and 30 s respectively),
+and the post-merge canonical runs completed **success** for `672daec` (39855678997), `ff7d04c`
+(39855997836) and `aeba1c3` (39856742319).
+
+**Deploy race observed on another session's merge, not caused by this desk.** The legacy
+`pages build and deployment` run **39856936003** for `5bfd1c3` (PR #150, session `546fc70f`) **failed** at
+its `Deploy to GitHub Pages` step while the canonical workflow for the same SHA was still queued; the
+canonical run **39856937404** for that SHA then completed **success**. This is the concurrency race already
+recorded by earlier sessions in §4: two publishers target the same Pages environment and the legacy one can
+lose. No file of that session was edited and no action is requested; the canonical artifact is the publisher
+that succeeded.
+
+**Final live read-back (deployed bytes).** `/OLBG1/2988bd19/index.html` served, after run 39856742319:
+43 listings · 20 officially verified · 18 priced · 90 market lines · 600 priced selections · 2 High picks ·
+2 predictions · 13 flags · 28 sources; the two High cards read *Toronto Maple Leafs +1.5 (puck line)* at
+70.64% / −241 and *San Jose Sharks over 1.5 team goals* at 71.27% / −248; the top pill states the evidence
+read window; and the coverage strip shows 12 verified ice-hockey fixtures and 6 baseball fixtures.
+
+**Self-referential limit.** This receipt commit edits `COORDINATION.md` only, so it is published by the run
+that follows it; no receipt can confirm its own deployment. Everything the desk itself publishes was
+confirmed from the deployed bytes after a successful canonical run.
+
