@@ -450,12 +450,14 @@ def build(ev, NHL_OFFSET=0):
        None, "unverified", "pending", ("root",),
        _i("NBB standings", "not read officially this session", None, tier="pending"),
        _i("NBB standings", "not read officially this session", None, tier="pending"),
-       olbg={"hub": "Basketball/4", "clock": "Today 18:30", "tips": "Pinheiros 2/3 (67%)"})
+       olbg={"hub": "Basketball/4", "clock": "Today 18:30", "tips": "Pinheiros 2/3 (67%)"},
+       flags=["NBB official page not read this session - blank-and-flag"])
     mk("nbb-uni-min", "basketball", "Novo Basquete Brasil 2026-27", "Uniao Corinthians", "Minas",
        None, "unverified", "pending", ("root",),
        _i("NBB standings", "not read officially this session", None, tier="pending"),
        _i("NBB standings", "not read officially this session", None, tier="pending"),
-       olbg={"hub": "Basketball/4", "clock": "Today 18:30", "tips": "Minas 1/1 (100%)"})
+       olbg={"hub": "Basketball/4", "clock": "Today 18:30", "tips": "Minas 1/1 (100%)"},
+       flags=["NBB official page not read this session - blank-and-flag"])
 
     # ---------------- Golf (tournament outright events) --------------------
     mk("golf-pga-bermuda2026", "golf", "PGA TOUR FedExCup Fall - Butterfield Bermuda Championship",

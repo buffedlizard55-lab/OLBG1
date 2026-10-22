@@ -114,7 +114,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T53 | Clean 27-page dashboard (`a570c470/**`) + validator suite (`sa570c470_validate.py` + all existing repo validators) + PR, merge & live GitHub Pages check | queued | a570c470-olbg1 | `a570c470/**`, `scripts/sa570c470_{build_site,validate}.py`, additive root companion link at merge | 2026-10-22T02:51Z | Zero edits to any other session's files. |
 | T54 | **Live 22 Oct 2026 OLBG full 17-sport hub + sub-route harvest, line-by-line repo & official governing-body verification, team-specific multi-market line origination (Win/1X2/Outright, Spread/Handicap ladders, team-specific Total ladders, Set/Frame/Leg scores & props), strict −250…+10000 High-confidence human predictions (with team, player, form, recent match history & clear selection), 25-page dashboard (`/f71557b5/`), validator gate, final non-destructive root nav integration, PR + merge + Pages verification** | done | f71557b5-olbg1 | `data/f71557b5/**`, `scripts/sf71557b5_*.py`, `f71557b5/**`, `reports/SESSION_F71557B5_AUDIT.md`, append-only `COORDINATION.md` (§39); **no** edit to root `index.html`, `scripts/build_site.py` or `README.md` — those are owned by live sessions `26be136b-olbg1` and `a570c470-olbg1`, so the nav request is logged in §4 instead | 2026-10-22T02:51Z | Claimed as T46; **renumbered T54 / §36** because unmerged branch `arena/a570c470-olbg1` (`a2bc33a`) had already claimed T46–T49 / §36, and `arena/9dfd0b48-olbg1` (`a891ce2`) holds T44/§34-pending renumber. Strict zero-overlap scope. |
 | T55 | **Final integration & site consolidation (22 Oct 2026): reverse-engineer OLBG taxonomy, re-verify all fixtures line-by-line against official sources, originate own lines for every match with multi-market ladders (winner, handicap/spread, total), enforce high-confidence window -250..+10000, generate unique 30+ word human predictions with team/player/form/history and clear selection, build clean GitHub Pages dashboard (landing + sport subpages + analysis + flagged), validate no broken links, PR + merge + Pages deploy** | done | 8cab6428-olbg1 | `data/*.json`, `*.html`, `sports/*.html`, `assets/*`, `scripts/*.py`, `reports/*`, `COORDINATION.md` (append-only) | 2026-10-22T07:17Z | Session 8cab6428-olbg1 final integration; consolidates all parallel desks, re-verifies official sources, enforces price window, publishes Pages. See §40 for publish record. |
-| T56 | **Session `f1c13c19-olbg1` independent live desk (22 Oct 2026): fresh live OLBG harvest across all 17 in-scope hubs via Arena fetch tools, official-source verification line-by-line of every included fixture (governing-body APIs/sites only), own multi-market line origination (winner, handicap/spread ladders, totals), High-confidence tier restricted to selections both >=70% model probability AND inside the -250..+10000 band with a unique >=30-word human prediction per pick (team, player, form, recent history, obvious selection), namespaced clean dashboard (`/f1c13c19/`) with landing + sport subpages + analysis + Flagged-for-Review page, validator gate, PR + merge + GitHub Pages deploy verification** | in progress | f1c13c19-olbg1 | `data/f1c13c19/**`, `scripts/sf1c13c19_*.py`, `f1c13c19/**`, `reports/SESSION_F1C13C19.md`, `COORDINATION.md` (append-only, this row + §41); additive single nav link in root `index.html`/`README.md` only at final integration | 2026-10-22T07:35Z | Claimed after T55 (PR #72/#73 merged). Strictly non-overlapping namespace; no other session's data, generators or pages edited. Fetch channel: Arena `fetch_page`/`web_search` (sandbox egress is GitHub/PyPI/npm only, so all live reads go through the tool layer and are logged with URLs). |
+| T56 | **Session `f1c13c19-olbg1` independent live desk (22 Oct 2026): fresh live OLBG harvest across all 17 in-scope hubs via Arena fetch tools, official-source verification line-by-line of every included fixture (governing-body APIs/sites only), own multi-market line origination (winner, handicap/spread ladders, totals), High-confidence tier restricted to selections both >=70% model probability AND inside the -250..+10000 band with a unique >=30-word human prediction per pick (team, player, form, recent history, obvious selection), namespaced clean dashboard (`/f1c13c19/`) with landing + sport subpages + analysis + Flagged-for-Review page, validator gate, PR + merge + GitHub Pages deploy verification** | done | f1c13c19-olbg1 | `data/f1c13c19/**`, `scripts/sf1c13c19_*.py`, `f1c13c19/**`, `reports/SESSION_F1C13C19.md`, `COORDINATION.md` (append-only, this row + §41); additive single nav link in root `index.html`/`README.md` only at final integration | 2026-10-22T07:35Z | Claimed after T55 (PR #72/#73 merged). Strictly non-overlapping namespace; no other session's data, generators or pages edited. Fetch channel: Arena `fetch_page`/`web_search` (sandbox egress is GitHub/PyPI/npm only, so all live reads go through the tool layer and are logged with URLs). **DONE 2026-10-22T09:05Z:** 137 fixtures (80 verified / 23 cross-checked / 34 pending blank-and-flag), 128 priced: 3 High (NY Islanders ML fair -250; Jonny Clayton -250; Wessel Nijman -233, all verified official ratings) / 12 Medium (3 above-window per T55 window rule) / 113 Low. Official reads: NHL score+schedule APIs, MLB StatsAPI (2026 World Series Rays-Brewers verified), NBA.com, EuroLeague standings+game center, ATP schedules/seeds (Almaty/Brussels/Lyon), WTA signed Ningbo draw PDF, WST match centre, PDC EC schedule/draw articles, URC/LNR/Oyonnax, eurohandball.com, county GAA, cricinfo/Cricket Australia, SHL cross-checks. Zero-vig band engine (High = >=70% AND fair price in -250..+10000, both ratings official). Validator: VALIDATION PASSED. Site `f1c13c19/` (8 pages) + report `reports/SESSION_F1C13C19.md` + §41. |
 
 ---
 
@@ -1956,3 +1956,63 @@ priced on the root desk (John Higgins −0.5 frames at `data/predictions.json:35
 
 ---
 
+
+---
+
+## 41. Session `f1c13c19-olbg1` — T56 Fresh-Harvest Verified Desk (22 Oct 2026)
+
+**Claim & scope:** T56 claimed before work (pushed claim commit on `arena/f1c13c19-olbg1`).
+Scope honoured: only `data/f1c13c19/**`, `scripts/sf1c13c19_*.py`, `f1c13c19/**`,
+`reports/SESSION_F1C13C19.md`, this file (row + this section), and one additive root-nav
+link at integration. No other session's files touched.
+
+### What was done
+1. **Fresh live harvest (07:27-07:45Z)** of every in-scope OLBG hub via Arena `fetch_page`
+   (17 hubs; eSports + Aussie Rules verified-zero, NHL sub-route empty, Rugby League
+   outrights-only). Verbatim archive: `data/f1c13c19/harvest_notes.md` + `olbg_snapshot.json`.
+2. **Official-source verification line-by-line**: NHL official score/schedule APIs
+   (12 FUT games + live records), MLB StatsAPI (2026 World Series Rays at Brewers; MIL
+   103-59 NL#1, TB 98-64 AL#1; venues + 00:00Z starts), NBA.com game pages (CLE@PHI 23:00Z,
+   DEN@OKC 01:30Z; season week-1 records only), EuroLeague official standings + Round 7
+   game centre (incl. Maccabi's Belgrade neutral site), ATP official daily schedules and
+   top-seed pages for Almaty (9410), Brussels (7485), Lyon (496) — Basel/Vienna officially
+   idle this week; WTA official signed draw PDF for Ningbo (Rybakina = world No. 1, seed 1);
+   WST match centre (NI Open R3, all 8 cards); PDC official European Championship
+   schedule + draw articles (Dortmund 22-25 Oct; official 1-32 seeds); URC R4 fixtures;
+   LNR official Top 14 J7 + post-J6 positions; Pro D2 J8 (Oyonnax club site corroboration);
+   eurohandball.com R5 list + official H2H preview; Galway GAA official fixtures (Co.
+   Final 24 Oct 19:00 Pearse Stadium); cricinfo/ICC calendar + Cricket Australia hub;
+   CSA T20 + SHL slates cross-checked; root-desk verified golf/F1/greyhound/LoL/RLWC rows
+   re-used and re-checked.
+3. **Zero-vig band engine** (T54/T55 resolution): 128 priced two-sided matches → 3 High
+   (NY Islanders, fair -250; Jonny Clayton vs Springer, -250; Wessel Nijman vs Schindler,
+   -233 — every High with a unique 55-70-word human write-up built only from verified
+   facts), 12 Medium (3 above-window published per window rule: Wild @ Calgary -256,
+   Panathinaikos -1000, Stade Toulousain -476), 113 Low; 9 event listings (golf/F1/greyhounds).
+4. **Dashboard**: `f1c13c19/` — overview, all-events markets table, high picks, window
+   report, flagged-for-review, OLBG snapshot, methodology, sources; single additive link
+   in root `index.html` companion bar.
+5. **Validator**: `scripts/sf1c13c19_validate.py` → VALIDATION PASSED (fixture coverage,
+   source attachment, market conservation, high-tier gates, 30-word floor, text uniqueness,
+   above-window discipline, page presence).
+
+### Irregularities / notes carried forward
+OLBG upstream: RLWC26 still absent from Rugby League hub; eSports/Aussie hubs zero
+mid-season; NHL sub-route empty on a 12-game night; OLBG clocks repeatedly disagree with
+governing-body start times (darts night session rendered mid-afternoon, Almaty mornings
+rendered overnight, greyhound 06:14-vs-11:14 shift, MLB "Tomorrow 20:00" vs 20:00 ET);
+volleyball small-sample underdog card (Trentino/Cisterna).
+Environment blockers (values taken only when corroborated, tier capped Medium):
+PDC Order-of-Merit page (consent wall), WST rankings page, WTA draws/rankings shells,
+CSA official site unrendered, cvf.cz guessed route 404, plusliga.pl redirect defect
+(F-F7-09 recurs for Polish women's volleyball).
+34 pending rows are blank-and-flagged rather than inferred (volleyball minor leagues,
+women's handball internationals, KBL/NBB, Liiga card, Gibson-Krueger venue, two 23 Oct
+NBA cards).
+
+### Deliverables
+`data/f1c13c19/{fixtures,lines,predictions,olbg_snapshot}.json`, `f1c13c19/*.html` (8),
+`reports/SESSION_F1C13C19.md`, scripts as above, this entry. Task board: T56 → **done**.
+
+**PR/merge/Pages:** recorded below once the pull request merges (this section updated in
+the same commit as the merge verification per §0.4).

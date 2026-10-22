@@ -16,22 +16,22 @@ DATA = pathlib.Path("data/f1c13c19")
 HIGH = {
     "nhl-2026020159":
         "Take the New York Islanders to win at home against the Los Angeles Kings tonight. "
-        "New York is 5-3-1 with Ilya Sorokin already on five wins in net while the Kings "
+        "New York is 5-3-1 with Ilya Sorokin already on five wins in goal while the Kings "
         "arrive at 1-4-2, one of the NHL's coldest starts, per the league's own score feed. "
-        "With Bo Horvat (5 goals) and rookie Matthew Schaefer (8 assists) driving, the "
-        "Islanders are the clear selection on the moneyline.",
+        "With Bo Horvat (five goals) and Matthew Schaefer (eight assists) driving play, the "
+        "Islanders are the clear selection on the moneyline at UBS Arena.",
     "pdc-ec-12":
-        "Jonny Clayton is my call to beat qualifier-path debutant Niko Springer in Dortmund. "
-        "Clayton lifted the Swiss Darts Trophy in Basel earlier this month, beating Luke "
-        "Humphries 8-4 in that final, and he arrives as the European Championship's No. 1 "
-        "tournament seed against the No. 32 seed. In a best-of-eleven-leg opener the "
-        "world-class Welshman's edge is obvious - Clayton to win.",
+        "Jonny Clayton is my call to beat Niko Springer in Dortmund. Clayton arrives as the "
+        "No. 1 seed in this European Championship draw - seeding earned across a strong "
+        "European Tour season - while Springer is listed as the No. 32 seed in the official "
+        "PDC bracket. Over a best-of-eleven-leg opener at the Westfalenhallen the class gap "
+        "is obvious: Clayton to win his first-round tie.",
     "pdc-ec-14":
-        "Wessel Nijman has been one of the breakout forces of this PDC season and he should "
-        "handle Martin Schindler tonight. The Dutchman is seeded second in this European "
-        "Championship draw while Schindler scraped in as the 31st seed, and the format "
-        "rewards Nijman's heavy scoring over eleven legs. Back Nijman to win his "
-        "first-round tie at the Westfalenhallen.",
+        "Wessel Nijman is the pick to beat Martin Schindler tonight at the Westfalenhallen. "
+        "The Dutchman is seeded second in the official European Championship draw while "
+        "Schindler enters as the 31st seed, and the best-of-eleven-leg format rewards the "
+        "heavy scoring Nijman has shown all season on the European Tour. Back Nijman to "
+        "win his first-round match.",
 }
 
 MEDIUM = {
