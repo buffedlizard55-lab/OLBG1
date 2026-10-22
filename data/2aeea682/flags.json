@@ -1,0 +1,211 @@
+[
+ {
+  "id": "F-2AEE-01",
+  "severity": "high",
+  "title": "Coverage is verified but partial",
+  "detail": "71 listings across 10 sports are published; seven category pages have no verified rows and 64 listings are unpriced. This is not a worldwide full-list claim. Empty categories and missing prices remain visible rather than backfilled.",
+  "source_id": "nba",
+  "url": "https://www.nba.com/games?date=2026-10-23",
+  "fixture_ids": []
+ },
+ {
+  "id": "F-2AEE-02",
+  "severity": "high",
+  "title": "Most fixtures cannot be priced responsibly",
+  "detail": "Only four non-conditional MLB games and three EuroLeague fixtures have paired official model inputs. Every other winner, handicap and total is blank/withheld with a row-level reason.",
+  "source_id": "mlb-schedule",
+  "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-29",
+  "fixture_ids": []
+ },
+ {
+  "id": "F-2AEE-03",
+  "severity": "medium",
+  "title": "NHL coverage stops after 25 October",
+  "detail": "All 19 NHL games on 23-25 October were transcribed, but 26-29 October schedule chunks were not. No zero-game inference is made for those dates.",
+  "source_id": "nhl-schedule",
+  "url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+  "fixture_ids": []
+ },
+ {
+  "id": "F-2AEE-04",
+  "severity": "medium",
+  "title": "NBA pairings did not render",
+  "detail": "The official NBA calendar reports 12 games on 23 October and eight on 24 October, but its match-card area returned an error. OLBG-only pairings were not promoted.",
+  "source_id": "nba",
+  "url": "https://www.nba.com/games?date=2026-10-23",
+  "fixture_ids": []
+ },
+ {
+  "id": "F-2AEE-05",
+  "severity": "medium",
+  "title": "PDC schedule is behind a privacy interstitial",
+  "detail": "The official PDC article returned consent text rather than the draw, so no darts fixture or price is claimed as verified.",
+  "source_id": "pdc",
+  "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/",
+  "fixture_ids": []
+ },
+ {
+  "id": "F-2AEE-06",
+  "severity": "medium",
+  "title": "Volleyball competition/season needs reconciliation",
+  "detail": "The PlusLiga URL redirected to TAURON Liga; its title says 2024/2025 while displayed matches are dated October 2026. Rows are withheld until the correct competition page is isolated.",
+  "source_id": "volleyball",
+  "url": "https://www.plusliga.pl/games/tour/47.html",
+  "fixture_ids": []
+ },
+ {
+  "id": "F-2AEE-07",
+  "severity": "low",
+  "title": "AFLW match cards absent from extraction",
+  "detail": "Two official page chunks returned navigation and footer content but no fixtures. No historical AFLW rows were re-stamped.",
+  "source_id": "aflw",
+  "url": "https://www.afl.com.au/aflw/fixture",
+  "fixture_ids": []
+ },
+ {
+  "id": "F-2AEE-08",
+  "severity": "low",
+  "title": "eSports pairings absent from extraction",
+  "detail": "The official LoL Esports schedule shell and Worlds link returned without match pairings in the extracted content.",
+  "source_id": "lol",
+  "url": "https://lolesports.com/en-US/schedule?leagues=worlds",
+  "fixture_ids": []
+ },
+ {
+  "id": "F-2AEE-09",
+  "severity": "low",
+  "title": "No eligible Gaelic football row observed",
+  "detail": "The GAA page displayed a Shinty-Hurling International, which is excluded. This is not evidence of a worldwide zero-fixture schedule.",
+  "source_id": "gaa",
+  "url": "https://www.gaa.ie/fixtures-results",
+  "fixture_ids": []
+ },
+ {
+  "id": "F-2AEE-10",
+  "severity": "low",
+  "title": "Greyhound runner card unavailable",
+  "detail": "GBGB's page exposed its racing search interface and reports, not a future field. No dog, trap or price was inferred.",
+  "source_id": "gbgb",
+  "url": "https://www.gbgb.org.uk/racing/",
+  "fixture_ids": []
+ },
+ {
+  "id": "F-2AEE-11",
+  "severity": "medium",
+  "title": "Bermuda event is already in progress",
+  "detail": "PGA TOUR marks Round 1 In Progress, so the tournament is excluded from pre-event picks. The correct Bermuda tournament ID is R2026528; R2026028 resolves to the BMW Championship.",
+  "source_id": "pga",
+  "url": "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/overview",
+  "fixture_ids": []
+ },
+ {
+  "id": "F-2AEE-12",
+  "severity": "medium",
+  "title": "World Series Game 5 is conditional",
+  "detail": "MLB labels game 849799 ifNecessary=Y. Its fixture remains visible but all prices and winner preference are blank.",
+  "source_id": "mlb-schedule",
+  "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-29",
+  "fixture_ids": [
+   "mlb-849799"
+  ]
+ },
+ {
+  "id": "F-2AEE-13",
+  "severity": "medium",
+  "title": "High clearance is only 0.04 percentage points",
+  "detail": "Under 10 with a push has conditional probability 0.700400, just above the strict 70% gate, and fair -234. The model is not calibrated out-of-sample and omits pitchers, lineups, park and postseason effects; High is a rules label, not a guarantee.",
+  "source_id": "mlb-al",
+  "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103&season=2026&standingsTypes=regularSeason&fields=records,teamRecords,team,id,name,wins,losses,runsScored,runsAllowed,leagueRecord",
+  "fixture_ids": [
+   "mlb-849805",
+   "mlb-849802",
+   "mlb-849804",
+   "mlb-849803"
+  ]
+ },
+ {
+  "id": "F-2AEE-14",
+  "severity": "medium",
+  "title": "Games 1-4 have identical MLB model numbers",
+  "detail": "The same two regular-season team inputs and no venue adjustment produce identical lines for all four non-conditional games. They are separate fixtures, not independent confirmations or four separate betting edges.",
+  "source_id": "mlb-nl",
+  "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=104&season=2026&standingsTypes=regularSeason&fields=records,teamRecords,team,id,name,wins,losses,runsScored,runsAllowed,leagueRecord",
+  "fixture_ids": [
+   "mlb-849805",
+   "mlb-849802",
+   "mlb-849804",
+   "mlb-849803"
+  ]
+ },
+ {
+  "id": "F-2AEE-15",
+  "severity": "low",
+  "title": "WST fourth quarter-final is not yet named",
+  "detail": "Match 60 is officially Winner of match 55 v Winner of match 56. It is excluded from the named match table until the players are official.",
+  "source_id": "wst",
+  "url": "https://www.wst.tv/matches/",
+  "fixture_ids": []
+ },
+ {
+  "id": "F-2AEE-16",
+  "severity": "low",
+  "title": "Leinster venue is TBC",
+  "detail": "The official URC fixture list says TBC for Leinster v Munster; venue is blank.",
+  "source_id": "urc-fixtures",
+  "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
+  "fixture_ids": [
+   "urc-lei-mun"
+  ]
+ },
+ {
+  "id": "F-2AEE-17",
+  "severity": "info",
+  "title": "Ospreys kick-off correction applied",
+  "detail": "The older full fixture list says 19:45; a later official adjustment says 19:00 UK. The desk uses 19:00 and links the correction.",
+  "source_id": "urc-adjustment",
+  "url": "https://www.unitedrugby.com/latest/news/adjustments-to-2026-27-bkt-united-rugby-championship-fixture-broadcast-for-rounds-2-4-6-15/",
+  "fixture_ids": [
+   "urc-osp-dra"
+  ]
+ },
+ {
+  "id": "F-2AEE-18",
+  "severity": "medium",
+  "title": "EHF calendar extraction is incomplete",
+  "detail": "Eleven fixtures were transcribed from the first EHF calendar chunk. Later chunks were not read, and venue/timezone remain blank on every handball row.",
+  "source_id": "ehf",
+  "url": "https://www.eurohandball.com/en/",
+  "fixture_ids": []
+ },
+ {
+  "id": "F-2AEE-19",
+  "severity": "medium",
+  "title": "Unlabelled publication clocks are not converted",
+  "detail": "WTA, IRL, PCB, WST and EHF rows keep the publisher's display value; UTC remains blank where no timezone is stated. URC keeps its explicitly labelled local-zone clock.",
+  "source_id": "wta-ningbo",
+  "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf",
+  "fixture_ids": []
+ },
+ {
+  "id": "F-2AEE-20",
+  "severity": "info",
+  "title": "F1 is an event card, not a match prediction",
+  "detail": "The race has practice and qualifying before it. No driver line is originated from the schedule alone and track-local time is not converted.",
+  "source_id": "f1",
+  "url": "https://www.formula1.com/en/racing/2026/united-states",
+  "fixture_ids": [
+   "f1-usgp-2026"
+  ]
+ },
+ {
+  "id": "F-2AEE-21",
+  "severity": "info",
+  "title": "OLBG tip share is not a market price",
+  "detail": "The baseball hub showed 16/20 (80%) for Milwaukee, while this desk's independent winner estimate is 55.54%. Tip share was not used as a probability or bookmaker quote.",
+  "source_id": "mlb-schedule",
+  "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-29",
+  "fixture_ids": [
+   "mlb-849805"
+  ]
+ }
+]
