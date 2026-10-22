@@ -61,11 +61,15 @@ def main():
     sources = {s["id"]: s for s in desk["sources"]}
 
     # --- sources
-    for s in desk["sources"]:
+    if not re.match(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}Z to \d{4}-\d{2}-\d{2}T\d{2}:\d{2}Z$", desk["read_window"]):
+        err(f"read_window is not an ISO UTC range: {desk['read_window']}")
+    for i, s in enumerate(desk["sources"], start=1):
         if not str(s["url"]).startswith("http"):
             err(f"source {s['id']} has no http URL")
-        if not re.match(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}Z$", s["read_at"]):
-            err(f"source {s['id']} read_at is not an ISO UTC stamp: {s['read_at']}")
+        if s.get("order") != i:
+            err(f"source {s['id']} order is {s.get('order')}, expected {i}")
+        if "read_at" in s:
+            err(f"source {s['id']} still carries an invented per-request timestamp")
 
     # --- fixtures
     for f in desk["fixtures"]:

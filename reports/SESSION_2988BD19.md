@@ -16,34 +16,34 @@ discovery reads** performed during this session and nothing else.
 | Priced selections | 600 |
 | High picks (both rules + written case) | 2 |
 | Written predictions (≥30 words, unique) | 2 |
-| Flags published | 12 |
-| Sources with URL and UTC read time | 28 |
+| Flags published | 13 |
+| Sources with URL and read window | 28 |
 
 Coverage: ice hockey 12/12 NHL games verified and priced; baseball 6/6 World Series fixtures verified and
 priced; basketball 2 NBA fixtures verified but unpriced, 3 EuroLeague fixtures discovery-only; tennis 14,
 cricket 3 and darts 3 discovery-only; eleven in-scope sports published as gaps with reasons.
 
-## 2. Sources actually read (UTC, 22 Oct 2026)
+## 2. Sources actually read (one window: 20:48–20:59Z, 22 Oct 2026)
 
 Official governing-body / league sources:
 
-- `api-web.nhle.com/v1/schedule/2026-10-22` — 12 games, ids, venues, `startTimeUTC` (21:04Z)
-- `api.nhle.com/stats/rest/en/team/summary` — 26 club rows: GP, W-L-OTL, points, GF, GA, PP% (20:58Z)
-- single-club re-reads for Nashville (teamId 18) and Winnipeg (teamId 52) (21:06Z)
-- `api.nhle.com/stats/rest/en/skater/summary` — top three skaters for TOR, NYR, SJS, BOS (21:09–21:10Z)
-- `api-web.nhle.com/v1/scoreboard/2026-10-22` — final scores for 19 and 20 October (21:02Z)
-- `api-web.nhle.com/v1/standings/2026-10-22` — standings stamp 2026-10-22T20:49:30Z (21:00Z)
-- `statsapi.mlb.com` schedule 18–30 Oct, 2026 standings, Milwaukee hitting and pitching splits (21:11–21:13Z)
-- `nba.com/schedule?date=10/22/2026` and `nba.com/standings` (21:20–21:22Z)
-- `euroleaguebasketball.net/en/euroleague/standings/` — all 20 clubs (21:15Z)
+- `api-web.nhle.com/v1/schedule/2026-10-22` — 12 games, ids, venues, `startTimeUTC`
+- `api.nhle.com/stats/rest/en/team/summary` — 26 club rows: GP, W-L-OTL, points, GF, GA, PP%
+- single-club re-reads for Nashville (teamId 18) and Winnipeg (teamId 52)
+- `api.nhle.com/stats/rest/en/skater/summary` — top three skaters for TOR, NYR, SJS, BOS
+- `api-web.nhle.com/v1/scoreboard/2026-10-22` — final scores for 19 and 20 October
+- `api-web.nhle.com/v1/standings/2026-10-22` — standings stamp 2026-10-22T20:49:30Z
+- `statsapi.mlb.com` schedule 18–30 Oct, 2026 standings, Milwaukee hitting and pitching splits
+- `nba.com/schedule?date=10/22/2026` and `nba.com/standings`
+- `euroleaguebasketball.net/en/euroleague/standings/` — all 20 clubs
 
 Discovery and failed reads (recorded, not used as fact):
 
-- OLBG home, ice hockey, baseball, basketball, tennis, cricket and snooker hubs (20:52–21:25Z)
-- `pdc.tv` returned a cookie-consent wall (21:19Z)
-- `atptour.com/en/scores/current` returned completed matches only (21:21Z)
-- `unitedrugby.com/fixtures` returned the site's 404 (21:23Z)
-- `euroleaguebasketball.net/en/euroleague/game-center/` rendered no fixture rows (21:16Z)
+- OLBG home, ice hockey, baseball, basketball, tennis, cricket and snooker hubs
+- `pdc.tv` returned a cookie-consent wall
+- `atptour.com/en/scores/current` returned completed matches only
+- `unitedrugby.com/fixtures` returned the site's 404
+- `euroleaguebasketball.net/en/euroleague/game-center/` rendered no fixture rows
 
 ## 3. The High gate, applied literally
 
@@ -63,6 +63,8 @@ both hold for 70.00% < p ≤ 71.4286% — a 1.43-point window.
 
 - Every priced fixture has a governing-body URL, and its venue and UTC start were transcribed from that page.
 - Team totals were transcribed, not recalculated from match lists.
+- Source timestamps: the fetch tool does not expose per-request HTTP metadata, so the desk publishes one
+  observation window (20:48–20:59Z) and the read order rather than invented per-read stamps (F-2988-13).
 - Every published probability is re-derived from the published lambdas by
   `scripts/s2988bd19_validate.py`; a mismatch of more than 2×10⁻⁶ fails the build.
 - Fair decimal = 1/p and the American price is derived from it; both are re-checked.
@@ -76,7 +78,8 @@ F-2988-01 the 1.43-point window · F-2988-02 NBA unpriced · F-2988-03 EuroLeagu
 F-2988-04 PDC consent wall · F-2988-05 ATP page showed completed matches only · F-2988-06 MLB model lacks
 postseason inputs · F-2988-07 NHL model lacks goaltender/injury/rest · F-2988-08 Anaheim +1.5 misses the band
 by 0.05 points · F-2988-09 later World Series games are conditional · F-2988-10 OLBG tip shares are votes ·
-F-2988-11 eleven in-scope sports had no official read · F-2988-12 prices are estimates, not offers.
+F-2988-11 eleven in-scope sports had no official read · F-2988-12 prices are estimates, not offers ·
+F-2988-13 read timestamps replaced by one honest observation window.
 
 Repository findings (`/2988bd19/repo-review.html`): duplicate section numbers in `COORDINATION.md` (§4 at
 lines 185/2330, §13 at 722/729, §43 at 2160/2525), duplicate task ids (T63 at 123/125, T64 at 129/2941,
