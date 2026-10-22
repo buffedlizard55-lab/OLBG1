@@ -389,7 +389,7 @@
       "summary": "Every AFLW row cites a 2026 R10 ladder input. Against the official afl.com.au 2026 AFLW ladder after Round 10 the published inputs do not reconcile: the rows give North Melbourne 40 points (10-0) where the ladder has 36 (9-1), Geelong 16 at 13th where it has 36 at 2nd, Gold Coast 4 at 18th where it has 28 at 5th, St Kilda 20 at 10th where it has 4 at 18th, and 16 of the 18 clubs disagree. The fixture facts were verified and corrected in this pass; the pricing inputs were not.",
       "evidence": "Read on 2026-10-21 (independent pass T34) from AFL official 2026 AFLW ladder (after Round 10) \u2014 https://www.afl.com.au/aflw/ladder",
       "official_url": "https://www.afl.com.au/aflw/ladder",
-      "resolution": "Disclosed, not silently re-priced. Rewriting nine published rows and three published picks in the commit that discovers the error would destroy the audit trail. Every AFLW row carries the mismatch as a flag, the official ladder is linked, and T35 is filed as the dedicated re-price task.",
+      "resolution": "Disclosed, not silently re-priced. Rewriting nine published rows and three published picks in the commit that discovers the error would destroy the audit trail. Every AFLW row carries the mismatch as a flag, the official ladder is linked, and T35 is filed as the dedicated re-price task. CLOSED 2026-10-22T07:36Z by T35/T63 (session 92af340c-olbg1): all nine rows re-priced in a dedicated commit from a live read of https://www.afl.com.au/aflw/ladder (North Melbourne 1st 36 pts 9-1-0 \u2026 St Kilda 18th 4 pts 1-9-0); AFLW high picks moved 3 -> 4 (Geelong v Fremantle added, Western Bulldogs v Melbourne downgraded to low) and the superseded snapshot values are recorded in COORDINATION.md \u00a748.",
       "source_kind": "official"
     },
     {
@@ -1735,7 +1735,7 @@
       "unrated_sides": 0,
       "flags": [
         "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
+        "T35 re-price executed 2026-10-22 (session 92af340c-olbg1, T63): ratings now derive from a live read of the official afl.com.au 2026 AFLW ladder after Round 10. The table used before 22 Oct did not reconcile with the official ladder (finding T34-01, now closed); the superseded snapshot values are recorded in COORDINATION.md \u00a748 rather than silently dropped."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1749,7 +1749,7 @@
       "unrated_sides": 0,
       "flags": [
         "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
+        "T35 re-price executed 2026-10-22 (session 92af340c-olbg1, T63): ratings now derive from a live read of the official afl.com.au 2026 AFLW ladder after Round 10. The table used before 22 Oct did not reconcile with the official ladder (finding T34-01, now closed); the superseded snapshot values are recorded in COORDINATION.md \u00a748 rather than silently dropped."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1763,7 +1763,7 @@
       "unrated_sides": 0,
       "flags": [
         "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
+        "T35 re-price executed 2026-10-22 (session 92af340c-olbg1, T63): ratings now derive from a live read of the official afl.com.au 2026 AFLW ladder after Round 10. The table used before 22 Oct did not reconcile with the official ladder (finding T34-01, now closed); the superseded snapshot values are recorded in COORDINATION.md \u00a748 rather than silently dropped."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1777,7 +1777,7 @@
       "unrated_sides": 0,
       "flags": [
         "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
+        "T35 re-price executed 2026-10-22 (session 92af340c-olbg1, T63): ratings now derive from a live read of the official afl.com.au 2026 AFLW ladder after Round 10. The table used before 22 Oct did not reconcile with the official ladder (finding T34-01, now closed); the superseded snapshot values are recorded in COORDINATION.md \u00a748 rather than silently dropped."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1791,7 +1791,7 @@
       "unrated_sides": 0,
       "flags": [
         "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
+        "T35 re-price executed 2026-10-22 (session 92af340c-olbg1, T63): ratings now derive from a live read of the official afl.com.au 2026 AFLW ladder after Round 10. The table used before 22 Oct did not reconcile with the official ladder (finding T34-01, now closed); the superseded snapshot values are recorded in COORDINATION.md \u00a748 rather than silently dropped."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1805,7 +1805,7 @@
       "unrated_sides": 0,
       "flags": [
         "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
+        "T35 re-price executed 2026-10-22 (session 92af340c-olbg1, T63): ratings now derive from a live read of the official afl.com.au 2026 AFLW ladder after Round 10. The table used before 22 Oct did not reconcile with the official ladder (finding T34-01, now closed); the superseded snapshot values are recorded in COORDINATION.md \u00a748 rather than silently dropped."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1819,7 +1819,7 @@
       "unrated_sides": 0,
       "flags": [
         "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
+        "T35 re-price executed 2026-10-22 (session 92af340c-olbg1, T63): ratings now derive from a live read of the official afl.com.au 2026 AFLW ladder after Round 10. The table used before 22 Oct did not reconcile with the official ladder (finding T34-01, now closed); the superseded snapshot values are recorded in COORDINATION.md \u00a748 rather than silently dropped."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1833,7 +1833,7 @@
       "unrated_sides": 0,
       "flags": [
         "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
+        "T35 re-price executed 2026-10-22 (session 92af340c-olbg1, T63): ratings now derive from a live read of the official afl.com.au 2026 AFLW ladder after Round 10. The table used before 22 Oct did not reconcile with the official ladder (finding T34-01, now closed); the superseded snapshot values are recorded in COORDINATION.md \u00a748 rather than silently dropped."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },
@@ -1847,7 +1847,7 @@
       "unrated_sides": 0,
       "flags": [
         "OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-        "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."
+        "T35 re-price executed 2026-10-22 (session 92af340c-olbg1, T63): ratings now derive from a live read of the official afl.com.au 2026 AFLW ladder after Round 10. The table used before 22 Oct did not reconcile with the official ladder (finding T34-01, now closed); the superseded snapshot values are recorded in COORDINATION.md \u00a748 rather than silently dropped."
       ],
       "official_url": "https://www.afl.com.au/aflw"
     },

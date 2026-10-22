@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Greyhounds · Desk 92af340c</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="desk-header">
+<h1><a href="../index.html">Desk 92af340c</a> — live OLBG harvest + strict-band origination</h1>
+<p class="desk-sub">Session <code>92af340c-olbg1</code> (T63/T35) · built 2026-10-22T09:01:51+00:00 · cutoff 2026-10-22T09:05:00Z · research only, 18+</p>
+<nav class="desk-nav"><a class="" href="../index.html">Dashboard</a> <a class="" href="../picks.html">All Picks</a> <a class="" href="../predictions.html">High Predictions</a> <a class="active" href="../sports.html">Sports</a> <a class="" href="../verification.html">Verification</a> <a class="" href="../flagged.html">Flagged</a> <a class="" href="../methodology.html">Methodology</a> <a class="" href="../sources.html">Sources</a> <a class="" href="../reverse-engineering.html">OLBG Reverse-Engineering</a></nav>
+<nav class="companion">Other desks: <a href="../../index.html">Canonical research desk</a> · <a href="../../archive/index.html">Archived pre-release desk</a> · <a href="../../8fc47dcb/index.html">8fc47dcb</a> · <a href="../../v3/index.html">v3</a> · <a href="../../6a081cf6/index.html">6a081cf6</a> · <a href="../../f7fa77fc/index.html">f7fa77fc (mirror)</a> · <a href="../../e6716490/index.html">e6716490</a> · <a href="../../7ad0d336/index.html">7ad0d336</a></nav>
+</header>
+<main>
+<h2>Greyhounds</h2>
+<section><h3>OLBG hub read — 2026-10-22T09:01Z</h3>
+<p>Hub: <a href="https://www.olbg.com/betting-tips/Greyhounds/28" rel="noopener">https://www.olbg.com/betting-tips/Greyhounds/28</a> ·
+page state: live race cards rendered · chunks read: [0] of 4 ·
+cards captured: 6. chunk 0 of 4 captured; deeper pagination not re-read this session</p>
+<table class="desk-table"><thead><tr><th>event_id</th><th>Match</th><th>Time label (as rendered)</th><th>Most-tipped</th><th>Market</th><th>Tips</th><th>%</th></tr></thead><tbody><tr><td>689570</td><td>11:14 Kinsley</td><td>Today 06:14</td><td>Limited Blue</td><td>Daily Races</td><td>1/1</td><td>100%</td></tr><tr><td>689576</td><td>11:36 Sheffield</td><td>Today 06:36</td><td>Drumdoit Pixie</td><td>Daily Races</td><td>1/1</td><td>100%</td></tr><tr><td>689581</td><td>12:03 Kinsley</td><td>Today 07:03</td><td>Ballymac Alyssa</td><td>Daily Races</td><td>1/1</td><td>100%</td></tr><tr><td>689584</td><td>12:14 Nottingham</td><td>Today 07:14</td><td>Ferryforth Mary</td><td>Daily Races</td><td>1/1</td><td>100%</td></tr><tr><td>689587</td><td>12:26 Sheffield</td><td>Today 07:26</td><td>Anglesey Shadow</td><td>Daily Races</td><td>1/1</td><td>100%</td></tr><tr><td>689592</td><td>12:42 Sheffield</td><td>Today 07:42</td><td>Fourpenny Glider</td><td>Daily Races</td><td>1/1</td><td>100%</td></tr></tbody></table>
+<h4>Harvest observations</h4><ul><li>Clock defect proof reproduces with a fresh event id: card titled &#x27;11:14 Kinsley&#x27; (11:14 BST = 10:14 UTC) renders &#x27;Today 06:14&#x27; beside it (event_id=689570) - the same defect family as BUG-OLBG-CLOCK-EDT (originally proven on event 689388). Every captured card shows title-time minus five hours.</li><li>Every race card carries exactly one tip (1/1, 100%): thin-consensus multi-runner markets; the desk treats single-tip 100% labels as no-signal.</li><li>GBGB track table (16 licensed tracks with distances) renders in the hub copy; official schedules per gbgb.org.uk remain the desk&#x27;s source for race times.</li><li>The Monmore 11:03 card carried in the desk dataset (grey-monmore-1103) does not render among chunk-0 cards.</li></ul></section>
+<section><h3>Desk rows (future)</h3><p class="muted">No future priced rows for this sport at the desk cutoff.</p></section>
+</main>
+<footer class="desk-footer"><p>Desk 92af340c — an isolated namespaced desk inside the OLBG reverse-engineering repo. Fair prices are model outputs, not factual certification; nothing is inferred: unconfirmed values render blank and are flagged. Do not bet money you cannot afford to lose.</p></footer>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

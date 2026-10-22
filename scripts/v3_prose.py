@@ -17,14 +17,19 @@ HIGH_PROSE = {
     'pdc-ec-16': (
         'Josh Rock enters as the tenth seed of 32 while Chris Dobey is seeded twenty-third, a thirteen-place gap on the European Tour order of merit. Over a best-of-eleven first round the model turns that seeding edge into a clear match price. Selection: Josh Rock to win at 1.42.'
     ),
+    # AFLW previews rewritten 2026-10-22 (T35/T63, session 92af340c-olbg1) against the official
+    # afl.com.au ladder after Round 10. The former aflw-r11-03 and aflw-r11-09 previews were
+    # retired with the re-price: those matches no longer grade High on the corrected ratings
+    # (Bulldogs v Lions-... level on points; Brisbane 14th, not 2nd). Previous texts are in git
+    # history at scripts/v3_prose.py before this commit.
+    'aflw-r11-06': (
+        'Gold Coast are fifth on the official AFLW ladder with 28 points from a 7-3 record and 138.9 per cent, while Richmond sit thirteenth with sixteen points, four wins from ten and 68.9 per cent. Three wins and twelve ladder points separate the clubs after ten rounds, with the match at the Suns\' own People First Stadium. Selection: Gold Coast SUNS -4.5 at 1.41.'
+    ),
     'aflw-r11-07': (
-        'Port Adelaide sit eleventh on the AFLW ladder with 20 points from a 5-5 record, while Collingwood are fifteenth on 12 points at 3-7. The Power have won two more matches and eight more ladder points across ten rounds, and this one is at Alberton. Selection: Port Adelaide to win at 1.41.'
+        'Port Adelaide are eleventh with 16 points from a 4-6 record and 78.8 per cent; Collingwood are sixteenth on four points, having won once in ten at 56.7 per cent. A twelve-point ladder gap and three extra wins back the home side at Alberton Oval, though neither club arrives in strong form. Selection: Port Adelaide -3.5 at 1.40.'
     ),
-    'aflw-r11-09': (
-        'Brisbane are second on 32 points after an 8-2 start and travel to RSEA Park to meet St Kilda, tenth on 20 points at 5-5. Three wins and twelve ladder points separate them, and the model makes the Lions a three-point road favourite. Selection: Brisbane Lions -3 at 1.40.'
-    ),
-    'aflw-r11-03': (
-        'Melbourne are third with 32 points from 8-2 and visit Mission Whitten Oval, where the Western Bulldogs are twelfth on 16 points at 4-6. Four wins and sixteen ladder points divide the sides after ten rounds of the official ladder. Selection: Melbourne -6.5 at 1.41.'
+    'aflw-r11-08': (
+        'Sydney are seventh on the ladder with 28 points from 7-3 and 112.9 per cent, while West Coast hold twelfth place on sixteen points, a 4-6 record and 75.2 per cent. A gap of three wins and twelve points across ten rounds favours the Swans, who host at Henson Park. Selection: Sydney Swans -2.5 at 1.40.'
     ),
     'rl-wc26w-sam-wal': (
         "Samoa Women are ranked fifth in the IRL women's rankings; Wales are seventh and arrive after a 6-70 loss to England Women in Round 1. The two-place ranking gap understates the form difference, which is why the line sits at a converted try and a half. Selection: Samoa Women -1.5 at 1.40."

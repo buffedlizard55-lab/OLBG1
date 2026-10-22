@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-22T07:30:00Z",
+  "as_of": "2026-10-22T09:01:50.832322+00:00",
   "scope": "Primary dataset only; companion desks not recertified.",
   "method": "Offline structural and arithmetic audit, not official-source verification.",
   "network_limit": "OLBG and official sports hosts outside sandbox outbound allowlist. Direct OLBG and NHL HTTPS probes failed (curl exit 35).",
@@ -2423,7 +2423,7 @@
       "sport": "cricket",
       "archived_label": "Australia Women vs New Zealand Women",
       "archived_start_utc": "2026-10-22T08:15:00Z",
-      "stored_start_passed": false,
+      "stored_start_passed": true,
       "prior_status": "verified",
       "legacy_confidence": "high",
       "legacy_probability": 0.680596,
@@ -2453,6 +2453,7 @@
       ],
       "flags": [
         "Official evidence not re-fetched in this session; current facts unverified.",
+        "Stored start has passed; result and current event status are unknown.",
         "Legacy High probability does not exceed 70%; not eligible under strict research screen.",
         "Model calibration and current inputs not validated; no approved betting selection."
       ]
@@ -3953,7 +3954,7 @@
       "stored_start_passed": false,
       "prior_status": "verified",
       "legacy_confidence": "high",
-      "legacy_probability": 0.677731,
+      "legacy_probability": 0.67627,
       "legacy_american": "-244",
       "current_verification": "unverified",
       "verified_start_utc": null,
@@ -3968,6 +3969,10 @@
         {
           "name": "AFL official 2026 NAB AFLW fixture & ladder",
           "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "name": "AFL official 2026 AFLW ladder after Round 10 (read 2026-10-22)",
+          "url": "https://www.afl.com.au/aflw/ladder"
         }
       ],
       "flags": [
@@ -3983,38 +3988,8 @@
       "archived_start_utc": "2026-10-24T04:05:00Z",
       "stored_start_passed": false,
       "prior_status": "verified",
-      "legacy_confidence": "medium",
-      "legacy_probability": 0.609634,
-      "legacy_american": "-179",
-      "current_verification": "unverified",
-      "verified_start_utc": null,
-      "verified_home": null,
-      "verified_away": null,
-      "verified_form": null,
-      "approved_selection": null,
-      "approved_probability": null,
-      "approved_confidence": null,
-      "approved_prediction": null,
-      "sources": [
-        {
-          "name": "AFL official 2026 NAB AFLW fixture & ladder",
-          "url": "https://www.afl.com.au/aflw"
-        }
-      ],
-      "flags": [
-        "Official evidence not re-fetched in this session; current facts unverified.",
-        "Model calibration and current inputs not validated; no approved betting selection."
-      ]
-    },
-    {
-      "id": "aflw-r11-03",
-      "sport": "aussie-rules",
-      "archived_label": "Western Bulldogs vs Melbourne",
-      "archived_start_utc": "2026-10-24T08:15:00Z",
-      "stored_start_passed": false,
-      "prior_status": "verified",
-      "legacy_confidence": "medium",
-      "legacy_probability": 0.680412,
+      "legacy_confidence": "high",
+      "legacy_probability": 0.678664,
       "legacy_american": "-250",
       "current_verification": "unverified",
       "verified_start_utc": null,
@@ -4029,23 +4004,28 @@
         {
           "name": "AFL official 2026 NAB AFLW fixture & ladder",
           "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "name": "AFL official 2026 AFLW ladder after Round 10 (read 2026-10-22)",
+          "url": "https://www.afl.com.au/aflw/ladder"
         }
       ],
       "flags": [
         "Official evidence not re-fetched in this session; current facts unverified.",
+        "Legacy High probability does not exceed 70%; not eligible under strict research screen.",
         "Model calibration and current inputs not validated; no approved betting selection."
       ]
     },
     {
-      "id": "aflw-r11-04",
+      "id": "aflw-r11-03",
       "sport": "aussie-rules",
-      "archived_label": "Carlton vs GWS GIANTS",
-      "archived_start_utc": "2026-10-25T06:05:00Z",
+      "archived_label": "Western Bulldogs vs Melbourne",
+      "archived_start_utc": "2026-10-24T08:15:00Z",
       "stored_start_passed": false,
       "prior_status": "verified",
-      "legacy_confidence": "high",
-      "legacy_probability": 0.677489,
-      "legacy_american": "-244",
+      "legacy_confidence": "low",
+      "legacy_probability": 0.544687,
+      "legacy_american": "-133",
       "current_verification": "unverified",
       "verified_start_utc": null,
       "verified_home": null,
@@ -4059,19 +4039,22 @@
         {
           "name": "AFL official 2026 NAB AFLW fixture & ladder",
           "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "name": "AFL official 2026 AFLW ladder after Round 10 (read 2026-10-22)",
+          "url": "https://www.afl.com.au/aflw/ladder"
         }
       ],
       "flags": [
         "Official evidence not re-fetched in this session; current facts unverified.",
-        "Legacy High probability does not exceed 70%; not eligible under strict research screen.",
         "Model calibration and current inputs not validated; no approved betting selection."
       ]
     },
     {
-      "id": "aflw-r11-05",
+      "id": "aflw-r11-04",
       "sport": "aussie-rules",
-      "archived_label": "Hawthorn vs Essendon",
-      "archived_start_utc": "2026-10-25T04:05:00Z",
+      "archived_label": "Carlton vs GWS GIANTS",
+      "archived_start_utc": "2026-10-25T06:05:00Z",
       "stored_start_passed": false,
       "prior_status": "verified",
       "legacy_confidence": "high",
@@ -4090,6 +4073,45 @@
         {
           "name": "AFL official 2026 NAB AFLW fixture & ladder",
           "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "name": "AFL official 2026 AFLW ladder after Round 10 (read 2026-10-22)",
+          "url": "https://www.afl.com.au/aflw/ladder"
+        }
+      ],
+      "flags": [
+        "Official evidence not re-fetched in this session; current facts unverified.",
+        "Legacy High probability does not exceed 70%; not eligible under strict research screen.",
+        "Model calibration and current inputs not validated; no approved betting selection."
+      ]
+    },
+    {
+      "id": "aflw-r11-05",
+      "sport": "aussie-rules",
+      "archived_label": "Hawthorn vs Essendon",
+      "archived_start_utc": "2026-10-25T04:05:00Z",
+      "stored_start_passed": false,
+      "prior_status": "verified",
+      "legacy_confidence": "high",
+      "legacy_probability": 0.678664,
+      "legacy_american": "-250",
+      "current_verification": "unverified",
+      "verified_start_utc": null,
+      "verified_home": null,
+      "verified_away": null,
+      "verified_form": null,
+      "approved_selection": null,
+      "approved_probability": null,
+      "approved_confidence": null,
+      "approved_prediction": null,
+      "sources": [
+        {
+          "name": "AFL official 2026 NAB AFLW fixture & ladder",
+          "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "name": "AFL official 2026 AFLW ladder after Round 10 (read 2026-10-22)",
+          "url": "https://www.afl.com.au/aflw/ladder"
         }
       ],
       "flags": [
@@ -4105,9 +4127,9 @@
       "archived_start_utc": "2026-10-24T06:05:00Z",
       "stored_start_passed": false,
       "prior_status": "verified",
-      "legacy_confidence": "low",
-      "legacy_probability": 0.507276,
-      "legacy_american": "-114",
+      "legacy_confidence": "medium",
+      "legacy_probability": 0.674217,
+      "legacy_american": "-244",
       "current_verification": "unverified",
       "verified_start_utc": null,
       "verified_home": null,
@@ -4121,6 +4143,10 @@
         {
           "name": "AFL official 2026 NAB AFLW fixture & ladder",
           "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "name": "AFL official 2026 AFLW ladder after Round 10 (read 2026-10-22)",
+          "url": "https://www.afl.com.au/aflw/ladder"
         }
       ],
       "flags": [
@@ -4136,8 +4162,8 @@
       "stored_start_passed": false,
       "prior_status": "verified",
       "legacy_confidence": "medium",
-      "legacy_probability": 0.680643,
-      "legacy_american": "-250",
+      "legacy_probability": 0.675151,
+      "legacy_american": "-244",
       "current_verification": "unverified",
       "verified_start_utc": null,
       "verified_home": null,
@@ -4151,6 +4177,10 @@
         {
           "name": "AFL official 2026 NAB AFLW fixture & ladder",
           "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "name": "AFL official 2026 AFLW ladder after Round 10 (read 2026-10-22)",
+          "url": "https://www.afl.com.au/aflw/ladder"
         }
       ],
       "flags": [
@@ -4166,8 +4196,8 @@
       "stored_start_passed": false,
       "prior_status": "verified",
       "legacy_confidence": "medium",
-      "legacy_probability": 0.615595,
-      "legacy_american": "-182",
+      "legacy_probability": 0.676902,
+      "legacy_american": "-244",
       "current_verification": "unverified",
       "verified_start_utc": null,
       "verified_home": null,
@@ -4181,6 +4211,10 @@
         {
           "name": "AFL official 2026 NAB AFLW fixture & ladder",
           "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "name": "AFL official 2026 AFLW ladder after Round 10 (read 2026-10-22)",
+          "url": "https://www.afl.com.au/aflw/ladder"
         }
       ],
       "flags": [
@@ -4196,8 +4230,8 @@
       "stored_start_passed": false,
       "prior_status": "verified",
       "legacy_confidence": "medium",
-      "legacy_probability": 0.675197,
-      "legacy_american": "-244",
+      "legacy_probability": 0.609634,
+      "legacy_american": "-179",
       "current_verification": "unverified",
       "verified_start_utc": null,
       "verified_home": null,
@@ -4211,6 +4245,10 @@
         {
           "name": "AFL official 2026 NAB AFLW fixture & ladder",
           "url": "https://www.afl.com.au/aflw"
+        },
+        {
+          "name": "AFL official 2026 AFLW ladder after Round 10 (read 2026-10-22)",
+          "url": "https://www.afl.com.au/aflw/ladder"
         }
       ],
       "flags": [
@@ -4615,13 +4653,13 @@
   ],
   "counts": {
     "rows": 134,
-    "stored_start_passed": 29,
-    "legacy_high": 29,
+    "stored_start_passed": 30,
+    "legacy_high": 30,
     "unverified": 134
   },
   "input_sha256": {
-    "data/fixtures.json": "80b26bd851e7b0d4b248797afc20706d1ad2375e01387490adfcdb38cb549c36",
-    "data/lines.json": "e1fc58095d5cd6ef679c18fa6d15607fbf61d76c6f6545469995d809fdf05abe",
-    "data/predictions.json": "9e2e2af93fb900f1420f8a8cd2b0e9d24a8ea8886b02636db405ad76c27aa864"
+    "data/fixtures.json": "26b8de1934e653137cd06a549e4c2b0ab5fc300e21a07f65cdc1e7ad35d359d5",
+    "data/lines.json": "6a76e1dea9c679af0a8175427d87c02176052faee71ba3f0ada4ac21469deede",
+    "data/predictions.json": "da85483d15ffa474e328b1121f3ecf6b1c29a87fd998c0eac89db06c67b6df8e"
   }
 }

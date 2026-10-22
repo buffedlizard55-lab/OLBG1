@@ -1,0 +1,83 @@
+{
+ "sport": "greyhounds",
+ "slug": "Greyhounds",
+ "id": 28,
+ "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+ "read_utc": "2026-10-22T09:01Z",
+ "title": "Greyhound Racing Tips & Free Predictions Today - OLBG.com",
+ "page_state": "live race cards rendered",
+ "chunks_read": [
+  0
+ ],
+ "chunks_total": 4,
+ "pagination_note": "chunk 0 of 4 captured; deeper pagination not re-read this session",
+ "events": [
+  {
+   "event_id": 689570,
+   "match": "11:14 Kinsley",
+   "time_label": "Today 06:14",
+   "selection": "Limited Blue",
+   "market": "Daily Races",
+   "tips": "1/1",
+   "pct": "100%",
+   "comments": 0
+  },
+  {
+   "event_id": 689576,
+   "match": "11:36 Sheffield",
+   "time_label": "Today 06:36",
+   "selection": "Drumdoit Pixie",
+   "market": "Daily Races",
+   "tips": "1/1",
+   "pct": "100%",
+   "comments": 0
+  },
+  {
+   "event_id": 689581,
+   "match": "12:03 Kinsley",
+   "time_label": "Today 07:03",
+   "selection": "Ballymac Alyssa",
+   "market": "Daily Races",
+   "tips": "1/1",
+   "pct": "100%",
+   "comments": 0
+  },
+  {
+   "event_id": 689584,
+   "match": "12:14 Nottingham",
+   "time_label": "Today 07:14",
+   "selection": "Ferryforth Mary",
+   "market": "Daily Races",
+   "tips": "1/1",
+   "pct": "100%",
+   "comments": 0
+  },
+  {
+   "event_id": 689587,
+   "match": "12:26 Sheffield",
+   "time_label": "Today 07:26",
+   "selection": "Anglesey Shadow",
+   "market": "Daily Races",
+   "tips": "1/1",
+   "pct": "100%",
+   "comments": 0
+  },
+  {
+   "event_id": 689592,
+   "match": "12:42 Sheffield",
+   "time_label": "Today 07:42",
+   "selection": "Fourpenny Glider",
+   "market": "Daily Races",
+   "tips": "1/1",
+   "pct": "100%",
+   "comments": 0
+  }
+ ],
+ "event_cards_captured": 6,
+ "observations": [
+  "Clock defect proof reproduces with a fresh event id: card titled '11:14 Kinsley' (11:14 BST = 10:14 UTC) renders 'Today 06:14' beside it (event_id=689570) - the same defect family as BUG-OLBG-CLOCK-EDT (originally proven on event 689388). Every captured card shows title-time minus five hours.",
+  "Every race card carries exactly one tip (1/1, 100%): thin-consensus multi-runner markets; the desk treats single-tip 100% labels as no-signal.",
+  "GBGB track table (16 licensed tracks with distances) renders in the hub copy; official schedules per gbgb.org.uk remain the desk's source for race times.",
+  "The Monmore 11:03 card carried in the desk dataset (grey-monmore-1103) does not render among chunk-0 cards."
+ ]
+}

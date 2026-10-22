@@ -582,11 +582,110 @@ CONFIRMED.update(T34_CONFIRMED)
 CORRECTED.update(T34_CORRECTED)
 FLAGGED.update(T34_FLAGGED)
 
+# ---------------------------------------------------------------------------
+# T63 pass (session 92af340c-olbg1, 2026-10-22) — executes the T35 AFLW re-price.
+# https://www.afl.com.au/aflw/ladder was fetched live this session (resolves to
+# ?Competition=3&Season=96&Round=1513, "NAB AFLW 2026, Round 11" view). Every club
+# has played 10 matches. Ladder as read: 1 North Melbourne 36 pts 9-1-0 251.9%,
+# 2 Geelong Cats 36 9-1-0 167.2%, 3 Melbourne 32 8-2-0 177.2%, 4 Western Bulldogs
+# 32 8-2-0 140.9%, 5 Gold Coast SUNS 28 7-3-0 138.9%, 6 Carlton 28 7-3-0 133.0%,
+# 7 Sydney Swans 28 7-3-0 112.9%, 8 Fremantle 20 5-5-0 104.9%, 9 Adelaide Crows
+# 20 5-5-0 102.4%, 10 Hawthorn 20 5-5-0 101.5%, 11 Port Adelaide 16 4-6-0 78.8%,
+# 12 West Coast Eagles 16 4-6-0 75.2%, 13 Richmond 16 4-6-0 68.9%, 14 Brisbane
+# Lions 12 3-7-0 89.7%, 15 GWS GIANTS 8 2-8-0 68.2%, 16 Collingwood 4 1-9-0 56.7%,
+# 17 Essendon 4 1-9-0 55.6%, 18 St Kilda 4 1-9-0 45.1%.
+# These nine rows keep their T34-corrected fixture facts (times, venues, match ids
+# 8970-8979); only the pricing inputs move, per the T35 board scope.
+# ---------------------------------------------------------------------------
+T63_AT = "2026-10-22T07:36Z"
+
+T63_CORRECTED: dict[str, dict[str, str]] = {
+    "aflw-r11-01": {"src": "aflw_ladder", "at": T63_AT,
+        "evidence": "Official ladder read 2026-10-22: North Melbourne 1st, 36 pts, 9-1-0, 251.9%; Adelaide Crows 9th, 20 pts, 5-5-0, 102.4%. The row previously priced North Melbourne as '1st, 40 pts (10-0)' rating 96.0 — the official ladder gives 36 pts (9-1-0).",
+        "change": "T35 re-price: ratings 96.0/60.0 -> 89.0/59.0 (formula: base = round(31 + (pts-4)*65/36), tied-point clubs separated by ladder position, -1 per position). Pick moved from North Melbourne -10.5 to North Melbourne -8.0; prediction rewritten."},
+    "aflw-r11-02": {"src": "aflw_ladder", "at": T63_AT,
+        "evidence": "Official ladder read 2026-10-22: Geelong Cats 2nd, 36 pts, 9-1-0, 167.2%; Fremantle 8th, 20 pts, 5-5-0, 104.9%. The row previously had Geelong '13th, 16 pts' and Fremantle '7th, 24 pts' — positions reversed against the official table.",
+        "change": "T35 re-price: ratings 50.0/66.0 -> 88.0/60.0. Favourite flips from Fremantle to Geelong; row becomes a high-confidence pick (Geelong Cats -7.0) with a new prediction."},
+    "aflw-r11-03": {"src": "aflw_ladder", "at": T63_AT,
+        "evidence": "Official ladder read 2026-10-22: Western Bulldogs 4th, 32 pts, 8-2-0, 140.9%; Melbourne 3rd, 32 pts, 8-2-0, 177.2%. The row previously had the Bulldogs '12th, 16 pts' against Melbourne '3rd, 32 pts'.",
+        "change": "T35 re-price: ratings 51.0/82.0 -> 81.0/82.0. The clubs are level on points and wins, separated only by percentage, so confidence drops from medium to low; no pick is published on a near-even official table beyond the model's home-base moneyline."},
+    "aflw-r11-04": {"src": "aflw_ladder", "at": T63_AT,
+        "evidence": "Official ladder read 2026-10-22: Carlton 6th, 28 pts, 7-3-0, 133.0%; GWS GIANTS 15th, 8 pts, 2-8-0, 68.2%. The row previously had Carlton '6th, 24 pts (6-4)' and GWS '16th, 8 pts'.",
+        "change": "T35 re-price: ratings 67.0/38.0 -> 73.0/38.0. Pick moved from Carlton -7.5 to Carlton -10.0; prediction rewritten against the official values."},
+    "aflw-r11-05": {"src": "aflw_ladder", "at": T63_AT,
+        "evidence": "Official ladder read 2026-10-22: Hawthorn 10th, 20 pts, 5-5-0, 101.5%; Essendon 17th, 4 pts, 1-9-0, 55.6%. The row previously had Hawthorn '4th, 32 pts (8-2)' and Essendon '14th, 14 pts (3-6-1)'.",
+        "change": "T35 re-price: ratings 81.0/46.0 -> 58.0/30.0. Hawthorn remain favourites but by less; pick moved from Hawthorn -10.0 to Hawthorn -7.0; prediction rewritten."},
+    "aflw-r11-06": {"src": "aflw_ladder", "at": T63_AT,
+        "evidence": "Official ladder read 2026-10-22: Gold Coast SUNS 5th, 28 pts, 7-3-0, 138.9%; Richmond 13th, 16 pts, 4-6-0, 68.9%. The row previously had Gold Coast '18th, 4 pts' and Richmond '17th, 8 pts' — both reversed.",
+        "change": "T35 re-price: ratings 31.0/37.0 -> 74.0/51.0. Favourite flips from Richmond to Gold Coast; separation 0.765 is below the 0.780 aussie-rules high threshold, so the row is medium, not high."},
+    "aflw-r11-07": {"src": "aflw_ladder", "at": T63_AT,
+        "evidence": "Official ladder read 2026-10-22: Port Adelaide 11th, 16 pts, 4-6-0, 78.8%; Collingwood 16th, 4 pts, 1-9-0, 56.7%. The row previously had Port Adelaide '11th, 20 pts (5-5)' and Collingwood '15th, 12 pts'.",
+        "change": "T35 re-price: ratings 58.0/43.0 -> 53.0/31.0. Port Adelaide remain favourites (medium)."},
+    "aflw-r11-08": {"src": "aflw_ladder", "at": T63_AT,
+        "evidence": "Official ladder read 2026-10-22: Sydney Swans 7th, 28 pts, 7-3-0, 112.9%; West Coast Eagles 12th, 16 pts, 4-6-0, 75.2%. The row previously had Sydney '5th, 26 pts (6-3-1)' and West Coast '8th, 24 pts'.",
+        "change": "T35 re-price: ratings 71.0/65.0 -> 72.0/52.0. Sydney remain favourites, now medium (was low) on a wider official gap."},
+    "aflw-r11-09": {"src": "aflw_ladder", "at": T63_AT,
+        "evidence": "Official ladder read 2026-10-22: St Kilda 18th, 4 pts, 1-9-0, 45.1%; Brisbane Lions 14th, 12 pts, 3-7-0, 89.7%. The row previously had St Kilda '10th, 20 pts' and Brisbane '2nd, 32 pts (8-2)'.",
+        "change": "T35 re-price: ratings 59.0/84.0 -> 29.0/45.0. Brisbane remain favourites but at 0.610 rather than 0.778, so the row is medium; no AFLW prediction is published on it."},
+}
+
+CORRECTED.update(T63_CORRECTED)
+
+# ---------------------------------------------------------------------------
+# T41 pass ledger (session 2ca35f17-olbg1, checked 2026-10-22T01:45Z), ported
+# verbatim into this generator during the T63 pass (session 92af340c-olbg1,
+# 2026-10-22). These four entries were published in data/verification.json by
+# that session but never existed in this module, so every regeneration after
+# PR #47 silently reverted them and left data/fixtures.json stamps disagreeing
+# with the register (found and fixed here; see reports/SESSION_92AF340C_VERIFICATION.md).
+# They are the latest recorded reads of these rows and take precedence over the
+# older T20/T34 entries for the same ids. Nothing is discarded: the superseded
+# entries remain in git history and, where still current for other fields, below.
+# ---------------------------------------------------------------------------
+T41_ROWS: dict[str, dict[str, str]] = {
+    'nhl-2026020154': {
+        'status': "confirmed",
+        'source_name': "NHL official standings API (2026-10-21, re-read 2026-10-22)",
+        'source_url': "https://api-web.nhle.com/v1/standings/2026-10-21",
+        'evidence': "T41 independent re-read 2026-10-22T01:20Z: the standings snapshot (standingsDateTimeUtc 2026-10-22T01:20:45Z) returned Boston with gamesPlayed 10, wins 7, losses 2, otLosses 1, homeWins 3, homeLosses 1, homeOtLosses 0, goalDifferential +14 and pointPctg 0.750 - matching the stored 7-2-1 / .750 / 3-1-0 home / +14 profile exactly.",
+        'action': "No change.",
+        'checked_at': "2026-10-22T01:45Z",
+        'checked_pass': "T41 (session 2ca35f17-olbg1)",
+    },
+    'nhl-2026020160': {
+        'status': "flagged",
+        'source_name': "NHL official standings API (2026-10-21, re-read 2026-10-22)",
+        'source_url': "https://api-web.nhle.com/v1/standings/2026-10-21",
+        'evidence': "T41 independent re-read 2026-10-22T01:20Z: Vegas now reads 8-3-0 with pointPctg 0.727, goalDifferential +14, streakCode L and streakCount 1, against the 8-2-0 / .800 / W3 snapshot this fixture was priced on. The stored input is unchanged and the drift was already disclosed as F-V5; this pass confirms it persists.",
+        'action': "No re-price: the published selection is a labelled pre-game snapshot and re-pricing it after the game would be worse than disclosing the movement. Both values remain published.",
+        'checked_at': "2026-10-22T01:45Z",
+        'checked_pass': "T41 (session 2ca35f17-olbg1)",
+    },
+    'ten-ningbo-rybakina': {
+        'status': "confirmed",
+        'source_name': "WTA signed singles main draw, Ningbo 2026 (MDS.pdf, released 21 Oct 2026 22:13Z)",
+        'source_url': "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf",
+        'evidence': "T41 independent re-read 2026-10-22T01:45Z: the signed WTA draw sheet for tournament 2092 lists '1 1 RYBAKINA, Elena KAZ' with a first-round bye, and '4 Q KUDERMETOVA, Polina UZB' winning 76(5) 62 against Bucsa. The round of 16 pairing Rybakina v Kudermetova, the No. 1 seed and the Russian's rank of 1 in the draw's own ranked player table therefore match the stored row. Kudermetova's world No. 103 ranking is not printed on the draw and was not re-confirmed in this pass.",
+        'action': "No change to the row. Blocker 'WTA draws are client-rendered' (LIVE-F-V7) is resolved for this tournament: the signed PDF is machine-readable and is now cited.",
+        'checked_at': "2026-10-22T01:45Z",
+        'checked_pass': "T41 (session 2ca35f17-olbg1)",
+    },
+    'ten-902093': {
+        'status': "confirmed",
+        'source_name': "WTA signed singles main draw, Ningbo 2026 (MDS.pdf, released 21 Oct 2026 22:13Z)",
+        'source_url': "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf",
+        'evidence': "T41 independent re-read 2026-10-22T01:45Z: the same signed draw sheet lists '5 BENCIC, Belinda SUI' at rank 12 and 'Q KAWA, Katarzyna POL' beating Snigur 62 64 in the first round, setting up Kawa v Bencic in the round of 16 exactly as stored. Kawa's No. 124 ranking is not printed on the draw sheet, so that figure still rests on the WTA rankings page cited in the row and is not claimed as re-checked here.",
+        'action': "No change to the row; signed draw added as the primary evidence.",
+        'checked_at': "2026-10-22T01:45Z",
+        'checked_pass': "T41 (session 2ca35f17-olbg1)",
+    },
+}
+
 T34_FINDINGS: list[dict] = [
     {"id": "T34-01", "severity": "high", "source": "aflw_ladder",
      "area": "AFLW — the ladder used to price nine rows is not the official 2026 ladder",
      "detail": ("Every AFLW row cites a 2026 R10 ladder input. Against the official afl.com.au 2026 AFLW ladder after Round 10 the published inputs do not reconcile: the rows give North Melbourne 40 points (10-0) where the ladder has 36 (9-1), Geelong 16 at 13th where it has 36 at 2nd, Gold Coast 4 at 18th where it has 28 at 5th, St Kilda 20 at 10th where it has 4 at 18th, and 16 of the 18 clubs disagree. The fixture facts were verified and corrected in this pass; the pricing inputs were not."),
-     "status": "Disclosed, not silently re-priced. Rewriting nine published rows and three published picks in the commit that discovers the error would destroy the audit trail. Every AFLW row carries the mismatch as a flag, the official ladder is linked, and T35 is filed as the dedicated re-price task."},
+     "status": "Disclosed, not silently re-priced. Rewriting nine published rows and three published picks in the commit that discovers the error would destroy the audit trail. Every AFLW row carries the mismatch as a flag, the official ladder is linked, and T35 is filed as the dedicated re-price task. CLOSED 2026-10-22T07:36Z by T35/T63 (session 92af340c-olbg1): all nine rows re-priced in a dedicated commit from a live read of https://www.afl.com.au/aflw/ladder (North Melbourne 1st 36 pts 9-1-0 … St Kilda 18th 4 pts 1-9-0); AFLW high picks moved 3 -> 4 (Geelong v Fremantle added, Western Bulldogs v Melbourne downgraded to low) and the superseded snapshot values are recorded in COORDINATION.md §48."},
     {"id": "T34-02", "severity": "high", "source": "aflw_hub",
      "area": "AFLW — nine Round 11 start times were shifted by one fixture and one venue was wrong",
      "detail": ("The nine AFLW rows were right about participants but had been given Round 11's kick-off slots in chronological order rather than in each fixture's own order: Port Adelaide v Collingwood carried the North Melbourne slot, St Kilda v Brisbane carried Geelong's, two rows shared 2026-10-24T04:05Z, one time (06:15Z) appears in no official fixture, and Hawthorn v Essendon sat at Kinetic Stadium, Frankston instead of the Kennedy Community Centre, Dingley."),
@@ -658,6 +757,21 @@ def stamp_fixtures(doc: dict) -> None:
 
 def _status_row(fixture: dict) -> dict:
     fid = fixture["id"]
+    if fid in T41_ROWS:
+        entry = T41_ROWS[fid]
+        return {
+            "id": fid,
+            "sport": fixture["sport"],
+            "competition": fixture["competition"],
+            "match": f"{fixture['home']} v {fixture['away']}" if fixture.get("away") else fixture["home"],
+            "status": entry["status"],
+            "source_name": entry["source_name"],
+            "source_url": entry["source_url"],
+            "evidence": entry["evidence"],
+            "action": entry["action"],
+            "checked_at": entry["checked_at"],
+            "checked_pass": entry["checked_pass"],
+        }
     if fid in CORRECTED:
         entry = CORRECTED[fid]
         return {

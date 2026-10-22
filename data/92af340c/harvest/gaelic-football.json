@@ -1,0 +1,84 @@
+{
+ "sport": "gaelic-football",
+ "slug": "Gaelic_Football",
+ "id": 25,
+ "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+ "read_utc": "2026-10-22T08:59Z",
+ "title": "Gaelic Football Betting Tips & Predictions - OLBG.com",
+ "page_state": "live event cards rendered; 'Load More Tips' pagination present",
+ "chunks_read": [
+  0
+ ],
+ "chunks_total": 3,
+ "pagination_note": "chunk 0 of 3 captured; deeper pagination not re-read this session",
+ "events": [
+  {
+   "event_id": 3530,
+   "match": "St Finbarrs v Nemo Rangers",
+   "time_label": "25 Oct 12:00",
+   "selection": "Nemo Rangers +1.50",
+   "market": null,
+   "tips": "10/12",
+   "pct": "83%",
+   "comments": 2
+  },
+  {
+   "event_id": 3532,
+   "match": "Moycullen v Salthill-Knocknacarra",
+   "time_label": "24 Oct 14:00",
+   "selection": "SalthillKnocknacarra +3.50",
+   "market": null,
+   "tips": "9/18",
+   "pct": "50%",
+   "comments": 1
+  },
+  {
+   "event_id": 3531,
+   "match": "Kanturk v Eire Og Cor",
+   "time_label": "01 Nov 09:00",
+   "selection": "Kanturk",
+   "market": null,
+   "tips": "4/5",
+   "pct": "80%",
+   "comments": 1
+  },
+  {
+   "event_id": 3536,
+   "match": "Rathgormack v The Nire",
+   "time_label": "01 Nov 10:30",
+   "selection": "Rathgormack -2.50",
+   "market": null,
+   "tips": "2/2",
+   "pct": "100%",
+   "comments": 1
+  },
+  {
+   "event_id": 3537,
+   "match": "Fr Caseys v Kildimo Pallaskenry",
+   "time_label": "01 Nov 10:30",
+   "selection": "Fr Caseys -3.50",
+   "market": null,
+   "tips": "2/2",
+   "pct": "100%",
+   "comments": 1
+  },
+  {
+   "event_id": 3327,
+   "match": "All Ireland Football Championship 2027",
+   "time_label": "25 Jul 2027 10:30",
+   "selection": "Kerry",
+   "market": null,
+   "tips": "5/7",
+   "pct": "71%",
+   "comments": 2,
+   "outright": true
+  }
+ ],
+ "event_cards_captured": 6,
+ "observations": [
+  "Upstream date defect BUG-OLBG-3536-DATE reproduces live on 2026-10-22: Rathgormack v The Nire (event_id=3536) still shows '01 Nov 10:30' while official Munster GAA championship fixtures schedule the Waterford Senior Football Final for Sunday 25 Oct 2026, 14:30 UTC at Fraher Field, Dungarvan. The desk keeps the corrected official value (2026-10-25T14:30:00Z).",
+  "Gaelic cards render no market label at all (the market slot is blank next to handicap-style selections like 'Nemo Rangers +1.50') - a rendering gap unique to this hub among the seventeen.",
+  "The Kerry SFC final carried in the desk dataset (Dr Crokes v Kenmare Shamrocks, gaa-kerry-sfc) does not render among chunk-0 cards; two club ties the desk dataset does not carry (Kanturk v Eire Og Cor 3531, Fr Caseys v Kildimo Pallaskenry 3537, both '01 Nov') are recorded as observations only - they are not priced because no official source read this session confirms them.",
+  "Borderline-scope note (SCOPE-GAELIC-FOOTBALL): Gaelic Football remains in scope repo-wide; Football/Soccer (1) and American Football (11) stay excluded."
+ ]
+}

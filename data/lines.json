@@ -261,15 +261,15 @@
   },
   "count": 126,
   "confidence_counts": {
-    "high": 29,
+    "high": 30,
     "low": 66,
-    "medium": 31
+    "medium": 30
   },
   "high_confidence_window": {
     "min_american": -250,
     "max_american": 10000,
     "conviction_floor": 0.6,
-    "high_picks_in_window": 29,
+    "high_picks_in_window": 30,
     "note": "Every high-confidence pick is quoted inside -250..+10000. Where the match-winner price is shorter than -250 the same view is published on the handicap rung that lands inside the window."
   },
   "lines": [
@@ -25059,13 +25059,13 @@
       "sport": "aussie-rules",
       "sport_name": "Aussie Rules",
       "favourite": "North Melbourne",
-      "home_probability": 0.8482,
+      "home_probability": 0.8132,
       "draw_probability": 0.0,
-      "away_probability": 0.1518,
-      "pick": "North Melbourne -10.5",
+      "away_probability": 0.1868,
+      "pick": "North Melbourne -8.0",
       "pick_market": "Points Line",
-      "pick_line": "10.5",
-      "pick_probability": 0.677731,
+      "pick_line": "8.0",
+      "pick_probability": 0.67627,
       "pick_odds": 1.41,
       "pick_american": "-244",
       "pick_in_window": true,
@@ -25075,26 +25075,26 @@
         "max_american": 10000,
         "conviction_floor": 0.6,
         "favourite_selection": "North Melbourne",
-        "favourite_american": "-833",
+        "favourite_american": "-588",
         "favourite_in_window": false,
         "highlight_in_window": true,
         "pick_in_window": true,
         "reason": "selection priced inside the -250/+10000 window at or above the 0.60 conviction floor"
       },
       "highlight": {
-        "selection": "North Melbourne -10.5",
+        "selection": "North Melbourne -8.0",
         "market_key": "handicap_alt_2",
         "market_name": "Points Line",
-        "line": "10.5",
-        "probability": 0.677731,
+        "line": "8.0",
+        "probability": 0.67627,
         "odds": 1.41,
         "american": "-244",
         "implied_pct": 68,
-        "basis": "Gaussian margin projection (E[M]=+19.0, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
+        "basis": "Gaussian margin projection (E[M]=+16.5, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
       },
-      "expected_margin": 19.04,
-      "rating_home": 96.0,
-      "rating_away": 60.0,
+      "expected_margin": 16.46,
+      "rating_home": 89.0,
+      "rating_away": 59.0,
       "rating_measured_home": true,
       "rating_measured_away": true,
       "rating_coverage": 2,
@@ -25108,21 +25108,21 @@
           "outcomes": [
             {
               "selection": "North Melbourne",
-              "probability": 0.848244,
-              "odds": 1.12,
-              "fair_odds": 1.18,
-              "american": "-833",
-              "fair_american": "-556",
-              "implied_pct": 85
+              "probability": 0.813193,
+              "odds": 1.17,
+              "fair_odds": 1.23,
+              "american": "-588",
+              "fair_american": "-435",
+              "implied_pct": 81
             },
             {
               "selection": "Adelaide Crows",
-              "probability": 0.151756,
-              "odds": 6.28,
-              "fair_odds": 6.59,
-              "american": "+528",
-              "fair_american": "+559",
-              "implied_pct": 15
+              "probability": 0.186807,
+              "odds": 5.1,
+              "fair_odds": 5.35,
+              "american": "+410",
+              "fair_american": "+435",
+              "implied_pct": 19
             }
           ],
           "basis": "Official governing-body ratings + venue adjustment"
@@ -25130,39 +25130,39 @@
         {
           "key": "handicap",
           "name": "Points Line",
-          "line": "19.0",
+          "line": "16.5",
           "role": "main line",
           "outcomes": [
             {
-              "selection": "North Melbourne -19.0",
-              "probability": 0.50076,
-              "odds": 1.9,
-              "fair_odds": 2.0,
-              "american": "-111",
-              "fair_american": "+100",
-              "implied_pct": 50
-            },
-            {
-              "selection": "Adelaide Crows +19.0",
-              "probability": 0.49924,
+              "selection": "North Melbourne -16.5",
+              "probability": 0.499136,
               "odds": 1.91,
               "fair_odds": 2.0,
               "american": "-110",
               "fair_american": "+100",
               "implied_pct": 50
+            },
+            {
+              "selection": "Adelaide Crows +16.5",
+              "probability": 0.500864,
+              "odds": 1.9,
+              "fair_odds": 2.0,
+              "american": "-111",
+              "fair_american": "+100",
+              "implied_pct": 50
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=+19.0, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
+          "basis": "Gaussian margin projection (E[M]=+16.5, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
         },
         {
           "key": "handicap_alt_1",
           "name": "Points Line",
-          "line": "14.5",
+          "line": "12.0",
           "role": "alternate line (60% cover)",
           "outcomes": [
             {
-              "selection": "North Melbourne -14.5",
-              "probability": 0.596829,
+              "selection": "North Melbourne -12.0",
+              "probability": 0.595252,
               "odds": 1.6,
               "fair_odds": 1.68,
               "american": "-167",
@@ -25170,26 +25170,26 @@
               "implied_pct": 60
             },
             {
-              "selection": "Adelaide Crows +14.5",
-              "probability": 0.403171,
-              "odds": 2.36,
-              "fair_odds": 2.48,
-              "american": "+136",
-              "fair_american": "+148",
+              "selection": "Adelaide Crows +12.0",
+              "probability": 0.404748,
+              "odds": 2.35,
+              "fair_odds": 2.47,
+              "american": "+135",
+              "fair_american": "+147",
               "implied_pct": 40
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=+19.0, sigma=18.5); rung set to the line where the model favourite covers 60% of the time"
+          "basis": "Gaussian margin projection (E[M]=+16.5, sigma=18.5); rung set to the line where the model favourite covers 60% of the time"
         },
         {
           "key": "handicap_alt_2",
           "name": "Points Line",
-          "line": "10.5",
+          "line": "8.0",
           "role": "alternate line (68% cover)",
           "outcomes": [
             {
-              "selection": "North Melbourne -10.5",
-              "probability": 0.677731,
+              "selection": "North Melbourne -8.0",
+              "probability": 0.67627,
               "odds": 1.41,
               "fair_odds": 1.48,
               "american": "-244",
@@ -25197,16 +25197,16 @@
               "implied_pct": 68
             },
             {
-              "selection": "Adelaide Crows +10.5",
-              "probability": 0.322269,
-              "odds": 2.96,
-              "fair_odds": 3.1,
-              "american": "+196",
-              "fair_american": "+210",
+              "selection": "Adelaide Crows +8.0",
+              "probability": 0.32373,
+              "odds": 2.94,
+              "fair_odds": 3.09,
+              "american": "+194",
+              "fair_american": "+209",
               "implied_pct": 32
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=+19.0, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
+          "basis": "Gaussian margin projection (E[M]=+16.5, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
         },
         {
           "key": "total",
@@ -25292,7 +25292,7 @@
       ],
       "unavailable_markets": [],
       "model_notes": [
-        "Both sides carry official governing-body ratings (96.0 vs 60.0); log-odds differential scaled by k=24.",
+        "Both sides carry official governing-body ratings (89.0 vs 59.0); log-odds differential scaled by k=24.",
         "Total market centered on competition baseline 74.5 (Points (AFLW))."
       ]
     },
@@ -25300,43 +25300,43 @@
       "id": "aflw-r11-02",
       "sport": "aussie-rules",
       "sport_name": "Aussie Rules",
-      "favourite": "Fremantle",
-      "home_probability": 0.3904,
+      "favourite": "Geelong Cats",
+      "home_probability": 0.8002,
       "draw_probability": 0.0,
-      "away_probability": 0.6096,
-      "pick": "Fremantle",
-      "pick_market": "Match Winner",
-      "pick_line": "",
-      "pick_probability": 0.609634,
-      "pick_odds": 1.56,
-      "pick_american": "-179",
+      "away_probability": 0.1998,
+      "pick": "Geelong Cats -7.0",
+      "pick_market": "Points Line",
+      "pick_line": "7.0",
+      "pick_probability": 0.678664,
+      "pick_odds": 1.4,
+      "pick_american": "-250",
       "pick_in_window": true,
-      "confidence": "medium",
+      "confidence": "high",
       "window": {
         "min_american": -250,
         "max_american": 10000,
         "conviction_floor": 0.6,
-        "favourite_selection": "Fremantle",
-        "favourite_american": "-179",
-        "favourite_in_window": true,
+        "favourite_selection": "Geelong Cats",
+        "favourite_american": "-526",
+        "favourite_in_window": false,
         "highlight_in_window": true,
         "pick_in_window": true,
-        "reason": "model separation 0.610 clears the medium floor only"
+        "reason": "selection priced inside the -250/+10000 window at or above the 0.60 conviction floor"
       },
       "highlight": {
-        "selection": "Fremantle",
-        "market_key": "winner",
-        "market_name": "Match Winner",
-        "line": "",
-        "probability": 0.609634,
-        "odds": 1.56,
-        "american": "-179",
-        "implied_pct": 61,
-        "basis": "Official governing-body ratings + venue adjustment"
+        "selection": "Geelong Cats -7.0",
+        "market_key": "handicap_alt_2",
+        "market_name": "Points Line",
+        "line": "7.0",
+        "probability": 0.678664,
+        "odds": 1.4,
+        "american": "-250",
+        "implied_pct": 68,
+        "basis": "Gaussian margin projection (E[M]=+15.6, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
       },
-      "expected_margin": -5.15,
-      "rating_home": 50.0,
-      "rating_away": 66.0,
+      "expected_margin": 15.58,
+      "rating_home": 88.0,
+      "rating_away": 60.0,
       "rating_measured_home": true,
       "rating_measured_away": true,
       "rating_coverage": 2,
@@ -25350,21 +25350,21 @@
           "outcomes": [
             {
               "selection": "Geelong Cats",
-              "probability": 0.390366,
-              "odds": 2.44,
-              "fair_odds": 2.56,
-              "american": "+144",
-              "fair_american": "+156",
-              "implied_pct": 39
+              "probability": 0.800203,
+              "odds": 1.19,
+              "fair_odds": 1.25,
+              "american": "-526",
+              "fair_american": "-400",
+              "implied_pct": 80
             },
             {
               "selection": "Fremantle",
-              "probability": 0.609634,
-              "odds": 1.56,
-              "fair_odds": 1.64,
-              "american": "-179",
-              "fair_american": "-156",
-              "implied_pct": 61
+              "probability": 0.199797,
+              "odds": 4.77,
+              "fair_odds": 5.01,
+              "american": "+377",
+              "fair_american": "+401",
+              "implied_pct": 20
             }
           ],
           "basis": "Official governing-body ratings + venue adjustment"
@@ -25372,56 +25372,83 @@
         {
           "key": "handicap",
           "name": "Points Line",
-          "line": "5.0",
+          "line": "15.5",
           "role": "main line",
           "outcomes": [
             {
-              "selection": "Geelong Cats +5.0",
-              "probability": 0.496771,
-              "odds": 1.92,
-              "fair_odds": 2.01,
-              "american": "-109",
-              "fair_american": "+101",
+              "selection": "Geelong Cats -15.5",
+              "probability": 0.501798,
+              "odds": 1.9,
+              "fair_odds": 1.99,
+              "american": "-111",
+              "fair_american": "-101",
               "implied_pct": 50
             },
             {
-              "selection": "Fremantle -5.0",
-              "probability": 0.503229,
-              "odds": 1.89,
-              "fair_odds": 1.99,
-              "american": "-112",
-              "fair_american": "-101",
+              "selection": "Fremantle +15.5",
+              "probability": 0.498202,
+              "odds": 1.91,
+              "fair_odds": 2.01,
+              "american": "-110",
+              "fair_american": "+101",
               "implied_pct": 50
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=-5.1, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
+          "basis": "Gaussian margin projection (E[M]=+15.6, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
         },
         {
           "key": "handicap_alt_1",
           "name": "Points Line",
-          "line": "0.5",
+          "line": "11.0",
           "role": "alternate line (60% cover)",
           "outcomes": [
             {
-              "selection": "Geelong Cats +0.5",
-              "probability": 0.400777,
-              "odds": 2.38,
-              "fair_odds": 2.5,
-              "american": "+138",
-              "fair_american": "+150",
-              "implied_pct": 40
-            },
-            {
-              "selection": "Fremantle -0.5",
-              "probability": 0.599223,
+              "selection": "Geelong Cats -11.0",
+              "probability": 0.597836,
               "odds": 1.59,
               "fair_odds": 1.67,
               "american": "-169",
               "fair_american": "-149",
               "implied_pct": 60
+            },
+            {
+              "selection": "Fremantle +11.0",
+              "probability": 0.402164,
+              "odds": 2.37,
+              "fair_odds": 2.49,
+              "american": "+137",
+              "fair_american": "+149",
+              "implied_pct": 40
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=-5.1, sigma=18.5); rung set to the line where the model favourite covers 60% of the time"
+          "basis": "Gaussian margin projection (E[M]=+15.6, sigma=18.5); rung set to the line where the model favourite covers 60% of the time"
+        },
+        {
+          "key": "handicap_alt_2",
+          "name": "Points Line",
+          "line": "7.0",
+          "role": "alternate line (68% cover)",
+          "outcomes": [
+            {
+              "selection": "Geelong Cats -7.0",
+              "probability": 0.678664,
+              "odds": 1.4,
+              "fair_odds": 1.47,
+              "american": "-250",
+              "fair_american": "-213",
+              "implied_pct": 68
+            },
+            {
+              "selection": "Fremantle +7.0",
+              "probability": 0.321336,
+              "odds": 2.96,
+              "fair_odds": 3.11,
+              "american": "+196",
+              "fair_american": "+211",
+              "implied_pct": 32
+            }
+          ],
+          "basis": "Gaussian margin projection (E[M]=+15.6, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
         },
         {
           "key": "total",
@@ -25507,7 +25534,7 @@
       ],
       "unavailable_markets": [],
       "model_notes": [
-        "Both sides carry official governing-body ratings (50.0 vs 66.0); log-odds differential scaled by k=24.",
+        "Both sides carry official governing-body ratings (88.0 vs 60.0); log-odds differential scaled by k=24.",
         "Total market centered on competition baseline 74.5 (Points (AFLW))."
       ]
     },
@@ -25515,42 +25542,32 @@
       "id": "aflw-r11-03",
       "sport": "aussie-rules",
       "sport_name": "Aussie Rules",
-      "favourite": "Melbourne",
-      "home_probability": 0.2553,
+      "favourite": "Western Bulldogs",
+      "home_probability": 0.5447,
       "draw_probability": 0.0,
-      "away_probability": 0.7447,
-      "pick": "Melbourne -3.5",
-      "pick_market": "Points Line",
-      "pick_line": "3.5",
-      "pick_probability": 0.680412,
-      "pick_odds": 1.4,
-      "pick_american": "-250",
+      "away_probability": 0.4553,
+      "pick": "Western Bulldogs",
+      "pick_market": "Match Winner",
+      "pick_line": "",
+      "pick_probability": 0.544687,
+      "pick_odds": 1.75,
+      "pick_american": "-133",
       "pick_in_window": true,
-      "confidence": "medium",
+      "confidence": "low",
       "window": {
         "min_american": -250,
         "max_american": 10000,
         "conviction_floor": 0.6,
-        "favourite_selection": "Melbourne",
-        "favourite_american": "-357",
-        "favourite_in_window": false,
-        "highlight_in_window": true,
+        "favourite_selection": "Western Bulldogs",
+        "favourite_american": "-133",
+        "favourite_in_window": true,
+        "highlight_in_window": false,
         "pick_in_window": true,
-        "reason": "model separation 0.745 clears the medium floor only"
+        "reason": "model separation 0.545 below the 0.575 medium floor"
       },
-      "highlight": {
-        "selection": "Melbourne -3.5",
-        "market_key": "handicap_alt_2",
-        "market_name": "Points Line",
-        "line": "3.5",
-        "probability": 0.680412,
-        "odds": 1.4,
-        "american": "-250",
-        "implied_pct": 68,
-        "basis": "Gaussian margin projection (E[M]=-12.2, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
-      },
-      "expected_margin": -12.17,
-      "rating_home": 51.0,
+      "highlight": {},
+      "expected_margin": 2.08,
+      "rating_home": 81.0,
       "rating_away": 82.0,
       "rating_measured_home": true,
       "rating_measured_away": true,
@@ -25565,21 +25582,21 @@
           "outcomes": [
             {
               "selection": "Western Bulldogs",
-              "probability": 0.255256,
-              "odds": 3.73,
-              "fair_odds": 3.92,
-              "american": "+273",
-              "fair_american": "+292",
-              "implied_pct": 26
+              "probability": 0.544687,
+              "odds": 1.75,
+              "fair_odds": 1.84,
+              "american": "-133",
+              "fair_american": "-119",
+              "implied_pct": 54
             },
             {
               "selection": "Melbourne",
-              "probability": 0.744744,
-              "odds": 1.28,
-              "fair_odds": 1.34,
-              "american": "-357",
-              "fair_american": "-294",
-              "implied_pct": 74
+              "probability": 0.455313,
+              "odds": 2.09,
+              "fair_odds": 2.2,
+              "american": "+109",
+              "fair_american": "+120",
+              "implied_pct": 46
             }
           ],
           "basis": "Official governing-body ratings + venue adjustment"
@@ -25587,83 +25604,56 @@
         {
           "key": "handicap",
           "name": "Points Line",
-          "line": "12.0",
+          "line": "2.0",
           "role": "main line",
           "outcomes": [
             {
-              "selection": "Western Bulldogs +12.0",
-              "probability": 0.496253,
-              "odds": 1.92,
-              "fair_odds": 2.02,
-              "american": "-109",
-              "fair_american": "+102",
+              "selection": "Western Bulldogs -2.0",
+              "probability": 0.501652,
+              "odds": 1.9,
+              "fair_odds": 1.99,
+              "american": "-111",
+              "fair_american": "-101",
               "implied_pct": 50
             },
             {
-              "selection": "Melbourne -12.0",
-              "probability": 0.503747,
-              "odds": 1.89,
-              "fair_odds": 1.99,
-              "american": "-112",
-              "fair_american": "-101",
+              "selection": "Melbourne +2.0",
+              "probability": 0.498348,
+              "odds": 1.91,
+              "fair_odds": 2.01,
+              "american": "-110",
+              "fair_american": "+101",
               "implied_pct": 50
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=-12.2, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
+          "basis": "Gaussian margin projection (E[M]=+2.1, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
         },
         {
           "key": "handicap_alt_1",
           "name": "Points Line",
-          "line": "7.5",
+          "line": "0.5",
           "role": "alternate line (60% cover)",
           "outcomes": [
             {
-              "selection": "Western Bulldogs +7.5",
-              "probability": 0.400275,
-              "odds": 2.38,
-              "fair_odds": 2.5,
-              "american": "+138",
-              "fair_american": "+150",
-              "implied_pct": 40
+              "selection": "Western Bulldogs -0.5",
+              "probability": 0.533958,
+              "odds": 1.78,
+              "fair_odds": 1.87,
+              "american": "-128",
+              "fair_american": "-115",
+              "implied_pct": 53
             },
             {
-              "selection": "Melbourne -7.5",
-              "probability": 0.599725,
-              "odds": 1.59,
-              "fair_odds": 1.67,
-              "american": "-169",
-              "fair_american": "-149",
-              "implied_pct": 60
+              "selection": "Melbourne +0.5",
+              "probability": 0.466042,
+              "odds": 2.04,
+              "fair_odds": 2.15,
+              "american": "+104",
+              "fair_american": "+115",
+              "implied_pct": 47
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=-12.2, sigma=18.5); rung set to the line where the model favourite covers 60% of the time"
-        },
-        {
-          "key": "handicap_alt_2",
-          "name": "Points Line",
-          "line": "3.5",
-          "role": "alternate line (68% cover)",
-          "outcomes": [
-            {
-              "selection": "Western Bulldogs +3.5",
-              "probability": 0.319588,
-              "odds": 2.98,
-              "fair_odds": 3.13,
-              "american": "+198",
-              "fair_american": "+213",
-              "implied_pct": 32
-            },
-            {
-              "selection": "Melbourne -3.5",
-              "probability": 0.680412,
-              "odds": 1.4,
-              "fair_odds": 1.47,
-              "american": "-250",
-              "fair_american": "-213",
-              "implied_pct": 68
-            }
-          ],
-          "basis": "Gaussian margin projection (E[M]=-12.2, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
+          "basis": "Gaussian margin projection (E[M]=+2.1, sigma=18.5); rung set to the line where the model favourite covers 60% of the time"
         },
         {
           "key": "total",
@@ -25749,7 +25739,7 @@
       ],
       "unavailable_markets": [],
       "model_notes": [
-        "Both sides carry official governing-body ratings (51.0 vs 82.0); log-odds differential scaled by k=24.",
+        "Both sides carry official governing-body ratings (81.0 vs 82.0); log-odds differential scaled by k=24.",
         "Total market centered on competition baseline 74.5 (Points (AFLW))."
       ]
     },
@@ -25758,15 +25748,15 @@
       "sport": "aussie-rules",
       "sport_name": "Aussie Rules",
       "favourite": "Carlton",
-      "home_probability": 0.8068,
+      "home_probability": 0.8428,
       "draw_probability": 0.0,
-      "away_probability": 0.1932,
-      "pick": "Carlton -7.5",
+      "away_probability": 0.1572,
+      "pick": "Carlton -10.0",
       "pick_market": "Points Line",
-      "pick_line": "7.5",
-      "pick_probability": 0.677489,
-      "pick_odds": 1.41,
-      "pick_american": "-244",
+      "pick_line": "10.0",
+      "pick_probability": 0.679214,
+      "pick_odds": 1.4,
+      "pick_american": "-250",
       "pick_in_window": true,
       "confidence": "high",
       "window": {
@@ -25774,25 +25764,25 @@
         "max_american": 10000,
         "conviction_floor": 0.6,
         "favourite_selection": "Carlton",
-        "favourite_american": "-556",
+        "favourite_american": "-769",
         "favourite_in_window": false,
         "highlight_in_window": true,
         "pick_in_window": true,
         "reason": "selection priced inside the -250/+10000 window at or above the 0.60 conviction floor"
       },
       "highlight": {
-        "selection": "Carlton -7.5",
+        "selection": "Carlton -10.0",
         "market_key": "handicap_alt_2",
         "market_name": "Points Line",
-        "line": "7.5",
-        "probability": 0.677489,
-        "odds": 1.41,
-        "american": "-244",
+        "line": "10.0",
+        "probability": 0.679214,
+        "odds": 1.4,
+        "american": "-250",
         "implied_pct": 68,
-        "basis": "Gaussian margin projection (E[M]=+16.0, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
+        "basis": "Gaussian margin projection (E[M]=+18.6, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
       },
-      "expected_margin": 16.02,
-      "rating_home": 67.0,
+      "expected_margin": 18.61,
+      "rating_home": 73.0,
       "rating_away": 38.0,
       "rating_measured_home": true,
       "rating_measured_away": true,
@@ -25807,248 +25797,6 @@
           "outcomes": [
             {
               "selection": "Carlton",
-              "probability": 0.806781,
-              "odds": 1.18,
-              "fair_odds": 1.24,
-              "american": "-556",
-              "fair_american": "-417",
-              "implied_pct": 81
-            },
-            {
-              "selection": "GWS GIANTS",
-              "probability": 0.193219,
-              "odds": 4.93,
-              "fair_odds": 5.18,
-              "american": "+393",
-              "fair_american": "+418",
-              "implied_pct": 19
-            }
-          ],
-          "basis": "Official governing-body ratings + venue adjustment"
-        },
-        {
-          "key": "handicap",
-          "name": "Points Line",
-          "line": "16.0",
-          "role": "main line",
-          "outcomes": [
-            {
-              "selection": "Carlton -16.0",
-              "probability": 0.500491,
-              "odds": 1.9,
-              "fair_odds": 2.0,
-              "american": "-111",
-              "fair_american": "+100",
-              "implied_pct": 50
-            },
-            {
-              "selection": "GWS GIANTS +16.0",
-              "probability": 0.499509,
-              "odds": 1.91,
-              "fair_odds": 2.0,
-              "american": "-110",
-              "fair_american": "+100",
-              "implied_pct": 50
-            }
-          ],
-          "basis": "Gaussian margin projection (E[M]=+16.0, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
-        },
-        {
-          "key": "handicap_alt_1",
-          "name": "Points Line",
-          "line": "11.5",
-          "role": "alternate line (60% cover)",
-          "outcomes": [
-            {
-              "selection": "Carlton -11.5",
-              "probability": 0.596568,
-              "odds": 1.6,
-              "fair_odds": 1.68,
-              "american": "-167",
-              "fair_american": "-147",
-              "implied_pct": 60
-            },
-            {
-              "selection": "GWS GIANTS +11.5",
-              "probability": 0.403432,
-              "odds": 2.36,
-              "fair_odds": 2.48,
-              "american": "+136",
-              "fair_american": "+148",
-              "implied_pct": 40
-            }
-          ],
-          "basis": "Gaussian margin projection (E[M]=+16.0, sigma=18.5); rung set to the line where the model favourite covers 60% of the time"
-        },
-        {
-          "key": "handicap_alt_2",
-          "name": "Points Line",
-          "line": "7.5",
-          "role": "alternate line (68% cover)",
-          "outcomes": [
-            {
-              "selection": "Carlton -7.5",
-              "probability": 0.677489,
-              "odds": 1.41,
-              "fair_odds": 1.48,
-              "american": "-244",
-              "fair_american": "-208",
-              "implied_pct": 68
-            },
-            {
-              "selection": "GWS GIANTS +7.5",
-              "probability": 0.322511,
-              "odds": 2.95,
-              "fair_odds": 3.1,
-              "american": "+195",
-              "fair_american": "+210",
-              "implied_pct": 32
-            }
-          ],
-          "basis": "Gaussian margin projection (E[M]=+16.0, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
-        },
-        {
-          "key": "total",
-          "name": "Match Total (Points (AFLW))",
-          "line": "74.5",
-          "role": "baseline total",
-          "outcomes": [
-            {
-              "selection": "Over 74.5",
-              "probability": 0.5,
-              "odds": 1.9,
-              "fair_odds": 2.0,
-              "american": "-111",
-              "fair_american": "+100",
-              "implied_pct": 50
-            },
-            {
-              "selection": "Under 74.5",
-              "probability": 0.5,
-              "odds": 1.9,
-              "fair_odds": 2.0,
-              "american": "-111",
-              "fair_american": "+100",
-              "implied_pct": 50
-            }
-          ],
-          "basis": "Competition baseline total (74.5 points (aflw), sigma=16.5); alternate rungs shifted one step of 4.0"
-        },
-        {
-          "key": "total_low",
-          "name": "Match Total (Points (AFLW))",
-          "line": "70.5",
-          "role": "alternate total (-4.0)",
-          "outcomes": [
-            {
-              "selection": "Over 70.5",
-              "probability": 0.595774,
-              "odds": 1.6,
-              "fair_odds": 1.68,
-              "american": "-167",
-              "fair_american": "-147",
-              "implied_pct": 60
-            },
-            {
-              "selection": "Under 70.5",
-              "probability": 0.404226,
-              "odds": 2.36,
-              "fair_odds": 2.47,
-              "american": "+136",
-              "fair_american": "+147",
-              "implied_pct": 40
-            }
-          ],
-          "basis": "Competition baseline total (74.5 points (aflw), sigma=16.5); alternate rungs shifted one step of 4.0"
-        },
-        {
-          "key": "total_high",
-          "name": "Match Total (Points (AFLW))",
-          "line": "78.5",
-          "role": "alternate total (+4.0)",
-          "outcomes": [
-            {
-              "selection": "Over 78.5",
-              "probability": 0.404226,
-              "odds": 2.36,
-              "fair_odds": 2.47,
-              "american": "+136",
-              "fair_american": "+147",
-              "implied_pct": 40
-            },
-            {
-              "selection": "Under 78.5",
-              "probability": 0.595774,
-              "odds": 1.6,
-              "fair_odds": 1.68,
-              "american": "-167",
-              "fair_american": "-147",
-              "implied_pct": 60
-            }
-          ],
-          "basis": "Competition baseline total (74.5 points (aflw), sigma=16.5); alternate rungs shifted one step of 4.0"
-        }
-      ],
-      "unavailable_markets": [],
-      "model_notes": [
-        "Both sides carry official governing-body ratings (67.0 vs 38.0); log-odds differential scaled by k=24.",
-        "Total market centered on competition baseline 74.5 (Points (AFLW))."
-      ]
-    },
-    {
-      "id": "aflw-r11-05",
-      "sport": "aussie-rules",
-      "sport_name": "Aussie Rules",
-      "favourite": "Hawthorn",
-      "home_probability": 0.8428,
-      "draw_probability": 0.0,
-      "away_probability": 0.1572,
-      "pick": "Hawthorn -10.0",
-      "pick_market": "Points Line",
-      "pick_line": "10.0",
-      "pick_probability": 0.679214,
-      "pick_odds": 1.4,
-      "pick_american": "-250",
-      "pick_in_window": true,
-      "confidence": "high",
-      "window": {
-        "min_american": -250,
-        "max_american": 10000,
-        "conviction_floor": 0.6,
-        "favourite_selection": "Hawthorn",
-        "favourite_american": "-769",
-        "favourite_in_window": false,
-        "highlight_in_window": true,
-        "pick_in_window": true,
-        "reason": "selection priced inside the -250/+10000 window at or above the 0.60 conviction floor"
-      },
-      "highlight": {
-        "selection": "Hawthorn -10.0",
-        "market_key": "handicap_alt_2",
-        "market_name": "Points Line",
-        "line": "10.0",
-        "probability": 0.679214,
-        "odds": 1.4,
-        "american": "-250",
-        "implied_pct": 68,
-        "basis": "Gaussian margin projection (E[M]=+18.6, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
-      },
-      "expected_margin": 18.61,
-      "rating_home": 81.0,
-      "rating_away": 46.0,
-      "rating_measured_home": true,
-      "rating_measured_away": true,
-      "rating_coverage": 2,
-      "both_rated": true,
-      "both_measured": true,
-      "markets": [
-        {
-          "key": "winner",
-          "name": "Match Winner",
-          "line": "",
-          "outcomes": [
-            {
-              "selection": "Hawthorn",
               "probability": 0.842802,
               "odds": 1.13,
               "fair_odds": 1.19,
@@ -26057,7 +25805,7 @@
               "implied_pct": 84
             },
             {
-              "selection": "Essendon",
+              "selection": "GWS GIANTS",
               "probability": 0.157198,
               "odds": 6.06,
               "fair_odds": 6.36,
@@ -26075,7 +25823,7 @@
           "role": "main line",
           "outcomes": [
             {
-              "selection": "Hawthorn -18.5",
+              "selection": "Carlton -18.5",
               "probability": 0.50241,
               "odds": 1.9,
               "fair_odds": 1.99,
@@ -26084,7 +25832,7 @@
               "implied_pct": 50
             },
             {
-              "selection": "Essendon +18.5",
+              "selection": "GWS GIANTS +18.5",
               "probability": 0.49759,
               "odds": 1.91,
               "fair_odds": 2.01,
@@ -26102,7 +25850,7 @@
           "role": "alternate line (60% cover)",
           "outcomes": [
             {
-              "selection": "Hawthorn -14.0",
+              "selection": "Carlton -14.0",
               "probability": 0.59843,
               "odds": 1.59,
               "fair_odds": 1.67,
@@ -26111,7 +25859,7 @@
               "implied_pct": 60
             },
             {
-              "selection": "Essendon +14.0",
+              "selection": "GWS GIANTS +14.0",
               "probability": 0.40157,
               "odds": 2.37,
               "fair_odds": 2.49,
@@ -26129,7 +25877,7 @@
           "role": "alternate line (68% cover)",
           "outcomes": [
             {
-              "selection": "Hawthorn -10.0",
+              "selection": "Carlton -10.0",
               "probability": 0.679214,
               "odds": 1.4,
               "fair_odds": 1.47,
@@ -26138,7 +25886,7 @@
               "implied_pct": 68
             },
             {
-              "selection": "Essendon +10.0",
+              "selection": "GWS GIANTS +10.0",
               "probability": 0.320786,
               "odds": 2.97,
               "fair_odds": 3.12,
@@ -26233,7 +25981,249 @@
       ],
       "unavailable_markets": [],
       "model_notes": [
-        "Both sides carry official governing-body ratings (81.0 vs 46.0); log-odds differential scaled by k=24.",
+        "Both sides carry official governing-body ratings (73.0 vs 38.0); log-odds differential scaled by k=24.",
+        "Total market centered on competition baseline 74.5 (Points (AFLW))."
+      ]
+    },
+    {
+      "id": "aflw-r11-05",
+      "sport": "aussie-rules",
+      "sport_name": "Aussie Rules",
+      "favourite": "Hawthorn",
+      "home_probability": 0.8002,
+      "draw_probability": 0.0,
+      "away_probability": 0.1998,
+      "pick": "Hawthorn -7.0",
+      "pick_market": "Points Line",
+      "pick_line": "7.0",
+      "pick_probability": 0.678664,
+      "pick_odds": 1.4,
+      "pick_american": "-250",
+      "pick_in_window": true,
+      "confidence": "high",
+      "window": {
+        "min_american": -250,
+        "max_american": 10000,
+        "conviction_floor": 0.6,
+        "favourite_selection": "Hawthorn",
+        "favourite_american": "-526",
+        "favourite_in_window": false,
+        "highlight_in_window": true,
+        "pick_in_window": true,
+        "reason": "selection priced inside the -250/+10000 window at or above the 0.60 conviction floor"
+      },
+      "highlight": {
+        "selection": "Hawthorn -7.0",
+        "market_key": "handicap_alt_2",
+        "market_name": "Points Line",
+        "line": "7.0",
+        "probability": 0.678664,
+        "odds": 1.4,
+        "american": "-250",
+        "implied_pct": 68,
+        "basis": "Gaussian margin projection (E[M]=+15.6, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
+      },
+      "expected_margin": 15.58,
+      "rating_home": 58.0,
+      "rating_away": 30.0,
+      "rating_measured_home": true,
+      "rating_measured_away": true,
+      "rating_coverage": 2,
+      "both_rated": true,
+      "both_measured": true,
+      "markets": [
+        {
+          "key": "winner",
+          "name": "Match Winner",
+          "line": "",
+          "outcomes": [
+            {
+              "selection": "Hawthorn",
+              "probability": 0.800203,
+              "odds": 1.19,
+              "fair_odds": 1.25,
+              "american": "-526",
+              "fair_american": "-400",
+              "implied_pct": 80
+            },
+            {
+              "selection": "Essendon",
+              "probability": 0.199797,
+              "odds": 4.77,
+              "fair_odds": 5.01,
+              "american": "+377",
+              "fair_american": "+401",
+              "implied_pct": 20
+            }
+          ],
+          "basis": "Official governing-body ratings + venue adjustment"
+        },
+        {
+          "key": "handicap",
+          "name": "Points Line",
+          "line": "15.5",
+          "role": "main line",
+          "outcomes": [
+            {
+              "selection": "Hawthorn -15.5",
+              "probability": 0.501798,
+              "odds": 1.9,
+              "fair_odds": 1.99,
+              "american": "-111",
+              "fair_american": "-101",
+              "implied_pct": 50
+            },
+            {
+              "selection": "Essendon +15.5",
+              "probability": 0.498202,
+              "odds": 1.91,
+              "fair_odds": 2.01,
+              "american": "-110",
+              "fair_american": "+101",
+              "implied_pct": 50
+            }
+          ],
+          "basis": "Gaussian margin projection (E[M]=+15.6, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
+        },
+        {
+          "key": "handicap_alt_1",
+          "name": "Points Line",
+          "line": "11.0",
+          "role": "alternate line (60% cover)",
+          "outcomes": [
+            {
+              "selection": "Hawthorn -11.0",
+              "probability": 0.597836,
+              "odds": 1.59,
+              "fair_odds": 1.67,
+              "american": "-169",
+              "fair_american": "-149",
+              "implied_pct": 60
+            },
+            {
+              "selection": "Essendon +11.0",
+              "probability": 0.402164,
+              "odds": 2.37,
+              "fair_odds": 2.49,
+              "american": "+137",
+              "fair_american": "+149",
+              "implied_pct": 40
+            }
+          ],
+          "basis": "Gaussian margin projection (E[M]=+15.6, sigma=18.5); rung set to the line where the model favourite covers 60% of the time"
+        },
+        {
+          "key": "handicap_alt_2",
+          "name": "Points Line",
+          "line": "7.0",
+          "role": "alternate line (68% cover)",
+          "outcomes": [
+            {
+              "selection": "Hawthorn -7.0",
+              "probability": 0.678664,
+              "odds": 1.4,
+              "fair_odds": 1.47,
+              "american": "-250",
+              "fair_american": "-213",
+              "implied_pct": 68
+            },
+            {
+              "selection": "Essendon +7.0",
+              "probability": 0.321336,
+              "odds": 2.96,
+              "fair_odds": 3.11,
+              "american": "+196",
+              "fair_american": "+211",
+              "implied_pct": 32
+            }
+          ],
+          "basis": "Gaussian margin projection (E[M]=+15.6, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
+        },
+        {
+          "key": "total",
+          "name": "Match Total (Points (AFLW))",
+          "line": "74.5",
+          "role": "baseline total",
+          "outcomes": [
+            {
+              "selection": "Over 74.5",
+              "probability": 0.5,
+              "odds": 1.9,
+              "fair_odds": 2.0,
+              "american": "-111",
+              "fair_american": "+100",
+              "implied_pct": 50
+            },
+            {
+              "selection": "Under 74.5",
+              "probability": 0.5,
+              "odds": 1.9,
+              "fair_odds": 2.0,
+              "american": "-111",
+              "fair_american": "+100",
+              "implied_pct": 50
+            }
+          ],
+          "basis": "Competition baseline total (74.5 points (aflw), sigma=16.5); alternate rungs shifted one step of 4.0"
+        },
+        {
+          "key": "total_low",
+          "name": "Match Total (Points (AFLW))",
+          "line": "70.5",
+          "role": "alternate total (-4.0)",
+          "outcomes": [
+            {
+              "selection": "Over 70.5",
+              "probability": 0.595774,
+              "odds": 1.6,
+              "fair_odds": 1.68,
+              "american": "-167",
+              "fair_american": "-147",
+              "implied_pct": 60
+            },
+            {
+              "selection": "Under 70.5",
+              "probability": 0.404226,
+              "odds": 2.36,
+              "fair_odds": 2.47,
+              "american": "+136",
+              "fair_american": "+147",
+              "implied_pct": 40
+            }
+          ],
+          "basis": "Competition baseline total (74.5 points (aflw), sigma=16.5); alternate rungs shifted one step of 4.0"
+        },
+        {
+          "key": "total_high",
+          "name": "Match Total (Points (AFLW))",
+          "line": "78.5",
+          "role": "alternate total (+4.0)",
+          "outcomes": [
+            {
+              "selection": "Over 78.5",
+              "probability": 0.404226,
+              "odds": 2.36,
+              "fair_odds": 2.47,
+              "american": "+136",
+              "fair_american": "+147",
+              "implied_pct": 40
+            },
+            {
+              "selection": "Under 78.5",
+              "probability": 0.595774,
+              "odds": 1.6,
+              "fair_odds": 1.68,
+              "american": "-167",
+              "fair_american": "-147",
+              "implied_pct": 60
+            }
+          ],
+          "basis": "Competition baseline total (74.5 points (aflw), sigma=16.5); alternate rungs shifted one step of 4.0"
+        }
+      ],
+      "unavailable_markets": [],
+      "model_notes": [
+        "Both sides carry official governing-body ratings (58.0 vs 30.0); log-odds differential scaled by k=24.",
         "Total market centered on competition baseline 74.5 (Points (AFLW))."
       ]
     },
@@ -26241,33 +26231,43 @@
       "id": "aflw-r11-06",
       "sport": "aussie-rules",
       "sport_name": "Aussie Rules",
-      "favourite": "Richmond",
-      "home_probability": 0.4927,
+      "favourite": "Gold Coast SUNS",
+      "home_probability": 0.7648,
       "draw_probability": 0.0,
-      "away_probability": 0.5073,
-      "pick": "Richmond",
-      "pick_market": "Match Winner",
-      "pick_line": "",
-      "pick_probability": 0.507276,
-      "pick_odds": 1.88,
-      "pick_american": "-114",
+      "away_probability": 0.2352,
+      "pick": "Gold Coast SUNS -5.0",
+      "pick_market": "Points Line",
+      "pick_line": "5.0",
+      "pick_probability": 0.674217,
+      "pick_odds": 1.41,
+      "pick_american": "-244",
       "pick_in_window": true,
-      "confidence": "low",
+      "confidence": "medium",
       "window": {
         "min_american": -250,
         "max_american": 10000,
         "conviction_floor": 0.6,
-        "favourite_selection": "Richmond",
-        "favourite_american": "-114",
-        "favourite_in_window": true,
-        "highlight_in_window": false,
+        "favourite_selection": "Gold Coast SUNS",
+        "favourite_american": "-400",
+        "favourite_in_window": false,
+        "highlight_in_window": true,
         "pick_in_window": true,
-        "reason": "model separation 0.507 below the 0.575 medium floor"
+        "reason": "model separation 0.765 clears the medium floor only"
       },
-      "highlight": {},
-      "expected_margin": -0.34,
-      "rating_home": 31.0,
-      "rating_away": 37.0,
+      "highlight": {
+        "selection": "Gold Coast SUNS -5.0",
+        "market_key": "handicap_alt_2",
+        "market_name": "Points Line",
+        "line": "5.0",
+        "probability": 0.674217,
+        "odds": 1.41,
+        "american": "-244",
+        "implied_pct": 67,
+        "basis": "Gaussian margin projection (E[M]=+13.4, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
+      },
+      "expected_margin": 13.35,
+      "rating_home": 74.0,
+      "rating_away": 51.0,
       "rating_measured_home": true,
       "rating_measured_away": true,
       "rating_coverage": 2,
@@ -26281,21 +26281,21 @@
           "outcomes": [
             {
               "selection": "Gold Coast SUNS",
-              "probability": 0.492724,
-              "odds": 1.93,
-              "fair_odds": 2.03,
-              "american": "-108",
-              "fair_american": "+103",
-              "implied_pct": 49
+              "probability": 0.764809,
+              "odds": 1.25,
+              "fair_odds": 1.31,
+              "american": "-400",
+              "fair_american": "-323",
+              "implied_pct": 76
             },
             {
               "selection": "Richmond",
-              "probability": 0.507276,
-              "odds": 1.88,
-              "fair_odds": 1.97,
-              "american": "-114",
-              "fair_american": "-103",
-              "implied_pct": 51
+              "probability": 0.235191,
+              "odds": 4.05,
+              "fair_odds": 4.25,
+              "american": "+305",
+              "fair_american": "+325",
+              "implied_pct": 24
             }
           ],
           "basis": "Official governing-body ratings + venue adjustment"
@@ -26303,29 +26303,83 @@
         {
           "key": "handicap",
           "name": "Points Line",
-          "line": "0.5",
+          "line": "13.5",
           "role": "main line",
           "outcomes": [
             {
-              "selection": "Gold Coast SUNS +0.5",
-              "probability": 0.503506,
-              "odds": 1.89,
-              "fair_odds": 1.99,
-              "american": "-112",
-              "fair_american": "-101",
-              "implied_pct": 50
-            },
-            {
-              "selection": "Richmond -0.5",
-              "probability": 0.496494,
+              "selection": "Gold Coast SUNS -13.5",
+              "probability": 0.496859,
               "odds": 1.92,
               "fair_odds": 2.01,
               "american": "-109",
               "fair_american": "+101",
               "implied_pct": 50
+            },
+            {
+              "selection": "Richmond +13.5",
+              "probability": 0.503141,
+              "odds": 1.89,
+              "fair_odds": 1.99,
+              "american": "-112",
+              "fair_american": "-101",
+              "implied_pct": 50
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=-0.3, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
+          "basis": "Gaussian margin projection (E[M]=+13.4, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
+        },
+        {
+          "key": "handicap_alt_1",
+          "name": "Points Line",
+          "line": "8.5",
+          "role": "alternate line (60% cover)",
+          "outcomes": [
+            {
+              "selection": "Gold Coast SUNS -8.5",
+              "probability": 0.603493,
+              "odds": 1.58,
+              "fair_odds": 1.66,
+              "american": "-172",
+              "fair_american": "-152",
+              "implied_pct": 60
+            },
+            {
+              "selection": "Richmond +8.5",
+              "probability": 0.396507,
+              "odds": 2.4,
+              "fair_odds": 2.52,
+              "american": "+140",
+              "fair_american": "+152",
+              "implied_pct": 40
+            }
+          ],
+          "basis": "Gaussian margin projection (E[M]=+13.4, sigma=18.5); rung set to the line where the model favourite covers 60% of the time"
+        },
+        {
+          "key": "handicap_alt_2",
+          "name": "Points Line",
+          "line": "5.0",
+          "role": "alternate line (68% cover)",
+          "outcomes": [
+            {
+              "selection": "Gold Coast SUNS -5.0",
+              "probability": 0.674217,
+              "odds": 1.41,
+              "fair_odds": 1.48,
+              "american": "-244",
+              "fair_american": "-208",
+              "implied_pct": 67
+            },
+            {
+              "selection": "Richmond +5.0",
+              "probability": 0.325783,
+              "odds": 2.92,
+              "fair_odds": 3.07,
+              "american": "+192",
+              "fair_american": "+207",
+              "implied_pct": 33
+            }
+          ],
+          "basis": "Gaussian margin projection (E[M]=+13.4, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
         },
         {
           "key": "total",
@@ -26411,7 +26465,7 @@
       ],
       "unavailable_markets": [],
       "model_notes": [
-        "Both sides carry official governing-body ratings (31.0 vs 37.0); log-odds differential scaled by k=24.",
+        "Both sides carry official governing-body ratings (74.0 vs 51.0); log-odds differential scaled by k=24.",
         "Total market centered on competition baseline 74.5 (Points (AFLW))."
       ]
     },
@@ -26420,15 +26474,15 @@
       "sport": "aussie-rules",
       "sport_name": "Aussie Rules",
       "favourite": "Port Adelaide",
-      "home_probability": 0.6997,
+      "home_probability": 0.7572,
       "draw_probability": 0.0,
-      "away_probability": 0.3003,
-      "pick": "Port Adelaide -1.0",
+      "away_probability": 0.2428,
+      "pick": "Port Adelaide -4.5",
       "pick_market": "Points Line",
-      "pick_line": "1.0",
-      "pick_probability": 0.680643,
-      "pick_odds": 1.4,
-      "pick_american": "-250",
+      "pick_line": "4.5",
+      "pick_probability": 0.675151,
+      "pick_odds": 1.41,
+      "pick_american": "-244",
       "pick_in_window": true,
       "confidence": "medium",
       "window": {
@@ -26436,26 +26490,26 @@
         "max_american": 10000,
         "conviction_floor": 0.6,
         "favourite_selection": "Port Adelaide",
-        "favourite_american": "-278",
+        "favourite_american": "-385",
         "favourite_in_window": false,
         "highlight_in_window": true,
         "pick_in_window": true,
-        "reason": "model separation 0.700 clears the medium floor only"
+        "reason": "model separation 0.757 clears the medium floor only"
       },
       "highlight": {
-        "selection": "Port Adelaide -1.0",
+        "selection": "Port Adelaide -4.5",
         "market_key": "handicap_alt_2",
         "market_name": "Points Line",
-        "line": "1.0",
-        "probability": 0.680643,
-        "odds": 1.4,
-        "american": "-250",
+        "line": "4.5",
+        "probability": 0.675151,
+        "odds": 1.41,
+        "american": "-244",
         "implied_pct": 68,
-        "basis": "Gaussian margin projection (E[M]=+9.7, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
+        "basis": "Gaussian margin projection (E[M]=+12.9, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
       },
-      "expected_margin": 9.69,
-      "rating_home": 58.0,
-      "rating_away": 43.0,
+      "expected_margin": 12.9,
+      "rating_home": 53.0,
+      "rating_away": 31.0,
       "rating_measured_home": true,
       "rating_measured_away": true,
       "rating_coverage": 2,
@@ -26469,21 +26523,21 @@
           "outcomes": [
             {
               "selection": "Port Adelaide",
-              "probability": 0.699705,
-              "odds": 1.36,
-              "fair_odds": 1.43,
-              "american": "-278",
-              "fair_american": "-233",
-              "implied_pct": 70
+              "probability": 0.757231,
+              "odds": 1.26,
+              "fair_odds": 1.32,
+              "american": "-385",
+              "fair_american": "-312",
+              "implied_pct": 76
             },
             {
               "selection": "Collingwood",
-              "probability": 0.300295,
-              "odds": 3.17,
-              "fair_odds": 3.33,
-              "american": "+217",
-              "fair_american": "+233",
-              "implied_pct": 30
+              "probability": 0.242769,
+              "odds": 3.92,
+              "fair_odds": 4.12,
+              "american": "+292",
+              "fair_american": "+312",
+              "implied_pct": 24
             }
           ],
           "basis": "Official governing-body ratings + venue adjustment"
@@ -26491,83 +26545,83 @@
         {
           "key": "handicap",
           "name": "Points Line",
-          "line": "9.5",
+          "line": "13.0",
           "role": "main line",
           "outcomes": [
             {
-              "selection": "Port Adelaide -9.5",
-              "probability": 0.504005,
-              "odds": 1.89,
-              "fair_odds": 1.98,
-              "american": "-112",
-              "fair_american": "-102",
+              "selection": "Port Adelaide -13.0",
+              "probability": 0.497894,
+              "odds": 1.91,
+              "fair_odds": 2.01,
+              "american": "-110",
+              "fair_american": "+101",
               "implied_pct": 50
             },
             {
-              "selection": "Collingwood +9.5",
-              "probability": 0.495995,
-              "odds": 1.92,
-              "fair_odds": 2.02,
-              "american": "-109",
-              "fair_american": "+102",
+              "selection": "Collingwood +13.0",
+              "probability": 0.502106,
+              "odds": 1.9,
+              "fair_odds": 1.99,
+              "american": "-111",
+              "fair_american": "-101",
               "implied_pct": 50
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=+9.7, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
+          "basis": "Gaussian margin projection (E[M]=+12.9, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
         },
         {
           "key": "handicap_alt_1",
           "name": "Points Line",
-          "line": "5.0",
+          "line": "8.0",
           "role": "alternate line (60% cover)",
           "outcomes": [
             {
-              "selection": "Port Adelaide -5.0",
-              "probability": 0.599975,
-              "odds": 1.59,
-              "fair_odds": 1.67,
-              "american": "-169",
-              "fair_american": "-149",
+              "selection": "Port Adelaide -8.0",
+              "probability": 0.604492,
+              "odds": 1.58,
+              "fair_odds": 1.65,
+              "american": "-172",
+              "fair_american": "-154",
               "implied_pct": 60
             },
             {
-              "selection": "Collingwood +5.0",
-              "probability": 0.400025,
-              "odds": 2.38,
-              "fair_odds": 2.5,
-              "american": "+138",
-              "fair_american": "+150",
+              "selection": "Collingwood +8.0",
+              "probability": 0.395508,
+              "odds": 2.41,
+              "fair_odds": 2.53,
+              "american": "+141",
+              "fair_american": "+153",
               "implied_pct": 40
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=+9.7, sigma=18.5); rung set to the line where the model favourite covers 60% of the time"
+          "basis": "Gaussian margin projection (E[M]=+12.9, sigma=18.5); rung set to the line where the model favourite covers 60% of the time"
         },
         {
           "key": "handicap_alt_2",
           "name": "Points Line",
-          "line": "1.0",
+          "line": "4.5",
           "role": "alternate line (68% cover)",
           "outcomes": [
             {
-              "selection": "Port Adelaide -1.0",
-              "probability": 0.680643,
-              "odds": 1.4,
-              "fair_odds": 1.47,
-              "american": "-250",
-              "fair_american": "-213",
+              "selection": "Port Adelaide -4.5",
+              "probability": 0.675151,
+              "odds": 1.41,
+              "fair_odds": 1.48,
+              "american": "-244",
+              "fair_american": "-208",
               "implied_pct": 68
             },
             {
-              "selection": "Collingwood +1.0",
-              "probability": 0.319357,
-              "odds": 2.98,
-              "fair_odds": 3.13,
-              "american": "+198",
-              "fair_american": "+213",
+              "selection": "Collingwood +4.5",
+              "probability": 0.324849,
+              "odds": 2.93,
+              "fair_odds": 3.08,
+              "american": "+193",
+              "fair_american": "+208",
               "implied_pct": 32
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=+9.7, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
+          "basis": "Gaussian margin projection (E[M]=+12.9, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
         },
         {
           "key": "total",
@@ -26653,7 +26707,7 @@
       ],
       "unavailable_markets": [],
       "model_notes": [
-        "Both sides carry official governing-body ratings (58.0 vs 43.0); log-odds differential scaled by k=24.",
+        "Both sides carry official governing-body ratings (53.0 vs 31.0); log-odds differential scaled by k=24.",
         "Total market centered on competition baseline 74.5 (Points (AFLW))."
       ]
     },
@@ -26662,15 +26716,15 @@
       "sport": "aussie-rules",
       "sport_name": "Aussie Rules",
       "favourite": "Sydney Swans",
-      "home_probability": 0.6156,
+      "home_probability": 0.7416,
       "draw_probability": 0.0,
-      "away_probability": 0.3844,
-      "pick": "Sydney Swans",
-      "pick_market": "Match Winner",
-      "pick_line": "",
-      "pick_probability": 0.615595,
-      "pick_odds": 1.55,
-      "pick_american": "-182",
+      "away_probability": 0.2584,
+      "pick": "Sydney Swans -3.5",
+      "pick_market": "Points Line",
+      "pick_line": "3.5",
+      "pick_probability": 0.676902,
+      "pick_odds": 1.41,
+      "pick_american": "-244",
       "pick_in_window": true,
       "confidence": "medium",
       "window": {
@@ -26678,26 +26732,26 @@
         "max_american": 10000,
         "conviction_floor": 0.6,
         "favourite_selection": "Sydney Swans",
-        "favourite_american": "-182",
-        "favourite_in_window": true,
+        "favourite_american": "-357",
+        "favourite_in_window": false,
         "highlight_in_window": true,
         "pick_in_window": true,
-        "reason": "model separation 0.616 clears the medium floor only"
+        "reason": "model separation 0.742 clears the medium floor only"
       },
       "highlight": {
-        "selection": "Sydney Swans",
-        "market_key": "winner",
-        "market_name": "Match Winner",
-        "line": "",
-        "probability": 0.615595,
-        "odds": 1.55,
-        "american": "-182",
-        "implied_pct": 62,
-        "basis": "Official governing-body ratings + venue adjustment"
+        "selection": "Sydney Swans -3.5",
+        "market_key": "handicap_alt_2",
+        "market_name": "Points Line",
+        "line": "3.5",
+        "probability": 0.676902,
+        "odds": 1.41,
+        "american": "-244",
+        "implied_pct": 68,
+        "basis": "Gaussian margin projection (E[M]=+12.0, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
       },
-      "expected_margin": 5.44,
-      "rating_home": 71.0,
-      "rating_away": 65.0,
+      "expected_margin": 11.99,
+      "rating_home": 72.0,
+      "rating_away": 52.0,
       "rating_measured_home": true,
       "rating_measured_away": true,
       "rating_coverage": 2,
@@ -26711,21 +26765,21 @@
           "outcomes": [
             {
               "selection": "Sydney Swans",
-              "probability": 0.615595,
-              "odds": 1.55,
-              "fair_odds": 1.62,
-              "american": "-182",
-              "fair_american": "-161",
-              "implied_pct": 62
+              "probability": 0.741586,
+              "odds": 1.28,
+              "fair_odds": 1.35,
+              "american": "-357",
+              "fair_american": "-286",
+              "implied_pct": 74
             },
             {
               "selection": "West Coast Eagles",
-              "probability": 0.384405,
-              "odds": 2.48,
-              "fair_odds": 2.6,
-              "american": "+148",
-              "fair_american": "+160",
-              "implied_pct": 38
+              "probability": 0.258414,
+              "odds": 3.69,
+              "fair_odds": 3.87,
+              "american": "+269",
+              "fair_american": "+287",
+              "implied_pct": 26
             }
           ],
           "basis": "Official governing-body ratings + venue adjustment"
@@ -26733,83 +26787,83 @@
         {
           "key": "handicap",
           "name": "Points Line",
-          "line": "5.5",
+          "line": "12.0",
           "role": "main line",
           "outcomes": [
             {
-              "selection": "Sydney Swans -5.5",
-              "probability": 0.498658,
+              "selection": "Sydney Swans -12.0",
+              "probability": 0.499838,
               "odds": 1.91,
-              "fair_odds": 2.01,
+              "fair_odds": 2.0,
               "american": "-110",
-              "fair_american": "+101",
+              "fair_american": "+100",
               "implied_pct": 50
             },
             {
-              "selection": "West Coast Eagles +5.5",
-              "probability": 0.501342,
+              "selection": "West Coast Eagles +12.0",
+              "probability": 0.500162,
               "odds": 1.9,
-              "fair_odds": 1.99,
+              "fair_odds": 2.0,
               "american": "-111",
-              "fair_american": "-101",
+              "fair_american": "+100",
               "implied_pct": 50
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=+5.4, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
+          "basis": "Gaussian margin projection (E[M]=+12.0, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
         },
         {
           "key": "handicap_alt_1",
           "name": "Points Line",
-          "line": "1.0",
+          "line": "7.5",
           "role": "alternate line (60% cover)",
           "outcomes": [
             {
-              "selection": "Sydney Swans -1.0",
-              "probability": 0.594788,
+              "selection": "Sydney Swans -7.5",
+              "probability": 0.595934,
               "odds": 1.6,
               "fair_odds": 1.68,
               "american": "-167",
               "fair_american": "-147",
-              "implied_pct": 59
+              "implied_pct": 60
             },
             {
-              "selection": "West Coast Eagles +1.0",
-              "probability": 0.405212,
-              "odds": 2.35,
+              "selection": "West Coast Eagles +7.5",
+              "probability": 0.404066,
+              "odds": 2.36,
               "fair_odds": 2.47,
-              "american": "+135",
+              "american": "+136",
               "fair_american": "+147",
-              "implied_pct": 41
+              "implied_pct": 40
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=+5.4, sigma=18.5); rung set to the line where the model favourite covers 60% of the time"
+          "basis": "Gaussian margin projection (E[M]=+12.0, sigma=18.5); rung set to the line where the model favourite covers 60% of the time"
         },
         {
           "key": "handicap_alt_2",
           "name": "Points Line",
-          "line": "0.5",
+          "line": "3.5",
           "role": "alternate line (68% cover)",
           "outcomes": [
             {
-              "selection": "Sydney Swans -0.5",
-              "probability": 0.605229,
-              "odds": 1.57,
-              "fair_odds": 1.65,
-              "american": "-175",
-              "fair_american": "-154",
-              "implied_pct": 61
+              "selection": "Sydney Swans -3.5",
+              "probability": 0.676902,
+              "odds": 1.41,
+              "fair_odds": 1.48,
+              "american": "-244",
+              "fair_american": "-208",
+              "implied_pct": 68
             },
             {
-              "selection": "West Coast Eagles +0.5",
-              "probability": 0.394771,
-              "odds": 2.41,
-              "fair_odds": 2.53,
-              "american": "+141",
-              "fair_american": "+153",
-              "implied_pct": 39
+              "selection": "West Coast Eagles +3.5",
+              "probability": 0.323098,
+              "odds": 2.95,
+              "fair_odds": 3.1,
+              "american": "+195",
+              "fair_american": "+210",
+              "implied_pct": 32
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=+5.4, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
+          "basis": "Gaussian margin projection (E[M]=+12.0, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
         },
         {
           "key": "total",
@@ -26895,7 +26949,7 @@
       ],
       "unavailable_markets": [],
       "model_notes": [
-        "Both sides carry official governing-body ratings (71.0 vs 65.0); log-odds differential scaled by k=24.",
+        "Both sides carry official governing-body ratings (72.0 vs 52.0); log-odds differential scaled by k=24.",
         "Total market centered on competition baseline 74.5 (Points (AFLW))."
       ]
     },
@@ -26904,15 +26958,15 @@
       "sport": "aussie-rules",
       "sport_name": "Aussie Rules",
       "favourite": "Brisbane Lions",
-      "home_probability": 0.3056,
+      "home_probability": 0.3904,
       "draw_probability": 0.0,
-      "away_probability": 0.6944,
-      "pick": "Brisbane Lions -1.0",
-      "pick_market": "Points Line",
-      "pick_line": "1.0",
-      "pick_probability": 0.675197,
-      "pick_odds": 1.41,
-      "pick_american": "-244",
+      "away_probability": 0.6096,
+      "pick": "Brisbane Lions",
+      "pick_market": "Match Winner",
+      "pick_line": "",
+      "pick_probability": 0.609634,
+      "pick_odds": 1.56,
+      "pick_american": "-179",
       "pick_in_window": true,
       "confidence": "medium",
       "window": {
@@ -26920,26 +26974,26 @@
         "max_american": 10000,
         "conviction_floor": 0.6,
         "favourite_selection": "Brisbane Lions",
-        "favourite_american": "-270",
-        "favourite_in_window": false,
+        "favourite_american": "-179",
+        "favourite_in_window": true,
         "highlight_in_window": true,
         "pick_in_window": true,
-        "reason": "model separation 0.694 clears the medium floor only"
+        "reason": "model separation 0.610 clears the medium floor only"
       },
       "highlight": {
-        "selection": "Brisbane Lions -1.0",
-        "market_key": "handicap_alt_2",
-        "market_name": "Points Line",
-        "line": "1.0",
-        "probability": 0.675197,
-        "odds": 1.41,
-        "american": "-244",
-        "implied_pct": 68,
-        "basis": "Gaussian margin projection (E[M]=-9.4, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
+        "selection": "Brisbane Lions",
+        "market_key": "winner",
+        "market_name": "Match Winner",
+        "line": "",
+        "probability": 0.609634,
+        "odds": 1.56,
+        "american": "-179",
+        "implied_pct": 61,
+        "basis": "Official governing-body ratings + venue adjustment"
       },
-      "expected_margin": -9.4,
-      "rating_home": 59.0,
-      "rating_away": 84.0,
+      "expected_margin": -5.15,
+      "rating_home": 29.0,
+      "rating_away": 45.0,
       "rating_measured_home": true,
       "rating_measured_away": true,
       "rating_coverage": 2,
@@ -26953,21 +27007,21 @@
           "outcomes": [
             {
               "selection": "St Kilda",
-              "probability": 0.3056,
-              "odds": 3.12,
-              "fair_odds": 3.27,
-              "american": "+212",
-              "fair_american": "+227",
-              "implied_pct": 31
+              "probability": 0.390366,
+              "odds": 2.44,
+              "fair_odds": 2.56,
+              "american": "+144",
+              "fair_american": "+156",
+              "implied_pct": 39
             },
             {
               "selection": "Brisbane Lions",
-              "probability": 0.6944,
-              "odds": 1.37,
-              "fair_odds": 1.44,
-              "american": "-270",
-              "fair_american": "-227",
-              "implied_pct": 69
+              "probability": 0.609634,
+              "odds": 1.56,
+              "fair_odds": 1.64,
+              "american": "-179",
+              "fair_american": "-156",
+              "implied_pct": 61
             }
           ],
           "basis": "Official governing-body ratings + venue adjustment"
@@ -26975,83 +27029,56 @@
         {
           "key": "handicap",
           "name": "Points Line",
-          "line": "9.5",
+          "line": "5.0",
           "role": "main line",
           "outcomes": [
             {
-              "selection": "St Kilda +9.5",
-              "probability": 0.502055,
-              "odds": 1.9,
-              "fair_odds": 1.99,
-              "american": "-111",
-              "fair_american": "-101",
+              "selection": "St Kilda +5.0",
+              "probability": 0.496771,
+              "odds": 1.92,
+              "fair_odds": 2.01,
+              "american": "-109",
+              "fair_american": "+101",
               "implied_pct": 50
             },
             {
-              "selection": "Brisbane Lions -9.5",
-              "probability": 0.497945,
-              "odds": 1.91,
-              "fair_odds": 2.01,
-              "american": "-110",
-              "fair_american": "+101",
+              "selection": "Brisbane Lions -5.0",
+              "probability": 0.503229,
+              "odds": 1.89,
+              "fair_odds": 1.99,
+              "american": "-112",
+              "fair_american": "-101",
               "implied_pct": 50
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=-9.4, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
+          "basis": "Gaussian margin projection (E[M]=-5.1, sigma=18.5); rung set to the line where the model favourite covers 50% of the time"
         },
         {
           "key": "handicap_alt_1",
           "name": "Points Line",
-          "line": "4.5",
+          "line": "0.5",
           "role": "alternate line (60% cover)",
           "outcomes": [
             {
-              "selection": "St Kilda +4.5",
-              "probability": 0.395459,
-              "odds": 2.41,
-              "fair_odds": 2.53,
-              "american": "+141",
-              "fair_american": "+153",
+              "selection": "St Kilda +0.5",
+              "probability": 0.400777,
+              "odds": 2.38,
+              "fair_odds": 2.5,
+              "american": "+138",
+              "fair_american": "+150",
               "implied_pct": 40
             },
             {
-              "selection": "Brisbane Lions -4.5",
-              "probability": 0.604541,
-              "odds": 1.58,
-              "fair_odds": 1.65,
-              "american": "-172",
-              "fair_american": "-154",
+              "selection": "Brisbane Lions -0.5",
+              "probability": 0.599223,
+              "odds": 1.59,
+              "fair_odds": 1.67,
+              "american": "-169",
+              "fair_american": "-149",
               "implied_pct": 60
             }
           ],
-          "basis": "Gaussian margin projection (E[M]=-9.4, sigma=18.5); rung set to the line where the model favourite covers 60% of the time"
-        },
-        {
-          "key": "handicap_alt_2",
-          "name": "Points Line",
-          "line": "1.0",
-          "role": "alternate line (68% cover)",
-          "outcomes": [
-            {
-              "selection": "St Kilda +1.0",
-              "probability": 0.324803,
-              "odds": 2.93,
-              "fair_odds": 3.08,
-              "american": "+193",
-              "fair_american": "+208",
-              "implied_pct": 32
-            },
-            {
-              "selection": "Brisbane Lions -1.0",
-              "probability": 0.675197,
-              "odds": 1.41,
-              "fair_odds": 1.48,
-              "american": "-244",
-              "fair_american": "-208",
-              "implied_pct": 68
-            }
-          ],
-          "basis": "Gaussian margin projection (E[M]=-9.4, sigma=18.5); rung set to the line where the model favourite covers 68% of the time"
+          "basis": "Gaussian margin projection (E[M]=-5.1, sigma=18.5); rung set to the line where the model favourite covers 60% of the time"
         },
         {
           "key": "total",
@@ -27137,7 +27164,7 @@
       ],
       "unavailable_markets": [],
       "model_notes": [
-        "Both sides carry official governing-body ratings (59.0 vs 84.0); log-odds differential scaled by k=24.",
+        "Both sides carry official governing-body ratings (29.0 vs 45.0); log-odds differential scaled by k=24.",
         "Total market centered on competition baseline 74.5 (Points (AFLW))."
       ]
     },

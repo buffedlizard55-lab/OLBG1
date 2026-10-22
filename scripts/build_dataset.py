@@ -344,6 +344,71 @@ def build_coverage(fixtures: list[dict]) -> dict:
     }
 
 
+def _register_t41_findings() -> list[dict]:
+    """Price-window pass (T41/T42, session 2ca35f17-olbg1) findings, ported verbatim
+    into this generator during the T63 pass (session 92af340c-olbg1). Like the T41
+    ledger rows, these five entries existed only in the committed JSON; any
+    regeneration dropped them. source_kind ('official' vs 'internal') is preserved
+    exactly as published."""
+    return [
+        {
+            "id": "T41-01",
+            "category": "Brief interpretation / methodology",
+            "severity": "high",
+            "affected": "All 29 high-confidence picks",
+            "summary": "The brief's two high-confidence rules are mutually exclusive as literally worded: \">70% chance to win\" and \"priced between -250 and +10000\".",
+            "evidence": "At our documented 5% overround a 68.0% model probability prices at exactly -250 (1/(0.68*1.05) = 1.400). Any selection above 68.0% is therefore automatically shorter than -250, so a 70%+ pick can never satisfy the window. There is no arithmetic overlap between the two rules. No governing body publishes a source for our own margin policy, so this row links the methodology page instead of dressing up an unrelated league page as proof.",
+            "official_url": "methodology.html",
+            "resolution": "The window is treated as the binding constraint because it is the explicit numeric instruction. High confidence now requires verified status, two measured official ratings, the sport's separation threshold, AND a published price inside -250..+10000 at 60%+ model probability. The probability-only rule survives as the separation filter; the >70% reading is retired and documented on Methodology.",
+            "source_kind": "internal",
+        },
+        {
+            "id": "T41-02",
+            "category": "Inherited defect (corrected this pass)",
+            "severity": "medium",
+            "affected": "19 of the 31 high-confidence picks published before this pass",
+            "summary": "More than half of the previous high-confidence list was priced shorter than -250, i.e. outside the brief's window.",
+            "evidence": "Measured on commit f77e14c: high picks ranged from -263 to -1250 (70.0% to 88.2% win probability). Examples: Elena Rybakina -1250, North Melbourne -833, Hawthorn -769, Stade Toulousain -667, New Zealand -667, Aalborg -667, Australia -625, England -556, Carlton -556, Panathinaikos -455, Barcelona -455.",
+            "official_url": "https://top14.lnr.fr/calendrier-et-resultats",
+            "resolution": "Every affected fixture now publishes the same directional view on the handicap rung that lands inside the window (e.g. Stade Toulousain -7.0 at 1.40 rather than the -667 moneyline). No price outside the window remains in the high-confidence set; scripts/validate.py fails the build if one reappears.",
+            "source_kind": "official",
+        },
+        {
+            "id": "T41-03",
+            "category": "Modelling policy note",
+            "severity": "low",
+            "affected": "All 126 priced head-to-head matches",
+            "summary": "Alternate totals rungs are published for investigation but are deliberately never the highlighted high-confidence selection.",
+            "evidence": "Every fixture carries a 3-rung total ladder, and its 68% rung always prices near -250. Selecting it as the pick would be an artefact of the ladder, because the total baseline (0.5 over/under, or a competition constant such as 228.5 NBA points) is a documented modelling assumption rather than a sourced rating gap. No governing body publishes a source for our own margin policy, so this row links the methodology page instead of dressing up an unrelated league page as proof.",
+            "official_url": "methodology.html",
+            "resolution": "High-confidence highlights may only be the match winner or a handicap rung tied to the sourced rating gap. Totals remain visible in each match's market drawer and are labelled as baseline-derived.",
+            "source_kind": "internal",
+        },
+        {
+            "id": "T41-04",
+            "category": "Tier reclassification (disclosed)",
+            "severity": "low",
+            "affected": "mlb-849803, mlb-849804 (MLB World Series, Games 3 and 4)",
+            "summary": "Two previously high-confidence MLB picks are now Medium because their win probability (0.593) falls below the 60% conviction floor.",
+            "evidence": "Tampa Bay Rays are priced -164 (59.3%) and the in-window handicap rungs reach only 54.2%. Signalling High on a 59.3% selection would break the 60% floor that every other high-confidence pick now meets.",
+            "official_url": "https://www.mlb.com/gameday/849803",
+            "resolution": "Both rows remain fully priced and published at Medium confidence with their in-window moneyline (-164) unchanged. The demotion is recorded rather than hidden.",
+            "source_kind": "official",
+        },
+        {
+            "id": "T41-05",
+            "category": "Repository hygiene (corrected this pass)",
+            "severity": "low",
+            "affected": "verification.html and f7fa77fc/verification.html",
+            "summary": "An orphaned legacy page advertised 136 priced lines and 31 high-confidence picks against a 126/29 dataset.",
+            "evidence": "The inherited verification.html was a hand-built snapshot from an earlier pass, still linked from nowhere but still served publicly with a stale navigation bar.",
+            "official_url": "methodology.html",
+            "source_kind": "internal",
+            "resolution": "scripts/build_site.py now renders the URL as a signed pointer to live-verification.html with counts taken from the data, so it cannot contradict the dataset again. Superseded content remains in git history.",
+        },
+    ]
+
+
 def build_flagged_registry(fixtures: list[dict]) -> dict:
     upstream_bugs = [
         {
@@ -681,6 +746,12 @@ def main() -> None:
     flagged_doc = build_flagged_registry(rows)
     flagged_doc["findings"].extend(live_refresh_findings())
     flagged_doc["findings"].extend(_register_t34_findings())
+    flagged_doc["findings"].extend(_register_t41_findings())
+    for _finding in flagged_doc["findings"]:
+        # source_kind as published in the committed registry (T41 port): every
+        # governing-body-linked finding is "official"; the three methodology findings
+        # T41-01/03/05 carry "internal" and keep it from their ported text.
+        _finding.setdefault("source_kind", "official")
     flagged_doc["summary"]["upstream_and_audit_findings"] = len(flagged_doc["findings"])
 
     (ROOT / "data" / "sources.json").write_text(json.dumps(sources_doc, indent=2) + "\n")

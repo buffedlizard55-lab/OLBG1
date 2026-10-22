@@ -194,24 +194,31 @@ HIGH_PREDICTION_TEXTS: dict[str, str] = {
         "the handicap is only three at the Palau Blaugrana, where the model adds home advantage. "
         "Selection: Barça -3.0."
     ),
-    # ---------------- Aussie rules (AFLW) ----------------
+    # ---------------- Aussie rules (AFLW) — re-priced 2026-10-22 from the official ladder (T35/T63) ----------------
     "aflw-r11-01": (
-        "North Melbourne lead the AFLW ladder after round ten with 40 points from ten matches; "
-        "Adelaide are ninth on 20 points from a 5-5 record. The match has been moved to North "
-        "Hobart Oval. An unbeaten side against a .500 side is a mismatch on the official table, "
-        "and ten and a half points is the in-window way to take it. Selection: North Melbourne "
-        "-10.5."
+        "North Melbourne sit top of the AFLW ladder on 36 points, their only blemish in ten rounds "
+        "a single loss, with a commanding 251.9 per cent. Adelaide are ninth at 20 points from a "
+        "5-5-0 record and 102.4 per cent, and the match is staged at North Hobart Oval. Sixteen "
+        "ladder points and four wins separate the clubs on the official table. "
+        "Selection: North Melbourne -8.0."
+    ),
+    "aflw-r11-02": (
+        "Geelong are second on the official ladder with 36 points from ten matches, nine wins and "
+        "a 167.2 percentage. Fremantle hold eighth place on 20 points, a 5-5-0 record and 104.9 "
+        "per cent. At GMHBA Stadium a four-win, sixteen-point table gap separates the clubs, which "
+        "the model reads as a comfortable home win rather than a close one. "
+        "Selection: Geelong Cats -7.0."
     ),
     "aflw-r11-04": (
-        "Carlton sit sixth on 24 points after ten rounds; GWS are sixteenth on eight points from a "
-        "2-8 record, and the game is at IKON Park. Fourteen ladder points and four wins separate "
-        "the clubs, which is why the model makes Carlton clear favourites. Seven and a half points "
-        "keeps the selection inside our price window. Selection: Carlton -7.5."
+        "Carlton are sixth on 28 points after ten rounds, seven wins and a 133.0 percentage; GWS "
+        "are fifteenth on eight points from a 2-8-0 record at 68.2 per cent. The clubs meet at "
+        "IKON Park with twenty ladder points and five wins between them, a gulf the official "
+        "table makes plain going into round eleven. Selection: Carlton -10.0."
     ),
     "aflw-r11-05": (
-        "Hawthorn are fourth on 32 points with an 8-2 record; Essendon are fourteenth on 14 points "
-        "at 3-6-1. The fixture is at Kennedy Community Centre in Dingley. Six more wins than their "
-        "opponents is a wide gap on the ladder, and a ten-point line is a modest way to express it. "
-        "Selection: Hawthorn -10.0."
+        "Hawthorn sit tenth on 20 points with a 5-5-0 record and 101.5 per cent; Essendon are "
+        "seventeenth on four points, one win from ten and 55.6 per cent. At the Kennedy Community "
+        "Centre in Dingley, four wins and sixteen ladder points separate the two, so the home side "
+        "is backed to cover a moderate margin. Selection: Hawthorn -7.0."
     ),
 }
