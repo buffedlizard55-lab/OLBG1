@@ -165,7 +165,7 @@ High rows show −236/70.26%, −238/70.43%, −244/70.92%, −242/70.80%, −24
 −242/70.72%. `flagged.html` was fetched too: the cross-desk table lists all twelve `53674ac8` rows
 and F-402-10 credits `ee3c3e8f-olbg1` rather than this session.
 
-**Known limits at publication.** Fourteen of seventeen in-scope sports carry no priced row, each with
+**Known limits at publication.** Fourteen of the seventeen in-scope sports carry no priced row (12 not verified at all, Snooker listed without a price, Gaelic football with no in-scope fixture), each with
 the official URL attempted and the specific failure; the desk's own `README`/`coverage.html` list
 them. Basketball handicaps rest on an assumed σ = 12.0 and are capped below High. Baseball lines use
 regular-season aggregates only and stay Low. Snooker pairings are listed with a blank clock because
