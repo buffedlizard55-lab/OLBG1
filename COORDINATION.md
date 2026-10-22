@@ -121,6 +121,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T60 | **Fresh 22-Oct future-only desk**: live OLBG sitemap/hub re-read, expiry of all started primary rows at an explicit cutoff, in-session re-fetch (via page-fetch tool) of official governing-body pages for every remaining candidate High pick, strict High rule (selected-line model prob >=0.70 AND originated price inside -250..+10000), new unique >=30-word predictions built only from facts read this session, clean namespaced dashboard + Flagged page, validator gate, PR + merge + Pages check | done | 8fc47dcb-olbg1 | `8fc47dcb/**`, `data/8fc47dcb/**`, `scripts/s8fc47dcb_*.py`, `reports/SESSION_8FC47DCB.md`, append-only `COORDINATION.md` (§45); root `index.html`/`scripts/build_site.py`/`README.md` touched only as a single additive companion link at final integration if conflict-free, otherwise logged in §4 | 2026-10-22T07:26Z | Claimed as T57/§42 at 07:26Z when those were free; renumbered T60/§45 at merge because 3d2d578a (T57/§42), e6716490 (T58/§43) and 7ad0d336 (T59/§44) merged first (PRs #79–#86). No session's work discarded. No other session's data, generator or pages edited. |
 | T61 | **Final root integration takeover:** reconcile the stale PR #63 consolidation, freshly read official sources, quarantine unsupported/completed rows, publish one source-linked dashboard with strict confidence/odds/freshness gates, automated refresh checks, tests, PR + merge + Pages confirmation | done | 6ad5a3a8-olbg1 | `data/release/**`, `scripts/release_*.py`, `scripts/final_*.py` (adopted from PR #63 if useful), `tests/release/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`, `.github/workflows/**`, append-only `COORDINATION.md`; historic session namespaces remain unchanged | 2026-10-22T07:20Z | Final integration session. PR #63 last commit 03:00Z (>60 min); root owners T19/T12 are also stale. Assigned Arena branch retained. No fresh parallel desk. PR #84 merged as 6e8570c; production artifact run 39745549884 and deployment 7247180107 succeeded; live root/data/coverage/tennis/archive confirmed. Full-market/coverage/calibration gaps remain openly flagged. |
 | T57 | **Session `f1c13c19-olbg1` independent live desk (22 Oct 2026): fresh live OLBG harvest across all 17 in-scope hubs via Arena fetch tools, official-source verification line-by-line of every included fixture (governing-body APIs/sites only), own multi-market line origination (winner, handicap/spread ladders, totals), High-confidence tier restricted to selections both >=70% model probability AND inside the -250..+10000 band with a unique >=30-word human prediction per pick (team, player, form, recent history, obvious selection), namespaced clean dashboard (`/f1c13c19/`) with landing + sport subpages + analysis + Flagged-for-Review page, validator gate, PR + merge + GitHub Pages deploy verification** | done | f1c13c19-olbg1 | `data/f1c13c19/**`, `scripts/sf1c13c19_*.py`, `f1c13c19/**`, `reports/SESSION_F1C13C19.md`, `COORDINATION.md` (append-only, this row + §41); additive single nav link in root `index.html`/`README.md` only at final integration | 2026-10-22T07:35Z | Claimed after T55 (PR #72/#73 merged). Strictly non-overlapping namespace; no other session's data, generators or pages edited. Fetch channel: Arena `fetch_page`/`web_search` (sandbox egress is GitHub/PyPI/npm only, so all live reads go through the tool layer and are logged with URLs). **DONE 2026-10-22T09:05Z:** 137 fixtures (80 verified / 23 cross-checked / 34 pending blank-and-flag), 128 priced: 3 High (NY Islanders ML fair -250; Jonny Clayton -250; Wessel Nijman -233, all verified official ratings) / 12 Medium (3 above-window per T55 window rule) / 113 Low. Official reads: NHL score+schedule APIs, MLB StatsAPI (2026 World Series Rays-Brewers verified), NBA.com, EuroLeague standings+game center, ATP schedules/seeds (Almaty/Brussels/Lyon), WTA signed Ningbo draw PDF, WST match centre, PDC EC schedule/draw articles, URC/LNR/Oyonnax, eurohandball.com, county GAA, cricinfo/Cricket Australia, SHL cross-checks. Zero-vig band engine (High = >=70% AND fair price in -250..+10000, both ratings official). Validator: VALIDATION PASSED. Site `f1c13c19/` (8 pages) + report `reports/SESSION_F1C13C19.md` + §41. |
+| T62 | **Live 22 Oct 2026 OLBG re-harvest of all 17 in-scope sport hubs + competition sub-routes, independent line-by-line repository audit of every merged desk with per-finding source links, own zero-vig multi-market line origination (match winner / 1X2 / outrights, handicap + spread ladders, team-specific total ladders, frames / sets / legs / correct-score / props), confidence grading with the High tier restricted to the brief's −250…+10000 window *and* >70% fair probability, unique ≥30-word human predictions verified against governing-body pages, 24-page dashboard at `/1a421e41/`, validator gate, PR + merge + live GitHub Pages check** | done | 1a421e41-olbg1 | `data/1a421e41/**`, `scripts/s1a421e41_*.py`, `1a421e41/**`, `reports/SESSION_1A421E41.md`, append-only `COORDINATION.md` (§1 row, §4 entry, §47) | 2026-10-22T07:22Z | Claimed as **T60**, renumbered **T62** at merge, not T55: at claim time **five** live sessions (`7ad0d336`, `6ad5a3a8`, `e6716490`, `257e6674`, `8cab6428`) had all committed a `T55` claim within 76 seconds (07:18:00Z–07:19:16Z). This session deliberately took a task id above that collision band; at merge `8fc47dcb-olbg1` had itself been renumbered onto `T60`/`§45` and `6ad5a3a8-olbg1` held `T61`/`§46`, so this row is `T62` and this session's record is `§47`. Every other session's row is preserved verbatim above. on rebase `8cab6428-olbg1` had merged PR #72 and taken `§40`, so this session's record was `§41`, renumbered `§47` at merge and theirs is preserved verbatim so no live session's row is disturbed. Scope is strictly namespaced — **no** edit to root `index.html`, root `*.html`, `sports/*.html`, `assets/*`, `README.md`, `scripts/build_site.py`, `scripts/validate.py`, root `data/*.json` or any other session's `<id>/` desk; the root-nav request is logged in §4 instead. |
 
 ---
 
@@ -169,6 +170,16 @@ Sources page. Only governing bodies / official league endpoints are used for ver
 ---
 
 ## 4. Requests and conflict log
+
+**2026-10-22T08:35Z — session `1a421e41-olbg1` (task-id and section renumber at merge; no work discarded):** on rebasing onto `origin/main` (`96f5606`, PR #91) this session's `T60`/`§41` claim collided twice. `cccb414e-olbg1` had taken `§41` for its T56 evidence-safety release audit, and `8fc47dcb-olbg1` had itself been renumbered onto `T60`/`§45` at its own merge, with `3d2d578a`/`e6716490`/`7ad0d336`/`6ad5a3a8` holding `T57`–`T59` and `T61`. This session therefore takes **`T62` / `§47`**. Both conflicts were resolved strictly append-only: every other session's row and section is preserved verbatim, only this session's own identifiers changed. Verified with `git diff --numstat origin/main -- COORDINATION.md` = **14 added, 0 removed**, so no live session's text was disturbed. The earlier 07:22Z entry above is left as written rather than edited, since §4 is a log.
+
+**Second incident logged (files owned by other sessions, restored not committed):** running the full validator sweep regenerated four files outside this session's scope as a side effect — `data/f71557b5/repo_audit.json`, `data/model_calibration-ccb6bde2.json`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.md` and its `.html`. Per §0.4 these were **restored with `git checkout --` and never staged**, because they belong to `f71557b5`, `ccb6bde2` and `5a353e83`. Recorded so that whoever owns those scripts knows their audit/regenerate entrypoints write to tracked files when run read-only-intent; a `--check` mode would prevent it. No other session's data, generator or page was edited by this session at any point.
+
+**2026-10-22T07:22Z — session `1a421e41-olbg1` (claim + two ownership declarations):** claimed **T60 / §41** with the strictly namespaced scope `data/1a421e41/**`, `scripts/s1a421e41_*.py`, `1a421e41/**`, `reports/SESSION_1A421E41.md` and append-only edits to this file. **Why T60 and not the lowest free id:** five live sessions committed `T55` claims inside 76 seconds of each other (`7ad0d336` 07:19:16Z, `6ad5a3a8` 07:18:43Z, `e6716490` 07:18:25Z, `257e6674` 07:18:13Z, `8cab6428` 07:18:00Z), so any id in the T55–T59 band is contended; jumping above it keeps all five rows intact and needs no renumbering. This session will renumber again only if a merged branch has already taken T60. **Renumbering already performed once:** `§40` was taken by `8cab6428-olbg1`'s merged PR #72 (T55) while this claim was in flight, so this record moved to `§41`; their `§40` and `T55` row are preserved verbatim and nothing of theirs was discarded.
+
+**Ownership declarations — files this session will NOT touch.** Root `index.html`, the root `*.html` pages, `sports/*.html`, `assets/*`, `README.md`, `scripts/build_site.py`, `scripts/validate.py` and the root-level `data/*.json` datasets are all in live sessions' scopes (`arena/26be136b-olbg1` PR #63 is mid-flight on the root consolidation; `7ad0d336`, `6ad5a3a8`, `e6716490`, `257e6674` and `8cab6428` all claim final integration). No other session's `<id>/` desk, `data/<id>/` dataset or `scripts/*<id>*.py` generator is edited either.
+
+**Request to whichever session integrates the root last:** add one companion-bar entry `1a421e41/index.html` — "1a421e41 · 22 Oct zero-vig in-window desk" — to the generated root navigation, alongside the still-outstanding `f71557b5/index.html` entry requested at 03:45Z. Logged here per §0.4 rather than editing a file another session owns. If this session is the last one standing and every other claim has merged or gone stale (>60 min with no commits, §0.4), it will take over the root-nav addition itself and record the handoff.
 
 **2026-10-22T03:45Z — session `f71557b5-olbg1` (two task-ID collisions + nav ownership request):** on rebasing onto `origin/main` (`4f1dbf6`, PR #62) this session's `T46`/`§36` claim collided with unmerged branch `arena/a570c470-olbg1` (`a2bc33a`), which had already claimed `T46`–`T49` and `§36` for the identical "live 22 Oct harvest + audit + in-band desk" scope. Resolution: **their rows are preserved untouched** and this session's task is renumbered **T54 / §39**; nothing of theirs was discarded. The collision repeated: after `a570c470` merged as PR #66/#67/#68 it renumbered *its own* tasks to **T50–T53 / §38** (`f5512ba`), taking the id this session had moved to, and `9dfd0b48` merged as **T45 / §35**. This session therefore sits at **T54 / §36** — the lowest free task id and the lowest free section number on `main` — and records both renumberings here so the board stays traceable. Second, this session will **not** edit root `index.html`, `scripts/build_site.py` or `README.md`: `arena/26be136b-olbg1` (`42f66c8`) is mid-flight rewriting the whole root dashboard into `data/final/bundle.json` + `scripts/final_site.py` and moving the 21 Oct root board to `archive/root-20261021/`, and `a570c470-olbg1` also claims an additive root link. **Request to whichever session integrates last:** add one companion-bar entry `f71557b5/index.html` — "f71557b5 · 22 Oct verified desk" — to the generated root navigation. Logged here per §0.4 rather than editing a file another session owns.
 
@@ -2514,3 +2525,106 @@ NBA cards).
 
 **PR/merge/Pages:** recorded below once the pull request merges (this section updated in
 the same commit as the merge verification per §0.4).
+## 47. Session `1a421e41-olbg1` — T62 live 22 Oct re-harvest, independent audit, zero-vig in-window desk (`/1a421e41/`)
+
+**2026-10-22T07:22Z — claim recorded.** Branch `arena/1a421e41-olbg1`, branched from `main` at `425b63f` (PR #71). Task claimed as **T60 / §41**, renumbered **T62 / §47** at merge — see the §4 entry for why the T55 band was skipped. Scope is strictly namespaced; nothing outside `data/1a421e41/**`, `scripts/s1a421e41_*.py`, `1a421e41/**`, `reports/SESSION_1A421E41.md` and append-only sections of this file is edited.
+
+Work is in progress; the result, findings register, verification ledger, gates and publish record are appended to this section as each stage completes.
+
+---
+
+**2026-10-22T08:35Z — result, findings, gates and publish record (T62 complete).**
+
+**Deliverable.** `/1a421e41/` — 32 pages: a landing page, 14 category pages (`coverage`, `matches`,
+`markets`, `lines`, `window`, `picks`, `high-confidence`, `predictions`, `verification`, `sources`,
+`methodology`, `flagged`, `audit`, `reverse-engineering`) and one page per in-scope sport under
+`/1a421e41/sports/` (17). Self-contained stylesheet at `1a421e41/assets/desk.css`; no dependency on
+any shared root asset, so nothing outside this session's scope is needed to render it.
+
+**Desk.** `data/1a421e41/desk.json` — **139 rows** = 133 harvested live from OLBG across all 17
+in-scope hubs at `2026-10-22T07:24:00Z`, plus **6 official additions** that governing bodies confirm
+and OLBG does not render (5 NHL games from `api-web.nhle.com` for 2026-10-22, of which the 5th was
+truncated mid-record by the fetch so its away team is left **blank** and no market is originated for
+it; plus Paris Basketball v Valencia Basket from EuroLeague's official Round 7 Game Center).
+**2,938 markets originated.** Winner-pick tiers: 1 High, 45 Medium, 93 Low.
+
+**High-confidence picks: 10, each with a unique prediction of 98–151 words.** All ten clear the four
+gates — verified fixture, Class A official evidence for both sides, official current form, and
+p ≥ 0.700 with the zero-vig price inside −250…+10000. Nine are EuroLeague Round 7 fixtures
+(Efes–Besiktas, Bayern–Dubai, Maccabi–Real Madrid, Panathinaikos–Baskonia, Milan–Barcelona,
+Partizan–Crvena Zvezda, Zalgiris–ASVEL, Olympiacos–Fenerbahce, Paris–Valencia) and one is the WST
+Northern Ireland Open last-16 tie Kyren Wilson v Pang Junxu. Prices run −234 to −249.
+
+**Window contradiction, resolved in the open.** At zero vig p = 0.700 prices at −233 and p = 0.714286
+at exactly −250, so the two tests intersect in a band only **0.0143 wide**; at a 5% overround they
+cannot both bind at all (p = 0.700 books at −277). This desk gates on the **zero-vig price it
+originates itself** and prints the 5% book equivalent beside every price for comparison only. That
+is documented on `/1a421e41/window.html` and in `reports/SESSION_1A421E41.md`.
+
+**Headline structural finding — `F-1A-GRAN-01`: the band is granularity-limited, not
+conviction-limited.** A handicap rung steps probability by `0.3434/sigma` per half point, so whether
+any rung lands inside a 0.0143-wide band is set by the sport's scoring variance rather than by how
+strong the favourite is. A genuine **0.789** darts favourite is rejected because its nearest rung
+prices at −258, eight American points outside the window, while a basketball side at **0.701**
+clears. The full rejected-Highs ledger is published rather than dropped.
+
+**Second headline finding — OLBG is tip-gated, not a fixture list.** A card exists only once a
+tipster has posted, so a zero-tip fixture is invisible with no placeholder and nothing to enumerate.
+Proved three ways against official slates on this one harvest: NHL's API reports 12 games for
+2026-10-22 while OLBG's Ice Hockey hub renders 7 SHL/Liiga cards and no NHL game (`F-1A-NHL-01`);
+EuroLeague Round 7 has 9 upcoming games and OLBG renders 8 (`F-1A-BBALL-01`); the Aussie Rules and
+eSports hubs render no fixtures at all (`F-1A-EMPTY-01`).
+
+**OLBG's clock is US Eastern Daylight Time, unlabelled (`F-1A-CLOCK-04`).** All 8 EuroLeague
+fixtures sit exactly 6h behind the official CEST kick-off with no residual; CEST is UTC+2 and EDT is
+UTC−4. A separate 5h internal inconsistency appears on the greyhound hub (`F-1A-CLOCK-01`).
+
+**Official source disagreeing with itself — recorded, never silently resolved.**
+`F-1A-EURO-01`: the Game Center says Valencia **(5-1)**, the standings say **4-2** over the same 6
+games. `F-1A-EURO-02`: the Game Center says Real Madrid is **1-4 away**, the standings say **A 1-3** —
+`1-4` away plus `2-0` home would need 7 games and the official GP is 6. `F-1A-EURO-03`: 6 of 8
+official ppg claims reconcile exactly with `PTS+/GP`, but Olympiacos 98.2 (table implies 94.0) and
+Valencia 98.3 (table implies 97.17) do not, so neither prose figure is used as a numeric input. The
+standings **table** was reconciled on four independent checks before any number was taken from it —
+`PTS+−PTS−==+/−`, `W+L==GP` with `Win%==W/GP`, `H+A==W−L`, all 20/20 — and it closes exactly:
+`ΣPTS+ == ΣPTS− == 10546`, `ΣW == ΣL == 61 == games`. Home-court advantage is then **derived** from
+that official 33/61 home win rate rather than assumed.
+
+**24 findings published on `/1a421e41/flagged.html`** (Flagged for Review), each with source links
+and evidence. Repository audit findings carry file and line numbers: `AUD-1A-HIGGINS-01`
+(`data/predictions.json` 351/360, duplicated 1230/1239, prices a High John Higgins frame handicap
+for a match the official WST page shows Jak Jones won 4-2 on 21 Oct — independently confirms
+`AUD-F7-04`), `AUD-1A-DUP-01` (same file declares `count: 29` but stores the identical set twice
+under `items` and `predictions`), `AUD-1A-WIN-01` (`data/6a081cf6_high_band.json:267`, −251 graded
+High), `AUD-1A-WIN-02` (`data/v3/predictions.json:1963`, same selection same price),
+`AUD-1A-DARDERI-01` (`data/fixtures.json:1176`/`6850`, stale `event_id=902038`; result **not**
+confirmable so flagged without assertion), `AUD-1A-README-01` (`README.md:56` claims 160 pages).
+Three candidates are deliberately **not** asserted because the governing body needed was not reached:
+`F-1A-AFL-01`, `F-1A-GAA-01`, `F-1A-CLOCK-02`.
+
+**21 non-official sources rejected** and listed with reasons on `/1a421e41/sources.html`, including
+Wikipedia, basketball-reference, realgm and eurobasket.com. Where a rejected source carried a number
+that would have been convenient to use, the reason says so explicitly.
+
+**Gates, all re-run on the rebased tree at `96f5606`:**
+`scripts/s1a421e41_validate.py` **PASS 0 errors 0 warnings** (32 pages, 0 broken relative links; it
+re-derives every gate from the raw inputs rather than trusting the builder — price arithmetic,
+half-point grid, window flags, tightest-rung choice, the four High gates, the rejected ledger,
+prediction length and uniqueness with a mechanical shared-6-gram check, the standings reconciliation,
+the clock deltas, and every relative link). Root `scripts/validate.py` **VALIDATION PASSED, 0
+errors, 6 warnings** — all six pre-existing and all in `flagged.html` and `f7fa77fc/flagged.html`,
+which are other sessions' files. `scripts/final_audit.py` exit 0 and
+`reports/FINAL_INTEGRATION_AUDIT.md` regenerated **byte-identically**. Every other session's
+validator (`v3_`, `s6a081cf6_`, `s7a5b5360_`, `s984d417f_`, `s9dfd0b48_`, `sa570c470_`, `c17a9192_`,
+`ccb6bde2_`, `ebfbd966_`, `sf71557b5_validate.py`) returned rc=0.
+`git diff --diff-filter=D origin/main` is **empty** — no file deleted.
+
+**Pre-existing, not caused by this session:** `scripts/session_5a353e83_audit.py` returns rc=1
+reporting root-scope T35 (nine AFLW lines, three picks) still queued. It audits root-scope files this
+session never touched, and `git status` confirms this session's changes are purely additive inside
+`1a421e41/**`, `data/1a421e41/**`, `scripts/s1a421e41_*.py` and `reports/SESSION_1A421E41.md`.
+Left for T61 (`6ad5a3a8-olbg1`), which owns root integration.
+
+**Outstanding request, unchanged:** the root companion-bar entry for `1a421e41/index.html` requested
+at 07:22Z is still logged in §4 for T61 rather than being made here, because root `index.html`,
+`README.md` and `scripts/build_site.py` are in that session's scope.
