@@ -28,7 +28,7 @@ COVERAGE_NOTES = {
 }
 
 
-def assemble(at=None, directory=CURRENT):
+def assemble(at=None, directory=CURRENT, *, write=True):
     at = at or now_utc()
     imported = load(directory/'session_import.json')
     captures = {p.stem:load(p) for p in sorted((directory/'evidence').glob('*.json'))}
@@ -98,7 +98,8 @@ def assemble(at=None, directory=CURRENT):
                 'fixtures':fixtures,'statistics':stats,'prices':prices,'predictions':[],
                 'source_ids':sorted(captures),'network_attempts':network.get('attempts',[]),
                 'input_sha256':digest({'import':imported,'network':network,'captures':captures})}
-    save(directory/'snapshot.json',snapshot)
+    if write:
+        save(directory/'snapshot.json',snapshot)
     return snapshot
 
 if __name__=='__main__':

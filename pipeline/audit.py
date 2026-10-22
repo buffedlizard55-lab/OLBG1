@@ -56,7 +56,7 @@ def line_for(text,field,value,used):
     return None
 
 
-def build_audit(at):
+def build_audit(at, *, write=True):
     tracked=subprocess.check_output(['git','ls-files'],cwd=ROOT,text=True).splitlines()
     baseline=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     files=[];rows=[];hashes={};python_errors=[]
@@ -115,7 +115,8 @@ def build_audit(at):
                       'start_elapsed_occurrences':sum(r['stored_start_elapsed'] is True for r in rows),
                       'findings':len(findings)},
             'files':files,'rows':rows,'findings':findings,'input_sha256':digest(hashes)}
-    save(CURRENT/'audit.json',output)
+    if write:
+        save(CURRENT/'audit.json',output)
     return output
 
 
@@ -198,6 +199,12 @@ def make_findings(baseline):
     add(22,'medium','Displayed counts and provenance scope need independent release gates',
         'TEE3C added rejection of duplicate price books, unsupported rolling-window flags, inflated KPI/coverage counts and field references hidden outside the source set used to calculate expiry. Future observations cannot justify retrospective pricing. These gates validate internal consistency, not independent confirmation of every legacy statement or worldwide source completeness.',
         'https://api-web.nhle.com/v1/schedule/2026-10-22','pipeline/validate.py','def validate_data','resolved; regression tests')
+    add(23,'medium','Scratch builds must not rewrite the checked-in snapshot',
+        'Parallel audit PR #107 (E3-03) identified that pipeline.build --out a scratch directory rewrote tracked snapshot/audit JSON while leaving the checked-in pages unchanged. TEE3C made assembly/audit read-only during builds and writes the resulting snapshot and audit only into the selected output. Release checks also compare manifest metadata against the exported snapshot. Explicit assemble/refresh commands still persist their outputs.',
+        'https://api.github.com/repos/buffedlizard55-lab/OLBG1','pipeline/build.py','def build_site','resolved; non-mutating build regression tests')
+    add(24,'medium','Pages hosting mode could not be changed with this integration token',
+        'Parallel audit PR #107 (E3-01/E3-02/E3-05) raised the risk of the legacy main:/ build and workflow artifact deployment replacing one another. The Pages API confirms legacy mode; the TEE3C attempt to set build_type=workflow returned HTTP 403 Resource not accessible by integration. Do not claim the setting changed or that an artifact-only publisher is enforced. Both outputs use canonical expiry/status gates, but may have different observation windows and counts. Verify actual deployment jobs and the live manifest after publication; configuration risk remains for review.',
+        'https://api.github.com/repos/buffedlizard55-lab/OLBG1/pages',status='needs review; Pages configuration permission unavailable')
     return findings
 
 if __name__=='__main__':

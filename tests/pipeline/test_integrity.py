@@ -89,6 +89,13 @@ class DerivedReleaseGates(unittest.TestCase):
         save(self.directory / 'snapshot.json', self.snapshot)
         return validate_data(self.directory)
 
+    def test_read_only_assembly_does_not_mutate_snapshot(self):
+        before=(self.directory/'snapshot.json').read_bytes()
+        at=parse_time(self.snapshot['generated_at'])+timedelta(days=2)
+        future=assemble(at,self.directory,write=False)
+        self.assertEqual(future['counts']['priced_matches'],0)
+        self.assertEqual((self.directory/'snapshot.json').read_bytes(),before)
+
     def test_unchanged_snapshot_passes(self):
         self.assertEqual(self.errors(), [])
 
@@ -124,6 +131,31 @@ class DerivedReleaseGates(unittest.TestCase):
         save(self.directory / 'evidence/synthetic-extra-support.json', seal_capture(supporting))
         row['field_evidence']['participant_a'] = ['synthetic-extra-support#a']
         self.assertTrue(any('field source absent from expiry scope' in e for e in self.errors()))
+
+
+
+class ScratchBuildContract(unittest.TestCase):
+    def test_builder_requests_read_only_inputs(self):
+        from unittest.mock import patch
+        from pipeline.build import build_site
+        at=parse_time('2026-10-22T12:00:00Z')
+        with tempfile.TemporaryDirectory() as directory:
+            with patch('pipeline.build.assemble',return_value={'counts':{}}) as assembly, \
+                 patch('pipeline.build.build_audit',return_value={}) as audit, \
+                 patch('pipeline.build.stage_existing'), patch('pipeline.build.Site') as site:
+                site.return_value.run.return_value={'pages':[]}
+                build_site(Path(directory),at)
+                assembly.assert_called_once_with(at,write=False)
+                audit.assert_called_once_with(at,write=False)
+
+    def test_read_only_audit_never_calls_save(self):
+        from unittest.mock import patch
+        from pipeline.audit import build_audit
+        with patch('pipeline.audit.save') as save_output, \
+             patch('pipeline.audit.subprocess.check_output',side_effect=['','synthetic-baseline']):
+            output=build_audit(parse_time('2026-10-22T12:00:00Z'),write=False)
+            self.assertEqual(output['rows'],[])
+            save_output.assert_not_called()
 
 
 if __name__ == '__main__':

@@ -275,18 +275,18 @@ class Site:
             if p.relative_to(CURRENT).parts[0]=='raw' and p.name not in public_raw:continue
             target=path/p.relative_to(CURRENT)
             if p.resolve()!=target.resolve():target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,target)
-        output=io.StringIO(newline='');writer=csv.writer(output)
-        writer.writerow(['id','sport','participant_a','participant_b','event','competition','date_in_source','start_utc','venue','evidence_state','experimental_selection','confidence','model_probability','fair_decimal','american_display','bookmaker_quote','official_urls','observed_after','observed_before','expires_at'])
+        output=io.StringIO(newline='');writer=csv.writer(output,lineterminator='\n')
+        writer.writerow(['id','sport','participant_a','participant_b','event','competition','date_in_source','start_utc','venue','evidence_state','experimental_selection','confidence','model_probability','fair_decimal','american_display','bookmaker_quote','official_urls','observed_after','observed_before','expires_at','price_expires_at'])
         def safe(v):return "'"+v if isinstance(v,str) and v and v.lstrip().startswith(('=','+','-','@')) else v
         for r in self.s['fixtures']:
             f=r['facts'];p=self.prices[r['id']]
-            writer.writerow([safe(v) for v in [r['id'],r['sport'],f['participant_a'],f['participant_b'],f['event'],f['competition'],f['date'],f['start_utc'],f['venue'],r['state'],p['selection'],p['confidence'],p['probability'],p['fair_decimal'],p['american_display'],None,' | '.join(self.c[s]['url'] for s in r['source_ids']),r['verified_after'],r['verified_before'],r['expires_at']]])
+            writer.writerow([safe(v) for v in [r['id'],r['sport'],f['participant_a'],f['participant_b'],f['event'],f['competition'],f['date'],f['start_utc'],f['venue'],r['state'],p['selection'],p['confidence'],p['probability'],p['fair_decimal'],p['american_display'],None,' | '.join(self.c[s]['url'] for s in r['source_ids']),r['verified_after'],r['verified_before'],r['expires_at'],p.get('expires_at')]])
         (path/'matches.csv').write_text(output.getvalue(),encoding='utf-8-sig')
     def run(self):
         assets=self.out/'assets';assets.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(ROOT/'site_templates/current.css',assets/'current-style.css');shutil.copyfile(ROOT/'site_templates/current.js',assets/'current-app.js')
         (assets/'current-mark.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="#12563d"/><path d="M11 28V18m9 10V10m9 18V16" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>')
-        self.exports();self.dashboard();self.matches();self.sports();self.markets();self.predictions();self.review();self.sources_page();self.verification();self.methodology();self.analysis();self.reverse();self.audit_pages();self.archive()
+        self.exports();save(self.out/'data/current/snapshot.json',self.s);save(self.out/'data/current/audit.json',self.audit);self.dashboard();self.matches();self.sports();self.markets();self.predictions();self.review();self.sources_page();self.verification();self.methodology();self.analysis();self.reverse();self.audit_pages();self.archive()
         aliases=[('matches.html','picks.html','Match list'),('all.html','picks.html','Match list'),('coverage.html','flagged.html#coverage','Coverage'),('audit.html','audit/files.html','Repository audit'),('live-refresh.html','sources.html#network','Source refresh'),('live-verification.html','verification.html','Field verification')]
         for alias,target,title in aliases:
             body='<div class="hero-empty"><div><h2>This view has a canonical home.</h2><p><a href="'+target+'">Continue to the current research view →</a></p>'
@@ -342,7 +342,7 @@ def build_site(out=ROOT,at=None,archive=False):
     out=Path(out).resolve()
     if out==ROOT/'.git' or ROOT/'.git' in out.parents:raise ValueError('Forbidden output directory')
     if archive:archive_root()
-    at=at or now_utc();snapshot=assemble(at);audit=build_audit(at);stage_existing(out)
+    at=at or now_utc();snapshot=assemble(at,write=False);audit=build_audit(at,write=False);stage_existing(out)
     manifest=Site(snapshot,audit,out).run()
     print(f'Built {len(manifest["pages"])} canonical pages at {out}; '+json.dumps(snapshot['counts']));return manifest
 

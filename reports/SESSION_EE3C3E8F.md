@@ -31,17 +31,23 @@ The Arena page-retrieval tool was used directly. These were **selected excerpts*
 
 ## Checkpoint and verification
 
-At the approximately 12:20 UTC local build: **108 captured listings, 17 price books, 42 originated two-way markets, 84 outcome prices, 17 Low winner preferences, 0 Medium, 0 High; 91 unpriced listings**. Those are as-of counts, not a promise that values remain current. Runtime expiry and subsequent refreshes can legitimately change them. No originated price is an available bookmaker offer.
+At the approximately 12:06 UTC local build: **108 captured listings, 17 price books, 42 originated two-way markets, 84 outcome prices, 17 Low winner preferences, 0 Medium, 0 High; 91 unpriced listings**. Those are as-of counts, not a promise that values remain current. Runtime expiry and subsequent refreshes can legitimately change them. No originated price is an available bookmaker offer.
 
 Completed local gates:
 
-- 113 canonical Python tests, including 18 new synthetic regression scenarios; all pass. Synthetic mutations are explicitly labelled and never published as real match facts.
+- 116 canonical Python tests, including 21 new synthetic regression scenarios; all pass. Synthetic mutations are explicitly labelled and never published as real match facts.
 - 38 preserved upstream tests; all pass.
 - `pipeline.build` produces 77 canonical pages at this checkpoint; `pipeline.validate --site _site` reports zero errors. Every canonical data row has an official/project source link; internal targets/fragments resolve.
 - Real Chromium desktop/mobile/project-prefix tests pass: filters, sort, CSV download, odds formats, evidence links, market search, fixture expiry, statistical expiry without fixture-state mutation, and no-JavaScript withholding.
 - Historical `scripts/validate.py`: zero errors, three pre-existing archived mirror warnings (rows cite internal methodology). Its 30 historical High predictions are **not** canonical recommendations.
 
 The new browser regression initially failed: the first edit was in the generated asset, while the builder copies `site_templates/current.js`. Corrected the source template, rebuilt, and the test passed; no assertion was weakened to bypass the behavior. Historical link validation also initially traversed ignored local Playwright HTML; browser dependencies were moved outside the repository, and the documented local install now uses an external temporary directory. No legacy validator was changed to hide that tooling issue.
+
+## Parallel audit integration and output purity
+
+Read PR #107 (`e3d56713-olbg1`, docs-only T64) without editing its report or claiming its scope. Its E3-03 correctly identifies that scratch builds mutated tracked snapshot/audit inputs. Fixed under the existing TEE3C `pipeline/**` claim: `assemble` and `build_audit` accept read-only calculation; builds save their snapshot/audit only into the selected output. Refresh and explicit assembly still persist by default. Tests cover read-only assembly, build call contracts and read-only audit, and release validation compares snapshot and manifest metadata. Public finding F-257E-23 attributes the lead to PR #107. CSV exports now distinguish fixture expiry and price expiry; LF records also avoid Git whitespace errors.
+
+E3-01/E3-02/E3-05 describe dual Pages publishers and committed-versus-live differences. Independently confirmed `GET /repos/buffedlizard55-lab/OLBG1/pages` reports `build_type: legacy`, source `main:/`. A `PUT` requesting `build_type=workflow` returned **403 Resource not accessible by integration**. No setting changed. The risk remains public in F-257E-24, and post-merge verification must inspect actual production deployment and live output, not just the branch-build status. An automated refresh can legitimately change counts and observation windows; that alone is not a factual discrepancy. No claim that dual-publisher risk is fully resolved.
 
 ## Publication
 

@@ -32,7 +32,6 @@ class PublicEvidenceExports(unittest.TestCase):
             self.assertFalse((out/'data/current/raw/unparsed-page.body').exists())
             self.assertTrue((inputs/'raw/unparsed-page.body').exists())
 
-if __name__=='__main__':unittest.main()
 
 class RenderedPriceExpiryGates(unittest.TestCase):
     setUp = CanonicalRouteGates.setUp
@@ -61,3 +60,7 @@ class RenderedPriceExpiryGates(unittest.TestCase):
         save(self.out/'data/current/snapshot.json', {'prices':[
             {'fixture_id':'synthetic-book','expires_at':'2026-10-22T11:00:00Z'}]})
         self.assertTrue(any('deadline differs from price book' in e for e in validate_site(self.out)))
+
+
+if __name__ == '__main__':
+    unittest.main()

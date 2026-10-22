@@ -8,7 +8,7 @@ One canonical dashboard, **17 sport pages**, explicit evidence gaps and independ
 
 The selected **22 October 2026** import contains **108 fixture/event listings**, **42 accepted statistical input observations** and **31 official-source checks**. It spans 15 categories; darts and greyhound fixture/runner details remain unverified. Every category is **partial or unverified**, never globally complete.
 
-At the import checkpoint, compatible inputs support **17 price books / 42 two-way markets / 84 outcome prices** after the TEE3C status gate (22 October, approximately 12:20 UTC build). There are **17 Low experimental winner preferences** and **zero Medium/High selections**. EuroLeague schedules without an explicit supported pre-match status no longer produce estimates. Valencia’s disputed record is quarantined after separate official preview/standings rereads. These are as-of counts, not permanently current numbers; refreshes, expiry and the UTC window can change them.
+At the import checkpoint, compatible inputs support **17 price books / 42 two-way markets / 84 outcome prices** after the TEE3C status gate (22 October, approximately 12:06 UTC build). There are **17 Low experimental winner preferences** and **zero Medium/High selections**. EuroLeague schedules without an explicit supported pre-match status no longer produce estimates. Valencia’s disputed record is quarantined after separate official preview/standings rereads. These are as-of counts, not permanently current numbers; refreshes, expiry and the UTC window can change them.
 
 **Not complete:** worldwide fixtures, every bookmaker market, calibrated sport-specific models, current player availability, recent game-by-game histories or verified available bookmaker odds. Unsupported values remain **null in JSON and blank in tables**, with reasons and official recheck links. We do not invent High predictions to fill a quota. Any future High write-up must be unique, at least 30 words, state the selection and participants, and support its current form/player/history claims with official evidence.
 
@@ -37,7 +37,7 @@ Python 3.11+ standard library; no paid feed, API key or application dependency.
 ```sh
 python3 -m unittest discover -s tests/pipeline -v
 python3 -m unittest discover -s tests -p 'test*.py' -v  # preserved upstream tests
-python3 -m pipeline.build --out _site
+python3 -m pipeline.build --out _site  # writes only to _site, never tracked inputs
 python3 -m pipeline.validate --site _site
 python3 -m http.server 8000 --bind 0.0.0.0 --directory _site
 ```
@@ -55,7 +55,7 @@ The browser suite tests desktop/mobile, `/OLBG1/` hosting, filters/reset/sort, o
 
 ```sh
 python3 -m pipeline.refresh             # bounded official HTTP attempts, failures logged
-python3 -m pipeline.build --out _site
+python3 -m pipeline.build --out _site  # writes only to _site, never tracked inputs
 python3 -m pipeline.validate --site _site
 
 # Only the final integration publishes checked-in root files for main:/ Pages:
@@ -66,7 +66,7 @@ python3 -m pipeline.build --out .
 
 ## Automation and actual hosting mode
 
-`.github/workflows/current-pages.yml` is the single canonical PR/test/refresh/publication workflow. Pinned actions, read-only checkout, 113 pipeline tests plus 38 preserved tests, data/link/fragment gates and real browser tests precede artifact creation. Public structured collectors cover NHL/MLB/NBA schedules; other categories remain explicitly unparsed/partial. A failed request is not a zero-fixture finding.
+`.github/workflows/current-pages.yml` is the single canonical PR/test/refresh/publication workflow. Pinned actions, read-only checkout, 116 pipeline tests plus 38 preserved tests, data/link/fragment gates and real browser tests precede artifact creation. Public structured collectors cover NHL/MLB/NBA schedules; other categories remain explicitly unparsed/partial. A failed request is not a zero-fixture finding.
 
 **Pages is already enabled and its configuration API reports `main:/` / legacy mode.** The interactive integration cannot change that setting (API403), but the standard GitHub Actions artifact deployment is proven to work with the repository’s authorized job token: upstream run `39745549884` succeeded and the live T61 page was fetched. The canonical workflow uses that same pinned configure/deploy path; it does not request new credentials or pretend the settings change succeeded. The separate legacy branch-build status can say cancelled/errored while an artifact deployment succeeds. Verify the actual deployment job and live content, not that legacy status alone.
 
@@ -89,7 +89,7 @@ The previous T61 workflow is retained as a manual, non-publishing historical che
 
 - `data/current/`: current facts, calculations, source captures, network attempts and complete machine-readable audit.
 - `audit/rows-*.html`: paginated historical row occurrences with file lines, exact JSON pointers and source/recheck links. Mirrors/aliases are labelled; these are **not unique recertified matches**.
-- `pipeline/audit.py`: reads tracked legacy JSON/Python files, inventories detectable fixture/price/prose objects and publishes 22 traced findings. Parsing every file is not semantic verification of every sentence.
+- `pipeline/audit.py`: reads tracked legacy JSON/Python files, inventories detectable fixture/price/prose objects and publishes 24 traced findings. Parsing every file is not semantic verification of every sentence.
 - `archive/root-20261022/`: complete pre-T257E root (including T61), original hashes, rewritten links and an archive warning.
 - `archive/pre-release-20261022/`: T61's earlier archive, untouched.
 - All parallel desks, `data/release`, `scripts/release_*`, `tests/release` and independent review reports are preserved. Their claims are never silently promoted to current evidence.

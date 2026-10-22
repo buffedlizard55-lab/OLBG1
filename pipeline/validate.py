@@ -141,7 +141,11 @@ def validate_site(out):
             h=HTML();h.feed(path.read_text(encoding='utf-8'));cache[path]=h
         return cache[path]
     snapshot_path=out/'data/current/snapshot.json'
-    books={p['fixture_id']:p for p in load(snapshot_path)['prices']} if snapshot_path.is_file() else {}
+    snapshot=load(snapshot_path) if snapshot_path.is_file() else None
+    books={p['fixture_id']:p for p in snapshot['prices']} if snapshot else {}
+    if snapshot and 'generated_at' in snapshot:
+        for key in ('generated_at','counts','input_sha256'):
+            if snapshot.get(key)!=manifest.get(key):errors.append('Snapshot/manifest mismatch: '+key)
     unmanaged={p.name for p in out.glob('*.html')}-set(manifest['pages'])-{'release-review.html'}
     if unmanaged:errors.append('Unregistered root HTML (archive it or register a canonical route): '+', '.join(sorted(unmanaged)))
     for rel in manifest['pages']:
