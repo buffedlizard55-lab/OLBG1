@@ -1,0 +1,55 @@
+{
+  "id": "mlb-records-2026",
+  "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason&fields=records,teamRecords,team,id,name,wins,losses,runsScored,runsAllowed,gamesPlayed,league,id,division",
+  "final_url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason&fields=records,teamRecords,team,id,name,wins,losses,runsScored,runsAllowed,gamesPlayed,league,id,division",
+  "role": "official",
+  "sport": "baseball",
+  "method": "retrieval-tool-selected-excerpts",
+  "observed_after": "2026-10-22T07:17:40Z",
+  "observed_before": "2026-10-22T07:30:30Z",
+  "http_status": null,
+  "raw_response_sha256": null,
+  "excerpt_policy": "Selected, normalized excerpts and JSON field projections; not a byte-for-byte response or a verbatim full-page transcript.",
+  "scope": "Selected JSON fields for the two World Series participants; chunks 0 and 2.",
+  "complete": false,
+  "notes": "Regular season, NOT postseason form. IDs join to the MLB schedule; no fuzzy team-name match. Split records without type labels are not used.",
+  "observations": [
+    {
+      "id": "139",
+      "locator": "139",
+      "quote": "team.id=139; team.name=\"Rays\"; gamesPlayed=162; wins=98; losses=64; runsScored=736; runsAllowed=650. Query: season=2026; standingsTypes=regularSeason.",
+      "values": {
+        "team": "Rays",
+        "team_id": "139",
+        "competition": "MLB",
+        "season": "2026",
+        "games_played": 162,
+        "wins": 98,
+        "losses": 64,
+        "runs_scored": 736,
+        "runs_allowed": 650,
+        "as_of": "2026-10-22",
+        "period_note": "2026 regular season; as_of is observation date, not last game date."
+      }
+    },
+    {
+      "id": "158",
+      "locator": "158",
+      "quote": "team.id=158; team.name=\"Brewers\"; gamesPlayed=162; wins=103; losses=59; runsScored=832; runsAllowed=618. Query: season=2026; standingsTypes=regularSeason.",
+      "values": {
+        "team": "Brewers",
+        "team_id": "158",
+        "competition": "MLB",
+        "season": "2026",
+        "games_played": 162,
+        "wins": 103,
+        "losses": 59,
+        "runs_scored": 832,
+        "runs_allowed": 618,
+        "as_of": "2026-10-22",
+        "period_note": "2026 regular season; as_of is observation date, not last game date."
+      }
+    }
+  ],
+  "sha256": "ffd67ff4185c0fe4216137e79287e2083c5237cf2a68f4cab5fe762765a48b09"
+}

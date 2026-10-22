@@ -1,0 +1,104 @@
+{
+  "id": "mlb-schedule-20261022",
+  "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-28&fields=totalGames,dates,date,games,gamePk,gameDate,status,detailedState,abstractGameState,teams,away,home,team,id,name,venue",
+  "final_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-28&fields=totalGames,dates,date,games,gamePk,gameDate,status,detailedState,abstractGameState,teams,away,home,team,id,name,venue",
+  "role": "official",
+  "sport": "baseball",
+  "method": "retrieval-tool-selected-excerpts",
+  "observed_after": "2026-10-22T07:17:40Z",
+  "observed_before": "2026-10-22T07:30:30Z",
+  "http_status": null,
+  "raw_response_sha256": null,
+  "excerpt_policy": "Selected, normalized excerpts and JSON field projections; not a byte-for-byte response or a verbatim full-page transcript.",
+  "scope": "MLB API date range 22–28 October inclusive; all 5 returned games.",
+  "complete": true,
+  "notes": "Reported totalGames=5 reconciles to 5 rows. Date is official league date; UTC can fall on next day. Conditional series games are not guarantees of play.",
+  "observations": [
+    {
+      "id": "849805",
+      "locator": "849805",
+      "quote": "gamePk 849805; date 2026-10-23; gameDate 2026-10-24T00:00:00Z; away team 139 Tampa Bay Rays; home team 158 Milwaukee Brewers; venue American Family Field; abstractGameState Preview; detailedState Scheduled.",
+      "values": {
+        "participant_a": "Milwaukee Brewers",
+        "participant_b": "Tampa Bay Rays",
+        "participant_a_id": "158",
+        "participant_b_id": "139",
+        "date": "2026-10-23",
+        "start_utc": "2026-10-24T00:00:00Z",
+        "venue": "American Family Field",
+        "competition": "MLB",
+        "season": "2026",
+        "official_status": "Scheduled"
+      }
+    },
+    {
+      "id": "849802",
+      "locator": "849802",
+      "quote": "gamePk 849802; date 2026-10-24; gameDate 2026-10-25T00:00:00Z; away team 139 Tampa Bay Rays; home team 158 Milwaukee Brewers; venue American Family Field; abstractGameState Preview; detailedState Scheduled.",
+      "values": {
+        "participant_a": "Milwaukee Brewers",
+        "participant_b": "Tampa Bay Rays",
+        "participant_a_id": "158",
+        "participant_b_id": "139",
+        "date": "2026-10-24",
+        "start_utc": "2026-10-25T00:00:00Z",
+        "venue": "American Family Field",
+        "competition": "MLB",
+        "season": "2026",
+        "official_status": "Scheduled"
+      }
+    },
+    {
+      "id": "849804",
+      "locator": "849804",
+      "quote": "gamePk 849804; date 2026-10-26; gameDate 2026-10-27T00:00:00Z; away team 158 Milwaukee Brewers; home team 139 Tampa Bay Rays; venue Tropicana Field; abstractGameState Preview; detailedState Scheduled.",
+      "values": {
+        "participant_a": "Tampa Bay Rays",
+        "participant_b": "Milwaukee Brewers",
+        "participant_a_id": "139",
+        "participant_b_id": "158",
+        "date": "2026-10-26",
+        "start_utc": "2026-10-27T00:00:00Z",
+        "venue": "Tropicana Field",
+        "competition": "MLB",
+        "season": "2026",
+        "official_status": "Scheduled"
+      }
+    },
+    {
+      "id": "849803",
+      "locator": "849803",
+      "quote": "gamePk 849803; date 2026-10-27; gameDate 2026-10-28T00:00:00Z; away team 158 Milwaukee Brewers; home team 139 Tampa Bay Rays; venue Tropicana Field; abstractGameState Preview; detailedState Scheduled.",
+      "values": {
+        "participant_a": "Tampa Bay Rays",
+        "participant_b": "Milwaukee Brewers",
+        "participant_a_id": "139",
+        "participant_b_id": "158",
+        "date": "2026-10-27",
+        "start_utc": "2026-10-28T00:00:00Z",
+        "venue": "Tropicana Field",
+        "competition": "MLB",
+        "season": "2026",
+        "official_status": "Scheduled"
+      }
+    },
+    {
+      "id": "849799",
+      "locator": "849799",
+      "quote": "gamePk 849799; date 2026-10-28; gameDate 2026-10-29T00:00:00Z; away team 158 Milwaukee Brewers; home team 139 Tampa Bay Rays; venue Tropicana Field; abstractGameState Preview; detailedState Scheduled.",
+      "values": {
+        "participant_a": "Tampa Bay Rays",
+        "participant_b": "Milwaukee Brewers",
+        "participant_a_id": "139",
+        "participant_b_id": "158",
+        "date": "2026-10-28",
+        "start_utc": "2026-10-29T00:00:00Z",
+        "venue": "Tropicana Field",
+        "competition": "MLB",
+        "season": "2026",
+        "official_status": "Scheduled"
+      }
+    }
+  ],
+  "sha256": "b4ee6b69caa6c00778daf12f84c35627b362fca487ae3e69f76d9683565b473f"
+}

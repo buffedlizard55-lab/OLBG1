@@ -1,0 +1,90 @@
+{
+  "id": "wta-osaka-op",
+  "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/405/OP.pdf",
+  "final_url": "https://wtafiles.wtatennis.com/pdf/draws/2026/405/OP.pdf",
+  "role": "official",
+  "sport": "tennis",
+  "method": "retrieval-tool-selected-excerpts",
+  "observed_after": "2026-10-22T07:17:40Z",
+  "observed_before": "2026-10-22T07:30:30Z",
+  "http_status": null,
+  "raw_response_sha256": null,
+  "excerpt_policy": "Selected, normalized excerpts and JSON field projections; not a byte-for-byte response or a verbatim full-page transcript.",
+  "scope": "22 October order-of-play; singles AND doubles; no results polling.",
+  "complete": false,
+  "notes": "Case normalized; pair membership retained. Clocks have no explicit timezone. Followed-by/not-before is not an exact start. Osaka Ruzic–Day RET row excluded.",
+  "observations": [
+    {
+      "id": "1",
+      "locator": "1",
+      "quote": "ORDER OF PLAY - THURSDAY, OCTOBER 22, 2026. Starting at 11:30 AM: Ann Li VS Zeynep Sonmez.",
+      "values": {
+        "participant_a": "Ann Li",
+        "participant_b": "Zeynep Sonmez",
+        "date": "2026-10-22",
+        "time_text": "Starting at 11:30 AM",
+        "competition": "Kinoshita Group Japan Open",
+        "format": "singles"
+      }
+    },
+    {
+      "id": "2",
+      "locator": "2",
+      "quote": "ORDER OF PLAY - THURSDAY, OCTOBER 22, 2026. Followed by: Mary Stoiana VS Moyuka Uchijima.",
+      "values": {
+        "participant_a": "Mary Stoiana",
+        "participant_b": "Moyuka Uchijima",
+        "date": "2026-10-22",
+        "time_text": "Followed by",
+        "competition": "Kinoshita Group Japan Open",
+        "format": "singles"
+      }
+    },
+    {
+      "id": "3",
+      "locator": "3",
+      "quote": "ORDER OF PLAY - THURSDAY, OCTOBER 22, 2026. Followed by: Magda Linette VS Katerina Siniakova.",
+      "values": {
+        "participant_a": "Magda Linette",
+        "participant_b": "Katerina Siniakova",
+        "date": "2026-10-22",
+        "time_text": "Followed by",
+        "competition": "Kinoshita Group Japan Open",
+        "format": "singles"
+      }
+    },
+    {
+      "id": "4",
+      "locator": "4",
+      "quote": "ORDER OF PLAY - THURSDAY, OCTOBER 22, 2026. Not before 1:00 PM: Ingrid Neel / Giuliana Olmos VS Isabelle Haverlag / Lilli Tagger.",
+      "values": {
+        "participant_a": "Ingrid Neel / Giuliana Olmos",
+        "participant_b": "Isabelle Haverlag / Lilli Tagger",
+        "date": "2026-10-22",
+        "time_text": "Not before 1:00 PM",
+        "competition": "Kinoshita Group Japan Open",
+        "format": "doubles"
+      }
+    },
+    {
+      "id": "5",
+      "locator": "5",
+      "quote": "ORDER OF PLAY - THURSDAY, OCTOBER 22, 2026. Followed by: Jesika Maleckova / Miriam Skoch VS Hao-Ching Chan / Miyu Kato.",
+      "values": {
+        "participant_a": "Jesika Maleckova / Miriam Skoch",
+        "participant_b": "Hao-Ching Chan / Miyu Kato",
+        "date": "2026-10-22",
+        "time_text": "Followed by",
+        "competition": "Kinoshita Group Japan Open",
+        "format": "doubles"
+      }
+    },
+    {
+      "id": "retired-entry",
+      "locator": "retired-entry",
+      "quote": "6-4 0-0 RET R16 | Antonia RUZIC CRO vs [LL] Kayla DAY USA.",
+      "values": {}
+    }
+  ],
+  "sha256": "37604e66e70273fc7f364c074a4e4f1969f4877f9796fef7924badbe9b9d9a44"
+}
