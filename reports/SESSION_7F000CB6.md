@@ -12,3 +12,8 @@
 2. **OLBG Wrong Fixture Date & Blind Spots**: Caught OLBG `Gaelic_Football/25` listing `Rathgormack v The Nire` (`3536`) on `01 Nov` instead of Munster GAA's official `Sun 25 Oct 2026 14:30`; documented zero-tip blind spots on `Aussie_Rules/22` (AFLW R11), `eSports/23` (LoL Worlds 2026), `Rugby_League/10` (RLWC26 R2), and `Golf/5` (PGA Bermuda Championship).
 3. **Official Publisher Prose-vs-Table Contradictions**: Cross-checking `euroleaguebasketball.net` Round 7 Game Center prose against the official 20-club standings table caught two internal publisher errors (`Real Madrid` prose `1-4 away` vs table `2-0 H / 1-3 A`; `Valencia Basket` prose `5-1` vs table `4-2`). Both fixtures are flagged and barred from High confidence.
 4. **Line-by-Line Repo Audit (`18` Findings)**: Catalogued in `data/7f000cb6/repo_audit.json` and `/7f000cb6/audit.html` with exact `file:line` pointers.
+
+## Publication & Live Deployment Receipt
+- **PR #132**: `https://github.com/buffedlizard55-lab/OLBG1/pull/132` — **MERGED** `2026-10-22T12:45:14Z` (`451eff7888b3a2eb140f9c5d1dee0f4d21102343`).
+- **GitHub Actions**: PR check `39780843927` (`success`), `main` canonical Pages publish `39780960162` (`success`), `pages-build-deployment` `39780959657` (`success`).
+- **Live URL Verified**: `https://buffedlizard55-lab.github.io/OLBG1/7f000cb6/index.html` (HTTP 200; `/picks.html` and `/flagged.html` also verified live).
