@@ -487,7 +487,7 @@ could establish in one session, not a claim of worldwide coverage.</div>"""
     # ---------------------------------------------------------------- sources
     src_rows = [[str(i + 1), e(s["id"]), f'<a href="{e(s["url"])}" rel="noopener">{e(s["publisher"])}</a>',
                  e(s["what"]), e(s["label"])] for i, s in enumerate(D.SOURCES)]
-    body = f"""<p class="eyebrow">Sources</p><h1>{len(D.SOURCES)} pages read, with times</h1>
+    body = f"""<p class="eyebrow">Sources</p><h1>{len(D.SOURCES)} reads inside one window</h1>
 <p class="lede">Official league and governing-body feeds come first. OLBG pages are used only to discover
 events, never to price them, and the PDC/ATP/URC reads are recorded precisely because they failed to give a
 fixture list.</p>
