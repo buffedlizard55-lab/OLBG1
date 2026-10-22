@@ -459,7 +459,7 @@ def sport_card(slug, meta, desk):
         note = 'no official input obtained today'
     return (f'<div class="card"><h3 style="margin:0 0 6px"><a href="sports/{slug}.html">'
             f'{html.escape(meta[0])}</a></h3><div class="small">OLBG route id {meta[1]}</div>'
-            f'<div style="margin-top:8px">{status} <span class="small">{note}</span></div></div>')
+            f'<div style="margin-top:8px">{status}&nbsp; <span class="small">{note}</span></div></div>')
 
 
 def render(desk):
