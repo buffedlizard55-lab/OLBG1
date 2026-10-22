@@ -1771,7 +1771,7 @@ site, PGA TOUR + Legends Tour, formula1.com, LoL Esports, URC and TAURON Liga.
 **Output.** `data/f71557b5/*.json` + `matches.csv`: **72 rows** (61 with a sourced rating on both sides,
 6 at a neutral baseline under rule 4, 5 event cards), **1,622 originated prices** across 811 market rungs
 (67 match-winner, 729 handicap, 15 total), **60 tips — 15 High / 28 Medium / 17 Low**, 7 no-bet cards,
-454 rejected rungs, plus separate match-winner calls for all 67 priced fixtures (3 High / 38 Medium / 26
+338 rejected rungs across 45 fixtures, plus separate match-winner calls for all 67 priced fixtures (3 High / 38 Medium / 26
 Low). 15 hand-written previews of 58–81 words with 0 repeated 6-grams. **30 pages** under `/f71557b5/`.
 
 **Resolving the brief's High-confidence contradiction (below).** At a 5% overround 0.700 prices at
@@ -1779,8 +1779,8 @@ Low). 15 hand-written previews of 58–81 words with 0 repeated 6-grams. **30 pa
 **zero vig**, where 0.700 → −233 and 0.7143 → exactly −250, making the band 0.700 ≤ p ≤ 0.7143 satisfiable;
 the 5% book-equivalent is printed beside every price but never tested. Among in-window rungs at or above
 0.700 the **tightest** line wins, not the highest probability, so no 66.5-point alternate can masquerade as
-conviction. **20 fixtures produced a match-winner above 70% that the window rejects** (Panathinaikos 0.913 /
-−1000, Toulouse 0.857 / −588, Barça 0.829 / −476, India 0.803 / −417, Boston 0.779 / −357 …) and all 20 are
+conviction. **19 fixtures produced a match-winner above 70% that the window rejects** (Panathinaikos 0.913 /
+−1000, Toulouse 0.857 / −588, Barça 0.829 / −476, India 0.803 / −417, Boston 0.779 / −357 …) and all 19 are
 published on `f71557b5/window.html` rather than quietly graded High.
 
 **Repository audit — 14 findings, 4 high severity** (`f71557b5/audit.html`,
@@ -1823,3 +1823,48 @@ the verified championship record.
 `reports/SESSION_F71557B5_AUDIT.md`, plus this append-only section, one §1 task row and one §4 entry. Root
 `index.html`, `scripts/build_site.py`, `scripts/validate.py` and `README.md` were **not** edited — see the
 §4 request logged for whichever session integrates last.
+
+### 39.2 Publish record (PR #69) and live deployment check
+
+**PR #69** — https://github.com/buffedlizard55-lab/OLBG1/pull/69 — **MERGED** 2026-10-22T04:03:58Z, merge
+commit `10cca954e3efc81c6f2c85e22e72c5713ee1d907`. Opened and merged without waiting for review, per the
+brief. Base `origin/main` was `c767070` (PR #68, session `a570c470`).
+
+**Rebase note (two collisions, nothing discarded).** The branch was claimed as `T46`/`§36`, moved to
+`T50`/`§37` when `a570c470`'s unmerged claim surfaced, and landed as **`T54`/`§39`** after `a570c470` merged
+PR #66/#67/#68 and renumbered *its own* work to `T50`–`T53`/`§38`, while `9dfd0b48` merged as `T45`/`§35`.
+Because `git pull --rebase` then conflicted on `COORDINATION.md` for both of this branch's commits, the
+branch was re-created on top of `origin/main` (`git reset --mixed` + restore every tracked file from main +
+re-apply only this session's append-only edits). Every other session's row and section on `main` is present
+verbatim; `git diff --diff-filter=D origin/main` on the merged commit is empty.
+
+**Pages.** Deployment run **39720275336** for head SHA `10cca95` completed **success** in 29s; the Pages API
+reports `status: built`. Live checks against the CDN with cache-busters:
+
+| Page | Result |
+| --- | --- |
+| `/f71557b5/index.html?v=1` | real desk: 72 fixtures / 67 priced / 1,622 prices / 15 High / 100 sources, all 15 High picks rendered with model %, fair price, US price, 5% book-equivalent and per-row official links |
+| `/f71557b5/predictions.html?v=2` | all 15 previews with their verified-input tables and the match-winner call printed under each |
+| `/f71557b5/window.html?v=2` | the window arithmetic plus the Rejected Highs and no-bet ledgers |
+| `/f71557b5/sports/ice-hockey.html`, `/f71557b5/assets/style.css` | served |
+
+**Post-merge refinement (carried by PR #70).** Two presentation defects were visible on the live
+`window.html` and are fixed:
+
+1. **Rule-4 rows polluted the Rejected Highs ledger.** Fixtures priced at a deliberately neutral baseline
+   (one-sided or absent ratings) produced 94% deep-handicap rungs — for example `Lebanon +19.5` on Tonga v
+   Lebanon — which read as suppressed conviction but are only an artefact of a neutral line. Those rows are
+   now excluded from the ledger entirely, which takes rejected rungs from **454 to 338**.
+2. **Two different measures shared one headline.** The page reported 62 "fixtures with a >70% winner the
+   window rejects" by falling back to any market when no match-winner rung was rejected. It now reports them
+   separately: **19 fixtures** whose *match winner* is above 70% and out of window (the trivial-favourite
+   case the brief is about) and **26 fixtures** where only deeper rungs were rejected, in two tables.
+
+The 15 High picks, all prices and all previews are unchanged by the refinement. Gates re-run on the merged
+tree: `sf71557b5_validate.py` PASS (0 errors), root `validate.py` VALIDATION PASSED (0 errors, 319 pages),
+and `v3`, `s6a081cf6`, `s7a5b5360`, `s984d417f`, `s9dfd0b48`, `sa570c470`, `c17a9192`, `ccb6bde2`,
+`ebfbd966` and `final_audit.py` all pass.
+
+**Still open, out of this session's scope:** the root navigation link requested in §4 (owner:
+`26be136b-olbg1`'s root consolidation or whoever integrates last), T35 (AFLW re-price on the root desk), the
+root desk's decided-match rows `AUD-F7-04`, and PR #40.

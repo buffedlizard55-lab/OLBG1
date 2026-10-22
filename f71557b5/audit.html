@@ -18,7 +18,7 @@
 <h1>Line-by-line repository audit with official-source cross-checks</h1>
 
 <p class="lede">Line-by-line review of the repository as it stands on this commit
-(279 live HTML pages, 0 tracked .pyc files,
+(319 live HTML pages, 0 tracked .pyc files,
 14 findings). Every finding is either computed from a tracked file with the line number
 printed, or a disagreement between a tracked value and an official page read today with that URL printed.
 Nothing is asserted from memory.</p>
@@ -26,12 +26,12 @@ Nothing is asserted from memory.</p>
 <div class="kpi"><b>4</b><span>high severity</span></div>
 <div class="kpi"><b>3</b><span>medium</span></div>
 <div class="kpi"><b>7</b><span>informational</span></div>
-<div class="kpi"><b>279</b><span>live HTML pages</span></div>
+<div class="kpi"><b>319</b><span>live HTML pages</span></div>
 </div>
-<div class="flag info"><b>AUD-F7-01 · INFO — Published page count in README is stale</b>README.md line 56 states &#x27;0 broken relative links across all 160 published HTML pages&#x27;. A filesystem count on this commit finds 279 HTML pages outside archive/ (plus 0 archived), and scripts/validate.py reports 245. The README figure predates at least four merged desks and should be regenerated rather than edited by hand.<br><span class="small">Files: <code>README.md</code></span></div>
+<div class="flag info"><b>AUD-F7-01 · INFO — Published page count in README is stale</b>README.md line 56 states &#x27;0 broken relative links across all 160 published HTML pages&#x27;. A filesystem count on this commit finds 319 HTML pages outside archive/ (plus 0 archived), and scripts/validate.py reports 245. The README figure predates at least four merged desks and should be regenerated rather than edited by hand.<br><span class="small">Files: <code>README.md</code></span></div>
 <div class="flag info"><b>AUD-F7-01a · INFO — README.md stale page count - exact line</b>README.md:56 -&gt; - **No unverified value is presented as fact** — withheld values are blank and flagged — and **0 broken relative links across all 160 published HTML pages** spanning all <br><span class="small">Files: <code>README.md</code></span></div>
 <div class="flag info"><b>AUD-F7-02 · INFO — No compiled artefacts are tracked</b>`git ls-files &#x27;*.pyc&#x27;` returns 0 entries, so the previously reported tracked .pyc artefacts are gone. All tracked JSON in data/ parses.</div>
-<div class="flag info"><b>AUD-F7-03 · INFO — COORDINATION.md header timestamp lags the board body</b>The header reads &#x27;Last updated: 2026-10-22T03:05:00Z&#x27; while the newest timestamp anywhere in the body is 2026-10-25T21:00. Cosmetic, but it makes the board look older than it is.<br><span class="small">Files: <code>COORDINATION.md</code></span></div>
+<div class="flag info"><b>AUD-F7-03 · INFO — COORDINATION.md header timestamp lags the board body</b>The header reads &#x27;Last updated: 2026-10-22T03:50:00Z&#x27; while the newest timestamp anywhere in the body is 2026-10-25T21:00. Cosmetic, but it makes the board look older than it is.<br><span class="small">Files: <code>COORDINATION.md</code></span></div>
 <div class="flag high"><b>AUD-F7-04 · HIGH — Root desk carries a decided match: John Higgins frame handicap</b>The root desk still carries a High-confidence John Higgins -0.5 frame handicap. The World Snooker Tour&#x27;s own Day Four report, read on 22 October, records Jak Jones beating John Higgins 4-2 on 21 October to reach the last 16, so this market is already decided. Lines: 351, 1230.<br><span class="small">Files: <code>data/predictions.json</code>, <code>data/fixtures.json</code></span><br><span class="small">Official source: <a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon</a></span></div>
 <div class="flag high"><b>AUD-F7-04 · HIGH — Root desk carries a decided match: Luciano Darderi selection</b>The root desk prices Luciano Darderi in Almaty. The ATP&#x27;s own Live Race To Turin page records &#x27;Darderi - Lost to J. Duckworth in the R16&#x27; at Almaty, so the match is over. Lines: 1209, 6883.<br><span class="small">Files: <code>data/predictions.json</code>, <code>data/fixtures.json</code></span><br><span class="small">Official source: <a href="https://www.atptour.com/en/rankings/singles-race-to-turin" target="_blank" rel="noopener">https://www.atptour.com/en/rankings/singles-race-to-turin</a></span></div>
 <div class="flag info"><b>AUD-F7-05 · INFO — Root desk prediction prices vs the brief&#x27;s window (0 checked)</b>All 0 priced root predictions sit inside -250..+10000 after the T42 pass.<br><span class="small">Files: <code>data/predictions.json</code></span></div>
