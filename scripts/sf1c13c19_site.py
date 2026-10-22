@@ -48,7 +48,7 @@ def page(title, body, description=""):
 <header class="site-header"><div class="hdr-inner">
 <div class="brand"><a href="index.html"><span class="dot"></span> f1c13c19 Fresh-Harvest Desk <span class="sub">2026-10-22 UTC</span></a></div>
 <nav class="main" aria-label="Primary navigation">{nav}</nav></div>
-<div class="companion-bar"><div class="companion-inner"><span>Session desk f1c13c19 (T57) · harvest 2026-10-22 07:27-07:45Z · zero-vig band model v1 · <a href="../index.html">primary root desk</a> · <a href="../flagged.html">root flagged page</a></span></div></div>
+<div class="companion-bar"><div class="companion-inner"><span>Session desk f1c13c19 (T63) · harvest 2026-10-22 07:27-07:45Z · zero-vig band model v1 · <a href="../index.html">primary root desk</a> · <a href="../flagged.html">root flagged page</a></span></div></div>
 </header><main>
 {body}
 </main><footer class="site-footer"><div class="ftr-inner">Built {esc(SNAP['harvested_utc'])} · all prices are independently originated (no bookmaker data used in modelling) · office: repository branch <code>arena/f1c13c19-olbg1</code></div></footer>
