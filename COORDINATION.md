@@ -3083,3 +3083,64 @@ published its own §50 first (PRs #113, #115). Their rows and records are preser
 rebase was needed after PR #112 (`ee3c3e8f`) repaired the same 98 `53674ac8` navigation links this
 session had fixed independently; that duplicate fix was dropped in favour of main's, and no research
 content changed. Nothing from another session was discarded.
+
+---
+
+## 52. Session `ac872b16-olbg1` — T65 in-band multi-market desk + verified predictions (2026-10-22T12:15Z)
+
+**Claim.** Session ID `ac872b16-olbg1`, pinned branch `arena/ac872b16-olbg1`, baseline
+`61ef3a6` (PR #108). Task **T65** (next free after T64/e3d56713). Scope is strictly
+namespaced: `data/ac872b16/**`, `scripts/sac872b16_*.py`, `ac872b16/**`,
+`reports/SESSION_AC872B16.md`, and append-only additions to this file. No edit to
+`pipeline/**`, `data/current/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`,
+workflows, or any other session's desk. A root companion link is **requested** in §4
+rather than written here. Other live session: `e3d56713` holds T64 / PR #107.
+
+**Intended deliverable.** A fresh, fully official-source-verified 22 Oct desk with:
+(a) complete future fixture list across all 17 in-scope sports; (b) our own
+winner/handicap/total lines for every fixture where both sides have a captured
+official current-form input; (c) confidence tiers using the brief's literal rule —
+High requires model probability > 70% **and** an originated price inside
+−250…+10000 (decimal 1.40–101.0); (d) unique ≥30-word human predictions for every
+High pick, with official source links and no invented facts; (e) a clean dashboard
+with landing, category and sport pages plus Flagged for Review; (f) validator,
+PR, merge and live Pages check.
+
+### T65 completion record (2026-10-22T12:35Z desk)
+
+Delivered in the isolated `ac872b16/` namespace: **167 fixtures across 15 sports**, 354 originated
+markets / 725 priced outcomes, **36 published picks — 20 High, 16 Medium**, 33 carried lines without
+a pick, 98 discovery-only rows left blank. Twenty-six pages: landing, all-picks, all-matches, three
+category pages, seventeen sport pages (eSports and Greyhounds explicitly empty), Flagged for Review,
+Sources and Method. Every fixture row carries an official source link; every blank cell is a value that
+was not verified, never an inferred one.
+
+High set: nine EuroLeague selections, two NHL totals and nine AFLW lines, each with a model probability
+between 70.12% and 71.34% and a fair price between 1.4018 and 1.4262 — inside the brief's
+−250…+10000 window. Every one has a unique hand-written prediction of 41–70 words naming the sport,
+both sides, current form and recent history from the official table. Twelve further verified picks are
+Medium because their price falls outside the narrow band; four World Series picks are Low because the
+National League standings were carried rather than re-read.
+
+Fresh official reads this session: NHL standings/team summary/schedule (12:06–12:10Z), EuroLeague
+20-club standings (12:12Z), NBA opening-week table (12:20Z), MLB 2026 standings (12:15Z, AL side read in
+full). Carried with provenance and capped below High: AFLW ladder (T63, 07:36Z), PDC draw (07:34Z),
+Top 14 table (07:40Z), EHF table (07:45Z), WST results (T41, 01:30Z). Two live failures are published as
+findings rather than worked around: the AFLW ladder is client-rendered (fresh read returned no rows) and
+the URC standings URL returns 404.
+
+Gates: `sac872b16_validate` PASSED 0 errors / 0 warnings (26 pages, no broken internal link, no literal
+`None`, every High inside band, every prediction ≥30 words and unique); 95 pipeline tests OK; 38
+preserved tests OK; `pipeline.build --out _site` 77 canonical pages; `pipeline.validate --site _site`
+0 errors once the desk is git-tracked (the archive page auto-lists `ac872b16/` and `stage_existing`
+copies only tracked files). Findings F-65-01…F-65-12 are live at `/ac872b16/flagged.html` and do not
+block the merge.
+
+**Renumbering.** This section was written as **§50** and became **§52** at merge: `e6fc2f12` published §50
+(PR #113/#115) and `9dc28d1e` published §51 (PR #114) while this branch was open. Both are preserved
+verbatim above; T65 stayed free.
+
+Companion-link request (for the final integrator; this session does not edit shared navigation):
+add one link `ac872b16/index.html` — "ac872b16 · 22 Oct in-band desk (20 High)" — to the root
+navigation if desired. Logged here because the §4 block is not at EOF in this revision. PR, merge and
+Pages receipt appended below after live verification.

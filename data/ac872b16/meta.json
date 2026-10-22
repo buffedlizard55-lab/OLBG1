@@ -1,0 +1,27 @@
+{
+ "schema": "ac872b16-desk-1",
+ "session": "ac872b16-olbg1",
+ "task": "T65",
+ "as_of": "2026-10-22T12:30:00Z",
+ "counts": {
+  "fixtures": 167,
+  "matches": 154,
+  "priced": 36,
+  "markets": 354,
+  "outcomes": 725,
+  "high": 20,
+  "medium": 16,
+  "low": 0,
+  "unpriced": 98,
+  "line_only": 33,
+  "sports": 15
+ },
+ "confidence_rule": "High = model probability > 70% AND originated fair price in 1.40-1.4286 (-250 to -233) AND both inputs official AND unique >=30-word prediction. Medium = priced but one gate missing. Low = priced with weaker/carried inputs. Unpriced = blank, flagged.",
+ "model": {
+  "basketball": "Expected score = mean(own points scored/GP, opponent points allowed/GP); normal margin sigma 12; total sigma 18; no home-court term.",
+  "ice-hockey": "Expected goals = mean(own goals for/GP, opponent goals against/GP); normal margin sigma 2.0; total sigma 2.4; no home-ice term.",
+  "aussie-rules": "Ladder-derived expected margin recorded by T63; normal sigma 18.5; total mean 74.5, sigma 20.",
+  "carried": "Darts/rugby union/handball/baseball prices carried from data/92af340c/dataset.json (08:31Z)."
+ },
+ "price_policy": "Fair decimal = 1/p, no margin, no clipping. American is derived from the rounded decimal. These are originated research lines, not bookmaker quotes."
+}
