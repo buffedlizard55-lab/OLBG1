@@ -75,7 +75,7 @@ SOURCES = [
          what="discovery only: NBA and EuroLeague events"),
     dict(id="olbg-tennis", label="OLBG tennis hub", publisher="OLBG",
          url="https://www.olbg.com/betting-tips/Tennis/3",
-         what="discovery only: 15 tennis matches listed for 22-23 Oct"),
+         what="discovery only: 14 tennis matches listed for 22-23 Oct"),
     dict(id="olbg-cricket", label="OLBG cricket hub", publisher="OLBG",
          url="https://www.olbg.com/betting-tips/Cricket/7",
          what="discovery only: three upcoming cricket matches"),
