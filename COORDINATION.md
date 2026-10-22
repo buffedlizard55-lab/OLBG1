@@ -106,7 +106,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T22 | Third independent re-check after T20/T21: RLWC26 source URLs, tennis pairing provenance, prediction prose de-templating | done | 3c7579ed-olbg1 | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py`, `scripts/high_predictions.py`, `scripts/live_verification.py`, `data/*`, `COORDINATION.md` (append-only) | 2026-10-21T08:20Z | Claimed as T17 at 07:40Z; T17/T20/T21 were taken by 72198d3e, 76950c25 and 4f8d032d while this branch was open, so the task is recorded as T22 (§19). Additive: extends T20's verification register rather than publishing a parallel page. |
 
 | T43 | **Final integration pass (2026-10-22):** fresh official-source re-verification of every live row, expiry of completed fixtures, confidence-band policy (−250…+10000) enforcement, new 30+ word unique predictions, consolidated clean dashboard, validator gate, PR + merge + Pages deploy check | done | e381d2e3-olbg1 | `data/v3/**`, `scripts/v3_*.py`, `v3/**`, `index.html` (consolidated landing only), `COORDINATION.md` (append-only §33) | 2026-10-22T01:25Z | Renumbered T41→T43 on rebase (§31/§32 had already taken T41/T42 and merged as PR #46/#47). Non-overlapping `v3/` namespace; no other session's dashboard, dataset or generator edited. |
-| T44 | Strict-band high-confidence desk: >70% model prob, originated price −250…+10000, unique ≥30-word predictions, official-source re-fetch per row | in progress | 6a081cf6-olbg1 | `6a081cf6/`, `data/6a081cf6_high_band.json`, `scripts/s6a081cf6_build.py`, `scripts/s6a081cf6_validate.py`, append-only `COORDINATION.md` §34 | 2026-10-22T02:50Z | Namespaced; reuses v3 verified fixtures/lines only; no shared files edited |
+| T44 | Strict-band high-confidence desk: >70% model prob, originated price −250…+10000, unique ≥30-word predictions, official-source re-fetch per row | done | 6a081cf6-olbg1 | `6a081cf6/`, `data/6a081cf6_high_band.json`, `scripts/s6a081cf6_build.py`, `scripts/s6a081cf6_validate.py`, append-only `COORDINATION.md` §34 | 2026-10-22T02:50Z | Namespaced; reuses v3 verified fixtures/lines only; no shared files edited |
 
 ---
 
@@ -1624,3 +1624,11 @@ Final counts: **127 fixtures & cards · 120 priced head-to-heads · 3,176 origin
 
 Out of scope for this desk, left for the root session: T35 (AFLW re-price), the 56 `not_rechecked` rows and
 the open PR #40.
+
+## 34. Session 6a081cf6 — T44 strict-band high-confidence desk (2026-10-22T02:55Z)
+
+- **Claim:** T44 row added and pushed before work (commit on `arena/6a081cf6-olbg1`). Scope: `6a081cf6/`, `data/6a081cf6_high_band.json`, `scripts/s6a081cf6_{build,validate}.py`, this section only. No shared files edited.
+- **Method:** filtered the v3 verified set (134 fixtures / 120 priced) to picks that are simultaneously High, model prob >70%, and originated US price in [-250, +10000]. **Result: 9 picks** (Panathinaikos -1, Magdeburg -1, Florida Panthers ML, Samoa Women -1.5, Port Adelaide ML, Tonga -2.5, Josh Rock ML, England -9.5, Melbourne -6.5), each with its original unique >=30-word prediction (validator: 0 duplicate 6-word n-grams) and official source link(s) per row.
+- **Live verification this session:** sandbox TLS to league sites is blocked, so re-fetch used the page-fetch tool — NRL men's Round 2 team lists, AFLW ladder, and PDC European Championship schedule pages all returned on 2026-10-22. Remaining rows keep their v3 ledger status, labelled as not re-certified here (methodology page states this plainly).
+- **Flagged (on `6a081cf6/flagged.html`, non-blocking):** F-6A-01 Brisbane Lions -3 at -251 excluded (one point outside the -250 floor despite 71.5%); F-6A-02 NRL late mail rules Tonga's Isaiya Katoa out — v3 prose omits it, pick flagged; F-6A-03 v3 generic league-wide total rungs repeat identical lines across fixtures and are not promoted as fixture-specific research; F-6A-04 >70% mathematically implies fair price < about -234, so the effective band is -250..-234.
+- **Gates:** `s6a081cf6_validate.py` PASS; root `validate.py` PASSED (0 errors).
