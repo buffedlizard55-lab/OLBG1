@@ -3748,3 +3748,21 @@ deviation recorded in §0.2.
   two checks that fail the build if a pick's price ever disagrees with its own market outcome or does not
   re-derive from the unrounded probability. No official value, fixture, probability or tier changed as a
   result — the desk still publishes 7 High / 15 Medium / 4 Low at the same prices.
+
+**Follow-up publication receipts (correction PR).**
+* **PR #137** — https://github.com/buffedlizard55-lab/OLBG1/pull/137 — carried the correction above plus
+  these receipts. Pre-merge CI `Evidence, model, site and browser gates` **pass** in 40 s.
+* **Merged 2026-10-22T13:25:15Z** as `a193eb83`; post-merge workflow run
+  **39786676513** on `main` **completed / success** at 2026-10-22T13:26:47Z including the Pages deploy job,
+  and the Pages builds API reports commit `a193eb83` **built** at 13:25:47Z (30 144 ms).
+* **Second live byte read-back at 13:29Z**, cache-busted, confirming the corrected artifact is what GitHub
+  Pages serves and not the previous one: `/OLBG1/d7d19a67/index.html` now shows the New Jersey pick at
+  **−156 with fair decimal 1.6430**, identical to the market explorer and to prediction P-D7D-03, and the
+  coverage table now prints genuine zeros (`Tennis 10 listings / 0 priced / 0 markets`) instead of blank
+  dashes. `/OLBG1/d7d19a67/predictions.html` serves all eight predictions with their facts, official links
+  and re-checked numeric claims. The first read-back at 13:2xZ still served the pre-correction artifact even
+  though the deploy job had reported success — the propagation lag logged at 09:56Z and 05:35Z — which is why
+  this desk verifies by re-fetching a value it knows changed rather than by reading a build status.
+* **Self-referential limit, stated rather than glossed:** the commit that records these receipts deploys in
+  the run that follows it, so no receipt can confirm its own publication. What is confirmed is that every
+  page of the desk, at the corrected prices, was served live from GitHub Pages at 13:29Z.
