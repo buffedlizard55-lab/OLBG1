@@ -319,9 +319,10 @@ Medium ≥ {a["tiers"]["medium"]:.0%}, otherwise Low. Brief band: {a["band"]["mi
 Each claim about form or history is repeated from a value stored in the fixture row, which links to the official
 page it was read from. No injury, team-news, weather or head-to-head claims are made anywhere, because none of
 those was read today.</p>
-<div class="note">The brief asks for predictions on high-confidence picks. Four match-winner picks clear 70% on
-this board; the other {c["predictions"] - 4} writeups cover the strongest 70%+ handicap selections and the
-best of the Medium tier, and each one is labelled with the tier it actually earned.</div>
+<div class="note">The brief asks for predictions on high-confidence picks. Eleven of these {c["predictions"]}
+writeups are on selections the model grades High — four match-winner picks and seven handicap picks. Six are
+Medium and one, the Formula One field-board leader, is Low; every card shows the tier it actually earned
+rather than the tier the brief hoped for.</div>
 {blocks}
 """
     page("predictions.html", "Predictions", body, "predictions.html")
