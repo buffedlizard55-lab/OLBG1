@@ -115,6 +115,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T54 | **Live 22 Oct 2026 OLBG full 17-sport hub + sub-route harvest, line-by-line repo & official governing-body verification, team-specific multi-market line origination (Win/1X2/Outright, Spread/Handicap ladders, team-specific Total ladders, Set/Frame/Leg scores & props), strict −250…+10000 High-confidence human predictions (with team, player, form, recent match history & clear selection), 25-page dashboard (`/f71557b5/`), validator gate, final non-destructive root nav integration, PR + merge + Pages verification** | done | f71557b5-olbg1 | `data/f71557b5/**`, `scripts/sf71557b5_*.py`, `f71557b5/**`, `reports/SESSION_F71557B5_AUDIT.md`, append-only `COORDINATION.md` (§39); **no** edit to root `index.html`, `scripts/build_site.py` or `README.md` — those are owned by live sessions `26be136b-olbg1` and `a570c470-olbg1`, so the nav request is logged in §4 instead | 2026-10-22T02:51Z | Claimed as T46; **renumbered T54 / §36** because unmerged branch `arena/a570c470-olbg1` (`a2bc33a`) had already claimed T46–T49 / §36, and `arena/9dfd0b48-olbg1` (`a891ce2`) holds T44/§34-pending renumber. Strict zero-overlap scope. |
 | T55 | **Final integration & site consolidation (22 Oct 2026): reverse-engineer OLBG taxonomy, re-verify all fixtures line-by-line against official sources, originate own lines for every match with multi-market ladders (winner, handicap/spread, total), enforce high-confidence window -250..+10000, generate unique 30+ word human predictions with team/player/form/history and clear selection, build clean GitHub Pages dashboard (landing + sport subpages + analysis + flagged), validate no broken links, PR + merge + Pages deploy** | done | 8cab6428-olbg1 | `data/*.json`, `*.html`, `sports/*.html`, `assets/*`, `scripts/*.py`, `reports/*`, `COORDINATION.md` (append-only) | 2026-10-22T07:17Z | Session 8cab6428-olbg1 final integration; consolidates all parallel desks, re-verifies official sources, enforces price window, publishes Pages. See §40 for publish record. |
 | T56 | Evidence-safety release audit and primary-dashboard disclosure; row-level unverified register, automated tests, integration and Pages publication | done | cccb414e-olbg1 | `scripts/release_audit.py`, `tests/test_release_audit.py`, `reports/RELEASE_AUDIT.json`, `release-review.html`, `scripts/build_site.py` (disclosure only), regenerated primary HTML and mirror, append-only `COORDINATION.md` | 2026-10-22T07:25Z | T55 complete; no parallel desk datasets modified. Current session cannot certify prior claims without fresh official evidence. |
+| T57 | Independent post-integration audit of published primary-desk counts, validator warnings, source-link presentation, and stale task-board statuses (structural only; no live source recertification) | done | 3d2d578a-olbg1 | `reports/SESSION_3D2D578A_AUDIT.md`, `COORDINATION.md` (append-only) | 2026-10-22T07:23Z | Renumbered from T56 after collision with cccb414e-olbg1's earlier T56 claim. Offline structural audit complete; findings and verification limits are recorded in §42. No shared data/model/site outputs edited. |
 
 ---
 
@@ -1957,6 +1958,7 @@ priced on the root desk (John Higgins −0.5 frames at `data/predictions.json:35
 ---
 
 
+
 ## 41. Session cccb414e-olbg1 — T56 evidence-safety release audit
 
 Claim committed/pushed before work: `ba75224`. Fixed session branch is used per §0.2.
@@ -2020,3 +2022,27 @@ Publication: PR and Pages results will be recorded after GitHub confirms them.
   certified. Other tasks and open PRs remain unchanged.
 - Workflow emitted nonblocking platform annotations about Node 20 action runtime
   migration and ubuntu-latest migration. No project build/check failed.
+
+## 42. Session `3d2d578a-olbg1` — T57 independent post-integration audit (2026-10-22)
+
+**Scope:** `reports/SESSION_3D2D578A_AUDIT.md` plus this append-only coordination record. No fixture, model, generated page, or source data was edited. This is a structural audit, not a new official-source verification pass.
+
+**Verification performed:**
+- Ran `python3 scripts/validate.py`: **VALIDATION PASSED**, 0 errors and 6 warnings, covering 319 HTML pages. All six warnings are the known internal-only methodology/policy/repository-hygiene table rows #43/#45/#47 in `flagged.html` and its `/f7fa77fc/` mirror. They intentionally point to methodology, not a fabricated external authority.
+- Ran `python3 scripts/final_audit.py`: completed and wrote the existing 134-row audit manifest; generator documentation confirms this is offline and does not fetch URLs.
+- Independently recounted fixture, line, prediction and verification JSON with Python stdlib. At **2026-10-22T07:23Z**, the root fixture snapshot dated 2026-10-21 contains 134 rows (128 verified / 5 cross-checked / 1 unverified); 29 timed rows were already past, 32 lack `start_utc`, and 73 timed rows remained upcoming. There are 126 H2H books and 8 event-only records. The root has 29 High / 31 Medium / 66 Low; all 29 root High picks are flagged in the odds band, but **0** have model probability above 70% (range 62.030%–68.084%). Its 29 writeups are 47–68 words. Verification ledger categories separately read 44 confirmed / 32 corrected / 2 flagged / 56 not re-checked.
+- Each of the 29 past-time and 32 blank-time rows is enumerated in the report with the official URL(s) already recorded in that fixture row. No unconfirmed date/time was filled in and no URL was re-fetched; sources remain for manual review, not recertified claims.
+
+**Irregularities / integration requests (logged without editing shared pages):**
+1. `index.html` introduction correctly reports 128 verified, 5 cross-checked, 1 unverified, but its footer says 129 verified / 5 cross-checked. `flagged.html` has the same stale footer and the `AUDIT-STATUS-SPLIT` finding itself says 129 verified / 5 cross-checked. Please correct the public copy to 128 / 5 / 1 and update or supersede that finding; these are repository counts, so there is no external sports source to cite.
+2. The main root desk does not meet the brief's >70% probability target for any High selection. The audit discloses the current 60% conviction floor and 5% overround / -250 tension; it does not represent that as an official sports fact. Keep the conflict visibly flagged until the integration owner selects the pricing convention. The report notes that zero-vig pricing changes the arithmetic, so the requirements are not universally impossible.
+3. T51/T52 remain `in progress` and T53 `queued` in the board although §38 records the T50–T53 work and publication as completed. Please reconcile the board against the merged session evidence; this audit does not edit another session's task rows.
+4. The snapshot is not a complete live upcoming slate as of the audit timestamp: 29 past times and 32 blanks. Refresh only from fetched official schedules before presenting it as current.
+
+**Deliverable:** [`reports/SESSION_3D2D578A_AUDIT.md`](reports/SESSION_3D2D578A_AUDIT.md), with row-level source links for the time-status review. T57 is done; the requested page corrections and >70% pricing decision remain integration follow-ups and do not alter this audit's scope.
+
+### 42.1 Task-ID collision / rebase preservation
+
+During rebase onto the newer `origin/main`, session `cccb414e-olbg1` had already claimed and completed T56 and published its release-safety review (PRs #74 and #75). Its task row, section §41, release-review files, generated pages, and report were preserved. This audit was renumbered to **T57 / §42**; no changes were made to the other session's files. The `COORDINATION.md` rebase conflict was resolved by retaining both sessions' task rows and append-only reports.
+
+---
