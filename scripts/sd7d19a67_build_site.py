@@ -209,6 +209,7 @@ class Site:
         self.preds_by_market = {p["market_id"]: p for p in self.preds}
         self.head = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True,
                                    text=True).stdout.strip()[:12]
+        self._refcache = {}
         self.built_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     # ------------------------------------------------------------------ shell
@@ -1080,8 +1081,9 @@ on <a href="repo-audit.html">Repository audit</a>.</p>""" % (
             ev = []
             for x in f["evidence"]:
                 fname, line, quote = x["file"], x["line"], x["quote"]
-                if fname and fname not in ("-", "git", "git status") and os.path.exists(os.path.join(ROOT, fname)):
-                    url = "%s/blob/%s/%s%s" % (REPO_URL, self.audit.get("head", self.head), fname,
+                if fname and not fname.startswith(("-", "git")) \
+                        and os.path.exists(os.path.join(ROOT, fname)):
+                    url = "%s/blob/%s/%s%s" % (REPO_URL, self.link_ref(fname), fname,
                                                ("#L%d" % line) if line else "")
                     loc = '<a href="%s" rel="noopener noreferrer">%s:%s</a>' % (e(url), e(fname), e(line or 1))
                 else:
@@ -1106,7 +1108,7 @@ the line it found, so nothing is asserted from memory; the links open the exact 
 the audited commit for manual review. No file outside this session's claimed scope was modified - that is
 itself checked (<a href="#A-D7D-14">A-D7D-14</a>).</p>
 <div class="grid">%s</div>
-%s""" % (e(self.audit["generated_at_utc"]), e(self.audit.get("branch", "")), e(self.audit.get("head", "")),
+%s""" % (e(self.audit["generated_at_utc"]), e(self.audit.get("branch", "")), e((self.audit.get("head_short") or self.audit.get("head") or "")[:12]),
          "".join('<div class="kpi"><b>%d</b><span>%s severity</span></div>' % (n, e(k))
                  for k, n in sorted(sev.items(), key=lambda x: order.get(x[0], 9))),
          "".join(blocks))
@@ -1115,6 +1117,18 @@ itself checked (<a href="#A-D7D-14">A-D7D-14</a>).</p>
                                   "numbering and stale claims, duplicate task ids, page weights, link and "
                                   "source-link integrity, evidence naming, and this session's own scope "
                                   "compliance." % len(finds))
+
+    def link_ref(self, path):
+        """Commit sha to link a file at: origin/main when the file exists there (stable for a reviewer
+        after this branch is merged), otherwise this branch's own head."""
+        if path in self._refcache:
+            return self._refcache[path]
+        main_sha = self.audit.get("origin_main") or ""
+        ref = main_sha[:12] if main_sha and subprocess.run(
+            ["git", "cat-file", "-e", "%s:%s" % (main_sha, path)], cwd=ROOT,
+            capture_output=True).returncode == 0 else (self.audit.get("head") or self.head)[:12]
+        self._refcache[path] = ref
+        return ref
 
     # -------------------------------------------------------------------- run
     def build(self):

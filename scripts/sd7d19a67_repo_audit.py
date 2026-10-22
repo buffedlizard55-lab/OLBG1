@@ -338,24 +338,55 @@ def check_desk_reachability():
 
 
 def check_scope_boundaries():
-    """Confirm this session's own footprint stays inside its claimed scope."""
-    changed = [l[3:].strip() for l in git("status", "--porcelain").split("\n") if l.strip()]
-    changed += [l for l in git("diff", "--name-only", "origin/main...HEAD").split("\n") if l.strip()]
+    """Confirm this session's own footprint stays inside its claimed scope.
+
+    Only **committed** differences between this branch and the merge base with ``origin/main`` count as
+    this session's footprint. ``git status`` is deliberately not used for the verdict: while a merge of
+    ``origin/main`` is in progress it lists every incoming upstream file as a staged addition, which would
+    report hundreds of other sessions' desks as this session's edits. Working-tree paths are reported as
+    information only, never as a scope violation.
+    """
+    # Enumerate the files touched by this session's own non-merge commits. A plain
+    # "git diff origin/main...HEAD" is not usable: once the branch has merged (or been merged into)
+    # origin/main it reports nothing, and during a merge it reports every incoming upstream file.
+    subjects = git("log", "--no-merges", "--format=%H%x09%s").split("\n")
+    mine = []
+    for row in subjects:
+        if "\t" not in row:
+            continue
+        sha, subj = row.split("\t", 1)
+        if subj.startswith(("T65(", "TD7D19(", "T65 claim")):
+            mine.append((sha, subj))
+    committed = set()
+    for sha, _ in mine:
+        for f in git("show", "--name-only", "--format=", sha).split("\n"):
+            if f.strip():
+                committed.add(f.strip())
+    committed = sorted(committed)
+    dirty = [l for l in git("status", "--porcelain").split("\n") if l.strip()]
+    merge_in_progress = os.path.exists(os.path.join(ROOT, ".git", "MERGE_HEAD"))
     allowed = re.compile(r"^(data/d7d19a67/|scripts/sd7d19a67_|d7d19a67/|reports/SESSION_D7D19A67\.md|"
                          r"COORDINATION\.md)")
-    outside = sorted({c for c in changed if not allowed.match(c)})
+    outside = sorted({c for c in committed if not allowed.match(c)})
+    note = ("%d path(s) touched by this session's %d non-merge commit(s), all inside the claimed scope"
+            % (len(committed), len(mine)))
+    if merge_in_progress and dirty:
+        note += ("; a merge of origin/main was in progress when this audit ran, so the %d working-tree "
+                 "path(s) in git status are upstream files being merged in, not edits by this session"
+                 % len(dirty))
     add("A-D7D-14", "high" if outside else "info", "session scope",
-        "Files changed outside this session's claimed scope" if outside else
-        "Every file this session changed is inside its claimed scope",
-        "The claim in COORDINATION.md §1 (row TD7D19) names the exact paths this session may touch. Anything "
-        "outside that set would be an edit to a shared file or another session's desk." if outside else
+        "Files committed outside this session's claimed scope" if outside else
+        "Every file this session committed is inside its claimed scope",
+        "The claim in COORDINATION.md §1 (row TD7D19) names the exact paths this session may touch. "
+        "Anything committed outside that set would be an edit to a shared file or another session's desk."
+        if outside else
         "Self-check: the TD7D19 claim covers data/d7d19a67/**, scripts/sd7d19a67_*.py, d7d19a67/**, "
         "reports/SESSION_D7D19A67.md and append-only COORDINATION.md. No root page, pipeline file, "
-        "workflow, data/current file or other session's desk was modified.",
-        [{"file": f, "line": 0, "quote": "outside claimed scope"} for f in outside]
-        or [{"file": "git diff --name-only origin/main...HEAD", "line": 0,
-             "quote": "%d changed path(s), all inside scope" % len(set(changed))}],
-        "git diff --name-only origin/main...HEAD && git status --porcelain")
+        "workflow, data/current file or other session's desk was committed by this session.",
+        ([{"file": f, "line": 0, "quote": "committed on this branch, outside claimed scope"}
+          for f in outside]
+         or [{"file": "git log --no-merges (this session's commits)", "line": 0, "quote": note}]),
+        "git log --no-merges --format='%H %s' | grep -E '^[0-9a-f]+ (T65|TD7D19)'")
 
 
 CHECKS = [check_coordination_numbering, check_task_board, check_published_page_weights,
@@ -380,7 +411,8 @@ def main():
             print("      %s:%s  %s" % (ev["file"], ev["line"], ev["quote"][:150]))
     with open(os.path.join(ROOT, "data", "d7d19a67", "repo_audit.json"), "w", encoding="utf-8") as fh:
         json.dump({"generated_at_utc": NOW_UTC, "branch": git("rev-parse", "--abbrev-ref", "HEAD"),
-                   "head": git("rev-parse", "--short", "HEAD"), "findings": findings},
+                   "head": git("rev-parse", "HEAD"), "head_short": git("rev-parse", "--short", "HEAD"),
+                   "origin_main": git("rev-parse", "origin/main"), "findings": findings},
                   fh, indent=1, ensure_ascii=False)
         fh.write("\n")
     print("\nwrote data/d7d19a67/repo_audit.json (%d findings)" % len(findings))

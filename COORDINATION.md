@@ -3766,3 +3766,17 @@ deviation recorded in §0.2.
 * **Self-referential limit, stated rather than glossed:** the commit that records these receipts deploys in
   the run that follows it, so no receipt can confirm its own publication. What is confirmed is that every
   page of the desk, at the corrected prices, was served live from GitHub Pages at 13:29Z.
+* **Second defect found the same way, in this desk's own audit page.** Reading the deployed
+  `/OLBG1/d7d19a67/repo-audit.html` at 13:52Z showed finding `A-D7D-14` published as **HIGH — "Files
+  changed outside this session's claimed scope"** with several hundred evidence rows naming other
+  sessions' desks (`40214dfd/**`, `53674ac8/**`, `404.html`, …). It was a false positive in the audit
+  code, not a scope breach: the check derived the footprint from `git status --porcelain`, and the audit
+  had been run while a merge of `origin/main` was in progress, so every incoming upstream file appeared as
+  a staged addition. Corrected so the verdict comes only from the files touched by this session's own
+  **non-merge commits** (`41 paths across 8 commits, all inside scope`), with the merge-in-progress state
+  reported as information rather than as a violation; the audit page's GitHub links now resolve against
+  `origin/main` when the file exists there, so a reviewer clicking a link after this branch is merged
+  lands on a commit that still exists. The finding count is unchanged at 13 (1 high, 6 medium, 2 low,
+  4 info); no fixture, price, tier or prediction was affected. Shipped in the follow-up PR recorded below.
+  The lesson recorded for other sessions: an audit that shells out to `git status` must say which tree
+  state it observed, because during a merge that state is not the session's own work.
