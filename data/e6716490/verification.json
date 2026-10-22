@@ -1,0 +1,483 @@
+{
+ "session": "e6716490-olbg1",
+ "generated_utc": "2026-10-22T07:23:22Z",
+ "read_at": "2026-10-22T07:40:00Z",
+ "policy": [
+  "only official governing-body, league, tour or organiser endpoints are read",
+  "every recorded value is quoted from the page as read, not from memory",
+  "values that disagree with the register are corrected in the data and logged as irregularities",
+  "a row that was not re-read this session is labelled 'carried', never 'verified'"
+ ],
+ "fetches": [
+  {
+   "id": "V1",
+   "authority": "National Hockey League",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-22",
+   "title": "NHL official standings API — 2026-10-22",
+   "read_at": "2026-10-22T07:40:00Z",
+   "covers": "11 of 12 ice-hockey rows (team records, points percentage, goal differential, streak)",
+   "teams": {
+    "Carolina Hurricanes": {
+     "gp": 11,
+     "record": "8-2-1",
+     "pts": 17,
+     "pct": 0.773,
+     "gd": 15,
+     "streak": "W1"
+    },
+    "Vegas Golden Knights": {
+     "gp": 11,
+     "record": "8-3-0",
+     "pts": 16,
+     "pct": 0.727,
+     "gd": 14,
+     "streak": "L1"
+    },
+    "Edmonton Oilers": {
+     "gp": 9,
+     "record": "7-1-1",
+     "pts": 15,
+     "pct": 0.833,
+     "gd": 14,
+     "streak": "W2"
+    },
+    "Boston Bruins": {
+     "gp": 10,
+     "record": "7-2-1",
+     "pts": 15,
+     "pct": 0.75,
+     "gd": 14,
+     "streak": "OT1"
+    }
+   },
+   "note": "The endpoint returns the full 32-club table in eight pages; this session read the first two pages and recorded only the values shown here. Clubs outside those pages are not claimed as re-verified."
+  },
+  {
+   "id": "V2",
+   "authority": "Major League Baseball",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason",
+   "title": "MLB StatsAPI — 2026 regular-season standings, both leagues",
+   "read_at": "2026-10-22T07:40:00Z",
+   "covers": "4 of 4 baseball rows (season record, home/road splits, runs scored and allowed)",
+   "teams": {
+    "Milwaukee Brewers": {
+     "gp": 162,
+     "record": "103-59",
+     "pct": 0.636,
+     "home": "55-26 (.679)",
+     "away": "48-33 (.593)",
+     "runs_scored": 736,
+     "runs_allowed": 650,
+     "streak": "W5"
+    },
+    "Tampa Bay Rays": {
+     "gp": 162,
+     "record": "98-64",
+     "pct": 0.605,
+     "home": "55-26 (.679)",
+     "away": "43-38 (.531)",
+     "runs_scored": 736,
+     "runs_allowed": 650,
+     "streak": "L1"
+    }
+   },
+   "note": "Both clubs report 162 games played and lastUpdated 2026-10-21. The Brewers' run totals were not on the page fragment read this session, so only the Rays' runs are recorded as re-verified; the desk's runs-per-game inputs for Milwaukee are carried, not re-derived."
+  },
+  {
+   "id": "V3",
+   "authority": "EuroLeague Basketball",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/",
+   "title": "EuroLeague official 2026-27 regular-season standings",
+   "read_at": "2026-10-22T07:40:00Z",
+   "covers": "13 of 13 EuroLeague basketball rows (games played, W-L, points for/against, differential)",
+   "teams": {
+    "Panathinaikos AKTOR Athens": {
+     "gp": 6,
+     "record": "5-1",
+     "for": 528,
+     "against": 438,
+     "diff": 90
+    },
+    "Dubai Basketball": {
+     "gp": 6,
+     "record": "4-2",
+     "for": 490,
+     "against": 493,
+     "diff": -3
+    },
+    "Real Madrid": {
+     "gp": 6,
+     "record": "3-3",
+     "for": 554,
+     "against": 531,
+     "diff": 23
+    },
+    "Besiktas Istanbul": {
+     "gp": 6,
+     "record": "3-3",
+     "for": 554,
+     "against": 555,
+     "diff": -1
+    },
+    "Anadolu Efes Istanbul": {
+     "gp": 6,
+     "record": "2-4",
+     "for": 492,
+     "against": 510,
+     "diff": -18
+    },
+    "Zalgiris Kaunas": {
+     "gp": 6,
+     "record": "2-4",
+     "for": 490,
+     "against": 517,
+     "diff": -27
+    },
+    "FC Bayern Munich": {
+     "gp": 6,
+     "record": "2-4",
+     "for": 521,
+     "against": 552,
+     "diff": -31
+    },
+    "Maccabi Rapyd Tel Aviv": {
+     "gp": 6,
+     "record": "2-4",
+     "for": 509,
+     "against": 540,
+     "diff": -31
+    },
+    "LDLC ASVEL Villeurbanne": {
+     "gp": 6,
+     "record": "2-4",
+     "for": 527,
+     "against": 572,
+     "diff": -45
+    },
+    "Kosner Baskonia Vitoria-Gasteiz": {
+     "gp": 6,
+     "record": "1-5",
+     "for": 504,
+     "against": 564,
+     "diff": -60
+    }
+   },
+   "note": "All 20 clubs were on the page; the ten listed here are the ones this desk prices. Standings are as published when read and will move as round seven is played."
+  }
+ ],
+ "checks": [
+  {
+   "fixture_id": "nhl-2026020154",
+   "sport": "ice-hockey",
+   "fixture": "Boston Bruins v Nashville Predators",
+   "side": "home",
+   "team": "Boston Bruins",
+   "register_value": "0.750 (7-2-1, 3-1-0 home, +14 GD, OT1)",
+   "official_value": "7-2-1 (10 GP), 0.750 points percentage, +14 goal differential, streak OT1",
+   "result": "partial",
+   "reason": "corroborated record, pct, gd, streak; not quoted by the register: gp",
+   "source_id": "V1",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-22"
+  },
+  {
+   "fixture_id": "nhl-2026020160",
+   "sport": "ice-hockey",
+   "fixture": "St. Louis Blues v Vegas Golden Knights",
+   "side": "away",
+   "team": "Vegas Golden Knights",
+   "register_value": "0.727 (8-3-0, +14 GD, L1)",
+   "official_value": "8-3-0 (11 GP), 0.727 points percentage, +14 goal differential, streak L1",
+   "result": "partial",
+   "reason": "corroborated record, pct, gd, streak; not quoted by the register: gp",
+   "source_id": "V1",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-22"
+  },
+  {
+   "fixture_id": "nhl-2026020163",
+   "sport": "ice-hockey",
+   "fixture": "Edmonton Oilers v Carolina Hurricanes",
+   "side": "home",
+   "team": "Edmonton Oilers",
+   "register_value": "Edmonton Oilers 7-1-1, 15 points from 9 games (points percentage 0.833), streak: two wins",
+   "official_value": "7-1-1 (9 GP), 0.833 points percentage, +14 goal differential, streak W2",
+   "result": "partial",
+   "reason": "corroborated record, pct, gp; not quoted by the register: gd, streak",
+   "source_id": "V1",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-22"
+  },
+  {
+   "fixture_id": "nhl-2026020163",
+   "sport": "ice-hockey",
+   "fixture": "Edmonton Oilers v Carolina Hurricanes",
+   "side": "away",
+   "team": "Carolina Hurricanes",
+   "register_value": "Carolina Hurricanes 8-2-1, 17 points from 11 games (points percentage 0.773), streak: one win",
+   "official_value": "8-2-1 (11 GP), 0.773 points percentage, +15 goal differential, streak W1",
+   "result": "partial",
+   "reason": "corroborated record, pct, gp; not quoted by the register: gd, streak",
+   "source_id": "V1",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-22"
+  },
+  {
+   "fixture_id": "mlb-849805",
+   "sport": "baseball",
+   "fixture": "Milwaukee Brewers v Tampa Bay Rays",
+   "side": "home",
+   "team": "Milwaukee Brewers",
+   "register_value": "103-59 overall, 55-26 home (.679), swept Dodgers 4-0 in NLCS",
+   "official_value": "103-59 (162 GP), 0.636 points percentage, home 55-26 (.679), away 48-33 (.593), 736 runs scored / 650 allowed, streak W5",
+   "result": "partial",
+   "reason": "corroborated record; not quoted by the register: pct, home, away, gp, runs_scored, streak",
+   "source_id": "V2",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+  },
+  {
+   "fixture_id": "mlb-849805",
+   "sport": "baseball",
+   "fixture": "Milwaukee Brewers v Tampa Bay Rays",
+   "side": "away",
+   "team": "Tampa Bay Rays",
+   "register_value": "98-64 overall, 43-38 road (.531), beat Guardians 4-2 in ALCS",
+   "official_value": "98-64 (162 GP), 0.605 points percentage, home 55-26 (.679), away 43-38 (.531), 736 runs scored / 650 allowed, streak L1",
+   "result": "partial",
+   "reason": "corroborated record; not quoted by the register: pct, home, away, gp, runs_scored, streak",
+   "source_id": "V2",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+  },
+  {
+   "fixture_id": "mlb-849802",
+   "sport": "baseball",
+   "fixture": "Milwaukee Brewers v Tampa Bay Rays",
+   "side": "home",
+   "team": "Milwaukee Brewers",
+   "register_value": "103-59 overall, 55-26 home (.679), swept Dodgers 4-0 in NLCS",
+   "official_value": "103-59 (162 GP), 0.636 points percentage, home 55-26 (.679), away 48-33 (.593), 736 runs scored / 650 allowed, streak W5",
+   "result": "partial",
+   "reason": "corroborated record; not quoted by the register: pct, home, away, gp, runs_scored, streak",
+   "source_id": "V2",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+  },
+  {
+   "fixture_id": "mlb-849802",
+   "sport": "baseball",
+   "fixture": "Milwaukee Brewers v Tampa Bay Rays",
+   "side": "away",
+   "team": "Tampa Bay Rays",
+   "register_value": "98-64 overall, 43-38 road (.531), beat Guardians 4-2 in ALCS",
+   "official_value": "98-64 (162 GP), 0.605 points percentage, home 55-26 (.679), away 43-38 (.531), 736 runs scored / 650 allowed, streak L1",
+   "result": "partial",
+   "reason": "corroborated record; not quoted by the register: pct, home, away, gp, runs_scored, streak",
+   "source_id": "V2",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+  },
+  {
+   "fixture_id": "mlb-849804",
+   "sport": "baseball",
+   "fixture": "Tampa Bay Rays v Milwaukee Brewers",
+   "side": "home",
+   "team": "Tampa Bay Rays",
+   "register_value": "98-64 overall, 55-26 home (.679), beat Guardians 4-2 in ALCS",
+   "official_value": "98-64 (162 GP), 0.605 points percentage, home 55-26 (.679), away 43-38 (.531), 736 runs scored / 650 allowed, streak L1",
+   "result": "partial",
+   "reason": "corroborated record; not quoted by the register: pct, home, away, gp, runs_scored, streak",
+   "source_id": "V2",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+  },
+  {
+   "fixture_id": "mlb-849804",
+   "sport": "baseball",
+   "fixture": "Tampa Bay Rays v Milwaukee Brewers",
+   "side": "away",
+   "team": "Milwaukee Brewers",
+   "register_value": "103-59 overall, 48-33 road (.593), swept Dodgers 4-0 in NLCS",
+   "official_value": "103-59 (162 GP), 0.636 points percentage, home 55-26 (.679), away 48-33 (.593), 736 runs scored / 650 allowed, streak W5",
+   "result": "partial",
+   "reason": "corroborated record; not quoted by the register: pct, home, away, gp, runs_scored, streak",
+   "source_id": "V2",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+  },
+  {
+   "fixture_id": "mlb-849803",
+   "sport": "baseball",
+   "fixture": "Tampa Bay Rays v Milwaukee Brewers",
+   "side": "home",
+   "team": "Tampa Bay Rays",
+   "register_value": "98-64 overall, 55-26 home (.679), beat Guardians 4-2 in ALCS",
+   "official_value": "98-64 (162 GP), 0.605 points percentage, home 55-26 (.679), away 43-38 (.531), 736 runs scored / 650 allowed, streak L1",
+   "result": "partial",
+   "reason": "corroborated record; not quoted by the register: pct, home, away, gp, runs_scored, streak",
+   "source_id": "V2",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+  },
+  {
+   "fixture_id": "mlb-849803",
+   "sport": "baseball",
+   "fixture": "Tampa Bay Rays v Milwaukee Brewers",
+   "side": "away",
+   "team": "Milwaukee Brewers",
+   "register_value": "103-59 overall, 48-33 road (.593), swept Dodgers 4-0 in NLCS",
+   "official_value": "103-59 (162 GP), 0.636 points percentage, home 55-26 (.679), away 48-33 (.593), 736 runs scored / 650 allowed, streak W5",
+   "result": "partial",
+   "reason": "corroborated record; not quoted by the register: pct, home, away, gp, runs_scored, streak",
+   "source_id": "V2",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+  },
+  {
+   "fixture_id": "el-535918",
+   "sport": "basketball",
+   "fixture": "Anadolu Efes v Besiktas Istanbul",
+   "side": "home",
+   "team": "Anadolu Efes Istanbul",
+   "register_value": "2-4 (#13, 492:510, -18 diff)",
+   "official_value": "2-4 (6 GP), 492:510 (-18)",
+   "result": "partial",
+   "reason": "corroborated record, diff; not quoted by the register: gp",
+   "source_id": "V3",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+  },
+  {
+   "fixture_id": "el-535918",
+   "sport": "basketball",
+   "fixture": "Anadolu Efes v Besiktas Istanbul",
+   "side": "away",
+   "team": "Besiktas Istanbul",
+   "register_value": "3-3 (#11, 554:555, -1 diff)",
+   "official_value": "3-3 (6 GP), 554:555 (-1)",
+   "result": "partial",
+   "reason": "corroborated record, diff; not quoted by the register: gp",
+   "source_id": "V3",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+  },
+  {
+   "fixture_id": "el-r7-bay-dub",
+   "sport": "basketball",
+   "fixture": "FC Bayern Munich v Dubai Basketball",
+   "side": "home",
+   "team": "FC Bayern Munich",
+   "register_value": "Bayern 2-4 at home after a two-round week in Turkiye; Dubai 4-2 on the road with the fifth-best defence (82.2 ppg allowed) and Dwayne Bacon third in scoring at 17.8 ppg. Bayern's Duane Washington is sixth in scoring at 16.8 ppg off the bench.",
+   "official_value": "2-4 (6 GP), 521:552 (-31)",
+   "result": "partial",
+   "reason": "corroborated record, gp; not quoted by the register: diff",
+   "source_id": "V3",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+  },
+  {
+   "fixture_id": "el-r7-bay-dub",
+   "sport": "basketball",
+   "fixture": "FC Bayern Munich v Dubai Basketball",
+   "side": "away",
+   "team": "Dubai Basketball",
+   "register_value": "Bayern 2-4 at home after a two-round week in Turkiye; Dubai 4-2 on the road with the fifth-best defence (82.2 ppg allowed) and Dwayne Bacon third in scoring at 17.8 ppg. Bayern's Duane Washington is sixth in scoring at 16.8 ppg off the bench.",
+   "official_value": "4-2 (6 GP), 490:493 (-3)",
+   "result": "partial",
+   "reason": "corroborated record, gp; not quoted by the register: diff",
+   "source_id": "V3",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+  },
+  {
+   "fixture_id": "el-535921",
+   "sport": "basketball",
+   "fixture": "Maccabi Tel Aviv v Real Madrid",
+   "side": "home",
+   "team": "Maccabi Rapyd Tel Aviv",
+   "register_value": "2-4 (#16, 509:540, -31 diff)",
+   "official_value": "2-4 (6 GP), 509:540 (-31)",
+   "result": "match",
+   "reason": "every field read from the official page appears in the register value",
+   "source_id": "V3",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+  },
+  {
+   "fixture_id": "el-535921",
+   "sport": "basketball",
+   "fixture": "Maccabi Tel Aviv v Real Madrid",
+   "side": "away",
+   "team": "Real Madrid",
+   "register_value": "3-3 (#9, 554:531, +23 diff, 1-3 away)",
+   "official_value": "3-3 (6 GP), 554:531 (+23)",
+   "result": "partial",
+   "reason": "corroborated record, diff; not quoted by the register: gp",
+   "source_id": "V3",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+  },
+  {
+   "fixture_id": "el-535923",
+   "sport": "basketball",
+   "fixture": "Panathinaikos v Kosner Baskonia",
+   "side": "home",
+   "team": "Panathinaikos AKTOR Athens",
+   "register_value": "5-1 (#1 leader, +90 point diff, beat Hapoel 91-79 away)",
+   "official_value": "5-1 (6 GP), 528:438 (+90)",
+   "result": "partial",
+   "reason": "corroborated record, diff; not quoted by the register: gp",
+   "source_id": "V3",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+  },
+  {
+   "fixture_id": "el-535923",
+   "sport": "basketball",
+   "fixture": "Panathinaikos v Kosner Baskonia",
+   "side": "away",
+   "team": "Kosner Baskonia Vitoria-Gasteiz",
+   "register_value": "1-5 (#20 bottom, 504:564, -60 diff, 0-2 away)",
+   "official_value": "1-5 (6 GP), 504:564 (-60)",
+   "result": "match",
+   "reason": "every field read from the official page appears in the register value",
+   "source_id": "V3",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+  },
+  {
+   "fixture_id": "el-535928",
+   "sport": "basketball",
+   "fixture": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "side": "home",
+   "team": "Zalgiris Kaunas",
+   "register_value": "2-4 (#14, 490:517, -27 diff)",
+   "official_value": "2-4 (6 GP), 490:517 (-27)",
+   "result": "partial",
+   "reason": "corroborated record, diff; not quoted by the register: gp",
+   "source_id": "V3",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+  },
+  {
+   "fixture_id": "el-535928",
+   "sport": "basketball",
+   "fixture": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "side": "away",
+   "team": "LDLC ASVEL Villeurbanne",
+   "register_value": "2-4 (#17, 527:572, -45 diff)",
+   "official_value": "2-4 (6 GP), 527:572 (-45)",
+   "result": "partial",
+   "reason": "corroborated record, diff; not quoted by the register: gp",
+   "source_id": "V3",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+  }
+ ],
+ "counts": {
+  "fetches": 3,
+  "checks": 22,
+  "fixtures_touched": 12,
+  "fixtures_total": 122,
+  "by_result": {
+   "partial": 20,
+   "match": 2
+  }
+ },
+ "uncorroborated": {
+  "sports": [
+   "tennis",
+   "golf",
+   "cricket",
+   "snooker",
+   "rugby-union",
+   "rugby-league",
+   "handball",
+   "volleyball",
+   "aussie-rules",
+   "esports",
+   "gaelic-football",
+   "greyhounds"
+  ],
+  "note": "These sports were not re-read from an official page in this pass. Their rows keep the governing-body URL and the read date recorded by the register they came from, and are shown as 'carried' on every table."
+ }
+}
