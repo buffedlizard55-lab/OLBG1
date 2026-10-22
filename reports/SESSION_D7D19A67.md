@@ -252,5 +252,16 @@ at all (`cdn.nba.com` returned HTTP 500), so basketball coverage is EuroLeague o
   (1 high, 6 medium, 2 low, 4 info); no fixture, price, tier or prediction was affected.
   The general lesson, logged for other sessions: an audit that shells out to `git status` must record which
   tree state it observed, because during a merge that state is not the session's own work.
-* **Correction shipped as PR #139** — CI green, merged to `main`, post-merge Pages run confirmed, and the
-  corrected audit page re-read from the live URL before this line was written.
+* **Correction shipped as PR #139** — https://github.com/buffedlizard55-lab/OLBG1/pull/139 — CI
+  `Evidence, model, site and browser gates` pass (42 s), merged **2026-10-22T13:58:30Z** as `791917a4`;
+  post-merge runs `Canonical research checks and Pages` 39791673530 success 14:00:51Z and
+  `pages-build-deployment` 39791673707 success 13:59:57Z; Pages builds API reports `791917a4` **built**
+  13:59:23Z.
+* **Third live read-back at 14:02Z** (cache-busted) of `…/OLBG1/d7d19a67/repo-audit.html`: severity counts
+  1 high / 6 medium / 2 low / 4 info; `A-D7D-14` now publishes as INFO with the single evidence row
+  "41 path(s) touched by this session's 8 non-merge commit(s), all inside the claimed scope"; the several
+  hundred rows naming other sessions' desks are gone; and evidence links resolve at
+  `github.com/buffedlizard55-lab/OLBG1/blob/314937647149/…`, a commit that exists on `main`.
+* Three defects were found this session **by reading the deployed bytes rather than a build status**: the
+  −155/−156 price mismatch, genuine zeros rendered as dashes, and this audit false positive. The read-back
+  step is therefore recorded in full rather than treated as a formality.
