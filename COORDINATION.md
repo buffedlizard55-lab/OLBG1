@@ -97,7 +97,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T38 | Full multi-market line origination (Win/1X2/Outright, non-pushing `.5` Spreads, Totals, Derivatives & multi-runner field boards), monotonic confidence grading, and 40 unique human High predictions | done | 984d417f-olbg1 | `scripts/s984d417f_dataset.py`, `scripts/s984d417f_model.py`, `data/984d417f/lines.json`, `data/984d417f/predictions.json`, `data/984d417f/matches.csv` | 2026-10-21T07:06Z | 145 priced boards (`40 High / 34 Medium / 71 Low`); 40 human writeups (`56–68` words each, `0` repeated 6-grams) |
 | T39 | Build 23-page dashboard (`/984d417f/`), run all 6 repository validators, non-destructively merge `origin/main`, open & merge PR to `main`, and verify live GitHub Pages deployment | done | 984d417f-olbg1 | `984d417f/**`, `scripts/s984d417f_build_site.py`, `scripts/s984d417f_validate.py`, `README.md`, `COORDINATION.md` (append-only) | 2026-10-21T07:06Z | 23 pages built (`2,946` links/anchors validated, `0` errors across all `182` repo HTML pages) |
 | T40 | Independent offline structural/provenance audit of the latest root dashboard and namespaced `/c17a9192/` + `/984d417f/` dashboards; reconcile event/market/prediction/verification joins, blank/flag coverage, rendered table links, local gates and Pages state | done | 5a353e83-olbg1 | `scripts/session_5a353e83_audit.py`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.md`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.html`, `COORDINATION.md` (append-only) | 2026-10-21T07:48Z | No outbound official-source fetch; no data, lines, predictions or shared dashboard files edited. Renumbered after T17/T20/T21/T36 collisions; see §30. **Completed:** 0 structural errors, 19 review notes; 5 validators + `final_audit.py` passed; PR #44 merged, Pages deployment built (workflow `39565999245`), see §30.1. |
-| T41 | Fresh 22–26 Oct 2026 matchday desk: live official-source fixture harvest, own multi-market lines, confidence tiers, unique ≥30-word high-confidence predictions, own dashboard + Flagged page, validator gate, PR + merge + Pages check | in progress | 7a5b5360-olbg1 | `data/7a5b5360/**`, `scripts/s7a5b5360_*.py`, `7a5b5360/**`, `reports/SESSION_7A5B5360.md`, `COORDINATION.md` (append-only) | 2026-10-22T00:00Z | Claimed after T40. Non-overlapping namespace; no shared data file edited. |
+| T41 | Fresh 22–26 Oct 2026 matchday desk: live official-source fixture harvest, own multi-market lines, confidence tiers, unique ≥30-word high-confidence predictions, own dashboard + Flagged page, validator gate, PR + merge + Pages check | done | 7a5b5360-olbg1 | `data/7a5b5360/**`, `scripts/s7a5b5360_*.py`, `7a5b5360/**`, `reports/SESSION_7A5B5360.md`, `COORDINATION.md` (append-only) | 2026-10-22T00:00Z | Claimed after T40. Non-overlapping namespace; no shared data file edited. |
 
 | T21 | Independent second-pass re-verification of NHL input sub-values and the F1 start time; correction of four NHL transposition errors and one timezone error; source-redirect evidence for PlusLiga and GAA | done | 4f8d032d-olbg1 | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py`, `scripts/live_verification.py`, `scripts/high_predictions.py`, `data/verification.json`, `reports/SESSION_4F8D_VERIFICATION.md`, append-only `COORDINATION.md` | 2026-10-21T07:15Z | Claimed as T17 (collision: taken by 72198d3e, which itself became T20); renumbered T21. Rebased onto `main`; earlier session's Boston fix and Vegas no-reprice policy preserved. 31 High picks retained. |
 
@@ -1316,3 +1316,46 @@ session, with the fetched value and the exact official URL recorded per field.
 actually fetched in this session. Any field not read on an official page stays blank and is listed on
 `7a5b5360/flagged.html`. Model prices are labelled as estimates, never as sourced facts.
 
+
+### 31.1 T41 result
+
+**Harvest (2026-10-22, 00:00Z–02:00Z).** Five sports verified from official pages this session:
+MLB World Series (`statsapi.mlb.com`), the 12-game NHL slate of 22–23 October
+(`api-web.nhle.com/v1/scoreboard/2026-10-24`, which carries both clubs' records in the same payload),
+URC Round 4 (`unitedrugby.com` fixtures release), WST Northern Ireland Open Round 3 plus every
+completed Round 1/2 score and world rankings 1–36 (`wst.tv`), and Formula One Round 18, the United
+States Grand Prix, with all 23 drivers' points (`formula1.com`). Twelve further in-scope sports are
+recorded as unverified with the exact URL tried: pdc.tv consent wall, ehfcl.com 404, two URC table
+routes 404, ICC/EuroLeague/AFLW client-rendered, NBA CDN 500, GBGB 500, and no dated official tennis
+board. The GAA October board was read and publishes no senior football fixture in the window.
+
+**Outputs.** `data/7a5b5360/*.json` + `matches.csv`: 32 fixtures, 231 originated selections,
+32 winner picks (4 High / 14 Medium / 14 Low), 18 hand-written predictions (≥30 words, 0 shared
+6-word phrases), 26 selections at 70%+, 14 flags, 6 repository findings. Dashboard: 14 pages under
+`7a5b5360/` (overview, picks, markets, predictions, coverage, verification, flagged, sources,
+methodology + 5 sport pages).
+
+**Verification.** `scripts/s7a5b5360_validate.py` → PASSED (14 pages, 0 errors).
+`scripts/validate.py` → VALIDATION PASSED across **222** published HTML pages, 0 errors, 0 warnings
+(baseline before this session: 208 pages). `scripts/final_audit.py` exits 0. Report:
+`reports/SESSION_7A5B5360.md`.
+
+**Finding about the brief (`F-7A-01`).** A 70% probability is a 1.4286 fair price (−233), so it is
+already shorter than the −250 floor the brief pairs the 70% threshold with; with any margin it quotes
+about −270. Rather than drop either rule, every selection publishes its probability, fair price,
+book-equivalent price and an in-band yes/no. 26 selections clear 70%, 16 of them outside the brief's
+range, and that arithmetic is shown on the site.
+
+**Repository findings (R-01…R-06).** README:56 still says "160 published HTML pages" while the
+validator counts 222; README:51-53 counts do reconcile; COORDINATION.md:7's "Last updated" header is
+stale relative to §30/T40; five namespaces hold overlapping datasets with different counts
+(134/217/145) and no canonical one — this desk adds a sixth and edits none; T35/T19/T10 remain open
+and out of scope; all tracked JSON parses and no `.pyc` is tracked.
+
+**Scope compliance.** Only additive changes outside the new namespace: one nav link in `index.html`,
+one README section, this append-only entry, and the new `scripts/s7a5b5360_*.py`,
+`data/7a5b5360/**`, `7a5b5360/**`, `reports/SESSION_7A5B5360.md` files. No other session's data,
+lines, predictions or pages were rewritten, and `git diff --diff-filter=D` against the branch point
+is empty apart from files this session never owned.
+
+**Publish record.** See §31.2 below once the PR and Pages deployment are confirmed.

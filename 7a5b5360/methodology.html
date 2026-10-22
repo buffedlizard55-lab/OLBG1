@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology — OLBG desk 7a5b5360</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="top"><div class="wrap">
+<div class="brand">OLBG<span>/</span> desk 7a5b5360</div>
+<nav class="main"><a class="" href="index.html">Overview</a><a class="" href="picks.html">Picks</a><a class="" href="markets.html">Markets</a><a class="" href="predictions.html">Predictions</a><a class="" href="coverage.html">Coverage</a><a class="" href="verification.html">Verification</a><a class="" href="flagged.html">Flagged for Review</a><a class="" href="sources.html">Sources</a><a class="on" href="methodology.html">Methodology</a><a class="" href="../index.html">Repository dashboard</a></nav>
+</div></header>
+<main><div class="wrap">
+
+<h1>Methodology</h1>
+<p class="lede">What this desk does, what it refuses to do, and where every number comes from.</p>
+<div class="prose"><h2>What this desk is</h2><p>A fresh snapshot of the 22-26 October 2026 fixture window, harvested from official sources on 2026-10-22 between 00:00Z and 01:30Z. Thirty-two fixtures across five sports carry a sourced record, an originated board and a labelled pick. Twelve further in-scope sports are reported as unverified on the coverage page with the exact URL that was tried.</p><h2>How a fixture gets in</h2><p>A row only exists if the participants, the start time and the venue were read on an official page during this session, and that page&#x27;s URL is attached to the row. Where the official page does not publish a value - a confirmed venue, a UTC kick-off, a world ranking - the value is left empty and listed on the Flagged for Review page. Nothing is filled in from memory or from another site.</p><h2>How a price is originated</h2><p>Each side is given a sourced strength input: season record for MLB, points percentage for the NHL, a blend of frames won in this event and world ranking for the snooker, championship points for the Formula One field. A logistic model turns the difference into a probability; the shrinkage coefficients, the home-field terms, the total baselines and the F1 exponent are printed in full in the assumption table on the Markets page and are modelling choices, never statistics.</p><h2>What &#x27;fair&#x27; and &#x27;book&#x27; mean here</h2><p>The fair column is 1/probability - our own line with no margin. The book column is what a margin of 4.5% (two-way), 6.0% (three-way) or 7.5% (F1 field) would make that price. Neither column is a quote from a bookmaker; both are produced by this model.</p><h2>How confidence is graded</h2><p>High means the model gives the selection at least a 70% chance, Medium 55-69.9%, Low below 55%. The grade describes the model&#x27;s probability, not the size of the price and not the size of the stake. Rugby union is capped at Low for the reason in F-7A-04.</p><h2>What is deliberately not modelled</h2><p>Injuries, team news, weather, rest days, travel, head-to-head history and starting pitchers are all absent because none of them was read on an official page today. The prices on the baseball games are the softest on this desk for exactly that reason (F-7A-13).</p></div>
+<h2>Worked example</h2>
+<p class="prose">New York Islanders v Los Angeles Kings, 22 October. Sourced inputs: Islanders 5-3-1
+(11 points from 18, .611), Kings 1-4-2 (4 from 14, .286). Log-odds difference 1.367, shrunk by k = 0.55 and
+given a 0.20 home term, gives logistic(0.952) = 72.1%. Fair price 1/0.721 = 1.39; with a 4.5% margin the book
+price is 1.32. The pick is the Islanders to win, graded High because 72.1% clears the 70% line, and flagged as
+out of band because 1.39 is shorter than -250.</p>
+<h2>Files</h2>
+<ul class="tight">
+<li><span class="mono">scripts/s7a5b5360_data.py</span> — the sourced fixtures, inputs and source register.</li>
+<li><span class="mono">scripts/s7a5b5360_build.py</span> — the model, the market generator and the exports.</li>
+<li><span class="mono">scripts/s7a5b5360_content.py</span> — predictions, flags and this text.</li>
+<li><span class="mono">scripts/s7a5b5360_site.py</span> — this dashboard.</li>
+<li><span class="mono">data/7a5b5360/</span> — fixtures, markets, picks, predictions, high-probability selections, sources, coverage, flags and matches.csv.</li>
+</ul>
+
+</div></main>
+<footer><div class="wrap">
+Snapshot 22–26 October 2026 · harvested 2026-10-22T01:30Z · session <span class="mono">7a5b5360-olbg1</span> (task T41).
+Prices on this site are originated by a model, not quoted from any bookmaker. Facts carry a link to the official page they were read from.
+</div></footer>
+</body></html>

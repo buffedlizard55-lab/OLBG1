@@ -1,0 +1,191 @@
+{
+ "mlb_schedule": {
+  "name": "MLB official schedule API \u2014 World Series, 21-27 Oct 2026",
+  "org": "Major League Baseball (statsapi.mlb.com)",
+  "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-21&endDate=2026-10-27&fields=dates,date,games,gamePk,gameDate,teams,away,home,team,name,venue,status,detailedState,seriesDescription,gameNumber",
+  "used_for": [
+   "fixture",
+   "start time",
+   "venue",
+   "participants",
+   "series"
+  ],
+  "status": "read"
+ },
+ "mlb_standings": {
+  "name": "MLB official standings API \u2014 2026 regular season, National League",
+  "org": "Major League Baseball (statsapi.mlb.com)",
+  "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=104&season=2026&standingsTypes=regularSeason&fields=records,teamRecords,team,name,wins,losses,winningPercentage,divisionRank",
+  "used_for": [
+   "team record input"
+  ],
+  "status": "read"
+ },
+ "mlb_standings_al": {
+  "name": "MLB official standings API \u2014 2026 regular season, American League",
+  "org": "Major League Baseball (statsapi.mlb.com)",
+  "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason&fields=records,teamRecords,team,name,wins,losses,winningPercentage,divisionRank",
+  "used_for": [
+   "team record input"
+  ],
+  "status": "read"
+ },
+ "nhl_scoreboard": {
+  "name": "NHL official scoreboard API \u2014 22-23 Oct 2026 slate (includes both clubs' W-L-OTL records)",
+  "org": "National Hockey League (api-web.nhle.com)",
+  "url": "https://api-web.nhle.com/v1/scoreboard/2026-10-24",
+  "used_for": [
+   "fixture",
+   "start time",
+   "venue",
+   "participants",
+   "team record input"
+  ],
+  "status": "read"
+ },
+ "urc_fixtures": {
+  "name": "United Rugby Championship \u2014 2026/27 fixtures in full (Round 4 board)",
+  "org": "United Rugby Championship",
+  "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/",
+  "used_for": [
+   "fixture",
+   "kick-off (published local)",
+   "venue",
+   "participants"
+  ],
+  "status": "read"
+ },
+ "wst_matches": {
+  "name": "World Snooker Tour \u2014 BetVictor Northern Ireland Open 2026 match list",
+  "org": "World Snooker Tour (wst.tv)",
+  "url": "https://www.wst.tv/matches",
+  "used_for": [
+   "fixture",
+   "published clock",
+   "round",
+   "completed scores used as form input"
+  ],
+  "status": "read"
+ },
+ "wst_rankings": {
+  "name": "WST Johnstone's Paint World Rankings (published table, positions 1-36)",
+  "org": "World Snooker Tour (wst.tv)",
+  "url": "https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8?showLive=false",
+  "used_for": [
+   "world ranking input"
+  ],
+  "status": "read"
+ },
+ "f1_calendar": {
+  "name": "FIA Formula One World Championship 2026 race calendar",
+  "org": "Formula 1 (formula1.com)",
+  "url": "https://www.formula1.com/en/racing/2026",
+  "used_for": [
+   "fixture",
+   "round",
+   "meeting dates"
+  ],
+  "status": "read"
+ },
+ "f1_standings": {
+  "name": "2026 FIA F1 Drivers' Standings",
+  "org": "Formula 1 (formula1.com)",
+  "url": "https://www.formula1.com/en/results/2026/drivers",
+  "used_for": [
+   "driver points input"
+  ],
+  "status": "read"
+ },
+ "f1_usgp": {
+  "name": "FORMULA 1 MSC CRUISES UNITED STATES GRAND PRIX 2026 \u2014 session schedule and circuit",
+  "org": "Formula 1 (formula1.com)",
+  "url": "https://www.formula1.com/en/racing/2026/united-states",
+  "used_for": [
+   "session times (track local)",
+   "circuit",
+   "lap count"
+  ],
+  "status": "read"
+ },
+ "gaa_fixtures": {
+  "name": "GAA official fixtures and results board",
+  "org": "Gaelic Athletic Association",
+  "url": "https://www.gaa.ie/fixtures-results",
+  "used_for": [
+   "coverage gap evidence (no gaelic football fixture in window)"
+  ],
+  "status": "read_no_fixture"
+ },
+ "pdc_hub": {
+  "name": "PDC tournament hub (ET15 \u2014 Dutch Darts Championship)",
+  "org": "Professional Darts Corporation",
+  "url": "https://www.pdc.tv/tournament-hub/10824",
+  "used_for": [],
+  "status": "blocked_consent_wall"
+ },
+ "ehfcl_fixtures": {
+  "name": "EHF Champions League fixtures route",
+  "org": "European Handball Federation",
+  "url": "https://www.ehfcl.com/en/men/fixtures-and-results",
+  "used_for": [],
+  "status": "http_404"
+ },
+ "urc_table_a": {
+  "name": "URC league table route (attempt 1)",
+  "org": "United Rugby Championship",
+  "url": "https://www.unitedrugby.com/urc/table",
+  "used_for": [],
+  "status": "http_404"
+ },
+ "urc_table_b": {
+  "name": "URC standings route (attempt 2)",
+  "org": "United Rugby Championship",
+  "url": "https://www.unitedrugby.com/standings",
+  "used_for": [],
+  "status": "http_404"
+ },
+ "icc_fixtures": {
+  "name": "ICC fixtures and results board",
+  "org": "International Cricket Council",
+  "url": "https://www.icc-cricket.com/fixtures-results",
+  "used_for": [],
+  "status": "client_rendered_empty"
+ },
+ "euroleague_gc": {
+  "name": "EuroLeague Game Center schedule",
+  "org": "EuroLeague Basketball",
+  "url": "https://www.euroleaguebasketball.net/en/euroleague/game-center/",
+  "used_for": [],
+  "status": "client_rendered_empty"
+ },
+ "aflw_fixture": {
+  "name": "AFLW fixture board",
+  "org": "Australian Football League",
+  "url": "https://www.afl.com.au/aflw/fixture",
+  "used_for": [],
+  "status": "client_rendered_empty"
+ },
+ "nba_scoreboard": {
+  "name": "NBA official live scoreboard JSON",
+  "org": "National Basketball Association",
+  "url": "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json",
+  "used_for": [],
+  "status": "http_500"
+ },
+ "gbgb_fixtures": {
+  "name": "GBGB racing fixtures",
+  "org": "Greyhound Board of Great Britain",
+  "url": "https://www.gbgb.org.uk/racing/fixtures",
+  "used_for": [],
+  "status": "http_500"
+ },
+ "wst_rankings_preview": {
+  "name": "WST Rankings index (top-11 preview per list)",
+  "org": "World Snooker Tour (wst.tv)",
+  "url": "https://www.wst.tv/rankings",
+  "used_for": [
+   "world ranking input (confirming values)"
+  ],
+  "status": "read"
+ }
+}

@@ -275,3 +275,36 @@ python3 scripts/s984d417f_validate.py    # verifies all 145 rows, 40 writeups, 2
 ```
 
 
+
+---
+
+## Fresh matchday desk — 22–26 October 2026 (session `7a5b5360-olbg1`, task T41)
+
+**Live board:** https://buffedlizard55-lab.github.io/OLBG1/7a5b5360/
+
+A new, self-contained desk that re-harvests the current fixture window from official sources instead of
+inheriting any earlier session's snapshot.
+
+| Output | Where |
+|---|---|
+| 32 verified fixtures across 5 sports (MLB World Series, 12-game NHL slate, URC Round 4, WST Northern Ireland Open Round 3, F1 United States GP) | `data/7a5b5360/fixtures.json` |
+| 231 originated selections across winner, handicap, total and outright markets | `data/7a5b5360/markets.json` |
+| One match-winner pick per fixture, tiered High ≥70% / Medium ≥55% / Low | `data/7a5b5360/picks.json` |
+| 18 written predictions (≥30 words, no shared 6-word phrase) | `data/7a5b5360/predictions.json` |
+| Every selection at 70%+ with its price and in-band status | `data/7a5b5360/high_probability.json` |
+| Coverage record for all 17 in-scope sports, including the 12 that could not be verified | `data/7a5b5360/coverage.json` |
+| 14 flags and 6 repository-review findings | `data/7a5b5360/flags.json` |
+| Flat export | `data/7a5b5360/matches.csv` |
+| Dashboard (9 pages + 5 sport pages) | `7a5b5360/` |
+
+**Rebuild and gate:**
+
+```bash
+python3 scripts/s7a5b5360_build.py      # data + site
+python3 scripts/s7a5b5360_validate.py   # desk gate: sources, prices, prose, links, coverage
+python3 scripts/validate.py             # repository-wide link/data gate
+```
+
+The desk publishes one finding about the brief itself (`F-7A-01`): a 70% probability is a 1.43 fair price,
+so it is already shorter than the -250 floor the brief pairs it with. Every selection therefore carries its
+probability, its fair price and an in-band yes/no rather than one rule being silently dropped.
