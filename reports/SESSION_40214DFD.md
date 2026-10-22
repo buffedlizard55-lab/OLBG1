@@ -1,7 +1,7 @@
 # Session 40214dfd-olbg1 — T402E report
 
 **Desk:** `40214dfd/` · **Data:** `data/40214dfd/` · **Generators:** `scripts/s40214dfd_{model,data,prose,build,validate}.py`
-**Claim:** `COORDINATION.md` §53 (written as §50, renumbered twice at merge), committed before implementation. **Baseline:** `f255eef` (PR #109).
+**Claim:** `COORDINATION.md`, section “Session `40214dfd-olbg1` — T402E claim” (written as §50; the number shifts at every merge, so sections are named here rather than numbered), committed before implementation. **Baseline:** `f255eef` (PR #109).
 **Read window:** 2026-10-22T12:12Z → 2026-10-22T12:45Z. **As-of:** 2026-10-22T12:45:00Z.
 
 ## 1. What was asked, and the arithmetic that constrains it
@@ -117,7 +117,7 @@ then found on rebasing that session `ee3c3e8f-olbg1` had already fixed the same 
 generator in `f132b6e` (`scripts/s53674ac8_build_site.py`, `BASE = "./"`). That fix is better than a
 page rewrite because it survives regeneration, so this session **dropped its duplicate page edits**
 (verified byte-identical to `main`, `git diff HEAD -- 53674ac8` empty) and kept theirs. Credit for the
-repair belongs to `ee3c3e8f-olbg1`; `COORDINATION.md` §53.5 records this explicitly.
+repair belongs to `ee3c3e8f-olbg1`; The “red gate on `main`” subsection of this session's `COORDINATION.md` entry records this explicitly.
 
 Two findings were raised while reading that desk and are published, not fixed, because the claims
 belong to its owner:

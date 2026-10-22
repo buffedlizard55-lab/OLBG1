@@ -3244,7 +3244,7 @@ Media, aggregators, tipsters and betting sites are not accepted as sources. Unco
 **originated experimental fair prices**, never as available bookmaker odds — no bookmaker price is
 claimed anywhere unless it was actually fetched, and none is fetched here.
 
-### 54.3 T402E completion record (2026-10-22T13:05Z desk)
+### 56.3 T402E completion record (2026-10-22T13:05Z desk)
 
 **Delivered** in the isolated `40214dfd/` namespace: **26 priced fixtures** (NHL 12, MLB World Series
 5, EuroLeague 9), **299 originated markets / 598 priced outcomes** across match winner, handicap,
@@ -3289,7 +3289,7 @@ F-402-07 eleven in-scope sports produced no verified row (tennis, darts, Austral
 codes, cricket, handball, volleyball, golf, motor racing, eSports, greyhounds) with the official URL
 attempted and the specific failure recorded per sport.
 
-### 54.4 Requests to the final integrator (not applied by this session)
+### 55.4 Requests to the final integrator (not applied by this session)
 
 1. A navigation entry to `40214dfd/index.html` on the canonical root dashboard. The desk is currently
    reachable only through `archive.html`, which auto-lists it as “Preserved 40214dfd … not
@@ -3300,7 +3300,7 @@ attempted and the specific failure recorded per sport.
    Round 7 averages in `data/40214dfd/harvest/` as leads. They were read officially but have not been
    recertified for the canonical snapshot.
 
-### 54.5 The red gate on `main`, and who actually fixed it (2026-10-22T13:50Z)
+### 55.5 The red gate on `main`, and who actually fixed it (2026-10-22T13:50Z)
 
 **Situation.** PR #116's first CI run failed at step 7, `python scripts/validate.py`, and the failure
 was **not** in this session's files: 98 errors, every one in `53674ac8/`, all of the form
@@ -3343,7 +3343,54 @@ finding is limited to it.
 **Not claimed.** This does not re-verify `53674ac8`'s sources, prices, predictions or its "12 High"
 count, and it does not certify the desk.
 
+### 56.4 Requests to the final integrator (not applied by this session)
+1. A navigation entry to `40214dfd/index.html` on the canonical root dashboard. The desk is currently
+   reachable only through `archive.html`, which auto-lists it as “Preserved 40214dfd … not
+   recertified” — an inaccurate label for a desk generated at 12:45Z today. Applying that link means
+   regenerating root pages with `pipeline.build --out .`, which is shared-output work and is therefore
+   left to the integrator.
+2. Optional: the canonical adapter regime may wish to ingest the 22 Oct NHL records and the EuroLeague
+   Round 7 averages in `data/40214dfd/harvest/` as leads. They were read officially but have not been
+   recertified for the canonical snapshot.
 
+### 56.5 The red gate on `main`, and who actually fixed it (2026-10-22T13:50Z)
+**Situation.** PR #116's first CI run failed at step 7, `python scripts/validate.py`, and the failure
+was **not** in this session's files: 98 errors, every one in `53674ac8/`, all of the form
+`link escapes repository root -> /53674ac8/...`. That desk merged in PR #111 and had left the
+canonical gate red on `main` since, so refresh/build/field/browser and the deploy job were skipped for
+**every** session.
 
+**Who fixed it — corrected record.** This session prepared a page-level repair of the 98 hrefs and
+committed it on its branch. While rebasing onto `main` the change collided with a repair that had
+already landed there: session `ee3c3e8f-olbg1` committed **`f132b6e`**, which fixes the same 98 links
+**and** the generator that emits them (`scripts/s53674ac8_build_site.py`, `BASE = "./"`). Their fix is
+strictly better than a page-level rewrite because it survives regeneration. This session therefore
+**dropped its duplicate page edits during the rebase** (`git checkout --ours` on the 13 files, verified
+byte-identical to `main` afterwards, `git diff HEAD -- 53674ac8` empty) and left their fix in place.
+No file of theirs was overwritten, reverted or re-attributed.
 
+**Verification of the landed fix, re-run on this rebased branch:** `grep -c 'href="/53674ac8'` over
+`53674ac8/**/*.html` → **0**; `python scripts/validate.py` → **0 errors** (3 pre-existing `f7fa77fc/`
+warnings, which describe that mirror's policy links); `python -m pipeline.validate --site .` →
+**0 errors**. Credit for the repair belongs to `ee3c3e8f-olbg1` / PR #112, not to this session; this
+paragraph exists so the board does not credit the wrong session.
 
+**Two findings raised while reading that desk (published, not edited).** Reading its pages row by row
+exposed the labelling defect the brief warns about, so it is published on this desk's `flagged.html`
+with the exact rows:
+
+* **F-402-08** — all **12** rows labelled High on `53674ac8/` state a model probability of **63–70%**
+  (`lines.html`, `sports/{basketball,darts,ice-hockey,snooker,tennis}.html`). None is above 70%, the
+  brief's own threshold for a High pick. Those labels are that session's claims; this session
+  reproduces the values and does not amend them.
+* **F-402-09** — two of its snooker predictions are the same sentence with the name substituted
+  ("brings professional experience and a strong recent record … Their safety play and break-building
+  consistency …"), i.e. template text, in the exact pattern the brief asks to avoid.
+
+A repo-wide automated sweep for the same pattern was run and is deliberately **not** published: the
+row matcher produced obvious false positives on rows that mix several selections and percentages, so
+naming other desks from it would risk a false accusation. Only `53674ac8` was read row by row, and the
+finding is limited to it.
+
+**Not claimed.** This does not re-verify `53674ac8`'s sources, prices, predictions or its "12 High"
+count, and it does not certify the desk.
