@@ -139,7 +139,7 @@ PR #84 made the root pages a canonical evidence-first research desk owned by
 | `scripts/release_validate.py` (archived T61 gate; manual-dispatch `evidence-pages.yml` only) | FAILED — **identically on this tree and on a pristine `cd97302` worktree** (the same 439 "lacks an official review link" findings against the new canonical root pages): a pre-existing main-side consequence of the PR #88 regime change, not a regression of this session; referred to the T257E owner (§48 request 3) |
 | `python3 -m unittest discover -s tests -p 'test*.py'` | 38/38 OK |
 | `scripts/validate.py` (legacy whole-site) | PASSED — 0 errors / 3 warnings (all three pre-existing on main: `f7fa77fc/flagged.html` rows 43/45/47 cite the methodology page for internal policy findings) |
-| `scripts/release_inventory.py` | refreshed — 1,015 files / 1,094,356 lines / 61,706 source locations |
+| `scripts/release_inventory.py` | refreshed — 1,015 files / 1,094,360 lines / 61,707 source locations |
 | `scripts/release_audit.py` + `tests/test_release_audit.py` | regenerated pair (legacy_high 30, approved picks 0) byte-identical to the committed T61 pair — `data/release` untouched; test OK |
 | `scripts/v3_validate.py` | PASS — 127 fixtures / 120 priced / High 10 / 24 pages |
 | `scripts/s6a081cf6_validate.py` | PASS — 9 strict-band picks, all >70% implied, ≥30 words, sourced |
