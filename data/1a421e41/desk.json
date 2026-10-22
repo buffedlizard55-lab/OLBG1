@@ -43393,7 +43393,8 @@
     "https://buffedlizard55-lab.github.io/OLBG1/1a421e41/index.html",
     "https://buffedlizard55-lab.github.io/OLBG1/92af340c/index.html"
    ],
-   "status": "confirmed"
+   "status": "confirmed-then-resolved",
+   "resolution": "Resolved at 10:02Z without any action being available. The build for b56d45b5 reported built at 10:01:32Z and the probe that had returned the repository 404 at 09:47Z and 09:56Z began serving normally; /OLBG1/1a421e41/window.html then returned the current revision, which confirms the whole tree is current because a Pages deployment is one atomic artifact. Total stall 09:11Z to 10:01Z, about 50 minutes across four builds, two of which reported built without their content being served. The finding stays published because the failure mode - trusting pages.status instead of the served bytes - will recur at the next merge storm."
   }
  ]
 }

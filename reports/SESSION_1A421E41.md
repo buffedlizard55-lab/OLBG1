@@ -299,9 +299,19 @@ Verified in `main` at `8540478` by reading the committed files directly:
 `rejected_high_count`. The live URL still served the 09:11 revision (2938 markets, literal `70%%`)
 at 09:44Z.
 
-**No claim is made that the live site shows the latest revision.** It shows the complete, valid
-PR #94 deliverable; the two follow-ups are refinements that will appear at the next successful
-publication.
+**Resolved at 10:02Z.** The stall cleared on its own: the build for `b56d45b5` (this desk's final
+merge) reported `built` at 10:01:32Z, and the probe that had returned the repository 404 at 09:47Z and
+09:56Z — `/OLBG1/92af340c/index.html`, a directory added by a different session — began serving
+normally. Fetching `/OLBG1/1a421e41/window.html` then returned the **current** revision: the heading
+reads "above 70%" with a single percent sign (PR #98) and the rejected-Highs table is the trimmed
+15-row version carrying the `Kind` column and the per-fixture `Rungs rejected` counts (PR #101).
+Because a Pages deployment is one atomic artifact, `window.html` serving the latest revision confirms
+the whole `/1a421e41/` tree is current.
+
+**All four PRs are merged and the full deliverable is live and verified by direct fetch.** The near
+misses now read cleanly on the deployed page: Partizan v Crvena Zvezda `Over 147.5` at **−251, one
+American point outside the window**; Paris v Valencia `Valencia +0.5` at −252; Bayern v Dubai
+`Under 180.5` at −253; van Veen v Gilding `van Veen −0.5 legs` at −258.
 
 ---
 
