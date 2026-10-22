@@ -23,6 +23,7 @@ EHF_PREV = {"name": "EHF official Round 5 match preview", "url": "https://www.eu
 LEGA_V = {"name": "Lega Pallavolo Serie A SuperLega Credem Banca calendar", "url": "https://www.legavolley.it/"}
 PLUS_V = {"name": "PlusLiga official 2026/27 schedule", "url": "https://www.plusliga.pl/games.html"}
 AFLW_FIX = {"name": "AFL official 2026 NAB AFLW fixture & ladder", "url": "https://www.afl.com.au/aflw"}
+AFLW_LADDER = {"name": "AFL official 2026 AFLW ladder after Round 10 (read 2026-10-22)", "url": "https://www.afl.com.au/aflw/ladder"}
 LOL_WORLDS = {"name": "LoL Esports official Worlds 2026 hub & primer", "url": "https://lolesports.com/en-US/"}
 GAA_MUNSTER = {"name": "Munster GAA official county championship fixtures", "url": "https://munster.gaa.ie/fixtures/munster-gaa-fixtures/"}
 GAA_CORK = {"name": "Cork GAA official Premier Senior Football fixtures", "url": "https://gaacork.ie/fixtures-results/"}
@@ -341,37 +342,45 @@ def get_rows_b() -> list[dict]:
     # =========================================================================
     # 12. AUSSIE RULES — ALL 9 Official 2026 NAB AFLW Round 11 Matches (afl.com.au)
     # =========================================================================
+    # T35/T63 re-price (session 92af340c-olbg1, 2026-10-22): inputs below are read live
+    # from the official afl.com.au 2026 AFLW ladder after Round 10 (every club 10 played).
+    # Rating formula (documented modelling assumption, same ladder-points scale the desk
+    # has always used): base = round(31 + (ladder_points - 4) * 65/36); clubs tied on
+    # ladder points are separated by official ladder position (percentage order), each
+    # position down subtracting 1 point from the base.  Superseded pre-22-Oct snapshot
+    # ratings (finding T34-01) are preserved in COORDINATION.md §48, not silently dropped.
+    LAD = "2026 AFLW R10 ladder (official afl.com.au, read 2026-10-22)"
     aflw_rows = [
         ("aflw-r11-01", "2026-10-25T02:05:00Z", "North Melbourne", "Adelaide Crows", "North Hobart Oval, Hobart",
-         ("2026 AFLW R10 ladder", "1st, 40 pts (10-0)", 96.0), ("2026 AFLW R10 ladder", "9th, 20 pts (5-5)", 60.0)),
+         (LAD, "1st, 36 pts (9-1-0, 251.9%)", 89.0), (LAD, "9th, 20 pts (5-5-0, 102.4%)", 59.0)),
         ("aflw-r11-02", "2026-10-24T04:05:00Z", "Geelong Cats", "Fremantle", "GMHBA Stadium, Geelong",
-         ("2026 AFLW R10 ladder", "13th, 16 pts (4-6)", 50.0), ("2026 AFLW R10 ladder", "7th, 24 pts (6-4)", 66.0)),
+         (LAD, "2nd, 36 pts (9-1-0, 167.2%)", 88.0), (LAD, "8th, 20 pts (5-5-0, 104.9%)", 60.0)),
         ("aflw-r11-03", "2026-10-24T08:15:00Z", "Western Bulldogs", "Melbourne", "Mission Whitten Oval, Melbourne",
-         ("2026 AFLW R10 ladder", "12th, 16 pts (4-6)", 51.0), ("2026 AFLW R10 ladder", "3rd, 32 pts (8-2)", 82.0)),
+         (LAD, "4th, 32 pts (8-2-0, 140.9%)", 81.0), (LAD, "3rd, 32 pts (8-2-0, 177.2%)", 82.0)),
         ("aflw-r11-04", "2026-10-25T06:05:00Z", "Carlton", "GWS GIANTS", "IKON Park, Melbourne",
-         ("2026 AFLW R10 ladder", "6th, 24 pts (6-4)", 67.0), ("2026 AFLW R10 ladder", "16th, 8 pts (2-8)", 38.0)),
+         (LAD, "6th, 28 pts (7-3-0, 133.0%)", 73.0), (LAD, "15th, 8 pts (2-8-0, 68.2%)", 38.0)),
         ("aflw-r11-05", "2026-10-25T04:05:00Z", "Hawthorn", "Essendon", "Kennedy Community Centre, Dingley",
-         ("2026 AFLW R10 ladder", "4th, 32 pts (8-2)", 81.0), ("2026 AFLW R10 ladder", "14th, 14 pts (3-6-1)", 46.0)),
+         (LAD, "10th, 20 pts (5-5-0, 101.5%)", 58.0), (LAD, "17th, 4 pts (1-9-0, 55.6%)", 30.0)),
         ("aflw-r11-06", "2026-10-24T06:05:00Z", "Gold Coast SUNS", "Richmond", "People First Stadium, Gold Coast",
-         ("2026 AFLW R10 ladder", "18th, 4 pts (1-9)", 31.0), ("2026 AFLW R10 ladder", "17th, 8 pts (2-8)", 37.0)),
+         (LAD, "5th, 28 pts (7-3-0, 138.9%)", 74.0), (LAD, "13th, 16 pts (4-6-0, 68.9%)", 51.0)),
         ("aflw-r11-07", "2026-10-23T08:15:00Z", "Port Adelaide", "Collingwood", "Alberton Oval, Adelaide",
-         ("2026 AFLW R10 ladder", "11th, 20 pts (5-5)", 58.0), ("2026 AFLW R10 ladder", "15th, 12 pts (3-7)", 43.0)),
+         (LAD, "11th, 16 pts (4-6-0, 78.8%)", 53.0), (LAD, "16th, 4 pts (1-9-0, 56.7%)", 31.0)),
         ("aflw-r11-08", "2026-10-25T01:35:00Z", "Sydney Swans", "West Coast Eagles", "Henson Park, Sydney",
-         ("2026 AFLW R10 ladder", "5th, 26 pts (6-3-1)", 71.0), ("2026 AFLW R10 ladder", "8th, 24 pts (6-4)", 65.0)),
+         (LAD, "7th, 28 pts (7-3-0, 112.9%)", 72.0), (LAD, "12th, 16 pts (4-6-0, 75.2%)", 52.0)),
         ("aflw-r11-09", "2026-10-24T02:05:00Z", "St Kilda", "Brisbane Lions", "RSEA Park, Melbourne",
-         ("2026 AFLW R10 ladder", "10th, 20 pts (5-5)", 59.0), ("2026 AFLW R10 ladder", "2nd, 32 pts (8-2)", 84.0)),
+         (LAD, "18th, 4 pts (1-9-0, 45.1%)", 29.0), (LAD, "14th, 12 pts (3-7-0, 89.7%)", 45.0)),
     ]
     for aid, utc, h, a, ven, hi, ai in aflw_rows:
         rows.append({
             "id": aid, "sport": "aussie-rules", "competition": "NAB AFLW Premiership Season",
             "stage": "Round 11", "start_utc": utc, "home": h, "away": a, "venue": ven,
-            "neutral": False, "status": "verified", "sources": [AFLW_FIX],
+            "neutral": False, "status": "verified", "sources": [AFLW_FIX, AFLW_LADDER],
             "inputs": {
                 "home": {"label": hi[0], "value": hi[1], "rating": hi[2]},
                 "away": {"label": ai[0], "value": ai[1], "rating": ai[2]},
             },
             "flags": ["OLBG blind spot: /betting-tips/Aussie_Rules/22 returns 'No tips found' despite 9 official Round 11 AFLW fixtures",
-                      "Ladder inputs not reproducible: the official afl.com.au 2026 AFLW ladder after Round 10 differs from the table used to price this row (see finding T34-01 on the Flagged page). Fixture facts are verified; the price is a labelled snapshot and was not re-priced."],
+                      "T35 re-price executed 2026-10-22 (session 92af340c-olbg1, T63): ratings now derive from a live read of the official afl.com.au 2026 AFLW ladder after Round 10. The table used before 22 Oct did not reconcile with the official ladder (finding T34-01, now closed); the superseded snapshot values are recorded in COORDINATION.md §48 rather than silently dropped."],
         })
 
     # =========================================================================
