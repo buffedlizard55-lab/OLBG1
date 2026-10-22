@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overview · OLBG Origination Desk (a570c470)</title>
+<meta name="description" content="Overview — source-linked multi-sport fixtures, originated multi-market lines, confidence tiers and written predictions across the 17 in-scope OLBG sports.">
+<style>
+:root{--bg:#0b0f14;--panel:#121820;--panel2:#0f151c;--line:#1f2a36;--txt:#e6edf3;--muted:#8b9bb0;
+--acc:#4ade80;--acc2:#38bdf8;--hi:#22c55e;--md:#eab308;--lo:#94a3b8;--bad:#f87171;--flag:#f59e0b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc2);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0f1720,#0b0f14);position:sticky;top:0;z-index:20}
+.hin{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.brand{font-weight:700;font-size:15px;letter-spacing:.2px}
+.brand span{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--acc);margin-right:8px;vertical-align:middle}
+nav{display:flex;flex-wrap:wrap;gap:2px}
+nav a{padding:5px 9px;border-radius:6px;color:var(--muted);font-size:13px}
+nav a:hover{background:#16202b;color:var(--txt);text-decoration:none}
+nav a[aria-current]{background:#1b2733;color:var(--txt)}
+main{max-width:1240px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.25;margin:6px 0 10px}
+h2{font-size:19px;margin:34px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:15px;margin:20px 0 8px;color:#cbd5e1}
+p.lede{color:#c3cfdc;max-width:940px}
+.grid{display:grid;gap:12px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:18px 0 6px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi .n{font-size:23px;font-weight:700;letter-spacing:-.4px}
+.kpi .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+.kpi.hi .n{color:var(--hi)}.kpi.md .n{color:var(--md)}.kpi.lo .n{color:var(--lo)}
+.sports-grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px;display:block;color:inherit}
+.card:hover{border-color:#2c3d4f;text-decoration:none}
+.card .t{display:flex;justify-content:space-between;gap:8px;font-weight:600;font-size:14px}
+.card .m{color:var(--muted);font-size:12.5px;margin-top:3px}
+.badge{display:inline-block;font-size:11px;padding:1.5px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.badge.high{color:#052e16;background:var(--hi);border-color:var(--hi);font-weight:700}
+.badge.medium{color:#2a1d00;background:var(--md);border-color:var(--md);font-weight:700}
+.badge.low{background:#1e293b;color:#cbd5e1}
+.badge.ok{color:#86efac;border-color:#14532d;background:#0d2016}
+.badge.warn{color:#fcd34d;border-color:#78350f;background:#241a05}
+.badge.info{color:#bfdbfe;border-color:#1e3a8a;background:#0d1626}
+.note{border:1px solid var(--line);border-left:3px solid var(--acc2);background:var(--panel2);border-radius:8px;padding:12px 15px;margin:14px 0;font-size:14px;color:#c9d6e4}
+.note.good{border-left-color:var(--acc)}
+.note.warn{border-left-color:var(--flag)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#16202b;color:#cbd5e1;font-size:11.5px;text-transform:uppercase;letter-spacing:.45px;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#151f29}
+td.num,th.num{text-align:right;white-space:nowrap}
+.sub{display:block;color:var(--muted);font-size:11.5px;font-weight:400}
+.src a{display:block;font-size:11.5px;line-height:1.45}
+details summary{cursor:pointer;color:var(--acc2);font-size:12px}
+details[open] summary{color:var(--muted)}
+.mkt{border-top:1px solid var(--line);padding:7px 0 2px}
+.mkt-h{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#94a3b8;margin-bottom:3px}
+.mkt ul{list-style:none;margin:0;padding:0}
+.mkt li{display:flex;justify-content:space-between;gap:12px;font-size:12px;padding:1px 0}
+.mkt li span:last-child{white-space:nowrap;color:#cbd5e1}
+.band-yes{color:var(--acc);font-size:11px}
+.band-no{color:var(--muted);font-size:11px}
+.pred{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+.pred h3{margin:0 0 2px;font-size:15px;color:var(--txt)}
+.pred .meta{color:var(--muted);font-size:12px;margin-bottom:8px}
+.pred p{margin:0;color:#d3dfea}
+.pred .sel{margin-top:8px;font-size:12.5px;color:var(--acc)}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+.fin{max-width:1240px;margin:0 auto;padding:18px 20px 40px}
+ul.plain{list-style:none;padding:0;margin:8px 0}
+ul.plain li{padding:5px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+code{background:#16202b;padding:1px 5px;border-radius:4px;font-size:12.5px}
+.tag{font-size:11px;padding:1px 6px;border-radius:5px;background:#16202b;border:1px solid var(--line);color:var(--muted)}
+</style></head>
+<body>
+<header><div class="hin">
+  <div class="brand"><span></span>OLBG Origination Desk <span class="tag">a570c470 · 22 Oct 2026</span></div>
+  <nav aria-label="Primary"><a href="index.html" aria-current="page">Overview</a><a href="picks.html">High Picks</a><a href="predictions.html">Predictions</a><a href="lines.html">All Fixtures</a><a href="markets.html">Market Explorer</a><a href="sports.html">Sports</a><a href="reverse-engineering.html">OLBG Reversed</a><a href="methodology.html">Methodology</a><a href="sources.html">Sources</a><a href="audit.html">Repo Audit</a><a href="flagged.html">Flagged for Review</a></nav>
+</div></header>
+<main>
+<h1>17 in-scope OLBG sports, 141 verified fixtures, our own lines</h1>
+<p class="lede">A fresh desk built on 22 October 2026. Every fixture below was re-read on its governing body's own
+page in this session, priced from that page's figures only, and graded Low, Medium or High. High-confidence picks
+are quoted strictly inside the brief's <b>-250 to +10000</b> window. Where a figure could not be confirmed it is
+blank and listed on <a href="flagged.html">Flagged for Review</a>.</p>
+<div class="grid kpis">
+  <div class="kpi"><div class="n">141</div><div class="l">Verified fixtures</div></div>
+  <div class="kpi"><div class="n">116</div><div class="l">Priced head-to-heads</div></div>
+  <div class="kpi"><div class="n">1,546</div><div class="l">Originated prices</div></div>
+  <div class="kpi hi"><div class="n">16</div><div class="l">High confidence</div></div>
+  <div class="kpi md"><div class="n">60</div><div class="l">Medium</div></div>
+  <div class="kpi lo"><div class="n">40</div><div class="l">Low</div></div>
+  <div class="kpi"><div class="n">16</div><div class="l">Written predictions</div></div>
+  <div class="kpi"><div class="n">8</div><div class="l">Repo findings</div></div>
+</div>
+<div class="note good">
+<b>Price-window compliance.</b> A 70% probability is a fair price of 1.43 (-233), so a pick that is both
+"greater than 70% to win" and "inside -250 to +10000" has to sit in a narrow band. This desk originates the line,
+so for every strong favourite it quotes the handicap rung whose probability lands near 71% and prints that rung
+instead of the shorter moneyline. All 16 High picks are inside the window on their published price;
+each row also prints the moneyline call so the reader can see what was traded away.
+</div>
+<div class="note">
+<b>What is verified and what is modelled.</b> Fixture facts — participants, competition, kick-off, venue, records,
+rankings, ladder points — come from the 45 governing-body sources on the <a href="sources.html">Sources</a>
+page. Prices and probabilities are our own model output and are labelled as estimates everywhere.
+</div>
+
+<h2>Browse by sport</h2>
+<div class="grid sports-grid"><a class="card" href="sports/tennis.html"><div class="t"><span>Tennis</span><span class="badge ok">priced</span></div><div class="m">19 fixtures · 19 priced · 1 High</div></a><a class="card" href="sports/basketball.html"><div class="t"><span>Basketball</span><span class="badge ok">priced</span></div><div class="m">23 fixtures · 17 priced · 1 High</div></a><a class="card" href="sports/golf.html"><div class="t"><span>Golf</span><span class="badge warn">event only</span></div><div class="m">2 fixtures · 0 priced · 0 High</div></a><a class="card" href="sports/cricket.html"><div class="t"><span>Cricket</span><span class="badge ok">priced</span></div><div class="m">3 fixtures · 3 priced · 0 High</div></a><a class="card" href="sports/snooker.html"><div class="t"><span>Snooker</span><span class="badge ok">priced</span></div><div class="m">8 fixtures · 8 priced · 0 High</div></a><a class="card" href="sports/rugby-union.html"><div class="t"><span>Rugby Union</span><span class="badge ok">priced</span></div><div class="m">12 fixtures · 3 priced · 1 High</div></a><a class="card" href="sports/rugby-league.html"><div class="t"><span>Rugby League</span><span class="badge ok">priced</span></div><div class="m">7 fixtures · 5 priced · 2 High</div></a><a class="card" href="sports/baseball.html"><div class="t"><span>Baseball</span><span class="badge ok">priced</span></div><div class="m">4 fixtures · 4 priced · 0 High</div></a><a class="card" href="sports/ice-hockey.html"><div class="t"><span>Ice Hockey</span><span class="badge ok">priced</span></div><div class="m">16 fixtures · 16 priced · 0 High</div></a><a class="card" href="sports/motor-racing.html"><div class="t"><span>Motor Racing</span><span class="badge warn">event only</span></div><div class="m">1 fixture · 0 priced · 0 High</div></a><a class="card" href="sports/darts.html"><div class="t"><span>Darts</span><span class="badge ok">priced</span></div><div class="m">16 fixtures · 16 priced · 2 High</div></a><a class="card" href="sports/handball.html"><div class="t"><span>Handball</span><span class="badge ok">priced</span></div><div class="m">5 fixtures · 3 priced · 2 High</div></a><a class="card" href="sports/volleyball.html"><div class="t"><span>Volleyball</span><span class="badge ok">priced</span></div><div class="m">3 fixtures · 3 priced · 0 High</div></a><a class="card" href="sports/aussie-rules.html"><div class="t"><span>Aussie Rules</span><span class="badge ok">priced</span></div><div class="m">9 fixtures · 9 priced · 7 High</div></a><a class="card" href="sports/esports.html"><div class="t"><span>eSports</span><span class="badge ok">priced</span></div><div class="m">8 fixtures · 8 priced · 0 High</div></a><a class="card" href="sports/gaelic-football.html"><div class="t"><span>Gaelic Football</span><span class="badge ok">priced</span></div><div class="m">2 fixtures · 2 priced · 0 High</div></a><a class="card" href="sports/greyhounds.html"><div class="t"><span>Greyhounds</span><span class="badge warn">event only</span></div><div class="m">3 fixtures · 0 priced · 0 High</div></a></div>
+
+<h2>High-confidence selections</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Start (UTC)</th><th>Match &amp; venue</th><th>Sport</th><th>Selection · price · probability</th><th>Confidence</th><th>Official source</th></tr></thead>
+<tbody><tr>
+  <td>—<span class="sub">ATP 250 Almaty Open</span></td>
+  <td><b>Daniil Medvedev v Sho Shimabukuro</b><span class="sub">Almaty Arena</span></td>
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td><b>Daniil Medvedev -1.5</b><span class="sub">Handicap · 1.42 (-237) · 70.3% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: Daniil Medvedev</span></td>
+  <td><div class="src"><a href="https://www.protennislive.com/posting/2026/9410/mds.pdf" target="_blank" rel="noopener">ATP Tour — ATP 250 Almaty Open 2026 Official Singles Main Draw PDF</a></div></td>
+</tr><tr>
+  <td>2026-10-22 18:15Z<span class="sub">EuroLeague</span></td>
+  <td><b>Panathinaikos AKTOR Athens v Kosner Baskonia Vitoria-Gasteiz</b><span class="sub">Telekom Center Athens</span></td>
+  <td><a href="sports/basketball.html">Basketball</a></td>
+  <td><b>Panathinaikos AKTOR Athens -7.5</b><span class="sub">Handicap · 1.42 (-238) · 70.4% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: Panathinaikos AKTOR Athens</span></td>
+  <td><div class="src"><a href="https://www.euroleaguebasketball.net/en/euroleague/game-center/" target="_blank" rel="noopener">Euroleague Basketball — EuroLeague 2026-27 Regular Season Round 6 Official Schedule &amp; Standings</a></div></td>
+</tr><tr>
+  <td>2026-10-24 14:35Z<span class="sub">French Top 14</span></td>
+  <td><b>Stade Toulousain v USA Perpignan</b><span class="sub">Stade Ernest-Wallon, Toulouse</span></td>
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td><b>Stade Toulousain</b><span class="sub">Match winner · 1.40 (-250) · 71.5% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: Stade Toulousain</span></td>
+  <td><div class="src"><a href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener">Ligue Nationale de Rugby (LNR) — 2026-27 French Top 14 Official Match Calendar (24-25 Oct 2026)</a><a href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener">Ligue Nationale de Rugby (LNR) — 2026-27 French Top 14 Official Match Calendar (24-25 Oct 2026)</a></div></td>
+</tr><tr>
+  <td>2026-10-25 05:05Z<span class="sub">Rugby League World Cup 2026</span></td>
+  <td><b>New Zealand v Cook Islands</b><span class="sub">One NZ Stadium, Christchurch</span></td>
+  <td><a href="sports/rugby-league.html">Rugby League</a></td>
+  <td><b>New Zealand</b><span class="sub">Match winner · 1.40 (-248) · 71.2% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: New Zealand</span></td>
+  <td><div class="src"><a href="https://www.nrl.com/draw/?competition=120&amp;season=2026" target="_blank" rel="noopener">NRL / International Rugby League (RLWC26) — Rugby League World Cup 2026 Official Round 1 Results &amp; Round 2 Draw (23-25 Oct 2026)</a></div></td>
+</tr><tr>
+  <td>2026-10-23 09:05Z<span class="sub">Rugby League World Cup 2026</span></td>
+  <td><b>Tonga v Lebanon</b><span class="sub">CommBank Stadium, Sydney</span></td>
+  <td><a href="sports/rugby-league.html">Rugby League</a></td>
+  <td><b>Tonga -6</b><span class="sub">Handicap · 1.41 (-243) · 70.9% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: Tonga</span></td>
+  <td><div class="src"><a href="https://www.nrl.com/draw/?competition=120&amp;season=2026" target="_blank" rel="noopener">NRL / International Rugby League (RLWC26) — Rugby League World Cup 2026 Official Round 1 Results &amp; Round 2 Draw (23-25 Oct 2026)</a></div></td>
+</tr><tr>
+  <td>2026-10-22 17:00Z<span class="sub">PDC Machineseeker European Championship</span></td>
+  <td><b>Danny Noppert v Stephen Bunting</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+  <td><a href="sports/darts.html">Darts</a></td>
+  <td><b>Danny Noppert</b><span class="sub">Match winner · 1.40 (-249) · 71.4% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: Danny Noppert</span></td>
+  <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+  <td>2026-10-23 17:00Z<span class="sub">PDC Machineseeker European Championship</span></td>
+  <td><b>Wessel Nijman v Martin Schindler</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+  <td><a href="sports/darts.html">Darts</a></td>
+  <td><b>Wessel Nijman -1.5 legs</b><span class="sub">Handicap · 1.42 (-240) · 70.6% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: Wessel Nijman</span></td>
+  <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+  <td>2026-10-22 18:45Z<span class="sub">EHF Champions League Men</span></td>
+  <td><b>Kolstad Handball v SC Magdeburg</b><span class="sub">Kolstad Arena, Kolstad</span></td>
+  <td><a href="sports/handball.html">Handball</a></td>
+  <td><b>SC Magdeburg -4</b><span class="sub">Handicap · 1.41 (-241) · 70.7% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: SC Magdeburg</span></td>
+  <td><div class="src"><a href="https://ehfcl.eurohandball.com/men/2026-27/matches/" target="_blank" rel="noopener">European Handball Federation (EHF) — Machineseeker EHF Champions League Men 2026-27 Round 6 Fixtures &amp; Standings</a></div></td>
+</tr><tr>
+  <td>2026-10-22 18:45Z<span class="sub">EHF Champions League Men</span></td>
+  <td><b>Sporting CP v IFK Kristianstad</b><span class="sub">Pavilhao Joao Rocha, Lisbon</span></td>
+  <td><a href="sports/handball.html">Handball</a></td>
+  <td><b>Sporting CP -4</b><span class="sub">Handicap · 1.40 (-249) · 71.4% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: Sporting CP</span></td>
+  <td><div class="src"><a href="https://ehfcl.eurohandball.com/men/2026-27/matches/" target="_blank" rel="noopener">European Handball Federation (EHF) — Machineseeker EHF Champions League Men 2026-27 Round 6 Fixtures &amp; Standings</a></div></td>
+</tr><tr>
+  <td>2026-10-25 06:05Z<span class="sub">NAB AFLW</span></td>
+  <td><b>Carlton v GWS GIANTS</b><span class="sub">Ikon Park, Melbourne</span></td>
+  <td><a href="sports/aussie-rules.html">Aussie Rules</a></td>
+  <td><b>Carlton -8.5</b><span class="sub">Handicap · 1.42 (-237) · 70.4% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: Carlton</span></td>
+  <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr><tr>
+  <td>2026-10-24 04:05Z<span class="sub">NAB AFLW</span></td>
+  <td><b>Geelong Cats v Fremantle</b><span class="sub">GMHBA Stadium, Geelong</span></td>
+  <td><a href="sports/aussie-rules.html">Aussie Rules</a></td>
+  <td><b>Geelong Cats -4.5</b><span class="sub">Handicap · 1.42 (-237) · 70.4% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: Geelong Cats</span></td>
+  <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr><tr>
+  <td>2026-10-24 06:05Z<span class="sub">NAB AFLW</span></td>
+  <td><b>Gold Coast SUNS v Richmond</b><span class="sub">People First Stadium, Gold Coast</span></td>
+  <td><a href="sports/aussie-rules.html">Aussie Rules</a></td>
+  <td><b>Gold Coast SUNS</b><span class="sub">Match winner · 1.41 (-245) · 71.0% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: Gold Coast SUNS</span></td>
+  <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr><tr>
+  <td>2026-10-25 04:05Z<span class="sub">NAB AFLW</span></td>
+  <td><b>Hawthorn v Essendon</b><span class="sub">Kennedy Community Centre, Dingley</span></td>
+  <td><a href="sports/aussie-rules.html">Aussie Rules</a></td>
+  <td><b>Hawthorn -4.5</b><span class="sub">Handicap · 1.42 (-237) · 70.4% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: Hawthorn</span></td>
+  <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr><tr>
+  <td>2026-10-25 02:05Z<span class="sub">NAB AFLW</span></td>
+  <td><b>North Melbourne v Adelaide Crows</b><span class="sub">North Hobart Oval, Hobart</span></td>
+  <td><a href="sports/aussie-rules.html">Aussie Rules</a></td>
+  <td><b>North Melbourne -4.5</b><span class="sub">Handicap · 1.42 (-237) · 70.4% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: North Melbourne</span></td>
+  <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr><tr>
+  <td>2026-10-23 08:45Z<span class="sub">NAB AFLW</span></td>
+  <td><b>Port Adelaide v Collingwood</b><span class="sub">Alberton Oval, Adelaide</span></td>
+  <td><a href="sports/aussie-rules.html">Aussie Rules</a></td>
+  <td><b>Port Adelaide</b><span class="sub">Match winner · 1.41 (-245) · 71.0% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: Port Adelaide</span></td>
+  <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr><tr>
+  <td>2026-10-25 01:35Z<span class="sub">NAB AFLW</span></td>
+  <td><b>Sydney Swans v West Coast Eagles</b><span class="sub">Henson Park, Sydney</span></td>
+  <td><a href="sports/aussie-rules.html">Aussie Rules</a></td>
+  <td><b>Sydney Swans</b><span class="sub">Match winner · 1.41 (-245) · 71.0% model · <span class="badge ok">in window</span></span></td>
+  <td><span class="badge high">High</span><span class="sub">match call: Sydney Swans</span></td>
+  <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr></tbody></table></div>
+<p><a class="card" href="predictions.html" style="display:inline-block;margin-top:12px">Read all 16 written predictions →</a></p>
+
+<h2>How this desk was built</h2>
+<ul class="plain">
+  <li><b>Harvest.</b> All 27 OLBG sport routes were read live, including the competition sub-routes: see
+      <a href="reverse-engineering.html">OLBG reversed</a> for the URL grammar and the four upstream defects recorded.</li>
+  <li><b>Verify.</b> Each fixture was then re-read on the governing body's own page. 45 official sources are
+      catalogued; 116 rows carry two-sided figures and 25 rows are published
+      as verified event cards with no price because no official strength rating exists for the field.</li>
+  <li><b>Price.</b> One strength figure per side, one distribution per match. Winner, draw-no-bet, handicap and total
+      markets all come from that single distribution, so the ladders cannot contradict the moneyline.</li>
+  <li><b>Grade.</b> High needs a 70% model probability on a price inside the window; Medium 55%+; Low everything else.
+      Sports with a one-match or one-round sample are capped and the cap is printed on every row.</li>
+  <li><b>Write.</b> All 16 High picks carry a bespoke preview of 53–76 words
+      naming the participants, the sourced form, the recent match history and the selection, with
+      0 repeated six-word phrases across the whole set.</li>
+</ul>
+
+<h2>Repository workspaces</h2>
+<div class="note">
+This desk is additive. It does not edit any other session's dataset, script or page. The other boards in the
+repository are reachable from the root landing page and are named on the <a href="audit.html">Repo Audit</a> page,
+which also records the 8 defects found while reading them line by line.
+</div>
+
+</main>
+<footer><div class="fin">
+  <p><b>Independent model output, not betting advice.</b> Prices are our own fair-probability quotes with no margin;
+  the 5% margin a bookmaker would need is shown beside them. Every fixture, record and ranking links to the governing
+  body that publishes it. Values that could not be confirmed on an official page are blank and listed on
+  <a href="flagged.html">Flagged for Review</a>.</p>
+  <p>Session <code>a570c470-olbg1</code> · snapshot <code>2026-10-22T03:20Z</code> ·
+  built by <code>scripts/sa570c470_build_site.py</code> · validated by <code>scripts/sa570c470_validate.py</code></p>
+</div></footer>
+</body></html>

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Predictions · OLBG Origination Desk (a570c470)</title>
+<meta name="description" content="Predictions — source-linked multi-sport fixtures, originated multi-market lines, confidence tiers and written predictions across the 17 in-scope OLBG sports.">
+<style>
+:root{--bg:#0b0f14;--panel:#121820;--panel2:#0f151c;--line:#1f2a36;--txt:#e6edf3;--muted:#8b9bb0;
+--acc:#4ade80;--acc2:#38bdf8;--hi:#22c55e;--md:#eab308;--lo:#94a3b8;--bad:#f87171;--flag:#f59e0b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc2);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0f1720,#0b0f14);position:sticky;top:0;z-index:20}
+.hin{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.brand{font-weight:700;font-size:15px;letter-spacing:.2px}
+.brand span{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--acc);margin-right:8px;vertical-align:middle}
+nav{display:flex;flex-wrap:wrap;gap:2px}
+nav a{padding:5px 9px;border-radius:6px;color:var(--muted);font-size:13px}
+nav a:hover{background:#16202b;color:var(--txt);text-decoration:none}
+nav a[aria-current]{background:#1b2733;color:var(--txt)}
+main{max-width:1240px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.25;margin:6px 0 10px}
+h2{font-size:19px;margin:34px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:15px;margin:20px 0 8px;color:#cbd5e1}
+p.lede{color:#c3cfdc;max-width:940px}
+.grid{display:grid;gap:12px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:18px 0 6px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi .n{font-size:23px;font-weight:700;letter-spacing:-.4px}
+.kpi .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+.kpi.hi .n{color:var(--hi)}.kpi.md .n{color:var(--md)}.kpi.lo .n{color:var(--lo)}
+.sports-grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px;display:block;color:inherit}
+.card:hover{border-color:#2c3d4f;text-decoration:none}
+.card .t{display:flex;justify-content:space-between;gap:8px;font-weight:600;font-size:14px}
+.card .m{color:var(--muted);font-size:12.5px;margin-top:3px}
+.badge{display:inline-block;font-size:11px;padding:1.5px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.badge.high{color:#052e16;background:var(--hi);border-color:var(--hi);font-weight:700}
+.badge.medium{color:#2a1d00;background:var(--md);border-color:var(--md);font-weight:700}
+.badge.low{background:#1e293b;color:#cbd5e1}
+.badge.ok{color:#86efac;border-color:#14532d;background:#0d2016}
+.badge.warn{color:#fcd34d;border-color:#78350f;background:#241a05}
+.badge.info{color:#bfdbfe;border-color:#1e3a8a;background:#0d1626}
+.note{border:1px solid var(--line);border-left:3px solid var(--acc2);background:var(--panel2);border-radius:8px;padding:12px 15px;margin:14px 0;font-size:14px;color:#c9d6e4}
+.note.good{border-left-color:var(--acc)}
+.note.warn{border-left-color:var(--flag)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#16202b;color:#cbd5e1;font-size:11.5px;text-transform:uppercase;letter-spacing:.45px;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#151f29}
+td.num,th.num{text-align:right;white-space:nowrap}
+.sub{display:block;color:var(--muted);font-size:11.5px;font-weight:400}
+.src a{display:block;font-size:11.5px;line-height:1.45}
+details summary{cursor:pointer;color:var(--acc2);font-size:12px}
+details[open] summary{color:var(--muted)}
+.mkt{border-top:1px solid var(--line);padding:7px 0 2px}
+.mkt-h{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#94a3b8;margin-bottom:3px}
+.mkt ul{list-style:none;margin:0;padding:0}
+.mkt li{display:flex;justify-content:space-between;gap:12px;font-size:12px;padding:1px 0}
+.mkt li span:last-child{white-space:nowrap;color:#cbd5e1}
+.band-yes{color:var(--acc);font-size:11px}
+.band-no{color:var(--muted);font-size:11px}
+.pred{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+.pred h3{margin:0 0 2px;font-size:15px;color:var(--txt)}
+.pred .meta{color:var(--muted);font-size:12px;margin-bottom:8px}
+.pred p{margin:0;color:#d3dfea}
+.pred .sel{margin-top:8px;font-size:12.5px;color:var(--acc)}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+.fin{max-width:1240px;margin:0 auto;padding:18px 20px 40px}
+ul.plain{list-style:none;padding:0;margin:8px 0}
+ul.plain li{padding:5px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+code{background:#16202b;padding:1px 5px;border-radius:4px;font-size:12.5px}
+.tag{font-size:11px;padding:1px 6px;border-radius:5px;background:#16202b;border:1px solid var(--line);color:var(--muted)}
+</style></head>
+<body>
+<header><div class="hin">
+  <div class="brand"><span></span>OLBG Origination Desk <span class="tag">a570c470 · 22 Oct 2026</span></div>
+  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="picks.html">High Picks</a><a href="predictions.html" aria-current="page">Predictions</a><a href="lines.html">All Fixtures</a><a href="markets.html">Market Explorer</a><a href="sports.html">Sports</a><a href="reverse-engineering.html">OLBG Reversed</a><a href="methodology.html">Methodology</a><a href="sources.html">Sources</a><a href="audit.html">Repo Audit</a><a href="flagged.html">Flagged for Review</a></nav>
+</div></header>
+<main>
+<h1>16 written predictions</h1>
+<p class="lede">One bespoke preview for every High-confidence selection. Each names the participants, quotes the
+figure that was read on an official page, states the selection and the price, and runs
+53–76 words. Across the whole set there
+are 0
+repeated six-word phrases.</p>
+<div class="note">Sources are listed under each prediction. If a claim is not on one of those pages it is not in the
+text — no historical head-to-head record, injury or quote has been added from memory.</div>
+<div class="pred">
+  <h3>Daniil Medvedev v Sho Shimabukuro</h3>
+  <div class="meta">Tennis · ATP 250 Almaty Open · — · 76 words</div>
+  <p>Daniil Medvedev is the top seed and world number six on the signed ATP draw for Almaty, and he opens his week in the last 16 after a first-round bye. Sho Shimabukuro is a lucky loser who entered as the last direct acceptance at 93, an 87-place ranking gap. That margin, plus Medvedev&#x27;s uncontested first round, makes a small games handicap the percentage play. The bet is Medvedev giving 1.5 games on the handicap at 1.42.</p>
+  <div class="sel"><b>Daniil Medvedev -1.5</b> @ 1.42 (-237) · 70.3% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://www.protennislive.com/posting/2026/9410/mds.pdf" target="_blank" rel="noopener">ATP Tour — ATP 250 Almaty Open 2026 Official Singles Main Draw PDF</a></div>
+</div><div class="pred">
+  <h3>Panathinaikos AKTOR Athens v Kosner Baskonia Vitoria-Gasteiz</h3>
+  <div class="meta">Basketball · EuroLeague · 2026-10-22 18:15Z · 68 words</div>
+  <p>Panathinaikos are 5-1 and plus-90 after six EuroLeague rounds, 528 points scored to 438 conceded, and they defend that record at the Telekom Center Athens. Kosner Baskonia are 1-5 and were already minus-52 through five rounds, having conceded 478 points. The Greeks have won five of six while Baskonia have lost five, so the home side should clear a single-digit spread. Take Panathinaikos giving 7.5 points at 1.42.</p>
+  <div class="sel"><b>Panathinaikos AKTOR Athens -7.5</b> @ 1.42 (-238) · 70.4% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://www.euroleaguebasketball.net/en/euroleague/game-center/" target="_blank" rel="noopener">Euroleague Basketball — EuroLeague 2026-27 Regular Season Round 6 Official Schedule &amp; Standings</a></div>
+</div><div class="pred">
+  <h3>Danny Noppert v Stephen Bunting</h3>
+  <div class="meta">Darts · PDC Machineseeker European Championship · 2026-10-22 17:00Z · 71 words</div>
+  <p>Danny Noppert is seeded fifth of 32 on the official European Tour ranking list; Stephen Bunting is seeded twenty-eighth, a 23-place gap over the season-long circuit. Their best-of-eleven first-round tie opens the Machineseeker European Championship at Dortmund&#x27;s Westfalenhalle. Noppert has been the more consistent qualifier across fifteen European Tour events, and the seeding edge is large enough to back on the match line. Back Noppert on the match-winner line at 1.40.</p>
+  <div class="sel"><b>Danny Noppert</b> @ 1.40 (-249) · 71.4% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div>
+</div><div class="pred">
+  <h3>Wessel Nijman v Martin Schindler</h3>
+  <div class="meta">Darts · PDC Machineseeker European Championship · 2026-10-23 17:00Z · 73 words</div>
+  <p>Wessel Nijman arrives as the second seed after winning two European Tour titles in 2026, the best return of any player bar the world champion. Martin Schindler is seeded thirty-first, giving Nijman a 29-place cushion in the Dortmund first round. In a best-of-eleven-leg format the stronger seed usually converts that gap into a two-leg win, which is exactly what the frame ladder is priced on. The selection is Nijman -1.5 legs at 1.42.</p>
+  <div class="sel"><b>Wessel Nijman -1.5 legs</b> @ 1.42 (-240) · 70.6% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div>
+</div><div class="pred">
+  <h3>Kolstad Handball v SC Magdeburg</h3>
+  <div class="meta">Handball · EHF Champions League Men · 2026-10-22 18:45Z · 64 words</div>
+  <p>SC Magdeburg are 4-0 in EHF Champions League Group F with 141 goals scored and 108 conceded. Kolstad are 0-4, 111 to 143, and have taken nothing from four rounds. The reverse fixture in Magdeburg on 9 September finished 37-22, a fifteen-goal margin that shows how wide the gap is even before home advantage is considered. Recommended bet: Magdeburg giving four goals at 1.41.</p>
+  <div class="sel"><b>SC Magdeburg -4</b> @ 1.41 (-241) · 70.7% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://ehfcl.eurohandball.com/men/2026-27/matches/" target="_blank" rel="noopener">European Handball Federation (EHF) — Machineseeker EHF Champions League Men 2026-27 Round 6 Fixtures &amp; Standings</a></div>
+</div><div class="pred">
+  <h3>Sporting CP v IFK Kristianstad</h3>
+  <div class="meta">Handball · EHF Champions League Men · 2026-10-22 18:45Z · 62 words</div>
+  <p>Sporting CP are 3-0 with a plus-21 goal difference in Champions League Group D, while IFK Kristianstad are 0-4 and have been outscored 155 to 122. The two met in Kristianstad on 16 September and Sporting won 37-29, an eight-goal away victory. The Portuguese side also have the Pavilhao Joao Rocha behind them. Our selection is Sporting CP -4 goals at 1.40.</p>
+  <div class="sel"><b>Sporting CP -4</b> @ 1.40 (-249) · 71.4% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://ehfcl.eurohandball.com/men/2026-27/matches/" target="_blank" rel="noopener">European Handball Federation (EHF) — Machineseeker EHF Champions League Men 2026-27 Round 6 Fixtures &amp; Standings</a></div>
+</div><div class="pred">
+  <h3>Stade Toulousain v USA Perpignan</h3>
+  <div class="meta">Rugby Union · French Top 14 · 2026-10-24 14:35Z · 76 words</div>
+  <p>Stade Toulousain lead the official LNR Top 14 table after Journee 6 on 24 points from six matches, five wins and one defeat, with 197 points scored to 124 conceded. USA Perpignan sit ninth on 13 points at three wins and three losses, 166 to 199. Toulouse are unbeaten at Ernest-Wallon in that run and face a side they outscore by more than eleven points a game. Toulouse to win outright is the pick at 1.40.</p>
+  <div class="sel"><b>Stade Toulousain</b> @ 1.40 (-250) · 71.5% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener">Ligue Nationale de Rugby (LNR) — 2026-27 French Top 14 Official Match Calendar (24-25 Oct 2026)</a><a href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener">Ligue Nationale de Rugby (LNR) — 2026-27 French Top 14 Official Match Calendar (24-25 Oct 2026)</a></div>
+</div><div class="pred">
+  <h3>Tonga v Lebanon</h3>
+  <div class="meta">Rugby League · Rugby League World Cup 2026 · 2026-10-23 09:05Z · 65 words</div>
+  <p>Tonga opened the Rugby League World Cup by beating England 30-12 at HBF Park, conceding only two tries. Lebanon lost their opener 42-18 to Papua New Guinea in Port Moresby and now meet Tonga at CommBank Stadium. The round-one margins, plus Tonga&#x27;s forward rotation, point to a comfortable win rather than a one-score game. Take Tonga with a six-point head start to give at 1.41.</p>
+  <div class="sel"><b>Tonga -6</b> @ 1.41 (-243) · 70.9% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://www.nrl.com/draw/?competition=120&amp;season=2026" target="_blank" rel="noopener">NRL / International Rugby League (RLWC26) — Rugby League World Cup 2026 Official Round 1 Results &amp; Round 2 Draw (23-25 Oct 2026)</a></div>
+</div><div class="pred">
+  <h3>New Zealand v Cook Islands</h3>
+  <div class="meta">Rugby League · Rugby League World Cup 2026 · 2026-10-25 05:05Z · 61 words</div>
+  <p>New Zealand pushed Australia to the final minutes before losing 24-22 in the tournament opener. Cook Islands were beaten 40-12 by Fiji, conceding seven tries in Newcastle. The Kiwis return to One NZ Stadium in Christchurch with the strongest round-one performance of any losing side, against an opponent that shipped forty. New Zealand to win is the recommended selection at 1.40.</p>
+  <div class="sel"><b>New Zealand</b> @ 1.40 (-248) · 71.2% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://www.nrl.com/draw/?competition=120&amp;season=2026" target="_blank" rel="noopener">NRL / International Rugby League (RLWC26) — Rugby League World Cup 2026 Official Round 1 Results &amp; Round 2 Draw (23-25 Oct 2026)</a></div>
+</div><div class="pred">
+  <h3>Port Adelaide v Collingwood</h3>
+  <div class="meta">Aussie Rules · NAB AFLW · 2026-10-23 08:45Z · 67 words</div>
+  <p>Eleventh-placed Port Adelaide have banked 16 ladder points across ten rounds, winning four and losing six, and their 78.8 percentage reflects a modest scoring profile. Collingwood are sixteenth with a single win from ten and the second-worst percentage in the competition at 56.7. At Alberton Oval the Power meet a side twelve ladder points below them. The pick is Port Adelaide on the win line at 1.41.</p>
+  <div class="sel"><b>Port Adelaide</b> @ 1.41 (-245) · 71.0% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div>
+</div><div class="pred">
+  <h3>Geelong Cats v Fremantle</h3>
+  <div class="meta">Aussie Rules · NAB AFLW · 2026-10-24 04:05Z · 55 words</div>
+  <p>Geelong have won nine of ten and sit second on 36 points with a competition-leading 167.2 percentage behind North Melbourne. Fremantle are eighth, five wins and five losses for 20 points, with a 104.9 percentage. A 62-point percentage gap at GMHBA Stadium is the basis for the line. Back Geelong giving 4.5 points at 1.42.</p>
+  <div class="sel"><b>Geelong Cats -4.5</b> @ 1.42 (-237) · 70.4% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div>
+</div><div class="pred">
+  <h3>Gold Coast SUNS v Richmond</h3>
+  <div class="meta">Aussie Rules · NAB AFLW · 2026-10-24 06:05Z · 59 words</div>
+  <p>Gold Coast SUNS have built a 7-3 record worth 28 points and fifth place, scoring at 138.9 per cent. Richmond arrive thirteenth having won four of ten for 16 points, with a percentage of 68.9. Three extra wins and 70 points of percentage separate the pair at People First Stadium. Gold Coast to win is the selection at 1.41.</p>
+  <div class="sel"><b>Gold Coast SUNS</b> @ 1.41 (-245) · 71.0% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div>
+</div><div class="pred">
+  <h3>Sydney Swans v West Coast Eagles</h3>
+  <div class="meta">Aussie Rules · NAB AFLW · 2026-10-25 01:35Z · 53 words</div>
+  <p>Seven wins from ten rounds have Sydney seventh on 28 points with a 112.9 percentage. West Coast are twelfth, four and six for 16 points, and their 75.2 percentage follows a heavy round-ten loss to Geelong. Henson Park hosts a Swans side three wins clear. Take the Swans on the head-to-head at 1.41.</p>
+  <div class="sel"><b>Sydney Swans</b> @ 1.41 (-245) · 71.0% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div>
+</div><div class="pred">
+  <h3>North Melbourne v Adelaide Crows</h3>
+  <div class="meta">Aussie Rules · NAB AFLW · 2026-10-25 02:05Z · 73 words</div>
+  <p>Reigning premier North Melbourne have lost once in ten, top the ladder on 36 points and own the league&#x27;s best percentage at 251.9. Adelaide are ninth, five and five for 20 points, and their round-10 win over Gold Coast by ten points is the form line that keeps this honest. North Hobart Oval should still see a Roos win by more than a goal. North Melbourne -4.5 points is the bet at 1.42.</p>
+  <div class="sel"><b>North Melbourne -4.5</b> @ 1.42 (-237) · 70.4% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div>
+</div><div class="pred">
+  <h3>Hawthorn v Essendon</h3>
+  <div class="meta">Aussie Rules · NAB AFLW · 2026-10-25 04:05Z · 64 words</div>
+  <p>Hawthorn are tenth, 20 points from a 5-5 season so far, with a 101.5 percentage and a finals chase still alive. Essendon have managed one win in ten, sit seventeenth on four points and kicked 5.3 (33) while conceding 12.13 (85) to North Melbourne last round. The Bombers&#x27; recent scoring makes a two-goal handicap attainable. Hawthorn giving 4.5 points is the recommendation at 1.42.</p>
+  <div class="sel"><b>Hawthorn -4.5</b> @ 1.42 (-237) · 70.4% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div>
+</div><div class="pred">
+  <h3>Carlton v GWS GIANTS</h3>
+  <div class="meta">Aussie Rules · NAB AFLW · 2026-10-25 06:05Z · 56 words</div>
+  <p>Carlton&#x27;s 7-3 record is worth 28 points and sixth place, with a percentage of 133.0. GWS GIANTS have won twice in ten, sit fifteenth on eight points and score at 68.2 per cent. Ikon Park stages a game between sides separated by five wins and 65 percentage points. The selection is Carlton -8.5 points at 1.42.</p>
+  <div class="sel"><b>Carlton -8.5</b> @ 1.42 (-237) · 70.4% model · <span class="badge high">High</span></div>
+  <div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div>
+</div>
+</main>
+<footer><div class="fin">
+  <p><b>Independent model output, not betting advice.</b> Prices are our own fair-probability quotes with no margin;
+  the 5% margin a bookmaker would need is shown beside them. Every fixture, record and ranking links to the governing
+  body that publishes it. Values that could not be confirmed on an official page are blank and listed on
+  <a href="flagged.html">Flagged for Review</a>.</p>
+  <p>Session <code>a570c470-olbg1</code> · snapshot <code>2026-10-22T03:20Z</code> ·
+  built by <code>scripts/sa570c470_build_site.py</code> · validated by <code>scripts/sa570c470_validate.py</code></p>
+</div></footer>
+</body></html>

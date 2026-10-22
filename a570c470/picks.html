@@ -1,0 +1,1144 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>High Picks · OLBG Origination Desk (a570c470)</title>
+<meta name="description" content="High Picks — source-linked multi-sport fixtures, originated multi-market lines, confidence tiers and written predictions across the 17 in-scope OLBG sports.">
+<style>
+:root{--bg:#0b0f14;--panel:#121820;--panel2:#0f151c;--line:#1f2a36;--txt:#e6edf3;--muted:#8b9bb0;
+--acc:#4ade80;--acc2:#38bdf8;--hi:#22c55e;--md:#eab308;--lo:#94a3b8;--bad:#f87171;--flag:#f59e0b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc2);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0f1720,#0b0f14);position:sticky;top:0;z-index:20}
+.hin{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.brand{font-weight:700;font-size:15px;letter-spacing:.2px}
+.brand span{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--acc);margin-right:8px;vertical-align:middle}
+nav{display:flex;flex-wrap:wrap;gap:2px}
+nav a{padding:5px 9px;border-radius:6px;color:var(--muted);font-size:13px}
+nav a:hover{background:#16202b;color:var(--txt);text-decoration:none}
+nav a[aria-current]{background:#1b2733;color:var(--txt)}
+main{max-width:1240px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.25;margin:6px 0 10px}
+h2{font-size:19px;margin:34px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:15px;margin:20px 0 8px;color:#cbd5e1}
+p.lede{color:#c3cfdc;max-width:940px}
+.grid{display:grid;gap:12px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:18px 0 6px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi .n{font-size:23px;font-weight:700;letter-spacing:-.4px}
+.kpi .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+.kpi.hi .n{color:var(--hi)}.kpi.md .n{color:var(--md)}.kpi.lo .n{color:var(--lo)}
+.sports-grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px;display:block;color:inherit}
+.card:hover{border-color:#2c3d4f;text-decoration:none}
+.card .t{display:flex;justify-content:space-between;gap:8px;font-weight:600;font-size:14px}
+.card .m{color:var(--muted);font-size:12.5px;margin-top:3px}
+.badge{display:inline-block;font-size:11px;padding:1.5px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.badge.high{color:#052e16;background:var(--hi);border-color:var(--hi);font-weight:700}
+.badge.medium{color:#2a1d00;background:var(--md);border-color:var(--md);font-weight:700}
+.badge.low{background:#1e293b;color:#cbd5e1}
+.badge.ok{color:#86efac;border-color:#14532d;background:#0d2016}
+.badge.warn{color:#fcd34d;border-color:#78350f;background:#241a05}
+.badge.info{color:#bfdbfe;border-color:#1e3a8a;background:#0d1626}
+.note{border:1px solid var(--line);border-left:3px solid var(--acc2);background:var(--panel2);border-radius:8px;padding:12px 15px;margin:14px 0;font-size:14px;color:#c9d6e4}
+.note.good{border-left-color:var(--acc)}
+.note.warn{border-left-color:var(--flag)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#16202b;color:#cbd5e1;font-size:11.5px;text-transform:uppercase;letter-spacing:.45px;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#151f29}
+td.num,th.num{text-align:right;white-space:nowrap}
+.sub{display:block;color:var(--muted);font-size:11.5px;font-weight:400}
+.src a{display:block;font-size:11.5px;line-height:1.45}
+details summary{cursor:pointer;color:var(--acc2);font-size:12px}
+details[open] summary{color:var(--muted)}
+.mkt{border-top:1px solid var(--line);padding:7px 0 2px}
+.mkt-h{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#94a3b8;margin-bottom:3px}
+.mkt ul{list-style:none;margin:0;padding:0}
+.mkt li{display:flex;justify-content:space-between;gap:12px;font-size:12px;padding:1px 0}
+.mkt li span:last-child{white-space:nowrap;color:#cbd5e1}
+.band-yes{color:var(--acc);font-size:11px}
+.band-no{color:var(--muted);font-size:11px}
+.pred{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+.pred h3{margin:0 0 2px;font-size:15px;color:var(--txt)}
+.pred .meta{color:var(--muted);font-size:12px;margin-bottom:8px}
+.pred p{margin:0;color:#d3dfea}
+.pred .sel{margin-top:8px;font-size:12.5px;color:var(--acc)}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+.fin{max-width:1240px;margin:0 auto;padding:18px 20px 40px}
+ul.plain{list-style:none;padding:0;margin:8px 0}
+ul.plain li{padding:5px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+code{background:#16202b;padding:1px 5px;border-radius:4px;font-size:12.5px}
+.tag{font-size:11px;padding:1px 6px;border-radius:5px;background:#16202b;border:1px solid var(--line);color:var(--muted)}
+</style></head>
+<body>
+<header><div class="hin">
+  <div class="brand"><span></span>OLBG Origination Desk <span class="tag">a570c470 · 22 Oct 2026</span></div>
+  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="picks.html" aria-current="page">High Picks</a><a href="predictions.html">Predictions</a><a href="lines.html">All Fixtures</a><a href="markets.html">Market Explorer</a><a href="sports.html">Sports</a><a href="reverse-engineering.html">OLBG Reversed</a><a href="methodology.html">Methodology</a><a href="sources.html">Sources</a><a href="audit.html">Repo Audit</a><a href="flagged.html">Flagged for Review</a></nav>
+</div></header>
+<main>
+<h1>Picks and confidence tiers</h1>
+<p class="lede">One desk selection per priced fixture, plus the explicit match-winner call the brief asks for. High
+requires a 70% model probability on a published price inside -250 to +10000. Medium is 55% and above. Everything
+else is Low. Caps by sport are printed where they apply.</p>
+<div class="note warn"><b>Read the wins column with the price.</b> A 55% pick at 1.82 (+82) is a different
+proposition from a 71% pick at 1.41 (-241). Both appear in this table; only the second is a High.</div>
+<div class="table-wrap"><table>
+<thead><tr><th>Confidence</th><th>Desk selection</th><th class="num">Price</th><th class="num">Model %</th><th>Window</th><th>Match-winner call</th><th>Fixture</th><th>Official source</th></tr></thead>
+<tbody><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>Stade Toulousain</b><span class="sub">Match winner</span></td>
+ <td class="num">1.40<span class="sub">-250</span></td>
+ <td class="num">71.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Stade Toulousain<span class="sub">71.5% · 1.40 (-250)</span></td>
+ <td><b>Stade Toulousain v USA Perpignan</b><span class="sub">French Top 14 · 2026-10-24 14:35Z</span></td>
+ <td><div class="src"><a href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener">Ligue Nationale de Rugby (LNR) — 2026-27 French Top 14 Official Match Calendar (24-25 Oct 2026)</a><a href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener">Ligue Nationale de Rugby (LNR) — 2026-27 French Top 14 Official Match Calendar (24-25 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>Sporting CP -4</b><span class="sub">Handicap</span></td>
+ <td class="num">1.40<span class="sub">-249</span></td>
+ <td class="num">71.4%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Sporting CP<span class="sub">86.5% · 1.16 (-641)</span></td>
+ <td><b>Sporting CP v IFK Kristianstad</b><span class="sub">EHF Champions League Men · 2026-10-22 18:45Z</span></td>
+ <td><div class="src"><a href="https://ehfcl.eurohandball.com/men/2026-27/matches/" target="_blank" rel="noopener">European Handball Federation (EHF) — Machineseeker EHF Champions League Men 2026-27 Round 6 Fixtures &amp; Standings</a></div></td>
+</tr><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>Danny Noppert</b><span class="sub">Match winner</span></td>
+ <td class="num">1.40<span class="sub">-249</span></td>
+ <td class="num">71.4%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Danny Noppert<span class="sub">71.4% · 1.40 (-249)</span></td>
+ <td><b>Danny Noppert v Stephen Bunting</b><span class="sub">PDC Machineseeker European Championship · 2026-10-22 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>New Zealand</b><span class="sub">Match winner</span></td>
+ <td class="num">1.40<span class="sub">-248</span></td>
+ <td class="num">71.2%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>New Zealand<span class="sub">71.2% · 1.40 (-248)</span></td>
+ <td><b>New Zealand v Cook Islands</b><span class="sub">Rugby League World Cup 2026 · 2026-10-25 05:05Z</span></td>
+ <td><div class="src"><a href="https://www.nrl.com/draw/?competition=120&amp;season=2026" target="_blank" rel="noopener">NRL / International Rugby League (RLWC26) — Rugby League World Cup 2026 Official Round 1 Results &amp; Round 2 Draw (23-25 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>Port Adelaide</b><span class="sub">Match winner</span></td>
+ <td class="num">1.41<span class="sub">-245</span></td>
+ <td class="num">71.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Port Adelaide<span class="sub">71.0% · 1.41 (-245)</span></td>
+ <td><b>Port Adelaide v Collingwood</b><span class="sub">NAB AFLW · 2026-10-23 08:45Z</span></td>
+ <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>Gold Coast SUNS</b><span class="sub">Match winner</span></td>
+ <td class="num">1.41<span class="sub">-245</span></td>
+ <td class="num">71.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Gold Coast SUNS<span class="sub">71.0% · 1.41 (-245)</span></td>
+ <td><b>Gold Coast SUNS v Richmond</b><span class="sub">NAB AFLW · 2026-10-24 06:05Z</span></td>
+ <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>Sydney Swans</b><span class="sub">Match winner</span></td>
+ <td class="num">1.41<span class="sub">-245</span></td>
+ <td class="num">71.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Sydney Swans<span class="sub">71.0% · 1.41 (-245)</span></td>
+ <td><b>Sydney Swans v West Coast Eagles</b><span class="sub">NAB AFLW · 2026-10-25 01:35Z</span></td>
+ <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>Tonga -6</b><span class="sub">Handicap</span></td>
+ <td class="num">1.41<span class="sub">-243</span></td>
+ <td class="num">70.9%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Tonga<span class="sub">81.4% · 1.23 (-438)</span></td>
+ <td><b>Tonga v Lebanon</b><span class="sub">Rugby League World Cup 2026 · 2026-10-23 09:05Z</span></td>
+ <td><div class="src"><a href="https://www.nrl.com/draw/?competition=120&amp;season=2026" target="_blank" rel="noopener">NRL / International Rugby League (RLWC26) — Rugby League World Cup 2026 Official Round 1 Results &amp; Round 2 Draw (23-25 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>SC Magdeburg -4</b><span class="sub">Handicap</span></td>
+ <td class="num">1.41<span class="sub">-241</span></td>
+ <td class="num">70.7%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>SC Magdeburg<span class="sub">86.1% · 1.16 (-617)</span></td>
+ <td><b>Kolstad Handball v SC Magdeburg</b><span class="sub">EHF Champions League Men · 2026-10-22 18:45Z</span></td>
+ <td><div class="src"><a href="https://ehfcl.eurohandball.com/men/2026-27/matches/" target="_blank" rel="noopener">European Handball Federation (EHF) — Machineseeker EHF Champions League Men 2026-27 Round 6 Fixtures &amp; Standings</a></div></td>
+</tr><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>Wessel Nijman -1.5 legs</b><span class="sub">Handicap</span></td>
+ <td class="num">1.42<span class="sub">-240</span></td>
+ <td class="num">70.6%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Wessel Nijman<span class="sub">81.5% · 1.23 (-441)</span></td>
+ <td><b>Wessel Nijman v Martin Schindler</b><span class="sub">PDC Machineseeker European Championship · 2026-10-23 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>Panathinaikos AKTOR Athens -7.5</b><span class="sub">Handicap</span></td>
+ <td class="num">1.42<span class="sub">-238</span></td>
+ <td class="num">70.4%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Panathinaikos AKTOR Athens<span class="sub">86.3% · 1.16 (-628)</span></td>
+ <td><b>Panathinaikos AKTOR Athens v Kosner Baskonia Vitoria-Gasteiz</b><span class="sub">EuroLeague · 2026-10-22 18:15Z</span></td>
+ <td><div class="src"><a href="https://www.euroleaguebasketball.net/en/euroleague/game-center/" target="_blank" rel="noopener">Euroleague Basketball — EuroLeague 2026-27 Regular Season Round 6 Official Schedule &amp; Standings</a></div></td>
+</tr><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>Geelong Cats -4.5</b><span class="sub">Handicap</span></td>
+ <td class="num">1.42<span class="sub">-237</span></td>
+ <td class="num">70.4%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Geelong Cats<span class="sub">76.0% · 1.32 (-317)</span></td>
+ <td><b>Geelong Cats v Fremantle</b><span class="sub">NAB AFLW · 2026-10-24 04:05Z</span></td>
+ <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>North Melbourne -4.5</b><span class="sub">Handicap</span></td>
+ <td class="num">1.42<span class="sub">-237</span></td>
+ <td class="num">70.4%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>North Melbourne<span class="sub">76.0% · 1.32 (-317)</span></td>
+ <td><b>North Melbourne v Adelaide Crows</b><span class="sub">NAB AFLW · 2026-10-25 02:05Z</span></td>
+ <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>Hawthorn -4.5</b><span class="sub">Handicap</span></td>
+ <td class="num">1.42<span class="sub">-237</span></td>
+ <td class="num">70.4%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Hawthorn<span class="sub">76.0% · 1.32 (-317)</span></td>
+ <td><b>Hawthorn v Essendon</b><span class="sub">NAB AFLW · 2026-10-25 04:05Z</span></td>
+ <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>Carlton -8.5</b><span class="sub">Handicap</span></td>
+ <td class="num">1.42<span class="sub">-237</span></td>
+ <td class="num">70.4%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Carlton<span class="sub">80.6% · 1.24 (-414)</span></td>
+ <td><b>Carlton v GWS GIANTS</b><span class="sub">NAB AFLW · 2026-10-25 06:05Z</span></td>
+ <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr><tr>
+ <td><span class="badge high">High</span></td>
+ <td><b>Daniil Medvedev -1.5</b><span class="sub">Handicap</span></td>
+ <td class="num">1.42<span class="sub">-237</span></td>
+ <td class="num">70.3%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Daniil Medvedev<span class="sub">79.5% · 1.26 (-387)</span></td>
+ <td><b>Daniil Medvedev v Sho Shimabukuro</b><span class="sub">ATP 250 Almaty Open · —</span></td>
+ <td><div class="src"><a href="https://www.protennislive.com/posting/2026/9410/mds.pdf" target="_blank" rel="noopener">ATP Tour — ATP 250 Almaty Open 2026 Official Singles Main Draw PDF</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Iva Jovic -0.5</b><span class="sub">Handicap</span></td>
+ <td class="num">1.40<span class="sub">-250</span></td>
+ <td class="num">71.4%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Iva Jovic<span class="sub">74.6% · 1.34 (-294)</span></td>
+ <td><b>Iva Jovic v Jasmine Paolini</b><span class="sub">WTA 500 Ningbo Open · —</span></td>
+ <td><div class="src"><a href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf" target="_blank" rel="noopener">WTA Tour — WTA 500 Ningbo Open 2026 Official Main Draw Singles PDF (Signed 21 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Houston Rockets -3</b><span class="sub">Handicap</span></td>
+ <td class="num">1.40<span class="sub">-247</span></td>
+ <td class="num">71.2%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Houston Rockets<span class="sub">78.3% · 1.28 (-360)</span></td>
+ <td><b>San Antonio Spurs v Houston Rockets</b><span class="sub">NBA · 2026-10-24 01:30Z</span></td>
+ <td><div class="src"><a href="https://www.nba.com/games" target="_blank" rel="noopener">National Basketball Association (NBA) — NBA Official 2026-27 Season Schedule &amp; Opening Week Results</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Jiri Lehecka</b><span class="sub">Match winner</span></td>
+ <td class="num">1.41<span class="sub">-243</span></td>
+ <td class="num">70.9%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Jiri Lehecka<span class="sub">70.9% · 1.41 (-243)</span></td>
+ <td><b>Raphael Collignon v Jiri Lehecka</b><span class="sub">ATP 250 European Open (Brussels) · —</span></td>
+ <td><div class="src"><a href="https://www.protennislive.com/posting/2026/7485/mds.pdf" target="_blank" rel="noopener">ATP Tour — ATP 250 European Open (Brussels) 2026 Official Singles Main Draw PDF</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Belinda Bencic -0.5</b><span class="sub">Handicap</span></td>
+ <td class="num">1.42<span class="sub">-239</span></td>
+ <td class="num">70.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Belinda Bencic<span class="sub">73.8% · 1.36 (-281)</span></td>
+ <td><b>Katarzyna Kawa v Belinda Bencic</b><span class="sub">WTA 500 Ningbo Open · —</span></td>
+ <td><div class="src"><a href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf" target="_blank" rel="noopener">WTA Tour — WTA 500 Ningbo Open 2026 Official Main Draw Singles PDF (Signed 21 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Taylor Fritz -0.5</b><span class="sub">Handicap</span></td>
+ <td class="num">1.42<span class="sub">-239</span></td>
+ <td class="num">70.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Taylor Fritz<span class="sub">73.8% · 1.36 (-281)</span></td>
+ <td><b>Pierre-Hugues Herbert v Taylor Fritz</b><span class="sub">ATP 250 Lyon · —</span></td>
+ <td><div class="src"><a href="https://www.protennislive.com/posting/2026/496/mds.pdf" target="_blank" rel="noopener">ATP Tour — ATP 250 Grand Prix Auvergne-Rhone-Alpes (Lyon) 2026 Official Main Draw PDF</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Barca -2.5</b><span class="sub">Handicap</span></td>
+ <td class="num">1.43<span class="sub">-233</span></td>
+ <td class="num">69.9%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Barca<span class="sub">79.7% · 1.25 (-392)</span></td>
+ <td><b>Barca v Montpellier Handball</b><span class="sub">EHF Champions League Men · 2026-10-22 18:45Z</span></td>
+ <td><div class="src"><a href="https://ehfcl.eurohandball.com/men/2026-27/matches/" target="_blank" rel="noopener">European Handball Federation (EHF) — Machineseeker EHF Champions League Men 2026-27 Round 6 Fixtures &amp; Standings</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Elena Rybakina -4.5</b><span class="sub">Handicap</span></td>
+ <td class="num">1.43<span class="sub">-230</span></td>
+ <td class="num">69.7%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Elena Rybakina<span class="sub">91.6% · 1.09 (-1097)</span></td>
+ <td><b>Elena Rybakina v Polina Kudermetova</b><span class="sub">WTA 500 Ningbo Open · —</span></td>
+ <td><div class="src"><a href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf" target="_blank" rel="noopener">WTA Tour — WTA 500 Ningbo Open 2026 Official Main Draw Singles PDF (Signed 21 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Diana Shnaider -0.5</b><span class="sub">Handicap</span></td>
+ <td class="num">1.43<span class="sub">-230</span></td>
+ <td class="num">69.7%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Diana Shnaider<span class="sub">73.0% · 1.37 (-270)</span></td>
+ <td><b>Alexandra Eala v Diana Shnaider</b><span class="sub">WTA 500 Ningbo Open · —</span></td>
+ <td><div class="src"><a href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf" target="_blank" rel="noopener">WTA Tour — WTA 500 Ningbo Open 2026 Official Main Draw Singles PDF (Signed 21 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Flavio Cobolli -1.5</b><span class="sub">Handicap</span></td>
+ <td class="num">1.44<span class="sub">-228</span></td>
+ <td class="num">69.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Flavio Cobolli<span class="sub">78.8% · 1.27 (-371)</span></td>
+ <td><b>Flavio Cobolli v Stan Wawrinka</b><span class="sub">ATP 250 Lyon · —</span></td>
+ <td><div class="src"><a href="https://www.protennislive.com/posting/2026/496/mds.pdf" target="_blank" rel="noopener">ATP Tour — ATP 250 Grand Prix Auvergne-Rhone-Alpes (Lyon) 2026 Official Main Draw PDF</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Brandon Nakashima</b><span class="sub">Match winner</span></td>
+ <td class="num">1.45<span class="sub">-223</span></td>
+ <td class="num">69.1%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Brandon Nakashima<span class="sub">69.1% · 1.45 (-223)</span></td>
+ <td><b>Kyrian Jacquet v Brandon Nakashima</b><span class="sub">ATP 250 Lyon · —</span></td>
+ <td><div class="src"><a href="https://www.protennislive.com/posting/2026/496/mds.pdf" target="_blank" rel="noopener">ATP Tour — ATP 250 Grand Prix Auvergne-Rhone-Alpes (Lyon) 2026 Official Main Draw PDF</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>G2 Esports</b><span class="sub">Match winner</span></td>
+ <td class="num">1.45<span class="sub">-222</span></td>
+ <td class="num">68.9%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>G2 Esports<span class="sub">68.9% · 1.45 (-222)</span></td>
+ <td><b>G2 Esports v Dplus KIA</b><span class="sub">League of Legends World Championship · 2026-10-23 21:00Z</span></td>
+ <td><div class="src"><a href="https://lolesports.com/en-GB/news/worlds-2026-primer" target="_blank" rel="noopener">Riot Games (LoL Esports) — 2026 League of Legends World Championship Swiss Stage Round 1 Official Schedule (Allen, TX)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Nathan Aspinall</b><span class="sub">Match winner</span></td>
+ <td class="num">1.45<span class="sub">-221</span></td>
+ <td class="num">68.9%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Nathan Aspinall<span class="sub">68.9% · 1.45 (-221)</span></td>
+ <td><b>Nathan Aspinall v Cristo Reyes</b><span class="sub">PDC Machineseeker European Championship · 2026-10-23 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Indiana Pacers</b><span class="sub">Match winner</span></td>
+ <td class="num">1.45<span class="sub">-221</span></td>
+ <td class="num">68.8%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Indiana Pacers<span class="sub">68.8% · 1.45 (-221)</span></td>
+ <td><b>Indiana Pacers v Dallas Mavericks</b><span class="sub">NBA · 2026-10-23 23:00Z</span></td>
+ <td><div class="src"><a href="https://www.nba.com/games" target="_blank" rel="noopener">National Basketball Association (NBA) — NBA Official 2026-27 Season Schedule &amp; Opening Week Results</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Minnesota Wild</b><span class="sub">Match winner</span></td>
+ <td class="num">1.46<span class="sub">-220</span></td>
+ <td class="num">68.7%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Minnesota Wild<span class="sub">68.7% · 1.46 (-220)</span></td>
+ <td><b>Calgary Flames v Minnesota Wild</b><span class="sub">NHL · 2026-10-23 01:00Z</span></td>
+ <td><div class="src"><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener">National Hockey League (NHL Web API) — NHL Official Schedule &amp; Live 32-Team Standings API (22-23 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>New York Islanders</b><span class="sub">Match winner</span></td>
+ <td class="num">1.46<span class="sub">-217</span></td>
+ <td class="num">68.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>New York Islanders<span class="sub">68.5% · 1.46 (-217)</span></td>
+ <td><b>New York Islanders v Los Angeles Kings</b><span class="sub">NHL · 2026-10-22 23:30Z</span></td>
+ <td><div class="src"><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener">National Hockey League (NHL Web API) — NHL Official Schedule &amp; Live 32-Team Standings API (22-23 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Oklahoma City Thunder</b><span class="sub">Match winner</span></td>
+ <td class="num">1.48<span class="sub">-210</span></td>
+ <td class="num">67.8%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Oklahoma City Thunder<span class="sub">67.8% · 1.48 (-210)</span></td>
+ <td><b>Oklahoma City Thunder v Denver Nuggets</b><span class="sub">NBA · 2026-10-23 01:30Z</span></td>
+ <td><div class="src"><a href="https://www.nba.com/games" target="_blank" rel="noopener">National Basketball Association (NBA) — NBA Official 2026-27 Season Schedule &amp; Opening Week Results</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Fiji</b><span class="sub">Match winner</span></td>
+ <td class="num">1.48<span class="sub">-210</span></td>
+ <td class="num">67.7%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Fiji<span class="sub">67.7% · 1.48 (-210)</span></td>
+ <td><b>Australia v Fiji</b><span class="sub">Rugby League World Cup 2026 · 2026-10-25 09:05Z</span></td>
+ <td><div class="src"><a href="https://www.nrl.com/draw/?competition=120&amp;season=2026" target="_blank" rel="noopener">NRL / International Rugby League (RLWC26) — Rugby League World Cup 2026 Official Round 1 Results &amp; Round 2 Draw (23-25 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Alexander Bublik</b><span class="sub">Match winner</span></td>
+ <td class="num">1.48<span class="sub">-208</span></td>
+ <td class="num">67.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Alexander Bublik<span class="sub">67.5% · 1.48 (-208)</span></td>
+ <td><b>Alexander Bublik v Fabian Marozsan</b><span class="sub">ATP 250 Almaty Open · —</span></td>
+ <td><div class="src"><a href="https://www.protennislive.com/posting/2026/9410/mds.pdf" target="_blank" rel="noopener">ATP Tour — ATP 250 Almaty Open 2026 Official Singles Main Draw PDF</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Australia</b><span class="sub">Match winner</span></td>
+ <td class="num">1.48<span class="sub">-208</span></td>
+ <td class="num">67.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Australia<span class="sub">67.5% · 1.48 (-208)</span></td>
+ <td><b>Australia v India</b><span class="sub">India tour of Australia · —</span></td>
+ <td><div class="src"><a href="https://www.espncricinfo.com/live-cricket-score" target="_blank" rel="noopener">International Cricket Council / ESPNcricinfo — International Cricket Fixtures &amp; Results — October 2026 (BAN v WI, AUS v IND, PAK v SA)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Jonny Clayton</b><span class="sub">Match winner</span></td>
+ <td class="num">1.50<span class="sub">-200</span></td>
+ <td class="num">66.6%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Jonny Clayton<span class="sub">66.6% · 1.50 (-200)</span></td>
+ <td><b>Jonny Clayton v Niko Springer</b><span class="sub">PDC Machineseeker European Championship · 2026-10-23 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Krzysztof Ratajski -1.5 legs</b><span class="sub">Handicap</span></td>
+ <td class="num">1.52<span class="sub">-192</span></td>
+ <td class="num">65.7%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Krzysztof Ratajski<span class="sub">77.4% · 1.29 (-343)</span></td>
+ <td><b>Krzysztof Ratajski v Dave Chisnall</b><span class="sub">PDC Machineseeker European Championship · 2026-10-23 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Minnesota Timberwolves</b><span class="sub">Match winner</span></td>
+ <td class="num">1.53<span class="sub">-190</span></td>
+ <td class="num">65.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Minnesota Timberwolves<span class="sub">65.5% · 1.53 (-190)</span></td>
+ <td><b>Orlando Magic v Minnesota Timberwolves</b><span class="sub">NBA · 2026-10-23 23:00Z</span></td>
+ <td><div class="src"><a href="https://www.nba.com/games" target="_blank" rel="noopener">National Basketball Association (NBA) — NBA Official 2026-27 Season Schedule &amp; Opening Week Results</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Detroit Pistons</b><span class="sub">Match winner</span></td>
+ <td class="num">1.53<span class="sub">-190</span></td>
+ <td class="num">65.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Detroit Pistons<span class="sub">65.5% · 1.53 (-190)</span></td>
+ <td><b>Miami Heat v Detroit Pistons</b><span class="sub">NBA · 2026-10-24 00:00Z</span></td>
+ <td><div class="src"><a href="https://www.nba.com/games" target="_blank" rel="noopener">National Basketball Association (NBA) — NBA Official 2026-27 Season Schedule &amp; Opening Week Results</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>England</b><span class="sub">Match winner</span></td>
+ <td class="num">1.53<span class="sub">-188</span></td>
+ <td class="num">65.3%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>England<span class="sub">65.3% · 1.53 (-188)</span></td>
+ <td><b>England v France</b><span class="sub">Rugby League World Cup 2026 · 2026-10-24 06:35Z</span></td>
+ <td><div class="src"><a href="https://www.nrl.com/draw/?competition=120&amp;season=2026" target="_blank" rel="noopener">NRL / International Rugby League (RLWC26) — Rugby League World Cup 2026 Official Round 1 Results &amp; Round 2 Draw (23-25 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Karen Khachanov</b><span class="sub">Match winner</span></td>
+ <td class="num">1.53<span class="sub">-188</span></td>
+ <td class="num">65.3%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Karen Khachanov<span class="sub">65.3% · 1.53 (-188)</span></td>
+ <td><b>Tomas Machac v Karen Khachanov</b><span class="sub">ATP 250 Almaty Open · —</span></td>
+ <td><div class="src"><a href="https://www.protennislive.com/posting/2026/9410/mds.pdf" target="_blank" rel="noopener">ATP Tour — ATP 250 Almaty Open 2026 Official Singles Main Draw PDF</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Gian van Veen</b><span class="sub">Match winner</span></td>
+ <td class="num">1.55<span class="sub">-182</span></td>
+ <td class="num">64.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Gian van Veen<span class="sub">64.5% · 1.55 (-182)</span></td>
+ <td><b>Gian van Veen v Andrew Gilding</b><span class="sub">PDC Machineseeker European Championship · 2026-10-22 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Philadelphia 76ers</b><span class="sub">Match winner</span></td>
+ <td class="num">1.56<span class="sub">-180</span></td>
+ <td class="num">64.2%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Philadelphia 76ers<span class="sub">64.2% · 1.56 (-180)</span></td>
+ <td><b>Philadelphia 76ers v Cleveland Cavaliers</b><span class="sub">NBA · 2026-10-22 23:00Z</span></td>
+ <td><div class="src"><a href="https://www.nba.com/games" target="_blank" rel="noopener">National Basketball Association (NBA) — NBA Official 2026-27 Season Schedule &amp; Opening Week Results</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Farjestad BK</b><span class="sub">Match winner</span></td>
+ <td class="num">1.56<span class="sub">-179</span></td>
+ <td class="num">64.2%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Farjestad BK<span class="sub">64.2% · 1.56 (-179)</span></td>
+ <td><b>Timra IK v Farjestad BK</b><span class="sub">Swedish Hockey League · 2026-10-22 18:00Z</span></td>
+ <td><div class="src"><a href="https://www.shl.se/game-schedule" target="_blank" rel="noopener">Swedish Hockey League (SHL) — SHL 2026-27 Schedule &amp; Standings (Djurgardens IF v Skelleftea AIK, Timra IK v Farjestad BK)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Ross Smith -2.5 legs</b><span class="sub">Handicap</span></td>
+ <td class="num">1.56<span class="sub">-178</span></td>
+ <td class="num">64.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Ross Smith<span class="sub">87.2% · 1.15 (-679)</span></td>
+ <td><b>Ross Smith v Karel Sedlacek</b><span class="sub">PDC Machineseeker European Championship · 2026-10-22 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Luke Woodhouse</b><span class="sub">Match winner</span></td>
+ <td class="num">1.60<span class="sub">-167</span></td>
+ <td class="num">62.6%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Luke Woodhouse<span class="sub">62.6% · 1.60 (-167)</span></td>
+ <td><b>Luke Woodhouse v Dirk van Duijvenbode</b><span class="sub">PDC Machineseeker European Championship · 2026-10-22 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Real Madrid</b><span class="sub">Match winner</span></td>
+ <td class="num">1.60<span class="sub">-167</span></td>
+ <td class="num">62.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Real Madrid<span class="sub">62.5% · 1.60 (-167)</span></td>
+ <td><b>Maccabi Rapyd Tel Aviv v Real Madrid</b><span class="sub">EuroLeague · 2026-10-22 18:05Z</span></td>
+ <td><div class="src"><a href="https://www.euroleaguebasketball.net/en/euroleague/game-center/" target="_blank" rel="noopener">Euroleague Basketball — EuroLeague 2026-27 Regular Season Round 6 Official Schedule &amp; Standings</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Alex Michelsen</b><span class="sub">Match winner</span></td>
+ <td class="num">1.60<span class="sub">-166</span></td>
+ <td class="num">62.4%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Alex Michelsen<span class="sub">62.4% · 1.60 (-166)</span></td>
+ <td><b>David Goffin v Alex Michelsen</b><span class="sub">ATP 250 European Open (Brussels) · —</span></td>
+ <td><div class="src"><a href="https://www.protennislive.com/posting/2026/7485/mds.pdf" target="_blank" rel="noopener">ATP Tour — ATP 250 European Open (Brussels) 2026 Official Singles Main Draw PDF</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Team Liquid</b><span class="sub">Match winner</span></td>
+ <td class="num">1.61<span class="sub">-165</span></td>
+ <td class="num">62.2%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Team Liquid<span class="sub">62.2% · 1.61 (-165)</span></td>
+ <td><b>Team Liquid v CTBC Flying Oyster</b><span class="sub">League of Legends World Championship · 2026-10-23 22:00Z</span></td>
+ <td><div class="src"><a href="https://lolesports.com/en-GB/news/worlds-2026-primer" target="_blank" rel="noopener">Riot Games (LoL Esports) — 2026 League of Legends World Championship Swiss Stage Round 1 Official Schedule (Allen, TX)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Aviron Bayonnais</b><span class="sub">Match winner</span></td>
+ <td class="num">1.61<span class="sub">-164</span></td>
+ <td class="num">62.2%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Aviron Bayonnais<span class="sub">62.2% · 1.61 (-164)</span></td>
+ <td><b>Aviron Bayonnais v LOU Rugby</b><span class="sub">French Top 14 · 2026-10-24 14:35Z</span></td>
+ <td><div class="src"><a href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener">Ligue Nationale de Rugby (LNR) — 2026-27 French Top 14 Official Match Calendar (24-25 Oct 2026)</a><a href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener">Ligue Nationale de Rugby (LNR) — 2026-27 French Top 14 Official Match Calendar (24-25 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Boston Bruins</b><span class="sub">Match winner</span></td>
+ <td class="num">1.61<span class="sub">-164</span></td>
+ <td class="num">62.1%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Boston Bruins<span class="sub">62.1% · 1.61 (-164)</span></td>
+ <td><b>Boston Bruins v Nashville Predators</b><span class="sub">NHL · 2026-10-22 23:00Z</span></td>
+ <td><div class="src"><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener">National Hockey League (NHL Web API) — NHL Official Schedule &amp; Live 32-Team Standings API (22-23 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Niels Zonneveld -1.5 legs</b><span class="sub">Handicap</span></td>
+ <td class="num">1.61<span class="sub">-163</span></td>
+ <td class="num">62.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Niels Zonneveld<span class="sub">74.2% · 1.35 (-287)</span></td>
+ <td><b>Niels Zonneveld v Cameron Menzies</b><span class="sub">PDC Machineseeker European Championship · 2026-10-22 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Zizou Bergs</b><span class="sub">Match winner</span></td>
+ <td class="num">1.64<span class="sub">-157</span></td>
+ <td class="num">61.1%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Zizou Bergs<span class="sub">61.1% · 1.64 (-157)</span></td>
+ <td><b>Damir Dzumhur v Zizou Bergs</b><span class="sub">ATP 250 European Open (Brussels) · —</span></td>
+ <td><div class="src"><a href="https://www.protennislive.com/posting/2026/7485/mds.pdf" target="_blank" rel="noopener">ATP Tour — ATP 250 European Open (Brussels) 2026 Official Singles Main Draw PDF</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Josh Rock</b><span class="sub">Match winner</span></td>
+ <td class="num">1.65<span class="sub">-155</span></td>
+ <td class="num">60.7%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Josh Rock<span class="sub">60.7% · 1.65 (-155)</span></td>
+ <td><b>Josh Rock v Chris Dobey</b><span class="sub">PDC Machineseeker European Championship · 2026-10-23 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Talia Gibson</b><span class="sub">Match winner</span></td>
+ <td class="num">1.65<span class="sub">-153</span></td>
+ <td class="num">60.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Talia Gibson<span class="sub">60.5% · 1.65 (-153)</span></td>
+ <td><b>Talia Gibson v Ashlyn Krueger</b><span class="sub">WTA 250 Japan Open (Osaka) · —</span></td>
+ <td><div class="src"><a href="https://wtafiles.wtatennis.com/pdf/draws/2026/405/MDS.pdf" target="_blank" rel="noopener">WTA Tour — WTA 250 Kinoshita Group Japan Open (Osaka) 2026 Official Main Draw PDF</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Detroit Red Wings</b><span class="sub">Match winner</span></td>
+ <td class="num">1.65<span class="sub">-153</span></td>
+ <td class="num">60.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Detroit Red Wings<span class="sub">60.5% · 1.65 (-153)</span></td>
+ <td><b>Vancouver Canucks v Detroit Red Wings</b><span class="sub">NHL · 2026-10-23 02:00Z</span></td>
+ <td><div class="src"><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener">National Hockey League (NHL Web API) — NHL Official Schedule &amp; Live 32-Team Standings API (22-23 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Ottawa Senators</b><span class="sub">Match winner</span></td>
+ <td class="num">1.66<span class="sub">-152</span></td>
+ <td class="num">60.4%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Ottawa Senators<span class="sub">60.4% · 1.66 (-152)</span></td>
+ <td><b>Ottawa Senators v San Jose Sharks</b><span class="sub">NHL · 2026-10-22 23:00Z</span></td>
+ <td><div class="src"><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener">National Hockey League (NHL Web API) — NHL Official Schedule &amp; Live 32-Team Standings API (22-23 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Besiktas Istanbul</b><span class="sub">Match winner</span></td>
+ <td class="num">1.66<span class="sub">-151</span></td>
+ <td class="num">60.2%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Besiktas Istanbul<span class="sub">60.2% · 1.66 (-151)</span></td>
+ <td><b>Besiktas Istanbul v Anadolu Efes Istanbul</b><span class="sub">EuroLeague · 2026-10-22 17:30Z</span></td>
+ <td><div class="src"><a href="https://www.euroleaguebasketball.net/en/euroleague/game-center/" target="_blank" rel="noopener">Euroleague Basketball — EuroLeague 2026-27 Regular Season Round 6 Official Schedule &amp; Standings</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Florida Panthers</b><span class="sub">Match winner</span></td>
+ <td class="num">1.68<span class="sub">-146</span></td>
+ <td class="num">59.4%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Florida Panthers<span class="sub">59.4% · 1.68 (-146)</span></td>
+ <td><b>Pittsburgh Penguins v Florida Panthers</b><span class="sub">NHL · 2026-10-22 23:00Z</span></td>
+ <td><div class="src"><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener">National Hockey League (NHL Web API) — NHL Official Schedule &amp; Live 32-Team Standings API (22-23 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Luke Littler</b><span class="sub">Match winner</span></td>
+ <td class="num">1.70<span class="sub">-144</span></td>
+ <td class="num">59.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Luke Littler<span class="sub">59.0% · 1.70 (-144)</span></td>
+ <td><b>Luke Littler v William O&#x27;Connor</b><span class="sub">PDC Machineseeker European Championship · 2026-10-23 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Brisbane Lions</b><span class="sub">Match winner</span></td>
+ <td class="num">1.71<span class="sub">-141</span></td>
+ <td class="num">58.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Brisbane Lions<span class="sub">58.5% · 1.71 (-141)</span></td>
+ <td><b>St Kilda v Brisbane Lions</b><span class="sub">NAB AFLW · 2026-10-24 02:05Z</span></td>
+ <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>New Jersey Devils</b><span class="sub">Match winner</span></td>
+ <td class="num">1.71<span class="sub">-141</span></td>
+ <td class="num">58.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>New Jersey Devils<span class="sub">58.5% · 1.71 (-141)</span></td>
+ <td><b>New Jersey Devils v Anaheim Ducks</b><span class="sub">NHL · 2026-10-22 23:00Z</span></td>
+ <td><div class="src"><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener">National Hockey League (NHL Web API) — NHL Official Schedule &amp; Live 32-Team Standings API (22-23 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Dallas Stars</b><span class="sub">Match winner</span></td>
+ <td class="num">1.71<span class="sub">-141</span></td>
+ <td class="num">58.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Dallas Stars<span class="sub">58.5% · 1.71 (-141)</span></td>
+ <td><b>Dallas Stars v Winnipeg Jets</b><span class="sub">NHL · 2026-10-23 00:00Z</span></td>
+ <td><div class="src"><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener">National Hockey League (NHL Web API) — NHL Official Schedule &amp; Live 32-Team Standings API (22-23 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Tampa Bay Lightning</b><span class="sub">Match winner</span></td>
+ <td class="num">1.72<span class="sub">-140</span></td>
+ <td class="num">58.3%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Tampa Bay Lightning<span class="sub">58.3% · 1.72 (-140)</span></td>
+ <td><b>Colorado Avalanche v Tampa Bay Lightning</b><span class="sub">NHL · 2026-10-24 01:00Z</span></td>
+ <td><div class="src"><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener">National Hockey League (NHL Web API) — NHL Official Schedule &amp; Live 32-Team Standings API (22-23 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>New York Knicks</b><span class="sub">Match winner</span></td>
+ <td class="num">1.72<span class="sub">-140</span></td>
+ <td class="num">58.3%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>New York Knicks<span class="sub">58.3% · 1.72 (-140)</span></td>
+ <td><b>Boston Celtics v New York Knicks</b><span class="sub">NBA · 2026-10-23 23:00Z</span></td>
+ <td><div class="src"><a href="https://www.nba.com/games" target="_blank" rel="noopener">National Basketball Association (NBA) — NBA Official 2026-27 Season Schedule &amp; Opening Week Results</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Vegas Golden Knights</b><span class="sub">Match winner</span></td>
+ <td class="num">1.72<span class="sub">-140</span></td>
+ <td class="num">58.3%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Vegas Golden Knights<span class="sub">58.3% · 1.72 (-140)</span></td>
+ <td><b>St. Louis Blues v Vegas Golden Knights</b><span class="sub">NHL · 2026-10-23 00:00Z</span></td>
+ <td><div class="src"><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener">National Hockey League (NHL Web API) — NHL Official Schedule &amp; Live 32-Team Standings API (22-23 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Montreal Canadiens</b><span class="sub">Match winner</span></td>
+ <td class="num">1.72<span class="sub">-138</span></td>
+ <td class="num">58.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Montreal Canadiens<span class="sub">58.0% · 1.72 (-138)</span></td>
+ <td><b>Chicago Blackhawks v Montreal Canadiens</b><span class="sub">NHL · 2026-10-24 00:00Z</span></td>
+ <td><div class="src"><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener">National Hockey League (NHL Web API) — NHL Official Schedule &amp; Live 32-Team Standings API (22-23 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Luke Humphries</b><span class="sub">Match winner</span></td>
+ <td class="num">1.75<span class="sub">-134</span></td>
+ <td class="num">57.3%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Luke Humphries<span class="sub">57.3% · 1.75 (-134)</span></td>
+ <td><b>Luke Humphries v Ryan Searle</b><span class="sub">PDC Machineseeker European Championship · 2026-10-22 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Hanwha Life Esports</b><span class="sub">Match winner</span></td>
+ <td class="num">1.75<span class="sub">-134</span></td>
+ <td class="num">57.2%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Hanwha Life Esports<span class="sub">57.2% · 1.75 (-134)</span></td>
+ <td><b>Hanwha Life Esports v Top Esports</b><span class="sub">League of Legends World Championship · 2026-10-23 18:00Z</span></td>
+ <td><div class="src"><a href="https://lolesports.com/en-GB/news/worlds-2026-primer" target="_blank" rel="noopener">Riot Games (LoL Esports) — 2026 League of Legends World Championship Swiss Stage Round 1 Official Schedule (Allen, TX)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Bilibili Gaming</b><span class="sub">Match winner</span></td>
+ <td class="num">1.75<span class="sub">-134</span></td>
+ <td class="num">57.2%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Bilibili Gaming<span class="sub">57.2% · 1.75 (-134)</span></td>
+ <td><b>Bilibili Gaming v Movistar KOI</b><span class="sub">League of Legends World Championship · 2026-10-23 19:00Z</span></td>
+ <td><div class="src"><a href="https://lolesports.com/en-GB/news/worlds-2026-primer" target="_blank" rel="noopener">Riot Games (LoL Esports) — 2026 League of Legends World Championship Swiss Stage Round 1 Official Schedule (Allen, TX)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>LOS</b><span class="sub">Match winner</span></td>
+ <td class="num">1.75<span class="sub">-134</span></td>
+ <td class="num">57.2%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>LOS<span class="sub">57.2% · 1.75 (-134)</span></td>
+ <td><b>LOS v T1</b><span class="sub">League of Legends World Championship · 2026-10-23 23:00Z</span></td>
+ <td><div class="src"><a href="https://lolesports.com/en-GB/news/worlds-2026-primer" target="_blank" rel="noopener">Riot Games (LoL Esports) — 2026 League of Legends World Championship Swiss Stage Round 1 Official Schedule (Allen, TX)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Team Secret Whales</b><span class="sub">Match winner</span></td>
+ <td class="num">1.75<span class="sub">-134</span></td>
+ <td class="num">57.2%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Team Secret Whales<span class="sub">57.2% · 1.75 (-134)</span></td>
+ <td><b>Team Secret Whales v LYON</b><span class="sub">League of Legends World Championship · 2026-10-24 00:00Z</span></td>
+ <td><div class="src"><a href="https://lolesports.com/en-GB/news/worlds-2026-primer" target="_blank" rel="noopener">Riot Games (LoL Esports) — 2026 League of Legends World Championship Swiss Stage Round 1 Official Schedule (Allen, TX)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Memphis Grizzlies</b><span class="sub">Match winner</span></td>
+ <td class="num">1.76<span class="sub">-132</span></td>
+ <td class="num">57.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Memphis Grizzlies<span class="sub">57.0% · 1.76 (-132)</span></td>
+ <td><b>Golden State Warriors v Memphis Grizzlies</b><span class="sub">NBA · 2026-10-24 02:00Z</span></td>
+ <td><div class="src"><a href="https://www.nba.com/games" target="_blank" rel="noopener">National Basketball Association (NBA) — NBA Official 2026-27 Season Schedule &amp; Opening Week Results</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Samoa</b><span class="sub">Match winner</span></td>
+ <td class="num">1.76<span class="sub">-131</span></td>
+ <td class="num">56.7%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Samoa<span class="sub">56.7% · 1.76 (-131)</span></td>
+ <td><b>Papua New Guinea v Samoa</b><span class="sub">Rugby League World Cup 2026 · 2026-10-24 04:25Z</span></td>
+ <td><div class="src"><a href="https://www.nrl.com/draw/?competition=120&amp;season=2026" target="_blank" rel="noopener">NRL / International Rugby League (RLWC26) — Rugby League World Cup 2026 Official Round 1 Results &amp; Round 2 Draw (23-25 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Edmonton Oilers</b><span class="sub">Match winner</span></td>
+ <td class="num">1.79<span class="sub">-127</span></td>
+ <td class="num">56.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Edmonton Oilers<span class="sub">56.0% · 1.79 (-127)</span></td>
+ <td><b>Edmonton Oilers v Carolina Hurricanes</b><span class="sub">NHL · 2026-10-23 01:00Z</span></td>
+ <td><div class="src"><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener">National Hockey League (NHL Web API) — NHL Official Schedule &amp; Live 32-Team Standings API (22-23 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge medium">Medium</span></td>
+ <td><b>Gerwyn Price</b><span class="sub">Match winner</span></td>
+ <td class="num">1.80<span class="sub">-125</span></td>
+ <td class="num">55.6%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Gerwyn Price<span class="sub">55.6% · 1.80 (-125)</span></td>
+ <td><b>Gerwyn Price v Rob Cross</b><span class="sub">PDC Machineseeker European Championship · 2026-10-22 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Moycullen -2</b><span class="sub">Handicap</span></td>
+ <td class="num">1.40<span class="sub">-249</span></td>
+ <td class="num">71.4%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Moycullen<span class="sub">77.8% · 1.29 (-350)</span></td>
+ <td><b>Moycullen v Salthill-Knocknacarra</b><span class="sub">Galway Senior Football Championship · 2026-10-25 15:00Z</span></td>
+ <td><div class="src"><a href="https://gaacork.ie/fixtures-results/" target="_blank" rel="noopener">Cork GAA / Galway GAA — 2026 Cork Premier SFC Final &amp; Galway SFC Final Official Fixtures (24-25 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Pakistan -20.5</b><span class="sub">Handicap</span></td>
+ <td class="num">1.41<span class="sub">-242</span></td>
+ <td class="num">70.8%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Pakistan<span class="sub">85.0% · 1.18 (-566)</span></td>
+ <td><b>Pakistan v South Africa</b><span class="sub">South Africa tour of Pakistan · —</span></td>
+ <td><div class="src"><a href="https://www.espncricinfo.com/live-cricket-score" target="_blank" rel="noopener">International Cricket Council / ESPNcricinfo — International Cricket Fixtures &amp; Results — October 2026 (BAN v WI, AUS v IND, PAK v SA)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Milwaukee Brewers</b><span class="sub">Match winner</span></td>
+ <td class="num">1.84<span class="sub">-119</span></td>
+ <td class="num">54.3%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Milwaukee Brewers<span class="sub">54.3% · 1.84 (-119)</span></td>
+ <td><b>Milwaukee Brewers v Tampa Bay Rays</b><span class="sub">MLB · 2026-10-24 00:00Z</span></td>
+ <td><div class="src"><a href="https://statsapi.mlb.com/api/v1/schedule/postseason?season=2026" target="_blank" rel="noopener">Major League Baseball (MLB Stats API) — 2026 MLB Postseason Official Schedule &amp; Standings API (World Series Games 1-4)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Milwaukee Brewers</b><span class="sub">Match winner</span></td>
+ <td class="num">1.84<span class="sub">-119</span></td>
+ <td class="num">54.3%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Milwaukee Brewers<span class="sub">54.3% · 1.84 (-119)</span></td>
+ <td><b>Milwaukee Brewers v Tampa Bay Rays</b><span class="sub">MLB · 2026-10-25 00:00Z</span></td>
+ <td><div class="src"><a href="https://statsapi.mlb.com/api/v1/schedule/postseason?season=2026" target="_blank" rel="noopener">Major League Baseball (MLB Stats API) — 2026 MLB Postseason Official Schedule &amp; Standings API (World Series Games 1-4)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Kevin Doets</b><span class="sub">Match winner</span></td>
+ <td class="num">1.85<span class="sub">-117</span></td>
+ <td class="num">54.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Kevin Doets<span class="sub">54.0% · 1.85 (-117)</span></td>
+ <td><b>Kevin Doets v Michael van Gerwen</b><span class="sub">PDC Machineseeker European Championship · 2026-10-23 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>New York Rangers</b><span class="sub">Match winner</span></td>
+ <td class="num">1.86<span class="sub">-116</span></td>
+ <td class="num">53.8%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>New York Rangers<span class="sub">53.8% · 1.86 (-116)</span></td>
+ <td><b>Toronto Maple Leafs v New York Rangers</b><span class="sub">NHL · 2026-10-22 23:00Z</span></td>
+ <td><div class="src"><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener">National Hockey League (NHL Web API) — NHL Official Schedule &amp; Live 32-Team Standings API (22-23 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Western Bulldogs</b><span class="sub">Match winner</span></td>
+ <td class="num">1.86<span class="sub">-116</span></td>
+ <td class="num">53.7%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Western Bulldogs<span class="sub">53.7% · 1.86 (-116)</span></td>
+ <td><b>Western Bulldogs v Melbourne</b><span class="sub">NAB AFLW · 2026-10-24 08:15Z</span></td>
+ <td><div class="src"><a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">Australian Football League (AFLW) — 2026 NAB AFLW Official Round 11 Fixture &amp; Live 18-Club Ladder</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Slepsk Malow Suwalki</b><span class="sub">Match winner</span></td>
+ <td class="num">1.90<span class="sub">-111</span></td>
+ <td class="num">52.7%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Slepsk Malow Suwalki<span class="sub">52.7% · 1.90 (-111)</span></td>
+ <td><b>Slepsk Malow Suwalki v GKS Katowice</b><span class="sub">PlusLiga · 2026-10-23 17:30Z</span></td>
+ <td><div class="src"><a href="https://www.plusliga.pl/games.html" target="_blank" rel="noopener">Polska Liga Siatkowki (PlusLiga) — PlusLiga 2026-27 Round 2 Official Schedule &amp; Results (23-25 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>PGE GiEK Skra Belchatow</b><span class="sub">Match winner</span></td>
+ <td class="num">1.90<span class="sub">-111</span></td>
+ <td class="num">52.7%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>PGE GiEK Skra Belchatow<span class="sub">52.7% · 1.90 (-111)</span></td>
+ <td><b>PGE GiEK Skra Belchatow v PGE Projekt Warszawa</b><span class="sub">PlusLiga · 2026-10-24 16:00Z</span></td>
+ <td><div class="src"><a href="https://www.plusliga.pl/games.html" target="_blank" rel="noopener">Polska Liga Siatkowki (PlusLiga) — PlusLiga 2026-27 Round 2 Official Schedule &amp; Results (23-25 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>InPost ChKS Chelm</b><span class="sub">Match winner</span></td>
+ <td class="num">1.90<span class="sub">-111</span></td>
+ <td class="num">52.7%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>InPost ChKS Chelm<span class="sub">52.7% · 1.90 (-111)</span></td>
+ <td><b>InPost ChKS Chelm v Asseco Resovia Rzeszow</b><span class="sub">PlusLiga · 2026-10-25 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.plusliga.pl/games.html" target="_blank" rel="noopener">Polska Liga Siatkowki (PlusLiga) — PlusLiga 2026-27 Round 2 Official Schedule &amp; Results (23-25 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Milwaukee Brewers</b><span class="sub">Match winner</span></td>
+ <td class="num">1.90<span class="sub">-111</span></td>
+ <td class="num">52.6%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Milwaukee Brewers<span class="sub">52.6% · 1.90 (-111)</span></td>
+ <td><b>Tampa Bay Rays v Milwaukee Brewers</b><span class="sub">MLB · 2026-10-27 00:00Z</span></td>
+ <td><div class="src"><a href="https://statsapi.mlb.com/api/v1/schedule/postseason?season=2026" target="_blank" rel="noopener">Major League Baseball (MLB Stats API) — 2026 MLB Postseason Official Schedule &amp; Standings API (World Series Games 1-4)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Milwaukee Brewers</b><span class="sub">Match winner</span></td>
+ <td class="num">1.90<span class="sub">-111</span></td>
+ <td class="num">52.6%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Milwaukee Brewers<span class="sub">52.6% · 1.90 (-111)</span></td>
+ <td><b>Tampa Bay Rays v Milwaukee Brewers</b><span class="sub">MLB · 2026-10-28 00:00Z</span></td>
+ <td><div class="src"><a href="https://statsapi.mlb.com/api/v1/schedule/postseason?season=2026" target="_blank" rel="noopener">Major League Baseball (MLB Stats API) — 2026 MLB Postseason Official Schedule &amp; Standings API (World Series Games 1-4)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Ryan Joyce</b><span class="sub">Match winner</span></td>
+ <td class="num">1.91<span class="sub">-110</span></td>
+ <td class="num">52.4%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Ryan Joyce<span class="sub">52.4% · 1.91 (-110)</span></td>
+ <td><b>Ryan Joyce v Jermaine Wattimena</b><span class="sub">PDC Machineseeker European Championship · 2026-10-23 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Stade Rochelais</b><span class="sub">Match winner</span></td>
+ <td class="num">1.92<span class="sub">-109</span></td>
+ <td class="num">52.1%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Stade Rochelais<span class="sub">52.1% · 1.92 (-109)</span></td>
+ <td><b>Stade Rochelais v Union Bordeaux-Begles</b><span class="sub">French Top 14 · 2026-10-25 20:05Z</span></td>
+ <td><div class="src"><a href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener">Ligue Nationale de Rugby (LNR) — 2026-27 French Top 14 Official Match Calendar (24-25 Oct 2026)</a><a href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener">Ligue Nationale de Rugby (LNR) — 2026-27 French Top 14 Official Match Calendar (24-25 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Charlotte Hornets</b><span class="sub">Match winner</span></td>
+ <td class="num">1.93<span class="sub">-108</span></td>
+ <td class="num">51.9%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Charlotte Hornets<span class="sub">51.9% · 1.93 (-108)</span></td>
+ <td><b>Charlotte Hornets v Atlanta Hawks</b><span class="sub">NBA · 2026-10-23 23:00Z</span></td>
+ <td><div class="src"><a href="https://www.nba.com/games" target="_blank" rel="noopener">National Basketball Association (NBA) — NBA Official 2026-27 Season Schedule &amp; Opening Week Results</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Washington Wizards</b><span class="sub">Match winner</span></td>
+ <td class="num">1.93<span class="sub">-108</span></td>
+ <td class="num">51.9%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Washington Wizards<span class="sub">51.9% · 1.93 (-108)</span></td>
+ <td><b>Washington Wizards v Toronto Raptors</b><span class="sub">NBA · 2026-10-23 23:00Z</span></td>
+ <td><div class="src"><a href="https://www.nba.com/games" target="_blank" rel="noopener">National Basketball Association (NBA) — NBA Official 2026-27 Season Schedule &amp; Opening Week Results</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Utah Jazz</b><span class="sub">Match winner</span></td>
+ <td class="num">1.93<span class="sub">-108</span></td>
+ <td class="num">51.9%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Utah Jazz<span class="sub">51.9% · 1.93 (-108)</span></td>
+ <td><b>Utah Jazz v New Orleans Pelicans</b><span class="sub">NBA · 2026-10-24 01:30Z</span></td>
+ <td><div class="src"><a href="https://www.nba.com/games" target="_blank" rel="noopener">National Basketball Association (NBA) — NBA Official 2026-27 Season Schedule &amp; Opening Week Results</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Los Angeles Lakers</b><span class="sub">Match winner</span></td>
+ <td class="num">1.93<span class="sub">-108</span></td>
+ <td class="num">51.9%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Los Angeles Lakers<span class="sub">51.9% · 1.93 (-108)</span></td>
+ <td><b>Los Angeles Lakers v LA Clippers</b><span class="sub">NBA · 2026-10-24 02:00Z</span></td>
+ <td><div class="src"><a href="https://www.nba.com/games" target="_blank" rel="noopener">National Basketball Association (NBA) — NBA Official 2026-27 Season Schedule &amp; Opening Week Results</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Sacramento Kings</b><span class="sub">Match winner</span></td>
+ <td class="num">1.93<span class="sub">-108</span></td>
+ <td class="num">51.9%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Sacramento Kings<span class="sub">51.9% · 1.93 (-108)</span></td>
+ <td><b>Sacramento Kings v Portland Trail Blazers</b><span class="sub">NBA · 2026-10-24 02:00Z</span></td>
+ <td><div class="src"><a href="https://www.nba.com/games" target="_blank" rel="noopener">National Basketball Association (NBA) — NBA Official 2026-27 Season Schedule &amp; Opening Week Results</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Milwaukee Bucks</b><span class="sub">Match winner</span></td>
+ <td class="num">1.93<span class="sub">-108</span></td>
+ <td class="num">51.9%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Milwaukee Bucks<span class="sub">51.9% · 1.93 (-108)</span></td>
+ <td><b>Milwaukee Bucks v Chicago Bulls</b><span class="sub">NBA · 2026-10-23 20:00Z</span></td>
+ <td><div class="src"><a href="https://www.nba.com/games" target="_blank" rel="noopener">National Basketball Association (NBA) — NBA Official 2026-27 Season Schedule &amp; Opening Week Results</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Bangladesh</b><span class="sub">Match winner</span></td>
+ <td class="num">1.94<span class="sub">-106</span></td>
+ <td class="num">51.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Bangladesh<span class="sub">51.5% · 1.94 (-106)</span></td>
+ <td><b>Bangladesh v West Indies</b><span class="sub">West Indies tour of Bangladesh · —</span></td>
+ <td><div class="src"><a href="https://www.espncricinfo.com/live-cricket-score" target="_blank" rel="noopener">International Cricket Council / ESPNcricinfo — International Cricket Fixtures &amp; Results — October 2026 (BAN v WI, AUS v IND, PAK v SA)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>James Wade</b><span class="sub">Match winner</span></td>
+ <td class="num">1.97<span class="sub">-103</span></td>
+ <td class="num">50.8%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>James Wade<span class="sub">50.8% · 1.97 (-103)</span></td>
+ <td><b>James Wade v Damon Heta</b><span class="sub">PDC Machineseeker European Championship · 2026-10-22 17:00Z</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>St Finbarrs</b><span class="sub">Match winner</span></td>
+ <td class="num">1.98<span class="sub">-102</span></td>
+ <td class="num">50.6%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>St Finbarrs<span class="sub">50.6% · 1.98 (-102)</span></td>
+ <td><b>St Finbarrs v Nemo Rangers</b><span class="sub">Cork Premier Senior Football Championship · 2026-10-25 16:00Z</span></td>
+ <td><div class="src"><a href="https://gaacork.ie/fixtures-results/" target="_blank" rel="noopener">Cork GAA / Galway GAA — 2026 Cork Premier SFC Final &amp; Galway SFC Final Official Fixtures (24-25 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Valentin Vacherot -3</b><span class="sub">Handicap</span></td>
+ <td class="num">1.98<span class="sub">-102</span></td>
+ <td class="num">50.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Valentin Vacherot<span class="sub">72.2% · 1.38 (-260)</span></td>
+ <td><b>Valentin Vacherot v Luca Van Assche</b><span class="sub">ATP 250 Lyon · —</span></td>
+ <td><div class="src"><a href="https://www.protennislive.com/posting/2026/496/mds.pdf" target="_blank" rel="noopener">ATP Tour — ATP 250 Grand Prix Auvergne-Rhone-Alpes (Lyon) 2026 Official Main Draw PDF</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Seattle Kraken</b><span class="sub">Match winner</span></td>
+ <td class="num">1.98<span class="sub">-102</span></td>
+ <td class="num">50.5%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Seattle Kraken<span class="sub">50.5% · 1.98 (-102)</span></td>
+ <td><b>Seattle Kraken v Utah Mammoth</b><span class="sub">NHL · 2026-10-23 02:00Z</span></td>
+ <td><div class="src"><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener">National Hockey League (NHL Web API) — NHL Official Schedule &amp; Live 32-Team Standings API (22-23 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Skelleftea AIK -1</b><span class="sub">Handicap</span></td>
+ <td class="num">1.99<span class="sub">-101</span></td>
+ <td class="num">50.4%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Skelleftea AIK<span class="sub">71.9% · 1.39 (-256)</span></td>
+ <td><b>Skelleftea AIK v Djurgardens IF</b><span class="sub">Swedish Hockey League · 2026-10-22 18:00Z</span></td>
+ <td><div class="src"><a href="https://www.shl.se/game-schedule" target="_blank" rel="noopener">Swedish Hockey League (SHL) — SHL 2026-27 Schedule &amp; Standings (Djurgardens IF v Skelleftea AIK, Timra IK v Farjestad BK)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Mary Stoiana</b><span class="sub">Match winner</span></td>
+ <td class="num">2.00<span class="sub">+100</span></td>
+ <td class="num">50.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Mary Stoiana<span class="sub">50.0% · 2.00 (+100)</span></td>
+ <td><b>Mary Stoiana v Moyuka Uchijima</b><span class="sub">WTA 250 Japan Open (Osaka) · —</span></td>
+ <td><div class="src"><a href="https://wtafiles.wtatennis.com/pdf/draws/2026/405/MDS.pdf" target="_blank" rel="noopener">WTA Tour — WTA 250 Kinoshita Group Japan Open (Osaka) 2026 Official Main Draw PDF</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Magda Linette</b><span class="sub">Match winner</span></td>
+ <td class="num">2.00<span class="sub">+100</span></td>
+ <td class="num">50.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Magda Linette<span class="sub">50.0% · 2.00 (+100)</span></td>
+ <td><b>Magda Linette v Katerina Siniakova</b><span class="sub">WTA 250 Japan Open (Osaka) · —</span></td>
+ <td><div class="src"><a href="https://wtafiles.wtatennis.com/pdf/draws/2026/405/MDS.pdf" target="_blank" rel="noopener">WTA Tour — WTA 250 Kinoshita Group Japan Open (Osaka) 2026 Official Main Draw PDF</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Terence Atmane</b><span class="sub">Match winner</span></td>
+ <td class="num">2.00<span class="sub">+100</span></td>
+ <td class="num">50.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Terence Atmane<span class="sub">50.0% · 2.00 (+100)</span></td>
+ <td><b>Terence Atmane v Mattia Bellucci</b><span class="sub">ATP 250 Almaty Open · —</span></td>
+ <td><div class="src"><a href="https://www.protennislive.com/posting/2026/9410/mds.pdf" target="_blank" rel="noopener">ATP Tour — ATP 250 Almaty Open 2026 Official Singles Main Draw PDF</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Borna Gojo</b><span class="sub">Match winner</span></td>
+ <td class="num">2.00<span class="sub">+100</span></td>
+ <td class="num">50.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Borna Gojo<span class="sub">50.0% · 2.00 (+100)</span></td>
+ <td><b>Borna Gojo v Daniel Altmaier</b><span class="sub">ATP 250 Lyon · —</span></td>
+ <td><div class="src"><a href="https://www.protennislive.com/posting/2026/496/mds.pdf" target="_blank" rel="noopener">ATP Tour — ATP 250 Grand Prix Auvergne-Rhone-Alpes (Lyon) 2026 Official Main Draw PDF</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Kyren Wilson</b><span class="sub">Match winner</span></td>
+ <td class="num">2.00<span class="sub">+100</span></td>
+ <td class="num">50.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Kyren Wilson<span class="sub">50.0% · 2.00 (+100)</span></td>
+ <td><b>Kyren Wilson v Pang Junxu</b><span class="sub">BetVictor Northern Ireland Open · 2026-10-22 07:00Z</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Matthew Selt</b><span class="sub">Match winner</span></td>
+ <td class="num">2.00<span class="sub">+100</span></td>
+ <td class="num">50.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Matthew Selt<span class="sub">50.0% · 2.00 (+100)</span></td>
+ <td><b>Matthew Selt v Sam Craigie</b><span class="sub">BetVictor Northern Ireland Open · 2026-10-22 07:00Z</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Elliot Slessor</b><span class="sub">Match winner</span></td>
+ <td class="num">2.00<span class="sub">+100</span></td>
+ <td class="num">50.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Elliot Slessor<span class="sub">50.0% · 2.00 (+100)</span></td>
+ <td><b>Elliot Slessor v Ricky Walden</b><span class="sub">BetVictor Northern Ireland Open · 2026-10-22 08:00Z</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Anthony McGill</b><span class="sub">Match winner</span></td>
+ <td class="num">2.00<span class="sub">+100</span></td>
+ <td class="num">50.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Anthony McGill<span class="sub">50.0% · 2.00 (+100)</span></td>
+ <td><b>Anthony McGill v Mateusz Baranowski</b><span class="sub">BetVictor Northern Ireland Open · 2026-10-22 08:00Z</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Mark Williams</b><span class="sub">Match winner</span></td>
+ <td class="num">2.00<span class="sub">+100</span></td>
+ <td class="num">50.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Mark Williams<span class="sub">50.0% · 2.00 (+100)</span></td>
+ <td><b>Mark Williams v Martin O&#x27;Donnell</b><span class="sub">BetVictor Northern Ireland Open · 2026-10-22 13:00Z</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>David Gilbert</b><span class="sub">Match winner</span></td>
+ <td class="num">2.00<span class="sub">+100</span></td>
+ <td class="num">50.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>David Gilbert<span class="sub">50.0% · 2.00 (+100)</span></td>
+ <td><b>David Gilbert v Cheung Ka Wai</b><span class="sub">BetVictor Northern Ireland Open · 2026-10-22 13:00Z</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Jordan Brown</b><span class="sub">Match winner</span></td>
+ <td class="num">2.00<span class="sub">+100</span></td>
+ <td class="num">50.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Jordan Brown<span class="sub">50.0% · 2.00 (+100)</span></td>
+ <td><b>Jordan Brown v Scott Donaldson</b><span class="sub">BetVictor Northern Ireland Open · 2026-10-22 14:00Z</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Jak Jones</b><span class="sub">Match winner</span></td>
+ <td class="num">2.00<span class="sub">+100</span></td>
+ <td class="num">50.0%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Jak Jones<span class="sub">50.0% · 2.00 (+100)</span></td>
+ <td><b>Jak Jones v Daniel Wells</b><span class="sub">BetVictor Northern Ireland Open · 2026-10-22 14:00Z</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Invictus Gaming</b><span class="sub">Match winner</span></td>
+ <td class="num">3.75<span class="sub">+275</span></td>
+ <td class="num">26.6%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Gen.G<span class="sub">73.4% · 1.36 (-275)</span></td>
+ <td><b>Gen.G v Invictus Gaming</b><span class="sub">League of Legends World Championship · 2026-10-23 17:00Z</span></td>
+ <td><div class="src"><a href="https://lolesports.com/en-GB/news/worlds-2026-primer" target="_blank" rel="noopener">Riot Games (LoL Esports) — 2026 League of Legends World Championship Swiss Stage Round 1 Official Schedule (Allen, TX)</a></div></td>
+</tr><tr>
+ <td><span class="badge low">Low</span></td>
+ <td><b>Karmine Corp</b><span class="sub">Match winner</span></td>
+ <td class="num">3.75<span class="sub">+275</span></td>
+ <td class="num">26.6%</td>
+ <td><span class="badge ok">in window</span></td>
+ <td>Anyones Legend<span class="sub">73.4% · 1.36 (-275)</span></td>
+ <td><b>Anyones Legend v Karmine Corp</b><span class="sub">League of Legends World Championship · 2026-10-23 20:00Z</span></td>
+ <td><div class="src"><a href="https://lolesports.com/en-GB/news/worlds-2026-primer" target="_blank" rel="noopener">Riot Games (LoL Esports) — 2026 League of Legends World Championship Swiss Stage Round 1 Official Schedule (Allen, TX)</a></div></td>
+</tr></tbody></table></div>
+</main>
+<footer><div class="fin">
+  <p><b>Independent model output, not betting advice.</b> Prices are our own fair-probability quotes with no margin;
+  the 5% margin a bookmaker would need is shown beside them. Every fixture, record and ranking links to the governing
+  body that publishes it. Values that could not be confirmed on an official page are blank and listed on
+  <a href="flagged.html">Flagged for Review</a>.</p>
+  <p>Session <code>a570c470-olbg1</code> · snapshot <code>2026-10-22T03:20Z</code> ·
+  built by <code>scripts/sa570c470_build_site.py</code> · validated by <code>scripts/sa570c470_validate.py</code></p>
+</div></footer>
+</body></html>

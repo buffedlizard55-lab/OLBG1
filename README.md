@@ -367,3 +367,28 @@ python3 scripts/validate.py                 # fails the build if any high pick l
 python3 scripts/s9dfd0b48_build.py      # data + 12-page site
 python3 scripts/s9dfd0b48_validate.py   # desk gate
 ```
+
+---
+
+## Desk `a570c470` — 141 verified fixtures, 1,546 originated prices, line-by-line repo audit (22 Oct 2026)
+
+**Live board:** https://buffedlizard55-lab.github.io/OLBG1/a570c470/ · report: `reports/SESSION_A570C470_AUDIT.md`
+
+| What | Where |
+|---|---|
+| 141 source-verified fixtures, all 17 in-scope sports, 22–28 Oct 2026 window (116 priced + 25 event cards) | `data/a570c470/fixtures.json` |
+| 1,546 originated prices: winner, draw-no-bet, three handicap rungs, three total rungs, correct score | `data/a570c470/lines.json` |
+| 16 High-confidence picks, every one inside −250 to +10000 on its published price, each with a bespoke 53–76-word prediction and zero repeated 6-grams | `data/a570c470/predictions.json` |
+| 45 governing-body sources, each recording what it established and when it was read | `data/a570c470/sources.json`, `a570c470/sources.html` |
+| Line-by-line audit: 8 findings (2 high), including 16 of 18 AFLW ladder inputs on the root desk disagreeing with the official ladder | `data/a570c470/audit.json`, `a570c470/audit.html` |
+| 95 row-level flags: every value that could not be confirmed, blank rather than guessed | `data/a570c470/flagged.json`, `a570c470/flagged.html` |
+
+```bash
+python3 scripts/sa570c470_sources_and_taxonomy.py  # source registry + OLBG taxonomy
+python3 scripts/sa570c470_dataset.py               # verified fixtures
+python3 scripts/sa570c470_model.py                 # strengths, markets, confidence tiers
+python3 scripts/sa570c470_predictions.py           # written predictions for every High pick
+python3 scripts/sa570c470_audit.py                 # repo findings + flag register
+python3 scripts/sa570c470_build_site.py            # 28-page dashboard under /a570c470/
+python3 scripts/sa570c470_validate.py              # desk release gate
+```

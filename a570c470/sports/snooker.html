@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Snooker · OLBG Origination Desk (a570c470)</title>
+<meta name="description" content="Snooker — source-linked multi-sport fixtures, originated multi-market lines, confidence tiers and written predictions across the 17 in-scope OLBG sports.">
+<style>
+:root{--bg:#0b0f14;--panel:#121820;--panel2:#0f151c;--line:#1f2a36;--txt:#e6edf3;--muted:#8b9bb0;
+--acc:#4ade80;--acc2:#38bdf8;--hi:#22c55e;--md:#eab308;--lo:#94a3b8;--bad:#f87171;--flag:#f59e0b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc2);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0f1720,#0b0f14);position:sticky;top:0;z-index:20}
+.hin{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.brand{font-weight:700;font-size:15px;letter-spacing:.2px}
+.brand span{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--acc);margin-right:8px;vertical-align:middle}
+nav{display:flex;flex-wrap:wrap;gap:2px}
+nav a{padding:5px 9px;border-radius:6px;color:var(--muted);font-size:13px}
+nav a:hover{background:#16202b;color:var(--txt);text-decoration:none}
+nav a[aria-current]{background:#1b2733;color:var(--txt)}
+main{max-width:1240px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.25;margin:6px 0 10px}
+h2{font-size:19px;margin:34px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:15px;margin:20px 0 8px;color:#cbd5e1}
+p.lede{color:#c3cfdc;max-width:940px}
+.grid{display:grid;gap:12px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:18px 0 6px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi .n{font-size:23px;font-weight:700;letter-spacing:-.4px}
+.kpi .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+.kpi.hi .n{color:var(--hi)}.kpi.md .n{color:var(--md)}.kpi.lo .n{color:var(--lo)}
+.sports-grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px;display:block;color:inherit}
+.card:hover{border-color:#2c3d4f;text-decoration:none}
+.card .t{display:flex;justify-content:space-between;gap:8px;font-weight:600;font-size:14px}
+.card .m{color:var(--muted);font-size:12.5px;margin-top:3px}
+.badge{display:inline-block;font-size:11px;padding:1.5px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.badge.high{color:#052e16;background:var(--hi);border-color:var(--hi);font-weight:700}
+.badge.medium{color:#2a1d00;background:var(--md);border-color:var(--md);font-weight:700}
+.badge.low{background:#1e293b;color:#cbd5e1}
+.badge.ok{color:#86efac;border-color:#14532d;background:#0d2016}
+.badge.warn{color:#fcd34d;border-color:#78350f;background:#241a05}
+.badge.info{color:#bfdbfe;border-color:#1e3a8a;background:#0d1626}
+.note{border:1px solid var(--line);border-left:3px solid var(--acc2);background:var(--panel2);border-radius:8px;padding:12px 15px;margin:14px 0;font-size:14px;color:#c9d6e4}
+.note.good{border-left-color:var(--acc)}
+.note.warn{border-left-color:var(--flag)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#16202b;color:#cbd5e1;font-size:11.5px;text-transform:uppercase;letter-spacing:.45px;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#151f29}
+td.num,th.num{text-align:right;white-space:nowrap}
+.sub{display:block;color:var(--muted);font-size:11.5px;font-weight:400}
+.src a{display:block;font-size:11.5px;line-height:1.45}
+details summary{cursor:pointer;color:var(--acc2);font-size:12px}
+details[open] summary{color:var(--muted)}
+.mkt{border-top:1px solid var(--line);padding:7px 0 2px}
+.mkt-h{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#94a3b8;margin-bottom:3px}
+.mkt ul{list-style:none;margin:0;padding:0}
+.mkt li{display:flex;justify-content:space-between;gap:12px;font-size:12px;padding:1px 0}
+.mkt li span:last-child{white-space:nowrap;color:#cbd5e1}
+.band-yes{color:var(--acc);font-size:11px}
+.band-no{color:var(--muted);font-size:11px}
+.pred{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+.pred h3{margin:0 0 2px;font-size:15px;color:var(--txt)}
+.pred .meta{color:var(--muted);font-size:12px;margin-bottom:8px}
+.pred p{margin:0;color:#d3dfea}
+.pred .sel{margin-top:8px;font-size:12.5px;color:var(--acc)}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+.fin{max-width:1240px;margin:0 auto;padding:18px 20px 40px}
+ul.plain{list-style:none;padding:0;margin:8px 0}
+ul.plain li{padding:5px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+code{background:#16202b;padding:1px 5px;border-radius:4px;font-size:12.5px}
+.tag{font-size:11px;padding:1px 6px;border-radius:5px;background:#16202b;border:1px solid var(--line);color:var(--muted)}
+</style></head>
+<body>
+<header><div class="hin">
+  <div class="brand"><span></span>OLBG Origination Desk <span class="tag">a570c470 · 22 Oct 2026</span></div>
+  <nav aria-label="Primary"><a href="../index.html">Overview</a><a href="../picks.html">High Picks</a><a href="../predictions.html">Predictions</a><a href="../lines.html">All Fixtures</a><a href="../markets.html">Market Explorer</a><a href="../sports.html">Sports</a><a href="../reverse-engineering.html">OLBG Reversed</a><a href="../methodology.html">Methodology</a><a href="../sources.html">Sources</a><a href="../audit.html">Repo Audit</a><a href="../flagged.html">Flagged for Review</a></nav>
+</div></header>
+<main>
+<h1>Snooker</h1>
+<p class="lede">8 verified fixtures in the 22–28 October
+2026 window. Prices are our own fair quotes; the model's strength inputs and per-row flags are shown on each row.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Start (UTC)</th><th>Match &amp; venue</th><th>Strength input</th><th>Desk selection</th><th>Confidence</th><th>Official source</th><th>Markets</th></tr></thead>
+<tbody><tr>
+ <td>2026-10-22 07:00Z<span class="sub">Round 3 (best of 7)</span></td>
+ <td><b>Kyren Wilson v Pang Junxu</b><span class="sub">Waterfront Hall, Belfast</span></td>
+ <td>ranking<span class='sub'>edge +0.0 vs scale 55</span></td>
+ <td><b>Kyren Wilson</b><span class='sub'>Match winner · 2.00 (+100) · 50.0%</span></td>
+ <td><span class="badge low">Low</span><span class="sub">call: Kyren Wilson (50.0%)</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div><span class='sub' style='color:#fcd34d'>⚠ Neither player&#x27;s numeric WST ranking was printed for both sides of this tie, so the model uses the sourced round-2 form text and caps confidence at Medium.</span></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Kyren Wilson</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Pang Junxu</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Kyren Wilson -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Pang Junxu -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Kyren Wilson -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>Pang Junxu -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>Kyren Wilson -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>Pang Junxu -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>Kyren Wilson -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li><li><span>Pang Junxu -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-22 07:00Z<span class="sub">Round 3 (best of 7)</span></td>
+ <td><b>Matthew Selt v Sam Craigie</b><span class="sub">Waterfront Hall, Belfast</span></td>
+ <td>ranking<span class='sub'>edge +0.0 vs scale 55</span></td>
+ <td><b>Matthew Selt</b><span class='sub'>Match winner · 2.00 (+100) · 50.0%</span></td>
+ <td><span class="badge low">Low</span><span class="sub">call: Matthew Selt (50.0%)</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div><span class='sub' style='color:#fcd34d'>⚠ Neither player&#x27;s numeric WST ranking was printed for both sides of this tie, so the model uses the sourced round-2 form text and caps confidence at Medium.</span></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Matthew Selt</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Sam Craigie</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Matthew Selt -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Sam Craigie -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Matthew Selt -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>Sam Craigie -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>Matthew Selt -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>Sam Craigie -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>Matthew Selt -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li><li><span>Sam Craigie -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-22 08:00Z<span class="sub">Round 3 (best of 7)</span></td>
+ <td><b>Elliot Slessor v Ricky Walden</b><span class="sub">Waterfront Hall, Belfast</span></td>
+ <td>ranking<span class='sub'>edge +0.0 vs scale 55</span></td>
+ <td><b>Elliot Slessor</b><span class='sub'>Match winner · 2.00 (+100) · 50.0%</span></td>
+ <td><span class="badge low">Low</span><span class="sub">call: Elliot Slessor (50.0%)</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div><span class='sub' style='color:#fcd34d'>⚠ Neither player&#x27;s numeric WST ranking was printed for both sides of this tie, so the model uses the sourced round-2 form text and caps confidence at Medium.</span></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Elliot Slessor</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Ricky Walden</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Elliot Slessor -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Ricky Walden -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Elliot Slessor -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>Ricky Walden -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>Elliot Slessor -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>Ricky Walden -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>Elliot Slessor -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li><li><span>Ricky Walden -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-22 08:00Z<span class="sub">Round 3 (best of 7)</span></td>
+ <td><b>Anthony McGill v Mateusz Baranowski</b><span class="sub">Waterfront Hall, Belfast</span></td>
+ <td>ranking<span class='sub'>edge +0.0 vs scale 55</span></td>
+ <td><b>Anthony McGill</b><span class='sub'>Match winner · 2.00 (+100) · 50.0%</span></td>
+ <td><span class="badge low">Low</span><span class="sub">call: Anthony McGill (50.0%)</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div><span class='sub' style='color:#fcd34d'>⚠ Neither player&#x27;s numeric WST ranking was printed for both sides of this tie, so the model uses the sourced round-2 form text and caps confidence at Medium.</span></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Anthony McGill</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Mateusz Baranowski</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Anthony McGill -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Mateusz Baranowski -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Anthony McGill -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>Mateusz Baranowski -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>Anthony McGill -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>Mateusz Baranowski -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>Anthony McGill -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li><li><span>Mateusz Baranowski -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-22 13:00Z<span class="sub">Round 3 (best of 7)</span></td>
+ <td><b>Mark Williams v Martin O&#x27;Donnell</b><span class="sub">Waterfront Hall, Belfast</span></td>
+ <td>ranking<span class='sub'>edge +0.0 vs scale 55</span></td>
+ <td><b>Mark Williams</b><span class='sub'>Match winner · 2.00 (+100) · 50.0%</span></td>
+ <td><span class="badge low">Low</span><span class="sub">call: Mark Williams (50.0%)</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div><span class='sub' style='color:#fcd34d'>⚠ Neither player&#x27;s numeric WST ranking was printed for both sides of this tie, so the model uses the sourced round-2 form text and caps confidence at Medium.</span></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Mark Williams</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Martin O&#x27;Donnell</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Mark Williams -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Martin O&#x27;Donnell -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Mark Williams -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>Martin O&#x27;Donnell -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>Mark Williams -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>Martin O&#x27;Donnell -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>Mark Williams -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li><li><span>Martin O&#x27;Donnell -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-22 13:00Z<span class="sub">Round 3 (best of 7)</span></td>
+ <td><b>David Gilbert v Cheung Ka Wai</b><span class="sub">Waterfront Hall, Belfast</span></td>
+ <td>ranking<span class='sub'>edge +0.0 vs scale 55</span></td>
+ <td><b>David Gilbert</b><span class='sub'>Match winner · 2.00 (+100) · 50.0%</span></td>
+ <td><span class="badge low">Low</span><span class="sub">call: David Gilbert (50.0%)</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div><span class='sub' style='color:#fcd34d'>⚠ Neither player&#x27;s numeric WST ranking was printed for both sides of this tie, so the model uses the sourced round-2 form text and caps confidence at Medium.</span></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>David Gilbert</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Cheung Ka Wai</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>David Gilbert -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Cheung Ka Wai -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>David Gilbert -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>Cheung Ka Wai -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>David Gilbert -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>Cheung Ka Wai -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>David Gilbert -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li><li><span>Cheung Ka Wai -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-22 14:00Z<span class="sub">Round 3 (best of 7)</span></td>
+ <td><b>Jordan Brown v Scott Donaldson</b><span class="sub">Waterfront Hall, Belfast</span></td>
+ <td>ranking<span class='sub'>edge +0.0 vs scale 55</span></td>
+ <td><b>Jordan Brown</b><span class='sub'>Match winner · 2.00 (+100) · 50.0%</span></td>
+ <td><span class="badge low">Low</span><span class="sub">call: Jordan Brown (50.0%)</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div><span class='sub' style='color:#fcd34d'>⚠ Neither player&#x27;s numeric WST ranking was printed for both sides of this tie, so the model uses the sourced round-2 form text and caps confidence at Medium.</span></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Jordan Brown</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Scott Donaldson</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Jordan Brown -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Scott Donaldson -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Jordan Brown -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>Scott Donaldson -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>Jordan Brown -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>Scott Donaldson -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>Jordan Brown -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li><li><span>Scott Donaldson -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-22 14:00Z<span class="sub">Round 3 (best of 7)</span></td>
+ <td><b>Jak Jones v Daniel Wells</b><span class="sub">Waterfront Hall, Belfast</span></td>
+ <td>ranking<span class='sub'>edge +0.0 vs scale 55</span></td>
+ <td><b>Jak Jones</b><span class='sub'>Match winner · 2.00 (+100) · 50.0%</span></td>
+ <td><span class="badge low">Low</span><span class="sub">call: Jak Jones (50.0%)</span></td>
+ <td><div class="src"><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Afternoon Report (21 Oct 2026)</a><a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-evening" target="_blank" rel="noopener">World Snooker Tour (WST) — BetVictor Northern Ireland Open 2026 Day Four Evening Report &amp; Matches Feed (21 Oct 2026)</a></div><span class='sub' style='color:#fcd34d'>⚠ Neither player&#x27;s numeric WST ranking was printed for both sides of this tie, so the model uses the sourced round-2 form text and caps confidence at Medium.</span></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Jak Jones</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Daniel Wells</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Jak Jones -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Daniel Wells -0.5 frames</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Jak Jones -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>Daniel Wells -1.5 frames</span><span>2.91 (+191) · 34.4% <span class="band-yes">in window</span></span></li><li><span>Jak Jones -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>Daniel Wells -2.5 frames</span><span>5.33 (+433) · 18.8% <span class="band-yes">in window</span></span></li><li><span>Jak Jones -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li><li><span>Daniel Wells -3.5 frames</span><span>16.00 (+1500) · 6.2% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr></tbody></table></div>
+
+<p style="margin-top:18px"><a href="../sports.html">← all sports</a> · <a href="../methodology.html">methodology</a></p>
+</main>
+<footer><div class="fin">
+  <p><b>Independent model output, not betting advice.</b> Prices are our own fair-probability quotes with no margin;
+  the 5% margin a bookmaker would need is shown beside them. Every fixture, record and ranking links to the governing
+  body that publishes it. Values that could not be confirmed on an official page are blank and listed on
+  <a href="../flagged.html">Flagged for Review</a>.</p>
+  <p>Session <code>a570c470-olbg1</code> · snapshot <code>2026-10-22T03:20Z</code> ·
+  built by <code>scripts/sa570c470_build_site.py</code> · validated by <code>scripts/sa570c470_validate.py</code></p>
+</div></footer>
+</body></html>

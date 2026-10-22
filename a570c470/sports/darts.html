@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Darts · OLBG Origination Desk (a570c470)</title>
+<meta name="description" content="Darts — source-linked multi-sport fixtures, originated multi-market lines, confidence tiers and written predictions across the 17 in-scope OLBG sports.">
+<style>
+:root{--bg:#0b0f14;--panel:#121820;--panel2:#0f151c;--line:#1f2a36;--txt:#e6edf3;--muted:#8b9bb0;
+--acc:#4ade80;--acc2:#38bdf8;--hi:#22c55e;--md:#eab308;--lo:#94a3b8;--bad:#f87171;--flag:#f59e0b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc2);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0f1720,#0b0f14);position:sticky;top:0;z-index:20}
+.hin{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.brand{font-weight:700;font-size:15px;letter-spacing:.2px}
+.brand span{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--acc);margin-right:8px;vertical-align:middle}
+nav{display:flex;flex-wrap:wrap;gap:2px}
+nav a{padding:5px 9px;border-radius:6px;color:var(--muted);font-size:13px}
+nav a:hover{background:#16202b;color:var(--txt);text-decoration:none}
+nav a[aria-current]{background:#1b2733;color:var(--txt)}
+main{max-width:1240px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.25;margin:6px 0 10px}
+h2{font-size:19px;margin:34px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:15px;margin:20px 0 8px;color:#cbd5e1}
+p.lede{color:#c3cfdc;max-width:940px}
+.grid{display:grid;gap:12px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:18px 0 6px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi .n{font-size:23px;font-weight:700;letter-spacing:-.4px}
+.kpi .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+.kpi.hi .n{color:var(--hi)}.kpi.md .n{color:var(--md)}.kpi.lo .n{color:var(--lo)}
+.sports-grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px;display:block;color:inherit}
+.card:hover{border-color:#2c3d4f;text-decoration:none}
+.card .t{display:flex;justify-content:space-between;gap:8px;font-weight:600;font-size:14px}
+.card .m{color:var(--muted);font-size:12.5px;margin-top:3px}
+.badge{display:inline-block;font-size:11px;padding:1.5px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.badge.high{color:#052e16;background:var(--hi);border-color:var(--hi);font-weight:700}
+.badge.medium{color:#2a1d00;background:var(--md);border-color:var(--md);font-weight:700}
+.badge.low{background:#1e293b;color:#cbd5e1}
+.badge.ok{color:#86efac;border-color:#14532d;background:#0d2016}
+.badge.warn{color:#fcd34d;border-color:#78350f;background:#241a05}
+.badge.info{color:#bfdbfe;border-color:#1e3a8a;background:#0d1626}
+.note{border:1px solid var(--line);border-left:3px solid var(--acc2);background:var(--panel2);border-radius:8px;padding:12px 15px;margin:14px 0;font-size:14px;color:#c9d6e4}
+.note.good{border-left-color:var(--acc)}
+.note.warn{border-left-color:var(--flag)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#16202b;color:#cbd5e1;font-size:11.5px;text-transform:uppercase;letter-spacing:.45px;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#151f29}
+td.num,th.num{text-align:right;white-space:nowrap}
+.sub{display:block;color:var(--muted);font-size:11.5px;font-weight:400}
+.src a{display:block;font-size:11.5px;line-height:1.45}
+details summary{cursor:pointer;color:var(--acc2);font-size:12px}
+details[open] summary{color:var(--muted)}
+.mkt{border-top:1px solid var(--line);padding:7px 0 2px}
+.mkt-h{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#94a3b8;margin-bottom:3px}
+.mkt ul{list-style:none;margin:0;padding:0}
+.mkt li{display:flex;justify-content:space-between;gap:12px;font-size:12px;padding:1px 0}
+.mkt li span:last-child{white-space:nowrap;color:#cbd5e1}
+.band-yes{color:var(--acc);font-size:11px}
+.band-no{color:var(--muted);font-size:11px}
+.pred{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+.pred h3{margin:0 0 2px;font-size:15px;color:var(--txt)}
+.pred .meta{color:var(--muted);font-size:12px;margin-bottom:8px}
+.pred p{margin:0;color:#d3dfea}
+.pred .sel{margin-top:8px;font-size:12.5px;color:var(--acc)}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+.fin{max-width:1240px;margin:0 auto;padding:18px 20px 40px}
+ul.plain{list-style:none;padding:0;margin:8px 0}
+ul.plain li{padding:5px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+code{background:#16202b;padding:1px 5px;border-radius:4px;font-size:12.5px}
+.tag{font-size:11px;padding:1px 6px;border-radius:5px;background:#16202b;border:1px solid var(--line);color:var(--muted)}
+</style></head>
+<body>
+<header><div class="hin">
+  <div class="brand"><span></span>OLBG Origination Desk <span class="tag">a570c470 · 22 Oct 2026</span></div>
+  <nav aria-label="Primary"><a href="../index.html">Overview</a><a href="../picks.html">High Picks</a><a href="../predictions.html">Predictions</a><a href="../lines.html">All Fixtures</a><a href="../markets.html">Market Explorer</a><a href="../sports.html">Sports</a><a href="../reverse-engineering.html">OLBG Reversed</a><a href="../methodology.html">Methodology</a><a href="../sources.html">Sources</a><a href="../audit.html">Repo Audit</a><a href="../flagged.html">Flagged for Review</a></nav>
+</div></header>
+<main>
+<h1>Darts</h1>
+<p class="lede">16 verified fixtures in the 22–28 October
+2026 window. Prices are our own fair quotes; the model's strength inputs and per-row flags are shown on each row.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Start (UTC)</th><th>Match &amp; venue</th><th>Strength input</th><th>Desk selection</th><th>Confidence</th><th>Official source</th><th>Markets</th></tr></thead>
+<tbody><tr>
+ <td>2026-10-22 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>Luke Woodhouse v Dirk van Duijvenbode</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +17.6 vs scale 55</span></td>
+ <td><b>Luke Woodhouse</b><span class='sub'>Match winner · 1.60 (-167) · 62.6%</span></td>
+ <td><span class="badge medium">Medium</span><span class="sub">call: Luke Woodhouse (62.6%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Luke Woodhouse</span><span>1.60 (-167) · 62.6% <span class="band-yes">in window</span></span></li><li><span>Dirk van Duijvenbode</span><span>2.67 (+167) · 37.4% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Luke Woodhouse -0.5 legs</span><span>1.60 (-167) · 62.6% <span class="band-yes">in window</span></span></li><li><span>Dirk van Duijvenbode -0.5 legs</span><span>2.67 (+167) · 37.4% <span class="band-yes">in window</span></span></li><li><span>Luke Woodhouse -1.5 legs</span><span>2.01 (+101) · 49.7% <span class="band-yes">in window</span></span></li><li><span>Dirk van Duijvenbode -1.5 legs</span><span>3.74 (+274) · 26.8% <span class="band-yes">in window</span></span></li><li><span>Luke Woodhouse -2.5 legs</span><span>2.82 (+182) · 35.5% <span class="band-yes">in window</span></span></li><li><span>Dirk van Duijvenbode -2.5 legs</span><span>5.88 (+488) · 17.0% <span class="band-yes">in window</span></span></li><li><span>Luke Woodhouse -3.5 legs</span><span>4.64 (+364) · 21.5% <span class="band-yes">in window</span></span></li><li><span>Dirk van Duijvenbode -3.5 legs</span><span>10.98 (+998) · 9.1% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-22 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>Danny Noppert v Stephen Bunting</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +31.0 vs scale 55</span></td>
+ <td><b>Danny Noppert</b><span class='sub'>Match winner · 1.40 (-249) · 71.4%</span></td>
+ <td><span class="badge high">High</span><span class="sub">call: Danny Noppert (71.4%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Danny Noppert</span><span>1.40 (-249) · 71.4% <span class="band-yes">in window</span></span></li><li><span>Stephen Bunting</span><span>3.49 (+249) · 28.6% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Danny Noppert -0.5 legs</span><span>1.40 (-249) · 71.4% <span class="band-yes">in window</span></span></li><li><span>Stephen Bunting -0.5 legs</span><span>3.49 (+249) · 28.6% <span class="band-yes">in window</span></span></li><li><span>Danny Noppert -1.5 legs</span><span>1.70 (-143) · 58.9% <span class="band-yes">in window</span></span></li><li><span>Stephen Bunting -1.5 legs</span><span>5.08 (+408) · 19.7% <span class="band-yes">in window</span></span></li><li><span>Danny Noppert -2.5 legs</span><span>2.28 (+128) · 43.9% <span class="band-yes">in window</span></span></li><li><span>Stephen Bunting -2.5 legs</span><span>8.32 (+732) · 12.0% <span class="band-yes">in window</span></span></li><li><span>Danny Noppert -3.5 legs</span><span>3.57 (+257) · 28.0% <span class="band-yes">in window</span></span></li><li><span>Stephen Bunting -3.5 legs</span><span>16.25 (+1525) · 6.2% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-22 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>Niels Zonneveld v Cameron Menzies</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +35.7 vs scale 55</span></td>
+ <td><b>Niels Zonneveld -1.5 legs</b><span class='sub'>Handicap · 1.61 (-163) · 62.0%</span></td>
+ <td><span class="badge medium">Medium</span><span class="sub">call: Niels Zonneveld (74.2%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Niels Zonneveld</span><span>1.35 (-287) · 74.2% <span class="band-no">outside window</span></span></li><li><span>Cameron Menzies</span><span>3.87 (+287) · 25.8% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Niels Zonneveld -0.5 legs</span><span>1.35 (-287) · 74.2% <span class="band-no">outside window</span></span></li><li><span>Cameron Menzies -0.5 legs</span><span>3.87 (+287) · 25.8% <span class="band-yes">in window</span></span></li><li><span>Niels Zonneveld -1.5 legs</span><span>1.61 (-163) · 62.0% <span class="band-yes">in window</span></span></li><li><span>Cameron Menzies -1.5 legs</span><span>5.71 (+471) · 17.5% <span class="band-yes">in window</span></span></li><li><span>Niels Zonneveld -2.5 legs</span><span>2.13 (+113) · 46.9% <span class="band-yes">in window</span></span></li><li><span>Cameron Menzies -2.5 legs</span><span>9.49 (+849) · 10.5% <span class="band-yes">in window</span></span></li><li><span>Niels Zonneveld -3.5 legs</span><span>3.29 (+229) · 30.4% <span class="band-yes">in window</span></span></li><li><span>Cameron Menzies -3.5 legs</span><span>18.80 (+1780) · 5.3% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-22 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>Gerwyn Price v Rob Cross</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +7.8 vs scale 55</span></td>
+ <td><b>Gerwyn Price</b><span class='sub'>Match winner · 1.80 (-125) · 55.6%</span></td>
+ <td><span class="badge medium">Medium</span><span class="sub">call: Gerwyn Price (55.6%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Gerwyn Price</span><span>1.80 (-125) · 55.6% <span class="band-yes">in window</span></span></li><li><span>Rob Cross</span><span>2.25 (+125) · 44.4% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Gerwyn Price -0.5 legs</span><span>1.80 (-125) · 55.6% <span class="band-yes">in window</span></span></li><li><span>Rob Cross -0.5 legs</span><span>2.25 (+125) · 44.4% <span class="band-yes">in window</span></span></li><li><span>Gerwyn Price -1.5 legs</span><span>2.33 (+133) · 42.9% <span class="band-yes">in window</span></span></li><li><span>Rob Cross -1.5 legs</span><span>3.06 (+206) · 32.7% <span class="band-yes">in window</span></span></li><li><span>Gerwyn Price -2.5 legs</span><span>3.37 (+237) · 29.6% <span class="band-yes">in window</span></span></li><li><span>Rob Cross -2.5 legs</span><span>4.66 (+366) · 21.5% <span class="band-yes">in window</span></span></li><li><span>Gerwyn Price -3.5 legs</span><span>5.76 (+476) · 17.4% <span class="band-yes">in window</span></span></li><li><span>Rob Cross -3.5 legs</span><span>8.41 (+741) · 11.9% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-22 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>James Wade v Damon Heta</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +1.1 vs scale 55</span></td>
+ <td><b>James Wade</b><span class='sub'>Match winner · 1.97 (-103) · 50.8%</span></td>
+ <td><span class="badge low">Low</span><span class="sub">call: James Wade (50.8%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>James Wade</span><span>1.97 (-103) · 50.8% <span class="band-yes">in window</span></span></li><li><span>Damon Heta</span><span>2.03 (+103) · 49.2% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>James Wade -0.5 legs</span><span>1.97 (-103) · 50.8% <span class="band-yes">in window</span></span></li><li><span>Damon Heta -0.5 legs</span><span>2.03 (+103) · 49.2% <span class="band-yes">in window</span></span></li><li><span>James Wade -1.5 legs</span><span>2.60 (+160) · 38.4% <span class="band-yes">in window</span></span></li><li><span>Damon Heta -1.5 legs</span><span>2.70 (+170) · 37.0% <span class="band-yes">in window</span></span></li><li><span>James Wade -2.5 legs</span><span>3.85 (+285) · 26.0% <span class="band-yes">in window</span></span></li><li><span>Damon Heta -2.5 legs</span><span>4.03 (+303) · 24.8% <span class="band-yes">in window</span></span></li><li><span>James Wade -3.5 legs</span><span>6.74 (+574) · 14.8% <span class="band-yes">in window</span></span></li><li><span>Damon Heta -3.5 legs</span><span>7.11 (+611) · 14.1% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-22 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>Luke Humphries v Ryan Searle</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +10.1 vs scale 55</span></td>
+ <td><b>Luke Humphries</b><span class='sub'>Match winner · 1.75 (-134) · 57.3%</span></td>
+ <td><span class="badge medium">Medium</span><span class="sub">call: Luke Humphries (57.3%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Luke Humphries</span><span>1.75 (-134) · 57.3% <span class="band-yes">in window</span></span></li><li><span>Ryan Searle</span><span>2.34 (+134) · 42.7% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Luke Humphries -0.5 legs</span><span>1.75 (-134) · 57.3% <span class="band-yes">in window</span></span></li><li><span>Ryan Searle -0.5 legs</span><span>2.34 (+134) · 42.7% <span class="band-yes">in window</span></span></li><li><span>Luke Humphries -1.5 legs</span><span>2.25 (+125) · 44.5% <span class="band-yes">in window</span></span></li><li><span>Ryan Searle -1.5 legs</span><span>3.20 (+220) · 31.3% <span class="band-yes">in window</span></span></li><li><span>Luke Humphries -2.5 legs</span><span>3.23 (+223) · 31.0% <span class="band-yes">in window</span></span></li><li><span>Ryan Searle -2.5 legs</span><span>4.91 (+391) · 20.4% <span class="band-yes">in window</span></span></li><li><span>Luke Humphries -3.5 legs</span><span>5.47 (+447) · 18.3% <span class="band-yes">in window</span></span></li><li><span>Ryan Searle -3.5 legs</span><span>8.93 (+793) · 11.2% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-22 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>Gian van Veen v Andrew Gilding</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +20.5 vs scale 55</span></td>
+ <td><b>Gian van Veen</b><span class='sub'>Match winner · 1.55 (-182) · 64.5%</span></td>
+ <td><span class="badge medium">Medium</span><span class="sub">call: Gian van Veen (64.5%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Gian van Veen</span><span>1.55 (-182) · 64.5% <span class="band-yes">in window</span></span></li><li><span>Andrew Gilding</span><span>2.82 (+182) · 35.5% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Gian van Veen -0.5 legs</span><span>1.55 (-182) · 64.5% <span class="band-yes">in window</span></span></li><li><span>Andrew Gilding -0.5 legs</span><span>2.82 (+182) · 35.5% <span class="band-yes">in window</span></span></li><li><span>Gian van Veen -1.5 legs</span><span>1.93 (-107) · 51.7% <span class="band-yes">in window</span></span></li><li><span>Andrew Gilding -1.5 legs</span><span>3.98 (+298) · 25.1% <span class="band-yes">in window</span></span></li><li><span>Gian van Veen -2.5 legs</span><span>2.68 (+168) · 37.3% <span class="band-yes">in window</span></span></li><li><span>Andrew Gilding -2.5 legs</span><span>6.31 (+531) · 15.9% <span class="band-yes">in window</span></span></li><li><span>Gian van Veen -3.5 legs</span><span>4.38 (+338) · 22.8% <span class="band-yes">in window</span></span></li><li><span>Andrew Gilding -3.5 legs</span><span>11.90 (+1090) · 8.4% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-22 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>Ross Smith v Karel Sedlacek</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +62.4 vs scale 55</span></td>
+ <td><b>Ross Smith -2.5 legs</b><span class='sub'>Handicap · 1.56 (-178) · 64.0%</span></td>
+ <td><span class="badge medium">Medium</span><span class="sub">call: Ross Smith (87.2%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Ross Smith</span><span>1.15 (-679) · 87.2% <span class="band-no">outside window</span></span></li><li><span>Karel Sedlacek</span><span>7.79 (+679) · 12.8% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Ross Smith -0.5 legs</span><span>1.15 (-679) · 87.2% <span class="band-no">outside window</span></span></li><li><span>Karel Sedlacek -0.5 legs</span><span>7.79 (+679) · 12.8% <span class="band-yes">in window</span></span></li><li><span>Ross Smith -1.5 legs</span><span>1.28 (-351) · 77.8% <span class="band-no">outside window</span></span></li><li><span>Karel Sedlacek -1.5 legs</span><span>12.37 (+1137) · 8.1% <span class="band-yes">in window</span></span></li><li><span>Ross Smith -2.5 legs</span><span>1.56 (-178) · 64.0% <span class="band-yes">in window</span></span></li><li><span>Karel Sedlacek -2.5 legs</span><span>22.22 (+2122) · 4.5% <span class="band-yes">in window</span></span></li><li><span>Ross Smith -3.5 legs</span><span>2.18 (+118) · 45.8% <span class="band-yes">in window</span></span></li><li><span>Karel Sedlacek -3.5 legs</span><span>47.72 (+4672) · 2.1% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-23 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>Ryan Joyce v Jermaine Wattimena</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +3.3 vs scale 55</span></td>
+ <td><b>Ryan Joyce</b><span class='sub'>Match winner · 1.91 (-110) · 52.4%</span></td>
+ <td><span class="badge low">Low</span><span class="sub">call: Ryan Joyce (52.4%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Ryan Joyce</span><span>1.91 (-110) · 52.4% <span class="band-yes">in window</span></span></li><li><span>Jermaine Wattimena</span><span>2.10 (+110) · 47.6% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Ryan Joyce -0.5 legs</span><span>1.91 (-110) · 52.4% <span class="band-yes">in window</span></span></li><li><span>Jermaine Wattimena -0.5 legs</span><span>2.10 (+110) · 47.6% <span class="band-yes">in window</span></span></li><li><span>Ryan Joyce -1.5 legs</span><span>2.51 (+151) · 39.9% <span class="band-yes">in window</span></span></li><li><span>Jermaine Wattimena -1.5 legs</span><span>2.81 (+181) · 35.6% <span class="band-yes">in window</span></span></li><li><span>Ryan Joyce -2.5 legs</span><span>3.68 (+268) · 27.2% <span class="band-yes">in window</span></span></li><li><span>Jermaine Wattimena -2.5 legs</span><span>4.22 (+322) · 23.7% <span class="band-yes">in window</span></span></li><li><span>Ryan Joyce -3.5 legs</span><span>6.39 (+539) · 15.6% <span class="band-yes">in window</span></span></li><li><span>Jermaine Wattimena -3.5 legs</span><span>7.50 (+650) · 13.3% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-23 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>Krzysztof Ratajski v Dave Chisnall</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +41.5 vs scale 55</span></td>
+ <td><b>Krzysztof Ratajski -1.5 legs</b><span class='sub'>Handicap · 1.52 (-192) · 65.7%</span></td>
+ <td><span class="badge medium">Medium</span><span class="sub">call: Krzysztof Ratajski (77.4%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Krzysztof Ratajski</span><span>1.29 (-343) · 77.4% <span class="band-no">outside window</span></span></li><li><span>Dave Chisnall</span><span>4.43 (+343) · 22.6% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Krzysztof Ratajski -0.5 legs</span><span>1.29 (-343) · 77.4% <span class="band-no">outside window</span></span></li><li><span>Dave Chisnall -0.5 legs</span><span>4.43 (+343) · 22.6% <span class="band-yes">in window</span></span></li><li><span>Krzysztof Ratajski -1.5 legs</span><span>1.52 (-192) · 65.7% <span class="band-yes">in window</span></span></li><li><span>Dave Chisnall -1.5 legs</span><span>6.64 (+564) · 15.0% <span class="band-yes">in window</span></span></li><li><span>Krzysztof Ratajski -2.5 legs</span><span>1.97 (-103) · 50.7% <span class="band-yes">in window</span></span></li><li><span>Dave Chisnall -2.5 legs</span><span>11.24 (+1024) · 8.9% <span class="band-yes">in window</span></span></li><li><span>Krzysztof Ratajski -3.5 legs</span><span>2.98 (+198) · 33.6% <span class="band-yes">in window</span></span></li><li><span>Dave Chisnall -3.5 legs</span><span>22.69 (+2169) · 4.4% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-23 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>Nathan Aspinall v Cristo Reyes</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +27.1 vs scale 55</span></td>
+ <td><b>Nathan Aspinall</b><span class='sub'>Match winner · 1.45 (-221) · 68.9%</span></td>
+ <td><span class="badge medium">Medium</span><span class="sub">call: Nathan Aspinall (68.9%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Nathan Aspinall</span><span>1.45 (-221) · 68.9% <span class="band-yes">in window</span></span></li><li><span>Cristo Reyes</span><span>3.21 (+221) · 31.1% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Nathan Aspinall -0.5 legs</span><span>1.45 (-221) · 68.9% <span class="band-yes">in window</span></span></li><li><span>Cristo Reyes -0.5 legs</span><span>3.21 (+221) · 31.1% <span class="band-yes">in window</span></span></li><li><span>Nathan Aspinall -1.5 legs</span><span>1.78 (-128) · 56.2% <span class="band-yes">in window</span></span></li><li><span>Cristo Reyes -1.5 legs</span><span>4.62 (+362) · 21.7% <span class="band-yes">in window</span></span></li><li><span>Nathan Aspinall -2.5 legs</span><span>2.42 (+142) · 41.4% <span class="band-yes">in window</span></span></li><li><span>Cristo Reyes -2.5 legs</span><span>7.48 (+648) · 13.4% <span class="band-yes">in window</span></span></li><li><span>Nathan Aspinall -3.5 legs</span><span>3.85 (+285) · 26.0% <span class="band-yes">in window</span></span></li><li><span>Cristo Reyes -3.5 legs</span><span>14.42 (+1342) · 6.9% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-23 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>Jonny Clayton v Niko Springer</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +23.6 vs scale 55</span></td>
+ <td><b>Jonny Clayton</b><span class='sub'>Match winner · 1.50 (-200) · 66.6%</span></td>
+ <td><span class="badge medium">Medium</span><span class="sub">call: Jonny Clayton (66.6%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Jonny Clayton</span><span>1.50 (-200) · 66.6% <span class="band-yes">in window</span></span></li><li><span>Niko Springer</span><span>3.00 (+200) · 33.4% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Jonny Clayton -0.5 legs</span><span>1.50 (-200) · 66.6% <span class="band-yes">in window</span></span></li><li><span>Niko Springer -0.5 legs</span><span>3.00 (+200) · 33.4% <span class="band-yes">in window</span></span></li><li><span>Jonny Clayton -1.5 legs</span><span>1.86 (-117) · 53.8% <span class="band-yes">in window</span></span></li><li><span>Niko Springer -1.5 legs</span><span>4.26 (+326) · 23.5% <span class="band-yes">in window</span></span></li><li><span>Jonny Clayton -2.5 legs</span><span>2.55 (+155) · 39.2% <span class="band-yes">in window</span></span></li><li><span>Niko Springer -2.5 legs</span><span>6.83 (+583) · 14.6% <span class="band-yes">in window</span></span></li><li><span>Jonny Clayton -3.5 legs</span><span>4.11 (+311) · 24.3% <span class="band-yes">in window</span></span></li><li><span>Niko Springer -3.5 legs</span><span>13.02 (+1202) · 7.7% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-23 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>Luke Littler v William O&#x27;Connor</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +12.5 vs scale 55</span></td>
+ <td><b>Luke Littler</b><span class='sub'>Match winner · 1.70 (-144) · 59.0%</span></td>
+ <td><span class="badge medium">Medium</span><span class="sub">call: Luke Littler (59.0%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Luke Littler</span><span>1.70 (-144) · 59.0% <span class="band-yes">in window</span></span></li><li><span>William O&#x27;Connor</span><span>2.44 (+144) · 41.0% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Luke Littler -0.5 legs</span><span>1.70 (-144) · 59.0% <span class="band-yes">in window</span></span></li><li><span>William O&#x27;Connor -0.5 legs</span><span>2.44 (+144) · 41.0% <span class="band-yes">in window</span></span></li><li><span>Luke Littler -1.5 legs</span><span>2.17 (+117) · 46.1% <span class="band-yes">in window</span></span></li><li><span>William O&#x27;Connor -1.5 legs</span><span>3.36 (+236) · 29.8% <span class="band-yes">in window</span></span></li><li><span>Luke Littler -2.5 legs</span><span>3.09 (+209) · 32.4% <span class="band-yes">in window</span></span></li><li><span>William O&#x27;Connor -2.5 legs</span><span>5.19 (+419) · 19.3% <span class="band-yes">in window</span></span></li><li><span>Luke Littler -3.5 legs</span><span>5.19 (+419) · 19.3% <span class="band-yes">in window</span></span></li><li><span>William O&#x27;Connor -3.5 legs</span><span>9.52 (+852) · 10.5% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-23 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>Wessel Nijman v Martin Schindler</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +49.3 vs scale 55</span></td>
+ <td><b>Wessel Nijman -1.5 legs</b><span class='sub'>Handicap · 1.42 (-240) · 70.6%</span></td>
+ <td><span class="badge high">High</span><span class="sub">call: Wessel Nijman (81.5%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Wessel Nijman</span><span>1.23 (-441) · 81.5% <span class="band-no">outside window</span></span></li><li><span>Martin Schindler</span><span>5.41 (+441) · 18.5% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Wessel Nijman -0.5 legs</span><span>1.23 (-441) · 81.5% <span class="band-no">outside window</span></span></li><li><span>Martin Schindler -0.5 legs</span><span>5.41 (+441) · 18.5% <span class="band-yes">in window</span></span></li><li><span>Wessel Nijman -1.5 legs</span><span>1.42 (-240) · 70.6% <span class="band-yes">in window</span></span></li><li><span>Martin Schindler -1.5 legs</span><span>8.29 (+729) · 12.1% <span class="band-yes">in window</span></span></li><li><span>Wessel Nijman -2.5 legs</span><span>1.79 (-126) · 55.8% <span class="band-yes">in window</span></span></li><li><span>Martin Schindler -2.5 legs</span><span>14.35 (+1335) · 7.0% <span class="band-yes">in window</span></span></li><li><span>Wessel Nijman -3.5 legs</span><span>2.63 (+163) · 38.1% <span class="band-yes">in window</span></span></li><li><span>Martin Schindler -3.5 legs</span><span>29.68 (+2868) · 3.4% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-23 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>Kevin Doets v Michael van Gerwen</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +5.5 vs scale 55</span></td>
+ <td><b>Kevin Doets</b><span class='sub'>Match winner · 1.85 (-117) · 54.0%</span></td>
+ <td><span class="badge low">Low</span><span class="sub">call: Kevin Doets (54.0%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Kevin Doets</span><span>1.85 (-117) · 54.0% <span class="band-yes">in window</span></span></li><li><span>Michael van Gerwen</span><span>2.17 (+117) · 46.0% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Kevin Doets -0.5 legs</span><span>1.85 (-117) · 54.0% <span class="band-yes">in window</span></span></li><li><span>Michael van Gerwen -0.5 legs</span><span>2.17 (+117) · 46.0% <span class="band-yes">in window</span></span></li><li><span>Kevin Doets -1.5 legs</span><span>2.42 (+142) · 41.4% <span class="band-yes">in window</span></span></li><li><span>Michael van Gerwen -1.5 legs</span><span>2.93 (+193) · 34.1% <span class="band-yes">in window</span></span></li><li><span>Kevin Doets -2.5 legs</span><span>3.52 (+252) · 28.4% <span class="band-yes">in window</span></span></li><li><span>Michael van Gerwen -2.5 legs</span><span>4.43 (+343) · 22.6% <span class="band-yes">in window</span></span></li><li><span>Kevin Doets -3.5 legs</span><span>6.07 (+507) · 16.5% <span class="band-yes">in window</span></span></li><li><span>Michael van Gerwen -3.5 legs</span><span>7.93 (+693) · 12.6% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-23 17:00Z<span class="sub">Round 1 (best of 11 legs)</span></td>
+ <td><b>Josh Rock v Chris Dobey</b><span class="sub">Westfalenhalle, Dortmund</span></td>
+ <td>ranking<span class='sub'>edge +15.0 vs scale 55</span></td>
+ <td><b>Josh Rock</b><span class='sub'>Match winner · 1.65 (-155) · 60.7%</span></td>
+ <td><span class="badge medium">Medium</span><span class="sub">call: Josh Rock (60.7%)</span></td>
+ <td><div class="src"><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener">Professional Darts Corporation (PDC) — 2026 Machineseeker European Championship Official Draw &amp; Schedule Confirmed (Dortmund, 22-25 Oct)</a></div></td>
+ <td><details><summary>Full market sheet (16)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Josh Rock</span><span>1.65 (-155) · 60.7% <span class="band-yes">in window</span></span></li><li><span>Chris Dobey</span><span>2.55 (+155) · 39.3% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Josh Rock -0.5 legs</span><span>1.65 (-155) · 60.7% <span class="band-yes">in window</span></span></li><li><span>Chris Dobey -0.5 legs</span><span>2.55 (+155) · 39.3% <span class="band-yes">in window</span></span></li><li><span>Josh Rock -1.5 legs</span><span>2.09 (+109) · 47.9% <span class="band-yes">in window</span></span></li><li><span>Chris Dobey -1.5 legs</span><span>3.53 (+253) · 28.3% <span class="band-yes">in window</span></span></li><li><span>Josh Rock -2.5 legs</span><span>2.95 (+195) · 33.9% <span class="band-yes">in window</span></span></li><li><span>Chris Dobey -2.5 legs</span><span>5.51 (+451) · 18.2% <span class="band-yes">in window</span></span></li><li><span>Josh Rock -3.5 legs</span><span>4.91 (+391) · 20.4% <span class="band-yes">in window</span></span></li><li><span>Chris Dobey -3.5 legs</span><span>10.20 (+920) · 9.8% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr></tbody></table></div>
+<h2>High-confidence predictions (2)</h2><div class="pred"><h3>Danny Noppert v Stephen Bunting</h3><div class="meta">PDC Machineseeker European Championship · Round 1 (best of 11 legs) · 2026-10-22 17:00Z · Danny Noppert @ 1.40</div><p>Danny Noppert is seeded fifth of 32 on the official European Tour ranking list; Stephen Bunting is seeded twenty-eighth, a 23-place gap over the season-long circuit. Their best-of-eleven first-round tie opens the Machineseeker European Championship at Dortmund&#x27;s Westfalenhalle. Noppert has been the more consistent qualifier across fifteen European Tour events, and the seeding edge is large enough to back on the match line. Back Noppert on the match-winner line at 1.40.</p></div><div class="pred"><h3>Wessel Nijman v Martin Schindler</h3><div class="meta">PDC Machineseeker European Championship · Round 1 (best of 11 legs) · 2026-10-23 17:00Z · Wessel Nijman -1.5 legs @ 1.42</div><p>Wessel Nijman arrives as the second seed after winning two European Tour titles in 2026, the best return of any player bar the world champion. Martin Schindler is seeded thirty-first, giving Nijman a 29-place cushion in the Dortmund first round. In a best-of-eleven-leg format the stronger seed usually converts that gap into a two-leg win, which is exactly what the frame ladder is priced on. The selection is Nijman -1.5 legs at 1.42.</p></div>
+<p style="margin-top:18px"><a href="../sports.html">← all sports</a> · <a href="../methodology.html">methodology</a></p>
+</main>
+<footer><div class="fin">
+  <p><b>Independent model output, not betting advice.</b> Prices are our own fair-probability quotes with no margin;
+  the 5% margin a bookmaker would need is shown beside them. Every fixture, record and ranking links to the governing
+  body that publishes it. Values that could not be confirmed on an official page are blank and listed on
+  <a href="../flagged.html">Flagged for Review</a>.</p>
+  <p>Session <code>a570c470-olbg1</code> · snapshot <code>2026-10-22T03:20Z</code> ·
+  built by <code>scripts/sa570c470_build_site.py</code> · validated by <code>scripts/sa570c470_validate.py</code></p>
+</div></footer>
+</body></html>
