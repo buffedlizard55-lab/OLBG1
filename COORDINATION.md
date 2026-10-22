@@ -2382,3 +2382,16 @@ legacy; the Arena integration's Pages-settings update returned API403 (restricte
 not an expired GitHub login). Repository content/PR writes succeed. Do not claim an Actions
 artifact deployment until GitHub confirms it; the validated static root remains compatible
 with the existing branch-based Pages source.
+
+### 46.4 PR #84 merged — deployed state still checked separately
+
+**PR #84** https://github.com/buffedlizard55-lab/OLBG1/pull/84 **MERGED** at
+**2026-10-22T08:08:30Z**, merge commit `6e8570c6605e711376ab48045beba88dfcac22e6`.
+Normal `gh pr merge 84 --merge` succeeded; no admin bypass, auto-merge or review wait.
+The GitHub-hosted validation job was queued, not failed, at merge; all 38 local tests and
+canonical/browser gates passed beforehand. Main workflow run **39745549884** then acquired
+a runner and began the build. Its deployment result is not assumed from a successful merge.
+
+Follow-up hardening: only superseded PR runs are cancelled. Later main documentation
+pushes must not interrupt an already-started production deployment. All work remains on
+`arena/6ad5a3a8-olbg1`; this follow-up will use the same branch and a new PR as required.

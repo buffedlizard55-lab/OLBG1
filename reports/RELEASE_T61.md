@@ -158,3 +158,14 @@ than the moving latest label; no local gate failed. The existing `main:/` Pages 
 is branch-based. Direct Pages-settings changes return API403 for the Arena integration,
 although repository and PR writes work. The validated static root supports that legacy mode;
 custom artifact deployment success is not presumed from the presence of a workflow file.
+
+### Merge receipt
+
+- Integration PR **#84**: <https://github.com/buffedlizard55-lab/OLBG1/pull/84>.
+- **MERGED 2026-10-22T08:08:30Z**, commit `6e8570c6605e711376ab48045beba88dfcac22e6`.
+- Normal merge, no admin check bypass. Hosted validation was queued, not failed; the local
+  38-test, structural/model/link and real-browser suites passed before merge.
+- Main workflow **39745549884** has acquired a hosted runner. Build/deploy success and
+  actual live content are checked separately below; they are not implied by the merge.
+- Subsequent main runs retain active production deployments rather than cancelling them
+  on documentation-only pushes. Superseded PR checks can still be cancelled.
