@@ -1956,3 +1956,51 @@ priced on the root desk (John Higgins −0.5 frames at `data/predictions.json:35
 
 ---
 
+
+## 41. Session cccb414e-olbg1 — T56 evidence-safety release audit
+
+Claim committed/pushed before work: `ba75224`. Fixed session branch is used per §0.2.
+T55 integration is done; no active companion dataset scopes modified. Other open PRs
+#40 and #63 were not merged or modified. This integration only adds the release
+review and a shared-shell disclosure; no prior fixture facts or models overwritten.
+
+### Findings and actual verification limits
+
+- Audited all **134 primary fixture records** locally, with source links copied for
+  manual review. **Zero current sporting facts or picks freshly certified**.
+- Direct HTTPS probes to https://www.olbg.com/ and
+  https://api-web.nhle.com/v1/schedule/2026-10-22 failed with curl exit 35.
+  Official sports hosts are outside the sandbox outbound allowlist. No claim of
+  reading official pages, exhaustive live coverage, or confirmed match results is made.
+- At the explicit audit cutoff **2026-10-22T07:30:00Z**, **29 stored starts have
+  passed**. This is timestamp arithmetic on prior claims, not confirmation of results.
+- All **29 legacy High picks** have stored probability at or below 70%. The old
+  model uses a 60% conviction floor. These labels are not a calibrated guarantee;
+  the new review approves no picks and does not re-label them as newly verified.
+- Buffalo legacy prose says a fourteen-goal swing while stored -7 / -19 inputs
+  imply 12. Flagged without inventing replacements. Official review links:
+  https://api-web.nhle.com/v1/standings/2026-10-20 and
+  https://www.nhl.com/gamecenter/2026020152 . Neither was re-read this session.
+- Every new review row has official source links; all fresh verified and approved
+  values are null/blank. Archived labels are expressly identified as unrecertified
+  repository claims. Prior data are retained for traceability, not endorsed.
+- Full multi-sport live retrieval, field-level official verification, empirical
+  model validation, and evidence-grounded new predictions remain **unresolved**.
+  This task does not claim completion of those broader project goals.
+
+### Outputs and gates
+
+- `scripts/release_audit.py`: deterministic offline audit with explicit cutoff,
+  input SHA-256 hashes, strict odds syntax/bounds, stale-start and High checks.
+- `reports/RELEASE_AUDIT.json`: 134-row review register; 0 approved picks.
+- `release-review.html`: searchable, responsive sport-category review tables;
+  linked prominently on every primary/mirror page via shared shell disclosure.
+- Five unittest cases, including full-register coverage, blank approved fields,
+  input hash integrity, deterministic rendering, invalid odds and timestamps.
+- `scripts/validate.py`: 0 errors, 6 pre-existing internal-policy citation warnings;
+  320 published HTML pages checked. Local link checks do not prove external URLs.
+- No official-response body was captured; structural checks must not be described
+  as official factual verification. The release findings remain needs review and
+  do not block publication, as requested.
+
+Publication: PR and Pages results will be recorded after GitHub confirms them.
