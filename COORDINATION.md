@@ -4242,3 +4242,17 @@ live Pages read-back. Nothing is marked verified without a fetched official page
 
 **2026-10-22T21:40Z — session `a0b04058-olbg1` (TA0B04) third merge conflict resolved:** `origin/main` advanced to `05506e3` merging `424375b4-olbg1` (T424375B4) with its own COORDINATION rows and sections while PR #155 (receipts) was open. Resolution: preserved 100% of upstream rows `T546F`, `T2988`, `T2AEE`, `T424375B4` and sections §60, §62, §61, §64 verbatim, kept `TA0B04` done row §63 and its receipts §63. No other session's work discarded.
 
+
+---
+
+## 65. Session `a0b04058-olbg1` — TA0B04 final publication receipts (post-merge fix c571463)
+
+**2026-10-22T21:45Z — final receipts after PR #155 merge and conflict-marker cleanup.**
+
+* **PR #155** — https://github.com/buffedlizard55-lab/OLBG1/pull/155 — merged as `165b8c2c0430ac4969d94a5631613b991e1ec589` at 2026-10-22T21:38Z UTC.
+* **Post-merge workflow run 39858922408** on `main` — **completed / success** at ~21:40Z UTC, including Evidence, model, site and browser gates pass and Publish canonical GitHub Pages success; `pages-build-deployment` run **39858921697** success 33s.
+* **Pages builds API** reports commit `165b8c2` **built** at 2026-10-22T21:38:42Z UTC, and after conflict-marker cleanup commit `c571463` built at 2026-10-22T21:45Z UTC via run 39859201639 (success).
+* **Live byte read-back at ~21:45Z UTC** (cache-busted) of `https://buffedlizard55-lab.github.io/OLBG1/a0b04058/index.html` still serves HTTP 200 with KPI tiles **133 / 132 / 208 / 459 / 44 / 51 / 37 / 85 / 1 / 15 / 38 / 27** and full 17-sport coverage table, confirming final artifact after all merges.
+
+* **Final integration note:** Main branch now at `c571463` contains all peer desks (`546fc70f`, `2988bd19`, `2aeea682`, `424375b4`) plus `a0b04058` desk, with `COORDINATION.md` cleaned of leftover conflict markers (`=======`, `>>>>>>> origin/main`) while preserving all upstream rows and sections verbatim. No shared canonical root pages, pipeline, workflow or other session's desk edited beyond append-only log. This is the final state for this session.
+
