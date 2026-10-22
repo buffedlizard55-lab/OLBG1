@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-22T09:58:42Z",
+  "generated_at": "2026-10-22T10:25:47Z",
   "window": {
     "source_date_from": "2026-10-22",
     "source_date_through": "2026-10-28",
     "days": 7,
-    "utc_from": "2026-10-22T09:58:42Z",
-    "utc_until_exclusive": "2026-10-29T09:58:42Z",
+    "utc_from": "2026-10-22T10:25:47Z",
+    "utc_until_exclusive": "2026-10-29T10:25:47Z",
     "rule": "Exact UTC starts use the rolling UTC interval; undated/date-only rows use the declared source-calendar window with explicit flags."
   },
   "complete": false,
@@ -27,14 +27,14 @@
     "categories": 17,
     "categories_with_listings": 15,
     "fully_covered_categories": 0,
-    "sources": 29,
-    "priced_matches": 25,
-    "originated_markets": 50,
-    "originated_outcomes": 100,
+    "sources": 31,
+    "priced_matches": 24,
+    "originated_markets": 49,
+    "originated_outcomes": 98,
     "high": 0,
     "medium": 0,
-    "low": 23,
-    "unpriced": 83
+    "low": 22,
+    "unpriced": 84
   },
   "coverage": [
     {
@@ -67,7 +67,7 @@
       "scope_complete": false,
       "listing_count": 11,
       "captured_count": 11,
-      "priced_count": 8,
+      "priced_count": 7,
       "source_ids": [
         "euroleague-round7",
         "nba-games-20261022"
@@ -5271,7 +5271,8 @@
       "verified_before": "2026-10-22T07:30:30Z",
       "expires_at": "2026-10-22T13:17:40Z",
       "notes": [
-        "UTC is a deterministic conversion of explicitly published CEST (UTC+02:00)."
+        "UTC is a deterministic conversion of explicitly published CEST (UTC+02:00).",
+        "Valencia input quarantined: fresh official preview says 5-1, standings say 4-2 over six games. Both observations retained; no inferred correction or refreshed fixture expiry."
       ],
       "kind": "match",
       "state": "upcoming",
@@ -8206,22 +8207,6 @@
       "season": "2026-27",
       "wins": 1,
       "losses": 5,
-      "games_played": 6,
-      "games_played_method": "wins + losses",
-      "as_of": "2026-10-22"
-    },
-    {
-      "id": "euroleague-round7-record-69-5-b",
-      "source_id": "euroleague-round7",
-      "observation_id": "record-69-5-b",
-      "observed_after": "2026-10-22T07:17:40Z",
-      "observed_before": "2026-10-22T07:30:30Z",
-      "team": "Valencia Basket",
-      "team_id": "Valencia Basket",
-      "competition": "EuroLeague",
-      "season": "2026-27",
-      "wins": 5,
-      "losses": 1,
       "games_played": 6,
       "games_played_method": "wins + losses",
       "as_of": "2026-10-22"
@@ -14974,61 +14959,33 @@
     {
       "fixture_id": "euroleague-round7-69",
       "model_version": "evidence-v1.0",
-      "selection": "Valencia Basket",
-      "confidence": "low",
-      "probability": 0.8448275862068966,
-      "fair_decimal": 1.183673469387755,
-      "american_display": -544,
+      "selection": null,
+      "confidence": null,
+      "probability": null,
+      "fair_decimal": null,
+      "american_display": null,
       "market_quote": null,
-      "markets": [
-        {
-          "id": "euroleague-round7-69-winner",
-          "market": "winner",
-          "settlement": "Full match, including overtime",
-          "status": "experimental",
-          "confidence": "low",
-          "model_version": "evidence-v1.0",
-          "sources": [
-            "euroleague-round7"
-          ],
-          "market_quote": null,
-          "quote_status": "unverified — no bookmaker price captured",
-          "outcomes": [
-            {
-              "selection": "Paris Basketball",
-              "probability": 0.15517241379310348,
-              "fair_decimal": 6.444444444444443,
-              "decimal_display": "6.4444",
-              "american_display": 544,
-              "fair_price_in_target_band": true
-            },
-            {
-              "selection": "Valencia Basket",
-              "probability": 0.8448275862068966,
-              "fair_decimal": 1.183673469387755,
-              "decimal_display": "1.1837",
-              "american_display": -544,
-              "fair_price_in_target_band": false
-            }
-          ]
-        }
-      ],
-      "input_ids": [
-        "euroleague-round7-record-69-1-a",
-        "euroleague-round7-record-69-5-b"
-      ],
+      "markets": [],
+      "input_ids": [],
       "notes": [
-        "Beta(2,2) shrinkage of season W/L, followed by log5. No home advantage, player adjustment or market input.",
-        "No validated out-of-sample calibration for evidence-v1.0",
-        "Originated fair price outside −250…+10000",
-        "Available bookmaker price and settlement unverified",
-        "Current player availability, form and recent match history not all verified"
+        "Missing, inconsistent, stale, or fewer-than-five-game record on at least one side; no neutral-price fallback"
       ],
       "withheld": [
         {
+          "market": "winner",
+          "status": "unverified / not priced",
+          "reason": "Missing, inconsistent, stale, or fewer-than-five-game record on at least one side; no neutral-price fallback",
+          "selection": null,
+          "probability": null,
+          "line": null,
+          "source_ids": [
+            "euroleague-round7"
+          ]
+        },
+        {
           "market": "handicap",
           "status": "unverified / not priced",
-          "reason": "Verified score distributions, units and format, handicap value, push and overtime rules.",
+          "reason": "Missing, inconsistent, stale, or fewer-than-five-game record on at least one side; no neutral-price fallback",
           "selection": null,
           "probability": null,
           "line": null,
@@ -15039,7 +14996,7 @@
         {
           "market": "total",
           "status": "unverified / not priced",
-          "reason": "Verified scoring data for both sides, format and period, total line, overtime and push rules.",
+          "reason": "Missing, inconsistent, stale, or fewer-than-five-game record on at least one side; no neutral-price fallback",
           "selection": null,
           "probability": null,
           "line": null,
@@ -15050,7 +15007,7 @@
         {
           "market": "team-total",
           "status": "unverified / not priced",
-          "reason": "Team-level scoring histories and opposition-adjusted distribution; settlement rules.",
+          "reason": "Missing, inconsistent, stale, or fewer-than-five-game record on at least one side; no neutral-price fallback",
           "selection": null,
           "probability": null,
           "line": null,
@@ -15061,7 +15018,7 @@
         {
           "market": "period",
           "status": "unverified / not priced",
-          "reason": "Period-by-period official results, format and period-specific model.",
+          "reason": "Missing, inconsistent, stale, or fewer-than-five-game record on at least one side; no neutral-price fallback",
           "selection": null,
           "probability": null,
           "line": null,
@@ -15072,7 +15029,7 @@
         {
           "market": "player-prop",
           "status": "unverified / not priced",
-          "reason": "Confirmed player identity/availability, official player game logs and prop definition.",
+          "reason": "Missing, inconsistent, stale, or fewer-than-five-game record on at least one side; no neutral-price fallback",
           "selection": null,
           "probability": null,
           "line": null,
@@ -15080,9 +15037,7 @@
             "euroleague-round7"
           ]
         }
-      ],
-      "decimal_display": "1.1837",
-      "fair_price_in_target_band": false
+      ]
     },
     {
       "fixture_id": "f1-austin-practice1",
@@ -19133,6 +19088,8 @@
     "atp-lyon-op",
     "ehf-cl-schedule",
     "euroleague-round7",
+    "euroleague-valencia-preview-check",
+    "euroleague-valencia-standings-check",
     "f1-austin",
     "gbgb-open",
     "gbgb-racing",
@@ -19484,5 +19441,5 @@
       "error": "robots policy unavailable; request withheld"
     }
   ],
-  "input_sha256": "4b791685df8a2b5ffa94134753096857dacc4cb8126e30695bf87b0de3d9140b"
+  "input_sha256": "b457c8e1d059191106ba2e8e549ba0eb644d1a5507e7203f3c0d15480f6f9a89"
 }
