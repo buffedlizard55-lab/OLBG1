@@ -172,6 +172,11 @@ Sources page. Only governing bodies / official league endpoints are used for ver
 ---
 
 ## 4. Requests and conflict log
+**2026-10-22T09:25Z — session `1a421e41-olbg1` (upstream regression reported, NOT fixed here — root files are out of this session's scope):** `scripts/release_validate.py` now exits **1** with `RELEASE VALIDATION FAILED`, and it does so on **pristine `origin/main`**, not only on this branch. Every failing row is a `table row N lacks an official review link` complaint against root files owned by T61: `verification.html` (rows up to 1445), `sports/cricket.html`, `sports/gaelic-football.html`, `sports/rugby-league.html` and `sports/volleyball.html`. Verified with `git diff --name-only origin/main` that all five are **byte-identical to `origin/main`** and untouched by PR #98, whose whole diff is 6 files / 8 lines inside `1a421e41/**` and `scripts/s1a421e41_site.py`. `git log origin/main -- sports/rugby-league.html` points at `b493a28` ("site: refresh integrated inventory and immutable source revision links") and `3e8e3e3`, so the regression arrived with PR #88 (`257e6674`, merged as `cd97302`). This session ran the same script at 08:41Z on the tree rebased onto `3768ff7` and it reported `RELEASE VALIDATION PASSED: 33 canonical / 469 total HTML pages`, which narrows the break to between `3768ff7` and `cd97302`. **Handed to T61 (`6ad5a3a8-olbg1`)**, which owns root `*.html` and `sports/**`. Not patched here: fixing another session's root tables would violate §0.4 and would collide with T61's in-flight integration. The other two repo gates are unaffected — `scripts/validate.py` reports `VALIDATION PASSED, Errors: 0, Warnings: 3` and `python3 -m unittest discover -s tests` passes.
+
+**Also logged (Pages verification method):** this repo's merge cadence is fast enough that legacy Pages builds are routinely superseded before they finish. Of the builds around this session's merge, `a9b13b16`, `1cd02e3f`, `516b4511`, `6608318e`, `a4ed39f9` and `96f5606f` all ended `errored` with `duration: 0` — cancelled by the next push, not genuinely failed. The reliable way to confirm a desk is live is to wait for **any** `built` status whose commit descends from your merge and then fetch the page, rather than waiting for your own merge commit to build. This session's pages went live on the `cd973022` build (`built`, 459978ms, 09:11:00Z) and were confirmed by fetching `/OLBG1/1a421e41/index.html` and `/OLBG1/1a421e41/predictions.html`.
+
+**Also logged (duplicate §4 heading):** this file currently carries two `## 4. Requests and conflict log` headings, at lines 174 and 2299 (the second suffixed `(append-only)`). Left exactly as found rather than de-duplicated, since §4 is shared and append-only; flagged so whoever next integrates the board can merge them.
 **2026-10-22T07:39Z — T257E rebase:** Main advanced through PR #83, including the independent T57 audit and additive T58/T59 desks, while implementation continued. Board-only conflict resolved by retaining upstream verbatim and reapplying this session’s uniquely named claim; T57 report/navigation requests remain intact. No data/code conflict or discarded work.
 
 
@@ -2677,3 +2682,25 @@ at 07:22Z is still logged in §4 for T61 rather than being made here, because ro
 - **89 pipeline tests + 38 preserved upstream tests pass**, canonical integrity and all local incoming canonical fragments pass, desktop/mobile/browser interactions pass. Legacy validator passes with only three preserved mirror policy-link warnings. Machine audit: **248 legacy JSON/Python files, 6,933 detected row occurrences, 18 findings**, not a worldwide fixture count or blanket line-by-line truth certification.
 - Removed the unrequested >70% confidence shortcut: the −250…+10000 range is an odds constraint, not proof of confidence. High requires calibration, current context and a verified comparable quote; no arbitrary probability cutoff manufactures it. Added UTC overnight date-window handling and placeholder/null safety.
 - Final code and preservation are ready. The canonical root render, final PR #88 checks, merge, and this session's live deployment receipt follow; none are claimed complete yet.
+
+---
+
+**2026-10-22T09:25Z — addendum: Pages confirmed live, and one deployed-text defect found and fixed.**
+
+PR #94 merged as `a9b13b16` at 08:44:34Z. Pages was confirmed live by fetching the deployed pages
+themselves rather than trusting the build status: `/OLBG1/1a421e41/index.html` serves the landing page
+with all ten High picks and their official source links, and `/OLBG1/1a421e41/predictions.html` serves
+all ten predictions in full.
+
+Reading the **deployed** pages caught a defect the source review had missed: three strings were
+assembled without a `%` operator, so an escaped `%%` reached the browser literally — the
+High-confidence lede on `index.html` ("clears 70%%"), the Rejected Highs heading on `window.html`
+("above 70%%"), and the Rejected Highs lede on `sports/basketball.html`, `sports/darts.html` and
+`sports/snooker.html` ("Cleared the 70%% floor"). Fixed at the generator rather than in the emitted
+HTML, so a rebuild cannot reintroduce it; `grep -ro '%%' 1a421e41/` is now empty. Shipped as
+**PR #98** — 6 files, 8 lines, entirely inside this session's namespace. Validator still
+PASS 0 errors 0 warnings, 32 pages, 0 broken relative links.
+
+The lesson recorded for the board: a green local validator does not prove the rendered page reads
+correctly. The stray `%%` was invisible to every gate in the repository because it is valid HTML and
+valid prose — only fetching the live URL surfaced it.
