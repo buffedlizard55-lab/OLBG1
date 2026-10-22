@@ -2,7 +2,7 @@
 
 ## Publication status
 
-PR [#88](https://github.com/buffedlizard55-lab/OLBG1/pull/88) is the integration vehicle. **Merge and this session's final deployment are not yet confirmed at this checkpoint.** Prior PR #84's successful deployment is not claimed as ours.
+PR [#88](https://github.com/buffedlizard55-lab/OLBG1/pull/88) is the integration vehicle. **PR #88 is merged and its production deployment is independently confirmed.** A small compatibility-route/publication-gate follow-up is being prepared; its separate publication is not yet claimed.
 
 ## Evidence and output
 
@@ -35,3 +35,15 @@ The Pages API reports legacy `main:/`. An attempted interactive PUT to select wo
 Importantly, the existing standard artifact route **does work**: upstream Actions run [39745549884](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39745549884) completed successfully, including Pages deployment, and its 97-entry T61 landing page was fetched from the live URL. The separate legacy branch-build run was cancelled and its legacy status endpoint reported errored; that is not the artifact deployment result. The canonical workflow uses the proven pinned configure-pages/deploy-pages path with the repository's authorized job token. No Pages-setting success or current-session publication is assumed from this observation.
 
 Final merge SHA, current-session workflow receipt and live-content checks will be appended below after they actually happen.
+
+## Confirmed primary publication
+
+- PR **#88** merged at **2026-10-22T09:03:19Z**, SHA `cd9730226a2710e982130b8c49fd27806c8af951`.
+- PR checks [39750741858](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39750741858): passed.
+- Production [39752445305](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39752445305): **success**, including Pages job `119748884078`; watcher exit 0.
+- Live [manifest](https://buffedlizard55-lab.github.io/OLBG1/data/current/site-manifest.json?release=cd973022): revision exactly `cd973022`, generated **09:32:21Z**. Root, Flagged and Baseball content also fetched successfully before 2026-10-22T09:54:31Z.
+- Deployed: **147 captured / 145 current-window listings**, **62 books / 87 markets / 174 fair outcome prices**, **55 Low**, **0 Medium/High**, **34 official-source checks**. Fresh official collection extended the NHL slate beyond the original manual import. These remain incomplete research estimates, not available betting offers or demonstrated edge.
+
+## Follow-up gates
+
+Compatibility routes point to current views and their clearly marked archives; prior root pages cannot silently compete. The workflow validates the committed canonical tree before rebuilding, including its snapshot markers. UTC sort ordering and source-date labels are explicit. Only accepted parsed JSON response proof is publicly exported; unparsed probe HTML is not published as evidence. **94 pipeline + 38 preserved tests pass locally**, with the expanded browser suite. This follow-up's own merge/publication receipt will be added after it occurs.

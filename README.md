@@ -21,7 +21,7 @@ Excluded: soccer/football, American football, boxing, UFC/MMA, hurling, horse ra
 ## Evidence and pricing contract
 
 - OLBG public routes/cards are **discovery**, not official fixture verification. Tip shares are votes, not model probabilities. Robots restrictions, including the Python-urllib disallow, are respected; no private/hidden API, proxy or identity rotation is used.
-- Selected retrieval-tool excerpts have an honest observation window, not invented per-request HTTP metadata. Automated responses retain bytes, hashes and JSON locators. Hashes prove integrity, not truth.
+- Selected retrieval-tool excerpts have an honest observation window, not invented per-request HTTP metadata. Automated parsed JSON responses retain bytes, hashes and JSON locators; unparsed HTML probe bodies are not published as evidence. Hashes prove integrity, not truth.
 - Every accepted fixture field references an official-source observation. Missing timezones are not guessed; a published schedule is not proof of current match status.
 - Fixture evidence expires **six hours from its original lower observation bound**; statistics expire after 24 hours. Builds and failed refreshes never rejuvenate them. Elapsed starts cannot produce pre-match selections. The browser independently suppresses expired values.
 - Exact UTC starts use a rolling seven-day interval. Date-only entries retain the source calendar and explicit time/status gaps. Previous league dates are checked for still-future overnight UTC starts.
@@ -65,7 +65,7 @@ python3 -m pipeline.build --out .
 
 ## Automation and actual hosting mode
 
-`.github/workflows/current-pages.yml` is the single canonical PR/test/refresh/publication workflow. Pinned actions, read-only checkout, 89 pipeline tests plus 38 preserved tests, data/link/fragment gates and real browser tests precede artifact creation. Public structured collectors cover NHL/MLB/NBA schedules; other categories remain explicitly unparsed/partial. A failed request is not a zero-fixture finding.
+`.github/workflows/current-pages.yml` is the single canonical PR/test/refresh/publication workflow. Pinned actions, read-only checkout, 94 pipeline tests plus 38 preserved tests, data/link/fragment gates and real browser tests precede artifact creation. Public structured collectors cover NHL/MLB/NBA schedules; other categories remain explicitly unparsed/partial. A failed request is not a zero-fixture finding.
 
 **Pages is already enabled and its configuration API reports `main:/` / legacy mode.** The interactive integration cannot change that setting (API403), but the standard GitHub Actions artifact deployment is proven to work with the repository’s authorized job token: upstream run `39745549884` succeeded and the live T61 page was fetched. The canonical workflow uses that same pinned configure/deploy path; it does not request new credentials or pretend the settings change succeeded. The separate legacy branch-build status can say cancelled/errored while an artifact deployment succeeds. Verify the actual deployment job and live content, not that legacy status alone.
 
