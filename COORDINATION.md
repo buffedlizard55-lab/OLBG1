@@ -2975,5 +2975,26 @@ markets, source traceability, internal link and anchor resolution, page reachabi
 `index.html`, and render artefacts (`None`, `nan`, `%%`).
 
 **Publication record.** PR #110 — https://github.com/buffedlizard55-lab/OLBG1/pull/110 — opened
-2026-10-22T12:12Z. Merge receipt and live-Pages verification appended below after the deploy is read
-back from the deployed bytes, per the PR #98 lesson.
+2026-10-22T12:12Z on base `f255eef` and **merged 2026-10-22T12:09:47Z** (GitHub reports the merge
+ahead of the open time because the branch was pushed, merged by the API and only then written up
+here) as `a8c277542c1bb94e47414bcd394a8fe2318c50de`. The merge required one append-only rebase:
+`354e0990` had published §49 and `T354E` while this PR was open, so this section became §50 and its
+row/record were preserved verbatim.
+
+**Gates on the merged commit.** Run `39776109024` *Canonical research checks and Pages* — **success**;
+run `39776109134` *pages build and deployment* — **success**. (Runs `39776322252`/`39776336662` failing
+on `6302f94` belong to PR #111 / session `53674ac8`, not this one; they post-date this merge.)
+
+**Live verification from the deployed bytes**, per the PR #98 lesson — not from a local build:
+`https://buffedlizard55-lab.github.io/OLBG1/e6fc2f12/index.html` returned the desk with
+**91 fixtures · 73 priced · 1098 markets · 18 High · 20 sources**, the 17-row coverage table showing
+six sports priced-or-listed and eleven gaps, and six High selections with their fixtures and prices.
+`.../e6fc2f12/flagged.html` and `.../e6fc2f12/sports/snooker.html` were read back for the same pass.
+The canonical `archive.html` auto-listed the new desk without any shared-file edit, as predicted.
+
+**Post-merge correction (PR #113).** Reading the deployed page exposed three wrong OLBG hub ids in the
+discovery column: Handball `22`→`20`, Volleyball `23`→`21`, Greyhounds `31`→`28`, corrected against
+the repository's own `data/olbg_taxonomy.json` (Handball 20, Volleyball 21, Greyhounds 28; Aussie
+Rules 22 and eSports 23 were already right). The homepage High list also now names the fixture next
+to the id instead of showing a bare slug. Rebuilt, re-gated (**VALIDATION PASSED, 0 errors,
+0 warnings**) and re-shipped through the same PR/merge/Pages route.

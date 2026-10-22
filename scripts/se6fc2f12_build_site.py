@@ -58,12 +58,12 @@ OLBG_URL = {
     "ice-hockey": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
     "motor-racing": "https://www.olbg.com/betting-tips/Motor_Racing/14",
     "darts": "https://www.olbg.com/betting-tips/Darts/15",
-    "handball": "https://www.olbg.com/betting-tips/Handball/22",
-    "volleyball": "https://www.olbg.com/betting-tips/Volleyball/23",
+    "handball": "https://www.olbg.com/betting-tips/Handball/20",
+    "volleyball": "https://www.olbg.com/betting-tips/Volleyball/21",
     "aussie-rules": "https://www.olbg.com/betting-tips/Aussie_Rules/22",
     "esports": "https://www.olbg.com/betting-tips/eSports/23",
     "gaelic-football": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
-    "greyhounds": "https://www.olbg.com/betting-tips/Greyhounds/31",
+    "greyhounds": "https://www.olbg.com/betting-tips/Greyhounds/28",
 }
 
 
@@ -194,11 +194,13 @@ class Site:
                 f'<td>{e(status)}</td>'
                 f'<td><a href="{e(OLBG_URL[slug])}" rel="noopener">OLBG hub</a></td></tr>'
             )
+        by_id = {x["id"]: x for x in self.fixtures}
         picks = "".join(
             f'<li><a href="high-confidence.html#{e(r["fixture_id"])}">'
-            f'<strong>{e(r["selection"])}</strong> <span class="muted">{e(r["market"])}</span>'
-            f'</a><span class="price">{money(r["american"])}</span>'
-            f'<span class="muted small">{e(r["fixture_id"])}</span></li>'
+            f'<strong>{e(r["selection"])}</strong> <span class="muted">{e(r["market"])}</span></a>'
+            f'<span class="price">{money(r["american"])}</span>'
+            f'<span class="muted small">{e(by_id[r["fixture_id"]]["home"])} v '
+            f'{e(by_id[r["fixture_id"]]["away"])} · {e(r["fixture_id"])}</span></li>'
             for r in high[:6]
         )
         body = f"""
