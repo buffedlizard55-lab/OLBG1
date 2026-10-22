@@ -1,0 +1,180 @@
+{
+ "session": "f71557b5-olbg1",
+ "audited": "2026-10-22",
+ "counts": {
+  "html_pages": 279,
+  "archived_pages": 0,
+  "tracked_pyc": 0,
+  "desk_row_counts": {
+   "root": 134,
+   "v3": 0,
+   "984d417f": 145,
+   "7a5b5360": 32,
+   "6a081cf6": 9,
+   "f71557b5": 72
+  },
+  "findings": 14
+ },
+ "findings": [
+  {
+   "code": "AUD-F7-01",
+   "severity": "info",
+   "kind": "count",
+   "title": "Published page count in README is stale",
+   "text": "README.md line 56 states '0 broken relative links across all 160 published HTML pages'. A filesystem count on this commit finds 279 HTML pages outside archive/ (plus 0 archived), and scripts/validate.py reports 245. The README figure predates at least four merged desks and should be regenerated rather than edited by hand.",
+   "files": [
+    "README.md"
+   ],
+   "source": ""
+  },
+  {
+   "code": "AUD-F7-01a",
+   "severity": "info",
+   "kind": "line",
+   "title": "README.md stale page count - exact line",
+   "text": "README.md:56 -> - **No unverified value is presented as fact** — withheld values are blank and flagged — and **0 broken relative links across all 160 published HTML pages** spanning all ",
+   "files": [
+    "README.md"
+   ],
+   "source": ""
+  },
+  {
+   "code": "AUD-F7-02",
+   "severity": "info",
+   "kind": "count",
+   "title": "No compiled artefacts are tracked",
+   "text": "`git ls-files '*.pyc'` returns 0 entries, so the previously reported tracked .pyc artefacts are gone. All tracked JSON in data/ parses.",
+   "files": [],
+   "source": ""
+  },
+  {
+   "code": "AUD-F7-03",
+   "severity": "info",
+   "kind": "line",
+   "title": "COORDINATION.md header timestamp lags the board body",
+   "text": "The header reads 'Last updated: 2026-10-22T03:05:00Z' while the newest timestamp anywhere in the body is 2026-10-25T21:00. Cosmetic, but it makes the board look older than it is.",
+   "files": [
+    "COORDINATION.md"
+   ],
+   "source": ""
+  },
+  {
+   "code": "AUD-F7-04",
+   "severity": "high",
+   "kind": "repo",
+   "title": "Root desk carries a decided match: John Higgins frame handicap",
+   "text": "The root desk still carries a High-confidence John Higgins -0.5 frame handicap. The World Snooker Tour's own Day Four report, read on 22 October, records Jak Jones beating John Higgins 4-2 on 21 October to reach the last 16, so this market is already decided. Lines: 351, 1230.",
+   "files": [
+    "data/predictions.json",
+    "data/fixtures.json"
+   ],
+   "source": "https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon"
+  },
+  {
+   "code": "AUD-F7-04",
+   "severity": "high",
+   "kind": "repo",
+   "title": "Root desk carries a decided match: Luciano Darderi selection",
+   "text": "The root desk prices Luciano Darderi in Almaty. The ATP's own Live Race To Turin page records 'Darderi - Lost to J. Duckworth in the R16' at Almaty, so the match is over. Lines: 1209, 6883.",
+   "files": [
+    "data/predictions.json",
+    "data/fixtures.json"
+   ],
+   "source": "https://www.atptour.com/en/rankings/singles-race-to-turin"
+  },
+  {
+   "code": "AUD-F7-05",
+   "severity": "info",
+   "kind": "data",
+   "title": "Root desk prediction prices vs the brief's window (0 checked)",
+   "text": "All 0 priced root predictions sit inside -250..+10000 after the T42 pass.",
+   "files": [
+    "data/predictions.json"
+   ],
+   "source": ""
+  },
+  {
+   "code": "AUD-F7-06",
+   "severity": "high",
+   "kind": "repo",
+   "title": "Two desks grade England -9.5 High while the only verified England result is an 18-point defeat",
+   "text": "The v3 desk and the 6a081cf6 strict-band desk both publish 'England -9.5' as a High-confidence selection for the RLWC2026 Round 2 match against France. The IRL's own match record for Round 1, read this session, states England lost 12-30 to Tonga at HBF Park on 17 October - conceding two tries in three minutes to turn a 10-6 lead into 22-6 against them. No official world-ranking pair or France Round 1 result was published, so repository rule 4 refuses the strength edge: this desk caps that fixture at Low and publishes no price.",
+   "files": [
+    "data/v3/fixtures.json",
+    "data/6a081cf6_high_band.json"
+   ],
+   "source": "https://www.intrl.sport/match-details/2566"
+  },
+  {
+   "code": "AUD-F7-06a",
+   "severity": "high",
+   "kind": "line",
+   "title": "6a081cf6 strict-band desk - exact line",
+   "text": "data/6a081cf6_high_band.json:236 -> \"selection\": \"England -9.5\",",
+   "files": [
+    "data/6a081cf6_high_band.json"
+   ],
+   "source": "https://www.intrl.sport/match-details/2566"
+  },
+  {
+   "code": "AUD-F7-07",
+   "severity": "medium",
+   "kind": "repo",
+   "title": "Tonga -2.5 graded High on one-sided evidence",
+   "text": "'Tonga -2.5' is a High selection in the v3 and 6a081cf6 desks. Tonga's 30-12 Round 1 win over England is verified on the IRL match record, but Lebanon's Round 1 result against Papua New Guinea was not published on any official page read this session, so only one side of that tie carries a sourced form input. Rule 4 caps it at Low here. A related flag from session 6a081cf6 (F-6A-02, NRL late mail ruling Isaiya Katoa out) is also not reflected in the IRL squad list read this session, which names Lehi Hopoate, Sione Katoa, Tolu Koula and Saia Katoa among others.",
+   "files": [
+    "data/v3/fixtures.json",
+    "data/6a081cf6_high_band.json"
+   ],
+   "source": "https://www.intrl.sport/match-details/2569"
+  },
+  {
+   "code": "AUD-F7-08",
+   "severity": "medium",
+   "kind": "count",
+   "title": "Six datasets describe overlapping windows with different row counts",
+   "text": "Fixture counts per desk: root=134, v3=0, 984d417f=145, 7a5b5360=32, 6a081cf6=9, f71557b5=72. They are not reconcilable by row count alone because each desk harvested at a different time and applied a different expiry rule. There is still no canonical dataset; this desk adds a seventh namespace and edits none of the others. Whoever integrates should pick one canonical board and archive the rest, which is what branch arena/26be136b-olbg1 has started doing with archive/root-20261021/.",
+   "files": [
+    "data/fixtures.json",
+    "data/v3/fixtures.json",
+    "data/984d417f/fixtures.json",
+    "data/7a5b5360/fixtures.json"
+   ],
+   "source": ""
+  },
+  {
+   "code": "AUD-F7-09",
+   "severity": "info",
+   "kind": "process",
+   "title": "Three sessions were live on this repository during this pass",
+   "text": "While this audit ran, arena/a570c470-olbg1 (a2bc33a) had claimed T46-T49 for an identical 'live 22 Oct harvest + audit + in-band desk' scope, arena/9dfd0b48-olbg1 (a891ce2) had claimed a T44-scoped live re-harvest, and arena/26be136b-olbg1 (42f66c8) was rewriting the root dashboard into data/final/bundle.json with scripts/final_site.py and archiving the 21 October board. This session renumbered its claim to T50 / section 37 and did not touch root index.html, scripts/build_site.py, scripts/validate.py or README.md; the navigation request is logged in COORDINATION.md section 4 instead.",
+   "files": [
+    "COORDINATION.md"
+   ],
+   "source": ""
+  },
+  {
+   "code": "AUD-F7-10",
+   "severity": "medium",
+   "kind": "line",
+   "title": "The generated root navigation is hand-patched, so a rebuild drops desks",
+   "text": "index.html carries a hand-added 'Latest snapshot: 22 October re-verified board' banner inside a file that scripts/build_site.py generates. Session 2ca35f17 logged the same problem for the 7a5b5360 companion link and fixed that one in the generator. The v3 banner is still only in the output. Any desk added by editing index.html directly - including this one, had it been allowed to - will vanish on the next root rebuild.",
+   "files": [
+    "index.html",
+    "scripts/build_site.py"
+   ],
+   "source": ""
+  },
+  {
+   "code": "AUD-F7-11",
+   "severity": "info",
+   "kind": "process",
+   "title": "PR #40 has been open and conflicting since 2026-10-21",
+   "text": "gh pr list still reports PR #40 (arena/5c02f50f-olbg1, T13+T14 integration) as OPEN. Every later session has recorded it as out of scope rather than resolving it. It should be closed or rebased by the integration session.",
+   "files": [
+    "COORDINATION.md"
+   ],
+   "source": ""
+  }
+ ]
+}

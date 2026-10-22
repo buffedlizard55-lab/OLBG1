@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology · OLBG Desk f71557b5</title>
+<meta name="description" content="Session f71557b5-olbg1: live 22 October 2026 OLBG harvest across all 17 in-scope sports, official-source verification, originated multi-market lines and in-window high-confidence picks.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header><div class="hd">
+<div class="brand"><a href="index.html">OLBG Origination Desk <span class="sub">f71557b5 · 2026-10-22 UTC · official sources only</span></a></div>
+<nav class="main" aria-label="Primary"><a href="index.html">Overview</a><a href="picks.html">All Fixtures</a><a href="markets.html">Markets</a><a href="predictions.html">High Picks</a><a href="window.html">Price Window</a><a href="sports.html">17 Sports</a><a href="coverage.html">Coverage</a><a href="verification.html">Verification</a><a href="audit.html">Repo Audit</a><a href="reverse-engineering.html">OLBG Teardown</a><a href="flagged.html">Flagged for Review</a><a href="sources.html">Official Sources</a><a href="methodology.html" aria-current=page>Methodology</a></nav>
+</div>
+<div class="hd" style="padding-top:0"><nav class="main" aria-label="Sports"><a href="sports/tennis.html">Tennis</a><a href="sports/basketball.html">Basketball</a><a href="sports/golf.html">Golf</a><a href="sports/cricket.html">Cricket</a><a href="sports/snooker.html">Snooker</a><a href="sports/rugby-union.html">Rugby Union</a><a href="sports/rugby-league.html">Rugby League</a><a href="sports/baseball.html">Baseball</a><a href="sports/ice-hockey.html">Ice Hockey</a><a href="sports/motor-racing.html">Motor Racing</a><a href="sports/darts.html">Darts</a><a href="sports/handball.html">Handball</a><a href="sports/volleyball.html">Volleyball</a><a href="sports/aussie-rules.html">Aussie Rules</a><a href="sports/esports.html">eSports</a><a href="sports/gaelic-football.html">Gaelic Football</a><a href="sports/greyhounds.html">Greyhounds</a></nav></div>
+</header>
+<main>
+<h1>Methodology, constants and the price-window policy</h1>
+
+<p class="lede">How every price on this desk was produced, and which numbers are sourced facts
+versus labelled modelling choices.</p>
+<h2>1. The five rules</h2>
+<div class="panel"><ul class="tight">
+<li><b>Official sources only.</b> A fixture, record or ranking counts once it has been read on the governing
+body, tour, federation, league or club's own page. 100 such pages were read on
+2026-10-22.</li>
+<li><b>Blank beats wrong.</b> Any value not read on an official page is left empty and flagged — see
+<a href="flagged.html">Flagged for Review</a>.</li>
+<li><b>Assumptions are labelled.</b> Home-advantage constants, spread values and format assumptions are
+printed in full below and repeated in every market's basis string. They are never presented as
+statistics.</li>
+<li><b>One-sided ratings are refused.</b> Where only one participant has a sourced input the line falls back
+to a neutral baseline and confidence is capped at Low. That is why the four RLWC2026 fixtures, both NBA
+games, the EHF Kolstad tie and two cricket rows carry no High pick here.</li>
+<li><b>Every High pick gets its own written preview</b> — 30 words minimum, naming the side, its form and
+its recent results, and the selection itself.</li>
+</ul></div>
+
+<h2>2. Line origination and the price window</h2>
+<div class="panel">
+The originated line is the <b>zero-vig fair price</b>, <code>1 / p</code>. The 5% book-equivalent
+<code>1 / (1.05 p)</code> is printed beside it for comparison only.<br><br>
+<b>Why zero vig.</b> At a 5% overround a 70% chance prices at 1.3606 (−277), already through the brief's
+−250 floor, so "above 70%" and "inside −250…+10000" cannot both bind on a margined line. At zero vig,
+0.700 prices at −233 and 0.7143 prices at exactly −250, so the two rules are jointly satisfiable in the
+band <b>0.700 ≤ p ≤ 0.7143</b>. This desk tests the window against the fair price and publishes the
+margined equivalent next to it. Recorded as <a href="flagged.html">F-F7-01</a>.<br><br>
+<b>High confidence requires all four:</b> row status <code>verified</code> · a sourced rating on both sides ·
+model probability ≥ 0.700 · fair price inside −250…+10000.<br>
+<b>Medium</b> = in-window and ≥ 0.55. <b>Low</b> = in-window and ≥ 0.52, or any row whose ratings are
+one-sided. <b>No bet</b> = nothing in-window reaches 0.52.<br>
+<b>Rung choice:</b> among in-window rungs at or above 0.700 the <i>tightest</i> line wins, not the highest
+probability — a 71% call on a 3.5-point handicap is a real bet, a 71% call on a 66.5-point alternate is an
+artefact of the ladder. No model-calibrated alternate lines are generated.
+</div>
+
+<h2>3. Labelled modelling constants (choices, not statistics)</h2>
+<div class="tw"><table><thead><tr><th>Constant</th><th>Value</th><th>What it does</th></tr></thead><tbody>
+<tr><td><code>nhl_hfa</code></td><td class="odds">0.25</td><td>goals of home ice added to the expected margin</td></tr>
+<tr><td><code>nhl_sigma</code></td><td class="odds">1.3</td><td>goal spread used to turn an expected margin into a probability</td></tr>
+<tr><td><code>nhl_ppg_k</code></td><td class="odds">2.0</td><td>goals per 1.000 of official points-per-game difference</td></tr>
+<tr><td><code>mlb_hfa</code></td><td class="odds">0.35</td><td>runs of home-field advantage</td></tr>
+<tr><td><code>mlb_sigma</code></td><td class="odds">4.3</td><td>run spread for the margin market</td></tr>
+<tr><td><code>mlb_sigma_total</code></td><td class="odds">4.3</td><td>run spread for the total market</td></tr>
+<tr><td><code>nba_hfa</code></td><td class="odds">0.05</td><td>home-court edge expressed as a fraction of the spread</td></tr>
+<tr><td><code>nba_sigma</code></td><td class="odds">12.0</td><td>point spread for basketball margins</td></tr>
+<tr><td><code>el_k</code></td><td class="odds">22.0</td><td>points per 1.000 of EuroLeague win percentage</td></tr>
+<tr><td><code>el_hfa</code></td><td class="odds">3.0</td><td>points of home court in the EuroLeague</td></tr>
+<tr><td><code>el_sigma</code></td><td class="odds">13.0</td><td>point spread for EuroLeague margins</td></tr>
+<tr><td><code>ru_sigma</code></td><td class="odds">12.0</td><td>point spread used to convert LNR&#x27;s published win probability back into a margin</td></tr>
+<tr><td><code>gaa_sigma</code></td><td class="odds">6.0</td><td>point spread for Gaelic county finals</td></tr>
+<tr><td><code>aflw_sigma</code></td><td class="odds">28.0</td><td>point spread for AFLW margins</td></tr>
+<tr><td><code>aflw_scale</code></td><td class="odds">0.65</td><td>shrink applied to the ladder-derived margin, calibrated against the two Round 10 margins read on AFL.com.au (51 and 53 points)</td></tr>
+<tr><td><code>hb_h2h_shrink</code></td><td class="odds">0.6</td><td>shrink applied to a single verified head-to-head goal margin</td></tr>
+<tr><td><code>hb_hfa</code></td><td class="odds">1.5</td><td>goals of home court in handball</td></tr>
+<tr><td><code>hb_sigma</code></td><td class="odds">6.0</td><td>goal spread for handball margins</td></tr>
+<tr><td><code>neutral_hfa</code></td><td class="odds">1.0</td><td>home edge applied when a strength edge is refused under rule 4</td></tr>
+<tr><td><code>neutral_sigma</code></td><td class="odds">12.0</td><td>spread used with the neutral baseline</td></tr>
+<tr><td><code>darts_seed_k</code></td><td class="odds">0.0035</td><td>per-leg probability per seed position of gap</td></tr>
+<tr><td><code>darts_oom_k</code></td><td class="odds">0.03</td><td>per-leg probability weight on the Order of Merit gap</td></tr>
+<tr><td><code>darts_legs_to_win</code></td><td class="odds">6</td><td>FORMAT ASSUMPTION — legs needed to win a Round One tie</td></tr>
+<tr><td><code>snooker_top16</code></td><td class="odds">0.06</td><td>per-frame edge for a verified world top-16 player</td></tr>
+<tr><td><code>snooker_frames_to_win</code></td><td class="odds">5</td><td>FORMAT ASSUMPTION — frames needed to win a Round 3 tie</td></tr>
+</tbody></table></div>
+
+<h2>4. Markets investigated, and which are priced</h2>
+<div class="panel">
+<b>Priced:</b> match winner (or draw-no-bet where the competition can level), handicap ladders on the
+sport's own unit — goals, points, runs, frames, legs — and match totals for the NHL and MLB only, because
+those are the only competitions where both sides' scoring rates were read on an official page.<br><br>
+<b>Investigated, not priced</b> (missing official input named per sport on the
+<a href="coverage.html">coverage</a> page): match totals everywhere else; correct score and frame/set score;
+first-set, first-try, first-touchdown and player props; golf, Formula 1 and eSports outrights. Each is left
+blank with the exact missing input recorded rather than filled from a league-average constant.<br><br>
+<b>Rejected rungs:</b> any handicap rung whose model probability falls outside 5%–95% is dropped, so no
+degenerate price is published on either side of a mismatch.
+</div>
+
+<h2>5. Sport ladders</h2>
+<div class="tw"><table><thead><tr><th>Sport</th><th>Handicap rungs</th><th>Unit</th><th>Total rungs</th>
+</tr></thead><tbody>
+<tr><td>Basketball</td><td class="small">0.0, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5, 12.5, 13.5, 14.5, 15.5, 16.5, 17.5, 18.5, 19.5, 20.5</td><td>points</td><td class="small">not priced — see flag</td></tr>
+<tr><td>Cricket</td><td class="small">0.0</td><td>runs</td><td class="small">not priced — see flag</td></tr>
+<tr><td>Snooker</td><td class="small">0.0, 0.5, 1.5, 2.5, 3.5</td><td>frames</td><td class="small">not priced — see flag</td></tr>
+<tr><td>Rugby Union</td><td class="small">0.0, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5, 12.5, 13.5, 14.5, 15.5, 16.5, 17.5, 18.5, 19.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5</td><td>points</td><td class="small">not priced — see flag</td></tr>
+<tr><td>Rugby League</td><td class="small">0.0, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5, 12.5, 13.5, 14.5, 15.5, 16.5, 17.5, 18.5, 19.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5</td><td>points</td><td class="small">not priced — see flag</td></tr>
+<tr><td>Baseball</td><td class="small">0.0, 1.5, 2.5</td><td>runs</td><td class="small">6.5, 7.5, 8.5, 9.5, 10.5</td></tr>
+<tr><td>Ice Hockey</td><td class="small">0.0, 0.5, 1.5, 2.5, 3.5</td><td>goals</td><td class="small">not priced — see flag</td></tr>
+<tr><td>Darts</td><td class="small">0.0, 0.5, 1.5, 2.5, 3.5, 4.5</td><td>legs</td><td class="small">not priced — see flag</td></tr>
+<tr><td>Handball</td><td class="small">0.0, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5, 12.5, 13.5, 14.5, 15.5</td><td>goals</td><td class="small">not priced — see flag</td></tr>
+<tr><td>Aussie Rules</td><td class="small">0.0, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5, 12.5, 13.5, 14.5, 15.5, 16.5, 17.5, 18.5, 19.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5, 39.5, 40.5, 41.5, 42.5, 43.5, 44.5, 45.5, 46.5, 47.5, 48.5, 49.5, 50.5, 51.5, 52.5, 53.5, 54.5, 55.5, 56.5, 57.5, 58.5, 59.5, 60.5, 61.5, 62.5, 63.5, 64.5, 65.5, 66.5, 67.5, 68.5, 69.5, 70.5, 71.5, 72.5, 73.5, 74.5, 75.5, 76.5, 77.5, 78.5, 79.5, 80.5</td><td>points</td><td class="small">not priced — see flag</td></tr>
+<tr><td>Gaelic Football</td><td class="small">0.0, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5, 12.5, 13.5, 14.5, 15.5</td><td>points</td><td class="small">not priced — see flag</td></tr>
+</tbody></table></div>
+
+<h2>6. What this desk does not claim</h2>
+<div class="panel">No remote page is re-read by the validator. Verification is recorded per row
+(<code>status</code>, <code>sources</code>, <code>evidence</code>) and the gate checks structure,
+arithmetic, provenance and links — not the live web. Prices are model output at zero vig, not market prices
+and not betting advice. 1,622 originated prices are estimates built from published records,
+standings, seedings and results.</div>
+
+</main>
+<footer>
+Session <code>f71557b5-olbg1</code>, task T50. Every row on every page carries at least one link to an
+official governing body, tour, federation, league or club page that was actually read on 2026-10-22.
+Values that could not be read there are left blank and listed on the Flagged for Review page. Prices are
+our own model output at zero vig — not market prices, not betting advice.
+</footer>
+</body>
+</html>

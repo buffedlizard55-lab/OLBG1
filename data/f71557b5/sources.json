@@ -1,0 +1,506 @@
+{
+ "session": "f71557b5-olbg1",
+ "read_date": "2026-10-22",
+ "sources": [
+  {
+   "key": "nhl_sched",
+   "name": "NHL official schedule API - 2026-10-22 slate (game IDs, arenas, UTC start)",
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+  },
+  {
+   "key": "nhl_sched23",
+   "name": "NHL official schedule API - 2026-10-23 slate",
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-23"
+  },
+  {
+   "key": "nhl_stand",
+   "name": "NHL official standings API - as of 2026-10-21 (GP, W, L, OTL, PTS, GF, GA, home/road splits, streak)",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-21"
+  },
+  {
+   "key": "mlb_sched",
+   "name": "MLB Stats API official schedule - World Series games (gamePk, gameDate, venue)",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-20&endDate=2026-10-28&hydrate=team,linescore,venue"
+  },
+  {
+   "key": "mlb_stand",
+   "name": "MLB Stats API official standings 2026 (W-L, runs scored/allowed, home/away splits)",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+  },
+  {
+   "key": "mlb_ws",
+   "name": "MLB.com official 2026 World Series schedule and home-field note",
+   "url": "https://www.mlb.com/news/2026-mlb-world-series-faq-schedule-times-teams-and-more"
+  },
+  {
+   "key": "mlb_hfa",
+   "name": "MLB.com official home-field advantage confirmation (Brewers 103-59, Rays 98-64)",
+   "url": "https://www.mlb.com/news/world-series-home-field-advantage"
+  },
+  {
+   "key": "nba_games",
+   "name": "NBA.com official games page for 2026-10-22 (matchups, ET start, game ids)",
+   "url": "https://www.nba.com/games?date=2026-10-22"
+  },
+  {
+   "key": "nba_stand",
+   "name": "NBA.com official 2026-27 standings (W-L, home/road, streak, last 10)",
+   "url": "https://www.nba.com/standings"
+  },
+  {
+   "key": "nba_recap",
+   "name": "NBA.com official Opening Night recap (76ers 106-100 Knicks; Thunder 116-104 Spurs)",
+   "url": "https://www.nba.com/news/starting-5-october-21-2026"
+  },
+  {
+   "key": "el_gc7",
+   "name": "EuroLeague official Game Center Round 7 (records, points per game, kick-offs)",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+  },
+  {
+   "key": "el_inj7",
+   "name": "EuroLeague official Round 7 injury report (confirmed club availability lists)",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-fantasy/"
+  },
+  {
+   "key": "el_gc6",
+   "name": "EuroLeague official Game Center Round 6 results",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-6-el2627/"
+  },
+  {
+   "key": "el_sched",
+   "name": "EuroLeague official 2026-27 schedule announcement (Round 7 = 22 October)",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/news/the-2026-27-euroleague-schedule-is-official/"
+  },
+  {
+   "key": "pdc_sched",
+   "name": "PDC official 2026 European Championship schedule of play (Round One, 22 and 23 October)",
+   "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+  },
+  {
+   "key": "pdc_draw",
+   "name": "PDC official 2026 European Championship field and draw (32 seeds, European Tour order of merit)",
+   "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+  },
+  {
+   "key": "pdc_prev",
+   "name": "PDC official 2026 European Championship preview (seeded draw bracket)",
+   "url": "https://www.pdc.tv/news/2026/october/21/2026-machineseeker-european-championship-preview"
+  },
+  {
+   "key": "pdc_oom",
+   "name": "PDC official Order of Merit (two-year ranking prize money)",
+   "url": "https://www.pdc.tv/order-of-merit/pdc-order-merit"
+  },
+  {
+   "key": "pdc_et15",
+   "name": "PDC official 2026 Dutch Darts Championship results (European Tour 15)",
+   "url": "https://www.pdc.tv/news/2026/october/17/2026-dutch-darts-championship---day-two-latest/"
+  },
+  {
+   "key": "pdc_et14",
+   "name": "PDC official 2026 Swiss Darts Trophy results (European Tour 14)",
+   "url": "https://www.pdc.tv/news/2026/october/10/humphries-van-veen-clayton-deliver-day-two-basel/"
+  },
+  {
+   "key": "pdc_venue",
+   "name": "PDC official European Championship venue and dates",
+   "url": "https://www.pdc.tv/news/2026/october/15/2026-european-championship-race-ahead-of-et15/"
+  },
+  {
+   "key": "wst_r3",
+   "name": "World Snooker Tour official match centre - BetVictor Northern Ireland Open 2026 Round 3 (22 October, eight ties, local start times)",
+   "url": "https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5"
+  },
+  {
+   "key": "wst_day4",
+   "name": "World Snooker Tour official Day Four report (Round 2 scores, top 16 remaining, break details)",
+   "url": "https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon"
+  },
+  {
+   "key": "wst_matches",
+   "name": "World Snooker Tour official matches list (Northern Ireland Open round-by-round)",
+   "url": "https://www.wst.tv/matches/"
+  },
+  {
+   "key": "lnr_prod2_j8",
+   "name": "LNR official Pro D2 round 8 calendar (Montauban v Oyonnax, Thursday 22 October, 21h00)",
+   "url": "https://prod2.lnr.fr/calendrier-et-resultats"
+  },
+  {
+   "key": "lnr_oyo",
+   "name": "LNR official Oyonnax club page - Pro D2 table after round 7 and published match probabilities",
+   "url": "https://prod2.lnr.fr/club/oyonnax"
+  },
+  {
+   "key": "lnr_oyo_cal",
+   "name": "LNR official Oyonnax fixtures and results 2026-27",
+   "url": "https://prod2.lnr.fr/club/oyonnax/calendrier-resultats"
+  },
+  {
+   "key": "lnr_mont",
+   "name": "LNR official Montauban fixtures and results 2026-27",
+   "url": "https://prod2.lnr.fr/club/montauban/calendrier-resultats"
+  },
+  {
+   "key": "lnr_stats",
+   "name": "LNR official Pro D2 2026-27 statistics (best attack / best defence, points for and against)",
+   "url": "https://prod2.lnr.fr/statistiques?season=32442&day=38851"
+  },
+  {
+   "key": "lnr_top14_tou",
+   "name": "LNR official Stade Toulousain club page - Top 14 table after round 6 and published match probabilities",
+   "url": "https://top14.lnr.fr/club/toulouse"
+  },
+  {
+   "key": "lnr_top14_j7",
+   "name": "LNR official Top 14 round 7 calendar (24-25 October kick-offs)",
+   "url": "https://top14.lnr.fr/calendrier-et-resultats"
+  },
+  {
+   "key": "lnr_lr",
+   "name": "LNR official Stade Rochelais club page - published round 7 match probabilities",
+   "url": "https://top14.lnr.fr/club/la-rochelle"
+  },
+  {
+   "key": "lnr_top14_stats",
+   "name": "LNR official Top 14 2026-27 statistics (points for and against by club)",
+   "url": "https://top14.lnr.fr/statistiques"
+  },
+  {
+   "key": "ehf_times",
+   "name": "EHF official Champions League Men 2026/27 group-phase playing times PDF (22 October matches, arenas)",
+   "url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf"
+  },
+  {
+   "key": "ehf_barca",
+   "name": "EHF official FC Barcelona club results - 2026/27 group phase (Barca 34-27 Montpellier, 8 October)",
+   "url": "https://www.eurohandball.com/en/club/ZkfCu81QMPee22wu_nX_jQ/DinamoBucuresti/"
+  },
+  {
+   "key": "ehf_kielce",
+   "name": "EHF official Industria Kielce club results - SC Magdeburg 30-27 and 35-30 in 2026/27",
+   "url": "https://www.eurohandball.com/en/club/puFBDRyrok_Gc2X-z9Jq0w/IndustriaKielce/"
+  },
+  {
+   "key": "ehf_magdeburg",
+   "name": "EHF official SC Magdeburg club page (2026/27 group-phase results)",
+   "url": "https://ehfcl.eurohandball.com/men/2025-26/clubs/details/zKttAiKCyYIIy_T_l4gBLQ/SCMagdeburg/"
+  },
+  {
+   "key": "pcb_tri",
+   "name": "PCB official Pakistan-England-Sri Lanka ODI tri-series tournament page (all seven fixtures, venues)",
+   "url": "https://www.pcb.com.pk/pakistan-england-and-sri-lanka-trination-odi-series-202627/tournament/1465.html"
+  },
+  {
+   "key": "pcb_media",
+   "name": "PCB official media advisory - 22 October Sri Lanka v England, 1pm PKT, Rawalpindi, plus both squads",
+   "url": "https://www.pcb.com.pk/press-release-detail/media-advisory-men-s-odi-tri-series-pakistan-england-sri-lanka-rawalpindi-leg.html"
+  },
+  {
+   "key": "pcb_r1",
+   "name": "PCB official report - Pakistan 305 beat Sri Lanka 268 by 37 runs (18 October)",
+   "url": "https://www.pcb.com.pk/news-detail/salman-hits-century-pacers-restrict-sri-lanka-as-pakistan-begin-tri-series-on-winning-note.html"
+  },
+  {
+   "key": "pcb_r2",
+   "name": "PCB official report - Arafat Minhas 6-40 and 59, Pakistan beat England by 87 runs (20 October)",
+   "url": "https://www.pcb.com.pk/news-detail/arafat-minhas-6-40-and-59-sink-england-as-pakistan-win-consecutive-games-in-odi-tri-series.html"
+  },
+  {
+   "key": "ecb_tri",
+   "name": "ECB official England men ODI tri-series fixture list",
+   "url": "https://www.ecb.co.uk/news/4562387/pakistan-to-host-sri-lanka-and-england-in-odi-triseries"
+  },
+  {
+   "key": "nzc_score",
+   "name": "NZC official scoring site - 22 October card (Blackcaps v India, Hagley Oval; Australia Women v White Ferns, North Sydney Oval)",
+   "url": "https://scoring.nzc.nz/home"
+  },
+  {
+   "key": "nzc_tour",
+   "name": "NZC official India tour announcement (five T20Is from 22 October, Hagley Oval opens)",
+   "url": "https://www.nzc.nz/news-items/historic-india-mega-tour-headlines-international-home-schedule/"
+  },
+  {
+   "key": "icc_rank",
+   "name": "ICC official Men's T20I team rankings update (New Zealand 247 points, second; series order)",
+   "url": "https://www.icc-cricket.com/news/india-retain-top-spot-in-men-s-t20i-team-rankings-update"
+  },
+  {
+   "key": "icc_wc",
+   "name": "ICC official T20 World Cup 2026 final report - India 255/5 beat New Zealand 159 by 96 runs",
+   "url": "https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/news/live-india-new-zealand-chase-world-cup-glory"
+  },
+  {
+   "key": "icc_squad",
+   "name": "ICC official report - India T20I squad for New Zealand named 6 October, Shreyas Iyer to captain",
+   "url": "https://www.icc-cricket.com/news/fast-bowler-returns-as-india-name-new-zealand-t20i-squad"
+  },
+  {
+   "key": "ci_nam",
+   "name": "Cricket Ireland official tour page - five ODIs in Namibia, 22 October to 1 November, full squad",
+   "url": "https://cricketireland.ie/tour-of-namibia-2026/"
+  },
+  {
+   "key": "ci_news",
+   "name": "Cricket Ireland official tour announcement and squad release",
+   "url": "https://cricketireland.ie/news/africa-bound"
+  },
+  {
+   "key": "irl_fix",
+   "name": "IRL official fixtures and results - RLWC2026 Round 2 (Tonga v Lebanon 23 Oct, England v France 24 Oct, Australia v England 24 Oct, New Zealand v France 25 Oct)",
+   "url": "https://www.intrl.sport/fixtures-results"
+  },
+  {
+   "key": "irl_tga",
+   "name": "IRL official match record 2569 - Tonga v Lebanon, CommBank Stadium, 8:05pm local, both squads, Round 1 result 30-12",
+   "url": "https://www.intrl.sport/match-details/2569"
+  },
+  {
+   "key": "irl_eng",
+   "name": "IRL official match record 2566 - England v Tonga Round 1, HBF Park, England 12-30 Tonga",
+   "url": "https://www.intrl.sport/match-details/2566"
+  },
+  {
+   "key": "nrl_rlwc",
+   "name": "NRL official RLWC2026 draw and fixture guide (pools, venues, dates)",
+   "url": "https://www.nrl.com/news/2026-09-18/eyntk-world-cup-2026/"
+  },
+  {
+   "key": "aflw_ladder",
+   "name": "AFL.com.au official 2026 NAB AFLW ladder after Round 10 (all 18 clubs, played, points, percentage)",
+   "url": "https://www.afl.com.au/aflw"
+  },
+  {
+   "key": "aflw_r11",
+   "name": "AFL.com.au official Round 11 fixture note - the season resumes in Adelaide on Friday 23 October with Port Adelaide hosting Collingwood",
+   "url": "https://www.afl.com.au/aflw/news/1634179/2026-nab-aflw-season-officially-the-highest-attended-aflw-season-ever"
+  },
+  {
+   "key": "aflw_finals",
+   "name": "AFL.com.au official finals-race preview - North Melbourne v Adelaide, Sunday 25 October, 1.05pm AEDT, North Hobart Oval; Hawthorn v Essendon in Round 11",
+   "url": "https://www.afl.com.au/aflw/news/1634367/finals-before-finals-the-games-that-will-shape-the-top-eight"
+  },
+  {
+   "key": "aflw_r10",
+   "name": "AFL.com.au official Round 10 review (Collingwood 29 d. by Sydney 80; West Coast 13 d. by Geelong 66; Melbourne, Western Bulldogs, Brisbane, Hawthorn results)",
+   "url": "https://www.afl.com.au/aflw/news/1632582/in-case-you-missed-it-r10-hawthorn-hawks-stumble-in-finals-race-melbourne-demons-serve-up-statement-adelaide-crows-remain-in-mix"
+  },
+  {
+   "key": "aflw_syd",
+   "name": "AFL.com.au official match centre - Collingwood 4.5 (29) lost to Sydney 12.8 (80) by 51 at Windy Hill, Round 10",
+   "url": "https://www.afl.com.au/aflw/matches/8965"
+  },
+  {
+   "key": "aflw_wc",
+   "name": "AFL.com.au official match centre - West Coast 1.7 (13) lost to Geelong 8.18 (66) by 53, Round 10",
+   "url": "https://www.afl.com.au/afl/matches/8966"
+  },
+  {
+   "key": "gaa_cork_final",
+   "name": "Cork GAA official event page - McCarthy Insurance Group Premier Senior Football Championship Final, 25 October, SuperValu Pairc Ui Chaoimh",
+   "url": "https://gaacork.ie/event/mccarthy-insurance-group-premier-senior-football-championship-final/"
+  },
+  {
+   "key": "gaa_cork_round",
+   "name": "Cork GAA official championship weekend round-up (semi-final scores for Nemo Rangers and St Finbarr's)",
+   "url": "https://gaacork.ie/2026-10-11/mccarthy-insurance-group-club-championship-weekend-round-up/"
+  },
+  {
+   "key": "gaa_cork_safc",
+   "name": "Cork GAA official fixtures - Senior 'A' Football Championship Final, Eire Og v Kanturk, 1 November, 14:00, SuperValu Pairc Ui Chaoimh, referee James Regan",
+   "url": "https://gaacork.ie/fixtures/"
+  },
+  {
+   "key": "gaa_cork_2025",
+   "name": "Cork GAA official 2025 Premier Senior Football Championship Final report - St Finbarr's 1-14 Nemo Rangers 1-13, crowd 6,949",
+   "url": "https://gaacork.ie/2025-10-26/barrs-win-11th-county-title/"
+  },
+  {
+   "key": "munster_cal",
+   "name": "Munster GAA official events calendar - Waterford SFC Final (Rathgormack v The Nire, 25 Oct, 2:30pm, Fraher Field) and Cork PSFC Final (25 Oct, 4pm)",
+   "url": "https://munster.gaa.ie/fixtures/events-calendar/"
+  },
+  {
+   "key": "munster_home",
+   "name": "Munster GAA official match centre - county final fixtures, venues and referees for 25 October",
+   "url": "https://munster.gaa.ie/"
+  },
+  {
+   "key": "wat_res",
+   "name": "Waterford GAA official results - Rathgormack and The Nire semi-final and round scores",
+   "url": "https://www.waterfordgaa.ie/results/"
+  },
+  {
+   "key": "wat_fix",
+   "name": "Waterford GAA official fixtures - Rathgormack v The Nire, 25 October, 14:30, Cappoquin Logistics Fraher Field",
+   "url": "https://www.waterfordgaa.ie/fixtures/"
+  },
+  {
+   "key": "mc_final",
+   "name": "Maigh Cuilinn (Moycullen) official club site - Galway Senior Football Championship Final, 7pm Saturday 24 October, Pearse Stadium",
+   "url": "https://www.maighcuilinn.com/"
+  },
+  {
+   "key": "mc_sf",
+   "name": "Maigh Cuilinn official club report - county semi-final, Maigh Cuilinn 4-26 Annaghdown 0-8, Dessie Conneely personal tally",
+   "url": "https://www.maighcuilinn.com/stellar-performance-against-annaghdown-sets-up-repeat-county-final/"
+  },
+  {
+   "key": "mc_qf",
+   "name": "Maigh Cuilinn official club report - quarter-final 3-25 to 0-13 over Mountbellew-Moylough; other semi-final Corofin v Salthill-Knocknacarra",
+   "url": "https://www.maighcuilinn.com/maigh-cuilinn-power-past-mountbellew-moylough-into-county-semi-final/"
+  },
+  {
+   "key": "mc_league",
+   "name": "Maigh Cuilinn official club report - league round 4, Maigh Cuilinn 3-12 Salthill-Knocknacarra 0-8 (10 April 2026)",
+   "url": "https://www.maighcuilinn.com/maigh-cuilinns-organisation-and-patience-secure-league-points-against-salthill-knocknacarra/"
+  },
+  {
+   "key": "lim_res",
+   "name": "Limerick GAA official results - senior football championship semi-finals, 17 October (Kildimo/Pallaskenry 2-16 Mungret/St Pauls 0-20 AET; Fr Caseys 3-12 Monaleen 1-06)",
+   "url": "https://limerickgaa.ie/limerick-gaa-saturday-club-results-32/"
+  },
+  {
+   "key": "lim_sf",
+   "name": "Limerick GAA official semi-final fixture notice - venues, times and referee",
+   "url": "https://limerickgaa.ie/senior-football-fixtures/"
+  },
+  {
+   "key": "pga_bermuda",
+   "name": "PGA TOUR official Butterfield Bermuda Championship facts and figures (dates, course, par, yardage, purse, defending champion, past winners, scoring record)",
+   "url": "https://www.pgatour.com/article/news/latest/2026-10-20/butterfield-bermuda-championship-facts-and-figures-port-royal-golf-course-southampton-2026"
+  },
+  {
+   "key": "pga_odds",
+   "name": "PGA TOUR official odds outlook - Ben James betting favourite, published prices for past champions",
+   "url": "https://www.pgatour.com/article/news/betting-dfs/2026-10-19/odds-outlook-butterfield-bermuda-championship-betting-fantasy-picks-advice-fedexcup-fall"
+  },
+  {
+   "key": "pga_field",
+   "name": "PGA TOUR official Inside the Field - 120-man field, five past champions, FedExCup points",
+   "url": "https://www.pgatour.com/article/news/inside-the-field/2026-10-16/how-the-field-qualified-for-butterfield-bermuda-championship-fedexcup-fall-aon-next-10"
+  },
+  {
+   "key": "pga_stifel",
+   "name": "PGA TOUR Champions official Stifel Charity Classic event overview (purse, past champions and scores)",
+   "url": "https://www.pgatour.com/pgatour-champions/tournaments/2026/stifel-charity-classic/S2026625/overview"
+  },
+  {
+   "key": "pga_stifel_dates",
+   "name": "PGA TOUR Champions official tournament schedule - Stifel Charity Classic, 23-25 October, Norwood Hills Country Club",
+   "url": "https://www.pgatour.com/pgatour-champions/tickets"
+  },
+  {
+   "key": "pga_schwab",
+   "name": "PGA TOUR Champions official Charles Schwab Cup playoff format - 72 players, 54 holes, Stifel Charity Classic opens the playoffs",
+   "url": "https://www.pgatour.com/pgatour-champions/schwabcup/overview"
+  },
+  {
+   "key": "et_legends",
+   "name": "DP World Tour / Staysure Legends Tour official schedule - Sergio Melpignano Senior Italian Open, 22-24 October, San Domenico Golf, EUR 450,000",
+   "url": "https://www.europeantour.com/legends-tour/schedule/"
+  },
+  {
+   "key": "f1_cal",
+   "name": "Formula 1 official 2026 calendar - Round 18 United States Grand Prix, 23-25 October, Circuit of The Americas",
+   "url": "https://www.formula1.com/en/racing/2026"
+  },
+  {
+   "key": "f1_usgp",
+   "name": "Formula 1 official United States Grand Prix circuit data (5.513km, 56 laps, 308.405km, fastest lap)",
+   "url": "https://www.formula1.com/en/racing/2026/united-states"
+  },
+  {
+   "key": "f1_stand",
+   "name": "Formula 1 official 2026 Drivers' Championship standings (Max Verstappen P4, 221 points)",
+   "url": "https://www.formula1.com/"
+  },
+  {
+   "key": "f1_sing",
+   "name": "Formula 1 official 2026 Singapore Grand Prix race result and classification",
+   "url": "https://www.formula1.com/en/latest/article/verstappen-seals-commanding-singapore-grand-prix-victory-from-leclerc-and-antonelli.49wDzysiVqi5cloGjle40A"
+  },
+  {
+   "key": "f1_story",
+   "name": "Formula 1 official United States GP storylines (Verstappen won the last two races and the Singapore sprint; championship gap figures)",
+   "url": "https://www.formula1.com/en/latest/article/its-race-week-5-storylines-were-excited-about-ahead-of-the-2026-united-states-grand-prix.4utgT1kLqHM2HAM98YP4TW"
+  },
+  {
+   "key": "f1_perm",
+   "name": "Formula 1 official points permutations for Austin (rounds remaining, maximum points available)",
+   "url": "https://www.formula1.com/en/latest/article/points-permutations-when-is-the-earliest-antonelli-could-win-the-world-championship.24UKT2fsQl4GmC5DMrmYUy"
+  },
+  {
+   "key": "lol_worlds",
+   "name": "LoL Esports official Worlds 2026 primer (stage dates, Swiss format, knockout venues, seeded tiers, draw dates)",
+   "url": "https://lolesports.com/en-US/news/worlds-2026-primer"
+  },
+  {
+   "key": "lol_overview",
+   "name": "LoL Esports official Worlds 2026 tournament overview (16 teams, five-round Swiss, top eight advance)",
+   "url": "https://lolesports.com/en-GB/tournament/115660540725177488/overview"
+  },
+  {
+   "key": "lol_live",
+   "name": "LoL Esports official live results - Play-In quarter-finals (KT Rolster 3-2 Team Vitality, BNK FEARX 3-2 JDG, WE 3-2 FlyQuest, HANJIN BRION 3-1 LGD)",
+   "url": "https://lolesports.com/en-US/live/worlds/104946685894036941"
+  },
+  {
+   "key": "atp_almaty",
+   "name": "ATP official signed Tour Supervisor main draw - Almaty (seeds, ranks, Round of 32 scores, release stamp 21/10/2026 20:51:24)",
+   "url": "https://www.protennislive.com/posting/2026/9410/mds.pdf"
+  },
+  {
+   "key": "atp_lyon",
+   "name": "ATP official signed Tour Supervisor main draw - Lyon (seeds, ranks, completed round scores, release stamp 21/10/2026 23:27:14)",
+   "url": "https://www.protennislive.com/posting/2026/496/mds.pdf"
+  },
+  {
+   "key": "atp_brussels",
+   "name": "ATP official signed Tour Supervisor main draw - Brussels (seeds, ranks, Round of 32 scores, release stamp 21/10/2026 21:51:50)",
+   "url": "https://www.protennislive.com/posting/2026/7485/mds.pdf"
+  },
+  {
+   "key": "atp_race",
+   "name": "ATP official Live Race To Turin - Almaty/Lyon players' next round status",
+   "url": "https://www.atptour.com/en/rankings/singles-race-to-turin"
+  },
+  {
+   "key": "wta_ningbo",
+   "name": "WTA official signed supervisor draw - Ningbo (Round of 32 complete, seeds and ranks, release stamp 21 Oct 2026 10:13 PM)",
+   "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf"
+  },
+  {
+   "key": "wta_osaka",
+   "name": "WTA official signed supervisor draw - Osaka (Round of 32 complete, seeds and ranks)",
+   "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/405/MDS.pdf"
+  },
+  {
+   "key": "urc_table",
+   "name": "United Rugby Championship official league table 2026/27 (Bulls, Stormers, Munster, Connacht, Ulster, Leinster - played, points, for, against, form)",
+   "url": "https://stats.unitedrugby.com/match-centre/table/"
+  },
+  {
+   "key": "urc_fix",
+   "name": "United Rugby Championship official 2026/27 fixture list release",
+   "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
+  },
+  {
+   "key": "shl_res",
+   "name": "SHL official results and table notes - Färjestad top of the table, Skellefteå, Timrå, Örebro, Brynäs, Djurgården form",
+   "url": "https://www.shl.se/article/r12atmy-403dd/view"
+  },
+  {
+   "key": "tauron",
+   "name": "TAURON Liga official club page - PGE GiEK Skra Bełchatów v PGE Projekt Warszawa, Saturday 24 October 2026, 18:00, phase Zasadnicza",
+   "url": "https://www.tauronliga.pl/teams/tour/53/id/61.html"
+  },
+  {
+   "key": "olbg",
+   "name": "OLBG.com live sport hub (upstream reference only - never used to verify a fact)",
+   "url": "https://www.olbg.com/betting-tips"
+  }
+ ]
+}

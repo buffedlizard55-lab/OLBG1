@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OLBG Teardown · OLBG Desk f71557b5</title>
+<meta name="description" content="Session f71557b5-olbg1: live 22 October 2026 OLBG harvest across all 17 in-scope sports, official-source verification, originated multi-market lines and in-window high-confidence picks.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header><div class="hd">
+<div class="brand"><a href="index.html">OLBG Origination Desk <span class="sub">f71557b5 · 2026-10-22 UTC · official sources only</span></a></div>
+<nav class="main" aria-label="Primary"><a href="index.html">Overview</a><a href="picks.html">All Fixtures</a><a href="markets.html">Markets</a><a href="predictions.html">High Picks</a><a href="window.html">Price Window</a><a href="sports.html">17 Sports</a><a href="coverage.html">Coverage</a><a href="verification.html">Verification</a><a href="audit.html">Repo Audit</a><a href="reverse-engineering.html" aria-current=page>OLBG Teardown</a><a href="flagged.html">Flagged for Review</a><a href="sources.html">Official Sources</a><a href="methodology.html">Methodology</a></nav>
+</div>
+<div class="hd" style="padding-top:0"><nav class="main" aria-label="Sports"><a href="sports/tennis.html">Tennis</a><a href="sports/basketball.html">Basketball</a><a href="sports/golf.html">Golf</a><a href="sports/cricket.html">Cricket</a><a href="sports/snooker.html">Snooker</a><a href="sports/rugby-union.html">Rugby Union</a><a href="sports/rugby-league.html">Rugby League</a><a href="sports/baseball.html">Baseball</a><a href="sports/ice-hockey.html">Ice Hockey</a><a href="sports/motor-racing.html">Motor Racing</a><a href="sports/darts.html">Darts</a><a href="sports/handball.html">Handball</a><a href="sports/volleyball.html">Volleyball</a><a href="sports/aussie-rules.html">Aussie Rules</a><a href="sports/esports.html">eSports</a><a href="sports/gaelic-football.html">Gaelic Football</a><a href="sports/greyhounds.html">Greyhounds</a></nav></div>
+</header>
+<main>
+<h1>OLBG.com reverse-engineered: taxonomy, URL grammar, upstream defects</h1>
+
+<p class="lede">OLBG's URL grammar and sport taxonomy, reconstructed from the live site and its
+XML sitemap on 2026-10-22. 17 in-scope hubs were opened directly; the excluded
+sports are enumerated so the exclusion is auditable rather than assumed.</p>
+<div class="panel">
+<b>URL grammar.</b><br>
+Hub: <code>https://www.olbg.com/betting-tips/{slug}/{sport_id}</code><br>
+Event: <code>https://www.olbg.com/betting-tips/{sport}/{tour}/{comp}/{event}/{sport_id}?event_id={id}</code><br>
+Sitemap: <code>https://www.olbg.com/sitemap-betting-tips.xml</code> — lists 22 sport hubs with
+<code>lastmod</code> and <code>priority</code>; the Entertainment (18) and Hurling (26) routes answer HTTP
+200 but are absent from it, which is how earlier sessions found them.
+</div>
+<h2>In-scope hubs, as read today</h2>
+<div class="tw"><table><thead><tr><th>Sport</th><th>id</th><th>Cards seen</th><th>Hub URL</th>
+<th>What the hub actually published</th></tr></thead><tbody>
+<tr><td><a href="sports/tennis.html">Tennis</a></td><td>3</td><td>21</td><td><a href="https://www.olbg.com/betting-tips/Tennis/3" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Tennis/3</a></td><td>21 match cards listed for 22-23 October, all ATP Almaty/Lyon/Brussels or WTA Ningbo/Osaka Round of 32 ties.</td></tr>
+<tr><td><a href="sports/basketball.html">Basketball</a></td><td>4</td><td>12</td><td><a href="https://www.olbg.com/betting-tips/Basketball/4" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Basketball/4</a></td><td>NBA (4), EuroLeague (5), Korea KBL (1), Brazil NBB (1), plus sub-route hubs read for NBA, EuroLeague, EuroCup and WNBA.</td></tr>
+<tr><td><a href="sports/golf.html">Golf</a></td><td>5</td><td>4</td><td><a href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Golf/5</a></td><td>Bermuda Championship, Senior Italian Open, Stella Artois Players Championship, Stifel Charity Classic - outright cards only.</td></tr>
+<tr><td><a href="sports/cricket.html">Cricket</a></td><td>7</td><td>7</td><td><a href="https://www.olbg.com/betting-tips/Cricket/7" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Cricket/7</a></td><td>NZ v India T20I, England v Sri Lanka ODI, Namibia v Ireland ODI, Australia W v NZ W, two CSA T20 cards, Afghanistan v Zimbabwe.</td></tr>
+<tr><td><a href="sports/snooker.html">Snooker</a></td><td>8</td><td>2</td><td><a href="https://www.olbg.com/betting-tips/Snooker/8" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Snooker/8</a></td><td>Only two of the eight official Round 3 ties are listed upstream (Selt v Craigie, Wilson v Pang).</td></tr>
+<tr><td><a href="sports/rugby-union.html">Rugby Union</a></td><td>9</td><td>15</td><td><a href="https://www.olbg.com/betting-tips/Rugby_Union/9" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Rugby_Union/9</a></td><td>Pro D2 round 8, Top 14 round 7, URC round 4 and Six Nations 2027 outright.</td></tr>
+<tr><td><a href="sports/rugby-league.html">Rugby League</a></td><td>10</td><td>3</td><td><a href="https://www.olbg.com/betting-tips/Rugby_League/10" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Rugby_League/10</a></td><td>Only 2027 outrights published upstream - State of Origin 2027, Super League 2027, NRL 2027. No RLWC2026 match card on the hub.</td></tr>
+<tr><td><a href="sports/baseball.html">Baseball</a></td><td>12</td><td>1</td><td><a href="https://www.olbg.com/betting-tips/Baseball/12" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Baseball/12</a></td><td>TB Rays @ MIL Brewers, 23 Oct 20:00 (OLBG clock) - World Series Game 1.</td></tr>
+<tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td><td>13</td><td>4</td><td><a href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Ice_Hockey/13</a></td><td>Swedish Hockey League (3) and Finland SM Liiga (1). The NHL sub-route hub returned &#x27;No tips found&#x27; upstream.</td></tr>
+<tr><td><a href="sports/motor-racing.html">Motor Racing</a></td><td>14</td><td>3</td><td><a href="https://www.olbg.com/betting-tips/Motor_Racing/14" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Motor_Racing/14</a></td><td>USA Grand Prix win-race card plus two Drivers&#x27; Championship outrights.</td></tr>
+<tr><td><a href="sports/darts.html">Darts</a></td><td>15</td><td>17</td><td><a href="https://www.olbg.com/betting-tips/Darts/15" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Darts/15</a></td><td>All 16 European Championship Round One ties plus the tournament outright.</td></tr>
+<tr><td><a href="sports/handball.html">Handball</a></td><td>20</td><td>18</td><td><a href="https://www.olbg.com/betting-tips/Handball/20" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Handball/20</a></td><td>EHF Champions League, EHF European League and seven domestic leagues.</td></tr>
+<tr><td><a href="sports/volleyball.html">Volleyball</a></td><td>21</td><td>9</td><td><a href="https://www.olbg.com/betting-tips/Volleyball/21" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Volleyball/21</a></td><td>Czech Extraliga (5) and Polish leagues (4), including two set-score tips.</td></tr>
+<tr><td><a href="sports/aussie-rules.html">Aussie Rules</a></td><td>22</td><td>0</td><td><a href="https://www.olbg.com/betting-tips/Aussie_Rules/22" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Aussie_Rules/22</a></td><td>&#x27;No tips found&#x27; upstream on 22 October even though the official AFLW Round 11 is being played 23-25 October.</td></tr>
+<tr><td><a href="sports/esports.html">eSports</a></td><td>23</td><td>0</td><td><a href="https://www.olbg.com/betting-tips/eSports/23" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/eSports/23</a></td><td>&#x27;No tips found&#x27; upstream; LoL Worlds 2026 Swiss stage starts 23 October on the official LoL Esports site.</td></tr>
+<tr><td><a href="sports/gaelic-football.html">Gaelic Football</a></td><td>25</td><td>6</td><td><a href="https://www.olbg.com/betting-tips/Gaelic_Football/25" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Gaelic_Football/25</a></td><td>Five club championship cards (24 Oct - 1 Nov) plus the All-Ireland 2027 outright.</td></tr>
+<tr><td><a href="sports/greyhounds.html">Greyhounds</a></td><td>28</td><td>0</td><td><a href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Greyhounds/28</a></td><td>&#x27;No tips found&#x27; upstream on 22 October; GBGB was not reachable to confirm a card.</td></tr>
+</tbody></table></div>
+<h2>Upstream defects found on OLBG itself</h2>
+<div class="flag med"><b>F-F7-02 — OLBG lists 21 completed tennis matches as upcoming</b>Every one of the five signed supervisor draws read this session (ATP Almaty 9410, Lyon 496, Brussels 7485; WTA Ningbo 2092, Osaka 405) shows its Round of 32 fully scored, and the ATP Live Race To Turin confirms the survivors &#x27;will play next in the R16&#x27;. OLBG&#x27;s tennis hub still presents those Round of 32 ties - Medvedev v Shimabukuro, Rybakina v Kudermetova, Machac v Khachanov and 18 others - as &#x27;Tomorrow&#x27;. They are not priced here.<br><span class="small">Official source that settles it: <a href="https://www.protennislive.com/posting/2026/9410/mds.pdf" target="_blank" rel="noopener">https://www.protennislive.com/posting/2026/9410/mds.pdf</a></span></div>
+<div class="flag med"><b>F-F7-03 — OLBG&#x27;s NHL sub-route returns no tips on a 12-game night</b>The NHL played 12 games on 22 October per the league&#x27;s own schedule API, but OLBG&#x27;s Ice Hockey hub lists three Swedish Hockey League games and one Finnish Liiga game, and its /betting-tips/Ice_Hockey/NHL/13 sub-route prints &#x27;No tips found&#x27;. All 12 NHL games in this desk were harvested from the league, not from OLBG.<br><span class="small">Official source that settles it: <a href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener">https://api-web.nhle.com/v1/schedule/2026-10-22</a></span></div>
+<div class="flag med"><b>F-F7-04 — OLBG&#x27;s Aussie Rules hub is empty during AFLW Round 11</b>OLBG&#x27;s hub for sport id 22 returns &#x27;No tips found&#x27; on 22 October although the official AFLW Round 11 begins in Adelaide on Friday 23 October. The hub copy also describes the women&#x27;s competition as &#x27;WAFL&#x27;, which is the West Australian Football League - the women&#x27;s league is AFLW. Both are recorded as upstream defects.<br><span class="small">Official source that settles it: <a href="https://www.afl.com.au/aflw" target="_blank" rel="noopener">https://www.afl.com.au/aflw</a></span></div>
+<div class="flag med"><b>F-F7-05 — No RLWC2026 match card on OLBG&#x27;s rugby league hub</b>The Rugby League World Cup is in its pool stage with four Round 2 fixtures across 23-25 October on the official IRL site, yet OLBG&#x27;s rugby league hub publishes only three 2027 outrights (State of Origin 2027, Super League 2027, NRL 2027) and no World Cup match card.<br><span class="small">Official source that settles it: <a href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener">https://www.intrl.sport/fixtures-results</a></span></div>
+<div class="flag med"><b>F-F7-06 — OLBG lists two of eight official Round 3 ties</b>The WST match centre publishes eight Round 3 ties for 22 October; OLBG&#x27;s snooker hub shows only Matthew Selt v Sam Craigie and Kyren Wilson v Pang Junxu. The six missing ties (Slessor v Walden, McGill v Baranowski, Williams v O&#x27;Donnell, Gilbert v Cheung, Brown v Donaldson, Jones v Wells) are all priced here from the official page.<br><span class="small">Official source that settles it: <a href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener">https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5</a></span></div>
+<div class="flag med"><b>F-F7-07 — OLBG&#x27;s World Series clock disagrees with the MLB API</b>OLBG prints &#x27;TB Rays @ MIL Brewers, 23 Oct 20:00&#x27;. The MLB Stats API schedules gamePk 849805 at 2026-10-24T00:00:00Z with officialDate 2026-10-23, i.e. 8pm Eastern on 23 October. OLBG&#x27;s clock is US Central/Eastern ambiguous with no timezone label, the same silent-localisation defect recorded in earlier sessions.<br><span class="small">Official source that settles it: <a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-20&amp;endDate=2026-10-28&amp;hydrate=team,linescore,venue" target="_blank" rel="noopener">https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-20&amp;endDate=2026-10-28&amp;hydrate=team,linescore,venue</a></span></div>
+<div class="flag med"><b>F-F7-08 — Afghanistan v Zimbabwe is dated 23 October upstream but no governing body publishes that match</b>OLBG lists &#x27;Afghanistan vs Zimbabwe One Day Match, 23 Oct 07:30&#x27;. The Afghanistan-Zimbabwe series in the UAE opens with a T20I at Sharjah on 27 October, and no official board page read this session publishes a 23 October ODI between these sides. The card is unverified, unpriced and left blank.<br><span class="small">Official source that settles it: <a href="https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/news/final-squads-for-icc-men-s-t20-world-cup-2026-confirmed" target="_blank" rel="noopener">https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/news/final-squads-for-icc-men-s-t20-world-cup-2026-confirmed</a></span></div>
+<div class="panel"><b>Known OLBG behaviours carried forward from the reverse-engineering record.</b>
+<ul class="tight">
+<li>Sport hubs truncate at roughly twenty cards, so a hub listing fewer events than the governing body
+publishes is normal — snooker (2 of 8) and ice hockey (0 of 12 NHL games) are both truncation-plus-coverage
+gaps, not evidence the fixtures do not exist.</li>
+<li>Start times are printed with no timezone label and are silently localised to the reader's GeoIP, so a
+clock scraped from a hub cannot be trusted as UTC. This desk stores the official body's own clock and leaves
+<code>start_utc</code> blank where the governing body published only a local time.</li>
+<li>Each-way-only outright markets render a <code>0 / 0 Win Tips</code> division-by-zero display, which is
+why outright cards are treated as event cards here rather than as priced markets.</li>
+</ul></div>
+</main>
+<footer>
+Session <code>f71557b5-olbg1</code>, task T50. Every row on every page carries at least one link to an
+official governing body, tour, federation, league or club page that was actually read on 2026-10-22.
+Values that could not be read there are left blank and listed on the Flagged for Review page. Prices are
+our own model output at zero vig — not market prices, not betting advice.
+</footer>
+</body>
+</html>
