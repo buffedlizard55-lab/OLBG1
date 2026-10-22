@@ -342,11 +342,11 @@ the official page the participants, venue and start were read from.</p>
             if p["event_only"]:
                 trs += (f'<tr><td>{esc(day(p["start_utc"], p["date_local"]))}</td>'
                         f'<td><b>{esc(p["home"])}</b></td><td>{esc(p["competition"])}<br>'
-                        f'<span class="sm mut">{esc(p["stage"])}</span></td>'
-                        f'<td class="sm">{esc(p["venue"])}</td>'
-                        f'<td colspan="3" class="sm mut">Event card only - no head-to-head market priced</td>'
+                        f'<span class="sm mut">{esc(p["stage"])}</span><br>'
+                        f'<span class="sm mut">{esc(p["venue"])}</span></td>'
+                        f'<td colspan="2" class="sm mut">Event card only - no head-to-head market priced</td>'
                         f'<td><span class="tag lo">n/a</span></td>'
-                        f'<td class="sm"><a href="{esc(p["sources"][0]["url"])}" target="_blank" rel="noopener">official</a></td></tr>')
+                        f'<td class="sm"><a href="{esc(p["sources"][0]["url"])}" target="_blank" rel="noopener">official</a></td><td></td></tr>')
                 continue
             b = p["best_market"]
             mk = ""
