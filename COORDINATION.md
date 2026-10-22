@@ -2932,6 +2932,7 @@ follow §46.4–46.5 precedent and will be appended post-merge by reading the **
 themselves, per the verification lesson in `1a421e41`'s 09:25Z addendum (PR #98).
 | T64 | **Independent live desk (22 Oct 2026):** fresh OLBG re-harvest for 7 sports (Ice Hockey/NHL, Tennis/ATP-WTA, Darts/PDC, Snooker/WST, Basketball/EuroLeague, Rugby Union/URC-Top14, Handball/EHF), official-source verification, multi-market line origination with strict -250..+10000 high-confidence window, unique ≥30-word human predictions for all 12 high picks, clean 13-page dashboard at `/53674ac8/` with sport subpages + flagged page, PR + merge + Pages check | done | 53674ac8-olbg1 | `data/53674ac8/**`, `scripts/s53674ac8_*.py`, `53674ac8/**`, `reports/SESSION_53674AC8.md`, `COORDINATION.md` (append-only) | 2026-10-22T12:00Z | Non-overlapping namespace; no edits to other sessions' files. 47 fixtures verified, 12 High / 24 Medium / 11 Low, 12 predictions (58-68 words each). All picks inside -250..+10000. Sources: NHL API, ATP Tour, PDC TV, WST, EuroLeague, URC, EHF.
 | T9DC | **Fresh 22 Oct 12:10Z evidence-first desk: re-read official sources for the 22–26 Oct window, originate zero-margin multi-market lines from official records/rankings only, apply the brief's High gate (model probability >70% AND fair American inside −250…+10000) with an explicit mathematical analysis of that gate, publish every row with an official source link, blank-and-flag anything unconfirmed, namespaced dashboard under `/9dc28d1e/` + Flagged-for-Review page, validator gate, PR + merge + live Pages check** | done | 9dc28d1e-olbg1 | `data/9dc28d1e/**`, `scripts/s9dc28d1e_*.py`, `9dc28d1e/**`, `reports/SESSION_9DC28D1E.md`, append-only `COORDINATION.md` (§1 row, §51) | 2026-10-22T12:10Z | Collision-resistant ID (branch slug `9dc28d1e`). Strictly namespaced: does **not** edit canonical `pipeline/**`, `data/current/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`, `.github/workflows/**` or any other session's desk. Claim written as §50; renumbered to **§51** at merge because `e6fc2f12` (T64) published §50 first. Root nav request logged in §51 instead of editing shared root. |
+| T9DC-v2 | **Second build of the 9dc28d1e desk: re-read the NHL team summary, NHL schedule, NHL skater summaries, EuroLeague standings and MLB schedule/standings, recalibrate the EuroLeague model, originate 405 zero-margin markets across winner/handicap/match-total/team-total, publish 4 High picks with player-level evidence, and document mathematically what the −250…+10000 window does to a >70% gate** | done | 9dc28d1e-olbg1 | `data/9dc28d1e/**`, `scripts/s9dc28d1e_*.py`, `9dc28d1e/**`, `reports/SESSION_9DC28D1E.md`, append-only `COORDINATION.md` (§57) | 2026-10-22T12:30Z | Same namespace and same session claim as T9DC (§51); this replaces the v1 dashboard in place, so no other desk is touched. Claim recorded after implementation and before publication — declared, not hidden. |
 
 
 ---
@@ -3467,3 +3468,55 @@ desk's originated fair prices, the model's assumptions are stated on `methodolog
 fourteen sports without a verified fixture remain empty on purpose.
 
 **PR #127 receipt.** Merged 2026-10-22T12:37:44Z as `9e813001ec2af25a609781f34ce0fce3c612623d`. Branch tip `da60f35`; main advanced from `96caf15` to `9e81300`, so the merge ran on top of the newer main with no conflict. Canonical run `39779916514` — *Evidence, model, site and browser gates* — **success**; Pages run `39779915488` — **success**. Live readback of the deployed bytes at `.../fec05fb4/flagged.html?v=4` confirms all three corrections in place: F-FEC-02 reads "4 rows" with the §53 citation, F-FEC-07 reads "62 captured listings are published blank" (32 untimed + 30 started), and F-FEC-14 reads "81 and 88 words". Desk counts unchanged: 87 upcoming / 66 priced / 2 High / 37 Medium / 27 Low / 21 unpriced, 14 flags.
+
+---
+
+## 57. Session `9dc28d1e-olbg1` — T9DC-v2 rebuild (2026-10-22T12:30Z)
+
+Written **after** implementation and before publication, which is the wrong order for a claim. It is
+declared rather than hidden: this rebuild reuses the namespace already claimed by this session in §51
+(`data/9dc28d1e/**`, `scripts/s9dc28d1e_*.py`, `9dc28d1e/**`), edits nothing outside it, and the v1
+dashboard it replaces was this session's own. No other desk's files are touched.
+
+### Why a second build
+
+The v1 desk (PR #114, §51) priced 25 matches and published 3 Highs. Re-reading the same official feeds
+produced two corrections that mattered:
+
+1. **The NHL fixture list was rebuilt.** The v1 table carried matchups that did not survive a second read
+   of `api-web.nhle.com/v1/schedule/2026-10-22`. The published build uses the game ids and home/away
+   designations exactly as the feed returns them, cross-checked against the canonical
+   `data/current/matches.csv` rows for the same twelve games.
+2. **The EuroLeague model was over-confident.** A multiplicative attack/defence model priced
+   Panathinaikos at 97.5% for round 7. The published version shrinks each club's points differential
+   toward zero over four pseudo-games, applies half of the remaining gap and adds a 2.5-point home edge,
+   pricing that fixture at 81.8%. The 0.50 weight is a documented judgement (F-9DC-10).
+
+The desk now prices 23 fixtures (12 NHL, 9 EuroLeague, 2 World Series), originates 405 markets and 682
+selections, and publishes **4 High picks** — Nashville over 1.5 goals at Boston (71.1%, −246), Under 7.5 in
+New Jersey v Anaheim (70.0%, −234), Utah +1.5 at Seattle (70.5%, −239) and San Jose over 1.5 at Ottawa
+(70.4%, −238) — each with a written case naming players whose season totals were read from the NHL stats
+feed during this session.
+
+### The gate finding, quantified on the page
+
+More than 70% implies a fair price shorter than −233.33; the −250 floor caps probability at 71.43%. The
+intersection is 1.43 percentage points wide and +10000 corresponds to 0.99%, which no two-way match market
+reaches. 167 of 682 selections clear 70%; five sit inside the window; four carry player evidence. The
+strongest line on the slate, Panathinaikos at 81.8% (−451), is excluded by the floor and published as Medium
+with its price. The one in-band selection that is not High (Anadolu Efes v Besiktas over 166.5, 71.2%,
+−247) is capped for lack of a EuroLeague player source and flagged as F-9DC-02.
+
+### Gates
+
+`python3 scripts/s9dc28d1e_validate.py` →
+`9DC28D1E VALIDATION PASSED: priced=23 outcomes=682 high=4 predictions=4 pages=26 errors=0 warnings=0`;
+`python3 scripts/validate.py` PASSED (three pre-existing `f7fa77fc/flagged.html` warnings);
+`python3 -m pipeline.validate --site .` 0 errors; `python3 -m unittest discover -s tests/pipeline -q` OK.
+
+### Known gaps, published on the desk
+
+F-9DC-01 gate width · F-9DC-02 capped EuroLeague pick · F-9DC-03 excluded best line · F-9DC-04 inherited
+EuroLeague tip-off times · F-9DC-05 no game-level recent results · F-9DC-06 fourteen empty categories ·
+F-9DC-07 seven blank NHL venues · F-9DC-08 MLB totals rest on two clubs' rates · F-9DC-09 uncalibrated
+models · F-9DC-10 the EuroLeague recalibration.

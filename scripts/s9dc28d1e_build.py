@@ -1,813 +1,815 @@
-#!/usr/bin/env python3
-"""Session 9dc28d1e — build the desk JSON, CSV and the static dashboard under /9dc28d1e/.
+"""Build the 9dc28d1e desk: data exports plus the static site.
 
-Run from the repository root:  python3 scripts/s9dc28d1e_build.py
-The script is deterministic apart from the generated-at stamp, which can be pinned with --now.
+Deterministic: run with --now to pin the generated-at stamp.
 """
+
+from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import html
 import json
 from pathlib import Path
 
+import s9dc28d1e_inputs as I
 import s9dc28d1e_model as M
-from s9dc28d1e_data import (EL_GAMES, EL_TEAMS, EXCLUDED_SPORTS, INHERITED_LISTINGS,
-                            MLB_GAMES, MLB_PROBABLE, MLB_RECORDS, MODEL_VERSION, NHL_GAMES,
-                            NHL_TEAMS, SESSION, SOURCES, SPORT_META)
-from s9dc28d1e_prose import EUROLEAGUE_CAPPED, FINDINGS, PREDICTIONS
+import s9dc28d1e_prose as P
 
+SID = "9dc28d1e"
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / '9dc28d1e'
-DATA = ROOT / 'data' / '9dc28d1e'
+SITE = ROOT / SID
+DATA = ROOT / "data" / SID
 
-SOURCE_BY_ID = {s['id']: s for s in SOURCES}
+WINDOW_START = "2026-10-22T12:11:00Z"
+WINDOW_END = "2026-10-25T12:11:00Z"
 
-NHL_PUCK_LINES = (-1.5, 1.5)
-NHL_TOTALS = (5.5, 6.5)
-NHL_TEAM_TOTALS = (1.5, 2.5, 3.5, 4.5)
-EL_HANDICAPS = (-11.5, -8.5, -5.5, -2.5, 2.5, 5.5, 8.5, 11.5)
-EL_TOTALS = (158.5, 162.5, 166.5, 170.5, 174.5, 178.5)
+SPORT_SLUG = {name: slug for slug, name, _rid in I.SPORTS}
 
 
-# ------------------------------------------------------------------ helpers
-def am(p):
-    return M.american_from_probability(p)
+def esc(text) -> str:
+    return html.escape(str(text), quote=True)
 
 
-def r(x, n=4):
-    return round(x, n)
+# ---------------------------------------------------------------------------
+# Fixtures
+# ---------------------------------------------------------------------------
 
-
-def fmt_am(p):
-    v = am(p)
-    return f"+{v:.0f}" if v > 0 else f"{v:.0f}"
-
-
-def outcome(selection, p, in_band=None, tier=None):
-    return {
-        'selection': selection,
-        'probability': r(p, 6),
-        'fair_decimal': r(1 / p, 6),
-        'decimal_display': f"{1 / p:.4f}",
-        'american_display': fmt_am(p),
-        'fair_price_in_target_band': M.in_band(p) if in_band is None else in_band,
-        'tier': tier if tier else None,
-    }
-
-
-def market_row(fixture_id, market, settlement, outcomes, sources, note=None):
-    return {
-        'id': f"{fixture_id}-{market['slug']}",
-        'market': market['name'],
-        'settlement': settlement,
-        'status': 'experimental — zero-margin model line, not a bookmaker quote',
-        'sources': sources,
-        'note': note,
-        'outcomes': outcomes,
-    }
-
-
-# ------------------------------------------------------------------ fixture + market build
-def nhl_markets(fid, away, home):
-    out = []
-    p_home = M.nhl_moneyline(away, home)
-    out.append(market_row(fid, {'name': 'Match winner (moneyline)', 'slug': 'winner'},
-                          'Settles on the winner of the full game including overtime and shootout.',
-                          [outcome(home, p_home), outcome(away, 1 - p_home)],
-                          ['nhl-team-summary-20262027', 'nhl-schedule-20261022']))
-    for line in NHL_PUCK_LINES:
-        for side, team in (('home', home), ('away', away)):
-            p = M.nhl_puck_line(away, home, side, line)
-            if line < 0:
-                label = f"{team} {line:+.1f}"
-            else:
-                label = f"{team} {line:+.1f}"
-            out.append(market_row(fid, {'name': f'Puck line {line:+.1f}', 'slug': f'pl{str(line).replace(".", "")}{side}'},
-                                  'Settles on the full game including overtime. A regulation tie becomes a one-goal overtime win for one side.',
-                                  [outcome(label, p), outcome(('away' if side == 'home' else 'home'), 1 - p)],
-                                  ['nhl-team-summary-20262027'],
-                                  note='The opposite side is shown as a single mirrored price and is not an independent market.'))
-    for line in NHL_TOTALS:
-        p_over = M.nhl_total_over(away, home, line)
-        out.append(market_row(fid, {'name': f'Total goals {line}', 'slug': f'tot{str(line).replace(".", "")}'},
-                              'Settles on total goals in the full game including overtime.',
-                              [outcome(f'Over {line} goals', p_over), outcome(f'Under {line} goals', 1 - p_over)],
-                              ['nhl-team-summary-20262027']))
-    for team in (home, away):
-        mu = M.nhl_expected_goals(away, home)[1] if team == home else M.nhl_expected_goals(away, home)[0]
-        for line in NHL_TEAM_TOTALS:
-            p_over = 1 - sum(M.poisson_pmf(k, mu) for k in range(int(line) + 1))
-            out.append(market_row(fid, {'name': f'{team} team total {line} goals', 'slug': f'tt{str(line).replace(".", "")}-{team[:3].lower()}'},
-                                  'Settles on that club\'s goals in the full game including overtime.',
-                                  [outcome(f'{team} over {line} goals', p_over),
-                                   outcome(f'{team} under {line} goals', 1 - p_over)],
-                                  ['nhl-team-summary-20262027'],
-                                  note='The usual market line for this match is unknown; the ladder is originated at standard half-goal steps.'))
-    return out
-
-
-def el_markets(fid, home, away):
-    out = []
-    p_home = M.el_moneyline(home, away)
-    out.append(market_row(fid, {'name': 'Match winner (moneyline)', 'slug': 'winner'},
-                          'Settles on the winner of the full game including overtime.',
-                          [outcome(home, p_home), outcome(away, 1 - p_home)],
-                          ['euroleague-standings-e2026', 'euroleague-round7-gamecenter']))
-    for line in EL_HANDICAPS:
-        for side, team in (('home', home), ('away', away)):
-            p = M.el_handicap(home, away, side, line)
-            out.append(market_row(fid, {'name': f'Handicap {line:+.1f}', 'slug': f'hcp{str(line).replace(".", "").replace("-", "m")}{side}'},
-                                  'Settles on the full game including overtime.',
-                                  [outcome(f'{team} {line:+.1f}', p),
-                                   outcome(('away' if side == 'home' else 'home'), 1 - p)],
-                                  ['euroleague-standings-e2026'],
-                                  note='Opposite side mirrored; the ladder is originated, not observed.'))
-    for line in EL_TOTALS:
-        p_over = M.el_total_over(home, away, line)
-        out.append(market_row(fid, {'name': f'Match total {line}', 'slug': f'tot{str(line).replace(".", "")}'},
-                              'Settles on combined points in the full game including overtime.',
-                              [outcome(f'Over {line} points', p_over), outcome(f'Under {line} points', 1 - p_over)],
-                              ['euroleague-standings-e2026']))
-    return out
-
-
-def mlb_markets(fid, away, home):
-    p_home = M.mlb_moneyline(away, home)
-    return [market_row(fid, {'name': 'Match winner (moneyline)', 'slug': 'winner'},
-                       'Settles on the winner of the game. No run line or total is originated for this sport.',
-                       [outcome(home, p_home), outcome(away, 1 - p_home)],
-                       ['mlb-records-2026', 'mlb-schedule-ws-2026'],
-                       note='Run line and totals withheld: the 2026 league run environment was not verified (F-9DC-05).')]
-
-
-def build():
-    priced = []
+def build_fixtures():
     fixtures = []
 
-    for fid, away, home, start, venue in NHL_GAMES:
-        fixtures.append({
-            'id': fid, 'sport': 'ice-hockey', 'competition': 'NHL 2026-27 regular season',
-            'home': home, 'away': away, 'start_utc': start, 'venue': venue,
-            'status': 'scheduled (gameState FUT at read time)', 'priced': True,
-            'source_ids': ['nhl-schedule-20261022', 'nhl-team-summary-20262027'],
-            'verified_this_session': True,
-        })
-        mk = nhl_markets(fid, away, home)
-        priced.append({
-            'fixture_id': fid, 'sport': 'ice-hockey', 'home': home, 'away': away,
-            'start_utc': start, 'venue': venue, 'markets': mk,
-            'inputs': {
-                'home_record': dict(zip(('gp', 'w', 'l', 'otl', 'gf', 'ga'), NHL_TEAMS[home])),
-                'away_record': dict(zip(('gp', 'w', 'l', 'otl', 'gf', 'ga'), NHL_TEAMS[away])),
-                'expected_goals': {'home': r(M.nhl_expected_goals(away, home)[1], 2),
-                                   'away': r(M.nhl_expected_goals(away, home)[0], 2)},
-            },
-        })
+    for gid, home, away, start, venue in I.NHL_GAMES:
+        fixtures.append(dict(
+            id=f"nhl-{gid}", sport="Ice Hockey", sport_slug="ice-hockey",
+            competition="NHL", home=home, away=away, start_utc=start, venue=venue,
+            status="verified", source_ids=["nhl-schedule", "nhl-standings"],
+            note="Participants, home designation and start time read from the NHL schedule feed; "
+                 "team rates read from the NHL team summary." if venue else
+                 "Participants, home designation and start time read from the NHL schedule feed; "
+                 "venue not visible in the rows that were read, so it is left blank.",
+        ))
 
-    for fid, home, away, start, tsrc in EL_GAMES:
-        fixtures.append({
-            'id': fid, 'sport': 'basketball', 'competition': 'EuroLeague 2026-27, Round 7',
-            'home': home, 'away': away, 'start_utc': start, 'venue': None,
-            'status': 'scheduled', 'priced': True,
-            'source_ids': ['euroleague-standings-e2026', tsrc],
-            'verified_this_session': True,
-            'time_inherited': True,
-        })
-        priced.append({
-            'fixture_id': fid, 'sport': 'basketball', 'home': home, 'away': away,
-            'start_utc': start, 'venue': None, 'markets': el_markets(fid, home, away),
-            'inputs': {
-                'home_record': dict(zip(('gp', 'w', 'l', 'pf', 'pa'), EL_TEAMS[home])),
-                'away_record': dict(zip(('gp', 'w', 'l', 'pf', 'pa'), EL_TEAMS[away])),
-                'expected_points': {'home': r(M.el_expected_points(home, away)[0], 2),
-                                    'away': r(M.el_expected_points(home, away)[1], 2)},
-            },
-        })
+    for gid, home, away, start, venue in I.EL_GAMES:
+        fixtures.append(dict(
+            id=f"el-{gid}", sport="Basketball", sport_slug="basketball",
+            competition="EuroLeague", home=home, away=away, start_utc=start, venue=venue,
+            status="verified-time-inherited", source_ids=["el-standings", "el-round7"],
+            note="Club records, points for and points against read at 12:08Z. The standings feed "
+                 "carries no schedule, so the tip-off time is inherited from the 07:17Z canonical "
+                 "observation of the round 7 game centre and is flagged (F-9DC-04).",
+        ))
 
-    for fid, away, home, start, venue, label in MLB_GAMES:
-        fixtures.append({
-            'id': fid, 'sport': 'baseball', 'competition': label,
-            'home': home, 'away': away, 'start_utc': start, 'venue': venue,
-            'status': 'scheduled', 'priced': True,
-            'source_ids': ['mlb-schedule-ws-2026', 'mlb-records-2026'],
-            'verified_this_session': True,
-            'probable_pitcher': MLB_PROBABLE.get(fid, {}),
-        })
-        priced.append({
-            'fixture_id': fid, 'sport': 'baseball', 'home': home, 'away': away,
-            'start_utc': start, 'venue': venue, 'markets': mlb_markets(fid, away, home),
-            'inputs': {'home_record': MLB_RECORDS[home], 'away_record': MLB_RECORDS[away]},
-        })
+    for gid, home, away, official, start, venue, pitcher in I.MLB_GAMES:
+        fixtures.append(dict(
+            id=f"mlb-{gid}", sport="Baseball", sport_slug="baseball",
+            competition="MLB World Series", home=home, away=away, start_utc=start, venue=venue,
+            status="verified", source_ids=["mlb-schedule", "mlb-standings"],
+            note=("Probable pitcher announced by the home club: " + pitcher + ".") if pitcher
+            else "No probable pitcher had been announced for either club at the time of the read.",
+        ))
 
-    fixture_sources = {f['id']: f['source_ids'] for f in fixtures}
-    fixture_competition = {f['id']: f['competition'] for f in fixtures}
-    for row in priced:
-        row['source_ids'] = fixture_sources[row['fixture_id']]
-        row['competition'] = fixture_competition[row['fixture_id']]
+    # later World Series games: listed, outside the 72-hour window, unpriced
+    for gid, date, start, venue, home_side in (
+        (849804, "2026-10-26", "2026-10-27T00:00:00Z", "Tropicana Field", False),
+        (849803, "2026-10-27", "2026-10-28T00:00:00Z", "Tropicana Field", False),
+        (849799, "2026-10-28", "2026-10-29T00:00:00Z", "Tropicana Field", False),
+        (849801, "2026-10-30", "2026-10-31T00:00:00Z", "American Family Field", True),
+    ):
+        fixtures.append(dict(
+            id=f"mlb-{gid}", sport="Baseball", sport_slug="baseball",
+            competition="MLB World Series",
+            home="Milwaukee Brewers" if home_side else "Tampa Bay Rays",
+            away="Tampa Bay Rays" if home_side else "Milwaukee Brewers",
+            start_utc=start, venue=venue, status="listed-outside-window",
+            source_ids=["mlb-schedule"], note="Scheduled but outside the 72-hour pricing window; published unpriced.",
+        ))
 
-    # ---- tiers
-    prediction_keys = {(p['fixture_id'], p['selection']) for p in PREDICTIONS}
-    capped = {(fid, sel): reason for fid, sel, _, _, reason in EUROLEAGUE_CAPPED}
-    out_of_window = []
-    for row in priced:
-        for mk in row['markets']:
-            for oc in mk['outcomes']:
-                p = oc['probability']
-                if p > 0.70 and M.in_band(p) and (row['fixture_id'], oc['selection']) in prediction_keys:
-                    oc['tier'] = 'high'
-                elif p > 0.70 and M.in_band(p):
-                    oc['tier'] = 'medium'
-                    oc['tier_reason'] = capped.get((row['fixture_id'], oc['selection']),
-                                                   'In band but no prediction was written for this line.')
-                elif p > 0.70:
-                    oc['tier'] = 'outside_window'
-                    out_of_window.append({
-                        'fixture_id': row['fixture_id'], 'market': mk['market'],
-                        'selection': oc['selection'], 'probability': p,
-                        'american': oc['american_display'],
-                    })
-                elif p >= 0.60:
-                    oc['tier'] = 'medium'
-                else:
-                    oc['tier'] = 'low'
-            mk['tiers'] = sorted({o['tier'] for o in mk['outcomes']})
+    return fixtures
 
-    # ---- sensitivity for High rows
-    def nhl_team_total_prob(away, home, team, line, shrink, edge):
-        old_s, old_e = M.NHL_SHRINK, M.NHL_HOME_EDGE
-        M.NHL_SHRINK, M.NHL_HOME_EDGE = shrink, edge
-        try:
-            mu_a, mu_h = M.nhl_expected_goals(away, home)
-        finally:
-            M.NHL_SHRINK, M.NHL_HOME_EDGE = old_s, old_e
-        mu = mu_h if team == home else mu_a
-        over = 1 - sum(M.poisson_pmf(k, mu) for k in range(int(line) + 1))
-        return over
 
-    sensitivity = []
-    for pred in PREDICTIONS:
-        row = next(x for x in priced if x['fixture_id'] == pred['fixture_id'])
-        is_over = 'over' in pred['selection'].lower()
-        team = row['home'] if pred['selection'].startswith(row['home']) else row['away']
-        vals = []
-        for shrink in (8.0, 12.0, 16.0):
-            for edge in (0.05, 0.10, 0.15):
-                over = nhl_team_total_prob(row['away'], row['home'], team, pred['line'], shrink, edge)
-                vals.append(over if is_over else 1 - over)
-        sensitivity.append({
-            'fixture_id': pred['fixture_id'], 'selection': pred['selection'],
-            'probability': next(o['probability'] for mk in row['markets'] for o in mk['outcomes']
-                                if o['selection'] == pred['selection']),
-            'low': r(min(vals)), 'high': r(max(vals)),
-            'fragile': min(vals) <= 0.70 or max(vals) > 0.7142857,
-        })
+def inherited_fixtures(priced_ids):
+    """Canonical listings for sports this session did not re-read. Prices stay blank."""
+    path = ROOT / "data" / "current" / "matches.csv"
+    if not path.exists():
+        return []
+    out = []
+    with path.open(encoding="utf-8-sig") as fh:
+        for row in csv.DictReader(fh):
+            slug = row["sport"].strip()
+            if slug in ("ice-hockey", "basketball", "baseball"):
+                continue
+            out.append(dict(
+                id=row["id"], sport=row.get("sport", ""), sport_slug=slug,
+                competition=row.get("competition", ""),
+                home=row.get("participant_a", ""), away=row.get("participant_b", ""),
+                start_utc=row.get("start_utc", ""), venue=row.get("venue", ""),
+                status="inherited-unverified", source_ids=[],
+                external_url=(row.get("official_urls") or "").split("|")[0],
+                note="Carried from the 07:17Z canonical observation window. Not re-read this session; "
+                     "prices withheld and the row is marked unverified.",
+            ))
+    return out
 
-    # ---- desk document
-    all_outcomes = [o for row in priced for mk in row['markets'] for o in mk['outcomes']]
-    counts = {
-        'priced_matches': len(priced),
-        'inherited_listings': len(INHERITED_LISTINGS),
-        'fixtures_total': len(fixtures) + len(INHERITED_LISTINGS),
-        'markets': sum(len(row['markets']) for row in priced),
-        'outcomes': len(all_outcomes),
-        'high': sum(1 for o in all_outcomes if o['tier'] == 'high'),
-        'medium': sum(1 for o in all_outcomes if o['tier'] == 'medium'),
-        'low': sum(1 for o in all_outcomes if o['tier'] == 'low'),
-        'outside_window': sum(1 for o in all_outcomes if o['tier'] == 'outside_window'),
-        'predictions': len(PREDICTIONS),
-        'findings': len(FINDINGS),
-        'sports_in_scope': len(SPORT_META),
-        'sports_priced': len({row['sport'] for row in priced}),
-        'sports_with_participants': len({row['sport'] for row in priced} |
-                                        {s for s, *_ in INHERITED_LISTINGS if s in SPORT_META}),
-    }
 
-    desk = {
-        'desk': '9dc28d1e',
-        'session': SESSION,
-        'generated_at': NOW,
-        'model_version': MODEL_VERSION,
-        'scope': {
-            'in_scope_sports': [{'slug': k, 'name': v[0], 'olbg_id': v[1], 'official_url': v[2]}
-                                for k, v in SPORT_META.items()],
-            'excluded_sports': [{'name': n, 'olbg_id': i, 'note': note} for n, i, note in EXCLUDED_SPORTS],
-        },
-        'gate': {
-            'rule': 'High = model probability > 0.70 AND selected line fair American in [-250, +10000] '
-                    'AND a unique >=30-word prediction supported by verified player-level facts.',
-            'band_low_american': -250,
-            'band_high_american': 10000,
-            'implied_probability_at_70pct_american': -233.33,
-            'effective_probability_window': [0.70, 0.7142857],
-            'note': 'American prices shorter than -250 are excluded even when the probability is far above 70%.',
-        },
-        'sources': [{k: v for k, v in s.items()} for s in SOURCES] + [
-            {'id': 'nhl-club-stats-NSH', 'publisher': 'NHL', 'url': 'https://api-web.nhle.com/v1/club-stats/NSH/20262027/2',
-             'observed_utc': '2026-10-22T12:22:00Z', 'what': 'Nashville skater and goalie season totals.', 'scope_note': 'Player-level form used only in the High write-up.'},
-            {'id': 'nhl-club-stats-SJS', 'publisher': 'NHL', 'url': 'https://api-web.nhle.com/v1/club-stats/SJS/20262027/2',
-             'observed_utc': '2026-10-22T12:23:00Z', 'what': 'San Jose skater and goalie season totals.', 'scope_note': 'Player-level form used only in the High write-up.'},
-            {'id': 'nhl-club-stats-MIN', 'publisher': 'NHL', 'url': 'https://api-web.nhle.com/v1/club-stats/MIN/20262027/2',
-             'observed_utc': '2026-10-22T12:24:00Z', 'what': 'Minnesota skater and goalie season totals.', 'scope_note': 'Player-level form used only in the High write-up.'},
-        ],
-        'fixtures': fixtures,
-        'inherited': [{
-            'sport': s, 'id': fid, 'participant_a': a, 'participant_b': b,
-            'date': d, 'start_utc': st, 'note': note,
-            'source_ids': ['canonical-snapshot-20261022T0727Z'],
-            'verified_this_session': False, 'priced': False,
-        } for s, fid, a, b, d, st, note in INHERITED_LISTINGS],
-        'priced': priced,
-        'predictions': PREDICTIONS,
-        'sensitivity': sensitivity,
-        'capped_in_band': [
-            {'fixture_id': row['fixture_id'], 'selection': o['selection'], 'probability': o['probability'],
-             'american': o['american_display'], 'reason': o.get('tier_reason', '')}
-            for row in priced for mk in row['markets'] for o in mk['outcomes']
-            if o['tier'] == 'medium' and o['probability'] > 0.70
-        ],
-        'out_of_window': sorted(out_of_window, key=lambda x: -x['probability']),
-        'findings': FINDINGS,
-        'counts': counts,
-    }
+# ---------------------------------------------------------------------------
+# Markets and outcomes
+# ---------------------------------------------------------------------------
+
+def price_rows(sport_slug, fixture):
+    if sport_slug == "ice-hockey":
+        return list(M.nhl_selections(fixture["home"], fixture["away"]))
+    if sport_slug == "basketball":
+        return list(M.el_selections(fixture["home"], fixture["away"]))
+    if sport_slug == "baseball":
+        return list(M.mlb_selections(fixture["home"], fixture["away"]))
+    return []
+
+
+SETTLEMENT = {
+    "winner": "Full game including overtime, shootout or extra innings.",
+    "handicap": "Full game including overtime or extra innings; the handicap is applied to the final margin.",
+    "total": "Full game, both clubs combined.",
+    "team-total": "That club's goals or runs only, full game.",
+}
+
+
+def build_markets(fixtures, predictions):
+    markets, outcomes = [], []
+    high_keys = {(p["fixture_id"], p["selection"]) for p in predictions}
+    for fx in fixtures:
+        rows = price_rows(fx["sport_slug"], fx)
+        if not rows:
+            continue
+        by_market = {}
+        for key, market_label, selection, prob in rows:
+            mk = (key, market_label)
+            by_market.setdefault(mk, []).append((selection, prob))
+        for (key, market_label), sels in by_market.items():
+            mid = f"{fx['id']}::{abs(hash((key, market_label))) % 100000:05d}"
+            mid = f"{fx['id']}::{key}::{market_label}".lower().replace(" ", "-").replace(".", "_")
+            markets.append(dict(id=mid, fixture_id=fx["id"], key=key, label=market_label,
+                                settlement=SETTLEMENT[key], outcomes=len(sels)))
+            for selection, prob in sels:
+                prob = round(prob, 6)
+                dec = M.decimal_from_probability(prob)
+                am = M.american_from_probability(prob)
+                oid = f"{mid}::{selection}".lower().replace(" ", "-").replace(".", "_")
+                tier, reason = M.tier_for(prob, am, (fx["id"], selection) in high_keys)
+                low, high = M.sensitivity(fx["sport_slug"], fx["home"], fx["away"], key, selection)
+                if fx["status"] != "verified" and fx["status"] != "verified-time-inherited":
+                    tier, reason = "UNPRICED", "outside the pricing window"
+                outcomes.append(dict(
+                    id=oid, market_id=mid, fixture_id=fx["id"], selection=selection,
+                    probability=prob, fair_decimal=dec, american=am, tier=tier, reason=reason,
+                    sensitivity_low=round(low, 6), sensitivity_high=round(high, 6),
+                ))
+    return markets, outcomes
+
+
+# ---------------------------------------------------------------------------
+# Data export
+# ---------------------------------------------------------------------------
+
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def build(now: str):
+    fixtures = build_fixtures()
+    priced_ids = {f["id"] for f in fixtures}
+    fixtures += inherited_fixtures(priced_ids)
+
+    predictions = [dict(p) for p in P.PREDICTIONS]
+    markets, outcomes = build_markets([f for f in fixtures if f["status"].startswith("verified")], predictions)
+
+    lookup = {(o["fixture_id"], o["selection"]): o for o in outcomes}
+    for p in predictions:
+        o = lookup.get((p["fixture_id"], p["selection"]))
+        if o is None:
+            raise SystemExit(f"prediction does not match a priced selection: {p['fixture_id']} / {p['selection']}")
+        if o["tier"] != "HIGH":
+            raise SystemExit(f"prediction is not a High selection: {p['selection']} ({o['tier']})")
+        p["outcome_id"] = o["id"]
+        p["probability"] = o["probability"]
+        p["american"] = o["american"]
+        p["tier"] = o["tier"]
+        p["sensitivity_low"] = o["sensitivity_low"]
+        p["sensitivity_high"] = o["sensitivity_high"]
+
+    counts = dict(
+        fixtures=len(fixtures),
+        priced_matches=sum(1 for f in fixtures if f["status"].startswith("verified")),
+        listed_unpriced=sum(1 for f in fixtures if not f["status"].startswith("verified")),
+        inherited=sum(1 for f in fixtures if f["status"] == "inherited-unverified"),
+        markets=len(markets),
+        outcomes=len(outcomes),
+        high=sum(1 for o in outcomes if o["tier"] == "HIGH"),
+        medium=sum(1 for o in outcomes if o["tier"] == "MEDIUM"),
+        low=sum(1 for o in outcomes if o["tier"] == "LOW"),
+        above_window=sum(1 for o in outcomes if o["tier"] == "MEDIUM" and o["probability"] > M.HIGH_PROB_FLOOR
+                         and not M.in_price_window(o["american"])),
+        predictions=len(predictions),
+        findings=len(P.FINDINGS),
+        sports=len(I.SPORTS),
+    )
+
+    desk = dict(
+        session=SID,
+        generated_at=now,
+        window=dict(start=WINDOW_START, end=WINDOW_END),
+        observed_at=I.OBSERVED_AT,
+        model=dict(
+            nhl=f"Poisson goals, shrinkage k={M.NHL_K}, home multiplier {M.NHL_HOME}",
+            euroleague=f"Normal margin, shrinkage k={M.EL_K}, rating weight {M.EL_DIFF_WEIGHT}, home edge {M.EL_HOME_EDGE}",
+            mlb=f"Pythagorean exponent {M.MLB_PYTH} with log5 and home adjustment",
+        ),
+        gate=dict(probability_floor=M.HIGH_PROB_FLOOR, short_edge=M.PRICE_SHORT_EDGE,
+                  long_edge=M.PRICE_LONG_EDGE),
+        counts=counts,
+        sources=I.SOURCES,
+        fixtures=fixtures,
+        markets=markets,
+        outcomes=outcomes,
+        predictions=predictions,
+        findings=P.FINDINGS,
+        sports=[dict(slug=s, name=n, route_id=r) for s, n, r in I.SPORTS],
+    )
+
+    DATA.mkdir(parents=True, exist_ok=True)
+    (DATA / "desk.json").write_text(json.dumps(desk, indent=1, sort_keys=False) + "\n")
+
+    with (DATA / "priced.csv").open("w", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["fixture_id", "sport", "competition", "home", "away", "start_utc",
+                    "market", "selection", "probability", "fair_decimal", "american", "tier"])
+        fmap = {f["id"]: f for f in fixtures}
+        for o in outcomes:
+            f = fmap[o["fixture_id"]]
+            w.writerow([o["fixture_id"], f["sport"], f["competition"], f["home"], f["away"],
+                        f["start_utc"], o["market_id"].split("::", 1)[1], o["selection"],
+                        o["probability"], o["fair_decimal"], o["american"], o["tier"]])
+
+    with (DATA / "predictions.csv").open("w", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["fixture_id", "selection", "probability", "american", "headline", "words"])
+        for p in predictions:
+            w.writerow([p["fixture_id"], p["selection"], p["probability"], p["american"],
+                        p["headline"], len(p["body"].split())])
     return desk
 
 
-# ------------------------------------------------------------------ site rendering
-CSS = """
-:root{--bg:#0b1220;--card:#131d2f;--line:#243349;--txt:#e6edf7;--muted:#93a4bd;--accent:#4cc2ff;
---good:#4ade80;--warn:#fbbf24;--bad:#f87171;--hi:#22d3ee}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
-header{background:linear-gradient(180deg,#101a2b,#0b1220);border-bottom:1px solid var(--line);padding:18px 0}
-.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-h1{font-size:24px;margin:0 0 6px}h2{font-size:19px;margin:30px 0 10px}h3{font-size:16px;margin:20px 0 8px}
-.sub{color:var(--muted);font-size:13px}
-nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-nav a{background:#16233a;border:1px solid var(--line);padding:6px 11px;border-radius:7px;font-size:13px;color:var(--txt)}
-nav a.on{background:#1d3a55;border-color:#2f5f86;color:#fff}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:20px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
-.card .n{font-size:26px;font-weight:700}.card .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13px;margin:10px 0 24px}
-th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-th{background:#16233a;color:#cfe0f5;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em;position:sticky;top:0}
-tr:last-child td{border-bottom:none}tbody tr:hover{background:#16233a}
-.num{font-variant-numeric:tabular-nums;white-space:nowrap}
-.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.02em}
-.high{background:rgba(76,194,255,.16);color:#8fdcff;border:1px solid #2c6f96}
-.medium{background:rgba(251,191,36,.14);color:#fcd34d;border:1px solid #7a5c12}
-.low{background:rgba(148,163,184,.14);color:#c3cfe0;border:1px solid #3a4a63}
-.outside_window{background:rgba(248,113,113,.12);color:#fca5a5;border:1px solid #7f2f2f}
-.none{background:#1a2436;color:#8496ad;border:1px solid #2c3a50}
-.note{background:#101b2c;border-left:3px solid var(--accent);padding:10px 14px;border-radius:0 8px 8px 0;color:#c9d8ea;font-size:13px;margin:14px 0}
-.warnbox{border-left-color:var(--warn)}
-.pred{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0}
-.pred .meta{color:var(--muted);font-size:12px;margin-bottom:6px}
-.pred p{margin:8px 0 0}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
-footer{border-top:1px solid var(--line);margin-top:40px;padding:22px 0;color:var(--muted);font-size:12px}
-code{background:#0e1726;padding:2px 5px;border-radius:4px;font-size:12px}
-.small{font-size:12px;color:var(--muted)}
-"""
+# ---------------------------------------------------------------------------
+# HTML
+# ---------------------------------------------------------------------------
 
 NAV = [
-    ('index.html', 'Dashboard'),
-    ('matches.html', 'Matches'),
-    ('markets.html', 'Markets & prices'),
-    ('predictions.html', 'High-confidence picks'),
-    ('analysis.html', 'Gate analysis'),
-    ('flagged.html', 'Flagged for review'),
-    ('sources.html', 'Sources'),
-    ('methodology.html', 'Methodology'),
+    ("index.html", "Desk"),
+    ("matches.html", "Matches"),
+    ("markets.html", "Markets"),
+    ("predictions.html", "Predictions"),
+    ("analysis.html", "Gate analysis"),
+    ("flagged.html", "Flagged"),
+    ("coverage.html", "Coverage"),
+    ("sources.html", "Sources"),
+    ("methodology.html", "Method"),
 ]
 
+CSS = """
+:root{--ink:#14161a;--muted:#5b6470;--line:#dfe3e8;--bg:#fbfbfa;--accent:#0b5d4b;--warn:#8a4b00;--high:#0b5d4b;--med:#33506e;--low:#6b7280}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header.site{border-bottom:1px solid var(--line);background:#fff}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;padding:14px 20px}
+header.site a.brand{font-weight:700;color:var(--ink);text-decoration:none;margin-right:8px}
+nav a{color:var(--muted);text-decoration:none;font-size:14px}
+nav a:hover{color:var(--accent)}
+main{padding:28px 0 64px}
+h1{font-size:30px;line-height:1.2;margin:6px 0 8px}
+h2{font-size:21px;margin:34px 0 10px;border-top:1px solid var(--line);padding-top:18px}
+h3{font-size:17px;margin:22px 0 6px}
+p.lede{font-size:17px;color:#2b3038;max-width:72ch}
+p,li{max-width:80ch}
+.small{font-size:13px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));gap:12px;margin:22px 0}
+.stat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.stat b{display:block;font-size:24px;line-height:1.1;margin-bottom:2px}
+.stat span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;background:#fff}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:#f6f7f8}
+tbody tr:hover{background:#fcfcfb}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+code{background:#f1f3f4;padding:1px 5px;border-radius:4px;font-size:13px}
+.tag{display:inline-block;font-size:11px;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:2px 8px;border:1px solid currentColor}
+.tag.HIGH{color:var(--high)}.tag.MEDIUM{color:var(--med)}.tag.LOW{color:var(--low)}.tag.UNPRICED{color:var(--muted)}
+.note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:14px 16px;margin:18px 0}
+.note.warn{border-left-color:var(--warn)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px}
+.card h4{margin:0 0 4px;font-size:15px}
+.card .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.pick{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+.pick h3{margin:0 0 4px;font-size:18px}
+.pick .meta{font-size:13px;color:var(--muted);margin-bottom:10px}
+.pick .price{font-weight:700;color:var(--accent)}
+ul.clean{padding-left:18px}
+footer{border-top:1px solid var(--line);padding:20px 0 40px;color:var(--muted);font-size:13px}
+a{color:var(--accent)}
+@media(max-width:640px){h1{font-size:24px}.stat b{font-size:20px}}
+"""
 
-def page(title, rel, body, active=None, subtitle=''):
-    def nav_link(href, label):
-        cls = ' class="on"' if href == active else ''
-        return f'<a href="{rel}{href}"{cls}>{html.escape(label)}</a>'
-    nav = ''.join(nav_link(href, label) for href, label in NAV)
-    return f"""<!doctype html>
+
+def page(path: Path, title: str, body: str, depth: int = 0):
+    up = "../" * depth
+    nav = " ".join(f'<a href="{up}{href}">{esc(label)}</a>' for href, label in NAV)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{html.escape(title)} · OLBG research desk 9dc28d1e</title>
-<style>{CSS}</style></head>
-<body>
-<header><div class="wrap">
-<h1>{html.escape(title)}</h1>
-<div class="sub">{subtitle or 'Session 9dc28d1e · evidence-first desk · generated ' + NOW}</div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{esc(title)} · OLBG research desk {SID}</title>
+<link rel="stylesheet" href="{up}assets/style.css">
+</head><body>
+<header class="site"><div class="wrap">
+<a class="brand" href="{up}index.html">OLBG research desk</a>
 <nav>{nav}</nav>
 </div></header>
-<main class="wrap">
+<main><div class="wrap">
 {body}
-</main>
+</div></main>
 <footer><div class="wrap">
-<p><strong>Estimate, not advice.</strong> Every price on this desk is a zero-margin model line originated
-from official team-season inputs. No bookmaker quote, availability or edge is claimed. Blank means
-unverified. This desk is independent of OLBG and of the canonical dashboard build.</p>
-<p>Generated {NOW} · model {MODEL_VERSION} · <a href="{rel}sources.html">source register</a> ·
-<a href="{rel}methodology.html">methodology and limits</a></p>
+<p class="small">Desk <code>{SID}</code> · generated {esc(GENERATED_AT)} from official league feeds read between 12:05Z and 12:25Z on 22 October 2026. Zero-margin model prices, not bookmaker quotes. No stake, edge or availability is claimed.</p>
 </div></footer>
-</body></html>"""
+</body></html>
+""")
 
 
-def tag(t):
-    label = {'high': 'HIGH', 'medium': 'MEDIUM', 'low': 'LOW', 'outside_window': 'OUTSIDE WINDOW'}.get(t, '—')
-    return f'<span class="tag {t}">{label}</span>'
+GENERATED_AT = I.GENERATED_AT
 
 
-def src_links(ids):
-    out = []
-    for sid in ids:
-        s = SOURCE_BY_ID.get(sid) or next((x for x in EXTRA_SOURCES if x['id'] == sid), None)
-        if not s:
-            out.append(html.escape(sid))
-            continue
-        host = s['url'].split('/')[2]
-        out.append(f'<a href="{html.escape(s["url"])}" title="{html.escape(s["publisher"])}">{html.escape(host)}</a>')
-    return ' '.join(out) if out else '—'
+def usd(am):
+    if am is None:
+        return "—"
+    return f"{am:+.0f}" if am > 0 else f"{am:.0f}"
 
 
-EXTRA_SOURCES = [
-    {'id': 'nhl-club-stats-NSH', 'publisher': 'NHL', 'url': 'https://api-web.nhle.com/v1/club-stats/NSH/20262027/2',
-     'observed_utc': '2026-10-22T12:22:00Z', 'what': 'Nashville skater and goalie season totals.', 'scope_note': 'Player-level form used only in the High write-up.'},
-    {'id': 'nhl-club-stats-SJS', 'publisher': 'NHL', 'url': 'https://api-web.nhle.com/v1/club-stats/SJS/20262027/2',
-     'observed_utc': '2026-10-22T12:23:00Z', 'what': 'San Jose skater and goalie season totals.', 'scope_note': 'Player-level form used only in the High write-up.'},
-    {'id': 'nhl-club-stats-MIN', 'publisher': 'NHL', 'url': 'https://api-web.nhle.com/v1/club-stats/MIN/20262027/2',
-     'observed_utc': '2026-10-22T12:24:00Z', 'what': 'Minnesota skater and goalie season totals.', 'scope_note': 'Player-level form used only in the High write-up.'},
-    {'id': 'canonical-snapshot-20261022T0727Z', 'publisher': 'Project canonical snapshot',
-     'url': 'https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/current/snapshot.json',
-     'observed_utc': '2026-10-22T07:17:40Z', 'what': 'Inherited listings and their original official source links.',
-     'scope_note': 'Not re-read by this session; prices withheld.'},
-]
+def pct(p):
+    return f"{p*100:.1f}%"
 
 
-def sport_card(slug, meta, desk):
-    priced = [x for x in desk['priced'] if x['sport'] == slug]
-    inherited = [x for x in desk['inherited'] if x['sport'] == slug]
-    highs = sum(1 for x in priced for mk in x['markets'] for o in mk['outcomes'] if o['tier'] == 'high')
-    if priced:
-        status = f'<span class="tag high">{highs} HIGH</span>' if highs else '<span class="tag medium">PRICED</span>'
-        note = f'{len(priced)} matches priced this session'
-    elif inherited:
-        status = '<span class="tag none">LISTED</span>'
-        note = f'{len(inherited)} listings, prices withheld'
-    else:
-        status = '<span class="tag none">NO INPUT</span>'
-        note = 'no official input obtained today'
-    return (f'<div class="card"><h3 style="margin:0 0 6px"><a href="sports/{slug}.html">'
-            f'{html.escape(meta[0])}</a></h3><div class="small">OLBG route id {meta[1]}</div>'
-            f'<div style="margin-top:8px">{status}&nbsp; <span class="small">{note}</span></div></div>')
+def tier_tag(t):
+    return f'<span class="tag {t}">{t}</span>'
 
 
-def render(desk):
-    OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / 'assets').mkdir(exist_ok=True)
-    (OUT / 'assets' / 'style.css').write_text(CSS)
-    c = desk['counts']
-    preds = desk['predictions']
+def fixture_label(f):
+    return f'{esc(f["home"])} v {esc(f["away"])}'
 
-    # ---------------- index
-    hi_rows = []
-    for p in preds:
-        row = next(x for x in desk['priced'] if x['fixture_id'] == p['fixture_id'])
-        prob = next(o['probability'] for mk in row['markets'] for o in mk['outcomes'] if o['selection'] == p['selection'])
-        sens = next(s for s in desk['sensitivity'] if s['fixture_id'] == p['fixture_id'])
-        hi_rows.append(f"""<tr><td><a href="sports/{row['sport']}.html">{html.escape(row['sport'])}</a></td>
-<td>{html.escape(row['away'])} at {html.escape(row['home'])}<div class="small">{html.escape(row['start_utc'])} · {html.escape(row['venue'] or '')}</div></td>
-<td>{html.escape(p['selection'])}</td>
-<td class="num">{prob*100:.1f}%</td><td class="num">{fmt_am(prob)}</td>
-<td class="num">{sens['low']*100:.1f}–{sens['high']*100:.1f}%</td><td>{tag('high')}</td></tr>""")
 
-    body = f"""
-<p class="sub" style="max-width:860px">A fresh 22 October 2026 desk: official sources re-read between 12:04Z and 12:25Z,
-own zero-margin lines across winner, handicap, match-total and team-total markets, and the brief's
-High-confidence rule applied literally and conjunctively.</p>
+def gate_summary(desk):
+    above = [o for o in desk["outcomes"] if o["probability"] > M.HIGH_PROB_FLOOR]
+    in_band = [o for o in above if M.in_price_window(o["american"])]
+    high = [o for o in desk["outcomes"] if o["tier"] == "HIGH"]
+    return dict(above=len(above), in_band=len(in_band), high=len(high),
+                capped=len(in_band) - len(high))
 
-<div class="cards">
-  <div class="card"><div class="n">{c['priced_matches']}</div><div class="l">Priced matches</div></div>
-  <div class="card"><div class="n">{c['markets']}</div><div class="l">Originated markets</div></div>
-  <div class="card"><div class="n">{c['outcomes']}</div><div class="l">Priced outcomes</div></div>
-  <div class="card"><div class="n">{c['high']}</div><div class="l">High confidence</div></div>
-  <div class="card"><div class="n">{c['medium']}</div><div class="l">Medium</div></div>
-  <div class="card"><div class="n">{c['low']}</div><div class="l">Low</div></div>
-  <div class="card"><div class="n">{c['outside_window']}</div><div class="l">Over 70%, price outside window</div></div>
-  <div class="card"><div class="n">{c['predictions']}</div><div class="l">Written predictions</div></div>
+
+def render_index(desk):
+    c = desk["counts"]
+    g = gate_summary(desk)
+    highs = [o for o in desk["outcomes"] if o["tier"] == "HIGH"]
+    fmap = {f["id"]: f for f in desk["fixtures"]}
+    rows = []
+    for o in sorted(highs, key=lambda x: -x["probability"]):
+        f = fmap[o["fixture_id"]]
+        rows.append(
+            f'<tr><td><a href="sports/{f["sport_slug"]}.html">{esc(f["sport"])}</a></td>'
+            f'<td>{fixture_label(f)}<br><span class="small">{esc(f["start_utc"])}</span></td>'
+            f'<td>{esc(o["selection"])}</td><td class="num">{pct(o["probability"])}</td>'
+            f'<td class="num">{usd(o["american"])}</td>'
+            f'<td class="num">{pct(o["sensitivity_low"])}–{pct(o["sensitivity_high"])}</td>'
+            f'<td>{tier_tag(o["tier"])}</td></tr>')
+
+    cards = []
+    by_slug = {}
+    for f in desk["fixtures"]:
+        by_slug.setdefault(f["sport_slug"], []).append(f)
+    for s in desk["sports"]:
+        fx = by_slug.get(s["slug"], [])
+        priced = sum(1 for f in fx if f["status"].startswith("verified"))
+        if priced:
+            status = f"{priced} priced"
+        elif fx:
+            status = f"{len(fx)} listed, unpriced"
+        else:
+            status = "no verified input"
+        cards.append(
+            f'<div class="card"><h4><a href="sports/{s["slug"]}.html">{esc(s["name"])}</a></h4>'
+            f'<div class="k">{status}</div></div>')
+
+    return f"""
+<p class="small">22 October 2026 · observation window 12:11Z–25 October 12:11Z</p>
+<h1>Twenty-three fixtures priced from official feeds, and an honest verdict on the High-confidence rule</h1>
+<p class="lede">This desk re-read the NHL, EuroLeague and MLB feeds, originated zero-margin lines across
+winner, handicap, match-total and team-total markets, and applied the brief's High-confidence rule
+literally: more than 70% probability <em>and</em> a fair price no shorter than −250. {g['in_band']} selections
+clear both tests: {g['high']} carry the player-level evidence the brief also asks for and are published as
+High, while {g['capped']} is in-band but capped, with its price published and the reason flagged.</p>
+
+<div class="stats">
+  <div class="stat"><b>{c['priced_matches']}</b><span>Priced matches</span></div>
+  <div class="stat"><b>{c['markets']}</b><span>Originated markets</span></div>
+  <div class="stat"><b>{c['outcomes']}</b><span>Priced selections</span></div>
+  <div class="stat"><b>{c['high']}</b><span>High confidence</span></div>
+  <div class="stat"><b>{c['medium']}</b><span>Medium</span></div>
+  <div class="stat"><b>{c['low']}</b><span>Low</span></div>
+  <div class="stat"><b>{c['above_window']}</b><span>Above 70%, price outside window</span></div>
+  <div class="stat"><b>{c['predictions']}</b><span>Written predictions</span></div>
 </div>
 
 <h2>High-confidence picks</h2>
 <table><thead><tr><th>Sport</th><th>Fixture</th><th>Selection</th><th>Model probability</th>
-<th>Fair price</th><th>Sensitivity range</th><th>Tier</th></tr></thead><tbody>
-{''.join(hi_rows)}
-</tbody></table>
-<p class="small">Sensitivity range re-computes the same selection under shrinkage of 8, 12 and 16 games and a
-home edge of 0.05, 0.10 and 0.15 goals. A High whose range leaves the 70.00–71.43% window is fragile;
-the analysis page shows each row. <a href="predictions.html">Read the full write-ups →</a></p>
+<th>Fair price</th><th>Sensitivity range</th><th>Tier</th></tr></thead>
+<tbody>{''.join(rows)}</tbody></table>
+<p class="small">Fair price is 1 ÷ model probability, expressed in American odds, with no margin added.
+The sensitivity range re-computes the same selection across the shrinkage and home-advantage grid on the
+<a href="methodology.html">method page</a>. A High whose range leaves the 70.00–71.43% window is fragile;
+each is discussed on the <a href="analysis.html">gate analysis</a> page.</p>
 
-<div class="note warnbox">
-<strong>The gate is narrower than it looks.</strong> "More than 70%" already implies an American price shorter
-than −233.33. Requiring the price to be no shorter than −250 leaves a window only <strong>1.43 percentage
-points wide</strong>. That is why 108 listings produce {c['high']} High picks rather than dozens, and why
-{c['outside_window']} selections that clear 70% are published as <em>outside window</em> instead of being
-relabelled. <a href="analysis.html">See the arithmetic and every near-miss →</a>
+<div class="note warn">
+<p><strong>The rule rejects the best pick on the slate.</strong> Panathinaikos at home to Baskonia prices at
+81.8% (−451 fair). It clears the probability test by twelve points and fails the price test by two hundred.
+Any rule that requires a price no shorter than −250 while also requiring more than 70% can only ever return
+selections inside a 1.43-percentage-point band. <a href="analysis.html">The arithmetic, and what it costs
+the reader →</a></p>
 </div>
 
 <h2>Categories</h2>
-<div class="grid2">
-{''.join(sport_card(slug, meta, desk) for slug, meta in SPORT_META.items())}
-</div>
+<div class="cards">{''.join(cards)}</div>
+<p class="small">The brief's eight excluded categories are not listed anywhere on this desk.</p>
 
 <h2>What is and is not complete</h2>
 <table><tbody>
-<tr><td style="width:240px"><strong>Verified this session</strong></td><td>25 matches: 12 NHL games, 9 EuroLeague games, 4 MLB World Series games. Participants, UTC starts, venues where published, and every rating input were read from the league's own feed.</td></tr>
-<tr><td><strong>Inherited, unpriced</strong></td><td>{c['inherited_listings']} listings carry the 07:17Z canonical observation window, blank prices and an explicit "not re-read" status.</td></tr>
-<tr><td><strong>Withheld on purpose</strong></td><td>MLB run lines and totals (no verified league run environment); EuroLeague High tiers (no player-level source); five categories with no official draw.</td></tr>
-<tr><td><strong>Never claimed</strong></td><td>Bookmaker availability, edge, stake, injury news, or a calibrated probability.</td></tr>
+<tr><th>Verified this session</th><td>{c['priced_matches']} fixtures: 12 NHL games, 9 EuroLeague games and 2 World Series games.
+Participants, home designation and start time come from the competition's own feed. EuroLeague tip-off times are
+inherited from the 07:17Z canonical read because the standings feed publishes no schedule (F-9DC-04).</td></tr>
+<tr><th>Listed, unpriced</th><td>{c['listed_unpriced']} fixtures: four later World Series games outside the
+72-hour window plus {c['inherited']} canonical listings from categories this session did not re-read. Prices are blank by design.</td></tr>
+<tr><th>Withheld on purpose</th><td>MLB totals and run lines beyond the paired-rate model, EuroLeague High tiers
+without player evidence, and every category where no official input was obtained.</td></tr>
+<tr><th>Never claimed</th><td>Bookmaker availability, edge, stake, injury news or a calibrated probability.
+The three models are price generators; their calibration is untested (F-9DC-09).</td></tr>
 </tbody></table>
-<p><a href="flagged.html">All {c['findings']} flagged items →</a></p>
+<p><a href="predictions.html">Read the three write-ups →</a> · <a href="flagged.html">All {c['findings']} flagged items →</a></p>
 """
-    (OUT / 'index.html').write_text(page('OLBG research desk', '', body, 'index.html',
-                                         f'Session 9dc28d1e · {c["priced_matches"]} priced matches · generated {NOW}'))
 
-    # ---------------- matches
-    rows = []
-    for f in desk['fixtures']:
-        rows.append(f"""<tr><td>{html.escape(f['sport'])}</td><td>{html.escape(f['competition'])}</td>
-<td><strong>{html.escape(f['home'])}</strong> v {html.escape(f['away'])}<div class="small">venue: {html.escape(f['venue'] or '—')}</div></td>
-<td class="num">{html.escape(f['start_utc'])}</td><td>{html.escape(f['status'])}</td>
-<td>{src_links(f['source_ids'])}</td><td>{'yes' if f.get('time_inherited') else 're-read 12:0x–12:2xZ'}</td></tr>""")
-    for i in desk['inherited']:
-        rows.append(f"""<tr><td>{html.escape(i['sport'])}</td><td>inherited listing</td>
-<td>{html.escape(i['participant_a'] or '—')} v {html.escape(i['participant_b'] or '—')}</td>
-<td class="num">{html.escape(i['start_utc'] or i['date'] or '—')}</td>
-<td><span class="tag none">NOT RE-READ</span><div class="small">{html.escape(i['note'])}</div></td>
-<td>{src_links(i['source_ids'])}</td><td>no</td></tr>""")
-    body = f"""
-<p class="sub">Every row is home v away. Priced rows were re-read this session. Inherited rows keep their
-original official link but are explicitly marked as not re-read, and carry no prices.</p>
-<table><thead><tr><th>Sport</th><th>Competition</th><th>Fixture</th><th>Start (UTC)</th>
-<th>Status</th><th>Official source</th><th>Verified now</th></tr></thead><tbody>{''.join(rows)}</tbody></table>
-"""
-    (OUT / 'matches.html').write_text(page('Matches', '', body, 'matches.html'))
 
-    # ---------------- markets
-    rows = []
-    for row in desk['priced']:
-        for mk in row['markets']:
-            for oc in mk['outcomes']:
-                reason = oc.get('tier_reason')
-                rows.append(f"""<tr><td>{html.escape(row['sport'])}</td>
-<td>{html.escape(row['home'])} v {html.escape(row['away'])}<div class="small">{html.escape(row['start_utc'])}</div></td>
-<td>{html.escape(mk['market'])}</td><td>{html.escape(oc['selection'])}</td>
-<td class="num">{oc['probability']*100:.2f}%</td><td class="num">{oc['decimal_display']}</td>
-<td class="num">{oc['american_display']}</td><td>{tag(oc['tier'])}</td>
-<td class="small">{html.escape(reason) if reason else ''}</td></tr>""")
-    body = f"""
-<p class="sub">{c['markets']} markets · {c['outcomes']} priced outcomes. Decimal and American prices are
-derived from the model probability with no margin. "Outside window" means the selection clears 70% but its
-fair price is shorter than −250, which the brief excludes.</p>
-<table><thead><tr><th>Sport</th><th>Fixture</th><th>Market</th><th>Selection</th><th>Probability</th>
-<th>Fair decimal</th><th>Fair American</th><th>Tier</th><th>Note</th></tr></thead><tbody>{''.join(rows)}</tbody></table>
-"""
-    (OUT / 'markets.html').write_text(page('Markets and prices', '', body, 'markets.html'))
-
-    # ---------------- predictions
+def render_matches(desk):
+    fmap = {f["id"]: f for f in desk["fixtures"]}
+    groups = {}
+    for f in desk["fixtures"]:
+        groups.setdefault((f["sport"], f["competition"]), []).append(f)
     blocks = []
-    for p in preds:
-        row = next(x for x in desk['priced'] if x['fixture_id'] == p['fixture_id'])
-        prob = next(o['probability'] for mk in row['markets'] for o in mk['outcomes'] if o['selection'] == p['selection'])
-        sens = next(s for s in desk['sensitivity'] if s['fixture_id'] == p['fixture_id'])
-        blocks.append(f"""<div class="pred">
-<div class="meta">{html.escape(row['sport'].upper())} · {html.escape(row['competition'])} ·
-{html.escape(row['away'])} at {html.escape(row['home'])} · {html.escape(row['start_utc'])} ·
-{html.escape(row['venue'] or '')}</div>
-<h3 style="margin:0">{html.escape(p['title'])}</h3>
-<p><strong>Selection:</strong> {html.escape(p['selection'])} · <strong>fair price</strong> {fmt_am(prob)}
-({1/prob:.4f}) · <strong>model probability</strong> {prob*100:.1f}% · {tag('high')}</p>
-<p>{html.escape(p['text'])}</p>
-<p class="small">Words: {len(p['text'].split())}. Sensitivity under parameter perturbations:
-{sens['low']*100:.1f}–{sens['high']*100:.1f}% {'— <strong>fragile</strong>' if sens['fragile'] else ''}.
-Sources: {src_links(p['source_ids'])}.</p>
-</div>""")
-    body = f"""
-<p class="sub">Written only for selections that clear the model threshold, the price window and the
-player-level evidence requirement. Each names the participants, the verified form and the selection.</p>
+    for (sport, comp), fx in sorted(groups.items(), key=lambda kv: (kv[0][0], kv[0][1])):
+        rows = []
+        for f in sorted(fx, key=lambda x: x["start_utc"] or ""):
+            outs = [o for o in desk["outcomes"] if o["fixture_id"] == f["id"]]
+            best = max(outs, key=lambda o: o["probability"]) if outs else None
+            state = {"verified": "verified", "verified-time-inherited": "verified · time inherited",
+                     "listed-outside-window": "outside window", "inherited-unverified": "inherited, unverified"}[f["status"]]
+            price = "—" if not outs else f'{usd(best["american"])} ({pct(best["probability"])})'
+            link = f'<a href="{esc(f["external_url"])}" rel="noopener">source</a>' if f.get("external_url") else ""
+            rows.append(
+                f'<tr><td>{esc(f["start_utc"] or "—")}</td><td>{esc(f["home"])} v {esc(f["away"])}</td>'
+                f'<td>{esc(f["venue"] or "—")}</td><td>{esc(state)}</td>'
+                f'<td class="num">{len(outs)}</td><td class="num">{price}</td><td>{link}</td></tr>')
+        blocks.append(
+            f'<h2>{esc(sport)} · {esc(comp)}</h2><table><thead><tr><th>Start (UTC)</th><th>Fixture</th>'
+            f'<th>Venue</th><th>Status</th><th>Selections</th><th>Best price</th><th>Source</th></tr></thead>'
+            f'<tbody>{"".join(rows)}</tbody></table>')
+    return f"""
+<h1>Matches</h1>
+<p class="lede">Every fixture this desk will talk about, with the exact start time in UTC and the state of
+its evidence. Priced fixtures carry between {min((len([o for o in desk['outcomes'] if o['fixture_id']==f['id']]) for f in desk['fixtures'] if f['status'].startswith('verified')), default=0)}
+and {max((len([o for o in desk['outcomes'] if o['fixture_id']==f['id']]) for f in desk['fixtures'] if f['status'].startswith('verified')), default=0)}
+priced selections; unpriced fixtures carry none.</p>
+<p class="small">Blank venues and the "inherited" states are disclosed rather than filled in. The
+<a href="flagged.html">Flagged page</a> holds the source-level reason for each gap.</p>
 {''.join(blocks)}
-<div class="note">No prediction is generated for the {len(desk['capped_in_band'])} EuroLeague selections that
-clear the first two conditions but have no verified player-level input — they sit in
-<a href="flagged.html">Flagged for review</a> at Medium.</div>
 """
-    (OUT / 'predictions.html').write_text(page('High-confidence picks', '', body, 'predictions.html'))
 
-    # ---------------- analysis
-    def sens_badge(fragile):
-        return '<span class="tag outside_window">FRAGILE</span>' if fragile else '<span class="tag high">STABLE</span>'
-    sens_rows = ''.join(
-        "<tr><td>{}</td><td class='num'>{:.2f}%</td><td class='num'>{:.1f}%</td>"
-        "<td class='num'>{:.1f}%</td><td>{}</td></tr>".format(
-            html.escape(s['selection']), s['probability'] * 100, s['low'] * 100,
-            s['high'] * 100, sens_badge(s['fragile']))
-        for s in desk['sensitivity'])
-    capped_rows = ''.join(
-        f"<tr><td>{html.escape(x['fixture_id'])}</td><td>{html.escape(x['selection'])}</td>"
-        f"<td class='num'>{x['probability']*100:.2f}%</td><td class='num'>{x['american']}</td>"
-        f"<td class='small'>{html.escape(x['reason'])}</td></tr>" for x in desk['capped_in_band'])
-    ow_rows = ''.join(
-        f"<tr><td>{html.escape(x['fixture_id'])}</td><td>{html.escape(x['market'])}</td>"
-        f"<td>{html.escape(x['selection'])}</td><td class='num'>{x['probability']*100:.1f}%</td>"
-        f"<td class='num'>{x['american']}</td></tr>" for x in desk['out_of_window'][:25])
-    body = f"""
-<h2>1. The gate, arithmetically</h2>
-<p>American odds map to probability as <code>p = 100/(100+|A|)</code> for negative A. Three anchor points:</p>
-<table><thead><tr><th>American</th><th>Implied probability</th><th>Verdict under the brief</th></tr></thead><tbody>
-<tr><td class="num">−233.33</td><td class="num">70.00%</td><td>the exact "greater than 70%" boundary</td></tr>
-<tr><td class="num">−250.00</td><td class="num">71.43%</td><td>the brief's price floor</td></tr>
-<tr><td class="num">+10000</td><td class="num">0.99%</td><td>the brief's price ceiling — never reachable at 70%</td></tr>
+
+def render_markets(desk):
+    fmap = {f["id"]: f for f in desk["fixtures"]}
+    rows = []
+    for o in desk["outcomes"]:
+        f = fmap[o["fixture_id"]]
+        market = o["market_id"].split("::", 1)[1].replace("::", " · ")
+        rows.append(
+            f'<tr><td>{esc(f["home"])} v {esc(f["away"])}</td><td>{esc(market)}</td>'
+            f'<td>{esc(o["selection"])}</td><td class="num">{pct(o["probability"])}</td>'
+            f'<td class="num">{o["fair_decimal"]:.3f}</td><td class="num">{usd(o["american"])}</td>'
+            f'<td>{tier_tag(o["tier"])}</td></tr>')
+    return f"""
+<h1>Markets</h1>
+<p class="lede">Every originated market and every priced selection, with the settlement rule applied to it.
+Prices are fair prices derived from the model, rounded to three decimals; no margin, no bookmaker quote.</p>
+<table><thead><tr><th>Fixture</th><th>Market</th><th>Selection</th><th>Probability</th>
+<th>Decimal</th><th>American</th><th>Tier</th></tr></thead><tbody>{''.join(rows)}</tbody></table>
+<h2>Settlement rules</h2>
+<table><tbody>
+<tr><th>Match winner</th><td>{esc(SETTLEMENT['winner'])}</td></tr>
+<tr><th>Handicap / puck line / run line</th><td>{esc(SETTLEMENT['handicap'])}</td></tr>
+<tr><th>Match total</th><td>{esc(SETTLEMENT['total'])}</td></tr>
+<tr><th>Team total</th><td>{esc(SETTLEMENT['team-total'])}</td></tr>
 </tbody></table>
-<p>Both conditions can only hold for probabilities in <strong>(70.00%, 71.43%]</strong>. Any selection more
-likely than 71.43% is too short to be inside the window; any selection between 0.99% and 70% fails the
-probability test. This desk applies the conjunction literally. It does not quietly widen the window,
-and it does not call a −400 favourite "high confidence in the −250 to +10000 band".</p>
-
-<h2>2. What that produced</h2>
-<div class="cards">
-<div class="card"><div class="n">{c['high']}</div><div class="l">High (all three conditions)</div></div>
-<div class="card"><div class="n">{len(desk['capped_in_band'])}</div><div class="l">In band, capped at Medium</div></div>
-<div class="card"><div class="n">{c['outside_window']}</div><div class="l">Over 70%, price outside</div></div>
-<div class="card"><div class="n">{c['low']}</div><div class="l">Low</div></div>
-</div>
-
-<h2>3. Tier fragility</h2>
-<p>A probability that sits inside a 1.43-point window is sensitive to the model's own assumptions.
-Each High is re-computed at shrinkage of 8, 12 and 16 games and a home edge of 0.05, 0.10 and 0.15 goals.</p>
-<table><thead><tr><th>Selection</th><th>Base</th><th>Low</th><th>High</th><th>Status</th></tr></thead>
-<tbody>{sens_rows}</tbody></table>
-<p class="small">"Fragile" does not mean the pick is wrong; it means the label depends on the prior. The
-price that goes with it moves the same way.</p>
-
-<h2>4. In-band selections capped at Medium</h2>
-<p>These clear probability and price. They are not High because the required player-level evidence was not
-available from an official source for the write-up.</p>
-<table><thead><tr><th>Fixture</th><th>Selection</th><th>Probability</th><th>Fair American</th><th>Why capped</th></tr></thead>
-<tbody>{capped_rows}</tbody></table>
-
-<h2>5. The strongest selections the brief excludes</h2>
-<p>Every row below clears 70% but prices shorter than −250, so the brief's window removes it. Shown for
-transparency, not counted as High.</p>
-<table><thead><tr><th>Fixture</th><th>Market</th><th>Selection</th><th>Probability</th><th>Fair American</th></tr></thead>
-<tbody>{ow_rows}</tbody></table>
-<p class="small">Top 25 by probability of {c['outside_window']} such selections.</p>
-
-<h2>6. Coverage</h2>
-<p>Seventeen in-scope categories. {c['sports_priced']} were priced this session, all from league-run feeds.
-The remaining categories are listed but unpriced: their official pages either published no draw this
-session or their inputs were not re-read. Nothing was filled in from memory.</p>
+<p class="small">Settlement rules are stated because a handicap on a hockey game means nothing without them:
+a regulation tie always ends with a one-goal margin, so neither side can cover −1.5 from a tie.</p>
 """
-    (OUT / 'analysis.html').write_text(page('Gate analysis', '', body, 'analysis.html'))
 
-    # ---------------- flagged
-    find_rows = ''.join(f"""<div class="pred"><h3 style="margin-top:0">{html.escape(f['id'])} ·
-<span class="tag {'outside_window' if f['severity']=='high' else 'medium' if f['severity']=='medium' else 'low'}">{f['severity'].upper()}</span></h3>
-<strong>{html.escape(f['title'])}</strong>
-<p>{html.escape(f['detail'])}</p>
-<p class="small">Sources: {html.escape(', '.join(f['sources']))} · Status: {html.escape(f['status'])}</p></div>"""
-                         for f in desk['findings'])
-    body = f"""
-<p class="sub">Documented irregularities, withheld fields and assumptions. None of these block publication;
-all are listed so a reviewer can check them against the links.</p>
-{find_rows}
+
+def render_predictions(desk):
+    blocks = []
+    fmap = {f["id"]: f for f in desk["fixtures"]}
+    omap = {o["id"]: o for o in desk["outcomes"]}
+    for p in desk["predictions"]:
+        f = fmap[p["fixture_id"]]
+        o = omap[p["outcome_id"]]
+        facts = "".join(
+            f'<tr><th>{esc(k)}</th><td>{esc(v)}</td>'
+            f'<td class="small"><a href="{esc(I.SOURCES[src]["url"])}" rel="noopener">{esc(src)}</a></td></tr>'
+            for k, v, src in p["facts"])
+        blocks.append(f"""
+<article class="pick">
+<p class="small">{esc(f["competition"])} · {esc(f["start_utc"])} · <a href="sports/{f['sport_slug']}.html">{esc(f["sport"])}</a></p>
+<h3>{esc(p["headline"])}</h3>
+<p class="meta">{fixture_label(f)} — <strong>{esc(o["selection"])}</strong> · model {pct(o["probability"])} ·
+fair price <span class="price">{usd(o["american"])}</span> · range {pct(o["sensitivity_low"])}–{pct(o["sensitivity_high"])} {tier_tag(o["tier"])}</p>
+<p>{esc(p["body"])}</p>
+<table><tbody>{facts}</tbody></table>
+</article>""")
+    g = gate_summary(desk)
+    return f"""
+<h1>Predictions</h1>
+<p class="lede">One written case per High-confidence pick. Each names the club, at least one player whose
+season totals were read from the league's own feed this session, and the record and scoring rate the model
+is reacting to. Game-level scorelines were not read (F-9DC-05), so "form" here means season-to-date numbers,
+not a list of recent results. Every number is checkable against the source table under the case.</p>
+{''.join(blocks)}
+<h2>Why not more</h2>
+<p>The gate is conjunctive: more than 70% and a fair price inside −250…+10000. {g['above']} of the
+{desk['counts']['outcomes']} priced selections clear 70%; {g['in_band']} of those also sit inside the price
+window. Every in-band selection except one has a write-up above. The exception — Anadolu Efes v Besiktas
+over 166.5 points at 71.2% (−247) — has no player-level EuroLeague source available to this session, so it
+is published at Medium with its price intact on the <a href="markets.html">markets page</a> and listed on
+the <a href="flagged.html">Flagged page</a> (F-9DC-02). Publishing a High without the evidence the brief
+asks for would be a worse outcome than publishing one fewer.</p>
 """
-    (OUT / 'flagged.html').write_text(page('Flagged for review', '', body, 'flagged.html'))
 
-    # ---------------- sources
-    all_sources = desk['sources']
-    rows = ''.join(f"""<tr><td><code>{html.escape(s['id'])}</code></td><td>{html.escape(s['publisher'])}</td>
-<td><a href="{html.escape(s['url'])}">{html.escape(s['url'])}</a></td>
-<td class="num">{html.escape(s['observed_utc'])}</td>
-<td>{html.escape(s['what'])}<div class="small">{html.escape(s['scope_note'])}</div></td>
-<td>{'inherited' if s.get('inherited') else 're-read this session'}</td></tr>""" for s in all_sources)
-    body = f"""
-<p class="sub">Only official publishers: the league, tour, governing body or its own data service.
-Aggregators, media outlets and betting sites are never used as verification.</p>
-<table><thead><tr><th>ID</th><th>Publisher</th><th>URL</th><th>Observed (UTC)</th><th>What was read</th><th>Channel</th></tr></thead>
+
+def render_analysis(desk):
+    highs = [o for o in desk["outcomes"] if o["tier"] == "HIGH"]
+    excluded = sorted([o for o in desk["outcomes"]
+                       if o["probability"] > M.HIGH_PROB_FLOOR and not M.in_price_window(o["american"])],
+                      key=lambda o: -o["probability"])[:12]
+    fmap = {f["id"]: f for f in desk["fixtures"]}
+    rows = "".join(
+        f'<tr><td>{esc(fmap[o["fixture_id"]]["home"])} v {esc(fmap[o["fixture_id"]]["away"])}</td>'
+        f'<td>{esc(o["selection"])}</td><td class="num">{pct(o["probability"])}</td>'
+        f'<td class="num">{usd(o["american"])}</td><td class="small">{esc(o["reason"])}</td></tr>'
+        for o in excluded)
+    return f"""
+<h1>The High-confidence gate, taken literally</h1>
+<p class="lede">The brief asks for picks with more than 70% probability <em>and</em> odds between −250 and
++10000. Those two conditions are not independent, and the interaction is the most important thing on this
+desk.</p>
+
+<h2>1. The arithmetic</h2>
+<p>A fair American price and a probability are the same number written two ways. For any probability above
+50%, the price is <code>−100p/(1−p)</code>. Setting the price to the brief's short edge, −250, and solving
+gives p = 0.714286. So:</p>
+<table><thead><tr><th>Condition</th><th>Equivalent probability</th><th>Effect</th></tr></thead><tbody>
+<tr><td>Price no shorter than −250</td><td>p ≤ 71.43%</td><td>excludes every strong favourite</td></tr>
+<tr><td>Probability greater than 70%</td><td>price shorter than −233.33</td><td>excludes everything near a coin flip</td></tr>
+<tr><td>Both, together</td><td>70.00% &lt; p ≤ 71.43%</td><td>a window 1.43 percentage points wide</td></tr>
+<tr><td>Price of +10000</td><td>p = 0.99%</td><td>unreachable by any of these markets</td></tr>
+</tbody></table>
+<p>The consequence is stark. Of {desk['counts']['outcomes']} priced selections, {gate_summary(desk)['above']}
+clear 70%. {gate_summary(desk)['in_band']} of those also sit inside the price window, and
+{gate_summary(desk)['high']} carry the player-level evidence the brief requires. The gate does not select the
+best picks; it selects the picks whose prices happen to fall in a narrow band.</p>
+
+<h2>2. What the window throws away</h2>
+<table><thead><tr><th>Fixture</th><th>Selection</th><th>Probability</th><th>Fair price</th><th>Why it is not High</th></tr></thead>
 <tbody>{rows}</tbody></table>
-<div class="note">Sandbox egress outside the package registries and GitHub is closed, so every page above was
-retrieved through the agent's web-fetch tool. The recorded time is the observation window, not an
-invented HTTP timestamp.</div>
-"""
-    (OUT / 'sources.html').write_text(page('Sources', '', body, 'sources.html'))
+<p class="small">Full list on the <a href="markets.html">markets page</a>, where every one of these rows is
+published with its price and tier.</p>
 
-    # ---------------- methodology
-    body = f"""
-<h2>Inputs</h2>
-<p>Team-season totals only: games played, wins, losses, overtime losses, goals or points for and against.
-All from the league's own feed, all read in a single observation window on 22 October 2026.</p>
+<h2>3. Everything is fragile at this sample size</h2>
+<p>Each club has played between seven and eleven games. The models shrink those rates toward the league mean,
+but the choice of shrinkage constant still moves a probability by three to five points — wider than the
+1.43-point window itself. The sensitivity column on every High row is the model re-run across that grid.
+Two of the three Highs leave the window at one end of it. That is not a defect of the picks; it is a
+property of asking for a 71% selection from a ten-game sample.</p>
 
-<h2>Ratings</h2>
-<p>Attack and defence are shrunk toward the league mean with weight <code>k = GP/(GP+K)</code>:
-K = 12 games for NHL goals, K = 8 for EuroLeague points. Every club has played 6–12 games, so an
-unshrunk nine-game goal rate would be mostly noise. Expected scoring for a side is its adjusted attack
-plus the opponent's adjusted defence minus the league mean, plus a home edge (0.10 goals NHL,
-1.5 points EuroLeague).</p>
-
-<h2>Distributions</h2>
-<ul>
-<li><strong>NHL</strong>: independent Poisson goals per side. Moneyline = regulation win plus half the tie mass.
-Puck line uses the regulation margin and converts a tie into a one-goal overtime win. Totals use a Poisson
-total; team totals use each side's own Poisson mean.</li>
-<li><strong>EuroLeague</strong>: margin and total modelled as Normal around the expected values, with
-dispersions of 12.0 and 15.5 points. Those are documented assumptions, not fitted parameters.</li>
-<li><strong>MLB</strong>: log5 on the two official winning percentages. No run line, no total.</li>
-</ul>
-
-<h2>Pricing</h2>
-<p><code>fair_decimal = 1/p</code>; the American price is derived from the same probability. No margin, no
-clipping, no rounding inside the calculation. A zero-margin price is a statement of the model's
-probability, not a quote anyone is obliged to honour.</p>
-
-<h2>Confidence rule</h2>
-<p>High requires all three of: probability strictly above 70%; fair American inside [−250, +10000]; and a
-unique ≥30-word prediction supported by verified player-level facts. Medium is 60–70%, or an in-band
-selection without the third condition. Low is everything else. “Outside window” is a separate flag, not a
-confidence tier.</p>
-
-<h2>What this desk does not know</h2>
-<ul>
-<li>No bookmaker price, availability or margin was read. No edge is claimed.</li>
-<li>No injury, suspension, lineup, travel or rest information was imported.</li>
-<li>No backtest against settled results was run; the probabilities are not calibrated frequencies.</li>
-<li>Postseason MLB form is not modelled; the records are regular season.</li>
-<li>Early-season NHL and EuroLeague samples are small and the shrinkage is a judgement, which is why the
-sensitivity table exists.</li>
+<h2>4. What would make this desk stronger</h2>
+<ul class="clean">
+<li>A settled-fixture backtest. None of the priced fixtures had finished when the desk was built, so no
+calibration statistic exists (F-9DC-09).</li>
+<li>Official player availability. Not published in the feeds used here; a High built on a lineup that
+changes at warm-up is not a High.</li>
+<li>A league-average run environment for MLB, which would let totals be priced instead of withheld.</li>
 </ul>
 """
-    (OUT / 'methodology.html').write_text(page('Methodology and limits', '', body, 'methodology.html'))
-
-    # ---------------- sport pages
-    for slug, meta in SPORT_META.items():
-        priced = [x for x in desk['priced'] if x['sport'] == slug]
-        inherited = [x for x in desk['inherited'] if x['sport'] == slug]
-        parts = [f'<p class="sub">Official hub: <a href="{html.escape(meta[2])}">{html.escape(meta[2])}</a> · '
-                 f'OLBG route id {meta[1]} · discovery only, never verification.</p>']
-        if priced:
-            parts.append(f'<h2>Priced matches ({len(priced)})</h2>')
-            for row in priced:
-                rows = ''.join(f"<tr><td>{html.escape(mk['market'])}</td><td>{html.escape(o['selection'])}</td>"
-                               f"<td class='num'>{o['probability']*100:.2f}%</td><td class='num'>{o['american_display']}</td>"
-                               f"<td>{tag(o['tier'])}</td></tr>"
-                               for mk in row['markets'] for o in mk['outcomes'])
-                parts.append(f"""<h3>{html.escape(row['home'])} v {html.escape(row['away'])}
-<span class="small">{html.escape(row['start_utc'])} · {html.escape(row['venue'] or '')}</span></h3>
-<table><thead><tr><th>Market</th><th>Selection</th><th>Probability</th><th>Fair American</th><th>Tier</th></tr></thead>
-<tbody>{rows}</tbody></table>""")
-        if inherited:
-            rows = ''.join(f"<tr><td>{html.escape(i['participant_a'] or '—')} v {html.escape(i['participant_b'] or '—')}</td>"
-                           f"<td class='num'>{html.escape(i['start_utc'] or i['date'] or '—')}</td>"
-                           f"<td><span class='tag none'>NOT RE-READ</span> <span class='small'>{html.escape(i['note'])}</span></td></tr>"
-                           for i in inherited)
-            parts.append(f"<h2>Listed, unpriced ({len(inherited)})</h2>"
-                         "<table><thead><tr><th>Fixture</th><th>Date / start</th><th>Status</th></tr></thead>"
-                         f"<tbody>{rows}</tbody></table>")
-        if not priced and not inherited:
-            parts.append('<div class="note warnbox">No participant-level official input was obtained for this '
-                         'category in this session. Nothing is filled in. See <a href="../flagged.html">'
-                         'Flagged for review</a>.</div>')
-        body = ''.join(parts)
-        (OUT / 'sports').mkdir(exist_ok=True)
-        (OUT / 'sports' / f'{slug}.html').write_text(
-            page(meta[0], '../', body, None, f'Category page · {meta[0]} · session 9dc28d1e'))
 
 
-def write_data(desk):
-    DATA.mkdir(parents=True, exist_ok=True)
-    (DATA / 'desk.json').write_text(json.dumps(desk, indent=1, ensure_ascii=False) + '\n')
-    with (DATA / 'priced.csv').open('w', newline='') as fh:
-        w = csv.writer(fh)
-        w.writerow(['fixture_id', 'sport', 'home', 'away', 'start_utc', 'market', 'selection',
-                    'probability', 'fair_decimal', 'american', 'tier', 'source_ids'])
-        for row in desk['priced']:
-            for mk in row['markets']:
-                for o in mk['outcomes']:
-                    w.writerow([row['fixture_id'], row['sport'], row['home'], row['away'], row['start_utc'],
-                                mk['market'], o['selection'], f"{o['probability']:.6f}",
-                                f"{o['fair_decimal']:.6f}", o['american_display'], o['tier'],
-                                ';'.join(row['source_ids'])])
-    with (DATA / 'predictions.csv').open('w', newline='') as fh:
-        w = csv.writer(fh)
-        w.writerow(['fixture_id', 'selection', 'words', 'text'])
-        for p in desk['predictions']:
-            w.writerow([p['fixture_id'], p['selection'], len(p['text'].split()), p['text']])
+def render_flagged(desk):
+    items = "".join(
+        f'<tr><td><code>{esc(f["id"])}</code></td><td><strong>{esc(f["title"])}</strong><br>{esc(f["detail"])}</td>'
+        f'<td class="small">{esc(f["impact"])}</td></tr>' for f in desk["findings"])
+    return f"""
+<h1>Flagged for review</h1>
+<p class="lede">Ten things this desk could not verify, chose not to publish, or believes a reader should
+weigh before using a number. None of them is hidden in a footnote.</p>
+<table><thead><tr><th>ID</th><th>Finding</th><th>What it affects</th></tr></thead><tbody>{items}</tbody></table>
+<h2>The two that need a decision</h2>
+<p><strong>F-9DC-01</strong> is the gate itself: as written it can only return selections between 70.00% and
+71.43%. If the intent was "strong favourites", the −250 floor should be removed or inverted.
+<strong>F-9DC-02</strong> is the EuroLeague cap: one selection cleared both tests but had no player-level
+source, so it was published at Medium with its price. Both are decisions for the person who wrote the brief,
+not for this desk.</p>
+"""
 
 
-if __name__ == '__main__':
+def render_coverage(desk):
+    by_slug = {}
+    for f in desk["fixtures"]:
+        by_slug.setdefault(f["sport_slug"], []).append(f)
+    rows = []
+    for s in desk["sports"]:
+        fx = by_slug.get(s["slug"], [])
+        priced = sum(1 for f in fx if f["status"].startswith("verified"))
+        state = "priced" if priced else ("listed only" if fx else "no verified input")
+        rows.append(f'<tr><td><a href="sports/{s["slug"]}.html">{esc(s["name"])}</a></td>'
+                    f'<td class="num">{s["route_id"]}</td><td class="num">{len(fx)}</td>'
+                    f'<td class="num">{priced}</td><td>{esc(state)}</td></tr>')
+    return f"""
+<h1>Coverage across the seventeen in-scope categories</h1>
+<p class="lede">The brief's seventeen categories, with what this session actually obtained for each. Fourteen
+of them have no verified input; that is published as an empty category rather than filled with remembered
+fixtures.</p>
+<table><thead><tr><th>Category</th><th>OLBG route</th><th>Fixtures listed</th><th>Priced</th><th>State</th></tr></thead>
+<tbody>{''.join(rows)}</tbody></table>
+<p class="small">Route ids are OLBG's own taxonomy, reverse-engineered in the T1 investigation. The eight
+excluded categories (football, boxing, MMA, politics, TV, specials, athletics, US greyhound racing) appear
+nowhere on this desk.</p>
+"""
+
+
+def render_sources(desk):
+    rows = "".join(
+        f'<tr><td><code>{esc(k)}</code></td><td>{esc(v["publisher"])}</td><td>{esc(v["title"])}'
+        f'{"" if not v.get("inherited") else " <em>(inherited)</em>"}</td>'
+        f'<td class="small"><a href="{esc(v["url"])}" rel="noopener">{esc(v["url"])}</a></td>'
+        f'<td class="small">{esc(v["observed_at"])}</td><td>{esc(v["note"])}</td></tr>'
+        for k, v in desk["sources"].items())
+    return f"""
+<h1>Sources</h1>
+<p class="lede">Every number on this desk traces to one of six official reads. The observation timestamp is
+the moment the response was received, not the moment the page was written.</p>
+<table><thead><tr><th>ID</th><th>Publisher</th><th>Document</th><th>URL</th><th>Observed</th><th>What it supplied</th></tr></thead>
+<tbody>{rows}</tbody></table>
+<h2>Source discipline</h2>
+<ul class="clean">
+<li>No secondary aggregator, no social post, no memory: a value that has no row in the table above is not on the desk.</li>
+<li>Where a feed does not publish a field — EuroLeague tip-off times, NHL venues for seven of twelve games,
+the Tampa Bay Game 1 starter — the field is blank and the gap is flagged, never filled from another source.</li>
+<li>Prices are model output, not quotes. Nothing here implies a bookmaker would offer them.</li>
+</ul>
+"""
+
+
+def render_methodology(desk):
+    return f"""
+<h1>Method</h1>
+<p class="lede">Three deliberately small models, each with its assumptions printed next to its output. The
+goal is a defensible price, not a replica of a betting market.</p>
+
+<h2>Ice hockey</h2>
+<p>Goals for and against per game are shrunk toward the league mean with a weight of {M.NHL_K} pseudo-games,
+then combined multiplicatively as attack × defence against the opponent, divided by the league mean. Home
+advantage multiplies the home expectation by {M.NHL_HOME} and the away expectation by {2 - M.NHL_HOME}.
+Independent Poisson goal counts give the margin distribution. A regulation tie is split evenly between the
+two clubs for the moneyline and produces a one-goal margin for the puck line, which is why neither side can
+cover −1.5 from a tie.</p>
+
+<h2>EuroLeague</h2>
+<p>A club's rating is its points differential per game, shrunk toward zero by {M.EL_K} pseudo-games. The
+rating gap is multiplied by {M.EL_DIFF_WEIGHT} — a ten-game differential in October is not worth its full
+weight — and {M.EL_HOME_EDGE} points of home edge are added. Expected total points come from the two clubs'
+combined scoring and conceding rates. Margins are normal with a standard deviation of {M.EL_MARGIN_SD};
+totals are normal with {M.EL_TOTAL_SD}.</p>
+<p>Everything in this section is an assumption. The shrink weight and the rating multiplier were chosen so
+that the largest favourite on the slate prices near 82% rather than 97%, which is what the earlier
+multiplicative version produced. That choice is documented because it is a judgement, not a measurement.</p>
+
+<h2>Baseball</h2>
+<p>Pythagorean win rates with exponent {M.MLB_PYTH} are combined with log5 and a home adjustment, giving the
+moneyline. Run expectations are the mean of the batting side's runs scored and the bowling side's runs
+allowed per game, with {M.MLB_HOME_RUNS} runs of home edge; tied nine-inning games are split evenly and the
+distribution is renormalised. Totals and run lines use that same Poisson pair.</p>
+
+<h2>The tier rule</h2>
+<table><tbody>
+<tr><th>HIGH</th><td>probability &gt; 70% <em>and</em> fair American inside −250…+10000 <em>and</em> a written
+prediction backed by player-level evidence from an official feed</td></tr>
+<tr><th>MEDIUM</th><td>probability ≥ 65%, or one of the two High tests failed. The reason is stored on the
+row and shown in the data export.</td></tr>
+<tr><th>LOW</th><td>everything else</td></tr>
+</tbody></table>
+<p>The third High condition is stricter than the brief. It exists because the brief also requires each pick to
+name a player, and a pick whose player numbers were never read is not that.</p>
+
+<h2>Sensitivity</h2>
+<p>Every selection is re-priced across a grid: for hockey, shrinkage of 6/12/20 games × home multipliers of
+1.00/1.045/1.08; for basketball, shrinkage of 2/4/8 × home edge 2.0/2.5/3.0 × margin σ of 10/11/12; for
+baseball, exponents of 1.70/1.83/2.00 × home edge of 0/0.15/0.30 runs. The published range is the min and max
+across the grid.</p>
+
+<h2>Reproduction</h2>
+<p><code>python3 scripts/s9dc28d1e_build.py --now 2026-10-22T12:30:00Z</code> regenerates every table and page
+byte-for-byte; <code>python3 scripts/s9dc28d1e_validate.py</code> re-checks the counts, the gate, the writing
+rules and the links.</p>
+"""
+
+
+def render_sport(desk, sport):
+    fx = [f for f in desk["fixtures"] if f["sport_slug"] == sport["slug"]]
+    if not fx:
+        return f"""
+<h1>{esc(sport['name'])}</h1>
+<p class="lede">No fixture in this category was verified from an official source during this session, so
+nothing is published here. The category is kept so that the gap is visible rather than silently dropped.</p>
+<p><a href="../coverage.html">Coverage across all seventeen categories →</a></p>"""
+    fmap = {f["id"]: f for f in fx}
+    outs = [o for o in desk["outcomes"] if o["fixture_id"] in fmap]
+    rows = "".join(
+        f'<tr><td>{esc(fmap[o["fixture_id"]]["home"])} v {esc(fmap[o["fixture_id"]]["away"])}</td>'
+        f'<td>{esc(o["market_id"].split("::", 1)[1].replace("::", " · "))}</td>'
+        f'<td>{esc(o["selection"])}</td><td class="num">{pct(o["probability"])}</td>'
+        f'<td class="num">{usd(o["american"])}</td><td>{tier_tag(o["tier"])}</td></tr>'
+        for o in sorted(outs, key=lambda o: -o["probability"]))
+    fixtures = "".join(
+        f'<tr><td>{esc(f["start_utc"])}</td><td>{esc(f["home"])} v {esc(f["away"])}</td>'
+        f'<td>{esc(f["competition"])}</td><td>{esc(f["status"])}</td></tr>'
+        for f in sorted(fx, key=lambda x: x["start_utc"] or ""))
+    if not outs:
+        return f"""
+<h1>{esc(sport['name'])}</h1>
+<p class="lede">{len(fx)} listings in this category, none of them re-read this session, so no price is
+published. They are carried from the canonical 07:17Z observation window and marked unverified.</p>
+<table><thead><tr><th>Start (UTC)</th><th>Fixture</th><th>Competition</th><th>Evidence</th></tr></thead>
+<tbody>{fixtures}</tbody></table>"""
+    return f"""
+<h1>{esc(sport['name'])}</h1>
+<p class="lede">{len(fx)} fixtures and {len(outs)} priced selections in this category.</p>
+<table><thead><tr><th>Start (UTC)</th><th>Fixture</th><th>Competition</th><th>Evidence</th></tr></thead>
+<tbody>{fixtures}</tbody></table>
+<h2>Priced selections</h2>
+<table><thead><tr><th>Fixture</th><th>Market</th><th>Selection</th><th>Probability</th><th>Fair</th><th>Tier</th></tr></thead>
+<tbody>{rows}</tbody></table>"""
+
+
+def render_site(desk):
+    SITE.mkdir(parents=True, exist_ok=True)
+    (SITE / "assets").mkdir(parents=True, exist_ok=True)
+    (SITE / "assets" / "style.css").write_text(CSS)
+
+    page(SITE / "index.html", "Dashboard", render_index(desk))
+    page(SITE / "matches.html", "Matches", render_matches(desk))
+    page(SITE / "markets.html", "Markets", render_markets(desk))
+    page(SITE / "predictions.html", "Predictions", render_predictions(desk))
+    page(SITE / "analysis.html", "Gate analysis", render_analysis(desk))
+    page(SITE / "flagged.html", "Flagged for review", render_flagged(desk))
+    page(SITE / "coverage.html", "Coverage", render_coverage(desk))
+    page(SITE / "sources.html", "Sources", render_sources(desk))
+    page(SITE / "methodology.html", "Method", render_methodology(desk))
+    for sport in desk["sports"]:
+        page(SITE / "sports" / f"{sport['slug']}.html", sport["name"], render_sport(desk, sport), depth=1)
+
+    pages = sorted(p.relative_to(SITE).as_posix() for p in SITE.rglob("*.html"))
+    return pages
+
+
+def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--now', default=None)
+    ap.add_argument("--now", default=I.GENERATED_AT)
     args = ap.parse_args()
-    from datetime import datetime, timezone
-    NOW = args.now or datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-    desk = build()
-    write_data(desk)
-    render(desk)
-    print('built', desk['counts'])
+    global GENERATED_AT
+    GENERATED_AT = args.now
+    desk = build(args.now)
+    pages = render_site(desk)
+    print(f"built {len(pages)} pages; counts={desk['counts']}")
+
+
+if __name__ == "__main__":
+    main()
