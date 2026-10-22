@@ -99,6 +99,8 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T40 | Independent offline structural/provenance audit of the latest root dashboard and namespaced `/c17a9192/` + `/984d417f/` dashboards; reconcile event/market/prediction/verification joins, blank/flag coverage, rendered table links, local gates and Pages state | done | 5a353e83-olbg1 | `scripts/session_5a353e83_audit.py`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.md`, `reports/SESSION_5A353E83_INDEPENDENT_AUDIT.html`, `COORDINATION.md` (append-only) | 2026-10-21T07:48Z | No outbound official-source fetch; no data, lines, predictions or shared dashboard files edited. Renumbered after T17/T20/T21/T36 collisions; see §30. **Completed:** 0 structural errors, 19 review notes; 5 validators + `final_audit.py` passed; PR #44 merged, Pages deployment built (workflow `39565999245`), see §30.1. |
 | T41 | Fresh 22–26 Oct 2026 matchday desk: live official-source fixture harvest, own multi-market lines, confidence tiers, unique ≥30-word high-confidence predictions, own dashboard + Flagged page, validator gate, PR + merge + Pages check | done | 7a5b5360-olbg1 | `data/7a5b5360/**`, `scripts/s7a5b5360_*.py`, `7a5b5360/**`, `reports/SESSION_7A5B5360.md`, `COORDINATION.md` (append-only) | 2026-10-22T00:00Z | Claimed after T40. Non-overlapping namespace; no shared data file edited. |
 
+| T42 | **High-confidence price-window compliance**: enforce the brief's -250/+10000 window on every high-confidence selection, extend each fixture to a 3-line handicap and 3-line total ladder, re-derive confidence tiers, rewrite every high-confidence prediction against the in-window selection, add window checks to the validator, publish a Price Window view + Flagged entries, rebuild site, PR, merge and verify Pages | done | 2ca35f17-olbg1 | `scripts/model.py`, `scripts/origin_lines.py`, `scripts/high_predictions.py`, `scripts/build_site.py`, `scripts/validate.py`, `data/lines.json`, `data/predictions.json`, `data/fixtures.json` (flags only), `datasets/matches_full.{json,csv}`, root `*.html`, `sports/*.html`, `assets/*`, `reports/SESSION_2CA3_PRICE_WINDOW.md`, `README.md`, `COORDINATION.md` (append-only) | 2026-10-22T01:25Z | Root-desk scope only; namespaced desks (`/984d417f/`, `/c17a9192/`, `/ccb6bde2/`, `/docs/`, `/ebfbd966/`, `/aa4e9dbf/`, `/2360a617/`, `/f7fa77fc/`) are not modified. See §32. Renumbered T41 -> T42 on rebase: `7a5b5360-olbg1` claimed T41 first and merged it as PR #46. |
+
 | T21 | Independent second-pass re-verification of NHL input sub-values and the F1 start time; correction of four NHL transposition errors and one timezone error; source-redirect evidence for PlusLiga and GAA | done | 4f8d032d-olbg1 | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py`, `scripts/live_verification.py`, `scripts/high_predictions.py`, `data/verification.json`, `reports/SESSION_4F8D_VERIFICATION.md`, append-only `COORDINATION.md` | 2026-10-21T07:15Z | Claimed as T17 (collision: taken by 72198d3e, which itself became T20); renumbered T21. Rebased onto `main`; earlier session's Boston fix and Vegas no-reprice policy preserved. 31 High picks retained. |
 
 | T22 | Third independent re-check after T20/T21: RLWC26 source URLs, tennis pairing provenance, prediction prose de-templating | done | 3c7579ed-olbg1 | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py`, `scripts/high_predictions.py`, `scripts/live_verification.py`, `data/*`, `COORDINATION.md` (append-only) | 2026-10-21T08:20Z | Claimed as T17 at 07:40Z; T17/T20/T21 were taken by 72198d3e, 76950c25 and 4f8d032d while this branch was open, so the task is recorded as T22 (§19). Additive: extends T20's verification register rather than publishing a parallel page. |
@@ -1359,3 +1361,22 @@ lines, predictions or pages were rewritten, and `git diff --diff-filter=D` again
 is empty apart from files this session never owned.
 
 **Publish record.** See §31.2 below once the PR and Pages deployment are confirmed.
+
+---
+
+## 32. Session `2ca35f17-olbg1` — high-confidence price-window compliance (T42, claimed as T41)
+
+**Claimed:** 2026-10-22T01:25Z (as T41; renumbered T42 on rebase because `7a5b5360-olbg1` had already claimed T41 and merged it as PR #46). **Branch:** `arena/2ca35f17-olbg1`. **Scope:** root desk only (`scripts/model.py`,
+`scripts/origin_lines.py`, `scripts/high_predictions.py`, `scripts/build_site.py`, `scripts/validate.py`,
+`data/lines.json`, `data/predictions.json`, `data/fixtures.json` flags, `datasets/matches_full.*`, root `*.html`,
+`sports/*.html`, `assets/*`, `reports/SESSION_2CA3_PRICE_WINDOW.md`, `README.md`, and this append-only section).
+Namespaced dashboards published by earlier sessions are read-only for this pass.
+
+**Defect being fixed (measured on the `f77e14c` snapshot).** The brief requires high-confidence picks to sit inside the
+`-250` to `+10000` American price window. On the inherited snapshot **19 of the 31 high-confidence picks were priced
+shorter than `-250`** (`-263` … `-1250`, i.e. `70%`–`88%` win probability), so more than half of the "high confidence"
+list was outside the requested window. Root cause: confidence was a pure win-probability threshold, and a high
+probability *necessarily* maps to a price shorter than `-250`, because at a 5% margin `-250` is exactly a `68.0%`
+probability. The two rules in the brief can therefore not both be read as "probability ≥ 70% AND price ≥ -250"; the
+window has to be the binding constraint. The fix, the arithmetic and the remaining limitations are recorded in
+`reports/SESSION_2CA3_PRICE_WINDOW.md`.
