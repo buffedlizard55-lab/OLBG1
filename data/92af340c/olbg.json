@@ -1,0 +1,21 @@
+{
+ "desk": "92af340c",
+ "harvest_window_utc": "2026-10-22T08:31Z..09:01Z",
+ "method": "Each of the 17 in-scope OLBG sport hubs was fetched live this session via the canonical hub URL pattern https://www.olbg.com/betting-tips/{slug}/{id} (chunk 0 of each hub's paginated text layer). Every recorded card carries the rendered event_id, matchup, unlabelled time string, most-tipped selection, market label where rendered, and tip counts exactly as displayed. Deeper pagination chunks were not re-read; per-hub chunk coverage is recorded in each file. No value is inferred: blank fields stay null.",
+ "taxonomy_source": "data/olbg_taxonomy.json (committed hub map); hub IDs re-confirmed live this session",
+ "excluded_hubs": "Football/1, Horse Racing/2, American Football/11, Boxing/16, Cycling/17, Specials/18, Hurling/26 - excluded by the client brief; not fetched this session",
+ "sports_in_scope": 17,
+ "hubs_fetched": 17,
+ "event_cards_total": 130,
+ "zero_tip_hubs": [
+  "Aussie_Rules",
+  "eSports"
+ ],
+ "cross_cutting_observations": [
+  "UTC-4 clock defect (BUG-OLBG-CLOCK-EDT family) reproduces on 2026-10-22 across at least eight hubs; greyhounds gives the title-vs-label proof (11:14 Kinsley rendered 'Today 06:14'). Motor racing is the exception: it renders local track time (USA GP '25 Oct 16:00' = official CDT start).",
+  "Two hubs render zero event cards despite live official fixtures: Aussie_Rules/22 (nine NAB AFLW Round 11 fixtures, official afl.com.au) and eSports/23 (LoL Worlds 2026 Swiss stage, official lolesports.com) - the BLINDSPOT-OLBG-ZERO-TIPS family persists.",
+  "OLBG event ids are recycled across days (535918 carried a different basketball tie earlier this week) and must not be used as durable keys.",
+  "The Rathgormack v The Nire date defect (BUG-OLBG-3536-DATE) is still live: hub shows '01 Nov 10:30' against the official Munster GAA date of 25 Oct 2026 14:30 UTC.",
+  "Hub time labels never carry a timezone; official start times are taken only from governing-body pages linked per row."
+ ]
+}

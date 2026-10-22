@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cricket · Desk 92af340c</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="desk-header">
+<h1><a href="../index.html">Desk 92af340c</a> — live OLBG harvest + strict-band origination</h1>
+<p class="desk-sub">Session <code>92af340c-olbg1</code> (T63/T35) · built 2026-10-22T09:01:51+00:00 · cutoff 2026-10-22T09:05:00Z · research only, 18+</p>
+<nav class="desk-nav"><a class="" href="../index.html">Dashboard</a> <a class="" href="../picks.html">All Picks</a> <a class="" href="../predictions.html">High Predictions</a> <a class="active" href="../sports.html">Sports</a> <a class="" href="../verification.html">Verification</a> <a class="" href="../flagged.html">Flagged</a> <a class="" href="../methodology.html">Methodology</a> <a class="" href="../sources.html">Sources</a> <a class="" href="../reverse-engineering.html">OLBG Reverse-Engineering</a></nav>
+<nav class="companion">Other desks: <a href="../../index.html">Canonical research desk</a> · <a href="../../archive/index.html">Archived pre-release desk</a> · <a href="../../8fc47dcb/index.html">8fc47dcb</a> · <a href="../../v3/index.html">v3</a> · <a href="../../6a081cf6/index.html">6a081cf6</a> · <a href="../../f7fa77fc/index.html">f7fa77fc (mirror)</a> · <a href="../../e6716490/index.html">e6716490</a> · <a href="../../7ad0d336/index.html">7ad0d336</a></nav>
+</header>
+<main>
+<h2>Cricket</h2>
+<section><h3>OLBG hub read — 2026-10-22T08:39Z</h3>
+<p>Hub: <a href="https://www.olbg.com/betting-tips/Cricket/7" rel="noopener">https://www.olbg.com/betting-tips/Cricket/7</a> ·
+page state: live event cards rendered; &#x27;Load More Tips&#x27; pagination present · chunks read: [0] of 4 ·
+cards captured: 8. chunk 0 of 4 captured; deeper pagination not re-read this session</p>
+<table class="desk-table"><thead><tr><th>event_id</th><th>Match</th><th>Time label (as rendered)</th><th>Most-tipped</th><th>Market</th><th>Tips</th><th>%</th></tr></thead><tbody><tr><td>188811</td><td>Eastern Storm vs Tuskers T20</td><td>Today 12:00</td><td>Eastern Storm</td><td>Win Match</td><td>7/8</td><td>88%</td></tr><tr><td>188825</td><td>Mpumalanga Rhinos vs South Africa Emerging T20</td><td>Today 07:00</td><td>Mpumalanga Rhinos</td><td>Win Match</td><td>6/9</td><td>67%</td></tr><tr><td>188831</td><td>Afghanistan vs Zimbabwe One Day Match</td><td>Tomorrow 07:30</td><td>Afghanistan</td><td>Win Match</td><td>1/1</td><td>100%</td></tr><tr><td>182606</td><td>World Cup 2027</td><td>21 Nov 2027 05:00</td><td>India</td><td>Outright Winner</td><td>6/12</td><td>50%</td></tr><tr><td>187184</td><td>Big Bash Women 2026</td><td>05 Dec 03:10</td><td>Sydney Sixers W</td><td>Outright Winner</td><td>2/3</td><td>67%</td></tr><tr><td>187503</td><td>T20 Big Bash 2026-27</td><td>12 Dec 03:15</td><td>Adelaide Strikers</td><td>Outright Winner</td><td>1/2</td><td>50%</td></tr><tr><td>187504</td><td>SA20 2026-27</td><td>24 Jan 2027 11:30</td><td>Pretoria Capitals</td><td>Outright Winner</td><td>1/1</td><td>100%</td></tr><tr><td>188350</td><td>T20 Blast 2027</td><td>18 Jul 2027 11:00</td><td>Sussex</td><td>Outright Winner</td><td>—</td><td>—</td></tr></tbody></table>
+<h4>Harvest observations</h4><ul><li>Hub card list does not include the three officially-sourced fixtures the repo dataset carries for this window (AUS W v NZ W 3rd T20I, NZ A v India A, Ford Trophy Central Stags v Northern Districts) - an OLBG coverage gap; the desk prices those rows from official sources and records the gap here.</li><li>T20 Blast 2027 outright card renders a selection (Sussex) with no tips counter at all - consistent with the documented unpopulated-denominator defect family (BUG-OLBG-EW-DIVZERO).</li><li>Time labels carry no timezone; the UTC-4 clock defect documented elsewhere on OLBG applies (e.g. &#x27;Today 12:00&#x27; for a Zimbabwe afternoon start).</li></ul></section>
+<section><h3>Desk rows (future)</h3><table class="desk-table"><thead><tr><th>Row</th><th>Match</th><th>Start (UTC)</th><th>Tier</th><th>Desk pick (book price)</th><th>Winner call</th><th>Ledger</th><th>OLBG hub read 22 Oct</th><th>Official sources</th></tr></thead><tbody><tr data-tier="high"><td><code>cric-nz-ind-t20-2</code></td><td>New Zealand v India</td><td>2026-10-24T06:15:00Z</td><td class="tier-high">High</td><td><strong>India</strong> Match Winner · p=0.620 · book 1.54 (-185) · fair -164</td><td>India</td><td>confirmed <span class="muted">(2026-10-21T07:05Z)</span></td><td class="muted">no OLBG card (id not stored on row)</td><td class="srcs"><a class="src" href="https://scoring.nzc.nz/fixtures" rel="noopener">New Zealand Cricket official fixtures</a> <a class="src" href="https://www.icc-cricket.com/rankings" rel="noopener">ICC official team rankings (Men&#x27;s &amp; Women&#x27;s T20I)</a></td></tr></tbody></table></section>
+</main>
+<footer class="desk-footer"><p>Desk 92af340c — an isolated namespaced desk inside the OLBG reverse-engineering repo. Fair prices are model outputs, not factual certification; nothing is inferred: unconfirmed values render blank and are flagged. Do not bet money you cannot afford to lose.</p></footer>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

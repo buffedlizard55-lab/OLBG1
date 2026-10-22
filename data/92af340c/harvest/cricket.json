@@ -1,0 +1,107 @@
+{
+ "sport": "cricket",
+ "slug": "Cricket",
+ "id": 7,
+ "url": "https://www.olbg.com/betting-tips/Cricket/7",
+ "read_utc": "2026-10-22T08:39Z",
+ "title": "Free Cricket Betting Tips & Predictions Today - OLBG.com",
+ "page_state": "live event cards rendered; 'Load More Tips' pagination present",
+ "chunks_read": [
+  0
+ ],
+ "chunks_total": 4,
+ "pagination_note": "chunk 0 of 4 captured; deeper pagination not re-read this session",
+ "events": [
+  {
+   "event_id": 188811,
+   "match": "Eastern Storm vs Tuskers T20",
+   "time_label": "Today 12:00",
+   "selection": "Eastern Storm",
+   "market": "Win Match",
+   "tips": "7/8",
+   "pct": "88%",
+   "comments": 2
+  },
+  {
+   "event_id": 188825,
+   "match": "Mpumalanga Rhinos vs South Africa Emerging T20",
+   "time_label": "Today 07:00",
+   "selection": "Mpumalanga Rhinos",
+   "market": "Win Match",
+   "tips": "6/9",
+   "pct": "67%",
+   "comments": 2
+  },
+  {
+   "event_id": 188831,
+   "match": "Afghanistan vs Zimbabwe One Day Match",
+   "time_label": "Tomorrow 07:30",
+   "selection": "Afghanistan",
+   "market": "Win Match",
+   "tips": "1/1",
+   "pct": "100%",
+   "comments": 1
+  },
+  {
+   "event_id": 182606,
+   "match": "World Cup 2027",
+   "time_label": "21 Nov 2027 05:00",
+   "selection": "India",
+   "market": "Outright Winner",
+   "tips": "6/12",
+   "pct": "50%",
+   "comments": 0,
+   "outright": true
+  },
+  {
+   "event_id": 187184,
+   "match": "Big Bash Women 2026",
+   "time_label": "05 Dec 03:10",
+   "selection": "Sydney Sixers W",
+   "market": "Outright Winner",
+   "tips": "2/3",
+   "pct": "67%",
+   "comments": 0,
+   "outright": true
+  },
+  {
+   "event_id": 187503,
+   "match": "T20 Big Bash 2026-27",
+   "time_label": "12 Dec 03:15",
+   "selection": "Adelaide Strikers",
+   "market": "Outright Winner",
+   "tips": "1/2",
+   "pct": "50%",
+   "comments": 0,
+   "outright": true
+  },
+  {
+   "event_id": 187504,
+   "match": "SA20 2026-27",
+   "time_label": "24 Jan 2027 11:30",
+   "selection": "Pretoria Capitals",
+   "market": "Outright Winner",
+   "tips": "1/1",
+   "pct": "100%",
+   "comments": 0,
+   "outright": true
+  },
+  {
+   "event_id": 188350,
+   "match": "T20 Blast 2027",
+   "time_label": "18 Jul 2027 11:00",
+   "selection": "Sussex",
+   "market": "Outright Winner",
+   "tips": null,
+   "pct": null,
+   "comments": 0,
+   "outright": true
+  }
+ ],
+ "event_cards_captured": 8,
+ "observations": [
+  "Hub card list does not include the three officially-sourced fixtures the repo dataset carries for this window (AUS W v NZ W 3rd T20I, NZ A v India A, Ford Trophy Central Stags v Northern Districts) - an OLBG coverage gap; the desk prices those rows from official sources and records the gap here.",
+  "T20 Blast 2027 outright card renders a selection (Sussex) with no tips counter at all - consistent with the documented unpopulated-denominator defect family (BUG-OLBG-EW-DIVZERO).",
+  "Time labels carry no timezone; the UTC-4 clock defect documented elsewhere on OLBG applies (e.g. 'Today 12:00' for a Zimbabwe afternoon start)."
+ ]
+}

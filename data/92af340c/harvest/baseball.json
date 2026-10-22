@@ -1,0 +1,33 @@
+{
+ "sport": "baseball",
+ "slug": "Baseball",
+ "id": 12,
+ "url": "https://www.olbg.com/betting-tips/Baseball/12",
+ "read_utc": "2026-10-22T08:47Z",
+ "title": "Free Baseball Tips, Picks & Predictions - OLBG.com",
+ "page_state": "live event cards rendered; 'Load More Tips' pagination present",
+ "chunks_read": [
+  0
+ ],
+ "chunks_total": 3,
+ "pagination_note": "chunk 0 of 3 captured; deeper pagination not re-read this session",
+ "events": [
+  {
+   "event_id": 160789,
+   "league": "MLB",
+   "match": "TB Rays @ MIL Brewers",
+   "time_label": "Tomorrow 20:00",
+   "selection": "MIL Brewers",
+   "market": "Money Line",
+   "tips": "14/17",
+   "pct": "82%",
+   "comments": 7
+  }
+ ],
+ "event_cards_captured": 1,
+ "observations": [
+  "Only one match card renders on the hub at read time (late-postseason MLB slate); the desk's baseball rows remain sourced from statsapi.mlb.com per the root dataset.",
+  "Time labels carry no timezone; the UTC-4 clock defect family applies ('Tomorrow 20:00' for an evening first pitch).",
+  "Hub copy documents three match markets: Money Line, Run Line, Game Totals, plus ante-post."
+ ]
+}

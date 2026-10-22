@@ -1,0 +1,133 @@
+{
+ "cutoff_utc": "2026-10-22T09:05:00Z",
+ "items": [
+  {
+   "id": "H92-BLINDSPOT-AFLW",
+   "severity": "high",
+   "scope": "Aussie Rules hub (Aussie_Rules/22)",
+   "finding": "Hub renders 'No tips found.' on the 2026-10-22T08:31Z read despite nine official NAB AFLW Round 11 fixtures (afl.com.au). The desk's four AFLW High picks therefore have no OLBG consensus to compare against.",
+   "sources": [
+    {
+     "name": "OLBG Aussie Rules hub (read 2026-10-22)",
+     "url": "https://www.olbg.com/betting-tips/Aussie_Rules/22"
+    },
+    {
+     "name": "Official AFLW fixtures/ladder",
+     "url": "https://www.afl.com.au/aflw/ladder"
+    }
+   ]
+  },
+  {
+   "id": "H92-BLINDSPOT-LOL",
+   "severity": "high",
+   "scope": "eSports hub (eSports/23)",
+   "finding": "Hub renders zero event cards while the LoL Worlds 2026 Swiss stage is live (lolesports.com); the desk row lol-worlds26-tsw-lyon stays priced from the official source with no hub consensus.",
+   "sources": [
+    {
+     "name": "OLBG eSports hub (read 2026-10-22)",
+     "url": "https://www.olbg.com/betting-tips/eSports/23"
+    },
+    {
+     "name": "LoL Esports official schedule",
+     "url": "https://lolesports.com/"
+    }
+   ]
+  },
+  {
+   "id": "H92-CLOCK-EDT",
+   "severity": "high",
+   "scope": "at least eight hubs",
+   "finding": "UTC-4 clock defect reproduces (BUG-OLBG-CLOCK-EDT family): '11:14 Kinsley' renders 'Today 06:14' (event 689570); SHL cards show 'Today 13:00' for 17:00Z face-offs; EuroLeague 'Today 14:05' for 18:05Z tip-offs. Motor racing is the exception, rendering local track time (USA GP '25 Oct 16:00' CDT = 21:00Z). Desk never uses hub labels for start times.",
+   "sources": [
+    {
+     "name": "OLBG Greyhounds hub (read 2026-10-22)",
+     "url": "https://www.olbg.com/betting-tips/Greyhounds/28"
+    },
+    {
+     "name": "Official F1 race page (US GP)",
+     "url": "https://www.formula1.com/en/racing/2026/united-states"
+    }
+   ]
+  },
+  {
+   "id": "H92-GAA-DATE",
+   "severity": "high",
+   "scope": "Gaelic Football hub, event 3536",
+   "finding": "Rathgormack v The Nire still shows '01 Nov 10:30' on the 2026-10-22 read; official Munster GAA fixtures schedule the Waterford SFC final for Sun 25 Oct 2026 14:30 UTC. Desk keeps the corrected official value (BUG-OLBG-3536-DATE reproduces).",
+   "sources": [
+    {
+     "name": "OLBG Gaelic Football hub (read 2026-10-22)",
+     "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25"
+    },
+    {
+     "name": "Munster GAA official fixtures",
+     "url": "https://www.munster.gaa.ie/"
+    }
+   ]
+  },
+  {
+   "id": "H92-ID-REUSE",
+   "severity": "medium",
+   "scope": "Basketball hub, event 535918",
+   "finding": "event_id 535918 renders 'Anadolu Efes vs Besiktas' today; earlier this week the same id carried a different tie (finding BUG-OLBG-535918-EUROCUP). OLBG ids are recycled and must not be used as durable keys.",
+   "sources": [
+    {
+     "name": "OLBG Basketball hub (read 2026-10-22)",
+     "url": "https://www.olbg.com/betting-tips/Basketball/4"
+    }
+   ]
+  },
+  {
+   "id": "H92-DRIFT-12046",
+   "severity": "low",
+   "scope": "Handball hub, event 12046",
+   "finding": "Bar\u00e7a v Montpellier consensus moved from the stored snapshot (Montpellier 2/6) to Barcelona 8/14 (57%) on the fresh read; tips move intraday. The desk prices from official EHF standings only and records both reads.",
+   "sources": [
+    {
+     "name": "OLBG Handball hub (read 2026-10-22)",
+     "url": "https://www.olbg.com/betting-tips/Handball/20"
+    },
+    {
+     "name": "EHF Champions League official",
+     "url": "https://ehfcl.eurohandball.com/"
+    }
+   ]
+  },
+  {
+   "id": "H92-MARKET-LABEL",
+   "severity": "low",
+   "scope": "Gaelic Football hub",
+   "finding": "Gaelic cards render no market label beside handicap-style selections ('Nemo Rangers +1.50'), unique among the seventeen hubs in this read.",
+   "sources": [
+    {
+     "name": "OLBG Gaelic Football hub (read 2026-10-22)",
+     "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25"
+    }
+   ]
+  },
+  {
+   "id": "H92-PAGINATION",
+   "severity": "low",
+   "scope": "all 17 hubs",
+   "finding": "Only chunk 0 of each hub's paginated text layer was re-read this session; per-hub chunk coverage is recorded in each harvest file and truncated boundary cards are listed as observations, never as data.",
+   "sources": [
+    {
+     "name": "Desk harvest index",
+     "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/92af340c/olbg.json"
+    }
+   ]
+  },
+  {
+   "id": "H92-STALE-TIERS",
+   "severity": "medium",
+   "scope": "rows excluded from High",
+   "finding": "Future priced rows inside the window but with a not_rechecked or flagged ledger status (e.g. the two EuroLeague rows and four PDC rows) are held at Medium/Low by the desk's freshness gate; two flagged NHL rows (LIVE-F-V4 family) stay out of High until re-confirmed.",
+   "sources": [
+    {
+     "name": "Live verification ledger",
+     "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/reports/LIVE_VERIFICATION.md"
+    }
+   ]
+  }
+ ]
+}

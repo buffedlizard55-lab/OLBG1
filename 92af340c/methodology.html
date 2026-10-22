@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology · Desk 92af340c</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="desk-header">
+<h1><a href="index.html">Desk 92af340c</a> — live OLBG harvest + strict-band origination</h1>
+<p class="desk-sub">Session <code>92af340c-olbg1</code> (T63/T35) · built 2026-10-22T09:01:51+00:00 · cutoff 2026-10-22T09:05:00Z · research only, 18+</p>
+<nav class="desk-nav"><a class="" href="index.html">Dashboard</a> <a class="" href="picks.html">All Picks</a> <a class="" href="predictions.html">High Predictions</a> <a class="" href="sports.html">Sports</a> <a class="" href="verification.html">Verification</a> <a class="" href="flagged.html">Flagged</a> <a class="active" href="methodology.html">Methodology</a> <a class="" href="sources.html">Sources</a> <a class="" href="reverse-engineering.html">OLBG Reverse-Engineering</a></nav>
+<nav class="companion">Other desks: <a href="../index.html">Canonical research desk</a> · <a href="../archive/index.html">Archived pre-release desk</a> · <a href="../8fc47dcb/index.html">8fc47dcb</a> · <a href="../v3/index.html">v3</a> · <a href="../6a081cf6/index.html">6a081cf6</a> · <a href="../f7fa77fc/index.html">f7fa77fc (mirror)</a> · <a href="../e6716490/index.html">e6716490</a> · <a href="../7ad0d336/index.html">7ad0d336</a></nav>
+</header>
+<main>
+<h2>Methodology</h2>
+<section><h3>Tier rules (this desk)</h3><p>HIGH: future at cutoff + priced + strict window + both sides officially rated and measured + ledger-fresh (confirmed/corrected) + hand-authored &gt;=30-word prediction. MEDIUM: future + priced + window + both rated, missing another High gate. LOW: all other future priced rows. Expired/undated/unpriced rows publish with a null tier.</p></section>
+<section><h3>Pricing</h3><p>Fair (0% overround) headline odds with the 5%-vig book price alongside, per the repo&#x27;s published model conventions (scripts/model.py). The High window is judged on the book price, strictly inside -250..+10000.</p>
+<p>Ratings and probabilities come from the repo's published model conventions (<code>scripts/model.py</code>) applied to
+official governing-body inputs stored per row in <code>data/fixtures.json</code> — points percentages, ladder positions,
+IRL/ICC rankings, EHF group tables and measured splits. The desk does not originate new numeric ratings; it originates
+the tier gates, the harvest evidence layer and the predictions.</p></section>
+<section><h3>Harvest method</h3><p>Each of the 17 in-scope OLBG sport hubs was fetched live this session via the canonical hub URL pattern https://www.olbg.com/betting-tips/{slug}/{id} (chunk 0 of each hub&#x27;s paginated text layer). Every recorded card carries the rendered event_id, matchup, unlabelled time string, most-tipped selection, market label where rendered, and tip counts exactly as displayed. Deeper pagination chunks were not re-read; per-hub chunk coverage is recorded in each file. No value is inferred: blank fields stay null.</p>
+<p>Excluded hubs (never fetched): Football/1, Horse Racing/2, American Football/11, Boxing/16, Cycling/17, Specials/18, Hurling/26 - excluded by the client brief; not fetched this session.</p></section>
+<section><h3>Verification policy</h3><p>Every row links the official source(s) it was built from; the live verification
+ledger ({&#x27;rows&#x27;: 134, &#x27;confirmed&#x27;: 44, &#x27;corrected&#x27;: 32, &#x27;flagged&#x27;: 2, &#x27;not_rechecked&#x27;: 56} rows) records per-row re-checks. Where a value cannot be confirmed
+officially it is left blank and flagged — never inferred.</p></section>
+</main>
+<footer class="desk-footer"><p>Desk 92af340c — an isolated namespaced desk inside the OLBG reverse-engineering repo. Fair prices are model outputs, not factual certification; nothing is inferred: unconfirmed values render blank and are flagged. Do not bet money you cannot afford to lose.</p></footer>
+<script src="assets/app.js" defer></script>
+</body>
+</html>

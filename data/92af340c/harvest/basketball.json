@@ -1,0 +1,177 @@
+{
+ "sport": "basketball",
+ "slug": "Basketball",
+ "id": 4,
+ "url": "https://www.olbg.com/betting-tips/Basketball/4",
+ "read_utc": "2026-10-22T08:33Z",
+ "title": "Basketball Betting Tips: NBA & EuroLeague Picks - OLBG.com",
+ "page_state": "live event cards rendered",
+ "chunks_read": [
+  0
+ ],
+ "chunks_total": 5,
+ "pagination_note": "chunk 0 of 5 captured; deeper pagination not re-read this session",
+ "events": [
+  {
+   "event_id": 536021,
+   "league": "Korea KBL",
+   "match": "Mobis Phoebus vs Changwon Sakers",
+   "time_label": "Today 06:00",
+   "selection": "Changwon Sakers",
+   "market": "Money Line",
+   "tips": "4/8",
+   "pct": "50%",
+   "comments": 0
+  },
+  {
+   "event_id": 535918,
+   "league": "Euroleague",
+   "match": "Anadolu Efes vs Besiktas",
+   "time_label": "Today 13:30",
+   "selection": "Anadolu Efes",
+   "market": "Money Line",
+   "tips": "4/5",
+   "pct": "80%",
+   "comments": 0
+  },
+  {
+   "event_id": 535921,
+   "league": "Euroleague",
+   "match": "Maccabi Tel Aviv vs Real Madrid",
+   "time_label": "Today 14:05",
+   "selection": "Real Madrid",
+   "market": "Money Line",
+   "tips": "4/6",
+   "pct": "67%",
+   "comments": 1
+  },
+  {
+   "event_id": 535923,
+   "league": "Euroleague",
+   "match": "Panathinaikos vs Baskonia",
+   "time_label": "Today 14:15",
+   "selection": "Panathinaikos",
+   "market": "Money Line",
+   "tips": "4/6",
+   "pct": "67%",
+   "comments": 1
+  },
+  {
+   "event_id": 534843,
+   "league": "NBA",
+   "match": "DEN Nuggets @ OKC Thunder",
+   "time_label": "Today 21:40",
+   "selection": "OKC Thunder",
+   "market": "Money Line",
+   "tips": "4/4",
+   "pct": "100%",
+   "comments": 1
+  },
+  {
+   "event_id": 535920,
+   "league": "Euroleague",
+   "match": "Bayern Munich vs BC Dubai",
+   "time_label": "Today 14:00",
+   "selection": "BC Dubai",
+   "market": "Money Line",
+   "tips": "2/3",
+   "pct": "67%",
+   "comments": 1
+  },
+  {
+   "event_id": 535924,
+   "league": "Euroleague",
+   "match": "Partizan vs Crvena Zvezda",
+   "time_label": "Today 14:45",
+   "selection": "Crvena Zvezda",
+   "market": "Money Line",
+   "tips": "2/3",
+   "pct": "67%",
+   "comments": 1
+  },
+  {
+   "event_id": 536019,
+   "league": "Brazil NBB",
+   "match": "Fortaleza BC vs Pinheiros",
+   "time_label": "Today 18:30",
+   "selection": "Pinheiros",
+   "market": "Money Line",
+   "tips": "2/3",
+   "pct": "67%",
+   "comments": 1
+  },
+  {
+   "event_id": 534845,
+   "league": "NBA",
+   "match": "CLE Cavaliers @ PHI 76ers",
+   "time_label": "Today 19:10",
+   "selection": "PHI 76ers",
+   "market": "Money Line",
+   "tips": "2/2",
+   "pct": "100%",
+   "comments": 1
+  },
+  {
+   "event_id": 535928,
+   "league": "Euroleague",
+   "match": "Zalgiris vs Asvel Lyon Villeurbanne",
+   "time_label": "Tomorrow 13:00",
+   "selection": "Zalgiris",
+   "market": "Money Line",
+   "tips": "2/3",
+   "pct": "67%",
+   "comments": 1
+  },
+  {
+   "event_id": 534841,
+   "league": "NBA",
+   "match": "HOU Rockets @ SA Spurs",
+   "time_label": "Tomorrow 21:40",
+   "selection": "SA Spurs",
+   "market": "Money Line",
+   "tips": "2/2",
+   "pct": "100%",
+   "comments": 0
+  },
+  {
+   "event_id": 535922,
+   "league": "Euroleague",
+   "match": "Milano vs Barcelona",
+   "time_label": "Today 14:30",
+   "selection": "Barcelona",
+   "market": "Money Line",
+   "tips": "1/1",
+   "pct": "100%",
+   "comments": 0
+  },
+  {
+   "event_id": 536020,
+   "league": "Brazil NBB",
+   "match": "Uniao Corinthians vs Minas",
+   "time_label": "Today 18:30",
+   "selection": "Uniao Corinthians",
+   "market": "Money Line",
+   "tips": "1/2",
+   "pct": "50%",
+   "comments": 0
+  },
+  {
+   "event_id": 535925,
+   "league": "Euroleague",
+   "match": "Olympiacos vs Fenerbahce",
+   "time_label": "Tomorrow 14:15",
+   "selection": "Olympiacos",
+   "market": "Money Line",
+   "tips": "1/1",
+   "pct": "100%",
+   "comments": 0
+  }
+ ],
+ "event_cards_captured": 14,
+ "observations": [
+  "A 15th card (Paris vs Valencia, Euroleague) was truncated at the chunk boundary; its consensus was not readable and is not recorded.",
+  "Clock defect (BUG-OLBG-CLOCK-EDT) reproduces: Maccabi Tel Aviv vs Real Madrid shows 'Today 14:05' against the official 18:05Z tip-off, and Panathinaikos vs Baskonia 'Today 14:15' against 18:15Z (same offsets session 8fc47dcb recorded on 2026-10-22).",
+  "event_id 535918 today renders 'Anadolu Efes vs Besiktas' under the Euroleague sub-route; earlier this week the same id carried a different tie (Hapoel Jerusalem v Rigas Zelli, finding BUG-OLBG-535918-EUROCUP). OLBG event ids are not stable across days and must never be used as durable keys.",
+  "Sub-routes linked from the hub: NBA, WNBA, European/Euroleague, Other/Korea_KBL, Other/Brazil_NBB."
+ ]
+}
