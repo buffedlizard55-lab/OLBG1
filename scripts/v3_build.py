@@ -355,12 +355,18 @@ the official page the participants, venue and start were read from.</p>
                       f'{b["price"]:.2f} ({b["us"]:+d})</span>')
             else:
                 mk = '<span class="mut">no bet: the only in-band price is a coin flip or worse</span>'
+            pk = p.get("pick")
+            if pk and (not b or pk["selection"] != b["selection"]):
+                mk += (f'<br><span class="sm mut">Match-winner call: {esc(pk["selection"])} '
+                       f'({esc(pk["confidence"])})</span>')
             det = ""
+            prio = {"Match winner": 0, "Handicap": 1, "Total": 2, "Correct score": 3}
+            ordered = sorted(p["markets"], key=lambda m: (prio.get(m["market"], 9), -m["prob_pct"]))
             ladder = "".join(
                 f'<tr><td>{esc(m["market"])}</td><td>{esc(m["selection"])}</td>'
                 f'<td>{m["prob_pct"]:.1f}%</td><td>{m["price"]:.2f}</td>'
                 f'<td class="sm mut">{m["us"]:+d}</td></tr>'
-                for m in p["markets"][:14])
+                for m in ordered)
             det = (f'<details><summary>market sheet</summary><table class="mkt"><thead><tr>'
                    f'<th>Market</th><th>Selection</th><th>Model</th><th>Price</th><th>US</th></tr></thead>'
                    f'<tbody>{ladder}</tbody></table>'
@@ -379,7 +385,7 @@ the official page the participants, venue and start were read from.</p>
                     '<td><b>' + esc(p["home"]) + '</b><br><span class="mut">v</span> ' + esc(p["away"]) + '<br>'
                     '<span class="sm mut">' + esc(p["stage"]) + '</span></td>'
                     '<td class="sm">' + esc(p["competition"]) + '<br><span class="mut">' +
-                    esc(p["venue"] or "venue not published") + '</span></td>'
+                    esc(p["venue"] or "venue not captured") + '</span></td>'
                     '<td>' + mk + '</td><td>' + prob_cell + '</td>'
                     '<td>' + conf_cell + '</td>'
                     '<td class="sm"><a href="' + esc(src_url) + '" target="_blank" rel="noopener">'

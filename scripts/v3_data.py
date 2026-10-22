@@ -138,12 +138,30 @@ NHL_GAMES = [
     ("nhl-2026020167", "2026-10-24T01:00:00Z", "Colorado Avalanche", "Tampa Bay Lightning", "21:00 EDT"),
 ]
 
+NHL_VENUE = {
+    "nhl-2026020154": "TD Garden, Boston",
+    "nhl-2026020155": "Scotiabank Arena, Toronto",
+    "nhl-2026020156": "Canadian Tire Centre, Ottawa",
+    "nhl-2026020157": "Prudential Center, Newark",
+    "nhl-2026020158": "PPG Paints Arena, Pittsburgh",
+    "nhl-2026020159": "UBS Arena, Elmont",
+    "nhl-2026020160": "Enterprise Center, St. Louis",
+    "nhl-2026020161": "American Airlines Center, Dallas",
+    "nhl-2026020162": "Scotiabank Saddledome, Calgary",
+    "nhl-2026020163": "Rogers Place, Edmonton",
+    "nhl-2026020164": "Climate Pledge Arena, Seattle",
+    "nhl-2026020165": "Rogers Arena, Vancouver",
+    "nhl-2026020166": "United Center, Chicago",
+    "nhl-2026020167": "Ball Arena, Denver",
+}
+
 NHL_FIXTURES = []
 for fid, utc, home, away, local in NHL_GAMES:
     h, a = NHL_T[home], NHL_T[away]
     NHL_FIXTURES.append(fx(
         id=fid, sport="ice-hockey", sport_name="Ice Hockey", competition="NHL", stage="Regular season",
-        start_utc=utc, home=home, away=away, status="verified", verified_at="2026-10-22T02:30Z",
+        start_utc=utc, home=home, away=away, venue=NHL_VENUE[fid],
+        status="verified", verified_at="2026-10-22T02:30Z",
         sources=[src("NHL official schedule, 22-23 October 2026", S["nhl_sched"]),
                  src("NHL official standings (current as of Oct 21, 9:21 PM EDT)", S["nhl_stand"])],
         home_input=inp("Points percentage (official standings)",
