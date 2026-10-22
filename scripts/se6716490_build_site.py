@@ -657,11 +657,11 @@ rest, stated plainly rather than relabelled as High.</p>
     ] for c in verification["checks"]]
 
     body = f'''
-<p class="lede">Verification on this desk is a claim about a specific page at a specific time. Three official
+<p class="lede">Verification on this desk is a claim about a specific page at a specific time. {verification["counts"]["fetches"]} official
 endpoints were re-read for this pass; everything else is labelled <em>carried</em> and keeps the link and read
 date of the register it came from.</p>
 <section class="cards">
-{stat_card(verification["counts"]["fetches"], "official endpoints re-read", "NHL, MLB, EuroLeague")}
+{stat_card(verification["counts"]["fetches"], "official endpoints re-read", "NHL · MLB · EuroLeague · AFLW")}
 {stat_card(verification["counts"]["checks"], "row-side comparisons", "each with its own source link")}
 {stat_card(verification["counts"]["fixtures_touched"], "fixtures re-checked", f'of {verification["counts"]["fixtures_total"]} on the desk')}
 {stat_card(verification["counts"]["fixtures_total"] - verification["counts"]["fixtures_touched"], "fixtures carried", "not re-read this pass")}
@@ -897,7 +897,7 @@ outlet, tipster page or encyclopaedia appears here: a fact on this desk is confi
 <section class="cards">
 {stat_card(len(domain_rows), "official domains", "across the rows on this desk")}
 {stat_card(sum(v["count"] for v in domain_rows.values()), "row-to-source links", "a link on every priced row")}
-{stat_card(verification["counts"]["fetches"], "re-read this pass", "NHL, MLB, EuroLeague")}
+{stat_card(verification["counts"]["fetches"], "re-read this pass", "NHL · MLB · EuroLeague · AFLW")}
 {stat_card(len(fixtures_blob["excluded"]), "sports excluded", "per the brief")}
 </section>
 
