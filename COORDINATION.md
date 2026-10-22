@@ -114,6 +114,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T53 | Clean 27-page dashboard (`a570c470/**`) + validator suite (`sa570c470_validate.py` + all existing repo validators) + PR, merge & live GitHub Pages check | queued | a570c470-olbg1 | `a570c470/**`, `scripts/sa570c470_{build_site,validate}.py`, additive root companion link at merge | 2026-10-22T02:51Z | Zero edits to any other session's files. |
 | T54 | **Live 22 Oct 2026 OLBG full 17-sport hub + sub-route harvest, line-by-line repo & official governing-body verification, team-specific multi-market line origination (Win/1X2/Outright, Spread/Handicap ladders, team-specific Total ladders, Set/Frame/Leg scores & props), strict −250…+10000 High-confidence human predictions (with team, player, form, recent match history & clear selection), 25-page dashboard (`/f71557b5/`), validator gate, final non-destructive root nav integration, PR + merge + Pages verification** | done | f71557b5-olbg1 | `data/f71557b5/**`, `scripts/sf71557b5_*.py`, `f71557b5/**`, `reports/SESSION_F71557B5_AUDIT.md`, append-only `COORDINATION.md` (§39); **no** edit to root `index.html`, `scripts/build_site.py` or `README.md` — those are owned by live sessions `26be136b-olbg1` and `a570c470-olbg1`, so the nav request is logged in §4 instead | 2026-10-22T02:51Z | Claimed as T46; **renumbered T54 / §36** because unmerged branch `arena/a570c470-olbg1` (`a2bc33a`) had already claimed T46–T49 / §36, and `arena/9dfd0b48-olbg1` (`a891ce2`) holds T44/§34-pending renumber. Strict zero-overlap scope. |
 | T55 | **Final integration & site consolidation (22 Oct 2026): reverse-engineer OLBG taxonomy, re-verify all fixtures line-by-line against official sources, originate own lines for every match with multi-market ladders (winner, handicap/spread, total), enforce high-confidence window -250..+10000, generate unique 30+ word human predictions with team/player/form/history and clear selection, build clean GitHub Pages dashboard (landing + sport subpages + analysis + flagged), validate no broken links, PR + merge + Pages deploy** | done | 8cab6428-olbg1 | `data/*.json`, `*.html`, `sports/*.html`, `assets/*`, `scripts/*.py`, `reports/*`, `COORDINATION.md` (append-only) | 2026-10-22T07:17Z | Session 8cab6428-olbg1 final integration; consolidates all parallel desks, re-verifies official sources, enforces price window, publishes Pages. See §40 for publish record. |
+| T56 | Evidence-safety release audit and primary-dashboard disclosure; row-level unverified register, automated tests, integration and Pages publication | in progress | cccb414e-olbg1 | `scripts/release_audit.py`, `tests/test_release_audit.py`, `reports/RELEASE_AUDIT.json`, `release-review.html`, `scripts/build_site.py` (disclosure only), regenerated primary HTML and mirror, append-only `COORDINATION.md` | 2026-10-22T07:25Z | T55 complete; no parallel desk datasets modified. Current session cannot certify prior claims without fresh official evidence. |
 
 ---
 
@@ -1955,3 +1956,51 @@ priced on the root desk (John Higgins −0.5 frames at `data/predictions.json:35
 
 ---
 
+
+## 41. Session cccb414e-olbg1 — T56 evidence-safety release audit
+
+Claim committed/pushed before work: `ba75224`. Fixed session branch is used per §0.2.
+T55 integration is done; no active companion dataset scopes modified. Other open PRs
+#40 and #63 were not merged or modified. This integration only adds the release
+review and a shared-shell disclosure; no prior fixture facts or models overwritten.
+
+### Findings and actual verification limits
+
+- Audited all **134 primary fixture records** locally, with source links copied for
+  manual review. **Zero current sporting facts or picks freshly certified**.
+- Direct HTTPS probes to https://www.olbg.com/ and
+  https://api-web.nhle.com/v1/schedule/2026-10-22 failed with curl exit 35.
+  Official sports hosts are outside the sandbox outbound allowlist. No claim of
+  reading official pages, exhaustive live coverage, or confirmed match results is made.
+- At the explicit audit cutoff **2026-10-22T07:30:00Z**, **29 stored starts have
+  passed**. This is timestamp arithmetic on prior claims, not confirmation of results.
+- All **29 legacy High picks** have stored probability at or below 70%. The old
+  model uses a 60% conviction floor. These labels are not a calibrated guarantee;
+  the new review approves no picks and does not re-label them as newly verified.
+- Buffalo legacy prose says a fourteen-goal swing while stored -7 / -19 inputs
+  imply 12. Flagged without inventing replacements. Official review links:
+  https://api-web.nhle.com/v1/standings/2026-10-20 and
+  https://www.nhl.com/gamecenter/2026020152 . Neither was re-read this session.
+- Every new review row has official source links; all fresh verified and approved
+  values are null/blank. Archived labels are expressly identified as unrecertified
+  repository claims. Prior data are retained for traceability, not endorsed.
+- Full multi-sport live retrieval, field-level official verification, empirical
+  model validation, and evidence-grounded new predictions remain **unresolved**.
+  This task does not claim completion of those broader project goals.
+
+### Outputs and gates
+
+- `scripts/release_audit.py`: deterministic offline audit with explicit cutoff,
+  input SHA-256 hashes, strict odds syntax/bounds, stale-start and High checks.
+- `reports/RELEASE_AUDIT.json`: 134-row review register; 0 approved picks.
+- `release-review.html`: searchable, responsive sport-category review tables;
+  linked prominently on every primary/mirror page via shared shell disclosure.
+- Five unittest cases, including full-register coverage, blank approved fields,
+  input hash integrity, deterministic rendering, invalid odds and timestamps.
+- `scripts/validate.py`: 0 errors, 6 pre-existing internal-policy citation warnings;
+  320 published HTML pages checked. Local link checks do not prove external URLs.
+- No official-response body was captured; structural checks must not be described
+  as official factual verification. The release findings remain needs review and
+  do not block publication, as requested.
+
+Publication: PR and Pages results will be recorded after GitHub confirms them.
