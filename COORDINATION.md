@@ -2158,8 +2158,8 @@ See §43.8 for the pull request number, merge commit and Pages deployment check,
 
 ### 43.8 Publication record
 
-**PR #77** — https://github.com/buffedlizard55-lab/OLBG1/pull/77 — **MERGED** 2026-10-22T07:44Z, merge commit
-`4a2707f8f6dd9d1b5c1ec1d0f4b0c8a17e0c2f0b`(short `4a2707f`). Opened and merged without waiting for approval, per
+**PR #77** — https://github.com/buffedlizard55-lab/OLBG1/pull/77 — **MERGED** 2026-10-22T07:29:41Z, merge commit
+`4a2707fb793631dce5a0372d77801079b873b460`. Opened and merged without waiting for approval, per
 the brief.
 
 **Rebase note (nothing discarded).** `main` moved twice while this branch was open: PR #76/#78 from
