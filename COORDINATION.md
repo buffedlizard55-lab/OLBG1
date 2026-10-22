@@ -107,6 +107,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 
 | T43 | **Final integration pass (2026-10-22):** fresh official-source re-verification of every live row, expiry of completed fixtures, confidence-band policy (−250…+10000) enforcement, new 30+ word unique predictions, consolidated clean dashboard, validator gate, PR + merge + Pages deploy check | done | e381d2e3-olbg1 | `data/v3/**`, `scripts/v3_*.py`, `v3/**`, `index.html` (consolidated landing only), `COORDINATION.md` (append-only §33) | 2026-10-22T01:25Z | Renumbered T41→T43 on rebase (§31/§32 had already taken T41/T42 and merged as PR #46/#47). Non-overlapping `v3/` namespace; no other session's dashboard, dataset or generator edited. |
 | T44 | Strict-band high-confidence desk: >70% model prob, originated price −250…+10000, unique ≥30-word predictions, official-source re-fetch per row | done | 6a081cf6-olbg1 | `6a081cf6/`, `data/6a081cf6_high_band.json`, `scripts/s6a081cf6_build.py`, `scripts/s6a081cf6_validate.py`, append-only `COORDINATION.md` §34 | 2026-10-22T02:50Z | Namespaced; reuses v3 verified fixtures/lines only; no shared files edited |
+| T45 | **Live OLBG re-harvest (22 Oct 2026, all 17 in-scope hubs) + official-source fixture verification + own multi-market lines with the high-confidence tier restricted to the −250…+10000 band + unique ≥30-word predictions + own dashboard (`/9dfd0b48/`) + Flagged page + validator gate + PR, merge, Pages check** | in progress | 9dfd0b48-olbg1 | `data/9dfd0b48/**`, `scripts/s9dfd0b48_*.py`, `9dfd0b48/**`, `reports/SESSION_9DFD0B48.md`, `COORDINATION.md` (append-only §34 + this row); additive single nav link in root `index.html`/`README.md` only at the end | 2026-10-22T03:00Z | Claimed after T43 (PR #60). Non-overlapping namespace; no other session's data, generator or pages edited. Also takes over **T35** (AFLW re-price) only if the official AFL ladder is reachable this session; otherwise it stays queued. |
 
 ---
 
@@ -1633,3 +1634,16 @@ the open PR #40.
 - **Flagged (on `6a081cf6/flagged.html`, non-blocking):** F-6A-01 Brisbane Lions -3 at -251 excluded (one point outside the -250 floor despite 71.5%); F-6A-02 NRL late mail rules Tonga's Isaiya Katoa out — v3 prose omits it, pick flagged; F-6A-03 v3 generic league-wide total rungs repeat identical lines across fixtures and are not promoted as fixture-specific research; F-6A-04 >70% mathematically implies fair price < about -234, so the effective band is -250..-234.
 - **Gates:** `s6a081cf6_validate.py` PASS; root `validate.py` PASSED (0 errors).
 - **Publish record:** PR #61 — https://github.com/buffedlizard55-lab/OLBG1/pull/61 — **MERGED** 2026-10-22T02:47:48Z. GitHub Pages status `built`; live desk confirmed via page fetch: `/OLBG1/6a081cf6/index.html?v=3` serves all 9 strict-band picks with official source links. (Direct sandbox curl to github.io is network-blocked, hence the fetch-tool confirmation.)
+---
+
+## 35. Session `9dfd0b48-olbg1` — T45 (claimed as T44; renumbered after collision with 6a081cf6's T44) live OLBG re-harvest, official verification, in-band high-confidence desk (`/9dfd0b48/`)
+
+**Claim (2026-10-22T03:00Z).** Branch `arena/9dfd0b48-olbg1`. Scope exactly as the T45 row in §1. Nothing
+owned by another session is edited; shared root files receive at most one additive link at the end.
+
+**Method.** (1) Read every in-scope OLBG hub (`/betting-tips/<Sport>/<id>`, ids 3,4,5,7,8,9,10,12,13,14,15,
+20,21,22,23,25,28) live in this session and record each event with its OLBG `event_id`, published
+kick-off and tipster consensus. (2) For each event, fetch the governing body's own page; fields not read
+there stay blank and are flagged. (3) Originate win / handicap / total prices from recorded inputs only.
+(4) Grade confidence, with **High** permitted only when the selection's book-equivalent price sits in
+−250…+10000. (5) Write a unique ≥30-word prediction for every High pick. Results in §34.1.
