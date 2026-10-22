@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Analysis · OLBG research desk d7d19a67</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="brand"><span class="mark" aria-hidden="true"></span>
+    <span><strong>OLBG research desk d7d19a67</strong><small>independent · official sources only · lines originated, never copied</small></span>
+  </div>
+  <div class="meta"><span class="dot"></span> official reads 2026-10-22T12:55:00Z · desk assembled 2026-10-22T13:14:51Z</div>
+</header>
+<nav class="nav" aria-label="Desk sections"><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="matches.html">Match list</a><a class="nav-link" href="markets.html">Market explorer</a><a class="nav-link" href="high-confidence.html">High confidence</a><a class="nav-link" href="predictions.html">Predictions</a><a class="nav-link" href="sports.html">All sports</a><a class="nav-link active" href="analysis.html">Analysis</a><a class="nav-link" href="sources.html">Sources</a><a class="nav-link" href="flagged.html">Flagged for review</a><a class="nav-link" href="repo-audit.html">Repository audit</a></nav>
+<main id="main">
+<header class="page-head">
+  <p class="eyebrow">Session d7d19a67-olbg1 · task TD7D19 · rolling window 2026-10-22T12:55:00Z to 2026-10-29T12:55:00Z</p>
+  <h1>Analysis</h1>
+  <p class="lede">Models and formulas, originated rates per fixture, an independent log5 cross-check, the arithmetic behind the brief's High-confidence window, and the desk's own weaknesses.</p>
+</header>
+
+<h2>1. What was read, and what that makes possible</h2>
+<p>Sixteen official reads were made on 2026-10-22T12:55:00Z (see <a href="sources.html">Sources</a>). Three of them carried
+the statistics a line needs for <em>both</em> sides of a fixture: the NHL standings for 2026-10-21 (all
+32 clubs, goals for and against, games played, points and streak codes), the MLB standings for the Rays
+and the Brewers (2026 regular-season runs scored and allowed), and the EuroLeague Round 7 Game Center
+(all 18 clubs' records plus points-for/against ranks, injuries and head-to-head notes). That is why 26 of
+55 listings are priced and 29 are not: the other sports' official pages publish fixtures without any
+statistical input, and inventing one is exactly what the brief forbids.</p>
+
+<h2>2. The models</h2>
+<div class="card">
+<h3>nhl-poisson-v1</h3>
+<p>Independent Poisson goal counts, 0&hellip;12 per club:</p>
+<pre>rate_for(A)    = goalFor(A) / gamesPlayed(A)          [official NHL standings, 2026-10-21]
+rate_against(A)= goalAgainst(A) / gamesPlayed(A)
+lambda_A       = (rate_for(A) + rate_against(B)) / 2
+lambda_B       = (rate_for(B) + rate_against(A)) / 2
+P(A wins incl. OT) = P(A &gt; B) + P(A = B) * lambda_A / (lambda_A + lambda_B)</pre>
+<p>No home-ice advantage is inserted: none was measured this session. The overtime split is proportional
+to lambda, which is a disclosed model assumption, not an official statistic. Markets derived from the same
+matrix: 3-way regulation, A &minus;1.5 / B +1.5, and totals at 5.5 and 6.5 goals.</p>
+<h3>mlb-poisson-v1</h3>
+<p>The identical construction on runs: <code>rate = runs / 162</code> from the official 2026
+regular-season totals (Rays 736 scored / 650 allowed; Brewers 832 / 618). Markets: winner including extra
+innings, &minus;1.5 / +1.5 run line, totals at 7.5, 8.5 and 9.5 runs. No pitcher, park, lineup, rest or
+postseason adjustment exists in the inputs, so none is claimed - which is why all five World Series games
+originate the same line
+(<a class="flag" href="flagged.html#F-D7D-13">F-D7D-13</a>).</p>
+<h3>el-log5-v1</h3>
+<p>Beta(2,2)-shrunk win rates from the official Round 7 records, combined with log5:</p>
+<pre>p_shrunk(X) = (wins(X) + 2) / (wins(X) + losses(X) + 4)
+P(A beats B) = (pA - pA*pB) / (pA + pB - 2*pA*pB)</pre>
+<p>Winner market only. Handicap and total lines are withheld because the official preview publishes no
+margin distribution for either club; the points-per-game ranks it does publish are quoted as context on
+the predictions page instead of being turned into a line.</p>
+</div>
+
+<h2>3. Originated rates per fixture</h2>
+<div class="wrap"><table><thead><tr><th>Fixture</th><th>Match</th><th>Model</th>
+<th class="num">&lambda; away</th><th class="num">&lambda; home</th><th class="num">expected total</th>
+<th class="num">winner p</th><th class="num">fair American</th><th>Official source</th></tr></thead>
+<tbody><tr><td>nhl-2026020154</td><td>NSH <span class='muted'>v</span> BOS</td><td>nhl-poisson-v1</td><td class="num">2.5375</td><td class="num">3.3000</td><td class="num">5.8375</td><td class="num">63.2%</td><td class="num">-172</td><td><a href="https://www.nhl.com/gamecenter/nsh-vs-bos/2026-10-22/2026020154" rel="noopener noreferrer">official</a></td></tr><tr><td>nhl-2026020155</td><td>NYR <span class='muted'>v</span> TOR</td><td>nhl-poisson-v1</td><td class="num">3.0909</td><td class="num">2.8182</td><td class="num">5.9091</td><td class="num">54.8%</td><td class="num">-121</td><td><a href="https://www.nhl.com/gamecenter/nyr-vs-tor/2026-10-22/2026020155" rel="noopener noreferrer">official</a></td></tr><tr><td>nhl-2026020156</td><td>SJS <span class='muted'>v</span> OTT</td><td>nhl-poisson-v1</td><td class="num">2.5500</td><td class="num">3.2000</td><td class="num">5.7500</td><td class="num">61.4%</td><td class="num">-159</td><td><a href="https://www.nhl.com/gamecenter/sjs-vs-ott/2026-10-22/2026020156" rel="noopener noreferrer">official</a></td></tr><tr><td>nhl-2026020157</td><td>ANA <span class='muted'>v</span> NJD</td><td>nhl-poisson-v1</td><td class="num">3.1111</td><td class="num">3.2222</td><td class="num">6.3333</td><td class="num">51.9%</td><td class="num">-108</td><td><a href="https://www.nhl.com/gamecenter/ana-vs-njd/2026-10-22/2026020157" rel="noopener noreferrer">official</a></td></tr><tr><td>nhl-2026020166</td><td>MTL <span class='muted'>v</span> CHI</td><td>nhl-poisson-v1</td><td class="num">3.6667</td><td class="num">3.0556</td><td class="num">6.7222</td><td class="num">59.8%</td><td class="num">-149</td><td><a href="https://www.nhl.com/gamecenter/mtl-vs-chi/2026-10-23/2026020166" rel="noopener noreferrer">official</a></td></tr><tr><td>nhl-2026020167</td><td>TBL <span class='muted'>v</span> COL</td><td>nhl-poisson-v1</td><td class="num">3.2722</td><td class="num">3.3278</td><td class="num">6.6000</td><td class="num">50.9%</td><td class="num">-104</td><td><a href="https://www.nhl.com/gamecenter/tbl-vs-col/2026-10-23/2026020167" rel="noopener noreferrer">official</a></td></tr><tr><td>nhl-2026020168</td><td>ANA <span class='muted'>v</span> PHI</td><td>nhl-poisson-v1</td><td class="num">2.9861</td><td class="num">2.4444</td><td class="num">5.4306</td><td class="num">59.8%</td><td class="num">-149</td><td><a href="https://www.nhl.com/gamecenter/ana-vs-phi/2026-10-24/2026020168" rel="noopener noreferrer">official</a></td></tr><tr><td>nhl-2026020169</td><td>LAK <span class='muted'>v</span> NJD</td><td>nhl-poisson-v1</td><td class="num">2.8810</td><td class="num">3.5397</td><td class="num">6.4206</td><td class="num">60.9%</td><td class="num">-155</td><td><a href="https://www.nhl.com/gamecenter/lak-vs-njd/2026-10-24/2026020169" rel="noopener noreferrer">official</a></td></tr><tr><td>nhl-2026020170</td><td>SJS <span class='muted'>v</span> BOS</td><td>nhl-poisson-v1</td><td class="num">2.4500</td><td class="num">3.5500</td><td class="num">6.0000</td><td class="num">68.4%</td><td class="num">-217</td><td><a href="https://www.nhl.com/gamecenter/sjs-vs-bos/2026-10-24/2026020170" rel="noopener noreferrer">official</a></td></tr><tr><td>nhl-2026020171</td><td>NYR <span class='muted'>v</span> OTT</td><td>nhl-poisson-v1</td><td class="num">2.7000</td><td class="num">2.5409</td><td class="num">5.2409</td><td class="num">53.0%</td><td class="num">-113</td><td><a href="https://www.nhl.com/gamecenter/nyr-vs-ott/2026-10-24/2026020171" rel="noopener noreferrer">official</a></td></tr><tr><td>nhl-2026020172</td><td>NSH <span class='muted'>v</span> PIT</td><td>nhl-poisson-v1</td><td class="num">3.3375</td><td class="num">3.1500</td><td class="num">6.4875</td><td class="num">53.1%</td><td class="num">-113</td><td><a href="https://www.nhl.com/gamecenter/nsh-vs-pit/2026-10-24/2026020172" rel="noopener noreferrer">official</a></td></tr><tr><td>nhl-2026020173</td><td>BUF <span class='muted'>v</span> WSH</td><td>nhl-poisson-v1</td><td class="num">3.0111</td><td class="num">3.5167</td><td class="num">6.5278</td><td class="num">58.3%</td><td class="num">-140</td><td><a href="https://www.nhl.com/gamecenter/buf-vs-wsh/2026-10-24/2026020173" rel="noopener noreferrer">official</a></td></tr><tr><td>mlb-849805</td><td>TB <span class='muted'>v</span> MIL</td><td>mlb-poisson-v1</td><td class="num">4.1790</td><td class="num">4.5741</td><td class="num">8.7531</td><td class="num">55.5%</td><td class="num">-125</td><td><a href="https://www.mlb.com/gameday/849805" rel="noopener noreferrer">official</a></td></tr><tr><td>mlb-849802</td><td>TB <span class='muted'>v</span> MIL</td><td>mlb-poisson-v1</td><td class="num">4.1790</td><td class="num">4.5741</td><td class="num">8.7531</td><td class="num">55.5%</td><td class="num">-125</td><td><a href="https://www.mlb.com/gameday/849802" rel="noopener noreferrer">official</a></td></tr><tr><td>mlb-849804</td><td>MIL <span class='muted'>v</span> TB</td><td>mlb-poisson-v1</td><td class="num">4.5741</td><td class="num">4.1790</td><td class="num">8.7531</td><td class="num">55.5%</td><td class="num">-125</td><td><a href="https://www.mlb.com/gameday/849804" rel="noopener noreferrer">official</a></td></tr><tr><td>mlb-849803</td><td>MIL <span class='muted'>v</span> TB</td><td>mlb-poisson-v1</td><td class="num">4.5741</td><td class="num">4.1790</td><td class="num">8.7531</td><td class="num">55.5%</td><td class="num">-125</td><td><a href="https://www.mlb.com/gameday/849803" rel="noopener noreferrer">official</a></td></tr><tr><td>mlb-849799</td><td>MIL <span class='muted'>v</span> TB</td><td>mlb-poisson-v1</td><td class="num">4.5741</td><td class="num">4.1790</td><td class="num">8.7531</td><td class="num">55.5%</td><td class="num">-125</td><td><a href="https://www.mlb.com/gameday/849799" rel="noopener noreferrer">official</a></td></tr></tbody></table></div>
+
+<h2>4. Independent cross-check on the hockey rows</h2>
+<p>A second, different construction - log5 on Beta(2,2)-shrunk <em>points percentage</em>
+(<code>(points + 2) / (2 * games played + 4)</code>) rather than goals - is run over the same official standings. It is not used to set any price; it exists to show
+whether the published Poisson leans survive a different reading of the same numbers.</p>
+<div class="wrap"><table><thead><tr><th>Fixture</th><th>Match</th><th>Poisson pick</th>
+<th class="num">Poisson p</th><th class="num">log5 points-% p</th><th class="num">difference</th>
+<th>Agreement</th></tr></thead><tbody><tr><td>nhl-2026020154</td><td>NSH <span class='muted'>v</span> BOS</td><td>Boston Bruins (BOS)</td><td class="num">63.2%</td><td class="num">0.3348</td><td class="num">+0.2972</td><td><span class='flag'>different side</span></td></tr><tr><td>nhl-2026020155</td><td>NYR <span class='muted'>v</span> TOR</td><td>New York Rangers (NYR)</td><td class="num">54.8%</td><td class="num">0.6182</td><td class="num">-0.0707</td><td>same side</td></tr><tr><td>nhl-2026020156</td><td>SJS <span class='muted'>v</span> OTT</td><td>Ottawa Senators (OTT)</td><td class="num">61.4%</td><td class="num">0.3714</td><td class="num">+0.2425</td><td><span class='flag'>different side</span></td></tr><tr><td>nhl-2026020157</td><td>ANA <span class='muted'>v</span> NJD</td><td>New Jersey Devils (NJD)</td><td class="num">51.9%</td><td class="num">0.4098</td><td class="num">+0.1089</td><td><span class='flag'>different side</span></td></tr><tr><td>nhl-2026020166</td><td>MTL <span class='muted'>v</span> CHI</td><td>Montreal Canadiens (MTL)</td><td class="num">59.8%</td><td class="num">0.6774</td><td class="num">-0.0790</td><td>same side</td></tr><tr><td>nhl-2026020167</td><td>TBL <span class='muted'>v</span> COL</td><td>Colorado Avalanche (COL)</td><td class="num">50.9%</td><td class="num">0.6929</td><td class="num">-0.1838</td><td>same side</td></tr><tr><td>nhl-2026020168</td><td>ANA <span class='muted'>v</span> PHI</td><td>Anaheim Ducks (ANA)</td><td class="num">59.8%</td><td class="num">0.5629</td><td class="num">+0.0355</td><td>same side</td></tr><tr><td>nhl-2026020169</td><td>LAK <span class='muted'>v</span> NJD</td><td>New Jersey Devils (NJD)</td><td class="num">60.9%</td><td class="num">0.2941</td><td class="num">+0.3145</td><td><span class='flag'>different side</span></td></tr><tr><td>nhl-2026020170</td><td>SJS <span class='muted'>v</span> BOS</td><td>Boston Bruins (BOS)</td><td class="num">68.4%</td><td class="num">0.3273</td><td class="num">+0.3570</td><td><span class='flag'>different side</span></td></tr><tr><td>nhl-2026020171</td><td>NYR <span class='muted'>v</span> OTT</td><td>New York Rangers (NYR)</td><td class="num">53.0%</td><td class="num">0.4857</td><td class="num">+0.0440</td><td><span class='flag'>different side</span></td></tr><tr><td>nhl-2026020172</td><td>NSH <span class='muted'>v</span> PIT</td><td>Nashville Predators (NSH)</td><td class="num">53.1%</td><td class="num">0.6707</td><td class="num">-0.1396</td><td>same side</td></tr><tr><td>nhl-2026020173</td><td>BUF <span class='muted'>v</span> WSH</td><td>Washington Capitals (WSH)</td><td class="num">58.3%</td><td class="num">0.4545</td><td class="num">+0.1285</td><td><span class='flag'>different side</span></td></tr></tbody></table></div>
+
+<h2>5. Why the brief's two High rules barely overlap</h2>
+<p>&ldquo;A lot of the high confidence picks are just picks that have a greater than 70&nbsp;% chance to
+win based on market prices. We need to focus on generating high confidence picks for matches that sit
+between &minus;250 and +10000 odds.&rdquo; Those two conditions fight each other: 70&nbsp;% is
+&minus;233, and prices get <em>shorter</em> as probability rises, so the only prices satisfying both are
+&minus;250 to &minus;233.</p>
+<div class="wrap"><table><caption>Fair-price arithmetic (decimal = 1 / p, no margin).</caption>
+<thead><tr><th class="num">p</th><th class="num">fair decimal</th><th class="num">fair American</th>
+<th>inside &minus;250&hellip;+10000</th><th>above 70&nbsp;%</th><th>satisfies both (Gate A)</th>
+</tr></thead><tbody><tr><td class="num">0.5500</td><td class="num">1.8182</td><td class="num">-122</td><td>yes</td><td>no</td><td>no</td></tr><tr><td class="num">0.5800</td><td class="num">1.7241</td><td class="num">-138</td><td>yes</td><td>no</td><td>no</td></tr><tr><td class="num">0.6000</td><td class="num">1.6667</td><td class="num">-150</td><td>yes</td><td>no</td><td>no</td></tr><tr><td class="num">0.6200</td><td class="num">1.6129</td><td class="num">-163</td><td>yes</td><td>no</td><td>no</td></tr><tr><td class="num">0.6500</td><td class="num">1.5385</td><td class="num">-186</td><td>yes</td><td>no</td><td>no</td></tr><tr><td class="num">0.6800</td><td class="num">1.4706</td><td class="num">-213</td><td>yes</td><td>no</td><td>no</td></tr><tr><td class="num">0.6923</td><td class="num">1.4445</td><td class="num">-225</td><td>yes</td><td>no</td><td>no</td></tr><tr><td class="num">0.7000</td><td class="num">1.4286</td><td class="num">-233</td><td>yes</td><td>no</td><td>no</td></tr><tr><td class="num">0.7143</td><td class="num">1.4000</td><td class="num">-250</td><td>yes</td><td>yes</td><td>yes</td></tr><tr><td class="num">0.7200</td><td class="num">1.3889</td><td class="num">-257</td><td>no</td><td>yes</td><td>no</td></tr><tr><td class="num">0.7500</td><td class="num">1.3333</td><td class="num">-300</td><td>no</td><td>yes</td><td>no</td></tr><tr><td class="num">0.8450</td><td class="num">1.1834</td><td class="num">-545</td><td>no</td><td>yes</td><td>no</td></tr></tbody></table></div>
+<p>Research done to resolve it, rather than paper over it: (a) both gates are published side by side, so a
+reviewer can see the literal intersection is one derivative line (Pittsburgh +1.5 goals at &minus;236,
+70.21&nbsp;%); (b) the High tier is earned on the window condition plus an evidence test at
+0.60&ndash;0.714, which keeps every published High inside the brief's price band; (c) the thirteen
+selections stronger than 71.4&nbsp;% are listed as out-of-window on the
+<a href="high-confidence.html">High-confidence page</a> instead of being quietly relabelled; (d) the two
+picks that official context contradicts are downgraded with the citation.</p>
+
+<h2>6. Why 29 listings carry no line</h2>
+<div class="wrap"><table><thead><tr><th>Sport</th><th class="num">Listings</th>
+<th>Missing official input</th></tr></thead><tbody><tr><td>Cricket</td><td class="num">4</td><td>the official PCB tournament page publishes date, teams and ground only: no start time, no squad and no form input, so no price is originated</td></tr><tr><td>Ice hockey</td><td class="num">2</td><td>the away club was not inside the official schedule chunks this desk read, so there is no second side to price</td></tr><tr><td>Rugby league</td><td class="num">13</td><td>the official IRL fixture list publishes teams, date, clock and venue only - no form, ladder or points input for these World Cup fixtures - so no price is originated</td></tr><tr><td>Tennis</td><td class="num">10</td><td>the official order of play read this session publishes names, seeds and start order only - no ranking points, form or head-to-head - and no official ranking or results page was read for these players, so no price is originated</td></tr></tbody></table></div>
+<p>Tennis orders of play publish names, seeds and start order; the PCB tournament page publishes dates,
+teams and grounds; IRL publishes teams, clocks and venues. None of them publishes a form, ranking or
+points input for both sides, and no ranking or results page was read this session for those players or
+teams. A price invented from memory would be a hallucination, so those rows stay blank and flagged.</p>
+
+<h2>7. Known weaknesses of this desk</h2>
+<ul>
+<li>Uncalibrated models: no out-of-sample hit rate exists for any of the three constructions, so a
+&ldquo;High&rdquo; label is a statement about inputs and price band, not a measured success rate.</li>
+<li>Independent-Poisson artefacts: totals and handicaps inherit an expected total of 5.43&ndash;6.72 goals
+in hockey and 8.75 runs in baseball, which is higher than typical scoring environments; no correlation
+between the two sides is modelled.</li>
+<li>Small samples: early-season NHL rates come from 7&ndash;12 games per club, and EuroLeague log5 from six
+rounds, which is why the Beta(2,2) shrinkage is applied to the basketball rows.</li>
+<li>Two NHL rows have no away club (the official schedule chunk did not reach it) and all nine basketball
+rows have no venue (the official preview does not publish one).</li>
+<li>No operator price was available, so no comparison of our lines to the market, and therefore no edge
+claim, is possible anywhere on this desk.</li>
+</ul>
+
+</main>
+<footer class="foot">
+  <p>Independent research desk. Not affiliated with OLBG.com; OLBG was used only to enumerate which
+  sports exist. No bookmaker price, no availability and no betting edge is claimed anywhere on this
+  desk: every number is this desk's own originated fair price (decimal = 1 / probability, no margin).
+  Not staking advice. 18+.</p>
+  <p class="muted">Official reads 2026-10-22T12:55:00Z · desk built 2026-10-22T13:14:51Z · repository audit 2026-10-22T12:55:00Z · branch
+  <code>arena/d7d19a67-olbg1</code> at <code>d3807cc1c9d3</code></p>
+</footer>
+</body>
+</html>
