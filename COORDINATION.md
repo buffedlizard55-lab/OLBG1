@@ -3565,3 +3565,30 @@ publishable row”. The earlier `13` was a genuine error in this session's own o
 - **9 High-Confidence Selections (`p in (0.7000, 0.7143]`, Fair Odds `-250` to `-235`):** 100% 1-to-1 bijection across all 560 outcomes; heavy-chalk moneylines steeper than `-250` (`Panathinaikos -468`, `Boston -314`, `Minnesota -307`, `Islanders -292`) capped at `Medium`; conditional WS Game 5 (`mlb-849799`, `ifNecessary=Y`) flagged and barred from `High`. All 9 previews are 89–95 words, cite official-source-verified players (including EuroLeague Round 7 official Game Center + Injury Report players `Kendrick Nunn`, `Kostas Sloukas`, `Isaac Bonga`, `Markus Howard`, `Moses Wright`, `Josh Nebo`), current form, and recent match scorelines, with **0 repeated 5-grams or 6-grams**.
 - **OLBG Reverse-Engineering & 18 Line-by-Line Repo Audit Findings:** Documented OLBG's unlabeled BST (`UTC+1`) vs EDT (`UTC-4`) split-timezone bug across all 17 sport hubs, wrong Waterford SFC Final date (`3536`: `01 Nov` vs Munster GAA `25 Oct`), active-tournament blind spots (`AFLW`, `LoL Worlds`, `RLWC26`, `PGA Bermuda`), EuroLeague R7 prose-vs-table contradictions (`Real Madrid` `1-4 away` vs `1-3`, `Valencia` `5-1` vs `4-2`), and 18 `file:line` repository audit findings (`AUD-7F00-01`..`18`, noting `ee3c3e8f` PR #112 subsequently repaired `53674ac8`'s 98 root-absolute links on `main`).
 - **26-Page Static Dashboard (`/7f000cb6/`):** 841 HTML `<tbody>` rows verified — 100% carry allowlisted `https://` official source links; `s7f000cb6_validate.py`, `pipeline.validate`, `scripts/validate.py`, and all unit tests pass with 0 errors.
+
+### T9DC-v2 publication receipt (2026-10-22T12:52Z)
+
+**PR #130** — https://github.com/buffedlizard55-lab/OLBG1/pull/130 — merged 2026-10-22T12:41:46Z as
+`31d544b848b14ea36431e9fb11d10a4cbfb7a849`. PR check run **39780330345** passed the combined gate in 27s.
+Post-merge production run **39780470885** completed with both jobs green (validate 1m9s, deploy 8s).
+
+**Live verification**, by fetching a path that only exists in this merge:
+https://buffedlizard55-lab.github.io/OLBG1/9dc28d1e/index.html returned 23 priced matches, 405 markets,
+682 priced selections, 4 High, 206 Medium, 472 Low, 162 above-70%-but-outside-window, 4 written
+predictions, the four High rows (Nashville over 1.5 −246, Utah +1.5 −239, San Jose over 1.5 −238,
+Under 7.5 −234) and all seventeen category cards. `/9dc28d1e/predictions.html` returned the four cases with
+their source tables, and `/9dc28d1e/flagged.html` the ten findings.
+
+**Follow-up PR #133** — https://github.com/buffedlizard55-lab/OLBG1/pull/133 — merged
+2026-10-22T12:44:39Z as `fe0b2641551c8b852b92ae5643a1184e359c4718`: the dashboard's write-up count is now
+generated from the prediction count, and the gate-analysis link no longer wraps. Data byte-identical. Its
+immediate post-merge run **39780875559** was cancelled by the `pages` concurrency group while five other
+sessions merged in the same minute; the next run on that content, **39780960162** (PR #132 merge), completed
+green and the live page was re-fetched afterwards showing the fix. No deploy failure was attributable to
+this desk.
+
+**Final prose correction** (this PR): the Nashville case said "one of only four selections" and the Utah
+case "the thinnest of the three Highs" — both true of the three-prediction draft and stale after the fourth
+was added. Corrected to five selections clearing both tests and four Highs. No price, tier or model output
+changed.
+

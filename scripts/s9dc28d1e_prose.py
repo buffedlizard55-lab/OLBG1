@@ -18,7 +18,7 @@ PREDICTIONS = [
             "span. Boston have conceded only 22 goals in ten games, one of the best rates in the "
             "league, which is exactly why the team total sits at 1.5 rather than 2.5. Two goals is "
             "the realistic floor for a club generating this much rubber, and the model puts it at "
-            "71.1%, one of only four selections on the slate that clears the brief's rule."
+            "71.1%, one of only five selections on the slate that clears both tests in the brief's rule."
         ),
         "facts": [
             ("Nashville record", "3-2-3, 9 points from 8 games", "nhl-standings"),
@@ -41,12 +41,12 @@ PREDICTIONS = [
             "nine. Seattle have scored almost as much, 37 goals in ten, but have conceded 34 and "
             "have already lost three times, so a one-goal Seattle win still cashes this line. The "
             "model gives Utah a 70.5% chance of not losing by two or more, which makes it the "
-            "thinnest of the three Highs and the one most exposed if Utah's 36.1% power play turns "
+            "thinnest of the four Highs and the one most exposed if Utah's 36.1% power play turns "
             "out to be a five-game artefact."
         ),
         "facts": [
             ("Utah record", "7-3-0, 38 goals for, 31 against in 10 games", "nhl-standings"),
-            ("Utah power play", "36.1% (13 of 36)", "nhl-standings"),
+            ("Utah power play", "36.1%", "nhl-standings"),
             ("Nick Schmaltz", "7 goals, 6 assists, 13 points, 5 power-play goals, 31 shots", "nhl-skaters-uta"),
             ("Clayton Keller", "4 goals, 9 assists, 13 points, 8 power-play points", "nhl-skaters-uta"),
             ("Mikhail Sergachev", "3 goals, 8 assists, 11 points", "nhl-skaters-uta"),
