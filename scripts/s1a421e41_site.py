@@ -253,7 +253,7 @@ def render_index():
     b.append("<h2>High-confidence picks &mdash; %s to %s</h2>" % (am(POL["window"]["american_min"]), am(POL["window"]["american_max"])))
     b.append('<p class="lede">A pick only reaches this table if all four gates pass: the fixture is verified, an official '
              'body published evidence for <em>both</em> sides, that body also published current form, and our own zero-vig '
-             'price clears 70%% while landing inside the window.</p>')
+             'price clears 70% while landing inside the window.</p>')
     b.append(table(
         ["Sport", "Fixture", "Selection", "Market", "Our p", "American", "Decimal", "5% book", "Prediction", "Source"],
         [[h["sport"], E(h["fixture"]), "<b>%s</b>" % E(h["selection"]), E(h["market"]),
@@ -480,7 +480,7 @@ def render_window():
              'the nearest rung prices at -258, eight American points outside the window, while a basketball side at 0.701 '
              'clears comfortably. The band rewards high-variance sports and punishes low-variance ones. That is a property '
              'of the rule, not a statement about which picks are more likely to win.</div>')
-    b.append("<h2>Rejected Highs &mdash; above 70%% but outside the window</h2>")
+    b.append("<h2>Rejected Highs &mdash; above 70% but outside the window</h2>")
     rej = []
     for r in ROWS:
         for j in r["rejected_highs"]:
@@ -952,7 +952,7 @@ def render_sport(sp):
            for r in rs for j in r["rejected_highs"]]
     if rej:
         b.append("<h2>Rejected Highs on this sport</h2>")
-        b.append('<p class="lede">Cleared the 70%% floor but fell outside the price window.</p>')
+        b.append('<p class="lede">Cleared the 70% floor but fell outside the price window.</p>')
         b.append(table(["Fixture", "Selection", "Market", "Our p", "American"], rej,
                        aligns=["", "", "", "num", "num"]))
     return "".join(b)
