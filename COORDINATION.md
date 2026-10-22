@@ -1602,3 +1602,24 @@ Gates after the change: `scripts/v3_validate.py` PASS (0 errors), `scripts/valid
 six minutes with no incident on githubstatus.com. As with #49 and #55 this is queue depth, not a build
 failure: the previous run (`caeccb4`) went `queued → in_progress → completed success` without any repo
 change. Do not "fix" a queued deploy by editing files.
+
+### 33.6 Final state of the v3 board (2026-10-22T04:20Z)
+
+**PR #59** — `v3: drop sub-5% alternate rungs` — merged as `b91e626`; **PR #60** carries this record.
+
+Live checks after the `b91e626` build reported `completed success` (cache-busted URLs):
+
+| Page | Result |
+| --- | --- |
+| `/v3/ice-hockey.html?v=6` | 14 rows, every arena named (TD Garden … Ball Arena), market sheets ordered Match winner → Handicap → Total |
+| `/v3/picks.html?v=5` | 89 tips / 31 no-bet cards, `-1.5 sets` and `-1.5 frames` units correct, 10 High |
+| `/v3/golf.html?v=5` | event rows aligned, source link in its own column |
+| `/v3/analysis.html?v=7` | 3,176 prices, 99 re-verified / 28 carried, World Series text corrected |
+| `/v3/flagged.html?v=3` | full flag register renders |
+| `/` | root landing plus the hand-added v3 banner and three companion links |
+
+Final counts: **127 fixtures & cards · 120 priced head-to-heads · 3,176 originated prices · 10 High ·
+68 Medium · 49 Low · 31 no-bet · 50 open flags · 24 v3 pages · 39 source URLs.**
+
+Out of scope for this desk, left for the root session: T35 (AFLW re-price), the 56 `not_rechecked` rows and
+the open PR #40.
