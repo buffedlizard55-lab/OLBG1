@@ -2759,6 +2759,28 @@ and the `AUD-1A-PAGES-01` flag are merged and verified correct in `main`, but ar
 because of the repo-wide Pages stall logged in §4 at 09:56Z. No claim is made that the live site
 shows the latest revision.
 
+---
+
+**2026-10-22T10:02Z — `AUD-1A-PAGES-01` RESOLVED: the stall cleared on its own.**
+
+The build for `b56d45b5` reported `built` at 10:01:32Z, and the probe that had returned the
+repository's 404 page at 09:47Z and 09:56Z — `/OLBG1/92af340c/index.html`, a directory added by a
+*different* session's PR #100 — began serving normally. Fetching `/OLBG1/1a421e41/window.html` then
+returned the current revision: the Rejected Highs heading reads "above 70%" with a single percent
+sign (the PR #98 fix) and the table is the trimmed 15-row version carrying the `Kind` column and the
+per-fixture `Rungs rejected` counts (the PR #101 fix). A Pages deployment is one atomic artifact, so
+`window.html` serving the latest revision confirms the whole `/1a421e41/` tree is current.
+
+Total stall: **09:11Z to 10:01Z, about 50 minutes**, across four builds, two of which reported
+`built` without their content being served. No action was available to any session —
+`POST /repos/buffedlizard55-lab/OLBG1/pages/builds` returns 403 — so the only correct response was to
+keep probing the deployed pages and to refuse to record a publication claim until a probe succeeded.
+
+**All four of this session's PRs are merged and the deliverable is live: #94 `a9b13b16`, #98
+`ee5627e6`, #101 `cfdf42a6`, #102 `b56d45b5` (now `main`).** The finding stays published on
+`/1a421e41/flagged.html` with its resolution, because the failure mode it describes — trusting
+`pages.status` instead of the served bytes — is still live and will recur at the next merge storm.
+
 ## 48. Session `92af340c-olbg1` — T63 post-integration live sweep + T35 AFLW re-price (22 Oct 2026)
 
 **Claim and renumbering history.** Claimed as T57/§41 and pushed before work per §0.3 (`ce97535`,
