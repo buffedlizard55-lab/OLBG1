@@ -109,6 +109,10 @@ def main():
     fixtures, markets, discovered = M.build()
     summ = M.summarise(fixtures, markets, discovered)
     cov = M.coverage(fixtures, discovered)
+    # count High selections per sport (coverage() only knows fixtures)
+    for c in cov:
+        c["high"] = sum(1 for sel in M.summarise(fixtures, markets, discovered)["high"]
+                        if next(f for f in fixtures if f["id"] == sel["id"].split(":")[0])["sport"] == c["sport"])
     by_id = {f["id"]: f for f in fixtures}
     mkt = {m["id"]: m for m in markets}
 
