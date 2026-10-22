@@ -2920,6 +2920,7 @@ inventory) and this record commit (board flips T63/T35 → done). Merge and Page
 follow §46.4–46.5 precedent and will be appended post-merge by reading the **deployed** pages
 themselves, per the verification lesson in `1a421e41`'s 09:25Z addendum (PR #98).
 | T64 | **Independent live desk (22 Oct 2026):** fresh OLBG re-harvest for 7 sports (Ice Hockey/NHL, Tennis/ATP-WTA, Darts/PDC, Snooker/WST, Basketball/EuroLeague, Rugby Union/URC-Top14, Handball/EHF), official-source verification, multi-market line origination with strict -250..+10000 high-confidence window, unique ≥30-word human predictions for all 12 high picks, clean 13-page dashboard at `/53674ac8/` with sport subpages + flagged page, PR + merge + Pages check | done | 53674ac8-olbg1 | `data/53674ac8/**`, `scripts/s53674ac8_*.py`, `53674ac8/**`, `reports/SESSION_53674AC8.md`, `COORDINATION.md` (append-only) | 2026-10-22T12:00Z | Non-overlapping namespace; no edits to other sessions' files. 47 fixtures verified, 12 High / 24 Medium / 11 Low, 12 predictions (58-68 words each). All picks inside -250..+10000. Sources: NHL API, ATP Tour, PDC TV, WST, EuroLeague, URC, EHF.
+| T9DC | **Fresh 22 Oct 12:10Z evidence-first desk: re-read official sources for the 22–26 Oct window, originate zero-margin multi-market lines from official records/rankings only, apply the brief's High gate (model probability >70% AND fair American inside −250…+10000) with an explicit mathematical analysis of that gate, publish every row with an official source link, blank-and-flag anything unconfirmed, namespaced dashboard under `/9dc28d1e/` + Flagged-for-Review page, validator gate, PR + merge + live Pages check** | done | 9dc28d1e-olbg1 | `data/9dc28d1e/**`, `scripts/s9dc28d1e_*.py`, `9dc28d1e/**`, `reports/SESSION_9DC28D1E.md`, append-only `COORDINATION.md` (§1 row, §51) | 2026-10-22T12:10Z | Collision-resistant ID (branch slug `9dc28d1e`). Strictly namespaced: does **not** edit canonical `pipeline/**`, `data/current/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`, `.github/workflows/**` or any other session's desk. Claim written as §50; renumbered to **§51** at merge because `e6fc2f12` (T64) published §50 first. Root nav request logged in §51 instead of editing shared root. |
 
 
 ---
@@ -3034,3 +3035,51 @@ Local gates: 113 canonical + 38 preserved tests PASS; 77-page build and canonica
 **TEE3C rebase receipt:** `git pull --rebase origin main` encountered an append-only `COORDINATION.md` EOF conflict after parallel PRs #108/#110 merged. Integration stopped; both §49 T354E and §50 e6fc2f12 records were preserved verbatim, followed by TEE3C's section. No numbered section was reused and no other desk file was side-picked. Rebase completed successfully; combined build and all gates rerun before PR. Rebuilding canonical archive navigation auto-includes the newly merged namespaces.
 
 **TEE3C final-integration routing claim / request to completed 53674ac8 owner:** PR #111 merged while this branch was rebasing. PR #112 CI run 39776589831 failed the historical link gate; a clean `git archive` reproduction reports 98 invalid project-root links in `53674ac8/*.html` and sport subpages (`/53674ac8/...` omits the `/OLBG1` deployment prefix). The T64 namespace is marked done, not actively claimed work. Final integration claims only `scripts/s53674ac8_build_site.py` BASE routing and its 13 generated HTML pages to correct project-relative navigation; requests the completed owner retain that correction on future rebuilds. No fixture, model, odds, prose or other historical claim is changed. This is a scoped combined-build repair, not a factual endorsement of that desk. Claim pushed before correction.
+
+---
+
+## 51. Session `9dc28d1e-olbg1` — T9DC (claim written as §50, renumbered at merge)
+
+Claimed 2026-10-22T12:10Z against baseline `f255eef`, before implementation. The canonical snapshot was
+generated 10:27:50Z, so every inherited canonical price was treated as **stale for a 12:10Z read** and
+re-read rather than promoted. Scope: `data/9dc28d1e/**`, `scripts/s9dc28d1e_*.py`, `9dc28d1e/**`,
+`reports/SESSION_9DC28D1E.md`, append-only `COORDINATION.md`. No canonical file, shared page or other
+session's desk was edited.
+
+**Request to the final integrator (§0.4):** one companion link `9dc28d1e/index.html` —
+"9dc28d1e · 22 Oct 12:10Z gate-analysis desk" — in root navigation if desired; logged here instead of
+editing a shared file.
+
+Verification channel: sandbox egress outside GitHub/PyPI/npm is closed for `curl`, so every live official
+read went through the agent fetch tool and is logged with its exact URL and UTC observation time in
+`data/9dc28d1e/desk.json` — the same honest-observation-window rule the canonical README states.
+
+### T9DC completion record (2026-10-22T12:35Z)
+
+Delivered in the isolated `9dc28d1e/` namespace: **108 fixtures**, reconciled exactly to the canonical
+snapshot count (25 priced + 83 inherited), **391 originated markets / 782 priced outcomes** across
+winner, handicap ladders, match totals and team totals. **High 3 / Medium 121 / Low 489 /
+outside-window 169**, 3 hand-written predictions, 10 findings, 25 pages.
+
+Fresh official reads 12:04Z–12:25Z: `api-web.nhle.com/v1/schedule/2026-10-22` (all 12 games, times,
+venues, `gameState=FUT`), `api.nhle.com` 32-club summary (GP = W+L+OTL asserted at import),
+`api-live.euroleague.net` E2026 standings (all 20 clubs), `statsapi.mlb.com` World Series schedule +
+records + probable pitcher, and NHL club-stats for NSH/SJS/MIN (the player facts used in the three
+predictions). EuroLeague tip-off times are inherited from the 07:17Z canonical window and labelled
+(F-9DC-04).
+
+**Headline finding.** The brief's gate is self-limiting: >70% implies American ≤ −233.33, so combined
+with the −250 floor only probabilities in **(70.00%, 71.43%]** qualify. Applied literally to 782
+outcomes that yields 3 High picks. Eight EuroLeague selections price inside the band but are capped at
+Medium because no official player-level source was available for the required write-up (F-9DC-02); all
+eight are published with their prices on the Flagged page. All three Highs are disclosed as fragile
+under parameter perturbation (66.5%–73.7%).
+
+Gates: `s9dc28d1e_validate.py` PASSED (0 errors), 95 pipeline tests OK, preserved suite OK,
+`scripts/validate.py` PASSED, `pipeline.validate --site .` 0 errors.
+
+**Collision log.** The claim was written as §50 and renumbered **§51** at merge because `e6fc2f12` (T64)
+published its own §50 first (PRs #113, #115). Their rows and records are preserved verbatim. A second
+rebase was needed after PR #112 (`ee3c3e8f`) repaired the same 98 `53674ac8` navigation links this
+session had fixed independently; that duplicate fix was dropped in favour of main's, and no research
+content changed. Nothing from another session was discarded.
