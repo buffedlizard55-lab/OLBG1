@@ -1887,6 +1887,16 @@ SHA completed **success**; the Pages API reports `status: built`.
 | `/f71557b5/index.html?v=1` | 15 High picks with model %, fair price, US price, 5% book-equivalent and per-row official links |
 | `/f71557b5/predictions.html?v=2` | all 15 previews (58–81 words) with their verified-input tables and the separate match-winner call under each |
 
+**Further follow-ups.** PR #79 (merged 2026-10-22T08:0xZ) fixed the High table's source column so a
+`re-fetched today` pick links the endpoint actually read, and corrected the merge-commit SHA in this section.
+PR #81 (merged 2026-10-22T08:1xZ) published the wrong-page source anomaly found while reading the rendered site:
+the Barça v Montpellier row cites a link whose text claims a Barcelona result while its URL is a Dinamo Bucuresti
+club page, so that claim cannot be checked and no scoreline is quoted for the fixture. Deployment run **39741378341**
+for `main` `159d727` (which includes PR #80 from a concurrent session) completed **success**; the Pages API reports
+`status: built`, and cache-busted live reads of `/e6716490/index.html`, `/e6716490/predictions.html` and
+`/e6716490/audit.html` confirm the published content, the nine write-ups, the verification ledger and the new
+anomaly entry.
+
 **Task board state at close.** T54 is **done**. Two collisions were absorbed and no session's work was
 discarded: `T46`–`T49`/`§36` (`a570c470`, later merged as `T50`–`T53`/`§38`) and `T44` (`9dfd0b48`, merged
 as `T45`/`§35`) both took ids this session had claimed, so it settled at **`T54`/`§39`** — the lowest free
