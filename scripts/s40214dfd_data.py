@@ -93,8 +93,8 @@ COVERAGE = [
     ("Basketball", "priced", "9", "EuroLeague Round 7 fixtures for 22-23 October with records and preview scoring averages.", "euroleague-r7"),
     ("Snooker", "listed, unpriced", "8", "WST Round 3 pairings retrieved, but the page prints no timezone and no ranking or form table, so no line is originated.", "wst-nio-2026"),
     ("Gaelic football", "no in-scope fixture", "0", "The only fixture on the official GAA page in the window is shinty-hurling, an excluded category.", "gaa-fixtures"),
-    ("Tennis", "not verified", "0", "atptour.com/en/scores/current returned live-score cards only; no future order of play and no ranking table could be read, so nothing is listed.", None),
-    ("Darts", "not verified", "0", "pdc.tv/tournaments returned a consent wall and no fixture text in the retrieved response.", None),
+    ("Tennis", "not verified", "0", "Two official routes tried on 22 October. atptour.com/en/scores/current returns live-score cards only. The daily-schedule route (atptour.com/en/scores/current/stockholm/429/daily-schedule) redirected to the 2025 archive results page - completed 2025 matches - so it is not treated as fixture evidence. No ranking table was reachable, so no tennis line is originated.", None),
+    ("Darts", "not verified", "0", "pdc.tv returns a JavaScript-rendered draw, and the 2026 European Championship page (pdc.tv/tournament/2026-european-championship) returned a cookie-consent wall with no fixture, round, pairing or result markup at all. With no darts data in the response, nothing is listed and nothing is priced.", None),
     ("Australian rules", "not verified", "0", "afl.com.au/aflw/fixture and /ladder render their fixture and ladder widgets in JavaScript; the retrieved responses contained no rows, so no AFLW fact is asserted.", None),
     ("Rugby union", "not verified", "0", "unitedrugby.com/fixtures returned a 404 page and no alternative official fixture page was read.", None),
     ("Rugby league", "not verified", "0", "No official fixture page was read in this session.", None),
@@ -608,14 +608,17 @@ def main():
                     "pattern the brief asks to avoid, and it makes no verifiable claim about either player."),
          "source": "53674ac8/sports/snooker.html"},
         {"id": "F-402-10", "severity": "low", "resolved": True,
-         "title": "Repaired: 98 site-absolute links in that desk blocked the canonical gate for everyone",
-         "detail": ("Every nav or footer link in 53674ac8 was written as href=\"/53674ac8/...\", which the "
-                    "legacy structural gate rejects ('link escapes repository root') and which would resolve "
-                    "to the domain root rather than /OLBG1/ on the project Pages site. This session rewrote "
-                    "those 98 hrefs to relative paths - the fix two earlier sessions had already recommended "
-                    "and left to the integrator - and changed nothing else in that desk. The gate now passes; "
-                    "the takeover is logged in COORDINATION.md section 51.5."),
-         "source": "53674ac8/*.html and 53674ac8/sports/*.html"},
+         "title": "Resolved by another session: 98 site-absolute links had blocked the canonical gate",
+         "detail": ("Every nav and footer link in 53674ac8 was written as href=\"/53674ac8/...\", which the "
+                    "legacy structural gate rejects ('link escapes repository root') and which resolves to "
+                    "the domain root instead of /OLBG1/ on the project Pages site. This session prepared a "
+                    "page-level repair, then found on rebasing that session ee3c3e8f-olbg1 had already fixed "
+                    "the same 98 links and their generator (scripts/s53674ac8_build_site.py, BASE = \"./\") in "
+                    "commit f132b6e. That fix survives regeneration and is strictly better, so this session "
+                    "DROPPED its duplicate page edits (the 13 files are byte-identical to main here, git diff "
+                    "HEAD -- 53674ac8 is empty) and credits ee3c3e8f-olbg1 / PR #112 with the repair. Re-verified "
+                    "on this branch: zero remaining matches for the absolute form, scripts/validate.py 0 errors."),
+         "source": "53674ac8/*.html, scripts/s53674ac8_build_site.py, COORDINATION.md section 51.5"},
         {"id": "F-402-07", "severity": "medium",
          "title": "Eleven in-scope sports have no verified fixture in this session",
          "detail": ("Tennis, darts, Australian rules, both rugby codes, cricket, handball, volleyball, "
