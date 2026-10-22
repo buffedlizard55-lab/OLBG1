@@ -66,10 +66,16 @@ def price_fixture(f: dict) -> dict:
     rh, dh = _rating(f.get("home_input"), 58.0)
     ra, da = _rating(f.get("away_input"), 58.0)
     defaulted = dh or da
-    edge = (rh - ra) + f.get("hfa", 0.0)
+    # A missing rating must never be turned into a strength edge. Subtracting a league-average
+    # prior from a measured rating manufactures a gap no source ever measured (97.5 - 58 = 39.5
+    # points, which priced an unrated opponent at 5.51). When either side is unrated the edge is
+    # zero and the price is the venue baseline only.
+    edge = 0.0 if defaulted else (rh - ra)
+    edge += float(f.get("hfa") or 0.0)
 
     out = {
         "id": f["id"],
+        "edge_measured": not defaulted,
         "sport": f["sport"],
         "competition": f.get("competition", ""),
         "home": f.get("home", ""),
@@ -211,6 +217,13 @@ def price_fixture(f: dict) -> dict:
                 if m["market"] in ("Match winner", "Handicap")
                 and m["in_band"]]
     best = max(eligible, key=lambda m: m["model_prob"]) if eligible else None
+    if best is not None and defaulted:
+        # No measured input on either side: the only thing moving this price is the home-field
+        # constant. A tip here would be a guess dressed as an edge, so the card is a no-bet and
+        # the reason is published. (The match-winner call is still shown, graded Low.)
+        out["no_tip_reason"] = ("No official rating was captured for either side, so this price reflects only the "
+                                "home-field adjustment. The desk will not tip a home-advantage-only number.")
+        best = None
     if best is not None and best["model_prob"] < 0.52:
         # the only in-band line is a coin-flip or worse: publish no tip rather than a bad one
         best = None
@@ -225,6 +238,8 @@ def price_fixture(f: dict) -> dict:
             conf, cap = "Medium", "row not re-verified on 22 Oct"
         best["confidence"] = conf
         best["cap_reason"] = cap
+    if best is None and "no_tip_reason" not in out:
+        out["no_tip_reason"] = "No selection at or above 52% clears the -250 floor on this card."
     out["best_market"] = best
     out["high_candidates"] = [best] if (best and best["confidence"] == "High") else []
     # Alternate rungs priced below 5% (or above 95%) are not useful to a reader and the

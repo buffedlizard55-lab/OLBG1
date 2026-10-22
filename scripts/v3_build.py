@@ -215,7 +215,7 @@ def build() -> dict:
                 "market": None, "selection": None, "price": None, "us": None,
                 "model_prob": None, "prob_pct": None, "confidence": None,
                 "cap_reason": None, "headline": None, "prose": None,
-                "no_pick_reason": "No selection at or above 52% clears -250 on this card.",
+                "no_pick_reason": p.get("no_tip_reason") or "No selection at or above 52% clears -250 on this card.",
             })
             continue
         picks.append({

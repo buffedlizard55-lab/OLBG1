@@ -155,6 +155,12 @@ def check_bundle() -> dict:
             errors.append(f"{r['id']}: unexpected status {r['status']!r}")
         if not (r.get("start_utc") or r.get("date_local")):
             errors.append(f"{r['id']}: neither a UTC start nor a local date")
+        if r.get("start_utc") and r.get("date_local"):
+            from datetime import datetime, timedelta
+            utc_day = datetime.strptime(r["start_utc"], "%Y-%m-%dT%H:%M:%SZ").date()
+            local_day = datetime.strptime(r["date_local"], "%Y-%m-%d").date()
+            if abs((local_day - utc_day).days) > 1:
+                errors.append(f"{r['id']}: local date {r['date_local']} is more than a day from the UTC start")
         if r["event_only"] and r["pick"]:
             errors.append(f"{r['id']}: event card carries a selection")
         if not r["event_only"] and not r["markets"]:
@@ -171,6 +177,8 @@ def check_bundle() -> dict:
                 errors.append(f"{r['id']}: price {m['price']} is not 1 / {m['model_prob']}")
         p = r["pick"]
         if p:
+            if not any(m["selection"] == p["selection"] and m["price"] == p["price"] for m in r["markets"]):
+                errors.append(f"{r['id']}: selection/price pair is not on the card's market sheet")
             if not (1.40 <= p["price"] <= 101.0):
                 errors.append(f"{r['id']}: selection price {p['price']} outside the -250/+10000 window")
             if us_from_price(p["price"]) != p["us"]:
@@ -193,6 +201,30 @@ def check_bundle() -> dict:
     return doc
 
 
+def sourced_numbers(row: dict) -> set[float]:
+    """Every number a preview is allowed to quote: values in the row's sourced input, its
+    venue/stage/competition, the price and the selection, plus simple sums and differences of
+    those values (a '150-point swing' is 90 minus -60, not an invented statistic)."""
+    p = row["pick"] or {}
+    parts = [
+        (row.get("home_input") or {}).get("value", ""), (row.get("away_input") or {}).get("value", ""),
+        (row.get("home_input") or {}).get("label", ""), (row.get("away_input") or {}).get("label", ""),
+        row.get("venue") or "", row.get("stage") or "", row.get("competition") or "",
+        row.get("home") or "", row.get("away") or "", row.get("when") or "",
+        f'{p.get("price", 0):.2f}', p.get("selection") or "",
+    ]
+    text = " ".join(parts)
+    nums = {abs(float(n)) for n in re.findall(r"-?\d+(?:\.\d+)?", text)}
+    for a, b in re.findall(r"(\d+)-(\d+)", text):
+        nums |= {float(a), float(b)}
+    derived = set()
+    for a in nums:
+        for b in nums:
+            derived.add(abs(a - b))
+            derived.add(a + b)
+    return nums | derived
+
+
 def check_prose(rows: list[dict]) -> None:
     highs = [r for r in rows if r["pick"] and r["pick"]["confidence"] == "High"]
     grams: dict[str, str] = {}
@@ -208,6 +240,10 @@ def check_prose(rows: list[dict]) -> None:
         tail = " ".join(text.split()[-14:])
         if f'{r["pick"]["price"]:.2f}' not in tail:
             errors.append(f"{r['id']}: prediction does not close on its selection at the quoted price")
+        allowed = sourced_numbers(r)
+        for raw in re.findall(r"\d+(?:\.\d+)?", text):
+            if abs(float(raw)) not in allowed and not any(abs(abs(float(raw)) - a) < 0.001 for a in allowed):
+                errors.append(f"{r['id']}: preview quotes {raw}, which is not in the row's sourced input")
         tokens = re.findall(r"[a-z0-9]+", text.lower())
         local: set[str] = set()
         for i in range(len(tokens) - 5):

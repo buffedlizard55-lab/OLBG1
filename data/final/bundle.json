@@ -6,21 +6,21 @@
   "fixtures": 127,
   "priced_matches": 120,
   "event_cards": 7,
-  "prices": 3176,
+  "prices": 3182,
   "high": 10,
-  "medium": 54,
-  "low": 25,
-  "no_bet": 31,
+  "medium": 52,
+  "low": 14,
+  "no_bet": 44,
   "sports": 17,
   "verified": 99,
   "carried": 28,
   "flag_rows": 40,
-  "flag_items": 50,
+  "flag_items": 63,
   "capped": 0,
   "sources": 39,
   "hosts": 29,
   "undated": 14,
-  "in_band_prices": 2881
+  "in_band_prices": 2896
  },
  "sports": {
   "tennis": {
@@ -32,8 +32,8 @@
    "event_cards": 0,
    "high": 0,
    "medium": 0,
-   "low": 2,
-   "no_bet": 6,
+   "low": 0,
+   "no_bet": 8,
    "prices": 64,
    "verified": 8,
    "carried": 0,
@@ -95,10 +95,10 @@
    "priced": 8,
    "event_cards": 0,
    "high": 0,
-   "medium": 2,
+   "medium": 0,
    "low": 0,
-   "no_bet": 6,
-   "prices": 122,
+   "no_bet": 8,
+   "prices": 128,
    "verified": 8,
    "carried": 0,
    "first": "2026-10-22T07:00:00Z"
@@ -112,8 +112,8 @@
    "event_cards": 0,
    "high": 0,
    "medium": 2,
-   "low": 9,
-   "no_bet": 1,
+   "low": 0,
+   "no_bet": 10,
    "prices": 405,
    "verified": 0,
    "carried": 12,
@@ -353,73 +353,73 @@
     {
      "market": "Match winner",
      "selection": "Iva Jovic",
-     "model_prob": 0.7697,
-     "price": 1.3,
-     "us": -333,
-     "prob_pct": 77.0,
-     "in_band": false
-    },
-    {
-     "market": "Correct score",
-     "selection": "2-0 Iva Jovic",
-     "model_prob": 0.4744,
-     "price": 2.11,
-     "us": 111,
-     "prob_pct": 47.4,
-     "in_band": true
-    },
-    {
-     "market": "Handicap",
-     "selection": "Iva Jovic -1.5 sets",
-     "model_prob": 0.4744,
-     "price": 2.11,
-     "us": 111,
-     "prob_pct": 47.4,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "2-1 Iva Jovic",
-     "model_prob": 0.2953,
-     "price": 3.39,
-     "us": 239,
-     "prob_pct": 29.5,
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Match winner",
      "selection": "Jasmine Paolini",
-     "model_prob": 0.2303,
-     "price": 4.34,
-     "us": 334,
-     "prob_pct": 23.0,
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Correct score",
-     "selection": "1-2 Jasmine Paolini",
-     "model_prob": 0.1334,
-     "price": 7.49,
-     "us": 649,
-     "prob_pct": 13.3,
+     "selection": "2-0 Iva Jovic",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     },
     {
      "market": "Correct score",
      "selection": "0-2 Jasmine Paolini",
-     "model_prob": 0.0969,
-     "price": 10.32,
-     "us": 932,
-     "prob_pct": 9.7,
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "2-1 Iva Jovic",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "1-2 Jasmine Paolini",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Handicap",
+     "selection": "Iva Jovic -1.5 sets",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     },
     {
      "market": "Handicap",
      "selection": "Jasmine Paolini -1.5 sets",
-     "model_prob": 0.0969,
-     "price": 10.32,
-     "us": 932,
-     "prob_pct": 9.7,
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     }
    ],
@@ -427,14 +427,14 @@
    "pick": null,
    "headline": {
     "selection": "Iva Jovic",
-    "price": 1.3,
-    "us": -333,
-    "prob_pct": 77.0,
-    "confidence": "Medium",
+    "price": 2.0,
+    "us": 100,
+    "prob_pct": 50.0,
+    "confidence": "Low",
     "cap_reason": null,
-    "below_band": true
+    "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "ten-atp-atmane-bellucci",
@@ -573,7 +573,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "snk-r3-wilson-pang",
@@ -631,143 +631,160 @@
     {
      "market": "Match winner",
      "selection": "Kyren Wilson",
-     "model_prob": 0.7902,
-     "price": 1.27,
-     "us": -370,
-     "prob_pct": 79.0,
-     "in_band": false
-    },
-    {
-     "market": "Handicap",
-     "selection": "Kyren Wilson -1.5 frames",
-     "model_prob": 0.635,
-     "price": 1.57,
-     "us": -175,
-     "prob_pct": 63.5,
-     "in_band": true
-    },
-    {
-     "market": "Handicap",
-     "selection": "Kyren Wilson -2.5 frames",
-     "model_prob": 0.417,
-     "price": 2.4,
-     "us": 140,
-     "prob_pct": 41.7,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "4-1 Kyren Wilson",
-     "model_prob": 0.245,
-     "price": 4.08,
-     "us": 308,
-     "prob_pct": 24.5,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "4-2 Kyren Wilson",
-     "model_prob": 0.218,
-     "price": 4.59,
-     "us": 359,
-     "prob_pct": 21.8,
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Match winner",
      "selection": "Pang Junxu",
-     "model_prob": 0.2098,
-     "price": 4.77,
-     "us": 377,
-     "prob_pct": 21.0,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "4-0 Kyren Wilson",
-     "model_prob": 0.172,
-     "price": 5.81,
-     "us": 481,
-     "prob_pct": 17.2,
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Handicap",
-     "selection": "Kyren Wilson -3.5 frames",
-     "model_prob": 0.172,
-     "price": 5.81,
-     "us": 481,
-     "prob_pct": 17.2,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "4-3 Kyren Wilson",
-     "model_prob": 0.1552,
-     "price": 6.44,
-     "us": 544,
-     "prob_pct": 15.5,
+     "selection": "Kyren Wilson -1.5 frames",
+     "model_prob": 0.3438,
+     "price": 2.91,
+     "us": 191,
+     "prob_pct": 34.4,
      "in_band": true
     },
     {
      "market": "Handicap",
      "selection": "Pang Junxu -1.5 frames",
-     "model_prob": 0.124,
-     "price": 8.06,
-     "us": 706,
-     "prob_pct": 12.4,
+     "model_prob": 0.3438,
+     "price": 2.91,
+     "us": 191,
+     "prob_pct": 34.4,
      "in_band": true
     },
     {
-     "market": "Correct score",
-     "selection": "3-4 Pang Junxu",
-     "model_prob": 0.0858,
-     "price": 11.66,
-     "us": 1066,
-     "prob_pct": 8.6,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "2-4 Pang Junxu",
-     "model_prob": 0.0666,
-     "price": 15.01,
-     "us": 1401,
-     "prob_pct": 6.7,
+     "market": "Handicap",
+     "selection": "Kyren Wilson -2.5 frames",
+     "model_prob": 0.1875,
+     "price": 5.33,
+     "us": 433,
+     "prob_pct": 18.8,
      "in_band": true
     },
     {
      "market": "Handicap",
      "selection": "Pang Junxu -2.5 frames",
-     "model_prob": 0.0574,
-     "price": 17.41,
-     "us": 1641,
-     "prob_pct": 5.7,
+     "model_prob": 0.1875,
+     "price": 5.33,
+     "us": 433,
+     "prob_pct": 18.8,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "4-2 Kyren Wilson",
+     "model_prob": 0.1562,
+     "price": 6.4,
+     "us": 540,
+     "prob_pct": 15.6,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "2-4 Pang Junxu",
+     "model_prob": 0.1562,
+     "price": 6.4,
+     "us": 540,
+     "prob_pct": 15.6,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "4-3 Kyren Wilson",
+     "model_prob": 0.1562,
+     "price": 6.4,
+     "us": 540,
+     "prob_pct": 15.6,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "3-4 Pang Junxu",
+     "model_prob": 0.1562,
+     "price": 6.4,
+     "us": 540,
+     "prob_pct": 15.6,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "4-1 Kyren Wilson",
+     "model_prob": 0.125,
+     "price": 8.0,
+     "us": 700,
+     "prob_pct": 12.5,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "1-4 Pang Junxu",
+     "model_prob": 0.125,
+     "price": 8.0,
+     "us": 700,
+     "prob_pct": 12.5,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "4-0 Kyren Wilson",
+     "model_prob": 0.0625,
+     "price": 16.0,
+     "us": 1500,
+     "prob_pct": 6.2,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "0-4 Pang Junxu",
+     "model_prob": 0.0625,
+     "price": 16.0,
+     "us": 1500,
+     "prob_pct": 6.2,
+     "in_band": true
+    },
+    {
+     "market": "Handicap",
+     "selection": "Kyren Wilson -3.5 frames",
+     "model_prob": 0.0625,
+     "price": 16.0,
+     "us": 1500,
+     "prob_pct": 6.2,
+     "in_band": true
+    },
+    {
+     "market": "Handicap",
+     "selection": "Pang Junxu -3.5 frames",
+     "model_prob": 0.0625,
+     "price": 16.0,
+     "us": 1500,
+     "prob_pct": 6.2,
      "in_band": true
     }
    ],
-   "market_count": 13,
-   "pick": {
-    "market": "Handicap",
-    "selection": "Kyren Wilson -1.5 frames",
-    "price": 1.57,
-    "us": -175,
-    "model_prob": 0.635,
-    "prob_pct": 63.5,
-    "confidence": "Medium",
-    "cap_reason": null,
-    "prose": null
-   },
+   "market_count": 16,
+   "pick": null,
    "headline": {
     "selection": "Kyren Wilson",
-    "price": 1.27,
-    "us": -370,
-    "prob_pct": 79.0,
-    "confidence": "Medium",
+    "price": 2.0,
+    "us": 100,
+    "prob_pct": 50.0,
+    "confidence": "Low",
     "cap_reason": null,
-    "below_band": true
+    "below_band": false
    },
-   "no_pick_reason": null
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "snk-r3-selt-craigie",
@@ -978,7 +995,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "snk-r3-mcgill-baranowski",
@@ -1189,7 +1206,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "snk-r3-slessor-walden",
@@ -1400,7 +1417,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "ten-atp-machac-khachanov",
@@ -1457,89 +1474,89 @@
    "markets": [
     {
      "market": "Match winner",
-     "selection": "Karen Khachanov",
-     "model_prob": 0.7518,
-     "price": 1.33,
-     "us": -303,
-     "prob_pct": 75.2,
-     "in_band": false
-    },
-    {
-     "market": "Correct score",
-     "selection": "0-2 Karen Khachanov",
-     "model_prob": 0.4557,
-     "price": 2.19,
-     "us": 119,
-     "prob_pct": 45.6,
-     "in_band": true
-    },
-    {
-     "market": "Handicap",
-     "selection": "Karen Khachanov -1.5 sets",
-     "model_prob": 0.4557,
-     "price": 2.19,
-     "us": 119,
-     "prob_pct": 45.6,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "1-2 Karen Khachanov",
-     "model_prob": 0.2962,
-     "price": 3.38,
-     "us": 238,
-     "prob_pct": 29.6,
+     "selection": "Tomas Machac",
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Match winner",
-     "selection": "Tomas Machac",
-     "model_prob": 0.2482,
-     "price": 4.03,
-     "us": 303,
-     "prob_pct": 24.8,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "2-1 Tomas Machac",
-     "model_prob": 0.1426,
-     "price": 7.01,
-     "us": 601,
-     "prob_pct": 14.3,
+     "selection": "Karen Khachanov",
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Correct score",
      "selection": "2-0 Tomas Machac",
-     "model_prob": 0.1056,
-     "price": 9.47,
-     "us": 847,
-     "prob_pct": 10.6,
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "0-2 Karen Khachanov",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "2-1 Tomas Machac",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "1-2 Karen Khachanov",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     },
     {
      "market": "Handicap",
      "selection": "Tomas Machac -1.5 sets",
-     "model_prob": 0.1056,
-     "price": 9.47,
-     "us": 847,
-     "prob_pct": 10.6,
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Handicap",
+     "selection": "Karen Khachanov -1.5 sets",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     }
    ],
    "market_count": 8,
    "pick": null,
    "headline": {
-    "selection": "Karen Khachanov",
-    "price": 1.33,
-    "us": -303,
-    "prob_pct": 75.2,
-    "confidence": "Medium",
+    "selection": "Tomas Machac",
+    "price": 2.0,
+    "us": 100,
+    "prob_pct": 50.0,
+    "confidence": "Low",
     "cap_reason": null,
-    "below_band": true
+    "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "ten-wta-rybakina-kudermetova",
@@ -1597,98 +1614,88 @@
     {
      "market": "Match winner",
      "selection": "Elena Rybakina",
-     "model_prob": 0.8187,
-     "price": 1.22,
-     "us": -455,
-     "prob_pct": 81.9,
-     "in_band": false
-    },
-    {
-     "market": "Correct score",
-     "selection": "2-0 Elena Rybakina",
-     "model_prob": 0.5304,
-     "price": 1.89,
-     "us": -112,
-     "prob_pct": 53.0,
-     "in_band": true
-    },
-    {
-     "market": "Handicap",
-     "selection": "Elena Rybakina -1.5 sets",
-     "model_prob": 0.5304,
-     "price": 1.89,
-     "us": -112,
-     "prob_pct": 53.0,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "2-1 Elena Rybakina",
-     "model_prob": 0.2882,
-     "price": 3.47,
-     "us": 247,
-     "prob_pct": 28.8,
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Match winner",
      "selection": "Polina Kudermetova",
-     "model_prob": 0.1813,
-     "price": 5.51,
-     "us": 451,
-     "prob_pct": 18.1,
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Correct score",
-     "selection": "1-2 Polina Kudermetova",
-     "model_prob": 0.1075,
-     "price": 9.3,
-     "us": 830,
-     "prob_pct": 10.8,
+     "selection": "2-0 Elena Rybakina",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     },
     {
      "market": "Correct score",
      "selection": "0-2 Polina Kudermetova",
-     "model_prob": 0.0738,
-     "price": 13.55,
-     "us": 1255,
-     "prob_pct": 7.4,
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "2-1 Elena Rybakina",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "1-2 Polina Kudermetova",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Handicap",
+     "selection": "Elena Rybakina -1.5 sets",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     },
     {
      "market": "Handicap",
      "selection": "Polina Kudermetova -1.5 sets",
-     "model_prob": 0.0738,
-     "price": 13.55,
-     "us": 1255,
-     "prob_pct": 7.4,
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     }
    ],
    "market_count": 8,
-   "pick": {
-    "market": "Handicap",
-    "selection": "Elena Rybakina -1.5 sets",
-    "price": 1.89,
-    "us": -112,
-    "model_prob": 0.5304,
-    "prob_pct": 53.0,
-    "confidence": "Low",
-    "cap_reason": null,
-    "prose": null
-   },
+   "pick": null,
    "headline": {
     "selection": "Elena Rybakina",
-    "price": 1.22,
-    "us": -455,
-    "prob_pct": 81.9,
-    "confidence": "Medium",
+    "price": 2.0,
+    "us": 100,
+    "prob_pct": 50.0,
+    "confidence": "Low",
     "cap_reason": null,
-    "below_band": true
+    "below_band": false
    },
-   "no_pick_reason": null
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "snk-r3-gilbert-cheung",
@@ -1899,7 +1906,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "snk-r3-williams-odonnell",
@@ -1957,143 +1964,160 @@
     {
      "market": "Match winner",
      "selection": "Mark Williams",
-     "model_prob": 0.809,
-     "price": 1.24,
-     "us": -417,
-     "prob_pct": 80.9,
-     "in_band": false
-    },
-    {
-     "market": "Handicap",
-     "selection": "Mark Williams -1.5 frames",
-     "model_prob": 0.658,
-     "price": 1.52,
-     "us": -192,
-     "prob_pct": 65.8,
-     "in_band": true
-    },
-    {
-     "market": "Handicap",
-     "selection": "Mark Williams -2.5 frames",
-     "model_prob": 0.4389,
-     "price": 2.28,
-     "us": 128,
-     "prob_pct": 43.9,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "4-1 Mark Williams",
-     "model_prob": 0.2543,
-     "price": 3.93,
-     "us": 293,
-     "prob_pct": 25.4,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "4-2 Mark Williams",
-     "model_prob": 0.2191,
-     "price": 4.56,
-     "us": 356,
-     "prob_pct": 21.9,
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Match winner",
      "selection": "Martin O'Donnell",
-     "model_prob": 0.191,
-     "price": 5.24,
-     "us": 424,
-     "prob_pct": 19.1,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "4-0 Mark Williams",
-     "model_prob": 0.1845,
-     "price": 5.42,
-     "us": 442,
-     "prob_pct": 18.5,
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Handicap",
-     "selection": "Mark Williams -3.5 frames",
-     "model_prob": 0.1845,
-     "price": 5.42,
-     "us": 442,
-     "prob_pct": 18.5,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "4-3 Mark Williams",
-     "model_prob": 0.151,
-     "price": 6.62,
-     "us": 562,
-     "prob_pct": 15.1,
+     "selection": "Mark Williams -1.5 frames",
+     "model_prob": 0.3438,
+     "price": 2.91,
+     "us": 191,
+     "prob_pct": 34.4,
      "in_band": true
     },
     {
      "market": "Handicap",
      "selection": "Martin O'Donnell -1.5 frames",
-     "model_prob": 0.1116,
-     "price": 8.96,
-     "us": 796,
-     "prob_pct": 11.2,
+     "model_prob": 0.3438,
+     "price": 2.91,
+     "us": 191,
+     "prob_pct": 34.4,
      "in_band": true
     },
     {
-     "market": "Correct score",
-     "selection": "3-4 Martin O'Donnell",
-     "model_prob": 0.0794,
-     "price": 12.6,
-     "us": 1160,
-     "prob_pct": 7.9,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "2-4 Martin O'Donnell",
-     "model_prob": 0.0606,
-     "price": 16.51,
-     "us": 1551,
-     "prob_pct": 6.1,
+     "market": "Handicap",
+     "selection": "Mark Williams -2.5 frames",
+     "model_prob": 0.1875,
+     "price": 5.33,
+     "us": 433,
+     "prob_pct": 18.8,
      "in_band": true
     },
     {
      "market": "Handicap",
      "selection": "Martin O'Donnell -2.5 frames",
-     "model_prob": 0.0511,
-     "price": 19.59,
-     "us": 1859,
-     "prob_pct": 5.1,
+     "model_prob": 0.1875,
+     "price": 5.33,
+     "us": 433,
+     "prob_pct": 18.8,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "4-2 Mark Williams",
+     "model_prob": 0.1562,
+     "price": 6.4,
+     "us": 540,
+     "prob_pct": 15.6,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "2-4 Martin O'Donnell",
+     "model_prob": 0.1562,
+     "price": 6.4,
+     "us": 540,
+     "prob_pct": 15.6,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "4-3 Mark Williams",
+     "model_prob": 0.1562,
+     "price": 6.4,
+     "us": 540,
+     "prob_pct": 15.6,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "3-4 Martin O'Donnell",
+     "model_prob": 0.1562,
+     "price": 6.4,
+     "us": 540,
+     "prob_pct": 15.6,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "4-1 Mark Williams",
+     "model_prob": 0.125,
+     "price": 8.0,
+     "us": 700,
+     "prob_pct": 12.5,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "1-4 Martin O'Donnell",
+     "model_prob": 0.125,
+     "price": 8.0,
+     "us": 700,
+     "prob_pct": 12.5,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "4-0 Mark Williams",
+     "model_prob": 0.0625,
+     "price": 16.0,
+     "us": 1500,
+     "prob_pct": 6.2,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "0-4 Martin O'Donnell",
+     "model_prob": 0.0625,
+     "price": 16.0,
+     "us": 1500,
+     "prob_pct": 6.2,
+     "in_band": true
+    },
+    {
+     "market": "Handicap",
+     "selection": "Mark Williams -3.5 frames",
+     "model_prob": 0.0625,
+     "price": 16.0,
+     "us": 1500,
+     "prob_pct": 6.2,
+     "in_band": true
+    },
+    {
+     "market": "Handicap",
+     "selection": "Martin O'Donnell -3.5 frames",
+     "model_prob": 0.0625,
+     "price": 16.0,
+     "us": 1500,
+     "prob_pct": 6.2,
      "in_band": true
     }
    ],
-   "market_count": 13,
-   "pick": {
-    "market": "Handicap",
-    "selection": "Mark Williams -1.5 frames",
-    "price": 1.52,
-    "us": -192,
-    "model_prob": 0.658,
-    "prob_pct": 65.8,
-    "confidence": "Medium",
-    "cap_reason": null,
-    "prose": null
-   },
+   "market_count": 16,
+   "pick": null,
    "headline": {
     "selection": "Mark Williams",
-    "price": 1.24,
-    "us": -417,
-    "prob_pct": 80.9,
-    "confidence": "Medium",
+    "price": 2.0,
+    "us": 100,
+    "prob_pct": 50.0,
+    "confidence": "Low",
     "cap_reason": null,
-    "below_band": true
+    "below_band": false
    },
-   "no_pick_reason": null
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "snk-r3-jones-wells",
@@ -2304,7 +2328,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "snk-r3-brown-donaldson",
@@ -2515,7 +2539,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "ten-atp-bublik-marozsan",
@@ -2573,73 +2597,73 @@
     {
      "market": "Match winner",
      "selection": "Alexander Bublik",
-     "model_prob": 0.7868,
-     "price": 1.27,
-     "us": -370,
-     "prob_pct": 78.7,
-     "in_band": false
-    },
-    {
-     "market": "Correct score",
-     "selection": "2-0 Alexander Bublik",
-     "model_prob": 0.4931,
-     "price": 2.03,
-     "us": 103,
-     "prob_pct": 49.3,
-     "in_band": true
-    },
-    {
-     "market": "Handicap",
-     "selection": "Alexander Bublik -1.5 sets",
-     "model_prob": 0.4931,
-     "price": 2.03,
-     "us": 103,
-     "prob_pct": 49.3,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "2-1 Alexander Bublik",
-     "model_prob": 0.2937,
-     "price": 3.41,
-     "us": 241,
-     "prob_pct": 29.4,
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Match winner",
      "selection": "Fabian Marozsan",
-     "model_prob": 0.2132,
-     "price": 4.69,
-     "us": 369,
-     "prob_pct": 21.3,
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Correct score",
-     "selection": "1-2 Fabian Marozsan",
-     "model_prob": 0.1245,
-     "price": 8.03,
-     "us": 703,
-     "prob_pct": 12.5,
+     "selection": "2-0 Alexander Bublik",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     },
     {
      "market": "Correct score",
      "selection": "0-2 Fabian Marozsan",
-     "model_prob": 0.0887,
-     "price": 11.28,
-     "us": 1028,
-     "prob_pct": 8.9,
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "2-1 Alexander Bublik",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "1-2 Fabian Marozsan",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Handicap",
+     "selection": "Alexander Bublik -1.5 sets",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     },
     {
      "market": "Handicap",
      "selection": "Fabian Marozsan -1.5 sets",
-     "model_prob": 0.0887,
-     "price": 11.28,
-     "us": 1028,
-     "prob_pct": 8.9,
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     }
    ],
@@ -2647,14 +2671,14 @@
    "pick": null,
    "headline": {
     "selection": "Alexander Bublik",
-    "price": 1.27,
-    "us": -370,
-    "prob_pct": 78.7,
-    "confidence": "Medium",
+    "price": 2.0,
+    "us": 100,
+    "prob_pct": 50.0,
+    "confidence": "Low",
     "cap_reason": null,
-    "below_band": true
+    "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "hand-ehf-12049",
@@ -8256,7 +8280,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "nba-0022600006",
@@ -10559,89 +10583,89 @@
    "markets": [
     {
      "market": "Match winner",
-     "selection": "Diana Shnaider",
-     "model_prob": 0.7332,
-     "price": 1.36,
-     "us": -278,
-     "prob_pct": 73.3,
-     "in_band": false
-    },
-    {
-     "market": "Correct score",
-     "selection": "0-2 Diana Shnaider",
-     "model_prob": 0.437,
-     "price": 2.29,
-     "us": 129,
-     "prob_pct": 43.7,
-     "in_band": true
-    },
-    {
-     "market": "Handicap",
-     "selection": "Diana Shnaider -1.5 sets",
-     "model_prob": 0.437,
-     "price": 2.29,
-     "us": 129,
-     "prob_pct": 43.7,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "1-2 Diana Shnaider",
-     "model_prob": 0.2962,
-     "price": 3.38,
-     "us": 238,
-     "prob_pct": 29.6,
+     "selection": "Alexandra Eala",
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Match winner",
-     "selection": "Alexandra Eala",
-     "model_prob": 0.2668,
-     "price": 3.75,
-     "us": 275,
-     "prob_pct": 26.7,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "2-1 Alexandra Eala",
-     "model_prob": 0.1519,
-     "price": 6.58,
-     "us": 558,
-     "prob_pct": 15.2,
+     "selection": "Diana Shnaider",
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Correct score",
      "selection": "2-0 Alexandra Eala",
-     "model_prob": 0.1149,
-     "price": 8.71,
-     "us": 771,
-     "prob_pct": 11.5,
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "0-2 Diana Shnaider",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "2-1 Alexandra Eala",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "1-2 Diana Shnaider",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     },
     {
      "market": "Handicap",
      "selection": "Alexandra Eala -1.5 sets",
-     "model_prob": 0.1149,
-     "price": 8.71,
-     "us": 771,
-     "prob_pct": 11.5,
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Handicap",
+     "selection": "Diana Shnaider -1.5 sets",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     }
    ],
    "market_count": 8,
    "pick": null,
    "headline": {
-    "selection": "Diana Shnaider",
-    "price": 1.36,
-    "us": -278,
-    "prob_pct": 73.3,
-    "confidence": "Medium",
+    "selection": "Alexandra Eala",
+    "price": 2.0,
+    "us": 100,
+    "prob_pct": 50.0,
+    "confidence": "Low",
     "cap_reason": null,
-    "below_band": true
+    "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "ten-atp-medvedev-shimabukuro",
@@ -10699,98 +10723,88 @@
     {
      "market": "Match winner",
      "selection": "Daniil Medvedev",
-     "model_prob": 0.8187,
-     "price": 1.22,
-     "us": -455,
-     "prob_pct": 81.9,
-     "in_band": false
-    },
-    {
-     "market": "Correct score",
-     "selection": "2-0 Daniil Medvedev",
-     "model_prob": 0.5304,
-     "price": 1.89,
-     "us": -112,
-     "prob_pct": 53.0,
-     "in_band": true
-    },
-    {
-     "market": "Handicap",
-     "selection": "Daniil Medvedev -1.5 sets",
-     "model_prob": 0.5304,
-     "price": 1.89,
-     "us": -112,
-     "prob_pct": 53.0,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "2-1 Daniil Medvedev",
-     "model_prob": 0.2882,
-     "price": 3.47,
-     "us": 247,
-     "prob_pct": 28.8,
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Match winner",
      "selection": "Sho Shimabukuro",
-     "model_prob": 0.1813,
-     "price": 5.51,
-     "us": 451,
-     "prob_pct": 18.1,
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Correct score",
-     "selection": "1-2 Sho Shimabukuro",
-     "model_prob": 0.1075,
-     "price": 9.3,
-     "us": 830,
-     "prob_pct": 10.8,
+     "selection": "2-0 Daniil Medvedev",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     },
     {
      "market": "Correct score",
      "selection": "0-2 Sho Shimabukuro",
-     "model_prob": 0.0738,
-     "price": 13.55,
-     "us": 1255,
-     "prob_pct": 7.4,
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "2-1 Daniil Medvedev",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "1-2 Sho Shimabukuro",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Handicap",
+     "selection": "Daniil Medvedev -1.5 sets",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     },
     {
      "market": "Handicap",
      "selection": "Sho Shimabukuro -1.5 sets",
-     "model_prob": 0.0738,
-     "price": 13.55,
-     "us": 1255,
-     "prob_pct": 7.4,
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     }
    ],
    "market_count": 8,
-   "pick": {
-    "market": "Handicap",
-    "selection": "Daniil Medvedev -1.5 sets",
-    "price": 1.89,
-    "us": -112,
-    "model_prob": 0.5304,
-    "prob_pct": 53.0,
-    "confidence": "Low",
-    "cap_reason": null,
-    "prose": null
-   },
+   "pick": null,
    "headline": {
     "selection": "Daniil Medvedev",
-    "price": 1.22,
-    "us": -455,
-    "prob_pct": 81.9,
-    "confidence": "Medium",
+    "price": 2.0,
+    "us": 100,
+    "prob_pct": 50.0,
+    "confidence": "Low",
     "cap_reason": null,
-    "below_band": true
+    "below_band": false
    },
-   "no_pick_reason": null
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "ten-wta-kawa-bencic",
@@ -10847,89 +10861,89 @@
    "markets": [
     {
      "market": "Match winner",
-     "selection": "Belinda Bencic",
-     "model_prob": 0.7518,
-     "price": 1.33,
-     "us": -303,
-     "prob_pct": 75.2,
-     "in_band": false
-    },
-    {
-     "market": "Correct score",
-     "selection": "0-2 Belinda Bencic",
-     "model_prob": 0.4557,
-     "price": 2.19,
-     "us": 119,
-     "prob_pct": 45.6,
-     "in_band": true
-    },
-    {
-     "market": "Handicap",
-     "selection": "Belinda Bencic -1.5 sets",
-     "model_prob": 0.4557,
-     "price": 2.19,
-     "us": 119,
-     "prob_pct": 45.6,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "1-2 Belinda Bencic",
-     "model_prob": 0.2962,
-     "price": 3.38,
-     "us": 238,
-     "prob_pct": 29.6,
+     "selection": "Katarzyna Kawa",
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Match winner",
-     "selection": "Katarzyna Kawa",
-     "model_prob": 0.2482,
-     "price": 4.03,
-     "us": 303,
-     "prob_pct": 24.8,
-     "in_band": true
-    },
-    {
-     "market": "Correct score",
-     "selection": "2-1 Katarzyna Kawa",
-     "model_prob": 0.1426,
-     "price": 7.01,
-     "us": 601,
-     "prob_pct": 14.3,
+     "selection": "Belinda Bencic",
+     "model_prob": 0.5,
+     "price": 2.0,
+     "us": 100,
+     "prob_pct": 50.0,
      "in_band": true
     },
     {
      "market": "Correct score",
      "selection": "2-0 Katarzyna Kawa",
-     "model_prob": 0.1056,
-     "price": 9.47,
-     "us": 847,
-     "prob_pct": 10.6,
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "0-2 Belinda Bencic",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "2-1 Katarzyna Kawa",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Correct score",
+     "selection": "1-2 Belinda Bencic",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     },
     {
      "market": "Handicap",
      "selection": "Katarzyna Kawa -1.5 sets",
-     "model_prob": 0.1056,
-     "price": 9.47,
-     "us": 847,
-     "prob_pct": 10.6,
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
+     "in_band": true
+    },
+    {
+     "market": "Handicap",
+     "selection": "Belinda Bencic -1.5 sets",
+     "model_prob": 0.25,
+     "price": 4.0,
+     "us": 300,
+     "prob_pct": 25.0,
      "in_band": true
     }
    ],
    "market_count": 8,
    "pick": null,
    "headline": {
-    "selection": "Belinda Bencic",
-    "price": 1.33,
-    "us": -303,
-    "prob_pct": 75.2,
-    "confidence": "Medium",
+    "selection": "Katarzyna Kawa",
+    "price": 2.0,
+    "us": 100,
+    "prob_pct": 50.0,
+    "confidence": "Low",
     "cap_reason": null,
-    "below_band": true
+    "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "nhl-2026020161",
@@ -14138,7 +14152,8 @@
    ],
    "flags": [
     "Carried with its official link but not re-read on 22 October; no official table captured, so the row is capped at Low confidence.",
-    "plusliga.pl now redirects the public schedule to the TAURON Liga (women's) site, so the men's fixture cannot be re-certified from that URL."
+    "plusliga.pl now redirects the public schedule to the TAURON Liga (women's) site, so the men's fixture cannot be re-certified from that URL.",
+    "No official rating was captured for either side. The price reflects the home-field adjustment only, so the desk publishes no tip on this card."
    ],
    "home_input": null,
    "away_input": null,
@@ -14436,7 +14451,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "el-zal-asv-1023",
@@ -17593,17 +17608,7 @@
     }
    ],
    "market_count": 34,
-   "pick": {
-    "market": "Match winner",
-    "selection": "Connacht",
-    "price": 1.88,
-    "us": -114,
-    "model_prob": 0.5317,
-    "prob_pct": 53.2,
-    "confidence": "Low",
-    "cap_reason": null,
-    "prose": null
-   },
+   "pick": null,
    "headline": {
     "selection": "Connacht",
     "price": 1.88,
@@ -17613,7 +17618,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": null
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "ru-gloucester-bath",
@@ -17963,17 +17968,7 @@
     }
    ],
    "market_count": 34,
-   "pick": {
-    "market": "Match winner",
-    "selection": "Gloucester",
-    "price": 1.88,
-    "us": -114,
-    "model_prob": 0.5317,
-    "prob_pct": 53.2,
-    "confidence": "Low",
-    "cap_reason": null,
-    "prose": null
-   },
+   "pick": null,
    "headline": {
     "selection": "Gloucester",
     "price": 1.88,
@@ -17983,7 +17978,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": null
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "ru-newcastle-sale",
@@ -18333,17 +18328,7 @@
     }
    ],
    "market_count": 34,
-   "pick": {
-    "market": "Match winner",
-    "selection": "Newcastle Red Bulls",
-    "price": 1.88,
-    "us": -114,
-    "model_prob": 0.5317,
-    "prob_pct": 53.2,
-    "confidence": "Low",
-    "cap_reason": null,
-    "prose": null
-   },
+   "pick": null,
    "headline": {
     "selection": "Newcastle Red Bulls",
     "price": 1.88,
@@ -18353,7 +18338,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": null
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "nba-1023-chi-mil",
@@ -20663,7 +20648,8 @@
     }
    ],
    "flags": [
-    "NZC's fixture list shows a local clock without a timezone label; UTC start is left blank rather than guessed."
+    "NZC's fixture list shows a local clock without a timezone label; UTC start is left blank rather than guessed.",
+    "No official rating was captured for either side. The price reflects the home-field adjustment only, so the desk publishes no tip on this card."
    ],
    "home_input": null,
    "away_input": null,
@@ -21051,7 +21037,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "mlb-849805",
@@ -26907,17 +26893,7 @@
     }
    ],
    "market_count": 34,
-   "pick": {
-    "market": "Match winner",
-    "selection": "Vodacom Bulls",
-    "price": 1.88,
-    "us": -114,
-    "model_prob": 0.5317,
-    "prob_pct": 53.2,
-    "confidence": "Low",
-    "cap_reason": null,
-    "prose": null
-   },
+   "pick": null,
    "headline": {
     "selection": "Vodacom Bulls",
     "price": 1.88,
@@ -26927,7 +26903,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": null
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "ru-urc-609580",
@@ -27277,17 +27253,7 @@
     }
    ],
    "market_count": 34,
-   "pick": {
-    "market": "Match winner",
-    "selection": "DHL Stormers",
-    "price": 1.88,
-    "us": -114,
-    "model_prob": 0.5317,
-    "prob_pct": 53.2,
-    "confidence": "Low",
-    "cap_reason": null,
-    "prose": null
-   },
+   "pick": null,
    "headline": {
     "selection": "DHL Stormers",
     "price": 1.88,
@@ -27297,7 +27263,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": null
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "ru-bristol-exeter",
@@ -27647,17 +27613,7 @@
     }
    ],
    "market_count": 34,
-   "pick": {
-    "market": "Match winner",
-    "selection": "Bristol Bears",
-    "price": 1.88,
-    "us": -114,
-    "model_prob": 0.5317,
-    "prob_pct": 53.2,
-    "confidence": "Low",
-    "cap_reason": null,
-    "prose": null
-   },
+   "pick": null,
    "headline": {
     "selection": "Bristol Bears",
     "price": 1.88,
@@ -27667,7 +27623,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": null
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "ru-leicester-northampton",
@@ -28017,17 +27973,7 @@
     }
    ],
    "market_count": 34,
-   "pick": {
-    "market": "Match winner",
-    "selection": "Leicester Tigers",
-    "price": 1.88,
-    "us": -114,
-    "model_prob": 0.5317,
-    "prob_pct": 53.2,
-    "confidence": "Low",
-    "cap_reason": null,
-    "prose": null
-   },
+   "pick": null,
    "headline": {
     "selection": "Leicester Tigers",
     "price": 1.88,
@@ -28037,7 +27983,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": null
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "ru-top14-609564",
@@ -28793,7 +28739,8 @@
    ],
    "flags": [
     "Carried with its official link but not re-read on 22 October; no official table captured, so the row is capped at Low confidence.",
-    "plusliga.pl now redirects the public schedule to the TAURON Liga (women's) site, so the men's fixture cannot be re-certified from that URL."
+    "plusliga.pl now redirects the public schedule to the TAURON Liga (women's) site, so the men's fixture cannot be re-certified from that URL.",
+    "No official rating was captured for either side. The price reflects the home-field adjustment only, so the desk publishes no tip on this card."
    ],
    "home_input": null,
    "away_input": null,
@@ -29091,7 +29038,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "ru-urc-609578",
@@ -29441,17 +29388,7 @@
     }
    ],
    "market_count": 34,
-   "pick": {
-    "market": "Match winner",
-    "selection": "Leinster",
-    "price": 1.88,
-    "us": -114,
-    "model_prob": 0.5317,
-    "prob_pct": 53.2,
-    "confidence": "Low",
-    "cap_reason": null,
-    "prose": null
-   },
+   "pick": null,
    "headline": {
     "selection": "Leinster",
     "price": 1.88,
@@ -29461,7 +29398,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": null
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "gaa-galway-3532",
@@ -29488,7 +29425,8 @@
    ],
    "flags": [
     "No official club rating is published at this level, so the row uses a neutral baseline and is graded Low.",
-    "The Munster club championship page lists no fixture of this kind before 1 November; the county-final date is carried from the earlier snapshot."
+    "The Munster club championship page lists no fixture of this kind before 1 November; the county-final date is carried from the earlier snapshot.",
+    "No official rating was captured for either side. The price reflects the home-field adjustment only, so the desk publishes no tip on this card."
    ],
    "home_input": null,
    "away_input": null,
@@ -29786,7 +29724,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "cric-nz-ind-t20-2",
@@ -33278,7 +33216,8 @@
    ],
    "flags": [
     "No official club rating is published at this level, so the row uses a neutral baseline and is graded Low.",
-    "The Munster club championship page lists no fixture of this kind before 1 November; the county-final date is carried from the earlier snapshot."
+    "The Munster club championship page lists no fixture of this kind before 1 November; the county-final date is carried from the earlier snapshot.",
+    "No official rating was captured for either side. The price reflects the home-field adjustment only, so the desk publishes no tip on this card."
    ],
    "home_input": null,
    "away_input": null,
@@ -33576,7 +33515,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "gaa-waterford-3536",
@@ -33603,7 +33542,8 @@
    ],
    "flags": [
     "No official club rating is published at this level, so the row uses a neutral baseline and is graded Low.",
-    "The Munster club championship page lists no fixture of this kind before 1 November; the county-final date is carried from the earlier snapshot."
+    "The Munster club championship page lists no fixture of this kind before 1 November; the county-final date is carried from the earlier snapshot.",
+    "No official rating was captured for either side. The price reflects the home-field adjustment only, so the desk publishes no tip on this card."
    ],
    "home_input": null,
    "away_input": null,
@@ -33901,7 +33841,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "ru-harlequins-saracens",
@@ -34251,17 +34191,7 @@
     }
    ],
    "market_count": 34,
-   "pick": {
-    "market": "Match winner",
-    "selection": "Harlequins",
-    "price": 1.88,
-    "us": -114,
-    "model_prob": 0.5317,
-    "prob_pct": 53.2,
-    "confidence": "Low",
-    "cap_reason": null,
-    "prose": null
-   },
+   "pick": null,
    "headline": {
     "selection": "Harlequins",
     "price": 1.88,
@@ -34271,7 +34201,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": null
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "gaa-cork-3530",
@@ -34302,7 +34232,8 @@
    ],
    "flags": [
     "No official club rating is published at this level, so the row uses a neutral baseline and is graded Low.",
-    "The Munster club championship page lists no fixture of this kind before 1 November; the county-final date is carried from the earlier snapshot."
+    "The Munster club championship page lists no fixture of this kind before 1 November; the county-final date is carried from the earlier snapshot.",
+    "No official rating was captured for either side. The price reflects the home-field adjustment only, so the desk publishes no tip on this card."
    ],
    "home_input": null,
    "away_input": null,
@@ -34600,7 +34531,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "vol-lega-perugia",
@@ -34626,7 +34557,8 @@
     }
    ],
    "flags": [
-    "Carried with its official link but not re-read on 22 October; no official table captured, so the row is capped at Low confidence."
+    "Carried with its official link but not re-read on 22 October; no official table captured, so the row is capped at Low confidence.",
+    "No official rating was captured for either side. The price reflects the home-field adjustment only, so the desk publishes no tip on this card."
    ],
    "home_input": null,
    "away_input": null,
@@ -34924,7 +34856,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "vol-lega-lube",
@@ -34950,7 +34882,8 @@
     }
    ],
    "flags": [
-    "Carried with its official link but not re-read on 22 October; no official table captured, so the row is capped at Low confidence."
+    "Carried with its official link but not re-read on 22 October; no official table captured, so the row is capped at Low confidence.",
+    "No official rating was captured for either side. The price reflects the home-field adjustment only, so the desk publishes no tip on this card."
    ],
    "home_input": null,
    "away_input": null,
@@ -35248,7 +35181,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "vol-plus-36965",
@@ -35275,7 +35208,8 @@
    ],
    "flags": [
     "Carried with its official link but not re-read on 22 October; no official table captured, so the row is capped at Low confidence.",
-    "plusliga.pl now redirects the public schedule to the TAURON Liga (women's) site, so the men's fixture cannot be re-certified from that URL."
+    "plusliga.pl now redirects the public schedule to the TAURON Liga (women's) site, so the men's fixture cannot be re-certified from that URL.",
+    "No official rating was captured for either side. The price reflects the home-field adjustment only, so the desk publishes no tip on this card."
    ],
    "home_input": null,
    "away_input": null,
@@ -35573,7 +35507,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "vol-lega-trentino",
@@ -35599,7 +35533,8 @@
     }
    ],
    "flags": [
-    "Carried with its official link but not re-read on 22 October; no official table captured, so the row is capped at Low confidence."
+    "Carried with its official link but not re-read on 22 October; no official table captured, so the row is capped at Low confidence.",
+    "No official rating was captured for either side. The price reflects the home-field adjustment only, so the desk publishes no tip on this card."
    ],
    "home_input": null,
    "away_input": null,
@@ -35897,7 +35832,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "ru-top14-609554",
@@ -36599,7 +36534,8 @@
     }
    ],
    "flags": [
-    "NZC's fixture list shows a local clock without a timezone label; UTC start is left blank rather than guessed."
+    "NZC's fixture list shows a local clock without a timezone label; UTC start is left blank rather than guessed.",
+    "No official rating was captured for either side. The price reflects the home-field adjustment only, so the desk publishes no tip on this card."
    ],
    "home_input": null,
    "away_input": null,
@@ -36987,7 +36923,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "cric-nz-ind-t20-3",
@@ -37017,7 +36953,8 @@
     }
    ],
    "flags": [
-    "NZC's fixture list shows a local clock without a timezone label; UTC start is left blank rather than guessed."
+    "NZC's fixture list shows a local clock without a timezone label; UTC start is left blank rather than guessed.",
+    "No official rating was captured for either side. The price reflects the home-field adjustment only, so the desk publishes no tip on this card."
    ],
    "home_input": null,
    "away_input": null,
@@ -37405,7 +37342,7 @@
     "cap_reason": null,
     "below_band": false
    },
-   "no_pick_reason": "No selection at or above 52% clears the -250 floor on this card."
+   "no_pick_reason": "No official rating was captured for either side, so this price reflects only the home-field adjustment. The desk will not tip a home-advantage-only number."
   },
   {
    "id": "mlb-849803",

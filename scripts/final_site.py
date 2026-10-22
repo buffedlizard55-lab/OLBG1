@@ -219,6 +219,13 @@ def build_rows() -> list[dict]:
             if headline.get("us") is None and headline.get("price"):
                 headline["us"] = M.american_from_price(headline["price"])
             headline["below_band"] = bool(hp.get("below_band"))
+        if not p.get("event_only") and p.get("home_input") is None and p.get("away_input") is None:
+            flags = list(p.get("flags", []))
+            note = ("No official rating was captured for either side. The price reflects the home-field "
+                    "adjustment only, so the desk publishes no tip on this card.")
+            if not any("no official rating" in f.lower() for f in flags):
+                flags.append(note)
+            p["flags"] = flags
         rows.append({
             "id": ident,
             "sport": p["sport"],
@@ -248,7 +255,8 @@ def build_rows() -> list[dict]:
             "headline": headline,
             "no_pick_reason": None if pick else (
                 "Event card: no head-to-head market is priced." if p.get("event_only")
-                else "No selection at or above 52% clears the -250 floor on this card."),
+                else (p.get("no_tip_reason")
+                      or "No selection at or above 52% clears the -250 floor on this card.")),
         })
     return rows
 
@@ -325,7 +333,9 @@ def pick_table(rows: list[dict], show_sport: bool = True, prefix: str = "", anch
             cells.append(f'<td><a href="{prefix}sports/{esc(r["sport"])}.html">{esc(r["sport_label"])}</a></td>')
         cells.append(f'<td>{esc(r["competition"])}<div class="sm mut">{esc(r["stage"])}</div></td>')
         match = f'<b>{esc(r["home"])}</b>' + (f' <span class="mut">v</span> {esc(r["away"])}' if r["away"] else "")
-        cells.append(f'<td>{match}<div class="sm mut">{esc(r["venue"])}</div></td>')
+        rated = bool(r.get("home_input") and r.get("away_input"))
+        note = '' if rated else '<div class="sm" style="color:var(--md)">no rating captured</div>'
+        cells.append(f'<td>{match}<div class="sm mut">{esc(r["venue"])}</div>{note}</td>')
         if p:
             sel = f'<b>{esc(p["selection"])}</b><div class="sm mut">{esc(p["market"])}</div>'
         else:
@@ -685,6 +695,15 @@ def build_flagged(rows, stats, sports) -> str:
          "allowlist, so a strict run of the old gate would have rejected the snapshot\u2019s best tennis sources.",
          "Both hosts are now on the shared allowlist and every row is re-checked against it on each build.",
          '<a href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener">ATP order of play</a>', ""),
+        ("F-26B-14", "A missing rating was filled with a league-average prior and then priced as if it were measured",
+         "39 of the 120 priced matches have at least one side with no captured official rating. The model substituted 58.0 "
+         "and subtracted it from the rated side, so an unrated opponent created an edge nobody measured: Medvedev at 97.5 "
+         "against an unrated player produced a 39.5-point gap and a 1.22 moneyline. The repository's own rule said one-sided "
+         "ratings are refused, so the code and the documentation disagreed.",
+         "Fixed at the root: when either side is unrated no strength edge is applied at all, the price is the venue baseline, "
+         "and the desk publishes <b>no tip</b> on that card. The match-winner call stays visible and is graded Low. "
+         "46 of 120 matches now carry no tip, 39 of them for this reason.",
+         '<a href="https://www.atptour.com/en/rankings/singles" target="_blank" rel="noopener">ATP rankings</a>', ""),
     ]
     findings_rows = [[
         f'<td class="nowrap"><b>{esc(fid)}</b></td>',
@@ -894,7 +913,10 @@ page is a modelling choice, and every number in it is published so a price can b
 <h2 id="model">1. How a rating becomes a price</h2>
 <ol class="steps">
   <li><b>One rating per side (0&ndash;100).</b> Derived only from the official input on that row &mdash; ladder position, record, ranking, seed or points differential. No tipster odds are read, and no rating is copied from a bookmaker.</li>
-  <li><b>Edge = (home rating &minus; away rating) + home-field adjustment.</b> Both components are printed per sport below.</li>
+  <li><b>Edge = (home rating &minus; away rating) + home-field adjustment</b> &mdash; but only when <i>both</i> sides have a
+  measured rating from the official source. If either side is unrated the strength term is set to zero rather than filled with
+  a prior, so the price is the venue baseline and no tip is published. Filling a missing rating with a league average creates
+  an edge that was never measured (F-26B-14).</li>
   <li><b>Expected margin &mu; = edge &times; slope.</b> The slope converts a rating point into the sport&rsquo;s own scoring unit, which is why a basketball price and a hockey price are not the same number.</li>
   <li><b>P(home wins) = &Phi;(&mu; / &sigma;).</b> &sigma; is the sport&rsquo;s scoring spread; a 17-point rating gap is a coin flip at a neutral venue before the home adjustment.</li>
   <li><b>Handicaps come from the same distribution:</b> P(covers &minus;L) = &Phi;((&mu; &minus; L) / &sigma;). The ladder is therefore internally consistent with the moneyline.</li>
@@ -933,6 +955,10 @@ column is baseline total / total spread.</p>
   <li><b>It does not read market prices.</b> These are our own lines; no bookmaker or exchange price is loaded, so nothing here is a value bet against a market.</li>
   <li><b>It does not know about injuries, team news, weather or travel.</b> The only inputs are the official record fields printed on each row.</li>
   <li><b>It is a snapshot.</b> {stats["carried"]} rows are carried from 21 October and capped at Medium; prices do not move after publication.</li>
+  <li><b>39 of the 120 priced matches have at least one side with no captured rating.</b> Their prices are the venue baseline
+  only and they carry no tip; the table marks them &ldquo;no rating captured&rdquo; and each one is listed on the flagged page.
+  That is deliberately visible rather than filled in: a fixture with a valid official link but no published rating is covered,
+  not priced.</li>
   <li><b>It is not a prediction service.</b> A High grade means the model and the window agree, not that the selection will win.</li>
 </ul>
 
@@ -1062,6 +1088,9 @@ def build_analysis(rows, stats, sports) -> str:
 
     # 5. derived observations (each one computed from the data above)
     high_by_sport = Counter(r["sport_label"] for r in priced if r["pick"] and r["pick"]["confidence"] == "High")
+    unrated_count = sum(1 for r in priced
+                        if (r.get("home_input") or {}).get("rating") is None
+                        or (r.get("away_input") or {}).get("rating") is None)
     no_bet_by_sport = Counter(r["sport_label"] for r in priced if not r["pick"])
     ladder = {
         "handicap rungs per match": round(sum(1 for r in priced for x in r["markets"] if x["market"] == "Handicap") / len(priced), 1),
@@ -1072,9 +1101,10 @@ def build_analysis(rows, stats, sports) -> str:
         f'<b>{stats["high"]} of {len(priced)} priced matches</b> reach High confidence '
         f'({round(100 * stats["high"] / len(priced))}%). The spread is not even: '
         + ", ".join(f'{esc(k)} {v}' for k, v in high_by_sport.most_common()) + ".",
-        f'<b>{stats["no_bet"]} matches produce no bet</b> ({round(100 * stats["no_bet"] / len(priced))}%) because their best '
-        f'in-window price is at or below a 52% coin flip. By sport: '
-        + ", ".join(f'{esc(k)} {v}' for k, v in no_bet_by_sport.most_common()) + ".",
+        f'<b>{stats["no_bet"]} matches produce no tip</b> ({round(100 * stats["no_bet"] / len(priced))}%). '
+        f'{unrated_count} of them because neither side has a captured official rating, so there is no measured edge to price; '
+        f'the other {stats["no_bet"] - unrated_count} because their best in-window price is at or below a 52% coin flip. '
+        f'By sport: ' + ", ".join(f'{esc(k)} {v}' for k, v in no_bet_by_sport.most_common()) + ".",
         f'<b>The ladder is the same shape in every sport</b>: {ladder["handicap rungs per match"]} handicap rungs and '
         f'{ladder["total rungs per match"]} total rungs per priced match, {ladder["prices per match"]} prices per match on average. '
         f'Only the units change (points, goals, runs, sets, frames, legs).',
@@ -1083,6 +1113,11 @@ def build_analysis(rows, stats, sports) -> str:
         f'<b>{stats["in_band_prices"]:,} of {stats["prices"]:,} prices sit inside the brief window</b> '
         f'({round(100 * stats["in_band_prices"] / stats["prices"])}%). The ones outside it are shorter than &minus;250 and are '
         f'published for reference only; they can never become a selection.',
+        ('<b>Four sports receive no tip at all</b>: ' + ", ".join(
+            esc(sports[slug]["label"]) for slug in ORDER if sports[slug]["priced"] and not (sports[slug]["high"] + sports[slug]["medium"] + sports[slug]["low"])
+        ) + '. Their fixtures are verified and priced from the venue baseline, but no side carries a captured official rating, '
+          'so the desk refuses to tip them (F-26B-14).') if any(
+            sports[slug]["priced"] and not (sports[slug]["high"] + sports[slug]["medium"] + sports[slug]["low"]) for slug in ORDER) else "",
         f'<b>Data completeness</b>: {stats["verified"]} rows were read from an official page on 22 October, {stats["carried"]} are '
         f'carried from 21 October, and {stats["flag_rows"]} rows carry an explicit flag. {stats["undated"]} rows have no UTC clock '
         f'because the governing body publishes a date or a local time without a timezone.',

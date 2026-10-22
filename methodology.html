@@ -25,7 +25,10 @@ page is a modelling choice, and every number in it is published so a price can b
 <h2 id="model">1. How a rating becomes a price</h2>
 <ol class="steps">
   <li><b>One rating per side (0&ndash;100).</b> Derived only from the official input on that row &mdash; ladder position, record, ranking, seed or points differential. No tipster odds are read, and no rating is copied from a bookmaker.</li>
-  <li><b>Edge = (home rating &minus; away rating) + home-field adjustment.</b> Both components are printed per sport below.</li>
+  <li><b>Edge = (home rating &minus; away rating) + home-field adjustment</b> &mdash; but only when <i>both</i> sides have a
+  measured rating from the official source. If either side is unrated the strength term is set to zero rather than filled with
+  a prior, so the price is the venue baseline and no tip is published. Filling a missing rating with a league average creates
+  an edge that was never measured (F-26B-14).</li>
   <li><b>Expected margin &mu; = edge &times; slope.</b> The slope converts a rating point into the sport&rsquo;s own scoring unit, which is why a basketball price and a hockey price are not the same number.</li>
   <li><b>P(home wins) = &Phi;(&mu; / &sigma;).</b> &sigma; is the sport&rsquo;s scoring spread; a 17-point rating gap is a coin flip at a neutral venue before the home adjustment.</li>
   <li><b>Handicaps come from the same distribution:</b> P(covers &minus;L) = &Phi;((&mu; &minus; L) / &sigma;). The ladder is therefore internally consistent with the moneyline.</li>
@@ -64,6 +67,10 @@ column is baseline total / total spread.</p>
   <li><b>It does not read market prices.</b> These are our own lines; no bookmaker or exchange price is loaded, so nothing here is a value bet against a market.</li>
   <li><b>It does not know about injuries, team news, weather or travel.</b> The only inputs are the official record fields printed on each row.</li>
   <li><b>It is a snapshot.</b> 28 rows are carried from 21 October and capped at Medium; prices do not move after publication.</li>
+  <li><b>39 of the 120 priced matches have at least one side with no captured rating.</b> Their prices are the venue baseline
+  only and they carry no tip; the table marks them &ldquo;no rating captured&rdquo; and each one is listed on the flagged page.
+  That is deliberately visible rather than filled in: a fixture with a valid official link but no published rating is covered,
+  not priced.</li>
   <li><b>It is not a prediction service.</b> A High grade means the model and the window agree, not that the selection will win.</li>
 </ul>
 

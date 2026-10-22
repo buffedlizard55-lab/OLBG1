@@ -7,7 +7,7 @@ enough to defend.
 **Live dashboard:** https://buffedlizard55-lab.github.io/OLBG1/
 
 Snapshot: **22 October 2026, 03:30 UTC** — 127 fixtures and event cards across the 17 in-scope sports,
-120 priced head-to-heads, 3,176 originated prices, 10 high-confidence picks.
+120 priced head-to-heads, 3,182 originated prices, 10 high-confidence picks, 76 desk selections and 44 no-bet cards.
 
 ---
 
@@ -17,7 +17,7 @@ Snapshot: **22 October 2026, 03:30 UTC** — 127 fixtures and event cards across
 |---|---|
 | `index.html` | Landing dashboard: counts, the 10 high-confidence picks, and the 17 categories |
 | `picks.html` | One row per priced match — date, venue, desk selection, price, grade, match-winner call, official source |
-| `markets.html` | All 3,176 prices, match by match (winner, handicap, total, correct score) |
+| `markets.html` | All 3,182 prices, match by match (winner, handicap, total, correct score) |
 | `predictions.html` | The 10 high-confidence predictions, each a unique 30+ word write-up |
 | `sports.html` + `sports/<slug>.html` | The 17 categories, each with its own match table and notes |
 | `analysis.html` | Measured analysis: market coverage, price-window distribution, confidence rates |
@@ -47,8 +47,10 @@ and listed on the site, but nothing in them is priced.
    margin), printed with the assumptions used, and never presented as quoted market odds.
 4. **One grading scale.** High = at least 70% on the model *and* inside the brief's −250 to +10,000
    window *and* verified on the snapshot date *and* both sides measured. Carried or unrated rows are
-   capped at Medium. Where nothing in the window clears 52%, the match is published as **no bet** — but
-   it still carries a labelled match-winner call.
+   capped at Medium. Where nothing in the window clears 52% the match is published as **no bet**, and a
+   match with no measured rating on either side is **never tipped**: no strength edge is applied at all,
+   the price is the venue baseline, and the card is a no-bet. Every match still carries a labelled
+   match-winner call with its grade.
 5. **Every high-confidence pick gets its own prediction** — 30+ words, unique, quoting only figures that
    appear in that row's sourced input, stating the selection and its price.
 
@@ -104,5 +106,8 @@ COORDINATION.md   the shared task board and verification log
 * **Draws are not priced.** Every non-binomial sport is priced two-way, so a favourite's probability is
   slightly overstated in draw-capable sports. Disclosed as F-26B-06 and left for the next pricing pass.
 * **Nothing is settled.** No fixture in the snapshot had been played when it was taken.
+* **39 of the 120 priced matches have no captured rating on at least one side.** They are priced from
+  the venue baseline only and carry no tip, and the table marks them "no rating captured". That is a
+  coverage statement, not a price: the fixture is verified, the edge is unknown.
 * **Seven cards have no market at all** (four golf tournaments, F1, League of Legends, GBGB) because no
   entry list or fixture could be captured. They are listed as event cards with the reason.
