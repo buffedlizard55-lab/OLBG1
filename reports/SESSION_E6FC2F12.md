@@ -73,6 +73,18 @@ read URL), handball, volleyball, esports, greyhounds, AFLW (ladder client-render
 (near-empty fixture page). Each is listed on `flagged.html` with the exact URL and reason, plus the
 assumptions that could bias a price (no home edge, no calibration, no player-level input).
 
+## Publication
+
+- PR #110 merged 2026-10-22T12:09:47Z as `a8c2775`; canonical checks `39776109024` and pages
+  `39776109134` both green. Live page read back from the deployed bytes: 91 fixtures / 1098 markets /
+  18 High / 20 sources.
+- PR #113 merged 12:19Z as `e5d832a` (pages `39776645701` green). Corrects three OLBG hub ids
+  (Handball 22→20, Volleyball 23→21, Greyhounds 31→28) and names the fixture in the homepage pick
+  list; verified again on the deployed page with a cache-busting query string.
+- The canonical `scripts/validate.py` gate is red on `main` since PR #111 (`53674ac8`): 40 errors, all
+  from that desk's site-absolute links, none from this one. Logged in §50 as an integrator note; no
+  other session's files were edited.
+
 ## Files
 
 ```
