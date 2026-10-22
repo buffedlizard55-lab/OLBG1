@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for review · OLBG research desk 9dc28d1e</title>
+<style>
+:root{--bg:#0b1220;--card:#131d2f;--line:#243349;--txt:#e6edf7;--muted:#93a4bd;--accent:#4cc2ff;
+--good:#4ade80;--warn:#fbbf24;--bad:#f87171;--hi:#22d3ee}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{background:linear-gradient(180deg,#101a2b,#0b1220);border-bottom:1px solid var(--line);padding:18px 0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+h1{font-size:24px;margin:0 0 6px}h2{font-size:19px;margin:30px 0 10px}h3{font-size:16px;margin:20px 0 8px}
+.sub{color:var(--muted);font-size:13px}
+nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+nav a{background:#16233a;border:1px solid var(--line);padding:6px 11px;border-radius:7px;font-size:13px;color:var(--txt)}
+nav a.on{background:#1d3a55;border-color:#2f5f86;color:#fff}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:20px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.card .n{font-size:26px;font-weight:700}.card .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13px;margin:10px 0 24px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#16233a;color:#cfe0f5;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em;position:sticky;top:0}
+tr:last-child td{border-bottom:none}tbody tr:hover{background:#16233a}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.02em}
+.high{background:rgba(76,194,255,.16);color:#8fdcff;border:1px solid #2c6f96}
+.medium{background:rgba(251,191,36,.14);color:#fcd34d;border:1px solid #7a5c12}
+.low{background:rgba(148,163,184,.14);color:#c3cfe0;border:1px solid #3a4a63}
+.outside_window{background:rgba(248,113,113,.12);color:#fca5a5;border:1px solid #7f2f2f}
+.none{background:#1a2436;color:#8496ad;border:1px solid #2c3a50}
+.note{background:#101b2c;border-left:3px solid var(--accent);padding:10px 14px;border-radius:0 8px 8px 0;color:#c9d8ea;font-size:13px;margin:14px 0}
+.warnbox{border-left-color:var(--warn)}
+.pred{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0}
+.pred .meta{color:var(--muted);font-size:12px;margin-bottom:6px}
+.pred p{margin:8px 0 0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:22px 0;color:var(--muted);font-size:12px}
+code{background:#0e1726;padding:2px 5px;border-radius:4px;font-size:12px}
+.small{font-size:12px;color:var(--muted)}
+</style></head>
+<body>
+<header><div class="wrap">
+<h1>Flagged for review</h1>
+<div class="sub">Session 9dc28d1e · evidence-first desk · generated 2026-10-22T12:30:00Z</div>
+<nav><a href="index.html">Dashboard</a><a href="matches.html">Matches</a><a href="markets.html">Markets &amp; prices</a><a href="predictions.html">High-confidence picks</a><a href="analysis.html">Gate analysis</a><a href="flagged.html" class="on">Flagged for review</a><a href="sources.html">Sources</a><a href="methodology.html">Methodology</a></nav>
+</div></header>
+<main class="wrap">
+
+<p class="sub">Documented irregularities, withheld fields and assumptions. None of these block publication;
+all are listed so a reviewer can check them against the links.</p>
+<div class="pred"><h3 style="margin-top:0">F-9DC-01 ·
+<span class="tag outside_window">HIGH</span></h3>
+<strong>The brief&#x27;s own High gate is a 1.43-percentage-point window</strong>
+<p>A probability above 70% can never price longer than -233.33 American, because -233.33 is exactly the 70% point. Requiring both &#x27;more than 70%&#x27; and &#x27;between -250 and +10000&#x27; therefore leaves only probabilities in (70.00%, 71.43%]. Every selection outside that sliver is either too likely to be inside the price floor or too unlikely to clear 70%. This desk applies the conjunction literally and publishes the excluded near-misses.</p>
+<p class="small">Sources: arithmetic: american = -100p/(1-p); 70% -&gt; -233.33; 71.4286% -&gt; -250 · Status: open — needs a product decision, not more data</p></div><div class="pred"><h3 style="margin-top:0">F-9DC-02 ·
+<span class="tag outside_window">HIGH</span></h3>
+<strong>Eight EuroLeague selections clear both High conditions but are capped at Medium</strong>
+<p>The eight selections listed in this finding satisfy probability &gt; 70% and a fair price inside [-250, +10000]. They are published as Medium because the brief also requires a prediction naming a player, and the official EuroLeague machine-readable source used here publishes standings only - no roster, minutes or availability. Fabricating a player would be worse than capping the tier, so the rule applied is: High = probability + price + a prediction supported by verified player-level facts.</p>
+<p class="small">Sources: euroleague-standings-e2026 · Status: needs review — accept the cap or supply a player-level source</p></div><div class="pred"><h3 style="margin-top:0">F-9DC-03 ·
+<span class="tag medium">MEDIUM</span></h3>
+<strong>Seventy-three listings are inherited, not re-read, and carry no prices</strong>
+<p>The canonical snapshot verified these listings at 2026-10-22T07:17:40Z-07:30:30Z. This session did not re-fetch those pages, so every inherited row is published with blank prices, an explicit &#x27;not re-read by this session&#x27; status and the canonical observation window. No inherited row contributes to any confidence tier.</p>
+<p class="small">Sources: canonical snapshot data/current/snapshot.json · Status: open — by design; prices withheld</p></div><div class="pred"><h3 style="margin-top:0">F-9DC-04 ·
+<span class="tag medium">MEDIUM</span></h3>
+<strong>EuroLeague tip-off times are inherited; the standings were re-read</strong>
+<p>The EuroLeague game-center article returns its tip-off times only in prose, and the attempted machine-read of a round-level endpoint returned &#x27;Resource not found&#x27;. The nine Round 7 pairings and times therefore carry the 07:17Z observation window, while the standings that drive every EuroLeague price were re-read at 12:06Z. Fixture time and rating input are verified on different clocks.</p>
+<p class="small">Sources: euroleague-round7-gamecenter, euroleague-standings-e2026 · Status: open — retire when a machine-readable schedule endpoint is confirmed</p></div><div class="pred"><h3 style="margin-top:0">F-9DC-05 ·
+<span class="tag medium">MEDIUM</span></h3>
+<strong>MLB run line and totals withheld rather than guessed</strong>
+<p>The official standings projection used here returns the two World Series clubs&#x27; wins, losses, runs scored and runs allowed, but not a league run environment. Pricing a run line or total needs that environment, so only the moneyline is originated. The result is that the four World Series games carry one two-way market each.</p>
+<p class="small">Sources: mlb-records-2026, mlb-schedule-ws-2026 · Status: open — needs a verified 2026 league run rate</p></div><div class="pred"><h3 style="margin-top:0">F-9DC-06 ·
+<span class="tag outside_window">HIGH</span></h3>
+<strong>Model calibration is unverified; tier fragility is published with every High</strong>
+<p>No backtest against settled results was possible in this session, so probabilities are model estimates, not measured frequencies. Every High tier is therefore re-computed under shrinkage and home-edge perturbations and the resulting probability range is shown in the table. A pick whose range crosses the 70% threshold or the -250 floor is marked fragile.</p>
+<p class="small">Sources: model: 9dc-ev1.0, see Methodology · Status: open — needs a settled-results backtest</p></div><div class="pred"><h3 style="margin-top:0">F-9DC-07 ·
+<span class="tag low">LOW</span></h3>
+<strong>Overtime is split 50/50 by assumption</strong>
+<p>NHL moneylines settle after overtime and the shootout. Regulation goals are modelled as Poisson and a regulation tie is allocated half to each side. That is an assumption, not a measurement; it moves the moneyline by at most half of the tie mass, roughly two points of probability in these games.</p>
+<p class="small">Sources: nhl-team-summary-20262027 · Status: documented assumption</p></div><div class="pred"><h3 style="margin-top:0">F-9DC-08 ·
+<span class="tag medium">MEDIUM</span></h3>
+<strong>Five in-scope categories produced no verified participant-level input today</strong>
+<p>Darts, greyhounds, golf, eSports and motor racing are in scope but no official page read in this session returned a usable draw, runner field or entry list. The PDC tournaments page returned consent-banner furniture instead of a draw, and the GBGB open-race calendar returned no runner field. These categories are listed with blank participants and prices.</p>
+<p class="small">Sources: https://www.pdc.tv/tournaments, https://www.gbgb.org.uk/racing/open-races/ · Status: open — needs a machine-readable official draw</p></div><div class="pred"><h3 style="margin-top:0">F-9DC-09 ·
+<span class="tag low">LOW</span></h3>
+<strong>Canonical rows list the home side first without labelling it</strong>
+<p>The canonical fixture rows put the home club in the first participant column (for example &#x27;Boston Bruins v Nashville Predators&#x27; is Boston at home to Nashville). That convention is the reverse of the usual &#x27;away at home&#x27; reading and is easy to misread. This desk labels every fixture &#x27;Home v Away&#x27; explicitly and states the venue.</p>
+<p class="small">Sources: nhl-schedule-20261022 · Status: presentation — corrected on this desk, inherited rows left untouched</p></div><div class="pred"><h3 style="margin-top:0">F-9DC-10 ·
+<span class="tag low">LOW</span></h3>
+<strong>MLB UTC start crosses the calendar date</strong>
+<p>World Series Game 1 is officially dated 2026-10-23 in US Eastern but starts at 2026-10-24T00:00:00Z. The canonical row and the MLB feed agree; the date looks wrong only if the timezone is dropped. Published here with both the UTC start and the official date.</p>
+<p class="small">Sources: mlb-schedule-ws-2026 · Status: verified — no correction required</p></div>
+
+</main>
+<footer><div class="wrap">
+<p><strong>Estimate, not advice.</strong> Every price on this desk is a zero-margin model line originated
+from official team-season inputs. No bookmaker quote, availability or edge is claimed. Blank means
+unverified. This desk is independent of OLBG and of the canonical dashboard build.</p>
+<p>Generated 2026-10-22T12:30:00Z · model 9dc-ev1.0 · <a href="sources.html">source register</a> ·
+<a href="methodology.html">methodology and limits</a></p>
+</div></footer>
+</body></html>
