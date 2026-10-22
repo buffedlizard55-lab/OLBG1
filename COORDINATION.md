@@ -2938,6 +2938,7 @@ Delivered in the isolated `354e0990/` namespace: 24 priced upcoming matches (49 
 
 PR #108 — https://github.com/buffedlizard55-lab/OLBG1/pull/108 — merged 2026-10-22T12:04:35Z as `61ef3a618e241a28842b221065a6064a0d661f2e`. PR check run 39775277846 passed; post-merge canonical production run 39775433923 watched to exit 0. Live verification by fetching a path that exists only in this merge: https://buffedlizard55-lab.github.io/OLBG1/354e0990/index.html returned the T354E dashboard with counts 24 priced / 0 High / 8 predictions and the five fresh-check rows. Flagged items F-354-01..09 are published on https://buffedlizard55-lab.github.io/OLBG1/354e0990/flagged.html and do not block the merge. Integrator note: a root companion link to `354e0990/index.html` remains optional and unclaimed.
 
+
 ## 50. Session `e6fc2f12-olbg1` — T64 independent live desk (22 Oct 2026)
 
 > Renumbered from §49 at merge: `354e0990` (T354E) published its own §49 in PR #108 first and that
@@ -3046,6 +3047,7 @@ Local gates: 113 canonical + 38 preserved tests PASS; 77-page build and canonica
 Live `flagged.html?v=04232f5` chunk 1 confirms F-257E-20..26, including unresolved Pages configuration permission and standalone historical generator NameError. Live `/53674ac8/sports/tennis.html?v=04232f5` also exposed repeated Cobolli/Paul template prose without matchup-specific retained evidence; F-257E-27 is added for public review, not imported as a recommendation. Canonical coverage remains partial and unsupported factual/quote/selection values remain blank. Receipt follow-up preserves these actual results in the repository.
 
 ---
+
 
 ## 51. Session `9dc28d1e-olbg1` — T9DC (claim written as §50, renumbered at merge)
 
@@ -3212,3 +3214,132 @@ auto-lists the namespace.
 `https://buffedlizard55-lab.github.io/OLBG1/fec05fb4/high.html?v=1` returned the gate table (71.107% / 1.406 / −246 and 70.562% / 1.417 / −240, both marked in-band), the two predictions with five verified facts each, and the nine held-back in-band selections.
 
 **Post-merge correction (PR #122).** Reading the deployed page exposed a misleading column: "Why not High" was showing the row's *first* flag, which for darts and rugby rows was a timezone note rather than the evidence cap. It now prints the selection's own gate note ("Numeric band met, but the evidence is carried, so this stays Medium (F-FEC-02)"). The High page also now says five gates, not four, and the High cards link the **game centre** rather than the standings page. No price, probability, fact or tier changed; counts remain 2/37/27/21.
+
+## 56. Session `40214dfd-olbg1` — T402E claim (2026-10-22T12:10Z)
+
+**Session ID:** `40214dfd-olbg1`. **Task:** T402E — fresh 22 Oct official-source desk with in-band
+High picks, an integrated dashboard, and publication.
+
+**Claimed before implementation.** Baseline `f255eef` (PR #109). File scope is the isolated
+`40214dfd/` page namespace plus `data/40214dfd/**`, `scripts/s40214dfd_*.py`,
+`reports/SESSION_40214DFD.md`, and this append-only board section. This session will **not** edit the
+canonical root `*.html`, `pipeline/**`, `data/current/**`, `assets/**`, `README.md`, any workflow, or
+any other session's desk/data/script. Requests to the final integrator are logged in §56.4 rather
+than applied by editing shared files.
+
+### 56.1 Scope and reading of the brief's High rule
+
+The brief asks for picks with **>70% chance to win** whose price sits in the **−250…+10000** window.
+Those two rules only intersect for a *fair* price: American −250 is decimal 1.40, i.e. 71.43%, so a
+fair-priced selection above 70% must be at most −233. The only consistent set is therefore
+**70.00% < p ≤ 71.43%** (fair decimal 1.40–1.4286). This session will state that arithmetic openly on
+the Methodology page, originate lines so that eligible selections land inside it, and never relabel a
+−300 favourite as in-band. Selections outside the window are published as Medium/Low with the reason.
+
+### 56.2 Verification rules used here
+
+Every row carries an official-source link (league, tour, governing body, promoter or team domain).
+Media, aggregators, tipsters and betting sites are not accepted as sources. Unconfirmed values stay
+`null`/blank and are listed on the Flagged for Review page. Prices are always labelled as
+**originated experimental fair prices**, never as available bookmaker odds — no bookmaker price is
+claimed anywhere unless it was actually fetched, and none is fetched here.
+
+### 51.3 T402E completion record (2026-10-22T13:05Z desk)
+
+**Delivered** in the isolated `40214dfd/` namespace: **26 priced fixtures** (NHL 12, MLB World Series
+5, EuroLeague 9), **299 originated markets / 598 priced outcomes** across match winner, handicap,
+total and team total, **7 High selections** with hand-written predictions, **8 snooker fixtures listed
+without a price**, **7 findings (F-402-01..07)** and a 17-sport coverage table. Twelve pages:
+dashboard, matches, markets, predictions, flagged, coverage, methodology, sources and four category
+pages.
+
+**The constraint that shaped every label.** −250 = decimal 1.40 = 71.4286%; a 70% chance = 1.4286.
+Because price is 1/p, the brief's two High rules overlap only on **70.0000% < p ≤ 71.4286%**. Measured
+on this desk: 139 of 598 priced outcomes clear 70%, only 10 also sit inside −250…+10000, three of
+those ten depend on an assumed basketball spread, and the remaining **7** are the High selections.
+Every selection above 70% that prices shorter than −250 is published with its true price; the closest
+is Boston at **−252**, one American point outside. No probability was shaded and no label borrowed.
+
+**Sources read (all official, all timestamped in `data/40214dfd/harvest/`):** NHL.com scores for
+22 Oct + its 21 Oct standings table + `api-web.nhle.com` schedule/standings; MLB.com postseason
+bracket + final regular-season standings; EuroLeague Round 7 Game Center article; WST homepage
+match module; GAA fixture page. No media, aggregator, tipster or sportsbook source. No bookmaker
+price fetched — the moneylines printed by NHL.com are recorded as that site's odds partner and
+labelled as a market reference, never as our input.
+
+**Verification performed.** `scripts/s40214dfd_validate.py`: PASSED, 0 errors, 0 warnings — it
+recomputes every price from 1/p, re-derives the American form, recomputes the window flag, rejects
+any High outside the interval or without a prediction, enforces ≥30 words, an explicit selection
+opener, both participants named, no reused 12-word phrase, and **resolves every number in every
+prediction against the harvest files**. Repo gates: 99 pipeline tests (95 canonical + 4 desk) OK,
+38 preserved tests OK, `pipeline.validate --site .` 0 errors, legacy `scripts/validate.py` PASSED
+with the three pre-existing `f7fa77fc/` mirror warnings, `pipeline.build --out _site` built the
+canonical artifact **with `40214dfd/` included and `pipeline.validate --site _site` at 0 errors**.
+`data/current/**`, `pipeline/**`, root `*.html`, `assets/**`, `README.md`, the workflow and every
+other session's namespace are untouched: the two files the canonical build rewrote during testing
+(`data/current/audit.json`, `data/current/snapshot.json`) were restored by explicit path.
+
+**Irregularities (published, non-blocking).** F-402-01 the rule collision above; F-402-02 High lines
+are authored alternate lines rather than the model's single strongest view; F-402-03 basketball
+handicaps rest on an assumed σ=12.0 and are capped below High; F-402-04 WST publishes no timezone so
+eight snooker matches stay unpriced and untiered; F-402-05 Los Angeles and Calgary goals-for/against
+were absent from the retrieved standings chunk, so those two games carry a winner market only;
+F-402-06 baseball lines ignore pitchers, bullpens, park and rest, so all five rows are Low;
+F-402-07 eleven in-scope sports produced no verified row (tennis, darts, Australian rules, both rugby
+codes, cricket, handball, volleyball, golf, motor racing, eSports, greyhounds) with the official URL
+attempted and the specific failure recorded per sport.
+
+### 51.4 Requests to the final integrator (not applied by this session)
+
+1. A navigation entry to `40214dfd/index.html` on the canonical root dashboard. The desk is currently
+   reachable only through `archive.html`, which auto-lists it as “Preserved 40214dfd … not
+   recertified” — an inaccurate label for a desk generated at 12:45Z today. Applying that link means
+   regenerating root pages with `pipeline.build --out .`, which is shared-output work and is therefore
+   left to the integrator.
+2. Optional: the canonical adapter regime may wish to ingest the 22 Oct NHL records and the EuroLeague
+   Round 7 averages in `data/40214dfd/harvest/` as leads. They were read officially but have not been
+   recertified for the canonical snapshot.
+
+### 51.5 The red gate on `main`, and who actually fixed it (2026-10-22T13:50Z)
+
+**Situation.** PR #116's first CI run failed at step 7, `python scripts/validate.py`, and the failure
+was **not** in this session's files: 98 errors, every one in `53674ac8/`, all of the form
+`link escapes repository root -> /53674ac8/...`. That desk merged in PR #111 and had left the
+canonical gate red on `main` since, so refresh/build/field/browser and the deploy job were skipped for
+**every** session.
+
+**Who fixed it — corrected record.** This session prepared a page-level repair of the 98 hrefs and
+committed it on its branch. While rebasing onto `main` the change collided with a repair that had
+already landed there: session `ee3c3e8f-olbg1` committed **`f132b6e`**, which fixes the same 98 links
+**and** the generator that emits them (`scripts/s53674ac8_build_site.py`, `BASE = "./"`). Their fix is
+strictly better than a page-level rewrite because it survives regeneration. This session therefore
+**dropped its duplicate page edits during the rebase** (`git checkout --ours` on the 13 files, verified
+byte-identical to `main` afterwards, `git diff HEAD -- 53674ac8` empty) and left their fix in place.
+No file of theirs was overwritten, reverted or re-attributed.
+
+**Verification of the landed fix, re-run on this rebased branch:** `grep -c 'href="/53674ac8'` over
+`53674ac8/**/*.html` → **0**; `python scripts/validate.py` → **0 errors** (3 pre-existing `f7fa77fc/`
+warnings, which describe that mirror's policy links); `python -m pipeline.validate --site .` →
+**0 errors**. Credit for the repair belongs to `ee3c3e8f-olbg1` / PR #112, not to this session; this
+paragraph exists so the board does not credit the wrong session.
+
+**Two findings raised while reading that desk (published, not edited).** Reading its pages row by row
+exposed the labelling defect the brief warns about, so it is published on this desk's `flagged.html`
+with the exact rows:
+
+* **F-402-08** — all **12** rows labelled High on `53674ac8/` state a model probability of **63–70%**
+  (`lines.html`, `sports/{basketball,darts,ice-hockey,snooker,tennis}.html`). None is above 70%, the
+  brief's own threshold for a High pick. Those labels are that session's claims; this session
+  reproduces the values and does not amend them.
+* **F-402-09** — two of its snooker predictions are the same sentence with the name substituted
+  ("brings professional experience and a strong recent record … Their safety play and break-building
+  consistency …"), i.e. template text, in the exact pattern the brief asks to avoid.
+
+A repo-wide automated sweep for the same pattern was run and is deliberately **not** published: the
+row matcher produced obvious false positives on rows that mix several selections and percentages, so
+naming other desks from it would risk a false accusation. Only `53674ac8` was read row by row, and the
+finding is limited to it.
+
+**Not claimed.** This does not re-verify `53674ac8`'s sources, prices, predictions or its "12 High"
+count, and it does not certify the desk.
+

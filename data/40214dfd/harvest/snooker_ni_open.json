@@ -1,0 +1,24 @@
+{
+  "source_id": "wst-nio-2026",
+  "publisher": "World Snooker Tour (WST, official)",
+  "url": "https://www.wst.tv/",
+  "supporting_urls": ["https://www.wst.tv/matches/"],
+  "observed_from_utc": "2026-10-22T12:36:00Z",
+  "observed_to_utc": "2026-10-22T12:41:00Z",
+  "extraction": "The 'Live and Upcoming Matches' module on the official WST homepage was read: event name, round, players and the clock values as displayed.",
+  "caveats": [
+    "WST renders the match clock in the viewer's local time without printing a timezone or UTC offset. The official page therefore does NOT establish an exact start time for any match. start_utc is null for every row and every row is published in the time-unverified group.",
+    "No WST ranking table, season record or frame-level form was retrieved in this session, so no market is originated and no confidence tier is assigned.",
+    "Two 08:00 matches were already marked 'Live Now' at read time and are listed only as in-play context, not as pre-match selections."
+  ],
+  "matches": [
+    {"id":"wst-nio-r3-01","event":"BetVictor Northern Ireland Open 2026","round":"Round 3","player_a":"Kyren Wilson","player_b":"Pang Junxu","display_clock":"08:00","display_date":"22 Oct","state":"live_at_read","start_utc":null},
+    {"id":"wst-nio-r3-02","event":"BetVictor Northern Ireland Open 2026","round":"Round 3","player_a":"Matthew Selt","player_b":"Sam Craigie","display_clock":"08:00","display_date":"22 Oct","state":"live_at_read","start_utc":null},
+    {"id":"wst-nio-r3-03","event":"BetVictor Northern Ireland Open 2026","round":"Round 3","player_a":"Elliot Slessor","player_b":"Ricky Walden","display_clock":"09:00","display_date":"22 Oct","state":"upcoming_unverified_time","start_utc":null},
+    {"id":"wst-nio-r3-04","event":"BetVictor Northern Ireland Open 2026","round":"Round 3","player_a":"Anthony McGill","player_b":"Mateusz Baranowski","display_clock":"09:00","display_date":"22 Oct","state":"upcoming_unverified_time","start_utc":null},
+    {"id":"wst-nio-r3-05","event":"BetVictor Northern Ireland Open 2026","round":"Round 3","player_a":"Mark Williams","player_b":"Martin O'Donnell","display_clock":"14:00","display_date":"22 Oct","state":"upcoming_unverified_time","start_utc":null},
+    {"id":"wst-nio-r3-06","event":"BetVictor Northern Ireland Open 2026","round":"Round 3","player_a":"David Gilbert","player_b":"Cheung Ka Wai","display_clock":"14:00","display_date":"22 Oct","state":"upcoming_unverified_time","start_utc":null},
+    {"id":"wst-nio-r3-07","event":"BetVictor Northern Ireland Open 2026","round":"Round 3","player_a":"Jordan Brown","player_b":"Scott Donaldson","display_clock":"15:00","display_date":"22 Oct","state":"upcoming_unverified_time","start_utc":null},
+    {"id":"wst-nio-r3-08","event":"BetVictor Northern Ireland Open 2026","round":"Round 3","player_a":"Jak Jones","player_b":"Daniel Wells","display_clock":"15:00","display_date":"22 Oct","state":"upcoming_unverified_time","start_utc":null}
+  ]
+}

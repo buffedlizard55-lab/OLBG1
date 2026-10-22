@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology · OLBG evidence desk 40214dfd</title>
+<meta name="description" content="Independent, source-linked match research for 22 October 2026. Originated fair prices, explicit confidence tiers and a flagged-for-review register.">
+<style>
+:root{--ink:#122029;--muted:#5b6b77;--line:#dde5ec;--bg:#f4f7fa;--card:#ffffff;
+--navy:#0b2540;--accent:#1f6feb;--high:#0b6b3a;--highbg:#e5f6ec;--med:#8a4b00;--medbg:#fdf1e0;
+--low:#40505c;--lowbg:#eef2f6;--flag:#a11b2b;--flagbg:#fdecee}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header.top{background:var(--navy);color:#fff;padding:16px 22px 12px}
+header.top .brand{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:baseline}
+header.top h1{font-size:19px;margin:0;font-weight:650;letter-spacing:.2px}
+header.top .meta{font-size:12.5px;color:#b9cde0}
+nav.main{margin-top:10px;display:flex;flex-wrap:wrap;gap:4px}
+nav.main a{color:#d9e8f7;font-size:13.5px;padding:5px 9px;border-radius:6px}
+nav.main a:hover{background:#16395c;text-decoration:none}
+nav.main a.on{background:#1f4f7d;color:#fff;font-weight:600}
+main{max-width:1240px;margin:0 auto;padding:22px 18px 60px}
+h2{font-size:17px;margin:26px 0 10px}
+h3{font-size:15px;margin:18px 0 8px}
+p.lede{font-size:15.5px;color:#31424f;max-width:82ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:14px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:13px 14px}
+.kpi .n{font-size:24px;font-weight:700;line-height:1.1}
+.kpi .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0}
+.wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#eaf1f8;font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:#2c4051;
+position:sticky;top:0}
+tbody tr:hover{background:#f8fbfd}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.badge{display:inline-block;padding:2px 7px;border-radius:20px;font-size:11.5px;font-weight:700;
+letter-spacing:.3px;text-transform:uppercase}
+.b-high{background:var(--highbg);color:var(--high)}
+.b-med{background:var(--medbg);color:var(--med)}
+.b-low{background:var(--lowbg);color:var(--low)}
+.b-none{background:#eef0f2;color:#68757f}
+.muted{color:var(--muted)}
+.small{font-size:12.5px}
+.flag{border-left:4px solid var(--flag);background:var(--flagbg);padding:12px 16px;border-radius:8px;margin:12px 0}
+.flag h4{margin:0 0 6px;font-size:14.5px;color:var(--flag)}
+.note{border-left:4px solid var(--accent);background:#eef5ff;padding:12px 16px;border-radius:8px;margin:12px 0}
+.pred{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0}
+.pred h3{margin:0 0 4px;font-size:16px}
+.pred .sel{font-weight:700;color:var(--high)}
+.pred .body{font-size:15px;margin:8px 0}
+.pred ul{margin:8px 0 0 18px;padding:0}
+.pred li{font-size:12.5px;color:var(--muted);margin:2px 0}
+footer{max-width:1240px;margin:0 auto;padding:18px;color:var(--muted);font-size:12.5px;
+border-top:1px solid var(--line)}
+.tag{font-size:11px;padding:2px 6px;border-radius:4px;background:#eef2f6;color:#46596a}
+</style></head><body>
+<header class="top"><div class="brand">
+<h1>OLBG evidence desk · session 40214dfd</h1>
+<span class="meta">As of 2026-10-22 12:45 UTC · 17 sports in scope · prices are originated fair prices, never bookmaker offers</span>
+</div>
+<nav class="main"><a class="" href="index.html">Dashboard</a><a class="" href="matches.html">Matches</a><a class="" href="markets.html">Markets</a><a class="" href="predictions.html">High predictions</a><a class="" href="flagged.html">Flagged for review</a><a class="" href="coverage.html">Sport coverage</a><a class="on" href="methodology.html">Methodology</a><a class="" href="sources.html">Sources</a><a href="index.html#sports">Sports ▾</a></nav>
+<nav class="main small"><a href="sports/ice-hockey.html">Ice hockey</a><a href="sports/baseball.html">Baseball</a><a href="sports/basketball.html">Basketball</a><a href="sports/snooker.html">Snooker</a></nav>
+</header><main>
+<p class="lede">The desk originates its own prices from statistics it read on official pages. This
+page states the model, the parameters, the confidence rule and the limits, so a reader can decide
+how much weight to give any row.</p>
+
+<h2>1. The rule collision at the heart of the brief</h2>
+<div class="card"><p>The brief asks for two things at once: a selection with a greater than 70% chance,
+and a price between −250 and +10000.</p>
+<p>American −250 converts to decimal 1.40 (<code>(100/250)+1</code>). A 70% chance converts to decimal
+1.4286. A 71.43% chance is exactly decimal 1.40. A 75% chance is decimal 1.333, which is −300. In
+other words, the higher the chance, the <em>shorter</em> the price, and every chance above 71.43%
+prices beyond the −250 floor.</p>
+<p>The two rules therefore overlap on one narrow interval: <strong>70.0000% &lt; p ≤ 71.4286%</strong>.
+This desk publishes High only there. It does not describe a −311 or −544 selection as in-window,
+and it does not shade a probability to fit. Those selections are listed with their true prices on
+<a href="flagged.html">Flagged for review</a>.</p></div>
+
+<h2>2. How the prices are made</h2>
+<div class="card"><ul>
+<li><strong>Win rate:</strong> Beta(2,2) shrinkage of the season win rate, then log5 between the two shrunk rates. No home-field term is added because no home-split edge is measured here.</li>
+<li><strong>NHL settlement:</strong> Binary market: wins include overtime and shootout wins; losses include regulation, overtime and shootout losses.</li>
+<li><strong>Goals and runs:</strong> Independent Poisson goals per side. Each side&#x27;s rate averages its own goals-for per game and the opponent&#x27;s goals-against per game. Regulation-goal approximation: overtime and shootout goals are not separate events in the grid. Independent Poisson runs per side, conditioned on the game not finishing tied. Rates average own runs scored per game and opponent runs allowed per game from the final regular-season table. Postseason personnel, starting pitchers, bullpens, parks and travel are not modelled.</li>
+<li><strong>Basketball handicaps:</strong> Margins are modelled as Normal with an ASSUMED standard deviation of 12.0 points; the mean is set so that the model&#x27;s win probability is reproduced. 12.0 is an assumption, not a measured league constant, and basketball handicap rows are capped below High for that reason.</li>
+<li><strong>Basketball totals:</strong> Expected total is the sum of the two sides&#x27; expected points, where a side&#x27;s expectation averages its own points per game and the opponent&#x27;s points allowed per game as quoted by the official preview. Totals are only originated when BOTH averages are published.</li>
+<li><strong>Lines:</strong> Only half-point lines are originated, so every handicap or total settles without a push. Whole-number lines are deliberately not offered.</li>
+<li><strong>Price:</strong> fair decimal = 1/p, then the American form is derived with the standard
+conversion. There is no margin, no limit and no availability claim.</li>
+</ul></div>
+
+<h2>3. The confidence rule, exactly as implemented</h2>
+<div class="card"><p>The brief asks for selections above a 70% chance whose price is inside -250..+10000. American -250 is decimal 1.40, i.e. 71.4286%. A fair price above 70% is therefore at most 1.4286 decimal, so the two rules only intersect on 70.0000% &lt; p &lt;= 71.4286%. High is issued only inside that intersection, with verified inputs on both sides and a written prediction.</p>
+<p><strong>High</strong> needs all of: p above 70.00%; p at or below 71.4286% so the fair price stays
+inside −250; verified inputs on both sides; a verified settlement definition; no assumed-only
+parameter carrying the number; and an attached written prediction of at least 30 words.</p>
+<p><strong>Medium</strong> covers a strong view that is priced shorter than −250, or a selection whose
+inputs are complete but which lacks a written prediction or depends on the assumed basketball spread.</p>
+<p><strong>Low</strong> is everything else, including every baseball row, because starting pitchers and
+bullpens are not captured.</p></div>
+
+<h2>4. Selection of lines, disclosed</h2>
+<div class="card"><p>For each fixture the desk generated a ladder of alternate lines in half-point
+steps around the model expectation: totals, team totals, puck lines and run lines. A High selection
+is a rung of that ladder whose model probability lands inside the 70.00–71.43% interval. That is a
+deliberate choice of line, not a discovered edge, and it is why F-402-02 is published. The
+match-winner view for the same fixture is shown separately on <a href="matches.html">Matches</a> and
+keeps its own tier.</p></div>
+
+<h2>5. Market families investigated</h2>
+<div class="wrap"><table><thead><tr><th>Market family</th><th>Status here</th><th>Why</th></tr></thead><tbody>
+<tr><td>Match winner</td><td>originated for all 26 priced fixtures</td><td>Record-based with Beta shrinkage and log5.</td></tr>
+<tr><td>Handicap / puck line / run line</td><td>originated for 15 goal- or run-based fixtures and all 9 EuroLeague games</td><td>Poisson margin grid where goals or runs are verified; assumed 12.0-point normal spread for basketball, which caps those rows below High.</td></tr>
+<tr><td>Total</td><td>originated for 12 NHL and 5 MLB fixtures</td><td>Withheld for EuroLeague: the official preview published scoring averages for only one side in most games, so a total could not be originated without inventing the other side.</td></tr>
+<tr><td>Team total</td><td>originated for 12 NHL and 5 MLB fixtures</td><td>Same Poisson inputs as the total.</td></tr>
+<tr><td>Period / half / quarter markets</td><td>withheld</td><td>No period-level official data was read, so a period split would be an assumption presented as a fact.</td></tr>
+<tr><td>Correct score</td><td>withheld</td><td>The Poisson grid exists, but a correct-score market needs an exact-score tail the model is not validated for.</td></tr>
+<tr><td>Player props</td><td>withheld</td><td>Confirmed availability, rotation and usage were not verified for any fixture.</td></tr>
+<tr><td>Outrights / futures</td><td>out of scope</td><td>Multi-runner markets need a field and a ranking table; neither was read for golf, motor racing or greyhounds.</td></tr>
+</tbody></table></div>
+
+<h2>6. What is not modelled</h2>
+<div class="card"><ul>
+<li>Starting pitchers, bullpens, rest, travel, park factors and weather.</li>
+<li>Injuries, suspensions, line combinations and confirmed starting goaltenders.</li>
+<li>Home advantage: no home-field term is added, so a home row is not flattered.</li>
+<li>Market prices: no sportsbook was queried. The moneylines printed by NHL.com are shown as a
+reference on the fixtures and are labelled as that site's odds partner, not as our input.</li>
+<li>Correlation between selections. Two High selections in the Utah–Seattle game are separate markets,
+not independent bets, and no staking combination is suggested.</li>
+</ul></div>
+
+<h2>7. Verification method</h2>
+<div class="card"><p>Each harvest file records the URL, the publisher, the exact fields read, the
+observation window and — deliberately — what was <em>not</em> read. Facts were transcribed from the
+official page in the same session, and anything the page did not publish was left null. The build
+validator refuses to publish a row without an official link, a prediction under 30 words, a duplicate
+prediction, a price that does not equal 1/p, or a High label outside the interval.</p></div>
+</main>
+<footer>Independent research. Not affiliated with OLBG. No guarantee of profit and no staking advice.
+Every table row links to the official page its facts came from. Blank means unverified — never zero, never inferred.
+Built by session 40214dfd-olbg1 · <a href="../index.html">Canonical project dashboard</a></footer>
+</body></html>
