@@ -27,7 +27,7 @@ Unverified values are blank on every table rather than guessed.</p></div>
 <div class="kicker">F-FEC-02 · high severity</div>
 <h3>Carried evidence is capped at Medium even when it lands inside the band</h3>
 <p class="small">4 rows have carried official inputs and an in-band 70-71.43% selection (darts 2, rugby-league 2). They keep their prices but cannot be High, because this desk did not re-read the source; every one is published as Medium with the cap stated on the row.</p>
-<p class="source">Evidence: COORDINATION.md s50; data/fec05fb4/desk.json rows[].evidence_status</p></article><article class="card" id="F-FEC-03">
+<p class="source">Evidence: COORDINATION.md §53; data/fec05fb4/desk.json rows[].evidence_status</p></article><article class="card" id="F-FEC-03">
 <div class="kicker">F-FEC-03 · high severity</div>
 <h3>The model is transparent but not calibrated out of sample</h3>
 <p class="small">Every price comes from a documented logit or normal model with published constants. There is no measured hit rate for these constants and no closing-line value study. A High label means the desk&#x27;s stated rule was satisfied, not that a 71% winner has been demonstrated.</p>
@@ -45,8 +45,8 @@ Unverified values are blank on every table rather than guessed.</p></div>
 <p class="small">The PDC schedule and preview pages returned only a consent wall at 12:34Z. The official draw, seeds and session windows are carried from the 07:44Z read, so the two near-band darts rows are Medium and their tie times remain blank.</p>
 <p class="source">Evidence: https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/</p></article><article class="card" id="F-FEC-07">
 <div class="kicker">F-FEC-07 · medium severity</div>
-<h3>32 legacy listings have no verified start time</h3>
-<p class="small">Tennis (11), snooker (11), cricket (5), golf (4) and eSports (1) rows carry a date but no verified clock. They are published blank and unpriced on their category pages and are not counted as upcoming.</p>
+<h3>62 captured listings are published blank</h3>
+<p class="small">Of the 62 listing-only rows, 32 have no verified start time — tennis (11), snooker (11), cricket (5), golf (4) and eSports (1) — and 30 had already started before the 12:45Z cut-off. None is priced, none is counted as upcoming, and each carries its governing-body source link on its category page.</p>
 <p class="source">Evidence: data/fec05fb4/desk.json listing_only</p></article><article class="card" id="F-FEC-08">
 <div class="kicker">F-FEC-08 · high severity</div>
 <h3>The NHL record-only model disagrees with the market reference</h3>
@@ -74,7 +74,7 @@ Unverified values are blank on every table rather than guessed.</p></div>
 <p class="source">Evidence: Methodology page</p></article><article class="card" id="F-FEC-14">
 <div class="kicker">F-FEC-14 · low severity</div>
 <h3>2 High selections, 37 Medium and 48 Low/unpriced</h3>
-<p class="small">Both Highs are EuroLeague handicap or total lines originated at a 70-71.43% cover, not moneylines. Each carries a unique 60-word prediction, two-sided official evidence and a fresh read of the availability report. No High was issued for a big favourite just because it was a big favourite.</p>
+<p class="small">Both Highs are EuroLeague handicap or total lines originated at a 70-71.43% cover, not moneylines. Each carries a unique prediction (81 and 88 words), two-sided official evidence and a fresh read of the availability report. No High was issued for a big favourite just because it was a big favourite.</p>
 <p class="source">Evidence: data/fec05fb4/desk.json rows[].tier</p></article></div>
 </main>
 <footer class="bottom"><div class="wrap">

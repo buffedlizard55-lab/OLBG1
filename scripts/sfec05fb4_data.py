@@ -682,7 +682,7 @@ def build_flags(rows, listings, cov) -> list:
              detail=(f"{len([r for r in rows if r['evidence_status'] == 'carried' and (r.get('selection') or {}).get('in_band')])} rows have carried official inputs and an in-band 70-71.43% selection "
                      f"({', '.join(f'{k} {v}' for k, v in sorted({s: len([r for r in rows if r['sport'] == s and r['evidence_status'] == 'carried' and (r.get('selection') or {}).get('in_band')]) for s in {r['sport'] for r in rows}} .items()) if v)}). "
                      "They keep their prices but cannot be High, because this desk did not re-read the source; every one is published as Medium with the cap stated on the row."),
-             source="COORDINATION.md s50; data/fec05fb4/desk.json rows[].evidence_status"),
+             source="COORDINATION.md §53; data/fec05fb4/desk.json rows[].evidence_status"),
         dict(id="F-FEC-03", severity="high", title="The model is transparent but not calibrated out of sample",
              detail=("Every price comes from a documented logit or normal model with published constants. There is no measured hit rate for these constants and no closing-line value study. "
                      "A High label means the desk's stated rule was satisfied, not that a 71% winner has been demonstrated."),
@@ -698,8 +698,9 @@ def build_flags(rows, listings, cov) -> list:
         dict(id="F-FEC-06", severity="medium", title="PDC pages returned a cookie wall on re-fetch",
              detail=("The PDC schedule and preview pages returned only a consent wall at 12:34Z. The official draw, seeds and session windows are carried from the 07:44Z read, so the two near-band darts rows are Medium and their tie times remain blank."),
              source="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"),
-        dict(id="F-FEC-07", severity="medium", title="32 legacy listings have no verified start time",
-             detail=("Tennis (11), snooker (11), cricket (5), golf (4) and eSports (1) rows carry a date but no verified clock. They are published blank and unpriced on their category pages and are not counted as upcoming."),
+        dict(id="F-FEC-07", severity="medium", title="62 captured listings are published blank",
+             detail=("Of the 62 listing-only rows, 32 have no verified start time — tennis (11), snooker (11), cricket (5), golf (4) and eSports (1) — and 30 had already started before the 12:45Z cut-off. "
+                     "None is priced, none is counted as upcoming, and each carries its governing-body source link on its category page."),
              source="data/fec05fb4/desk.json listing_only"),
         dict(id="F-FEC-08", severity="high", title="The NHL record-only model disagrees with the market reference",
              detail=("NHL.com publishes a DraftKings moneyline beside every game. The model, which uses only points percentage, differs by up to 21 points from the de-vigged market on this board. "
@@ -721,7 +722,7 @@ def build_flags(rows, listings, cov) -> list:
              detail=("Medium = an in-band 70-71.43% selection that fails the High evidence test, or a winner at 62%+. Low = anything else that is priced. These thresholds are the desk's own; they are not industry standards."),
              source="Methodology page"),
         dict(id="F-FEC-14", severity="low", title=f"{len(highs)} High selections, {len(med)} Medium and {len(rows)-len(highs)-len(med)} Low/unpriced",
-             detail=("Both Highs are EuroLeague handicap or total lines originated at a 70-71.43% cover, not moneylines. Each carries a unique 60-word prediction, two-sided official evidence and a fresh read of the availability report. "
+             detail=("Both Highs are EuroLeague handicap or total lines originated at a 70-71.43% cover, not moneylines. Each carries a unique prediction (81 and 88 words), two-sided official evidence and a fresh read of the availability report. "
                      "No High was issued for a big favourite just because it was a big favourite."),
              source="data/fec05fb4/desk.json rows[].tier"),
     ]
