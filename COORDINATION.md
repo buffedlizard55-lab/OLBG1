@@ -105,7 +105,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 
 | T22 | Third independent re-check after T20/T21: RLWC26 source URLs, tennis pairing provenance, prediction prose de-templating | done | 3c7579ed-olbg1 | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py`, `scripts/high_predictions.py`, `scripts/live_verification.py`, `data/*`, `COORDINATION.md` (append-only) | 2026-10-21T08:20Z | Claimed as T17 at 07:40Z; T17/T20/T21 were taken by 72198d3e, 76950c25 and 4f8d032d while this branch was open, so the task is recorded as T22 (§19). Additive: extends T20's verification register rather than publishing a parallel page. |
 
-| T43 | **Final integration pass (2026-10-22):** fresh official-source re-verification of every live row, expiry of completed fixtures, confidence-band policy (−250…+10000) enforcement, new 30+ word unique predictions, consolidated clean dashboard, validator gate, PR + merge + Pages deploy check | in progress | e381d2e3-olbg1 | `data/v3/**`, `scripts/v3_*.py`, `v3/**`, `index.html` (consolidated landing only), `COORDINATION.md` (append-only §33) | 2026-10-22T01:25Z | Renumbered T41→T43 on rebase (§31/§32 had already taken T41/T42 and merged as PR #46/#47). Non-overlapping `v3/` namespace; no other session's dashboard, dataset or generator edited. |
+| T43 | **Final integration pass (2026-10-22):** fresh official-source re-verification of every live row, expiry of completed fixtures, confidence-band policy (−250…+10000) enforcement, new 30+ word unique predictions, consolidated clean dashboard, validator gate, PR + merge + Pages deploy check | done | e381d2e3-olbg1 | `data/v3/**`, `scripts/v3_*.py`, `v3/**`, `index.html` (consolidated landing only), `COORDINATION.md` (append-only §33) | 2026-10-22T01:25Z | Renumbered T41→T43 on rebase (§31/§32 had already taken T41/T42 and merged as PR #46/#47). Non-overlapping `v3/` namespace; no other session's dashboard, dataset or generator edited. |
 
 ---
 
@@ -1425,3 +1425,90 @@ window has to be the binding constraint. The fix, the arithmetic and the remaini
   the documented 404-cache behaviour, not a missing file: `git ls-tree origin/main 7a5b5360/` lists every
   page and `7a5b5360/assets/style.css`, and `scripts/s7a5b5360_validate.py` resolves all 14 pages and
   their assets locally with 0 errors.
+
+### 32.1 T42 result and publish record
+
+**Merged.** [PR #47](https://github.com/buffedlizard55-lab/OLBG1/pull/47) (`arena/2ca35f17-olbg1` → `main`)
+merged at **2026-10-22T01:30:33Z**, merge SHA `f4a1dc29989b981a837352cd6688f508fe442e51`. Rebased onto
+`origin/main` before merge; the rebase conflicted in `COORDINATION.md` (task row and section heading) and in
+`README.md`, where `7a5b5360-olbg1` had already claimed **T41** and published §31. Resolution: their T41 row and
+§31 were preserved verbatim; this session's task was renumbered **T42** and its section **§32**; both README
+sections were kept, theirs first. `git diff --diff-filter=D origin/main` on the branch is empty — nothing of
+theirs was removed. The `7a5b5360` companion link they added to the generated root navigation was moved into
+`scripts/build_site.py` so a rebuild cannot drop it.
+
+**Gates on the merged tree.** `validate.py` → VALIDATION PASSED, **0 errors, 6 warnings** (222 pages scanned;
+the warnings are the four internal-methodology references for T41-01/T41-03 and the two pre-existing
+`f7fa77fc/flagged.html` rows). `ebfbd966_validate.py`, `ccb6bde2_validate.py`, `c17a9192_validate.py`,
+`s984d417f_validate.py`, `s7a5b5360_validate.py` and `final_audit.py` all pass.
+
+**Pages deployment and live verification (2026-10-22T01:44Z).** The Pages run triggered by the merge was queued
+behind the concurrent `#46/#48/#49` merges and took roughly ten minutes; run **39706599919** is the one that
+carried `main` to `78948d9`. Live checks against `https://buffedlizard55-lab.github.io/OLBG1/`:
+
+* root dashboard now reports **29 High / 31 Medium / 66 Low**, `134 (128V · 5C · 1U)`, **29 written predictions**
+  and the price-window compliance notice;
+* `methodology.html` serves the new **§3 High-Confidence Price Window (-250 to +10000)** section verbatim;
+* the featured table publishes `Elena Rybakina -3.0 Games Handicap @ 1.49 (-204) · 63.8% model · In window` with
+  **7 originated markets** (winner + three handicap rungs + three totals rungs), i.e. the repriced selection and
+  the ladders are live, not just in the repo;
+* `live-verification.html` numbers match the register after the T41 layer: **78 rows re-read — 44 confirmed,
+  32 corrected, 2 flagged, 56 not re-checked**.
+
+An intermediate fetch served the previous cached `index.html` while `methodology.html` already showed the new
+content; a cache-busted request confirmed propagation. Same behaviour prior sessions recorded (§5.4).
+
+**Known interference to watch.** Concurrent sessions `7a5b5360-olbg1` (#46/#48), `e381d2e3-olbg1` (#49) and the
+`v3/` desk all merged into `main` inside the same ten minutes. `e381d2e3` patched a "Latest snapshot" banner onto
+the generated root `index.html`. That banner is hand-written into a generated file, so the next full rebuild of the
+root desk (which is what `scripts/build_site.py` does) will drop it unless it is moved into the generator. Logged
+here for the next integration session rather than fixed, because it belongs to their scope.
+
+**Still open and unchanged by this pass.** T10/T11/T12 (older queued items), T19 (live refresh publication), T35
+(root AFLW re-price), the 56 `not_rechecked` rows, and PR #40 (open/conflicting since 2026-10-21). None of them
+block this change.
+
+### 33.1 Publish record (2026-10-22T01:55Z)
+
+**Shipped.** [PR #49](https://github.com/buffedlizard55-lab/OLBG1/pull/49) — **MERGED** 2026-10-22T01:35:48Z, merge
+commit `78948d95890abeacb1e644850890b93e56aec0d5`. Opened and merged without waiting for review, per the
+brief. Branch `arena/e381d2e3-olbg1`, base `origin/main` at `f4a1dc2`, rebased twice onto `origin/main`
+during the merge race with #46/#47/#48/#50.
+
+**Numbers as shipped.** 127 rows / 120 priced head-to-heads / 3,468 originated prices / 7 event cards.
+Confidence: **10 High**, 68 Medium, 49 Low headline picks. 39 distinct official source URLs, 13 pages
+read on 22 October. Per sport: tennis 8, basketball 23, golf 4, cricket 4, snooker 8, rugby union 12,
+rugby league 7, baseball 4, ice hockey 14, motor racing 1, darts 16, handball 5, volleyball 6,
+Aussie rules 9, eSports 1, Gaelic football 4, greyhounds 1.
+
+**High selections (all inside −250…+10000, all with bespoke 30+ word previews).**
+`el-pao-bas-1022` Panathinaikos −1 @1.40 · `hand-ehf-12048` SC Magdeburg −1 @1.41 ·
+`nhl-2026020158` Florida Panthers @1.41 · `pdc-ec-16` Josh Rock @1.42 ·
+`rl-wc26w-sam-wal` Samoa Women −1.5 @1.40 · `rl-wc26-tga-lbn` Tonga −2.5 @1.40 ·
+`rl-wc26-eng-fra` England −9.5 @1.42 · `aflw-r11-07` Port Adelaide @1.41 ·
+`aflw-r11-09` Brisbane Lions −3 @1.40 · `aflw-r11-03` Melbourne −6.5 @1.41.
+
+**Gates.** `scripts/v3_validate.py` → PASS, 0 errors. `scripts/validate.py` → VALIDATION PASSED, 0 errors
+(two pre-existing `f7fa77fc/flagged.html` warnings, not authored here). `scripts/final_audit.py` → rerun,
+report unchanged because it audits the root desk.
+
+**Corrections published.** AFLW `aflw-r11-07` 08:15Z → **08:45Z** (7.15pm ACDT, not AEST); NHL 22 October
+re-keyed to the league's own game IDs `2026020154`–`2026020165` with `2026020166/0167` on 23 October;
+snooker card replaced by the eight Round 3 ties after Pang Junxu beat Liam Davies 4-3; MLB reduced to the
+World Series; 21 October NHL/NBA/greyhound cards, 11 snooker R2 ties, three Almaty rows and the two
+already-started T20Is expired.
+
+**Verification honesty.** Five cohorts could not be certified from a directly-read official page and are
+marked as such: PDC (pdc.tv consent wall — corroborated via the official article as indexed plus Sky/ESPN),
+golf (no entry list, event cards only), volleyball (PlusLiga URL now redirects to the women's TAURON Liga
+site), greyhounds (gbgb.org.uk HTTP 500) and the RLWC women's fixtures without a published clock.
+
+**Pages.** Deployment run `39706599919` for merge commit `78948d9` was created at 01:35:51Z and queued; a
+newer merge (`aa7a421`, PR #50) superseded it in the Pages concurrency group, so the first live check of
+`/v3/` returned the repository 404 page. The deployment is confirmed in §33.2 once the queue drains.
+
+**Cross-scope request (not actioned).** The root `index.html` is generated by `scripts/build_site.py`,
+which this session does not own. Session `2ca35f17` correctly notes that a future rebuild of the root desk
+will drop the "Latest snapshot → v3" banner that was hand-patched into that file. The durable fix belongs
+in `build_site.py`: emit the banner from the generator, or make `main`'s landing page link to `v3/` from
+the companion bar only. Filed here instead of editing another session's generator.
