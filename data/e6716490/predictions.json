@@ -1,6 +1,6 @@
 {
  "session": "e6716490-olbg1",
- "generated_utc": "2026-10-22T07:47:49Z",
+ "generated_utc": "2026-10-22T08:33:32Z",
  "rules": [
   "one hand-written prediction per High-confidence pick, never templated across picks",
   "at least 30 words, stating the team, the form, the recent record and the exact selection",
@@ -94,7 +94,7 @@
      "register_value": "0.750 (7-2-1, 3-1-0 home, +14 GD, OT1)",
      "official_value": "7-2-1 (10 GP), 0.750 points percentage, +14 goal differential, streak OT1",
      "result": "partial",
-     "reason": "corroborated record, pct, gd, streak; not quoted by the register: gp",
+     "reason": "corroborated record, gd, streak; not quoted by the register: pct, gp, pts",
      "source_id": "V1",
      "url": "https://api-web.nhle.com/v1/standings/2026-10-22"
     }
@@ -283,12 +283,45 @@
     }
    ],
    "verification": {
-    "status": "carried",
-    "pass": "984d417f-olbg1 register read 2026-10-22",
-    "sides_checked": [],
-    "results": []
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "partial",
+     "partial"
+    ]
    },
-   "row_checks": [],
+   "row_checks": [
+    {
+     "fixture_id": "aflw-r11-04",
+     "sport": "aussie-rules",
+     "fixture": "Carlton v GWS GIANTS",
+     "side": "home",
+     "team": "Carlton",
+     "register_value": "6th, 28 pts (7-3-0, 133.0%)",
+     "official_value": "7-3-0 (10 GP), 133.0 per cent, 6th on 28 pts (133.0%)",
+     "result": "partial",
+     "reason": "corroborated record, pct, pos, pts; not quoted by the register: gp",
+     "source_id": "V4",
+     "url": "https://www.afl.com.au/aflw/ladder"
+    },
+    {
+     "fixture_id": "aflw-r11-04",
+     "sport": "aussie-rules",
+     "fixture": "Carlton v GWS GIANTS",
+     "side": "away",
+     "team": "GWS GIANTS",
+     "register_value": "15th, 8 pts (2-8-0, 68.2%)",
+     "official_value": "2-8-0 (10 GP), 68.2 per cent, 15th on 8 pts (68.2%)",
+     "result": "partial",
+     "reason": "corroborated record, pct, pos, pts; not quoted by the register: gp",
+     "source_id": "V4",
+     "url": "https://www.afl.com.au/aflw/ladder"
+    }
+   ],
    "flags": [
     "Corrected main-desk bug: updated all 18 clubs from stale 2025 R10 ladder to live 2026 R10 ladder on afl.com.au"
    ]
@@ -717,7 +750,7 @@
      "register_value": "98-64 overall, 55-26 home (.679), beat Guardians 4-2 in ALCS",
      "official_value": "98-64 (162 GP), 0.605 points percentage, home 55-26 (.679), away 43-38 (.531), 736 runs scored / 650 allowed, streak L1",
      "result": "partial",
-     "reason": "corroborated record; not quoted by the register: pct, home, away, gp, runs_scored, streak",
+     "reason": "corroborated record, pct; not quoted by the register: home, away, gp, runs_scored, streak",
      "source_id": "V2",
      "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
     },
@@ -1472,10 +1505,16 @@
     }
    ],
    "verification": {
-    "status": "carried",
-    "pass": "984d417f-olbg1 register read 2026-10-22",
-    "sides_checked": [],
-    "results": []
+    "status": "re-fetched",
+    "pass": "e6716490 live re-fetch 2026-10-22",
+    "sides_checked": [
+     "home",
+     "away"
+    ],
+    "results": [
+     "partial",
+     "partial"
+    ]
    }
   },
   {

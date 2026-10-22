@@ -6,3 +6,10 @@ __pycache__/
 .cache/
 data/release/raw/
 reports/release_line_findings.csv
+# Canonical build / local browser tests / transient HTTP bodies
+_site/
+node_modules/
+.test-results/
+package-lock.json
+data/current/raw/
+*.tmp

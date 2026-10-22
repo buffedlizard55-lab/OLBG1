@@ -1,0 +1,84 @@
+{
+  "id": "atp-brussels-op",
+  "url": "https://www.protennislive.com/posting/2026/7485/op.pdf",
+  "final_url": "https://www.protennislive.com/posting/2026/7485/op.pdf",
+  "role": "official",
+  "sport": "tennis",
+  "method": "retrieval-tool-selected-excerpts",
+  "observed_after": "2026-10-22T07:17:40Z",
+  "observed_before": "2026-10-22T07:30:30Z",
+  "http_status": null,
+  "raw_response_sha256": null,
+  "excerpt_policy": "Selected, normalized excerpts and JSON field projections; not a byte-for-byte response or a verbatim full-page transcript.",
+  "scope": "22 October order-of-play; singles AND doubles; no results polling.",
+  "complete": false,
+  "notes": "Case normalized; pair membership retained. Clocks have no explicit timezone. Followed-by/not-before is not an exact start. Osaka Ruzic–Day RET row excluded.",
+  "observations": [
+    {
+      "id": "1",
+      "locator": "1",
+      "quote": "ORDER OF PLAY - THURSDAY, OCTOBER 22, 2026. Starts At 13:30: Raphael Collignon VS Jiri Lehecka.",
+      "values": {
+        "participant_a": "Raphael Collignon",
+        "participant_b": "Jiri Lehecka",
+        "date": "2026-10-22",
+        "time_text": "Starts At 13:30",
+        "competition": null,
+        "format": "singles"
+      }
+    },
+    {
+      "id": "2",
+      "locator": "2",
+      "quote": "ORDER OF PLAY - THURSDAY, OCTOBER 22, 2026. Followed By: David Goffin VS Alex Michelsen.",
+      "values": {
+        "participant_a": "David Goffin",
+        "participant_b": "Alex Michelsen",
+        "date": "2026-10-22",
+        "time_text": "Followed By",
+        "competition": null,
+        "format": "singles"
+      }
+    },
+    {
+      "id": "3",
+      "locator": "3",
+      "quote": "ORDER OF PLAY - THURSDAY, OCTOBER 22, 2026. Not Before 17:00: Damir Dzumhur VS Zizou Bergs.",
+      "values": {
+        "participant_a": "Damir Dzumhur",
+        "participant_b": "Zizou Bergs",
+        "date": "2026-10-22",
+        "time_text": "Not Before 17:00",
+        "competition": null,
+        "format": "singles"
+      }
+    },
+    {
+      "id": "4",
+      "locator": "4",
+      "quote": "ORDER OF PLAY - THURSDAY, OCTOBER 22, 2026. Starts At 15:00: Guido Andreozzi / Manuel Guinard VS Nicolas Barrientos / David Pel.",
+      "values": {
+        "participant_a": "Guido Andreozzi / Manuel Guinard",
+        "participant_b": "Nicolas Barrientos / David Pel",
+        "date": "2026-10-22",
+        "time_text": "Starts At 15:00",
+        "competition": null,
+        "format": "doubles"
+      }
+    },
+    {
+      "id": "5",
+      "locator": "5",
+      "quote": "ORDER OF PLAY - THURSDAY, OCTOBER 22, 2026. Followed By: Constantin Frantzen / Robert Galloway VS Raphael Collignon / David Goffin.",
+      "values": {
+        "participant_a": "Constantin Frantzen / Robert Galloway",
+        "participant_b": "Raphael Collignon / David Goffin",
+        "date": "2026-10-22",
+        "time_text": "Followed By",
+        "competition": null,
+        "format": "doubles"
+      }
+    }
+  ],
+  "sha256": "3caf6125bc6d4b3907d13bbffb46767b390dad9cbd542270fdf041c935a4d66c"
+}
