@@ -93,7 +93,7 @@ a:hover { text-decoration: underline; }
 .nav-link.active { background: var(--brand-soft); color: var(--brand); font-weight: 700; }
 .pill { font-size: 11px; padding: 1px 7px; border-radius: 999px; background: var(--surface-alt); color: var(--muted); }
 .nav-link.active .pill { background: #c5e7dc; color: var(--brand); }
-.content { padding: 26px 32px 48px; max-width: 1360px; width: 100%; }
+.content { padding: 26px 32px 48px; max-width: 1360px; width: 100%; min-width: 0; }
 .topbar {
   display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;
   padding-bottom: 16px; margin-bottom: 20px; border-bottom: 1px solid var(--border);
@@ -148,8 +148,8 @@ tbody tr:hover { background: #f8fafc; }
 .badge.info { background: #e0f2fe; color: #075985; }
 .blank { color: #64748b; font-style: italic; font-size: 12px; }
 .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
-.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; margin: 14px 0 24px; }
-.card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 14px; margin: 14px 0 24px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; min-width: 0; overflow-wrap: anywhere; }
 .card p { margin: 8px 0; color: var(--text); }
 .meta { font-size: 12px; color: var(--muted); }
 .sport-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; margin: 12px 0 22px; }
