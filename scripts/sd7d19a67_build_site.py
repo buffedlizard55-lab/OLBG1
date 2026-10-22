@@ -170,6 +170,13 @@ def link(url, label=None):
     return '<a href="%s" rel="noopener noreferrer">%s</a>' % (e(url), e(label or url.replace("https://", "")))
 
 
+def num(v):
+    """Render a count: a genuine zero is a zero, only None becomes a blank marker."""
+    if v is None:
+        return '<span class="blank">&mdash;</span>'
+    return e(v)
+
+
 def cell(v, fallback="&mdash;"):
     """Render a table cell value; an unconfirmed value becomes an explicit blank marker."""
     if v is None or v == "":
@@ -292,8 +299,8 @@ class Site:
             "<td class=\"num\">%s</td><td class=\"num\">%s</td><td class=\"num\">%s</td>"
             "<td class=\"num\">%s</td><td class=\"num\">%s</td><td class=\"num\">%s</td>"
             "<td>%s</td><td>%s</td></tr>"
-            % (e(slug), e(name), e(fx or "—"), e(pr or "—"), e(mk or "—"), e(h or "—"), e(m or "—"),
-               e(l or "—"), e(status), link(hub, "OLBG hub") if hub else '<span class="blank">—</span>')
+            % (e(slug), e(name), num(fx), num(pr), num(mk), num(h), num(m), num(l),
+               e(status), link(hub, "OLBG hub") if hub else '<span class="blank">—</span>')
             for name, slug, fx, pr, mk, h, m, l, status, hub in cov)
         highs = [f for f in self.fixtures if f["winner_pick"] and f["winner_pick"]["tier"] == "High"]
         hrows = "".join(
@@ -726,8 +733,8 @@ report was read - see <a class="flag" href="flagged.html#F-D7D-14">F-D7D-14</a>.
             rows.append("<tr><td><a href=\"sports/%s.html\">%s</a></td><td class=\"num\">%s</td>"
                         "<td class=\"num\">%s</td><td class=\"num\">%s</td><td>%s</td><td>%s</td>"
                         "<td>%s</td></tr>"
-                        % (e(slug), e(name), e(s["fixtures"]) if s else "0", e(s["priced"]) if s else "0",
-                           e(s["markets"]) if s else "0",
+                        % (e(slug), e(name), num(s["fixtures"]) if s else num(0),
+                           num(s["priced"]) if s else num(0), num(s["markets"]) if s else num(0),
                            "covered" if s else '<span class="flag">gap</span>',
                            e(gap["attempted"]) if gap and gap.get("attempted") else
                            '<span class="blank">not attempted this session</span>',

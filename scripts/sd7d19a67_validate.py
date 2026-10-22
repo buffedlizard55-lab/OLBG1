@@ -69,6 +69,10 @@ def rel(path):
 
 
 # --------------------------------------------------------------------- 1. arithmetic
+def american_check(p):
+    return -round(p / (1 - p) * 100) if p >= 0.5 else round((1 - p) / p * 100)
+
+
 def check_arithmetic(desk):
     bad = 0
     for f in desk["fixtures"]:
@@ -104,10 +108,20 @@ def check_arithmetic(desk):
         wp = f["winner_pick"]
         if wp:
             best = max((o for mk in f["markets"] if mk["family"] == "winner" for o in mk["outcomes"]),
-                       key=lambda o: o["probability"], default=None)
-            if best is None or abs(best.get("probability_exact", best["probability"])
-                                  - wp.get("probability_exact", wp["probability"])) > 1e-12:
+                       key=lambda o: o["probability_exact"], default=None)
+            if best is None or abs(best["probability_exact"] - wp["probability_exact"]) > 1e-12:
                 err("%s: winner pick is not the stronger side of the winner market" % f["key"])
+                bad += 1
+            elif (best["fair_american"] != wp["fair_american"]
+                  or abs(best["fair_decimal"] - wp["fair_decimal"]) > 1e-12
+                  or best["selection"] != wp["selection"]):
+                err("%s: winner pick price %+d/%.4f disagrees with its own market outcome %+d/%.4f"
+                    % (f["key"], wp["fair_american"], wp["fair_decimal"], best["fair_american"],
+                       best["fair_decimal"]))
+                bad += 1
+            if abs(american_check(wp["probability_exact"]) - wp["fair_american"]) > 0:
+                err("%s: winner pick American %+d does not re-derive from p=%.10f"
+                    % (f["key"], wp["fair_american"], wp["probability_exact"]))
                 bad += 1
     ok("arithmetic: %d priced fixtures, %d markets, %d outcomes re-derived from probability"
        % (desk["counts"]["priced"], desk["counts"]["markets"], desk["counts"]["outcomes"]))
