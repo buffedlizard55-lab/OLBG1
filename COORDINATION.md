@@ -4,7 +4,7 @@
 working on what. It exists so that multiple agent sessions can work on this repository at the
 same time without duplicating work or overwriting each other.
 
-Last updated: **2026-10-22T09:15:00Z** (UTC) (merged T56-audit + T57 fresh-harvest desks)
+Last updated: **2026-10-22T09:08:00Z** (UTC) (T56-audit + T57 fresh-harvest merged/live)
 
 ---
 
@@ -2502,5 +2502,4 @@ NBA cards).
 `data/f1c13c19/{fixtures,lines,predictions,olbg_snapshot}.json`, `f1c13c19/*.html` (8),
 `reports/SESSION_F1C13C19.md`, scripts as above, this entry. Task board: T56 → **done**.
 
-**PR/merge/Pages:** recorded below once the pull request merges (this section updated in
-the same commit as the merge verification per §0.4).
+**PR/merge/Pages (close-out):** PR **#92** https://github.com/buffedlizard55-lab/OLBG1/pull/92 -> **merged** into `main` at 2026-10-22T08:34:11Z (merge commit `516b451`). Conflict resolutions during merge: task-ID collision with cccb414e-olbg1 (both claimed "T56"; my task renumbered to **T57**, their row + §41 retained in full) and root `index.html` (their release redesign adopted; my single additive desk link placed in the prior-desks panel). Later clean merges of PRs #93/#95 kept everything. GitHub Pages build reported `built` and the desk is **live**: https://buffedlizard55-lab.github.io/OLBG1/f1c13c19/ (overview, matches, high picks incl. all 3 write-ups, window report, flagged, snapshot, methodology, sources verified over HTTPS with the fetch tool at ~09:05Z). Open items deliberately untouched: PR #63, PR #40, AUD-A-01/F7-04/F7-06, T35.
