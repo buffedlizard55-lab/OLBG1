@@ -20040,7 +20040,7 @@
    "severity": "high",
    "title": "Carried evidence is capped at Medium even when it lands inside the band",
    "detail": "4 rows have carried official inputs and an in-band 70-71.43% selection (darts 2, rugby-league 2). They keep their prices but cannot be High, because this desk did not re-read the source; every one is published as Medium with the cap stated on the row.",
-   "source": "COORDINATION.md s50; data/fec05fb4/desk.json rows[].evidence_status"
+   "source": "COORDINATION.md \u00a753; data/fec05fb4/desk.json rows[].evidence_status"
   },
   {
    "id": "F-FEC-03",
@@ -20073,8 +20073,8 @@
   {
    "id": "F-FEC-07",
    "severity": "medium",
-   "title": "32 legacy listings have no verified start time",
-   "detail": "Tennis (11), snooker (11), cricket (5), golf (4) and eSports (1) rows carry a date but no verified clock. They are published blank and unpriced on their category pages and are not counted as upcoming.",
+   "title": "62 captured listings are published blank",
+   "detail": "Of the 62 listing-only rows, 32 have no verified start time \u2014 tennis (11), snooker (11), cricket (5), golf (4) and eSports (1) \u2014 and 30 had already started before the 12:45Z cut-off. None is priced, none is counted as upcoming, and each carries its governing-body source link on its category page.",
    "source": "data/fec05fb4/desk.json listing_only"
   },
   {
@@ -20123,7 +20123,7 @@
    "id": "F-FEC-14",
    "severity": "low",
    "title": "2 High selections, 37 Medium and 48 Low/unpriced",
-   "detail": "Both Highs are EuroLeague handicap or total lines originated at a 70-71.43% cover, not moneylines. Each carries a unique 60-word prediction, two-sided official evidence and a fresh read of the availability report. No High was issued for a big favourite just because it was a big favourite.",
+   "detail": "Both Highs are EuroLeague handicap or total lines originated at a 70-71.43% cover, not moneylines. Each carries a unique prediction (81 and 88 words), two-sided official evidence and a fresh read of the availability report. No High was issued for a big favourite just because it was a big favourite.",
    "source": "data/fec05fb4/desk.json rows[].tier"
   }
  ],

@@ -3225,6 +3225,10 @@ auto-lists the namespace.
 
 **Post-merge correction (PR #122).** Reading the deployed page exposed a misleading column: "Why not High" was showing the row's *first* flag, which for darts and rugby rows was a timezone note rather than the evidence cap. It now prints the selection's own gate note ("Numeric band met, but the evidence is carried, so this stays Medium (F-FEC-02)"). The High page also now says five gates, not four, and the High cards link the **game centre** rather than the standings page. No price, probability, fact or tier changed; counts remain 2/37/27/21.
 
+**Follow-up receipts.** PR #122 (merged 2026-10-22T12:28:40Z as `5341b443ff8457585c0376b24f50c8a816bad5aa`) corrected the deployed High page: the "Why not High" column now prints each selection's own gate note instead of the row's first flag, the gate blurb says five tests, and the High cards link the Round 7 game centre. Live check `.../fec05fb4/high.html?v=2` confirmed the wording.
+PR #125 (merged 2026-10-22T12:33:25Z as `481c7b9243d18ff520683ce8ff4b5fa3cc934e48`) fixed the carried-evidence note for the three carried winners that sit inside the band (Clayton 71.28%, Tonga 70.90%, Nijman 70.06%) — they were mislabelled "below 70%" and now read "Winner sits in the 70-71.43% band, but the evidence is carried". Live check `.../high.html?v=3` confirmed all nine held-back picks state their real reason.
+PR #127 (this follow-up) corrects three flag descriptions found by reading the deployed `flagged.html?v=3`: F-FEC-07 now says 62 listing-only rows (32 untimed + 30 already started), F-FEC-14 now states the real prediction lengths (81 and 88 words), F-FEC-02 cites §53. No data, price or tier changed; counts remain 2 High / 37 Medium / 27 Low / 21 unpriced and the validator passes all 9,099 assertions.
+
 ## 56. Session `40214dfd-olbg1` — T402E claim (2026-10-22T12:10Z)
 
 **Session ID:** `40214dfd-olbg1`. **Task:** T402E — fresh 22 Oct official-source desk with in-band
