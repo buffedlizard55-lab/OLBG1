@@ -16,6 +16,20 @@ import html
 import json
 import os
 
+# Entities this renderer uses deliberately in prose and table cells. Values reach
+# the page through E(), which escapes everything -- so without this allowlist an
+# intentional "&mdash;" arrives in the browser as the literal text "&mdash;".
+# "&amp;" is restored LAST so that already-escaped input is never double-decoded.
+_SAFE_ENTITIES = ("&mdash;", "&ndash;", "&middot;", "&ge;", "&le;", "&minus;",
+                  "&times;", "&hellip;", "&amp;")
+
+
+def _escape(text):
+    out = html.escape(str(text))
+    for ent in _SAFE_ENTITIES:
+        out = out.replace(html.escape(ent), ent)
+    return out
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 DESK = os.path.join(ROOT, "data", "1a421e41", "desk.json")
@@ -23,7 +37,7 @@ SITE = os.path.join(ROOT, "1a421e41")
 ASSETS = os.path.join(SITE, "assets")
 SPORTS_DIR = os.path.join(SITE, "sports")
 
-E = html.escape
+E = _escape
 
 CSS = """
 :root{--bg:#0f1218;--panel:#171c25;--panel2:#1e242f;--line:#2b3442;--ink:#e8edf5;
@@ -790,9 +804,15 @@ def render_flagged():
                      % " &middot; ".join(src_ref(u) for u in f["sources"]))
         ev = f.get("evidence")
         if ev:
+            dumped = json.dumps(ev, indent=1, ensure_ascii=False)
+            if len(dumped) > 4000:
+                # cut on a line boundary and say so, rather than slicing a
+                # string in half and leaving the reader to guess
+                cut = dumped[:4000].rfind("\n")
+                dumped = dumped[:cut if cut > 0 else 4000].rstrip() + \
+                    "\n... truncated; the complete evidence is in data/1a421e41/desk.json"
             b.append("<details><summary class='sub'>evidence (%d item%s)</summary><pre>%s</pre></details>"
-                     % (len(ev), "" if len(ev) == 1 else "s",
-                        E(json.dumps(ev, indent=1, ensure_ascii=False)[:4000])))
+                     % (len(ev), "" if len(ev) == 1 else "s", E(dumped)))
         b.append("</div>")
 
     b.append("<h2>Unverified values left blank</h2>")

@@ -278,6 +278,14 @@ def main():
                     err("site: %s links to missing %s" % (rel, href))
         if "1a421e41/index.html" not in html:
             err("site: landing page 1a421e41/index.html missing")
+        # an intentional entity must never reach the browser as literal text
+        for rel, txt in html.items():
+            for bad in ("&amp;mdash;", "&amp;ndash;", "&amp;middot;", "&amp;ge;",
+                        "&amp;le;", "&amp;minus;", "&amp;times;", "%%"):
+                if bad in txt:
+                    err("site: %s renders %r as literal text" % (rel, bad))
+            if "truncated; the complete evidence" in txt and txt.count("<pre>") != txt.count("</pre>"):
+                err("site: %s has an unbalanced <pre> block" % rel)
         print("site pages: %d, broken relative links: %d" % (len(pages), broken))
     else:
         warn("site: no pages built yet under 1a421e41/")
