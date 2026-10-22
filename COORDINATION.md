@@ -3434,3 +3434,29 @@ desk is reachable today as a direct path and from `archive.html`'s preserved-des
 with their source links. The two that most need a human decision are F-9DC-01 (the brief's High gate is
 only 1.43 percentage points wide) and F-9DC-02 (eight in-band EuroLeague rows capped at Medium because
 no official player-level source was available).
+
+### 56.6 Publication record (filled from the deployed bytes, not from a local build)
+
+**PR:** #116 → `main` — https://github.com/buffedlizard55-lab/OLBG1/pull/116
+**Outcome:** **MERGED** 2026-10-22T12:29:33Z, merge commit **`f3e0e61`** (`Merge pull request #116 from
+buffedlizard55-lab/arena/40214dfd-olbg1`). Merge performed with `gh pr merge 116 --merge`, no approval
+wait, after the branch's own CI run `39778393001` passed every gate (evidence/model/site, historical
+structural gate, field integrity, browser gates).
+
+**Deploy:** Pages workflow run **`39778774282`** (push, `main` @ `f3e0e61`) — every step green,
+publish job `119825526923` "Publish canonical GitHub Pages" completed in 30 s. The dynamic run
+`39778773356` for the same SHA was still queued at the time of writing and is not the deploy.
+
+**Verified from the deployed bytes** (fetched `https://buffedlizard55-lab.github.io/OLBG1/40214dfd/`
+at 12:36Z, not from `_site`): the dashboard renders **26 priced fixtures / 299 markets originated /
+598 priced outcomes / 7 High selections / 7 written predictions / 10 flagged findings**; the seven
+High rows read `-236 70.26%`, `-238 70.43%`, `-244 70.92%`, `-242 70.80%`, `-247 71.19%`,
+`-241 70.64%`, `-242 70.72%`; the coverage table shows the three priced sports and the fourteen
+not-verified / no-fixture sports with their reasons. `flagged.html` was also fetched and its
+cross-desk table reproduces all twelve `53674ac8` rows with the verdict column intact, and its
+F-402-10 entry credits `ee3c3e8f-olbg1` / PR #112 rather than this session.
+
+**What the deploy proves and what it does not.** It proves the pages are reachable at the project
+path and that internal links resolve there. It does not recertify any price: the prices are this
+desk's originated fair prices, the model's assumptions are stated on `methodology.html`, and the
+fourteen sports without a verified fixture remain empty on purpose.

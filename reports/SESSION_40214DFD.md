@@ -151,4 +151,22 @@ Three items were added after the first draft of this report and are part of the 
 
 ## 10. Publication record
 
-Filled in by the session after the PR is merged and the deployed pages are fetched directly.
+| Item | Value |
+|---|---|
+| PR | #116 → `main`, <https://github.com/buffedlizard55-lab/OLBG1/pull/116> |
+| Result | **MERGED** 2026-10-22T12:29:33Z, merge commit `f3e0e61` |
+| CI on the branch | run `39778393001` — all gates green (evidence/model/site, historical structural gate, field integrity, browser) |
+| Deploy | Pages run `39778774282` (push, `main` @ `f3e0e61`), publish job `119825526923`, 30 s, green |
+| Live URL | <https://buffedlizard55-lab.github.io/OLBG1/40214dfd/index.html> |
+
+**Counts read back from the deployed bytes** (12:36Z, not from a local build): 26 priced fixtures,
+299 markets, 598 priced outcomes, 7 High selections, 7 predictions, 10 flagged findings. The seven
+High rows show −236/70.26%, −238/70.43%, −244/70.92%, −242/70.80%, −247/71.19%, −241/70.64%,
+−242/70.72%. `flagged.html` was fetched too: the cross-desk table lists all twelve `53674ac8` rows
+and F-402-10 credits `ee3c3e8f-olbg1` rather than this session.
+
+**Known limits at publication.** Fourteen of seventeen in-scope sports carry no priced row, each with
+the official URL attempted and the specific failure; the desk's own `README`/`coverage.html` list
+them. Basketball handicaps rest on an assumed σ = 12.0 and are capped below High. Baseball lines use
+regular-season aggregates only and stay Low. Snooker pairings are listed with a blank clock because
+WST publishes no timezone.
