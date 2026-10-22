@@ -4216,7 +4216,6 @@ No bookmaker price, no price availability and no betting edge claimed anywhere. 
 
 * **Handoff:** This claim is closed as **done**. If a later integration session adds the root companion link requested in §4, no change to `a0b04058/**` is needed. The desk expires with its evidence: fixtures 6 hours after 2026-10-22T21:00Z, statistics 24 hours after; nothing here should be re-stamped as fresh by a rebuild.
 
-=======
 ## 64. Session `424375b4-olbg1` — T424375B4 independent live desk (22 Oct 2026, evening)
 
 **Claimed 2026-10-22T20:55Z.** Collision-resistant id `T424375B4` (pattern of `T7F00`, `TD7D19`); section
@@ -4238,7 +4237,6 @@ where evidence permits; repo line-by-line audit with file:line links; validator 
 live Pages read-back. Nothing is marked verified without a fetched official page and its link.
 
 **Status:** in progress — claims pushed before any deliverable work, per §0.3.
->>>>>>> origin/main
 
 ## 4. Requests and conflict log (append-only) — TA0B04 third merge resolution (PR #155 + #154)
 
