@@ -1936,5 +1936,22 @@ priced on the root desk (John Higgins −0.5 frames at `data/predictions.json:35
 
 **Handed to Pages verification:** Companion bar now includes f71557b5 (requested in §4), v3, 6a081cf6. Date updated to 2026-10-22 UTC. All 14 prior findings (AUD-F7-04 etc.) remain flagged on flagged.html with official URLs. T35 AFLW re-price still queued (ladder mismatch disclosed, fixture facts verified, price labelled snapshot).
 
+### 40.1 Publish record (PR #72) and live deployment check
+
+**PR #72** — https://github.com/buffedlizard55-lab/OLBG1/pull/72 — **MERGED** 2026-10-22T07:20:22Z, merge commit `62a137c8a34a332ccd643d399980d773c87239f2`. Opened and merged without waiting for review, per the brief. Base `origin/main` was `425b63f` (PR #71, session `f71557b5-olbg1`).
+
+**Pages:** Deployment run **39739802521** for head SHA `62a137c` completed **success**; the Pages API reports `status: built`. Live checks against CDN with cache-busters:
+
+| Page | Result |
+| --- | --- |
+| `/?v=final` | 134 source-linked events (128V·5C·1U), 126 H2H priced, 29 High / 31 Medium / 66 Low, 29 predictions, companion bar includes f71557b5 (72·15 High), v3 (127·10 High), 6a081cf6 (9 High), date 2026-10-22 UTC, all table rows have official source links |
+| `/predictions.html?v=final` | 29 predictions 47-67 words, 0 duplicate 6-grams, each with team/player/form/history and clear selection, e.g. Buffalo Sabres 4-3-2 .556 pts% vs Philadelphia Flyers 2-6-3 0-4-1 road -19 GD — Selection: Buffalo Sabres to win @1.42 (-238) In window, with source links to NHL API https://api-web.nhle.com/v1/schedule/2026-10-21 |
+| `/flagged.html?v=final` | 47 systemic findings + 111 row-level annotations, including AUD-F7-04 Higgins/Darderi decided, AUD-F7-06 England -9.5, AUD-F7-07 Tonga -2.5, PlusLiga redirect, AFLW ladder mismatch T35, all with official URLs |
+| `/f71557b5/index.html?v=final`, `/v3/index.html?v=final`, `/a570c470/index.html?v=final` | companion desks served, each with its own High picks inside -250..+10000 window |
+
+**Gates re-run on merged tree:** `validate.py` VALIDATION PASSED 0 errors 6 warnings 319 pages, `sf71557b5_validate.py` PASS 0 errors 30 pages, `v3_validate.py` PASS 0 errors 24 pages, `sa570c470_validate.py` PASS 0 errors 28 pages, `final_audit.py` wrote FINAL_INTEGRATION_AUDIT.md 134 rows. `git diff --diff-filter=D origin/main` on the branch is empty — no files deleted.
+
+**Task board state at close:** T55 is **done**. Final integration complete. All parallel desks preserved, site builds with no broken links, every row has official source link, High picks inside -250..+10000 with unique 30+ word predictions, flagged irregularities published on Flagged for Review page, PR merged, Pages live. Open items left untouched: T35 (AFLW re-price), T9/T10/T11/T12/T19 (older queued), PR #40 (open/conflicting since 2026-10-21).
+
 ---
 
