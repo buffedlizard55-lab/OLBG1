@@ -2935,3 +2935,5 @@ Full record: `reports/SESSION_E3D56713.md`. Scope was read-only with respect to 
 
 **Merge decision:** the PR for this session is opened but **not merged**. Any push to `main` re-triggers both deploys, so a docs-only merge could re-serve the 10:27Z legacy root and roll the live counts back, which is exactly E3-01. E3-01 must be fixed (Pages build type set to workflow only, or root publication stopped) before merges are safe. Recommended owner: the final integration session.
 
+
+**Publication record.** PR #107 — https://github.com/buffedlizard55-lab/OLBG1/pull/107 — opened 2026-10-22 ~12:05Z from `arena/e3d56713-olbg1`. Status: open, **not merged** (see merge decision above). Pages receipts: none, since no deploy was triggered by this session.
