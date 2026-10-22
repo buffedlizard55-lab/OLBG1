@@ -33,7 +33,7 @@
     const ascending=th.getAttribute('aria-sort')!=='ascending';
     $$('th[aria-sort]',table).forEach(x=>x.setAttribute('aria-sort','none'));
     th.setAttribute('aria-sort',ascending?'ascending':'descending');
-    [...body.rows].sort((a,b)=>(a.dataset[button.dataset.sort]||'~').localeCompare(b.dataset[button.dataset.sort]||'~')*(ascending?1:-1)).forEach(row=>body.append(row));
+    [...body.rows].sort((a,b)=>{const x=a.dataset[button.dataset.sort],y=b.dataset[button.dataset.sort];if(!x)return y?1:0;if(!y)return -1;return x.localeCompare(y)*(ascending?1:-1);}).forEach(row=>body.append(row));
   }));
   const format=$('#odds-format');
   function updateOdds(){
