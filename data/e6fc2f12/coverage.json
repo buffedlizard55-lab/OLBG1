@@ -1,0 +1,102 @@
+{
+ "sport_counts": {
+  "ice-hockey": {
+   "fixtures": 60,
+   "priced": 60,
+   "markets": 904
+  },
+  "baseball": {
+   "fixtures": 5,
+   "priced": 5,
+   "markets": 50
+  },
+  "rugby-union": {
+   "fixtures": 8,
+   "priced": 8,
+   "markets": 144
+  },
+  "rugby-league": {
+   "fixtures": 5,
+   "priced": 0,
+   "markets": 0
+  },
+  "snooker": {
+   "fixtures": 8,
+   "priced": 0,
+   "markets": 0
+  },
+  "motor-racing": {
+   "fixtures": 5,
+   "priced": 0,
+   "markets": 0
+  }
+ },
+ "unverified_sports": [
+  [
+   "basketball",
+   "Basketball",
+   "https://www.euroleaguebasketball.net/en/euroleague/game-center/",
+   "EuroLeague Game Center is client-rendered; the read returned club logos and navigation, not a fixture list. NBA's public scoreboard endpoint returned HTTP 500 on the same attempt. No fixture is published because none could be read from an official page."
+  ],
+  [
+   "tennis",
+   "Tennis",
+   "https://www.atptour.com/en/scores/current",
+   "The ATP current-scores page exposes in-play matches only. A later-round pairing could not be verified, and pricing a match already in progress is not a pre-match selection. No row."
+  ],
+  [
+   "darts",
+   "Darts",
+   "https://www.pdc.tv/tournaments",
+   "The PDC tournaments route returned a cookie-consent interstitial as its entire readable body. No fixture, round or start time could be read, so no darts row is published."
+  ],
+  [
+   "golf",
+   "Golf",
+   "https://www.pgatour.com/schedule",
+   "The PGA Tour schedule grid is client-rendered; no tournament field or tee time could be read as a fixture. No row."
+  ],
+  [
+   "cricket",
+   "Cricket",
+   "https://www.cricket.com.au/matches",
+   "The Cricket Australia matches page returned series and team filters but the fixture cards sit outside the readable body. A series name is not a dated fixture, so no row is published."
+  ],
+  [
+   "handball",
+   "Handball",
+   "https://ehfcl.eurohandball.com/men/2026-27/",
+   "The EHF Champions League route is client-rendered; no round, pairing or throw-off time could be read. No row."
+  ],
+  [
+   "volleyball",
+   "Volleyball",
+   "https://www.tauronliga.pl/games.html",
+   "The Polish league games page returned an older round's tie-break detail with no upcoming date in the readable body. No future fixture could be verified. No row."
+  ],
+  [
+   "esports",
+   "eSports",
+   "https://lolesports.com/schedule",
+   "The official LoL Esports schedule is client-rendered. The public schedule endpoint requires a request header this reader cannot set. No row."
+  ],
+  [
+   "greyhounds",
+   "Greyhounds",
+   "https://www.gbgb.org.uk/",
+   "GBGB publishes a results search and open-race notices, not an upcoming race card with runners. No runner-level fixture could be read. No row."
+  ],
+  [
+   "aussie-rules",
+   "Australian Rules",
+   "https://www.afl.com.au/aflw/fixture",
+   "The AFLW fixture grid and ladder both returned client-rendered placeholders ('Loading\u2026'). The former /aflw/fixtures route is a 404. No AFLW fixture or record could be verified. No row."
+  ],
+  [
+   "gaelic-football",
+   "Gaelic Football",
+   "https://www.gaa.ie/fixtures-results",
+   "The only October fixture listed on the read date is the Shinty-Hurling International, which is an excluded sport under the brief. No Gaelic football fixture was in scope. No row."
+  ]
+ ]
+}

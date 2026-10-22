@@ -1,0 +1,202 @@
+[
+ {
+  "id": "nhl-team-summary",
+  "name": "NHL official statistics API \u2014 team summary, 2026-27 regular season",
+  "url": "https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&isGame=false&sort=%5B%7B%22property%22%3A%22points%22%2C%22direction%22%3A%22DESC%22%7D%5D&start=0&limit=32&cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2",
+  "publisher": "National Hockey League",
+  "official": true,
+  "kind": "league API (JSON)",
+  "used_for": "Games played, wins, regulation losses, overtime/shootout losses, goals for, goals against for all 32 clubs.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "nhl-game-log",
+  "name": "NHL official statistics API \u2014 game index, 2026-27",
+  "url": "https://api.nhle.com/stats/rest/en/game?isAggregate=false&isGame=true&sort=%5B%7B%22property%22%3A%22gameDate%22%2C%22direction%22%3A%22ASC%22%7D%5D&start=0&limit=100&cayenneExp=season%3D20262027%20and%20gameDate%3E%3D%222026-10-22%22%20and%20gameDate%3C%3D%222026-10-29%22",
+  "publisher": "National Hockey League",
+  "official": true,
+  "kind": "league API (JSON)",
+  "used_for": "Fixture list, club pairing and Eastern start time, 22\u201329 October 2026.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "nhl-schedule-day",
+  "name": "NHL official statistics API \u2014 game index, 22 October 2026",
+  "url": "https://api.nhle.com/stats/rest/en/game?isAggregate=false&isGame=true&sort=%5B%7B%22property%22%3A%22gameDate%22%2C%22direction%22%3A%22ASC%22%7D%5D&start=0&limit=60&cayenneExp=season%3D20262027%20and%20gameDate%3E%3D%222026-10-22%22%20and%20gameDate%3C%3D%222026-10-23%22",
+  "publisher": "National Hockey League",
+  "official": true,
+  "kind": "league API (JSON)",
+  "used_for": "The twelve 22 October fixtures and their Eastern start times.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "nhl-standings-web",
+  "name": "NHL standings endpoint (club names, streak and last-ten fields)",
+  "url": "https://api-web.nhle.com/v1/standings/2026-10-21",
+  "publisher": "National Hockey League",
+  "official": true,
+  "kind": "league API (JSON)",
+  "used_for": "Cross-check of club identity and the last-ten / streak fields quoted in prose.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "mlb-standings",
+  "name": "MLB Stats API \u2014 National League standings, 2026 regular season",
+  "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=104&season=2026&fields=records,teamRecords,team,id,name,wins,losses,runsScored,runsAllowed,gamesPlayed",
+  "publisher": "Major League Baseball",
+  "official": true,
+  "kind": "league API (JSON)",
+  "used_for": "Milwaukee Brewers 103-59 with 832 runs scored and 618 allowed.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "mlb-standings-al",
+  "name": "MLB Stats API \u2014 American League standings, 2026 regular season",
+  "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&fields=records,teamRecords,team,id,name,leagueRecord,wins,losses,pct,runsScored,runsAllowed,gamesPlayed,division,standingsType",
+  "publisher": "Major League Baseball",
+  "official": true,
+  "kind": "league API (JSON)",
+  "used_for": "Tampa Bay Rays 98-64 with 736 runs scored and 650 allowed.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "mlb-schedule",
+  "name": "MLB Stats API \u2014 2026 World Series schedule",
+  "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-29&fields=dates,date,games,gamePk,gameDate,status,detailedState,teams,home,away,team,id,name,score,venue,name,dayNight",
+  "publisher": "Major League Baseball",
+  "official": true,
+  "kind": "league API (JSON)",
+  "used_for": "Game one to game five dates, exact UTC start times and venues.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "mlb-postseason-results",
+  "name": "MLB Stats API \u2014 Rays and Brewers results, 1\u201323 October 2026",
+  "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=139,158&startDate=2026-10-01&endDate=2026-10-23&fields=dates,date,games,gamePk,gameDate,teams,home,away,team,id,name,score,isWinner,status,detailedState",
+  "publisher": "Major League Baseball",
+  "official": true,
+  "kind": "league API (JSON)",
+  "used_for": "Game-by-game scorelines used for the verified recent-form claims in predictions.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "urc-match-centre",
+  "name": "United Rugby Championship official Match Centre \u2014 Round 4",
+  "url": "https://www.unitedrugby.com/match-centre",
+  "publisher": "United Rugby Championship",
+  "official": true,
+  "kind": "league website",
+  "used_for": "The eight Round 4 fixtures, dates, stated local kick-off times and venues.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "urc-table",
+  "name": "United Rugby Championship official league table 2026/27",
+  "url": "https://stats.unitedrugby.com/match-centre/table/2026-27",
+  "publisher": "United Rugby Championship",
+  "official": true,
+  "kind": "league website",
+  "used_for": "Played, won, drawn, lost, points for and points against for all 16 clubs after three rounds.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "nrl-draw",
+  "name": "NRL official draw \u2014 Rugby League World Cup 2026, Round 2",
+  "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+  "publisher": "National Rugby League",
+  "official": true,
+  "kind": "league website",
+  "used_for": "The five Round 2 fixtures, dates, venues and the source's own kick-off text.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "wst-ni-open",
+  "name": "World Snooker Tour \u2014 BetVictor Northern Ireland Open 2026 match schedule",
+  "url": "https://www.wst.tv/matches/b4533c9e-8d2c-4ecc-8dfd-c6b284705578",
+  "publisher": "World Snooker Tour",
+  "official": true,
+  "kind": "governing-body website",
+  "used_for": "The eight scheduled Round 3 matches on 22 October 2026 and their session times.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "f1-calendar",
+  "name": "Formula 1 official 2026 race calendar",
+  "url": "https://www.formula1.com/en/racing/2026",
+  "publisher": "Formula 1",
+  "official": true,
+  "kind": "championship website",
+  "used_for": "Round 18, United States Grand Prix, 23\u201325 October 2026.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "f1-usgp",
+  "name": "Formula 1 official United States Grand Prix 2026 event page",
+  "url": "https://www.formula1.com/en/racing/2026/united-states",
+  "publisher": "Formula 1",
+  "official": true,
+  "kind": "championship website",
+  "used_for": "Session schedule (practice, qualifying, race) and circuit facts.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "gaa-fixtures",
+  "name": "GAA official fixtures and results",
+  "url": "https://www.gaa.ie/fixtures-results",
+  "publisher": "Gaelic Athletic Association",
+  "official": true,
+  "kind": "governing-body website",
+  "used_for": "Negative check: the only October fixture listed on the read date is the Shinty-Hurling International, i.e. an excluded sport. No Gaelic football fixture was found in scope.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "atp-scores",
+  "name": "ATP Tour official current scores",
+  "url": "https://www.atptour.com/en/scores/current",
+  "publisher": "ATP Tour",
+  "official": true,
+  "kind": "tour website",
+  "used_for": "Negative check: the page renders live in-play matches only. No pre-match pairing for a later date could be verified, so no tennis row is priced.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "aflw-fixture",
+  "name": "AFLW official fixture page",
+  "url": "https://www.afl.com.au/aflw/fixture",
+  "publisher": "Australian Football League",
+  "official": true,
+  "kind": "league website",
+  "used_for": "Negative check: the fixture grid is client-rendered and returned no fixture rows to the reader. No AFLW row is published.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "aflw-ladder",
+  "name": "AFLW official ladder",
+  "url": "https://www.afl.com.au/aflw/ladder",
+  "publisher": "Australian Football League",
+  "official": true,
+  "kind": "league website",
+  "used_for": "Negative check: the ladder body is client-rendered ('Loading\u2026'), so no club record could be read. Nothing inferred.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "euroleague-games",
+  "name": "EuroLeague official Game Center",
+  "url": "https://www.euroleaguebasketball.net/en/euroleague/game-center/",
+  "publisher": "EuroLeague Basketball",
+  "official": true,
+  "kind": "league website",
+  "used_for": "Negative check: the games grid is client-rendered; the reader received club logos and navigation only. No basketball fixture is published.",
+  "read_at": "2026-10-22T12:20:00Z"
+ },
+ {
+  "id": "gbgb-home",
+  "name": "Greyhound Board of Great Britain official site",
+  "url": "https://www.gbgb.org.uk/",
+  "publisher": "Greyhound Board of Great Britain",
+  "official": true,
+  "kind": "governing-body website",
+  "used_for": "Negative check: the homepage exposes a results search, not an upcoming race card. No greyhound fixture is published.",
+  "read_at": "2026-10-22T12:20:00Z"
+ }
+]
