@@ -3083,3 +3083,25 @@ published its own §50 first (PRs #113, #115). Their rows and records are preser
 rebase was needed after PR #112 (`ee3c3e8f`) repaired the same 98 `53674ac8` navigation links this
 session had fixed independently; that duplicate fix was dropped in favour of main's, and no research
 content changed. Nothing from another session was discarded.
+
+---
+
+## 52. Session `ac872b16-olbg1` — T65 in-band multi-market desk + verified predictions (2026-10-22T12:15Z)
+
+**Claim.** Session ID `ac872b16-olbg1`, pinned branch `arena/ac872b16-olbg1`, baseline
+`61ef3a6` (PR #108). Task **T65** (next free after T64/e3d56713). Scope is strictly
+namespaced: `data/ac872b16/**`, `scripts/sac872b16_*.py`, `ac872b16/**`,
+`reports/SESSION_AC872B16.md`, and append-only additions to this file. No edit to
+`pipeline/**`, `data/current/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`,
+workflows, or any other session's desk. A root companion link is **requested** in §4
+rather than written here. Other live session: `e3d56713` holds T64 / PR #107.
+
+**Intended deliverable.** A fresh, fully official-source-verified 22 Oct desk with:
+(a) complete future fixture list across all 17 in-scope sports; (b) our own
+winner/handicap/total lines for every fixture where both sides have a captured
+official current-form input; (c) confidence tiers using the brief's literal rule —
+High requires model probability > 70% **and** an originated price inside
+−250…+10000 (decimal 1.40–101.0); (d) unique ≥30-word human predictions for every
+High pick, with official source links and no invented facts; (e) a clean dashboard
+with landing, category and sport pages plus Flagged for Review; (f) validator,
+PR, merge and live Pages check.
