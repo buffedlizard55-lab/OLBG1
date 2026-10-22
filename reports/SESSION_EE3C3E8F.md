@@ -52,3 +52,5 @@ E3-01/E3-02/E3-05 describe dual Pages publishers and committed-versus-live diffe
 ## Publication
 
 PR, CI and deployment receipts will be recorded below after their actual results are observed. Coverage gaps and missing High picks are public review items, not fabricated completion claims.
+
+Rebase note: parallel PRs #108 and #110 merged during the work. An append-only coordination-board EOF conflict was resolved by keeping both other sessions' complete records and the TEE3C records, in order. No implementation conflict or data loss occurred. All combined-tree checks were rerun, and the canonical archive navigation was regenerated to include those new desks.
