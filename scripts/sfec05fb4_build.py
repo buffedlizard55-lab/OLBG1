@@ -219,7 +219,7 @@ def high_cards() -> str:
 <h3>{E(p['match'])}</h3>
 <div class="pick">{E(p['selection'])} <span class="tag">at {price(p['fair_american'])} fair</span></div>
 <div class="pred">{E(p['text'])}</div>
-<p class="meta">{E(row['time_display'])} · model probability {p['probability']*100:.2f}% · {p['words']} words · <a href="{E(row['official_sources'][0]['url'])}">official fixture source</a></p>
+<p class="meta">{E(row['time_display'])} · model probability {p['probability']*100:.2f}% · {p['words']} words · <a href="{E(row['official_sources'][1]['url'] if len(row['official_sources']) > 1 else row['official_sources'][0]['url'])}">official game centre</a></p>
 <h4>Verified facts used</h4><ul class="facts">{facts}</ul>
 <p class="source">Sources: {srcs}</p>
 </article>""")
@@ -321,15 +321,15 @@ The <a href="review.html">line-by-line review</a> lists each row's evidence stat
     near_rows = "".join(
         f'<tr><td><b>{E(r["home"])}</b> v {E(r["away"])}</td><td>{E(r["selection"]["selection"])}</td>'
         f'<td class="num">{r["selection"]["probability"]*100:.2f}%</td><td class="num">{price(r["selection"]["fair_american"])}</td>'
-        f'<td>{E(r["evidence_status"])}</td><td class="small">{E((r["flags"] or ["—"])[0])}</td></tr>' for r in near)
+        f'<td>{E(r["evidence_status"])}</td><td class="small">{E(r["selection"].get("note", ""))}</td></tr>' for r in near)
     near_tbl = ('<div class="tbl"><table data-audit="summary"><thead><tr><th>Fixture</th><th>Selection</th><th class="num">p</th>'
                 '<th class="num">Fair</th><th>Evidence</th><th>Why not High</th></tr></thead><tbody>' + near_rows + "</tbody></table></div>")
 
     body = f"""
 <div class="hero"><div class="kicker">The gate, applied literally</div>
 <h1>Two High selections, and the exact reason the other {len(near)} in-band picks are not High</h1>
-<p class="lede">A High needs four things at once: a model probability strictly above 70% and at most 71.4286% (so the fair price is -233 to -250),
-an official source read by this session, both clubs' availability confirmed in that read, and a unique prediction of at least 30 words naming the selection.</p></div>
+<p class="lede">A High needs five things at once: a model probability strictly above 70%; a fair price no shorter than -250 (which caps the probability at 71.4286%);
+an official source read by this session; both clubs' availability confirmed in that read; and a unique prediction of at least 30 words naming the selection.</p></div>
 {gate_tbl}
 {high_cards()}
 <h2>In-band selections held back</h2>
