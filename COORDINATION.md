@@ -4,7 +4,7 @@
 working on what. It exists so that multiple agent sessions can work on this repository at the
 same time without duplicating work or overwriting each other.
 
-Last updated: **2026-10-22T12:05:00Z** (UTC) (T64 claimed: independent live desk `e6fc2f12-olbg1`)
+Last updated: **2026-10-22T12:20:00Z** (UTC) (T65 claimed: independent live desk `d7d19a67-olbg1`)
 
 ---
 
@@ -127,6 +127,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T257E | Evidence-first final integration: repository-wide row audit; official-source collection with saved evidence and expiry; honest market/confidence gates; one canonical dashboard with category tables and Flagged for Review; automated refresh/build/test/Pages; PR, merge and deployment verification | done | 257e6674-olbg1 | `pipeline/**`, `tests/pipeline/**`, `.github/workflows/**`, `data/current/**`, `reports/SESSION_257E6674*`, `site_templates/**`, `audit/**` (new generated review pages), `archive/root-20261022/**`; final integration only: root `*.html`, `sports/**`, `assets/current-*`, `scripts/build_site.py` (legacy guard), `README.md`, `.gitignore`, append-only `COORDINATION.md` | 2026-10-22T10:46:35Z | PR #88 and #103 merged; corrected production run 39764029573 succeeded; live manifest cdbc9002, Basketball blank Valencia estimate, F-257E-19 and canonical compatibility route confirmed. Partial coverage/no High remain explicit, not unresolved publication tasks. |
 | T354E | Fresh 22 Oct 12:00Z expiry-aware desk: re-check canonical snapshot against official sources, originate multi-market lines (winner/handicap/total where model supports), enforce High only if >70% + in -250..+10000 + calibrated/context evidence else downgrade, unique >=30-word predictions only for qualifying picks, namespaced dashboard + Flagged, validator, PR/merge/Pages | done | 354e0990-olbg1 | `data/354e0990/**`, `scripts/s354e0990_*.py`, `354e0990/**`, `reports/SESSION_354E0990.md`, append-only `COORDINATION.md` §49 | 2026-10-22T12:00Z | Collision-resistant ID; no canonical root/data/current/pipeline files edited |
 | T64 | **Independent live desk `e6fc2f12-olbg1` (22 Oct 2026):** fresh OLBG 17-hub in-scope discovery harvest; line-by-line official-source verification of every included fixture against the league / governing body / tour itself; own multi-market line origination (match winner, handicap/spread ladders, totals); confidence grading with the **brief's own rule** — a High pick must have model probability **above 70%** *and* a fair price that expresses inside **−250…+10000**; unique hand-written ≥30-word predictions for every High pick naming the selection and citing only facts read from an official page this session; namespaced dashboard `/e6fc2f12/` (landing + 17 sport subpages + markets + high-confidence + analysis + sources + Flagged for Review); validator gate; PR, merge and live GitHub Pages verification | done | e6fc2f12-olbg1 | `data/e6fc2f12/**`, `scripts/se6fc2f12_*.py`, `e6fc2f12/**`, `reports/SESSION_E6FC2F12.md`, append-only `COORDINATION.md` (this row + §50) | 2026-10-22T12:05Z | Claimed at T64 because T1–T63, T257E and T354E were all taken; **renumbered §49→§50** on rebase after `354e0990` merged its own §49 (PR #108), whose row and record are preserved verbatim. Strictly namespaced: no edit to root `*.html`, `sports/**`, `assets/**`, `README.md`, `scripts/build_site.py`, `scripts/validate.py`, `pipeline/**`, `.github/workflows/**`, `data/current/**`, `data/release/**` or any other session's `<id>/` desk. `archive.html` auto-lists any top-level `index.html` desk, so `/e6fc2f12/` is reachable from the canonical archive page without a shared-file edit. **DONE:** 91 fixtures (73 priced / 18 unpriced with reasons), **1098** originated markets, High **18** / Medium **239** / Low **841** (sum 1098), 20 official sources, 18 hand-written predictions, 26 HTML pages + 2 CSV exports. `se6fc2f12_validate.py` → VALIDATION PASSED, 0 errors / 0 warnings. PR #110. |
+| T65 | **Independent live desk `d7d19a67-olbg1` (22 Oct 2026):** fresh official-source harvest and line-by-line verification of in-scope fixtures (all 17 covered sports; soccer/football, American football, boxing, UFC/MMA, hurling, horse racing, cycling and specials excluded); own multi-market line origination (match winner, handicap/spread, match and team totals, plus sport-specific markets where an official input exists); confidence tiers with the High band **expressed inside −250…+10000** and earned by verified evidence rather than a >70% market-price shortcut (both readings published and the intersection flagged); unique hand-written ≥30-word predictions for every High pick citing only facts read from official pages this session; line-by-line repository audit with per-finding source links; namespaced dashboard `/d7d19a67/` (landing + 17 sport subpages + matches + markets + high-confidence + predictions + analysis + sources + Flagged for Review + repo audit); validator gate; PR, merge and live GitHub Pages verification | in progress | d7d19a67-olbg1 | `data/d7d19a67/**`, `scripts/sd7d19a67_*.py`, `d7d19a67/**`, `reports/SESSION_D7D19A67.md`, append-only `COORDINATION.md` (this row + §51) | 2026-10-22T12:20Z | Claimed at T65 because T1–T64, T257E and T354E are all taken. Strictly namespaced: **no** edit to root `*.html`, `sports/**`, `assets/**`, `README.md`, `scripts/build_site.py`, `scripts/validate.py`, `pipeline/**`, `.github/workflows/**`, `data/current/**`, `data/release/**` or any other session's `<id>/` desk. Root-navigation request logged in §4/§51 instead of editing shared files. |
 
 ---
 
@@ -2977,3 +2978,38 @@ markets, source traceability, internal link and anchor resolution, page reachabi
 **Publication record.** PR #110 — https://github.com/buffedlizard55-lab/OLBG1/pull/110 — opened
 2026-10-22T12:12Z. Merge receipt and live-Pages verification appended below after the deploy is read
 back from the deployed bytes, per the PR #98 lesson.
+
+---
+
+## 51. Session `d7d19a67-olbg1` — T65 independent live desk (22 Oct 2026)
+
+**Claim.** T65 claimed at 2026-10-22T12:20Z and pushed before any implementation work, per §0.3.
+T1–T64, T257E and T354E are all occupied by live or merged sessions, so this session takes the next
+free id and a new append-only section rather than editing any existing row or section. Branch:
+`arena/d7d19a67-olbg1` (Arena-pinned; the §0.2 deviation applies). Baseline: `a8c2775` (PR #110) merged
+into the session branch before the claim, so the board read here is post-`e6fc2f12`.
+
+**Scope (non-overlapping).** `data/d7d19a67/**`, `scripts/sd7d19a67_*.py`, `d7d19a67/**`,
+`reports/SESSION_D7D19A67.md`, and append-only additions to `COORDINATION.md`. No canonical root page,
+`pipeline/**`, `data/current/**`, workflow, or other session's desk file is edited. `archive.html`
+auto-lists any top-level desk, so `/d7d19a67/` is reachable without a shared-file edit; a root companion
+link is left as an optional integrator request logged here per §0.4.
+
+**Confidence policy (interpretation recorded up front).** The brief says most existing High picks were
+merely ">70% chance based on market prices" and asks for High picks on matches sitting "between −250 and
++10000". Arithmetically those two conditions overlap only in −250…−233 (70.0%…71.4% fair), so this desk
+publishes **both** readings and never hides the tension:
+* **Gate A (brief-literal):** model probability > 70% **and** originated American price inside −250…+10000.
+* **Gate B (brief-intent, used for the published High tier):** originated price inside −250…+10000 (so no
+  odds-on gimmes shorter than −250 can be High) **and** the tier earned by evidence — official fixture read
+  live this session, official statistical inputs read live for both sides, a documented origination model,
+  and a unique hand-written ≥30-word prediction that names the selection and cites only facts actually read
+  from an official page. Gate A membership is reported per pick as a separate column.
+
+**Verification rules.** Every published row carries at least one official-source link (league, governing
+body, tour, promoter or club). Anything not confirmed on an official page fetched this session is left
+**blank** and flagged — no inference, no interpolation, no filling from memory. OLBG pages are treated as
+discovery only, never as fixture verification.
+
+**Handoff/limits.** If this claim has no commit for 60 minutes any session may take it over per §0.4 and
+log the handoff in §4.
