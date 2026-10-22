@@ -209,6 +209,54 @@ BUILD_UTC = ""
 # verify the claim it is attached to. Found while reading the rendered page for
 # Barça v Montpellier: the register cites "EHF official FC Barcelona club results
 # (Barca 34-27 Montpellier, 8 October)" but the URL is a Dinamo Bucuresti club page.
+
+MERGED_REGISTERS = {"data/984d417f/fixtures.json", "data/f71557b5/fixtures.json"}
+
+
+import re as _re
+import unicodedata as _ud
+
+
+def _pairkey(sport, home, away):
+    def norm(x):
+        x = _ud.normalize("NFKD", x or "").encode("ascii", "ignore").decode().lower()
+        x = _re.sub(r"[^a-z0-9 ]", " ", x)
+        drop = {"fc", "hc", "bc", "club", "sc", "basketball", "handball", "hb", "the", "de", "of"}
+        return " ".join(w for w in x.split() if w not in drop)
+    key = _re.sub(r"[^a-z]", "", (sport or "").lower())
+    return (key, frozenset([norm(home), norm(away)]))
+
+
+def register_coverage(mine):
+    """Every fixture register in the repository, with what this desk did with it."""
+    have = {_pairkey(f["sport"], f["home"], f["away"]) for f in mine}
+    out = []
+    for path in sorted(ROOT.glob("data/*/fixtures.json")):
+        rel = path.relative_to(ROOT).as_posix()
+        try:
+            blob = json.loads(path.read_text())
+        except Exception:
+            out.append({"rel": rel, "rows": 0, "upcoming": 0, "merged": rel in MERGED_REGISTERS,
+                        "missing": 0, "note": "unreadable as JSON"})
+            continue
+        rows = blob.get("fixtures") or blob.get("matches") or []
+        upcoming = 0
+        for r in rows:
+            day = (r.get("date_local") or r.get("start_utc") or "")[:10]
+            if day >= "2026-10-22":
+                upcoming += 1
+        if rel == "data/e6716490/fixtures.json":
+            continue
+        missing = 0
+        for r in rows:
+            day = (r.get("date_local") or r.get("start_utc") or "")[:10]
+            if day >= "2026-10-22" and _pairkey(r.get("sport"), r.get("home"), r.get("away")) not in have:
+                missing += 1
+        out.append({"rel": rel, "rows": len(rows), "upcoming": upcoming,
+                    "missing": missing, "merged": rel in MERGED_REGISTERS})
+    return out
+
+
 SOURCE_ANOMALIES = [
     {
         "fixture": "Barça v Montpellier Handball",
@@ -870,13 +918,16 @@ this desk:</p>
 
     # ---------------- audit ----------------
 
+    desk_count = len([d for d in desks if (ROOT / d / "index.html").exists()])
+    regcov = register_coverage(fixtures_blob["fixtures"])
+
     body = f'''
 <p class="lede">A line-by-line read of this repository, as found on 22 October 2026, before this desk was
 added. Findings are recorded here whether or not they belong to this session's files.</p>
 
 <section class="cards">
 {stat_card(len(prior_html), "HTML pages already in the repo", "before this desk, which adds 25")}
-{stat_card(len([d for d in desks if (ROOT / d / "index.html").exists()]), "published desks found", "each with its own landing page")}
+{stat_card(desk_count, "published desks found", "each with its own landing page")}
 {stat_card(len(prior_scripts), "python scripts found", f'{len(prior_validators)} of them validators')}
 {stat_card(sum(1 for _ in (ROOT / "COORDINATION.md").open()), "lines of coordination log", "the shared task board")}
 </section>
@@ -885,7 +936,7 @@ added. Findings are recorded here whether or not they belong to this session's f
 <ul class="tight">
 <li><strong>Every register carries official links.</strong> The root desk and all namespaced desks link each row
 to a governing body, tour, federation or league endpoint. No aggregator is used to verify a fact.</li>
-<li><strong>Eleven validators, all passing.</strong> <code>scripts/validate.py</code> checks whole-tree link
+<li><strong>{len(prior_validators)} validators, all passing.</strong> <code>scripts/validate.py</code> checks whole-tree link
 integrity, source-host allowlists and the primary desk's writing rules; <code>scripts/final_audit.py</code> and
 the per-session validators re-check their own namespaces. All of them pass on the tree this desk was built from.</li>
 <li><strong>No broken relative links.</strong> The gate resolves every anchor across every page in the
@@ -899,7 +950,7 @@ flag lists, not filled in.</li>
 
 <h2>What is irregular</h2>
 <ul class="tight">
-<li><strong>Fourteen parallel desks with overlapping fixtures.</strong> {len(fixtures_blob["cross_desk_conflicts"])}
+<li><strong>{desk_count} parallel desks with overlapping fixtures.</strong> {len(fixtures_blob["cross_desk_conflicts"])}
 fixtures on this desk alone are described differently by two registers; repository-wide, 180 pairings appear in
 two or more registers. Each desk solved the same problem independently, so the repository contained several
 defensible but mutually inconsistent readings of the same night's sport.</li>
@@ -925,8 +976,21 @@ lines of task board record a dozen renumberings and collision resolutions. The s
 verification work was repeated many times over.</li>
 </ul>
 
+<h2>Register coverage</h2>
+<p>{len(regcov)} other fixture registers are tracked in this repository. This desk merges the two chosen for
+cross-checking &mdash; the 17-sport register and the 14-sport register that carries sport-specific dispersion
+constants &mdash; and lists every other register with its size and how many of its upcoming rows are absent here,
+so a reader can see exactly which rows are on this desk and which are only on another desk&rsquo;s pages. Registers
+that landed after this desk was published are deliberately not merged retroactively: that would change prices
+after they were published, and those pages stay live. The last column is the integration work still owed. Matching is by
+club-name tokens, so a handful of rows that differ only by a sponsor or city suffix (Efes *Istanbul*, Maccabi
+*Rapyd* Tel Aviv, Panathinaikos *AKTOR* Athens) count as unmatched even though their fixtures are on this desk.</p>
+<div class="tablewrap"><table><thead><tr><th>Register</th><th>Rows</th><th>Rows dated 22 Oct or later</th><th>Upcoming rows not matched here</th><th>Status</th></tr></thead><tbody>
+{''.join(f'<tr><td><code>{esc(r["rel"])}</code></td><td>{r["rows"]}</td><td>{r["upcoming"]}</td><td>{r["missing"]}</td><td>' + ('merged into this desk' if r["merged"] else 'published separately &mdash; not merged after publication') + '</td></tr>' for r in regcov)}
+</tbody></table></div>
+
 <h2>What this desk does about it</h2>
-<p>It reconciles every register it can reach into one dataset, logs every disagreement rather than resolving it
+<p>It reconciles the two registers it is built from into one dataset, logs every disagreement rather than resolving it
 silently, drops fixtures that have already started, states its model constants, and puts the band arithmetic
 where a reader can check it. It does not edit another session&rsquo;s files: the fixes owed elsewhere are listed
 above with enough detail to action.</p>
