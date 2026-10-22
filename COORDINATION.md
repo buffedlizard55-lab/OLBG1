@@ -2130,6 +2130,10 @@ that would have been targeting, not modelling.
    Not edited here — those files belong to earlier sessions.
 10. **README drift:** headline counts (134 events, 160 pages) no longer match the tree (319 pages before this
     desk). Logged rather than rewritten beyond this session's own section.
+11. **A source entry cites the wrong page.** The Barça v Montpellier row carries a link whose text claims a
+    Barcelona result while the URL is a Dinamo Bucuresti club page, so the claim cannot be checked against the page
+    it cites. Found while reading the rendered page rather than from the data; the prediction quotes no scoreline
+    and the anomaly is published on `/e6716490/flagged.html` §6 and `/e6716490/audit.html`.
 
 ### 43.5 Gates
 

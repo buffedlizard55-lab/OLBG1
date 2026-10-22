@@ -205,6 +205,23 @@ def table(headers: list[str], rows: list[list[str]], cls: str = "") -> str:
 
 BUILD_UTC = ""
 
+# A source entry whose title and URL describe different pages cannot be used to
+# verify the claim it is attached to. Found while reading the rendered page for
+# Barça v Montpellier: the register cites "EHF official FC Barcelona club results
+# (Barca 34-27 Montpellier, 8 October)" but the URL is a Dinamo Bucuresti club page.
+SOURCE_ANOMALIES = [
+    {
+        "fixture": "Barça v Montpellier Handball",
+        "sport": "Handball",
+        "title": "EHF official FC Barcelona club results - 2026/27 group phase (Barca 34-27 Montpellier, 8 October)",
+        "url": "https://www.eurohandball.com/en/club/ZkfCu81QMPee22wu_nX_XjQ/DinamoBucuresti/",
+        "why": ("The link text claims a Barcelona result; the URL resolves to a Dinamo Bucuresti club page. "
+                "The claim can therefore not be checked against the cited page, which is why the desk quotes "
+                "no scoreline for the earlier Barça-Montpellier meeting and records the two registers' "
+                "disagreement (28-27 vs 34-27) instead."),
+    }
+]
+
 
 # --------------------------------------------------------------------------- #
 def main() -> int:
@@ -725,7 +742,13 @@ desk reads publish team aggregates; only the EuroLeague pages carried scoring an
 the Dubai pick uses them. Adding a player name to the other six would have meant inventing one, so the
 write-ups stay team-level and the gap is logged here instead.</p>
 
-<h2>6. Clocks</h2>
+<h2>6. Source anomalies</h2>
+<p>One source entry in the merged registers has a title and a URL that describe different pages. It is recorded
+here rather than silently dropped, because the claim attached to it cannot be verified from the page it cites.</p>
+{table(["Fixture", "Source title as recorded", "URL as recorded", "Why it matters"],
+       [[esc(a["fixture"]), esc(a["title"]), f'<a href="{esc(a["url"])}" target="_blank" rel="noopener">{esc(a["url"].split("/")[2])} ↗</a>', esc(a["why"])] for a in SOURCE_ANOMALIES])}
+
+<h2>7. Clocks</h2>
 <p>Darts, snooker, golf and one tennis match publish a session window or a rolling order of play rather than a
 start time per match. Those rows show “clock not published” and carry no kick-off; nothing was estimated.
 {counts["expired"]} fixtures had already started before this desk's cut-off of {esc(lines["cut_off_utc"])} and
@@ -886,6 +909,9 @@ records, but they are no longer bettable and a reader landing on those pages can
 <li><strong>The README's headline counts no longer match the tree.</strong> Its coverage summary describes 134
 events and 160 published pages; the tree held {len(prior_html)} pages before this desk was added. The counts were accurate when written
 and have drifted with each new desk.</li>
+<li><strong>A source entry cites the wrong page.</strong> In the Barça v Montpellier row, the link text claims a
+Barcelona result while the URL is a Dinamo Bucuresti club page, so the claim attached to it cannot be checked. The
+desk quotes no scoreline for that fixture and lists the anomaly on <a href="flagged.html">Flagged</a>.</li>
 <li><strong>Two registers disagree about a fixture date.</strong> The World Series game five is dated 27 October
 by one register and 28 October by another; the desk publishes the later date with the disagreement logged.</li>
 <li><strong>Barça v Montpellier has two different scorelines.</strong> One register records the earlier meeting as
