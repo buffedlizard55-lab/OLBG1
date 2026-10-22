@@ -190,9 +190,19 @@ def build() -> dict:
 
     picks = []
     for p in priced:
-        if p["event_only"] or not p["best_market"]:
+        if p["event_only"]:
             continue
         b = p["best_market"]
+        if not b:
+            picks.append({
+                "fixture_id": p["id"], "sport": p["sport"], "competition": p["competition"],
+                "home": p["home"], "away": p["away"], "start_utc": p["start_utc"],
+                "market": None, "selection": None, "price": None, "us": None,
+                "model_prob": None, "prob_pct": None, "confidence": None,
+                "cap_reason": None, "headline": None, "prose": None,
+                "no_pick_reason": "No selection at or above 52% clears -250 on this card.",
+            })
+            continue
         picks.append({
             "fixture_id": p["id"], "sport": p["sport"], "competition": p["competition"],
             "home": p["home"], "away": p["away"], "start_utc": p["start_utc"],
@@ -209,6 +219,8 @@ def build() -> dict:
     (DATA / "predictions.json").write_text(json.dumps(
         {"snapshot_utc": SNAPSHOT, "count": len(picks),
          "high_count": sum(1 for x in picks if x["confidence"] == "High"),
+         "priced_count": sum(1 for x in picks if x["selection"]),
+         "no_pick_count": sum(1 for x in picks if not x["selection"]),
          "picks": picks}, indent=1), encoding="utf-8")
 
     src_seen, sources = {}, []
@@ -278,7 +290,7 @@ def build() -> dict:
         if nextp is None:
             nxt = ""
         else:
-            nxt = short(nextp["start_utc"]) if nextp["start_utc"] else (nextp["date_local"] or "")
+            nxt = short(nextp["start_utc"]) if nextp["start_utc"] else (day(None, nextp["date_local"]) if nextp["date_local"] else "")
         rows += (f'<tr><td><a href="{s}.html">{esc(n)}</a><span class="pill">OLBG #{i}</span></td>'
                  f'<td>{len(ps)}</td><td>{sum(1 for p in ps if p["status"]=="verified")}</td>'
                  f'<td>{sum(len(p["markets"]) for p in ps)}</td>'
@@ -342,7 +354,7 @@ the official page the participants, venue and start were read from.</p>
                 mk = (f'{esc(b["selection"])}<br><span class="sm mut">{esc(b["market"])} &middot; '
                       f'{b["price"]:.2f} ({b["us"]:+d})</span>')
             else:
-                mk = '<span class="mut">no selection cleared -250</span>'
+                mk = '<span class="mut">no bet: the only in-band price is a coin flip or worse</span>'
             det = ""
             ladder = "".join(
                 f'<tr><td>{esc(m["market"])}</td><td>{esc(m["selection"])}</td>'
@@ -403,12 +415,20 @@ opens the full ladder for each match.</p>
     for p in picks:
         if p["confidence"] == "High":
             continue
+        if not p["selection"]:
+            mrows += (f'<tr><td class="sm">{esc(short(p["start_utc"]) if p["start_utc"] else "")}</td>'
+                      f'<td>{esc(SPORT_NAME[p["sport"]])}</td>'
+                      f'<td>{esc(p["home"])} v {esc(p["away"])}</td>'
+                      f'<td colspan="3" class="mut sm">{esc(p.get("no_pick_reason"))}</td>'
+                      f'<td><span class="tag lo">no bet</span></td></tr>')
+            continue
         mrows += (f'<tr><td class="sm">{esc(short(p["start_utc"]) if p["start_utc"] else "")}</td>'
                   f'<td>{esc(SPORT_NAME[p["sport"]])}</td>'
                   f'<td>{esc(p["home"])} v {esc(p["away"])}</td>'
                   f'<td>{esc(p["selection"])}<br><span class="sm mut">{esc(p["market"])}</span></td>'
                   f'<td>{p["price"]:.2f}</td><td>{p["prob_pct"]:.1f}%</td>'
                   f'<td>{conf_tag(p["confidence"], p.get("cap_reason"))}</td></tr>')
+    pr_no_pick = sum(1 for p in picks if not p["selection"])
     body = f"""<h1>Picks</h1>
 <p class="lede">One selection per priced match. The desk picks the strongest line that still clears
 -250, because anything shorter is excluded by policy. {len(highs)} selections meet both tests for a
@@ -416,6 +436,7 @@ High grade (model probability at least 70% and a price inside the band); the res
 reason is shown.</p>
 <h2>High confidence ({len(highs)})</h2>{hrows or '<p class="mut">None qualified.</p>'}
 <h2>Everything else ({len(picks)-len(highs)})</h2>
+<p class="sm mut">{pr_no_pick} of these cards have no qualifying selection: the only in-band price is at or below a coin flip, so the desk publishes no bet rather than a bad one.</p>
 <table><thead><tr><th>Start (UTC)</th><th>Sport</th><th>Fixture</th><th>Selection</th><th>Price</th>
 <th>Model</th><th>Confidence</th></tr></thead><tbody>{mrows}</tbody></table>
 <div class="card"><h3>Why so few High grades?</h3><p>Because the desk publishes fair prices, a

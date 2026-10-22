@@ -90,6 +90,8 @@ def main() -> int:
     check(fx["count"] == len(priced), "fixtures.json count mismatch")
     check(len(ln["books"]) == sum(1 for p in priced if not p["event_only"]), "lines.json book count")
     check(len(pr["picks"]) == sum(1 for p in priced if not p["event_only"]), "predictions.json count")
+    check(sum(1 for x in pr["picks"] if x.get("no_pick_reason")) == pr.get("no_pick_count", -1),
+          "predictions.json no_pick_count mismatch")
     check(pr["high_count"] == len(highs), "predictions.json high_count mismatch")
     check(cv["totals"]["fixtures"] == len(priced), "coverage totals mismatch")
 
