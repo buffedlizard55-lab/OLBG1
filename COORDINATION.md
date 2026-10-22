@@ -1911,6 +1911,15 @@ registers it is built from". Registers published after this desk are deliberatel
 that would move prices after publication; the gap column is the remaining integration work and is logged here for
 whichever session picks it up.
 
+**Self-correction on PR #86.** PR #86 was opened as "Efes pick headline described the handicap in the wrong
+direction" (and merged as such, `298d4cc`). That diagnosis was wrong. The published headline has always read
+"Efes with a seven-and-a-half point start looks the value side", which is the correct direction for a +7.5
+selection, and `git log -S "should not be giving up seven"` returns nothing, so the phrase the title described was
+never in the file. The commit's actual content is a regeneration of `data/e6716490/predictions.json` and the audit
+counts after a rebuild. The mistake is recorded here rather than quietly dropped, and the pull-request title stands
+on the public record. Every one of the nine write-ups was then re-read for handicap direction: all nine are
+receiving-side selections (+0.5 to +22.5) and none uses "giving up", "gives up" or "lays" of the selection.
+
 **Task board state at close.** T54 is **done**. Two collisions were absorbed and no session's work was
 discarded: `T46`–`T49`/`§36` (`a570c470`, later merged as `T50`–`T53`/`§38`) and `T44` (`9dfd0b48`, merged
 as `T45`/`§35`) both took ids this session had claimed, so it settled at **`T54`/`§39`** — the lowest free
