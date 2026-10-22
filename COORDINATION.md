@@ -2194,3 +2194,29 @@ re-run clean, and PR #79 opened and merged for that single fix.
 **Task board state at close.** T58 is **done**. Open items belonging to other files, logged and not actioned here:
 F-E67-09 (root register still prices 44 fixtures dated before 22 Oct), F-E67-10 (README headline drift outside this
 session's own section), and the repo-wide duplication described on `/e6716490/audit.html`.
+
+## 44. Session `7ad0d336-olbg1` — T59 Live 22 Oct Re-verification, 68-Market Taxonomy, In-Band Multi-Market Origination & 29-Page Dashboard (`/7ad0d336/`)
+
+### 40.1 Claim
+**Branch:** `arena/7ad0d336-olbg1` · **Claimed:** 2026-10-22T03:55Z · **Task row T59** inserted at line ~115 before §2. Preserved 100% of prior rows (0 deleted lines). Scope: `data/7ad0d336/**`, `scripts/s7ad0d336_*.py`, `7ad0d336/**`, `reports/SESSION_7AD0D336.md`, append-only `COORDINATION.md`. No shared data, generator or pages edited.
+
+### 40.2 Execution
+
+* **T59 Dataset (s7ad0d336_data.py):** Re-verified 127 fixtures (120 H2H + 7 event cards) from official governing-body pages on 2026-10-22; 17 sports; 39 distinct official sources; 65 flagged items (event-only, rolling order tennis clocks, PlusLiga redirect, PDC consent wall corroborated, NHL totals withheld). Outputs: `data/7ad0d336/fixtures.json` (127), `coverage.json` (17 sports), `sources.json` (39), `flagged.json` (65), `olbg_taxonomy.json` (24 IDs, 17 in scope, 7 excluded).
+* **T59 Model (s7ad0d336_model.py + s7ad0d336_prose.py):** Edge = (rating gap) + hfa; Φ(edge/17) for Normal, Binomial for best-of-N; fixed sport ladders (basketball 4.5/7.5/10.5, rugby 6.5/9.5/13.5, AFLW 10.5/14.5/18.5/24.5, handball 2.5/4.5/6.5, etc.); fair prices at zero vig with 5% book equiv shown but never tested. High requires verified + both measured + price 1.40..101.00 + prob ≥70% (match winner) or ≥65% (handicap) inside -250..+10000. Result: 1,386 markets, **13 High**, 65 Medium, 42 Low, 7 no-pick, 0 rejected out-of-window, 0 duplicate 6-grams, all High prose ≥30 words with team/player/form/history and clear selection.
+* **T59 Site (s7ad0d336_build.py):** 29 pages in `7ad0d336/` (index + picks + predictions + 17 sport subpages + analysis + methodology + reverse + sources + verification + window + coverage + flagged + assets/style.css + assets/app.js). Clean dark dashboard, sport grid, source links per row, window badges, confidence tags.
+* **Validation (s7ad0d336_validate.py):** PASS (0 errors, 29 pages). Root `validate.py` still PASSED (0 errors across 348 pages, 6 pre-existing warnings on flagged.html not authored here). Gates for v3, f71557b5, etc. unchanged.
+
+### 40.3 Publish record
+
+* **Pre-merge gates on this branch:** `s7ad0d336_validate.py` PASS, `validate.py` VALIDATION PASSED (0 errors), `final_audit.py` PASS. `git diff --diff-filter=D origin/main` is empty (no file from any parallel session removed).
+* **PR:** To be opened `arena/7ad0d336-olbg1` → `main` with summary of sources, window compliance, flagged items; merged without waiting per brief. **Note to final integration session:** add one companion-bar entry `7ad0d336/index.html` — "7ad0d336 · 22 Oct verified desk (13 High in window)" — to the generated root navigation via `scripts/build_site.py` (logged in §4, not edited here per §0.4).
+* **Pages:** GitHub Pages serves from repo root (branch `main`, folder `/root`); `.nojekyll` and `404.html` present. Deployment check via `gh api repos/buffedlizard55-lab/OLBG1/pages` and live CDN fetch to `https://buffedlizard55-lab.github.io/OLBG1/7ad0d336/index.html` to confirm all 13 High picks render with In-window badges and official links.
+
+### 40.4 Still open, out of scope
+
+Root T35 (AFLW re-price), T10/T11/T12/T19 (older queued), PR #40 (open/conflicting), and 56 `not_rechecked` rows on root desk remain queued. None block this desk. Any future root rebuild should move the hand-patched banner into `scripts/build_site.py` rather than hand-editing generated `index.html`.
+
+## 4. Requests and conflict log (append-only)
+
+**2026-10-22T07:30Z — session 7ad0d336-olbg1:** Request to final integration session (or whoever owns `scripts/build_site.py` / root `index.html`): add one companion-bar link for this desk — `7ad0d336/index.html` titled "7ad0d336 · 22 Oct verified desk (13 High in window)" — to the generated root navigation. This session did **not** edit `index.html`, `README.md` or `scripts/build_site.py` per §0.4 (non-overlapping scope); all prior sessions' files preserved verbatim (0 deleted lines verified via `git diff --diff-filter=D origin/main`). No merge conflicts encountered on this branch.
