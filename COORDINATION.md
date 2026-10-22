@@ -1512,3 +1512,20 @@ which this session does not own. Session `2ca35f17` correctly notes that a futur
 will drop the "Latest snapshot → v3" banner that was hand-patched into that file. The durable fix belongs
 in `build_site.py`: emit the banner from the generator, or make `main`'s landing page link to `v3/` from
 the companion bar only. Filed here instead of editing another session's generator.
+
+#### 31.3.1 Confirmation (recorded after the deploy settled)
+
+* **PR #52** — https://github.com/buffedlizard55-lab/OLBG1/pull/52 — carried this section to `main`;
+  **MERGED** 2026-10-22T01:48:38Z, merge commit `eae87dbb016deb96684299169a50ee48aed998ff`. One
+  `COORDINATION.md` conflict against §32.1 was resolved by keeping both sections verbatim (my §31.3 first,
+  their §32.1 second); no other file in the PR was touched.
+* **Live desk confirmed in the deployed tree, not just locally.** Re-requested with a cache-busting query
+  after the deploy: `/OLBG1/7a5b5360/index.html?v=2` returns the real T41 landing page (headline
+  "Fresh matchday desk — 22 to 26 October 2026", counters 32 fixtures / 231 markets / 4 high / 18
+  predictions / 26 selections at 70%+ / 14 flags). `/OLBG1/7a5b5360/markets.html` returns all 231
+  originated selections and `/OLBG1/7a5b5360/assets/style.css` returns the stylesheet. The earlier 404s on
+  the bare directory and on the un-parameterised `index.html` were edge-cache entries created before the
+  first successful deploy; the files themselves are in `main` and are served.
+* **`scripts/final_audit.py`** re-run on `main` after the merge: **exit 0**, regenerating
+  `reports/FINAL_INTEGRATION_AUDIT.md` byte-identically (134 primary rows, 29 high-pick rows, 16 archival
+  table-link review entries). The post-T41 audit confirmation that §31.2 listed as outstanding is closed.
