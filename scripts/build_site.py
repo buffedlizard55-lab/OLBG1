@@ -21,6 +21,10 @@ SITE_NAME = "OLBG Reverse-Engineering & Origination Desk"
 SITE_TAG = "17 in-scope sports · 134 source-linked events (129 verified · 5 cross-checked) · multi-market lines & human analysis"
 
 CONF_LABEL = {"high": "High", "medium": "Medium", "low": "Low"}
+
+# Filled in main() from the dataset so navigation labels, headings and KPI copy can never
+# drift from the data again (T41: the previous build hard-coded "31" in five places).
+COUNTS = {"high": 0, "medium": 0, "low": 0, "h2h": 0, "fixtures": 0, "preds": 0}
 STATUS_LABEL = {"verified": "Verified", "cross-checked": "Cross-checked", "unverified": "Unverified"}
 
 
@@ -62,6 +66,13 @@ def fmt_match(m: dict) -> str:
 
 def badge_conf(c: str) -> str:
     return f'<span class="badge {e(c)}">{e(CONF_LABEL.get(c, c))}</span>'
+
+
+def badge_window(l: dict) -> str:
+    """Small badge showing whether the published price obeys the -250/+10000 window."""
+    if l.get("pick_in_window"):
+        return '<span class="badge verified" title="Published price is inside -250 to +10000">In window</span>'
+    return '<span class="badge cross" title="Published price is outside -250 to +10000">Out of window</span>'
 
 
 def badge_status(s: str) -> str:
@@ -159,10 +170,19 @@ def render_picks_table(rows: list[tuple[dict, dict | None]], show_sport: bool, s
                         + '</span>'
                     )
             ht_cell = "<br>".join(ht_lines) if ht_lines else "—"
-            pick_out = next((o for o in w_out if o["selection"] == p["pick"]), w_out[0])
+            pick_out = next(
+                (
+                    o
+                    for mk in p["markets"]
+                    for o in mk["outcomes"]
+                    if o["selection"] == p["pick"]
+                ),
+                w_out[0],
+            )
             pick_cell = (
                 f'<b>{e(p["pick"])}</b> @ {odds_span(pick_out)}'
-                f'<span class="sub">{e(p["pick_market"])} ({round(max(p["home_probability"], p["away_probability"])*100, 1)}%)</span>'
+                f'<span class="sub">{e(p["pick_market"])} · {round(float(p.get("pick_probability") or 0) * 100, 1)}% model · '
+                f'{e(p.get("pick_american") or "")} {badge_window(p)}</span>'
                 f'{render_markets_drawer(p)}'
             )
             conf_attr = p["confidence"]
@@ -200,8 +220,8 @@ def render_shell(title: str, body: str, active: str, site_depth: int, repo_depth
     nav_items = [
         ("index.html", "Overview", "dash"),
         ("live-refresh.html", "Live Refresh (141)", "live"),
-        ("picks.html", "All Lines (134)", "picks"),
-        ("predictions.html", "High Picks (31)", "preds"),
+        ("picks.html", f"All Lines ({COUNTS['h2h']})", "picks"),
+        ("predictions.html", f"High Picks ({COUNTS['high']})", "preds"),
         ("sports.html", "17 Sports", "sports"),
         ("analysis.html", "Market Analysis", "analysis"),
         ("methodology.html", "Methodology", "method"),
@@ -317,7 +337,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
     vs = D["verification"]["summary"]
     index_body = f"""
 <h1>Source-Linked Multi-Sport Origination Desk</h1>
-<p class="lede">Complete reverse-engineering of <code>OLBG.com</code> across all <b>17 in-scope sports</b> (excluding soccer/football, horse racing, american football, boxing, UFC/MMA, specials, hurling, and cycling), pairing <b>134 source-linked events</b> (<b>{status_counts["verified"]} verified</b>; <b>{status_counts["cross-checked"]} cross-checked</b>) with independently originated markets and <b>31 non-repetitive human predictions</b>. {total_priced_count} of {len(h2h_rows)} head-to-head matches have an Over/Under total; the remaining total is left blank and flagged because no official competition-specific baseline was captured.</p>
+<p class="lede">Complete reverse-engineering of <code>OLBG.com</code> across all <b>17 in-scope sports</b> (excluding soccer/football, horse racing, american football, boxing, UFC/MMA, specials, hurling, and cycling), pairing <b>134 source-linked events</b> (<b>{status_counts["verified"]} verified</b>; <b>{status_counts["cross-checked"]} cross-checked</b>) with independently originated markets and <b>{COUNTS["preds"]} non-repetitive human predictions</b>. {total_priced_count} of {len(h2h_rows)} head-to-head matches have an Over/Under total; the remaining total is left blank and flagged because no official competition-specific baseline was captured.</p>
 
 <div class="grid kpis">
   {kpi_box(f'{len(fixtures)} ({status_counts["verified"]}V · {status_counts["cross-checked"]}C)', "Source-Linked Events") }
@@ -332,6 +352,16 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
   <b>Zero-inference verification policy:</b> Every fixture row carries a direct governing-body link; this snapshot labels <b>{status_counts["verified"]}</b> rows Verified and <b>{status_counts["cross-checked"]}</b> Cross-checked. Any field that cannot be supported is blank/flagged. Inputs for our prices link directly to an official governing body (NHL API, MLB StatsAPI, NBA, EuroLeague, ATP/WTA, WST, PDC, ICC/NZC, LNR Top 14, URC, NRL/RLWC26, EHF, PlusLiga/SuperLega, AFLW, LoL Esports, GAA, FIA F1, PGA/DPWT/LPGA, GBGB). Only matches where <b>both sides hold measured official ratings</b> can reach High confidence. Unconfirmed fields are left blank and catalogued on <a href="flagged.html">Flagged for Review</a>.
 </div>
 
+<div class="note good">
+  <b>Price-window compliance (this pass):</b> every one of the <b>{conf_counts["high"]} high-confidence picks</b> is
+  quoted inside the brief's <b>-250 to +10000</b> US-moneyline window at 60%+ model probability. Where a
+  match-winner price was shorter than -250, the same view is published on the handicap rung that lands inside
+  the window (for example Toulouse -7.0 instead of a -667 moneyline). The two rules in the brief cannot both
+  hold literally — a 70% chance prices at about -277 — so the window is applied as the binding constraint and
+  the contradiction is documented on <a href="methodology.html#price-window">Methodology</a> and
+  <a href="flagged.html">Flagged for Review</a> (T41-01, T41-02).
+</div>
+
 <div class="note">
   <b>New in this pass — <a href="live-verification.html">Live Verification</a>:</b> a dated, page-by-page re-fetch of the governing-body sources behind <b>{vs["rows"] - vs["not_rechecked"]} of the {vs["rows"]} rows</b> — <b>{vs["confirmed"]}</b> confirmed, <b>{vs["corrected"]}</b> corrected, <b>{vs["flagged"]}</b> flagged — plus the <b>{vs["not_rechecked"]}</b> rows this pass did not re-read, each with the blocker named. It is the first pass here that re-opened the official pages instead of auditing the dataset's structure.
 </div>
@@ -342,7 +372,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 <h2>Featured High-Conviction Selections</h2>
 <div class="toolbar">
   {odds_format_controls()}
-  <span style="margin-left:auto"><a class="chip" href="predictions.html">Read all 31 written predictions &rarr;</a></span>
+  <span style="margin-left:auto"><a class="chip" href="predictions.html">Read all {COUNTS["preds"]} written predictions &rarr;</a></span>
 </div>
 {render_picks_table(featured_high, show_sport=True, site_rel="")}
 
@@ -397,7 +427,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
         render_shell("All Originated Lines", picks_body, "picks", site_depth=0, repo_depth=repo_depth_base), encoding="utf-8"
     )
 
-    # 3. predictions.html — All 31 High-Confidence Human Predictions
+    # 3. predictions.html — all high-confidence human predictions
     pred_cards = []
     fix_by_id = {f["id"]: f for f in fixtures}
     for pr in D["preds"]["predictions"]:
@@ -412,18 +442,19 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
             f'{e(fx["competition"])} ({e(fx.get("stage", ""))}) · {e(fmt_when(fx))} · '
             f'{e(fx.get("venue") or "")} · {pr["words"]} words</div>'
             f'<p>{e(pr["text"])}</p>'
+            f'<p class="sub"><b>Window check:</b> {e(pr.get("window_note", ""))}</p>'
             f'<ul class="facts">{facts_li}</ul>'
             f'{render_source_links(fx)}'
             f'</article>'
         )
 
     pred_sport_counts = Counter(fix_by_id[p["match_id"]]["sport"] for p in D["preds"]["predictions"])
-    pred_opts = ['<option value="all">All Sports with High Picks (31)</option>'] + [
+    pred_opts = [f'<option value="all">All Sports with High Picks ({COUNTS["high"]})</option>'] + [
         f'<option value="{e(sp)}">{e(lines_by_id[next(p["match_id"] for p in D["preds"]["predictions"] if fix_by_id[p["match_id"]]["sport"] == sp)]["sport_name"])} ({cnt})</option>'
         for sp, cnt in sorted(pred_sport_counts.items())
     ]
     preds_body = f"""
-<h1>31 High-Confidence Human Predictions</h1>
+<h1>{COUNTS["high"]} High-Confidence Human Predictions</h1>
 <p class="lede">Every match clearing its sport's high-conviction threshold and holding measured governing-body ratings on both sides receives an original, non-repetitive human analysis (at least 30 words). Each current write-up is deliberately limited to the stored, source-linked comparison facts and the clearly labelled independent model selection.</p>
 
 <div class="toolbar">
@@ -581,9 +612,9 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
   <div class="card">
     <h3>Calibration Across Confidence Tiers</h3>
     <ul>
-      <li><b>High ({conf_counts["high"]} matches · 24.6%):</b> Requires <code>status == "verified"</code>, <b>both sides measured on official feeds</b>, and win probability clearing sport-specific thresholds (0.580 in MLB to 0.780 in AFLW).</li>
-      <li><b>Medium ({conf_counts["medium"]} matches · 27.8%):</b> Sourced ratings on both sides with moderate edge above baseline.</li>
-      <li><b>Low ({conf_counts["low"]} matches · 47.6%):</b> Genuine coin-flips, bounded rank-60 snooker qualifiers, opening-week 0-0 leagues, and 5 cross-checked Premiership ties.</li>
+      <li><b>High ({conf_counts["high"]} matches · {conf_counts["high"] / len(h2h_rows) * 100:.1f}%):</b> Requires <code>status == "verified"</code>, <b>both sides measured on official feeds</b>, the model's separation clearing the sport's threshold (0.580 in MLB to 0.780 in AFLW), <b>and</b> a published selection priced <b>inside the -250/+10000 window at 60%+ model probability</b>. Where the moneyline is shorter than -250 the same view is published on a handicap rung that lands inside the window; where no rung qualifies the match is a Medium, not a High.</li>
+      <li><b>Medium ({conf_counts["medium"]} matches · {conf_counts["medium"] / len(h2h_rows) * 100:.1f}%):</b> Sourced ratings on both sides with moderate edge above baseline, or a high-separation match whose selections could not be priced inside the window.</li>
+      <li><b>Low ({conf_counts["low"]} matches · {conf_counts["low"] / len(h2h_rows) * 100:.1f}%):</b> Genuine coin-flips, bounded rank-60 snooker qualifiers, opening-week 0-0 leagues, and 5 cross-checked Premiership ties.</li>
     </ul>
   </div>
 </div>
@@ -631,6 +662,21 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 <div class="card">
   <h2>2. Derived Spread / Handicap, Draw No Bet &amp; Over/Under Totals</h2>
   <p>Expected margin <code>mu = -sigma * Phi^-1(1 - p_home_2way)</code> maps win probability coherently onto sport scoring units. Fixed-line sports (NHL Puck Line <code>1.5</code>, MLB Run Line <code>1.5</code>, Snooker Frames <code>1.5</code>, Volleyball Sets <code>1.5</code>) price exact normal cover probabilities at <code>+-1.5</code>; variable-spread sports round to the nearest half-point hook. Totals adjust competition baselines (e.g., NBA <code>228.5</code> vs EuroLeague <code>171.5</code> vs EuroCup <code>168.5</code>; Men's T20I <code>339.5</code> vs Women's T20I <code>289.5</code> vs List A <code>529.5</code>). A total is never invented: {total_unavailable_count} multi-innings fixture has no source-backed competition baseline, so its total is blank and marked unverified.</p>
+</div>
+
+<div class="card" id="price-window">
+  <h2>3. High-Confidence Price Window (-250 to +10000)</h2>
+  <p>The brief asks for high-confidence picks on matches priced between <code>-250</code> and <code>+10000</code> in US moneyline terms. This desk applies that window as a hard filter on the selection it publishes, not as a preference.</p>
+  <table>
+    <thead><tr><th>Rule</th><th>Implementation</th></tr></thead>
+    <tbody>
+      <tr><td>Window floor</td><td><code>-250</code> American. At the documented 5% overround this equals a <b>68.0%</b> model probability: <code>1 / (0.68 x 1.05) = 1.400</code> decimal.</td></tr>
+      <tr><td>Selection order</td><td>1) the model's match winner when its own price is inside the window and at 60%+; 2) otherwise the highest-probability <b>handicap rung</b> inside the window at 60%+; 3) otherwise no high-confidence pick at all.</td></tr>
+      <tr><td>Why handicaps, not totals</td><td>Handicap rungs are tied to the sourced rating gap. Totals rest on a modelling baseline constant, so a 68% totals rung would be an artefact of the ladder rather than evidence. Totals stay published for investigation but are never the highlighted pick.</td></tr>
+      <tr><td>Tier consequences</td><td>A match can clear its separation threshold and still be <b>Medium</b> if no selection inside the window reaches 60%. That is disclosed per row in the <code>window</code> block and on <a href="flagged.html">Flagged for Review</a> (T41-01…T41-04).</td></tr>
+    </tbody>
+  </table>
+  <p><b>Known contradiction in the brief, disclosed rather than hidden.</b> A pick with a greater than 70% chance cannot sit inside a window whose floor is -250, because 70% prices at about -277 with vig. The two rules cannot both hold. The window wins because it is the explicit numeric instruction; 60% is the conviction floor actually applied. Full arithmetic: <code>reports/SESSION_2CA3_PRICE_WINDOW.md</code>.</p>
 </div>
 
 <h2>Complete 17-Sport Parameter Table</h2>
@@ -939,11 +985,19 @@ governed by their official sources and keep their earlier OLBG capture timestamp
 
     # 9. flagged.html — Flagged for Review (Defects, Scope Notes & Row-Level Flags)
     finding_rows = [
-        f'<tr><td><code>{e(fd["id"])}</code><span class="sub">{e(fd["category"])}</span></td>'
+        f'<tr data-source="{e(fd.get("source_kind", "official"))}">'
+        f'<td><code>{e(fd["id"])}</code><span class="sub">{e(fd["category"])}</span></td>'
         f'<td>{badge_conf(fd["severity"])}</td>'
         f'<td><b>{e(fd["affected"])}</b><span class="sub">{e(fd["summary"])}</span></td>'
         f'<td>{e(fd["evidence"])}<span class="sub"><b>Resolution:</b> {e(fd["resolution"])}</span></td>'
-        f'<td><a href="{e(fd["official_url"])}" target="_blank" rel="noopener">Official source &nearr;</a></td></tr>'
+        + (
+            '<td><span class="badge muted">Internal</span>'
+            f'<a href="{e(fd["official_url"])}">Methodology reference &nearr;</a>'
+            '<span class="sub">No governing body publishes this; it is our own rule.</span></td>'
+            if fd.get("source_kind") == "internal"
+            else f'<td><a href="{e(fd["official_url"])}" target="_blank" rel="noopener">Official source &nearr;</a></td>'
+        )
+        + '</tr>'
         for fd in D["flagged"]["findings"]
     ]
     row_flag_trs = [
@@ -994,7 +1048,7 @@ governed by their official sources and keep their earlier OLBG capture timestamp
     <li><a href="index.html">Executive Overview Dashboard (134 Source-Linked Events)</a></li>
     <li><a href="picks.html">All Originated Betting Lines &amp; Markets</a></li>
     <li><a href="live-refresh.html">Live OLBG Refresh &amp; Verification Boundary</a></li>
-    <li><a href="predictions.html">31 High-Confidence Human Predictions</a></li>
+    <li><a href="predictions.html">{COUNTS["high"]} High-Confidence Human Predictions</a></li>
     <li><a href="sports.html">All 17 In-Scope Sports Directory</a></li>
     <li><a href="flagged.html">Flagged for Review</a></li>
   </ul>
@@ -1007,6 +1061,18 @@ governed by their official sources and keep their earlier OLBG capture timestamp
 
 def main() -> None:
     D = load_data()
+    h2h = [(m, l) for m, l in zip(
+        [f for f in D["fixtures"]["fixtures"] if f.get("away") and not f.get("unpriced")],
+        D["lines"]["lines"],
+    )]
+    COUNTS.update({
+        "high": sum(1 for _, l in h2h if l["confidence"] == "high"),
+        "medium": sum(1 for _, l in h2h if l["confidence"] == "medium"),
+        "low": sum(1 for _, l in h2h if l["confidence"] == "low"),
+        "h2h": len(h2h),
+        "fixtures": len(D["fixtures"]["fixtures"]),
+        "preds": len(D["preds"]["items"]),
+    })
     # 1. Render primary site at repository root (/)
     build_all_pages(ROOT, repo_depth_base=0, D=D)
 
@@ -1017,6 +1083,38 @@ def main() -> None:
     for jf in (ROOT / "data").glob("*.json"):
         if jf.name in ("fixtures.json", "lines.json", "predictions.json", "olbg_taxonomy.json", "sources.json", "coverage.json", "verification.json"):
             shutil.copyfile(jf, ns / "data" / jf.name)
+
+    # 3. verification.html — legacy orphan page, regenerated as a signed alias.
+    # The inherited file was a hand-built snapshot from an earlier pass whose navigation
+    # advertised "All Lines (136)" and "High Picks (31)" against a 126/29 dataset. Nothing
+    # links to it any more, but a live URL that contradicts the data is still wrong, so it is
+    # rebuilt each time as a pointer to the current register (finding T41-05).
+    vs = D["verification"]["summary"]
+    for base, depth in ((ROOT, 0), (ns, 1)):
+        alias_body = f"""
+<h1>Verification — register moved</h1>
+<p class="lede">This URL is kept alive because it was published in an earlier pass. It now points at the
+current register rather than repeating a snapshot.</p>
+<div class="note">
+  <b>Current register:</b> {len(D["verification"]["rows"])} rows —
+  <b>{vs["confirmed"]}</b> confirmed, <b>{vs["corrected"]}</b> corrected,
+  <b>{vs["flagged"]}</b> flagged, <b>{vs["not_rechecked"]}</b> not re-checked.
+  Read the full row-by-row evidence on <a href="live-verification.html">Live Verification</a>,
+  including the per-row source URL, the timestamp of the read and the blocker where a page could
+  not be re-read.
+</div>
+<div class="card">
+  <h2>Why this page changed</h2>
+  <p>The earlier version of this file carried a navigation bar advertising 136 priced lines and 31
+  high-confidence picks while the dataset holds {COUNTS["h2h"]} priced head-to-head lines and
+  {COUNTS["high"]} high-confidence picks. Rather than hand-patch generated HTML, the page is now rendered
+  from the same data as every other page. The superseded content remains in git history.</p>
+</div>
+"""
+        (base / "verification.html").write_text(
+            render_shell("Verification (moved)", alias_body, "livev", site_depth=depth, repo_depth=depth),
+            encoding="utf-8",
+        )
 
     root_pages = len(list(ROOT.glob("*.html"))) + len(list((ROOT / "sports").glob("*.html")))
     ns_pages = len(list(ns.glob("*.html"))) + len(list((ns / "sports").glob("*.html")))

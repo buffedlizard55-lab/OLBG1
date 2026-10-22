@@ -113,10 +113,10 @@
   },
   "summary": {
     "rows": 134,
-    "confirmed": 41,
-    "corrected": 33,
+    "confirmed": 44,
+    "corrected": 32,
     "flagged": 2,
-    "not_rechecked": 58
+    "not_rechecked": 56
   },
   "by_sport": {
     "ice-hockey": {
@@ -252,12 +252,13 @@
       "sport": "ice-hockey",
       "competition": "NHL",
       "match": "Boston Bruins v Nashville Predators",
-      "status": "corrected",
-      "source_name": "NHL official standings API (2026-10-20, live)",
-      "source_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
-      "evidence": "Standings 2026-10-20 return 7-2-1, .750, +14 \u2014 but over 4 home games at 3-1-0 (homeWins 3, homeLosses 1, homeOtLosses 0), not the 5-1-0 the row carried. Home games cannot decrease, so the old figure was an error rather than drift.",
-      "action": "Home split 5-1-0 -> 3-1-0 in the descriptive input. Points percentage (.750) and goal differential (+14) were already correct, so the rating 75.0 and every price are unchanged.",
-      "checked_at": "2026-10-21T07:05Z"
+      "status": "confirmed",
+      "source_name": "NHL official standings API (2026-10-21, re-read 2026-10-22)",
+      "source_url": "https://api-web.nhle.com/v1/standings/2026-10-21",
+      "evidence": "T41 independent re-read 2026-10-22T01:20Z: the standings snapshot (standingsDateTimeUtc 2026-10-22T01:20:45Z) returned Boston with gamesPlayed 10, wins 7, losses 2, otLosses 1, homeWins 3, homeLosses 1, homeOtLosses 0, goalDifferential +14 and pointPctg 0.750 - matching the stored 7-2-1 / .750 / 3-1-0 home / +14 profile exactly.",
+      "action": "No change.",
+      "checked_at": "2026-10-22T01:45Z",
+      "checked_pass": "T41 (session 2ca35f17-olbg1)"
     },
     {
       "id": "nhl-2026020155",
@@ -289,11 +290,12 @@
       "competition": "NHL",
       "match": "St. Louis Blues v Vegas Golden Knights",
       "status": "flagged",
-      "source_name": "NHL official standings API (2026-10-20, live)",
-      "source_url": "https://api-web.nhle.com/v1/standings/2026-10-20",
-      "evidence": "The priced input is Vegas 8-2-0 (.800, W3). The same endpoint re-fetched at 2026-10-21T07:05:30Z returns 8-3-0 (.727, L1) over 11 games, so the club has played once since the snapshot.",
-      "action": "No change. The line and its rating are a labelled pre-game snapshot and are retained; re-pricing would silently rewrite a published pick. Disclosed on the row and on Flagged for Review for a reviewer decision.",
-      "checked_at": "2026-10-21T07:05Z"
+      "source_name": "NHL official standings API (2026-10-21, re-read 2026-10-22)",
+      "source_url": "https://api-web.nhle.com/v1/standings/2026-10-21",
+      "evidence": "T41 independent re-read 2026-10-22T01:20Z: Vegas now reads 8-3-0 with pointPctg 0.727, goalDifferential +14, streakCode L and streakCount 1, against the 8-2-0 / .800 / W3 snapshot this fixture was priced on. The stored input is unchanged and the drift was already disclosed as F-V5; this pass confirms it persists.",
+      "action": "No re-price: the published selection is a labelled pre-game snapshot and re-pricing it after the game would be worse than disclosing the movement. Both values remain published.",
+      "checked_at": "2026-10-22T01:45Z",
+      "checked_pass": "T41 (session 2ca35f17-olbg1)"
     },
     {
       "id": "nba-0022600085",
@@ -552,24 +554,26 @@
       "sport": "tennis",
       "competition": "WTA 500 Ningbo Open",
       "match": "Elena Rybakina v Polina Kudermetova",
-      "status": "not_rechecked",
-      "source_name": "WTA official Ningbo Open draw & order of play",
-      "source_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
-      "evidence": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
-      "checked_at": "2026-10-21T07:05Z"
+      "status": "confirmed",
+      "source_name": "WTA signed singles main draw, Ningbo 2026 (MDS.pdf, released 21 Oct 2026 22:13Z)",
+      "source_url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf",
+      "evidence": "T41 independent re-read 2026-10-22T01:45Z: the signed WTA draw sheet for tournament 2092 lists '1 1 RYBAKINA, Elena KAZ' with a first-round bye, and '4 Q KUDERMETOVA, Polina UZB' winning 76(5) 62 against Bucsa. The round of 16 pairing Rybakina v Kudermetova, the No. 1 seed and the Russian's rank of 1 in the draw's own ranked player table therefore match the stored row. Kudermetova's world No. 103 ranking is not printed on the draw and was not re-confirmed in this pass.",
+      "action": "No change to the row. Blocker 'WTA draws are client-rendered' (LIVE-F-V7) is resolved for this tournament: the signed PDF is machine-readable and is now cited.",
+      "checked_at": "2026-10-22T01:45Z",
+      "checked_pass": "T41 (session 2ca35f17-olbg1)"
     },
     {
       "id": "ten-902093",
       "sport": "tennis",
       "competition": "WTA 500 Ningbo Open",
       "match": "Katarzyna Kawa v Belinda Bencic",
-      "status": "not_rechecked",
-      "source_name": "WTA official Ningbo Open draw & order of play",
-      "source_url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
-      "evidence": "Official draw widgets are client-rendered and returned no draw body. ATP results pages were read and confirm the Round-of-32 winners behind six pairings, but the Round-of-16 matches have not been played, so no results feed lists them. All eleven rows therefore carry a \u201creconstructed, not draw-verified\u201d flag and keep blank start times.",
-      "action": "Keeps its original status and source links; nothing in this pass re-read it.",
-      "checked_at": "2026-10-21T07:05Z"
+      "status": "confirmed",
+      "source_name": "WTA signed singles main draw, Ningbo 2026 (MDS.pdf, released 21 Oct 2026 22:13Z)",
+      "source_url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf",
+      "evidence": "T41 independent re-read 2026-10-22T01:45Z: the same signed draw sheet lists '5 BENCIC, Belinda SUI' at rank 12 and 'Q KAWA, Katarzyna POL' beating Snigur 62 64 in the first round, setting up Kawa v Bencic in the round of 16 exactly as stored. Kawa's No. 124 ranking is not printed on the draw sheet, so that figure still rests on the WTA rankings page cited in the row and is not claimed as re-checked here.",
+      "action": "No change to the row; signed draw added as the primary evidence.",
+      "checked_at": "2026-10-22T01:45Z",
+      "checked_pass": "T41 (session 2ca35f17-olbg1)"
     },
     {
       "id": "ten-902038",
@@ -2062,6 +2066,15 @@
       "status": "Confirmed, no change. Recorded because the same trap applies to every Sunday European fixture after 25 October.",
       "source_name": "LNR Top 14 official calendar, journ\u00e9e 7",
       "source_url": "https://top14.lnr.fr/calendrier-et-resultats"
+    }
+  ],
+  "passes": [
+    {
+      "pass": "T41",
+      "session": "2ca35f17-olbg1",
+      "checked_at": "2026-10-22T01:45Z",
+      "rows_re_read": 4,
+      "note": "Targeted re-read of the four high-confidence rows that were still marked not_rechecked (two WTA, two NHL). Signed WTA draw PDF resolves the JS-draw blocker for Ningbo. Darts (pdc.tv cookie wall) and EuroLeague (client-rendered game centre) were re-attempted and remain blocked; those rows keep their previous status."
     }
   ]
 }
