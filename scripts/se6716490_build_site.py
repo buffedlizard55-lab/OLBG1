@@ -346,7 +346,7 @@ def main() -> int:
 {stat_card(counts["markets"], "markets originated", f'{counts["selections"]} priced selections')}
 {stat_card(counts["high"], "High-confidence picks", "one High per match, every one hand-written")}
 {stat_card(in_band, "selections inside the band", "p ≥ 70% and fair price −250…+10000")}
-{stat_card(verification["counts"]["checks"], "row-sides re-fetched", "NHL · MLB · EuroLeague, today")}
+{stat_card(verification["counts"]["checks"], "row-sides re-fetched", "NHL · MLB · EuroLeague · AFLW, today")}
 </section>
 
 <div class="notice">
@@ -391,10 +391,10 @@ margin; a 5% book-equivalent is shown on every match page so the margin is visib
 
 <h2>What changed in this pass</h2>
 <ul class="tight">
-<li>Re-read three official endpoints live: the NHL standings feed for 2026-10-22, the MLB StatsAPI 2026
-standings and the EuroLeague 2026-27 standings. {verification["counts"]["checks"]} row-side comparisons are
+<li>Re-read four official endpoints live: the NHL standings feed for 2026-10-22, the MLB StatsAPI 2026
+standings, the EuroLeague 2026-27 standings and the official AFLW ladder. {verification["counts"]["checks"]} row-side comparisons are
 published with their results on the <a href="verification.html">Verification</a> page.</li>
-<li>Merged two source registers (and their fourteen sibling desks&rsquo; context) into one desk, reconciling club-name variants and logging
+<li>Merged two source registers (and their other {len([d for d in desks if (ROOT / d / "index.html").exists()]) - 1} sibling desks&rsquo; context) into one desk, reconciling club-name variants and logging
 {len(fixtures_blob["cross_desk_conflicts"])} cross-desk disagreements instead of silently picking a winner.</li>
 <li>Dropped {counts["expired"]} fixtures that had already started before the publish cut-off rather than
 pricing games already in play.</li>

@@ -1918,6 +1918,16 @@ counts after a rebuild. The mistake is recorded here rather than quietly dropped
 on the public record. Every one of the nine write-ups was then re-read for handicap direction: all nine are
 receiving-side selections (+0.5 to +22.5) and none uses "giving up", "gives up" or "lays" of the selection.
 
+**Fifth live endpoint: the AFLW ladder.** The AFLW Carlton v GWS GIANTS row was carried, yet it produced a
+High pick, so the ladder was re-read at the official AFL site (client-rendered; the table appears on the second
+pass). Both clubs corroborate the register exactly on position, points, percentage and W-L-D — Carlton 6th on 28
+pts at 133.0%, 7-3-0; GWS 15th on 8 pts at 68.2%, 2-8-0 — with games played (10) not quoted by the register. The row
+is therefore upgraded from `carried` to `re-fetched`, and the desk now publishes **24 row-side checks across 13 of
+122 fixtures** (2 full matches, 22 partial) from four endpoints: NHL standings, MLB StatsAPI, EuroLeague standings
+and the AFLW ladder. Of the nine High picks, four now rest on inputs re-read live today (NHL, MLB, three EuroLeague
+rows and AFLW) and five remain carried with their register's own official link and read date, each labelled as such
+on its row and in its write-up.
+
 **Task board state at close.** T54 is **done**. Two collisions were absorbed and no session's work was
 discarded: `T46`–`T49`/`§36` (`a570c470`, later merged as `T50`–`T53`/`§38`) and `T44` (`9dfd0b48`, merged
 as `T45`/`§35`) both took ids this session had claimed, so it settled at **`T54`/`§39`** — the lowest free

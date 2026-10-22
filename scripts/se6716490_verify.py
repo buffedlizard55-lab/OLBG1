@@ -92,6 +92,21 @@ FETCHES = [
         "note": "All 20 clubs were on the page; the ten listed here are the ones this desk prices. "
                 "Standings are as published when read and will move as round seven is played.",
     },
+    {
+        "id": "V4",
+        "authority": "Australian Football League",
+        "url": "https://www.afl.com.au/aflw/ladder",
+        "title": "AFL official 2026 NAB AFLW ladder (Round 11 header)",
+        "read_at": "2026-10-22T08:20:00Z",
+        "covers": "both sides of the AFLW Carlton v GWS GIANTS row (ladder position, played, points, percentage, W-L-D)",
+        "teams": {
+            "Carlton": {"pos": 6, "gp": 10, "record": "7-3-0", "pts": 28, "pct": 133.0},
+            "GWS GIANTS": {"pos": 15, "gp": 10, "record": "2-8-0", "pts": 8, "pct": 68.2},
+        },
+        "note": "Read from the ladder table on the official AFLW site, which is rendered client-side: the "
+                "table appeared in the second pass of the page. Positions, points, percentage and W-L-D were "
+                "read for the two clubs this desk prices; no other club was recorded.",
+    },
 ]
 
 ALIASES = {
@@ -133,7 +148,10 @@ def official_string(fact: dict) -> str:
     if "record" in fact:
         parts.append(f"{fact['record']} ({fact['gp']} GP)")
     if "pct" in fact:
-        parts.append(f"{fact['pct']:.3f} points percentage")
+        if fact["pct"] > 2:
+            parts.append(f"{fact['pct']:.1f} per cent")
+        else:
+            parts.append(f"{fact['pct']:.3f} points percentage")
     if "home" in fact:
         parts.append(f"home {fact['home']}")
     if "away" in fact:
@@ -144,6 +162,8 @@ def official_string(fact: dict) -> str:
         parts.append(f"{fact['for']}:{fact['against']} ({fact['diff']:+d})")
     if "runs_scored" in fact:
         parts.append(f"{fact['runs_scored']} runs scored / {fact['runs_allowed']} allowed")
+    if "pos" in fact:
+        parts.append(f"{fact['pos']}{'st' if fact['pos'] == 1 else ('nd' if fact['pos'] == 2 else ('rd' if fact['pos'] == 3 else 'th'))} on {fact['pts']} pts ({fact['pct']:.1f}%)")
     if "streak" in fact:
         parts.append(f"streak {fact['streak']}")
     return ", ".join(parts)
@@ -159,6 +179,9 @@ FIELD_TOKENS = {
     "gp": lambda f: [str(f["gp"])],
     "runs_scored": lambda f: [str(f["runs_scored"]), str(f["runs_allowed"])],
     "streak": lambda f: [f["streak"]],
+    "pos": lambda f: [str(f["pos"])],
+    "pts": lambda f: [str(f["pts"])],
+    "pct": lambda f: [f"{f['pct']:.1f}", f"{f['pct']:.1f}".lstrip("0")],
 }
 
 
