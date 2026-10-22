@@ -110,6 +110,13 @@ def main():
                 err("prices: %s %s american %s != recomputed %s" % (r["row_id"], m["label"], m["american"], exp))
             if m["decimal"] is not None and abs(m["decimal"] - 1.0 / m["p"]) > 5e-4:
                 err("prices: %s %s decimal %s != 1/p %s" % (r["row_id"], m["label"], m["decimal"], 1.0 / m["p"]))
+            if abs(m["p"] - 0.94) < 1e-9 or abs(m["p"] - 0.06) < 1e-9:
+                err("ladder: %s %s sits on a clipped probability %s; the ladder should stop before saturating"
+                    % (r["row_id"], m["label"], m["p"]))
+            if m["market"] == "Handicap" and m["line"] is not None:
+                neg = "-" in m["label"].split(" ")[-2] if len(m["label"].split(" ")) > 2 else False
+                if neg != (m["line"] < 0):
+                    err("ladder: %s %s label sign disagrees with stored line %s" % (r["row_id"], m["label"], m["line"]))
             if m["market"] in ("Handicap", "Match Total"):
                 line = m["line"]
                 if line is None or abs((abs(line) * 2) % 2 - 1) > 1e-9:
@@ -168,6 +175,14 @@ def main():
 
     # ---------------------------------------------------------- rejected ledger
     for r in rows:
+        if len(r["rejected_highs"]) > r.get("rejected_high_count", 0):
+            err("rejected: %s lists more rejections than its recorded count" % r["row_id"])
+        if len(r["rejected_highs"]) > 3:
+            err("rejected: %s prints %d ledger rows; the summary should stay readable"
+                % (r["row_id"], len(r["rejected_highs"])))
+        kinds = [j.get("kind") for j in r["rejected_highs"]]
+        if len(set(kinds)) != len(kinds):
+            err("rejected: %s repeats a ledger kind: %s" % (r["row_id"], kinds))
         for j in r["rejected_highs"]:
             if j["p"] < 0.70:
                 err("rejected: %s %s p %.4f < 0.70 but is in the rejected-High ledger" % (r["row_id"], j["label"], j["p"]))

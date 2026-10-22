@@ -665,19 +665,32 @@ def build_markets(home_name, away_name, p_home, mc, tc, total_ok, sigma_h, sigma
         h = 0.5
         while h <= max(3.0 * sigma_h, 6.0):
             z = (h - mc) / sigma_h
-            for side, p in ((home_name, 1.0 - phi(z)), (away_name, phi(z))):
+            p_away = phi(z)
+            # Stop before emitting a saturated rung. Once p reaches the clipping
+            # ceiling every deeper rung is numerically identical, so continuing
+            # only pads the board with duplicates that mean nothing.
+            if p_away >= PROB_CEIL - 1e-12:
+                break
+            #   home -h wins if margin > h ; away +h wins if margin < h.
+            # The line sign follows the label: home gives points (negative),
+            # away receives them (positive). Offset is the cushion in points
+            # between the line and the expected margin, in the bet's direction.
+            rungs = (
+                (home_name, 1.0 - p_away, -h, abs(mc - h)),
+                (away_name, p_away, h, abs(h + mc)),
+            )
+            for side, p, line, cushion in rungs:
                 p = clip_prob(p)
                 am = p_to_american(p)
-                sign = "-" if side == home_name else "+"
                 markets.append({
                     "market": "Handicap",
-                    "line": round(h if side == home_name else -h, 1),
+                    "line": round(line, 1),
                     "side": side,
-                    "label": "%s %s%.1f %s" % (side, sign, h, unit or ""),
+                    "label": ("%s %s%.1f %s" % (side, "-" if line < 0 else "+", h, unit or "")).strip(),
                     "p": round(p, 6), "decimal": p_to_decimal(p), "american": am,
                     "book5_american": book_american(p),
                     "centre": round(mc, 4),
-                    "offset": round(abs((h if side == home_name else -h) - mc), 4),
+                    "offset": round(cushion, 4),
                     "unit": unit,
                     "in_window": in_window(am), "ge_70": p >= HIGH_PROB_MIN,
                     "origin": "official",
@@ -688,6 +701,12 @@ def build_markets(home_name, away_name, p_home, mc, tc, total_ok, sigma_h, sigma
     if sigma_t and tc is not None and total_ok:
         base = math.floor(tc) + 0.5      # strict .5 grid: a total can never push
         for k in range(0, int(3.0 * sigma_t) + 2):
+            # Saturation guard measured on the FARTHER side of the centre: base
+            # sits on the half-point grid while tc generally does not, so the low
+            # rungs saturate before the high ones and checking only base+k lets
+            # one clipped pair through.
+            if k and phi(max(abs(base + k - tc), abs(base - k - tc)) / sigma_t) >= PROB_CEIL - 1e-12:
+                break
             for x in ([base] if k == 0 else [base - k, base + k]):
                 z = (x - tc) / sigma_t
                 for side_label, p in (("Over", 1.0 - phi(z)), ("Under", phi(z))):
@@ -730,6 +749,53 @@ def pick_high(markets, klass, form_ok, hard_cap):
     order = {"Match Winner": 0, "Handicap": 1, "Match Total": 2}
     cands.sort(key=lambda m: (round(m["offset"], 6), order.get(m["market"], 9), abs(m["line"] or 0)))
     return cands[0], rejected
+
+
+def summarise_rejected(rejected):
+    """Keep only the rejections that carry information.
+
+    A deep ladder produces dozens of rungs above 70% that are all far outside
+    the window and all say the same thing. Two are worth printing per fixture:
+    the match winner when it is a genuine favourite priced too short to be
+    usable, and the nearest miss -- the rung that came closest to clearing the
+    -250 floor. The full ladder stays on the markets page, and the total count
+    is kept on the row so nothing is silently dropped.
+    """
+    out = []
+    seen = set()
+    ml = [m for m in rejected if m["market"] == "Match Winner"]
+    if ml:
+        m = ml[0]
+        seen.add(m["label"])
+        out.append({
+            "label": m["label"], "market": m["market"], "p": m["p"], "american": m["american"],
+            "kind": "favourite_priced_too_short",
+            "reason": "Our match winner clears 70%% at %.4f, but at %s it is far shorter than the -250 floor, "
+                      "so the window rejects a genuine favourite rather than a weak one."
+                      % (m["p"], fmt_american(m["american"])),
+        })
+    short = [m for m in rejected if m["label"] not in seen and m["american"] is not None
+             and m["american"] < WINDOW_AMERICAN_MIN]
+    if short:
+        m = max(short, key=lambda x: x["american"])   # closest to -250 from below
+        gap = abs(WINDOW_AMERICAN_MIN - m["american"])
+        out.append({
+            "label": m["label"], "market": m["market"], "p": m["p"], "american": m["american"],
+            "kind": "nearest_miss",
+            "reason": "The closest rung to clearing: %.4f at %s, which is %d American point%s outside the -250 floor."
+                      % (m["p"], fmt_american(m["american"]), gap, "" if gap == 1 else "s"),
+        })
+    long_ = [m for m in rejected if m["label"] not in seen and m["american"] is not None
+             and m["american"] > WINDOW_AMERICAN_MAX]
+    if long_:
+        m = long_[0]
+        out.append({
+            "label": m["label"], "market": m["market"], "p": m["p"], "american": m["american"],
+            "kind": "beyond_plus_10000",
+            "reason": "Clears 70%% at %.4f but prices at %s, beyond the +10000 ceiling."
+                      % (m["p"], fmt_american(m["american"])),
+        })
+    return out
 
 
 # ===========================================================================
@@ -1007,12 +1073,8 @@ def make_row(sport_key, tup, origin="olbg", extra=None):
             "agrees_with_olbg": (tipped is not None and subj is not None and tipped.strip().lower() == subj.strip().lower()),
         },
         "high_selection": None,
-        "rejected_highs": [
-            {"label": m["label"], "market": m["market"], "p": m["p"], "american": m["american"],
-             "reason": "probability %.4f clears 70%% but the zero-vig price %s falls outside the -250 / +10000 window"
-                       % (m["p"], fmt_american(m["american"]))}
-            for m in rejected
-        ],
+        "rejected_highs": summarise_rejected(rejected),
+        "rejected_high_count": len(rejected),
         "prediction": None,
         "sources": {
             "olbg": [{"url": olbg_card_url(sport_key, slug), "name": "OLBG tip card (reconstructed URL)", "official": False},
@@ -1186,6 +1248,10 @@ def main():
                 "basketball_hca_points": round(BASKETBALL_HCA, 4),
                 "hca_formula": "HCA = sigma_margin * Phi^-1(official home win rate) = 11.5 * Phi^-1(0.540984)",
                 "ladder_rule": "Handicap and total rungs sit on a half-point grid only, so no rung can push. Handicap rungs step 1.0 from 0.5; total rungs step 1.0 either side of the centre rounded to the nearest half point.",
+                "ladder_sign_rule": "A handicap line's sign follows its label: the home side gives points and is stored negative, the away side receives them and is stored positive. Home -h and away +h share the same threshold h in margin space.",
+                "ladder_saturation_rule": "A ladder stops before its first saturated rung. Once a probability reaches the clipping ceiling, every deeper rung is numerically identical, so emitting them would only pad the board with duplicates carrying no information.",
+                "offset_rule": "Offset is the cushion, in the sport's own unit, between the line and our expected margin measured in the direction of the bet: home -h gives |centre - h|, away +h gives |h + centre|. The tightest-rung rule compares these cushions.",
+                "rejected_ledger_rule": "Only the informative rejections are printed per fixture - the match winner when a genuine favourite is priced too short, and the nearest miss to the -250 floor. The full rejected count is kept on every row and the complete ladder stays on the markets page, so nothing is silently dropped.",
                 "tightest_rung_rule": "Among rungs that clear both the 70 per cent floor and the price window, the one closest to our own centre is taken. Ties break on market order Match Winner, Handicap, Match Total, then on the smaller line.",
                 "totals_rule": "A match total is originated ONLY where an official body published the scoring inputs. Where it did not, the total is left blank and flagged TOTAL-NOT-ORIGINATED. We never infer a total.",
                 "spread_rule": "A handicap ladder is originated only where we hold an official rating input (Class A or B). Where the official body published scoring data we use the true margin centre; where it published only a rating (seed, rank, top-16 status) we convert that probability into the equivalent margin centre via sigma * Phi^-1(p) so the ladder is still expressed in the sport's own unit. Class C rows carry a moneyline only and are flagged SPREAD-NOT-ORIGINATED.",

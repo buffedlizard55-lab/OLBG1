@@ -481,18 +481,29 @@ def render_window():
              'clears comfortably. The band rewards high-variance sports and punishes low-variance ones. That is a property '
              'of the rule, not a statement about which picks are more likely to win.</div>')
     b.append("<h2>Rejected Highs &mdash; above 70% but outside the window</h2>")
+    KIND = {"favourite_priced_too_short": "favourite priced too short",
+            "nearest_miss": "nearest miss",
+            "beyond_plus_10000": "beyond +10000"}
     rej = []
     for r in ROWS:
         for j in r["rejected_highs"]:
             rej.append([E(r["sport_label"]), E(r["fixture"]), E(j["label"]), E(j["market"]),
                         pct(j["p"]), am(j["american"]),
-                        "%d points short" % abs(-250 - j["american"]) if j["american"] < -250 else "longer than +10000"])
-    rej.sort(key=lambda x: x[0])
-    b.append(table(["Sport", "Fixture", "Selection", "Market", "Our p", "American", "Why rejected"], rej,
-                   scroll=True, aligns=["", "", "", "", "num", "num", ""]))
-    b.append('<div class="note">%d rungs cleared the 70%% floor and were rejected by the price window. Publishing them '
-             'matters: they are the picks the rule throws away, and several are stronger favourites than anything that '
-             'survives it.</div>' % len(rej))
+                        chip(KIND.get(j.get("kind"), j.get("kind") or ""), "bad"),
+                        E(j["reason"]), r["rejected_high_count"]])
+    rej.sort(key=lambda x: (x[0], x[1]))
+    b.append(table(["Sport", "Fixture", "Selection", "Market", "Our p", "American", "Kind",
+                    "Why rejected", "Rungs rejected on this fixture"], rej,
+                   aligns=["", "", "", "", "num", "num", "", "", "num"]))
+    total_rej = sum(r["rejected_high_count"] for r in ROWS)
+    b.append('<div class="note"><b>%d rungs</b> across the desk cleared the 70%% floor and were rejected by the price '
+             'window. A deep ladder produces dozens of them per fixture and they all say the same thing, so the table '
+             'above lists only the ones that carry information on each fixture &mdash; the match winner when a genuine '
+             'favourite is priced too short to be usable, and the nearest miss, the rung that came closest to clearing '
+             'the %s floor. The last column keeps the full count so nothing is silently dropped, and the complete ladder '
+             'for every fixture is on the <a href="markets.html">markets</a> page. Publishing the rejections matters: '
+             'they are the picks the rule throws away, and several are stronger favourites than anything that survives '
+             'it.</div>' % (total_rej, am(-250)))
     return "".join(b)
 
 
@@ -563,6 +574,9 @@ def render_high():
                            [[E(j["label"]), E(j["market"]), pct(j["p"]), am(j["american"]), E(j["reason"])]
                             for j in r["rejected_highs"]],
                            aligns=["", "", "num", "num", ""]))
+            b.append('<p class="sub">%d rungs on this fixture cleared 70%% and were rejected by the window; those above '
+                     'are the informative ones. The full ladder is on the <a href="markets.html">markets</a> '
+                     'page.</p>' % r["rejected_high_count"])
         if r["prediction"]:
             b.append('<div class="pred"><div class="who">Prediction &middot; %d words</div><p>%s</p></div>'
                      % (r["prediction"]["word_count"], E(r["prediction"]["text"])))
@@ -721,6 +735,10 @@ def render_methodology():
                     ["Basketball HCA", "%.2f points" % dv["basketball_hca_points"], E(dv["hca_formula"])],
                     ["Ladder grid", "half-point only", E(dv["ladder_rule"])],
                     ["Tightest rung", "closest to our centre", E(dv["tightest_rung_rule"])],
+                    ["Line sign", "follows the label", E(dv["ladder_sign_rule"])],
+                    ["Ladder depth", "stops before saturation", E(dv["ladder_saturation_rule"])],
+                    ["Offset", "cushion in the sport's unit", E(dv["offset_rule"])],
+                    ["Rejected ledger", "informative rows only", E(dv["rejected_ledger_rule"])],
                     ["Totals", "official anchor required", E(dv["totals_rule"])],
                     ["Spreads", "official rating required", E(dv["spread_rule"])],
                     ["Winner pick", "follows the favourite", E(dv["winner_pick_rule"])],
@@ -948,13 +966,15 @@ def render_sport(sp):
                           chip("&ge;70", "hi") if m["ge_70"] else ""])
     b.append(table(["Fixture", "Market", "Selection", "Line", "Our p", "Decimal", "American", "5% book", "Window", "p&ge;70"],
                    mrows, scroll=True, aligns=["", "", "", "num", "num", "num", "num", "num", "", ""]))
-    rej = [[E(r["fixture"]), E(j["label"]), E(j["market"]), pct(j["p"]), am(j["american"])]
+    rej = [[E(r["fixture"]), E(j["label"]), E(j["market"]), pct(j["p"]), am(j["american"]), E(j["reason"])]
            for r in rs for j in r["rejected_highs"]]
     if rej:
         b.append("<h2>Rejected Highs on this sport</h2>")
-        b.append('<p class="lede">Cleared the 70% floor but fell outside the price window.</p>')
-        b.append(table(["Fixture", "Selection", "Market", "Our p", "American"], rej,
-                       aligns=["", "", "", "num", "num"]))
+        b.append('<p class="lede">Cleared the 70%% floor but fell outside the price window. %d rungs in this sport were '
+                 'rejected in total; only the informative ones are listed.</p>'
+                 % sum(r["rejected_high_count"] for r in rs))
+        b.append(table(["Fixture", "Selection", "Market", "Our p", "American", "Why rejected"], rej,
+                       aligns=["", "", "", "num", "num", ""]))
     return "".join(b)
 
 
