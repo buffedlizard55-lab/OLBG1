@@ -4,7 +4,7 @@
 working on what. It exists so that multiple agent sessions can work on this repository at the
 same time without duplicating work or overwriting each other.
 
-Last updated: **2026-10-22T09:08:00Z** (UTC) (T56-audit + T57 fresh-harvest merged/live)
+Last updated: **2026-10-22T12:05:00Z** (UTC) (T64 claimed: independent live desk `e6fc2f12-olbg1`)
 
 ---
 
@@ -126,6 +126,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 
 | T257E | Evidence-first final integration: repository-wide row audit; official-source collection with saved evidence and expiry; honest market/confidence gates; one canonical dashboard with category tables and Flagged for Review; automated refresh/build/test/Pages; PR, merge and deployment verification | done | 257e6674-olbg1 | `pipeline/**`, `tests/pipeline/**`, `.github/workflows/**`, `data/current/**`, `reports/SESSION_257E6674*`, `site_templates/**`, `audit/**` (new generated review pages), `archive/root-20261022/**`; final integration only: root `*.html`, `sports/**`, `assets/current-*`, `scripts/build_site.py` (legacy guard), `README.md`, `.gitignore`, append-only `COORDINATION.md` | 2026-10-22T10:46:35Z | PR #88 and #103 merged; corrected production run 39764029573 succeeded; live manifest cdbc9002, Basketball blank Valencia estimate, F-257E-19 and canonical compatibility route confirmed. Partial coverage/no High remain explicit, not unresolved publication tasks. |
 | T354E | Fresh 22 Oct 12:00Z expiry-aware desk: re-check canonical snapshot against official sources, originate multi-market lines (winner/handicap/total where model supports), enforce High only if >70% + in -250..+10000 + calibrated/context evidence else downgrade, unique >=30-word predictions only for qualifying picks, namespaced dashboard + Flagged, validator, PR/merge/Pages | done | 354e0990-olbg1 | `data/354e0990/**`, `scripts/s354e0990_*.py`, `354e0990/**`, `reports/SESSION_354E0990.md`, append-only `COORDINATION.md` §49 | 2026-10-22T12:00Z | Collision-resistant ID; no canonical root/data/current/pipeline files edited |
+| T64 | **Independent live desk `e6fc2f12-olbg1` (22 Oct 2026):** fresh OLBG 17-hub in-scope discovery harvest; line-by-line official-source verification of every included fixture against the league / governing body / tour itself; own multi-market line origination (match winner, handicap/spread ladders, totals); confidence grading with the **brief's own rule** — a High pick must have model probability **above 70%** *and* a fair price that expresses inside **−250…+10000**; unique hand-written ≥30-word predictions for every High pick naming the selection and citing only facts read from an official page this session; namespaced dashboard `/e6fc2f12/` (landing + 17 sport subpages + markets + high-confidence + analysis + sources + Flagged for Review); validator gate; PR, merge and live GitHub Pages verification | done | e6fc2f12-olbg1 | `data/e6fc2f12/**`, `scripts/se6fc2f12_*.py`, `e6fc2f12/**`, `reports/SESSION_E6FC2F12.md`, append-only `COORDINATION.md` (this row + §50) | 2026-10-22T12:05Z | Claimed at T64 because T1–T63, T257E and T354E were all taken; **renumbered §49→§50** on rebase after `354e0990` merged its own §49 (PR #108), whose row and record are preserved verbatim. Strictly namespaced: no edit to root `*.html`, `sports/**`, `assets/**`, `README.md`, `scripts/build_site.py`, `scripts/validate.py`, `pipeline/**`, `.github/workflows/**`, `data/current/**`, `data/release/**` or any other session's `<id>/` desk. `archive.html` auto-lists any top-level `index.html` desk, so `/e6fc2f12/` is reachable from the canonical archive page without a shared-file edit. **DONE:** 91 fixtures (73 priced / 18 unpriced with reasons), **1098** originated markets, High **18** / Medium **239** / Low **841** (sum 1098), 20 official sources, 18 hand-written predictions, 26 HTML pages + 2 CSV exports. `se6fc2f12_validate.py` → VALIDATION PASSED, 0 errors / 0 warnings. PR #110. |
 
 ---
 
@@ -2931,3 +2932,48 @@ Delivered in the isolated `354e0990/` namespace: 24 priced upcoming matches (49 
 ### T354E publication receipt
 
 PR #108 — https://github.com/buffedlizard55-lab/OLBG1/pull/108 — merged 2026-10-22T12:04:35Z as `61ef3a618e241a28842b221065a6064a0d661f2e`. PR check run 39775277846 passed; post-merge canonical production run 39775433923 watched to exit 0. Live verification by fetching a path that exists only in this merge: https://buffedlizard55-lab.github.io/OLBG1/354e0990/index.html returned the T354E dashboard with counts 24 priced / 0 High / 8 predictions and the five fresh-check rows. Flagged items F-354-01..09 are published on https://buffedlizard55-lab.github.io/OLBG1/354e0990/flagged.html and do not block the merge. Integrator note: a root companion link to `354e0990/index.html` remains optional and unclaimed.
+
+## 50. Session `e6fc2f12-olbg1` — T64 independent live desk (22 Oct 2026)
+
+> Renumbered from §49 at merge: `354e0990` (T354E) published its own §49 in PR #108 first and that
+> record is preserved verbatim above. Nothing else in this section changed.
+
+**Claim.** T64 claimed at 2026-10-22T12:05Z and pushed before any work, per §0.3. T1–T63 and T257E
+are all occupied, so this session takes the next free id and a new append-only section rather than
+editing any existing row or section. Branch: `arena/e6fc2f12-olbg1` (Arena-pinned; §0.2 applies).
+
+**Scope.** `data/e6fc2f12/**`, `scripts/se6fc2f12_*.py`, `e6fc2f12/**`, `reports/SESSION_E6FC2F12.md`
+and this section. No shared file is edited: not root `*.html`, not `sports/**`, not `assets/**`, not
+`README.md`, not `scripts/build_site.py`, not `scripts/validate.py`, not `pipeline/**`, not
+`.github/workflows/**`, not `data/current/**`, not `data/release/**`, and not any other session's
+desk. The canonical `archive.html` auto-discovers top-level `index.html` desks at build time, so the
+new desk is reachable without a shared-navigation edit.
+
+**Result.** 91 verified fixtures (73 priced, 18 unpriced with a stated reason each) covering six
+sports: NHL 60, rugby union 8 (URC round 4), snooker 8 (Northern Ireland Open), MLB 5 (World
+Series), rugby league 5 (RLWC), F1 5 sessions. **1098** originated markets — match winner,
+handicap, match total and team total — of which High **18**, Medium **239**, Low **841**. Twenty
+official sources, each with URL, publisher, kind, what it was used for and a read timestamp. Eleven
+in-scope sports published as explicit gaps with the attempted URL and the specific failure.
+
+**Tier rule, as executed.** High requires model probability > 0.70 *and* a fair American price inside
+−250…+10000; that band only exists for $p \in (0.7000, 0.7143]$, so a −600 favourite is graded
+Medium by arithmetic, not by model dislike. Medium is $p \ge 0.65$; Low is the remainder. The
+consequence — a narrow High band and only 18 qualifying selections out of 1098 — is stated on the
+site rather than widened away.
+
+**Predictions.** Eighteen hand-written, one per High selection, no template reuse, each opening with
+the selection, naming both participants, and citing only facts read from the official source in this
+session (2026-27 records, recentScorelines, URC round-3 form). No player-level claim is made
+anywhere, and that gap is disclosed on Flagged and Methodology rather than filled with guesswork.
+
+**Gates.** `python3 scripts/se6fc2f12_model.py` → `..._build_site.py` (26 pages) →
+`..._validate.py` → **VALIDATION PASSED, 0 errors, 0 warnings**, covering tier arithmetic
+(18+239+841 = 1098), American/decimal/probability agreement, the High price window, prediction
+length/uniqueness/selection naming, duplicate fixture and market keys, unpriced fixtures carrying
+markets, source traceability, internal link and anchor resolution, page reachability from
+`index.html`, and render artefacts (`None`, `nan`, `%%`).
+
+**Publication record.** PR #110 — https://github.com/buffedlizard55-lab/OLBG1/pull/110 — opened
+2026-10-22T12:12Z. Merge receipt and live-Pages verification appended below after the deploy is read
+back from the deployed bytes, per the PR #98 lesson.

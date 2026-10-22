@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'none'; object-src 'none'; base-uri 'none'">
+<title>Analysis and findings · OLBG research desk</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="brand"><span class="mark" aria-hidden="true"></span>
+    <span><strong>OLBG research desk</strong><small>independent · evidence-first</small></span>
+  </div>
+  <div class="meta"><span class="dot"></span> snapshot 2026-10-22T12:08:31Z</div>
+</header>
+<nav class="nav" aria-label="Desk sections"><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="matches.html">Match list</a><a class="nav-link" href="markets.html">Market explorer</a><a class="nav-link" href="high-confidence.html">High-confidence picks</a><a class="nav-link" href="sports.html">All sports</a><a class="nav-link active" href="analysis.html">Analysis</a><a class="nav-link" href="flagged.html">Flagged for review</a><a class="nav-link" href="sources.html">Sources</a><a class="nav-link" href="methodology.html">Methodology</a></nav>
+<main id="main">
+<header class="page-head">
+  <p class="eyebrow">Session e6fc2f12-olbg1 · lines originated, not copied</p>
+  <h1>Analysis and findings</h1>
+  <p class="lede">What the numbers say, including the parts that argue against the desk's own labels.</p>
+</header>
+
+<div class="kpis">
+  <div class="kpi"><span>High</span><strong>18</strong><small>p &gt; 70% and inside the band</small></div>
+  <div class="kpi"><span>Medium</span><strong>239</strong><small>p ≥ 65%</small></div>
+  <div class="kpi"><span>Low</span><strong>841</strong><small>everything else</small></div>
+  <div class="kpi"><span>Fair price in band</span><strong>949</strong><small>of 1098 markets</small></div>
+</div>
+
+<section class="panel">
+  <h2>Finding 1 — the brief's band and the brief's threshold cannot both be generous</h2>
+  <p>At a probability of 70% the fair decimal price is 1.4286, which is −233 American. At −250 the
+  implied probability is 71.43%. So the instruction "greater than 70% chance to win" combined with
+  "odds between −250 and +10000" defines a window of roughly 1.4 percentage points. This desk
+  applies both conditions literally, which is why 18 selections qualify rather than
+  several hundred. The alternative would be to label heavy favourites "High" and quote them at
+  prices the band forbids — the failure mode several earlier desks in this repository were flagged
+  for.</p>
+  <div class="scroll"><table class="grid">
+  <thead><tr><th>Selection</th><th>Market</th><th>Model p</th><th>Fair price</th><th>Fixture</th></tr></thead>
+  <tbody><tr><td>Over 39.5</td><td>Match total</td><td class="num">90.2%</td><td class="num price">-918</td><td class="muted small">urc-r4-04</td></tr><tr><td>Over 39.5</td><td>Match total</td><td class="num">89.8%</td><td class="num price">-881</td><td class="muted small">urc-r4-08</td></tr><tr><td>Minnesota Wild +1.5</td><td>Handicap</td><td class="num">89.6%</td><td class="num price">-862</td><td class="muted small">nhl-2026020162</td></tr><tr><td>Toronto Maple Leafs +1.5</td><td>Handicap</td><td class="num">87.7%</td><td class="num price">-716</td><td class="muted small">nhl-2026020186</td></tr><tr><td>Vegas Golden Knights +1.5</td><td>Handicap</td><td class="num">86.5%</td><td class="num price">-643</td><td class="muted small">nhl-2026020174</td></tr><tr><td>Dragons RFC +9.5</td><td>Handicap</td><td class="num">86.1%</td><td class="num price">-621</td><td class="muted small">urc-r4-08</td></tr><tr><td>Detroit Red Wings +1.5</td><td>Handicap</td><td class="num">85.4%</td><td class="num price">-583</td><td class="muted small">nhl-2026020178</td></tr><tr><td>Under 7.5</td><td>Match total</td><td class="num">85.2%</td><td class="num price">-573</td><td class="muted small">nhl-2026020171</td></tr></tbody></table></div>
+  <p class="muted small">The rows above are <em>stronger</em> favourites than every High pick, and
+  are deliberately excluded: at these prices the band cannot be expressed. They remain available in
+  the <a href="markets.html">market explorer</a> as Medium or Low.</p>
+</section>
+
+<section class="panel">
+  <h2>Finding 2 — coverage is uneven and the desk says so</h2>
+  <p>Broad, machine-readable official feeds (NHL, MLB, URC) produced 73
+  priced fixtures. Client-rendered or consent-walled official pages produced no fixture at all for
+  eleven categories. Publishing an unpriced fixture list would have been easy; it would also have
+  been guesswork about start times and participants, so those categories are gaps instead.</p>
+  <div class="scroll"><table class="grid">
+  <thead><tr><th>Sport</th><th>Fixtures</th><th>Priced</th><th>Markets</th><th>High</th></tr></thead>
+  <tbody><tr><td>Baseball</td><td class="num">5</td><td class="num">5</td><td class="num">50</td><td class="num">0</td></tr><tr><td>Ice Hockey</td><td class="num">60</td><td class="num">60</td><td class="num">904</td><td class="num">17</td></tr><tr><td>Motor Racing</td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr><tr><td>Rugby League</td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr><tr><td>Rugby Union</td><td class="num">8</td><td class="num">8</td><td class="num">144</td><td class="num">1</td></tr><tr><td>Snooker</td><td class="num">8</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr></tbody></table></div>
+</section>
+
+<section class="panel">
+  <h2>Finding 3 — the model is honest about what it is not</h2>
+  <ul class="list">
+    <li>No home advantage is inserted, because no official home/road split was read. That biases
+    estimates toward 50%, which suppresses High labels rather than manufacturing them.</li>
+    <li>Beta(2,2) shrinkage stops a 3-0 start reading as a 100% team. It is a disclosed choice, not
+    a sourced fact.</li>
+    <li>Independent Poisson goals is a stated approximation. Real hockey goals are not independent
+    and empty-net effects are not modelled.</li>
+    <li>The rugby-union margin and total use a normal approximation with standard deviations of
+    13.5 and 16.0 points. Those two numbers are assumptions and are labelled as such everywhere
+    they appear.</li>
+    <li>No market quote exists in this dataset. "Edge" is therefore unknowable here, and the desk
+    does not claim any.</li>
+  </ul>
+</section>
+
+<section class="panel">
+  <h2>Finding 4 — where the earlier desks and this one disagree</h2>
+  <p>A prior desk in this repository carried a High pick on the New York Islanders moneyline at a
+  fair −250. Recomputing from the same official NHL records read today (Islanders 5-3-1, 27 goals
+  for, 19 against) does not reproduce a 70%+ win probability for that fixture in this model. The
+  discrepancy is a modelling difference — different shrinkage and no home edge here — not proof
+  that either number is wrong. It is recorded on the <a href="flagged.html">Flagged</a> page as an
+  open review item rather than silently overwritten.</p>
+</section>
+
+</main>
+<footer class="foot">
+  <p>Independent research. Not affiliated with OLBG. No guarantee, no bookmaker quote and no
+  staking advice. Prices shown are this desk's own model estimates, never observed market
+  prices. 18+.</p>
+  <p class="muted">Snapshot generated 2026-10-22T12:08:31Z · model e6fc2f12-evidence-1.0</p>
+</footer>
+</body>
+</html>

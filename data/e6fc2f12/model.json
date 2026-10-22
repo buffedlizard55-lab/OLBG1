@@ -1,0 +1,22 @@
+{
+ "generated_at": "2026-10-22T12:08:31Z",
+ "model_version": "e6fc2f12-evidence-1.0",
+ "counts": {
+  "fixtures": 91,
+  "fixtures_priced": 73,
+  "fixtures_unpriced": 18,
+  "markets": 1098,
+  "outcomes_by_tier": {
+   "High": 18,
+   "Medium": 239,
+   "Low": 841
+  },
+  "high_eligible_markets": 1048,
+  "in_band_markets": 949
+ },
+ "tier_rule": {
+  "high": "model probability > 0.70 AND fair price within -250..+10000",
+  "medium": "model probability >= 0.65 and not High",
+  "low": "everything else"
+ }
+}
