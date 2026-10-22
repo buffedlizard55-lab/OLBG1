@@ -282,8 +282,11 @@ def check_pages(doc: dict) -> None:
             errors.append(f"{rel}: links to a Google search instead of an official source")
         if "None<" in text or ">None" in text:
             errors.append(f"{rel}: contains a None artefact")
-        if text.count("<table") != text.count("</table>"):
-            errors.append(f"{rel}: unbalanced <table> tags")
+        for tag in ("table", "div", "article", "details", "p", "ul", "tr", "td"):
+            opened = len(re.findall(rf"<{tag}[ >]", text))
+            closed = text.count(f"</{tag}>")
+            if opened != closed:
+                errors.append(f"{rel}: unbalanced <{tag}> tags ({opened} open, {closed} closed)")
         for href in parsed.links:
             if not href or href.startswith(("https://", "mailto:", "#", "javascript:")):
                 continue

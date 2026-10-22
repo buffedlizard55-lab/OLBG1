@@ -546,6 +546,8 @@ def build_predictions(rows, stats) -> str:
     <b>{p["price"]:.2f}</b> ({us_fmt(p["us"])}) &middot; model {p["prob_pct"]}%</span>
     <span class="sm">Official source: {src_links(r["sources"])}</span>
   </div>
+  <p class="sm mut" style="margin-top:8px">Sourced form &mdash; {esc(r["home"])}: {esc((r["home_input"] or {}).get("value", ""))} &middot;
+  {esc(r["away"] or "")}: {esc((r["away_input"] or {}).get("value", ""))} &middot; {esc(r["venue"])}</p>
 </article>""")
     body = f"""
 <h1>High-confidence predictions ({len(highs)})</h1>
@@ -984,6 +986,10 @@ moneyline that cannot.</p>
   <li><b>It does not price draws.</b> Every non-binomial sport is priced two-way, so a draw is never quoted and a favourite&rsquo;s probability is very slightly overstated. Draw-capable sports here are handball, Gaelic football, rugby union, rugby league and AFLW. Flagged as F-26B-06 and left for the next pricing pass rather than changed mid-snapshot.</li>
   <li><b>It does not read market prices.</b> These are our own lines; no bookmaker or exchange price is loaded, so nothing here is a value bet against a market.</li>
   <li><b>It does not know about injuries, team news, weather or travel.</b> The only inputs are the official record fields printed on each row.</li>
+  <li><b>&ldquo;Recent match history&rdquo; means what the governing body published in the captured input</b> &mdash; a
+  win-loss streak where the table carries one (the NHL rows show W3 and L4), a Round 1 result where the tournament page
+  lists one (Wales Women 6-70, France 4-78), or a ladder record across the completed rounds (AFLW 5-5, EuroLeague 5-1).
+  Where the source published only a ranking or a seed, the preview quotes that and does not invent a run of results.</li>
   <li><b>It is a snapshot.</b> {stats["carried"]} rows are carried from 21 October and capped at Medium; prices do not move after publication.</li>
   <li><b>39 of the 120 priced matches have at least one side with no captured rating.</b> Their prices are the venue baseline
   only and they carry no tip; the table marks them &ldquo;no rating captured&rdquo; and each one is listed on the flagged page.
@@ -998,7 +1004,9 @@ moneyline that cannot.</p>
 during the reverse-engineering pass &mdash; they are real OLBG hubs (sport ids {esc(", ".join(str(i) for _, i in EXCLUDED))}) &mdash;
 but nothing in them is priced or listed here.</p>
 <p class="sub">The OLBG taxonomy, including the two active-but-unlisted hubs (Specials/18 and Hurling/26), is preserved
-in <code>data/olbg_taxonomy.json</code> and on the <a href="archive.html">archive page</a>.</p>
+in <code>data/olbg_taxonomy.json</code>; the original write-up on OLBG&rsquo;s URL grammar is kept at
+<a href="archive/root-20261021/reverse-engineering.html">archive/root-20261021/reverse-engineering.html</a>, and every
+earlier board is listed on the <a href="archive.html">archive page</a>.</p>
 """
     return page("Methodology", "methodology.html", body,
                 description="The pricing model, per-sport assumptions, confidence rules, price window and known limits.")
