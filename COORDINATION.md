@@ -3404,3 +3404,33 @@ finding is limited to it.
 
 **Not claimed.** This does not re-verify `53674ac8`'s sources, prices, predictions or its "12 High"
 count, and it does not certify the desk.
+
+### T9DC publication receipt (2026-10-22T12:30Z)
+
+**PR #114** — https://github.com/buffedlizard55-lab/OLBG1/pull/114 — merged 2026-10-22T12:22:35Z as
+`cb41612a56491028613385171e24d1d656618e6d`. PR check run **39777696023** passed every gate
+(95 pipeline tests, preserved suite, `scripts/validate.py`, `pipeline.build`, `pipeline.validate`,
+desktop/mobile/project-prefix browser tests). Post-merge production run **39777828984** completed with
+both jobs green (validate 1m11s, deploy 9s).
+
+**Live verification** by fetching a path that exists only in this merge:
+https://buffedlizard55-lab.github.io/OLBG1/9dc28d1e/index.html returned the desk with 25 priced
+matches / 391 markets / 782 outcomes / 3 High / 3 predictions, the three High rows
+(Nashville over 1.5 −248, San Jose over 1.5 −237, Minnesota under 4.5 −239) and all 17 category cards.
+`/9dc28d1e/flagged.html` publishes F-9DC-01…10; `/9dc28d1e/analysis.html` publishes the gate arithmetic,
+the fragility table and the 25 strongest excluded selections.
+
+**Follow-up PR #120** — https://github.com/buffedlizard55-lab/OLBG1/pull/120 — merged
+2026-10-22T12:26:10Z as `e21a9f20220e1d298684ccdae9d8c27c424905b3`: category badge spacing only, data
+unchanged (`data/9dc28d1e/desk.json` identical). Its immediate post-merge run was *cancelled* by the
+`pages` concurrency group when four other sessions merged within the same minute (#118, #121, #122, #123);
+the next production run on that content, **39778774282** (PR #116 merge), completed green, and the live
+page was re-fetched afterwards with the same figures. No deploy failure was attributable to this desk.
+
+**Integrator note.** A root companion link to `9dc28d1e/index.html` remains optional and unclaimed; the
+desk is reachable today as a direct path and from `archive.html`'s preserved-desk listing.
+
+**Flagged items do not block publication** — F-9DC-01…10 are live on the desk's Flagged for Review page
+with their source links. The two that most need a human decision are F-9DC-01 (the brief's High gate is
+only 1.43 percentage points wide) and F-9DC-02 (eight in-band EuroLeague rows capped at Medium because
+no official player-level source was available).
