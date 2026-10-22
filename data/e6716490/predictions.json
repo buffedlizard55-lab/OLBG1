@@ -1,6 +1,6 @@
 {
  "session": "e6716490-olbg1",
- "generated_utc": "2026-10-22T07:26:54Z",
+ "generated_utc": "2026-10-22T07:30:54Z",
  "rules": [
   "one hand-written prediction per High-confidence pick, never templated across picks",
   "at least 30 words, stating the team, the form, the recent record and the exact selection",
@@ -52,6 +52,11 @@
     }
    ],
    "sources": [
+    {
+     "name": "NHL official standings API — 2026-10-22 — re-read live by session e6716490-olbg1 (2026-10-22T07:40:00Z)",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-22",
+     "read": "2026-10-22T07:40:00Z"
+    },
     {
      "name": "NHL Official Web API — Schedule (2026-10-21..22)",
      "url": "https://api-web.nhle.com/v1/schedule/2026-10-21"
@@ -423,6 +428,11 @@
    ],
    "sources": [
     {
+     "name": "EuroLeague official 2026-27 regular-season standings — re-read live by session e6716490-olbg1 (2026-10-22T07:40:00Z)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/",
+     "read": "2026-10-22T07:40:00Z"
+    },
+    {
      "name": "EuroLeague official Game Center Round 7 (records, points per game, kick-offs)",
      "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
     },
@@ -667,6 +677,11 @@
     }
    ],
    "sources": [
+    {
+     "name": "MLB StatsAPI — 2026 regular-season standings, both leagues — re-read live by session e6716490-olbg1 (2026-10-22T07:40:00Z)",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason",
+     "read": "2026-10-22T07:40:00Z"
+    },
     {
      "name": "MLB StatsAPI Official 2026 World Series Postseason Feed",
      "url": "https://statsapi.mlb.com/api/v1/schedule/postseason?sportId=1&season=2026"

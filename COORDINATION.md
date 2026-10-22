@@ -2158,4 +2158,38 @@ See §43.8 for the pull request number, merge commit and Pages deployment check,
 
 ### 43.8 Publication record
 
-_(appended after the merge — PR number, merge commit and the live Pages check)_
+**PR #77** — https://github.com/buffedlizard55-lab/OLBG1/pull/77 — **MERGED** 2026-10-22T07:29:41Z, merge commit
+`4a2707fb793631dce5a0372d77801079b873b460`. Opened and merged without waiting for approval, per
+the brief.
+
+**Rebase note (nothing discarded).** `main` moved twice while this branch was open: PR #76/#78 from
+`3d2d578a-olbg1`/`cccb414e-olbg1` added §40–§42 and T55–T57, and `8cab6428-olbg1` had already taken `T55`/`§40`.
+Both merges of `origin/main` conflicted on `COORDINATION.md` only. Resolution: take `origin/main`'s file verbatim,
+re-insert this session's task row as **`T58`** after `T57`, and re-append this section as **`§43`** after `§42`.
+Every other session's rows and sections are present unchanged; `git diff --diff-filter=D origin/main` on the merged
+tree is empty. The two additive root edits (`index.html` companion-bar entry and status banner, `README.md` section)
+auto-merged around the release-audit notice from `cccb414e`, and the banner was reworded to say explicitly that the
+release-audit warning applies to the primary desk, not to the rows this desk re-read.
+
+**Pages.** Deployment run **39740869149** for the merge commit completed **success** in 36s; the Pages API reports
+`status: built`.
+
+**Live checks with cache-busters, against the CDN:**
+
+| Page | Result |
+| --- | --- |
+| `/e6716490/index.html?v=1` | renders: 122 fixtures / 105 priced / 1,575 markets / 1,722 selections / 9 High / 42 in-band selections / 22 re-fetched row-sides; all 9 High picks listed with model %, fair price, US price, verification pill, official-source links and a link into each written pick; 17-sport directory table present |
+| `/e6716490/sports/*.html` (17) | all 17 category pages served, each with per-fixture market tables, inputs and source links |
+| `/e6716490/predictions.html` | 9 write-ups with verified-input tables, row checks and sources |
+| `/e6716490/verification.html` | 3 endpoints, 22 comparisons, the carried-sports disclosure |
+| `/e6716490/flagged.html`, `/markets.html#band`, `/methodology.html`, `/sources.html`, `/audit.html` | served |
+
+**Follow-up fix carried by PR #79.** The first live render showed the High table's source column still pointing at
+the register's original read pages rather than the endpoint this session re-read. `se6716490_verify.py` now copies
+the row's source list onto its High-pick summary, so the link a reader clicks for a `re-fetched today` pick is the
+page that was actually read (for example `api-web.nhle.com/v1/standings/2026-10-22`). Site rebuilt, both gates
+re-run clean, and PR #79 opened and merged for that single fix.
+
+**Task board state at close.** T58 is **done**. Open items belonging to other files, logged and not actioned here:
+F-E67-09 (root register still prices 44 fixtures dated before 22 Oct), F-E67-10 (README headline drift outside this
+session's own section), and the repo-wide duplication described on `/e6716490/audit.html`.
