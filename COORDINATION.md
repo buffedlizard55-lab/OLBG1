@@ -3200,3 +3200,15 @@ F-65-01…F-65-12 and the blank-value list. No broken link, no literal `None`, n
 Companion-link request stands for the final integrator: one link `ac872b16/index.html` —
 "ac872b16 · 22 Oct in-band desk (20 High)" — in root navigation if desired. `archive.html` already
 auto-lists the namespace.
+
+### T-FEC publication receipt
+
+**Merged.** PR #119 — https://github.com/buffedlizard55-lab/OLBG1/pull/119 — merged 2026-10-22T12:25:32Z as `d695d6d4772a104def7baf9bee2f872205fddc83`. The PR required four append-only rebases while other sessions merged: `e6fc2f12` took §50, `TEE3C` an unnumbered section, `9dc28d1e` §51 and `ac872b16` §52, so this record is **§53**. Every earlier row and section is preserved verbatim; `git diff origin/main -- COORDINATION.md` shows additions only (31 lines at the merge).
+
+**CI.** PR check run `39777982718` — *Canonical research checks and Pages* on `01570fc` — **success** (canonical build, field/price/source-link gates, pinned-browser desktop/mobile/project-prefix/expiry gates). Post-merge canonical run `39778232389` on `d695d6d` — **success**, including the *Deploy only the tested artifact* step. The legacy `pages build and deployment` run `39778231120` for the same commit was cancelled because the canonical workflow deploys the tested artifact; the live bytes below are the proof.
+
+**Live verification from the deployed bytes** (not a local build), per the PR #98 lesson:
+`https://buffedlizard55-lab.github.io/OLBG1/fec05fb4/index.html?v=1` returned the desk with **87 upcoming · 66 priced · 2 High · 37 Medium · 27 Low · 21 unpriced · 443 markets · 900 outcomes · 11 sources · 14 flagged**, both High cards (Besiktas +5.0 at −246, 81 words; Under 185.5 at −240, 88 words) and the full "how to read the price columns" disclosure.
+`https://buffedlizard55-lab.github.io/OLBG1/fec05fb4/high.html?v=1` returned the gate table (71.107% / 1.406 / −246 and 70.562% / 1.417 / −240, both marked in-band), the two predictions with five verified facts each, and the nine held-back in-band selections.
+
+**Post-merge correction (PR #120).** Reading the deployed page exposed a misleading column: "Why not High" was showing the row's *first* flag, which for darts and rugby rows was a timezone note rather than the evidence cap. It now prints the selection's own gate note ("Numeric band met, but the evidence is carried, so this stays Medium (F-FEC-02)"). The High page also now says five gates, not four, and the High cards link the **game centre** rather than the standings page. No price, probability, fact or tier changed; counts remain 2/37/27/21.
