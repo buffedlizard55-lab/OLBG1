@@ -102,6 +102,19 @@ class Seeds(unittest.TestCase):
     def test_model_is_deterministic(self):self.assertEqual(originate(self.fixture(),self.stats,self.at),originate(self.fixture(),self.stats,self.at))
     def test_baseball_six_books(self):
         p=originate(self.fixture('mlb-849805'),self.stats,self.at);self.assertEqual(len(p['markets']),6)
+    def test_official_conditional_game_has_no_price_or_selection(self):
+        r=self.fixture('mlb-849799')
+        self.assertEqual(r['facts']['if_necessary'],'Y')
+        self.assertEqual(fixture_state(r,self.at),'conditional')
+        self.assertEqual(parse_time(r['expires_at']),parse_time(seed.AFTER)+timedelta(hours=6))
+        ref=r['field_evidence']['if_necessary'][0]
+        self.assertEqual(self.caps[ref.split('#')[0]]['observations'][-1]['values']['if_necessary'],'Y')
+        p=originate(r,self.stats,self.at)
+        self.assertEqual(p['markets'],[]);self.assertIsNone(p['selection']);self.assertIsNone(p['confidence'])
+        self.assertIn('ifNecessary=Y',' '.join(p['notes']))
+    def test_missing_conditional_flag_never_falls_back_to_regular_game(self):
+        r=self.fixture('mlb-849805');r['facts']['if_necessary']=None
+        self.assertFalse(originate(r,self.stats,self.at)['markets'])
     def test_no_score_model_without_both_run_inputs(self):
         stats=copy.deepcopy(self.stats);next(x for x in stats if x['team']=='Brewers').pop('runs_scored')
         p=originate(self.fixture('mlb-849805'),stats,self.at);self.assertEqual(len(p['markets']),1)
@@ -201,7 +214,12 @@ class Adapters(unittest.TestCase):
     def nhl(self):
         return {'gameWeek':[{'date':'2026-10-22','numberOfGames':1,'games':[{'id':1,'season':20262027,'gameState':'FUT','startTimeUTC':'2026-10-22T23:00:00Z','homeTeam':{'id':1,'placeName':{'default':'Test'},'commonName':{'default':'A'}},'awayTeam':{'id':2,'placeName':{'default':'Test'},'commonName':{'default':'B'}}}]}]}
     def test_nhl_normalization_and_partial_week(self):
-        c=self.capture();rows=nhl_schedule(self.nhl(),c,'2026-10-22','2026-10-28');self.assertEqual(rows[0]['facts']['participant_a'],'Test A');self.assertFalse(c['complete']);self.assertIsNone(rows[0]['facts']['venue'])
+        c=self.capture();rows=nhl_schedule(self.nhl(),c,'2026-10-22','2026-10-28');self.assertEqual(rows[0]['facts']['participant_a'],'Test A');self.assertFalse(c['complete']);self.assertEqual(c['covered_dates'],['2026-10-22']);self.assertIsNone(rows[0]['facts']['venue'])
+    def test_nhl_only_full_date_coverage_can_replace_whole_week(self):
+        d=self.nhl()
+        d['gameWeek'] += [{'date':f'2026-10-{day}','numberOfGames':0,'games':[]} for day in range(23,29)]
+        c=self.capture();nhl_schedule(d,c,'2026-10-22','2026-10-28')
+        self.assertTrue(c['complete']);self.assertEqual(len(c['covered_dates']),7)
     def test_nhl_count_mismatch(self):
         d=self.nhl();d['gameWeek'][0]['numberOfGames']=2
         with self.assertRaises(SchemaError):nhl_schedule(d,self.capture(),'2026-10-22','2026-10-28')
@@ -216,6 +234,23 @@ class Adapters(unittest.TestCase):
         with self.assertRaises(SchemaError):mlb_schedule({'dates':[]},self.capture(),'2026-10-22','2026-10-28',2026)
     def test_mlb_reported_count_must_reconcile(self):
         with self.assertRaises(SchemaError):mlb_schedule({'dates':[],'totalGames':1},self.capture(),'2026-10-22','2026-10-28',2026)
+    def mlb(self,season='2026',necessary='Y'):
+        game={'gamePk':849799,'season':season,'gameDate':'2026-10-29T00:00:00Z',
+              'teams':{'home':{'team':{'id':139,'name':'Tampa Bay Rays'}},'away':{'team':{'id':158,'name':'Milwaukee Brewers'}}},
+              'status':{'detailedState':'Scheduled','abstractGameState':'Preview'}}
+        if necessary is not None:game['ifNecessary']=necessary
+        return {'dates':[{'date':'2026-10-28','games':[game]}],'totalGames':1}
+    def test_mlb_conditional_flag_from_official_game_not_request(self):
+        c=self.capture('baseball');r=mlb_schedule(self.mlb(),c,'2026-10-22','2026-10-28',2026)[0]
+        self.assertEqual(r['facts']['if_necessary'],'Y');self.assertEqual(r['facts']['season'],'2026')
+        self.assertIn('if_necessary',r['field_evidence']);self.assertEqual(fixture_state(r,parse_time('2026-10-22T12:00:00Z')),'conditional')
+    def test_mlb_unknown_if_necessary_and_missing_season_are_blank(self):
+        r=mlb_schedule(self.mlb(season=None,necessary=None),self.capture('baseball'),'2026-10-22','2026-10-28',2026)[0]
+        self.assertIsNone(r['facts']['if_necessary']);self.assertIsNone(r['facts']['season'])
+        self.assertNotIn('season',r['field_evidence']);self.assertNotIn('if_necessary',r['field_evidence'])
+    def test_mlb_season_does_not_inherit_requested_year(self):
+        r=mlb_schedule(self.mlb(season='2025',necessary='N'),self.capture('baseball'),'2026-10-22','2026-10-28',2026)[0]
+        self.assertEqual(r['facts']['season'],'2025');self.assertTrue(any('differs' in note for note in r['notes']))
     def test_nba_unknown_schema(self):
         with self.assertRaises(SchemaError):nba_schedule({},self.capture(),'2026-10-22','2026-10-28')
     def test_nba_empty_season_not_zero(self):

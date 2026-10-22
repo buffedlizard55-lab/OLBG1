@@ -102,7 +102,7 @@ class Site:
     def filters(self,page,sport=None,markets=False):
         options='<option value="">All sports</option>'+''.join(f'<option value="{x["slug"]}">{e(x["name"])}</option>' for x in SPORT_INDEX.values())
         sf='' if sport else f'<label>Sport<select id="sport-filter">{options}</select></label>'
-        more='' if markets else '<label>Evidence state<select id="state-filter"><option value="">All states</option><option value="upcoming">Future UTC captured</option><option value="time unverified">Time unverified</option><option value="stale">Stale evidence</option><option value="start elapsed">Start elapsed</option><option value="status not pre-match">Not pre-match</option></select></label><label>Date in source<input id="date-filter" type="date"></label><label class="checkbox"><input id="priced-only" type="checkbox">With experimental prices</label>'
+        more='' if markets else '<label>Evidence state<select id="state-filter"><option value="">All states</option><option value="upcoming">Future UTC captured</option><option value="conditional">Conditional fixture</option><option value="time unverified">Time unverified</option><option value="stale">Stale evidence</option><option value="start elapsed">Start elapsed</option><option value="status not pre-match">Not pre-match</option></select></label><label>Date in source<input id="date-filter" type="date"></label><label class="checkbox"><input id="priced-only" type="checkbox">With experimental prices</label>'
         return f'<form id="filters" class="filterbar" role="search"><label class="search">Search participants, events or competition<input id="search" type="search" placeholder="Search the research desk…" autocomplete="off"></label>{sf}{more}<button class="button" type="button" id="clear-filters">Clear</button></form><div class="filter-meta"><span id="result-count" role="status" aria-live="polite"></span><label>Odds format <select id="odds-format" aria-label="Odds format"><option value="american">American</option><option value="decimal">Decimal</option></select></label></div>'
     def sport_cards(self,limit=None):
         cov={c['slug']:c for c in self.s['coverage']};order=['basketball','ice-hockey','tennis','baseball','rugby-league','rugby-union','snooker','cricket','handball','motor-racing','volleyball','aussie-rules','golf','gaelic-football','esports','darts','greyhounds']
@@ -157,12 +157,20 @@ class Site:
     def review(self):
         page='flagged.html';a=self.audit
         b=self.notice('<strong>Review flags are public, not hidden.</strong> Gaps do not block a working site release. They do block unsupported facts, prices and High selections. Historical claims remain unverified.')
-        b+=f'<nav class="subnav" aria-label="Review sections"><a href="#findings">Findings · {len(a["findings"])}</a><a href="#coverage">Coverage · 17</a><a href="#missing-fields">Field gaps</a><a href="#market-gaps">Market gaps</a><a href="audit/rows-01.html">Historic inventory · {a["counts"]["row_occurrences"]:,}</a></nav><section id="findings" class="findings">'
+        conditional=[r for r in self.s['fixtures'] if r['sport']=='baseball' and r['facts'].get('if_necessary')=='Y']
+        b+=f'<nav class="subnav" aria-label="Review sections"><a href="#findings">Findings · {len(a["findings"])}</a><a href="#coverage">Coverage · 17</a>'+ (f'<a href="#conditional">If Necessary · {len(conditional)}</a>' if conditional else '')+f'<a href="#missing-fields">Field gaps</a><a href="#market-gaps">Market gaps</a><a href="audit/rows-01.html">Historic inventory · {a["counts"]["row_occurrences"]:,}</a></nav><section id="findings" class="findings">'
         for f in a['findings']:
-            b+=f'<article class="finding" id="{f["id"]}"><div class="finding-top">{badge(f["severity"].title(),"red" if f["severity"]=="high" else "amber")}<span>{f["id"]} · {e(f["status"])}</span></div><h3>{e(f["title"])}</h3><p>{e(f["detail"])}</p><div class="finding-links">{ext(f["official_url"],"Official source / recheck")}'
+            official=ext(f['official_url'],'Official source / recheck') if f['official_url'] else badge('No official source found','amber')
+            b+=f'<article class="finding" id="{f["id"]}"><div class="finding-top">{badge(f["severity"].title(),"red" if f["severity"]=="high" else "amber")}<span>{f["id"]} · {e(f["status"])}</span></div><h3>{e(f["title"])}</h3><p>{e(f["detail"])}</p><div class="finding-links">{official}'
             if f['repository_url']:b+=ext(f['repository_url'],str(f['file'])+(f':{f["line"]}' if f['line'] else ''))
             b+='</div></article>'
         b+='</section>'+section('Coverage register','Unknown is not zero. Every category remains partial or unverified.','coverage')+self.coverage_table(page)
+        if conditional:
+            b+=section('MLB games listed only if necessary',
+                       'The league schedule verifies a listing, not that a conditional series game will be played. All model outcomes are withheld.',
+                       'conditional')+table(['Listed matchup','Scheduled UTC','League flag','Gate / action','Official evidence'],[
+                           [self.match_cell(r,page),stamp(r['facts']['start_utc']),e(r['facts']['if_necessary']),
+                            e(' '.join(self.prices[r['id']]['notes'])),self.sources(r,page)] for r in conditional])
         b+=section('Field gaps & source qualifications','A blank field has no accepted factual value.','missing-fields')+table(['Listing','Missing factual fields','Qualifications','Official evidence'],[[self.match_cell(r,page),e(', '.join(r['missing_fields'])),e(' '.join(r['notes'])),self.sources(r,page)] for r in self.rows if r['missing_fields'] or r['notes']])
         marketrows=[]
         for sport,markets in SPORT_MARKETS.items():
@@ -244,9 +252,10 @@ class Site:
             b+=f'<div class="inline-links"><a href="../flagged.html">← Findings</a><a href="../data/current/audit.json">Full inventory JSON</a><a href="files.html">Every inspected file</a></div>{pager}<div class="filter-meta"><span>Rows {index*size+1:,}–{min((index+1)*size,len(rows)):,} of {len(rows):,}</span><span>Exact JSON pointers; file lines where located</span></div>'
             output=[]
             for r in rows[index*size:(index+1)*size]:
-                url=(r['official_urls'][0] if r['official_urls'] else r['lookup_url']) or 'https://www.olbg.com/betting-tips'
+                url=r['official_urls'][0] if r['official_urls'] else r['lookup_url']
                 loc=f'<div class="path"><a href="{e(r["repository_url"])}">{e(r["file"])}'+(f':{r["line"]}' if r['line'] else '')+f'</a><span class="secondary">{e(r["pointer"])}</span>'+ (f'<span class="alias">Alias of {e(r["alias_of"])}</span>' if r['alias_of'] is not None else '')+'</div>'
-                output.append([loc,'<div class="claim">'+e(r['observed_label'])+'<span class="secondary">'+e(r['record_id'])+' · '+e(r['kind'])+'</span></div>',e(r['observed_start_utc'])+'<span class="secondary">'+e(r['current_verification'])+'</span>'+ (badge('Stored start elapsed','amber') if r['stored_start_elapsed'] else ''),'',ext(url,'Cited source' if r['official_urls'] else 'Lookup only; not evidence')])
+                review=ext(url,'Cited URL — not rechecked' if r['official_urls'] else 'Official lookup — not evidence') if url else badge('No official link located · unverified','amber')
+                output.append([loc,'<div class="claim">'+e(r['observed_label'])+'<span class="secondary">'+e(r['record_id'])+' · '+e(r['kind'])+'</span></div>',e(r['observed_start_utc'])+'<span class="secondary">'+e(r['current_verification'])+'</span>'+ (badge('Stored start elapsed','amber') if r['stored_start_elapsed'] else ''),'',review])
             b+=table(['File / exact location','Observed legacy claim','Stored start / current verification','Accepted facts / pick','Official source / lookup'],output,'audit-table')+pager
             self.frame('Historical row inventory',page,b,'review',description=f'Page {index+1} of {pages}. All entries remain inspectable, including duplicates and unresolved claims.',actions='<a class="button" href="../data/current/audit.json" download>'+icon('download',14)+' Full audit JSON</a>')
         b=self.notice('<strong>Structural checks are not source verification.</strong> Every tracked legacy JSON was decoded and Python file parsed. This does not certify every sentence; exact findings and evidence limits are public.')

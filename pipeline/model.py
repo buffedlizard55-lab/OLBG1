@@ -151,8 +151,12 @@ def originate(row, statistics, at):
               'market_quote': None, 'markets': [], 'input_ids': [], 'expires_at': None, 'notes': [], 'withheld': []}
     if row.get('in_window') is False:
         reason = 'Outside declared rolling source-date window'
-    elif fixture_state(row, at) != 'upcoming':
+    elif fixture_state(row, at) not in ('upcoming', 'conditional'):
         reason = 'Exact future start and fresh fixture evidence required; current state: '+fixture_state(row, at)
+    elif row['sport'] == 'baseball' and f.get('if_necessary') == 'Y':
+        reason = 'Official MLB ifNecessary=Y: conditional series game; requirement not confirmed. No pre-match price.'
+    elif row['sport'] == 'baseball' and f.get('if_necessary') != 'N':
+        reason = 'MLB ifNecessary field unverified; cannot rule out a conditional game. No pre-match price.'
     elif not prematch_status_verified(row):
         reason = 'Official pre-match status unverified or not supported; a future published start alone is insufficient'
     elif not f['participant_a'] or not f['participant_b']:

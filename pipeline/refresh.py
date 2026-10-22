@@ -19,7 +19,8 @@ def refresh(directory=CURRENT,timeout=10,probe=True):
     at=now_utc();first=at.date().isoformat();last=(at.date()+timedelta(days=HORIZON_DAYS-1)).isoformat()
     prior=(at.date()-timedelta(days=1)).isoformat();season=at.year
     fetch=Fetcher(directory/'raw',timeout=timeout)
-    output={'started_at':iso(at),'fixtures':[],'statistics':[],'successful_feeds':[],'replace_stat_scopes':[], 'attempts':[]}
+    output={'started_at':iso(at),'fixtures':[],'statistics':[],'successful_feeds':[],
+            'replace_fixture_dates':{},'replace_stat_scopes':[], 'attempts':[]}
     # Raw evidence is latest-run only, bounded by fixed sources/crawl limit. Old
     # tool imports have immutable separate IDs and are not silently restamped.
     for path in (directory/'raw').glob('*.body'):path.unlink()
@@ -36,8 +37,20 @@ def refresh(directory=CURRENT,timeout=10,probe=True):
             # Full-season NBA feed and MLB range include previous local date
             # to retain still-future UTC overnight starts.
             rows=parser(json.loads(resp.body),c,prior if prefix in ('mlb','nba') else first,last,*extra)
+            if not c['complete'] and prefix!='nhl':
+                raise ValueError('Schedule did not demonstrate the requested date range')
             save(directory/'evidence'/f'{cid}.json',seal_capture(c))
-            output['fixtures']+=rows;output['successful_feeds'].append(prefix)
+            output['fixtures']+=rows
+            if c['complete']:
+                output['successful_feeds'].append(prefix)
+            elif prefix=='nhl':
+                # NHL's gameWeek sometimes stops before the requested horizon.
+                # Replace only the league dates explicitly present, even if a
+                # covered date has zero games. Never erase an unseen future day.
+                output['replace_fixture_dates']['nhl']=c['covered_dates']
+                output['attempts'].append({'url':url,'source_id':cid,'status':'partial',
+                    'error':'NHL response did not cover every requested league date; only covered dates supersede old rows. Other rows keep their original expiry.',
+                    'at':resp.observed_before})
         except (FetchError,ValueError,TypeError,KeyError) as e:
             output['attempts'].append({'url':url,'source_id':cid,'status':'unverified','error':'Fixture feed not accepted: '+str(e)[:250],'at':iso(now_utc())})
     # A previous NHL league-date can still contain a future UTC start. Read it

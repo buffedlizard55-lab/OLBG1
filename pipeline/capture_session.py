@@ -298,6 +298,27 @@ def seed_additional():
         row['facts']['season']='2026';row['field_evidence']['season']=[season_source['id']+'#'+str(gid)]
         row['source_ids'].append(season_source['id']);row['verified_before']=season_source['observed_before']
         row['notes'].append('Season explicitly rechecked in a separate game-ID projection. Earlier matchup/start observations and expiry are not rejuvenated.')
+    # T64: re-read the official MLB field projection, 12:01:17–12:01:27 UTC.
+    # The five returned rows say N, N, N, N, Y respectively. This is a
+    # *separate* fact check, not permission to refresh the earlier start times.
+    necessity=capture('mlb-necessity-20261022',
+                      'https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-28&fields=totalGames,dates,date,games,gamePk,season,gameType,ifNecessary,ifNecessaryDescription',
+                      'baseball','Five-game official field projection, read 2026-10-22; ifNecessary per gamePk.',
+                      'Game 849799 is explicitly If Necessary. This check does not prove whether Game 5 will ultimately be played.')
+    necessity.update(observed_after='2026-10-22T12:01:17Z',observed_before='2026-10-22T12:01:27Z',complete=True)
+    for i,(gid,flag) in enumerate(((849805,'N'),(849802,'N'),(849804,'N'),(849803,'N'),(849799,'Y'))):
+        description='If Necessary Game' if flag=='Y' else 'Normal Game'
+        obs(necessity,gid,f'{{"gamePk":{gid},"gameType":"W","season":"2026","ifNecessary":"{flag}","ifNecessaryDescription":"{description}"}}',
+            {'if_necessary':flag},locator=f'/dates/{i}/games/0/ifNecessary')
+        row=next(r for r in FIXTURES if r['id']==f'mlb-{gid}')
+        row['facts']['if_necessary']=flag
+        row['field_evidence']['if_necessary']=[necessity['id']+'#'+str(gid)]
+        row['source_ids'].append(necessity['id'])
+        row['verified_before']=necessity['observed_before']
+        if flag=='Y':
+            row['notes'].append('Official MLB ifNecessary=Y (World Series Game 5); requirement to play is not confirmed. Selection, confidence and every research market withheld.')
+        else:
+            row['notes'].append('Official MLB ifNecessary=N in the 12:01 UTC field check; earlier fixture/start expiry unchanged.')
     # Independent follow-up of T62's cross-source lead. Read the actual official
     # pages again; do not import that session's numerical claims as verification.
     vc_table=capture('euroleague-valencia-standings-check','https://www.euroleaguebasketball.net/en/euroleague/standings/','basketball',

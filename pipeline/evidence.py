@@ -5,7 +5,7 @@ from .config import FIXTURE_TTL_HOURS
 
 FACT_FIELDS = ('participant_a', 'participant_b', 'participant_a_id', 'participant_b_id',
                'event', 'competition', 'season', 'date', 'start_utc', 'time_text',
-               'venue', 'official_status', 'format')
+               'venue', 'official_status', 'format', 'if_necessary')
 
 
 def seal_capture(capture):
@@ -65,7 +65,11 @@ def fixture_state(row, at):
     if at >= parse_time(row['expires_at']):
         return 'stale'
     if f['start_utc']:
-        return 'upcoming' if parse_time(f['start_utc']) > at else 'start elapsed'
+        if parse_time(f['start_utc']) <= at:
+            return 'start elapsed'
+        # A scheduled series date is not necessarily a match that will happen.
+        # MLB explicitly labels some postseason games "If Necessary".
+        return 'conditional' if row['sport'] == 'baseball' and f.get('if_necessary') == 'Y' else 'upcoming'
     if f['date'] and f['date'] < at.date().isoformat():
         return 'date elapsed'
     return 'time unverified'
