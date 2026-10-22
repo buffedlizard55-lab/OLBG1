@@ -158,3 +158,40 @@ than the moving latest label; no local gate failed. The existing `main:/` Pages 
 is branch-based. Direct Pages-settings changes return API403 for the Arena integration,
 although repository and PR writes work. The validated static root supports that legacy mode;
 custom artifact deployment success is not presumed from the presence of a workflow file.
+
+### Merge receipt
+
+- Integration PR **#84**: <https://github.com/buffedlizard55-lab/OLBG1/pull/84>.
+- **MERGED 2026-10-22T08:08:30Z**, commit `6e8570c6605e711376ab48045beba88dfcac22e6`.
+- Normal merge, no admin check bypass. Hosted validation was queued, not failed; the local
+  38-test, structural/model/link and real-browser suites passed before merge.
+- Main workflow **39745549884** has acquired a hosted runner. Build/deploy success and
+  actual live content are checked separately below; they are not implied by the merge.
+- Subsequent main runs retain active production deployments rather than cancelling them
+  on documentation-only pushes. Superseded PR checks can still be cancelled.
+
+## Confirmed production publication
+
+- **Primary PR #84:** MERGED `6e8570c6605e711376ab48045beba88dfcac22e6`,
+  2026-10-22T08:08:30Z.
+- **Production workflow [39745549884](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39745549884): SUCCESS.**
+  Build job `119712960477` and deployment job `119714983504` both succeeded, including
+  the 38-test suite and full structural/model/source-role/local-link gate.
+- **GitHub Pages environment deployment 7247180107:** `state=success`,
+  **2026-10-22T08:17:32Z**; live URL <https://buffedlizard55-lab.github.io/OLBG1/>.
+- Independent live fetches confirmed the new root, JSON build manifest, coverage page,
+  tennis blanks and full archive directory. Published build cutoff **2026-10-22T08:13:14Z**;
+  **33 pages / 97 extracts / 17 categories / 30 models / 75 markets / 165 outcomes / 0 approved / 0 High**.
+- Production collection: **2/9 requests succeeded**. Failure dates were not renewed;
+  success does not prove an exhaustive query or verify every inherited field. Source dates
+  and editorial dates remain distinct from the new build timestamp.
+- The separate branch-based Pages run `39745550531` built but its deploy job was cancelled.
+  This can leave the legacy summary API in an error/building state despite the successful
+  custom artifact deployment. The explicit successful environment status and live content
+  above are the publication proof. No failing model/link/test gate was ignored.
+- Direct Pages-settings updates remain restricted for the Arena integration. The workflow's
+  scoped GITHUB_TOKEN demonstrably deployed the artifact; no user credentials or manual
+  configuration were requested.
+- Receipt/concurrency follow-up **PR #90** stays on the same assigned Arena branch. T61
+  integration is complete; exhaustive match/market collection, empirical calibration and
+  fully supported High selections remain incomplete and openly flagged, not claimed done.
