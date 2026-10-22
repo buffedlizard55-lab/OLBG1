@@ -211,6 +211,9 @@ def make_findings(baseline):
     add(26,'medium','Historical desk generator cannot run standalone',
         'During the scoped routing repair, running scripts/s53674ac8_build_site.py failed at its dashboard expression len(DATA_sports): DATA_sports is not defined by that standalone generator. Published pages were mechanically repaired only in href attributes, with all other content unchanged. Generator routing is corrected, but this separate legacy reproducibility defect remains for its owner to review; no pricing or sporting value was inferred to repair it.',
         'https://api.github.com/repos/buffedlizard55-lab/OLBG1','scripts/s53674ac8_build_site.py','len(DATA_sports)','needs review; legacy generator standalone NameError')
+    add(27,'high','Repeated historical tennis prose lacks matchup-specific evidence',
+        'Post-deployment inspection of the preserved 53674ac8 tennis page found Cobolli and Paul paragraphs repeating the same three-sentence template except the selection and price. Claims about deep runs, opponent struggles and a net/baseline edge are not tied there to a named opponent, dated match logs or retained official observations. These are unverified historical claims, not accepted canonical predictions. The canonical High list remains empty; no prose or High label is imported from this desk.',
+        'https://www.atptour.com/en/scores/archive','53674ac8/sports/tennis.html','enters this ATP/WTA fixture','needs review; archived prose not promoted')
     return findings
 
 if __name__=='__main__':
