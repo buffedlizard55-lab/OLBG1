@@ -1,0 +1,55 @@
+[
+  {
+    "id": "A-A0B-01",
+    "severity": "medium",
+    "area": "COORDINATION.md section numbers",
+    "title": "Duplicate section numbers \u00a74 and \u00a743",
+    "why": "Two pairs reuse numbers, citation ambiguous.",
+    "evidence": [
+      {
+        "file": "COORDINATION.md",
+        "line": 183,
+        "quote": "## 4. Requests and conflict log"
+      },
+      {
+        "file": "COORDINATION.md",
+        "line": 2328,
+        "quote": "## 4. Requests and conflict log (append-only)"
+      }
+    ],
+    "recheck": "grep -n '^## ' COORDINATION.md | sort -k2 -n",
+    "status": "open"
+  },
+  {
+    "id": "A-A0B-02",
+    "severity": "high",
+    "area": "COORDINATION.md task board",
+    "title": "Multiple stale in-progress claims beyond 60-minute rule",
+    "why": "\u00a70.4 allows takeover after 60 min no commits, but many rows still open.",
+    "evidence": [
+      {
+        "file": "COORDINATION.md",
+        "line": 77,
+        "quote": "T9 \u00b7 f7fa77fc-olbg1 \u00b7 in progress \u00b7 started 2026-10-21T05:26Z"
+      }
+    ],
+    "recheck": "grep -n 'in progress|queued' COORDINATION.md",
+    "status": "open"
+  },
+  {
+    "id": "A-A0B-03",
+    "severity": "medium",
+    "area": "published pages size",
+    "title": "Very large HTML pages >200KB hinder manual review",
+    "why": "26 pages over 200KB, largest 1039KB markets.html",
+    "evidence": [
+      {
+        "file": "1a421e41/markets.html",
+        "line": 1,
+        "quote": "1039 KB"
+      }
+    ],
+    "recheck": "git ls-files '*.html' | xargs ls -lh | sort -k5 -hr | head",
+    "status": "open"
+  }
+]
