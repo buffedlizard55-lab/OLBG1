@@ -228,4 +228,14 @@ at all (`cdn.nba.com` returned HTTP 500), so basketball coverage is EuroLeague o
   genuine zero counts print as `0` rather than a blank dash; and the desk validator gained two checks that
   fail the build if a pick's price disagrees with its own market outcome or does not re-derive from the
   unrounded probability. No official value, fixture, probability or tier changed — the desk still publishes
-  7 High / 15 Medium / 4 Low at the same prices. Shipped in the follow-up commit recorded in §59.
+  7 High / 15 Medium / 4 Low at the same prices.
+* **Correction shipped as PR #137** — https://github.com/buffedlizard55-lab/OLBG1/pull/137 — CI pass (40 s),
+  merged as `a193eb8`, post-merge workflow run **39786676513** success at 2026-10-22T13:26:47Z, Pages build
+  for `a193eb83` reported **built** at 13:25:47Z.
+* **Second live read-back at 13:29Z** (cache-busted) confirms the corrected artifact is served: the overview
+  now prices New Jersey at **−156 / 1.6430**, identical to the market explorer and to prediction P-D7D-03,
+  and the coverage table prints genuine zeros instead of blank dashes. The first read-back, minutes after the
+  deploy job reported success, still served the previous artifact — the propagation lag this repository has
+  logged twice before — so deployment here is confirmed by re-fetching a value known to have changed, never
+  by reading a build status. The commit recording these receipts deploys in the run after it; no receipt can
+  confirm its own publication.
