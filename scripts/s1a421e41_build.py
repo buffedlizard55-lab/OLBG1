@@ -17,16 +17,14 @@ No value is ever inferred, interpolated from a bookmaker, or filled in from a
 non-official source. Where an official figure does not exist the field is left
 null and the row is flagged unverified.
 
-Deterministic: no clock, no random, no network. Re-running produces the same
-bytes except for generated_utc, which is taken from the harvest stamp.
+Deterministic: no clock, no random, no network. Re-running against the same
+inputs produces byte-identical output.
 """
 
 import importlib.util
 import json
 import math
 import os
-from datetime import datetime, timezone
-
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 DATA = os.path.join(ROOT, "data", "1a421e41")
@@ -46,7 +44,6 @@ H = _load("olbg_harvest_raw", os.path.join(DATA, "olbg_harvest_raw.py"))
 E = _load("official_evidence", os.path.join(DATA, "official_evidence.py"))
 
 GENERATED_UTC = H.HARVEST_UTC
-NOW_ISO = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 # ===========================================================================
 # 1. SCOPE
@@ -1141,7 +1138,6 @@ def main():
             "session": SESSION,
             "task": "T60",
             "generated_utc": GENERATED_UTC,
-            "built_at_utc": NOW_ISO,
             "olbg_root": H.OLBG_ROOT,
             "harvest_file": "data/1a421e41/olbg_harvest_raw.py",
             "evidence_file": "data/1a421e41/official_evidence.py",
