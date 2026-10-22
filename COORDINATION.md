@@ -1580,3 +1580,25 @@ To stop this recurring, `scripts/v3_validate.py` now parses every `v3/*.html` an
 with `html.parser` and fails the release if any table row's cell count (with `colspan` expanded) differs
 from its header row. The check is nested-table aware, so the per-match market sheets inside a cell do not
 produce false positives. Gate run after the fix: PASS, 0 errors.
+
+### 33.5 Quality pass after the table fix (2026-10-22T03:40Z)
+
+**PR #58** — carried four presentation/data fixes:
+
+* **NHL venues filled.** All fourteen rows had a blank venue. They were read from the `venue.default`
+  field of the game objects in `api-web.nhle.com/v1/schedule/2026-10-22` (TD Garden, Scotiabank Arena,
+  Canadian Tire Centre, Prudential Center, PPG Paints Arena, UBS Arena, Enterprise Center, American
+  Airlines Center, Scotiabank Saddledome, Rogers Place, Climate Pledge Arena, Rogers Arena, United Center,
+  Ball Arena). Game IDs and start times already matched the feed, so only the venue field changed.
+* **Match-winner call made explicit.** Every priced row now prints `Match-winner call: <selection>
+  (<confidence>)` whenever the qualifying desk pick is a handicap or total, so each match still carries a
+  labelled moneyline call as the brief requires.
+* **Market sheets ordered** Match winner → Handicap → Total → Correct score, with the previous 14-row
+  truncation removed.
+
+Gates after the change: `scripts/v3_validate.py` PASS (0 errors), `scripts/validate.py` PASSED.
+
+**Publish check.** The Pages queue was congested again — the run for `23e94a4` sat `queued` for more than
+six minutes with no incident on githubstatus.com. As with #49 and #55 this is queue depth, not a build
+failure: the previous run (`caeccb4`) went `queued → in_progress → completed success` without any repo
+change. Do not "fix" a queued deploy by editing files.
