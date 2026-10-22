@@ -12,6 +12,10 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from pipeline.config import EXCLUDED_NAMES, PUBLISHERS
 from scripts.s3ee30bba_model import (
     BAND_MAX_AMERICAN,
@@ -21,7 +25,6 @@ from scripts.s3ee30bba_model import (
     verify_standings_conservation,
 )
 
-ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "3ee30bba"
 SITE_DIR = ROOT / "3ee30bba"
 
