@@ -292,6 +292,10 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
     h2h_rows = [(f, l) for f, l in paired if l is not None]
     conf_counts = Counter(l["confidence"] for _, l in h2h_rows)
     status_counts = Counter(f["status"] for f in fixtures)
+    # Keep the status arithmetic honest: 128 verified + 5 cross-checked is only 133 of
+    # 134 rows; the remainder is the deliberately-unverified ODI and must be shown.
+    unverified_n = status_counts.get("unverified", 0)
+    status_suffix = f" · {unverified_n} unverified" if unverified_n else ""
     total_priced_count = sum(1 for _, l in h2h_rows if any(m["key"] == "total" for m in l["markets"]))
     total_unavailable_count = sum(
         1 for _, l in h2h_rows
@@ -337,10 +341,10 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
     vs = D["verification"]["summary"]
     index_body = f"""
 <h1>Source-Linked Multi-Sport Origination Desk</h1>
-<p class="lede">Complete reverse-engineering of <code>OLBG.com</code> across all <b>17 in-scope sports</b> (excluding soccer/football, horse racing, american football, boxing, UFC/MMA, specials, hurling, and cycling), pairing <b>134 source-linked events</b> (<b>{status_counts["verified"]} verified</b>; <b>{status_counts["cross-checked"]} cross-checked</b>) with independently originated markets and <b>{COUNTS["preds"]} non-repetitive human predictions</b>. {total_priced_count} of {len(h2h_rows)} head-to-head matches have an Over/Under total; the remaining total is left blank and flagged because no official competition-specific baseline was captured.</p>
+<p class="lede">Complete reverse-engineering of <code>OLBG.com</code> across all <b>17 in-scope sports</b> (excluding soccer/football, horse racing, american football, boxing, UFC/MMA, specials, hurling, and cycling), pairing <b>134 source-linked events</b> (<b>{status_counts["verified"]} verified</b>; <b>{status_counts["cross-checked"]} cross-checked</b>{status_suffix}) with independently originated markets and <b>{COUNTS["preds"]} non-repetitive human predictions</b>. {total_priced_count} of {len(h2h_rows)} head-to-head matches have an Over/Under total; the remaining total is left blank and flagged because no official competition-specific baseline was captured.</p>
 
 <div class="grid kpis">
-  {kpi_box(f'{len(fixtures)} ({status_counts["verified"]}V · {status_counts["cross-checked"]}C)', "Source-Linked Events") }
+  {kpi_box(f'{len(fixtures)} ({status_counts["verified"]}V · {status_counts["cross-checked"]}C' + (f' · {unverified_n}U' if unverified_n else '') + ')', "Source-Linked Events") }
   {kpi_box(len(h2h_rows), "Multi-Market H2H Priced")}
   {kpi_box(conf_counts["high"], "High Confidence Picks", "hi")}
   {kpi_box(conf_counts["medium"], "Medium Confidence", "md")}
@@ -455,7 +459,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
     ]
     preds_body = f"""
 <h1>{COUNTS["high"]} High-Confidence Human Predictions</h1>
-<p class="lede">Every match clearing its sport's high-conviction threshold and holding measured governing-body ratings on both sides receives an original, non-repetitive human analysis (at least 30 words). Each current write-up is deliberately limited to the stored, source-linked comparison facts and the clearly labelled independent model selection.</p>
+<p class="lede">Every match clearing its sport's high-conviction threshold, holding measured governing-body ratings on both sides <b>and</b> offering a selection inside the -250/+10000 price window receives an original, non-repetitive human analysis (at least 30 words). Each write-up is limited to the stored, source-linked comparison facts and states its selection explicitly; the price lives in the generated bet line, never in the prose. Where the moneyline breached the -250 floor the note explains the handicap rung that carries the same view inside the window.</p>
 
 <div class="toolbar">
   <select id="sport-filter" class="filter-select" aria-label="Filter predictions by sport">{"".join(pred_opts)}</select>
@@ -661,7 +665,7 @@ def build_all_pages(target_root: Path, repo_depth_base: int, D: dict) -> None:
 
 <div class="card">
   <h2>2. Derived Spread / Handicap, Draw No Bet &amp; Over/Under Totals</h2>
-  <p>Expected margin <code>mu = -sigma * Phi^-1(1 - p_home_2way)</code> maps win probability coherently onto sport scoring units. Fixed-line sports (NHL Puck Line <code>1.5</code>, MLB Run Line <code>1.5</code>, Snooker Frames <code>1.5</code>, Volleyball Sets <code>1.5</code>) price exact normal cover probabilities at <code>+-1.5</code>; variable-spread sports round to the nearest half-point hook. Totals adjust competition baselines (e.g., NBA <code>228.5</code> vs EuroLeague <code>171.5</code> vs EuroCup <code>168.5</code>; Men's T20I <code>339.5</code> vs Women's T20I <code>289.5</code> vs List A <code>529.5</code>). A total is never invented: {total_unavailable_count} multi-innings fixture has no source-backed competition baseline, so its total is blank and marked unverified.</p>
+  <p>Expected margin <code>mu = -sigma * Phi^-1(1 - p_home_2way)</code> maps win probability coherently onto sport scoring units. Each fixture carries a <b>three-rung handicap ladder</b> generated in probability space — the line at which the model favourite covers 50%, 60% and 68% of the time (<code>give = |mu| - sigma * Phi^-1(target)</code>) — with each rung rounded to the nearest half-point hook and then walked outwards until its favourite side is quotable inside the -250/+10000 window. Fixed-line sports (NHL Puck Line, MLB Run Line, Snooker Frames, Volleyball Sets) keep their conventional <code>1.5</code> main line. Totals adjust competition baselines (e.g., NBA <code>228.5</code> vs EuroLeague <code>171.5</code> vs EuroCup <code>168.5</code>; Men's T20I <code>339.5</code> vs Women's T20I <code>289.5</code> vs List A <code>529.5</code>) and are published as a three-rung ladder one step either side of the baseline. A total is never invented: {total_unavailable_count} multi-innings fixture has no source-backed competition baseline, so its total is blank and marked unverified.</p>
 </div>
 
 <div class="card" id="price-window">
