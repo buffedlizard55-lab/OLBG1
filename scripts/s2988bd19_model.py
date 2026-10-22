@@ -238,7 +238,7 @@ FLAGS = [
     dict(id="F-2988-05", severity="medium",
          title="Tennis fixtures are unverified: ATP's current-scores page showed completed matches only",
          detail=("atptour.com/en/scores/current rendered six completed round-of-16 matches and no upcoming "
-                 "order of play. Fifteen tennis listings carried over from OLBG are published as discovery "
+                 "order of play. Fourteen tennis listings carried over from OLBG are published as discovery "
                  "only, with blank prices."),
          sources=["atp-current", "olbg-tennis"]),
     dict(id="F-2988-06", severity="medium",
@@ -276,6 +276,11 @@ FLAGS = [
                  "handball, volleyball, Australian rules, eSports, Gaelic football, greyhounds and motor "
                  "racing have no verified fixture here. They are shown as gaps, not as empty slates."),
          sources=["olbg-snooker", "urc"]),
+    dict(id="F-2988-12", severity="info",
+         title="Prices are our own estimates, not bookmaker offers",
+         detail=("Every price is 1/p from the stated model with no margin. Nothing here is an available "
+                 "quote, a bet, or a claim of an edge against a bookmaker."),
+         sources=["nhl-team-summary", "mlb-standings"]),
     dict(id="F-2988-13", severity="info",
          title="Per-request read timestamps were removed and replaced by one read window",
          detail=("A first draft of this desk stamped every source with a minute-level read time. The fetch "
@@ -283,11 +288,6 @@ FLAGS = [
                  "They are replaced by one honest observation window (20:48Z-20:59Z on 22 Oct 2026) plus the "
                  "order in which the reads were issued. No fixture, price or prediction changed."),
          sources=["olbg-home"]),
-    dict(id="F-2988-12", severity="info",
-         title="Prices are our own estimates, not bookmaker offers",
-         detail=("Every price is 1/p from the stated model with no margin. Nothing here is an available "
-                 "quote, a bet, or a claim of an edge against a bookmaker."),
-         sources=["nhl-team-summary", "mlb-standings"]),
 ]
 
 REPO_REVIEW = [

@@ -3873,6 +3873,35 @@ are fixed with it: the overview said "seven other selections" where five were ca
 notice understated how many sports lack an officially verified fixture. No fixture, probability, price, tier
 or prediction changed; the validator still re-derives all 600 prices with 0 errors.
 
+### 60.3 Follow-up receipts and corrections (#142, #145, #146)
+
+**PR #142** — https://github.com/buffedlizard55-lab/OLBG1/pull/142 — merged 2026-10-22T21:12Z as
+**`24f2001`**. Carried the honest read-window correction (F-2988-13) and two overview copy fixes. Pre-merge
+CI passed in 45 s (run 39853838563); post-merge legacy Pages run **39853986099** completed successfully and
+the canonical run 39853987310 followed. Live read-back of `/OLBG1/2988bd19/sources.html` at 21:19Z showed
+the published read window `2026-10-22T20:48Z to 2026-10-22T20:59Z` and all 28 source rows — the correction is
+what GitHub Pages serves, not the pre-correction bytes.
+
+**PR #145** — https://github.com/buffedlizard55-lab/OLBG1/pull/145 — merged 2026-10-22T21:31Z as
+**`b0898de`**. Source-page headline and tennis read count. CI passed in 52 s (run 39854241533); legacy Pages
+run **39854398120** completed successfully.
+
+**PR #146 (this record).** Reading the deployed `flagged.html` at 21:24Z exposed three defects that neither
+validator could see, because each one was consistent with the data it was generated from:
+
+1. **The coverage register printed `High = 0` for ice hockey.** `coverage()` counted fixtures only and never
+   learned about High selections, so the one sport with High picks displayed zero. Fixed by counting High
+   selections per sport from the same summary the rest of the desk uses.
+2. **F-2988-05 still said "Fifteen tennis listings".** The source row had been corrected to fourteen; the
+   flag prose had not. Fixed.
+3. **F-2988-13 was published before F-2988-12.** An insertion-order slip in the flag list. Reordered.
+
+No fixture, probability, price, tier or prediction changed; `scripts/s2988bd19_validate.py` re-derives all
+600 prices and still reports 0 errors (1 warning, the San Jose pick sitting within 0.01 of the −250 decimal
+floor).
+
+---
+
 ## 61. Session `2aeea682-olbg1` — T2AEE fresh evidence desk
 
 **2026-10-22T20:50Z — claim filed before implementation.** This session read the board and found the latest merged desk (`d7d19a67`) explicitly time-bounded, with fixture evidence expiring at 18:55Z. It therefore claims a strictly isolated fresh desk in `data/2aeea682/**`, `scripts/s2aeea682_*.py`, `2aeea682/**` and `reports/SESSION_2AEEA682.md`. No canonical root, pipeline, workflow or other session namespace will be edited. The pinned branch rule in §0.2 applies.

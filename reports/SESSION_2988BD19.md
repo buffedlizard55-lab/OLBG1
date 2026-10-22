@@ -81,6 +81,11 @@ by 0.05 points · F-2988-09 later World Series games are conditional · F-2988-1
 F-2988-11 eleven in-scope sports had no official read · F-2988-12 prices are estimates, not offers ·
 F-2988-13 read timestamps replaced by one honest observation window.
 
+Three defects were found by reading the **deployed** bytes rather than the build status and are fixed in the
+final follow-up: the coverage register printed `High = 0` for ice hockey (the helper counted fixtures, not
+High selections), F-2988-05 still said fifteen tennis listings after the source row was corrected to
+fourteen, and F-2988-13 was ordered before F-2988-12.
+
 Repository findings (`/2988bd19/repo-review.html`): duplicate section numbers in `COORDINATION.md` (§4 at
 lines 185/2330, §13 at 722/729, §43 at 2160/2525), duplicate task ids (T63 at 123/125, T64 at 129/2941,
 T1–T7 in two tables), six rows still `in progress` beyond the 60-minute rule, and 17 pages over 200 KB
