@@ -1256,9 +1256,23 @@ def archive_legacy_root() -> dict:
         if not src.exists():
             moved["skipped"] += 1
             continue
-        (ARCHIVE_DIR / name).write_text(rewrite(src.read_text(encoding="utf-8"), 1), encoding="utf-8")
+        text = src.read_text(encoding="utf-8")
+        # Only ever archive the 21 October board. If the file is already a page from this
+        # dashboard, leave it alone - otherwise deleting archive/ and rebuilding would archive
+        # the current site on top of the old one.
+        if "OLBG Origination Desk" not in text:
+            moved["skipped"] += 1
+            continue
+        (ARCHIVE_DIR / name).write_text(rewrite(text, 1), encoding="utf-8")
         src.unlink()
         moved["pages"] += 1
+
+    if not moved["pages"]:
+        try:
+            ARCHIVE_DIR.rmdir()
+        except OSError:
+            pass
+        return moved
 
     if (ROOT / "sports").is_dir():
         (ARCHIVE_DIR / "sports").mkdir(exist_ok=True)
