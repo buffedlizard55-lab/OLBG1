@@ -315,7 +315,8 @@ def check_audit():
         if f["severity"] not in ("high", "medium", "low", "info"):
             err("audit finding %s has severity %r" % (f["id"], f["severity"]))
         for ev in f["evidence"]:
-            if ev["file"] not in ("-", "git", "git status", "git diff --name-only origin/main...HEAD") \
+            if ev["file"] not in ("-", "git", "git status", "git diff --name-only origin/main...HEAD",
+                                  "git log --no-merges (this session's commits)") \
                     and not os.path.exists(os.path.join(ROOT, ev["file"])):
                 err("audit finding %s cites a file that does not exist: %s" % (f["id"], ev["file"]))
     page = os.path.join(OUT, "repo-audit.html")
