@@ -39,8 +39,8 @@ PROSE = {
     "rl-wc26-tga-lbn": (
         "The IRL's official world rankings, calculated over the current season and the three "
         "before it, put Tonga fifth on 54% of the maximum ranking points and Lebanon down in "
-        "23rd on just 7% — the widest gap between any two sides meeting in this World Cup round "
-        "at CommBank Stadium. Rankings that far apart usually translate into field position Lebanon "
+        "23rd on just 7% — a chasm of eighteen ranking places between the two sides meeting "
+        "at CommBank Stadium on Friday. Rankings that far apart usually translate into field position Lebanon "
         "cannot defend for eighty minutes, even allowing for tournament nerves in Round 2. Our "
         "selection is Tonga -10.5 points on the handicap, and Tonga are the clear match-winner call."
     ),
