@@ -54,3 +54,9 @@ E3-01/E3-02/E3-05 describe dual Pages publishers and committed-versus-live diffe
 PR, CI and deployment receipts will be recorded below after their actual results are observed. Coverage gaps and missing High picks are public review items, not fabricated completion claims.
 
 Rebase note: parallel PRs #108 and #110 merged during the work. An append-only coordination-board EOF conflict was resolved by keeping both other sessions' complete records and the TEE3C records, in order. No implementation conflict or data loss occurred. All combined-tree checks were rerun, and the canonical archive navigation was regenerated to include those new desks.
+
+### CI repair of a newly merged desk
+
+PR #112 run 39776589831 failed the historical link gate after PR #111 introduced 98 invalid `/53674ac8/...` links (missing the Pages project prefix). A clean `git archive` reproduction confirmed the issue; the earlier passing local gate preceded that merge. The completed desk's routing-only final-integration scope was claimed/pushed in COORDINATION before correction. Changed its generator and 13 generated HTML files to project-relative links, added a regression test and public F-257E-25. No fixture, line, confidence or prediction content was changed. A second additive board rebase preserved e6fc2f12's updated publication receipt and dropped only its superseded placeholder, retaining TEE3C notes. Combined canonical total: **117 tests**; preserved total: 38.
+
+The completed desk generator also has a pre-existing standalone `NameError: DATA_sports` before its first output write. Did not infer any missing data or change its calculation logic to get past this. Corrected the 98 HTML hrefs mechanically instead, asserting all non-href content is identical. Its routing template is fixed for future use; the separate standalone generator defect is public F-257E-26 (needs review).

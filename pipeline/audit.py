@@ -205,6 +205,12 @@ def make_findings(baseline):
     add(24,'medium','Pages hosting mode could not be changed with this integration token',
         'Parallel audit PR #107 (E3-01/E3-02/E3-05) raised the risk of the legacy main:/ build and workflow artifact deployment replacing one another. The Pages API confirms legacy mode; the TEE3C attempt to set build_type=workflow returned HTTP 403 Resource not accessible by integration. Do not claim the setting changed or that an artifact-only publisher is enforced. Both outputs use canonical expiry/status gates, but may have different observation windows and counts. Verify actual deployment jobs and the live manifest after publication; configuration risk remains for review.',
         'https://api.github.com/repos/buffedlizard55-lab/OLBG1/pages',status='needs review; Pages configuration permission unavailable')
+    add(25,'high','Merged historical desk navigation escaped the Pages project',
+        'PR #111 introduced 98 /53674ac8/... links missing the /OLBG1 deployment prefix. PR #112 CI rejected the combined tree; a clean git archive reproduced the failure. Final integration changed only the completed desk generator routing and its 13 generated HTML pages to relative links, with a regression test. Original fixture, odds, confidence and prediction data are untouched and not endorsed as current canonical evidence.',
+        'https://api.github.com/repos/buffedlizard55-lab/OLBG1','scripts/s53674ac8_build_site.py','BASE =','resolved; clean-checkout link gate and routing test')
+    add(26,'medium','Historical desk generator cannot run standalone',
+        'During the scoped routing repair, running scripts/s53674ac8_build_site.py failed at its dashboard expression len(DATA_sports): DATA_sports is not defined by that standalone generator. Published pages were mechanically repaired only in href attributes, with all other content unchanged. Generator routing is corrected, but this separate legacy reproducibility defect remains for its owner to review; no pricing or sporting value was inferred to repair it.',
+        'https://api.github.com/repos/buffedlizard55-lab/OLBG1','scripts/s53674ac8_build_site.py','len(DATA_sports)','needs review; legacy generator standalone NameError')
     return findings
 
 if __name__=='__main__':

@@ -62,5 +62,25 @@ class RenderedPriceExpiryGates(unittest.TestCase):
         self.assertTrue(any('deadline differs from price book' in e for e in validate_site(self.out)))
 
 
+class PreservedDeskRouting(unittest.TestCase):
+    def test_completed_desk_links_stay_within_the_project(self):
+        from urllib.parse import urlsplit, unquote
+        from pipeline.config import ROOT
+        from pipeline.validate import HTML
+        pages=list((ROOT/'53674ac8').rglob('*.html'))
+        self.assertEqual(len(pages),13)
+        for page in pages:
+            parsed=HTML();parsed.feed(page.read_text())
+            for href in parsed.links:
+                url=urlsplit(href)
+                if url.scheme or url.netloc or not url.path:continue
+                with self.subTest(page=page.name,href=href):
+                    self.assertFalse(url.path.startswith('/'),'Do not escape the GitHub Pages project prefix')
+                    target=(page.parent/unquote(url.path)).resolve()
+                    target.relative_to(ROOT)
+                    if target.is_dir():target=target/'index.html'
+                    self.assertTrue(target.is_file())
+
+
 if __name__ == '__main__':
     unittest.main()
