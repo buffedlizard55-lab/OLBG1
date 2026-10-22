@@ -1,0 +1,33 @@
+{
+  "id": "euroleague-valencia-standings-check",
+  "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/",
+  "final_url": "https://www.euroleaguebasketball.net/en/euroleague/standings/",
+  "role": "official",
+  "sport": "basketball",
+  "method": "retrieval-tool-selected-excerpts",
+  "observed_after": "2026-10-22T10:12:52Z",
+  "observed_before": "2026-10-22T10:19:25Z",
+  "http_status": null,
+  "raw_response_sha256": null,
+  "excerpt_policy": "Selected, normalized excerpts and JSON field projections; not a byte-for-byte response or a verbatim full-page transcript.",
+  "scope": "Chunk 0 only: explicit 2026-27 season and the complete Valencia row. Not a full-table verification.",
+  "complete": false,
+  "notes": "Valencia overall record conflicts with the current Game Center preview; no accepted rating input.",
+  "observations": [
+    {
+      "id": "valencia-record",
+      "locator": "valencia-record",
+      "quote": "Season 2026-27. Valencia Basket: GP 6; W 4; L 2; Win% 66.7%; PTS+ 583; PTS- 537; +/- +46; H 2-2; A 2-0; OT 0-1; L10 4-2.",
+      "values": {
+        "team": "Valencia Basket",
+        "season": "2026-27",
+        "games_played": 6,
+        "wins": 4,
+        "losses": 2,
+        "points_for": 583,
+        "points_against": 537
+      }
+    }
+  ],
+  "sha256": "4abd0e3426be88a9f8cc946bcdffc730bcf7d9b9d9faa4bd2ecb8dfc172420a0"
+}

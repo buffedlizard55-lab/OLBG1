@@ -298,6 +298,24 @@ def seed_additional():
         row['facts']['season']='2026';row['field_evidence']['season']=[season_source['id']+'#'+str(gid)]
         row['source_ids'].append(season_source['id']);row['verified_before']=season_source['observed_before']
         row['notes'].append('Season explicitly rechecked in a separate game-ID projection. Earlier matchup/start observations and expiry are not rejuvenated.')
+    # Independent follow-up of T62's cross-source lead. Read the actual official
+    # pages again; do not import that session's numerical claims as verification.
+    vc_table=capture('euroleague-valencia-standings-check','https://www.euroleaguebasketball.net/en/euroleague/standings/','basketball',
+                     'Chunk 0 only: explicit 2026-27 season and the complete Valencia row. Not a full-table verification.',
+                     'Valencia overall record conflicts with the current Game Center preview; no accepted rating input.')
+    vc_table.update(observed_after='2026-10-22T10:12:52Z',observed_before='2026-10-22T10:19:25Z')
+    obs(vc_table,'valencia-record','Season 2026-27. Valencia Basket: GP 6; W 4; L 2; Win% 66.7%; PTS+ 583; PTS- 537; +/- +46; H 2-2; A 2-0; OT 0-1; L10 4-2.',
+        {'team':'Valencia Basket','season':'2026-27','games_played':6,'wins':4,'losses':2,'points_for':583,'points_against':537})
+    vc_preview=capture('euroleague-valencia-preview-check','https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/','basketball',
+                       'Chunks 0, 1 and 2 read; only the Valencia record passage is retained in this follow-up.',
+                       'The current preview still says 5-1; the separate standings row says 4-2. Both are observations, neither is an accepted current Valencia input.')
+    vc_preview.update(observed_after='2026-10-22T10:12:52Z',observed_before='2026-10-22T10:19:25Z')
+    obs(vc_preview,'valencia-record','Paris (1-5) will try to put an end to a three-game losing streak against Valencia (5-1), which is coming off its first loss.',
+        {'team':'Valencia Basket','wins':5,'losses':1})
+    STATS[:]=[r for r in STATS if not (r['competition']=='EuroLeague' and r['team']=='Valencia Basket')]
+    for row in FIXTURES:
+        if 'Valencia Basket' in (row['facts']['participant_a'],row['facts']['participant_b']):
+            row['notes'].append('Valencia input quarantined: fresh official preview says 5-1, standings say 4-2 over six games. Both observations retained; no inferred correction or refreshed fixture expiry.')
     robots=capture('olbg-robots','https://www.olbg.com/robots.txt',None,'Public robots policy read in full.',
                    'Respect /api/ and /storage/app/json_data/ disallows; do not use hidden-worker endpoints or rotate identities.',role='discovery')
     obs(robots,'policy','User-agent: *\nDisallow: /api/\nDisallow: /storage/app/json_data/\nDisallow: /premium/\nUser-agent: Python-urllib\nDisallow: /',{})

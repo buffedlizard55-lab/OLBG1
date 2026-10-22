@@ -4,7 +4,7 @@
 
 PR [#88](https://github.com/buffedlizard55-lab/OLBG1/pull/88) is the integration vehicle. **PR #88 is merged and its production deployment is independently confirmed.** A small compatibility-route/publication-gate follow-up is being prepared; its separate publication is not yet claimed.
 
-## Evidence and output
+## Original import checkpoint (before the Valencia follow-up)
 
 - 108 fixture/event listings in the selected 22 October import; 43 statistical observations; 29 official-source checks (32 total captures including OLBG discovery/policy).
 - 15 categories with captured listings; all 17 categories partial/unverified. Darts and greyhound accepted fixture fields remain blank.
@@ -47,3 +47,7 @@ Final merge SHA, current-session workflow receipt and live-content checks will b
 ## Follow-up gates
 
 Compatibility routes point to current views and their clearly marked archives; prior root pages cannot silently compete. The workflow validates the committed canonical tree before rebuilding, including its snapshot markers. UTC sort ordering and source-date labels are explicit. Only accepted parsed JSON response proof is publicly exported; unparsed probe HTML is not published as evidence. **94 pipeline + 38 preserved tests pass locally**, with the expanded browser suite. This follow-up's own merge/publication receipt will be added after it occurs.
+
+## Cross-source record correction in the follow-up
+
+Independently re-read the official EuroLeague standings (chunk 0, explicit season 2026-27) and Game Center (all three chunks; relevant record in chunk 1). Valencia is **4–2 / GP6** in the standings but **5–1** in the current preview. The T62 audit supplied the lead, not the accepted facts. Both selected observations are retained with a real **10:12:52–2026-10-22T10:19:25Z** read window. No inferred winner/record correction: Valencia is removed from accepted model inputs; its source-linked Paris matchup remains, with price/selection blank. Original fixture expiry is not renewed. This is new finding **F-257E-19**; the initial cd973022 publication counts above are superseded for this one price book once the follow-up deploys.

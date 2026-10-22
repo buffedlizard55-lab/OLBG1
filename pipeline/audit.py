@@ -186,6 +186,9 @@ def make_findings(baseline):
     add(18,'medium','Field sports require a complete runner model',
         'F1 practice/qualifying/race and golf tournament listings are event cards, not two-sided matches. A complete field, withdrawals and placement/dead-heat rules are required before originating outright or placement prices.',
         'https://www.pgatour.com/schedule')
+    add(19,'high','Valencia record conflicts across two current official pages',
+        'Independently re-read after the T62 audit lead: the EuroLeague Game Center preview still says Valencia 5-1; the 2026-27 standings table says GP6, W4, L2. Neither disputed overall record is accepted as a current input. The Paris–Valencia listing remains source-linked, but its estimate and selection are withheld. Both selected observations are retained; no fixture observation was restamped.',
+        'https://www.euroleaguebasketball.net/en/euroleague/standings/',status='input quarantined; needs review')
     return findings
 
 if __name__=='__main__':

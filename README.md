@@ -6,9 +6,9 @@ One canonical dashboard, **17 sport pages**, explicit evidence gaps and independ
 
 ## What this release actually contains
 
-The selected **22 October 2026** import contains **108 fixture/event listings**, **43 statistical input observations** and **29 official-source checks**. It spans 15 categories; darts and greyhound fixture/runner details remain unverified. Every category is **partial or unverified**, never globally complete.
+The selected **22 October 2026** import contains **108 fixture/event listings**, **42 accepted statistical input observations** and **31 official-source checks**. It spans 15 categories; darts and greyhound fixture/runner details remain unverified. Every category is **partial or unverified**, never globally complete.
 
-At the import checkpoint, compatible inputs support **25 price books / 50 two-way markets / 100 outcome prices**. There are **23 Low experimental winner preferences**, two equal-probability books with no arbitrary winner, and **zero Medium/High selections**. These are as-of counts, not permanently current numbers; refreshes, expiry and the UTC window can change them.
+At the import checkpoint, compatible inputs support **24 price books / 49 two-way markets / 98 outcome prices**. There are **22 Low experimental winner preferences**, two equal-probability books with no arbitrary winner, and **zero Medium/High selections**. Valencia’s disputed record is quarantined after separate official preview/standings rereads. These are as-of counts, not permanently current numbers; refreshes, expiry and the UTC window can change them.
 
 **Not complete:** worldwide fixtures, every bookmaker market, calibrated sport-specific models, current player availability, recent game-by-game histories or verified available bookmaker odds. Unsupported values remain **null in JSON and blank in tables**, with reasons and official recheck links. We do not invent High predictions to fill a quota. Any future High write-up must be unique, at least 30 words, state the selection and participants, and support its current form/player/history claims with official evidence.
 
@@ -65,7 +65,7 @@ python3 -m pipeline.build --out .
 
 ## Automation and actual hosting mode
 
-`.github/workflows/current-pages.yml` is the single canonical PR/test/refresh/publication workflow. Pinned actions, read-only checkout, 94 pipeline tests plus 38 preserved tests, data/link/fragment gates and real browser tests precede artifact creation. Public structured collectors cover NHL/MLB/NBA schedules; other categories remain explicitly unparsed/partial. A failed request is not a zero-fixture finding.
+`.github/workflows/current-pages.yml` is the single canonical PR/test/refresh/publication workflow. Pinned actions, read-only checkout, 95 pipeline tests plus 38 preserved tests, data/link/fragment gates and real browser tests precede artifact creation. Public structured collectors cover NHL/MLB/NBA schedules; other categories remain explicitly unparsed/partial. A failed request is not a zero-fixture finding.
 
 **Pages is already enabled and its configuration API reports `main:/` / legacy mode.** The interactive integration cannot change that setting (API403), but the standard GitHub Actions artifact deployment is proven to work with the repository’s authorized job token: upstream run `39745549884` succeeded and the live T61 page was fetched. The canonical workflow uses that same pinned configure/deploy path; it does not request new credentials or pretend the settings change succeeded. The separate legacy branch-build status can say cancelled/errored while an artifact deployment succeeds. Verify the actual deployment job and live content, not that legacy status alone.
 
@@ -88,7 +88,7 @@ The previous T61 workflow is retained as a manual, non-publishing historical che
 
 - `data/current/`: current facts, calculations, source captures, network attempts and complete machine-readable audit.
 - `audit/rows-*.html`: paginated historical row occurrences with file lines, exact JSON pointers and source/recheck links. Mirrors/aliases are labelled; these are **not unique recertified matches**.
-- `pipeline/audit.py`: reads tracked legacy JSON/Python files, inventories detectable fixture/price/prose objects and publishes 18 traced findings. Parsing every file is not semantic verification of every sentence.
+- `pipeline/audit.py`: reads tracked legacy JSON/Python files, inventories detectable fixture/price/prose objects and publishes 19 traced findings. Parsing every file is not semantic verification of every sentence.
 - `archive/root-20261022/`: complete pre-T257E root (including T61), original hashes, rewritten links and an archive warning.
 - `archive/pre-release-20261022/`: T61's earlier archive, untouched.
 - All parallel desks, `data/release`, `scripts/release_*`, `tests/release` and independent review reports are preserved. Their claims are never silently promoted to current evidence.
