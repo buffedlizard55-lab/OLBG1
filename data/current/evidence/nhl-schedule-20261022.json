@@ -1,0 +1,223 @@
+{
+  "id": "nhl-schedule-20261022",
+  "url": "https://api-web.nhle.com/v1/schedule/2026-10-22",
+  "final_url": "https://api-web.nhle.com/v1/schedule/2026-10-22",
+  "role": "official",
+  "sport": "ice-hockey",
+  "method": "retrieval-tool-selected-excerpts",
+  "observed_after": "2026-10-22T07:17:40Z",
+  "observed_before": "2026-10-22T07:30:30Z",
+  "http_status": null,
+  "raw_response_sha256": null,
+  "excerpt_policy": "Selected, normalized excerpts and JSON field projections; not a byte-for-byte response or a verbatim full-page transcript.",
+  "scope": "All 12 games under gameWeek date 2026-10-22; only chunks 0–2 read. Later week not enumerated.",
+  "complete": false,
+  "notes": "Field projections from NHL JSON. Game-state FUT; gameScheduleState OK. No inference from OLBG clocks.",
+  "observations": [
+    {
+      "id": "2026020154",
+      "locator": "2026020154",
+      "quote": "gameWeek.date=\"2026-10-22\"; id=2026020154; homeTeam.id=6, Boston Bruins; awayTeam.id=18, Nashville Predators; startTimeUTC=\"2026-10-22T23:00:00Z\"; venue.default=\"TD Garden\"; gameState=\"FUT\"; gameScheduleState=\"OK\"; season=20262027.",
+      "values": {
+        "participant_a": "Boston Bruins",
+        "participant_b": "Nashville Predators",
+        "participant_a_id": "6",
+        "participant_b_id": "18",
+        "date": "2026-10-22",
+        "start_utc": "2026-10-22T23:00:00Z",
+        "venue": "TD Garden",
+        "competition": "NHL",
+        "season": "20262027",
+        "official_status": "FUT"
+      }
+    },
+    {
+      "id": "2026020155",
+      "locator": "2026020155",
+      "quote": "gameWeek.date=\"2026-10-22\"; id=2026020155; homeTeam.id=10, Toronto Maple Leafs; awayTeam.id=3, New York Rangers; startTimeUTC=\"2026-10-22T23:00:00Z\"; venue.default=\"Scotiabank Arena\"; gameState=\"FUT\"; gameScheduleState=\"OK\"; season=20262027.",
+      "values": {
+        "participant_a": "Toronto Maple Leafs",
+        "participant_b": "New York Rangers",
+        "participant_a_id": "10",
+        "participant_b_id": "3",
+        "date": "2026-10-22",
+        "start_utc": "2026-10-22T23:00:00Z",
+        "venue": "Scotiabank Arena",
+        "competition": "NHL",
+        "season": "20262027",
+        "official_status": "FUT"
+      }
+    },
+    {
+      "id": "2026020156",
+      "locator": "2026020156",
+      "quote": "gameWeek.date=\"2026-10-22\"; id=2026020156; homeTeam.id=9, Ottawa Senators; awayTeam.id=28, San Jose Sharks; startTimeUTC=\"2026-10-22T23:00:00Z\"; venue.default=\"Canadian Tire Centre\"; gameState=\"FUT\"; gameScheduleState=\"OK\"; season=20262027.",
+      "values": {
+        "participant_a": "Ottawa Senators",
+        "participant_b": "San Jose Sharks",
+        "participant_a_id": "9",
+        "participant_b_id": "28",
+        "date": "2026-10-22",
+        "start_utc": "2026-10-22T23:00:00Z",
+        "venue": "Canadian Tire Centre",
+        "competition": "NHL",
+        "season": "20262027",
+        "official_status": "FUT"
+      }
+    },
+    {
+      "id": "2026020157",
+      "locator": "2026020157",
+      "quote": "gameWeek.date=\"2026-10-22\"; id=2026020157; homeTeam.id=1, New Jersey Devils; awayTeam.id=24, Anaheim Ducks; startTimeUTC=\"2026-10-22T23:00:00Z\"; venue.default=\"Prudential Center\"; gameState=\"FUT\"; gameScheduleState=\"OK\"; season=20262027.",
+      "values": {
+        "participant_a": "New Jersey Devils",
+        "participant_b": "Anaheim Ducks",
+        "participant_a_id": "1",
+        "participant_b_id": "24",
+        "date": "2026-10-22",
+        "start_utc": "2026-10-22T23:00:00Z",
+        "venue": "Prudential Center",
+        "competition": "NHL",
+        "season": "20262027",
+        "official_status": "FUT"
+      }
+    },
+    {
+      "id": "2026020158",
+      "locator": "2026020158",
+      "quote": "gameWeek.date=\"2026-10-22\"; id=2026020158; homeTeam.id=5, Pittsburgh Penguins; awayTeam.id=13, Florida Panthers; startTimeUTC=\"2026-10-22T23:00:00Z\"; venue.default=\"PPG Paints Arena\"; gameState=\"FUT\"; gameScheduleState=\"OK\"; season=20262027.",
+      "values": {
+        "participant_a": "Pittsburgh Penguins",
+        "participant_b": "Florida Panthers",
+        "participant_a_id": "5",
+        "participant_b_id": "13",
+        "date": "2026-10-22",
+        "start_utc": "2026-10-22T23:00:00Z",
+        "venue": "PPG Paints Arena",
+        "competition": "NHL",
+        "season": "20262027",
+        "official_status": "FUT"
+      }
+    },
+    {
+      "id": "2026020159",
+      "locator": "2026020159",
+      "quote": "gameWeek.date=\"2026-10-22\"; id=2026020159; homeTeam.id=2, New York Islanders; awayTeam.id=26, Los Angeles Kings; startTimeUTC=\"2026-10-22T23:30:00Z\"; venue.default=\"UBS Arena\"; gameState=\"FUT\"; gameScheduleState=\"OK\"; season=20262027.",
+      "values": {
+        "participant_a": "New York Islanders",
+        "participant_b": "Los Angeles Kings",
+        "participant_a_id": "2",
+        "participant_b_id": "26",
+        "date": "2026-10-22",
+        "start_utc": "2026-10-22T23:30:00Z",
+        "venue": "UBS Arena",
+        "competition": "NHL",
+        "season": "20262027",
+        "official_status": "FUT"
+      }
+    },
+    {
+      "id": "2026020160",
+      "locator": "2026020160",
+      "quote": "gameWeek.date=\"2026-10-22\"; id=2026020160; homeTeam.id=19, St. Louis Blues; awayTeam.id=54, Vegas Golden Knights; startTimeUTC=\"2026-10-23T00:00:00Z\"; venue.default=\"Enterprise Center\"; gameState=\"FUT\"; gameScheduleState=\"OK\"; season=20262027.",
+      "values": {
+        "participant_a": "St. Louis Blues",
+        "participant_b": "Vegas Golden Knights",
+        "participant_a_id": "19",
+        "participant_b_id": "54",
+        "date": "2026-10-22",
+        "start_utc": "2026-10-23T00:00:00Z",
+        "venue": "Enterprise Center",
+        "competition": "NHL",
+        "season": "20262027",
+        "official_status": "FUT"
+      }
+    },
+    {
+      "id": "2026020161",
+      "locator": "2026020161",
+      "quote": "gameWeek.date=\"2026-10-22\"; id=2026020161; homeTeam.id=25, Dallas Stars; awayTeam.id=52, Winnipeg Jets; startTimeUTC=\"2026-10-23T00:00:00Z\"; venue.default=\"American Airlines Center\"; gameState=\"FUT\"; gameScheduleState=\"OK\"; season=20262027.",
+      "values": {
+        "participant_a": "Dallas Stars",
+        "participant_b": "Winnipeg Jets",
+        "participant_a_id": "25",
+        "participant_b_id": "52",
+        "date": "2026-10-22",
+        "start_utc": "2026-10-23T00:00:00Z",
+        "venue": "American Airlines Center",
+        "competition": "NHL",
+        "season": "20262027",
+        "official_status": "FUT"
+      }
+    },
+    {
+      "id": "2026020162",
+      "locator": "2026020162",
+      "quote": "gameWeek.date=\"2026-10-22\"; id=2026020162; homeTeam.id=20, Calgary Flames; awayTeam.id=30, Minnesota Wild; startTimeUTC=\"2026-10-23T01:00:00Z\"; venue.default=\"Scotiabank Saddledome\"; gameState=\"FUT\"; gameScheduleState=\"OK\"; season=20262027.",
+      "values": {
+        "participant_a": "Calgary Flames",
+        "participant_b": "Minnesota Wild",
+        "participant_a_id": "20",
+        "participant_b_id": "30",
+        "date": "2026-10-22",
+        "start_utc": "2026-10-23T01:00:00Z",
+        "venue": "Scotiabank Saddledome",
+        "competition": "NHL",
+        "season": "20262027",
+        "official_status": "FUT"
+      }
+    },
+    {
+      "id": "2026020163",
+      "locator": "2026020163",
+      "quote": "gameWeek.date=\"2026-10-22\"; id=2026020163; homeTeam.id=22, Edmonton Oilers; awayTeam.id=12, Carolina Hurricanes; startTimeUTC=\"2026-10-23T01:00:00Z\"; venue.default=\"Rogers Place\"; gameState=\"FUT\"; gameScheduleState=\"OK\"; season=20262027.",
+      "values": {
+        "participant_a": "Edmonton Oilers",
+        "participant_b": "Carolina Hurricanes",
+        "participant_a_id": "22",
+        "participant_b_id": "12",
+        "date": "2026-10-22",
+        "start_utc": "2026-10-23T01:00:00Z",
+        "venue": "Rogers Place",
+        "competition": "NHL",
+        "season": "20262027",
+        "official_status": "FUT"
+      }
+    },
+    {
+      "id": "2026020164",
+      "locator": "2026020164",
+      "quote": "gameWeek.date=\"2026-10-22\"; id=2026020164; homeTeam.id=55, Seattle Kraken; awayTeam.id=68, Utah Mammoth; startTimeUTC=\"2026-10-23T02:00:00Z\"; venue.default=\"Climate Pledge Arena\"; gameState=\"FUT\"; gameScheduleState=\"OK\"; season=20262027.",
+      "values": {
+        "participant_a": "Seattle Kraken",
+        "participant_b": "Utah Mammoth",
+        "participant_a_id": "55",
+        "participant_b_id": "68",
+        "date": "2026-10-22",
+        "start_utc": "2026-10-23T02:00:00Z",
+        "venue": "Climate Pledge Arena",
+        "competition": "NHL",
+        "season": "20262027",
+        "official_status": "FUT"
+      }
+    },
+    {
+      "id": "2026020165",
+      "locator": "2026020165",
+      "quote": "gameWeek.date=\"2026-10-22\"; id=2026020165; homeTeam.id=23, Vancouver Canucks; awayTeam.id=17, Detroit Red Wings; startTimeUTC=\"2026-10-23T02:00:00Z\"; venue.default=\"Rogers Arena\"; gameState=\"FUT\"; gameScheduleState=\"OK\"; season=20262027.",
+      "values": {
+        "participant_a": "Vancouver Canucks",
+        "participant_b": "Detroit Red Wings",
+        "participant_a_id": "23",
+        "participant_b_id": "17",
+        "date": "2026-10-22",
+        "start_utc": "2026-10-23T02:00:00Z",
+        "venue": "Rogers Arena",
+        "competition": "NHL",
+        "season": "20262027",
+        "official_status": "FUT"
+      }
+    }
+  ],
+  "sha256": "ef5edd419d71d28dcdc0b52ab2b57e4d68bbb9d092a567d699672e663fc1349e"
+}

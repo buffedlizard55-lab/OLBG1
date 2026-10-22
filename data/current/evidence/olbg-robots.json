@@ -1,0 +1,25 @@
+{
+  "id": "olbg-robots",
+  "url": "https://www.olbg.com/robots.txt",
+  "final_url": "https://www.olbg.com/robots.txt",
+  "role": "discovery",
+  "sport": null,
+  "method": "retrieval-tool-selected-excerpts",
+  "observed_after": "2026-10-22T07:17:40Z",
+  "observed_before": "2026-10-22T07:30:30Z",
+  "http_status": null,
+  "raw_response_sha256": null,
+  "excerpt_policy": "Selected, normalized excerpts and JSON field projections; not a byte-for-byte response or a verbatim full-page transcript.",
+  "scope": "Public robots policy read in full.",
+  "complete": false,
+  "notes": "Respect /api/ and /storage/app/json_data/ disallows; do not use hidden-worker endpoints or rotate identities.",
+  "observations": [
+    {
+      "id": "policy",
+      "locator": "policy",
+      "quote": "User-agent: *\nDisallow: /api/\nDisallow: /storage/app/json_data/\nDisallow: /premium/\nUser-agent: Python-urllib\nDisallow: /",
+      "values": {}
+    }
+  ],
+  "sha256": "d22ebff6bf1fac9fdf4de86e006871defa3a01f9dc67c3b02cad2b85d24b074d"
+}

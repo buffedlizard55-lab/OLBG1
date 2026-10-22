@@ -1,0 +1,79 @@
+{
+  "id": "f1-austin",
+  "url": "https://www.formula1.com/en/racing/2026/united-states",
+  "final_url": "https://www.formula1.com/en/racing/2026/united-states",
+  "role": "official",
+  "sport": "motor-racing",
+  "method": "retrieval-tool-selected-excerpts",
+  "observed_after": "2026-10-22T07:17:40Z",
+  "observed_before": "2026-10-22T07:30:30Z",
+  "http_status": null,
+  "raw_response_sha256": null,
+  "excerpt_policy": "Selected, normalized excerpts and JSON field projections; not a byte-for-byte response or a verbatim full-page transcript.",
+  "scope": "United States GP session calendar; no complete runner field or qualifying results.",
+  "complete": false,
+  "notes": "The page switches My time/Track time, so the extracted clock cannot establish a timezone.",
+  "observations": [
+    {
+      "id": "practice1",
+      "locator": "practice1",
+      "quote": "FORMULA 1 MSC CRUISES UNITED STATES GRAND PRIX 2026. 23Oct Practice 1 13:30–14:30. Circuit of The Americas.",
+      "values": {
+        "event": "Practice 1",
+        "date": "2026-10-23",
+        "time_text": "13:30–14:30",
+        "competition": "Formula 1 United States Grand Prix 2026",
+        "venue": "Circuit of The Americas"
+      }
+    },
+    {
+      "id": "practice2",
+      "locator": "practice2",
+      "quote": "FORMULA 1 MSC CRUISES UNITED STATES GRAND PRIX 2026. 23Oct Practice 2 17:00–18:00. Circuit of The Americas.",
+      "values": {
+        "event": "Practice 2",
+        "date": "2026-10-23",
+        "time_text": "17:00–18:00",
+        "competition": "Formula 1 United States Grand Prix 2026",
+        "venue": "Circuit of The Americas"
+      }
+    },
+    {
+      "id": "practice3",
+      "locator": "practice3",
+      "quote": "FORMULA 1 MSC CRUISES UNITED STATES GRAND PRIX 2026. 24Oct Practice 3 13:30–14:30. Circuit of The Americas.",
+      "values": {
+        "event": "Practice 3",
+        "date": "2026-10-24",
+        "time_text": "13:30–14:30",
+        "competition": "Formula 1 United States Grand Prix 2026",
+        "venue": "Circuit of The Americas"
+      }
+    },
+    {
+      "id": "qualifying",
+      "locator": "qualifying",
+      "quote": "FORMULA 1 MSC CRUISES UNITED STATES GRAND PRIX 2026. 24Oct Qualifying 17:00–18:00. Circuit of The Americas.",
+      "values": {
+        "event": "Qualifying",
+        "date": "2026-10-24",
+        "time_text": "17:00–18:00",
+        "competition": "Formula 1 United States Grand Prix 2026",
+        "venue": "Circuit of The Americas"
+      }
+    },
+    {
+      "id": "race",
+      "locator": "race",
+      "quote": "FORMULA 1 MSC CRUISES UNITED STATES GRAND PRIX 2026. 25Oct Race 16:00. Circuit of The Americas.",
+      "values": {
+        "event": "Race",
+        "date": "2026-10-25",
+        "time_text": "16:00",
+        "competition": "Formula 1 United States Grand Prix 2026",
+        "venue": "Circuit of The Americas"
+      }
+    }
+  ],
+  "sha256": "dace62712ea1689be818bfa77973f408b582cc1baa0229c9d706b5b0ffd7b665"
+}
