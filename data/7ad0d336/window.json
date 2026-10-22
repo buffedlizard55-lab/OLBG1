@@ -1,0 +1,35 @@
+{
+  "policy": "High confidence requires verified status, both sides measured, model_prob >= 60%, and fair price -250..+10000 (decimal 1.40..101.00). Where moneyline is shorter than -250, the handicap rung inside the window is published as the High selection.",
+  "band": {
+    "min_us": -250,
+    "max_us": 10000,
+    "min_dec": 1.4,
+    "max_dec": 101.0,
+    "conviction_floor": 0.7
+  },
+  "counts": {
+    "high": 13,
+    "medium": 65,
+    "low": 42,
+    "no_pick": 7,
+    "priced": 120,
+    "rejected_high_out_of_band": 0
+  },
+  "high_ids": [
+    "hand-ehf-12049",
+    "hand-ehf-12051",
+    "pdc-ec-06",
+    "el-dub-bay-1022",
+    "el-mil-bar-1022",
+    "rl-wc26w-sam-wal",
+    "rl-wc26-tga-lbn",
+    "aflw-r11-09",
+    "aflw-r11-02",
+    "rl-wc26-png-sam",
+    "aflw-r11-03",
+    "mlb-849804",
+    "mlb-849803"
+  ],
+  "rejected_out_of_band": [],
+  "note": "The brief's >70% and -250 floor cannot both bind on a margined price (70% at 5% overround = -277). This desk originates at zero vig, where 70% = -233 and 71.43% = -250, so the band is satisfiable. Book equivalents at 5% are shown for reference but never tested."
+}
