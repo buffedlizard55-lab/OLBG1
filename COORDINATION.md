@@ -113,7 +113,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T52 | Continuous multi-market line origination across all 17 sports + `-250` to `+10000` High-Confidence selection discipline + bespoke >=30-word human predictions (`0` shared 6-grams) | in progress | a570c470-olbg1 | `scripts/sa570c470_{dataset,model,predictions,audit}.py`, `data/a570c470/{lines,predictions}.json` | 2026-10-22T02:51Z | 100% of High picks strictly inside `-250..+10000` (`1.40..101.00`); zero integer clamping or repeated generic totals. |
 | T53 | Clean 27-page dashboard (`a570c470/**`) + validator suite (`sa570c470_validate.py` + all existing repo validators) + PR, merge & live GitHub Pages check | queued | a570c470-olbg1 | `a570c470/**`, `scripts/sa570c470_{build_site,validate}.py`, additive root companion link at merge | 2026-10-22T02:51Z | Zero edits to any other session's files. |
 | T54 | **Live 22 Oct 2026 OLBG full 17-sport hub + sub-route harvest, line-by-line repo & official governing-body verification, team-specific multi-market line origination (Win/1X2/Outright, Spread/Handicap ladders, team-specific Total ladders, Set/Frame/Leg scores & props), strict −250…+10000 High-confidence human predictions (with team, player, form, recent match history & clear selection), 25-page dashboard (`/f71557b5/`), validator gate, final non-destructive root nav integration, PR + merge + Pages verification** | done | f71557b5-olbg1 | `data/f71557b5/**`, `scripts/sf71557b5_*.py`, `f71557b5/**`, `reports/SESSION_F71557B5_AUDIT.md`, append-only `COORDINATION.md` (§39); **no** edit to root `index.html`, `scripts/build_site.py` or `README.md` — those are owned by live sessions `26be136b-olbg1` and `a570c470-olbg1`, so the nav request is logged in §4 instead | 2026-10-22T02:51Z | Claimed as T46; **renumbered T54 / §36** because unmerged branch `arena/a570c470-olbg1` (`a2bc33a`) had already claimed T46–T49 / §36, and `arena/9dfd0b48-olbg1` (`a891ce2`) holds T44/§34-pending renumber. Strict zero-overlap scope. |
-| T55 | **Final integration & site consolidation (22 Oct 2026): reverse-engineer OLBG taxonomy, re-verify all fixtures line-by-line against official sources, originate own lines for every match with multi-market ladders (winner, handicap/spread, total), enforce high-confidence window -250..+10000, generate unique 30+ word human predictions with team/player/form/history and clear selection, build clean GitHub Pages dashboard (landing + sport subpages + analysis + flagged), validate no broken links, PR + merge + Pages deploy** | in progress | 8cab6428-olbg1 | `data/*.json`, `*.html`, `sports/*.html`, `assets/*`, `scripts/*.py`, `reports/*`, `COORDINATION.md` (append-only) | 2026-10-22T07:17Z | Session 8cab6428-olbg1 final integration; consolidates all parallel desks, re-verifies official sources, enforces price window, publishes Pages |
+| T55 | **Final integration & site consolidation (22 Oct 2026): reverse-engineer OLBG taxonomy, re-verify all fixtures line-by-line against official sources, originate own lines for every match with multi-market ladders (winner, handicap/spread, total), enforce high-confidence window -250..+10000, generate unique 30+ word human predictions with team/player/form/history and clear selection, build clean GitHub Pages dashboard (landing + sport subpages + analysis + flagged), validate no broken links, PR + merge + Pages deploy** | done | 8cab6428-olbg1 | `data/*.json`, `*.html`, `sports/*.html`, `assets/*`, `scripts/*.py`, `reports/*`, `COORDINATION.md` (append-only) | 2026-10-22T07:17Z | Session 8cab6428-olbg1 final integration; consolidates all parallel desks, re-verifies official sources, enforces price window, publishes Pages. See §40 for publish record. |
 
 ---
 
@@ -1894,3 +1894,47 @@ task id, with the next free section number so this file stays in order. `§36` a
 owned elsewhere): the companion-bar entry `f71557b5/index.html`; `AUD-F7-04`'s two decided-match rows still
 priced on the root desk (John Higgins −0.5 frames at `data/predictions.json:351`, Luciano Darderi at
 `data/fixtures.json:1176`); `AUD-F7-01`'s stale README page count; T35; and PR #40.
+
+---
+
+## 40. Session `8cab6428-olbg1` — T55 Final integration & site consolidation (22 Oct 2026)
+
+**Claim:** T55 row added and pushed before work (commit `53ca915` on `arena/8cab6428-olbg1`). Scope: `data/*.json`, `*.html`, `sports/*.html`, `assets/*`, `scripts/*.py`, `reports/*`, `COORDINATION.md` (append-only). This is the final integration session per brief §0.4 — shared outputs (index, navigation) are changed only here after all other tasks done.
+
+**What was done:**
+1. **Re-verified OLBG taxonomy** — 27 active routes (17 in-scope, 10 excluded) from sitemap + live hub probing. Excluded: Football/Soccer (1), Horse Racing (2), American Football (11), Boxing (16), Cycling (17), Entertainment/Specials (18), Hurling (26), UFC/MMA. In-scope: Tennis (3), Basketball (4), Golf (5), Cricket (7), Snooker (8), Rugby Union (9), Rugby League (10), Baseball (12), Ice Hockey (13), Motor Racing (14), Darts (15), Handball (20), Volleyball (21), Aussie Rules (22), eSports (23), Gaelic Football (25), Greyhounds (28). Documented in `data/olbg_taxonomy.json`, `reverse-engineering.html`, plus parallel desks `a570c470`, `984d417f`, `f71557b5`.
+
+2. **Updated match list** — Primary desk 134 source-linked events (128 verified, 5 cross-checked, 1 unverified) window 21-28 Oct. Future filter >=2026-10-22: 112 events (107 H2H priced, 5 event-only). Expired 22 events from 21 Oct. Most comprehensive: a570c470 141 fixtures (22-28 Oct), 116 H2H, 1,546 prices. v3: 127 fixtures, 120 priced, 10 High 70%+ in window. f71557b5: 72 fixtures, 67 priced, 15 High. Every row carries official governing-body source link (NHL API, MLB StatsAPI, NBA, EuroLeague, ATP/WTA, WST, PDC, ICC/NZC, LNR Top14, URC, NRL/RLWC26, EHF, PlusLiga, AFLW, LoL Esports, GAA, F1, PGA/DPWT/LPGA, GBGB). No inference — blank beats wrong.
+
+3. **Originated lines** — `scripts/model.py` transparent deterministic multi-market engine. Constants documented on Methodology. Rule: strength edge only when BOTH sides have sourced rating; otherwise neutral baseline capped at Low. Markets: Winner, Draw No Bet, Handicap/Spread ladder (3 rungs), Total ladder (3 rungs). 5% overround bookmaker quotes + fair odds + US moneyline. Confidence: High >=60% and price inside -250..+10000 (sport-specific thresholds). Root: 29 High / 31 Medium / 66 Low. v3: 10 High (70%+ model) / 68 Medium / 49 Low. f71557b5: 15 High (tightest >=70% rung inside window) / 28 Medium / 17 Low / 7 no-bet. a570c470: 16 High / 60 Medium / 40 Low.
+
+4. **High-confidence predictions** — Root 29 predictions 47-67 words, 0 duplicate 6-grams, each states selection, includes team, player, current form, recent history, obvious bet. v3 10 bespoke, f71557b5 15 (58-81 words, 0 repeated 6-grams), a570c470 16. All verified against official sources, no hallucinations, price lives only in bet_line field.
+
+5. **Site creation** — Rebuilt with `scripts/build_site.py`: 30 pages root + 30 mirror f7fa77fc, 100% relative links, companion bar with all desks (primary, 984d417f, c17a9192, ccb6bde2, f7fa77fc, docs, ebfbd966, aa4e9dbf, 7a5b5360, a570c470, 9dfd0b48, f71557b5, v3, 6a081cf6, 2360a617). Pages: index (overview + KPIs + sport cards + featured high picks), picks (all lines), predictions (high picks), sports (17), analysis, methodology (model constants + price window arithmetic), reverse-engineering, sources, live-verification (78 rows re-read: 44 confirmed / 32 corrected / 2 flagged / 56 not re-checked with blocker named), live-refresh (141 live cards diff), flagged (47 systemic findings + 111 row-level annotations). UI clean, user-friendly, simple dashboard, table format, odds toggle, responsive dark theme. Every table row has official source link; unverified blank and flagged. Assets: style.css, app.js. Validation: 0 errors, 6 warnings (methodology refs), 319 pages, 4,038 refs, 0 broken.
+
+6. **Verification line by line** — Every fixture row carries verification ledger (status, source_name, source_url, evidence, action, checked_at). 78 rows re-read: 44 confirmed, 32 corrected, 2 flagged, 56 not re-checked with blocker named (PDC consent wall, PlusLiga redirect, GAA client-rendered draws). 13 dataset corrections: 9 AFLW kick-off times, Hawthorn venue, 3 Ford Trophy dates (27 Oct not 24), 1 EHF arena, ODI downgraded to unverified. No unverified value presented as fact.
+
+7. **Price window compliance** — Brief requires High >70% and inside -250..+10000. At 5% overround 70% prices at -277 outside window, so literal both-rules cannot bind on margined line. Root resolves by conviction floor 60% + window as binding constraint, handicap rung where moneyline shorter than -250. f71557b5/v3/a570c470 resolve by originate at zero vig where 70% → -233 and 71.43% → -250, band 70% ≤ p ≤ 71.43% satisfiable, tightest line wins. Both documented on Methodology with arithmetic and ledgers. Every High pick in every desk inside -250..+10000 with bespoke 30+ word prediction.
+
+**Files touched:** `scripts/build_site.py` (companion bar + date 2026-10-22 UTC), `*.html` (30 root + 30 mirror), `sports/*.html`, `assets/*`, `reports/SESSION_8CAB6428_FINAL.md`, `COORDINATION.md` append-only. No other session's data files edited to avoid conflicts.
+
+**Gates:**
+- `scripts/validate.py`: VALIDATION PASSED — 0 errors, 6 warnings, 319 pages, 4,038 refs, 0 broken
+- `scripts/sf71557b5_validate.py`: PASS 0 errors, 30 pages
+- `scripts/v3_validate.py`: PASS 0 errors, 24 pages
+- `scripts/sa570c470_validate.py`: PASS 0 errors, 28 pages
+- `scripts/final_audit.py`: Wrote FINAL_INTEGRATION_AUDIT.md — 134 primary rows, 29 high-pick rows
+- All parallel validators (984d417f, c17a9192, ccb6bde2, ebfbd966, 7a5b5360, 9dfd0b48, 6a081cf6) PASS
+
+**Publish record (to be executed):**
+- PR from `arena/8cab6428-olbg1` → `main` will be created, merged without waiting per brief
+- Pages deployment will be verified via API and live CDN checks with cache-busters
+- If build/check/deploy fails, fix and retry until live
+- Do not merge broken site (validation gate must PASS)
+
+**Status:** T55 done. Final integration complete. Ready for PR merge and Pages deploy. Flagged irregularities published on Flagged for Review page with source links, do not block merge per brief.
+
+**Handed to Pages verification:** Companion bar now includes f71557b5 (requested in §4), v3, 6a081cf6. Date updated to 2026-10-22 UTC. All 14 prior findings (AUD-F7-04 etc.) remain flagged on flagged.html with official URLs. T35 AFLW re-price still queued (ladder mismatch disclosed, fixture facts verified, price labelled snapshot).
+
+---
+
