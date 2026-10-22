@@ -263,6 +263,9 @@ def main() -> int:
 
     for h in lines["highs"]:
         h["verification"] = rows_by_id[h["id"]]["verification"]
+        # keep the High table's source column identical to the row it summarises
+        if h["id"] in rows_by_id:
+            h["sources"] = rows_by_id[h["id"]]["sources"]
 
     out = {
         "session": "e6716490-olbg1",
