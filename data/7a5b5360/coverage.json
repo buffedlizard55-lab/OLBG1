@@ -1,0 +1,166 @@
+{
+ "excluded": [
+  "Football / Soccer",
+  "Boxing",
+  "UFC / MMA",
+  "American Football",
+  "Hurling",
+  "Horse Racing",
+  "Cycling",
+  "Specials / Entertainment"
+ ],
+ "in_scope": [
+  "Tennis",
+  "Basketball",
+  "Golf",
+  "Cricket",
+  "Snooker",
+  "Rugby Union",
+  "Rugby League",
+  "Baseball",
+  "Ice Hockey",
+  "Motor Racing",
+  "Darts",
+  "Handball",
+  "Volleyball",
+  "Aussie Rules",
+  "eSports",
+  "Gaelic Football",
+  "Greyhounds"
+ ],
+ "coverage": {
+  "Baseball": {
+   "fixtures": 3,
+   "source": [
+    "mlb_schedule",
+    "mlb_standings",
+    "mlb_standings_al"
+   ],
+   "state": "verified",
+   "note": "MLB World Series games published by the MLB schedule API."
+  },
+  "Ice Hockey": {
+   "fixtures": 12,
+   "source": [
+    "nhl_scoreboard"
+   ],
+   "state": "verified",
+   "note": "Full 12-game NHL slate for 22-23 Oct with both clubs' records in the same payload."
+  },
+  "Rugby Union": {
+   "fixtures": 8,
+   "source": [
+    "urc_fixtures"
+   ],
+   "state": "verified_fixture_only",
+   "note": "Round 4 board read from the official URC release. No league table could be read (two official routes returned 404), so these matches are priced from a neutral baseline and confidence is capped at Low."
+  },
+  "Snooker": {
+   "fixtures": 8,
+   "source": [
+    "wst_matches",
+    "wst_rankings",
+    "wst_rankings_preview"
+   ],
+   "state": "verified",
+   "note": "Round 3 board plus every completed Round 1/Round 2 score (used as the form input) and the published world rankings."
+  },
+  "Motor Racing": {
+   "fixtures": 1,
+   "source": [
+    "f1_calendar",
+    "f1_standings",
+    "f1_usgp"
+   ],
+   "state": "verified",
+   "note": "Round 18, United States Grand Prix, 23-25 Oct 2026, with all 23 drivers' points."
+  },
+  "Gaelic Football": {
+   "fixtures": 0,
+   "source": [
+    "gaa_fixtures"
+   ],
+   "state": "no_fixture_in_window",
+   "note": "The official GAA board for 22-26 Oct lists one match, the Shinty-Hurling International (hurling, excluded). No senior inter-county gaelic football fixture is published for this window."
+  },
+  "Darts": {
+   "fixtures": 0,
+   "source": [
+    "pdc_hub"
+   ],
+   "state": "blocked",
+   "note": "pdc.tv served a CookieYes consent interstitial instead of the tournament hub."
+  },
+  "Handball": {
+   "fixtures": 0,
+   "source": [
+    "ehfcl_fixtures"
+   ],
+   "state": "blocked",
+   "note": "ehfcl.com/en/men/fixtures-and-results returned HTTP 404."
+  },
+  "Cricket": {
+   "fixtures": 0,
+   "source": [
+    "icc_fixtures"
+   ],
+   "state": "client_rendered",
+   "note": "The ICC board renders entirely client-side; the fetch returned skeleton markup only."
+  },
+  "Basketball": {
+   "fixtures": 0,
+   "source": [
+    "euroleague_gc",
+    "nba_scoreboard"
+   ],
+   "state": "blocked",
+   "note": "EuroLeague Game Center renders client-side (team list only); the NBA CDN scoreboard returned HTTP 500."
+  },
+  "Aussie Rules": {
+   "fixtures": 0,
+   "source": [
+    "aflw_fixture"
+   ],
+   "state": "client_rendered",
+   "note": "afl.com.au/aflw/fixture returned navigation chrome only; the fixture grid is client-rendered."
+  },
+  "Greyhounds": {
+   "fixtures": 0,
+   "source": [
+    "gbgb_fixtures"
+   ],
+   "state": "blocked",
+   "note": "gbgb.org.uk/racing/fixtures returned HTTP 500."
+  },
+  "Tennis": {
+   "fixtures": 0,
+   "source": [],
+   "state": "not_attempted_no_dated_board",
+   "note": "The official draw sheets (protennislive / WTA) publish pairings but no per-match dates, and the ATP/WTA calendar pages for this week are client-rendered. A fixture cannot be placed on a date from a draw sheet without inferring it, so no tennis row is published."
+  },
+  "Rugby League": {
+   "fixtures": 0,
+   "source": [],
+   "state": "not_attempted_no_static_board",
+   "note": "nrl.com draw routes are client-rendered; no static official board was read this session."
+  },
+  "Golf": {
+   "fixtures": 0,
+   "source": [],
+   "state": "not_attempted_no_static_board",
+   "note": "pgatour.com tee times and leaderboard are client-rendered; no static official board was read."
+  },
+  "Volleyball": {
+   "fixtures": 0,
+   "source": [],
+   "state": "not_attempted_no_static_board",
+   "note": "No CEV fixture board was read this session; the previous desks record the PlusLiga redirect issue."
+  },
+  "eSports": {
+   "fixtures": 0,
+   "source": [],
+   "state": "not_attempted_no_static_board",
+   "note": "lolesports.com match schedules are client-rendered."
+  }
+ }
+}

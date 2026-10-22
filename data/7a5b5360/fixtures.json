@@ -1,0 +1,1113 @@
+{
+ "meta": {
+  "session": "7a5b5360-olbg1",
+  "task": "T41",
+  "retrieved_utc": "2026-10-22T01:30:00Z",
+  "window": "22-26 October 2026",
+  "assumptions": {
+   "moneyline_shrink": {
+    "Baseball": {
+     "k": 0.5,
+     "home": 0.16,
+     "why": "k shrinks the difference between two clubs' season log-odds; 0.50 reflects that a best-of-series meeting between a .636 and a .605 club is close. Home edge 0.16 in logit units is the long-run MLB home-field figure (~54%)."
+    },
+    "Ice Hockey": {
+     "k": 0.55,
+     "home": 0.2,
+     "why": "Points-percentage log-odds shrunk by 0.55 (an 11-game sample is noisy) plus a 0.20 home term (~55% home win rate in the NHL)."
+    },
+    "Snooker": {
+     "k": 2.4,
+     "home": 0.0,
+     "why": "Strength is a 0-100 blend of frames won in this event (50%) and a rank score (37-position)/36 where the player is inside the published top 36 (50%). The 2.40 coefficient maps a 0.20 strength gap onto roughly a 61% best-of-7 win chance."
+    },
+    "Rugby Union": {
+     "k": 0.0,
+     "home": 0.12,
+     "why": "No league table was readable, so the strength term is switched off entirely and only a 0.12 home term is applied. Confidence is capped at Low."
+    }
+   },
+   "totals": {
+    "Ice Hockey": {
+     "mean": 6.0,
+     "sd": 2.0,
+     "line": 5.5,
+     "unit": "goals"
+    },
+    "Baseball": {
+     "mean": 8.6,
+     "sd": 4.2,
+     "line": 8.5,
+     "unit": "runs"
+    },
+    "Rugby Union": {
+     "mean": 45.0,
+     "sd": 13.0,
+     "line": 45.5,
+     "unit": "points"
+    },
+    "Snooker": {
+     "line": 5.5,
+     "unit": "frames",
+     "why": "Exact best-of-7 distribution, no approximation."
+    }
+   },
+   "handicap": {
+    "Ice Hockey": {
+     "line": 1.5,
+     "sd": 2.3,
+     "mu_scale": 1.6,
+     "unit": "goals"
+    },
+    "Baseball": {
+     "line": 1.5,
+     "sd": 4.0,
+     "mu_scale": 1.1,
+     "unit": "runs"
+    },
+    "Rugby Union": {
+     "line": 7.5,
+     "sd": 14.0,
+     "mu_scale": 6.0,
+     "unit": "points"
+    },
+    "Snooker": {
+     "line": 1.5,
+     "unit": "frames",
+     "why": "Exact best-of-7 distribution."
+    }
+   },
+   "field": {
+    "exponent": 1.5,
+    "offset": 10.0,
+    "why": "Outright weight = (points + 10)^1.5. The offset keeps zero-point drivers priced as longshots rather than at infinite odds; the exponent prices a 340-point leader at roughly 22% in a 23-driver field."
+   },
+   "overround": {
+    "two_way": 0.045,
+    "three_way": 0.06,
+    "field": 0.075
+   },
+   "tiers": {
+    "high": 0.7,
+    "medium": 0.55
+   },
+   "band": {
+    "min_decimal": 1.4,
+    "max_decimal": 101.0,
+    "note": "Brief: focus on selections priced between -250 (1.40) and +10000 (101.0)."
+   }
+  },
+  "counts": {
+   "fixtures": 32,
+   "markets": 231,
+   "picks": 32,
+   "predictions": 18,
+   "high_probability_selections": 26,
+   "picks_high": 4,
+   "picks_medium": 14,
+   "picks_low": 14
+  }
+ },
+ "fixtures": [
+  {
+   "id": "mlb-849805",
+   "sport": "Baseball",
+   "competition": "MLB",
+   "stage": "World Series, game at Milwaukee",
+   "start_utc": "2026-10-24T00:00:00Z",
+   "start_published": "2026-10-24T00:00:00Z (gameDate in the MLB schedule API)",
+   "home": "Milwaukee Brewers",
+   "away": "Tampa Bay Rays",
+   "venue": "American Family Field, Milwaukee",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "2026 regular-season record",
+     "value": "103-59 (.636)",
+     "rating": 63.6
+    },
+    "away": {
+     "label": "2026 regular-season record",
+     "value": "98-64 (.605)",
+     "rating": 60.5
+    }
+   },
+   "sources": [
+    "mlb_schedule",
+    "mlb_standings",
+    "mlb_standings_al"
+   ],
+   "flags": [
+    "MLB returns the games in the order 849805, 849802, 849804, 849803 for 23, 24, 26 and 27 October \u2014 the gamePk sequence is not chronological and no game number is asserted here."
+   ]
+  },
+  {
+   "id": "mlb-849802",
+   "sport": "Baseball",
+   "competition": "MLB",
+   "stage": "World Series, game at Milwaukee",
+   "start_utc": "2026-10-25T00:00:00Z",
+   "start_published": "2026-10-25T00:00:00Z (gameDate in the MLB schedule API)",
+   "home": "Milwaukee Brewers",
+   "away": "Tampa Bay Rays",
+   "venue": "American Family Field, Milwaukee",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "2026 regular-season record",
+     "value": "103-59 (.636)",
+     "rating": 63.6
+    },
+    "away": {
+     "label": "2026 regular-season record",
+     "value": "98-64 (.605)",
+     "rating": 60.5
+    }
+   },
+   "sources": [
+    "mlb_schedule",
+    "mlb_standings",
+    "mlb_standings_al"
+   ],
+   "flags": [
+    "No starting pitcher is published for this game on the fetched payload, so the pitching matchup is deliberately not priced."
+   ]
+  },
+  {
+   "id": "mlb-849804",
+   "sport": "Baseball",
+   "competition": "MLB",
+   "stage": "World Series, game at Tampa Bay",
+   "start_utc": "2026-10-27T00:00:00Z",
+   "start_published": "2026-10-27T00:00:00Z (gameDate in the MLB schedule API)",
+   "home": "Tampa Bay Rays",
+   "away": "Milwaukee Brewers",
+   "venue": "Tropicana Field, St. Petersburg",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "2026 regular-season record",
+     "value": "98-64 (.605)",
+     "rating": 60.5
+    },
+    "away": {
+     "label": "2026 regular-season record",
+     "value": "103-59 (.636)",
+     "rating": 63.6
+    }
+   },
+   "sources": [
+    "mlb_schedule",
+    "mlb_standings",
+    "mlb_standings_al"
+   ],
+   "flags": [
+    "Scheduled for 27 October 00:00Z, i.e. the evening of 26 October in Tampa Bay \u2014 inside the window only on local time."
+   ]
+  },
+  {
+   "id": "nhl-2026020154",
+   "sport": "Ice Hockey",
+   "competition": "NHL",
+   "stage": "Regular season",
+   "start_utc": "2026-10-22T23:00:00Z",
+   "start_published": "2026-10-22T23:00:00Z (startTimeUTC in the NHL scoreboard payload)",
+   "home": "Boston Bruins",
+   "away": "Nashville Predators",
+   "venue": "TD Garden, Boston",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "2026-27 record and points percentage",
+     "value": "7-2-1 \u00b7 15/20 pts = 0.750",
+     "rating": 75.0
+    },
+    "away": {
+     "label": "2026-27 record and points percentage",
+     "value": "3-2-3 \u00b7 8/16 pts = 0.500",
+     "rating": 50.0
+    }
+   },
+   "sources": [
+    "nhl_scoreboard"
+   ],
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020155",
+   "sport": "Ice Hockey",
+   "competition": "NHL",
+   "stage": "Regular season",
+   "start_utc": "2026-10-22T23:00:00Z",
+   "start_published": "2026-10-22T23:00:00Z (startTimeUTC in the NHL scoreboard payload)",
+   "home": "Toronto Maple Leafs",
+   "away": "New York Rangers",
+   "venue": "Scotiabank Arena, Toronto",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "2026-27 record and points percentage",
+     "value": "5-4-2 \u00b7 12/22 pts = 0.545",
+     "rating": 54.5
+    },
+    "away": {
+     "label": "2026-27 record and points percentage",
+     "value": "7-3-1 \u00b7 15/22 pts = 0.682",
+     "rating": 68.2
+    }
+   },
+   "sources": [
+    "nhl_scoreboard"
+   ],
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020156",
+   "sport": "Ice Hockey",
+   "competition": "NHL",
+   "stage": "Regular season",
+   "start_utc": "2026-10-22T23:00:00Z",
+   "start_published": "2026-10-22T23:00:00Z (startTimeUTC in the NHL scoreboard payload)",
+   "home": "Ottawa Senators",
+   "away": "San Jose Sharks",
+   "venue": "Canadian Tire Centre, Ottawa",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "2026-27 record and points percentage",
+     "value": "6-3-0 \u00b7 12/18 pts = 0.667",
+     "rating": 66.7
+    },
+    "away": {
+     "label": "2026-27 record and points percentage",
+     "value": "5-4-1 \u00b7 11/20 pts = 0.550",
+     "rating": 55.0
+    }
+   },
+   "sources": [
+    "nhl_scoreboard"
+   ],
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020157",
+   "sport": "Ice Hockey",
+   "competition": "NHL",
+   "stage": "Regular season",
+   "start_utc": "2026-10-22T23:00:00Z",
+   "start_published": "2026-10-22T23:00:00Z (startTimeUTC in the NHL scoreboard payload)",
+   "home": "New Jersey Devils",
+   "away": "Anaheim Ducks",
+   "venue": "Prudential Center, Newark",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "2026-27 record and points percentage",
+     "value": "5-4-0 \u00b7 10/18 pts = 0.556",
+     "rating": 55.6
+    },
+    "away": {
+     "label": "2026-27 record and points percentage",
+     "value": "4-5-0 \u00b7 8/18 pts = 0.444",
+     "rating": 44.4
+    }
+   },
+   "sources": [
+    "nhl_scoreboard"
+   ],
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020158",
+   "sport": "Ice Hockey",
+   "competition": "NHL",
+   "stage": "Regular season",
+   "start_utc": "2026-10-22T23:00:00Z",
+   "start_published": "2026-10-22T23:00:00Z (startTimeUTC in the NHL scoreboard payload)",
+   "home": "Pittsburgh Penguins",
+   "away": "Florida Panthers",
+   "venue": "PPG Paints Arena, Pittsburgh",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "2026-27 record and points percentage",
+     "value": "3-6-1 \u00b7 7/20 pts = 0.350",
+     "rating": 35.0
+    },
+    "away": {
+     "label": "2026-27 record and points percentage",
+     "value": "5-2-2 \u00b7 12/18 pts = 0.667",
+     "rating": 66.7
+    }
+   },
+   "sources": [
+    "nhl_scoreboard"
+   ],
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020159",
+   "sport": "Ice Hockey",
+   "competition": "NHL",
+   "stage": "Regular season",
+   "start_utc": "2026-10-22T23:30:00Z",
+   "start_published": "2026-10-22T23:30:00Z (startTimeUTC in the NHL scoreboard payload)",
+   "home": "New York Islanders",
+   "away": "Los Angeles Kings",
+   "venue": "UBS Arena, Elmont",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "2026-27 record and points percentage",
+     "value": "5-3-1 \u00b7 11/18 pts = 0.611",
+     "rating": 61.1
+    },
+    "away": {
+     "label": "2026-27 record and points percentage",
+     "value": "1-4-2 \u00b7 4/14 pts = 0.286",
+     "rating": 28.6
+    }
+   },
+   "sources": [
+    "nhl_scoreboard"
+   ],
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020160",
+   "sport": "Ice Hockey",
+   "competition": "NHL",
+   "stage": "Regular season",
+   "start_utc": "2026-10-23T00:00:00Z",
+   "start_published": "2026-10-23T00:00:00Z (startTimeUTC in the NHL scoreboard payload)",
+   "home": "St. Louis Blues",
+   "away": "Vegas Golden Knights",
+   "venue": "Enterprise Center, St. Louis",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "2026-27 record and points percentage",
+     "value": "4-4-1 \u00b7 9/18 pts = 0.500",
+     "rating": 50.0
+    },
+    "away": {
+     "label": "2026-27 record and points percentage",
+     "value": "8-3-0 \u00b7 16/22 pts = 0.727",
+     "rating": 72.7
+    }
+   },
+   "sources": [
+    "nhl_scoreboard"
+   ],
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020161",
+   "sport": "Ice Hockey",
+   "competition": "NHL",
+   "stage": "Regular season",
+   "start_utc": "2026-10-23T00:00:00Z",
+   "start_published": "2026-10-23T00:00:00Z (startTimeUTC in the NHL scoreboard payload)",
+   "home": "Dallas Stars",
+   "away": "Winnipeg Jets",
+   "venue": "American Airlines Center, Dallas",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "2026-27 record and points percentage",
+     "value": "5-3-1 \u00b7 11/18 pts = 0.611",
+     "rating": 61.1
+    },
+    "away": {
+     "label": "2026-27 record and points percentage",
+     "value": "4-3-2 \u00b7 10/18 pts = 0.556",
+     "rating": 55.6
+    }
+   },
+   "sources": [
+    "nhl_scoreboard"
+   ],
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020162",
+   "sport": "Ice Hockey",
+   "competition": "NHL",
+   "stage": "Regular season",
+   "start_utc": "2026-10-23T01:00:00Z",
+   "start_published": "2026-10-23T01:00:00Z (startTimeUTC in the NHL scoreboard payload)",
+   "home": "Calgary Flames",
+   "away": "Minnesota Wild",
+   "venue": "Scotiabank Saddledome, Calgary",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "2026-27 record and points percentage",
+     "value": "2-6-0 \u00b7 4/16 pts = 0.250",
+     "rating": 25.0
+    },
+    "away": {
+     "label": "2026-27 record and points percentage",
+     "value": "6-2-2 \u00b7 14/20 pts = 0.700",
+     "rating": 70.0
+    }
+   },
+   "sources": [
+    "nhl_scoreboard"
+   ],
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020163",
+   "sport": "Ice Hockey",
+   "competition": "NHL",
+   "stage": "Regular season",
+   "start_utc": "2026-10-23T01:00:00Z",
+   "start_published": "2026-10-23T01:00:00Z (startTimeUTC in the NHL scoreboard payload)",
+   "home": "Edmonton Oilers",
+   "away": "Carolina Hurricanes",
+   "venue": "Rogers Place, Edmonton",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "2026-27 record and points percentage",
+     "value": "7-1-1 \u00b7 15/18 pts = 0.833",
+     "rating": 83.3
+    },
+    "away": {
+     "label": "2026-27 record and points percentage",
+     "value": "8-2-1 \u00b7 17/22 pts = 0.773",
+     "rating": 77.3
+    }
+   },
+   "sources": [
+    "nhl_scoreboard"
+   ],
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020164",
+   "sport": "Ice Hockey",
+   "competition": "NHL",
+   "stage": "Regular season",
+   "start_utc": "2026-10-23T02:00:00Z",
+   "start_published": "2026-10-23T02:00:00Z (startTimeUTC in the NHL scoreboard payload)",
+   "home": "Seattle Kraken",
+   "away": "Utah Mammoth",
+   "venue": "Climate Pledge Arena, Seattle",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "2026-27 record and points percentage",
+     "value": "6-3-1 \u00b7 13/20 pts = 0.650",
+     "rating": 65.0
+    },
+    "away": {
+     "label": "2026-27 record and points percentage",
+     "value": "7-3-0 \u00b7 14/20 pts = 0.700",
+     "rating": 70.0
+    }
+   },
+   "sources": [
+    "nhl_scoreboard"
+   ],
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020165",
+   "sport": "Ice Hockey",
+   "competition": "NHL",
+   "stage": "Regular season",
+   "start_utc": "2026-10-23T02:00:00Z",
+   "start_published": "2026-10-23T02:00:00Z (startTimeUTC in the NHL scoreboard payload)",
+   "home": "Vancouver Canucks",
+   "away": "Detroit Red Wings",
+   "venue": "Rogers Arena, Vancouver",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "2026-27 record and points percentage",
+     "value": "2-8-1 \u00b7 5/22 pts = 0.227",
+     "rating": 22.7
+    },
+    "away": {
+     "label": "2026-27 record and points percentage",
+     "value": "3-3-3 \u00b7 9/18 pts = 0.500",
+     "rating": 50.0
+    }
+   },
+   "sources": [
+    "nhl_scoreboard"
+   ],
+   "flags": []
+  },
+  {
+   "id": "urc-cardiff-hollywoodbet",
+   "sport": "Rugby Union",
+   "competition": "United Rugby Championship",
+   "stage": "Round 4",
+   "start_utc": "2026-10-23T18:45:00Z",
+   "start_published": "Fri 23 Oct, KO 19:45 IRE & UK / 20:45 ITA & SA",
+   "home": "Cardiff",
+   "away": "Hollywoodbets Sharks",
+   "venue": "Cardiff Arms Park, Cardiff",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    },
+    "away": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    }
+   },
+   "sources": [
+    "urc_fixtures"
+   ],
+   "flags": [
+    "No 2026-27 URC table could be read from the official site (two routes returned 404), so this match is priced from a neutral baseline and confidence is capped at Low.",
+    "start_utc is a conversion of the published IRE & UK clock (UTC+1 in October); the source publishes local time only."
+   ]
+  },
+  {
+   "id": "urc-connacht-zebre-parma",
+   "sport": "Rugby Union",
+   "competition": "United Rugby Championship",
+   "stage": "Round 4",
+   "start_utc": "2026-10-23T18:45:00Z",
+   "start_published": "Fri 23 Oct, KO 19:45 IRE & UK / 20:45 ITA & SA",
+   "home": "Connacht",
+   "away": "Zebre Parma",
+   "venue": "Dexcom Stadium, Galway",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    },
+    "away": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    }
+   },
+   "sources": [
+    "urc_fixtures"
+   ],
+   "flags": [
+    "No 2026-27 URC table could be read from the official site (two routes returned 404), so this match is priced from a neutral baseline and confidence is capped at Low.",
+    "start_utc is a conversion of the published IRE & UK clock (UTC+1 in October); the source publishes local time only."
+   ]
+  },
+  {
+   "id": "urc-edinburgh-lions",
+   "sport": "Rugby Union",
+   "competition": "United Rugby Championship",
+   "stage": "Round 4",
+   "start_utc": "2026-10-23T18:45:00Z",
+   "start_published": "Fri 23 Oct, KO 19:45 IRE & UK / 20:45 ITA & SA",
+   "home": "Edinburgh",
+   "away": "Lions",
+   "venue": "Hive Stadium, Edinburgh",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    },
+    "away": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    }
+   },
+   "sources": [
+    "urc_fixtures"
+   ],
+   "flags": [
+    "No 2026-27 URC table could be read from the official site (two routes returned 404), so this match is priced from a neutral baseline and confidence is capped at Low.",
+    "start_utc is a conversion of the published IRE & UK clock (UTC+1 in October); the source publishes local time only."
+   ]
+  },
+  {
+   "id": "urc-vodacom-bulls-ulster",
+   "sport": "Rugby Union",
+   "competition": "United Rugby Championship",
+   "stage": "Round 4",
+   "start_utc": "2026-10-24T11:45:00Z",
+   "start_published": "Sat 24 Oct, KO 12:45 IRE & UK / 13:45 ITA & SA",
+   "home": "Vodacom Bulls",
+   "away": "Ulster",
+   "venue": "Loftus Versfeld, Pretoria",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    },
+    "away": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    }
+   },
+   "sources": [
+    "urc_fixtures"
+   ],
+   "flags": [
+    "No 2026-27 URC table could be read from the official site (two routes returned 404), so this match is priced from a neutral baseline and confidence is capped at Low.",
+    "start_utc is a conversion of the published IRE & UK clock (UTC+1 in October); the source publishes local time only."
+   ]
+  },
+  {
+   "id": "urc-dhl-stormers-scarlets",
+   "sport": "Rugby Union",
+   "competition": "United Rugby Championship",
+   "stage": "Round 4",
+   "start_utc": "2026-10-24T14:00:00Z",
+   "start_published": "Sat 24 Oct, KO 15:00 IRE & UK / 16:00 ITA & SA",
+   "home": "DHL Stormers",
+   "away": "Scarlets",
+   "venue": "DHL Stadium, Cape Town",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    },
+    "away": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    }
+   },
+   "sources": [
+    "urc_fixtures"
+   ],
+   "flags": [
+    "No 2026-27 URC table could be read from the official site (two routes returned 404), so this match is priced from a neutral baseline and confidence is capped at Low.",
+    "start_utc is a conversion of the published IRE & UK clock (UTC+1 in October); the source publishes local time only."
+   ]
+  },
+  {
+   "id": "urc-benetton-glasgow-warr",
+   "sport": "Rugby Union",
+   "competition": "United Rugby Championship",
+   "stage": "Round 4",
+   "start_utc": "2026-10-24T14:00:00Z",
+   "start_published": "Sat 24 Oct, KO 15:00 IRE & UK / 16:00 ITA & SA",
+   "home": "Benetton",
+   "away": "Glasgow Warriors",
+   "venue": "Stadio Monigo, Treviso",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    },
+    "away": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    }
+   },
+   "sources": [
+    "urc_fixtures"
+   ],
+   "flags": [
+    "No 2026-27 URC table could be read from the official site (two routes returned 404), so this match is priced from a neutral baseline and confidence is capped at Low.",
+    "start_utc is a conversion of the published IRE & UK clock (UTC+1 in October); the source publishes local time only."
+   ]
+  },
+  {
+   "id": "urc-leinster-munster",
+   "sport": "Rugby Union",
+   "competition": "United Rugby Championship",
+   "stage": "Round 4",
+   "start_utc": "2026-10-24T17:00:00Z",
+   "start_published": "Sat 24 Oct, KO 18:00 IRE & UK / 19:00 ITA & SA",
+   "home": "Leinster",
+   "away": "Munster",
+   "venue": "Dublin (venue TBC in the official release)",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    },
+    "away": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    }
+   },
+   "sources": [
+    "urc_fixtures"
+   ],
+   "flags": [
+    "No 2026-27 URC table could be read from the official site (two routes returned 404), so this match is priced from a neutral baseline and confidence is capped at Low.",
+    "start_utc is a conversion of the published IRE & UK clock (UTC+1 in October); the source publishes local time only."
+   ]
+  },
+  {
+   "id": "urc-ospreys-dragons",
+   "sport": "Rugby Union",
+   "competition": "United Rugby Championship",
+   "stage": "Round 4",
+   "start_utc": "2026-10-24T18:45:00Z",
+   "start_published": "Sat 24 Oct, KO 19:45 IRE & UK / 20:45 ITA & SA",
+   "home": "Ospreys",
+   "away": "Dragons",
+   "venue": "St. Helen's, Swansea",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    },
+    "away": {
+     "label": "League position",
+     "value": "",
+     "rating": null
+    }
+   },
+   "sources": [
+    "urc_fixtures"
+   ],
+   "flags": [
+    "No 2026-27 URC table could be read from the official site (two routes returned 404), so this match is priced from a neutral baseline and confidence is capped at Low.",
+    "start_utc is a conversion of the published IRE & UK clock (UTC+1 in October); the source publishes local time only."
+   ]
+  },
+  {
+   "id": "wst-m50",
+   "sport": "Snooker",
+   "competition": "BetVictor Northern Ireland Open 2026",
+   "stage": "Round 3 (best of 7)",
+   "start_utc": "",
+   "start_published": "Thu 22 Oct, 08:00 (WST clock, no zone published)",
+   "home": "Kyren Wilson",
+   "away": "Pang Junxu",
+   "venue": "",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-2 (80.0% of frames won); world no. 9 (\u00a3716,800)",
+     "rating": 80.0,
+     "rank": 9
+    },
+    "away": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-5 (61.5% of frames won); world no. 29 (\u00a3272,750)",
+     "rating": 61.5,
+     "rank": 29
+    }
+   },
+   "sources": [
+    "wst_matches",
+    "wst_rankings",
+    "wst_rankings_preview"
+   ],
+   "flags": [
+    "WST publishes a timezone-less clock; start_utc is deliberately left blank rather than converted.",
+    "World ranking is blank for players outside the 36 positions served on the WST table this session.",
+    "Beat Ben Mertens 4-0 (Round 1) and Thepchaiya Un-Nooh 4-2 (Round 2) per wst.tv/matches."
+   ]
+  },
+  {
+   "id": "wst-m51",
+   "sport": "Snooker",
+   "competition": "BetVictor Northern Ireland Open 2026",
+   "stage": "Round 3 (best of 7)",
+   "start_utc": "",
+   "start_published": "Thu 22 Oct, 08:00 (WST clock, no zone published)",
+   "home": "Matthew Selt",
+   "away": "Sam Craigie",
+   "venue": "",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-5 (61.5% of frames won); outside the published top 36",
+     "rating": 61.5,
+     "rank": null
+    },
+    "away": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-6 (57.1% of frames won); outside the published top 36",
+     "rating": 57.1,
+     "rank": null
+    }
+   },
+   "sources": [
+    "wst_matches",
+    "wst_rankings",
+    "wst_rankings_preview"
+   ],
+   "flags": [
+    "WST publishes a timezone-less clock; start_utc is deliberately left blank rather than converted.",
+    "World ranking is blank for players outside the 36 positions served on the WST table this session."
+   ]
+  },
+  {
+   "id": "wst-m49",
+   "sport": "Snooker",
+   "competition": "BetVictor Northern Ireland Open 2026",
+   "stage": "Round 3 (best of 7)",
+   "start_utc": "",
+   "start_published": "Thu 22 Oct, 09:00 (WST clock, no zone published)",
+   "home": "Anthony McGill",
+   "away": "Mateusz Baranowski",
+   "venue": "",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-2 (80.0% of frames won); outside the published top 36",
+     "rating": 80.0,
+     "rank": null
+    },
+    "away": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-6 (57.1% of frames won); outside the published top 36",
+     "rating": 57.1,
+     "rank": null
+    }
+   },
+   "sources": [
+    "wst_matches",
+    "wst_rankings",
+    "wst_rankings_preview"
+   ],
+   "flags": [
+    "WST publishes a timezone-less clock; start_utc is deliberately left blank rather than converted.",
+    "World ranking is blank for players outside the 36 positions served on the WST table this session.",
+    "Beat Stephen Maguire 4-1 (Round 1) and Jack Lisowski 4-1 (Round 2) per wst.tv/matches."
+   ]
+  },
+  {
+   "id": "wst-m52",
+   "sport": "Snooker",
+   "competition": "BetVictor Northern Ireland Open 2026",
+   "stage": "Round 3 (best of 7)",
+   "start_utc": "",
+   "start_published": "Thu 22 Oct, 09:00 (WST clock, no zone published)",
+   "home": "Elliot Slessor",
+   "away": "Ricky Walden",
+   "venue": "",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-1 (88.9% of frames won); world no. 23 (\u00a3329,200)",
+     "rating": 88.9,
+     "rank": 23
+    },
+    "away": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-4 (66.7% of frames won); outside the published top 36",
+     "rating": 66.7,
+     "rank": null
+    }
+   },
+   "sources": [
+    "wst_matches",
+    "wst_rankings",
+    "wst_rankings_preview"
+   ],
+   "flags": [
+    "WST publishes a timezone-less clock; start_utc is deliberately left blank rather than converted.",
+    "World ranking is blank for players outside the 36 positions served on the WST table this session.",
+    "Beat He Guoqiang 4-0 (Round 1) and Joe O'Connor 4-1 (Round 2) per wst.tv/matches."
+   ]
+  },
+  {
+   "id": "wst-m54",
+   "sport": "Snooker",
+   "competition": "BetVictor Northern Ireland Open 2026",
+   "stage": "Round 3 (best of 7)",
+   "start_utc": "",
+   "start_published": "Thu 22 Oct, 14:00 (WST clock, no zone published)",
+   "home": "Mark Williams",
+   "away": "Martin O'Donnell",
+   "venue": "",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-4 (66.7% of frames won); world no. 8 (\u00a3747,400)",
+     "rating": 66.7,
+     "rank": 8
+    },
+    "away": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-5 (61.5% of frames won); outside the published top 36",
+     "rating": 61.5,
+     "rank": null
+    }
+   },
+   "sources": [
+    "wst_matches",
+    "wst_rankings",
+    "wst_rankings_preview"
+   ],
+   "flags": [
+    "WST publishes a timezone-less clock; start_utc is deliberately left blank rather than converted.",
+    "World ranking is blank for players outside the 36 positions served on the WST table this session.",
+    "Beat Robbie Williams 4-2 (Round 1) and Zhang Anda 4-2 (Round 2) per wst.tv/matches."
+   ]
+  },
+  {
+   "id": "wst-m53",
+   "sport": "Snooker",
+   "competition": "BetVictor Northern Ireland Open 2026",
+   "stage": "Round 3 (best of 7)",
+   "start_utc": "",
+   "start_published": "Thu 22 Oct, 14:00 (WST clock, no zone published)",
+   "home": "David Gilbert",
+   "away": "Ka Wai Cheung",
+   "venue": "",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-4 (66.7% of frames won); world no. 34 (\u00a3221,200)",
+     "rating": 66.7,
+     "rank": 34
+    },
+    "away": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-3 (72.7% of frames won); outside the published top 36",
+     "rating": 72.7,
+     "rank": null
+    }
+   },
+   "sources": [
+    "wst_matches",
+    "wst_rankings",
+    "wst_rankings_preview"
+   ],
+   "flags": [
+    "WST publishes a timezone-less clock; start_utc is deliberately left blank rather than converted.",
+    "World ranking is blank for players outside the 36 positions served on the WST table this session.",
+    "Beat Ronnie O'Sullivan 4-3 (Round 1) and Stuart Bingham 4-0 (Round 2) per wst.tv/matches."
+   ]
+  },
+  {
+   "id": "wst-m55",
+   "sport": "Snooker",
+   "competition": "BetVictor Northern Ireland Open 2026",
+   "stage": "Round 3 (best of 7)",
+   "start_utc": "",
+   "start_published": "Thu 22 Oct, 15:00 (WST clock, no zone published)",
+   "home": "Jak Jones",
+   "away": "Daniel Wells",
+   "venue": "",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-2 (80.0% of frames won); world no. 24 (\u00a3319,300)",
+     "rating": 80.0,
+     "rank": 24
+    },
+    "away": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-5 (61.5% of frames won); outside the published top 36",
+     "rating": 61.5,
+     "rank": null
+    }
+   },
+   "sources": [
+    "wst_matches",
+    "wst_rankings",
+    "wst_rankings_preview"
+   ],
+   "flags": [
+    "WST publishes a timezone-less clock; start_utc is deliberately left blank rather than converted.",
+    "World ranking is blank for players outside the 36 positions served on the WST table this session."
+   ]
+  },
+  {
+   "id": "wst-m56",
+   "sport": "Snooker",
+   "competition": "BetVictor Northern Ireland Open 2026",
+   "stage": "Round 3 (best of 7)",
+   "start_utc": "",
+   "start_published": "Thu 22 Oct, 15:00 (WST clock, no zone published)",
+   "home": "Jordan Brown",
+   "away": "Scott Donaldson",
+   "venue": "",
+   "neutral": false,
+   "inputs": {
+    "home": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-5 (61.5% of frames won); outside the published top 36",
+     "rating": 61.5,
+     "rank": null
+    },
+    "away": {
+     "label": "Frames won/lost in this event (Rounds 1-2)",
+     "value": "8-1 (88.9% of frames won); outside the published top 36",
+     "rating": 88.9,
+     "rank": null
+    }
+   },
+   "sources": [
+    "wst_matches",
+    "wst_rankings",
+    "wst_rankings_preview"
+   ],
+   "flags": [
+    "WST publishes a timezone-less clock; start_utc is deliberately left blank rather than converted.",
+    "World ranking is blank for players outside the 36 positions served on the WST table this session.",
+    "Beat Wu Yize 4-0 (Round 1) and Noppon Saengkham 4-1 (Round 2) per wst.tv/matches."
+   ]
+  },
+  {
+   "id": "f1-usgp-2026",
+   "sport": "Motor Racing",
+   "competition": "FIA Formula One World Championship",
+   "stage": "Round 18 \u2014 United States Grand Prix",
+   "start_utc": "2026-10-25T21:00:00Z",
+   "start_published": "Sun 25 Oct, race 16:00 track time (F1 publishes session times in track-local time only)",
+   "home": "United States Grand Prix",
+   "away": "23-driver field",
+   "venue": "Circuit of The Americas, Austin (56 laps, 5.513 km)",
+   "neutral": true,
+   "kind": "field",
+   "inputs": {
+    "home": {
+     "label": "Championship leader",
+     "value": "Kimi Antonelli, 340 points after 17 rounds",
+     "rating": null
+    },
+    "away": {
+     "label": "Field",
+     "value": "23 classified drivers and teams on the published standings",
+     "rating": null
+    }
+   },
+   "sources": [
+    "f1_calendar",
+    "f1_standings",
+    "f1_usgp"
+   ],
+   "flags": [
+    "Race start 21:00Z is derived from the two clocks the official page prints side by side (my time UTC-4, track time UTC-5) \u2014 F1 publishes track-local times only.",
+    "Points totals are the standings after Round 17 (Singapore); the United States round is Round 18 and has not been run."
+   ]
+  }
+ ]
+}

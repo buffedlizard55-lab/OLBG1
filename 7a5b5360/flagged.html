@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for review — OLBG desk 7a5b5360</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="top"><div class="wrap">
+<div class="brand">OLBG<span>/</span> desk 7a5b5360</div>
+<nav class="main"><a class="" href="index.html">Overview</a><a class="" href="picks.html">Picks</a><a class="" href="markets.html">Markets</a><a class="" href="predictions.html">Predictions</a><a class="" href="coverage.html">Coverage</a><a class="" href="verification.html">Verification</a><a class="on" href="flagged.html">Flagged for Review</a><a class="" href="sources.html">Sources</a><a class="" href="methodology.html">Methodology</a><a class="" href="../index.html">Repository dashboard</a></nav>
+</div></header>
+<main><div class="wrap">
+
+<h1>Flagged for review</h1>
+<p class="lede">Everything on this page is published deliberately: values the official sources did not supply,
+sources that blocked this client, and irregularities found in the repository. Nothing here blocks the release —
+it is the list to read after the site is live.</p>
+<h2>Data and coverage flags (14)</h2>
+
+<div class="card" style="margin:12px 0">
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div><span class="mono">F-7A-01</span> <strong>The brief&#x27;s -250 floor and its 70% threshold cannot both be satisfied once a bookmaker margin exists</strong></div>
+<div><span class="pill">high</span><span class="pill">brief-level, not a data error</span></div></div>
+<p style="margin:9px 0 0">A selection with a 70% chance prices at 1.4286 fair, i.e. about -233. Add any margin and it quotes at roughly 1.37, about -270. So a pick that is genuinely 70%+ almost always prices shorter than the -250 floor the brief asks us to stay above. This desk publishes the probability, the fair decimal price and an in-band yes/no for every selection rather than silently dropping either rule. Of the 26 selections at 70% or better on this board, 16 price shorter than -250.</p>
+<p class="dim" style="margin:8px 0 0;font-size:12px">Source: no external source — internal arithmetic or coverage record</p>
+</div>
+<div class="card" style="margin:12px 0">
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div><span class="mono">F-7A-02</span> <strong>MLB returns World Series games out of chronological order</strong></div>
+<div><span class="pill">low</span><span class="pill">upstream quirk</span></div></div>
+<p style="margin:9px 0 0">The schedule API lists gamePk 849805 (23 Oct), 849802 (24 Oct), 849804 (26 Oct) and 849803 (27 Oct). The gamePk sequence is therefore not chronological and the payload reports gameNumber 1 for all four games. No game number is asserted anywhere on this site; the dates and venues are quoted exactly as returned.</p>
+<p class="dim" style="margin:8px 0 0;font-size:12px">Source: <a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-21&amp;endDate=2026-10-27&amp;fields=dates,date,games,gamePk,gameDate,teams,away,home,team,name,venue,status,detailedState,seriesDescription,gameNumber" title="MLB official schedule API — World Series, 21-27 Oct 2026">Major League Baseball</a></p>
+</div>
+<div class="card" style="margin:12px 0">
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div><span class="mono">F-7A-03</span> <strong>Leinster v Munster has no confirmed venue</strong></div>
+<div><span class="pill">medium</span><span class="pill">unverified value left blank</span></div></div>
+<p style="margin:9px 0 0">The official URC Round 4 release prints the venue as &quot;TBC, Dublin&quot;. Rather than naming the Aviva Stadium or the RDS, the row keeps the published text and the venue is flagged.</p>
+<p class="dim" style="margin:8px 0 0;font-size:12px">Source: <a href="https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/" title="United Rugby Championship — 2026/27 fixtures in full (Round 4 board)">United Rugby Championship</a></p>
+</div>
+<div class="card" style="margin:12px 0">
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div><span class="mono">F-7A-04</span> <strong>No URC league table could be read, so eight rugby matches are priced from a neutral baseline</strong></div>
+<div><span class="pill">medium</span><span class="pill">coverage gap</span></div></div>
+<p style="margin:9px 0 0">unitedrugby.com/urc/table and unitedrugby.com/standings both returned HTTP 404. Without a table there is no sourced strength input for either side, so the model switches its strength term off, applies only a home term, and caps confidence at Low. No handicap or total is originated for these matches because a line would have to be invented.</p>
+<p class="dim" style="margin:8px 0 0;font-size:12px">Source: <a href="https://www.unitedrugby.com/urc/table" title="URC league table route (attempt 1)">United Rugby Championship (404)</a> · <a href="https://www.unitedrugby.com/standings" title="URC standings route (attempt 2)">United Rugby Championship (404)</a></p>
+</div>
+<div class="card" style="margin:12px 0">
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div><span class="mono">F-7A-05</span> <strong>Eight snooker rows have no start_utc</strong></div>
+<div><span class="pill">medium</span><span class="pill">left blank on purpose</span></div></div>
+<p style="margin:9px 0 0">wst.tv prints &quot;08:00&quot;, &quot;09:00&quot;, &quot;14:00&quot; and &quot;15:00&quot; against &quot;Thu 22 Oct&quot; with no zone. A conversion would be arithmetic on a rendering, so start_utc is empty for all eight rows and the published clock is stored verbatim in start_published.</p>
+<p class="dim" style="margin:8px 0 0;font-size:12px">Source: <a href="https://www.wst.tv/matches" title="World Snooker Tour — BetVictor Northern Ireland Open 2026 match list">World Snooker Tour</a></p>
+</div>
+<div class="card" style="margin:12px 0">
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div><span class="mono">F-7A-06</span> <strong>The WST ranking table served only positions 1-36</strong></div>
+<div><span class="pill">low</span><span class="pill">partial source</span></div></div>
+<p style="margin:9px 0 0">Ten of the sixteen players in Round 3 fall outside the 36 rows the site served, so their world ranking and prize-money values are blank. They are described only as &quot;outside the published top 36&quot;, which is what the page supports, and their strength input is built from frames won in this event instead.</p>
+<p class="dim" style="margin:8px 0 0;font-size:12px">Source: <a href="https://www.wst.tv/rankings/abfba8fe-1423-5a2a-a96b-d77e8b413ca8?showLive=false" title="WST Johnstone&#x27;s Paint World Rankings (published table, positions 1-36)">World Snooker Tour</a></p>
+</div>
+<div class="card" style="margin:12px 0">
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div><span class="mono">F-7A-07</span> <strong>Darts could not be harvested: pdc.tv serves a consent wall</strong></div>
+<div><span class="pill">high</span><span class="pill">blocked</span></div></div>
+<p style="margin:9px 0 0">https://www.pdc.tv/tournament-hub/10824 returned the CookieYes consent interstitial and eight further chunks of cookie policy, with no fixture content. No darts row is published.</p>
+<p class="dim" style="margin:8px 0 0;font-size:12px">Source: <a href="https://www.pdc.tv/tournament-hub/10824" title="PDC tournament hub (ET15 — Dutch Darts Championship)">Professional Darts Corporation (blocked)</a></p>
+</div>
+<div class="card" style="margin:12px 0">
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div><span class="mono">F-7A-08</span> <strong>Handball, greyhounds and NBA endpoints failed outright</strong></div>
+<div><span class="pill">high</span><span class="pill">blocked</span></div></div>
+<p style="margin:9px 0 0">ehfcl.com/en/men/fixtures-and-results returned HTTP 404; gbgb.org.uk/racing/fixtures returned HTTP 500; cdn.nba.com&#x27;s live scoreboard returned HTTP 500. None of the three sports has a published row on this desk.</p>
+<p class="dim" style="margin:8px 0 0;font-size:12px">Source: <a href="https://www.ehfcl.com/en/men/fixtures-and-results" title="EHF Champions League fixtures route">European Handball Federation (404)</a> · <a href="https://www.gbgb.org.uk/racing/fixtures" title="GBGB racing fixtures">Greyhound Board of Great Britain (500)</a> · <a href="https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json" title="NBA official live scoreboard JSON">National Basketball Association (500)</a></p>
+</div>
+<div class="card" style="margin:12px 0">
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div><span class="mono">F-7A-09</span> <strong>Cricket, basketball and Aussie Rules boards render entirely in the browser</strong></div>
+<div><span class="pill">high</span><span class="pill">client-rendered</span></div></div>
+<p style="margin:9px 0 0">icc-cricket.com/fixtures-results returned nine repeated &quot;loading&quot; blocks and no fixture; euroleaguebasketball.net/en/euroleague/game-center returned a team list with an empty schedule; afl.com.au/aflw/fixture returned navigation chrome only. These sports are reported as unverified rather than guessed.</p>
+<p class="dim" style="margin:8px 0 0;font-size:12px">Source: <a href="https://www.icc-cricket.com/fixtures-results" title="ICC fixtures and results board">International Cricket Council (no content)</a> · <a href="https://www.euroleaguebasketball.net/en/euroleague/game-center/" title="EuroLeague Game Center schedule">EuroLeague Basketball (no content)</a> · <a href="https://www.afl.com.au/aflw/fixture" title="AFLW fixture board">Australian Football League (no content)</a></p>
+</div>
+<div class="card" style="margin:12px 0">
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div><span class="mono">F-7A-10</span> <strong>Tennis cannot be placed on a date from an official draw sheet</strong></div>
+<div><span class="pill">medium</span><span class="pill">coverage gap</span></div></div>
+<p style="margin:9px 0 0">The official ATP draw PDFs publish pairings, seeds and rankings but no per-match dates, and the tour calendar pages for this week are client-rendered. Assigning a date would be an inference, so no tennis fixture is published even though draws exist.</p>
+<p class="dim" style="margin:8px 0 0;font-size:12px">Source: no external source — internal arithmetic or coverage record</p>
+</div>
+<div class="card" style="margin:12px 0">
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div><span class="mono">F-7A-11</span> <strong>The official GAA board publishes no senior gaelic football fixture for 22-26 October</strong></div>
+<div><span class="pill">low</span><span class="pill">verified absence</span></div></div>
+<p style="margin:9px 0 0">gaa.ie/fixtures-results for October 2026 lists one match in the window, the Shinty-Hurling International between Ireland and Scotland at SuperValu Pairc Ui Chaoimh on 24 October, which is hurling and therefore out of scope. No gaelic football row is published.</p>
+<p class="dim" style="margin:8px 0 0;font-size:12px">Source: <a href="https://www.gaa.ie/fixtures-results" title="GAA official fixtures and results board">Gaelic Athletic Association (no fixture)</a></p>
+</div>
+<div class="card" style="margin:12px 0">
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div><span class="mono">F-7A-12</span> <strong>The United States Grand Prix start time is derived, not published in UTC</strong></div>
+<div><span class="pill">low</span><span class="pill">derived value disclosed</span></div></div>
+<p style="margin:9px 0 0">formula1.com prints session times in track-local time only. The 21:00Z race start comes from the two clocks the page displays side by side (my time UTC-4, track time UTC-5). The race is Sunday 25 October at 16:00 track time; qualifying is Saturday at 17:00.</p>
+<p class="dim" style="margin:8px 0 0;font-size:12px">Source: <a href="https://www.formula1.com/en/racing/2026/united-states" title="FORMULA 1 MSC CRUISES UNITED STATES GRAND PRIX 2026 — session schedule and circuit">Formula 1</a></p>
+</div>
+<div class="card" style="margin:12px 0">
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div><span class="mono">F-7A-13</span> <strong>No starting pitcher is published for the World Series games in the fetched payload</strong></div>
+<div><span class="pill">medium</span><span class="pill">not priced</span></div></div>
+<p style="margin:9px 0 0">The MLB schedule payload with the field filter used here carries no probablePitcher, so the pitching matchup is not modelled and the game-level prices rest on season records and home field alone. A reader should treat the baseball prices as the softest on the board.</p>
+<p class="dim" style="margin:8px 0 0;font-size:12px">Source: <a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-21&amp;endDate=2026-10-27&amp;fields=dates,date,games,gamePk,gameDate,teams,away,home,team,name,venue,status,detailedState,seriesDescription,gameNumber" title="MLB official schedule API — World Series, 21-27 Oct 2026">Major League Baseball</a></p>
+</div>
+<div class="card" style="margin:12px 0">
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div><span class="mono">F-7A-14</span> <strong>Twelve of the seventeen in-scope sports have no verified fixture on this desk</strong></div>
+<div><span class="pill">high</span><span class="pill">coverage gap</span></div></div>
+<p style="margin:9px 0 0">Five sports are covered (baseball, ice hockey, rugby union, snooker, motor racing) with 32 fixtures. The other twelve are listed on the coverage page with the exact URL that was tried and what came back. This desk is a fresh 22-26 October snapshot, not a replacement for the older desks already published in this repository.</p>
+<p class="dim" style="margin:8px 0 0;font-size:12px">Source: no external source — internal arithmetic or coverage record</p>
+</div>
+<h2>Repository review — findings with the evidence that produced them</h2>
+<table><thead><tr><th>ID</th><th>Where</th><th>Status</th><th>Finding</th><th>Evidence</th></tr></thead>
+<tbody><tr><td class="mono">R-01</td><td class="mono">README.md:56</td><td>inconsistent</td><td>The README states &quot;0 broken relative links across all 160 published HTML pages&quot;, but scripts/validate.py run on this branch counts 208 published HTML pages. The link claim is true (0 errors, 0 warnings) but the page count is stale, most likely because later desks added pages without regenerating that sentence.</td><td class="mono dim">python3 scripts/validate.py -&gt; &#x27;Validated relative links across 208 published HTML pages / Errors: 0 Warnings: 0&#x27;</td></tr><tr><td class="mono">R-02</td><td class="mono">README.md:51-53</td><td>verified</td><td>The headline counts (134 source-linked events, 126 two-sided H2H books, 31 High picks) match what the validator prints for the root desk today: &quot;Primary data: 134 fixtures | 126 H2H line books | 31 high-confidence predictions&quot;.</td><td class="mono dim">python3 scripts/validate.py -&gt; &#x27;Primary data: 134 fixtures | 126 H2H line books | 31 high-confidence predictions&#x27;</td></tr><tr><td class="mono">R-03</td><td class="mono">COORDINATION.md:7</td><td>inconsistent</td><td>The board header still reads &quot;Last updated: 2026-10-21T08:01:32Z&quot; even though sections run to §30 and the task table runs to T40, i.e. later work was appended without the header being touched. This session appended §31 and added T41 but did not rewrite the header, because the file is shared and append-only by convention.</td><td class="mono dim">sed -n &#x27;7p&#x27; COORDINATION.md</td></tr><tr><td class="mono">R-04</td><td class="mono">data/, datasets/</td><td>structural</td><td>Eighteen tracked files describe matches, fixtures, lines or picks across five parallel namespaces (root, c17a9192, 984d417f, ebfbd966, aa4e9dbf) with different counts: 134 root rows, 217 in c17a9192, 145 in 984d417f. There is no single canonical dataset, so a reader must know which desk a number came from. This desk adds a sixth namespace under data/7a5b5360 and does not touch any of the others.</td><td class="mono dim">git ls-files | grep -E &#x27;^(data|datasets)/.*(matches|fixtures|lines|picks)&#x27; -&gt; 18 files</td></tr><tr><td class="mono">R-05</td><td class="mono">COORDINATION.md (T35, T19, T10)</td><td>open</td><td>Three task rows are still open or in progress from earlier sessions (T35 AFLW re-price, T19 live refresh, T10 multi-market origination). None of them is in this session&#x27;s scope and all three remain untouched, but the board is not in a fully done state.</td><td class="mono dim">COORDINATION.md section 1</td></tr><tr><td class="mono">R-06</td><td class="mono">whole tree</td><td>verified</td><td>Every tracked JSON file parses (0 invalid), no .pyc files are tracked, and .gitignore covers __pycache__/ and *.pyc. The root dashboard validates clean before this session&#x27;s changes, which is the baseline this desk was added to.</td><td class="mono dim">json.load over data/**/*.json and datasets/*.json -&gt; invalid json: [] ; git ls-files | grep -c &#x27;\.pyc$&#x27; -&gt; 0</td></tr></tbody></table>
+<h2>What this desk did not touch</h2>
+<p class="prose">No file belonging to another session's scope was edited. This desk is additive: a new
+<span class="mono">data/7a5b5360/</span> namespace, new <span class="mono">scripts/s7a5b5360_*.py</span> files, a
+new <span class="mono">7a5b5360/</span> page tree, and an append-only entry in
+<span class="mono">COORDINATION.md</span>.</p>
+
+</div></main>
+<footer><div class="wrap">
+Snapshot 22–26 October 2026 · harvested 2026-10-22T01:30Z · session <span class="mono">7a5b5360-olbg1</span> (task T41).
+Prices on this site are originated by a model, not quoted from any bookmaker. Facts carry a link to the official page they were read from.
+</div></footer>
+</body></html>

@@ -1,0 +1,2352 @@
+{
+ "meta": {
+  "session": "7a5b5360-olbg1",
+  "task": "T41",
+  "retrieved_utc": "2026-10-22T01:30:00Z",
+  "window": "22-26 October 2026",
+  "assumptions": {
+   "moneyline_shrink": {
+    "Baseball": {
+     "k": 0.5,
+     "home": 0.16,
+     "why": "k shrinks the difference between two clubs' season log-odds; 0.50 reflects that a best-of-series meeting between a .636 and a .605 club is close. Home edge 0.16 in logit units is the long-run MLB home-field figure (~54%)."
+    },
+    "Ice Hockey": {
+     "k": 0.55,
+     "home": 0.2,
+     "why": "Points-percentage log-odds shrunk by 0.55 (an 11-game sample is noisy) plus a 0.20 home term (~55% home win rate in the NHL)."
+    },
+    "Snooker": {
+     "k": 2.4,
+     "home": 0.0,
+     "why": "Strength is a 0-100 blend of frames won in this event (50%) and a rank score (37-position)/36 where the player is inside the published top 36 (50%). The 2.40 coefficient maps a 0.20 strength gap onto roughly a 61% best-of-7 win chance."
+    },
+    "Rugby Union": {
+     "k": 0.0,
+     "home": 0.12,
+     "why": "No league table was readable, so the strength term is switched off entirely and only a 0.12 home term is applied. Confidence is capped at Low."
+    }
+   },
+   "totals": {
+    "Ice Hockey": {
+     "mean": 6.0,
+     "sd": 2.0,
+     "line": 5.5,
+     "unit": "goals"
+    },
+    "Baseball": {
+     "mean": 8.6,
+     "sd": 4.2,
+     "line": 8.5,
+     "unit": "runs"
+    },
+    "Rugby Union": {
+     "mean": 45.0,
+     "sd": 13.0,
+     "line": 45.5,
+     "unit": "points"
+    },
+    "Snooker": {
+     "line": 5.5,
+     "unit": "frames",
+     "why": "Exact best-of-7 distribution, no approximation."
+    }
+   },
+   "handicap": {
+    "Ice Hockey": {
+     "line": 1.5,
+     "sd": 2.3,
+     "mu_scale": 1.6,
+     "unit": "goals"
+    },
+    "Baseball": {
+     "line": 1.5,
+     "sd": 4.0,
+     "mu_scale": 1.1,
+     "unit": "runs"
+    },
+    "Rugby Union": {
+     "line": 7.5,
+     "sd": 14.0,
+     "mu_scale": 6.0,
+     "unit": "points"
+    },
+    "Snooker": {
+     "line": 1.5,
+     "unit": "frames",
+     "why": "Exact best-of-7 distribution."
+    }
+   },
+   "field": {
+    "exponent": 1.5,
+    "offset": 10.0,
+    "why": "Outright weight = (points + 10)^1.5. The offset keeps zero-point drivers priced as longshots rather than at infinite odds; the exponent prices a 340-point leader at roughly 22% in a 23-driver field."
+   },
+   "overround": {
+    "two_way": 0.045,
+    "three_way": 0.06,
+    "field": 0.075
+   },
+   "tiers": {
+    "high": 0.7,
+    "medium": 0.55
+   },
+   "band": {
+    "min_decimal": 1.4,
+    "max_decimal": 101.0,
+    "note": "Brief: focus on selections priced between -250 (1.40) and +10000 (101.0)."
+   }
+  },
+  "counts": {
+   "fixtures": 32,
+   "markets": 231,
+   "picks": 32,
+   "predictions": 18,
+   "high_probability_selections": 26,
+   "picks_high": 4,
+   "picks_medium": 14,
+   "picks_low": 14
+  }
+ },
+ "boards": [
+  {
+   "id": "mlb-849805",
+   "markets": [
+    {
+     "sel": "Milwaukee Brewers",
+     "market": "Match winner",
+     "detail": "103-59 (.636)",
+     "prob": 0.5562239607759073,
+     "fair": 1.8,
+     "book": 1.72,
+     "american": "-125"
+    },
+    {
+     "sel": "Tampa Bay Rays",
+     "market": "Match winner",
+     "detail": "98-64 (.605)",
+     "prob": 0.4437760392240927,
+     "fair": 2.25,
+     "book": 2.16,
+     "american": "+125"
+    },
+    {
+     "sel": "Milwaukee Brewers -1.5",
+     "market": "Handicap (1.5 runs)",
+     "detail": "home wins by 1.5+ runs",
+     "prob": 0.36539425679438353,
+     "fair": 2.74,
+     "book": 2.62,
+     "american": "+174"
+    },
+    {
+     "sel": "Tampa Bay Rays +1.5",
+     "market": "Handicap (1.5 runs)",
+     "detail": "away loses by fewer than 1.5 runs, or wins",
+     "prob": 0.6346057432056165,
+     "fair": 1.58,
+     "book": 1.51,
+     "american": "-172"
+    },
+    {
+     "sel": "Tampa Bay Rays -1.5",
+     "market": "Handicap (1.5 runs)",
+     "detail": "away wins by 1.5+ runs",
+     "prob": 0.34239952341315794,
+     "fair": 2.92,
+     "book": 2.79,
+     "american": "+192"
+    },
+    {
+     "sel": "Milwaukee Brewers +1.5",
+     "market": "Handicap (1.5 runs)",
+     "detail": "home loses by fewer than 1.5 runs, or wins",
+     "prob": 0.6576004765868421,
+     "fair": 1.52,
+     "book": 1.46,
+     "american": "-192"
+    },
+    {
+     "sel": "Over 8.5",
+     "market": "Total (8.5 runs)",
+     "detail": "combined runs above 8.5",
+     "prob": 0.5094977283487423,
+     "fair": 1.96,
+     "book": 1.88,
+     "american": "-104"
+    },
+    {
+     "sel": "Under 8.5",
+     "market": "Total (8.5 runs)",
+     "detail": "combined runs below 8.5",
+     "prob": 0.4905022716512577,
+     "fair": 2.04,
+     "book": 1.95,
+     "american": "+104"
+    }
+   ]
+  },
+  {
+   "id": "mlb-849802",
+   "markets": [
+    {
+     "sel": "Milwaukee Brewers",
+     "market": "Match winner",
+     "detail": "103-59 (.636)",
+     "prob": 0.5562239607759073,
+     "fair": 1.8,
+     "book": 1.72,
+     "american": "-125"
+    },
+    {
+     "sel": "Tampa Bay Rays",
+     "market": "Match winner",
+     "detail": "98-64 (.605)",
+     "prob": 0.4437760392240927,
+     "fair": 2.25,
+     "book": 2.16,
+     "american": "+125"
+    },
+    {
+     "sel": "Milwaukee Brewers -1.5",
+     "market": "Handicap (1.5 runs)",
+     "detail": "home wins by 1.5+ runs",
+     "prob": 0.36539425679438353,
+     "fair": 2.74,
+     "book": 2.62,
+     "american": "+174"
+    },
+    {
+     "sel": "Tampa Bay Rays +1.5",
+     "market": "Handicap (1.5 runs)",
+     "detail": "away loses by fewer than 1.5 runs, or wins",
+     "prob": 0.6346057432056165,
+     "fair": 1.58,
+     "book": 1.51,
+     "american": "-172"
+    },
+    {
+     "sel": "Tampa Bay Rays -1.5",
+     "market": "Handicap (1.5 runs)",
+     "detail": "away wins by 1.5+ runs",
+     "prob": 0.34239952341315794,
+     "fair": 2.92,
+     "book": 2.79,
+     "american": "+192"
+    },
+    {
+     "sel": "Milwaukee Brewers +1.5",
+     "market": "Handicap (1.5 runs)",
+     "detail": "home loses by fewer than 1.5 runs, or wins",
+     "prob": 0.6576004765868421,
+     "fair": 1.52,
+     "book": 1.46,
+     "american": "-192"
+    },
+    {
+     "sel": "Over 8.5",
+     "market": "Total (8.5 runs)",
+     "detail": "combined runs above 8.5",
+     "prob": 0.5094977283487423,
+     "fair": 1.96,
+     "book": 1.88,
+     "american": "-104"
+    },
+    {
+     "sel": "Under 8.5",
+     "market": "Total (8.5 runs)",
+     "detail": "combined runs below 8.5",
+     "prob": 0.4905022716512577,
+     "fair": 2.04,
+     "book": 1.95,
+     "american": "+104"
+    }
+   ]
+  },
+  {
+   "id": "mlb-849804",
+   "markets": [
+    {
+     "sel": "Tampa Bay Rays",
+     "market": "Match winner",
+     "detail": "98-64 (.605)",
+     "prob": 0.5235198788273409,
+     "fair": 1.91,
+     "book": 1.83,
+     "american": "-110"
+    },
+    {
+     "sel": "Milwaukee Brewers",
+     "market": "Match winner",
+     "detail": "103-59 (.636)",
+     "prob": 0.47648012117265914,
+     "fair": 2.1,
+     "book": 2.01,
+     "american": "+110"
+    },
+    {
+     "sel": "Tampa Bay Rays -1.5",
+     "market": "Handicap (1.5 runs)",
+     "detail": "home wins by 1.5+ runs",
+     "prob": 0.3586520775895845,
+     "fair": 2.79,
+     "book": 2.67,
+     "american": "+179"
+    },
+    {
+     "sel": "Milwaukee Brewers +1.5",
+     "market": "Handicap (1.5 runs)",
+     "detail": "away loses by fewer than 1.5 runs, or wins",
+     "prob": 0.6413479224104155,
+     "fair": 1.56,
+     "book": 1.49,
+     "american": "-179"
+    },
+    {
+     "sel": "Milwaukee Brewers -1.5",
+     "market": "Handicap (1.5 runs)",
+     "detail": "away wins by 1.5+ runs",
+     "prob": 0.3490317227442856,
+     "fair": 2.87,
+     "book": 2.74,
+     "american": "+187"
+    },
+    {
+     "sel": "Tampa Bay Rays +1.5",
+     "market": "Handicap (1.5 runs)",
+     "detail": "home loses by fewer than 1.5 runs, or wins",
+     "prob": 0.6509682772557144,
+     "fair": 1.54,
+     "book": 1.47,
+     "american": "-185"
+    },
+    {
+     "sel": "Over 8.5",
+     "market": "Total (8.5 runs)",
+     "detail": "combined runs above 8.5",
+     "prob": 0.5094977283487423,
+     "fair": 1.96,
+     "book": 1.88,
+     "american": "-104"
+    },
+    {
+     "sel": "Under 8.5",
+     "market": "Total (8.5 runs)",
+     "detail": "combined runs below 8.5",
+     "prob": 0.4905022716512577,
+     "fair": 2.04,
+     "book": 1.95,
+     "american": "+104"
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020154",
+   "markets": [
+    {
+     "sel": "Boston Bruins",
+     "market": "Match winner",
+     "detail": "7-2-1 \u00b7 15/20 pts = 0.750",
+     "prob": 0.6908800346968449,
+     "fair": 1.45,
+     "book": 1.39,
+     "american": "-222"
+    },
+    {
+     "sel": "Nashville Predators",
+     "market": "Match winner",
+     "detail": "3-2-3 \u00b7 8/16 pts = 0.500",
+     "prob": 0.3091199653031551,
+     "fair": 3.23,
+     "book": 3.1,
+     "american": "+223"
+    },
+    {
+     "sel": "Boston Bruins -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home wins by 1.5+ goals",
+     "prob": 0.3495255529921102,
+     "fair": 2.86,
+     "book": 2.74,
+     "american": "+186"
+    },
+    {
+     "sel": "Nashville Predators +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away loses by fewer than 1.5 goals, or wins",
+     "prob": 0.6504744470078898,
+     "fair": 1.54,
+     "book": 1.47,
+     "american": "-185"
+    },
+    {
+     "sel": "Nashville Predators -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away wins by 1.5+ goals",
+     "prob": 0.17937589408897664,
+     "fair": 5.57,
+     "book": 5.33,
+     "american": "+457"
+    },
+    {
+     "sel": "Boston Bruins +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home loses by fewer than 1.5 goals, or wins",
+     "prob": 0.8206241059110233,
+     "fair": 1.22,
+     "book": 1.17,
+     "american": "-455"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals above 5.5",
+     "prob": 0.5987063256829237,
+     "fair": 1.67,
+     "book": 1.6,
+     "american": "-149"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals below 5.5",
+     "prob": 0.4012936743170763,
+     "fair": 2.49,
+     "book": 2.38,
+     "american": "+149"
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020155",
+   "markets": [
+    {
+     "sel": "Toronto Maple Leafs",
+     "market": "Match winner",
+     "detail": "5-4-2 \u00b7 12/22 pts = 0.545",
+     "prob": 0.46994391979827704,
+     "fair": 2.13,
+     "book": 2.04,
+     "american": "+113"
+    },
+    {
+     "sel": "New York Rangers",
+     "market": "Match winner",
+     "detail": "7-3-1 \u00b7 15/22 pts = 0.682",
+     "prob": 0.5300560802017229,
+     "fair": 1.89,
+     "book": 1.81,
+     "american": "-112"
+    },
+    {
+     "sel": "Toronto Maple Leafs -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home wins by 1.5+ goals",
+     "prob": 0.243843905175813,
+     "fair": 4.1,
+     "book": 3.92,
+     "american": "+310"
+    },
+    {
+     "sel": "New York Rangers +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away loses by fewer than 1.5 goals, or wins",
+     "prob": 0.756156094824187,
+     "fair": 1.32,
+     "book": 1.27,
+     "american": "-312"
+    },
+    {
+     "sel": "New York Rangers -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away wins by 1.5+ goals",
+     "prob": 0.270812753161766,
+     "fair": 3.69,
+     "book": 3.53,
+     "american": "+269"
+    },
+    {
+     "sel": "Toronto Maple Leafs +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home loses by fewer than 1.5 goals, or wins",
+     "prob": 0.729187246838234,
+     "fair": 1.37,
+     "book": 1.31,
+     "american": "-270"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals above 5.5",
+     "prob": 0.5987063256829237,
+     "fair": 1.67,
+     "book": 1.6,
+     "american": "-149"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals below 5.5",
+     "prob": 0.4012936743170763,
+     "fair": 2.49,
+     "book": 2.38,
+     "american": "+149"
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020156",
+   "markets": [
+    {
+     "sel": "Ottawa Senators",
+     "market": "Match winner",
+     "detail": "6-3-0 \u00b7 12/18 pts = 0.667",
+     "prob": 0.6157830335158752,
+     "fair": 1.62,
+     "book": 1.55,
+     "american": "-161"
+    },
+    {
+     "sel": "San Jose Sharks",
+     "market": "Match winner",
+     "detail": "5-4-1 \u00b7 11/20 pts = 0.550",
+     "prob": 0.38421696648412484,
+     "fair": 2.6,
+     "book": 2.49,
+     "american": "+160"
+    },
+    {
+     "sel": "Ottawa Senators -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home wins by 1.5+ goals",
+     "prob": 0.311683350713583,
+     "fair": 3.21,
+     "book": 3.07,
+     "american": "+221"
+    },
+    {
+     "sel": "San Jose Sharks +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away loses by fewer than 1.5 goals, or wins",
+     "prob": 0.688316649286417,
+     "fair": 1.45,
+     "book": 1.39,
+     "american": "-222"
+    },
+    {
+     "sel": "San Jose Sharks -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away wins by 1.5+ goals",
+     "prob": 0.208033542301215,
+     "fair": 4.81,
+     "book": 4.6,
+     "american": "+381"
+    },
+    {
+     "sel": "Ottawa Senators +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home loses by fewer than 1.5 goals, or wins",
+     "prob": 0.791966457698785,
+     "fair": 1.26,
+     "book": 1.21,
+     "american": "-385"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals above 5.5",
+     "prob": 0.5987063256829237,
+     "fair": 1.67,
+     "book": 1.6,
+     "american": "-149"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals below 5.5",
+     "prob": 0.4012936743170763,
+     "fair": 2.49,
+     "book": 2.38,
+     "american": "+149"
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020157",
+   "markets": [
+    {
+     "sel": "New Jersey Devils",
+     "market": "Match winner",
+     "detail": "5-4-0 \u00b7 10/18 pts = 0.556",
+     "prob": 0.6100299480922105,
+     "fair": 1.64,
+     "book": 1.57,
+     "american": "-156"
+    },
+    {
+     "sel": "Anaheim Ducks",
+     "market": "Match winner",
+     "detail": "4-5-0 \u00b7 8/18 pts = 0.444",
+     "prob": 0.38997005190778955,
+     "fair": 2.56,
+     "book": 2.45,
+     "american": "+156"
+    },
+    {
+     "sel": "New Jersey Devils -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home wins by 1.5+ goals",
+     "prob": 0.30885842501351257,
+     "fair": 3.24,
+     "book": 3.1,
+     "american": "+224"
+    },
+    {
+     "sel": "Anaheim Ducks +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away loses by fewer than 1.5 goals, or wins",
+     "prob": 0.6911415749864874,
+     "fair": 1.45,
+     "book": 1.38,
+     "american": "-222"
+    },
+    {
+     "sel": "Anaheim Ducks -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away wins by 1.5+ goals",
+     "prob": 0.2103351012337759,
+     "fair": 4.75,
+     "book": 4.55,
+     "american": "+375"
+    },
+    {
+     "sel": "New Jersey Devils +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home loses by fewer than 1.5 goals, or wins",
+     "prob": 0.789664898766224,
+     "fair": 1.27,
+     "book": 1.21,
+     "american": "-370"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals above 5.5",
+     "prob": 0.5987063256829237,
+     "fair": 1.67,
+     "book": 1.6,
+     "american": "-149"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals below 5.5",
+     "prob": 0.4012936743170763,
+     "fair": 2.49,
+     "book": 2.38,
+     "american": "+149"
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020158",
+   "markets": [
+    {
+     "sel": "Pittsburgh Penguins",
+     "market": "Match winner",
+     "detail": "3-6-1 \u00b7 7/20 pts = 0.350",
+     "prob": 0.37226135833761936,
+     "fair": 2.69,
+     "book": 2.57,
+     "american": "+169"
+    },
+    {
+     "sel": "Florida Panthers",
+     "market": "Match winner",
+     "detail": "5-2-2 \u00b7 12/18 pts = 0.667",
+     "prob": 0.6277386416623807,
+     "fair": 1.59,
+     "book": 1.52,
+     "american": "-169"
+    },
+    {
+     "sel": "Pittsburgh Penguins -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home wins by 1.5+ goals",
+     "prob": 0.2032984425896549,
+     "fair": 4.92,
+     "book": 4.71,
+     "american": "+392"
+    },
+    {
+     "sel": "Florida Panthers +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away loses by fewer than 1.5 goals, or wins",
+     "prob": 0.7967015574103451,
+     "fair": 1.26,
+     "book": 1.2,
+     "american": "-385"
+    },
+    {
+     "sel": "Florida Panthers -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away wins by 1.5+ goals",
+     "prob": 0.31758931382348743,
+     "fair": 3.15,
+     "book": 3.01,
+     "american": "+215"
+    },
+    {
+     "sel": "Pittsburgh Penguins +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home loses by fewer than 1.5 goals, or wins",
+     "prob": 0.6824106861765126,
+     "fair": 1.47,
+     "book": 1.4,
+     "american": "-213"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals above 5.5",
+     "prob": 0.5987063256829237,
+     "fair": 1.67,
+     "book": 1.6,
+     "american": "-149"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals below 5.5",
+     "prob": 0.4012936743170763,
+     "fair": 2.49,
+     "book": 2.38,
+     "american": "+149"
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020159",
+   "markets": [
+    {
+     "sel": "New York Islanders",
+     "market": "Match winner",
+     "detail": "5-3-1 \u00b7 11/18 pts = 0.611",
+     "prob": 0.721421728606165,
+     "fair": 1.39,
+     "book": 1.33,
+     "american": "-256"
+    },
+    {
+     "sel": "Los Angeles Kings",
+     "market": "Match winner",
+     "detail": "1-4-2 \u00b7 4/14 pts = 0.286",
+     "prob": 0.27857827139383495,
+     "fair": 3.59,
+     "book": 3.44,
+     "american": "+259"
+    },
+    {
+     "sel": "New York Islanders -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home wins by 1.5+ goals",
+     "prob": 0.36538219522409143,
+     "fair": 2.74,
+     "book": 2.62,
+     "american": "+174"
+    },
+    {
+     "sel": "Los Angeles Kings +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away loses by fewer than 1.5 goals, or wins",
+     "prob": 0.6346178047759086,
+     "fair": 1.58,
+     "book": 1.51,
+     "american": "-172"
+    },
+    {
+     "sel": "Los Angeles Kings -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away wins by 1.5+ goals",
+     "prob": 0.16846748979607312,
+     "fair": 5.94,
+     "book": 5.68,
+     "american": "+494"
+    },
+    {
+     "sel": "New York Islanders +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home loses by fewer than 1.5 goals, or wins",
+     "prob": 0.8315325102039268,
+     "fair": 1.2,
+     "book": 1.15,
+     "american": "-500"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals above 5.5",
+     "prob": 0.5987063256829237,
+     "fair": 1.67,
+     "book": 1.6,
+     "american": "-149"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals below 5.5",
+     "prob": 0.4012936743170763,
+     "fair": 2.49,
+     "book": 2.38,
+     "american": "+149"
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020160",
+   "markets": [
+    {
+     "sel": "St. Louis Blues",
+     "market": "Match winner",
+     "detail": "4-4-1 \u00b7 9/18 pts = 0.500",
+     "prob": 0.4161252788352378,
+     "fair": 2.4,
+     "book": 2.3,
+     "american": "+140"
+    },
+    {
+     "sel": "Vegas Golden Knights",
+     "market": "Match winner",
+     "detail": "8-3-0 \u00b7 16/22 pts = 0.727",
+     "prob": 0.5838747211647621,
+     "fair": 1.71,
+     "book": 1.64,
+     "american": "-141"
+    },
+    {
+     "sel": "St. Louis Blues -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home wins by 1.5+ goals",
+     "prob": 0.2209854884235587,
+     "fair": 4.53,
+     "book": 4.33,
+     "american": "+353"
+    },
+    {
+     "sel": "Vegas Golden Knights +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away loses by fewer than 1.5 goals, or wins",
+     "prob": 0.7790145115764413,
+     "fair": 1.28,
+     "book": 1.23,
+     "american": "-357"
+    },
+    {
+     "sel": "Vegas Golden Knights -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away wins by 1.5+ goals",
+     "prob": 0.29615945894889695,
+     "fair": 3.38,
+     "book": 3.23,
+     "american": "+238"
+    },
+    {
+     "sel": "St. Louis Blues +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home loses by fewer than 1.5 goals, or wins",
+     "prob": 0.703840541051103,
+     "fair": 1.42,
+     "book": 1.36,
+     "american": "-238"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals above 5.5",
+     "prob": 0.5987063256829237,
+     "fair": 1.67,
+     "book": 1.6,
+     "american": "-149"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals below 5.5",
+     "prob": 0.4012936743170763,
+     "fair": 2.49,
+     "book": 2.38,
+     "american": "+149"
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020161",
+   "markets": [
+    {
+     "sel": "Dallas Stars",
+     "market": "Match winner",
+     "detail": "5-3-1 \u00b7 11/18 pts = 0.611",
+     "prob": 0.5804487043307833,
+     "fair": 1.72,
+     "book": 1.65,
+     "american": "-139"
+    },
+    {
+     "sel": "Winnipeg Jets",
+     "market": "Match winner",
+     "detail": "4-3-2 \u00b7 10/18 pts = 0.556",
+     "prob": 0.4195512956692167,
+     "fair": 2.38,
+     "book": 2.28,
+     "american": "+138"
+    },
+    {
+     "sel": "Dallas Stars -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home wins by 1.5+ goals",
+     "prob": 0.2945139445370535,
+     "fair": 3.4,
+     "book": 3.25,
+     "american": "+240"
+    },
+    {
+     "sel": "Winnipeg Jets +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away loses by fewer than 1.5 goals, or wins",
+     "prob": 0.7054860554629465,
+     "fair": 1.42,
+     "book": 1.36,
+     "american": "-238"
+    },
+    {
+     "sel": "Winnipeg Jets -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away wins by 1.5+ goals",
+     "prob": 0.22240306785156633,
+     "fair": 4.5,
+     "book": 4.3,
+     "american": "+350"
+    },
+    {
+     "sel": "Dallas Stars +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home loses by fewer than 1.5 goals, or wins",
+     "prob": 0.7775969321484337,
+     "fair": 1.29,
+     "book": 1.23,
+     "american": "-345"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals above 5.5",
+     "prob": 0.5987063256829237,
+     "fair": 1.67,
+     "book": 1.6,
+     "american": "-149"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals below 5.5",
+     "prob": 0.4012936743170763,
+     "fair": 2.49,
+     "book": 2.38,
+     "american": "+149"
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020162",
+   "markets": [
+    {
+     "sel": "Calgary Flames",
+     "market": "Match winner",
+     "detail": "2-6-0 \u00b7 4/16 pts = 0.250",
+     "prob": 0.2952021637793556,
+     "fair": 3.39,
+     "book": 3.24,
+     "american": "+239"
+    },
+    {
+     "sel": "Minnesota Wild",
+     "market": "Match winner",
+     "detail": "6-2-2 \u00b7 14/20 pts = 0.700",
+     "prob": 0.7047978362206444,
+     "fair": 1.42,
+     "book": 1.36,
+     "american": "-238"
+    },
+    {
+     "sel": "Calgary Flames -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home wins by 1.5+ goals",
+     "prob": 0.1743509805454473,
+     "fair": 5.74,
+     "book": 5.49,
+     "american": "+474"
+    },
+    {
+     "sel": "Minnesota Wild +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away loses by fewer than 1.5 goals, or wins",
+     "prob": 0.8256490194545527,
+     "fair": 1.21,
+     "book": 1.16,
+     "american": "-476"
+    },
+    {
+     "sel": "Minnesota Wild -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away wins by 1.5+ goals",
+     "prob": 0.356720825469093,
+     "fair": 2.8,
+     "book": 2.68,
+     "american": "+180"
+    },
+    {
+     "sel": "Calgary Flames +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home loses by fewer than 1.5 goals, or wins",
+     "prob": 0.643279174530907,
+     "fair": 1.55,
+     "book": 1.49,
+     "american": "-182"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals above 5.5",
+     "prob": 0.5987063256829237,
+     "fair": 1.67,
+     "book": 1.6,
+     "american": "-149"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals below 5.5",
+     "prob": 0.4012936743170763,
+     "fair": 2.49,
+     "book": 2.38,
+     "american": "+149"
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020163",
+   "markets": [
+    {
+     "sel": "Edmonton Oilers",
+     "market": "Match winner",
+     "detail": "7-1-1 \u00b7 15/18 pts = 0.833",
+     "prob": 0.6010737171049252,
+     "fair": 1.66,
+     "book": 1.59,
+     "american": "-152"
+    },
+    {
+     "sel": "Carolina Hurricanes",
+     "market": "Match winner",
+     "detail": "8-2-1 \u00b7 17/22 pts = 0.773",
+     "prob": 0.3989262828950748,
+     "fair": 2.51,
+     "book": 2.4,
+     "american": "+151"
+    },
+    {
+     "sel": "Edmonton Oilers -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home wins by 1.5+ goals",
+     "prob": 0.3044831294095469,
+     "fair": 3.28,
+     "book": 3.14,
+     "american": "+228"
+    },
+    {
+     "sel": "Carolina Hurricanes +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away loses by fewer than 1.5 goals, or wins",
+     "prob": 0.6955168705904531,
+     "fair": 1.44,
+     "book": 1.38,
+     "american": "-227"
+    },
+    {
+     "sel": "Carolina Hurricanes -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away wins by 1.5+ goals",
+     "prob": 0.21394769830197807,
+     "fair": 4.67,
+     "book": 4.47,
+     "american": "+367"
+    },
+    {
+     "sel": "Edmonton Oilers +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home loses by fewer than 1.5 goals, or wins",
+     "prob": 0.7860523016980219,
+     "fair": 1.27,
+     "book": 1.22,
+     "american": "-370"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals above 5.5",
+     "prob": 0.5987063256829237,
+     "fair": 1.67,
+     "book": 1.6,
+     "american": "-149"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals below 5.5",
+     "prob": 0.4012936743170763,
+     "fair": 2.49,
+     "book": 2.38,
+     "american": "+149"
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020164",
+   "markets": [
+    {
+     "sel": "Seattle Kraken",
+     "market": "Match winner",
+     "detail": "6-3-1 \u00b7 13/20 pts = 0.650",
+     "prob": 0.5186058403179068,
+     "fair": 1.93,
+     "book": 1.85,
+     "american": "-108"
+    },
+    {
+     "sel": "Utah Mammoth",
+     "market": "Match winner",
+     "detail": "7-3-0 \u00b7 14/20 pts = 0.700",
+     "prob": 0.4813941596820932,
+     "fair": 2.08,
+     "book": 1.99,
+     "american": "+108"
+    },
+    {
+     "sel": "Seattle Kraken -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home wins by 1.5+ goals",
+     "prob": 0.26556318317198724,
+     "fair": 3.77,
+     "book": 3.6,
+     "american": "+277"
+    },
+    {
+     "sel": "Utah Mammoth +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away loses by fewer than 1.5 goals, or wins",
+     "prob": 0.7344368168280128,
+     "fair": 1.36,
+     "book": 1.3,
+     "american": "-278"
+    },
+    {
+     "sel": "Utah Mammoth -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away wins by 1.5+ goals",
+     "prob": 0.2488667306393585,
+     "fair": 4.02,
+     "book": 3.85,
+     "american": "+302"
+    },
+    {
+     "sel": "Seattle Kraken +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home loses by fewer than 1.5 goals, or wins",
+     "prob": 0.7511332693606415,
+     "fair": 1.33,
+     "book": 1.27,
+     "american": "-303"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals above 5.5",
+     "prob": 0.5987063256829237,
+     "fair": 1.67,
+     "book": 1.6,
+     "american": "-149"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals below 5.5",
+     "prob": 0.4012936743170763,
+     "fair": 2.49,
+     "book": 2.38,
+     "american": "+149"
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020165",
+   "markets": [
+    {
+     "sel": "Vancouver Canucks",
+     "market": "Match winner",
+     "detail": "2-8-1 \u00b7 5/22 pts = 0.227",
+     "prob": 0.3836862594236636,
+     "fair": 2.61,
+     "book": 2.49,
+     "american": "+161"
+    },
+    {
+     "sel": "Detroit Red Wings",
+     "market": "Match winner",
+     "detail": "3-3-3 \u00b7 9/18 pts = 0.500",
+     "prob": 0.6163137405763364,
+     "fair": 1.62,
+     "book": 1.55,
+     "american": "-161"
+    },
+    {
+     "sel": "Vancouver Canucks -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home wins by 1.5+ goals",
+     "prob": 0.20782198108691285,
+     "fair": 4.81,
+     "book": 4.6,
+     "american": "+381"
+    },
+    {
+     "sel": "Detroit Red Wings +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away loses by fewer than 1.5 goals, or wins",
+     "prob": 0.7921780189130871,
+     "fair": 1.26,
+     "book": 1.21,
+     "american": "-385"
+    },
+    {
+     "sel": "Detroit Red Wings -1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "away wins by 1.5+ goals",
+     "prob": 0.3119445053173324,
+     "fair": 3.21,
+     "book": 3.07,
+     "american": "+221"
+    },
+    {
+     "sel": "Vancouver Canucks +1.5",
+     "market": "Handicap (1.5 goals)",
+     "detail": "home loses by fewer than 1.5 goals, or wins",
+     "prob": 0.6880554946826676,
+     "fair": 1.45,
+     "book": 1.39,
+     "american": "-222"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals above 5.5",
+     "prob": 0.5987063256829237,
+     "fair": 1.67,
+     "book": 1.6,
+     "american": "-149"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total (5.5 goals)",
+     "detail": "combined goals below 5.5",
+     "prob": 0.4012936743170763,
+     "fair": 2.49,
+     "book": 2.38,
+     "american": "+149"
+    }
+   ]
+  },
+  {
+   "id": "urc-cardiff-hollywoodbet",
+   "markets": [
+    {
+     "sel": "Cardiff",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.5140651302116346,
+     "fair": 1.95,
+     "book": 1.84,
+     "american": "-105"
+    },
+    {
+     "sel": "Hollywoodbets Sharks",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.4559348697883654,
+     "fair": 2.19,
+     "book": 2.07,
+     "american": "+119"
+    },
+    {
+     "sel": "Draw",
+     "market": "Match winner",
+     "detail": "Rugby draw (model draw allowance 3.0%)",
+     "prob": 0.03,
+     "fair": 33.33,
+     "book": 31.45,
+     "american": "+3233"
+    }
+   ]
+  },
+  {
+   "id": "urc-connacht-zebre-parma",
+   "markets": [
+    {
+     "sel": "Connacht",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.5140651302116346,
+     "fair": 1.95,
+     "book": 1.84,
+     "american": "-105"
+    },
+    {
+     "sel": "Zebre Parma",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.4559348697883654,
+     "fair": 2.19,
+     "book": 2.07,
+     "american": "+119"
+    },
+    {
+     "sel": "Draw",
+     "market": "Match winner",
+     "detail": "Rugby draw (model draw allowance 3.0%)",
+     "prob": 0.03,
+     "fair": 33.33,
+     "book": 31.45,
+     "american": "+3233"
+    }
+   ]
+  },
+  {
+   "id": "urc-edinburgh-lions",
+   "markets": [
+    {
+     "sel": "Edinburgh",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.5140651302116346,
+     "fair": 1.95,
+     "book": 1.84,
+     "american": "-105"
+    },
+    {
+     "sel": "Lions",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.4559348697883654,
+     "fair": 2.19,
+     "book": 2.07,
+     "american": "+119"
+    },
+    {
+     "sel": "Draw",
+     "market": "Match winner",
+     "detail": "Rugby draw (model draw allowance 3.0%)",
+     "prob": 0.03,
+     "fair": 33.33,
+     "book": 31.45,
+     "american": "+3233"
+    }
+   ]
+  },
+  {
+   "id": "urc-vodacom-bulls-ulster",
+   "markets": [
+    {
+     "sel": "Vodacom Bulls",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.5140651302116346,
+     "fair": 1.95,
+     "book": 1.84,
+     "american": "-105"
+    },
+    {
+     "sel": "Ulster",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.4559348697883654,
+     "fair": 2.19,
+     "book": 2.07,
+     "american": "+119"
+    },
+    {
+     "sel": "Draw",
+     "market": "Match winner",
+     "detail": "Rugby draw (model draw allowance 3.0%)",
+     "prob": 0.03,
+     "fair": 33.33,
+     "book": 31.45,
+     "american": "+3233"
+    }
+   ]
+  },
+  {
+   "id": "urc-dhl-stormers-scarlets",
+   "markets": [
+    {
+     "sel": "DHL Stormers",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.5140651302116346,
+     "fair": 1.95,
+     "book": 1.84,
+     "american": "-105"
+    },
+    {
+     "sel": "Scarlets",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.4559348697883654,
+     "fair": 2.19,
+     "book": 2.07,
+     "american": "+119"
+    },
+    {
+     "sel": "Draw",
+     "market": "Match winner",
+     "detail": "Rugby draw (model draw allowance 3.0%)",
+     "prob": 0.03,
+     "fair": 33.33,
+     "book": 31.45,
+     "american": "+3233"
+    }
+   ]
+  },
+  {
+   "id": "urc-benetton-glasgow-warr",
+   "markets": [
+    {
+     "sel": "Benetton",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.5140651302116346,
+     "fair": 1.95,
+     "book": 1.84,
+     "american": "-105"
+    },
+    {
+     "sel": "Glasgow Warriors",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.4559348697883654,
+     "fair": 2.19,
+     "book": 2.07,
+     "american": "+119"
+    },
+    {
+     "sel": "Draw",
+     "market": "Match winner",
+     "detail": "Rugby draw (model draw allowance 3.0%)",
+     "prob": 0.03,
+     "fair": 33.33,
+     "book": 31.45,
+     "american": "+3233"
+    }
+   ]
+  },
+  {
+   "id": "urc-leinster-munster",
+   "markets": [
+    {
+     "sel": "Leinster",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.5140651302116346,
+     "fair": 1.95,
+     "book": 1.84,
+     "american": "-105"
+    },
+    {
+     "sel": "Munster",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.4559348697883654,
+     "fair": 2.19,
+     "book": 2.07,
+     "american": "+119"
+    },
+    {
+     "sel": "Draw",
+     "market": "Match winner",
+     "detail": "Rugby draw (model draw allowance 3.0%)",
+     "prob": 0.03,
+     "fair": 33.33,
+     "book": 31.45,
+     "american": "+3233"
+    }
+   ]
+  },
+  {
+   "id": "urc-ospreys-dragons",
+   "markets": [
+    {
+     "sel": "Ospreys",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.5140651302116346,
+     "fair": 1.95,
+     "book": 1.84,
+     "american": "-105"
+    },
+    {
+     "sel": "Dragons",
+     "market": "Match winner",
+     "detail": "",
+     "prob": 0.4559348697883654,
+     "fair": 2.19,
+     "book": 2.07,
+     "american": "+119"
+    },
+    {
+     "sel": "Draw",
+     "market": "Match winner",
+     "detail": "Rugby draw (model draw allowance 3.0%)",
+     "prob": 0.03,
+     "fair": 33.33,
+     "book": 31.45,
+     "american": "+3233"
+    }
+   ]
+  },
+  {
+   "id": "wst-m50",
+   "markets": [
+    {
+     "sel": "Kyren Wilson",
+     "market": "Match winner",
+     "detail": "8-2 (80.0% of frames won); world no. 9 (\u00a3716,800)",
+     "prob": 0.7086149427554175,
+     "fair": 1.41,
+     "book": 1.35,
+     "american": "-244"
+    },
+    {
+     "sel": "Pang Junxu",
+     "market": "Match winner",
+     "detail": "8-5 (61.5% of frames won); world no. 29 (\u00a3272,750)",
+     "prob": 0.2913850572445825,
+     "fair": 3.43,
+     "book": 3.28,
+     "american": "+243"
+    },
+    {
+     "sel": "Kyren Wilson -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.5426149055506686,
+     "fair": 1.84,
+     "book": 1.76,
+     "american": "-119"
+    },
+    {
+     "sel": "Pang Junxu +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away loses by one frame or fewer, or wins",
+     "prob": 0.4573850944493314,
+     "fair": 2.19,
+     "book": 2.09,
+     "american": "+119"
+    },
+    {
+     "sel": "Pang Junxu -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.18033867874550055,
+     "fair": 5.55,
+     "book": 5.31,
+     "american": "+455"
+    },
+    {
+     "sel": "Kyren Wilson +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home loses by one frame or fewer, or wins",
+     "prob": 0.8196613212544994,
+     "fair": 1.22,
+     "book": 1.17,
+     "american": "-455"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total frames",
+     "detail": "the match reaches a deciding frame or a 4-2/2-4 finish",
+     "prob": 0.5767864201112528,
+     "fair": 1.73,
+     "book": 1.66,
+     "american": "-137"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total frames",
+     "detail": "4-1, 1-4, 4-0 or 0-4",
+     "prob": 0.4232135798887472,
+     "fair": 2.36,
+     "book": 2.26,
+     "american": "+136"
+    }
+   ]
+  },
+  {
+   "id": "wst-m51",
+   "markets": [
+    {
+     "sel": "Matthew Selt",
+     "market": "Match winner",
+     "detail": "8-5 (61.5% of frames won); outside the published top 36",
+     "prob": 0.5131969342306846,
+     "fair": 1.95,
+     "book": 1.86,
+     "american": "-105"
+    },
+    {
+     "sel": "Sam Craigie",
+     "market": "Match winner",
+     "detail": "8-6 (57.1% of frames won); outside the published top 36",
+     "prob": 0.4868030657693154,
+     "fair": 2.05,
+     "book": 1.97,
+     "american": "+105"
+    },
+    {
+     "sel": "Matthew Selt -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.35513045884385636,
+     "fair": 2.82,
+     "book": 2.69,
+     "american": "+182"
+    },
+    {
+     "sel": "Sam Craigie +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away loses by one frame or fewer, or wins",
+     "prob": 0.6448695411561436,
+     "fair": 1.55,
+     "book": 1.48,
+     "american": "-182"
+    },
+    {
+     "sel": "Sam Craigie -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.33250604487704627,
+     "fair": 3.01,
+     "book": 2.88,
+     "american": "+201"
+    },
+    {
+     "sel": "Matthew Selt +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home loses by one frame or fewer, or wins",
+     "prob": 0.6674939551229537,
+     "fair": 1.5,
+     "book": 1.43,
+     "american": "-200"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total frames",
+     "detail": "the match reaches a deciding frame or a 4-2/2-4 finish",
+     "prob": 0.6248179817859013,
+     "fair": 1.6,
+     "book": 1.53,
+     "american": "-167"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total frames",
+     "detail": "4-1, 1-4, 4-0 or 0-4",
+     "prob": 0.3751820182140987,
+     "fair": 2.67,
+     "book": 2.55,
+     "american": "+167"
+    }
+   ]
+  },
+  {
+   "id": "wst-m49",
+   "markets": [
+    {
+     "sel": "Anthony McGill",
+     "market": "Match winner",
+     "detail": "8-2 (80.0% of frames won); outside the published top 36",
+     "prob": 0.5682709163319868,
+     "fair": 1.76,
+     "book": 1.68,
+     "american": "-132"
+    },
+    {
+     "sel": "Mateusz Baranowski",
+     "market": "Match winner",
+     "detail": "8-6 (57.1% of frames won); outside the published top 36",
+     "prob": 0.4317290836680132,
+     "fair": 2.32,
+     "book": 2.22,
+     "american": "+132"
+    },
+    {
+     "sel": "Anthony McGill -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.40417795910819826,
+     "fair": 2.47,
+     "book": 2.37,
+     "american": "+147"
+    },
+    {
+     "sel": "Mateusz Baranowski +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away loses by one frame or fewer, or wins",
+     "prob": 0.5958220408918018,
+     "fair": 1.68,
+     "book": 1.61,
+     "american": "-147"
+    },
+    {
+     "sel": "Mateusz Baranowski -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.28698902947228305,
+     "fair": 3.48,
+     "book": 3.33,
+     "american": "+248"
+    },
+    {
+     "sel": "Anthony McGill +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home loses by one frame or fewer, or wins",
+     "prob": 0.713010970527717,
+     "fair": 1.4,
+     "book": 1.34,
+     "american": "-250"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total frames",
+     "detail": "the match reaches a deciding frame or a 4-2/2-4 finish",
+     "prob": 0.6201010695066813,
+     "fair": 1.61,
+     "book": 1.54,
+     "american": "-164"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total frames",
+     "detail": "4-1, 1-4, 4-0 or 0-4",
+     "prob": 0.3798989304933187,
+     "fair": 2.63,
+     "book": 2.52,
+     "american": "+163"
+    }
+   ]
+  },
+  {
+   "id": "wst-m52",
+   "markets": [
+    {
+     "sel": "Elliot Slessor",
+     "market": "Match winner",
+     "detail": "8-1 (88.9% of frames won); world no. 23 (\u00a3329,200)",
+     "prob": 0.6754778703871697,
+     "fair": 1.48,
+     "book": 1.42,
+     "american": "-208"
+    },
+    {
+     "sel": "Ricky Walden",
+     "market": "Match winner",
+     "detail": "8-4 (66.7% of frames won); outside the published top 36",
+     "prob": 0.32452212961283033,
+     "fair": 3.08,
+     "book": 2.95,
+     "american": "+208"
+    },
+    {
+     "sel": "Elliot Slessor -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.5079087732366654,
+     "fair": 1.97,
+     "book": 1.88,
+     "american": "-103"
+    },
+    {
+     "sel": "Ricky Walden +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away loses by one frame or fewer, or wins",
+     "prob": 0.4920912267633346,
+     "fair": 2.03,
+     "book": 1.94,
+     "american": "+103"
+    },
+    {
+     "sel": "Ricky Walden -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.20438036267055504,
+     "fair": 4.89,
+     "book": 4.68,
+     "american": "+389"
+    },
+    {
+     "sel": "Elliot Slessor +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home loses by one frame or fewer, or wins",
+     "prob": 0.795619637329445,
+     "fair": 1.26,
+     "book": 1.2,
+     "american": "-385"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total frames",
+     "detail": "the match reaches a deciding frame or a 4-2/2-4 finish",
+     "prob": 0.5914946812656487,
+     "fair": 1.69,
+     "book": 1.62,
+     "american": "-145"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total frames",
+     "detail": "4-1, 1-4, 4-0 or 0-4",
+     "prob": 0.40850531873435125,
+     "fair": 2.45,
+     "book": 2.34,
+     "american": "+145"
+    }
+   ]
+  },
+  {
+   "id": "wst-m54",
+   "markets": [
+    {
+     "sel": "Mark Williams",
+     "market": "Match winner",
+     "detail": "8-4 (66.7% of frames won); world no. 8 (\u00a3747,400)",
+     "prob": 0.7367349096922163,
+     "fair": 1.36,
+     "book": 1.3,
+     "american": "-278"
+    },
+    {
+     "sel": "Martin O'Donnell",
+     "market": "Match winner",
+     "detail": "8-5 (61.5% of frames won); outside the published top 36",
+     "prob": 0.26326509030778367,
+     "fair": 3.8,
+     "book": 3.63,
+     "american": "+280"
+    },
+    {
+     "sel": "Mark Williams -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.5732462537693396,
+     "fair": 1.74,
+     "book": 1.67,
+     "american": "-135"
+    },
+    {
+     "sel": "Martin O'Donnell +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away loses by one frame or fewer, or wins",
+     "prob": 0.4267537462306604,
+     "fair": 2.34,
+     "book": 2.24,
+     "american": "+134"
+    },
+    {
+     "sel": "Martin O'Donnell -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.16046791357522905,
+     "fair": 6.23,
+     "book": 5.96,
+     "american": "+523"
+    },
+    {
+     "sel": "Mark Williams +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home loses by one frame or fewer, or wins",
+     "prob": 0.839532086424771,
+     "fair": 1.19,
+     "book": 1.14,
+     "american": "-526"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total frames",
+     "detail": "the match reaches a deciding frame or a 4-2/2-4 finish",
+     "prob": 0.5617529696211719,
+     "fair": 1.78,
+     "book": 1.7,
+     "american": "-128"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total frames",
+     "detail": "4-1, 1-4, 4-0 or 0-4",
+     "prob": 0.43824703037882806,
+     "fair": 2.28,
+     "book": 2.18,
+     "american": "+128"
+    }
+   ]
+  },
+  {
+   "id": "wst-m53",
+   "markets": [
+    {
+     "sel": "David Gilbert",
+     "market": "Match winner",
+     "detail": "8-4 (66.7% of frames won); world no. 34 (\u00a3221,200)",
+     "prob": 0.5069995427025188,
+     "fair": 1.97,
+     "book": 1.89,
+     "american": "-103"
+    },
+    {
+     "sel": "Ka Wai Cheung",
+     "market": "Match winner",
+     "detail": "8-3 (72.7% of frames won); outside the published top 36",
+     "prob": 0.4930004572974812,
+     "fair": 2.03,
+     "book": 1.94,
+     "american": "+103"
+    },
+    {
+     "sel": "David Gilbert -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.3497688882184886,
+     "fair": 2.86,
+     "book": 2.74,
+     "american": "+186"
+    },
+    {
+     "sel": "Ka Wai Cheung +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away loses by one frame or fewer, or wins",
+     "prob": 0.6502311117815114,
+     "fair": 1.54,
+     "book": 1.47,
+     "american": "-185"
+    },
+    {
+     "sel": "Ka Wai Cheung -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.33776950833705904,
+     "fair": 2.96,
+     "book": 2.83,
+     "american": "+196"
+    },
+    {
+     "sel": "David Gilbert +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home loses by one frame or fewer, or wins",
+     "prob": 0.6622304916629409,
+     "fair": 1.51,
+     "book": 1.45,
+     "american": "-196"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total frames",
+     "detail": "the match reaches a deciding frame or a 4-2/2-4 finish",
+     "prob": 0.6249488035441579,
+     "fair": 1.6,
+     "book": 1.53,
+     "american": "-167"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total frames",
+     "detail": "4-1, 1-4, 4-0 or 0-4",
+     "prob": 0.37505119645584206,
+     "fair": 2.67,
+     "book": 2.55,
+     "american": "+167"
+    }
+   ]
+  },
+  {
+   "id": "wst-m55",
+   "markets": [
+    {
+     "sel": "Jak Jones",
+     "market": "Match winner",
+     "detail": "8-2 (80.0% of frames won); world no. 24 (\u00a3319,300)",
+     "prob": 0.6582113087295366,
+     "fair": 1.52,
+     "book": 1.45,
+     "american": "-192"
+    },
+    {
+     "sel": "Daniel Wells",
+     "market": "Match winner",
+     "detail": "8-5 (61.5% of frames won); outside the published top 36",
+     "prob": 0.3417886912704634,
+     "fair": 2.93,
+     "book": 2.8,
+     "american": "+193"
+    },
+    {
+     "sel": "Jak Jones -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.49036612300133575,
+     "fair": 2.04,
+     "book": 1.95,
+     "american": "+104"
+    },
+    {
+     "sel": "Daniel Wells +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away loses by one frame or fewer, or wins",
+     "prob": 0.5096338769986642,
+     "fair": 1.96,
+     "book": 1.88,
+     "american": "-104"
+    },
+    {
+     "sel": "Daniel Wells -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.21717975817076682,
+     "fair": 4.6,
+     "book": 4.41,
+     "american": "+360"
+    },
+    {
+     "sel": "Jak Jones +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home loses by one frame or fewer, or wins",
+     "prob": 0.7828202418292332,
+     "fair": 1.28,
+     "book": 1.22,
+     "american": "-357"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total frames",
+     "detail": "the match reaches a deciding frame or a 4-2/2-4 finish",
+     "prob": 0.5979779422449177,
+     "fair": 1.67,
+     "book": 1.6,
+     "american": "-149"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total frames",
+     "detail": "4-1, 1-4, 4-0 or 0-4",
+     "prob": 0.40202205775508226,
+     "fair": 2.49,
+     "book": 2.38,
+     "american": "+149"
+    }
+   ]
+  },
+  {
+   "id": "wst-m56",
+   "markets": [
+    {
+     "sel": "Jordan Brown",
+     "market": "Match winner",
+     "detail": "8-5 (61.5% of frames won); outside the published top 36",
+     "prob": 0.4185326302574632,
+     "fair": 2.39,
+     "book": 2.29,
+     "american": "+139"
+    },
+    {
+     "sel": "Scott Donaldson",
+     "market": "Match winner",
+     "detail": "8-1 (88.9% of frames won); outside the published top 36",
+     "prob": 0.5814673697425368,
+     "fair": 1.72,
+     "book": 1.65,
+     "american": "-139"
+    },
+    {
+     "sel": "Jordan Brown -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.2764055769999955,
+     "fair": 3.62,
+     "book": 3.46,
+     "american": "+262"
+    },
+    {
+     "sel": "Scott Donaldson +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away loses by one frame or fewer, or wins",
+     "prob": 0.7235944230000044,
+     "fair": 1.38,
+     "book": 1.32,
+     "american": "-263"
+    },
+    {
+     "sel": "Scott Donaldson -1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "away wins by two frames or more (4-0, 4-1 or 4-2)",
+     "prob": 0.4163248134786015,
+     "fair": 2.4,
+     "book": 2.3,
+     "american": "+140"
+    },
+    {
+     "sel": "Jordan Brown +1.5",
+     "market": "Frame handicap (1.5)",
+     "detail": "home loses by one frame or fewer, or wins",
+     "prob": 0.5836751865213985,
+     "fair": 1.71,
+     "book": 1.64,
+     "american": "-141"
+    },
+    {
+     "sel": "Over 5.5",
+     "market": "Total frames",
+     "detail": "the match reaches a deciding frame or a 4-2/2-4 finish",
+     "prob": 0.6180065460310981,
+     "fair": 1.62,
+     "book": 1.55,
+     "american": "-161"
+    },
+    {
+     "sel": "Under 5.5",
+     "market": "Total frames",
+     "detail": "4-1, 1-4, 4-0 or 0-4",
+     "prob": 0.38199345396890194,
+     "fair": 2.62,
+     "book": 2.51,
+     "american": "+162"
+    }
+   ]
+  },
+  {
+   "id": "f1-usgp-2026",
+   "markets": [
+    {
+     "sel": "Kimi Antonelli",
+     "market": "Race winner (outright)",
+     "detail": "Mercedes \u00b7 340 pts",
+     "prob": 0.22195555672094056,
+     "fair": 4.51,
+     "book": 4.19,
+     "american": "+351"
+    },
+    {
+     "sel": "George Russell",
+     "market": "Race winner (outright)",
+     "detail": "Mercedes \u00b7 238 pts",
+     "prob": 0.13238582216222067,
+     "fair": 7.55,
+     "book": 7.03,
+     "american": "+655"
+    },
+    {
+     "sel": "Lewis Hamilton",
+     "market": "Race winner (outright)",
+     "detail": "Ferrari \u00b7 229 pts",
+     "prob": 0.1252451182367829,
+     "fair": 7.98,
+     "book": 7.43,
+     "american": "+698"
+    },
+    {
+     "sel": "Max Verstappen",
+     "market": "Race winner (outright)",
+     "detail": "Red Bull Racing \u00b7 221 pts",
+     "prob": 0.11900958081693623,
+     "fair": 8.4,
+     "book": 7.82,
+     "american": "+740"
+    },
+    {
+     "sel": "Charles Leclerc",
+     "market": "Race winner (outright)",
+     "detail": "Ferrari \u00b7 215 pts",
+     "prob": 0.11440308421016124,
+     "fair": 8.74,
+     "book": 8.13,
+     "american": "+774"
+    },
+    {
+     "sel": "Lando Norris",
+     "market": "Race winner (outright)",
+     "detail": "McLaren \u00b7 201 pts",
+     "prob": 0.10389332331622196,
+     "fair": 9.63,
+     "book": 8.95,
+     "american": "+863"
+    },
+    {
+     "sel": "Oscar Piastri",
+     "market": "Race winner (outright)",
+     "detail": "McLaren \u00b7 138 pts",
+     "prob": 0.06103184919090362,
+     "fair": 16.38,
+     "book": 15.24,
+     "american": "+1538"
+    },
+    {
+     "sel": "Isack Hadjar",
+     "market": "Race winner (outright)",
+     "detail": "Red Bull Racing \u00b7 97 pts",
+     "prob": 0.03751799508643037,
+     "fair": 26.65,
+     "book": 24.79,
+     "american": "+2565"
+    },
+    {
+     "sel": "Liam Lawson",
+     "market": "Race winner (outright)",
+     "detail": "Racing Bulls \u00b7 75 pts",
+     "prob": 0.026563931045568978,
+     "fair": 37.65,
+     "book": 35.02,
+     "american": "+3665"
+    },
+    {
+     "sel": "Pierre Gasly",
+     "market": "Race winner (outright)",
+     "detail": "Alpine \u00b7 41 pts",
+     "prob": 0.0123457995059149,
+     "fair": 81.0,
+     "book": 75.35,
+     "american": "+8000"
+    },
+    {
+     "sel": "Arvid Lindblad",
+     "market": "Race winner (outright)",
+     "detail": "Racing Bulls \u00b7 38 pts",
+     "prob": 0.011272644516669443,
+     "fair": 88.71,
+     "book": 82.52,
+     "american": "+8771"
+    },
+    {
+     "sel": "Franco Colapinto",
+     "market": "Race winner (outright)",
+     "detail": "Alpine \u00b7 27 pts",
+     "prob": 0.007628981148862952,
+     "fair": 131.08,
+     "book": 121.93,
+     "american": "+13008"
+    },
+    {
+     "sel": "Oliver Bearman",
+     "market": "Race winner (outright)",
+     "detail": "Haas \u00b7 23 pts",
+     "prob": 0.00642591335664605,
+     "fair": 155.62,
+     "book": 144.76,
+     "american": "+15462"
+    },
+    {
+     "sel": "Nico Hulkenberg",
+     "market": "Race winner (outright)",
+     "detail": "Audi \u00b7 13 pts",
+     "prob": 0.0037390021052573896,
+     "fair": 267.45,
+     "book": 248.79,
+     "american": "+26645"
+    },
+    {
+     "sel": "Gabriel Bortoleto",
+     "market": "Race winner (outright)",
+     "detail": "Audi \u00b7 10 pts",
+     "prob": 0.0030318586444984105,
+     "fair": 329.83,
+     "book": 306.82,
+     "american": "+32883"
+    },
+    {
+     "sel": "Esteban Ocon",
+     "market": "Race winner (outright)",
+     "detail": "Haas \u00b7 7 pts",
+     "prob": 0.0023759502227003715,
+     "fair": 420.88,
+     "book": 391.52,
+     "american": "+41988"
+    },
+    {
+     "sel": "Fernando Alonso",
+     "market": "Race winner (outright)",
+     "detail": "Aston Martin \u00b7 7 pts",
+     "prob": 0.0023759502227003715,
+     "fair": 420.88,
+     "book": 391.52,
+     "american": "+41988"
+    },
+    {
+     "sel": "Carlos Sainz",
+     "market": "Race winner (outright)",
+     "detail": "Williams \u00b7 7 pts",
+     "prob": 0.0023759502227003715,
+     "fair": 420.88,
+     "book": 391.52,
+     "american": "+41988"
+    },
+    {
+     "sel": "Alexander Albon",
+     "market": "Race winner (outright)",
+     "detail": "Williams \u00b7 5 pts",
+     "prob": 0.0019692499551143073,
+     "fair": 507.81,
+     "book": 472.38,
+     "american": "+50681"
+    },
+    {
+     "sel": "Yuki Tsunoda",
+     "market": "Race winner (outright)",
+     "detail": "Racing Bulls \u00b7 1 pts",
+     "prob": 0.0012366676020829361,
+     "fair": 808.62,
+     "book": 752.21,
+     "american": "+80762"
+    },
+    {
+     "sel": "Lance Stroll",
+     "market": "Race winner (outright)",
+     "detail": "Aston Martin \u00b7 0 pts",
+     "prob": 0.00107192390356194,
+     "fair": 932.9,
+     "book": 867.82,
+     "american": "+93190"
+    },
+    {
+     "sel": "Valtteri Bottas",
+     "market": "Race winner (outright)",
+     "detail": "Cadillac \u00b7 0 pts",
+     "prob": 0.00107192390356194,
+     "fair": 932.9,
+     "book": 867.82,
+     "american": "+93190"
+    },
+    {
+     "sel": "Sergio Perez",
+     "market": "Race winner (outright)",
+     "detail": "Cadillac \u00b7 0 pts",
+     "prob": 0.00107192390356194,
+     "fair": 932.9,
+     "book": 867.82,
+     "american": "+93190"
+    }
+   ]
+  }
+ ]
+}

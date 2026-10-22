@@ -1,0 +1,109 @@
+{
+ "session": "7a5b5360-olbg1",
+ "task": "T41",
+ "retrieved_utc": "2026-10-22T01:30:00Z",
+ "window": "22-26 October 2026",
+ "assumptions": {
+  "moneyline_shrink": {
+   "Baseball": {
+    "k": 0.5,
+    "home": 0.16,
+    "why": "k shrinks the difference between two clubs' season log-odds; 0.50 reflects that a best-of-series meeting between a .636 and a .605 club is close. Home edge 0.16 in logit units is the long-run MLB home-field figure (~54%)."
+   },
+   "Ice Hockey": {
+    "k": 0.55,
+    "home": 0.2,
+    "why": "Points-percentage log-odds shrunk by 0.55 (an 11-game sample is noisy) plus a 0.20 home term (~55% home win rate in the NHL)."
+   },
+   "Snooker": {
+    "k": 2.4,
+    "home": 0.0,
+    "why": "Strength is a 0-100 blend of frames won in this event (50%) and a rank score (37-position)/36 where the player is inside the published top 36 (50%). The 2.40 coefficient maps a 0.20 strength gap onto roughly a 61% best-of-7 win chance."
+   },
+   "Rugby Union": {
+    "k": 0.0,
+    "home": 0.12,
+    "why": "No league table was readable, so the strength term is switched off entirely and only a 0.12 home term is applied. Confidence is capped at Low."
+   }
+  },
+  "totals": {
+   "Ice Hockey": {
+    "mean": 6.0,
+    "sd": 2.0,
+    "line": 5.5,
+    "unit": "goals"
+   },
+   "Baseball": {
+    "mean": 8.6,
+    "sd": 4.2,
+    "line": 8.5,
+    "unit": "runs"
+   },
+   "Rugby Union": {
+    "mean": 45.0,
+    "sd": 13.0,
+    "line": 45.5,
+    "unit": "points"
+   },
+   "Snooker": {
+    "line": 5.5,
+    "unit": "frames",
+    "why": "Exact best-of-7 distribution, no approximation."
+   }
+  },
+  "handicap": {
+   "Ice Hockey": {
+    "line": 1.5,
+    "sd": 2.3,
+    "mu_scale": 1.6,
+    "unit": "goals"
+   },
+   "Baseball": {
+    "line": 1.5,
+    "sd": 4.0,
+    "mu_scale": 1.1,
+    "unit": "runs"
+   },
+   "Rugby Union": {
+    "line": 7.5,
+    "sd": 14.0,
+    "mu_scale": 6.0,
+    "unit": "points"
+   },
+   "Snooker": {
+    "line": 1.5,
+    "unit": "frames",
+    "why": "Exact best-of-7 distribution."
+   }
+  },
+  "field": {
+   "exponent": 1.5,
+   "offset": 10.0,
+   "why": "Outright weight = (points + 10)^1.5. The offset keeps zero-point drivers priced as longshots rather than at infinite odds; the exponent prices a 340-point leader at roughly 22% in a 23-driver field."
+  },
+  "overround": {
+   "two_way": 0.045,
+   "three_way": 0.06,
+   "field": 0.075
+  },
+  "tiers": {
+   "high": 0.7,
+   "medium": 0.55
+  },
+  "band": {
+   "min_decimal": 1.4,
+   "max_decimal": 101.0,
+   "note": "Brief: focus on selections priced between -250 (1.40) and +10000 (101.0)."
+  }
+ },
+ "counts": {
+  "fixtures": 32,
+  "markets": 231,
+  "picks": 32,
+  "predictions": 18,
+  "high_probability_selections": 26,
+  "picks_high": 4,
+  "picks_medium": 14,
+  "picks_low": 14
+ }
+}
