@@ -2,7 +2,15 @@
 
 ## Publication status
 
-PR [#88](https://github.com/buffedlizard55-lab/OLBG1/pull/88) is the integration vehicle. **PR #88 is merged and its production deployment is independently confirmed.** A small compatibility-route/publication-gate follow-up is being prepared; its separate publication is not yet claimed.
+**Published and independently confirmed.** PR [#88](https://github.com/buffedlizard55-lab/OLBG1/pull/88) delivered the canonical integration; PR [#103](https://github.com/buffedlizard55-lab/OLBG1/pull/103) delivered the route/source-integrity follow-up and the independently checked Valencia quarantine. Both are merged. This is a **partial research release**, not completed worldwide collection or a verified High-pick feed.
+
+**Final production:** [run 39764029573](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39764029573), **success**, SHA `cdbc90022f7c38acfe91d7374e0255818f15498f`, Pages job `119775703569`. Run updated **10:36:47Z**. Live manifest revision matches exactly; it was generated **10:35:17Z**.
+
+**Verified live counts:** 147 captured /145 window listings; 61 experimental price books; 86 markets /172 fair outcome prices; 54 Low /0 Medium /0 High; 36 official-source checks. All 17 categories remain partial/unverified. Values change with refresh/expiry.
+
+**Validation:** 95 pipeline +38 preserved tests (133 total), strict committed-root/data/source/time/price/link/fragment gates and real desktop/mobile browser tests passed. Live Basketball has blank Paris–Valencia estimate/selection; Flagged contains F-257E-19; the old verification route links explicitly to current evidence and its archive. Live reads completed before 2026-10-22T10:46:35Z.
+
+**Historical checkpoints below are preserved as execution history, not substituted for this corrected receipt.**
 
 ## Original import checkpoint (before the Valencia follow-up)
 
@@ -46,7 +54,7 @@ Final merge SHA, current-session workflow receipt and live-content checks will b
 
 ## Follow-up gates
 
-Compatibility routes point to current views and their clearly marked archives; prior root pages cannot silently compete. The workflow validates the committed canonical tree before rebuilding, including its snapshot markers. UTC sort ordering and source-date labels are explicit. Only accepted parsed JSON response proof is publicly exported; unparsed probe HTML is not published as evidence. **94 pipeline + 38 preserved tests pass locally**, with the expanded browser suite. This follow-up's own merge/publication receipt will be added after it occurs.
+Compatibility routes point to current views and their clearly marked archives; prior root pages cannot silently compete. The workflow validates the committed canonical tree before rebuilding, including its snapshot markers. UTC sort ordering and source-date labels are explicit. Only accepted parsed JSON response proof is publicly exported; unparsed probe HTML is not published as evidence. **94 pipeline + 38 preserved tests pass locally**, with the expanded browser suite. The final publication receipt is recorded at the top of this report.
 
 ## Cross-source record correction in the follow-up
 
