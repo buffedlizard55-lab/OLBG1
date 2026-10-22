@@ -1529,3 +1529,14 @@ the companion bar only. Filed here instead of editing another session's generato
 * **`scripts/final_audit.py`** re-run on `main` after the merge: **exit 0**, regenerating
   `reports/FINAL_INTEGRATION_AUDIT.md` byte-identically (134 primary rows, 29 high-pick rows, 16 archival
   table-link review entries). The post-T41 audit confirmation that §31.2 listed as outstanding is closed.
+* **PR #53** — https://github.com/buffedlizard55-lab/OLBG1/pull/53 — **MERGED** 2026-10-22T01:52:59Z,
+  merge commit `747c78186489f66176b83806be078f5a7ee57495` (this record). Documentation only.
+* **Whole-desk live sweep.** Beyond the landing page, `/7a5b5360/markets.html` (all 231 selections),
+  `/7a5b5360/picks.html` (32 rows with per-row official links), `/7a5b5360/flagged.html` (14 data flags,
+  F-7A-01 … F-7A-14, each with its source or an explicit "no external source" note) and
+  `/7a5b5360/assets/style.css` all return their real content from the CDN. No page on the desk 404s once
+  the pre-deploy cache entry is bypassed, so the "never merge a broken site" gate holds in production, not
+  only under `scripts/s7a5b5360_validate.py`.
+* **Root navigation.** `scripts/build_site.py` line 265 now emits the companion-bar link
+  `7a5b5360/index.html` ("Fresh Desk · 32 · 22–26 Oct 2026") and line 396 emits the README-style entry, so a
+  regeneration of the root page no longer drops this desk. Confirmed live on `/OLBG1/index.html`.
