@@ -90,7 +90,7 @@ def page(path, title, desc, body, active, extra_head=""):
 <div class="foot">Official-source fixtures, our own lines.<br>Blank means unverified.<br><br>
 18+ · No guarantees. Prices are estimates, not bookmaker offers.<br><br>
 <a style="color:#93c5fd" href="{REPO}">Repository</a></div></aside>
-<main class="main"><div class="top"><span class="pill">Snapshot {e(D.BUILT)}</span>
+<main class="main"><div class="top"><span class="pill">Evidence read {e(D.READ_WINDOW)}</span>
 <span class="pill">17 in-scope sports · 8 excluded</span>
 <a class="pill" href="{up}flagged.html">Flags do not block publication</a></div>
 {body}
