@@ -1887,9 +1887,9 @@ SHA completed **success**; the Pages API reports `status: built`.
 | `/f71557b5/index.html?v=1` | 15 High picks with model %, fair price, US price, 5% book-equivalent and per-row official links |
 | `/f71557b5/predictions.html?v=2` | all 15 previews (58–81 words) with their verified-input tables and the separate match-winner call under each |
 
-**Further follow-ups.** PR #79 (merged 2026-10-22T08:0xZ) fixed the High table's source column so a
+**Further follow-ups.** PR #79 (merged 2026-10-22T07:31:26Z as `17c4530`) fixed the High table's source column so a
 `re-fetched today` pick links the endpoint actually read, and corrected the merge-commit SHA in this section.
-PR #81 (merged 2026-10-22T08:1xZ) published the wrong-page source anomaly found while reading the rendered site:
+PR #81 (merged 2026-10-22T07:33:55Z as `884f01d`) published the wrong-page source anomaly found while reading the rendered site:
 the Barça v Montpellier row cites a link whose text claims a Barcelona result while its URL is a Dinamo Bucuresti
 club page, so that claim cannot be checked and no scoreline is quoted for the fixture. Deployment run **39741378341**
 for `main` `159d727` (which includes PR #80 from a concurrent session) completed **success**; the Pages API reports
