@@ -2273,3 +2273,12 @@ Root T35 (AFLW re-price), T10/T11/T12/T19 (older queued), PR #40 (open/conflicti
 **Renumbering note (merge, 2026-10-22T08:20Z):** while this branch was open, `origin/main` advanced through PRs #79–#86 (`3d2d578a` T57/§42, `e6716490` T58/§43, `7ad0d336` T59/§44), so this task is recorded as **T60 / §45** and its generated pages/report were re-titled accordingly before merge. The COORDINATION conflict was resolved by keeping every merged row/section verbatim and appending this session's row/section under the new numbers; no other file conflicted (`index.html` auto-merged and contains both desks' links — verified before merge commit; note the e6716490 root link lives in `index.html`/`README.md` rather than `scripts/build_site.py`, a pre-existing condition left untouched).
 
 ---
+
+### 45.1 Publication record (PR #87)
+
+- **PR #87** — https://github.com/buffedlizard55-lab/OLBG1/pull/87 — **MERGED** 2026-10-22T07:53:04Z, merge commit `31c63ba8ac441900794df9653b70c710de0d317f` (title still reads “T57” — the `gh pr edit` rename failed on a GraphQL projects-classic error; the desk itself is T60/§45 everywhere in-tree). Opened and merged without waiting for review, per the brief.
+- Pre-merge gates on the merged tree: repo `validate.py` PASSED (0 errors), `s8fc47dcb_validate.py` PASSED, `se6716490_validate.py` / `s7ad0d336_validate.py` / `sf71557b5_validate.py` / `v3_validate.py` PASSED.
+- **Pages:** successive `pages-build-deployment` runs for the rapid PR #79–#87 merges were cancelled in queue and the Pages API reported `errored` with the live root still serving the `e6716490`-era build at first check (~08:00Z, `/8fc47dcb/` 404). This §45.1 follow-up merge is the deliberate re-trigger; the live verification result is recorded in §45.2.
+- The GitHub REST API rate-limited this account during the deploy check (HTTP 403 at 08:00–08:01Z); live-state checks were therefore made by fetching the published `github.io` URLs directly.
+
+---
