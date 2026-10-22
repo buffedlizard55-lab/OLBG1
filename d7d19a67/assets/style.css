@@ -1,0 +1,68 @@
+:root{--ink:#101820;--mut:#5b6b7b;--line:#dfe6ec;--bg:#f6f8fa;--card:#fff;--acc:#0b5f8a;
+--hi:#0f7b4d;--hi-bg:#e7f6ee;--md:#8a5a00;--md-bg:#fdf3df;--lo:#5b6b7b;--lo-bg:#eef1f4;
+--bad:#a02020;--bad-bg:#fdecec}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:9}
+.topbar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;
+background:#0d1b26;color:#eaf1f6;padding:14px 20px}
+.brand{display:flex;gap:10px;align-items:center}
+.mark{width:12px;height:12px;border-radius:3px;background:#4ea3d1;display:inline-block}
+.brand strong{display:block;font-size:16px;letter-spacing:.2px}
+.brand small{color:#9fb6c6;font-size:12px}
+.meta{font-size:12px;color:#9fb6c6}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4ea3d1;margin-right:6px}
+.nav{display:flex;flex-wrap:wrap;gap:4px;background:#12283a;padding:8px 16px}
+.nav-link{color:#cfe0ec;text-decoration:none;font-size:13px;padding:6px 10px;border-radius:6px}
+.nav-link:hover{background:#1b3b52}
+.nav-link.active{background:#4ea3d1;color:#08131c;font-weight:600}
+main{max-width:1180px;margin:0 auto;padding:22px 20px 60px}
+.page-head .eyebrow{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin:0}
+h1{font-size:26px;margin:6px 0 8px}
+h2{font-size:19px;margin:30px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:16px;margin:20px 0 6px}
+.lede{color:var(--mut);max-width:80ch;margin:0 0 6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:14px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi b{display:block;font-size:24px;line-height:1.2}
+.kpi span{color:var(--mut);font-size:12px}
+table{width:100%;border-collapse:collapse;background:var(--card);font-size:13.5px;margin:10px 0}
+caption{caption-side:top;text-align:left;color:var(--mut);font-size:12.5px;padding:4px 0}
+th,td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+th{background:#eef3f7;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:#33475b}
+tbody tr:hover{background:#fafcfe}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.wrap{overflow-x:auto}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11.5px;font-weight:700;
+letter-spacing:.02em;white-space:nowrap}
+.t-high{background:var(--hi-bg);color:var(--hi)}
+.t-medium{background:var(--md-bg);color:var(--md)}
+.t-low{background:var(--lo-bg);color:var(--lo)}
+.t-none{background:#fff;color:var(--mut);border:1px dashed var(--line)}
+.flag{background:var(--bad-bg);color:var(--bad);border-radius:4px;padding:1px 5px;font-size:11px;
+font-weight:700;white-space:nowrap}
+.blank{color:var(--mut);font-style:italic}
+.note{border-left:3px solid var(--acc);background:#eef6fb;padding:10px 12px;border-radius:0 8px 8px 0;
+margin:12px 0;font-size:13.5px}
+.warn{border-left:3px solid var(--bad);background:var(--bad-bg);padding:10px 12px;border-radius:0 8px 8px 0;
+margin:12px 0;font-size:13.5px}
+.ok{border-left:3px solid var(--hi);background:var(--hi-bg);padding:10px 12px;border-radius:0 8px 8px 0;
+margin:12px 0;font-size:13.5px}
+.pred{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:14px 0}
+.pred p.text{font-size:15.5px;line-height:1.65;margin:8px 0 10px}
+.pred .who{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
+ul{margin:8px 0 8px 20px;padding:0}
+li{margin:3px 0}
+code{background:#eef1f4;border-radius:4px;padding:1px 5px;font-size:12.5px}
+pre{background:#0d1b26;color:#dce8f1;padding:10px 12px;border-radius:8px;overflow-x:auto;font-size:12.5px}
+.muted{color:var(--mut);font-size:12.5px}
+.foot{border-top:1px solid var(--line);margin-top:30px;padding:16px 20px;color:var(--mut);font-size:12.5px;
+max-width:1180px;margin-left:auto;margin-right:auto}
+.sev-high{color:var(--bad);font-weight:700}
+.sev-medium{color:var(--md);font-weight:700}
+.sev-low{color:var(--mut);font-weight:700}
+.sev-info{color:var(--acc);font-weight:700}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Repository audit · OLBG research desk d7d19a67</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="brand"><span class="mark" aria-hidden="true"></span>
+    <span><strong>OLBG research desk d7d19a67</strong><small>independent · official sources only · lines originated, never copied</small></span>
+  </div>
+  <div class="meta"><span class="dot"></span> official reads 2026-10-22T12:55:00Z · desk assembled 2026-10-22T13:01:26Z</div>
+</header>
+<nav class="nav" aria-label="Desk sections"><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="matches.html">Match list</a><a class="nav-link" href="markets.html">Market explorer</a><a class="nav-link" href="high-confidence.html">High confidence</a><a class="nav-link" href="predictions.html">Predictions</a><a class="nav-link" href="sports.html">All sports</a><a class="nav-link" href="analysis.html">Analysis</a><a class="nav-link" href="sources.html">Sources</a><a class="nav-link" href="flagged.html">Flagged for review</a><a class="nav-link active" href="repo-audit.html">Repository audit</a></nav>
+<main id="main">
+<header class="page-head">
+  <p class="eyebrow">Session d7d19a67-olbg1 · task T65 · rolling window 2026-10-22T12:55:00Z to 2026-10-29T12:55:00Z</p>
+  <h1>Repository audit</h1>
+  <p class="lede">13 findings with file:line evidence and GitHub links: coordination-board numbering and stale claims, duplicate task ids, page weights, link and source-link integrity, evidence naming, and this session's own scope compliance.</p>
+</header>
+<p>Read-only, offline audit of this repository, run at 2026-10-22T12:55:00Z on branch <code>arena/d7d19a67-olbg1</code> at
+commit <code>a272766</code>. Every finding is computed from files in the working tree at build time and quotes
+the line it found, so nothing is asserted from memory; the links open the exact file and line on GitHub at
+the audited commit for manual review. No file outside this session's claimed scope was modified - that is
+itself checked (<a href="#A-D7D-14">A-D7D-14</a>).</p>
+<div class="grid"><div class="kpi"><b>1</b><span>high severity</span></div><div class="kpi"><b>5</b><span>medium severity</span></div><div class="kpi"><b>2</b><span>low severity</span></div><div class="kpi"><b>5</b><span>info severity</span></div></div>
+<article class="card" id="A-D7D-06">
+<h3>A-D7D-06 &mdash; Task rows still open long after the 60-minute takeover rule</h3>
+<p class="muted"><span class="sev-high">HIGH</span> · area COORDINATION.md §1 · status open · found 2026-10-22T12:55:00Z</p>
+<p>§0.4 lets a claim be taken over when it is more than 60 minutes old with no commits, but these rows are still published as &#x27;in progress&#x27; or &#x27;queued&#x27; hours later. A new session reading the board cannot tell whether the work is live, abandoned or already done elsewhere, which is how the same task ends up executed twice.</p>
+<div class="wrap"><table><thead><tr><th>Where (links open the file on GitHub at the audited commit)</th>
+<th>What was found</th></tr></thead><tbody><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L77" rel="noopener noreferrer">COORDINATION.md:77</a></td><td>T9 · f7fa77fc-olbg1 · in progress · started 2026-10-21T05:26Z · age 1889 min · commits whose message names the session: 6</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L78" rel="noopener noreferrer">COORDINATION.md:78</a></td><td>T10 · f7fa77fc-olbg1 · queued · started — · age no start time recorded · commits whose message names the session: not measured (no start time)</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L79" rel="noopener noreferrer">COORDINATION.md:79</a></td><td>T11 · f7fa77fc-olbg1 · queued · started — · age no start time recorded · commits whose message names the session: not measured (no start time)</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L80" rel="noopener noreferrer">COORDINATION.md:80</a></td><td>T12 · f7fa77fc-olbg1 · queued · started — · age no start time recorded · commits whose message names the session: not measured (no start time)</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L89" rel="noopener noreferrer">COORDINATION.md:89</a></td><td>T19 · 76950c25-olbg1 · in progress · started — · age no start time recorded · commits whose message names the session: not measured (no start time)</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L112" rel="noopener noreferrer">COORDINATION.md:112</a></td><td>T51 · a570c470-olbg1 · in progress · started 2026-10-22T02:51Z · age 604 min · commits whose message names the session: 10</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L113" rel="noopener noreferrer">COORDINATION.md:113</a></td><td>T52 · a570c470-olbg1 · in progress · started 2026-10-22T02:51Z · age 604 min · commits whose message names the session: 10</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L114" rel="noopener noreferrer">COORDINATION.md:114</a></td><td>T53 · a570c470-olbg1 · queued · started 2026-10-22T02:51Z · age 604 min · commits whose message names the session: 10</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L130" rel="noopener noreferrer">COORDINATION.md:130</a></td><td>T65 · d7d19a67-olbg1 · in progress · started 2026-10-22T12:20Z · age 35 min · commits whose message names the session: 1</td></tr></tbody></table></div>
+<p class="muted"><strong>Re-check:</strong> <code>grep -n &#x27;in progress\|queued&#x27; COORDINATION.md | head -20 &amp;&amp; git log --all --oneline --grep=f7fa77fc | head</code></p>
+</article><article class="card" id="A-D7D-01">
+<h3>A-D7D-01 &mdash; Duplicate section numbers</h3>
+<p class="muted"><span class="sev-medium">MEDIUM</span> · area COORDINATION.md · status open · found 2026-10-22T12:55:00Z</p>
+<p>Two pairs of section numbers are reused (§4 and §43), so a citation such as &#x27;see §43&#x27; is ambiguous and an append-only log can silently overwrite a neighbour&#x27;s record during a rebase. The brief&#x27;s coordination protocol depends on section numbers being unique.</p>
+<div class="wrap"><table><thead><tr><th>Where (links open the file on GitHub at the audited commit)</th>
+<th>What was found</th></tr></thead><tbody><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L178" rel="noopener noreferrer">COORDINATION.md:178</a></td><td>## 4. Requests and conflict log</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L2310" rel="noopener noreferrer">COORDINATION.md:2310</a></td><td>## 4. Requests and conflict log (append-only)</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L702" rel="noopener noreferrer">COORDINATION.md:702</a></td><td>## 13. Session `8e12b936-olbg1` — public review page</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L709" rel="noopener noreferrer">COORDINATION.md:709</a></td><td>## 13. Independent second-pass market-coverage and link audit (session `e92c2bf4-olbg1`)</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L2140" rel="noopener noreferrer">COORDINATION.md:2140</a></td><td>## 43. Session `e6716490-olbg1` — consolidated 17-sport desk, live re-read of three official endpoints, band-excluded ledger and publication (T58)</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L2505" rel="noopener noreferrer">COORDINATION.md:2505</a></td><td>## 43. Session `f1c13c19-olbg1` — T63 Fresh-Harvest Verified Desk (22 Oct 2026)</td></tr></tbody></table></div>
+<p class="muted"><strong>Re-check:</strong> <code>grep -n &#x27;^## &#x27; COORDINATION.md | sort -t&#x27; &#x27; -k2 -n</code></p>
+</article><article class="card" id="A-D7D-02">
+<h3>A-D7D-02 &mdash; Section numbers out of ascending order</h3>
+<p class="muted"><span class="sev-medium">MEDIUM</span> · area COORDINATION.md · status open · found 2026-10-22T12:55:00Z</p>
+<p>Section numbers decrease partway through the file (a lower number appended after a higher one), which breaks the append-only ordering convention in §0 and makes &#x27;the latest record&#x27; hard to locate by number alone.</p>
+<div class="wrap"><table><thead><tr><th>Where (links open the file on GitHub at the audited commit)</th>
+<th>What was found</th></tr></thead><tbody><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L2310" rel="noopener noreferrer">COORDINATION.md:2310</a></td><td>§4 follows §44 — ## 4. Requests and conflict log (append-only)</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L2505" rel="noopener noreferrer">COORDINATION.md:2505</a></td><td>§43 follows §46 — ## 43. Session `f1c13c19-olbg1` — T63 Fresh-Harvest Verified Desk (22 Oct 2026)</td></tr></tbody></table></div>
+<p class="muted"><strong>Re-check:</strong> <code>grep -n &#x27;^## [0-9]&#x27; COORDINATION.md</code></p>
+</article><article class="card" id="A-D7D-05">
+<h3>A-D7D-05 &mdash; Task ids claimed on more than one row</h3>
+<p class="muted"><span class="sev-medium">MEDIUM</span> · area COORDINATION.md §1 · status open · found 2026-10-22T12:55:00Z</p>
+<p>Two sessions holding the same task id is the collision the brief&#x27;s claim protocol exists to prevent; the rows survive side by side, so the board no longer says who owns the work.</p>
+<div class="wrap"><table><thead><tr><th>Where (links open the file on GitHub at the audited commit)</th>
+<th>What was found</th></tr></thead><tbody><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L123" rel="noopener noreferrer">COORDINATION.md:123</a></td><td>T63 · f1c13c19-olbg1 · done · started 2026-10-22T07:35Z</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L125" rel="noopener noreferrer">COORDINATION.md:125</a></td><td>T63 · 92af340c-olbg1 · done · started 2026-10-22T07:30Z</td></tr></tbody></table></div>
+<p class="muted"><strong>Re-check:</strong> <code>grep -n &#x27;^| T&#x27; COORDINATION.md | awk -F&#x27;|&#x27; &#x27;{print $2}&#x27; | sort | uniq -d</code></p>
+</article><article class="card" id="A-D7D-07">
+<h3>A-D7D-07 &mdash; Very large single HTML pages on GitHub Pages</h3>
+<p class="muted"><span class="sev-medium">MEDIUM</span> · area published pages · status open · found 2026-10-22T12:55:00Z</p>
+<p>A page above a few hundred kilobytes is slow on mobile and expensive to re-verify by hand. These are generated from row-level ledgers, so the payload grows with every pass instead of being paginated or split per sport.</p>
+<div class="wrap"><table><thead><tr><th>Where (links open the file on GitHub at the audited commit)</th>
+<th>What was found</th></tr></thead><tbody><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/1a421e41/markets.html#L1" rel="noopener noreferrer">1a421e41/markets.html:1</a></td><td>1039 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/f71557b5/markets.html#L1" rel="noopener noreferrer">f71557b5/markets.html:1</a></td><td>949 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/verification.html#L1" rel="noopener noreferrer">verification.html:1</a></td><td>827 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/f7fa77fc/picks.html#L1" rel="noopener noreferrer">f7fa77fc/picks.html:1</a></td><td>697 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/archive/pre-release-20261022/picks.html#L1" rel="noopener noreferrer">archive/pre-release-20261022/picks.html:1</a></td><td>695 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/c17a9192/index.html#L1" rel="noopener noreferrer">c17a9192/index.html:1</a></td><td>467 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/984d417f/index.html#L1" rel="noopener noreferrer">984d417f/index.html:1</a></td><td>446 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/1a421e41/sports/basketball.html#L1" rel="noopener noreferrer">1a421e41/sports/basketball.html:1</a></td><td>432 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/e6fc2f12/markets.html#L1" rel="noopener noreferrer">e6fc2f12/markets.html:1</a></td><td>379 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/8fc47dcb/picks.html#L1" rel="noopener noreferrer">8fc47dcb/picks.html:1</a></td><td>356 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/a570c470/lines.html#L1" rel="noopener noreferrer">a570c470/lines.html:1</a></td><td>259 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/e6fc2f12/sports/ice-hockey.html#L1" rel="noopener noreferrer">e6fc2f12/sports/ice-hockey.html:1</a></td><td>230 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/ccb6bde2/sports/basketball.html#L1" rel="noopener noreferrer">ccb6bde2/sports/basketball.html:1</a></td><td>229 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/7ad0d336/picks.html#L1" rel="noopener noreferrer">7ad0d336/picks.html:1</a></td><td>224 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/audit/rows-22.html#L1" rel="noopener noreferrer">audit/rows-22.html:1</a></td><td>214 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/audit/rows-20.html#L1" rel="noopener noreferrer">audit/rows-20.html:1</a></td><td>212 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/audit/rows-16.html#L1" rel="noopener noreferrer">audit/rows-16.html:1</a></td><td>208 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/audit/rows-17.html#L1" rel="noopener noreferrer">audit/rows-17.html:1</a></td><td>208 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/audit/rows-01.html#L1" rel="noopener noreferrer">audit/rows-01.html:1</a></td><td>206 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/audit/rows-38.html#L1" rel="noopener noreferrer">audit/rows-38.html:1</a></td><td>200 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/audit/rows-11.html#L1" rel="noopener noreferrer">audit/rows-11.html:1</a></td><td>199 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/audit/rows-37.html#L1" rel="noopener noreferrer">audit/rows-37.html:1</a></td><td>199 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/audit/rows-15.html#L1" rel="noopener noreferrer">audit/rows-15.html:1</a></td><td>199 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/audit/rows-26.html#L1" rel="noopener noreferrer">audit/rows-26.html:1</a></td><td>197 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/audit/rows-08.html#L1" rel="noopener noreferrer">audit/rows-08.html:1</a></td><td>195 KB</td></tr><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/audit/rows-18.html#L1" rel="noopener noreferrer">audit/rows-18.html:1</a></td><td>195 KB</td></tr></tbody></table></div>
+<p class="muted"><strong>Re-check:</strong> <code>git ls-files &#x27;*.html&#x27; | xargs ls -l | sort -k5 -n | tail -8</code></p>
+</article><article class="card" id="A-D7D-12">
+<h3>A-D7D-12 &mdash; Files named &#x27;evidence&#x27; hold network-attempt logs, not verified values</h3>
+<p class="muted"><span class="sev-medium">MEDIUM</span> · area data/current/evidence · status open · found 2026-10-22T12:55:00Z</p>
+<p>The directory name invites a reader to treat these files as proof of a fixture or a price. They record the official URLs a previous session tried plus the transport outcome, so they are useful for discovery and for reproducing a read, but no value in them is verification. The desk published here uses them only to find official URLs and re-reads every value itself.</p>
+<div class="wrap"><table><thead><tr><th>Where (links open the file on GitHub at the audited commit)</th>
+<th>What was found</th></tr></thead><tbody><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/data/current/evidence/aflw-8970.json#L1" rel="noopener noreferrer">data/current/evidence/aflw-8970.json:1</a></td><td>34 attempt logs; keys seen: complete, excerpt_policy, final_url, http_status, id, method, notes, observations, observed_after, observed_before, raw_response_sha256, role, scope, sha256, sport, url; 12 of the first 12 carry no response payload</td></tr></tbody></table></div>
+<p class="muted"><strong>Re-check:</strong> <code>ls data/current/evidence | head &amp;&amp; python3 -c &quot;import json,glob;print(list(json.load(open(sorted(glob.glob(&#x27;data/current/evidence/*.json&#x27;))[0])).keys()))&quot;</code></p>
+</article><article class="card" id="A-D7D-03">
+<h3>A-D7D-03 &mdash; Session record without a section number</h3>
+<p class="muted"><span class="sev-low">LOW</span> · area COORDINATION.md · status open · found 2026-10-22T12:55:00Z</p>
+<p>Every other session record is numbered, so an unnumbered record cannot be cited in a task row or a handoff note and is invisible to number-based collision checks.</p>
+<div class="wrap"><table><thead><tr><th>Where (links open the file on GitHub at the audited commit)</th>
+<th>What was found</th></tr></thead><tbody><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L2668" rel="noopener noreferrer">COORDINATION.md:2668</a></td><td>## Session `257e6674-olbg1` — T257E evidence-first canonical integration</td></tr></tbody></table></div>
+<p class="muted"><strong>Re-check:</strong> <code>grep -n &#x27;^## [^0-9]&#x27; COORDINATION.md</code></p>
+</article><article class="card" id="A-D7D-04">
+<h3>A-D7D-04 &mdash; Gaps in the section numbering sequence</h3>
+<p class="muted"><span class="sev-low">LOW</span> · area COORDINATION.md · status open · found 2026-10-22T12:55:00Z</p>
+<p>Numbers §20, §21, §22, §23, §24, §33, §36, §37 are never used. That is not corruption - renumbering after collisions leaves holes - but it means a reader cannot infer how many sessions have reported from the last number, which is exactly the ambiguity that caused the T55 collision.</p>
+<div class="wrap"><table><thead><tr><th>Where (links open the file on GitHub at the audited commit)</th>
+<th>What was found</th></tr></thead><tbody><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/COORDINATION.md#L1" rel="noopener noreferrer">COORDINATION.md:1</a></td><td>highest section number is §51; 8 numbers unused below it</td></tr></tbody></table></div>
+<p class="muted"><strong>Re-check:</strong> <code>grep -c &#x27;^## [0-9]&#x27; COORDINATION.md</code></p>
+</article><article class="card" id="A-D7D-08">
+<h3>A-D7D-08 &mdash; No broken relative links found in tracked HTML</h3>
+<p class="muted"><span class="sev-info">INFO</span> · area published pages · status open · found 2026-10-22T12:55:00Z</p>
+<p>Every relative href/src in every tracked HTML file resolves to a file that exists.</p>
+<div class="wrap"><table><thead><tr><th>Where (links open the file on GitHub at the audited commit)</th>
+<th>What was found</th></tr></thead><tbody><tr><td>-</td><td>606 files scanned, 0 broken relative targets</td></tr></tbody></table></div>
+<p class="muted"><strong>Re-check:</strong> <code>python3 scripts/sd7d19a67_repo_audit.py --links</code></p>
+</article><article class="card" id="A-D7D-10">
+<h3>A-D7D-10 &mdash; No placeholder wording found</h3>
+<p class="muted"><span class="sev-info">INFO</span> · area published pages · status open · found 2026-10-22T12:55:00Z</p>
+<p>No TODO/FIXME/lorem/coming-soon wording appears in any tracked HTML page.</p>
+<div class="wrap"><table><thead><tr><th>Where (links open the file on GitHub at the audited commit)</th>
+<th>What was found</th></tr></thead><tbody><tr><td>-</td><td>0 matches across 606 files</td></tr></tbody></table></div>
+<p class="muted"><strong>Re-check:</strong> <code>git grep -n -i -E &#x27;TODO|FIXME|lorem ipsum&#x27; -- &#x27;*.html&#x27; | head</code></p>
+</article><article class="card" id="A-D7D-11">
+<h3>A-D7D-11 &mdash; Repository hygiene snapshot at audit time</h3>
+<p class="muted"><span class="sev-info">INFO</span> · area git · status open · found 2026-10-22T12:55:00Z</p>
+<p>Recorded so the reviewer can see the exact tree state the audit ran against: branch, whether origin/main is merged in, untracked paths and compiled artefacts.</p>
+<div class="wrap"><table><thead><tr><th>Where (links open the file on GitHub at the audited commit)</th>
+<th>What was found</th></tr></thead><tbody><tr><td>git</td><td>branch arena/d7d19a67-olbg1; origin/main is an ancestor of HEAD; 5 untracked path(s) in status</td></tr><tr><td>git status</td><td>?? data/d7d19a67/; ?? scripts/sd7d19a67_data.py; ?? scripts/sd7d19a67_model.py; ?? scripts/sd7d19a67_predictions.py; ?? scripts/sd7d19a67_repo_audit.py</td></tr></tbody></table></div>
+<p class="muted"><strong>Re-check:</strong> <code>git status --porcelain &amp;&amp; git rev-parse --abbrev-ref HEAD &amp;&amp; git merge-base --is-ancestor origin/main HEAD &amp;&amp; echo merged</code></p>
+</article><article class="card" id="A-D7D-13">
+<h3>A-D7D-13 &mdash; Namespaced desks reachable from the canonical archive page</h3>
+<p class="muted"><span class="sev-info">INFO</span> · area site navigation · status open · found 2026-10-22T12:55:00Z</p>
+<p>Because a desk may not edit shared navigation, reachability depends on the canonical archive page listing it. 21 of 23 desks with an index.html are linked from archive.html. This desk&#x27;s root-navigation request is logged in COORDINATION.md §4/§51 rather than applied here.</p>
+<div class="wrap"><table><thead><tr><th>Where (links open the file on GitHub at the audited commit)</th>
+<th>What was found</th></tr></thead><tbody><tr><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/a272766/archive.html#L1" rel="noopener noreferrer">archive.html:1</a></td><td>desks found: 1a421e41, 2360a617, 354e0990, 6a081cf6, 7a5b5360, 7ad0d336, 8fc47dcb, 92af340c, 984d417f, 9dfd0b48, a570c470, aa4e9dbf, archive, c17a9192, ccb6bde2, docs, e6716490, e6fc2f12, ebfbd966, f1c13c19, f71557b5, f7fa77fc, v3</td></tr></tbody></table></div>
+<p class="muted"><strong>Re-check:</strong> <code>grep -o &#x27;&quot;[0-9a-f]\{8\}/&quot;&#x27; archive.html | sort -u | head -30</code></p>
+</article><article class="card" id="A-D7D-14">
+<h3>A-D7D-14 &mdash; Every file this session changed is inside its claimed scope</h3>
+<p class="muted"><span class="sev-info">INFO</span> · area session scope · status open · found 2026-10-22T12:55:00Z</p>
+<p>Self-check: the T65 claim covers data/d7d19a67/**, scripts/sd7d19a67_*.py, d7d19a67/**, reports/SESSION_D7D19A67.md and append-only COORDINATION.md. No root page, pipeline file, workflow, data/current file or other session&#x27;s desk was modified.</p>
+<div class="wrap"><table><thead><tr><th>Where (links open the file on GitHub at the audited commit)</th>
+<th>What was found</th></tr></thead><tbody><tr><td>git diff --name-only origin/main...HEAD</td><td>6 changed path(s), all inside scope</td></tr></tbody></table></div>
+<p class="muted"><strong>Re-check:</strong> <code>git diff --name-only origin/main...HEAD &amp;&amp; git status --porcelain</code></p>
+</article>
+</main>
+<footer class="foot">
+  <p>Independent research desk. Not affiliated with OLBG.com; OLBG was used only to enumerate which
+  sports exist. No bookmaker price, no availability and no betting edge is claimed anywhere on this
+  desk: every number is this desk's own originated fair price (decimal = 1 / probability, no margin).
+  Not staking advice. 18+.</p>
+  <p class="muted">Official reads 2026-10-22T12:55:00Z · desk built 2026-10-22T13:01:26Z · repository audit 2026-10-22T12:55:00Z · branch
+  <code>arena/d7d19a67-olbg1</code> at <code>a27276658e20</code></p>
+</footer>
+</body>
+</html>
