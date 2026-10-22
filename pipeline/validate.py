@@ -22,18 +22,33 @@ def validate_data(directory=CURRENT):
         try:
             verify_capture(c);check(parse_time(c['observed_before'])<=at,c['id']+': observation after build')
             ids=[o['id'] for o in c['observations']];check(len(ids)==len(set(ids)),c['id']+': duplicate observation ID')
-            check(allowed_url(c['final_url'],True),c['id']+': invalid final publisher')
+            check(official_url(c['final_url']) if c['role']=='official' else allowed_url(c['final_url'],True),
+                  c['id']+': invalid final publisher')
             if c['method']=='http-json-parser':
                 raw=directory/'raw'/f'{c["id"]}.body'
                 check(raw.is_file(),c['id']+': missing raw evidence')
                 if raw.is_file():check(digest(raw.read_bytes())==c['raw_response_sha256'],c['id']+': raw hash mismatch')
         except (ValueError,KeyError,TypeError) as ex:errors.append(c['id']+': '+str(ex))
+    network=load(directory/'network.json') if (directory/'network.json').exists() else {}
+    for prefix in network.get('successful_feeds', []):
+        c=caps.get('http-'+prefix+'-schedule')
+        check(c is not None and c.get('complete') is True,
+              prefix+': full-slate replacement without complete official capture')
+    for prefix,dates in network.get('replace_fixture_dates', {}).items():
+        c=caps.get('http-'+prefix+'-schedule')
+        check(prefix=='nhl' and c is not None and c.get('complete') is False and
+              c.get('covered_dates')==dates and len(dates)==len(set(dates)),
+              prefix+': partial date replacement not backed by matching official capture')
     ids=[r['id'] for r in s['fixtures']];check(len(ids)==len(set(ids)),'Duplicate fixture ID')
     for r in s['fixtures']:
         try:
             check(r['sport'] in SPORT_INDEX,r['id']+': excluded sport')
             f=r['facts'];check(bool(r['source_ids']) and len(r['source_ids'])==len(set(r['source_ids'])),r['id']+': missing/duplicate source IDs')
             check(set(r['field_evidence'])=={k for k,v in f.items() if v is not None},r['id']+': field reference mismatch')
+            if r['sport']=='baseball':
+                check(f.get('if_necessary') in (None,'Y','N'),r['id']+': invalid MLB conditional flag')
+            else:
+                check(f.get('if_necessary') is None,r['id']+': MLB conditional flag on other sport')
             for key,value in f.items():
                 if value is None:continue
                 refs=r['field_evidence'].get(key,[]);check(bool(refs),r['id']+': no evidence for '+key)
@@ -76,7 +91,10 @@ def validate_data(directory=CURRENT):
         check(p==originate(r,s['statistics'],at),r['id']+': nonreproducible price / confidence')
         check(p['market_quote'] is None,r['id']+': fabricated bookmaker quote')
         check(p['confidence'] in (None,'low'),r['id']+': unsupported confidence upgrade')
-        if p['markets']:check(r['state']=='upcoming' and r['in_window'],r['id']+': non-future/out-of-window price')
+        if p['markets']:
+            check(r['state']=='upcoming' and r['in_window'],r['id']+': non-future/out-of-window price')
+            if r['sport']=='baseball':
+                check(r['facts'].get('if_necessary')=='N',r['id']+': conditional/unknown MLB game priced')
         covered={m['market'] for m in p['markets']}|{m['market'] for m in p['withheld']}
         check(covered==set(SPORT_MARKETS[r['sport']]),r['id']+': uninvestigated market family')
         for m in p['markets']:
@@ -164,8 +182,14 @@ def validate_site(out):
                 if end>parse_time(record['data-expires']) or end>parse_time(record['data-start']):raise ValueError('deadline exceeds fixture/start')
                 if record.get('id') in books and deadline!=books[record['id']]['expires_at']:raise ValueError('deadline differs from price book')
             except (ValueError,TypeError,KeyError,AttributeError) as ex:errors.append(rel+': missing/invalid rendered price expiry: '+str(ex))
+        # Current sporting tables must point to a governing body / league, not
+        # merely the repository or OLBG discovery. Archive/file inventories and
+        # source-register rows are different: an unknown original must be
+        # visibly flagged, never decorated with a fabricated sporting link.
+        project_only = rel=='archive.html' or rel.startswith('audit/') or rel=='sources.html'
         for index,links in enumerate(h.rows,1):
-            if not any(allowed_url(u,True) or u.startswith('https://github.com/buffedlizard55-lab/OLBG1/') for u in links):errors.append(f'{rel}: row {index} has no official/project source link')
+            backed = any((allowed_url(u,True) or u.startswith('https://github.com/buffedlizard55-lab/OLBG1/')) if project_only else official_url(u) for u in links)
+            if not backed:errors.append(f'{rel}: row {index} has no '+('traceable source' if project_only else 'official sporting source')+' link')
         for href in h.links:
             u=urlsplit(href)
             if u.scheme or u.netloc:

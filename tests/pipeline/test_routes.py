@@ -16,6 +16,15 @@ class CanonicalRouteGates(unittest.TestCase):
         (self.out/'old-dashboard.html').write_text('<h1>Old recommendations</h1>');self.assertTrue(any('Unregistered root HTML' in e for e in validate_site(self.out)))
     def test_preserved_independent_audit_not_rewritten(self):
         (self.out/'release-review.html').write_text('<h1>Independent audit</h1>');self.assertEqual(validate_site(self.out),[])
+    def test_current_match_row_needs_league_not_olbg_or_repo(self):
+        p=self.out/'index.html'
+        p.write_text(p.read_text().replace('</body>',
+            '<table><tr><td><a href="https://www.olbg.com/betting-tips">Discovery</a>'
+            '<a href="https://github.com/buffedlizard55-lab/OLBG1/">Repo</a></td></tr></table></body>'))
+        self.assertTrue(any('official sporting source' in err for err in validate_site(self.out)))
+        p.write_text(p.read_text().replace('</td>',
+            '<a href="https://www.nhl.com/schedule">NHL official</a></td>'))
+        self.assertEqual(validate_site(self.out),[])
 
 class PublicEvidenceExports(unittest.TestCase):
     def test_only_parsed_json_proof_is_published(self):

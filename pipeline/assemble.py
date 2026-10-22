@@ -15,7 +15,7 @@ COVERAGE_NOTES = {
     'snooker': 'Eight listed Northern Ireland Open ties. Extracted clock has no timezone and does not establish current match status.',
     'rugby-union': 'Seven TOP 14 fixtures only. Other leagues not enumerated. No arbitrary ranking-to-point spread.',
     'rugby-league': 'Visible IRL listings, with men and women separated; load-more pagination prevents a completeness claim.',
-    'baseball': 'MLB date-window schedule only, not all baseball leagues. Series games may be conditional. No verified starting pitchers.',
+    'baseball': 'MLB date-window schedule only, not all baseball leagues. If Necessary or unknown-necessity games are unpriced until eligibility is established. No verified starting pitchers.',
     'ice-hockey': 'NHL subset, not all hockey competitions. Match-winner model includes OT/SO; season goals cannot verify regulation totals.',
     'motor-racing': 'F1 Austin session listings only. Timezone switch is ambiguous; no verified complete runner model.',
     'darts': 'OLBG cards discovered but no official matchup table obtained from inspected PDC extraction. Verified match values blank.',
@@ -41,6 +41,12 @@ def assemble(at=None, directory=CURRENT, *, write=True):
     # zero scheduled games. An error never silently becomes "no fixtures".
     for prefix in network.get('successful_feeds', []):
         fixtures = [r for r in fixtures if not r['id'].startswith(prefix+'-')]
+    # A partially covered official week only supersedes dates the source
+    # actually returned. Uncovered seed dates retain their *original* expiry;
+    # absence from a partial response is not proof of zero fixtures.
+    for prefix, dates in network.get('replace_fixture_dates', {}).items():
+        covered = set(dates)
+        fixtures = [r for r in fixtures if not (r['id'].startswith(prefix+'-') and r['facts']['date'] in covered)]
     by_id = {r['id']:r for r in fixtures}
     for row in network.get('fixtures', []):
         by_id[row['id']] = row

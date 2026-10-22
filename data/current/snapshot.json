@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-22T12:22:42Z",
+  "generated_at": "2026-10-22T12:29:50Z",
   "window": {
     "source_date_from": "2026-10-22",
     "source_date_through": "2026-10-28",
     "days": 7,
-    "utc_from": "2026-10-22T12:22:42Z",
-    "utc_until_exclusive": "2026-10-29T12:22:42Z",
+    "utc_from": "2026-10-22T12:29:50Z",
+    "utc_until_exclusive": "2026-10-29T12:29:50Z",
     "rule": "Exact UTC starts use the rolling UTC interval; undated/date-only rows use the declared source-calendar window with explicit flags."
   },
   "complete": false,
@@ -23,18 +23,18 @@
   "counts": {
     "captured_listings": 108,
     "current_listings": 108,
-    "upcoming_exact": 27,
+    "upcoming_exact": 26,
     "categories": 17,
     "categories_with_listings": 15,
     "fully_covered_categories": 0,
-    "sources": 31,
-    "priced_matches": 17,
-    "originated_markets": 42,
-    "originated_outcomes": 84,
+    "sources": 32,
+    "priced_matches": 16,
+    "originated_markets": 36,
+    "originated_outcomes": 72,
     "high": 0,
     "medium": 0,
-    "low": 17,
-    "unpriced": 91
+    "low": 16,
+    "unpriced": 92
   },
   "coverage": [
     {
@@ -164,12 +164,13 @@
       "scope_complete": false,
       "listing_count": 5,
       "captured_count": 5,
-      "priced_count": 5,
+      "priced_count": 4,
       "source_ids": [
+        "mlb-necessity-20261022",
         "mlb-schedule-20261022",
         "mlb-season-20261022"
       ],
-      "note": "MLB date-window schedule only, not all baseball leagues. Series games may be conditional. No verified starting pitchers."
+      "note": "MLB date-window schedule only, not all baseball leagues. If Necessary or unknown-necessity games are unpriced until eligibility is established. No verified starting pitchers."
     },
     {
       "slug": "ice-hockey",
@@ -334,7 +335,8 @@
         "time_text": "19:30 CEST",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -393,7 +395,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -413,7 +416,8 @@
         "time_text": "20:00 CEST",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -472,7 +476,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -492,7 +497,8 @@
         "time_text": "20:05 CEST",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -551,7 +557,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -571,7 +578,8 @@
         "time_text": "20:15 CEST",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -630,7 +638,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -650,7 +659,8 @@
         "time_text": "20:30 CEST",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -709,7 +719,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -729,7 +740,8 @@
         "time_text": "20:45 CEST",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -788,7 +800,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -808,7 +821,8 @@
         "time_text": null,
         "venue": "TD Garden",
         "official_status": "FUT",
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -865,7 +879,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -885,7 +900,8 @@
         "time_text": null,
         "venue": "Scotiabank Arena",
         "official_status": "FUT",
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -942,7 +958,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -962,7 +979,8 @@
         "time_text": null,
         "venue": "Canadian Tire Centre",
         "official_status": "FUT",
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -1019,7 +1037,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -1039,7 +1058,8 @@
         "time_text": null,
         "venue": "Prudential Center",
         "official_status": "FUT",
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -1096,7 +1116,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -1116,7 +1137,8 @@
         "time_text": null,
         "venue": "PPG Paints Arena",
         "official_status": "FUT",
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -1173,7 +1195,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -1193,7 +1216,8 @@
         "time_text": null,
         "venue": "UBS Arena",
         "official_status": "FUT",
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -1250,7 +1274,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -1270,7 +1295,8 @@
         "time_text": "7:00 PM ET",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -1318,7 +1344,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -1338,7 +1365,8 @@
         "time_text": "9:30 PM ET",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -1386,7 +1414,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -1406,7 +1435,8 @@
         "time_text": null,
         "venue": "Rawalpindi Cricket Stadium, Rawalpindi",
         "official_status": null,
-        "format": "ODI"
+        "format": "ODI",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -1454,7 +1484,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -1474,7 +1505,8 @@
         "time_text": "22–25 October 2026",
         "venue": "Port Royal Golf Course, Southampton",
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "event": [
@@ -1521,7 +1553,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -1541,7 +1574,8 @@
         "time_text": "18:45 CEST",
         "venue": "Rothenbach-Halle (Kassel, GER)",
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -1594,7 +1628,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -1614,7 +1649,8 @@
         "time_text": "18:45 CEST",
         "venue": "Pick Arena (Szeged, HUN)",
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -1667,7 +1703,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -1687,7 +1724,8 @@
         "time_text": "20:45 CEST",
         "venue": "Pavilhao Joao Rocha (Lisbon, POR)",
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -1740,7 +1778,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -1760,7 +1799,8 @@
         "time_text": "20:45 CEST",
         "venue": "Palau Blaugrana (Barcelona, ESP)",
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -1813,7 +1853,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -1833,7 +1874,8 @@
         "time_text": "20:45 CEST",
         "venue": "Kolstad Arena (Kolstad, NOR)",
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -1886,7 +1928,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -1906,7 +1949,8 @@
         "time_text": "08:00 (timezone not stated)",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -1954,7 +1998,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -1974,7 +2019,8 @@
         "time_text": "08:00 (timezone not stated)",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -2022,7 +2068,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -2042,7 +2089,8 @@
         "time_text": "09:00 (timezone not stated)",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -2090,7 +2138,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -2110,7 +2159,8 @@
         "time_text": "09:00 (timezone not stated)",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -2158,7 +2208,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -2178,7 +2229,8 @@
         "time_text": "14:00 (timezone not stated)",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -2226,7 +2278,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -2246,7 +2299,8 @@
         "time_text": "14:00 (timezone not stated)",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -2294,7 +2348,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -2314,7 +2369,8 @@
         "time_text": "15:00 (timezone not stated)",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -2362,7 +2418,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -2382,7 +2439,8 @@
         "time_text": "15:00 (timezone not stated)",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -2430,7 +2488,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -2450,7 +2509,8 @@
         "time_text": "Starts At 11:30",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -2499,7 +2559,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -2519,7 +2580,8 @@
         "time_text": "Not Before 13:00",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -2568,7 +2630,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -2588,7 +2651,8 @@
         "time_text": "Followed By",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -2637,7 +2701,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -2657,7 +2722,8 @@
         "time_text": "Not Before 19:30",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -2706,7 +2772,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -2726,7 +2793,8 @@
         "time_text": "Starts At 11:30",
         "venue": null,
         "official_status": null,
-        "format": "doubles"
+        "format": "doubles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -2775,7 +2843,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -2795,7 +2864,8 @@
         "time_text": "Followed By",
         "venue": null,
         "official_status": null,
-        "format": "doubles"
+        "format": "doubles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -2844,7 +2914,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -2864,7 +2935,8 @@
         "time_text": "Followed By",
         "venue": null,
         "official_status": null,
-        "format": "doubles"
+        "format": "doubles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -2913,7 +2985,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -2933,7 +3006,8 @@
         "time_text": "Starts At 13:30",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -2982,7 +3056,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -3002,7 +3077,8 @@
         "time_text": "Followed By",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -3051,7 +3127,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -3071,7 +3148,8 @@
         "time_text": "Not Before 17:00",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -3120,7 +3198,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -3140,7 +3219,8 @@
         "time_text": "Starts At 15:00",
         "venue": null,
         "official_status": null,
-        "format": "doubles"
+        "format": "doubles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -3189,7 +3269,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -3209,7 +3290,8 @@
         "time_text": "Followed By",
         "venue": null,
         "official_status": null,
-        "format": "doubles"
+        "format": "doubles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -3258,7 +3340,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -3278,7 +3361,8 @@
         "time_text": "Not Before 14:00",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -3327,7 +3411,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -3347,7 +3432,8 @@
         "time_text": "Followed By",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -3396,7 +3482,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -3416,7 +3503,8 @@
         "time_text": "Followed By",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -3465,7 +3553,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -3485,7 +3574,8 @@
         "time_text": "Not Before 19:00",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -3534,7 +3624,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -3554,7 +3645,8 @@
         "time_text": "Followed By",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -3603,7 +3695,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -3623,7 +3716,8 @@
         "time_text": "Starts At 12:00",
         "venue": null,
         "official_status": null,
-        "format": "doubles"
+        "format": "doubles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -3672,7 +3766,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -3692,7 +3787,8 @@
         "time_text": "Starts At 11:00",
         "venue": null,
         "official_status": null,
-        "format": "doubles"
+        "format": "doubles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -3741,7 +3837,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -3761,7 +3858,8 @@
         "time_text": "Followed By",
         "venue": null,
         "official_status": null,
-        "format": "doubles"
+        "format": "doubles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -3810,7 +3908,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -3830,7 +3929,8 @@
         "time_text": "Starting at 1:00 PM",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -3879,7 +3979,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -3899,7 +4000,8 @@
         "time_text": "Followed by",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -3948,7 +4050,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -3968,7 +4071,8 @@
         "time_text": "Followed by",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -4017,7 +4121,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -4037,7 +4142,8 @@
         "time_text": "Not before 7:00 PM",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -4086,7 +4192,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -4106,7 +4213,8 @@
         "time_text": "Starting at 2:00 PM",
         "venue": null,
         "official_status": null,
-        "format": "doubles"
+        "format": "doubles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -4155,7 +4263,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -4175,7 +4284,8 @@
         "time_text": "Not before 3:30 PM",
         "venue": null,
         "official_status": null,
-        "format": "doubles"
+        "format": "doubles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -4224,7 +4334,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -4244,7 +4355,8 @@
         "time_text": "Starting at 11:30 AM",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -4295,7 +4407,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -4315,7 +4428,8 @@
         "time_text": "Followed by",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -4366,7 +4480,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -4386,7 +4501,8 @@
         "time_text": "Followed by",
         "venue": null,
         "official_status": null,
-        "format": "singles"
+        "format": "singles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -4437,7 +4553,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -4457,7 +4574,8 @@
         "time_text": "Not before 1:00 PM",
         "venue": null,
         "official_status": null,
-        "format": "doubles"
+        "format": "doubles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -4508,7 +4626,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -4528,7 +4647,8 @@
         "time_text": "Followed by",
         "venue": null,
         "official_status": null,
-        "format": "doubles"
+        "format": "doubles",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -4579,7 +4699,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -4599,7 +4720,8 @@
         "time_text": null,
         "venue": "Enterprise Center",
         "official_status": "FUT",
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -4656,7 +4778,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -4676,7 +4799,8 @@
         "time_text": null,
         "venue": "American Airlines Center",
         "official_status": "FUT",
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -4733,7 +4857,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -4753,7 +4878,8 @@
         "time_text": null,
         "venue": "Scotiabank Saddledome",
         "official_status": "FUT",
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -4810,7 +4936,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -4830,7 +4957,8 @@
         "time_text": null,
         "venue": "Rogers Place",
         "official_status": "FUT",
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -4887,7 +5015,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -4907,7 +5036,8 @@
         "time_text": null,
         "venue": "Climate Pledge Arena",
         "official_status": "FUT",
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -4964,7 +5094,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -4984,7 +5115,8 @@
         "time_text": null,
         "venue": "Rogers Arena",
         "official_status": "FUT",
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -5041,7 +5173,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -5061,7 +5194,8 @@
         "time_text": "4:15 AM (EDT)",
         "venue": "Alberton Oval, Adelaide",
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -5113,7 +5247,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -5133,7 +5268,8 @@
         "time_text": "19:00 CEST",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -5192,7 +5328,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -5212,7 +5349,8 @@
         "time_text": "20:15 CEST",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -5271,7 +5409,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -5291,7 +5430,8 @@
         "time_text": "20:45 CEST",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -5351,7 +5491,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -5371,7 +5512,8 @@
         "time_text": "13:30–14:30",
         "venue": "Circuit of The Americas",
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "event": [
@@ -5418,7 +5560,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -5438,7 +5581,8 @@
         "time_text": "17:00–18:00",
         "venue": "Circuit of The Americas",
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "event": [
@@ -5485,7 +5629,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -5505,7 +5650,8 @@
         "time_text": "20:05",
         "venue": "CommBank Stadium, Sydney",
         "official_status": null,
-        "format": "Men"
+        "format": "Men",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -5556,7 +5702,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -5576,7 +5723,8 @@
         "time_text": "17:50",
         "venue": "CommBank Stadium, Sydney",
         "official_status": null,
-        "format": "Women"
+        "format": "Women",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -5627,7 +5775,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -5647,7 +5796,8 @@
         "time_text": null,
         "venue": "American Family Field",
         "official_status": "Scheduled",
-        "format": null
+        "format": null,
+        "if_necessary": "N"
       },
       "field_evidence": {
         "participant_a": [
@@ -5679,18 +5829,23 @@
         ],
         "season": [
           "mlb-season-20261022#849805"
+        ],
+        "if_necessary": [
+          "mlb-necessity-20261022#849805"
         ]
       },
       "source_ids": [
         "mlb-schedule-20261022",
-        "mlb-season-20261022"
+        "mlb-season-20261022",
+        "mlb-necessity-20261022"
       ],
       "verified_after": "2026-10-22T07:17:40Z",
-      "verified_before": "2026-10-22T08:29:13Z",
+      "verified_before": "2026-10-22T12:01:27Z",
       "expires_at": "2026-10-22T13:17:40Z",
       "notes": [
         "Series games may be conditional; starting pitchers not verified.",
-        "Season explicitly rechecked in a separate game-ID projection. Earlier matchup/start observations and expiry are not rejuvenated."
+        "Season explicitly rechecked in a separate game-ID projection. Earlier matchup/start observations and expiry are not rejuvenated.",
+        "Official MLB ifNecessary=N in the 12:01 UTC field check; earlier fixture/start expiry unchanged."
       ],
       "kind": "match",
       "state": "upcoming",
@@ -5708,7 +5863,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "verified in captured source"
       },
       "in_window": true
     },
@@ -5728,7 +5884,8 @@
         "time_text": "13:30–14:30",
         "venue": "Circuit of The Americas",
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "event": [
@@ -5775,7 +5932,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -5795,7 +5953,8 @@
         "time_text": "17:00–18:00",
         "venue": "Circuit of The Americas",
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "event": [
@@ -5842,7 +6001,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -5862,7 +6022,8 @@
         "time_text": "14:25",
         "venue": "Santos National Football Stadium, Port Moresby",
         "official_status": null,
-        "format": "Men"
+        "format": "Men",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -5913,7 +6074,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -5933,7 +6095,8 @@
         "time_text": "14:35",
         "venue": "HBF Park, Perth",
         "official_status": null,
-        "format": "Men"
+        "format": "Men",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -5984,7 +6147,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -6004,7 +6168,8 @@
         "time_text": "12:15",
         "venue": "Santos National Football Stadium, Port Moresby",
         "official_status": null,
-        "format": "Women"
+        "format": "Women",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -6055,7 +6220,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -6075,7 +6241,8 @@
         "time_text": "17:05",
         "venue": "HBF Park, Perth",
         "official_status": null,
-        "format": "Women"
+        "format": "Women",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -6126,7 +6293,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -6146,7 +6314,8 @@
         "time_text": "15:00",
         "venue": "Stadio Giovanni Invernizzi, Abbiategrasso",
         "official_status": null,
-        "format": "Men"
+        "format": "Men",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -6197,7 +6366,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -6217,7 +6387,8 @@
         "time_text": "14:00",
         "venue": "Biggar RFC",
         "official_status": null,
-        "format": "Men"
+        "format": "Men",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -6268,7 +6439,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -6288,7 +6460,8 @@
         "time_text": "14:00",
         "venue": "FK Zemun Stadium",
         "official_status": null,
-        "format": "Men"
+        "format": "Men",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -6339,7 +6512,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -6359,7 +6533,8 @@
         "time_text": "14h30",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -6408,7 +6583,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -6428,7 +6604,8 @@
         "time_text": "16h35",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -6477,7 +6654,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -6497,7 +6675,8 @@
         "time_text": "16h35",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -6546,7 +6725,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -6566,7 +6746,8 @@
         "time_text": "16h35",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -6615,7 +6796,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -6635,7 +6817,8 @@
         "time_text": "16h35",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -6684,7 +6867,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -6704,7 +6888,8 @@
         "time_text": "21h00",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -6753,7 +6938,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -6773,7 +6959,8 @@
         "time_text": "18:00",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -6822,7 +7009,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -6842,7 +7030,8 @@
         "time_text": null,
         "venue": "American Family Field",
         "official_status": "Scheduled",
-        "format": null
+        "format": null,
+        "if_necessary": "N"
       },
       "field_evidence": {
         "participant_a": [
@@ -6874,18 +7063,23 @@
         ],
         "season": [
           "mlb-season-20261022#849802"
+        ],
+        "if_necessary": [
+          "mlb-necessity-20261022#849802"
         ]
       },
       "source_ids": [
         "mlb-schedule-20261022",
-        "mlb-season-20261022"
+        "mlb-season-20261022",
+        "mlb-necessity-20261022"
       ],
       "verified_after": "2026-10-22T07:17:40Z",
-      "verified_before": "2026-10-22T08:29:13Z",
+      "verified_before": "2026-10-22T12:01:27Z",
       "expires_at": "2026-10-22T13:17:40Z",
       "notes": [
         "Series games may be conditional; starting pitchers not verified.",
-        "Season explicitly rechecked in a separate game-ID projection. Earlier matchup/start observations and expiry are not rejuvenated."
+        "Season explicitly rechecked in a separate game-ID projection. Earlier matchup/start observations and expiry are not rejuvenated.",
+        "Official MLB ifNecessary=N in the 12:01 UTC field check; earlier fixture/start expiry unchanged."
       ],
       "kind": "match",
       "state": "upcoming",
@@ -6903,7 +7097,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "verified in captured source"
       },
       "in_window": true
     },
@@ -6923,7 +7118,8 @@
         "time_text": null,
         "venue": "Gaddafi Stadium, Lahore",
         "official_status": null,
-        "format": "ODI"
+        "format": "ODI",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -6971,7 +7167,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -6991,7 +7188,8 @@
         "time_text": "4:00pm",
         "venue": "SuperValu Páirc Uí Chaoimh",
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -7041,7 +7239,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -7061,7 +7260,8 @@
         "time_text": "2:00pm",
         "venue": "Fitzgerald Stadium Killarney",
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -7111,7 +7311,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -7131,7 +7332,8 @@
         "time_text": "2:30pm",
         "venue": "Cappoquin Logistics Fraher Field, Dungarvan",
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -7181,7 +7383,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -7201,7 +7404,8 @@
         "time_text": "16:00",
         "venue": "Circuit of The Americas",
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "event": [
@@ -7248,7 +7452,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -7268,7 +7473,8 @@
         "time_text": "18:05",
         "venue": "One NZ Stadium, Christchurch",
         "official_status": null,
-        "format": "Men"
+        "format": "Men",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -7319,7 +7525,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -7339,7 +7546,8 @@
         "time_text": "19:05",
         "venue": "Suncorp Stadium, Brisbane",
         "official_status": null,
-        "format": "Men"
+        "format": "Men",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -7390,7 +7598,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -7410,7 +7619,8 @@
         "time_text": "15:50",
         "venue": "One NZ Stadium, Christchurch",
         "official_status": null,
-        "format": "Women"
+        "format": "Women",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -7461,7 +7671,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -7481,7 +7692,8 @@
         "time_text": "15:00",
         "venue": "Croom Oval",
         "official_status": null,
-        "format": "Women"
+        "format": "Women",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -7532,7 +7744,8 @@
         "time_text": "verified in captured source",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -7552,7 +7765,8 @@
         "time_text": "21h05",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -7601,7 +7815,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -7621,7 +7836,8 @@
         "time_text": null,
         "venue": "Tropicana Field",
         "official_status": "Scheduled",
-        "format": null
+        "format": null,
+        "if_necessary": "N"
       },
       "field_evidence": {
         "participant_a": [
@@ -7653,18 +7869,23 @@
         ],
         "season": [
           "mlb-season-20261022#849804"
+        ],
+        "if_necessary": [
+          "mlb-necessity-20261022#849804"
         ]
       },
       "source_ids": [
         "mlb-schedule-20261022",
-        "mlb-season-20261022"
+        "mlb-season-20261022",
+        "mlb-necessity-20261022"
       ],
       "verified_after": "2026-10-22T07:17:40Z",
-      "verified_before": "2026-10-22T08:29:13Z",
+      "verified_before": "2026-10-22T12:01:27Z",
       "expires_at": "2026-10-22T13:17:40Z",
       "notes": [
         "Series games may be conditional; starting pitchers not verified.",
-        "Season explicitly rechecked in a separate game-ID projection. Earlier matchup/start observations and expiry are not rejuvenated."
+        "Season explicitly rechecked in a separate game-ID projection. Earlier matchup/start observations and expiry are not rejuvenated.",
+        "Official MLB ifNecessary=N in the 12:01 UTC field check; earlier fixture/start expiry unchanged."
       ],
       "kind": "match",
       "state": "upcoming",
@@ -7682,7 +7903,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "verified in captured source"
       },
       "in_window": true
     },
@@ -7702,7 +7924,8 @@
         "time_text": null,
         "venue": "Gaddafi Stadium, Lahore",
         "official_status": null,
-        "format": "ODI"
+        "format": "ODI",
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -7750,7 +7973,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "unverified",
-        "format": "verified in captured source"
+        "format": "verified in captured source",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -7770,7 +7994,8 @@
         "time_text": "17:30",
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "participant_a": [
@@ -7819,7 +8044,8 @@
         "time_text": "verified in captured source",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     },
@@ -7839,7 +8065,8 @@
         "time_text": null,
         "venue": "Tropicana Field",
         "official_status": "Scheduled",
-        "format": null
+        "format": null,
+        "if_necessary": "N"
       },
       "field_evidence": {
         "participant_a": [
@@ -7871,18 +8098,23 @@
         ],
         "season": [
           "mlb-season-20261022#849803"
+        ],
+        "if_necessary": [
+          "mlb-necessity-20261022#849803"
         ]
       },
       "source_ids": [
         "mlb-schedule-20261022",
-        "mlb-season-20261022"
+        "mlb-season-20261022",
+        "mlb-necessity-20261022"
       ],
       "verified_after": "2026-10-22T07:17:40Z",
-      "verified_before": "2026-10-22T08:29:13Z",
+      "verified_before": "2026-10-22T12:01:27Z",
       "expires_at": "2026-10-22T13:17:40Z",
       "notes": [
         "Series games may be conditional; starting pitchers not verified.",
-        "Season explicitly rechecked in a separate game-ID projection. Earlier matchup/start observations and expiry are not rejuvenated."
+        "Season explicitly rechecked in a separate game-ID projection. Earlier matchup/start observations and expiry are not rejuvenated.",
+        "Official MLB ifNecessary=N in the 12:01 UTC field check; earlier fixture/start expiry unchanged."
       ],
       "kind": "match",
       "state": "upcoming",
@@ -7900,7 +8132,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "verified in captured source"
       },
       "in_window": true
     },
@@ -7920,7 +8153,8 @@
         "time_text": null,
         "venue": "Tropicana Field",
         "official_status": "Scheduled",
-        "format": null
+        "format": null,
+        "if_necessary": "Y"
       },
       "field_evidence": {
         "participant_a": [
@@ -7952,21 +8186,26 @@
         ],
         "season": [
           "mlb-season-20261022#849799"
+        ],
+        "if_necessary": [
+          "mlb-necessity-20261022#849799"
         ]
       },
       "source_ids": [
         "mlb-schedule-20261022",
-        "mlb-season-20261022"
+        "mlb-season-20261022",
+        "mlb-necessity-20261022"
       ],
       "verified_after": "2026-10-22T07:17:40Z",
-      "verified_before": "2026-10-22T08:29:13Z",
+      "verified_before": "2026-10-22T12:01:27Z",
       "expires_at": "2026-10-22T13:17:40Z",
       "notes": [
         "Series games may be conditional; starting pitchers not verified.",
-        "Season explicitly rechecked in a separate game-ID projection. Earlier matchup/start observations and expiry are not rejuvenated."
+        "Season explicitly rechecked in a separate game-ID projection. Earlier matchup/start observations and expiry are not rejuvenated.",
+        "Official MLB ifNecessary=Y (World Series Game 5); requirement to play is not confirmed. Selection, confidence and every research market withheld."
       ],
       "kind": "match",
-      "state": "upcoming",
+      "state": "conditional",
       "missing_fields": [],
       "field_status": {
         "participant_a": "verified in captured source",
@@ -7981,7 +8220,8 @@
         "time_text": "unverified",
         "venue": "verified in captured source",
         "official_status": "verified in captured source",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "verified in captured source"
       },
       "in_window": true
     },
@@ -8001,7 +8241,8 @@
         "time_text": null,
         "venue": null,
         "official_status": null,
-        "format": null
+        "format": null,
+        "if_necessary": null
       },
       "field_evidence": {
         "event": [
@@ -8041,7 +8282,8 @@
         "time_text": "unverified",
         "venue": "unverified",
         "official_status": "unverified",
-        "format": "unverified"
+        "format": "unverified",
+        "if_necessary": "unverified"
       },
       "in_window": true
     }
@@ -15339,6 +15581,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -15372,6 +15615,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -15407,6 +15651,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -15442,6 +15687,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -15477,6 +15723,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -15512,6 +15759,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -15560,7 +15808,8 @@
           "line": null,
           "source_ids": [
             "mlb-schedule-20261022",
-            "mlb-season-20261022"
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
           ]
         },
         {
@@ -15572,7 +15821,8 @@
           "line": null,
           "source_ids": [
             "mlb-schedule-20261022",
-            "mlb-season-20261022"
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
           ]
         },
         {
@@ -15584,7 +15834,8 @@
           "line": null,
           "source_ids": [
             "mlb-schedule-20261022",
-            "mlb-season-20261022"
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
           ]
         }
       ],
@@ -16933,6 +17184,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -16966,6 +17218,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -17001,6 +17254,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -17036,6 +17290,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -17071,6 +17326,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -17106,6 +17362,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -17154,7 +17411,8 @@
           "line": null,
           "source_ids": [
             "mlb-schedule-20261022",
-            "mlb-season-20261022"
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
           ]
         },
         {
@@ -17166,7 +17424,8 @@
           "line": null,
           "source_ids": [
             "mlb-schedule-20261022",
-            "mlb-season-20261022"
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
           ]
         },
         {
@@ -17178,7 +17437,8 @@
           "line": null,
           "source_ids": [
             "mlb-schedule-20261022",
-            "mlb-season-20261022"
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
           ]
         }
       ],
@@ -18034,6 +18294,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -18067,6 +18328,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -18102,6 +18364,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -18137,6 +18400,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -18172,6 +18436,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -18207,6 +18472,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -18255,7 +18521,8 @@
           "line": null,
           "source_ids": [
             "mlb-schedule-20261022",
-            "mlb-season-20261022"
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
           ]
         },
         {
@@ -18267,7 +18534,8 @@
           "line": null,
           "source_ids": [
             "mlb-schedule-20261022",
-            "mlb-season-20261022"
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
           ]
         },
         {
@@ -18279,7 +18547,8 @@
           "line": null,
           "source_ids": [
             "mlb-schedule-20261022",
-            "mlb-season-20261022"
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
           ]
         }
       ],
@@ -18474,6 +18743,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -18507,6 +18777,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -18542,6 +18813,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -18577,6 +18849,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -18612,6 +18885,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -18647,6 +18921,7 @@
           "sources": [
             "mlb-schedule-20261022",
             "mlb-season-20261022",
+            "mlb-necessity-20261022",
             "mlb-records-2026"
           ],
           "market_quote": null,
@@ -18695,7 +18970,8 @@
           "line": null,
           "source_ids": [
             "mlb-schedule-20261022",
-            "mlb-season-20261022"
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
           ]
         },
         {
@@ -18707,7 +18983,8 @@
           "line": null,
           "source_ids": [
             "mlb-schedule-20261022",
-            "mlb-season-20261022"
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
           ]
         },
         {
@@ -18719,7 +18996,8 @@
           "line": null,
           "source_ids": [
             "mlb-schedule-20261022",
-            "mlb-season-20261022"
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
           ]
         }
       ],
@@ -18729,274 +19007,98 @@
     {
       "fixture_id": "mlb-849799",
       "model_version": "evidence-v1.0",
-      "selection": "Milwaukee Brewers",
-      "confidence": "low",
-      "probability": 0.5605792584219367,
-      "fair_decimal": 1.7838690693177952,
-      "american_display": -128,
+      "selection": null,
+      "confidence": null,
+      "probability": null,
+      "fair_decimal": null,
+      "american_display": null,
       "market_quote": null,
-      "markets": [
-        {
-          "id": "mlb-849799-winner",
-          "market": "winner",
-          "settlement": "Full-game research approximation, conditional on unequal final scores; no claim of sportsbook availability",
-          "status": "experimental",
-          "confidence": "low",
-          "model_version": "evidence-v1.0",
-          "sources": [
-            "mlb-schedule-20261022",
-            "mlb-season-20261022",
-            "mlb-records-2026"
-          ],
-          "market_quote": null,
-          "quote_status": "unverified — no bookmaker price captured",
-          "outcomes": [
-            {
-              "selection": "Tampa Bay Rays",
-              "probability": 0.4394207415780634,
-              "fair_decimal": 2.275723254229567,
-              "decimal_display": "2.2757",
-              "american_display": 128,
-              "fair_price_in_target_band": true
-            },
-            {
-              "selection": "Milwaukee Brewers",
-              "probability": 0.5605792584219367,
-              "fair_decimal": 1.7838690693177952,
-              "decimal_display": "1.7839",
-              "american_display": -128,
-              "fair_price_in_target_band": true
-            }
-          ]
-        },
-        {
-          "id": "mlb-849799-spread--1.5",
-          "market": "handicap",
-          "settlement": "Full-game research approximation, conditional on unequal final scores; no claim of sportsbook availability",
-          "status": "experimental",
-          "confidence": "low",
-          "model_version": "evidence-v1.0",
-          "sources": [
-            "mlb-schedule-20261022",
-            "mlb-season-20261022",
-            "mlb-records-2026"
-          ],
-          "market_quote": null,
-          "quote_status": "unverified — no bookmaker price captured",
-          "outcomes": [
-            {
-              "selection": "Tampa Bay Rays -1.5 runs",
-              "probability": 0.29812976071245373,
-              "fair_decimal": 3.354244130509669,
-              "decimal_display": "3.3542",
-              "american_display": 235,
-              "fair_price_in_target_band": true
-            },
-            {
-              "selection": "Milwaukee Brewers +1.5 runs",
-              "probability": 0.7018702392875462,
-              "fair_decimal": 1.424764784178738,
-              "decimal_display": "1.4248",
-              "american_display": -235,
-              "fair_price_in_target_band": true
-            }
-          ],
-          "line": -1.5,
-          "units": "runs"
-        },
-        {
-          "id": "mlb-849799-spread-1.5",
-          "market": "handicap",
-          "settlement": "Full-game research approximation, conditional on unequal final scores; no claim of sportsbook availability",
-          "status": "experimental",
-          "confidence": "low",
-          "model_version": "evidence-v1.0",
-          "sources": [
-            "mlb-schedule-20261022",
-            "mlb-season-20261022",
-            "mlb-records-2026"
-          ],
-          "market_quote": null,
-          "quote_status": "unverified — no bookmaker price captured",
-          "outcomes": [
-            {
-              "selection": "Tampa Bay Rays +1.5 runs",
-              "probability": 0.5940686246229921,
-              "fair_decimal": 1.6833072115778207,
-              "decimal_display": "1.6833",
-              "american_display": -146,
-              "fair_price_in_target_band": true
-            },
-            {
-              "selection": "Milwaukee Brewers -1.5 runs",
-              "probability": 0.40593137537700785,
-              "fair_decimal": 2.4634705781765507,
-              "decimal_display": "2.4635",
-              "american_display": 146,
-              "fair_price_in_target_band": true
-            }
-          ],
-          "line": 1.5,
-          "units": "runs"
-        },
-        {
-          "id": "mlb-849799-total-7.5",
-          "market": "total",
-          "settlement": "Full-game research approximation, conditional on unequal final scores; no claim of sportsbook availability",
-          "status": "experimental",
-          "confidence": "low",
-          "model_version": "evidence-v1.0",
-          "sources": [
-            "mlb-schedule-20261022",
-            "mlb-season-20261022",
-            "mlb-records-2026"
-          ],
-          "market_quote": null,
-          "quote_status": "unverified — no bookmaker price captured",
-          "outcomes": [
-            {
-              "selection": "Over 7.5 runs",
-              "probability": 0.6466936381312457,
-              "fair_decimal": 1.5463272576636222,
-              "decimal_display": "1.5463",
-              "american_display": -183,
-              "fair_price_in_target_band": true
-            },
-            {
-              "selection": "Under 7.5 runs",
-              "probability": 0.3533063618687543,
-              "fair_decimal": 2.8304047363049705,
-              "decimal_display": "2.8304",
-              "american_display": 183,
-              "fair_price_in_target_band": true
-            }
-          ],
-          "line": 7.5,
-          "units": "runs"
-        },
-        {
-          "id": "mlb-849799-total-8.5",
-          "market": "total",
-          "settlement": "Full-game research approximation, conditional on unequal final scores; no claim of sportsbook availability",
-          "status": "experimental",
-          "confidence": "low",
-          "model_version": "evidence-v1.0",
-          "sources": [
-            "mlb-schedule-20261022",
-            "mlb-season-20261022",
-            "mlb-records-2026"
-          ],
-          "market_quote": null,
-          "quote_status": "unverified — no bookmaker price captured",
-          "outcomes": [
-            {
-              "selection": "Over 8.5 runs",
-              "probability": 0.5328471360418396,
-              "fair_decimal": 1.876710846995111,
-              "decimal_display": "1.8767",
-              "american_display": -114,
-              "fair_price_in_target_band": true
-            },
-            {
-              "selection": "Under 8.5 runs",
-              "probability": 0.46715286395816036,
-              "fair_decimal": 2.1406269278262693,
-              "decimal_display": "2.1406",
-              "american_display": 114,
-              "fair_price_in_target_band": true
-            }
-          ],
-          "line": 8.5,
-          "units": "runs"
-        },
-        {
-          "id": "mlb-849799-total-9.5",
-          "market": "total",
-          "settlement": "Full-game research approximation, conditional on unequal final scores; no claim of sportsbook availability",
-          "status": "experimental",
-          "confidence": "low",
-          "model_version": "evidence-v1.0",
-          "sources": [
-            "mlb-schedule-20261022",
-            "mlb-season-20261022",
-            "mlb-records-2026"
-          ],
-          "market_quote": null,
-          "quote_status": "unverified — no bookmaker price captured",
-          "outcomes": [
-            {
-              "selection": "Over 9.5 runs",
-              "probability": 0.38091847324753575,
-              "fair_decimal": 2.625233666076785,
-              "decimal_display": "2.6252",
-              "american_display": 163,
-              "fair_price_in_target_band": true
-            },
-            {
-              "selection": "Under 9.5 runs",
-              "probability": 0.6190815267524643,
-              "fair_decimal": 1.6152961391785212,
-              "decimal_display": "1.6153",
-              "american_display": -163,
-              "fair_price_in_target_band": true
-            }
-          ],
-          "line": 9.5,
-          "units": "runs"
-        }
-      ],
-      "input_ids": [
-        "mlb-records-2026-139",
-        "mlb-records-2026-158"
-      ],
-      "expires_at": "2026-10-22T13:17:40Z",
+      "markets": [],
+      "input_ids": [],
+      "expires_at": null,
       "notes": [
-        "Independent Poisson final-score approximation, conditioned on unequal scores. Rates average own runs/game and opponent runs-allowed/game. No pitcher, park or postseason adjustment. NOT calibrated.",
-        "Model rates A=4.179012, B=4.574074; non-tie mass before conditioning=0.86423344.",
-        "No validated out-of-sample calibration for evidence-v1.0",
-        "Available bookmaker price and settlement unverified",
-        "Current player availability, form and recent match history not all verified"
+        "Official MLB ifNecessary=Y: conditional series game; requirement not confirmed. No pre-match price."
       ],
       "withheld": [
         {
-          "market": "team-total",
+          "market": "winner",
           "status": "unverified / not priced",
-          "reason": "Team-level scoring histories and opposition-adjusted distribution; settlement rules.",
+          "reason": "Official MLB ifNecessary=Y: conditional series game; requirement not confirmed. No pre-match price.",
           "selection": null,
           "probability": null,
           "line": null,
           "source_ids": [
             "mlb-schedule-20261022",
-            "mlb-season-20261022"
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
+          ]
+        },
+        {
+          "market": "handicap",
+          "status": "unverified / not priced",
+          "reason": "Official MLB ifNecessary=Y: conditional series game; requirement not confirmed. No pre-match price.",
+          "selection": null,
+          "probability": null,
+          "line": null,
+          "source_ids": [
+            "mlb-schedule-20261022",
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
+          ]
+        },
+        {
+          "market": "total",
+          "status": "unverified / not priced",
+          "reason": "Official MLB ifNecessary=Y: conditional series game; requirement not confirmed. No pre-match price.",
+          "selection": null,
+          "probability": null,
+          "line": null,
+          "source_ids": [
+            "mlb-schedule-20261022",
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
+          ]
+        },
+        {
+          "market": "team-total",
+          "status": "unverified / not priced",
+          "reason": "Official MLB ifNecessary=Y: conditional series game; requirement not confirmed. No pre-match price.",
+          "selection": null,
+          "probability": null,
+          "line": null,
+          "source_ids": [
+            "mlb-schedule-20261022",
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
           ]
         },
         {
           "market": "period",
           "status": "unverified / not priced",
-          "reason": "Period-by-period official results, format and period-specific model.",
+          "reason": "Official MLB ifNecessary=Y: conditional series game; requirement not confirmed. No pre-match price.",
           "selection": null,
           "probability": null,
           "line": null,
           "source_ids": [
             "mlb-schedule-20261022",
-            "mlb-season-20261022"
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
           ]
         },
         {
           "market": "player-prop",
           "status": "unverified / not priced",
-          "reason": "Confirmed player identity/availability, official player game logs and prop definition.",
+          "reason": "Official MLB ifNecessary=Y: conditional series game; requirement not confirmed. No pre-match price.",
           "selection": null,
           "probability": null,
           "line": null,
           "source_ids": [
             "mlb-schedule-20261022",
-            "mlb-season-20261022"
+            "mlb-season-20261022",
+            "mlb-necessity-20261022"
           ]
         }
-      ],
-      "decimal_display": "1.7839",
-      "fair_price_in_target_band": true
+      ]
     },
     {
       "fixture_id": "riot-worlds-overview-worlds2026",
@@ -19099,6 +19201,7 @@
     "gbgb-racing",
     "irl-fixtures",
     "lnr-top14-j7",
+    "mlb-necessity-20261022",
     "mlb-records-2026",
     "mlb-schedule-20261022",
     "mlb-season-20261022",
@@ -19445,5 +19548,5 @@
       "error": "robots policy unavailable; request withheld"
     }
   ],
-  "input_sha256": "b457c8e1d059191106ba2e8e549ba0eb644d1a5507e7203f3c0d15480f6f9a89"
+  "input_sha256": "930f62bf504631cdaa64d7843e2f109eea460b3cab9a7533c9d9434e952d92b9"
 }

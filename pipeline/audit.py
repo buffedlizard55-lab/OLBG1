@@ -107,30 +107,31 @@ def build_audit(at, *, write=True):
         except (ValueError,SyntaxError,UnicodeError) as e:
             entry['status']='needs review';entry['error']=str(e);python_errors.append(rel)
         files.append(entry)
-    findings=make_findings(baseline)
+    no_recheck=sum(not r['official_urls'] and not r['lookup_url'] for r in rows)
+    findings=make_findings(baseline,no_recheck)
     output={'as_of':iso(at),'baseline':baseline,'scope':'Every tracked legacy JSON and Python file; every detected fixture, price-book and prediction object. Source semantics NOT re-certified.',
             'counts':{'files':len(files),'json_files':sum(x['path'].endswith('.json') for x in files),
                       'python_files':sum(x['path'].endswith('.py') for x in files),'parse_errors':len(python_errors),
                       'row_occurrences':len(rows),'non_alias_rows':sum(r['alias_of'] is None for r in rows),
                       'start_elapsed_occurrences':sum(r['stored_start_elapsed'] is True for r in rows),
-                      'findings':len(findings)},
+                      'no_official_recheck_rows':no_recheck, 'findings':len(findings)},
             'files':files,'rows':rows,'findings':findings,'input_sha256':digest(hashes)}
     if write:
         save(CURRENT/'audit.json',output)
     return output
 
 
-def make_findings(baseline):
+def make_findings(baseline,no_recheck=0):
     nhl='https://www.nhl.com/standings/2026-10-21/wildcard'
     el='https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/'
     mlb='https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason'
     findings=[]
-    def add(n,severity,title,detail,source,path=None,needle=None,status='needs review'):
+    def add(n,severity,title,detail,source,path=None,needle=None,status='needs review',finding_id=None):
         line=None
         if path and needle:
             txt=(ROOT/path).read_text()
             if needle in txt:line=txt[:txt.index(needle)].count('\n')+1
-        findings.append({'id':f'F-257E-{n:02d}','severity':severity,'status':status,'title':title,'detail':detail,
+        findings.append({'id':finding_id or f'F-257E-{n:02d}','severity':severity,'status':status,'title':title,'detail':detail,
                          'official_url':source,'file':path,'line':line,
                          'repository_url':f'{REPO}/blob/{baseline}/{path}'+(f'#L{line}' if line else '') if path else None})
     add(1,'high','Competing snapshots are not one current match list',
@@ -214,6 +215,13 @@ def make_findings(baseline):
     add(27,'high','Repeated historical tennis prose lacks matchup-specific evidence',
         'Post-deployment inspection of the preserved 53674ac8 tennis page found Cobolli and Paul paragraphs repeating the same three-sentence template except the selection and price. Claims about deep runs, opponent struggles and a net/baseline edge are not tied there to a named opponent, dated match logs or retained official observations. These are unverified historical claims, not accepted canonical predictions. The canonical High list remains empty; no prose or High label is imported from this desk.',
         'https://www.atptour.com/en/scores/archive','53674ac8/sports/tennis.html','enters this ATP/WTA fixture','needs review; archived prose not promoted')
+    add(None,'high','World Series Game 5 is listed only if necessary',
+        'Official MLB schedule projection read 2026-10-22T12:01:17Z–12:01:27Z: gamePk 849799 has ifNecessary=Y, while the preceding four games show N. A fixture listing is not proof that Game 5 will be needed. The canonical model now withholds every price and selection for that game until the league explicitly establishes that it will be played; the other four are not re-dated by this check.',
+        'https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-28&fields=totalGames,dates,date,games,gamePk,season,gameType,ifNecessary,ifNecessaryDescription',
+        path='pipeline/model.py',needle="f.get('if_necessary') == 'Y'",status='conditional listing; selection withheld; needs review',finding_id='F-97DC-01')
+    add(None,'high','Historical audit rows without an official match-source link',
+        f'{no_recheck:,} historical row occurrences contain neither a direct official URL nor a sport-specific official lookup. These are NOT current verified fixtures; accepted facts, odds and predictions remain blank. Previously their review cell linked to generic OLBG discovery, which is not an official sporting source. The false fallback has been removed: each such row now shows an explicit missing-source flag and its repository locator for manual investigation.',
+        None,path='pipeline/build.py',needle="No official link located · unverified",status='needs review; no source invented',finding_id='F-97DC-02')
     return findings
 
 if __name__=='__main__':

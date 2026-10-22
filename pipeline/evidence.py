@@ -5,7 +5,7 @@ from .config import FIXTURE_TTL_HOURS
 
 FACT_FIELDS = ('participant_a', 'participant_b', 'participant_a_id', 'participant_b_id',
                'event', 'competition', 'season', 'date', 'start_utc', 'time_text',
-               'venue', 'official_status', 'format')
+               'venue', 'official_status', 'format', 'if_necessary')
 
 
 def seal_capture(capture):
@@ -20,8 +20,9 @@ def verify_capture(capture):
     expected = obj.pop('sha256', None)
     if expected != digest(obj):
         raise ValueError(f"Evidence checksum mismatch: {capture.get('id')}")
-    if capture['role'] == 'official' and not official_url(capture['url']):
-        raise ValueError('Non-official evidence cannot verify match facts')
+    if capture['role'] == 'official' and (not official_url(capture['url']) or
+                                        not official_url(capture.get('final_url'))):
+        raise ValueError('Non-official request or redirect cannot verify match facts')
     start, end = parse_time(capture['observed_after']), parse_time(capture['observed_before'])
     if end < start:
         raise ValueError('Invalid observation window')
@@ -65,7 +66,11 @@ def fixture_state(row, at):
     if at >= parse_time(row['expires_at']):
         return 'stale'
     if f['start_utc']:
-        return 'upcoming' if parse_time(f['start_utc']) > at else 'start elapsed'
+        if parse_time(f['start_utc']) <= at:
+            return 'start elapsed'
+        # A scheduled series date is not necessarily a match that will happen.
+        # MLB explicitly labels some postseason games "If Necessary".
+        return 'conditional' if row['sport'] == 'baseball' and f.get('if_necessary') == 'Y' else 'upcoming'
     if f['date'] and f['date'] < at.date().isoformat():
         return 'date elapsed'
     return 'time unverified'

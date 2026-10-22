@@ -79,6 +79,7 @@ def nhl_schedule(data,c,first,last):
                 values['official_status']='postponed'
             rows.append(make_row(c,gid,g,values,f'/gameWeek/{di}/games/{gi}','nhl'))
     expected={(datetime.fromisoformat(first).date()+timedelta(days=n)).isoformat() for n in range((datetime.fromisoformat(last)-datetime.fromisoformat(first)).days+1)}
+    c['covered_dates']=sorted(covered)
     c['complete']=expected<=covered
     return rows
 
@@ -98,11 +99,25 @@ def mlb_schedule(data,c,first,last,season):
             state=text(status,'detailedState')
             if status.get('abstractGameState')=='Final':state='Final'
             start=None if g.get('startTimeTBD') or status.get('startTimeTBD') else normalized_utc(text(g,'gameDate'))
+            # The requested calendar year is not proof of the game's season.
+            # Game 5+ in a postseason series may be explicitly "If Necessary".
+            raw_season=g.get('season')
+            game_season=str(raw_season) if type(raw_season) in (str,int) and str(raw_season).isdigit() and len(str(raw_season))==4 else None
+            necessary=g.get('ifNecessary') if g.get('ifNecessary') in ('Y','N') else None
             values={'participant_a':text(a,'name'),'participant_b':text(b,'name'),'participant_a_id':str(number(a,'id')),
                     'participant_b_id':str(number(b,'id')),'date':date,'start_utc':start,
-                    'venue':g.get('venue',{}).get('name'),'competition':'MLB','season':str(season),'official_status':state}
+                    'venue':g.get('venue',{}).get('name'),'competition':'MLB','season':game_season,
+                    'official_status':state,'if_necessary':necessary}
             row=make_row(c,gid,g,values,f'/dates/{di}/games/{gi}','mlb')
-            row['notes'].append('Series games can be conditional; no starting-pitcher or lineup assumption.')
+            row['notes'].append('No starting-pitcher or lineup assumption.')
+            if necessary=='Y':
+                row['notes'].append('MLB labels this game If Necessary. Series requirement not confirmed; selection and line withheld.')
+            elif necessary is None:
+                row['notes'].append('MLB ifNecessary flag not available; conditional-game status unverified and selection withheld.')
+            if game_season is None:
+                row['notes'].append('Game season missing in official response; season and selection blank.')
+            elif game_season != str(season):
+                row['notes'].append('Game season differs from requested calendar year; no season inferred from the query.')
             rows.append(row)
     if reported!=n: raise SchemaError('MLB totalGames does not reconcile')
     c['complete']=True  # ONLY this API query, NOT the whole sport.
