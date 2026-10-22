@@ -1,4 +1,4 @@
-"""Session d7d19a67-olbg1 (T65) - own line origination, confidence tiers and desk assembly.
+"""Session d7d19a67-olbg1 (TD7D19, claimed as T65) - own line origination, confidence tiers and desk assembly.
 
 What this script does
 ---------------------

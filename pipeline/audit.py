@@ -56,7 +56,7 @@ def line_for(text,field,value,used):
     return None
 
 
-def build_audit(at):
+def build_audit(at, *, write=True):
     tracked=subprocess.check_output(['git','ls-files'],cwd=ROOT,text=True).splitlines()
     baseline=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     files=[];rows=[];hashes={};python_errors=[]
@@ -107,29 +107,31 @@ def build_audit(at):
         except (ValueError,SyntaxError,UnicodeError) as e:
             entry['status']='needs review';entry['error']=str(e);python_errors.append(rel)
         files.append(entry)
-    findings=make_findings(baseline)
+    no_recheck=sum(not r['official_urls'] and not r['lookup_url'] for r in rows)
+    findings=make_findings(baseline,no_recheck)
     output={'as_of':iso(at),'baseline':baseline,'scope':'Every tracked legacy JSON and Python file; every detected fixture, price-book and prediction object. Source semantics NOT re-certified.',
             'counts':{'files':len(files),'json_files':sum(x['path'].endswith('.json') for x in files),
                       'python_files':sum(x['path'].endswith('.py') for x in files),'parse_errors':len(python_errors),
                       'row_occurrences':len(rows),'non_alias_rows':sum(r['alias_of'] is None for r in rows),
                       'start_elapsed_occurrences':sum(r['stored_start_elapsed'] is True for r in rows),
-                      'findings':len(findings)},
+                      'no_official_recheck_rows':no_recheck, 'findings':len(findings)},
             'files':files,'rows':rows,'findings':findings,'input_sha256':digest(hashes)}
-    save(CURRENT/'audit.json',output)
+    if write:
+        save(CURRENT/'audit.json',output)
     return output
 
 
-def make_findings(baseline):
+def make_findings(baseline,no_recheck=0):
     nhl='https://www.nhl.com/standings/2026-10-21/wildcard'
     el='https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/'
     mlb='https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason'
     findings=[]
-    def add(n,severity,title,detail,source,path=None,needle=None,status='needs review'):
+    def add(n,severity,title,detail,source,path=None,needle=None,status='needs review',finding_id=None):
         line=None
         if path and needle:
             txt=(ROOT/path).read_text()
             if needle in txt:line=txt[:txt.index(needle)].count('\n')+1
-        findings.append({'id':f'F-257E-{n:02d}','severity':severity,'status':status,'title':title,'detail':detail,
+        findings.append({'id':finding_id or f'F-257E-{n:02d}','severity':severity,'status':status,'title':title,'detail':detail,
                          'official_url':source,'file':path,'line':line,
                          'repository_url':f'{REPO}/blob/{baseline}/{path}'+(f'#L{line}' if line else '') if path else None})
     add(1,'high','Competing snapshots are not one current match list',
@@ -189,6 +191,37 @@ def make_findings(baseline):
     add(19,'high','Valencia record conflicts across two current official pages',
         'Independently re-read after the T62 audit lead: the EuroLeague Game Center preview still says Valencia 5-1; the 2026-27 standings table says GP6, W4, L2. Neither disputed overall record is accepted as a current input. The Paris–Valencia listing remains source-linked, but its estimate and selection are withheld. Both selected observations are retained; no fixture observation was restamped.',
         'https://www.euroleaguebasketball.net/en/euroleague/standings/',status='input quarantined; needs review')
+    add(20,'high','A future schedule cannot fill in missing pre-match status',
+        'TEE3C reproduced pricing on EuroLeague rows whose official_status is null. The official start remains a captured schedule fact, not proof the match is still pre-match. Canonical origination now requires an explicit supported pre-match state; blank/new/unsupported states withhold every price and selection. Missing status is listed in the field-gap table. No Scheduled value was inferred.',
+        el,'pipeline/model.py','def prematch_status_verified','resolved in canonical model; status gaps need review')
+    add(21,'high','An estimate must expire with its statistical inputs',
+        'TEE3C found the browser only checked the fixture expiry/start, so a freshly refreshed fixture could outlive the 24-hour statistical input limit. Every price book now carries the minimum of fixture expiry, start and both statistical observation deadlines. Table and market views withdraw estimates at that deadline without mislabelling a still-supported fixture as stale. The exact 24-hour boundary is expired.',
+        nhl,'pipeline/model.py',"result['expires_at']",'resolved; Python and browser regression tests')
+    add(22,'medium','Displayed counts and provenance scope need independent release gates',
+        'TEE3C added rejection of duplicate price books, unsupported rolling-window flags, inflated KPI/coverage counts and field references hidden outside the source set used to calculate expiry. Future observations cannot justify retrospective pricing. These gates validate internal consistency, not independent confirmation of every legacy statement or worldwide source completeness.',
+        'https://api-web.nhle.com/v1/schedule/2026-10-22','pipeline/validate.py','def validate_data','resolved; regression tests')
+    add(23,'medium','Scratch builds must not rewrite the checked-in snapshot',
+        'Parallel audit PR #107 (E3-03) identified that pipeline.build --out a scratch directory rewrote tracked snapshot/audit JSON while leaving the checked-in pages unchanged. TEE3C made assembly/audit read-only during builds and writes the resulting snapshot and audit only into the selected output. Release checks also compare manifest metadata against the exported snapshot. Explicit assemble/refresh commands still persist their outputs.',
+        'https://api.github.com/repos/buffedlizard55-lab/OLBG1','pipeline/build.py','def build_site','resolved; non-mutating build regression tests')
+    add(24,'medium','Pages hosting mode could not be changed with this integration token',
+        'Parallel audit PR #107 (E3-01/E3-02/E3-05) raised the risk of the legacy main:/ build and workflow artifact deployment replacing one another. The Pages API confirms legacy mode; the TEE3C attempt to set build_type=workflow returned HTTP 403 Resource not accessible by integration. Do not claim the setting changed or that an artifact-only publisher is enforced. Both outputs use canonical expiry/status gates, but may have different observation windows and counts. Verify actual deployment jobs and the live manifest after publication; configuration risk remains for review.',
+        'https://api.github.com/repos/buffedlizard55-lab/OLBG1/pages',status='needs review; Pages configuration permission unavailable')
+    add(25,'high','Merged historical desk navigation escaped the Pages project',
+        'PR #111 introduced 98 /53674ac8/... links missing the /OLBG1 deployment prefix. PR #112 CI rejected the combined tree; a clean git archive reproduced the failure. Final integration changed only the completed desk generator routing and its 13 generated HTML pages to relative links, with a regression test. Original fixture, odds, confidence and prediction data are untouched and not endorsed as current canonical evidence.',
+        'https://api.github.com/repos/buffedlizard55-lab/OLBG1','scripts/s53674ac8_build_site.py','BASE =','resolved; clean-checkout link gate and routing test')
+    add(26,'medium','Historical desk generator cannot run standalone',
+        'During the scoped routing repair, running scripts/s53674ac8_build_site.py failed at its dashboard expression len(DATA_sports): DATA_sports is not defined by that standalone generator. Published pages were mechanically repaired only in href attributes, with all other content unchanged. Generator routing is corrected, but this separate legacy reproducibility defect remains for its owner to review; no pricing or sporting value was inferred to repair it.',
+        'https://api.github.com/repos/buffedlizard55-lab/OLBG1','scripts/s53674ac8_build_site.py','len(DATA_sports)','needs review; legacy generator standalone NameError')
+    add(27,'high','Repeated historical tennis prose lacks matchup-specific evidence',
+        'Post-deployment inspection of the preserved 53674ac8 tennis page found Cobolli and Paul paragraphs repeating the same three-sentence template except the selection and price. Claims about deep runs, opponent struggles and a net/baseline edge are not tied there to a named opponent, dated match logs or retained official observations. These are unverified historical claims, not accepted canonical predictions. The canonical High list remains empty; no prose or High label is imported from this desk.',
+        'https://www.atptour.com/en/scores/archive','53674ac8/sports/tennis.html','enters this ATP/WTA fixture','needs review; archived prose not promoted')
+    add(None,'high','World Series Game 5 is listed only if necessary',
+        'Official MLB schedule projection read 2026-10-22T12:01:17Z–12:01:27Z: gamePk 849799 has ifNecessary=Y, while the preceding four games show N. A fixture listing is not proof that Game 5 will be needed. The canonical model now withholds every price and selection for that game until the league explicitly establishes that it will be played; the other four are not re-dated by this check.',
+        'https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-28&fields=totalGames,dates,date,games,gamePk,season,gameType,ifNecessary,ifNecessaryDescription',
+        path='pipeline/model.py',needle="f.get('if_necessary') == 'Y'",status='conditional listing; selection withheld; needs review',finding_id='F-97DC-01')
+    add(None,'high','Historical audit rows without an official match-source link',
+        f'{no_recheck:,} historical row occurrences contain neither a direct official URL nor a sport-specific official lookup. These are NOT current verified fixtures; accepted facts, odds and predictions remain blank. Previously their review cell linked to generic OLBG discovery, which is not an official sporting source. The false fallback has been removed: each such row now shows an explicit missing-source flag and its repository locator for manual investigation.',
+        None,path='pipeline/build.py',needle="No official link located · unverified",status='needs review; no source invented',finding_id='F-97DC-02')
     return findings
 
 if __name__=='__main__':

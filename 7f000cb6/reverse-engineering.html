@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>OLBG Reverse Engineering · OLBG Audit &amp; Origination Desk (7f000cb6)</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="shell">
+  <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+    <a class="brand" href="index.html">OLBG Desk · 7f000cb6<small>Official-Source Audit &amp; Lines</small></a>
+    <div class="nav-group">
+      <div class="nav-title">Desk Views</div>
+      <a class="nav-link" href="index.html"><span>Overview &amp; Match List</span><span class="nav-count">122</span></a><a class="nav-link" href="picks.html"><span>High-Confidence Picks</span><span class="nav-count">9</span></a><a class="nav-link" href="markets.html"><span>Originated Markets</span><span class="nav-count">280</span></a><a class="nav-link" href="sports.html"><span>17 Sport Categories</span><span class="nav-count">17</span></a><a class="nav-link" href="flagged.html"><span>Flagged for Review</span><span class="nav-count">85</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-title">Verification &amp; Audit</div>
+      <a class="nav-link active" href="reverse-engineering.html"><span>OLBG Reverse Engineering</span><span class="nav-count">17 hubs</span></a><a class="nav-link" href="audit.html"><span>Line-by-Line Repo Audit</span><span class="nav-count">18</span></a><a class="nav-link" href="sources.html"><span>Official Sources</span><span class="nav-count">38</span></a><a class="nav-link" href="methodology.html"><span>Model &amp; Grading Rules</span></a><a class="nav-link" href="../index.html"><span>← Canonical Root Desk</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-title">17 Covered Sports</div>
+      <a class="nav-link" href="sports/ice-hockey.html"><span>Ice Hockey</span><span class="nav-count">26</span></a><a class="nav-link" href="sports/baseball.html"><span>Baseball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/basketball.html"><span>Basketball</span><span class="nav-count">11</span></a><a class="nav-link" href="sports/tennis.html"><span>Tennis</span><span class="nav-count">21</span></a><a class="nav-link" href="sports/rugby-union.html"><span>Rugby Union</span><span class="nav-count">19</span></a><a class="nav-link" href="sports/rugby-league.html"><span>Rugby League</span><span class="nav-count">9</span></a><a class="nav-link" href="sports/snooker.html"><span>Snooker</span><span class="nav-count">8</span></a><a class="nav-link" href="sports/handball.html"><span>Handball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/volleyball.html"><span>Volleyball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/gaelic-football.html"><span>Gaelic Football</span><span class="nav-count">4</span></a><a class="nav-link" href="sports/cricket.html"><span>Cricket</span><span class="nav-count">2</span></a><a class="nav-link" href="sports/golf.html"><span>Golf</span><span class="nav-count">2</span></a><a class="nav-link" href="sports/motor-racing.html"><span>Motor Racing</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/darts.html"><span>Darts</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/aussie-rules.html"><span>Aussie Rules</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/esports.html"><span>eSports</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/greyhounds.html"><span>Greyhounds</span><span class="nav-count">1</span></a>
+    </div>
+  </aside>
+  <div class="content">
+    <header class="topbar">
+      <div>
+        <button class="menu-btn" id="menu-btn" type="button">☰ Menu</button>
+        <strong>Session 7f000cb6</strong> · Independent Official-Source Match &amp; Pricing Desk
+      </div>
+      <div class="topbar-meta">
+        <span>Snapshot: <code>2026-10-22T12:30:00Z</code></span>
+        <span>Model: <code>7f000cb6-quant-v1.0</code></span>
+        <a href="exports/matches.csv" download>CSV Export ↓</a>
+      </div>
+    </header>
+    <main id="main">
+      <div class="notice notice-warn" id="live-expiry-note" hidden></div>
+      
+<h1>OLBG.com Reverse-Engineering &amp; Upstream Defect Findings</h1>
+<p class="subtitle">Structural audit of <code>robots.txt</code>, <code>sitemap-betting-tips.xml</code>, and all 17 in-scope OLBG sport hubs live-fetched on <code>2026-10-22</code>.</p>
+<div class="cards">
+  <article class="card">
+    <h3>1. Split-Timezone Rendering Bug (Unlabeled BST vs EDT)</h3>
+    <p class="prose-text">Accessed from identical US-East headers (<code>UTC-4</code>), OLBG hubs <code>Basketball/4</code>, <code>Rugby_Union/9</code>, <code>Ice_Hockey/13</code>, <code>Handball/20</code>, and <code>Greyhounds/28</code> output hardcoded <code>Europe/London</code> (<code>BST = UTC+1</code>) clocks, whereas <code>Tennis/3</code>, <code>Snooker/8</code>, <code>Baseball/12</code>, <code>Motor_Racing/14</code>, <code>Darts/15</code>, <code>Volleyball/21</code>, and <code>Gaelic_Football/25</code> render viewer-local <code>EDT = UTC-4</code> clocks — with zero timezone badge anywhere in the DOM. Prior desk <code>53674ac8</code> fell into this exact trap, copying OLBG's <code>17:45</code> BST Handball clock as <code>17:45:00Z</code> (a 1-hour error vs official <code>18:45 CEST = 16:45Z</code>).</p>
+  </article>
+  <article class="card">
+    <h3>2. Taxonomy Collapse &amp; Active-Tournament Blind Spots</h3>
+    <p class="prose-text">14 of 17 hubs flatten match URLs to <code>/All_&lt;Sport&gt;/All_Events/&lt;Match&gt;/&lt;id&gt;</code>, stripping tournament and round metadata. Meanwhile, <code>Aussie_Rules/22</code> and <code>eSports/23</code> display <em>"No tips found."</em> during active NAB AFLW Round 11 and LoL Worlds 2026; <code>Rugby_League/10</code> lists only 2027 ante-post markets while missing active RLWC 2026 Round 2 matches; and <code>Golf/5</code> omits the PGA Tour's active Butterfield Bermuda Championship.</p>
+  </article>
+  <article class="card">
+    <h3>3. Concrete Fixture &amp; UI Defects Caught Live</h3>
+    <p class="prose-text">On <code>Gaelic_Football/25</code>, OLBG lists the Waterford SFC Final <code>Rathgormack v The Nire</code> (<code>event_id=3536</code>) as <code>01 Nov 10:30</code>, contradicting Munster GAA's official <code>Sun 25 Oct 2026 14:30</code> fixture at Fraher Field, and reverses Cork GAA's neutral-venue order on <code>Nemo Rangers vs St. Finbarr's</code> (<code>3530</code>). On <code>Cricket/7</code>, <code>T20 Blast 2027</code> (<code>188350</code>) renders an empty Win-Tip count/percentage box on an Each-Way-only card.</p>
+  </article>
+</div>
+<h2>Per-Hub OLBG Telemetry vs Official Governing-Body Cross-Check</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>OLBG Sport Hub</th><th>Observed Clock Mode</th><th>URL Slug Routing</th><th>Observed Hub State</th><th>Official Benchmark</th></tr></thead>
+  <tbody><tr>
+  <td><a href="sports/ice-hockey.html"><strong>Ice Hockey</strong></a> (<code>/13</code>)</td>
+  <td>Hardcoded Europe/London (BST, UTC+1) unlabeled</td>
+  <td>Preserves /NHL/ competition slug for North America; collapses European leagues</td>
+  <td>Active match cards + Stanley Cup ante-post</td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/baseball.html"><strong>Baseball</strong></a> (<code>/12</code>)</td>
+  <td>Viewer-IP local clock (EDT, UTC-4) unlabeled</td>
+  <td>Preserves /MLB/ competition path</td>
+  <td>Active 2026 World Series match &amp; series cards</td>
+  <td><a class="src-link" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-22&amp;endDate=2026-10-29&amp;hydrate=probablePitcher,team,venue" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/basketball.html"><strong>Basketball</strong></a> (<code>/4</code>)</td>
+  <td>Hardcoded Europe/London (BST, UTC+1) unlabeled</td>
+  <td>Preserves /NBA/ and /Euroleague/ paths</td>
+  <td>Active NBA &amp; EuroLeague match cards</td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/tennis.html"><strong>Tennis</strong></a> (<code>/3</code>)</td>
+  <td>Viewer-IP local clock (EDT, UTC-4) unlabeled</td>
+  <td>Collapsed to /All_Tennis/All_Events/</td>
+  <td>Active ATP/WTA singles &amp; doubles cards</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/rugby-union.html"><strong>Rugby Union</strong></a> (<code>/9</code>)</td>
+  <td>Hardcoded Europe/London (BST, UTC+1) unlabeled</td>
+  <td>Collapsed to /All_Rugby_Union/All_Events/</td>
+  <td>Active URC, Top 14, Pro D2 &amp; Premiership cards</td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/rugby-league.html"><strong>Rugby League</strong></a> (<code>/10</code>)</td>
+  <td>Date-only ante-post cards (2027)</td>
+  <td>Collapsed to /All_Rugby_League/All_Events/</td>
+  <td>Zero active match tips — only 2027 NRL/Super League outrights despite active RLWC26</td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/snooker.html"><strong>Snooker</strong></a> (<code>/8</code>)</td>
+  <td>Viewer-IP local clock (EDT, UTC-4) unlabeled</td>
+  <td>Collapsed to /All_Snooker/All_Events/</td>
+  <td>Active BetVictor Northern Ireland Open R3 cards</td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/handball.html"><strong>Handball</strong></a> (<code>/20</code>)</td>
+  <td>Hardcoded Europe/London (BST, UTC+1) unlabeled</td>
+  <td>Collapsed to /All_Handball/All_Events/</td>
+  <td>Active EHF Champions League &amp; European domestic cards</td>
+  <td><a class="src-link" href="https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/volleyball.html"><strong>Volleyball</strong></a> (<code>/21</code>)</td>
+  <td>Viewer-IP local clock (EDT, UTC-4) unlabeled</td>
+  <td>Collapsed to /All_Volleyball/All_Events/</td>
+  <td>Active PlusLiga, TAURON Liga, SuperLega, Czech &amp; Brazilian cards</td>
+  <td><a class="src-link" href="https://www.tauronliga.pl/games.html" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/gaelic-football.html"><strong>Gaelic Football</strong></a> (<code>/25</code>)</td>
+  <td>Viewer-IP local clock (EDT, UTC-4) unlabeled</td>
+  <td>Collapsed to /All_Gaelic_Football/All_Events/</td>
+  <td>5 county championship final cards + 2027 All-Ireland outright</td>
+  <td><a class="src-link" href="https://munster.gaa.ie/fixtures/events-calendar/" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/cricket.html"><strong>Cricket</strong></a> (<code>/7</code>)</td>
+  <td>Mixed BST / date-only ante-post cards</td>
+  <td>Collapsed to /All_Cricket/All_Events/</td>
+  <td>International ODIs/Tests + blank Win-Tip UI bug on T20 Blast 2027 (188350)</td>
+  <td><a class="src-link" href="https://cricketireland.ie/matches/" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/golf.html"><strong>Golf</strong></a> (<code>/5</code>)</td>
+  <td>Tournament window dates</td>
+  <td>Collapsed to /All_Golf/All_Events/</td>
+  <td>Lists DP World Tour / Champions / LPGA events while omitting active PGA Tour Bermuda Championship</td>
+  <td><a class="src-link" href="https://www.pgatour.com/schedule" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/motor-racing.html"><strong>Motor Racing</strong></a> (<code>/14</code>)</td>
+  <td>Viewer-IP local clock (EDT, UTC-4) unlabeled</td>
+  <td>Collapsed to /All_Motor_Racing/All_Events/</td>
+  <td>2026 United States Grand Prix &amp; Drivers Championship outrights</td>
+  <td><a class="src-link" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/darts.html"><strong>Darts</strong></a> (<code>/15</code>)</td>
+  <td>Viewer-IP local clock (EDT, UTC-4) unlabeled</td>
+  <td>Collapsed to /All_Darts/All_Events/</td>
+  <td>Active European Championship R1 match cards</td>
+  <td><a class="src-link" href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/aussie-rules.html"><strong>Aussie Rules</strong></a> (<code>/22</code>)</td>
+  <td>Empty hub (&#x27;No tips found.&#x27;)</td>
+  <td>Hub empty</td>
+  <td>Blind spot: renders &#x27;No tips found.&#x27; despite active NAB AFLW Round 11</td>
+  <td><a class="src-link" href="https://www.afl.com.au/aflw/matches/8970" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/esports.html"><strong>eSports</strong></a> (<code>/23</code>)</td>
+  <td>Empty hub (&#x27;No tips found.&#x27;)</td>
+  <td>Hub empty</td>
+  <td>Blind spot: renders &#x27;No tips found.&#x27; despite active League of Legends Worlds 2026</td>
+  <td><a class="src-link" href="https://lolesports.com/en-GB/tournament/115660540725177488/overview" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr><tr>
+  <td><a href="sports/greyhounds.html"><strong>Greyhounds</strong></a> (<code>/28</code>)</td>
+  <td>Hardcoded Europe/London (BST, UTC+1) unlabeled</td>
+  <td>Daily racecard IDs (/Greyhounds/28 -&gt; Sheffield, Central Park, Newcastle)</td>
+  <td>10 UK daily racecards (1:31 Sheffield, 8 Central Park races, 8:19 Newcastle)</td>
+  <td><a class="src-link" href="https://www.gbgb.org.uk/racing/open-races/" target="_blank" rel="noopener noreferrer">Official Cross-Check ↗</a></td>
+</tr></tbody>
+</table>
+</div>
+
+    </main>
+    <footer>
+      <span>100% governing-body verified · Blank = unconfirmed · Zero aggregator/bookmaker scraping · 18+ research only.</span>
+      <span>Session <code>7f000cb6</code> · <a href="https://github.com/buffedlizard55-lab/OLBG1">GitHub Repository ↗</a></span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

@@ -8,7 +8,7 @@ from urllib.parse import urlsplit,unquote
 from datetime import timedelta,date
 import argparse,math
 from .common import load,parse_time,official_url,allowed_url,digest
-from .config import CURRENT,ROOT,SPORT_INDEX,SPORT_MARKETS,FIXTURE_TTL_HOURS
+from .config import CURRENT,ROOT,SPORT_INDEX,SPORT_MARKETS,FIXTURE_TTL_HOURS,HORIZON_DAYS
 from .evidence import verify_capture,fixture_state
 from .model import originate,american_from_decimal
 
@@ -22,23 +22,40 @@ def validate_data(directory=CURRENT):
         try:
             verify_capture(c);check(parse_time(c['observed_before'])<=at,c['id']+': observation after build')
             ids=[o['id'] for o in c['observations']];check(len(ids)==len(set(ids)),c['id']+': duplicate observation ID')
-            check(allowed_url(c['final_url'],True),c['id']+': invalid final publisher')
+            check(official_url(c['final_url']) if c['role']=='official' else allowed_url(c['final_url'],True),
+                  c['id']+': invalid final publisher')
             if c['method']=='http-json-parser':
                 raw=directory/'raw'/f'{c["id"]}.body'
                 check(raw.is_file(),c['id']+': missing raw evidence')
                 if raw.is_file():check(digest(raw.read_bytes())==c['raw_response_sha256'],c['id']+': raw hash mismatch')
         except (ValueError,KeyError,TypeError) as ex:errors.append(c['id']+': '+str(ex))
+    network=load(directory/'network.json') if (directory/'network.json').exists() else {}
+    for prefix in network.get('successful_feeds', []):
+        c=caps.get('http-'+prefix+'-schedule')
+        check(c is not None and c.get('complete') is True,
+              prefix+': full-slate replacement without complete official capture')
+    for prefix,dates in network.get('replace_fixture_dates', {}).items():
+        c=caps.get('http-'+prefix+'-schedule')
+        check(prefix=='nhl' and c is not None and c.get('complete') is False and
+              c.get('covered_dates')==dates and len(dates)==len(set(dates)),
+              prefix+': partial date replacement not backed by matching official capture')
     ids=[r['id'] for r in s['fixtures']];check(len(ids)==len(set(ids)),'Duplicate fixture ID')
     for r in s['fixtures']:
         try:
             check(r['sport'] in SPORT_INDEX,r['id']+': excluded sport')
-            f=r['facts'];check(set(r['field_evidence'])=={k for k,v in f.items() if v is not None},r['id']+': field reference mismatch')
+            f=r['facts'];check(bool(r['source_ids']) and len(r['source_ids'])==len(set(r['source_ids'])),r['id']+': missing/duplicate source IDs')
+            check(set(r['field_evidence'])=={k for k,v in f.items() if v is not None},r['id']+': field reference mismatch')
+            if r['sport']=='baseball':
+                check(f.get('if_necessary') in (None,'Y','N'),r['id']+': invalid MLB conditional flag')
+            else:
+                check(f.get('if_necessary') is None,r['id']+': MLB conditional flag on other sport')
             for key,value in f.items():
                 if value is None:continue
                 refs=r['field_evidence'].get(key,[]);check(bool(refs),r['id']+': no evidence for '+key)
                 supported=False
                 for ref in refs:
                     sid,oid=ref.split('#',1);c=caps[sid]
+                    check(sid in r['source_ids'],r['id']+': field source absent from expiry scope')
                     check(c['role']=='official' and official_url(c['url']),r['id']+': discovery used as verification')
                     obs=next(o for o in c['observations'] if o['id']==oid)
                     supported |= obs['values'].get(key)==value
@@ -49,7 +66,11 @@ def validate_data(directory=CURRENT):
             check(parse_time(r['verified_before'])==latest,r['id']+': wrong end bound')
             check(parse_time(r['expires_at'])==earliest+timedelta(hours=FIXTURE_TTL_HOURS),r['id']+': expiry extended')
             check(r['state']==fixture_state(r,at),r['id']+': stale state')
-            if f['start_utc']:parse_time(f['start_utc'])
+            if f['start_utc']:
+                start=parse_time(f['start_utc']);expected_window=at<=start<at+timedelta(days=HORIZON_DAYS)
+            else:
+                expected_window=f['date'] is None or at.date()<=date.fromisoformat(f['date'])<=at.date()+timedelta(days=HORIZON_DAYS-1)
+            check(r['in_window']==expected_window,r['id']+': incorrect rolling-window membership')
             if f['date']:date.fromisoformat(f['date'])
         except (KeyError,ValueError,StopIteration,TypeError) as ex:errors.append(r['id']+': '+str(ex))
     stat_ids=[r['id'] for r in s['statistics']];check(len(stat_ids)==len(set(stat_ids)),'Duplicate statistic ID')
@@ -63,14 +84,17 @@ def validate_data(directory=CURRENT):
                 else:check(o['values'].get(k)==v,r['id']+': unsupported stat '+k)
             check(r['games_played']==r['wins']+r['losses']+r.get('ot_losses',0),r['id']+': invalid record arithmetic')
         except (KeyError,ValueError,StopIteration,TypeError) as ex:errors.append(r['id']+': '+str(ex))
-    prices={p['fixture_id']:p for p in s['prices']};check(set(prices)==set(ids),'Missing/extra price-book rows')
+    prices={p['fixture_id']:p for p in s['prices']};check(len(prices)==len(s['prices']),'Duplicate price-book row');check(set(prices)==set(ids),'Missing/extra price-book rows')
     for r in s['fixtures']:
         p=prices.get(r['id'])
         if not p:continue
         check(p==originate(r,s['statistics'],at),r['id']+': nonreproducible price / confidence')
         check(p['market_quote'] is None,r['id']+': fabricated bookmaker quote')
         check(p['confidence'] in (None,'low'),r['id']+': unsupported confidence upgrade')
-        if p['markets']:check(r['state']=='upcoming' and r['in_window'],r['id']+': non-future/out-of-window price')
+        if p['markets']:
+            check(r['state']=='upcoming' and r['in_window'],r['id']+': non-future/out-of-window price')
+            if r['sport']=='baseball':
+                check(r['facts'].get('if_necessary')=='N',r['id']+': conditional/unknown MLB game priced')
         covered={m['market'] for m in p['markets']}|{m['market'] for m in p['withheld']}
         check(covered==set(SPORT_MARKETS[r['sport']]),r['id']+': uninvestigated market family')
         for m in p['markets']:
@@ -81,6 +105,27 @@ def validate_data(directory=CURRENT):
                 check(abs(o['fair_decimal']*pr-1)<1e-10,m['id']+': price not fair 1/p')
                 check(o['american_display']==american_from_decimal(o['decimal_display']),m['id']+': US/decimal mismatch')
                 check(o['fair_price_in_target_band']==(1.4<=o['fair_decimal']<=101),m['id']+': false band claim')
+    # Displayed KPIs must agree with the actual books and rows, not a hand-edited total.
+    counts = {
+        'captured_listings': len(s['fixtures']),
+        'current_listings': sum(r['in_window'] and r['state'] not in ('stale','closed','date elapsed','start elapsed','observation not yet available','status not pre-match') for r in s['fixtures']),
+        'upcoming_exact': sum(r['in_window'] and r['state']=='upcoming' for r in s['fixtures']),
+        'categories': len(SPORT_INDEX),
+        'categories_with_listings': sum(c['listing_count']>0 for c in s['coverage']),
+        'fully_covered_categories': 0,
+        'sources': sum(c['role']=='official' for c in caps.values()),
+        'priced_matches': sum(bool(p['markets']) for p in s['prices']),
+        'originated_markets': sum(len(p['markets']) for p in s['prices']),
+        'originated_outcomes': sum(len(m['outcomes']) for p in s['prices'] for m in p['markets']),
+        'unpriced': sum(not p['markets'] for p in s['prices']),
+        **{tier: sum(p['confidence']==tier for p in s['prices']) for tier in ('low','medium','high')},
+    }
+    check(s['counts']==counts,'Snapshot counts do not reconcile with retained rows')
+    for c in s['coverage']:
+        rows=[r for r in s['fixtures'] if r['sport']==c['slug'] and r['in_window']]
+        fresh=[r for r in rows if r['state'] not in ('stale','closed','date elapsed','start elapsed','observation not yet available','status not pre-match')]
+        check(c['captured_count']==len(rows) and c['listing_count']==len(fresh),c['slug']+': coverage counts do not reconcile')
+        check(c['priced_count']==sum(bool(prices[r['id']]['markets']) for r in fresh if r['id'] in prices),c['slug']+': coverage price count does not reconcile')
     check(s['predictions']==[],'Unsupported High prose release')
     check(s['complete'] is False,'False completeness claim')
     check(len(s['coverage'])==17 and all(not c['scope_complete'] for c in s['coverage']),'False sport completeness')
@@ -88,9 +133,10 @@ def validate_data(directory=CURRENT):
 
 class HTML(HTMLParser):
     def __init__(self):
-        super().__init__(convert_charrefs=True);self.links=[];self.ids=[];self.rows=[];self.row=None;self.has_td=False;self.h1=0;self.title=False;self.body={}
+        super().__init__(convert_charrefs=True);self.links=[];self.ids=[];self.rows=[];self.row=None;self.has_td=False;self.h1=0;self.title=False;self.body={};self.records=[]
     def handle_starttag(self,tag,attrs):
         d=dict(attrs)
+        if 'data-record' in d:self.records.append(d)
         if tag=='body':self.body=d
         if tag=='h1':self.h1+=1
         if tag=='title':self.title=True
@@ -112,6 +158,12 @@ def validate_site(out):
         if path not in cache:
             h=HTML();h.feed(path.read_text(encoding='utf-8'));cache[path]=h
         return cache[path]
+    snapshot_path=out/'data/current/snapshot.json'
+    snapshot=load(snapshot_path) if snapshot_path.is_file() else None
+    books={p['fixture_id']:p for p in snapshot['prices']} if snapshot else {}
+    if snapshot and 'generated_at' in snapshot:
+        for key in ('generated_at','counts','input_sha256'):
+            if snapshot.get(key)!=manifest.get(key):errors.append('Snapshot/manifest mismatch: '+key)
     unmanaged={p.name for p in out.glob('*.html')}-set(manifest['pages'])-{'release-review.html'}
     if unmanaged:errors.append('Unregistered root HTML (archive it or register a canonical route): '+', '.join(sorted(unmanaged)))
     for rel in manifest['pages']:
@@ -121,8 +173,23 @@ def validate_site(out):
         if h.body.get('data-snapshot')!=manifest['generated_at']:errors.append(rel+': canonical snapshot marker missing or mismatched')
         if h.h1!=1 or not h.title:errors.append(rel+': heading/title structure')
         if len(h.ids)!=len(set(h.ids)):errors.append(rel+': duplicate HTML IDs')
+        for record in h.records:
+            priced=record.get('data-priced')=='true' or 'market-book' in record.get('class','').split()
+            if not priced:continue
+            deadline=record.get('data-price-expires')
+            try:
+                end=parse_time(deadline)
+                if end>parse_time(record['data-expires']) or end>parse_time(record['data-start']):raise ValueError('deadline exceeds fixture/start')
+                if record.get('id') in books and deadline!=books[record['id']]['expires_at']:raise ValueError('deadline differs from price book')
+            except (ValueError,TypeError,KeyError,AttributeError) as ex:errors.append(rel+': missing/invalid rendered price expiry: '+str(ex))
+        # Current sporting tables must point to a governing body / league, not
+        # merely the repository or OLBG discovery. Archive/file inventories and
+        # source-register rows are different: an unknown original must be
+        # visibly flagged, never decorated with a fabricated sporting link.
+        project_only = rel=='archive.html' or rel.startswith('audit/') or rel=='sources.html'
         for index,links in enumerate(h.rows,1):
-            if not any(allowed_url(u,True) or u.startswith('https://github.com/buffedlizard55-lab/OLBG1/') for u in links):errors.append(f'{rel}: row {index} has no official/project source link')
+            backed = any((allowed_url(u,True) or u.startswith('https://github.com/buffedlizard55-lab/OLBG1/')) if project_only else official_url(u) for u in links)
+            if not backed:errors.append(f'{rel}: row {index} has no '+('traceable source' if project_only else 'official sporting source')+' link')
         for href in h.links:
             u=urlsplit(href)
             if u.scheme or u.netloc:

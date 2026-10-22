@@ -7,7 +7,7 @@ an alternate handicap to a desired percentage. Unsupported markets remain null.
 from datetime import timedelta
 from decimal import Decimal, ROUND_HALF_UP
 import math
-from .common import parse_time
+from .common import parse_time, iso
 from .config import STATS_TTL_HOURS, SPORT_MARKETS, MARKET_REQUIREMENTS
 from .evidence import fixture_state
 
@@ -64,7 +64,7 @@ def record_ok(r, at):
             return False
     except (KeyError, ValueError, TypeError, AttributeError):
         return False
-    if start > end or end > at or at - start > timedelta(hours=STATS_TTL_HOURS):
+    if start > end or end > at or at - start >= timedelta(hours=STATS_TTL_HOURS):
         return False
     return True
 
@@ -127,16 +127,38 @@ def confidence_gate(probability, fair_decimal, calibration=None, quote=None, con
     return 'low', reasons
 
 
+def prematch_status_verified(row):
+    """Only explicit supported pre-match states qualify; missing is not Scheduled.
+
+    Adapter states are retained in official observations. Do not guess that a new
+    provider status code, an unknown value or a blank means a playable fixture.
+    """
+    states = {
+        'NHL': {'FUT', 'PRE'},
+        'MLB': {'Scheduled', 'Pre-Game', 'Warmup'},
+        'NBA': {'Scheduled'},
+        'EuroLeague': {'Scheduled'},
+    }
+    facts = row['facts']
+    return facts.get('official_status') in states.get(facts.get('competition'), set())
+
+
 def originate(row, statistics, at):
     f = row['facts']
     reason = None
     result = {'fixture_id': row['id'], 'model_version': MODEL_VERSION, 'selection': None,
               'confidence': None, 'probability': None, 'fair_decimal': None, 'american_display': None,
-              'market_quote': None, 'markets': [], 'input_ids': [], 'notes': [], 'withheld': []}
+              'market_quote': None, 'markets': [], 'input_ids': [], 'expires_at': None, 'notes': [], 'withheld': []}
     if row.get('in_window') is False:
         reason = 'Outside declared rolling source-date window'
-    elif fixture_state(row, at) != 'upcoming':
+    elif fixture_state(row, at) not in ('upcoming', 'conditional'):
         reason = 'Exact future start and fresh fixture evidence required; current state: '+fixture_state(row, at)
+    elif row['sport'] == 'baseball' and f.get('if_necessary') == 'Y':
+        reason = 'Official MLB ifNecessary=Y: conditional series game; requirement not confirmed. No pre-match price.'
+    elif row['sport'] == 'baseball' and f.get('if_necessary') != 'N':
+        reason = 'MLB ifNecessary field unverified; cannot rule out a conditional game. No pre-match price.'
+    elif not prematch_status_verified(row):
+        reason = 'Official pre-match status unverified or not supported; a future published start alone is insufficient'
     elif not f['participant_a'] or not f['participant_b']:
         reason = 'No verified head-to-head; full field and a field model required'
     elif row['sport'] not in ('baseball', 'ice-hockey', 'basketball'):
@@ -159,6 +181,9 @@ def originate(row, statistics, at):
                 reason = 'Inputs have different as-of periods; no cross-snapshot matchup price'
             else:
                 result['input_ids'] = [a['id'], b['id']]
+                result['expires_at'] = iso(min(
+                    parse_time(row['expires_at']), parse_time(f['start_utc']),
+                    *(parse_time(r['observed_after']) + timedelta(hours=STATS_TTL_HOURS) for r in inputs)))
                 src = row['source_ids'] + [a['source_id'], b['source_id']]
                 pa, pb = f['participant_a'], f['participant_b']
                 p = log5(a, b)

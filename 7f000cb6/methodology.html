@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>Model &amp; Grading Rules · OLBG Audit &amp; Origination Desk (7f000cb6)</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="shell">
+  <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+    <a class="brand" href="index.html">OLBG Desk · 7f000cb6<small>Official-Source Audit &amp; Lines</small></a>
+    <div class="nav-group">
+      <div class="nav-title">Desk Views</div>
+      <a class="nav-link" href="index.html"><span>Overview &amp; Match List</span><span class="nav-count">122</span></a><a class="nav-link" href="picks.html"><span>High-Confidence Picks</span><span class="nav-count">9</span></a><a class="nav-link" href="markets.html"><span>Originated Markets</span><span class="nav-count">280</span></a><a class="nav-link" href="sports.html"><span>17 Sport Categories</span><span class="nav-count">17</span></a><a class="nav-link" href="flagged.html"><span>Flagged for Review</span><span class="nav-count">85</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-title">Verification &amp; Audit</div>
+      <a class="nav-link" href="reverse-engineering.html"><span>OLBG Reverse Engineering</span><span class="nav-count">17 hubs</span></a><a class="nav-link" href="audit.html"><span>Line-by-Line Repo Audit</span><span class="nav-count">18</span></a><a class="nav-link" href="sources.html"><span>Official Sources</span><span class="nav-count">38</span></a><a class="nav-link active" href="methodology.html"><span>Model &amp; Grading Rules</span></a><a class="nav-link" href="../index.html"><span>← Canonical Root Desk</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-title">17 Covered Sports</div>
+      <a class="nav-link" href="sports/ice-hockey.html"><span>Ice Hockey</span><span class="nav-count">26</span></a><a class="nav-link" href="sports/baseball.html"><span>Baseball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/basketball.html"><span>Basketball</span><span class="nav-count">11</span></a><a class="nav-link" href="sports/tennis.html"><span>Tennis</span><span class="nav-count">21</span></a><a class="nav-link" href="sports/rugby-union.html"><span>Rugby Union</span><span class="nav-count">19</span></a><a class="nav-link" href="sports/rugby-league.html"><span>Rugby League</span><span class="nav-count">9</span></a><a class="nav-link" href="sports/snooker.html"><span>Snooker</span><span class="nav-count">8</span></a><a class="nav-link" href="sports/handball.html"><span>Handball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/volleyball.html"><span>Volleyball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/gaelic-football.html"><span>Gaelic Football</span><span class="nav-count">4</span></a><a class="nav-link" href="sports/cricket.html"><span>Cricket</span><span class="nav-count">2</span></a><a class="nav-link" href="sports/golf.html"><span>Golf</span><span class="nav-count">2</span></a><a class="nav-link" href="sports/motor-racing.html"><span>Motor Racing</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/darts.html"><span>Darts</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/aussie-rules.html"><span>Aussie Rules</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/esports.html"><span>eSports</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/greyhounds.html"><span>Greyhounds</span><span class="nav-count">1</span></a>
+    </div>
+  </aside>
+  <div class="content">
+    <header class="topbar">
+      <div>
+        <button class="menu-btn" id="menu-btn" type="button">☰ Menu</button>
+        <strong>Session 7f000cb6</strong> · Independent Official-Source Match &amp; Pricing Desk
+      </div>
+      <div class="topbar-meta">
+        <span>Snapshot: <code>2026-10-22T12:30:00Z</code></span>
+        <span>Model: <code>7f000cb6-quant-v1.0</code></span>
+        <a href="exports/matches.csv" download>CSV Export ↓</a>
+      </div>
+    </header>
+    <main id="main">
+      <div class="notice notice-warn" id="live-expiry-note" hidden></div>
+      
+<h1>Quantitative Origination &amp; Confidence Grading Methodology</h1>
+<p class="subtitle">Transparent zero-vig mathematical models built strictly from verified official governing-body statistics.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Domain</th><th>Model Family</th><th>Specification</th><th>Official Input Feed</th></tr></thead>
+  <tbody><tr><td><strong>Ice Hockey (NHL)</strong></td><td><code>Empirical-Bayes Shrunk Poisson + Log5 OT</code></td><td>Shrunk team attack/defense rates (k=6 games toward 32-club NHL mean GF/GP) with 1.045 home-ice factor on a 21×21 goal grid; ties allocated via shrunk points-percentage log5.</td><td><a class="src-link" href="https://api-web.nhle.com/v1/standings/now" target="_blank" rel="noopener noreferrer">Official input ↗</a></td></tr><tr><td><strong>Baseball (MLB World Series)</strong></td><td><code>Conditioned 26×26 Poisson Run Grid</code></td><td>Regular-season RS/RA per game (162 GP) with 1.035 home park/lineup factor conditioned on non-tie final score; F5 scaled at 0.56× full-game rate.</td><td><a class="src-link" href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason" target="_blank" rel="noopener noreferrer">Official input ↗</a></td></tr><tr><td><strong>Basketball (EuroLeague)</strong></td><td><code>Shrunk Normal Margin &amp; Total Model</code></td><td>20-club PTS+/PTS- shrunk (k=4 games) toward league mean with +3.2 pt home court, σ_margin=11.5 pts, σ_total=14.0 pts.</td><td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official input ↗</a></td></tr><tr><td><strong>High-Confidence Gate</strong></td><td><code>p &gt; 0.7000 AND Fair Odds in [-250, +10000]</code></td><td>Requires fair decimal in [1.4000, 101.0000], p &gt; 70.0% (hence p in (0.7000, 0.7143], -234 to -250), exact future UTC kickoff, zero source conflicts, and ≥30-word unique player/form/history preview.</td><td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official input ↗</a></td></tr></tbody>
+</table>
+</div>
+
+    </main>
+    <footer>
+      <span>100% governing-body verified · Blank = unconfirmed · Zero aggregator/bookmaker scraping · 18+ research only.</span>
+      <span>Session <code>7f000cb6</code> · <a href="https://github.com/buffedlizard55-lab/OLBG1">GitHub Repository ↗</a></span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

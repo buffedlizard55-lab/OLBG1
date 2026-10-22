@@ -1,4 +1,4 @@
-"""Session d7d19a67-olbg1 (task T65) - transcribed official-source evidence.
+"""Session d7d19a67-olbg1 (task TD7D19, claimed as T65) - transcribed official-source evidence.
 
 Every literal in this module was read this session (2026-10-22, 12:22Z-12:55Z) from an
 official publisher page listed in SOURCES. Nothing is inferred, interpolated or recalled:
@@ -9,7 +9,7 @@ boxing, UFC/MMA, hurling, horse racing, cycling and specials excluded).
 """
 
 SESSION = "d7d19a67-olbg1"
-TASK = "T65"
+TASK = "TD7D19"
 DESK_READ_UTC = "2026-10-22T12:55:00Z"
 WINDOW_FROM_UTC = "2026-10-22T12:55:00Z"
 WINDOW_UNTIL_UTC = "2026-10-29T12:55:00Z"

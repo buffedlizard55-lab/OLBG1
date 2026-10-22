@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>Flagged for Review · OLBG Audit &amp; Origination Desk (7f000cb6)</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="shell">
+  <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+    <a class="brand" href="index.html">OLBG Desk · 7f000cb6<small>Official-Source Audit &amp; Lines</small></a>
+    <div class="nav-group">
+      <div class="nav-title">Desk Views</div>
+      <a class="nav-link" href="index.html"><span>Overview &amp; Match List</span><span class="nav-count">122</span></a><a class="nav-link" href="picks.html"><span>High-Confidence Picks</span><span class="nav-count">9</span></a><a class="nav-link" href="markets.html"><span>Originated Markets</span><span class="nav-count">280</span></a><a class="nav-link" href="sports.html"><span>17 Sport Categories</span><span class="nav-count">17</span></a><a class="nav-link active" href="flagged.html"><span>Flagged for Review</span><span class="nav-count">85</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-title">Verification &amp; Audit</div>
+      <a class="nav-link" href="reverse-engineering.html"><span>OLBG Reverse Engineering</span><span class="nav-count">17 hubs</span></a><a class="nav-link" href="audit.html"><span>Line-by-Line Repo Audit</span><span class="nav-count">18</span></a><a class="nav-link" href="sources.html"><span>Official Sources</span><span class="nav-count">38</span></a><a class="nav-link" href="methodology.html"><span>Model &amp; Grading Rules</span></a><a class="nav-link" href="../index.html"><span>← Canonical Root Desk</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-title">17 Covered Sports</div>
+      <a class="nav-link" href="sports/ice-hockey.html"><span>Ice Hockey</span><span class="nav-count">26</span></a><a class="nav-link" href="sports/baseball.html"><span>Baseball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/basketball.html"><span>Basketball</span><span class="nav-count">11</span></a><a class="nav-link" href="sports/tennis.html"><span>Tennis</span><span class="nav-count">21</span></a><a class="nav-link" href="sports/rugby-union.html"><span>Rugby Union</span><span class="nav-count">19</span></a><a class="nav-link" href="sports/rugby-league.html"><span>Rugby League</span><span class="nav-count">9</span></a><a class="nav-link" href="sports/snooker.html"><span>Snooker</span><span class="nav-count">8</span></a><a class="nav-link" href="sports/handball.html"><span>Handball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/volleyball.html"><span>Volleyball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/gaelic-football.html"><span>Gaelic Football</span><span class="nav-count">4</span></a><a class="nav-link" href="sports/cricket.html"><span>Cricket</span><span class="nav-count">2</span></a><a class="nav-link" href="sports/golf.html"><span>Golf</span><span class="nav-count">2</span></a><a class="nav-link" href="sports/motor-racing.html"><span>Motor Racing</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/darts.html"><span>Darts</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/aussie-rules.html"><span>Aussie Rules</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/esports.html"><span>eSports</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/greyhounds.html"><span>Greyhounds</span><span class="nav-count">1</span></a>
+    </div>
+  </aside>
+  <div class="content">
+    <header class="topbar">
+      <div>
+        <button class="menu-btn" id="menu-btn" type="button">☰ Menu</button>
+        <strong>Session 7f000cb6</strong> · Independent Official-Source Match &amp; Pricing Desk
+      </div>
+      <div class="topbar-meta">
+        <span>Snapshot: <code>2026-10-22T12:30:00Z</code></span>
+        <span>Model: <code>7f000cb6-quant-v1.0</code></span>
+        <a href="exports/matches.csv" download>CSV Export ↓</a>
+      </div>
+    </header>
+    <main id="main">
+      <div class="notice notice-warn" id="live-expiry-note" hidden></div>
+      
+<h1>Flagged for Review — Unverified, Blank &amp; Quarantined Items (85)</h1>
+<p class="subtitle">Every fixture or event where an official source omitted an exact UTC clock, lacked a ≥5-game statistical series, returned an HTTP/consent/JS block, or exhibited an internal prose-vs-table discrepancy.</p>
+<div class="controls">
+  <input id="tbl-search" type="search" placeholder="Search team, player, competition, venue…" aria-label="Search rows">
+  <select id="tbl-sport" aria-label="Filter by sport"><option value="">All 17 sports</option><option value="ice-hockey">Ice Hockey</option><option value="baseball">Baseball</option><option value="basketball">Basketball</option><option value="tennis">Tennis</option><option value="rugby-union">Rugby Union</option><option value="rugby-league">Rugby League</option><option value="snooker">Snooker</option><option value="handball">Handball</option><option value="volleyball">Volleyball</option><option value="gaelic-football">Gaelic Football</option><option value="cricket">Cricket</option><option value="golf">Golf</option><option value="motor-racing">Motor Racing</option><option value="darts">Darts</option><option value="aussie-rules">Aussie Rules</option><option value="esports">eSports</option><option value="greyhounds">Greyhounds</option></select>
+  <select id="tbl-conf" aria-label="Filter by confidence">
+    <option value="">All grades</option>
+    <option value="high">High</option>
+    <option value="medium">Medium</option>
+    <option value="low">Low</option>
+    <option value="unpriced">Unpriced / Withheld</option>
+  </select>
+  <select id="odds-fmt" aria-label="Odds display format">
+    <option value="american">Odds: American</option>
+    <option value="decimal">Odds: Decimal</option>
+  </select>
+  <span id="row-count" style="font-size:12.5px;color:var(--muted)"></span>
+</div>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Sport</th><th>Entry ID &amp; Competition</th><th>Observed Match / Event</th><th>Blank / Withheld Fields</th><th>Status</th><th>Flag &amp; Quarantine Reason</th><th>Official Source</th></tr></thead>
+  <tbody><tr data-filterable="1" data-sport="baseball" data-conf="unpriced">
+  <td><a href="sports/baseball.html">baseball</a></td>
+  <td><code>mlb-849799</code><br><small>MLB 2026 World Series</small></td>
+  <td>Tampa Bay Rays vs Milwaukee Brewers</td>
+  <td><code></code></td>
+  <td><span class="badge badge-warn">verified with flag</span></td>
+  <td>Conditional &#x27;if necessary&#x27; World Series Game 5; capped below High pending Games 1–4 results.</td>
+  <td><a class="src-link" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-22&amp;endDate=2026-10-29&amp;hydrate=probablePitcher,team,venue" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball" data-conf="unpriced">
+  <td><a href="sports/basketball.html">basketball</a></td>
+  <td><code>el-r7-62</code><br><small>EuroLeague 2026-27</small></td>
+  <td>Maccabi Rapyd Tel Aviv vs Real Madrid</td>
+  <td><code>venue</code></td>
+  <td><span class="badge badge-warn">verified with flag</span></td>
+  <td>Official prose conflict: Game Center text calls Real Madrid 1-4 away while official standings table proves 3-3 overall (2-0 home, 1-3 away); capped below High.</td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball" data-conf="unpriced">
+  <td><a href="sports/basketball.html">basketball</a></td>
+  <td><code>el-r7-69</code><br><small>EuroLeague 2026-27</small></td>
+  <td>Paris Basketball vs Valencia Basket</td>
+  <td><code>venue</code></td>
+  <td><span class="badge badge-warn">verified with flag</span></td>
+  <td>Official prose conflict: Game Center text calls Valencia 5-1 while official standings table shows 4-2 (+46); capped below High.</td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball" data-conf="unpriced">
+  <td><a href="sports/basketball.html">basketball</a></td>
+  <td><code>nba-0022600006</code><br><small>NBA 2026-27</small></td>
+  <td>Philadelphia 76ers vs Cleveland Cavaliers</td>
+  <td><code>start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-warn">partial</span></td>
+  <td>nba.com scoreboard hydration failed (cdn.nba.com HTTP 500); start_utc, venue, and team stats left blank and unpriced.</td>
+  <td><a class="src-link" href="https://www.nba.com/games?date=2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball" data-conf="unpriced">
+  <td><a href="sports/basketball.html">basketball</a></td>
+  <td><code>nba-0022600007</code><br><small>NBA 2026-27</small></td>
+  <td>Oklahoma City Thunder vs Denver Nuggets</td>
+  <td><code>start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-warn">partial</span></td>
+  <td>nba.com scoreboard hydration failed (cdn.nba.com HTTP 500); start_utc, venue, and team stats left blank and unpriced.</td>
+  <td><a class="src-link" href="https://www.nba.com/games?date=2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-alm-1</code><br><small>ATP 250 Almaty Open</small></td>
+  <td>Terence Atmane vs Mattia Bellucci</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-alm-2</code><br><small>ATP 250 Almaty Open</small></td>
+  <td>Tomas Machac vs Karen Khachanov</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-alm-3</code><br><small>ATP 250 Almaty Open</small></td>
+  <td>Daniil Medvedev vs Sho Shimabukuro</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-alm-4</code><br><small>ATP 250 Almaty Open</small></td>
+  <td>Alexander Bublik vs Fabian Marozsan</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-bru-1</code><br><small>ATP 250 European Open Brussels</small></td>
+  <td>Raphael Collignon vs Jiri Lehecka</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/7485/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-bru-2</code><br><small>ATP 250 European Open Brussels</small></td>
+  <td>David Goffin vs Alex Michelsen</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/7485/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-bru-3</code><br><small>ATP 250 European Open Brussels</small></td>
+  <td>Damir Dzumhur vs Zizou Bergs</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/7485/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-lyo-1</code><br><small>ATP Challenger Lyon</small></td>
+  <td>Valentin Vacherot vs Luca Van Assche</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/496/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-lyo-2</code><br><small>ATP Challenger Lyon</small></td>
+  <td>Pierre-Hugues Herbert vs Taylor Fritz</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/496/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-lyo-3</code><br><small>ATP Challenger Lyon</small></td>
+  <td>Borna Gojo vs Daniel Altmaier</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/496/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-lyo-4</code><br><small>ATP Challenger Lyon</small></td>
+  <td>Flavio Cobolli vs Stan Wawrinka</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/496/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-lyo-5</code><br><small>ATP Challenger Lyon</small></td>
+  <td>Kyrian Jacquet vs Brandon Nakashima</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/496/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-nin-1</code><br><small>WTA 500 Ningbo Open</small></td>
+  <td>Iva Jovic vs Jasmine Paolini</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-nin-2</code><br><small>WTA 500 Ningbo Open</small></td>
+  <td>Katarzyna Kawa vs Belinda Bencic</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-nin-3</code><br><small>WTA 500 Ningbo Open</small></td>
+  <td>Alexandra Eala vs Diana Shnaider</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-nin-4</code><br><small>WTA 500 Ningbo Open</small></td>
+  <td>Elena Rybakina vs Polina Kudermetova</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-osa-1</code><br><small>WTA 250 Japan Open Osaka</small></td>
+  <td>Ann Li vs Zeynep Sonmez</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/405/OP.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-osa-2</code><br><small>WTA 250 Japan Open Osaka</small></td>
+  <td>Mary Stoiana vs Moyuka Uchijima</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/405/OP.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-osa-3</code><br><small>WTA 250 Japan Open Osaka</small></td>
+  <td>Magda Linette vs Katerina Siniakova</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OOP PDF uses rolling &#x27;Followed By&#x27;/&#x27;Not Before&#x27; court order without explicit UTC offset and carries no season surface W-L series; left unpriced.</td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/405/OP.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-vienna-oop</code><br><small>ATP 500 Erste Bank Open Vienna</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>participants blank</em></span></td>
+  <td><code>participants, start_utc, market_lines</code></td>
+  <td><span class="badge badge-warn">unverified flagged</span></td>
+  <td>OLBG lists Vienna matches, but official protennislive.com/posting/2026/337/op.pdf returned &#x27;Tournament Information Not Yet Available&#x27;; participants and times left blank.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/337/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced">
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><code>ten-basel-oop</code><br><small>ATP 500 Swiss Indoors Basel</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>participants blank</em></span></td>
+  <td><code>participants, start_utc, market_lines</code></td>
+  <td><span class="badge badge-warn">unverified flagged</span></td>
+  <td>OLBG lists Basel matches, but official protennislive.com/posting/2026/328/op.pdf returned &#x27;Tournament Information Not Yet Available&#x27;; participants and times left blank.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/328/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>urc-292608</code><br><small>United Rugby Championship 2026-27</small></td>
+  <td>Cardiff Rugby vs Hollywoodbets Sharks</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified local clock</span></td>
+  <td>URC Match Centre renders &#x27;All times shown are Local&#x27; without explicit ISO offset; start_utc left blank and confidence capped below High (3-match early-season sample).</td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>urc-292609</code><br><small>United Rugby Championship 2026-27</small></td>
+  <td>Connacht vs Zebre Parma</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified local clock</span></td>
+  <td>URC Match Centre renders &#x27;All times shown are Local&#x27; without explicit ISO offset; start_utc left blank and confidence capped below High (3-match early-season sample).</td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>urc-292610</code><br><small>United Rugby Championship 2026-27</small></td>
+  <td>Edinburgh vs 10bet Lions</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified local clock</span></td>
+  <td>URC Match Centre renders &#x27;All times shown are Local&#x27; without explicit ISO offset; start_utc left blank and confidence capped below High (3-match early-season sample).</td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>urc-292611</code><br><small>United Rugby Championship 2026-27</small></td>
+  <td>Vodacom Bulls vs Ulster</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified local clock</span></td>
+  <td>URC Match Centre renders &#x27;All times shown are Local&#x27; without explicit ISO offset; start_utc left blank and confidence capped below High (3-match early-season sample).</td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>urc-292612</code><br><small>United Rugby Championship 2026-27</small></td>
+  <td>DHL Stormers vs Scarlets</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified local clock</span></td>
+  <td>URC Match Centre renders &#x27;All times shown are Local&#x27; without explicit ISO offset; start_utc left blank and confidence capped below High (3-match early-season sample).</td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>urc-292613</code><br><small>United Rugby Championship 2026-27</small></td>
+  <td>Benetton vs Glasgow Warriors</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified local clock</span></td>
+  <td>URC Match Centre renders &#x27;All times shown are Local&#x27; without explicit ISO offset; start_utc left blank and confidence capped below High (3-match early-season sample).</td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>urc-292614</code><br><small>United Rugby Championship 2026-27</small></td>
+  <td>Leinster vs Munster</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified local clock</span></td>
+  <td>URC Match Centre renders &#x27;All times shown are Local&#x27; without explicit ISO offset; start_utc left blank and confidence capped below High (3-match early-season sample).</td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>urc-292615</code><br><small>United Rugby Championship 2026-27</small></td>
+  <td>Ospreys vs Dragons RFC</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified local clock</span></td>
+  <td>URC Match Centre renders &#x27;All times shown are Local&#x27; without explicit ISO offset; start_utc left blank and confidence capped below High (3-match early-season sample).</td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>top14-j7-1</code><br><small>TOP 14 2026-27</small></td>
+  <td>RC Vannes vs ASM Clermont</td>
+  <td><code>start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>LNR calendar confirms pairing, round, and local clock without season PF/PA totals; left unpriced.</td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>top14-j7-2</code><br><small>TOP 14 2026-27</small></td>
+  <td>Aviron Bayonnais vs LOU Rugby</td>
+  <td><code>start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>LNR calendar confirms pairing, round, and local clock without season PF/PA totals; left unpriced.</td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>top14-j7-3</code><br><small>TOP 14 2026-27</small></td>
+  <td>Castres Olympique vs Stade Français Paris</td>
+  <td><code>start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>LNR calendar confirms pairing, round, and local clock without season PF/PA totals; left unpriced.</td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>top14-j7-4</code><br><small>TOP 14 2026-27</small></td>
+  <td>Racing 92 vs Montpellier Hérault Rugby</td>
+  <td><code>start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>LNR calendar confirms pairing, round, and local clock without season PF/PA totals; left unpriced.</td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>top14-j7-5</code><br><small>TOP 14 2026-27</small></td>
+  <td>Stade Toulousain vs USA Perpignan</td>
+  <td><code>start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>LNR calendar confirms pairing, round, and local clock without season PF/PA totals; left unpriced.</td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>top14-j7-6</code><br><small>TOP 14 2026-27</small></td>
+  <td>RC Toulon vs Section Paloise</td>
+  <td><code>start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>LNR calendar confirms pairing, round, and local clock without season PF/PA totals; left unpriced.</td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>top14-j7-7</code><br><small>TOP 14 2026-27</small></td>
+  <td>Stade Rochelais vs Union Bordeaux-Bègles</td>
+  <td><code>start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>LNR calendar confirms pairing, round, and local clock without season PF/PA totals; left unpriced.</td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>prod2-j8-1</code><br><small>PRO D2 2026-27</small></td>
+  <td>CA Brive vs Biarritz Olympique</td>
+  <td><code>start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>LNR Pro D2 calendar confirms pairing, round, and local clock without season PF/PA totals; left unpriced.</td>
+  <td><a class="src-link" href="https://prod2.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>prod2-j8-2</code><br><small>PRO D2 2026-27</small></td>
+  <td>FC Grenoble Rugby vs Provence Rugby</td>
+  <td><code>start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>LNR Pro D2 calendar confirms pairing, round, and local clock without season PF/PA totals; left unpriced.</td>
+  <td><a class="src-link" href="https://prod2.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>prod2-j8-3</code><br><small>PRO D2 2026-27</small></td>
+  <td>SU Agen vs US Dax</td>
+  <td><code>start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>LNR Pro D2 calendar confirms pairing, round, and local clock without season PF/PA totals; left unpriced.</td>
+  <td><a class="src-link" href="https://prod2.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced">
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><code>prod2-j8-4</code><br><small>PRO D2 2026-27</small></td>
+  <td>Colomiers Rugby vs AS Béziers Hérault</td>
+  <td><code>start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>LNR Pro D2 calendar confirms pairing, round, and local clock without season PF/PA totals; left unpriced.</td>
+  <td><a class="src-link" href="https://prod2.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced">
+  <td><a href="sports/rugby-league.html">rugby-league</a></td>
+  <td><code>rlwc-2586</code><br><small>IRL Women&#x27;s Rugby League World Cup</small></td>
+  <td>Samoa Women vs Wales Women</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OLBG Rugby_League/10 blind spot (0 RLWC26 match cards); intrl.sport publishes local venue times without explicit UTC offset or multi-match tournament table.</td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced">
+  <td><a href="sports/rugby-league.html">rugby-league</a></td>
+  <td><code>rlwc-2569</code><br><small>IRL Men&#x27;s Rugby League World Cup</small></td>
+  <td>Tonga vs Lebanon</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OLBG Rugby_League/10 blind spot (0 RLWC26 match cards); intrl.sport publishes local venue times without explicit UTC offset or multi-match tournament table.</td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced">
+  <td><a href="sports/rugby-league.html">rugby-league</a></td>
+  <td><code>rlwc-2587</code><br><small>IRL Women&#x27;s Rugby League World Cup</small></td>
+  <td>Fiji Women vs Papua New Guinea Women</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OLBG Rugby_League/10 blind spot (0 RLWC26 match cards); intrl.sport publishes local venue times without explicit UTC offset or multi-match tournament table.</td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced">
+  <td><a href="sports/rugby-league.html">rugby-league</a></td>
+  <td><code>rlwc-2570</code><br><small>IRL Men&#x27;s Rugby League World Cup</small></td>
+  <td>Papua New Guinea vs Samoa</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OLBG Rugby_League/10 blind spot (0 RLWC26 match cards); intrl.sport publishes local venue times without explicit UTC offset or multi-match tournament table.</td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced">
+  <td><a href="sports/rugby-league.html">rugby-league</a></td>
+  <td><code>rlwc-2571</code><br><small>IRL Men&#x27;s Rugby League World Cup</small></td>
+  <td>England vs France</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OLBG Rugby_League/10 blind spot (0 RLWC26 match cards); intrl.sport publishes local venue times without explicit UTC offset or multi-match tournament table.</td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced">
+  <td><a href="sports/rugby-league.html">rugby-league</a></td>
+  <td><code>rlwc-2588</code><br><small>IRL Women&#x27;s Rugby League World Cup</small></td>
+  <td>Australia Women vs England Women</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OLBG Rugby_League/10 blind spot (0 RLWC26 match cards); intrl.sport publishes local venue times without explicit UTC offset or multi-match tournament table.</td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced">
+  <td><a href="sports/rugby-league.html">rugby-league</a></td>
+  <td><code>rlwc-2572</code><br><small>IRL Men&#x27;s Rugby League World Cup</small></td>
+  <td>New Zealand vs Cook Islands</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OLBG Rugby_League/10 blind spot (0 RLWC26 match cards); intrl.sport publishes local venue times without explicit UTC offset or multi-match tournament table.</td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced">
+  <td><a href="sports/rugby-league.html">rugby-league</a></td>
+  <td><code>rlwc-2573</code><br><small>IRL Men&#x27;s Rugby League World Cup</small></td>
+  <td>Australia vs Fiji</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OLBG Rugby_League/10 blind spot (0 RLWC26 match cards); intrl.sport publishes local venue times without explicit UTC offset or multi-match tournament table.</td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced">
+  <td><a href="sports/rugby-league.html">rugby-league</a></td>
+  <td><code>rlwc-2589</code><br><small>IRL Women&#x27;s Rugby League World Cup</small></td>
+  <td>New Zealand Women vs France Women</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OLBG Rugby_League/10 blind spot (0 RLWC26 match cards); intrl.sport publishes local venue times without explicit UTC offset or multi-match tournament table.</td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced">
+  <td><a href="sports/snooker.html">snooker</a></td>
+  <td><code>wst-nio-1</code><br><small>BetVictor Northern Ireland Open 2026</small></td>
+  <td>Kyren Wilson vs Pang Junxu</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>WST Match Centre omits timezone suffix and frame-level season stats require JS hydration; start_utc and prices kept blank.</td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced">
+  <td><a href="sports/snooker.html">snooker</a></td>
+  <td><code>wst-nio-2</code><br><small>BetVictor Northern Ireland Open 2026</small></td>
+  <td>Matthew Selt vs Sam Craigie</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>WST Match Centre omits timezone suffix and frame-level season stats require JS hydration; start_utc and prices kept blank.</td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced">
+  <td><a href="sports/snooker.html">snooker</a></td>
+  <td><code>wst-nio-3</code><br><small>BetVictor Northern Ireland Open 2026</small></td>
+  <td>Elliot Slessor vs Ricky Walden</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>WST Match Centre omits timezone suffix and frame-level season stats require JS hydration; start_utc and prices kept blank.</td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced">
+  <td><a href="sports/snooker.html">snooker</a></td>
+  <td><code>wst-nio-4</code><br><small>BetVictor Northern Ireland Open 2026</small></td>
+  <td>Anthony McGill vs Mateusz Baranowski</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>WST Match Centre omits timezone suffix and frame-level season stats require JS hydration; start_utc and prices kept blank.</td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced">
+  <td><a href="sports/snooker.html">snooker</a></td>
+  <td><code>wst-nio-5</code><br><small>BetVictor Northern Ireland Open 2026</small></td>
+  <td>Mark Williams vs Martin O&#x27;Donnell</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>WST Match Centre omits timezone suffix and frame-level season stats require JS hydration; start_utc and prices kept blank.</td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced">
+  <td><a href="sports/snooker.html">snooker</a></td>
+  <td><code>wst-nio-6</code><br><small>BetVictor Northern Ireland Open 2026</small></td>
+  <td>David Gilbert vs Cheung Ka Wai</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>WST Match Centre omits timezone suffix and frame-level season stats require JS hydration; start_utc and prices kept blank.</td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced">
+  <td><a href="sports/snooker.html">snooker</a></td>
+  <td><code>wst-nio-7</code><br><small>BetVictor Northern Ireland Open 2026</small></td>
+  <td>Jordan Brown vs Scott Donaldson</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>WST Match Centre omits timezone suffix and frame-level season stats require JS hydration; start_utc and prices kept blank.</td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced">
+  <td><a href="sports/snooker.html">snooker</a></td>
+  <td><code>wst-nio-8</code><br><small>BetVictor Northern Ireland Open 2026</small></td>
+  <td>Jak Jones vs Daniel Wells</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>WST Match Centre omits timezone suffix and frame-level season stats require JS hydration; start_utc and prices kept blank.</td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="handball" data-conf="unpriced">
+  <td><a href="sports/handball.html">handball</a></td>
+  <td><code>ehf-cl-r5-1</code><br><small>EHF Champions League Men 2026/27</small></td>
+  <td>MT Melsungen vs Orlen Wisla Plock</td>
+  <td><code>market_lines</code></td>
+  <td><span class="badge badge-muted">verified july pdf unpriced</span></td>
+  <td>Official EHF playing-times PDF carries &#x27;Status: July 29, 2026&#x27; without October group standings or squad availability; left unpriced.</td>
+  <td><a class="src-link" href="https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="handball" data-conf="unpriced">
+  <td><a href="sports/handball.html">handball</a></td>
+  <td><code>ehf-cl-r5-2</code><br><small>EHF Champions League Men 2026/27</small></td>
+  <td>OTP Bank-Pick Szeged vs GOG</td>
+  <td><code>market_lines</code></td>
+  <td><span class="badge badge-muted">verified july pdf unpriced</span></td>
+  <td>Official EHF playing-times PDF carries &#x27;Status: July 29, 2026&#x27; without October group standings or squad availability; left unpriced.</td>
+  <td><a class="src-link" href="https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="handball" data-conf="unpriced">
+  <td><a href="sports/handball.html">handball</a></td>
+  <td><code>ehf-cl-r5-3</code><br><small>EHF Champions League Men 2026/27</small></td>
+  <td>Sporting CP vs IFK Kristianstad</td>
+  <td><code>market_lines</code></td>
+  <td><span class="badge badge-muted">verified july pdf unpriced</span></td>
+  <td>Official EHF playing-times PDF carries &#x27;Status: July 29, 2026&#x27; without October group standings or squad availability; left unpriced.</td>
+  <td><a class="src-link" href="https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="handball" data-conf="unpriced">
+  <td><a href="sports/handball.html">handball</a></td>
+  <td><code>ehf-cl-r5-4</code><br><small>EHF Champions League Men 2026/27</small></td>
+  <td>Barça vs Montpellier HB</td>
+  <td><code>market_lines</code></td>
+  <td><span class="badge badge-muted">verified july pdf unpriced</span></td>
+  <td>Official EHF playing-times PDF carries &#x27;Status: July 29, 2026&#x27; without October group standings or squad availability; left unpriced.</td>
+  <td><a class="src-link" href="https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="handball" data-conf="unpriced">
+  <td><a href="sports/handball.html">handball</a></td>
+  <td><code>ehf-cl-r5-5</code><br><small>EHF Champions League Men 2026/27</small></td>
+  <td>Kolstad Handball vs SC Magdeburg</td>
+  <td><code>market_lines</code></td>
+  <td><span class="badge badge-muted">verified july pdf unpriced</span></td>
+  <td>Official EHF playing-times PDF carries &#x27;Status: July 29, 2026&#x27; without October group standings or squad availability; left unpriced.</td>
+  <td><a class="src-link" href="https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="volleyball" data-conf="unpriced">
+  <td><a href="sports/volleyball.html">volleyball</a></td>
+  <td><code>vol-tl-36988</code><br><small>TAURON Liga 2026-27</small></td>
+  <td>MOYA Radomka Radom vs ITA TOOLS STAL Mielec</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>Round 2 early-season sample (&lt;5 matches played per club); left unpriced rather than substituting default ratings.</td>
+  <td><a class="src-link" href="https://www.tauronliga.pl/games.html" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="volleyball" data-conf="unpriced">
+  <td><a href="sports/volleyball.html">volleyball</a></td>
+  <td><code>vol-pl-36963</code><br><small>PlusLiga 2026-27</small></td>
+  <td>Ślepsk Malow Suwałki vs GKS Katowice</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>Round 2 early-season sample (&lt;5 matches played per club); left unpriced rather than substituting default ratings.</td>
+  <td><a class="src-link" href="https://www.tauronliga.pl/games.html" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="volleyball" data-conf="unpriced">
+  <td><a href="sports/volleyball.html">volleyball</a></td>
+  <td><code>vol-pl-36964</code><br><small>PlusLiga 2026-27</small></td>
+  <td>PGE GiEK SKRA Bełchatów vs PGE Projekt Warszawa</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>Round 2 early-season sample (&lt;5 matches played per club); left unpriced rather than substituting default ratings.</td>
+  <td><a class="src-link" href="https://www.tauronliga.pl/games.html" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="volleyball" data-conf="unpriced">
+  <td><a href="sports/volleyball.html">volleyball</a></td>
+  <td><code>vol-pl-36965</code><br><small>PlusLiga 2026-27</small></td>
+  <td>InPost ChKS Chełm vs Asseco Resovia Rzeszów</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>Round 2 early-season sample (&lt;5 matches played per club); left unpriced rather than substituting default ratings.</td>
+  <td><a class="src-link" href="https://www.tauronliga.pl/games.html" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="volleyball" data-conf="unpriced">
+  <td><a href="sports/volleyball.html">volleyball</a></td>
+  <td><code>vol-sl-36994</code><br><small>SuperLega Credem Banca 2026-27</small></td>
+  <td>Itas Trentino vs Cisterna Volley</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>Round 2 early-season sample (&lt;5 matches played per club); left unpriced rather than substituting default ratings.</td>
+  <td><a class="src-link" href="https://www.legavolley.it/calendario/?idCampionato=999" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="gaelic-football" data-conf="unpriced">
+  <td><a href="sports/gaelic-football.html">gaelic-football</a></td>
+  <td><code>gaa-galway-sfc</code><br><small>2026 Galway Senior Football Championship</small></td>
+  <td>Maigh Cuilinn vs Salthill-Knocknacarra</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>County knockout final without unified multi-game league table; left unpriced.</td>
+  <td><a class="src-link" href="https://www.maighcuilinn.com/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="gaelic-football" data-conf="unpriced">
+  <td><a href="sports/gaelic-football.html">gaelic-football</a></td>
+  <td><code>gaa-kerry-sfc</code><br><small>2026 Kerry Senior Football Championship</small></td>
+  <td>Dr. Crokes vs Kenmare Shamrocks</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>County knockout final; left unpriced.</td>
+  <td><a class="src-link" href="https://munster.gaa.ie/fixtures/events-calendar/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="gaelic-football" data-conf="unpriced">
+  <td><a href="sports/gaelic-football.html">gaelic-football</a></td>
+  <td><code>gaa-waterford-sfc</code><br><small>2026 Waterford Senior Football Championship</small></td>
+  <td>Rathgormack vs The Nire</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OLBG data defect caught: OLBG event_id=3536 displays 01 Nov 2026 instead of Munster GAA&#x27;s official Sun 25 Oct 2026 14:30 fixture.</td>
+  <td><a class="src-link" href="https://munster.gaa.ie/fixtures/events-calendar/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="gaelic-football" data-conf="unpriced">
+  <td><a href="sports/gaelic-football.html">gaelic-football</a></td>
+  <td><code>gaa-cork-psfc</code><br><small>2026 Cork Premier Senior Football Championship</small></td>
+  <td>Nemo Rangers vs St. Finbarr&#x27;s</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>Neutral-venue county final; OLBG reversed Cork GAA&#x27;s official Nemo Rangers vs St. Finbarr&#x27;s listing.</td>
+  <td><a class="src-link" href="https://gaacork.ie/fixtures/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="aussie-rules" data-conf="unpriced">
+  <td><a href="sports/aussie-rules.html">aussie-rules</a></td>
+  <td><code>aflw-r11-8970</code><br><small>NAB AFLW Premiership Season 2026</small></td>
+  <td>Port Adelaide vs Collingwood</td>
+  <td><code>market_lines</code></td>
+  <td><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td>OLBG Aussie_Rules/22 blind spot (&#x27;No tips found.&#x27;); afl.com.au/aflw/ladder requires client JS hydration so season percentages are unverified and match stays unpriced.</td>
+  <td><a class="src-link" href="https://www.afl.com.au/aflw/matches/8970" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="cricket" data-conf="unpriced">
+  <td><a href="sports/cricket.html">cricket</a></td>
+  <td><code>cri-nam-ire-odi</code><br><small>Ireland Wolves / Men&#x27;s Tour of Namibia 2026</small></td>
+  <td>Namibia vs Ireland</td>
+  <td><code>start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">in play unpriced</span></td>
+  <td>Match already in progress on 2026-10-22; pre-match pricing withheld.</td>
+  <td><a class="src-link" href="https://cricketireland.ie/matches/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="cricket" data-conf="unpriced">
+  <td><a href="sports/cricket.html">cricket</a></td>
+  <td><code>cri-pak-sa-1465</code><br><small>Pakistan vs South Africa 2026 Series</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>participants blank</em></span></td>
+  <td><code>participants, start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-warn">unverified flagged</span></td>
+  <td>pcb.com.pk returned HTTP 502 Bad Gateway during live verification; participants/times left blank rather than copied from OLBG.</td>
+  <td><a class="src-link" href="https://www.pcb.com.pk/tournament-reports.php?action=tournament_matches&amp;tournament_id=1465" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="golf" data-conf="unpriced">
+  <td><a href="sports/golf.html">golf</a></td>
+  <td><code>golf-pga-bermuda</code><br><small>PGA TOUR 2026 FedExCup Fall</small></td>
+  <td>Butterfield Bermuda Championship Field</td>
+  <td><code>participants, start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified event unpriced</span></td>
+  <td>Multi-runner stroke-play field tournament already teeing off Oct 22; omitted entirely by OLBG Golf/5 hub.</td>
+  <td><a class="src-link" href="https://www.pgatour.com/schedule" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="golf" data-conf="unpriced">
+  <td><a href="sports/golf.html">golf</a></td>
+  <td><code>golf-champ-stifel</code><br><small>PGA TOUR Champions Charles Schwab Cup Playoffs</small></td>
+  <td>Stifel Charity Classic Field</td>
+  <td><code>participants, start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified event unpriced</span></td>
+  <td>Multi-runner 54-hole field event; outright/placement lines withheld without full tee-sheet strokes-gained feed.</td>
+  <td><a class="src-link" href="https://www.pgatour.com/pgatour-champions/schedule" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="motor-racing" data-conf="unpriced">
+  <td><a href="sports/motor-racing.html">motor-racing</a></td>
+  <td><code>f1-2026-usgp-race</code><br><small>FIA Formula 1 World Championship 2026</small></td>
+  <td>2026 United States Grand Prix Grid</td>
+  <td><code>participants, start_utc, market_lines</code></td>
+  <td><span class="badge badge-muted">verified event unpriced</span></td>
+  <td>Multi-car race weekend prior to FP1/Qualifying; pre-qualifying outrights and head-to-heads withheld.</td>
+  <td><a class="src-link" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="darts" data-conf="unpriced">
+  <td><a href="sports/darts.html">darts</a></td>
+  <td><code>darts-pdc-ec-2026</code><br><small>2026 Machineseeker European Championship</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>participants blank</em></span></td>
+  <td><code>participants, start_utc, market_lines</code></td>
+  <td><span class="badge badge-warn">unverified flagged</span></td>
+  <td>Official pdc.tv response returned CookieYes vendor-list consent markup instead of R1 pairings; OLBG darts pairings refused as unverified.</td>
+  <td><a class="src-link" href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="esports" data-conf="unpriced">
+  <td><a href="sports/esports.html">esports</a></td>
+  <td><code>esports-lol-worlds-2026</code><br><small>League of Legends World Championship (Worlds 2026)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>participants blank</em></span></td>
+  <td><code>participants, start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-warn">partial</span></td>
+  <td>OLBG eSports/23 renders &#x27;No tips found.&#x27;; lolesports.com confirms active 18-team Worlds 2026 tournament while individual bracket match times require client JS.</td>
+  <td><a class="src-link" href="https://lolesports.com/en-GB/tournament/115660540725177488/overview" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="greyhounds" data-conf="unpriced">
+  <td><a href="sports/greyhounds.html">greyhounds</a></td>
+  <td><code>grey-gbgb-20261022</code><br><small>GBGB UK Licensed Greyhound Racing</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>participants blank</em></span></td>
+  <td><code>participants, start_utc, venue, market_lines</code></td>
+  <td><span class="badge badge-warn">unverified flagged</span></td>
+  <td>GBGB open-races portal loads trap draws via dynamic XHR; OLBG&#x27;s 10 Sheffield/Central Park/Newcastle racecards are not promoted without first-hand GBGB trap verification.</td>
+  <td><a class="src-link" href="https://www.gbgb.org.uk/racing/open-races/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr></tbody>
+</table>
+</div>
+
+    </main>
+    <footer>
+      <span>100% governing-body verified · Blank = unconfirmed · Zero aggregator/bookmaker scraping · 18+ research only.</span>
+      <span>Session <code>7f000cb6</code> · <a href="https://github.com/buffedlizard55-lab/OLBG1">GitHub Repository ↗</a></span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

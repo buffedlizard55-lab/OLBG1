@@ -1,0 +1,59 @@
+{
+  "id": "mlb-necessity-20261022",
+  "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-28&fields=totalGames,dates,date,games,gamePk,season,gameType,ifNecessary,ifNecessaryDescription",
+  "final_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-28&fields=totalGames,dates,date,games,gamePk,season,gameType,ifNecessary,ifNecessaryDescription",
+  "role": "official",
+  "sport": "baseball",
+  "method": "retrieval-tool-selected-excerpts",
+  "observed_after": "2026-10-22T12:01:17Z",
+  "observed_before": "2026-10-22T12:01:27Z",
+  "http_status": null,
+  "raw_response_sha256": null,
+  "excerpt_policy": "Selected, normalized excerpts and JSON field projections; not a byte-for-byte response or a verbatim full-page transcript.",
+  "scope": "Five-game official field projection, read 2026-10-22; ifNecessary per gamePk.",
+  "complete": true,
+  "notes": "Game 849799 is explicitly If Necessary. This check does not prove whether Game 5 will ultimately be played.",
+  "observations": [
+    {
+      "id": "849805",
+      "locator": "/dates/0/games/0/ifNecessary",
+      "quote": "{\"gamePk\":849805,\"gameType\":\"W\",\"season\":\"2026\",\"ifNecessary\":\"N\",\"ifNecessaryDescription\":\"Normal Game\"}",
+      "values": {
+        "if_necessary": "N"
+      }
+    },
+    {
+      "id": "849802",
+      "locator": "/dates/1/games/0/ifNecessary",
+      "quote": "{\"gamePk\":849802,\"gameType\":\"W\",\"season\":\"2026\",\"ifNecessary\":\"N\",\"ifNecessaryDescription\":\"Normal Game\"}",
+      "values": {
+        "if_necessary": "N"
+      }
+    },
+    {
+      "id": "849804",
+      "locator": "/dates/2/games/0/ifNecessary",
+      "quote": "{\"gamePk\":849804,\"gameType\":\"W\",\"season\":\"2026\",\"ifNecessary\":\"N\",\"ifNecessaryDescription\":\"Normal Game\"}",
+      "values": {
+        "if_necessary": "N"
+      }
+    },
+    {
+      "id": "849803",
+      "locator": "/dates/3/games/0/ifNecessary",
+      "quote": "{\"gamePk\":849803,\"gameType\":\"W\",\"season\":\"2026\",\"ifNecessary\":\"N\",\"ifNecessaryDescription\":\"Normal Game\"}",
+      "values": {
+        "if_necessary": "N"
+      }
+    },
+    {
+      "id": "849799",
+      "locator": "/dates/4/games/0/ifNecessary",
+      "quote": "{\"gamePk\":849799,\"gameType\":\"W\",\"season\":\"2026\",\"ifNecessary\":\"Y\",\"ifNecessaryDescription\":\"If Necessary Game\"}",
+      "values": {
+        "if_necessary": "Y"
+      }
+    }
+  ],
+  "sha256": "5ed445ff070f688444affcf3dfa108d5c5301669dcca43154b50e9f7b3620cdc"
+}

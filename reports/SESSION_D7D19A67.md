@@ -1,6 +1,6 @@
-# Session `d7d19a67-olbg1` — T65 independent live desk (22 October 2026)
+# Session `d7d19a67-olbg1` — TD7D19 independent live desk (22 October 2026)
 
-Branch `arena/d7d19a67-olbg1` · task **T65** · board record **§51** · desk published at
+Branch `arena/d7d19a67-olbg1` · task **TD7D19** (claimed as T65 at 12:20Z, renumbered at merge) · board record **§59** · desk published at
 [`d7d19a67/`](../d7d19a67/index.html) → live at
 `https://buffedlizard55-lab.github.io/OLBG1/d7d19a67/index.html`
 
@@ -205,7 +205,7 @@ at all (`cdn.nba.com` returned HTTP 500), so basketball coverage is EuroLeague o
   `raw/nhl_standings_2026-10-21.json`
 * `d7d19a67/` — `index`, `matches`, `markets`, `high-confidence`, `predictions`, `sports`, `analysis`,
   `sources`, `flagged`, `repo-audit` + `sports/<slug>.html` for all 17 in-scope sports + `assets/style.css`
-* `COORDINATION.md` — §1 T65 row, §4 request, §51 record
+* `COORDINATION.md` — §1 TD7D19 row, §4 request, §59 record
 
 ## PR, merge and Pages receipts
 

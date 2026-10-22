@@ -47,14 +47,21 @@
     let any=false;
     $$('[data-expires]').forEach(el=>{
       const deadline=Date.parse(el.dataset.expires),start=Date.parse(el.dataset.start||'');
-      const invalid=(Number.isFinite(deadline)&&now>=deadline)||(Number.isFinite(start)&&now>=start);
+      const priceDeadline=Date.parse(el.dataset.priceExpires||'');
+      const priceExpired=Number.isFinite(priceDeadline)&&now>=priceDeadline;
+      const fixtureExpired=(Number.isFinite(deadline)&&now>=deadline)||(Number.isFinite(start)&&now>=start);
+      const invalid=fixtureExpired||priceExpired;
       if(!invalid)return;
       any=true;
       $$('[data-price-value]',el).forEach(price=>{price.textContent='';price.dataset.expired='true';price.removeAttribute('data-american');price.removeAttribute('data-decimal');});
       $$('[data-conf-value]',el).forEach(conf=>{conf.textContent='Withheld';conf.className='badge amber';});
       el.dataset.priced='false';
-      const badge=$('[data-state-label]',el);if(badge){badge.textContent=now>=deadline?'Stale source':'Start elapsed';badge.className='badge amber';}
-      el.dataset.state=now>=deadline?'stale':'start elapsed';
+      // Expired statistical inputs withdraw the estimate, not the fixture's
+      // independently supported future schedule or its evidence-state filter.
+      if(fixtureExpired){
+        const badge=$('[data-state-label]',el);if(badge){badge.textContent=now>=deadline?'Stale source':'Start elapsed';badge.className='badge amber';}
+        el.dataset.state=now>=deadline?'stale':'start elapsed';
+      }
       const cap=$('[data-expiry-reason]',el);if(cap)cap.hidden=false;
     });
     if(globallyStale||any){

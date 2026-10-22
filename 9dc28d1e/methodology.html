@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method · OLBG research desk 9dc28d1e</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="site"><div class="wrap">
+<a class="brand" href="index.html">OLBG research desk</a>
+<nav><a href="index.html">Desk</a> <a href="matches.html">Matches</a> <a href="markets.html">Markets</a> <a href="predictions.html">Predictions</a> <a href="analysis.html">Gate analysis</a> <a href="flagged.html">Flagged</a> <a href="coverage.html">Coverage</a> <a href="sources.html">Sources</a> <a href="methodology.html">Method</a></nav>
+</div></header>
+<main><div class="wrap">
+
+<h1>Method</h1>
+<p class="lede">Three deliberately small models, each with its assumptions printed next to its output. The
+goal is a defensible price, not a replica of a betting market.</p>
+
+<h2>Ice hockey</h2>
+<p>Goals for and against per game are shrunk toward the league mean with a weight of 12.0 pseudo-games,
+then combined multiplicatively as attack × defence against the opponent, divided by the league mean. Home
+advantage multiplies the home expectation by 1.045 and the away expectation by 0.9550000000000001.
+Independent Poisson goal counts give the margin distribution. A regulation tie is split evenly between the
+two clubs for the moneyline and produces a one-goal margin for the puck line, which is why neither side can
+cover −1.5 from a tie.</p>
+
+<h2>EuroLeague</h2>
+<p>A club's rating is its points differential per game, shrunk toward zero by 4.0 pseudo-games. The
+rating gap is multiplied by 0.5 — a ten-game differential in October is not worth its full
+weight — and 2.5 points of home edge are added. Expected total points come from the two clubs'
+combined scoring and conceding rates. Margins are normal with a standard deviation of 11.0;
+totals are normal with 15.5.</p>
+<p>Everything in this section is an assumption. The shrink weight and the rating multiplier were chosen so
+that the largest favourite on the slate prices near 82% rather than 97%, which is what the earlier
+multiplicative version produced. That choice is documented because it is a judgement, not a measurement.</p>
+
+<h2>Baseball</h2>
+<p>Pythagorean win rates with exponent 1.83 are combined with log5 and a home adjustment, giving the
+moneyline. Run expectations are the mean of the batting side's runs scored and the bowling side's runs
+allowed per game, with 0.15 runs of home edge; tied nine-inning games are split evenly and the
+distribution is renormalised. Totals and run lines use that same Poisson pair.</p>
+
+<h2>The tier rule</h2>
+<table><tbody>
+<tr><th>HIGH</th><td>probability &gt; 70% <em>and</em> fair American inside −250…+10000 <em>and</em> a written
+prediction backed by player-level evidence from an official feed</td></tr>
+<tr><th>MEDIUM</th><td>probability ≥ 65%, or one of the two High tests failed. The reason is stored on the
+row and shown in the data export.</td></tr>
+<tr><th>LOW</th><td>everything else</td></tr>
+</tbody></table>
+<p>The third High condition is stricter than the brief. It exists because the brief also requires each pick to
+name a player, and a pick whose player numbers were never read is not that.</p>
+
+<h2>Sensitivity</h2>
+<p>Every selection is re-priced across a grid: for hockey, shrinkage of 6/12/20 games × home multipliers of
+1.00/1.045/1.08; for basketball, shrinkage of 2/4/8 × home edge 2.0/2.5/3.0 × margin σ of 10/11/12; for
+baseball, exponents of 1.70/1.83/2.00 × home edge of 0/0.15/0.30 runs. The published range is the min and max
+across the grid.</p>
+
+<h2>Reproduction</h2>
+<p><code>python3 scripts/s9dc28d1e_build.py --now 2026-10-22T12:30:00Z</code> regenerates every table and page
+byte-for-byte; <code>python3 scripts/s9dc28d1e_validate.py</code> re-checks the counts, the gate, the writing
+rules and the links.</p>
+
+</div></main>
+<footer><div class="wrap">
+<p class="small">Desk <code>9dc28d1e</code> · generated 2026-10-22T12:30:00Z from official league feeds read between 12:05Z and 12:25Z on 22 October 2026. Zero-margin model prices, not bookmaker quotes. No stake, edge or availability is claimed.</p>
+</div></footer>
+</body></html>

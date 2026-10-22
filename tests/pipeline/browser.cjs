@@ -61,6 +61,30 @@ const server=http.createServer((req,res)=>{
     await page.goto(base+'picks.html');await page.clock.setFixedTime(new Date(Date.parse(snapshot.generated_at)+48*3600*1000));await page.reload();
     assert.ok(await page.locator('#expiry-alert').isVisible());assert.ok((await page.locator('[data-price-value]').allTextContents()).every(x=>x.trim()===''),'Expired price content remained visible');
     assert.equal(await page.locator('[data-record][data-priced="true"]').count(),0);
+    // Synthetic isolated DOM: statistical TTL can precede fixture TTL. No
+    // real fixture or factual timestamp is modified or promoted by this test.
+    const ttl=await context.newPage();
+    await ttl.clock.install({time:new Date('2026-10-22T12:00:00Z')});
+    await ttl.setContent(`<body data-snapshot="2026-10-22T12:00:00Z">
+      <div id="expiry-alert" hidden></div><span data-live-kpi>1</span>
+      <table><tbody><tr data-record data-priced="true" data-state="upcoming"
+        data-expires="2026-10-22T18:00:00Z" data-start="2026-10-22T19:00:00Z"
+        data-price-expires="2026-10-22T12:01:00Z">
+        <td><span data-price-value data-american="-150" data-decimal="1.6667">-150</span>
+        <span data-conf-value>Low</span><span data-state-label>Upcoming</span>
+        <span data-expiry-reason hidden>Statistical inputs expired</span></td>
+      </tr></tbody></table></body>`);
+    await ttl.addScriptTag({path:path.join(site,'assets/current-app.js')});
+    assert.equal(await ttl.locator('[data-price-value]').textContent(),'-150');
+    await ttl.clock.runFor(61_000);
+    assert.equal(await ttl.locator('[data-price-value]').textContent(),'');
+    assert.equal(await ttl.locator('[data-conf-value]').textContent(),'Withheld');
+    assert.equal(await ttl.locator('[data-record]').getAttribute('data-priced'),'false');
+    assert.equal(await ttl.locator('[data-record]').getAttribute('data-state'),'upcoming');
+    assert.equal(await ttl.locator('[data-state-label]').textContent(),'Upcoming');
+    assert.ok(await ttl.locator('[data-expiry-reason]').isVisible());
+    assert.equal(await ttl.locator('[data-live-kpi]').textContent(),'—');
+    await ttl.close();
     await context.close();
     const mobile=await browser.newContext({viewport:{width:390,height:844},isMobile:true,deviceScaleFactor:1});const mp=await mobile.newPage();await mp.clock.install({time:new Date(snapshot.generated_at)});
     await mp.goto(base);assert.ok(await mp.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Mobile page overflows');
@@ -69,8 +93,8 @@ const server=http.createServer((req,res)=>{
     await mp.screenshot({path:path.join(shots,'dashboard-mobile.png'),fullPage:true});
     await mp.goto(base+'picks.html');await mp.locator('#search').fill('Boston');assert.ok(await mp.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Mobile table escaped scrolling wrapper');
     await mobile.close();
-    const plain=await browser.newContext({javaScriptEnabled:false});const pp=await plain.newPage();await pp.goto(base+'picks.html');assert.equal(await pp.locator('#match-table tbody tr').count(),snapshot.fixtures.filter(r=>r.in_window).length);await plain.close();
+    const plain=await browser.newContext({javaScriptEnabled:false});const pp=await plain.newPage();await pp.goto(base+'picks.html');assert.equal(await pp.locator('#match-table tbody tr').count(),snapshot.fixtures.filter(r=>r.in_window).length);assert.equal(await pp.locator('[data-price-value]:visible').count(),0,'No-JS view cannot enforce runtime expiry and must withhold estimates');assert.match(await pp.locator('main').textContent(),/Estimates withheld without JavaScript/);await plain.close();
     assert.deepEqual(errors,[],'Client JavaScript errors');assert.deepEqual(badResponses,[],'Broken browser resource/link responses');
-    console.log('Browser PASS: desktop/mobile, project subpath, table filters, empty state, reset, sort, odds toggle, CSV download, evidence deep-link, market search, expiry, no-JS rows.');
+    console.log('Browser PASS: desktop/mobile, project subpath, table filters, empty state, reset, sort, odds toggle, CSV download, evidence deep-link, market search, fixture/statistical expiry, no-JS rows.');
   }finally{if(browser)await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;server.close();});

@@ -1,4 +1,4 @@
-"""Session d7d19a67-olbg1 (T65) - static dashboard builder for the ``d7d19a67/`` desk.
+"""Session d7d19a67-olbg1 (TD7D19, claimed as T65) - static dashboard builder for the ``d7d19a67/`` desk.
 
 Writes a self-contained desk: landing page, match list, market explorer, High-confidence page,
 predictions, all-sports index plus one page per in-scope sport, analysis, sources, Flagged for
@@ -230,7 +230,7 @@ class Site:
 <nav class="nav" aria-label="Desk sections">%s</nav>
 <main id="main">
 <header class="page-head">
-  <p class="eyebrow">Session d7d19a67-olbg1 · task T65 · rolling window %s to %s</p>
+  <p class="eyebrow">Session d7d19a67-olbg1 · task TD7D19 · rolling window %s to %s</p>
   <h1>%s</h1>
   %s
 </header>

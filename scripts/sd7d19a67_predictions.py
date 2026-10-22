@@ -1,4 +1,4 @@
-"""Session d7d19a67-olbg1 (T65) - hand-written predictions for the desk's High-confidence picks.
+"""Session d7d19a67-olbg1 (TD7D19, claimed as T65) - hand-written predictions for the desk's High-confidence picks.
 
 Every text below is written by hand for this desk, is at least 30 words long, and uses only facts
 that were read from an official page during this session and transcribed into

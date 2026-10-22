@@ -1,4 +1,4 @@
-"""Session d7d19a67-olbg1 (T65) - validation gate for the ``d7d19a67/`` desk.
+"""Session d7d19a67-olbg1 (TD7D19, claimed as T65) - validation gate for the ``d7d19a67/`` desk.
 
 Checks the published pages and the data they were built from, in the order a reviewer would:
 

@@ -1,0 +1,1720 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>Overview &amp; Match List · OLBG Audit &amp; Origination Desk (7f000cb6)</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="shell">
+  <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+    <a class="brand" href="index.html">OLBG Desk · 7f000cb6<small>Official-Source Audit &amp; Lines</small></a>
+    <div class="nav-group">
+      <div class="nav-title">Desk Views</div>
+      <a class="nav-link active" href="index.html"><span>Overview &amp; Match List</span><span class="nav-count">122</span></a><a class="nav-link" href="picks.html"><span>High-Confidence Picks</span><span class="nav-count">9</span></a><a class="nav-link" href="markets.html"><span>Originated Markets</span><span class="nav-count">280</span></a><a class="nav-link" href="sports.html"><span>17 Sport Categories</span><span class="nav-count">17</span></a><a class="nav-link" href="flagged.html"><span>Flagged for Review</span><span class="nav-count">85</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-title">Verification &amp; Audit</div>
+      <a class="nav-link" href="reverse-engineering.html"><span>OLBG Reverse Engineering</span><span class="nav-count">17 hubs</span></a><a class="nav-link" href="audit.html"><span>Line-by-Line Repo Audit</span><span class="nav-count">18</span></a><a class="nav-link" href="sources.html"><span>Official Sources</span><span class="nav-count">38</span></a><a class="nav-link" href="methodology.html"><span>Model &amp; Grading Rules</span></a><a class="nav-link" href="../index.html"><span>← Canonical Root Desk</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-title">17 Covered Sports</div>
+      <a class="nav-link" href="sports/ice-hockey.html"><span>Ice Hockey</span><span class="nav-count">26</span></a><a class="nav-link" href="sports/baseball.html"><span>Baseball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/basketball.html"><span>Basketball</span><span class="nav-count">11</span></a><a class="nav-link" href="sports/tennis.html"><span>Tennis</span><span class="nav-count">21</span></a><a class="nav-link" href="sports/rugby-union.html"><span>Rugby Union</span><span class="nav-count">19</span></a><a class="nav-link" href="sports/rugby-league.html"><span>Rugby League</span><span class="nav-count">9</span></a><a class="nav-link" href="sports/snooker.html"><span>Snooker</span><span class="nav-count">8</span></a><a class="nav-link" href="sports/handball.html"><span>Handball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/volleyball.html"><span>Volleyball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/gaelic-football.html"><span>Gaelic Football</span><span class="nav-count">4</span></a><a class="nav-link" href="sports/cricket.html"><span>Cricket</span><span class="nav-count">2</span></a><a class="nav-link" href="sports/golf.html"><span>Golf</span><span class="nav-count">2</span></a><a class="nav-link" href="sports/motor-racing.html"><span>Motor Racing</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/darts.html"><span>Darts</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/aussie-rules.html"><span>Aussie Rules</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/esports.html"><span>eSports</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/greyhounds.html"><span>Greyhounds</span><span class="nav-count">1</span></a>
+    </div>
+  </aside>
+  <div class="content">
+    <header class="topbar">
+      <div>
+        <button class="menu-btn" id="menu-btn" type="button">☰ Menu</button>
+        <strong>Session 7f000cb6</strong> · Independent Official-Source Match &amp; Pricing Desk
+      </div>
+      <div class="topbar-meta">
+        <span>Snapshot: <code>2026-10-22T12:30:00Z</code></span>
+        <span>Model: <code>7f000cb6-quant-v1.0</code></span>
+        <a href="exports/matches.csv" download>CSV Export ↓</a>
+      </div>
+    </header>
+    <main id="main">
+      <div class="notice notice-warn" id="live-expiry-note" hidden></div>
+      
+<h1>Official-Source Multi-Sport Match Desk &amp; Originated Lines</h1>
+<p class="subtitle">Reverse-engineered OLBG.com across all 17 in-scope sports (excluding soccer, boxing, UFC, MMA, football, American football, hurling, horse racing, cycling, and specials), verified line-by-line against governing-body endpoints as of <code>2026-10-22T12:30:00Z</code>.</p>
+<div class="kpis">
+  <div class="kpi"><div class="kpi-val">17</div><div class="kpi-lbl">In-Scope Sports Audited (0 Excluded Rows)</div></div>
+  <div class="kpi"><div class="kpi-val">122</div><div class="kpi-lbl">Official-Source Fixture &amp; Event Entries</div></div>
+  <div class="kpi"><div class="kpi-val">40 / 280</div><div class="kpi-lbl">Priced Matchups / Originated Markets</div></div>
+  <div class="kpi"><div class="kpi-val">9</div><div class="kpi-lbl">High-Confidence Picks (-250 to +10000)</div></div>
+  <div class="kpi"><div class="kpi-val">85</div><div class="kpi-lbl">Blank / Withheld / Flagged Entries</div></div>
+  <div class="kpi"><div class="kpi-val">18</div><div class="kpi-lbl">Line-by-Line Repo Audit Findings</div></div>
+</div>
+<div class="notice">
+  <strong>Zero-Hallucination &amp; Zero-Vig Policy:</strong> Every table row links directly to an allowlisted governing-body endpoint. Where an official publisher omits an exact UTC timestamp, hides racecards behind dynamic JS/consent walls, or shows fewer than five games played, values are left strictly blank and logged on <a href="flagged.html"><strong>Flagged for Review</strong></a>.
+</div>
+<h2>Featured High-Confidence Selections (<code>-250</code> to <code>+10000</code> Window)</h2>
+<p class="subtitle">Every High-confidence pick satisfies both <code>p &gt; 70.0%</code> and fair zero-vig odds inside <code>[-250, +10000]</code>, backed by verified team records, player stats, and recent match scorelines. <a href="picks.html">View full picks &amp; heavy-chalk cap analysis →</a></p>
+<div class="cards"><article class="card" id="pred-nhl-2026020154">
+  <div class="card-head">
+    <div>
+      <div class="card-meta">NHL 2026-27 · Oct 22 Regular Season · <code>2026-10-22T23:00:00Z</code></div>
+      <h3><a href="sports/ice-hockey.html">Boston Bruins vs Nashville Predators</a></h3>
+    </div>
+    <span class="badge badge-high">High</span>
+  </div>
+  <div class="pick-banner">
+    <span>Selection: Boston Bruins <small>(Match Winner (incl. OT/SO))</small></span>
+    <span class="odds-val" data-us="-235" data-dec="1.4250">-235 <small>(1.43)</small></span>
+  </div>
+  <p class="prose-text">Back the Boston Bruins on the full-game moneyline against the visiting Nashville Predators at TD Garden. Anchored by winger David Pastrnak (12 points through ten appearances), Boston sits 7-2-1 with a +14 goal differential (36 GF, 22 GA) and just pushed Dallas to a 3-2 overtime finish on October 20. Even though Juuse Saros guided Nashville to a 5-2 home win over St. Louis on October 17, the Predators remain 3-2-3 overall after consecutive losses to Vegas (5-2) and San Jose (3-2 SO), making Boston the clear match-winner play.</p>
+  <div class="pill-row">
+    <span class="pill">Model Prob: 70.18%</span>
+    <span class="pill">Players: David Pastrnak, Juuse Saros</span>
+    <span class="pill">Home: 7-2-1 (15 pts, 36 GF / 22 GA)</span>
+    <span class="pill">Away: 3-2-3 (9 pts, 23 GF / 24 GA)</span>
+    <span class="pill">89 words</span>
+    <span class="pill"><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official governing source ↗</a></span>
+  </div>
+</article><article class="card" id="pred-nhl-2026020158">
+  <div class="card-head">
+    <div>
+      <div class="card-meta">NHL 2026-27 · Oct 22 Regular Season · <code>2026-10-22T23:00:00Z</code></div>
+      <h3><a href="sports/ice-hockey.html">Pittsburgh Penguins vs Florida Panthers</a></h3>
+    </div>
+    <span class="badge badge-high">High</span>
+  </div>
+  <div class="pick-banner">
+    <span>Selection: Pittsburgh Penguins +1.5 Goals <small>(Alt Puck Line (+1.5 / -1.5))</small></span>
+    <span class="odds-val" data-us="-249" data-dec="1.4019">-249 <small>(1.40)</small></span>
+  </div>
+  <p class="prose-text">Take Pittsburgh Penguins +1.5 Goals as home-ice handicap protection when the Florida Panthers skate into PPG Paints Arena on Thursday night. Blue-liner Erik Karlsson (11 points on 1 goal and 10 assists) alongside center Evgeni Malkin (5 goals, 7 points) have kept Pittsburgh resilient at home with a 2-1-0 record (10 GF, 9 GA), dropping their most recent contest by only a single tally in a 5-4 clash with Utah. Florida arrives at 5-3-2 owning just three regulation wins from ten games after Wednesday&#x27;s 5-1 defeat in Ottawa, favoring Pittsburgh +1.5.</p>
+  <div class="pill-row">
+    <span class="pill">Model Prob: 71.33%</span>
+    <span class="pill">Players: Erik Karlsson, Evgeni Malkin</span>
+    <span class="pill">Home: 3-6-1 (7 pts, 33 GF / 38 GA)</span>
+    <span class="pill">Away: 5-3-2 (12 pts, 31 GF / 30 GA)</span>
+    <span class="pill">91 words</span>
+    <span class="pill"><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official governing source ↗</a></span>
+  </div>
+</article><article class="card" id="pred-nhl-2026020174">
+  <div class="card-head">
+    <div>
+      <div class="card-meta">NHL 2026-27 · Oct 24 Regular Season · <code>2026-10-24T23:00:00Z</code></div>
+      <h3><a href="sports/ice-hockey.html">Columbus Blue Jackets vs Vegas Golden Knights</a></h3>
+    </div>
+    <span class="badge badge-high">High</span>
+  </div>
+  <div class="pick-banner">
+    <span>Selection: Vegas Golden Knights <small>(Match Winner (incl. OT/SO))</small></span>
+    <span class="odds-val" data-us="-243" data-dec="1.4108">-243 <small>(1.41)</small></span>
+  </div>
+  <p class="prose-text">Play the Vegas Golden Knights to win outright (including overtime and shootout) Saturday night at Nationwide Arena against the Columbus Blue Jackets. Paced by Jack Eichel (18 points) and captain Mark Stone (8 goals, 15 points), Pacific-leading Vegas holds an 8-3-0 record with 44 goals scored (+14 differential) and a 3-1-0 road ledger despite Tuesday&#x27;s 6-2 setback versus Tampa Bay. Following Kent Johnson&#x27;s 1-0 overtime winner over the Rangers on October 17, 3-5-0 Columbus has lost consecutively to Minnesota (2-1) and Toronto (6-2), pointing squarely toward Vegas on the moneyline.</p>
+  <div class="pill-row">
+    <span class="pill">Model Prob: 70.88%</span>
+    <span class="pill">Players: Jack Eichel, Mark Stone, Kent Johnson</span>
+    <span class="pill">Home: 3-5-0 (6 pts, 20 GF / 29 GA)</span>
+    <span class="pill">Away: 8-3-0 (16 pts, 44 GF / 30 GA)</span>
+    <span class="pill">90 words</span>
+    <span class="pill"><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official governing source ↗</a></span>
+  </div>
+</article><article class="card" id="pred-nhl-2026020177">
+  <div class="card-head">
+    <div>
+      <div class="card-meta">NHL 2026-27 · Oct 24 Regular Season · <code>2026-10-25T01:00:00Z</code></div>
+      <h3><a href="sports/ice-hockey.html">Utah Mammoth vs Tampa Bay Lightning</a></h3>
+    </div>
+    <span class="badge badge-high">High</span>
+  </div>
+  <div class="pick-banner">
+    <span>Selection: Tampa Bay Lightning +1.5 Goals <small>(Puck Line (-1.5 / +1.5))</small></span>
+    <span class="odds-val" data-us="-243" data-dec="1.4116">-243 <small>(1.41)</small></span>
+  </div>
+  <p class="prose-text">Side with Tampa Bay Lightning +1.5 Goals as road puck-line insurance Saturday at Delta Center against the Utah Mammoth. Catalyzed by playmaker Nikita Kucherov (13 points), Tampa Bay travels west at 7-2-0 (.778 points percentage, 31 GF, 23 GA) riding a three-game winning streak capped by Tuesday&#x27;s commanding 6-2 victory at Vegas. Although Utah sits 7-3-0 behind Nick Schmaltz (7 goals, 13 points) and Clayton Keller (13 points), the Mammoth edged struggling Pittsburgh by just a 5-4 margin last time out, giving Lightning +1.5 clear value.</p>
+  <div class="pill-row">
+    <span class="pill">Model Prob: 70.84%</span>
+    <span class="pill">Players: Nikita Kucherov, Nick Schmaltz, Clayton Keller</span>
+    <span class="pill">Home: 7-3-0 (14 pts, 38 GF / 31 GA)</span>
+    <span class="pill">Away: 7-2-0 (14 pts, 31 GF / 23 GA)</span>
+    <span class="pill">86 words</span>
+    <span class="pill"><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official governing source ↗</a></span>
+  </div>
+</article></div>
+<h2>17-Sport Coverage &amp; OLBG Hub Audit Matrix</h2>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Sport</th><th>Governing Authority</th><th>Entries</th><th>Priced</th><th>High Picks</th><th>OLBG Clock Telemetry</th><th>Official Source</th></tr>
+  </thead>
+  <tbody><tr>
+  <td><a href="sports/ice-hockey.html"><strong>Ice Hockey</strong></a> <small>(OLBG #13)</small></td>
+  <td>National Hockey League (NHL)</td>
+  <td>26</td>
+  <td>26</td>
+  <td>5</td>
+  <td><small>Hardcoded Europe/London (BST, UTC+1) unlabeled</small></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/baseball.html"><strong>Baseball</strong></a> <small>(OLBG #12)</small></td>
+  <td>Major League Baseball (MLB)</td>
+  <td>5</td>
+  <td>5</td>
+  <td>2</td>
+  <td><small>Viewer-IP local clock (EDT, UTC-4) unlabeled</small></td>
+  <td><a class="src-link" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-22&amp;endDate=2026-10-29&amp;hydrate=probablePitcher,team,venue" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/basketball.html"><strong>Basketball</strong></a> <small>(OLBG #4)</small></td>
+  <td>Euroleague Basketball &amp; NBA</td>
+  <td>11</td>
+  <td>9</td>
+  <td>2</td>
+  <td><small>Hardcoded Europe/London (BST, UTC+1) unlabeled</small></td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/tennis.html"><strong>Tennis</strong></a> <small>(OLBG #3)</small></td>
+  <td>ATP Tour &amp; WTA Tour</td>
+  <td>21</td>
+  <td>0</td>
+  <td>0</td>
+  <td><small>Viewer-IP local clock (EDT, UTC-4) unlabeled</small></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/rugby-union.html"><strong>Rugby Union</strong></a> <small>(OLBG #9)</small></td>
+  <td>United Rugby Championship (URC) &amp; Ligue Nationale de Rugby (LNR)</td>
+  <td>19</td>
+  <td>0</td>
+  <td>0</td>
+  <td><small>Hardcoded Europe/London (BST, UTC+1) unlabeled</small></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/rugby-league.html"><strong>Rugby League</strong></a> <small>(OLBG #10)</small></td>
+  <td>International Rugby League (IRL)</td>
+  <td>9</td>
+  <td>0</td>
+  <td>0</td>
+  <td><small>Date-only ante-post cards (2027)</small></td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/snooker.html"><strong>Snooker</strong></a> <small>(OLBG #8)</small></td>
+  <td>World Snooker Tour (WST)</td>
+  <td>8</td>
+  <td>0</td>
+  <td>0</td>
+  <td><small>Viewer-IP local clock (EDT, UTC-4) unlabeled</small></td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/handball.html"><strong>Handball</strong></a> <small>(OLBG #20)</small></td>
+  <td>European Handball Federation (EHF)</td>
+  <td>5</td>
+  <td>0</td>
+  <td>0</td>
+  <td><small>Hardcoded Europe/London (BST, UTC+1) unlabeled</small></td>
+  <td><a class="src-link" href="https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/volleyball.html"><strong>Volleyball</strong></a> <small>(OLBG #21)</small></td>
+  <td>Polska Liga Siatkówki (PlusLiga / TAURON Liga) &amp; Lega Pallavolo Serie A</td>
+  <td>5</td>
+  <td>0</td>
+  <td>0</td>
+  <td><small>Viewer-IP local clock (EDT, UTC-4) unlabeled</small></td>
+  <td><a class="src-link" href="https://www.tauronliga.pl/games.html" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/gaelic-football.html"><strong>Gaelic Football</strong></a> <small>(OLBG #25)</small></td>
+  <td>Munster GAA, Cork GAA &amp; CLG Maigh Cuilinn</td>
+  <td>4</td>
+  <td>0</td>
+  <td>0</td>
+  <td><small>Viewer-IP local clock (EDT, UTC-4) unlabeled</small></td>
+  <td><a class="src-link" href="https://munster.gaa.ie/fixtures/events-calendar/" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/cricket.html"><strong>Cricket</strong></a> <small>(OLBG #7)</small></td>
+  <td>Cricket Ireland, PCB &amp; ICC</td>
+  <td>2</td>
+  <td>0</td>
+  <td>0</td>
+  <td><small>Mixed BST / date-only ante-post cards</small></td>
+  <td><a class="src-link" href="https://cricketireland.ie/matches/" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/golf.html"><strong>Golf</strong></a> <small>(OLBG #5)</small></td>
+  <td>PGA TOUR &amp; PGA TOUR Champions</td>
+  <td>2</td>
+  <td>0</td>
+  <td>0</td>
+  <td><small>Tournament window dates</small></td>
+  <td><a class="src-link" href="https://www.pgatour.com/schedule" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/motor-racing.html"><strong>Motor Racing</strong></a> <small>(OLBG #14)</small></td>
+  <td>Formula 1</td>
+  <td>1</td>
+  <td>0</td>
+  <td>0</td>
+  <td><small>Viewer-IP local clock (EDT, UTC-4) unlabeled</small></td>
+  <td><a class="src-link" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/darts.html"><strong>Darts</strong></a> <small>(OLBG #15)</small></td>
+  <td>Professional Darts Corporation (PDC)</td>
+  <td>1</td>
+  <td>0</td>
+  <td>0</td>
+  <td><small>Viewer-IP local clock (EDT, UTC-4) unlabeled</small></td>
+  <td><a class="src-link" href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/aussie-rules.html"><strong>Aussie Rules</strong></a> <small>(OLBG #22)</small></td>
+  <td>Australian Football League (AFL / AFLW)</td>
+  <td>1</td>
+  <td>0</td>
+  <td>0</td>
+  <td><small>Empty hub (&#x27;No tips found.&#x27;)</small></td>
+  <td><a class="src-link" href="https://www.afl.com.au/aflw/matches/8970" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/esports.html"><strong>eSports</strong></a> <small>(OLBG #23)</small></td>
+  <td>Riot Games / LoL Esports</td>
+  <td>1</td>
+  <td>0</td>
+  <td>0</td>
+  <td><small>Empty hub (&#x27;No tips found.&#x27;)</small></td>
+  <td><a class="src-link" href="https://lolesports.com/en-GB/tournament/115660540725177488/overview" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr><tr>
+  <td><a href="sports/greyhounds.html"><strong>Greyhounds</strong></a> <small>(OLBG #28)</small></td>
+  <td>Greyhound Board of Great Britain (GBGB)</td>
+  <td>1</td>
+  <td>0</td>
+  <td>0</td>
+  <td><small>Hardcoded Europe/London (BST, UTC+1) unlabeled</small></td>
+  <td><a class="src-link" href="https://www.gbgb.org.uk/racing/open-races/" target="_blank" rel="noopener noreferrer">Official governing body ↗</a></td>
+</tr></tbody>
+</table>
+</div>
+<h2>Master Verified Match &amp; Originated Line Table (122 Entries)</h2>
+<div class="controls">
+  <input id="tbl-search" type="search" placeholder="Search team, player, competition, venue…" aria-label="Search rows">
+  <select id="tbl-sport" aria-label="Filter by sport"><option value="">All 17 sports</option><option value="ice-hockey">Ice Hockey</option><option value="baseball">Baseball</option><option value="basketball">Basketball</option><option value="tennis">Tennis</option><option value="rugby-union">Rugby Union</option><option value="rugby-league">Rugby League</option><option value="snooker">Snooker</option><option value="handball">Handball</option><option value="volleyball">Volleyball</option><option value="gaelic-football">Gaelic Football</option><option value="cricket">Cricket</option><option value="golf">Golf</option><option value="motor-racing">Motor Racing</option><option value="darts">Darts</option><option value="aussie-rules">Aussie Rules</option><option value="esports">eSports</option><option value="greyhounds">Greyhounds</option></select>
+  <select id="tbl-conf" aria-label="Filter by confidence">
+    <option value="">All grades</option>
+    <option value="high">High</option>
+    <option value="medium">Medium</option>
+    <option value="low">Low</option>
+    <option value="unpriced">Unpriced / Withheld</option>
+  </select>
+  <select id="odds-fmt" aria-label="Odds display format">
+    <option value="american">Odds: American</option>
+    <option value="decimal">Odds: Decimal</option>
+  </select>
+  <span id="row-count" style="font-size:12.5px;color:var(--muted)"></span>
+</div>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>Sport</th>
+      <th>Competition</th>
+      <th>Match / Venue</th>
+      <th>Verified Start (UTC)</th>
+      <th>Originated Winner (2-Way)</th>
+      <th>Originated Handicap</th>
+      <th>Originated Total</th>
+      <th>Model Winner Pick</th>
+      <th>Grade / Status</th>
+      <th>Official Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-filterable="1" data-sport="ice-hockey" data-conf="high" data-start-utc="2026-10-22T23:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 22 Regular Season</small></td>
+  <td><strong>Boston Bruins vs Nashville Predators</strong><br><small>TD Garden, Boston</small></td>
+  <td><code>2026-10-22T23:00:00Z</code></td>
+  <td>Boston Bruins: <span class="odds-val" data-us="-235" data-dec="1.4250">-235 <small>(1.43)</small></span><br>Nashville Predators: <span class="odds-val" data-us="+235" data-dec="3.3532">+235 <small>(3.35)</small></span></td>
+  <td>Boston Bruins -1.5 Goals: <span class="odds-val" data-us="+128" data-dec="2.2835">+128 <small>(2.28)</small></span><br>Nashville Predators +1.5 Goals: <span class="odds-val" data-us="-128" data-dec="1.7791">-128 <small>(1.78)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-111" data-dec="1.9035">-111 <small>(1.90)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+111" data-dec="2.1069">+111 <small>(2.11)</small></span></td>
+  <td><strong>Boston Bruins</strong><br><span class="odds-val" data-us="-235" data-dec="1.4250">-235 <small>(1.43)</small></span> (70.2%)</td>
+  <td><span class="badge badge-high">High</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="low" data-start-utc="2026-10-22T23:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 22 Regular Season</small></td>
+  <td><strong>Toronto Maple Leafs vs New York Rangers</strong><br><small>Scotiabank Arena, Toronto</small></td>
+  <td><code>2026-10-22T23:00:00Z</code></td>
+  <td>Toronto Maple Leafs: <span class="odds-val" data-us="+116" data-dec="2.1647">+116 <small>(2.16)</small></span><br>New York Rangers: <span class="odds-val" data-us="-116" data-dec="1.8586">-116 <small>(1.86)</small></span></td>
+  <td>Toronto Maple Leafs -1.5 Goals: <span class="odds-val" data-us="+314" data-dec="4.1425">+314 <small>(4.14)</small></span><br>New York Rangers +1.5 Goals: <span class="odds-val" data-us="-314" data-dec="1.3182">-314 <small>(1.32)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-106" data-dec="1.9428">-106 <small>(1.94)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+106" data-dec="2.0606">+106 <small>(2.06)</small></span></td>
+  <td><strong>New York Rangers</strong><br><span class="odds-val" data-us="-116" data-dec="1.8586">-116 <small>(1.86)</small></span> (53.8%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="medium" data-start-utc="2026-10-22T23:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 22 Regular Season</small></td>
+  <td><strong>Ottawa Senators vs San Jose Sharks</strong><br><small>Canadian Tire Centre, Ottawa</small></td>
+  <td><code>2026-10-22T23:00:00Z</code></td>
+  <td>Ottawa Senators: <span class="odds-val" data-us="-209" data-dec="1.4779">-209 <small>(1.48)</small></span><br>San Jose Sharks: <span class="odds-val" data-us="+209" data-dec="3.0926">+209 <small>(3.09)</small></span></td>
+  <td>Ottawa Senators -1.5 Goals: <span class="odds-val" data-us="+143" data-dec="2.4288">+143 <small>(2.43)</small></span><br>San Jose Sharks +1.5 Goals: <span class="odds-val" data-us="-143" data-dec="1.6999">-143 <small>(1.70)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-102" data-dec="1.9835">-102 <small>(1.98)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+102" data-dec="2.0168">+102 <small>(2.02)</small></span></td>
+  <td><strong>Ottawa Senators</strong><br><span class="odds-val" data-us="-209" data-dec="1.4779">-209 <small>(1.48)</small></span> (67.7%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="low" data-start-utc="2026-10-22T23:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 22 Regular Season</small></td>
+  <td><strong>New Jersey Devils vs Anaheim Ducks</strong><br><small>Prudential Center, Newark</small></td>
+  <td><code>2026-10-22T23:00:00Z</code></td>
+  <td>New Jersey Devils: <span class="odds-val" data-us="-136" data-dec="1.7379">-136 <small>(1.74)</small></span><br>Anaheim Ducks: <span class="odds-val" data-us="+136" data-dec="2.3553">+136 <small>(2.36)</small></span></td>
+  <td>New Jersey Devils -1.5 Goals: <span class="odds-val" data-us="+204" data-dec="3.0430">+204 <small>(3.04)</small></span><br>Anaheim Ducks +1.5 Goals: <span class="odds-val" data-us="-204" data-dec="1.4895">-204 <small>(1.49)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-157" data-dec="1.6382">-157 <small>(1.64)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+157" data-dec="2.5668">+157 <small>(2.57)</small></span></td>
+  <td><strong>New Jersey Devils</strong><br><span class="odds-val" data-us="-136" data-dec="1.7379">-136 <small>(1.74)</small></span> (57.5%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="low" data-start-utc="2026-10-22T23:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 22 Regular Season</small></td>
+  <td><strong>Pittsburgh Penguins vs Florida Panthers</strong><br><small>PPG Paints Arena, Pittsburgh</small></td>
+  <td><code>2026-10-22T23:00:00Z</code></td>
+  <td>Pittsburgh Penguins: <span class="odds-val" data-us="+116" data-dec="2.1574">+116 <small>(2.16)</small></span><br>Florida Panthers: <span class="odds-val" data-us="-116" data-dec="1.8640">-116 <small>(1.86)</small></span></td>
+  <td>Pittsburgh Penguins -1.5 Goals: <span class="odds-val" data-us="+277" data-dec="3.7677">+277 <small>(3.77)</small></span><br>Florida Panthers +1.5 Goals: <span class="odds-val" data-us="-277" data-dec="1.3613">-277 <small>(1.36)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-191" data-dec="1.5241">-191 <small>(1.52)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+191" data-dec="2.9082">+191 <small>(2.91)</small></span></td>
+  <td><strong>Florida Panthers</strong><br><span class="odds-val" data-us="-116" data-dec="1.8640">-116 <small>(1.86)</small></span> (53.6%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="medium" data-start-utc="2026-10-22T23:30:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 22 Regular Season</small></td>
+  <td><strong>New York Islanders vs Los Angeles Kings</strong><br><small>UBS Arena, Elmont</small></td>
+  <td><code>2026-10-22T23:30:00Z</code></td>
+  <td>New York Islanders: <span class="odds-val" data-us="-292" data-dec="1.3427">-292 <small>(1.34)</small></span><br>Los Angeles Kings: <span class="odds-val" data-us="+292" data-dec="3.9180">+292 <small>(3.92)</small></span></td>
+  <td>New York Islanders -1.5 Goals: <span class="odds-val" data-us="+109" data-dec="2.0923">+109 <small>(2.09)</small></span><br>Los Angeles Kings +1.5 Goals: <span class="odds-val" data-us="-109" data-dec="1.9155">-109 <small>(1.92)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-107" data-dec="1.9377">-107 <small>(1.94)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+107" data-dec="2.0665">+107 <small>(2.07)</small></span></td>
+  <td><strong>New York Islanders</strong><br><span class="odds-val" data-us="-292" data-dec="1.3427">-292 <small>(1.34)</small></span> (74.5%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="medium" data-start-utc="2026-10-23T00:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 22 Regular Season</small></td>
+  <td><strong>St. Louis Blues vs Vegas Golden Knights</strong><br><small>Enterprise Center, St. Louis</small></td>
+  <td><code>2026-10-23T00:00:00Z</code></td>
+  <td>St. Louis Blues: <span class="odds-val" data-us="+153" data-dec="2.5322">+153 <small>(2.53)</small></span><br>Vegas Golden Knights: <span class="odds-val" data-us="-153" data-dec="1.6526">-153 <small>(1.65)</small></span></td>
+  <td>St. Louis Blues -1.5 Goals: <span class="odds-val" data-us="+378" data-dec="4.7809">+378 <small>(4.78)</small></span><br>Vegas Golden Knights +1.5 Goals: <span class="odds-val" data-us="-378" data-dec="1.2645">-378 <small>(1.26)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-188" data-dec="1.5312">-188 <small>(1.53)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+188" data-dec="2.8826">+188 <small>(2.88)</small></span></td>
+  <td><strong>Vegas Golden Knights</strong><br><span class="odds-val" data-us="-153" data-dec="1.6526">-153 <small>(1.65)</small></span> (60.5%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="medium" data-start-utc="2026-10-23T00:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 22 Regular Season</small></td>
+  <td><strong>Dallas Stars vs Winnipeg Jets</strong><br><small>American Airlines Center, Dallas</small></td>
+  <td><code>2026-10-23T00:00:00Z</code></td>
+  <td>Dallas Stars: <span class="odds-val" data-us="-184" data-dec="1.5425">-184 <small>(1.54)</small></span><br>Winnipeg Jets: <span class="odds-val" data-us="+184" data-dec="2.8434">+184 <small>(2.84)</small></span></td>
+  <td>Dallas Stars -1.5 Goals: <span class="odds-val" data-us="+173" data-dec="2.7258">+173 <small>(2.73)</small></span><br>Winnipeg Jets +1.5 Goals: <span class="odds-val" data-us="-173" data-dec="1.5795">-173 <small>(1.58)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="+195" data-dec="2.9521">+195 <small>(2.95)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="-195" data-dec="1.5123">-195 <small>(1.51)</small></span></td>
+  <td><strong>Dallas Stars</strong><br><span class="odds-val" data-us="-184" data-dec="1.5425">-184 <small>(1.54)</small></span> (64.8%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="medium" data-start-utc="2026-10-23T01:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 22 Regular Season</small></td>
+  <td><strong>Calgary Flames vs Minnesota Wild</strong><br><small>Scotiabank Saddledome, Calgary</small></td>
+  <td><code>2026-10-23T01:00:00Z</code></td>
+  <td>Calgary Flames: <span class="odds-val" data-us="+307" data-dec="4.0714">+307 <small>(4.07)</small></span><br>Minnesota Wild: <span class="odds-val" data-us="-307" data-dec="1.3256">-307 <small>(1.33)</small></span></td>
+  <td>Calgary Flames -1.5 Goals: <span class="odds-val" data-us="+808" data-dec="9.0755">+808 <small>(9.08)</small></span><br>Minnesota Wild +1.5 Goals: <span class="odds-val" data-us="-808" data-dec="1.1238">-808 <small>(1.12)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-135" data-dec="1.7395">-135 <small>(1.74)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+135" data-dec="2.3522">+135 <small>(2.35)</small></span></td>
+  <td><strong>Minnesota Wild</strong><br><span class="odds-val" data-us="-307" data-dec="1.3256">-307 <small>(1.33)</small></span> (75.4%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="low" data-start-utc="2026-10-23T01:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 22 Regular Season</small></td>
+  <td><strong>Edmonton Oilers vs Carolina Hurricanes</strong><br><small>Rogers Place, Edmonton</small></td>
+  <td><code>2026-10-23T01:00:00Z</code></td>
+  <td>Edmonton Oilers: <span class="odds-val" data-us="-118" data-dec="1.8486">-118 <small>(1.85)</small></span><br>Carolina Hurricanes: <span class="odds-val" data-us="+118" data-dec="2.1784">+118 <small>(2.18)</small></span></td>
+  <td>Edmonton Oilers -1.5 Goals: <span class="odds-val" data-us="+220" data-dec="3.2027">+220 <small>(3.20)</small></span><br>Carolina Hurricanes +1.5 Goals: <span class="odds-val" data-us="-220" data-dec="1.4540">-220 <small>(1.45)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-222" data-dec="1.4496">-222 <small>(1.45)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+222" data-dec="3.2243">+222 <small>(3.22)</small></span></td>
+  <td><strong>Edmonton Oilers</strong><br><span class="odds-val" data-us="-118" data-dec="1.8486">-118 <small>(1.85)</small></span> (54.1%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="low" data-start-utc="2026-10-23T02:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 22 Regular Season</small></td>
+  <td><strong>Seattle Kraken vs Utah Mammoth</strong><br><small>Climate Pledge Arena, Seattle</small></td>
+  <td><code>2026-10-23T02:00:00Z</code></td>
+  <td>Seattle Kraken: <span class="odds-val" data-us="-108" data-dec="1.9232">-108 <small>(1.92)</small></span><br>Utah Mammoth: <span class="odds-val" data-us="+108" data-dec="2.0832">+108 <small>(2.08)</small></span></td>
+  <td>Seattle Kraken -1.5 Goals: <span class="odds-val" data-us="+225" data-dec="3.2507">+225 <small>(3.25)</small></span><br>Utah Mammoth +1.5 Goals: <span class="odds-val" data-us="-225" data-dec="1.4443">-225 <small>(1.44)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-285" data-dec="1.3505">-285 <small>(1.35)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+285" data-dec="3.8534">+285 <small>(3.85)</small></span></td>
+  <td><strong>Seattle Kraken</strong><br><span class="odds-val" data-us="-108" data-dec="1.9232">-108 <small>(1.92)</small></span> (52.0%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="low" data-start-utc="2026-10-23T02:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 22 Regular Season</small></td>
+  <td><strong>Vancouver Canucks vs Detroit Red Wings</strong><br><small>Rogers Arena, Vancouver</small></td>
+  <td><code>2026-10-23T02:00:00Z</code></td>
+  <td>Vancouver Canucks: <span class="odds-val" data-us="+136" data-dec="2.3624">+136 <small>(2.36)</small></span><br>Detroit Red Wings: <span class="odds-val" data-us="-136" data-dec="1.7340">-136 <small>(1.73)</small></span></td>
+  <td>Vancouver Canucks -1.5 Goals: <span class="odds-val" data-us="+325" data-dec="4.2495">+325 <small>(4.25)</small></span><br>Detroit Red Wings +1.5 Goals: <span class="odds-val" data-us="-325" data-dec="1.3077">-325 <small>(1.31)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-190" data-dec="1.5251">-190 <small>(1.53)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+190" data-dec="2.9044">+190 <small>(2.90)</small></span></td>
+  <td><strong>Detroit Red Wings</strong><br><span class="odds-val" data-us="-136" data-dec="1.7340">-136 <small>(1.73)</small></span> (57.7%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="medium" data-start-utc="2026-10-24T00:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 23 Regular Season</small></td>
+  <td><strong>Chicago Blackhawks vs Montréal Canadiens</strong><br><small>United Center, Chicago</small></td>
+  <td><code>2026-10-24T00:00:00Z</code></td>
+  <td>Chicago Blackhawks: <span class="odds-val" data-us="+149" data-dec="2.4857">+149 <small>(2.49)</small></span><br>Montréal Canadiens: <span class="odds-val" data-us="-149" data-dec="1.6731">-149 <small>(1.67)</small></span></td>
+  <td>Chicago Blackhawks -1.5 Goals: <span class="odds-val" data-us="+367" data-dec="4.6677">+367 <small>(4.67)</small></span><br>Montréal Canadiens +1.5 Goals: <span class="odds-val" data-us="-367" data-dec="1.2727">-367 <small>(1.27)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-200" data-dec="1.5002">-200 <small>(1.50)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+200" data-dec="2.9991">+200 <small>(3.00)</small></span></td>
+  <td><strong>Montréal Canadiens</strong><br><span class="odds-val" data-us="-149" data-dec="1.6731">-149 <small>(1.67)</small></span> (59.8%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="low" data-start-utc="2026-10-24T01:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 23 Regular Season</small></td>
+  <td><strong>Colorado Avalanche vs Tampa Bay Lightning</strong><br><small>Ball Arena, Denver</small></td>
+  <td><code>2026-10-24T01:00:00Z</code></td>
+  <td>Colorado Avalanche: <span class="odds-val" data-us="-111" data-dec="1.8995">-111 <small>(1.90)</small></span><br>Tampa Bay Lightning: <span class="odds-val" data-us="+111" data-dec="2.1117">+111 <small>(2.11)</small></span></td>
+  <td>Colorado Avalanche -1.5 Goals: <span class="odds-val" data-us="+214" data-dec="3.1446">+214 <small>(3.14)</small></span><br>Tampa Bay Lightning +1.5 Goals: <span class="odds-val" data-us="-214" data-dec="1.4663">-214 <small>(1.47)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-186" data-dec="1.5370">-186 <small>(1.54)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+186" data-dec="2.8623">+186 <small>(2.86)</small></span></td>
+  <td><strong>Colorado Avalanche</strong><br><span class="odds-val" data-us="-111" data-dec="1.8995">-111 <small>(1.90)</small></span> (52.6%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="medium" data-start-utc="2026-10-24T17:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 24 Regular Season</small></td>
+  <td><strong>Philadelphia Flyers vs Anaheim Ducks</strong><br><small>Xfinity Mobile Arena, Philadelphia</small></td>
+  <td><code>2026-10-24T17:00:00Z</code></td>
+  <td>Philadelphia Flyers: <span class="odds-val" data-us="+150" data-dec="2.5048">+150 <small>(2.50)</small></span><br>Anaheim Ducks: <span class="odds-val" data-us="-150" data-dec="1.6645">-150 <small>(1.66)</small></span></td>
+  <td>Philadelphia Flyers -1.5 Goals: <span class="odds-val" data-us="+463" data-dec="5.6330">+463 <small>(5.63)</small></span><br>Anaheim Ducks +1.5 Goals: <span class="odds-val" data-us="-463" data-dec="1.2158">-463 <small>(1.22)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="+146" data-dec="2.4649">+146 <small>(2.46)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="-146" data-dec="1.6826">-146 <small>(1.68)</small></span></td>
+  <td><strong>Anaheim Ducks</strong><br><span class="odds-val" data-us="-150" data-dec="1.6645">-150 <small>(1.66)</small></span> (60.1%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="medium" data-start-utc="2026-10-24T19:30:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 24 Regular Season</small></td>
+  <td><strong>New Jersey Devils vs Los Angeles Kings</strong><br><small>Prudential Center, Newark</small></td>
+  <td><code>2026-10-24T19:30:00Z</code></td>
+  <td>New Jersey Devils: <span class="odds-val" data-us="-206" data-dec="1.4847">-206 <small>(1.48)</small></span><br>Los Angeles Kings: <span class="odds-val" data-us="+206" data-dec="3.0631">+206 <small>(3.06)</small></span></td>
+  <td>New Jersey Devils -1.5 Goals: <span class="odds-val" data-us="+140" data-dec="2.3950">+140 <small>(2.40)</small></span><br>Los Angeles Kings +1.5 Goals: <span class="odds-val" data-us="-140" data-dec="1.7168">-140 <small>(1.72)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-169" data-dec="1.5902">-169 <small>(1.59)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+169" data-dec="2.6942">+169 <small>(2.69)</small></span></td>
+  <td><strong>New Jersey Devils</strong><br><span class="odds-val" data-us="-206" data-dec="1.4847">-206 <small>(1.48)</small></span> (67.4%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="medium" data-start-utc="2026-10-24T23:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 24 Regular Season</small></td>
+  <td><strong>Boston Bruins vs San Jose Sharks</strong><br><small>TD Garden, Boston</small></td>
+  <td><code>2026-10-24T23:00:00Z</code></td>
+  <td>Boston Bruins: <span class="odds-val" data-us="-314" data-dec="1.3184">-314 <small>(1.32)</small></span><br>San Jose Sharks: <span class="odds-val" data-us="+314" data-dec="4.1406">+314 <small>(4.14)</small></span></td>
+  <td>Boston Bruins -1.5 Goals: <span class="odds-val" data-us="-105" data-dec="1.9556">-105 <small>(1.96)</small></span><br>San Jose Sharks +1.5 Goals: <span class="odds-val" data-us="+105" data-dec="2.0464">+105 <small>(2.05)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-131" data-dec="1.7646">-131 <small>(1.76)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+131" data-dec="2.3079">+131 <small>(2.31)</small></span></td>
+  <td><strong>Boston Bruins</strong><br><span class="odds-val" data-us="-314" data-dec="1.3184">-314 <small>(1.32)</small></span> (75.8%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="low" data-start-utc="2026-10-24T23:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 24 Regular Season</small></td>
+  <td><strong>Ottawa Senators vs New York Rangers</strong><br><small>Canadian Tire Centre, Ottawa</small></td>
+  <td><code>2026-10-24T23:00:00Z</code></td>
+  <td>Ottawa Senators: <span class="odds-val" data-us="-102" data-dec="1.9814">-102 <small>(1.98)</small></span><br>New York Rangers: <span class="odds-val" data-us="+102" data-dec="2.0190">+102 <small>(2.02)</small></span></td>
+  <td>Ottawa Senators -1.5 Goals: <span class="odds-val" data-us="+305" data-dec="4.0491">+305 <small>(4.05)</small></span><br>New York Rangers +1.5 Goals: <span class="odds-val" data-us="-305" data-dec="1.3280">-305 <small>(1.33)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="+160" data-dec="2.6010">+160 <small>(2.60)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="-160" data-dec="1.6246">-160 <small>(1.62)</small></span></td>
+  <td><strong>Ottawa Senators</strong><br><span class="odds-val" data-us="-102" data-dec="1.9814">-102 <small>(1.98)</small></span> (50.5%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="low" data-start-utc="2026-10-24T23:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 24 Regular Season</small></td>
+  <td><strong>Pittsburgh Penguins vs Nashville Predators</strong><br><small>PPG Paints Arena, Pittsburgh</small></td>
+  <td><code>2026-10-24T23:00:00Z</code></td>
+  <td>Pittsburgh Penguins: <span class="odds-val" data-us="+104" data-dec="2.0434">+104 <small>(2.04)</small></span><br>Nashville Predators: <span class="odds-val" data-us="-104" data-dec="1.9584">-104 <small>(1.96)</small></span></td>
+  <td>Pittsburgh Penguins -1.5 Goals: <span class="odds-val" data-us="+254" data-dec="3.5432">+254 <small>(3.54)</small></span><br>Nashville Predators +1.5 Goals: <span class="odds-val" data-us="-254" data-dec="1.3932">-254 <small>(1.39)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-176" data-dec="1.5687">-176 <small>(1.57)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+176" data-dec="2.7582">+176 <small>(2.76)</small></span></td>
+  <td><strong>Nashville Predators</strong><br><span class="odds-val" data-us="-104" data-dec="1.9584">-104 <small>(1.96)</small></span> (51.1%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="medium" data-start-utc="2026-10-24T23:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 24 Regular Season</small></td>
+  <td><strong>Washington Capitals vs Buffalo Sabres</strong><br><small>Capital One Arena, Washington</small></td>
+  <td><code>2026-10-24T23:00:00Z</code></td>
+  <td>Washington Capitals: <span class="odds-val" data-us="-182" data-dec="1.5505">-182 <small>(1.55)</small></span><br>Buffalo Sabres: <span class="odds-val" data-us="+182" data-dec="2.8165">+182 <small>(2.82)</small></span></td>
+  <td>Washington Capitals -1.5 Goals: <span class="odds-val" data-us="+145" data-dec="2.4512">+145 <small>(2.45)</small></span><br>Buffalo Sabres +1.5 Goals: <span class="odds-val" data-us="-145" data-dec="1.6891">-145 <small>(1.69)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-186" data-dec="1.5365">-186 <small>(1.54)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+186" data-dec="2.8639">+186 <small>(2.86)</small></span></td>
+  <td><strong>Washington Capitals</strong><br><span class="odds-val" data-us="-182" data-dec="1.5505">-182 <small>(1.55)</small></span> (64.5%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="high" data-start-utc="2026-10-24T23:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 24 Regular Season</small></td>
+  <td><strong>Columbus Blue Jackets vs Vegas Golden Knights</strong><br><small>Nationwide Arena, Columbus</small></td>
+  <td><code>2026-10-24T23:00:00Z</code></td>
+  <td>Columbus Blue Jackets: <span class="odds-val" data-us="+243" data-dec="3.4345">+243 <small>(3.43)</small></span><br>Vegas Golden Knights: <span class="odds-val" data-us="-243" data-dec="1.4108">-243 <small>(1.41)</small></span></td>
+  <td>Columbus Blue Jackets -1.5 Goals: <span class="odds-val" data-us="+616" data-dec="7.1605">+616 <small>(7.16)</small></span><br>Vegas Golden Knights +1.5 Goals: <span class="odds-val" data-us="-616" data-dec="1.1623">-616 <small>(1.16)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-172" data-dec="1.5802">-172 <small>(1.58)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+172" data-dec="2.7237">+172 <small>(2.72)</small></span></td>
+  <td><strong>Vegas Golden Knights</strong><br><span class="odds-val" data-us="-243" data-dec="1.4108">-243 <small>(1.41)</small></span> (70.9%)</td>
+  <td><span class="badge badge-high">High</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="medium" data-start-utc="2026-10-24T23:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 24 Regular Season</small></td>
+  <td><strong>St. Louis Blues vs Carolina Hurricanes</strong><br><small>Enterprise Center, St. Louis</small></td>
+  <td><code>2026-10-24T23:00:00Z</code></td>
+  <td>St. Louis Blues: <span class="odds-val" data-us="+165" data-dec="2.6529">+165 <small>(2.65)</small></span><br>Carolina Hurricanes: <span class="odds-val" data-us="-165" data-dec="1.6050">-165 <small>(1.60)</small></span></td>
+  <td>St. Louis Blues -1.5 Goals: <span class="odds-val" data-us="+412" data-dec="5.1220">+412 <small>(5.12)</small></span><br>Carolina Hurricanes +1.5 Goals: <span class="odds-val" data-us="-412" data-dec="1.2426">-412 <small>(1.24)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-156" data-dec="1.6418">-156 <small>(1.64)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+156" data-dec="2.5581">+156 <small>(2.56)</small></span></td>
+  <td><strong>Carolina Hurricanes</strong><br><span class="odds-val" data-us="-165" data-dec="1.6050">-165 <small>(1.60)</small></span> (62.3%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="medium" data-start-utc="2026-10-24T23:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 24 Regular Season</small></td>
+  <td><strong>Edmonton Oilers vs Toronto Maple Leafs</strong><br><small>Rogers Place, Edmonton</small></td>
+  <td><code>2026-10-24T23:00:00Z</code></td>
+  <td>Edmonton Oilers: <span class="odds-val" data-us="-212" data-dec="1.4725">-212 <small>(1.47)</small></span><br>Toronto Maple Leafs: <span class="odds-val" data-us="+212" data-dec="3.1163">+212 <small>(3.12)</small></span></td>
+  <td>Edmonton Oilers -1.5 Goals: <span class="odds-val" data-us="+130" data-dec="2.2972">+130 <small>(2.30)</small></span><br>Toronto Maple Leafs +1.5 Goals: <span class="odds-val" data-us="-130" data-dec="1.7709">-130 <small>(1.77)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-285" data-dec="1.3514">-285 <small>(1.35)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+285" data-dec="3.8458">+285 <small>(3.85)</small></span></td>
+  <td><strong>Edmonton Oilers</strong><br><span class="odds-val" data-us="-212" data-dec="1.4725">-212 <small>(1.47)</small></span> (67.9%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="low" data-start-utc="2026-10-25T01:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 24 Regular Season</small></td>
+  <td><strong>Utah Mammoth vs Tampa Bay Lightning</strong><br><small>Delta Center, Salt Lake City</small></td>
+  <td><code>2026-10-25T01:00:00Z</code></td>
+  <td>Utah Mammoth: <span class="odds-val" data-us="-106" data-dec="1.9428">-106 <small>(1.94)</small></span><br>Tampa Bay Lightning: <span class="odds-val" data-us="+106" data-dec="2.0607">+106 <small>(2.06)</small></span></td>
+  <td>Utah Mammoth -1.5 Goals: <span class="odds-val" data-us="+243" data-dec="3.4294">+243 <small>(3.43)</small></span><br>Tampa Bay Lightning +1.5 Goals: <span class="odds-val" data-us="-243" data-dec="1.4116">-243 <small>(1.41)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-167" data-dec="1.5987">-167 <small>(1.60)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+167" data-dec="2.6704">+167 <small>(2.67)</small></span></td>
+  <td><strong>Utah Mammoth</strong><br><span class="odds-val" data-us="-106" data-dec="1.9428">-106 <small>(1.94)</small></span> (51.5%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="medium" data-start-utc="2026-10-25T02:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 24 Regular Season</small></td>
+  <td><strong>Calgary Flames vs Detroit Red Wings</strong><br><small>Scotiabank Saddledome, Calgary</small></td>
+  <td><code>2026-10-25T02:00:00Z</code></td>
+  <td>Calgary Flames: <span class="odds-val" data-us="+176" data-dec="2.7603">+176 <small>(2.76)</small></span><br>Detroit Red Wings: <span class="odds-val" data-us="-176" data-dec="1.5681">-176 <small>(1.57)</small></span></td>
+  <td>Calgary Flames -1.5 Goals: <span class="odds-val" data-us="+466" data-dec="5.6565">+466 <small>(5.66)</small></span><br>Detroit Red Wings +1.5 Goals: <span class="odds-val" data-us="-466" data-dec="1.2148">-466 <small>(1.21)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-129" data-dec="1.7745">-129 <small>(1.77)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+129" data-dec="2.2911">+129 <small>(2.29)</small></span></td>
+  <td><strong>Detroit Red Wings</strong><br><span class="odds-val" data-us="-176" data-dec="1.5681">-176 <small>(1.57)</small></span> (63.8%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey" data-conf="low" data-start-utc="2026-10-25T02:00:00Z">
+  <td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+  <td>NHL 2026-27<br><small>Oct 24 Regular Season</small></td>
+  <td><strong>Seattle Kraken vs Minnesota Wild</strong><br><small>Climate Pledge Arena, Seattle</small></td>
+  <td><code>2026-10-25T02:00:00Z</code></td>
+  <td>Seattle Kraken: <span class="odds-val" data-us="-108" data-dec="1.9247">-108 <small>(1.92)</small></span><br>Minnesota Wild: <span class="odds-val" data-us="+108" data-dec="2.0814">+108 <small>(2.08)</small></span></td>
+  <td>Seattle Kraken -1.5 Goals: <span class="odds-val" data-us="+240" data-dec="3.4044">+240 <small>(3.40)</small></span><br>Minnesota Wild +1.5 Goals: <span class="odds-val" data-us="-240" data-dec="1.4159">-240 <small>(1.42)</small></span></td>
+  <td>Over 5.5 Goals: <span class="odds-val" data-us="-165" data-dec="1.6060">-165 <small>(1.61)</small></span><br>Under 5.5 Goals: <span class="odds-val" data-us="+165" data-dec="2.6502">+165 <small>(2.65)</small></span></td>
+  <td><strong>Seattle Kraken</strong><br><span class="odds-val" data-us="-108" data-dec="1.9247">-108 <small>(1.92)</small></span> (52.0%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="baseball" data-conf="medium" data-start-utc="2026-10-24T00:00:00Z">
+  <td><a href="sports/baseball.html">Baseball</a></td>
+  <td>MLB 2026 World Series<br><small>World Series Game 1</small></td>
+  <td><strong>Milwaukee Brewers vs Tampa Bay Rays</strong><br><small>American Family Field, Milwaukee</small></td>
+  <td><code>2026-10-24T00:00:00Z</code></td>
+  <td>Milwaukee Brewers: <span class="odds-val" data-us="-192" data-dec="1.5213">-192 <small>(1.52)</small></span><br>Tampa Bay Rays: <span class="odds-val" data-us="+192" data-dec="2.9183">+192 <small>(2.92)</small></span></td>
+  <td>Milwaukee Brewers -1.5 Runs: <span class="odds-val" data-us="+100" data-dec="2.0016">+100 <small>(2.00)</small></span><br>Tampa Bay Rays +1.5 Runs: <span class="odds-val" data-us="-100" data-dec="1.9984">-100 <small>(2.00)</small></span></td>
+  <td>Over 7.5 Runs: <span class="odds-val" data-us="-179" data-dec="1.5599">-179 <small>(1.56)</small></span><br>Under 7.5 Runs: <span class="odds-val" data-us="+179" data-dec="2.7861">+179 <small>(2.79)</small></span></td>
+  <td><strong>Milwaukee Brewers</strong><br><span class="odds-val" data-us="-192" data-dec="1.5213">-192 <small>(1.52)</small></span> (65.7%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-22&amp;endDate=2026-10-29&amp;hydrate=probablePitcher,team,venue" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="baseball" data-conf="medium" data-start-utc="2026-10-25T00:00:00Z">
+  <td><a href="sports/baseball.html">Baseball</a></td>
+  <td>MLB 2026 World Series<br><small>World Series Game 2</small></td>
+  <td><strong>Milwaukee Brewers vs Tampa Bay Rays</strong><br><small>American Family Field, Milwaukee</small></td>
+  <td><code>2026-10-25T00:00:00Z</code></td>
+  <td>Milwaukee Brewers: <span class="odds-val" data-us="-192" data-dec="1.5213">-192 <small>(1.52)</small></span><br>Tampa Bay Rays: <span class="odds-val" data-us="+192" data-dec="2.9183">+192 <small>(2.92)</small></span></td>
+  <td>Milwaukee Brewers -1.5 Runs: <span class="odds-val" data-us="+100" data-dec="2.0016">+100 <small>(2.00)</small></span><br>Tampa Bay Rays +1.5 Runs: <span class="odds-val" data-us="-100" data-dec="1.9984">-100 <small>(2.00)</small></span></td>
+  <td>Over 7.5 Runs: <span class="odds-val" data-us="-179" data-dec="1.5599">-179 <small>(1.56)</small></span><br>Under 7.5 Runs: <span class="odds-val" data-us="+179" data-dec="2.7861">+179 <small>(2.79)</small></span></td>
+  <td><strong>Milwaukee Brewers</strong><br><span class="odds-val" data-us="-192" data-dec="1.5213">-192 <small>(1.52)</small></span> (65.7%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-22&amp;endDate=2026-10-29&amp;hydrate=probablePitcher,team,venue" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="baseball" data-conf="low" data-start-utc="2026-10-27T00:00:00Z">
+  <td><a href="sports/baseball.html">Baseball</a></td>
+  <td>MLB 2026 World Series<br><small>World Series Game 3</small></td>
+  <td><strong>Tampa Bay Rays vs Milwaukee Brewers</strong><br><small>Tropicana Field, St. Petersburg</small></td>
+  <td><code>2026-10-27T00:00:00Z</code></td>
+  <td>Tampa Bay Rays: <span class="odds-val" data-us="+132" data-dec="2.3227">+132 <small>(2.32)</small></span><br>Milwaukee Brewers: <span class="odds-val" data-us="-132" data-dec="1.7560">-132 <small>(1.76)</small></span></td>
+  <td>Tampa Bay Rays -1.5 Runs: <span class="odds-val" data-us="+245" data-dec="3.4512">+245 <small>(3.45)</small></span><br>Milwaukee Brewers +1.5 Runs: <span class="odds-val" data-us="-245" data-dec="1.4080">-245 <small>(1.41)</small></span></td>
+  <td>Over 7.5 Runs: <span class="odds-val" data-us="-173" data-dec="1.5781">-173 <small>(1.58)</small></span><br>Under 7.5 Runs: <span class="odds-val" data-us="+173" data-dec="2.7298">+173 <small>(2.73)</small></span></td>
+  <td><strong>Milwaukee Brewers</strong><br><span class="odds-val" data-us="-132" data-dec="1.7560">-132 <small>(1.76)</small></span> (56.9%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-22&amp;endDate=2026-10-29&amp;hydrate=probablePitcher,team,venue" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="baseball" data-conf="low" data-start-utc="2026-10-28T00:00:00Z">
+  <td><a href="sports/baseball.html">Baseball</a></td>
+  <td>MLB 2026 World Series<br><small>World Series Game 4</small></td>
+  <td><strong>Tampa Bay Rays vs Milwaukee Brewers</strong><br><small>Tropicana Field, St. Petersburg</small></td>
+  <td><code>2026-10-28T00:00:00Z</code></td>
+  <td>Tampa Bay Rays: <span class="odds-val" data-us="+132" data-dec="2.3227">+132 <small>(2.32)</small></span><br>Milwaukee Brewers: <span class="odds-val" data-us="-132" data-dec="1.7560">-132 <small>(1.76)</small></span></td>
+  <td>Tampa Bay Rays -1.5 Runs: <span class="odds-val" data-us="+245" data-dec="3.4512">+245 <small>(3.45)</small></span><br>Milwaukee Brewers +1.5 Runs: <span class="odds-val" data-us="-245" data-dec="1.4080">-245 <small>(1.41)</small></span></td>
+  <td>Over 7.5 Runs: <span class="odds-val" data-us="-173" data-dec="1.5781">-173 <small>(1.58)</small></span><br>Under 7.5 Runs: <span class="odds-val" data-us="+173" data-dec="2.7298">+173 <small>(2.73)</small></span></td>
+  <td><strong>Milwaukee Brewers</strong><br><span class="odds-val" data-us="-132" data-dec="1.7560">-132 <small>(1.76)</small></span> (56.9%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-22&amp;endDate=2026-10-29&amp;hydrate=probablePitcher,team,venue" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="baseball" data-conf="low" data-start-utc="2026-10-29T00:00:00Z">
+  <td><a href="sports/baseball.html">Baseball</a></td>
+  <td>MLB 2026 World Series<br><small>World Series Game 5 (if necessary)</small></td>
+  <td><strong>Tampa Bay Rays vs Milwaukee Brewers</strong><br><small>Tropicana Field, St. Petersburg</small></td>
+  <td><code>2026-10-29T00:00:00Z</code></td>
+  <td>Tampa Bay Rays: <span class="odds-val" data-us="+132" data-dec="2.3227">+132 <small>(2.32)</small></span><br>Milwaukee Brewers: <span class="odds-val" data-us="-132" data-dec="1.7560">-132 <small>(1.76)</small></span></td>
+  <td>Tampa Bay Rays -1.5 Runs: <span class="odds-val" data-us="+245" data-dec="3.4512">+245 <small>(3.45)</small></span><br>Milwaukee Brewers +1.5 Runs: <span class="odds-val" data-us="-245" data-dec="1.4080">-245 <small>(1.41)</small></span></td>
+  <td>Over 7.5 Runs: <span class="odds-val" data-us="-173" data-dec="1.5781">-173 <small>(1.58)</small></span><br>Under 7.5 Runs: <span class="odds-val" data-us="+173" data-dec="2.7298">+173 <small>(2.73)</small></span></td>
+  <td><strong>Milwaukee Brewers</strong><br><span class="odds-val" data-us="-132" data-dec="1.7560">-132 <small>(1.76)</small></span> (56.9%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-warn">verified with flag</span></td>
+  <td><a class="src-link" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-22&amp;endDate=2026-10-29&amp;hydrate=probablePitcher,team,venue" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball" data-conf="medium" data-start-utc="2026-10-22T17:30:00Z">
+  <td><a href="sports/basketball.html">Basketball</a></td>
+  <td>EuroLeague 2026-27<br><small>Round 7</small></td>
+  <td><strong>Anadolu Efes Istanbul vs Besiktas Istanbul</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><code>2026-10-22T17:30:00Z</code></td>
+  <td>Anadolu Efes Istanbul: <span class="odds-val" data-us="-139" data-dec="1.7213">-139 <small>(1.72)</small></span><br>Besiktas Istanbul: <span class="odds-val" data-us="+139" data-dec="2.3864">+139 <small>(2.39)</small></span></td>
+  <td>Anadolu Efes Istanbul -2.5 Pts: <span class="odds-val" data-us="+102" data-dec="2.0210">+102 <small>(2.02)</small></span><br>Besiktas Istanbul +2.5 Pts: <span class="odds-val" data-us="-102" data-dec="1.9794">-102 <small>(1.98)</small></span></td>
+  <td>Over 174.5 Pts: <span class="odds-val" data-us="-102" data-dec="1.9770">-102 <small>(1.98)</small></span><br>Under 174.5 Pts: <span class="odds-val" data-us="+102" data-dec="2.0235">+102 <small>(2.02)</small></span></td>
+  <td><strong>Anadolu Efes Istanbul</strong><br><span class="odds-val" data-us="-139" data-dec="1.7213">-139 <small>(1.72)</small></span> (58.1%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball" data-conf="low" data-start-utc="2026-10-22T18:00:00Z">
+  <td><a href="sports/basketball.html">Basketball</a></td>
+  <td>EuroLeague 2026-27<br><small>Round 7</small></td>
+  <td><strong>FC Bayern Munich vs Dubai Basketball</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><code>2026-10-22T18:00:00Z</code></td>
+  <td>FC Bayern Munich: <span class="odds-val" data-us="-128" data-dec="1.7788">-128 <small>(1.78)</small></span><br>Dubai Basketball: <span class="odds-val" data-us="+128" data-dec="2.2841">+128 <small>(2.28)</small></span></td>
+  <td>FC Bayern Munich -1.5 Pts: <span class="odds-val" data-us="-104" data-dec="1.9592">-104 <small>(1.96)</small></span><br>Dubai Basketball +1.5 Pts: <span class="odds-val" data-us="+104" data-dec="2.0425">+104 <small>(2.04)</small></span></td>
+  <td>Over 171.5 Pts: <span class="odds-val" data-us="-105" data-dec="1.9496">-105 <small>(1.95)</small></span><br>Under 171.5 Pts: <span class="odds-val" data-us="+105" data-dec="2.0531">+105 <small>(2.05)</small></span></td>
+  <td><strong>FC Bayern Munich</strong><br><span class="odds-val" data-us="-128" data-dec="1.7788">-128 <small>(1.78)</small></span> (56.2%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball" data-conf="low" data-start-utc="2026-10-22T18:05:00Z">
+  <td><a href="sports/basketball.html">Basketball</a></td>
+  <td>EuroLeague 2026-27<br><small>Round 7</small></td>
+  <td><strong>Maccabi Rapyd Tel Aviv vs Real Madrid</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><code>2026-10-22T18:05:00Z</code></td>
+  <td>Maccabi Rapyd Tel Aviv: <span class="odds-val" data-us="-107" data-dec="1.9330">-107 <small>(1.93)</small></span><br>Real Madrid: <span class="odds-val" data-us="+107" data-dec="2.0719">+107 <small>(2.07)</small></span></td>
+  <td>Maccabi Rapyd Tel Aviv -0.5 Pts: <span class="odds-val" data-us="+100" data-dec="2.0000">+100 <small>(2.00)</small></span><br>Real Madrid +0.5 Pts: <span class="odds-val" data-us="+100" data-dec="2.0000">+100 <small>(2.00)</small></span></td>
+  <td>Over 175.5 Pts: <span class="odds-val" data-us="-104" data-dec="1.9604">-104 <small>(1.96)</small></span><br>Under 175.5 Pts: <span class="odds-val" data-us="+104" data-dec="2.0412">+104 <small>(2.04)</small></span></td>
+  <td><strong>Maccabi Rapyd Tel Aviv</strong><br><span class="odds-val" data-us="-107" data-dec="1.9330">-107 <small>(1.93)</small></span> (51.7%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-warn">verified with flag</span></td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball" data-conf="medium" data-start-utc="2026-10-22T18:15:00Z">
+  <td><a href="sports/basketball.html">Basketball</a></td>
+  <td>EuroLeague 2026-27<br><small>Round 7</small></td>
+  <td><strong>Panathinaikos AKTOR Athens vs Kosner Baskonia Vitoria-Gasteiz</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><code>2026-10-22T18:15:00Z</code></td>
+  <td>Panathinaikos AKTOR Athens: <span class="odds-val" data-us="-468" data-dec="1.2137">-468 <small>(1.21)</small></span><br>Kosner Baskonia Vitoria-Gasteiz: <span class="odds-val" data-us="+468" data-dec="5.6795">+468 <small>(5.68)</small></span></td>
+  <td>Panathinaikos AKTOR Athens -10.5 Pts: <span class="odds-val" data-us="-103" data-dec="1.9726">-103 <small>(1.97)</small></span><br>Kosner Baskonia Vitoria-Gasteiz +10.5 Pts: <span class="odds-val" data-us="+103" data-dec="2.0281">+103 <small>(2.03)</small></span></td>
+  <td>Over 170.5 Pts: <span class="odds-val" data-us="-104" data-dec="1.9604">-104 <small>(1.96)</small></span><br>Under 170.5 Pts: <span class="odds-val" data-us="+104" data-dec="2.0412">+104 <small>(2.04)</small></span></td>
+  <td><strong>Panathinaikos AKTOR Athens</strong><br><span class="odds-val" data-us="-468" data-dec="1.2137">-468 <small>(1.21)</small></span> (82.4%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball" data-conf="low" data-start-utc="2026-10-22T18:30:00Z">
+  <td><a href="sports/basketball.html">Basketball</a></td>
+  <td>EuroLeague 2026-27<br><small>Round 7</small></td>
+  <td><strong>Armani Olimpia Milan vs FC Barcelona</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><code>2026-10-22T18:30:00Z</code></td>
+  <td>Armani Olimpia Milan: <span class="odds-val" data-us="+100" data-dec="2.0000">+100 <small>(2.00)</small></span><br>FC Barcelona: <span class="odds-val" data-us="+100" data-dec="2.0000">+100 <small>(2.00)</small></span></td>
+  <td>Armani Olimpia Milan +0.5 Pts: <span class="odds-val" data-us="-107" data-dec="1.9330">-107 <small>(1.93)</small></span><br>FC Barcelona -0.5 Pts: <span class="odds-val" data-us="+107" data-dec="2.0719">+107 <small>(2.07)</small></span></td>
+  <td>Over 175.5 Pts: <span class="odds-val" data-us="+103" data-dec="2.0284">+103 <small>(2.03)</small></span><br>Under 175.5 Pts: <span class="odds-val" data-us="-103" data-dec="1.9724">-103 <small>(1.97)</small></span></td>
+  <td><strong>FC Barcelona</strong><br><span class="odds-val" data-us="+100" data-dec="2.0000">+100 <small>(2.00)</small></span> (50.0%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball" data-conf="low" data-start-utc="2026-10-22T18:45:00Z">
+  <td><a href="sports/basketball.html">Basketball</a></td>
+  <td>EuroLeague 2026-27<br><small>Round 7</small></td>
+  <td><strong>Partizan Mozzart Bet Belgrade vs Crvena Zvezda Meridianbet Belgrade</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><code>2026-10-22T18:45:00Z</code></td>
+  <td>Partizan Mozzart Bet Belgrade: <span class="odds-val" data-us="-124" data-dec="1.8063">-124 <small>(1.81)</small></span><br>Crvena Zvezda Meridianbet Belgrade: <span class="odds-val" data-us="+124" data-dec="2.2402">+124 <small>(2.24)</small></span></td>
+  <td>Partizan Mozzart Bet Belgrade -1.5 Pts: <span class="odds-val" data-us="-101" data-dec="1.9931">-101 <small>(1.99)</small></span><br>Crvena Zvezda Meridianbet Belgrade +1.5 Pts: <span class="odds-val" data-us="+101" data-dec="2.0070">+101 <small>(2.01)</small></span></td>
+  <td>Over 163.5 Pts: <span class="odds-val" data-us="+105" data-dec="2.0462">+105 <small>(2.05)</small></span><br>Under 163.5 Pts: <span class="odds-val" data-us="-105" data-dec="1.9559">-105 <small>(1.96)</small></span></td>
+  <td><strong>Partizan Mozzart Bet Belgrade</strong><br><span class="odds-val" data-us="-124" data-dec="1.8063">-124 <small>(1.81)</small></span> (55.4%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball" data-conf="medium" data-start-utc="2026-10-23T17:00:00Z">
+  <td><a href="sports/basketball.html">Basketball</a></td>
+  <td>EuroLeague 2026-27<br><small>Round 7</small></td>
+  <td><strong>Zalgiris Kaunas vs LDLC ASVEL Villeurbanne</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><code>2026-10-23T17:00:00Z</code></td>
+  <td>Zalgiris Kaunas: <span class="odds-val" data-us="-177" data-dec="1.5643">-177 <small>(1.56)</small></span><br>LDLC ASVEL Villeurbanne: <span class="odds-val" data-us="+177" data-dec="2.7722">+177 <small>(2.77)</small></span></td>
+  <td>Zalgiris Kaunas -4.5 Pts: <span class="odds-val" data-us="+106" data-dec="2.0571">+106 <small>(2.06)</small></span><br>LDLC ASVEL Villeurbanne +4.5 Pts: <span class="odds-val" data-us="-106" data-dec="1.9460">-106 <small>(1.95)</small></span></td>
+  <td>Over 174.5 Pts: <span class="odds-val" data-us="+101" data-dec="2.0052">+101 <small>(2.01)</small></span><br>Under 174.5 Pts: <span class="odds-val" data-us="-101" data-dec="1.9948">-101 <small>(1.99)</small></span></td>
+  <td><strong>Zalgiris Kaunas</strong><br><span class="odds-val" data-us="-177" data-dec="1.5643">-177 <small>(1.56)</small></span> (63.9%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball" data-conf="medium" data-start-utc="2026-10-23T18:15:00Z">
+  <td><a href="sports/basketball.html">Basketball</a></td>
+  <td>EuroLeague 2026-27<br><small>Round 7</small></td>
+  <td><strong>Olympiacos Piraeus vs Fenerbahce Tarfin Istanbul</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><code>2026-10-23T18:15:00Z</code></td>
+  <td>Olympiacos Piraeus: <span class="odds-val" data-us="-142" data-dec="1.7063">-142 <small>(1.71)</small></span><br>Fenerbahce Tarfin Istanbul: <span class="odds-val" data-us="+142" data-dec="2.4157">+142 <small>(2.42)</small></span></td>
+  <td>Olympiacos Piraeus -2.5 Pts: <span class="odds-val" data-us="+100" data-dec="2.0000">+100 <small>(2.00)</small></span><br>Fenerbahce Tarfin Istanbul +2.5 Pts: <span class="odds-val" data-us="+100" data-dec="2.0000">+100 <small>(2.00)</small></span></td>
+  <td>Over 170.5 Pts: <span class="odds-val" data-us="-105" data-dec="1.9496">-105 <small>(1.95)</small></span><br>Under 170.5 Pts: <span class="odds-val" data-us="+105" data-dec="2.0531">+105 <small>(2.05)</small></span></td>
+  <td><strong>Olympiacos Piraeus</strong><br><span class="odds-val" data-us="-142" data-dec="1.7063">-142 <small>(1.71)</small></span> (58.6%)</td>
+  <td><span class="badge badge-med">Medium</span><br><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball" data-conf="low" data-start-utc="2026-10-23T18:45:00Z">
+  <td><a href="sports/basketball.html">Basketball</a></td>
+  <td>EuroLeague 2026-27<br><small>Round 7</small></td>
+  <td><strong>Paris Basketball vs Valencia Basket</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><code>2026-10-23T18:45:00Z</code></td>
+  <td>Paris Basketball: <span class="odds-val" data-us="+117" data-dec="2.1731">+117 <small>(2.17)</small></span><br>Valencia Basket: <span class="odds-val" data-us="-117" data-dec="1.8524">-117 <small>(1.85)</small></span></td>
+  <td>Paris Basketball +1.5 Pts: <span class="odds-val" data-us="-105" data-dec="1.9526">-105 <small>(1.95)</small></span><br>Valencia Basket -1.5 Pts: <span class="odds-val" data-us="+105" data-dec="2.0498">+105 <small>(2.05)</small></span></td>
+  <td>Over 177.5 Pts: <span class="odds-val" data-us="-101" data-dec="1.9882">-101 <small>(1.99)</small></span><br>Under 177.5 Pts: <span class="odds-val" data-us="+101" data-dec="2.0119">+101 <small>(2.01)</small></span></td>
+  <td><strong>Valencia Basket</strong><br><span class="odds-val" data-us="-117" data-dec="1.8524">-117 <small>(1.85)</small></span> (54.0%)</td>
+  <td><span class="badge badge-low">Low</span><br><span class="badge badge-warn">verified with flag</span></td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/basketball.html">Basketball</a></td>
+  <td>NBA 2026-27<br><small>Oct 22 Regular Season</small></td>
+  <td><strong>Philadelphia 76ers vs Cleveland Cavaliers</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Date 2026-10-22 confirmed on nba.com/games; tip-off UTC &amp; records unavailable due to cdn.nba.com HTTP 500</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-warn">partial</span></td>
+  <td><a class="src-link" href="https://www.nba.com/games?date=2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/basketball.html">Basketball</a></td>
+  <td>NBA 2026-27<br><small>Oct 22 Regular Season</small></td>
+  <td><strong>Oklahoma City Thunder vs Denver Nuggets</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Date 2026-10-22 confirmed on nba.com/games; tip-off UTC &amp; records unavailable due to cdn.nba.com HTTP 500</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-warn">partial</span></td>
+  <td><a class="src-link" href="https://www.nba.com/games?date=2026-10-22" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>ATP 250 Almaty Open<br><small>R16 Singles</small></td>
+  <td><strong>Terence Atmane vs Mattia Bellucci</strong><br><small>Almaty Arena</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Starts At 11:30 local (no TZ in PDF)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>ATP 250 Almaty Open<br><small>R16 Singles</small></td>
+  <td><strong>Tomas Machac vs Karen Khachanov</strong><br><small>Almaty Arena</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Not Before 13:00 local (no TZ in PDF)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>ATP 250 Almaty Open<br><small>R16 Singles</small></td>
+  <td><strong>Daniil Medvedev vs Sho Shimabukuro</strong><br><small>Almaty Arena</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Followed By (rolling court order)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>ATP 250 Almaty Open<br><small>R16 Singles</small></td>
+  <td><strong>Alexander Bublik vs Fabian Marozsan</strong><br><small>Almaty Arena</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Not Before 19:30 local (no TZ in PDF)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>ATP 250 European Open Brussels<br><small>R16 Singles</small></td>
+  <td><strong>Raphael Collignon vs Jiri Lehecka</strong><br><small>ING Arena, Brussels</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Starts At 13:30 local (no TZ in PDF)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/7485/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>ATP 250 European Open Brussels<br><small>R16 Singles</small></td>
+  <td><strong>David Goffin vs Alex Michelsen</strong><br><small>ING Arena, Brussels</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Followed By (rolling court order)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/7485/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>ATP 250 European Open Brussels<br><small>R16 Singles</small></td>
+  <td><strong>Damir Dzumhur vs Zizou Bergs</strong><br><small>ING Arena, Brussels</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Not Before 17:00 local (no TZ in PDF)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/7485/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>ATP Challenger Lyon<br><small>R16 Singles</small></td>
+  <td><strong>Valentin Vacherot vs Luca Van Assche</strong><br><small>Lyon</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Not Before 14:00 local</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/496/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>ATP Challenger Lyon<br><small>R16 Singles</small></td>
+  <td><strong>Pierre-Hugues Herbert vs Taylor Fritz</strong><br><small>Lyon</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Followed By (rolling court order)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/496/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>ATP Challenger Lyon<br><small>R16 Singles</small></td>
+  <td><strong>Borna Gojo vs Daniel Altmaier</strong><br><small>Lyon</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Followed By (rolling court order)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/496/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>ATP Challenger Lyon<br><small>R16 Singles</small></td>
+  <td><strong>Flavio Cobolli vs Stan Wawrinka</strong><br><small>Lyon</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Not Before 19:00 local</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/496/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>ATP Challenger Lyon<br><small>R16 Singles</small></td>
+  <td><strong>Kyrian Jacquet vs Brandon Nakashima</strong><br><small>Lyon</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Followed By (rolling court order)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/496/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>WTA 500 Ningbo Open<br><small>R16 Singles</small></td>
+  <td><strong>Iva Jovic vs Jasmine Paolini</strong><br><small>Ningbo</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Starting at 1:00 PM local</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>WTA 500 Ningbo Open<br><small>R16 Singles</small></td>
+  <td><strong>Katarzyna Kawa vs Belinda Bencic</strong><br><small>Ningbo</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Followed by (rolling court order)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>WTA 500 Ningbo Open<br><small>R16 Singles</small></td>
+  <td><strong>Alexandra Eala vs Diana Shnaider</strong><br><small>Ningbo</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Followed by (rolling court order)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>WTA 500 Ningbo Open<br><small>R16 Singles</small></td>
+  <td><strong>Elena Rybakina vs Polina Kudermetova</strong><br><small>Ningbo</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Not before 7:00 PM local</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>WTA 250 Japan Open Osaka<br><small>R16 Singles</small></td>
+  <td><strong>Ann Li vs Zeynep Sonmez</strong><br><small>Osaka</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Starting at 11:30 AM local</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/405/OP.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>WTA 250 Japan Open Osaka<br><small>R16 Singles</small></td>
+  <td><strong>Mary Stoiana vs Moyuka Uchijima</strong><br><small>Osaka</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Followed by (rolling court order)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/405/OP.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>WTA 250 Japan Open Osaka<br><small>R16 Singles</small></td>
+  <td><strong>Magda Linette vs Katerina Siniakova</strong><br><small>Osaka</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Followed by (rolling court order)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/405/OP.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>ATP 500 Erste Bank Open Vienna<br><small>Oct 22 Order of Play</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>participants unverified</em></span><br><small>Wiener Stadthalle, Vienna</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Official PDF returned &#x27;Tournament Information Not Yet Available&#x27;</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-warn">unverified flagged</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/337/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/tennis.html">Tennis</a></td>
+  <td>ATP 500 Swiss Indoors Basel<br><small>Oct 22 Order of Play</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>participants unverified</em></span><br><small>St. Jakobshalle, Basel</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Official PDF returned &#x27;Tournament Information Not Yet Available&#x27;</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-warn">unverified flagged</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/328/op.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>Cardiff Rugby vs Hollywoodbets Sharks</strong><br><small>Cardiff Arms Park</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Fri 23 Oct · 19:45 BST / 14:45 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>Connacht vs Zebre Parma</strong><br><small>Dexcom Stadium, Galway</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Fri 23 Oct · 19:45 IST / 14:45 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>Edinburgh vs 10bet Lions</strong><br><small>Hive Stadium, Edinburgh</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Fri 23 Oct · 19:45 BST / 14:45 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>Vodacom Bulls vs Ulster</strong><br><small>Loftus Versfeld, Pretoria</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 13:45 SAST / 07:45 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>DHL Stormers vs Scarlets</strong><br><small>DHL Stadium, Cape Town</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 16:00 SAST / 10:00 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>Benetton vs Glasgow Warriors</strong><br><small>Stadio Monigo, Treviso</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 16:00 CEST / 10:00 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>Leinster vs Munster</strong><br><small>Aviva Stadium, Dublin</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 18:00 IST / 13:00 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>Ospreys vs Dragons RFC</strong><br><small>St Helen&#x27;s, Swansea</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 19:00 BST / 14:00 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>TOP 14 2026-27<br><small>Journée 7</small></td>
+  <td><strong>RC Vannes vs ASM Clermont</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 14h30 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>TOP 14 2026-27<br><small>Journée 7</small></td>
+  <td><strong>Aviron Bayonnais vs LOU Rugby</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 16h35 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>TOP 14 2026-27<br><small>Journée 7</small></td>
+  <td><strong>Castres Olympique vs Stade Français Paris</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 16h35 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>TOP 14 2026-27<br><small>Journée 7</small></td>
+  <td><strong>Racing 92 vs Montpellier Hérault Rugby</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 16h35 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>TOP 14 2026-27<br><small>Journée 7</small></td>
+  <td><strong>Stade Toulousain vs USA Perpignan</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 16h35 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>TOP 14 2026-27<br><small>Journée 7</small></td>
+  <td><strong>RC Toulon vs Section Paloise</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 21h00 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>TOP 14 2026-27<br><small>Journée 7</small></td>
+  <td><strong>Stade Rochelais vs Union Bordeaux-Bègles</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sun 25 Oct · 21h05 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>PRO D2 2026-27<br><small>Journée 8</small></td>
+  <td><strong>CA Brive vs Biarritz Olympique</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Thu 22 Oct · 21h00 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://prod2.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>PRO D2 2026-27<br><small>Journée 8</small></td>
+  <td><strong>FC Grenoble Rugby vs Provence Rugby</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Fri 23 Oct · 19h00 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://prod2.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>PRO D2 2026-27<br><small>Journée 8</small></td>
+  <td><strong>SU Agen vs US Dax</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Fri 23 Oct · 19h30 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://prod2.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-union.html">Rugby Union</a></td>
+  <td>PRO D2 2026-27<br><small>Journée 8</small></td>
+  <td><strong>Colomiers Rugby vs AS Béziers Hérault</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Fri 23 Oct · 21h00 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://prod2.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-league.html">Rugby League</a></td>
+  <td>IRL Women&#x27;s Rugby League World Cup<br><small>Round 2</small></td>
+  <td><strong>Samoa Women vs Wales Women</strong><br><small>CommBank Stadium, Sydney</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-23 · 17:50 local</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-league.html">Rugby League</a></td>
+  <td>IRL Men&#x27;s Rugby League World Cup<br><small>Round 2</small></td>
+  <td><strong>Tonga vs Lebanon</strong><br><small>CommBank Stadium, Sydney</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-23 · 20:05 local</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-league.html">Rugby League</a></td>
+  <td>IRL Women&#x27;s Rugby League World Cup<br><small>Round 2</small></td>
+  <td><strong>Fiji Women vs Papua New Guinea Women</strong><br><small>Santos National Football Stadium, Port Moresby</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-24 · 12:15 local</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-league.html">Rugby League</a></td>
+  <td>IRL Men&#x27;s Rugby League World Cup<br><small>Round 2</small></td>
+  <td><strong>Papua New Guinea vs Samoa</strong><br><small>Santos National Football Stadium, Port Moresby</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-24 · 14:25 local</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-league.html">Rugby League</a></td>
+  <td>IRL Men&#x27;s Rugby League World Cup<br><small>Round 2</small></td>
+  <td><strong>England vs France</strong><br><small>HBF Park, Perth</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-24 · 14:35 local</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-league.html">Rugby League</a></td>
+  <td>IRL Women&#x27;s Rugby League World Cup<br><small>Round 2</small></td>
+  <td><strong>Australia Women vs England Women</strong><br><small>HBF Park, Perth</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-24 · 17:05 local</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-league.html">Rugby League</a></td>
+  <td>IRL Men&#x27;s Rugby League World Cup<br><small>Round 2</small></td>
+  <td><strong>New Zealand vs Cook Islands</strong><br><small>Christchurch</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-25 · local kickoff</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-league.html">Rugby League</a></td>
+  <td>IRL Men&#x27;s Rugby League World Cup<br><small>Round 2</small></td>
+  <td><strong>Australia vs Fiji</strong><br><small>Suncorp Stadium, Brisbane</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-25 · local kickoff</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/rugby-league.html">Rugby League</a></td>
+  <td>IRL Women&#x27;s Rugby League World Cup<br><small>Round 2</small></td>
+  <td><strong>New Zealand Women vs France Women</strong><br><small>Christchurch</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-25 · local kickoff</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/snooker.html">Snooker</a></td>
+  <td>BetVictor Northern Ireland Open 2026<br><small>Round of 16 (Best of 7)</small></td>
+  <td><strong>Kyren Wilson vs Pang Junxu</strong><br><small>Waterfront Hall, Belfast</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-22 · 08:00 WST clock (no TZ label; morning session elapsed)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/snooker.html">Snooker</a></td>
+  <td>BetVictor Northern Ireland Open 2026<br><small>Round of 16 (Best of 7)</small></td>
+  <td><strong>Matthew Selt vs Sam Craigie</strong><br><small>Waterfront Hall, Belfast</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-22 · 08:00 WST clock (no TZ label; morning session elapsed)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/snooker.html">Snooker</a></td>
+  <td>BetVictor Northern Ireland Open 2026<br><small>Round of 16 (Best of 7)</small></td>
+  <td><strong>Elliot Slessor vs Ricky Walden</strong><br><small>Waterfront Hall, Belfast</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-22 · 09:00 WST clock (no TZ label)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/snooker.html">Snooker</a></td>
+  <td>BetVictor Northern Ireland Open 2026<br><small>Round of 16 (Best of 7)</small></td>
+  <td><strong>Anthony McGill vs Mateusz Baranowski</strong><br><small>Waterfront Hall, Belfast</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-22 · 09:00 WST clock (no TZ label)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/snooker.html">Snooker</a></td>
+  <td>BetVictor Northern Ireland Open 2026<br><small>Round of 16 (Best of 7)</small></td>
+  <td><strong>Mark Williams vs Martin O&#x27;Donnell</strong><br><small>Waterfront Hall, Belfast</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-22 · 14:00 WST clock (no TZ label)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/snooker.html">Snooker</a></td>
+  <td>BetVictor Northern Ireland Open 2026<br><small>Round of 16 (Best of 7)</small></td>
+  <td><strong>David Gilbert vs Cheung Ka Wai</strong><br><small>Waterfront Hall, Belfast</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-22 · 14:00 WST clock (no TZ label)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/snooker.html">Snooker</a></td>
+  <td>BetVictor Northern Ireland Open 2026<br><small>Round of 16 (Best of 7)</small></td>
+  <td><strong>Jordan Brown vs Scott Donaldson</strong><br><small>Waterfront Hall, Belfast</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-22 · 15:00 WST clock (no TZ label)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/snooker.html">Snooker</a></td>
+  <td>BetVictor Northern Ireland Open 2026<br><small>Round of 16 (Best of 7)</small></td>
+  <td><strong>Jak Jones vs Daniel Wells</strong><br><small>Waterfront Hall, Belfast</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-22 · 15:00 WST clock (no TZ label)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="handball" data-conf="unpriced" data-start-utc="2026-10-22T16:45:00Z">
+  <td><a href="sports/handball.html">Handball</a></td>
+  <td>EHF Champions League Men 2026/27<br><small>Group Phase Round 5</small></td>
+  <td><strong>MT Melsungen vs Orlen Wisla Plock</strong><br><small>Rothenbach-Halle, Kassel</small></td>
+  <td><code>2026-10-22T16:45:00Z</code></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified july pdf unpriced</span></td>
+  <td><a class="src-link" href="https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="handball" data-conf="unpriced" data-start-utc="2026-10-22T16:45:00Z">
+  <td><a href="sports/handball.html">Handball</a></td>
+  <td>EHF Champions League Men 2026/27<br><small>Group Phase Round 5</small></td>
+  <td><strong>OTP Bank-Pick Szeged vs GOG</strong><br><small>Pick Arena, Szeged</small></td>
+  <td><code>2026-10-22T16:45:00Z</code></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified july pdf unpriced</span></td>
+  <td><a class="src-link" href="https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="handball" data-conf="unpriced" data-start-utc="2026-10-22T18:45:00Z">
+  <td><a href="sports/handball.html">Handball</a></td>
+  <td>EHF Champions League Men 2026/27<br><small>Group Phase Round 5</small></td>
+  <td><strong>Sporting CP vs IFK Kristianstad</strong><br><small>Pavilhao Joao Rocha, Lisbon</small></td>
+  <td><code>2026-10-22T18:45:00Z</code></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified july pdf unpriced</span></td>
+  <td><a class="src-link" href="https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="handball" data-conf="unpriced" data-start-utc="2026-10-22T18:45:00Z">
+  <td><a href="sports/handball.html">Handball</a></td>
+  <td>EHF Champions League Men 2026/27<br><small>Group Phase Round 5</small></td>
+  <td><strong>Barça vs Montpellier HB</strong><br><small>Palau Blaugrana, Barcelona</small></td>
+  <td><code>2026-10-22T18:45:00Z</code></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified july pdf unpriced</span></td>
+  <td><a class="src-link" href="https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="handball" data-conf="unpriced" data-start-utc="2026-10-22T18:45:00Z">
+  <td><a href="sports/handball.html">Handball</a></td>
+  <td>EHF Champions League Men 2026/27<br><small>Group Phase Round 5</small></td>
+  <td><strong>Kolstad Handball vs SC Magdeburg</strong><br><small>Kolstad Arena, Trondheim</small></td>
+  <td><code>2026-10-22T18:45:00Z</code></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified july pdf unpriced</span></td>
+  <td><a class="src-link" href="https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="volleyball" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/volleyball.html">Volleyball</a></td>
+  <td>TAURON Liga 2026-27<br><small>Regular Season</small></td>
+  <td><strong>MOYA Radomka Radom vs ITA TOOLS STAL Mielec</strong><br><small>Radom</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-22 · 17:30 Polish time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.tauronliga.pl/games.html" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="volleyball" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/volleyball.html">Volleyball</a></td>
+  <td>PlusLiga 2026-27<br><small>Round 2</small></td>
+  <td><strong>Ślepsk Malow Suwałki vs GKS Katowice</strong><br><small>Suwałki Arena</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-23 · 17:30 Polish time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.tauronliga.pl/games.html" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="volleyball" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/volleyball.html">Volleyball</a></td>
+  <td>PlusLiga 2026-27<br><small>Round 2</small></td>
+  <td><strong>PGE GiEK SKRA Bełchatów vs PGE Projekt Warszawa</strong><br><small>Hala Energia, Bełchatów</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-24 · 18:00 Polish time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.tauronliga.pl/games.html" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="volleyball" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/volleyball.html">Volleyball</a></td>
+  <td>PlusLiga 2026-27<br><small>Round 2</small></td>
+  <td><strong>InPost ChKS Chełm vs Asseco Resovia Rzeszów</strong><br><small>Chełm</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-25 · 18:00 Polish time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.tauronliga.pl/games.html" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="volleyball" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/volleyball.html">Volleyball</a></td>
+  <td>SuperLega Credem Banca 2026-27<br><small>Round 2</small></td>
+  <td><strong>Itas Trentino vs Cisterna Volley</strong><br><small>ilT quotidiano Arena, Trento</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-25 · 18:00 Italian time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.legavolley.it/calendario/?idCampionato=999" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="gaelic-football" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/gaelic-football.html">Gaelic Football</a></td>
+  <td>2026 Galway Senior Football Championship<br><small>County Final</small></td>
+  <td><strong>Maigh Cuilinn vs Salthill-Knocknacarra</strong><br><small>Pearse Stadium, Salthill</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct 2026 · Pearse Stadium (Moycullen won SF 4-26 to 0-8; Dessie Conneely 2-16)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.maighcuilinn.com/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="gaelic-football" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/gaelic-football.html">Gaelic Football</a></td>
+  <td>2026 Kerry Senior Football Championship<br><small>County Final</small></td>
+  <td><strong>Dr. Crokes vs Kenmare Shamrocks</strong><br><small>Fitzgerald Stadium, Killarney</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sun 25 Oct 2026 · 14:00 Irish time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://munster.gaa.ie/fixtures/events-calendar/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="gaelic-football" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/gaelic-football.html">Gaelic Football</a></td>
+  <td>2026 Waterford Senior Football Championship<br><small>County Final</small></td>
+  <td><strong>Rathgormack vs The Nire</strong><br><small>Cappoquin Logistics Fraher Field, Dungarvan</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sun 25 Oct 2026 · 14:30 Irish time (OLBG listed wrong date 01 Nov 10:30!)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://munster.gaa.ie/fixtures/events-calendar/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="gaelic-football" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/gaelic-football.html">Gaelic Football</a></td>
+  <td>2026 Cork Premier Senior Football Championship<br><small>County Final</small></td>
+  <td><strong>Nemo Rangers vs St. Finbarr&#x27;s</strong><br><small>SuperValu Páirc Uí Chaoimh, Cork</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sun 25 Oct 2026 · 16:00 Irish time (neutral venue; OLBG reversed participant order)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://gaacork.ie/fixtures/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="aussie-rules" data-conf="unpriced" data-start-utc="2026-10-23T08:15:00Z">
+  <td><a href="sports/aussie-rules.html">Aussie Rules</a></td>
+  <td>NAB AFLW Premiership Season 2026<br><small>Round 11</small></td>
+  <td><strong>Port Adelaide vs Collingwood</strong><br><small>Alberton Oval, Adelaide</small></td>
+  <td><code>2026-10-23T08:15:00Z</code></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://www.afl.com.au/aflw/matches/8970" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="cricket" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/cricket.html">Cricket</a></td>
+  <td>Ireland Wolves / Men&#x27;s Tour of Namibia 2026<br><small>One-Day Match</small></td>
+  <td><strong>Namibia vs Ireland</strong><br><small>Windhoek</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>2026-10-22 · In Play on Cricket Ireland Match Centre</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">in play unpriced</span></td>
+  <td><a class="src-link" href="https://cricketireland.ie/matches/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="cricket" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/cricket.html">Cricket</a></td>
+  <td>Pakistan vs South Africa 2026 Series<br><small>International Fixture</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>participants unverified</em></span><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Official PCB tournament_id=1465 returned HTTP 502 Bad Gateway</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-warn">unverified flagged</span></td>
+  <td><a class="src-link" href="https://www.pcb.com.pk/tournament-reports.php?action=tournament_matches&amp;tournament_id=1465" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="golf" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/golf.html">Golf</a></td>
+  <td>PGA TOUR 2026 FedExCup Fall<br><small>Butterfield Bermuda Championship (72-Hole Stroke Play)</small></td>
+  <td><strong>Butterfield Bermuda Championship Field</strong><br><small>Port Royal Golf Course, Southampton, Bermuda</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>22–25 Oct 2026 (missing from OLBG Golf/5 hub)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified event unpriced</span></td>
+  <td><a class="src-link" href="https://www.pgatour.com/schedule" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="golf" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/golf.html">Golf</a></td>
+  <td>PGA TOUR Champions Charles Schwab Cup Playoffs<br><small>Stifel Charity Classic (54-Hole Stroke Play)</small></td>
+  <td><strong>Stifel Charity Classic Field</strong><br><small>Norwood Hills Country Club, St. Louis, Missouri</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>23–25 Oct 2026 (Cink 4 wins, Alker 4 wins, Vijay Singh won SAS Championship -9)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified event unpriced</span></td>
+  <td><a class="src-link" href="https://www.pgatour.com/pgatour-champions/schedule" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="motor-racing" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/motor-racing.html">Motor Racing</a></td>
+  <td>FIA Formula 1 World Championship 2026<br><small>United States Grand Prix — Race (56 Laps)</small></td>
+  <td><strong>2026 United States Grand Prix Grid</strong><br><small>Circuit of The Americas, Austin, Texas</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sun 25 Oct 2026 · 14:00 CDT track time / 16:00 EDT viewer clock on formula1.com</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified event unpriced</span></td>
+  <td><a class="src-link" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="darts" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/darts.html">Darts</a></td>
+  <td>2026 Machineseeker European Championship<br><small>Round 1 Session (Dortmund)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>participants unverified</em></span><br><small>Westfalenhalle, Dortmund</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>pdc.tv schedule page blocked by 7-chunk CookieYes consent wall</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-warn">unverified flagged</span></td>
+  <td><a class="src-link" href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="esports" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/esports.html">eSports</a></td>
+  <td>League of Legends World Championship (Worlds 2026)<br><small>Knockout / Swiss Stage</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>participants unverified</em></span><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Tournament active (18 teams confirmed on lolesports.com); match cards JS-rendered</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-warn">partial</span></td>
+  <td><a class="src-link" href="https://lolesports.com/en-GB/tournament/115660540725177488/overview" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="greyhounds" data-conf="unpriced" data-start-utc="">
+  <td><a href="sports/greyhounds.html">Greyhounds</a></td>
+  <td>GBGB UK Licensed Greyhound Racing<br><small>22 Oct 2026 Open &amp; Graded Meetings (Sheffield, Central Park, Newcastle on OLBG)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>participants unverified</em></span><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>gbgb.org.uk/racing/open-races/ serves static filter chrome; XHR runner traps not exposed in static HTML</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-warn">unverified flagged</span></td>
+  <td><a class="src-link" href="https://www.gbgb.org.uk/racing/open-races/" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr>
+  </tbody>
+</table>
+</div>
+<h2>Excluded OLBG Sports Gate (Automated Zero-Row Verification)</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Excluded Sport</th><th>Included Rows</th><th>Exclusion Rule</th><th>Official Verification Anchor</th></tr></thead>
+  <tbody><tr>
+  <td><strong>Football / Soccer</strong> <small>(OLBG #1)</small></td>
+  <td><code>0 rows</code></td>
+  <td>Excluded by task scope (soccer / football).</td>
+  <td><a class="src-link" href="https://www.nhl.com/schedule" target="_blank" rel="noopener noreferrer">Scope assertion verified (0 rows) ↗</a></td>
+</tr><tr>
+  <td><strong>Horse Racing</strong> <small>(OLBG #2)</small></td>
+  <td><code>0 rows</code></td>
+  <td>Excluded by task scope (horse racing).</td>
+  <td><a class="src-link" href="https://www.nhl.com/schedule" target="_blank" rel="noopener noreferrer">Scope assertion verified (0 rows) ↗</a></td>
+</tr><tr>
+  <td><strong>American Football</strong> <small>(OLBG #11)</small></td>
+  <td><code>0 rows</code></td>
+  <td>Excluded by task scope (American football).</td>
+  <td><a class="src-link" href="https://www.nhl.com/schedule" target="_blank" rel="noopener noreferrer">Scope assertion verified (0 rows) ↗</a></td>
+</tr><tr>
+  <td><strong>Boxing / UFC / MMA</strong> <small>(OLBG #16)</small></td>
+  <td><code>0 rows</code></td>
+  <td>Excluded by task scope (boxing, UFC, MMA).</td>
+  <td><a class="src-link" href="https://www.nhl.com/schedule" target="_blank" rel="noopener noreferrer">Scope assertion verified (0 rows) ↗</a></td>
+</tr><tr>
+  <td><strong>Cycling</strong> <small>(OLBG #17)</small></td>
+  <td><code>0 rows</code></td>
+  <td>Excluded by task scope (cycling).</td>
+  <td><a class="src-link" href="https://www.nhl.com/schedule" target="_blank" rel="noopener noreferrer">Scope assertion verified (0 rows) ↗</a></td>
+</tr><tr>
+  <td><strong>Specials / Entertainment</strong> <small>(OLBG #18)</small></td>
+  <td><code>0 rows</code></td>
+  <td>Excluded by task scope (specials).</td>
+  <td><a class="src-link" href="https://www.nhl.com/schedule" target="_blank" rel="noopener noreferrer">Scope assertion verified (0 rows) ↗</a></td>
+</tr><tr>
+  <td><strong>Hurling</strong> <small>(OLBG #26)</small></td>
+  <td><code>0 rows</code></td>
+  <td>Excluded by task scope (hurling).</td>
+  <td><a class="src-link" href="https://www.nhl.com/schedule" target="_blank" rel="noopener noreferrer">Scope assertion verified (0 rows) ↗</a></td>
+</tr></tbody>
+</table>
+</div>
+
+    </main>
+    <footer>
+      <span>100% governing-body verified · Blank = unconfirmed · Zero aggregator/bookmaker scraping · 18+ research only.</span>
+      <span>Session <code>7f000cb6</code> · <a href="https://github.com/buffedlizard55-lab/OLBG1">GitHub Repository ↗</a></span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

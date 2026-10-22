@@ -1,4 +1,4 @@
-"""Session d7d19a67-olbg1 (T65) - offline line-by-line audit of this repository.
+"""Session d7d19a67-olbg1 (TD7D19, claimed as T65) - offline line-by-line audit of this repository.
 
 Every finding below is computed from files that are actually in the working tree at build time, so
 nothing is asserted from memory: the audit re-runs, re-reads the file, and quotes the line it found.
@@ -330,7 +330,7 @@ def check_desk_reachability():
         "Namespaced desks reachable from the canonical archive page",
         "Because a desk may not edit shared navigation, reachability depends on the canonical archive "
         "page listing it. %d of %d desks with an index.html are linked from archive.html. This desk's "
-        "root-navigation request is logged in COORDINATION.md §4/§51 rather than applied here."
+        "root-navigation request is logged in COORDINATION.md §4/§59 rather than applied here."
         % (len(listed), len(desks)),
         [{"file": rel(path) if os.path.exists(path) else "archive.html", "line": 1,
           "quote": "desks found: %s" % ", ".join(desks[:30])}],
@@ -347,9 +347,9 @@ def check_scope_boundaries():
     add("A-D7D-14", "high" if outside else "info", "session scope",
         "Files changed outside this session's claimed scope" if outside else
         "Every file this session changed is inside its claimed scope",
-        "The claim in COORDINATION.md §1 (T65) names the exact paths this session may touch. Anything "
+        "The claim in COORDINATION.md §1 (row TD7D19) names the exact paths this session may touch. Anything "
         "outside that set would be an edit to a shared file or another session's desk." if outside else
-        "Self-check: the T65 claim covers data/d7d19a67/**, scripts/sd7d19a67_*.py, d7d19a67/**, "
+        "Self-check: the TD7D19 claim covers data/d7d19a67/**, scripts/sd7d19a67_*.py, d7d19a67/**, "
         "reports/SESSION_D7D19A67.md and append-only COORDINATION.md. No root page, pipeline file, "
         "workflow, data/current file or other session's desk was modified.",
         [{"file": f, "line": 0, "quote": "outside claimed scope"} for f in outside]
