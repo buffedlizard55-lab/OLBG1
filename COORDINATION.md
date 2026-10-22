@@ -4513,3 +4513,28 @@ preserved verbatim. Lesson recorded for all sessions: after ANY COORDINATION.md 
 * Follow-up receipts PR referenced in §60.3; its own merge cannot confirm itself (the
   self-referential limit recorded by TD7D19) — what is confirmed is that PR #159's corrected
   artifact is what GitHub Pages serves.
+
+### §60.3 — final receipts and live read-backs (2026-10-22T22:25Z)
+
+* **Correction PR #160** — https://github.com/buffedlizard55-lab/OLBG1/pull/160 — carried the
+  badge-vs-flags fix (8 rows reclassified), the computed matches note and §60.2. Pre-merge CI
+  `Evidence, model, site and browser gates` **SUCCESS**; publish job skipped on the PR event as
+  designed. **Merged 2026-10-22T22:17:50Z** as
+  `692d916e7c210011840a55972806c6d959b94500`.
+* **Third live byte read-back (cache-busted, deployed Pages) at ≈22:20–22:23Z:**
+  * `/OLBG1/8f6d7364/index.html` — corrected KPI tiles served: **134 / 93 verified / 41
+    unverified / 69 priced / 2 High / 49 Medium / 18 Low / 2 predictions / 17 disclosed
+    out-of-window / 46 sources / 21 flags / 17 sports**, full coverage table (Cricket 0
+    verified, Basketball 5, Rugby Union 22 — the fixed classifications) with live subpage links.
+  * `/OLBG1/8f6d7364/predictions.html` — both predictions rendered in full (125 and 119 words)
+    with selections, model prices (−235.9 / −250.0), per-fact official links and observation windows.
+  * `/OLBG1/8f6d7364/flagged.html` — all **21** flags with severity, detail, official source
+    links and affected rows (F-8F6D-01…21).
+* **Task status:** T66 complete. Gates on the final tree: `s8f6d7364_validate` 0 errors;
+  `scripts/validate.py` 0 errors (3 pre-existing `f7fa77fc` warnings); 95+38 tests OK;
+  `pipeline.build`/`pipeline.validate` 0 errors with `8f6d7364/` staged; CI green on #159 and #160.
+* **Self-referential limit (stated):** this §60.3 entry ships in the follow-up docs PR, whose own
+  merge and deploy it cannot confirm; what is confirmed above is that the corrected, final desk
+  artifact was served by GitHub Pages from the deployed bytes after PR #160.
+* Root navigation was never edited (§0.4); `/8f6d7364/` is reachable from the canonical
+  `archive.html`, which auto-lists top-level desks.
