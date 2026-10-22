@@ -23,7 +23,7 @@ def inventory():
     reports.mkdir(exist_ok=True)
     line_count = file_count = findings = 0
     with (reports / "release_file_inventory.csv").open("w", newline="") as files, (reports / "release_line_findings.csv").open("w", newline="") as lines:
-        fw, lw = csv.writer(files), csv.writer(lines)
+        fw, lw = csv.writer(files, lineterminator="\n"), csv.writer(lines, lineterminator="\n")
         fw.writerow(["path", "sha256", "bytes", "utf8_lines", "scope", "review_status", "manual_review_url"])
         lw.writerow(["path", "line", "kind", "excerpt", "urls_in_line", "manual_review_url", "verification_limit"])
         for relative in paths:

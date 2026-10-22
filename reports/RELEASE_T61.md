@@ -142,3 +142,11 @@ Main then advanced through PR #87 (`8fc47dcb` / T60 / §45). This integration ad
 **T61 / §46**, preserving that namespace and all PR #85/#86 corrections unchanged.
 The quote gate additionally checks actual quoted price, exact market/selection/rules,
 availability, source URL and a five-minute age policy; fair prices cannot substitute for offers.
+
+### Post-rebase integration checkpoint
+
+Rebased onto main `31c63ba` including PR #87. New gate result: **33 canonical / 429 total
+HTML pages**, **38 tests PASS**, full desktop/mobile browser smoke PASS. All upstream task
+rows/sections and every namespace (including later `e6716490` corrections) were retained.
+The root/sport HTML replacement is intentional; prior states remain archived and the new
+`8fc47dcb` namespace is included automatically in the current archive directory index.
