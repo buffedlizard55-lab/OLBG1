@@ -31,7 +31,7 @@
   seeding, not strength) → Medium; cricket and Gaelic football → Low. A row whose strength input is a
   documented assumption is capped at Medium. The cap and its reason print on the row.
 * **Blank beats wrong.** 25 of 141 fixtures are published with no price at all because no two-sided
-  official input could be read. 95 row-level flags are on `a570c470/flagged.html`.
+  official input could be read. 118 row-level flags are on `a570c470/flagged.html`.
 
 ## 3. Coverage
 

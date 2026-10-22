@@ -510,7 +510,7 @@ for rid, home, away, start, venue, comp, src, hr, ar in RUGBY_UNION:
     add(id=rid, sport="Rugby Union",
         competition=comp,
         stage="Journee 7" if comp == "French Top 14" else "Round 4",
-        home=home, away=away, start_utc=start, venue=venue, sources=[src] + (["lnr-top14-2026"] if comp == "French Top 14" else []),
+        home=home, away=away, start_utc=start, venue=venue, sources=[src],
         inputs=inputs, flags=flags, event_only=event_only,
         market_kind="rugby-union", sigma=13.0, total_line=48.5)
 
@@ -714,6 +714,13 @@ add(id="gbgb-dunstall-oaks", sport="Greyhounds", competition="GBGB Category One"
 
 
 def main() -> None:
+    # A governing body that publishes only a tournament date and a rolling order of play leaves
+    # the clock blank.  Record that on the row rather than guessing a start time.
+    for row in FIXTURES:
+        if not row["start_utc"] and "start time not published by the governing body" not in " ".join(row["flags"]):
+            row["flags"].append(
+                "Start time is blank: the governing body publishes a date or a rolling order of play, not a clock, "
+                "and OLBG's own time is viewer-localised.")
     sports = sorted({x["sport"] for x in FIXTURES})
     by_sport = {s: sum(1 for x in FIXTURES if x["sport"] == s) for s in sports}
     doc = {
