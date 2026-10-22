@@ -1380,3 +1380,23 @@ probability *necessarily* maps to a price shorter than `-250`, because at a 5% m
 probability. The two rules in the brief can therefore not both be read as "probability ≥ 70% AND price ≥ -250"; the
 window has to be the binding constraint. The fix, the arithmetic and the remaining limitations are recorded in
 `reports/SESSION_2CA3_PRICE_WINDOW.md`.
+
+### 31.2 Publish record (executed)
+
+* **PR #46** — https://github.com/buffedlizard55-lab/OLBG1/pull/46 — **MERGED** 2026-10-22T01:29:10Z,
+  merge commit `8ddd8b4af0e5cb46ee73bf5ec94b9266d75ca7eb`. Opened and merged by this session without
+  waiting for review, per the brief.
+* **Concurrent session note.** While this PR was being verified, session `2ca35f17-olbg1` claimed the
+  same task id (T41) for a *different* scope — enforcing the −250/+10000 price window on the **root**
+  desk and rewriting 29 root predictions — and merged it as **PR #47** (`f4a1dc2`), which landed on
+  `main` after this session's merge. Recorded here per §0.4 rather than renumbering anyone's work.
+  The two scopes do not overlap: `git diff --stat 8ddd8b4 f4a1dc2 -- data/7a5b5360 7a5b5360` is empty,
+  so every number in §31.1 still describes the shipped `/7a5b5360/` desk. `origin/main` was merged back
+  into this branch and **both gates were re-run on the combined tree**: `scripts/s7a5b5360_validate.py`
+  → PASSED (14 pages, 0 errors) and `scripts/validate.py` → VALIDATION PASSED (0 errors; two pre-existing
+  warnings on `f7fa77fc/flagged.html`, which this session did not author or edit).
+* **Coordination hygiene.** T41 now has two owners for two different scopes. A future session should
+  treat `2ca35f17`'s price-window work as the root-desk change and this section as the `/7a5b5360/`
+  desk change; they are complementary, not duplicates.
+* **Pages.** The deployment triggered by `f4a1dc2` was queued at 01:30Z and had not completed when this
+  entry was written; the live-site check is recorded in §31.3 once the build finishes.
