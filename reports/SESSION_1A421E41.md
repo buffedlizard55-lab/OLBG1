@@ -216,6 +216,14 @@ has not resolved) · `F-1A-GRAN-01` (band granularity).
   it is flagged without asserting an outcome.
 * `AUD-1A-README-01` — `README.md:56` claims 160 published HTML pages; the tree holds 319 before
   this session and 351 after.
+* `AUD-1A-PAGES-01` — **GitHub Pages reports `built` for commits whose content it is not serving.**
+  Between 09:11Z and 09:56Z the publication did not advance while the API reported `built` for
+  `1a88c0d7` (09:24:52Z, 216646ms) and `8540478b` (09:34:27Z, 28609ms). A directory added by
+  `8540478` itself returns the repository 404. `POST /pages/builds` returns 403, so a build cannot be
+  requested. Payload is 67 MB, so it is not a size limit. Any session verifying publication by
+  reading the build status will believe its work is live when it is not; the check that works is to
+  fetch a path that only exists in the commit you expect to be served. Repo-wide, not specific to
+  this session.
 
 Tracked `.pyc` / `__pycache__` count is **0** — repository hygiene is clean.
 
@@ -272,7 +280,28 @@ headline findings.
 | Sports | `sports/<sport>.html` × 17 |
 
 32 pages, self-contained stylesheet at `1a421e41/assets/desk.css`, no dependency on any shared root
-asset, 0 broken relative links.
+asset, 0 broken relative links. Total 2.4 MB.
+
+### Publication status, stated precisely
+
+PR #94 merged as `a9b13b16` at 08:44:34Z and **is live and verified by direct fetch**:
+`/OLBG1/1a421e41/index.html` serves the landing page with all ten High picks and their official
+source links, and `/OLBG1/1a421e41/predictions.html` serves all ten predictions in full.
+
+PRs #98 and #101 are **merged and verified correct in `main`**, but at 09:56Z were **not yet being
+served**, because the repository's Pages publication stalled — see `AUD-1A-PAGES-01` in §6. This is
+not specific to this session: `/OLBG1/92af340c/index.html`, a directory added by a different
+session's merge in the same window, also returns the repository 404.
+
+Verified in `main` at `8540478` by reading the committed files directly:
+`1a421e41/index.html` contains `>1642</div>` and `clears 70% while landing inside the window.`, and
+`data/1a421e41/desk.json` reports `markets_originated: 1642`, 15 rejected-ledger rows, and carries
+`rejected_high_count`. The live URL still served the 09:11 revision (2938 markets, literal `70%%`)
+at 09:44Z.
+
+**No claim is made that the live site shows the latest revision.** It shows the complete, valid
+PR #94 deliverable; the two follow-ups are refinements that will appear at the next successful
+publication.
 
 ---
 
