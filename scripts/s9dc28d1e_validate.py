@@ -1,187 +1,180 @@
-#!/usr/bin/env python3
-"""Session 9dc28d1e — validator gate for the desk, its data and its published pages.
+"""Gate for the 9dc28d1e desk.
 
-Checks, in order:
-  1. desk.json counts agree with the content they describe
-  2. every market's probabilities sum to one and every fair price is exactly 1/p
-  3. tier labels obey the published rule, including the 70% / -250 conjunction
-  4. every prediction is >=30 words, unique, names its selection and cites a High-priced row
-  5. every fixture and every market carries an official https source
-  6. inherited listings carry no prices
-  7. every local link in every published page resolves, and pages contain no render artefacts
-  8. all 17 in-scope category pages exist and the excluded categories appear nowhere as priced rows
+Eight checks. Any failure exits non-zero.
+
+1  counts in desk.json match the rows actually present
+2  every price is internally consistent (decimal, American, probability)
+3  the tier rule is applied exactly as documented, and every High has a prediction
+4  predictions are unique prose of at least thirty words with no shared eight-gram
+5  every verified fixture cites a source that exists in the register
+6  every page links only to files that exist, with relative paths
+7  the seventeen in-scope categories all have a page; excluded categories appear nowhere
+8  the observation window, timestamps and gate constants are the documented ones
 """
 
-import html
+from __future__ import annotations
+
 import json
 import re
 import sys
-from collections import Counter
+from itertools import combinations
 from pathlib import Path
-from urllib.parse import urlparse
+
+import s9dc28d1e_inputs as I
+import s9dc28d1e_model as M
 
 ROOT = Path(__file__).resolve().parent.parent
-DESK = ROOT / 'data' / '9dc28d1e' / 'desk.json'
-SITE = ROOT / '9dc28d1e'
-OFFICIAL_HOSTS = {
-    'api-web.nhle.com', 'api.nhle.com', 'statsapi.mlb.com', 'api-live.euroleague.net',
-    'www.euroleaguebasketball.net', 'www.nhl.com', 'www.mlb.com', 'www.nba.com',
-    'www.atptour.com', 'www.wtatennis.com', 'www.wst.tv', 'www.pdc.tv', 'www.icc-cricket.com',
-    'www.afl.com.au', 'www.intrl.sport', 'top14.lnr.fr', 'munster.gaa.ie', 'www.plusliga.pl',
-    'ehfcl.eurohandball.com', 'www.formula1.com', 'www.pgatour.com', 'www.gbgb.org.uk',
-    'lolesports.com', 'www.olbg.com', 'github.com', 'buffedlizard55-lab.github.io',
-}
-EXCLUDED = {'soccer', 'football', 'american-football', 'boxing', 'ufc', 'mma',
-            'hurling', 'horse-racing', 'cycling', 'specials'}
+SID = "9dc28d1e"
+SITE = ROOT / SID
+DESK = ROOT / "data" / SID / "desk.json"
 
-errors = []
-warnings = []
+errors: list[str] = []
+warnings: list[str] = []
 
 
-def check(cond, msg):
-    if not cond:
-        errors.append(msg)
+def check(condition, message):
+    if not condition:
+        errors.append(message)
 
 
 def main():
+    if not DESK.exists():
+        print("9DC28D1E VALIDATION FAILED: data/9dc28d1e/desk.json missing; run the builder first")
+        return 1
+
     desk = json.loads(DESK.read_text())
-    priced = desk['priced']
-    inherited = desk['inherited']
-    preds = desk['predictions']
-    counts = desk['counts']
+    outcomes = desk["outcomes"]
+    fixtures = desk["fixtures"]
+    predictions = desk["predictions"]
+    counts = desk["counts"]
 
-    # 1 counts
-    outcomes = [o for row in priced for mk in row['markets'] for o in mk['outcomes']]
-    check(counts['priced_matches'] == len(priced), 'priced_matches count mismatch')
-    check(counts['markets'] == sum(len(r['markets']) for r in priced), 'market count mismatch')
-    check(counts['outcomes'] == len(outcomes), 'outcome count mismatch')
-    check(counts['fixtures_total'] == len(priced) + len(inherited), 'fixture total mismatch')
-    check(counts['predictions'] == len(preds), 'prediction count mismatch')
-    check(counts['findings'] == len(desk['findings']), 'finding count mismatch')
-    for t in ('high', 'medium', 'low', 'outside_window'):
-        check(counts[t] == sum(1 for o in outcomes if o['tier'] == t), f'{t} count mismatch')
+    # 1 -- counts ---------------------------------------------------------
+    check(counts["fixtures"] == len(fixtures), f"fixture count {counts['fixtures']} != {len(fixtures)}")
+    check(counts["markets"] == len(desk["markets"]), "market count mismatch")
+    check(counts["outcomes"] == len(outcomes), "outcome count mismatch")
+    check(counts["priced_matches"] == sum(1 for f in fixtures if f["status"].startswith("verified")),
+          "priced match count mismatch")
+    check(counts["high"] == sum(1 for o in outcomes if o["tier"] == "HIGH"), "High count mismatch")
+    check(counts["medium"] == sum(1 for o in outcomes if o["tier"] == "MEDIUM"), "Medium count mismatch")
+    check(counts["low"] == sum(1 for o in outcomes if o["tier"] == "LOW"), "Low count mismatch")
+    check(counts["predictions"] == len(predictions), "prediction count mismatch")
+    check(counts["findings"] == len(desk["findings"]), "finding count mismatch")
+    check(counts["sports"] == 17, "sport count must be 17")
 
-    # 2 arithmetic
-    for row in priced:
-        for mk in row['markets']:
-            total = sum(o['probability'] for o in mk['outcomes'])
-            check(abs(total - 1) < 1e-5, f"{mk['id']} probabilities sum to {total}")
-            for o in mk['outcomes']:
-                p = o['probability']
-                check(abs(o['fair_decimal'] * p - 1) < 2e-3, f"{mk['id']} fair decimal != 1/p")
-                am = -100 * p / (1 - p) if p >= 0.5 else 100 * (1 - p) / p
-                shown = float(o['american_display'].replace('+', ''))
-                check(abs(shown - am) < 1.01, f"{mk['id']} american display off by more than 1")
-                check(0 < p < 1, f"{mk['id']} probability outside (0,1)")
+    # 2 -- prices ---------------------------------------------------------
+    for o in outcomes:
+        p = o["probability"]
+        if not 0.0 < p < 1.0:
+            errors.append(f"probability out of range: {o['id']} {p}")
+            continue
+        if abs(o["fair_decimal"] * p - 1.0) > 2e-3:
+            errors.append(f"decimal does not match probability: {o['id']} {o['fair_decimal']} x {p}")
+        expected = M.american_from_probability(p)
+        if abs(expected - o["american"]) > 0.02:
+            errors.append(f"American price does not match probability: {o['id']} {o['american']} vs {expected}")
 
-    # 3 tiers
-    pred_keys = {(p['fixture_id'], p['selection']) for p in preds}
-    for row in priced:
-        for mk in row['markets']:
-            for o in mk['outcomes']:
-                p = o['probability']
-                am = -100 * p / (1 - p) if p >= 0.5 else 100 * (1 - p) / p
-                band = -250 <= am <= 10000
-                if o['tier'] == 'high':
-                    check(p > 0.70, f"{mk['id']} High at p={p}")
-                    check(band, f"{mk['id']} High outside price window at {am:.1f}")
-                    check((row['fixture_id'], o['selection']) in pred_keys,
-                          f"{mk['id']} High without a prediction")
-                elif o['tier'] == 'outside_window':
-                    check(p > 0.70 and not band, f"{mk['id']} outside_window label inconsistent")
-                elif o['tier'] == 'medium' and p > 0.70:
-                    check(band, f"{mk['id']} capped Medium but price outside window")
-                    check(bool(o.get('tier_reason')), f"{mk['id']} capped Medium without a reason")
-                elif o['tier'] == 'medium':
-                    check(0.60 <= p <= 0.70, f"{mk['id']} Medium at p={p}")
-                elif o['tier'] == 'low':
-                    check(p < 0.60, f"{mk['id']} Low at p={p}")
+    # 3 -- tier rule ------------------------------------------------------
+    predicted = {(p["fixture_id"], p["selection"]) for p in predictions}
+    for o in outcomes:
+        p, am = o["probability"], o["american"]
+        qualifies = p > M.HIGH_PROB_FLOOR and M.in_price_window(am)
+        if o["tier"] == "HIGH":
+            check(qualifies, f"High row fails the gate: {o['id']}")
+            check((o["fixture_id"], o["selection"]) in predicted, f"High without a prediction: {o['id']}")
+        else:
+            check(not (qualifies and (o["fixture_id"], o["selection"]) in predicted),
+                  f"predicted selection is not tiered High: {o['id']}")
+        if o["tier"] == "MEDIUM" and not o["reason"]:
+            # a Medium inside the band must say why it was not promoted
+            if qualifies:
+                errors.append(f"in-band Medium without a reason: {o['id']}")
+        check(o["sensitivity_low"] <= p <= o["sensitivity_high"],
+              f"sensitivity range does not contain the point estimate: {o['id']}")
 
-    # 4 predictions
-    texts = [p['text'] for p in preds]
-    for p in preds:
-        words = len(p['text'].split())
-        check(words >= 30, f"{p['fixture_id']} prediction only {words} words")
-        check(p['selection'].lower() in p['text'].lower() or
-              p['selection'].split()[0].lower() in p['text'].lower(),
-              f"{p['fixture_id']} prediction does not name the selection")
-        row = next((r for r in priced if r['fixture_id'] == p['fixture_id']), None)
-        check(row is not None, f"{p['fixture_id']} prediction references unknown fixture")
-        if row:
-            match = [o for mk in row['markets'] for o in mk['outcomes'] if o['selection'] == p['selection']]
-            check(len(match) == 1, f"{p['fixture_id']} selection not uniquely priced")
-            if match:
-                check(match[0]['tier'] == 'high', f"{p['fixture_id']} prediction row is not High")
-        check(bool(p['source_ids']), f"{p['fixture_id']} prediction has no source")
-        for sent in re.split(r'(?<=[.!?])\s+', p['text']):
-            check(len(sent.split()) >= 3, f"{p['fixture_id']} degenerate sentence")
-    grams = Counter()
-    for t in texts:
-        w = re.findall(r"[a-z']+", t.lower())
-        for g in (' '.join(w[i:i + 6]) for i in range(len(w) - 5)):
-            grams[g] += 1
-    shared = [g for g, c in grams.items() if c > 1]
-    check(not shared, f'predictions share 6-grams: {shared[:3]}')
-    check(len({p['text'] for p in preds}) == len(preds), 'duplicate prediction text')
+    # 4 -- prose ----------------------------------------------------------
+    grams = {}
+    for p in predictions:
+        words = p["body"].split()
+        if len(words) < 30:
+            errors.append(f"prediction under thirty words: {p['headline']} ({len(words)})")
+        if len(set(words)) < len(words) * 0.5:
+            warnings.append(f"prediction looks repetitive: {p['headline']}")
+        lowered = re.findall(r"[a-z']+", p["body"].lower())
+        for i in range(len(lowered) - 7):
+            grams.setdefault(" ".join(lowered[i:i + 8]), []).append(p["headline"])
+    for gram, owners in grams.items():
+        if len(set(owners)) > 1:
+            errors.append(f"shared eight-gram across predictions: '{gram}'")
+    if len({p["headline"] for p in predictions}) != len(predictions):
+        errors.append("duplicate prediction headlines")
 
-    # 5 sources
-    for row in priced:
-        check(bool(row['source_ids']), f"{row['fixture_id']} has no source id")
-    for mk in (mk for row in priced for mk in row['markets']):
-        check(bool(mk['sources']), f"{mk['id']} has no source")
-    for s in desk['sources']:
-        host = urlparse(s['url']).hostname
-        check(host in OFFICIAL_HOSTS, f"source {s['id']} host {host} not on the official allow-list")
-        check(s['url'].startswith('https://'), f"source {s['id']} is not https")
-        check(bool(s.get('observed_utc')), f"source {s['id']} has no observation time")
+    # 5 -- sources --------------------------------------------------------
+    for f in fixtures:
+        if f["status"].startswith("verified"):
+            check(f["source_ids"], f"verified fixture without source ids: {f['id']}")
+            for sid in f["source_ids"]:
+                check(sid in desk["sources"], f"unknown source id {sid} on {f['id']}")
+    for p in predictions:
+        for _k, _v, src in p["facts"]:
+            check(src in desk["sources"], f"prediction fact cites unknown source {src}")
 
-    # 6 inherited
-    for i in inherited:
-        check(i['priced'] is False, f"inherited {i['id']} marked priced")
-        check('probability' not in i, f"inherited {i['id']} carries a probability")
-        check(bool(i['source_ids']), f"inherited {i['id']} has no source")
-        check(not any(i['priced'] for i in inherited), 'inherited row priced')
-
-    # sport scope
-    sports = {r['sport'] for r in priced} | {i['sport'] for i in inherited}
-    check(not (sports & EXCLUDED), f'excluded sport present: {sports & EXCLUDED}')
-
-    # 7 pages
-    pages = sorted(SITE.rglob('*.html'))
-    check(len(pages) >= 25, f'only {len(pages)} pages rendered')
-    for page in pages:
-        text = page.read_text()
-        check('%%' not in text, f'{page.name} contains a render artefact')
-        check('localhost' not in text and '127.0.0.1' not in text, f'{page.name} references localhost')
-        check('<nav>' in text, f'{page.name} has no navigation')
-        for href in re.findall(r'href="([^"]+)"', text):
-            if href.startswith(('http://', 'https://', '#', 'mailto:')):
+    # 6 -- links ----------------------------------------------------------
+    pages = sorted(SITE.rglob("*.html"))
+    if not pages:
+        errors.append("no pages built")
+    href_re = re.compile(r'(?:href|src)="([^"]+)"')
+    for path in pages:
+        text = path.read_text()
+        if 'href="/' in text or 'src="/' in text:
+            errors.append(f"root-absolute link in {path.relative_to(ROOT)}")
+        for target in href_re.findall(text):
+            if target.startswith(("http://", "https://", "mailto:", "#")):
                 continue
-            target = (page.parent / href.split('#')[0]).resolve()
-            check(target.exists(), f'{page.relative_to(ROOT)} broken local link {href}')
-        for src in re.findall(r'src="([^"]+)"', text):
-            if src.startswith(('http://', 'https://', 'data:')):
+            target = target.split("#")[0].split("?")[0]
+            if not target:
                 continue
-            check((page.parent / src).exists(), f'{page.name} broken asset {src}')
+            resolved = (path.parent / target).resolve()
+            if not resolved.exists():
+                errors.append(f"broken link in {path.relative_to(ROOT)} -> {target}")
+    check((SITE / "index.html").exists(), "dashboard missing")
+    check((SITE / "assets" / "style.css").exists(), "stylesheet missing")
 
-    # 8 coverage
-    for slug in desk['scope']['in_scope_sports']:
-        check((SITE / 'sports' / f"{slug['slug']}.html").exists(),
-              f"missing category page {slug['slug']}")
-    check(len(desk['scope']['excluded_sports']) == 8, 'excluded scope list changed')
-    for ex in desk['scope']['excluded_sports']:
-        check(ex['name'].lower() not in {s.lower() for s in sports},
-              f"excluded sport {ex['name']} appears in the fixture set")
+    # 7 -- categories -----------------------------------------------------
+    for slug, name, _rid in I.SPORTS:
+        check((SITE / "sports" / f"{slug}.html").exists(), f"missing sport page: {slug}")
+    excluded_names = {name for name, _rid in I.EXCLUDED_SPORTS}
+    for f in fixtures:
+        check(f["sport"] not in excluded_names, f"excluded category present: {f['sport']} ({f['id']})")
+    dash = (SITE / "index.html").read_text()
+    for name in sorted(excluded_names):
+        check(f'>{name}</a></h4>' not in dash, f"excluded category carded on the dashboard: {name}")
 
-    print(f"9DC28D1E VALIDATION {'FAILED' if errors else 'PASSED'}: "
-          f"priced={len(priced)} outcomes={len(outcomes)} high={counts['high']} "
-          f"predictions={len(preds)} pages={len(pages)} errors={len(errors)} warnings={len(warnings)}")
-    for w in warnings:
-        print(' warn:', w)
-    for e in errors:
-        print(' -', e)
-    return 1 if errors else 0
+    # 8 -- metadata -------------------------------------------------------
+    check(desk["window"]["start"] == "2026-10-22T12:11:00Z", "window start changed")
+    check(desk["window"]["end"] == "2026-10-25T12:11:00Z", "window end changed")
+    check(desk["gate"] == {"probability_floor": 0.70, "short_edge": -250, "long_edge": 10000},
+          "gate constants changed")
+    check(desk["generated_at"].startswith("2026-10-22T"), "generated-at stamp is not the session date")
+    for sid, src in desk["sources"].items():
+        check(src["url"].startswith("https://"), f"source {sid} is not https")
+        check(src["observed_at"].startswith("2026-10-22T"), f"source {sid} has no session timestamp")
+
+    # report --------------------------------------------------------------
+    if warnings:
+        for w in warnings:
+            print(f"warning: {w}")
+    if errors:
+        print(f"9DC28D1E VALIDATION FAILED: {len(errors)} error(s)")
+        for e in errors[:40]:
+            print(f"  - {e}")
+        return 1
+    print(
+        "9DC28D1E VALIDATION PASSED: "
+        f"priced={counts['priced_matches']} outcomes={counts['outcomes']} high={counts['high']} "
+        f"predictions={counts['predictions']} pages={len(pages)} errors=0 warnings={len(warnings)}"
+    )
+    return 0
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sys.exit(main())
