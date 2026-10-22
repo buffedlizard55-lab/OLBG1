@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-snapshot="2026-10-22T12:45:00Z">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for review — OLBG reverse-engineered desk</title>
+<meta name="description" content="Every flagged irregularity and coverage gap.">
+<link rel="stylesheet" href="assets/desk.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+<span class="brand">OLBG RE · session fec05fb4</span>
+<a href="index.html">Overview</a><a href="sports.html">Categories</a><a href="high.html">High selections</a><a href="flagged.html">Flagged for review</a><a href="review.html">Line-by-line review</a><a href="sources.html">Sources</a><a href="methodology.html">Method</a><a href="coverage.html">Coverage</a>
+<a href="../index.html">Repository home</a>
+</div></header>
+<main id="main" class="wrap">
+<div class="hero"><div class="kicker">Flagged for review</div>
+<h1>14 irregularities, gaps and disclosed assumptions</h1>
+<p class="lede">Nothing here is hidden in a footnote. Each item says what is wrong or missing, what the desk did instead, and where to check it.
+Unverified values are blank on every table rather than guessed.</p></div>
+<div class="cards"><article class="card" id="F-FEC-01">
+<div class="kicker">F-FEC-01 · high severity</div>
+<h3>The &gt;70% rule and the -250 floor overlap only between 70.00% and 71.43%</h3>
+<p class="small">A zero-vig fair price of -250 is exactly 1.400 decimal, or 71.4286%. Any selection above that probability prices shorter than -250 and fails the requested window; any selection at or below 70.00% fails the probability rule. The desk therefore treats the window as the binding constraint and publishes bigger favourites as Medium with the exclusion reason stated. A 5% bookmaker margin makes the overlap disappear entirely on offered prices, so the band test uses the zero-vig fair price and the offered price is shown separately.</p>
+<p class="source">Evidence: Arithmetic identity: American = -100/(1/p - 1); 1/0.714286 = 1.400.</p></article><article class="card" id="F-FEC-02">
+<div class="kicker">F-FEC-02 · high severity</div>
+<h3>Carried evidence is capped at Medium even when it lands inside the band</h3>
+<p class="small">4 rows have carried official inputs and an in-band 70-71.43% selection (darts 2, rugby-league 2). They keep their prices but cannot be High, because this desk did not re-read the source; every one is published as Medium with the cap stated on the row.</p>
+<p class="source">Evidence: COORDINATION.md s50; data/fec05fb4/desk.json rows[].evidence_status</p></article><article class="card" id="F-FEC-03">
+<div class="kicker">F-FEC-03 · high severity</div>
+<h3>The model is transparent but not calibrated out of sample</h3>
+<p class="small">Every price comes from a documented logit or normal model with published constants. There is no measured hit rate for these constants and no closing-line value study. A High label means the desk&#x27;s stated rule was satisfied, not that a 71% winner has been demonstrated.</p>
+<p class="source">Evidence: Methodology page; model constants in data/fec05fb4/desk.json method</p></article><article class="card" id="F-FEC-04">
+<div class="kicker">F-FEC-04 · medium severity</div>
+<h3>EuroLeague&#x27;s preview contradicts its own standings table</h3>
+<p class="small">Valencia are 4-2 in the table but 5-1 in the Round 7 preview; Real Madrid are 1-3 away in the table but 1-4 in the preview; Olympiacos are 564 points in six games (94.0 per game) but 98.2 in the preview; Valencia are 583/6 = 97.17 but 98.3. Every numeric input uses the table; the prose figures appear only in quoted analysis and are flagged on the affected rows.</p>
+<p class="source">Evidence: https://www.euroleaguebasketball.net/en/euroleague/standings/ ; https://www.euroleaguebasketball.net/euroleague/news/game-center-round-7-el2627/</p></article><article class="card" id="F-FEC-05">
+<div class="kicker">F-FEC-05 · medium severity</div>
+<h3>Seven EuroLeague games miss High only because availability was not confirmed</h3>
+<p class="small">The official Round 7 injury report exists for Efes/Besiktas and for Milan/Barcelona. For Bayern, Dubai, Maccabi, Real Madrid, Baskonia, Crvena Zvezda, Zalgiris, ASVEL, Olympiacos, Fenerbahce, Paris and Valencia the report was not filed at 12:36Z. An unlisted late absence can move a 70% cover by several points, so those seven in-band selections are published as Medium.</p>
+<p class="source">Evidence: https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-fantasy/</p></article><article class="card" id="F-FEC-06">
+<div class="kicker">F-FEC-06 · medium severity</div>
+<h3>PDC pages returned a cookie wall on re-fetch</h3>
+<p class="small">The PDC schedule and preview pages returned only a consent wall at 12:34Z. The official draw, seeds and session windows are carried from the 07:44Z read, so the two near-band darts rows are Medium and their tie times remain blank.</p>
+<p class="source">Evidence: https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/</p></article><article class="card" id="F-FEC-07">
+<div class="kicker">F-FEC-07 · medium severity</div>
+<h3>32 legacy listings have no verified start time</h3>
+<p class="small">Tennis (11), snooker (11), cricket (5), golf (4) and eSports (1) rows carry a date but no verified clock. They are published blank and unpriced on their category pages and are not counted as upcoming.</p>
+<p class="source">Evidence: data/fec05fb4/desk.json listing_only</p></article><article class="card" id="F-FEC-08">
+<div class="kicker">F-FEC-08 · high severity</div>
+<h3>The NHL record-only model disagrees with the market reference</h3>
+<p class="small">NHL.com publishes a DraftKings moneyline beside every game. The model, which uses only points percentage, differs by up to 21 points from the de-vigged market on this board. No NHL row can be High while that gap exists, and the size of the gap is printed on every NHL row.</p>
+<p class="source">Evidence: https://www.nhl.com/scores/2026-10-22</p></article><article class="card" id="F-FEC-09">
+<div class="kicker">F-FEC-09 · medium severity</div>
+<h3>MLB postseason records are 0-0 in the official payload</h3>
+<p class="small">The World Series schedule reports leagueRecord 0-0 for both clubs, so the model uses the final regular-season records (Brewers 103-59, Rays 98-64). Pitchers, bullpens, parks and postseason effects are not modelled, and all five games share the same two inputs.</p>
+<p class="source">Evidence: https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-22&amp;endDate=2026-10-29&amp;hydrate=team,venue</p></article><article class="card" id="F-FEC-10">
+<div class="kicker">F-FEC-10 · medium severity</div>
+<h3>Five categories have no verified upcoming fixture</h3>
+<p class="small">Tennis, snooker, golf, greyhounds and eSports have no row with a verified future start time at this cut-off. Their pages show the captured listings, blank and flagged, rather than invented fixtures. This is a coverage gap, not a claim that no such fixtures exist.</p>
+<p class="source">Evidence: Coverage table</p></article><article class="card" id="F-FEC-11">
+<div class="kicker">F-FEC-11 · low severity</div>
+<h3>EuroLeague evidence expires at tip-off</h3>
+<p class="small">The nine EuroLeague rows tip off between 17:30Z on 22 October and 18:45Z on 23 October. This desk is an as-of 12:45Z snapshot; after those times the rows are historical and must not be read as pre-match picks.</p>
+<p class="source">Evidence: https://www.euroleaguebasketball.net/en/euroleague/standings/</p></article><article class="card" id="F-FEC-12">
+<div class="kicker">F-FEC-12 · low severity</div>
+<h3>OLBG is discovery only, never evidence</h3>
+<p class="small">OLBG cards were used to find events and to see what the market discusses. They set no rating, price or confidence, and no OLBG number is copied into this dataset.</p>
+<p class="source">Evidence: https://www.olbg.com/betting-odds</p></article><article class="card" id="F-FEC-13">
+<div class="kicker">F-FEC-13 · low severity</div>
+<h3>Desk-defined Medium and Low thresholds</h3>
+<p class="small">Medium = an in-band 70-71.43% selection that fails the High evidence test, or a winner at 62%+. Low = anything else that is priced. These thresholds are the desk&#x27;s own; they are not industry standards.</p>
+<p class="source">Evidence: Methodology page</p></article><article class="card" id="F-FEC-14">
+<div class="kicker">F-FEC-14 · low severity</div>
+<h3>2 High selections, 37 Medium and 48 Low/unpriced</h3>
+<p class="small">Both Highs are EuroLeague handicap or total lines originated at a 70-71.43% cover, not moneylines. Each carries a unique 60-word prediction, two-sided official evidence and a fresh read of the availability report. No High was issued for a big favourite just because it was a big favourite.</p>
+<p class="source">Evidence: data/fec05fb4/desk.json rows[].tier</p></article></div>
+</main>
+<footer class="bottom"><div class="wrap">
+<p>Snapshot 2026-10-22 12:45 UTC. Every price is a desk-originated fair price, not a bookmaker quote. Blank cells mean the value was not verified from an official source.
+2 High; 37 Medium; 27 Low; 21 unpriced. <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a> · <a href="../data/fec05fb4/desk.json">desk.json</a> · <a href="../data/fec05fb4/rows.csv">rows.csv</a></p>
+</div></footer>
+</body></html>
