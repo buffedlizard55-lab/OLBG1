@@ -22,7 +22,7 @@ class Seeds(unittest.TestCase):
         from pipeline.config import SPORT_INDEX,EXCLUDED_IDS
         self.assertEqual(len(SPORT_INDEX),17);self.assertFalse({s['olbg_id'] for s in SPORT_INDEX.values()}&EXCLUDED_IDS)
     def test_observed_counts(self):
-        self.assertEqual(len(self.rows),108);self.assertEqual(len(self.stats),43)
+        self.assertEqual(len(self.rows),108);self.assertEqual(len(self.stats),42)
     def test_every_capture_has_valid_hash(self):
         for c in self.caps.values():self.assertTrue(verify_capture(c))
     def test_tampered_capture_rejected(self):
@@ -50,6 +50,8 @@ class Seeds(unittest.TestCase):
         r=next(r for r in self.stats if r['team']=='Nashville Predators')
         self.assertEqual((r['wins'],r['losses'],r['ot_losses'],r['points']),(3,2,3,9))
     def test_madrid_record_quarantined(self):self.assertFalse(any(r['team']=='Real Madrid' for r in self.stats))
+    def test_valencia_cross_source_conflict_has_no_price(self):
+        self.assertFalse(any(r['team']=='Valencia Basket' for r in self.stats));f=next(r for r in self.rows if 'Valencia Basket' in (r['facts']['participant_a'],r['facts']['participant_b']));self.assertFalse(originate(f,self.stats,self.at)['markets'])
     def test_future_source_is_not_fresh(self):
         r=copy.deepcopy(self.stats[0]);r['observed_before']=iso(self.at+timedelta(seconds=1));self.assertFalse(record_ok(r,self.at))
     def test_bad_record_arithmetic_rejected(self):

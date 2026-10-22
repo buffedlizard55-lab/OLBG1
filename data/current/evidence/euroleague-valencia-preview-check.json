@@ -1,0 +1,29 @@
+{
+  "id": "euroleague-valencia-preview-check",
+  "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/",
+  "final_url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/",
+  "role": "official",
+  "sport": "basketball",
+  "method": "retrieval-tool-selected-excerpts",
+  "observed_after": "2026-10-22T10:12:52Z",
+  "observed_before": "2026-10-22T10:19:25Z",
+  "http_status": null,
+  "raw_response_sha256": null,
+  "excerpt_policy": "Selected, normalized excerpts and JSON field projections; not a byte-for-byte response or a verbatim full-page transcript.",
+  "scope": "Chunks 0, 1 and 2 read; only the Valencia record passage is retained in this follow-up.",
+  "complete": false,
+  "notes": "The current preview still says 5-1; the separate standings row says 4-2. Both are observations, neither is an accepted current Valencia input.",
+  "observations": [
+    {
+      "id": "valencia-record",
+      "locator": "valencia-record",
+      "quote": "Paris (1-5) will try to put an end to a three-game losing streak against Valencia (5-1), which is coming off its first loss.",
+      "values": {
+        "team": "Valencia Basket",
+        "wins": 5,
+        "losses": 1
+      }
+    }
+  ],
+  "sha256": "1c4529823c452ccc82f3cd65fe675c9da4e696f2c07f20c6b1b4c981124f678a"
+}

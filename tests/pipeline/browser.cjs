@@ -50,10 +50,12 @@ const server=http.createServer((req,res)=>{
     await page.locator('#clear-filters').click();
     const download=page.waitForEvent('download');await page.locator('#export-visible').click();const file=await download;assert.match(file.suggestedFilename(),/\.csv$/);
     await page.locator('[data-sort]').click();assert.equal(await page.locator('th[aria-sort]').first().getAttribute('aria-sort'),'descending');
+    const times=await page.locator('#match-table tbody tr').evaluateAll(rows=>rows.map(r=>r.dataset.start).filter(Boolean));assert.deepEqual(times,[...times].sort().reverse(),'UTC time sort must use exact starts, not source-local dates');
     const first=snapshot.fixtures.find(r=>r.in_window);await page.goto(base+'verification.html#'+first.id);assert.ok(await page.locator('[id="'+first.id+'"]').evaluate(e=>e.open));
     await page.goto(base+'markets.html');assert.equal(await page.locator('.market-book').count(),priced);
     await page.locator('#search').fill('does-not-exist');assert.equal(await page.locator('.market-book:visible').count(),0);await page.locator('#clear-filters').click();
     await page.goto(base+'sports/darts.html');assert.match(await page.locator('main').textContent(),/No verified match rows/);assert.ok(await page.locator('#export-visible').isDisabled());
+    for(const route of ['coverage.html','audit.html','live-refresh.html','live-verification.html']){await page.goto(base+route);assert.match(await page.locator('main').textContent(),/canonical home/);assert.match(await page.locator('main').textContent(),/archived version/);}
     await page.goto(base+'predictions.html');assert.match(await page.locator('main').textContent(),/No selection passes/);
     // Expiry must remove displayed selections, probabilities and prices—not only change a badge.
     await page.goto(base+'picks.html');await page.clock.setFixedTime(new Date(Date.parse(snapshot.generated_at)+48*3600*1000));await page.reload();

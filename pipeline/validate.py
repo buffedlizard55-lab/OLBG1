@@ -88,9 +88,10 @@ def validate_data(directory=CURRENT):
 
 class HTML(HTMLParser):
     def __init__(self):
-        super().__init__(convert_charrefs=True);self.links=[];self.ids=[];self.rows=[];self.row=None;self.has_td=False;self.h1=0;self.title=False
+        super().__init__(convert_charrefs=True);self.links=[];self.ids=[];self.rows=[];self.row=None;self.has_td=False;self.h1=0;self.title=False;self.body={}
     def handle_starttag(self,tag,attrs):
         d=dict(attrs)
+        if tag=='body':self.body=d
         if tag=='h1':self.h1+=1
         if tag=='title':self.title=True
         if d.get('id'):self.ids.append(d['id'])
@@ -111,10 +112,13 @@ def validate_site(out):
         if path not in cache:
             h=HTML();h.feed(path.read_text(encoding='utf-8'));cache[path]=h
         return cache[path]
+    unmanaged={p.name for p in out.glob('*.html')}-set(manifest['pages'])-{'release-review.html'}
+    if unmanaged:errors.append('Unregistered root HTML (archive it or register a canonical route): '+', '.join(sorted(unmanaged)))
     for rel in manifest['pages']:
         path=out/rel
         if not path.is_file():errors.append(rel+': missing page');continue
         h=parsed(path)
+        if h.body.get('data-snapshot')!=manifest['generated_at']:errors.append(rel+': canonical snapshot marker missing or mismatched')
         if h.h1!=1 or not h.title:errors.append(rel+': heading/title structure')
         if len(h.ids)!=len(set(h.ids)):errors.append(rel+': duplicate HTML IDs')
         for index,links in enumerate(h.rows,1):

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "session": "257e6674-olbg1",
   "observed_after": "2026-10-22T07:17:40Z",
-  "observed_before": "2026-10-22T08:29:13Z",
+  "observed_before": "2026-10-22T10:19:25Z",
   "method": "Selected excerpts of actually read official pages; not a raw HTTP archive; no legacy row recertification.",
   "fixtures": [
     {
@@ -1638,7 +1638,8 @@
       "verified_before": "2026-10-22T07:30:30Z",
       "expires_at": "2026-10-22T13:17:40Z",
       "notes": [
-        "UTC is a deterministic conversion of explicitly published CEST (UTC+02:00)."
+        "UTC is a deterministic conversion of explicitly published CEST (UTC+02:00).",
+        "Valencia input quarantined: fresh official preview says 5-1, standings say 4-2 over six games. Both observations retained; no inferred correction or refreshed fixture expiry."
       ],
       "kind": "match"
     },
@@ -5694,22 +5695,6 @@
       "as_of": "2026-10-22"
     },
     {
-      "id": "euroleague-round7-record-69-5-b",
-      "source_id": "euroleague-round7",
-      "observation_id": "record-69-5-b",
-      "observed_after": "2026-10-22T07:17:40Z",
-      "observed_before": "2026-10-22T07:30:30Z",
-      "team": "Valencia Basket",
-      "team_id": "Valencia Basket",
-      "competition": "EuroLeague",
-      "season": "2026-27",
-      "wins": 5,
-      "losses": 1,
-      "games_played": 6,
-      "games_played_method": "wins + losses",
-      "as_of": "2026-10-22"
-    },
-    {
       "id": "nhl-standings-20261021-6",
       "source_id": "nhl-standings-20261021",
       "observation_id": "6",
@@ -6208,6 +6193,8 @@
     "aflw-empty-article",
     "wst-empty-report",
     "mlb-season-20261022",
+    "euroleague-valencia-standings-check",
+    "euroleague-valencia-preview-check",
     "olbg-robots",
     "olbg-sitemap",
     "olbg-darts-sample"
