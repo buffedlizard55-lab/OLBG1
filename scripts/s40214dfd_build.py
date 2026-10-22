@@ -165,12 +165,19 @@ def main():
             f'<tr><td>{e(r["sport"])}</td><td><span class="badge {cls}">{e(status)}</span></td>'
             f'<td class="num">{r["rows"]}</td><td class="small">{e(r["detail"])}</td><td>{src}</td></tr>')
 
+    cov_data = desk["coverage"]
+    n_scope = len(cov_data)
+    n_priced = sum(1 for r in cov_data if r["status"] == "priced")
+    n_notver = sum(1 for r in cov_data if r["status"] == "not verified")
+    n_listed = sum(1 for r in cov_data if r["status"].startswith("listed"))
+    n_none = sum(1 for r in cov_data if r["status"] == "no in-scope fixture")
+    no_price = n_scope - n_priced
+
     index_body = f"""
 <p class="lede">This desk re-read official league, tour and governing-body pages on 22 October 2026,
 originated its own fair prices for every fixture it could verify, graded each selection, and wrote
 full predictions only for the selections that clear the brief's two High-confidence rules at the same
-time. {17 - c["sports_listed"]} of the seventeen in-scope sports produced no verified row in this
-session; each is listed with the reason on the coverage page rather than filled with invention.</p>
+time. {no_price} of the {n_scope} in-scope sports carry no priced row in this session ({n_notver} could not\nbe verified at all, {n_listed} is listed without a price, {n_none} had no in-scope fixture); each is\nlisted with the reason on the coverage page rather than filled with invention.</p>
 
 <div class="grid">
   <div class="kpi"><div class="n">{c["priced_fixtures"]}</div><div class="l">priced fixtures</div></div>
@@ -405,9 +412,9 @@ hurling, horse racing, cycling and specials are removed. This table records exac
 achieved for each one, so a missing sport is visible as a gap instead of being silently absent.</p>
 <div class="wrap"><table><thead><tr><th>Sport</th><th>Status</th><th class="num">Rows published</th>
 <th>What was verified</th><th>Official page</th></tr></thead><tbody>{''.join(cov_full)}</tbody></table></div>
-<h2>Why eleven sports have no rows</h2>
-<div class="card"><p>Eleven of the seventeen sports produced no publishable row because an official
-page did not yield a verifiable fixture list or a verifiable form input in this session:</p>
+<h2>Why {no_price} sports carry no price</h2>
+<div class="card"><p>{n_notver} of the {n_scope} in-scope sports produced no publishable row at all because an
+official page did not yield a verifiable fixture list or a verifiable form input in this session:</p>
 <ul>
 <li><strong>Tennis</strong> — the ATP tour scores page returns live cards and completed results, not a future order of play, and the rankings table did not render.</li>
 <li><strong>Darts</strong> — the PDC tournaments page returned a consent wall and no fixture text.</li>
@@ -416,6 +423,10 @@ page did not yield a verifiable fixture list or a verifiable form input in this 
 <li><strong>Cricket</strong> — the ICC matches URL returned a 404.</li>
 <li><strong>Rugby league, handball, volleyball, golf, motor racing, eSports, greyhounds</strong> — no official fixture page was read, so no row and no price is claimed.</li>
 </ul>
+<p><strong>Snooker</strong> is not in that list: eight Round 3 pairings were read from WST, but the page
+states no timezone and offers no ranking table, so the matches are listed with a blank clock and no
+price. <strong>Gaelic football</strong> had no in-scope fixture at all — the only match on the official
+GAA page inside the window is shinty-hurling, which the brief excludes.</p>
 <p>Each of these is a coverage failure, not a finding about the sport. Filling them from memory or
 from an aggregator would break the verification rule this desk is built on.</p></div>
 """

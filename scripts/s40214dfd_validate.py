@@ -221,6 +221,29 @@ def check_sources(desk):
             err(f"{fx['id']}: excluded sport present")
 
 
+def check_coverage_arithmetic(desk):
+    """The headline coverage numbers must reconcile with the coverage table itself."""
+    rows = desk["coverage"]
+    n_scope = len(rows)
+    n_priced = sum(1 for r in rows if r["status"] == "priced")
+    n_notver = sum(1 for r in rows if r["status"] == "not verified")
+    n_listed = sum(1 for r in rows if r["status"].startswith("listed"))
+    n_none = sum(1 for r in rows if r["status"] == "no in-scope fixture")
+    no_price = n_scope - n_priced
+    if n_notver + n_listed + n_none != no_price:
+        err(f"coverage statuses do not add up: {n_notver} not verified + {n_listed} listed + "
+            f"{n_none} no fixture != {no_price} without a priced row")
+    if desk["counts"]["sports_in_scope"] != n_scope:
+        err(f"counts.sports_in_scope {desk['counts']['sports_in_scope']} != coverage rows {n_scope}")
+    idx = (ROOT / "40214dfd" / "index.html").read_text()
+    cov = (ROOT / "40214dfd" / "coverage.html").read_text()
+    if f"{no_price} of the {n_scope} in-scope sports" not in idx:
+        err(f"index.html does not state the reconciled coverage headline "
+            f"({no_price} of {n_scope})")
+    if f"{n_notver} of the {n_scope} in-scope sports" not in cov:
+        err(f"coverage.html does not state the reconciled not-verified count ({n_notver} of {n_scope})")
+
+
 def check_pages(desk):
     pages = sorted(OUT.rglob("*.html"))
     if len(pages) < 10:
@@ -279,6 +302,7 @@ def main():
     check_tiers(desk)
     check_predictions(desk, nums)
     check_sources(desk)
+    check_coverage_arithmetic(desk)
     n_pages = check_pages(desk)
     print(f"frames: {len(desk['fixtures'])} fixtures, "
           f"{desk['counts']['markets']} markets, {desk['counts']['outcomes']} outcomes, "

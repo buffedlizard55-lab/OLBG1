@@ -3455,8 +3455,9 @@ publish job `119825526923` "Publish canonical GitHub Pages" completed in 30 s. T
 at 12:36Z, not from `_site`): the dashboard renders **26 priced fixtures / 299 markets originated /
 598 priced outcomes / 7 High selections / 7 written predictions / 10 flagged findings**; the seven
 High rows read `-236 70.26%`, `-238 70.43%`, `-244 70.92%`, `-242 70.80%`, `-247 71.19%`,
-`-241 70.64%`, `-242 70.72%`; the coverage table shows the three priced sports and the fourteen
-not-verified / no-fixture sports with their reasons. `flagged.html` was also fetched and its
+`-241 70.64%`, `-242 70.72%`; the coverage table shows **14 sports without a priced row** — 12 that
+could not be verified at all, Snooker listed without a price, Gaelic football with no in-scope
+fixture — each with its reason. `flagged.html` was also fetched and its
 cross-desk table reproduces all twelve `53674ac8` rows with the verdict column intact, and its
 F-402-10 entry credits `ee3c3e8f-olbg1` / PR #112 rather than this session.
 
