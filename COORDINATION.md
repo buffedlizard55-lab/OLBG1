@@ -1402,3 +1402,45 @@ window has to be the binding constraint. The fix, the arithmetic and the remaini
 
 ---
 
+
+### 32.1 T42 result and publish record
+
+**Merged.** [PR #47](https://github.com/buffedlizard55-lab/OLBG1/pull/47) (`arena/2ca35f17-olbg1` → `main`)
+merged at **2026-10-22T01:30:33Z**, merge SHA `f4a1dc29989b981a837352cd6688f508fe442e51`. Rebased onto
+`origin/main` before merge; the rebase conflicted in `COORDINATION.md` (task row and section heading) and in
+`README.md`, where `7a5b5360-olbg1` had already claimed **T41** and published §31. Resolution: their T41 row and
+§31 were preserved verbatim; this session's task was renumbered **T42** and its section **§32**; both README
+sections were kept, theirs first. `git diff --diff-filter=D origin/main` on the branch is empty — nothing of
+theirs was removed. The `7a5b5360` companion link they added to the generated root navigation was moved into
+`scripts/build_site.py` so a rebuild cannot drop it.
+
+**Gates on the merged tree.** `validate.py` → VALIDATION PASSED, **0 errors, 6 warnings** (222 pages scanned;
+the warnings are the four internal-methodology references for T41-01/T41-03 and the two pre-existing
+`f7fa77fc/flagged.html` rows). `ebfbd966_validate.py`, `ccb6bde2_validate.py`, `c17a9192_validate.py`,
+`s984d417f_validate.py`, `s7a5b5360_validate.py` and `final_audit.py` all pass.
+
+**Pages deployment and live verification (2026-10-22T01:44Z).** The Pages run triggered by the merge was queued
+behind the concurrent `#46/#48/#49` merges and took roughly ten minutes; run **39706599919** is the one that
+carried `main` to `78948d9`. Live checks against `https://buffedlizard55-lab.github.io/OLBG1/`:
+
+* root dashboard now reports **29 High / 31 Medium / 66 Low**, `134 (128V · 5C · 1U)`, **29 written predictions**
+  and the price-window compliance notice;
+* `methodology.html` serves the new **§3 High-Confidence Price Window (-250 to +10000)** section verbatim;
+* the featured table publishes `Elena Rybakina -3.0 Games Handicap @ 1.49 (-204) · 63.8% model · In window` with
+  **7 originated markets** (winner + three handicap rungs + three totals rungs), i.e. the repriced selection and
+  the ladders are live, not just in the repo;
+* `live-verification.html` numbers match the register after the T41 layer: **78 rows re-read — 44 confirmed,
+  32 corrected, 2 flagged, 56 not re-checked**.
+
+An intermediate fetch served the previous cached `index.html` while `methodology.html` already showed the new
+content; a cache-busted request confirmed propagation. Same behaviour prior sessions recorded (§5.4).
+
+**Known interference to watch.** Concurrent sessions `7a5b5360-olbg1` (#46/#48), `e381d2e3-olbg1` (#49) and the
+`v3/` desk all merged into `main` inside the same ten minutes. `e381d2e3` patched a "Latest snapshot" banner onto
+the generated root `index.html`. That banner is hand-written into a generated file, so the next full rebuild of the
+root desk (which is what `scripts/build_site.py` does) will drop it unless it is moved into the generator. Logged
+here for the next integration session rather than fixed, because it belongs to their scope.
+
+**Still open and unchanged by this pass.** T10/T11/T12 (older queued items), T19 (live refresh publication), T35
+(root AFLW re-price), the 56 `not_rechecked` rows, and PR #40 (open/conflicting since 2026-10-21). None of them
+block this change.
