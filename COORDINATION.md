@@ -1403,6 +1403,29 @@ window has to be the binding constraint. The fix, the arithmetic and the remaini
 ---
 
 
+### 31.3 Live deployment check
+
+* **PR #48** — https://github.com/buffedlizard55-lab/OLBG1/pull/48 — **MERGED** 2026-10-22T01:35:06Z,
+  merge commit `45840436cc4c419c9786a0a4ba0f5787828b8cb9` (documentation only: this publish record).
+* **A second concurrent session also claimed T41.** Session `e381d2e3-olbg1` merged **PR #49**
+  (`78948d9`, "v3: rebuild 22 Oct board from official sources with band-rule pricing") after both of the
+  above. `git diff --stat 4584043 78948d9 -- 7a5b5360 data/7a5b5360` is empty, so the `/7a5b5360/` desk
+  is byte-identical before and after it. Three sessions now hold T41 under three scopes: this one
+  (`/7a5b5360/` desk), `2ca35f17` (root price-window enforcement) and `e381d2e3` (root board rebuild).
+* **GitHub Pages.** Deployment runs for `8ddd8b4` and `f4a1dc2` were cancelled by the queue when newer
+  commits landed; the run for `78948d9` completed **success** at 2026-10-22T01:35:51Z and the Pages API
+  reports `status: built`. Live check performed against the CDN:
+  `https://buffedlizard55-lab.github.io/OLBG1/7a5b5360/picks.html` and
+  `.../7a5b5360/sports/snooker.html` return the rendered desk (real prices, tiers and per-row official
+  source links), which confirms the tree is being served.
+* **CDN caching note (not a site defect).** The directory URL `/OLBG1/7a5b5360/` and
+  `/OLBG1/7a5b5360/assets/style.css` were requested *before* the first successful build and still
+  returned the repository's custom 404 from the edge cache at the time of writing; pages that were never
+  requested pre-deploy (picks, sports/snooker, markets) served correctly on the first attempt. That is
+  the documented 404-cache behaviour, not a missing file: `git ls-tree origin/main 7a5b5360/` lists every
+  page and `7a5b5360/assets/style.css`, and `scripts/s7a5b5360_validate.py` resolves all 14 pages and
+  their assets locally with 0 errors.
+
 ### 32.1 T42 result and publish record
 
 **Merged.** [PR #47](https://github.com/buffedlizard55-lab/OLBG1/pull/47) (`arena/2ca35f17-olbg1` → `main`)
