@@ -218,7 +218,7 @@ reason it is missing, never as an empty slate.
   </div>
   <div>
     <div class="card"><h2 style="margin-top:0">The two High picks</h2>
-      {''.join(f'<div class="pickcard" style="margin-bottom:12px"><h3><a href="high-confidence.html#{e(s["id"])}">{e(s["label"])}</a></h3>'
+      {''.join(f'<div class="pickcard" style="margin-bottom:12px"><h3><a href="high-confidence.html#{e(s["id"])}">{e(next(pp["selection_label"] for pp in M.PREDICTIONS if pp["selection"] == s["id"]))}</a></h3>'
                f'<div class="meta"><span class="badge b-high">High</span>'
                f'<span>{s["p"]*100:.2f}% model chance</span><span>fair {money(s["p"])}</span>'
                f'<span>decimal {dec(s["p"])}</span></div>'
@@ -230,7 +230,7 @@ reason it is missing, never as an empty slate.
     <div class="card mt"><h2 style="margin-top:0">Verify it yourself</h2>
       <p class="small">Every fixture row links to the official page it was read from. {len(D.SOURCES)} official
       and discovery sources are listed with the exact URL and the session read window. Nothing is filled in from memory.</p>
-      <p class="small"><a href="sources.html">Sources and read times →</a></p>
+      <p class="small"><a href="sources.html">Sources and read window →</a></p>
     </div>
   </div>
 </div>
