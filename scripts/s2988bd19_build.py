@@ -94,7 +94,7 @@ def page(path, title, desc, body, active, extra_head=""):
 <span class="pill">17 in-scope sports · 8 excluded</span>
 <a class="pill" href="{up}flagged.html">Flags do not block publication</a></div>
 {body}
-<div class="foot"><span>Independent research · not affiliated with OLBG · no betting advice.</span>
+<div class="foot"><span>Independent research · not affiliated with OLBG · no betting advice.</span> 
 <span>Session {e(D.SESSION)} · task {e(D.TASK)} · <a href="{REPO}">source</a></span></div>
 </main></div></body></html>"""
     p = OUT / path
@@ -138,7 +138,9 @@ def main():
                     medium=sum(1 for s in summ["selections"] if s["tier"] == "Medium"),
                     low=sum(1 for s in summ["selections"] if s["tier"] == "Low"),
                     predictions=len(M.PREDICTIONS), flags=len(M.FLAGS), sources=len(D.SOURCES)),
-        sources=D.SOURCES,
+        read_window=D.READ_WINDOW,
+        read_note=D.READ_NOTE,
+        sources=[dict(order=i + 1, **x) for i, x in enumerate(D.SOURCES)],
         fixtures=fixtures,
         markets=[dict(id=m["id"], sport=m["sport"], lambda_home=m["lambda_home"],
                       lambda_away=m["lambda_away"], total=m["total"],
@@ -167,7 +169,7 @@ def main():
             ("High picks", len(HIGH), "strict window + evidence"),
             ("Predictions", len(M.PREDICTIONS), "≥30 words, unique"),
             ("Flags", len(M.FLAGS), "published for review"),
-            ("Sources read", len(D.SOURCES), "URL + UTC read time")]
+            ("Sources read", len(D.SOURCES), "URL + read window")]
     kpi_html = '<div class="grid kpis">' + "".join(
         f'<div class="card kpi"><div class="l">{e(l)}</div><div class="v">{v}</div>'
         f'<div class="n">{e(n)}</div></div>' for l, v, n in kpis) + "</div>"
@@ -198,8 +200,9 @@ High label only when a selection clears <strong>both</strong> rules in the brief
 blank on purpose.</p>
 {kpi_html}
 <div class="notice"><strong>Read this first.</strong> Soccer/football, American football, boxing, UFC/MMA,
-hurling, horse racing, cycling and specials are out of scope and absent. Eleven in-scope sports have no
-verified fixture in this snapshot; they appear as gaps with the reason, never as an empty slate.
+hurling, horse racing, cycling and specials are out of scope and absent. Fourteen in-scope sports have no
+officially verified fixture in this snapshot, eleven of them with no listing at all; each appears with the
+reason it is missing, never as an empty slate.
 <a href="flagged.html">See coverage and flags →</a></div>
 <div class="grid two mt">
   <div class="card"><h2 style="margin-top:0">Next priced fixtures</h2>
@@ -218,11 +221,11 @@ verified fixture in this snapshot; they appear as gaps with the reason, never as
                f'<p class="small muted" style="margin:0">{e(by_id[s["id"].split(":")[0]]["away_name"])} at '
                f'{e(by_id[s["id"].split(":")[0]]["home_name"])} · {e(start(by_id[s["id"].split(":")[0]]))}</p></div>'
                for s in HIGH)}
-      <p class="small"><a href="high-confidence.html">Why only two, and which seven other selections fell in the window →</a></p>
+      <p class="small"><a href="high-confidence.html">Why only two, and which five other selections fell in the window →</a></p>
     </div>
     <div class="card mt"><h2 style="margin-top:0">Verify it yourself</h2>
       <p class="small">Every fixture row links to the official page it was read from. {len(D.SOURCES)} official
-      and discovery sources are listed with the exact URL and read time. Nothing is filled in from memory.</p>
+      and discovery sources are listed with the exact URL and the session read window. Nothing is filled in from memory.</p>
       <p class="small"><a href="sources.html">Sources and read times →</a></p>
     </div>
   </div>
@@ -482,15 +485,15 @@ could establish in one session, not a claim of worldwide coverage.</div>"""
     page("flagged.html", "Coverage & flags", "The flag register and the per-sport coverage status.", body, "flags")
 
     # ---------------------------------------------------------------- sources
-    src_rows = [[e(s["id"]), f'<a href="{e(s["url"])}" rel="noopener">{e(s["publisher"])}</a>',
-                 e(s["what"]), e(s["label"]), e(s["read_at"])] for s in D.SOURCES]
+    src_rows = [[str(i + 1), e(s["id"]), f'<a href="{e(s["url"])}" rel="noopener">{e(s["publisher"])}</a>',
+                 e(s["what"]), e(s["label"])] for i, s in enumerate(D.SOURCES)]
     body = f"""<p class="eyebrow">Sources</p><h1>{len(D.SOURCES)} pages read, with times</h1>
 <p class="lede">Official league and governing-body feeds come first. OLBG pages are used only to discover
 events, never to price them, and the PDC/ATP/URC reads are recorded precisely because they failed to give a
 fixture list.</p>
-<div class="notice">Read times are the session's own UTC timestamps. A page read at 21:04Z can change after
-that moment; treat each value as an observation with a timestamp, not as a live feed.</div>
-{table(["Id", "Publisher", "What was read", "Label", "Read (UTC)"], src_rows)}
+<div class="notice"><strong>Read window: {e(D.READ_WINDOW)}.</strong> {e(D.READ_NOTE)} A page read inside
+that window can change afterwards; treat each value as an observation, not as a live feed.</div>
+{table(["#", "Id", "Publisher", "What was read", "Label"], src_rows, numeric=(0,))}
 <h2>Verification method</h2>
 <ul class="clean small">
 <li>Fixtures: NHL schedule feed, MLB StatsAPI schedule, NBA schedule page. Venue and start time transcribed
@@ -502,7 +505,7 @@ fact.</li>
 <li>Results: NHL scoreboard feed for 19 and 20 October, used verbatim in the two predictions.</li>
 <li>Discovery-only: OLBG hubs. Their tip percentages are votes; they are not probabilities and were not used.</li>
 </ul>"""
-    page("sources.html", "Sources", "Every page read this session, with URL and read time.", body, "sources")
+    page("sources.html", "Sources", "Every page read this session, with its URL and the session read window.", body, "sources")
 
     # ---------------------------------------------------------------- methodology
     body = f"""<p class="eyebrow">Methodology</p><h1>How the numbers were made</h1>

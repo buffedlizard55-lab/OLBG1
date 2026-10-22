@@ -3829,7 +3829,7 @@ PDC consent wall, the ATP current-scores page (completed matches only), the Euro
 rows) and the URC fixtures URL (404) are recorded as failed reads rather than worked around.
 
 **What was published.** 43 listings, 20 officially verified, 18 priced with **90 market lines / 600 priced
-selections**, **2 High picks**, 2 written predictions, 12 flags, 28 sources and 28 pages at `/2988bd19/`.
+selections**, **2 High picks**, 2 written predictions, 13 flags, 28 sources and 28 pages at `/2988bd19/`.
 
 **The gate result.** The brief's two rules (p > 70% and fair price inside −250…+10000) intersect only at
 70.00%–71.43%. 127 selections clear 70%, 7 sit inside the window, and 2 also have player-, form- and
@@ -3845,4 +3845,29 @@ warnings in `f7fa77fc/flagged.html`, 793 pages link-checked. `pipeline.validate 
 **Nothing certified beyond what was read.** Eleven in-scope sports had no official read this session and are
 published as gaps. NBA and EuroLeague fixtures are unpriced for the reasons stated in F-2988-02 and
 F-2988-03. The prices are our own fair estimates, not bookmaker offers.
+
+### 60.2 Publication receipts, and one defect found after the merge
+
+**PR #141** — https://github.com/buffedlizard55-lab/OLBG1/pull/141 — opened and **merged**
+2026-10-22T20:59:26Z as **`2962aa8`** without waiting for approval, per the brief. Pre-merge CI
+`Evidence, model, site and browser gates` **passed in 43 s** (run 39853404956). Post-merge the legacy
+`pages build and deployment` run **39853531710** completed successfully for `2962aa8`, and the canonical
+`Canonical research checks and Pages` run 39853532952 was still in progress at the time of this record.
+
+**Live read-back (deployed bytes, not `_site`).** `https://buffedlizard55-lab.github.io/OLBG1/2988bd19/index.html`
+was fetched at 21:00Z and served this merge's own content: 43 listings, 20 officially verified, 18 priced,
+90 market lines, 600 priced selections, 2 High picks, 2 predictions, 12 flags (the count at merge time) and
+28 sources. The two High rows read `TOR +1.5 — 70.64% — −241` and `SJS over 1.5 — 71.27% — −248`, and all
+seventeen sport cards rendered. That path exists only in `2962aa8`.
+
+**Defect found by that read-back, and fixed in a follow-up commit:** the first build stamped every source
+with a minute-level read time (for example 21:04Z) while the sandbox clock at the time of the read-back was
+21:00Z — i.e. some published timestamps were *after* the page that carried them. The cause is that the fetch
+tool does not expose per-request HTTP metadata, so the stamps were reconstructed rather than observed.
+Correction: all per-source `read_at` values are removed and replaced by one honest observation window
+(2026-10-22T20:48Z to 20:59Z) plus the order in which the reads were issued; the desk's build stamp is now
+2026-10-22T21:00:00Z. This is published as **F-2988-13**. Two cosmetic copy defects from the same read-back
+are fixed with it: the overview said "seven other selections" where five were capped, and the overview
+notice understated how many sports lack an officially verified fixture. No fixture, probability, price, tier
+or prediction changed; the validator still re-derives all 600 prices with 0 errors.
 

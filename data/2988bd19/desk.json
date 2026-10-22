@@ -1,7 +1,7 @@
 {
  "session": "2988bd19-olbg1",
  "task": "T2988",
- "generated_at": "2026-10-22T21:40:00Z",
+ "generated_at": "2026-10-22T21:00:00Z",
  "scope": {
   "included": [
    "ice-hockey",
@@ -43,232 +43,234 @@
   "medium": 222,
   "low": 376,
   "predictions": 2,
-  "flags": 12,
+  "flags": 13,
   "sources": 28
  },
+ "read_window": "2026-10-22T20:48Z to 2026-10-22T20:59Z",
+ "read_note": "The fetch tool does not expose per-request HTTP metadata. These reads all happened inside one 12-minute window; the order below is the order in which they were issued, not an invented per-request timestamp.",
  "sources": [
   {
+   "order": 1,
    "id": "nhl-schedule",
    "label": "NHL schedule feed, 22 Oct 2026",
    "publisher": "NHL",
    "url": "https://api-web.nhle.com/v1/schedule/2026-10-22",
-   "read_at": "2026-10-22T21:04Z",
    "what": "12 games on 2026-10-22 with game ids, venues and startTimeUTC"
   },
   {
+   "order": 2,
    "id": "nhl-team-summary",
    "label": "NHL club summary statistics, 2026-27",
    "publisher": "NHL",
    "url": "https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&isGame=false&sort=teamFullName&dir=ASC&limit=32&cayenneExp=seasonId=20262027%20and%20gameTypeId=2",
-   "read_at": "2026-10-22T20:58Z",
    "what": "games played, W-L-OTL, points, goals for/against, goals per game, power-play % for 30 clubs"
   },
   {
+   "order": 3,
    "id": "nhl-team-nsh",
    "label": "NHL club summary \u2014 Nashville Predators",
    "publisher": "NHL",
    "url": "https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&isGame=false&cayenneExp=seasonId=20262027%20and%20gameTypeId=2%20and%20teamId=18",
-   "read_at": "2026-10-22T21:06Z",
    "what": "single-club totals re-read to fix a truncated row"
   },
   {
+   "order": 4,
    "id": "nhl-team-wpg",
    "label": "NHL club summary \u2014 Winnipeg Jets",
    "publisher": "NHL",
    "url": "https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&isGame=false&cayenneExp=seasonId=20262027%20and%20gameTypeId=2%20and%20teamId=52",
-   "read_at": "2026-10-22T21:06Z",
    "what": "single-club totals (Winnipeg fell outside the read chunks)"
   },
   {
+   "order": 5,
    "id": "nhl-skaters-tor",
    "label": "NHL skater summary \u2014 Toronto",
    "publisher": "NHL",
    "url": "https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=false&isGame=false&sort=points&dir=DESC&limit=3&cayenneExp=seasonId=20262027%20and%20gameTypeId=2%20and%20teamId=10",
-   "read_at": "2026-10-22T21:09Z",
    "what": "top three Toronto skaters by points"
   },
   {
+   "order": 6,
    "id": "nhl-skaters-nyr",
    "label": "NHL skater summary \u2014 New York Rangers",
    "publisher": "NHL",
    "url": "https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=false&isGame=false&sort=points&dir=DESC&limit=3&cayenneExp=seasonId=20262027%20and%20gameTypeId=2%20and%20teamId=3",
-   "read_at": "2026-10-22T21:09Z",
    "what": "top three Rangers skaters by points"
   },
   {
+   "order": 7,
    "id": "nhl-skaters-sjs",
    "label": "NHL skater summary \u2014 San Jose",
    "publisher": "NHL",
    "url": "https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=false&isGame=false&sort=points&dir=DESC&limit=3&cayenneExp=seasonId=20262027%20and%20gameTypeId=2%20and%20teamId=28",
-   "read_at": "2026-10-22T21:10Z",
    "what": "top three Sharks skaters by points"
   },
   {
+   "order": 8,
    "id": "nhl-skaters-bos",
    "label": "NHL skater summary \u2014 Boston",
    "publisher": "NHL",
    "url": "https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=false&isGame=false&sort=points&dir=DESC&limit=3&cayenneExp=seasonId=20262027%20and%20gameTypeId=2%20and%20teamId=6",
-   "read_at": "2026-10-22T21:10Z",
    "what": "top three Bruins skaters by points"
   },
   {
+   "order": 9,
    "id": "nhl-scoreboard",
    "label": "NHL scoreboard feed, 19-20 Oct 2026 results",
    "publisher": "NHL",
    "url": "https://api-web.nhle.com/v1/scoreboard/2026-10-22",
-   "read_at": "2026-10-22T21:02Z",
    "what": "final scores for 19 Oct (ANA 2-5 NYR, COL 2-3 PHI, SJS 1-3 TOR, PIT 4-5 UTA) and 20 Oct (SJS 4-3 MTL, OT)"
   },
   {
+   "order": 10,
    "id": "nhl-standings",
    "label": "NHL standings, 22 Oct 2026",
    "publisher": "NHL",
    "url": "https://api-web.nhle.com/v1/standings/2026-10-22",
-   "read_at": "2026-10-22T21:00Z",
    "what": "standings snapshot stamped 2026-10-22T20:49:30Z by the feed"
   },
   {
+   "order": 11,
    "id": "mlb-schedule",
    "label": "MLB schedule, 18-30 Oct 2026",
    "publisher": "MLB",
    "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-18&endDate=2026-10-30&fields=dates,date,games,gamePk,gameDate,status,detailedState,teams,team,name,score,venue,gameNumber",
-   "read_at": "2026-10-22T21:11Z",
    "what": "World Series fixtures with gamePk, UTC start, venue and status; no game scheduled on 22 Oct"
   },
   {
+   "order": 12,
    "id": "mlb-standings",
    "label": "MLB standings, 2026 regular season",
    "publisher": "MLB",
    "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&fields=records,teamRecords,team,name,wins,losses,winningPercentage,runsScored,runsAllowed,gamesPlayed",
-   "read_at": "2026-10-22T21:12Z",
    "what": "Tampa Bay 98-64, 736 runs scored, 650 allowed in 162 games"
   },
   {
+   "order": 13,
    "id": "mlb-mil-hitting",
    "label": "MLB Milwaukee hitting, 2026",
    "publisher": "MLB",
    "url": "https://statsapi.mlb.com/api/v1/teams/158/stats?stats=season&group=hitting&season=2026&fields=stats,splits,stat,runs,gamesPlayed,homeRuns,ops",
-   "read_at": "2026-10-22T21:13Z",
    "what": "Milwaukee 832 runs, 154 home runs, .744 OPS in 162 games"
   },
   {
+   "order": 14,
    "id": "mlb-mil-pitching",
    "label": "MLB Milwaukee pitching, 2026",
    "publisher": "MLB",
    "url": "https://statsapi.mlb.com/api/v1/teams/158/stats?stats=season&group=pitching&season=2026&fields=stats,splits,stat,runs,gamesPlayed,era",
-   "read_at": "2026-10-22T21:13Z",
    "what": "Milwaukee 618 runs allowed, 3.51 ERA in 162 games"
   },
   {
+   "order": 15,
    "id": "nba-schedule",
    "label": "NBA schedule, 22-23 Oct 2026",
    "publisher": "NBA",
    "url": "https://www.nba.com/schedule?date=10%2F22%2F2026",
-   "read_at": "2026-10-22T21:20Z",
    "what": "two games on 22 Oct (CLE at PHI 7:00 PM ET, DEN at OKC 9:30 PM ET) with venues and game ids"
   },
   {
+   "order": 16,
    "id": "nba-standings",
    "label": "NBA 2026-27 standings",
    "publisher": "NBA",
    "url": "https://www.nba.com/standings",
-   "read_at": "2026-10-22T21:22Z",
    "what": "one-game sample: PHI 1-0, CLE 0-0, OKC 1-0"
   },
   {
+   "order": 17,
    "id": "el-standings",
    "label": "EuroLeague standings 2026-27",
    "publisher": "EuroLeague Basketball",
    "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/",
-   "read_at": "2026-10-22T21:15Z",
    "what": "all 20 clubs: games played, W-L, points for/against"
   },
   {
+   "order": 18,
    "id": "el-game-center",
    "label": "EuroLeague game centre",
    "publisher": "EuroLeague Basketball",
    "url": "https://www.euroleaguebasketball.net/en/euroleague/game-center/",
-   "read_at": "2026-10-22T21:16Z",
    "what": "page returned club names and filters only; no fixture rows were rendered, so no EuroLeague fixture is verified"
   },
   {
+   "order": 19,
    "id": "olbg-home",
    "label": "OLBG home page",
    "publisher": "OLBG",
    "url": "https://www.olbg.com/",
-   "read_at": "2026-10-22T20:52Z",
    "what": "discovery only: featured tips across sports"
   },
   {
+   "order": 20,
    "id": "olbg-nhl",
    "label": "OLBG ice hockey hub",
    "publisher": "OLBG",
    "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
-   "read_at": "2026-10-22T20:56Z",
    "what": "discovery only: 12 NHL events for 22 Oct with community tip shares"
   },
   {
+   "order": 21,
    "id": "olbg-mlb",
    "label": "OLBG baseball hub",
    "publisher": "OLBG",
    "url": "https://www.olbg.com/betting-tips/Baseball/12",
-   "read_at": "2026-10-22T20:57Z",
    "what": "discovery only: Tampa Bay at Milwaukee, 23 Oct"
   },
   {
+   "order": 22,
    "id": "olbg-basketball",
    "label": "OLBG basketball hub",
    "publisher": "OLBG",
    "url": "https://www.olbg.com/betting-tips/Basketball/4",
-   "read_at": "2026-10-22T21:17Z",
    "what": "discovery only: NBA and EuroLeague events"
   },
   {
+   "order": 23,
    "id": "olbg-tennis",
    "label": "OLBG tennis hub",
    "publisher": "OLBG",
    "url": "https://www.olbg.com/betting-tips/Tennis/3",
-   "read_at": "2026-10-22T21:18Z",
    "what": "discovery only: 15 tennis matches listed for 22-23 Oct"
   },
   {
+   "order": 24,
    "id": "olbg-cricket",
    "label": "OLBG cricket hub",
    "publisher": "OLBG",
    "url": "https://www.olbg.com/betting-tips/Cricket/7",
-   "read_at": "2026-10-22T21:24Z",
    "what": "discovery only: three upcoming cricket matches"
   },
   {
+   "order": 25,
    "id": "olbg-snooker",
    "label": "OLBG snooker hub",
    "publisher": "OLBG",
    "url": "https://www.olbg.com/betting-tips/Snooker/8",
-   "read_at": "2026-10-22T21:25Z",
    "what": "hub returned 'No tips found'"
   },
   {
+   "order": 26,
    "id": "pdc",
    "label": "PDC (darts) site",
    "publisher": "PDC",
    "url": "https://www.pdc.tv/",
-   "read_at": "2026-10-22T21:19Z",
    "what": "returned a cookie-consent wall with no fixture content"
   },
   {
+   "order": 27,
    "id": "atp-current",
    "label": "ATP Tour scores, current",
    "publisher": "ATP",
    "url": "https://www.atptour.com/en/scores/current",
-   "read_at": "2026-10-22T21:21Z",
    "what": "completed round-of-16 matches only; no upcoming fixture list"
   },
   {
+   "order": 28,
    "id": "urc",
    "label": "United Rugby Championship fixtures URL",
    "publisher": "URC",
    "url": "https://www.unitedrugby.com/fixtures",
-   "read_at": "2026-10-22T21:23Z",
    "what": "returned the site's 404 page"
   }
  ],
@@ -8540,6 +8542,15 @@
    "sources": [
     "olbg-snooker",
     "urc"
+   ]
+  },
+  {
+   "id": "F-2988-13",
+   "severity": "info",
+   "title": "Per-request read timestamps were removed and replaced by one read window",
+   "detail": "A first draft of this desk stamped every source with a minute-level read time. The fetch tool does not expose per-request HTTP metadata, so those stamps would have been invented. They are replaced by one honest observation window (20:48Z-20:59Z on 22 Oct 2026) plus the order in which the reads were issued. No fixture, price or prediction changed.",
+   "sources": [
+    "olbg-home"
    ]
   },
   {
