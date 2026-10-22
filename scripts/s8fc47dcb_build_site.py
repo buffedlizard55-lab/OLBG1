@@ -1,5 +1,5 @@
 """
-s8fc47dcb_build_site.py — renders the T57 desk at /8fc47dcb/ from data/8fc47dcb/*.json.
+s8fc47dcb_build_site.py — renders the T60 desk at /8fc47dcb/ from data/8fc47dcb/*.json.
 Static, dependency-free; every fixture table row carries at least one official source link.
 """
 from __future__ import annotations
@@ -68,8 +68,8 @@ def shell(title, body, depth=0):
         ("Sources", "sources.html"), ("Verification", "verification.html"), ("Flagged for Review", "flagged.html"),
         ("Primary desk", "../" * (depth + 1) + "index.html")])
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{e(title)} — OLBG1 T57 desk ({DESK})</title><link rel="stylesheet" href="{p}assets/style.css"></head><body>
-<header><h1>OLBG1 — Fresh {DATE} desk <span class="small">(T57 · session {DESK})</span></h1>
+<title>{e(title)} — OLBG1 T60 desk ({DESK})</title><link rel="stylesheet" href="{p}assets/style.css"></head><body>
+<header><h1>OLBG1 — Fresh {DATE} desk <span class="small">(T60 · session {DESK})</span></h1>
 <p>Future-only fixtures after {ds['cutoff_utc']} · own fair-price lines · strict High = selected-line model probability &ge;70% at fair odds 1.40–101.00 (−250…+10000) · every High re-read on an official page this session. Model output only — not betting advice.</p><nav>{nav}</nav></header>
 <main>{body}</main>
 <footer>Prices are this desk's own model estimates (fair 0% overround headline; 5%-vig equivalent shown alongside), not market prices and not betting advice. Fixture facts link to official governing-body sources; values that could not be confirmed are blank or flagged, never inferred. <a href="{p}flagged.html">Flagged for Review</a> · <a href="{p}verification.html">Verification register</a> · Data: <code>data/{DESK}/</code> in the repository. Built {DATE}.</footer>

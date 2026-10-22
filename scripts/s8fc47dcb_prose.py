@@ -1,5 +1,5 @@
 """
-s8fc47dcb_prose.py — hand-written predictions for the T57 strict High picks.
+s8fc47dcb_prose.py — hand-written predictions for the T60 strict High picks.
 
 Every fact below was read on an official governing-body page on 2026-10-22 in
 this session (EHF standings, NHL schedule/standings APIs, IRL world rankings,

@@ -1,5 +1,5 @@
 """
-s8fc47dcb_validate.py — gate for the T57 desk. Fails (exit 1) on any error.
+s8fc47dcb_validate.py — gate for the T60 desk. Fails (exit 1) on any error.
 Checks data integrity, strict-High rules, prose rules, per-row official
 sources, and internal link integrity across the generated namespace.
 """

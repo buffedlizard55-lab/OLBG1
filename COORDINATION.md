@@ -4,7 +4,7 @@
 working on what. It exists so that multiple agent sessions can work on this repository at the
 same time without duplicating work or overwriting each other.
 
-Last updated: **2026-10-22T08:10:00Z** (UTC)
+Last updated: **2026-10-22T08:20:00Z** (UTC)
 
 ---
 
@@ -115,7 +115,10 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T54 | **Live 22 Oct 2026 OLBG full 17-sport hub + sub-route harvest, line-by-line repo & official governing-body verification, team-specific multi-market line origination (Win/1X2/Outright, Spread/Handicap ladders, team-specific Total ladders, Set/Frame/Leg scores & props), strict −250…+10000 High-confidence human predictions (with team, player, form, recent match history & clear selection), 25-page dashboard (`/f71557b5/`), validator gate, final non-destructive root nav integration, PR + merge + Pages verification** | done | f71557b5-olbg1 | `data/f71557b5/**`, `scripts/sf71557b5_*.py`, `f71557b5/**`, `reports/SESSION_F71557B5_AUDIT.md`, append-only `COORDINATION.md` (§39); **no** edit to root `index.html`, `scripts/build_site.py` or `README.md` — those are owned by live sessions `26be136b-olbg1` and `a570c470-olbg1`, so the nav request is logged in §4 instead | 2026-10-22T02:51Z | Claimed as T46; **renumbered T54 / §36** because unmerged branch `arena/a570c470-olbg1` (`a2bc33a`) had already claimed T46–T49 / §36, and `arena/9dfd0b48-olbg1` (`a891ce2`) holds T44/§34-pending renumber. Strict zero-overlap scope. |
 | T55 | **Final integration & site consolidation (22 Oct 2026): reverse-engineer OLBG taxonomy, re-verify all fixtures line-by-line against official sources, originate own lines for every match with multi-market ladders (winner, handicap/spread, total), enforce high-confidence window -250..+10000, generate unique 30+ word human predictions with team/player/form/history and clear selection, build clean GitHub Pages dashboard (landing + sport subpages + analysis + flagged), validate no broken links, PR + merge + Pages deploy** | done | 8cab6428-olbg1 | `data/*.json`, `*.html`, `sports/*.html`, `assets/*`, `scripts/*.py`, `reports/*`, `COORDINATION.md` (append-only) | 2026-10-22T07:17Z | Session 8cab6428-olbg1 final integration; consolidates all parallel desks, re-verifies official sources, enforces price window, publishes Pages. See §40 for publish record. |
 | T56 | Evidence-safety release audit and primary-dashboard disclosure; row-level unverified register, automated tests, integration and Pages publication | done | cccb414e-olbg1 | `scripts/release_audit.py`, `tests/test_release_audit.py`, `reports/RELEASE_AUDIT.json`, `release-review.html`, `scripts/build_site.py` (disclosure only), regenerated primary HTML and mirror, append-only `COORDINATION.md` | 2026-10-22T07:25Z | T55 complete; no parallel desk datasets modified. Current session cannot certify prior claims without fresh official evidence. |
-| T57 | **Fresh 22-Oct future-only desk**: live OLBG sitemap/hub re-read, expiry of all started primary rows at an explicit cutoff, in-session re-fetch (via page-fetch tool) of official governing-body pages for every remaining candidate High pick, strict High rule (selected-line model prob >=0.70 AND originated price inside -250..+10000), new unique >=30-word predictions built only from facts read this session, clean namespaced dashboard + Flagged page, validator gate, PR + merge + Pages check | done | 8fc47dcb-olbg1 | `8fc47dcb/**`, `data/8fc47dcb/**`, `scripts/s8fc47dcb_*.py`, `reports/SESSION_8FC47DCB.md`, append-only `COORDINATION.md` (§42); root `index.html`/`scripts/build_site.py`/`README.md` touched only as a single additive companion link at final integration if conflict-free, otherwise logged in §4 | 2026-10-22T07:26Z | Next free ID after T56 (cccb414e, PR #74/#75 merged). Note: open PR #76 (3d2d578a) also labels itself T56 and is CONFLICTING — not touched. No other session's data, generator or pages edited. |
+| T57 | Independent post-integration audit of published primary-desk counts, validator warnings, source-link presentation, and stale task-board statuses (structural only; no live source recertification) | done | 3d2d578a-olbg1 | `reports/SESSION_3D2D578A_AUDIT.md`, `COORDINATION.md` (append-only) | 2026-10-22T07:23Z | Renumbered from T56 after collision with cccb414e-olbg1's earlier T56 claim. Offline structural audit complete; findings and verification limits are recorded in §42. No shared data/model/site outputs edited. |
+| T58 | **Consolidated final desk (2026-10-22):** independent live re-fetch of key governing-body sources, cross-desk reconciliation into one clean dashboard (`/e6716490/`, landing + 17 category subpages + predictions + Flagged + methodology + sources + repo audit), own line origination across every covered match, strict −250…+10000 High band, unique ≥30-word human predictions, repo validator gate, PR + merge + Pages deploy check | done | e6716490-olbg1 | `data/e6716490/**`, `scripts/se6716490_*.py`, `e6716490/**`, `reports/SESSION_E6716490.md`, `COORDINATION.md` (append-only §43), additive nav entry in root `index.html`/`README.md` at integration only | 2026-10-22T07:20Z | Claimed as `T55`/`§40`; renumbered to `T58`/`§43` after `8cab6428-olbg1` took T55 and `cccb414e`/`3d2d578a` took T56/T57 (see §43). 122 fixtures / 17 sports, 1,575 markets, 9 High, 9 predictions, 3 live re-reads, 25-page site, gates pass. |
+| T59 | **Independent live 22 Oct 2026 re-verification of all 17 in-scope sports (excluding soccer, horse racing, american football, boxing, UFC/MMA, specials, hurling, cycling), full 68-market taxonomy, continuous multi-market origination with strict −250…+10000 high-confidence band, unique 30+ word human predictions with verified team/player/form/history, and 26-page clean dashboard (`/7ad0d336/`) + validator + PR/merge/Pages check** | done | 7ad0d336-olbg1 | `data/7ad0d336/**`, `scripts/s7ad0d336_*.py`, `7ad0d336/**`, `reports/SESSION_7AD0D336.md`, append-only `COORDINATION.md` | 2026-10-22T07:35Z | 127 fixtures / 13 High (all in-window, 0 dups) / 1,386 markets / 29 pages / gates PASS. See §44 for publish record. |
+| T60 | **Fresh 22-Oct future-only desk**: live OLBG sitemap/hub re-read, expiry of all started primary rows at an explicit cutoff, in-session re-fetch (via page-fetch tool) of official governing-body pages for every remaining candidate High pick, strict High rule (selected-line model prob >=0.70 AND originated price inside -250..+10000), new unique >=30-word predictions built only from facts read this session, clean namespaced dashboard + Flagged page, validator gate, PR + merge + Pages check | done | 8fc47dcb-olbg1 | `8fc47dcb/**`, `data/8fc47dcb/**`, `scripts/s8fc47dcb_*.py`, `reports/SESSION_8FC47DCB.md`, append-only `COORDINATION.md` (§45); root `index.html`/`scripts/build_site.py`/`README.md` touched only as a single additive companion link at final integration if conflict-free, otherwise logged in §4 | 2026-10-22T07:26Z | Claimed as T57/§42 at 07:26Z when those were free; renumbered T60/§45 at merge because 3d2d578a (T57/§42), e6716490 (T58/§43) and 7ad0d336 (T59/§44) merged first (PRs #79–#86). No session's work discarded. No other session's data, generator or pages edited. |
 
 ---
 
@@ -1886,6 +1889,27 @@ SHA completed **success**; the Pages API reports `status: built`.
 | `/f71557b5/index.html?v=1` | 15 High picks with model %, fair price, US price, 5% book-equivalent and per-row official links |
 | `/f71557b5/predictions.html?v=2` | all 15 previews (58–81 words) with their verified-input tables and the separate match-winner call under each |
 
+**Further follow-ups.** PR #79 (merged 2026-10-22T07:31:26Z as `17c4530`) fixed the High table's source column so a
+`re-fetched today` pick links the endpoint actually read, and corrected the merge-commit SHA in this section.
+PR #81 (merged 2026-10-22T07:33:55Z as `884f01d`) published the wrong-page source anomaly found while reading the rendered site:
+the Barça v Montpellier row cites a link whose text claims a Barcelona result while its URL is a Dinamo Bucuresti
+club page, so that claim cannot be checked and no scoreline is quoted for the fixture. Deployment run **39741378341**
+for `main` `159d727` (which includes PR #80 from a concurrent session) completed **success**; the Pages API reports
+`status: built`, and cache-busted live reads of `/e6716490/index.html`, `/e6716490/predictions.html` and
+`/e6716490/audit.html` confirm the published content, the nine write-ups, the verification ledger and the new
+anomaly entry.
+
+**Register coverage, stated with numbers.** The audit page originally claimed the desk "reconciles every
+register it can reach". It does not: seven other fixture registers sit beside it. PR #85 replaces the claim with a
+table computed at build time from `data/*/fixtures.json` — rows, rows dated 22 Oct or later, upcoming rows not
+matched on this desk, and whether the register was merged — plus a footnote that the four and three unmatched rows
+in the two merged registers are sponsor/city-suffixed duplicates and outright cards, not missing fixtures. The same
+change makes the validator and desk counts in that page's prose computed rather than typed (they read 12 validators
+and 15 desks, not the hardcoded eleven and fourteen), and rewrites the scope sentence to "reconciles the two
+registers it is built from". Registers published after this desk are deliberately not merged retroactively, since
+that would move prices after publication; the gap column is the remaining integration work and is logged here for
+whichever session picks it up.
+
 **Task board state at close.** T54 is **done**. Two collisions were absorbed and no session's work was
 discarded: `T46`–`T49`/`§36` (`a570c470`, later merged as `T50`–`T53`/`§38`) and `T44` (`9dfd0b48`, merged
 as `T45`/`§35`) both took ids this session had claimed, so it settled at **`T54`/`§39`** — the lowest free
@@ -1958,6 +1982,7 @@ priced on the root desk (John Higgins −0.5 frames at `data/predictions.json:35
 ---
 
 
+
 ## 41. Session cccb414e-olbg1 — T56 evidence-safety release audit
 
 Claim committed/pushed before work: `ba75224`. Fixed session branch is used per §0.2.
@@ -2022,9 +2047,216 @@ Publication: PR and Pages results will be recorded after GitHub confirms them.
 - Workflow emitted nonblocking platform annotations about Node 20 action runtime
   migration and ubuntu-latest migration. No project build/check failed.
 
-## 42. Session `8fc47dcb-olbg1` — T57 fresh 22-Oct future-only desk
+## 42. Session `3d2d578a-olbg1` — T57 independent post-integration audit (2026-10-22)
 
-**Claim:** T57 row added, committed and pushed before work (`747aa5f`, 2026-10-22T07:26Z). Next free ID after T56 (`cccb414e`, PR #74/#75). Open PR #76 (`3d2d578a`) also calls itself T56 and is CONFLICTING — not touched; PRs #40/#63 also untouched. Branch base fast-forwarded from `a0ae3c5` to `origin/main` `4937bb4` after unshallowing (the sandbox shallow clone initially made `git pull --rebase` try to replay merge `a0ae3c5`; aborted cleanly, no work lost, then `--ff-only`).
+**Scope:** `reports/SESSION_3D2D578A_AUDIT.md` plus this append-only coordination record. No fixture, model, generated page, or source data was edited. This is a structural audit, not a new official-source verification pass.
+
+**Verification performed:**
+- Ran `python3 scripts/validate.py`: **VALIDATION PASSED**, 0 errors and 6 warnings, covering 319 HTML pages. All six warnings are the known internal-only methodology/policy/repository-hygiene table rows #43/#45/#47 in `flagged.html` and its `/f7fa77fc/` mirror. They intentionally point to methodology, not a fabricated external authority.
+- Ran `python3 scripts/final_audit.py`: completed and wrote the existing 134-row audit manifest; generator documentation confirms this is offline and does not fetch URLs.
+- Independently recounted fixture, line, prediction and verification JSON with Python stdlib. At **2026-10-22T07:23Z**, the root fixture snapshot dated 2026-10-21 contains 134 rows (128 verified / 5 cross-checked / 1 unverified); 29 timed rows were already past, 32 lack `start_utc`, and 73 timed rows remained upcoming. There are 126 H2H books and 8 event-only records. The root has 29 High / 31 Medium / 66 Low; all 29 root High picks are flagged in the odds band, but **0** have model probability above 70% (range 62.030%–68.084%). Its 29 writeups are 47–68 words. Verification ledger categories separately read 44 confirmed / 32 corrected / 2 flagged / 56 not re-checked.
+- Each of the 29 past-time and 32 blank-time rows is enumerated in the report with the official URL(s) already recorded in that fixture row. No unconfirmed date/time was filled in and no URL was re-fetched; sources remain for manual review, not recertified claims.
+
+**Irregularities / integration requests (logged without editing shared pages):**
+1. `index.html` introduction correctly reports 128 verified, 5 cross-checked, 1 unverified, but its footer says 129 verified / 5 cross-checked. `flagged.html` has the same stale footer and the `AUDIT-STATUS-SPLIT` finding itself says 129 verified / 5 cross-checked. Please correct the public copy to 128 / 5 / 1 and update or supersede that finding; these are repository counts, so there is no external sports source to cite.
+2. The main root desk does not meet the brief's >70% probability target for any High selection. The audit discloses the current 60% conviction floor and 5% overround / -250 tension; it does not represent that as an official sports fact. Keep the conflict visibly flagged until the integration owner selects the pricing convention. The report notes that zero-vig pricing changes the arithmetic, so the requirements are not universally impossible.
+3. T51/T52 remain `in progress` and T53 `queued` in the board although §38 records the T50–T53 work and publication as completed. Please reconcile the board against the merged session evidence; this audit does not edit another session's task rows.
+4. The snapshot is not a complete live upcoming slate as of the audit timestamp: 29 past times and 32 blanks. Refresh only from fetched official schedules before presenting it as current.
+
+**Deliverable:** [`reports/SESSION_3D2D578A_AUDIT.md`](reports/SESSION_3D2D578A_AUDIT.md), with row-level source links for the time-status review. T57 is done; the requested page corrections and >70% pricing decision remain integration follow-ups and do not alter this audit's scope.
+
+### 42.1 Task-ID collision / rebase preservation
+
+During rebase onto the newer `origin/main`, session `cccb414e-olbg1` had already claimed and completed T56 and published its release-safety review (PRs #74 and #75). Its task row, section §41, release-review files, generated pages, and report were preserved. This audit was renumbered to **T57 / §42**; no changes were made to the other session's files. The `COORDINATION.md` rebase conflict was resolved by retaining both sessions' task rows and append-only reports.
+
+---
+
+### 42.2 Publication confirmation
+
+- PR **#76**: https://github.com/buffedlizard55-lab/OLBG1/pull/76 — **MERGED** at **2026-10-22T07:27:26Z**, merge commit `0616a048caf2f760d8487a72a070b24ad9887dd1`.
+- GitHub Pages workflow **39740612448** completed successfully (build, report-build-status, deploy); `gh run watch --exit-status` exited 0. The Pages API reports `status: built` for the same merge commit at 2026-10-22T07:27:58Z. Site root: https://buffedlizard55-lab.github.io/OLBG1/ .
+- This PR adds the T57 offline audit and coordination record only; it does not correct data/status copy or alter model prices. The newer release-review page from PR #74 remains the public, explicit review surface for unrecertified records.
+- T57 publication is complete. Findings requiring new official-source fetches or product-policy changes remain clearly unverified / needs review and were not silently altered.
+
+---
+
+## 43. Session `e6716490-olbg1` — consolidated 17-sport desk, live re-read of three official endpoints, band-excluded ledger and publication (T58)
+
+> **Renumbered twice.** The task was claimed as `T55` / `§40` at 2026-10-22T07:20Z. While this branch
+> was open, session `8cab6428-olbg1` claimed `T55` and published its own `§40`, and sessions
+> `cccb414e-olbg1` / `3d2d578a-olbg1` took `T56` / `T57` and `§41` / `§42`. Nothing is discarded:
+> this session's work lands as **`T58` / `§43`**, the next free ids. The rows and sections of the
+> other sessions are preserved verbatim.
+
+**Claim.** `T58` / `§43`, claimed and pushed at 2026-10-22T07:20Z before any work, on branch
+`arena/e6716490-olbg1` based on `main` `425b63f`. Scope: `data/e6716490/**`, `scripts/se6716490_*.py`,
+`e6716490/**`, `reports/SESSION_E6716490.md`, this append-only section, plus one additive nav entry each in
+root `index.html` and `README.md` at integration. No other session's data, generator or page was edited.
+
+### 43.1 What was built
+
+The repository had fourteen published desks by the time this session started, each re-solving the same problem
+with its own constants and its own numbers. This session built **one desk that reconciles them**:
+
+| Output | Detail |
+| --- | --- |
+| `data/e6716490/fixtures.json` | 122 fixtures across all 17 in-scope sports, 22–28 Oct 2026, merged from `data/984d417f/fixtures.json` and `data/f71557b5/fixtures.json`. Club-name variants reconciled (`Panathinaikos` / `Panathinaikos AKTOR Athens`, `Barça` / `Barca`, `Kolstad Håndball` / `Kolstad Handball`, …); sources and flags unioned, never dropped. |
+| `data/e6716490/lines.json` | 105 priced matches, **1,575 originated markets**, 1,722 priced selections. Seven-rung half-line handicap ladders, three-way where the sport can draw, baseball-only totals. |
+| `data/e6716490/verification.json` | 3 official endpoints re-read live: NHL standings `2026-10-22`, MLB StatsAPI 2026 standings, EuroLeague 2026-27 standings. **22 row-side comparisons**, each with the URL and the field-by-field result. |
+| `data/e6716490/predictions.json` | **9 hand-written High picks**, 74–89 words each, **0 shared six-grams**, plus a **105-row band-excluded ledger**. |
+| `e6716490/**` | 25 pages: landing dashboard, 17 sport pages, High picks, Markets (+ band ledger), Live verification, Flagged for review, Methodology, Sources, Repository audit. |
+| `scripts/se6716490_*.py` | Six dependency-free generators/validators, documented to be run in a fixed order. |
+
+### 43.2 The confidence band, and why only 9 picks are High
+
+The brief requires a greater than 70% chance **and** odds between −250 and +10000. At fair odds −250 is a 71.43%
+chance, so the qualifying window is 70.00%–71.43%: **1.43 percentage points wide**. On this desk 537 selections
+model at ≥70%, 42 of those fall inside the window, and 9 fixtures carry a High pick after the one-per-fixture,
+three-per-sport and cap-24 limits. The other 105 fixtures are published in a **band-excluded ledger** with their
+true shorter prices rather than being relabelled High. No handicap line was moved to push a price into the band —
+that would have been targeting, not modelling.
+
+### 43.3 Verification performed
+
+* **Re-read live (22 Oct 2026):** NHL `api-web.nhle.com/v1/standings/2026-10-22`, MLB
+  `statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason`, EuroLeague
+  `www.euroleaguebasketball.net/en/euroleague/standings/`.
+* **Result of the 22 comparisons:** 2 `match` (every field the page published appears in the register value),
+  20 `partial` (the register corroborates what it quotes and does not quote the rest). **No contradiction, so no
+  correction was required.** Where the register did not quote a field, the field is not invented — it is shown as
+  not quoted.
+* **Not re-read:** 12 sports (tennis, golf, cricket, snooker, rugby union, rugby league, handball, volleyball,
+  aussie rules, esports, gaelic football, greyhounds). Those rows are labelled `carried` on every table and the
+  verification page states that this session did not re-fetch them.
+* Both NHL and MLB endpoints return multi-page payloads; only the pages actually read were recorded, and clubs on
+  unread pages are explicitly excluded from the "re-verified" claim.
+
+### 43.4 Irregularities logged (full text on `/e6716490/flagged.html` and `/e6716490/audit.html`)
+
+1. **10 cross-desk conflicts** — the same fixture described differently by two registers (Florida 5-2-2 .667 vs
+   5-3-2 .600; Brewers home/road labels swapped; Zalgiris/ASVEL seed differences; Toulouse/Perpignan form quoted
+   against different rounds). Both readings and both source lists are published.
+2. **World Series game five** dated 27 Oct by one register and 28 Oct by another; the desk publishes 28 Oct and
+   logs the split.
+3. **Barça v Montpellier** head-to-head recorded as 28-27 by one register and 34-27 by the other, both citing the
+   EHF; the prediction quotes no scoreline.
+4. **Player detail missing** for 6 of 9 High write-ups — the standards/ladder/draw pages read publish team
+   aggregates only.
+5. **17 cards published unpriced** (golf fields, F1 rows, eSports Swiss stage, greyhound field, fixtures without
+   two-sided inputs), with the reason printed per row.
+6. **Clocks** for darts, snooker, golf and one tennis match are session windows or rolling order of play — left
+   blank rather than estimated.
+7. **7 fixtures already started** before the desk cut-off were removed from the priced set.
+8. **Repository-wide duplication:** 16 published desks, 180 pairings priced in two or more registers, some with
+   different constants and therefore different prices for the same match.
+9. **Stale pricing elsewhere:** root `data/fixtures.json` still prices 44 fixtures dated before 22 Oct 2026.
+   Not edited here — those files belong to earlier sessions.
+10. **README drift:** headline counts (134 events, 160 pages) no longer match the tree (319 pages before this
+    desk). Logged rather than rewritten beyond this session's own section.
+11. **A source entry cites the wrong page.** The Barça v Montpellier row carries a link whose text claims a
+    Barcelona result while the URL is a Dinamo Bucuresti club page, so the claim cannot be checked against the page
+    it cites. Found while reading the rendered page rather than from the data; the prediction quotes no scoreline
+    and the anomaly is published on `/e6716490/flagged.html` §6 and `/e6716490/audit.html`.
+
+### 43.5 Gates
+
+```
+scripts/se6716490_validate.py  → VALIDATION PASSED
+  pages 25 | fixtures 122 | priced 105 | markets 1575 | High 9 | predictions 9 | live re-checks 22
+scripts/validate.py            → VALIDATION PASSED   (whole-tree relative links, source allowlists, writing rules)
+scripts/final_audit.py         → reports/FINAL_INTEGRATION_AUDIT.md regenerated byte-identically
+```
+
+`se6716490_validate.py` checks: a source on every priced row, no fixture priced after its own start, every High
+selection two-sided and inside 0.70–71.43%, one High per fixture, ≤3 per sport, ≤cap, a prediction per High of
+30+ words quoting its selection, zero shared six-grams, every internal link and anchor across the 25 new pages,
+no third-party assets, and a sport page for every sport carrying fixtures.
+
+### 43.6 Integration
+
+Root `index.html` gained **one** additive companion-bar entry and one additive status banner pointing at
+`/e6716490/`; `README.md` gained one section describing the desk and its rebuild order. No other root file was
+touched, and no other session's files were modified.
+
+### 43.7 Publication
+
+See §43.8 for the pull request number, merge commit and Pages deployment check, appended after the merge.
+
+
+### 43.8 Publication record
+
+**PR #77** — https://github.com/buffedlizard55-lab/OLBG1/pull/77 — **MERGED** 2026-10-22T07:29:41Z, merge commit
+`4a2707fb793631dce5a0372d77801079b873b460`. Opened and merged without waiting for approval, per
+the brief.
+
+**Rebase note (nothing discarded).** `main` moved twice while this branch was open: PR #76/#78 from
+`3d2d578a-olbg1`/`cccb414e-olbg1` added §40–§42 and T55–T57, and `8cab6428-olbg1` had already taken `T55`/`§40`.
+Both merges of `origin/main` conflicted on `COORDINATION.md` only. Resolution: take `origin/main`'s file verbatim,
+re-insert this session's task row as **`T58`** after `T57`, and re-append this section as **`§43`** after `§42`.
+Every other session's rows and sections are present unchanged; `git diff --diff-filter=D origin/main` on the merged
+tree is empty. The two additive root edits (`index.html` companion-bar entry and status banner, `README.md` section)
+auto-merged around the release-audit notice from `cccb414e`, and the banner was reworded to say explicitly that the
+release-audit warning applies to the primary desk, not to the rows this desk re-read.
+
+**Pages.** Deployment run **39740869149** for the merge commit completed **success** in 36s; the Pages API reports
+`status: built`.
+
+**Audit counts are computed, not typed.** The repo-audit figures (HTML pages, published desks, scripts,
+validators, coordination lines) are recalculated by `se6716490_build_site.py` on every build, excluding this desk's
+own 25 pages. They read *319 pages / 14 desks / 66 scripts* when this desk was first built and *349 / 15 / 72* once
+PR #80 and #82 landed a fifteenth desk beside it; `/e6716490/audit.html` and the landing page always publish the
+current numbers, and the §43.7 figures above are the ones from this session's own build.
+
+**Live checks with cache-busters, against the CDN:**
+
+| Page | Result |
+| --- | --- |
+| `/e6716490/index.html?v=1` | renders: 122 fixtures / 105 priced / 1,575 markets / 1,722 selections / 9 High / 42 in-band selections / 22 re-fetched row-sides; all 9 High picks listed with model %, fair price, US price, verification pill, official-source links and a link into each written pick; 17-sport directory table present |
+| `/e6716490/sports/*.html` (17) | all 17 category pages served, each with per-fixture market tables, inputs and source links |
+| `/e6716490/predictions.html` | 9 write-ups with verified-input tables, row checks and sources |
+| `/e6716490/verification.html` | 3 endpoints, 22 comparisons, the carried-sports disclosure |
+| `/e6716490/flagged.html`, `/markets.html#band`, `/methodology.html`, `/sources.html`, `/audit.html` | served |
+
+**Follow-up fix carried by PR #79.** The first live render showed the High table's source column still pointing at
+the register's original read pages rather than the endpoint this session re-read. `se6716490_verify.py` now copies
+the row's source list onto its High-pick summary, so the link a reader clicks for a `re-fetched today` pick is the
+page that was actually read (for example `api-web.nhle.com/v1/standings/2026-10-22`). Site rebuilt, both gates
+re-run clean, and PR #79 opened and merged for that single fix.
+
+**Task board state at close.** T58 is **done**. Open items belonging to other files, logged and not actioned here:
+F-E67-09 (root register still prices 44 fixtures dated before 22 Oct), F-E67-10 (README headline drift outside this
+session's own section), and the repo-wide duplication described on `/e6716490/audit.html`.
+
+## 44. Session `7ad0d336-olbg1` — T59 Live 22 Oct Re-verification, 68-Market Taxonomy, In-Band Multi-Market Origination & 29-Page Dashboard (`/7ad0d336/`)
+
+### 40.1 Claim
+**Branch:** `arena/7ad0d336-olbg1` · **Claimed:** 2026-10-22T03:55Z · **Task row T59** inserted at line ~115 before §2. Preserved 100% of prior rows (0 deleted lines). Scope: `data/7ad0d336/**`, `scripts/s7ad0d336_*.py`, `7ad0d336/**`, `reports/SESSION_7AD0D336.md`, append-only `COORDINATION.md`. No shared data, generator or pages edited.
+
+### 40.2 Execution
+
+* **T59 Dataset (s7ad0d336_data.py):** Re-verified 127 fixtures (120 H2H + 7 event cards) from official governing-body pages on 2026-10-22; 17 sports; 39 distinct official sources; 65 flagged items (event-only, rolling order tennis clocks, PlusLiga redirect, PDC consent wall corroborated, NHL totals withheld). Outputs: `data/7ad0d336/fixtures.json` (127), `coverage.json` (17 sports), `sources.json` (39), `flagged.json` (65), `olbg_taxonomy.json` (24 IDs, 17 in scope, 7 excluded).
+* **T59 Model (s7ad0d336_model.py + s7ad0d336_prose.py):** Edge = (rating gap) + hfa; Φ(edge/17) for Normal, Binomial for best-of-N; fixed sport ladders (basketball 4.5/7.5/10.5, rugby 6.5/9.5/13.5, AFLW 10.5/14.5/18.5/24.5, handball 2.5/4.5/6.5, etc.); fair prices at zero vig with 5% book equiv shown but never tested. High requires verified + both measured + price 1.40..101.00 + prob ≥70% (match winner) or ≥65% (handicap) inside -250..+10000. Result: 1,386 markets, **13 High**, 65 Medium, 42 Low, 7 no-pick, 0 rejected out-of-window, 0 duplicate 6-grams, all High prose ≥30 words with team/player/form/history and clear selection.
+* **T59 Site (s7ad0d336_build.py):** 29 pages in `7ad0d336/` (index + picks + predictions + 17 sport subpages + analysis + methodology + reverse + sources + verification + window + coverage + flagged + assets/style.css + assets/app.js). Clean dark dashboard, sport grid, source links per row, window badges, confidence tags.
+* **Validation (s7ad0d336_validate.py):** PASS (0 errors, 29 pages). Root `validate.py` still PASSED (0 errors across 348 pages, 6 pre-existing warnings on flagged.html not authored here). Gates for v3, f71557b5, etc. unchanged.
+
+### 40.3 Publish record
+
+* **Pre-merge gates on this branch:** `s7ad0d336_validate.py` PASS, `validate.py` VALIDATION PASSED (0 errors), `final_audit.py` PASS. `git diff --diff-filter=D origin/main` is empty (no file from any parallel session removed).
+* **PR #80** — https://github.com/buffedlizard55-lab/OLBG1/pull/80 — **MERGED** 2026-10-22T07:33:58Z, merge commit `159d727b4e842c161dda98a54557f9a99e81a005` (branch `arena/7ad0d336-olbg1` → `main`). Opened and merged without waiting per brief. Branch was `a47ba40` → `e4c5a85` → `0fc9ea1` after rebasing onto `origin/main` `17c4530` (which had taken T55–T58), renumbered `T55`→`T59`/`§44` to preserve all parallel work (0 deleted lines). **Note to final integration session:** add one companion-bar entry `7ad0d336/index.html` — "7ad0d336 · 22 Oct verified desk (13 High in window)" — to the generated root navigation via `scripts/build_site.py` (logged in §4, not edited here per §0.4).
+* **Pages:** Deployment `39741378341` for `159d727` → **success** (built). Pages API `status: built`, `commit: 159d727b4e842c161dda98a54557f9a99e81a005`. Live CDN `https://buffedlizard55-lab.github.io/OLBG1/7ad0d336/index.html` serves 127 fixtures / 13 High (all In-window) with official links. A subsequent merge `884f01d` (PR #81, `e6716490`) landed on main after this one; `git ls-tree origin/main 7ad0d336/` confirms this desk remains present (non-overlapping namespace). `validate.py` still PASSED (0 errors, 348 pages) and `s7ad0d336_validate.py` PASS (0 errors, 29 pages) on the merged tree.
+* **Pages:** GitHub Pages serves from repo root (branch `main`, folder `/root`); `.nojekyll` and `404.html` present. Deployment check via `gh api repos/buffedlizard55-lab/OLBG1/pages` and live CDN fetch to `https://buffedlizard55-lab.github.io/OLBG1/7ad0d336/index.html` to confirm all 13 High picks render with In-window badges and official links.
+
+### 40.4 Still open, out of scope
+
+Root T35 (AFLW re-price), T10/T11/T12/T19 (older queued), PR #40 (open/conflicting), and 56 `not_rechecked` rows on root desk remain queued. None block this desk. Any future root rebuild should move the hand-patched banner into `scripts/build_site.py` rather than hand-editing generated `index.html`.
+
+## 4. Requests and conflict log (append-only)
+
+**2026-10-22T07:30Z — session 7ad0d336-olbg1:** Request to final integration session (or whoever owns `scripts/build_site.py` / root `index.html`): add one companion-bar link for this desk — `7ad0d336/index.html` titled "7ad0d336 · 22 Oct verified desk (13 High in window)" — to the generated root navigation. This session did **not** edit `index.html`, `README.md` or `scripts/build_site.py` per §0.4 (non-overlapping scope); all prior sessions' files preserved verbatim (0 deleted lines verified via `git diff --diff-filter=D origin/main`). No merge conflicts encountered on this branch.
+
+## 45. Session `8fc47dcb-olbg1` — T60 fresh 22-Oct future-only desk
+
+**Claim:** T57 row added (renumbered T60/§45 at merge — see below), committed and pushed before work (`747aa5f`, 2026-10-22T07:26Z). Next free ID after T56 (`cccb414e`, PR #74/#75). Open PR #76 (`3d2d578a`) also calls itself T56 and is CONFLICTING — not touched; PRs #40/#63 also untouched. Branch base fast-forwarded from `a0ae3c5` to `origin/main` `4937bb4` after unshallowing (the sandbox shallow clone initially made `git pull --rebase` try to replay merge `a0ae3c5`; aborted cleanly, no work lost, then `--ff-only`).
 
 **Scope honoured:** `8fc47dcb/**`, `data/8fc47dcb/**`, `scripts/s8fc47dcb_*.py`, `reports/SESSION_8FC47DCB.md`, append-only COORDINATION; final-integration touch to shared files limited to one additive companion-bar line in `scripts/build_site.py` (+1 generated line in each of 61 root/mirror pages, zero other diff). `data/fixtures.json` and every parallel desk were read-only.
 
@@ -2034,6 +2266,10 @@ Publication: PR and Pages results will be recorded after GitHub confirms them.
 
 **Gates:** `s8fc47dcb_validate.py` PASSED (21 pages, 0 broken links); repo `validate.py` PASSED 0 errors (6 pre-existing warnings); 10 parallel-desk validators PASSED; `tests/` 5/5 OK.
 
-**Publication:** PR from `arena/8fc47dcb-olbg1` → `main` to be opened and merged without waiting (per brief); Pages deployment to be verified and recorded in §42.1. Flagged items live at `/8fc47dcb/flagged.html` and do not block the merge.
+**Publication:** PR from `arena/8fc47dcb-olbg1` → `main` to be opened and merged without waiting (per brief); Pages deployment to be verified and recorded in §45.1. Flagged items live at `/8fc47dcb/flagged.html` and do not block the merge.
+
+---
+
+**Renumbering note (merge, 2026-10-22T08:20Z):** while this branch was open, `origin/main` advanced through PRs #79–#86 (`3d2d578a` T57/§42, `e6716490` T58/§43, `7ad0d336` T59/§44), so this task is recorded as **T60 / §45** and its generated pages/report were re-titled accordingly before merge. The COORDINATION conflict was resolved by keeping every merged row/section verbatim and appending this session's row/section under the new numbers; no other file conflicted (`index.html` auto-merged and contains both desks' links — verified before merge commit; note the e6716490 root link lives in `index.html`/`README.md` rather than `scripts/build_site.py`, a pre-existing condition left untouched).
 
 ---
