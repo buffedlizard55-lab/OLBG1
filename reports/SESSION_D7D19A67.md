@@ -209,6 +209,23 @@ at all (`cdn.nba.com` returned HTTP 500), so basketball coverage is EuroLeague o
 
 ## PR, merge and Pages receipts
 
-* PR: _appended post-merge_
-* Merge: _appended post-merge_
-* Pages verification: _appended post-merge by fetching a path that exists only in this merge_
+* **PR #136** — https://github.com/buffedlizard55-lab/OLBG1/pull/136 — pre-merge CI
+  `Evidence, model, site and browser gates` **pass** (42 s), merge state CLEAN.
+* **Merged 2026-10-22T13:18:06Z** as `5f32cf397c6ff67e5c1ee634f147db879f10bc2d`, without waiting for
+  approval.
+* **Post-merge workflow run 39785628781** on `main` **completed / success** at 2026-10-22T13:20:01Z,
+  including `Stage verified static artifact` and the `Publish canonical GitHub Pages` deploy job.
+* **Live Pages verified by byte read-back** of a path that exists only in this merge:
+  `https://buffedlizard55-lab.github.io/OLBG1/d7d19a67/index.html` returns HTTP 200 with this desk's KPI
+  tiles (55 / 26 / 99 / 215 / 7 / 15 / 4 / 8 / 16 / 12 / 16 / 13), the seventeen-sport coverage table and
+  all seven High picks with their official fixture links.
+* **Defect the read-back caught, and the correction.** The deployed overview priced the New Jersey pick at
+  −155 while the market explorer and the prediction prose said −156 for the same selection: the pick block
+  re-derived its American price from the rounded probability and the outcome block from the unrounded one,
+  on a value sitting exactly on a rounding boundary. Corrected so a pick copies its prices from its own
+  market outcome; tier boundaries are now applied to the probability rounded to six decimals (log5 on 4-2
+  v 3-3 is exactly 3/5, and binary noise had silently pushed two basketball picks below the High floor);
+  genuine zero counts print as `0` rather than a blank dash; and the desk validator gained two checks that
+  fail the build if a pick's price disagrees with its own market outcome or does not re-derive from the
+  unrounded probability. No official value, fixture, probability or tier changed — the desk still publishes
+  7 High / 15 Medium / 4 Low at the same prices. Shipped in the follow-up commit recorded in §59.

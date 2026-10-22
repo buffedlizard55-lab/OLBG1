@@ -220,7 +220,14 @@ def el_fixture(away, home):
 
 # -------------------------------------------------------------------- tiering
 def tier_for(fixture_key, p):
-    """(tier, gate_a_literal, reason) for a winner pick at originated probability p."""
+    """(tier, gate_a_literal, reason) for a winner pick at originated probability p.
+
+    Tier boundaries are applied to the probability rounded to six decimal places, so a line that
+    publishes as 0.6000 (log5 on 4-2 versus 3-3 is exactly 3/5) is not rejected by binary
+    floating-point noise such as 0.5999999999999999. Prices are still derived from the unrounded
+    probability.
+    """
+    p = round(p, 6)
     amer, _ = american_from_prob(p)
     gate_a = bool(p > GATE_A_FLOOR and WINDOW_SHORT_LIMIT <= amer <= WINDOW_LONG_LIMIT)
     if not (WINDOW_SHORT_LIMIT <= amer <= WINDOW_LONG_LIMIT):
@@ -289,15 +296,19 @@ def build_fixtures():
         row["withheld_markets"] = withheld
         row["model_detail"] = detail
         if winner:
-            tier, gate_a, tier_reason = tier_for(f["key"], winner["probability"])
-            amer, dec = american_from_prob(winner["probability"])
+            # The pick's prices are copied from the winner market's stronger outcome so that a fixture
+            # can never publish two different prices for the same selection.
+            wmk = next(mk for mk in markets if mk["family"] == "winner")
+            strong = max(wmk["outcomes"], key=lambda o: o["probability_exact"])
+            assert strong["selection"] == winner["selection"], (f["key"], strong, winner)
+            tier, gate_a, tier_reason = tier_for(f["key"], strong["probability_exact"])
             row["winner_pick"] = {
-                "selection": winner["selection"], "probability": winner["probability"],
-                "probability_exact": winner["probability_exact"],
-                "fair_decimal": round(dec, 4), "fair_american": amer,
-                "in_brief_window": in_window(winner["probability"]), "tier": tier,
+                "selection": strong["selection"], "probability": strong["probability"],
+                "probability_exact": strong["probability_exact"],
+                "fair_decimal": strong["fair_decimal"], "fair_american": strong["fair_american"],
+                "in_brief_window": strong["in_brief_window"], "tier": tier,
                 "gate_a_literal": gate_a, "tier_reason": tier_reason,
-                "model": markets[0]["model"], "inputs": markets[0]["inputs"],
+                "model": wmk["model"], "inputs": wmk["inputs"], "market_id": wmk["market_id"],
             }
         else:
             row["winner_pick"] = None

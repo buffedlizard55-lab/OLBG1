@@ -3721,5 +3721,30 @@ deviation recorded in §0.2.
 §4, no change to `d7d19a67/**` is needed. The desk expires with its evidence: fixtures 6 hours after
 2026-10-22T12:55Z, statistics 24 hours after; nothing here should be re-stamped as fresh by a rebuild.
 
-**PR / merge / Pages receipts.** Appended below post-merge, after verifying deployment by fetching a path
-that exists only in this merge.
+**PR / merge / Pages receipts (appended post-merge).**
+* **PR #136** — https://github.com/buffedlizard55-lab/OLBG1/pull/136 — base `main`, head
+  `arena/d7d19a67-olbg1`. Pre-merge CI: `Evidence, model, site and browser gates` **pass** in 42 s;
+  `Publish canonical GitHub Pages` correctly skipped on the pull-request event; merge state CLEAN.
+* **Merged 2026-10-22T13:18:06Z** as `5f32cf397c6ff67e5c1ee634f147db879f10bc2d` (no approval waited for,
+  per the brief).
+* **Post-merge workflow run 39785628781** on `main` — **completed / success** at 2026-10-22T13:20:01Z,
+  including `Stage verified static artifact` and the `Publish canonical GitHub Pages` deploy job (14 s);
+  the `pages-build-deployment` run 39785627942 followed.
+* **Live byte read-back (deployed pages, not local `_site`)** —
+  `https://buffedlizard55-lab.github.io/OLBG1/d7d19a67/index.html` serves HTTP 200 with this merge's own
+  content: the twelve KPI tiles read 55 / 26 / 99 / 215 / 7 / 15 / 4 / 8 / 16 / 12 / 16 / 13, the coverage
+  table lists all seventeen in-scope sports with their gap statuses, and all seven High picks render with
+  their official NHL and Euroleague Basketball fixture links. That path exists only in `5f32cf3`, so this is
+  a genuine deployment confirmation rather than a `pages.status` read (the failure mode logged at 09:56Z).
+* **One defect found by that read-back and corrected in a follow-up commit:** the deployed overview showed
+  the New Jersey pick at **−155** while the market explorer and the prediction prose showed **−156** for the
+  same selection. Cause: the winner-pick block re-derived its American price from the *rounded* probability
+  (0.6086 → 155.49) while the outcome block derived it from the *unrounded* one (0.60862550 → 155.5004), and
+  the value sits exactly on a rounding boundary. Fix: a fixture's pick now copies its prices from its own
+  winner-market outcome, so the two can never diverge; tier boundaries are applied to the probability rounded
+  to six decimals, because log5 on 4-2 versus 3-3 is exactly 3/5 and binary noise (0.5999999999999999) had
+  silently dropped two basketball picks out of the High tier; genuine zero counts now print as `0` in the
+  coverage tables instead of a blank dash (a dash means "not published"); and `sd7d19a67_validate.py` gained
+  two checks that fail the build if a pick's price ever disagrees with its own market outcome or does not
+  re-derive from the unrounded probability. No official value, fixture, probability or tier changed as a
+  result — the desk still publishes 7 High / 15 Medium / 4 Low at the same prices.
