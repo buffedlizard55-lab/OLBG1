@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gate analysis · OLBG research desk 9dc28d1e</title>
+<style>
+:root{--bg:#0b1220;--card:#131d2f;--line:#243349;--txt:#e6edf7;--muted:#93a4bd;--accent:#4cc2ff;
+--good:#4ade80;--warn:#fbbf24;--bad:#f87171;--hi:#22d3ee}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{background:linear-gradient(180deg,#101a2b,#0b1220);border-bottom:1px solid var(--line);padding:18px 0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+h1{font-size:24px;margin:0 0 6px}h2{font-size:19px;margin:30px 0 10px}h3{font-size:16px;margin:20px 0 8px}
+.sub{color:var(--muted);font-size:13px}
+nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+nav a{background:#16233a;border:1px solid var(--line);padding:6px 11px;border-radius:7px;font-size:13px;color:var(--txt)}
+nav a.on{background:#1d3a55;border-color:#2f5f86;color:#fff}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:20px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.card .n{font-size:26px;font-weight:700}.card .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13px;margin:10px 0 24px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#16233a;color:#cfe0f5;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em;position:sticky;top:0}
+tr:last-child td{border-bottom:none}tbody tr:hover{background:#16233a}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.02em}
+.high{background:rgba(76,194,255,.16);color:#8fdcff;border:1px solid #2c6f96}
+.medium{background:rgba(251,191,36,.14);color:#fcd34d;border:1px solid #7a5c12}
+.low{background:rgba(148,163,184,.14);color:#c3cfe0;border:1px solid #3a4a63}
+.outside_window{background:rgba(248,113,113,.12);color:#fca5a5;border:1px solid #7f2f2f}
+.none{background:#1a2436;color:#8496ad;border:1px solid #2c3a50}
+.note{background:#101b2c;border-left:3px solid var(--accent);padding:10px 14px;border-radius:0 8px 8px 0;color:#c9d8ea;font-size:13px;margin:14px 0}
+.warnbox{border-left-color:var(--warn)}
+.pred{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0}
+.pred .meta{color:var(--muted);font-size:12px;margin-bottom:6px}
+.pred p{margin:8px 0 0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:22px 0;color:var(--muted);font-size:12px}
+code{background:#0e1726;padding:2px 5px;border-radius:4px;font-size:12px}
+.small{font-size:12px;color:var(--muted)}
+</style></head>
+<body>
+<header><div class="wrap">
+<h1>Gate analysis</h1>
+<div class="sub">Session 9dc28d1e · evidence-first desk · generated 2026-10-22T12:30:00Z</div>
+<nav><a href="index.html">Dashboard</a><a href="matches.html">Matches</a><a href="markets.html">Markets &amp; prices</a><a href="predictions.html">High-confidence picks</a><a href="analysis.html" class="on">Gate analysis</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="methodology.html">Methodology</a></nav>
+</div></header>
+<main class="wrap">
+
+<h2>1. The gate, arithmetically</h2>
+<p>American odds map to probability as <code>p = 100/(100+|A|)</code> for negative A. Three anchor points:</p>
+<table><thead><tr><th>American</th><th>Implied probability</th><th>Verdict under the brief</th></tr></thead><tbody>
+<tr><td class="num">−233.33</td><td class="num">70.00%</td><td>the exact "greater than 70%" boundary</td></tr>
+<tr><td class="num">−250.00</td><td class="num">71.43%</td><td>the brief's price floor</td></tr>
+<tr><td class="num">+10000</td><td class="num">0.99%</td><td>the brief's price ceiling — never reachable at 70%</td></tr>
+</tbody></table>
+<p>Both conditions can only hold for probabilities in <strong>(70.00%, 71.43%]</strong>. Any selection more
+likely than 71.43% is too short to be inside the window; any selection between 0.99% and 70% fails the
+probability test. This desk applies the conjunction literally. It does not quietly widen the window,
+and it does not call a −400 favourite "high confidence in the −250 to +10000 band".</p>
+
+<h2>2. What that produced</h2>
+<div class="cards">
+<div class="card"><div class="n">3</div><div class="l">High (all three conditions)</div></div>
+<div class="card"><div class="n">12</div><div class="l">In band, capped at Medium</div></div>
+<div class="card"><div class="n">169</div><div class="l">Over 70%, price outside</div></div>
+<div class="card"><div class="n">489</div><div class="l">Low</div></div>
+</div>
+
+<h2>3. Tier fragility</h2>
+<p>A probability that sits inside a 1.43-point window is sensitive to the model's own assumptions.
+Each High is re-computed at shrinkage of 8, 12 and 16 games and a home edge of 0.05, 0.10 and 0.15 goals.</p>
+<table><thead><tr><th>Selection</th><th>Base</th><th>Low</th><th>High</th><th>Status</th></tr></thead>
+<tbody><tr><td>Nashville Predators over 1.5 goals</td><td class='num'>71.22%</td><td class='num'>67.8%</td><td class='num'>73.7%</td><td><span class="tag outside_window">FRAGILE</span></td></tr><tr><td>San Jose Sharks over 1.5 goals</td><td class='num'>70.28%</td><td class='num'>66.6%</td><td class='num'>72.9%</td><td><span class="tag outside_window">FRAGILE</span></td></tr><tr><td>Minnesota Wild under 4.5 goals</td><td class='num'>70.51%</td><td class='num'>66.5%</td><td class='num'>73.4%</td><td><span class="tag outside_window">FRAGILE</span></td></tr></tbody></table>
+<p class="small">"Fragile" does not mean the pick is wrong; it means the label depends on the prior. The
+price that goes with it moves the same way.</p>
+
+<h2>4. In-band selections capped at Medium</h2>
+<p>These clear probability and price. They are not High because the required player-level evidence was not
+available from an official source for the write-up.</p>
+<table><thead><tr><th>Fixture</th><th>Selection</th><th>Probability</th><th>Fair American</th><th>Why capped</th></tr></thead>
+<tbody><tr><td>euroleague-round7-64</td><td>Over 166.5 points</td><td class='num'>70.43%</td><td class='num'>-238</td><td class='small'>In band but no prediction was written for this line.</td></tr><tr><td>euroleague-round7-65</td><td>home</td><td class='num'>70.60%</td><td class='num'>-240</td><td class='small'>In band but no prediction was written for this line.</td></tr><tr><td>euroleague-round7-65</td><td>FC Bayern Munich +5.5</td><td class='num'>70.60%</td><td class='num'>-240</td><td class='small'>In band but no prediction was written for this line.</td></tr><tr><td>euroleague-round7-62</td><td>away</td><td class='num'>70.19%</td><td class='num'>-235</td><td class='small'>In band but no prediction was written for this line.</td></tr><tr><td>euroleague-round7-62</td><td>Real Madrid +5.5</td><td class='num'>70.19%</td><td class='num'>-235</td><td class='small'>In band but no prediction was written for this line.</td></tr><tr><td>euroleague-round7-67</td><td>Under 178.5 points</td><td class='num'>70.91%</td><td class='num'>-244</td><td class='small'>In band but no prediction was written for this line.</td></tr><tr><td>euroleague-round7-68</td><td>home</td><td class='num'>71.41%</td><td class='num'>-250</td><td class='small'>In band but no prediction was written for this line.</td></tr><tr><td>euroleague-round7-68</td><td>Zalgiris Kaunas +2.5</td><td class='num'>71.41%</td><td class='num'>-250</td><td class='small'>In band but no prediction was written for this line.</td></tr><tr><td>euroleague-round7-68</td><td>Over 166.5 points</td><td class='num'>71.06%</td><td class='num'>-246</td><td class='small'>In band but no prediction was written for this line.</td></tr><tr><td>euroleague-round7-70</td><td>away</td><td class='num'>70.60%</td><td class='num'>-240</td><td class='small'>In band but no prediction was written for this line.</td></tr><tr><td>euroleague-round7-70</td><td>Fenerbahce Tarfin Istanbul +8.5</td><td class='num'>70.60%</td><td class='num'>-240</td><td class='small'>In band but no prediction was written for this line.</td></tr><tr><td>euroleague-round7-70</td><td>Under 178.5 points</td><td class='num'>70.59%</td><td class='num'>-240</td><td class='small'>In band but no prediction was written for this line.</td></tr></tbody></table>
+
+<h2>5. The strongest selections the brief excludes</h2>
+<p>Every row below clears 70% but prices shorter than −250, so the brief's window removes it. Shown for
+transparency, not counted as High.</p>
+<table><thead><tr><th>Fixture</th><th>Market</th><th>Selection</th><th>Probability</th><th>Fair American</th></tr></thead>
+<tbody><tr><td>euroleague-round7-67</td><td>Handicap -11.5</td><td>home</td><td class='num'>98.2%</td><td class='num'>-5514</td></tr><tr><td>euroleague-round7-67</td><td>Handicap +11.5</td><td>Panathinaikos AKTOR Athens +11.5</td><td class='num'>98.2%</td><td class='num'>-5514</td></tr><tr><td>euroleague-round7-67</td><td>Handicap -8.5</td><td>home</td><td class='num'>96.8%</td><td class='num'>-3018</td></tr><tr><td>euroleague-round7-67</td><td>Handicap +8.5</td><td>Panathinaikos AKTOR Athens +8.5</td><td class='num'>96.8%</td><td class='num'>-3018</td></tr><tr><td>euroleague-round7-67</td><td>Handicap -5.5</td><td>home</td><td class='num'>94.5%</td><td class='num'>-1729</td></tr><tr><td>euroleague-round7-67</td><td>Handicap +5.5</td><td>Panathinaikos AKTOR Athens +5.5</td><td class='num'>94.5%</td><td class='num'>-1729</td></tr><tr><td>nhl-2026020161</td><td>Winnipeg Jets team total 4.5 goals</td><td>Winnipeg Jets under 4.5 goals</td><td class='num'>93.3%</td><td class='num'>-1390</td></tr><tr><td>nhl-2026020159</td><td>Los Angeles Kings team total 4.5 goals</td><td>Los Angeles Kings under 4.5 goals</td><td class='num'>91.3%</td><td class='num'>-1054</td></tr><tr><td>euroleague-round7-69</td><td>Match total 158.5</td><td>Over 158.5 points</td><td class='num'>91.3%</td><td class='num'>-1054</td></tr><tr><td>euroleague-round7-67</td><td>Handicap -2.5</td><td>home</td><td class='num'>91.2%</td><td class='num'>-1032</td></tr><tr><td>euroleague-round7-67</td><td>Handicap +2.5</td><td>Panathinaikos AKTOR Athens +2.5</td><td class='num'>91.2%</td><td class='num'>-1032</td></tr><tr><td>euroleague-round7-68</td><td>Handicap -11.5</td><td>home</td><td class='num'>90.6%</td><td class='num'>-962</td></tr><tr><td>euroleague-round7-68</td><td>Handicap +11.5</td><td>Zalgiris Kaunas +11.5</td><td class='num'>90.6%</td><td class='num'>-962</td></tr><tr><td>nhl-2026020156</td><td>San Jose Sharks team total 4.5 goals</td><td>San Jose Sharks under 4.5 goals</td><td class='num'>89.7%</td><td class='num'>-875</td></tr><tr><td>euroleague-round7-66</td><td>Match total 178.5</td><td>Under 178.5 points</td><td class='num'>89.7%</td><td class='num'>-872</td></tr><tr><td>nhl-2026020154</td><td>Nashville Predators team total 4.5 goals</td><td>Nashville Predators under 4.5 goals</td><td class='num'>89.1%</td><td class='num'>-821</td></tr><tr><td>euroleague-round7-69</td><td>Handicap -11.5</td><td>away</td><td class='num'>89.0%</td><td class='num'>-809</td></tr><tr><td>euroleague-round7-69</td><td>Handicap +11.5</td><td>Valencia Basket +11.5</td><td class='num'>89.0%</td><td class='num'>-809</td></tr><tr><td>nhl-2026020162</td><td>Calgary Flames team total 4.5 goals</td><td>Calgary Flames under 4.5 goals</td><td class='num'>88.7%</td><td class='num'>-782</td></tr><tr><td>euroleague-round7-62</td><td>Match total 158.5</td><td>Over 158.5 points</td><td class='num'>88.5%</td><td class='num'>-770</td></tr><tr><td>euroleague-round7-64</td><td>Handicap -11.5</td><td>home</td><td class='num'>87.7%</td><td class='num'>-714</td></tr><tr><td>euroleague-round7-64</td><td>Handicap +11.5</td><td>Anadolu Efes Istanbul +11.5</td><td class='num'>87.7%</td><td class='num'>-714</td></tr><tr><td>nhl-2026020162</td><td>Minnesota Wild team total 1.5 goals</td><td>Minnesota Wild over 1.5 goals</td><td class='num'>87.5%</td><td class='num'>-700</td></tr><tr><td>euroleague-round7-63</td><td>Match total 158.5</td><td>Over 158.5 points</td><td class='num'>87.4%</td><td class='num'>-693</td></tr><tr><td>euroleague-round7-67</td><td>Match winner (moneyline)</td><td>Panathinaikos AKTOR Athens</td><td class='num'>87.3%</td><td class='num'>-690</td></tr></tbody></table>
+<p class="small">Top 25 by probability of 169 such selections.</p>
+
+<h2>6. Coverage</h2>
+<p>Seventeen in-scope categories. 3 were priced this session, all from league-run feeds.
+The remaining categories are listed but unpriced: their official pages either published no draw this
+session or their inputs were not re-read. Nothing was filled in from memory.</p>
+
+</main>
+<footer><div class="wrap">
+<p><strong>Estimate, not advice.</strong> Every price on this desk is a zero-margin model line originated
+from official team-season inputs. No bookmaker quote, availability or edge is claimed. Blank means
+unverified. This desk is independent of OLBG and of the canonical dashboard build.</p>
+<p>Generated 2026-10-22T12:30:00Z · model 9dc-ev1.0 · <a href="sources.html">source register</a> ·
+<a href="methodology.html">methodology and limits</a></p>
+</div></footer>
+</body></html>

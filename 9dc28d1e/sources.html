@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sources · OLBG research desk 9dc28d1e</title>
+<style>
+:root{--bg:#0b1220;--card:#131d2f;--line:#243349;--txt:#e6edf7;--muted:#93a4bd;--accent:#4cc2ff;
+--good:#4ade80;--warn:#fbbf24;--bad:#f87171;--hi:#22d3ee}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{background:linear-gradient(180deg,#101a2b,#0b1220);border-bottom:1px solid var(--line);padding:18px 0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+h1{font-size:24px;margin:0 0 6px}h2{font-size:19px;margin:30px 0 10px}h3{font-size:16px;margin:20px 0 8px}
+.sub{color:var(--muted);font-size:13px}
+nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+nav a{background:#16233a;border:1px solid var(--line);padding:6px 11px;border-radius:7px;font-size:13px;color:var(--txt)}
+nav a.on{background:#1d3a55;border-color:#2f5f86;color:#fff}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:20px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.card .n{font-size:26px;font-weight:700}.card .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13px;margin:10px 0 24px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#16233a;color:#cfe0f5;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em;position:sticky;top:0}
+tr:last-child td{border-bottom:none}tbody tr:hover{background:#16233a}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.02em}
+.high{background:rgba(76,194,255,.16);color:#8fdcff;border:1px solid #2c6f96}
+.medium{background:rgba(251,191,36,.14);color:#fcd34d;border:1px solid #7a5c12}
+.low{background:rgba(148,163,184,.14);color:#c3cfe0;border:1px solid #3a4a63}
+.outside_window{background:rgba(248,113,113,.12);color:#fca5a5;border:1px solid #7f2f2f}
+.none{background:#1a2436;color:#8496ad;border:1px solid #2c3a50}
+.note{background:#101b2c;border-left:3px solid var(--accent);padding:10px 14px;border-radius:0 8px 8px 0;color:#c9d8ea;font-size:13px;margin:14px 0}
+.warnbox{border-left-color:var(--warn)}
+.pred{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0}
+.pred .meta{color:var(--muted);font-size:12px;margin-bottom:6px}
+.pred p{margin:8px 0 0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:22px 0;color:var(--muted);font-size:12px}
+code{background:#0e1726;padding:2px 5px;border-radius:4px;font-size:12px}
+.small{font-size:12px;color:var(--muted)}
+</style></head>
+<body>
+<header><div class="wrap">
+<h1>Sources</h1>
+<div class="sub">Session 9dc28d1e · evidence-first desk · generated 2026-10-22T12:30:00Z</div>
+<nav><a href="index.html">Dashboard</a><a href="matches.html">Matches</a><a href="markets.html">Markets &amp; prices</a><a href="predictions.html">High-confidence picks</a><a href="analysis.html">Gate analysis</a><a href="flagged.html">Flagged for review</a><a href="sources.html" class="on">Sources</a><a href="methodology.html">Methodology</a></nav>
+</div></header>
+<main class="wrap">
+
+<p class="sub">Only official publishers: the league, tour, governing body or its own data service.
+Aggregators, media outlets and betting sites are never used as verification.</p>
+<table><thead><tr><th>ID</th><th>Publisher</th><th>URL</th><th>Observed (UTC)</th><th>What was read</th><th>Channel</th></tr></thead>
+<tbody><tr><td><code>nhl-schedule-20261022</code></td><td>NHL (National Hockey League)</td>
+<td><a href="https://api-web.nhle.com/v1/schedule/2026-10-22">https://api-web.nhle.com/v1/schedule/2026-10-22</a></td>
+<td class="num">2026-10-22T12:08:00Z</td>
+<td>All 12 games under gameWeek date 2026-10-22: game ids, away/home teams, startTimeUTC, venue, gameState. Chunks 0-2 read; the later week was not enumerated.<div class="small">Game state FUT at read time. A published schedule is not proof of a result.</div></td>
+<td>re-read this session</td></tr><tr><td><code>nhl-team-summary-20262027</code></td><td>NHL (National Hockey League)</td>
+<td><a href="https://api.nhle.com/stats/rest/en/team/summary?cayenneExp=seasonId=20262027%20and%20gameTypeId=2">https://api.nhle.com/stats/rest/en/team/summary?cayenneExp=seasonId=20262027%20and%20gameTypeId=2</a></td>
+<td class="num">2026-10-22T12:10:00Z</td>
+<td>2026-27 regular-season team summary for all 32 clubs: gamesPlayed, wins, losses, otLosses, goalsFor, goalsAgainst, points, pointPct.<div class="small">Early-season counts (7-12 games per club); not a calibrated rating.</div></td>
+<td>re-read this session</td></tr><tr><td><code>euroleague-standings-e2026</code></td><td>Euroleague Basketball</td>
+<td><a href="https://api-live.euroleague.net/v1/standings?seasonCode=E2026">https://api-live.euroleague.net/v1/standings?seasonCode=E2026</a></td>
+<td class="num">2026-10-22T12:06:00Z</td>
+<td>Current EuroLeague 2026-27 standings for all 20 clubs after six or seven games: rank, played, wins, losses, points for, points against, differential.<div class="small">Standings only; no injury, roster or availability data was imported.</div></td>
+<td>re-read this session</td></tr><tr><td><code>euroleague-round7-gamecenter</code></td><td>Euroleague Basketball</td>
+<td><a href="https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/">https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/</a></td>
+<td class="num">2026-10-22T07:17:40Z</td>
+<td>Round 7 match headings with published local tip-off times and W-L records.<div class="small">INHERITED from the canonical snapshot read at 07:17Z; not re-read by this session. Used only for tip-off times and the fixture pairing that the fresh standings call corroborates by team name.</div></td>
+<td>inherited</td></tr><tr><td><code>mlb-schedule-ws-2026</code></td><td>MLB (Major League Baseball)</td>
+<td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-22&amp;endDate=2026-10-28&amp;hydrate=team,linescore">https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-22&amp;endDate=2026-10-28&amp;hydrate=team,linescore</a></td>
+<td class="num">2026-10-22T12:07:00Z</td>
+<td>World Series games 849805, 849802, 849804, 849803, 849799 with official dates, UTC start times, venue and series game numbers.<div class="small">Scheduled/preview status only.</div></td>
+<td>re-read this session</td></tr><tr><td><code>mlb-probable-pitchers</code></td><td>MLB (Major League Baseball)</td>
+<td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-23&amp;endDate=2026-10-28&amp;hydrate=probablePitcher&amp;fields=dates,date,games,gamePk,gameDate,teams,away,home,team,name,probablePitcher,fullName,id">https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-23&amp;endDate=2026-10-28&amp;hydrate=probablePitcher&amp;fields=dates,date,games,gamePk,gameDate,teams,away,home,team,name,probablePitcher,fullName,id</a></td>
+<td class="num">2026-10-22T12:14:00Z</td>
+<td>Probable starting pitcher announced by MLB for World Series Game 1 (Brewers: Jacob Misiorowski). No Rays probable pitcher was published at read time.<div class="small">A probable pitcher is not a confirmed lineup and may change.</div></td>
+<td>re-read this session</td></tr><tr><td><code>mlb-records-2026</code></td><td>MLB (Major League Baseball)</td>
+<td><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason&amp;fields=records,teamRecords,team,id,name,wins,losses,runsScored,runsAllowed,gamesPlayed">https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason&amp;fields=records,teamRecords,team,id,name,wins,losses,runsScored,runsAllowed,gamesPlayed</a></td>
+<td class="num">2026-10-22T12:15:00Z</td>
+<td>2026 regular-season records and run totals for the two World Series clubs (Rays 98-64, 736 scored / 650 allowed; Brewers 103-59, 832 scored / 618 allowed).<div class="small">Regular season, NOT postseason form. League run environment was not established from this projection, so run-line and total markets are withheld.</div></td>
+<td>re-read this session</td></tr><tr><td><code>olbg-taxonomy-canonical</code></td><td>Project reverse-engineering record (OLBG public routes)</td>
+<td><a href="https://www.olbg.com/betting-tips">https://www.olbg.com/betting-tips</a></td>
+<td class="num">2026-10-21T05:20:00Z</td>
+<td>OLBG public sport taxonomy and route ids used for discovery and scope only.<div class="small">Discovery is not verification. OLBG pages are never a fixture source.</div></td>
+<td>inherited</td></tr><tr><td><code>nhl-club-stats-NSH</code></td><td>NHL</td>
+<td><a href="https://api-web.nhle.com/v1/club-stats/NSH/20262027/2">https://api-web.nhle.com/v1/club-stats/NSH/20262027/2</a></td>
+<td class="num">2026-10-22T12:22:00Z</td>
+<td>Nashville skater and goalie season totals.<div class="small">Player-level form used only in the High write-up.</div></td>
+<td>re-read this session</td></tr><tr><td><code>nhl-club-stats-SJS</code></td><td>NHL</td>
+<td><a href="https://api-web.nhle.com/v1/club-stats/SJS/20262027/2">https://api-web.nhle.com/v1/club-stats/SJS/20262027/2</a></td>
+<td class="num">2026-10-22T12:23:00Z</td>
+<td>San Jose skater and goalie season totals.<div class="small">Player-level form used only in the High write-up.</div></td>
+<td>re-read this session</td></tr><tr><td><code>nhl-club-stats-MIN</code></td><td>NHL</td>
+<td><a href="https://api-web.nhle.com/v1/club-stats/MIN/20262027/2">https://api-web.nhle.com/v1/club-stats/MIN/20262027/2</a></td>
+<td class="num">2026-10-22T12:24:00Z</td>
+<td>Minnesota skater and goalie season totals.<div class="small">Player-level form used only in the High write-up.</div></td>
+<td>re-read this session</td></tr></tbody></table>
+<div class="note">Sandbox egress outside the package registries and GitHub is closed, so every page above was
+retrieved through the agent's web-fetch tool. The recorded time is the observation window, not an
+invented HTTP timestamp.</div>
+
+</main>
+<footer><div class="wrap">
+<p><strong>Estimate, not advice.</strong> Every price on this desk is a zero-margin model line originated
+from official team-season inputs. No bookmaker quote, availability or edge is claimed. Blank means
+unverified. This desk is independent of OLBG and of the canonical dashboard build.</p>
+<p>Generated 2026-10-22T12:30:00Z · model 9dc-ev1.0 · <a href="sources.html">source register</a> ·
+<a href="methodology.html">methodology and limits</a></p>
+</div></footer>
+</body></html>
