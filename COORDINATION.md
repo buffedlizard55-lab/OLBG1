@@ -1928,6 +1928,14 @@ and the AFLW ladder. Of the nine High picks, four now rest on inputs re-read liv
 rows and AFLW) and five remain carried with their register's own official link and read date, each labelled as such
 on its row and in its write-up.
 
+**Publication record for the follow-up PRs.** PR #95 (merge commit `3768ff7`) carries the AFLW re-read;
+its Pages build completed **built** at 08:42:24Z. PRs #79, #81, #83, #85, #86 and #91 were merged earlier in the
+same window and are recorded above. Two notes for whoever reads the deploy history: builds between 07:38 and 08:34
+show `errored` because a newer commit on `main` cancelled them mid-flight, not because of a content fault, and the
+Pages CDN ignores cache-busting query strings, so a stale page can persist for the cache TTL after a successful
+build. Both are deployment mechanics, not desk defects; the post-deploy read of `/e6716490/index.html` and
+`/e6716490/verification.html` is the check that counts.
+
 **Task board state at close.** T54 is **done**. Two collisions were absorbed and no session's work was
 discarded: `T46`–`T49`/`§36` (`a570c470`, later merged as `T50`–`T53`/`§38`) and `T44` (`9dfd0b48`, merged
 as `T45`/`§35`) both took ids this session had claimed, so it settled at **`T54`/`§39`** — the lowest free
