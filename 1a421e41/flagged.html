@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for Review</title>
+<link rel="stylesheet" href="assets/desk.css">
+</head><body>
+<header class="top"><div class="wrap">
+<h1>Flagged for Review</h1>
+<p class="lede">Every irregularity, every official-vs-official disagreement, and every value we left blank rather than invent.</p>
+<nav class="cat"><b>Overview</b><a href="index.html">Landing</a><a href="coverage.html">Sport coverage</a><a href="matches.html">All matches</a><b>Markets &amp; Lines</b><a href="markets.html">Every market</a><a href="lines.html">Our lines</a><a href="window.html">-250 / +10000 band</a><b>Picks</b><a href="picks.html">Match winners</a><a href="high-confidence.html">High confidence</a><a href="predictions.html">Predictions</a><b>Verification</b><a href="verification.html">Official sources</a><a href="sources.html">Source register</a><a href="methodology.html">Methodology</a><b>Findings</b><a href="flagged.html" class="on">Flagged for Review</a><a href="audit.html">Repo audit</a><a href="reverse-engineering.html">Reverse engineering</a><b>Sports</b><a href="coverage.html">17 sports</a></nav>
+</div></header>
+<div class="wrap">
+<p class="lede"><b>Flagged for Review.</b> 24 findings: irregularities in OLBG&rsquo;s own rendering, disagreements between official sources, defects found in this repository, and values we could not confirm and therefore left blank. None of these block publication; all of them are here with their sources so a reviewer can check every one by hand.</p><div class="cards"><div class="card"><div class="n">24</div><div class="l">findings</div></div><div class="card"><div class="n">8</div><div class="l">high severity</div></div><div class="card"><div class="n">9</div><div class="l">medium</div></div><div class="card"><div class="n">7</div><div class="l">low</div></div><div class="card"><div class="n">20</div><div class="l">confirmed</div></div><div class="card"><div class="n">4</div><div class="l">unverified / candidate</div></div></div><div class="finding high"><span class="fid">AUD-1A-HIGGINS-01</span> <span class="chip bad">high</span> <span class="chip ok">confirmed</span> <span class="chip mut">Snooker</span><h3>The repo&#x27;s root predictions file prices a snooker match that has already been decided</h3><p>data/predictions.json lines 351 and 360, duplicated at lines 1230 and 1239, publish a High-confidence &#x27;John Higgins -0.5 Frame Handicap @ 1.51 (-196)&#x27; for the Belfast second round. The official WST page fetched this session records that Jak Jones beat John Higgins 4-2 on 21 October 2026, so the desk is pricing a decided match. Independently confirms AUD-F7-04.</p><p class="sub"><b>Sources:</b> <a href="https://www.wst.tv/matches/" rel="noopener noreferrer">wst.tv</a> &middot; <a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" rel="noopener noreferrer">wst.tv</a> &middot; <code>data/predictions.json</code></p><details><summary class='sub'>evidence (2 items)</summary><pre>[
+ {
+  &quot;file&quot;: &quot;data/predictions.json&quot;,
+  &quot;lines&quot;: [
+   351,
+   360,
+   1230,
+   1239
+  ]
+ },
+ &quot;Jak Jones&#x27; phenomenal season got even better as he beat legend John Higgins 4-2 to reach the last 16 of the BetVictor Northern Ireland Open in Belfast.&quot;
+]</pre></details></div><div class="finding high"><span class="fid">AUD-1A-WIN-01</span> <span class="chip bad">high</span> <span class="chip ok">confirmed</span> <span class="chip mut">Aussie Rules</span><h3>High-confidence row priced outside the window its own desk claims to enforce</h3><p>data/6a081cf6_high_band.json line 267 carries &#x27;us&#x27;: -251 for selection &#x27;Brisbane Lions -3&#x27; graded confidence High. That is outside the -250 to +10000 band the same desk&#x27;s board row (T44) claims to enforce.</p><p class="sub"><b>Sources:</b> <code>data/6a081cf6_high_band.json</code></p><details><summary class='sub'>evidence (1 item)</summary><pre>[
+ {
+  &quot;file&quot;: &quot;data/6a081cf6_high_band.json&quot;,
+  &quot;line&quot;: 267,
+  &quot;us&quot;: -251,
+  &quot;selection&quot;: &quot;Brisbane Lions -3&quot;,
+  &quot;confidence&quot;: &quot;High&quot;
+ }
+]</pre></details></div><div class="finding high"><span class="fid">AUD-1A-WIN-02</span> <span class="chip bad">high</span> <span class="chip ok">confirmed</span> <span class="chip mut">Aussie Rules</span><h3>The same out-of-window High price recurs on a second desk</h3><p>data/v3/predictions.json line 1963 grades the identical &#x27;Brisbane Lions -3&#x27; selection at -251 as High, on the T43 desk that claims confidence-band policy (-250 to +10000) enforcement.</p><p class="sub"><b>Sources:</b> <code>data/v3/predictions.json</code></p><details><summary class='sub'>evidence (1 item)</summary><pre>[
+ {
+  &quot;file&quot;: &quot;data/v3/predictions.json&quot;,
+  &quot;line&quot;: 1963,
+  &quot;us&quot;: -251,
+  &quot;selection&quot;: &quot;Brisbane Lions -3&quot;,
+  &quot;confidence&quot;: &quot;High&quot;
+ }
+]</pre></details></div><div class="finding high"><span class="fid">F-1A-BBALL-01</span> <span class="chip bad">high</span> <span class="chip ok">confirmed</span> <span class="chip mut">Basketball</span><h3>OLBG&#x27;s tip-gated hub hides an official EuroLeague fixture</h3><p>Round 7 has 9 official upcoming games. OLBG&#x27;s Basketball hub renders 8. Paris Basketball vs Valencia Basket (2026-10-23, 20:45 CEST, game E2026/69, Paris 1-5 v Valencia 4-2) is absent, even though it closes the round and features the league&#x27;s top scorer. A card only appears once at least one tipster posts, so a zero-tip fixture is invisible.</p><p class="sub"><b>Sources:</b> <a href="https://www.euroleaguebasketball.net/euroleague/news/game-center-round-7-el2627/" rel="noopener noreferrer">euroleaguebasketball.net</a> &middot; <a href="https://www.euroleaguebasketball.net/en/euroleague/standings/" rel="noopener noreferrer">euroleaguebasketball.net</a> &middot; <a href="https://www.olbg.com/betting-tips/Basketball/4" rel="noopener noreferrer">olbg.com</a></p><details><summary class='sub'>evidence (1 item)</summary><pre>[
+ {
+  &quot;fixture&quot;: &quot;Paris Basketball vs. Valencia Basket&quot;,
+  &quot;date&quot;: &quot;2026-10-23&quot;,
+  &quot;official_ko_cest&quot;: &quot;20:45&quot;,
+  &quot;game_id&quot;: &quot;E2026/69&quot;,
+  &quot;records&quot;: &quot;Paris 1-5, Valencia 5-1&quot;,
+  &quot;why_it_matters&quot;: &quot;Closing game of Round 7; features the league&#x27;s top scorer Nadir Hifi (20.2 ppg) and TJ Shorts&#x27; return to Paris.&quot;
+ }
+]</pre></details></div><div class="finding high"><span class="fid">F-1A-CLOCK-04</span> <span class="chip bad">high</span> <span class="chip ok">confirmed</span> <span class="chip mut">Basketball</span><h3>OLBG&#x27;s unlabelled hub clock is US Eastern Daylight Time, proved against official CEST kick-offs</h3><p>For all 8 EuroLeague fixtures OLBG renders, OLBG&#x27;s card clock equals the official CEST kick-off published by euroleaguebasketball.net minus exactly 6 hours. CEST is UTC+2 and EDT is UTC-4, a 6-hour difference, so the unlabelled clock is US Eastern Daylight Time. 8 of 8 match with no residual.</p><p class="sub"><b>Sources:</b> <a href="https://www.euroleaguebasketball.net/euroleague/news/game-center-round-7-el2627/" rel="noopener noreferrer">euroleaguebasketball.net</a> &middot; <a href="https://www.olbg.com/betting-tips/Basketball/4" rel="noopener noreferrer">olbg.com</a></p><details><summary class='sub'>evidence (8 items)</summary><pre>[
+ {
+  &quot;olbg_event_id&quot;: 535918,
+  &quot;olbg_fixture&quot;: &quot;Anadolu Efes vs Besiktas&quot;,
+  &quot;olbg_day&quot;: &quot;Today&quot;,
+  &quot;olbg_clock&quot;: &quot;13:30&quot;,
+  &quot;official_fixture&quot;: &quot;Anadolu Efes Istanbul vs. Besiktas Istanbul&quot;,
+  &quot;official_date&quot;: &quot;2026-10-22&quot;,
+  &quot;official_ko_cest&quot;: &quot;19:30&quot;,
+  &quot;delta_hours&quot;: -6
+ },
+ {
+  &quot;olbg_event_id&quot;: 535920,
+  &quot;olbg_fixture&quot;: &quot;Bayern Munich vs BC Dubai&quot;,
+  &quot;olbg_day&quot;: &quot;Today&quot;,
+  &quot;olbg_clock&quot;: &quot;14:00&quot;,
+  &quot;official_fixture&quot;: &quot;FC Bayern Munich vs. Dubai Basketball&quot;,
+  &quot;official_date&quot;: &quot;2026-10-22&quot;,
+  &quot;official_ko_cest&quot;: &quot;20:00&quot;,
+  &quot;delta_hours&quot;: -6
+ },
+ {
+  &quot;olbg_event_id&quot;: 535921,
+  &quot;olbg_fixture&quot;: &quot;Maccabi Tel Aviv vs Real Madrid&quot;,
+  &quot;olbg_day&quot;: &quot;Today&quot;,
+  &quot;olbg_clock&quot;: &quot;14:05&quot;,
+  &quot;official_fixture&quot;: &quot;Maccabi Rapyd Tel Aviv vs. Real Madrid&quot;,
+  &quot;official_date&quot;: &quot;2026-10-22&quot;,
+  &quot;official_ko_cest&quot;: &quot;20:05&quot;,
+  &quot;delta_hours&quot;: -6
+ },
+ {
+  &quot;olbg_event_id&quot;: 535923,
+  &quot;olbg_fixture&quot;: &quot;Panathinaikos vs Baskonia&quot;,
+  &quot;olbg_day&quot;: &quot;Today&quot;,
+  &quot;olbg_clock&quot;: &quot;14:15&quot;,
+  &quot;official_fixture&quot;: &quot;Panathinaikos AKTOR Athens vs. Kosner Baskonia Vitoria-Gasteiz&quot;,
+  &quot;official_date&quot;: &quot;2026-10-22&quot;,
+  &quot;official_ko_cest&quot;: &quot;20:15&quot;,
+  &quot;delta_hours&quot;: -6
+ },
+ {
+  &quot;olbg_event_id&quot;: 535922,
+  &quot;olbg_fixture&quot;: &quot;Milano vs Barcelona&quot;,
+  &quot;olbg_day&quot;: &quot;Today&quot;,
+  &quot;olbg_clock&quot;: &quot;14:30&quot;,
+  &quot;official_fixture&quot;: &quot;Armani Olimpia Milan vs. FC Barcelona&quot;,
+  &quot;official_date&quot;: &quot;2026-10-22&quot;,
+  &quot;official_ko_cest&quot;: &quot;20:30&quot;,
+  &quot;delta_hours&quot;: -6
+ },
+ {
+  &quot;olbg_event_id&quot;: 535924,
+  &quot;olbg_fixture&quot;: &quot;Partizan vs Crvena Zvezda&quot;,
+  &quot;olbg_day&quot;: &quot;Today&quot;,
+  &quot;olbg_clock&quot;: &quot;14:45&quot;,
+  &quot;official_fixture&quot;: &quot;Partizan Mozzart Bet Belgrade vs. Crvena Zvezda Meridianbet Belgrade&quot;,
+  &quot;official_date&quot;: &quot;2026-10-22&quot;,
+  &quot;official_ko_cest&quot;: &quot;20:45&quot;,
+  &quot;delta_hours&quot;: -6
+ },
+ {
+  &quot;olbg_event_id&quot;: 535928,
+  &quot;olbg_fixture&quot;: &quot;Zalgiris vs Asvel Lyon Villeurbanne&quot;,
+  &quot;olbg_day&quot;: &quot;Tomorrow&quot;,
+  &quot;olbg_clock&quot;: &quot;13:00&quot;,
+  &quot;official_fixture&quot;: &quot;Zalgiris Kaunas vs. LDLC ASVEL Villeurbanne&quot;,
+  &quot;official_date&quot;: &quot;2026-10-23&quot;,
+  &quot;official_ko_cest&quot;: &quot;19:00&quot;,
+  &quot;delta_hours&quot;: -6
+ },
+ {
+  &quot;olbg_event_id&quot;: 535925,
+  &quot;olbg_fixture&quot;: &quot;Olympiacos vs Fenerbahce&quot;,
+  &quot;olbg_day&quot;: &quot;Tomorrow&quot;,
+  &quot;olbg_clock&quot;: &quot;14:15&quot;,
+  &quot;official_fixture&quot;: &quot;Olympiacos Piraeus vs. Fenerbahce Tarfin Istanbul&quot;,
+  &quot;official_date&quot;: &quot;2026-10-23&quot;,
+  &quot;official_ko_cest&quot;: &quot;20:15&quot;,
+  &quot;delta_hours&quot;: -6
+ }
+]</pre></details></div><div class="finding high"><span class="fid">F-1A-GRAN-01</span> <span class="chip bad">high</span> <span class="chip ok">confirmed model property</span> <span class="chip mut">all</span><h3>The high-confidence window is granularity-limited, not conviction-limited</h3><p>The window p &gt;= 0.70 AND price &gt;= -250 spans only 0.0143 of probability. A handicap rung steps probability by 0.3434/sigma per half point, so whether any rung lands in the band is governed by the sport&#x27;s scoring variance rather than by how strong the favourite is. At sigma 11.5 (basketball) a qualifying rung exists almost always; at sigma 2.30 (darts legs), 2.0 (snooker frames) or 1.15 (volleyball sets) it almost never does. This is why every High selection on this desk comes from basketball, while genuine 0.75-0.79 favourites in darts and snooker are rejected for landing a few American points short of -250.</p><details><summary class='sub'>evidence (17 items)</summary><pre>[
+ {
+  &quot;sport&quot;: &quot;basketball&quot;,
+  &quot;unit&quot;: &quot;points&quot;,
+  &quot;sigma_h&quot;: 11.5,
+  &quot;prob_step_per_half_rung&quot;: 0.01493,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;rugby_union&quot;,
+  &quot;unit&quot;: &quot;points&quot;,
+  &quot;sigma_h&quot;: 12.5,
+  &quot;prob_step_per_half_rung&quot;: 0.01374,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;rugby_league&quot;,
+  &quot;unit&quot;: &quot;points&quot;,
+  &quot;sigma_h&quot;: 12.5,
+  &quot;prob_step_per_half_rung&quot;: 0.01374,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;aussie_rules&quot;,
+  &quot;unit&quot;: &quot;points&quot;,
+  &quot;sigma_h&quot;: 32.0,
+  &quot;prob_step_per_half_rung&quot;: 0.00537,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;handball&quot;,
+  &quot;unit&quot;: &quot;goals&quot;,
+  &quot;sigma_h&quot;: 6.0,
+  &quot;prob_step_per_half_rung&quot;: 0.02862,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;tennis&quot;,
+  &quot;unit&quot;: &quot;games&quot;,
+  &quot;sigma_h&quot;: 5.2,
+  &quot;prob_step_per_half_rung&quot;: 0.03302,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;baseball&quot;,
+  &quot;unit&quot;: &quot;runs&quot;,
+  &quot;sigma_h&quot;: 4.0,
+  &quot;prob_step_per_half_rung&quot;: 0.04292,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;ice_hockey&quot;,
+  &quot;unit&quot;: &quot;goals&quot;,
+  &quot;sigma_h&quot;: 2.35,
+  &quot;prob_step_per_half_rung&quot;: 0.07306,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;volleyball&quot;,
+  &quot;unit&quot;: &quot;sets&quot;,
+  &quot;sigma_h&quot;: 1.15,
+  &quot;prob_step_per_half_rung&quot;: 0.1493,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;darts&quot;,
+  &quot;unit&quot;: &quot;legs&quot;,
+  &quot;sigma_h&quot;: 2.3,
+  &quot;prob_step_per_half_rung&quot;: 0.07465,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;snooker&quot;,
+  &quot;unit&quot;: &quot;frames&quot;,
+  &quot;sigma_h&quot;: 2.0,
+  &quot;prob_step_per_half_rung&quot;: 0.08585,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;cricket&quot;,
+  &quot;unit&quot;: &quot;runs&quot;,
+  &quot;sigma_h&quot;: null,
+  &quot;prob_step_per_half_rung&quot;: null,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;golf&quot;,
+  &quot;unit&quot;: &quot;strokes&quot;,
+  &quot;sigma_h&quot;: null,
+  &quot;prob_step_per_half_rung&quot;: null,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;motor_racing&quot;,
+  &quot;unit&quot;: &quot;points&quot;,
+  &quot;sigma_h&quot;: null,
+  &quot;prob_step_per_half_rung&quot;: null,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;greyhounds&quot;,
+  &quot;unit&quot;: &quot;lengths&quot;,
+  &quot;sigma_h&quot;: null,
+  &quot;prob_step_per_half_rung&quot;: null,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;esports&quot;,
+  &quot;unit&quot;: &quot;maps&quot;,
+  &quot;sigma_h&quot;: null,
+  &quot;prob_step_per_half_rung&quot;: null,
+  &quot;band_width&quot;: 0.0143
+ },
+ {
+  &quot;sport&quot;: &quot;gaelic_football&quot;,
+  &quot;unit&quot;: &quot;points&quot;,
+  &quot;sigma_h&quot;: null,
+  &quot;prob_step_per_half_rung&quot;: null,
+  &quot;band_width&quot;: 0.0143
+ }
+]</pre></details></div><div class="finding high"><span class="fid">F-1A-NHL-01</span> <span class="chip bad">high</span> <span class="chip ok">confirmed</span> <span class="chip mut">Ice Hockey</span><h3>OLBG&#x27;s Ice Hockey hub shows no NHL games at all</h3><p>NHL&#x27;s official schedule API reports numberOfGames=12 for 2026-10-22. OLBG&#x27;s Ice Hockey hub renders 7 cards, all SHL or Liiga, and none of the 12 NHL games. The four games we read in full are carried on our desk as official additions.</p><p class="sub"><b>Sources:</b> <a href="https://api-web.nhle.com/v1/schedule/2026-10-22" rel="noopener noreferrer">api-web.nhle.com</a> &middot; <a href="https://www.olbg.com/betting-tips/Ice_Hockey/13" rel="noopener noreferrer">olbg.com</a></p><details><summary class='sub'>evidence (3 items)</summary><pre>[
+ {
+  &quot;date&quot;: &quot;2026-10-22&quot;,
+  &quot;dayAbbrev&quot;: &quot;THU&quot;,
+  &quot;numberOfGames&quot;: 12,
+  &quot;season&quot;: 20262027,
+  &quot;gameType&quot;: 2
+ },
+ [
+  {
+   &quot;id&quot;: 2026020154,
+   &quot;away&quot;: &quot;Nashville Predators&quot;,
+   &quot;away_abbr&quot;: &quot;NSH&quot;,
+   &quot;home&quot;: &quot;Boston Bruins&quot;,
+   &quot;home_abbr&quot;: &quot;BOS&quot;,
+   &quot;venue&quot;: &quot;TD Garden&quot;,
+   &quot;startTimeUTC&quot;: &quot;2026-10-22T23:00:00Z&quot;,
+   &quot;venueTimezone&quot;: &quot;US/Eastern&quot;,
+   &quot;venueUTCOffset&quot;: &quot;-04:00&quot;,
+   &quot;gameState&quot;: &quot;FUT&quot;,
+   &quot;gameScheduleState&quot;: &quot;OK&quot;,
+   &quot;gameCenterLink&quot;: &quot;/gamecenter/nsh-vs-bos/2026-10-22/2026020154&quot;
+  },
+  {
+   &quot;id&quot;: 2026020155,
+   &quot;away&quot;: &quot;New York Rangers&quot;,
+   &quot;away_abbr&quot;: &quot;NYR&quot;,
+   &quot;home&quot;: &quot;Toronto Maple Leafs&quot;,
+   &quot;home_abbr&quot;: &quot;TOR&quot;,
+   &quot;venue&quot;: &quot;Scotiabank Arena&quot;,
+   &quot;startTimeUTC&quot;: &quot;2026-10-22T23:00:00Z&quot;,
+   &quot;venueTimezone&quot;: &quot;America/Toronto&quot;,
+   &quot;venueUTCOffset&quot;: &quot;-04:00&quot;,
+   &quot;gameState&quot;: &quot;FUT&quot;,
+   &quot;gameScheduleState&quot;: &quot;OK&quot;,
+   &quot;gameCenterLink&quot;: &quot;/gamecenter/nyr-vs-tor/2026-10-22/2026020155&quot;
+  },
+  {
+   &quot;id&quot;: 2026020156,
+   &quot;away&quot;: &quot;San Jose Sharks&quot;,
+   &quot;away_abbr&quot;: &quot;SJS&quot;,
+   &quot;home&quot;: &quot;Ottawa Senators&quot;,
+   &quot;home_abbr&quot;: &quot;OTT&quot;,
+   &quot;venue&quot;: &quot;Canadian Tire Centre&quot;,
+   &quot;startTimeUTC&quot;: &quot;2026-10-22T23:00:00Z&quot;,
+   &quot;venueTimezone&quot;: &quot;US/Eastern&quot;,
+   &quot;venueUTCOffset&quot;: &quot;-04:00&quot;,
+   &quot;gameState&quot;: &quot;FUT&quot;,
+   &quot;gameScheduleState&quot;: &quot;OK&quot;,
+   &quot;gameCenterLink&quot;: &quot;/gamecenter/sjs-vs-ott/2026-10-22/2026020156&quot;
+  },
+  {
+   &quot;id&quot;: 2026020157,
+   &quot;away&quot;: &quot;Anaheim Ducks&quot;,
+   &quot;away_abbr&quot;: &quot;ANA&quot;,
+   &quot;home&quot;: &quot;New Jersey Devils&quot;,
+   &quot;home_abbr&quot;: &quot;NJD&quot;,
+   &quot;venue&quot;: &quot;Prudential Center&quot;,
+   &quot;startTimeUTC&quot;: &quot;2026-10-22T23:00:00Z&quot;,
+   &quot;venueTimezone&quot;: &quot;US/Eastern&quot;,
+   &quot;venueUTCOffset&quot;: &quot;-04:00&quot;,
+   &quot;gameState&quot;: &quot;FUT&quot;,
+   &quot;gameScheduleState&quot;: &quot;OK&quot;,
+   &quot;gameCenterLink&quot;: &quot;/gamecenter/ana-vs-njd/2026-10-22/2026020157&quot;
+  },
+  {
+   &quot;id&quot;: 2026020158,
+   &quot;away&quot;: &quot;(read partially - away team truncated in the extract)&quot;,
+   &quot;away_abbr&quot;: null,
+   &quot;home&quot;: &quot;Pittsburgh Penguins&quot;,
+   &quot;home_abbr&quot;: &quot;PIT&quot;,
+   &quot;venue&quot;: &quot;PPG Paints Arena&quot;,
+   &quot;startTimeUTC&quot;: &quot;2026-10-22T23:00:00Z&quot;,
+   &quot;venueTimezone&quot;: &quot;US/Eastern&quot;,
+   &quot;venueUTCOffset&quot;: &quot;-04:00&quot;,
+   &quot;gameState&quot;: &quot;FUT&quot;,
+   &quot;gameCenterLink&quot;: null
+  }
+ ],
+ {
+  &quot;olbg_hub&quot;: &quot;https://www.olbg.com/betting-tips/Ice_Hockey/13&quot;,
+  &quot;olbg_cards&quot;: 7
+ }
+]</pre></details></div><div class="finding high"><span class="fid">F-1A-TZ-01</span> <span class="chip bad">high</span> <span class="chip ok">confirmed</span> <span class="chip mut">all</span><h3>No OLBG clock anywhere on the site carries a timezone label</h3><p>Across all 17 in-scope hubs, every rendered clock is bare. F-1A-CLOCK-04 proves the basketball hub clock is US Eastern Daylight Time by an exact 6-hour offset against official CEST kick-offs, and F-1A-CLOCK-01 shows a 5-hour internal inconsistency on the greyhound hub. A user reading &#x27;Today 14:05&#x27; has no way to know which of these it is without external cross-referencing.</p><p class="sub"><b>Sources:</b> <a href="https://www.olbg.com/betting-tips" rel="noopener noreferrer">olbg.com</a></p><details><summary class='sub'>evidence (15 items)</summary><pre>[
+ {
+  &quot;hub&quot;: &quot;tennis&quot;,
+  &quot;sample_clocks&quot;: [
+   &quot;04:00&quot;,
+   &quot;05:30&quot;,
+   &quot;07:00&quot;,
+   &quot;07:30&quot;
+  ]
+ },
+ {
+  &quot;hub&quot;: &quot;basketball&quot;,
+  &quot;sample_clocks&quot;: [
+   &quot;06:00&quot;,
+   &quot;13:00&quot;,
+   &quot;13:30&quot;,
+   &quot;14:00&quot;
+  ]
+ },
+ {
+  &quot;hub&quot;: &quot;golf&quot;,
+  &quot;sample_clocks&quot;: [
+   &quot;11:45&quot;,
+   &quot;14:10&quot;,
+   &quot;17:45&quot;
+  ]
+ },
+ {
+  &quot;hub&quot;: &quot;cricket&quot;,
+  &quot;sample_clocks&quot;: [
+   &quot;08:10&quot;,
+   &quot;08:15&quot;,
+   &quot;09:00&quot;,
+   &quot;09:15&quot;
+  ]
+ },
+ {
+  &quot;hub&quot;: &quot;snooker&quot;,
+  &quot;sample_clocks&quot;: [
+   &quot;08:00&quot;,
+   &quot;09:00&quot;,
+   &quot;14:00&quot;,
+   &quot;15:00&quot;
+  ]
+ },
+ {
+  &quot;hub&quot;: &quot;rugby_union&quot;,
+  &quot;sample_clocks&quot;: [
+   &quot;12:45&quot;,
+   &quot;15:00&quot;,
+   &quot;15:35&quot;,
+   &quot;18:00&quot;
+  ]
+ },
+ {
+  &quot;hub&quot;: &quot;rugby_league&quot;,
+  &quot;sample_clocks&quot;: [
+   &quot;04:30&quot;,
+   &quot;06:00&quot;,
+   &quot;13:00&quot;
+  ]
+ },
+ {
+  &quot;hub&quot;: &quot;baseball&quot;,
+  &quot;sample_clocks&quot;: [
+   &quot;20:00&quot;
+  ]
+ },
+ {
+  &quot;hub&quot;: &quot;ice_hockey&quot;,
+  &quot;sample_clocks&quot;: [
+   &quot;11:30&quot;,
+   &quot;13:00&quot;
+  ]
+ },
+ {
+  &quot;hub&quot;: &quot;motor_racing&quot;,
+  &quot;sample_clocks&quot;: [
+   &quot;08:00&quot;,
+   &quot;16:00&quot;
+  ]
+ },
+ {
+  &quot;hub&quot;: &quot;darts&quot;,
+  &quot;sample_clocks&quot;: [
+   &quot;13:15&quot;,
+   &quot;13:45&quot;,
+   &quot;14:15&quot;,
+   &quot;14:45&quot;
+  ]
+ },
+ {
+  &quot;hub&quot;: &quot;handball&quot;,
+  &quot;sample_clocks&quot;: [
+   &quot;09:00&quot;,
+   &quot;12:00&quot;,
+   &quot;12:30&quot;,
+   &quot;12:45&quot;
+  ]
+ },
+ {
+  &quot;hub&quot;: &quot;volleyball&quot;,
+  &quot;sample_clocks&quot;: [
+   &quot;11:30&quot;,
+   &quot;12:00&quot;,
+   &quot;13:00&quot;,
+   &quot;15:00&quot;
+  ]
+ },
+ {
+  &quot;hub&quot;: &quot;gaelic_football&quot;,
+  &quot;sample_clocks&quot;: [
+   &quot;09:00&quot;,
+   &quot;10:30&quot;,
+   &quot;12:00&quot;,
+   &quot;14:00&quot;
+  ]
+ },
+ {
+  &quot;hub&quot;: &quot;greyhounds&quot;,
+  &quot;sample_clocks&quot;: [
+   &quot;06:14&quot;,
+   &quot;06:36&quot;,
+   &quot;07:03&quot;,
+   &quot;07:14&quot;
+  ]
+ }
+]</pre></details></div><div class="finding medium"><span class="fid">AUD-1A-DARDERI-01</span> <span class="chip med">medium</span> <span class="chip bad">flagged unverified result</span> <span class="chip mut">Tennis</span><h3>Root fixtures file carries a tennis event that is no longer on OLBG</h3><p>data/fixtures.json lines 1176 and 6850 carry &#x27;away&#x27;: &#x27;Luciano Darderi&#x27; for OLBG event_id 902038 (&#x27;James Duckworth vs Luciano Darderi&#x27;). Our fresh 22 October harvest of the OLBG tennis hub lists 14 cards with event_ids 902069 to 902131 and no 902038, so the stored row is stale or expired. The result of that match is NOT confirmable from the official ATP pages we reached, so we flag it without asserting an outcome.</p><p class="sub"><b>Sources:</b> <a href="https://www.atptour.com/en/rankings/singles-race-to-turin" rel="noopener noreferrer">atptour.com</a> &middot; <a href="https://www.atptour.com/en/news/almaty-brussels-lyon-2026-scouting-report" rel="noopener noreferrer">atptour.com</a> &middot; <a href="https://www.atptour.com/en/scores/current/almaty/9410/draws" rel="noopener noreferrer">atptour.com</a> &middot; <a href="https://www.olbg.com/betting-tips/Tennis/3" rel="noopener noreferrer">olbg.com</a> &middot; <code>data/fixtures.json</code></p><details><summary class='sub'>evidence (2 items)</summary><pre>[
+ {
+  &quot;file&quot;: &quot;data/fixtures.json&quot;,
+  &quot;lines&quot;: [
+   1176,
+   6850
+  ],
+  &quot;event_id&quot;: 902038
+ },
+ {
+  &quot;harvested_tennis_event_ids&quot;: [
+   902073,
+   902069,
+   902110,
+   902072,
+   902087,
+   902104,
+   902103,
+   902082,
+   902100,
+   902131,
+   902120,
+   902126,
+   902105,
+   902107
+  ]
+ }
+]</pre></details></div><div class="finding medium"><span class="fid">AUD-1A-DUP-01</span> <span class="chip med">medium</span> <span class="chip ok">confirmed</span> <span class="chip mut">repo</span><h3>Root predictions file stores the same 29 predictions twice</h3><p>data/predictions.json declares count: 29 but holds 58 objects: the identical 29-prediction set appears under the top-level keys &#x27;items&#x27; and &#x27;predictions&#x27;, and the two text arrays compare equal element by element. Any consumer that walks the tree double-counts.</p><p class="sub"><b>Sources:</b> <code>data/predictions.json</code></p><details><summary class='sub'>evidence (1 item)</summary><pre>[
+ {
+  &quot;file&quot;: &quot;data/predictions.json&quot;,
+  &quot;declared_count&quot;: 29,
+  &quot;objects_found&quot;: 58,
+  &quot;duplicate_keys&quot;: [
+   &quot;items&quot;,
+   &quot;predictions&quot;
+  ],
+  &quot;texts_equal&quot;: true
+ }
+]</pre></details></div><div class="finding medium"><span class="fid">F-1A-CLOCK-01</span> <span class="chip med">medium</span> <span class="chip ok">confirmed</span> <span class="chip mut">Greyhounds</span><h3>Greyhound card title clock and card clock differ by exactly 5 hours with no timezone label</h3><p>OLBG event 689570 carries the title &#x27;11:14 Kinsley&#x27; while its own card clock reads &#x27;Today 06:14&#x27;, a difference of exactly 5 hours, and neither value is labelled with a timezone. The same 5-hour pattern appears on events 689576, 689581 and 689584.</p><p class="sub"><b>Sources:</b> <a href="https://www.olbg.com/betting-tips/Greyhounds/28" rel="noopener noreferrer">olbg.com</a></p><details><summary class='sub'>evidence (2 items)</summary><pre>[
+ {
+  &quot;event_id&quot;: 188829,
+  &quot;fixture&quot;: &quot;England vs Sri Lanka One Day Match&quot;,
+  &quot;page_a&quot;: &quot;https://www.olbg.com/betting-tips&quot;,
+  &quot;clock_a&quot;: &quot;Today 04:00&quot;,
+  &quot;page_b&quot;: &quot;https://www.olbg.com/betting-tips/Cricket/7&quot;,
+  &quot;clock_b&quot;: &quot;Today 09:00&quot;
+ },
+ {
+  &quot;event_id&quot;: 689570,
+  &quot;fixture&quot;: &quot;11:14 Kinsley&quot;,
+  &quot;page_a&quot;: &quot;card title (UK local)&quot;,
+  &quot;clock_a&quot;: &quot;11:14&quot;,
+  &quot;page_b&quot;: &quot;https://www.olbg.com/betting-tips/Greyhounds/28 clock chip&quot;,
+  &quot;clock_b&quot;: &quot;Today 06:14&quot;
+ }
+]</pre></details></div><div class="finding medium"><span class="fid">F-1A-CLOCK-03</span> <span class="chip med">medium</span> <span class="chip ok">confirmed</span> <span class="chip mut">Darts / Snooker</span><h3>OLBG&#x27;s session labels contradict official schedule-of-play windows</h3><p>The PDC officially schedules all eight Thursday European Championship ties inside a 1900-2300 CEST session (1800-2200 BST), yet OLBG groups the same ties under clocks in the 13:15-16:45 range. Separately, OLBG lists snooker at 08:00 where the official WST match centre lists Match 50 and Match 51 at 12:00. Both gaps are arithmetic and neither OLBG value carries a timezone label.</p><p class="sub"><b>Sources:</b> <a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" rel="noopener noreferrer">pdc.tv</a> &middot; <a href="https://www.pdc.tv/news/2026/october/21/2026-machineseeker-european-championship-preview" rel="noopener noreferrer">pdc.tv</a> &middot; <a href="https://www.wst.tv/matches/" rel="noopener noreferrer">wst.tv</a> &middot; <a href="https://www.wst.tv/news/2026/october/21/betvictor-northern-ireland-open-2026-day-four-afternoon" rel="noopener noreferrer">wst.tv</a> &middot; <a href="https://www.olbg.com/betting-tips/Darts/15" rel="noopener noreferrer">olbg.com</a></p><details><summary class='sub'>evidence (2 items)</summary><pre>[
+ &quot;Luke Woodhouse v Dirk van Duijvenbode / Danny Noppert v Stephen Bunting / Niels Zonneveld v Cameron Menzies / Gerwyn Price v Rob Cross / James Wade v Damon Heta / Luke Humphries v Ryan Searle / Gian van Veen v Andrew Gilding / Ross Smith v Karel Sedlacek&quot;,
+ [
+  {
+   &quot;players&quot;: &quot;Kyren Wilson v Pang Junxu&quot;,
+   &quot;match_no&quot;: 50,
+   &quot;listed&quot;: &quot;12:00 Thu 22 Oct&quot;
+  },
+  {
+   &quot;players&quot;: &quot;Matthew Selt v Sam Craigie&quot;,
+   &quot;match_no&quot;: 51,
+   &quot;listed&quot;: &quot;12:00 Thu 22 Oct&quot;
+  },
+  {
+   &quot;players&quot;: &quot;Elliot Slessor v Ricky Walden&quot;,
+   &quot;match_no&quot;: null,
+   &quot;listed&quot;: &quot;13:00 Thu 22 Oct&quot;
+  },
+  {
+   &quot;players&quot;: &quot;Mark Williams v Winner of match 44&quot;,
+   &quot;match_no&quot;: null,
+   &quot;listed&quot;: &quot;18:00 Thu 22 Oct&quot;
+  }
+ ]
+]</pre></details></div><div class="finding medium"><span class="fid">F-1A-EMPTY-01</span> <span class="chip med">medium</span> <span class="chip ok">confirmed</span> <span class="chip mut">Aussie Rules / eSports</span><h3>Two in-scope sports render no fixtures on OLBG</h3><p>OLBG&#x27;s Aussie Rules hub (id 22) and eSports hub (id 23) both render &#x27;No tips found.&#x27; They stay in scope as sports with zero coverage rather than being dropped, because the brief&#x27;s scope is defined by sport, not by whether tipsters have posted.</p><p class="sub"><b>Sources:</b> <a href="https://www.olbg.com/betting-tips/Aussie_Rules/22" rel="noopener noreferrer">olbg.com</a> &middot; <a href="https://www.olbg.com/betting-tips/eSports/23" rel="noopener noreferrer">olbg.com</a></p><details><summary class='sub'>evidence (2 items)</summary><pre>[
+ {
+  &quot;hub&quot;: &quot;https://www.olbg.com/betting-tips/Aussie_Rules/22&quot;,
+  &quot;rendered&quot;: &quot;No tips found.&quot;,
+  &quot;match_cards&quot;: 0,
+  &quot;sports_menu_chip&quot;: &quot;All Sports&quot;,
+  &quot;page_claim_verbatim&quot;: &quot;The **Women&#x27;s Australian Rules Football** (WAFL) was introduced in just 2017.&quot;,
+  &quot;note&quot;: &quot;OLBG names the women&#x27;s national competition &#x27;WAFL&#x27;. WAFL is the West Australian Football League, a men&#x27;s state competition; the women&#x27;s national competition launched in 2017 is the AFLW. Cross-checked against afl.com.au - see finding F-1A-AFL-01.&quot;
+ },
+ {
+  &quot;hub&quot;: &quot;https://www.olbg.com/betting-tips/eSports/23&quot;,
+  &quot;rendered&quot;: &quot;No tips found.&quot;,
+  &quot;match_cards&quot;: 0,
+  &quot;sports_menu_chip&quot;: &quot;All Sports&quot;,
+  &quot;sub_routes_listed_on_page&quot;: [
+   &quot;https://www.olbg.com/betting-tips/eSports/All_eSports/CSGO/23&quot;,
+   &quot;https://www.olbg.com/betting-tips/eSports/All_eSports/DOTA2/23&quot;,
+   &quot;https://www.olbg.com/betting-tips/eSports/All_eSports/LOL/23&quot;,
+   &quot;https://www.olbg.com/betting-tips/eSports/All_eSports/Other_eSports/23&quot;
+  ],
+  &quot;page_claim_verbatim&quot;: &quot;There is not a day of the week when there is not some sort of eSports tournament taking place, so our eSports tipsters are certainly kept busy.&quot;
+ }
+]</pre></details></div><div class="finding medium"><span class="fid">F-1A-EURO-01</span> <span class="chip med">medium</span> <span class="chip ok">confirmed</span> <span class="chip mut">Basketball</span><h3>Official source disagrees with itself: Valencia Basket&#x27;s record</h3><p>A 5-1 club cannot also be 4-2 over the same 6 games played, and &#x27;coming off its first loss&#x27; is inconsistent with a 5-1 record. The standings&#x27; H 2-2 + A 2-0 = 4-2 reconciles with GP 6; 5-1 would require GP 6 with 5 wins, contradicting the same table.</p><p class="sub"><b>Sources:</b> <a href="https://www.euroleaguebasketball.net/euroleague/news/game-center-round-7-el2627/" rel="noopener noreferrer">euroleaguebasketball.net</a> &middot; <a href="https://www.euroleaguebasketball.net/en/euroleague/standings/" rel="noopener noreferrer">euroleaguebasketball.net</a></p><details><summary class='sub'>evidence (1 item)</summary><pre>[
+ {
+  &quot;prose&quot;: &quot;Game Center: &#x27;Paris (1-5) will try to put an end to a three-game losing streak against Valencia (5-1), which is coming off its first loss.&#x27;&quot;,
+  &quot;table&quot;: &quot;Standings: Valencia Basket GP 6, W 4, L 2, Win% 66.7%, H 2-2, A 2-0.&quot;,
+  &quot;reconciles_exactly&quot;: null,
+  &quot;does_not_reconcile&quot;: null,
+  &quot;resolution&quot;: &quot;Standings table used as authoritative (it passes all four reconciliation checks). Prose figure discarded and flagged.&quot;
+ }
+]</pre></details></div><div class="finding medium"><span class="fid">F-1A-EURO-02</span> <span class="chip med">medium</span> <span class="chip ok">confirmed</span> <span class="chip mut">Basketball</span><h3>Official source disagrees with itself: Real Madrid&#x27;s away record</h3><p>H 2-0 plus A 1-4 would be 3-4 over 7 games, but the official GP is 6. The published A 1-3 sums correctly with H 2-0 to 3-3 over 6 games.</p><p class="sub"><b>Sources:</b> <a href="https://www.euroleaguebasketball.net/euroleague/news/game-center-round-7-el2627/" rel="noopener noreferrer">euroleaguebasketball.net</a> &middot; <a href="https://www.euroleaguebasketball.net/en/euroleague/standings/" rel="noopener noreferrer">euroleaguebasketball.net</a></p><details><summary class='sub'>evidence (1 item)</summary><pre>[
+ {
+  &quot;prose&quot;: &quot;Game Center: Real Madrid &#x27;has won three in a row, but is 1-4 away from home.&#x27;&quot;,
+  &quot;table&quot;: &quot;Standings: Real Madrid GP 6, W 3, L 3, H 2-0, A 1-3.&quot;,
+  &quot;reconciles_exactly&quot;: null,
+  &quot;does_not_reconcile&quot;: null,
+  &quot;resolution&quot;: &quot;Away record taken as 1-3 from the standings; the prose 1-4 is flagged as an official-source error.&quot;
+ }
+]</pre></details></div><div class="finding medium"><span class="fid">F-1A-EURO-03</span> <span class="chip med">medium</span> <span class="chip ok">confirmed</span> <span class="chip mut">Basketball</span><h3>Official source disagrees with itself: Points-per-game claims in Game Center prose vs the official standings table</h3><p>All totals and margins are originated from the standings&#x27; PTS+/PTS-/GP only. The two unreconciled prose ppg figures are never used as a numeric input; they are quoted as narrative context and flagged.</p><p class="sub"><b>Sources:</b> <a href="https://www.euroleaguebasketball.net/en/euroleague/standings/" rel="noopener noreferrer">euroleaguebasketball.net</a> &middot; <a href="https://www.euroleaguebasketball.net/euroleague/news/game-center-round-7-el2627/" rel="noopener noreferrer">euroleaguebasketball.net</a></p><details><summary class='sub'>evidence (1 item)</summary><pre>[
+ {
+  &quot;prose&quot;: null,
+  &quot;table&quot;: null,
+  &quot;reconciles_exactly&quot;: [
+   [
+    &quot;Panathinaikos AKTOR Athens&quot;,
+    &quot;allowed a league-low 73.0 points per game&quot;,
+    438,
+    6,
+    73.0
+   ],
+   [
+    &quot;Fenerbahce Tarfin Istanbul&quot;,
+    &quot;second in defense, having allowed just 74.5 points per game&quot;,
+    447,
+    6,
+    74.5
+   ],
+   [
+    &quot;Dubai Basketball&quot;,
+    &quot;fifth in the league with 82.2 points allowed per game&quot;,
+    493,
+    6,
+    82.1667
+   ],
+   [
+    &quot;LDLC ASVEL Villeurbanne&quot;,
+    &quot;allowed a league-high 95.3 points per game through the first six rounds&quot;,
+    572,
+    6,
+    95.3333
+   ],
+   [
+    &quot;Besiktas Istanbul&quot;,
+    &quot;third in the league in scoring (92.3 ppg.)&quot;,
+    554,
+    6,
+    92.3333
+   ],
+   [
+    &quot;Anadolu Efes Istanbul&quot;,
+    &quot;sixth in points allowed (85.0 ppg.)&quot;,
+    510,
+    6,
+    85.0
+   ]
+  ],
+  &quot;does_not_reconcile&quot;: [
+   [
+    &quot;Olympiacos Piraeus&quot;,
+    &quot;the league&#x27;s second-most potent attack with 98.2 points per game&quot;,
+    564,
+    6,
+    94.0,
+    &quot;564/6 = 94.0 ppg, not 98.2. A 98.2 ppg rate over 6 games implies 589.2 points; the official PTS+ is 564.&quot;
+   ],
+   [
+    &quot;Valencia Basket&quot;,
+    &quot;Valencia enters the game with the league&#x27;s top offense (98.3 ppg.)&quot;,
+    583,
+    6,
+    97.1667,
+    &quot;583/6 = 97.17 ppg, not 98.3. A 98.3 ppg rate over 6 games implies 589.8 points; the official PTS+ is 583.&quot;
+   ]
+  ],
+  &quot;resolution&quot;: &quot;All totals and margins are originated from the standings&#x27; PTS+/PTS-/GP only. The two unreconciled prose ppg figures are never used as a numeric input; they are quoted as narrative context and flagged.&quot;
+ }
+]</pre></details></div><div class="finding medium"><span class="fid">F-1A-RL-01</span> <span class="chip med">medium</span> <span class="chip ok">confirmed</span> <span class="chip mut">Rugby League</span><h3>OLBG&#x27;s Rugby League hub lists only 2027 outrights, no match cards</h3><p>The Rugby League hub renders three outright markets dated 2027 and no head-to-head match cards, and carries no Rugby League World Cup 2026 pricing, so the sport has no match-level coverage to originate lines against.</p><p class="sub"><b>Sources:</b> <a href="https://www.olbg.com/betting-tips/Rugby_League/10" rel="noopener noreferrer">olbg.com</a></p><details><summary class='sub'>evidence (3 items)</summary><pre>[
+ {
+  &quot;olbg_event_id&quot;: 2695857,
+  &quot;day&quot;: &quot;27 May 2027&quot;,
+  &quot;competition&quot;: &quot;All Rugby League&quot;,
+  &quot;fixture&quot;: &quot;State of Origin 2027&quot;
+ },
+ {
+  &quot;olbg_event_id&quot;: 2801554,
+  &quot;day&quot;: &quot;02 Oct 2027&quot;,
+  &quot;competition&quot;: &quot;All Rugby League&quot;,
+  &quot;fixture&quot;: &quot;Super League 2027&quot;
+ },
+ {
+  &quot;olbg_event_id&quot;: 2801600,
+  &quot;day&quot;: &quot;03 Oct 2027&quot;,
+  &quot;competition&quot;: &quot;All Rugby League&quot;,
+  &quot;fixture&quot;: &quot;NRL 2027&quot;
+ }
+]</pre></details></div><div class="finding low"><span class="fid">AUD-1A-README-01</span> <span class="chip mut">low</span> <span class="chip ok">confirmed</span> <span class="chip mut">repo</span><h3>README page count is stale</h3><p>README.md line 56 claims &#x27;0 broken relative links across all 160 published HTML pages&#x27;. The tree currently contains 319 HTML files. Confirms AUD-F7-01 with a fresh count.</p><p class="sub"><b>Sources:</b> <code>README.md</code></p><details><summary class='sub'>evidence (1 item)</summary><pre>[
+ {
+  &quot;file&quot;: &quot;README.md&quot;,
+  &quot;line&quot;: 56,
+  &quot;claimed_pages&quot;: 160,
+  &quot;actual_html_files&quot;: 319
+ }
+]</pre></details></div><div class="finding low"><span class="fid">F-1A-AFL-01</span> <span class="chip mut">low</span> <span class="chip bad">candidate unverified</span> <span class="chip mut">Aussie Rules</span><h3>OLBG appears to label a women&#x27;s national competition &#x27;WAFL&#x27;</h3><p>Cards on the Aussie Rules hub use the competition label &#x27;WAFL&#x27;. WAFL is ordinarily the West Australian Football League, a men&#x27;s state competition, so the label is a candidate mis-tagging of the women&#x27;s national competition. Not resolvable without afl.com.au, which we did not reach, so this stays a candidate and is not asserted.</p><p class="sub"><b>Sources:</b> <a href="https://www.olbg.com/betting-tips/Aussie_Rules/22" rel="noopener noreferrer">olbg.com</a></p></div><div class="finding low"><span class="fid">F-1A-CHIP-01</span> <span class="chip mut">low</span> <span class="chip ok">confirmed</span> <span class="chip mut">Aussie Rules / eSports</span><h3>Empty hubs render the sports-menu chip as &#x27;All Sports&#x27;</h3><p>On a hub with no fixtures, OLBG&#x27;s breadcrumb chip falls back to the literal text &#x27;All Sports&#x27; instead of naming the sport, so the page does not identify itself.</p><p class="sub"><b>Sources:</b> <a href="https://www.olbg.com/betting-tips/Aussie_Rules/22" rel="noopener noreferrer">olbg.com</a> &middot; <a href="https://www.olbg.com/betting-tips/eSports/23" rel="noopener noreferrer">olbg.com</a></p><details><summary class='sub'>evidence (2 items)</summary><pre>[
+ {
+  &quot;hub&quot;: &quot;https://www.olbg.com/betting-tips/Aussie_Rules/22&quot;,
+  &quot;rendered&quot;: &quot;No tips found.&quot;,
+  &quot;match_cards&quot;: 0,
+  &quot;sports_menu_chip&quot;: &quot;All Sports&quot;,
+  &quot;page_claim_verbatim&quot;: &quot;The **Women&#x27;s Australian Rules Football** (WAFL) was introduced in just 2017.&quot;,
+  &quot;note&quot;: &quot;OLBG names the women&#x27;s national competition &#x27;WAFL&#x27;. WAFL is the West Australian Football League, a men&#x27;s state competition; the women&#x27;s national competition launched in 2017 is the AFLW. Cross-checked against afl.com.au - see finding F-1A-AFL-01.&quot;
+ },
+ {
+  &quot;hub&quot;: &quot;https://www.olbg.com/betting-tips/eSports/23&quot;,
+  &quot;rendered&quot;: &quot;No tips found.&quot;,
+  &quot;match_cards&quot;: 0,
+  &quot;sports_menu_chip&quot;: &quot;All Sports&quot;,
+  &quot;sub_routes_listed_on_page&quot;: [
+   &quot;https://www.olbg.com/betting-tips/eSports/All_eSports/CSGO/23&quot;,
+   &quot;https://www.olbg.com/betting-tips/eSports/All_eSports/DOTA2/23&quot;,
+   &quot;https://www.olbg.com/betting-tips/eSports/All_eSports/LOL/23&quot;,
+   &quot;https://www.olbg.com/betting-tips/eSports/All_eSports/Other_eSports/23&quot;
+  ],
+  &quot;page_claim_verbatim&quot;: &quot;There is not a day of the week when there is not some sort of eSports tournament taking place, so our eSports tipsters are certainly kept busy.&quot;
+ }
+]</pre></details></div><div class="finding low"><span class="fid">F-1A-CLOCK-02</span> <span class="chip mut">low</span> <span class="chip bad">unconfirmed</span> <span class="chip mut">Cricket</span><h3>Root board and hub disagree on a cricket start clock</h3><p>OLBG event 188829 (England v Sri Lanka) shows 04:00 on the root board and 09:00 on the sport hub. We could not confirm either value against an official source, so this is recorded as an unconfirmed discrepancy and NOT asserted.</p><p class="sub"><b>Sources:</b> <a href="https://www.olbg.com/betting-tips/Cricket/7" rel="noopener noreferrer">olbg.com</a></p><details><summary class='sub'>evidence (2 items)</summary><pre>[
+ {
+  &quot;event_id&quot;: 188829,
+  &quot;fixture&quot;: &quot;England vs Sri Lanka One Day Match&quot;,
+  &quot;page_a&quot;: &quot;https://www.olbg.com/betting-tips&quot;,
+  &quot;clock_a&quot;: &quot;Today 04:00&quot;,
+  &quot;page_b&quot;: &quot;https://www.olbg.com/betting-tips/Cricket/7&quot;,
+  &quot;clock_b&quot;: &quot;Today 09:00&quot;
+ },
+ {
+  &quot;event_id&quot;: 689570,
+  &quot;fixture&quot;: &quot;11:14 Kinsley&quot;,
+  &quot;page_a&quot;: &quot;card title (UK local)&quot;,
+  &quot;clock_a&quot;: &quot;11:14&quot;,
+  &quot;page_b&quot;: &quot;https://www.olbg.com/betting-tips/Greyhounds/28 clock chip&quot;,
+  &quot;clock_b&quot;: &quot;Today 06:14&quot;
+ }
+]</pre></details></div><div class="finding low"><span class="fid">F-1A-GAA-01</span> <span class="chip mut">low</span> <span class="chip bad">candidate unverified</span> <span class="chip mut">Gaelic Football</span><h3>Hurling club fixtures appear under the Gaelic Football hub</h3><p>Some club fixtures rendered on OLBG&#x27;s Gaelic Football hub (id 25) look like hurling fixtures, while hurling has its own excluded OLBG id (26). Candidate scope leak between an in-scope and an excluded sport; needs gaa.ie to confirm and is not asserted here.</p><p class="sub"><b>Sources:</b> <a href="https://www.olbg.com/betting-tips/Gaelic_Football/25" rel="noopener noreferrer">olbg.com</a></p><details><summary class='sub'>evidence (6 items)</summary><pre>[
+ {
+  &quot;olbg_event_id&quot;: 3530,
+  &quot;competition&quot;: &quot;All Gaelic Football&quot;,
+  &quot;fixture&quot;: &quot;St Finbarrs v Nemo Rangers&quot;
+ },
+ {
+  &quot;olbg_event_id&quot;: 3532,
+  &quot;competition&quot;: &quot;All Gaelic Football&quot;,
+  &quot;fixture&quot;: &quot;Moycullen v Salthill-Knocknacarra&quot;
+ },
+ {
+  &quot;olbg_event_id&quot;: 3531,
+  &quot;competition&quot;: &quot;All Gaelic Football&quot;,
+  &quot;fixture&quot;: &quot;Kanturk v Eire Og Cor&quot;
+ },
+ {
+  &quot;olbg_event_id&quot;: 3536,
+  &quot;competition&quot;: &quot;All Gaelic Football&quot;,
+  &quot;fixture&quot;: &quot;Rathgormack v The Nire&quot;
+ },
+ {
+  &quot;olbg_event_id&quot;: 3537,
+  &quot;competition&quot;: &quot;All Gaelic Football&quot;,
+  &quot;fixture&quot;: &quot;Fr Caseys v Kildimo Pallaskenry&quot;
+ },
+ {
+  &quot;olbg_event_id&quot;: 3327,
+  &quot;competition&quot;: &quot;All Gaelic Football&quot;,
+  &quot;fixture&quot;: &quot;All Ireland Football Championship 2027&quot;
+ }
+]</pre></details></div><div class="finding low"><span class="fid">F-1A-MARKET-01</span> <span class="chip mut">low</span> <span class="chip ok">confirmed</span> <span class="chip mut">Gaelic Football</span><h3>All six Gaelic Football cards render an empty market chip</h3><p>OLBG prints a market chip on most cards naming the market the consensus tip refers to. All 6 cards on the Gaelic Football hub render that chip empty, so the market the tipsters are actually tipping is not machine-readable from the hub.</p><p class="sub"><b>Sources:</b> <a href="https://www.olbg.com/betting-tips/Gaelic_Football/25" rel="noopener noreferrer">olbg.com</a></p><details><summary class='sub'>evidence (6 items)</summary><pre>[
+ {
+  &quot;olbg_event_id&quot;: 3530,
+  &quot;fixture&quot;: &quot;St Finbarrs v Nemo Rangers&quot;,
+  &quot;market_chip&quot;: &quot;&quot;
+ },
+ {
+  &quot;olbg_event_id&quot;: 3532,
+  &quot;fixture&quot;: &quot;Moycullen v Salthill-Knocknacarra&quot;,
+  &quot;market_chip&quot;: &quot;&quot;
+ },
+ {
+  &quot;olbg_event_id&quot;: 3531,
+  &quot;fixture&quot;: &quot;Kanturk v Eire Og Cor&quot;,
+  &quot;market_chip&quot;: &quot;&quot;
+ },
+ {
+  &quot;olbg_event_id&quot;: 3536,
+  &quot;fixture&quot;: &quot;Rathgormack v The Nire&quot;,
+  &quot;market_chip&quot;: &quot;&quot;
+ },
+ {
+  &quot;olbg_event_id&quot;: 3537,
+  &quot;fixture&quot;: &quot;Fr Caseys v Kildimo Pallaskenry&quot;,
+  &quot;market_chip&quot;: &quot;&quot;
+ },
+ {
+  &quot;olbg_event_id&quot;: 3327,
+  &quot;fixture&quot;: &quot;All Ireland Football Championship 2027&quot;,
+  &quot;market_chip&quot;: &quot;&quot;
+ }
+]</pre></details></div><div class="finding low"><span class="fid">F-1A-SHARE-01</span> <span class="chip mut">low</span> <span class="chip ok">confirmed</span> <span class="chip mut">multiple</span><h3>OLBG prints no consensus percentage when the win-tip count is zero</h3><p>Cards where the win-tip count is 0 render a blank consensus percentage rather than 0 per cent, for example event 188350 (0/0) and event 101911 (0/2). Any consumer that treats the blank as missing data rather than as zero will mis-aggregate.</p><p class="sub"><b>Sources:</b> <a href="https://www.olbg.com/betting-tips" rel="noopener noreferrer">olbg.com</a></p><details><summary class='sub'>evidence (3 items)</summary><pre>[
+ {
+  &quot;olbg_event_id&quot;: 101911,
+  &quot;fixture&quot;: &quot;Senior Italian Open&quot;,
+  &quot;win_tips&quot;: 0,
+  &quot;share_pct&quot;: null
+ },
+ {
+  &quot;olbg_event_id&quot;: 188350,
+  &quot;fixture&quot;: &quot;T20 Blast 2027&quot;,
+  &quot;win_tips&quot;: 0,
+  &quot;share_pct&quot;: null
+ },
+ {
+  &quot;olbg_event_id&quot;: 609554,
+  &quot;fixture&quot;: &quot;La Rochelle v Bordeaux&quot;,
+  &quot;win_tips&quot;: null,
+  &quot;share_pct&quot;: null
+ }
+]</pre></details></div><h2>Unverified values left blank</h2><p class="lede">Every row flag raised by the build, grouped by code. These are the places where we refused to put a number in.</p><table class=''><thead><tr><th class="">Flag code</th><th class="num">Rows</th><th class="">Meaning</th></tr></thead><tbody><tr><td class=""><code>MARKET-CHIP-EMPTY</code></td><td class="num">11</td><td class="">OLBG rendered an empty market chip for this card (F-1A-MARKET-01).</td></tr><tr><td class=""><code>NOT-LISTED-ON-OLBG</code></td><td class="num">6</td><td class="">Fixture confirmed by NHL&#x27;s official schedule API but absent from OLBG&#x27;s Ice Hockey hub.</td></tr><tr><td class=""><code>OFFICIAL-READ-PARTIAL</code></td><td class="num">1</td><td class="">The official NHL payload was truncated mid-record for this game, so the away team is unknown. It is left blank rather than inferred, and no market is originated. Game id 2026020158.</td></tr><tr><td class=""><code>OPPONENT-NOT-OFFICIALLY-NAMED</code></td><td class="num">1</td><td class="">OLBG names the opponent, but the official WST match centre still lists the tie as &#x27;Mark Williams v Winner of match 44&#x27;. The opponent&#x27;s identity is therefore OLBG-only and the row is capped at Medium (F-1A-SNK-01).</td></tr><tr><td class=""><code>RATING-UNVERIFIED</code></td><td class="num">5</td><td class="">NHL&#x27;s schedule API confirms fixture, date, UTC start, venue and state only. It publishes no standings or ratings, so no probability is originated and the row stays at the neutral 0.50. See F-F7-NHL-01: the NHL season goals-for/against figures published elsewhere do not reconcile, so no NHL total is priced.</td></tr><tr><td class=""><code>SHARE-BLANK-ON-ZERO</code></td><td class="num">2</td><td class="">OLBG prints no consensus percentage when the win-tip count is zero (F-1A-SHARE-01).</td></tr><tr><td class=""><code>SPREAD-NOT-ORIGINATED</code></td><td class="num">86</td><td class="">Handicap left blank: with no official rating input for either side a spread would be unsourced. Only the consensus moneyline is published, and it is hard-capped at Medium.</td></tr><tr><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class="num">103</td><td class="">Match total left blank: no official body published enough scoring data to originate one. We never infer totals.</td></tr><tr><td class=""><code>UNVERIFIED-RATING</code></td><td class="num">113</td><td class="">No official governing-body source reached for this fixture; rating is OLBG consensus only and is capped at Medium.</td></tr></tbody></table><h2>Affected rows</h2><div class="scroll"><table class=''><thead><tr><th class="">Sport</th><th class="">Fixture</th><th class="">Flags</th><th class="">Source</th></tr></thead><tbody><tr><td class="">Tennis</td><td class="">Elena Rybakina vs Polina Kudermetova</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Tennis/3/All_Tennis/Elena_Rybakina_vs_Polina_Kudermetova?event_id=902073" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Tennis</td><td class="">Daniil Medvedev vs Sho Shimabukuro</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.atptour.com/en/rankings/singles-race-to-turin" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Tennis/3/All_Tennis/Daniil_Medvedev_vs_Sho_Shimabukuro?event_id=902069" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Tennis</td><td class="">Tomas Machac vs Karen Khachanov</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Tennis/3/All_Tennis/Tomas_Machac_vs_Karen_Khachanov?event_id=902110" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Tennis</td><td class="">Alexandra Eala vs Diana Shnaider</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Tennis/3/All_Tennis/Alexandra_Eala_vs_Diana_Shnaider?event_id=902072" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Tennis</td><td class="">Pierre Hugues Herbert vs Taylor Fritz</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.atptour.com/en/rankings/singles-race-to-turin" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Tennis/3/All_Tennis/Pierre_Hugues_Herbert_vs_Taylor_Fritz?event_id=902087" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Tennis</td><td class="">Raphael Collignon vs Jiri Lehecka</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Tennis/3/All_Tennis/Raphael_Collignon_vs_Jiri_Lehecka?event_id=902104" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Tennis</td><td class="">Valentin Vacherot vs Luca Van Assche</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Tennis/3/All_Tennis/Valentin_Vacherot_vs_Luca_Van_Assche?event_id=902103" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Tennis</td><td class="">Alexander Bublik vs Fabian Marozsan</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.atptour.com/en/rankings/singles-race-to-turin" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Tennis/3/All_Tennis/Alexander_Bublik_vs_Fabian_Marozsan?event_id=902082" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Tennis</td><td class="">Borna Gojo vs Daniel Altmaier</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Tennis/3/All_Tennis/Borna_Gojo_vs_Daniel_Altmaier?event_id=902100" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Tennis</td><td class="">David Goffin vs Alex Michelsen</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Tennis/3/All_Tennis/David_Goffin_vs_Alex_Michelsen?event_id=902131" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Tennis</td><td class="">Damir Dzumhur vs Zizou Bergs</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Tennis/3/All_Tennis/Damir_Dzumhur_vs_Zizou_Bergs?event_id=902120" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Tennis</td><td class="">Flavio Cobolli vs Stan Wawrinka</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Tennis/3/All_Tennis/Flavio_Cobolli_vs_Stan_Wawrinka?event_id=902126" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Tennis</td><td class="">Kyrian Jacquet vs Brandon Nakashima</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Tennis/3/All_Tennis/Kyrian_Jacquet_vs_Brandon_Nakashima?event_id=902105" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Tennis</td><td class="">Talia Gibson vs Ashlyn Krueger</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Tennis/3/All_Tennis/Talia_Gibson_vs_Ashlyn_Krueger?event_id=902107" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Basketball</td><td class="">Mobis Phoebus vs Changwon Sakers</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Basketball/4/Korea_KBL/Mobis_Phoebus_vs_Changwon_Sakers?event_id=536021" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Basketball</td><td class="">DEN Nuggets @ OKC Thunder</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Basketball/4/NBA/DEN_Nuggets_@_OKC_Thunder?event_id=534843" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Basketball</td><td class="">Fortaleza BC vs Pinheiros</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Basketball/4/Brazil_NBB/Fortaleza_BC_vs_Pinheiros?event_id=536019" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Basketball</td><td class="">CLE Cavaliers @ PHI 76ers</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Basketball/4/NBA/CLE_Cavaliers_@_PHI_76ers?event_id=534845" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Basketball</td><td class="">HOU Rockets @ SA Spurs</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Basketball/4/NBA/HOU_Rockets_@_SA_Spurs?event_id=534841" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Basketball</td><td class="">Uniao Corinthians vs Minas</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Basketball/4/Brazil_NBB/Uniao_Corinthians_vs_Minas?event_id=536020" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Golf</td><td class="">Bermuda Championship</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Golf/5/All_Golf/Bermuda_Championship?event_id=101904" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Golf</td><td class="">Stifel Charity Classic</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Golf/5/All_Golf/Stifel_Charity_Classic?event_id=101903" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Golf</td><td class="">Senior Italian Open</td><td class=""><code>UNVERIFIED-RATING</code> <code>SHARE-BLANK-ON-ZERO</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Golf/5/All_Golf/Senior_Italian_Open?event_id=101911" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Cricket</td><td class="">England vs Sri Lanka One Day Match</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Cricket/7/All_Cricket/England_vs_Sri_Lanka_One_Day_Match?event_id=188829" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Cricket</td><td class="">Namibia vs Ireland 1st ODI</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Cricket/7/All_Cricket/Namibia_vs_Ireland_1st_ODI?event_id=188828" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Cricket</td><td class="">Australia W vs New Zealand W 3rd T20 Match</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Cricket/7/All_Cricket/Australia_W_vs_New_Zealand_W_3rd_T20_Match?event_id=188826" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Cricket</td><td class="">Eastern Storm vs Tuskers T20</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Cricket/7/All_Cricket/Eastern_Storm_vs_Tuskers_T20?event_id=188811" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Cricket</td><td class="">Mpumalanga Rhinos vs South Africa Emerging T20</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Cricket/7/All_Cricket/Mpumalanga_Rhinos_vs_South_Africa_Emerging_T20?event_id=188825" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Cricket</td><td class="">Afghanistan vs Zimbabwe One Day Match</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Cricket/7/All_Cricket/Afghanistan_vs_Zimbabwe_One_Day_Match?event_id=188831" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Cricket</td><td class="">World Cup 2027</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Cricket/7/All_Cricket/World_Cup_2027?event_id=182606" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Cricket</td><td class="">Big Bash Women 2026</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Cricket/7/All_Cricket/Big_Bash_Women_2026?event_id=187184" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Cricket</td><td class="">T20 Big Bash 2026-27</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Cricket/7/All_Cricket/T20_Big_Bash_2026-27?event_id=187503" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Cricket</td><td class="">SA20 2026-27</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Cricket/7/All_Cricket/SA20_2026-27?event_id=187504" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Cricket</td><td class="">T20 Blast 2027</td><td class=""><code>UNVERIFIED-RATING</code> <code>SHARE-BLANK-ON-ZERO</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Cricket/7/All_Cricket/T20_Blast_2027?event_id=188350" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Snooker</td><td class="">Matthew Selt v Sam Craigie</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Snooker/8/All_Snooker/Matthew_Selt_v_Sam_Craigie?event_id=9942" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Snooker</td><td class="">Kyren Wilson v Pang Junxu</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.wst.tv/matches/" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Snooker/8/All_Snooker/Kyren_Wilson_v_Pang_Junxu?event_id=9940" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Snooker</td><td class="">Elliot Slessor v Ricky Walden</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Snooker/8/All_Snooker/Elliot_Slessor_v_Ricky_Walden?event_id=9947" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Snooker</td><td class="">Mark Williams v Martin O Donnell</td><td class=""><code>TOTAL-NOT-ORIGINATED</code> <code>OPPONENT-NOT-OFFICIALLY-NAMED</code></td><td class=""><a href="https://www.wst.tv/matches/" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Snooker/8/All_Snooker/Mark_Williams_v_Martin_O_Donnell?event_id=9943" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Snooker</td><td class="">Jordan Brown v Scott Donaldson</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Snooker/8/All_Snooker/Jordan_Brown_v_Scott_Donaldson?event_id=9944" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Snooker</td><td class="">Anthony McGill v Mateusz Baranowski</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Snooker/8/All_Snooker/Anthony_McGill_v_Mateusz_Baranowski?event_id=9946" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Snooker</td><td class="">David Gilbert v Cheung Ka Wai</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Snooker/8/All_Snooker/David_Gilbert_v_Cheung_Ka_Wai?event_id=9945" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Snooker</td><td class="">Jak Jones v Daniel Wells</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Snooker/8/All_Snooker/Jak_Jones_v_Daniel_Wells?event_id=9941" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby Union</td><td class="">Montauban v Oyonnax</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_Union/9/All_Rugby_Union/Montauban_v_Oyonnax?event_id=609556" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby Union</td><td class="">Aurillac v Nevers</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_Union/9/All_Rugby_Union/Aurillac_v_Nevers?event_id=609560" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby Union</td><td class="">Connacht v Zebre Parma</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_Union/9/All_Rugby_Union/Connacht_v_Zebre_Parma?event_id=609577" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby Union</td><td class="">Narbonne v Brive</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_Union/9/All_Rugby_Union/Narbonne_v_Brive?event_id=609557" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby Union</td><td class="">Agen v Nissa</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_Union/9/All_Rugby_Union/Agen_v_Nissa?event_id=609558" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby Union</td><td class="">Soyaux Angouleme v Dax</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_Union/9/All_Rugby_Union/Soyaux_Angouleme_v_Dax?event_id=609563" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby Union</td><td class="">Grenoble v Biarritz</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_Union/9/All_Rugby_Union/Grenoble_v_Biarritz?event_id=609561" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby Union</td><td class="">Bulls v Ulster</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_Union/9/All_Rugby_Union/Bulls_v_Ulster?event_id=609576" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby Union</td><td class="">Leinster v Munster</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_Union/9/All_Rugby_Union/Leinster_v_Munster?event_id=609578" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby Union</td><td class="">Valence Romans v Colomiers</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_Union/9/All_Rugby_Union/Valence_Romans_v_Colomiers?event_id=609559" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby Union</td><td class="">Provence v Beziers</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_Union/9/All_Rugby_Union/Provence_v_Beziers?event_id=609562" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby Union</td><td class="">Stormers v Scarlets</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_Union/9/All_Rugby_Union/Stormers_v_Scarlets?event_id=609580" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby Union</td><td class="">Toulouse v Perpignan</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_Union/9/All_Rugby_Union/Toulouse_v_Perpignan?event_id=609567" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby Union</td><td class="">Bayonne v Lyon</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_Union/9/All_Rugby_Union/Bayonne_v_Lyon?event_id=609564" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby Union</td><td class="">La Rochelle v Bordeaux</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_Union/9/All_Rugby_Union/La_Rochelle_v_Bordeaux?event_id=609554" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby League</td><td class="">State of Origin 2027</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_League/10/All_Rugby_League/State_of_Origin_2027?event_id=2695857" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby League</td><td class="">Super League 2027</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_League/10/All_Rugby_League/Super_League_2027?event_id=2801554" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Rugby League</td><td class="">NRL 2027</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Rugby_League/10/All_Rugby_League/NRL_2027?event_id=2801600" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Baseball</td><td class="">TB Rays @ MIL Brewers</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Baseball/12/MLB/TB_Rays_@_MIL_Brewers?event_id=160789" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Ice Hockey</td><td class="">Skelleftea AIK vs Djurgardens IF</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Ice_Hockey/13/Swedish_Hockey_League/Skelleftea_AIK_vs_Djurgardens_IF?event_id=199905" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Ice Hockey</td><td class="">Jyp vs HPK</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Ice_Hockey/13/Finland_SM_Liiga/Jyp_vs_HPK?event_id=199912" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Ice Hockey</td><td class="">Timra IK vs Farjestad BK</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Ice_Hockey/13/Swedish_Hockey_League/Timra_IK_vs_Farjestad_BK?event_id=199901" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Ice Hockey</td><td class="">Orebro HK vs Brynas IF</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Ice_Hockey/13/Swedish_Hockey_League/Orebro_HK_vs_Brynas_IF?event_id=199900" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Ice Hockey</td><td class="">IF Bjorkloven vs IF Malmo Redhawks</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Ice_Hockey/13/Swedish_Hockey_League/IF_Bjorkloven_vs_IF_Malmo_Redhawks?event_id=199899" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Ice Hockey</td><td class="">Rogle BK vs Frolunda HC</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Ice_Hockey/13/Swedish_Hockey_League/Rogle_BK_vs_Frolunda_HC?event_id=199906" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Ice Hockey</td><td class="">Vaxjo Lakers HC vs Lulea HF</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Ice_Hockey/13/Swedish_Hockey_League/Vaxjo_Lakers_HC_vs_Lulea_HF?event_id=199902" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Motor Racing</td><td class="">USA Grand Prix</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Motor_Racing/14/All_Motor_Racing/USA_Grand_Prix?event_id=913" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Motor Racing</td><td class="">Formula 1 Drivers Championship 2026</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Motor_Racing/14/All_Motor_Racing/Formula_1_Drivers_Championship_2026?event_id=828" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Motor Racing</td><td class="">Formula 1 Drivers Championship 2026 Without Kimi Antonelli</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Motor_Racing/14/All_Motor_Racing/Formula_1_Drivers_Championship_2026_Without_Kimi_Antonelli?event_id=912" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Darts</td><td class="">Gerwyn Price vs Rob Cross</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Darts/15/All_Darts/Gerwyn_Price_vs_Rob_Cross?event_id=32325" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Darts</td><td class="">Niels Zonneveld vs Cameron Menzies</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Darts/15/All_Darts/Niels_Zonneveld_vs_Cameron_Menzies?event_id=32334" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Darts</td><td class="">Luke Woodhouse vs Dirk van Duijvenbode</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Darts/15/All_Darts/Luke_Woodhouse_vs_Dirk_van_Duijvenbode?event_id=32324" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Darts</td><td class="">Luke Humphries vs Ryan Searle</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Darts/15/All_Darts/Luke_Humphries_vs_Ryan_Searle?event_id=32337" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Darts</td><td class="">James Wade vs Damon Heta</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Darts/15/All_Darts/James_Wade_vs_Damon_Heta?event_id=32322" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Darts</td><td class="">Gian van Veen vs Andrew Gilding</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Darts/15/All_Darts/Gian_van_Veen_vs_Andrew_Gilding?event_id=32323" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Darts</td><td class="">Danny Noppert vs Stephen Bunting</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Darts/15/All_Darts/Danny_Noppert_vs_Stephen_Bunting?event_id=32330" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Darts</td><td class="">Ross Smith vs Karel Sedlacek</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Darts/15/All_Darts/Ross_Smith_vs_Karel_Sedlacek?event_id=32329" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Darts</td><td class="">Ryan Joyce vs Jermaine Wattimena</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Darts/15/All_Darts/Ryan_Joyce_vs_Jermaine_Wattimena?event_id=32332" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Darts</td><td class="">Jonny Clayton vs Niko Springer</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Darts/15/All_Darts/Jonny_Clayton_vs_Niko_Springer?event_id=32335" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Darts</td><td class="">Krzysztof Ratajski vs Dave Chisnall</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Darts/15/All_Darts/Krzysztof_Ratajski_vs_Dave_Chisnall?event_id=32333" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Darts</td><td class="">Wessel Nijman vs Martin Schindler</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Darts/15/All_Darts/Wessel_Nijman_vs_Martin_Schindler?event_id=32326" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Darts</td><td class="">Josh Rock vs Chris Dobey</td><td class=""><code>TOTAL-NOT-ORIGINATED</code></td><td class=""><a href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Darts/15/All_Darts/Josh_Rock_vs_Chris_Dobey?event_id=32336" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Darts</td><td class="">Nathan Aspinall vs Cristo Reyes</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Darts/15/All_Darts/Nathan_Aspinall_vs_Cristo_Reyes?event_id=32327" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Handball</td><td class="">FC Barcelona vs Montpellier</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Handball/20/All_Handball/FC_Barcelona_vs_Montpellier?event_id=12046" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Handball</td><td class="">Bulgaria W vs Italy W</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Handball/20/All_Handball/Bulgaria_W_vs_Italy_W?event_id=12109" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Handball</td><td class="">TVB Stuttgart vs SG BBM Bietigheim</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Handball/20/All_Handball/TVB_Stuttgart_vs_SG_BBM_Bietigheim?event_id=12094" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Handball</td><td class="">Sporting CP vs IFK Kristianstad</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Handball/20/All_Handball/Sporting_CP_vs_IFK_Kristianstad?event_id=12054" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Handball</td><td class="">Kolstad vs SC Magdeburg</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Handball/20/All_Handball/Kolstad_vs_SC_Magdeburg?event_id=12048" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Handball</td><td class="">MT Melsungen vs Wisla Plock</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Handball/20/All_Handball/MT_Melsungen_vs_Wisla_Plock?event_id=12049" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Handball</td><td class="">Pick Szeged vs GOG</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Handball/20/All_Handball/Pick_Szeged_vs_GOG?event_id=12051" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Handball</td><td class="">SonderjyskE vs Nordsjaelland Handbold</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Handball/20/All_Handball/SonderjyskE_vs_Nordsjaelland_Handbold?event_id=12073" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Handball</td><td class="">KIF Kolding vs Fredericia HK</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Handball/20/All_Handball/KIF_Kolding_vs_Fredericia_HK?event_id=12074" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Handball</td><td class="">BM Granollers vs Ciudad Encantada</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Handball/20/All_Handball/BM_Granollers_vs_Ciudad_Encantada?event_id=12100" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Handball</td><td class="">Estonia W vs Kosovo W</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Handball/20/All_Handball/Estonia_W_vs_Kosovo_W?event_id=12110" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Handball</td><td class="">Skive FH vs Aalborg Handbold</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Handball/20/All_Handball/Skive_FH_vs_Aalborg_Handbold?event_id=12076" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Handball</td><td class="">Skanela IF vs HIF Karlskrona</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Handball/20/All_Handball/Skanela_IF_vs_HIF_Karlskrona?event_id=12117" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Handball</td><td class="">Onnereds HK vs Ystads IF HF</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Handball/20/All_Handball/Onnereds_HK_vs_Ystads_IF_HF?event_id=12116" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Handball</td><td class="">Frisch Auf Goppingen vs ThSV Eisenach</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Handball/20/All_Handball/Frisch_Auf_Goppingen_vs_ThSV_Eisenach?event_id=12088" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Volleyball</td><td class="">Radomka Radom W vs Mielec W</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Volleyball/21/All_Volleyball/Radomka_Radom_W_vs_Mielec_W?event_id=36988" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Volleyball</td><td class="">Brno vs Odolena Voda</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Volleyball/21/All_Volleyball/Brno_vs_Odolena_Voda?event_id=36989" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Volleyball</td><td class="">Ostrava vs Kladno</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Volleyball/21/All_Volleyball/Ostrava_vs_Kladno?event_id=36992" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Volleyball</td><td class="">Ceske Budejovice vs Beskydy</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Volleyball/21/All_Volleyball/Ceske_Budejovice_vs_Beskydy?event_id=36990" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Volleyball</td><td class="">Usti Nad Labem vs Zlin</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Volleyball/21/All_Volleyball/Usti_Nad_Labem_vs_Zlin?event_id=36993" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Volleyball</td><td class="">Liberec vs Benatky nad Jizerou</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Volleyball/21/All_Volleyball/Liberec_vs_Benatky_nad_Jizerou?event_id=36991" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Volleyball</td><td class="">Slepsk Suwalki vs GKS Katowice</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Volleyball/21/All_Volleyball/Slepsk_Suwalki_vs_GKS_Katowice?event_id=36963" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Volleyball</td><td class="">Brasilia W vs Sesc RJ Flamengo W</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Volleyball/21/All_Volleyball/Brasilia_W_vs_Sesc_RJ_Flamengo_W?event_id=37001" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Volleyball</td><td class="">PGE Skra Belchatow vs Projekt Warszawa</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Volleyball/21/All_Volleyball/PGE_Skra_Belchatow_vs_Projekt_Warszawa?event_id=36964" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Volleyball</td><td class="">CHKS Chelm vs Resovia Rzeszow</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Volleyball/21/All_Volleyball/CHKS_Chelm_vs_Resovia_Rzeszow?event_id=36965" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Volleyball</td><td class="">Paulistano-Barueri W vs Minas W</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Volleyball/21/All_Volleyball/Paulistano-Barueri_W_vs_Minas_W?event_id=37000" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Volleyball</td><td class="">Mackenzie W vs Osasco W</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Volleyball/21/All_Volleyball/Mackenzie_W_vs_Osasco_W?event_id=37002" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Volleyball</td><td class="">Abel-Moda Brusque W vs Praia Clube W</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Volleyball/21/All_Volleyball/Abel-Moda_Brusque_W_vs_Praia_Clube_W?event_id=37003" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Volleyball</td><td class="">Trentino vs Cisterna</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Volleyball/21/All_Volleyball/Trentino_vs_Cisterna?event_id=36994" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Volleyball</td><td class="">Monza vs Verona</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Volleyball/21/All_Volleyball/Monza_vs_Verona?event_id=36996" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Gaelic Football</td><td class="">St Finbarrs v Nemo Rangers</td><td class=""><code>UNVERIFIED-RATING</code> <code>MARKET-CHIP-EMPTY</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Gaelic_Football/25/All_Gaelic_Football/St_Finbarrs_v_Nemo_Rangers?event_id=3530" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Gaelic Football</td><td class="">Moycullen v Salthill-Knocknacarra</td><td class=""><code>UNVERIFIED-RATING</code> <code>MARKET-CHIP-EMPTY</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Gaelic_Football/25/All_Gaelic_Football/Moycullen_v_Salthill-Knocknacarra?event_id=3532" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Gaelic Football</td><td class="">Kanturk v Eire Og Cor</td><td class=""><code>UNVERIFIED-RATING</code> <code>MARKET-CHIP-EMPTY</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Gaelic_Football/25/All_Gaelic_Football/Kanturk_v_Eire_Og_Cor?event_id=3531" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Gaelic Football</td><td class="">Rathgormack v The Nire</td><td class=""><code>UNVERIFIED-RATING</code> <code>MARKET-CHIP-EMPTY</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Gaelic_Football/25/All_Gaelic_Football/Rathgormack_v_The_Nire?event_id=3536" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Gaelic Football</td><td class="">Fr Caseys v Kildimo Pallaskenry</td><td class=""><code>UNVERIFIED-RATING</code> <code>MARKET-CHIP-EMPTY</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Gaelic_Football/25/All_Gaelic_Football/Fr_Caseys_v_Kildimo_Pallaskenry?event_id=3537" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Gaelic Football</td><td class="">All Ireland Football Championship 2027</td><td class=""><code>UNVERIFIED-RATING</code> <code>MARKET-CHIP-EMPTY</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Gaelic_Football/25/All_Gaelic_Football/All_Ireland_Football_Championship_2027?event_id=3327" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Greyhounds</td><td class="">11:14 Kinsley</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Greyhounds/28/All_Greyhounds/11:14_Kinsley?event_id=689570" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Greyhounds</td><td class="">11:36 Sheffield</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Greyhounds/28/All_Greyhounds/11:36_Sheffield?event_id=689576" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Greyhounds</td><td class="">12:03 Kinsley</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Greyhounds/28/All_Greyhounds/12:03_Kinsley?event_id=689581" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Greyhounds</td><td class="">12:14 Nottingham</td><td class=""><code>UNVERIFIED-RATING</code></td><td class=""><a href="https://www.olbg.com/betting-tips/Greyhounds/28/All_Greyhounds/12:14_Nottingham?event_id=689584" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Ice Hockey</td><td class="">Boston Bruins vs Nashville Predators</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code> <code>MARKET-CHIP-EMPTY</code> <code>NOT-LISTED-ON-OLBG</code> <code>RATING-UNVERIFIED</code></td><td class=""><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Ice_Hockey/13/NHL/Boston_Bruins_vs_Nashville_Predators?event_id=2026020154" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Ice Hockey</td><td class="">Toronto Maple Leafs vs New York Rangers</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code> <code>MARKET-CHIP-EMPTY</code> <code>NOT-LISTED-ON-OLBG</code> <code>RATING-UNVERIFIED</code></td><td class=""><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Ice_Hockey/13/NHL/Toronto_Maple_Leafs_vs_New_York_Rangers?event_id=2026020155" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Ice Hockey</td><td class="">Ottawa Senators vs San Jose Sharks</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code> <code>MARKET-CHIP-EMPTY</code> <code>NOT-LISTED-ON-OLBG</code> <code>RATING-UNVERIFIED</code></td><td class=""><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Ice_Hockey/13/NHL/Ottawa_Senators_vs_San_Jose_Sharks?event_id=2026020156" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Ice Hockey</td><td class="">New Jersey Devils vs Anaheim Ducks</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code> <code>MARKET-CHIP-EMPTY</code> <code>NOT-LISTED-ON-OLBG</code> <code>RATING-UNVERIFIED</code></td><td class=""><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Ice_Hockey/13/NHL/New_Jersey_Devils_vs_Anaheim_Ducks?event_id=2026020157" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Ice Hockey</td><td class="">Pittsburgh Penguins vs [away team not read]</td><td class=""><code>UNVERIFIED-RATING</code> <code>TOTAL-NOT-ORIGINATED</code> <code>SPREAD-NOT-ORIGINATED</code> <code>MARKET-CHIP-EMPTY</code> <code>NOT-LISTED-ON-OLBG</code> <code>RATING-UNVERIFIED</code> <code>OFFICIAL-READ-PARTIAL</code></td><td class=""><a href="https://api-web.nhle.com/v1/schedule/2026-10-22" rel="noopener noreferrer">official</a> &middot; <a href="https://www.olbg.com/betting-tips/Ice_Hockey/13/NHL/Pittsburgh_Penguins?event_id=2026020158" rel="noopener noreferrer">OLBG</a></td></tr><tr><td class="">Basketball</td><td class="">Paris Basketball vs Valencia</td><td class=""><code>NOT-LISTED-ON-OLBG</code></td><td class=""><a href="https://www.euroleaguebasketball.net/en/euroleague/standings/" rel="noopener noreferrer">official</a></td></tr></tbody></table></div>
+<footer>
+Session <code>1a421e41-olbg1</code> &middot; task T60 &middot; OLBG harvest 2026-10-22T07:24:00Z &middot;
+every probability on this site is our own zero-vig origination from official governing-body data.
+Nothing here is a bookmaker price, and no value has been inferred or filled in: where an official
+source does not publish a figure the cell is left blank and the row is flagged.
+</footer>
+</div></body></html>
