@@ -1537,8 +1537,8 @@ def findings():
             "and 8540478b at 09:34:27Z (duration 28609ms). Content merged after 09:11Z is not served. "
             "/OLBG1/92af340c/index.html - a directory added by 8540478 itself - returns the repository's own 404 "
             "page, and /OLBG1/1a421e41/index.html still serves the 09:11 revision: its KPI card reads 2938 markets "
-            "where main at 8540478 reads 1642, and its High-confidence lede still shows the literal '70%%' fixed by "
-            "PR #98. Requesting a build is not possible: POST /repos/buffedlizard55-lab/OLBG1/pages/builds returns "
+            "where main at 8540478 reads 1642, and its High-confidence lede still showed the escaped double-percent sequence "
+            "that PR #98 removed, reaching readers as '70' followed by two percent signs. Requesting a build is not possible: POST /repos/buffedlizard55-lab/OLBG1/pages/builds returns "
             "403 Resource not accessible by integration. The repository payload is only 67MB, so this is not a size "
             "limit. Consequence: any session that verifies publication by reading the build status will believe its "
             "work is live when it is not. The check that works is to fetch a path that only exists in the commit you "
@@ -1553,7 +1553,8 @@ def findings():
              "observed": "404 page 'That page is not in this snapshot.' at 09:47Z and again at 09:56Z"},
             {"probe": "https://buffedlizard55-lab.github.io/OLBG1/1a421e41/index.html",
              "expected": "KPI card 1642 markets, lede 'clears 70%' (main at 8540478)",
-             "observed": "KPI card 2938 markets, lede 'clears 70%%' - the pre-PR-98 revision, at 09:44Z"},
+             "observed": "KPI card 2938 markets, and the lede still carried the escaped double-percent "
+                         "sequence PR #98 removed - the pre-PR-98 revision, at 09:44Z"},
             {"verified_on_main": "git show origin/main:1a421e41/index.html contains '>1642</div>' and "
                                  "'clears 70% while landing inside the window.'; "
                                  "origin/main:data/1a421e41/desk.json reports markets_originated 1642, "
