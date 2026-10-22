@@ -1,0 +1,182 @@
+{
+ "session": "f71557b5-olbg1",
+ "harvested_utc": "2026-10-22T03:59:06Z",
+ "harvest_date": "2026-10-22",
+ "hub_pattern": "https://www.olbg.com/betting-tips/{slug}/{sport_id}",
+ "event_pattern": "https://www.olbg.com/betting-tips/{sport}/{tour}/{comp}/{event}/{sport_id}?event_id={id}",
+ "in_scope": [
+  {
+   "sport": "tennis",
+   "olbg_id": 3,
+   "hub": "https://www.olbg.com/betting-tips/Tennis/3",
+   "cards_seen": 21,
+   "note": "21 match cards listed for 22-23 October, all ATP Almaty/Lyon/Brussels or WTA Ningbo/Osaka Round of 32 ties."
+  },
+  {
+   "sport": "basketball",
+   "olbg_id": 4,
+   "hub": "https://www.olbg.com/betting-tips/Basketball/4",
+   "cards_seen": 12,
+   "note": "NBA (4), EuroLeague (5), Korea KBL (1), Brazil NBB (1), plus sub-route hubs read for NBA, EuroLeague, EuroCup and WNBA."
+  },
+  {
+   "sport": "golf",
+   "olbg_id": 5,
+   "hub": "https://www.olbg.com/betting-tips/Golf/5",
+   "cards_seen": 4,
+   "note": "Bermuda Championship, Senior Italian Open, Stella Artois Players Championship, Stifel Charity Classic - outright cards only."
+  },
+  {
+   "sport": "cricket",
+   "olbg_id": 7,
+   "hub": "https://www.olbg.com/betting-tips/Cricket/7",
+   "cards_seen": 7,
+   "note": "NZ v India T20I, England v Sri Lanka ODI, Namibia v Ireland ODI, Australia W v NZ W, two CSA T20 cards, Afghanistan v Zimbabwe."
+  },
+  {
+   "sport": "snooker",
+   "olbg_id": 8,
+   "hub": "https://www.olbg.com/betting-tips/Snooker/8",
+   "cards_seen": 2,
+   "note": "Only two of the eight official Round 3 ties are listed upstream (Selt v Craigie, Wilson v Pang)."
+  },
+  {
+   "sport": "rugby-union",
+   "olbg_id": 9,
+   "hub": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+   "cards_seen": 15,
+   "note": "Pro D2 round 8, Top 14 round 7, URC round 4 and Six Nations 2027 outright."
+  },
+  {
+   "sport": "rugby-league",
+   "olbg_id": 10,
+   "hub": "https://www.olbg.com/betting-tips/Rugby_League/10",
+   "cards_seen": 3,
+   "note": "Only 2027 outrights published upstream - State of Origin 2027, Super League 2027, NRL 2027. No RLWC2026 match card on the hub."
+  },
+  {
+   "sport": "baseball",
+   "olbg_id": 12,
+   "hub": "https://www.olbg.com/betting-tips/Baseball/12",
+   "cards_seen": 1,
+   "note": "TB Rays @ MIL Brewers, 23 Oct 20:00 (OLBG clock) - World Series Game 1."
+  },
+  {
+   "sport": "ice-hockey",
+   "olbg_id": 13,
+   "hub": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "cards_seen": 4,
+   "note": "Swedish Hockey League (3) and Finland SM Liiga (1). The NHL sub-route hub returned 'No tips found' upstream."
+  },
+  {
+   "sport": "motor-racing",
+   "olbg_id": 14,
+   "hub": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+   "cards_seen": 3,
+   "note": "USA Grand Prix win-race card plus two Drivers' Championship outrights."
+  },
+  {
+   "sport": "darts",
+   "olbg_id": 15,
+   "hub": "https://www.olbg.com/betting-tips/Darts/15",
+   "cards_seen": 17,
+   "note": "All 16 European Championship Round One ties plus the tournament outright."
+  },
+  {
+   "sport": "handball",
+   "olbg_id": 20,
+   "hub": "https://www.olbg.com/betting-tips/Handball/20",
+   "cards_seen": 18,
+   "note": "EHF Champions League, EHF European League and seven domestic leagues."
+  },
+  {
+   "sport": "volleyball",
+   "olbg_id": 21,
+   "hub": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "cards_seen": 9,
+   "note": "Czech Extraliga (5) and Polish leagues (4), including two set-score tips."
+  },
+  {
+   "sport": "aussie-rules",
+   "olbg_id": 22,
+   "hub": "https://www.olbg.com/betting-tips/Aussie_Rules/22",
+   "cards_seen": 0,
+   "note": "'No tips found' upstream on 22 October even though the official AFLW Round 11 is being played 23-25 October."
+  },
+  {
+   "sport": "esports",
+   "olbg_id": 23,
+   "hub": "https://www.olbg.com/betting-tips/eSports/23",
+   "cards_seen": 0,
+   "note": "'No tips found' upstream; LoL Worlds 2026 Swiss stage starts 23 October on the official LoL Esports site."
+  },
+  {
+   "sport": "gaelic-football",
+   "olbg_id": 25,
+   "hub": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+   "cards_seen": 6,
+   "note": "Five club championship cards (24 Oct - 1 Nov) plus the All-Ireland 2027 outright."
+  },
+  {
+   "sport": "greyhounds",
+   "olbg_id": 28,
+   "hub": "https://www.olbg.com/betting-tips/Greyhounds/28",
+   "cards_seen": 0,
+   "note": "'No tips found' upstream on 22 October; GBGB was not reachable to confirm a card."
+  }
+ ],
+ "excluded": [
+  {
+   "slug": "Football",
+   "olbg_id": 1,
+   "reason": "soccer / football",
+   "hub": "https://www.olbg.com/betting-tips/Football/1"
+  },
+  {
+   "slug": "Horse_Racing",
+   "olbg_id": 2,
+   "reason": "horse racing",
+   "hub": "https://www.olbg.com/betting-tips/Horse_Racing/2"
+  },
+  {
+   "slug": "American_Football",
+   "olbg_id": 11,
+   "reason": "american football",
+   "hub": "https://www.olbg.com/betting-tips/American_Football/11"
+  },
+  {
+   "slug": "Boxing",
+   "olbg_id": 16,
+   "reason": "boxing",
+   "hub": "https://www.olbg.com/betting-tips/Boxing/16"
+  },
+  {
+   "slug": "Cycling",
+   "olbg_id": 17,
+   "reason": "cycling",
+   "hub": "https://www.olbg.com/betting-tips/Cycling/17"
+  },
+  {
+   "slug": "Entertainment",
+   "olbg_id": 18,
+   "reason": "specials / entertainment (TV, politics, awards)",
+   "hub": "https://www.olbg.com/betting-tips/Entertainment/18"
+  },
+  {
+   "slug": "Hurling",
+   "olbg_id": 26,
+   "reason": "hurling",
+   "hub": "https://www.olbg.com/betting-tips/Hurling/26"
+  },
+  {
+   "slug": "none",
+   "olbg_id": null,
+   "reason": "UFC / MMA - OLBG lists these inside the boxing and specials hubs, with no hub of their own",
+   "hub": ""
+  }
+ ],
+ "totals": {
+  "hubs_read": 17,
+  "cards_seen": 122
+ }
+}

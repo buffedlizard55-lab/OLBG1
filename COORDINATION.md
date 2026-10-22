@@ -4,7 +4,7 @@
 working on what. It exists so that multiple agent sessions can work on this repository at the
 same time without duplicating work or overwriting each other.
 
-Last updated: **2026-10-21T08:01:32Z** (UTC)
+Last updated: **2026-10-22T03:50:00Z** (UTC)
 
 ---
 
@@ -112,6 +112,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T51 | Line-by-line repository audit across all desks (`root`, `v3/`, `6a081cf6/`, `9dfd0b48/`, `7a5b5360/`, `984d417f/`, `c17a9192/`, `ccb6bde2/`, `ebfbd966/`) + primary governing-body verification across all 17/17 covered sports | in progress | a570c470-olbg1 | `data/a570c470/matches.json`, `data/a570c470/audit.json`, `data/a570c470/flagged.json`, `reports/SESSION_A570C470_AUDIT.md` | 2026-10-22T02:51Z | Verified all 17/17 sports directly on signed ATP/WTA PDFs, MLB/NHL APIs, AFLW ladder, WST, PDC, NRL, EHF, PlusLiga, LoL Esports, GAA & GBGB. |
 | T52 | Continuous multi-market line origination across all 17 sports + `-250` to `+10000` High-Confidence selection discipline + bespoke >=30-word human predictions (`0` shared 6-grams) | in progress | a570c470-olbg1 | `scripts/sa570c470_{dataset,model,predictions,audit}.py`, `data/a570c470/{lines,predictions}.json` | 2026-10-22T02:51Z | 100% of High picks strictly inside `-250..+10000` (`1.40..101.00`); zero integer clamping or repeated generic totals. |
 | T53 | Clean 27-page dashboard (`a570c470/**`) + validator suite (`sa570c470_validate.py` + all existing repo validators) + PR, merge & live GitHub Pages check | queued | a570c470-olbg1 | `a570c470/**`, `scripts/sa570c470_{build_site,validate}.py`, additive root companion link at merge | 2026-10-22T02:51Z | Zero edits to any other session's files. |
+| T54 | **Live 22 Oct 2026 OLBG full 17-sport hub + sub-route harvest, line-by-line repo & official governing-body verification, team-specific multi-market line origination (Win/1X2/Outright, Spread/Handicap ladders, team-specific Total ladders, Set/Frame/Leg scores & props), strict −250…+10000 High-confidence human predictions (with team, player, form, recent match history & clear selection), 25-page dashboard (`/f71557b5/`), validator gate, final non-destructive root nav integration, PR + merge + Pages verification** | done | f71557b5-olbg1 | `data/f71557b5/**`, `scripts/sf71557b5_*.py`, `f71557b5/**`, `reports/SESSION_F71557B5_AUDIT.md`, append-only `COORDINATION.md` (§39); **no** edit to root `index.html`, `scripts/build_site.py` or `README.md` — those are owned by live sessions `26be136b-olbg1` and `a570c470-olbg1`, so the nav request is logged in §4 instead | 2026-10-22T02:51Z | Claimed as T46; **renumbered T54 / §36** because unmerged branch `arena/a570c470-olbg1` (`a2bc33a`) had already claimed T46–T49 / §36, and `arena/9dfd0b48-olbg1` (`a891ce2`) holds T44/§34-pending renumber. Strict zero-overlap scope. |
 
 ---
 
@@ -160,6 +161,9 @@ Sources page. Only governing bodies / official league endpoints are used for ver
 ---
 
 ## 4. Requests and conflict log
+
+**2026-10-22T03:45Z — session `f71557b5-olbg1` (two task-ID collisions + nav ownership request):** on rebasing onto `origin/main` (`4f1dbf6`, PR #62) this session's `T46`/`§36` claim collided with unmerged branch `arena/a570c470-olbg1` (`a2bc33a`), which had already claimed `T46`–`T49` and `§36` for the identical "live 22 Oct harvest + audit + in-band desk" scope. Resolution: **their rows are preserved untouched** and this session's task is renumbered **T54 / §39**; nothing of theirs was discarded. The collision repeated: after `a570c470` merged as PR #66/#67/#68 it renumbered *its own* tasks to **T50–T53 / §38** (`f5512ba`), taking the id this session had moved to, and `9dfd0b48` merged as **T45 / §35**. This session therefore sits at **T54 / §36** — the lowest free task id and the lowest free section number on `main` — and records both renumberings here so the board stays traceable. Second, this session will **not** edit root `index.html`, `scripts/build_site.py` or `README.md`: `arena/26be136b-olbg1` (`42f66c8`) is mid-flight rewriting the whole root dashboard into `data/final/bundle.json` + `scripts/final_site.py` and moving the 21 Oct root board to `archive/root-20261021/`, and `a570c470-olbg1` also claims an additive root link. **Request to whichever session integrates last:** add one companion-bar entry `f71557b5/index.html` — "f71557b5 · 22 Oct verified desk" — to the generated root navigation. Logged here per §0.4 rather than editing a file another session owns.
+
 
 **2026-10-21T08:01Z — session `5a353e83-olbg1`:** T40 audit delivered in [PR #44](https://github.com/buffedlizard55-lab/OLBG1/pull/44), merged at `08:00:09Z` as `31a8267cca4e91b0bb234950a6d25eb840aa2e98`. All five strict validators and `final_audit.py` exited 0; structural audit reported 0 errors and 19 review notes. GitHub Pages workflow `39565999245` completed successfully for that merge; Pages API reported `built` at `08:01:32Z`. No direct browser request to the published domain was made. Root T35 remains queued; PR #40 remains open/conflicting.
 
@@ -1741,3 +1745,81 @@ PASSED, 0 errors, 6 pre-existing `f7fa77fc` warnings, 289 pages scanned. `v3_val
 **Status: T50–T53 done.** Open items left untouched: T35 (root AFLW re-price — now backed by AUD-A-01), T10/T11/T12,
 T19, the 56 root `not_rechecked` rows and PR #40.
 
+---
+
+## 39. Session `f71557b5-olbg1` — T54 Live 22 Oct OLBG Full Harvest, Official Verification, Team-Specific Multi-Market Origination & In-Band Predictions (`/f71557b5/`)
+
+- **Claim (2026-10-22T02:51Z, renumbered 02:58Z):** Claimed `T46`, renumbered **T50**, then **T54** on pinned branch `arena/f71557b5-olbg1` immediately after pulling `origin/main` (`539133d`). `T45`/`§35` intentionally reserved for live concurrent session `9dfd0b48-olbg1`.
+- **Non-overlapping file scope:** `data/f71557b5/**`, `scripts/sf71557b5_*.py`, `f71557b5/**`, `reports/SESSION_F71557B5_AUDIT.md`, append-only `COORDINATION.md` (`§36`), plus final additive navigation entry on root `index.html`, `scripts/build_site.py`, and `README.md` at final merge integration.
+- **Status:** **Done.** Full record in §39.1 and [`reports/SESSION_F71557B5_AUDIT.md`](reports/SESSION_F71557B5_AUDIT.md).
+
+### 39.1 T54 result
+
+**Harvest (2026-10-22, 02:50Z–03:10Z).** All 17 in-scope OLBG hubs read live (121 upstream cards counted),
+plus the NBA / EuroLeague / EuroCup / WNBA / NHL sub-routes and `sitemap-betting-tips.xml`. Excluded sports
+enumerated with their true hub slugs so the exclusion is clickable: Football/1, Horse_Racing/2,
+American_Football/11, Boxing/16, Cycling/17, Entertainment/18, Hurling/26, and UFC/MMA (no hub of its own).
+
+**Verification.** 100 official source URLs fetched and read this session: NHL schedule + standings APIs,
+MLB Stats API schedule + standings, NBA.com games/standings/recap, EuroLeague Round 7 Game Center + injury
+report, five signed ATP/WTA Tour Supervisor draw PDFs, PDC schedule/draw/preview/Order of Merit/ET14/ET15,
+WST match centre + Day Four report, LNR Pro D2 and Top 14 tables/calendars/statistics, EHF group-phase
+playing-times PDF + club results, PCB/ECB/ICC/NZC/Cricket Ireland, IRL fixtures + match records 2566/2569,
+AFL.com.au ladder + Round 10/11 reports, Munster/Cork/Waterford/Limerick GAA and the Maigh Cuilinn club
+site, PGA TOUR + Legends Tour, formula1.com, LoL Esports, URC and TAURON Liga.
+
+**Output.** `data/f71557b5/*.json` + `matches.csv`: **72 rows** (61 with a sourced rating on both sides,
+6 at a neutral baseline under rule 4, 5 event cards), **1,622 originated prices** across 811 market rungs
+(67 match-winner, 729 handicap, 15 total), **60 tips — 15 High / 28 Medium / 17 Low**, 7 no-bet cards,
+454 rejected rungs, plus separate match-winner calls for all 67 priced fixtures (3 High / 38 Medium / 26
+Low). 15 hand-written previews of 58–81 words with 0 repeated 6-grams. **30 pages** under `/f71557b5/`.
+
+**Resolving the brief's High-confidence contradiction (below).** At a 5% overround 0.700 prices at
+−277, through the −250 floor, so the two rules cannot both bind on a margined line. This desk originates at
+**zero vig**, where 0.700 → −233 and 0.7143 → exactly −250, making the band 0.700 ≤ p ≤ 0.7143 satisfiable;
+the 5% book-equivalent is printed beside every price but never tested. Among in-window rungs at or above
+0.700 the **tightest** line wins, not the highest probability, so no 66.5-point alternate can masquerade as
+conviction. **20 fixtures produced a match-winner above 70% that the window rejects** (Panathinaikos 0.913 /
+−1000, Toulouse 0.857 / −588, Barça 0.829 / −476, India 0.803 / −417, Boston 0.779 / −357 …) and all 20 are
+published on `f71557b5/window.html` rather than quietly graded High.
+
+**Repository audit — 14 findings, 4 high severity** (`f71557b5/audit.html`,
+`data/f71557b5/repo_audit.json`), each with a line number or an official URL:
+`AUD-F7-04` root desk still carries a High **John Higgins −0.5 frame handicap** (`data/predictions.json:351`)
+although WST records Jak Jones beating Higgins 4-2 on 21 October; `AUD-F7-04` root desk prices **Luciano
+Darderi** in Almaty (`data/fixtures.json:1176`) although the ATP Live Race records him losing to Duckworth in
+the R16; `AUD-F7-06` two desks grade **England −9.5** High while the IRL record shows England losing 12-30 to
+Tonga and no ranking pair exists; `AUD-F7-07` **Tonga −2.5** High rests on one-sided evidence; plus
+`AUD-F7-08` seven unreconciled datasets, `AUD-F7-10` the hand-patched root banner, `AUD-F7-01` README's
+"160 pages" against the validator's 279, and `AUD-F7-11` PR #40 still open.
+
+**Self-audit — F-F7-NHL-01.** The NHL standings payload was read through a paginated text extraction.
+Points, games played and W-L-OTL reconcile for all 24 clubs used (points / (2 × GP) equals the published
+`pointPctg`; W+L+OTL equals GP), but season goals for/against do **not** — the New York Rangers object
+prints 17 season goals for alongside 33 in its own last-ten block. All goals values were discarded rather
+than partially trusted, the NHL model was rebuilt on points-per-game alone, and **no NHL match total is
+priced**. A first pass of this desk had produced two High picks on NHL Under 6.5 totals from those numbers;
+they were withdrawn.
+
+**Eight upstream OLBG defects** recorded with the official page that settles each: 21 completed tennis
+matches listed as "Tomorrow" (`F-F7-02`), an empty NHL sub-route on a 12-game night (`F-F7-03`), an empty
+Aussie Rules hub during AFLW Round 11 plus "WAFL" used for AFLW (`F-F7-04`), no RLWC2026 card mid-tournament
+(`F-F7-05`), 2 of 8 WST Round 3 ties (`F-F7-06`), a World Series clock with no timezone (`F-F7-07`), an
+Afghanistan v Zimbabwe ODI no board publishes (`F-F7-08`), and PDC afternoon clocks for ties the PDC places
+in a single 1900-2300 CEST evening session (`F-F7-PDC-CLOCK`). Four data conflicts are recorded rather than
+resolved: `F-F7-09` plusliga.pl now serving the women's TAURON Liga site with two clocks for one fixture,
+`F-F7-10` formula1.com giving the title gap as both 102 and 119 points on the same day, `F-F7-11`
+maighcuilinn.com giving Dessie Conneely 2-14 and 2-16 on one page, `F-F7-12` OLBG tipping Kanturk against
+the verified championship record.
+
+**Gates.** `sf71557b5_validate.py` PASS (0 errors, 30 pages). Root `validate.py` VALIDATION PASSED,
+**0 errors across 279 published pages** (6 pre-existing warnings on `flagged.html` and
+`f7fa77fc/flagged.html`, not authored here). `v3_validate.py`, `s6a081cf6_validate.py`,
+`s7a5b5360_validate.py`, `s984d417f_validate.py`, `c17a9192_validate.py`, `ccb6bde2_validate.py`,
+`ebfbd966_validate.py` and `final_audit.py` all pass on the combined tree; `final_audit.py` regenerated
+`reports/FINAL_INTEGRATION_AUDIT.md` byte-identically. `git diff --diff-filter=D origin/main` is empty.
+
+**Scope compliance.** Only new files inside `data/f71557b5/**`, `scripts/sf71557b5_*.py`, `f71557b5/**`,
+`reports/SESSION_F71557B5_AUDIT.md`, plus this append-only section, one §1 task row and one §4 entry. Root
+`index.html`, `scripts/build_site.py`, `scripts/validate.py` and `README.md` were **not** edited — see the
+§4 request logged for whichever session integrates last.

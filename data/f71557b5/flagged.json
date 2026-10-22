@@ -1,0 +1,126 @@
+{
+ "session": "f71557b5-olbg1",
+ "read_date": "2026-10-22",
+ "flags": [
+  {
+   "id": "F-F7-01",
+   "severity": "finding",
+   "sport": "policy",
+   "title": "The brief's two High-confidence rules can only both hold in a 1.4-point probability band",
+   "text": "The brief asks for High-confidence picks above 70% to win AND inside the -250 to +10000 price window. A 70.0% chance is a 1.4286 fair price (-233) and a 71.43% chance is exactly 1.40 (-250), so at a zero-vig fair line the admissible High band is model probability 70.0% to 71.43%. Any book-margin line pushes it out of the window entirely (a 5% overround makes 70% price -277). This desk publishes the zero-vig fair price as the originated line, shows the 5% book-equivalent alongside it, and tests the window against the fair price. Every selection above 71.43% is published in the 'Rejected Highs' table with its price instead of being quietly graded High.",
+   "source": "https://buffedlizard55-lab.github.io/OLBG1/f71557b5/methodology.html"
+  },
+  {
+   "id": "F-F7-NHL-01",
+   "severity": "data",
+   "sport": "ice-hockey",
+   "title": "Every NHL goals-for/against value was discarded after a reconciliation failure",
+   "text": "The standings payload at api-web.nhle.com/v1/standings/2026-10-21 was read through a paginated text extraction. Points, games played, wins, losses and overtime losses reconcile for all 24 clubs used on this desk (points / (2 x games played) equals the published pointPctg, and W + L + OTL equals games played). Season goals for and against do NOT reconcile: the New York Rangers object prints 17 season goals for alongside 33 goals for in its own last-ten block, which is impossible. Rather than trust some goals values and not others, all of them were discarded, the NHL model was rebuilt on points-per-game only, and no NHL match total is priced. This is a defect in how the payload was read, not in the league's data.",
+   "source": "https://api-web.nhle.com/v1/standings/2026-10-21"
+  },
+  {
+   "id": "F-F7-02",
+   "severity": "upstream",
+   "sport": "tennis",
+   "title": "OLBG lists 21 completed tennis matches as upcoming",
+   "text": "Every one of the five signed supervisor draws read this session (ATP Almaty 9410, Lyon 496, Brussels 7485; WTA Ningbo 2092, Osaka 405) shows its Round of 32 fully scored, and the ATP Live Race To Turin confirms the survivors 'will play next in the R16'. OLBG's tennis hub still presents those Round of 32 ties - Medvedev v Shimabukuro, Rybakina v Kudermetova, Machac v Khachanov and 18 others - as 'Tomorrow'. They are not priced here.",
+   "source": "https://www.protennislive.com/posting/2026/9410/mds.pdf"
+  },
+  {
+   "id": "F-F7-03",
+   "severity": "upstream",
+   "sport": "ice-hockey",
+   "title": "OLBG's NHL sub-route returns no tips on a 12-game night",
+   "text": "The NHL played 12 games on 22 October per the league's own schedule API, but OLBG's Ice Hockey hub lists three Swedish Hockey League games and one Finnish Liiga game, and its /betting-tips/Ice_Hockey/NHL/13 sub-route prints 'No tips found'. All 12 NHL games in this desk were harvested from the league, not from OLBG.",
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+  },
+  {
+   "id": "F-F7-04",
+   "severity": "upstream",
+   "sport": "aussie-rules",
+   "title": "OLBG's Aussie Rules hub is empty during AFLW Round 11",
+   "text": "OLBG's hub for sport id 22 returns 'No tips found' on 22 October although the official AFLW Round 11 begins in Adelaide on Friday 23 October. The hub copy also describes the women's competition as 'WAFL', which is the West Australian Football League - the women's league is AFLW. Both are recorded as upstream defects.",
+   "source": "https://www.afl.com.au/aflw"
+  },
+  {
+   "id": "F-F7-05",
+   "severity": "upstream",
+   "sport": "rugby-league",
+   "title": "No RLWC2026 match card on OLBG's rugby league hub",
+   "text": "The Rugby League World Cup is in its pool stage with four Round 2 fixtures across 23-25 October on the official IRL site, yet OLBG's rugby league hub publishes only three 2027 outrights (State of Origin 2027, Super League 2027, NRL 2027) and no World Cup match card.",
+   "source": "https://www.intrl.sport/fixtures-results"
+  },
+  {
+   "id": "F-F7-06",
+   "severity": "upstream",
+   "sport": "snooker",
+   "title": "OLBG lists two of eight official Round 3 ties",
+   "text": "The WST match centre publishes eight Round 3 ties for 22 October; OLBG's snooker hub shows only Matthew Selt v Sam Craigie and Kyren Wilson v Pang Junxu. The six missing ties (Slessor v Walden, McGill v Baranowski, Williams v O'Donnell, Gilbert v Cheung, Brown v Donaldson, Jones v Wells) are all priced here from the official page.",
+   "source": "https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5"
+  },
+  {
+   "id": "F-F7-07",
+   "severity": "upstream",
+   "sport": "baseball",
+   "title": "OLBG's World Series clock disagrees with the MLB API",
+   "text": "OLBG prints 'TB Rays @ MIL Brewers, 23 Oct 20:00'. The MLB Stats API schedules gamePk 849805 at 2026-10-24T00:00:00Z with officialDate 2026-10-23, i.e. 8pm Eastern on 23 October. OLBG's clock is US Central/Eastern ambiguous with no timezone label, the same silent-localisation defect recorded in earlier sessions.",
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-20&endDate=2026-10-28&hydrate=team,linescore,venue"
+  },
+  {
+   "id": "F-F7-08",
+   "severity": "upstream",
+   "sport": "cricket",
+   "title": "Afghanistan v Zimbabwe is dated 23 October upstream but no governing body publishes that match",
+   "text": "OLBG lists 'Afghanistan vs Zimbabwe One Day Match, 23 Oct 07:30'. The Afghanistan-Zimbabwe series in the UAE opens with a T20I at Sharjah on 27 October, and no official board page read this session publishes a 23 October ODI between these sides. The card is unverified, unpriced and left blank.",
+   "source": "https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/news/final-squads-for-icc-men-s-t20-world-cup-2026-confirmed"
+  },
+  {
+   "id": "F-F7-09",
+   "severity": "data",
+   "sport": "volleyball",
+   "title": "The men's Polish league URL now serves the women's competition, and the same fixture carries two clocks",
+   "text": "plusliga.pl resolves to tauronliga.pl, the women's TAURON Liga site, which nevertheless carries the men's PGE GiEK Skra Belchatow v PGE Projekt Warszawa fixture for Saturday 24 October 2026. Different views of that page print 18:00 and 12:00. The fixture date is carried; the kick-off is blank and nothing is priced.",
+   "source": "https://www.tauronliga.pl/teams/tour/53/id/61.html"
+  },
+  {
+   "id": "F-F7-10",
+   "severity": "data",
+   "sport": "motor-racing",
+   "title": "Formula 1 publishes two different championship gaps on the same day",
+   "text": "formula1.com's 19 October pre-race coverage states Antonelli 'now leads by 102 points' over Verstappen in one article and describes Verstappen as '119 points adrift' in another. Both are recorded verbatim with their URLs; neither is preferred, and no championship outright is originated from them.",
+   "source": "https://www.formula1.com/en/latest/article/its-race-week-5-storylines-were-excited-about-ahead-of-the-2026-united-states-grand-prix.4utgT1kLqHM2HAM98YP4TW"
+  },
+  {
+   "id": "F-F7-11",
+   "severity": "data",
+   "sport": "gaelic-football",
+   "title": "A club's own match report gives its star player two different tallies",
+   "text": "The Maigh Cuilinn report of the Galway semi-final says Dessie Conneely 'finished with a highly impressive personal tally of 2-14' in the body and lists 'D Conneely (2-16)' in the scoring list on the same page. Both are printed; the discrepancy is not resolved by inference.",
+   "source": "https://www.maighcuilinn.com/stellar-performance-against-annaghdown-sets-up-repeat-county-final/"
+  },
+  {
+   "id": "F-F7-12",
+   "severity": "data",
+   "sport": "gaelic-football",
+   "title": "OLBG's Kanturk tip runs against the verified championship record",
+   "text": "OLBG tips Kanturk at 4/5 (80%) for the Cork Senior 'A' final. The verified record has Eire Og unbeaten and top of their group with a 0-24 to 0-9 round win and a 2-16 to 1-16 semi-final, against Kanturk's one-point round win (2-8 to 1-11) and four-point semi-final (1-18 to 1-14). The crowd view and the sourced form disagree; both are published.",
+   "source": "https://gaacork.ie/2026-10-11/mccarthy-insurance-group-club-championship-weekend-round-up/"
+  },
+  {
+   "id": "F-F7-13",
+   "severity": "policy",
+   "sport": "rugby-league",
+   "title": "Earlier desks graded Tonga and England High without a sourced rating on both sides",
+   "text": "Tonga -2.5 and England -9.5 appear as High-confidence picks in the v3 and 6a081cf6 desks. This session could verify only one Round 1 result per tie (Tonga 30-12 England) and no official world-ranking pair, so repository rule 4 refuses the strength edge and both fixtures are capped at Low here. England's own verified Round 1 result is a 12-30 loss, which a -9.5 line does not reflect.",
+   "source": "https://www.intrl.sport/match-details/2566"
+  },
+  {
+   "id": "F-F7-14",
+   "severity": "gap",
+   "sport": "multiple",
+   "title": "Markets investigated but not priced, with the missing official input named",
+   "text": "Match totals are priced only where both clubs' scoring rates were read on an official page - the 12 NHL games (goals for/against and games played per club) and the three World Series games (runs scored and allowed over 162 games). Totals are NOT priced for EuroLeague, Pro D2, Top 14, EHF Champions League, AFLW, darts, snooker, cricket, rugby league or Gaelic football, because the official pages read do not publish the per-match scoring rates or the match format needed. Golf, Formula 1 and eSports outrights are not priced because no entry list, qualifying order or drawn pairing is published yet. Each omission is named per sport on the coverage page rather than filled with a league-average constant.",
+   "source": "https://api-web.nhle.com/v1/standings/2026-10-21"
+  }
+ ]
+}
