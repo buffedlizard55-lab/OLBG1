@@ -3464,3 +3464,5 @@ F-402-10 entry credits `ee3c3e8f-olbg1` / PR #112 rather than this session.
 path and that internal links resolve there. It does not recertify any price: the prices are this
 desk's originated fair prices, the model's assumptions are stated on `methodology.html`, and the
 fourteen sports without a verified fixture remain empty on purpose.
+
+**PR #127 receipt.** Merged 2026-10-22T12:37:44Z as `9e813001ec2af25a609781f34ce0fce3c612623d`. Branch tip `da60f35`; main advanced from `96caf15` to `9e81300`, so the merge ran on top of the newer main with no conflict. Canonical run `39779916514` — *Evidence, model, site and browser gates* — **success**; Pages run `39779915488` — **success**. Live readback of the deployed bytes at `.../fec05fb4/flagged.html?v=4` confirms all three corrections in place: F-FEC-02 reads "4 rows" with the §53 citation, F-FEC-07 reads "62 captured listings are published blank" (32 untimed + 30 started), and F-FEC-14 reads "81 and 88 words". Desk counts unchanged: 87 upcoming / 66 priced / 2 High / 37 Medium / 27 Low / 21 unpriced, 14 flags.
