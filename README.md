@@ -89,7 +89,7 @@ The previous T61 workflow is retained as a manual, non-publishing historical che
 
 - `data/current/`: current facts, calculations, source captures, network attempts and complete machine-readable audit.
 - `audit/rows-*.html`: paginated historical row occurrences with file lines, exact JSON pointers and source/recheck links. Mirrors/aliases are labelled; these are **not unique recertified matches**.
-- `pipeline/audit.py`: reads tracked legacy JSON/Python files, inventories detectable fixture/price/prose objects and publishes 26 traced findings. Parsing every file is not semantic verification of every sentence.
+- `pipeline/audit.py`: reads tracked legacy JSON/Python files, inventories detectable fixture/price/prose objects and publishes 27 traced findings. Parsing every file is not semantic verification of every sentence.
 - `archive/root-20261022/`: complete pre-T257E root (including T61), original hashes, rewritten links and an archive warning.
 - `archive/pre-release-20261022/`: T61's earlier archive, untouched.
 - All parallel desks, `data/release`, `scripts/release_*`, `tests/release` and independent review reports are preserved. Their claims are never silently promoted to current evidence.
@@ -99,3 +99,5 @@ The previous T61 workflow is retained as a manual, non-publishing historical che
 ## Canonical integrity follow-up (TEE3C)
 
 [Session audit](reports/SESSION_EE3C3E8F.md): explicit pre-match status gate, statistical-input expiry in both table and market views, no-JavaScript withholding, and count/window/provenance regression gates. These checks do not recertify every archived statement or establish full live coverage. New findings are [published for review](https://buffedlizard55-lab.github.io/OLBG1/flagged.html#F-257E-20).
+
+**TEE3C production receipt:** [PR #112](https://github.com/buffedlizard55-lab/OLBG1/pull/112) merged as `04232f5`; [production run 39777434075](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39777434075) and deployment 7252005936 succeeded. The live manifest was independently read at revision `04232f5`, generated 12:20:26 UTC: 147 captured listings, 54 books, 79 markets, 158 outcomes, zero Medium/High. These refreshed production counts differ legitimately from the selected-import checkpoint above; neither is worldwide coverage. Full receipt and configuration limitation are recorded in `COORDINATION.md`.
