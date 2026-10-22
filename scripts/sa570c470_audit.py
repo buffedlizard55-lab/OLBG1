@@ -28,6 +28,12 @@ OFFICIAL_AFLW = {
 }
 
 
+def ordinal(n: int) -> str:
+    if 10 <= n % 100 <= 20:
+        return f"{n}th"
+    return f"{n}{ {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th') }"
+
+
 def grep(pattern: str, path: str) -> list[int]:
     try:
         out = subprocess.run(["grep", "-n", pattern, path], cwd=ROOT,
@@ -54,7 +60,7 @@ def aflw_mismatches():
             ok = ok and f"{pts} pts" in val and wl in val
             if not ok:
                 rows.append({"fixture": m["id"], "team": team, "repo_value": val,
-                             "official": f"{pos}th, {pts} pts ({wl}), {pctv}%"})
+                             "official": f"{ordinal(pos)}, {pts} pts ({wl}), {pctv}%"})
     return rows
 
 
@@ -95,7 +101,7 @@ def main() -> None:
         },
         {
             "id": "AUD-A-03", "severity": "medium",
-            "title": "Kolstad's Champions League home arena is recorded as Trondheim Spektrum on four desks",
+            "title": "Kolstad's Champions League home arena is recorded as Trondheim Spektrum in five published files",
             "file": "984d417f/data/fixtures.json",
             "line": (grep("Trondheim Spektrum", "984d417f/data/fixtures.json") or [None])[0],
             "detail": ("The EHF's own 2026/27 group-phase playing-times PDF lists 'Kolstad Handball vs SC Magdeburg' "
@@ -144,7 +150,7 @@ def main() -> None:
         },
         {
             "id": "AUD-A-07", "severity": "low",
-            "title": "Six root-desk High picks are quoted on a handicap rung priced outside the brief's window",
+            "title": "Root-desk High picks quoted on a handicap rung sit inside the window while their moneyline does not",
             "file": "data/lines.json", "line": None,
             "detail": ("The brief asks for High picks between -250 and +10000. On the root desk, the published "
                        "price of a High pick is the fair price on a rung chosen to land near 71%, which is inside "

@@ -1685,3 +1685,59 @@ T35 (AFLW) not taken: AFL ladder not fetched this session — remains queued.
 
 * **Claim (`2026-10-22T02:51Z`, renumbered `T50–T53 / §38` on rebase onto `0ff0c99`):** Branch `arena/a570c470-olbg1`. Preserved 100% of `6a081cf6` (`§34`) and `9dfd0b48` (`§35`) verbatim (`0` deleted lines).
 * **Non-overlapping file scope:** `data/a570c470/**`, `scripts/sa570c470_*.py`, `a570c470/**`, `reports/SESSION_A570C470_AUDIT.md`, `COORDINATION.md` (append-only), plus strictly additive companion link at final integration right before PR/merge. Zero files owned by any other session are modified.
+
+### 38.1 T50–T53 result (2026-10-22T03:20Z)
+
+**Harvest and verification.** All 27 OLBG sport routes plus their competition sub-routes were read live at 03:00Z.
+45 governing-body pages were then fetched directly: five signed ATP/WTA supervisor draw PDFs (Ningbo, Osaka,
+Almaty, Brussels, Lyon), `statsapi.mlb.com` and `api-web.nhle.com` API payloads, the official 18-club AFLW ladder,
+WST's Northern Ireland Open reports and matches feed, the PDC European Championship draw, the NRL RLWC26 draw, the
+EHF fixture list and playing-times PDF, PlusLiga's schedule, the LNR Top 14 classement, `nba.com` standings,
+LoL Esports' Worlds primer, Cork and Galway GAA fixtures, GBGB's Category One previews, Formula 1's race hub and
+both PGA TOUR event pages.
+
+**Outputs.** `data/a570c470/` — 141 fixtures (116 priced + 25 verified event cards), 1,546 originated prices,
+16 High / 60 Medium / 40 Low, 16 bespoke predictions of 53–76 words with **0 repeated six-word phrases**, 45
+sources, 8 repository findings and 118 row-level flags. Dashboard: 28 pages under `a570c470/`.
+
+**Band rule.** High requires a ≥70% model probability **and** a published fair price inside −250…+10000. Because a
+70% chance is a fair 1.4286 (−233), a strong favourite's moneyline is almost always shorter than the floor, so the
+desk originates the line and quotes the handicap rung whose probability lands near 71%. Every High pick clears
+both tests on the price it publishes, and the moneyline call is printed beside it.
+
+**Line-by-line audit.** 8 findings, 2 high. **AUD-A-01:** 16 of the 18 AFLW ladder inputs in
+`data/v3/fixtures.json` disagree with the official AFLW ladder (North Melbourne 40 pts/10-0 vs 36/9-1; Geelong
+13th/16 vs 2nd/36; Western Bulldogs 12th/16 vs 4th/32; St Kilda 10th/20 vs 18th/4; Brisbane 2nd/32 vs 14th/12),
+and three published High picks rest on them. **AUD-A-02:** the matching prose in `scripts/v3_prose.py:24` and
+`data/v3/predictions.json:1975,2095` repeats the wrong positions. **AUD-A-03:** Kolstad's arena is Trondheim
+Spektrum in five published files; the EHF PDF says Kolstad Arena. **AUD-A-04:** Bristol v Exeter is 14:05Z on the
+root board against 16:30Z on the Premiership release. **AUD-A-05/06:** TBC venue resolvable; `README.md:56` stale.
+No file owned by another session was edited; each finding names the path and line so the owner can act.
+
+**Gates.** `scripts/sa570c470_validate.py` → PASS, 0 errors / 0 warnings (28 pages, 141 fixtures, 116 priced,
+1,546 prices, 16 High, 16 predictions, table-cell and anchor checks included). `scripts/validate.py` → VALIDATION
+PASSED, 0 errors, 6 pre-existing `f7fa77fc` warnings, 289 pages scanned. `v3_validate`, `s984d417f_validate`,
+`c17a9192_validate`, `ccb6bde2_validate`, `ebfbd966_validate`, `s7a5b5360_validate`, `s6a081cf6_validate`,
+`s9dfd0b48_validate` and `final_audit.py` all pass.
+
+### 38.2 Publish record (executed)
+
+* **PR #66** — https://github.com/buffedlizard55-lab/OLBG1/pull/66 — **MERGED** 2026-10-22T03:33:37Z, merge commit
+  `8446912082d38c694c1893d3e6b492db4b580705`. Opened and merged without waiting for review, per the brief.
+* **PR #67** — https://github.com/buffedlizard55-lab/OLBG1/pull/67 — **MERGED** 2026-10-22T03:44Z, merge commit
+  `413ba92f30c8`. Three corrections found by reading the live desk: 23 fixtures whose governing body publishes no
+  clock now carry an explicit blank-clock flag (register 95 → 118), the duplicate LNR citation is removed, and the
+  AFLW ordinal suffixes in the audit table are fixed.
+* **Pages.** Deployment run for `8446912` → `completed success`; the run for `413ba92` → `completed success`; the
+  Pages API reports `status: built`. Live checks against `https://buffedlizard55-lab.github.io/OLBG1/a570c470/`
+  (cache-busted `?v=1` / `?v=2`): the overview renders the eight KPI cards, all 17 sport cards and the High-picks
+  table with per-row official links; `predictions.html` renders all 16 written predictions with their prices and
+  sources; `audit.html` renders the 16-row AFLW comparison table and all 8 findings; `flagged.html` renders the
+  full 118-row register.
+* **Scope compliance.** Outside the new namespace the only changes are one companion link in `index.html`, the two
+  matching entries in `scripts/build_site.py` so a rebuild keeps it, one README section, this append-only record,
+  and `reports/SESSION_A570C470_AUDIT.md`. `git diff --diff-filter=D` against `origin/main` is empty.
+
+**Status: T50–T53 done.** Open items left untouched: T35 (root AFLW re-price — now backed by AUD-A-01), T10/T11/T12,
+T19, the 56 root `not_rechecked` rows and PR #40.
+

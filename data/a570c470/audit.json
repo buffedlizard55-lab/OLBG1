@@ -50,7 +50,7 @@
      "fixture": "aflw-r11-02",
      "team": "Geelong Cats",
      "repo_value": "13th, 16 pts (4-6)",
-     "official": "2th, 36 pts (9-1), 167.2%"
+     "official": "2nd, 36 pts (9-1), 167.2%"
     },
     {
      "fixture": "aflw-r11-02",
@@ -92,7 +92,7 @@
      "fixture": "aflw-r11-01",
      "team": "North Melbourne",
      "repo_value": "1st, 40 pts (10-0)",
-     "official": "1th, 36 pts (9-1), 251.9%"
+     "official": "1st, 36 pts (9-1), 251.9%"
     },
     {
      "fixture": "aflw-r11-05",
@@ -135,7 +135,7 @@
   {
    "id": "AUD-A-03",
    "severity": "medium",
-   "title": "Kolstad's Champions League home arena is recorded as Trondheim Spektrum on four desks",
+   "title": "Kolstad's Champions League home arena is recorded as Trondheim Spektrum in five published files",
    "file": "984d417f/data/fixtures.json",
    "line": 4746,
    "detail": "The EHF's own 2026/27 group-phase playing-times PDF lists 'Kolstad Handball vs SC Magdeburg' at Kolstad Arena (Kolstad, NOR). The same wrong venue appears in data/984d417f/fixtures.json, 984d417f/index.html, 984d417f/predictions.html, 984d417f/sports/handball.html and ccb6bde2/sports/handball.html. COORDINATION.md \u00a727 already recorded the correction for one desk, but the value survives in five published files.",
@@ -179,7 +179,7 @@
   {
    "id": "AUD-A-07",
    "severity": "low",
-   "title": "Six root-desk High picks are quoted on a handicap rung priced outside the brief's window",
+   "title": "Root-desk High picks quoted on a handicap rung sit inside the window while their moneyline does not",
    "file": "data/lines.json",
    "line": null,
    "detail": "The brief asks for High picks between -250 and +10000. On the root desk, the published price of a High pick is the fair price on a rung chosen to land near 71%, which is inside the window; but the same fixture's moneyline is often far shorter (for example Panathinaikos at 1.12). The site therefore states both the window-compliant selection and the moneyline call so the reader can see the difference. This is a presentation risk, not a data error.",
