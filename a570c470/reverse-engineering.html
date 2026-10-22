@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OLBG Reversed · OLBG Origination Desk (a570c470)</title>
+<meta name="description" content="OLBG Reversed — source-linked multi-sport fixtures, originated multi-market lines, confidence tiers and written predictions across the 17 in-scope OLBG sports.">
+<style>
+:root{--bg:#0b0f14;--panel:#121820;--panel2:#0f151c;--line:#1f2a36;--txt:#e6edf3;--muted:#8b9bb0;
+--acc:#4ade80;--acc2:#38bdf8;--hi:#22c55e;--md:#eab308;--lo:#94a3b8;--bad:#f87171;--flag:#f59e0b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc2);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0f1720,#0b0f14);position:sticky;top:0;z-index:20}
+.hin{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.brand{font-weight:700;font-size:15px;letter-spacing:.2px}
+.brand span{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--acc);margin-right:8px;vertical-align:middle}
+nav{display:flex;flex-wrap:wrap;gap:2px}
+nav a{padding:5px 9px;border-radius:6px;color:var(--muted);font-size:13px}
+nav a:hover{background:#16202b;color:var(--txt);text-decoration:none}
+nav a[aria-current]{background:#1b2733;color:var(--txt)}
+main{max-width:1240px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.25;margin:6px 0 10px}
+h2{font-size:19px;margin:34px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:15px;margin:20px 0 8px;color:#cbd5e1}
+p.lede{color:#c3cfdc;max-width:940px}
+.grid{display:grid;gap:12px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:18px 0 6px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi .n{font-size:23px;font-weight:700;letter-spacing:-.4px}
+.kpi .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+.kpi.hi .n{color:var(--hi)}.kpi.md .n{color:var(--md)}.kpi.lo .n{color:var(--lo)}
+.sports-grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px;display:block;color:inherit}
+.card:hover{border-color:#2c3d4f;text-decoration:none}
+.card .t{display:flex;justify-content:space-between;gap:8px;font-weight:600;font-size:14px}
+.card .m{color:var(--muted);font-size:12.5px;margin-top:3px}
+.badge{display:inline-block;font-size:11px;padding:1.5px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.badge.high{color:#052e16;background:var(--hi);border-color:var(--hi);font-weight:700}
+.badge.medium{color:#2a1d00;background:var(--md);border-color:var(--md);font-weight:700}
+.badge.low{background:#1e293b;color:#cbd5e1}
+.badge.ok{color:#86efac;border-color:#14532d;background:#0d2016}
+.badge.warn{color:#fcd34d;border-color:#78350f;background:#241a05}
+.badge.info{color:#bfdbfe;border-color:#1e3a8a;background:#0d1626}
+.note{border:1px solid var(--line);border-left:3px solid var(--acc2);background:var(--panel2);border-radius:8px;padding:12px 15px;margin:14px 0;font-size:14px;color:#c9d6e4}
+.note.good{border-left-color:var(--acc)}
+.note.warn{border-left-color:var(--flag)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#16202b;color:#cbd5e1;font-size:11.5px;text-transform:uppercase;letter-spacing:.45px;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#151f29}
+td.num,th.num{text-align:right;white-space:nowrap}
+.sub{display:block;color:var(--muted);font-size:11.5px;font-weight:400}
+.src a{display:block;font-size:11.5px;line-height:1.45}
+details summary{cursor:pointer;color:var(--acc2);font-size:12px}
+details[open] summary{color:var(--muted)}
+.mkt{border-top:1px solid var(--line);padding:7px 0 2px}
+.mkt-h{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#94a3b8;margin-bottom:3px}
+.mkt ul{list-style:none;margin:0;padding:0}
+.mkt li{display:flex;justify-content:space-between;gap:12px;font-size:12px;padding:1px 0}
+.mkt li span:last-child{white-space:nowrap;color:#cbd5e1}
+.band-yes{color:var(--acc);font-size:11px}
+.band-no{color:var(--muted);font-size:11px}
+.pred{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+.pred h3{margin:0 0 2px;font-size:15px;color:var(--txt)}
+.pred .meta{color:var(--muted);font-size:12px;margin-bottom:8px}
+.pred p{margin:0;color:#d3dfea}
+.pred .sel{margin-top:8px;font-size:12.5px;color:var(--acc)}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+.fin{max-width:1240px;margin:0 auto;padding:18px 20px 40px}
+ul.plain{list-style:none;padding:0;margin:8px 0}
+ul.plain li{padding:5px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+code{background:#16202b;padding:1px 5px;border-radius:4px;font-size:12.5px}
+.tag{font-size:11px;padding:1px 6px;border-radius:5px;background:#16202b;border:1px solid var(--line);color:var(--muted)}
+</style></head>
+<body>
+<header><div class="hin">
+  <div class="brand"><span></span>OLBG Origination Desk <span class="tag">a570c470 · 22 Oct 2026</span></div>
+  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="picks.html">High Picks</a><a href="predictions.html">Predictions</a><a href="lines.html">All Fixtures</a><a href="markets.html">Market Explorer</a><a href="sports.html">Sports</a><a href="reverse-engineering.html" aria-current="page">OLBG Reversed</a><a href="methodology.html">Methodology</a><a href="sources.html">Sources</a><a href="audit.html">Repo Audit</a><a href="flagged.html">Flagged for Review</a></nav>
+</div></header>
+<main>
+<h1>OLBG, reversed</h1>
+<p class="lede">All 27 OLBG sport routes and their competition sub-routes were read live on 22 October 2026. This
+page records the URL grammar, the tipster-consensus mechanics and the four upstream display defects found. Nine of
+the exclusions in the brief map onto OLBG's own sport ids; the rest are handled as competition filters.</p>
+
+<h2>URL grammar</h2>
+<div class="table-wrap"><table><thead><tr><th>Route</th><th>Pattern</th></tr></thead><tbody>
+<tr><td>Root tips hub</td><td><code>https://www.olbg.com/betting-tips</code></td></tr>
+<tr><td>Sport hub</td><td><code>https://www.olbg.com/betting-tips/{Sport_Slug}/{Sport_ID}</code></td></tr>
+<tr><td>Competition hub</td><td><code>https://www.olbg.com/betting-tips/{Sport_Slug}/{Competition_Slug}/{Sport_ID}</code></td></tr>
+<tr><td>Event card</td><td><code>https://www.olbg.com/betting-tips/{Sport_Slug}/{Subcategory}/{Event_Slug}/{Sport_ID}?event_id={Event_ID}</code></td></tr>
+</tbody></table></div>
+
+<h2>Tipster-consensus mechanics</h2>
+<div class="table-wrap"><table><thead><tr><th>Mechanism</th><th>How OLBG computes it</th></tr></thead><tbody>
+<tr><td>Win-tip share</td><td>win_tips / total_market_tips displayed as integer % on the most-tipped outcome</td></tr>
+<tr><td>Each-way display bug</td><td>When an outright/match market carries Each-Way (EW) tips with 0 straight Win tips (e.g. Cricket event 188350), OLBG renders &#x27;0/0&#x27; and blank &#x27;%&#x27; on the hub card.</td></tr>
+<tr><td>Value Rating</td><td>1-to-5 star rating comparing tipster consensus share (win_tips / total_tips) to bookmaker implied probability (1 / decimal_odds).</td></tr>
+<tr><td>Experts filter</td><td>Restricts consensus calculation to tipsters meeting trailing 30-day or 6-month sport-specific profit and strike-rate thresholds.</td></tr>
+<tr><td>Blind-spot behaviour</td><td>OLBG publishes match cards ONLY once at least one tipster posts a tip; major slates with 0 community tips (e.g. all 14 NHL games, all 9 AFLW Round 11 games, all 8 LoL Worlds Swiss R1 games, all 5 RLWC26 Round 2 match cards, and GBGB Category One Finals) return &#x27;No tips found.&#x27; on OLBG.</td></tr>
+</tbody></table></div>
+
+<h2>In-scope sports (17)</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>OLBG id</th><th>Sport</th><th>Hub</th><th class="num">Live cards on hub</th><th class="num">Rows in this desk</th><th>Governing body</th></tr></thead>
+<tbody><tr><td>3</td><td><b>Tennis</b></td><td><a href='https://www.olbg.com/betting-tips/Tennis/3' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Tennis/3</a></td><td class='num'>20</td><td class='num'>20</td><td>ATP Tour / WTA Tour</td></tr><tr><td>4</td><td><b>Basketball</b></td><td><a href='https://www.olbg.com/betting-tips/Basketball/4' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Basketball/4</a></td><td class='num'>12</td><td class='num'>23</td><td>NBA / Euroleague Basketball</td></tr><tr><td>5</td><td><b>Golf</b></td><td><a href='https://www.olbg.com/betting-tips/Golf/5' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Golf/5</a></td><td class='num'>2</td><td class='num'>2</td><td>PGA TOUR / PGA TOUR Champions</td></tr><tr><td>7</td><td><b>Cricket</b></td><td><a href='https://www.olbg.com/betting-tips/Cricket/7' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Cricket/7</a></td><td class='num'>3</td><td class='num'>3</td><td>ICC / ESPNcricinfo</td></tr><tr><td>8</td><td><b>Snooker</b></td><td><a href='https://www.olbg.com/betting-tips/Snooker/8' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Snooker/8</a></td><td class='num'>2</td><td class='num'>8</td><td>World Snooker Tour (WST)</td></tr><tr><td>9</td><td><b>Rugby Union</b></td><td><a href='https://www.olbg.com/betting-tips/Rugby_Union/9' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Rugby_Union/9</a></td><td class='num'>9</td><td class='num'>16</td><td>URC / Gallagher PREM Rugby / LNR Top 14</td></tr><tr><td>10</td><td><b>Rugby League</b></td><td><a href='https://www.olbg.com/betting-tips/Rugby_League/10' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Rugby_League/10</a></td><td class='num'>2</td><td class='num'>7</td><td>NRL / RLWC26</td></tr><tr><td>12</td><td><b>Baseball</b></td><td><a href='https://www.olbg.com/betting-tips/Baseball/12' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Baseball/12</a></td><td class='num'>2</td><td class='num'>4</td><td>Major League Baseball (MLB Stats API)</td></tr><tr><td>13</td><td><b>Ice Hockey</b></td><td><a href='https://www.olbg.com/betting-tips/Ice_Hockey/13' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Ice_Hockey/13</a></td><td class='num'>2</td><td class='num'>16</td><td>NHL / Swedish Hockey League (SHL)</td></tr><tr><td>14</td><td><b>Motor Racing</b></td><td><a href='https://www.olbg.com/betting-tips/Motor_Racing/14' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Motor_Racing/14</a></td><td class='num'>1</td><td class='num'>1</td><td>Formula 1 / FIA</td></tr><tr><td>15</td><td><b>Darts</b></td><td><a href='https://www.olbg.com/betting-tips/Darts/15' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Darts/15</a></td><td class='num'>16</td><td class='num'>16</td><td>Professional Darts Corporation (PDC)</td></tr><tr><td>20</td><td><b>Handball</b></td><td><a href='https://www.olbg.com/betting-tips/Handball/20' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Handball/20</a></td><td class='num'>5</td><td class='num'>5</td><td>European Handball Federation (EHF)</td></tr><tr><td>21</td><td><b>Volleyball</b></td><td><a href='https://www.olbg.com/betting-tips/Volleyball/21' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Volleyball/21</a></td><td class='num'>4</td><td class='num'>6</td><td>Polska Liga Siatkowki (PlusLiga)</td></tr><tr><td>22</td><td><b>Aussie Rules</b></td><td><a href='https://www.olbg.com/betting-tips/Aussie_Rules/22' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Aussie_Rules/22</a></td><td class='num'>0</td><td class='num'>9</td><td>Australian Football League (NAB AFLW)</td></tr><tr><td>23</td><td><b>eSports</b></td><td><a href='https://www.olbg.com/betting-tips/eSports/23' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/eSports/23</a></td><td class='num'>0</td><td class='num'>8</td><td>Riot Games (LoL Esports)</td></tr><tr><td>25</td><td><b>Gaelic Football</b></td><td><a href='https://www.olbg.com/betting-tips/Gaelic_Football/25' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Gaelic_Football/25</a></td><td class='num'>1</td><td class='num'>2</td><td>GAA (Cork GAA &amp; Galway GAA)</td></tr><tr><td>28</td><td><b>Greyhounds</b></td><td><a href='https://www.olbg.com/betting-tips/Greyhounds/28' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Greyhounds/28</a></td><td class='num'>0</td><td class='num'>3</td><td>Greyhound Board of Great Britain (GBGB)</td></tr></tbody></table></div>
+<p class="sub">"Live cards on hub" is what OLBG itself displayed at 03:00Z on 22 October; several hubs showed zero
+because OLBG only creates a card once a tipster posts a tip. That is the blind spot, not an absence of fixtures —
+the desk verified nine AFLW matches, eight LoL Worlds Swiss games, five RLWC26 ties and three GBGB Category One
+finals that OLBG did not list.</p>
+
+<h2>Excluded categories (10)</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>OLBG id</th><th>Category</th><th>Route</th><th>Why excluded</th></tr></thead>
+<tbody><tr><td>1</td><td><b>Soccer / Football</b></td><td><a href='https://www.olbg.com/betting-tips/Football/1' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Football/1</a></td><td>Excluded per client specification (&#x27;soccer&#x27;, &#x27;football&#x27;)</td></tr><tr><td>2</td><td><b>Horse Racing</b></td><td><a href='https://www.olbg.com/betting-tips/Horse_Racing/2' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Horse_Racing/2</a></td><td>Excluded per client specification (&#x27;horse racing&#x27;)</td></tr><tr><td>11</td><td><b>American Football (NFL / NCAAF)</b></td><td><a href='https://www.olbg.com/betting-tips/American_Football/11' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/American_Football/11</a></td><td>Excluded per client specification (&#x27;american football&#x27;)</td></tr><tr><td>16</td><td><b>Boxing</b></td><td><a href='https://www.olbg.com/betting-tips/Boxing/16' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Boxing/16</a></td><td>Excluded per client specification (&#x27;boxing&#x27;)</td></tr><tr><td>17</td><td><b>Cycling</b></td><td><a href='https://www.olbg.com/betting-tips/Cycling/17' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Cycling/17</a></td><td>Excluded per client specification (&#x27;cycling&#x27;)</td></tr><tr><td>18</td><td><b>Entertainment / TV Specials</b></td><td><a href='https://www.olbg.com/betting-tips/Entertainment/18' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Entertainment/18</a></td><td>Excluded per client specification (&#x27;specials&#x27;)</td></tr><tr><td>19</td><td><b>Politics / Novelty Specials</b></td><td><a href='https://www.olbg.com/betting-tips/Politics/19' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Politics/19</a></td><td>Excluded per client specification (&#x27;specials&#x27;)</td></tr><tr><td>24</td><td><b>UFC</b></td><td><a href='https://www.olbg.com/betting-tips/UFC_MMA/24' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/UFC_MMA/24</a></td><td>Excluded per client specification (&#x27;ufc&#x27;)</td></tr><tr><td>24</td><td><b>MMA / Martial Arts</b></td><td><a href='https://www.olbg.com/betting-tips/UFC_MMA/24' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/UFC_MMA/24</a></td><td>Excluded per client specification (&#x27;mma&#x27;)</td></tr><tr><td>26</td><td><b>Hurling</b></td><td><a href='https://www.olbg.com/betting-tips/Hurling/26' target='_blank' rel='noopener'>https://www.olbg.com/betting-tips/Hurling/26</a></td><td>Excluded per client specification (&#x27;hurling&#x27;)</td></tr></tbody></table></div>
+
+<h2>Upstream defects recorded</h2>
+<ul class="plain">
+<li><b>Each-way division by zero.</b> A market carrying only each-way tips renders <code>0/0</code> in the
+win-tip column and a blank percentage, so the consensus cannot be read at all. Observed on the Cricket hub.</li>
+<li><b>Silent card suppression.</b> OLBG publishes nothing for a fixture until a tipster posts. Four sports on this
+desk showed "No tips found" while the governing body listed a full slate.</li>
+<li><b>Unlabelled local clock.</b> OLBG prints a viewer-localised time with no zone. Every time on this desk is UTC
+and taken from the governing body, never from OLBG.</li>
+<li><b>Neutral venues omitted.</b> Maccabi Tel Aviv's home EuroLeague games are staged in Belgrade; OLBG lists the
+fixture without the neutral-venue note, which materially changes the home-advantage assumption.</li>
+</ul>
+</main>
+<footer><div class="fin">
+  <p><b>Independent model output, not betting advice.</b> Prices are our own fair-probability quotes with no margin;
+  the 5% margin a bookmaker would need is shown beside them. Every fixture, record and ranking links to the governing
+  body that publishes it. Values that could not be confirmed on an official page are blank and listed on
+  <a href="flagged.html">Flagged for Review</a>.</p>
+  <p>Session <code>a570c470-olbg1</code> · snapshot <code>2026-10-22T03:20Z</code> ·
+  built by <code>scripts/sa570c470_build_site.py</code> · validated by <code>scripts/sa570c470_validate.py</code></p>
+</div></footer>
+</body></html>

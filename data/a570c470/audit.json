@@ -1,0 +1,202 @@
+{
+ "generated_utc": "2026-10-22T03:50:00Z",
+ "method": "Every finding below was produced by reading the named file in this checkout and, where a fact is asserted, by fetching the named official page in this session. Line numbers are grep results on this commit.",
+ "counts": {
+  "findings": 8,
+  "high": 2,
+  "medium": 2,
+  "low": 3,
+  "info": 1,
+  "aflw_rows_checked": 18,
+  "aflw_rows_wrong": 16,
+  "published_flags": 95
+ },
+ "findings": [
+  {
+   "id": "AUD-A-01",
+   "severity": "high",
+   "title": "AFLW ladder inputs in data/v3/fixtures.json disagree with the official AFLW ladder for 16 of 18 clubs",
+   "file": "data/v3/fixtures.json",
+   "line": null,
+   "detail": "Re-fetched https://www.afl.com.au/aflw/ladder on 2026-10-22. Sixteen of the eighteen ladder figures used to price the nine AFLW Round 11 rows do not match the official table: North Melbourne are 36 points at 9-1, not 40 at 10-0; Geelong are 2nd on 36, not 13th on 16; the Western Bulldogs are 4th on 32, not 12th on 16; St Kilda are 18th on 4, not 10th on 20; Brisbane are 14th on 12, not 2nd on 32. Three published High picks (Brisbane -3, Melbourne -6.5, Port Adelaide) rest on those inputs.",
+   "source": "https://www.afl.com.au/aflw/ladder",
+   "effect": "Prices on nine AFLW rows and three High picks are unsupported; the desk's own AFLW rows use the official table.",
+   "rows": [
+    {
+     "fixture": "aflw-r11-07",
+     "team": "Port Adelaide",
+     "repo_value": "11th, 20 pts (5-5)",
+     "official": "11th, 16 pts (4-6), 78.8%"
+    },
+    {
+     "fixture": "aflw-r11-07",
+     "team": "Collingwood",
+     "repo_value": "15th, 12 pts (3-7)",
+     "official": "16th, 4 pts (1-9), 56.7%"
+    },
+    {
+     "fixture": "aflw-r11-09",
+     "team": "St Kilda",
+     "repo_value": "10th, 20 pts (5-5)",
+     "official": "18th, 4 pts (1-9), 45.1%"
+    },
+    {
+     "fixture": "aflw-r11-09",
+     "team": "Brisbane Lions",
+     "repo_value": "2nd, 32 pts (8-2)",
+     "official": "14th, 12 pts (3-7), 89.7%"
+    },
+    {
+     "fixture": "aflw-r11-02",
+     "team": "Geelong Cats",
+     "repo_value": "13th, 16 pts (4-6)",
+     "official": "2th, 36 pts (9-1), 167.2%"
+    },
+    {
+     "fixture": "aflw-r11-02",
+     "team": "Fremantle",
+     "repo_value": "7th, 24 pts (6-4)",
+     "official": "8th, 20 pts (5-5), 104.9%"
+    },
+    {
+     "fixture": "aflw-r11-06",
+     "team": "Gold Coast SUNS",
+     "repo_value": "18th, 4 pts (1-9)",
+     "official": "5th, 28 pts (7-3), 138.9%"
+    },
+    {
+     "fixture": "aflw-r11-06",
+     "team": "Richmond",
+     "repo_value": "17th, 8 pts (2-8)",
+     "official": "13th, 16 pts (4-6), 68.9%"
+    },
+    {
+     "fixture": "aflw-r11-03",
+     "team": "Western Bulldogs",
+     "repo_value": "12th, 16 pts (4-6)",
+     "official": "4th, 32 pts (8-2), 140.9%"
+    },
+    {
+     "fixture": "aflw-r11-08",
+     "team": "Sydney Swans",
+     "repo_value": "5th, 26 pts (6-3-1)",
+     "official": "7th, 28 pts (7-3), 112.9%"
+    },
+    {
+     "fixture": "aflw-r11-08",
+     "team": "West Coast Eagles",
+     "repo_value": "8th, 24 pts (6-4)",
+     "official": "12th, 16 pts (4-6), 75.2%"
+    },
+    {
+     "fixture": "aflw-r11-01",
+     "team": "North Melbourne",
+     "repo_value": "1st, 40 pts (10-0)",
+     "official": "1th, 36 pts (9-1), 251.9%"
+    },
+    {
+     "fixture": "aflw-r11-05",
+     "team": "Hawthorn",
+     "repo_value": "4th, 32 pts (8-2)",
+     "official": "10th, 20 pts (5-5), 101.5%"
+    },
+    {
+     "fixture": "aflw-r11-05",
+     "team": "Essendon",
+     "repo_value": "14th, 14 pts (3-6-1)",
+     "official": "17th, 4 pts (1-9), 55.6%"
+    },
+    {
+     "fixture": "aflw-r11-04",
+     "team": "Carlton",
+     "repo_value": "6th, 24 pts (6-4)",
+     "official": "6th, 28 pts (7-3), 133.0%"
+    },
+    {
+     "fixture": "aflw-r11-04",
+     "team": "GWS GIANTS",
+     "repo_value": "16th, 8 pts (2-8)",
+     "official": "15th, 8 pts (2-8), 68.2%"
+    }
+   ],
+   "status": "flagged for review - not corrected in another session's file"
+  },
+  {
+   "id": "AUD-A-02",
+   "severity": "high",
+   "title": "AFLW prediction prose states ladder positions that the official ladder contradicts",
+   "file": "scripts/v3_prose.py",
+   "line": 24,
+   "detail": "The prose says 'Brisbane are second on 32 points after an 8-2 start ... St Kilda, tenth on 20 points at 5-5' and 'the Western Bulldogs are twelfth on 16 points at 4-6'. The official ladder has Brisbane 14th on 12 at 3-7, St Kilda 18th on 4 at 1-9 and the Bulldogs 4th on 32 at 8-2. The same strings are published at data/v3/predictions.json lines 1975 and 2095.",
+   "source": "https://www.afl.com.au/aflw/ladder",
+   "effect": "Two of the repository's written AFLW predictions contain factual errors.",
+   "status": "flagged for review - prose belongs to another session"
+  },
+  {
+   "id": "AUD-A-03",
+   "severity": "medium",
+   "title": "Kolstad's Champions League home arena is recorded as Trondheim Spektrum on four desks",
+   "file": "984d417f/data/fixtures.json",
+   "line": 4746,
+   "detail": "The EHF's own 2026/27 group-phase playing-times PDF lists 'Kolstad Handball vs SC Magdeburg' at Kolstad Arena (Kolstad, NOR). The same wrong venue appears in data/984d417f/fixtures.json, 984d417f/index.html, 984d417f/predictions.html, 984d417f/sports/handball.html and ccb6bde2/sports/handball.html. COORDINATION.md \u00a727 already recorded the correction for one desk, but the value survives in five published files.",
+   "source": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+   "effect": "Venue field wrong on five published files. The desk's own handball row carries Kolstad Arena.",
+   "status": "flagged for review"
+  },
+  {
+   "id": "AUD-A-04",
+   "severity": "medium",
+   "title": "Bristol Bears v Exeter Chiefs kick-off is 14:05Z on the root board, 16:30Z on the Premiership release",
+   "file": "data/v3/fixtures.json",
+   "line": 3465,
+   "detail": "Premiership Rugby's Round 4 (Derby Weekend) lists Bristol Bears v Exeter Chiefs at Ashton Gate for 17:30 BST on 24 October 2026, i.e. 16:30Z. data/v3/fixtures.json carries 2026-10-24T14:05:00Z.",
+   "source": "https://www.thepremrugby.com/fixtures-results",
+   "effect": "A 2h25m start-time error on a published row.",
+   "status": "flagged for review"
+  },
+  {
+   "id": "AUD-A-05",
+   "severity": "low",
+   "title": "Leinster v Munster venue 'TBC' is resolvable from the competition's own ticketing listing",
+   "file": "data/v3/fixtures.json",
+   "line": 3586,
+   "detail": "The row reads 'Dublin (venue TBC on the URC fixture list)'. Ticketmaster's URC listing for 24 October 2026 18:00 names Aviva Stadium, and the rugby fixture feeds agree. The desk's own row records Aviva Stadium with the provenance stated.",
+   "source": "https://www.ticketmaster.ie/browse/rugby-union-catid-225/sport-rid-10004/all-of-ireland-dma-608",
+   "effect": "Redundant blank field; not a pricing error.",
+   "status": "flagged for review"
+  },
+  {
+   "id": "AUD-A-06",
+   "severity": "low",
+   "title": "README page count is stale against the live validator",
+   "file": "README.md",
+   "line": 56,
+   "detail": "README.md:56 says '0 broken relative links across all 160 published HTML pages'. scripts/validate.py on this checkout scans 289 published pages once this desk is included, so the quoted figure is out of date by well over a hundred pages.",
+   "source": "scripts/validate.py (run in this session)",
+   "effect": "Documentation-only inaccuracy.",
+   "status": "flagged for review"
+  },
+  {
+   "id": "AUD-A-07",
+   "severity": "low",
+   "title": "Six root-desk High picks are quoted on a handicap rung priced outside the brief's window",
+   "file": "data/lines.json",
+   "line": null,
+   "detail": "The brief asks for High picks between -250 and +10000. On the root desk, the published price of a High pick is the fair price on a rung chosen to land near 71%, which is inside the window; but the same fixture's moneyline is often far shorter (for example Panathinaikos at 1.12). The site therefore states both the window-compliant selection and the moneyline call so the reader can see the difference. This is a presentation risk, not a data error.",
+   "source": "data/a570c470/lines.json",
+   "effect": "Disclosed on the Methodology and Flagged pages.",
+   "status": "disclosed"
+  },
+  {
+   "id": "AUD-A-08",
+   "severity": "info",
+   "title": "Nine of the seventeen covered sports publish no price in this desk, because no two-sided official input was read",
+   "file": "data/a570c470/lines.json",
+   "line": null,
+   "detail": "Rugby Union (9 of 12), Golf (2), Motor Racing (1), Greyhounds (3), plus the unread EuroLeague, handball and RLWC women's rows, are published as verified event fixtures with no originated price. The blank-and-flag rule forbids inventing one. Every such row names the page that could not be read.",
+   "source": "data/a570c470/fixtures.json",
+   "effect": "Coverage limitation, disclosed.",
+   "status": "disclosed"
+  }
+ ]
+}

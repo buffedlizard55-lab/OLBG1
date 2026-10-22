@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repo Audit · OLBG Origination Desk (a570c470)</title>
+<meta name="description" content="Repo Audit — source-linked multi-sport fixtures, originated multi-market lines, confidence tiers and written predictions across the 17 in-scope OLBG sports.">
+<style>
+:root{--bg:#0b0f14;--panel:#121820;--panel2:#0f151c;--line:#1f2a36;--txt:#e6edf3;--muted:#8b9bb0;
+--acc:#4ade80;--acc2:#38bdf8;--hi:#22c55e;--md:#eab308;--lo:#94a3b8;--bad:#f87171;--flag:#f59e0b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc2);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0f1720,#0b0f14);position:sticky;top:0;z-index:20}
+.hin{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.brand{font-weight:700;font-size:15px;letter-spacing:.2px}
+.brand span{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--acc);margin-right:8px;vertical-align:middle}
+nav{display:flex;flex-wrap:wrap;gap:2px}
+nav a{padding:5px 9px;border-radius:6px;color:var(--muted);font-size:13px}
+nav a:hover{background:#16202b;color:var(--txt);text-decoration:none}
+nav a[aria-current]{background:#1b2733;color:var(--txt)}
+main{max-width:1240px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.25;margin:6px 0 10px}
+h2{font-size:19px;margin:34px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:15px;margin:20px 0 8px;color:#cbd5e1}
+p.lede{color:#c3cfdc;max-width:940px}
+.grid{display:grid;gap:12px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:18px 0 6px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi .n{font-size:23px;font-weight:700;letter-spacing:-.4px}
+.kpi .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+.kpi.hi .n{color:var(--hi)}.kpi.md .n{color:var(--md)}.kpi.lo .n{color:var(--lo)}
+.sports-grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px;display:block;color:inherit}
+.card:hover{border-color:#2c3d4f;text-decoration:none}
+.card .t{display:flex;justify-content:space-between;gap:8px;font-weight:600;font-size:14px}
+.card .m{color:var(--muted);font-size:12.5px;margin-top:3px}
+.badge{display:inline-block;font-size:11px;padding:1.5px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.badge.high{color:#052e16;background:var(--hi);border-color:var(--hi);font-weight:700}
+.badge.medium{color:#2a1d00;background:var(--md);border-color:var(--md);font-weight:700}
+.badge.low{background:#1e293b;color:#cbd5e1}
+.badge.ok{color:#86efac;border-color:#14532d;background:#0d2016}
+.badge.warn{color:#fcd34d;border-color:#78350f;background:#241a05}
+.badge.info{color:#bfdbfe;border-color:#1e3a8a;background:#0d1626}
+.note{border:1px solid var(--line);border-left:3px solid var(--acc2);background:var(--panel2);border-radius:8px;padding:12px 15px;margin:14px 0;font-size:14px;color:#c9d6e4}
+.note.good{border-left-color:var(--acc)}
+.note.warn{border-left-color:var(--flag)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#16202b;color:#cbd5e1;font-size:11.5px;text-transform:uppercase;letter-spacing:.45px;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#151f29}
+td.num,th.num{text-align:right;white-space:nowrap}
+.sub{display:block;color:var(--muted);font-size:11.5px;font-weight:400}
+.src a{display:block;font-size:11.5px;line-height:1.45}
+details summary{cursor:pointer;color:var(--acc2);font-size:12px}
+details[open] summary{color:var(--muted)}
+.mkt{border-top:1px solid var(--line);padding:7px 0 2px}
+.mkt-h{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#94a3b8;margin-bottom:3px}
+.mkt ul{list-style:none;margin:0;padding:0}
+.mkt li{display:flex;justify-content:space-between;gap:12px;font-size:12px;padding:1px 0}
+.mkt li span:last-child{white-space:nowrap;color:#cbd5e1}
+.band-yes{color:var(--acc);font-size:11px}
+.band-no{color:var(--muted);font-size:11px}
+.pred{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+.pred h3{margin:0 0 2px;font-size:15px;color:var(--txt)}
+.pred .meta{color:var(--muted);font-size:12px;margin-bottom:8px}
+.pred p{margin:0;color:#d3dfea}
+.pred .sel{margin-top:8px;font-size:12.5px;color:var(--acc)}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+.fin{max-width:1240px;margin:0 auto;padding:18px 20px 40px}
+ul.plain{list-style:none;padding:0;margin:8px 0}
+ul.plain li{padding:5px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+code{background:#16202b;padding:1px 5px;border-radius:4px;font-size:12.5px}
+.tag{font-size:11px;padding:1px 6px;border-radius:5px;background:#16202b;border:1px solid var(--line);color:var(--muted)}
+</style></head>
+<body>
+<header><div class="hin">
+  <div class="brand"><span></span>OLBG Origination Desk <span class="tag">a570c470 · 22 Oct 2026</span></div>
+  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="picks.html">High Picks</a><a href="predictions.html">Predictions</a><a href="lines.html">All Fixtures</a><a href="markets.html">Market Explorer</a><a href="sports.html">Sports</a><a href="reverse-engineering.html">OLBG Reversed</a><a href="methodology.html">Methodology</a><a href="sources.html">Sources</a><a href="audit.html" aria-current="page">Repo Audit</a><a href="flagged.html">Flagged for Review</a></nav>
+</div></header>
+<main>
+<h1>Line-by-line repository audit</h1>
+<p class="lede">Reading every desk in this repository against the governing body's own page produced
+8 findings: 2 high, 2 medium,
+3 low and 1 informational. Nothing was corrected inside another
+session's files; each item is logged here with the file, the line and the official page that contradicts it.</p>
+<div class="note warn"><b>The headline.</b> 16 of 18
+AFLW ladder inputs on the root desk disagree with the official AFLW ladder, and three published High picks rest on
+them. The full comparison is in finding AUD-A-01.</div>
+<div class="pred">
+  <h3><span class="badge high">HIGH</span> AUD-A-01 — AFLW ladder inputs in data/v3/fixtures.json disagree with the official AFLW ladder for 16 of 18 clubs</h3>
+  <div class="meta">Where: <code>data/v3/fixtures.json</code> · Status: flagged for review - not corrected in another session&#x27;s file</div>
+  <p>Re-fetched https://www.afl.com.au/aflw/ladder on 2026-10-22. Sixteen of the eighteen ladder figures used to price the nine AFLW Round 11 rows do not match the official table: North Melbourne are 36 points at 9-1, not 40 at 10-0; Geelong are 2nd on 36, not 13th on 16; the Western Bulldogs are 4th on 32, not 12th on 16; St Kilda are 18th on 4, not 10th on 20; Brisbane are 14th on 12, not 2nd on 32. Three published High picks (Brisbane -3, Melbourne -6.5, Port Adelaide) rest on those inputs.</p>
+  <div class="sel">Official check: <a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">https://www.afl.com.au/aflw/ladder</a></div>
+  <div class="meta" style="margin-top:6px">Effect: Prices on nine AFLW rows and three High picks are unsupported; the desk&#x27;s own AFLW rows use the official table.</div>
+  <div class="table-wrap" style="margin-top:8px"><table><thead><tr><th>Fixture</th><th>Club</th><th>Value in repo</th><th>Official value</th></tr></thead><tbody><tr><td>aflw-r11-07</td><td>Port Adelaide</td><td><code>11th, 20 pts (5-5)</code></td><td><b>11th, 16 pts (4-6), 78.8%</b></td></tr><tr><td>aflw-r11-07</td><td>Collingwood</td><td><code>15th, 12 pts (3-7)</code></td><td><b>16th, 4 pts (1-9), 56.7%</b></td></tr><tr><td>aflw-r11-09</td><td>St Kilda</td><td><code>10th, 20 pts (5-5)</code></td><td><b>18th, 4 pts (1-9), 45.1%</b></td></tr><tr><td>aflw-r11-09</td><td>Brisbane Lions</td><td><code>2nd, 32 pts (8-2)</code></td><td><b>14th, 12 pts (3-7), 89.7%</b></td></tr><tr><td>aflw-r11-02</td><td>Geelong Cats</td><td><code>13th, 16 pts (4-6)</code></td><td><b>2th, 36 pts (9-1), 167.2%</b></td></tr><tr><td>aflw-r11-02</td><td>Fremantle</td><td><code>7th, 24 pts (6-4)</code></td><td><b>8th, 20 pts (5-5), 104.9%</b></td></tr><tr><td>aflw-r11-06</td><td>Gold Coast SUNS</td><td><code>18th, 4 pts (1-9)</code></td><td><b>5th, 28 pts (7-3), 138.9%</b></td></tr><tr><td>aflw-r11-06</td><td>Richmond</td><td><code>17th, 8 pts (2-8)</code></td><td><b>13th, 16 pts (4-6), 68.9%</b></td></tr><tr><td>aflw-r11-03</td><td>Western Bulldogs</td><td><code>12th, 16 pts (4-6)</code></td><td><b>4th, 32 pts (8-2), 140.9%</b></td></tr><tr><td>aflw-r11-08</td><td>Sydney Swans</td><td><code>5th, 26 pts (6-3-1)</code></td><td><b>7th, 28 pts (7-3), 112.9%</b></td></tr><tr><td>aflw-r11-08</td><td>West Coast Eagles</td><td><code>8th, 24 pts (6-4)</code></td><td><b>12th, 16 pts (4-6), 75.2%</b></td></tr><tr><td>aflw-r11-01</td><td>North Melbourne</td><td><code>1st, 40 pts (10-0)</code></td><td><b>1th, 36 pts (9-1), 251.9%</b></td></tr><tr><td>aflw-r11-05</td><td>Hawthorn</td><td><code>4th, 32 pts (8-2)</code></td><td><b>10th, 20 pts (5-5), 101.5%</b></td></tr><tr><td>aflw-r11-05</td><td>Essendon</td><td><code>14th, 14 pts (3-6-1)</code></td><td><b>17th, 4 pts (1-9), 55.6%</b></td></tr><tr><td>aflw-r11-04</td><td>Carlton</td><td><code>6th, 24 pts (6-4)</code></td><td><b>6th, 28 pts (7-3), 133.0%</b></td></tr><tr><td>aflw-r11-04</td><td>GWS GIANTS</td><td><code>16th, 8 pts (2-8)</code></td><td><b>15th, 8 pts (2-8), 68.2%</b></td></tr></tbody></table></div>
+</div><div class="pred">
+  <h3><span class="badge high">HIGH</span> AUD-A-02 — AFLW prediction prose states ladder positions that the official ladder contradicts</h3>
+  <div class="meta">Where: <code>scripts/v3_prose.py:24</code> · Status: flagged for review - prose belongs to another session</div>
+  <p>The prose says &#x27;Brisbane are second on 32 points after an 8-2 start ... St Kilda, tenth on 20 points at 5-5&#x27; and &#x27;the Western Bulldogs are twelfth on 16 points at 4-6&#x27;. The official ladder has Brisbane 14th on 12 at 3-7, St Kilda 18th on 4 at 1-9 and the Bulldogs 4th on 32 at 8-2. The same strings are published at data/v3/predictions.json lines 1975 and 2095.</p>
+  <div class="sel">Official check: <a href="https://www.afl.com.au/aflw/ladder" target="_blank" rel="noopener">https://www.afl.com.au/aflw/ladder</a></div>
+  <div class="meta" style="margin-top:6px">Effect: Two of the repository&#x27;s written AFLW predictions contain factual errors.</div>
+  
+</div><div class="pred">
+  <h3><span class="badge medium">MEDIUM</span> AUD-A-03 — Kolstad&#x27;s Champions League home arena is recorded as Trondheim Spektrum on four desks</h3>
+  <div class="meta">Where: <code>984d417f/data/fixtures.json:4746</code> · Status: flagged for review</div>
+  <p>The EHF&#x27;s own 2026/27 group-phase playing-times PDF lists &#x27;Kolstad Handball vs SC Magdeburg&#x27; at Kolstad Arena (Kolstad, NOR). The same wrong venue appears in data/984d417f/fixtures.json, 984d417f/index.html, 984d417f/predictions.html, 984d417f/sports/handball.html and ccb6bde2/sports/handball.html. COORDINATION.md §27 already recorded the correction for one desk, but the value survives in five published files.</p>
+  <div class="sel">Official check: <a href="https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf" target="_blank" rel="noopener">https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf</a></div>
+  <div class="meta" style="margin-top:6px">Effect: Venue field wrong on five published files. The desk&#x27;s own handball row carries Kolstad Arena.</div>
+  
+</div><div class="pred">
+  <h3><span class="badge medium">MEDIUM</span> AUD-A-04 — Bristol Bears v Exeter Chiefs kick-off is 14:05Z on the root board, 16:30Z on the Premiership release</h3>
+  <div class="meta">Where: <code>data/v3/fixtures.json:3465</code> · Status: flagged for review</div>
+  <p>Premiership Rugby&#x27;s Round 4 (Derby Weekend) lists Bristol Bears v Exeter Chiefs at Ashton Gate for 17:30 BST on 24 October 2026, i.e. 16:30Z. data/v3/fixtures.json carries 2026-10-24T14:05:00Z.</p>
+  <div class="sel">Official check: <a href="https://www.thepremrugby.com/fixtures-results" target="_blank" rel="noopener">https://www.thepremrugby.com/fixtures-results</a></div>
+  <div class="meta" style="margin-top:6px">Effect: A 2h25m start-time error on a published row.</div>
+  
+</div><div class="pred">
+  <h3><span class="badge low">LOW</span> AUD-A-05 — Leinster v Munster venue &#x27;TBC&#x27; is resolvable from the competition&#x27;s own ticketing listing</h3>
+  <div class="meta">Where: <code>data/v3/fixtures.json:3586</code> · Status: flagged for review</div>
+  <p>The row reads &#x27;Dublin (venue TBC on the URC fixture list)&#x27;. Ticketmaster&#x27;s URC listing for 24 October 2026 18:00 names Aviva Stadium, and the rugby fixture feeds agree. The desk&#x27;s own row records Aviva Stadium with the provenance stated.</p>
+  <div class="sel">Official check: <a href="https://www.ticketmaster.ie/browse/rugby-union-catid-225/sport-rid-10004/all-of-ireland-dma-608" target="_blank" rel="noopener">https://www.ticketmaster.ie/browse/rugby-union-catid-225/sport-rid-10004/all-of-ireland-dma-608</a></div>
+  <div class="meta" style="margin-top:6px">Effect: Redundant blank field; not a pricing error.</div>
+  
+</div><div class="pred">
+  <h3><span class="badge low">LOW</span> AUD-A-06 — README page count is stale against the live validator</h3>
+  <div class="meta">Where: <code>README.md:56</code> · Status: flagged for review</div>
+  <p>README.md:56 says &#x27;0 broken relative links across all 160 published HTML pages&#x27;. scripts/validate.py on this checkout scans 289 published pages once this desk is included, so the quoted figure is out of date by well over a hundred pages.</p>
+  <div class="sel">Official check: <code>scripts/validate.py (run in this session)</code></div>
+  <div class="meta" style="margin-top:6px">Effect: Documentation-only inaccuracy.</div>
+  
+</div><div class="pred">
+  <h3><span class="badge low">LOW</span> AUD-A-07 — Six root-desk High picks are quoted on a handicap rung priced outside the brief&#x27;s window</h3>
+  <div class="meta">Where: <code>data/lines.json</code> · Status: disclosed</div>
+  <p>The brief asks for High picks between -250 and +10000. On the root desk, the published price of a High pick is the fair price on a rung chosen to land near 71%, which is inside the window; but the same fixture&#x27;s moneyline is often far shorter (for example Panathinaikos at 1.12). The site therefore states both the window-compliant selection and the moneyline call so the reader can see the difference. This is a presentation risk, not a data error.</p>
+  <div class="sel">Official check: <code>data/a570c470/lines.json</code></div>
+  <div class="meta" style="margin-top:6px">Effect: Disclosed on the Methodology and Flagged pages.</div>
+  
+</div><div class="pred">
+  <h3><span class="badge info">INFO</span> AUD-A-08 — Nine of the seventeen covered sports publish no price in this desk, because no two-sided official input was read</h3>
+  <div class="meta">Where: <code>data/a570c470/lines.json</code> · Status: disclosed</div>
+  <p>Rugby Union (9 of 12), Golf (2), Motor Racing (1), Greyhounds (3), plus the unread EuroLeague, handball and RLWC women&#x27;s rows, are published as verified event fixtures with no originated price. The blank-and-flag rule forbids inventing one. Every such row names the page that could not be read.</p>
+  <div class="sel">Official check: <code>data/a570c470/fixtures.json</code></div>
+  <div class="meta" style="margin-top:6px">Effect: Coverage limitation, disclosed.</div>
+  
+</div>
+<h2>What this desk did about it</h2>
+<ul class="plain">
+<li>It did not edit any file owned by another session. Each finding names the file so the owning session can fix it.</li>
+<li>Its own AFLW rows use the official ladder, fetched on 22 October 2026, and the sourced figures are printed in
+the strength column of the <a href="sports/aussie-rules.html">Aussie Rules</a> page.</li>
+<li>Every fixture on this site carries the page that was actually read; nothing is inherited silently from an
+earlier desk.</li>
+</ul>
+</main>
+<footer><div class="fin">
+  <p><b>Independent model output, not betting advice.</b> Prices are our own fair-probability quotes with no margin;
+  the 5% margin a bookmaker would need is shown beside them. Every fixture, record and ranking links to the governing
+  body that publishes it. Values that could not be confirmed on an official page are blank and listed on
+  <a href="flagged.html">Flagged for Review</a>.</p>
+  <p>Session <code>a570c470-olbg1</code> · snapshot <code>2026-10-22T03:20Z</code> ·
+  built by <code>scripts/sa570c470_build_site.py</code> · validated by <code>scripts/sa570c470_validate.py</code></p>
+</div></footer>
+</body></html>

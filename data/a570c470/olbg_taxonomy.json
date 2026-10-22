@@ -1,0 +1,236 @@
+{
+  "generated_utc": "2026-10-22T03:05:00Z",
+  "session": "a570c470-olbg1",
+  "architecture": {
+    "root_hub": "https://www.olbg.com/betting-tips",
+    "sport_hub_pattern": "https://www.olbg.com/betting-tips/{Sport_Slug}/{Sport_ID}",
+    "competition_hub_pattern": "https://www.olbg.com/betting-tips/{Sport_Slug}/{Competition_Slug}/{Sport_ID}",
+    "event_card_pattern": "https://www.olbg.com/betting-tips/{Sport_Slug}/{Subcategory}/{Event_Slug}/{Sport_ID}?event_id={Event_ID}",
+    "consensus_mechanics": {
+      "win_tips_share": "win_tips / total_market_tips displayed as integer % on the most-tipped outcome",
+      "each_way_bug": "When an outright/match market carries Each-Way (EW) tips with 0 straight Win tips (e.g. Cricket event 188350), OLBG renders '0/0' and blank '%' on the hub card.",
+      "value_rating": "1-to-5 star rating comparing tipster consensus share (win_tips / total_tips) to bookmaker implied probability (1 / decimal_odds).",
+      "experts_filter": "Restricts consensus calculation to tipsters meeting trailing 30-day or 6-month sport-specific profit and strike-rate thresholds.",
+      "blind_spot_behavior": "OLBG publishes match cards ONLY once at least one tipster posts a tip; major slates with 0 community tips (e.g. all 14 NHL games, all 9 AFLW Round 11 games, all 8 LoL Worlds Swiss R1 games, all 5 RLWC26 Round 2 match cards, and GBGB Category One Finals) return 'No tips found.' on OLBG."
+    }
+  },
+  "covered_sports_count": 17,
+  "excluded_categories_count": 10,
+  "covered_sports": [
+    {
+      "olbg_id": 3,
+      "sport": "Tennis",
+      "slug": "tennis",
+      "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+      "live_olbg_cards": 20,
+      "verified_desk_events": 20,
+      "primary_governor": "ATP Tour / WTA Tour"
+    },
+    {
+      "olbg_id": 4,
+      "sport": "Basketball",
+      "slug": "basketball",
+      "olbg_url": "https://www.olbg.com/betting-tips/Basketball/4",
+      "live_olbg_cards": 12,
+      "verified_desk_events": 23,
+      "primary_governor": "NBA / Euroleague Basketball"
+    },
+    {
+      "olbg_id": 5,
+      "sport": "Golf",
+      "slug": "golf",
+      "olbg_url": "https://www.olbg.com/betting-tips/Golf/5",
+      "live_olbg_cards": 2,
+      "verified_desk_events": 2,
+      "primary_governor": "PGA TOUR / PGA TOUR Champions"
+    },
+    {
+      "olbg_id": 7,
+      "sport": "Cricket",
+      "slug": "cricket",
+      "olbg_url": "https://www.olbg.com/betting-tips/Cricket/7",
+      "live_olbg_cards": 3,
+      "verified_desk_events": 3,
+      "primary_governor": "ICC / ESPNcricinfo"
+    },
+    {
+      "olbg_id": 8,
+      "sport": "Snooker",
+      "slug": "snooker",
+      "olbg_url": "https://www.olbg.com/betting-tips/Snooker/8",
+      "live_olbg_cards": 2,
+      "verified_desk_events": 8,
+      "primary_governor": "World Snooker Tour (WST)"
+    },
+    {
+      "olbg_id": 9,
+      "sport": "Rugby Union",
+      "slug": "rugby-union",
+      "olbg_url": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+      "live_olbg_cards": 9,
+      "verified_desk_events": 16,
+      "primary_governor": "URC / Gallagher PREM Rugby / LNR Top 14"
+    },
+    {
+      "olbg_id": 10,
+      "sport": "Rugby League",
+      "slug": "rugby-league",
+      "olbg_url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+      "live_olbg_cards": 2,
+      "verified_desk_events": 7,
+      "primary_governor": "NRL / RLWC26"
+    },
+    {
+      "olbg_id": 12,
+      "sport": "Baseball",
+      "slug": "baseball",
+      "olbg_url": "https://www.olbg.com/betting-tips/Baseball/12",
+      "live_olbg_cards": 2,
+      "verified_desk_events": 4,
+      "primary_governor": "Major League Baseball (MLB Stats API)"
+    },
+    {
+      "olbg_id": 13,
+      "sport": "Ice Hockey",
+      "slug": "ice-hockey",
+      "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+      "live_olbg_cards": 2,
+      "verified_desk_events": 16,
+      "primary_governor": "NHL / Swedish Hockey League (SHL)"
+    },
+    {
+      "olbg_id": 14,
+      "sport": "Motor Racing",
+      "slug": "motor-racing",
+      "olbg_url": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+      "live_olbg_cards": 1,
+      "verified_desk_events": 1,
+      "primary_governor": "Formula 1 / FIA"
+    },
+    {
+      "olbg_id": 15,
+      "sport": "Darts",
+      "slug": "darts",
+      "olbg_url": "https://www.olbg.com/betting-tips/Darts/15",
+      "live_olbg_cards": 16,
+      "verified_desk_events": 16,
+      "primary_governor": "Professional Darts Corporation (PDC)"
+    },
+    {
+      "olbg_id": 20,
+      "sport": "Handball",
+      "slug": "handball",
+      "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+      "live_olbg_cards": 5,
+      "verified_desk_events": 5,
+      "primary_governor": "European Handball Federation (EHF)"
+    },
+    {
+      "olbg_id": 21,
+      "sport": "Volleyball",
+      "slug": "volleyball",
+      "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+      "live_olbg_cards": 4,
+      "verified_desk_events": 6,
+      "primary_governor": "Polska Liga Siatkowki (PlusLiga)"
+    },
+    {
+      "olbg_id": 22,
+      "sport": "Aussie Rules",
+      "slug": "aussie-rules",
+      "olbg_url": "https://www.olbg.com/betting-tips/Aussie_Rules/22",
+      "live_olbg_cards": 0,
+      "verified_desk_events": 9,
+      "primary_governor": "Australian Football League (NAB AFLW)"
+    },
+    {
+      "olbg_id": 23,
+      "sport": "eSports",
+      "slug": "esports",
+      "olbg_url": "https://www.olbg.com/betting-tips/eSports/23",
+      "live_olbg_cards": 0,
+      "verified_desk_events": 8,
+      "primary_governor": "Riot Games (LoL Esports)"
+    },
+    {
+      "olbg_id": 25,
+      "sport": "Gaelic Football",
+      "slug": "gaelic-football",
+      "olbg_url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+      "live_olbg_cards": 1,
+      "verified_desk_events": 2,
+      "primary_governor": "GAA (Cork GAA & Galway GAA)"
+    },
+    {
+      "olbg_id": 28,
+      "sport": "Greyhounds",
+      "slug": "greyhounds",
+      "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+      "live_olbg_cards": 0,
+      "verified_desk_events": 3,
+      "primary_governor": "Greyhound Board of Great Britain (GBGB)"
+    }
+  ],
+  "excluded_categories": [
+    {
+      "olbg_id": 1,
+      "category": "Soccer / Football",
+      "olbg_url": "https://www.olbg.com/betting-tips/Football/1",
+      "rule": "Excluded per client specification ('soccer', 'football')"
+    },
+    {
+      "olbg_id": 2,
+      "category": "Horse Racing",
+      "olbg_url": "https://www.olbg.com/betting-tips/Horse_Racing/2",
+      "rule": "Excluded per client specification ('horse racing')"
+    },
+    {
+      "olbg_id": 11,
+      "category": "American Football (NFL / NCAAF)",
+      "olbg_url": "https://www.olbg.com/betting-tips/American_Football/11",
+      "rule": "Excluded per client specification ('american football')"
+    },
+    {
+      "olbg_id": 16,
+      "category": "Boxing",
+      "olbg_url": "https://www.olbg.com/betting-tips/Boxing/16",
+      "rule": "Excluded per client specification ('boxing')"
+    },
+    {
+      "olbg_id": 17,
+      "category": "Cycling",
+      "olbg_url": "https://www.olbg.com/betting-tips/Cycling/17",
+      "rule": "Excluded per client specification ('cycling')"
+    },
+    {
+      "olbg_id": 18,
+      "category": "Entertainment / TV Specials",
+      "olbg_url": "https://www.olbg.com/betting-tips/Entertainment/18",
+      "rule": "Excluded per client specification ('specials')"
+    },
+    {
+      "olbg_id": 19,
+      "category": "Politics / Novelty Specials",
+      "olbg_url": "https://www.olbg.com/betting-tips/Politics/19",
+      "rule": "Excluded per client specification ('specials')"
+    },
+    {
+      "olbg_id": 24,
+      "category": "UFC",
+      "olbg_url": "https://www.olbg.com/betting-tips/UFC_MMA/24",
+      "rule": "Excluded per client specification ('ufc')"
+    },
+    {
+      "olbg_id": 24,
+      "category": "MMA / Martial Arts",
+      "olbg_url": "https://www.olbg.com/betting-tips/UFC_MMA/24",
+      "rule": "Excluded per client specification ('mma')"
+    },
+    {
+      "olbg_id": 26,
+      "category": "Hurling",
+      "olbg_url": "https://www.olbg.com/betting-tips/Hurling/26",
+      "rule": "Excluded per client specification ('hurling')"
+    }
+  ]
+}

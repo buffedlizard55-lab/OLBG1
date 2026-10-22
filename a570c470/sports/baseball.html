@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Baseball · OLBG Origination Desk (a570c470)</title>
+<meta name="description" content="Baseball — source-linked multi-sport fixtures, originated multi-market lines, confidence tiers and written predictions across the 17 in-scope OLBG sports.">
+<style>
+:root{--bg:#0b0f14;--panel:#121820;--panel2:#0f151c;--line:#1f2a36;--txt:#e6edf3;--muted:#8b9bb0;
+--acc:#4ade80;--acc2:#38bdf8;--hi:#22c55e;--md:#eab308;--lo:#94a3b8;--bad:#f87171;--flag:#f59e0b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc2);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0f1720,#0b0f14);position:sticky;top:0;z-index:20}
+.hin{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.brand{font-weight:700;font-size:15px;letter-spacing:.2px}
+.brand span{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--acc);margin-right:8px;vertical-align:middle}
+nav{display:flex;flex-wrap:wrap;gap:2px}
+nav a{padding:5px 9px;border-radius:6px;color:var(--muted);font-size:13px}
+nav a:hover{background:#16202b;color:var(--txt);text-decoration:none}
+nav a[aria-current]{background:#1b2733;color:var(--txt)}
+main{max-width:1240px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.25;margin:6px 0 10px}
+h2{font-size:19px;margin:34px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:15px;margin:20px 0 8px;color:#cbd5e1}
+p.lede{color:#c3cfdc;max-width:940px}
+.grid{display:grid;gap:12px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:18px 0 6px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi .n{font-size:23px;font-weight:700;letter-spacing:-.4px}
+.kpi .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+.kpi.hi .n{color:var(--hi)}.kpi.md .n{color:var(--md)}.kpi.lo .n{color:var(--lo)}
+.sports-grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px;display:block;color:inherit}
+.card:hover{border-color:#2c3d4f;text-decoration:none}
+.card .t{display:flex;justify-content:space-between;gap:8px;font-weight:600;font-size:14px}
+.card .m{color:var(--muted);font-size:12.5px;margin-top:3px}
+.badge{display:inline-block;font-size:11px;padding:1.5px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.badge.high{color:#052e16;background:var(--hi);border-color:var(--hi);font-weight:700}
+.badge.medium{color:#2a1d00;background:var(--md);border-color:var(--md);font-weight:700}
+.badge.low{background:#1e293b;color:#cbd5e1}
+.badge.ok{color:#86efac;border-color:#14532d;background:#0d2016}
+.badge.warn{color:#fcd34d;border-color:#78350f;background:#241a05}
+.badge.info{color:#bfdbfe;border-color:#1e3a8a;background:#0d1626}
+.note{border:1px solid var(--line);border-left:3px solid var(--acc2);background:var(--panel2);border-radius:8px;padding:12px 15px;margin:14px 0;font-size:14px;color:#c9d6e4}
+.note.good{border-left-color:var(--acc)}
+.note.warn{border-left-color:var(--flag)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#16202b;color:#cbd5e1;font-size:11.5px;text-transform:uppercase;letter-spacing:.45px;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#151f29}
+td.num,th.num{text-align:right;white-space:nowrap}
+.sub{display:block;color:var(--muted);font-size:11.5px;font-weight:400}
+.src a{display:block;font-size:11.5px;line-height:1.45}
+details summary{cursor:pointer;color:var(--acc2);font-size:12px}
+details[open] summary{color:var(--muted)}
+.mkt{border-top:1px solid var(--line);padding:7px 0 2px}
+.mkt-h{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#94a3b8;margin-bottom:3px}
+.mkt ul{list-style:none;margin:0;padding:0}
+.mkt li{display:flex;justify-content:space-between;gap:12px;font-size:12px;padding:1px 0}
+.mkt li span:last-child{white-space:nowrap;color:#cbd5e1}
+.band-yes{color:var(--acc);font-size:11px}
+.band-no{color:var(--muted);font-size:11px}
+.pred{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+.pred h3{margin:0 0 2px;font-size:15px;color:var(--txt)}
+.pred .meta{color:var(--muted);font-size:12px;margin-bottom:8px}
+.pred p{margin:0;color:#d3dfea}
+.pred .sel{margin-top:8px;font-size:12.5px;color:var(--acc)}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+.fin{max-width:1240px;margin:0 auto;padding:18px 20px 40px}
+ul.plain{list-style:none;padding:0;margin:8px 0}
+ul.plain li{padding:5px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+code{background:#16202b;padding:1px 5px;border-radius:4px;font-size:12.5px}
+.tag{font-size:11px;padding:1px 6px;border-radius:5px;background:#16202b;border:1px solid var(--line);color:var(--muted)}
+</style></head>
+<body>
+<header><div class="hin">
+  <div class="brand"><span></span>OLBG Origination Desk <span class="tag">a570c470 · 22 Oct 2026</span></div>
+  <nav aria-label="Primary"><a href="../index.html">Overview</a><a href="../picks.html">High Picks</a><a href="../predictions.html">Predictions</a><a href="../lines.html">All Fixtures</a><a href="../markets.html">Market Explorer</a><a href="../sports.html">Sports</a><a href="../reverse-engineering.html">OLBG Reversed</a><a href="../methodology.html">Methodology</a><a href="../sources.html">Sources</a><a href="../audit.html">Repo Audit</a><a href="../flagged.html">Flagged for Review</a></nav>
+</div></header>
+<main>
+<h1>Baseball</h1>
+<p class="lede">4 verified fixtures in the 22–28 October
+2026 window. Prices are our own fair quotes; the model's strength inputs and per-row flags are shown on each row.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Start (UTC)</th><th>Match &amp; venue</th><th>Strength input</th><th>Desk selection</th><th>Confidence</th><th>Official source</th><th>Markets</th></tr></thead>
+<tbody><tr>
+ <td>2026-10-24 00:00Z<span class="sub">World Series Game 1</span></td>
+ <td><b>Milwaukee Brewers v Tampa Bay Rays</b><span class="sub">American Family Field, Milwaukee</span></td>
+ <td>record<span class='sub'>edge +9.8 vs scale 90</span></td>
+ <td><b>Milwaukee Brewers</b><span class='sub'>Match winner · 1.84 (-119) · 54.3%</span></td>
+ <td><span class="badge low">Low</span><span class="sub">call: Milwaukee Brewers (54.3%)</span></td>
+ <td><div class="src"><a href="https://statsapi.mlb.com/api/v1/schedule/postseason?season=2026" target="_blank" rel="noopener">Major League Baseball (MLB Stats API) — 2026 MLB Postseason Official Schedule &amp; Standings API (World Series Games 1-4)</a></div><span class='sub' style='color:#fcd34d'>⚠ Starting pitchers are not published for these games on the feed read, so the desk prices a series-level rating and marks the row pitcher-agnostic.</span></td>
+ <td><details><summary>Full market sheet (14)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Milwaukee Brewers</span><span>1.84 (-119) · 54.3% <span class="band-yes">in window</span></span></li><li><span>Tampa Bay Rays</span><span>2.19 (+119) · 45.7% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Milwaukee Brewers -4.5</span><span>19.08 (+1808) · 5.2% <span class="band-yes">in window</span></span></li><li><span>Tampa Bay Rays +4.5</span><span>1.06 (-1808) · 94.8% <span class="band-no">outside window</span></span></li><li><span>Milwaukee Brewers +4.5</span><span>1.03 (-2938) · 96.7% <span class="band-no">outside window</span></span></li><li><span>Tampa Bay Rays -4.5</span><span>30.38 (+2938) · 3.3% <span class="band-yes">in window</span></span></li><li><span>Milwaukee Brewers -3</span><span>6.76 (+576) · 14.8% <span class="band-yes">in window</span></span></li><li><span>Tampa Bay Rays +3</span><span>1.17 (-576) · 85.2% <span class="band-no">outside window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Total</div><ul><li><span>Over 8.5</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Under 8.5</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Over 10.5</span><span>3.17 (+217) · 31.5% <span class="band-yes">in window</span></span></li><li><span>Under 10.5</span><span>1.46 (-217) · 68.5% <span class="band-yes">in window</span></span></li><li><span>Over 6.5</span><span>1.46 (-217) · 68.5% <span class="band-yes">in window</span></span></li><li><span>Under 6.5</span><span>3.17 (+217) · 31.5% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-25 00:00Z<span class="sub">World Series Game 2</span></td>
+ <td><b>Milwaukee Brewers v Tampa Bay Rays</b><span class="sub">American Family Field, Milwaukee</span></td>
+ <td>record<span class='sub'>edge +9.8 vs scale 90</span></td>
+ <td><b>Milwaukee Brewers</b><span class='sub'>Match winner · 1.84 (-119) · 54.3%</span></td>
+ <td><span class="badge low">Low</span><span class="sub">call: Milwaukee Brewers (54.3%)</span></td>
+ <td><div class="src"><a href="https://statsapi.mlb.com/api/v1/schedule/postseason?season=2026" target="_blank" rel="noopener">Major League Baseball (MLB Stats API) — 2026 MLB Postseason Official Schedule &amp; Standings API (World Series Games 1-4)</a></div><span class='sub' style='color:#fcd34d'>⚠ Starting pitchers are not published for these games on the feed read, so the desk prices a series-level rating and marks the row pitcher-agnostic.</span></td>
+ <td><details><summary>Full market sheet (14)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Milwaukee Brewers</span><span>1.84 (-119) · 54.3% <span class="band-yes">in window</span></span></li><li><span>Tampa Bay Rays</span><span>2.19 (+119) · 45.7% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Milwaukee Brewers -4.5</span><span>19.08 (+1808) · 5.2% <span class="band-yes">in window</span></span></li><li><span>Tampa Bay Rays +4.5</span><span>1.06 (-1808) · 94.8% <span class="band-no">outside window</span></span></li><li><span>Milwaukee Brewers +4.5</span><span>1.03 (-2938) · 96.7% <span class="band-no">outside window</span></span></li><li><span>Tampa Bay Rays -4.5</span><span>30.38 (+2938) · 3.3% <span class="band-yes">in window</span></span></li><li><span>Milwaukee Brewers -3</span><span>6.76 (+576) · 14.8% <span class="band-yes">in window</span></span></li><li><span>Tampa Bay Rays +3</span><span>1.17 (-576) · 85.2% <span class="band-no">outside window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Total</div><ul><li><span>Over 8.5</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Under 8.5</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Over 10.5</span><span>3.17 (+217) · 31.5% <span class="band-yes">in window</span></span></li><li><span>Under 10.5</span><span>1.46 (-217) · 68.5% <span class="band-yes">in window</span></span></li><li><span>Over 6.5</span><span>1.46 (-217) · 68.5% <span class="band-yes">in window</span></span></li><li><span>Under 6.5</span><span>3.17 (+217) · 31.5% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-27 00:00Z<span class="sub">World Series Game 3</span></td>
+ <td><b>Tampa Bay Rays v Milwaukee Brewers</b><span class="sub">Tropicana Field, St. Petersburg</span></td>
+ <td>record<span class='sub'>edge -5.8 vs scale 90</span></td>
+ <td><b>Milwaukee Brewers</b><span class='sub'>Match winner · 1.90 (-111) · 52.6%</span></td>
+ <td><span class="badge low">Low</span><span class="sub">call: Milwaukee Brewers (52.6%)</span></td>
+ <td><div class="src"><a href="https://statsapi.mlb.com/api/v1/schedule/postseason?season=2026" target="_blank" rel="noopener">Major League Baseball (MLB Stats API) — 2026 MLB Postseason Official Schedule &amp; Standings API (World Series Games 1-4)</a></div><span class='sub' style='color:#fcd34d'>⚠ Starting pitchers are not published for these games on the feed read, so the desk prices a series-level rating and marks the row pitcher-agnostic.</span></td>
+ <td><details><summary>Full market sheet (14)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Tampa Bay Rays</span><span>2.11 (+111) · 47.4% <span class="band-yes">in window</span></span></li><li><span>Milwaukee Brewers</span><span>1.90 (-111) · 52.6% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Milwaukee Brewers +4</span><span>1.06 (-1735) · 94.6% <span class="band-no">outside window</span></span></li><li><span>Tampa Bay Rays -4</span><span>18.35 (+1735) · 5.4% <span class="band-yes">in window</span></span></li><li><span>Milwaukee Brewers +0.5</span><span>1.66 (-151) · 60.1% <span class="band-yes">in window</span></span></li><li><span>Tampa Bay Rays -0.5</span><span>2.51 (+151) · 39.9% <span class="band-yes">in window</span></span></li><li><span>Milwaukee Brewers -3</span><span>7.25 (+625) · 13.8% <span class="band-yes">in window</span></span></li><li><span>Tampa Bay Rays +3</span><span>1.16 (-625) · 86.2% <span class="band-no">outside window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Total</div><ul><li><span>Over 8.5</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Under 8.5</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Over 10.5</span><span>3.17 (+217) · 31.5% <span class="band-yes">in window</span></span></li><li><span>Under 10.5</span><span>1.46 (-217) · 68.5% <span class="band-yes">in window</span></span></li><li><span>Over 6.5</span><span>1.46 (-217) · 68.5% <span class="band-yes">in window</span></span></li><li><span>Under 6.5</span><span>3.17 (+217) · 31.5% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr><tr>
+ <td>2026-10-28 00:00Z<span class="sub">World Series Game 4</span></td>
+ <td><b>Tampa Bay Rays v Milwaukee Brewers</b><span class="sub">Tropicana Field, St. Petersburg</span></td>
+ <td>record<span class='sub'>edge -5.8 vs scale 90</span></td>
+ <td><b>Milwaukee Brewers</b><span class='sub'>Match winner · 1.90 (-111) · 52.6%</span></td>
+ <td><span class="badge low">Low</span><span class="sub">call: Milwaukee Brewers (52.6%)</span></td>
+ <td><div class="src"><a href="https://statsapi.mlb.com/api/v1/schedule/postseason?season=2026" target="_blank" rel="noopener">Major League Baseball (MLB Stats API) — 2026 MLB Postseason Official Schedule &amp; Standings API (World Series Games 1-4)</a></div><span class='sub' style='color:#fcd34d'>⚠ Starting pitchers are not published for these games on the feed read, so the desk prices a series-level rating and marks the row pitcher-agnostic.</span></td>
+ <td><details><summary>Full market sheet (14)</summary><div class="mkt"><div class="mkt-h">Match winner</div><ul><li><span>Tampa Bay Rays</span><span>2.11 (+111) · 47.4% <span class="band-yes">in window</span></span></li><li><span>Milwaukee Brewers</span><span>1.90 (-111) · 52.6% <span class="band-yes">in window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Handicap</div><ul><li><span>Milwaukee Brewers +4</span><span>1.06 (-1735) · 94.6% <span class="band-no">outside window</span></span></li><li><span>Tampa Bay Rays -4</span><span>18.35 (+1735) · 5.4% <span class="band-yes">in window</span></span></li><li><span>Milwaukee Brewers +0.5</span><span>1.66 (-151) · 60.1% <span class="band-yes">in window</span></span></li><li><span>Tampa Bay Rays -0.5</span><span>2.51 (+151) · 39.9% <span class="band-yes">in window</span></span></li><li><span>Milwaukee Brewers -3</span><span>7.25 (+625) · 13.8% <span class="band-yes">in window</span></span></li><li><span>Tampa Bay Rays +3</span><span>1.16 (-625) · 86.2% <span class="band-no">outside window</span></span></li></ul></div><div class="mkt"><div class="mkt-h">Total</div><ul><li><span>Over 8.5</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Under 8.5</span><span>2.00 (+100) · 50.0% <span class="band-yes">in window</span></span></li><li><span>Over 10.5</span><span>3.17 (+217) · 31.5% <span class="band-yes">in window</span></span></li><li><span>Under 10.5</span><span>1.46 (-217) · 68.5% <span class="band-yes">in window</span></span></li><li><span>Over 6.5</span><span>1.46 (-217) · 68.5% <span class="band-yes">in window</span></span></li><li><span>Under 6.5</span><span>3.17 (+217) · 31.5% <span class="band-yes">in window</span></span></li></ul></div></details></td>
+</tr></tbody></table></div>
+
+<p style="margin-top:18px"><a href="../sports.html">← all sports</a> · <a href="../methodology.html">methodology</a></p>
+</main>
+<footer><div class="fin">
+  <p><b>Independent model output, not betting advice.</b> Prices are our own fair-probability quotes with no margin;
+  the 5% margin a bookmaker would need is shown beside them. Every fixture, record and ranking links to the governing
+  body that publishes it. Values that could not be confirmed on an official page are blank and listed on
+  <a href="../flagged.html">Flagged for Review</a>.</p>
+  <p>Session <code>a570c470-olbg1</code> · snapshot <code>2026-10-22T03:20Z</code> ·
+  built by <code>scripts/sa570c470_build_site.py</code> · validated by <code>scripts/sa570c470_validate.py</code></p>
+</div></footer>
+</body></html>

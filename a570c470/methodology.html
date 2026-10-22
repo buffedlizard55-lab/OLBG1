@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology · OLBG Origination Desk (a570c470)</title>
+<meta name="description" content="Methodology — source-linked multi-sport fixtures, originated multi-market lines, confidence tiers and written predictions across the 17 in-scope OLBG sports.">
+<style>
+:root{--bg:#0b0f14;--panel:#121820;--panel2:#0f151c;--line:#1f2a36;--txt:#e6edf3;--muted:#8b9bb0;
+--acc:#4ade80;--acc2:#38bdf8;--hi:#22c55e;--md:#eab308;--lo:#94a3b8;--bad:#f87171;--flag:#f59e0b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc2);text-decoration:none}a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0f1720,#0b0f14);position:sticky;top:0;z-index:20}
+.hin{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.brand{font-weight:700;font-size:15px;letter-spacing:.2px}
+.brand span{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--acc);margin-right:8px;vertical-align:middle}
+nav{display:flex;flex-wrap:wrap;gap:2px}
+nav a{padding:5px 9px;border-radius:6px;color:var(--muted);font-size:13px}
+nav a:hover{background:#16202b;color:var(--txt);text-decoration:none}
+nav a[aria-current]{background:#1b2733;color:var(--txt)}
+main{max-width:1240px;margin:0 auto;padding:26px 20px 70px}
+h1{font-size:26px;line-height:1.25;margin:6px 0 10px}
+h2{font-size:19px;margin:34px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+h3{font-size:15px;margin:20px 0 8px;color:#cbd5e1}
+p.lede{color:#c3cfdc;max-width:940px}
+.grid{display:grid;gap:12px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:18px 0 6px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi .n{font-size:23px;font-weight:700;letter-spacing:-.4px}
+.kpi .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+.kpi.hi .n{color:var(--hi)}.kpi.md .n{color:var(--md)}.kpi.lo .n{color:var(--lo)}
+.sports-grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 15px;display:block;color:inherit}
+.card:hover{border-color:#2c3d4f;text-decoration:none}
+.card .t{display:flex;justify-content:space-between;gap:8px;font-weight:600;font-size:14px}
+.card .m{color:var(--muted);font-size:12.5px;margin-top:3px}
+.badge{display:inline-block;font-size:11px;padding:1.5px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.badge.high{color:#052e16;background:var(--hi);border-color:var(--hi);font-weight:700}
+.badge.medium{color:#2a1d00;background:var(--md);border-color:var(--md);font-weight:700}
+.badge.low{background:#1e293b;color:#cbd5e1}
+.badge.ok{color:#86efac;border-color:#14532d;background:#0d2016}
+.badge.warn{color:#fcd34d;border-color:#78350f;background:#241a05}
+.badge.info{color:#bfdbfe;border-color:#1e3a8a;background:#0d1626}
+.note{border:1px solid var(--line);border-left:3px solid var(--acc2);background:var(--panel2);border-radius:8px;padding:12px 15px;margin:14px 0;font-size:14px;color:#c9d6e4}
+.note.good{border-left-color:var(--acc)}
+.note.warn{border-left-color:var(--flag)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#16202b;color:#cbd5e1;font-size:11.5px;text-transform:uppercase;letter-spacing:.45px;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#151f29}
+td.num,th.num{text-align:right;white-space:nowrap}
+.sub{display:block;color:var(--muted);font-size:11.5px;font-weight:400}
+.src a{display:block;font-size:11.5px;line-height:1.45}
+details summary{cursor:pointer;color:var(--acc2);font-size:12px}
+details[open] summary{color:var(--muted)}
+.mkt{border-top:1px solid var(--line);padding:7px 0 2px}
+.mkt-h{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#94a3b8;margin-bottom:3px}
+.mkt ul{list-style:none;margin:0;padding:0}
+.mkt li{display:flex;justify-content:space-between;gap:12px;font-size:12px;padding:1px 0}
+.mkt li span:last-child{white-space:nowrap;color:#cbd5e1}
+.band-yes{color:var(--acc);font-size:11px}
+.band-no{color:var(--muted);font-size:11px}
+.pred{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+.pred h3{margin:0 0 2px;font-size:15px;color:var(--txt)}
+.pred .meta{color:var(--muted);font-size:12px;margin-bottom:8px}
+.pred p{margin:0;color:#d3dfea}
+.pred .sel{margin-top:8px;font-size:12.5px;color:var(--acc)}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+.fin{max-width:1240px;margin:0 auto;padding:18px 20px 40px}
+ul.plain{list-style:none;padding:0;margin:8px 0}
+ul.plain li{padding:5px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+code{background:#16202b;padding:1px 5px;border-radius:4px;font-size:12.5px}
+.tag{font-size:11px;padding:1px 6px;border-radius:5px;background:#16202b;border:1px solid var(--line);color:var(--muted)}
+</style></head>
+<body>
+<header><div class="hin">
+  <div class="brand"><span></span>OLBG Origination Desk <span class="tag">a570c470 · 22 Oct 2026</span></div>
+  <nav aria-label="Primary"><a href="index.html">Overview</a><a href="picks.html">High Picks</a><a href="predictions.html">Predictions</a><a href="lines.html">All Fixtures</a><a href="markets.html">Market Explorer</a><a href="sports.html">Sports</a><a href="reverse-engineering.html">OLBG Reversed</a><a href="methodology.html" aria-current="page">Methodology</a><a href="sources.html">Sources</a><a href="audit.html">Repo Audit</a><a href="flagged.html">Flagged for Review</a></nav>
+</div></header>
+<main>
+<h1>Methodology</h1>
+<p class="lede">Everything on this site is either a sourced fact or a labelled model output. This page states which
+is which, in enough detail that the arithmetic can be reproduced.</p>
+
+<h2>1. Strength inputs</h2>
+<p>Each side carries one strength figure on a 0–100 scale, derived only from the official figure recorded in the
+fixture's <code>inputs</code> block:</p>
+<ul class="plain">
+<li><b>Ranking sports</b> (tennis, snooker, darts, esports): <code>strength = 100 − 18·ln(rank)</code>, using the rank
+printed on the signed draw sheet or the official ranking list. A rank of 1 is 100; a rank of 32 is about 38.</li>
+<li><b>Table sports</b> (ice hockey, rugby union, Aussie rules, handball, EuroLeague): league points as a share of the
+maximum available, plus a goal or point-difference term per game.</li>
+<li><b>Record sports</b> (baseball, NBA, cricket, volleyball): win rate with two pseudo-games of shrinkage, plus a
+run-difference term where the feed publishes one.</li>
+<li><b>Single-fixture sports</b> (RLWC26, Gaelic football): the sourced round-one or semi-final margin, mapped to a
+pseudo win rate around .500.</li>
+</ul>
+<div class="note warn"><b>Documented assumptions.</b> Where a ranking is not published for one side the model assumes
+rank {'tennis': 100, 'snooker': 64, 'darts': 33, 'esports': 5} for that sport and the row is demoted to Medium at best. Home advantage is a
+documented constant per sport (tennis 0, snooker 0, darts 0, esports 0, basketball 3.5, ice-hockey 6, and so
+on), not a measured figure. These are assumptions and are labelled as such.</div>
+
+<h2>2. One distribution per match</h2>
+<p><code>P(win) = Phi(edge / SCALE)</code> with the published per-sport scale, and the same edge sets the expected
+margin, so the handicap and total ladders are derived from the same distribution as the moneyline rather than from
+separate guesses. Best-of-N sports solve for the per-leg probability that reproduces the match probability under the
+binomial model, then price every frame, leg and set market off that score matrix.</p>
+
+<h2>3. Prices are fair, and the margin is published</h2>
+<p>Every price is <code>1 / probability</code>, rounded to two decimals, with no margin added. The desk also prints
+the price a bookmaker charging 5% would quote, which is
+<code>fair / 1.05</code>. Nothing on this site is a market price.</p>
+
+<h2>4. The -250 to +10000 band</h2>
+<p>The brief asks for High-confidence picks that win more than 70% of the time <i>and</i> sit between −250 and
++10000. Those two conditions pull in opposite directions: a 70% chance is a fair price of 1.43 (−233), and
+any margin pushes the quoted price shorter than −250. The desk resolves it by treating the <b>window as binding on
+the price it publishes</b>, and by originating the line: for a strong favourite it quotes the handicap rung whose
+probability lands near 71%, which is inside the window, rather than the shorter moneyline. Every High pick
+therefore satisfies both tests on its published price, and the moneyline call is printed beside it so nothing is
+hidden.</p>
+
+<h2>5. Confidence tiers and caps</h2>
+<ul class="plain">
+<li><b>High</b> — model probability at least 70% and published price inside
+1.40–101 (-250 to +10000).</li>
+<li><b>Medium</b> — at least 55%.</li>
+<li><b>Low</b> — everything else.</li>
+</ul>
+<p>Caps applied automatically: the NBA (one-game sample) at Medium, PlusLiga (one round) at Medium, esports (draw tier
+is seeding, not strength) at Medium, cricket and Gaelic football at Low. A row whose strength input is a documented
+assumption is capped at Medium. The cap and its reason are printed on every affected row.</p>
+
+<h2>6. Blank beats wrong</h2>
+<p>If a figure cannot be read on an official page it is left empty and the row is listed on
+<a href="flagged.html">Flagged for Review</a>. 25 of 141 fixtures are published
+with no price at all for exactly this reason. No value on this site was filled in from memory.</p>
+</main>
+<footer><div class="fin">
+  <p><b>Independent model output, not betting advice.</b> Prices are our own fair-probability quotes with no margin;
+  the 5% margin a bookmaker would need is shown beside them. Every fixture, record and ranking links to the governing
+  body that publishes it. Values that could not be confirmed on an official page are blank and listed on
+  <a href="flagged.html">Flagged for Review</a>.</p>
+  <p>Session <code>a570c470-olbg1</code> · snapshot <code>2026-10-22T03:20Z</code> ·
+  built by <code>scripts/sa570c470_build_site.py</code> · validated by <code>scripts/sa570c470_validate.py</code></p>
+</div></footer>
+</body></html>
