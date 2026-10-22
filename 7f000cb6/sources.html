@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>Official Sources · OLBG Audit &amp; Origination Desk (7f000cb6)</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="shell">
+  <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+    <a class="brand" href="index.html">OLBG Desk · 7f000cb6<small>Official-Source Audit &amp; Lines</small></a>
+    <div class="nav-group">
+      <div class="nav-title">Desk Views</div>
+      <a class="nav-link" href="index.html"><span>Overview &amp; Match List</span><span class="nav-count">122</span></a><a class="nav-link" href="picks.html"><span>High-Confidence Picks</span><span class="nav-count">9</span></a><a class="nav-link" href="markets.html"><span>Originated Markets</span><span class="nav-count">280</span></a><a class="nav-link" href="sports.html"><span>17 Sport Categories</span><span class="nav-count">17</span></a><a class="nav-link" href="flagged.html"><span>Flagged for Review</span><span class="nav-count">85</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-title">Verification &amp; Audit</div>
+      <a class="nav-link" href="reverse-engineering.html"><span>OLBG Reverse Engineering</span><span class="nav-count">17 hubs</span></a><a class="nav-link" href="audit.html"><span>Line-by-Line Repo Audit</span><span class="nav-count">18</span></a><a class="nav-link active" href="sources.html"><span>Official Sources</span><span class="nav-count">38</span></a><a class="nav-link" href="methodology.html"><span>Model &amp; Grading Rules</span></a><a class="nav-link" href="../index.html"><span>← Canonical Root Desk</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-title">17 Covered Sports</div>
+      <a class="nav-link" href="sports/ice-hockey.html"><span>Ice Hockey</span><span class="nav-count">26</span></a><a class="nav-link" href="sports/baseball.html"><span>Baseball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/basketball.html"><span>Basketball</span><span class="nav-count">11</span></a><a class="nav-link" href="sports/tennis.html"><span>Tennis</span><span class="nav-count">21</span></a><a class="nav-link" href="sports/rugby-union.html"><span>Rugby Union</span><span class="nav-count">19</span></a><a class="nav-link" href="sports/rugby-league.html"><span>Rugby League</span><span class="nav-count">9</span></a><a class="nav-link" href="sports/snooker.html"><span>Snooker</span><span class="nav-count">8</span></a><a class="nav-link" href="sports/handball.html"><span>Handball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/volleyball.html"><span>Volleyball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/gaelic-football.html"><span>Gaelic Football</span><span class="nav-count">4</span></a><a class="nav-link" href="sports/cricket.html"><span>Cricket</span><span class="nav-count">2</span></a><a class="nav-link" href="sports/golf.html"><span>Golf</span><span class="nav-count">2</span></a><a class="nav-link" href="sports/motor-racing.html"><span>Motor Racing</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/darts.html"><span>Darts</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/aussie-rules.html"><span>Aussie Rules</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/esports.html"><span>eSports</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/greyhounds.html"><span>Greyhounds</span><span class="nav-count">1</span></a>
+    </div>
+  </aside>
+  <div class="content">
+    <header class="topbar">
+      <div>
+        <button class="menu-btn" id="menu-btn" type="button">☰ Menu</button>
+        <strong>Session 7f000cb6</strong> · Independent Official-Source Match &amp; Pricing Desk
+      </div>
+      <div class="topbar-meta">
+        <span>Snapshot: <code>2026-10-22T12:30:00Z</code></span>
+        <span>Model: <code>7f000cb6-quant-v1.0</code></span>
+        <a href="exports/matches.csv" download>CSV Export ↓</a>
+      </div>
+    </header>
+    <main id="main">
+      <div class="notice notice-warn" id="live-expiry-note" hidden></div>
+      
+<h1>Official Governing-Body Source Register (38 Endpoints)</h1>
+<p class="subtitle">100% of sporting facts in session <code>7f000cb6</code> trace to official league, tour, and federation hosts in <code>pipeline.config.PUBLISHERS</code>. Zero betting sites or score aggregators are used.</p>
+<div class="controls">
+  <input id="tbl-search" type="search" placeholder="Search team, player, competition, venue…" aria-label="Search rows">
+  <select id="tbl-sport" aria-label="Filter by sport"><option value="">All 17 sports</option><option value="ice-hockey">Ice Hockey</option><option value="baseball">Baseball</option><option value="basketball">Basketball</option><option value="tennis">Tennis</option><option value="rugby-union">Rugby Union</option><option value="rugby-league">Rugby League</option><option value="snooker">Snooker</option><option value="handball">Handball</option><option value="volleyball">Volleyball</option><option value="gaelic-football">Gaelic Football</option><option value="cricket">Cricket</option><option value="golf">Golf</option><option value="motor-racing">Motor Racing</option><option value="darts">Darts</option><option value="aussie-rules">Aussie Rules</option><option value="esports">eSports</option><option value="greyhounds">Greyhounds</option></select>
+  <select id="tbl-conf" aria-label="Filter by confidence">
+    <option value="">All grades</option>
+    <option value="high">High</option>
+    <option value="medium">Medium</option>
+    <option value="low">Low</option>
+    <option value="unpriced">Unpriced / Withheld</option>
+  </select>
+  <select id="odds-fmt" aria-label="Odds display format">
+    <option value="american">Odds: American</option>
+    <option value="decimal">Odds: Decimal</option>
+  </select>
+  <span id="row-count" style="font-size:12.5px;color:var(--muted)"></span>
+</div>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Source ID</th><th>Sport</th><th>Governing Body</th><th>Endpoint / Document</th><th>Checked (UTC)</th><th>Status</th><th>Official Source</th></tr></thead>
+  <tbody><tr data-filterable="1" data-sport="ice-hockey">
+  <td><code>src-nhl-schedule</code></td>
+  <td><a href="sports/ice-hockey.html">ice-hockey</a></td>
+  <td><strong>NHL</strong></td>
+  <td>NHL Official Web API Schedule (2026-10-22..24)</td>
+  <td><code>2026-10-22T12:22:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/schedule/2026-10-22" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey">
+  <td><code>src-nhl-standings</code></td>
+  <td><a href="sports/ice-hockey.html">ice-hockey</a></td>
+  <td><strong>NHL</strong></td>
+  <td>NHL Official Standings Table (as of 2026-10-22T12:21:00Z)</td>
+  <td><code>2026-10-22T12:21:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/standings/now" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey">
+  <td><code>src-nhl-leaders</code></td>
+  <td><a href="sports/ice-hockey.html">ice-hockey</a></td>
+  <td><strong>NHL</strong></td>
+  <td>NHL Official Skater Leaders 2026-27 (Points &amp; Goals)</td>
+  <td><code>2026-10-22T11:55:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/skater-stats-leaders/current?categories=points,goals&amp;limit=25" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="ice-hockey">
+  <td><code>src-nhl-scores-1021</code></td>
+  <td><a href="sports/ice-hockey.html">ice-hockey</a></td>
+  <td><strong>NHL</strong></td>
+  <td>NHL Official Daily Scores (2026-10-20 &amp; 2026-10-21)</td>
+  <td><code>2026-10-22T11:56:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/score/2026-10-21" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="baseball">
+  <td><code>src-mlb-ws</code></td>
+  <td><a href="sports/baseball.html">baseball</a></td>
+  <td><strong>MLB</strong></td>
+  <td>MLB StatsAPI 2026 World Series Schedule &amp; Probable Pitchers</td>
+  <td><code>2026-10-22T11:58:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-22&amp;endDate=2026-10-29&amp;hydrate=probablePitcher,team,venue" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="baseball">
+  <td><code>src-mlb-standings</code></td>
+  <td><a href="sports/baseball.html">baseball</a></td>
+  <td><strong>MLB</strong></td>
+  <td>MLB StatsAPI 2026 Regular Season Standings (AL/NL)</td>
+  <td><code>2026-10-22T11:58:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="baseball">
+  <td><code>src-mlb-postseason</code></td>
+  <td><a href="sports/baseball.html">baseball</a></td>
+  <td><strong>MLB</strong></td>
+  <td>MLB StatsAPI 2026 ALCS &amp; NLCS Hydrated Game Decisions</td>
+  <td><code>2026-10-22T12:00:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;teamId=139,158&amp;startDate=2026-10-14&amp;endDate=2026-10-22&amp;hydrate=decisions" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball">
+  <td><code>src-el-r7</code></td>
+  <td><a href="sports/basketball.html">basketball</a></td>
+  <td><strong>Euroleague Basketball</strong></td>
+  <td>EuroLeague 2026-27 Round 7 Game Center &amp; Team/Player Notes</td>
+  <td><code>2026-10-22T12:02:00Z</code></td>
+  <td><span class="badge badge-warn">verified with prose flags</span></td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball">
+  <td><code>src-el-standings</code></td>
+  <td><a href="sports/basketball.html">basketball</a></td>
+  <td><strong>Euroleague Basketball</strong></td>
+  <td>EuroLeague 2026-27 Official Regular Season Standings (20 Clubs)</td>
+  <td><code>2026-10-22T12:20:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="basketball">
+  <td><code>src-nba-games</code></td>
+  <td><a href="sports/basketball.html">basketball</a></td>
+  <td><strong>NBA</strong></td>
+  <td>NBA Official Games Page (2026-10-22 Calendar; Scoreboard HTTP 500)</td>
+  <td><code>2026-10-22T12:03:00Z</code></td>
+  <td><span class="badge badge-warn">partial hydration error</span></td>
+  <td><a class="src-link" href="https://www.nba.com/games?date=2026-10-22" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis">
+  <td><code>src-atp-almaty</code></td>
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><strong>ATP Tour</strong></td>
+  <td>ATP 250 Almaty Open Official Order of Play PDF (2026-10-22)</td>
+  <td><code>2026-10-22T12:04:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis">
+  <td><code>src-atp-brussels</code></td>
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><strong>ATP Tour</strong></td>
+  <td>ATP 250 European Open Brussels Official Order of Play PDF (2026-10-22)</td>
+  <td><code>2026-10-22T12:04:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/7485/op.pdf" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis">
+  <td><code>src-atp-lyon</code></td>
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><strong>ATP Challenger Tour</strong></td>
+  <td>ATP Challenger Lyon Official Order of Play PDF (2026-10-22)</td>
+  <td><code>2026-10-22T12:04:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/496/op.pdf" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis">
+  <td><code>src-atp-vienna</code></td>
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><strong>ATP Tour</strong></td>
+  <td>ATP 500 Vienna Official OOP PDF Endpoint (Not Yet Available)</td>
+  <td><code>2026-10-22T12:04:00Z</code></td>
+  <td><span class="badge badge-warn">unavailable flagged</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/337/op.pdf" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis">
+  <td><code>src-atp-basel</code></td>
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><strong>ATP Tour</strong></td>
+  <td>ATP 500 Swiss Indoors Basel Official OOP PDF Endpoint (Not Yet Available)</td>
+  <td><code>2026-10-22T12:04:00Z</code></td>
+  <td><span class="badge badge-warn">unavailable flagged</span></td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/328/op.pdf" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis">
+  <td><code>src-wta-ningbo</code></td>
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><strong>WTA Tour</strong></td>
+  <td>WTA 500 Ningbo Open Official Order of Play PDF (2026-10-22)</td>
+  <td><code>2026-10-22T12:05:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="tennis">
+  <td><code>src-wta-osaka</code></td>
+  <td><a href="sports/tennis.html">tennis</a></td>
+  <td><strong>WTA Tour</strong></td>
+  <td>WTA 250 Kinoshita Group Japan Open Osaka Official OOP PDF (2026-10-22)</td>
+  <td><code>2026-10-22T12:05:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://wtafiles.wtatennis.com/pdf/draws/2026/405/OP.pdf" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="snooker">
+  <td><code>src-wst-ni</code></td>
+  <td><a href="sports/snooker.html">snooker</a></td>
+  <td><strong>World Snooker Tour</strong></td>
+  <td>WST BetVictor Northern Ireland Open 2026 Match Centre</td>
+  <td><code>2026-10-22T12:06:00Z</code></td>
+  <td><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union">
+  <td><code>src-urc-r4</code></td>
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><strong>United Rugby Championship</strong></td>
+  <td>URC 2026-27 Round 4 Official Match Centre &amp; Round 3 Results</td>
+  <td><code>2026-10-22T12:20:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union">
+  <td><code>src-urc-table</code></td>
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><strong>United Rugby Championship</strong></td>
+  <td>URC 2026-27 Official League Table (16 Clubs)</td>
+  <td><code>2026-10-22T12:20:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union">
+  <td><code>src-lnr-top14</code></td>
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><strong>Ligue Nationale de Rugby</strong></td>
+  <td>LNR TOP 14 2026-27 Journée 7 Official Calendar</td>
+  <td><code>2026-10-22T12:07:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union">
+  <td><code>src-lnr-prod2</code></td>
+  <td><a href="sports/rugby-union.html">rugby-union</a></td>
+  <td><strong>Ligue Nationale de Rugby</strong></td>
+  <td>LNR PRO D2 2026-27 Journée 8 Official Calendar</td>
+  <td><code>2026-10-22T12:07:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://prod2.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-league">
+  <td><code>src-irl-rlwc</code></td>
+  <td><a href="sports/rugby-league.html">rugby-league</a></td>
+  <td><strong>International Rugby League</strong></td>
+  <td>IRL Official Fixtures &amp; Results (RLWC 2026 Men&#x27;s &amp; Women&#x27;s Round 2)</td>
+  <td><code>2026-10-22T12:08:00Z</code></td>
+  <td><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://www.intrl.sport/fixtures-results" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="handball">
+  <td><code>src-ehf-cl</code></td>
+  <td><a href="sports/handball.html">handball</a></td>
+  <td><strong>European Handball Federation</strong></td>
+  <td>EHF Champions League Men 2026/27 Group Phase Playing Times PDF</td>
+  <td><code>2026-10-22T12:09:00Z</code></td>
+  <td><span class="badge badge-muted">verified july publication</span></td>
+  <td><a class="src-link" href="https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="volleyball">
+  <td><code>src-pls-games</code></td>
+  <td><a href="sports/volleyball.html">volleyball</a></td>
+  <td><strong>Polska Liga Siatkówki</strong></td>
+  <td>PlusLiga &amp; TAURON Liga Official Games Schedule</td>
+  <td><code>2026-10-22T12:10:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.tauronliga.pl/games.html" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="volleyball">
+  <td><code>src-legavolley</code></td>
+  <td><a href="sports/volleyball.html">volleyball</a></td>
+  <td><strong>Lega Pallavolo Serie A</strong></td>
+  <td>SuperLega Credem Banca Official 2026-27 Calendar</td>
+  <td><code>2026-10-22T12:10:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.legavolley.it/calendario/?idCampionato=999" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="aussie-rules">
+  <td><code>src-aflw-8970</code></td>
+  <td><a href="sports/aussie-rules.html">aussie-rules</a></td>
+  <td><strong>Australian Football League</strong></td>
+  <td>NAB AFLW Round 11 Match Centre: Port Adelaide vs Collingwood</td>
+  <td><code>2026-10-22T12:11:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.afl.com.au/aflw/matches/8970" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="esports">
+  <td><code>src-lol-worlds</code></td>
+  <td><a href="sports/esports.html">esports</a></td>
+  <td><strong>Riot Games / LoL Esports</strong></td>
+  <td>LoL Esports Worlds 2026 Official Tournament Overview</td>
+  <td><code>2026-10-22T12:11:00Z</code></td>
+  <td><span class="badge badge-warn">partial js schedule</span></td>
+  <td><a class="src-link" href="https://lolesports.com/en-GB/tournament/115660540725177488/overview" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="golf">
+  <td><code>src-pga-sched</code></td>
+  <td><a href="sports/golf.html">golf</a></td>
+  <td><strong>PGA TOUR</strong></td>
+  <td>PGA TOUR 2026 Schedule (Butterfield Bermuda Championship)</td>
+  <td><code>2026-10-22T12:12:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.pgatour.com/schedule" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="golf">
+  <td><code>src-pgachamp-sched</code></td>
+  <td><a href="sports/golf.html">golf</a></td>
+  <td><strong>PGA TOUR Champions</strong></td>
+  <td>PGA TOUR Champions 2026 Schedule (Stifel Charity Classic)</td>
+  <td><code>2026-10-22T12:12:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.pgatour.com/pgatour-champions/schedule" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="cricket">
+  <td><code>src-ci-matches</code></td>
+  <td><a href="sports/cricket.html">cricket</a></td>
+  <td><strong>Cricket Ireland</strong></td>
+  <td>Cricket Ireland Official Match Centre (Namibia vs Ireland ODI)</td>
+  <td><code>2026-10-22T12:13:00Z</code></td>
+  <td><span class="badge badge-muted">verified in play</span></td>
+  <td><a class="src-link" href="https://cricketireland.ie/matches/" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="cricket">
+  <td><code>src-pcb-1465</code></td>
+  <td><a href="sports/cricket.html">cricket</a></td>
+  <td><strong>Pakistan Cricket Board</strong></td>
+  <td>PCB Tournament 1465 Match Centre (HTTP 502 Bad Gateway)</td>
+  <td><code>2026-10-22T12:13:00Z</code></td>
+  <td><span class="badge badge-warn">http 502 flagged</span></td>
+  <td><a class="src-link" href="https://www.pcb.com.pk/tournament-reports.php?action=tournament_matches&amp;tournament_id=1465" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="motor-racing">
+  <td><code>src-f1-usgp</code></td>
+  <td><a href="sports/motor-racing.html">motor-racing</a></td>
+  <td><strong>Formula 1</strong></td>
+  <td>Formula 1 United States Grand Prix 2026 Official Weekend Hub</td>
+  <td><code>2026-10-22T12:14:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="darts">
+  <td><code>src-pdc-ec</code></td>
+  <td><a href="sports/darts.html">darts</a></td>
+  <td><strong>Professional Darts Corporation</strong></td>
+  <td>PDC 2026 Machineseeker European Championship Schedule Page (CookieYes Wall)</td>
+  <td><code>2026-10-22T12:14:00Z</code></td>
+  <td><span class="badge badge-warn">consent wall flagged</span></td>
+  <td><a class="src-link" href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="gaelic-football">
+  <td><code>src-munster-gaa</code></td>
+  <td><a href="sports/gaelic-football.html">gaelic-football</a></td>
+  <td><strong>Munster GAA</strong></td>
+  <td>Munster GAA Official Events Calendar (Cork, Waterford, Kerry SFC Finals)</td>
+  <td><code>2026-10-22T12:15:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://munster.gaa.ie/fixtures/events-calendar/" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="gaelic-football">
+  <td><code>src-cork-gaa</code></td>
+  <td><a href="sports/gaelic-football.html">gaelic-football</a></td>
+  <td><strong>Cork GAA</strong></td>
+  <td>Cork GAA Official Fixtures (Nemo Rangers vs St. Finbarr&#x27;s PSFC Final)</td>
+  <td><code>2026-10-22T12:15:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://gaacork.ie/fixtures/" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="gaelic-football">
+  <td><code>src-maighcuilinn</code></td>
+  <td><a href="sports/gaelic-football.html">gaelic-football</a></td>
+  <td><strong>CLG Maigh Cuilinn</strong></td>
+  <td>CLG Maigh Cuilinn Official Fixture &amp; Semi-Final Match Report</td>
+  <td><code>2026-10-22T12:15:00Z</code></td>
+  <td><span class="badge badge-ok">Verified</span></td>
+  <td><a class="src-link" href="https://www.maighcuilinn.com/" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr><tr data-filterable="1" data-sport="greyhounds">
+  <td><code>src-gbgb-open</code></td>
+  <td><a href="sports/greyhounds.html">greyhounds</a></td>
+  <td><strong>Greyhound Board of Great Britain</strong></td>
+  <td>GBGB Official Open Races Portal (Static Filter / XHR Racecards)</td>
+  <td><code>2026-10-22T12:16:00Z</code></td>
+  <td><span class="badge badge-warn">js racecard flagged</span></td>
+  <td><a class="src-link" href="https://www.gbgb.org.uk/racing/open-races/" target="_blank" rel="noopener noreferrer">Open official endpoint ↗</a></td>
+</tr></tbody>
+</table>
+</div>
+
+    </main>
+    <footer>
+      <span>100% governing-body verified · Blank = unconfirmed · Zero aggregator/bookmaker scraping · 18+ research only.</span>
+      <span>Session <code>7f000cb6</code> · <a href="https://github.com/buffedlizard55-lab/OLBG1">GitHub Repository ↗</a></span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>Line-by-Line Repo Audit · OLBG Audit &amp; Origination Desk (7f000cb6)</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="shell">
+  <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+    <a class="brand" href="index.html">OLBG Desk · 7f000cb6<small>Official-Source Audit &amp; Lines</small></a>
+    <div class="nav-group">
+      <div class="nav-title">Desk Views</div>
+      <a class="nav-link" href="index.html"><span>Overview &amp; Match List</span><span class="nav-count">122</span></a><a class="nav-link" href="picks.html"><span>High-Confidence Picks</span><span class="nav-count">9</span></a><a class="nav-link" href="markets.html"><span>Originated Markets</span><span class="nav-count">280</span></a><a class="nav-link" href="sports.html"><span>17 Sport Categories</span><span class="nav-count">17</span></a><a class="nav-link" href="flagged.html"><span>Flagged for Review</span><span class="nav-count">85</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-title">Verification &amp; Audit</div>
+      <a class="nav-link" href="reverse-engineering.html"><span>OLBG Reverse Engineering</span><span class="nav-count">17 hubs</span></a><a class="nav-link active" href="audit.html"><span>Line-by-Line Repo Audit</span><span class="nav-count">18</span></a><a class="nav-link" href="sources.html"><span>Official Sources</span><span class="nav-count">38</span></a><a class="nav-link" href="methodology.html"><span>Model &amp; Grading Rules</span></a><a class="nav-link" href="../index.html"><span>← Canonical Root Desk</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-title">17 Covered Sports</div>
+      <a class="nav-link" href="sports/ice-hockey.html"><span>Ice Hockey</span><span class="nav-count">26</span></a><a class="nav-link" href="sports/baseball.html"><span>Baseball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/basketball.html"><span>Basketball</span><span class="nav-count">11</span></a><a class="nav-link" href="sports/tennis.html"><span>Tennis</span><span class="nav-count">21</span></a><a class="nav-link" href="sports/rugby-union.html"><span>Rugby Union</span><span class="nav-count">19</span></a><a class="nav-link" href="sports/rugby-league.html"><span>Rugby League</span><span class="nav-count">9</span></a><a class="nav-link" href="sports/snooker.html"><span>Snooker</span><span class="nav-count">8</span></a><a class="nav-link" href="sports/handball.html"><span>Handball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/volleyball.html"><span>Volleyball</span><span class="nav-count">5</span></a><a class="nav-link" href="sports/gaelic-football.html"><span>Gaelic Football</span><span class="nav-count">4</span></a><a class="nav-link" href="sports/cricket.html"><span>Cricket</span><span class="nav-count">2</span></a><a class="nav-link" href="sports/golf.html"><span>Golf</span><span class="nav-count">2</span></a><a class="nav-link" href="sports/motor-racing.html"><span>Motor Racing</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/darts.html"><span>Darts</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/aussie-rules.html"><span>Aussie Rules</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/esports.html"><span>eSports</span><span class="nav-count">1</span></a><a class="nav-link" href="sports/greyhounds.html"><span>Greyhounds</span><span class="nav-count">1</span></a>
+    </div>
+  </aside>
+  <div class="content">
+    <header class="topbar">
+      <div>
+        <button class="menu-btn" id="menu-btn" type="button">☰ Menu</button>
+        <strong>Session 7f000cb6</strong> · Independent Official-Source Match &amp; Pricing Desk
+      </div>
+      <div class="topbar-meta">
+        <span>Snapshot: <code>2026-10-22T12:30:00Z</code></span>
+        <span>Model: <code>7f000cb6-quant-v1.0</code></span>
+        <a href="exports/matches.csv" download>CSV Export ↓</a>
+      </div>
+    </header>
+    <main id="main">
+      <div class="notice notice-warn" id="live-expiry-note" hidden></div>
+      
+<h1>Line-by-Line Repository Audit (18 Verified Findings)</h1>
+<p class="subtitle">Forensic line-by-line review of tracked JSON datasets and Python pricing modules across the repository against first-hand official governing-body sources.</p>
+<div class="controls"><input id="tbl-search" type="search" placeholder="Filter audit findings by file, team, rule, or defect…" aria-label="Search audit findings"><span id="row-count" style="font-size:12.5px;color:var(--muted)"></span></div>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Finding ID</th><th>Tracked File : Line</th><th>Irregularity</th><th>Line-by-Line Evidence</th><th>7f000cb6 Resolution</th><th>Official Source</th></tr></thead>
+  <tbody><tr data-filterable="1">
+  <td><code>AUD-7F00-01</code><br><span class="badge badge-muted">high</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/data/53674ac8/predictions.json#L12" target="_blank" rel="noopener noreferrer"><code>data/53674ac8/predictions.json:12</code> ↗</a></td>
+  <td><strong>53674ac8 header declares &#x27;&gt;=70% prob&#x27; rule while emitting 63%–69% High picks</strong><br><small>Confidence Gate Contradiction</small></td>
+  <td>File header states &#x27;rule: high-confidence &gt;=70% prob AND -250..+10000 window&#x27;, yet all 12 rows carry probabilities below 0.70 (e.g., nhl-154 Boston Bruins at 0.6305, snk-943 Mark Williams at 0.6524).</td>
+  <td>7f000cb6 enforces an automated assertion that every High pick satisfies BOTH p &gt; 0.7000 AND fair American odds in [-250, +10000] (decimal 1.4000..1.4285).</td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/standings/now" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-02</code><br><span class="badge badge-muted">high</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/data/53674ac8/predictions.json#L92" target="_blank" rel="noopener noreferrer"><code>data/53674ac8/predictions.json:92</code> ↗</a></td>
+  <td><strong>High-confidence ATP Vienna pick (ten-133 Tommy Paul) despite unavailable official OOP PDF</strong><br><small>Unverified Official Endpoint Promoted to High</small></td>
+  <td>protennislive.com/posting/2026/337/op.pdf returns &#x27;Tournament Information Not Yet Available&#x27;, yet 53674ac8 published a High-confidence pick citing bare root atptour.com.</td>
+  <td>ten-vienna-oop is left blank and quarantined on Flagged for Review.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/337/op.pdf" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-03</code><br><span class="badge badge-muted">high</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/data/53674ac8/predictions.json#L106" target="_blank" rel="noopener noreferrer"><code>data/53674ac8/predictions.json:106</code> ↗</a></td>
+  <td><strong>High-confidence PDC Darts pick (drt-325 Gerwyn Price) despite CookieYes wall on pdc.tv</strong><br><small>Consent-Wall Endpoint Promoted to High</small></td>
+  <td>Official pdc.tv schedule pages return 7 chunks of CookieYes vendor consent text without R1 pairings, yet 53674ac8 published a verified/High pick.</td>
+  <td>darts-pdc-ec-2026 is left blank and flagged.</td>
+  <td><a class="src-link" href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-04</code><br><span class="badge badge-muted">high</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/data/53674ac8/fixtures.json#L1108" target="_blank" rel="noopener noreferrer"><code>data/53674ac8/fixtures.json:1108</code> ↗</a></td>
+  <td><strong>EHF Champions League fixtures shifted by +1 hour (BST copied as UTC) with synthetic ratings</strong><br><small>OLBG BST-as-UTC Timestamp Shift &amp; Invented Ratings</small></td>
+  <td>hbl-049 (Melsungen-Wisla Plock) and hbl-051 (Pick Szeged-GOG) store 17:45:00Z and hbl-054 (Sporting-Kristianstad) stores 19:45:00Z, copying OLBG&#x27;s unlabeled BST clock instead of official 18:45/20:45 CEST (16:45Z/18:45Z), and inject invented ratings (55/40, 52/58).</td>
+  <td>7f000cb6 converts explicit 18:45/20:45 CEST to 16:45:00Z/18:45:00Z and withholds pricing because the EHF PDF is dated July 29, 2026.</td>
+  <td><a class="src-link" href="https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-05</code><br><span class="badge badge-muted">medium</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/data/53674ac8/predictions.json#L157" target="_blank" rel="noopener noreferrer"><code>data/53674ac8/predictions.json:157</code> ↗</a></td>
+  <td><strong>Panathinaikos prose mislabels Round 7 EuroLeague game as &#x27;Round 4 fixture&#x27;</strong><br><small>Factual Round Mismatch in Prose</small></td>
+  <td>bkb-923 calls Panathinaikos vs Baskonia a &#x27;EuroLeague Round 4 fixture&#x27; with generic filler prose instead of Round 7 (PAO 5-1 +90 vs Baskonia 1-5 -60).</td>
+  <td>Verified directly against Round 7 Game Center and 20-club official standings.</td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-06</code><br><span class="badge badge-muted">high</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/data/e6fc2f12/predictions.json#L6" target="_blank" rel="noopener noreferrer"><code>data/e6fc2f12/predictions.json:6</code> ↗</a></td>
+  <td><strong>e6fc2f12 High predictions omit required verified player references and direct official_url</strong><br><small>Missing Player Context in High Predictions</small></td>
+  <td>Task specification requires every High prediction to cite team, player, current form, and recent match history, plus direct official URLs per record; e6fc2f12&#x27;s nhl-2026020163 note names zero players and omits official_url on prediction rows.</td>
+  <td>Every 7f000cb6 High prediction embeds verified official skater/pitcher/scorer stats and direct allowlisted official_url.</td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/skater-stats-leaders/current?categories=points,goals&amp;limit=25" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-07</code><br><span class="badge badge-muted">medium</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/data/e6fc2f12/sources.json#L5" target="_blank" rel="noopener noreferrer"><code>data/e6fc2f12/sources.json:5</code> ↗</a></td>
+  <td><strong>api.nhle.com used instead of allowlisted api-web.nhle.com</strong><br><small>Non-Allowlisted NHL Stats Subdomain</small></td>
+  <td>pipeline/config.py PUBLISHERS allowlists api-web.nhle.com and www.nhl.com by exact host match; api.nhle.com fails official_url() checks.</td>
+  <td>7f000cb6 uses api-web.nhle.com exclusively and validates every URL against PUBLISHERS.</td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/standings/now" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-08</code><br><span class="badge badge-muted">high</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/data/a570c470/sources.json#L253" target="_blank" rel="noopener noreferrer"><code>data/a570c470/sources.json:253</code> ↗</a></td>
+  <td><strong>Non-governing-body media domain espncricinfo.com cited in a570c470/sources.json</strong><br><small>Aggregator Domain in Sources Ledger</small></td>
+  <td>Line 253 cites https://www.espncricinfo.com/live-cricket-score, which is a media scoreboard aggregator rather than a governing body.</td>
+  <td>7f000cb6 uses only governing-body endpoints (cricketireland.ie, pcb.com.pk, icc-cricket.com).</td>
+  <td><a class="src-link" href="https://cricketireland.ie/matches/" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-09</code><br><span class="badge badge-muted">high</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/data/a570c470/predictions.json#L13" target="_blank" rel="noopener noreferrer"><code>data/a570c470/predictions.json:13</code> ↗</a></td>
+  <td><strong>ten-almaty-medvedev-shimabukuro graded High with blank start_utc and unverified surface inputs</strong><br><small>Unpriced / Blank-Timestamp Match Promoted to High</small></td>
+  <td>Almaty OOP PDF lists Medvedev vs Shimabukuro as &#x27;Followed By&#x27; with no UTC clock and no H2H/surface win series, yet a570c470 graded Medvedev -1.5 sets High.</td>
+  <td>All rolling-order tennis OOP rows stay unpriced with blank start_utc.</td>
+  <td><a class="src-link" href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-10</code><br><span class="badge badge-muted">high</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/data/f71557b5/fixtures.json#L43" target="_blank" rel="noopener noreferrer"><code>data/f71557b5/fixtures.json:43</code> ↗</a></td>
+  <td><strong>f71557b5 records Nashville Predators as 3-3-2 with 9 points (impossible arithmetic)</strong><br><small>NHL Standings Arithmetic Contradiction</small></td>
+  <td>3 wins + 2 OTL equals 8 points, not 9. Official api-web.nhle.com/v1/standings/now confirms Nashville is 3-2-3 (9 points in 8 games, 23 GF / 24 GA).</td>
+  <td>7f000cb6 verifies 2*W + OTL == PTS across all 32 NHL clubs.</td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/standings/now" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-11</code><br><span class="badge badge-muted">medium</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/data/92af340c/dataset.json#L14476" target="_blank" rel="noopener noreferrer"><code>data/92af340c/dataset.json:14476</code> ↗</a></td>
+  <td><strong>premrugby.com and galwaygaa.ie cited outside canonical PUBLISHERS allowlist</strong><br><small>Non-PUBLISHERS Hosts in Legacy Match Ledgers</small></td>
+  <td>data/92af340c/dataset.json lines 13442 and 14476 cite www.galwaygaa.ie and www.premrugby.com, which are not registered in pipeline/config.py PUBLISHERS.</td>
+  <td>7f000cb6 verifies Galway SFC via allowlisted www.maighcuilinn.com and Rugby Union via stats.unitedrugby.com / top14.lnr.fr / prod2.lnr.fr.</td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-12</code><br><span class="badge badge-muted">medium</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/data/ebfbd966_matches.json#L1769" target="_blank" rel="noopener noreferrer"><code>data/ebfbd966_matches.json:1769</code> ↗</a></td>
+  <td><strong>Bare root federations (www.lnr.fr, www.cev.eu, cricket.co.za) fail exact host allowlist</strong><br><small>Non-PUBLISHERS Hosts in ebfbd966</small></td>
+  <td>ebfbd966 cites bare root URLs on 34 rows instead of specific competition pages on allowlisted hosts.</td>
+  <td>Every 7f000cb6 official_url points to the exact competition/API resource on a PUBLISHERS host.</td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-13</code><br><span class="badge badge-muted">high</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/scripts/v3_model.py#L57" target="_blank" rel="noopener noreferrer"><code>scripts/v3_model.py:57</code> ↗</a></td>
+  <td><strong>Legacy v3_model.py injects fallback rating 58.0 when official team/player input is missing</strong><br><small>Default Rating Substitution Bias</small></td>
+  <td>Substituting 58.0 on one side creates artificial model edges against measured opponents whenever one participant lacks verified statistics.</td>
+  <td>s7f000cb6_model.py refuses to price any fixture unless both participants have verified current-season official records.</td>
+  <td><a class="src-link" href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-14</code><br><span class="badge badge-muted">medium</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/scripts/model.py#L182" target="_blank" rel="noopener noreferrer"><code>scripts/model.py:182</code> ↗</a></td>
+  <td><strong>Legacy to_odds() clamps probabilities and decimal prices</strong><br><small>Probability &amp; Odds Clamping Distortion</small></td>
+  <td>Hard clamping distorts extreme probabilities and masks whether a selection truly sits inside [-250, +10000].</td>
+  <td>s7f000cb6_model.py computes exact unrounded 1/p fair decimals and tests 1.4000 &lt;= fair_decimal &lt;= 101.0000 before rounding display strings.</td>
+  <td><a class="src-link" href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-15</code><br><span class="badge badge-muted">medium</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/data/current/snapshot.json#L34" target="_blank" rel="noopener noreferrer"><code>data/current/snapshot.json:34</code> ↗</a></td>
+  <td><strong>Canonical snapshot captures W-L only (no GF/GA, players, or recent logs) and emits 0 High picks</strong><br><small>Canonical Snapshot Zero-High Gap</small></td>
+  <td>Because data/current/snapshot.json omits NHL GF/GA, skater stats, MLB probable pitchers/postseason logs, and EuroLeague PTS+/PTS- &amp; URC tables, pipeline/model.py line 113 withholds all Medium/High grades (predictions: []).</td>
+  <td>7f000cb6 captures full GF/GA, PTS+/PTS-, RS/RA, player stats, and recent match logs from official APIs to support deeply sourced multi-market lines and High-confidence predictions in [-250, +10000].</td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/standings/now" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-16</code><br><span class="badge badge-muted">high</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/data/current/evidence/euroleague-round7.json#L1" target="_blank" rel="noopener noreferrer"><code>data/current/evidence/euroleague-round7.json:1</code> ↗</a></td>
+  <td><strong>EuroLeague Round 7 preview prose contradicts official EuroLeague 2026-27 standings table twice</strong><br><small>Official Publisher Internal Prose Contradictions</small></td>
+  <td>EuroLeague&#x27;s own Game Center article calls Real Madrid &#x27;3-3 overall, 1-4 away&#x27; (impossible; official table proves 2-0 home, 1-3 away) and calls Valencia Basket &#x27;5-1&#x27; (official table proves 4-2, 583 PF / 537 PA).</td>
+  <td>Both el-r7-62 and el-r7-69 are explicitly flagged and barred from High confidence.</td>
+  <td><a class="src-link" href="https://www.euroleaguebasketball.net/en/euroleague/standings/" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-17</code><br><span class="badge badge-muted">medium</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/scripts/v3_model.py#L57" target="_blank" rel="noopener noreferrer"><code>scripts/v3_model.py:57</code> ↗</a></td>
+  <td><strong>scripts/v3_model.py falls back to synthetic 58.0 rating when official team stats are absent</strong><br><small>Pricing Integrity Defect</small></td>
+  <td>Line 57 (`ha = float(home_team.get(&#x27;rating&#x27;, 58.0))`) substitutes an unverified default rating (`58.0`) whenever official team records are missing.</td>
+  <td>s7f000cb6_model.py refuses to price any team or player lacking verified official standing/stat records, explicitly leaving 82 entries unpriced with documented reasons.</td>
+  <td><a class="src-link" href="https://api-web.nhle.com/v1/standings/now" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr><tr data-filterable="1">
+  <td><code>AUD-7F00-18</code><br><span class="badge badge-muted">high</span></td>
+  <td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/22db53f24343c32cc3dcc68f9deb8b29d066fb4a/53674ac8/index.html#L22" target="_blank" rel="noopener noreferrer"><code>53674ac8/index.html:22</code> ↗</a></td>
+  <td><strong>53674ac8/*.html contains 98 root-absolute /53674ac8/... links that 404 on GitHub Pages /OLBG1/</strong><br><small>Broken Project-Subpath Navigation</small></td>
+  <td>Running scripts/validate.py flags 98 `link escapes repository root -&gt; /53674ac8/...` errors across 53674ac8/*.html because GitHub Pages serves this project under /OLBG1/ rather than domain root.</td>
+  <td>7f000cb6 uses pure relative links across all 26 HTML pages (0 errors in s7f000cb6_validate.py and scripts/validate.py on 7f000cb6/**) and logs the defect in COORDINATION.md §4.</td>
+  <td><a class="src-link" href="https://www.nhl.com/schedule" target="_blank" rel="noopener noreferrer">Official proof ↗</a></td>
+</tr></tbody>
+</table>
+</div>
+
+    </main>
+    <footer>
+      <span>100% governing-body verified · Blank = unconfirmed · Zero aggregator/bookmaker scraping · 18+ research only.</span>
+      <span>Session <code>7f000cb6</code> · <a href="https://github.com/buffedlizard55-lab/OLBG1">GitHub Repository ↗</a></span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

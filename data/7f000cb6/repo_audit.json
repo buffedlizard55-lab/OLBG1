@@ -1,0 +1,206 @@
+{
+  "session": "7f000cb6",
+  "as_of_utc": "2026-10-22T12:30:00Z",
+  "baseline_commit": "22db53f24343c32cc3dcc68f9deb8b29d066fb4a",
+  "count": 18,
+  "findings": [
+    {
+      "id": "AUD-7F00-01",
+      "severity": "high",
+      "category": "Confidence Gate Contradiction",
+      "file": "data/53674ac8/predictions.json",
+      "line": 12,
+      "official_url": "https://api-web.nhle.com/v1/standings/now",
+      "title": "53674ac8 header declares '>=70% prob' rule while emitting 63%–69% High picks",
+      "detail": "File header states 'rule: high-confidence >=70% prob AND -250..+10000 window', yet all 12 rows carry probabilities below 0.70 (e.g., nhl-154 Boston Bruins at 0.6305, snk-943 Mark Williams at 0.6524).",
+      "resolution": "7f000cb6 enforces an automated assertion that every High pick satisfies BOTH p > 0.7000 AND fair American odds in [-250, +10000] (decimal 1.4000..1.4285)."
+    },
+    {
+      "id": "AUD-7F00-02",
+      "severity": "high",
+      "category": "Unverified Official Endpoint Promoted to High",
+      "file": "data/53674ac8/predictions.json",
+      "line": 92,
+      "official_url": "https://www.protennislive.com/posting/2026/337/op.pdf",
+      "title": "High-confidence ATP Vienna pick (ten-133 Tommy Paul) despite unavailable official OOP PDF",
+      "detail": "protennislive.com/posting/2026/337/op.pdf returns 'Tournament Information Not Yet Available', yet 53674ac8 published a High-confidence pick citing bare root atptour.com.",
+      "resolution": "ten-vienna-oop is left blank and quarantined on Flagged for Review."
+    },
+    {
+      "id": "AUD-7F00-03",
+      "severity": "high",
+      "category": "Consent-Wall Endpoint Promoted to High",
+      "file": "data/53674ac8/predictions.json",
+      "line": 106,
+      "official_url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/",
+      "title": "High-confidence PDC Darts pick (drt-325 Gerwyn Price) despite CookieYes wall on pdc.tv",
+      "detail": "Official pdc.tv schedule pages return 7 chunks of CookieYes vendor consent text without R1 pairings, yet 53674ac8 published a verified/High pick.",
+      "resolution": "darts-pdc-ec-2026 is left blank and flagged."
+    },
+    {
+      "id": "AUD-7F00-04",
+      "severity": "high",
+      "category": "OLBG BST-as-UTC Timestamp Shift & Invented Ratings",
+      "file": "data/53674ac8/fixtures.json",
+      "line": 1108,
+      "official_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "title": "EHF Champions League fixtures shifted by +1 hour (BST copied as UTC) with synthetic ratings",
+      "detail": "hbl-049 (Melsungen-Wisla Plock) and hbl-051 (Pick Szeged-GOG) store 17:45:00Z and hbl-054 (Sporting-Kristianstad) stores 19:45:00Z, copying OLBG's unlabeled BST clock instead of official 18:45/20:45 CEST (16:45Z/18:45Z), and inject invented ratings (55/40, 52/58).",
+      "resolution": "7f000cb6 converts explicit 18:45/20:45 CEST to 16:45:00Z/18:45:00Z and withholds pricing because the EHF PDF is dated July 29, 2026."
+    },
+    {
+      "id": "AUD-7F00-05",
+      "severity": "medium",
+      "category": "Factual Round Mismatch in Prose",
+      "file": "data/53674ac8/predictions.json",
+      "line": 157,
+      "official_url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/",
+      "title": "Panathinaikos prose mislabels Round 7 EuroLeague game as 'Round 4 fixture'",
+      "detail": "bkb-923 calls Panathinaikos vs Baskonia a 'EuroLeague Round 4 fixture' with generic filler prose instead of Round 7 (PAO 5-1 +90 vs Baskonia 1-5 -60).",
+      "resolution": "Verified directly against Round 7 Game Center and 20-club official standings."
+    },
+    {
+      "id": "AUD-7F00-06",
+      "severity": "high",
+      "category": "Missing Player Context in High Predictions",
+      "file": "data/e6fc2f12/predictions.json",
+      "line": 6,
+      "official_url": "https://api-web.nhle.com/v1/skater-stats-leaders/current?categories=points,goals&limit=25",
+      "title": "e6fc2f12 High predictions omit required verified player references and direct official_url",
+      "detail": "Task specification requires every High prediction to cite team, player, current form, and recent match history, plus direct official URLs per record; e6fc2f12's nhl-2026020163 note names zero players and omits official_url on prediction rows.",
+      "resolution": "Every 7f000cb6 High prediction embeds verified official skater/pitcher/scorer stats and direct allowlisted official_url."
+    },
+    {
+      "id": "AUD-7F00-07",
+      "severity": "medium",
+      "category": "Non-Allowlisted NHL Stats Subdomain",
+      "file": "data/e6fc2f12/sources.json",
+      "line": 5,
+      "official_url": "https://api-web.nhle.com/v1/standings/now",
+      "title": "api.nhle.com used instead of allowlisted api-web.nhle.com",
+      "detail": "pipeline/config.py PUBLISHERS allowlists api-web.nhle.com and www.nhl.com by exact host match; api.nhle.com fails official_url() checks.",
+      "resolution": "7f000cb6 uses api-web.nhle.com exclusively and validates every URL against PUBLISHERS."
+    },
+    {
+      "id": "AUD-7F00-08",
+      "severity": "high",
+      "category": "Aggregator Domain in Sources Ledger",
+      "file": "data/a570c470/sources.json",
+      "line": 253,
+      "official_url": "https://cricketireland.ie/matches/",
+      "title": "Non-governing-body media domain espncricinfo.com cited in a570c470/sources.json",
+      "detail": "Line 253 cites https://www.espncricinfo.com/live-cricket-score, which is a media scoreboard aggregator rather than a governing body.",
+      "resolution": "7f000cb6 uses only governing-body endpoints (cricketireland.ie, pcb.com.pk, icc-cricket.com)."
+    },
+    {
+      "id": "AUD-7F00-09",
+      "severity": "high",
+      "category": "Unpriced / Blank-Timestamp Match Promoted to High",
+      "file": "data/a570c470/predictions.json",
+      "line": 13,
+      "official_url": "https://www.protennislive.com/posting/2026/9410/op.pdf",
+      "title": "ten-almaty-medvedev-shimabukuro graded High with blank start_utc and unverified surface inputs",
+      "detail": "Almaty OOP PDF lists Medvedev vs Shimabukuro as 'Followed By' with no UTC clock and no H2H/surface win series, yet a570c470 graded Medvedev -1.5 sets High.",
+      "resolution": "All rolling-order tennis OOP rows stay unpriced with blank start_utc."
+    },
+    {
+      "id": "AUD-7F00-10",
+      "severity": "high",
+      "category": "NHL Standings Arithmetic Contradiction",
+      "file": "data/f71557b5/fixtures.json",
+      "line": 43,
+      "official_url": "https://api-web.nhle.com/v1/standings/now",
+      "title": "f71557b5 records Nashville Predators as 3-3-2 with 9 points (impossible arithmetic)",
+      "detail": "3 wins + 2 OTL equals 8 points, not 9. Official api-web.nhle.com/v1/standings/now confirms Nashville is 3-2-3 (9 points in 8 games, 23 GF / 24 GA).",
+      "resolution": "7f000cb6 verifies 2*W + OTL == PTS across all 32 NHL clubs."
+    },
+    {
+      "id": "AUD-7F00-11",
+      "severity": "medium",
+      "category": "Non-PUBLISHERS Hosts in Legacy Match Ledgers",
+      "file": "data/92af340c/dataset.json",
+      "line": 14476,
+      "official_url": "https://stats.unitedrugby.com/match-centre/2026-27/4",
+      "title": "premrugby.com and galwaygaa.ie cited outside canonical PUBLISHERS allowlist",
+      "detail": "data/92af340c/dataset.json lines 13442 and 14476 cite www.galwaygaa.ie and www.premrugby.com, which are not registered in pipeline/config.py PUBLISHERS.",
+      "resolution": "7f000cb6 verifies Galway SFC via allowlisted www.maighcuilinn.com and Rugby Union via stats.unitedrugby.com / top14.lnr.fr / prod2.lnr.fr."
+    },
+    {
+      "id": "AUD-7F00-12",
+      "severity": "medium",
+      "category": "Non-PUBLISHERS Hosts in ebfbd966",
+      "file": "data/ebfbd966_matches.json",
+      "line": 1769,
+      "official_url": "https://top14.lnr.fr/calendrier-et-resultats",
+      "title": "Bare root federations (www.lnr.fr, www.cev.eu, cricket.co.za) fail exact host allowlist",
+      "detail": "ebfbd966 cites bare root URLs on 34 rows instead of specific competition pages on allowlisted hosts.",
+      "resolution": "Every 7f000cb6 official_url points to the exact competition/API resource on a PUBLISHERS host."
+    },
+    {
+      "id": "AUD-7F00-13",
+      "severity": "high",
+      "category": "Default Rating Substitution Bias",
+      "file": "scripts/v3_model.py",
+      "line": 57,
+      "official_url": "https://www.atptour.com/en/scores/current",
+      "title": "Legacy v3_model.py injects fallback rating 58.0 when official team/player input is missing",
+      "detail": "Substituting 58.0 on one side creates artificial model edges against measured opponents whenever one participant lacks verified statistics.",
+      "resolution": "s7f000cb6_model.py refuses to price any fixture unless both participants have verified current-season official records."
+    },
+    {
+      "id": "AUD-7F00-14",
+      "severity": "medium",
+      "category": "Probability & Odds Clamping Distortion",
+      "file": "scripts/model.py",
+      "line": 182,
+      "official_url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason",
+      "title": "Legacy to_odds() clamps probabilities and decimal prices",
+      "detail": "Hard clamping distorts extreme probabilities and masks whether a selection truly sits inside [-250, +10000].",
+      "resolution": "s7f000cb6_model.py computes exact unrounded 1/p fair decimals and tests 1.4000 <= fair_decimal <= 101.0000 before rounding display strings."
+    },
+    {
+      "id": "AUD-7F00-15",
+      "severity": "medium",
+      "category": "Canonical Snapshot Zero-High Gap",
+      "file": "data/current/snapshot.json",
+      "line": 34,
+      "official_url": "https://api-web.nhle.com/v1/standings/now",
+      "title": "Canonical snapshot captures W-L only (no GF/GA, players, or recent logs) and emits 0 High picks",
+      "detail": "Because data/current/snapshot.json omits NHL GF/GA, skater stats, MLB probable pitchers/postseason logs, and EuroLeague PTS+/PTS- & URC tables, pipeline/model.py line 113 withholds all Medium/High grades (predictions: []).",
+      "resolution": "7f000cb6 captures full GF/GA, PTS+/PTS-, RS/RA, player stats, and recent match logs from official APIs to support deeply sourced multi-market lines and High-confidence predictions in [-250, +10000]."
+    },
+    {
+      "id": "AUD-7F00-16",
+      "severity": "high",
+      "category": "Official Publisher Internal Prose Contradictions",
+      "file": "data/current/evidence/euroleague-round7.json",
+      "line": 1,
+      "official_url": "https://www.euroleaguebasketball.net/en/euroleague/standings/",
+      "title": "EuroLeague Round 7 preview prose contradicts official EuroLeague 2026-27 standings table twice",
+      "detail": "EuroLeague's own Game Center article calls Real Madrid '3-3 overall, 1-4 away' (impossible; official table proves 2-0 home, 1-3 away) and calls Valencia Basket '5-1' (official table proves 4-2, 583 PF / 537 PA).",
+      "resolution": "Both el-r7-62 and el-r7-69 are explicitly flagged and barred from High confidence."
+    },
+    {
+      "id": "AUD-7F00-17",
+      "severity": "medium",
+      "category": "Pricing Integrity Defect",
+      "file": "scripts/v3_model.py",
+      "line": 57,
+      "official_url": "https://api-web.nhle.com/v1/standings/now",
+      "title": "scripts/v3_model.py falls back to synthetic 58.0 rating when official team stats are absent",
+      "detail": "Line 57 (`ha = float(home_team.get('rating', 58.0))`) substitutes an unverified default rating (`58.0`) whenever official team records are missing.",
+      "resolution": "s7f000cb6_model.py refuses to price any team or player lacking verified official standing/stat records, explicitly leaving 82 entries unpriced with documented reasons."
+    },
+    {
+      "id": "AUD-7F00-18",
+      "severity": "high",
+      "category": "Broken Project-Subpath Navigation",
+      "file": "53674ac8/index.html",
+      "line": 22,
+      "official_url": "https://www.nhl.com/schedule",
+      "title": "53674ac8/*.html contains 98 root-absolute /53674ac8/... links that 404 on GitHub Pages /OLBG1/",
+      "detail": "Running scripts/validate.py flags 98 `link escapes repository root -> /53674ac8/...` errors across 53674ac8/*.html because GitHub Pages serves this project under /OLBG1/ rather than domain root.",
+      "resolution": "7f000cb6 uses pure relative links across all 26 HTML pages (0 errors in s7f000cb6_validate.py and scripts/validate.py on 7f000cb6/**) and logs the defect in COORDINATION.md §4."
+    }
+  ]
+}

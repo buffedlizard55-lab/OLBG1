@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>Rugby Union Fixtures &amp; Lines · OLBG Audit &amp; Origination Desk (7f000cb6)</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <script defer src="../assets/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="shell">
+  <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+    <a class="brand" href="../index.html">OLBG Desk · 7f000cb6<small>Official-Source Audit &amp; Lines</small></a>
+    <div class="nav-group">
+      <div class="nav-title">Desk Views</div>
+      <a class="nav-link" href="../index.html"><span>Overview &amp; Match List</span><span class="nav-count">122</span></a><a class="nav-link" href="../picks.html"><span>High-Confidence Picks</span><span class="nav-count">9</span></a><a class="nav-link" href="../markets.html"><span>Originated Markets</span><span class="nav-count">280</span></a><a class="nav-link" href="../sports.html"><span>17 Sport Categories</span><span class="nav-count">17</span></a><a class="nav-link" href="../flagged.html"><span>Flagged for Review</span><span class="nav-count">85</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-title">Verification &amp; Audit</div>
+      <a class="nav-link" href="../reverse-engineering.html"><span>OLBG Reverse Engineering</span><span class="nav-count">17 hubs</span></a><a class="nav-link" href="../audit.html"><span>Line-by-Line Repo Audit</span><span class="nav-count">18</span></a><a class="nav-link" href="../sources.html"><span>Official Sources</span><span class="nav-count">38</span></a><a class="nav-link" href="../methodology.html"><span>Model &amp; Grading Rules</span></a><a class="nav-link" href="../../index.html"><span>← Canonical Root Desk</span></a>
+    </div>
+    <div class="nav-group">
+      <div class="nav-title">17 Covered Sports</div>
+      <a class="nav-link" href="../sports/ice-hockey.html"><span>Ice Hockey</span><span class="nav-count">26</span></a><a class="nav-link" href="../sports/baseball.html"><span>Baseball</span><span class="nav-count">5</span></a><a class="nav-link" href="../sports/basketball.html"><span>Basketball</span><span class="nav-count">11</span></a><a class="nav-link" href="../sports/tennis.html"><span>Tennis</span><span class="nav-count">21</span></a><a class="nav-link active" href="../sports/rugby-union.html"><span>Rugby Union</span><span class="nav-count">19</span></a><a class="nav-link" href="../sports/rugby-league.html"><span>Rugby League</span><span class="nav-count">9</span></a><a class="nav-link" href="../sports/snooker.html"><span>Snooker</span><span class="nav-count">8</span></a><a class="nav-link" href="../sports/handball.html"><span>Handball</span><span class="nav-count">5</span></a><a class="nav-link" href="../sports/volleyball.html"><span>Volleyball</span><span class="nav-count">5</span></a><a class="nav-link" href="../sports/gaelic-football.html"><span>Gaelic Football</span><span class="nav-count">4</span></a><a class="nav-link" href="../sports/cricket.html"><span>Cricket</span><span class="nav-count">2</span></a><a class="nav-link" href="../sports/golf.html"><span>Golf</span><span class="nav-count">2</span></a><a class="nav-link" href="../sports/motor-racing.html"><span>Motor Racing</span><span class="nav-count">1</span></a><a class="nav-link" href="../sports/darts.html"><span>Darts</span><span class="nav-count">1</span></a><a class="nav-link" href="../sports/aussie-rules.html"><span>Aussie Rules</span><span class="nav-count">1</span></a><a class="nav-link" href="../sports/esports.html"><span>eSports</span><span class="nav-count">1</span></a><a class="nav-link" href="../sports/greyhounds.html"><span>Greyhounds</span><span class="nav-count">1</span></a>
+    </div>
+  </aside>
+  <div class="content">
+    <header class="topbar">
+      <div>
+        <button class="menu-btn" id="menu-btn" type="button">☰ Menu</button>
+        <strong>Session 7f000cb6</strong> · Independent Official-Source Match &amp; Pricing Desk
+      </div>
+      <div class="topbar-meta">
+        <span>Snapshot: <code>2026-10-22T12:30:00Z</code></span>
+        <span>Model: <code>7f000cb6-quant-v1.0</code></span>
+        <a href="../exports/matches.csv" download>CSV Export ↓</a>
+      </div>
+    </header>
+    <main id="main">
+      <div class="notice notice-warn" id="live-expiry-note" hidden></div>
+      
+<h1>Rugby Union — Official Fixtures, Audit &amp; Originated Lines</h1>
+<p class="subtitle">8 URC Round 4 fixtures + 16-club 2026-27 table + Round 3 results verified via stats.unitedrugby.com; 7 Top 14 J7 fixtures via top14.lnr.fr; 4 Pro D2 J8 OLBG-tracked fixtures via prod2.lnr.fr.</p>
+<div class="kpis">
+  <div class="kpi"><div class="kpi-val">19</div><div class="kpi-lbl">Audited Entries</div></div>
+  <div class="kpi"><div class="kpi-val">0</div><div class="kpi-lbl">Multi-Market Priced</div></div>
+  <div class="kpi"><div class="kpi-val">0</div><div class="kpi-lbl">High-Confidence Picks</div></div>
+  <div class="kpi"><div class="kpi-val">OLBG #9</div><div class="kpi-lbl">Hardcoded Europe/London (BST, UTC+1) unlabeled</div></div>
+</div>
+
+<h2>Rugby Union Match &amp; Originated Market Table</h2>
+<div class="controls">
+  <input id="tbl-search" type="search" placeholder="Search team, player, competition, venue…" aria-label="Search rows">
+  
+  <select id="tbl-conf" aria-label="Filter by confidence">
+    <option value="">All grades</option>
+    <option value="high">High</option>
+    <option value="medium">Medium</option>
+    <option value="low">Low</option>
+    <option value="unpriced">Unpriced / Withheld</option>
+  </select>
+  <select id="odds-fmt" aria-label="Odds display format">
+    <option value="american">Odds: American</option>
+    <option value="decimal">Odds: Decimal</option>
+  </select>
+  <span id="row-count" style="font-size:12.5px;color:var(--muted)"></span>
+</div>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      
+      <th>Competition</th>
+      <th>Match / Venue</th>
+      <th>Verified Start (UTC)</th>
+      <th>Originated Winner (2-Way)</th>
+      <th>Originated Handicap</th>
+      <th>Originated Total</th>
+      <th>Model Winner Pick</th>
+      <th>Grade / Status</th>
+      <th>Official Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>Cardiff Rugby vs Hollywoodbets Sharks</strong><br><small>Cardiff Arms Park</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Fri 23 Oct · 19:45 BST / 14:45 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>Connacht vs Zebre Parma</strong><br><small>Dexcom Stadium, Galway</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Fri 23 Oct · 19:45 IST / 14:45 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>Edinburgh vs 10bet Lions</strong><br><small>Hive Stadium, Edinburgh</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Fri 23 Oct · 19:45 BST / 14:45 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>Vodacom Bulls vs Ulster</strong><br><small>Loftus Versfeld, Pretoria</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 13:45 SAST / 07:45 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>DHL Stormers vs Scarlets</strong><br><small>DHL Stadium, Cape Town</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 16:00 SAST / 10:00 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>Benetton vs Glasgow Warriors</strong><br><small>Stadio Monigo, Treviso</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 16:00 CEST / 10:00 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>Leinster vs Munster</strong><br><small>Aviva Stadium, Dublin</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 18:00 IST / 13:00 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>United Rugby Championship 2026-27<br><small>Round 4</small></td>
+  <td><strong>Ospreys vs Dragons RFC</strong><br><small>St Helen&#x27;s, Swansea</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 19:00 BST / 14:00 EDT SSR (stats.unitedrugby.com header says &#x27;All times shown are Local&#x27; without explicit offset)</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified local clock</span></td>
+  <td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/2026-27/4" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>TOP 14 2026-27<br><small>Journée 7</small></td>
+  <td><strong>RC Vannes vs ASM Clermont</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 14h30 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>TOP 14 2026-27<br><small>Journée 7</small></td>
+  <td><strong>Aviron Bayonnais vs LOU Rugby</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 16h35 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>TOP 14 2026-27<br><small>Journée 7</small></td>
+  <td><strong>Castres Olympique vs Stade Français Paris</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 16h35 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>TOP 14 2026-27<br><small>Journée 7</small></td>
+  <td><strong>Racing 92 vs Montpellier Hérault Rugby</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 16h35 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>TOP 14 2026-27<br><small>Journée 7</small></td>
+  <td><strong>Stade Toulousain vs USA Perpignan</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 16h35 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>TOP 14 2026-27<br><small>Journée 7</small></td>
+  <td><strong>RC Toulon vs Section Paloise</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sat 24 Oct · 21h00 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>TOP 14 2026-27<br><small>Journée 7</small></td>
+  <td><strong>Stade Rochelais vs Union Bordeaux-Bègles</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Sun 25 Oct · 21h05 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>PRO D2 2026-27<br><small>Journée 8</small></td>
+  <td><strong>CA Brive vs Biarritz Olympique</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Thu 22 Oct · 21h00 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://prod2.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>PRO D2 2026-27<br><small>Journée 8</small></td>
+  <td><strong>FC Grenoble Rugby vs Provence Rugby</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Fri 23 Oct · 19h00 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://prod2.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>PRO D2 2026-27<br><small>Journée 8</small></td>
+  <td><strong>SU Agen vs US Dax</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Fri 23 Oct · 19h30 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://prod2.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr><tr data-filterable="1" data-sport="rugby-union" data-conf="unpriced" data-start-utc="">
+  
+  <td>PRO D2 2026-27<br><small>Journée 8</small></td>
+  <td><strong>Colomiers Rugby vs AS Béziers Hérault</strong><br><small><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>venue unconfirmed</em></span></small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>UTC unconfirmed</em></span><br><small>Fri 23 Oct · 21h00 French time</small></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="blank-val" title="Unconfirmed in official source; left blank">— <em>withheld</em></span></td>
+  <td><span class="badge badge-muted">Unpriced</span><br><span class="badge badge-muted">verified oop unpriced</span></td>
+  <td><a class="src-link" href="https://prod2.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Official ↗</a></td>
+</tr>
+  </tbody>
+</table>
+</div>
+<h2>Verified 2026-27 United Rugby Championship Table (16 Clubs)</h2><div class='table-wrap'><table><thead><tr><th>Club</th><th>PL</th><th>W-D-L</th><th>Pts</th><th>PF / PA (Diff)</th><th>Round 3 Result</th><th>Official Source</th></tr></thead><tbody><tr><td><strong>Edinburgh</strong></td><td>3</td><td>3-0-0</td><td>14</td><td>80 / 54 (+26)</td><td>Won 29-12 at Zebre Parma</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr><tr><td><strong>Glasgow Warriors</strong></td><td>3</td><td>2-1-0</td><td>13</td><td>95 / 72 (+23)</td><td>Beat Connacht 36-19</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr><tr><td><strong>Vodacom Bulls</strong></td><td>3</td><td>2-0-1</td><td>11</td><td>126 / 54 (+72)</td><td>Beat 10bet Lions 57-15</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr><tr><td><strong>DHL Stormers</strong></td><td>3</td><td>2-0-1</td><td>11</td><td>81 / 54 (+27)</td><td>Beat Hollywoodbets Sharks 39-22</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr><tr><td><strong>Hollywoodbets Sharks</strong></td><td>3</td><td>2-0-1</td><td>10</td><td>89 / 83 (+6)</td><td>Lost 22-39 at DHL Stormers</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr><tr><td><strong>Cardiff Rugby</strong></td><td>3</td><td>2-0-1</td><td>9</td><td>66 / 71 (-5)</td><td>Lost 5-29 at Leinster</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr><tr><td><strong>10bet Lions</strong></td><td>3</td><td>2-0-1</td><td>9</td><td>77 / 102 (-25)</td><td>Lost 15-57 at Vodacom Bulls</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr><tr><td><strong>Dragons RFC</strong></td><td>3</td><td>1-1-1</td><td>9</td><td>88 / 83 (+5)</td><td>Lost 31-38 vs Ospreys</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr><tr><td><strong>Munster</strong></td><td>3</td><td>1-1-1</td><td>9</td><td>72 / 74 (-2)</td><td>Drew 26-26 at Ulster</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr><tr><td><strong>Leinster</strong></td><td>3</td><td>1-0-2</td><td>8</td><td>75 / 58 (+17)</td><td>Beat Cardiff Rugby 29-5</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr><tr><td><strong>Ulster</strong></td><td>3</td><td>0-2-1</td><td>8</td><td>88 / 93 (-5)</td><td>Drew 26-26 vs Munster</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr><tr><td><strong>Scarlets</strong></td><td>3</td><td>1-0-2</td><td>7</td><td>68 / 85 (-17)</td><td>Beat Benetton 27-26</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr><tr><td><strong>Ospreys</strong></td><td>3</td><td>1-0-2</td><td>6</td><td>81 / 107 (-26)</td><td>Won 38-31 at Dragons RFC</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr><tr><td><strong>Connacht</strong></td><td>3</td><td>1-0-2</td><td>5</td><td>56 / 84 (-28)</td><td>Lost 19-36 at Glasgow Warriors</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr><tr><td><strong>Benetton</strong></td><td>3</td><td>0-1-2</td><td>5</td><td>64 / 68 (-4)</td><td>Lost 26-27 at Scarlets</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr><tr><td><strong>Zebre Parma</strong></td><td>3</td><td>0-0-3</td><td>1</td><td>52 / 116 (-64)</td><td>Lost 12-29 vs Edinburgh</td><td><a class="src-link" href="https://stats.unitedrugby.com/match-centre/table/2026-27" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td></tr></tbody></table></div>
+
+    </main>
+    <footer>
+      <span>100% governing-body verified · Blank = unconfirmed · Zero aggregator/bookmaker scraping · 18+ research only.</span>
+      <span>Session <code>7f000cb6</code> · <a href="https://github.com/buffedlizard55-lab/OLBG1">GitHub Repository ↗</a></span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

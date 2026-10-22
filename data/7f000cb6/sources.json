@@ -1,0 +1,349 @@
+{
+  "session": "7f000cb6",
+  "as_of_utc": "2026-10-22T12:30:00Z",
+  "count": 38,
+  "sources": [
+    {
+      "id": "src-nhl-schedule",
+      "sport": "ice-hockey",
+      "org": "NHL",
+      "title": "NHL Official Web API Schedule (2026-10-22..24)",
+      "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-22",
+      "checked_utc": "2026-10-22T12:22:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-nhl-standings",
+      "sport": "ice-hockey",
+      "org": "NHL",
+      "title": "NHL Official Standings Table (as of 2026-10-22T12:21:00Z)",
+      "official_url": "https://api-web.nhle.com/v1/standings/now",
+      "checked_utc": "2026-10-22T12:21:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-nhl-leaders",
+      "sport": "ice-hockey",
+      "org": "NHL",
+      "title": "NHL Official Skater Leaders 2026-27 (Points & Goals)",
+      "official_url": "https://api-web.nhle.com/v1/skater-stats-leaders/current?categories=points,goals&limit=25",
+      "checked_utc": "2026-10-22T11:55:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-nhl-scores-1021",
+      "sport": "ice-hockey",
+      "org": "NHL",
+      "title": "NHL Official Daily Scores (2026-10-20 & 2026-10-21)",
+      "official_url": "https://api-web.nhle.com/v1/score/2026-10-21",
+      "checked_utc": "2026-10-22T11:56:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-mlb-ws",
+      "sport": "baseball",
+      "org": "MLB",
+      "title": "MLB StatsAPI 2026 World Series Schedule & Probable Pitchers",
+      "official_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-29&hydrate=probablePitcher,team,venue",
+      "checked_utc": "2026-10-22T11:58:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-mlb-standings",
+      "sport": "baseball",
+      "org": "MLB",
+      "title": "MLB StatsAPI 2026 Regular Season Standings (AL/NL)",
+      "official_url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason",
+      "checked_utc": "2026-10-22T11:58:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-mlb-postseason",
+      "sport": "baseball",
+      "org": "MLB",
+      "title": "MLB StatsAPI 2026 ALCS & NLCS Hydrated Game Decisions",
+      "official_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=139,158&startDate=2026-10-14&endDate=2026-10-22&hydrate=decisions",
+      "checked_utc": "2026-10-22T12:00:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-el-r7",
+      "sport": "basketball",
+      "org": "Euroleague Basketball",
+      "title": "EuroLeague 2026-27 Round 7 Game Center & Team/Player Notes",
+      "official_url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/",
+      "checked_utc": "2026-10-22T12:02:00Z",
+      "status": "verified_with_prose_flags"
+    },
+    {
+      "id": "src-el-standings",
+      "sport": "basketball",
+      "org": "Euroleague Basketball",
+      "title": "EuroLeague 2026-27 Official Regular Season Standings (20 Clubs)",
+      "official_url": "https://www.euroleaguebasketball.net/en/euroleague/standings/",
+      "checked_utc": "2026-10-22T12:20:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-nba-games",
+      "sport": "basketball",
+      "org": "NBA",
+      "title": "NBA Official Games Page (2026-10-22 Calendar; Scoreboard HTTP 500)",
+      "official_url": "https://www.nba.com/games?date=2026-10-22",
+      "checked_utc": "2026-10-22T12:03:00Z",
+      "status": "partial_hydration_error"
+    },
+    {
+      "id": "src-atp-almaty",
+      "sport": "tennis",
+      "org": "ATP Tour",
+      "title": "ATP 250 Almaty Open Official Order of Play PDF (2026-10-22)",
+      "official_url": "https://www.protennislive.com/posting/2026/9410/op.pdf",
+      "checked_utc": "2026-10-22T12:04:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-atp-brussels",
+      "sport": "tennis",
+      "org": "ATP Tour",
+      "title": "ATP 250 European Open Brussels Official Order of Play PDF (2026-10-22)",
+      "official_url": "https://www.protennislive.com/posting/2026/7485/op.pdf",
+      "checked_utc": "2026-10-22T12:04:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-atp-lyon",
+      "sport": "tennis",
+      "org": "ATP Challenger Tour",
+      "title": "ATP Challenger Lyon Official Order of Play PDF (2026-10-22)",
+      "official_url": "https://www.protennislive.com/posting/2026/496/op.pdf",
+      "checked_utc": "2026-10-22T12:04:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-atp-vienna",
+      "sport": "tennis",
+      "org": "ATP Tour",
+      "title": "ATP 500 Vienna Official OOP PDF Endpoint (Not Yet Available)",
+      "official_url": "https://www.protennislive.com/posting/2026/337/op.pdf",
+      "checked_utc": "2026-10-22T12:04:00Z",
+      "status": "unavailable_flagged"
+    },
+    {
+      "id": "src-atp-basel",
+      "sport": "tennis",
+      "org": "ATP Tour",
+      "title": "ATP 500 Swiss Indoors Basel Official OOP PDF Endpoint (Not Yet Available)",
+      "official_url": "https://www.protennislive.com/posting/2026/328/op.pdf",
+      "checked_utc": "2026-10-22T12:04:00Z",
+      "status": "unavailable_flagged"
+    },
+    {
+      "id": "src-wta-ningbo",
+      "sport": "tennis",
+      "org": "WTA Tour",
+      "title": "WTA 500 Ningbo Open Official Order of Play PDF (2026-10-22)",
+      "official_url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf",
+      "checked_utc": "2026-10-22T12:05:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-wta-osaka",
+      "sport": "tennis",
+      "org": "WTA Tour",
+      "title": "WTA 250 Kinoshita Group Japan Open Osaka Official OOP PDF (2026-10-22)",
+      "official_url": "https://wtafiles.wtatennis.com/pdf/draws/2026/405/OP.pdf",
+      "checked_utc": "2026-10-22T12:05:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-wst-ni",
+      "sport": "snooker",
+      "org": "World Snooker Tour",
+      "title": "WST BetVictor Northern Ireland Open 2026 Match Centre",
+      "official_url": "https://www.wst.tv/match-centre/f0b30e58-d987-4505-89c2-8b24805b98d5",
+      "checked_utc": "2026-10-22T12:06:00Z",
+      "status": "verified_local_clock"
+    },
+    {
+      "id": "src-urc-r4",
+      "sport": "rugby-union",
+      "org": "United Rugby Championship",
+      "title": "URC 2026-27 Round 4 Official Match Centre & Round 3 Results",
+      "official_url": "https://stats.unitedrugby.com/match-centre/2026-27/4",
+      "checked_utc": "2026-10-22T12:20:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-urc-table",
+      "sport": "rugby-union",
+      "org": "United Rugby Championship",
+      "title": "URC 2026-27 Official League Table (16 Clubs)",
+      "official_url": "https://stats.unitedrugby.com/match-centre/table/2026-27",
+      "checked_utc": "2026-10-22T12:20:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-lnr-top14",
+      "sport": "rugby-union",
+      "org": "Ligue Nationale de Rugby",
+      "title": "LNR TOP 14 2026-27 Journée 7 Official Calendar",
+      "official_url": "https://top14.lnr.fr/calendrier-et-resultats",
+      "checked_utc": "2026-10-22T12:07:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-lnr-prod2",
+      "sport": "rugby-union",
+      "org": "Ligue Nationale de Rugby",
+      "title": "LNR PRO D2 2026-27 Journée 8 Official Calendar",
+      "official_url": "https://prod2.lnr.fr/calendrier-et-resultats",
+      "checked_utc": "2026-10-22T12:07:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-irl-rlwc",
+      "sport": "rugby-league",
+      "org": "International Rugby League",
+      "title": "IRL Official Fixtures & Results (RLWC 2026 Men's & Women's Round 2)",
+      "official_url": "https://www.intrl.sport/fixtures-results",
+      "checked_utc": "2026-10-22T12:08:00Z",
+      "status": "verified_local_clock"
+    },
+    {
+      "id": "src-ehf-cl",
+      "sport": "handball",
+      "org": "European Handball Federation",
+      "title": "EHF Champions League Men 2026/27 Group Phase Playing Times PDF",
+      "official_url": "https://www.eurohandball.com/media/jqal4wt0/ehfcl-men-2026-27-group-phase-playing-times.pdf",
+      "checked_utc": "2026-10-22T12:09:00Z",
+      "status": "verified_july_publication"
+    },
+    {
+      "id": "src-pls-games",
+      "sport": "volleyball",
+      "org": "Polska Liga Siatkówki",
+      "title": "PlusLiga & TAURON Liga Official Games Schedule",
+      "official_url": "https://www.tauronliga.pl/games.html",
+      "checked_utc": "2026-10-22T12:10:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-legavolley",
+      "sport": "volleyball",
+      "org": "Lega Pallavolo Serie A",
+      "title": "SuperLega Credem Banca Official 2026-27 Calendar",
+      "official_url": "https://www.legavolley.it/calendario/?idCampionato=999",
+      "checked_utc": "2026-10-22T12:10:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-aflw-8970",
+      "sport": "aussie-rules",
+      "org": "Australian Football League",
+      "title": "NAB AFLW Round 11 Match Centre: Port Adelaide vs Collingwood",
+      "official_url": "https://www.afl.com.au/aflw/matches/8970",
+      "checked_utc": "2026-10-22T12:11:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-lol-worlds",
+      "sport": "esports",
+      "org": "Riot Games / LoL Esports",
+      "title": "LoL Esports Worlds 2026 Official Tournament Overview",
+      "official_url": "https://lolesports.com/en-GB/tournament/115660540725177488/overview",
+      "checked_utc": "2026-10-22T12:11:00Z",
+      "status": "partial_js_schedule"
+    },
+    {
+      "id": "src-pga-sched",
+      "sport": "golf",
+      "org": "PGA TOUR",
+      "title": "PGA TOUR 2026 Schedule (Butterfield Bermuda Championship)",
+      "official_url": "https://www.pgatour.com/schedule",
+      "checked_utc": "2026-10-22T12:12:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-pgachamp-sched",
+      "sport": "golf",
+      "org": "PGA TOUR Champions",
+      "title": "PGA TOUR Champions 2026 Schedule (Stifel Charity Classic)",
+      "official_url": "https://www.pgatour.com/pgatour-champions/schedule",
+      "checked_utc": "2026-10-22T12:12:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-ci-matches",
+      "sport": "cricket",
+      "org": "Cricket Ireland",
+      "title": "Cricket Ireland Official Match Centre (Namibia vs Ireland ODI)",
+      "official_url": "https://cricketireland.ie/matches/",
+      "checked_utc": "2026-10-22T12:13:00Z",
+      "status": "verified_in_play"
+    },
+    {
+      "id": "src-pcb-1465",
+      "sport": "cricket",
+      "org": "Pakistan Cricket Board",
+      "title": "PCB Tournament 1465 Match Centre (HTTP 502 Bad Gateway)",
+      "official_url": "https://www.pcb.com.pk/tournament-reports.php?action=tournament_matches&tournament_id=1465",
+      "checked_utc": "2026-10-22T12:13:00Z",
+      "status": "http_502_flagged"
+    },
+    {
+      "id": "src-f1-usgp",
+      "sport": "motor-racing",
+      "org": "Formula 1",
+      "title": "Formula 1 United States Grand Prix 2026 Official Weekend Hub",
+      "official_url": "https://www.formula1.com/en/racing/2026/united-states",
+      "checked_utc": "2026-10-22T12:14:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-pdc-ec",
+      "sport": "darts",
+      "org": "Professional Darts Corporation",
+      "title": "PDC 2026 Machineseeker European Championship Schedule Page (CookieYes Wall)",
+      "official_url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/",
+      "checked_utc": "2026-10-22T12:14:00Z",
+      "status": "consent_wall_flagged"
+    },
+    {
+      "id": "src-munster-gaa",
+      "sport": "gaelic-football",
+      "org": "Munster GAA",
+      "title": "Munster GAA Official Events Calendar (Cork, Waterford, Kerry SFC Finals)",
+      "official_url": "https://munster.gaa.ie/fixtures/events-calendar/",
+      "checked_utc": "2026-10-22T12:15:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-cork-gaa",
+      "sport": "gaelic-football",
+      "org": "Cork GAA",
+      "title": "Cork GAA Official Fixtures (Nemo Rangers vs St. Finbarr's PSFC Final)",
+      "official_url": "https://gaacork.ie/fixtures/",
+      "checked_utc": "2026-10-22T12:15:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-maighcuilinn",
+      "sport": "gaelic-football",
+      "org": "CLG Maigh Cuilinn",
+      "title": "CLG Maigh Cuilinn Official Fixture & Semi-Final Match Report",
+      "official_url": "https://www.maighcuilinn.com/",
+      "checked_utc": "2026-10-22T12:15:00Z",
+      "status": "verified"
+    },
+    {
+      "id": "src-gbgb-open",
+      "sport": "greyhounds",
+      "org": "Greyhound Board of Great Britain",
+      "title": "GBGB Official Open Races Portal (Static Filter / XHR Racecards)",
+      "official_url": "https://www.gbgb.org.uk/racing/open-races/",
+      "checked_utc": "2026-10-22T12:16:00Z",
+      "status": "js_racecard_flagged"
+    }
+  ]
+}
