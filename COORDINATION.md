@@ -1888,6 +1888,16 @@ SHA completed **success**; the Pages API reports `status: built`.
 | `/f71557b5/index.html?v=1` | 15 High picks with model %, fair price, US price, 5% book-equivalent and per-row official links |
 | `/f71557b5/predictions.html?v=2` | all 15 previews (58–81 words) with their verified-input tables and the separate match-winner call under each |
 
+**Further follow-ups.** PR #79 (merged 2026-10-22T07:31:26Z as `17c4530`) fixed the High table's source column so a
+`re-fetched today` pick links the endpoint actually read, and corrected the merge-commit SHA in this section.
+PR #81 (merged 2026-10-22T07:33:55Z as `884f01d`) published the wrong-page source anomaly found while reading the rendered site:
+the Barça v Montpellier row cites a link whose text claims a Barcelona result while its URL is a Dinamo Bucuresti
+club page, so that claim cannot be checked and no scoreline is quoted for the fixture. Deployment run **39741378341**
+for `main` `159d727` (which includes PR #80 from a concurrent session) completed **success**; the Pages API reports
+`status: built`, and cache-busted live reads of `/e6716490/index.html`, `/e6716490/predictions.html` and
+`/e6716490/audit.html` confirm the published content, the nine write-ups, the verification ledger and the new
+anomaly entry.
+
 **Task board state at close.** T54 is **done**. Two collisions were absorbed and no session's work was
 discarded: `T46`–`T49`/`§36` (`a570c470`, later merged as `T50`–`T53`/`§38`) and `T44` (`9dfd0b48`, merged
 as `T45`/`§35`) both took ids this session had claimed, so it settled at **`T54`/`§39`** — the lowest free
@@ -2178,6 +2188,12 @@ release-audit warning applies to the primary desk, not to the rows this desk re-
 
 **Pages.** Deployment run **39740869149** for the merge commit completed **success** in 36s; the Pages API reports
 `status: built`.
+
+**Audit counts are computed, not typed.** The repo-audit figures (HTML pages, published desks, scripts,
+validators, coordination lines) are recalculated by `se6716490_build_site.py` on every build, excluding this desk's
+own 25 pages. They read *319 pages / 14 desks / 66 scripts* when this desk was first built and *349 / 15 / 72* once
+PR #80 and #82 landed a fifteenth desk beside it; `/e6716490/audit.html` and the landing page always publish the
+current numbers, and the §43.7 figures above are the ones from this session's own build.
 
 **Live checks with cache-busters, against the CDN:**
 
