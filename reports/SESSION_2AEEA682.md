@@ -3,7 +3,7 @@
 **Evidence read:** 2026-10-22T20:55:00Z  
 **Branch:** `arena/2aeea682-olbg1` (pinned Arena work and integration branch)  
 **Site namespace:** `/2aeea682/`  
-**Status at this commit:** implementation and local verification complete; PR/merge/Pages receipts pending.
+**Status:** DONE — PR #144 merged and live GitHub Pages content verified.
 
 ## 1. Delivered scope and honest coverage boundary
 
@@ -211,4 +211,17 @@ The model/build scripts are deterministic for the checked-in transcribed observa
 
 ## 8. PR, merge and Pages receipts
 
-Pending at this checkpoint. This section will be appended with the PR URL, merge result, workflow run and direct live-byte read-back before the task is marked done.
+**PR #144:** https://github.com/buffedlizard55-lab/OLBG1/pull/144
+**Merged:** 2026-10-22T21:05:01Z as `ead18ebc5aa7f78931c52871f2303f0f668a4116`.
+**Pre-merge CI:** run 39854180704 passed.
+**Production:** [`Canonical research checks and Pages` run 39854325138](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39854325138) completed successfully at 21:06:31Z; both the validation and actual Pages deployment jobs passed. Legacy `pages build and deployment` run 39854324388 also succeeded.
+
+Direct deployed-byte reads at 21:07Z confirmed:
+
+* https://buffedlizard55-lab.github.io/OLBG1/2aeea682/index.html — 71 listings, 10 sports with rows, 7 priced fixtures, 87 markets, 4 High picks, 64 blank-and-flag rows and all 17 category cards.
+* https://buffedlizard55-lab.github.io/OLBG1/2aeea682/predictions.html — all four predictions and official evidence tables.
+* https://buffedlizard55-lab.github.io/OLBG1/2aeea682/flagged.html — all 21 findings.
+* https://buffedlizard55-lab.github.io/OLBG1/2aeea682/sports/ice-hockey.html — all 19 corrected slash-date NHL links.
+* https://buffedlizard55-lab.github.io/OLBG1/archive.html — the new desk is reachable from the canonical archive.
+
+The merge and deployment are therefore confirmed by both workflow receipts and actual public content, not by a Pages status label alone.
