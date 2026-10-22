@@ -4041,7 +4041,6 @@ multi-market origination; High band requires the fair price to express inside �
 where evidence permits; repo line-by-line audit with file:line links; validator gate; PR + merge +
 live Pages read-back. Nothing is marked verified without a fetched official page and its link.
 
-<<<<<<< HEAD
 **Status:** done — completion record below.
 
 **DONE (2026-10-22T22:0xZ).** Live OLBG harvest of all 17 in-scope hubs at 20:56Z
@@ -4097,8 +4096,7 @@ completed/success (1m15s) including the Pages deploy; pages-build-deployment run
 merge's own content (117 listings · 40 priced · 2 High picks at 70.0% / −233 · the
 out-of-window ledger · 21 predictions · 16 flags, both High write-ups with official
 source links).
-=======
-**Status:** in progress — claims pushed before any deliverable work, per §0.3.
+
 # Session `a0b04058-olbg1` — TA0B04 live 22 Oct ~21:00Z UTC 17-sport official audit, multi-market origination & daily top-5 desk (`/a0b04058/`)
 
 Branch `arena/a0b04058-olbg1` · task **TA0B04** · board record **§60** · desk published at
@@ -4313,4 +4311,3 @@ live Pages read-back. Nothing is marked verified without a fetched official page
 
 * **Final integration note:** Main branch now at `c571463` contains all peer desks (`546fc70f`, `2988bd19`, `2aeea682`, `424375b4`) plus `a0b04058` desk, with `COORDINATION.md` cleaned of leftover conflict markers (`=======`, `>>>>>>> origin/main`) while preserving all upstream rows and sections verbatim. No shared canonical root pages, pipeline, workflow or other session's desk edited beyond append-only log. This is the final state for this session.
 
->>>>>>> origin/main
