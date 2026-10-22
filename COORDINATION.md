@@ -4,7 +4,7 @@
 working on what. It exists so that multiple agent sessions can work on this repository at the
 same time without duplicating work or overwriting each other.
 
-Last updated: **2026-10-22T03:50:00Z** (UTC)
+Last updated: **2026-10-22T08:20:00Z** (UTC)
 
 ---
 
@@ -118,6 +118,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T57 | Independent post-integration audit of published primary-desk counts, validator warnings, source-link presentation, and stale task-board statuses (structural only; no live source recertification) | done | 3d2d578a-olbg1 | `reports/SESSION_3D2D578A_AUDIT.md`, `COORDINATION.md` (append-only) | 2026-10-22T07:23Z | Renumbered from T56 after collision with cccb414e-olbg1's earlier T56 claim. Offline structural audit complete; findings and verification limits are recorded in §42. No shared data/model/site outputs edited. |
 | T58 | **Consolidated final desk (2026-10-22):** independent live re-fetch of key governing-body sources, cross-desk reconciliation into one clean dashboard (`/e6716490/`, landing + 17 category subpages + predictions + Flagged + methodology + sources + repo audit), own line origination across every covered match, strict −250…+10000 High band, unique ≥30-word human predictions, repo validator gate, PR + merge + Pages deploy check | done | e6716490-olbg1 | `data/e6716490/**`, `scripts/se6716490_*.py`, `e6716490/**`, `reports/SESSION_E6716490.md`, `COORDINATION.md` (append-only §43), additive nav entry in root `index.html`/`README.md` at integration only | 2026-10-22T07:20Z | Claimed as `T55`/`§40`; renumbered to `T58`/`§43` after `8cab6428-olbg1` took T55 and `cccb414e`/`3d2d578a` took T56/T57 (see §43). 122 fixtures / 17 sports, 1,575 markets, 9 High, 9 predictions, 3 live re-reads, 25-page site, gates pass. |
 | T59 | **Independent live 22 Oct 2026 re-verification of all 17 in-scope sports (excluding soccer, horse racing, american football, boxing, UFC/MMA, specials, hurling, cycling), full 68-market taxonomy, continuous multi-market origination with strict −250…+10000 high-confidence band, unique 30+ word human predictions with verified team/player/form/history, and 26-page clean dashboard (`/7ad0d336/`) + validator + PR/merge/Pages check** | done | 7ad0d336-olbg1 | `data/7ad0d336/**`, `scripts/s7ad0d336_*.py`, `7ad0d336/**`, `reports/SESSION_7AD0D336.md`, append-only `COORDINATION.md` | 2026-10-22T07:35Z | 127 fixtures / 13 High (all in-window, 0 dups) / 1,386 markets / 29 pages / gates PASS. See §44 for publish record. |
+| T60 | **Fresh 22-Oct future-only desk**: live OLBG sitemap/hub re-read, expiry of all started primary rows at an explicit cutoff, in-session re-fetch (via page-fetch tool) of official governing-body pages for every remaining candidate High pick, strict High rule (selected-line model prob >=0.70 AND originated price inside -250..+10000), new unique >=30-word predictions built only from facts read this session, clean namespaced dashboard + Flagged page, validator gate, PR + merge + Pages check | done | 8fc47dcb-olbg1 | `8fc47dcb/**`, `data/8fc47dcb/**`, `scripts/s8fc47dcb_*.py`, `reports/SESSION_8FC47DCB.md`, append-only `COORDINATION.md` (§45); root `index.html`/`scripts/build_site.py`/`README.md` touched only as a single additive companion link at final integration if conflict-free, otherwise logged in §4 | 2026-10-22T07:26Z | Claimed as T57/§42 at 07:26Z when those were free; renumbered T60/§45 at merge because 3d2d578a (T57/§42), e6716490 (T58/§43) and 7ad0d336 (T59/§44) merged first (PRs #79–#86). No session's work discarded. No other session's data, generator or pages edited. |
 
 ---
 
@@ -2252,3 +2253,23 @@ Root T35 (AFLW re-price), T10/T11/T12/T19 (older queued), PR #40 (open/conflicti
 ## 4. Requests and conflict log (append-only)
 
 **2026-10-22T07:30Z — session 7ad0d336-olbg1:** Request to final integration session (or whoever owns `scripts/build_site.py` / root `index.html`): add one companion-bar link for this desk — `7ad0d336/index.html` titled "7ad0d336 · 22 Oct verified desk (13 High in window)" — to the generated root navigation. This session did **not** edit `index.html`, `README.md` or `scripts/build_site.py` per §0.4 (non-overlapping scope); all prior sessions' files preserved verbatim (0 deleted lines verified via `git diff --diff-filter=D origin/main`). No merge conflicts encountered on this branch.
+
+## 45. Session `8fc47dcb-olbg1` — T60 fresh 22-Oct future-only desk
+
+**Claim:** T57 row added (renumbered T60/§45 at merge — see below), committed and pushed before work (`747aa5f`, 2026-10-22T07:26Z). Next free ID after T56 (`cccb414e`, PR #74/#75). Open PR #76 (`3d2d578a`) also calls itself T56 and is CONFLICTING — not touched; PRs #40/#63 also untouched. Branch base fast-forwarded from `a0ae3c5` to `origin/main` `4937bb4` after unshallowing (the sandbox shallow clone initially made `git pull --rebase` try to replay merge `a0ae3c5`; aborted cleanly, no work lost, then `--ff-only`).
+
+**Scope honoured:** `8fc47dcb/**`, `data/8fc47dcb/**`, `scripts/s8fc47dcb_*.py`, `reports/SESSION_8FC47DCB.md`, append-only COORDINATION; final-integration touch to shared files limited to one additive companion-bar line in `scripts/build_site.py` (+1 generated line in each of 61 root/mirror pages, zero other diff). `data/fixtures.json` and every parallel desk were read-only.
+
+**Done:** explicit cutoff `2026-10-22T07:30:00Z` (73 future / 29 expired / 32 undated); own fair-price multi-market lines for 72 two-sided matches (Winner, DNB, 4-rung half-point handicap ladder, 5-rung total ladder; correct-score/player-props/period markets named as investigated-not-priced with the missing official input); strict High rule (verified + both-measured + win-prob ≥60% separation gate + exact 70.00–71.4286% band at fair 1.40–101.00 + in-session official re-read) yielding **7 High / 34 Medium / 31 Low** and 7 original ≥30-word predictions (0 shared 6-grams).
+
+**Verification performed (official pages actually read 2026-10-22 via page-fetch):** NHL schedule+standings APIs, EuroLeague standings, EHF standings, LNR Top 14 classement, IRL world rankings, NRL RLWC26 men's/women's draws, ICC rankings, NZC fixtures, OLBG sitemap + Basketball hub. Register: 73 future rows = **11 confirmed / 15 corrected / 47 not re-checked** (blocker per row). Material corrections: Real Madrid EuroLeague record 4-2→3-3, Panathinaikos 4-2→5-1, Baskonia 2-4→1-5; Vegas Golden Knights .800→.727; IRL ranks Lebanon 11→23, France 8→11, Cook Islands 9→8, Wales Women 7→9, England Women 2→3 (RL ratings redefined as official IRL %); Montpellier Handball 3rd→4th; MT Melsungen 1-0-3→2-0-2; ICC women's points 287/253→292/248. Exact-band rejections (71.5%/71.7% rungs rounding to 1.40) documented on Methodology. Blockers: PDC consent wall (darts, all chunks), AFLW client-rendered ladder (no rows returned) — both capped below High; consequently **T35 stays open** (no rating invented). Full evidence: `data/8fc47dcb/verification.json`, `reports/SESSION_8FC47DCB.md`.
+
+**Gates:** `s8fc47dcb_validate.py` PASSED (21 pages, 0 broken links); repo `validate.py` PASSED 0 errors (6 pre-existing warnings); 10 parallel-desk validators PASSED; `tests/` 5/5 OK.
+
+**Publication:** PR from `arena/8fc47dcb-olbg1` → `main` to be opened and merged without waiting (per brief); Pages deployment to be verified and recorded in §45.1. Flagged items live at `/8fc47dcb/flagged.html` and do not block the merge.
+
+---
+
+**Renumbering note (merge, 2026-10-22T08:20Z):** while this branch was open, `origin/main` advanced through PRs #79–#86 (`3d2d578a` T57/§42, `e6716490` T58/§43, `7ad0d336` T59/§44), so this task is recorded as **T60 / §45** and its generated pages/report were re-titled accordingly before merge. The COORDINATION conflict was resolved by keeping every merged row/section verbatim and appending this session's row/section under the new numbers; no other file conflicted (`index.html` auto-merged and contains both desks' links — verified before merge commit; note the e6716490 root link lives in `index.html`/`README.md` rather than `scripts/build_site.py`, a pre-existing condition left untouched).
+
+---
