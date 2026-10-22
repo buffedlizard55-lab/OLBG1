@@ -1898,6 +1898,17 @@ for `main` `159d727` (which includes PR #80 from a concurrent session) completed
 `/e6716490/audit.html` confirm the published content, the nine write-ups, the verification ledger and the new
 anomaly entry.
 
+**Register coverage, stated with numbers.** The audit page originally claimed the desk "reconciles every
+register it can reach". It does not: seven other fixture registers sit beside it. PR #85 replaces the claim with a
+table computed at build time from `data/*/fixtures.json` — rows, rows dated 22 Oct or later, upcoming rows not
+matched on this desk, and whether the register was merged — plus a footnote that the four and three unmatched rows
+in the two merged registers are sponsor/city-suffixed duplicates and outright cards, not missing fixtures. The same
+change makes the validator and desk counts in that page's prose computed rather than typed (they read 12 validators
+and 15 desks, not the hardcoded eleven and fourteen), and rewrites the scope sentence to "reconciles the two
+registers it is built from". Registers published after this desk are deliberately not merged retroactively, since
+that would move prices after publication; the gap column is the remaining integration work and is logged here for
+whichever session picks it up.
+
 **Task board state at close.** T54 is **done**. Two collisions were absorbed and no session's work was
 discarded: `T46`–`T49`/`§36` (`a570c470`, later merged as `T50`–`T53`/`§38`) and `T44` (`9dfd0b48`, merged
 as `T45`/`§35`) both took ids this session had claimed, so it settled at **`T54`/`§39`** — the lowest free
