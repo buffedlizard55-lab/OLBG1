@@ -110,6 +110,7 @@ moved to manufacture a qualifying price.
 | F-E67-07 | 7 fixtures already started | Dropped from the priced set at the desk cut-off of 2026-10-22T07:2xZ rather than priced in play. |
 | F-E67-08 | Repo-wide duplication | 14 published desks; 180 pairings priced in two or more registers, some with different constants and therefore different prices for the same match. Detailed on `/e6716490/audit.html`. |
 | F-E67-09 | Stale pricing on older desks | The root register still prices 44 fixtures dated before 22 October 2026. Not corrected here — those files belong to earlier sessions. |
+| F-E67-11 | A source entry cites the wrong page | The Barça v Montpellier row carries a link whose text claims a Barcelona result while the URL is a Dinamo Bucuresti club page (`/en/club/.../DinamoBucuresti/`). The claim cannot be checked against the page it cites, which is why the prediction quotes no scoreline. Found while reading the rendered page, not from the data model — listed on `/e6716490/flagged.html` §6 and `/e6716490/audit.html`. |
 | F-E67-10 | README drift | The root README's headline counts (134 events, 160 pages) no longer match the tree (319 pages before this desk). Logged, not rewritten beyond this session's own section. |
 
 None of these blocked publication. All are linked from `/e6716490/flagged.html` and `/e6716490/audit.html`.
