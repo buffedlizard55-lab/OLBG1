@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology · OLBG1 consolidated desk</title>
+<link rel="stylesheet" href="assets/style.css">
+<meta name="description" content="OLBG1 consolidated desk: 17 in-scope sports, originated lines, confidence tiers and official-source verification.">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html">OLBG1 <span>consolidated desk</span></a><nav><a href="index.html">Dashboard</a><a href="predictions.html">High picks</a><a href="markets.html">Markets</a><a href="verification.html">Verification</a><a href="flagged.html">Flagged</a><a href="methodology.html" class="active">Methodology</a><a href="sources.html">Sources</a><a href="audit.html">Repo audit</a><a class="back" href="../index.html">All desks</a></nav></header>
+<main>
+<header class="pagehead">
+<h1>Methodology</h1>
+<p class="lede">Every constant, every formula and every limit of what this desk can honestly claim.</p>
+</header>
+
+<p class="lede">The whole model, in enough detail to disagree with it. Every constant below is a modelling
+choice made by this session; none of them is presented as a statistic.</p>
+
+<h2>The five rules</h2>
+<ol class="tight">
+<li>Official sources only. A record, ladder position, rating, seed or draw comes from the league, tour,
+federation or organiser that publishes it. OLBG is used to find matches, never to verify one.</li>
+<li>Blank beats wrong. If a value cannot be confirmed it stays empty and is listed on
+<a href="flagged.html">Flagged</a>.</li>
+<li>Assumptions are labelled. The constants on this page are ours, printed in full.</li>
+<li>One-sided inputs carry no edge. If only one side has a verified strength input the row is priced from a
+neutral 50/50 baseline, flagged, and capped at Low confidence.</li>
+<li>Model output is never a sourced fact. Every price is an estimate and is labelled as one.</li>
+</ol>
+
+<h2>How a price is made</h2>
+<pre><code>edge  e = (rating_home − rating_away) + HFA          # rating points, HFA only when not neutral
+win   p = 1 / (1 + 10^(−e / denom))                   # two-way probability
+draw      a share out of the two-way split, widest at a pick'em (three-way sports only)
+margin m = margin_scale × e                           # in the sport's scoring unit
+rungs     seven half-lines, m's pick'em line ± three steps of at least 1.0 unit
+cover     p = 1 − Φ((−h − m) / sigma)                 # h is the signed home handicap
+totals    baseball: mean of both sides' runs scored and allowed per game, sigma 4.30
+price     fair = 1 / p ; book-equivalent = 1 / (p × 1.05) ; US odds from the decimal
+</code></pre>
+
+<h2>Sport parameters</h2>
+<p><code>denom</code> is the rating spread of the logit, <code>hfa</code> the home edge in rating points,
+<code>draw</code> the peak draw share, <code>margin</code> the scoring unit per rating point and
+<code>sigma</code> the standard deviation of the margin in that unit.</p>
+<div class="tablewrap"><table class=""><thead><tr><th>Sport</th><th>denom</th><th>HFA</th><th>draw</th><th>margin/pt</th><th>sigma</th><th>unit</th><th>market label</th></tr></thead><tbody><tr><td>Ice Hockey</td><td>9.0</td><td>3.0</td><td>0.0</td><td>0.036</td><td>1.3</td><td>goals</td><td>Goals handicap</td></tr><tr><td>Basketball</td><td>7.0</td><td>3.5</td><td>0.0</td><td>0.22</td><td>12.0</td><td>points</td><td>Points handicap</td></tr><tr><td>Baseball</td><td>9.0</td><td>2.0</td><td>0.0</td><td>0.03</td><td>4.3</td><td>runs</td><td>Runs handicap</td></tr><tr><td>Tennis</td><td>12.0</td><td>0.0</td><td>0.0</td><td>0.02</td><td>0.5</td><td>sets</td><td>Sets handicap</td></tr><tr><td>Cricket</td><td>10.0</td><td>2.0</td><td>0.0</td><td>0.35</td><td>30.0</td><td>runs</td><td>Runs handicap</td></tr><tr><td>Snooker</td><td>11.0</td><td>0.0</td><td>0.0</td><td>0.045</td><td>1.6</td><td>frames</td><td>Frames handicap</td></tr><tr><td>Darts</td><td>10.0</td><td>0.0</td><td>0.0</td><td>0.055</td><td>1.8</td><td>legs</td><td>Legs handicap</td></tr><tr><td>Rugby Union</td><td>10.0</td><td>3.0</td><td>0.05</td><td>0.2</td><td>12.0</td><td>points</td><td>Points handicap</td></tr><tr><td>Rugby League</td><td>10.0</td><td>2.0</td><td>0.035</td><td>0.18</td><td>12.0</td><td>points</td><td>Points handicap</td></tr><tr><td>Handball</td><td>9.0</td><td>2.5</td><td>0.045</td><td>0.1</td><td>6.5</td><td>goals</td><td>Goals handicap</td></tr><tr><td>Volleyball</td><td>10.0</td><td>1.5</td><td>0.0</td><td>0.012</td><td>0.9</td><td>sets</td><td>Sets handicap</td></tr><tr><td>Aussie Rules</td><td>11.0</td><td>3.0</td><td>0.01</td><td>0.25</td><td>25.0</td><td>points</td><td>Points handicap</td></tr><tr><td>Esports</td><td>12.0</td><td>0.0</td><td>0.0</td><td>0.02</td><td>0.7</td><td>maps</td><td>Maps handicap</td></tr><tr><td>Gaelic Football</td><td>11.0</td><td>2.0</td><td>0.04</td><td>0.12</td><td>8.0</td><td>points</td><td>Points handicap</td></tr></tbody></table></div>
+
+<h2>Why only 9 High picks</h2>
+<p>The brief asks for picks above a 70% chance <em>and</em> priced between −250 and +10000. At fair odds a
+−250 price is a 71.43% chance, so the qualifying band is 70.00%–71.43%: 1.43 percentage points wide. A desk
+hanging seven handicap rungs per match will occasionally drop one inside that window, and that is exactly what
+happened on 9 of the 105 priced fixtures. Every other ≥70% selection is published
+with its true (shorter) price in the <a href="markets.html#band">band-excluded ledger</a> rather than
+mis-labelled as High. Anything else would have meant moving a line until a price landed in the band, which is
+not a model — it is a target.</p>
+
+<h2>What the model cannot do</h2>
+<ul class="tight">
+<li>It cannot price a match where only one side has an official strength input. It refuses to guess the other.</li>
+<li>It cannot price totals outside baseball, correct scores, player props or field boards, because no official
+page gives it the inputs before the match.</li>
+<li>It does not know about injuries, team selection or travel beyond what the governing-body page publishes.</li>
+<li>It has not been back-tested on results. The probabilities are calibrated by construction, not by outcome.</li>
+<li>It publishes 1575 markets from 105 fixtures, and the correlation between rungs
+of the same match is total — the High tier is capped at one rung per fixture for that reason.</li>
+</ul>
+
+</main>
+<footer>
+<p>Session <code>e6716490-olbg1</code> · built 2026-10-22T07:26:54Z · every price on this desk is the desk's own
+estimate, never a copied bookmaker price. Facts come from the official page linked on the row.</p>
+<p><a href="../index.html">All desks</a> · <a href="methodology.html">methodology</a> ·
+<a href="flagged.html">flagged for review</a></p>
+</footer>
+</body>
+</html>
