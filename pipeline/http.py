@@ -5,6 +5,7 @@ explicit publisher allowlists. No cookies, credentials, hidden APIs or UA rotati
 """
 from dataclasses import dataclass
 from pathlib import Path
+import re
 import threading
 import time
 from urllib import error, request, robotparser
@@ -18,9 +19,14 @@ class FetchError(Exception):
     pass
 
 class SafeRedirect(request.HTTPRedirectHandler):
+    def __init__(self, policy=None):
+        super().__init__(); self.policy=policy
+
     def redirect_request(self, req, fp, code, msg, headers, newurl):
         if not allowed_url(newurl, discovery=True):
             raise FetchError('Redirect outside publisher allowlist')
+        if self.policy is None or not self.policy(newurl):
+            raise FetchError('Redirect target robots policy not already approved; redirect withheld')
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 @dataclass
@@ -38,10 +44,14 @@ class Fetcher:
     def __init__(self, raw_dir, timeout=12, attempts=2, opener=None, delay=1.0):
         self.raw_dir=Path(raw_dir); self.raw_dir.mkdir(parents=True,exist_ok=True)
         self.timeout=timeout; self.attempts=attempts
-        self.opener=opener or request.build_opener(SafeRedirect())
+        self.opener=opener or request.build_opener(SafeRedirect(self._redirect_allowed))
         self.robots={}; self.last={}; self.delay=delay
         self.lock=threading.Lock()
         self.log=[]
+
+    def _redirect_allowed(self,url):
+        p=urlsplit(url);origin=urlunsplit((p.scheme,p.netloc,'','',''));rp=self.robots.get(origin)
+        return rp is not None and rp.can_fetch(USER_AGENT,url) and rp.can_fetch('Python-urllib',url)
 
     def _raw(self, url):
         if not allowed_url(url,discovery=True):
@@ -93,6 +103,7 @@ class Fetcher:
 
     def get(self,url,source_id,robots=True):
         try:
+            if not re.fullmatch(r'[A-Za-z0-9_-]{1,100}',source_id):raise FetchError('Unsafe source identifier')
             if robots: self._robots_allowed(url)
             for attempt in range(self.attempts):
                 try:

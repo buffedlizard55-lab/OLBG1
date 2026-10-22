@@ -162,6 +162,7 @@ def mlb_statistics(data,c,season,as_of):
     if not blocks:raise SchemaError('Empty MLB standings')
     out=[];seen=set()
     for bi,block in enumerate(blocks):
+        if str(block.get('season',season))!=str(season):raise SchemaError('Wrong MLB standings season')
         for ri,r in enumerate(require(block.get('teamRecords'),list,'teamRecords')):
             tid=str(number(r['team'],'id'))
             if tid in seen:raise SchemaError('Duplicate MLB team')

@@ -46,7 +46,7 @@ def record(c, oid, quote, **values):
                   'observed_after': AFTER, 'observed_before': BEFORE, **values})
 
 
-def seed():
+def seed(write=True):
     CAPTURES.clear(); FIXTURES.clear(); STATS.clear()
     nhl = capture('nhl-schedule-20261022', 'https://api-web.nhle.com/v1/schedule/2026-10-22', 'ice-hockey',
                   'All 12 games under gameWeek date 2026-10-22; only chunks 0–2 read. Later week not enumerated.',
@@ -219,6 +219,8 @@ def seed():
                 notes=['Gaelic football retained as a distinct historical project category; association football remains excluded.'])
     # Further captures and stats are imported below. Do not copy any legacy ratings.
     seed_additional()
+    if not write:
+        return
     for c in CAPTURES:
         save(CURRENT/'evidence'/f'{c["id"]}.json',seal_capture(c))
     save(CURRENT/'session_import.json',{'schema_version':1,'session':'257e6674-olbg1','observed_after':AFTER,'observed_before':BEFORE,

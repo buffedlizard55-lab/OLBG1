@@ -13,7 +13,6 @@ import subprocess
 from .common import load,save,digest,official_url,parse_time,iso
 from .config import ROOT,CURRENT,SPORT_INDEX
 
-BASELINE='4937bb456'  # filled with the full commit below when available; links use repository branch otherwise
 REPO='https://github.com/buffedlizard55-lab/OLBG1'
 
 
@@ -59,7 +58,7 @@ def line_for(text,field,value,used):
 
 def build_audit(at):
     tracked=subprocess.check_output(['git','ls-files'],cwd=ROOT,text=True).splitlines()
-    baseline=subprocess.check_output(['git','rev-parse','origin/main'],cwd=ROOT,text=True).strip()
+    baseline=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     files=[];rows=[];hashes={};python_errors=[]
     for rel in tracked:
         path=ROOT/rel

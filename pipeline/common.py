@@ -42,10 +42,16 @@ def save(path, value):
 
 
 def official_url(url):
-    p = urlparse(url)
-    return p.scheme == 'https' and p.hostname in PUBLISHERS and not p.username and not p.password and p.port in (None, 443)
+    try:
+        p = urlparse(url)
+        return p.scheme == 'https' and p.hostname in PUBLISHERS and not p.username and not p.password and p.port in (None, 443)
+    except (ValueError, TypeError, AttributeError):
+        return False
 
 
 def allowed_url(url, discovery=False):
-    p = urlparse(url)
-    return official_url(url) or (discovery and p.scheme == 'https' and p.hostname in DISCOVERY_HOSTS and not p.username and not p.password and p.port in (None, 443))
+    try:
+        p = urlparse(url)
+        return official_url(url) or (discovery and p.scheme == 'https' and p.hostname in DISCOVERY_HOSTS and not p.username and not p.password and p.port in (None, 443))
+    except (ValueError, TypeError, AttributeError):
+        return False

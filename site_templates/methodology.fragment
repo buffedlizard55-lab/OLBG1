@@ -1,0 +1,40 @@
+<nav class="subnav"><a href="#evidence-policy">Evidence policy</a><a href="#model">Model</a><a href="#price-window">Price window</a><a href="#confidence">Confidence</a><a href="#automation">Automation</a></nav>
+<article class="panel pad prose">
+<h2 id="evidence-policy" style="margin-top:0">Read → retain → normalize → model</h2>
+<p>OLBG is a discovery layer for public sport routes, event cards and tip counts. Official governing-body and league sources establish fixture facts. Old repository values are leads, not evidence. A URL, a build time or a “verified” string is never a substitute for reading the source.</p>
+<p>The initial import contains selected normalized excerpts or JSON field projections from the retrieval tool. Exact HTTP status, headers and byte-for-byte bodies were not exposed; those values remain null. Captures have a real observed-after/observed-before window rather than invented per-request timestamps. Automated HTTP responses retain bytes, checksum, fetch times and parser locators.</p>
+<p>Every non-null fixture field references a source observation. Missing facts stay null. UTC conversion requires an explicit source timezone or UTC field. “Today”, “followed by”, venue location and the reader’s locale are not acceptable timezones. Event cards are not head-to-head matches. A published schedule does not prove absence of amendments.</p>
+<h2 id="model">Independent models, with limitations</h2><h3>Season-record winner model</h3>
+<pre><code>strength_A = (wins_A + 2) / (games_A + 4)
+strength_B = (wins_B + 2) / (games_B + 4)
+P(A) = A × (1 − B) / [A × (1 − B) + B × (1 − A)]</code></pre>
+<p>Beta(2,2) shrinkage followed by log5. The prior is a disclosed assumption, not a factual rating. Both sides need at least five games, compatible competition/season/as-of periods, internally consistent records and fresh evidence. A missing side produces no price, not a 50% fallback or assumed rating. No home advantage, player adjustment, bookmaker odds or tip share is inserted.</p>
+<p>NHL wins include overtime/shootout wins. Binary defeats equal regulation plus overtime/shootout losses; points percentage is not win probability. NHL goals include shootout adjustments, so these aggregates do not establish regulation totals. EuroLeague Real Madrid’s contradictory record is excluded.</p>
+<h3>Baseball score approximation</h3>
+<pre><code>λ_A = (A runs scored / A games + B runs allowed / B games) / 2
+λ_B = (B runs scored / B games + A runs allowed / A games) / 2
+P(scores) = Poisson(λ_A) × Poisson(λ_B), conditional on A ≠ B</code></pre>
+<p>Each side needs at least 30 games and verified run totals. This independent final-score approximation conditions out ties; it does not simulate extra innings, starters, park, weather, rosters, bullpens or postseason effects. Its variance assumption and absence of calibration are material limitations. Numerical score tails are checked, not silently discarded.</p>
+<p>Research handicaps are fixed at side A −1.5 and +1.5 runs. Three half-run totals are centered at floor(λ_A + λ_B) + 0.5. These are originated lines, not claims of bookmaker availability. No alternate is searched to manufacture a 70% pick. Two-way probabilities are complementary and fair prices add zero margin. An equal estimate has no arbitrary preferred side.</p>
+<h3>Other markets</h3><p>Props, correct scores, sets, frames, maps, wickets, placements and outrights need compatible histories, complete fields and settlement rules. Unsupported distributions cannot be derived from a single winner rating. Every category/market family has explicit requirements in the review register.</p>
+<h2 id="price-window">The −250 to +10000 window</h2>
+<p>American −250 equals decimal 1.40; +10000 equals 101.00. Fair zero-margin probabilities are 71.4286% and 0.9901%. Requiring a probability above 70% leaves only about 70%–71.43% overlap. A heavy favorite is not automatically High, and changing a handicap is not evidence of predictive reliability.</p>
+<pre><code>fair decimal = 1 / model probability
+American = 100 × (decimal − 1)      if decimal ≥ 2
+American = −100 / (decimal − 1)     if 1 &lt; decimal &lt; 2</code></pre>
+<p>Decimal display uses four places and American half-away-from-zero rounding. The band test uses the unrounded estimate, not a rounded −250. Probabilities and prices are never clamped to fit the window. Actual bookmaker quote, timestamp, margin, edge and availability remain blank. Fair-price eligibility never implies an available offer.</p>
+<h2 id="confidence">Confidence is not just probability</h2>
+<p><strong>Low:</strong> an experimental estimate without validated temporal holdout. <strong>Medium and High:</strong> not released by this model version. No measured calibration artifact exists. A change requires a model-version update, out-of-sample evaluation, verified current player/form/history context, and an eligible available quote. A “calibrated” Boolean or inherited label cannot unlock High.</p>
+<p>A High prediction would also require at least 30 original, matchup-specific words, an explicit market/selection, both participants and verified recent history. No High means no invented prose to fill the page.</p>
+<h2 id="automation">Freshness, automation & failures</h2><ul>
+<li>Rolling source-date window: today plus six days using the UTC build clock. Exact UTC starts are shown separately; a source-local date is not silently recast.</li>
+<li>Fixture evidence expires six hours after the <em>earliest</em> observation-window bound. Statistical inputs expire after 24 hours. A rebuild never extends those times.</li>
+<li>An elapsed start, final, cancellation or in-progress status cannot produce a new pre-match pick. Unknown status remains explicit.</li>
+<li>The browser rechecks expiry every 30 seconds, withholding stale/elapsed estimates even without a new deployment. Downloaded JSON is an as-of snapshot, not a live betting feed.</li>
+<li>Continuous structured schedule adapters cover NHL, MLB and NBA. Other pages are probed but not promoted without a schema-checked adapter. Selected document excerpts expire: automation does not certify 17-sport completeness.</li>
+<li>GitHub Actions attempts refreshes every three hours and publishes a static artifact. Network, robots and schema failures are logged as gaps, never synthetic empty slates. A broken test, build or deployment must be fixed; disclosed data gaps do not block a valid release.</li>
+<li>The bounded client identifies the project and Python-urllib, obeys robots, validates HTTPS publishers/redirects, and never uses private endpoints, proxies, credentials or identity rotation.</li></ul>
+<p>The development environment may not reach publishers. Scheduled attempts do not guarantee success; inspect the <a href="sources.html#network">actual attempt ledger</a>.</p>
+<h2>Archive policy</h2><p>Earlier root and parallel desks remain behind an archive gateway. Their values and predictions are historical claims, not approved selections. The inventory includes mirrors and aliases with exact file/JSON-pointer locators. Row occurrences are not unique verified matches.</p>
+<p>Independent project, not affiliated with or endorsed by OLBG. No guaranteed profits or personalized staking advice. Predictions can be wrong.</p>
+</article>

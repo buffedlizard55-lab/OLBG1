@@ -23,6 +23,7 @@ def refresh(directory=CURRENT,timeout=10,probe=True):
     # Raw evidence is latest-run only, bounded by fixed sources/crawl limit. Old
     # tool imports have immutable separate IDs and are not silently restamped.
     for path in (directory/'raw').glob('*.body'):path.unlink()
+    for path in (directory/'evidence').glob('http-*.json'):path.unlink()
     specs=[
         ('http-nhl-schedule','ice-hockey','nhl',f'https://api-web.nhle.com/v1/schedule/{first}',nhl_schedule,()),
         ('http-mlb-schedule','baseball','mlb',f'https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate={first}&endDate={last}&hydrate=team,venue',mlb_schedule,(season,)),

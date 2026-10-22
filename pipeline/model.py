@@ -56,8 +56,14 @@ def record_ok(r, at):
         return False
     if 'points' in r and r['points'] != 2 * r['wins'] + ot:
         return False
-    start = parse_time(r['observed_after'])
-    end = parse_time(r['observed_before'])
+    try:
+        start = parse_time(r['observed_after'])
+        end = parse_time(r['observed_before'])
+        from datetime import date
+        if date.fromisoformat(r['as_of']) > at.date():
+            return False
+    except (KeyError, ValueError, TypeError, AttributeError):
+        return False
     if start > end or end > at or at - start > timedelta(hours=STATS_TTL_HOURS):
         return False
     return True
@@ -142,8 +148,9 @@ def originate(row, statistics, at):
         for side in ('participant_a', 'participant_b'):
             identity = f[side+'_id']
             # Only exact official IDs or explicitly captured exact names; never fuzzy-join.
-            options = [r for r in statistics if r['competition'] == f['competition'] and r['season'] == f['season']
-                       and r['team_id'] == identity and record_ok(r, at)]
+            options = [r for r in statistics if identity is not None and f['competition'] is not None and f['season'] is not None
+                       and r.get('competition') == f['competition'] and r.get('season') == f['season']
+                       and r.get('team_id') == identity and record_ok(r, at)]
             options.sort(key=lambda r: (r['observed_after'], r['id']), reverse=True)
             inputs.append(options[0] if options else None)
         a, b = inputs
