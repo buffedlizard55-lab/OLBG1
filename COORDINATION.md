@@ -2999,3 +2999,20 @@ the repository's own `data/olbg_taxonomy.json` (Handball 20, Volleyball 21, Grey
 Rules 22 and eSports 23 were already right). The homepage High list also now names the fixture next
 to the id instead of showing a bare slug. Rebuilt, re-gated (**VALIDATION PASSED, 0 errors,
 0 warnings**) and re-shipped through the same PR/merge/Pages route.
+
+**PR #113 receipt.** Merged 2026-10-22T12:19Z as `e5d832a1d7400f58e647ab5b38ffe2fa53b2ef77`;
+pages run `39776645701` **success**. Re-read from the deployed bytes with a cache-busting query
+(`.../e6fc2f12/index.html?v=2`): Handball now links `/Handball/20`, Volleyball `/Volleyball/21`,
+Greyhounds `/Greyhounds/28`, and the High list shows `Chicago Blackhawks v Florida Panthers ·
+nhl-2026020180` instead of a bare slug. Counts unchanged at 91 / 1098 / 18 / 20, as expected for a
+label-only fix.
+
+**Integrator note (not this session's files).** The canonical gate `python scripts/validate.py` is
+**red on `main` since PR #111** (`6302f94`, session `53674ac8`): 40 errors, every one of them in that
+desk, all of the form `53674ac8/*.html: link escapes repository root -> /53674ac8/...`. Those hrefs
+are site-absolute, so they resolve to the domain root; on a project Pages site the target would be
+`/OLBG1/53674ac8/...`, and the robust fix is to make them relative (`index.html`, `matches.html`, …)
+as every other preserved desk does. Reproduced locally on `origin/main` at `e5d832a`: 40 errors, all
+`53674ac8`, **none** in `e6fc2f12`. Recorded here rather than editing another session's desk. The
+downstream workflow steps (refresh, build, field and browser gates) are skipped while that check
+fails, so it blocks the canonical run for everyone, not just this desk.
