@@ -27,7 +27,7 @@ No file outside that scope was modified. `git status` after running the reposito
 | Live OLBG harvest, 17 sports / 133 rows | `data/1a421e41/olbg_harvest_raw.py` | 12-field tuples per card |
 | Official-source register | `data/1a421e41/official_evidence.py` | 6 official bodies + 21 rejected sources |
 | Desk builder | `scripts/s1a421e41_build.py` | deterministic, no network |
-| Desk data | `data/1a421e41/desk.json` | 139 rows, 2940 markets |
+| Desk data | `data/1a421e41/desk.json` | 139 rows, 1642 markets |
 | Independent validator | `scripts/s1a421e41_validate.py` | **PASS, 0 errors, 0 warnings** |
 | Site renderer | `scripts/s1a421e41_site.py` | 32 pages |
 | Published dashboard | `1a421e41/` | 4.2 MB, 0 broken relative links |
@@ -286,6 +286,50 @@ asset, 0 broken relative links.
   have moneyline-only or no origination, and their rows are capped at Medium or Low. This is a
   coverage limit of the session, not a modelling choice.
 * WTA pages were not fetched, so tennis evidence is ATP-only.
+## 11. Three defects found only by reading the deployed pages
+
+All three shipped in PR #94, were invisible to every gate in the repository, and were caught by
+fetching the live URLs and reading them. Recorded because the lesson generalises: a green validator
+proves the data is consistent, not that the page reads correctly.
+
+1. **Literal `%%` in rendered prose** (PR #98). Three strings were assembled without a `%` operator,
+   so an escaped `%%` reached the browser: the High-confidence lede on `index.html`, the Rejected
+   Highs heading on `window.html`, and the Rejected Highs lede on three sport pages. Valid HTML,
+   valid prose, no gate could see it. Fixed at the generator so a rebuild cannot reintroduce it.
+
+2. **Ladders emitted saturated rungs.** Both ladders ran to `3.0 × sigma` and kept emitting after the
+   probability clipped, producing dozens of numerically identical rows at the 0.94 ceiling and the
+   0.06 floor — one fixture printed 32 near-identical rejected rows. Both ladders now stop before the
+   first saturated rung. Markets fell **2938 → 1642** and no rung sits on a clipped probability. The
+   totals guard had to measure the *farther* side of the centre, because the ladder base sits on the
+   half-point grid while the centre generally does not, so the low rungs saturate first.
+
+3. **Handicap line signs contradicted their own labels.** `home −7.5` was stored as `+7.5` and
+   `away +9.5` as `−9.5`. The sign now follows the label — home gives points, away receives them.
+   `offset` is documented as the cushion between the line and our expected margin measured in the
+   bet's direction, which is the quantity the tightest-rung rule actually compares.
+
+The rejected-Highs ledger was also trimmed from **410 rows to 15**: it now prints only the
+informative entries per fixture (the match winner when a genuine favourite is priced too short, and
+the nearest miss to the −250 floor). The full count is kept on every row as `rejected_high_count` and
+the complete ladder remains on the markets page, so nothing is silently dropped. `window.html` went
+from 247 KB to 16 KB and the site from 4.2 MB to 2.4 MB.
+
+**None of the three changed a single High pick or price.** All ten selections and their American
+prices are identical before and after, which is the check that matters: these were presentation and
+data-hygiene defects, not model defects.
+
+The validator gained three gates so they cannot regress: no rung may sit on a clipped probability, a
+handicap label's sign must agree with its stored line, and the ledger must stay readable with no
+repeated kind.
+
+**Process note, recorded honestly.** While re-running the repository's validators I used
+`git checkout -- .` to discard files those validators had regenerated in other sessions' scopes. It
+also discarded this session's then-uncommitted ladder and ledger fixes, which had to be re-applied.
+Nothing was lost from `main` — the work was re-created and verified identical — but the correct
+practice is to commit before running any command that reverts the working tree, and to revert by
+explicit path rather than with `.`.
+
 * The σ constants are our assumptions. They are published with the sensitivity table in §4 so a
   reviewer can see exactly how much of the result they carry — and the honest answer is that the
   High/Not-High boundary on several fixtures moves by a few American points under a plausible σ
