@@ -1,75 +1,29 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Motor Racing · OLBG Reverse-Engineering &amp; Origination Desk</title>
-<meta name="description" content="Source-linked multi-sport match dataset, independent multi-market betting lines, confidence tiers, and human analysis across all 17 in-scope OLBG sports.">
-<link rel="stylesheet" href="../assets/style.css">
-</head>
-<body>
-<header class="site-header">
-  <div class="hdr-inner">
-    <div class="brand"><a href="../index.html"><span class="dot"></span> OLBG Origination Desk <span class="sub">2026-10-22 UTC</span></a></div>
-    <nav class="main" aria-label="Primary navigation"><a href="../index.html">Overview</a><a href="../live-refresh.html">Live Refresh (141)</a><a href="../picks.html">All Lines (126)</a><a href="../predictions.html">High Picks (29)</a><a href="../sports.html" aria-current="page">17 Sports</a><a href="../analysis.html">Market Analysis</a><a href="../methodology.html">Methodology</a><a href="../reverse-engineering.html">OLBG Audit</a><a href="../sources.html">Official Sources</a><a href="../live-verification.html">Live Verification</a><a href="../flagged.html">Flagged for Review</a><a href="../2360a617/index.html">OLBG-152 Board</a></nav>
-  </div>
-  <div class="companion-bar">
-    <div class="companion-inner">
-      <span>Repository workspaces:</span>
-      <a href="../index.html">Primary Root Desk (134 source-linked)</a>
-      <a href="../984d417f/index.html">984d417f Live Audit &amp; 145-Event Desk</a>
-      <a href="../c17a9192/index.html">c17a9192 Catalog (217)</a>
-      <a href="../ccb6bde2/index.html">ccb6bde2 Markets (126)</a>
-      <a href="../f7fa77fc/index.html">f7fa77fc Permalink Mirror</a>
-      <a href="../docs/index.html">4f44f7d9 Board (164 OLBG)</a>
-      <a href="../ebfbd966/index.html">ebfbd966 Board (133)</a>
-      <a href="../aa4e9dbf/index.html">aa4e9dbf Desk (131)</a>
-      <a href="../7a5b5360/index.html">7a5b5360 Fresh Desk (32 &middot; 22&ndash;26 Oct 2026)</a>
-      <a href="../a570c470/index.html">a570c470 Desk (141 &middot; 22&ndash;28 Oct 2026)</a>
-      <a href="../9dfd0b48/index.html">9dfd0b48 Matchday Desk (29 &middot; 22&ndash;24 Oct 2026)</a>
-      <a href="../f71557b5/index.html">f71557b5 Desk (72 &middot; 15 High in -250..+10000)</a>
-      <a href="../8fc47dcb/index.html">8fc47dcb Fresh Desk (73 future &middot; 7 High &ge;70% in window, re-verified 22 Oct)</a>
-      <a href="../v3/index.html">v3 Consolidated (127 &middot; 10 High 70%+ in window)</a>
-      <a href="../6a081cf6/index.html">6a081cf6 Strict Band (9 High)</a>
-      <a href="../2360a617/index.html">2360a617 Board (152)</a>
-    </div>
-  </div>
-</header>
-<main>
-<aside role="note" style="padding:20px;margin-bottom:24px;border:2px solid #e9b949;background:#302817;color:#fff">
-  <b>Historical snapshot — current facts and picks are not recertified.</b>
-  The 2026-10-22 release audit could not reach official sports sources. Existing “Verified” and “High” labels below are prior repository claims, not fresh verification or calibrated confidence. Some stored starts have passed; the primary High tier permits a 60% floor. Do not treat this snapshot as a complete live match list.
-  <a style="color:#9ee5ff" href="../release-review.html">Flagged for Review: row-by-row release audit and blank approved picks</a>.
-</aside>
-
-<div class="crumb"><a href="../sports.html">&larr; All 17 In-Scope Sports</a></div>
-<h1>Motor Racing — Source-Linked Fixtures &amp; Originated Markets</h1>
-<p class="lede">Formula 1 United States Grand Prix at COTA (20-car field race at 20:00 UTC; not a two-sided fixture).</p>
-
-<div class="grid kpis">
-  <div class="kpi "><div class="n">1</div><div class="l">Events in Dataset</div></div>
-  <div class="kpi "><div class="n">1/1</div><div class="l">Governing-Body Verified</div></div>
-  <div class="kpi hi"><div class="n">0</div><div class="l">High-Confidence Picks</div></div>
-  <div class="kpi "><div class="n">0.5</div><div class="l">Home Win Baseline</div></div>
-  <div class="kpi "><div class="n">2.0</div><div class="l">Margin Sigma</div></div>
-  <div class="kpi "><div class="n">Field</div><div class="l">Base Total Line</div></div>
-</div>
-
-<div class="toolbar">
-  <div class="toolbar-group" role="group" aria-label="Odds format"><span class="sub" style="display:inline;margin-right:3px">Odds:</span><button type="button" class="chip is-active" data-odds-fmt="dec" aria-pressed="true">Bookmaker (5% vig)</button><button type="button" class="chip" data-odds-fmt="fair" aria-pressed="false">Fair (0% vig)</button><button type="button" class="chip" data-odds-fmt="us" aria-pressed="false">US (+/-)</button></div>
-  <a href="#" id="open-all" class="chip" data-state="closed">Expand all markets</a>
-  <a href="https://www.olbg.com/betting-tips/Motor_Racing/14" target="_blank" rel="noopener" class="chip" style="margin-left:auto">Open OLBG Motor Racing hub &nearr;</a>
-</div>
-
-<div class="table-wrap"><table><thead><tr><th>UTC Kick-off / Start</th><th>Match / Event & Venue</th><th>Competition</th><th>Winner Line</th><th>Handicap & Total</th><th>Pick & Markets</th><th>Confidence</th><th>Official Sources</th></tr></thead><tbody><tr data-conf="low" data-sport="motor-racing"><td style="white-space:nowrap">25 Oct 21:00 UTC</td><td><span class="match-name">United States Grand Prix</span><span class="sub">Circuit of The Americas, Austin, TX</span><span class="flag-inline">20-car Grand Prix field market (not a two-sided fixture)</span><span class="flag-inline">Race start re-verified independently on 2026-10-21T07:25Z at formula1.com/en/racing/2026/united-states: 25 October, 56 laps, Circuit of The Americas, 16:00 track time. Austin is on CDT (UTC-5) on that date, so the start is 21:00 UTC; the earlier 20:00 UTC value and &#x27;EDT&#x27; label were wrong by an hour.</span><span class="flag-inline">Round number removed: the linked official race page does not display one.</span></td><td>FIA Formula One World Championship<span class="sub">United States Grand Prix (56 laps)</span></td><td style="white-space:nowrap"><span class="badge event">Multi-runner field</span></td><td style="font-size:.81rem;white-space:nowrap">—</td><td><span class="sub">Event-only card (not a 2-way fixture; see official field sheet)</span></td><td><span class="badge event">Field card</span><span class="sub"><span class="badge verified">Verified</span></span></td><td><div class="src-links"><a href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener">Formula 1 official 2026 United States Grand Prix hub</a><a href="https://www.olbg.com/betting-tips/Motor_Racing/14" target="_blank" rel="noopener">[OLBG upstream]</a></div></td></tr></tbody></table></div>
-
-
-</main>
-<footer class="foot">
-  <p><b>OLBG Reverse-Engineering &amp; Origination Desk</b> — 17 in-scope sports · 134 source-linked events (129 verified · 5 cross-checked) · multi-market lines &amp; human analysis.</p>
-  <p>Every fixture, ranking, and record links directly to its governing body. Unconfirmed values are left explicitly blank and logged on <a href="../flagged.html">Flagged for Review</a>. Independent mathematical probabilities only — not financial or gambling advice.</p>
-  <p>Downloads: <a href="../datasets/matches_full.json">matches_full.json</a> · <a href="../datasets/matches_full.csv">matches_full.csv</a> · <a href="../datasets/flagged_for_review.json">flagged_for_review.json</a> · <a href="../datasets/olbg_sports_registry.json">olbg_sports_registry.json</a></p>
-</footer>
-<script src="../assets/app.js"></script>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Motor racing evidence and analysis · OLBG1</title><meta name="description" content="Motor racing evidence and analysis">
+<link rel="icon" type="image/svg+xml" href="../assets/release-mark.svg"><link rel="stylesheet" href="../assets/release.css"><script src="../assets/release.js" defer></script>
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="mast"><div class="mast-inner"><a class="brand" href="../index.html">OLBG1<span>INDEPENDENT RESEARCH DESK</span></a>
+<nav aria-label="Main navigation"><a href="../index.html">Overview</a><a href="../sports.html" aria-current="page">Sports</a><a href="../picks.html">Models</a><a href="../coverage.html">Coverage</a><a href="../flagged.html">Flagged for Review</a><a href="../archive/index.html">Archive</a></nav></div></header>
+<main id="main"><p class="eyebrow">Evidence-led snapshot · 2026-10-22 UTC</p>
+<h1>Motor racing</h1><p class="lede">USA GP event verified; grid/entries and other motorsport competitions not exhausted. No driver lines.</p><div class="notice" role="note"><strong>No approved High-confidence selections.</strong>
+Officially supported fixture fields are separated from experimental model prices. No held-out calibration or matching bookmaker settlement was verified.
+Missing facts remain blank. <a href="../flagged.html">See all review items</a> · <a href="../methodology.html">Read the assumptions</a>.</div>
+<div class="panel small"><strong>Coverage status:</strong> <span class="badge partial">partial</span> · Not exhaustive. <div class="sources"><a href="https://www.formula1.com/en/racing/2026/united-states" rel="noopener noreferrer" target="_blank" title="Race Oct 25; practice Oct 23, qualifying Oct 24; COTA 56 laps, 5.513 km.">Formula 1 official United States GP</a><a href="https://www.olbg.com/betting-tips/Motor_Racing/14" rel="noopener noreferrer" target="_blank" title="First rendered chunk only; discovery, not official verification.">OLBG Motor racing discovery hub</a></div></div>
+<div class="section"><div class="toolbar" data-toolbar><label>Search<input type="search" placeholder="Team, event or league" aria-label="Search table"></label><span class="result-count" data-result-count aria-live="polite"></span></div><div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable data table"><table ><caption>¹ Experimental research only. No approved selections. Numeric fields stay blank if exact future timing, freshness or paired inputs are missing.</caption><thead><tr><th scope="col">Fixture / event</th><th scope="col">Start (UTC)</th><th scope="col">Time &amp; evidence status</th><th scope="col">Projected winner¹</th><th scope="col">Fair odds / model %¹</th><th scope="col">Confidence¹</th><th scope="col">Official evidence</th></tr></thead><tbody><tr data-search="United States Grand Prix Formula 1 United States Grand Prix motor-racing" data-sport="motor-racing" data-start="" data-expires="2026-10-23T00:00:00Z"><td class="fixture-name"><a href="../sports/motor-racing.html#f1-us-2026">United States Grand Prix</a><small>Formula 1 United States Grand Prix · 2026-10-25</small></td>
+<td class="small nowrap"></td><td><span data-live-status><span class="badge time-unconfirmed">UTC unconfirmed</span></span></td>
+<td data-live-projection class="blank"></td><td data-live-projection class="blank"></td><td data-live-projection></td>
+<td><div class="sources"><a href="https://www.formula1.com/en/racing/2026/united-states" rel="noopener noreferrer" target="_blank" title="Race Oct 25; practice Oct 23, qualifying Oct 24; COTA 56 laps, 5.513 km.">Formula 1 official United States GP</a></div></td></tr></tbody></table></div></div>
+<div class="section"><h2>Fixture evidence & context</h2><article class="research-card" id="f1-us-2026" data-start="" data-expires="2026-10-23T00:00:00Z"><h3>United States Grand Prix</h3>
+<div class="kicker"><span data-live-status><span class="badge time-unconfirmed">UTC unconfirmed</span></span><span class="small muted">Formula 1 United States Grand Prix · 2026-10-25</span></div>
+<p class="small"><strong>Participant order:</strong> listed order (not home-away). <strong>Exact UTC:</strong> .
+<strong>Printed clock / qualifier:</strong> .</p>
+<ul class="fact-list"></ul><p class="small muted">Event-level only. Grid, driver field, recent pace, reliability and market rules not verified; no driver pick.</p>
+<div class="sources"><a href="https://www.formula1.com/en/racing/2026/united-states" rel="noopener noreferrer" target="_blank" title="Race Oct 25; practice Oct 23, qualifying Oct 24; COTA 56 laps, 5.513 km.">Formula 1 official United States GP</a></div>
+<details><summary>Model inputs & approval blockers</summary><p class="muted small">Paired performance inputs: unconfirmed. Winner, confidence and fair odds remain blank.</p><ul class="fact-list"><li>Missing paired verified model inputs; no neutral fallback price</li></ul>
+<p class="small muted">Evidence expires conservatively at 2026-10-23T00:00:00Z. Build time does not renew it.</p></details></article></div>
+<div class="section"><h2>Experimental model markets</h2><div class="empty">No paired source-backed inputs support numerical prices for this category. No equal-strength fallback is used.</div></div>
+</main><footer><p><strong>Research, not a betslip.</strong> Zero approved bets; experimental estimates are not a verified win rate. Odds are zero-vig fair model prices, not bookmaker offers.</p>
+<p>Built 2026-10-22T07:57:07Z. Source observation dates are independent of build time. This build never renews a source check. Blank values mean unconfirmed, not zero.</p>
+<p>Not affiliated with OLBG. 18+ · Never bet money you cannot afford to lose. <a href="https://www.ncpgambling.org/help-treatment/">US gambling support</a> ·
+<a href="../sources.html">Sources</a> · <a href="../methodology.html">Methodology</a> · <a href="../audit.html">Audit scope</a> · <a href="../reverse-engineering.html">OLBG discovery</a></p></footer></body></html>

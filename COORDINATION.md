@@ -119,6 +119,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T58 | **Consolidated final desk (2026-10-22):** independent live re-fetch of key governing-body sources, cross-desk reconciliation into one clean dashboard (`/e6716490/`, landing + 17 category subpages + predictions + Flagged + methodology + sources + repo audit), own line origination across every covered match, strict −250…+10000 High band, unique ≥30-word human predictions, repo validator gate, PR + merge + Pages deploy check | done | e6716490-olbg1 | `data/e6716490/**`, `scripts/se6716490_*.py`, `e6716490/**`, `reports/SESSION_E6716490.md`, `COORDINATION.md` (append-only §43), additive nav entry in root `index.html`/`README.md` at integration only | 2026-10-22T07:20Z | Claimed as `T55`/`§40`; renumbered to `T58`/`§43` after `8cab6428-olbg1` took T55 and `cccb414e`/`3d2d578a` took T56/T57 (see §43). 122 fixtures / 17 sports, 1,575 markets, 9 High, 9 predictions, 3 live re-reads, 25-page site, gates pass. |
 | T59 | **Independent live 22 Oct 2026 re-verification of all 17 in-scope sports (excluding soccer, horse racing, american football, boxing, UFC/MMA, specials, hurling, cycling), full 68-market taxonomy, continuous multi-market origination with strict −250…+10000 high-confidence band, unique 30+ word human predictions with verified team/player/form/history, and 26-page clean dashboard (`/7ad0d336/`) + validator + PR/merge/Pages check** | done | 7ad0d336-olbg1 | `data/7ad0d336/**`, `scripts/s7ad0d336_*.py`, `7ad0d336/**`, `reports/SESSION_7AD0D336.md`, append-only `COORDINATION.md` | 2026-10-22T07:35Z | 127 fixtures / 13 High (all in-window, 0 dups) / 1,386 markets / 29 pages / gates PASS. See §44 for publish record. |
 | T60 | **Fresh 22-Oct future-only desk**: live OLBG sitemap/hub re-read, expiry of all started primary rows at an explicit cutoff, in-session re-fetch (via page-fetch tool) of official governing-body pages for every remaining candidate High pick, strict High rule (selected-line model prob >=0.70 AND originated price inside -250..+10000), new unique >=30-word predictions built only from facts read this session, clean namespaced dashboard + Flagged page, validator gate, PR + merge + Pages check | done | 8fc47dcb-olbg1 | `8fc47dcb/**`, `data/8fc47dcb/**`, `scripts/s8fc47dcb_*.py`, `reports/SESSION_8FC47DCB.md`, append-only `COORDINATION.md` (§45); root `index.html`/`scripts/build_site.py`/`README.md` touched only as a single additive companion link at final integration if conflict-free, otherwise logged in §4 | 2026-10-22T07:26Z | Claimed as T57/§42 at 07:26Z when those were free; renumbered T60/§45 at merge because 3d2d578a (T57/§42), e6716490 (T58/§43) and 7ad0d336 (T59/§44) merged first (PRs #79–#86). No session's work discarded. No other session's data, generator or pages edited. |
+| T61 | **Final root integration takeover:** reconcile the stale PR #63 consolidation, freshly read official sources, quarantine unsupported/completed rows, publish one source-linked dashboard with strict confidence/odds/freshness gates, automated refresh checks, tests, PR + merge + Pages confirmation | in progress | 6ad5a3a8-olbg1 | `data/release/**`, `scripts/release_*.py`, `scripts/final_*.py` (adopted from PR #63 if useful), `tests/release/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`, `.github/workflows/**`, append-only `COORDINATION.md`; historic session namespaces remain unchanged | 2026-10-22T07:20Z | Final integration session. PR #63 last commit 03:00Z (>60 min); root owners T19/T12 are also stale. Assigned Arena branch retained. No fresh parallel desk. |
 
 ---
 
@@ -2282,3 +2283,93 @@ Root T35 (AFLW re-price), T10/T11/T12/T19 (older queued), PR #40 (open/conflicti
 - The GitHub REST API rate-limited this account during the deploy check (HTTP 403 at 08:00–08:01Z); live-state checks were therefore made by fetching the published `github.io` URLs directly.
 
 ---
+
+## 46. Session `6ad5a3a8-olbg1` — T61 final primary-site integration
+
+**2026-10-22T07:20Z — claim and stale-task handoff.** Read the board, source rules, latest
+reports and open PR list. Main is `425b63f` (PR #71); Pages reports built. PR #63
+(`26be136b-olbg1`) has no commit since 03:00Z, so the >60-minute handoff rule applies.
+This final integration session takes over the root consolidation scope, not a new competing
+desk, and will preserve all namespaced session outputs. PR #63's useful work will be credited
+and retained where compatible with current main. The same stale root-file claims in T12/T19
+are superseded only for integration. No other session's namespaced files are claimed.
+
+**Branch deviation:** as already required by §0.2, all work, pushes and the integration PR use
+`arena/6ad5a3a8-olbg1`; no task branch or worktree is created.
+
+**Evidence discipline:** fetch tools can read official pages even though direct shell egress is
+restricted. Re-read facts will have field-level evidence and timestamps; inherited facts will
+not be relabelled freshly verified. Missing, conflicted, completed or unsupported values
+will not be converted into live recommendations. Confidence is a model estimate, not a
+verified win rate; market odds cannot be manufactured from tip shares. Coverage limits and
+model limitations will be published on Flagged for Review and will not block deployment.
+
+**Coordination conflict resolution:** upstream PRs #72–#76 advanced main during this
+research pass and completed the other root integration/release audits. Preserved all their
+rows, sections, reports, and release-review implementation. Our colliding T55 / §40 is
+renumbered **T61 / §46**. Root integration now follows those completed tasks; no live
+namespaced claim is taken. Existing `scripts/release_audit.py` and its tests will remain
+unchanged; new implementation uses distinct release_build/model/fetch/validate files.
+
+**Second collision resolution:** upstream completed T58 / §43 (`e6716490`) and
+T59 / §44 (`7ad0d336`) while this root release was being implemented. Those namespaces,
+nav additions, reports and coordination entries are preserved unchanged. Our owner-scoped
+claim is now **T61 / §46**. The primary root release remains this session’s scope.
+
+**T61 evidence checkpoint (2026-10-22):** saved `data/release/evidence.json`: all 17 OLBG
+hub first-chunk discovery reads, 46 source observations, 97 officially supported fixture/event
+extracts, and explicit partial/blocked coverage. This is **not** exhaustive worldwide or seven-day
+coverage. Corrected Efes/Bayern orientations and Nashville record against rereads. Unclear
+clocks stay blank; NHL quotes, AFLW/T35, PDC extraction, EHF Oct 28 time and inherited decided
+pick allegations are quarantined. No held-out calibration or comparable bookmaker settlement
+verified, so the release will not manufacture High selections or bettable EV.
+
+### 46.1 T61 implementation and local gates
+
+PR **#84** is open from the assigned `arena/6ad5a3a8-olbg1` branch for the canonical root
+release (not another parallel desk). New compiler/model/collector/validator files avoid the
+existing `release_audit.py` scope. Preserved T56's script, report, tests and exact
+`release-review.html` output; its five integrity tests still pass. All session namespaces,
+including `e6716490/` and `7ad0d336/`, remain untouched and discoverable in Archive.
+
+Local gates: 33 canonical pages; 97 official-linked fixture/event extracts; 30 experimental
+models / 75 markets / 165 fair outcomes; 0 approved bets / 0 High. New validator checks all
+408 HTML local-link targets and canonical fragments/table official links: PASS. All 38
+unittests PASS. Real headless Chromium/Playwright smoke: 33 routes HTTP200, desktop1440×1080,
+mobile390×844, search/filter, draw preserved, unknown UTC blank, expiry removal, no document
+horizontal overflow, no console errors: PASS. Legacy validator also passes (3 historical
+mirror-only internal-policy warnings). These gates are not official factual certification.
+
+Added least-privilege, pinned-action PR validation / Pages artifact workflow with actual UTC
+cutoffs and optional NHL/MLB-only structured refresh every six hours. Refresh failures never
+renew an old observation. Immutable per-response source IDs prevent re-stamping old fields;
+contradictory/missing future schedule entries are withdrawn as unconfirmed, not declared
+cancelled. Eight dated editorial notes are not automatically relabelled current. Large line
+register is compressed; raw API responses and browser tools are ignored deployment/scratch
+artifacts, not repository datasets. Build/publish confirmation still pending GitHub checks.
+
+**Third collision resolution:** main PR #87 added the `8fc47dcb` desk and recorded its task
+as T60 / §45 while our PR #84 remained open. Preserve that upstream task, its namespace,
+all later `e6716490` corrections and their nav additions. This final integration task is now
+**T61 / §46**. The canonical archive directory discovery includes the new desk automatically.
+
+### 46.2 Post-rebase preservation gate
+
+Rebased PR #84 onto main `31c63ba` (PR #87 included). All conflicts were confined to this
+session's coordination additions and intentionally replaced canonical root/sport HTML;
+upstream task T60/§45, all namespace bytes and source corrections were retained. The new
+archive index automatically discovers `8fc47dcb/`, `e6716490/`, `7ad0d336/` and every other
+retained desk. Post-rebase gates: **38 tests PASS**, **33 canonical / 429 total HTML pages**
+validated, all browser smoke checks PASS. Inventory at this checkpoint: **752 files / 679,683
+UTF-8 lines / 33,397 review locations**; it is an inspection aid, not manual certification.
+
+### 46.3 Publication queue and hosting permissions
+
+PR #84 head `f5ccbd1` is mergeable; its GitHub-hosted validation job remains queued with no
+runner assigned (observed 08:05Z). No failing check is being waived. Pin the supported
+Ubuntu 24.04 image for reproducibility and to avoid a moving `ubuntu-latest` pool. Local
+38-test, structural/model/link and browser gates already pass. Existing Pages is `main:/`
+legacy; the Arena integration's Pages-settings update returned API403 (restricted permission,
+not an expired GitHub login). Repository content/PR writes succeed. Do not claim an Actions
+artifact deployment until GitHub confirms it; the validated static root remains compatible
+with the existing branch-based Pages source.

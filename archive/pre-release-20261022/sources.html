@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Official Sources · OLBG Reverse-Engineering &amp; Origination Desk</title>
+<meta name="description" content="Source-linked multi-sport match dataset, independent multi-market betting lines, confidence tiers, and human analysis across all 17 in-scope OLBG sports.">
+<link rel="stylesheet" href="../../assets/style.css">
+<meta name="robots" content="noindex,nofollow"></head>
+<body><aside role="note" style="padding:18px;background:#fff2ce;color:#392b00;border-bottom:3px solid #bb8000;position:relative;z-index:9999"><strong>Archived snapshot — not current betting advice.</strong> Prior facts, prices and verification labels are unrecertified. <a style="color:#003c88;text-decoration:underline" href="../../index.html">Open the evidence-first dashboard</a>.</aside>
+<header class="site-header">
+  <div class="hdr-inner">
+    <div class="brand"><a href="index.html"><span class="dot"></span> OLBG Origination Desk <span class="sub">2026-10-22 UTC</span></a></div>
+    <nav class="main" aria-label="Primary navigation"><a href="index.html">Overview</a><a href="live-refresh.html">Live Refresh (141)</a><a href="picks.html">All Lines (126)</a><a href="predictions.html">High Picks (29)</a><a href="sports.html">17 Sports</a><a href="analysis.html">Market Analysis</a><a href="methodology.html">Methodology</a><a href="reverse-engineering.html">OLBG Audit</a><a href="sources.html" aria-current="page">Official Sources</a><a href="live-verification.html">Live Verification</a><a href="flagged.html">Flagged for Review</a><a href="../../2360a617/index.html">OLBG-152 Board</a></nav>
+  </div>
+  <div class="companion-bar">
+    <div class="companion-inner">
+      <span>Repository workspaces:</span>
+      <a href="index.html">Primary Root Desk (134 source-linked)</a>
+      <a href="../../984d417f/index.html">984d417f Live Audit &amp; 145-Event Desk</a>
+      <a href="../../c17a9192/index.html">c17a9192 Catalog (217)</a>
+      <a href="../../ccb6bde2/index.html">ccb6bde2 Markets (126)</a>
+      <a href="../../f7fa77fc/index.html">f7fa77fc Permalink Mirror</a>
+      <a href="../../docs/index.html">4f44f7d9 Board (164 OLBG)</a>
+      <a href="../../ebfbd966/index.html">ebfbd966 Board (133)</a>
+      <a href="../../aa4e9dbf/index.html">aa4e9dbf Desk (131)</a>
+      <a href="../../7a5b5360/index.html">7a5b5360 Fresh Desk (32 &middot; 22&ndash;26 Oct 2026)</a>
+      <a href="../../a570c470/index.html">a570c470 Desk (141 &middot; 22&ndash;28 Oct 2026)</a>
+      <a href="../../9dfd0b48/index.html">9dfd0b48 Matchday Desk (29 &middot; 22&ndash;24 Oct 2026)</a>
+      <a href="../../f71557b5/index.html">f71557b5 Desk (72 &middot; 15 High in -250..+10000)</a>
+      <a href="../../v3/index.html">v3 Consolidated (127 &middot; 10 High 70%+ in window)</a>
+      <a href="../../6a081cf6/index.html">6a081cf6 Strict Band (9 High)</a>
+      <a href="../../2360a617/index.html">2360a617 Board (152)</a>
+    </div>
+  </div>
+</header>
+<main>
+<aside role="note" style="padding:20px;margin-bottom:24px;border:2px solid #e9b949;background:#302817;color:#fff">
+  <b>Historical snapshot — current facts and picks are not recertified.</b>
+  The 2026-10-22 release audit could not reach official sports sources. Existing “Verified” and “High” labels below are prior repository claims, not fresh verification or calibrated confidence. Some stored starts have passed; the primary High tier permits a 60% floor. Do not treat this snapshot as a complete live match list.
+  <a style="color:#9ee5ff" href="release-review.html">Flagged for Review: row-by-row release audit and blank approved picks</a>.
+</aside>
+
+<h1>Official Governing-Body Source Registry</h1>
+<p class="lede">All 20 primary authorities used to verify fixtures, kick-off times, rankings, standings, and recent match history across the repository.</p>
+
+<div class="note">
+  <b>Fresh official-source re-verification:</b> <a href="live-verification.html">Live Verification</a> records a dated, page-by-page re-fetch of 78 of the 134 rows against their governing bodies, lists the 32 corrections it produced, and names the 56 rows this pass did not re-read. It is the first pass in this repository to re-open the official pages rather than audit the dataset structure.
+</div>
+
+<div class="note">
+  <b>Line-by-line audit report:</b> Open the current <a href="../../reports/FINAL_INTEGRATION_AUDIT.md">Final Integration Audit</a> for every primary fixture, its exact governing-body links, market coverage and review flags. The independently published <a href="../../reports/POST_INTEGRATION_AUDIT.html">Post-Integration Review</a> records historical F1–F3 audit boundaries; its F1 prose issue was corrected in the generated predictions, while source freshness and five Cross-checked Premiership rows remain flagged. Historical context remains in <a href="../../reports/REPO_LINE_BY_LINE_AUDIT.md">REPO_LINE_BY_LINE_AUDIT.md</a> and <a href="../../reports/OLBG_REVERSE_ENGINEERING.md">OLBG_REVERSE_ENGINEERING.md</a>.
+</div>
+
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>ID</th><th>Official Authority</th><th>Sport</th><th>Verified Fields</th><th>Official Endpoint</th></tr></thead>
+    <tbody><tr><td><code>olbg</code></td><td><b>OLBG Sports Betting Tips Sitemaps &amp; Sport Hubs</b></td><td>all</td><td>Upstream taxonomy, event IDs, tip consensus, defect audit</td><td><a href="https://www.olbg.com/sitemap-betting-tips.xml" target="_blank" rel="noopener">https://www.olbg.com/sitemap-betting-tips.xml</a></td></tr><tr><td><code>nhl</code></td><td><b>NHL Official Web API (Schedule &amp; Standings)</b></td><td>ice-hockey</td><td>Fixtures, venues, UTC times, W-L-OT, points %, goal diff</td><td><a href="https://api-web.nhle.com/v1/schedule/2026-10-21" target="_blank" rel="noopener">https://api-web.nhle.com/v1/schedule/2026-10-21</a></td></tr><tr><td><code>nba</code></td><td><b>NBA Official Schedule &amp; Standings</b></td><td>basketball</td><td>2026-27 opening-week slate, arenas, prior-season baseline</td><td><a href="https://www.nba.com/games?date=2026-10-21" target="_blank" rel="noopener">https://www.nba.com/games?date=2026-10-21</a></td></tr><tr><td><code>euroleague</code></td><td><b>EuroLeague &amp; BKT EuroCup Official Feeds</b></td><td>basketball</td><td>Round 7 EuroLeague &amp; Round 4 EuroCup fixtures and W-L standings</td><td><a href="https://www.euroleaguebasketball.net/en/euroleague/game-center/" target="_blank" rel="noopener">https://www.euroleaguebasketball.net/en/euroleague/game-center/</a></td></tr><tr><td><code>mlb</code></td><td><b>MLB StatsAPI Official Postseason Schedule &amp; Standings</b></td><td>baseball</td><td>2026 World Series Games 1-4, home/road &amp; postseason records</td><td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-21&amp;endDate=2026-10-28" target="_blank" rel="noopener">https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-21&amp;endDate=2026-10-28</a></td></tr><tr><td><code>atp</code></td><td><b>ATP Tour Official Rankings &amp; Draws (Vienna / Basel)</b></td><td>tennis</td><td>ATP 500 draws, head-to-head match history, official PIF ATP rankings</td><td><a href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener">https://www.atptour.com/en/scores/current</a></td></tr><tr><td><code>wta</code></td><td><b>WTA Tour Official Rankings &amp; Draws (Ningbo / Guangzhou / Tokyo)</b></td><td>tennis</td><td>WTA 500 &amp; WTA 250 draws, official PIF WTA rankings</td><td><a href="https://www.wtatennis.com/tournaments" target="_blank" rel="noopener">https://www.wtatennis.com/tournaments</a></td></tr><tr><td><code>wst</code></td><td><b>World Snooker Tour Official Rankings &amp; BetVictor NI Open</b></td><td>snooker</td><td>Official two-year world rankings (resolving tournament-seed confusion) &amp; R2 draw</td><td><a href="https://www.wst.tv/rankings/" target="_blank" rel="noopener">https://www.wst.tv/rankings/</a></td></tr><tr><td><code>pdc</code></td><td><b>Professional Darts Corporation Machineseeker European Championship</b></td><td>darts</td><td>All 16 Round 1 ties, European Tour seeds 1-32, Westfalenhalle sessions</td><td><a href="https://www.pdc.tv/tournament/machineseeker-european-championship-1" target="_blank" rel="noopener">https://www.pdc.tv/tournament/machineseeker-european-championship-1</a></td></tr><tr><td><code>icc-nzc</code></td><td><b>ICC Official Rankings, New Zealand Cricket &amp; Cricket Australia</b></td><td>cricket</td><td>Men&#x27;s &amp; Women&#x27;s T20Is, ODI Tri-Series, NZ A v India A, Ford Trophy Round 1</td><td><a href="https://scoring.nzc.nz/fixtures" target="_blank" rel="noopener">https://scoring.nzc.nz/fixtures</a></td></tr><tr><td><code>top14-urc</code></td><td><b>LNR Top 14, United Rugby Championship &amp; Premiership Rugby</b></td><td>rugby-union</td><td>Top 14 J7, URC R4, plus 5 cross-checked Gallagher Premiership fixtures</td><td><a href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener">https://top14.lnr.fr/calendrier-et-resultats</a></td></tr><tr><td><code>rlwc26</code></td><td><b>NRL / 2026 Rugby League World Cup Official Draw &amp; IRL Rankings</b></td><td>rugby-league</td><td>Men&#x27;s &amp; Women&#x27;s RLWC26 Round 2 fixtures, venues, R1 scores</td><td><a href="https://www.nrl.com/draw/?competition=175&amp;round=2&amp;season=2026" target="_blank" rel="noopener">https://www.nrl.com/draw/?competition=175&amp;round=2&amp;season=2026</a></td></tr><tr><td><code>ehf</code></td><td><b>European Handball Federation EHF Champions League Men</b></td><td>handball</td><td>All 12 Round 5 group fixtures, group tables, goal difference, H2H scores</td><td><a href="https://ehfcl.eurohandball.com/men/2026-27/standings/" target="_blank" rel="noopener">https://ehfcl.eurohandball.com/men/2026-27/standings/</a></td></tr><tr><td><code>volley</code></td><td><b>PlusLiga Poland &amp; Lega Pallavolo Serie A SuperLega</b></td><td>volleyball</td><td>PlusLiga &amp; Italian SuperLega regular-season fixtures, arenas, UTC times</td><td><a href="https://www.plusliga.pl/games.html" target="_blank" rel="noopener">https://www.plusliga.pl/games.html</a></td></tr><tr><td><code>aflw</code></td><td><b>Australian Football League Official 2026 NAB AFLW Ladder &amp; Fixture</b></td><td>aussie-rules</td><td>All 9 Round 11 AFLW fixtures, Round 10 ladder points &amp; W-L-D records</td><td><a href="https://www.afl.com.au/aflw" target="_blank" rel="noopener">https://www.afl.com.au/aflw</a></td></tr><tr><td><code>lolesports</code></td><td><b>Riot Games LoL Esports Worlds 2026 Official Schedule</b></td><td>esports</td><td>2026 World Championship Swiss Round 1 draw &amp; venue</td><td><a href="https://lolesports.com/en-US/" target="_blank" rel="noopener">https://lolesports.com/en-US/</a></td></tr><tr><td><code>gaa</code></td><td><b>Munster GAA, Cork GAA &amp; Galway GAA Official Championships</b></td><td>gaelic-football</td><td>4 County Senior Football Finals (proving OLBG Nov 1 date bug on ID 3536)</td><td><a href="https://munster.gaa.ie/fixtures/munster-gaa-fixtures/" target="_blank" rel="noopener">https://munster.gaa.ie/fixtures/munster-gaa-fixtures/</a></td></tr><tr><td><code>f1</code></td><td><b>FIA Formula 1 Official 2026 United States Grand Prix</b></td><td>motor-racing</td><td>COTA Austin race timetable &amp; 20:00 UTC lights out</td><td><a href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener">https://www.formula1.com/en/racing/2026/united-states</a></td></tr><tr><td><code>golf-tours</code></td><td><b>PGA TOUR, DP World Tour &amp; LPGA Official Schedules</b></td><td>golf</td><td>4 active stroke-play tour events (event-only multi-runner cards)</td><td><a href="https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528" target="_blank" rel="noopener">https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528</a></td></tr><tr><td><code>gbgb</code></td><td><b>Greyhound Board of Great Britain Official Race Calendar</b></td><td>greyhounds</td><td>UK licensed track cards proving OLBG 5h BST-to-EDT clock bug</td><td><a href="https://www.gbgb.org.uk/" target="_blank" rel="noopener">https://www.gbgb.org.uk/</a></td></tr></tbody>
+  </table>
+</div>
+
+</main>
+<footer class="foot">
+  <p><b>OLBG Reverse-Engineering &amp; Origination Desk</b> — 17 in-scope sports · 134 source-linked events (129 verified · 5 cross-checked) · multi-market lines &amp; human analysis.</p>
+  <p>Every fixture, ranking, and record links directly to its governing body. Unconfirmed values are left explicitly blank and logged on <a href="flagged.html">Flagged for Review</a>. Independent mathematical probabilities only — not financial or gambling advice.</p>
+  <p>Downloads: <a href="../../datasets/matches_full.json">matches_full.json</a> · <a href="../../datasets/matches_full.csv">matches_full.csv</a> · <a href="../../datasets/flagged_for_review.json">flagged_for_review.json</a> · <a href="../../datasets/olbg_sports_registry.json">olbg_sports_registry.json</a></p>
+</footer>
+<script src="../../assets/app.js"></script>
+</body>
+</html>
