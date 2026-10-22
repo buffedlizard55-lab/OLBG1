@@ -2046,3 +2046,10 @@ Publication: PR and Pages results will be recorded after GitHub confirms them.
 During rebase onto the newer `origin/main`, session `cccb414e-olbg1` had already claimed and completed T56 and published its release-safety review (PRs #74 and #75). Its task row, section §41, release-review files, generated pages, and report were preserved. This audit was renumbered to **T57 / §42**; no changes were made to the other session's files. The `COORDINATION.md` rebase conflict was resolved by retaining both sessions' task rows and append-only reports.
 
 ---
+
+### 42.2 Publication confirmation
+
+- PR **#76**: https://github.com/buffedlizard55-lab/OLBG1/pull/76 — **MERGED** at **2026-10-22T07:27:26Z**, merge commit `0616a048caf2f760d8487a72a070b24ad9887dd1`.
+- GitHub Pages workflow **39740612448** completed successfully (build, report-build-status, deploy); `gh run watch --exit-status` exited 0. The Pages API reports `status: built` for the same merge commit at 2026-10-22T07:27:58Z. Site root: https://buffedlizard55-lab.github.io/OLBG1/ .
+- This PR adds the T57 offline audit and coordination record only; it does not correct data/status copy or alter model prices. The newer release-review page from PR #74 remains the public, explicit review surface for unrecertified records.
+- T57 publication is complete. Findings requiring new official-source fetches or product-policy changes remain clearly unverified / needs review and were not silently altered.
