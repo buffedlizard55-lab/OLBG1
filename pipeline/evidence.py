@@ -20,8 +20,9 @@ def verify_capture(capture):
     expected = obj.pop('sha256', None)
     if expected != digest(obj):
         raise ValueError(f"Evidence checksum mismatch: {capture.get('id')}")
-    if capture['role'] == 'official' and not official_url(capture['url']):
-        raise ValueError('Non-official evidence cannot verify match facts')
+    if capture['role'] == 'official' and (not official_url(capture['url']) or
+                                        not official_url(capture.get('final_url'))):
+        raise ValueError('Non-official request or redirect cannot verify match facts')
     start, end = parse_time(capture['observed_after']), parse_time(capture['observed_before'])
     if end < start:
         raise ValueError('Invalid observation window')

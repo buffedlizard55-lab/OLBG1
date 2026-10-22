@@ -22,7 +22,8 @@ def validate_data(directory=CURRENT):
         try:
             verify_capture(c);check(parse_time(c['observed_before'])<=at,c['id']+': observation after build')
             ids=[o['id'] for o in c['observations']];check(len(ids)==len(set(ids)),c['id']+': duplicate observation ID')
-            check(allowed_url(c['final_url'],True),c['id']+': invalid final publisher')
+            check(official_url(c['final_url']) if c['role']=='official' else allowed_url(c['final_url'],True),
+                  c['id']+': invalid final publisher')
             if c['method']=='http-json-parser':
                 raw=directory/'raw'/f'{c["id"]}.body'
                 check(raw.is_file(),c['id']+': missing raw evidence')

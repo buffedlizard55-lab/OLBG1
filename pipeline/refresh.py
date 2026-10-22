@@ -7,12 +7,19 @@ import argparse
 from datetime import timedelta
 import json
 from .config import CURRENT,SPORT_INDEX,HORIZON_DAYS
-from .common import now_utc,iso,save
+from .common import now_utc,iso,save,official_url
 from .http import Fetcher,FetchError
 from .adapters import envelope,nhl_schedule,mlb_schedule,nba_schedule,nhl_statistics,mlb_statistics
 from .evidence import seal_capture
 from .discovery import crawl
 from .assemble import assemble
+
+
+def official_response(response):
+    """A request to a league is not evidence if it lands on a discovery host."""
+    if not official_url(response.url) or not official_url(response.final_url):
+        raise FetchError('Official source redirected outside verified publisher list')
+    return response
 
 
 def refresh(directory=CURRENT,timeout=10,probe=True):
@@ -32,7 +39,7 @@ def refresh(directory=CURRENT,timeout=10,probe=True):
     ]
     for cid,sport,prefix,url,parser,extra in specs:
         try:
-            resp=fetch.get(url,cid)
+            resp=official_response(fetch.get(url,cid))
             c=envelope(resp,cid,sport,f'{prefix.upper()} schedule {first} through {last}')
             # Full-season NBA feed and MLB range include previous local date
             # to retain still-future UTC overnight starts.
@@ -57,7 +64,7 @@ def refresh(directory=CURRENT,timeout=10,probe=True):
     # separately without declaring a successful full-slate replacement on failure.
     cid='http-nhl-overnight';url=f'https://api-web.nhle.com/v1/schedule/{prior}'
     try:
-        resp=fetch.get(url,cid)
+        resp=official_response(fetch.get(url,cid))
         c=envelope(resp,cid,'ice-hockey',f'Previous league-date {prior}; overnight UTC bridge only')
         rows=nhl_schedule(json.loads(resp.body),c,prior,prior)
         save(directory/'evidence'/f'{cid}.json',seal_capture(c));output['fixtures']+=rows
@@ -68,7 +75,7 @@ def refresh(directory=CURRENT,timeout=10,probe=True):
         ('http-mlb-standings','baseball','MLB',f'https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season={season}&standingsTypes=regularSeason',mlb_statistics,(season,first)),
     ]:
         try:
-            resp=fetch.get(url,cid)
+            resp=official_response(fetch.get(url,cid))
             # Any successfully retrieved new stats feed replaces its seed scope,
             # including parse errors, to prevent hiding contradictions with a fallback.
             output['replace_stat_scopes'].append(comp)
@@ -84,10 +91,13 @@ def refresh(directory=CURRENT,timeout=10,probe=True):
             if sport in ('baseball','ice-hockey','basketball'):continue
             url=meta['official_url']
             try:
-                resp=fetch.get(url,'probe-'+sport)
+                resp=official_response(fetch.get(url,'probe-'+sport))
                 output['attempts'].append({'url':url,'source_id':'probe-'+sport,'sport':sport,'status':'read / unparsed',
                     'http_status':resp.status,'at':resp.observed_before,'error':'No schema-validated continuous fixture adapter for this source. No fields promoted.'})
-            except FetchError:pass
+            except FetchError as exc:
+                output['attempts'].append({'url':url,'source_id':'probe-'+sport,'sport':sport,
+                    'status':'unverified','error':'Source probe not accepted: '+str(exc)[:250],
+                    'at':iso(now_utc())})
     discovery=crawl(fetch,max_pages=24)
     save(directory/'discovery.json',discovery)
     output['attempts']+=fetch.log;output['finished_at']=iso(now_utc())

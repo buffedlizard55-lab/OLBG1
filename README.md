@@ -6,7 +6,7 @@ One canonical dashboard, **17 sport pages**, explicit evidence gaps and independ
 
 ## What this release actually contains
 
-The selected **22 October 2026** import contains **108 fixture/event listings**, **42 accepted statistical input observations** and **31 official-source checks**. It spans 15 categories; darts and greyhound fixture/runner details remain unverified. Every category is **partial or unverified**, never globally complete.
+The selected **22 October 2026** import contains **108 fixture/event listings**, **42 accepted statistical input observations** and **32 official-source checks**, including a fresh MLB conditional-game check at 12:01 UTC. It spans 15 categories; darts and greyhound fixture/runner details remain unverified. Every category is **partial or unverified**, never globally complete.
 
 At the import checkpoint, compatible inputs support **17 price books / 42 two-way markets / 84 outcome prices** after the TEE3C status gate (22 October, approximately 12:06 UTC build). There are **17 Low experimental winner preferences** and **zero Medium/High selections**. EuroLeague schedules without an explicit supported pre-match status no longer produce estimates. Valencia’s disputed record is quarantined after separate official preview/standings rereads. These are as-of counts, not permanently current numbers; refreshes, expiry and the UTC window can change them.
 
@@ -26,7 +26,8 @@ Excluded: soccer/football, American football, boxing, UFC/MMA, hurling, horse ra
 - Fixture evidence expires **six hours from its original lower observation bound**; statistics expire after 24 hours. Builds and failed refreshes never rejuvenate them. Elapsed starts cannot produce pre-match selections. Every estimate expires at the earliest fixture, start or statistical-input deadline; the browser suppresses expired values within its 30-second check interval. With JavaScript disabled, estimates are hidden rather than left indefinitely current. Explicit supported official pre-match status is required; a future start alone does not qualify.
 - Exact UTC starts use a rolling seven-day interval. Date-only entries retain the source calendar and explicit time/status gaps. Previous league dates are checked for still-future overnight UTC starts.
 - Record pricing uses disclosed Beta(2,2) shrinkage and log5, requires both compatible records, and inserts no home edge or missing-rating default. NHL binary defeats include OT losses; points percentage is not a win probability.
-- MLB research score markets use paired official regular-season run rates and independent Poisson scores conditional on no tie. Fixed ±1.5-run handicaps and three centered half-run totals are **model lines, not available sportsbook offers**. Pitchers, parks, current lineups and postseason effects are not modeled; all remain Low.
+- MLB research score markets use paired official regular-season run rates and independent Poisson scores conditional on no tie. Fixed ±1.5-run handicaps and three centered half-run totals are **model lines, not available sportsbook offers**. The official game's season and `ifNecessary=N` must be sourced; `Y` or a missing flag withholds **all** prices. Pitchers, parks, current lineups and postseason effects are not modeled; all remain Low.
+- A partial official NHL `gameWeek` response supersedes only the league dates actually present. Other imported rows retain their original expiry rather than being silently treated as no games. An uncovered date is **unknown**, not a zero-fixture result.
 - Fair decimal is `1/p`, with no margin or clipping. American displays are derived consistently; unrounded prices determine the −250…+10000 fair-price flag. Actual quotes/availability/edge remain blank.
 - **No >70% shortcut for High.** Confidence needs measured calibration, current relevant context and an eligible actual quote—not merely a favorite's probability. Version evidence-v1.0 cannot issue Medium/High.
 
@@ -51,7 +52,7 @@ npm install --prefix "$BROWSER_TOOLS" --no-save --no-package-lock --ignore-scrip
 NODE_PATH="$BROWSER_TOOLS/node_modules" node tests/pipeline/browser.cjs
 ```
 
-The browser suite tests desktop/mobile, `/OLBG1/` hosting, filters/reset/sort, odds formatting, CSV downloads, evidence deep-links, empty states, expiry removal and no-JavaScript rows. All browser URLs are relative; there is no localhost backend call.
+The browser suite tests desktop/mobile, `/OLBG1/` hosting, filters/reset/sort, odds formatting, CSV downloads, evidence deep-links, empty states, expiry removal and no-JavaScript rows. Without JavaScript the site hides selections/prices (the browser cannot check expiry), while retaining official links and a visible freshness warning. All browser URLs are relative; there is no localhost backend call.
 
 ```sh
 python3 -m pipeline.refresh             # bounded official HTTP attempts, failures logged
@@ -94,7 +95,7 @@ The previous T61 workflow is retained as a manual, non-publishing historical che
 - `archive/pre-release-20261022/`: T61's earlier archive, untouched.
 - All parallel desks, `data/release`, `scripts/release_*`, `tests/release` and independent review reports are preserved. Their claims are never silently promoted to current evidence.
 
-[Methodology](https://buffedlizard55-lab.github.io/OLBG1/methodology.html) · [Field evidence](https://buffedlizard55-lab.github.io/OLBG1/verification.html) · [Archive](https://buffedlizard55-lab.github.io/OLBG1/archive.html)
+[Methodology](https://buffedlizard55-lab.github.io/OLBG1/methodology.html) · [Field evidence](https://buffedlizard55-lab.github.io/OLBG1/verification.html) · [T97DC verification report](reports/SESSION_97DCB2C9.md) · [Archive](https://buffedlizard55-lab.github.io/OLBG1/archive.html)
 
 ## Canonical integrity follow-up (TEE3C)
 

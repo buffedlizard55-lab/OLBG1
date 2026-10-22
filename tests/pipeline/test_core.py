@@ -28,6 +28,10 @@ class Seeds(unittest.TestCase):
     def test_tampered_capture_rejected(self):
         c=copy.deepcopy(next(iter(self.caps.values())));c['scope']='changed'
         with self.assertRaises(ValueError):verify_capture(c)
+    def test_official_request_redirected_to_discovery_is_not_verified(self):
+        c=copy.deepcopy(self.caps['nhl-schedule-20261022'])
+        c['final_url']='https://www.olbg.com/betting-tips/Darts/15'
+        with self.assertRaises(ValueError):verify_capture(seal_capture(c))
     def test_inverted_window_rejected(self):
         c=copy.deepcopy(next(iter(self.caps.values())));c['observed_before']='2000-01-01T00:00:00Z'
         with self.assertRaises(ValueError):verify_capture(seal_capture(c))
@@ -204,6 +208,11 @@ class HTTPTests(unittest.TestCase):
     def test_redirect_robots_unknown_rejected(self):
         h=SafeRedirect()
         with self.assertRaises(FetchError):h.redirect_request(request.Request('https://www.nhl.com/'),None,302,'',{},'https://www.nhl.com/private')
+    def test_structured_source_cannot_launder_discovery_redirect(self):
+        from pipeline.refresh import official_response
+        r=Response('https://www.nhl.com/schedule','https://www.olbg.com/betting-tips',b'{}',200,'application/json',
+                   '2026-10-22T12:00:00Z','2026-10-22T12:00:01Z',digest(b'{}'))
+        with self.assertRaises(FetchError):official_response(r)
     def test_failure_is_not_empty_slate(self):
         f=self.client(error.URLError('offline'));result=crawl(f,max_pages=1);self.assertFalse(result['complete']);self.assertEqual(result['pages'][0]['status'],'unverified')
 
