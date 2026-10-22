@@ -53,7 +53,8 @@ are internally inconsistent across sports and are never used as start times (F-0
 
 ## 3. Official verification performed (source ledger on the site)
 
-Class A bodies fetched and read this session (26 reads total on `sources.html`):
+Class A bodies fetched and read this session (23 reads total on `sources.html`, of
+which 17 class A and 6 class B/discovery — see ledger):
 
 * **NHL** `api-web.nhle.com` schedule 2026-10-22 (12 games, exact `startTimeUTC`,
   embedded third-party price snapshots) and standings stamped
@@ -86,11 +87,10 @@ official recheck link.
 ## 4. Origination and grading results
 
 * **117 listings** harvested; **40 priced**; **77 unpriced** with reasons.
-* **771 originated market prices** (40 winner prices + 731 handicap/total research
-  model lines where official scoring rates exist). Basketball line/total markets are
+* **392 originated market prices** (80 two-way winner prices across the 40 priced fixtures + 312 handicap/total research model lines where official scoring rates exist; markets.html lists one row per price). Basketball line/total markets are
   withheld (no official scoring-variance input — methodology page).
-* Winner tiers: **2 High**, **8 out-of-window favourites (p ≥ 70%)**, **14 Medium**,
-  **16 Low**.
+* Winner tiers: **2 High** (high-eligible), **10 out-of-window favourites (p ≥ 70%)**,
+  **19 Medium**, **9 Low**.
 * **High (brief band, fair price):** Vegas Golden Knights (70.0%, −233, at STL) and
   Toulouse (70.0%, −233, v Perpignan). Both sit exactly at the p = 0.70 boundary;
   the tier test uses the probability rounded to six decimals (the binary-noise
@@ -160,6 +160,28 @@ official URL to recheck. Model outputs are labelled experimental fair prices
 everywhere; the word "verified" is used only for class A/B reads described in the
 ledger.
 
-## 10. PR / merge / Pages receipts (appended post-merge)
+## 10. PR / merge / Pages receipts
 
-*(filled in after merge — see COORDINATION.md §60)*
+* **PR #154** — https://github.com/buffedlizard55-lab/OLBG1/pull/154 — base `main`,
+  head `arena/424375b4-olbg1`. Pre-merge CI `Evidence, model, site and browser gates`
+  **pass** (42s, then 40s after the mid-flight upstream merge); `Publish canonical
+  GitHub Pages` correctly skipped on the pull-request event.
+* **Merged 2026-10-22T21:5xZ** as `05506e3` (no approval waited for, per the brief),
+  after one COORDINATION.md merge with upstream sessions `546fc70f`/`2988bd19`/
+  `2aeea682` (rebase) and `a0b04058` (merge) — every upstream row and section kept
+  verbatim; this session renumbered twice, finally **§64** (TA0B04 had also adopted
+  §63).
+* **Post-merge run 39858675969** on `main` — **completed / success** (1m15s) including
+  the `Publish canonical GitHub Pages` deploy job; `pages-build-deployment` run
+  39858675915 **success**.
+* **Live byte read-back** of `https://buffedlizard55-lab.github.io/OLBG1/424375b4/`:
+  `index.html` served this merge's own content (117 listings · 40 priced · 2 High-band
+  picks with Vegas and Toulouse at 70.0% / −233 · out-of-window ledger · 21
+  predictions · 16 flags) and `high-confidence.html` served both High write-ups and
+  the out-of-window disclosures with official source links.
+* **Numbers correction (this follow-up):** the PR #154 body overstated 771 market
+  prices and 26 source reads and miscounted the tier splits; the deployed site and
+  this report carry the computed values — **392 prices (80 winner + 312 score),
+  23 source reads, 2 High / 10 out-of-window / 19 Medium / 9 Low**. The analysis page's
+  static "Six further" line was made dynamic in the same commit. Nothing else changed;
+  no fixture, probability, price or prediction text was altered.

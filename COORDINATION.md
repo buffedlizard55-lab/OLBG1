@@ -138,7 +138,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T2988 | **DONE (PR pending merge) — independent live desk `2988bd19-olbg1` (22 Oct 2026):** fresh official-source reads of the in-scope fixture slate (soccer/football, American football, boxing, UFC/MMA, hurling, horse racing, cycling, specials excluded); own multi-market line origination (winner, handicap/spread, match and team totals); confidence tiers where a High pick must clear **both** published readings — model probability above 70% **and** fair price inside −250…+10000; unique hand-written ≥30-word predictions citing only facts read from official pages this session; line-by-line repository review with per-item source links; namespaced dashboard `/2988bd19/` (landing + sport subpages + matches + markets + high-confidence + predictions + analysis + sources + Flagged for Review); validator gate; PR, merge and live GitHub Pages verification | done | 2988bd19-olbg1 | `data/2988bd19/**`, `scripts/s2988bd19_*.py`, `2988bd19/**`, `reports/SESSION_2988BD19.md`, append-only `COORDINATION.md` (this row + §60) | 2026-10-22T20:55Z | Collision-resistant id (T65/T66 and §§51–59 already taken on `main`). Strictly namespaced: **no** edit to root `*.html`, `sports/**`, `assets/**`, `README.md`, `scripts/build_site.py`, `scripts/validate.py`, `pipeline/**`, `.github/workflows/**`, `data/current/**`, `data/release/**` or any other session's `<id>/` desk. Sandbox egress is limited to GitHub/PyPI/npm, so every live read goes through the page-fetch tool layer and is logged with its URL and read time. |
 
 | T2AEE | **Fresh 22 Oct 2026 20:50Z evidence desk:** OLBG discovery across all 17 in-scope sports; independent official-source re-verification of every published fixture and High-pick fact; own multi-market fair lines; High only when selected probability is >70% and fair American price is within −250…+10000; unique ≥30-word predictions; clean namespaced dashboard `/2aeea682/` + category, markets, analysis, sources and Flagged pages; validators, PR/merge and live Pages read-back | done | 2aeea682-olbg1 | `data/2aeea682/**`, `scripts/s2aeea682_*.py`, `2aeea682/**`, `reports/SESSION_2AEEA682.md`, append-only `COORDINATION.md` (this row + §61); no canonical root, pipeline, workflow or historical desk edits | 2026-10-22T20:50Z | Collision-resistant ID. Pinned Arena branch is also the integration branch per §0.2. Historical data are leads only and will not be represented as freshly verified. Originally claimed §60; renumbered §61 after T2988 merged during rebase. **DONE:** 71 officially read listings / 17 category pages, 7 priced fixtures, 87 markets / 178 outcomes, 4 featured High (all 70.04%, fair −234) and 4 unique 75–77 word predictions; 64 unpriced rows and 21 source flags + 6 repo findings published. 30 pages. Gates: 5,220 desk checks, 135+38 tests, root/staged canonical validation, 823-page link check and both browser suites. PR #144 merged `ead18eb`; production run 39854325138 and legacy run 39854324388 succeeded; live desk, predictions, flagged page, corrected NHL links and archive entry read back. See §61 and `reports/SESSION_2AEEA682.md`. |
-| T424375B4 | **Independent live desk `424375b4-olbg1` (22 Oct 2026 evening):** fresh live OLBG hub harvest across all 17 in-scope sports (soccer/football, American football, boxing, UFC/MMA, hurling, horse racing, cycling and specials excluded); line-by-line official-source verification of every included fixture and every fact used in prose; own multi-market line origination (match winner, handicap/spread, match and team totals, plus sport-specific markets where an official input exists); confidence tiers with the High band **expressed inside −250…+10000** and earned by verified evidence, with the >70%-probability reading published alongside and the intersection flagged; five highest-confidence picks per covered sport where evidence permits, each with a unique hand-written ≥30-word prediction citing only facts read from official pages this session; line-by-line repository audit with per-finding source links; namespaced dashboard `/424375b4/` (landing + 17 sport subpages + matches + markets + high-confidence + predictions + analysis + sources + Flagged for Review + repo audit); validator gate; PR, merge and live GitHub Pages verification | in progress | 424375b4-olbg1 | `data/424375b4/**`, `scripts/s424375b4_*.py`, `424375b4/**`, `reports/SESSION_424375B4.md`, append-only `COORDINATION.md` (this row + §64) | 2026-10-22T20:55Z | Claimed at T424375B4 (collision-resistant id in the T7F00/TD7D19 pattern) because T1–T65 and the earlier collision-resistant ids are all taken. Strictly namespaced: **no** edit to root `*.html`, `sports/**`, `assets/**`, `README.md`, `scripts/build_site.py`, `scripts/validate.py`, `pipeline/**`, `.github/workflows/**`, `data/current/**`, `data/release/**` or any other session's `<id>/` desk. Root-navigation request will be logged in §4/§63 instead of editing shared files. Record at **§63**, the next free section number after upstream's §59. |
+| T424375B4 | **Independent live desk `424375b4-olbg1` (22 Oct 2026 evening):** fresh live OLBG hub harvest across all 17 in-scope sports (soccer/football, American football, boxing, UFC/MMA, hurling, horse racing, cycling and specials excluded); line-by-line official-source verification of every included fixture and every fact used in prose; own multi-market line origination (match winner, handicap/spread, match and team totals, plus sport-specific markets where an official input exists); confidence tiers with the High band **expressed inside −250…+10000** and earned by verified evidence, with the >70%-probability reading published alongside and the intersection flagged; five highest-confidence picks per covered sport where evidence permits, each with a unique hand-written ≥30-word prediction citing only facts read from official pages this session; line-by-line repository audit with per-finding source links; namespaced dashboard `/424375b4/` (landing + 17 sport subpages + matches + markets + high-confidence + predictions + analysis + sources + Flagged for Review + repo audit); validator gate; PR, merge and live GitHub Pages verification | done | 424375b4-olbg1 | `data/424375b4/**`, `scripts/s424375b4_*.py`, `424375b4/**`, `reports/SESSION_424375B4.md`, append-only `COORDINATION.md` (this row + §64) | 2026-10-22T20:55Z | Claimed at T424375B4 (collision-resistant id in the T7F00/TD7D19 pattern) because T1–T65 and the earlier collision-resistant ids are all taken. Strictly namespaced: **no** edit to root `*.html`, `sports/**`, `assets/**`, `README.md`, `scripts/build_site.py`, `scripts/validate.py`, `pipeline/**`, `.github/workflows/**`, `data/current/**`, `data/release/**` or any other session's `<id>/` desk. Root-navigation request will be logged in §4/§63 instead of editing shared files. Record at **§63**, the next free section number after upstream's §59. |
 
 ---
 
@@ -4041,4 +4041,58 @@ multi-market origination; High band requires the fair price to express inside �
 where evidence permits; repo line-by-line audit with file:line links; validator gate; PR + merge +
 live Pages read-back. Nothing is marked verified without a fetched official page and its link.
 
-**Status:** in progress — claims pushed before any deliverable work, per §0.3.
+**Status:** done — completion record below.
+
+**DONE (2026-10-22T22:0xZ).** Live OLBG harvest of all 17 in-scope hubs at 20:56Z
+(117 listings; snooker/aussie-rules/esports/greyhounds hubs empty and documented);
+official verification class A for NHL schedule+standings (12 games, exact UTC starts,
+32-club table stamped 20:57:30Z), MLB WS G1 feed (gamePk 849805, ifNecessary=N,
+Martinez v Misiorowski), URC R4 + table, Pro D2 J8 + table, Top 14 J7 + table,
+EuroLeague standings, ATP scores/current (six R16 results), WTA hub, F1 COTA page;
+class B for five NBA.com surfaces and two PDC articles (cookie wall flagged F-04).
+Origination: log5 + Beta(2,2) shrinkage on official records, paired-rate Poisson
+research lines where official scoring rates exist; **40 priced fixtures / 392 market
+prices (80 two-way winner + 312 handicap/total research lines)**; 77 unpriced with
+reasons. Winner tiers: **2 High** (Vegas Golden Knights @ STL and Toulouse v
+Perpignan, both exactly 70.0% / fair −233, inside the brief's −250…+10000 band) ·
+**10 out-of-window 70%+ favourites disclosed** · 19 Medium · 9 Low. **21 unique
+≥30-word predictions/previews** (16 graded: top-5 per sport for ice hockey, rugby
+union and basketball + Toulouse; 5 explicitly ungraded previews: MLB WS G1, 3 PDC
+ties, F1 USA GP), every fact cited to a source id. 23 source reads, 16 flags
+(F-01..F-16), 7 repo-audit findings, 29 pages at `/424375b4/`. Gates: 135 pipeline
+tests OK, 38 preserved tests OK, `pipeline.validate --site .` 0 errors,
+`scripts/validate.py` PASSED (1 pre-existing warning in f7fa77fc),
+`scripts/s424375b4_validate.py` 1183 checks 0 errors, `pipeline.build --out _site`
+83 pages with `_site/424375b4/` staged, `pipeline.validate --site _site` 0 errors.
+
+**Sources:** api-web.nhle.com (schedule, standings), statsapi.mlb.com (schedule,
+standings), stats.unitedrugby.com (match-centre R4, table), prod2.lnr.fr and
+top14.lnr.fr (J8/J7 calendars + classements), euroleaguebasketball.net (standings),
+nba.com (event-details, Starting-5, schedule release, team/game pages), pdc.tv
+(schedule + preview, excerpt class B), atptour.com (scores/current), wtatennis.com
+(scores), formula1.com (United States GP) — every URL and read time on
+`/424375b4/sources.html`; recheck links for every flag on `/424375b4/flagged.html`.
+
+**Irregularities:** F-03 (Brewers record unread → all MLB prices withheld, including
+the brief's headline World Series fixture); F-09/F-10 (14 OLBG tennis pairings not
+confirmable on official draw surfaces this session); F-11 (cricket boards unread,
+nzc.nz/fixtures 404); F-04 (pdc.tv cookie wall, class B); F-01 (OLBG label timezones
+internally inconsistent); F-08 (URC local-only times across the 25 Oct DST change);
+F-15 (EuroLeague game-centre rows would not render). Also, honestly: the PR #154 body
+overstated 771 market prices / 26 source reads and the tier split; the computed
+values (392 / 23 / 2-10-19-9) are what the deployed site and the report carry, fixed
+in the follow-up commit with the analysis-page "Six further" line made dynamic.
+
+**PR / merge / Pages receipts.** PR #154 (base main, head arena/424375b4-olbg1):
+pre-merge CI `Evidence, model, site and browser gates` pass (42s, and 40s after a
+mid-flight upstream merge); Pages job correctly skipped on the PR event. Merged as
+`05506e3` without waiting for approval. Two upstream merges were resolved in
+COORDINATION.md during the run (rebase past 546fc70f/2988bd19/2aeea682; merge with
+a0b04058) — all upstream rows and sections kept verbatim; this session renumbered
+twice to **§64** after TA0B04 also adopted §63. Post-merge run 39858675969 on main
+completed/success (1m15s) including the Pages deploy; pages-build-deployment run
+39858675915 success. Live byte read-back of
+`/OLBG1/424375b4/index.html` and `/OLBG1/424375b4/high-confidence.html` served this
+merge's own content (117 listings · 40 priced · 2 High picks at 70.0% / −233 · the
+out-of-window ledger · 21 predictions · 16 flags, both High write-ups with official
+source links).
