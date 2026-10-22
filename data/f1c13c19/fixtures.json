@@ -1,0 +1,6827 @@
+{
+ "desk": "f1c13c19",
+ "task": "T57",
+ "built_utc": "2026-10-22T08:45:00Z",
+ "harvest_window": "OLBG hubs fetched 2026-10-22T07:27-07:45Z (Arena fetch_page)",
+ "events": [
+  {
+   "id": "nhl-2026020154",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 Regular Season",
+   "home": "Boston Bruins",
+   "away": "Nashville Predators",
+   "start_utc": "2026-10-22T23:00:00Z",
+   "venue": "TD Garden, Boston",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "NHL official score API (records + start times)",
+     "url": "https://api-web.nhle.com/v1/score/2026-10-22"
+    },
+    {
+     "name": "NHL official schedule API",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "NHL official record (pts%)",
+     "value": "7-2-1 (75.0%)",
+     "tier": "verified",
+     "rating": 75.0
+    },
+    "away": {
+     "label": "NHL official record (pts%)",
+     "value": "3-2-3 (56.2%)",
+     "tier": "verified",
+     "rating": 56.25
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13 -> NHL sub-route",
+    "clock": "not carded on hub at harvest (OLBG NHL sub-route empty)",
+    "tips": ""
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020155",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 Regular Season",
+   "home": "Toronto Maple Leafs",
+   "away": "New York Rangers",
+   "start_utc": "2026-10-22T23:00:00Z",
+   "venue": "Scotiabank Arena, Toronto",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "NHL official score API (records + start times)",
+     "url": "https://api-web.nhle.com/v1/score/2026-10-22"
+    },
+    {
+     "name": "NHL official schedule API",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "NHL official record (pts%)",
+     "value": "5-4-2 (54.5%)",
+     "tier": "verified",
+     "rating": 54.55
+    },
+    "away": {
+     "label": "NHL official record (pts%)",
+     "value": "7-3-1 (68.2%)",
+     "tier": "verified",
+     "rating": 68.18
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13 -> NHL sub-route",
+    "clock": "not carded on hub at harvest (OLBG NHL sub-route empty)",
+    "tips": ""
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020156",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 Regular Season",
+   "home": "Ottawa Senators",
+   "away": "San Jose Sharks",
+   "start_utc": "2026-10-22T23:00:00Z",
+   "venue": "Canadian Tire Centre, Ottawa",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "NHL official score API (records + start times)",
+     "url": "https://api-web.nhle.com/v1/score/2026-10-22"
+    },
+    {
+     "name": "NHL official schedule API",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "NHL official record (pts%)",
+     "value": "7-3-0 (70.0%)",
+     "tier": "verified",
+     "rating": 70.0
+    },
+    "away": {
+     "label": "NHL official record (pts%)",
+     "value": "5-4-1 (55.0%)",
+     "tier": "verified",
+     "rating": 55.0
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13 -> NHL sub-route",
+    "clock": "not carded on hub at harvest (OLBG NHL sub-route empty)",
+    "tips": ""
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020157",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 Regular Season",
+   "home": "New Jersey Devils",
+   "away": "Anaheim Ducks",
+   "start_utc": "2026-10-22T23:00:00Z",
+   "venue": "Prudential Center, Newark",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "NHL official score API (records + start times)",
+     "url": "https://api-web.nhle.com/v1/score/2026-10-22"
+    },
+    {
+     "name": "NHL official schedule API",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "NHL official record (pts%)",
+     "value": "5-4-0 (55.6%)",
+     "tier": "verified",
+     "rating": 55.56
+    },
+    "away": {
+     "label": "NHL official record (pts%)",
+     "value": "4-5-0 (44.4%)",
+     "tier": "verified",
+     "rating": 44.44
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13 -> NHL sub-route",
+    "clock": "not carded on hub at harvest (OLBG NHL sub-route empty)",
+    "tips": ""
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020158",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 Regular Season",
+   "home": "Pittsburgh Penguins",
+   "away": "Florida Panthers",
+   "start_utc": "2026-10-22T23:00:00Z",
+   "venue": "PPG Paints Arena, Pittsburgh",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "NHL official score API (records + start times)",
+     "url": "https://api-web.nhle.com/v1/score/2026-10-22"
+    },
+    {
+     "name": "NHL official schedule API",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "NHL official record (pts%)",
+     "value": "3-6-1 (35.0%)",
+     "tier": "verified",
+     "rating": 35.0
+    },
+    "away": {
+     "label": "NHL official record (pts%)",
+     "value": "5-3-2 (60.0%)",
+     "tier": "verified",
+     "rating": 60.0
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13 -> NHL sub-route",
+    "clock": "not carded on hub at harvest (OLBG NHL sub-route empty)",
+    "tips": ""
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020159",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 Regular Season",
+   "home": "New York Islanders",
+   "away": "Los Angeles Kings",
+   "start_utc": "2026-10-22T23:30:00Z",
+   "venue": "UBS Arena, Elmont",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "NHL official score API (records + start times)",
+     "url": "https://api-web.nhle.com/v1/score/2026-10-22"
+    },
+    {
+     "name": "NHL official schedule API",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "NHL official record (pts%)",
+     "value": "5-3-1 (61.1%)",
+     "tier": "verified",
+     "rating": 61.11
+    },
+    "away": {
+     "label": "NHL official record (pts%)",
+     "value": "1-4-2 (28.6%)",
+     "tier": "verified",
+     "rating": 28.57
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13 -> NHL sub-route",
+    "clock": "not carded on hub at harvest (OLBG NHL sub-route empty)",
+    "tips": ""
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020160",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 Regular Season",
+   "home": "St. Louis Blues",
+   "away": "Vegas Golden Knights",
+   "start_utc": "2026-10-23T00:00:00Z",
+   "venue": "Enterprise Center, St. Louis",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "NHL official score API (records + start times)",
+     "url": "https://api-web.nhle.com/v1/score/2026-10-22"
+    },
+    {
+     "name": "NHL official schedule API",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "NHL official record (pts%)",
+     "value": "4-4-1 (50.0%)",
+     "tier": "verified",
+     "rating": 50.0
+    },
+    "away": {
+     "label": "NHL official record (pts%)",
+     "value": "8-3-0 (72.7%)",
+     "tier": "verified",
+     "rating": 72.73
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13 -> NHL sub-route",
+    "clock": "not carded on hub at harvest (OLBG NHL sub-route empty)",
+    "tips": ""
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020161",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 Regular Season",
+   "home": "Dallas Stars",
+   "away": "Winnipeg Jets",
+   "start_utc": "2026-10-23T00:00:00Z",
+   "venue": "American Airlines Center, Dallas",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "NHL official score API (records + start times)",
+     "url": "https://api-web.nhle.com/v1/score/2026-10-22"
+    },
+    {
+     "name": "NHL official schedule API",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "NHL official record (pts%)",
+     "value": "5-3-1 (61.1%)",
+     "tier": "verified",
+     "rating": 61.11
+    },
+    "away": {
+     "label": "NHL official record (pts%)",
+     "value": "4-3-2 (55.6%)",
+     "tier": "verified",
+     "rating": 55.56
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13 -> NHL sub-route",
+    "clock": "not carded on hub at harvest (OLBG NHL sub-route empty)",
+    "tips": ""
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020162",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 Regular Season",
+   "home": "Calgary Flames",
+   "away": "Minnesota Wild",
+   "start_utc": "2026-10-23T01:00:00Z",
+   "venue": "Scotiabank Saddledome, Calgary",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "NHL official score API (records + start times)",
+     "url": "https://api-web.nhle.com/v1/score/2026-10-22"
+    },
+    {
+     "name": "NHL official schedule API",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "NHL official record (pts%)",
+     "value": "2-6-0 (25.0%)",
+     "tier": "verified",
+     "rating": 25.0
+    },
+    "away": {
+     "label": "NHL official record (pts%)",
+     "value": "6-2-2 (70.0%)",
+     "tier": "verified",
+     "rating": 70.0
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13 -> NHL sub-route",
+    "clock": "not carded on hub at harvest (OLBG NHL sub-route empty)",
+    "tips": ""
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020163",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 Regular Season",
+   "home": "Edmonton Oilers",
+   "away": "Carolina Hurricanes",
+   "start_utc": "2026-10-23T01:00:00Z",
+   "venue": "Rogers Place, Edmonton",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "NHL official score API (records + start times)",
+     "url": "https://api-web.nhle.com/v1/score/2026-10-22"
+    },
+    {
+     "name": "NHL official schedule API",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "NHL official record (pts%)",
+     "value": "7-1-1 (83.3%)",
+     "tier": "verified",
+     "rating": 83.33
+    },
+    "away": {
+     "label": "NHL official record (pts%)",
+     "value": "8-2-1 (77.3%)",
+     "tier": "verified",
+     "rating": 77.27
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13 -> NHL sub-route",
+    "clock": "not carded on hub at harvest (OLBG NHL sub-route empty)",
+    "tips": ""
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020164",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 Regular Season",
+   "home": "Seattle Kraken",
+   "away": "Utah Mammoth",
+   "start_utc": "2026-10-23T02:00:00Z",
+   "venue": "Climate Pledge Arena, Seattle",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "NHL official score API (records + start times)",
+     "url": "https://api-web.nhle.com/v1/score/2026-10-22"
+    },
+    {
+     "name": "NHL official schedule API",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "NHL official record (pts%)",
+     "value": "6-3-1 (65.0%)",
+     "tier": "verified",
+     "rating": 65.0
+    },
+    "away": {
+     "label": "NHL official record (pts%)",
+     "value": "7-3-0 (70.0%)",
+     "tier": "verified",
+     "rating": 70.0
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13 -> NHL sub-route",
+    "clock": "not carded on hub at harvest (OLBG NHL sub-route empty)",
+    "tips": ""
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "nhl-2026020165",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 Regular Season",
+   "home": "Vancouver Canucks",
+   "away": "Detroit Red Wings",
+   "start_utc": "2026-10-23T02:00:00Z",
+   "venue": "Rogers Arena, Vancouver",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "NHL official score API (records + start times)",
+     "url": "https://api-web.nhle.com/v1/score/2026-10-22"
+    },
+    {
+     "name": "NHL official schedule API",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-22"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "NHL official record (pts%)",
+     "value": "2-8-1 (22.7%)",
+     "tier": "verified",
+     "rating": 22.73
+    },
+    "away": {
+     "label": "NHL official record (pts%)",
+     "value": "3-3-3 (50.0%)",
+     "tier": "verified",
+     "rating": 50.0
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13 -> NHL sub-route",
+    "clock": "not carded on hub at harvest (OLBG NHL sub-route empty)",
+    "tips": ""
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "mlb-849805",
+   "sport": "baseball",
+   "competition": "MLB 2026 World Series",
+   "home": "Milwaukee Brewers",
+   "away": "Tampa Bay Rays",
+   "start_utc": "2026-10-24T00:00:00Z",
+   "venue": "American Family Field, Milwaukee",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "MLB StatsAPI official schedule (2026 World Series)",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-27&hydrate=team,venue"
+    },
+    {
+     "name": "MLB StatsAPI official 2026 regular-season standings",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "2026 home split (StatsAPI)",
+     "value": "55-26 (.679)",
+     "tier": "verified",
+     "rating": 67.9
+    },
+    "away": {
+     "label": "2026 road split (StatsAPI)",
+     "value": "43-38 (.531)",
+     "tier": "verified",
+     "rating": 53.1
+    }
+   },
+   "olbg": {
+    "hub": "Baseball/12",
+    "clock": "Tomorrow 20:00",
+    "tips": "MIL 14/17 (82%)"
+   },
+   "stage": "World Series Game 1 of 7",
+   "flags": [
+    "OLBG clock 'Tomorrow 20:00' conflicts with official 2026-10-24T00:00:00Z (Fri 8:00pm ET) - upstream tz defect"
+   ]
+  },
+  {
+   "id": "mlb-849802",
+   "sport": "baseball",
+   "competition": "MLB 2026 World Series",
+   "home": "Milwaukee Brewers",
+   "away": "Tampa Bay Rays",
+   "start_utc": "2026-10-25T00:00:00Z",
+   "venue": "American Family Field, Milwaukee",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "MLB StatsAPI official schedule (2026 World Series)",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-27&hydrate=team,venue"
+    },
+    {
+     "name": "MLB StatsAPI official 2026 regular-season standings",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "2026 home split (StatsAPI)",
+     "value": "55-26 (.679)",
+     "tier": "verified",
+     "rating": 67.9
+    },
+    "away": {
+     "label": "2026 road split (StatsAPI)",
+     "value": "43-38 (.531)",
+     "tier": "verified",
+     "rating": 53.1
+    }
+   },
+   "olbg": {
+    "hub": "Baseball/12",
+    "clock": "n/a (OLBG carded Game 1 only)",
+    "tips": ""
+   },
+   "stage": "World Series Game 2 of 7",
+   "flags": []
+  },
+  {
+   "id": "mlb-849804",
+   "sport": "baseball",
+   "competition": "MLB 2026 World Series",
+   "home": "Tampa Bay Rays",
+   "away": "Milwaukee Brewers",
+   "start_utc": "2026-10-27T00:00:00Z",
+   "venue": "Tropicana Field, St. Petersburg",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "MLB StatsAPI official schedule (2026 World Series)",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-22&endDate=2026-10-27&hydrate=team,venue"
+    },
+    {
+     "name": "MLB StatsAPI official 2026 regular-season standings",
+     "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "2026 home split (StatsAPI)",
+     "value": "55-26 (.679)",
+     "tier": "verified",
+     "rating": 67.9
+    },
+    "away": {
+     "label": "2026 road split (StatsAPI)",
+     "value": "48-33 (.593)",
+     "tier": "verified",
+     "rating": 59.3
+    }
+   },
+   "olbg": {
+    "hub": "Baseball/12",
+    "clock": "n/a",
+    "tips": ""
+   },
+   "stage": "World Series Game 3 of 7",
+   "flags": []
+  },
+  {
+   "id": "nba-0022600006",
+   "sport": "basketball",
+   "competition": "NBA 2026-27 Regular Season",
+   "home": "Philadelphia 76ers",
+   "away": "Cleveland Cavaliers",
+   "start_utc": "2026-10-22T23:00:00Z",
+   "venue": "Xfinity Mobile Arena, Philadelphia",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "NBA.com official game pages (venues/tips)",
+     "url": "https://www.nba.com/sixers/game/0022600006-cavaliers-vs-sixers-philadelphia-pa-10-22-2026"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "2026-27 record (NBA.com)",
+     "value": "1-0",
+     "tier": "verified",
+     "rating": 100.0
+    },
+    "away": {
+     "label": "2026-27 record (NBA.com)",
+     "value": "0-0",
+     "tier": "verified",
+     "bounded": true
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Today 19:10",
+    "tips": "PHI 2/2 (100%)"
+   },
+   "stage": "",
+   "flags": [
+    "Cleveland has played no official game this season; its rating is intentionally blank (blank-and-flag), so the row caps at Low"
+   ]
+  },
+  {
+   "id": "nba-0022600007",
+   "sport": "basketball",
+   "competition": "NBA 2026-27 Regular Season",
+   "home": "Oklahoma City Thunder",
+   "away": "Denver Nuggets",
+   "start_utc": "2026-10-23T01:30:00Z",
+   "venue": "Paycom Center, Oklahoma City",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "NBA.com official game pages (venues/tips)",
+     "url": "https://www.nba.com/sixers/game/0022600006-cavaliers-vs-sixers-philadelphia-pa-10-22-2026"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "2026-27 record (NBA.com)",
+     "value": "0-0",
+     "tier": "verified",
+     "bounded": true
+    },
+    "away": {
+     "label": "2026-27 record (NBA.com)",
+     "value": "0-0",
+     "tier": "verified",
+     "bounded": true
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Today 21:40",
+    "tips": "OKC 4/4 (100%)"
+   },
+   "stage": "",
+   "flags": [
+    "Both teams 0-0 on opening week; per rule no rating is imputed"
+   ]
+  },
+  {
+   "id": "nba-002260-nyk-bos",
+   "sport": "basketball",
+   "competition": "NBA 2026-27 Regular Season",
+   "home": "Boston Celtics",
+   "away": "New York Knicks",
+   "start_utc": null,
+   "venue": "TD Garden, Boston (per OLBG upstream card; unverified)",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (data/fixtures.json, T40-T55, re-checked 2026-10-22)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Undocumented (see flags)",
+     "value": "",
+     "tier": "verified"
+    },
+    "away": {
+     "label": "Undocumented (see flags)",
+     "value": "",
+     "tier": "verified"
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Tomorrow 19:10",
+    "tips": "NY Knicks 1/2 (50%)"
+   },
+   "stage": "",
+   "flags": [
+    "Fixtures/tip time not confirmed against NBA.com this session; blank-and-flag pending"
+   ]
+  },
+  {
+   "id": "nba-002260-hou-sas",
+   "sport": "basketball",
+   "competition": "NBA 2026-27 Regular Season",
+   "home": "San Antonio Spurs",
+   "away": "Houston Rockets",
+   "start_utc": null,
+   "venue": "Frost Bank Center (per OLBG upstream card; unverified)",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (data/fixtures.json, T40-T55, re-checked 2026-10-22)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Undocumented (see flags)",
+     "value": "",
+     "tier": "verified"
+    },
+    "away": {
+     "label": "Undocumented (see flags)",
+     "value": "",
+     "tier": "verified"
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Tomorrow 21:40",
+    "tips": "SA Spurs 2/2 (100%)"
+   },
+   "stage": "",
+   "flags": [
+    "Fixtures unconfirmed officially this session; blank-and-flag pending"
+   ]
+  },
+  {
+   "id": "el-535920",
+   "sport": "basketball",
+   "competition": "EuroLeague 2026-27 (Round 7)",
+   "home": "Anadolu Efes",
+   "away": "Besiktas",
+   "start_utc": "2026-10-22T17:30:00Z",
+   "venue": "Basketbol Gelistirme Merkezi, Istanbul",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "EuroLeague official standings (2026-27)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "name": "EuroLeague official Game Center, Round 7",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "2-4 (33.3%)",
+     "tier": "verified",
+     "rating": 33.3
+    },
+    "away": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "3-3 (50.0%)",
+     "tier": "verified",
+     "rating": 50.0
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Today 13:30",
+    "tips": "Efes 3/4 (75%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "el-535922",
+   "sport": "basketball",
+   "competition": "EuroLeague 2026-27 (Round 7)",
+   "home": "FC Bayern Munich",
+   "away": "Dubai Basketball",
+   "start_utc": "2026-10-22T18:00:00Z",
+   "venue": "SAP Garden, Munich",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "EuroLeague official standings (2026-27)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "name": "EuroLeague official Game Center, Round 7",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "2-4 (33.3%)",
+     "tier": "verified",
+     "rating": 33.3
+    },
+    "away": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "4-2 (66.7%)",
+     "tier": "verified",
+     "rating": 66.7
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Today 14:00",
+    "tips": "BC Dubai 2/3 (67%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "el-535921",
+   "sport": "basketball",
+   "competition": "EuroLeague 2026-27 (Round 7)",
+   "home": "Maccabi Rapyd Tel Aviv",
+   "away": "Real Madrid",
+   "start_utc": "2026-10-22T18:05:00Z",
+   "venue": "Aleksandar Nikolic Hall, Belgrade (temporary home; neutral site)",
+   "neutral": true,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "EuroLeague official standings (2026-27)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "name": "EuroLeague official Game Center, Round 7",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "2-4 (33.3%)",
+     "tier": "verified",
+     "rating": 33.3
+    },
+    "away": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "3-3 (50.0%)",
+     "tier": "verified",
+     "rating": 50.0
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Today 14:05",
+    "tips": "Real Madrid 4/6 (67%)"
+   },
+   "stage": "",
+   "flags": [
+    "Maccabi's designated home is Belgrade this season (official Real Madrid/EuroLeague pages) - priced with no home advantage"
+   ]
+  },
+  {
+   "id": "el-535923",
+   "sport": "basketball",
+   "competition": "EuroLeague 2026-27 (Round 7)",
+   "home": "Panathinaikos AKTOR",
+   "away": "Kosner Baskonia",
+   "start_utc": "2026-10-22T18:15:00Z",
+   "venue": "Telekom Center Athens",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "EuroLeague official standings (2026-27)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "name": "EuroLeague official Game Center, Round 7",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "5-1 (83.3%)",
+     "tier": "verified",
+     "rating": 83.3
+    },
+    "away": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "1-5 (16.7%)",
+     "tier": "verified",
+     "rating": 16.7
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Today 14:15",
+    "tips": "Panathinaikos 4/6 (67%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "el-535924",
+   "sport": "basketball",
+   "competition": "EuroLeague 2026-27 (Round 7)",
+   "home": "EA7 Emporio Armani Milan",
+   "away": "FC Barcelona",
+   "start_utc": "2026-10-22T18:30:00Z",
+   "venue": "Unipol Forum, Milan",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "EuroLeague official standings (2026-27)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "name": "EuroLeague official Game Center, Round 7",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "1-5 (16.7%)",
+     "tier": "verified",
+     "rating": 16.7
+    },
+    "away": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "3-3 (50.0%)",
+     "tier": "verified",
+     "rating": 50.0
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Today 14:30",
+    "tips": "Barcelona 1/1 (100%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "el-535925",
+   "sport": "basketball",
+   "competition": "EuroLeague 2026-27 (Round 7)",
+   "home": "Partizan Mozzart Bet",
+   "away": "Crvena Zvezda Meridianbet",
+   "start_utc": "2026-10-22T18:45:00Z",
+   "venue": "Belgrade Arena",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "EuroLeague official standings (2026-27)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "name": "EuroLeague official Game Center, Round 7",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "3-3 (50.0%)",
+     "tier": "verified",
+     "rating": 50.0
+    },
+    "away": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "4-2 (66.7%)",
+     "tier": "verified",
+     "rating": 66.7
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Today 14:45",
+    "tips": "Crvena Zvezda 2/2 (100%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "el-r7-zal-asv",
+   "sport": "basketball",
+   "competition": "EuroLeague 2026-27 (Round 7)",
+   "home": "Zalgiris Kaunas",
+   "away": "LDLC ASVEL Villeurbanne",
+   "start_utc": null,
+   "venue": "Zalgirio Arena (per upstream; day R7 continuation 23 Oct)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "EuroLeague official standings (2026-27)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "name": "EuroLeague official Game Center, Round 7",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "2-4 (33.3%)",
+     "tier": "verified",
+     "rating": 33.3
+    },
+    "away": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "2-4 (33.3%)",
+     "tier": "verified",
+     "rating": 33.3
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Tomorrow 13:00",
+    "tips": "Zalgiris 2/2 (100%)"
+   },
+   "stage": "",
+   "flags": [
+    "R7 continuation on 23 Oct (Wikipedia R7 table) - exact tip unverified this session"
+   ]
+  },
+  {
+   "id": "el-r7-oly-fen",
+   "sport": "basketball",
+   "competition": "EuroLeague 2026-27 (Round 7)",
+   "home": "Olympiacos",
+   "away": "Fenerbahce Tarfin",
+   "start_utc": null,
+   "venue": "Peace and Friendship Stadium (per upstream; 23 Oct)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "EuroLeague official standings (2026-27)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "name": "EuroLeague official Game Center, Round 7",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "5-1 (83.3%)",
+     "tier": "verified",
+     "rating": 83.3
+    },
+    "away": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "5-1 (83.3%)",
+     "tier": "verified",
+     "rating": 83.3
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Tomorrow 14:15",
+    "tips": "Olympiacos 1/1 (100%)"
+   },
+   "stage": "",
+   "flags": [
+    "23 Oct R7 continuation; tip time unverified"
+   ]
+  },
+  {
+   "id": "el-r7-par-val",
+   "sport": "basketball",
+   "competition": "EuroLeague 2026-27 (Round 7)",
+   "home": "Paris Basketball",
+   "away": "Valencia Basket",
+   "start_utc": null,
+   "venue": "adidas arena (per upstream; 23 Oct)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "EuroLeague official standings (2026-27)",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+    },
+    {
+     "name": "EuroLeague official Game Center, Round 7",
+     "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "1-5 (16.7%)",
+     "tier": "verified",
+     "rating": 16.7
+    },
+    "away": {
+     "label": "EuroLeague 2026-27 record (official)",
+     "value": "4-2 (66.7%)",
+     "tier": "verified",
+     "rating": 66.7
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Tomorrow 14:45",
+    "tips": "Valencia 1/1 (100%)"
+   },
+   "stage": "",
+   "flags": [
+    "23 Oct R7 continuation; tip time unverified"
+   ]
+  },
+  {
+   "id": "ten-902110",
+   "sport": "tennis",
+   "competition": "ATP 250 Almaty Open (R16)",
+   "home": "Tomas Machac",
+   "away": "Karen Khachanov",
+   "start_utc": "2026-10-22T08:00:00Z",
+   "venue": "Center Court, Almaty Arena (court 11:30 local block)",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "ATP official Almaty daily schedule",
+     "url": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule"
+    },
+    {
+     "name": "ATP official Almaty top seeds",
+     "url": "https://www.atptour.com/en/scores/current/almaty/9410/top-seeds"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ATP singles ranking",
+     "value": "not batch-verified this session (flagged)",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "ATP singles ranking (atptour.com)",
+     "value": "No. 27 (seed 5)",
+     "tier": "verified",
+     "rating": 62.78
+    }
+   },
+   "olbg": {
+    "hub": "Tennis/3",
+    "clock": "Today 04:00",
+    "tips": "Khachanov 4/6 (67%)"
+   },
+   "stage": "",
+   "flags": [
+    "R16 'not before 13:00' local (Almaty UTC+5 = 08:00Z); OLBG shows 04:00 UK - upstream clock defect"
+   ]
+  },
+  {
+   "id": "ten-902069",
+   "sport": "tennis",
+   "competition": "ATP 250 Almaty Open (R16)",
+   "home": "Daniil Medvedev",
+   "away": "Sho Shimabukuro",
+   "start_utc": "2026-10-22T08:00:00Z",
+   "venue": "Center Court, Almaty Arena",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "ATP official Almaty daily schedule",
+     "url": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule"
+    },
+    {
+     "name": "ATP official Almaty top seeds",
+     "url": "https://www.atptour.com/en/scores/current/almaty/9410/top-seeds"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ATP singles ranking (atptour.com)",
+     "value": "No. 6 (seed 1)",
+     "tier": "verified",
+     "rating": 79.77
+    },
+    "away": {
+     "label": "ATP singles ranking",
+     "value": "not batch-verified this session (flagged)",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Tennis/3",
+    "clock": "Today 05:30",
+    "tips": "Medvedev 8/9 (89%)"
+   },
+   "stage": "",
+   "flags": [
+    "follows Machac-Khachanov on Center Court; OLBG clock again ~4h early"
+   ]
+  },
+  {
+   "id": "ten-902082",
+   "sport": "tennis",
+   "competition": "ATP 250 Almaty Open (R16)",
+   "home": "Alexander Bublik",
+   "away": "Fabian Marozsan",
+   "start_utc": "2026-10-22T14:30:00Z",
+   "venue": "Center Court, Almaty Arena",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "ATP official Almaty daily schedule",
+     "url": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule"
+    },
+    {
+     "name": "ATP official Almaty top seeds",
+     "url": "https://www.atptour.com/en/scores/current/almaty/9410/top-seeds"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ATP singles ranking (atptour.com)",
+     "value": "No. 22 (seed 3)",
+     "tier": "verified",
+     "rating": 65.1
+    },
+    "away": {
+     "label": "ATP singles ranking",
+     "value": "not batch-verified this session (flagged)",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Tennis/3",
+    "clock": "Today 10:30",
+    "tips": "Bublik 3/4 (75%)"
+   },
+   "stage": "",
+   "flags": [
+    "ATP lists 'not before 19:30' local for prime slot"
+   ]
+  },
+  {
+   "id": "ten-902104",
+   "sport": "tennis",
+   "competition": "ATP 250 Brussels Open (R16)",
+   "home": "Raphael Collignon",
+   "away": "Jiri Lehecka",
+   "start_utc": "2026-10-22T11:30:00Z",
+   "venue": "Centre Court, Brussels",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "ATP official Brussels daily schedule",
+     "url": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule"
+    },
+    {
+     "name": "ATP official Brussels top seeds",
+     "url": "https://www.atptour.com/en/scores/current/brussels/7485/top-seeds"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ATP singles ranking",
+     "value": "not batch-verified this session (flagged)",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "ATP singles ranking (atptour.com)",
+     "value": "No. 16 (seed 2)",
+     "tier": "verified",
+     "rating": 68.69
+    }
+   },
+   "olbg": {
+    "hub": "Tennis/3",
+    "clock": "Today 07:30",
+    "tips": "Lehecka 3/5 (60%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ten-902131",
+   "sport": "tennis",
+   "competition": "ATP 250 Brussels Open (R16)",
+   "home": "David Goffin",
+   "away": "Alex Michelsen",
+   "start_utc": "2026-10-22T11:30:00Z",
+   "venue": "Centre Court, Brussels (Goffin also plays doubles QF later)",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "ATP official Brussels daily schedule",
+     "url": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule"
+    },
+    {
+     "name": "ATP official Brussels top seeds",
+     "url": "https://www.atptour.com/en/scores/current/brussels/7485/top-seeds"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ATP singles ranking",
+     "value": "not batch-verified this session (flagged)",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "ATP singles ranking (atptour.com)",
+     "value": "No. 35 (seed 5)",
+     "tier": "verified",
+     "rating": 59.85
+    }
+   },
+   "olbg": {
+    "hub": "Tennis/3",
+    "clock": "Today 09:00",
+    "tips": "Goffin 2-1 set betting 1/1"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ten-902120",
+   "sport": "tennis",
+   "competition": "ATP 250 Brussels Open (R16)",
+   "home": "Damir Dzumhur",
+   "away": "Zizou Bergs",
+   "start_utc": "2026-10-22T15:00:00Z",
+   "venue": "Centre Court, Brussels",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "ATP official Brussels daily schedule",
+     "url": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule"
+    },
+    {
+     "name": "ATP official Brussels top seeds",
+     "url": "https://www.atptour.com/en/scores/current/brussels/7485/top-seeds"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ATP singles ranking",
+     "value": "not batch-verified this session (flagged)",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "ATP singles ranking (atptour.com)",
+     "value": "No. 39 (seed 6)",
+     "tier": "verified",
+     "rating": 58.63
+    }
+   },
+   "olbg": {
+    "hub": "Tennis/3",
+    "clock": "Today 11:00",
+    "tips": "Dzumhur 1/1 (100%)"
+   },
+   "stage": "",
+   "flags": [
+    "ATP lists 'not before 17:00' local for this slot"
+   ]
+  },
+  {
+   "id": "ten-902103",
+   "sport": "tennis",
+   "competition": "ATP 250 Lyon Open (R16)",
+   "home": "Valentin Vacherot",
+   "away": "Luca Van Assche",
+   "start_utc": "2026-10-22T12:00:00Z",
+   "venue": "Court Central Auvergne-Rhone-Alpes, Lyon",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "ATP official Lyon daily schedule",
+     "url": "https://www.atptour.com/en/scores/current/lyon/496/daily-schedule"
+    },
+    {
+     "name": "ATP official Lyon top seeds",
+     "url": "https://www.atptour.com/en/scores/current/lyon/496/top-seeds"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ATP singles ranking (atptour.com)",
+     "value": "No. 14 (seed 3)",
+     "tier": "verified",
+     "rating": 70.2
+    },
+    "away": {
+     "label": "ATP singles ranking",
+     "value": "not batch-verified this session (flagged)",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Tennis/3",
+    "clock": "Today 08:00",
+    "tips": "Vacherot 3/3 (100%)"
+   },
+   "stage": "",
+   "flags": [
+    "ATP 'not before 14:00' local"
+   ]
+  },
+  {
+   "id": "ten-902087",
+   "sport": "tennis",
+   "competition": "ATP 250 Lyon Open (R16)",
+   "home": "Pierre-Hugues Herbert",
+   "away": "Taylor Fritz",
+   "start_utc": "2026-10-22T12:00:00Z",
+   "venue": "Court Central Auvergne-Rhone-Alpes, Lyon",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "ATP official Lyon daily schedule",
+     "url": "https://www.atptour.com/en/scores/current/lyon/496/daily-schedule"
+    },
+    {
+     "name": "ATP official Lyon top seeds",
+     "url": "https://www.atptour.com/en/scores/current/lyon/496/top-seeds"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ATP singles ranking",
+     "value": "not batch-verified this session (flagged)",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "ATP singles ranking (atptour.com)",
+     "value": "No. 12 (seed 2)",
+     "tier": "verified",
+     "rating": 71.94
+    }
+   },
+   "olbg": {
+    "hub": "Tennis/3",
+    "clock": "Today 09:30",
+    "tips": "Fritz 4/6 (67%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ten-902126",
+   "sport": "tennis",
+   "competition": "ATP 250 Lyon Open (R16)",
+   "home": "Flavio Cobolli",
+   "away": "Stan Wawrinka",
+   "start_utc": "2026-10-22T17:00:00Z",
+   "venue": "Court Central Auvergne-Rhone-Alpes, Lyon",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "ATP official Lyon daily schedule",
+     "url": "https://www.atptour.com/en/scores/current/lyon/496/daily-schedule"
+    },
+    {
+     "name": "ATP official Lyon top seeds",
+     "url": "https://www.atptour.com/en/scores/current/lyon/496/top-seeds"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ATP singles ranking (atptour.com)",
+     "value": "No. 7 (seed 1)",
+     "tier": "verified",
+     "rating": 78.03
+    },
+    "away": {
+     "label": "ATP singles ranking",
+     "value": "not batch-verified this session (flagged)",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Tennis/3",
+    "clock": "Today 13:00",
+    "tips": "Wawrinka 2-1 set betting 1/1"
+   },
+   "stage": "",
+   "flags": [
+    "ATP 'not before 19:00' local - prime-time slot"
+   ]
+  },
+  {
+   "id": "ten-902105",
+   "sport": "tennis",
+   "competition": "ATP 250 Lyon Open (R16)",
+   "home": "Kyrian Jacquet",
+   "away": "Brandon Nakashima",
+   "start_utc": "2026-10-22T17:00:00Z",
+   "venue": "Court Central Auvergne-Rhone-Alpes, Lyon",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "ATP official Lyon daily schedule",
+     "url": "https://www.atptour.com/en/scores/current/lyon/496/daily-schedule"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ATP singles ranking",
+     "value": "not batch-verified this session (flagged)",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "ATP singles ranking (atptour.com)",
+     "value": "No. 19 (seed 5)",
+     "tier": "verified",
+     "rating": 66.75
+    }
+   },
+   "olbg": {
+    "hub": "Tennis/3",
+    "clock": "Today 14:30",
+    "tips": "Nakashima 1/1 (100%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ten-902073",
+   "sport": "tennis",
+   "competition": "WTA 500 BNB Ningbo Open (R16)",
+   "home": "Elena Rybakina",
+   "away": "Polina Kudermetova",
+   "start_utc": "2026-10-22T11:00:00Z",
+   "venue": "Center Court, Ningbo Yinzhou Tennis Center",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "WTA official Ningbo main-draw PDF",
+     "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf"
+    },
+    {
+     "name": "WTA official Ningbo draws page (R16 listing)",
+     "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "WTA singles ranking (official draw PDF seed list)",
+     "value": "No. 1 (seed 1, defending champion, 9696 pts)",
+     "tier": "verified",
+     "rating": 100.0
+    },
+    "away": {
+     "label": "WTA singles ranking",
+     "value": "No. 103 (root-desk verified; cross-checked)",
+     "tier": "cross-checked",
+     "rating": 47.67
+    }
+   },
+   "olbg": {
+    "hub": "Tennis/3",
+    "clock": "Today 07:00",
+    "tips": "Rybakina 10/12 (83%)"
+   },
+   "stage": "Round of 16 - winner faces Kawa/Bencic",
+   "flags": []
+  },
+  {
+   "id": "ten-902072",
+   "sport": "tennis",
+   "competition": "WTA 500 BNB Ningbo Open (R16)",
+   "home": "Alexandra Eala",
+   "away": "Diana Shnaider",
+   "start_utc": "2026-10-22T05:00:00Z",
+   "venue": "Center Court, Ningbo Yinzhou Tennis Center",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "WTA official Ningbo main-draw PDF",
+     "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf"
+    },
+    {
+     "name": "WTA official Ningbo draws page (R16 listing)",
+     "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "WTA singles ranking",
+     "value": "No. 19 (13-Oct WTA list, cross-checked)",
+     "tier": "cross-checked",
+     "rating": 65.85
+    },
+    "away": {
+     "label": "WTA singles ranking (official draw PDF seed list)",
+     "value": "No. 13 (seed 6, 2643 pts)",
+     "tier": "verified",
+     "rating": 71.26
+    }
+   },
+   "olbg": {
+    "hub": "Tennis/3",
+    "clock": "Today 04:00",
+    "tips": "Shnaider 4/5 (80%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ten-902107",
+   "sport": "tennis",
+   "competition": "WTA (venue/tour event unverified)",
+   "home": "Talia Gibson",
+   "away": "Ashlyn Krueger",
+   "start_utc": null,
+   "venue": "unverified - WTA 125 Queretaro/Sopo window suspected; not confirmed",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "WTA ranking",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "WTA ranking",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Tennis/3",
+    "clock": "Today 22:30",
+    "tips": "Krueger 1/1 (100%)"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page rendering confirmed this match this session; blank-and-flag per brief"
+   ]
+  },
+  {
+   "id": "ten-902129",
+   "sport": "tennis",
+   "competition": "ATP 250 Almaty Open (QF, expected)",
+   "home": "Stefanos Tsitsipas",
+   "away": "James Duckworth",
+   "start_utc": "2026-10-23T05:30:00Z",
+   "venue": "Almaty Arena (QF slate Fri; order TBC)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "ATP official Almaty daily schedule",
+     "url": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ATP singles ranking (seed list)",
+     "value": "No. 43 (seed 7)",
+     "tier": "verified",
+     "rating": 68.94
+    },
+    "away": {
+     "label": "ATP singles ranking",
+     "value": "No. 71 (root-desk verified)",
+     "tier": "cross-checked",
+     "rating": 51.87
+    }
+   },
+   "olbg": {
+    "hub": "Tennis/3",
+    "clock": "Tomorrow 02:30",
+    "tips": "Duckworth 1/2 (50%)"
+   },
+   "stage": "",
+   "flags": [
+    "Tsitsipas beat Kukushkin (R16) on 21 Oct per ATP; Duckworth beat Darderi - both QF-bound"
+   ]
+  },
+  {
+   "id": "ten-902133",
+   "sport": "tennis",
+   "competition": "ATP 250 Lyon Open (QF, expected)",
+   "home": "Corentin Moutet",
+   "away": "Tommy Paul",
+   "start_utc": null,
+   "venue": "Lyon (QF slate Fri; unconfirmed pairing)",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ATP ranking",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "ATP singles ranking (seed list)",
+     "value": "No. 18 (seed 4)",
+     "tier": "verified",
+     "rating": 67.98
+    }
+   },
+   "olbg": {
+    "hub": "Tennis/3",
+    "clock": "Tomorrow 05:30",
+    "tips": "Paul 1/1 (100%)"
+   },
+   "stage": "",
+   "flags": [
+    "Paul beat Bonzi (R16) per ATP official video; QF pairing vs Moutet not yet on an official page read here"
+   ]
+  },
+  {
+   "id": "snk-selt-craigie",
+   "sport": "snooker",
+   "competition": "BetVictor Northern Ireland Open 2026 (Round 3, best of 7)",
+   "home": "Matthew Selt",
+   "away": "Sam Craigie",
+   "start_utc": "2026-10-22",
+   "venue": "Waterfront Hall, Belfast",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "WST official Match Centre (NI Open R3, 22 Oct)",
+     "url": "https://www.wst.tv/match-centre/67133698-e8a4-4b37-9266-452a97df8584"
+    },
+    {
+     "name": "snooker.org NI Open event bracket (world-ranking numbers in brackets)",
+     "url": "https://www.snooker.org/res/index.asp?event=2548"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "[46]",
+     "tier": "cross-checked",
+     "rating": 34.54
+    },
+    "away": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "[70]",
+     "tier": "cross-checked",
+     "rating": 27.36
+    }
+   },
+   "olbg": {
+    "hub": "Snooker/8",
+    "clock": "Today 08:00",
+    "tips": "Selt 7/9 (78%)"
+   },
+   "stage": "Round 3 (last 32)",
+   "flags": []
+  },
+  {
+   "id": "snk-wilson-pang",
+   "sport": "snooker",
+   "competition": "BetVictor Northern Ireland Open 2026 (Round 3, best of 7)",
+   "home": "Kyren Wilson",
+   "away": "Pang Junxu",
+   "start_utc": "2026-10-22",
+   "venue": "Waterfront Hall, Belfast",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "WST official Match Centre (NI Open R3, 22 Oct)",
+     "url": "https://www.wst.tv/match-centre/67133698-e8a4-4b37-9266-452a97df8584"
+    },
+    {
+     "name": "snooker.org NI Open event bracket (world-ranking numbers in brackets)",
+     "url": "https://www.snooker.org/res/index.asp?event=2548"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "[9]",
+     "tier": "cross-checked",
+     "rating": 62.43
+    },
+    "away": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "[26]",
+     "tier": "cross-checked",
+     "rating": 44.3
+    }
+   },
+   "olbg": {
+    "hub": "Snooker/8",
+    "clock": "Today 08:00",
+    "tips": "Kyren Wilson 6/9 (67%)"
+   },
+   "stage": "Round 3 (last 32)",
+   "flags": []
+  },
+  {
+   "id": "snk-slessor-walden",
+   "sport": "snooker",
+   "competition": "BetVictor Northern Ireland Open 2026 (Round 3, best of 7)",
+   "home": "Elliot Slessor",
+   "away": "Ricky Walden",
+   "start_utc": "2026-10-22",
+   "venue": "Waterfront Hall, Belfast",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "WST official Match Centre (NI Open R3, 22 Oct)",
+     "url": "https://www.wst.tv/match-centre/67133698-e8a4-4b37-9266-452a97df8584"
+    },
+    {
+     "name": "snooker.org NI Open event bracket (world-ranking numbers in brackets)",
+     "url": "https://www.snooker.org/res/index.asp?event=2548"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "[22]",
+     "tier": "cross-checked",
+     "rating": 47.15
+    },
+    "away": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "[56]",
+     "tier": "cross-checked",
+     "rating": 31.18
+    }
+   },
+   "olbg": {
+    "hub": "Snooker/8",
+    "clock": "Today 09:00",
+    "tips": "Slessor 5/7 (71%)"
+   },
+   "stage": "Round 3 (last 32)",
+   "flags": []
+  },
+  {
+   "id": "snk-mcgill-baranowski",
+   "sport": "snooker",
+   "competition": "BetVictor Northern Ireland Open 2026 (Round 3, best of 7)",
+   "home": "Anthony McGill",
+   "away": "Mateusz Baranowski",
+   "start_utc": "2026-10-22",
+   "venue": "Waterfront Hall, Belfast",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "WST official Match Centre (NI Open R3, 22 Oct)",
+     "url": "https://www.wst.tv/match-centre/67133698-e8a4-4b37-9266-452a97df8584"
+    },
+    {
+     "name": "snooker.org NI Open event bracket (world-ranking numbers in brackets)",
+     "url": "https://www.snooker.org/res/index.asp?event=2548"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "[38]",
+     "tier": "cross-checked",
+     "rating": 37.81
+    },
+    "away": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "[84]",
+     "tier": "cross-checked",
+     "rating": 24.25
+    }
+   },
+   "olbg": {
+    "hub": "Snooker/8",
+    "clock": "Today 09:00",
+    "tips": "McGill 2/4 (50%)"
+   },
+   "stage": "Round 3 (last 32)",
+   "flags": [
+    "OLBG renders 'Baranowski'; WST officially lists Mateusz Baranowski - same player, spelling flagged"
+   ]
+  },
+  {
+   "id": "snk-williams-odonnell",
+   "sport": "snooker",
+   "competition": "BetVictor Northern Ireland Open 2026 (Round 3, best of 7)",
+   "home": "Mark Williams",
+   "away": "Martin O'Donnell",
+   "start_utc": "2026-10-22",
+   "venue": "Waterfront Hall, Belfast",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "WST official Match Centre (NI Open R3, 22 Oct)",
+     "url": "https://www.wst.tv/match-centre/67133698-e8a4-4b37-9266-452a97df8584"
+    },
+    {
+     "name": "snooker.org NI Open event bracket (world-ranking numbers in brackets)",
+     "url": "https://www.snooker.org/res/index.asp?event=2548"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "[10]",
+     "tier": "cross-checked",
+     "rating": 60.63
+    },
+    "away": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "[55]",
+     "tier": "cross-checked",
+     "rating": 31.49
+    }
+   },
+   "olbg": {
+    "hub": "Snooker/8",
+    "clock": "Today 14:00",
+    "tips": "Mark Williams 3/3 (100%)"
+   },
+   "stage": "Round 3 (last 32)",
+   "flags": []
+  },
+  {
+   "id": "snk-gilbert-cheung",
+   "sport": "snooker",
+   "competition": "BetVictor Northern Ireland Open 2026 (Round 3, best of 7)",
+   "home": "David Gilbert",
+   "away": "Cheung Ka Wai",
+   "start_utc": "2026-10-22",
+   "venue": "Waterfront Hall, Belfast",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "WST official Match Centre (NI Open R3, 22 Oct)",
+     "url": "https://www.wst.tv/match-centre/67133698-e8a4-4b37-9266-452a97df8584"
+    },
+    {
+     "name": "snooker.org NI Open event bracket (world-ranking numbers in brackets)",
+     "url": "https://www.snooker.org/res/index.asp?event=2548"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "not in bracket read",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "[106]",
+     "tier": "cross-checked",
+     "rating": 20.27
+    }
+   },
+   "olbg": {
+    "hub": "Snooker/8",
+    "clock": "Today 14:00",
+    "tips": "Cheung Ka Wai 2/3 (67%)"
+   },
+   "stage": "Round 3 (last 32)",
+   "flags": []
+  },
+  {
+   "id": "snk-brown-donaldson",
+   "sport": "snooker",
+   "competition": "BetVictor Northern Ireland Open 2026 (Round 3, best of 7)",
+   "home": "Jordan Brown",
+   "away": "Scott Donaldson",
+   "start_utc": "2026-10-22",
+   "venue": "Waterfront Hall, Belfast",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "WST official Match Centre (NI Open R3, 22 Oct)",
+     "url": "https://www.wst.tv/match-centre/67133698-e8a4-4b37-9266-452a97df8584"
+    },
+    {
+     "name": "snooker.org NI Open event bracket (world-ranking numbers in brackets)",
+     "url": "https://www.snooker.org/res/index.asp?event=2548"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "not in bracket read",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "not in bracket read",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Snooker/8",
+    "clock": "Today 15:00",
+    "tips": "Jordan Brown 3/3 (100%)"
+   },
+   "stage": "Round 3 (last 32)",
+   "flags": []
+  },
+  {
+   "id": "snk-jones-wells",
+   "sport": "snooker",
+   "competition": "BetVictor Northern Ireland Open 2026 (Round 3, best of 7)",
+   "home": "Jak Jones",
+   "away": "Daniel Wells",
+   "start_utc": "2026-10-22",
+   "venue": "Waterfront Hall, Belfast",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "WST official Match Centre (NI Open R3, 22 Oct)",
+     "url": "https://www.wst.tv/match-centre/67133698-e8a4-4b37-9266-452a97df8584"
+    },
+    {
+     "name": "snooker.org NI Open event bracket (world-ranking numbers in brackets)",
+     "url": "https://www.snooker.org/res/index.asp?event=2548"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "not in bracket read",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "WST world ranking (bracket figure, cross-checked)",
+     "value": "not in bracket read",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Snooker/8",
+    "clock": "Today 15:00",
+    "tips": "Jak Jones -1.50 handicap 1/1"
+   },
+   "stage": "Round 3 (last 32)",
+   "flags": []
+  },
+  {
+   "id": "pdc-ec-01",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "Luke Woodhouse",
+   "away": "Dirk van Duijvenbode",
+   "start_utc": "2026-10-22T17:15:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #9",
+     "tier": "verified",
+     "rating": 86.26
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #24",
+     "tier": "verified",
+     "rating": 71.74
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "Today 13:15",
+    "tips": "van Duijvenbode 13/16 (81%) [1 expert]"
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": [
+    "PDC night session 1900-2300 CEST; OLBG renders match clocks ~3-4h early (upstream tz defect)"
+   ]
+  },
+  {
+   "id": "pdc-ec-02",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "Danny Noppert",
+   "away": "Stephen Bunting",
+   "start_utc": "2026-10-22T17:45:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #16",
+     "tier": "verified",
+     "rating": 79.48
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #17",
+     "tier": "verified",
+     "rating": 78.52
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "Today 13:45",
+    "tips": "Noppert 10/16 (63%)"
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": [
+    "PDC night session 1900-2300 CEST; OLBG renders match clocks ~3-4h early (upstream tz defect)"
+   ]
+  },
+  {
+   "id": "pdc-ec-03",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "Niels Zonneveld",
+   "away": "Cameron Menzies",
+   "start_utc": "2026-10-22T18:15:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #4",
+     "tier": "verified",
+     "rating": 91.1
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #29",
+     "tier": "verified",
+     "rating": 66.9
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "Today 14:15",
+    "tips": "Zonneveld 14/18 (78%)"
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": [
+    "PDC night session 1900-2300 CEST; OLBG renders match clocks ~3-4h early (upstream tz defect)"
+   ]
+  },
+  {
+   "id": "pdc-ec-04",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "Gerwyn Price",
+   "away": "Rob Cross",
+   "start_utc": "2026-10-22T18:45:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #13",
+     "tier": "verified",
+     "rating": 82.39
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #20",
+     "tier": "verified",
+     "rating": 75.61
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "Today 14:45",
+    "tips": "Price 16/20 (80%)"
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": [
+    "PDC night session 1900-2300 CEST; OLBG renders match clocks ~3-4h early (upstream tz defect)"
+   ]
+  },
+  {
+   "id": "pdc-ec-05",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "James Wade",
+   "away": "Damon Heta",
+   "start_utc": "2026-10-22T19:15:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #15",
+     "tier": "verified",
+     "rating": 80.45
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #18",
+     "tier": "verified",
+     "rating": 77.55
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "Today 15:15",
+    "tips": "Wade 12/18 (67%)"
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": [
+    "PDC night session 1900-2300 CEST; OLBG renders match clocks ~3-4h early (upstream tz defect)"
+   ]
+  },
+  {
+   "id": "pdc-ec-06",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "Luke Humphries",
+   "away": "Ryan Searle",
+   "start_utc": "2026-10-22T19:45:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #12 (World No. 2)",
+     "tier": "verified",
+     "rating": 83.35
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #21",
+     "tier": "verified",
+     "rating": 74.65
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "Today 15:45",
+    "tips": "Humphries 13/16 (81%)"
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": [
+    "PDC night session 1900-2300 CEST; OLBG renders match clocks ~3-4h early (upstream tz defect)"
+   ]
+  },
+  {
+   "id": "pdc-ec-07",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "Gian van Veen",
+   "away": "Andrew Gilding",
+   "start_utc": "2026-10-22T20:15:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #8",
+     "tier": "verified",
+     "rating": 87.23
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #25",
+     "tier": "verified",
+     "rating": 70.77
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "Today 16:15",
+    "tips": "van Veen 11/16 (69%)"
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": [
+    "PDC night session 1900-2300 CEST; OLBG renders match clocks ~3-4h early (upstream tz defect)"
+   ]
+  },
+  {
+   "id": "pdc-ec-08",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "Ross Smith",
+   "away": "Karel Sedlacek",
+   "start_utc": "2026-10-22T20:45:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #7",
+     "tier": "verified",
+     "rating": 88.19
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #26",
+     "tier": "verified",
+     "rating": 69.81
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "Today 16:45",
+    "tips": "Smith 9/15 (60%)"
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": [
+    "PDC night session 1900-2300 CEST; OLBG renders match clocks ~3-4h early (upstream tz defect)"
+   ]
+  },
+  {
+   "id": "pdc-ec-09",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "Ryan Joyce",
+   "away": "Jermaine Wattimena",
+   "start_utc": "2026-10-23T17:15:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #3",
+     "tier": "verified",
+     "rating": 92.06
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #30",
+     "tier": "verified",
+     "rating": 65.94
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "Tomorrow 13:15",
+    "tips": "Joyce 7/9 (78%) [1 expert]"
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": []
+  },
+  {
+   "id": "pdc-ec-10",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "Krzysztof Ratajski",
+   "away": "Dave Chisnall",
+   "start_utc": "2026-10-23T17:45:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #5",
+     "tier": "verified",
+     "rating": 90.13
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #28",
+     "tier": "verified",
+     "rating": 67.87
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "Tomorrow 13:45",
+    "tips": "Chisnall 4/7 (57%) [1 expert]"
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": []
+  },
+  {
+   "id": "pdc-ec-11",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "Nathan Aspinall",
+   "away": "Cristo Reyes",
+   "start_utc": "2026-10-23T18:15:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #6",
+     "tier": "verified",
+     "rating": 89.16
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #27",
+     "tier": "verified",
+     "rating": 68.84
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "Tomorrow 14:15",
+    "tips": "Aspinall 3/6 (50%)"
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": []
+  },
+  {
+   "id": "pdc-ec-12",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "Jonny Clayton",
+   "away": "Niko Springer",
+   "start_utc": "2026-10-23T18:45:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #1",
+     "tier": "verified",
+     "rating": 94.0
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #32",
+     "tier": "verified",
+     "rating": 64.0
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "Tomorrow 14:45",
+    "tips": "Clayton 7/9 (78%)"
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": []
+  },
+  {
+   "id": "pdc-ec-13",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "Luke Littler",
+   "away": "William O'Connor",
+   "start_utc": "2026-10-23T19:15:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #11 (World No. 1)",
+     "tier": "verified",
+     "rating": 84.32
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #22",
+     "tier": "verified",
+     "rating": 73.68
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "(not carded)",
+    "tips": ""
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": []
+  },
+  {
+   "id": "pdc-ec-14",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "Wessel Nijman",
+   "away": "Martin Schindler",
+   "start_utc": "2026-10-23T19:45:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #2",
+     "tier": "verified",
+     "rating": 93.03
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #31",
+     "tier": "verified",
+     "rating": 64.97
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "Tomorrow 15:45",
+    "tips": "Nijman 4/7 (57%)"
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": []
+  },
+  {
+   "id": "pdc-ec-15",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "Kevin Doets",
+   "away": "Michael van Gerwen",
+   "start_utc": "2026-10-23T20:15:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #14",
+     "tier": "verified",
+     "rating": 81.42
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #19",
+     "tier": "verified",
+     "rating": 76.58
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "(not carded)",
+    "tips": ""
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": []
+  },
+  {
+   "id": "pdc-ec-16",
+   "sport": "darts",
+   "competition": "2026 Machineseeker European Championship (Round 1, best of 11 legs)",
+   "home": "Josh Rock",
+   "away": "Chris Dobey",
+   "start_utc": "2026-10-23T20:45:00Z",
+   "venue": "Westfalenhallen, Dortmund",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "PDC official news - EC schedule confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+     "name": "PDC official news - EC field & draw confirmed",
+     "url": "https://www.pdc.tv/news/2026/october/18/2026-Machineseeker-European-Championship-field---draw-confirmed"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #10",
+     "tier": "verified",
+     "rating": 85.29
+    },
+    "away": {
+     "label": "PDC European Championship tournament seed (official draw)",
+     "value": "Seed #23",
+     "tier": "verified",
+     "rating": 72.71
+    }
+   },
+   "olbg": {
+    "hub": "Darts/15",
+    "clock": "Tomorrow 16:45",
+    "tips": "Rock 4/6 (67%) [1 expert]"
+   },
+   "stage": "Round 1 (best of 11)",
+   "flags": []
+  },
+  {
+   "id": "ru-urc-609577",
+   "sport": "rugby-union",
+   "competition": "United Rugby Championship 2026-27 (Round 4)",
+   "home": "Connacht",
+   "away": "Zebre Parma",
+   "start_utc": "2026-10-23T18:45:00Z",
+   "venue": "Dexcom Stadium, Galway",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "URC official 2026/27 fixtures in full",
+     "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "URC standings input",
+     "value": "not read officially this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "URC standings input",
+     "value": "not read officially this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Rugby_Union/9",
+    "clock": "Tomorrow 19:45",
+    "tips": "Connacht 4/6 (67%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ru-urc-609576",
+   "sport": "rugby-union",
+   "competition": "United Rugby Championship 2026-27 (Round 4)",
+   "home": "Vodacom Bulls",
+   "away": "Ulster",
+   "start_utc": "2026-10-24T11:45:00Z",
+   "venue": "Loftus Versfeld, Pretoria",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "URC official 2026/27 fixtures in full",
+     "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "URC standings input",
+     "value": "not read officially this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "URC standings input",
+     "value": "not read officially this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Rugby_Union/9",
+    "clock": "24 Oct 12:45",
+    "tips": "Ulster +18.50 handicap 2/2"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ru-urc-609580",
+   "sport": "rugby-union",
+   "competition": "United Rugby Championship 2026-27 (Round 4)",
+   "home": "DHL Stormers",
+   "away": "Scarlets",
+   "start_utc": "2026-10-24T14:00:00Z",
+   "venue": "DHL Stadium, Cape Town",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "URC official 2026/27 fixtures in full",
+     "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "URC standings input",
+     "value": "not read officially this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "URC standings input",
+     "value": "not read officially this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Rugby_Union/9",
+    "clock": "24 Oct 15:00",
+    "tips": "Stormers 1/2 (50%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ru-urc-609578",
+   "sport": "rugby-union",
+   "competition": "United Rugby Championship 2026-27 (Round 4)",
+   "home": "Leinster",
+   "away": "Munster",
+   "start_utc": "2026-10-24T17:00:00Z",
+   "venue": "Aviva Stadium, Dublin",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "URC official 2026/27 fixtures in full",
+     "url": "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "URC standings input",
+     "value": "not read officially this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "URC standings input",
+     "value": "not read officially this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Rugby_Union/9",
+    "clock": "24 Oct 18:00",
+    "tips": "Leinster 2/2 (100%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ru-top14-609567",
+   "sport": "rugby-union",
+   "competition": "French Top 14 2026-27 (Round 7)",
+   "home": "Stade Toulousain",
+   "away": "USA Perpignan",
+   "start_utc": "2026-10-24T14:35:00Z",
+   "venue": "Stade Ernest-Wallon, Toulouse",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "LNR official Top 14 J7/J8 calendar",
+     "url": "https://top14.lnr.fr/calendrier-et-resultats/2026-2027/j8"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Top 14 standings after J6 (LNR official)",
+     "value": "1st, 24 pts",
+     "tier": "verified",
+     "rating": 86
+    },
+    "away": {
+     "label": "Top 14 standings after J6 (LNR official)",
+     "value": "9th, 13 pts",
+     "tier": "verified",
+     "rating": 55
+    }
+   },
+   "olbg": {
+    "hub": "Rugby_Union/9",
+    "clock": "24 Oct 15:35",
+    "tips": "Perpignan +23.50 handicap 1/1"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ru-top14-609564",
+   "sport": "rugby-union",
+   "competition": "French Top 14 2026-27 (Round 7)",
+   "home": "Aviron Bayonnais",
+   "away": "LOU Rugby",
+   "start_utc": "2026-10-24T14:35:00Z",
+   "venue": "Stade Jean-Dauger, Bayonne",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "LNR official Top 14 J7/J8 calendar",
+     "url": "https://top14.lnr.fr/calendrier-et-resultats/2026-2027/j8"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Top 14 standings after J6 (LNR official)",
+     "value": "5th, 17 pts",
+     "tier": "verified",
+     "rating": 68
+    },
+    "away": {
+     "label": "Top 14 standings after J6 (LNR official)",
+     "value": "8th, 14 pts",
+     "tier": "verified",
+     "rating": 58
+    }
+   },
+   "olbg": {
+    "hub": "Rugby_Union/9",
+    "clock": "24 Oct 15:35",
+    "tips": "Lyon 1/1 (100%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ru-top14-609554",
+   "sport": "rugby-union",
+   "competition": "French Top 14 2026-27 (Round 7)",
+   "home": "Stade Rochelais",
+   "away": "Union Bordeaux-Begles",
+   "start_utc": "2026-10-25T20:05:00Z",
+   "venue": "Stade Marcel-Deflandre, La Rochelle",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "LNR official Top 14 J7/J8 calendar",
+     "url": "https://top14.lnr.fr/calendrier-et-resultats/2026-2027/j8"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Top 14 standings after J6 (LNR official)",
+     "value": "4th, 18 pts",
+     "tier": "verified",
+     "rating": 72
+    },
+    "away": {
+     "label": "Top 14 standings after J6 (LNR official)",
+     "value": "3rd, 19 pts",
+     "tier": "verified",
+     "rating": 74
+    }
+   },
+   "olbg": {
+    "hub": "Rugby_Union/9",
+    "clock": "25 Oct 20:05",
+    "tips": "La Rochelle (small sample)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ru-prod2-j8-01",
+   "sport": "rugby-union",
+   "competition": "French Pro D2 2026-27 (Round 8)",
+   "home": "US Montauban",
+   "away": "US Oyonnax",
+   "start_utc": "2026-10-22T21:00:00Z",
+   "venue": "Stade Sapiac, Montauban",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Oyonnax Rugby official fixtures page",
+     "url": "https://oyonnaxrugby.com/accueil"
+    },
+    {
+     "name": "allrugby Pro D2 J8 referees/schedule",
+     "url": "https://www.allrugby.com/news/pro-d2-2027-j8-arbitres-3870.html"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Pro D2 table (published match-centre stripe)",
+     "value": "6th, 17 pts",
+     "tier": "cross-checked",
+     "rating": 60
+    },
+    "away": {
+     "label": "Pro D2 table (published match-centre stripe)",
+     "value": "1st, 28 pts",
+     "tier": "cross-checked",
+     "rating": 90
+    }
+   },
+   "olbg": {
+    "hub": "Rugby_Union/9",
+    "clock": "Today 20:00",
+    "tips": "Oyonnax 13/19 (68%)"
+   },
+   "stage": "",
+   "flags": [
+    "21:00 local CEST (=19:00Z; OLBG renders 20:00 UK, official kickoff 21:00 local)"
+   ]
+  },
+  {
+   "id": "ru-prod2-j8-02",
+   "sport": "rugby-union",
+   "competition": "French Pro D2 2026-27 (Round 8)",
+   "home": "RC Narbonne",
+   "away": "CA Brive-Correze",
+   "start_utc": "2026-10-23T19:00:00Z",
+   "venue": "home venue (per official schedule)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Oyonnax Rugby official fixtures page",
+     "url": "https://oyonnaxrugby.com/accueil"
+    },
+    {
+     "name": "allrugby Pro D2 J8 referees/schedule",
+     "url": "https://www.allrugby.com/news/pro-d2-2027-j8-arbitres-3870.html"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Pro D2 table",
+     "value": "positions beyond leaders not officially read this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Pro D2 table",
+     "value": "positions beyond leaders not officially read this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Rugby_Union/9",
+    "clock": "Tomorrow 18:00",
+    "tips": "Brive 3/5 (60%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ru-prod2-j8-03",
+   "sport": "rugby-union",
+   "competition": "French Pro D2 2026-27 (Round 8)",
+   "home": "SU Agen",
+   "away": "Nissa Rugby (Nice)",
+   "start_utc": "2026-10-23T19:30:00Z",
+   "venue": "home venue (per official schedule)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Oyonnax Rugby official fixtures page",
+     "url": "https://oyonnaxrugby.com/accueil"
+    },
+    {
+     "name": "allrugby Pro D2 J8 referees/schedule",
+     "url": "https://www.allrugby.com/news/pro-d2-2027-j8-arbitres-3870.html"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Pro D2 table",
+     "value": "positions beyond leaders not officially read this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Pro D2 table",
+     "value": "positions beyond leaders not officially read this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Rugby_Union/9",
+    "clock": "Tomorrow 18:30",
+    "tips": "Nissa 3/6 (50%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ru-prod2-j8-04",
+   "sport": "rugby-union",
+   "competition": "French Pro D2 2026-27 (Round 8)",
+   "home": "Valence Romans Drome",
+   "away": "Colomiers Rugby",
+   "start_utc": "2026-10-23T19:30:00Z",
+   "venue": "home venue (per official schedule)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Oyonnax Rugby official fixtures page",
+     "url": "https://oyonnaxrugby.com/accueil"
+    },
+    {
+     "name": "allrugby Pro D2 J8 referees/schedule",
+     "url": "https://www.allrugby.com/news/pro-d2-2027-j8-arbitres-3870.html"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Pro D2 table",
+     "value": "positions beyond leaders not officially read this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Pro D2 table",
+     "value": "positions beyond leaders not officially read this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Rugby_Union/9",
+    "clock": "Tomorrow 18:30",
+    "tips": "Colomiers 1/1 (100%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ru-prod2-j8-05",
+   "sport": "rugby-union",
+   "competition": "French Pro D2 2026-27 (Round 8)",
+   "home": "Stade Aurillacois (Aurillac)",
+   "away": "USON Nevers",
+   "start_utc": "2026-10-23T19:30:00Z",
+   "venue": "home venue (per official schedule)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Oyonnax Rugby official fixtures page",
+     "url": "https://oyonnaxrugby.com/accueil"
+    },
+    {
+     "name": "allrugby Pro D2 J8 referees/schedule",
+     "url": "https://www.allrugby.com/news/pro-d2-2027-j8-arbitres-3870.html"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Pro D2 table",
+     "value": "positions beyond leaders not officially read this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Pro D2 table",
+     "value": "positions beyond leaders not officially read this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Rugby_Union/9",
+    "clock": "Tomorrow 18:30",
+    "tips": "Aurillac 4/6 (67%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ru-prod2-j8-06",
+   "sport": "rugby-union",
+   "competition": "French Pro D2 2026-27 (Round 8)",
+   "home": "Soyaux-Angouleme XV",
+   "away": "US Dax",
+   "start_utc": "2026-10-23T19:30:00Z",
+   "venue": "home venue (per official schedule)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Oyonnax Rugby official fixtures page",
+     "url": "https://oyonnaxrugby.com/accueil"
+    },
+    {
+     "name": "allrugby Pro D2 J8 referees/schedule",
+     "url": "https://www.allrugby.com/news/pro-d2-2027-j8-arbitres-3870.html"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Pro D2 table",
+     "value": "positions beyond leaders not officially read this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Pro D2 table",
+     "value": "positions beyond leaders not officially read this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Rugby_Union/9",
+    "clock": "Tomorrow 18:30",
+    "tips": "Dax 3/3 (100%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ru-prod2-j8-07",
+   "sport": "rugby-union",
+   "competition": "French Pro D2 2026-27 (Round 8)",
+   "home": "Provence Rugby",
+   "away": "AS Beziers Herault",
+   "start_utc": "2026-10-23T21:00:00Z",
+   "venue": "home venue (per official schedule)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Oyonnax Rugby official fixtures page",
+     "url": "https://oyonnaxrugby.com/accueil"
+    },
+    {
+     "name": "allrugby Pro D2 J8 referees/schedule",
+     "url": "https://www.allrugby.com/news/pro-d2-2027-j8-arbitres-3870.html"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Pro D2 table",
+     "value": "positions beyond leaders not officially read this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Pro D2 table",
+     "value": "positions beyond leaders not officially read this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Rugby_Union/9",
+    "clock": "Tomorrow 20:00",
+    "tips": "Provence 1/2 (50%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "ru-prod2-j8-08",
+   "sport": "rugby-union",
+   "competition": "French Pro D2 2026-27 (Round 8)",
+   "home": "FC Grenoble",
+   "away": "Biarritz Olympique",
+   "start_utc": "2026-10-23T21:00:00Z",
+   "venue": "home venue (per official schedule)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Oyonnax Rugby official fixtures page",
+     "url": "https://oyonnaxrugby.com/accueil"
+    },
+    {
+     "name": "allrugby Pro D2 J8 referees/schedule",
+     "url": "https://www.allrugby.com/news/pro-d2-2027-j8-arbitres-3870.html"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Pro D2 table",
+     "value": "positions beyond leaders not officially read this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Pro D2 table",
+     "value": "positions beyond leaders not officially read this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Rugby_Union/9",
+    "clock": "Tomorrow 20:00",
+    "tips": "Grenoble 2/3 (67%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "hand-ehf-12049",
+   "sport": "handball",
+   "competition": "EHF Champions League Men 2026-27 (Group phase R5)",
+   "home": "MT Melsungen",
+   "away": "Orlen Wisla Plock",
+   "start_utc": "2026-10-22T18:45:00Z",
+   "venue": "Rothenbach-Halle, Kassel",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "eurohandball.com official R5 match list",
+     "url": "https://www.eurohandball.com/en/"
+    },
+    {
+     "name": "EHF official R5 preview (H2H last meetings)",
+     "url": "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins"
+    },
+    {
+     "name": "2026-27 EHF CL group tables (Wikipedia season article, mirrors EHF)",
+     "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "EHF CL group table (cross-checked)",
+     "value": "not in group-table read",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "EHF CL group table (cross-checked)",
+     "value": "not in group-table read",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Handball/20",
+    "clock": "Today 12:45",
+    "tips": "Melsungen 4/9 (44%) [1 expert]"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "hand-ehf-12051",
+   "sport": "handball",
+   "competition": "EHF Champions League Men 2026-27 (Group phase R5)",
+   "home": "OTP Bank - Pick Szeged",
+   "away": "GOG",
+   "start_utc": "2026-10-22T18:45:00Z",
+   "venue": "Pick Arena, Szeged",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "eurohandball.com official R5 match list",
+     "url": "https://www.eurohandball.com/en/"
+    },
+    {
+     "name": "EHF official R5 preview (H2H last meetings)",
+     "url": "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins"
+    },
+    {
+     "name": "2026-27 EHF CL group tables (Wikipedia season article, mirrors EHF)",
+     "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "EHF CL group table (cross-checked)",
+     "value": "37.5 pts-share",
+     "tier": "cross-checked",
+     "rating": 37.5
+    },
+    "away": {
+     "label": "EHF CL group table (cross-checked)",
+     "value": "75.0 pts-share",
+     "tier": "cross-checked",
+     "rating": 75.0
+    }
+   },
+   "olbg": {
+    "hub": "Handball/20",
+    "clock": "Today 12:45",
+    "tips": "GOG 3/9 (33%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "hand-ehf-12055",
+   "sport": "handball",
+   "competition": "EHF Champions League Men 2026-27 (Group phase R5)",
+   "home": "Barca",
+   "away": "Montpellier Handball",
+   "start_utc": "2026-10-22T20:45:00Z",
+   "venue": "Palau Blaugrana, Barcelona",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "eurohandball.com official R5 match list",
+     "url": "https://www.eurohandball.com/en/"
+    },
+    {
+     "name": "EHF official R5 preview (H2H last meetings)",
+     "url": "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins"
+    },
+    {
+     "name": "2026-27 EHF CL group tables (Wikipedia season article, mirrors EHF)",
+     "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "EHF CL group table (cross-checked)",
+     "value": "100.0 pts-share",
+     "tier": "cross-checked",
+     "rating": 100.0
+    },
+    "away": {
+     "label": "EHF CL group table (cross-checked)",
+     "value": "25.0 pts-share",
+     "tier": "cross-checked",
+     "rating": 25.0
+    }
+   },
+   "olbg": {
+    "hub": "Handball/20",
+    "clock": "Today 14:45",
+    "tips": "Barcelona 8/14 (57%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "hand-ehf-12054",
+   "sport": "handball",
+   "competition": "EHF Champions League Men 2026-27 (Group phase R5)",
+   "home": "Sporting CP",
+   "away": "IFK Kristianstad",
+   "start_utc": "2026-10-22T20:45:00Z",
+   "venue": "Pavilhao Joao Rocha, Lisbon",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "eurohandball.com official R5 match list",
+     "url": "https://www.eurohandball.com/en/"
+    },
+    {
+     "name": "EHF official R5 preview (H2H last meetings)",
+     "url": "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins"
+    },
+    {
+     "name": "2026-27 EHF CL group tables (Wikipedia season article, mirrors EHF)",
+     "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "EHF CL group table (cross-checked)",
+     "value": "87.5 pts-share",
+     "tier": "cross-checked",
+     "rating": 87.5
+    },
+    "away": {
+     "label": "EHF CL group table (cross-checked)",
+     "value": "12.5 pts-share",
+     "tier": "cross-checked",
+     "rating": 12.5
+    }
+   },
+   "olbg": {
+    "hub": "Handball/20",
+    "clock": "Today 14:45",
+    "tips": "Tie 6/13 (46%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "hand-ehf-12056",
+   "sport": "handball",
+   "competition": "EHF Champions League Men 2026-27 (Group phase R5)",
+   "home": "Kolstad Handball",
+   "away": "SC Magdeburg",
+   "start_utc": "2026-10-22T20:45:00Z",
+   "venue": "Trondheim Spektrum (per upstream)",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "eurohandball.com official R5 match list",
+     "url": "https://www.eurohandball.com/en/"
+    },
+    {
+     "name": "EHF official R5 preview (H2H last meetings)",
+     "url": "https://www.eurohandball.com/en/news/en/five-main-round-tickets-still-on-the-line-as-round-5-begins"
+    },
+    {
+     "name": "2026-27 EHF CL group tables (Wikipedia season article, mirrors EHF)",
+     "url": "https://en.wikipedia.org/wiki/2026%E2%80%9327_EHF_Champions_League"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "EHF CL group table (cross-checked)",
+     "value": "not in group-table read",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "EHF CL group table (cross-checked)",
+     "value": "not in group-table read",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Handball/20",
+    "clock": "Today 14:45",
+    "tips": "Tie 6/13 (46%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "hand-w-bul-ita",
+   "sport": "handball",
+   "competition": "Handball (women's internationals / domestic leagues)",
+   "home": "Bulgaria W",
+   "away": "Italy W",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "eurohandball.com official R5 match list",
+     "url": "https://www.eurohandball.com/en/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Handball/20",
+    "clock": "Today 12:00",
+    "tips": "Italy W 6/7 (86%)"
+   },
+   "stage": "",
+   "flags": [
+    "Listed from OLBG card; official fixture page not rendered this session - blank-and-flag"
+   ]
+  },
+  {
+   "id": "hand-de-stu-bie",
+   "sport": "handball",
+   "competition": "Handball (women's internationals / domestic leagues)",
+   "home": "TVB Stuttgart",
+   "away": "SG BBM Bietigheim",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "eurohandball.com official R5 match list",
+     "url": "https://www.eurohandball.com/en/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Handball/20",
+    "clock": "Today 13:00",
+    "tips": "Stuttgart 6/9 (67%)"
+   },
+   "stage": "",
+   "flags": [
+    "Listed from OLBG card; official fixture page not rendered this session - blank-and-flag"
+   ]
+  },
+  {
+   "id": "hand-dk-sje-nor",
+   "sport": "handball",
+   "competition": "Handball (women's internationals / domestic leagues)",
+   "home": "SonderjyskE",
+   "away": "Nordsjaelland Handbold",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "eurohandball.com official R5 match list",
+     "url": "https://www.eurohandball.com/en/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Handball/20",
+    "clock": "Today 13:30",
+    "tips": "Nordsjaelland 3/7 (43%)"
+   },
+   "stage": "",
+   "flags": [
+    "Listed from OLBG card; official fixture page not rendered this session - blank-and-flag"
+   ]
+  },
+  {
+   "id": "hand-dk-kol-fre",
+   "sport": "handball",
+   "competition": "Handball (women's internationals / domestic leagues)",
+   "home": "KIF Kolding",
+   "away": "Fredericia HK",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "eurohandball.com official R5 match list",
+     "url": "https://www.eurohandball.com/en/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Handball/20",
+    "clock": "Today 14:00",
+    "tips": "Fredericia 3/6 (50%)"
+   },
+   "stage": "",
+   "flags": [
+    "Listed from OLBG card; official fixture page not rendered this session - blank-and-flag"
+   ]
+  },
+  {
+   "id": "hand-es-gra-cue",
+   "sport": "handball",
+   "competition": "Handball (women's internationals / domestic leagues)",
+   "home": "BM Granollers",
+   "away": "Ciudad Encantada (Cuenca)",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "eurohandball.com official R5 match list",
+     "url": "https://www.eurohandball.com/en/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Handball/20",
+    "clock": "Today 14:00",
+    "tips": "Granollers 3/6 (50%)"
+   },
+   "stage": "",
+   "flags": [
+    "Listed from OLBG card; official fixture page not rendered this session - blank-and-flag"
+   ]
+  },
+  {
+   "id": "hand-se-ska-kar",
+   "sport": "handball",
+   "competition": "Handball (women's internationals / domestic leagues)",
+   "home": "Skanela IF",
+   "away": "HIF Karlskrona",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "eurohandball.com official R5 match list",
+     "url": "https://www.eurohandball.com/en/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Handball/20",
+    "clock": "Today 12:30",
+    "tips": "Tie 2/6 (33%)"
+   },
+   "stage": "",
+   "flags": [
+    "Listed from OLBG card; official fixture page not rendered this session - blank-and-flag"
+   ]
+  },
+  {
+   "id": "hand-se-onn-yst",
+   "sport": "handball",
+   "competition": "Handball (women's internationals / domestic leagues)",
+   "home": "Onnereds HK",
+   "away": "Ystads IF HF",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "eurohandball.com official R5 match list",
+     "url": "https://www.eurohandball.com/en/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Handball/20",
+    "clock": "Today 13:00",
+    "tips": "Onnereds 2/4 (50%)"
+   },
+   "stage": "",
+   "flags": [
+    "Listed from OLBG card; official fixture page not rendered this session - blank-and-flag"
+   ]
+  },
+  {
+   "id": "hand-w-est-kos",
+   "sport": "handball",
+   "competition": "Handball (women's internationals / domestic leagues)",
+   "home": "Estonia W",
+   "away": "Kosovo W",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "eurohandball.com official R5 match list",
+     "url": "https://www.eurohandball.com/en/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Handball/20",
+    "clock": "Tomorrow 14:00",
+    "tips": "Kosovo W 3/3 (100%)"
+   },
+   "stage": "",
+   "flags": [
+    "Listed from OLBG card; official fixture page not rendered this session - blank-and-flag"
+   ]
+  },
+  {
+   "id": "hand-de-gop-eis",
+   "sport": "handball",
+   "competition": "Handball (women's internationals / domestic leagues)",
+   "home": "Frisch Auf Goppingen",
+   "away": "ThSV Eisenach",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "eurohandball.com official R5 match list",
+     "url": "https://www.eurohandball.com/en/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Handball/20",
+    "clock": "Tomorrow 14:00",
+    "tips": "Eisenach 2/3 (67%)"
+   },
+   "stage": "",
+   "flags": [
+    "Listed from OLBG card; official fixture page not rendered this session - blank-and-flag"
+   ]
+  },
+  {
+   "id": "hand-dk-ski-aal",
+   "sport": "handball",
+   "competition": "Handball (women's internationals / domestic leagues)",
+   "home": "Skive fH",
+   "away": "Aalborg Handbold",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "eurohandball.com official R5 match list",
+     "url": "https://www.eurohandball.com/en/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Rating input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Handball/20",
+    "clock": "24 Oct 09:00",
+    "tips": "Aalborg 3/4 (75%)"
+   },
+   "stage": "",
+   "flags": [
+    "Listed from OLBG card; official fixture page not rendered this session - blank-and-flag"
+   ]
+  },
+  {
+   "id": "cric-eng-sri-odi3",
+   "sport": "cricket",
+   "competition": "Pakistan ODI Tri-Series 2026-27 (3rd match)",
+   "home": "England",
+   "away": "Sri Lanka",
+   "start_utc": "2026-10-22T08:00:00Z",
+   "venue": "Rawalpindi Cricket Stadium (neutral venue tri-series)",
+   "neutral": true,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "ESPNcricinfo fixtures hub",
+     "url": "https://www.cricinfo.com/ci/content/match/fixtures"
+    },
+    {
+     "name": "Wikipedia International cricket 2026-27 (tri-series results)",
+     "url": "https://en.wikipedia.org/wiki/International_cricket_in_2026%E2%80%9327"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ICC ODI rating",
+     "value": "not batch-read this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "ICC ODI rating",
+     "value": "not batch-read this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Cricket/7",
+    "clock": "Today 09:00",
+    "tips": "England 14/17 (82%) [1 expert]"
+   },
+   "stage": "Dead-rubber context: Pakistan beat SL by 37 runs (18 Oct) & England by 87 runs (20 Oct)",
+   "flags": [
+    "Day/night start ratified 08:00 GMT by cricinfo/ICC calendar"
+   ]
+  },
+  {
+   "id": "cric-nam-ire-odi1",
+   "sport": "cricket",
+   "competition": "Ireland tour of Namibia 2026-27 (1st ODI)",
+   "home": "Namibia",
+   "away": "Ireland",
+   "start_utc": "2026-10-22T08:15:00Z",
+   "venue": "Windhoek",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "ESPNcricinfo fixtures hub",
+     "url": "https://www.cricinfo.com/ci/content/match/fixtures"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ICC ODI rating",
+     "value": "associate/full-member pair - not batch-read",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "ICC ODI rating",
+     "value": "not batch-read this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Cricket/7",
+    "clock": "Today 09:00",
+    "tips": "Ireland 8/14 (57%) [2 experts]"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "cric-ausw-nzw-t20-3",
+   "sport": "cricket",
+   "competition": "Women's T20I Series (3rd T20I)",
+   "home": "Australia Women",
+   "away": "New Zealand Women",
+   "start_utc": "2026-10-22T08:15:00Z",
+   "venue": "North Sydney Oval, Sydney",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Cricket Australia official matches hub",
+     "url": "https://www.cricket.com.au/matches"
+    },
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ICC Women's T20I rating (root-desk verified)",
+     "value": "No. 1 (287)",
+     "tier": "cross-checked",
+     "rating": 88.0
+    },
+    "away": {
+     "label": "ICC Women's T20I rating (root-desk verified)",
+     "value": "No. 4 (253)",
+     "tier": "cross-checked",
+     "rating": 69.0
+    }
+   },
+   "olbg": {
+    "hub": "Cricket/7",
+    "clock": "Today 09:15",
+    "tips": "Australia W 8/10 (80%) [2 experts]"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "cric-csa-storm-tuskers",
+   "sport": "cricket",
+   "competition": "CSA T20 Challenge 2026 (Pool B)",
+   "home": "Eastern Storm",
+   "away": "KZN Inland Tuskers",
+   "start_utc": "2026-10-22T16:00:00Z",
+   "venue": "Willowmoore Park, Benoni",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "CSA T20 Challenge schedule (cricsa.co.za hub)",
+     "url": "https://cricsa.co.za/csa-t20-challenge-2026/"
+    },
+    {
+     "name": "CSA Pro T20 Cup points table (Group B)",
+     "url": "https://www.cricketworld.com/cricket/series/csa-t20-challenge-2026/points/130198"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "CSA T20 Group B table (cross-checked)",
+     "value": "1W-3L-1NR (6 pts)",
+     "tier": "cross-checked",
+     "rating": 40.0
+    },
+    "away": {
+     "label": "CSA T20 pool standing",
+     "value": "pool-A side; beat Knights 7 Oct, lost to Titans 13 Oct",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Cricket/7",
+    "clock": "Today 17:00",
+    "tips": "Eastern Storm 7/8 (88%)"
+   },
+   "stage": "",
+   "flags": [
+    "18:00 SAST start listed by multiple SA schedule hubs; CSA's own page did not render to tool"
+   ]
+  },
+  {
+   "id": "cric-csa-rhinos-emerging",
+   "sport": "cricket",
+   "competition": "CSA T20 Challenge 2026 (Pool B)",
+   "home": "Mpumalanga Rhinos",
+   "away": "South Africa Emerging",
+   "start_utc": "2026-10-22T11:00:00Z",
+   "venue": "Uplands College, White River",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "CSA T20 Challenge schedule (cricsa.co.za hub)",
+     "url": "https://cricsa.co.za/csa-t20-challenge-2026/"
+    },
+    {
+     "name": "CSA Pro T20 Cup points table (Group B)",
+     "url": "https://www.cricketworld.com/cricket/series/csa-t20-challenge-2026/points/130198"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "CSA T20 Group B table (cross-checked)",
+     "value": "1W-3L-1NR (6 pts)",
+     "tier": "cross-checked",
+     "rating": 40.0
+    },
+    "away": {
+     "label": "CSA T20 Group B table (cross-checked)",
+     "value": "0W-4L-1NR (2 pts)",
+     "tier": "cross-checked",
+     "rating": 20.0
+    }
+   },
+   "olbg": {
+    "hub": "Cricket/7",
+    "clock": "Today 12:00",
+    "tips": "Rhinos 6/9 (67%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "cric-afg-zim-odif",
+   "sport": "cricket",
+   "competition": "UAE Tri-Nations ODI Series 2026-27 (Final)",
+   "home": "Afghanistan",
+   "away": "Zimbabwe",
+   "start_utc": "2026-10-23T13:00:00Z",
+   "venue": "Sharjah Cricket Stadium (neutral venue)",
+   "neutral": true,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "ESPNcricinfo fixtures hub",
+     "url": "https://www.cricinfo.com/ci/content/match/fixtures"
+    },
+    {
+     "name": "Wikipedia International cricket 2026-27 (tri-series results)",
+     "url": "https://en.wikipedia.org/wiki/International_cricket_in_2026%E2%80%9327"
+    },
+    {
+     "name": "Cricket Australia official matches hub",
+     "url": "https://www.cricket.com.au/matches"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "ICC Men's ODI rating (root-desk verified)",
+     "value": "No. 8 (92)",
+     "tier": "cross-checked",
+     "rating": 74.0
+    },
+    "away": {
+     "label": "ICC Men's ODI rating (root-desk verified)",
+     "value": "unranked-lower band",
+     "tier": "pending",
+     "rating": 30.0,
+     "bounded": true
+    }
+   },
+   "olbg": {
+    "hub": "Cricket/7",
+    "clock": "Tomorrow 12:30",
+    "tips": "Afghanistan 1/1 (100%)"
+   },
+   "stage": "Series final (ODI 5043 per ICC numbering)",
+   "flags": [
+    "Zimbabwe's current ICC ODI rating not printed on any official page read today - bounded estimate published only as placeholder; see flagged page"
+   ]
+  },
+  {
+   "id": "vol-tauron-rad-mie",
+   "sport": "volleyball",
+   "competition": "TAURON Liga (POL, women)",
+   "home": "Radomka Radom W",
+   "away": "Mielec W (Developres?) - upstream card text",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Volleyball/21",
+    "clock": "Today 11:30",
+    "tips": "Radomka 7/10 (70%) [1 expert]"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page (cvf.cz/plusliga.pl/legavolley/cbv) rendered this fixture to the tool this session - listed and flagged, not priced to a rating",
+    "plusliga.pl redirect defect carried over from earlier desks (finding F-F7-09) - Polish women's league page still misroutes"
+   ]
+  },
+  {
+   "id": "vol-cz-brn-odo",
+   "sport": "volleyball",
+   "competition": "Czech Extraliga",
+   "home": "Brno",
+   "away": "Odolena Voda",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Volleyball/21",
+    "clock": "Today 12:00",
+    "tips": "Brno 5/6 (83%) [1 expert]"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page (cvf.cz/plusliga.pl/legavolley/cbv) rendered this fixture to the tool this session - listed and flagged, not priced to a rating"
+   ]
+  },
+  {
+   "id": "vol-cz-ost-kla",
+   "sport": "volleyball",
+   "competition": "Czech Extraliga",
+   "home": "Ostrava",
+   "away": "Kladno",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Volleyball/21",
+    "clock": "Today 12:00",
+    "tips": "Ostrava 4/7 (57%)"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page (cvf.cz/plusliga.pl/legavolley/cbv) rendered this fixture to the tool this session - listed and flagged, not priced to a rating"
+   ]
+  },
+  {
+   "id": "vol-cz-bud-bes",
+   "sport": "volleyball",
+   "competition": "Czech Extraliga",
+   "home": "Ceske Budejovice",
+   "away": "Beskydy",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Volleyball/21",
+    "clock": "Today 12:00",
+    "tips": "Ceske Budejovice 3/4 (75%) [1 expert]"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page (cvf.cz/plusliga.pl/legavolley/cbv) rendered this fixture to the tool this session - listed and flagged, not priced to a rating"
+   ]
+  },
+  {
+   "id": "vol-cz-ust-zli",
+   "sport": "volleyball",
+   "competition": "Czech Extraliga",
+   "home": "Usti Nad Labem",
+   "away": "Zlin",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Volleyball/21",
+    "clock": "Today 12:00",
+    "tips": "Zlin 2/4 (50%)"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page (cvf.cz/plusliga.pl/legavolley/cbv) rendered this fixture to the tool this session - listed and flagged, not priced to a rating"
+   ]
+  },
+  {
+   "id": "vol-cz-lib-ben",
+   "sport": "volleyball",
+   "competition": "Czech Extraliga",
+   "home": "Liberec",
+   "away": "Benatky nad Jizerou",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Volleyball/21",
+    "clock": "Today 12:00",
+    "tips": "Liberec 3-1 set score 2/4 (50%)"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page (cvf.cz/plusliga.pl/legavolley/cbv) rendered this fixture to the tool this session - listed and flagged, not priced to a rating"
+   ]
+  },
+  {
+   "id": "vol-pl-sle-kat",
+   "sport": "volleyball",
+   "competition": "Polish PlusLiga",
+   "home": "Slepsk Suwalki",
+   "away": "GKS Katowice",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Volleyball/21",
+    "clock": "Tomorrow 11:30",
+    "tips": "Slepsk 2/3 (67%)"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page (cvf.cz/plusliga.pl/legavolley/cbv) rendered this fixture to the tool this session - listed and flagged, not priced to a rating"
+   ]
+  },
+  {
+   "id": "vol-pl-skr-war",
+   "sport": "volleyball",
+   "competition": "Polish PlusLiga",
+   "home": "PGE Skra Belchatow",
+   "away": "Projekt Warszawa",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Volleyball/21",
+    "clock": "24 Oct 12:00",
+    "tips": "Projekt 2/3 (67%)"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page (cvf.cz/plusliga.pl/legavolley/cbv) rendered this fixture to the tool this session - listed and flagged, not priced to a rating"
+   ]
+  },
+  {
+   "id": "vol-pl-che-res",
+   "sport": "volleyball",
+   "competition": "Polish PlusLiga",
+   "home": "CHKS Chelm",
+   "away": "Resovia Rzeszow",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Volleyball/21",
+    "clock": "25 Oct 13:00",
+    "tips": "Resovia 2/3 (67%)"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page (cvf.cz/plusliga.pl/legavolley/cbv) rendered this fixture to the tool this session - listed and flagged, not priced to a rating"
+   ]
+  },
+  {
+   "id": "vol-br-pau-min",
+   "sport": "volleyball",
+   "competition": "Brazilian Superliga W",
+   "home": "Paulistano-Barueri W",
+   "away": "Minas W",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Volleyball/21",
+    "clock": "Tomorrow 17:30",
+    "tips": "3-1 home set score 1/1"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page (cvf.cz/plusliga.pl/legavolley/cbv) rendered this fixture to the tool this session - listed and flagged, not priced to a rating"
+   ]
+  },
+  {
+   "id": "vol-br-bra-fle",
+   "sport": "volleyball",
+   "competition": "Brazilian Superliga W",
+   "home": "Brasilia W",
+   "away": "Sesc RJ Flamengo W",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Volleyball/21",
+    "clock": "Tomorrow 17:30",
+    "tips": "Brasilia 3-1 set score 1/1"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page (cvf.cz/plusliga.pl/legavolley/cbv) rendered this fixture to the tool this session - listed and flagged, not priced to a rating"
+   ]
+  },
+  {
+   "id": "vol-br-mac-osa",
+   "sport": "volleyball",
+   "competition": "Brazilian Superliga W",
+   "home": "Mackenzie W",
+   "away": "Osasco W",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Volleyball/21",
+    "clock": "24 Oct 15:00",
+    "tips": "Mackenzie 3-1 set score 1/1"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page (cvf.cz/plusliga.pl/legavolley/cbv) rendered this fixture to the tool this session - listed and flagged, not priced to a rating"
+   ]
+  },
+  {
+   "id": "vol-br-bru-pra",
+   "sport": "volleyball",
+   "competition": "Brazilian Superliga W",
+   "home": "Abel-Moda Brusque W",
+   "away": "Praia Clube W",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Volleyball/21",
+    "clock": "24 Oct 20:00",
+    "tips": "Brusque 1/1"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page (cvf.cz/plusliga.pl/legavolley/cbv) rendered this fixture to the tool this session - listed and flagged, not priced to a rating"
+   ]
+  },
+  {
+   "id": "vol-it-tre-cis",
+   "sport": "volleyball",
+   "competition": "SuperLega Credem Banca",
+   "home": "Trentino Volley",
+   "away": "Cisterna",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Volleyball/21",
+    "clock": "25 Oct 12:00",
+    "tips": "Cisterna 1/1"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page (cvf.cz/plusliga.pl/legavolley/cbv) rendered this fixture to the tool this session - listed and flagged, not priced to a rating",
+    "OLBG tips underdog Cisterna over Trentino 1/1 - small sample; treat with caution"
+   ]
+  },
+  {
+   "id": "vol-it-mon-ver",
+   "sport": "volleyball",
+   "competition": "SuperLega Credem Banca",
+   "home": "Vero Volley Monza",
+   "away": "Verona Volley",
+   "start_utc": null,
+   "venue": "venue unverified this session",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "League table input",
+     "value": "not verified this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Volleyball/21",
+    "clock": "25 Oct 13:00",
+    "tips": "Monza (truncated upstream)"
+   },
+   "stage": "",
+   "flags": [
+    "No governing-body page (cvf.cz/plusliga.pl/legavolley/cbv) rendered this fixture to the tool this session - listed and flagged, not priced to a rating"
+   ]
+  },
+  {
+   "id": "shl-bjl-mif",
+   "sport": "ice-hockey",
+   "competition": "SHL 2026-27 (Sweden)",
+   "home": "IF Bjorkloven",
+   "away": "IF Malmo Redhawks",
+   "start_utc": "2026-10-22T17:00:00Z",
+   "venue": "home venue (19:00 CET CV HUB slates)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "SHL official club fixture note (Vaxjo Lakers home slate)",
+     "url": "https://www.vaxjolakers.se/"
+    },
+    {
+     "name": "SHL schedule + results hub (sportbibeln)",
+     "url": "https://www.sportbibeln.se/hockey/shl-resultat-och-tabell/"
+    },
+    {
+     "name": "SHL TV schedule (vmhockey)",
+     "url": "https://vmhockey.se/shl/spelschema/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "SHL standings (sportbibeln cross-checked - shl.se not rendered)",
+     "value": "rating pts-share 73.3",
+     "tier": "cross-checked",
+     "rating": 73.3
+    },
+    "away": {
+     "label": "SHL standings (sportbibeln cross-checked)",
+     "value": "rating pts-share 33.3",
+     "tier": "cross-checked",
+     "rating": 33.3
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13",
+    "clock": "Today 13:00",
+    "tips": "Bjorkloven 2/2 (100%)"
+   },
+   "stage": "",
+   "flags": [
+    "All six Thursday SHL games 19:00 CET (=17:00Z); OLBG renders 13:00 UK - upstream clock defect"
+   ]
+  },
+  {
+   "id": "shl-rog-fhc",
+   "sport": "ice-hockey",
+   "competition": "SHL 2026-27 (Sweden)",
+   "home": "Rogle BK",
+   "away": "Frolunda HC",
+   "start_utc": "2026-10-22T17:00:00Z",
+   "venue": "home venue (19:00 CET CV HUB slates)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "SHL official club fixture note (Vaxjo Lakers home slate)",
+     "url": "https://www.vaxjolakers.se/"
+    },
+    {
+     "name": "SHL schedule + results hub (sportbibeln)",
+     "url": "https://www.sportbibeln.se/hockey/shl-resultat-och-tabell/"
+    },
+    {
+     "name": "SHL TV schedule (vmhockey)",
+     "url": "https://vmhockey.se/shl/spelschema/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "SHL standings (sportbibeln cross-checked - shl.se not rendered)",
+     "value": "rating pts-share 60.0",
+     "tier": "cross-checked",
+     "rating": 60.0
+    },
+    "away": {
+     "label": "SHL standings (sportbibeln cross-checked)",
+     "value": "rating pts-share 93.3",
+     "tier": "cross-checked",
+     "rating": 93.3
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13",
+    "clock": "Today 13:00",
+    "tips": "Frolunda +1.50 puck line 1/1"
+   },
+   "stage": "",
+   "flags": [
+    "All six Thursday SHL games 19:00 CET (=17:00Z); OLBG renders 13:00 UK - upstream clock defect"
+   ]
+  },
+  {
+   "id": "shl-sai-dif",
+   "sport": "ice-hockey",
+   "competition": "SHL 2026-27 (Sweden)",
+   "home": "Skelleftea AIK",
+   "away": "Djurgardens IF",
+   "start_utc": "2026-10-22T17:00:00Z",
+   "venue": "home venue (19:00 CET CV HUB slates)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "SHL official club fixture note (Vaxjo Lakers home slate)",
+     "url": "https://www.vaxjolakers.se/"
+    },
+    {
+     "name": "SHL schedule + results hub (sportbibeln)",
+     "url": "https://www.sportbibeln.se/hockey/shl-resultat-och-tabell/"
+    },
+    {
+     "name": "SHL TV schedule (vmhockey)",
+     "url": "https://vmhockey.se/shl/spelschema/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "SHL standings (sportbibeln cross-checked - shl.se not rendered)",
+     "value": "rating pts-share 60.0",
+     "tier": "cross-checked",
+     "rating": 60.0
+    },
+    "away": {
+     "label": "SHL standings (sportbibeln cross-checked)",
+     "value": "rating pts-share 20.0",
+     "tier": "cross-checked",
+     "rating": 20.0
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13",
+    "clock": "Today 13:00",
+    "tips": "Skelleftea 4/4 (100%)"
+   },
+   "stage": "",
+   "flags": [
+    "All six Thursday SHL games 19:00 CET (=17:00Z); OLBG renders 13:00 UK - upstream clock defect"
+   ]
+  },
+  {
+   "id": "shl-tik-fbk",
+   "sport": "ice-hockey",
+   "competition": "SHL 2026-27 (Sweden)",
+   "home": "Timra IK",
+   "away": "Farjestad BK",
+   "start_utc": "2026-10-22T17:00:00Z",
+   "venue": "home venue (19:00 CET CV HUB slates)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "SHL official club fixture note (Vaxjo Lakers home slate)",
+     "url": "https://www.vaxjolakers.se/"
+    },
+    {
+     "name": "SHL schedule + results hub (sportbibeln)",
+     "url": "https://www.sportbibeln.se/hockey/shl-resultat-och-tabell/"
+    },
+    {
+     "name": "SHL TV schedule (vmhockey)",
+     "url": "https://vmhockey.se/shl/spelschema/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "SHL standings (sportbibeln cross-checked - shl.se not rendered)",
+     "value": "rating pts-share 13.3",
+     "tier": "cross-checked",
+     "rating": 13.3
+    },
+    "away": {
+     "label": "SHL standings (sportbibeln cross-checked)",
+     "value": "rating pts-share 86.7",
+     "tier": "cross-checked",
+     "rating": 86.7
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13",
+    "clock": "Today 13:00",
+    "tips": "Farjestad 2/3 (67%) [2 experts]"
+   },
+   "stage": "",
+   "flags": [
+    "All six Thursday SHL games 19:00 CET (=17:00Z); OLBG renders 13:00 UK - upstream clock defect"
+   ]
+  },
+  {
+   "id": "shl-ohk-bif",
+   "sport": "ice-hockey",
+   "competition": "SHL 2026-27 (Sweden)",
+   "home": "Orebro HK",
+   "away": "Brynas IF",
+   "start_utc": "2026-10-22T17:00:00Z",
+   "venue": "home venue (19:00 CET CV HUB slates)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "SHL official club fixture note (Vaxjo Lakers home slate)",
+     "url": "https://www.vaxjolakers.se/"
+    },
+    {
+     "name": "SHL schedule + results hub (sportbibeln)",
+     "url": "https://www.sportbibeln.se/hockey/shl-resultat-och-tabell/"
+    },
+    {
+     "name": "SHL TV schedule (vmhockey)",
+     "url": "https://vmhockey.se/shl/spelschema/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "SHL standings (sportbibeln cross-checked - shl.se not rendered)",
+     "value": "rating pts-share 53.3",
+     "tier": "cross-checked",
+     "rating": 53.3
+    },
+    "away": {
+     "label": "SHL standings (sportbibeln cross-checked)",
+     "value": "rating pts-share 60.0",
+     "tier": "cross-checked",
+     "rating": 60.0
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13",
+    "clock": "Today 13:00",
+    "tips": "Orebro 2/4 (50%)"
+   },
+   "stage": "",
+   "flags": [
+    "All six Thursday SHL games 19:00 CET (=17:00Z); OLBG renders 13:00 UK - upstream clock defect"
+   ]
+  },
+  {
+   "id": "shl-vlh-lhf",
+   "sport": "ice-hockey",
+   "competition": "SHL 2026-27 (Sweden)",
+   "home": "Vaxjo Lakers HC",
+   "away": "Lulea HF",
+   "start_utc": "2026-10-22T17:00:00Z",
+   "venue": "home venue (19:00 CET CV HUB slates)",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "SHL official club fixture note (Vaxjo Lakers home slate)",
+     "url": "https://www.vaxjolakers.se/"
+    },
+    {
+     "name": "SHL schedule + results hub (sportbibeln)",
+     "url": "https://www.sportbibeln.se/hockey/shl-resultat-och-tabell/"
+    },
+    {
+     "name": "SHL TV schedule (vmhockey)",
+     "url": "https://vmhockey.se/shl/spelschema/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "SHL standings (sportbibeln cross-checked - shl.se not rendered)",
+     "value": "rating pts-share 40.0",
+     "tier": "cross-checked",
+     "rating": 40.0
+    },
+    "away": {
+     "label": "SHL standings (sportbibeln cross-checked)",
+     "value": "rating pts-share 40.0",
+     "tier": "cross-checked",
+     "rating": 40.0
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13",
+    "clock": "Today 13:00",
+    "tips": "Lulea +1.50 puck line 1/1"
+   },
+   "stage": "",
+   "flags": [
+    "All six Thursday SHL games 19:00 CET (=17:00Z); OLBG renders 13:00 UK - upstream clock defect"
+   ]
+  },
+  {
+   "id": "liiga-jyp-hpk",
+   "sport": "ice-hockey",
+   "competition": "Liiga 2026-27 (Finland)",
+   "home": "JYP Jyvaskyla",
+   "away": "HPK Hameenlinna",
+   "start_utc": null,
+   "venue": "unverified",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Liiga table",
+     "value": "not read officially this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Liiga table",
+     "value": "not read officially this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Ice_Hockey/13",
+    "clock": "Today 11:30",
+    "tips": "Jyp 3/3 (100%)"
+   },
+   "stage": "",
+   "flags": [
+    "Liiga official page not read this session - blank-and-flag"
+   ]
+  },
+  {
+   "id": "kbl-mob-cha",
+   "sport": "basketball",
+   "competition": "KBL 2026-27 (Korea)",
+   "home": "Ulsan Mobis Phoebus",
+   "away": "Changwon LG Sakers",
+   "start_utc": null,
+   "venue": "Dongchun Gymnasium (per upstream; unverified)",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "KBL standings",
+     "value": "not read officially this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "KBL standings",
+     "value": "not read officially this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Today 06:00",
+    "tips": "Mobis 4/6 (67%)"
+   },
+   "stage": "",
+   "flags": [
+    "Fixture corroborated by score-hub snippets only (flashscore/betclan), KBL official page not rendered - flagged"
+   ]
+  },
+  {
+   "id": "nbb-for-pin",
+   "sport": "basketball",
+   "competition": "Novo Basquete Brasil 2026-27",
+   "home": "Fortaleza BC",
+   "away": "Pinheiros",
+   "start_utc": null,
+   "venue": "unverified",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "NBB standings",
+     "value": "not read officially this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "NBB standings",
+     "value": "not read officially this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Today 18:30",
+    "tips": "Pinheiros 2/3 (67%)"
+   },
+   "stage": "",
+   "flags": [
+    "NBB official page not read this session - blank-and-flag"
+   ]
+  },
+  {
+   "id": "nbb-uni-min",
+   "sport": "basketball",
+   "competition": "Novo Basquete Brasil 2026-27",
+   "home": "Uniao Corinthians",
+   "away": "Minas",
+   "start_utc": null,
+   "venue": "unverified",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "NBB standings",
+     "value": "not read officially this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "NBB standings",
+     "value": "not read officially this session",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Basketball/4",
+    "clock": "Today 18:30",
+    "tips": "Minas 1/1 (100%)"
+   },
+   "stage": "",
+   "flags": [
+    "NBB official page not read this session - blank-and-flag"
+   ]
+  },
+  {
+   "id": "golf-pga-bermuda2026",
+   "sport": "golf",
+   "competition": "PGA TOUR FedExCup Fall - Butterfield Bermuda Championship",
+   "home": "Field (PGA TOUR)",
+   "away": "Outright winner market",
+   "start_utc": "2026-10-22T11:10:00Z",
+   "venue": "Port Royal Golf Course, Bermuda",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    },
+    {
+     "name": "Root desk verification ledger (data/verification.json)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Official OWGR-based field ratings",
+     "value": "not batch-read this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Market type",
+     "value": "tournament outright (156-man field)",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Golf/5",
+    "clock": "Today 14:10",
+    "tips": "Win tournament: Seamus Power 6/24 (25%)"
+   },
+   "stage": "",
+   "flags": [
+    "Round 1 in progress; OLBG outright card mirrors the event; no field rating matrix read - unlocked as event listing only"
+   ]
+  },
+  {
+   "id": "golf-champions-stifel2026",
+   "sport": "golf",
+   "competition": "PGA TOUR Champions - Stifel Charity Classic",
+   "home": "Field (Champions Tour)",
+   "away": "Outright winner market",
+   "start_utc": "2026-10-23T15:45:00Z",
+   "venue": "Norwood Hills CC, St. Louis MO",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    },
+    {
+     "name": "Root desk verification ledger (data/verification.json)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Field ratings",
+     "value": "not batch-read this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Market type",
+     "value": "tournament outright (54 holes, starts 23 Oct)",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Golf/5",
+    "clock": "25 Oct 17:45",
+    "tips": "Steven Alker 2/11 (18%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "golf-legends-italian2026",
+   "sport": "golf",
+   "competition": "Legends Tour - Senior Italian Open",
+   "home": "Field (Legends Tour)",
+   "away": "Outright winner market",
+   "start_utc": "2026-10-23",
+   "venue": "Italy (per upstream; venue unverified)",
+   "neutral": false,
+   "verification": {
+    "verdict": "pending",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Field ratings",
+     "value": "not verified this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Market type",
+     "value": "tournament outright",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Golf/5",
+    "clock": "24 Oct 11:45",
+    "tips": "Hennie Otto 0/2"
+   },
+   "stage": "",
+   "flags": [
+    "Legends Tour not covered by an official page read this session - blank-and-flag"
+   ]
+  },
+  {
+   "id": "f1-usgp-2026",
+   "sport": "motor-racing",
+   "competition": "FIA Formula 1 World Championship 2026 - United States Grand Prix",
+   "home": "Race (20 drivers)",
+   "away": "Race winner market",
+   "start_utc": "2026-10-25T20:00:00Z",
+   "venue": "Circuit of The Americas, Austin TX",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    },
+    {
+     "name": "Root desk verification ledger (data/verification.json)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "FIA drivers' standings input",
+     "value": "root-desk verified slate (see linked row)",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Market type",
+     "value": "race winner outright",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Motor_Racing/14",
+    "clock": "25 Oct 16:00",
+    "tips": "Win Race: Max Verstappen 12/33 (36%) [3 experts]"
+   },
+   "stage": "",
+   "flags": [
+    "Race start 16:00 local(=20:00Z Sun) per upstream; qualifying/ratings not priced this session"
+   ]
+  },
+  {
+   "id": "f1-title-2026",
+   "sport": "motor-racing",
+   "competition": "FIA Formula 1 World Championship 2026 - Drivers' Title",
+   "home": "Championship field",
+   "away": "Title winner market",
+   "start_utc": "2026-12-06",
+   "venue": "Season outright (Abu Dhabi finale)",
+   "neutral": false,
+   "verification": {
+    "verdict": "verified",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    },
+    {
+     "name": "Root desk verification ledger (data/verification.json)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Championship standings",
+     "value": "not batch-read this session",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Market type",
+     "value": "season outright",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Motor_Racing/14",
+    "clock": "06 Dec",
+    "tips": "Verstappen 9/33 (27%); w/o Antonelli: Verstappen 4/7 (57%)"
+   },
+   "stage": "",
+   "flags": []
+  },
+  {
+   "id": "gb-1114-kinsley",
+   "sport": "greyhounds",
+   "competition": "GBGB UK Graded Greyhound Racing",
+   "home": "11:14 Kinsley",
+   "away": "field",
+   "start_utc": "2026-10-22",
+   "venue": "Kinsley Greyhound Stadium",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Race form input",
+     "value": "per-dog graded form not officially read today",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Market type",
+     "value": "single-race winner card (1/1 tip upstream)",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Greyhounds/28",
+    "clock": "Today 06:14",
+    "tips": "Limited Blue 1/1"
+   },
+   "stage": "",
+   "flags": [
+    "OLBG clock renders one hour before the race name (06:14 for '11:14 Kinsley') - UTC-vs-BST label defect documented by all prior desks"
+   ]
+  },
+  {
+   "id": "gb-1136-sheffield",
+   "sport": "greyhounds",
+   "competition": "GBGB UK Graded Greyhound Racing",
+   "home": "11:36 Sheffield",
+   "away": "field",
+   "start_utc": "2026-10-22",
+   "venue": "Sheffield (Owlerton) Stadium",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Race form input",
+     "value": "per-dog graded form not officially read today",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Market type",
+     "value": "single-race winner card (1/1 tip upstream)",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Greyhounds/28",
+    "clock": "Today 06:36",
+    "tips": "Drumdoit Pixie 1/1"
+   },
+   "stage": "",
+   "flags": [
+    "OLBG clock renders one hour before the race name (06:14 for '11:14 Kinsley') - UTC-vs-BST label defect documented by all prior desks"
+   ]
+  },
+  {
+   "id": "gb-1203-kinsley",
+   "sport": "greyhounds",
+   "competition": "GBGB UK Graded Greyhound Racing",
+   "home": "12:03 Kinsley",
+   "away": "field",
+   "start_utc": "2026-10-22",
+   "venue": "Kinsley Greyhound Stadium",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Race form input",
+     "value": "per-dog graded form not officially read today",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Market type",
+     "value": "single-race winner card (1/1 tip upstream)",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Greyhounds/28",
+    "clock": "Today 07:03",
+    "tips": "Ballymac Alyssa 1/1"
+   },
+   "stage": "",
+   "flags": [
+    "OLBG clock renders one hour before the race name (06:14 for '11:14 Kinsley') - UTC-vs-BST label defect documented by all prior desks"
+   ]
+  },
+  {
+   "id": "gb-1214-nottingham",
+   "sport": "greyhounds",
+   "competition": "GBGB UK Graded Greyhound Racing",
+   "home": "12:14 Nottingham",
+   "away": "field",
+   "start_utc": "2026-10-22",
+   "venue": "Nottingham Greyhound Stadium, Colwick Park",
+   "neutral": false,
+   "verification": {
+    "verdict": "cross-checked",
+    "checked_utc": "2026-10-22T08:45:00Z",
+    "fields": [
+     "participants",
+     "start",
+     "venue"
+    ]
+   },
+   "sources": [
+    {
+     "name": "Root desk verified dataset (re-checked here)",
+     "url": "https://buffedlizard55-lab.github.io/OLBG1/"
+    }
+   ],
+   "inputs": {
+    "home": {
+     "label": "Race form input",
+     "value": "per-dog graded form not officially read today",
+     "tier": "pending"
+    },
+    "away": {
+     "label": "Market type",
+     "value": "single-race winner card (1/1 tip upstream)",
+     "tier": "pending"
+    }
+   },
+   "olbg": {
+    "hub": "Greyhounds/28",
+    "clock": "Today 07:14",
+    "tips": "Ferryforth Mary 1/1"
+   },
+   "stage": "",
+   "flags": [
+    "OLBG clock renders one hour before the race name (06:14 for '11:14 Kinsley') - UTC-vs-BST label defect documented by all prior desks"
+   ]
+  }
+ ],
+ "count": 137
+}
