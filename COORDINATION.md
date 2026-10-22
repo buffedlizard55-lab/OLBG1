@@ -105,8 +105,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 
 | T22 | Third independent re-check after T20/T21: RLWC26 source URLs, tennis pairing provenance, prediction prose de-templating | done | 3c7579ed-olbg1 | `scripts/dataset_rows_a.py`, `scripts/dataset_rows_b.py`, `scripts/high_predictions.py`, `scripts/live_verification.py`, `data/*`, `COORDINATION.md` (append-only) | 2026-10-21T08:20Z | Claimed as T17 at 07:40Z; T17/T20/T21 were taken by 72198d3e, 76950c25 and 4f8d032d while this branch was open, so the task is recorded as T22 (§19). Additive: extends T20's verification register rather than publishing a parallel page. |
 
-> **Note on multi-session safety:** if you are a session that is not `ce5920e3-olbg1`, add your
-> rows to §1 and §4 **without rewriting the existing table**. Append; do not reformat.
+| T43 | **Final integration pass (2026-10-22):** fresh official-source re-verification of every live row, expiry of completed fixtures, confidence-band policy (−250…+10000) enforcement, new 30+ word unique predictions, consolidated clean dashboard, validator gate, PR + merge + Pages deploy check | in progress | e381d2e3-olbg1 | `data/v3/**`, `scripts/v3_*.py`, `v3/**`, `index.html` (consolidated landing only), `COORDINATION.md` (append-only §33) | 2026-10-22T01:25Z | Renumbered T41→T43 on rebase (§31/§32 had already taken T41/T42 and merged as PR #46/#47). Non-overlapping `v3/` namespace; no other session's dashboard, dataset or generator edited. |
 
 ---
 
@@ -1400,3 +1399,6 @@ window has to be the binding constraint. The fix, the arithmetic and the remaini
   desk change; they are complementary, not duplicates.
 * **Pages.** The deployment triggered by `f4a1dc2` was queued at 01:30Z and had not completed when this
   entry was written; the live-site check is recorded in §31.3 once the build finishes.
+
+---
+
