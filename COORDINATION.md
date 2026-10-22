@@ -3018,3 +3018,13 @@ as every other preserved desk does. Reproduced locally on `origin/main` at `e5d8
 `53674ac8`, **none** in `e6fc2f12`. Recorded here rather than editing another session's desk. The
 downstream workflow steps (refresh, build, field and browser gates) are skipped while that check
 fails, so it blocks the canonical run for everyone, not just this desk.
+
+## TEE3C — canonical integrity integration, 2026-10-22
+
+Owner `ee3c3e8f-olbg1`, pinned branch `arena/ee3c3e8f-olbg1`. Claim pushed as `b0b5b48` before implementation (new remote branch did not yet exist, so initial branch pull failed harmlessly; pulled/rebased main before creating the remote branch). No conflicting owner or legacy namespace edits.
+
+Reproduced and fixed: missing official pre-match status could still yield a price (seven baseline EuroLeague books now withheld); browser fixture TTL omitted earlier statistical input deadlines; exact 24-hour boundary; duplicate price-book/count/window/provenance-scope gaps. Added explicit supported-status gate, minimum input/start/fixture price expiry in model and browser, no-JavaScript estimate withholding, retrospective-observation guard, rendered-expiry and data reconciliation gates. Public findings F-257E-20 through F-257E-22; see `reports/SESSION_EE3C3E8F.md` for precise source checks and test results.
+
+Live official spot reads: https://api-web.nhle.com/v1/schedule/2026-10-22 (chunk 0; first four complete game objects agree, not a full reharvest), https://www.olbg.com/robots.txt (complete returned text; restrictions retained), https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/ (chunk 0; no live-status promotion). Generic EuroLeague season route returned a 404 and was not treated as fixture evidence. Original capture windows remain unchanged. No claim of worldwide completeness, new High calibration, verified bookmaker quotes or full fresh factual recertification.
+
+Local gates: 113 canonical + 38 preserved tests PASS; 77-page build and canonical validator 0 errors; real desktop/mobile/project-prefix browser suite PASS including independent statistical expiry and no-JS withholding; historical validator 0 errors / 3 pre-existing mirror warnings. Build checkpoint: 108 listings / 17 books / 42 markets / 84 outcomes / 17 Low / 0 Medium or High. PR/deployment receipts to follow actual results.

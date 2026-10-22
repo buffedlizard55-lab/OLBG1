@@ -189,6 +189,15 @@ def make_findings(baseline):
     add(19,'high','Valencia record conflicts across two current official pages',
         'Independently re-read after the T62 audit lead: the EuroLeague Game Center preview still says Valencia 5-1; the 2026-27 standings table says GP6, W4, L2. Neither disputed overall record is accepted as a current input. The Paris–Valencia listing remains source-linked, but its estimate and selection are withheld. Both selected observations are retained; no fixture observation was restamped.',
         'https://www.euroleaguebasketball.net/en/euroleague/standings/',status='input quarantined; needs review')
+    add(20,'high','A future schedule cannot fill in missing pre-match status',
+        'TEE3C reproduced pricing on EuroLeague rows whose official_status is null. The official start remains a captured schedule fact, not proof the match is still pre-match. Canonical origination now requires an explicit supported pre-match state; blank/new/unsupported states withhold every price and selection. Missing status is listed in the field-gap table. No Scheduled value was inferred.',
+        el,'pipeline/model.py','def prematch_status_verified','resolved in canonical model; status gaps need review')
+    add(21,'high','An estimate must expire with its statistical inputs',
+        'TEE3C found the browser only checked the fixture expiry/start, so a freshly refreshed fixture could outlive the 24-hour statistical input limit. Every price book now carries the minimum of fixture expiry, start and both statistical observation deadlines. Table and market views withdraw estimates at that deadline without mislabelling a still-supported fixture as stale. The exact 24-hour boundary is expired.',
+        nhl,'pipeline/model.py',"result['expires_at']",'resolved; Python and browser regression tests')
+    add(22,'medium','Displayed counts and provenance scope need independent release gates',
+        'TEE3C added rejection of duplicate price books, unsupported rolling-window flags, inflated KPI/coverage counts and field references hidden outside the source set used to calculate expiry. Future observations cannot justify retrospective pricing. These gates validate internal consistency, not independent confirmation of every legacy statement or worldwide source completeness.',
+        'https://api-web.nhle.com/v1/schedule/2026-10-22','pipeline/validate.py','def validate_data','resolved; regression tests')
     return findings
 
 if __name__=='__main__':

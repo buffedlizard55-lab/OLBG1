@@ -33,3 +33,31 @@ class PublicEvidenceExports(unittest.TestCase):
             self.assertTrue((inputs/'raw/unparsed-page.body').exists())
 
 if __name__=='__main__':unittest.main()
+
+class RenderedPriceExpiryGates(unittest.TestCase):
+    setUp = CanonicalRouteGates.setUp
+
+    def record(self, deadline):
+        attr='' if deadline is None else f' data-price-expires="{deadline}"'
+        p=self.out/'index.html'
+        p.write_text(p.read_text().replace('</body>',
+            '<section id="synthetic-book" class="market-book" data-record'+attr+
+            ' data-expires="2026-10-22T15:00:00Z" data-start="2026-10-22T20:00:00Z"></section></body>'))
+
+    def test_rendered_price_requires_deadline(self):
+        self.record(None)
+        self.assertTrue(any('rendered price expiry' in e for e in validate_site(self.out)))
+
+    def test_rendered_price_cannot_extend_fixture_deadline(self):
+        self.record('2026-10-22T16:00:00Z')
+        self.assertTrue(any('rendered price expiry' in e for e in validate_site(self.out)))
+
+    def test_rendered_price_can_expire_before_fixture(self):
+        self.record('2026-10-22T12:00:00Z')
+        self.assertEqual(validate_site(self.out), [])
+
+    def test_rendered_price_must_match_book_deadline(self):
+        self.record('2026-10-22T12:00:00Z')
+        save(self.out/'data/current/snapshot.json', {'prices':[
+            {'fixture_id':'synthetic-book','expires_at':'2026-10-22T11:00:00Z'}]})
+        self.assertTrue(any('deadline differs from price book' in e for e in validate_site(self.out)))

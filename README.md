@@ -8,7 +8,7 @@ One canonical dashboard, **17 sport pages**, explicit evidence gaps and independ
 
 The selected **22 October 2026** import contains **108 fixture/event listings**, **42 accepted statistical input observations** and **31 official-source checks**. It spans 15 categories; darts and greyhound fixture/runner details remain unverified. Every category is **partial or unverified**, never globally complete.
 
-At the import checkpoint, compatible inputs support **24 price books / 49 two-way markets / 98 outcome prices**. There are **22 Low experimental winner preferences**, two equal-probability books with no arbitrary winner, and **zero Medium/High selections**. Valencia’s disputed record is quarantined after separate official preview/standings rereads. These are as-of counts, not permanently current numbers; refreshes, expiry and the UTC window can change them.
+At the import checkpoint, compatible inputs support **17 price books / 42 two-way markets / 84 outcome prices** after the TEE3C status gate (22 October, approximately 12:20 UTC build). There are **17 Low experimental winner preferences** and **zero Medium/High selections**. EuroLeague schedules without an explicit supported pre-match status no longer produce estimates. Valencia’s disputed record is quarantined after separate official preview/standings rereads. These are as-of counts, not permanently current numbers; refreshes, expiry and the UTC window can change them.
 
 **Not complete:** worldwide fixtures, every bookmaker market, calibrated sport-specific models, current player availability, recent game-by-game histories or verified available bookmaker odds. Unsupported values remain **null in JSON and blank in tables**, with reasons and official recheck links. We do not invent High predictions to fill a quota. Any future High write-up must be unique, at least 30 words, state the selection and participants, and support its current form/player/history claims with official evidence.
 
@@ -23,7 +23,7 @@ Excluded: soccer/football, American football, boxing, UFC/MMA, hurling, horse ra
 - OLBG public routes/cards are **discovery**, not official fixture verification. Tip shares are votes, not model probabilities. Robots restrictions, including the Python-urllib disallow, are respected; no private/hidden API, proxy or identity rotation is used.
 - Selected retrieval-tool excerpts have an honest observation window, not invented per-request HTTP metadata. Automated parsed JSON responses retain bytes, hashes and JSON locators; unparsed HTML probe bodies are not published as evidence. Hashes prove integrity, not truth.
 - Every accepted fixture field references an official-source observation. Missing timezones are not guessed; a published schedule is not proof of current match status.
-- Fixture evidence expires **six hours from its original lower observation bound**; statistics expire after 24 hours. Builds and failed refreshes never rejuvenate them. Elapsed starts cannot produce pre-match selections. The browser independently suppresses expired values.
+- Fixture evidence expires **six hours from its original lower observation bound**; statistics expire after 24 hours. Builds and failed refreshes never rejuvenate them. Elapsed starts cannot produce pre-match selections. Every estimate expires at the earliest fixture, start or statistical-input deadline; the browser suppresses expired values within its 30-second check interval. With JavaScript disabled, estimates are hidden rather than left indefinitely current. Explicit supported official pre-match status is required; a future start alone does not qualify.
 - Exact UTC starts use a rolling seven-day interval. Date-only entries retain the source calendar and explicit time/status gaps. Previous league dates are checked for still-future overnight UTC starts.
 - Record pricing uses disclosed Beta(2,2) shrinkage and log5, requires both compatible records, and inserts no home edge or missing-rating default. NHL binary defeats include OT losses; points percentage is not a win probability.
 - MLB research score markets use paired official regular-season run rates and independent Poisson scores conditional on no tie. Fixed ±1.5-run handicaps and three centered half-run totals are **model lines, not available sportsbook offers**. Pitchers, parks, current lineups and postseason effects are not modeled; all remain Low.
@@ -45,9 +45,10 @@ python3 -m http.server 8000 --bind 0.0.0.0 --directory _site
 Browser tests (tooling/binaries stay ignored):
 
 ```sh
-npm install --prefix .cache/browser --no-save --no-package-lock --ignore-scripts \
+BROWSER_TOOLS="${TMPDIR:-/tmp}/olbg-browser"
+npm install --prefix "$BROWSER_TOOLS" --no-save --no-package-lock --ignore-scripts \
   playwright-core@1.55.0 @sparticuz/chromium@138.0.2
-NODE_PATH="$PWD/.cache/browser/node_modules" node tests/pipeline/browser.cjs
+NODE_PATH="$BROWSER_TOOLS/node_modules" node tests/pipeline/browser.cjs
 ```
 
 The browser suite tests desktop/mobile, `/OLBG1/` hosting, filters/reset/sort, odds formatting, CSV downloads, evidence deep-links, empty states, expiry removal and no-JavaScript rows. All browser URLs are relative; there is no localhost backend call.
@@ -65,7 +66,7 @@ python3 -m pipeline.build --out .
 
 ## Automation and actual hosting mode
 
-`.github/workflows/current-pages.yml` is the single canonical PR/test/refresh/publication workflow. Pinned actions, read-only checkout, 95 pipeline tests plus 38 preserved tests, data/link/fragment gates and real browser tests precede artifact creation. Public structured collectors cover NHL/MLB/NBA schedules; other categories remain explicitly unparsed/partial. A failed request is not a zero-fixture finding.
+`.github/workflows/current-pages.yml` is the single canonical PR/test/refresh/publication workflow. Pinned actions, read-only checkout, 113 pipeline tests plus 38 preserved tests, data/link/fragment gates and real browser tests precede artifact creation. Public structured collectors cover NHL/MLB/NBA schedules; other categories remain explicitly unparsed/partial. A failed request is not a zero-fixture finding.
 
 **Pages is already enabled and its configuration API reports `main:/` / legacy mode.** The interactive integration cannot change that setting (API403), but the standard GitHub Actions artifact deployment is proven to work with the repository’s authorized job token: upstream run `39745549884` succeeded and the live T61 page was fetched. The canonical workflow uses that same pinned configure/deploy path; it does not request new credentials or pretend the settings change succeeded. The separate legacy branch-build status can say cancelled/errored while an artifact deployment succeeds. Verify the actual deployment job and live content, not that legacy status alone.
 
@@ -88,9 +89,13 @@ The previous T61 workflow is retained as a manual, non-publishing historical che
 
 - `data/current/`: current facts, calculations, source captures, network attempts and complete machine-readable audit.
 - `audit/rows-*.html`: paginated historical row occurrences with file lines, exact JSON pointers and source/recheck links. Mirrors/aliases are labelled; these are **not unique recertified matches**.
-- `pipeline/audit.py`: reads tracked legacy JSON/Python files, inventories detectable fixture/price/prose objects and publishes 19 traced findings. Parsing every file is not semantic verification of every sentence.
+- `pipeline/audit.py`: reads tracked legacy JSON/Python files, inventories detectable fixture/price/prose objects and publishes 22 traced findings. Parsing every file is not semantic verification of every sentence.
 - `archive/root-20261022/`: complete pre-T257E root (including T61), original hashes, rewritten links and an archive warning.
 - `archive/pre-release-20261022/`: T61's earlier archive, untouched.
 - All parallel desks, `data/release`, `scripts/release_*`, `tests/release` and independent review reports are preserved. Their claims are never silently promoted to current evidence.
 
 [Methodology](https://buffedlizard55-lab.github.io/OLBG1/methodology.html) · [Field evidence](https://buffedlizard55-lab.github.io/OLBG1/verification.html) · [Archive](https://buffedlizard55-lab.github.io/OLBG1/archive.html)
+
+## Canonical integrity follow-up (TEE3C)
+
+[Session audit](reports/SESSION_EE3C3E8F.md): explicit pre-match status gate, statistical-input expiry in both table and market views, no-JavaScript withholding, and count/window/provenance regression gates. These checks do not recertify every archived statement or establish full live coverage. New findings are [published for review](https://buffedlizard55-lab.github.io/OLBG1/flagged.html#F-257E-20).
