@@ -27,10 +27,10 @@ a capped grade, or an explicit note.</p>
   <div class="kpi "><div class="n">0</div><div class="l">capped selections</div></div>
   <div class="kpi "><div class="n">14</div><div class="l">rows without a UTC clock</div></div>
   <div class="kpi "><div class="n">44</div><div class="l">no-bet matches</div></div>
-  <div class="kpi fl"><div class="n">14</div><div class="l">audit findings</div></div>
+  <div class="kpi fl"><div class="n">15</div><div class="l">audit findings</div></div>
 </div>
 
-<h2>1. Defects found and fixed in this pass (14)</h2>
+<h2>1. Defects found and fixed in this pass (15)</h2>
 <p class="sub">These are the defects this pass found on the published board. Each fix is in this commit; the two that cannot be
 fixed without moving every price or re-fetching a live source (F-26B-06 draw mass, F-26B-10 fetch limit) are disclosed instead.</p>
 <div class="tablewrap"><table class="grid">
@@ -54,6 +54,7 @@ fixed without moving every price or re-fetching a live source (F-26B-06 draw mas
 <tr><td class="nowrap"><b>F-26B-12</b></td><td><b>The greyhound regulator returned HTTP 500</b><div class="sm">gbgb.org.uk failed at capture time, so no race card, trap draw or price could be read.</div></td><td class="sm">The meeting is listed as an event card with no selection.</td><td class="sm"><a href="https://www.gbgb.org.uk/" target="_blank" rel="noopener">gbgb.org.uk</a></td></tr>
 <tr><td class="nowrap"><b>F-26B-13</b></td><td><b>The official-host allowlist did not include two of the snapshot’s own sources</b><div class="sm">The tennis rows are read from the WTA draw PDF on <code>wtafiles.wtatennis.com</code> and the ATP order of play on <code>www.protennislive.com</code>. Both are the tours’ own file hosts, but neither was on the validator’s allowlist, so a strict run of the old gate would have rejected the snapshot’s best tennis sources.</div></td><td class="sm">Both hosts are now on the shared allowlist and every row is re-checked against it on each build.</td><td class="sm"><a href="https://www.protennislive.com/posting/2026/9410/op.pdf" target="_blank" rel="noopener">ATP order of play</a></td></tr>
 <tr><td class="nowrap"><b>F-26B-14</b></td><td><b>A missing rating was filled with a league-average prior and then priced as if it were measured</b><div class="sm">39 of the 120 priced matches have at least one side with no captured official rating. The model substituted 58.0 and subtracted it from the rated side, so an unrated opponent created an edge nobody measured: Medvedev at 97.5 against an unrated player produced a 39.5-point gap and a 1.22 moneyline. The repository's own rule said one-sided ratings are refused, so the code and the documentation disagreed.</div></td><td class="sm">Fixed at the root: when either side is unrated no strength edge is applied at all, the price is the venue baseline, and the desk publishes <b>no tip</b> on that card. The match-winner call stays visible and is graded Low. 46 of 120 matches now carry no tip, 39 of them for this reason.</td><td class="sm"><a href="https://www.atptour.com/en/rankings/singles" target="_blank" rel="noopener">ATP rankings</a></td></tr>
+<tr><td class="nowrap"><b>F-26B-15</b></td><td><b>Cricket mixes three formats under one scoring baseline</b><div class="sm">The four cricket rows cover two T20 internationals, a first-class match and a one-day domestic match. The model applies one run baseline (170.5) and one spread (22) to all four, which fits a T20 innings and badly misfits a three-day game. The basketball table already separates the NBA from the EuroLeague; cricket does not yet separate its formats.</div></td><td class="sm">Disclosed on the sport page and in the methodology table rather than patched with invented per-format baselines. Flagged for the next pricing pass, which should carry a T20 / one-day / first-class baseline triple.</td><td class="sm"><a href="https://scoring.nzc.nz/fixtures" target="_blank" rel="noopener">NZC fixtures</a></td></tr>
 </tbody></table></div>
 
 <h2 id="data-flags">2. Data flags on individual rows (63)</h2>

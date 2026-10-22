@@ -54,8 +54,8 @@ SPORT_META = {
     "tennis": ("Tennis", 3, "Best-of-three sets. Match winner, set handicap and correct score. No game-total market is originated: the model is a set model, not a games model."),
     "basketball": ("Basketball", 4, "NBA and EuroLeague. Match winner, points handicap and game total."),
     "golf": ("Golf", 5, "Stroke-play tournaments. Event cards only: no head-to-head market is priced without a captured entry list."),
-    "cricket": ("Cricket", 7, "T20 internationals, first-class and one-day domestic fixtures. Match winner, run handicap and total runs."),
-    "snooker": ("Snooker", 8, "Best-of-nine and best-of-seven frames. Match winner, frame handicap and correct score; no total is originated."),
+    "cricket": ("Cricket", 7, "T20 internationals, first-class and one-day domestic fixtures. Match winner, run handicap and total runs. Formats differ so widely that one run baseline cannot fit all of them; the single baseline is a disclosed simplification (F-26B-15)."),
+    "snooker": ("Snooker", 8, "Round 3 ties over a best-of-seven frames. Match winner, frame handicap and correct score; no total is originated."),
     "rugby-union": ("Rugby Union", 9, "URC, Top 14 and Premiership. Match winner, points handicap and total points."),
     "rugby-league": ("Rugby League", 10, "Rugby League World Cup 2026. Match winner, points handicap and total points."),
     "baseball": ("Baseball", 12, "MLB World Series. Match winner, run handicap and total runs."),
@@ -704,6 +704,13 @@ def build_flagged(rows, stats, sports) -> str:
          "and the desk publishes <b>no tip</b> on that card. The match-winner call stays visible and is graded Low. "
          "46 of 120 matches now carry no tip, 39 of them for this reason.",
          '<a href="https://www.atptour.com/en/rankings/singles" target="_blank" rel="noopener">ATP rankings</a>', ""),
+        ("F-26B-15", "Cricket mixes three formats under one scoring baseline",
+         "The four cricket rows cover two T20 internationals, a first-class match and a one-day domestic match. The model applies "
+         "one run baseline (170.5) and one spread (22) to all four, which fits a T20 innings and badly misfits a three-day game. "
+         "The basketball table already separates the NBA from the EuroLeague; cricket does not yet separate its formats.",
+         "Disclosed on the sport page and in the methodology table rather than patched with invented per-format baselines. "
+         "Flagged for the next pricing pass, which should carry a T20 / one-day / first-class baseline triple.",
+         '<a href="https://scoring.nzc.nz/fixtures" target="_blank" rel="noopener">NZC fixtures</a>', ""),
     ]
     findings_rows = [[
         f'<td class="nowrap"><b>{esc(fid)}</b></td>',
@@ -887,24 +894,40 @@ a venue or a start time, so it never appears in a row&rsquo;s source cell.</p>
 
 
 def build_methodology(rows, stats, sports) -> str:
-    per_sport = {}
+    # Group the assumptions per sport, and per competition where a sport uses more than one set
+    # (the NBA and the EuroLeague do not share a scoring spread, so one row per sport would lie).
+    groups: dict[str, dict[tuple, set]] = {}
     for r in rows:
-        if r["assumptions"]:
-            per_sport.setdefault(r["sport"], r["assumptions"])
+        if r["event_only"] or not r["assumptions"]:
+            continue
+        a = r["assumptions"]
+        key = (a["model"], a["sigma"], a["slope"], a["hfa"], a["hc_max"], a["total_line"],
+               a["total_sigma"], a.get("per_leg_scale"), (a.get("series") or {}).get("legs"),
+               (a.get("series") or {}).get("unit"))
+        groups.setdefault(r["sport"], {}).setdefault(key, set()).add(r["competition"])
+
     rows_html = []
     for slug in ORDER:
-        a = per_sport.get(slug)
-        if not a:
-            rows_html.append([f'<td>{esc(SPORT_META[slug][0])}</td><td colspan="5" class="mut">Event card only &mdash; nothing priced, so no assumptions apply.</td>'])
+        if slug not in groups:
+            rows_html.append([f'<td>{esc(SPORT_META[slug][0])}</td>',
+                              '<td colspan="5" class="mut">Event card only &mdash; nothing priced, so no assumptions apply.</td>'])
             continue
-        rows_html.append([
-            f'<td><a href="sports/{slug}.html">{esc(SPORT_META[slug][0])}</a></td>',
-            f'<td class="nowrap">{esc(a["model"])}</td>',
-            f'<td class="nowrap">{a["sigma"]:g}</td>',
-            f'<td class="nowrap">{a["slope"]:g}</td>',
-            f'<td class="nowrap">{a["hfa"]:g}</td>',
-            f'<td class="nowrap">{a["total_line"]:g} / {a["total_sigma"]:g}</td>',
-        ])
+        first = True
+        for key, comps in sorted(groups[slug].items(), key=lambda kv: -len(kv[1])):
+            model, sigma, slope, hfa, hc_max, tl, tsig, leg_scale, legs, unit = key
+            label = "all rows" if len(groups[slug]) == 1 else ", ".join(sorted(comps))
+            rows_html.append([
+                f'<td><a href="sports/{slug}.html">{esc(SPORT_META[slug][0])}</a></td>' if first else "<td></td>",
+                f'<td class="sm">{esc(label)}</td>',
+                f'<td class="nowrap">{esc(model)}</td>',
+                (f'<td class="nowrap">{leg_scale:g} per {esc((unit or "leg").rstrip("s"))} (best of {legs})</td>'
+                 if leg_scale else f'<td class="nowrap">&sigma; {sigma:g}</td>'),
+                f'<td class="nowrap">{hfa:g}</td>',
+                (f'<td class="nowrap">n/a &mdash; no total market</td>' if leg_scale
+                 else f'<td class="nowrap">{tl:g} base / {tsig:g} spread</td>'),
+            ])
+            first = False
+
     body = f"""
 <h1>Methodology</h1>
 <p class="lede">One rating per side, one normal distribution per match, fair prices with no margin. Everything on this
@@ -926,16 +949,23 @@ page is a modelling choice, and every number in it is published so a price can b
 </ol>
 
 <h2 id="assumptions">2. Per-sport assumptions</h2>
-<p class="sub">These are the values used for every row in that sport. They are modelling choices, not statistics.
-&sigma; and total spread are in the sport&rsquo;s scoring unit; slope is rating points &rarr; scoring unit; the total
-column is baseline total / total spread.</p>
+<p class="sub">These are the values used for every row in that sport, and they are modelling choices, not statistics.
+For the normal model, &sigma; is the scoring spread and the total market is quoted around its own baseline and spread.
+For the binomial sports (darts, snooker, tennis) a rating point is converted into a per-leg probability and the match
+price is built from the series length, so no total market is originated. Where a sport spans competitions with different
+scoring scales, the table shows one row per scale.</p>
 <div class="tablewrap"><table class="grid">
-<thead><tr><th>Sport</th><th>Model</th><th>&sigma;</th><th>Slope</th><th>Home adj.</th><th>Total base / spread</th></tr></thead>
+<thead><tr><th>Sport</th><th>Applies to</th><th>Model</th><th>Scoring spread</th><th>Home adj.</th><th>Total market</th></tr></thead>
 <tbody>{"".join("<tr>" + "".join(c) + "</tr>" for c in rows_html)}</tbody></table></div>
 
 <h2 id="confidence">3. Confidence and the price window</h2>
-<p>The brief sets two rules that cannot both hold literally: a selection with a 70% chance prices at about
-&minus;233, and a &minus;250 line is a 71.4% chance. The window is treated as the binding constraint.</p>
+<p>The brief sets two rules that cannot both hold loosely: a selection with a 70% chance prices at
+&minus;233, and a &minus;250 line is a 71.4% chance. Read literally, a High pick therefore has to land between
+<b>70.0% and 71.4%</b> &mdash; a 1.4-percentage-point band &mdash; because anything stronger is priced shorter than
+&minus;250 and anything weaker fails the 70% test. That arithmetic, not a shortage of matches, is why
+{stats["high"]} selections out of {stats["priced_matches"]} reach High. The window is treated as the binding constraint:
+a stronger selection is still published, but on the handicap rung that lands inside the window rather than on a
+moneyline that cannot.</p>
 <ul class="notes">
   <li><b>High</b> &mdash; model probability &ge; 70% <i>and</i> price inside &minus;250 to +10,000 (decimal 1.40 to 101.00), <i>and</i> the row was verified on 22 October, <i>and</i> both sides carry a measured official rating.</li>
   <li><b>Medium</b> &mdash; 55&ndash;70%, or a High selection that a cap (carried row, unrated side) holds down.</li>
@@ -984,7 +1014,9 @@ def build_sports_index(rows, stats, sports) -> str:
             f'<div class="cat-top"><span class="cat-name">{esc(s["label"])}</span><span class="tag {badge[1]}">{badge[0]}</span></div>'
             f'<div class="cat-nums"><b>{s["fixtures"]}</b> {"row" if s["fixtures"] == 1 else "rows"} · '
             f'{"<b>" + str(s["priced"]) + "</b> priced · <b>" + format(s["prices"], ",") + "</b> prices" if s["priced"] else "event card, no market priced"}</div>'
-            f'<div class="cat-sub">{s["high"]} High · {s["medium"]} Medium · {s["low"]} Low · {s["no_bet"]} no bet</div></a>')
+            + (f'<div class="cat-sub">{s["high"]} High · {s["medium"]} Medium · {s["low"]} Low · {s["no_bet"]} no bet</div>'
+               if s["priced"] else '<div class="cat-sub">tournament card &mdash; no fixture list captured</div>')
+            + '</a>')
     body = f"""
 <h1>Sports ({stats["sports"]})</h1>
 <p class="lede">Every in-scope OLBG category we cover, with the OLBG hub number it maps to. Each category page carries
@@ -1176,7 +1208,7 @@ sit between 20% and 65%, with thin tails at both ends because rungs below 5% or 
 
 def build_archive() -> str:
     boards = [
-        ("237 rows · 22 Oct 2026", "v3/index.html", "v3 22 October re-verified board",
+        ("127 rows · 22 Oct 2026", "v3/index.html", "v3 22 October re-verified board",
          "The snapshot this site is built from, with its own per-sport pages and analysis. Identical data, previous presentation."),
         ("32 rows · 22–26 Oct 2026", "7a5b5360/index.html", "7a5b5360 fresh matchday desk",
          "A smaller fresh board with its own verification page and market sheets."),
@@ -1201,7 +1233,7 @@ def build_archive() -> str:
 <h1>Archive</h1>
 <p class="lede">This repository has been built by a series of sessions, each of which published its own board. This
 pass consolidates the current snapshot at the root and leaves every earlier board exactly where it was, so nothing is
-deleted and every previous finding stays reachable.</p>
+deleted and every previous finding stays reachable. Sizes below are the counts each board prints on its own landing page.</p>
 <div class="tablewrap"><table class="grid">
 <thead><tr><th>Board</th><th>Size</th><th>What it holds</th></tr></thead>
 <tbody>{"".join("<tr>" + "".join(c) + "</tr>" for c in rows_html)}</tbody></table></div>

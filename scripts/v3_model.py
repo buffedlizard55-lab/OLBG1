@@ -20,6 +20,7 @@ import math
 
 PHI = lambda z: 0.5 * (1.0 + math.erf(z / math.sqrt(2.0)))
 EDGE_SCALE = 17.0  # only used for the legacy edge display
+PER_LEG_SCALE = 65.0  # binomial sports: rating points -> one leg of a set/frame/match
 
 
 def dec(p: float) -> float:
@@ -101,6 +102,7 @@ def price_fixture(f: dict) -> dict:
             "total_line": float(f.get("total_line") or 45.0),
             "total_sigma": float(f.get("total_sigma") or f.get("sigma") or 14.0),
             "series": f.get("series"),
+            "per_leg_scale": PER_LEG_SCALE if (f.get("model") == "binomial" and f.get("series")) else None,
         },
         "defaulted": defaulted,
         "edge": round(edge, 2),
@@ -139,7 +141,7 @@ def price_fixture(f: dict) -> dict:
     if f.get("model") == "binomial" and f.get("series"):
         legs = int(f["series"]["legs"])
         need = legs // 2 + 1
-        p_leg_home = min(max(PHI(edge / 65.0), 0.05), 0.95)
+        p_leg_home = min(max(PHI(edge / PER_LEG_SCALE), 0.05), 0.95)
         scores = {}
         for x in range(0, need):
             scores[(need, x)] = math.comb(need - 1 + x, x) * (p_leg_home ** need) * ((1 - p_leg_home) ** x)
