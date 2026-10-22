@@ -1540,3 +1540,20 @@ the companion bar only. Filed here instead of editing another session's generato
 * **Root navigation.** `scripts/build_site.py` line 265 now emits the companion-bar link
   `7a5b5360/index.html` ("Fresh Desk · 32 · 22–26 Oct 2026") and line 396 emits the README-style entry, so a
   regeneration of the root page no longer drops this desk. Confirmed live on `/OLBG1/index.html`.
+
+### 33.2 Post-merge refinement (2026-10-22T02:12Z)
+
+PR #49 shipped, then two presentation defects were found on the live board and fixed in a follow-up
+PR (#52):
+
+1. **No-bet rule.** The desk pick was being forced onto the only in-band line even when that line was a
+   coin flip (for example a −1.5 sets handicap at 45.6% because the favourite was shorter than −250).
+   The model now returns **no selection** when nothing at or above 52% clears the band, and the page
+   prints "no bet" with the reason. Effect: **89 tips and 31 no-bet cards** out of 120 priced
+   head-to-heads; High (10), Medium (54) and Low (25) are unchanged in composition.
+2. **Unit labels.** Binomial handicaps now print the sport's own unit — `sets` for tennis, `frames` for
+   snooker, `legs` for darts — instead of "legs" everywhere.
+
+Also fixed: the overview's "Next start (UTC)" column now falls back to the official local date for rows
+whose governing body publishes a date but no clock (Golf, Cricket), instead of rendering blank.
+Gates re-run: `scripts/v3_validate.py` PASS (0 errors), `scripts/validate.py` PASSED (0 errors).

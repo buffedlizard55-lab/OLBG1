@@ -131,8 +131,9 @@ def price_fixture(f: dict) -> dict:
         for line in (1.5, 2.5, 3.5):
             ph = sum(v for (h, a_), v in scores.items() if (h - a_) > line)
             pa = sum(v for (h, a_), v in scores.items() if (a_ - h) > line)
-            add("Handicap", f"{f.get('home','')} -{line} legs", ph)
-            add("Handicap", f"{f.get('away','')} -{line} legs", pa)
+            unit = f["series"].get("unit", "legs")
+            add("Handicap", f"{f.get('home','')} -{line} {unit}", ph)
+            add("Handicap", f"{f.get('away','')} -{line} {unit}", pa)
         out["p_home"] = p_home
         out["p_away"] = p_away
         out["draw_p"] = 0.0
@@ -188,9 +189,12 @@ def price_fixture(f: dict) -> dict:
     # only and are not eligible, because a total ladder can always manufacture a 70% quote on
     # both sides at different lines.
     eligible = [m for m in mkts
-                if m["market"] in ("Match winner", "Handicap", "Correct score")
+                if m["market"] in ("Match winner", "Handicap")
                 and m["in_band"]]
     best = max(eligible, key=lambda m: m["model_prob"]) if eligible else None
+    if best is not None and best["model_prob"] < 0.52:
+        # the only in-band line is a coin-flip or worse: publish no tip rather than a bad one
+        best = None
     if best is not None:
         best = dict(best)
         p = best["model_prob"]

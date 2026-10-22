@@ -314,7 +314,7 @@ for fid, utc, home, hs, away, as_ in PDC_GAMES:
         away_input=inp("PDC European Tour seed", f"Seed {as_} of 32", 100.0 - 1.0 * as_),
         flags=[],
         time_note="Session start 17:00 UTC; per-match walk-on not published",
-        model="binomial", series={"legs": 11, "per_leg": 0.16}, hfa=0.0,
+        model="binomial", series={"legs": 11, "unit": "legs"}, hfa=0.0,
     ))
 
 # ---------------------------------------------------------------- Snooker (WST)
@@ -343,7 +343,7 @@ for fid, utc, home, hr, away, ar, local in SNOOKER_GAMES:
         home_input=snk(hr), away_input=snk(ar),
         flags=[],
         time_note=f"WST session clock {local} (local UK time, BST); converted to UTC by subtracting one hour",
-        model="binomial", series={"legs": 7, "per_leg": 0.20}, hfa=0.0,
+        model="binomial", series={"legs": 7, "unit": "frames"}, hfa=0.0,
     ))
 
 # ---------------------------------------------------------------- Tennis
@@ -382,7 +382,7 @@ for fid, utc, home, hs, away, as_, comp, venue, note, tour in TENNIS_GAMES:
                      S["atp_rank"] if tour == "atp" else S["wta_rank"])],
         home_input=tseed(hs), away_input=tseed(as_),
         flags=[],
-        time_note=note, model="binomial", series={"legs": 3, "per_leg": 0.22}, hfa=0.0,
+        time_note=note, model="binomial", series={"legs": 3, "unit": "sets"}, hfa=0.0,
     ))
 
 # ---------------------------------------------------------------- AFLW
