@@ -61,11 +61,11 @@
 |---|---|---|
 | AUD-A-01 | high | 16 of 18 AFLW ladder inputs in `data/v3/fixtures.json` disagree with the official AFLW ladder. Three published High picks (Brisbane −3, Melbourne −6.5, Port Adelaide) rest on them. |
 | AUD-A-02 | high | `scripts/v3_prose.py` (and `data/v3/predictions.json` lines 1975 and 2095) state ladder positions the official ladder contradicts. |
-| AUD-A-03 | medium | Kolstad's home arena is recorded as Trondheim Spektrum on five published files; the EHF's own playing-times PDF says Kolstad Arena. |
+| AUD-A-03 | medium | Kolstad's home arena is recorded as Trondheim Spektrum in five published files; the EHF's own playing-times PDF says Kolstad Arena. |
 | AUD-A-04 | medium | Bristol Bears v Exeter Chiefs is 14:05Z on the root board; the Premiership release says 17:30 BST = 16:30Z. |
 | AUD-A-05 | low | Leinster v Munster venue "TBC" is resolvable from the competition's ticketing listing (Aviva Stadium). |
 | AUD-A-06 | low | `README.md:56` claims 160 published HTML pages; the live validator scans 289 published pages once this desk is included. |
-| AUD-A-07 | disclosed | Six root-desk High picks are quoted on a handicap rung because their moneyline is shorter than −250. |
+| AUD-A-07 | disclosed | Root-desk High picks are quoted on a handicap rung because their moneyline is shorter than −250. |
 | AUD-A-08 | disclosed | Nine of the seventeen covered sports publish no price here because no two-sided official input was readable. |
 
 Nothing was corrected inside another session's files. Each finding names the file and line so the
