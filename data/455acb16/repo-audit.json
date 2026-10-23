@@ -1,0 +1,97 @@
+{
+  "revision": "36936b0af79018a0544e4ecdae50dc891b2836c6",
+  "scope": "Every tracked JSON/Python file parsed for syntax; selected semantic findings only. This is NOT a line-by-line factual certification of every archived statement.",
+  "counts": {
+    "json_files": 379,
+    "python_files": 296,
+    "parse_errors": 0,
+    "semantic_findings": 7
+  },
+  "parse_errors": [],
+  "findings": [
+    {
+      "id": "A-01",
+      "file": "scripts/se496eaf02_model.py",
+      "line": 27,
+      "needle": "HIGH_B_FLOOR = 0.62",
+      "sha256": "c5a803ecb07794220dd3b28672a196b9c67e794b9a09a07bd98a9c558e8933ea",
+      "repository_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/36936b0af79018a0544e4ecdae50dc891b2836c6/scripts/se496eaf02_model.py#L27",
+      "detail": "Inherited High-B floor is 62%. Neither the threshold nor a passing arithmetic test establishes held-out calibration. No such tier imported.",
+      "source_id": "nhl-standings",
+      "severity": "high",
+      "status": "needs review"
+    },
+    {
+      "id": "A-02",
+      "file": "data/496eaf02/fixtures.json",
+      "line": 118,
+      "needle": "\"participant_b\": \"Marta Kostyuk\"",
+      "sha256": "f34777e5455f933c832240032c7ea05ba7ea8ae5839888511a9e56aa08ffaafb",
+      "repository_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/36936b0af79018a0544e4ecdae50dc891b2836c6/data/496eaf02/fixtures.json#L118",
+      "detail": "The older Ningbo Fernandez–Kostyuk pairing differs from the newly read order of play, which names Bouzkova. Draw also contains a Kostyuk wrist-injury entry. Replaced only in this namespace; archive not recertified.",
+      "source_id": "wta-ningbo-op",
+      "severity": "high",
+      "status": "needs review"
+    },
+    {
+      "id": "A-03",
+      "file": "data/496eaf02/fixtures.json",
+      "line": 155,
+      "needle": "\"event\": \"Li v Boulter",
+      "sha256": "f34777e5455f933c832240032c7ea05ba7ea8ae5839888511a9e56aa08ffaafb",
+      "repository_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/36936b0af79018a0544e4ecdae50dc891b2836c6/data/496eaf02/fixtures.json#L155",
+      "detail": "The older Osaka Li–Boulter pairing is not the new order of play: Li faces Krueger, Boulter faces Siniakova. No opponent is inferred from advancing through a bracket.",
+      "source_id": "wta-osaka-op",
+      "severity": "high",
+      "status": "needs review"
+    },
+    {
+      "id": "A-04",
+      "file": "scripts/se496eaf02_data.py",
+      "line": 36,
+      "needle": "ICC official digital home",
+      "sha256": "d795a3728562627cc16f74db527badfeaf04a8094a78d7247bd75e8df68c7024",
+      "repository_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/36936b0af79018a0544e4ecdae50dc891b2836c6/scripts/se496eaf02_data.py#L36",
+      "detail": "ESPNcricinfo is presented as official ICC provenance in an inherited source label. This independent desk accepts league/governing-body/team observations only and does not promote a media report merely because that label says official.",
+      "source_id": "nzc-fixtures",
+      "severity": "high",
+      "status": "needs review"
+    },
+    {
+      "id": "A-05",
+      "file": "data/current/snapshot.json",
+      "line": 3,
+      "needle": "\"generated_at\"",
+      "sha256": "01727e89824e193cc1e92e35a6e08592590826afca677fd27d1c61d33cbdaa87",
+      "repository_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/36936b0af79018a0544e4ecdae50dc891b2836c6/data/current/snapshot.json#L3",
+      "detail": "Checked-in canonical snapshot retains a 22-October generation time. Root landing and canonical artifact can be different views. This desk has its own observation window and is not a silent refresh of the root.",
+      "source_id": "nhl-schedule",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "A-06",
+      "file": "scripts/se496eaf02_data.py",
+      "line": 93,
+      "needle": "\"a\": \"Leylah Fernandez\", \"b\": \"Marta Kostyuk\"",
+      "sha256": "d795a3728562627cc16f74db527badfeaf04a8094a78d7247bd75e8df68c7024",
+      "repository_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/36936b0af79018a0544e4ecdae50dc891b2836c6/scripts/se496eaf02_data.py#L93",
+      "detail": "Historical source-code facts and published rows share the same disputed pairing. Rebuilding an older generator is not independent verification; both the source data and generated table need the same evidence check.",
+      "source_id": "wta-ningbo-op",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "A-07",
+      "file": "scripts/se455acb16_data.py",
+      "line": 17,
+      "needle": "OBSERVED_AFTER =",
+      "sha256": "5788b79d86cdc64c5dedc1c4b3ba180d9ce988eede8ebdf20a69e89e8470e34f",
+      "repository_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/36936b0af79018a0544e4ecdae50dc891b2836c6/scripts/se455acb16_data.py#L17",
+      "detail": "This branch’s first draft restamped a copied desk without new checks. All of that draft’s observation times, prices, High labels and prose are withdrawn. Replacement observations use the actual 21:34:10–21:44:36Z retrieval window, not the old 21:30 stamp.",
+      "source_id": "nhl-schedule",
+      "severity": "high",
+      "status": "needs review"
+    }
+  ]
+}
