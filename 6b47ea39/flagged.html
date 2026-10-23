@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for review · OLBG consolidated desk</title>
+<meta name="description" content="Independent, source-linked research desk for the 15 sports in the brief. Not affiliated with OLBG.">
+<link rel="stylesheet" href="assets/style.css">
+</head><body><div class="layout">
+<aside>
+<div class="brand"><span>OLBG<span style="font-weight:400">.</span></span><span><small>CONSOLIDATED DESK</small></span></div>
+<div class="navlabel">WORKSPACE</div><a class="nav" href="index.html">Overview</a>
+<a class="nav" href="picks.html">High-confidence picks</a>
+<a class="nav" href="predictions.html">Predictions</a>
+<a class="nav" href="watchlist.html">Medium watchlist</a>
+<a class="nav" href="matches.html">All matches</a>
+<a class="nav" href="markets.html">Market explorer</a>
+<a class="nav active" href="flagged.html">Flagged for review</a>
+<a class="nav" href="repo-audit.html">Repository audit</a>
+<a class="nav" href="reverse-engineering.html">OLBG discovery</a>
+<a class="nav" href="sources.html">Sources</a>
+<a class="nav" href="methodology.html">Method &amp; limits</a>
+<div class="navlabel">SPORTS · 15</div><a class="nav" href="sports/golf.html">Golf</a>
+<a class="nav" href="sports/volleyball.html">Volleyball</a>
+<a class="nav" href="sports/rugby-union.html">Rugby Union</a>
+<a class="nav" href="sports/cricket.html">Cricket</a>
+<a class="nav" href="sports/snooker.html">Snooker</a>
+<a class="nav" href="sports/darts.html">Darts</a>
+<a class="nav" href="sports/baseball.html">Baseball</a>
+<a class="nav" href="sports/gaelic-sports.html">Gaelic Sports</a>
+<a class="nav" href="sports/greyhounds.html">Greyhounds</a>
+<a class="nav" href="sports/tennis.html">Tennis</a>
+<a class="nav" href="sports/motor-racing.html">Motor Racing</a>
+<a class="nav" href="sports/handball.html">Handball</a>
+<a class="nav" href="sports/ice-hockey.html">Ice Hockey</a>
+<a class="nav" href="sports/basketball.html">Basketball</a>
+<a class="nav" href="sports/rugby-league.html">Rugby League</a>
+<div class="navlabel">BUILD</div>
+<div class="small muted" style="padding:4px 9px">Build 2026-10-23T21:30:00Z<br>Evidence captured 23 Oct 2026, 16:45Z–20:40Z<br>Inherited, not re-read this session.</div>
+</aside>
+<main>
+<header><p class="eyebrow">13 findings + 22 conflicts</p><h1>Flagged for review</h1></header>
+
+<p class="lede">Everything this desk found that does not add up, cannot be confirmed, or contradicts another publication. Nothing here is
+suppressed: the site publishes the finding alongside the data it affects, with the source that supports it. Flagged items do not block
+publication, they wait for a human decision.</p>
+<div class="kpis">
+<div class="kpi"><b>6</b><span>high severity</span></div>
+<div class="kpi"><b>6</b><span>medium</span></div>
+<div class="kpi"><b>1</b><span>informational</span></div>
+<div class="kpi"><b>22</b><span>opposite-favourite fixtures</span></div>
+</div>
+
+<div class="pred">
+<div class="tagrow"><span class="badge b-amber">MEDIUM</span><span class="badge b-gray">F01</span></div>
+<h3>Originated price arithmetic does not reconcile</h3>
+<p class="body">11 priced lines have a stated American price or probability that disagrees with the decimal price by more than tolerance. The decimal price is treated as the primary value and every published figure on this desk is recomputed from it.</p>
+<ul class="small muted"><li>6B06-026</li><li>6B13-063</li><li>6B15-071</li><li>6B15-072</li><li>6B15-072</li><li>6B15-073</li><li>6B15-073</li><li>6B15-074</li></ul>
+<p class="small">Check: <code>internal arithmetic check</code></p>
+</div>
+<div class="pred">
+<div class="tagrow"><span class="badge b-red">HIGH</span><span class="badge b-gray">F02</span></div>
+<h3>The requested High window is only 1.43 probability points wide</h3>
+<p class="body">The brief asks for picks with a better-than-70% win chance priced between -250 and +10000. -250 is decimal 1.40, i.e. 71.43% implied. Any selection that is both above 70% and inside the window therefore has to sit between 70.00% and 71.43% — a band 1.43 points wide. Five picks per sport inside that band cannot be produced from real favourites: the genuine short-priced favourites (Perugia at 89%, Ireland at 80%, Kiel at 82%) are all shorter than -250 and are outside the window. This desk therefore publishes both: in-window picks as High, and stronger favourites outside the window clearly labelled as out-of-window rather than quietly squeezed into the band.</p>
+
+<p class="small"><a href='https://www.olbg.com/betting-tips' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips ↗</a></p>
+</div>
+<div class="pred">
+<div class="tagrow"><span class="badge b-red">HIGH</span><span class="badge b-gray">F03</span></div>
+<h3>Desk 496eaf02 labels 51 picks High; only 3 satisfy the brief&#x27;s own conjunction</h3>
+<p class="body">Its published market file contains 460 priced outcomes. Recomputing the stated rule (&gt;70% AND -250..+10000) on its own numbers yields 3 qualifying lines, not 51. 33 lines sit above 70%, so most of the 51 are short-priced favourites that are outside the requested window. The desk&#x27;s headline count and its own price data disagree; the row-level labels are not reproduced by this desk.</p>
+
+<p class="small"><a href='https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/markets.csv' target='_blank' rel='noopener noreferrer'>https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/markets.csv ↗</a></p>
+</div>
+<div class="pred">
+<div class="tagrow"><span class="badge b-red">HIGH</span><span class="badge b-gray">F04</span></div>
+<h3>High-tier probabilities cluster within two points of the 70% threshold</h3>
+<p class="body">112 of 1616 inherited priced lines fall between 0.700 and 0.720, and the most repeated single value appears many times across unrelated matches and sports. That is the signature of a pricing pass tuned to land just inside the threshold rather than five independent assessments. This desk keeps those prices only where two source desks independently produced a comparable number, and marks every single-source line as such.</p>
+
+<p class="small">Check: <code>internal distribution check</code></p>
+</div>
+<div class="pred">
+<div class="tagrow"><span class="badge b-red">HIGH</span><span class="badge b-gray">F05</span></div>
+<h3>22 fixtures carry opposite favourites on different desks</h3>
+<p class="body">The same fixture is priced with a different favourite by two or more source desks. The largest gaps are shown below. None of these fixtures is used for a published pick on this desk; they are listed for review with both sides and both prices.</p>
+<ul class="small muted"><li>Rugby League: Australia (Jillaroos) v England Women — 8a900c04 Australia Jillaroos to Win (99.5%); 65331685 Australia Jillaroos (65.7%); 496eaf02 England Women (55.0%)</li><li>Handball: HC Erlangen v THW Kiel — 8a900c04 THW Kiel to Win (81.8%); 496eaf02 HC Erlangen (55.0%); 65331685 not originated (50.0%)</li><li>Greyhounds: Grouchos Gregor (Kelly Wilton) v Champion Stakes Final Field (Aayamza Legend / Fortanach Col / Bubbly Holly) — 8a900c04 Grouchos Gregor (Kelly Wilton) to Win (71.4%); 496eaf02 Champion Stakes Final Field (55.0%); 65331685 Grouchos Gregor (40.3%)</li><li>Gaelic Sports: Ireland v Scotland — 8a900c04 Ireland to Win (80.1%); 496eaf02 Ireland (60.0%); 65331685 not originated (50.0%)</li><li>Rugby Union: Leinster Rugby v Munster Rugby — 8a900c04 Leinster Rugby to Win (77.9%); 65331685 Munster Rugby (57.1%); 496eaf02 Munster Rugby (53.3%)</li><li>Rugby League: Australia Kangaroos v Fiji Bati — 8a900c04 Australia Kangaroos to Win (98.1%); 496eaf02 Australia Kangaroos (85.0%); 65331685 Australia (75.2%)</li><li>Basketball: Boston Celtics v New York Knicks — 8a900c04 Boston Celtics to Win (71.8%); 65331685 New York Knicks (50.0%); 496eaf02 New York Knicks (55.0%)</li><li>Basketball: Indiana Pacers v Dallas Mavericks — 8a900c04 Indiana Pacers to Win (71.6%); 65331685 Indiana Pacers (69.2%); 496eaf02 Dallas Mavericks (50.4%)</li></ul>
+<p class="small">Check: <code>internal cross-desk comparison</code></p>
+</div>
+<div class="pred">
+<div class="tagrow"><span class="badge b-amber">MEDIUM</span><span class="badge b-gray">F06</span></div>
+<h3>38 lines differ by 10% or more between desks</h3>
+<p class="body">Two desks priced the same market and selection with decimal prices at least 0.10 apart. The freshest observation is used on the match pages and the older one is shown beside it.</p>
+<ul class="small muted"><li>Volleyball: PGE Projekt Warszawa — spread 0.66</li><li>Volleyball: Itas Trentino — spread 0.18</li><li>Volleyball: Cisterna Volley — spread 0.22</li><li>Volleyball: Tinet Prata di Pordenone — spread 0.47</li><li>Volleyball: Sir Susa Scai Perugia — spread 0.52</li><li>Snooker: Kyren Wilson — spread 0.64</li><li>Snooker: Sam Craigie — spread 3.85</li><li>Darts: Luke Woodhouse — spread 0.81</li></ul>
+<p class="small">Check: <code>internal cross-desk comparison</code></p>
+</div>
+<div class="pred">
+<div class="tagrow"><span class="badge b-amber">MEDIUM</span><span class="badge b-gray">F07</span></div>
+<h3>1 rows still say &#x27;upcoming&#x27; after their official start time</h3>
+<p class="body">At this desk&#x27;s build time (21:30Z) these rows had already started but their source file still carries a pre-match state. They are shown as elapsed here and carry no pick.</p>
+<ul class="small muted"><li>496eaf02 GH01 started 2026-10-23T20:13:00Z</li></ul>
+<p class="small">Check: <code>internal clock check</code></p>
+</div>
+<div class="pred">
+<div class="tagrow"><span class="badge b-red">HIGH</span><span class="badge b-gray">F08</span></div>
+<h3>Race and stroke-play events are modelled as two-sided matches</h3>
+<p class="body">Greyhound races, motor races and stroke-play golf are multi-runner events. Several inherited rows invent a second side called &#x27;Field&#x27;, &#x27;Remaining Belfast Field&#x27; or &#x27;Inside Seeding Traps 1-3&#x27; and then quote a two-way price against it. That is not a market OLBG or any governing body publishes. This desk keeps those rows visible but labels them multi-runner and does not publish a match-winner pick from them.</p>
+<ul class="small muted"><li>Greyhounds: Grouchos Gregor (Kelly Wilton) v Champion Stakes Final Field (Aayamza Legend / Fortanach Col / Bubbly Holly)</li><li>Greyhounds: Inside Seeding Traps 1–3 v Outside Seeding Traps 4–6</li><li>Greyhounds: Kevin Hutton Sprint Contingent (Magical Jason Form-Line) v Wide-Seeded Scurry Final Field</li><li>Motor Racing: Max Verstappen (Red Bull Racing) v Kimi Antonelli &amp; Field (Mercedes / Ferrari)</li><li>Motor Racing: Kimi Antonelli (Mercedes) v Qualifying Field (Verstappen / Leclerc / Russell)</li><li>Greyhounds: Scurry Gold Cup Field v Dunstall Park Field</li></ul>
+<p class="small"><a href='https://www.gbgb.org.uk/' target='_blank' rel='noopener noreferrer'>https://www.gbgb.org.uk/ ↗</a></p>
+</div>
+<div class="pred">
+<div class="tagrow"><span class="badge b-red">HIGH</span><span class="badge b-gray">F09</span></div>
+<h3>One scoreline is credited to two different players on adjacent rows</h3>
+<p class="body">Row TN01 says Tsitsipas beat Karen Khachanov 4-6 7-6(5) 7-6(5); row TN02 says Bublik beat Karen Khachanov in a 4-6 7-6(5) 7-6(5) thriller lasting 32 games, in the same semi-final round of the same tournament. Khachanov cannot have lost that identical scoreline twice. Both rows are treated as unreliable for that detail and the detail is excluded from this desk&#x27;s predictions for the two matches.</p>
+<ul class="small muted"><li>496eaf02 TN01</li><li>496eaf02 TN02</li></ul>
+<p class="small"><a href='https://www.atptour.com/en/scores/current/almaty/9410/results' target='_blank' rel='noopener noreferrer'>https://www.atptour.com/en/scores/current/almaty/9410/results ↗</a></p>
+</div>
+<div class="pred">
+<div class="tagrow"><span class="badge b-amber">MEDIUM</span><span class="badge b-gray">F10</span></div>
+<h3>33 inherited prose lines fail a written-rule check</h3>
+<p class="body">Checks applied to the source desks&#x27; own published predictions: minimum 30 words, no internal vocabulary, and no six-word phrase reused between two different matches.</p>
+<ul class="small muted"><li>8a900c04 GF05: repeated 6-gram with GF04: &#x27;genesis championship at woo jeong hills&#x27;</li><li>8a900c04 VB04: repeated 6-gram with VB01: &#x27;to a five set 3 2&#x27;</li><li>8a900c04 VB05: repeated 6-gram with VB01: &#x27;to win and over 3 5&#x27;</li><li>8a900c04 DA05: repeated 6-gram with DA03: &#x27;in saturday&#x27;s best of nineteen second&#x27;</li><li>8a900c04 BB04: repeated 6-gram with BB02: &#x27;on the 60 day injured list&#x27;</li><li>496eaf02 TN02: repeated 6-gram with TN01: &#x27;7 6 5 7 6 5&#x27;</li><li>496eaf02 TN05: repeated 6-gram with TN01: &#x27;reached the semi finals with a&#x27;</li><li>496eaf02 VB04: repeated 6-gram with VB01: &#x27;crowd will push the tempo on&#x27;</li><li>496eaf02 RU03: repeated 6-gram with RU02: &#x27;in urc round 4 with the&#x27;</li><li>496eaf02 RU05: repeated 6-gram with RU01: &#x27;from one win one draw and&#x27;</li></ul>
+<p class="small">Check: <code>internal prose check</code></p>
+</div>
+<div class="pred">
+<div class="tagrow"><span class="badge b-amber">MEDIUM</span><span class="badge b-gray">F11</span></div>
+<h3>6 source links are outside the governing-body allow-list</h3>
+<p class="body">Every sporting row must carry a link to the league, tour, promoter or governing body that publishes the fixture. Hosts that are media, aggregators or betting sites are listed below and are not counted as row verification on this desk.</p>
+<ul class="small muted"><li>www.the42.ie</li></ul>
+<p class="small"><a href='https://www.olbg.com/betting-tips' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips ↗</a></p>
+</div>
+<div class="pred">
+<div class="tagrow"><span class="badge b-amber">MEDIUM</span><span class="badge b-gray">F12</span></div>
+<h3>1 fixtures carry no official source link</h3>
+<p class="body">These rows were published by a source desk without any governing-body URL. They keep their place in the match list so the gap is visible, but they carry no pick and no prediction on this desk.</p>
+<ul class="small muted"><li>6B01-119 Matthew Jarvis v Adrien Rozner (Golf)</li></ul>
+<p class="small">Check: <code>internal source check</code></p>
+</div>
+<div class="pred">
+<div class="tagrow"><span class="badge b-blue">INFO</span><span class="badge b-gray">F13</span></div>
+<h3>65 of 125 fixtures rest on a single desk</h3>
+<p class="body">These fixtures appear on only one of the three retained 23-Oct desks, so no independent second price exists to compare against. Their numbers are shown but not treated as corroborated.</p>
+<ul class="small muted"><li>6B03-011</li><li>6B03-012</li><li>6B03-013</li><li>6B03-014</li><li>6B05-024</li><li>6B05-025</li><li>6B06-027</li><li>6B07-035</li><li>6B08-038</li><li>6B08-040</li><li>6B09-044</li><li>6B09-045</li><li>6B10-046</li><li>6B10-047</li><li>6B10-048</li><li>6B11-051</li><li>6B11-052</li><li>6B11-053</li><li>6B11-054</li><li>6B11-055</li></ul>
+<p class="small">Check: <code>internal provenance count</code></p>
+</div>
+<h2>Fixtures with opposite favourites, side by side</h2>
+<div class="wrap"><table><thead><tr><th>Sport</th><th>Fixture</th><th>Start (UTC)</th><th>What each desk says</th></tr></thead><tbody>
+<tr><td>Golf</td><td>Corey Conners v Seamus Power</td><td class='mono small'>2026-10-24T11:30:00Z</td><td class='small'>8a900c04: Seamus Power to Win 70.9% · 65331685: Corey Conners 52.0%</td></tr><tr><td>Volleyball</td><td>PGE GiEK Skra Belchatow v PGE Projekt Warszawa</td><td class='mono small'>2026-10-24T16:00:00Z</td><td class='small'>65331685: PGE Projekt Warszawa 64.1% · 496eaf02: PGE GiEK Skra Bełchatów 55.0%</td></tr><tr><td>Volleyball</td><td>Sir Susa Scai Perugia v Tinet Prata di Pordenone</td><td class='mono small'>2026-10-25T17:00:00Z</td><td class='small'>65331685: Tinet Prata di Pordenone 57.1% · 496eaf02: Sir Susa Scai Perugia 55.0%</td></tr><tr><td>Rugby Union</td><td>Leinster Rugby v Munster Rugby</td><td class='mono small'>2026-10-24T17:00:00Z</td><td class='small'>8a900c04: Leinster Rugby to Win 77.9% · 65331685: Munster Rugby 57.1% · 496eaf02: Munster Rugby 53.3%</td></tr><tr><td>Cricket</td><td>Pakistan v England</td><td class='mono small'>2026-10-25T08:00:00Z</td><td class='small'>496eaf02: Pakistan 79.0% · 65331685: Pakistan 72.7% · 8a900c04: England to Win 58.1%</td></tr><tr><td>Cricket</td><td>New Zealand A v India A</td><td class='mono small'>2026-10-23T22:00:00Z</td><td class='small'>8a900c04: New Zealand A to Win 64.6% · 496eaf02: India A 52.9%</td></tr><tr><td>Darts</td><td>Gian van Veen v Luke Woodhouse</td><td class='mono small'>2026-10-24T12:00:00Z</td><td class='small'>8a900c04: Gian van Veen to Beat Luke Woodhouse 71.4% · 65331685: Luke Woodhouse 54.6% · 496eaf02: Gian van Veen 62.2%</td></tr><tr><td>Darts</td><td>Stephen Bunting v Kim Huybrechts</td><td class='mono small'>2026-10-24T13:00:00Z</td><td class='small'>8a900c04: Stephen Bunting to Beat Kim Huybrechts 70.8% · 65331685: Kim Huybrechts 70.0% · 496eaf02: Stephen Bunting 64.6%</td></tr><tr><td>Baseball</td><td>Milwaukee Brewers v Tampa Bay Rays</td><td class='mono small'>2026-10-24T00:00:00Z</td><td class='small'>8a900c04: Milwaukee Brewers to Win 60.0% · 496eaf02: Tampa Bay Rays 53.4% · 65331685: Milwaukee Brewers 53.2%</td></tr><tr><td>Baseball</td><td>Milwaukee Brewers v Tampa Bay Rays</td><td class='mono small'>2026-10-25T00:00:00Z</td><td class='small'>496eaf02: Tampa Bay Rays 53.4% · 65331685: Milwaukee Brewers 53.2%</td></tr><tr><td>Gaelic Sports</td><td>Ireland v Scotland</td><td class='mono small'>2026-10-24T17:00:00Z</td><td class='small'>8a900c04: Ireland to Win 80.1% · 496eaf02: Ireland 60.0% · 65331685: not originated 50.0%</td></tr><tr><td>Gaelic Sports</td><td>Ballyhale Shamrocks v Tullaroan</td><td class='mono small'>2026-10-25T12:45:00Z</td><td class='small'>8a900c04: Ballyhale Shamrocks to Win 74.4% · 496eaf02: Shamrocks Ballyhale 62.0%</td></tr><tr><td>Gaelic Sports</td><td>Maigh Cuilinn (Moycullen) v Salthill-Knocknacarra</td><td class='mono small'>2026-10-25T16:00:00Z</td><td class='small'>8a900c04: Maigh Cuilinn (Moycullen) to Win 71.9% · 496eaf02: Maigh Cuilinn 60.0%</td></tr><tr><td>Greyhounds</td><td>Grouchos Gregor (Kelly Wilton) v Champion Stakes Final Field (Aayamza Legend / Fortanach Col / Bubbly Holly)</td><td class='mono small'>2026-10-23T20:13:00Z</td><td class='small'>8a900c04: Grouchos Gregor (Kelly Wilton) to Win 71.4% · 496eaf02: Champion Stakes Final Field 55.0% · 65331685: Grouchos Gregor 40.3%</td></tr><tr><td>Handball</td><td>HC Erlangen v THW Kiel</td><td class='mono small'>2026-10-24T16:00:00Z</td><td class='small'>8a900c04: THW Kiel to Win 81.8% · 496eaf02: HC Erlangen 55.0% · 65331685: not originated 50.0%</td></tr><tr><td>Basketball</td><td>Boston Celtics v New York Knicks</td><td class='mono small'>2026-10-23T23:00:00Z</td><td class='small'>8a900c04: Boston Celtics to Win 71.8% · 65331685: New York Knicks 50.0% · 496eaf02: New York Knicks 55.0%</td></tr><tr><td>Basketball</td><td>Indiana Pacers v Dallas Mavericks</td><td class='mono small'>2026-10-23T23:00:00Z</td><td class='small'>8a900c04: Indiana Pacers to Win 71.6% · 65331685: Indiana Pacers 69.2% · 496eaf02: Dallas Mavericks 50.4%</td></tr><tr><td>Rugby League</td><td>Papua New Guinea Kumuls v Toa Samoa</td><td class='mono small'>2026-10-24T04:25:00Z</td><td class='small'>8a900c04: Toa Samoa to Win 91.5% · 65331685: Samoa 77.0% · 496eaf02: Toa Samoa 72.0%</td></tr><tr><td>Rugby League</td><td>Australia (Jillaroos) v England Women</td><td class='mono small'>2026-10-24T09:05:00Z</td><td class='small'>8a900c04: Australia Jillaroos to Win 99.5% · 65331685: Australia Jillaroos 65.7% · 496eaf02: England Women 55.0%</td></tr><tr><td>Rugby League</td><td>New Zealand Kiwis v Cook Islands Aitu</td><td class='mono small'>2026-10-25T05:05:00Z</td><td class='small'>8a900c04: New Zealand Kiwis to Win 97.6% · 496eaf02: New Zealand Kiwis 82.0% · 65331685: New Zealand 77.0%</td></tr><tr><td>Rugby League</td><td>Australia Kangaroos v Fiji Bati</td><td class='mono small'>2026-10-25T09:05:00Z</td><td class='small'>8a900c04: Australia Kangaroos to Win 98.1% · 496eaf02: Australia Kangaroos 85.0% · 65331685: Australia 75.2%</td></tr><tr><td>Rugby Union</td><td>Ospreys v Dragons RFC</td><td class='mono small'>2026-10-24T18:00:00Z</td><td class='small'>65331685: Dragons RFC 57.1% · 496eaf02: Dragons 53.3%</td></tr>
+</tbody></table></div>
+
+<footer>Independent research project · not affiliated with OLBG · prices are our own estimates, not bookmaker offers · no betting advice ·
+<a href="flagged.html">every irregularity is on the review page</a></footer>
+</main></div></body></html>

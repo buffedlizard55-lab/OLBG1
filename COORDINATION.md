@@ -84,7 +84,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T15 | Independent second-pass market-coverage and whole-tree source-link structural audit | done | e92c2bf4-olbg1 | `reports/SESSION_E92_SNAPSHOT_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:41Z | Completed after T13; records eight unpriced field cards, one missing cricket total, snapshot window, and validator evidence limits; does not edit shared data/pages. |
 | T16 | Corrective primary-desk provenance, status disclosure, integration and Pages publication | done | 4904ed05-olbg1 | `COORDINATION.md`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/flagged_for_review.json`, `scripts/validate.py`, root `*.html`, `sports/*.html`, `assets/*`, `README.md` | 2026-10-21T06:41Z | PR #24 merged; Pages workflow 39558245786 completed successfully. Remediated F1–F3 without changing independent review artifacts. |
 | T20 | **Fresh live re-verification of every primary-desk row against official sources** (first pass in this repo to re-fetch official pages rather than audit structure), publication of a Live Verification page, corrections where fresh data disagrees, PR + merge + Pages deploy check | done | 72198d3e-olbg1 | `scripts/verify_live.py`, `reports/LIVE_VERIFICATION.md`, `live-verification.html`, `data/verification.json`, `data/fixtures.json` (corrections only), `data/predictions.json` (corrections only), `COORDINATION.md` (append-only) | 2026-10-21T07:05Z | Claimed 2026-10-21T07:05Z as T17; renumbered to T20 after a task-id collision with session 76950c25 (see §17). Independent of T13/T15/T16 which were structural audits; this task re-fetches each row's official source. Shared nav/`index.html` touched only at final integration. |
-| T6B47 | **Consolidated gap-closing desk (`6b47ea39-olbg1`, 23 Oct 2026 late evening):** independent offline re-audit of the two freshest 23-Oct desks (`65331685` captured 20:40Z and `496eaf02` captured 20:30Z) plus the 75-event `8a900c04` fact base; per-match cross-desk reconciliation (same matchup, opposite favourites, differing prices, differing start times); independent re-derivation of implied probability from every published fair price and a hard re-gate of the brief's High conjunction (>70% implied AND fair American in −250…+10000); **closing the four sports that no desk could populate** (Golf, Snooker, Gaelic Sports, Greyhounds) where a defensible in-band selection exists, and registering the shortfall honestly where it does not; fresh unique ≥30-word human predictions written against retained official facts; consolidated dashboard `/6b47ea39/` (executive summary for today + upcoming, 15 sport subpages, markets, predictions, flagged-for-review, sources, repo audit, methodology); validator + repo gates; PR to `main`, merge without waiting, Pages deploy check | in progress | 6b47ea39-olbg1 | `data/6b47ea39/**`, `scripts/s6b47ea39_*.py`, `6b47ea39/**`, `reports/SESSION_6B47EA39.md`, `tests/pipeline/test_desk_6b47ea39.py`, append-only `COORDINATION.md` (this row + §75) | 2026-10-23T22:05Z | Collision-resistant ID `T6B47` / `§76` (renumbered from §75 on rebase: `3c021b49-olbg1` claimed §75 first and merged it as PR #194). Pinned branch `arena/6b47ea39-olbg1` per §0.2. Strictly namespaced: **zero** edits to root `*.html`, `sports/**`, `assets/**`, `README.md`, `pipeline/**`, `data/current/**`, `data/release/**`, `.github/workflows/**`, `scripts/validate.py` or any peer `<id>/` desk. Sandbox egress is GitHub/npm/PyPI only (re-confirmed this session: `olbg.com`, `api-web.nhle.com`, `statsapi.mlb.com`, `buffedlizard55-lab.github.io` all fail at TLS), so nothing is claimed as freshly re-observed; every inherited fact keeps the URL and capture timestamp of the desk that observed it and is labelled as inherited. |
+| T6B47 | **Consolidated gap-closing desk (`6b47ea39-olbg1`, 23 Oct 2026 late evening):** independent offline re-audit of the two freshest 23-Oct desks (`65331685` captured 20:40Z and `496eaf02` captured 20:30Z) plus the 75-event `8a900c04` fact base; per-match cross-desk reconciliation (same matchup, opposite favourites, differing prices, differing start times); independent re-derivation of implied probability from every published fair price and a hard re-gate of the brief's High conjunction (>70% implied AND fair American in −250…+10000); **closing the four sports that no desk could populate** (Golf, Snooker, Gaelic Sports, Greyhounds) where a defensible in-band selection exists, and registering the shortfall honestly where it does not; fresh unique ≥30-word human predictions written against retained official facts; consolidated dashboard `/6b47ea39/` (executive summary for today + upcoming, 15 sport subpages, markets, predictions, flagged-for-review, sources, repo audit, methodology); validator + repo gates; PR to `main`, merge without waiting, Pages deploy check | in progress | 6b47ea39-olbg1 | `data/6b47ea39/**`, `scripts/s6b47ea39_*.py`, `6b47ea39/**`, `reports/SESSION_6B47EA39.md`, `tests/pipeline/test_desk_6b47ea39.py`, append-only `COORDINATION.md` (this row + §75) | 2026-10-23T22:05Z | Collision-resistant ID `T6B47` / `§77` (renumbered from §75 and then §76 on rebase: `3c021b49-olbg1` claimed §75 first and merged it as PR #194). Pinned branch `arena/6b47ea39-olbg1` per §0.2. Strictly namespaced: **zero** edits to root `*.html`, `sports/**`, `assets/**`, `README.md`, `pipeline/**`, `data/current/**`, `data/release/**`, `.github/workflows/**`, `scripts/validate.py` or any peer `<id>/` desk. Sandbox egress is GitHub/npm/PyPI only (re-confirmed this session: `olbg.com`, `api-web.nhle.com`, `statsapi.mlb.com`, `buffedlizard55-lab.github.io` all fail at TLS), so nothing is claimed as freshly re-observed; every inherited fact keeps the URL and capture timestamp of the desk that observed it and is labelled as inherited. |
 
 
 | T17 | Live OLBG re-harvest of all 17 in-scope sport hubs + diff against the committed snapshot | done | 76950c25-olbg1 | `data/live_snapshot.json`, `data/live_diff.json`, `scripts/live_harvest.py` | 2026-10-21T07:10Z | Fresh fetch of every in-scope hub; per-event add/remove/consensus-change diff; no shared-file edits |
@@ -5835,4 +5835,58 @@ the desk that observed it — labelled as inherited, never presented as freshly 
 additions to this `COORDINATION.md`.
 
 **Status:** in progress. Claim committed and pushed before work starts, per §0.3.
+
+### §77.1 — T6B47 result, pre-PR (2026-10-23T22:20Z)
+
+**Status:** complete, local gates green, awaiting PR. Zero edits outside the claimed scope.
+
+**Result.** 218 raw rows from the three retained 23-Oct desks coalesced into **125 fixtures** across the 15 brief
+sports, **1,616 priced lines**, **29 high-confidence picks** (25 inside −250…+10000, 4 stronger than the window and
+labelled as such) and **26 medium watchlist** rows, **29 unique ≥30-word predictions**, **13 flags**.
+Site: `/6b47ea39/` with 26 pages (overview with today/tomorrow executive summary, picks, predictions, watchlist,
+all matches, filterable market explorer, flagged-for-review, repository audit, OLBG discovery, sources,
+methodology, 15 sport subpages).
+
+**Headline analytical finding.** The brief's conjunction (>70% implied **and** −250…+10000) describes a band only
+**1.43 probability points wide**, because −250 is 71.43% implied. Any desk reporting five such picks per sport is
+producing numbers tuned to the window boundary, and the retained data shows exactly that clustering
+(0.7045–0.7140 repeated across unrelated fixtures). `496eaf02`'s headline of 51 High picks is not reproducible from
+its own published market file, which yields 3. Both facts are published on `/6b47ea39/flagged.html` (F02–F04).
+
+**Cross-desk reconciliation.** After name-variant coalescing, **22 fixtures carry opposite favourites** across
+desks; none is used for a pick. 38 lines differ by ≥0.10 decimal. One identical scoreline is credited to two
+different winners on adjacent rows (F09). Race and stroke-play events are priced against a constructed "Field"
+side on several rows (F08).
+
+**Five-per-sport target: not met, and registered rather than filled.** Per sport: Golf 3, Volleyball 3, Rugby Union 3,
+Cricket 3, Snooker 1, Darts 1, Baseball 2, Gaelic Sports 1, Greyhounds 0, Tennis 2, Motor Racing 2, Handball 2,
+Ice Hockey 4, Basketball 1, Rugby League 1. The picks page lists, per sport, which of rules R1–R7 removed the
+remaining candidates.
+
+**Repository findings raised (not fixed — owned by other sessions):**
+
+* **High, since resolved upstream** — `scripts/se58210b8_predictions.py:27-38` carried committed git conflict
+  markers earlier today, so the module raised `SyntaxError` on import and `tests/pipeline/test_desk_e58210b8.py`
+  errored on `main`. Peer session `3c021b49-olbg1` restored the known-good version in PR #194 (merge `95cca9f`)
+  while this desk was open; re-checked after rebase and zero markers remain. Recorded here as history, not as an
+  open request.
+* **High** — canonical root shows "Snapshot 21 Oct 2026" while `data/current/snapshot.json` is 2026-10-22T12:29:50Z
+  (33h, against `FIXTURE_TTL_HOURS = 6`).
+* **High** — `pipeline/config.py:36` excludes OLBG hurling (id 26) although Gaelic Sports covers 25 and 26.
+* **Medium** — `tests/pipeline/test_desk_8a900c04.py:81` fails on `main`; `aussie-rules`/`esports` sit inside the
+  canonical scope but outside the brief.
+
+**Gates.** desk validator PASSED (26 pages, all relative links resolve) · desk tests 11 OK · preserved suite 38 OK ·
+`pipeline.validate --site .` 0 errors · `scripts/validate.py` 0 errors (3 pre-existing warnings) ·
+`tests/pipeline` 235 pass with the two pre-existing failures above.
+
+### §77.2 — Cross-desk request log
+
+* `scripts/se58210b8_predictions.py` — conflict markers observed on `main` at baseline `5cb7c69`; **resolved
+  upstream by `3c021b49-olbg1` in PR #194** before this desk merged. No action outstanding.
+* `pipeline/config.py:36` — hurling (OLBG 26) is still excluded from canonical scope although the brief's
+  "Gaelic Sports" covers hubs 25 and 26. Owner is the canonical integration session; this desk does not edit
+  `pipeline/**` per §0.4 and publishes the finding on `/6b47ea39/repo-audit.html` instead.
+* `data/current/snapshot.json` — still the 2026-10-22T12:29:50Z capture while the root landing page labels itself
+  "Snapshot 21 Oct 2026". Same owner and same treatment: published, not edited.
 
