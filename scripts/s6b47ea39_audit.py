@@ -258,13 +258,19 @@ def main() -> None:
         "internal distribution check",
         [f"{d}: {v['lines_between_0.700_and_0.720']}/{v['lines']} lines in 0.700-0.720" for d, v in sorted(per_desk.items())],
     )
+    agreed_shared = sum(
+        1
+        for line in multi_desk_lines
+        if max(o["decimal"] for o in line["observations"]) - min(o["decimal"] for o in line["observations"]) <= 0.02
+    )
+    audit["price_independence"]["shared_lines_agreeing_within_0.02"] = agreed_shared
     flag(
         flags, "medium",
-        "Nearly every in-window selection is priced by one desk only",
-        f"Of {len(in_band_lines)} in-window lines, {len(in_band_lines) - len(in_band_multi)} are priced by a single desk. "
-        "Where two desks do price the same bet, the numbers differ by more than the tolerance used here more often "
-        "than they agree. Every pick on this desk therefore prints the desk that priced it, and no pick is described "
-        "as market consensus.",
+        "No in-window line is corroborated, and the shared lines mostly disagree",
+        f"All {len(in_band_lines)} in-window candidate lines are priced by a single desk: the brief's window is populated "
+        f"entirely by non-overlapping single-source estimates. Of the {len(multi_desk_lines)} lines that two desks do price, "
+        f"{agreed_shared} agrees within 0.02 decimal and {len(multi_desk_lines) - agreed_shared} differ by more than that. "
+        "Every pick on this desk prints the desk that priced it and none is described as market consensus.",
         "internal provenance count",
     )
 
