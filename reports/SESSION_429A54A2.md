@@ -120,3 +120,25 @@ No worldwide fixture census, no calibration, no bookmaker quote, no availability
 and LNH engines use no home edge and no market input. The files of other sessions were read but not
 edited; the eight repository findings are published with file and line and left for the integration
 owner.
+
+## Publication receipts
+
+* **PR #173** — https://github.com/buffedlizard55-lab/OLBG1/pull/173 — base `main`, head
+  `arena/429a54a2-olbg1`. Pre-merge CI `Evidence, model, site and browser gates` **SUCCESS**
+  (run 39991274191); the Pages publish job correctly skipped on the PR event. **Merged
+  2026-10-23T17:00:03Z** as `30775ff12c07ab3ffbeb18151b3cba92a3abf03f` without waiting for approval,
+  per the brief.
+* **Production run 39991436722** on `main`: validate job SUCCESS and `Publish canonical GitHub Pages`
+  SUCCESS; the repository's legacy `pages-build-deployment` run 39991435745 also succeeded.
+* **Live byte read-back (cache-busted, independent of the Pages API) at ≈17:26Z:**
+  `/OLBG1/429a54a2/index.html` served this merge's own content — the KPI strip 96 rows / 19 priced /
+  3 High in band / 5 High outside band / 2 Medium / 10 predictions / 6 unverified / 20 flags, the three
+  in-band cards (Montreal −250, Carolina −245, Selestat −240) and the full table with per-row official
+  links and observation windows. `/OLBG1/429a54a2/high-confidence.html` served all three ledgers
+  (3 / 5 / 2) with the −250 = 71.43% arithmetic and the per-sport top-five sections.
+* **Wording correction after that read-back:** the overview and match-list notices now state that the
+  list is frozen at the snapshot and that a row starting after 16:45Z can pass while the reader is on
+  the page, rather than implying the page re-checks status. Desk validator re-run: PASSED, 0 errors.
+* **Note on this follow-up:** its own merge and deploy cannot be confirmed by the text that ships in
+  it; what is confirmed above is that the merged desk artifact was the content served by GitHub Pages
+  at the times read.

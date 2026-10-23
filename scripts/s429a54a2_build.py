@@ -421,7 +421,7 @@ def build_site(records, sports, counts):
         for r in in_band)
     body = f"""<h1>Fifteen sports, one evidence desk</h1>
 <p class="lede">A single-snapshot match list for the sports you asked for, built the way the brief requires: each accepted fixture is linked to the league, tour or governing body that published it, every price is an originated estimate with a stated input, and anything unconfirmed is left blank and published on the review page. This is not a complete global slate.</p>
-<div class="notice"><strong>Read this first.</strong> The snapshot was taken at {esc(META.GENERATED_AT)}. Fixtures whose start has passed are marked elapsed and are never priced. Confidence is capped where the official input is thin: a one-game NBA sample or a viewing-order label cannot produce a 70% claim, and no row is promoted to fill a quota.</div>
+<div class="notice"><strong>Read this first.</strong> The snapshot was taken at {esc(META.GENERATED_AT)}. Fixtures whose start had already passed at that moment are marked elapsed and are never priced; rows that start after the snapshot can still pass while you read the page, so check the official status before acting. Confidence is capped where the official input is thin: a one-game NBA sample or a viewing-order label cannot produce a 70% claim, and no row is promoted to fill a quota.</div>
 {kpi}
 <h2>Executive summary — High-confidence picks in the requested band</h2>
 <p class="lede">A High pick must clear three gates at once: both sides' official strength inputs were read, the originated probability is at least 70%, and the fair price sits inside -250 to +10000. {counts['high']} selections clear all three; {counts['high_out']} more clear the probability gate but price shorter than -250 and are disclosed separately rather than relabelled.</p>
@@ -443,7 +443,7 @@ def build_site(records, sports, counts):
 
     # ---------- matches ----------
     body = f"""<h1>Match list</h1>
-<p class="lede">Every row is a fixture that was read on an official page this session. Blank selection, probability or price means the row did not have the inputs for one; the reason is on the review page and in the JSON.</p>
+<p class="lede">Every row is a fixture that was read on an official page this session. Blank selection, probability or price means the row did not have the inputs for one; the reason is on the review page and in the JSON. The list is frozen at {esc(META.GENERATED_AT)}: later status changes, postponements and line-up news are not reflected, so confirm on the linked page.</p>
 <div class="notice">Rows are sorted by sport and start. A verified fixture is not a verified price: the source column proves the match exists and when it starts, not that the estimate is right.</div>
 {match_table(records)}"""
     page("matches.html", "Match list", body)
