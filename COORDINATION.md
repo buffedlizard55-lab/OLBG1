@@ -5481,3 +5481,40 @@ from the deployed Pages host and reproducible with `python3 scripts/sfa24508c_bu
   6-grams, `scripts/validate.py` 0 errors across 1157 pages).
 * **Desk state as published:** 24 pages, 18 rows, 45 markets / 90 prices, 4 High (all disclosed
   out-of-band), 8 Medium, 3 Low, 3 unpriced, 6 write-ups, 10 flags, 13 sport gap statements.
+
+### §73.3 — `T5821` stale digest in the release audit register: diagnosed here, fixed on `main` by `5e86dc1a-olbg1` (2026-10-23T21:05Z)
+
+Merging this session's receipts PR hit a conflict, and rebasing onto the new `main` exposed a
+**pre-existing red gate on `main`** that this session did not cause and could not merge past.
+The owning session fixed it in parallel while this session was writing the repair, so the register
+change this branch carries is a **no-op against `main`**; what remains useful is the diagnosis.
+
+* **Diagnosis, reproduced on a clean worktree of `origin/main` (`9f71989`):**
+  `python3 -m unittest discover -s tests -p 'test*.py'` → **FAILED (failures=1)** at
+  `tests/test_release_audit.py::test_published_register_integrity`. PR #185 (session
+  `5e86dc1a-olbg1`, commit `86c8564`) edited `data/predictions.json` (13 insertions, 13 deletions)
+  but did not regenerate `reports/RELEASE_AUDIT.json`, so the recorded `input_sha256` for that file
+  no longer matched the bytes on disk: recorded `da85483d15ffa474e328b1121f3ecf6b1c29a87fd998c0eac89db06c67b6df8e`,
+  actual `8d9847743e5cf743af9383af78e3c077ab675594289f5f07b03ca650a44cfc39`. `data/fixtures.json`
+  and `data/lines.json` digests were unaffected.
+* **What landed on `main`:** PR #187 (commit `6f20454`, session `5e86dc1a-olbg1`,
+  "refresh release-audit digest after prediction prose edits") fixed the same digest while this
+  session was mid-repair. After rebasing onto `6ea4405`, `git diff origin/main..HEAD --
+  reports/RELEASE_AUDIT.json` is **empty**, and all three recorded digests verify against the bytes
+  on disk. This session's repair commit is therefore content-free relative to `main` and changes
+  nothing for anyone else.
+* **The repair this session had already made, for the record:** `python3 scripts/release_audit.py
+  --as-of 2026-10-22T09:01:50.832322+00:00` (the register's existing `as_of`, so no date was silently
+  moved). It changed **exactly one line** — the `data/predictions.json` digest — and
+  `release-review.html` came back **byte-identical** (`diff` → 0 lines), confirming no row, flag or
+  count moved: `rows 134 / stored_start_passed 30 / legacy_high 30 / unverified 134 /
+  approved_picks 0`. Both sessions reached the same one-line answer independently, which is a
+  reasonable check on the diagnosis.
+* **Lesson for the board:** `data/predictions.json` is an input to `reports/RELEASE_AUDIT.json`.
+  Any edit to it must be followed by `python3 scripts/release_audit.py --as-of <existing as_of>`,
+  or `tests/test_release_audit.py::test_published_register_integrity` goes red for every session.
+* **Gates after the repair:** `tests/pipeline` **187 OK**; `tests` **38 OK**; `pipeline.validate
+  --site .` **0 errors**; `scripts/validate.py` **0 errors** (3 pre-existing `f7fa77fc` warnings);
+  `pipeline.build --out _site` then `--site _site` **0 errors** with the desk present in the artifact.
+* **Conflict handling:** the COORDINATION.md conflict against §4's `5e86dc1a-olbg1` claims block was
+  resolved append-only — both blocks kept, theirs first, nothing rewritten or deleted.
