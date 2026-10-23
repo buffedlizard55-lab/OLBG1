@@ -145,6 +145,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T3EE30 | **Independent live 22 Oct ~21:10Z UTC desk (`3ee30bba-olbg1`):** live OLBG.com reverse-engineering & 17-hub discovery (excluding soccer/football, boxing, UFC/MMA, American football, hurling, horse racing, cycling, specials); fresh ~21:00Z UTC official governing-body harvest & line-by-line verification expiring earlier-day completed fixtures; line-by-line repository audit with `file:line` & official-source links; own zero-vig multi-market line origination (match winner, handicap/spread ladders, match & team total ladders, period/set/frame/prop market investigation); confidence tiers with strict in-window High gate (`p > 0.70` AND fair American price inside `−250…+10000`) plus out-of-window chalk disclosure; unique ≥30-word human predictions backed by live-verified team, player, current form & recent match history; 28-page clean dashboard (`/3ee30bba/`) + Flagged-for-Review page; unit + validator + browser gates; PR + merge + live GitHub Pages byte-readback verification | done — PR #156 merged `a18e809`, Pages live | 3ee30bba-olbg1 | `data/3ee30bba/**`, `scripts/s3ee30bba_*.py`, `3ee30bba/**`, `reports/SESSION_3EE30BBA.md`, `tests/pipeline/test_desk_3ee30bba.py`, append-only `COORDINATION.md` (this row + §66) | 2026-10-22T20:52Z | **DONE:** PR #156 (`https://github.com/buffedlizard55-lab/OLBG1/pull/156`) merged `2026-10-22T21:44:22Z` as `a18e809`; canonical Pages run `39859662561` & dynamic Pages run `39859661696` succeeded; live `/OLBG1/3ee30bba/{index,predictions,flagged}.html` & `/OLBG1/archive.html` verified from deployed bytes. 140 upcoming/in-window verified listings across all 17 covered sports (44 priced / 96 unpriced) + 16 separated elapsed Oct 21–22 ties; **294** markets (**600** outcomes); **13** in-window High picks (`−249` to `−234`) + **57** heavy-chalk outcomes capped at Medium; **13** unique human predictions (`85–101`w, `0` repeated 5-grams); **28** official sources; **16** flags; **13** repo audit findings; **28** HTML pages (`1,248` source-linked rows). |
 
 ---
+| TED71 | **Fresh live 23 Oct 2026 desk + final integration (`ed71b937-olbg1`):** live `OLBG.com` discovery harvest across the **15 sports named in the current brief** (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League) — Australian Rules and eSports are **out of scope for this brief** and are not published as covered; line-by-line official-source verification of every published row against the league / governing body / tour itself (blank-and-flag anything unconfirmed, per §0.5); own zero-vig multi-market line origination (match winner, handicap/spread ladder, match total ladder, plus sport-specific markets where an official input exists); confidence tiers with **High** restricted to the brief's conjunction — model probability >=70% **and** originated fair price inside **-250..+10000** (>=70% favourites outside the band are disclosed, never promoted); unique hand-written >=30-word human predictions for every High pick naming the selection and citing only facts read from official pages this session; namespaced clean dashboard `/ed71b937/` (landing + executive summary + 15 sport subpages + matches + markets + high-confidence + predictions + analysis + sources + Flagged for Review); repo validator gate; then final integration: re-verify combined data, confirm the site builds with no broken links, PR to `main`, merge, live GitHub Pages verification | in progress | ed71b937-olbg1 | `data/ed71b937/**`, `scripts/sed71b937_*.py`, `ed71b937/**`, `reports/SESSION_ED71B937.md`, append-only `COORDINATION.md` (this row + §71) | 2026-10-23T16:35Z | Claimed as **TED71**, published as **§71** — session-namespaced task id so it cannot collide with a concurrent numeric claim. Originally claimed against §61; that section was taken by T2B72 (`2b72da34-olbg1`) and merged first, so this section is renumbered to §71 with no edit to §61, §67–§70. Strictly namespaced: **no** edit to root `*.html`, `sports/**`, `assets/**`, `README.md`, `scripts/build_site.py`, `scripts/validate.py`, `pipeline/**`, `.github/workflows/**`, `data/current/**`, `data/release/**`, `archive/**` or any other session's `<id>/` desk while other tasks are open; root-navigation request logged in §4/§71 instead. Sandbox egress is GitHub/npm/PyPI only, so **every** live read goes through the Arena page-fetch/search tool layer and is logged with its URL and read time; OLBG pages are **discovery only**, never official fixture verification. First desk on this repo for **2026-10-23** — the 2026-10-22 desks are expired (fixture evidence expires 6h from its lower observation bound per the canonical policy) and are left untouched. |
 
 ## 2. Session log
 
@@ -4831,3 +4832,66 @@ leagues' own feeds, which the other two did not do. Nothing here reclassifies th
 **Self-referential limit:** this §67.1 receipt and the polish commit ship in a follow-up PR whose
 own merge and deploy they cannot confirm. What is confirmed above is that PR #163's artifact —
 before the polish — was served by GitHub Pages from the deployed bytes.
+**Section-number conflict, logged.** This claim was written against §61 as the
+next free section. While it was in flight, session `2b72da34-olbg1` claimed §61
+for **T2B72** and it merged to `main` first (§61/§61.1 above), and sessions
+`fa24508c-olbg1` and `cf2699ba-olbg1` took §67–§70. This section is therefore
+published as **§71** and every forward reference in it reads §71. Nothing in
+§61, §67, §68, §69 or §70 was edited, reordered or removed to make room —
+the rebase resolution is append-only on both sides. The task id `TED71` and the
+file scopes (`data/ed71b937/**`, `scripts/sed71b937_*.py`, `ed71b937/**`) were
+already session-namespaced, so no work collided; only the section number did.
+
+---
+
+## 71. Session `ed71b937-olbg1` — TED71 fresh 23-Oct-2026 live desk + final integration (claim)
+
+Claimed **2026-10-23T16:35Z** as **TED71**, published as **§71** after a section-number collision (see the note above). The task id is session-namespaced
+(`T` + `ED71` from `ed71b937`) so it cannot collide with a concurrent numeric claim, following
+the precedent of `T257E`, `T546F`, `T2988` and `T424375B4`. §61 is the next free section
+(the document tail at claim time).
+
+**Why a new desk rather than a refresh of an existing one.** The canonical evidence policy
+(recorded in the root `README.md`) expires fixture evidence **six hours from its original lower
+observation bound**, and statistics after 24 hours. Every merged desk on `main` was harvested
+on **2026-10-21/2026-10-22**; on 2026-10-23 those captures are expired by policy and their
+pre-match selections cannot be re-presented as current. This session therefore performs its
+own live discovery and official verification for **today's** slate and publishes it under its
+own namespace. No earlier desk is edited, re-dated or rejuvenated.
+
+**Scope note — 15 sports, not 17.** The current brief names exactly fifteen sports:
+Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds,
+Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League. OLBG sport ids
+(§3 registry, `datasets/olbg_sports_registry.json`): Golf `5`, Volleyball `21`, Rugby Union `9`,
+Cricket `7`, Snooker `8`, Darts `15`, Baseball `12`, Gaelic Football `25`, Greyhounds `28`,
+Tennis `3`, Motor Racing `14`, Handball `20`, Ice Hockey `13`, Basketball `4`,
+Rugby League `10`. Australian Rules (`22`) and eSports (`23`) appear in older desks but are
+**not** in this brief, so they are neither harvested as covered nor published with selections.
+The always-excluded OLBG categories (Football `1`, Horse Racing `2`, American Football `11`,
+Boxing `16`, Cycling `17`, Specials `18`, Hurling `26`) remain excluded.
+
+**Method, stated up front.**
+
+* Sandbox egress is limited to `github.com`, `api.github.com`, `codeload.github.com`,
+  `registry.npmjs.org`, `pypi.org` and `files.pythonhosted.org` (confirmed this session:
+  `curl https://www.olbg.com/` and `curl https://api-web.nhle.com/...` both failed with
+  `SSL_ERROR_SYSCALL`, `api.github.com` returned 200). Every live read therefore goes through
+  the Arena **page-fetch / search tool layer**, and each read is recorded in
+  `data/ed71b937/sources.json` with its URL, the UTC read time and the retrieval method.
+* OLBG pages are **discovery only**. A fixture is not marked verified until its governing body,
+  league, tour or promoter page has actually been fetched and read this session (§0.5).
+* Values that cannot be confirmed are left **blank in JSON and blank in the tables** and are
+  flagged; they are never inferred, interpolated or filled from memory.
+* Our prices are **originated model estimates**, labelled as such, and are never presented as
+  available bookmaker quotes. Actual quotes/availability/edge stay blank.
+
+**File scope (non-overlapping).** `data/ed71b937/**`, `scripts/sed71b937_*.py`, `ed71b937/**`,
+`reports/SESSION_ED71B937.md`, and append-only additions to `COORDINATION.md`.
+
+**Explicitly not touched.** Root `*.html`, `sports/**`, `assets/**`, `README.md`,
+`scripts/build_site.py`, `scripts/validate.py`, `pipeline/**`, `.github/workflows/**`,
+`data/current/**`, `data/release/**`, `archive/**`, and every other session's `<id>/` desk.
+Root navigation is not edited (§0.4); the canonical `archive.html` auto-lists top-level
+`index.html` desks, so `/ed71b937/` becomes reachable from the published root without a
+shared-file change.
+
