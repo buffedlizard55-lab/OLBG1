@@ -82,10 +82,12 @@ P7A9B-014 Rugby Union RU03  Benetton +9.25                 71.01%  -245
 
 Eight findings: seven from the structural review, plus one high-severity repair made here.
 
-* **RA-08 (high, fixed here).** `scripts/se58210b8_predictions.py` reached `main` with unresolved merge-conflict
-  markers (nested `<<<<<<<`/`=======`/`>>>>>>>`). Python could not parse the file, so `test_desk_e58210b8` errored and
-  the tree-wide parse audit recorded one parse error (which also failed `test_desk_8a900c04`). This session kept the
-  newer prose variant from PR #184, deleted the markers, and confirmed the file compiles.
+* **RA-08 (high).** `scripts/se58210b8_predictions.py` reached `main` with unresolved merge-conflict markers
+  (nested `<<<<<<<`/`=======`/`>>>>>>>`). Python could not parse the file, so `test_desk_e58210b8` errored and the
+  tree-wide parse audit recorded one parse error, which also failed `test_desk_8a900c04`. This session hit the failure,
+  removed the markers locally (keeping the newer PR #184 prose), and then found on rebasing that peer PR #194 had
+  already repaired the file on `main` in the same way. The branch therefore carries no difference in that file, and the
+  suite is green: 241 tests, no failures.
 * RA-01 … RA-07 are recorded on `7a9b24e5/repo-audit.html` with the exact command used to check each one.
 
 ## 7. Gates
@@ -100,8 +102,7 @@ python3 scripts/validate.py                           0 errors (3 pre-existing f
 ```
 
 Nothing outside `data/7a9b24e5/**`, `scripts/s7a9b24e5_*.py`, `7a9b24e5/**`, `reports/SESSION_7A9B24E5.md`,
-`tests/pipeline/test_desk_7a9b24e5.py`, the one broken peer script repaired above, and append-only
-`COORDINATION.md` was modified.
+`tests/pipeline/test_desk_7a9b24e5.py` and append-only `COORDINATION.md` differs from `main` in the final diff.
 
 ## 8. Receipts
 
