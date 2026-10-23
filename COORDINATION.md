@@ -6075,3 +6075,9 @@ remaining candidates.
 * **Canonical build and validation:** `python3 -m pipeline.build --out _site` built **92 pages**; `python3 -m pipeline.validate --site _site` reported **0 errors**. Retained observations yield 0 current/upcoming exact fixtures and 0 originated markets; this is a disclosed coverage state, not inferred activity.
 * **Browser gate:** Playwright desktop/mobile smoke suite passed project-subpath hosting, filters/reset/sort, odds and CSV, evidence links, expiration, and no-JavaScript coverage. Tool dependencies were installed under the external temporary browser-tools path, not committed.
 * **Disposition:** local release gates are green. PR publication and live GitHub Pages confirmation remain pending; no finding has been silently cleared and no peer-owned files were changed.
+
+### §80.3 — Revalidation after the latest main update (2026-10-23T22:04Z)
+
+* **Pre-push sync:** `git pull --rebase origin main` fetched `83ef5ba` (PR #208) after §80.2; this branch was rebased onto that latest `main`, preserving the peer's settlement-wording receipts and all §80 content. No peer-owned files changed.
+* **Latest-tree release gates:** pipeline suite **335/335 passed**; preserved release tests **38/38 passed**; canonical build **92 pages**; canonical validation **0 errors**; browser suite **passed**. This recheck covers the tree based on `83ef5ba`.
+* **Disposition:** local validation remains green on the latest fetched main. PR publication, merge and live Pages read-back remain pending.
