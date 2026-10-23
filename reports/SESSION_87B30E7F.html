@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Session 87b30e7f Technical Report · OLBG 15-Sport Origination Desk</title>
+  <link rel="stylesheet" href="../87b30e7f/assets/style.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Technical Verification &amp; Origination Receipt · Task T87B3</p>
+        <h1>Session 87b30e7f — 15-Sport OLBG Desk &amp; Repository Audit Report</h1>
+        <p>Generated at <code>2026-10-23T22:00:00Z</code> on branch <code>arena/87b30e7f-olbg1</code>. All 75 upcoming fixtures, 300 originated markets, 75 unique predictions, and 8 blank/flagged records are published at <a href="../87b30e7f/index.html">/OLBG1/87b30e7f/</a>.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn primary" href="../87b30e7f/index.html">Open Live 87b30e7f Dashboard →</a>
+        <a class="btn" href="../87b30e7f/flagged.html">Flagged for Review</a>
+      </div>
+    </section>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>ID</th><th>Severity</th><th>File &amp; Lines</th><th>Verified Finding</th><th>Official Source</th></tr></thead>
+        <tbody><tr>
+          <td class="num">AUD-01</td>
+          <td><span class="badge flag">CRITICAL</span></td>
+          <td class="num">data/496eaf02/fixtures.json (L2988-L3153)</td>
+          <td><strong>Fabricated Schedule Dates</strong>: Peer desk 496eaf02 lists four Saturday Oct 24 EuroLeague Round 7 games (BK07-BK10: Partizan v Olympiacos, Valencia v Virtus, Real Madrid v Bayern, Monaco v Efes). Official EuroLeague Round 7 Game Center confirms all Round 7 games finished Thu-Fri Oct 22-23 (Olympiacos 61-64 Fenerbahce, Paris 93-104 Valencia, Efes 89-80 Besiktas, Bayern 91-107 Dubai, Maccabi 99-113 Real Madrid); zero Saturday EuroLeague games exist.</td>
+          <td><a class="src-pill" href="https://www.euroleaguebasketball.net/en/euroleague/news/euroleague-regular-season-round-7-game-center-round-7-el2627/" target="_blank" rel="noopener noreferrer">EuroLeague ↗</a></td>
+        </tr><tr>
+          <td class="num">AUD-02</td>
+          <td><span class="badge flag">CRITICAL</span></td>
+          <td class="num">data/496eaf02/fixtures.json (L114-L185)</td>
+          <td><strong>Tournament Bracket Hallucination</strong>: Peer desk 496eaf02 lists WTA Ningbo SF as &#x27;Leylah Fernandez vs Marta Kostyuk&#x27; and WTA Osaka SF as &#x27;Ann Li vs Katie Boulter&#x27;. Official WTA PDFs (2092/MDS.pdf &amp; OP.pdf; 405/MDS.pdf &amp; OP.pdf) prove [3] Kostyuk retired in R16 (right wrist) so Fernandez faces Marie Bouzkova, while [1] Ann Li (#1 top half) faces Ashlyn Krueger and [8] Boulter (#8 bottom half) faces Katerina Siniakova.</td>
+          <td><a class="src-pill" href="https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf" target="_blank" rel="noopener noreferrer">WTA Draw PDF ↗</a></td>
+        </tr><tr>
+          <td class="num">AUD-03</td>
+          <td><span class="badge flag">HIGH</span></td>
+          <td class="num">data/8a900c04/desk.json (L6091-L6131)</td>
+          <td><strong>Missed Official Weather Postponement</strong>: Peer desk 8a900c04 schedules Galway SFC Final (Maigh Cuilinn vs Salthill-Knocknacarra) for Saturday 2026-10-24T17:15:00Z citing club blog maighcuilinn.com. Official Galway GAA CCC notice moved the final to Sunday 2026-10-25 at 4:00 PM GMT (16:00:00Z) due to weather warning.</td>
+          <td><a class="src-pill" href="https://www.galwaygaa.ie/changes-weekend-football-fixture-schedule/" target="_blank" rel="noopener noreferrer">Galway GAA ↗</a></td>
+        </tr><tr>
+          <td class="num">AUD-04</td>
+          <td><span class="badge flag">HIGH</span></td>
+          <td class="num">data/8a900c04/desk.json (L2838-L2873)</td>
+          <td><strong>Timezone Offset Discrepancy (4h / 1h)</strong>: NZ vs India 2nd T20I (Hagley Oval, Christchurch) is listed as 2026-10-24T03:00:00Z in 8a900c04 and 06:00:00Z in 496eaf02. Official BCCI match centre specifies 20:00 NZDT (UTC+13) = 12:30 IST = 2026-10-24T07:00:00Z.</td>
+          <td><a class="src-pill" href="https://www.bcci.tv/events/336/india-tour-of-new-zealand-2026/match/1924/2nd-t20i" target="_blank" rel="noopener noreferrer">BCCI.tv ↗</a></td>
+        </tr><tr>
+          <td class="num">AUD-05</td>
+          <td><span class="badge flag">HIGH</span></td>
+          <td class="num">data/496eaf02/fixtures.json (L2079-L2163)</td>
+          <td><strong>US CDT vs CST Conversion Error</strong>: Peer desk 496eaf02 lists F1 US GP Qualifying at 22:00Z Sat and Race at 21:00Z Sun by applying CST (UTC-6). Austin remains on US CDT (UTC-5) until Nov 1; official Formula1.com Race Hub confirms Qualifying is 16:00 CDT (21:00Z Sat) and Race is 15:00 CDT (20:00Z Sun).</td>
+          <td><a class="src-pill" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula1.com ↗</a></td>
+        </tr><tr>
+          <td class="num">AUD-06</td>
+          <td><span class="badge flag">HIGH</span></td>
+          <td class="num">data/496eaf02/fixtures.json (L2275-L2347)</td>
+          <td><strong>European CEST-&gt;CET DST Transition Error</strong>: Peer desk 496eaf02 lists Saturday Oct 24 Handball fixtures HBC Nantes vs Chambéry (19:00 local) as 18:00Z and Erlangen vs Kiel (18:00 local) as 17:00Z. Central Europe stays on CEST (UTC+2) all Saturday and falls back to CET (UTC+1) at 01:00 UTC on Sunday Oct 25.</td>
+          <td><a class="src-pill" href="https://www.lnh.fr/daikin-starligue/calendrier" target="_blank" rel="noopener noreferrer">LNH StarLigue ↗</a></td>
+        </tr><tr>
+          <td class="num">AUD-07</td>
+          <td><span class="badge flag">HIGH</span></td>
+          <td class="num">data/496eaf02/fixtures.json (L1722-L1906)</td>
+          <td><strong>Excluded Sport Contamination &amp; Media Sources</strong>: 496eaf02 Gaelic Sports slate includes Hurling matches (GS01 Na Piarsaigh v Ballygunner, GS02 Loughrea v St Thomas&#x27;s — OLBG Hurling ID 26 is outside scope) and uses media-only irishexaminer.com / balls.ie on GS05; VB01-VB02 cite women&#x27;s tauronliga.pl redirect wrapper.</td>
+          <td><a class="src-pill" href="https://www.gaa.ie/article/preview-weekend-s-senior-club-championship-finals-x9182" target="_blank" rel="noopener noreferrer">GAA.ie ↗</a></td>
+        </tr><tr>
+          <td class="num">AUD-08</td>
+          <td><span class="badge medium">MEDIUM</span></td>
+          <td class="num">data/olbg_taxonomy.json (L167-L181)</td>
+          <td><strong>17-Sport vs Strict 15-Sport Scope Drift</strong>: Root data/olbg_taxonomy.json marks 17 sports in_scope=true (retaining Aussie Rules ID 22 and eSports ID 23), and data/fixtures.json carries 10 rows in those two categories alongside 97 elapsed rows (&lt;2026-10-24T00:00Z).</td>
+          <td><a class="src-pill" href="https://www.olbg.com/sitemap-betting-tips.xml" target="_blank" rel="noopener noreferrer">OLBG Hub ↗</a></td>
+        </tr><tr>
+          <td class="num">AUD-09</td>
+          <td><span class="badge medium">MEDIUM</span></td>
+          <td class="num">data/current/snapshot.json (L1-L45)</td>
+          <td><strong>Canonical Root Snapshot Expiry</strong>: Root data/current/snapshot.json (generated_at=2026-10-22T12:29:50Z, 108 rows) has exceeded its 6-hour statistical/fixture TTL across 100% of rows; runtime JS rightly withholds all estimates leaving 0 live high-confidence picks.</td>
+          <td><a class="src-pill" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-23&amp;endDate=2026-10-31" target="_blank" rel="noopener noreferrer">MLB StatsAPI ↗</a></td>
+        </tr><tr>
+          <td class="num">AUD-10</td>
+          <td><span class="badge medium">MEDIUM</span></td>
+          <td class="num">data/8a900c04/desk.json (L8719-L9204)</td>
+          <td><strong>Mismatched Source Document Type</strong>: 8a900c04 cites EHF Men&#x27;s Euro 2026 national-team squad PDF for domestic club matches in France and Germany rather than club league schedules, and 496eaf02 has 13 fixtures (SN02-05, DA01, GH01-05, CR05, MR04, HB04-05) now completed.</td>
+          <td><a class="src-pill" href="https://www.h-bw.de/team-bundesliga/spielplan/" target="_blank" rel="noopener noreferrer">HBW Official ↗</a></td>
+        </tr></tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

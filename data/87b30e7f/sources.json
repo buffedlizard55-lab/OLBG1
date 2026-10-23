@@ -1,0 +1,426 @@
+{
+  "generated_at": "2026-10-23T22:00:00Z",
+  "count": 70,
+  "sources": [
+    {
+      "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-31&hydrate=probablePitcher,team,venue",
+      "authority": "MLB StatsAPI",
+      "sport": "Baseball",
+      "https": "True"
+    },
+    {
+      "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=104&season=2026&standingsTypes=regularSeason",
+      "authority": "MLB StatsAPI",
+      "sport": "Baseball",
+      "https": "True"
+    },
+    {
+      "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-23_03_45PM.pdf",
+      "authority": "NBA Official PDF",
+      "sport": "Basketball",
+      "https": "True"
+    },
+    {
+      "url": "https://www.nba.com/news/starting-5-october-23-2026",
+      "authority": "NBA.com",
+      "sport": "Basketball",
+      "https": "True"
+    },
+    {
+      "url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+      "authority": "NHL API",
+      "sport": "Ice Hockey",
+      "https": "True"
+    },
+    {
+      "url": "https://api-web.nhle.com/v1/standings/2026-10-23",
+      "authority": "NHL API",
+      "sport": "Ice Hockey",
+      "https": "True"
+    },
+    {
+      "url": "https://www.lpga.com/tournaments/bmw-lpga-championship/leaderboard",
+      "authority": "LPGA",
+      "sport": "Golf",
+      "https": "True"
+    },
+    {
+      "url": "https://www.lpga.com/news/2026/field-breakdown-2026-bmw-ladies-championship",
+      "authority": "LPGA",
+      "sport": "Golf",
+      "https": "True"
+    },
+    {
+      "url": "https://www.nba.com/gamenotes/spurs.pdf",
+      "authority": "NBA.com",
+      "sport": "Basketball",
+      "https": "True"
+    },
+    {
+      "url": "https://www.nrl.com/news/2026/10/20/world-cup-team-lists-womens-round-2/",
+      "authority": "NRL / RLWC",
+      "sport": "Rugby League",
+      "https": "True"
+    },
+    {
+      "url": "https://www.nrl.com/",
+      "authority": "NRL / RLWC",
+      "sport": "Rugby League",
+      "https": "True"
+    },
+    {
+      "url": "https://www.europeantour.com/dpworld-tour/genesis-championship-2026/leaderboard",
+      "authority": "DP World Tour",
+      "sport": "Golf",
+      "https": "True"
+    },
+    {
+      "url": "https://www.europeantour.com/dpworld-tour/",
+      "authority": "DP World Tour",
+      "sport": "Golf",
+      "https": "True"
+    },
+    {
+      "url": "https://www.motogp.com/en/calendar?view=grid",
+      "authority": "MotoGP",
+      "sport": "Motor Racing",
+      "https": "True"
+    },
+    {
+      "url": "https://www.motogp.com/",
+      "authority": "MotoGP",
+      "sport": "Motor Racing",
+      "https": "True"
+    },
+    {
+      "url": "https://www.nrl.com/news/2026/10/20/world-cup-team-lists-mens-round-2/",
+      "authority": "NRL / RLWC",
+      "sport": "Rugby League",
+      "https": "True"
+    },
+    {
+      "url": "https://www.cricket.com.au/matches/series/CA:4688/one-day-cup-2026-27",
+      "authority": "Cricket Australia",
+      "sport": "Cricket",
+      "https": "True"
+    },
+    {
+      "url": "https://www.cricket.com.au/",
+      "authority": "Cricket Australia",
+      "sport": "Cricket",
+      "https": "True"
+    },
+    {
+      "url": "https://www.icc-cricket.com/news/injury-blow-for-india-ahead-of-second-t20i-with-new-zealand",
+      "authority": "ICC Official",
+      "sport": "Cricket",
+      "https": "True"
+    },
+    {
+      "url": "https://www.bcci.tv/events/336/india-tour-of-new-zealand-2026/match/1924/2nd-t20i",
+      "authority": "BCCI.tv",
+      "sport": "Cricket",
+      "https": "True"
+    },
+    {
+      "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf",
+      "authority": "WTA Draw PDF",
+      "sport": "Tennis",
+      "https": "True"
+    },
+    {
+      "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf",
+      "authority": "WTA Draw PDF",
+      "sport": "Tennis",
+      "https": "True"
+    },
+    {
+      "url": "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/leaderboard",
+      "authority": "PGA Tour",
+      "sport": "Golf",
+      "https": "True"
+    },
+    {
+      "url": "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/tee-times",
+      "authority": "PGA Tour",
+      "sport": "Golf",
+      "https": "True"
+    },
+    {
+      "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/",
+      "authority": "PDC.tv",
+      "sport": "Darts",
+      "https": "True"
+    },
+    {
+      "url": "https://www.pdc.tv/",
+      "authority": "PDC.tv",
+      "sport": "Darts",
+      "https": "True"
+    },
+    {
+      "url": "https://www.unitedrugby.com/latest/news/round-4-team-announcements/",
+      "authority": "URC Official",
+      "sport": "Rugby Union",
+      "https": "True"
+    },
+    {
+      "url": "https://stats.unitedrugby.com/match-centre/table/",
+      "authority": "URC Stats",
+      "sport": "Rugby Union",
+      "https": "True"
+    },
+    {
+      "url": "https://www.wst.tv/match-centre/e6719e69-c712-476e-8081-8e30790868f5",
+      "authority": "WST Official",
+      "sport": "Snooker",
+      "https": "True"
+    },
+    {
+      "url": "https://www.wst.tv/matches/",
+      "authority": "WST Official",
+      "sport": "Snooker",
+      "https": "True"
+    },
+    {
+      "url": "https://www.protennislive.com/posting/2026/496/op.pdf",
+      "authority": "ATP OOP PDF",
+      "sport": "Tennis",
+      "https": "True"
+    },
+    {
+      "url": "https://www.atptour.com/en/scores/current/lyon/496/daily-schedule",
+      "authority": "ATP Tour",
+      "sport": "Tennis",
+      "https": "True"
+    },
+    {
+      "url": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule",
+      "authority": "ATP Tour",
+      "sport": "Tennis",
+      "https": "True"
+    },
+    {
+      "url": "https://www.atptour.com/en/scores/current",
+      "authority": "ATP Tour",
+      "sport": "Tennis",
+      "https": "True"
+    },
+    {
+      "url": "https://www.gaa.ie/article/preview-weekend-s-senior-club-championship-finals-x9182",
+      "authority": "GAA.ie",
+      "sport": "Gaelic Sports",
+      "https": "True"
+    },
+    {
+      "url": "https://www.gaa.ie/",
+      "authority": "GAA.ie",
+      "sport": "Gaelic Sports",
+      "https": "True"
+    },
+    {
+      "url": "https://www.pgatour.com/pgatour-champions/tournaments/2026/stifel-charity-classic/S2026625/overview",
+      "authority": "PGA Tour",
+      "sport": "Golf",
+      "https": "True"
+    },
+    {
+      "url": "https://www.pgatour.com/pgatour-champions/leaderboard",
+      "authority": "PGA Tour",
+      "sport": "Golf",
+      "https": "True"
+    },
+    {
+      "url": "https://www.pgatour.com/article/news/daily-wrapup/2026/10/22/round-1-recap-butterfield-bermuda-championship-port-royal-leaderboard",
+      "authority": "PGA Tour",
+      "sport": "Golf",
+      "https": "True"
+    },
+    {
+      "url": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule",
+      "authority": "ATP Tour",
+      "sport": "Tennis",
+      "https": "True"
+    },
+    {
+      "url": "https://www.lnh.fr/daikin-starligue/calendrier",
+      "authority": "LNH StarLigue",
+      "sport": "Handball",
+      "https": "True"
+    },
+    {
+      "url": "https://www.lnh.fr/daikin-starligue/classement",
+      "authority": "LNH StarLigue",
+      "sport": "Handball",
+      "https": "True"
+    },
+    {
+      "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+      "authority": "NHL API",
+      "sport": "Ice Hockey",
+      "https": "True"
+    },
+    {
+      "url": "https://www.h-bw.de/team-bundesliga/spielplan/",
+      "authority": "HBW Official",
+      "sport": "Handball",
+      "https": "True"
+    },
+    {
+      "url": "https://www.rhein-neckar-loewen.de/spiele/spielplan/alle-spiele",
+      "authority": "RN Löwen Official",
+      "sport": "Handball",
+      "https": "True"
+    },
+    {
+      "url": "https://www.dunstallpark-greyhounds.co.uk/DunstallParkGreyhounds/downloads/24-10-2026-evening-racecard.pdf",
+      "authority": "Dunstall Park PDF",
+      "sport": "Greyhounds",
+      "https": "True"
+    },
+    {
+      "url": "https://www.gbgb.org.uk/oaks-quality-shines-as-seal-tips-track-record-bid-at-dunstall-park/",
+      "authority": "GBGB Official",
+      "sport": "Greyhounds",
+      "https": "True"
+    },
+    {
+      "url": "https://www.gbgb.org.uk/",
+      "authority": "GBGB Official",
+      "sport": "Greyhounds",
+      "https": "True"
+    },
+    {
+      "url": "https://www.gbgb.org.uk/shadow-storm-chases-scurry-gold-cup-history-at-dunstall-park/",
+      "authority": "GBGB Official",
+      "sport": "Greyhounds",
+      "https": "True"
+    },
+    {
+      "url": "https://www.gbgb.org.uk/signet-nayla-chases-oaks-glory-as-hutton-targets-dunstall-park-double/",
+      "authority": "GBGB Official",
+      "sport": "Greyhounds",
+      "https": "True"
+    },
+    {
+      "url": "https://www.formula1.com/en/racing/2026/united-states",
+      "authority": "Formula1.com",
+      "sport": "Motor Racing",
+      "https": "True"
+    },
+    {
+      "url": "https://www.formula1.com/en/results/2026/drivers",
+      "authority": "Formula1.com",
+      "sport": "Motor Racing",
+      "https": "True"
+    },
+    {
+      "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103&season=2026&standingsTypes=regularSeason",
+      "authority": "MLB StatsAPI",
+      "sport": "Baseball",
+      "https": "True"
+    },
+    {
+      "url": "https://www.icc-cricket.com/news/india-pacer-to-miss-women-s-championship-series-against-zimbabwe",
+      "authority": "ICC Official",
+      "sport": "Cricket",
+      "https": "True"
+    },
+    {
+      "url": "https://www.bcci.tv/",
+      "authority": "BCCI.tv",
+      "sport": "Cricket",
+      "https": "True"
+    },
+    {
+      "url": "https://www.icc-cricket.com/news/pakistan-name-squads-for-home-white-ball-assignments",
+      "authority": "ICC Official",
+      "sport": "Cricket",
+      "https": "True"
+    },
+    {
+      "url": "https://www.cricket.com.au/matches/series/CA:4716/pakistan-odi-tri-series-2026-men",
+      "authority": "Cricket Australia",
+      "sport": "Cricket",
+      "https": "True"
+    },
+    {
+      "url": "https://munster.gaa.ie/fixtures/events-calendar/",
+      "authority": "Munster GAA",
+      "sport": "Gaelic Sports",
+      "https": "True"
+    },
+    {
+      "url": "https://www.rhein-neckar-loewen.de/heimspiele-in-2026-vorverkauf-gestartet-968737",
+      "authority": "RN Löwen Official",
+      "sport": "Handball",
+      "https": "True"
+    },
+    {
+      "url": "https://www.galwaygaa.ie/changes-weekend-football-fixture-schedule/",
+      "authority": "Galway GAA",
+      "sport": "Gaelic Sports",
+      "https": "True"
+    },
+    {
+      "url": "https://www.legavolley.it/calendario/?idCampionato=999",
+      "authority": "LegaVolley",
+      "sport": "Volleyball",
+      "https": "True"
+    },
+    {
+      "url": "https://www.legavolley.it/classifica/?IdCampionato=999",
+      "authority": "LegaVolley",
+      "sport": "Volleyball",
+      "https": "True"
+    },
+    {
+      "url": "https://www.legavolley.it/2026/il-palazzetto-di-perugia-e-pronto-a-riaccendere-i-riflettori/",
+      "authority": "LegaVolley",
+      "sport": "Volleyball",
+      "https": "True"
+    },
+    {
+      "url": "https://www.nascar.com/weekend-schedule/weekend-schedule-for-2026-talladega-superspeedway-chase-race/",
+      "authority": "NASCAR.com",
+      "sport": "Motor Racing",
+      "https": "True"
+    },
+    {
+      "url": "https://www.nascar.com/news-media/2026/10/23/2026-fantasy-fastlane-talladega-chase/",
+      "authority": "NASCAR.com",
+      "sport": "Motor Racing",
+      "https": "True"
+    },
+    {
+      "url": "https://www.icc-cricket.com/news/south-africa-unveil-schedule-for-key-wtc-series",
+      "authority": "ICC Official",
+      "sport": "Cricket",
+      "https": "True"
+    },
+    {
+      "url": "https://www.cricket.com.au/news/4597270/day-five-report-australia-south-africa-second-test-gqeberha-port-elizabeth",
+      "authority": "Cricket Australia",
+      "sport": "Cricket",
+      "https": "True"
+    },
+    {
+      "url": "https://www.wst.tv/match-centre/4f29872c-75d7-45c2-9a00-accdd8ff44b4",
+      "authority": "WST Official",
+      "sport": "Snooker",
+      "https": "True"
+    },
+    {
+      "url": "https://www.wst.tv/players/ba7831b4-ab75-4435-946a-c6f02e4e2d4b",
+      "authority": "WST Official",
+      "sport": "Snooker",
+      "https": "True"
+    },
+    {
+      "url": "https://play.wst.tv/",
+      "authority": "play.wst.tv",
+      "sport": "Snooker",
+      "https": "True"
+    }
+  ]
+}
