@@ -281,6 +281,13 @@ To avoid repeatedly colliding with peer EOF appends, this uniquely named section
 
 A final semantic display check found that the common record schema had inserted `ot_losses: 0` into MLB records even though that NHL-specific field was not published by MLB. The zero is removed from accepted data (not relabelled as sourced); MLB displays only W–L, NHL still displays W–L–OT. Validation now rejects an injected MLB OTL zero, with a negative regression test. Baseball run-rate prices and all price books remain unchanged. The selected excerpt/projection note records this correction without re-fetching or re-timing the source. Local checks: **33 desk tests, 372 combined pipeline tests**, and the browser gate pass. This final source-semantics/receipt change is submitted separately; no unsupported MLB OTL fact is retained in the final branch.
 
+### §T455ACB16.8 — Final integration #220 merged and live
+
+* **Final statistical-meaning integration:** [PR #220](https://github.com/buffedlizard55-lab/OLBG1/pull/220) merged **2026-10-23T22:25:39Z** as **94aca1268ecaf0b34ccbd333b03958a65f746eb4**. [PR check run 40033404733](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40033404733) succeeded.
+* Its direct push runs were superseded/cancelled by another session's immediate main update, not a site failure. GitHub compare confirmed production head **525db628dda2874c83dbbc666bada00b1ba15a5e** is four commits ahead of 94aca12 with no behind commits. [Production run 40033553452](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40033553452) succeeded, including validation **120687428655** and Pages deployment **120688000592**.
+* **Independent live read-back at 22:28 UTC:** `/455acb16/analysis.html?release=94aca12` served the corrected `W-L-OT (NHL) / W-L (MLB)` header and Tampa Bay's `98-64` without a fabricated OTL zero; `/data/455acb16/summary.json?release=94aca12` served the unchanged 84/18/38/76 counts, zero Medium/High, six Low notes, 97 flags and original source bounds. Current generated time is 22:23:22Z, not a new source observation.
+* **Final disposition:** source/data/UI work is merged and serving; no peer or canonical pipeline file was modified. This task remains `needs review` only for the explicitly published worldwide-coverage, daily-High, submission-eligibility, quote/context/calibration and full-automation gaps. No unsupported fact or prediction is used to close those gaps. This receipt-only update changes no source evidence or site calculations.
+
 ## 3. Sources register
 
 Every source used is catalogued with its URL in `data/sources.json` and rendered on the site's

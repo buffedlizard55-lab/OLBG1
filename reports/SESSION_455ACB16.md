@@ -122,3 +122,10 @@ A small presentation follow-up labels KPIs as-of-build and sorts the two executi
 [PR #216](https://github.com/buffedlizard55-lab/OLBG1/pull/216) merged at 2026-10-23T22:19:22Z as `26630eb4776a42c5bcbef3ada5e2194e298dab39`. [Production run 40032844369](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40032844369) succeeded, including validation job 120685073687 and Pages deployment 120685616979. Live read-back confirmed the as-of-build label and correctly ranked executive tables.
 
 The final check removes a common-schema MLB `ot_losses: 0` normalization: NHL's OTL category is not an official MLB statistic. It is omitted from accepted MLB inputs and from their W–L display, rather than asserted as a sourced zero. An injected MLB OTL zero is now rejected by validation. NHL's actual OTL fields are preserved. No probability, price, source observation bound or confidence tier changes. This is a projection/display correction over the retained read, explicitly noted in the source ledger—not a newly fetched source. The desk has 33 regression tests; the combined 372-test suite passes at this checkpoint.
+
+
+## Final integration receipt
+
+[PR #220](https://github.com/buffedlizard55-lab/OLBG1/pull/220) merged at 2026-10-23T22:25:39Z as `94aca1268ecaf0b34ccbd333b03958a65f746eb4`. PR run 40033404733 passed. Direct push runs were superseded by the next main update; [production run 40033553452](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40033553452) on descendant `525db628dda2874c83dbbc666bada00b1ba15a5e` succeeded, including Pages job 120688000592. GitHub compare confirmed the descendant contains the final integration.
+
+At 22:28 UTC the live analysis page independently served the corrected NHL/MLB record headings and MLB W–L display; live summary JSON confirmed 84 listings, 18 Low books, 38 markets, 76 outcomes, zero Medium/High, six Low notes and 97 flags. Source bounds remain 21:34:10–21:44:36Z. Publication is complete; global/daily-confidence/automation limits remain openly flagged, not marked achieved. No source or price changes are part of this receipt.
