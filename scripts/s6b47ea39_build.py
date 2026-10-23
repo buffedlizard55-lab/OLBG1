@@ -238,7 +238,7 @@ def main() -> None:
         for event in picks_only:
             pick = pick_for(event["id"])
             if pick:
-                pick_cell = esc(pick["selection"]) + (
+                pick_cell = esc(pick.get("display_selection") or pick["selection"]) + (
                     '<br><span class="mono small muted">%s · %s</span>' % (money(pick["american"]), pct(pick["probability"]))
                 )
                 tier_cell = tier_badge(pick["tier"])
@@ -414,7 +414,7 @@ presented as freshly observed.</div>
         "<tr>"
         f'<td class="mono small">{esc(w["start_utc"][5:16].replace("T"," "))}Z</td>'
         f'<td><strong>{esc(w["match"])}</strong><br><span class="muted small">{esc(w["competition"])}</span></td>'
-        f'<td>{esc(w["sport"])}</td><td>{esc(w["selection"])}</td>'
+        f'<td>{esc(w["sport"])}</td><td>{esc(w.get("display_selection") or w["selection"])}</td>'
         f'<td class="mono">{money(w["american"])}</td><td class="mono">{pct(w["probability"])}</td>'
         f"<td>{tier_badge('medium-watch')}</td><td>{sources_cell(w['official_sources'])}</td></tr>"
         for w in sorted(watch, key=lambda r: (SPORT_ORDER.index(r["sport"]), -r["probability"]))
