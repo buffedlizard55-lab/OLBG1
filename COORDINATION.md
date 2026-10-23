@@ -5391,7 +5391,6 @@ is the desk state, not any particular commit: **24 pages, 128 listings, 23 verif
 originated prices, 5 write-ups, 17 flags, 2 High published out-of-band, 0 in-band High**, served
 from the deployed Pages host and reproducible with `python3 scripts/sfa24508c_build.py`.
 
-
 ### §73 — Session `e58210b8-olbg1` (`T5821`) claim (2026-10-23T17:55Z)
 
 * **Session ID:** `e58210b8-olbg1` (pinned branch `arena/e58210b8-olbg1` per §0.2).
@@ -5518,3 +5517,89 @@ change this branch carries is a **no-op against `main`**; what remains useful is
   `pipeline.build --out _site` then `--site _site` **0 errors** with the desk present in the artifact.
 * **Conflict handling:** the COORDINATION.md conflict against §4's `5e86dc1a-olbg1` claims block was
   resolved append-only — both blocks kept, theirs first, nothing rewritten or deleted.
+
+## 74. Session `99582dd3-olbg1` — T9958 independent offline verification, cross-desk reconciliation and synthesized 15-sport desk (claim, 2026-10-23T19:40Z)
+
+**Session / branch:** `99582dd3-olbg1` on pinned branch `arena/99582dd3-olbg1` (repo deviation
+§0.2: each Arena session works only its own pinned branch; this is the only branch this session
+creates, switches to, commits on or pushes).
+
+**Environment constraint disclosed up front (drives the whole method).** This sandbox has outbound
+HTTPS only to `github.com`, `api.github.com`, `codeload.github.com`, `registry.npmjs.org`,
+`pypi.org` and `files.pythonhosted.org`. Live probes this session confirm `olbg.com`,
+`api-web.nhle.com`, `statsapi.mlb.com`, `atptour.com`, `pdc.tv` (and every other sporting host)
+fail at TLS egress. Therefore **no new live OLBG harvest and no new official-source recertification
+is possible in this session**. Per §0.5 nothing is marked `verified` without fetching the official
+source, so this session performs (a) an independent **offline** structural/provenance/arithmetic/
+prose audit of retained evidence, (b) deterministic re-grading under the brief's published rules,
+(c) cross-desk reconciliation of the same matchups across parallel desks, and (d) blank-and-flag of
+every value that fails a gate. All factual rows inherit the official links and capture timestamps of
+the desks that observed them; this desk never presents inherited facts as freshly re-observed.
+
+**Task.** Build a self-contained, evidence-disciplined dashboard for exactly the 15 brief-listed
+sports (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds,
+Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League): executive summary of the
+highest-confidence picks, per-sport tables with an official link on every row, full multi-market
+list, gated human predictions, a Flagged-for-Review page carrying every irregularity with its source
+link, methodology and sources pages, a desk validator, unit tests, and a PR merged to `main` with
+the Pages deployment confirmed via the GitHub API.
+
+**Exclusive write scope (all new files; zero edits to shared/parallel outputs):**
+
+* `99582dd3/**` — desk pages (index, today/upcoming picks, 15 sport pages, markets, predictions,
+  flagged-for-review, methodology, sources, repo-audit) and `99582dd3/assets/*`.
+* `data/99582dd3/**` — `slate.json`, `audit.json`, `flags.json`, `predictions_gated.json`,
+  `sources.json`, CSV exports (derived deterministically; every row names its origin desk).
+* `scripts/s99582dd3_audit.py`, `scripts/s99582dd3_build.py`, `scripts/s99582dd3_validate.py`.
+* `tests/pipeline/test_desk_99582dd3.py` (offline only; no network).
+* `reports/SESSION_99582DD3.md` and append-only additions to this `COORDINATION.md`.
+
+**Explicitly not touched:** root `*.html`, `assets/current-*`, `pipeline/**`, `data/current/**`,
+`data/fixtures.json`, `data/lines.json`, `data/predictions.json`, every other session namespace,
+and the two workflow files. Reachable from the canonical `archive.html` auto-listing with no shared
+navigation edit (§0.4).
+
+**Primary evidence input:** `data/8a900c04/desk.json` + `predictions.json` (the only retained desk
+with 5 events for each of the 15 sports, 472 originated market lines and 75 predictions, captured
+2026-10-23T16:45Z, every row carrying an official governing-body URL), reconciled against the other
+retained 23-Oct desks (`429a54a2`, `efe12010`, `fa24508c`, `cf2699ba`, `ed71b937`, `7f000cb6`,
+`d7d19a67`, `3ee30bba`) where the same matchup is present.
+
+**Status:** in progress. Claim committed and pushed before work starts, per §0.3. Results, gates and
+PR/Pages receipts will be appended as §74.x.
+
+### §74.1 — T9958 result, pre-PR (2026-10-23T19:55Z)
+
+**Status:** complete, awaiting PR. All work stayed inside the claimed scope; zero edits to root
+pages, `pipeline/**`, `data/current/**`, other sessions' namespaces or workflow files.
+
+**What shipped.**
+
+* `scripts/s99582dd3_audit.py` — deterministic, stdlib-only offline audit engine (gates G1–G7).
+* `scripts/s99582dd3_build.py`, `scripts/s99582dd3_validate.py` — static dashboard generator and gate.
+* `tests/pipeline/test_desk_99582dd3.py` — 10 offline contract tests.
+* `data/99582dd3/` — `slate.json` (75 events), `flags.json` (18 findings), `predictions_gated.json`
+  (75/75 released), `sources.json` (37 official hosts), `cross_desk.json`, `audit.json` and three CSVs.
+* `99582dd3/` — 24 self-contained pages (executive summary, today/elapsed, upcoming, all 472
+  markets, predictions, flagged, sources, cross-desk audit, methodology, 15 sport pages) with
+  same-origin assets only and an official link on every sporting table row.
+* `reports/SESSION_99582DD3.md` — full finding register and limitation statement.
+
+**Headline counts (build timestamp 2026-10-23T19:45Z).** 15/15 sports × 5 events = 75 audited;
+52 upcoming, 6 today, 17 elapsed (badged as historical); 472 markets with zero arithmetic or grade
+failures; 45 current High recommendations, 4 carrying cross-desk conflict/divergence badges and held
+out of the clean executive summary; 75 predictions pass the hard prose gates (63–86 words, no internal
+vocabulary, explicit selections); 18 flags = 6 high, 9 medium, 2 low, 1 info.
+
+**Material findings.** Six high-severity cross-desk directional conflicts where retained desks price
+opposite match-winner favorites (NHL IH01/IH02/IH04 across 429a54a2 and 7f000cb6; MLB BB03 vs
+7f000cb6), one same-side 16-point divergence (IH05), one selection-sentence contradiction (GF01 golf),
+seven unconfirmed OLBG-only cards kept unpriced, two minor repeated-phrase findings, and one info
+finding that all 59 High probabilities cluster at 0.7045–0.7140 because the originating engine targets
+the p≈0.708 window boundary. Full register with source links: `99582dd3/flagged.html`.
+
+**Local gates (all green).** desk validator 0 errors/0 warnings; `unittest discover -s tests/pipeline`
+187 OK (10 new); preserved suite OK; `pipeline.validate --site .` 0 errors; `scripts/validate.py`
+0 errors (3 pre-existing f7fa77fc warnings only); `pipeline.build --out _site` 88 pages including
+`99582dd3/`, re-validated 0 errors; `node --check` clean. PR, merge and Pages receipts to be appended
+as §74.2.
