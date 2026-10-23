@@ -106,10 +106,14 @@ def repository_review():
         except (ValueError,SyntaxError,UnicodeError) as e:parse_errors.append({"file":rel,"error":str(e)})
     findings=[]
     def finding(fid,path,needle,detail,sid,severity="review"):
-        text=(ROOT/path).read_text(encoding="utf-8")
-        if needle not in text:raise ValueError(f"Review locator no longer exists: {path}: {needle}")
+        # Hash and locate the SAME committed bytes addressed by the GitHub URL.
+        # Hashing an uncommitted working file while linking HEAD is false
+        # provenance even if the selected source-code line itself did not move.
+        raw=subprocess.check_output(["git","show",f"{revision}:{path}"],cwd=ROOT)
+        text=raw.decode("utf-8")
+        if needle not in text:raise ValueError(f"Review locator absent from declared revision: {path}: {needle}")
         line=text[:text.index(needle)].count("\n")+1
-        findings.append({"id":fid,"file":path,"line":line,"needle":needle,"sha256":__import__('hashlib').sha256((ROOT/path).read_bytes()).hexdigest(),
+        findings.append({"id":fid,"file":path,"line":line,"needle":needle,"sha256":__import__('hashlib').sha256(raw).hexdigest(),
             "repository_url":f"https://github.com/buffedlizard55-lab/OLBG1/blob/{revision}/{path}#L{line}",
             "detail":detail,"source_id":sid,"severity":severity,"status":"needs review"})
     finding("A-01","scripts/se496eaf02_model.py","HIGH_B_FLOOR = 0.62",
