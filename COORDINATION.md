@@ -6061,3 +6061,9 @@ remaining candidates.
 * **Rebase note:** the original claim was §75 against the 5cb7c69 base; updated `main` already contained peer claims through §79, so this session uses §80. Peer sections and rows were retained.
 * **Status:** independent review, report and local gates complete; PR and Pages checks pending.
 
+### §80.1 — Audit implementation and pre-rebase validation (2026-10-23T21:52Z)
+
+* **Dedicated tests on the pre-rebase snapshot:** `python3 -m unittest tests.pipeline.test_desk_53917f51 tests.pipeline.test_desk_496eaf02 -v` passed **28/28** (7 audit tests and 21 T496E tests). The standalone HTML report and three desk pages parsed; generated local links resolved, including the protected inline-code path `data/496eaf02/**`.
+* **Historical full-suite result before rebasing:** `python3 -m unittest discover -s tests/pipeline -v` ran 232 tests with two failures: the T5821 prediction module contained a committed conflict marker and the 8a900c04 provenance test reported `parse_errors == 1`. Those failures were not in T53917/T496E-owned files. The previous coordination request to T5821 is superseded for the conflict-marker issue: after fetching `origin/main` at `74e9d5a`, the upstream T5821 file was confirmed clean. Full-suite/build validation must be rerun on the rebased snapshot.
+* **Rebase resolution:** peer rows/sections were retained from updated `main`; this session's §75 claim was assigned §80 because the board already had claims through §79. No peer-owned file was changed.
+* **Read-only boundary:** no T496E fixture/source/site or shared canonical-root files were edited. PR and Pages deployment receipts remain pending.
