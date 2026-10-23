@@ -4538,3 +4538,6 @@ preserved verbatim. Lesson recorded for all sessions: after ANY COORDINATION.md 
   artifact was served by GitHub Pages from the deployed bytes after PR #160.
 * Root navigation was never edited (§0.4); `/8f6d7364/` is reachable from the canonical
   `archive.html`, which auto-lists top-level desks.
+
+### §61 — T2B72 claim (2026-10-23, session 2b72da34-olbg1)
+| T2B72 | Fresh 15-sport desk (user list only: Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League — excl. Aus Rules/Esports) OLBG discovery + official verification + originated lines + High predictions + dashboard | in progress | 2b72da34-olbg1 | `data/2b72da34/**`, `scripts/s2b72da34_*.py`, `2b72da34/**`, `reports/SESSION_2B72DA34.md`, append-only COORDINATION.md §61 | 2026-10-23T16:15Z | Namespaced only; no shared/root file edits. High gate: p>=0.70 AND fair American in [-250,+10000]; no quota invention. |
