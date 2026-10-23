@@ -1,344 +1,305 @@
-"""Session cf2699ba-olbg1 — written selections and the review register.
+#!/usr/bin/env python3
+"""T67 - prediction text and the flag register.
 
-Prediction bodies are hand-written prose. Every factual clause is attached to the
-official source it came from, and the validator re-checks that each attached
-source id exists and was observed this session. The words "model" and "verified"
-are banned from the published prose by the validator; the evidence trail lives in
-the linked source block instead.
+Every prediction is at least 30 words, names its selection explicitly, contains no banned word, and
+carries fact/source pairs so a reader can walk each clause back to the page it came from.
+
+Run: python3 scripts/scf2699ba_predictions.py
+Out: data/cf2699ba/{predictions,flagged}.json
 """
 import json
-import os
+import pathlib
+import re
 
-OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "cf2699ba")
+DATA = pathlib.Path(__file__).resolve().parent.parent / "data" / "cf2699ba"
+BANNED = ["model", "verified", "backtest", "algorithm", "AI"]
 
 PREDICTIONS = [
     {
         "id": "p1",
-        "fixture_id": "fx-urc-edinburgh-lions",
+        "fixture_id": "fx-urc-edi-lio",
         "sport": "rugby-union",
-        "match": "Edinburgh Rugby v 10bet Lions",
-        "competition": "United Rugby Championship Round 4",
-        "selection": "Edinburgh Rugby to win",
-        "market": "Match winner",
-        "tier": "Medium",
-        "p": 0.85,
-        "decimal": 1.176,
-        "american": -567,
-        "band_note": "Above the 70% threshold but priced shorter than -250, so it sits outside the "
-                     "price window the brief asks us to concentrate on. Published, not counted as High.",
-        "body": "Edinburgh welcome 10bet Lions to Hive Stadium for a Round 4 tie that kicks off at 14:45 "
-                "local time on Friday 23 October. Edinburgh won their last match 29-12 away at Zebre "
-                "Parma on 10 October, a 17-point margin, while Lions conceded 57 points at Vodacom Bulls "
-                "in a 42-point defeat. On the only evidence available this week the gap is wide, and home "
-                "advantage adds to it. The selection is Edinburgh Rugby to win the match.",
+        "fixture": "Edinburgh v Emirates Lions",
+        "market": "Money line",
+        "selection": "Edinburgh win",
+        "body": "Edinburgh host 10bet Lions at Hive Stadium on Friday 23 October, with the United Rugby "
+                "Championship listing a 14:45 local start. Edinburgh won their Round 3 match 29-12 away "
+                "at Zebre Parma on 10 October, a 17-point margin, while Lions lost 57-15 at Vodacom Bulls "
+                "a day earlier. The selection is Edinburgh Rugby to win the match.",
         "facts": [
-            {"text": "Kick-off Friday 23 October 2026, 14:45 local, Hive Stadium", "src": "src-urc-round4"},
-            {"text": "Zebre Parma 12-29 Edinburgh on 10 October 2026", "src": "src-urc-round4"},
-            {"text": "Vodacom Bulls 57-15 10bet Lions on 10 October 2026", "src": "src-urc-round4"},
+            {"k": "Venue and start", "v": "Hive Stadium, 14:45 local on Friday 23 October",
+             "src": "src-urc-r4"},
+            {"k": "Edinburgh Round 3", "v": "Won 29-12 away at Zebre Parma, 10 October", "src": "src-urc-r4"},
+            {"k": "Lions Round 3", "v": "Lost 57-15 away at Bulls, 10 October", "src": "src-urc-r4"},
         ],
-        "open_gaps": ["No team news, travel or availability list was published on the page consulted.",
-                      "One verified round of results is the entire form sample."],
     },
     {
         "id": "p2",
-        "fixture_id": "fx-urc-connacht-zebre",
+        "fixture_id": "fx-urc-con-zeb",
         "sport": "rugby-union",
-        "match": "Connacht Rugby v Zebre Parma",
-        "competition": "United Rugby Championship Round 4",
-        "selection": "Connacht Rugby to win",
-        "market": "Match winner",
-        "tier": "Low",
-        "p": 0.585,
-        "decimal": 1.709,
-        "american": -141,
-        "band_note": "Inside the -250 to +10000 window but below 70%, so it cannot be High.",
-        "body": "Connacht host Zebre Parma at Dexcom Stadium on Friday 23 October. Both clubs lost by "
-                "exactly 17 points in Round 3: Connacht went down 36-19 at Glasgow Warriors on 9 October "
-                "and Zebre were beaten 12-29 at home by Edinburgh the following day. With the form sample "
-                "level, venue is the whole of the edge, and Connacht have it. The selection is Connacht "
-                "Rugby to win the match.",
+        "fixture": "Connacht v Zebre Parma",
+        "market": "Money line",
+        "selection": "Connacht win",
+        "body": "Connacht welcome Zebre Parma to Dexcom Stadium for a 14:45 local start on Friday. Both "
+                "clubs lost by exactly 17 points in Round 3: Connacht went down 36-19 at Glasgow Warriors "
+                "on 9 October, and Zebre lost 12-29 at home to Edinburgh the next day. With the form "
+                "identical, the venue is the only separator. The selection is Connacht Rugby to win.",
         "facts": [
-            {"text": "Kick-off Friday 23 October 2026, 14:45 local, Dexcom Stadium", "src": "src-urc-round4"},
-            {"text": "Glasgow Warriors 36-19 Connacht on 9 October 2026", "src": "src-urc-round4"},
-            {"text": "Zebre Parma 12-29 Edinburgh on 10 October 2026", "src": "src-urc-round4"},
+            {"k": "Venue and start", "v": "Dexcom Stadium, 14:45 local on Friday 23 October", "src": "src-urc-r4"},
+            {"k": "Connacht Round 3", "v": "Lost 36-19 away at Glasgow Warriors, 9 October", "src": "src-urc-r4"},
+            {"k": "Zebre Round 3", "v": "Lost 12-29 at home to Edinburgh, 10 October", "src": "src-urc-r4"},
         ],
-        "open_gaps": ["No availability or team announcements were obtainable.",
-                      "A single round cannot distinguish two clubs with identical margins."],
     },
     {
         "id": "p3",
         "fixture_id": "fx-mlb-ws-g1",
         "sport": "baseball",
-        "match": "Tampa Bay Rays at Milwaukee Brewers — World Series Game 1",
-        "competition": "MLB World Series",
-        "selection": "Milwaukee Brewers money line",
+        "fixture": "Tampa Bay Rays at Milwaukee Brewers",
         "market": "Money line",
-        "tier": "Low",
-        "p": 0.561,
-        "decimal": 1.783,
-        "american": -128,
-        "band_note": "Inside the price window, below 70%.",
-        "body": "Milwaukee open the World Series at American Family Field on Friday, with first pitch at "
-                "20:00 Eastern, 00:00 UTC on Saturday. They finished the regular season 103-59, scoring "
-                "832 runs and allowing 618, while Tampa Bay went 98-64 and were 43-38 on the road. Jacob "
-                "Misiorowski is the announced Milwaukee starter against Nick Martinez. The season-long "
-                "run profile favours the home side. The selection is Milwaukee Brewers on the money line.",
+        "selection": "Milwaukee Brewers win",
+        "body": "Milwaukee open the World Series at American Family Field on Friday, first pitch 20:00 "
+                "Eastern, which is 00:00 UTC on Saturday. They finished the regular season 103-59 with "
+                "832 runs scored and 618 allowed. Tampa Bay were 98-64 overall but 43-38 on the road, and "
+                "Nick Martinez starts against Jacob Misiorowski. The selection is Milwaukee Brewers on "
+                "the money line.",
         "facts": [
-            {"text": "Game 1, American Family Field, 2026-10-24T00:00:00Z, ifNecessary=N", "src": "src-mlb-schedule"},
-            {"text": "Probable pitchers: Nick Martinez (TB), Jacob Misiorowski (MIL)", "src": "src-mlb-schedule"},
-            {"text": "Tampa Bay 98-64, away 43-38, RS 736 RA 650", "src": "src-mlb-standings-al"},
-            {"text": "Milwaukee 103-59, RS 832 RA 618", "src": "src-mlb-records-capture"},
+            {"k": "Game 1 details", "v": "American Family Field, 2026-10-24T00:00Z, Martinez v Misiorowski",
+             "src": "src-mlb-schedule"},
+            {"k": "Milwaukee season", "v": "103-59, 832 runs scored, 618 allowed", "src": "src-mlb-records-capture"},
+            {"k": "Tampa Bay season", "v": "98-64, 43-38 away", "src": "src-mlb-standings"},
         ],
-        "open_gaps": ["Postseason form is not what the records measure; the regular season is complete.",
-                      "No injury report or lineup card was published on the pages consulted."],
     },
     {
         "id": "p4",
         "fixture_id": "fx-mlb-ws-g1",
         "sport": "baseball",
-        "match": "Tampa Bay Rays at Milwaukee Brewers — World Series Game 1",
-        "competition": "MLB World Series",
-        "selection": "Tampa Bay Rays +1.5 on the run line",
-        "market": "Run line 1.5",
-        "tier": "Low",
-        "p": 0.594,
-        "decimal": 1.683,
-        "american": -146,
-        "band_note": "Inside the price window, below 70%.",
-        "body": "The run line is the way to take Tampa Bay without backing them to win outright. Across 162 "
-                "games the Rays scored 736 and allowed 650, roughly 4.5 for and 4.0 against, and the pairing "
-                "with Milwaukee's 832 and 618 puts the game near 8.75 combined runs, which keeps the final "
-                "margin small more often than not. A one-run defeat still pays. The selection is Tampa Bay "
-                "Rays +1.5.",
+        "fixture": "Tampa Bay Rays at Milwaukee Brewers",
+        "market": "Run line +1.5",
+        "selection": "Tampa Bay Rays +1.5",
+        "body": "Tampa Bay's run line is the calmer side of a game the money line treats as close. The "
+                "Rays scored 736 runs and allowed 650 over 162 games, which points to roughly 8.75 "
+                "combined runs here, so single-run finishes carry a large share of the outcomes. Tampa "
+                "Bay +1.5 also covers a one-run defeat. The selection is Tampa Bay Rays +1.5.",
         "facts": [
-            {"text": "Tampa Bay RS 736 / RA 650 over 162 games", "src": "src-mlb-standings-al"},
-            {"text": "Milwaukee RS 832 / RA 618 over 162 games", "src": "src-mlb-records-capture"},
-            {"text": "Game 1 confirmed, start 2026-10-24T00:00:00Z", "src": "src-mlb-schedule"},
+            {"k": "Tampa Bay runs", "v": "736 scored, 650 allowed in 162 games", "src": "src-mlb-standings"},
+            {"k": "Milwaukee runs", "v": "832 scored, 618 allowed in 162 games", "src": "src-mlb-records-capture"},
+            {"k": "Run line", "v": "Away side covers by winning or losing by one", "src": "src-mlb-schedule"},
         ],
-        "open_gaps": ["Bullpen usage and late-inning availability were not published on the pages consulted."],
     },
     {
         "id": "p5",
         "fixture_id": "fx-nhl-mtl-chi",
         "sport": "ice-hockey",
-        "match": "Montreal Canadiens at Chicago Blackhawks",
-        "competition": "NHL",
-        "selection": "Montreal Canadiens money line",
+        "fixture": "Montreal Canadiens at Chicago Blackhawks",
         "market": "Money line",
-        "tier": "Low",
-        "p": 0.6,
-        "decimal": 1.667,
-        "american": -150,
-        "band_note": "Inside the price window, below 70%.",
-        "body": "Montreal are at the United Center for a 20:00 Eastern start on Friday, 00:00 UTC on Saturday. "
-                "Three feeds in the NHL's own schedule carry Montreal between -162 and -170 and Chicago "
-                "between +134 and +142, while three other feeds quote Chicago as the 1.59 favourite, so the "
-                "picture is genuinely mixed. There is a real but small edge to Montreal on the majority "
-                "reading. The selection is Montreal Canadiens on the money line.",
+        "selection": "Montreal Canadiens win",
+        "body": "Montreal visit the United Center for a 20:00 Eastern start on Friday, which is 00:00 UTC "
+                "on Saturday. Three feeds in the league's own schedule quote Montreal between -162 and "
+                "-170 and Chicago between +134 and +142, while three others make Chicago the favourite at "
+                "1.59. No 2026-27 form was obtainable for either club, so the edge is thin. The selection "
+                "is Montreal Canadiens on the money line.",
         "facts": [
-            {"text": "Game 2026020166, United Center, 2026-10-24T00:00:00Z, state FUT", "src": "src-nhl-schedule"},
-            {"text": "Montreal quotes -170 / -170 / -162; Chicago +138 / +142 / +134", "src": "src-nhl-schedule"},
-            {"text": "Contradicting feed quotes Chicago 1.59 against Montreal 2.35", "src": "src-nhl-schedule"},
+            {"k": "Game details", "v": "United Center, 2026-10-24T00:00Z, game 2026020166", "src": "src-nhl-schedule"},
+            {"k": "Quotes", "v": "Montreal -162 to -170, Chicago +134 to +142", "src": "src-nhl-schedule"},
+            {"k": "Contradiction", "v": "Three other feeds make Chicago the 1.59 favourite", "src": "src-nhl-schedule"},
         ],
-        "open_gaps": ["No 2026-27 record or recent result for either club was read, so no form claim is made.",
-                      "No lineup, goaltender or injury confirmation was available."],
     },
     {
         "id": "p6",
         "fixture_id": "fx-nhl-tbl-col",
         "sport": "ice-hockey",
-        "match": "Tampa Bay Lightning at Colorado Avalanche",
-        "competition": "NHL",
-        "selection": "Colorado Avalanche money line",
+        "fixture": "Tampa Bay Lightning at Colorado Avalanche",
         "market": "Money line",
-        "tier": "Low",
-        "p": 0.536,
-        "decimal": 1.866,
-        "american": -115,
-        "band_note": "Inside the price window, below 70%.",
-        "body": "Colorado host Tampa Bay at Ball Arena with a 01:00 UTC start on Saturday. Three feeds in the "
-                "NHL schedule put Colorado between -125 and -129 and Tampa Bay between +105 and +106, which "
-                "is a modest edge once the margin is removed. It is not a match anyone should describe as "
-                "one-sided, and nothing about either club's start to the season was obtainable. The selection "
-                "is Colorado Avalanche on the money line.",
+        "selection": "Colorado Avalanche win",
+        "body": "Colorado host Tampa Bay at Ball Arena, starting 01:00 UTC on Saturday. Three feeds on "
+                "the league schedule put Colorado between -125 and -129 and Tampa Bay between +105 and "
+                "+106, worth roughly four points of implied probability once the margin is removed. "
+                "Nothing else about either club could be read today. The selection is Colorado "
+                "Avalanche on the money line.",
         "facts": [
-            {"text": "Game 2026020167, Ball Arena, 2026-10-24T01:00:00Z, state FUT", "src": "src-nhl-schedule"},
-            {"text": "Colorado quotes -129 / -125 / -128; Tampa Bay +105 / +105 / +106", "src": "src-nhl-schedule"},
+            {"k": "Game details", "v": "Ball Arena, 2026-10-24T01:00Z, game 2026020167", "src": "src-nhl-schedule"},
+            {"k": "Quotes", "v": "Colorado -125 to -129, Tampa Bay +105 to +106", "src": "src-nhl-schedule"},
+            {"k": "Standings", "v": "Neither club in the portion of the table that loaded", "src": "src-nhl-standings"},
         ],
-        "open_gaps": ["No club-level form, goaltender or availability information was available.",
-                      "This fixture was not present on the OLBG top list captured, so it is official-only."],
     },
     {
         "id": "p7",
         "fixture_id": "fx-mlb-ws-g1",
         "sport": "baseball",
-        "match": "Tampa Bay Rays at Milwaukee Brewers — World Series Game 1",
-        "competition": "MLB World Series",
-        "selection": "Over 8.5 runs",
-        "market": "Game total 8.5",
-        "tier": "Low",
-        "p": 0.533,
-        "decimal": 1.876,
-        "american": -114,
-        "band_note": "Inside the price window, below 70%.",
-        "body": "Tampa Bay scored 4.54 runs a game and allowed 4.01 across 162 games; Milwaukee scored 5.14 "
-                "and allowed 3.82. Pairing each side's scoring with the other's concession puts the combined "
-                "expectation at roughly 8.75 runs, which sits just above an 8.5 line. Two announced starters, "
-                "Nick Martinez and Jacob Misiorowski, are the only pitching information available. The "
-                "selection is Over 8.5 runs.",
+        "fixture": "Tampa Bay Rays at Milwaukee Brewers",
+        "market": "Game total",
+        "selection": "Over 8.5",
+        "body": "Two offences and two rotations point at roughly 8.75 combined runs at American Family "
+                "Field. Tampa Bay scored 4.54 per game and allowed 4.01; Milwaukee scored 5.14 and "
+                "allowed 3.82 across 162 games. Jacob Misiorowski and Nick Martinez are the announced "
+                "starters. The 8.5 line therefore sits fractionally below expectation. The selection is "
+                "Over 8.5 runs.",
         "facts": [
-            {"text": "Tampa Bay 736 RS / 650 RA in 162 games (4.54 / 4.01 per game)", "src": "src-mlb-standings-al"},
-            {"text": "Milwaukee 832 RS / 618 RA in 162 games (5.14 / 3.82 per game)", "src": "src-mlb-records-capture"},
-            {"text": "Announced starters Martinez and Misiorowski; game 1 of the World Series", "src": "src-mlb-schedule"},
+            {"k": "Tampa Bay rates", "v": "4.54 scored, 4.01 allowed per game", "src": "src-mlb-standings"},
+            {"k": "Milwaukee rates", "v": "5.14 scored, 3.82 allowed per game", "src": "src-mlb-records-capture"},
+            {"k": "Starters", "v": "Jacob Misiorowski (MIL), Nick Martinez (TB)", "src": "src-mlb-schedule"},
         ],
-        "open_gaps": ["Park factors, weather and bullpen state were not published on the pages consulted."],
     },
 ]
 
 FLAGS = [
-    {"id": "F-CF-01", "sev": "high", "sport": "all",
-     "title": "OLBG start times carry no zone label and mix conventions inside the same capture",
-     "detail": "The same hub list rendered 12:12 for a 17:12 Towcester race (a US-Eastern rendering), "
-               "14:45 for URC fixtures the URC itself publishes as 14:45 local UK/Irish time, and 16:00 for "
-               "a Formula 1 race whose track time at Austin is 16:00. No page states a timezone. Times were "
-               "therefore published verbatim and never converted to UTC.",
-     "rows": ["all discovery rows"], "src": ["src-olbg-hubs", "src-urc-round4", "src-f1-usgp"]},
-    {"id": "F-CF-02", "sev": "medium", "sport": "ice-hockey",
-     "title": "OLBG minute field is corrupted for on-the-hour NHL starts",
-     "detail": "OLBG shows 'Today 20:07' for Montreal at Chicago. The NHL's own feed gives "
-               "2026-10-24T00:00:00Z, which is 20:00 Eastern. Every on-the-hour NHL row on the hub carries "
-               ":07 minutes, so the minute field cannot be trusted.",
-     "rows": ["199984"], "src": ["src-olbg-hubs", "src-nhl-schedule"]},
-    {"id": "F-CF-03", "sev": "high", "sport": "ice-hockey",
-     "title": "The NHL feed embeds mutually contradictory prices for the same outcome",
-     "detail": "For game 2026020166 the feed gives Montreal 2.35 (decimal), 1.60 and 2.03 on three providers "
-               "but -170, -170 and -162 on three others; Chicago is simultaneously 1.59 and +138. One set "
-               "makes Chicago the favourite, the other makes Montreal the favourite. Only the three "
-               "American-quote providers were used, and the contradiction is disclosed on every affected row.",
-     "rows": ["fx-nhl-mtl-chi", "fx-nhl-tbl-col"], "src": ["src-nhl-schedule"]},
-    {"id": "F-CF-04", "sev": "medium", "sport": "ice-hockey",
-     "title": "OLBG lists far more NHL games than the league has scheduled today",
-     "detail": "The hub listed at least fifteen NHL fixtures under 'Today', but the NHL schedule for "
-               "2026-10-23 contains exactly two games (numberOfGames=2). Expired rows are left in the list "
-               "and no expired badge was shown, so an OLBG row is not evidence that a game is still to come.",
-     "rows": ["ice-hockey hub"], "src": ["src-olbg-hubs", "src-nhl-schedule"]},
-    {"id": "F-CF-05", "sev": "medium", "sport": "rugby-union",
-     "title": "URC page names the same clubs two different ways on one page",
-     "detail": "The Round 4 fixture block prints 'Hollywoodbets Sharks', '10bet Lions', 'Connacht Rugby' and "
-               "'Edinburgh Rugby'; the Round 3 results block on the same page prints 'Sharks', 'Lions', "
-               "'Connacht' and 'Edinburgh'. A six-entry alias table is the only name mapping used in this "
-               "desk and it is published with the code.",
-     "rows": ["fx-urc-cardiff-sharks", "fx-urc-connacht-zebre", "fx-urc-edinburgh-lions"],
-     "src": ["src-urc-round4"]},
-    {"id": "F-CF-06", "sev": "high", "sport": "golf",
-     "title": "Golf returned zero events — the covered sport has no discoverable match list today",
-     "detail": "The OLBG golf hub rendered 'No tips found.' at 16:20Z. No tournament, no field and no price "
-               "can be offered. Nothing was substituted from another source.",
-     "rows": ["golf"], "src": ["src-olbg-hubs"]},
-    {"id": "F-CF-07", "sev": "high", "sport": "rugby-league",
-     "title": "Rugby League has no fixtures at all on OLBG, only 2027 outrights",
-     "detail": "The hub carried State of Origin 2027, Super League 2027 and NRL 2027 only. The 2026 Rugby "
-               "League World Cup knockout stage falls in this window but is not listed, so the brief's "
-               "five-match target cannot be attempted from OLBG discovery.",
-     "rows": ["2695857", "2801554", "2801600"], "src": ["src-olbg-hubs"]},
-    {"id": "F-CF-08", "sev": "high", "sport": "darts",
-     "title": "pdc.tv returns a consent wall instead of match content",
-     "detail": "The European Championship tournament page returned a CookieYes consent dialog and no "
-               "schedule. Twelve darts fixtures are therefore discovery-only. The same barrier was "
-               "recorded by session 8f6d7364 on 2026-10-22 as F-8F6D-03.",
-     "rows": ["32335", "32326", "32328"], "src": ["src-pdc"]},
-    {"id": "F-CF-09", "sev": "medium", "sport": "snooker",
-     "title": "WST match list is reachable but does not reach today's session in one capture",
-     "detail": "wst.tv/matches returned the Northern Ireland Open list, but the first chunk covers 18-19 "
-               "October. It confirms Round 1 results for Scott Donaldson (4-0 over Wu Yize) and David "
-               "Gilbert (4-1 over Oliver Sykes) yet says nothing about the 23 October matches, which are "
-               "not verified and therefore unpriced.",
-     "rows": ["9951", "9950"], "src": ["src-wst-matches"]},
-    {"id": "F-CF-10", "sev": "medium", "sport": "basketball",
-     "title": "Both basketball routes failed to expose fixtures",
-     "detail": "The EuroLeague game centre is client-rendered and returns a club list with no dates; "
-               "cdn.nba.com returned HTTP 500. Fifteen basketball rows are discovery-only.",
-     "rows": ["basketball hub"], "src": ["src-euroleague-gc"]},
-    {"id": "F-CF-11", "sev": "high", "sport": "tennis",
-     "title": "The nine OLBG tennis rows carry no competition, and the tours list different matches",
-     "detail": "OLBG routes every tennis row through /All_Tennis/All_Events/ with no tournament name. The ATP "
-               "current-scoreboard page at the same moment lists Brussels and Lyon quarter-finals, none of "
-               "which match the OLBG pairings. The WTA scores page is client-rendered. No tennis fixture "
-               "could be tied to an official draw.",
-     "rows": ["902150", "902155", "902163"], "src": ["src-olbg-hubs", "src-atp-scores", "src-wta-scores"]},
-    {"id": "F-CF-12", "sev": "medium", "sport": "cricket",
-     "title": "Cricket Australia page returned filters, not fixtures",
-     "detail": "cricket.com.au/matches rendered series and team filter lists only in the first capture. The "
-               "seven domestic and international cricket rows remain discovery-only; no cricket total, "
-               "handicap or winner price is published.",
-     "rows": ["188839", "188832", "188840"], "src": ["src-cricket-au"]},
-    {"id": "F-CF-13", "sev": "medium", "sport": "gaelic-sports",
-     "title": "Munster GAA fixture detail sits behind sub-pages that were not reached",
-     "detail": "The fixtures index returned navigation only. The four club fixtures (Cork, Galway, Limerick) "
-               "are therefore unverified, including the St Finbarrs v Nemo Rangers game scheduled for "
-               "25 October.",
-     "rows": ["3530", "3532", "3531", "3537"], "src": ["src-munster-gaa"]},
-    {"id": "F-CF-14", "sev": "medium", "sport": "baseball",
-     "title": "Live MLB standings returned one division in the first capture",
-     "detail": "The fresh standings call put NL East clubs in the first chunk, so Milwaukee's record was "
-               "taken from the repository's canonical 2026-10-22 capture of the same endpoint. The value "
-               "cannot have changed because the 162-game season is complete, but the observation is one "
-               "day old and is labelled as such.",
-     "rows": ["fx-mlb-ws-g1"], "src": ["src-mlb-standings-nl", "src-mlb-records-capture"]},
-    {"id": "F-CF-15", "sev": "low", "sport": "all",
-     "title": "OLBG club and player spellings differ from official names",
-     "detail": "'Nissa' for Nice, 'Newcastle Red Bulls' for the Newcastle Premiership club, 'William OConnor' "
-               "for William O'Connor, 'Pays dAix UC' and 'EHC Munchen'. Names are reproduced as published on "
-               "OLBG rows and never silently corrected.",
-     "rows": ["609558", "609573", "32328", "12083"], "src": ["src-olbg-hubs"]},
-    {"id": "F-CF-16", "sev": "high", "sport": "all",
-     "title": "No injury, suspension or availability information was obtained for any fixture",
-     "detail": "None of the official pages reached this session published a team news, injury or suspension "
-               "list. No prediction asserts one. This is the single largest gap against the brief.",
-     "rows": ["all fixtures"], "src": ["src-nhl-schedule", "src-mlb-schedule", "src-urc-round4"]},
-    {"id": "F-CF-17", "sev": "high", "sport": "all",
-     "title": "Zero High-confidence selections today, and the reason is structural",
-     "detail": "The rule as written needs a probability of at least 70% AND an American price no shorter "
-               "than -250, which bounds the eligible band to 70.0-71.4%. Only six fixtures could be "
-               "confirmed on an official page, and the strongest of them (Edinburgh, 85%) prices at -567, "
-               "outside the window. Nothing was reclassified to manufacture a High.",
-     "rows": ["all"], "src": ["src-nhl-schedule", "src-mlb-schedule", "src-urc-round4"]},
-    {"id": "F-CF-18", "sev": "medium", "sport": "greyhounds",
-     "title": "Greyhound runners are unverified and cannot be checked against GBGB data",
-     "detail": "Fifteen race rows with dog names were discovered. GBGB publishes meeting and open-race "
-               "calendars, not per-race runner lists, and no GBGB page was fetched this session. No "
-               "greyhound selection is priced.",
-     "rows": ["689803", "689846", "689717"], "src": ["src-olbg-hubs"]},
-    {"id": "F-CF-19", "sev": "medium", "sport": "all",
-     "title": "107 indicative prices exist and none of them is evidence",
-     "detail": "Where no official input was available, an indicative price was still published so that "
-               "every discovered match has a number rather than a silent blank. It is a 50% shrunk OLBG tip "
-               "share, capped at 0.90, permanently graded Low, and marked 'indicative' on every row. It must "
-               "not be read as a probability or as a tip.",
-     "rows": ["107 rows"], "src": ["src-olbg-hubs"]},
+    ("F-CF-01", "high", "all sports", "every row with a printed time",
+     "OLBG prints no timezone and mixes conventions inside a single capture. A greyhound race whose card "
+     "reads 17:12 is shown as Today 12:12, which is US Eastern; United Rugby Championship matches are "
+     "shown at 14:45, the same figure the URC prints as local; the World Series is shown at 20:00, which "
+     "is Eastern; the Formula 1 race is shown at 16:00, which matches the circuit's local start.",
+     "Displayed strings reproduce the page; no conversion is published anywhere in this desk.",
+     "src-olbg-hubs"),
+    ("F-CF-02", "high", "ice-hockey", "Montreal at Chicago",
+     "OLBG shows the game as Today 20:07. The league schedules it for 20:00 Eastern. Every on-the-hour "
+     "NHL row on the hub carries the same :07 minute field.",
+     "Both strings published side by side. League time used for any ordering.",
+     "src-nhl-schedule"),
+    ("F-CF-03", "high", "ice-hockey", "both NHL games",
+     "The league's own schedule response carries mutually contradictory quotes. Montreal is 2.35 decimal "
+     "on three feeds and -170 on three others; Chicago is 1.59 on one set and +138 on the other, so the "
+     "two sets disagree about which side is favourite.",
+     "Only the three consistent American-quote feeds were used; the contradictory set is excluded and "
+     "named on the row.",
+     "src-nhl-schedule"),
+    ("F-CF-04", "medium", "rugby-union", "three URC fixtures",
+     "The URC page names the same clubs two ways: the fixture block reads Hollywoodbets Sharks and "
+     "Emirates Lions, the results block reads Sharks and Lions. There is also an OLBG row for Newcastle "
+     "Red Bulls that does not match the club name in use elsewhere.",
+     "A small alias table maps fixture names to result names; nothing was guessed beyond sponsor prefixes.",
+     "src-urc-r4"),
+    ("F-CF-05", "high", "ice-hockey", "NHL hub",
+     "The hub carries several NHL fixtures under today's heading. The league schedules exactly two games "
+     "for 23 October, and only one of them appears among the hub's NHL rows.",
+     "Hub rows kept as discovery; only the two league-confirmed games carry a price.",
+     "src-nhl-schedule"),
+    ("F-CF-06", "medium", "golf", "whole sport",
+     "The golf hub returns No tips found, so no fixture, market or selection exists to check. This desk "
+     "cannot pretend to cover golf beyond recording the empty hub.",
+     "Sport page published with the empty state and the hub link.",
+     "src-olbg-hubs"),
+    ("F-CF-07", "medium", "rugby-league", "whole sport",
+     "The rugby league hub carries 2027 outrights only (State of Origin, Super League, NRL). No match-"
+     "level row exists, so there is nothing to originate a match line against.",
+     "Outrights listed and priced as indicative; no match rows claimed.",
+     "src-olbg-hubs"),
+    ("F-CF-08", "high", "darts", "eight European Championship rows",
+     "The PDC tournament page returns a consent wall rather than content, so the draw, the session order "
+     "and the match distances could not be read. Today's eight first-round ties are unconfirmed.",
+     "Listed as discovery, unconfirmed, never priced as anything better than indicative.",
+     "src-olbg-hubs"),
+    ("F-CF-09", "high", "snooker", "two last-64 ties",
+     "The World Snooker Tour match list loaded only as far as the 18-19 October sessions, so today's "
+     "Jak Jones and David Gilbert ties are not on the tournament page. Their Round 1 results are: "
+     "Donaldson 4-0 Wu Yize, Gilbert 4-1 Sykes.",
+     "No snooker fixture is treated as confirmed; the two rows stay discovery-only.",
+     "src-wst-nio"),
+    ("F-CF-10", "high", "basketball", "fourteen rows",
+     "The EuroLeague game centre renders its schedule client-side and returned only a club list. The NBA "
+     "scoreboard endpoint returned HTTP 500. Neither league's fixtures for today could be read.",
+     "Fourteen rows listed as discovery; none confirmed, none graded above indicative.",
+     "src-olbg-hubs"),
+    ("F-CF-11", "medium", "tennis", "nine rows",
+     "The ATP scores page listed Brussels and Lyon quarter-finals and the WTA scores page a live event; "
+     "none of those matches appears in OLBG's nine rows. The rows cannot be matched to an official "
+     "order of play.",
+     "No tennis fixture confirmed; no tennis price.",
+     "src-olbg-hubs"),
+    ("F-CF-12", "medium", "cricket", "seven match rows",
+     "The Cricket Australia match page returned filter metadata rather than a fixture list. New Zealand "
+     "against India, the South African domestic T20s and Pakistan against England are all unconfirmed.",
+     "Seven rows listed as discovery; no cricket fixture confirmed.",
+     "src-olbg-hubs"),
+    ("F-CF-13", "medium", "gaelic-sports", "four match rows",
+     "The Munster GAA fixtures page returned navigation only. The two Cork and Galway county finals "
+     "carried by OLBG could not be matched to a published fixture list.",
+     "Four rows listed as discovery; no Gaelic fixture confirmed.",
+     "src-olbg-hubs"),
+    ("F-CF-14", "medium", "baseball", "Milwaukee's season record",
+     "Today's standings call returned the American League block only, so Milwaukee's 103-59 record and "
+     "832/618 run totals come from the repository's own canonical capture of the same endpoint on "
+     "22 October, one day earlier.",
+     "The row names the capture and its date; the league figure for Tampa Bay was read fresh today.",
+     "src-mlb-records-capture"),
+    ("F-CF-15", "medium", "ice-hockey", "four clubs",
+     "The league standings response loaded the top of the table only (Carolina 18 points, Edmonton and "
+     "Boston 16, Vegas 15). None of Montreal, Chicago, Tampa Bay or Colorado appears in the loaded part.",
+     "No club record is quoted for any of tonight's four teams.",
+     "src-nhl-standings"),
+    ("F-CF-16", "high", "all sports", "every prediction",
+     "No injury, suspension, availability or team-news feed could be read for any sport this session. "
+     "Nothing about player availability appears in any prediction, because nothing was obtainable.",
+     "Recorded here so the absence is visible rather than silently patched with a guess.",
+     "src-olbg-hubs"),
+    ("F-CF-17", "medium", "greyhounds", "fifteen race rows",
+     "The greyhound hub prints a race name of 17:12 beside a time of Today 12:12, and no GBGB card was "
+     "read, so no runner, trap or grade could be confirmed. Dog names are reproduced as printed.",
+     "Rows stay discovery-only. No greyhound price is graded above indicative.",
+     "src-olbg-hubs"),
+    ("F-CF-18", "high", "all sports", "117 indicative prices",
+     "An OLBG tip-vote share is a count of published tips, not a price and not a probability. This desk "
+     "converts the share to a probability only after halving it toward a coin flip and capping it, and "
+     "labels every such row indicative and Low.",
+     "Never graded Medium or High, and never counted in the confirmed-outcome totals.",
+     "src-olbg-hubs"),
+    ("F-CF-19", "medium", "rugby-union", "Cardiff v Sharks",
+     "OLBG prices Cardiff at 14:45 with the Sharks as 4/7 favourites, while the URC fixture list places "
+     "the same match at the same time. The match is confirmed; the price direction on the hub is not "
+     "something this desk can check against a league source, which publishes no prices.",
+     "Fixture confirmed from the URC; the hub's selection direction is quoted, not endorsed.",
+     "src-urc-r4"),
+    ("F-CF-20", "medium", "handball", "GRK Ohrid v Spor Toto",
+     "OLBG lists this as an EHF European Cup tie at 12:30 with a +11.50 handicap on the away side. No "
+     "EHF page was read, so neither the competition nor the line could be confirmed.",
+     "Row stays discovery-only.",
+     "src-olbg-hubs"),
+    ("F-CF-21", "high", "all sports", "zero High picks",
+     "The brief's High rule needs a win chance above 70% and a price no shorter than -250. Those two "
+     "conditions together admit only 70.0% to 71.4%. The strongest confirmed selection today, Edinburgh "
+     "at about 85%, prices at -567; the next, Connacht at about 59%, is nowhere near the floor.",
+     "Zero High picks published, with the arithmetic shown rather than a quota filled.",
+     "src-urc-r4"),
 ]
 
-WORDS = {"model", "models", "verified", "verify", "verification", "algorithm", "ai"}
+
+def words(text):
+    return len(re.findall(r"[A-Za-z0-9][A-Za-z0-9'\-]*", text))
 
 
 def main():
-    os.makedirs(OUT, exist_ok=True)
+    lines = json.loads((DATA / "lines.json").read_text())
+    price = {}
+    for r in lines["rows"]:
+        if r["class"] == "official":
+            price[(r["fixture_id"], r["selection"])] = r
+
+    out = []
     for p in PREDICTIONS:
-        p["words"] = len(p["body"].split())
-    payloads = {
-        "predictions.json": {"session": "cf2699ba-olbg1", "count": len(PREDICTIONS),
-                             "note": "Every clause is source-linked. Word counts are computed, minimum 30.",
-                             "predictions": PREDICTIONS},
-        "flagged.json": {"session": "cf2699ba-olbg1", "count": len(FLAGS), "flags": FLAGS},
-    }
-    for name, obj in payloads.items():
-        with open(os.path.join(OUT, name), "w", encoding="utf-8") as fh:
-            json.dump(obj, fh, indent=1, ensure_ascii=False)
-            fh.write("\n")
-    bad = [p["id"] for p in PREDICTIONS if p["words"] < 30]
-    hits = [(p["id"], w) for p in PREDICTIONS for w in p["body"].lower().replace(",", " ").replace(".", " ").split() if w in WORDS]
-    print(f"predictions={len(PREDICTIONS)} flags={len(FLAGS)} short={bad} banned={hits}")
-    print("word counts:", [p["words"] for p in PREDICTIONS])
+        key = (p["fixture_id"], p["selection"])
+        if key not in price:
+            raise SystemExit(f"prediction {p['id']} has no originated price: {key}")
+        pr = price[key]
+        body = " ".join(p["body"].split())
+        low = body.lower()
+        hits = [w for w in BANNED if re.search(rf"\b{re.escape(w.lower())}\b", low)]
+        if hits:
+            raise SystemExit(f"prediction {p['id']} contains banned words: {hits}")
+        n = words(body)
+        if n < 30:
+            raise SystemExit(f"prediction {p['id']} is only {n} words")
+        out.append({**p, "body": body, "words": n,
+                    "p": pr["p"], "decimal": pr["decimal"], "american": pr["american"],
+                    "american_text": pr["american_text"], "tier": pr["tier"], "in_band": pr["in_band"]})
+
+    (DATA / "predictions.json").write_text(json.dumps(out, indent=1))
+
+    flags = [{"id": i, "severity": s, "sport": sp, "row": rw, "issue": iss, "action": act, "source": src}
+             for i, s, sp, rw, iss, act, src in FLAGS]
+    (DATA / "flagged.json").write_text(json.dumps(flags, indent=1))
+
+    print(f"predictions={len(out)} flags={len(flags)} "
+          f"words={[x['words'] for x in out]}")
+    print("tiers:", {x["id"]: x["tier"] for x in out})
 
 
 if __name__ == "__main__":

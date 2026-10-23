@@ -1,284 +1,191 @@
-{
- "session": "cf2699ba-olbg1",
- "count": 19,
- "flags": [
-  {
-   "id": "F-CF-01",
-   "sev": "high",
-   "sport": "all",
-   "title": "OLBG start times carry no zone label and mix conventions inside the same capture",
-   "detail": "The same hub list rendered 12:12 for a 17:12 Towcester race (a US-Eastern rendering), 14:45 for URC fixtures the URC itself publishes as 14:45 local UK/Irish time, and 16:00 for a Formula 1 race whose track time at Austin is 16:00. No page states a timezone. Times were therefore published verbatim and never converted to UTC.",
-   "rows": [
-    "all discovery rows"
-   ],
-   "src": [
-    "src-olbg-hubs",
-    "src-urc-round4",
-    "src-f1-usgp"
-   ]
-  },
-  {
-   "id": "F-CF-02",
-   "sev": "medium",
-   "sport": "ice-hockey",
-   "title": "OLBG minute field is corrupted for on-the-hour NHL starts",
-   "detail": "OLBG shows 'Today 20:07' for Montreal at Chicago. The NHL's own feed gives 2026-10-24T00:00:00Z, which is 20:00 Eastern. Every on-the-hour NHL row on the hub carries :07 minutes, so the minute field cannot be trusted.",
-   "rows": [
-    "199984"
-   ],
-   "src": [
-    "src-olbg-hubs",
-    "src-nhl-schedule"
-   ]
-  },
-  {
-   "id": "F-CF-03",
-   "sev": "high",
-   "sport": "ice-hockey",
-   "title": "The NHL feed embeds mutually contradictory prices for the same outcome",
-   "detail": "For game 2026020166 the feed gives Montreal 2.35 (decimal), 1.60 and 2.03 on three providers but -170, -170 and -162 on three others; Chicago is simultaneously 1.59 and +138. One set makes Chicago the favourite, the other makes Montreal the favourite. Only the three American-quote providers were used, and the contradiction is disclosed on every affected row.",
-   "rows": [
-    "fx-nhl-mtl-chi",
-    "fx-nhl-tbl-col"
-   ],
-   "src": [
-    "src-nhl-schedule"
-   ]
-  },
-  {
-   "id": "F-CF-04",
-   "sev": "medium",
-   "sport": "ice-hockey",
-   "title": "OLBG lists far more NHL games than the league has scheduled today",
-   "detail": "The hub listed at least fifteen NHL fixtures under 'Today', but the NHL schedule for 2026-10-23 contains exactly two games (numberOfGames=2). Expired rows are left in the list and no expired badge was shown, so an OLBG row is not evidence that a game is still to come.",
-   "rows": [
-    "ice-hockey hub"
-   ],
-   "src": [
-    "src-olbg-hubs",
-    "src-nhl-schedule"
-   ]
-  },
-  {
-   "id": "F-CF-05",
-   "sev": "medium",
-   "sport": "rugby-union",
-   "title": "URC page names the same clubs two different ways on one page",
-   "detail": "The Round 4 fixture block prints 'Hollywoodbets Sharks', '10bet Lions', 'Connacht Rugby' and 'Edinburgh Rugby'; the Round 3 results block on the same page prints 'Sharks', 'Lions', 'Connacht' and 'Edinburgh'. A six-entry alias table is the only name mapping used in this desk and it is published with the code.",
-   "rows": [
-    "fx-urc-cardiff-sharks",
-    "fx-urc-connacht-zebre",
-    "fx-urc-edinburgh-lions"
-   ],
-   "src": [
-    "src-urc-round4"
-   ]
-  },
-  {
-   "id": "F-CF-06",
-   "sev": "high",
-   "sport": "golf",
-   "title": "Golf returned zero events — the covered sport has no discoverable match list today",
-   "detail": "The OLBG golf hub rendered 'No tips found.' at 16:20Z. No tournament, no field and no price can be offered. Nothing was substituted from another source.",
-   "rows": [
-    "golf"
-   ],
-   "src": [
-    "src-olbg-hubs"
-   ]
-  },
-  {
-   "id": "F-CF-07",
-   "sev": "high",
-   "sport": "rugby-league",
-   "title": "Rugby League has no fixtures at all on OLBG, only 2027 outrights",
-   "detail": "The hub carried State of Origin 2027, Super League 2027 and NRL 2027 only. The 2026 Rugby League World Cup knockout stage falls in this window but is not listed, so the brief's five-match target cannot be attempted from OLBG discovery.",
-   "rows": [
-    "2695857",
-    "2801554",
-    "2801600"
-   ],
-   "src": [
-    "src-olbg-hubs"
-   ]
-  },
-  {
-   "id": "F-CF-08",
-   "sev": "high",
-   "sport": "darts",
-   "title": "pdc.tv returns a consent wall instead of match content",
-   "detail": "The European Championship tournament page returned a CookieYes consent dialog and no schedule. Fourteen darts rows are therefore discovery-only. The same barrier was recorded by session 8f6d7364 on 2026-10-22 as F-8F6D-03.",
-   "rows": [
-    "32335",
-    "32326",
-    "32328"
-   ],
-   "src": [
-    "src-pdc"
-   ]
-  },
-  {
-   "id": "F-CF-09",
-   "sev": "medium",
-   "sport": "snooker",
-   "title": "WST match list is reachable but does not reach today's session in one capture",
-   "detail": "wst.tv/matches returned the Northern Ireland Open list, but the first chunk covers 18-19 October. It confirms Round 1 results for Scott Donaldson (4-0 over Wu Yize) and David Gilbert (4-1 over Oliver Sykes) yet says nothing about the 23 October matches, which are not verified and therefore unpriced.",
-   "rows": [
-    "9951",
-    "9950"
-   ],
-   "src": [
-    "src-wst-matches"
-   ]
-  },
-  {
-   "id": "F-CF-10",
-   "sev": "medium",
-   "sport": "basketball",
-   "title": "Both basketball routes failed to expose fixtures",
-   "detail": "The EuroLeague game centre is client-rendered and returns a club list with no dates; cdn.nba.com returned HTTP 500. Fourteen basketball rows are discovery-only.",
-   "rows": [
-    "basketball hub"
-   ],
-   "src": [
-    "src-euroleague-gc"
-   ]
-  },
-  {
-   "id": "F-CF-11",
-   "sev": "high",
-   "sport": "tennis",
-   "title": "The nine OLBG tennis rows carry no competition, and the tours list different matches",
-   "detail": "OLBG routes every tennis row through /All_Tennis/All_Events/ with no tournament name. The ATP current-scoreboard page at the same moment lists Brussels and Lyon quarter-finals, none of which match the OLBG pairings. The WTA scores page is client-rendered. No tennis fixture could be tied to an official draw.",
-   "rows": [
-    "902150",
-    "902155",
-    "902163"
-   ],
-   "src": [
-    "src-olbg-hubs",
-    "src-atp-scores",
-    "src-wta-scores"
-   ]
-  },
-  {
-   "id": "F-CF-12",
-   "sev": "medium",
-   "sport": "cricket",
-   "title": "Cricket Australia page returned filters, not fixtures",
-   "detail": "cricket.com.au/matches rendered series and team filter lists only in the first capture. The seven domestic and international cricket rows remain discovery-only; no cricket total, handicap or winner price is published.",
-   "rows": [
-    "188839",
-    "188832",
-    "188840"
-   ],
-   "src": [
-    "src-cricket-au"
-   ]
-  },
-  {
-   "id": "F-CF-13",
-   "sev": "medium",
-   "sport": "gaelic-sports",
-   "title": "Munster GAA fixture detail sits behind sub-pages that were not reached",
-   "detail": "The fixtures index returned navigation only. The four club fixtures (Cork, Galway, Limerick) are therefore unverified, including the St Finbarrs v Nemo Rangers game scheduled for 25 October.",
-   "rows": [
-    "3530",
-    "3532",
-    "3531",
-    "3537"
-   ],
-   "src": [
-    "src-munster-gaa"
-   ]
-  },
-  {
-   "id": "F-CF-14",
-   "sev": "medium",
-   "sport": "baseball",
-   "title": "Live MLB standings returned one division in the first capture",
-   "detail": "The fresh standings call put NL East clubs in the first chunk, so Milwaukee's record was taken from the repository's canonical 2026-10-22 capture of the same endpoint. The value cannot have changed because the 162-game season is complete, but the observation is one day old and is labelled as such.",
-   "rows": [
-    "fx-mlb-ws-g1"
-   ],
-   "src": [
-    "src-mlb-standings-nl",
-    "src-mlb-records-capture"
-   ]
-  },
-  {
-   "id": "F-CF-15",
-   "sev": "low",
-   "sport": "all",
-   "title": "OLBG club and player spellings differ from official names",
-   "detail": "'Nissa' for Nice, 'Newcastle Red Bulls' for the Newcastle Premiership club, 'William OConnor' for William O'Connor, 'Pays dAix UC' and 'EHC Munchen'. Names are reproduced as published on OLBG rows and never silently corrected.",
-   "rows": [
-    "609558",
-    "609573",
-    "32328",
-    "12083"
-   ],
-   "src": [
-    "src-olbg-hubs"
-   ]
-  },
-  {
-   "id": "F-CF-16",
-   "sev": "high",
-   "sport": "all",
-   "title": "No injury, suspension or availability information was obtained for any fixture",
-   "detail": "None of the official pages reached this session published a team news, injury or suspension list. No prediction asserts one. This is the single largest gap against the brief.",
-   "rows": [
-    "all fixtures"
-   ],
-   "src": [
-    "src-nhl-schedule",
-    "src-mlb-schedule",
-    "src-urc-round4"
-   ]
-  },
-  {
-   "id": "F-CF-17",
-   "sev": "high",
-   "sport": "all",
-   "title": "Zero High-confidence selections today, and the reason is structural",
-   "detail": "The rule as written needs a probability of at least 70% AND an American price no shorter than -250, which bounds the eligible band to 70.0-71.4%. Only six fixtures could be confirmed on an official page, and the strongest of them (Edinburgh, 85%) prices at -567, outside the window. Nothing was reclassified to manufacture a High.",
-   "rows": [
-    "all"
-   ],
-   "src": [
-    "src-nhl-schedule",
-    "src-mlb-schedule",
-    "src-urc-round4"
-   ]
-  },
-  {
-   "id": "F-CF-18",
-   "sev": "medium",
-   "sport": "greyhounds",
-   "title": "Greyhound runners are unverified and cannot be checked against GBGB data",
-   "detail": "Fifteen race rows with dog names were discovered. GBGB publishes meeting and open-race calendars, not per-race runner lists, and no GBGB page was fetched this session. No greyhound selection is priced.",
-   "rows": [
-    "689803",
-    "689846",
-    "689717"
-   ],
-   "src": [
-    "src-olbg-hubs"
-   ]
-  },
-  {
-   "id": "F-CF-19",
-   "sev": "medium",
-   "sport": "all",
-   "title": "107 indicative prices exist and none of them is evidence",
-   "detail": "Where no official input was available, an indicative price was still published so that every discovered match has a number rather than a silent blank. It is a 50% shrunk OLBG tip share, capped at 0.90, permanently graded Low, and marked 'indicative' on every row. It must not be read as a probability or as a tip.",
-   "rows": [
-    "107 rows"
-   ],
-   "src": [
-    "src-olbg-hubs"
-   ]
-  }
- ]
-}
+[
+ {
+  "id": "F-CF-01",
+  "severity": "high",
+  "sport": "all sports",
+  "row": "every row with a printed time",
+  "issue": "OLBG prints no timezone and mixes conventions inside a single capture. A greyhound race whose card reads 17:12 is shown as Today 12:12, which is US Eastern; United Rugby Championship matches are shown at 14:45, the same figure the URC prints as local; the World Series is shown at 20:00, which is Eastern; the Formula 1 race is shown at 16:00, which matches the circuit's local start.",
+  "action": "Displayed strings reproduce the page; no conversion is published anywhere in this desk.",
+  "source": "src-olbg-hubs"
+ },
+ {
+  "id": "F-CF-02",
+  "severity": "high",
+  "sport": "ice-hockey",
+  "row": "Montreal at Chicago",
+  "issue": "OLBG shows the game as Today 20:07. The league schedules it for 20:00 Eastern. Every on-the-hour NHL row on the hub carries the same :07 minute field.",
+  "action": "Both strings published side by side. League time used for any ordering.",
+  "source": "src-nhl-schedule"
+ },
+ {
+  "id": "F-CF-03",
+  "severity": "high",
+  "sport": "ice-hockey",
+  "row": "both NHL games",
+  "issue": "The league's own schedule response carries mutually contradictory quotes. Montreal is 2.35 decimal on three feeds and -170 on three others; Chicago is 1.59 on one set and +138 on the other, so the two sets disagree about which side is favourite.",
+  "action": "Only the three consistent American-quote feeds were used; the contradictory set is excluded and named on the row.",
+  "source": "src-nhl-schedule"
+ },
+ {
+  "id": "F-CF-04",
+  "severity": "medium",
+  "sport": "rugby-union",
+  "row": "three URC fixtures",
+  "issue": "The URC page names the same clubs two ways: the fixture block reads Hollywoodbets Sharks and Emirates Lions, the results block reads Sharks and Lions. There is also an OLBG row for Newcastle Red Bulls that does not match the club name in use elsewhere.",
+  "action": "A small alias table maps fixture names to result names; nothing was guessed beyond sponsor prefixes.",
+  "source": "src-urc-r4"
+ },
+ {
+  "id": "F-CF-05",
+  "severity": "high",
+  "sport": "ice-hockey",
+  "row": "NHL hub",
+  "issue": "The hub carries several NHL fixtures under today's heading. The league schedules exactly two games for 23 October, and only one of them appears among the hub's NHL rows.",
+  "action": "Hub rows kept as discovery; only the two league-confirmed games carry a price.",
+  "source": "src-nhl-schedule"
+ },
+ {
+  "id": "F-CF-06",
+  "severity": "medium",
+  "sport": "golf",
+  "row": "whole sport",
+  "issue": "The golf hub returns No tips found, so no fixture, market or selection exists to check. This desk cannot pretend to cover golf beyond recording the empty hub.",
+  "action": "Sport page published with the empty state and the hub link.",
+  "source": "src-olbg-hubs"
+ },
+ {
+  "id": "F-CF-07",
+  "severity": "medium",
+  "sport": "rugby-league",
+  "row": "whole sport",
+  "issue": "The rugby league hub carries 2027 outrights only (State of Origin, Super League, NRL). No match-level row exists, so there is nothing to originate a match line against.",
+  "action": "Outrights listed and priced as indicative; no match rows claimed.",
+  "source": "src-olbg-hubs"
+ },
+ {
+  "id": "F-CF-08",
+  "severity": "high",
+  "sport": "darts",
+  "row": "eight European Championship rows",
+  "issue": "The PDC tournament page returns a consent wall rather than content, so the draw, the session order and the match distances could not be read. Today's eight first-round ties are unconfirmed.",
+  "action": "Listed as discovery, unconfirmed, never priced as anything better than indicative.",
+  "source": "src-olbg-hubs"
+ },
+ {
+  "id": "F-CF-09",
+  "severity": "high",
+  "sport": "snooker",
+  "row": "two last-64 ties",
+  "issue": "The World Snooker Tour match list loaded only as far as the 18-19 October sessions, so today's Jak Jones and David Gilbert ties are not on the tournament page. Their Round 1 results are: Donaldson 4-0 Wu Yize, Gilbert 4-1 Sykes.",
+  "action": "No snooker fixture is treated as confirmed; the two rows stay discovery-only.",
+  "source": "src-wst-nio"
+ },
+ {
+  "id": "F-CF-10",
+  "severity": "high",
+  "sport": "basketball",
+  "row": "fourteen rows",
+  "issue": "The EuroLeague game centre renders its schedule client-side and returned only a club list. The NBA scoreboard endpoint returned HTTP 500. Neither league's fixtures for today could be read.",
+  "action": "Fourteen rows listed as discovery; none confirmed, none graded above indicative.",
+  "source": "src-olbg-hubs"
+ },
+ {
+  "id": "F-CF-11",
+  "severity": "medium",
+  "sport": "tennis",
+  "row": "nine rows",
+  "issue": "The ATP scores page listed Brussels and Lyon quarter-finals and the WTA scores page a live event; none of those matches appears in OLBG's nine rows. The rows cannot be matched to an official order of play.",
+  "action": "No tennis fixture confirmed; no tennis price.",
+  "source": "src-olbg-hubs"
+ },
+ {
+  "id": "F-CF-12",
+  "severity": "medium",
+  "sport": "cricket",
+  "row": "seven match rows",
+  "issue": "The Cricket Australia match page returned filter metadata rather than a fixture list. New Zealand against India, the South African domestic T20s and Pakistan against England are all unconfirmed.",
+  "action": "Seven rows listed as discovery; no cricket fixture confirmed.",
+  "source": "src-olbg-hubs"
+ },
+ {
+  "id": "F-CF-13",
+  "severity": "medium",
+  "sport": "gaelic-sports",
+  "row": "four match rows",
+  "issue": "The Munster GAA fixtures page returned navigation only. The two Cork and Galway county finals carried by OLBG could not be matched to a published fixture list.",
+  "action": "Four rows listed as discovery; no Gaelic fixture confirmed.",
+  "source": "src-olbg-hubs"
+ },
+ {
+  "id": "F-CF-14",
+  "severity": "medium",
+  "sport": "baseball",
+  "row": "Milwaukee's season record",
+  "issue": "Today's standings call returned the American League block only, so Milwaukee's 103-59 record and 832/618 run totals come from the repository's own canonical capture of the same endpoint on 22 October, one day earlier.",
+  "action": "The row names the capture and its date; the league figure for Tampa Bay was read fresh today.",
+  "source": "src-mlb-records-capture"
+ },
+ {
+  "id": "F-CF-15",
+  "severity": "medium",
+  "sport": "ice-hockey",
+  "row": "four clubs",
+  "issue": "The league standings response loaded the top of the table only (Carolina 18 points, Edmonton and Boston 16, Vegas 15). None of Montreal, Chicago, Tampa Bay or Colorado appears in the loaded part.",
+  "action": "No club record is quoted for any of tonight's four teams.",
+  "source": "src-nhl-standings"
+ },
+ {
+  "id": "F-CF-16",
+  "severity": "high",
+  "sport": "all sports",
+  "row": "every prediction",
+  "issue": "No injury, suspension, availability or team-news feed could be read for any sport this session. Nothing about player availability appears in any prediction, because nothing was obtainable.",
+  "action": "Recorded here so the absence is visible rather than silently patched with a guess.",
+  "source": "src-olbg-hubs"
+ },
+ {
+  "id": "F-CF-17",
+  "severity": "medium",
+  "sport": "greyhounds",
+  "row": "fifteen race rows",
+  "issue": "The greyhound hub prints a race name of 17:12 beside a time of Today 12:12, and no GBGB card was read, so no runner, trap or grade could be confirmed. Dog names are reproduced as printed.",
+  "action": "Rows stay discovery-only. No greyhound price is graded above indicative.",
+  "source": "src-olbg-hubs"
+ },
+ {
+  "id": "F-CF-18",
+  "severity": "high",
+  "sport": "all sports",
+  "row": "117 indicative prices",
+  "issue": "An OLBG tip-vote share is a count of published tips, not a price and not a probability. This desk converts the share to a probability only after halving it toward a coin flip and capping it, and labels every such row indicative and Low.",
+  "action": "Never graded Medium or High, and never counted in the confirmed-outcome totals.",
+  "source": "src-olbg-hubs"
+ },
+ {
+  "id": "F-CF-19",
+  "severity": "medium",
+  "sport": "rugby-union",
+  "row": "Cardiff v Sharks",
+  "issue": "OLBG prices Cardiff at 14:45 with the Sharks as 4/7 favourites, while the URC fixture list places the same match at the same time. The match is confirmed; the price direction on the hub is not something this desk can check against a league source, which publishes no prices.",
+  "action": "Fixture confirmed from the URC; the hub's selection direction is quoted, not endorsed.",
+  "source": "src-urc-r4"
+ },
+ {
+  "id": "F-CF-20",
+  "severity": "medium",
+  "sport": "handball",
+  "row": "GRK Ohrid v Spor Toto",
+  "issue": "OLBG lists this as an EHF European Cup tie at 12:30 with a +11.50 handicap on the away side. No EHF page was read, so neither the competition nor the line could be confirmed.",
+  "action": "Row stays discovery-only.",
+  "source": "src-olbg-hubs"
+ },
+ {
+  "id": "F-CF-21",
+  "severity": "high",
+  "sport": "all sports",
+  "row": "zero High picks",
+  "issue": "The brief's High rule needs a win chance above 70% and a price no shorter than -250. Those two conditions together admit only 70.0% to 71.4%. The strongest confirmed selection today, Edinburgh at about 85%, prices at -567; the next, Connacht at about 59%, is nowhere near the floor.",
+  "action": "Zero High picks published, with the arithmetic shown rather than a quota filled.",
+  "source": "src-urc-r4"
+ }
+]

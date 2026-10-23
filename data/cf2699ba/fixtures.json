@@ -1,335 +1,95 @@
-{
- "session": "cf2699ba-olbg1",
- "observed": "2026-10-23T16:17Z/2026-10-23T16:40Z",
- "count": 6,
- "fixtures": [
-  {
-   "id": "fx-nhl-mtl-chi",
-   "sport": "ice-hockey",
-   "name": "Montreal Canadiens at Chicago Blackhawks",
-   "home": "Chicago Blackhawks",
-   "away": "Montreal Canadiens",
-   "competition": "NHL",
-   "official_start_utc": "2026-10-24T00:00:00Z",
-   "venue": "United Center",
-   "status": "FUT (scheduled, not started)",
-   "olbg_event_id": 199984,
-   "olbg_time_text": "Today 20:07",
-   "sources": [
-    "src-nhl-schedule"
-   ],
-   "game_id": "2026020166",
-   "facts": [
-    {
-     "k": "Official start",
-     "v": "2026-10-24T00:00:00Z",
-     "src": "src-nhl-schedule"
-    },
-    {
-     "k": "Venue",
-     "v": "United Center, Chicago",
-     "src": "src-nhl-schedule"
-    },
-    {
-     "k": "Game state",
-     "v": "FUT; gameScheduleState OK",
-     "src": "src-nhl-schedule"
-    },
-    {
-     "k": "Quoted prices (provider 8/9/7)",
-     "v": "MTL -170 / -170 / -162; CHI +138 / +142 / +134",
-     "src": "src-nhl-schedule"
-    },
-    {
-     "k": "Contradicting quotes (provider 6/3/10)",
-     "v": "MTL 2.35 / 1.60 / 2.03; CHI 1.59 / 2.37 / 3.15",
-     "src": "src-nhl-schedule"
-    }
-   ],
-   "inputs": {
-    "kind": "nhl-provider-quotes",
-    "providers_used": [
-     8,
-     9,
-     7
-    ]
-   }
-  },
-  {
-   "id": "fx-nhl-tbl-col",
-   "sport": "ice-hockey",
-   "name": "Tampa Bay Lightning at Colorado Avalanche",
-   "home": "Colorado Avalanche",
-   "away": "Tampa Bay Lightning",
-   "competition": "NHL",
-   "official_start_utc": "2026-10-24T01:00:00Z",
-   "venue": "Ball Arena",
-   "status": "FUT (scheduled, not started)",
-   "olbg_event_id": null,
-   "olbg_time_text": "not present in the OLBG ice-hockey top list captured 16:21Z",
-   "sources": [
-    "src-nhl-schedule"
-   ],
-   "game_id": "2026020167",
-   "facts": [
-    {
-     "k": "Official start",
-     "v": "2026-10-24T01:00:00Z",
-     "src": "src-nhl-schedule"
-    },
-    {
-     "k": "Venue",
-     "v": "Ball Arena, Denver",
-     "src": "src-nhl-schedule"
-    },
-    {
-     "k": "Game state",
-     "v": "FUT; gameScheduleState OK",
-     "src": "src-nhl-schedule"
-    },
-    {
-     "k": "Quoted prices (provider 8/9/7)",
-     "v": "TBL +105 / +105 / +106; COL -129 / -125 / -128",
-     "src": "src-nhl-schedule"
-    }
-   ],
-   "inputs": {
-    "kind": "nhl-provider-quotes",
-    "providers_used": [
-     8,
-     9,
-     7
-    ]
-   }
-  },
-  {
-   "id": "fx-mlb-ws-g1",
-   "sport": "baseball",
-   "name": "Tampa Bay Rays at Milwaukee Brewers — World Series Game 1",
-   "home": "Milwaukee Brewers",
-   "away": "Tampa Bay Rays",
-   "competition": "MLB World Series",
-   "official_start_utc": "2026-10-24T00:00:00Z",
-   "venue": "American Family Field",
-   "status": "Scheduled (statusCode S, startTimeTBD false)",
-   "olbg_event_id": 160789,
-   "olbg_time_text": "Today 20:00",
-   "sources": [
-    "src-mlb-schedule",
-    "src-mlb-standings-al",
-    "src-mlb-records-capture"
-   ],
-   "game_id": "849805",
-   "facts": [
-    {
-     "k": "Official date / start",
-     "v": "officialDate 2026-10-23; gameDate 2026-10-24T00:00:00Z",
-     "src": "src-mlb-schedule"
-    },
-    {
-     "k": "Series",
-     "v": "World Series Game 1 of 7; isTied true",
-     "src": "src-mlb-schedule"
-    },
-    {
-     "k": "ifNecessary",
-     "v": "N (Normal Game)",
-     "src": "src-mlb-schedule"
-    },
-    {
-     "k": "Probable pitchers",
-     "v": "TB Nick Martinez; MIL Jacob Misiorowski",
-     "src": "src-mlb-schedule"
-    },
-    {
-     "k": "Tampa Bay regular season",
-     "v": "98-64 (.605); home 55-26; away 43-38; RS 736 RA 650; lastTen 5-5",
-     "src": "src-mlb-standings-al"
-    },
-    {
-     "k": "Milwaukee regular season",
-     "v": "103-59; RS 832 RA 618 (capture 2026-10-22)",
-     "src": "src-mlb-records-capture"
-    }
-   ],
-   "inputs": {
-    "kind": "mlb-records",
-    "away_rs": 736,
-    "away_ra": 650,
-    "away_g": 162,
-    "home_rs": 832,
-    "home_ra": 618,
-    "home_g": 162,
-    "away_pct": 0.605,
-    "home_pct": 0.639
-   }
-  },
-  {
-   "id": "fx-urc-cardiff-sharks",
-   "sport": "rugby-union",
-   "name": "Cardiff Rugby v Hollywoodbets Sharks",
-   "home": "Cardiff Rugby",
-   "away": "Hollywoodbets Sharks",
-   "competition": "United Rugby Championship Round 4",
-   "official_start_utc": null,
-   "local_start": "14:45 local (23 Oct 2026) — URC publishes local time only",
-   "venue": "Cardiff Arms Park",
-   "status": "Scheduled",
-   "olbg_event_id": 609575,
-   "olbg_time_text": "Today 14:45",
-   "sources": [
-    "src-urc-round4"
-   ],
-   "facts": [
-    {
-     "k": "Fixture and local kick-off",
-     "v": "Fri 23 Oct 2026, 14:45, Cardiff Arms Park",
-     "src": "src-urc-round4"
-    },
-    {
-     "k": "Round 3 form — Cardiff",
-     "v": "Leinster 29-5 Cardiff (away, 10 Oct)",
-     "src": "src-urc-round4"
-    },
-    {
-     "k": "Round 3 form — Sharks",
-     "v": "DHL Stormers 39-22 Hollywoodbets Sharks (away, 10 Oct)",
-     "src": "src-urc-round4"
-    }
-   ],
-   "inputs": {
-    "kind": "urc-form",
-    "hf": 3.0,
-    "sigma": 13.0
-   }
-  },
-  {
-   "id": "fx-urc-connacht-zebre",
-   "sport": "rugby-union",
-   "name": "Connacht Rugby v Zebre Parma",
-   "home": "Connacht Rugby",
-   "away": "Zebre Parma",
-   "competition": "United Rugby Championship Round 4",
-   "official_start_utc": null,
-   "local_start": "14:45 local (23 Oct 2026) — URC publishes local time only",
-   "venue": "Dexcom Stadium",
-   "status": "Scheduled",
-   "olbg_event_id": 609577,
-   "olbg_time_text": "Today 14:45",
-   "sources": [
-    "src-urc-round4"
-   ],
-   "facts": [
-    {
-     "k": "Fixture and local kick-off",
-     "v": "Fri 23 Oct 2026, 14:45, Dexcom Stadium",
-     "src": "src-urc-round4"
-    },
-    {
-     "k": "Round 3 form — Connacht",
-     "v": "Glasgow Warriors 36-19 Connacht (away, 9 Oct)",
-     "src": "src-urc-round4"
-    },
-    {
-     "k": "Round 3 form — Zebre",
-     "v": "Zebre Parma 12-29 Edinburgh (home, 10 Oct)",
-     "src": "src-urc-round4"
-    }
-   ],
-   "inputs": {
-    "kind": "urc-form",
-    "hf": 3.0,
-    "sigma": 13.0
-   }
-  },
-  {
-   "id": "fx-urc-edinburgh-lions",
-   "sport": "rugby-union",
-   "name": "Edinburgh Rugby v 10bet Lions",
-   "home": "Edinburgh Rugby",
-   "away": "10bet Lions",
-   "competition": "United Rugby Championship Round 4",
-   "official_start_utc": null,
-   "local_start": "14:45 local (23 Oct 2026) — URC publishes local time only",
-   "venue": "Hive Stadium",
-   "status": "Scheduled",
-   "olbg_event_id": 609579,
-   "olbg_time_text": "Today 14:45",
-   "sources": [
-    "src-urc-round4"
-   ],
-   "facts": [
-    {
-     "k": "Fixture and local kick-off",
-     "v": "Fri 23 Oct 2026, 14:45, Hive Stadium",
-     "src": "src-urc-round4"
-    },
-    {
-     "k": "Round 3 form — Edinburgh",
-     "v": "Zebre Parma 12-29 Edinburgh (away, 10 Oct)",
-     "src": "src-urc-round4"
-    },
-    {
-     "k": "Round 3 form — Lions",
-     "v": "Vodacom Bulls 57-15 10bet Lions (away, 10 Oct)",
-     "src": "src-urc-round4"
-    }
-   ],
-   "inputs": {
-    "kind": "urc-form",
-    "hf": 3.0,
-    "sigma": 13.0
-   }
-  }
- ],
- "urc_round3_results": [
-  {
-   "home": "Glasgow Warriors",
-   "away": "Connacht",
-   "hs": 36,
-   "as": 19
-  },
-  {
-   "home": "Dragons RFC",
-   "away": "Ospreys",
-   "hs": 31,
-   "as": 38
-  },
-  {
-   "home": "Vodacom Bulls",
-   "away": "Lions",
-   "hs": 57,
-   "as": 15
-  },
-  {
-   "home": "DHL Stormers",
-   "away": "Sharks",
-   "hs": 39,
-   "as": 22
-  },
-  {
-   "home": "Zebre Parma",
-   "away": "Edinburgh",
-   "hs": 12,
-   "as": 29
-  },
-  {
-   "home": "Scarlets",
-   "away": "Benetton",
-   "hs": 27,
-   "as": 26
-  },
-  {
-   "home": "Ulster",
-   "away": "Munster",
-   "hs": 26,
-   "as": 26
-  },
-  {
-   "home": "Leinster",
-   "away": "Cardiff Rugby",
-   "hs": 29,
-   "as": 5
-  }
- ]
-}
+[
+ {
+  "id": "fx-nhl-mtl-chi",
+  "sport": "ice-hockey",
+  "olbg_event_id": 199984,
+  "name": "Montreal Canadiens at Chicago Blackhawks",
+  "home": "Chicago Blackhawks",
+  "away": "Montreal Canadiens",
+  "competition": "NHL",
+  "start_utc": "2026-10-24T00:00Z",
+  "venue": "United Center, Chicago",
+  "evidence": "src-nhl-schedule",
+  "official_id": "game 2026020166",
+  "state": "FUT (pre-game at read time)",
+  "notes": "The league lists exactly two games for 23 October; this is one of them."
+ },
+ {
+  "id": "fx-nhl-tbl-col",
+  "sport": "ice-hockey",
+  "olbg_event_id": null,
+  "name": "Tampa Bay Lightning at Colorado Avalanche",
+  "home": "Colorado Avalanche",
+  "away": "Tampa Bay Lightning",
+  "competition": "NHL",
+  "start_utc": "2026-10-24T01:00Z",
+  "venue": "Ball Arena, Denver",
+  "evidence": "src-nhl-schedule",
+  "official_id": "game 2026020167",
+  "state": "FUT (pre-game at read time)",
+  "notes": "Not on the OLBG hub at capture time: a confirmed fixture with no listing."
+ },
+ {
+  "id": "fx-mlb-ws-g1",
+  "sport": "baseball",
+  "olbg_event_id": 160789,
+  "name": "Tampa Bay Rays at Milwaukee Brewers",
+  "home": "Milwaukee Brewers",
+  "away": "Tampa Bay Rays",
+  "competition": "World Series, Game 1 of 7",
+  "start_utc": "2026-10-24T00:00Z",
+  "venue": "American Family Field, Milwaukee",
+  "evidence": "src-mlb-schedule",
+  "official_id": "gamePk 849805",
+  "state": "Scheduled; probable pitchers Nick Martinez (TB), Jacob Misiorowski (MIL)",
+  "notes": "ifNecessary=N, so the game is not contingent on another result."
+ },
+ {
+  "id": "fx-urc-car-sha",
+  "sport": "rugby-union",
+  "olbg_event_id": 609575,
+  "name": "Cardiff v Hollywoodbets Sharks",
+  "home": "Cardiff",
+  "away": "Sharks",
+  "competition": "United Rugby Championship, Round 4",
+  "start_utc": null,
+  "local_time": "14:45 local, Friday 23 October",
+  "venue": "Cardiff Arms Park",
+  "evidence": "src-urc-r4",
+  "official_id": "Round 4 fixture list",
+  "state": "Scheduled",
+  "notes": "The URC prints local time only; no UTC conversion is published because the page does not state an offset."
+ },
+ {
+  "id": "fx-urc-con-zeb",
+  "sport": "rugby-union",
+  "olbg_event_id": 609577,
+  "name": "Connacht v Zebre Parma",
+  "home": "Connacht",
+  "away": "Zebre Parma",
+  "competition": "United Rugby Championship, Round 4",
+  "start_utc": null,
+  "local_time": "14:45 local, Friday 23 October",
+  "venue": "Dexcom Stadium, Galway",
+  "evidence": "src-urc-r4",
+  "official_id": "Round 4 fixture list",
+  "state": "Scheduled",
+  "notes": "Local time only, as above."
+ },
+ {
+  "id": "fx-urc-edi-lio",
+  "sport": "rugby-union",
+  "olbg_event_id": 609579,
+  "name": "Edinburgh v Emirates Lions",
+  "home": "Edinburgh",
+  "away": "Lions",
+  "competition": "United Rugby Championship, Round 4",
+  "start_utc": null,
+  "local_time": "14:45 local, Friday 23 October",
+  "venue": "Hive Stadium, Edinburgh",
+  "evidence": "src-urc-r4",
+  "official_id": "Round 4 fixture list",
+  "state": "Scheduled",
+  "notes": "Local time only, as above."
+ }
+]
