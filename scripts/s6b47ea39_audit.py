@@ -208,8 +208,9 @@ def main() -> None:
         f"{near_edge} of {total_priced} inherited priced lines fall between 0.700 and 0.720, and the most "
         "repeated single value appears many times across unrelated matches and sports. That is the signature "
         "of a pricing pass tuned to land just inside the threshold rather than five independent assessments. "
-        "This desk keeps those prices only where two source desks independently produced a comparable number, "
-        "and marks every single-source line as such.",
+        "This desk does not treat the clustering as evidence of agreement: every pick records which desks priced "
+        "it, and 65 of the 125 fixtures rest on a single desk, so a repeated number is usually one desk repeating "
+        "itself rather than two desks converging.",
         "internal distribution check",
     )
 
