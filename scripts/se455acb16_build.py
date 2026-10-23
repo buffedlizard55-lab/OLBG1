@@ -294,7 +294,7 @@ def build(at,out):
     pending='<div class="empty"><span class="empty-icon">○</span><h3>No supported High-confidence picks</h3><p>Official fixture facts are not the same as a reliable betting edge. Current OLBG eligibility, eligible bookmaker quotes and the full calibration/context gate are missing. The 75-pick daily High target remains unfilled.</p><a class="button" href="flagged.html#F-03">See the confidence gap →</a></div>'
     kpis='<div class="kpis">'+"".join(f'<div class="kpi"><p>{label}</p><strong>{value}</strong><small>{sub}</small></div>' for label,value,sub in [
         ("Recorded listings",counts["listings"],f'{counts["match_listings"]} match listings + {counts["field_event_listings"]} field sessions/events'),
-        ("Priced matches",counts["priced_matches"],f'{counts["markets"]} markets · {counts["outcomes"]} outcomes · all Low'),
+        ("Price books · as of build",counts["priced_matches"],f'{counts["markets"]} markets · {counts["outcomes"]} outcomes · all Low'),
         ("High-confidence picks",counts["high"],"0 of the 75 daily target supported"),
         ("Brief categories","15",f'0 complete · {counts["flagged"]} review entries'),])+'</div>'
     # Today in the user's location; exact starts only. Runtime controls adjust the view.
@@ -304,6 +304,9 @@ def build(at,out):
     tonight=[f for f in exact if parse_time(f["start_utc"]).astimezone(ZoneInfo("America/Los_Angeles")).date()==today]
     research_ids={fid for c in d["coverage"] for fid in c["top_research_ids"]}
     upcoming=[f for f in exact if f["id"] in research_ids and f not in tonight]
+    order=lambda f:(-books[f["id"]]["probability"], f["start_utc"], f["id"])
+    tonight.sort(key=order)
+    upcoming.sort(key=order)
     write("index.html","The match research desk",intro("A clear view of the evidence, the prices we can actually calculate, and the gaps we cannot fill. Exactly the 15 sports in your brief. Every accepted sporting field is linked to a retained official-source observation; no inherited High label is carried forward.")+kpis+
         '<div class="notice amber"><strong>Important: this is a partial research release, not a complete live OLBG list.</strong> Official fixtures and current tip-submission availability are separate checks. The live OLBG cards did not render in this retrieval channel. Unknown values stay blank and flagged.</div>'+
         panel("Executive summary · High confidence",pending,"Today and upcoming — no supported High selection, no quota-driven predictions.")+
