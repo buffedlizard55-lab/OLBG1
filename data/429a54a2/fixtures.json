@@ -1,0 +1,4834 @@
+[
+ {
+  "id": "nhl-101",
+  "sport": "ice-hockey",
+  "sport_name": "Ice Hockey",
+  "competition": "NHL",
+  "stage": "Regular season",
+  "participant_a": "Montreal Canadiens",
+  "participant_b": "Chicago Blackhawks",
+  "start_utc": "2026-10-24T00:00:00Z",
+  "date": null,
+  "venue": "United Center, Chicago",
+  "status": "verified",
+  "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+  "official_label": "NHL schedule API, game 2026020166",
+  "observed": "2026-10-23T16:18Z-16:20Z",
+  "notes": "gameState FUT; Montreal 4-3-2 (10 pts), Chicago 3-6-0 (6 pts).",
+  "tier": "High",
+  "price": {
+   "fixture_id": "nhl-101",
+   "markets": [
+    {
+     "market": "match_winner",
+     "selection": "Montreal Canadiens",
+     "probability": 0.7142857142857142,
+     "american": -250,
+     "fair_decimal": 1.4000000000000001
+    },
+    {
+     "market": "match_winner",
+     "selection": "Chicago Blackhawks",
+     "probability": 0.2857142857142858,
+     "american": 250,
+     "fair_decimal": 3.4999999999999987
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Montreal Canadiens",
+     "probability": 0.36041472058162766,
+     "american": 177,
+     "fair_decimal": 2.774581455458386
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Chicago Blackhawks",
+     "probability": 0.7968236543231009,
+     "american": -392,
+     "fair_decimal": 1.2549828240848306
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Montreal Canadiens",
+     "probability": 0.7968236543231009,
+     "american": -392,
+     "fair_decimal": 1.2549828240848306
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Chicago Blackhawks",
+     "probability": 0.36041472058162766,
+     "american": 177,
+     "fair_decimal": 2.774581455458386
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Over 5.5 goals",
+     "probability": 0.6624176139278906,
+     "american": -196,
+     "fair_decimal": 1.5096216932855562
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Under 5.5 goals",
+     "probability": 0.33758238607210944,
+     "american": 196,
+     "fair_decimal": 2.962239859832007
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Over 6.5 goals",
+     "probability": 0.5081336893630038,
+     "american": -103,
+     "fair_decimal": 1.9679860259877662
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Under 6.5 goals",
+     "probability": 0.49186631063699615,
+     "american": 103,
+     "fair_decimal": 2.0330727646399294
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Over 7.5 goals",
+     "probability": 0.35997214275704065,
+     "american": 178,
+     "fair_decimal": 2.7779927422743356
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Under 7.5 goals",
+     "probability": 0.6400278572429594,
+     "american": -178,
+     "fair_decimal": 1.5624319921131065
+    }
+   ],
+   "selection": "Montreal Canadiens",
+   "probability": 0.7142857142857142,
+   "american": -250,
+   "fair_decimal": 1.4000000000000001,
+   "tier": "High",
+   "in_window": true,
+   "withheld": [],
+   "notes": [],
+   "basis": "log5 of official points percentages 0.5556 v 0.3333; expected goals 3.67-3.06 from GF/GP and GA/GP; no home edge",
+   "americain": -250
+  }
+ },
+ {
+  "id": "nhl-102",
+  "sport": "ice-hockey",
+  "sport_name": "Ice Hockey",
+  "competition": "NHL",
+  "stage": "Regular season",
+  "participant_a": "Tampa Bay Lightning",
+  "participant_b": "Colorado Avalanche",
+  "start_utc": "2026-10-24T01:00:00Z",
+  "date": null,
+  "venue": "Ball Arena, Denver",
+  "status": "verified",
+  "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+  "official_label": "NHL schedule API, game 2026020167",
+  "observed": "2026-10-23T16:18Z-16:20Z",
+  "notes": "Tampa Bay 7-2-0 (14 pts); Colorado 5-4-1 (11 pts).",
+  "tier": "High (price outside -250..+10000)",
+  "price": {
+   "fixture_id": "nhl-102",
+   "markets": [
+    {
+     "market": "match_winner",
+     "selection": "Tampa Bay Lightning",
+     "probability": 0.7411764705882352,
+     "american": -286,
+     "fair_decimal": 1.3492063492063493
+    },
+    {
+     "market": "match_winner",
+     "selection": "Colorado Avalanche",
+     "probability": 0.2588235294117648,
+     "american": 286,
+     "fair_decimal": 3.8636363636363624
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Tampa Bay Lightning",
+     "probability": 0.26757327712566364,
+     "american": 274,
+     "fair_decimal": 3.7372939881823775
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Colorado Avalanche",
+     "probability": 0.7179670161688,
+     "american": -255,
+     "fair_decimal": 1.3928216442813464
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Tampa Bay Lightning",
+     "probability": 0.7179670161688,
+     "american": -255,
+     "fair_decimal": 1.3928216442813464
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Colorado Avalanche",
+     "probability": 0.26757327712566364,
+     "american": 274,
+     "fair_decimal": 3.7372939881823775
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Over 5.5 goals",
+     "probability": 0.6453260892045206,
+     "american": -182,
+     "fair_decimal": 1.5496041717958098
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Under 5.5 goals",
+     "probability": 0.3546739107954794,
+     "american": 182,
+     "fair_decimal": 2.819491283576942
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Over 6.5 goals",
+     "probability": 0.4891597117338997,
+     "american": 104,
+     "fair_decimal": 2.044322081340981
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Under 6.5 goals",
+     "probability": 0.5108402882661003,
+     "american": -104,
+     "fair_decimal": 1.957558992447935
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Over 7.5 goals",
+     "probability": 0.3419171272615994,
+     "american": 192,
+     "fair_decimal": 2.924685311932046
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Under 7.5 goals",
+     "probability": 0.6580828727384006,
+     "american": -192,
+     "fair_decimal": 1.519565455090513
+    }
+   ],
+   "selection": "Tampa Bay Lightning",
+   "probability": 0.7411764705882352,
+   "american": -286,
+   "fair_decimal": 1.3492063492063493,
+   "tier": "High (price outside -250..+10000)",
+   "in_window": false,
+   "withheld": [],
+   "notes": [],
+   "basis": "log5 of official points percentages 0.7778 v 0.5500; expected goals 3.27-3.33 from GF/GP and GA/GP; no home edge",
+   "americain": -286
+  }
+ },
+ {
+  "id": "nhl-103",
+  "sport": "ice-hockey",
+  "sport_name": "Ice Hockey",
+  "competition": "NHL",
+  "stage": "Regular season",
+  "participant_a": "Anaheim Ducks",
+  "participant_b": "Philadelphia Flyers",
+  "start_utc": "2026-10-24T17:00:00Z",
+  "date": null,
+  "venue": "Xfinity Mobile Arena, Philadelphia",
+  "status": "verified",
+  "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+  "official_label": "NHL schedule API, game 2026020168",
+  "observed": "2026-10-23T16:18Z-16:20Z",
+  "notes": "Anaheim 4-6-0 (8 pts, five-game losing run); Philadelphia 3-6-3 (9 pts, 20 GF in 12 GP).",
+  "tier": "Low",
+  "price": {
+   "fixture_id": "nhl-103",
+   "markets": [
+    {
+     "market": "match_winner",
+     "selection": "Anaheim Ducks",
+     "probability": 0.5263157894736842,
+     "american": -111,
+     "fair_decimal": 1.9000000000000001
+    },
+    {
+     "market": "match_winner",
+     "selection": "Philadelphia Flyers",
+     "probability": 0.4736842105263158,
+     "american": 111,
+     "fair_decimal": 2.111111111111111
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Anaheim Ducks",
+     "probability": 0.3118390599301175,
+     "american": 221,
+     "fair_decimal": 3.2067823710862196
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Philadelphia Flyers",
+     "probability": 0.8007938263352992,
+     "american": -402,
+     "fair_decimal": 1.2487608759127615
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Anaheim Ducks",
+     "probability": 0.8007938263352992,
+     "american": -402,
+     "fair_decimal": 1.2487608759127615
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Philadelphia Flyers",
+     "probability": 0.3118390599301175,
+     "american": 221,
+     "fair_decimal": 3.2067823710862196
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Over 5.5 goals",
+     "probability": 0.449543350853961,
+     "american": 122,
+     "fair_decimal": 2.224479570436046
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Under 5.5 goals",
+     "probability": 0.550456649146039,
+     "american": -122,
+     "fair_decimal": 1.816673486552244
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Over 6.5 goals",
+     "probability": 0.294445608958291,
+     "american": 240,
+     "fair_decimal": 3.3962129832326777
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Under 6.5 goals",
+     "probability": 0.705554391041709,
+     "american": -240,
+     "fair_decimal": 1.4173251739296238
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Over 7.5 goals",
+     "probability": 0.17535270000268752,
+     "american": 470,
+     "fair_decimal": 5.702792143974251
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Under 7.5 goals",
+     "probability": 0.8246472999973125,
+     "american": -470,
+     "fair_decimal": 1.2126396339420005
+    }
+   ],
+   "selection": "Anaheim Ducks",
+   "probability": 0.5263157894736842,
+   "american": -111,
+   "fair_decimal": 1.9000000000000001,
+   "tier": "Low",
+   "in_window": true,
+   "withheld": [],
+   "notes": [],
+   "basis": "log5 of official points percentages 0.4000 v 0.3750; expected goals 2.89-2.48 from GF/GP and GA/GP; no home edge",
+   "americain": -111
+  }
+ },
+ {
+  "id": "nhl-104",
+  "sport": "ice-hockey",
+  "sport_name": "Ice Hockey",
+  "competition": "NHL",
+  "stage": "Regular season",
+  "participant_a": "Los Angeles Kings",
+  "participant_b": "New Jersey Devils",
+  "start_utc": "2026-10-24T19:30:00Z",
+  "date": null,
+  "venue": "Prudential Center, Newark",
+  "status": "verified",
+  "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+  "official_label": "NHL schedule API, game 2026020169",
+  "observed": "2026-10-23T16:18Z-16:20Z",
+  "notes": "Los Angeles 2-4-2 (6 pts, 20 GF); New Jersey 6-4-0 (12 pts).",
+  "tier": "Low",
+  "price": {
+   "fixture_id": "nhl-104",
+   "markets": [
+    {
+     "market": "match_winner",
+     "selection": "Los Angeles Kings",
+     "probability": 0.28571428571428575,
+     "american": 250,
+     "fair_decimal": 3.4999999999999996
+    },
+    {
+     "market": "match_winner",
+     "selection": "New Jersey Devils",
+     "probability": 0.7142857142857142,
+     "american": -250,
+     "fair_decimal": 1.4000000000000001
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Los Angeles Kings",
+     "probability": 0.18874612449638353,
+     "american": 430,
+     "fair_decimal": 5.298122028562025
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "New Jersey Devils",
+     "probability": 0.6371601944204703,
+     "american": -176,
+     "fair_decimal": 1.5694640198130252
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Los Angeles Kings",
+     "probability": 0.6371601944204703,
+     "american": -176,
+     "fair_decimal": 1.5694640198130252
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "New Jersey Devils",
+     "probability": 0.18874612449638353,
+     "american": 430,
+     "fair_decimal": 5.298122028562025
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Over 5.5 goals",
+     "probability": 0.5955104483654658,
+     "american": -147,
+     "fair_decimal": 1.6792316620888206
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Under 5.5 goals",
+     "probability": 0.40448955163453415,
+     "american": 147,
+     "fair_decimal": 2.47225174533933
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Over 6.5 goals",
+     "probability": 0.43578109117582403,
+     "american": 129,
+     "fair_decimal": 2.2947301299875154
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Under 6.5 goals",
+     "probability": 0.564218908824176,
+     "american": -129,
+     "fair_decimal": 1.7723617276209076
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Over 7.5 goals",
+     "probability": 0.2928803626900898,
+     "american": 241,
+     "fair_decimal": 3.414363430907609
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Under 7.5 goals",
+     "probability": 0.7071196373099102,
+     "american": -241,
+     "fair_decimal": 1.4141878505938432
+    }
+   ],
+   "selection": "Los Angeles Kings",
+   "probability": 0.28571428571428575,
+   "american": 250,
+   "fair_decimal": 3.4999999999999996,
+   "tier": "Low",
+   "in_window": true,
+   "withheld": [],
+   "notes": [],
+   "basis": "log5 of official points percentages 0.3750 v 0.6000; expected goals 2.80-3.46 from GF/GP and GA/GP; no home edge",
+   "americain": 250
+  }
+ },
+ {
+  "id": "nhl-105",
+  "sport": "ice-hockey",
+  "sport_name": "Ice Hockey",
+  "competition": "NHL",
+  "stage": "Regular season",
+  "participant_a": "San Jose Sharks",
+  "participant_b": "Boston Bruins",
+  "start_utc": "2026-10-24T23:00:00Z",
+  "date": null,
+  "venue": "TD Garden, Boston",
+  "status": "verified",
+  "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+  "official_label": "NHL schedule API, game 2026020170",
+  "observed": "2026-10-23T16:18Z-16:20Z",
+  "notes": "San Jose 6-4-1 (13 pts, two straight wins); Boston 8-2-1 (17 pts, 42 GF / 22 GA).",
+  "tier": "Low",
+  "price": {
+   "fixture_id": "nhl-105",
+   "markets": [
+    {
+     "market": "match_winner",
+     "selection": "San Jose Sharks",
+     "probability": 0.298165137614679,
+     "american": 235,
+     "fair_decimal": 3.3538461538461526
+    },
+    {
+     "market": "match_winner",
+     "selection": "Boston Bruins",
+     "probability": 0.701834862385321,
+     "american": -235,
+     "fair_decimal": 1.4248366013071898
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "San Jose Sharks",
+     "probability": 0.14144863885796527,
+     "american": 607,
+     "fair_decimal": 7.06970394394635
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Boston Bruins",
+     "probability": 0.5728338838716813,
+     "american": -134,
+     "fair_decimal": 1.7457067889231335
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "San Jose Sharks",
+     "probability": 0.5728338838716813,
+     "american": -134,
+     "fair_decimal": 1.7457067889231335
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Boston Bruins",
+     "probability": 0.14144863885796527,
+     "american": 607,
+     "fair_decimal": 7.06970394394635
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Over 5.5 goals",
+     "probability": 0.5688083733011362,
+     "american": -132,
+     "fair_decimal": 1.7580613207157978
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Under 5.5 goals",
+     "probability": 0.4311916266988638,
+     "american": 132,
+     "fair_decimal": 2.3191544967045044
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Over 6.5 goals",
+     "probability": 0.40829471207549367,
+     "american": 145,
+     "fair_decimal": 2.4492112447811962
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Under 6.5 goals",
+     "probability": 0.5917052879245064,
+     "american": -145,
+     "fair_decimal": 1.6900305277102519
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Over 7.5 goals",
+     "probability": 0.268626980879156,
+     "american": 272,
+     "fair_decimal": 3.7226342518805215
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Under 7.5 goals",
+     "probability": 0.7313730191208441,
+     "american": -272,
+     "fair_decimal": 1.3672913463530036
+    }
+   ],
+   "selection": "San Jose Sharks",
+   "probability": 0.298165137614679,
+   "american": 235,
+   "fair_decimal": 3.3538461538461526,
+   "tier": "Low",
+   "in_window": true,
+   "withheld": [],
+   "notes": [],
+   "basis": "log5 of official points percentages 0.5909 v 0.7727; expected goals 2.50-3.59 from GF/GP and GA/GP; no home edge",
+   "americain": 235
+  }
+ },
+ {
+  "id": "nhl-106",
+  "sport": "ice-hockey",
+  "sport_name": "Ice Hockey",
+  "competition": "NHL",
+  "stage": "Regular season",
+  "participant_a": "New York Rangers",
+  "participant_b": "Ottawa Senators",
+  "start_utc": "2026-10-24T23:00:00Z",
+  "date": null,
+  "venue": "Canadian Tire Centre, Ottawa",
+  "status": "verified",
+  "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+  "official_label": "NHL schedule API, game 2026020171",
+  "observed": "2026-10-23T16:18Z-16:20Z",
+  "notes": "Rangers 7-4-1 (15 pts) but 1-4-1 on the road; Ottawa 7-4-0 (14 pts).",
+  "tier": null,
+  "price": {
+   "fixture_id": "nhl-106",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "official standings row missing"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "nhl-107",
+  "sport": "ice-hockey",
+  "sport_name": "Ice Hockey",
+  "competition": "NHL",
+  "stage": "Regular season",
+  "participant_a": "Nashville Predators",
+  "participant_b": "Pittsburgh Penguins",
+  "start_utc": "2026-10-24T23:00:00Z",
+  "date": null,
+  "venue": "PPG Paints Arena, Pittsburgh",
+  "status": "verified",
+  "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+  "official_label": "NHL schedule API, game 2026020172",
+  "observed": "2026-10-23T16:18Z-16:20Z",
+  "notes": "Nashville 3-3-3 (9 pts); Pittsburgh 4-6-1 (9 pts).",
+  "tier": "Low",
+  "price": {
+   "fixture_id": "nhl-107",
+   "markets": [
+    {
+     "market": "match_winner",
+     "selection": "Nashville Predators",
+     "probability": 0.5909090909090908,
+     "american": -144,
+     "fair_decimal": 1.6923076923076925
+    },
+    {
+     "market": "match_winner",
+     "selection": "Pittsburgh Penguins",
+     "probability": 0.40909090909090917,
+     "american": 144,
+     "fair_decimal": 2.4444444444444438
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Nashville Predators",
+     "probability": 0.22735524612218033,
+     "american": 340,
+     "fair_decimal": 4.398403014912626
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Pittsburgh Penguins",
+     "probability": 0.6823484000232488,
+     "american": -215,
+     "fair_decimal": 1.4655269946642042
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Nashville Predators",
+     "probability": 0.6823484000232488,
+     "american": -215,
+     "fair_decimal": 1.4655269946642042
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Pittsburgh Penguins",
+     "probability": 0.22735524612218033,
+     "american": 340,
+     "fair_decimal": 4.398403014912626
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Over 5.5 goals",
+     "probability": 0.6093127033503559,
+     "american": -156,
+     "fair_decimal": 1.6411934208845769
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Under 5.5 goals",
+     "probability": 0.3906872966496441,
+     "american": 156,
+     "fair_decimal": 2.5595917977767475
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Over 6.5 goals",
+     "probability": 0.45029156279782584,
+     "american": 122,
+     "fair_decimal": 2.2207833382145448
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Under 6.5 goals",
+     "probability": 0.5497084372021741,
+     "american": -122,
+     "fair_decimal": 1.8191461733599257
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Over 7.5 goals",
+     "probability": 0.30595635730353754,
+     "american": 227,
+     "fair_decimal": 3.268440011553366
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Under 7.5 goals",
+     "probability": 0.6940436426964625,
+     "american": -227,
+     "fair_decimal": 1.4408315824561864
+    }
+   ],
+   "selection": "Nashville Predators",
+   "probability": 0.5909090909090908,
+   "american": -144,
+   "fair_decimal": 1.6923076923076925,
+   "tier": "Low",
+   "in_window": true,
+   "withheld": [],
+   "notes": [],
+   "basis": "log5 of official points percentages 0.5000 v 0.4091; expected goals 3.01-3.35 from GF/GP and GA/GP; no home edge",
+   "americain": -144
+  }
+ },
+ {
+  "id": "nhl-108",
+  "sport": "ice-hockey",
+  "sport_name": "Ice Hockey",
+  "competition": "NHL",
+  "stage": "Regular season",
+  "participant_a": "Buffalo Sabres",
+  "participant_b": "Washington Capitals",
+  "start_utc": "2026-10-24T23:00:00Z",
+  "date": null,
+  "venue": "Capital One Arena, Washington",
+  "status": "verified",
+  "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+  "official_label": "NHL schedule API, game 2026020173",
+  "observed": "2026-10-23T16:18Z-16:20Z",
+  "notes": "Buffalo 4-4-2 (10 pts); Washington 5-4-0 (10 pts).",
+  "tier": "Low",
+  "price": {
+   "fixture_id": "nhl-108",
+   "markets": [
+    {
+     "market": "match_winner",
+     "selection": "Buffalo Sabres",
+     "probability": 0.4444444444444444,
+     "american": 125,
+     "fair_decimal": 2.25
+    },
+    {
+     "market": "match_winner",
+     "selection": "Washington Capitals",
+     "probability": 0.5555555555555556,
+     "american": -125,
+     "fair_decimal": 1.7999999999999998
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Buffalo Sabres",
+     "probability": 0.21149446960321833,
+     "american": 373,
+     "fair_decimal": 4.7282560242643
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Washington Capitals",
+     "probability": 0.6569769320408214,
+     "american": -192,
+     "fair_decimal": 1.5221234585720047
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Buffalo Sabres",
+     "probability": 0.6569769320408214,
+     "american": -192,
+     "fair_decimal": 1.5221234585720047
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Washington Capitals",
+     "probability": 0.21149446960321833,
+     "american": 373,
+     "fair_decimal": 4.7282560242643
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Over 5.5 goals",
+     "probability": 0.6349832587354816,
+     "american": -174,
+     "fair_decimal": 1.5748446691199705
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Under 5.5 goals",
+     "probability": 0.36501674126451844,
+     "american": 174,
+     "fair_decimal": 2.7396003715767248
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Over 6.5 goals",
+     "probability": 0.47784504767386127,
+     "american": 109,
+     "fair_decimal": 2.092728604948355
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Under 6.5 goals",
+     "probability": 0.5221549523261387,
+     "american": -109,
+     "fair_decimal": 1.9151403152361535
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Over 7.5 goals",
+     "probability": 0.3313074302156054,
+     "american": 202,
+     "fair_decimal": 3.0183446213362273
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Under 7.5 goals",
+     "probability": 0.6686925697843946,
+     "american": -202,
+     "fair_decimal": 1.4954555279751773
+    }
+   ],
+   "selection": "Buffalo Sabres",
+   "probability": 0.4444444444444444,
+   "american": 125,
+   "fair_decimal": 2.25,
+   "tier": "Low",
+   "in_window": true,
+   "withheld": [],
+   "notes": [],
+   "basis": "log5 of official points percentages 0.5000 v 0.5556; expected goals 3.01-3.52 from GF/GP and GA/GP; no home edge",
+   "americain": 125
+  }
+ },
+ {
+  "id": "nhl-109",
+  "sport": "ice-hockey",
+  "sport_name": "Ice Hockey",
+  "competition": "NHL",
+  "stage": "Regular season",
+  "participant_a": "Vegas Golden Knights",
+  "participant_b": "Columbus Blue Jackets",
+  "start_utc": "2026-10-24T23:00:00Z",
+  "date": null,
+  "venue": "Nationwide Arena, Columbus",
+  "status": "verified",
+  "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+  "official_label": "NHL schedule API, game 2026020174",
+  "observed": "2026-10-23T16:18Z-16:20Z",
+  "notes": "Vegas 8-4-0 (16 pts, two-game losing run); Columbus 3-5-0 (6 pts).",
+  "tier": "High (price outside -250..+10000)",
+  "price": {
+   "fixture_id": "nhl-109",
+   "markets": [
+    {
+     "market": "match_winner",
+     "selection": "Vegas Golden Knights",
+     "probability": 0.7692307692307692,
+     "american": -333,
+     "fair_decimal": 1.3
+    },
+    {
+     "market": "match_winner",
+     "selection": "Columbus Blue Jackets",
+     "probability": 0.23076923076923084,
+     "american": 333,
+     "fair_decimal": 4.333333333333332
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Vegas Golden Knights",
+     "probability": 0.41269637937764625,
+     "american": 142,
+     "fair_decimal": 2.4230888613755672
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Columbus Blue Jackets",
+     "probability": 0.8399218380695507,
+     "american": -525,
+     "fair_decimal": 1.1905869744955886
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Vegas Golden Knights",
+     "probability": 0.8399218380695507,
+     "american": -525,
+     "fair_decimal": 1.1905869744955886
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Columbus Blue Jackets",
+     "probability": 0.41269637937764625,
+     "american": 142,
+     "fair_decimal": 2.4230888613755672
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Over 5.5 goals",
+     "probability": 0.6279214455386045,
+     "american": -169,
+     "fair_decimal": 1.5925558954946064
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Under 5.5 goals",
+     "probability": 0.3720785544613955,
+     "american": 169,
+     "fair_decimal": 2.687604507192187
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Over 6.5 goals",
+     "probability": 0.4701907992490079,
+     "american": 113,
+     "fair_decimal": 2.1267961891155824
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Under 6.5 goals",
+     "probability": 0.529809200750992,
+     "american": -113,
+     "fair_decimal": 1.8874719400541244
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Over 7.5 goals",
+     "probability": 0.32419606414167323,
+     "american": 208,
+     "fair_decimal": 3.084553178174925
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Under 7.5 goals",
+     "probability": 0.6758039358583268,
+     "american": -208,
+     "fair_decimal": 1.4797191122154645
+    }
+   ],
+   "selection": "Vegas Golden Knights",
+   "probability": 0.7692307692307692,
+   "american": -333,
+   "fair_decimal": 1.3,
+   "tier": "High (price outside -250..+10000)",
+   "in_window": false,
+   "withheld": [],
+   "notes": [],
+   "basis": "log5 of official points percentages 0.6667 v 0.3750; expected goals 3.73-2.75 from GF/GP and GA/GP; no home edge",
+   "americain": -333
+  }
+ },
+ {
+  "id": "nhl-110",
+  "sport": "ice-hockey",
+  "sport_name": "Ice Hockey",
+  "competition": "NHL",
+  "stage": "Regular season",
+  "participant_a": "Carolina Hurricanes",
+  "participant_b": "St. Louis Blues",
+  "start_utc": "2026-10-24T23:00:00Z",
+  "date": null,
+  "venue": "Enterprise Center, St. Louis",
+  "status": "verified",
+  "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+  "official_label": "NHL schedule API, game 2026020175",
+  "observed": "2026-10-23T16:18Z-16:20Z",
+  "notes": "Carolina 8-2-2 (18 pts, 47 GF); St. Louis 5-4-1 (11 pts).",
+  "tier": "High",
+  "price": {
+   "fixture_id": "nhl-110",
+   "markets": [
+    {
+     "market": "match_winner",
+     "selection": "Carolina Hurricanes",
+     "probability": 0.7105263157894737,
+     "american": -245,
+     "fair_decimal": 1.4074074074074074
+    },
+    {
+     "market": "match_winner",
+     "selection": "St. Louis Blues",
+     "probability": 0.2894736842105263,
+     "american": 245,
+     "fair_decimal": 3.4545454545454546
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Carolina Hurricanes",
+     "probability": 0.3270430591641989,
+     "american": 206,
+     "fair_decimal": 3.0577013392537062
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "St. Louis Blues",
+     "probability": 0.7723454584615472,
+     "american": -339,
+     "fair_decimal": 1.2947574029786142
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Carolina Hurricanes",
+     "probability": 0.7723454584615472,
+     "american": -339,
+     "fair_decimal": 1.2947574029786142
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "St. Louis Blues",
+     "probability": 0.3270430591641989,
+     "american": 206,
+     "fair_decimal": 3.0577013392537062
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Over 5.5 goals",
+     "probability": 0.6500389433074019,
+     "american": -186,
+     "fair_decimal": 1.5383693704749353
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Under 5.5 goals",
+     "probability": 0.34996105669259814,
+     "american": 186,
+     "fair_decimal": 2.8574607970691686
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Over 6.5 goals",
+     "probability": 0.49435695470454044,
+     "american": 102,
+     "fair_decimal": 2.0228298408336634
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Under 6.5 goals",
+     "probability": 0.5056430452954596,
+     "american": -102,
+     "fair_decimal": 1.9776797274363294
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Over 7.5 goals",
+     "probability": 0.3468297369332575,
+     "american": 188,
+     "fair_decimal": 2.883259113945111
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Under 7.5 goals",
+     "probability": 0.6531702630667424,
+     "american": -188,
+     "fair_decimal": 1.5309943770324672
+    }
+   ],
+   "selection": "Carolina Hurricanes",
+   "probability": 0.7105263157894737,
+   "american": -245,
+   "fair_decimal": 1.4074074074074074,
+   "tier": "High",
+   "in_window": true,
+   "withheld": [],
+   "notes": [],
+   "basis": "log5 of official points percentages 0.7500 v 0.5500; expected goals 3.51-3.12 from GF/GP and GA/GP; no home edge",
+   "americain": -245
+  }
+ },
+ {
+  "id": "nhl-111",
+  "sport": "ice-hockey",
+  "sport_name": "Ice Hockey",
+  "competition": "NHL",
+  "stage": "Regular season",
+  "participant_a": "Toronto Maple Leafs",
+  "participant_b": "Edmonton Oilers",
+  "start_utc": "2026-10-24T23:00:00Z",
+  "date": null,
+  "venue": "Rogers Place, Edmonton",
+  "status": "verified",
+  "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+  "official_label": "NHL schedule API, game 2026020176",
+  "observed": "2026-10-23T16:18Z-16:20Z",
+  "notes": "Toronto 6-4-2 (14 pts, three-game win streak); Edmonton 8-1-1 (17 pts, 5-0-0 on the road).",
+  "tier": "Low",
+  "price": {
+   "fixture_id": "nhl-111",
+   "markets": [
+    {
+     "market": "match_winner",
+     "selection": "Toronto Maple Leafs",
+     "probability": 0.19811320754716988,
+     "american": 405,
+     "fair_decimal": 5.047619047619046
+    },
+    {
+     "market": "match_winner",
+     "selection": "Edmonton Oilers",
+     "probability": 0.8018867924528301,
+     "american": -405,
+     "fair_decimal": 1.2470588235294118
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Toronto Maple Leafs",
+     "probability": 0.2172947323374118,
+     "american": 360,
+     "fair_decimal": 4.6020443719142525
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Edmonton Oilers",
+     "probability": 0.6369631884928919,
+     "american": -175,
+     "fair_decimal": 1.5699494383122572
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Toronto Maple Leafs",
+     "probability": 0.6369631884928919,
+     "american": -175,
+     "fair_decimal": 1.5699494383122572
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Edmonton Oilers",
+     "probability": 0.2172947323374118,
+     "american": 360,
+     "fair_decimal": 4.6020443719142525
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Over 5.5 goals",
+     "probability": 0.7436502045613335,
+     "american": -290,
+     "fair_decimal": 1.3447182477276167
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Under 5.5 goals",
+     "probability": 0.25634979543866654,
+     "american": 290,
+     "fair_decimal": 3.9009198282713546
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Over 6.5 goals",
+     "probability": 0.6033717624789391,
+     "american": -152,
+     "fair_decimal": 1.6573529989065496
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Under 6.5 goals",
+     "probability": 0.3966282375210609,
+     "american": 152,
+     "fair_decimal": 2.5212526628210634
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Over 7.5 goals",
+     "probability": 0.4557454020017529,
+     "american": 119,
+     "fair_decimal": 2.1942075457212264
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Under 7.5 goals",
+     "probability": 0.5442545979982472,
+     "american": -119,
+     "fair_decimal": 1.8373753821795376
+    }
+   ],
+   "selection": "Toronto Maple Leafs",
+   "probability": 0.19811320754716988,
+   "american": 405,
+   "fair_decimal": 5.047619047619046,
+   "tier": "Low",
+   "in_window": true,
+   "withheld": [],
+   "notes": [],
+   "basis": "log5 of official points percentages 0.5833 v 0.8500; expected goals 3.39-3.98 from GF/GP and GA/GP; no home edge",
+   "americain": 405
+  }
+ },
+ {
+  "id": "nhl-112",
+  "sport": "ice-hockey",
+  "sport_name": "Ice Hockey",
+  "competition": "NHL",
+  "stage": "Regular season",
+  "participant_a": "Tampa Bay Lightning",
+  "participant_b": "Utah Mammoth",
+  "start_utc": "2026-10-25T01:00:00Z",
+  "date": null,
+  "venue": "Delta Center, Salt Lake City",
+  "status": "verified",
+  "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+  "official_label": "NHL schedule API, game 2026020177",
+  "observed": "2026-10-23T16:18Z-16:20Z",
+  "notes": "Tampa Bay 7-2-0; Utah 7-4-0 (44 GF in 11 GP).",
+  "tier": "Medium",
+  "price": {
+   "fixture_id": "nhl-112",
+   "markets": [
+    {
+     "market": "match_winner",
+     "selection": "Tampa Bay Lightning",
+     "probability": 0.6666666666666667,
+     "american": -200,
+     "fair_decimal": 1.4999999999999998
+    },
+    {
+     "market": "match_winner",
+     "selection": "Utah Mammoth",
+     "probability": 0.33333333333333326,
+     "american": 200,
+     "fair_decimal": 3.000000000000001
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Tampa Bay Lightning",
+     "probability": 0.29262917967002894,
+     "american": 242,
+     "fair_decimal": 3.417294205340726
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Utah Mammoth",
+     "probability": 0.740095652967467,
+     "american": -285,
+     "fair_decimal": 1.351176697215323
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Tampa Bay Lightning",
+     "probability": 0.740095652967467,
+     "american": -285,
+     "fair_decimal": 1.351176697215323
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Utah Mammoth",
+     "probability": 0.29262917967002894,
+     "american": 242,
+     "fair_decimal": 3.417294205340726
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Over 5.5 goals",
+     "probability": 0.6568257033769214,
+     "american": -191,
+     "fair_decimal": 1.522473914858577
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Under 5.5 goals",
+     "probability": 0.34317429662307863,
+     "american": 191,
+     "fair_decimal": 2.913971150637596
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Over 6.5 goals",
+     "probability": 0.5018874479182724,
+     "american": -101,
+     "fair_decimal": 1.9924786008253397
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Under 6.5 goals",
+     "probability": 0.49811255208172756,
+     "american": 101,
+     "fair_decimal": 2.0075783993412104
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Over 7.5 goals",
+     "probability": 0.35399184043501614,
+     "american": 182,
+     "fair_decimal": 2.8249238704799313
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Under 7.5 goals",
+     "probability": 0.6460081595649838,
+     "american": -182,
+     "fair_decimal": 1.5479680638606657
+    }
+   ],
+   "selection": "Tampa Bay Lightning",
+   "probability": 0.6666666666666667,
+   "american": -200,
+   "fair_decimal": 1.4999999999999998,
+   "tier": "Medium",
+   "in_window": true,
+   "withheld": [],
+   "notes": [],
+   "basis": "log5 of official points percentages 0.7778 v 0.6364; expected goals 3.40-3.28 from GF/GP and GA/GP; no home edge",
+   "americain": -200
+  }
+ },
+ {
+  "id": "ru-201",
+  "sport": "rugby-union",
+  "sport_name": "Rugby Union",
+  "competition": "Gallagher PREM",
+  "stage": "Round 4 (Derby Weekend)",
+  "participant_a": "Gloucester Rugby",
+  "participant_b": "Bath Rugby",
+  "start_utc": "2026-10-23T18:45:00Z",
+  "date": null,
+  "venue": "Kingsholm Stadium, Gloucester",
+  "status": "verified",
+  "official_url": "https://www.bathrugby.com/content/hennessey-returns-for-kingsholm-outing",
+  "official_label": "Bath Rugby official team announcement (also Gloucester Rugby official team news)",
+  "observed": "2026-10-23T16:22Z-16:26Z",
+  "notes": "Sold-out Kingsholm. Gloucester are without club captain Dewi Lake (head) and Seb Atkinson (knee); Ben Loader out to December (hamstring). Bath start Enoch Opoku-Gyamfi and Louie Hennessey (first starts of the season) with Miles Reid back at No.8.",
+  "tier": null,
+  "price": {
+   "fixture_id": "ru-201",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ru-202",
+  "sport": "rugby-union",
+  "sport_name": "Rugby Union",
+  "competition": "Gallagher PREM",
+  "stage": "Round 4 (Derby Weekend)",
+  "participant_a": "Newcastle Red Bulls",
+  "participant_b": "Sale Sharks",
+  "start_utc": "2026-10-23T18:45:00Z",
+  "date": null,
+  "venue": "Kingston Park, Newcastle",
+  "status": "verified",
+  "official_url": "https://www.newcastleredbulls.com/en/articles/team-news-rigg-returns-for-derby-weekend-showdown",
+  "official_label": "Newcastle Red Bulls official team news",
+  "observed": "2026-10-23T16:22Z-16:26Z",
+  "notes": "Will Rigg returns at centre for his PREM debut; Christian Wade starts one try short of Chris Ashton's 101. Newcastle list 12 unavailable players including Raffi Quirke, George Turner and Adam Scott. Sale field both Curry brothers with George Ford at 10.",
+  "tier": null,
+  "price": {
+   "fixture_id": "ru-202",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ru-203",
+  "sport": "rugby-union",
+  "sport_name": "Rugby Union",
+  "competition": "United Rugby Championship",
+  "stage": "Round 4",
+  "participant_a": "Connacht",
+  "participant_b": "Zebre Parma",
+  "start_utc": "2026-10-23T18:45:00Z",
+  "date": null,
+  "venue": "Dexcom Stadium, Galway",
+  "status": "verified",
+  "official_url": "https://stats.unitedrugby.com/match-centre/2026-27/4",
+  "official_label": "URC official match centre, fixture 292609",
+  "observed": "2026-10-23T16:22Z-16:26Z",
+  "notes": "League site lists 19:45 local at Dexcom Stadium; Zebre lost 12-29 at home to Edinburgh on 10 October.",
+  "tier": null,
+  "price": {
+   "fixture_id": "ru-203",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ru-204",
+  "sport": "rugby-union",
+  "sport_name": "Rugby Union",
+  "competition": "United Rugby Championship",
+  "stage": "Round 4",
+  "participant_a": "Edinburgh",
+  "participant_b": "Lions",
+  "start_utc": "2026-10-23T18:45:00Z",
+  "date": null,
+  "venue": "Hive Stadium, Edinburgh",
+  "status": "verified",
+  "official_url": "https://stats.unitedrugby.com/match-centre/2026-27/4",
+  "official_label": "URC official match centre, fixture 292610",
+  "observed": "2026-10-23T16:22Z-16:26Z",
+  "notes": "Edinburgh beat Zebre 29-12 away on 10 October; Lions lost 15-57 at Bulls on 10 October.",
+  "tier": null,
+  "price": {
+   "fixture_id": "ru-204",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ru-205",
+  "sport": "rugby-union",
+  "sport_name": "Rugby Union",
+  "competition": "Gallagher PREM",
+  "stage": "Round 4",
+  "participant_a": "Cardiff Rugby",
+  "participant_b": "Sharks",
+  "start_utc": "2026-10-23T18:45:00Z",
+  "date": null,
+  "venue": "Cardiff Arms Park",
+  "status": "verified",
+  "official_url": "https://stats.unitedrugby.com/match-centre/2026-27/4",
+  "official_label": "URC official match centre, fixture 292608",
+  "observed": "2026-10-23T16:22Z-16:26Z",
+  "notes": "Cardiff v Hollywoodbets Sharks, 19:45 local, Cardiff Arms Park.",
+  "tier": null,
+  "price": {
+   "fixture_id": "ru-205",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ru-206",
+  "sport": "rugby-union",
+  "sport_name": "Rugby Union",
+  "competition": "Lipovitan D Challenge Cup",
+  "stage": "JRFU Centenary Test",
+  "participant_a": "Japan",
+  "participant_b": "Fiji",
+  "start_utc": "2026-10-24T05:50:00Z",
+  "date": null,
+  "venue": "Prince Chichibu Memorial Rugby Ground, Tokyo",
+  "status": "verified",
+  "official_url": "https://en.rugby-japan.jp/2026/10/23/brave-blossoms-to-face-fiji-in-historic-centenary-double-header/",
+  "official_label": "Japan Rugby Football Union official team announcement",
+  "observed": "2026-10-23T16:22Z-16:26Z",
+  "notes": "Kick-off 14:50 JST. Japan beat Fiji 20-15 in the PNC final at the same venue five weeks ago. Warner Dearns returns as co-captain; three uncapped reserves (Kihara, Botha, Lee).",
+  "tier": null,
+  "price": {
+   "fixture_id": "ru-206",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ru-207",
+  "sport": "rugby-union",
+  "sport_name": "Rugby Union",
+  "competition": "Pro D2",
+  "stage": "Journee 8",
+  "participant_a": "Narbonne",
+  "participant_b": "Brive",
+  "start_utc": "2026-10-23T17:00:00Z",
+  "date": null,
+  "venue": "Parc des Sports et de l'Amitie, Narbonne",
+  "status": "verified",
+  "official_url": "https://prod2.lnr.fr/calendrier-et-resultats/2026-2027/j8",
+  "official_label": "LNR official Pro D2 calendar, J8",
+  "observed": "2026-10-23T16:22Z-16:26Z",
+  "notes": "LNR lists 15th v 5th; 19:00 local.",
+  "tier": null,
+  "price": {
+   "fixture_id": "ru-207",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ru-208",
+  "sport": "rugby-union",
+  "sport_name": "Rugby Union",
+  "competition": "Pro D2",
+  "stage": "Journee 8",
+  "participant_a": "Agen",
+  "participant_b": "Nissa Rugby",
+  "start_utc": "2026-10-23T17:30:00Z",
+  "date": null,
+  "venue": "Stade Armandie, Agen",
+  "status": "verified",
+  "official_url": "https://prod2.lnr.fr/calendrier-et-resultats/2026-2027/j8",
+  "official_label": "LNR official Pro D2 calendar, J8",
+  "observed": "2026-10-23T16:22Z-16:26Z",
+  "notes": "LNR lists 10th v 13th; 19:30 local.",
+  "tier": null,
+  "price": {
+   "fixture_id": "ru-208",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ru-209",
+  "sport": "rugby-union",
+  "sport_name": "Rugby Union",
+  "competition": "Pro D2",
+  "stage": "Journee 8",
+  "participant_a": "Soyaux-Angouleme",
+  "participant_b": "Dax",
+  "start_utc": "2026-10-23T17:30:00Z",
+  "date": null,
+  "venue": "Stade Chanzy, Angouleme",
+  "status": "verified",
+  "official_url": "https://prod2.lnr.fr/calendrier-et-resultats/2026-2027/j8",
+  "official_label": "LNR official Pro D2 calendar, J8",
+  "observed": "2026-10-23T16:22Z-16:26Z",
+  "notes": "LNR lists 8th v 7th.",
+  "tier": null,
+  "price": {
+   "fixture_id": "ru-209",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ru-210",
+  "sport": "rugby-union",
+  "sport_name": "Rugby Union",
+  "competition": "Pro D2",
+  "stage": "Journee 8",
+  "participant_a": "Aurillac",
+  "participant_b": "Nevers",
+  "start_utc": "2026-10-23T17:30:00Z",
+  "date": null,
+  "venue": "Stade Jean Alric, Aurillac",
+  "status": "verified",
+  "official_url": "https://prod2.lnr.fr/calendrier-et-resultats/2026-2027/j8",
+  "official_label": "LNR official Pro D2 calendar, J8",
+  "observed": "2026-10-23T16:22Z-16:26Z",
+  "notes": "LNR lists 9th v 16th.",
+  "tier": null,
+  "price": {
+   "fixture_id": "ru-210",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ru-211",
+  "sport": "rugby-union",
+  "sport_name": "Rugby Union",
+  "competition": "Pro D2",
+  "stage": "Journee 8",
+  "participant_a": "Valence Romans",
+  "participant_b": "Colomiers",
+  "start_utc": "2026-10-23T17:30:00Z",
+  "date": null,
+  "venue": "Stade Georges Pompidou, Valence",
+  "status": "verified",
+  "official_url": "https://prod2.lnr.fr/calendrier-et-resultats/2026-2027/j8",
+  "official_label": "LNR official Pro D2 calendar, J8",
+  "observed": "2026-10-23T16:22Z-16:26Z",
+  "notes": "LNR lists 11th v 12th.",
+  "tier": null,
+  "price": {
+   "fixture_id": "ru-211",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ru-212",
+  "sport": "rugby-union",
+  "sport_name": "Rugby Union",
+  "competition": "Pro D2",
+  "stage": "Journee 8",
+  "participant_a": "Provence Rugby",
+  "participant_b": "Beziers",
+  "start_utc": "2026-10-23T19:00:00Z",
+  "date": null,
+  "venue": "Stade Maurice David, Aix-en-Provence",
+  "status": "verified",
+  "official_url": "https://prod2.lnr.fr/calendrier-et-resultats/2026-2027/j8",
+  "official_label": "LNR official Pro D2 calendar, J8",
+  "observed": "2026-10-23T16:22Z-16:26Z",
+  "notes": "LNR lists 2nd v 14th; 21:00 local.",
+  "tier": null,
+  "price": {
+   "fixture_id": "ru-212",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ru-213",
+  "sport": "rugby-union",
+  "sport_name": "Rugby Union",
+  "competition": "Pro D2",
+  "stage": "Journee 8",
+  "participant_a": "Grenoble",
+  "participant_b": "Biarritz",
+  "start_utc": "2026-10-23T19:00:00Z",
+  "date": null,
+  "venue": "Stade des Alpes, Grenoble",
+  "status": "verified",
+  "official_url": "https://prod2.lnr.fr/calendrier-et-resultats/2026-2027/j8",
+  "official_label": "LNR official Pro D2 calendar, J8",
+  "observed": "2026-10-23T16:22Z-16:26Z",
+  "notes": "LNR lists 3rd v 6th.",
+  "tier": null,
+  "price": {
+   "fixture_id": "ru-213",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "darts-301",
+  "sport": "darts",
+  "sport_name": "Darts",
+  "competition": "PDC European Championship",
+  "stage": "Round 1, best of 11 legs",
+  "participant_a": "Ryan Joyce",
+  "participant_b": "Jermaine Wattimena",
+  "start_utc": "2026-10-23T17:00:00Z",
+  "date": null,
+  "venue": "Westfalenhalle, Dortmund",
+  "status": "verified",
+  "official_url": "https://www.pdc.tv/news",
+  "official_label": "PDC official news hub (schedule page consent-walled)",
+  "observed": "2026-10-23T16:19Z-16:22Z",
+  "notes": "Session 1 tie 1, 19:00 CEST. OLBG card: Joyce 16/25 tips.",
+  "tier": null,
+  "price": {
+   "fixture_id": "darts-301",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "darts-302",
+  "sport": "darts",
+  "sport_name": "Darts",
+  "competition": "PDC European Championship",
+  "stage": "Round 1, best of 11 legs",
+  "participant_a": "Krzysztof Ratajski",
+  "participant_b": "Dave Chisnall",
+  "start_utc": "2026-10-23T17:30:00Z",
+  "date": null,
+  "venue": "Westfalenhalle, Dortmund",
+  "status": "verified",
+  "official_url": "https://www.pdc.tv/news",
+  "official_label": "PDC official news hub",
+  "observed": "2026-10-23T16:19Z-16:22Z",
+  "notes": "19:30 CEST. OLBG 15/26 Ratajski.",
+  "tier": null,
+  "price": {
+   "fixture_id": "darts-302",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "darts-303",
+  "sport": "darts",
+  "sport_name": "Darts",
+  "competition": "PDC European Championship",
+  "stage": "Round 1, best of 11 legs",
+  "participant_a": "Nathan Aspinall",
+  "participant_b": "Cristo Reyes",
+  "start_utc": "2026-10-23T18:00:00Z",
+  "date": null,
+  "venue": "Westfalenhalle, Dortmund",
+  "status": "verified",
+  "official_url": "https://www.pdc.tv/news",
+  "official_label": "PDC official news hub",
+  "observed": "2026-10-23T16:19Z-16:22Z",
+  "notes": "20:00 CEST. OLBG 14/22 Aspinall.",
+  "tier": null,
+  "price": {
+   "fixture_id": "darts-303",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "darts-304",
+  "sport": "darts",
+  "sport_name": "Darts",
+  "competition": "PDC European Championship",
+  "stage": "Round 1, best of 11 legs",
+  "participant_a": "Jonny Clayton",
+  "participant_b": "Niko Springer",
+  "start_utc": "2026-10-23T18:30:00Z",
+  "date": null,
+  "venue": "Westfalenhalle, Dortmund",
+  "status": "verified",
+  "official_url": "https://www.pdc.tv/news",
+  "official_label": "PDC official news hub",
+  "observed": "2026-10-23T16:19Z-16:22Z",
+  "notes": "20:30 CEST. OLBG 26/31 Clayton (84%).",
+  "tier": null,
+  "price": {
+   "fixture_id": "darts-304",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "darts-305",
+  "sport": "darts",
+  "sport_name": "Darts",
+  "competition": "PDC European Championship",
+  "stage": "Round 1, best of 11 legs",
+  "participant_a": "Luke Littler",
+  "participant_b": "William O'Connor",
+  "start_utc": "2026-10-23T19:00:00Z",
+  "date": null,
+  "venue": "Westfalenhalle, Dortmund",
+  "status": "verified",
+  "official_url": "https://www.pdc.tv/news",
+  "official_label": "PDC official news hub",
+  "observed": "2026-10-23T16:19Z-16:22Z",
+  "notes": "21:00 CEST. OLBG 14/20 Littler.",
+  "tier": null,
+  "price": {
+   "fixture_id": "darts-305",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "darts-306",
+  "sport": "darts",
+  "sport_name": "Darts",
+  "competition": "PDC European Championship",
+  "stage": "Round 1, best of 11 legs",
+  "participant_a": "Wessel Nijman",
+  "participant_b": "Martin Schindler",
+  "start_utc": "2026-10-23T19:30:00Z",
+  "date": null,
+  "venue": "Westfalenhalle, Dortmund",
+  "status": "verified",
+  "official_url": "https://www.pdc.tv/news",
+  "official_label": "PDC official news hub",
+  "observed": "2026-10-23T16:19Z-16:22Z",
+  "notes": "21:30 CEST. Nijman is second seed; Schindler 31st seed. OLBG 18/23 Nijman.",
+  "tier": null,
+  "price": {
+   "fixture_id": "darts-306",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "darts-307",
+  "sport": "darts",
+  "sport_name": "Darts",
+  "competition": "PDC European Championship",
+  "stage": "Round 1, best of 11 legs",
+  "participant_a": "Kevin Doets",
+  "participant_b": "Michael van Gerwen",
+  "start_utc": "2026-10-23T20:00:00Z",
+  "date": null,
+  "venue": "Westfalenhalle, Dortmund",
+  "status": "verified",
+  "official_url": "https://www.pdc.tv/news",
+  "official_label": "PDC official news hub",
+  "observed": "2026-10-23T16:19Z-16:22Z",
+  "notes": "22:00 CEST. OLBG 10/17 van Gerwen.",
+  "tier": null,
+  "price": {
+   "fixture_id": "darts-307",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "darts-308",
+  "sport": "darts",
+  "sport_name": "Darts",
+  "competition": "PDC European Championship",
+  "stage": "Round 1, best of 11 legs",
+  "participant_a": "Josh Rock",
+  "participant_b": "Chris Dobey",
+  "start_utc": "2026-10-23T20:30:00Z",
+  "date": null,
+  "venue": "Westfalenhalle, Dortmund",
+  "status": "verified",
+  "official_url": "https://www.pdc.tv/news",
+  "official_label": "PDC official news hub",
+  "observed": "2026-10-23T16:19Z-16:22Z",
+  "notes": "22:30 CEST. OLBG 10/19 Rock.",
+  "tier": null,
+  "price": {
+   "fixture_id": "darts-308",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "snk-401",
+  "sport": "snooker",
+  "sport_name": "Snooker",
+  "competition": "BetVictor Northern Ireland Open",
+  "stage": "Semi-final, best of 11 frames",
+  "participant_a": "Kyren Wilson",
+  "participant_b": "Sam Craigie",
+  "start_utc": "2026-10-24T07:00:00Z",
+  "date": null,
+  "venue": "Waterfront Hall, Belfast",
+  "status": "verified",
+  "official_url": "https://www.wst.tv/matches/",
+  "official_label": "WST official match centre",
+  "observed": "2026-10-23T16:24Z-16:30Z",
+  "notes": "Saturday 24 October, 08:00 local. Wilson beat Anthony McGill 6-1 in the quarter-final; Craigie beat Elliot Slessor 6-2.",
+  "tier": null,
+  "price": {
+   "fixture_id": "snk-401",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "snk-402",
+  "sport": "snooker",
+  "sport_name": "Snooker",
+  "competition": "BetVictor Northern Ireland Open",
+  "stage": "Semi-final, best of 11 frames",
+  "participant_a": "Winner of match 59",
+  "participant_b": "Winner of match 60",
+  "start_utc": "2026-10-24T13:00:00Z",
+  "date": null,
+  "venue": "Waterfront Hall, Belfast",
+  "status": "unverified",
+  "official_url": "https://www.wst.tv/matches/",
+  "official_label": "WST official match centre",
+  "observed": "2026-10-23T16:24Z-16:30Z",
+  "notes": "Pairing unresolved at read time (David Gilbert v Mark Williams and Jak Jones v Scott Donaldson were still listed as scheduled).",
+  "tier": null,
+  "price": {
+   "fixture_id": "snk-402",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "fixture not confirmed on an official page"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "snk-403",
+  "sport": "snooker",
+  "sport_name": "Snooker",
+  "competition": "BetVictor Northern Ireland Open",
+  "stage": "Quarter-final, best of 9 frames",
+  "participant_a": "Jak Jones",
+  "participant_b": "Scott Donaldson",
+  "start_utc": "2026-10-23T13:00:00Z",
+  "date": null,
+  "venue": "Waterfront Hall, Belfast",
+  "status": "elapsed",
+  "official_url": "https://www.wst.tv/matches/",
+  "official_label": "WST official match centre",
+  "observed": "2026-10-23T16:24Z-16:30Z",
+  "notes": "14:00 local start; elapsed before the 16:45Z snapshot. Retained for audit, never priced.",
+  "tier": null,
+  "price": {
+   "fixture_id": "snk-403",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "start elapsed before the snapshot"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "snk-404",
+  "sport": "snooker",
+  "sport_name": "Snooker",
+  "competition": "BetVictor Northern Ireland Open",
+  "stage": "Quarter-final, best of 9 frames",
+  "participant_a": "David Gilbert",
+  "participant_b": "Mark Williams",
+  "start_utc": "2026-10-23T13:00:00Z",
+  "date": null,
+  "venue": "Waterfront Hall, Belfast",
+  "status": "elapsed",
+  "official_url": "https://www.wst.tv/matches/",
+  "official_label": "WST official match centre",
+  "observed": "2026-10-23T16:24Z-16:30Z",
+  "notes": "14:00 local start; elapsed before the snapshot. Retained for audit, never priced.",
+  "tier": null,
+  "price": {
+   "fixture_id": "snk-404",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "start elapsed before the snapshot"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ten-501",
+  "sport": "tennis",
+  "sport_name": "Tennis",
+  "competition": "WTA 500 Ningbo Open",
+  "stage": "Semi-final",
+  "participant_a": "Elena Rybakina",
+  "participant_b": "Diana Shnaider",
+  "start_utc": "2026-10-24T09:30:00Z",
+  "date": null,
+  "venue": "Yinzhou Tennis Centre, Ningbo",
+  "status": "verified",
+  "official_url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf",
+  "official_label": "WTA official order of play PDF",
+  "observed": "2026-10-23T16:27Z-16:36Z",
+  "notes": "Centre Court not before 5:30pm local; seed 1 v seed 6, world No.1 v No.13.",
+  "tier": null,
+  "price": {
+   "fixture_id": "ten-501",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "only the official draw seeding/ranking order was read, with no rating scale, serve/return split or surface form, so no probability is asserted"
+   ],
+   "notes": [],
+   "basis": "ranking order only"
+  }
+ },
+ {
+  "id": "ten-502",
+  "sport": "tennis",
+  "sport_name": "Tennis",
+  "competition": "WTA 500 Ningbo Open",
+  "stage": "Semi-final",
+  "participant_a": "Leylah Fernandez",
+  "participant_b": "Marie Bouzkova",
+  "start_utc": "2026-10-24T07:00:00Z",
+  "date": null,
+  "venue": "Yinzhou Tennis Centre, Ningbo",
+  "status": "verified",
+  "official_url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf",
+  "official_label": "WTA official order of play PDF",
+  "observed": "2026-10-23T16:27Z-16:36Z",
+  "notes": "Not before 3:00pm local. Both unseeded in Ningbo.",
+  "tier": null,
+  "price": {
+   "fixture_id": "ten-502",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ten-503",
+  "sport": "tennis",
+  "sport_name": "Tennis",
+  "competition": "WTA 250 Japan Open",
+  "stage": "Semi-final",
+  "participant_a": "Ann Li",
+  "participant_b": "Ashlyn Krueger",
+  "start_utc": "2026-10-24T03:00:00Z",
+  "date": null,
+  "venue": "ITC Utsubo Tennis Center, Osaka",
+  "status": "verified",
+  "official_url": "https://wtafiles.wtatennis.com/pdf/draws/2026/405/OP.pdf",
+  "official_label": "WTA official order of play PDF",
+  "observed": "2026-10-23T16:27Z-16:36Z",
+  "notes": "Centre court from 12:00pm local; Li is top seed (world No.31).",
+  "tier": null,
+  "price": {
+   "fixture_id": "ten-503",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ten-504",
+  "sport": "tennis",
+  "sport_name": "Tennis",
+  "competition": "WTA 250 Japan Open",
+  "stage": "Semi-final",
+  "participant_a": "Katie Boulter",
+  "participant_b": "Katerina Siniakova",
+  "start_utc": "2026-10-24T04:30:00Z",
+  "date": null,
+  "venue": "ITC Utsubo Tennis Center, Osaka",
+  "status": "verified",
+  "official_url": "https://wtafiles.wtatennis.com/pdf/draws/2026/405/OP.pdf",
+  "official_label": "WTA official order of play PDF",
+  "observed": "2026-10-23T16:27Z-16:36Z",
+  "notes": "Not before 1:30pm local; Boulter seeded 8 (world No.54).",
+  "tier": null,
+  "price": {
+   "fixture_id": "ten-504",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "ten-505",
+  "sport": "tennis",
+  "sport_name": "Tennis",
+  "competition": "WTA 500 Ningbo Open",
+  "stage": "Doubles semi-final",
+  "participant_a": "Krawczyk / Stollar",
+  "participant_b": "Eikeri / Gleason",
+  "start_utc": "2026-10-24T05:00:00Z",
+  "date": null,
+  "venue": "Yinzhou Tennis Centre, Ningbo",
+  "status": "verified",
+  "official_url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf",
+  "official_label": "WTA official order of play PDF",
+  "observed": "2026-10-23T16:27Z-16:36Z",
+  "notes": "Centre Court from 1:00pm local. No official doubles ranking input was read.",
+  "tier": null,
+  "price": {
+   "fixture_id": "ten-505",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "bkn-601",
+  "sport": "basketball",
+  "sport_name": "Basketball",
+  "competition": "NBA",
+  "stage": "Regular season",
+  "participant_a": "Chicago Bulls",
+  "participant_b": "Milwaukee Bucks",
+  "start_utc": "2026-10-23T20:00:00Z",
+  "date": null,
+  "venue": "Fiserv Forum, Milwaukee",
+  "status": "verified",
+  "official_url": "https://www.nba.com/games?date=2026-10-23",
+  "official_label": "NBA official games page",
+  "observed": "2026-10-23T16:31Z-16:38Z",
+  "notes": "Both 0-1. One-game sample only.",
+  "tier": null,
+  "price": {
+   "fixture_id": "bkn-601",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "bkn-602",
+  "sport": "basketball",
+  "sport_name": "Basketball",
+  "competition": "NBA",
+  "stage": "Regular season",
+  "participant_a": "New York Knicks",
+  "participant_b": "Boston Celtics",
+  "start_utc": "2026-10-23T23:00:00Z",
+  "date": null,
+  "venue": "TD Garden, Boston",
+  "status": "verified",
+  "official_url": "https://www.nba.com/game/nyk-vs-bos-0022600008",
+  "official_label": "NBA official game page",
+  "observed": "2026-10-23T16:31Z-16:38Z",
+  "notes": "Both 0-1.",
+  "tier": null,
+  "price": {
+   "fixture_id": "bkn-602",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "bkn-603",
+  "sport": "basketball",
+  "sport_name": "Basketball",
+  "competition": "NBA",
+  "stage": "Regular season",
+  "participant_a": "Toronto Raptors",
+  "participant_b": "Washington Wizards",
+  "start_utc": "2026-10-23T23:00:00Z",
+  "date": null,
+  "venue": "Capital One Arena, Washington",
+  "status": "verified",
+  "official_url": "https://www.nba.com/game/tor-vs-was-0022600097",
+  "official_label": "NBA official game page",
+  "observed": "2026-10-23T16:31Z-16:38Z",
+  "notes": "Both 1-0.",
+  "tier": null,
+  "price": {
+   "fixture_id": "bkn-603",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "bkn-604",
+  "sport": "basketball",
+  "sport_name": "Basketball",
+  "competition": "NBA",
+  "stage": "Regular season",
+  "participant_a": "Atlanta Hawks",
+  "participant_b": "Charlotte Hornets",
+  "start_utc": "2026-10-23T23:00:00Z",
+  "date": null,
+  "venue": "Spectrum Center, Charlotte",
+  "status": "verified",
+  "official_url": "https://www.nba.com/game/atl-vs-cha-0022600094",
+  "official_label": "NBA official game page",
+  "observed": "2026-10-23T16:31Z-16:38Z",
+  "notes": "Both 1-0.",
+  "tier": null,
+  "price": {
+   "fixture_id": "bkn-604",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "bkn-605",
+  "sport": "basketball",
+  "sport_name": "Basketball",
+  "competition": "NBA",
+  "stage": "Regular season",
+  "participant_a": "Minnesota Timberwolves",
+  "participant_b": "Orlando Magic",
+  "start_utc": "2026-10-23T23:00:00Z",
+  "date": null,
+  "venue": "Kia Center, Orlando",
+  "status": "verified",
+  "official_url": "https://www.nba.com/game/min-vs-orl-0022600096",
+  "official_label": "NBA official game page",
+  "observed": "2026-10-23T16:31Z-16:38Z",
+  "notes": "Minnesota 1-0, Orlando 0-1.",
+  "tier": null,
+  "price": {
+   "fixture_id": "bkn-605",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "bkn-606",
+  "sport": "basketball",
+  "sport_name": "Basketball",
+  "competition": "NBA",
+  "stage": "Regular season",
+  "participant_a": "Dallas Mavericks",
+  "participant_b": "Indiana Pacers",
+  "start_utc": "2026-10-23T23:00:00Z",
+  "date": null,
+  "venue": "Gainbridge Fieldhouse, Indianapolis",
+  "status": "verified",
+  "official_url": "https://www.nba.com/game/dal-vs-ind-0022600095",
+  "official_label": "NBA official game page",
+  "observed": "2026-10-23T16:31Z-16:38Z",
+  "notes": "Dallas 0-1, Indiana 1-0.",
+  "tier": null,
+  "price": {
+   "fixture_id": "bkn-606",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "bkn-607",
+  "sport": "basketball",
+  "sport_name": "Basketball",
+  "competition": "NBA",
+  "stage": "Regular season",
+  "participant_a": "Detroit Pistons",
+  "participant_b": "Miami Heat",
+  "start_utc": "2026-10-24T00:00:00Z",
+  "date": null,
+  "venue": "Kaseya Center, Miami",
+  "status": "verified",
+  "official_url": "https://www.nba.com/game/det-vs-mia-0022600098",
+  "official_label": "NBA official game page",
+  "observed": "2026-10-23T16:31Z-16:38Z",
+  "notes": "Detroit 1-0, Miami 0-1.",
+  "tier": null,
+  "price": {
+   "fixture_id": "bkn-607",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "bkn-608",
+  "sport": "basketball",
+  "sport_name": "Basketball",
+  "competition": "NBA",
+  "stage": "Regular season",
+  "participant_a": "Houston Rockets",
+  "participant_b": "San Antonio Spurs",
+  "start_utc": "2026-10-24T01:30:00Z",
+  "date": null,
+  "venue": "Frost Bank Center, San Antonio",
+  "status": "verified",
+  "official_url": "https://www.nba.com/game/hou-vs-sas-0022600009",
+  "official_label": "NBA official game page",
+  "observed": "2026-10-23T16:31Z-16:38Z",
+  "notes": "Houston 1-0, San Antonio 0-1.",
+  "tier": null,
+  "price": {
+   "fixture_id": "bkn-608",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "bkn-609",
+  "sport": "basketball",
+  "sport_name": "Basketball",
+  "competition": "NBA",
+  "stage": "Regular season",
+  "participant_a": "New Orleans Pelicans",
+  "participant_b": "Utah Jazz",
+  "start_utc": "2026-10-24T01:30:00Z",
+  "date": null,
+  "venue": "Delta Center, Salt Lake City",
+  "status": "verified",
+  "official_url": "https://www.nba.com/game/nop-vs-uta-0022600100",
+  "official_label": "NBA official game page",
+  "observed": "2026-10-23T16:31Z-16:38Z",
+  "notes": "Both 0-1.",
+  "tier": null,
+  "price": {
+   "fixture_id": "bkn-609",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "bkn-610",
+  "sport": "basketball",
+  "sport_name": "Basketball",
+  "competition": "NBA",
+  "stage": "Regular season",
+  "participant_a": "Memphis Grizzlies",
+  "participant_b": "Golden State Warriors",
+  "start_utc": "2026-10-24T02:00:00Z",
+  "date": null,
+  "venue": "Chase Center, San Francisco",
+  "status": "verified",
+  "official_url": "https://www.nba.com/game/mem-vs-gsw-0022600101",
+  "official_label": "NBA official game page",
+  "observed": "2026-10-23T16:31Z-16:38Z",
+  "notes": "Memphis 1-0, Golden State 0-1.",
+  "tier": null,
+  "price": {
+   "fixture_id": "bkn-610",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "bkn-611",
+  "sport": "basketball",
+  "sport_name": "Basketball",
+  "competition": "NBA",
+  "stage": "Regular season",
+  "participant_a": "LA Clippers",
+  "participant_b": "Los Angeles Lakers",
+  "start_utc": "2026-10-24T02:00:00Z",
+  "date": null,
+  "venue": "Crypto.com Arena, Los Angeles",
+  "status": "verified",
+  "official_url": "https://www.nba.com/game/lac-vs-lal-0022600102",
+  "official_label": "NBA official game page",
+  "observed": "2026-10-23T16:31Z-16:38Z",
+  "notes": "Both 1-0.",
+  "tier": null,
+  "price": {
+   "fixture_id": "bkn-611",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "bkn-612",
+  "sport": "basketball",
+  "sport_name": "Basketball",
+  "competition": "NBA",
+  "stage": "Regular season",
+  "participant_a": "Portland Trail Blazers",
+  "participant_b": "Sacramento Kings",
+  "start_utc": "2026-10-24T02:00:00Z",
+  "date": null,
+  "venue": "Golden 1 Center, Sacramento",
+  "status": "verified",
+  "official_url": "https://www.nba.com/game/por-vs-sac-0022600103",
+  "official_label": "NBA official game page",
+  "observed": "2026-10-23T16:31Z-16:38Z",
+  "notes": "Portland 1-0, Sacramento 0-1.",
+  "tier": null,
+  "price": {
+   "fixture_id": "bkn-612",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "bkn-613",
+  "sport": "basketball",
+  "sport_name": "Basketball",
+  "competition": "EuroLeague",
+  "stage": "Round 7",
+  "participant_a": "Zalgiris Kaunas",
+  "participant_b": "LDLC ASVEL Villeurbanne",
+  "start_utc": "2026-10-23T11:00:00Z",
+  "date": null,
+  "venue": "Zalgirio Arena, Kaunas",
+  "status": "elapsed",
+  "official_url": "https://www.euroleaguebasketball.net/en/euroleague/game-center/?round=7&season=E2026",
+  "official_label": "EuroLeague official game centre",
+  "observed": "2026-10-23T16:26Z-16:31Z",
+  "notes": "13:00 CEST tip; elapsed before the snapshot. Zalgiris 2-4, ASVEL 2-4.",
+  "tier": null,
+  "price": {
+   "fixture_id": "bkn-613",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "start elapsed before the snapshot"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "bkn-614",
+  "sport": "basketball",
+  "sport_name": "Basketball",
+  "competition": "EuroLeague",
+  "stage": "Round 7",
+  "participant_a": "Olympiacos Piraeus",
+  "participant_b": "Fenerbahce",
+  "start_utc": "2026-10-23T12:15:00Z",
+  "date": null,
+  "venue": "Sunel Arena, Istanbul",
+  "status": "elapsed",
+  "official_url": "https://www.euroleaguebasketball.net/en/euroleague/game-center/?round=7&season=E2026",
+  "official_label": "EuroLeague official game centre",
+  "observed": "2026-10-23T16:26Z-16:31Z",
+  "notes": "14:15 CEST tip; elapsed before the snapshot. Olympiacos 5-1, Fenerbahce 5-1.",
+  "tier": null,
+  "price": {
+   "fixture_id": "bkn-614",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "start elapsed before the snapshot"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "bkn-615",
+  "sport": "basketball",
+  "sport_name": "Basketball",
+  "competition": "EuroLeague",
+  "stage": "Round 7",
+  "participant_a": "Paris Basketball",
+  "participant_b": "Valencia Basket",
+  "start_utc": "2026-10-23T12:45:00Z",
+  "date": null,
+  "venue": "Adidas Arena, Paris",
+  "status": "elapsed",
+  "official_url": "https://www.euroleaguebasketball.net/en/euroleague/game-center/?round=7&season=E2026",
+  "official_label": "EuroLeague official game centre",
+  "observed": "2026-10-23T16:26Z-16:31Z",
+  "notes": "14:45 CEST tip; elapsed before the snapshot. Paris 1-5, Valencia 4-2.",
+  "tier": null,
+  "price": {
+   "fixture_id": "bkn-615",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "start elapsed before the snapshot"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "mlb-701",
+  "sport": "baseball",
+  "sport_name": "Baseball",
+  "competition": "MLB World Series",
+  "stage": "Game 1",
+  "participant_a": "Tampa Bay Rays",
+  "participant_b": "Milwaukee Brewers",
+  "start_utc": "2026-10-24T00:00:00Z",
+  "date": null,
+  "venue": "American Family Field, Milwaukee",
+  "status": "verified",
+  "official_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-31",
+  "official_label": "MLB StatsAPI official schedule, gamePk 849805",
+  "observed": "2026-10-23T16:35Z-16:40Z",
+  "notes": "Probable starters Nick Martinez (TB) v Jacob Misiorowski (MIL); ifNecessary N; scheduled 8:00pm ET.",
+  "tier": null,
+  "price": {
+   "fixture_id": "mlb-701",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "mlb-702",
+  "sport": "baseball",
+  "sport_name": "Baseball",
+  "competition": "MLB World Series",
+  "stage": "Game 2",
+  "participant_a": "Tampa Bay Rays",
+  "participant_b": "Milwaukee Brewers",
+  "start_utc": "2026-10-25T00:00:00Z",
+  "date": null,
+  "venue": "American Family Field, Milwaukee",
+  "status": "verified",
+  "official_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-31",
+  "official_label": "MLB StatsAPI official schedule, gamePk 849802",
+  "observed": "2026-10-23T16:35Z-16:40Z",
+  "notes": "Probable starters Drew Rasmussen (TB) v Logan Henderson (MIL); ifNecessary N.",
+  "tier": null,
+  "price": {
+   "fixture_id": "mlb-702",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "gaa-801",
+  "sport": "gaelic-sports",
+  "sport_name": "Gaelic Sports",
+  "competition": "Cork Premier Senior Football Championship",
+  "stage": "Final",
+  "participant_a": "St Finbarr's",
+  "participant_b": "Nemo Rangers",
+  "start_utc": "2026-10-25T16:00:00Z",
+  "date": "2026-10-25",
+  "venue": "SuperValu Pairc Ui Chaoimh",
+  "status": "verified",
+  "official_url": "https://gaacork.ie/fixtures/",
+  "official_label": "Cork GAA official fixtures page",
+  "observed": "2026-10-23T16:30Z-16:44Z",
+  "notes": "County board lists 25/10, 16:00, referee David Murnane. St Finbarr's beat Clonakilty 2-12 to 0-16; Nemo beat Carrigaline 1-15 to 0-16.",
+  "tier": null,
+  "price": {
+   "fixture_id": "gaa-801",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "gaa-802",
+  "sport": "gaelic-sports",
+  "sport_name": "Gaelic Sports",
+  "competition": "Galway Senior Football Championship",
+  "stage": "Final",
+  "participant_a": "Maigh Cuilinn",
+  "participant_b": "Salthill-Knocknacarra",
+  "start_utc": "2026-10-25T16:00:00Z",
+  "date": null,
+  "venue": "Pearse Stadium, Galway",
+  "status": "verified",
+  "official_url": "https://www.galwaygaa.ie/changes-weekend-football-fixture-schedule/",
+  "official_label": "Galway GAA official fixture change notice",
+  "observed": "2026-10-23T16:30Z-16:44Z",
+  "notes": "Official notice moved the county final to Sunday 25 October, 4:00pm, as part of a Pearse Stadium double-header with the Intermediate final.",
+  "tier": null,
+  "price": {
+   "fixture_id": "gaa-802",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "gaa-803",
+  "sport": "gaelic-sports",
+  "sport_name": "Gaelic Sports",
+  "competition": "Kilkenny Senior Hurling Championship",
+  "stage": "Final",
+  "participant_a": "Shamrocks Ballyhale",
+  "participant_b": "Tullaroan",
+  "start_utc": "2026-10-25T14:00:00Z",
+  "date": null,
+  "venue": "UPMC Nowlan Park, Kilkenny",
+  "status": "verified",
+  "official_url": "https://kilkennygaa.ie/2026/10/county-final-weekend-at-upmc-nowlan-park-senior-junior-titles-on-the-line/",
+  "official_label": "Kilkenny GAA official county final notice",
+  "observed": "2026-10-23T16:30Z-16:44Z",
+  "notes": "Sunday 25 October; first ever county final meeting between the clubs. Tullaroan won the inaugural 1887 title; Ballyhale are reigning champions.",
+  "tier": null,
+  "price": {
+   "fixture_id": "gaa-803",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "gaa-804",
+  "sport": "gaelic-sports",
+  "sport_name": "Gaelic Sports",
+  "competition": "Cork Premier Intermediate Football Championship",
+  "stage": "Final",
+  "participant_a": "Kanturk",
+  "participant_b": "Eire Og",
+  "start_utc": null,
+  "date": "2026-11-01",
+  "venue": "Pairc Ui Chaoimh",
+  "status": "unverified",
+  "official_url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+  "official_label": "OLBG discovery card only",
+  "observed": "2026-10-23T16:30Z-16:44Z",
+  "notes": "OLBG lists 01 Nov 09:00; no official Cork GAA fixture page read for this pairing. Published blank and flagged.",
+  "tier": null,
+  "price": {
+   "fixture_id": "gaa-804",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "fixture not confirmed on an official page"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "gaa-805",
+  "sport": "gaelic-sports",
+  "sport_name": "Gaelic Sports",
+  "competition": "Limerick Senior Football Championship",
+  "stage": "Final",
+  "participant_a": "Fr Casey's",
+  "participant_b": "Kildimo Pallaskenry",
+  "start_utc": null,
+  "date": "2026-11-01",
+  "venue": "Newcastle West",
+  "status": "unverified",
+  "official_url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+  "official_label": "OLBG discovery card only",
+  "observed": "2026-10-23T16:30Z-16:44Z",
+  "notes": "OLBG lists 01 Nov 10:30; no official Limerick GAA fixture page read. Published blank and flagged.",
+  "tier": null,
+  "price": {
+   "fixture_id": "gaa-805",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "fixture not confirmed on an official page"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "gb-901",
+  "sport": "greyhounds",
+  "sport_name": "Greyhounds",
+  "competition": "Coral 100 Champion Stakes",
+  "stage": "Category One Final, 575m",
+  "participant_a": "Grouchos Gregor",
+  "participant_b": "Field of 6",
+  "start_utc": "2026-10-23T20:13:00Z",
+  "date": null,
+  "venue": "Romford",
+  "status": "verified",
+  "official_url": "https://www.gbgb.org.uk/category-one-glory-beckons-in-coral-100-champion-stakes-final/",
+  "official_label": "GBGB official race report and final field",
+  "observed": "2026-10-23T16:33Z-16:47Z",
+  "notes": "9:13pm local. Trap 1 Newinn Jolly withdrawn (urine infection). Gregor unbeaten in three 575m starts, fastest semi-final winner in 35.36s (-20).",
+  "tier": null,
+  "price": {
+   "fixture_id": "gb-901",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "gb-902",
+  "sport": "greyhounds",
+  "sport_name": "Greyhounds",
+  "competition": "Romford Open 400m",
+  "stage": "Open race",
+  "participant_a": "Ontherun Jamie",
+  "participant_b": "Field of 6",
+  "start_utc": "2026-10-23T19:33:00Z",
+  "date": null,
+  "venue": "Romford",
+  "status": "verified",
+  "official_url": "https://api.gbgb.org.uk/api/results?page=1&itemsPerPage=10&date=2026-10-16&track=Romford&race_type=race",
+  "official_label": "GBGB official results API (16 Oct card, race 11)",
+  "observed": "2026-10-23T16:33Z-16:47Z",
+  "notes": "8:33pm local. Won at Romford on 16 October (400m, trap 1) per GBGB result record; OLBG card shows him as the selection.",
+  "tier": null,
+  "price": {
+   "fixture_id": "gb-902",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "gb-903",
+  "sport": "greyhounds",
+  "sport_name": "Greyhounds",
+  "competition": "Romford graded card",
+  "stage": "A5 400m",
+  "participant_a": "Ballymac Dashel",
+  "participant_b": "Field of 6",
+  "start_utc": null,
+  "date": null,
+  "venue": "Towcester",
+  "status": "elapsed",
+  "official_url": "https://api.gbgb.org.uk/api/results?page=1&itemsPerPage=20&date=2026-10-23&race_type=race",
+  "official_label": "GBGB official results API (23 Oct)",
+  "observed": "2026-10-23T16:33Z-16:47Z",
+  "notes": "15:57 local result already settled (Towcester B3). Never priced retrospectively.",
+  "tier": null,
+  "price": {
+   "fixture_id": "gb-903",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "start elapsed before the snapshot"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "cri-1001",
+  "sport": "cricket",
+  "sport_name": "Cricket",
+  "competition": "New Zealand v India T20Is",
+  "stage": "2nd T20I",
+  "participant_a": "New Zealand",
+  "participant_b": "India",
+  "start_utc": "2026-10-24T03:00:00Z",
+  "date": null,
+  "venue": "Hagley Oval, Christchurch",
+  "status": "verified",
+  "official_url": "https://www.cricket.com.au/matches/CA:41095/new-zealand-men-india-men-new-zealand-v-india-t20is-2026-men",
+  "official_label": "Cricket Australia official match centre",
+  "observed": "2026-10-23T16:38Z-16:45Z",
+  "notes": "24 October, 4:00pm local (NZDT); squads to be announced.",
+  "tier": null,
+  "price": {
+   "fixture_id": "cri-1001",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "cri-1002",
+  "sport": "cricket",
+  "sport_name": "Cricket",
+  "competition": "Pakistan ODI Tri-Series",
+  "stage": "Pakistan v England",
+  "participant_a": "Pakistan",
+  "participant_b": "England",
+  "start_utc": "2026-10-25T04:00:00Z",
+  "date": null,
+  "venue": "Gaddafi Stadium, Lahore",
+  "status": "verified",
+  "official_url": "https://www.cricket.com.au/matches/CA:40981/pakistan-men-england-men-pakistan-odi-tri-series-2026-men",
+  "official_label": "Cricket Australia official match centre",
+  "observed": "2026-10-23T16:38Z-16:45Z",
+  "notes": "25 October; squads to be announced.",
+  "tier": null,
+  "price": {
+   "fixture_id": "cri-1002",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "cri-1003",
+  "sport": "cricket",
+  "sport_name": "Cricket",
+  "competition": "One-Day Cup 2026-27",
+  "stage": "Tasmania v Victoria",
+  "participant_a": "Tasmanian Tigers",
+  "participant_b": "Victoria",
+  "start_utc": null,
+  "date": null,
+  "venue": "Bellerive Oval, Hobart",
+  "status": "unverified",
+  "official_url": "https://www.cricket.com.au/matches/CA:40681/tasmanian-tigers-men-victoria-men-one-day-cup-2026-27",
+  "official_label": "Cricket Australia official match centre",
+  "observed": "2026-10-23T16:38Z-16:45Z",
+  "notes": "OLBG shows 23 Oct 19:30; the official page shows 7:30pm in the viewer's local zone. The absolute UTC start could not be resolved, so it is left blank and flagged.",
+  "tier": null,
+  "price": {
+   "fixture_id": "cri-1003",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "fixture not confirmed on an official page"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "cri-1004",
+  "sport": "cricket",
+  "sport_name": "Cricket",
+  "competition": "One-Day Cup 2026-27",
+  "stage": "Western Australia v New South Wales",
+  "participant_a": "Western Australia",
+  "participant_b": "New South Wales",
+  "start_utc": null,
+  "date": null,
+  "venue": "WACA Ground, Perth",
+  "status": "unverified",
+  "official_url": "https://www.cricket.com.au/matches/CA:40683/western-australia-men-nsw-men-one-day-cup-2026-27",
+  "official_label": "Cricket Australia official match centre",
+  "observed": "2026-10-23T16:38Z-16:45Z",
+  "notes": "Official page gives 24 October only with a viewer-local time; squads unnamed. Start left blank.",
+  "tier": null,
+  "price": {
+   "fixture_id": "cri-1004",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "fixture not confirmed on an official page"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "cri-1005",
+  "sport": "cricket",
+  "sport_name": "Cricket",
+  "competition": "CSA Pro20 Cup",
+  "stage": "Lions v Limpopo Impalas",
+  "participant_a": "Lions",
+  "participant_b": "Limpopo Impalas",
+  "start_utc": null,
+  "date": null,
+  "venue": "DP World Wanderers, Johannesburg",
+  "status": "unverified",
+  "official_url": "https://www.cricket.com.au/matches?year=2026&isCompleted=0",
+  "official_label": "Cricket Australia fixture list (media cross-check only)",
+  "observed": "2026-10-23T16:38Z-16:45Z",
+  "notes": "Listed by a secondary source only; no CSA official page was read. Blank and flagged.",
+  "tier": null,
+  "price": {
+   "fixture_id": "cri-1005",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "fixture not confirmed on an official page"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "rl-1101",
+  "sport": "rugby-league",
+  "sport_name": "Rugby League",
+  "competition": "IRL Men's World Cup",
+  "stage": "Round 2, Pool B & C",
+  "participant_a": "Papua New Guinea",
+  "participant_b": "Samoa",
+  "start_utc": "2026-10-24T04:25:00Z",
+  "date": null,
+  "venue": "Santos National Football Stadium, Port Moresby",
+  "status": "verified",
+  "official_url": "https://www.intrl.sport/match-details/2570",
+  "official_label": "International Rugby League official match page",
+  "observed": "2026-10-23T16:24Z-16:33Z",
+  "notes": "Kick-off 14:25 local. PNG beat Lebanon 42-18; Samoa beat France 78-4. Three PNG changes: Biondi-Odo, Kapinias, De Belin in; Sua Faalogo starts on Samoa's left wing.",
+  "tier": null,
+  "price": {
+   "fixture_id": "rl-1101",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "rl-1102",
+  "sport": "rugby-league",
+  "sport_name": "Rugby League",
+  "competition": "IRL Men's World Cup",
+  "stage": "Round 2, Pool B & C",
+  "participant_a": "England",
+  "participant_b": "France",
+  "start_utc": "2026-10-24T06:35:00Z",
+  "date": null,
+  "venue": "HBF Park, Perth",
+  "status": "verified",
+  "official_url": "https://www.intrl.sport/match-details/2571",
+  "official_label": "International Rugby League official match page",
+  "observed": "2026-10-23T16:24Z-16:33Z",
+  "notes": "Kick-off 14:35 local (17:35 Perth). England lost 12-30 to Tonga and are unchanged; France lost 4-78 to Samoa and bring in Romeo Tropis and Thomas Lacans.",
+  "tier": null,
+  "price": {
+   "fixture_id": "rl-1102",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "rl-1103",
+  "sport": "rugby-league",
+  "sport_name": "Rugby League",
+  "competition": "IRL Men's World Cup",
+  "stage": "Round 2, Pool A",
+  "participant_a": "New Zealand",
+  "participant_b": "Cook Islands",
+  "start_utc": "2026-10-25T05:05:00Z",
+  "date": null,
+  "venue": "One NZ Stadium, Christchurch",
+  "status": "verified",
+  "official_url": "https://www.intrl.sport/match-details/2572",
+  "official_label": "International Rugby League official match page",
+  "observed": "2026-10-23T16:24Z-16:33Z",
+  "notes": "New Zealand lost 22-24 to Australia; Cook Islands lost to Fiji. Keano Kini in at full-back, Xavier Willison into the back row.",
+  "tier": null,
+  "price": {
+   "fixture_id": "rl-1103",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "rl-1104",
+  "sport": "rugby-league",
+  "sport_name": "Rugby League",
+  "competition": "IRL Men's World Cup",
+  "stage": "Round 2, Pool A",
+  "participant_a": "Australia",
+  "participant_b": "Fiji",
+  "start_utc": "2026-10-25T09:05:00Z",
+  "date": null,
+  "venue": "Suncorp Stadium, Brisbane",
+  "status": "verified",
+  "official_url": "https://www.intrl.sport/match-details/2573",
+  "official_label": "International Rugby League official match page",
+  "observed": "2026-10-23T16:24Z-16:33Z",
+  "notes": "Captain James Tedesco returns at full-back with Reece Walsh benched; Fiji unchanged after beating Cook Islands 40-12.",
+  "tier": null,
+  "price": {
+   "fixture_id": "rl-1104",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "rl-1105",
+  "sport": "rugby-league",
+  "sport_name": "Rugby League",
+  "competition": "IRL Women's World Cup",
+  "stage": "Round 2",
+  "participant_a": "Australia Women",
+  "participant_b": "England Women",
+  "start_utc": "2026-10-24T07:05:00Z",
+  "date": null,
+  "venue": "HBF Park, Perth",
+  "status": "verified",
+  "official_url": "https://www.intrl.sport/fixtures-results",
+  "official_label": "International Rugby League official fixtures",
+  "observed": "2026-10-23T16:24Z-16:33Z",
+  "notes": "Sat 24 October, 17:05 local.",
+  "tier": null,
+  "price": {
+   "fixture_id": "rl-1105",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "rl-1106",
+  "sport": "rugby-league",
+  "sport_name": "Rugby League",
+  "competition": "Senior International (Men)",
+  "stage": "Friendly international",
+  "participant_a": "Scotland",
+  "participant_b": "Wales",
+  "start_utc": "2026-10-24T13:00:00Z",
+  "date": null,
+  "venue": "Biggar RFC",
+  "status": "verified",
+  "official_url": "https://www.intrl.sport/fixtures-results",
+  "official_label": "International Rugby League official fixtures",
+  "observed": "2026-10-23T16:24Z-16:33Z",
+  "notes": "Sat 24 October, 14:00 local.",
+  "tier": null,
+  "price": {
+   "fixture_id": "rl-1106",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "vol-1201",
+  "sport": "volleyball",
+  "sport_name": "Volleyball",
+  "competition": "VBL 1. Bundesliga",
+  "stage": "Matchday 2",
+  "participant_a": "cerebricks VOLLEY GOATS Mitteldeutschland",
+  "participant_b": "Energiequelle Netzhoppers KW",
+  "start_utc": "2026-10-23T17:30:00Z",
+  "date": null,
+  "venue": "SWH.arena, Halle",
+  "status": "verified",
+  "official_url": "https://www.volleyball-bundesliga.de/cms/home/1_bundesliga_maenner/statistik/tabelle/hauptrunde.xhtml",
+  "official_label": "VBL official schedule",
+  "observed": "2026-10-23T16:28Z-16:40Z",
+  "notes": "19:30 local. Both 0-1 (Goats lost 2-3, Netzhoppers lost 2-3 on opening night).",
+  "tier": null,
+  "price": {
+   "fixture_id": "vol-1201",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "vol-1202",
+  "sport": "volleyball",
+  "sport_name": "Volleyball",
+  "competition": "VBL 1. Bundesliga",
+  "stage": "Matchday 2",
+  "participant_a": "VfB Friedrichshafen",
+  "participant_b": "BADEN VOLLEYS SSC Karlsruhe",
+  "start_utc": "2026-10-24T16:30:00Z",
+  "date": null,
+  "venue": "SPACETECH ARENA, Friedrichshafen",
+  "status": "verified",
+  "official_url": "https://www.volleyball-bundesliga.de/cms/home/1_bundesliga_maenner/statistik/tabelle/hauptrunde.xhtml",
+  "official_label": "VBL official schedule",
+  "observed": "2026-10-23T16:28Z-16:40Z",
+  "notes": "18:30 local. Both 1-0; Friedrichshafen won 3-1, Karlsruhe 3-0.",
+  "tier": null,
+  "price": {
+   "fixture_id": "vol-1202",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "vol-1203",
+  "sport": "volleyball",
+  "sport_name": "Volleyball",
+  "competition": "PlusLiga",
+  "stage": "Kolejka 2",
+  "participant_a": "PGE GiEK SKRA Belchatow",
+  "participant_b": "PGE Projekt Warszawa",
+  "start_utc": "2026-10-24T16:00:00Z",
+  "date": null,
+  "venue": "Hala Energia, Belchatow",
+  "status": "verified",
+  "official_url": "https://www.skra.pl/plusliga",
+  "official_label": "PGE GiEK SKRA official fixture list",
+  "observed": "2026-10-23T16:35Z-16:41Z",
+  "notes": "18:00 local. Skra beat Trefl 3-1 in round 1; Projekt beat ChKS Chelm 3-0 and Zawiercie 3-0.",
+  "tier": null,
+  "price": {
+   "fixture_id": "vol-1203",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "vol-1204",
+  "sport": "volleyball",
+  "sport_name": "Volleyball",
+  "competition": "PlusLiga",
+  "stage": "Kolejka 2",
+  "participant_a": "Slepsk Malow Suwalki",
+  "participant_b": "GKS Katowice",
+  "start_utc": "2026-10-23T15:30:00Z",
+  "date": null,
+  "venue": "Suwalki Arena",
+  "status": "verified",
+  "official_url": "https://www.skra.pl/plusliga",
+  "official_label": "PGE GiEK SKRA official fixture list",
+  "observed": "2026-10-23T16:35Z-16:41Z",
+  "notes": "17:30 local. Suwalki lost 1-3 to Resovia and 2-3 to Jastrzebie; Katowice beat Zawiercie 3-0.",
+  "tier": null,
+  "price": {
+   "fixture_id": "vol-1204",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "vol-1205",
+  "sport": "volleyball",
+  "sport_name": "Volleyball",
+  "competition": "Lega Pallavolo SuperLega",
+  "stage": "Giornata 2",
+  "participant_a": "Sir Susa Scai Perugia",
+  "participant_b": "Tinet Prata di Pordenone",
+  "start_utc": "2026-10-25T17:00:00Z",
+  "date": null,
+  "venue": "Pala Barton Energy, Perugia",
+  "status": "verified",
+  "official_url": "https://www.legavolley.it/calendario/?IdCampionato=999",
+  "official_label": "Lega Pallavolo official calendar",
+  "observed": "2026-10-23T16:40Z-16:44Z",
+  "notes": "25 October 18:00 local. Perugia won 3-2 at Cuneo; Prata beat Monza 3-1.",
+  "tier": null,
+  "price": {
+   "fixture_id": "vol-1205",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "vol-1206",
+  "sport": "volleyball",
+  "sport_name": "Volleyball",
+  "competition": "CBV Superliga Feminina",
+  "stage": "Rodada 2",
+  "participant_a": "Brasilia Volei",
+  "participant_b": "Sesc RJ Flamengo",
+  "start_utc": "2026-10-23T21:30:00Z",
+  "date": null,
+  "venue": "Ginasio da FVDF, Brasilia",
+  "status": "verified",
+  "official_url": "https://www.flamengo.com.br/noticias/volei/sesc-rj-flamengo-enfrenta-o-brasilia-no-primeiro-desafio-fora-de-casa-na-superliga",
+  "official_label": "CR Flamengo official match preview",
+  "observed": "2026-10-23T16:44Z-16:47Z",
+  "notes": "18:30 local (BRT). Brasilia lost 0-3 to Osasco; Flamengo beat Barueri 3-0 with Simone Lee top-scoring on 16.",
+  "tier": null,
+  "price": {
+   "fixture_id": "vol-1206",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "hb-1301",
+  "sport": "handball",
+  "sport_name": "Handball",
+  "competition": "Daikin StarLigue",
+  "stage": "Journee 8",
+  "participant_a": "Aix",
+  "participant_b": "Toulouse",
+  "start_utc": "2026-10-23T18:00:00Z",
+  "date": null,
+  "venue": "Arena du Pays d'Aix",
+  "status": "verified",
+  "official_url": "https://www.lnh.fr/daikin-starligue/calendrier",
+  "official_label": "LNH official calendar, J8",
+  "observed": "2026-10-23T16:20Z-16:24Z",
+  "notes": "20:00 local. Aix 3-4 (6 pts); Toulouse 3-4 (6 pts).",
+  "tier": "Low",
+  "price": {
+   "fixture_id": "hb-1301",
+   "markets": [
+    {
+     "market": "match_winner_3way",
+     "selection": "Aix",
+     "probability": 0.51288125903138,
+     "american": -105,
+     "fair_decimal": 1.9497690398915828
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Draw",
+     "probability": 0.05169468091805355,
+     "american": 1834,
+     "fair_decimal": 19.34434998419278
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Toulouse",
+     "probability": 0.4354240600505664,
+     "american": 130,
+     "fair_decimal": 2.296611721189382
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Aix",
+     "probability": 3.365803559373343e-07,
+     "american": 297105772,
+     "fair_decimal": 2971058.7155781114
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Toulouse",
+     "probability": 5.3016783913813025e-06,
+     "american": 18861851,
+     "fair_decimal": 188619.51370450054
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Aix",
+     "probability": 5.3016783913813025e-06,
+     "american": 18861851,
+     "fair_decimal": 188619.51370450054
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Toulouse",
+     "probability": 3.365803559373343e-07,
+     "american": 297105772,
+     "fair_decimal": 2971058.7155781114
+    }
+   ],
+   "selection": "Aix",
+   "probability": 0.5408397999158119,
+   "american": -118,
+   "fair_decimal": 1.8489763515104876,
+   "tier": "Low",
+   "in_window": true,
+   "withheld": [
+    "Over 55.5 goals dropped: the line sits outside the score distribution",
+    "Under 55.5 goals dropped: the line sits outside the score distribution",
+    "Over 57.5 goals dropped: the line sits outside the score distribution",
+    "Under 57.5 goals dropped: the line sits outside the score distribution",
+    "Over 59.5 goals dropped: the line sits outside the score distribution",
+    "Under 59.5 goals dropped: the line sits outside the score distribution"
+   ],
+   "notes": [],
+   "basis": "attack/defence ratios around the LNH league mean (30.91 goals); expected 60-minute score 30.1-29.2; no home edge",
+   "americain": -118
+  }
+ },
+ {
+  "id": "hb-1302",
+  "sport": "handball",
+  "sport_name": "Handball",
+  "competition": "Daikin StarLigue",
+  "stage": "Journee 8",
+  "participant_a": "Chartres",
+  "participant_b": "Nimes",
+  "start_utc": "2026-10-23T18:00:00Z",
+  "date": null,
+  "venue": "Le Colisee, Chartres",
+  "status": "verified",
+  "official_url": "https://www.lnh.fr/daikin-starligue/calendrier",
+  "official_label": "LNH official calendar, J8",
+  "observed": "2026-10-23T16:20Z-16:24Z",
+  "notes": "20:00 local. Chartres 3-3-1; Nimes 5-2-0.",
+  "tier": "Low",
+  "price": {
+   "fixture_id": "hb-1302",
+   "markets": [
+    {
+     "market": "match_winner_3way",
+     "selection": "Chartres",
+     "probability": 0.33138441530890245,
+     "american": 202,
+     "fair_decimal": 3.0176434189514993
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Draw",
+     "probability": 0.04644067663020036,
+     "american": 2053,
+     "fair_decimal": 21.53284733473716
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Nimes",
+     "probability": 0.6221749080608971,
+     "american": -165,
+     "fair_decimal": 1.6072650745698702
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Chartres",
+     "probability": 1.2765627871718485e-08,
+     "american": 7833535469,
+     "fair_decimal": 78335355.69491592
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Nimes",
+     "probability": 3.0283517755554155e-07,
+     "american": 330212529,
+     "fair_decimal": 3302126.285565338
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Chartres",
+     "probability": 3.0283517755554155e-07,
+     "american": 330212529,
+     "fair_decimal": 3302126.285565338
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Nimes",
+     "probability": 1.2765627871718485e-08,
+     "american": 7833535469,
+     "fair_decimal": 78335355.69491592
+    }
+   ],
+   "selection": "Chartres",
+   "probability": 0.3475236486995034,
+   "american": 188,
+   "fair_decimal": 2.8775020167467207,
+   "tier": "Low",
+   "in_window": true,
+   "withheld": [
+    "Over 55.5 goals dropped: the line sits outside the score distribution",
+    "Under 55.5 goals dropped: the line sits outside the score distribution",
+    "Over 57.5 goals dropped: the line sits outside the score distribution",
+    "Under 57.5 goals dropped: the line sits outside the score distribution",
+    "Over 59.5 goals dropped: the line sits outside the score distribution",
+    "Under 59.5 goals dropped: the line sits outside the score distribution"
+   ],
+   "notes": [],
+   "basis": "attack/defence ratios around the LNH league mean (30.91 goals); expected 60-minute score 30.7-33.7; no home edge",
+   "americain": 188
+  }
+ },
+ {
+  "id": "hb-1303",
+  "sport": "handball",
+  "sport_name": "Handball",
+  "competition": "Daikin StarLigue",
+  "stage": "Journee 8",
+  "participant_a": "Limoges",
+  "participant_b": "Dunkerque",
+  "start_utc": "2026-10-23T18:00:00Z",
+  "date": null,
+  "venue": "Palais des Sports de Beaublanc, Limoges",
+  "status": "verified",
+  "official_url": "https://www.lnh.fr/daikin-starligue/calendrier",
+  "official_label": "LNH official calendar, J8",
+  "observed": "2026-10-23T16:20Z-16:24Z",
+  "notes": "20:00 local. Limoges 4-3-0 (234 GF); Dunkerque 1-6-0 (175 GF).",
+  "tier": "High (price outside -250..+10000)",
+  "price": {
+   "fixture_id": "hb-1303",
+   "markets": [
+    {
+     "market": "match_winner_3way",
+     "selection": "Limoges",
+     "probability": 0.7500936753013108,
+     "american": -300,
+     "fair_decimal": 1.3331668202618858
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Draw",
+     "probability": 0.041028922044016335,
+     "american": 2337,
+     "fair_decimal": 24.373050769581216
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Dunkerque",
+     "probability": 0.2088774026546729,
+     "american": 379,
+     "fair_decimal": 4.787497294062262
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Limoges",
+     "probability": 4.170422940903439e-06,
+     "american": 23978283,
+     "fair_decimal": 239783.83347933769
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Dunkerque",
+     "probability": 4.0460844713887585e-05,
+     "american": 2471425,
+     "fair_decimal": 24715.252661464205
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Limoges",
+     "probability": 4.0460844713887585e-05,
+     "american": 2471425,
+     "fair_decimal": 24715.252661464205
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Dunkerque",
+     "probability": 4.170422940903439e-06,
+     "american": 23978283,
+     "fair_decimal": 239783.83347933769
+    }
+   ],
+   "selection": "Limoges",
+   "probability": 0.7821859204556112,
+   "american": -359,
+   "fair_decimal": 1.2784684227216918,
+   "tier": "High (price outside -250..+10000)",
+   "in_window": false,
+   "withheld": [
+    "Over 55.5 goals dropped: the line sits outside the score distribution",
+    "Under 55.5 goals dropped: the line sits outside the score distribution",
+    "Over 57.5 goals dropped: the line sits outside the score distribution",
+    "Under 57.5 goals dropped: the line sits outside the score distribution",
+    "Over 59.5 goals dropped: the line sits outside the score distribution",
+    "Under 59.5 goals dropped: the line sits outside the score distribution"
+   ],
+   "notes": [
+    "opponent-adjusted attack/defence inputs; no injury or squad data read"
+   ],
+   "basis": "attack/defence ratios around the LNH league mean (30.91 goals); expected 60-minute score 30.3-24.7; no home edge",
+   "americain": -359
+  }
+ },
+ {
+  "id": "hb-1304",
+  "sport": "handball",
+  "sport_name": "Handball",
+  "competition": "Daikin StarLigue",
+  "stage": "Journee 8",
+  "participant_a": "Selestat",
+  "participant_b": "Caen",
+  "start_utc": "2026-10-23T18:30:00Z",
+  "date": null,
+  "venue": "CSI Seltat Alsace",
+  "status": "verified",
+  "official_url": "https://www.lnh.fr/daikin-starligue/calendrier",
+  "official_label": "LNH official calendar, J8",
+  "observed": "2026-10-23T16:20Z-16:24Z",
+  "notes": "20:30 local. Selestat 3-4-0; Caen 3-4-0 (198 GF / 235 GA).",
+  "tier": "High",
+  "price": {
+   "fixture_id": "hb-1304",
+   "markets": [
+    {
+     "market": "match_winner_3way",
+     "selection": "Selestat",
+     "probability": 0.6736527689372991,
+     "american": -206,
+     "fair_decimal": 1.4844442806603768
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Draw",
+     "probability": 0.04507384540631498,
+     "american": 2119,
+     "fair_decimal": 22.185815099323587
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Caen",
+     "probability": 0.28127338565638593,
+     "american": 256,
+     "fair_decimal": 3.555259939245149
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Selestat",
+     "probability": 1.9029363241950658e-07,
+     "american": 525503558,
+     "fair_decimal": 5255036.583649198
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Caen",
+     "probability": 2.6317808911375062e-06,
+     "american": 37996984,
+     "fair_decimal": 379970.8415573231
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Selestat",
+     "probability": 2.6317808911375062e-06,
+     "american": 37996984,
+     "fair_decimal": 379970.8415573231
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Caen",
+     "probability": 1.9029363241950658e-07,
+     "american": 525503558,
+     "fair_decimal": 5255036.583649198
+    }
+   ],
+   "selection": "Selestat",
+   "probability": 0.7054501185213992,
+   "american": -240,
+   "fair_decimal": 1.4175346686396026,
+   "tier": "High",
+   "in_window": true,
+   "withheld": [
+    "Over 55.5 goals dropped: the line sits outside the score distribution",
+    "Under 55.5 goals dropped: the line sits outside the score distribution",
+    "Over 57.5 goals dropped: the line sits outside the score distribution",
+    "Under 57.5 goals dropped: the line sits outside the score distribution",
+    "Over 59.5 goals dropped: the line sits outside the score distribution",
+    "Under 59.5 goals dropped: the line sits outside the score distribution"
+   ],
+   "notes": [
+    "opponent-adjusted attack/defence inputs; no injury or squad data read"
+   ],
+   "basis": "attack/defence ratios around the LNH league mean (30.91 goals); expected 60-minute score 32.3-28.4; no home edge",
+   "americain": -240
+  }
+ },
+ {
+  "id": "hb-1305",
+  "sport": "handball",
+  "sport_name": "Handball",
+  "competition": "Daikin StarLigue",
+  "stage": "Journee 8",
+  "participant_a": "Tremblay",
+  "participant_b": "Cesson-Rennes",
+  "start_utc": "2026-10-23T18:30:00Z",
+  "date": null,
+  "venue": "Palais des Sports, Tremblay",
+  "status": "verified",
+  "official_url": "https://www.lnh.fr/daikin-starligue/calendrier",
+  "official_label": "LNH official calendar, J8",
+  "observed": "2026-10-23T16:20Z-16:24Z",
+  "notes": "20:30 local. Tremblay 3-3-1 (231 GF); Cesson-Rennes 1-6-0.",
+  "tier": "Medium",
+  "price": {
+   "fixture_id": "hb-1305",
+   "markets": [
+    {
+     "market": "match_winner_3way",
+     "selection": "Tremblay",
+     "probability": 0.6327247982764589,
+     "american": -172,
+     "fair_decimal": 1.5804659509537133
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Draw",
+     "probability": 0.04551511001232353,
+     "american": 2097,
+     "fair_decimal": 21.970725759626706
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Cesson-Rennes",
+     "probability": 0.32176009171121756,
+     "american": 211,
+     "fair_decimal": 3.107905628326053
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Tremblay",
+     "probability": 8.423643053678366e-09,
+     "american": 11871348123,
+     "fair_decimal": 118713482.23418945
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Cesson-Rennes",
+     "probability": 1.523026893825277e-07,
+     "american": 656587124,
+     "fair_decimal": 6565872.238069099
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Tremblay",
+     "probability": 1.523026893825277e-07,
+     "american": 656587124,
+     "fair_decimal": 6565872.238069099
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Cesson-Rennes",
+     "probability": 8.423643053678366e-09,
+     "american": 11871348123,
+     "fair_decimal": 118713482.23418945
+    }
+   ],
+   "selection": "Tremblay",
+   "probability": 0.6628966104268326,
+   "american": -197,
+   "fair_decimal": 1.5085308693253234,
+   "tier": "Medium",
+   "in_window": true,
+   "withheld": [
+    "Over 55.5 goals dropped: the line sits outside the score distribution",
+    "Under 55.5 goals dropped: the line sits outside the score distribution",
+    "Over 57.5 goals dropped: the line sits outside the score distribution",
+    "Under 57.5 goals dropped: the line sits outside the score distribution",
+    "Over 59.5 goals dropped: the line sits outside the score distribution",
+    "Under 59.5 goals dropped: the line sits outside the score distribution"
+   ],
+   "notes": [],
+   "basis": "attack/defence ratios around the LNH league mean (30.91 goals); expected 60-minute score 34.6-31.3; no home edge",
+   "americain": -197
+  }
+ },
+ {
+  "id": "hb-1306",
+  "sport": "handball",
+  "sport_name": "Handball",
+  "competition": "Daikin StarLigue",
+  "stage": "Journee 8",
+  "participant_a": "Nantes",
+  "participant_b": "Chambery",
+  "start_utc": "2026-10-24T17:00:00Z",
+  "date": null,
+  "venue": "H Arena, Nantes",
+  "status": "verified",
+  "official_url": "https://www.lnh.fr/daikin-starligue/calendrier",
+  "official_label": "LNH official calendar, J8",
+  "observed": "2026-10-23T16:20Z-16:24Z",
+  "notes": "Saturday 24 October, 19:00 local. Nantes 6-1-0; Chambery 2-3-2.",
+  "tier": "High (price outside -250..+10000)",
+  "price": {
+   "fixture_id": "hb-1306",
+   "markets": [
+    {
+     "market": "match_winner_3way",
+     "selection": "Nantes",
+     "probability": 0.7950587435888626,
+     "american": -388,
+     "fair_decimal": 1.2577686970475175
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Draw",
+     "probability": 0.033031883555274776,
+     "american": 2927,
+     "fair_decimal": 30.273780734502274
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Chambery",
+     "probability": 0.17190937285586258,
+     "american": 482,
+     "fair_decimal": 5.817018487051605
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Nantes",
+     "probability": 3.6971528492022694e-09,
+     "american": 27047840246,
+     "fair_decimal": 270478403.4600487
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Chambery",
+     "probability": 5.779490571917243e-08,
+     "american": 1730256205,
+     "fair_decimal": 17302563.046975743
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Nantes",
+     "probability": 5.779490571917243e-08,
+     "american": 1730256205,
+     "fair_decimal": 17302563.046975743
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Chambery",
+     "probability": 3.6971528492022694e-09,
+     "american": 27047840246,
+     "fair_decimal": 270478403.4600487
+    }
+   ],
+   "selection": "Nantes",
+   "probability": 0.82221815804235,
+   "american": -462,
+   "fair_decimal": 1.2162222279071742,
+   "tier": "High (price outside -250..+10000)",
+   "in_window": false,
+   "withheld": [
+    "Over 55.5 goals dropped: the line sits outside the score distribution",
+    "Under 55.5 goals dropped: the line sits outside the score distribution",
+    "Over 57.5 goals dropped: the line sits outside the score distribution",
+    "Under 57.5 goals dropped: the line sits outside the score distribution",
+    "Over 59.5 goals dropped: the line sits outside the score distribution",
+    "Under 59.5 goals dropped: the line sits outside the score distribution"
+   ],
+   "notes": [
+    "opponent-adjusted attack/defence inputs; no injury or squad data read"
+   ],
+   "basis": "attack/defence ratios around the LNH league mean (30.91 goals); expected 60-minute score 37.2-30.0; no home edge",
+   "americain": -462
+  }
+ },
+ {
+  "id": "hb-1307",
+  "sport": "handball",
+  "sport_name": "Handball",
+  "competition": "Daikin StarLigue",
+  "stage": "Journee 8",
+  "participant_a": "Saint-Raphael",
+  "participant_b": "Paris",
+  "start_utc": "2026-10-25T15:00:00Z",
+  "date": null,
+  "venue": "Palais des Sports J-F Krakowski",
+  "status": "verified",
+  "official_url": "https://www.lnh.fr/daikin-starligue/calendrier",
+  "official_label": "LNH official calendar, J8",
+  "observed": "2026-10-23T16:20Z-16:24Z",
+  "notes": "Sunday 25 October, 16:00 local. Saint-Raphael 2-5-0; Paris 7-0-0.",
+  "tier": "Low",
+  "price": {
+   "fixture_id": "hb-1307",
+   "markets": [
+    {
+     "market": "match_winner_3way",
+     "selection": "Saint-Raphael",
+     "probability": 0.10039450062286957,
+     "american": 896,
+     "fair_decimal": 9.960704956902818
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Draw",
+     "probability": 0.02451390260083112,
+     "american": 3979,
+     "fair_decimal": 40.793178315316304
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Paris",
+     "probability": 0.8750915967762993,
+     "american": -701,
+     "fair_decimal": 1.142737518773856
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Saint-Raphael",
+     "probability": 3.7965354409645035e-08,
+     "american": 2633980316,
+     "fair_decimal": 26339804.15960378
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Paris",
+     "probability": 1.1326497743930808e-06,
+     "american": 88288444,
+     "fair_decimal": 882885.4449168456
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Saint-Raphael",
+     "probability": 1.1326497743930808e-06,
+     "american": 88288444,
+     "fair_decimal": 882885.4449168456
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Paris",
+     "probability": 3.7965354409645035e-08,
+     "american": 2633980316,
+     "fair_decimal": 26339804.15960378
+    }
+   ],
+   "selection": "Saint-Raphael",
+   "probability": 0.10291740793696637,
+   "american": 872,
+   "fair_decimal": 9.716529205753687,
+   "tier": "Low",
+   "in_window": true,
+   "withheld": [
+    "Over 55.5 goals dropped: the line sits outside the score distribution",
+    "Under 55.5 goals dropped: the line sits outside the score distribution",
+    "Over 57.5 goals dropped: the line sits outside the score distribution",
+    "Under 57.5 goals dropped: the line sits outside the score distribution",
+    "Over 59.5 goals dropped: the line sits outside the score distribution",
+    "Under 59.5 goals dropped: the line sits outside the score distribution"
+   ],
+   "notes": [],
+   "basis": "attack/defence ratios around the LNH league mean (30.91 goals); expected 60-minute score 26.0-35.5; no home edge",
+   "americain": 872
+  }
+ },
+ {
+  "id": "hb-1308",
+  "sport": "handball",
+  "sport_name": "Handball",
+  "competition": "Daikin StarLigue",
+  "stage": "Journee 8",
+  "participant_a": "Montpellier",
+  "participant_b": "Saran",
+  "start_utc": "2026-10-25T16:00:00Z",
+  "date": null,
+  "venue": "FDI Stadium, Montpellier",
+  "status": "verified",
+  "official_url": "https://www.lnh.fr/daikin-starligue/calendrier",
+  "official_label": "LNH official calendar, J8",
+  "observed": "2026-10-23T16:20Z-16:24Z",
+  "notes": "Sunday 25 October, 17:00 local. Montpellier 4-1-2; Saran 3-4-0.",
+  "tier": "High (price outside -250..+10000)",
+  "price": {
+   "fixture_id": "hb-1308",
+   "markets": [
+    {
+     "market": "match_winner_3way",
+     "selection": "Montpellier",
+     "probability": 0.7604494725246546,
+     "american": -317,
+     "fair_decimal": 1.3150117609787402
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Draw",
+     "probability": 0.03823701965950622,
+     "american": 2515,
+     "fair_decimal": 26.152665895637792
+    },
+    {
+     "market": "match_winner_3way",
+     "selection": "Saran",
+     "probability": 0.20131350781583923,
+     "american": 397,
+     "fair_decimal": 4.967376560319022
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Montpellier",
+     "probability": 1.9988373042484575e-07,
+     "american": 500290743,
+     "fair_decimal": 5002908.430188568
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Saran",
+     "probability": 2.4632754949571735e-06,
+     "american": 40596252,
+     "fair_decimal": 405963.5237906615
+    },
+    {
+     "market": "handicap",
+     "line": "+2.5",
+     "units": "goals",
+     "selection": "Montpellier",
+     "probability": 2.4632754949571735e-06,
+     "american": 40596252,
+     "fair_decimal": 405963.5237906615
+    },
+    {
+     "market": "handicap",
+     "line": "-2.5",
+     "units": "goals",
+     "selection": "Saran",
+     "probability": 1.9988373042484575e-07,
+     "american": 500290743,
+     "fair_decimal": 5002908.430188568
+    }
+   ],
+   "selection": "Montpellier",
+   "probability": 0.7906828273380121,
+   "american": -378,
+   "fair_decimal": 1.2647296304217142,
+   "tier": "High (price outside -250..+10000)",
+   "in_window": false,
+   "withheld": [
+    "Over 55.5 goals dropped: the line sits outside the score distribution",
+    "Under 55.5 goals dropped: the line sits outside the score distribution",
+    "Over 57.5 goals dropped: the line sits outside the score distribution",
+    "Under 57.5 goals dropped: the line sits outside the score distribution",
+    "Over 59.5 goals dropped: the line sits outside the score distribution",
+    "Under 59.5 goals dropped: the line sits outside the score distribution"
+   ],
+   "notes": [
+    "opponent-adjusted attack/defence inputs; no injury or squad data read"
+   ],
+   "basis": "attack/defence ratios around the LNH league mean (30.91 goals); expected 60-minute score 33.4-27.3; no home edge",
+   "americain": -378
+  }
+ },
+ {
+  "id": "hb-1309",
+  "sport": "handball",
+  "sport_name": "Handball",
+  "competition": "Liga Plenitude ASOBAL",
+  "stage": "Jornada 7",
+  "participant_a": "FC Barcelona",
+  "participant_b": "REBI Balonmano Cuenca",
+  "start_utc": "2026-10-23T17:00:00Z",
+  "date": null,
+  "venue": "Palau Blaugrana, Barcelona",
+  "status": "verified",
+  "official_url": "https://www.fcbarcelona.com/en/tickets/handball",
+  "official_label": "FC Barcelona official fixture calendar",
+  "observed": "2026-10-23T16:45Z-16:48Z",
+  "notes": "Friday 23 October, 19:00 local. No current ASOBAL table was read, so no strength input exists.",
+  "tier": null,
+  "price": {
+   "fixture_id": "hb-1309",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "f1-1401",
+  "sport": "motor-racing",
+  "sport_name": "Motor Racing",
+  "competition": "Formula 1",
+  "stage": "United States Grand Prix",
+  "participant_a": "Max Verstappen",
+  "participant_b": "Kimi Antonelli",
+  "start_utc": "2026-10-25T20:00:00Z",
+  "date": null,
+  "venue": "Circuit of The Americas, Austin",
+  "status": "verified",
+  "official_url": "https://www.formula1.com/en/racing/2026/united-states",
+  "official_label": "Formula 1 official race page",
+  "observed": "2026-10-23T16:29Z-16:31Z",
+  "notes": "Race 25 October, 16:00 track time. Drivers' standings: Antonelli 340, Russell 238, Hamilton 229, Verstappen 221, Leclerc 215, Norris 201.",
+  "tier": null,
+  "price": {
+   "fixture_id": "f1-1401",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "golf-1501",
+  "sport": "golf",
+  "sport_name": "Golf",
+  "competition": "PGA Tour",
+  "stage": "Butterfield Bermuda Championship, Round 3",
+  "participant_a": "Seamus Power",
+  "participant_b": "Corey Conners",
+  "start_utc": "2026-10-24T11:00:00Z",
+  "date": null,
+  "venue": "Port Royal Golf Course, Southampton",
+  "status": "verified",
+  "official_url": "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/leaderboard",
+  "official_label": "PGA Tour official leaderboard",
+  "observed": "2026-10-23T16:23Z-16:29Z",
+  "notes": "Tied T1 at -12 after 36 holes with Kensei Hirata and Chandler Blanchet; cut line -4. Round 3 pairings were not published at read time.",
+  "tier": null,
+  "price": {
+   "fixture_id": "golf-1501",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ },
+ {
+  "id": "golf-1502",
+  "sport": "golf",
+  "sport_name": "Golf",
+  "competition": "PGA Tour",
+  "stage": "Butterfield Bermuda Championship, Round 3",
+  "participant_a": "Kensei Hirata",
+  "participant_b": "Chandler Blanchet",
+  "start_utc": "2026-10-24T11:00:00Z",
+  "date": null,
+  "venue": "Port Royal Golf Course, Southampton",
+  "status": "verified",
+  "official_url": "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/leaderboard",
+  "official_label": "PGA Tour official leaderboard",
+  "observed": "2026-10-23T16:23Z-16:29Z",
+  "notes": "Both -12 through 36 holes; Blanchet opened with 62. Pairings unverified.",
+  "tier": null,
+  "price": {
+   "fixture_id": "golf-1502",
+   "markets": [],
+   "selection": null,
+   "probability": null,
+   "american": null,
+   "fair_decimal": null,
+   "tier": null,
+   "in_window": false,
+   "withheld": [
+    "no official quantitative strength input was read for both sides"
+   ],
+   "notes": [],
+   "basis": null
+  }
+ }
+]

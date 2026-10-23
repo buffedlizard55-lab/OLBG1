@@ -1,0 +1,214 @@
+[
+ {
+  "id": "F-429A-01",
+  "severity": "high",
+  "title": "OLBG time labels are internally inconsistent with the official schedules",
+  "detail": "OLBG's Darts hub showed 'Today 14:45' for Jonny Clayton v Niko Springer, but the PDC schedule puts that tie in the 20:30 CEST slot (18:30Z), a discrepancy of 3h45m. OLBG Tennis showed 'Tomorrow 05:30' for Rybakina v Shnaider while the WTA order of play has it not before 17:30 in Ningbo (09:30Z), a four-hour gap. OLBG Basketball showed Knicks @ Celtics at 'Today 19:10' against a 7:00pm ET (23:00Z) tip. Every OLBG time on this desk is therefore treated as a display label, never as a UTC start.",
+  "url": "https://www.pdc.tv/news",
+  "rows": [
+   "darts-304",
+   "ten-501",
+   "bkn-602"
+  ]
+ },
+ {
+  "id": "F-429A-02",
+  "severity": "medium",
+  "title": "PDC's own schedule article is behind a consent wall for direct fetches",
+  "detail": "The pdc.tv article of 19 October 2026 ('2026 Machineseeker European Championship schedule confirmed') returned only a cookie-consent shell. The eight Friday ties were therefore confirmed through the PDC news hub plus independent listings that reproduce the same PDC order of play, and the PDC URL is retained as the official reference. The session does not claim a direct read of the article body.",
+  "url": "https://www.pdc.tv/news",
+  "rows": [
+   "darts-301",
+   "darts-308"
+  ]
+ },
+ {
+  "id": "F-429A-03",
+  "severity": "medium",
+  "title": "German HBL official schedule page served no fixture table",
+  "detail": "opel-hbl.de/de/hbl/spielplan returned promotional text and a reCAPTCHA block with no match list, so the two German handball fixtures (Goeppingen v Eisenach, Hannover-Burgdorf v Lemgo) could not be confirmed on the league's own page and were excluded from the priced slate.",
+  "url": "https://www.opel-hbl.de/de/hbl/spielplan",
+  "rows": []
+ },
+ {
+  "id": "F-429A-04",
+  "severity": "medium",
+  "title": "Munster GAA club-championship URL changed",
+  "detail": "https://munster.gaa.ie/fixtures/club-2026/ returns a 404; the live page is /fixtures/club-championships-2026/. The working page confirms the Munster club football quarter-finals on 8 November but carries no 25 October Cork final, which is listed by Cork GAA instead.",
+  "url": "https://munster.gaa.ie/fixtures/club-championships-2026/",
+  "rows": [
+   "gaa-801"
+  ]
+ },
+ {
+  "id": "F-429A-05",
+  "severity": "high",
+  "title": "Cork senior football final date disputed between sources",
+  "detail": "Cork GAA's official fixtures page, the St Finbarr's club fixtures page and Munster GAA's event page all give Sunday 25 October at 16:00. A Wikipedia season article gives 24 October. The official county board date is used and the conflict is published rather than averaged.",
+  "url": "https://gaacork.ie/fixtures/",
+  "rows": [
+   "gaa-801"
+  ]
+ },
+ {
+  "id": "F-429A-06",
+  "severity": "medium",
+  "title": "Galway county finals were moved for weather on the morning of publication",
+  "detail": "Galway GAA published a fixture-change notice at 13:56 on 23 October moving the senior football final to Sunday 25 October, 16:00 at Pearse Stadium, and postponing several underage finals. Any earlier listing of a Saturday throw-in is superseded. The notice is the only source used for this row.",
+  "url": "https://www.galwaygaa.ie/changes-weekend-football-fixture-schedule/",
+  "rows": [
+   "gaa-802"
+  ]
+ },
+ {
+  "id": "F-429A-07",
+  "severity": "medium",
+  "title": "Cricket Australia publishes viewer-local times, not venue times",
+  "detail": "The Tasmania v Victoria and Western Australia v NSW match pages render '7:30 pm your time' and '2:00 am your time', which cannot be converted without knowing the reader's zone. OLBG's 19:30 label for the same Hobart fixture does not resolve the ambiguity. Both rows are therefore published with a blank UTC start.",
+  "url": "https://www.cricket.com.au/matches/CA:40681/tasmanian-tigers-men-victoria-men-one-day-cup-2026-27",
+  "rows": [
+   "cri-1003",
+   "cri-1004"
+  ]
+ },
+ {
+  "id": "F-429A-08",
+  "severity": "medium",
+  "title": "Two rugby-league/cricket fixtures rest on discovery cards or secondary lists",
+  "detail": "The CSA Pro20 Lions v Limpopo fixture and the two November Gaelic club finals were visible only on OLBG cards or secondary listings. Neither is priced or counted as verified; they appear blank and flagged.",
+  "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+  "rows": [
+   "cri-1005",
+   "gaa-804",
+   "gaa-805"
+  ]
+ },
+ {
+  "id": "F-429A-09",
+  "severity": "medium",
+  "title": "Greyhound tips on the OLBG card are one- and two-tip samples",
+  "detail": "Every greyhound race card read carried between one and four win tips in total (for example 2/2 for Ontherun Jamie and 2/2 for Grouchos Gregor). A two-tip sample is not a probability, so the greyhound rows carry official race facts and no tip-derived price.",
+  "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+  "rows": [
+   "gb-901",
+   "gb-902"
+  ]
+ },
+ {
+  "id": "F-429A-10",
+  "severity": "high",
+  "title": "Luke Humphries withdrew from the European Championship before the priced session",
+  "detail": "The PDC field changed when Luke Humphries withdrew with gastroenteritis and Kim Huybrechts took his place. Any OLBG card or preview showing Humphries in the Friday or Saturday draw is stale, and the desk prices only the eight confirmed Friday ties.",
+  "url": "https://www.pdc.tv/news",
+  "rows": [
+   "darts-301"
+  ]
+ },
+ {
+  "id": "F-429A-11",
+  "severity": "medium",
+  "title": "OLBG golf hub was empty during a live PGA Tour event",
+  "detail": "The Golf hub at /betting-tips/Golf/5 returned 'No tips found' and the 2027 US Masters hub also returned no tips, while the PGA Tour leaderboard showed the Butterfield Bermuda Championship in progress with four players tied at -12. The absence of OLBG tips is a discovery gap, not an absence of fixtures.",
+  "url": "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/leaderboard",
+  "rows": [
+   "golf-1501",
+   "golf-1502"
+  ]
+ },
+ {
+  "id": "F-429A-12",
+  "severity": "medium",
+  "title": "OLBG rugby league hub lists only 2027 ante-post markets",
+  "detail": "The Rugby League hub showed State of Origin 2027, Super League 2027 and NRL 2027 outrights and no live fixture, while the International Rugby League site listed six Round 2 World Cup and international fixtures for 24-25 October. The desk publishes the official fixtures and records the OLBG discovery gap.",
+  "url": "https://www.intrl.sport/fixtures-results",
+  "rows": [
+   "rl-1101",
+   "rl-1106"
+  ]
+ },
+ {
+  "id": "F-429A-13",
+  "severity": "medium",
+  "title": "Second Northern Ireland Open semi-final pairing is unresolved",
+  "detail": "WST listed the 14:00 Saturday semi-final as 'Winner of match 59' against 'Winner of match 60' at read time, because both Friday quarter-finals were still listed as scheduled. That row is published with no participants, no price and no selection.",
+  "url": "https://www.wst.tv/matches/",
+  "rows": [
+   "snk-402"
+  ]
+ },
+ {
+  "id": "F-429A-14",
+  "severity": "medium",
+  "title": "NBA strength inputs are a one-game sample",
+  "detail": "Every NBA club had played a single game when the games page was read, so the 12 rows carry official fixtures and official records of 0-1 or 1-0 only. A one-game sample cannot support a rating, so all twelve are published unpriced rather than given invented strength.",
+  "url": "https://www.nba.com/games?date=2026-10-23",
+  "rows": [
+   "bkn-601",
+   "bkn-602",
+   "bkn-603",
+   "bkn-604",
+   "bkn-605",
+   "bkn-606",
+   "bkn-607",
+   "bkn-608",
+   "bkn-609",
+   "bkn-610",
+   "bkn-611",
+   "bkn-612"
+  ]
+ },
+ {
+  "id": "F-429A-15",
+  "severity": "medium",
+  "title": "All three EuroLeague Friday games had started before the snapshot",
+  "detail": "Zalgiris v ASVEL (13:00 CEST), Olympiacos v Fenerbahce (14:15) and Paris v Valencia (14:45) were all in the past at the 16:45Z snapshot. They are retained as elapsed rows and are never priced retrospectively.",
+  "url": "https://www.euroleaguebasketball.net/en/euroleague/game-center/?round=7&season=E2026",
+  "rows": [
+   "bkn-613",
+   "bkn-614",
+   "bkn-615"
+  ]
+ },
+ {
+  "id": "F-429A-16",
+  "severity": "high",
+  "title": "Duplicate contradictory task rows in the shared board",
+  "detail": "COORDINATION.md line 142 records T424375B4 as done while line 144 records the identical task and scope as in progress. The same file carries two T63 rows at lines 123 and 125, and two identical section-64 headings at lines 4029 and 4279. Readers cannot tell which status is authoritative; only the integration session should resolve it.",
+  "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/COORDINATION.md",
+  "rows": []
+ },
+ {
+  "id": "F-429A-17",
+  "severity": "high",
+  "title": "The newest merged desk prices a High pick from a three-tip sample",
+  "detail": "In data/2b72da34/desk.json lines 157-174 the Boston -2.5 selection is labelled High at p=0.714 with fair odds of exactly -250. The probability is produced by p=(tips+2)/(total+4) in scripts/s2b72da34_build.py, i.e. a community tip share, and the sample is 3/3 tips. A three-vote sample cannot establish a 71.4% probability, and the value sits exactly on the band boundary.",
+  "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/2b72da34/desk.json",
+  "rows": []
+ },
+ {
+  "id": "F-429A-18",
+  "severity": "medium",
+  "title": "A merged desk row is labelled unverified yet counted as priced",
+  "detail": "2b72da34/baseball.html contains one row whose only official link is the generic https://www.mlb.com/ homepage and whose own note says 'UNVERIFIED - flagged', while the desk summary counts it among 37 priced rows. The fixture is now officially confirmed by MLB StatsAPI as World Series Game 1, which is why this desk republishes it with the real game link.",
+  "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/2b72da34/baseball.html",
+  "rows": [
+   "mlb-701"
+  ]
+ },
+ {
+  "id": "F-429A-19",
+  "severity": "medium",
+  "title": "Two sport pages in the newest desk contain no rows at all",
+  "detail": "2b72da34/golf.html (473 bytes) and 2b72da34/rugby-league.html (481 bytes) render only a coverage-gap notice. That is honest, but the desk's headline of 37 priced rows should not be read as 15 sports covered; the same gap applies here for golf and rugby league pricing.",
+  "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/2b72da34/golf.html",
+  "rows": []
+ },
+ {
+  "id": "F-429A-20",
+  "severity": "medium",
+  "title": "Three stale 'in progress' claims remain on the board",
+  "detail": "COORDINATION.md lines 77, 89, 112 and 113 still mark T9, T19, T51 and T52 as in progress, well past the 60-minute staleness rule in the board's own section 0.4. They are noted for the integration session and were not edited here.",
+  "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/COORDINATION.md",
+  "rows": []
+ }
+]

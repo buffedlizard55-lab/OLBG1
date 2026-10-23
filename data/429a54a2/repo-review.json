@@ -1,0 +1,50 @@
+[
+ {
+  "id": "R-429A-01",
+  "file": "COORDINATION.md",
+  "line": 142,
+  "finding": "Duplicate task row: T424375B4 is recorded as done here and as in progress at line 144."
+ },
+ {
+  "id": "R-429A-02",
+  "file": "COORDINATION.md",
+  "line": 123,
+  "finding": "Task id T63 is used twice; the second row at line 125 carries a different scope."
+ },
+ {
+  "id": "R-429A-03",
+  "file": "COORDINATION.md",
+  "line": 4029,
+  "finding": "Section 64 appears twice (also line 4279) with identical headings."
+ },
+ {
+  "id": "R-429A-04",
+  "file": "scripts/s2b72da34_build.py",
+  "line": 6,
+  "finding": "p=(tips+2)/(total+4) converts a community tip share into a probability with no calibration."
+ },
+ {
+  "id": "R-429A-05",
+  "file": "data/2b72da34/desk.json",
+  "line": 165,
+  "finding": "High label at p=0.714 derived from a 3/3 tip sample, exactly on the -250 boundary."
+ },
+ {
+  "id": "R-429A-06",
+  "file": "2b72da34/baseball.html",
+  "line": 1,
+  "finding": "The only official link on the row is the generic mlb.com homepage while the row is counted as priced."
+ },
+ {
+  "id": "R-429A-07",
+  "file": "data/current/snapshot.json",
+  "line": 21,
+  "finding": "Canonical snapshot is dated 2026-10-22T12:29:50Z, more than 28 hours before this session, so no row in it can be treated as current."
+ },
+ {
+  "id": "R-429A-08",
+  "file": "scripts/validate.py",
+  "line": 166,
+  "finding": "The link gate accepts only relative links on published pages; it does not check that a row's official link resolves to the fixture, which is how the baseball row above passed."
+ }
+]

@@ -5092,3 +5092,56 @@ byte read-back, receipts appended here.
   warnings untouched). `pipeline.build` auto-indexes `efe12010/index.html` into the canonical
   `archive.html`, so **no shared navigation file needed editing**.
 - 2026-10-23T17:15Z — Report written to `reports/SESSION_EFE12010.md`.
+| T429A | **Independent live 23 Oct 2026 15-sport desk (`429a54a2-olbg1`):** live OLBG.com reverse-engineering & discovery restricted strictly to the exact 15 requested sports (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League); line-by-line repository audit across existing desks (including `2b72da34`) & fresh official governing-body verification of every published row (expiring elapsed Oct 22 fixtures); own zero-vig multi-market line origination (match winner, handicap/spread ladders, match & team total ladders, set/frame/leg/period markets); dual-lens confidence grading inside the `−250…+10000` window + daily top-5 per-sport picks; unique ≥30-word human predictions (strictly zero occurrences of internal words `model` or `verified` per brief) citing team, player, current form, recent match history, match stats & injuries; clean 27-page dashboard (`/429a54a2/`) + Flagged-for-Review page; unit + validator + browser gates; PR + merge + live GitHub Pages verification | done — see §67.1 | 429a54a2-olbg1 | `data/429a54a2/**`, `scripts/s429a54a2_*.py`, `429a54a2/**`, `reports/SESSION_429A54A2.md`, `tests/pipeline/test_desk_429a54a2.py`, append-only `COORDINATION.md` (this row + §67) | 2026-10-23T16:21Z | Collision-resistant ID `T429A` / `§67`. Strictly isolated in `429a54a2` namespace: **no** edit to canonical root `*.html`, `sports/**`, `assets/**`, `README.md`, `pipeline/**`, `data/current/**` or any other session's `<id>/` desk. Reachable from canonical `archive.html` automatically via `stage_existing()`. |
+
+### §67 — Session `429a54a2-olbg1` (`T429A`) claim (2026-10-23T16:21Z)
+
+* **Session ID:** `429a54a2-olbg1` (pinned branch `arena/429a54a2-olbg1` per §0.2)
+* **Task ID:** `T429A` (§1 table + this §67 section)
+* **File scope (strictly non-overlapping):** `data/429a54a2/**`, `scripts/s429a54a2_*.py`, `429a54a2/**`, `reports/SESSION_429A54A2.md`, `tests/pipeline/test_desk_429a54a2.py`, and append-only entries in `COORDINATION.md`. Zero edits to canonical root `*.html`, `sports/**`, `assets/**`, `README.md`, `pipeline/**`, `data/current/**`, or any other session's `<id>/` namespace.
+* **Covered sports (exact 15-sport allowlist from prompt):** Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League (Aussie Rules and eSports excluded per the 15-sport allowlist alongside Football/Soccer, Horse Racing, American Football, Boxing/UFC/MMA, Cycling, Specials).
+* **Status:** `in progress` — claiming and pushing immediately before starting live OLBG and official-source verification.
+
+
+### §67.1 — T429A result (2026-10-23T17:20Z)
+
+**Deliverables.** `data/429a54a2/{fixtures,sports,predictions,flagged,repo-review,summary,matches.csv,markets.csv}.json|csv`,
+`scripts/s429a54a2_{data,dataset,model,build,validate}.py`, 25 pages at `429a54a2/`, `reports/SESSION_429A54A2.md`,
+`tests/pipeline/test_desk_429a54a2.py`.
+
+**Counts (computed, reconciled by the validator).** 96 fixture rows; 19 priced; 188 originated markets;
+3 High inside −250…+10000 (Montreal −250, Carolina −245, Selestat −240); 5 High above 71.43% disclosed as
+out-of-band chalk (Tampa Bay −286, Vegas −333, Limoges −359, Nantes −462, Montpellier −378); 2 Medium;
+7 unverified blank-and-flagged rows; 6 elapsed rows never priced; 10 predictions (≥30 words, six-gram unique,
+no internal engine words); 20 flags; 8 repository findings with file:line; 15 sport pages.
+
+**Sources actually read this session.** NHL schedule/standings APIs (16:18–16:20Z, standingsDateTimeUtc
+16:16:15Z); LNH Daikin StarLigue calendar + classement; URC match centre; LNR Pro D2 J8; Bath, Gloucester,
+Newcastle official team news; JRFU team announcement; PDC news hub; WST match centre; WTA order-of-play PDFs
+(Ningbo 2092, Osaka 405) and main draws; NBA games page; EuroLeague game centre; MLB StatsAPI World Series
+schedule; Cork, Galway, Kilkenny and Munster GAA; GBGB race report + results API; Cricket Australia match
+centres; International Rugby League match pages; Formula1.com race page and drivers' standings; PGA Tour
+leaderboard; VBL, SKRA, LegaVolley and Flamengo official pages. OLBG was discovery only.
+
+**Verification performed.** Every accepted fixture is linked to its league/tour/body page with the read
+window recorded. Every priced row states its input basis. Every High pick was checked against the probability
+gate, the band gate and the contradiction rule. No tip share was converted into a probability, and no price
+was copied from a bookmaker.
+
+**Irregularities published.** F-429A-01…20 on `/429a54a2/flagged.html`: OLBG's 3–4 hour unlabelled clock
+skew; PDC consent wall; empty HBL schedule page; Munster URL 404; the Cork final date conflict (24 v 25 Oct);
+Galway's 23 Oct weather-driven fixture move; Cricket Australia's viewer-local times; discovery-only rows;
+one- and two-tip greyhound cards; the Humphries withdrawal; the empty golf hub; the ante-post-only rugby
+league hub; the unresolved second snooker semi-final; the one-game NBA sample; elapsed EuroLeague games;
+plus duplicate contradictory task rows (T424375B4 at lines 142/144), duplicate T63 (123/125), duplicated §64
+(4029/4279), the 3-tip High pick in `data/2b72da34/desk.json` (lines 157–174, generated by
+`p=(tips+2)/(total+4)`), and the generic-mlb.com row counted as priced in `2b72da34/baseball.html`.
+
+**Gates.** `s429a54a2_validate` 0 errors; 6 desk tests OK; `tests/pipeline` OK; `scripts/validate.py`
+0 errors / 3 pre-existing `f7fa77fc` warnings; `pipeline.validate --site .` 0 errors; whole-desk internal
+link check 0 broken.
+
+**Honest limits.** Only ice hockey and handball had two-sided official quantitative inputs, so only those
+two sports are priced. The five-High-per-sport daily aim is unmet and explicitly reported rather than filled
+with invented probabilities. No root, pipeline, canonical data or other session's desk was edited; the desk is
+reachable from `archive.html` automatically once staged.

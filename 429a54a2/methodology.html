@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology · OLBG 15-sport desk · 429a54a2</title>
+<meta name="description" content="Official-source match list, originated lines, confidence tiers and review flags for 15 sports, snapshot 2026-10-23T16:45Z.">
+<style>
+:root{--ink:#12241c;--muted:#5b6f66;--line:#dfe7e2;--bg:#f6f9f7;--card:#fff;--green:#12563d;--amber:#8a5a12;--red:#8c2f24}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+a{color:#12563d}a:hover{text-decoration:underline}
+header.top{background:#0f3f2d;color:#fff;padding:14px 22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+header.top .brand{font-weight:700;letter-spacing:.3px}header.top .brand small{display:block;font-weight:400;opacity:.75;font-size:11px;letter-spacing:1px}
+nav.top a{color:#dff0e7;margin-right:14px;text-decoration:none;font-size:13px}nav.top a.on{color:#fff;border-bottom:2px solid #8fd3b3}
+main{max-width:1200px;margin:0 auto;padding:26px 20px 60px}
+h1{font-size:27px;margin:0 0 6px}h2{font-size:19px;margin:26px 0 10px}h3{font-size:15px;margin:16px 0 6px}
+p.lede{color:var(--muted);max-width:88ch;margin:0 0 18px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi b{display:block;font-size:22px}.kpi span{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.6px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.notice{background:#fff8e8;border:1px solid #e8d3a2;border-radius:8px;padding:11px 14px;margin:14px 0;font-size:13.5px}
+.warn{background:#fbeeeb;border-color:#e6c3bb}
+table{width:100%;border-collapse:collapse;font-size:13px;background:var(--card)}
+th,td{border-bottom:1px solid var(--line);padding:8px 9px;text-align:left;vertical-align:top}
+th{background:#eef4f0;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:#2c4a3c}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.badge{display:inline-block;padding:1px 7px;border-radius:20px;font-size:11px;font-weight:600;border:1px solid}
+.badge.high{background:#e3f3ea;color:#0d5d3c;border-color:#b8ddc8}
+.badge.med{background:#fff4dd;color:#8a5a12;border-color:#e9d1a4}
+.badge.low{background:#eef1f0;color:#4d625a;border-color:#d6dfda}
+.badge.gap{background:#fbeeeb;color:#8c2f24;border-color:#e6c3bb}
+small.muted,span.muted{color:var(--muted);font-size:11.5px;display:block}
+a.src{font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.card h3{margin-top:0}
+.pred{border-left:3px solid #12563d}
+ul.tight{margin:6px 0 0 18px;padding:0}ul.tight li{margin:3px 0}
+footer{border-top:1px solid var(--line);margin-top:36px;padding-top:14px;color:var(--muted);font-size:12px}
+.tag{font-size:11px;background:#eef4f0;border:1px solid var(--line);border-radius:6px;padding:1px 6px;margin-right:4px}
+</style></head><body>
+<header class="top"><div class="brand">OLBG 15-SPORT DESK<small>SESSION 429A54A2 · SNAPSHOT 2026-10-23T16:45:00Z</small></div>
+<nav class="top"><a class="" href="index.html">Overview</a><a class="" href="matches.html">Match list</a><a class="" href="markets.html">Markets</a><a class="" href="high-confidence.html">High confidence</a><a class="" href="predictions.html">Predictions</a><a class="" href="analysis.html">Analysis</a><a class="" href="sources.html">Sources</a><a class="on" href="methodology.html">Method</a><a class="" href="flagged.html">Flagged for review</a><a class="" href="repo-review.html">Repo review</a></nav></header><main>
+<h1>Methodology</h1>
+<p class="lede">The rules that decide what appears in a cell, and what stays blank.</p>
+<div class="panel"><h3>1. Fixture truth</h3><p>A row is accepted only if the participants, competition and date were read on a league, tour or governing-body page. OLBG supplies the route and the event name; it never certifies the fixture. If only a secondary source lists a match, the row is published blank with a flag.</p>
+<h3>2. Start times</h3><p>Times are UTC. Where the official page gives only a local time with a stated venue, the row records the start and the local label. Where the page renders a time in the reader's own zone, or gives no zone, the start is left blank. No timezone is guessed.</p>
+<h3>3. Prices</h3><p>A price exists only when both sides have an official quantitative input. Ice hockey: log5 on points percentage; goals for and against per game give the puck line and totals through independent Poisson scores. Handball: attack and defence ratios around the LNH mean. No home edge, no margin, no clipping. Fair decimal is 1/probability; the American equivalent is derived from it.</p>
+<h3>4. Confidence</h3><p>High needs both inputs, p &ge; 0.70 and no contradicting official context. Medium is 0.60 to 0.70. Everything else is Low. The requested -250 to +10000 band is shown as a separate flag because a probability above 71.43% cannot sit inside it; those picks are disclosed instead of relabelled.</p>
+<h3>5. Blank and flagged</h3><p>An unconfirmed value is empty in JSON and empty in the table. It is never filled from memory, a media report or a previous session's file. The review page lists every such row with the reason and the official link that was checked.</p>
+<h3>6. What is not claimed</h3><p>No worldwide coverage, no calibration, no injury feed, no bookmaker quote, no edge, and no guarantee. The NBA and opening-week samples are specifically not used to invent strength.</p></div>
+<h2>Reproduction</h2>
+<div class="panel"><p>The dataset, prices and pages are generated from one script:</p>
+<pre style="overflow-x:auto;background:#f2f6f4;padding:12px;border-radius:8px"><code>python3 scripts/s429a54a2_build.py
+python3 scripts/s429a54a2_validate.py</code></pre>
+<p>The build is deterministic for a fixed snapshot string, and the validator re-checks every table row for an official https link, every High pick for the probability and band gates, and every prediction for length and repetition.</p></div>
+<div class="panel"><strong>Sports:</strong> <a href="sports/golf.html">Golf</a> <a href="sports/volleyball.html">Volleyball</a> <a href="sports/rugby-union.html">Rugby Union</a> <a href="sports/cricket.html">Cricket</a> <a href="sports/snooker.html">Snooker</a> <a href="sports/darts.html">Darts</a> <a href="sports/baseball.html">Baseball</a> <a href="sports/gaelic-sports.html">Gaelic Sports</a> <a href="sports/greyhounds.html">Greyhounds</a> <a href="sports/tennis.html">Tennis</a> <a href="sports/motor-racing.html">Motor Racing</a> <a href="sports/handball.html">Handball</a> <a href="sports/ice-hockey.html">Ice Hockey</a> <a href="sports/basketball.html">Basketball</a> <a href="sports/rugby-league.html">Rugby League</a> </div>
+<footer>Independent research, not betting advice. Snapshot 2026-10-23T16:45:00Z. OLBG is used for discovery only; every accepted fixture fact is linked to its league, tour or governing body. Prices are originated estimates, not bookmaker offers. 18+.</footer>
+</main></body></html>
