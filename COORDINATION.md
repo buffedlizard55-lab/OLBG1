@@ -66,6 +66,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 
 | # | Task | Status | Session | File scope | Started (UTC) | Notes |
 |---|------|--------|---------|------------|---------------|-------|
+| T3C021B | **Fresh live 23 Oct 2026 night desk (`3c021b49-olbg1`):** live OLBG discovery across the exact 15 requested sports; fresh official governing-body verification; independent multi-market line origination; strict −250…+10000 High gate; unique ≥30-word human predictions; namespaced dashboard, repo audit, sources and Flagged for Review; validator gate; PR → merge → GitHub Pages deployment read-back | in progress | 3c021b49-olbg1 | `data/3c021b49/**`, `scripts/s3c021b49_*.py`, `3c021b49/**`, `reports/SESSION_3C021B49.{md,html}`, `tests/pipeline/test_desk_3c021b49.py`, append-only `COORDINATION.md` | 2026-10-23T22:00Z | Pinned Arena branch `arena/3c021b49-olbg1`; strictly isolated namespace; no shared canonical root/pipeline/data-current/workflow edits. |
 | T1 | Reverse-engineer OLBG sport taxonomy and match coverage | done | ce5920e3-olbg1 | `data/olbg_taxonomy.json`, `reverse-engineering.html` | 2026-10-21T05:20Z | 22 OLBG sports enumerated with IDs; 17 in scope |
 | T2 | Harvest + verify fixtures for in-scope sports | done | ce5920e3-olbg1 | `data/fixtures.json` | 2026-10-21T05:35Z | Official-source verification per row (initial 50 rows) |
 | T3 | Originate betting lines + confidence tiers | done | ce5920e3-olbg1 | `data/lines.json`, `scripts/model.py`, `scripts/origin_lines.py` | 2026-10-21T05:18Z | Initial 49 priced matches |
@@ -5761,3 +5762,10 @@ as §74.2.
 * **Conflict history (append-only):** three rebases + one merge against `main` while peer sessions (`T65331685`, `T5821`) merged; every conflict was a COORDINATION.md hunk resolved with both sides kept verbatim — zero deletions, zero renumbering, zero peer desk files touched.
 * **Requests to other sessions:** none open. The canonical root `data/current/snapshot.json` remains the 2026-10-22T12:29Z capture; this desk is an independent namespace and is not represented as current canonical evidence.
 * **Session close:** this is the final commit from `arena/496eaf02-olbg1`. The desk state above is final for this session.
+
+### §75 — Session `3c021b49-olbg1` (`T3C021B`) live desk claim — 2026-10-23T22:00Z
+
+* **Session ID:** `3c021b49-olbg1` (pinned branch `arena/3c021b49-olbg1` per §0.2).
+* **Task ID:** `T3C021B`; strictly isolated file scope: `data/3c021b49/**`, `scripts/s3c021b49_*.py`, `3c021b49/**`, `reports/SESSION_3C021B49.{md,html}`, `tests/pipeline/test_desk_3c021b49.py`, and append-only `COORDINATION.md`.
+* **Scope exclusions:** no edits to canonical root pages, `sports/**`, `assets/**`, `README.md`, `pipeline/**`, `data/current/**`, `.github/workflows/**`, `scripts/validate.py`, or any peer desk.
+* **Plan:** capture the live OLBG 15-sport slate, re-read official governing-body sources for every published fixture and prose claim, originate a zero-vig multi-market book, enforce probability >70% and fair American price −250…+10000, write unique ≥30-word human predictions without internal terminology, publish a clean dashboard and Flagged for Review page, validate, merge, and verify GitHub Pages.
