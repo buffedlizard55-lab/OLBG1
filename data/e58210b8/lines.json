@@ -1,0 +1,2011 @@
+{
+ "session": "e58210b8-olbg1",
+ "task": "T5821",
+ "harvest_utc": "2026-10-23T19:35:00Z",
+ "books": [
+  {
+   "id": "nhl-2026020166",
+   "sport": "ice_hockey",
+   "date": "2026-10-23",
+   "start_utc": "2026-10-24T00:00:00Z",
+   "away": "Montreal Canadiens",
+   "home": "Chicago Blackhawks",
+   "venue": "United Center",
+   "official_game_id": 2026020166,
+   "source_ids": [
+    "nhl-schedule-1023",
+    "nhl-standings"
+   ],
+   "inputs": {
+    "away": {
+     "abbr": "MTL",
+     "record": "4-3-2",
+     "goals_for": 30,
+     "goals_against": 34,
+     "rating": 0.4411
+    },
+    "home": {
+     "abbr": "CHI",
+     "record": "3-6-0",
+     "goals_for": 21,
+     "goals_against": 36,
+     "rating": 0.2936
+    },
+    "expected_goals": [
+     3.06,
+     3.67
+    ]
+   },
+   "markets": [
+    {
+     "market": "Money Line",
+     "key": "winner",
+     "note": "Two-way, overtime and shootout included. Rating-based, zero margin.",
+     "outcomes": [
+      {
+       "selection": "Chicago Blackhawks",
+       "probability": 0.345,
+       "fair_decimal": 2.899,
+       "american_display": 190,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Montreal Canadiens",
+       "probability": 0.655,
+       "fair_decimal": 1.527,
+       "american_display": -190,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Puck Line -1.5",
+     "key": "handicap",
+     "note": "Model line, not a quoted offer. Regulation goal model; a one-goal game that goes to overtime cannot cover -1.5.",
+     "outcomes": [
+      {
+       "selection": "Chicago Blackhawks -1.5",
+       "probability": 0.2032,
+       "fair_decimal": 4.921,
+       "american_display": 392,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Montreal Canadiens +1.5",
+       "probability": 0.7968,
+       "fair_decimal": 1.255,
+       "american_display": -392,
+       "fair_price_in_target_band": false
+      }
+     ]
+    },
+    {
+     "market": "Match Total 5.5",
+     "key": "total",
+     "note": "Model line, not a quoted offer. Regulation goals only: overtime and shootout goals are excluded, which biases the under side.",
+     "outcomes": [
+      {
+       "selection": "Over 5.5 goals",
+       "probability": 0.6623,
+       "fair_decimal": 1.51,
+       "american_display": -196,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Under 5.5 goals",
+       "probability": 0.3377,
+       "fair_decimal": 2.961,
+       "american_display": 196,
+       "fair_price_in_target_band": true
+      }
+     ]
+    }
+   ],
+   "pick": "Montreal Canadiens",
+   "pick_probability": 0.655,
+   "pick_decimal": 1.527,
+   "pick_american": -190,
+   "pick_in_window": true,
+   "band": "in-window (-250 to +10000)",
+   "high_and_in_window": false,
+   "confidence": "medium",
+   "withheld": [
+    {
+     "market": "Player points / shots props",
+     "status": "unverified",
+     "reason": "No official player-availability or usage input was read in this pass."
+    },
+    {
+     "market": "Correct score",
+     "status": "unverified",
+     "reason": "Published only as a model distribution; no official price input."
+    },
+    {
+     "market": "Period betting",
+     "status": "unverified",
+     "reason": "No official period-level input was read in this pass."
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020167",
+   "sport": "ice_hockey",
+   "date": "2026-10-23",
+   "start_utc": "2026-10-24T01:00:00Z",
+   "away": "Tampa Bay Lightning",
+   "home": "Colorado Avalanche",
+   "venue": "Ball Arena",
+   "official_game_id": 2026020167,
+   "source_ids": [
+    "nhl-schedule-1023",
+    "nhl-standings"
+   ],
+   "inputs": {
+    "away": {
+     "abbr": "TBL",
+     "record": "7-2-0",
+     "goals_for": 31,
+     "goals_against": 23,
+     "rating": 0.7114
+    },
+    "home": {
+     "abbr": "COL",
+     "record": "5-4-1",
+     "goals_for": 41,
+     "goals_against": 31,
+     "rating": 0.5681
+    },
+    "expected_goals": [
+     3.33,
+     3.27
+    ]
+   },
+   "markets": [
+    {
+     "market": "Money Line",
+     "key": "winner",
+     "note": "Two-way, overtime and shootout included. Rating-based, zero margin.",
+     "outcomes": [
+      {
+       "selection": "Colorado Avalanche",
+       "probability": 0.348,
+       "fair_decimal": 2.874,
+       "american_display": 187,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Tampa Bay Lightning",
+       "probability": 0.652,
+       "fair_decimal": 1.534,
+       "american_display": -187,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Puck Line -1.5",
+     "key": "handicap",
+     "note": "Model line, not a quoted offer. Regulation goal model; a one-goal game that goes to overtime cannot cover -1.5.",
+     "outcomes": [
+      {
+       "selection": "Colorado Avalanche -1.5",
+       "probability": 0.282,
+       "fair_decimal": 3.546,
+       "american_display": 255,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Tampa Bay Lightning +1.5",
+       "probability": 0.718,
+       "fair_decimal": 1.393,
+       "american_display": -254,
+       "fair_price_in_target_band": false
+      }
+     ]
+    },
+    {
+     "market": "Match Total 5.5",
+     "key": "total",
+     "note": "Model line, not a quoted offer. Regulation goals only: overtime and shootout goals are excluded, which biases the under side.",
+     "outcomes": [
+      {
+       "selection": "Over 5.5 goals",
+       "probability": 0.6452,
+       "fair_decimal": 1.55,
+       "american_display": -182,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Under 5.5 goals",
+       "probability": 0.3548,
+       "fair_decimal": 2.818,
+       "american_display": 182,
+       "fair_price_in_target_band": true
+      }
+     ]
+    }
+   ],
+   "pick": "Tampa Bay Lightning",
+   "pick_probability": 0.652,
+   "pick_decimal": 1.534,
+   "pick_american": -187,
+   "pick_in_window": true,
+   "band": "in-window (-250 to +10000)",
+   "high_and_in_window": false,
+   "confidence": "medium",
+   "withheld": [
+    {
+     "market": "Player points / shots props",
+     "status": "unverified",
+     "reason": "No official player-availability or usage input was read in this pass."
+    },
+    {
+     "market": "Correct score",
+     "status": "unverified",
+     "reason": "Published only as a model distribution; no official price input."
+    },
+    {
+     "market": "Period betting",
+     "status": "unverified",
+     "reason": "No official period-level input was read in this pass."
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020168",
+   "sport": "ice_hockey",
+   "date": "2026-10-24",
+   "start_utc": "2026-10-24T17:00:00Z",
+   "away": "Anaheim Ducks",
+   "home": "Philadelphia Flyers",
+   "venue": "Xfinity Mobile Arena",
+   "official_game_id": 2026020168,
+   "source_ids": [
+    "nhl-schedule-1024",
+    "nhl-standings"
+   ],
+   "inputs": {
+    "away": {
+     "abbr": "ANA",
+     "record": "4-6-0",
+     "goals_for": 27,
+     "goals_against": 33,
+     "rating": 0.4005
+    },
+    "home": {
+     "abbr": "PHI",
+     "record": "3-6-3",
+     "goals_for": 20,
+     "goals_against": 37,
+     "rating": 0.2381
+    },
+    "expected_goals": [
+     2.48,
+     2.89
+    ]
+   },
+   "markets": [
+    {
+     "market": "Money Line",
+     "key": "winner",
+     "note": "Two-way, overtime and shootout included. Rating-based, zero margin.",
+     "outcomes": [
+      {
+       "selection": "Philadelphia Flyers",
+       "probability": 0.3187,
+       "fair_decimal": 3.138,
+       "american_display": 214,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Anaheim Ducks",
+       "probability": 0.6813,
+       "fair_decimal": 1.468,
+       "american_display": -214,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Puck Line -1.5",
+     "key": "handicap",
+     "note": "Model line, not a quoted offer. Regulation goal model; a one-goal game that goes to overtime cannot cover -1.5.",
+     "outcomes": [
+      {
+       "selection": "Philadelphia Flyers -1.5",
+       "probability": 0.1992,
+       "fair_decimal": 5.02,
+       "american_display": 402,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Anaheim Ducks +1.5",
+       "probability": 0.8008,
+       "fair_decimal": 1.249,
+       "american_display": -402,
+       "fair_price_in_target_band": false
+      }
+     ]
+    },
+    {
+     "market": "Match Total 5.5",
+     "key": "total",
+     "note": "Model line, not a quoted offer. Regulation goals only: overtime and shootout goals are excluded, which biases the under side.",
+     "outcomes": [
+      {
+       "selection": "Over 5.5 goals",
+       "probability": 0.4495,
+       "fair_decimal": 2.225,
+       "american_display": 123,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Under 5.5 goals",
+       "probability": 0.5505,
+       "fair_decimal": 1.817,
+       "american_display": -122,
+       "fair_price_in_target_band": true
+      }
+     ]
+    }
+   ],
+   "pick": "Anaheim Ducks",
+   "pick_probability": 0.6813,
+   "pick_decimal": 1.468,
+   "pick_american": -214,
+   "pick_in_window": true,
+   "band": "in-window (-250 to +10000)",
+   "high_and_in_window": false,
+   "confidence": "medium",
+   "withheld": [
+    {
+     "market": "Player points / shots props",
+     "status": "unverified",
+     "reason": "No official player-availability or usage input was read in this pass."
+    },
+    {
+     "market": "Correct score",
+     "status": "unverified",
+     "reason": "Published only as a model distribution; no official price input."
+    },
+    {
+     "market": "Period betting",
+     "status": "unverified",
+     "reason": "No official period-level input was read in this pass."
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020169",
+   "sport": "ice_hockey",
+   "date": "2026-10-24",
+   "start_utc": "2026-10-24T19:30:00Z",
+   "away": "Los Angeles Kings",
+   "home": "New Jersey Devils",
+   "venue": "Prudential Center",
+   "official_game_id": 2026020169,
+   "source_ids": [
+    "nhl-schedule-1024",
+    "nhl-standings"
+   ],
+   "inputs": {
+    "away": {
+     "abbr": "LAK",
+     "record": "2-4-2",
+     "goals_for": 20,
+     "goals_against": 29,
+     "rating": 0.2862
+    },
+    "home": {
+     "abbr": "NJD",
+     "record": "6-4-0",
+     "goals_for": 33,
+     "goals_against": 31,
+     "rating": 0.5656
+    },
+    "expected_goals": [
+     3.46,
+     2.8
+    ]
+   },
+   "markets": [
+    {
+     "market": "Money Line",
+     "key": "winner",
+     "note": "Two-way, overtime and shootout included. Rating-based, zero margin.",
+     "outcomes": [
+      {
+       "selection": "New Jersey Devils",
+       "probability": 0.7646,
+       "fair_decimal": 1.308,
+       "american_display": -325,
+       "fair_price_in_target_band": false
+      },
+      {
+       "selection": "Los Angeles Kings",
+       "probability": 0.2354,
+       "fair_decimal": 4.248,
+       "american_display": 325,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Puck Line -1.5",
+     "key": "handicap",
+     "note": "Model line, not a quoted offer. Regulation goal model; a one-goal game that goes to overtime cannot cover -1.5.",
+     "outcomes": [
+      {
+       "selection": "New Jersey Devils -1.5",
+       "probability": 0.3628,
+       "fair_decimal": 2.756,
+       "american_display": 176,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Los Angeles Kings +1.5",
+       "probability": 0.6372,
+       "fair_decimal": 1.569,
+       "american_display": -176,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Match Total 5.5",
+     "key": "total",
+     "note": "Model line, not a quoted offer. Regulation goals only: overtime and shootout goals are excluded, which biases the under side.",
+     "outcomes": [
+      {
+       "selection": "Over 5.5 goals",
+       "probability": 0.5954,
+       "fair_decimal": 1.68,
+       "american_display": -147,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Under 5.5 goals",
+       "probability": 0.4046,
+       "fair_decimal": 2.472,
+       "american_display": 147,
+       "fair_price_in_target_band": true
+      }
+     ]
+    }
+   ],
+   "pick": "New Jersey Devils",
+   "pick_probability": 0.7646,
+   "pick_decimal": 1.308,
+   "pick_american": -325,
+   "pick_in_window": false,
+   "band": "shorter than -250 (outside the window)",
+   "high_and_in_window": false,
+   "confidence": "high",
+   "withheld": [
+    {
+     "market": "Player points / shots props",
+     "status": "unverified",
+     "reason": "No official player-availability or usage input was read in this pass."
+    },
+    {
+     "market": "Correct score",
+     "status": "unverified",
+     "reason": "Published only as a model distribution; no official price input."
+    },
+    {
+     "market": "Period betting",
+     "status": "unverified",
+     "reason": "No official period-level input was read in this pass."
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020170",
+   "sport": "ice_hockey",
+   "date": "2026-10-24",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "away": "San Jose Sharks",
+   "home": "Boston Bruins",
+   "venue": "TD Garden",
+   "official_game_id": 2026020170,
+   "source_ids": [
+    "nhl-schedule-1024",
+    "nhl-standings"
+   ],
+   "inputs": {
+    "away": {
+     "abbr": "SJS",
+     "record": "6-4-1",
+     "goals_for": 33,
+     "goals_against": 37,
+     "rating": 0.4942
+    },
+    "home": {
+     "abbr": "BOS",
+     "record": "8-2-1",
+     "goals_for": 42,
+     "goals_against": 22,
+     "rating": 0.756
+    },
+    "expected_goals": [
+     3.59,
+     2.5
+    ]
+   },
+   "markets": [
+    {
+     "market": "Money Line",
+     "key": "winner",
+     "note": "Two-way, overtime and shootout included. Rating-based, zero margin.",
+     "outcomes": [
+      {
+       "selection": "Boston Bruins",
+       "probability": 0.7602,
+       "fair_decimal": 1.315,
+       "american_display": -317,
+       "fair_price_in_target_band": false
+      },
+      {
+       "selection": "San Jose Sharks",
+       "probability": 0.2398,
+       "fair_decimal": 4.17,
+       "american_display": 317,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Puck Line -1.5",
+     "key": "handicap",
+     "note": "Model line, not a quoted offer. Regulation goal model; a one-goal game that goes to overtime cannot cover -1.5.",
+     "outcomes": [
+      {
+       "selection": "Boston Bruins -1.5",
+       "probability": 0.4271,
+       "fair_decimal": 2.341,
+       "american_display": 134,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "San Jose Sharks +1.5",
+       "probability": 0.5729,
+       "fair_decimal": 1.746,
+       "american_display": -134,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Match Total 5.5",
+     "key": "total",
+     "note": "Model line, not a quoted offer. Regulation goals only: overtime and shootout goals are excluded, which biases the under side.",
+     "outcomes": [
+      {
+       "selection": "Over 5.5 goals",
+       "probability": 0.5687,
+       "fair_decimal": 1.758,
+       "american_display": -132,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Under 5.5 goals",
+       "probability": 0.4313,
+       "fair_decimal": 2.319,
+       "american_display": 132,
+       "fair_price_in_target_band": true
+      }
+     ]
+    }
+   ],
+   "pick": "Boston Bruins",
+   "pick_probability": 0.7602,
+   "pick_decimal": 1.315,
+   "pick_american": -317,
+   "pick_in_window": false,
+   "band": "shorter than -250 (outside the window)",
+   "high_and_in_window": false,
+   "confidence": "high",
+   "withheld": [
+    {
+     "market": "Player points / shots props",
+     "status": "unverified",
+     "reason": "No official player-availability or usage input was read in this pass."
+    },
+    {
+     "market": "Correct score",
+     "status": "unverified",
+     "reason": "Published only as a model distribution; no official price input."
+    },
+    {
+     "market": "Period betting",
+     "status": "unverified",
+     "reason": "No official period-level input was read in this pass."
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020171",
+   "sport": "ice_hockey",
+   "date": "2026-10-24",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "away": "New York Rangers",
+   "home": "Ottawa Senators",
+   "venue": "Canadian Tire Centre",
+   "official_game_id": 2026020171,
+   "source_ids": [
+    "nhl-schedule-1024",
+    "nhl-standings"
+   ],
+   "inputs": {
+    "away": {
+     "abbr": "NYR",
+     "record": "7-4-1",
+     "goals_for": 37,
+     "goals_against": 29,
+     "rating": 0.6014
+    },
+    "home": {
+     "abbr": "OTT",
+     "record": "7-4-0",
+     "goals_for": 31,
+     "goals_against": 30,
+     "rating": 0.5764
+    },
+    "expected_goals": [
+     2.62,
+     2.91
+    ]
+   },
+   "markets": [
+    {
+     "market": "Money Line",
+     "key": "winner",
+     "note": "Two-way, overtime and shootout included. Rating-based, zero margin.",
+     "outcomes": [
+      {
+       "selection": "Ottawa Senators",
+       "probability": 0.4742,
+       "fair_decimal": 2.109,
+       "american_display": 111,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "New York Rangers",
+       "probability": 0.5258,
+       "fair_decimal": 1.902,
+       "american_display": -111,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Puck Line -1.5",
+     "key": "handicap",
+     "note": "Model line, not a quoted offer. Regulation goal model; a one-goal game that goes to overtime cannot cover -1.5.",
+     "outcomes": [
+      {
+       "selection": "Ottawa Senators -1.5",
+       "probability": 0.2175,
+       "fair_decimal": 4.598,
+       "american_display": 360,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "New York Rangers +1.5",
+       "probability": 0.7825,
+       "fair_decimal": 1.278,
+       "american_display": -360,
+       "fair_price_in_target_band": false
+      }
+     ]
+    },
+    {
+     "market": "Match Total 5.5",
+     "key": "total",
+     "note": "Model line, not a quoted offer. Regulation goals only: overtime and shootout goals are excluded, which biases the under side.",
+     "outcomes": [
+      {
+       "selection": "Over 5.5 goals",
+       "probability": 0.475,
+       "fair_decimal": 2.105,
+       "american_display": 110,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Under 5.5 goals",
+       "probability": 0.525,
+       "fair_decimal": 1.905,
+       "american_display": -110,
+       "fair_price_in_target_band": true
+      }
+     ]
+    }
+   ],
+   "pick": "New York Rangers",
+   "pick_probability": 0.5258,
+   "pick_decimal": 1.902,
+   "pick_american": -111,
+   "pick_in_window": true,
+   "band": "in-window (-250 to +10000)",
+   "high_and_in_window": false,
+   "confidence": "low",
+   "withheld": [
+    {
+     "market": "Player points / shots props",
+     "status": "unverified",
+     "reason": "No official player-availability or usage input was read in this pass."
+    },
+    {
+     "market": "Correct score",
+     "status": "unverified",
+     "reason": "Published only as a model distribution; no official price input."
+    },
+    {
+     "market": "Period betting",
+     "status": "unverified",
+     "reason": "No official period-level input was read in this pass."
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020172",
+   "sport": "ice_hockey",
+   "date": "2026-10-24",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "away": "Nashville Predators",
+   "home": "Pittsburgh Penguins",
+   "venue": "PPG Paints Arena",
+   "official_game_id": 2026020172,
+   "source_ids": [
+    "nhl-schedule-1024",
+    "nhl-standings"
+   ],
+   "inputs": {
+    "away": {
+     "abbr": "NSH",
+     "record": "3-3-3",
+     "goals_for": 23,
+     "goals_against": 30,
+     "rating": 0.3518
+    },
+    "home": {
+     "abbr": "PIT",
+     "record": "4-6-1",
+     "goals_for": 37,
+     "goals_against": 38,
+     "rating": 0.4252
+    },
+    "expected_goals": [
+     3.35,
+     3.01
+    ]
+   },
+   "markets": [
+    {
+     "market": "Money Line",
+     "key": "winner",
+     "note": "Two-way, overtime and shootout included. Rating-based, zero margin.",
+     "outcomes": [
+      {
+       "selection": "Pittsburgh Penguins",
+       "probability": 0.5768,
+       "fair_decimal": 1.734,
+       "american_display": -136,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Nashville Predators",
+       "probability": 0.4232,
+       "fair_decimal": 2.363,
+       "american_display": 136,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Puck Line -1.5",
+     "key": "handicap",
+     "note": "Model line, not a quoted offer. Regulation goal model; a one-goal game that goes to overtime cannot cover -1.5.",
+     "outcomes": [
+      {
+       "selection": "Pittsburgh Penguins -1.5",
+       "probability": 0.3176,
+       "fair_decimal": 3.149,
+       "american_display": 215,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Nashville Predators +1.5",
+       "probability": 0.6824,
+       "fair_decimal": 1.465,
+       "american_display": -215,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Match Total 5.5",
+     "key": "total",
+     "note": "Model line, not a quoted offer. Regulation goals only: overtime and shootout goals are excluded, which biases the under side.",
+     "outcomes": [
+      {
+       "selection": "Over 5.5 goals",
+       "probability": 0.6092,
+       "fair_decimal": 1.641,
+       "american_display": -156,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Under 5.5 goals",
+       "probability": 0.3908,
+       "fair_decimal": 2.559,
+       "american_display": 156,
+       "fair_price_in_target_band": true
+      }
+     ]
+    }
+   ],
+   "pick": "Pittsburgh Penguins",
+   "pick_probability": 0.5768,
+   "pick_decimal": 1.734,
+   "pick_american": -136,
+   "pick_in_window": true,
+   "band": "in-window (-250 to +10000)",
+   "high_and_in_window": false,
+   "confidence": "low",
+   "withheld": [
+    {
+     "market": "Player points / shots props",
+     "status": "unverified",
+     "reason": "No official player-availability or usage input was read in this pass."
+    },
+    {
+     "market": "Correct score",
+     "status": "unverified",
+     "reason": "Published only as a model distribution; no official price input."
+    },
+    {
+     "market": "Period betting",
+     "status": "unverified",
+     "reason": "No official period-level input was read in this pass."
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020173",
+   "sport": "ice_hockey",
+   "date": "2026-10-24",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "away": "Buffalo Sabres",
+   "home": "Washington Capitals",
+   "venue": "Capital One Arena",
+   "official_game_id": 2026020173,
+   "source_ids": [
+    "nhl-schedule-1024",
+    "nhl-standings"
+   ],
+   "inputs": {
+    "away": {
+     "abbr": "BUF",
+     "record": "4-4-2",
+     "goals_for": 28,
+     "goals_against": 37,
+     "rating": 0.3821
+    },
+    "home": {
+     "abbr": "WSH",
+     "record": "5-4-0",
+     "goals_for": 30,
+     "goals_against": 29,
+     "rating": 0.5362
+    },
+    "expected_goals": [
+     3.52,
+     3.01
+    ]
+   },
+   "markets": [
+    {
+     "market": "Money Line",
+     "key": "winner",
+     "note": "Two-way, overtime and shootout included. Rating-based, zero margin.",
+     "outcomes": [
+      {
+       "selection": "Washington Capitals",
+       "probability": 0.6516,
+       "fair_decimal": 1.535,
+       "american_display": -187,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Buffalo Sabres",
+       "probability": 0.3484,
+       "fair_decimal": 2.87,
+       "american_display": 187,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Puck Line -1.5",
+     "key": "handicap",
+     "note": "Model line, not a quoted offer. Regulation goal model; a one-goal game that goes to overtime cannot cover -1.5.",
+     "outcomes": [
+      {
+       "selection": "Washington Capitals -1.5",
+       "probability": 0.3429,
+       "fair_decimal": 2.916,
+       "american_display": 192,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Buffalo Sabres +1.5",
+       "probability": 0.6571,
+       "fair_decimal": 1.522,
+       "american_display": -192,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Match Total 5.5",
+     "key": "total",
+     "note": "Model line, not a quoted offer. Regulation goals only: overtime and shootout goals are excluded, which biases the under side.",
+     "outcomes": [
+      {
+       "selection": "Over 5.5 goals",
+       "probability": 0.6349,
+       "fair_decimal": 1.575,
+       "american_display": -174,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Under 5.5 goals",
+       "probability": 0.3651,
+       "fair_decimal": 2.739,
+       "american_display": 174,
+       "fair_price_in_target_band": true
+      }
+     ]
+    }
+   ],
+   "pick": "Washington Capitals",
+   "pick_probability": 0.6516,
+   "pick_decimal": 1.535,
+   "pick_american": -187,
+   "pick_in_window": true,
+   "band": "in-window (-250 to +10000)",
+   "high_and_in_window": false,
+   "confidence": "medium",
+   "withheld": [
+    {
+     "market": "Player points / shots props",
+     "status": "unverified",
+     "reason": "No official player-availability or usage input was read in this pass."
+    },
+    {
+     "market": "Correct score",
+     "status": "unverified",
+     "reason": "Published only as a model distribution; no official price input."
+    },
+    {
+     "market": "Period betting",
+     "status": "unverified",
+     "reason": "No official period-level input was read in this pass."
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020174",
+   "sport": "ice_hockey",
+   "date": "2026-10-24",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "away": "Vegas Golden Knights",
+   "home": "Columbus Blue Jackets",
+   "venue": "Nationwide Arena",
+   "official_game_id": 2026020174,
+   "source_ids": [
+    "nhl-schedule-1024",
+    "nhl-standings"
+   ],
+   "inputs": {
+    "away": {
+     "abbr": "VGK",
+     "record": "8-4-0",
+     "goals_for": 46,
+     "goals_against": 36,
+     "rating": 0.6434
+    },
+    "home": {
+     "abbr": "CBJ",
+     "record": "3-5-0",
+     "goals_for": 20,
+     "goals_against": 29,
+     "rating": 0.3487
+    },
+    "expected_goals": [
+     2.75,
+     3.73
+    ]
+   },
+   "markets": [
+    {
+     "market": "Money Line",
+     "key": "winner",
+     "note": "Two-way, overtime and shootout included. Rating-based, zero margin.",
+     "outcomes": [
+      {
+       "selection": "Columbus Blue Jackets",
+       "probability": 0.2288,
+       "fair_decimal": 4.371,
+       "american_display": 337,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Vegas Golden Knights",
+       "probability": 0.7712,
+       "fair_decimal": 1.297,
+       "american_display": -337,
+       "fair_price_in_target_band": false
+      }
+     ]
+    },
+    {
+     "market": "Puck Line -1.5",
+     "key": "handicap",
+     "note": "Model line, not a quoted offer. Regulation goal model; a one-goal game that goes to overtime cannot cover -1.5.",
+     "outcomes": [
+      {
+       "selection": "Columbus Blue Jackets -1.5",
+       "probability": 0.1601,
+       "fair_decimal": 6.246,
+       "american_display": 525,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Vegas Golden Knights +1.5",
+       "probability": 0.8399,
+       "fair_decimal": 1.191,
+       "american_display": -524,
+       "fair_price_in_target_band": false
+      }
+     ]
+    },
+    {
+     "market": "Match Total 5.5",
+     "key": "total",
+     "note": "Model line, not a quoted offer. Regulation goals only: overtime and shootout goals are excluded, which biases the under side.",
+     "outcomes": [
+      {
+       "selection": "Over 5.5 goals",
+       "probability": 0.6278,
+       "fair_decimal": 1.593,
+       "american_display": -169,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Under 5.5 goals",
+       "probability": 0.3722,
+       "fair_decimal": 2.687,
+       "american_display": 169,
+       "fair_price_in_target_band": true
+      }
+     ]
+    }
+   ],
+   "pick": "Vegas Golden Knights",
+   "pick_probability": 0.7712,
+   "pick_decimal": 1.297,
+   "pick_american": -337,
+   "pick_in_window": false,
+   "band": "shorter than -250 (outside the window)",
+   "high_and_in_window": false,
+   "confidence": "high",
+   "withheld": [
+    {
+     "market": "Player points / shots props",
+     "status": "unverified",
+     "reason": "No official player-availability or usage input was read in this pass."
+    },
+    {
+     "market": "Correct score",
+     "status": "unverified",
+     "reason": "Published only as a model distribution; no official price input."
+    },
+    {
+     "market": "Period betting",
+     "status": "unverified",
+     "reason": "No official period-level input was read in this pass."
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020175",
+   "sport": "ice_hockey",
+   "date": "2026-10-24",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "away": "Carolina Hurricanes",
+   "home": "St. Louis Blues",
+   "venue": "Enterprise Center",
+   "official_game_id": 2026020175,
+   "source_ids": [
+    "nhl-schedule-1024",
+    "nhl-standings"
+   ],
+   "inputs": {
+    "away": {
+     "abbr": "CAR",
+     "record": "8-2-2",
+     "goals_for": 47,
+     "goals_against": 33,
+     "rating": 0.6682
+    },
+    "home": {
+     "abbr": "STL",
+     "record": "5-4-1",
+     "goals_for": 35,
+     "goals_against": 31,
+     "rating": 0.5302
+    },
+    "expected_goals": [
+     3.12,
+     3.51
+    ]
+   },
+   "markets": [
+    {
+     "market": "Money Line",
+     "key": "winner",
+     "note": "Two-way, overtime and shootout included. Rating-based, zero margin.",
+     "outcomes": [
+      {
+       "selection": "St. Louis Blues",
+       "probability": 0.3591,
+       "fair_decimal": 2.785,
+       "american_display": 178,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Carolina Hurricanes",
+       "probability": 0.6409,
+       "fair_decimal": 1.56,
+       "american_display": -179,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Puck Line -1.5",
+     "key": "handicap",
+     "note": "Model line, not a quoted offer. Regulation goal model; a one-goal game that goes to overtime cannot cover -1.5.",
+     "outcomes": [
+      {
+       "selection": "St. Louis Blues -1.5",
+       "probability": 0.2276,
+       "fair_decimal": 4.394,
+       "american_display": 339,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Carolina Hurricanes +1.5",
+       "probability": 0.7724,
+       "fair_decimal": 1.295,
+       "american_display": -339,
+       "fair_price_in_target_band": false
+      }
+     ]
+    },
+    {
+     "market": "Match Total 5.5",
+     "key": "total",
+     "note": "Model line, not a quoted offer. Regulation goals only: overtime and shootout goals are excluded, which biases the under side.",
+     "outcomes": [
+      {
+       "selection": "Over 5.5 goals",
+       "probability": 0.6499,
+       "fair_decimal": 1.539,
+       "american_display": -186,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Under 5.5 goals",
+       "probability": 0.3501,
+       "fair_decimal": 2.856,
+       "american_display": 186,
+       "fair_price_in_target_band": true
+      }
+     ]
+    }
+   ],
+   "pick": "Carolina Hurricanes",
+   "pick_probability": 0.6409,
+   "pick_decimal": 1.56,
+   "pick_american": -179,
+   "pick_in_window": true,
+   "band": "in-window (-250 to +10000)",
+   "high_and_in_window": false,
+   "confidence": "medium",
+   "withheld": [
+    {
+     "market": "Player points / shots props",
+     "status": "unverified",
+     "reason": "No official player-availability or usage input was read in this pass."
+    },
+    {
+     "market": "Correct score",
+     "status": "unverified",
+     "reason": "Published only as a model distribution; no official price input."
+    },
+    {
+     "market": "Period betting",
+     "status": "unverified",
+     "reason": "No official period-level input was read in this pass."
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020176",
+   "sport": "ice_hockey",
+   "date": "2026-10-24",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "away": "Toronto Maple Leafs",
+   "home": "Edmonton Oilers",
+   "venue": "Rogers Place",
+   "official_game_id": 2026020176,
+   "source_ids": [
+    "nhl-schedule-1024",
+    "nhl-standings"
+   ],
+   "inputs": {
+    "away": {
+     "abbr": "TOR",
+     "record": "6-4-2",
+     "goals_for": 43,
+     "goals_against": 39,
+     "rating": 0.5243
+    },
+    "home": {
+     "abbr": "EDM",
+     "record": "8-1-1",
+     "goals_for": 47,
+     "goals_against": 32,
+     "rating": 0.7416
+    },
+    "expected_goals": [
+     3.98,
+     3.39
+    ]
+   },
+   "markets": [
+    {
+     "market": "Money Line",
+     "key": "winner",
+     "note": "Two-way, overtime and shootout included. Rating-based, zero margin.",
+     "outcomes": [
+      {
+       "selection": "Edmonton Oilers",
+       "probability": 0.7225,
+       "fair_decimal": 1.384,
+       "american_display": -260,
+       "fair_price_in_target_band": false
+      },
+      {
+       "selection": "Toronto Maple Leafs",
+       "probability": 0.2775,
+       "fair_decimal": 3.604,
+       "american_display": 260,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Puck Line -1.5",
+     "key": "handicap",
+     "note": "Model line, not a quoted offer. Regulation goal model; a one-goal game that goes to overtime cannot cover -1.5.",
+     "outcomes": [
+      {
+       "selection": "Edmonton Oilers -1.5",
+       "probability": 0.3628,
+       "fair_decimal": 2.756,
+       "american_display": 176,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Toronto Maple Leafs +1.5",
+       "probability": 0.6372,
+       "fair_decimal": 1.569,
+       "american_display": -176,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Match Total 5.5",
+     "key": "total",
+     "note": "Model line, not a quoted offer. Regulation goals only: overtime and shootout goals are excluded, which biases the under side.",
+     "outcomes": [
+      {
+       "selection": "Over 5.5 goals",
+       "probability": 0.7433,
+       "fair_decimal": 1.345,
+       "american_display": -290,
+       "fair_price_in_target_band": false
+      },
+      {
+       "selection": "Under 5.5 goals",
+       "probability": 0.2567,
+       "fair_decimal": 3.896,
+       "american_display": 290,
+       "fair_price_in_target_band": true
+      }
+     ]
+    }
+   ],
+   "pick": "Edmonton Oilers",
+   "pick_probability": 0.7225,
+   "pick_decimal": 1.384,
+   "pick_american": -260,
+   "pick_in_window": false,
+   "band": "shorter than -250 (outside the window)",
+   "high_and_in_window": false,
+   "confidence": "high",
+   "withheld": [
+    {
+     "market": "Player points / shots props",
+     "status": "unverified",
+     "reason": "No official player-availability or usage input was read in this pass."
+    },
+    {
+     "market": "Correct score",
+     "status": "unverified",
+     "reason": "Published only as a model distribution; no official price input."
+    },
+    {
+     "market": "Period betting",
+     "status": "unverified",
+     "reason": "No official period-level input was read in this pass."
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020177",
+   "sport": "ice_hockey",
+   "date": "2026-10-24",
+   "start_utc": "2026-10-25T01:00:00Z",
+   "away": "Tampa Bay Lightning",
+   "home": "Utah Mammoth",
+   "venue": "Delta Center",
+   "official_game_id": 2026020177,
+   "source_ids": [
+    "nhl-schedule-1024",
+    "nhl-standings"
+   ],
+   "inputs": {
+    "away": {
+     "abbr": "TBL",
+     "record": "7-2-0",
+     "goals_for": 31,
+     "goals_against": 23,
+     "rating": 0.7114
+    },
+    "home": {
+     "abbr": "UTA",
+     "record": "7-4-0",
+     "goals_for": 41,
+     "goals_against": 36,
+     "rating": 0.6005
+    },
+    "expected_goals": [
+     3.14,
+     3.36
+    ]
+   },
+   "markets": [
+    {
+     "market": "Money Line",
+     "key": "winner",
+     "note": "Two-way, overtime and shootout included. Rating-based, zero margin.",
+     "outcomes": [
+      {
+       "selection": "Utah Mammoth",
+       "probability": 0.3788,
+       "fair_decimal": 2.64,
+       "american_display": 164,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Tampa Bay Lightning",
+       "probability": 0.6212,
+       "fair_decimal": 1.61,
+       "american_display": -164,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Puck Line -1.5",
+     "key": "handicap",
+     "note": "Model line, not a quoted offer. Regulation goal model; a one-goal game that goes to overtime cannot cover -1.5.",
+     "outcomes": [
+      {
+       "selection": "Utah Mammoth -1.5",
+       "probability": 0.2454,
+       "fair_decimal": 4.075,
+       "american_display": 308,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Tampa Bay Lightning +1.5",
+       "probability": 0.7546,
+       "fair_decimal": 1.325,
+       "american_display": -308,
+       "fair_price_in_target_band": false
+      }
+     ]
+    },
+    {
+     "market": "Match Total 5.5",
+     "key": "total",
+     "note": "Model line, not a quoted offer. Regulation goals only: overtime and shootout goals are excluded, which biases the under side.",
+     "outcomes": [
+      {
+       "selection": "Over 5.5 goals",
+       "probability": 0.6309,
+       "fair_decimal": 1.585,
+       "american_display": -171,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Under 5.5 goals",
+       "probability": 0.3691,
+       "fair_decimal": 2.709,
+       "american_display": 171,
+       "fair_price_in_target_band": true
+      }
+     ]
+    }
+   ],
+   "pick": "Tampa Bay Lightning",
+   "pick_probability": 0.6212,
+   "pick_decimal": 1.61,
+   "pick_american": -164,
+   "pick_in_window": true,
+   "band": "in-window (-250 to +10000)",
+   "high_and_in_window": false,
+   "confidence": "medium",
+   "withheld": [
+    {
+     "market": "Player points / shots props",
+     "status": "unverified",
+     "reason": "No official player-availability or usage input was read in this pass."
+    },
+    {
+     "market": "Correct score",
+     "status": "unverified",
+     "reason": "Published only as a model distribution; no official price input."
+    },
+    {
+     "market": "Period betting",
+     "status": "unverified",
+     "reason": "No official period-level input was read in this pass."
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020178",
+   "sport": "ice_hockey",
+   "date": "2026-10-24",
+   "start_utc": "2026-10-25T02:00:00Z",
+   "away": "Detroit Red Wings",
+   "home": "Calgary Flames",
+   "venue": "Scotiabank Saddledome",
+   "official_game_id": 2026020178,
+   "source_ids": [
+    "nhl-schedule-1024",
+    "nhl-standings"
+   ],
+   "inputs": {
+    "away": {
+     "abbr": "DET",
+     "record": "4-3-3",
+     "goals_for": 28,
+     "goals_against": 30,
+     "rating": 0.4328
+    },
+    "home": {
+     "abbr": "CGY",
+     "record": "3-6-0",
+     "goals_for": 19,
+     "goals_against": 38,
+     "rating": 0.2667
+    },
+    "expected_goals": [
+     2.56,
+     3.51
+    ]
+   },
+   "markets": [
+    {
+     "market": "Money Line",
+     "key": "winner",
+     "note": "Two-way, overtime and shootout included. Rating-based, zero margin.",
+     "outcomes": [
+      {
+       "selection": "Calgary Flames",
+       "probability": 0.3228,
+       "fair_decimal": 3.098,
+       "american_display": 210,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Detroit Red Wings",
+       "probability": 0.6772,
+       "fair_decimal": 1.477,
+       "american_display": -210,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Puck Line -1.5",
+     "key": "handicap",
+     "note": "Model line, not a quoted offer. Regulation goal model; a one-goal game that goes to overtime cannot cover -1.5.",
+     "outcomes": [
+      {
+       "selection": "Calgary Flames -1.5",
+       "probability": 0.154,
+       "fair_decimal": 6.494,
+       "american_display": 549,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Detroit Red Wings +1.5",
+       "probability": 0.846,
+       "fair_decimal": 1.182,
+       "american_display": -549,
+       "fair_price_in_target_band": false
+      }
+     ]
+    },
+    {
+     "market": "Match Total 5.5",
+     "key": "total",
+     "note": "Model line, not a quoted offer. Regulation goals only: overtime and shootout goals are excluded, which biases the under side.",
+     "outcomes": [
+      {
+       "selection": "Over 5.5 goals",
+       "probability": 0.5649,
+       "fair_decimal": 1.77,
+       "american_display": -130,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Under 5.5 goals",
+       "probability": 0.4351,
+       "fair_decimal": 2.298,
+       "american_display": 130,
+       "fair_price_in_target_band": true
+      }
+     ]
+    }
+   ],
+   "pick": "Detroit Red Wings",
+   "pick_probability": 0.6772,
+   "pick_decimal": 1.477,
+   "pick_american": -210,
+   "pick_in_window": true,
+   "band": "in-window (-250 to +10000)",
+   "high_and_in_window": false,
+   "confidence": "medium",
+   "withheld": [
+    {
+     "market": "Player points / shots props",
+     "status": "unverified",
+     "reason": "No official player-availability or usage input was read in this pass."
+    },
+    {
+     "market": "Correct score",
+     "status": "unverified",
+     "reason": "Published only as a model distribution; no official price input."
+    },
+    {
+     "market": "Period betting",
+     "status": "unverified",
+     "reason": "No official period-level input was read in this pass."
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020179",
+   "sport": "ice_hockey",
+   "date": "2026-10-24",
+   "start_utc": "2026-10-25T02:00:00Z",
+   "away": "Minnesota Wild",
+   "home": "Seattle Kraken",
+   "venue": "Climate Pledge Arena",
+   "official_game_id": 2026020179,
+   "source_ids": [
+    "nhl-schedule-1024",
+    "nhl-standings"
+   ],
+   "inputs": {
+    "away": {
+     "abbr": "MIN",
+     "record": "6-3-2",
+     "goals_for": 32,
+     "goals_against": 27,
+     "rating": 0.5648
+    },
+    "home": {
+     "abbr": "SEA",
+     "record": "7-3-1",
+     "goals_for": 44,
+     "goals_against": 37,
+     "rating": 0.6111
+    },
+    "expected_goals": [
+     3.23,
+     3.14
+    ]
+   },
+   "markets": [
+    {
+     "market": "Money Line",
+     "key": "winner",
+     "note": "Two-way, overtime and shootout included. Rating-based, zero margin.",
+     "outcomes": [
+      {
+       "selection": "Seattle Kraken",
+       "probability": 0.5476,
+       "fair_decimal": 1.826,
+       "american_display": -121,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Minnesota Wild",
+       "probability": 0.4524,
+       "fair_decimal": 2.21,
+       "american_display": 121,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Puck Line -1.5",
+     "key": "handicap",
+     "note": "Model line, not a quoted offer. Regulation goal model; a one-goal game that goes to overtime cannot cover -1.5.",
+     "outcomes": [
+      {
+       "selection": "Seattle Kraken -1.5",
+       "probability": 0.283,
+       "fair_decimal": 3.534,
+       "american_display": 253,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Minnesota Wild +1.5",
+       "probability": 0.717,
+       "fair_decimal": 1.395,
+       "american_display": -253,
+       "fair_price_in_target_band": false
+      }
+     ]
+    },
+    {
+     "market": "Match Total 5.5",
+     "key": "total",
+     "note": "Model line, not a quoted offer. Regulation goals only: overtime and shootout goals are excluded, which biases the under side.",
+     "outcomes": [
+      {
+       "selection": "Over 5.5 goals",
+       "probability": 0.6108,
+       "fair_decimal": 1.637,
+       "american_display": -157,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Under 5.5 goals",
+       "probability": 0.3892,
+       "fair_decimal": 2.569,
+       "american_display": 157,
+       "fair_price_in_target_band": true
+      }
+     ]
+    }
+   ],
+   "pick": "Seattle Kraken",
+   "pick_probability": 0.5476,
+   "pick_decimal": 1.826,
+   "pick_american": -121,
+   "pick_in_window": true,
+   "band": "in-window (-250 to +10000)",
+   "high_and_in_window": false,
+   "confidence": "low",
+   "withheld": [
+    {
+     "market": "Player points / shots props",
+     "status": "unverified",
+     "reason": "No official player-availability or usage input was read in this pass."
+    },
+    {
+     "market": "Correct score",
+     "status": "unverified",
+     "reason": "Published only as a model distribution; no official price input."
+    },
+    {
+     "market": "Period betting",
+     "status": "unverified",
+     "reason": "No official period-level input was read in this pass."
+    }
+   ]
+  },
+  {
+   "id": "nhl-2026020180",
+   "sport": "ice_hockey",
+   "date": "2026-10-25",
+   "start_utc": "2026-10-25T19:00:00Z",
+   "away": "Florida Panthers",
+   "home": "Chicago Blackhawks",
+   "venue": "United Center",
+   "official_game_id": 2026020180,
+   "source_ids": [
+    "nhl-schedule-1024",
+    "nhl-standings"
+   ],
+   "inputs": {
+    "away": {
+     "abbr": "FLA",
+     "record": "5-4-2",
+     "goals_for": 31,
+     "goals_against": 34,
+     "rating": 0.4542
+    },
+    "home": {
+     "abbr": "CHI",
+     "record": "3-6-0",
+     "goals_for": 21,
+     "goals_against": 36,
+     "rating": 0.2936
+    },
+    "expected_goals": [
+     2.71,
+     3.41
+    ]
+   },
+   "markets": [
+    {
+     "market": "Money Line",
+     "key": "winner",
+     "note": "Two-way, overtime and shootout included. Rating-based, zero margin.",
+     "outcomes": [
+      {
+       "selection": "Chicago Blackhawks",
+       "probability": 0.3331,
+       "fair_decimal": 3.002,
+       "american_display": 200,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Florida Panthers",
+       "probability": 0.6669,
+       "fair_decimal": 1.499,
+       "american_display": -200,
+       "fair_price_in_target_band": true
+      }
+     ]
+    },
+    {
+     "market": "Puck Line -1.5",
+     "key": "handicap",
+     "note": "Model line, not a quoted offer. Regulation goal model; a one-goal game that goes to overtime cannot cover -1.5.",
+     "outcomes": [
+      {
+       "selection": "Chicago Blackhawks -1.5",
+       "probability": 0.1821,
+       "fair_decimal": 5.491,
+       "american_display": 449,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Florida Panthers +1.5",
+       "probability": 0.8179,
+       "fair_decimal": 1.223,
+       "american_display": -448,
+       "fair_price_in_target_band": false
+      }
+     ]
+    },
+    {
+     "market": "Match Total 5.5",
+     "key": "total",
+     "note": "Model line, not a quoted offer. Regulation goals only: overtime and shootout goals are excluded, which biases the under side.",
+     "outcomes": [
+      {
+       "selection": "Over 5.5 goals",
+       "probability": 0.5735,
+       "fair_decimal": 1.744,
+       "american_display": -134,
+       "fair_price_in_target_band": true
+      },
+      {
+       "selection": "Under 5.5 goals",
+       "probability": 0.4265,
+       "fair_decimal": 2.345,
+       "american_display": 135,
+       "fair_price_in_target_band": true
+      }
+     ]
+    }
+   ],
+   "pick": "Florida Panthers",
+   "pick_probability": 0.6669,
+   "pick_decimal": 1.499,
+   "pick_american": -200,
+   "pick_in_window": true,
+   "band": "in-window (-250 to +10000)",
+   "high_and_in_window": false,
+   "confidence": "medium",
+   "withheld": [
+    {
+     "market": "Player points / shots props",
+     "status": "unverified",
+     "reason": "No official player-availability or usage input was read in this pass."
+    },
+    {
+     "market": "Correct score",
+     "status": "unverified",
+     "reason": "Published only as a model distribution; no official price input."
+    },
+    {
+     "market": "Period betting",
+     "status": "unverified",
+     "reason": "No official period-level input was read in this pass."
+    }
+   ]
+  },
+  {
+   "id": "mlb-849805",
+   "sport": "baseball",
+   "date": "2026-10-23",
+   "start_utc": "2026-10-24T00:00:00Z",
+   "away": "Tampa Bay Rays",
+   "home": "Milwaukee Brewers",
+   "venue": "American Family Field",
+   "official_game_id": 849805,
+   "label": "World Series Game 1",
+   "source_ids": [
+    "mlb-schedule",
+    "mlb-nl-standings"
+   ],
+   "inputs": {
+    "home_record": {
+     "wins": 103,
+     "losses": 59,
+     "runs_scored": 832,
+     "runs_allowed": 618,
+     "division_rank": 1,
+     "source_id": "mlb-nl-standings"
+    },
+    "away_record": null
+   },
+   "markets": [],
+   "pick": null,
+   "confidence": null,
+   "unpriced": true,
+   "unpriced_reason": "Only one side's official regular-season record was read this pass; the Tampa Bay Rays' record was not read, and the pricing rule requires both measured records.",
+   "withheld": [
+    {
+     "market": "Money Line",
+     "status": "unverified",
+     "reason": "Both clubs' official season run production was not read."
+    },
+    {
+     "market": "Run Line -1.5",
+     "status": "unverified",
+     "reason": "Derived from the same missing input as the money line."
+    },
+    {
+     "market": "Match Total",
+     "status": "unverified",
+     "reason": "Derived from the same missing input as the money line."
+    }
+   ]
+  },
+  {
+   "id": "mlb-849802",
+   "sport": "baseball",
+   "date": "2026-10-24",
+   "start_utc": "2026-10-25T00:00:00Z",
+   "away": "Tampa Bay Rays",
+   "home": "Milwaukee Brewers",
+   "venue": "American Family Field",
+   "official_game_id": 849802,
+   "label": "World Series Game 2",
+   "source_ids": [
+    "mlb-schedule",
+    "mlb-nl-standings"
+   ],
+   "inputs": {
+    "home_record": {
+     "wins": 103,
+     "losses": 59,
+     "runs_scored": 832,
+     "runs_allowed": 618,
+     "division_rank": 1,
+     "source_id": "mlb-nl-standings"
+    },
+    "away_record": null
+   },
+   "markets": [],
+   "pick": null,
+   "confidence": null,
+   "unpriced": true,
+   "unpriced_reason": "Only one side's official regular-season record was read this pass; the Tampa Bay Rays' record was not read, and the pricing rule requires both measured records.",
+   "withheld": [
+    {
+     "market": "Money Line",
+     "status": "unverified",
+     "reason": "Both clubs' official season run production was not read."
+    },
+    {
+     "market": "Run Line -1.5",
+     "status": "unverified",
+     "reason": "Derived from the same missing input as the money line."
+    },
+    {
+     "market": "Match Total",
+     "status": "unverified",
+     "reason": "Derived from the same missing input as the money line."
+    }
+   ]
+  },
+  {
+   "id": "mlb-849804",
+   "sport": "baseball",
+   "date": "2026-10-26",
+   "start_utc": "2026-10-27T00:00:00Z",
+   "away": "Milwaukee Brewers",
+   "home": "Tampa Bay Rays",
+   "venue": "Tropicana Field",
+   "official_game_id": 849804,
+   "label": "World Series Game 3",
+   "source_ids": [
+    "mlb-schedule",
+    "mlb-nl-standings"
+   ],
+   "inputs": {
+    "home_record": null,
+    "away_record": {
+     "wins": 103,
+     "losses": 59,
+     "runs_scored": 832,
+     "runs_allowed": 618,
+     "division_rank": 1,
+     "source_id": "mlb-nl-standings"
+    }
+   },
+   "markets": [],
+   "pick": null,
+   "confidence": null,
+   "unpriced": true,
+   "unpriced_reason": "Only one side's official regular-season record was read this pass; the Tampa Bay Rays' record was not read, and the pricing rule requires both measured records.",
+   "withheld": [
+    {
+     "market": "Money Line",
+     "status": "unverified",
+     "reason": "Both clubs' official season run production was not read."
+    },
+    {
+     "market": "Run Line -1.5",
+     "status": "unverified",
+     "reason": "Derived from the same missing input as the money line."
+    },
+    {
+     "market": "Match Total",
+     "status": "unverified",
+     "reason": "Derived from the same missing input as the money line."
+    }
+   ]
+  }
+ ]
+}

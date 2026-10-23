@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repo &amp; OLBG review · T5821</title><link rel="stylesheet" href="assets/desk.css"></head>
+<body><header><h1>Repository review and OLBG route grammar</h1>
+<p class="sub">OLBG1 · T5821 desk · session <code>e58210b8-olbg1</code> · evidence snapshot 2026-10-23T19:35:00Z · not affiliated with OLBG · 18+ only, no staking advice</p></header>
+<nav><a href="index.html">Dashboard</a> <a href="matches.html">Matches</a> <a href="markets.html">Markets</a> <a href="high-confidence.html">High confidence</a> <a href="predictions.html">Predictions</a> <a href="flagged.html">Flagged for review</a> <a href="methodology.html">Methodology</a> <a href="sources.html">Sources</a> <a href="analysis.html" aria-current="page">Repo &amp; OLBG review</a></nav><main>
+<h2>OLBG route grammar confirmed on 2026-10-23</h2>
+<p>The public sitemap <code>sitemap-betting-tips.xml</code> was read in full and carries
+<code>lastmod 2026-10-23</code> on every route. Sport hubs follow
+<code>/betting-tips/&#123;Sport_Slug&#125;/&#123;sport_id&#125;</code>; the fifteen sports in the brief map to
+the identifiers below. <code>robots.txt</code> disallows <code>/api/</code> and
+<code>/storage/app/json_data/</code>, and neither was requested.</p>
+<table><thead><tr><th>Sport</th><th>Slug</th><th>Sport id</th><th>Route</th></tr></thead><tbody>
+<tr><td>Tennis</td><td>Tennis</td><td>3</td><td><a href="https://www.olbg.com/betting-tips/Tennis/3" rel="nofollow noopener" target="_blank">open hub</a></td></tr><tr><td>Basketball</td><td>Basketball</td><td>4</td><td><a href="https://www.olbg.com/betting-tips/Basketball/4" rel="nofollow noopener" target="_blank">open hub</a></td></tr><tr><td>Golf</td><td>Golf</td><td>5</td><td><a href="https://www.olbg.com/betting-tips/Golf/5" rel="nofollow noopener" target="_blank">open hub</a></td></tr><tr><td>Cricket</td><td>Cricket</td><td>7</td><td><a href="https://www.olbg.com/betting-tips/Cricket/7" rel="nofollow noopener" target="_blank">open hub</a></td></tr><tr><td>Snooker</td><td>Snooker</td><td>8</td><td><a href="https://www.olbg.com/betting-tips/Snooker/8" rel="nofollow noopener" target="_blank">open hub</a></td></tr><tr><td>Rugby Union</td><td>Rugby_Union</td><td>9</td><td><a href="https://www.olbg.com/betting-tips/Rugby_Union/9" rel="nofollow noopener" target="_blank">open hub</a></td></tr><tr><td>Rugby League</td><td>Rugby_League</td><td>10</td><td><a href="https://www.olbg.com/betting-tips/Rugby_League/10" rel="nofollow noopener" target="_blank">open hub</a></td></tr><tr><td>Baseball</td><td>Baseball</td><td>12</td><td><a href="https://www.olbg.com/betting-tips/Baseball/12" rel="nofollow noopener" target="_blank">open hub</a></td></tr><tr><td>Ice Hockey</td><td>Ice_Hockey</td><td>13</td><td><a href="https://www.olbg.com/betting-tips/Ice_Hockey/13" rel="nofollow noopener" target="_blank">open hub</a></td></tr><tr><td>Motor Racing</td><td>Motor_Racing</td><td>14</td><td><a href="https://www.olbg.com/betting-tips/Motor_Racing/14" rel="nofollow noopener" target="_blank">open hub</a></td></tr><tr><td>Darts</td><td>Darts</td><td>15</td><td><a href="https://www.olbg.com/betting-tips/Darts/15" rel="nofollow noopener" target="_blank">open hub</a></td></tr><tr><td>Handball</td><td>Handball</td><td>20</td><td><a href="https://www.olbg.com/betting-tips/Handball/20" rel="nofollow noopener" target="_blank">open hub</a></td></tr><tr><td>Volleyball</td><td>Volleyball</td><td>21</td><td><a href="https://www.olbg.com/betting-tips/Volleyball/21" rel="nofollow noopener" target="_blank">open hub</a></td></tr><tr><td>Gaelic Sports</td><td>Gaelic_Football</td><td>25</td><td><a href="https://www.olbg.com/betting-tips/Gaelic_Football/25" rel="nofollow noopener" target="_blank">open hub</a></td></tr><tr><td>Greyhounds</td><td>Greyhounds</td><td>28</td><td><a href="https://www.olbg.com/betting-tips/Greyhounds/28" rel="nofollow noopener" target="_blank">open hub</a></td></tr>
+</tbody></table>
+<h2>What the hubs returned</h2>
+<p>The tennis hub, the ice hockey hub and the NHL competition sub-route each returned server-rendered
+SEO prose plus the literal empty state <code>No tips found.</code> — no event rows in the delivered
+HTML. That is recorded as a discovery limitation, not as evidence that OLBG lists no events.</p>
+<h2>Repository observations</h2>
+<ul>
+<li>The canonical gates in <code>.github/workflows/current-pages.yml</code> run the pipeline tests,
+<code>pipeline.validate --site .</code>, <code>scripts/validate.py</code>, a build to
+<code>_site</code> and browser tests before publishing. This desk adds files only inside
+<code>e58210b8/</code>, <code>data/e58210b8/</code> and <code>scripts/se58210b8_*.py</code>, so no
+shared page or workflow was touched.</li>
+<li><code>pipeline.build.stage_existing</code> copies every tracked file into the deployed artifact,
+so this desk is served from <code>/OLBG1/e58210b8/</code> without editing shared navigation.</li>
+<li><code>scripts/validate.py</code> link-checks every HTML file in the repository, including this
+desk; all links here are relative or HTTPS and were checked by
+<code>scripts/se58210b8_validate.py</code>.</li>
+<li>The repository's <code>COORDINATION.md</code> board was read before claiming. Task
+<code>T5821</code> and section <code>§73</code> were claimed and pushed before any file was written,
+per §0.3.</li>
+<li>Peer desks <code>429a54a2/</code>, <code>fa24508c/</code>, <code>8a900c04/</code> and
+<code>efe12010/</code> were left untouched.</li>
+</ul>
+<h2>Irregularities worth a second pair of eyes</h2>
+<p>The NHL odds array inconsistency, the OLBG empty-state behaviour and the unlabeled snooker clock
+are all written up on <a href="flagged.html">Flagged for review</a> with their source pages.</p>
+</main>
+<footer>Built from official publisher reads recorded at 2026-10-23T19:35:00Z. Prices are originated estimates with no bookmaker margin and are not offers.
+Unread values stay blank and are flagged on <a href="flagged.html">Flagged for review</a>.</footer></body></html>
