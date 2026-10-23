@@ -50,6 +50,7 @@ NHL = {
     "Montreal Canadiens": (9, 4, 3, 2, 30, 34),
     "Buffalo Sabres": (10, 4, 4, 2, 28, 37),
     "Nashville Predators": (9, 3, 3, 3, 23, 30),
+    "New York Rangers": (12, 7, 4, 1, 37, 29),
     "Pittsburgh Penguins": (11, 4, 6, 1, 37, 38),
     "Philadelphia Flyers": (12, 3, 6, 3, 20, 37),
     "Anaheim Ducks": (10, 4, 6, 0, 27, 33),

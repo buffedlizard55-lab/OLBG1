@@ -700,21 +700,125 @@
   "official_label": "NHL schedule API, game 2026020171",
   "observed": "2026-10-23T16:18Z-16:20Z",
   "notes": "Rangers 7-4-1 (15 pts) but 1-4-1 on the road; Ottawa 7-4-0 (14 pts).",
-  "tier": null,
+  "tier": "Low",
   "price": {
    "fixture_id": "nhl-106",
-   "markets": [],
-   "selection": null,
-   "probability": null,
-   "american": null,
-   "fair_decimal": null,
-   "tier": null,
-   "in_window": false,
-   "withheld": [
-    "official standings row missing"
+   "markets": [
+    {
+     "market": "match_winner",
+     "selection": "New York Rangers",
+     "probability": 0.4878048780487805,
+     "american": 105,
+     "fair_decimal": 2.0500000000000003
+    },
+    {
+     "market": "match_winner",
+     "selection": "Ottawa Senators",
+     "probability": 0.5121951219512195,
+     "american": -105,
+     "fair_decimal": 1.9523809523809523
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "New York Rangers",
+     "probability": 0.2964440054802311,
+     "american": 237,
+     "fair_decimal": 3.373318338416146
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "Ottawa Senators",
+     "probability": 0.7824790136147498,
+     "american": -360,
+     "fair_decimal": 1.2779895468127478
+    },
+    {
+     "market": "handicap",
+     "line": "+1.5",
+     "units": "goals",
+     "selection": "New York Rangers",
+     "probability": 0.7824790136147498,
+     "american": -360,
+     "fair_decimal": 1.2779895468127478
+    },
+    {
+     "market": "handicap",
+     "line": "-1.5",
+     "units": "goals",
+     "selection": "Ottawa Senators",
+     "probability": 0.2964440054802311,
+     "american": 237,
+     "fair_decimal": 3.373318338416146
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Over 5.5 goals",
+     "probability": 0.4749726057720272,
+     "american": 111,
+     "fair_decimal": 2.105384579758207
+    },
+    {
+     "market": "total",
+     "line": "5.5",
+     "units": "goals",
+     "selection": "Under 5.5 goals",
+     "probability": 0.5250273942279728,
+     "american": -111,
+     "fair_decimal": 1.9046625204584824
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Over 6.5 goals",
+     "probability": 0.31753839670633194,
+     "american": 215,
+     "fair_decimal": 3.1492254491819045
+    },
+    {
+     "market": "total",
+     "line": "6.5",
+     "units": "goals",
+     "selection": "Under 6.5 goals",
+     "probability": 0.6824616032936681,
+     "american": -215,
+     "fair_decimal": 1.4652839004770981
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Over 7.5 goals",
+     "probability": 0.19332893955385164,
+     "american": 417,
+     "fair_decimal": 5.1725313463556795
+    },
+    {
+     "market": "total",
+     "line": "7.5",
+     "units": "goals",
+     "selection": "Under 7.5 goals",
+     "probability": 0.8066710604461483,
+     "american": -417,
+     "fair_decimal": 1.2396626692507433
+    }
    ],
+   "selection": "New York Rangers",
+   "probability": 0.4878048780487805,
+   "american": 105,
+   "fair_decimal": 2.0500000000000003,
+   "tier": "Low",
+   "in_window": true,
+   "withheld": [],
    "notes": [],
-   "basis": null
+   "basis": "log5 of official points percentages 0.6250 v 0.6364; expected goals 2.91-2.62 from GF/GP and GA/GP; no home edge",
+   "americain": 105
   }
  },
  {

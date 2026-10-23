@@ -18,12 +18,12 @@ page; line-by-line verification with official links and no invention.
 | Metric | Value |
 |---|---:|
 | Fixture rows | **96** |
-| Priced fixtures | **19** |
-| Originated markets | **188** |
+| Priced fixtures | **20** |
+| Originated markets | **200** |
 | High picks inside −250…+10000 | **3** |
 | High probability but priced shorter than −250 (disclosed) | **5** |
 | Medium | **2** |
-| Unverified (blank, flagged) | **7** |
+| Unverified (blank, flagged) | **6** |
 | Elapsed before snapshot (never priced) | **6** |
 | Predictions (≥30 words, one per priced High/Medium) | **10** |
 | Review flags | **20** |
@@ -45,8 +45,8 @@ page; line-by-line verification with official links and no invention.
 | Greyhounds | 3 | 0 | GBGB race report and results API |
 | Tennis | 5 | 0 | WTA official order-of-play PDFs (Ningbo 2092, Osaka 405) |
 | Motor Racing | 1 | 0 | Formula1.com race page and 2026 drivers' standings |
-| Handball | 9 | 8 | LNH official calendar and classement; FC Barcelona official calendar |
-| Ice Hockey | 12 | 11 | api-web.nhle.com schedule and standings (standingsDateTimeUtc 16:16:15Z) |
+| Handball | 8 | 8 | LNH official calendar and classement; FC Barcelona official calendar |
+| Ice Hockey | 12 | 12 | api-web.nhle.com schedule and standings (standingsDateTimeUtc 16:16:15Z) |
 | Basketball | 15 | 0 | NBA.com games page (12 fixtures); EuroLeague game centre (3 elapsed) |
 | Rugby League | 6 | 0 | International Rugby League match pages |
 
@@ -142,3 +142,24 @@ owner.
 * **Note on this follow-up:** its own merge and deploy cannot be confirmed by the text that ships in
   it; what is confirmed above is that the merged desk artifact was the content served by GitHub Pages
   at the times read.
+
+## Post-publication correction (17:35Z, 23 Oct 2026)
+
+The live read-back of `/429a54a2/predictions.html` exposed four prose defects that the structural gates
+cannot catch, and one data omission:
+
+1. The New York Rangers were missing from the embedded standings dictionary, so `nhl-106` (Rangers at
+   Ottawa) was published with a blank price even though both clubs' official records had been read.
+   The row is now priced (Ottawa 44.4% two-way at fair +125 after removing the draw proxy; tier Low).
+2. The Nantes prediction said "scored more goals than any side bar Paris". The LNH table shows Nantes on
+   244 and Paris on 239, so the claim was both wrong and self-contradictory. It now reads 244, more than
+   any other club.
+3. The Vegas prediction made a special-teams claim that no special-teams data supports. Removed.
+4. The Montpellier prediction claimed their defeats came only against leading clubs, which no official
+   match log read this session supports. Replaced with the verified goal-difference comparison (+29 v +6).
+5. Two prediction texts began with the literal word "Selection:" although the page already prints a
+   labelled selection line; the prefix is removed.
+
+After the correction: **96 rows, 20 priced, 200 originated markets, 3 High in band, 5 High out of band,
+2 Medium, 10 Low, 6 unverified, 6 elapsed, 10 predictions, 20 flags**. Desk validator, the six desk tests,
+`scripts/validate.py` and `pipeline.validate --site .` were all re-run green.

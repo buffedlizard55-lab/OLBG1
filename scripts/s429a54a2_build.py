@@ -68,7 +68,7 @@ PREDICTIONS = [
         "text": (
             "Vegas Golden Knights to win in Columbus pairs a 16-point team with a six-point team. Vegas are 8-4-0 with 46 goals "
             "scored and 36 conceded; Columbus are 3-5-0, have scored only 20 goals in eight games, and have lost two in a row. "
-            "The Blue Jackets' 20-29 goal split is the thinner side of this matchup on both special teams and at five-on-five. "
+            "The Blue Jackets' 20-29 goal split is the thinner side of this matchup. "
             "Vegas to win the game outright, with the short price noted as outside the requested band."
         ),
     },
@@ -98,7 +98,7 @@ PREDICTIONS = [
         "text": (
             "Montpellier to beat Saran is a home selection supported by both points and goal difference. Montpellier have 10 points "
             "from seven rounds at 4-1-2, scoring 234 and conceding 205. Saran are 3-4-0 on six points and have been outscored 202-216. "
-            "Montpellier's only two defeats came against the division's leading clubs, and they have won four of their last six. "
+            "Montpellier have won four of their seven matches, and their +29 goal difference is 23 goals better than Saran's. "
             "Back Montpellier to take the 60-minute result."
         ),
     },
@@ -106,7 +106,7 @@ PREDICTIONS = [
         "id": "P-429A-09", "fixture": "nhl-112", "selection": "Tampa Bay Lightning moneyline",
         "tier": "Medium", "words_note": "official NHL standings only",
         "text": (
-            "Selection: Tampa Bay moneyline in Salt Lake City, a medium-strength call. The visitors own a 7-2-0 record, 14 points "
+            "Tampa Bay moneyline in Salt Lake City is a medium-strength call. The visitors own a 7-2-0 record, 14 points "
             "with 31 goals for and 23 against, and three consecutive wins behind them. Utah have also banked 14 points from eleven games, "
             "scoring 44 and conceding 37, and they lost their most recent outing. The Lightning's tighter defence gives them the "
             "edge, but Utah's home scoring volume keeps this out of the top tier."
@@ -116,7 +116,7 @@ PREDICTIONS = [
         "id": "P-429A-10", "fixture": "hb-1305", "selection": "Tremblay to beat Cesson-Rennes",
         "tier": "Medium", "words_note": "official LNH table only",
         "text": (
-            "Selection: Tremblay to beat Cesson-Rennes, a medium-tier handball pick. The LNH table shows Tremblay on seven points "
+            "Tremblay to beat Cesson-Rennes is a medium-tier handball pick. The LNH table shows Tremblay on seven points "
             "from seven rounds at 3-3-1 with 231 goals scored and a +4 goal difference. Cesson-Rennes sit second from bottom with "
             "two points, one win and six defeats, having conceded 227 goals for a -18 differential. That scoring gap points to the "
             "home win at a modest price."
