@@ -29,7 +29,8 @@ PREDICTIONS = [
         "start_utc": "2026-10-23T17:00:00Z",
         "text": (
             "Zalgiris Kaunas taking a 6.5-point start against LDLC ASVEL "
-            "Villeurbanne is the play in Kaunas on Friday night. Both clubs "
+            "Villeurbanne is the play in this Friday night round seven tie. "
+            "Both clubs "
             "reach round seven sitting on identical 2-4 records, so the "
             "separator is the scoring balance rather than the win column: "
             "Kaunas have been outscored by 27 points over six rounds, 490 for "
@@ -75,7 +76,8 @@ PREDICTIONS = [
         "start_utc": "2026-10-23T18:45:00Z",
         "text": (
             "Valencia Basket laying 4.5 points to Paris Basketball is the "
-            "selection. Valencia travel to Paris 4-2 with the third-best "
+            "selection. Valencia arrive for this one 4-2 with the "
+            "third-best "
             "scoring balance on the EuroLeague table after six rounds, 583 "
             "points for against 537 conceded, a +46 differential. Paris sit "
             "1-5 and -41, having scored 504 and shipped 545, and that single "
