@@ -4753,3 +4753,81 @@ while this one was in flight. Neither modified the other; §68.1 records the com
   `/cf2699ba/sports/`, all reachable from `archive.html`, which auto-lists any top-level desk.
 - Desk gate at merge: `scripts/scf2699ba_validate.py` 1,644 assertions, 0 errors. Repo gate
   `scripts/validate.py` 0 errors / 3 pre-existing warnings. `tests/pipeline` 145 OK.
+
+### §67.1 — T67 build, gates, merge and live read-back (2026-10-23T16:40Z)
+
+**Primary PR:** https://github.com/buffedlizard55-lab/OLBG1/pull/163 — *T67: 15-sport desk
+(fa24508c) — 23 official fixtures, 60 independent prices, 5 write-ups, 17 flags*. Pre-merge CI
+`Canonical research checks and Pages` **SUCCESS** (browser gates included; publish job skipped on
+the PR event as designed). **Merged 2026-10-23T16:31:19Z** as
+`94c1626c9c82aec1fe2e859c11822bc11baa9e60`.
+
+**Rebase conflict, resolved and logged:** main moved to `99223fa` (PR #162, session `2b72da34`)
+between this session's claim and its PR. `COORDINATION.md` conflicted on a single hunk because both
+sessions appended a claim at the end of the file and both used the label §61. Resolution:
+`2b72da34` keeps its §61 heading verbatim (it merged first, and its rows were not touched) and
+this session's claim was renumbered §67 — the next free number after the existing §66. No text
+from either session was deleted; the note recording this is at the top of §67. Desk scopes do not
+overlap (`fa24508c/**` vs `2b72da34/**`), so no file-level conflict was possible.
+
+**Gates on the merged tree** (`94c1626`), all re-run after the rebase:
+
+* `python -m unittest discover -s tests/pipeline` → **145 tests OK**
+* `python -m unittest discover -s tests -p 'test*.py'` → **38 tests OK**
+* `python -m pipeline.validate --site .` → **0 errors**
+* `python scripts/validate.py` → **0 errors**, 3 pre-existing `f7fa77fc` warnings (not this desk)
+* `python -m pipeline.build --out _site` → 86 pages; `pipeline.validate --site _site` → **0 errors**
+* `python scripts/sfa24508c_validate.py` → **24 pages / 60 prices / 23 fixtures / 5 predictions /
+  17 flags, 0 errors** — this is a no-network gate: fair price must equal 1 ÷ probability, American
+  round-trip, tier thresholds, every link on an official allowlist, ≥30 words per write-up, the
+  words "model" and "verified" absent from published text, no duplicate openings, every flag
+  carries a source, and every internal link resolves.
+
+**Defects found and fixed before merge** (both invisible to the generic validators):
+
+1. **Sign inversion.** A rugby handicap was rendered as `+10.5` for the home side while the price
+   sat near 0.50 — the handicap was being added instead of negated. Fixed at the source
+   (`Handicap {-hcap:+.1f}`), rebuilt, and the price moved to p≈0.79 at −10.5 as expected.
+2. **Broken links from `sports/`.** The shared footer used `../archive.html` and a bare
+   `flagged.html`, which resolves to `sports/flagged.html` from a subpage — 30 broken links
+   across the 15 sport pages. Footer rewritten to use a `{root}` prefix; broken-link count now 0.
+
+**Pages deploy:** workflow run `39987762153` on `main` completed **success**, both jobs —
+`Evidence, model, site and browser gates` and `Publish canonical GitHub Pages`.
+
+**Live read-back from the deployed Pages host (cache-busted, after the deploy):**
+
+* `/OLBG1/fa24508c/index.html` — served this release: the six KPI tiles (128 discovered / 23
+  verified / 60 prices / 2 High / 0 in-band / 5 write-ups / 17 flags), the full 15-sport coverage
+  table with working subpage links, the 1.4-point band finding, and the "confirmed today" /
+  "confirmed absent" blocks.
+* `/OLBG1/fa24508c/high-confidence.html` — the disclosed out-of-band ledger renders with both
+  High rows (Bulls −569, Edinburgh −379) plus the 65–69.9% near-miss watchlist (Tampa Bay −225).
+* `/OLBG1/archive.html` — auto-lists `Preserved fa24508c →` with a working link. No root file was
+  edited to achieve this; the canonical archive page scans top-level namespaces (§0.4 respected).
+
+**Known limitation, stated rather than papered over:** the desk uses its own dark theme with
+inline CSS and no external assets instead of the canonical `assets/current-style.css` chrome. That
+is deliberate (preview-safe, zero network fetches) and is flagged for the final integration
+session; a topbar entry into `/fa24508c/` remains a one-line shared-file change that this session
+deliberately did not make.
+
+**Polish commit shipped in the receipts PR** (cosmetic only, no number changed): the High-confidence
+paragraph rounded Edinburgh's probability to 79.2% while the table printed 79.1% — both now 79.1%;
+and the per-row basis text read "over the 2 and 2 matches", now "from the 2 matches read for
+Vodacom Bulls and 2 for Ulster". Rebuilt, all gates re-run green.
+
+**Duplicate desks, disclosed:** three sessions ran the same T67 brief inside the same hour —
+`2b72da34` (§61, PR #162), `cf2699ba` (§68, PR #165) and this one (§67, PR #163). All three claims
+were pushed within minutes of each other, so none could have seen the others' claims first; no
+session imported or overwrote another's files, because every desk is fully namespaced. For a reader
+comparing them: `2b72da34` publishes 37 rows and one literal High on a three-tip sample;
+`cf2699ba` publishes six officially confirmed fixtures and zero High; this desk publishes 23
+officially verified fixtures, 60 originated prices, two High selections in a disclosed out-of-band
+ledger and zero in-band High. The count differences are scope choices, not corrections of each
+other — this desk additionally verifies the full 12-game NBA slate and both NHL games against the
+leagues' own feeds, which the other two did not do. Nothing here reclassifies their rows.
+
+**Self-referential limit:** this §67.1 receipt and the polish commit ship in a follow-up PR whose
+own merge and deploy they cannot confirm. What is confirmed above is that PR #163's artifact —
+before the polish — was served by GitHub Pages from the deployed bytes.
