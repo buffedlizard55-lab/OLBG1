@@ -1,0 +1,23 @@
+{
+  "source": "https://api-web.nhle.com/v1/schedule/2026-10-23 and /v1/schedule/2026-10-24",
+  "fetched_utc": "2026-10-23T18:20:00Z",
+  "official_daily_counts": {"2026-10-23": 2, "2026-10-24": 12, "2026-10-25": 5},
+  "games": [
+    {"id":2026020166,"date":"2026-10-23","start_utc":"2026-10-24T00:00:00Z","away":"MTL","home":"CHI","venue":"United Center","state":"FUT"},
+    {"id":2026020167,"date":"2026-10-23","start_utc":"2026-10-24T01:00:00Z","away":"TBL","home":"COL","venue":"Ball Arena","state":"FUT"},
+    {"id":2026020168,"date":"2026-10-24","start_utc":"2026-10-24T17:00:00Z","away":"ANA","home":"PHI","venue":"Xfinity Mobile Arena","state":"FUT"},
+    {"id":2026020169,"date":"2026-10-24","start_utc":"2026-10-24T19:30:00Z","away":"LAK","home":"NJD","venue":"Prudential Center","state":"FUT"},
+    {"id":2026020170,"date":"2026-10-24","start_utc":"2026-10-24T23:00:00Z","away":"SJS","home":"BOS","venue":"TD Garden","state":"FUT"},
+    {"id":2026020171,"date":"2026-10-24","start_utc":"2026-10-24T23:00:00Z","away":"NYR","home":"OTT","venue":"Canadian Tire Centre","state":"FUT"},
+    {"id":2026020172,"date":"2026-10-24","start_utc":"2026-10-24T23:00:00Z","away":"NSH","home":"PIT","venue":"PPG Paints Arena","state":"FUT"},
+    {"id":2026020173,"date":"2026-10-24","start_utc":"2026-10-24T23:00:00Z","away":"BUF","home":"WSH","venue":"Capital One Arena","state":"FUT"},
+    {"id":2026020174,"date":"2026-10-24","start_utc":"2026-10-24T23:00:00Z","away":"VGK","home":"CBJ","venue":"Nationwide Arena","state":"FUT"},
+    {"id":2026020175,"date":"2026-10-24","start_utc":"2026-10-24T23:00:00Z","away":"CAR","home":"STL","venue":"Enterprise Center","state":"FUT"},
+    {"id":2026020176,"date":"2026-10-24","start_utc":"2026-10-24T23:00:00Z","away":"TOR","home":"EDM","venue":"Rogers Place","state":"FUT"},
+    {"id":2026020177,"date":"2026-10-24","start_utc":"2026-10-25T01:00:00Z","away":"TBL","home":"UTA","venue":"Delta Center","state":"FUT"},
+    {"id":2026020178,"date":"2026-10-24","start_utc":"2026-10-25T02:00:00Z","away":"DET","home":"CGY","venue":"Scotiabank Saddledome","state":"FUT"},
+    {"id":2026020179,"date":"2026-10-24","start_utc":"2026-10-25T02:00:00Z","away":"MIN","home":"SEA","venue":"Climate Pledge Arena","state":"FUT"},
+    {"id":2026020180,"date":"2026-10-25","start_utc":"2026-10-25T19:00:00Z","away":"FLA","home":"CHI","venue":"United Center","state":"FUT"}
+  ],
+  "notes": "2026-10-25 has 5 games per the official feed; only the first (FLA at CHI) was individually read from chunk 2 of the schedule response. The other four are counted from the official numberOfGames field and are not individually enumerated here."
+}

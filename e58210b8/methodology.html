@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology · T5821</title><link rel="stylesheet" href="assets/desk.css"></head>
+<body><header><h1>How these numbers were produced</h1>
+<p class="sub">OLBG1 · T5821 desk · session <code>e58210b8-olbg1</code> · evidence snapshot 2026-10-23T19:35:00Z · not affiliated with OLBG · 18+ only, no staking advice</p></header>
+<nav><a href="index.html">Dashboard</a> <a href="matches.html">Matches</a> <a href="markets.html">Markets</a> <a href="high-confidence.html">High confidence</a> <a href="predictions.html">Predictions</a> <a href="flagged.html">Flagged for review</a> <a href="methodology.html" aria-current="page">Methodology</a> <a href="sources.html">Sources</a> <a href="analysis.html">Repo &amp; OLBG review</a></nav><main>
+<h2>What counts as a fact</h2>
+<p>A value appears in a table only if it was read from an official publisher — the league, tour or
+governing body — during this session, at the timestamp recorded in the
+<a href="sources.html">source register</a>. OLBG routes are discovery: they tell us where a sport
+lives, never what happened in a match. Media and aggregator pages are not used at all. Anything not
+read stays blank and is listed on <a href="flagged.html">Flagged for review</a>.</p>
+<h2>How a price is originated</h2>
+<p>Two estimators are computed per club from the official standings and then averaged:</p>
+<ol><li><b>Binary record share</b> — wins ÷ games played, with overtime and shootout losses counted
+as defeats.</li>
+<li><b>Pythagorean expectation</b> — goals for² ÷ (goals for² + goals against²), exponent 2.</li></ol>
+<p>The two sides are compared with log5, <code>(pa − pa·pb) ÷ (pa + pb − 2·pa·pb)</code>. No home-ice
+edge is inserted, no default rating is substituted for a missing club, and no bookmaker quote is
+used anywhere. Fair decimal is <code>1 ÷ p</code> with no margin; the American display follows from
+the decimal, so a −250 fair price is exactly a 71.43% probability.</p>
+<h2>Handicap and totals</h2>
+<p>Expected goals per side come from the two clubs' official scoring rates, again with no venue
+adjustment. A Poisson goal distribution gives the −1.5 cover chance and the 5.5 total. Overtime and
+shootout goals are excluded, which is disclosed on every totals row.</p>
+<h2>Confidence tiers and the price window</h2>
+<p>High means a probability of 70% or more. Medium is 60–70%. Everything else is low. The −250…+10000
+window is reported as a separate flag on every call, because on this slate the four high calls all
+price shorter than −250 and nothing above 70% lands inside the window. Publishing that conflict is
+the point: it is the honest reading of the two rules together.</p>
+<h2>Expiry</h2>
+<p>The snapshot is 2026-10-23T19:35:00Z. Each row's relevance ends at its start time; the three World
+Series rows run to 27 October. A later build never re-dates an earlier read.</p>
+<h2>What this desk is not</h2>
+<p>Not affiliated with OLBG. Not bookmaker execution, not staking advice, not a calibrated
+probability service. 18+ only.</p>
+</main>
+<footer>Built from official publisher reads recorded at 2026-10-23T19:35:00Z. Prices are originated estimates with no bookmaker margin and are not offers.
+Unread values stay blank and are flagged on <a href="flagged.html">Flagged for review</a>.</footer></body></html>
