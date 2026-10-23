@@ -272,6 +272,12 @@ To avoid repeatedly colliding with peer EOF appends, this uniquely named section
 * **Disposition:** publication is complete; task status **needs review** means the acknowledged global/daily-confidence/automation gaps are published and do not block a working site. No claim of five High predictions per sport or full worldwide automated coverage is made.
 * **Small follow-up:** mark price-book KPIs explicitly as-of-build and make both executive preference tables actually sort by estimated chance, matching their label. This changes presentation only, adds a regression test and never renews sporting evidence. Follow-up PR/deployment receipts will be appended after success.
 
+### §T455ACB16.7 — Follow-up #216 live; final statistical-display correction
+
+[PR #216](https://github.com/buffedlizard55-lab/OLBG1/pull/216) merged at **2026-10-23T22:19:22Z** as **26630eb4776a42c5bcbef3ada5e2194e298dab39**. [PR run 40032568374](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40032568374) and [production run 40032844369](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40032844369) succeeded; production validation job **120685073687** and Pages job **120685616979** both succeeded. Independent `fetch_page` read-back of `/455acb16/index.html?release=26630eb` confirmed the as-of-build label, Lightning-first today's table and Edmonton-first upcoming shortlist. Original source-observation bounds and counts remained unchanged.
+
+A final semantic display check found that the common record schema had inserted `ot_losses: 0` into MLB records even though that NHL-specific field was not published by MLB. The zero is removed from accepted data (not relabelled as sourced); MLB displays only W–L, NHL still displays W–L–OT. Validation now rejects an injected MLB OTL zero, with a negative regression test. Baseball run-rate prices and all price books remain unchanged. The selected excerpt/projection note records this correction without re-fetching or re-timing the source. Local checks: **33 desk tests, 372 combined pipeline tests**, and the browser gate pass. This final source-semantics/receipt change is submitted separately; no unsupported MLB OTL fact is retained in the final branch.
+
 ## 3. Sources register
 
 Every source used is catalogued with its URL in `data/sources.json` and rendered on the site's

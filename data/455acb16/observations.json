@@ -1021,7 +1021,6 @@
             "games_played": 162,
             "wins": 98,
             "losses": 64,
-            "ot_losses": 0,
             "runs_scored": 736,
             "runs_allowed": 650,
             "period": "2026 regular season only",
@@ -1037,7 +1036,6 @@
             "games_played": 162,
             "wins": 103,
             "losses": 59,
-            "ot_losses": 0,
             "runs_scored": 832,
             "runs_allowed": 618,
             "period": "2026 regular season only",
@@ -1046,8 +1044,8 @@
           }
         ]
       },
-      "note": "Selected team records in chunks 0 and 2, not every team. Original provider update timestamps preserved. Completed regular-season aggregates are not postseason form.",
-      "content_sha256": "071ae325b5ad654a150b1e06c1250666631c3efba491a5d04135583444ec9b61"
+      "note": "Selected team records in chunks 0 and 2, not every team. Original provider update timestamps preserved. Completed regular-season aggregates are not postseason form. Projection correction: an earlier common-schema OTL zero was not an official MLB field and has been removed; the NHL-only category is not applicable to MLB. This does not change the observation bounds or run-rate calculations.",
+      "content_sha256": "f18b0d65adee077218d2c6e480440e4d46b3dcf7b3b30bcc2364d676500c6730"
     },
     {
       "id": "atp-almaty",

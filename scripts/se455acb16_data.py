@@ -173,12 +173,12 @@ def selected_observations():
         '"gamePk":849805,"gameType":"W","season":"2026","gameDate":"2026-10-24T00:00:00Z","status":{"detailedState":"Pre-Game","startTimeTBD":false}; "description":"World Series Game 5","seriesGameNumber":5,"ifNecessary":"Y"',
         projection={"fixtures":mlb_fixtures},note="Game 6 lies outside the exact rolling seven-day window and is conditional. Neither conditional game is priced."))
     mlb_stats=[
-        {"id":"mlb-stat-139","competition":"MLB","season":"2026","team_id":139,"team":"Tampa Bay Rays","games_played":162,"wins":98,"losses":64,"ot_losses":0,"runs_scored":736,"runs_allowed":650,"period":"2026 regular season only","as_of":"2026 regular season","provider_last_updated":"2026-10-23T20:52:56Z"},
-        {"id":"mlb-stat-158","competition":"MLB","season":"2026","team_id":158,"team":"Milwaukee Brewers","games_played":162,"wins":103,"losses":59,"ot_losses":0,"runs_scored":832,"runs_allowed":618,"period":"2026 regular season only","as_of":"2026 regular season","provider_last_updated":"2026-10-06T00:15:51Z"},
+        {"id":"mlb-stat-139","competition":"MLB","season":"2026","team_id":139,"team":"Tampa Bay Rays","games_played":162,"wins":98,"losses":64,"runs_scored":736,"runs_allowed":650,"period":"2026 regular season only","as_of":"2026 regular season","provider_last_updated":"2026-10-23T20:52:56Z"},
+        {"id":"mlb-stat-158","competition":"MLB","season":"2026","team_id":158,"team":"Milwaukee Brewers","games_played":162,"wins":103,"losses":59,"runs_scored":832,"runs_allowed":618,"period":"2026 regular season only","as_of":"2026 regular season","provider_last_updated":"2026-10-06T00:15:51Z"},
     ]
     obs.append(observation("mlb-standings","MLB",MLB_STATS,[0,2],
         '"team":{"id":139,"name":"Rays"},"season":"2026","gamesPlayed":162; "runsAllowed":650,"runsScored":736,"wins":98,"losses":64\n"team":{"id":158,"name":"Brewers"},"season":"2026","gamesPlayed":162,"lastUpdated":"2026-10-06T00:15:51Z"; "runsAllowed":618,"runsScored":832,"wins":103,"losses":59',
-        projection={"statistics":mlb_stats},note="Selected team records in chunks 0 and 2, not every team. Original provider update timestamps preserved. Completed regular-season aggregates are not postseason form."))
+        projection={"statistics":mlb_stats},note="Selected team records in chunks 0 and 2, not every team. Original provider update timestamps preserved. Completed regular-season aggregates are not postseason form. Projection correction: an earlier common-schema OTL zero was not an official MLB field and has been removed; the NHL-only category is not applicable to MLB. This does not change the observation bounds or run-rate calculations."))
 
     def calendar(sid,publisher,url,chunks,excerpt,rows,note="",resolved_url=None):
         obs.append(observation(sid,publisher,url,chunks,excerpt,projection={"fixtures":rows},note=note,resolved_url=resolved_url))

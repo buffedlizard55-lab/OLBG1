@@ -113,12 +113,24 @@ def fixture_state(f,at):
 def record_ok(r,at):
     if not r:
         return False
-    for k in ("wins","losses","ot_losses","games_played"):
+    for k in ("wins","losses","games_played"):
         if type(r.get(k)) is not int or r[k] < 0:
             return False
-    if r["wins"]+r["losses"]+r["ot_losses"] != r["games_played"] or r["games_played"]<5:
+    if r.get("competition")=="NHL":
+        ot=r.get("ot_losses")
+        if type(ot) is not int or ot<0:
+            return False
+    elif r.get("competition")=="MLB":
+        # NHL's OTL category does not exist in this MLB record. Zero here is
+        # arithmetic only, never stored/displayed as an official MLB statistic.
+        if r.get("ot_losses") is not None:
+            return False
+        ot=0
+    else:
         return False
-    if "points" in r and r["points"] != 2*r["wins"]+r["ot_losses"]:
+    if r["wins"]+r["losses"]+ot != r["games_played"] or r["games_played"]<5:
+        return False
+    if "points" in r and r["points"] != 2*r["wins"]+ot:
         return False
     try:
         a,b=parse_time(r["observed_after"]),parse_time(r["observed_before"])
