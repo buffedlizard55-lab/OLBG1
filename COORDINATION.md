@@ -6245,3 +6245,11 @@ remaining candidates.
 * **Live read-back (deployed bytes, not the API status):** `https://buffedlizard55-lab.github.io/OLBG1/8aede3ba/index.html` returned the desk dashboard with the KPI ribbon reading **98 fixtures · 392 markets · 66 High picks · 92→108 source links · 12 flags** and the executive-summary table rendering each High row with its −239 fair price, 70.5% probability and an official governing-body link. The desk is also auto-indexed on the canonical `archive.html` because `pipeline.build` picks up any top-level `index.html`.
 * **Post-publication addendum (this commit):** one further flag, **F-8A-13**, was added after reading the deployed page: every High row publishes at the same −239 because the brief's 70% floor and −250 band floor intersect in a 1.4-point window. The desk now states that on the dashboard and explains it on the Flagged page, and the flag count moves 12 → 13. No published selection, price or prediction changed.
 * **Task status: done** for both `T8AEDE` and `T8AEDE-FIX`.
+
+### §77.5 — T6B47 presentation follow-ups: PRs #217, #221, #224 (2026-10-24T01:55Z)
+
+* **#217** `bf987cc` — executive summary now leads with picks and collapses unpicked fixtures to one line, after a live read-back showed a wall of "No pick" NBA rows.
+* **#221** `2348b10` — the summary and watchlist had regressed to bare `over`/`under`; both now render `Over 8.5 frames` / `Under 50.5 points`. No generated cell prints a bare selection.
+* **#224** — per-sport coverage gaps now report that sport's own numbers (upcoming fixtures, opposite-favourite fixtures, the rules that removed how many lines) instead of one paragraph repeated 15 times; `R4 below 60%` renamed to `R4 below 70%`.
+* Main runs for all three **success**; Pages read-back of `/6b47ea39/picks.html` confirms the per-sport reasons and of `/6b47ea39/index.html` confirms readable selections.
+
