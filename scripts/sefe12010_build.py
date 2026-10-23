@@ -369,7 +369,8 @@ def build_index(fixtures, priced, unpriced, highs, mediums, covered, n_markets, 
         ("Priced by this desk", len(priced), "Fixtures with enough official input to originate a line."),
         ("Markets originated", n_markets, f"{n_outcomes} individual priced outcomes."),
         ("High-confidence selections", len(highs), "Inside the −250 to +10000 band."),
-        ("Published blank and flagged", len(unpriced), "No official source, so no number was invented."),
+        ("Published blank and flagged", len(unpriced),
+         "No price could be originated without inventing an input, so none was."),
     ]
     cards = "".join(
         f'<article class="kpi"><p class="k-label">{e(t)}</p><p class="k-val">{v}</p>'
