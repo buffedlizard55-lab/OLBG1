@@ -6184,3 +6184,12 @@ remaining candidates.
 * **Deliverables & local gates passed (`2026-10-23T22:05Z`):**
   * **75 upcoming verified fixtures** (`5 per sport × 15 covered OLBG sports`, 100% starting `>= 2026-10-24T00:00:00Z`), **300 originated multi-market books** (`673` outcomes), **44 High / 29 Medium / 2 Low** confidence selections (`100%` of High picks inside `[-250, +10000]` American odds and `<= 70.0%` zero-vig probability), **75 unique human-written predictions** (`60–86` words, `0` duplicate 6-grams, `0` `model`/`verified` tokens), **8 unconfirmed blank items** on `87b30e7f/flagged.html`, and **10 SHA-256 adjudicated repo-audit findings** on `87b30e7f/audit.html`.
   * **All 6 CI + Browser gates green:** `s87b30e7f_validate` PASS; `tests/pipeline` 336/336 OK; `tests/` 38/38 OK; `pipeline.validate --site .` 0 errors; `scripts/validate.py` 0 errors across 1,377 HTML pages; `pipeline.build --out _site && pipeline.validate --site _site` 0 errors; `browser.cjs` + `/OLBG1/87b30e7f/` Chromium desktop/mobile smoke PASS.
+
+### §77.4 — T6B47 price-independence audit: PRs #207, #210, #213 (2026-10-24T00:40Z)
+
+* **#207** merged `a12d632` — publication receipts for #198/#202 (this file's §77.3).
+* **#210** merged — corrected the wording of finding F04: the 70–72% clustering is **not** agreement between desks. Gates: validator PASSED, 12 desk tests OK.
+* **#213** merged `0a2f508` — new price-independence audit. Main run [40032154637](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40032154637) **success**.
+* **The measurement, reproduced from the retained price files:** `8a900c04` has **95 of 472** priced lines (20.1%) between 0.700 and 0.720, against **1.7%** (`496eaf02`) and **1.4%** (`65331685`). It also supplies **84 of the 94** candidate lines inside the brief's window. Only **39 of 1,655** priced observations carry a second desk's price, and **no in-window line is priced twice**. Setting that desk aside leaves **10** in-window candidates across **7** sports.
+* **Published on the desk:** a *Where the prices come from* table on `/6b47ea39/`, a *Price corroboration: weak, disclosed* row on the method page, the pricing desk named on every pick row, and findings F04/F05 rewritten around these counts. New tests: every pick names its pricing desk; no pick sits on an opposite-favourite fixture; the independence counts are recomputed from the slate.
+* **Gates after #213:** desk validator PASSED (26 pages) · 15 desk tests OK · `tests/pipeline` green · `scripts/validate.py` PASSED with 3 pre-existing `f7fa77fc` warnings.
