@@ -1,0 +1,75 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Analysis · OLBG 15-sport desk · 429a54a2</title>
+<meta name="description" content="Official-source match list, originated lines, confidence tiers and review flags for 15 sports, snapshot 2026-10-23T16:45Z.">
+<style>
+:root{--ink:#12241c;--muted:#5b6f66;--line:#dfe7e2;--bg:#f6f9f7;--card:#fff;--green:#12563d;--amber:#8a5a12;--red:#8c2f24}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+a{color:#12563d}a:hover{text-decoration:underline}
+header.top{background:#0f3f2d;color:#fff;padding:14px 22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+header.top .brand{font-weight:700;letter-spacing:.3px}header.top .brand small{display:block;font-weight:400;opacity:.75;font-size:11px;letter-spacing:1px}
+nav.top a{color:#dff0e7;margin-right:14px;text-decoration:none;font-size:13px}nav.top a.on{color:#fff;border-bottom:2px solid #8fd3b3}
+main{max-width:1200px;margin:0 auto;padding:26px 20px 60px}
+h1{font-size:27px;margin:0 0 6px}h2{font-size:19px;margin:26px 0 10px}h3{font-size:15px;margin:16px 0 6px}
+p.lede{color:var(--muted);max-width:88ch;margin:0 0 18px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi b{display:block;font-size:22px}.kpi span{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.6px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:16px 0}
+.notice{background:#fff8e8;border:1px solid #e8d3a2;border-radius:8px;padding:11px 14px;margin:14px 0;font-size:13.5px}
+.warn{background:#fbeeeb;border-color:#e6c3bb}
+table{width:100%;border-collapse:collapse;font-size:13px;background:var(--card)}
+th,td{border-bottom:1px solid var(--line);padding:8px 9px;text-align:left;vertical-align:top}
+th{background:#eef4f0;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:#2c4a3c}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.badge{display:inline-block;padding:1px 7px;border-radius:20px;font-size:11px;font-weight:600;border:1px solid}
+.badge.high{background:#e3f3ea;color:#0d5d3c;border-color:#b8ddc8}
+.badge.med{background:#fff4dd;color:#8a5a12;border-color:#e9d1a4}
+.badge.low{background:#eef1f0;color:#4d625a;border-color:#d6dfda}
+.badge.gap{background:#fbeeeb;color:#8c2f24;border-color:#e6c3bb}
+small.muted,span.muted{color:var(--muted);font-size:11.5px;display:block}
+a.src{font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.card h3{margin-top:0}
+.pred{border-left:3px solid #12563d}
+ul.tight{margin:6px 0 0 18px;padding:0}ul.tight li{margin:3px 0}
+footer{border-top:1px solid var(--line);margin-top:36px;padding-top:14px;color:var(--muted);font-size:12px}
+.tag{font-size:11px;background:#eef4f0;border:1px solid var(--line);border-radius:6px;padding:1px 6px;margin-right:4px}
+</style></head><body>
+<header class="top"><div class="brand">OLBG 15-SPORT DESK<small>SESSION 429A54A2 · SNAPSHOT 2026-10-23T16:45:00Z</small></div>
+<nav class="top"><a class="" href="index.html">Overview</a><a class="" href="matches.html">Match list</a><a class="" href="markets.html">Markets</a><a class="" href="high-confidence.html">High confidence</a><a class="" href="predictions.html">Predictions</a><a class="on" href="analysis.html">Analysis</a><a class="" href="sources.html">Sources</a><a class="" href="methodology.html">Method</a><a class="" href="flagged.html">Flagged for review</a><a class="" href="repo-review.html">Repo review</a></nav></header><main>
+<h1>Analysis and findings</h1>
+<p class="lede">What the snapshot contains, how the tiers fell out, and what the OLBG reconstruction showed. Counts here are computed from the same JSON that renders the tables.</p>
+<div class="kpis">
+<div class="kpi"><b>96</b><span>fixture rows</span></div>
+<div class="kpi"><b>19</b><span>priced</span></div>
+<div class="kpi"><b>188</b><span>markets</span></div>
+<div class="kpi"><b>3/5</b><span>High in/out of band</span></div>
+</div>
+<h2>How the tiers fell out</h2>
+<div class="table-wrap"><table><tr><th>Tier</th><th>Rule</th><th>Count</th></tr>
+<tr><td>High, in band</td><td>p &ge; 0.70, fair price inside -250..+10000, both official inputs</td><td class="num">3</td></tr>
+<tr><td>High, out of band</td><td>p &ge; 0.70 but fair price shorter than -250</td><td class="num">5</td></tr>
+<tr><td>Medium</td><td>0.60 &le; p &lt; 0.70 with both inputs</td><td class="num">2</td></tr>
+<tr><td>Low</td><td>p &lt; 0.60, or a single-input model</td><td class="num">9</td></tr>
+<tr><td>No price</td><td>fixture confirmed but no official strength input, or start elapsed</td><td class="num">77</td></tr>
+</table></div>
+<h2>What the OLBG reconstruction showed</h2>
+<div class="panel"><ul class="tight">
+<li>Fifteen sport routes were read: Golf/5, Volleyball/21, Rugby_Union/9, Cricket/7, Snooker/8, Darts/15, Baseball/12, Gaelic_Football/25, Greyhounds/28, Tennis/3, Motor_Racing/14, Handball/20, Ice_Hockey/13, Basketball/4, Rugby_League/10. Hurling/26 was read only to confirm the exclusion.</li>
+<li>Each hub exposes one most-tipped selection per event with a tip count and a rounded share; the per-event page adds the full market list. That is discovery only — a tip share is a vote count, not a probability, and this desk never converts it.</li>
+<li>Times on the hubs carry no zone label and disagree with official schedules by three to four hours across sports (see F-429A-01). Three hubs were empty or ante-post-only during live competition (golf, rugby league, and the 2027 Masters).</li>
+<li>Two hubs listed a fixture the official body did not support at the stated date: the Cork football final (25 October per Cork GAA, not OLBG's 24 October card) and the Munster club page URL, which now 404s.</li>
+</ul></div>
+<h2>Where the prices come from</h2>
+<div class="panel"><p>Ice hockey uses log5 on the league's own points percentages plus team goals for and against per game. Handball uses attack and defence ratios around the LNH league mean. No home edge, no market input and no clipping are applied. The consequence is visible: the Carolina price of -245 and the Montreal price of -250 are what the arithmetic produces, not what a bookmaker would hang.</p>
+<p>Nothing else is priced. Tennis has a seeding order but no rating scale; cricket has fixtures but no team ratings read; the NBA has official fixtures and one-game records that cannot support a rating; rugby has line-ups but no official table read this session; snooker has frame results but no strength input. Each of those is a blank, counted on this page and explained on the sport page.</p></div>
+<h2>Repository findings</h2>
+<p class="lede">Eight specific findings with file and line, all re-read this session. They are also on the repo review page.</p>
+<div class="table-wrap"><table><tr><th>ID</th><th>File</th><th>Line</th><th>Finding</th></tr>
+<tr><td>R-429A-01</td><td><code>COORDINATION.md</code></td><td class="num">142</td><td>Duplicate task row: T424375B4 is recorded as done here and as in progress at line 144.</td></tr><tr><td>R-429A-02</td><td><code>COORDINATION.md</code></td><td class="num">123</td><td>Task id T63 is used twice; the second row at line 125 carries a different scope.</td></tr><tr><td>R-429A-03</td><td><code>COORDINATION.md</code></td><td class="num">4029</td><td>Section 64 appears twice (also line 4279) with identical headings.</td></tr><tr><td>R-429A-04</td><td><code>scripts/s2b72da34_build.py</code></td><td class="num">6</td><td>p=(tips+2)/(total+4) converts a community tip share into a probability with no calibration.</td></tr><tr><td>R-429A-05</td><td><code>data/2b72da34/desk.json</code></td><td class="num">165</td><td>High label at p=0.714 derived from a 3/3 tip sample, exactly on the -250 boundary.</td></tr><tr><td>R-429A-06</td><td><code>2b72da34/baseball.html</code></td><td class="num">1</td><td>The only official link on the row is the generic mlb.com homepage while the row is counted as priced.</td></tr><tr><td>R-429A-07</td><td><code>data/current/snapshot.json</code></td><td class="num">21</td><td>Canonical snapshot is dated 2026-10-22T12:29:50Z, more than 28 hours before this session, so no row in it can be treated as current.</td></tr><tr><td>R-429A-08</td><td><code>scripts/validate.py</code></td><td class="num">166</td><td>The link gate accepts only relative links on published pages; it does not check that a row&#x27;s official link resolves to the fixture, which is how the baseball row above passed.</td></tr></table></div>
+<div class="panel"><strong>Sports:</strong> <a href="sports/golf.html">Golf</a> <a href="sports/volleyball.html">Volleyball</a> <a href="sports/rugby-union.html">Rugby Union</a> <a href="sports/cricket.html">Cricket</a> <a href="sports/snooker.html">Snooker</a> <a href="sports/darts.html">Darts</a> <a href="sports/baseball.html">Baseball</a> <a href="sports/gaelic-sports.html">Gaelic Sports</a> <a href="sports/greyhounds.html">Greyhounds</a> <a href="sports/tennis.html">Tennis</a> <a href="sports/motor-racing.html">Motor Racing</a> <a href="sports/handball.html">Handball</a> <a href="sports/ice-hockey.html">Ice Hockey</a> <a href="sports/basketball.html">Basketball</a> <a href="sports/rugby-league.html">Rugby League</a> </div>
+<footer>Independent research, not betting advice. Snapshot 2026-10-23T16:45:00Z. OLBG is used for discovery only; every accepted fixture fact is linked to its league, tour or governing body. Prices are originated estimates, not bookmaker offers. 18+.</footer>
+</main></body></html>
