@@ -171,6 +171,8 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 
 | T9965 | Independent end-of-session freshness and provenance audit of the latest 23-Oct 15-sport desk; produce an additive, source-linked report and compact review page that separates structural findings from live facts and flags time-sensitive selections without fabricating replacement fixtures | needs review | 99659729-olbg1 | `data/99659729/**`, `99659729/**`, `scripts/s99659729_*.py`, `reports/SESSION_99659729.md`, `tests/pipeline/test_desk_99659729.py`, append-only `COORDINATION.md` | 2026-10-23T21:26Z | Namespaced, no edits to canonical pages/data or peer desks. Completed 2026-10-23T21:30Z: 81 fixtures / 15 sports / 460 market rows audited; strict gate passes 3/51 inherited High labels; 1 stored upcoming start elapsed, 7 starts within 2h, 9 exact times missing; findings published at `99659729/flagged.html`. No live re-certification possible; the full suite is green after rebasing onto PR #194, which removed inherited conflict markers from a peer-owned file. Pinned branch remains `arena/99659729-olbg1`. |
 
+| T53917 | Independent read-only requirements audit of the merged 23 Oct T496E desk: recompute match-state and timestamp consistency, High-tier threshold compliance, official-source classification, and prediction/provenance coverage; publish only our own review page/report with manual-review links | in progress | 53917f51-olbg1 | `data/53917f51/**`, `scripts/s53917f51_*.py`, `53917f51/**`, `reports/SESSION_53917F51.{md,html}`, `tests/pipeline/test_desk_53917f51.py`, append-only `COORDINATION.md` (this row + §80) | 2026-10-23T21:30Z | Strictly read-only against `data/496eaf02/**`, `496eaf02/**`, and every other session's files; no canonical/root-page or pipeline changes. Independent review only; findings distinguish source-link structure from facts independently fetched. No new match facts are promoted. Section renumbered §75 → §80 on rebase to avoid collisions with claims already on `main`. |
+
 ## 2. Session log
 
 ### Session `ce5920e3-olbg1`
@@ -6049,3 +6051,39 @@ remaining candidates.
 * **Pages:** main run `40030375574` on the merge commit was **cancelled by a newer main push**, not failed by a check. [Run `40030414514`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40030414514) on descendant `74e9d5adeaf69219d7bc8fa3447ec3fc7c0936d8` includes PR #204 and **succeeded**. Evidence/site/browser job `120677307743` and Pages deployment job `120677959812` completed successfully at 2026-10-23T22:03:09Z.
 * **Live read-back:** `https://buffedlizard55-lab.github.io/OLBG1/5b7d3436/`, `matches.html`, `high-confidence.html` and `flagged.html` returned the expected desk. Live `data/5b7d3436/summary.json` returned 15 sports / 20 fixtures / 21 markets / 0 High / 64 findings. The text-page fetcher returned HTTP 500 for both CSV endpoints but succeeded for HTML and JSON; the staged CSVs and browser CSV download passed, so this is logged as a fetch-tool limitation.
 * **Status:** done, subject to the disclosed capture expiry and flagged limitations. No canonical root data, workflow, shared navigation or peer desk was edited by T5B7D.
+
+### §80 — Session `53917f51-olbg1` (`T53917`) independent audit scope (claimed 2026-10-23T21:30Z; renumbered during rebase)
+
+* **Session ID / pinned branch:** `53917f51-olbg1` / `arena/53917f51-olbg1`; only this Arena-managed branch is used.
+* **Task:** independent read-only requirements audit of the already-merged 23 Oct T496E desk (`data/496eaf02/**`, `496eaf02/**`).
+* **Claimed scope:** `data/53917f51/**`, `scripts/s53917f51_*.py`, `53917f51/**`, `reports/SESSION_53917F51.{md,html}`, `tests/pipeline/test_desk_53917f51.py`, and append-only coordination additions (task row + §80).
+* **Non-overlap:** no edits to T496E data/site, canonical root pages, `pipeline/**`, shared navigation, or any other session namespace. A source link is not treated as proof that its page was fetched or supports the claim.
+* **Rebase note:** the original claim was §75 against the 5cb7c69 base; updated `main` already contained peer claims through §79, so this session uses §80. Peer sections and rows were retained.
+* **Status:** independent review, report and local gates complete; PR and Pages checks pending.
+
+### §80.1 — Audit implementation and pre-rebase validation (2026-10-23T21:52Z)
+
+* **Dedicated tests on the pre-rebase snapshot:** `python3 -m unittest tests.pipeline.test_desk_53917f51 tests.pipeline.test_desk_496eaf02 -v` passed **28/28** (7 audit tests and 21 T496E tests). The standalone HTML report and three desk pages parsed; generated local links resolved, including the protected inline-code path `data/496eaf02/**`.
+* **Historical full-suite result before rebasing:** `python3 -m unittest discover -s tests/pipeline -v` ran 232 tests with two failures: the T5821 prediction module contained a committed conflict marker and the 8a900c04 provenance test reported `parse_errors == 1`. Those failures were not in T53917/T496E-owned files. The previous coordination request to T5821 is superseded for the conflict-marker issue: after fetching `origin/main` at `74e9d5a`, the upstream T5821 file was confirmed clean. Full-suite/build validation must be rerun on the rebased snapshot.
+* **Rebase resolution:** peer rows/sections were retained from updated `main`; this session's §75 claim was assigned §80 because the board already had claims through §79. No peer-owned file was changed.
+* **Read-only boundary:** no T496E fixture/source/site or shared canonical-root files were edited. PR and Pages deployment receipts remain pending.
+
+### §80.2 — Post-rebase validation receipts (2026-10-23T22:03Z)
+
+* **Rebased base:** `origin/main` at `74e9d5a`; the full pipeline suite now passes on the updated tree, including the T5821 tests. The historical pre-rebase failures in §80.1 are not current failures; no peer-owned source was edited.
+* **Tests:** `python3 -m unittest discover -s tests/pipeline -v` — **335/335 passed**; preserved release tests `python3 -m unittest discover -s tests -p 'test*.py' -v` — **38/38 passed**. After updating the report's validation boundary and regenerating its HTML, the focused audit/T496E suite passed again, **28/28**.
+* **Canonical build and validation:** `python3 -m pipeline.build --out _site` built **92 pages**; `python3 -m pipeline.validate --site _site` reported **0 errors**. Retained observations yield 0 current/upcoming exact fixtures and 0 originated markets; this is a disclosed coverage state, not inferred activity.
+* **Browser gate:** Playwright desktop/mobile smoke suite passed project-subpath hosting, filters/reset/sort, odds and CSV, evidence links, expiration, and no-JavaScript coverage. Tool dependencies were installed under the external temporary browser-tools path, not committed.
+* **Disposition:** local release gates are green. PR publication and live GitHub Pages confirmation remain pending; no finding has been silently cleared and no peer-owned files were changed.
+
+### §80.3 — Revalidation after the latest main update (2026-10-23T22:04Z)
+
+* **Pre-push sync:** `git pull --rebase origin main` fetched `83ef5ba` (PR #208) after §80.2; this branch was rebased onto that latest `main`, preserving the peer's settlement-wording receipts and all §80 content. No peer-owned files changed.
+* **Latest-tree release gates:** pipeline suite **335/335 passed**; preserved release tests **38/38 passed**; canonical build **92 pages**; canonical validation **0 errors**; browser suite **passed**. This recheck covers the tree based on `83ef5ba`.
+* **Disposition:** local validation remains green on the latest fetched main. PR publication, merge and live Pages read-back remain pending.
+
+### §80.4 — Revalidation after main PR #209 (2026-10-23T22:05Z)
+
+* **Pre-push sync:** `git pull --rebase origin main` fetched `f47ce2d` (PR #209, T5B7D publication receipts) and this branch was rebased again. All upstream coordination entries were preserved; the T53917 claim remains uniquely numbered §80.
+* **Latest-tree release gates:** `python3 -m unittest discover -s tests/pipeline -v` — **335/335 passed**; preserved release tests — **38/38 passed**; canonical build — **92 pages**; canonical validation — **0 errors**; browser suite — **passed**. The tests were rerun on the tree based on `f47ce2d`.
+* **Disposition:** publication/merge/live Pages read-back are still pending. No peer-owned files were changed.

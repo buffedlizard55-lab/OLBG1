@@ -1,0 +1,1164 @@
+{
+  "schema_version": 1,
+  "audit_id": "53917f51",
+  "subject_desk": "496eaf02",
+  "as_of_utc": "2026-10-23T21:58:05Z",
+  "scope": "Independent read-only review of the merged T496E desk. Static checks cover all 81 fixtures, 460 market outcomes, and all 51 predictions. Official external pages were freshly fetched only for the targeted findings recorded in evidence.json; this is not a recertification of all 15 sports.",
+  "subject_capture_utc": "2026-10-23T20:30:00Z",
+  "subject_sha256": {
+    "fixtures.json": "f34777e5455f933c832240032c7ea05ba7ea8ae5839888511a9e56aa08ffaafb",
+    "matches.csv": "23f6ddbfae559c23bf43181abc5c112da80ba54c7cfa19c72f60340b3f34b6ff",
+    "markets.csv": "27dbf33a29d0d24db0f10af0fd05452faf6b777745570655da9b1740bbfce87a",
+    "predictions.json": "813911b7ae271c620ddac04586f24fa83bbf2355ae7a4519834e294190ecb610",
+    "sources.json": "e961a3643a94a450137b5184e15eb8c54d23900d73f3c6ef4a0390e67848b2ad"
+  },
+  "counts": {
+    "fixtures": 81,
+    "fixtures_claimed_upcoming": 70,
+    "market_outcomes": 460,
+    "priced_fixtures": 67,
+    "predictions": 51,
+    "predictions_min_words": 39,
+    "predictions_max_words": 91,
+    "predictions_unique_texts": 51,
+    "predictions_with_injury_or_availability_term": 7,
+    "prediction_forbidden_word_occurrences": 0,
+    "high_labeled": 51,
+    "high_strictly_over_70_percent": 3,
+    "high_exactly_70_percent": 2,
+    "high_at_least_70_percent": 5,
+    "high_below_70_percent": 46,
+    "high_labeled_in_fair_american_band": 51,
+    "high_with_stale_or_not_refetched_inputs": 2,
+    "sports_with_at_least_five_high_picks": 7,
+    "sports_below_five_high_picks": 8,
+    "sports_with_zero_high_picks": 4,
+    "upcoming_with_start_at_or_before_capture": 1,
+    "upcoming_with_start_at_or_before_audit_time": 1,
+    "flagged_unverified_start_but_start_value_populated": 1,
+    "fixture_rows_using_known_media_sources": 2,
+    "fixture_source_refs_from_known_media": 3,
+    "source_registry_entries": 44,
+    "source_registry_entries_with_fetch_metadata": 0,
+    "date_typo_occurrences": 3
+  },
+  "high_picks_by_sport": [
+    {
+      "sport": "Tennis",
+      "slug": "tennis",
+      "high_picks": 5,
+      "target": 5,
+      "shortfall": 0,
+      "desk_url": "../496eaf02/sports/tennis.html"
+    },
+    {
+      "sport": "Volleyball",
+      "slug": "volleyball",
+      "high_picks": 5,
+      "target": 5,
+      "shortfall": 0,
+      "desk_url": "../496eaf02/sports/volleyball.html"
+    },
+    {
+      "sport": "Rugby Union",
+      "slug": "rugby-union",
+      "high_picks": 5,
+      "target": 5,
+      "shortfall": 0,
+      "desk_url": "../496eaf02/sports/rugby-union.html"
+    },
+    {
+      "sport": "Rugby League",
+      "slug": "rugby-league",
+      "high_picks": 5,
+      "target": 5,
+      "shortfall": 0,
+      "desk_url": "../496eaf02/sports/rugby-league.html"
+    },
+    {
+      "sport": "Cricket",
+      "slug": "cricket",
+      "high_picks": 5,
+      "target": 5,
+      "shortfall": 0,
+      "desk_url": "../496eaf02/sports/cricket.html"
+    },
+    {
+      "sport": "Darts",
+      "slug": "darts",
+      "high_picks": 4,
+      "target": 5,
+      "shortfall": 1,
+      "desk_url": "../496eaf02/sports/darts.html"
+    },
+    {
+      "sport": "Baseball",
+      "slug": "baseball",
+      "high_picks": 4,
+      "target": 5,
+      "shortfall": 1,
+      "desk_url": "../496eaf02/sports/baseball.html"
+    },
+    {
+      "sport": "Ice Hockey",
+      "slug": "ice-hockey",
+      "high_picks": 6,
+      "target": 5,
+      "shortfall": 0,
+      "desk_url": "../496eaf02/sports/ice-hockey.html"
+    },
+    {
+      "sport": "Basketball",
+      "slug": "basketball",
+      "high_picks": 10,
+      "target": 5,
+      "shortfall": 0,
+      "desk_url": "../496eaf02/sports/basketball.html"
+    },
+    {
+      "sport": "Handball",
+      "slug": "handball",
+      "high_picks": 1,
+      "target": 5,
+      "shortfall": 4,
+      "desk_url": "../496eaf02/sports/handball.html"
+    },
+    {
+      "sport": "Motor Racing",
+      "slug": "motor-racing",
+      "high_picks": 1,
+      "target": 5,
+      "shortfall": 4,
+      "desk_url": "../496eaf02/sports/motor-racing.html"
+    },
+    {
+      "sport": "Golf",
+      "slug": "golf",
+      "high_picks": 0,
+      "target": 5,
+      "shortfall": 5,
+      "desk_url": "../496eaf02/sports/golf.html"
+    },
+    {
+      "sport": "Snooker",
+      "slug": "snooker",
+      "high_picks": 0,
+      "target": 5,
+      "shortfall": 5,
+      "desk_url": "../496eaf02/sports/snooker.html"
+    },
+    {
+      "sport": "Gaelic Sports",
+      "slug": "gaelic-sports",
+      "high_picks": 0,
+      "target": 5,
+      "shortfall": 5,
+      "desk_url": "../496eaf02/sports/gaelic-sports.html"
+    },
+    {
+      "sport": "Greyhounds",
+      "slug": "greyhounds",
+      "high_picks": 0,
+      "target": 5,
+      "shortfall": 5,
+      "desk_url": "../496eaf02/sports/greyhounds.html"
+    }
+  ],
+  "high_picks_below_70_percent": [
+    {
+      "fixture_id": "TN01",
+      "sport": "tennis",
+      "selection": "Stefanos Tsitsipas",
+      "probability": 0.6449,
+      "fair_american": "-182"
+    },
+    {
+      "fixture_id": "TN02",
+      "sport": "tennis",
+      "selection": "Over 20.0",
+      "probability": 0.6755,
+      "fair_american": "-208"
+    },
+    {
+      "fixture_id": "TN03",
+      "sport": "tennis",
+      "selection": "Elena Rybakina 1st set",
+      "probability": 0.6834,
+      "fair_american": "-216"
+    },
+    {
+      "fixture_id": "TN04",
+      "sport": "tennis",
+      "selection": "Over 17.5",
+      "probability": 0.6473,
+      "fair_american": "-184"
+    },
+    {
+      "fixture_id": "TN05",
+      "sport": "tennis",
+      "selection": "Over 19.5",
+      "probability": 0.6713,
+      "fair_american": "-204"
+    },
+    {
+      "fixture_id": "VB01",
+      "sport": "volleyball",
+      "selection": "Over 142.0",
+      "probability": 0.6554,
+      "fair_american": "-190"
+    },
+    {
+      "fixture_id": "VB02",
+      "sport": "volleyball",
+      "selection": "Over 142.0",
+      "probability": 0.6554,
+      "fair_american": "-190"
+    },
+    {
+      "fixture_id": "VB03",
+      "sport": "volleyball",
+      "selection": "Over 142.0",
+      "probability": 0.6554,
+      "fair_american": "-190"
+    },
+    {
+      "fixture_id": "VB04",
+      "sport": "volleyball",
+      "selection": "Over 142.0",
+      "probability": 0.6554,
+      "fair_american": "-190"
+    },
+    {
+      "fixture_id": "VB05",
+      "sport": "volleyball",
+      "selection": "Over 142.0",
+      "probability": 0.6554,
+      "fair_american": "-190"
+    },
+    {
+      "fixture_id": "RU01",
+      "sport": "rugby-union",
+      "selection": "Over 40.5",
+      "probability": 0.6639,
+      "fair_american": "-198"
+    },
+    {
+      "fixture_id": "RU02",
+      "sport": "rugby-union",
+      "selection": "Over 46.5",
+      "probability": 0.6639,
+      "fair_american": "-198"
+    },
+    {
+      "fixture_id": "RU03",
+      "sport": "rugby-union",
+      "selection": "Over 46.5",
+      "probability": 0.6639,
+      "fair_american": "-198"
+    },
+    {
+      "fixture_id": "RU05",
+      "sport": "rugby-union",
+      "selection": "Over 40.5",
+      "probability": 0.6639,
+      "fair_american": "-198"
+    },
+    {
+      "fixture_id": "RL01",
+      "sport": "rugby-league",
+      "selection": "Over 30.0",
+      "probability": 0.6628,
+      "fair_american": "-197"
+    },
+    {
+      "fixture_id": "RL03",
+      "sport": "rugby-league",
+      "selection": "Over 34.0",
+      "probability": 0.6646,
+      "fair_american": "-198"
+    },
+    {
+      "fixture_id": "RL04",
+      "sport": "rugby-league",
+      "selection": "New Zealand Kiwis -13.5",
+      "probability": 0.6577,
+      "fair_american": "-192"
+    },
+    {
+      "fixture_id": "RL05",
+      "sport": "rugby-league",
+      "selection": "Australia Kangaroos -13.5",
+      "probability": 0.6577,
+      "fair_american": "-192"
+    },
+    {
+      "fixture_id": "CR01",
+      "sport": "cricket",
+      "selection": "Over 140.5",
+      "probability": 0.6595,
+      "fair_american": "-194"
+    },
+    {
+      "fixture_id": "CR02",
+      "sport": "cricket",
+      "selection": "Over 296.5",
+      "probability": 0.6595,
+      "fair_american": "-194"
+    },
+    {
+      "fixture_id": "CR04",
+      "sport": "cricket",
+      "selection": "New South Wales",
+      "probability": 0.6683,
+      "fair_american": "-202"
+    },
+    {
+      "fixture_id": "CR05",
+      "sport": "cricket",
+      "selection": "Over 266.5",
+      "probability": 0.6595,
+      "fair_american": "-194"
+    },
+    {
+      "fixture_id": "DA02",
+      "sport": "darts",
+      "selection": "Gian van Veen",
+      "probability": 0.6215,
+      "fair_american": "-164"
+    },
+    {
+      "fixture_id": "DA03",
+      "sport": "darts",
+      "selection": "Stephen Bunting",
+      "probability": 0.6455,
+      "fair_american": "-182"
+    },
+    {
+      "fixture_id": "DA04",
+      "sport": "darts",
+      "selection": "Gerwyn Price",
+      "probability": 0.6293,
+      "fair_american": "-170"
+    },
+    {
+      "fixture_id": "DA05",
+      "sport": "darts",
+      "selection": "Over 15.5",
+      "probability": 0.6946,
+      "fair_american": "-227"
+    },
+    {
+      "fixture_id": "BB01",
+      "sport": "baseball",
+      "selection": "Over 7.5",
+      "probability": 0.6592,
+      "fair_american": "-193"
+    },
+    {
+      "fixture_id": "BB02",
+      "sport": "baseball",
+      "selection": "Over 7.5",
+      "probability": 0.6592,
+      "fair_american": "-193"
+    },
+    {
+      "fixture_id": "BB03",
+      "sport": "baseball",
+      "selection": "Tampa Bay Rays +1.5",
+      "probability": 0.6869,
+      "fair_american": "-219"
+    },
+    {
+      "fixture_id": "BB04",
+      "sport": "baseball",
+      "selection": "Tampa Bay Rays +1.5",
+      "probability": 0.6869,
+      "fair_american": "-219"
+    },
+    {
+      "fixture_id": "MR03",
+      "sport": "motor-racing",
+      "selection": "Russell Top 6",
+      "probability": 0.662,
+      "fair_american": "-196"
+    },
+    {
+      "fixture_id": "HB02",
+      "sport": "handball",
+      "selection": "Over 58.5",
+      "probability": 0.6711,
+      "fair_american": "-204"
+    },
+    {
+      "fixture_id": "IH01",
+      "sport": "ice-hockey",
+      "selection": "Over 5.0",
+      "probability": 0.6446,
+      "fair_american": "-181"
+    },
+    {
+      "fixture_id": "IH02",
+      "sport": "ice-hockey",
+      "selection": "Over 5.0",
+      "probability": 0.6634,
+      "fair_american": "-197"
+    },
+    {
+      "fixture_id": "IH04",
+      "sport": "ice-hockey",
+      "selection": "Over 5.0",
+      "probability": 0.6422,
+      "fair_american": "-179"
+    },
+    {
+      "fixture_id": "IH05",
+      "sport": "ice-hockey",
+      "selection": "Over 5.0",
+      "probability": 0.6773,
+      "fair_american": "-210"
+    },
+    {
+      "fixture_id": "IH06",
+      "sport": "ice-hockey",
+      "selection": "Over 5.0",
+      "probability": 0.6266,
+      "fair_american": "-168"
+    },
+    {
+      "fixture_id": "BK01",
+      "sport": "basketball",
+      "selection": "Over 217.0",
+      "probability": 0.6615,
+      "fair_american": "-195"
+    },
+    {
+      "fixture_id": "BK02",
+      "sport": "basketball",
+      "selection": "Over 215.0",
+      "probability": 0.6671,
+      "fair_american": "-200"
+    },
+    {
+      "fixture_id": "BK03",
+      "sport": "basketball",
+      "selection": "Over 219.0",
+      "probability": 0.656,
+      "fair_american": "-191"
+    },
+    {
+      "fixture_id": "BK04",
+      "sport": "basketball",
+      "selection": "Over 217.0",
+      "probability": 0.6615,
+      "fair_american": "-195"
+    },
+    {
+      "fixture_id": "BK05",
+      "sport": "basketball",
+      "selection": "Over 217.0",
+      "probability": 0.6615,
+      "fair_american": "-195"
+    },
+    {
+      "fixture_id": "BK06",
+      "sport": "basketball",
+      "selection": "Over 219.0",
+      "probability": 0.656,
+      "fair_american": "-191"
+    },
+    {
+      "fixture_id": "BK07",
+      "sport": "basketball",
+      "selection": "Over 210.5",
+      "probability": 0.6637,
+      "fair_american": "-197"
+    },
+    {
+      "fixture_id": "BK08",
+      "sport": "basketball",
+      "selection": "Over 213.5",
+      "probability": 0.6594,
+      "fair_american": "-194"
+    },
+    {
+      "fixture_id": "BK09",
+      "sport": "basketball",
+      "selection": "Olympiacos Piraeus",
+      "probability": 0.6821,
+      "fair_american": "-215"
+    }
+  ],
+  "high_picks_with_stale_inputs": [
+    {
+      "id": "CR01",
+      "sport": "cricket",
+      "selection": "Over 140.5",
+      "probability": 0.6595,
+      "fair_american": "-194"
+    },
+    {
+      "id": "CR05",
+      "sport": "cricket",
+      "selection": "Over 266.5",
+      "probability": 0.6595,
+      "fair_american": "-194"
+    }
+  ],
+  "fixture_rows_using_known_media_sources": [
+    {
+      "fixture_id": "CR02",
+      "sport": "cricket",
+      "source_id": "cricinfo",
+      "publisher": "ESPNcricinfo — Pakistan ODI Tri-Series (ICC official digital home)",
+      "url": "https://www.cricinfo.com/series/pakistan-odi-tri-series-2026-27-1550706",
+      "note": "ESPNcricinfo is a sports-media publisher, not the governing body or competition organizer."
+    },
+    {
+      "fixture_id": "GS05",
+      "sport": "gaelic-sports",
+      "source_id": "limerick",
+      "publisher": "Limerick Leader / The 42 — Limerick SHC final (media cross-check)",
+      "url": "https://www.limerickleader.ie/sport/gaa/hurling/kilmallock-and-na-piarsaigh-prepare-for-limerick-senior-hurling-final-9294862",
+      "note": "Limerick Leader is a newspaper; the source name also mentions The 42."
+    },
+    {
+      "fixture_id": "GS05",
+      "sport": "gaelic-sports",
+      "source_id": "the42",
+      "publisher": "The 42 — Limerick hurling decider (media cross-check)",
+      "url": "https://www.the42.ie/limerick-wexford-hurling-cork-derry-football-7202096-Oct2026",
+      "note": "The 42 is a sports-media publisher, not the county governing body."
+    }
+  ],
+  "upcoming_start_conflicts_at_capture": [
+    {
+      "fixture_id": "GH01",
+      "start_utc": "2026-10-23T20:13:00Z",
+      "observed_after": "2026-10-23T20:30:00Z",
+      "state": "upcoming",
+      "sources": [
+        "https://www.gbgb.org.uk/racing/open-races/2025-category-one-schedule/",
+        "https://www.gbgb.org.uk/category-one-glory-beckons-in-coral-100-champion-stakes-final/"
+      ]
+    }
+  ],
+  "unverified_start_fields_populated": [
+    {
+      "fixture_id": "TN03",
+      "start_utc": "2026-10-24T09:30:00Z",
+      "flags": [
+        "start_utc rendered by OLBG discovery (UTC-4); official UTC start not published in fetched WTA draw"
+      ],
+      "sources": [
+        "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf"
+      ]
+    }
+  ],
+  "date_typo_locations": [
+    {
+      "path": "reports/SESSION_496EAF02.md",
+      "line": 16,
+      "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/reports/SESSION_496EAF02.md#L16"
+    },
+    {
+      "path": "496eaf02/methodology.html",
+      "line": 9,
+      "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/496eaf02/methodology.html#L9"
+    },
+    {
+      "path": "scripts/se496eaf02_build.py",
+      "line": 327,
+      "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/scripts/se496eaf02_build.py#L327"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F-53917-01",
+      "severity": "Critical",
+      "status": "needs review",
+      "title": "TN04 is a stale fixture and its prediction misattributes a result",
+      "summary": "T496 publishes Leylah Fernandez v Marta Kostyuk as an upcoming Ningbo semifinal and recommends Over 17.5. The accompanying prose says Kostyuk beat Jasmine Paolini 6-4, 6-3. Official WTA reporting dated 21 Oct says Kostyuk retired against Ekaterina Alexandrova in the second round; WTA reporting dated 22 Oct says Iva Jovic—not Kostyuk—beat Paolini 6-4, 6-3; the WTA 23 Oct semifinal preview lists Fernandez v Marie Bouzkova and Rybakina v Shnaider. The TN04 fixture/pick should be withdrawn and only rebuilt from a current official draw/order of play. This audit does not edit the peer desk.",
+      "references": [
+        {
+          "label": "T496 TN04 fixture",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/fixtures.json#L114"
+        },
+        {
+          "label": "T496 TN04 prediction",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/predictions.json#L41"
+        },
+        {
+          "label": "T496 predictions page",
+          "url": "../496eaf02/predictions.html"
+        }
+      ],
+      "official_sources": [
+        {
+          "label": "WTA: Kostyuk retired (21 Oct)",
+          "url": "https://www.wtatennis.com/news/4596745/fernandezs-marathon-win-kostyuks-retirement-headline-day-3-in-ningbo"
+        },
+        {
+          "label": "WTA: Jovic beat Paolini (22 Oct)",
+          "url": "https://www.wtatennis.com/news/4597089/jovic-rallies-past-paolini-to-reach-ningbo-quarterfinals"
+        },
+        {
+          "label": "WTA: actual Ningbo semifinals (23 Oct)",
+          "url": "https://www.wtatennis.com/news/4597893/ningbo-semifinals-preview-leylah-fernandez-vs-marie-bouzkova-diana-shnaider-vs-elena-rybakina"
+        }
+      ],
+      "data": {
+        "fixture_id": "TN04",
+        "prediction_selection": "Over 17.5",
+        "prediction_bet_line": "Over 17.5 at -184 (1.545)"
+      }
+    },
+    {
+      "id": "F-53917-14",
+      "severity": "Critical",
+      "status": "needs review",
+      "title": "Four High EuroLeague picks are for fixtures absent from the official 24 October schedule",
+      "summary": "T496 publishes BK07-BK10 as four High EuroLeague Round 7 fixtures on 24 Oct. EuroLeague’s official calendar places Round 7 on 21-23 Oct and Round 8 on 27-28 Oct; the 22-23 Oct pairings differ from all four T496 listings, and the schedule has no EuroLeague games on 24 Oct. The player-availability text also splices information from different real games: BK07 uses Efes absences for Efes v Besiktas and Fenerbahce availability for Fenerbahce v Olympiacos; BK09 combines Olympiacos absences from its Fenerbahce game with a Bayern v Dubai fixture; BK10 combines Paris information from Paris v Valencia and Partizan information from Partizan v Crvena Zvezda. T496’s cited Round 7 injury URL returns 404. Withdraw all four current picks and rebuild from the official round calendar and per-game injury reports.",
+      "references": [
+        {
+          "label": "T496 BK07 fixture",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/fixtures.json#L2988"
+        },
+        {
+          "label": "T496 BK08-BK10 fixtures",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/fixtures.json#L3034"
+        },
+        {
+          "label": "T496 BK07-BK10 displayed picks",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/matches.csv#L79"
+        },
+        {
+          "label": "T496 EuroLeague Round 7 source record",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/sources.json#L150"
+        }
+      ],
+      "official_sources": [
+        {
+          "label": "EuroLeague 2026-27 full official schedule PDF",
+          "url": "https://media-cdn.cortextech.io/1dU3kpCqReRp93/1BSdBWIjChWbPc/de89146d-ddb7-4931-9deb-f72672b4d63b.pdf"
+        },
+        {
+          "label": "EuroLeague schedule announcement",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/news/the-2026-27-euroleague-schedule-is-official/"
+        },
+        {
+          "label": "EuroLeague current Round 7 injury report",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-fantasy/"
+        },
+        {
+          "label": "T496-linked EuroLeague injury URL (404)",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-el2627/"
+        }
+      ],
+      "data": {
+        "affected_fixture_ids": [
+          "BK07",
+          "BK08",
+          "BK09",
+          "BK10"
+        ],
+        "affected_high_picks": 4,
+        "t496_claimed_start_date": "2026-10-24",
+        "official_round7_dates": "2026-10-21/23",
+        "official_round8_dates": "2026-10-27/28"
+      }
+    },
+    {
+      "id": "F-53917-02",
+      "severity": "High",
+      "status": "needs review",
+      "title": "The High label is applied below the brief’s >70% threshold",
+      "summary": "The desk labels 51 picks High. Recomputed from matches.csv, 3 are strictly above 70%, 2 equal 70%, and 46 fall below 70% (62–<70%). Its own page defines High as starting at 62%; the session claim/brief calls for >70% high confidence. All 51 High-labeled rows fall inside the displayed fair-American band, but those are originated fair prices, not bookmaker quotes.",
+      "references": [
+        {
+          "label": "T496 high-confidence page",
+          "url": "../496eaf02/high-confidence.html"
+        },
+        {
+          "label": "T496 confidence implementation",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/scripts/se496eaf02_model.py#L26"
+        },
+        {
+          "label": "T496 test domain/confidence policy",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/tests/pipeline/test_desk_496eaf02.py#L19"
+        }
+      ],
+      "official_sources": [],
+      "data": {
+        "high": 51,
+        "gt70": 3,
+        "eq70": 2,
+        "lt70": 46
+      }
+    },
+    {
+      "id": "F-53917-03",
+      "severity": "High",
+      "status": "needs review",
+      "title": "GH01 is marked upcoming after its own recorded start time",
+      "summary": "GH01 records start_utc=2026-10-23T20:13:00Z, observed_after=2026-10-23T20:30:00Z, and state=upcoming. The start precedes the recorded capture by 17 minutes; the generated matches/sport pages still publish it as upcoming, and its price expiry is later. GBGB’s official schedule supports Fri 23 Oct but not the exact 20:13Z time in this row, so the exact time also needs an official recheck or blanking.",
+      "references": [
+        {
+          "label": "T496 GH01 fixture",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/fixtures.json#L1913"
+        },
+        {
+          "label": "T496 matches page",
+          "url": "../496eaf02/matches.html"
+        },
+        {
+          "label": "T496 greyhounds page",
+          "url": "../496eaf02/sports/greyhounds.html"
+        }
+      ],
+      "official_sources": [
+        {
+          "label": "GBGB 2026 Category One schedule",
+          "url": "https://www.gbgb.org.uk/racing/open-races/2025-category-one-schedule/"
+        },
+        {
+          "label": "GBGB Champion Stakes preview",
+          "url": "https://www.gbgb.org.uk/category-one-glory-beckons-in-coral-100-champion-stakes-final/"
+        }
+      ],
+      "data": {
+        "start_utc": "2026-10-23T20:13:00Z",
+        "observed_after": "2026-10-23T20:30:00Z",
+        "state": "upcoming"
+      }
+    },
+    {
+      "id": "F-53917-04",
+      "severity": "High",
+      "status": "needs review",
+      "title": "TN03 retains a populated UTC start explicitly flagged as unverified",
+      "summary": "TN03 has start_utc=2026-10-24T09:30:00Z, while its own flag says the time came from OLBG discovery and was not published in the fetched WTA draw. The official WTA draw PDF lists participants/seeds/results, not this UTC start. Under the brief’s blank-if-unconfirmed rule, retain the official date if supported but leave the exact UTC start blank until an official order of play supplies it.",
+      "references": [
+        {
+          "label": "T496 TN03 fixture",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/fixtures.json#L78"
+        },
+        {
+          "label": "WTA Ningbo draw PDF used by T496",
+          "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf"
+        }
+      ],
+      "official_sources": [
+        {
+          "label": "WTA official order-of-play route",
+          "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/order-of-play"
+        }
+      ],
+      "data": {
+        "start_utc": "2026-10-24T09:30:00Z",
+        "flags": [
+          "start_utc rendered by OLBG discovery (UTC-4); official UTC start not published in fetched WTA draw"
+        ]
+      }
+    },
+    {
+      "id": "F-53917-05",
+      "severity": "High",
+      "status": "needs review",
+      "title": "Media sources are classified as official and fixture tests do not check publisher authority",
+      "summary": "CR02 lists ESPNcricinfo as its only source, and GS05 lists Limerick Leader/The 42 only; both are media sources. The T496 test allowlist nevertheless includes cricinfo.com and limerickleader.ie as OFFICIAL_DOMAINS, and the fixture test checks only that source IDs exist. Fresh official PCB pages confirm CR02’s schedule/results; Limerick GAA’s current fixtures page confirms the Limerick final’s date, time and venue. Add the governing-body links and test source authority, not only URL shape.",
+      "references": [
+        {
+          "label": "T496 CR02 fixture",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/fixtures.json#L997"
+        },
+        {
+          "label": "T496 GS05 fixture",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/fixtures.json#L1876"
+        },
+        {
+          "label": "T496 source-authority tests",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/tests/pipeline/test_desk_496eaf02.py#L19"
+        }
+      ],
+      "official_sources": [
+        {
+          "label": "PCB official tri-series fixture schedule",
+          "url": "https://www.pcb.com.pk/press-release-detail/pakistan-to-host-sri-lanka-and-england-for-t20is-odi-tri-series-and-tests.html"
+        },
+        {
+          "label": "PCB official 22 Oct results + 25 Oct fixture",
+          "url": "https://www.pcb.com.pk/news-detail/sri-lanka-seal-second-highest-chase-in-odi-history-as-brook-s-record-double-ton-goes-in-vain.html"
+        },
+        {
+          "label": "PCB official Pakistan v England result",
+          "url": "https://www.pcb.com.pk/news-detail/arafat-minhas-6-40-and-59-sink-england-as-pakistan-win-consecutive-games-in-odi-tri-series.html"
+        },
+        {
+          "label": "Limerick GAA official final fixture",
+          "url": "https://limerickgaa.ie/senior-hurling-fixtures/"
+        },
+        {
+          "label": "Limerick GAA official semifinal results",
+          "url": "https://limerickgaa.ie/senior-hurling-results/"
+        }
+      ],
+      "data": {
+        "affected_fixture_ids": [
+          "CR02",
+          "GS05"
+        ]
+      }
+    },
+    {
+      "id": "F-53917-06",
+      "severity": "High",
+      "status": "needs review",
+      "title": "Two High-B cricket totals use inputs flagged as not re-fetched",
+      "summary": "CR01 and CR05 are still assigned High confidence (both 65.95%, fair -194) despite fixture flags saying the team/A-team ratings were not re-fetched this session. Their official schedule links establish the fixtures, not those rating inputs. Until current official inputs are linked, the affected totals should not be promoted as verified high-confidence picks.",
+      "references": [
+        {
+          "label": "T496 CR01/CR05 input rows",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/fixtures.json#L956"
+        }
+      ],
+      "official_sources": [
+        {
+          "label": "ICC NZ v India fixture",
+          "url": "https://www.icc-cricket.com/matches/271647/new-zealand-vs-india"
+        },
+        {
+          "label": "New Zealand Cricket fixtures",
+          "url": "https://scoring.nzc.nz/fixtures"
+        }
+      ],
+      "data": {
+        "affected": [
+          {
+            "id": "CR01",
+            "sport": "cricket",
+            "selection": "Over 140.5",
+            "probability": 0.6595,
+            "fair_american": "-194"
+          },
+          {
+            "id": "CR05",
+            "sport": "cricket",
+            "selection": "Over 266.5",
+            "probability": 0.6595,
+            "fair_american": "-194"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F-53917-07",
+      "severity": "High",
+      "status": "needs review",
+      "title": "GH01’s official-source-backed semi-final time conflicts with the stored input",
+      "summary": "T496’s GH01 input note says Grouchos Gregor’s fastest semi was 35.69 seconds. GBGB’s official Champion Stakes preview says the third semi-final winning time was 35.36 seconds. Correct the value or remove it; it is part of the public form record even though GH01 is Low confidence.",
+      "references": [
+        {
+          "label": "T496 GH01 input",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/fixtures.json#L1913"
+        }
+      ],
+      "official_sources": [
+        {
+          "label": "GBGB Champion Stakes preview (35.36 sec)",
+          "url": "https://www.gbgb.org.uk/category-one-glory-beckons-in-coral-100-champion-stakes-final/"
+        }
+      ],
+      "data": {
+        "stored_input": "35.69s",
+        "official_source_value": "35.36sec (-20)"
+      }
+    },
+    {
+      "id": "F-53917-11",
+      "severity": "High",
+      "status": "needs review",
+      "title": "Darts Order of Merit inputs are not linked to readable official ranking evidence",
+      "summary": "T496 reports that PDC Order of Merit figures were cross-checked on multiple outlets because the official PDC rankings page showed a consent wall. The four Darts picks labelled High use player rank/prize inputs, but their source link is the tournament hub, not a captured ranking table; the official rankings page fetched during this audit returned only a consent screen. Keep those rank-derived picks unverified or supply a readable official source and per-value evidence.",
+      "references": [
+        {
+          "label": "T496 Darts model inputs",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/scripts/se496eaf02_data.py#L38"
+        },
+        {
+          "label": "T496 Darts rows",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/scripts/se496eaf02_data.py#L349"
+        },
+        {
+          "label": "T496 session note on PDC rankings",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/reports/SESSION_496EAF02.md#L91"
+        }
+      ],
+      "official_sources": [
+        {
+          "label": "PDC official rankings page (consent screen only in fetch)",
+          "url": "https://www.pdc.tv/rankings"
+        }
+      ],
+      "data": {
+        "high_darts_picks": 4,
+        "rank_inputs_available": true,
+        "ranking_values_readable_from_fetched_official_page": false
+      }
+    },
+    {
+      "id": "F-53917-08",
+      "severity": "Medium",
+      "status": "needs review",
+      "title": "Source registry cannot reproduce the claimed source reads",
+      "summary": "The registry contains 44 records with id/name/URL only; 0 records include access time, HTTP status, content hash or retained excerpt. Fixture timestamps are repeated at the dataset level, so a reviewer cannot map a particular fact/input to a particular page retrieval. This is an auditability gap, not proof that the pages were not read.",
+      "references": [
+        {
+          "label": "T496 source registry",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/sources.json#L1"
+        },
+        {
+          "label": "T496 session report",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/reports/SESSION_496EAF02.md#L1"
+        }
+      ],
+      "official_sources": [],
+      "data": {
+        "registry_entries": 44,
+        "entries_with_fetch_metadata": 0
+      }
+    },
+    {
+      "id": "F-53917-09",
+      "severity": "Medium",
+      "status": "needs review",
+      "title": "Originate fair prices are not evidence of available bookmaker odds",
+      "summary": "The T496 pages correctly disclose that prices are zero-vig fair estimates and that no bookmaker quote is copied. However, the predictions render an American price beside the selection and no source confirms an available OLBG/bookmaker offer. The model code also chooses several handicap/total lines to target 0.66 probability, then features an in-band pick from 0.62; this is not a calibrated market edge. Keep the estimate label adjacent to every price and do not present it as a placeable quote.",
+      "references": [
+        {
+          "label": "T496 line-target implementation",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/scripts/se496eaf02_model.py#L29"
+        },
+        {
+          "label": "T496 methodology",
+          "url": "../496eaf02/methodology.html"
+        },
+        {
+          "label": "T496 predictions",
+          "url": "../496eaf02/predictions.html"
+        }
+      ],
+      "official_sources": [],
+      "data": {
+        "line_target_probability": 0.66,
+        "featured_pick_floor": 0.62,
+        "bookmaker_quotes_in_source_registry": false
+      }
+    },
+    {
+      "id": "F-53917-10",
+      "severity": "Medium",
+      "status": "needs review",
+      "title": "Prediction-level injury/availability coverage is not demonstrated",
+      "summary": "Only 7 of 51 prediction texts contain an explicit injury/availability term. This text search does not prove the remaining matches had injuries; it shows the desk has no per-pick ledger confirming that availability was checked or that no relevant issue was reported. This requirement remains unverified, not cleared.",
+      "references": [
+        {
+          "label": "T496 predictions page",
+          "url": "../496eaf02/predictions.html"
+        }
+      ],
+      "official_sources": [
+        {
+          "label": "NBA 23 Oct 4:15 p.m. ET injury report",
+          "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-23_04_15PM.pdf"
+        },
+        {
+          "label": "EuroLeague current Round 7 injury report",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-fantasy/"
+        }
+      ],
+      "data": {
+        "prediction_texts_with_injury_or_availability_term": 7,
+        "prediction_texts": 51
+      }
+    },
+    {
+      "id": "F-53917-12",
+      "severity": "Low",
+      "status": "needs review",
+      "title": "The discovery date is printed as 2023 in three T496 artifacts",
+      "summary": "The T496 session report, methodology page and page builder each contain 2023-10-23, although the desk capture and the corresponding source-note say 2026-10-23. This is an editorial date mismatch that can make freshness unclear.",
+      "references": [
+        {
+          "label": "reports/SESSION_496EAF02.md:16",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/reports/SESSION_496EAF02.md#L16"
+        },
+        {
+          "label": "496eaf02/methodology.html:9",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/496eaf02/methodology.html#L9"
+        },
+        {
+          "label": "scripts/se496eaf02_build.py:327",
+          "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/scripts/se496eaf02_build.py#L327"
+        }
+      ],
+      "official_sources": [],
+      "data": {
+        "locations": [
+          {
+            "path": "reports/SESSION_496EAF02.md",
+            "line": 16,
+            "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/reports/SESSION_496EAF02.md#L16"
+          },
+          {
+            "path": "496eaf02/methodology.html",
+            "line": 9,
+            "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/496eaf02/methodology.html#L9"
+          },
+          {
+            "path": "scripts/se496eaf02_build.py",
+            "line": 327,
+            "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/scripts/se496eaf02_build.py#L327"
+          }
+        ]
+      }
+    },
+    {
+      "id": "F-53917-13",
+      "severity": "Informational",
+      "status": "needs review",
+      "title": "The target of five High picks is met in only part of the sports list",
+      "summary": "Only 7 of 15 sports have at least five picks labeled High; 4 sports have none. T496 discloses this and avoids inventing picks. Treat it as a coverage gap, not a reason to manufacture selections.",
+      "references": [
+        {
+          "label": "T496 high-confidence page",
+          "url": "../496eaf02/high-confidence.html"
+        }
+      ],
+      "official_sources": [],
+      "data": {
+        "by_sport": [
+          {
+            "sport": "Tennis",
+            "slug": "tennis",
+            "high_picks": 5,
+            "target": 5,
+            "shortfall": 0,
+            "desk_url": "../496eaf02/sports/tennis.html"
+          },
+          {
+            "sport": "Volleyball",
+            "slug": "volleyball",
+            "high_picks": 5,
+            "target": 5,
+            "shortfall": 0,
+            "desk_url": "../496eaf02/sports/volleyball.html"
+          },
+          {
+            "sport": "Rugby Union",
+            "slug": "rugby-union",
+            "high_picks": 5,
+            "target": 5,
+            "shortfall": 0,
+            "desk_url": "../496eaf02/sports/rugby-union.html"
+          },
+          {
+            "sport": "Rugby League",
+            "slug": "rugby-league",
+            "high_picks": 5,
+            "target": 5,
+            "shortfall": 0,
+            "desk_url": "../496eaf02/sports/rugby-league.html"
+          },
+          {
+            "sport": "Cricket",
+            "slug": "cricket",
+            "high_picks": 5,
+            "target": 5,
+            "shortfall": 0,
+            "desk_url": "../496eaf02/sports/cricket.html"
+          },
+          {
+            "sport": "Darts",
+            "slug": "darts",
+            "high_picks": 4,
+            "target": 5,
+            "shortfall": 1,
+            "desk_url": "../496eaf02/sports/darts.html"
+          },
+          {
+            "sport": "Baseball",
+            "slug": "baseball",
+            "high_picks": 4,
+            "target": 5,
+            "shortfall": 1,
+            "desk_url": "../496eaf02/sports/baseball.html"
+          },
+          {
+            "sport": "Ice Hockey",
+            "slug": "ice-hockey",
+            "high_picks": 6,
+            "target": 5,
+            "shortfall": 0,
+            "desk_url": "../496eaf02/sports/ice-hockey.html"
+          },
+          {
+            "sport": "Basketball",
+            "slug": "basketball",
+            "high_picks": 10,
+            "target": 5,
+            "shortfall": 0,
+            "desk_url": "../496eaf02/sports/basketball.html"
+          },
+          {
+            "sport": "Handball",
+            "slug": "handball",
+            "high_picks": 1,
+            "target": 5,
+            "shortfall": 4,
+            "desk_url": "../496eaf02/sports/handball.html"
+          },
+          {
+            "sport": "Motor Racing",
+            "slug": "motor-racing",
+            "high_picks": 1,
+            "target": 5,
+            "shortfall": 4,
+            "desk_url": "../496eaf02/sports/motor-racing.html"
+          },
+          {
+            "sport": "Golf",
+            "slug": "golf",
+            "high_picks": 0,
+            "target": 5,
+            "shortfall": 5,
+            "desk_url": "../496eaf02/sports/golf.html"
+          },
+          {
+            "sport": "Snooker",
+            "slug": "snooker",
+            "high_picks": 0,
+            "target": 5,
+            "shortfall": 5,
+            "desk_url": "../496eaf02/sports/snooker.html"
+          },
+          {
+            "sport": "Gaelic Sports",
+            "slug": "gaelic-sports",
+            "high_picks": 0,
+            "target": 5,
+            "shortfall": 5,
+            "desk_url": "../496eaf02/sports/gaelic-sports.html"
+          },
+          {
+            "sport": "Greyhounds",
+            "slug": "greyhounds",
+            "high_picks": 0,
+            "target": 5,
+            "shortfall": 5,
+            "desk_url": "../496eaf02/sports/greyhounds.html"
+          }
+        ]
+      }
+    }
+  ]
+}
