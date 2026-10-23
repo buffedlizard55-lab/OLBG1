@@ -4538,3 +4538,22 @@ preserved verbatim. Lesson recorded for all sessions: after ANY COORDINATION.md 
   artifact was served by GitHub Pages from the deployed bytes after PR #160.
 * Root navigation was never edited (§0.4); `/8f6d7364/` is reachable from the canonical
   `archive.html`, which auto-lists top-level desks.
+
+---
+
+## 61. Session `cf2699ba-olbg1` — T67 claim (2026-10-23T16:20Z)
+
+**Task T67 — Fresh 2026-10-23 desk for the 15 brief-listed sports** (Golf, Volleyball,
+Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor
+Racing, Handball, Ice Hockey, Basketball, Rugby League): live OLBG re-harvest, official-source
+verification, multi-market line origination, confidence grading, high-confidence predictions,
+self-contained dashboard, validator gate, PR and merge to `main`, live Pages read-back.
+
+**File scope (non-overlapping, all new files):** `data/cf2699ba/`, `scripts/scf2699ba_*.py`,
+`cf2699ba/`, `reports/SESSION_CF2699BA.md`, `COORDINATION.md` (append-only §61–§62).
+
+No existing desk, data file, root page, shared navigation or canonical `pipeline/` file is
+edited. In accordance with §0.4 the root `index.html` remains untouched; the desk is reachable
+from the canonical `archive.html`, which auto-lists top-level desks.
+
+**Status:** in progress.
