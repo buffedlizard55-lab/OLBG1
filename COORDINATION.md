@@ -290,6 +290,8 @@ A final semantic display check found that the common record schema had inserted 
 
 Final review-locator check: hashes and source lines are now taken from the exact committed Git revision used in their GitHub URLs, never from a dirty working file linked to its older HEAD. This corrects a potential mismatch in the self-review locator after the MLB display correction; it does not re-date, change or recertify any sporting fact. A regression gate compares all seven published review hashes/lines with `git show` at the declared revision. Source observations and all price books remain unchanged.
 
+Shallow-checkout correction: the first review regression tried to read a historical published commit from CI's depth-one clone and failed the unit gate (run 40034549741). The deterministic test now exercises the review builder at the available HEAD, proving hash/line/URL consistency without assuming archived Git objects are locally cloned. The actual seven retained published locators were separately retrieved via the official GitHub Contents API at their declared revision; all seven SHA-256 values and exact source lines matched. Historical references are not silently replaced with working-tree values, and no network fetch is hidden inside the unit test. No sporting source or price changed.
+
 ## 3. Sources register
 
 Every source used is catalogued with its URL in `data/sources.json` and rendered on the site's

@@ -23,7 +23,7 @@ sys.path.insert(0,str(ROOT/"scripts"))
 from se455acb16_data import assemble_inputs,SPORT_ORDER,SPORT_NAMES,OFFICIAL_HOSTS,OBSERVED_AFTER,OBSERVED_BEFORE,digest
 from se455acb16_model import (originate,parse_time,price,in_band,american,log5,confidence_for,
     record_ok,fixture_state,baseball_grid,poisson)
-from se455acb16_build import create_dataset,validate_inputs,build
+from se455acb16_build import create_dataset,validate_inputs,build,repository_review
 from se455acb16_predictions import PREDICTIONS,RESEARCH_NOTES
 
 AT=parse_time("2026-10-23T21:45:00Z")
@@ -264,7 +264,11 @@ class Desk455ACB16(unittest.TestCase):
 
     def test_review_hashes_match_the_declared_git_revision_not_the_working_tree(self):
         import hashlib,subprocess
-        audit=json.loads((DATA/"repo-audit.json").read_text())
+        # Exercise the builder at HEAD. A shallow CI checkout need not contain
+        # historical commits addressed by an archived published review. Those
+        # immutable remote locators are checked independently, not silently
+        # replaced with current working-tree bytes or fetched during unit tests.
+        audit=repository_review()
         for row in audit["findings"]:
             raw=subprocess.check_output(["git","show",f"{audit['revision']}:{row['file']}"],cwd=ROOT)
             self.assertEqual(hashlib.sha256(raw).hexdigest(),row["sha256"])

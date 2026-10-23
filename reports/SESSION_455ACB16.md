@@ -132,3 +132,6 @@ At 22:28 UTC the live analysis page independently served the corrected NHL/MLB r
 
 
 Review-locator integrity is separately enforced: each published file hash and line locator is computed from the exact committed revision used by its GitHub URL, not from an uncommitted working-tree version. The regression gate compares all seven findings against `git show` at that declared revision. This review-metadata correction changes no sporting observation or price and does not make a whole-archive factual-certification claim.
+
+
+CI uses a shallow Git checkout. The deterministic review test therefore exercises freshly generated HEAD review metadata rather than assuming old published commits are locally present. The seven actual retained historical review references were independently fetched through GitHub's Contents API at their declared revision; every SHA-256 and selected line matched. This distinction fixes the shallow-clone test failure without relabelling historical evidence or fetching data invisibly inside tests.
