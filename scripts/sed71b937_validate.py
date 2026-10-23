@@ -150,6 +150,43 @@ def main():
         check(bool(p["absent"]),
               "'{}' states what was not available".format(p["selection"]))
 
+    # 7b. the prose must not assert a venue the desk says it never read.
+    #     "in Kaunas" / "to Paris" claim a host city; if venue is listed as
+    #     unavailable, that is an inference and the brief forbids it.  Team
+    #     names are exempted with a lookahead so "to Paris Basketball" (a club
+    #     name, not a place) does not trip the check.
+    PREP = r"(?:in|to|at|around|over in)"
+    for p in pr["predictions"]:
+        if not any(x.lower().startswith("venue") for x in p["absent"]):
+            continue
+        teams = [t.strip() for t in p["match"].split(" v ")]
+        tokens = set()
+        for t in teams:
+            words = t.split()
+            for i, w in enumerate(words):
+                if len(w) > 3 and w[0].isupper():
+                    tokens.add(w)
+        text = p["text"]
+        for tok in sorted(tokens):
+            # exempt the token when it is followed by the rest of its own team
+            # name, i.e. it is being used as part of a club name.
+            tails = set()
+            for t in teams:
+                words = t.split()
+                if tok in words:
+                    k = words.index(tok)
+                    if k + 1 < len(words):
+                        tails.add(words[k + 1])
+            lookahead = "(?!\s+" + "|\s+".join(re.escape(x) for x in tails) + ")" \
+                if tails else ""
+            pat = re.compile(r"\b" + PREP + r"\s+" + re.escape(tok) +
+                             r"\b" + lookahead, re.I)
+            hit = pat.search(text)
+            check(hit is None,
+                  "'{}' does not assert a venue via '{}'{}".format(
+                      p["selection"], tok,
+                      "" if not hit else " (found %r)" % hit.group(0)))
+
     def grams(t):
         w = re.findall(r"[A-Za-z0-9']+", t.lower())
         return {" ".join(w[i:i + 6]) for i in range(len(w) - 5)}
