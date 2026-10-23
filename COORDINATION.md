@@ -288,6 +288,8 @@ A final semantic display check found that the common record schema had inserted 
 * **Independent live read-back at 22:28 UTC:** `/455acb16/analysis.html?release=94aca12` served the corrected `W-L-OT (NHL) / W-L (MLB)` header and Tampa Bay's `98-64` without a fabricated OTL zero; `/data/455acb16/summary.json?release=94aca12` served the unchanged 84/18/38/76 counts, zero Medium/High, six Low notes, 97 flags and original source bounds. Current generated time is 22:23:22Z, not a new source observation.
 * **Final disposition:** source/data/UI work is merged and serving; no peer or canonical pipeline file was modified. This task remains `needs review` only for the explicitly published worldwide-coverage, daily-High, submission-eligibility, quote/context/calibration and full-automation gaps. No unsupported fact or prediction is used to close those gaps. This receipt-only update changes no source evidence or site calculations.
 
+Final review-locator check: hashes and source lines are now taken from the exact committed Git revision used in their GitHub URLs, never from a dirty working file linked to its older HEAD. This corrects a potential mismatch in the self-review locator after the MLB display correction; it does not re-date, change or recertify any sporting fact. A regression gate compares all seven published review hashes/lines with `git show` at the declared revision. Source observations and all price books remain unchanged.
+
 ## 3. Sources register
 
 Every source used is catalogued with its URL in `data/sources.json` and rendered on the site's

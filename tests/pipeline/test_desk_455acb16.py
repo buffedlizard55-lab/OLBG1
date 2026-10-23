@@ -262,6 +262,14 @@ class Desk455ACB16(unittest.TestCase):
             for i,urls in enumerate(parser.rows):
                 self.assertTrue(any(urlsplit(u).hostname in authorities for u in urls),f"{p.name}: data row {i} lacks an official link")
 
+    def test_review_hashes_match_the_declared_git_revision_not_the_working_tree(self):
+        import hashlib,subprocess
+        audit=json.loads((DATA/"repo-audit.json").read_text())
+        for row in audit["findings"]:
+            raw=subprocess.check_output(["git","show",f"{audit['revision']}:{row['file']}"],cwd=ROOT)
+            self.assertEqual(hashlib.sha256(raw).hexdigest(),row["sha256"])
+            self.assertIn(row["needle"],raw.decode("utf-8").splitlines()[row["line"]-1])
+
     def test_local_links_and_manifest_all_resolve(self):
         manifest=json.loads((DATA/"site-manifest.json").read_text())
         self.assertEqual(len(manifest["pages"]),28)
