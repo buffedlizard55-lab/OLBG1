@@ -1,0 +1,211 @@
+{
+ "desk": "4c4968fc",
+ "read_at_utc": "2026-10-23T21:30:00Z",
+ "count": 34,
+ "sources": [
+  {
+   "id": "olbg-tips",
+   "name": "OLBG — today's betting tips hub",
+   "url": "https://www.olbg.com/betting-tips",
+   "role": "OLBG taxonomy (discovery only)"
+  },
+  {
+   "id": "olbg-volley",
+   "name": "OLBG — Volleyball tips hub (sport id 21)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "role": "OLBG taxonomy (discovery only)"
+  },
+  {
+   "id": "nhl-score",
+   "name": "NHL — official scoreboard for 2026-10-24 (api-web.nhle.com)",
+   "url": "https://api-web.nhle.com/v1/score/2026-10-24",
+   "role": "official / primary"
+  },
+  {
+   "id": "nhl-sched",
+   "name": "NHL — official schedule for 2026-10-24",
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+   "role": "official / primary"
+  },
+  {
+   "id": "nhl-stats",
+   "name": "NHL — 2026-27 club season summary (api.nhle.com stats)",
+   "url": "https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&isGame=false&cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2",
+   "role": "official / primary"
+  },
+  {
+   "id": "nhl-stand",
+   "name": "NHL — official standings, 2026-10-24",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+   "role": "official / primary"
+  },
+  {
+   "id": "mlb-sched",
+   "name": "MLB — Stats API 2026 World Series schedule",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-30&hydrate=team,probablePitcher",
+   "role": "official / primary"
+  },
+  {
+   "id": "mlb-stand",
+   "name": "MLB — Stats API 2026 regular-season standings (NL Central)",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=104&divisionId=205&season=2026&standingsTypes=regularSeason",
+   "role": "official / primary"
+  },
+  {
+   "id": "mlb-al",
+   "name": "MLB — Stats API 2026 regular-season standings (AL East)",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103&season=2026&standingsTypes=regularSeason",
+   "role": "official / primary"
+  },
+  {
+   "id": "mlb-post",
+   "name": "MLB — Stats API 2026 postseason results",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-06&endDate=2026-10-23",
+   "role": "official / primary"
+  },
+  {
+   "id": "nba-sched",
+   "name": "NBA.com — official schedule, 24-25 October 2026",
+   "url": "https://www.nba.com/schedule?date=10/24/2026",
+   "role": "official / primary"
+  },
+  {
+   "id": "nba-stand",
+   "name": "NBA.com — official 2026-27 standings",
+   "url": "https://www.nba.com/standings",
+   "role": "official / primary"
+  },
+  {
+   "id": "atp-almaty",
+   "name": "ATP Tour — Almaty daily schedule, Sat 24 Oct 2026",
+   "url": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule",
+   "role": "official / primary"
+  },
+  {
+   "id": "atp-brussels",
+   "name": "ATP Tour — Brussels daily schedule, Sat 24 Oct 2026",
+   "url": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule",
+   "role": "official / primary"
+  },
+  {
+   "id": "atp-vienna",
+   "name": "ATP Tour — Vienna daily schedule (Day 1, qualifying)",
+   "url": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+   "role": "official / primary"
+  },
+  {
+   "id": "urc-fixtures",
+   "name": "United Rugby Championship — Match Centre, Round 4",
+   "url": "https://stats.unitedrugby.com/match-centre/2026-27/4",
+   "role": "official / primary"
+  },
+  {
+   "id": "urc-table",
+   "name": "United Rugby Championship — official league table 2026/27",
+   "url": "https://stats.unitedrugby.com/match-centre/table/2026-27",
+   "role": "official / primary"
+  },
+  {
+   "id": "nrl-r2",
+   "name": "NRL.com — Rugby League World Cup Round 2 draw",
+   "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+   "role": "official / primary"
+  },
+  {
+   "id": "nrl-r3",
+   "name": "NRL.com — Rugby League World Cup Round 3 draw",
+   "url": "https://www.nrl.com/draw/?competition=131&round=3&season=2026",
+   "role": "official / primary"
+  },
+  {
+   "id": "nzc",
+   "name": "New Zealand Cricket — official fixtures (scoring.nzc.nz)",
+   "url": "https://scoring.nzc.nz/fixtures",
+   "role": "official / primary"
+  },
+  {
+   "id": "icc",
+   "name": "ICC — match page, New Zealand v India 2nd T20I",
+   "url": "https://www.icc-cricket.com/matches/271647/new-zealand-vs-india",
+   "role": "official / primary"
+  },
+  {
+   "id": "pdc-r1",
+   "name": "PDC — Day One results & Saturday round-two order of play",
+   "url": "https://www.pdc.tv/news/2026/october/22/nine-dart-star-woodhouse-sets-up-van-veen-clash-dortmund/",
+   "role": "official / primary"
+  },
+  {
+   "id": "pdc-preview",
+   "name": "PDC — 2026 Machineseeker European Championship preview (draw bracket)",
+   "url": "https://www.pdc.tv/news/2026/october/21/2026-machineseeker-european-championship-preview/",
+   "role": "official / primary"
+  },
+  {
+   "id": "pdc-wd",
+   "name": "PDC — Luke Humphries withdraws from the European Championship (illness)",
+   "url": "https://www.pdc.tv/news/2026/october/22/humphries-withdraws-from-machineseeker-european-championship",
+   "role": "official / primary"
+  },
+  {
+   "id": "pdc-cal",
+   "name": "PDC — tournament calendar (Westfalenhalle, Dortmund, 22-25 Oct 2026)",
+   "url": "https://www.pdc.tv/calendar/",
+   "role": "official / primary"
+  },
+  {
+   "id": "wst",
+   "name": "World Snooker Tour — BetVictor Northern Ireland Open matches",
+   "url": "https://www.wst.tv/matches/",
+   "role": "official / primary"
+  },
+  {
+   "id": "nantes",
+   "name": "HBC Nantes — official calendar and results 2026-27",
+   "url": "https://hbcnantes.com/equipe-professionnelle/calendrier-et-resultats/",
+   "role": "official / primary"
+  },
+  {
+   "id": "plusliga",
+   "name": "TAURON Liga (PlusLiga) — official season fixtures",
+   "url": "https://www.tauronliga.pl/games.html",
+   "role": "official / primary"
+  },
+  {
+   "id": "legavolley",
+   "name": "Lega Pallavolo Serie A — SuperLega calendar",
+   "url": "https://www.legavolley.it/calendario/?idCampionato=999",
+   "role": "official / primary"
+  },
+  {
+   "id": "pga",
+   "name": "PGA TOUR — Butterfield Bermuda Championship leaderboard",
+   "url": "https://www.pgatour.com/leaderboard",
+   "role": "official / primary"
+  },
+  {
+   "id": "cork-gaa",
+   "name": "Cork GAA — official fixtures (county finals, 25 Oct 2026)",
+   "url": "https://gaacork.ie/fixtures/",
+   "role": "official / primary"
+  },
+  {
+   "id": "f1-us",
+   "name": "Formula 1 — 2026 United States Grand Prix (schedule, FP1 classification, circuit)",
+   "url": "https://www.formula1.com/en/racing/2026/united-states",
+   "role": "official / primary"
+  },
+  {
+   "id": "gbgb",
+   "name": "GBGB — results search (runner-level data requires scripted search)",
+   "url": "https://www.gbgb.org.uk/racing/results/",
+   "role": "official / primary"
+  },
+  {
+   "id": "hbl",
+   "name": "Opel Handball-Bundesliga — official schedule page",
+   "url": "https://www.opel-hbl.de/de/hbl/spielplan",
+   "role": "official / primary"
+  }
+ ]
+}
