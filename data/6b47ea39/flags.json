@@ -1,7 +1,7 @@
 {
  "desk": "6b47ea39",
  "generated_utc": "2026-10-23T21:30:00Z",
- "count": 13,
+ "count": 14,
  "flags": [
   {
    "id": "F01",
@@ -39,13 +39,25 @@
   {
    "id": "F04",
    "severity": "high",
-   "title": "High-tier probabilities cluster within two points of the 70% threshold",
-   "detail": "112 of 1616 inherited priced lines fall between 0.700 and 0.720, and the most repeated single value appears many times across unrelated matches and sports. That is the signature of a pricing pass tuned to land just inside the threshold rather than five independent assessments. This desk does not treat the clustering as evidence of agreement: every pick records which desks priced it, and 65 of the 125 fixtures rest on a single desk, so a repeated number is usually one desk repeating itself rather than two desks converging.",
+   "title": "One desk supplies almost the whole in-window pool, and its prices cluster at the threshold",
+   "detail": "95 of 8a900c04's 472 priced lines sit between 0.700 and 0.720 (20.1%), against 1.7% for 496eaf02 and 1.4% for 65331685. That desk also supplies 84 of the 94 candidate lines that fall inside the brief's window. Of 1655 priced observations only 39 are seconded by another desk, and not one in-window line is priced twice. Dropping that desk entirely leaves 10 in-window candidates across 7 sports. The concentration, not the individual prices, is the finding: a price ladder tuned to land just above a published threshold cannot be read as independent agreement.",
    "source": "internal distribution check",
-   "rows": []
+   "rows": [
+    "496eaf02: 8/460 lines in 0.700-0.720",
+    "65331685: 10/723 lines in 0.700-0.720",
+    "8a900c04: 95/472 lines in 0.700-0.720"
+   ]
   },
   {
    "id": "F05",
+   "severity": "medium",
+   "title": "Nearly every in-window selection is priced by one desk only",
+   "detail": "Of 94 in-window lines, 94 are priced by a single desk. Where two desks do price the same bet, the numbers differ by more than the tolerance used here more often than they agree. Every pick on this desk therefore prints the desk that priced it, and no pick is described as market consensus.",
+   "source": "internal provenance count",
+   "rows": []
+  },
+  {
+   "id": "F06",
    "severity": "high",
    "title": "22 fixtures carry opposite favourites on different desks",
    "detail": "The same fixture is priced with a different favourite by two or more source desks. The largest gaps are shown below. None of these fixtures is used for a published pick on this desk; they are listed for review with both sides and both prices.",
@@ -62,7 +74,7 @@
    ]
   },
   {
-   "id": "F06",
+   "id": "F07",
    "severity": "medium",
    "title": "38 lines differ by 10% or more between desks",
    "detail": "Two desks priced the same market and selection with decimal prices at least 0.10 apart. The freshest observation is used on the match pages and the older one is shown beside it.",
@@ -79,7 +91,7 @@
    ]
   },
   {
-   "id": "F07",
+   "id": "F08",
    "severity": "medium",
    "title": "1 rows still say 'upcoming' after their official start time",
    "detail": "At this desk's build time (21:30Z) these rows had already started but their source file still carries a pre-match state. They are shown as elapsed here and carry no pick.",
@@ -89,7 +101,7 @@
    ]
   },
   {
-   "id": "F08",
+   "id": "F09",
    "severity": "high",
    "title": "Race and stroke-play events are modelled as two-sided matches",
    "detail": "Greyhound races, motor races and stroke-play golf are multi-runner events. Several inherited rows invent a second side called 'Field', 'Remaining Belfast Field' or 'Inside Seeding Traps 1-3' and then quote a two-way price against it. That is not a market OLBG or any governing body publishes. This desk keeps those rows visible but labels them multi-runner and does not publish a match-winner pick from them.",
@@ -104,7 +116,7 @@
    ]
   },
   {
-   "id": "F09",
+   "id": "F10",
    "severity": "high",
    "title": "One scoreline is credited to two different players on adjacent rows",
    "detail": "Row TN01 says Tsitsipas beat Karen Khachanov 4-6 7-6(5) 7-6(5); row TN02 says Bublik beat Karen Khachanov in a 4-6 7-6(5) 7-6(5) thriller lasting 32 games, in the same semi-final round of the same tournament. Khachanov cannot have lost that identical scoreline twice. Both rows are treated as unreliable for that detail and the detail is excluded from this desk's predictions for the two matches.",
@@ -115,7 +127,7 @@
    ]
   },
   {
-   "id": "F10",
+   "id": "F11",
    "severity": "medium",
    "title": "31 inherited prose lines fail a written-rule check",
    "detail": "Checks applied to the source desks' own published predictions: minimum 30 words, no internal vocabulary, and no six-word phrase reused between two different matches.",
@@ -123,18 +135,18 @@
    "rows": [
     "8a900c04 GF05: repeated 6-gram with GF04: 'genesis championship at woo jeong hills'",
     "8a900c04 VB04: repeated 6-gram with VB01: 'to a five set 3 2'",
-    "8a900c04 VB05: repeated 6-gram with VB01: 'win and over 3 5 sets'",
-    "8a900c04 DA05: repeated 6-gram with DA03: 'saturday's best of nineteen second round'",
+    "8a900c04 VB05: repeated 6-gram with VB01: 'to win and over 3 5'",
+    "8a900c04 DA05: repeated 6-gram with DA03: 'in saturday's best of nineteen second'",
     "8a900c04 BB04: repeated 6-gram with BB02: 'on the 60 day injured list'",
-    "496eaf02 TN02: repeated 6-gram with TN01: 'a 4 6 7 6 5'",
+    "496eaf02 TN02: repeated 6-gram with TN01: '6 7 6 5 7 6'",
     "496eaf02 TN05: repeated 6-gram with TN01: 'reached the semi finals with a'",
     "496eaf02 VB04: repeated 6-gram with VB01: 'crowd will push the tempo on'",
     "496eaf02 RU03: repeated 6-gram with RU02: 'in urc round 4 with the'",
-    "496eaf02 RU05: repeated 6-gram with RU01: 'from one win one draw and'"
+    "496eaf02 RU05: repeated 6-gram with RU01: 'one win one draw and one'"
    ]
   },
   {
-   "id": "F11",
+   "id": "F12",
    "severity": "medium",
    "title": "6 source links are outside the governing-body allow-list",
    "detail": "Every sporting row must carry a link to the league, tour, promoter or governing body that publishes the fixture. Hosts that are media, aggregators or betting sites are listed below and are not counted as row verification on this desk.",
@@ -144,7 +156,7 @@
    ]
   },
   {
-   "id": "F12",
+   "id": "F13",
    "severity": "medium",
    "title": "1 fixtures carry no official source link",
    "detail": "These rows were published by a source desk without any governing-body URL. They keep their place in the match list so the gap is visible, but they carry no pick and no prediction on this desk.",
@@ -154,7 +166,7 @@
    ]
   },
   {
-   "id": "F13",
+   "id": "F14",
    "severity": "info",
    "title": "65 of 125 fixtures rest on a single desk",
    "detail": "These fixtures appear on only one of the three retained 23-Oct desks, so no independent second price exists to compare against. Their numbers are shown but not treated as corroborated.",

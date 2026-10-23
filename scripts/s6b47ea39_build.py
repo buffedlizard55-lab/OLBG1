@@ -211,6 +211,19 @@ def main() -> None:
     (SITE / "assets" / "style.css").write_text(CSS, encoding="utf-8")
 
     # ------------------------------------------------------------------ overview
+    indep = audit["price_independence"]
+    independence_rows = "".join(
+        "<tr><td class=\"mono\">{}</td><td>{}</td><td>{}</td><td>{}%</td><td>{}</td><td>{}</td></tr>".format(
+            esc(desk),
+            row["lines"],
+            row["lines_between_0.700_and_0.720"],
+            round(row["share_between_0.700_and_0.720"] * 100, 1),
+            row["in_band_lines"],
+            row["constructed_market_lines"],
+        )
+        for desk, row in sorted(indep["per_desk"].items(), key=lambda kv: -kv[1]["share_between_0.700_and_0.720"])
+    )
+
     FIELDISH = re.compile(r"\bfield\b|remaining|quarter|contingent|traps? [1-6]|bottom-half|points contenders|qualifying winner|\bsession\b", re.I)
 
     def exec_rows(rows, limit=12):
@@ -277,6 +290,18 @@ published and labelled; neither is relabelled to look like the other. <a href="m
 <p class="small muted">Rules R1–R7 leave {len(picks)} high picks. The per-sport gaps are listed, not filled.</p>
 <a class="small" href="picks.html">See coverage →</a></div>
 </div>
+<h2>Where the prices come from</h2>
+<p class="small muted">Every row below is a source desk's own price file, re-counted here. The point of the table is that the in-window pool is
+not spread across three independent desks: it is supplied almost entirely by one, and that desk's prices sit disproportionately just above
+the 70% threshold the brief names.</p>
+<div class="wrap"><table><thead><tr><th>Source desk</th><th>Priced lines</th><th>Lines between 70% and 72%</th><th>Share</th><th>In-window lines</th><th>Invented-index markets</th></tr></thead><tbody>
+{independence_rows}</tbody></table></div>
+<div class="notice red"><strong>What that means for the picks.</strong> Of {indep['in_band_lines']} candidate lines inside the window,
+{indep['in_band_lines'] - indep['in_band_lines_priced_by_more_than_one_desk']} are priced by a single desk and
+{indep['in_band_lines_priced_by_more_than_one_desk']} are priced twice. If the one desk that supplies most of them is set aside, the whole
+slate yields {indep['in_band_lines_without_8a900c04']['total']} in-window candidates across
+{len(indep['in_band_lines_without_8a900c04']['by_sport'])} sports. This desk publishes its picks with the pricing desk named on every row and
+does not describe any of them as market consensus. <a href="flagged.html">Full finding F04 →</a></div>
 <h2>How the desk is built</h2>
 <div class="grid">
 <div class="card"><h4>1 · Reconcile</h4><p class="small muted">Same fixture spelled differently across desks is collapsed, with every alias recorded. 125 fixtures remain from 218 raw rows.</p></div>
@@ -568,6 +593,7 @@ that band. This desk publishes the band for what it is and separates genuinely s
 <tr><td>Form, statistics and injury notes in predictions</td><td><span class="badge b-amber">Inherited</span></td><td>Fact register in <code>data/8a900c04/desk.json</code>, read 2026-10-23T16:45Z</td></tr>
 <tr><td>Prices and probabilities</td><td><span class="badge b-blue">Our estimates</span></td><td>Recomputed from decimal; arithmetic audited this session</td></tr>
 <tr><td>Cross-desk agreement</td><td><span class="badge b-green">Computed this session</span></td><td>Independent comparison of the three retained desks</td></tr>
+<tr><td>Price corroboration</td><td><span class="badge b-red">Weak, disclosed</span></td><td>{indep['lines_priced_by_more_than_one_desk']} of {indep['observations']} priced observations carry a second desk's price; {indep['in_band_lines'] - indep['in_band_lines_priced_by_more_than_one_desk']} of {indep['in_band_lines']} in-window lines rest on one desk</td></tr>
 <tr><td>Fresh official re-read of any row</td><td><span class="badge b-red">Not possible</span></td><td>Sandbox egress blocked; disclosed rather than simulated</td></tr>
 </tbody></table></div>
 <h2>Publication rules</h2>

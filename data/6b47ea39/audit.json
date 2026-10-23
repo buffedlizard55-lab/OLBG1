@@ -118,9 +118,46 @@
   },
   "496eaf02_recomputed_above_70": 33
  },
- "boundary_clustering": {
-  "lines_between_0.700_and_0.720": 112,
-  "total_lines": 1616
+ "price_independence": {
+  "observations": 1655,
+  "per_desk": {
+   "496eaf02": {
+    "lines": 460,
+    "lines_between_0.700_and_0.720": 8,
+    "share_between_0.700_and_0.720": 0.0174,
+    "in_band_lines": 3,
+    "constructed_market_lines": 0
+   },
+   "65331685": {
+    "lines": 723,
+    "lines_between_0.700_and_0.720": 10,
+    "share_between_0.700_and_0.720": 0.0138,
+    "in_band_lines": 7,
+    "constructed_market_lines": 0
+   },
+   "8a900c04": {
+    "lines": 472,
+    "lines_between_0.700_and_0.720": 95,
+    "share_between_0.700_and_0.720": 0.2013,
+    "in_band_lines": 84,
+    "constructed_market_lines": 94
+   }
+  },
+  "lines_priced_by_more_than_one_desk": 39,
+  "in_band_lines": 94,
+  "in_band_lines_priced_by_more_than_one_desk": 0,
+  "in_band_lines_without_8a900c04": {
+   "by_sport": {
+    "Cricket": 1,
+    "Snooker": 1,
+    "Ice Hockey": 3,
+    "Rugby Union": 2,
+    "Basketball": 1,
+    "Gaelic Sports": 1,
+    "Handball": 1
+   },
+   "total": 10
+  }
  },
  "directional_conflicts": [
   {
@@ -1430,12 +1467,12 @@
   {
    "desk": "8a900c04",
    "id": "VB05",
-   "issue": "repeated 6-gram with VB01: 'win and over 3 5 sets'"
+   "issue": "repeated 6-gram with VB01: 'to win and over 3 5'"
   },
   {
    "desk": "8a900c04",
    "id": "DA05",
-   "issue": "repeated 6-gram with DA03: 'saturday's best of nineteen second round'"
+   "issue": "repeated 6-gram with DA03: 'in saturday's best of nineteen second'"
   },
   {
    "desk": "8a900c04",
@@ -1445,7 +1482,7 @@
   {
    "desk": "496eaf02",
    "id": "TN02",
-   "issue": "repeated 6-gram with TN01: 'a 4 6 7 6 5'"
+   "issue": "repeated 6-gram with TN01: '6 7 6 5 7 6'"
   },
   {
    "desk": "496eaf02",
@@ -1465,52 +1502,52 @@
   {
    "desk": "496eaf02",
    "id": "RU05",
-   "issue": "repeated 6-gram with RU01: 'from one win one draw and'"
+   "issue": "repeated 6-gram with RU01: 'one win one draw and one'"
   },
   {
    "desk": "496eaf02",
    "id": "RL02",
-   "issue": "repeated 6-gram with RL01: 'in rugby league world cup round'"
+   "issue": "repeated 6-gram with RL01: 'rugby league world cup round 2'"
   },
   {
    "desk": "496eaf02",
    "id": "RL03",
-   "issue": "repeated 6-gram with RL02: '2 at hbf park in perth'"
+   "issue": "repeated 6-gram with RL02: 'hbf park in perth with england'"
   },
   {
    "desk": "496eaf02",
    "id": "RL04",
-   "issue": "repeated 6-gram with RL01: 'in rugby league world cup round'"
+   "issue": "repeated 6-gram with RL01: 'rugby league world cup round 2'"
   },
   {
    "desk": "496eaf02",
    "id": "RL05",
-   "issue": "repeated 6-gram with RL01: 'in rugby league world cup round'"
+   "issue": "repeated 6-gram with RL01: 'rugby league world cup round 2'"
   },
   {
    "desk": "496eaf02",
    "id": "CR04",
-   "issue": "repeated 6-gram with CR03: 'top order has been in form'"
+   "issue": "repeated 6-gram with CR03: 'on the table with two wins'"
   },
   {
    "desk": "496eaf02",
    "id": "DA03",
-   "issue": "repeated 6-gram with DA02: 'in the pdc order of merit'"
+   "issue": "repeated 6-gram with DA02: 'the pdc order of merit with'"
   },
   {
    "desk": "496eaf02",
    "id": "DA04",
-   "issue": "repeated 6-gram with DA03: 'round 2 at dortmund on saturday'"
+   "issue": "repeated 6-gram with DA03: 'championship round 2 at dortmund on'"
   },
   {
    "desk": "496eaf02",
    "id": "DA05",
-   "issue": "repeated 6-gram with DA03: 'round 2 at dortmund on saturday'"
+   "issue": "repeated 6-gram with DA03: 'championship round 2 at dortmund on'"
   },
   {
    "desk": "496eaf02",
    "id": "BB02",
-   "issue": "repeated 6-gram with BB01: 'the tampa bay rays and milwaukee'"
+   "issue": "repeated 6-gram with BB01: 'at american family field in milwaukee'"
   },
   {
    "desk": "496eaf02",
@@ -1525,37 +1562,37 @@
   {
    "desk": "496eaf02",
    "id": "IH04",
-   "issue": "repeated 6-gram with IH02: 'teams' attacks have been scoring freely'"
+   "issue": "repeated 6-gram with IH02: '0 both teams' attacks have been'"
   },
   {
    "desk": "496eaf02",
    "id": "IH05",
-   "issue": "repeated 6-gram with IH02: 'the tempo over 5 0 total'"
+   "issue": "repeated 6-gram with IH02: 'crowd will push the tempo over'"
   },
   {
    "desk": "496eaf02",
    "id": "IH06",
-   "issue": "repeated 6-gram with IH02: 'teams' attacks have been scoring freely'"
+   "issue": "repeated 6-gram with IH02: 'crowd will push the tempo over'"
   },
   {
    "desk": "496eaf02",
    "id": "BK02",
-   "issue": "repeated 6-gram with BB03: 'home crowd will push the tempo'"
+   "issue": "repeated 6-gram with IH02: 'crowd will push the tempo over'"
   },
   {
    "desk": "496eaf02",
    "id": "BK03",
-   "issue": "repeated 6-gram with BB03: 'home crowd will push the tempo'"
+   "issue": "repeated 6-gram with IH02: 'crowd will push the tempo over'"
   },
   {
    "desk": "496eaf02",
    "id": "BK04",
-   "issue": "repeated 6-gram with IH02: 'arena on friday night with both'"
+   "issue": "repeated 6-gram with IH02: 'on friday night with both teams'"
   },
   {
    "desk": "496eaf02",
    "id": "BK05",
-   "issue": "repeated 6-gram with BK01: 'crowd will be loud over 217'"
+   "issue": "repeated 6-gram with BK04: '0 after opening night wins the'"
   },
   {
    "desk": "496eaf02",
@@ -1565,7 +1602,7 @@
   {
    "desk": "496eaf02",
    "id": "BK08",
-   "issue": "repeated 6-gram with BK03: 'offense has been scoring freely and'"
+   "issue": "repeated 6-gram with IH02: 'crowd will push the tempo over'"
   },
   {
    "desk": "496eaf02",
