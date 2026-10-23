@@ -113,3 +113,14 @@ python3 -m unittest tests.pipeline.test_desk_5b7d3436 -v
 ```
 
 The data script contains only facts read in this session; rerunning it does not claim a new live fetch or extend the observation expiry.
+
+## Pull request, merge and deployment
+
+- **PR:** [#204 — fresh 15-sport evidence desk with strict release gates](https://github.com/buffedlizard55-lab/OLBG1/pull/204).
+- **Merge:** merged at **2026-10-23T21:57:08Z**; merge commit **`41031096cd292aeff57f517ae96882204d1fde09`**, head **`02cd563943fbd5f0d0be9399ef28ecb00c1e0b3a`**.
+- **Final local pre-merge repeat:** 328 pipeline tests and 38 root tests passed; both validators returned zero errors, with the same three archived-desk warnings; 2,687 published HTML pages were link-checked.
+- **PR checks:** runs `40029671327` and `40029916311` passed. Further rebases were needed only because concurrent main-branch updates repeatedly appended to the coordination board.
+- **Superseded run:** main run `40030375574` on the merge commit was cancelled by a newer main push; it was not a test failure.
+- **Successful deployment:** [run `40030414514`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40030414514) on `74e9d5adeaf69219d7bc8fa3447ec3fc7c0936d8`, which contains the PR #204 merge. Evidence/site/browser job `120677307743` and Pages job `120677959812` both succeeded, completing at **2026-10-23T22:03:09Z**.
+- **Live read-back:** the overview, matches, High gate and Flagged for Review pages returned the expected content at `https://buffedlizard55-lab.github.io/OLBG1/5b7d3436/`. The live `summary.json` returned 15 sports, 20 fixtures, 21 markets, zero High picks and 64 findings.
+- **Export read-back limitation:** the text-page fetcher returned HTTP 500 for both CSV endpoints while succeeding for HTML and JSON. The same CSVs were present in the tested staged artifact, and the canonical Chromium CSV download passed; this is recorded as a fetch-tool limitation, not misreported as a failed Pages deployment.

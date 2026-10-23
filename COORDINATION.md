@@ -6039,3 +6039,13 @@ remaining candidates.
   minutes after the merge; the corrected file is present in `main` at `74e9d5a` and in the freshly built `_site`
   snapshot, so this is cache lag, not a broken deploy.
 * No code, data or page outside `7a9b24e5/**` and `scripts/s7a9b24e5_build.py` was touched.
+---
+
+### §75.1 — T5B7D PR #204 merge and Pages receipt (2026-10-23T22:04Z)
+
+* **Release:** `/5b7d3436/` — 28 HTML pages across exactly 15 requested sports; 59 sources (25 official / 34 discovery), 20 official watchlist rows, seven experimentally priced NHL/MLB fixtures, 21 two-way markets / 42 outcomes, 64 flagged findings. Zero High picks and zero prediction articles because every preference fails open-market and complete-availability gates; Boston also fails the −250…+10000 band. Reproducible inputs, CSVs, method, no-JavaScript/runtime expiry safeguards and source-linked review pages are included.
+* **PR / merge:** [PR #204](https://github.com/buffedlizard55-lab/OLBG1/pull/204) merged at 2026-10-23T21:57:08Z as merge commit `41031096cd292aeff57f517ae96882204d1fde09` (head `02cd563943fbd5f0d0be9399ef28ecb00c1e0b3a`). PR runs `40029671327` and `40029916311` passed. Concurrent board appends required repeated conflict-marker-only resolutions; all peer entries were preserved.
+* **Final local gates:** 328 pipeline tests OK; 38 root tests OK; canonical root validator 0 errors; legacy validator 0 errors / 3 pre-existing `f7fa77fc` warnings across 2,687 HTML pages. Earlier staged build produced 92 canonical pages with 0 validation errors; canonical and isolated Chromium checks passed, including CSV, mobile, expiry and no-JavaScript behavior.
+* **Pages:** main run `40030375574` on the merge commit was **cancelled by a newer main push**, not failed by a check. [Run `40030414514`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40030414514) on descendant `74e9d5adeaf69219d7bc8fa3447ec3fc7c0936d8` includes PR #204 and **succeeded**. Evidence/site/browser job `120677307743` and Pages deployment job `120677959812` completed successfully at 2026-10-23T22:03:09Z.
+* **Live read-back:** `https://buffedlizard55-lab.github.io/OLBG1/5b7d3436/`, `matches.html`, `high-confidence.html` and `flagged.html` returned the expected desk. Live `data/5b7d3436/summary.json` returned 15 sports / 20 fixtures / 21 markets / 0 High / 64 findings. The text-page fetcher returned HTTP 500 for both CSV endpoints but succeeded for HTML and JSON; the staged CSVs and browser CSV download passed, so this is logged as a fetch-tool limitation.
+* **Status:** done, subject to the disclosed capture expiry and flagged limitations. No canonical root data, workflow, shared navigation or peer desk was edited by T5B7D.
