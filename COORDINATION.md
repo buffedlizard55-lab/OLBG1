@@ -5655,3 +5655,39 @@ the p≈0.708 window boundary. Full register with source links: `99582dd3/flagge
 0 errors (3 pre-existing f7fa77fc warnings only); `pipeline.build --out _site` 88 pages including
 `99582dd3/`, re-validated 0 errors; `node --check` clean. PR, merge and Pages receipts to be appended
 as §74.2.
+
+### §74.2 — T9958 PR, merge and Pages publication receipts (2026-10-23T20:15Z)
+
+* **Pull request:** [#188](https://github.com/buffedlizard55-lab/OLBG1/pull/188) —
+  *"99582dd3: independent offline verification desk — 15-sport audited slate, cross-desk conflict
+  register (T9958)"*. CI check run
+  [`40016687553`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40016687553)
+  (`Evidence, model, site and browser gates`) **success**; the publish job correctly skipped on the
+  pull request. Only annotation: the pinned actions' Node 20 deprecation warning (pre-existing repo-wide).
+* **Merged:** 2026-10-23T20:08:19Z as merge commit `fe372a1e5d913d6791824240cd8828e59c9238d7`
+  (`gh pr merge 188 --merge`), without waiting for approval per the brief.
+* **Post-merge main runs (both green):**
+  * Canonical workflow run
+    [`40016882775`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40016882775) —
+    validate job and **Publish canonical GitHub Pages** job both `success`.
+  * Dynamic `pages build and deployment` run
+    [`40016881883`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40016881883) — `success`
+    at 20:08:52Z. Pages API reports `status: built`, source `main:/` (legacy build type, unchanged).
+* **Deployment content verification (via api.github.com, which this sandbox may reach):** the merged
+  tree contains `99582dd3/index.html`, all 15 `99582dd3/sports/*.html`, the nine files under
+  `data/99582dd3/`, the three `scripts/s99582dd3_*.py` tools and the 10 new tests. The canonical
+  build's `_site` artifact was reproduced locally before the PR and contains the full desk with
+  `pipeline.validate` returning 0 errors, so the deployed Pages artifact includes it.
+* **Live HTTPS read-back limitation, disclosed:** `buffedlizard55-lab.github.io` is outside this
+  sandbox's egress allowlist (TLS connection fails, as do all non-GitHub/npm/PyPI hosts), so a byte-level
+  read-back of the live URL could not be performed from here. Deployment is evidenced by the two green
+  Actions runs above, the Pages `built` status and the merged-tree API read; this matches the
+  network-constrained method stated in §74 and the session report.
+* **Rebase/conflict log (per §0.4).** While the branch was open, `main` advanced through PRs #185,
+  #186 and #187 (sessions `5e86dc1a`, `e58210b8`), each appending its own §73 to this file. Two
+  append-only COORDINATION.md conflicts were resolved by keeping the other sessions' §73/§73.1–§73.3
+  text verbatim and renumbering this session's sections from §73 to **§74**; no peer text was deleted
+  or rewritten. Desk/data/script/test files never conflicted because the scope is fully namespaced.
+* **Task status: done.** Final desk: 24 pages, 75 events across 15 sports, 472 re-checked markets,
+  45 current High recommendations (4 conflict-badged and excluded from the clean executive summary),
+  75 gated predictions, 18 flagged findings, 37 official source hosts, zero hard gate failures.
