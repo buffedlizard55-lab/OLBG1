@@ -685,8 +685,8 @@ PREDICTIONS = [
         "body": (
             "Edinburgh have won all three opening rounds of the United Rugby Championship, "
             "beating Ulster 34-29 away, DHL Stormers 17-13 at Hive Stadium and Zebre Parma 29-12 in Parma. "
-            "The Lions arrive after shipping 57 points at Loftus Versfeld in a 57-15 defeat to Vodacom Bulls, "
-            "conceding 57 points in that match. Back Edinburgh to win the match at home on Friday."
+            "The Lions arrive after a 57-15 defeat to Vodacom Bulls at Loftus Versfeld, a losing margin of 42 points. "
+            "Back Edinburgh to win the match at home on Friday."
         ),
     },
     {
