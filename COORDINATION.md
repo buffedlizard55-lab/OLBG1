@@ -5048,3 +5048,47 @@ byte read-back, receipts appended here.
 **Progress log (append-only).**
 
 - 2026-10-23T00:00Z — TEFE12 / §67 claim committed and pushed before any implementation work.
+- 2026-10-23T16:26Z — **Phase 1 complete.** All 15 OLBG hubs harvested (chunk 0 each), 106 cards
+  captured into `scripts/sefe12010_data.py::OLBG_HARVEST` with clock, tip counts, market and crowd
+  consensus. Structural findings recorded: golf hub returns the literal `No tips found.`; rugby
+  league is outrights-only; T20 Blast 2027 (event 188350) reproduces the each-way `0/0` blank-%
+  bug; expired cards remain listed alongside live ones.
+- 2026-10-23T16:30Z — **Timezone resolved and cross-checked three ways.** OLBG renders clocks in
+  the viewer's zone with no label; for this session that is EDT, so **OLBG + 4h = UTC**. Evidence:
+  Towcester 12:12 shown Expired (17:12 BST), MLB WS G1 "20:00" against statsapi `2026-10-24T00:00Z`,
+  ATP Brussels "12:30" against atptour "Not Before 18:30" CEST. Also established that **wst.tv and
+  cricket.com.au geo-render in EDT too**, which resolves the snooker QF timing conflict: wst.tv
+  "14:00 Fri 23 Oct" = `2026-10-23T18:00Z` (the 19:00 BST evening session).
+- 2026-10-23T16:55Z — **Phase 2 complete (official verification).** Seven sports re-sourced from
+  governing bodies: NHL (`api-web.nhle.com` + NHL stats team summary), MLB (`statsapi.mlb.com`),
+  EuroLeague (`api-live.euroleague.net`), ATP (`atptour.com`), WST (`wst.tv`), F1 (`formula1.com`),
+  Cricket Australia (`cricket.com.au`). Nine sports could not be confirmed and ship **blank +
+  flagged** with the attempted URL and verbatim failure: NBA (3 endpoints, HTTP 500 / retired),
+  darts (pdc.tv consent wall), rugby union (URC 404), rugby league (no OLBG match cards), handball
+  (LNH renamed, old path 404), volleyball (PlusLiga redirect + pagination), golf (PGA 404 and empty
+  OLBG hub), Gaelic (no county-board page read), greyhounds (GBGB race-card 404).
+- 2026-10-23T17:05Z — **Desk built and committed** (`26e853a`). 100 fixtures, 26 confirmed on an
+  official source, 19 priced, 78 markets, 180 outcomes, **13 high-confidence selections** in the
+  −250…+10000 band, 19 unique hand-written calls (min 53 words), 94 fixture flags, 22 deliberately
+  blank markets. 28 pages under `efe12010/` with the desk's own `assets/style.css` + `app.js`;
+  exports under `data/efe12010/`.
+- 2026-10-23T17:05Z — **Irregularities logged for review** (all on `efe12010/flagged.html`):
+  Colorado Avalanche GF/GA missing from the official team-summary read → that game's total, puck
+  line and team totals left blank; Struff and Basilashvili outside the ATP rankings chunk read →
+  both matches unpriced; Almaty Day 8 order of play unpublished → no official start time for
+  Basilashvili v Tsitsipas; Jak Jones's R2 frame line absent from the WST draw → asymmetric frame
+  prior disclosed; all five Cricket Australia fixtures confirmed but unpriced (no ladder/form on
+  the matches index); no official feed read publishes an injury list, stated in every written call;
+  12 OLBG cards already elapsed at harvest and therefore excluded from picks.
+- 2026-10-23T17:05Z — **Disagreement with the OLBG crowd, published rather than hidden.** OLBG makes
+  Verstappen the most-tipped driver for the United States Grand Prix (13/38). This desk makes
+  Antonelli the narrow favourite (30.1% v 26.6%) on championship points, while Verstappen leads on
+  recent wins. Published call is therefore **Verstappen podium −246**, which is in band and does not
+  depend on resolving the disagreement.
+- 2026-10-23T17:10Z — **Gates green.** `tests.pipeline.test_desk_efe12010` 20/20 OK;
+  `unittest discover -s tests/pipeline` 165 OK; `unittest discover -s tests` 38 OK;
+  `pipeline.build --out _site` 86 pages; `pipeline.validate --site _site` 0 errors;
+  `pipeline.validate --site .` 0 errors; `scripts/validate.py` 0 errors (3 pre-existing `f7fa77fc`
+  warnings untouched). `pipeline.build` auto-indexes `efe12010/index.html` into the canonical
+  `archive.html`, so **no shared navigation file needed editing**.
+- 2026-10-23T17:15Z — Report written to `reports/SESSION_EFE12010.md`.
