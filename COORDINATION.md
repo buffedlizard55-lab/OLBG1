@@ -5448,3 +5448,48 @@ from the deployed Pages host and reproducible with `python3 scripts/sfa24508c_bu
 * **Claimed scope:** `data/e58210b8/**`, `scripts/se58210b8_*.py`, `e58210b8/**`, `tests/pipeline/test_desk_e58210b8.py`, `reports/SESSION_E58210B8.md`, and append-only edits to `COORDINATION.md`. Nothing else.
 * **Claim time:** 2026-10-23T17:55Z. `main` tip at claim time: `87a39e3` (merge of PR #183, 2026-10-23T17:26Z).
 * **Work:** fresh OLBG hub harvest for the 15 requested sports, official-source verification, own multi-market lines, in-band high-confidence slate, unique >=30-word predictions, dashboard, gates, PR, merge, live Pages read-back. Receipts appended to this section as the task progresses.
+
+### §73.1 — `T5821` implementation receipts (2026-10-23T20:05Z)
+
+* **Evidence snapshot:** `2026-10-23T19:35:00Z`. Sources read: `api-web.nhle.com/v1/schedule/2026-10-23`,
+  `/2026-10-24`, `/2026-10-25`, `/v1/standings/now` (all 32 clubs, `standingsDateTimeUtc 2026-10-23T19:29:30Z`),
+  `statsapi.mlb.com` schedule 23–28 Oct and NL standings (`leagueId=104`), `atptour.com/en/scores/current`,
+  `wst.tv/tournaments/` and one WST matches page, `olbg.com/sitemap-betting-tips.xml`, `olbg.com/robots.txt`
+  and three OLBG hubs. No media, aggregator or sportsbook page used. `robots.txt` read before any OLBG path.
+* **Coverage shipped:** **18 fixture rows** — 15 NHL games (2 on 23 Oct, 12 on 24 Oct, FLA @ CHI on 25 Oct)
+  plus the three scheduled 2026 World Series games (Rays @ Brewers, gamePks 849805 / 849802 / 849804).
+  **45 originated markets, 90 outcome prices** (money line, puck line −1.5, total 5.5; zero margin, fair
+  decimal = 1/p). Baseball rows are **unpriced**: only Milwaukee's official record (103-59, 832/618) was
+  read, and the AL standings call was never completed, so no Rays record exists to price against.
+  Thirteen of the fifteen brief sports publish **zero rows** and say so per-sport (`F-5821-01`).
+* **Price-window finding (the arithmetic, restated for the board):** −250 = 1.400 decimal = 71.4286%,
+  so ">70% and inside −250…+10000" only overlaps on 70.0000% ≤ p ≤ 71.4286%. On this slate that
+  intersection is **empty**: the four calls above 70% price at −337 (Vegas 77.12%), −325 (New Jersey
+  76.46%), −317 (Boston 76.02%) and −260 (Edmonton 72.25%), all shorter than −250. Confidence therefore
+  derives from probability alone and the band is a separate published field; the conflict is disclosed on
+  `e58210b8/high-confidence.html` and as flag `F-5821-03`. Strongest in-window calls: Anaheim at
+  Philadelphia 68.13% / −214, Detroit at Calgary 67.72% / −210, Florida at Chicago 66.69% / −200.
+* **Predictions:** 6 write-ups (Vegas, New Jersey, Boston, Edmonton, Anaheim, Carolina), 59–83 words each,
+  unique, no duplicate 6-gram across the set, each carrying its selection phrase verbatim, none containing
+  "model" or "verified", none making an injury claim (no official availability page was read).
+* **New reverse-engineering findings:** (1) `api-web.nhle.com/v1/schedule/<date>` embeds an `odds[]` array
+  per side whose providers mix decimal and American formats and disagree on direction (MTL 2.35 from one
+  provider, MTL −169 from another) — unusable as a price input, disclosed as `F-5821-04`; (2) the OLBG
+  tennis, ice hockey and NHL hubs all return the literal empty state `No tips found.` with no event rows to
+  a non-browser client, so OLBG supplied route grammar only (`F-5821-05`); (3) WST prints session clocks with
+  no timezone while Belfast is on BST to 25 Oct, so no snooker start time is published (`F-5821-06`).
+* **Harvest limit:** the page-fetch tool began returning `SignatureDoesNotMatch` from its own proxy for
+  every subsequent request (ATP order of play, WTA, WST matches, URC, AL standings), so harvesting stopped
+  and the gaps are published rather than filled from memory.
+* **Gates:** `python3 -m unittest discover -s tests/pipeline` → **187 tests OK** (10 new in
+  `tests/pipeline/test_desk_e58210b8.py`); `python3 -m unittest discover -s tests -p 'test*.py'` → **38 OK**;
+  `python3 -m pipeline.validate --site .` → **0 errors**; `python3 scripts/validate.py` → **0 errors**,
+  1157 published HTML pages link-checked, 3 pre-existing warnings in `f7fa77fc/flagged.html` (not this
+  session's files); `python3 scripts/se58210b8_validate.py` → **OK: 24 pages, 18 fixture rows, 4 high calls,
+  388 unique 6-grams**.
+* **Files added:** `e58210b8/` (24 pages: dashboard, matches, markets, high-confidence, predictions,
+  flagged, methodology, sources, analysis, 15 sport pages, `assets/desk.css`), `data/e58210b8/`
+  (`nhl_standings.json`, `nhl_fixtures.json`, `tennis_snooker_obs.json`, `lines.json`),
+  `scripts/se58210b8_{data,model,predictions,build,validate}.py`,
+  `tests/pipeline/test_desk_e58210b8.py`, `reports/SESSION_E58210B8.md`. No canonical root page,
+  `pipeline/`, workflow or peer desk was touched.
