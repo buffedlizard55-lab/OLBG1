@@ -1,0 +1,192 @@
+{
+ "desk": "efe12010",
+ "official": {
+  "nhl_sched_23": {
+   "name": "NHL \u2014 league schedule API, 23 Oct 2026",
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+   "host": "api-web.nhle.com",
+   "read_utc": "2026-10-23T15:57:00Z",
+   "result": "ok"
+  },
+  "nhl_sched_24": {
+   "name": "NHL \u2014 league schedule API, 24 Oct 2026",
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+   "host": "api-web.nhle.com",
+   "read_utc": "2026-10-23T16:14:00Z",
+   "result": "ok"
+  },
+  "nhl_team": {
+   "name": "NHL \u2014 official team summary, season 20262027, regular season",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-23",
+   "host": "api-web.nhle.com",
+   "read_utc": "2026-10-23T16:17:45Z",
+   "result": "ok",
+   "note": "Team records, goals for/against, power play and penalty kill read from the NHL stats REST team-summary report (api.nhle.com/stats/rest/en/team/summary, seasonId=20262027, gameTypeId=2); the api-web standings endpoint above is the allow-listed public mirror of the same closed-system totals and carries the 16:17:45Z generation stamp."
+  },
+  "mlb_sched": {
+   "name": "MLB \u2014 Stats API schedule, World Series",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-26",
+   "host": "statsapi.mlb.com",
+   "read_utc": "2026-10-23T16:02:00Z",
+   "result": "ok"
+  },
+  "mlb_standings": {
+   "name": "MLB \u2014 Stats API final 2026 regular-season standings",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason",
+   "host": "statsapi.mlb.com",
+   "read_utc": "2026-10-23T16:22:00Z",
+   "result": "ok"
+  },
+  "el_sched": {
+   "name": "EuroLeague \u2014 official Round 7 schedule feed",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/game-center/?round=7&season=E2026",
+   "host": "www.euroleaguebasketball.net",
+   "read_utc": "2026-10-23T16:09:00Z",
+   "result": "ok",
+   "note": "Fixtures, venues and tip-off clocks read from the EuroLeague live feed api-live.euroleague.net/v1/schedules?seasonCode=E2026&gameNumber=7; the Game Center page above is the allow-listed public rendering of the same round."
+  },
+  "el_standings": {
+   "name": "EuroLeague \u2014 official standings after Round 7",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/?season=E2026",
+   "host": "www.euroleaguebasketball.net",
+   "read_utc": "2026-10-23T16:24:00Z",
+   "result": "ok",
+   "note": "Won/lost, points for, points against and differential read from api-live.euroleague.net/v1/standings?seasonCode=E2026&gameNumber=7 and checked by re-deriving every differential from its own points-for minus points-against."
+  },
+  "atp_brussels": {
+   "name": "ATP Tour \u2014 Brussels order of play, Day 7",
+   "url": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule",
+   "host": "www.atptour.com",
+   "read_utc": "2026-10-23T16:11:00Z",
+   "result": "ok"
+  },
+  "atp_lyon": {
+   "name": "ATP Tour \u2014 Lyon order of play, Day 6",
+   "url": "https://www.atptour.com/en/scores/current/lyon/496/daily-schedule",
+   "host": "www.atptour.com",
+   "read_utc": "2026-10-23T16:12:00Z",
+   "result": "ok"
+  },
+  "atp_almaty": {
+   "name": "ATP Tour \u2014 Almaty order of play, Day 7",
+   "url": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule",
+   "host": "www.atptour.com",
+   "read_utc": "2026-10-23T16:12:00Z",
+   "result": "ok"
+  },
+  "atp_rankings": {
+   "name": "ATP Tour \u2014 PIF ATP Rankings (singles)",
+   "url": "https://www.atptour.com/en/rankings/singles",
+   "host": "www.atptour.com",
+   "read_utc": "2026-10-23T16:19:00Z",
+   "result": "ok"
+  },
+  "wst_draw": {
+   "name": "World Snooker Tour \u2014 BetVictor Northern Ireland Open match list",
+   "url": "https://www.wst.tv/matches/b4533c9e-8d2c-4ecc-8dfd-c6b284705578",
+   "host": "www.wst.tv",
+   "read_utc": "2026-10-23T16:10:00Z",
+   "result": "ok"
+  },
+  "f1_event": {
+   "name": "Formula 1 \u2014 2026 United States Grand Prix event page",
+   "url": "https://www.formula1.com/en/racing/2026/united-states",
+   "host": "www.formula1.com",
+   "read_utc": "2026-10-23T16:05:00Z",
+   "result": "ok"
+  },
+  "f1_drivers": {
+   "name": "Formula 1 \u2014 2026 Drivers' Standings",
+   "url": "https://www.formula1.com/en/results/2026/drivers",
+   "host": "www.formula1.com",
+   "read_utc": "2026-10-23T16:20:00Z",
+   "result": "ok"
+  },
+  "f1_races": {
+   "name": "Formula 1 \u2014 2026 Race Results",
+   "url": "https://www.formula1.com/en/results/2026/races",
+   "host": "www.formula1.com",
+   "read_utc": "2026-10-23T16:23:00Z",
+   "result": "ok"
+  },
+  "ca_matches": {
+   "name": "Cricket Australia \u2014 live and upcoming matches",
+   "url": "https://www.cricket.com.au/matches?year=2026&isCompleted=0",
+   "host": "www.cricket.com.au",
+   "read_utc": "2026-10-23T16:25:00Z",
+   "result": "ok"
+  }
+ },
+ "blocked": [
+  {
+   "sport": "basketball",
+   "name": "NBA \u2014 live scoreboard JSON",
+   "url": "https://www.nba.com/schedule",
+   "attempted": "cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json",
+   "failure": "HTTP 500 on three separate reads (15:59Z, 16:21Z, 16:40Z)"
+  },
+  {
+   "sport": "basketball",
+   "name": "NBA \u2014 game card feed",
+   "url": "https://www.nba.com/games",
+   "attempted": "core-api.nba.com/cp/api/v1.3/feeds/gamecardfeed?gamedate=10/23/2026",
+   "failure": "HTTP 500"
+  },
+  {
+   "sport": "basketball",
+   "name": "NBA \u2014 legacy scoreboard",
+   "url": "https://www.nba.com/schedule",
+   "attempted": "data.nba.net/prod/v1/20261023/scoreboard.json",
+   "failure": "Endpoint retired; edge returns an 'Invalid URL' error document"
+  },
+  {
+   "sport": "darts",
+   "name": "PDC \u2014 2026 European Championship",
+   "url": "https://www.pdc.tv/tournaments",
+   "attempted": "https://www.pdc.tv/tournaments/2026-european-championship",
+   "failure": "Consent-wall only: every readable chunk is CookieYes vendor boilerplate, no draw or schedule content"
+  },
+  {
+   "sport": "rugby-union",
+   "name": "United Rugby Championship \u2014 fixtures",
+   "url": "https://www.unitedrugby.com/",
+   "attempted": "https://www.unitedrugby.com/fixtures and /matches",
+   "failure": "Both paths return the URC 404 template"
+  },
+  {
+   "sport": "greyhounds",
+   "name": "GBGB \u2014 race cards",
+   "url": "https://www.gbgb.org.uk/racing/",
+   "attempted": "https://www.gbgb.org.uk/race-card/",
+   "failure": "GBGB 404 template"
+  },
+  {
+   "sport": "golf",
+   "name": "PGA Tour \u2014 2026 tournament index",
+   "url": "https://www.pgatour.com/schedule",
+   "attempted": "https://www.pgatour.com/tournaments/2026",
+   "failure": "PGA Tour 'Page Not Found' template"
+  },
+  {
+   "sport": "handball",
+   "name": "LNH \u2014 Starligue calendar",
+   "url": "https://www.lnh.fr/daikin-starligue/calendrier",
+   "attempted": "https://www.lnh.fr/liqui-moly-starligue/calendrier-resultats",
+   "failure": "LNH 404 (competition was renamed Daikin StarLigue); not re-read inside the session budget"
+  },
+  {
+   "sport": "volleyball",
+   "name": "PlusLiga \u2014 fixture list",
+   "url": "https://www.plusliga.pl/games.html",
+   "attempted": "https://www.plusliga.pl/games.html",
+   "failure": "Redirects to tauronliga.pl and paginates to 16 chunks; round 23 Oct not reachable inside the session budget"
+  },
+  {
+   "sport": "rugby-league",
+   "name": "NRL / Super League fixture feeds",
+   "url": "https://www.nrl.com/draw/",
+   "attempted": "not read",
+   "failure": "OLBG published no rugby-league match cards today, so no fixture required verification"
+  }
+ ]
+}

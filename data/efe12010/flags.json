@@ -1,0 +1,1216 @@
+{
+ "desk": "efe12010",
+ "built_utc": "2026-10-23T17:05:00Z",
+ "fixture_flags": [
+  {
+   "fixture_id": "EFE-NHL-2026020167",
+   "sport": "ice-hockey",
+   "event": "Tampa Bay Lightning @ Colorado Avalanche",
+   "status": "verified",
+   "flags": [
+    "Blank total and puck line: Colorado Avalanche goals for/against unavailable from the official read."
+   ],
+   "unavailable_markets": [
+    {
+     "key": "total",
+     "label": "Game Total Goals",
+     "status": "unverified",
+     "reason": "Goals for / goals against for Colorado Avalanche were not returned in the chunk of the official team-summary report that was read, so no scoring rate can be stated without inventing one."
+    },
+    {
+     "key": "puckline",
+     "label": "Puck Line -1.5 / +1.5",
+     "status": "unverified",
+     "reason": "Depends on the same missing Colorado Avalanche scoring rates."
+    }
+   ]
+  },
+  {
+   "fixture_id": "EFE-NHL-2026020169",
+   "sport": "ice-hockey",
+   "event": "Los Angeles Kings @ New Jersey Devils",
+   "status": "verified",
+   "flags": [
+    "Price cap: the straight favourite (New Jersey Devils, -268) prices shorter than -250, so it is held at Medium and the published high-confidence selection moves to an in-band derivative."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-MLB-849805",
+   "sport": "baseball",
+   "event": "Tampa Bay Rays @ Milwaukee Brewers \u2014 World Series Game 1",
+   "status": "verified",
+   "flags": [
+    "Scoring inputs are full-season team rates. Neither probable starting pitcher nor any postseason bullpen usage was published in the endpoints read, so the run line and total are capped at Medium and carry wider uncertainty than the money line."
+   ],
+   "unavailable_markets": [
+    {
+     "key": "first_five",
+     "label": "First Five Innings",
+     "status": "unverified",
+     "reason": "Requires probable starters, which the schedule endpoint did not return."
+    }
+   ]
+  },
+  {
+   "fixture_id": "EFE-MLB-849802",
+   "sport": "baseball",
+   "event": "Tampa Bay Rays @ Milwaukee Brewers \u2014 World Series Game 2",
+   "status": "verified",
+   "flags": [
+    "Scoring inputs are full-season team rates. Neither probable starting pitcher nor any postseason bullpen usage was published in the endpoints read, so the run line and total are capped at Medium and carry wider uncertainty than the money line."
+   ],
+   "unavailable_markets": [
+    {
+     "key": "first_five",
+     "label": "First Five Innings",
+     "status": "unverified",
+     "reason": "Requires probable starters, which the schedule endpoint did not return."
+    }
+   ]
+  },
+  {
+   "fixture_id": "EFE-MLB-849804",
+   "sport": "baseball",
+   "event": "Milwaukee Brewers @ Tampa Bay Rays \u2014 World Series Game 3",
+   "status": "verified",
+   "flags": [
+    "Scoring inputs are full-season team rates. Neither probable starting pitcher nor any postseason bullpen usage was published in the endpoints read, so the run line and total are capped at Medium and carry wider uncertainty than the money line."
+   ],
+   "unavailable_markets": [
+    {
+     "key": "first_five",
+     "label": "First Five Innings",
+     "status": "unverified",
+     "reason": "Requires probable starters, which the schedule endpoint did not return."
+    }
+   ]
+  },
+  {
+   "fixture_id": "EFE-EL-E2026-R7-68",
+   "sport": "basketball",
+   "event": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "status": "verified",
+   "flags": [],
+   "unavailable_markets": [
+    {
+     "key": "player_props",
+     "label": "Player markets",
+     "status": "unverified",
+     "reason": "No player availability or rotation list was published on the feeds read."
+    }
+   ]
+  },
+  {
+   "fixture_id": "EFE-EL-E2026-R7-70",
+   "sport": "basketball",
+   "event": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "status": "verified",
+   "flags": [],
+   "unavailable_markets": [
+    {
+     "key": "player_props",
+     "label": "Player markets",
+     "status": "unverified",
+     "reason": "No player availability or rotation list was published on the feeds read."
+    }
+   ]
+  },
+  {
+   "fixture_id": "EFE-EL-E2026-R7-69",
+   "sport": "basketball",
+   "event": "Paris Basketball v Valencia Basket",
+   "status": "verified",
+   "flags": [
+    "Price cap: the straight favourite (Valencia Basket, -626) prices shorter than -250, so it is held at Medium and the published high-confidence selection moves to an in-band derivative."
+   ],
+   "unavailable_markets": [
+    {
+     "key": "player_props",
+     "label": "Player markets",
+     "status": "unverified",
+     "reason": "No player availability or rotation list was published on the feeds read."
+    }
+   ]
+  },
+  {
+   "fixture_id": "EFE-NBA-chicago-bulls-milwaukee-bucks-3e07ba35",
+   "sport": "basketball",
+   "event": "Chicago Bulls @ Milwaukee Bucks",
+   "status": "unverified",
+   "flags": [
+    "No official NBA source could be read (three endpoints returned HTTP 500 or a retired-endpoint error). Start time, venue and both team records are left blank and this fixture is not priced."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-NBA-minnesota-timberwolves-orlando-magic-73b2dd6a",
+   "sport": "basketball",
+   "event": "Minnesota Timberwolves @ Orlando Magic",
+   "status": "unverified",
+   "flags": [
+    "No official NBA source could be read (three endpoints returned HTTP 500 or a retired-endpoint error). Start time, venue and both team records are left blank and this fixture is not priced."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-NBA-houston-rockets-san-antonio-spurs-1bb13738",
+   "sport": "basketball",
+   "event": "Houston Rockets @ San Antonio Spurs",
+   "status": "unverified",
+   "flags": [
+    "No official NBA source could be read (three endpoints returned HTTP 500 or a retired-endpoint error). Start time, venue and both team records are left blank and this fixture is not priced."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-NBA-new-york-knicks-boston-celtics-1f26969d",
+   "sport": "basketball",
+   "event": "New York Knicks @ Boston Celtics",
+   "status": "unverified",
+   "flags": [
+    "No official NBA source could be read (three endpoints returned HTTP 500 or a retired-endpoint error). Start time, venue and both team records are left blank and this fixture is not priced."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-NBA-toronto-raptors-washington-wizards-aff9eee3",
+   "sport": "basketball",
+   "event": "Toronto Raptors @ Washington Wizards",
+   "status": "unverified",
+   "flags": [
+    "No official NBA source could be read (three endpoints returned HTTP 500 or a retired-endpoint error). Start time, venue and both team records are left blank and this fixture is not priced."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-NBA-dallas-mavericks-indiana-pacers-0abc15c6",
+   "sport": "basketball",
+   "event": "Dallas Mavericks @ Indiana Pacers",
+   "status": "unverified",
+   "flags": [
+    "No official NBA source could be read (three endpoints returned HTTP 500 or a retired-endpoint error). Start time, venue and both team records are left blank and this fixture is not priced."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-NBA-detroit-pistons-miami-heat-749bb52d",
+   "sport": "basketball",
+   "event": "Detroit Pistons @ Miami Heat",
+   "status": "unverified",
+   "flags": [
+    "No official NBA source could be read (three endpoints returned HTTP 500 or a retired-endpoint error). Start time, venue and both team records are left blank and this fixture is not priced."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-NBA-portland-trail-blazers-sacramento-kings-bf3c25b4",
+   "sport": "basketball",
+   "event": "Portland Trail Blazers @ Sacramento Kings",
+   "status": "unverified",
+   "flags": [
+    "No official NBA source could be read (three endpoints returned HTTP 500 or a retired-endpoint error). Start time, venue and both team records are left blank and this fixture is not priced."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-NBA-atlanta-hawks-charlotte-hornets-afe63bd7",
+   "sport": "basketball",
+   "event": "Atlanta Hawks @ Charlotte Hornets",
+   "status": "unverified",
+   "flags": [
+    "No official NBA source could be read (three endpoints returned HTTP 500 or a retired-endpoint error). Start time, venue and both team records are left blank and this fixture is not priced."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-NBA-new-orleans-pelicans-utah-jazz-187c2be1",
+   "sport": "basketball",
+   "event": "New Orleans Pelicans @ Utah Jazz",
+   "status": "unverified",
+   "flags": [
+    "No official NBA source could be read (three endpoints returned HTTP 500 or a retired-endpoint error). Start time, venue and both team records are left blank and this fixture is not priced."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-NBA-la-clippers-los-angeles-lakers-6693b3ec",
+   "sport": "basketball",
+   "event": "LA Clippers @ Los Angeles Lakers",
+   "status": "unverified",
+   "flags": [
+    "No official NBA source could be read (three endpoints returned HTTP 500 or a retired-endpoint error). Start time, venue and both team records are left blank and this fixture is not priced."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-NBA-gtk-gliwice-v-twarde-pierniki-torun-d6070baf",
+   "sport": "basketball",
+   "event": "GTK Gliwice v Twarde Pierniki Torun",
+   "status": "unverified",
+   "flags": [
+    "No official NBA source could be read (three endpoints returned HTTP 500 or a retired-endpoint error). Start time, venue and both team records are left blank and this fixture is not priced."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-ATP-BRU-S-B",
+   "sport": "tennis",
+   "event": "Jan-Lennard Struff v Zizou Bergs \u2014 Quarter-final",
+   "status": "partial",
+   "flags": [
+    "Blank price: ranking points for Jan-Lennard Struff not captured. Fixture published for completeness only.",
+    "Blank start time: the official order of play lists this match as 'Followed By' / not yet scheduled, so no UTC instant is published."
+   ],
+   "unavailable_markets": [
+    {
+     "key": "winner",
+     "label": "Win Match",
+     "status": "unverified",
+     "reason": "No PIF ATP ranking points were captured for Jan-Lennard Struff in the pages read, so no price can be stated."
+    }
+   ]
+  },
+  {
+   "fixture_id": "EFE-ATP-LYO-V-M",
+   "sport": "tennis",
+   "event": "Luca Van Assche v Lorenzo Musetti \u2014 Quarter-final",
+   "status": "verified",
+   "flags": [
+    "Blank start time: the official order of play lists this match as 'Followed By' / not yet scheduled, so no UTC instant is published."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-ATP-ALM-B-T",
+   "sport": "tennis",
+   "event": "Nikoloz Basilashvili v Stefanos Tsitsipas \u2014 Semi-final",
+   "status": "partial",
+   "flags": [
+    "Blank price: ranking points for Nikoloz Basilashvili not captured. Fixture published for completeness only.",
+    "Blank start time: the official order of play lists this match as 'Followed By' / not yet scheduled, so no UTC instant is published."
+   ],
+   "unavailable_markets": [
+    {
+     "key": "winner",
+     "label": "Win Match",
+     "status": "unverified",
+     "reason": "No PIF ATP ranking points were captured for Nikoloz Basilashvili in the pages read, so no price can be stated."
+    }
+   ]
+  },
+  {
+   "fixture_id": "EFE-WST-NIO-M59",
+   "sport": "snooker",
+   "event": "David Gilbert v Mark Williams \u2014 Match 59 \u00b7 Quarter-final (best of 11)",
+   "status": "verified",
+   "flags": [
+    "Price cap: the straight favourite (Mark Williams, -266) prices shorter than -250, so it is held at Medium and the published high-confidence selection moves to an in-band derivative."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-WST-NIO-M60",
+   "sport": "snooker",
+   "event": "Jak Jones v Scott Donaldson \u2014 Match 60 \u00b7 Quarter-final (best of 11)",
+   "status": "verified",
+   "flags": [
+    "Uneven evidence window: one player's earlier-round frame line was not captured in the page read, so the frame prior carries more weight on that side. Disclosed rather than back-filled."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-F1-USA-2026",
+   "sport": "motor-racing",
+   "event": "FORMULA 1 MSC CRUISES UNITED STATES GRAND PRIX 2026",
+   "status": "verified",
+   "flags": [
+    "Only an eight-driver field is priced \u2014 the official standings page was read down to eighth place. Drivers outside the top eight are not given a price rather than being assigned a guessed one.",
+    "No qualifying result exists yet (qualifying is 2026-10-24T21:00:00Z), so grid position is absent from every price here."
+   ],
+   "unavailable_markets": [
+    {
+     "key": "fastest_qualifier",
+     "label": "Fastest Qualifier",
+     "status": "unverified",
+     "reason": "Qualifying has not run and no official session timing exists yet."
+    },
+    {
+     "key": "fastest_lap",
+     "label": "Fastest Lap",
+     "status": "unverified",
+     "reason": "No official 2026 fastest-lap-by-race table was read."
+    }
+   ]
+  },
+  {
+   "fixture_id": "EFE-CR-CA40681",
+   "sport": "cricket",
+   "event": "Tasmanian Tigers v Victoria",
+   "status": "partial",
+   "flags": [
+    "Fixture confirmed, pricing withheld: the Cricket Australia matches index publishes the schedule but no squad, form or ladder figures, and no separate official standings page was read inside the session budget. Leaving every market blank is the correct outcome rather than estimating one."
+   ],
+   "unavailable_markets": [
+    {
+     "key": "winner",
+     "label": "Win Match",
+     "status": "unverified",
+     "reason": "No official team form, ladder or squad data was obtained."
+    },
+    {
+     "key": "total",
+     "label": "Match Total Runs",
+     "status": "unverified",
+     "reason": "No official scoring rates for either side were obtained."
+    }
+   ]
+  },
+  {
+   "fixture_id": "EFE-CR-CA40683",
+   "sport": "cricket",
+   "event": "Western Australia v New South Wales",
+   "status": "partial",
+   "flags": [
+    "Fixture confirmed, pricing withheld: the Cricket Australia matches index publishes the schedule but no squad, form or ladder figures, and no separate official standings page was read inside the session budget. Leaving every market blank is the correct outcome rather than estimating one."
+   ],
+   "unavailable_markets": [
+    {
+     "key": "winner",
+     "label": "Win Match",
+     "status": "unverified",
+     "reason": "No official team form, ladder or squad data was obtained."
+    },
+    {
+     "key": "total",
+     "label": "Match Total Runs",
+     "status": "unverified",
+     "reason": "No official scoring rates for either side were obtained."
+    }
+   ]
+  },
+  {
+   "fixture_id": "EFE-CR-CA41095",
+   "sport": "cricket",
+   "event": "New Zealand v India \u2014 2nd T20I",
+   "status": "partial",
+   "flags": [
+    "Fixture confirmed, pricing withheld: the Cricket Australia matches index publishes the schedule but no squad, form or ladder figures, and no separate official standings page was read inside the session budget. Leaving every market blank is the correct outcome rather than estimating one."
+   ],
+   "unavailable_markets": [
+    {
+     "key": "winner",
+     "label": "Win Match",
+     "status": "unverified",
+     "reason": "No official team form, ladder or squad data was obtained."
+    },
+    {
+     "key": "total",
+     "label": "Match Total Runs",
+     "status": "unverified",
+     "reason": "No official scoring rates for either side were obtained."
+    }
+   ]
+  },
+  {
+   "fixture_id": "EFE-CR-CA40981",
+   "sport": "cricket",
+   "event": "Pakistan v England",
+   "status": "partial",
+   "flags": [
+    "Fixture confirmed, pricing withheld: the Cricket Australia matches index publishes the schedule but no squad, form or ladder figures, and no separate official standings page was read inside the session budget. Leaving every market blank is the correct outcome rather than estimating one."
+   ],
+   "unavailable_markets": [
+    {
+     "key": "winner",
+     "label": "Win Match",
+     "status": "unverified",
+     "reason": "No official team form, ladder or squad data was obtained."
+    },
+    {
+     "key": "total",
+     "label": "Match Total Runs",
+     "status": "unverified",
+     "reason": "No official scoring rates for either side were obtained."
+    }
+   ]
+  },
+  {
+   "fixture_id": "EFE-CR-CA41097",
+   "sport": "cricket",
+   "event": "New Zealand v India \u2014 3rd T20I",
+   "status": "partial",
+   "flags": [
+    "Fixture confirmed, pricing withheld: the Cricket Australia matches index publishes the schedule but no squad, form or ladder figures, and no separate official standings page was read inside the session budget. Leaving every market blank is the correct outcome rather than estimating one."
+   ],
+   "unavailable_markets": [
+    {
+     "key": "winner",
+     "label": "Win Match",
+     "status": "unverified",
+     "reason": "No official team form, ladder or squad data was obtained."
+    },
+    {
+     "key": "total",
+     "label": "Match Total Runs",
+     "status": "unverified",
+     "reason": "No official scoring rates for either side were obtained."
+    }
+   ]
+  },
+  {
+   "fixture_id": "EFE-DSC-darts-jonny-clayton-v-niko-springer-24da5ec0",
+   "sport": "darts",
+   "event": "Jonny Clayton v Niko Springer",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. PDC \u2014 pdc.tv serves only a CookieYes consent document on every readable chunk of the 2026 European Championship page, so neither the draw nor the session times could be confirmed."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-darts-jermaine-wattimena-v-ryan-joyce-27a566f0",
+   "sport": "darts",
+   "event": "Jermaine Wattimena v Ryan Joyce",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. PDC \u2014 pdc.tv serves only a CookieYes consent document on every readable chunk of the 2026 European Championship page, so neither the draw nor the session times could be confirmed."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-darts-gian-van-veen-v-ricardo-pietreczko-4f8c115a",
+   "sport": "darts",
+   "event": "Gian van Veen v Ricardo Pietreczko",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. PDC \u2014 pdc.tv serves only a CookieYes consent document on every readable chunk of the 2026 European Championship page, so neither the draw nor the session times could be confirmed."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-darts-wessel-nijman-v-martin-schindler-446785df",
+   "sport": "darts",
+   "event": "Wessel Nijman v Martin Schindler",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. PDC \u2014 pdc.tv serves only a CookieYes consent document on every readable chunk of the 2026 European Championship page, so neither the draw nor the session times could be confirmed."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-darts-krzysztof-ratajski-v-dave-chisnall-ccd66dda",
+   "sport": "darts",
+   "event": "Krzysztof Ratajski v Dave Chisnall",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. PDC \u2014 pdc.tv serves only a CookieYes consent document on every readable chunk of the 2026 European Championship page, so neither the draw nor the session times could be confirmed."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-darts-nathan-aspinall-v-cristo-reyes-acc22fa9",
+   "sport": "darts",
+   "event": "Nathan Aspinall v Cristo Reyes",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. PDC \u2014 pdc.tv serves only a CookieYes consent document on every readable chunk of the 2026 European Championship page, so neither the draw nor the session times could be confirmed."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-darts-luke-littler-v-mickey-mansell-5b91505a",
+   "sport": "darts",
+   "event": "Luke Littler v Mickey Mansell",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. PDC \u2014 pdc.tv serves only a CookieYes consent document on every readable chunk of the 2026 European Championship page, so neither the draw nor the session times could be confirmed."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-darts-jelle-klaasen-v-michael-van-gerwen-baab34a1",
+   "sport": "darts",
+   "event": "Jelle Klaasen v Michael van Gerwen",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. PDC \u2014 pdc.tv serves only a CookieYes consent document on every readable chunk of the 2026 European Championship page, so neither the draw nor the session times could be confirmed."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-darts-josh-rock-v-chris-dobey-b20bc2a4",
+   "sport": "darts",
+   "event": "Josh Rock v Chris Dobey",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. PDC \u2014 pdc.tv serves only a CookieYes consent document on every readable chunk of the 2026 European Championship page, so neither the draw nor the session times could be confirmed."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-darts-outright-win-tournament-4a84012f",
+   "sport": "darts",
+   "event": "Outright \u2014 Win Tournament",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. PDC \u2014 pdc.tv serves only a CookieYes consent document on every readable chunk of the 2026 European Championship page, so neither the draw nor the session times could be confirmed."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-darts-outright-win-tournament-8fb695e2",
+   "sport": "darts",
+   "event": "Outright \u2014 Win Tournament",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. PDC \u2014 pdc.tv serves only a CookieYes consent document on every readable chunk of the 2026 European Championship page, so neither the draw nor the session times could be confirmed."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-union-aurillac-v-nevers-729fd524",
+   "sport": "rugby-union",
+   "event": "Aurillac v Nevers",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. United Rugby Championship, LNR Pro D2 and Premiership Rugby fixture pages either 404 or were not reachable inside the session budget."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-union-agen-v-nissa-378a92ff",
+   "sport": "rugby-union",
+   "event": "Agen v Nissa",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. United Rugby Championship, LNR Pro D2 and Premiership Rugby fixture pages either 404 or were not reachable inside the session budget."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-union-narbonne-v-brive-4b3d8f6e",
+   "sport": "rugby-union",
+   "event": "Narbonne v Brive",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. United Rugby Championship, LNR Pro D2 and Premiership Rugby fixture pages either 404 or were not reachable inside the session budget."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-union-soyaux-angouleme-v-dax-d1f02d05",
+   "sport": "rugby-union",
+   "event": "Soyaux Angouleme v Dax",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. United Rugby Championship, LNR Pro D2 and Premiership Rugby fixture pages either 404 or were not reachable inside the session budget."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-union-valence-romans-v-colomiers-ac13b41f",
+   "sport": "rugby-union",
+   "event": "Valence Romans v Colomiers",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. United Rugby Championship, LNR Pro D2 and Premiership Rugby fixture pages either 404 or were not reachable inside the session budget."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-union-provence-v-beziers-8f11f3fe",
+   "sport": "rugby-union",
+   "event": "Provence v Beziers",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. United Rugby Championship, LNR Pro D2 and Premiership Rugby fixture pages either 404 or were not reachable inside the session budget."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-union-grenoble-v-biarritz-48f6ce74",
+   "sport": "rugby-union",
+   "event": "Grenoble v Biarritz",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. United Rugby Championship, LNR Pro D2 and Premiership Rugby fixture pages either 404 or were not reachable inside the session budget."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-union-connacht-v-zebre-6ab22b60",
+   "sport": "rugby-union",
+   "event": "Connacht v Zebre",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. United Rugby Championship, LNR Pro D2 and Premiership Rugby fixture pages either 404 or were not reachable inside the session budget."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-union-edinburgh-v-lions-f71410a2",
+   "sport": "rugby-union",
+   "event": "Edinburgh v Lions",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. United Rugby Championship, LNR Pro D2 and Premiership Rugby fixture pages either 404 or were not reachable inside the session budget."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-union-cardiff-v-sharks-c315c9a2",
+   "sport": "rugby-union",
+   "event": "Cardiff v Sharks",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. United Rugby Championship, LNR Pro D2 and Premiership Rugby fixture pages either 404 or were not reachable inside the session budget."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-union-bulls-v-ulster-dc84cee5",
+   "sport": "rugby-union",
+   "event": "Bulls v Ulster",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. United Rugby Championship, LNR Pro D2 and Premiership Rugby fixture pages either 404 or were not reachable inside the session budget."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-union-stormers-v-scarlets-d69d4e90",
+   "sport": "rugby-union",
+   "event": "Stormers v Scarlets",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. United Rugby Championship, LNR Pro D2 and Premiership Rugby fixture pages either 404 or were not reachable inside the session budget."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-union-gloucester-v-bath-f4ab6881",
+   "sport": "rugby-union",
+   "event": "Gloucester v Bath",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. United Rugby Championship, LNR Pro D2 and Premiership Rugby fixture pages either 404 or were not reachable inside the session budget."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-union-newcastle-red-bulls-v-sale-02ab4903",
+   "sport": "rugby-union",
+   "event": "Newcastle Red Bulls v Sale",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. United Rugby Championship, LNR Pro D2 and Premiership Rugby fixture pages either 404 or were not reachable inside the session budget."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-union-japan-v-fiji-ca865a4b",
+   "sport": "rugby-union",
+   "event": "Japan v Fiji",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. United Rugby Championship, LNR Pro D2 and Premiership Rugby fixture pages either 404 or were not reachable inside the session budget."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-league-outright-series-winner-f1955488",
+   "sport": "rugby-league",
+   "event": "Outright \u2014 Series Winner",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. OLBG published no rugby-league match cards today \u2014 only three ante-post outrights \u2014 so there was no fixture to confirm."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-league-outright-grand-final-winner-5a16d1b6",
+   "sport": "rugby-league",
+   "event": "Outright \u2014 Grand Final Winner",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. OLBG published no rugby-league match cards today \u2014 only three ante-post outrights \u2014 so there was no fixture to confirm."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-rugby-league-outright-grand-final-winner-caa28a16",
+   "sport": "rugby-league",
+   "event": "Outright \u2014 Grand Final Winner",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. OLBG published no rugby-league match cards today \u2014 only three ante-post outrights \u2014 so there was no fixture to confirm."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-handball-pays-d-aix-v-toulouse-3bbc797e",
+   "sport": "handball",
+   "event": "Pays d'Aix v Toulouse",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. The LNH competition was renamed Daikin StarLigue and the old calendar path 404s; no handball governing-body page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-handball-limoges-v-dunkerque-75074a4f",
+   "sport": "handball",
+   "event": "Limoges v Dunkerque",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. The LNH competition was renamed Daikin StarLigue and the old calendar path 404s; no handball governing-body page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-handball-chartres-v-nimes-e7c0b001",
+   "sport": "handball",
+   "event": "Chartres v Nimes",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. The LNH competition was renamed Daikin StarLigue and the old calendar path 404s; no handball governing-body page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-handball-selestat-v-caen-8817ae8c",
+   "sport": "handball",
+   "event": "Selestat v Caen",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. The LNH competition was renamed Daikin StarLigue and the old calendar path 404s; no handball governing-body page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-handball-tremblay-v-cesson-a44515a7",
+   "sport": "handball",
+   "event": "Tremblay v Cesson",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. The LNH competition was renamed Daikin StarLigue and the old calendar path 404s; no handball governing-body page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-handball-frisch-auf-goppingen-v-eisenach-ad78c331",
+   "sport": "handball",
+   "event": "Frisch Auf Goppingen v Eisenach",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. The LNH competition was renamed Daikin StarLigue and the old calendar path 404s; no handball governing-body page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-handball-hannover-burgdorf-v-lemgo-5001b668",
+   "sport": "handball",
+   "event": "Hannover-Burgdorf v Lemgo",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. The LNH competition was renamed Daikin StarLigue and the old calendar path 404s; no handball governing-body page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-handball-erlangen-v-thw-kiel-d466af49",
+   "sport": "handball",
+   "event": "Erlangen v THW Kiel",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. The LNH competition was renamed Daikin StarLigue and the old calendar path 404s; no handball governing-body page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-handball-bidasoa-irun-v-ciudad-real-baae5c29",
+   "sport": "handball",
+   "event": "Bidasoa Irun v Ciudad Real",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. The LNH competition was renamed Daikin StarLigue and the old calendar path 404s; no handball governing-body page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-handball-barcelona-v-ciudad-encantada-24951a79",
+   "sport": "handball",
+   "event": "Barcelona v Ciudad Encantada",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. The LNH competition was renamed Daikin StarLigue and the old calendar path 404s; no handball governing-body page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-handball-grk-ohrid-v-spor-toto-2396137b",
+   "sport": "handball",
+   "event": "GRK Ohrid v Spor Toto",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. The LNH competition was renamed Daikin StarLigue and the old calendar path 404s; no handball governing-body page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-handball-estonia-w-v-kosovo-w-d55bbabf",
+   "sport": "handball",
+   "event": "Estonia W v Kosovo W",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. The LNH competition was renamed Daikin StarLigue and the old calendar path 404s; no handball governing-body page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-volleyball-volley-goats-v-netzhoppers-fcd88821",
+   "sport": "volleyball",
+   "event": "VOLLEY GOATS v Netzhoppers",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. plusliga.pl redirects to tauronliga.pl and paginates past the session budget; no volleyball federation page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-volleyball-pge-giek-skra-belchatow-v-pge-projekt-wa-382692d8",
+   "sport": "volleyball",
+   "event": "PGE GiEK Skra Belchatow v PGE Projekt Warszawa",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. plusliga.pl redirects to tauronliga.pl and paginates past the session budget; no volleyball federation page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-volleyball-chelm-v-asseco-resovia-92d4a952",
+   "sport": "volleyball",
+   "event": "Chelm v Asseco Resovia",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. plusliga.pl redirects to tauronliga.pl and paginates past the session budget; no volleyball federation page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-volleyball-trentino-v-cisterna-318a281d",
+   "sport": "volleyball",
+   "event": "Trentino v Cisterna",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. plusliga.pl redirects to tauronliga.pl and paginates past the session budget; no volleyball federation page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-volleyball-perugia-v-pordenone-d64bf000",
+   "sport": "volleyball",
+   "event": "Perugia v Pordenone",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. plusliga.pl redirects to tauronliga.pl and paginates past the session budget; no volleyball federation page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-volleyball-superliga-feminina-card-4-fixtures-872a7e92",
+   "sport": "volleyball",
+   "event": "Superliga Feminina card \u2014 4 fixtures",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. plusliga.pl redirects to tauronliga.pl and paginates past the session budget; no volleyball federation page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-volleyball-avl-card-3-fixtures-c5156a35",
+   "sport": "volleyball",
+   "event": "AVL card \u2014 3 fixtures",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. plusliga.pl redirects to tauronliga.pl and paginates past the session budget; no volleyball federation page was read."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-golf-no-tips-found-f0d50a05",
+   "sport": "golf",
+   "event": "No tips found.",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. OLBG returned 'No tips found.' on every golf hub, and the PGA Tour 2026 tournament index path 404s. Nothing to price and nothing to confirm."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-gaelic-st-finbarr-s-v-nemo-rangers-c6dfd03e",
+   "sport": "gaelic",
+   "event": "St Finbarr's v Nemo Rangers",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. No county-board fixture page was read; the Cork and Galway championship ties discovered on OLBG are two days out."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-gaelic-moycullen-v-salthill-knocknacarra-e3421b6c",
+   "sport": "gaelic",
+   "event": "Moycullen v Salthill-Knocknacarra",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. No county-board fixture page was read; the Cork and Galway championship ties discovered on OLBG are two days out."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-gaelic-kanturk-v-eire-og-33495387",
+   "sport": "gaelic",
+   "event": "Kanturk v Eire Og",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. No county-board fixture page was read; the Cork and Galway championship ties discovered on OLBG are two days out."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-gaelic-fr-caseys-v-kildimo-pallaskenry-f3d26867",
+   "sport": "gaelic",
+   "event": "Fr Caseys v Kildimo-Pallaskenry",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. No county-board fixture page was read; the Cork and Galway championship ties discovered on OLBG are two days out."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-gaelic-outright-win-tournament-63e5866c",
+   "sport": "gaelic",
+   "event": "Outright \u2014 Win Tournament",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. No county-board fixture page was read; the Cork and Galway championship ties discovered on OLBG are two days out."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-greyhounds-graded-card-incl-5-12-expired-at-read-ti-55805413",
+   "sport": "greyhounds",
+   "event": "Graded card (incl. 5:12 \u2014 Expired at read time)",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. gbgb.org.uk/race-card/ returns the GBGB 404 template, so no runner, trap or grade data could be obtained for any of the eight cards."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-greyhounds-graded-card-f8adf8a8",
+   "sport": "greyhounds",
+   "event": "Graded card",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. gbgb.org.uk/race-card/ returns the GBGB 404 template, so no runner, trap or grade data could be obtained for any of the eight cards."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-greyhounds-graded-card-603c1e38",
+   "sport": "greyhounds",
+   "event": "Graded card",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. gbgb.org.uk/race-card/ returns the GBGB 404 template, so no runner, trap or grade data could be obtained for any of the eight cards."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-greyhounds-graded-card-26d0f9bf",
+   "sport": "greyhounds",
+   "event": "Graded card",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. gbgb.org.uk/race-card/ returns the GBGB 404 template, so no runner, trap or grade data could be obtained for any of the eight cards."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-greyhounds-graded-card-213c5c8a",
+   "sport": "greyhounds",
+   "event": "Graded card",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. gbgb.org.uk/race-card/ returns the GBGB 404 template, so no runner, trap or grade data could be obtained for any of the eight cards."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-greyhounds-graded-card-222c2851",
+   "sport": "greyhounds",
+   "event": "Graded card",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. gbgb.org.uk/race-card/ returns the GBGB 404 template, so no runner, trap or grade data could be obtained for any of the eight cards."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-greyhounds-graded-card-4c14979b",
+   "sport": "greyhounds",
+   "event": "Graded card",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. gbgb.org.uk/race-card/ returns the GBGB 404 template, so no runner, trap or grade data could be obtained for any of the eight cards."
+   ],
+   "unavailable_markets": []
+  },
+  {
+   "fixture_id": "EFE-DSC-greyhounds-graded-card-ba0ddec7",
+   "sport": "greyhounds",
+   "event": "Graded card",
+   "status": "unverified",
+   "flags": [
+    "Unverified \u2014 official source unavailable. gbgb.org.uk/race-card/ returns the GBGB 404 template, so no runner, trap or grade data could be obtained for any of the eight cards."
+   ],
+   "unavailable_markets": []
+  }
+ ],
+ "blocked_sources": [
+  {
+   "sport": "basketball",
+   "name": "NBA \u2014 live scoreboard JSON",
+   "url": "https://www.nba.com/schedule",
+   "attempted": "cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json",
+   "failure": "HTTP 500 on three separate reads (15:59Z, 16:21Z, 16:40Z)"
+  },
+  {
+   "sport": "basketball",
+   "name": "NBA \u2014 game card feed",
+   "url": "https://www.nba.com/games",
+   "attempted": "core-api.nba.com/cp/api/v1.3/feeds/gamecardfeed?gamedate=10/23/2026",
+   "failure": "HTTP 500"
+  },
+  {
+   "sport": "basketball",
+   "name": "NBA \u2014 legacy scoreboard",
+   "url": "https://www.nba.com/schedule",
+   "attempted": "data.nba.net/prod/v1/20261023/scoreboard.json",
+   "failure": "Endpoint retired; edge returns an 'Invalid URL' error document"
+  },
+  {
+   "sport": "darts",
+   "name": "PDC \u2014 2026 European Championship",
+   "url": "https://www.pdc.tv/tournaments",
+   "attempted": "https://www.pdc.tv/tournaments/2026-european-championship",
+   "failure": "Consent-wall only: every readable chunk is CookieYes vendor boilerplate, no draw or schedule content"
+  },
+  {
+   "sport": "rugby-union",
+   "name": "United Rugby Championship \u2014 fixtures",
+   "url": "https://www.unitedrugby.com/",
+   "attempted": "https://www.unitedrugby.com/fixtures and /matches",
+   "failure": "Both paths return the URC 404 template"
+  },
+  {
+   "sport": "greyhounds",
+   "name": "GBGB \u2014 race cards",
+   "url": "https://www.gbgb.org.uk/racing/",
+   "attempted": "https://www.gbgb.org.uk/race-card/",
+   "failure": "GBGB 404 template"
+  },
+  {
+   "sport": "golf",
+   "name": "PGA Tour \u2014 2026 tournament index",
+   "url": "https://www.pgatour.com/schedule",
+   "attempted": "https://www.pgatour.com/tournaments/2026",
+   "failure": "PGA Tour 'Page Not Found' template"
+  },
+  {
+   "sport": "handball",
+   "name": "LNH \u2014 Starligue calendar",
+   "url": "https://www.lnh.fr/daikin-starligue/calendrier",
+   "attempted": "https://www.lnh.fr/liqui-moly-starligue/calendrier-resultats",
+   "failure": "LNH 404 (competition was renamed Daikin StarLigue); not re-read inside the session budget"
+  },
+  {
+   "sport": "volleyball",
+   "name": "PlusLiga \u2014 fixture list",
+   "url": "https://www.plusliga.pl/games.html",
+   "attempted": "https://www.plusliga.pl/games.html",
+   "failure": "Redirects to tauronliga.pl and paginates to 16 chunks; round 23 Oct not reachable inside the session budget"
+  },
+  {
+   "sport": "rugby-league",
+   "name": "NRL / Super League fixture feeds",
+   "url": "https://www.nrl.com/draw/",
+   "attempted": "not read",
+   "failure": "OLBG published no rugby-league match cards today, so no fixture required verification"
+  }
+ ],
+ "elapsed_at_harvest": [
+  {
+   "sport": "tennis",
+   "detail": "Brussels QF \u2014 Francisco Cerundolo def. Clement Chidekh 6-2 6-4",
+   "source": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule"
+  },
+  {
+   "sport": "tennis",
+   "detail": "Brussels QF \u2014 Tallon Griekspoor v Jiri Lehecka (in play at read time)",
+   "source": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule"
+  },
+  {
+   "sport": "tennis",
+   "detail": "Lyon QF \u2014 Tommy Paul def. Corentin Moutet 6-4 3-6 6-3",
+   "source": "https://www.atptour.com/en/scores/current/lyon/496/daily-schedule"
+  },
+  {
+   "sport": "tennis",
+   "detail": "Lyon QF \u2014 Daniel Altmaier v Taylor Fritz (in play at read time)",
+   "source": "https://www.atptour.com/en/scores/current/lyon/496/daily-schedule"
+  },
+  {
+   "sport": "tennis",
+   "detail": "Almaty QF \u2014 Daniil Medvedev def. Terence Atmane 6-4 6-4",
+   "source": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule"
+  },
+  {
+   "sport": "tennis",
+   "detail": "Almaty QF \u2014 Nikoloz Basilashvili def. Adrian Mannarino 6-3 6-1",
+   "source": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule"
+  },
+  {
+   "sport": "tennis",
+   "detail": "Almaty QF \u2014 Stefanos Tsitsipas def. James Duckworth 6-3 6-4",
+   "source": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule"
+  },
+  {
+   "sport": "tennis",
+   "detail": "Almaty QF \u2014 Alexander Bublik v Karen Khachanov (in play at read time)",
+   "source": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule"
+  },
+  {
+   "sport": "snooker",
+   "detail": "NI Open QF \u2014 Kyren Wilson 6-1 Anthony McGill",
+   "source": "https://www.wst.tv/matches/b4533c9e-8d2c-4ecc-8dfd-c6b284705578"
+  },
+  {
+   "sport": "snooker",
+   "detail": "NI Open QF \u2014 Sam Craigie 6-2 Elliot Slessor",
+   "source": "https://www.wst.tv/matches/b4533c9e-8d2c-4ecc-8dfd-c6b284705578"
+  },
+  {
+   "sport": "motor-racing",
+   "detail": "United States GP \u2014 Practice 1 (13:30 local, 17:30Z)",
+   "source": "https://www.formula1.com/en/racing/2026/united-states"
+  },
+  {
+   "sport": "greyhounds",
+   "detail": "Towcester 5:12 \u2014 shown Expired on the OLBG card at read time",
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-23"
+  }
+ ]
+}
