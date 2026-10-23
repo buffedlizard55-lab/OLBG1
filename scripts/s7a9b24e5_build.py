@@ -63,43 +63,62 @@ def fmt_am(a: int) -> str:
     return f"+{a}" if a > 0 else str(a)
 
 
+def _line_kind(v: float) -> str:
+    if abs(v - round(v)) < 1e-9:
+        return "whole"
+    if abs(v * 2 - round(v * 2)) < 1e-9:
+        return "half"
+    return "quarter"
+
+
 def settlement(market: str, selection: str, line) -> str:
+    """Plain-English settlement note for a whole-, half- or quarter-point line."""
     if line is None:
-        if market == "Match Winner":
-            return f"{selection} must win the match."
-        return ""
-    if market.startswith("Team Total"):
-        side = "score at least"
-        n = line
-        if abs(n * 4 - round(n * 4)) < 1e-9 and abs(n * 2 - round(n * 2)) > 1e-9:
-            lo = math.floor(n)
-            return (f"{selection.split(' Over ')[0]} {side} {lo + 1} goals to win outright; "
-                    f"exactly {lo} returns half the stake.")
-        if abs(n - round(n)) < 1e-9:
-            return f"{selection.split(' Over ')[0]} {side} {int(n) + 1} goals; exactly {int(n)} is a push."
-        return f"{selection.split(' Over ')[0]} {side} {math.ceil(n)} goals."
-    if market.startswith("Match Total"):
-        over = selection.startswith("Over")
-        word = "more than" if over else "fewer than"
-        if abs(line * 2 - round(line * 2)) > 1e-9:
-            lo = math.floor(line)
-            return (f"{'Over' if over else 'Under'} needs {'7+' if over else '6 or fewer'} runs at this quarter line; "
-                    f"exactly {lo} returns half the stake.")
-        return f"Total runs must be {word} {line:g}."
+        return f"{selection} must win the match." if market == "Match Winner" else ""
+    v = float(line)
+    kind = _line_kind(v)
+
+    if market.startswith("Team Total") or market.startswith("Match Total"):
+        over = selection.startswith("Over") or " Over " in selection
+        team = selection.split(" Over ")[0] if " Over " in selection else None
+        unit = "goals" if market.startswith("Team Total") else "runs"
+        head = f"{team} over {v:g} {unit}" if team else f"{'Over' if over else 'Under'} {v:g} {unit}"
+        if kind == "whole":
+            n = int(round(v))
+            body = (f"{n + 1}+ wins; exactly {n} is a push." if over
+                    else f"{n - 1} or fewer wins; exactly {n} is a push.")
+        elif kind == "half":
+            n = math.floor(v)
+            body = f"{n + 1}+ wins." if over else f"{n} or fewer wins."
+        else:
+            lo = math.floor(v)
+            body = (f"{lo + 1}+ wins in full; exactly {lo} returns half the stake." if over
+                    else f"{lo - 1} or fewer wins in full; exactly {lo} returns half the stake.")
+        return f"{head}: {body}"
+
     if market.startswith("Handicap"):
         team, _, ln = selection.rpartition(" ")
-        try:
-            v = float(ln)
-        except ValueError:
-            return ""
+        if kind == "whole":
+            n = int(abs(round(v)))
+            if v < 0:
+                return f"{team} must win by {n + 1} or more; a win by exactly {n} is a push."
+            return (f"{team} must win the match." if n == 0 else
+                    f"{team} are paid if they lose by {n - 1} or fewer, draw or win; a {n}-point defeat is a push.")
+        if kind == "half":
+            n = math.floor(abs(v))
+            if v < 0:
+                return f"{team} must win by {n + 1} or more."
+            return (f"{team} must win the match; overtime and a shootout both count." if n == 0 else
+                    f"{team} are paid if they lose by {n} or fewer, draw or win.")
+        a, b = v - 0.25, v + 0.25
         if v < 0:
-            need = abs(v)
-            if abs(need - round(need)) < 1e-9:
-                return f"{team} must win by {int(need) + 1} or more; a {int(need)}-point win is a push."
-            return f"{team} must win by {math.ceil(need)} or more."
-        if abs(v - round(v)) < 1e-9:
-            return f"{team} covers if they lose by {int(v) - 1} or fewer, draw or win; a {int(v)}-point defeat is a push."
-        return f"{team} covers if they lose by {math.floor(v)} or fewer, draw or win."
+            k = math.floor(abs(a))
+            return (f"Split line, half the stake at {a:+g} and half at {b:+g}: {team} are paid in full if they win by "
+                    f"{k + 1} or more; a win by exactly {k} wins the {b:+g} half and pushes the {a:+g} half.")
+        k = math.floor(abs(a))
+        full = "win or draw" if k - 1 == 0 else f"lose by {k - 1} or fewer, draw or win"
+        return (f"Split line, half the stake at {a:+g} and half at {b:+g}: {team} are paid in full if they {full}; "
+                f"a {k}-point defeat wins the {b:+g} half and pushes the {a:+g} half.")
     return ""
 
 
@@ -310,7 +329,7 @@ only list half-point lines.</p>
 −250 (a probability of 71.43%). Evidence grade is our own disclosure: <b>A</b> = a full-season record, <b>B</b> = 3–12 games or
 league-table points difference, <b>C</b> = a single round (none of today's promoted picks is grade C).</p>
 {table(["Pick", "Sport", "Fixture", "Start (UTC)", "Selection", "What has to happen", "Probability", "Fair price", "Evidence", "Detail"], rows)}
-<p class="muted">All twelve prices expire at the earliest kick-off or at {EV_EXPIRY}, whichever comes first.</p>
+<p class="muted">All {len(picks)} prices expire at the earliest kick-off or at {EV_EXPIRY}, whichever comes first.</p>
 """
     (OUT / "high-confidence.html").write_text(layout("High-confidence picks", body, "high-confidence.html"), encoding="utf-8")
 
