@@ -100,8 +100,8 @@ out-of-window** picks, plus **26 medium watchlist** rows, with the per-sport sho
 
 | Gate | Result |
 |---|---|
-| `python3 scripts/s6b47ea39_validate.py` | **PASSED** — 26 pages, 29 picks, 29 predictions, 13 flags; every relative link resolves |
-| `python3 -m unittest tests.pipeline.test_desk_6b47ea39` | **11 tests OK** |
+| `python3 scripts/s6b47ea39_validate.py` | **PASSED** — 26 pages, 29 picks, 29 predictions, 14 flags; every relative link resolves |
+| `python3 -m unittest tests.pipeline.test_desk_6b47ea39` | **15 tests OK** |
 | `python3 -m unittest discover -s tests -p 'test*.py'` | **38 tests OK** |
 | `python3 -m pipeline.validate --site .` | **0 errors** |
 | `python3 scripts/validate.py` | **0 errors** (3 pre-existing `f7fa77fc` warnings) |
@@ -114,3 +114,32 @@ out-of-window** picks, plus **26 medium watchlist** rows, with the per-sport sho
 * Fixture facts are inherited; a human should re-open the linked official page before acting on any row.
 * The five-per-sport target is **not** met: 29 High picks, with Greyhounds at zero. The gap is registered on the
   picks page with the rule that caused it rather than filled with invented numbers.
+
+## 10. Post-publication follow-ups (same branch, separate PRs)
+
+Published work was never force-pushed; every change below is its own pull request.
+
+| PR | What changed | Merge |
+|---|---|---|
+| #202 | readable `over`/`under` selections; executive summary sorted by start time; new gate that each write-up names its own selection | `32057dc` |
+| #207 | publication receipts for #198/#202 in `COORDINATION.md` §77.3 | `a12d632` |
+| #210 | corrected F04: the 70–72% clustering is one desk repeating itself, not two desks agreeing | merged |
+| #213 | **price-independence audit** (see below) plus *Where the prices come from* table and a corroboration row on the method page | `0a2f508` |
+| #217 | compact executive summary: picks first, unpicked fixtures collapsed to a single line | `bf987cc` |
+| #221 | readable selections in the executive summary and watchlist (they had regressed to bare `over`/`under`) | `2348b10` |
+| #224 | per-sport shortfall reasons computed from that sport's own rejections, replacing one boilerplate paragraph; `R4 below 60%` renamed to `R4 below 70%` | merged |
+
+### The price-independence finding (PR #213)
+
+Re-counting the three retained price files, line by line:
+
+* `8a900c04` places **95 of its 472** priced lines (20.1%) between 0.700 and 0.720, against **1.7%** for `496eaf02`
+  and **1.4%** for `65331685`. The 70% threshold in the brief is the obvious attractor.
+* The same desk supplies **84 of the 94** candidate lines that land inside the brief's window.
+* Only **39 of 1,655** priced observations carry a second desk's price, and **no in-window line is priced twice**.
+* Removing that desk leaves **10** in-window candidates across **7** sports.
+
+The desk publishes this wherever the picks are shown: each pick names the desk that priced it, the overview carries a
+per-desk table, and the method page labels corroboration as weak rather than implying consensus. Three tests were added —
+every pick names its pricing desk, no pick sits on an opposite-favourite fixture, and the independence counts are
+recomputed from the slate rather than trusted.
