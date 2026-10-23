@@ -149,6 +149,8 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 
 | T8A90 | **Independent live 23 Oct 2026 15-sport multi-market desk + repo audit (`8a900c04-olbg1`):** live OLBG.com route & hub reverse-engineering across the exact 15 requested sports (`Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League`); official governing-body verification across all 15/15 sports; independent multi-market origination (`472` lines across winner, spread/handicap, alt calibrated spread/total, total, team total/exact score, 1st-period/set/half & player/podium props); strict `-250..+10000` High-confidence gate (`59` in-window High picks, `28` chalk-suppressed MLs `<-250`); `75` unique `>=48w` human predictions (`5` per covered sport, zero forbidden words, zero duplicate 7-grams, full player/form/history/stats/injury evidence); `24` HTML pages + Flagged-for-Review + `12` `file:line`+SHA-256 audit findings | done | 8a900c04-olbg1 | `data/8a900c04/**`, `scripts/s8a900c04_*.py`, `8a900c04/**`, `reports/SESSION_8A900C04.{md,html}`, `tests/pipeline/test_desk_8a900c04.py`, append-only `COORDINATION.md` | 2026-10-23T16:20Z | Strictly non-overlapping namespace (`8a900c04`); `0` deletions vs `origin/main`; CI run `39991831753` + unit/browser gates PASS. |
 
+| T5821 | **Independent live 23 Oct 2026 15-sport desk (`e58210b8-olbg1`):** live OLBG.com hub discovery for exactly the 15 brief sports (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League); line-by-line repository review; official governing-body verification of every published row; own multi-market line origination (winner / handicap / totals / sport-specific derivatives) with the strict -250...+10000 high-confidence price window; unique >=30-word human predictions (target 5 per sport per day); clean dashboard at `/e58210b8/` with executive summary, category subpages, Flagged-for-Review page; validator gate; PR -> merge -> live GitHub Pages read-back | in progress | e58210b8-olbg1 | `data/e58210b8/**`, `scripts/se58210b8_*.py`, `e58210b8/**`, `tests/pipeline/test_desk_e58210b8.py`, `reports/SESSION_E58210B8.md`, append-only `COORDINATION.md` (this row + §73) | 2026-10-23T17:55Z | Collision-resistant ID `T5821` / `§73`. Strictly namespaced: no edits to canonical root `*.html`, `sports/**`, `assets/**`, `README.md`, `pipeline/**`, `data/current/**`, `.github/workflows/**`, `scripts/validate.py` or any peer `<id>/` desk. |
+
 ## 2. Session log
 
 ### Session `ce5920e3-olbg1`
@@ -5386,3 +5388,12 @@ being true one read-back later, exactly as §67.3 warns about its own chain. Wha
 is the desk state, not any particular commit: **24 pages, 128 listings, 23 verified fixtures, 60
 originated prices, 5 write-ups, 17 flags, 2 High published out-of-band, 0 in-band High**, served
 from the deployed Pages host and reproducible with `python3 scripts/sfa24508c_build.py`.
+
+
+### §73 — Session `e58210b8-olbg1` (`T5821`) claim (2026-10-23T17:55Z)
+
+* **Session ID:** `e58210b8-olbg1` (pinned branch `arena/e58210b8-olbg1` per §0.2).
+* **Task ID:** `T5821`; board row added above, work log in this section.
+* **Claimed scope:** `data/e58210b8/**`, `scripts/se58210b8_*.py`, `e58210b8/**`, `tests/pipeline/test_desk_e58210b8.py`, `reports/SESSION_E58210B8.md`, and append-only edits to `COORDINATION.md`. Nothing else.
+* **Claim time:** 2026-10-23T17:55Z. `main` tip at claim time: `87a39e3` (merge of PR #183, 2026-10-23T17:26Z).
+* **Work:** fresh OLBG hub harvest for the 15 requested sports, official-source verification, own multi-market lines, in-band high-confidence slate, unique >=30-word predictions, dashboard, gates, PR, merge, live Pages read-back. Receipts appended to this section as the task progresses.
