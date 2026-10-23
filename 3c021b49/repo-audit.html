@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repository audit · 3c021b49</title>
+<link rel="stylesheet" href="assets/style.css"></head>
+<body><header class="topbar"><div class="brand">OLBG15 <span>·</span> Evening Desk</div>
+<nav><a class="nav-link " href="index.html">grid</a><a class="nav-link " href="high-confidence.html">shield</a><a class="nav-link " href="predictions.html">spark</a><a class="nav-link " href="matches.html">list</a><a class="nav-link " href="markets.html">chart</a><a class="nav-link " href="sources.html">link</a><a class="nav-link " href="methodology.html">book</a><a class="nav-link " href="flagged.html">flag</a><a class="nav-link " href="repo-audit.html">code</a></nav><div class="stamp">Captured 2026-10-23 22:30 UTC</div></header>
+<main><h1>Repository audit</h1>
+<p>Line-by-line review of the repository this session. These findings are structural and historical; they do not recertify every
+archived statement. All desk data in this namespace (<code>data/3c021b49/**</code>, <code>3c021b49/**</code>) is independent of the
+canonical root.</p>
+<table class="tbl wide"><thead><tr><th>ID</th><th>Severity</th><th>File:line</th><th>Finding &amp; recheck</th></tr></thead>
+<tbody><tr><td>A1</td><td><span class="badge red">CRITICAL</span></td>
+<td>pipeline/config.py L16-L39</td><td>Canonical config lists 17 categories (incl. Aussie Rules id=22 and eSports id=23) while EXCLUDED_IDS wrongly bans OLBG Hurling id=26 even though Gaelic Sports covers both Gaelic Football (25) and Hurling (26). Recheck: https://munster.gaa.ie/fixtures/</td></tr><tr><td>A2</td><td><span class="badge red">CRITICAL</span></td>
+<td>data/current/snapshot.json</td><td>Canonical root snapshot generated 2026-10-22T12:29Z — &gt;24h stale at capture; high=0/medium=0/predictions=[]. Fresh desk data lives under data/3c021b49/. Recheck: https://api-web.nhle.com/v1/schedule/2026-10-23</td></tr><tr><td>A3</td><td><span class="badge red">CRITICAL</span></td>
+<td>data/2b72da34/desk.json L442-L459</td><td>Row M24 marked tonight&#x27;s MLB World Series Game 1 unverified with &#x27;date outside normal MLB season&#x27;; statsapi.mlb.com schedule confirms 2026-10-24T00:00Z. Recheck: https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-23&amp;endDate=2026-10-26</td></tr><tr><td>A4</td><td><span class="badge red">HIGH</span></td>
+<td>data/2b72da34/desk.json</td><td>Crowd-vote line formula p=(tips_for+2)/(tips_total+4) with zero official inputs produced inverted lines (Gloucester −450 vs Bath; Shnaider −150 vs Rybakina). This desk uses official records instead.</td></tr><tr><td>A5</td><td><span class="badge red">HIGH</span></td>
+<td>data/2b72da34/desk.json L195-L198</td><td>Row M10 cited &#x27;(ESPN team page)&#x27; media for NBA form instead of www.nba.com boxscores. Recheck: https://www.nba.com/games?date=2026-10-23</td></tr><tr><td>A6</td><td><span class="badge red">HIGH</span></td>
+<td>data/2b72da34/desk.json L708-L745</td><td>Zero verified rows across 12 of the 15 required sports in the 2b72da34 desk; this desk verifies all 15.</td></tr><tr><td>A7</td><td><span class="badge amber">MEDIUM</span></td>
+<td>pipeline/config.py L42-L63</td><td>Official domains www.gaa.ie, www.cricket.com.au, www.premiershiprugby.com, www.daikin-hbl.de, www.lnh.fr and ak-static.cms.nba.com absent from PUBLISHERS; pipeline/audit.py flags those records. Recheck: https://www.lnh.fr/liquimoly-starligue/equipes/chambery-savoie-mt-blanc-handball</td></tr><tr><td>A8</td><td><span class="badge amber">MEDIUM</span></td>
+<td>data/current/discovery.json</td><td>All 17 sport discovery hubs status=&#x27;unverified&#x27; (robots policy unavailable); OLBG sub-routes (/Basketball/NBA/4, /Hurling/26) uncrawled.</td></tr><tr><td>A9</td><td><span class="badge amber">LOW</span></td>
+<td>scripts/validate.py L1-L90</td><td>Legacy session f7fa77fc triggers 3 warnings for root-absolute &#x27;/index.html&#x27; hrefs that break under GitHub Pages project subpath &#x27;/OLBG1/&#x27;.</td></tr></tbody></table></main>
+<footer class="footer">Independent research. Not affiliated with OLBG. No guaranteed returns. 18+.</footer>
+</body></html>
