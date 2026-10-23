@@ -84,6 +84,8 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T15 | Independent second-pass market-coverage and whole-tree source-link structural audit | done | e92c2bf4-olbg1 | `reports/SESSION_E92_SNAPSHOT_AUDIT.md`, append-only `COORDINATION.md` | 2026-10-21T06:41Z | Completed after T13; records eight unpriced field cards, one missing cricket total, snapshot window, and validator evidence limits; does not edit shared data/pages. |
 | T16 | Corrective primary-desk provenance, status disclosure, integration and Pages publication | done | 4904ed05-olbg1 | `COORDINATION.md`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/sources.json`, `datasets/flagged_for_review.json`, `scripts/validate.py`, root `*.html`, `sports/*.html`, `assets/*`, `README.md` | 2026-10-21T06:41Z | PR #24 merged; Pages workflow 39558245786 completed successfully. Remediated F1–F3 without changing independent review artifacts. |
 | T20 | **Fresh live re-verification of every primary-desk row against official sources** (first pass in this repo to re-fetch official pages rather than audit structure), publication of a Live Verification page, corrections where fresh data disagrees, PR + merge + Pages deploy check | done | 72198d3e-olbg1 | `scripts/verify_live.py`, `reports/LIVE_VERIFICATION.md`, `live-verification.html`, `data/verification.json`, `data/fixtures.json` (corrections only), `data/predictions.json` (corrections only), `COORDINATION.md` (append-only) | 2026-10-21T07:05Z | Claimed 2026-10-21T07:05Z as T17; renumbered to T20 after a task-id collision with session 76950c25 (see §17). Independent of T13/T15/T16 which were structural audits; this task re-fetches each row's official source. Shared nav/`index.html` touched only at final integration. |
+| T6B47 | **Consolidated gap-closing desk (`6b47ea39-olbg1`, 23 Oct 2026 late evening):** independent offline re-audit of the two freshest 23-Oct desks (`65331685` captured 20:40Z and `496eaf02` captured 20:30Z) plus the 75-event `8a900c04` fact base; per-match cross-desk reconciliation (same matchup, opposite favourites, differing prices, differing start times); independent re-derivation of implied probability from every published fair price and a hard re-gate of the brief's High conjunction (>70% implied AND fair American in −250…+10000); **closing the four sports that no desk could populate** (Golf, Snooker, Gaelic Sports, Greyhounds) where a defensible in-band selection exists, and registering the shortfall honestly where it does not; fresh unique ≥30-word human predictions written against retained official facts; consolidated dashboard `/6b47ea39/` (executive summary for today + upcoming, 15 sport subpages, markets, predictions, flagged-for-review, sources, repo audit, methodology); validator + repo gates; PR to `main`, merge without waiting, Pages deploy check | in progress | 6b47ea39-olbg1 | `data/6b47ea39/**`, `scripts/s6b47ea39_*.py`, `6b47ea39/**`, `reports/SESSION_6B47EA39.md`, `tests/pipeline/test_desk_6b47ea39.py`, append-only `COORDINATION.md` (this row + §75) | 2026-10-23T22:05Z | Collision-resistant ID `T6B47` / `§76` (renumbered from §75 on rebase: `3c021b49-olbg1` claimed §75 first and merged it as PR #194). Pinned branch `arena/6b47ea39-olbg1` per §0.2. Strictly namespaced: **zero** edits to root `*.html`, `sports/**`, `assets/**`, `README.md`, `pipeline/**`, `data/current/**`, `data/release/**`, `.github/workflows/**`, `scripts/validate.py` or any peer `<id>/` desk. Sandbox egress is GitHub/npm/PyPI only (re-confirmed this session: `olbg.com`, `api-web.nhle.com`, `statsapi.mlb.com`, `buffedlizard55-lab.github.io` all fail at TLS), so nothing is claimed as freshly re-observed; every inherited fact keeps the URL and capture timestamp of the desk that observed it and is labelled as inherited. |
+
 
 | T17 | Live OLBG re-harvest of all 17 in-scope sport hubs + diff against the committed snapshot | done | 76950c25-olbg1 | `data/live_snapshot.json`, `data/live_diff.json`, `scripts/live_harvest.py` | 2026-10-21T07:10Z | Fresh fetch of every in-scope hub; per-event add/remove/consensus-change diff; no shared-file edits |
 | T18 | Official-source verification of refreshed/changed rows (MLB confirmation; other rows retain recorded governing-body sources) + unverified cards published blank | done | 76950c25-olbg1 | `scripts/dataset_rows_c.py`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `datasets/*`, `reports/SESSION_769_LIVE_REFRESH.md` | — | Blank-and-flag any value not confirmed on an official page |
@@ -5765,6 +5767,7 @@ as §74.2.
 * **Requests to other sessions:** none open. The canonical root `data/current/snapshot.json` remains the 2026-10-22T12:29Z capture; this desk is an independent namespace and is not represented as current canonical evidence.
 * **Session close:** this is the final commit from `arena/496eaf02-olbg1`. The desk state above is final for this session.
 
+
 ### §75 — Session `3c021b49-olbg1` (`T3C021B`) live desk claim — 2026-10-23T22:00Z
 
 * **Session ID:** `3c021b49-olbg1` (pinned branch `arena/3c021b49-olbg1` per §0.2).
@@ -5799,3 +5802,37 @@ as §74.2.
 * **Irregularities published:** High-tier/strict-gate mismatch; elapsed greyhound start; imminent match starts; missing exact times; incomplete volleyball set-score outcomes; non-exclusive F1 probability joint-consistency issue; date typo `2023-10-23` in the prior session report; no live-source re-verification. All are non-blocking and visible on `99659729/flagged.html`.
 
 **Peer-scope coordination note:** the initial failure was resolved by merged PR #194 (`3c021b49-olbg1`); no outstanding request remains from this session.
+## 77. Session `6b47ea39-olbg1` — `T6B47` consolidated gap-closing desk (claim, 2026-10-23T22:05:00Z)
+
+**Session / branch:** `6b47ea39-olbg1` on pinned branch `arena/6b47ea39-olbg1` (per §0.2 this is the
+only branch this session creates, switches to, commits on or pushes). Baseline `main` = `5cb7c69`
+(PR #193).
+
+**Why this desk exists.** Eight peer desks published a 23-Oct slate today. Three weaknesses recur
+across them and are the target of this task, not another parallel re-publication of the same numbers:
+
+1. **The five-per-sport promise is not met.** `496eaf02` publishes 51 High picks but only ten sports
+   carry any; `65331685` publishes 7. Golf, Snooker, Gaelic Sports and Greyhounds are empty on every
+   desk that uses the strict >70% conjunction. The brief asks for five per sport; a shortfall must be
+   either closed with a defensible in-band selection or registered as a shortfall.
+2. **Cross-desk contradictions go unreconciled.** The same matchup carries opposite favourites, or two
+   different quoted prices, on different desks, and each desk publishes only its own side.
+3. **Prose quality drifts into templates.** Repeated sentence skeletons and duplicated match detail
+   (the same opponent and scoreline credited to two different players on adjacent rows) appear in more
+   than one desk.
+
+**Environment constraint (drives the whole method).** This sandbox has outbound HTTPS only to
+`github.com`, `api.github.com`, `codeload.github.com`, `registry.npmjs.org`, `pypi.org` and
+`files.pythonhosted.org`. Probes this session confirm `olbg.com`, `api-web.nhle.com`,
+`statsapi.mlb.com` and `buffedlizard55-lab.github.io` all fail at TLS egress. Per §0.5 nothing can be
+marked `verified` without fetching the official source, so this session does **not** re-certify
+anything. It performs an independent offline audit of the retained evidence, re-derives every
+arithmetic identity, and inherits each fact together with the official URL and capture timestamp of
+the desk that observed it — labelled as inherited, never presented as freshly observed.
+
+**Exclusive write scope (all new files):** `data/6b47ea39/**`, `scripts/s6b47ea39_*.py`,
+`6b47ea39/**`, `reports/SESSION_6B47EA39.md`, `tests/pipeline/test_desk_6b47ea39.py`, and append-only
+additions to this `COORDINATION.md`.
+
+**Status:** in progress. Claim committed and pushed before work starts, per §0.3.
+
