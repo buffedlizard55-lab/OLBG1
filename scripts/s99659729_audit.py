@@ -80,11 +80,13 @@ def audit(as_of: dt.datetime) -> dict:
             high_outside_gate.append({"id": row.get("id", ""), "reason": "missing or unparsable probability/price"})
             continue
         if probability > 0.70 and -250 <= american <= 10000:
+            fixture = fixture_by_id.get(row.get("id", ""), {})
+            source = next((src.get("url", "") for src in fixture.get("sources", []) if _https(src.get("url", ""))), "")
             strict_high.append({
                 "id": row.get("id", ""), "sport": row.get("sport", ""),
                 "event": row.get("event", ""), "selection": row.get("selection", ""),
                 "probability": probability, "fair_american": american,
-                "source": row.get("sources", ""),
+                "source": source,
             })
         else:
             reason = []

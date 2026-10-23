@@ -1,8 +1,8 @@
 {
   "audit_id": "99659729-independent-freshness-audit",
-  "as_of_utc": "2026-10-23T21:26:46Z",
+  "as_of_utc": "2026-10-23T21:30:44Z",
   "source_snapshot_utc": "2026-10-23T20:30:00Z",
-  "snapshot_age_minutes": 56.77,
+  "snapshot_age_minutes": 60.73,
   "live_official_refresh_performed": false,
   "scope": [
     "golf",
@@ -51,7 +51,7 @@
     "strict_high_gate_rows": 3,
     "high_labeled_rows_failing_strict_gate": 48,
     "starts_elapsed_but_still_labeled_upcoming": 1,
-    "upcoming_starts_within_two_hours": 6,
+    "upcoming_starts_within_two_hours": 7,
     "upcoming_rows_without_exact_start": 9,
     "incomplete_best_of_five_score_books": 5,
     "nonexclusive_driver_markets_flagged_for_joint_consistency": 2
@@ -307,7 +307,7 @@
         "selection": "Over 4.5",
         "probability": 0.7048,
         "fair_american": -239.0,
-        "source": "https://api-web.nhle.com/v1/schedule/2026-10-23 | https://api-web.nhle.com/v1/standings/2026-10-23"
+        "source": "https://api-web.nhle.com/v1/schedule/2026-10-23"
       },
       {
         "id": "BK10",
@@ -316,7 +316,7 @@
         "selection": "Partizan Mozzart Bet Belgrade",
         "probability": 0.7107,
         "fair_american": -246.0,
-        "source": "https://www.euroleaguebasketball.net/en/euroleague/standings/ | https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-el2627/"
+        "source": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
       }
     ],
     "elapsed_start_rows": [
@@ -329,6 +329,13 @@
       }
     ],
     "starts_within_two_hours": [
+      {
+        "id": "CR03",
+        "sport": "cricket",
+        "event": "Tasmania v Victoria",
+        "start_utc": "2026-10-23T23:30:00Z",
+        "source": "https://www.cricket.com.au/matches/series/CA:4688/one-day-cup-2026-27"
+      },
       {
         "id": "CR05",
         "sport": "cricket",

@@ -56,15 +56,16 @@ class FreshnessAuditTests(unittest.TestCase):
         self.assertEqual(findings["duplicate_prediction_text_count"], 0)
         self.assertEqual(findings["prediction_source_missing_ids"], [])
 
-    def test_written_dashboard_pages_have_disclosures_and_links(self):
-        from scripts.s99659729_audit import write_site
-        write_site(self.result)
+    def test_published_dashboard_pages_have_disclosures_and_links(self):
         root = Path(__file__).resolve().parents[2] / "99659729"
         for filename in ("index.html", "matches.html", "flagged.html"):
             self.assertTrue((root / filename).is_file())
             content = (root / filename).read_text(encoding="utf-8")
             self.assertIn("no live sports-source refresh", content.lower())
             self.assertIn("https://", content)
+        page = (root / "index.html").read_text(encoding="utf-8")
+        self.assertIn("https://api-web.nhle.com/v1/schedule/2026-10-23", page)
+        self.assertNotIn("%7C", page)
 
 
 if __name__ == "__main__":
