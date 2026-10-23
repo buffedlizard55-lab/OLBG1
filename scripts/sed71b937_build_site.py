@@ -19,7 +19,7 @@ ROOT = os.path.dirname(HERE)
 DATA = os.path.join(ROOT, "data", "ed71b937")
 OUT = os.path.join(ROOT, "ed71b937")
 
-AS_OF = "2026-10-23T17:20:00Z"
+AS_OF = "2026-10-23T17:55:00Z"
 
 CSS = """
 :root{--bg:#0e1116;--panel:#161b22;--line:#262d38;--ink:#e6edf3;--dim:#93a1b1;
@@ -292,11 +292,15 @@ def build():
     empty = [s["name"] for s in scope if not sports.get(s["name"])]
     empty_note = ""
     if empty:
-        empty_note = ('<div class="note warn"><b>Sports with no fixtures.</b> '
-                      + e(", ".join(empty)) + ". The OLBG hub for each was "
-                      "opened and returned no match rows. Nothing was "
-                      'invented to fill the gap &mdash; see <a '
-                      'href="flagged.html">Flagged for review</a>.</div>')
+        names = ", ".join(empty)
+        waswere = "was" if len(empty) == 1 else "were"
+        each = "The OLBG hub for it was" if len(empty) == 1 else (
+            "The OLBG hubs for them were")
+        empty_note = ('<div class="note warn"><b>No fixtures published for '
+                      '{names}.</b> {each} opened and returned no match rows. '
+                      "Nothing {waswere} invented to fill the gap &mdash; see "
+                      '<a href="flagged.html">Flagged for review</a>.</div>'
+                      ).format(names=e(names), each=e(each), waswere=waswere)
 
     cover = ('<div class="scroll"><table><thead><tr><th>Sport</th>'
              "<th>OLBG id</th><th>Hub rows listed</th><th>Rows published</th>"

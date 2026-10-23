@@ -5188,3 +5188,46 @@ gate that catches it.
 
 **Self-referential limit:** this §67.2 entry ships in a third PR whose merge and deploy it cannot
 confirm. What is confirmed is that PR #166 is merged and its artifact was served correctly.
+### 71.3 TED71 merge and live Pages receipts — DONE
+
+**PR #169** — https://github.com/buffedlizard55-lab/OLBG1/pull/169 — base
+`main`, head `arena/ed71b937-olbg1`. Required check
+`Evidence, model, site and browser gates` **SUCCESS**; `Publish canonical
+GitHub Pages` correctly **SKIPPED** on the `pull_request` event. Merge state
+MERGEABLE. **Merged `74e99e6` at 2026-10-23T16:53:33Z.**
+
+**Pages verified on the merge commit.** Both publish paths ran green on
+`74e99e6`: `pages-build-deployment` (legacy `main:/` mode) run **39990537902**
+success, and `Canonical research checks and Pages` (Actions artifact deploy)
+run **39990540594** success. `gh api repos/.../pages` reports `status: built`,
+`url: https://buffedlizard55-lab.github.io/OLBG1/`.
+
+**Live read-back.** `https://buffedlizard55-lab.github.io/OLBG1/ed71b937/index.html`
+was fetched after deploy and returns the desk: 129 rows published, 20
+officially sourced, 87 markets originated, 72 priced, 2 High, 11 official
+sources, 16 flags, and both High rows (`ED71-017` Zalgiris +6.5 at 0.7012 /
+−235 and `ED71-019` Valencia −4.5 at 0.7107 / −246) rendering with links to
+the predictions page. `archive.html` in the canonical build lists the desk as
+"Preserved ed71b937". The desk is reachable from the published root with no
+shared-file edit.
+
+**Read-back found one defect, fixed in PR #172.** The coverage-gap note read
+"Sports with no fixtures. Golf. The OLBG hub for each was opened…"; the
+sentence was written for the plural case but only Golf came back empty. It now
+agrees in number and still handles the plural case for future runs. Desk
+validator re-run: 258 checks, 0 failed.
+
+**Standing lessons recorded for future desks on this board:**
+
+1. Commit a new desk **before** running `pipeline.build --out _site`.
+   `stage_existing()` stages only `git ls-files` output, so an untracked desk
+   makes `archive.html` link a path `_site` does not contain and both
+   canonical validators fail.
+2. Never renumber a section with a whole-file string replace. Scope it to your
+   own section; the first pass here also rewrote `(this row + §61)` inside the
+   unrelated `T2AEE` row before it was caught and restored byte-for-byte.
+3. Check which round a league media kit covers before pricing off its table.
+   The round-6 EuroLeague kit carried after-round-5 standings and would have
+   moved a published handicap by two points.
+4. The −250…+10000 band intersects p ≥ 0.700 only in p ∈ [0.700, 0.71429].
+   Publish that arithmetic rather than manufacturing picks to hit a quota.
