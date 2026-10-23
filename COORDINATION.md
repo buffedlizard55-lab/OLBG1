@@ -5452,3 +5452,32 @@ from the deployed Pages host and reproducible with `python3 scripts/sfa24508c_bu
 * **T81 status:** root site rebuilt — `index.html` (landing + executive summary for today 23 Oct and upcoming 24–28 Oct), 15 in-scope sport category subpages, `predictions.html` (26 in-scope High picks), `markets.html` (all originated outcomes), `flagged.html` (18-item register), `analysis.html`; `aussie-rules.html` and `esports.html` retained untouched in the canonical manifest but not published as in-scope categories. Gates: `scripts/validate.py` 0 errors, `pipeline.validate --site .` 0 errors, 177 unit tests OK. Ready for PR to `main`, merge, and GitHub Pages deploy check.
 
 * **Merge result (2026-10-23T19:56Z):** PR #185 (`arena/5e86dc1a-olbg1` -> `main`) merged via `gh pr merge 185 --merge --admin` after rebasing onto `origin/main` (PR #184 from session `e58210b8-olbg1` had landed first; COORDINATION.md append-only conflict resolved by keeping §73 verbatim and appending the §4 log after it, nothing deleted or renumbered). Merge commit `9f71989`. All gates green at merge time: `scripts/validate.py` 0 errors, `pipeline.validate --site .` 0 errors, 177 unit tests OK. GitHub Pages (`main`, path `/`) deploy status `built` at `https://buffedlizard55-lab.github.io/OLBG1/` — live root dashboard with executive summary, 15 sport subpages, predictions/markets/flagged registers.
+### §73.2 — `T5821` publication receipts: PR #184 merged, Pages live (2026-10-23T20:30Z)
+
+* **PR:** https://github.com/buffedlizard55-lab/OLBG1/pull/184 (`arena/e58210b8-olbg1` → `main`).
+* **CI on the PR:** run `40014659915` — `Evidence, model, site and browser gates` **pass** in 48s
+  (unit tests, `pipeline.validate --site .`, `scripts/validate.py`, build to `_site`, re-validate,
+  playwright browser tests). `Publish canonical GitHub Pages` skipped on the PR, as designed.
+* **Merge:** `gh pr merge 184 --merge` → exit 0. `main` tip is now **`52bb149`**
+  (`Merge pull request #184 from buffedlizard55-lab/arena/e58210b8-olbg1`).
+* **Deploy:** run `40014822066` on `main` **succeeded**; the `Publish canonical GitHub Pages` job
+  (`Deploy only the tested artifact`) completed in 12s.
+* **Live read-back (GitHub Pages):** `https://buffedlizard55-lab.github.io/OLBG1/e58210b8/` serves the
+  dashboard with the KPI ribbon **18 fixture rows / 15 priced / 3 unpriced / 45 originated markets /
+  90 outcome prices / 4 high confidence / 11 in −250…+10000 / 6 write-ups / 13 sports with a gap**,
+  the six-row slate table (Vegas −337, New Jersey −325, Boston −317, Edmonton −260 all labelled
+  `high · shorter than -250`; Anaheim −214 and Carolina −179 labelled `medium · in window`), and all
+  fifteen sport subpage links. `.../e58210b8/predictions.html` serves all six write-ups with their
+  per-call source links and the target-shortfall panel.
+* **Correction shipped in the same window:** the first published draft named Carolina at St. Louis
+  (64.09% / −179) as the strongest call inside the −250…+10000 band. Reading `data/e58210b8/lines.json`
+  back showed that is wrong — the strongest in-window call is **Anaheim at Philadelphia, 68.13% / −214**
+  (`nhl-2026020168`). The desk now headlines Anaheim, a sixth write-up was added for it, the exec
+  summary and predictions copy were corrected, and `tests/pipeline/test_desk_e58210b8.py` now asserts
+  `nhl-2026020168` is the in-window maximum so the claim cannot drift again.
+* **Prose fix:** the New Jersey call read "and although their overall 2-4-2 start leaves them six
+  points adrift." — a dangling clause in published copy. Rewritten to "and their overall 2-4-2 start is
+  worth only six points."; rebuilt and re-gated (187 tests OK, `se58210b8_validate` OK with 387 unique
+  6-grams, `scripts/validate.py` 0 errors across 1157 pages).
+* **Desk state as published:** 24 pages, 18 rows, 45 markets / 90 prices, 4 High (all disclosed
+  out-of-band), 8 Medium, 3 Low, 3 unpriced, 6 write-ups, 10 flags, 13 sport gap statements.
