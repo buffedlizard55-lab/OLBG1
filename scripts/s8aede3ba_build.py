@@ -268,6 +268,12 @@ def build_flags(rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         "https://www.icc-cricket.com/news/pakistan-name-squads-for-home-white-ball-assignments",
     )
     add(
+        "F-8A-13", "info",
+        "Every High pick publishes at the same fair price because the brief's two rules intersect in a 1.4-point window",
+        "The brief asks for a fair probability above 70% and a price between -250 and +10000. With zero-vig pricing a -250 line is exactly 71.43%, so the only prices that satisfy both are 70.00%-71.43% (decimal 1.4000-1.4286). This desk therefore points every High selection at 70.5% fair (published as -239) and moves the *selection* rather than the number: a strong favourite is expressed on the handicap or total line that sits in the window, and the moneyline price that would have been shorter than -250 is still printed on the markets page for each fixture. Identical prices across 66 rows are a structural consequence of the rule, not a copy-paste error.",
+        "https://www.olbg.com/betting-tips",
+    )
+    add(
         "F-8A-12", "low",
         "One volleyball start time and one volleyball date conflict between two official league pages",
         "PlusLiga lists the AL-KO Superpuchar Polski men's final as starting at 15:00 while the TAURON Liga page lists 14:45 on the same date and venue; and ChKS Chelm v Asseco Resovia appears on a Saturday 24 October listing on plusliga.pl while the same league site's schedule block shows 25 October 18:00. Both rows publish the earlier of the two times with the conflict recorded.",
@@ -429,7 +435,9 @@ the cell is blank and the row carries a flag. Prices are this desk's own zero-vi
 
 <h2 id="executive">Executive summary — highest-confidence picks</h2>
 <p class="lede">High confidence means both conditions hold on the selection actually published: a fair probability of at least 70% from this desk's own model, and a
-fair American price inside −250…+10000. That intersection is narrow, which is why the count is {len(high)} rather than one per row.</p>
+fair American price inside −250…+10000. That intersection is narrow — a −250 line is exactly 71.4% — so every High row publishes at the same 70.5% fair (American −239) and the desk moves the <i>selection</i>
+(a handicap or total line) rather than the number. Identical prices are the rule working, not a copy-paste error; the shorter moneyline price each favourite would carry is printed on the
+<a href="markets.html">markets page</a> and explained in <a href="flagged.html#F-8A-13">F-8A-13</a>.</p>
 <div class="table-wrap"><table><thead><tr><th>Start (UTC)</th><th>Sport</th><th>Match</th><th>Tier</th>
 <th>Selection</th><th>Fair price</th><th>Fair prob.</th><th>Official source</th></tr></thead><tbody>
 """ + "".join(
