@@ -1,7 +1,7 @@
 # Session `4c4968fc` — OLBG fifteen-sport research desk (captured 2026-10-23 21:30 UTC)
 
 **Live desk:** [`../4c4968fc/index.html`](../4c4968fc/index.html)
-**Data:** [`../data/4c4968fc/`](../data/4c4968fc/) — fixtures.json · markets.json · picks.json · predictions.json · flagged.json · elapsed.json · sources.json · summary.json · matches.csv · markets.csv · predictions.csv
+**Data:** [`../data/4c4968fc/summary.json`](../data/4c4968fc/summary.json) — fixtures.json · markets.json · picks.json · predictions.json · flagged.json · elapsed.json · sources.json · summary.json · matches.csv · markets.csv · predictions.csv
 **Gate:** `python3 scripts/s4c4968fc_validate.py` (0 failures) · `python3 -m pipeline.validate --site .` (0 errors) · `tests/pipeline/test_desk_4c4968fc.py` (17 tests)
 
 ## Scope
