@@ -193,25 +193,79 @@ def main() -> None:
         "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/496eaf02/markets.csv",
     )
 
-    # ---------------------------------------------------------------- G4 boundary clustering
-    cluster = Counter()
+    # ---------------------------------------------------------------- G4 threshold clustering, per desk
+    CONSTRUCT = re.compile(
+        r"speed index|pace index|sectional split|sprint index|q3 pace|grouping ball|inv\. stroke|"
+        r"race index|speed index|trap bracket|team total|form-line|without-antonelli|forecast|cushion",
+        re.I,
+    )
+    observations = [(event, line, obs) for event in events for line in event["markets"] for obs in line["observations"]]
+    desks = sorted({obs["desk"] for _, _, obs in observations})
+    per_desk = {}
+    for desk in desks:
+        rows = [(event, line) for event, line, obs in observations if obs["desk"] == desk]
+        probs = [line["probability"] for _, line in rows if line["probability"]]
+        near = sum(1 for p in probs if 0.700 <= p <= 0.720)
+        per_desk[desk] = {
+            "lines": len(rows),
+            "lines_between_0.700_and_0.720": near,
+            "share_between_0.700_and_0.720": round(near / len(probs), 4) if probs else 0.0,
+            "in_band_lines": sum(1 for _, line in rows if line["band"] == "in" and 0.70 < (line["probability"] or 0) <= 0.88),
+            "constructed_market_lines": sum(1 for _, line in rows if CONSTRUCT.search(str(line["market"]))),
+        }
+    multi_desk_lines = [line for event in events for line in event["markets"] if len(line["desks"]) > 1]
+    in_band_lines = [line for event in events for line in event["markets"] if line["band"] == "in" and (line["probability"] or 0) > 0.70]
+    in_band_multi = [line for line in in_band_lines if len(line["desks"]) > 1]
+    sensitivity = Counter()
     for event in events:
+        if event["state"] != "upcoming":
+            continue
         for line in event["markets"]:
-            if 0.700 <= line["probability"] <= 0.72:
-                cluster[round(line["probability"], 4)] += 1
-    near_edge = sum(cluster.values())
-    total_priced = sum(len(e["markets"]) for e in events)
-    audit["boundary_clustering"] = {"lines_between_0.700_and_0.720": near_edge, "total_lines": total_priced}
+            if (
+                line["band"] == "in"
+                and 0.70 < (line["probability"] or 0) <= 0.88
+                and line["desks"]
+                and all(d != "8a900c04" for d in line["desks"])
+            ):
+                sensitivity[event["sport"]] += 1
+    audit["price_independence"] = {
+        "observations": len(observations),
+        "per_desk": per_desk,
+        "lines_priced_by_more_than_one_desk": len(multi_desk_lines),
+        "in_band_lines": len(in_band_lines),
+        "in_band_lines_priced_by_more_than_one_desk": len(in_band_multi),
+        "in_band_lines_without_8a900c04": {"by_sport": dict(sensitivity), "total": sum(sensitivity.values())},
+    }
+    worst = max(per_desk.items(), key=lambda kv: kv[1]["share_between_0.700_and_0.720"])
     flag(
         flags, "high",
-        "High-tier probabilities cluster within two points of the 70% threshold",
-        f"{near_edge} of {total_priced} inherited priced lines fall between 0.700 and 0.720, and the most "
-        "repeated single value appears many times across unrelated matches and sports. That is the signature "
-        "of a pricing pass tuned to land just inside the threshold rather than five independent assessments. "
-        "This desk does not treat the clustering as evidence of agreement: every pick records which desks priced "
-        "it, and 65 of the 125 fixtures rest on a single desk, so a repeated number is usually one desk repeating "
-        "itself rather than two desks converging.",
+        "One desk supplies almost the whole in-window pool, and its prices cluster at the threshold",
+        f"{per_desk[worst[0]]['lines_between_0.700_and_0.720']} of {worst[0]}'s "
+        f"{per_desk[worst[0]]['lines']} priced lines sit between 0.700 and 0.720 "
+        f"({per_desk[worst[0]]['share_between_0.700_and_0.720']:.1%}), against "
+        + " and ".join(
+            f"{per_desk[d]['share_between_0.700_and_0.720']:.1%} for {d}"
+            for d in desks if d != worst[0]
+        )
+        + f". That desk also supplies {per_desk[worst[0]]['in_band_lines']} of the {len(in_band_lines)} candidate lines "
+        f"that fall inside the brief's window. Of {len(observations)} priced observations only {len(multi_desk_lines)} "
+        f"are seconded by another desk, and "
+        + ("not one in-window line is priced twice. " if not in_band_multi else f"only {len(in_band_multi)} in-window lines are priced twice. ")
+        + "Dropping that desk entirely leaves "
+        f"{sum(sensitivity.values())} in-window candidates across {len(sensitivity)} sports. The concentration, "
+        "not the individual prices, is the finding: a price ladder tuned to land just above a published "
+        "threshold cannot be read as independent agreement.",
         "internal distribution check",
+        [f"{d}: {v['lines_between_0.700_and_0.720']}/{v['lines']} lines in 0.700-0.720" for d, v in sorted(per_desk.items())],
+    )
+    flag(
+        flags, "medium",
+        "Nearly every in-window selection is priced by one desk only",
+        f"Of {len(in_band_lines)} in-window lines, {len(in_band_lines) - len(in_band_multi)} are priced by a single desk. "
+        "Where two desks do price the same bet, the numbers differ by more than the tolerance used here more often "
+        "than they agree. Every pick on this desk therefore prints the desk that priced it, and no pick is described "
+        "as market consensus.",
+        "internal provenance count",
     )
 
     # ---------------------------------------------------------------- G5 directional conflicts

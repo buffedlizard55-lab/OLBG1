@@ -102,6 +102,23 @@ class Desk6B47Tests(unittest.TestCase):
                     f"{row['pick_id']} does not name {display}",
                 )
 
+
+    def test_every_pick_names_the_desk_that_priced_it(self):
+        for pick in self.picks["picks"]:
+            self.assertTrue(pick.get("source_desk"), pick["pick_id"])
+            self.assertTrue(pick.get("desks"), pick["pick_id"])
+
+    def test_no_pick_sits_on_a_fixture_with_opposite_favourites(self):
+        conflicted = {row["event"] if "event" in row else row["event_id"] for row in self.audit["directional_conflicts"]}
+        for pick in self.picks["picks"]:
+            self.assertNotIn(pick["event_id"], conflicted, pick["pick_id"])
+
+    def test_price_independence_figures_match_the_slate(self):
+        observations = [obs for e in self.slate["events"] for line in e["markets"] for obs in line["observations"]]
+        self.assertEqual(self.audit["price_independence"]["observations"], len(observations))
+        multi = [line for e in self.slate["events"] for line in e["markets"] if len(line["desks"]) > 1]
+        self.assertEqual(self.audit["price_independence"]["lines_priced_by_more_than_one_desk"], len(multi))
+
     def test_prediction_and_pick_sets_match(self):
         self.assertEqual({p["pick_id"] for p in self.preds["predictions"]}, {p["pick_id"] for p in self.picks["picks"]})
 
@@ -113,7 +130,9 @@ class Desk6B47Tests(unittest.TestCase):
     def test_band_arithmetic_is_reported(self):
         high = [f for f in self.flags["flags"] if "1.43" in f["detail"]]
         self.assertTrue(high, "the band-width finding must be published")
-        self.assertGreater(self.audit["boundary_clustering"]["lines_between_0.700_and_0.720"], 100)
+        clustered = self.audit["price_independence"]["per_desk"]
+        worst = max(row["share_between_0.700_and_0.720"] for row in clustered.values())
+        self.assertGreater(worst, 0.15, "the threshold clustering must be visible in the audit")
 
     def test_every_brief_sport_has_a_page(self):
         for sport in BRIEF_SPORTS:
