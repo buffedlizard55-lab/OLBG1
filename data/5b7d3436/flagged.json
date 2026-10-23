@@ -1,0 +1,675 @@
+{
+  "session": "T5B7D",
+  "registered_at": "2026-10-23T21:36:17Z",
+  "count": 64,
+  "flags": [
+    {
+      "id": "G001",
+      "severity": "scope",
+      "title": "Empty hubs are not empty fixture lists",
+      "detail": "The main page and 13 hubs rendered ‘No tips found’; Motor Racing and Rugby League rendered no tournament tips/matches. This is capture-time OLBG interface state, not official confirmation of absent or completed fixtures.",
+      "source_ids": [
+        "olbg-main"
+      ]
+    },
+    {
+      "id": "G002",
+      "severity": "blocking",
+      "title": "Expired OLBG samples cannot release picks",
+      "detail": "All 11 sampled event pages showed Expired on every displayed selection. Upcoming official fixtures do not reopen those listings, so no current OLBG market or publishable High pick is claimed.",
+      "source_ids": [
+        "olbg-event-534842",
+        "olbg-event-199984",
+        "olbg-event-160789",
+        "olbg-event-188832",
+        "olbg-event-902163",
+        "olbg-event-36964",
+        "olbg-event-609578",
+        "olbg-event-32385",
+        "olbg-event-3530",
+        "olbg-event-913",
+        "olbg-event-12091"
+      ]
+    },
+    {
+      "id": "G003",
+      "severity": "data",
+      "title": "OLBG popularity is not a probability",
+      "detail": "Malformed ‘Most Popular Tip’ percentages and detailed tip counts were excluded from every calculation. Community selections are not calibrated probabilities or official availability evidence.",
+      "source_ids": [
+        "olbg-main"
+      ]
+    },
+    {
+      "id": "G004",
+      "severity": "provenance",
+      "title": "Per-URL retrieval timestamps were not exposed",
+      "detail": "All source records carry registration time 2026-10-23T21:36:17Z; this is not represented as the exact network retrieval time or publisher update time. Source-provided update stamps are preserved separately in takeaways.",
+      "source_ids": []
+    },
+    {
+      "id": "G005",
+      "severity": "audit",
+      "title": "Historical desk claims were not recycled",
+      "detail": "Earlier desk probabilities, fixtures, predictions and claimed pick counts were not accepted as fresh evidence. Historical URLs were used only as leads for new OLBG and official reads.",
+      "source_ids": []
+    },
+    {
+      "id": "G006",
+      "severity": "audit",
+      "title": "Canonical root describes an older brief",
+      "detail": "The repository root still describes a 22 October, 17-sport release. This isolated desk covers exactly the current 15-sport brief; Australian Rules and eSports are excluded.",
+      "source_ids": []
+    },
+    {
+      "id": "G007",
+      "severity": "audit",
+      "title": "Coordination board requires targeted maintenance",
+      "detail": "COORDINATION.md contains duplicated numbering and stale status rows. This session used an append-only claim and does not infer ownership from stale ‘in progress’ text.",
+      "source_ids": []
+    },
+    {
+      "id": "G008",
+      "severity": "retrieval",
+      "title": "NBA report discovery required the official portal",
+      "detail": "A guessed 6:00 PM PDF returned AccessDenied. The official injury-report portal was then read and its actual latest captured link, 5:15 PM, supplied the team statuses.",
+      "source_ids": [
+        "nba-injury-portal",
+        "nba-injury"
+      ]
+    },
+    {
+      "id": "G009",
+      "severity": "retrieval",
+      "title": "Player endpoints were not substituted for team statistics",
+      "detail": "NHL club-stats responses contained player statistics, not team standings. They were excluded; NHL's official standings table supplies every numerical hockey input.",
+      "source_ids": [
+        "nhl-standings"
+      ]
+    },
+    {
+      "id": "G010",
+      "severity": "retrieval",
+      "title": "PDC consent wall limited direct extraction",
+      "detail": "The direct PDC article returned consent text. The official-domain search result supplied the article's fixture, session and recent-result text; that method is labeled rather than presented as a clean direct-page parse.",
+      "source_ids": [
+        "pdc-report"
+      ]
+    },
+    {
+      "id": "GF01-F1",
+      "severity": "fixture",
+      "title": "GF01 · Butterfield Bermuda Championship · tournament field",
+      "detail": "No future official head-to-head pairing was established; the tournament row is not a two-player match.",
+      "source_ids": [
+        "pga-tee-times"
+      ],
+      "fixture_id": "GF01"
+    },
+    {
+      "id": "GF01-M1",
+      "severity": "pricing",
+      "title": "GF01 · markets withheld",
+      "detail": "Outright, head-to-head, round-score and player markets withheld: no supported future pairing or complete current leaderboard was captured.",
+      "source_ids": [
+        "pga-tee-times"
+      ],
+      "fixture_id": "GF01"
+    },
+    {
+      "id": "VB01-F1",
+      "severity": "fixture",
+      "title": "VB01 · PGE GiEK SKRA Bełchatów v PGE Projekt Warszawa",
+      "detail": "A PlusLiga request redirected to tauronliga.pl; the explicit fixture text was retained and the cross-domain routing is flagged.",
+      "source_ids": [
+        "volleyball-fixtures"
+      ],
+      "fixture_id": "VB01"
+    },
+    {
+      "id": "VB01-F2",
+      "severity": "fixture",
+      "title": "VB01 · PGE GiEK SKRA Bełchatów v PGE Projekt Warszawa",
+      "detail": "The official page did not expose a UTC offset in the captured text; UTC remains blank.",
+      "source_ids": [
+        "volleyball-fixtures"
+      ],
+      "fixture_id": "VB01"
+    },
+    {
+      "id": "VB01-M1",
+      "severity": "pricing",
+      "title": "VB01 · markets withheld",
+      "detail": "Winner, set handicap, total sets and exact score withheld: no compatible current team-strength dataset was captured.",
+      "source_ids": [
+        "volleyball-fixtures"
+      ],
+      "fixture_id": "VB01"
+    },
+    {
+      "id": "VB01-M2",
+      "severity": "pricing",
+      "title": "VB01 · markets withheld",
+      "detail": "Player props withheld: no official availability and player-statistics package was captured.",
+      "source_ids": [
+        "volleyball-fixtures"
+      ],
+      "fixture_id": "VB01"
+    },
+    {
+      "id": "RU01-F1",
+      "severity": "fixture",
+      "title": "RU01 · Leinster Rugby v Munster Rugby",
+      "detail": "UTC is not printed by the official article; the two official regional clocks are preserved instead of substituting an OLBG clock.",
+      "source_ids": [
+        "urc-teams"
+      ],
+      "fixture_id": "RU01"
+    },
+    {
+      "id": "RU01-M1",
+      "severity": "pricing",
+      "title": "RU01 · markets withheld",
+      "detail": "Winner, points handicap and total points withheld pending a compatible current table/scoring dataset.",
+      "source_ids": [
+        "urc-teams"
+      ],
+      "fixture_id": "RU01"
+    },
+    {
+      "id": "RU01-M2",
+      "severity": "pricing",
+      "title": "RU01 · markets withheld",
+      "detail": "Try-scorer and player markets withheld; squad publication alone does not supply a scoring baseline.",
+      "source_ids": [
+        "urc-teams"
+      ],
+      "fixture_id": "RU01"
+    },
+    {
+      "id": "CR01-F1",
+      "severity": "fixture",
+      "title": "CR01 · New Zealand v India",
+      "detail": "The ICC page's ‘Your time’ value cannot be converted responsibly without an exposed timezone; UTC remains blank.",
+      "source_ids": [
+        "icc-match",
+        "icc-team-news"
+      ],
+      "fixture_id": "CR01"
+    },
+    {
+      "id": "CR01-M1",
+      "severity": "pricing",
+      "title": "CR01 · markets withheld",
+      "detail": "Match winner, innings handicap and match/innings totals withheld: no compatible current team and venue scoring baseline was captured.",
+      "source_ids": [
+        "icc-match",
+        "icc-team-news"
+      ],
+      "fixture_id": "CR01"
+    },
+    {
+      "id": "CR01-M2",
+      "severity": "pricing",
+      "title": "CR01 · markets withheld",
+      "detail": "Player props withheld despite team news because no supported player-market baseline was established.",
+      "source_ids": [
+        "icc-match",
+        "icc-team-news"
+      ],
+      "fixture_id": "CR01"
+    },
+    {
+      "id": "SN01-F1",
+      "severity": "fixture",
+      "title": "SN01 · Kyren Wilson v Sam Craigie",
+      "detail": "Official display times conflict (08:00 direct fetch versus 12:00 indexed copy); UTC and a definitive local start remain blank.",
+      "source_ids": [
+        "wst-match"
+      ],
+      "fixture_id": "SN01"
+    },
+    {
+      "id": "SN01-F2",
+      "severity": "fixture",
+      "title": "SN01 · Kyren Wilson v Sam Craigie",
+      "detail": "The fetched parent match page carries unrelated 2023 metadata; that metadata was not assigned to this semi-final.",
+      "source_ids": [
+        "wst-match"
+      ],
+      "fixture_id": "SN01"
+    },
+    {
+      "id": "SN01-M1",
+      "severity": "pricing",
+      "title": "SN01 · markets withheld",
+      "detail": "Match winner, frame handicap and total frames withheld: no current paired player-statistics package was captured.",
+      "source_ids": [
+        "wst-match"
+      ],
+      "fixture_id": "SN01"
+    },
+    {
+      "id": "SN01-M2",
+      "severity": "pricing",
+      "title": "SN01 · markets withheld",
+      "detail": "Century and highest-break markets withheld: no supported market baseline was established.",
+      "source_ids": [
+        "wst-match"
+      ],
+      "fixture_id": "SN01"
+    },
+    {
+      "id": "DA01-F1",
+      "severity": "fixture",
+      "title": "DA01 · Gian van Veen v Luke Woodhouse",
+      "detail": "The source establishes a four-match afternoon session, not an exact individual start; no precise UTC start is assigned.",
+      "source_ids": [
+        "pdc-report"
+      ],
+      "fixture_id": "DA01"
+    },
+    {
+      "id": "DA01-F2",
+      "severity": "fixture",
+      "title": "DA01 · Gian van Veen v Luke Woodhouse",
+      "detail": "The direct page returned consent text; substantive details come from official-domain search extraction and are labeled accordingly.",
+      "source_ids": [
+        "pdc-report"
+      ],
+      "fixture_id": "DA01"
+    },
+    {
+      "id": "DA01-M1",
+      "severity": "pricing",
+      "title": "DA01 · markets withheld",
+      "detail": "Match winner, leg handicap and total legs withheld: two match averages are insufficient for a calibrated best-of-19 probability.",
+      "source_ids": [
+        "pdc-report"
+      ],
+      "fixture_id": "DA01"
+    },
+    {
+      "id": "DA01-M2",
+      "severity": "pricing",
+      "title": "DA01 · markets withheld",
+      "detail": "180s and highest-checkout markets withheld: no compatible current player distribution was captured.",
+      "source_ids": [
+        "pdc-report"
+      ],
+      "fixture_id": "DA01"
+    },
+    {
+      "id": "BB01-F1",
+      "severity": "fixture",
+      "title": "BB01 · Tampa Bay Rays at Milwaukee Brewers",
+      "detail": "Probable pitchers are named, but no current pitcher-statistics package was captured; the fair-line calculation uses team totals only.",
+      "source_ids": [
+        "mlb-schedule",
+        "mlb-al-standings",
+        "mlb-nl-standings"
+      ],
+      "fixture_id": "BB01"
+    },
+    {
+      "id": "BB01-M1",
+      "severity": "pricing",
+      "title": "BB01 · markets withheld",
+      "detail": "First-five innings, pitcher props and player props withheld: probable-pitcher names without compatible current statistics are insufficient.",
+      "source_ids": [
+        "mlb-schedule",
+        "mlb-al-standings",
+        "mlb-nl-standings"
+      ],
+      "fixture_id": "BB01"
+    },
+    {
+      "id": "BB02-F1",
+      "severity": "fixture",
+      "title": "BB02 · Tampa Bay Rays at Milwaukee Brewers · Game 2",
+      "detail": "No Game 1 result or current pitcher-statistics package was available at capture; team totals are the only numerical inputs.",
+      "source_ids": [
+        "mlb-schedule",
+        "mlb-al-standings",
+        "mlb-nl-standings"
+      ],
+      "fixture_id": "BB02"
+    },
+    {
+      "id": "BB02-M1",
+      "severity": "pricing",
+      "title": "BB02 · markets withheld",
+      "detail": "First-five innings, pitcher props and player props withheld pending compatible current pitching statistics and Game 1 availability news.",
+      "source_ids": [
+        "mlb-schedule",
+        "mlb-al-standings",
+        "mlb-nl-standings"
+      ],
+      "fixture_id": "BB02"
+    },
+    {
+      "id": "GS01-F1",
+      "severity": "fixture",
+      "title": "GS01 · Nemo Rangers v St Finbarrs",
+      "detail": "No UTC offset was exposed in the captured official fixture text; UTC remains blank.",
+      "source_ids": [
+        "cork-fixtures"
+      ],
+      "fixture_id": "GS01"
+    },
+    {
+      "id": "GS01-M1",
+      "severity": "pricing",
+      "title": "GS01 · markets withheld",
+      "detail": "Winner, points handicap and total points withheld: no compatible current club scoring and availability dataset was captured.",
+      "source_ids": [
+        "cork-fixtures"
+      ],
+      "fixture_id": "GS01"
+    },
+    {
+      "id": "GH01-F1",
+      "severity": "fixture",
+      "title": "GH01 · Scurry Gold Cup (270m) and Premier Greyhound Racing Oaks (480m)",
+      "detail": "No official final runner list, trap draw or race time was captured; this is an event-level row, not a runner matchup.",
+      "source_ids": [
+        "gbgb-schedule"
+      ],
+      "fixture_id": "GH01"
+    },
+    {
+      "id": "GH01-M1",
+      "severity": "pricing",
+      "title": "GH01 · markets withheld",
+      "detail": "Race winner, forecast/tricast and trap-related markets withheld: runners, traps and current sectional form were not established.",
+      "source_ids": [
+        "gbgb-schedule"
+      ],
+      "fixture_id": "GH01"
+    },
+    {
+      "id": "TN01-F1",
+      "severity": "fixture",
+      "title": "TN01 · Elena Rybakina v Diana Shnaider",
+      "detail": "The order of play gives a local ‘not before’ time and warns matches may move; no fixed UTC start is assigned.",
+      "source_ids": [
+        "wta-order",
+        "wta-draw"
+      ],
+      "fixture_id": "TN01"
+    },
+    {
+      "id": "TN01-F2",
+      "severity": "fixture",
+      "title": "TN01 · Elena Rybakina v Diana Shnaider",
+      "detail": "Numbers in the draw's seeded-player table are treated as seeds, not substituted for current world rankings.",
+      "source_ids": [
+        "wta-order",
+        "wta-draw"
+      ],
+      "fixture_id": "TN01"
+    },
+    {
+      "id": "TN01-M1",
+      "severity": "pricing",
+      "title": "TN01 · markets withheld",
+      "detail": "Match winner, game/set handicap and total games withheld: no compatible current ranking and surface-performance package was captured.",
+      "source_ids": [
+        "wta-order",
+        "wta-draw"
+      ],
+      "fixture_id": "TN01"
+    },
+    {
+      "id": "TN01-M2",
+      "severity": "pricing",
+      "title": "TN01 · markets withheld",
+      "detail": "Player aces and other props withheld: no supported player-market baseline was established.",
+      "source_ids": [
+        "wta-order",
+        "wta-draw"
+      ],
+      "fixture_id": "TN01"
+    },
+    {
+      "id": "MR01-F1",
+      "severity": "fixture",
+      "title": "MR01 · United States Grand Prix · race field",
+      "detail": "Qualifying had not established a final grid in the captured evidence; local time is preserved without an invented UTC conversion.",
+      "source_ids": [
+        "f1-schedule"
+      ],
+      "fixture_id": "MR01"
+    },
+    {
+      "id": "MR01-M1",
+      "severity": "pricing",
+      "title": "MR01 · markets withheld",
+      "detail": "Race winner, podium, head-to-head and qualifying markets withheld: final grid and a compatible current driver-performance package were not captured.",
+      "source_ids": [
+        "f1-schedule"
+      ],
+      "fixture_id": "MR01"
+    },
+    {
+      "id": "HB01-F1",
+      "severity": "fixture",
+      "title": "HB01 · HC Erlangen v THW Kiel",
+      "detail": "Older official schedule snippets displayed 19:00 while the newer 22 October preview says 18:00; the newer preview is shown and the discrepancy retained.",
+      "source_ids": [
+        "kiel-preview"
+      ],
+      "fixture_id": "HB01"
+    },
+    {
+      "id": "HB01-F2",
+      "severity": "fixture",
+      "title": "HB01 · HC Erlangen v THW Kiel",
+      "detail": "UTC remains blank because the captured preview does not print an offset.",
+      "source_ids": [
+        "kiel-preview"
+      ],
+      "fixture_id": "HB01"
+    },
+    {
+      "id": "HB01-M1",
+      "severity": "pricing",
+      "title": "HB01 · markets withheld",
+      "detail": "Winner (including draw), goal handicap and total goals withheld: a complete paired current table/scoring dataset was not captured.",
+      "source_ids": [
+        "kiel-preview"
+      ],
+      "fixture_id": "HB01"
+    },
+    {
+      "id": "HB01-M2",
+      "severity": "pricing",
+      "title": "HB01 · markets withheld",
+      "detail": "Player props withheld: no official match availability and player-statistics package was captured.",
+      "source_ids": [
+        "kiel-preview"
+      ],
+      "fixture_id": "HB01"
+    },
+    {
+      "id": "IH01-F1",
+      "severity": "fixture",
+      "title": "IH01 · Montréal Canadiens at Chicago Blackhawks",
+      "detail": "Starting goalies and complete lineup changes were not captured; fair lines remain experimental and cannot become High picks.",
+      "source_ids": [
+        "nhl-schedule-23",
+        "nhl-standings",
+        "nhl-suzuki"
+      ],
+      "fixture_id": "IH01"
+    },
+    {
+      "id": "IH01-F2",
+      "severity": "fixture",
+      "title": "IH01 · Montréal Canadiens at Chicago Blackhawks",
+      "detail": "Suzuki's confirmed absence is disclosed but not assigned an invented numerical adjustment in the team-total calculation.",
+      "source_ids": [
+        "nhl-schedule-23",
+        "nhl-standings",
+        "nhl-suzuki"
+      ],
+      "fixture_id": "IH01"
+    },
+    {
+      "id": "IH01-M1",
+      "severity": "pricing",
+      "title": "IH01 · markets withheld",
+      "detail": "Starting-goalie and player props withheld: no compatible current goalie/lineup dataset was captured.",
+      "source_ids": [
+        "nhl-schedule-23",
+        "nhl-standings",
+        "nhl-suzuki"
+      ],
+      "fixture_id": "IH01"
+    },
+    {
+      "id": "IH02-F1",
+      "severity": "fixture",
+      "title": "IH02 · Tampa Bay Lightning at Colorado Avalanche",
+      "detail": "Starting goalies and complete availability reports were not captured; fair lines remain experimental.",
+      "source_ids": [
+        "nhl-schedule-23",
+        "nhl-standings"
+      ],
+      "fixture_id": "IH02"
+    },
+    {
+      "id": "IH02-M1",
+      "severity": "pricing",
+      "title": "IH02 · markets withheld",
+      "detail": "Starting-goalie and player props withheld: no compatible current goalie/lineup dataset was captured.",
+      "source_ids": [
+        "nhl-schedule-23",
+        "nhl-standings"
+      ],
+      "fixture_id": "IH02"
+    },
+    {
+      "id": "IH03-F1",
+      "severity": "fixture",
+      "title": "IH03 · Anaheim Ducks at Philadelphia Flyers",
+      "detail": "Venue, starting goalies and complete availability were not established in the captured evidence; venue is blank and lines remain experimental.",
+      "source_ids": [
+        "nhl-schedule-24",
+        "nhl-standings"
+      ],
+      "fixture_id": "IH03"
+    },
+    {
+      "id": "IH03-M1",
+      "severity": "pricing",
+      "title": "IH03 · markets withheld",
+      "detail": "Starting-goalie and player props withheld: no compatible current goalie/lineup dataset was captured.",
+      "source_ids": [
+        "nhl-schedule-24",
+        "nhl-standings"
+      ],
+      "fixture_id": "IH03"
+    },
+    {
+      "id": "IH04-F1",
+      "severity": "fixture",
+      "title": "IH04 · Los Angeles Kings at New Jersey Devils",
+      "detail": "Venue, starting goalies and complete availability were not established in the captured evidence; venue is blank and lines remain experimental.",
+      "source_ids": [
+        "nhl-schedule-24",
+        "nhl-standings"
+      ],
+      "fixture_id": "IH04"
+    },
+    {
+      "id": "IH04-M1",
+      "severity": "pricing",
+      "title": "IH04 · markets withheld",
+      "detail": "Starting-goalie and player props withheld: no compatible current goalie/lineup dataset was captured.",
+      "source_ids": [
+        "nhl-schedule-24",
+        "nhl-standings"
+      ],
+      "fixture_id": "IH04"
+    },
+    {
+      "id": "IH05-F1",
+      "severity": "fixture",
+      "title": "IH05 · San Jose Sharks at Boston Bruins",
+      "detail": "Venue, starting goalies and complete availability were not established in the captured evidence; venue is blank and lines remain experimental.",
+      "source_ids": [
+        "nhl-schedule-24",
+        "nhl-standings"
+      ],
+      "fixture_id": "IH05"
+    },
+    {
+      "id": "IH05-M1",
+      "severity": "pricing",
+      "title": "IH05 · markets withheld",
+      "detail": "Starting-goalie and player props withheld: no compatible current goalie/lineup dataset was captured.",
+      "source_ids": [
+        "nhl-schedule-24",
+        "nhl-standings"
+      ],
+      "fixture_id": "IH05"
+    },
+    {
+      "id": "BK01-F1",
+      "severity": "fixture",
+      "title": "BK01 · New York Knicks at Boston Celtics",
+      "detail": "Current rosters changed materially in the official preview, so last-season records are not promoted into a current moneyline price.",
+      "source_ids": [
+        "nba-game",
+        "nba-standings-2025",
+        "nba-injury"
+      ],
+      "fixture_id": "BK01"
+    },
+    {
+      "id": "BK01-M1",
+      "severity": "pricing",
+      "title": "BK01 · markets withheld",
+      "detail": "Winner, spread and total points withheld: one current game per team and major roster changes do not provide a supportable paired scoring baseline.",
+      "source_ids": [
+        "nba-game",
+        "nba-standings-2025",
+        "nba-injury"
+      ],
+      "fixture_id": "BK01"
+    },
+    {
+      "id": "BK01-M2",
+      "severity": "pricing",
+      "title": "BK01 · markets withheld",
+      "detail": "Player props withheld: the injury report establishes listed statuses but not a current role/minutes baseline.",
+      "source_ids": [
+        "nba-game",
+        "nba-standings-2025",
+        "nba-injury"
+      ],
+      "fixture_id": "BK01"
+    },
+    {
+      "id": "RL01-M1",
+      "severity": "pricing",
+      "title": "RL01 · markets withheld",
+      "detail": "Winner, points handicap and total points withheld: no compatible paired current scoring/strength dataset was captured.",
+      "source_ids": [
+        "nrl-teams"
+      ],
+      "fixture_id": "RL01"
+    },
+    {
+      "id": "RL01-M2",
+      "severity": "pricing",
+      "title": "RL01 · markets withheld",
+      "detail": "Try-scorer markets withheld: squad lists alone do not establish a scoring distribution.",
+      "source_ids": [
+        "nrl-teams"
+      ],
+      "fixture_id": "RL01"
+    }
+  ]
+}

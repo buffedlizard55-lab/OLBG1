@@ -1,0 +1,993 @@
+{
+  "session": "T5B7D",
+  "generated_at": "2026-10-23T21:36:17Z",
+  "constants": {
+    "nhl_league_goals_per_team_assumption": 3.0,
+    "mlb_league_runs_per_team_assumption": 4.5,
+    "shrinkage_prior_games": 5.0,
+    "nhl_home_scoring_factor": 1.05,
+    "nhl_away_scoring_factor": 0.95,
+    "mlb_home_scoring_factor": 1.04,
+    "mlb_away_scoring_factor": 0.96,
+    "poisson_score_cutoff": 30,
+    "high_probability_strictly_above": 0.7,
+    "fair_decimal_band_min": 1.4,
+    "fair_decimal_band_max": 101.0,
+    "medium_research_probability_min": 0.6
+  },
+  "method": "Team scoring and allowance rates are each shrunk toward a disclosed league-rate assumption with a five-game prior. Expected home/away scores combine the attack rate with the opponent allowance rate and disclosed scoring factors. Independent Poisson regulation scores are enumerated through 30. Tie mass is split evenly between a one-score home or away final margin and adds one score to the total. Winner markets include overtime/extra innings; handicap and total markets use the same disclosed tie approximation. These are experimental fair prices, not calibrated betting claims.",
+  "books": [
+    {
+      "fixture_id": "GF01",
+      "sport": "Golf",
+      "markets": [],
+      "preferred_winner": null,
+      "expires_at": null,
+      "withheld_reason": "Outright, head-to-head, round-score and player markets withheld: no supported future pairing or complete current leaderboard was captured."
+    },
+    {
+      "fixture_id": "VB01",
+      "sport": "Volleyball",
+      "markets": [],
+      "preferred_winner": null,
+      "expires_at": null,
+      "withheld_reason": "Winner, set handicap, total sets and exact score withheld: no compatible current team-strength dataset was captured. Player props withheld: no official availability and player-statistics package was captured."
+    },
+    {
+      "fixture_id": "RU01",
+      "sport": "Rugby Union",
+      "markets": [],
+      "preferred_winner": null,
+      "expires_at": null,
+      "withheld_reason": "Winner, points handicap and total points withheld pending a compatible current table/scoring dataset. Try-scorer and player markets withheld; squad publication alone does not supply a scoring baseline."
+    },
+    {
+      "fixture_id": "CR01",
+      "sport": "Cricket",
+      "markets": [],
+      "preferred_winner": null,
+      "expires_at": null,
+      "withheld_reason": "Match winner, innings handicap and match/innings totals withheld: no compatible current team and venue scoring baseline was captured. Player props withheld despite team news because no supported player-market baseline was established."
+    },
+    {
+      "fixture_id": "SN01",
+      "sport": "Snooker",
+      "markets": [],
+      "preferred_winner": null,
+      "expires_at": null,
+      "withheld_reason": "Match winner, frame handicap and total frames withheld: no current paired player-statistics package was captured. Century and highest-break markets withheld: no supported market baseline was established."
+    },
+    {
+      "fixture_id": "DA01",
+      "sport": "Darts",
+      "markets": [],
+      "preferred_winner": null,
+      "expires_at": null,
+      "withheld_reason": "Match winner, leg handicap and total legs withheld: two match averages are insufficient for a calibrated best-of-19 probability. 180s and highest-checkout markets withheld: no compatible current player distribution was captured."
+    },
+    {
+      "fixture_id": "BB01",
+      "sport": "Baseball",
+      "markets": [
+        {
+          "key": "winner",
+          "label": "Moneyline · includes extra innings",
+          "settlement": "Full game; tie mass split evenly in the disclosed overtime/extra-innings approximation",
+          "outcomes": [
+            {
+              "market": "Moneyline · includes extra innings",
+              "selection": "Milwaukee Brewers to win",
+              "line": null,
+              "probability": 0.63847872,
+              "fair_decimal": 1.566223,
+              "american": -177,
+              "american_display": "-177",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Moneyline · includes extra innings",
+              "selection": "Tampa Bay Rays to win",
+              "line": null,
+              "probability": 0.36152128,
+              "fair_decimal": 2.766089,
+              "american": 177,
+              "american_display": "+177",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        },
+        {
+          "key": "handicap",
+          "label": "Run line",
+          "settlement": "Final margin after the disclosed tie approximation; half-point line means no push",
+          "outcomes": [
+            {
+              "market": "Run line",
+              "selection": "Milwaukee Brewers -0.5",
+              "line": -0.5,
+              "probability": 0.63847872,
+              "fair_decimal": 1.566223,
+              "american": -177,
+              "american_display": "-177",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Run line",
+              "selection": "Tampa Bay Rays +0.5",
+              "line": 0.5,
+              "probability": 0.36152128,
+              "fair_decimal": 2.766089,
+              "american": 177,
+              "american_display": "+177",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        },
+        {
+          "key": "total",
+          "label": "Total runs",
+          "settlement": "Combined final score after the disclosed one-score tie adjustment; half-point line means no push",
+          "outcomes": [
+            {
+              "market": "Total runs",
+              "selection": "Over 7.5",
+              "line": 7.5,
+              "probability": 0.61158178,
+              "fair_decimal": 1.635104,
+              "american": -157,
+              "american_display": "-157",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Total runs",
+              "selection": "Under 7.5",
+              "line": 7.5,
+              "probability": 0.38841822,
+              "fair_decimal": 2.574545,
+              "american": 157,
+              "american_display": "+157",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        }
+      ],
+      "expected_home_score": 4.762031,
+      "expected_away_score": 3.716212,
+      "expected_total": 8.478243,
+      "expected_regulation_margin": 1.045819,
+      "derived_factors": {
+        "league_rate_assumption": 4.5,
+        "home_attack_factor": 1.1370592149035261,
+        "home_allowance_factor": 0.8522954091816367,
+        "away_attack_factor": 1.0093147039254824,
+        "away_allowance_factor": 0.8948769128409846,
+        "home_scoring_factor": 1.04,
+        "away_scoring_factor": 0.96
+      },
+      "retained_poisson_mass_before_normalization": 0.9999999999999996,
+      "preferred_winner": {
+        "selection": "Milwaukee Brewers to win",
+        "probability": 0.63847872,
+        "fair_decimal": 1.566223,
+        "american_display": "-177",
+        "research_confidence": "Medium",
+        "official_fixture": true,
+        "open_olbg_market": false,
+        "availability_complete": false,
+        "probability_gate": false,
+        "band_gate": true,
+        "prediction_gate": false,
+        "publishable_high": false,
+        "reason": "Research only: no open OLBG market was established and the availability package is incomplete."
+      },
+      "expires_at": "2026-10-24T00:00:00Z",
+      "withheld_reason": "First-five innings, pitcher props and player props withheld: probable-pitcher names without compatible current statistics are insufficient."
+    },
+    {
+      "fixture_id": "BB02",
+      "sport": "Baseball",
+      "markets": [
+        {
+          "key": "winner",
+          "label": "Moneyline · includes extra innings",
+          "settlement": "Full game; tie mass split evenly in the disclosed overtime/extra-innings approximation",
+          "outcomes": [
+            {
+              "market": "Moneyline · includes extra innings",
+              "selection": "Milwaukee Brewers to win",
+              "line": null,
+              "probability": 0.63847872,
+              "fair_decimal": 1.566223,
+              "american": -177,
+              "american_display": "-177",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Moneyline · includes extra innings",
+              "selection": "Tampa Bay Rays to win",
+              "line": null,
+              "probability": 0.36152128,
+              "fair_decimal": 2.766089,
+              "american": 177,
+              "american_display": "+177",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        },
+        {
+          "key": "handicap",
+          "label": "Run line",
+          "settlement": "Final margin after the disclosed tie approximation; half-point line means no push",
+          "outcomes": [
+            {
+              "market": "Run line",
+              "selection": "Milwaukee Brewers -0.5",
+              "line": -0.5,
+              "probability": 0.63847872,
+              "fair_decimal": 1.566223,
+              "american": -177,
+              "american_display": "-177",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Run line",
+              "selection": "Tampa Bay Rays +0.5",
+              "line": 0.5,
+              "probability": 0.36152128,
+              "fair_decimal": 2.766089,
+              "american": 177,
+              "american_display": "+177",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        },
+        {
+          "key": "total",
+          "label": "Total runs",
+          "settlement": "Combined final score after the disclosed one-score tie adjustment; half-point line means no push",
+          "outcomes": [
+            {
+              "market": "Total runs",
+              "selection": "Over 7.5",
+              "line": 7.5,
+              "probability": 0.61158178,
+              "fair_decimal": 1.635104,
+              "american": -157,
+              "american_display": "-157",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Total runs",
+              "selection": "Under 7.5",
+              "line": 7.5,
+              "probability": 0.38841822,
+              "fair_decimal": 2.574545,
+              "american": 157,
+              "american_display": "+157",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        }
+      ],
+      "expected_home_score": 4.762031,
+      "expected_away_score": 3.716212,
+      "expected_total": 8.478243,
+      "expected_regulation_margin": 1.045819,
+      "derived_factors": {
+        "league_rate_assumption": 4.5,
+        "home_attack_factor": 1.1370592149035261,
+        "home_allowance_factor": 0.8522954091816367,
+        "away_attack_factor": 1.0093147039254824,
+        "away_allowance_factor": 0.8948769128409846,
+        "home_scoring_factor": 1.04,
+        "away_scoring_factor": 0.96
+      },
+      "retained_poisson_mass_before_normalization": 0.9999999999999996,
+      "preferred_winner": {
+        "selection": "Milwaukee Brewers to win",
+        "probability": 0.63847872,
+        "fair_decimal": 1.566223,
+        "american_display": "-177",
+        "research_confidence": "Medium",
+        "official_fixture": true,
+        "open_olbg_market": false,
+        "availability_complete": false,
+        "probability_gate": false,
+        "band_gate": true,
+        "prediction_gate": false,
+        "publishable_high": false,
+        "reason": "Research only: no open OLBG market was established and the availability package is incomplete."
+      },
+      "expires_at": "2026-10-24T03:36:17Z",
+      "withheld_reason": "First-five innings, pitcher props and player props withheld pending compatible current pitching statistics and Game 1 availability news."
+    },
+    {
+      "fixture_id": "GS01",
+      "sport": "Gaelic Sports",
+      "markets": [],
+      "preferred_winner": null,
+      "expires_at": null,
+      "withheld_reason": "Winner, points handicap and total points withheld: no compatible current club scoring and availability dataset was captured."
+    },
+    {
+      "fixture_id": "GH01",
+      "sport": "Greyhounds",
+      "markets": [],
+      "preferred_winner": null,
+      "expires_at": null,
+      "withheld_reason": "Race winner, forecast/tricast and trap-related markets withheld: runners, traps and current sectional form were not established."
+    },
+    {
+      "fixture_id": "TN01",
+      "sport": "Tennis",
+      "markets": [],
+      "preferred_winner": null,
+      "expires_at": null,
+      "withheld_reason": "Match winner, game/set handicap and total games withheld: no compatible current ranking and surface-performance package was captured. Player aces and other props withheld: no supported player-market baseline was established."
+    },
+    {
+      "fixture_id": "MR01",
+      "sport": "Motor Racing",
+      "markets": [],
+      "preferred_winner": null,
+      "expires_at": null,
+      "withheld_reason": "Race winner, podium, head-to-head and qualifying markets withheld: final grid and a compatible current driver-performance package were not captured."
+    },
+    {
+      "fixture_id": "HB01",
+      "sport": "Handball",
+      "markets": [],
+      "preferred_winner": null,
+      "expires_at": null,
+      "withheld_reason": "Winner (including draw), goal handicap and total goals withheld: a complete paired current table/scoring dataset was not captured. Player props withheld: no official match availability and player-statistics package was captured."
+    },
+    {
+      "fixture_id": "IH01",
+      "sport": "Ice Hockey",
+      "markets": [
+        {
+          "key": "winner",
+          "label": "Moneyline · includes OT",
+          "settlement": "Full game; tie mass split evenly in the disclosed overtime/extra-innings approximation",
+          "outcomes": [
+            {
+              "market": "Moneyline · includes OT",
+              "selection": "Chicago Blackhawks to win",
+              "line": null,
+              "probability": 0.41714419,
+              "fair_decimal": 2.397253,
+              "american": 140,
+              "american_display": "+140",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Moneyline · includes OT",
+              "selection": "Montréal Canadiens to win",
+              "line": null,
+              "probability": 0.58285581,
+              "fair_decimal": 1.71569,
+              "american": -140,
+              "american_display": "-140",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        },
+        {
+          "key": "handicap",
+          "label": "Puck line",
+          "settlement": "Final margin after the disclosed tie approximation; half-point line means no push",
+          "outcomes": [
+            {
+              "market": "Puck line",
+              "selection": "Chicago Blackhawks +0.5",
+              "line": 0.5,
+              "probability": 0.41714419,
+              "fair_decimal": 2.397253,
+              "american": 140,
+              "american_display": "+140",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Puck line",
+              "selection": "Montréal Canadiens -0.5",
+              "line": -0.5,
+              "probability": 0.58285581,
+              "fair_decimal": 1.71569,
+              "american": -140,
+              "american_display": "-140",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        },
+        {
+          "key": "total",
+          "label": "Total goals",
+          "settlement": "Combined final score after the disclosed one-score tie adjustment; half-point line means no push",
+          "outcomes": [
+            {
+              "market": "Total goals",
+              "selection": "Over 6.5",
+              "line": 6.5,
+              "probability": 0.57543211,
+              "fair_decimal": 1.737824,
+              "american": -136,
+              "american_display": "-136",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Total goals",
+              "selection": "Under 6.5",
+              "line": 6.5,
+              "probability": 0.42456789,
+              "fair_decimal": 2.355336,
+              "american": 136,
+              "american_display": "+136",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        }
+      ],
+      "expected_home_score": 3.15,
+      "expected_away_score": 3.707908,
+      "expected_total": 6.857908,
+      "expected_regulation_margin": -0.557908,
+      "derived_factors": {
+        "league_rate_assumption": 3.0,
+        "home_attack_factor": 0.8571428571428572,
+        "home_allowance_factor": 1.2142857142857142,
+        "away_attack_factor": 1.0714285714285714,
+        "away_allowance_factor": 1.1666666666666667,
+        "home_scoring_factor": 1.05,
+        "away_scoring_factor": 0.95
+      },
+      "retained_poisson_mass_before_normalization": 0.9999999999999987,
+      "preferred_winner": {
+        "selection": "Montréal Canadiens to win",
+        "probability": 0.58285581,
+        "fair_decimal": 1.71569,
+        "american_display": "-140",
+        "research_confidence": "Low",
+        "official_fixture": true,
+        "open_olbg_market": false,
+        "availability_complete": false,
+        "probability_gate": false,
+        "band_gate": true,
+        "prediction_gate": false,
+        "publishable_high": false,
+        "reason": "Research only: no open OLBG market was established and the availability package is incomplete."
+      },
+      "expires_at": "2026-10-24T00:00:00Z",
+      "withheld_reason": "Starting-goalie and player props withheld: no compatible current goalie/lineup dataset was captured."
+    },
+    {
+      "fixture_id": "IH02",
+      "sport": "Ice Hockey",
+      "markets": [
+        {
+          "key": "winner",
+          "label": "Moneyline · includes OT",
+          "settlement": "Full game; tie mass split evenly in the disclosed overtime/extra-innings approximation",
+          "outcomes": [
+            {
+              "market": "Moneyline · includes OT",
+              "selection": "Colorado Avalanche to win",
+              "line": null,
+              "probability": 0.55350613,
+              "fair_decimal": 1.806665,
+              "american": -124,
+              "american_display": "-124",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Moneyline · includes OT",
+              "selection": "Tampa Bay Lightning to win",
+              "line": null,
+              "probability": 0.44649387,
+              "fair_decimal": 2.239672,
+              "american": 124,
+              "american_display": "+124",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        },
+        {
+          "key": "handicap",
+          "label": "Puck line",
+          "settlement": "Final margin after the disclosed tie approximation; half-point line means no push",
+          "outcomes": [
+            {
+              "market": "Puck line",
+              "selection": "Colorado Avalanche -0.5",
+              "line": -0.5,
+              "probability": 0.55350613,
+              "fair_decimal": 1.806665,
+              "american": -124,
+              "american_display": "-124",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Puck line",
+              "selection": "Tampa Bay Lightning +0.5",
+              "line": 0.5,
+              "probability": 0.44649387,
+              "fair_decimal": 2.239672,
+              "american": 124,
+              "american_display": "+124",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        },
+        {
+          "key": "total",
+          "label": "Total goals",
+          "settlement": "Combined final score after the disclosed one-score tie adjustment; half-point line means no push",
+          "outcomes": [
+            {
+              "market": "Total goals",
+              "selection": "Over 6.5",
+              "line": 6.5,
+              "probability": 0.55821692,
+              "fair_decimal": 1.791418,
+              "american": -126,
+              "american_display": "-126",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Total goals",
+              "selection": "Under 6.5",
+              "line": 6.5,
+              "probability": 0.44178308,
+              "fair_decimal": 2.263554,
+              "american": 126,
+              "american_display": "+126",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        }
+      ],
+      "expected_home_score": 3.546667,
+      "expected_away_score": 3.190794,
+      "expected_total": 6.73746,
+      "expected_regulation_margin": 0.355873,
+      "derived_factors": {
+        "league_rate_assumption": 3.0,
+        "home_attack_factor": 1.2444444444444445,
+        "home_allowance_factor": 1.0222222222222224,
+        "away_attack_factor": 1.0952380952380951,
+        "away_allowance_factor": 0.9047619047619048,
+        "home_scoring_factor": 1.05,
+        "away_scoring_factor": 0.95
+      },
+      "retained_poisson_mass_before_normalization": 0.9999999999999992,
+      "preferred_winner": {
+        "selection": "Colorado Avalanche to win",
+        "probability": 0.55350613,
+        "fair_decimal": 1.806665,
+        "american_display": "-124",
+        "research_confidence": "Low",
+        "official_fixture": true,
+        "open_olbg_market": false,
+        "availability_complete": false,
+        "probability_gate": false,
+        "band_gate": true,
+        "prediction_gate": false,
+        "publishable_high": false,
+        "reason": "Research only: no open OLBG market was established and the availability package is incomplete."
+      },
+      "expires_at": "2026-10-24T01:00:00Z",
+      "withheld_reason": "Starting-goalie and player props withheld: no compatible current goalie/lineup dataset was captured."
+    },
+    {
+      "fixture_id": "IH03",
+      "sport": "Ice Hockey",
+      "markets": [
+        {
+          "key": "winner",
+          "label": "Moneyline · includes OT",
+          "settlement": "Full game; tie mass split evenly in the disclosed overtime/extra-innings approximation",
+          "outcomes": [
+            {
+              "market": "Moneyline · includes OT",
+              "selection": "Philadelphia Flyers to win",
+              "line": null,
+              "probability": 0.42983966,
+              "fair_decimal": 2.326449,
+              "american": 133,
+              "american_display": "+133",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Moneyline · includes OT",
+              "selection": "Anaheim Ducks to win",
+              "line": null,
+              "probability": 0.57016034,
+              "fair_decimal": 1.753893,
+              "american": -133,
+              "american_display": "-133",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        },
+        {
+          "key": "handicap",
+          "label": "Puck line",
+          "settlement": "Final margin after the disclosed tie approximation; half-point line means no push",
+          "outcomes": [
+            {
+              "market": "Puck line",
+              "selection": "Philadelphia Flyers +0.5",
+              "line": 0.5,
+              "probability": 0.42983966,
+              "fair_decimal": 2.326449,
+              "american": 133,
+              "american_display": "+133",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Puck line",
+              "selection": "Anaheim Ducks -0.5",
+              "line": -0.5,
+              "probability": 0.57016034,
+              "fair_decimal": 1.753893,
+              "american": -133,
+              "american_display": "-133",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        },
+        {
+          "key": "total",
+          "label": "Total goals",
+          "settlement": "Combined final score after the disclosed one-score tie adjustment; half-point line means no push",
+          "outcomes": [
+            {
+              "market": "Total goals",
+              "selection": "Over 4.5",
+              "line": 4.5,
+              "probability": 0.62737118,
+              "fair_decimal": 1.593953,
+              "american": -168,
+              "american_display": "-168",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Total goals",
+              "selection": "Under 4.5",
+              "line": 4.5,
+              "probability": 0.37262882,
+              "fair_decimal": 2.683636,
+              "american": 168,
+              "american_display": "+168",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        }
+      ],
+      "expected_home_score": 2.305882,
+      "expected_away_score": 2.712157,
+      "expected_total": 5.018039,
+      "expected_regulation_margin": -0.406275,
+      "derived_factors": {
+        "league_rate_assumption": 3.0,
+        "home_attack_factor": 0.6862745098039215,
+        "home_allowance_factor": 1.0196078431372548,
+        "away_attack_factor": 0.9333333333333332,
+        "away_allowance_factor": 1.0666666666666667,
+        "home_scoring_factor": 1.05,
+        "away_scoring_factor": 0.95
+      },
+      "retained_poisson_mass_before_normalization": 0.9999999999999994,
+      "preferred_winner": {
+        "selection": "Anaheim Ducks to win",
+        "probability": 0.57016034,
+        "fair_decimal": 1.753893,
+        "american_display": "-133",
+        "research_confidence": "Low",
+        "official_fixture": true,
+        "open_olbg_market": false,
+        "availability_complete": false,
+        "probability_gate": false,
+        "band_gate": true,
+        "prediction_gate": false,
+        "publishable_high": false,
+        "reason": "Research only: no open OLBG market was established and the availability package is incomplete."
+      },
+      "expires_at": "2026-10-24T03:36:17Z",
+      "withheld_reason": "Starting-goalie and player props withheld: no compatible current goalie/lineup dataset was captured."
+    },
+    {
+      "fixture_id": "IH04",
+      "sport": "Ice Hockey",
+      "markets": [
+        {
+          "key": "winner",
+          "label": "Moneyline · includes OT",
+          "settlement": "Full game; tie mass split evenly in the disclosed overtime/extra-innings approximation",
+          "outcomes": [
+            {
+              "market": "Moneyline · includes OT",
+              "selection": "New Jersey Devils to win",
+              "line": null,
+              "probability": 0.67624044,
+              "fair_decimal": 1.478764,
+              "american": -209,
+              "american_display": "-209",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Moneyline · includes OT",
+              "selection": "Los Angeles Kings to win",
+              "line": null,
+              "probability": 0.32375956,
+              "fair_decimal": 3.088712,
+              "american": 209,
+              "american_display": "+209",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        },
+        {
+          "key": "handicap",
+          "label": "Puck line",
+          "settlement": "Final margin after the disclosed tie approximation; half-point line means no push",
+          "outcomes": [
+            {
+              "market": "Puck line",
+              "selection": "New Jersey Devils -0.5",
+              "line": -0.5,
+              "probability": 0.67624044,
+              "fair_decimal": 1.478764,
+              "american": -209,
+              "american_display": "-209",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Puck line",
+              "selection": "Los Angeles Kings +0.5",
+              "line": 0.5,
+              "probability": 0.32375956,
+              "fair_decimal": 3.088712,
+              "american": 209,
+              "american_display": "+209",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        },
+        {
+          "key": "total",
+          "label": "Total goals",
+          "settlement": "Combined final score after the disclosed one-score tie adjustment; half-point line means no push",
+          "outcomes": [
+            {
+              "market": "Total goals",
+              "selection": "Over 5.5",
+              "line": 5.5,
+              "probability": 0.61704372,
+              "fair_decimal": 1.620631,
+              "american": -161,
+              "american_display": "-161",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Total goals",
+              "selection": "Under 5.5",
+              "line": 5.5,
+              "probability": 0.38295628,
+              "fair_decimal": 2.611264,
+              "american": 161,
+              "american_display": "+161",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        }
+      ],
+      "expected_home_score": 3.790769,
+      "expected_away_score": 2.61453,
+      "expected_total": 6.405299,
+      "expected_regulation_margin": 1.176239,
+      "derived_factors": {
+        "league_rate_assumption": 3.0,
+        "home_attack_factor": 1.0666666666666667,
+        "home_allowance_factor": 1.0222222222222224,
+        "away_attack_factor": 0.8974358974358975,
+        "away_allowance_factor": 1.1282051282051282,
+        "home_scoring_factor": 1.05,
+        "away_scoring_factor": 0.95
+      },
+      "retained_poisson_mass_before_normalization": 0.9999999999999987,
+      "preferred_winner": {
+        "selection": "New Jersey Devils to win",
+        "probability": 0.67624044,
+        "fair_decimal": 1.478764,
+        "american_display": "-209",
+        "research_confidence": "Medium",
+        "official_fixture": true,
+        "open_olbg_market": false,
+        "availability_complete": false,
+        "probability_gate": false,
+        "band_gate": true,
+        "prediction_gate": false,
+        "publishable_high": false,
+        "reason": "Research only: no open OLBG market was established and the availability package is incomplete."
+      },
+      "expires_at": "2026-10-24T03:36:17Z",
+      "withheld_reason": "Starting-goalie and player props withheld: no compatible current goalie/lineup dataset was captured."
+    },
+    {
+      "fixture_id": "IH05",
+      "sport": "Ice Hockey",
+      "markets": [
+        {
+          "key": "winner",
+          "label": "Moneyline · includes OT",
+          "settlement": "Full game; tie mass split evenly in the disclosed overtime/extra-innings approximation",
+          "outcomes": [
+            {
+              "market": "Moneyline · includes OT",
+              "selection": "Boston Bruins to win",
+              "line": null,
+              "probability": 0.7687247,
+              "fair_decimal": 1.300856,
+              "american": -332,
+              "american_display": "-332",
+              "in_band": false,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Moneyline · includes OT",
+              "selection": "San Jose Sharks to win",
+              "line": null,
+              "probability": 0.2312753,
+              "fair_decimal": 4.323851,
+              "american": 332,
+              "american_display": "+332",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        },
+        {
+          "key": "handicap",
+          "label": "Puck line",
+          "settlement": "Final margin after the disclosed tie approximation; half-point line means no push",
+          "outcomes": [
+            {
+              "market": "Puck line",
+              "selection": "Boston Bruins -1.5",
+              "line": -1.5,
+              "probability": 0.54952537,
+              "fair_decimal": 1.819752,
+              "american": -122,
+              "american_display": "-122",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Puck line",
+              "selection": "San Jose Sharks +1.5",
+              "line": 1.5,
+              "probability": 0.45047463,
+              "fair_decimal": 2.219881,
+              "american": 122,
+              "american_display": "+122",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        },
+        {
+          "key": "total",
+          "label": "Total goals",
+          "settlement": "Combined final score after the disclosed one-score tie adjustment; half-point line means no push",
+          "outcomes": [
+            {
+              "market": "Total goals",
+              "selection": "Over 5.5",
+              "line": 5.5,
+              "probability": 0.5934761,
+              "fair_decimal": 1.684988,
+              "american": -146,
+              "american_display": "-146",
+              "in_band": true,
+              "bookmaker_quote": null
+            },
+            {
+              "market": "Total goals",
+              "selection": "Under 5.5",
+              "line": 5.5,
+              "probability": 0.4065239,
+              "fair_decimal": 2.45988,
+              "american": 146,
+              "american_display": "+146",
+              "in_band": true,
+              "bookmaker_quote": null
+            }
+          ]
+        }
+      ],
+      "expected_home_score": 4.052344,
+      "expected_away_score": 2.196875,
+      "expected_total": 6.249219,
+      "expected_regulation_margin": 1.855469,
+      "derived_factors": {
+        "league_rate_assumption": 3.0,
+        "home_attack_factor": 1.1875,
+        "home_allowance_factor": 0.7708333333333334,
+        "away_attack_factor": 1.0,
+        "away_allowance_factor": 1.0833333333333333,
+        "home_scoring_factor": 1.05,
+        "away_scoring_factor": 0.95
+      },
+      "retained_poisson_mass_before_normalization": 0.9999999999999993,
+      "preferred_winner": {
+        "selection": "Boston Bruins to win",
+        "probability": 0.7687247,
+        "fair_decimal": 1.300856,
+        "american_display": "-332",
+        "research_confidence": "Medium",
+        "official_fixture": true,
+        "open_olbg_market": false,
+        "availability_complete": false,
+        "probability_gate": true,
+        "band_gate": false,
+        "prediction_gate": false,
+        "publishable_high": false,
+        "reason": "Research only: no open OLBG market was established and the availability package is incomplete."
+      },
+      "expires_at": "2026-10-24T03:36:17Z",
+      "withheld_reason": "Starting-goalie and player props withheld: no compatible current goalie/lineup dataset was captured."
+    },
+    {
+      "fixture_id": "BK01",
+      "sport": "Basketball",
+      "markets": [],
+      "preferred_winner": null,
+      "expires_at": null,
+      "withheld_reason": "Winner, spread and total points withheld: one current game per team and major roster changes do not provide a supportable paired scoring baseline. Player props withheld: the injury report establishes listed statuses but not a current role/minutes baseline."
+    },
+    {
+      "fixture_id": "RL01",
+      "sport": "Rugby League",
+      "markets": [],
+      "preferred_winner": null,
+      "expires_at": null,
+      "withheld_reason": "Winner, points handicap and total points withheld: no compatible paired current scoring/strength dataset was captured. Try-scorer markets withheld: squad lists alone do not establish a scoring distribution."
+    }
+  ]
+}
