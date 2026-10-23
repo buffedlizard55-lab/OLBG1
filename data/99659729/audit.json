@@ -1,0 +1,533 @@
+{
+  "audit_id": "99659729-independent-freshness-audit",
+  "as_of_utc": "2026-10-23T21:26:46Z",
+  "source_snapshot_utc": "2026-10-23T20:30:00Z",
+  "snapshot_age_minutes": 56.77,
+  "live_official_refresh_performed": false,
+  "scope": [
+    "golf",
+    "volleyball",
+    "rugby-union",
+    "cricket",
+    "snooker",
+    "darts",
+    "baseball",
+    "gaelic-sports",
+    "greyhounds",
+    "tennis",
+    "motor-racing",
+    "handball",
+    "ice-hockey",
+    "basketball",
+    "rugby-league"
+  ],
+  "counts": {
+    "fixtures": 81,
+    "sports_present": 15,
+    "sports": [
+      "baseball",
+      "basketball",
+      "cricket",
+      "darts",
+      "gaelic-sports",
+      "golf",
+      "greyhounds",
+      "handball",
+      "ice-hockey",
+      "motor-racing",
+      "rugby-league",
+      "rugby-union",
+      "snooker",
+      "tennis",
+      "volleyball"
+    ],
+    "listed_upcoming": 70,
+    "fixture_source_missing": 0,
+    "markets": 460,
+    "market_rows_without_https_source": 0,
+    "market_rows_with_unknown_fixture": 0,
+    "predictions": 51,
+    "high_labeled_rows": 51,
+    "strict_high_gate_rows": 3,
+    "high_labeled_rows_failing_strict_gate": 48,
+    "starts_elapsed_but_still_labeled_upcoming": 1,
+    "upcoming_starts_within_two_hours": 6,
+    "upcoming_rows_without_exact_start": 9,
+    "incomplete_best_of_five_score_books": 5,
+    "nonexclusive_driver_markets_flagged_for_joint_consistency": 2
+  },
+  "official_source_domains_listed_in_snapshot": [
+    "api-web.nhle.com",
+    "gaacork.ie",
+    "hbcnantes.com",
+    "kilkennygaa.ie",
+    "munster.gaa.ie",
+    "official.nba.com",
+    "scoring.nzc.nz",
+    "stats.unitedrugby.com",
+    "statsapi.mlb.com",
+    "thw-handball.de",
+    "wtafiles.wtatennis.com",
+    "www.atptour.com",
+    "www.cricinfo.com",
+    "www.cricket.com.au",
+    "www.euroleaguebasketball.net",
+    "www.europeantour.com",
+    "www.formula1.com",
+    "www.galwaygaa.ie",
+    "www.gbgb.org.uk",
+    "www.hc-erlangen.de",
+    "www.icc-cricket.com",
+    "www.legavolley.it",
+    "www.limerickleader.ie",
+    "www.lpga.com",
+    "www.nba.com",
+    "www.nhl.com",
+    "www.nrl.com",
+    "www.olbg.com",
+    "www.pdc.tv",
+    "www.pgatour.com",
+    "www.tauronliga.pl",
+    "www.teamchambe.com",
+    "www.the42.ie",
+    "www.wst.tv"
+  ],
+  "findings": {
+    "fixture_source_missing_ids": [],
+    "market_fixture_id_orphans": [],
+    "market_source_missing_count": 0,
+    "high_labels_failing_strict_gate": [
+      {
+        "id": "TN01",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "TN02",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "TN03",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "TN04",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "TN05",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "VB01",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "VB02",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "VB03",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "VB04",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "VB05",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "RU01",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "RU02",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "RU03",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "RU04",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "RU05",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "RL01",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "RL02",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "RL03",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "RL04",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "RL05",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "CR01",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "CR02",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "CR04",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "CR05",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "DA02",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "DA03",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "DA04",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "DA05",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "BB01",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "BB02",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "BB03",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "BB04",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "MR03",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "HB02",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "IH01",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "IH02",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "IH04",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "IH05",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "IH06",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "BK01",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "BK02",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "BK03",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "BK04",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "BK05",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "BK06",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "BK07",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "BK08",
+        "reason": "probability is not greater than 70%"
+      },
+      {
+        "id": "BK09",
+        "reason": "probability is not greater than 70%"
+      }
+    ],
+    "strict_high_gate_rows": [
+      {
+        "id": "CR03",
+        "sport": "cricket",
+        "event": "Tasmania v Victoria",
+        "selection": "Tasmanian Tigers",
+        "probability": 0.7067,
+        "fair_american": -241.0,
+        "source": "https://www.cricket.com.au/matches/series/CA:4688/one-day-cup-2026-27"
+      },
+      {
+        "id": "IH03",
+        "sport": "ice-hockey",
+        "event": "Sharks @ Bruins",
+        "selection": "Over 4.5",
+        "probability": 0.7048,
+        "fair_american": -239.0,
+        "source": "https://api-web.nhle.com/v1/schedule/2026-10-23 | https://api-web.nhle.com/v1/standings/2026-10-23"
+      },
+      {
+        "id": "BK10",
+        "sport": "basketball",
+        "event": "Partizan v Paris Basketball",
+        "selection": "Partizan Mozzart Bet Belgrade",
+        "probability": 0.7107,
+        "fair_american": -246.0,
+        "source": "https://www.euroleaguebasketball.net/en/euroleague/standings/ | https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-el2627/"
+      }
+    ],
+    "elapsed_start_rows": [
+      {
+        "id": "GH01",
+        "sport": "greyhounds",
+        "event": "Champion Stakes Final — Grouchos Gregor v field",
+        "start_utc": "2026-10-23T20:13:00Z",
+        "source": "https://www.gbgb.org.uk/racing/open-races/2025-category-one-schedule/"
+      }
+    ],
+    "starts_within_two_hours": [
+      {
+        "id": "CR05",
+        "sport": "cricket",
+        "event": "New Zealand A v India A — 1st Four-Day Test (Day 1)",
+        "start_utc": "2026-10-23T22:00:00Z",
+        "source": "https://scoring.nzc.nz/fixtures"
+      },
+      {
+        "id": "MR04",
+        "sport": "motor-racing",
+        "event": "US Grand Prix — Practice 2",
+        "start_utc": "2026-10-23T22:00:00Z",
+        "source": "https://www.formula1.com/en/racing/2026/united-states"
+      },
+      {
+        "id": "BK01",
+        "sport": "basketball",
+        "event": "Knicks @ Celtics",
+        "start_utc": "2026-10-23T23:00:00Z",
+        "source": "https://www.nba.com/standings"
+      },
+      {
+        "id": "BK02",
+        "sport": "basketball",
+        "event": "Mavericks @ Pacers",
+        "start_utc": "2026-10-23T23:00:00Z",
+        "source": "https://www.nba.com/standings"
+      },
+      {
+        "id": "BK03",
+        "sport": "basketball",
+        "event": "Timberwolves @ Magic",
+        "start_utc": "2026-10-23T23:00:00Z",
+        "source": "https://www.nba.com/standings"
+      },
+      {
+        "id": "BK04",
+        "sport": "basketball",
+        "event": "Raptors @ Wizards",
+        "start_utc": "2026-10-23T23:00:00Z",
+        "source": "https://www.nba.com/standings"
+      }
+    ],
+    "missing_exact_start_rows": [
+      {
+        "id": "TN04",
+        "sport": "tennis",
+        "event": "Fernandez v Kostyuk — WTA Ningbo Open SF",
+        "start_utc": null,
+        "source": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf"
+      },
+      {
+        "id": "TN05",
+        "sport": "tennis",
+        "event": "Li v Boulter — WTA Japan Open SF",
+        "start_utc": null,
+        "source": "https://wtafiles.wtatennis.com/pdf/draws/2026/405/MDS.pdf"
+      },
+      {
+        "id": "GF01",
+        "sport": "golf",
+        "event": "Conners v Power — Bermuda Championship outright H2H",
+        "start_utc": null,
+        "source": "https://www.pgatour.com/leaderboard"
+      },
+      {
+        "id": "GF02",
+        "sport": "golf",
+        "event": "McCarthy v Grillo — Bermuda Championship outright H2H",
+        "start_utc": null,
+        "source": "https://www.pgatour.com/leaderboard"
+      },
+      {
+        "id": "GF03",
+        "sport": "golf",
+        "event": "Ryu v Coughlin — BMW Ladies Championship outright H2H",
+        "start_utc": null,
+        "source": "https://www.lpga.com/tournaments"
+      },
+      {
+        "id": "GF04",
+        "sport": "golf",
+        "event": "Jarvis v Rozner — Genesis Championship outright H2H",
+        "start_utc": null,
+        "source": "https://www.europeantour.com/europeantour/schedule"
+      },
+      {
+        "id": "GF05",
+        "sport": "golf",
+        "event": "Fox v Chacarra — Genesis Championship outright H2H",
+        "start_utc": null,
+        "source": "https://www.europeantour.com/europeantour/schedule"
+      },
+      {
+        "id": "GH03",
+        "sport": "greyhounds",
+        "event": "Scurry Gold Cup — Dunstall Park",
+        "start_utc": null,
+        "source": "https://www.gbgb.org.uk/racing/open-races/2025-category-one-schedule/"
+      },
+      {
+        "id": "MR05",
+        "sport": "motor-racing",
+        "event": "Antonelli to win 2026 Drivers' Championship",
+        "start_utc": null,
+        "source": "https://www.formula1.com/en/results/2026/drivers"
+      }
+    ],
+    "incomplete_best_of_five_score_books": [
+      {
+        "fixture_id": "VB01",
+        "market": "Set Score (best of 5)",
+        "outcomes_listed": 4,
+        "expected_outcomes": 6,
+        "listed_selections": [
+          "PGE GiEK Skra Bełchatów 3-0",
+          "PGE GiEK Skra Bełchatów 3-1",
+          "PGE Projekt Warszawa 3-1",
+          "PGE Projekt Warszawa 3-0"
+        ],
+        "note": "A best-of-five match has six possible terminal scorelines; listed set-score book is incomplete."
+      },
+      {
+        "fixture_id": "VB02",
+        "market": "Set Score (best of 5)",
+        "outcomes_listed": 4,
+        "expected_outcomes": 6,
+        "listed_selections": [
+          "Podziemia Kredowe ChKS Chełm 3-0",
+          "Podziemia Kredowe ChKS Chełm 3-1",
+          "Asseco Resovia Rzeszów 3-1",
+          "Asseco Resovia Rzeszów 3-0"
+        ],
+        "note": "A best-of-five match has six possible terminal scorelines; listed set-score book is incomplete."
+      },
+      {
+        "fixture_id": "VB03",
+        "market": "Set Score (best of 5)",
+        "outcomes_listed": 4,
+        "expected_outcomes": 6,
+        "listed_selections": [
+          "Itas Trentino 3-0",
+          "Itas Trentino 3-1",
+          "Cisterna Volley 3-1",
+          "Cisterna Volley 3-0"
+        ],
+        "note": "A best-of-five match has six possible terminal scorelines; listed set-score book is incomplete."
+      },
+      {
+        "fixture_id": "VB04",
+        "market": "Set Score (best of 5)",
+        "outcomes_listed": 4,
+        "expected_outcomes": 6,
+        "listed_selections": [
+          "Sir Susa Scai Perugia 3-0",
+          "Sir Susa Scai Perugia 3-1",
+          "Tinet Prata di Pordenone 3-1",
+          "Tinet Prata di Pordenone 3-0"
+        ],
+        "note": "A best-of-five match has six possible terminal scorelines; listed set-score book is incomplete."
+      },
+      {
+        "fixture_id": "VB05",
+        "market": "Set Score (best of 5)",
+        "outcomes_listed": 4,
+        "expected_outcomes": 6,
+        "listed_selections": [
+          "Vero Volley Monza 3-0",
+          "Vero Volley Monza 3-1",
+          "Rana Verona 3-1",
+          "Rana Verona 3-0"
+        ],
+        "note": "A best-of-five match has six possible terminal scorelines; listed set-score book is incomplete."
+      }
+    ],
+    "nonexclusive_driver_markets": [
+      {
+        "fixture_id": "MR01",
+        "market": "Podium Finish",
+        "selections_listed": 14,
+        "probability_sum_not_a_one-sum_test": 2.249999,
+        "note": "Driver outcomes overlap; a sum-to-one check is not valid. Verify driver field coverage and joint consistency against official entry/classification data."
+      },
+      {
+        "fixture_id": "MR03",
+        "market": "Top 6 Finish",
+        "selections_listed": 14,
+        "probability_sum_not_a_one-sum_test": 6.99189,
+        "note": "Driver outcomes overlap; a sum-to-one check is not valid. Verify driver field coverage and joint consistency against official entry/classification data."
+      }
+    ],
+    "prediction_prose_violations": [],
+    "duplicate_prediction_text_count": 0,
+    "prediction_source_missing_ids": []
+  },
+  "interpretation": [
+    "This is a structural audit of retained files, not a new live OLBG or governing-body harvest.",
+    "Source URLs are preserved for manual review; link presence does not mean this audit re-fetched or re-confirmed the linked page.",
+    "A scheduled start at or before the audit timestamp is not a claim about the result or actual start; pre-match recommendations must be withheld pending a fresh official status check.",
+    "Only rows meeting probability > 0.70 AND fair American odds -250..+10000 are counted as strict-gate High; all other inherited High labels are flagged for review."
+  ]
+}
