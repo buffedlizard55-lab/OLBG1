@@ -216,8 +216,8 @@ def build_model():
             continue
         edge = sh - sa
         p_home = norm_cdf(edge / SIGMA)
-        note = (f"shrunk mean points margin over the {nh} and {na} matches read this session; "
-                f"normal model with σ={SIGMA:.0f} points")
+        note = (f"shrunk mean points margin from the {nh} matches read for {home} and {na} for {away}; "
+                f"normal distribution with σ={SIGMA:.0f} points")
         add_market(fid, "Match Winner", FIXTURES[fid]["home"], p_home, note)
         add_market(fid, "Match Winner", FIXTURES[fid]["away"], 1 - p_home, note)
         hcap = round(edge * 2) / 2.0
@@ -589,7 +589,7 @@ which is why every sample size is disclosed rather than hidden behind the label.
 </div>
 <div class="note bad"><b>Zero High selections are inside the band today, and that is an arithmetic result, not an
 omission.</b> A price of −250 is 71.4%; a price of −233 is 70.0%. Requiring p ≥ 70% therefore restricts the band to
-70.0%–71.4%. Our two High selections — Edinburgh at 79.2% and Vodacom Bulls at 85.0% — are far above 70% and are
+70.0%–71.4%. Our two High selections — Edinburgh at 79.1% and Vodacom Bulls at 85.0% — are far above 70% and are
 correspondingly priced shorter than −250. Relabelling them, or shaving their probability to fit the band, would be
 fabrication. They are published below as a disclosed out-of-band ledger. See <a href="flagged.html#F-13">F-13</a>.</div>
 
@@ -680,7 +680,7 @@ They are listed, blank, and flagged.</p>
 
 <h2>5. Reading the two High selections carefully</h2>
 <div class="card">
-<p><b>Edinburgh (79.2%).</b> Three wins from three, including a 29-12 win in Parma. The Lions' 57-15 defeat at Loftus
+<p><b>Edinburgh (79.1%).</b> Three wins from three, including a 29-12 win in Parma. The Lions' 57-15 defeat at Loftus
 is the single largest margin conceded by any side in the matches we read. The caveat is that the Lions' round-two
 result was not captured, so their number rests on two matches.</p>
 <p><b>Vodacom Bulls (85.0%).</b> Two matches, 104 points scored, 28 conceded. Ulster's draw with Munster is the only
