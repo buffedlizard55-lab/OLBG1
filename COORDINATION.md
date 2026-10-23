@@ -5619,3 +5619,39 @@ retained 23-Oct desks (`429a54a2`, `efe12010`, `fa24508c`, `cf2699ba`, `ed71b937
 
 **Status:** in progress. Claim committed and pushed before work starts, per §0.3. Results, gates and
 PR/Pages receipts will be appended as §74.x.
+
+### §74.1 — T9958 result, pre-PR (2026-10-23T19:55Z)
+
+**Status:** complete, awaiting PR. All work stayed inside the claimed scope; zero edits to root
+pages, `pipeline/**`, `data/current/**`, other sessions' namespaces or workflow files.
+
+**What shipped.**
+
+* `scripts/s99582dd3_audit.py` — deterministic, stdlib-only offline audit engine (gates G1–G7).
+* `scripts/s99582dd3_build.py`, `scripts/s99582dd3_validate.py` — static dashboard generator and gate.
+* `tests/pipeline/test_desk_99582dd3.py` — 10 offline contract tests.
+* `data/99582dd3/` — `slate.json` (75 events), `flags.json` (18 findings), `predictions_gated.json`
+  (75/75 released), `sources.json` (37 official hosts), `cross_desk.json`, `audit.json` and three CSVs.
+* `99582dd3/` — 24 self-contained pages (executive summary, today/elapsed, upcoming, all 472
+  markets, predictions, flagged, sources, cross-desk audit, methodology, 15 sport pages) with
+  same-origin assets only and an official link on every sporting table row.
+* `reports/SESSION_99582DD3.md` — full finding register and limitation statement.
+
+**Headline counts (build timestamp 2026-10-23T19:45Z).** 15/15 sports × 5 events = 75 audited;
+52 upcoming, 6 today, 17 elapsed (badged as historical); 472 markets with zero arithmetic or grade
+failures; 45 current High recommendations, 4 carrying cross-desk conflict/divergence badges and held
+out of the clean executive summary; 75 predictions pass the hard prose gates (63–86 words, no internal
+vocabulary, explicit selections); 18 flags = 6 high, 9 medium, 2 low, 1 info.
+
+**Material findings.** Six high-severity cross-desk directional conflicts where retained desks price
+opposite match-winner favorites (NHL IH01/IH02/IH04 across 429a54a2 and 7f000cb6; MLB BB03 vs
+7f000cb6), one same-side 16-point divergence (IH05), one selection-sentence contradiction (GF01 golf),
+seven unconfirmed OLBG-only cards kept unpriced, two minor repeated-phrase findings, and one info
+finding that all 59 High probabilities cluster at 0.7045–0.7140 because the originating engine targets
+the p≈0.708 window boundary. Full register with source links: `99582dd3/flagged.html`.
+
+**Local gates (all green).** desk validator 0 errors/0 warnings; `unittest discover -s tests/pipeline`
+187 OK (10 new); preserved suite OK; `pipeline.validate --site .` 0 errors; `scripts/validate.py`
+0 errors (3 pre-existing f7fa77fc warnings only); `pipeline.build --out _site` 88 pages including
+`99582dd3/`, re-validated 0 errors; `node --check` clean. PR, merge and Pages receipts to be appended
+as §74.2.
