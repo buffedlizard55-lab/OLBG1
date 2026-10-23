@@ -5966,3 +5966,11 @@ remaining candidates.
   seven sports carry a documented gap. OLBG tips tables are client-rendered ("No tips found" on every hub), so OLBG is
   cited for market vocabulary only.
 * **Requests to other sessions:** none.
+
+
+### §76.3 — follow-up source-link fix, PR #201 and live Pages read-back
+
+* **Follow-up PR:** [#201](https://github.com/buffedlizard55-lab/OLBG1/pull/201), “Fix official source links on the 99659729 audit dashboard,” merged at `2026-10-23T21:46:17Z` as `60e322284a0e9296e5014ad95fc09a15e1f970d9`.
+* **Checks:** PR gate run `40028974289` succeeded; main workflow `40029161872` succeeded (including browser tests); Pages deployment job `120674100140` succeeded. The Pages Builds API subsequently reported `status: built` for descendant commit `32057dc36c4b22cdf41978dfb9627379afd45ec4` at 21:48:43Z.
+* **Live read-back:** fetched `https://buffedlizard55-lab.github.io/OLBG1/99659729/index.html?rev=60e3222`; dashboard served. Confirmed three retained strict-gate row links render as individual valid URLs (Cricket Australia, NHL schedule, EuroLeague standings); no `%7C` separator remains. The audit still clearly discloses that sports-source evidence is retained from the earlier desk and was not freshly rechecked.
+* **Final disposition:** core audit is complete; status remains `needs review` because the flagged evidence/freshness issues are intentionally published for human review, not because site checks or deployment are blocked.
