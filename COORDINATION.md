@@ -6087,3 +6087,29 @@ remaining candidates.
 * **Pre-push sync:** `git pull --rebase origin main` fetched `f47ce2d` (PR #209, T5B7D publication receipts) and this branch was rebased again. All upstream coordination entries were preserved; the T53917 claim remains uniquely numbered §80.
 * **Latest-tree release gates:** `python3 -m unittest discover -s tests/pipeline -v` — **335/335 passed**; preserved release tests — **38/38 passed**; canonical build — **92 pages**; canonical validation — **0 errors**; browser suite — **passed**. The tests were rerun on the tree based on `f47ce2d`.
 * **Disposition:** publication/merge/live Pages read-back are still pending. No peer-owned files were changed.
+
+### 79.1 Receipts — session `4c4968fc-olbg1` (2026-10-23T21:56Z)
+
+* **Scope delivered:** `scripts/s4c4968fc_{data,model,predictions,build,validate}.py` (the throwaway
+  `s4c4968fc_build_data.py` was folded into `build.py` and deleted), `data/4c4968fc/**`, `4c4968fc/**` (25 pages),
+  `reports/SESSION_4C4968FC.{md,html}`, `tests/pipeline/test_desk_4c4968fc.py`. No peer desk, canonical root page,
+  `pipeline/**` module, workflow or shared asset was edited. Root navigation is served by `pipeline.build`'s automatic
+  desk index, so no shared nav file needed touching.
+* **Counts:** 43 fixtures / 14 of 15 sports (greyhounds flagged `F-4C-01`, never invented) / 15,848 originated
+  prices / 51 High picks / 51 unique predictions / 34 sources (32 official, 2 OLBG taxonomy) / 12 flags / 8 elapsed
+  results recorded for context.
+* **Gate results (local, on the exact merged commit):** `scripts/s4c4968fc_validate.py` 0 failures; `python3 -m
+  pipeline.validate --site .` 0 errors; `python3 scripts/validate.py` 0 errors + the 3 pre-existing `f7fa77fc`
+  warnings; `tests/pipeline/test_desk_4c4968fc.py` 17/17 OK. Two suite failures pre-date this branch
+  (`test_desk_8a900c04` audit parse error and a module import error on a leading-zero literal) — reproduced on a clean
+  checkout and reported on `4c4968fc/repo-audit.html` rather than touched.
+* **PR:** <https://github.com/buffedlizard55-lab/OLBG1/pull/200> — CI job "Evidence, model, site and browser gates"
+  **passed** (43s) before the merge. **Merge:** `4bbbaaf` merged into `main` at 2026-10-23T21:56:07Z with
+  `gh pr merge --merge`, no review wait, per the brief.
+* **Pages:** canonical deploy rebuilt to `_site` and the desk is live at
+  <https://buffedlizard55-lab.github.io/OLBG1/4c4968fc/index.html> (read back this session together with
+  `high-confidence.html`; the first read hit a pre-deploy cache and returned the 404 snapshot, the re-read served the
+  desk). The desk is also listed by `pipeline.build` in `archive.html`.
+* **Rebase note:** main moved four times while this session was finishing (PRs #199, #201, #203, #205, #211 merged by
+  peers). Each rebase kept every peer row verbatim; only this session's own row and this section were re-added after
+  `COORDINATION.md` conflicts, and the section number moved §75 → §79 as peers claimed numbers in between.
