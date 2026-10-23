@@ -1,0 +1,151 @@
+{
+ "snapshot_utc": "2026-10-23T22:40:00Z",
+ "flags": [
+  {
+   "id": "F-8A-01",
+   "severity": "high",
+   "status": "needs review",
+   "title": "Root canonical snapshot is a day stale while the live dashboard is headed with today's date",
+   "detail": "data/current/snapshot.json is generated 2026-10-22T12:29:50Z carrying 108 listings, 16 Low price books and zero High picks, yet the served root index.html page is headed 'Highest-confidence picks - today, 23 Oct 2026'. The root desk therefore publishes yesterday's evidenced window under today's heading. This desk does not modify the canonical root; the finding is recorded here with the exact timestamp and counts so the integrator can expire or refresh it.",
+   "source_url": "https://buffedlizard55-lab.github.io/OLBG1/",
+   "fixtures": [],
+   "file": "data/current/snapshot.json",
+   "line": null,
+   "repository_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/current/snapshot.json"
+  },
+  {
+   "id": "F-8A-02",
+   "severity": "high",
+   "status": "needs review",
+   "title": "PR #193 merged unresolved git conflict markers into main and turned the canonical workflow red",
+   "detail": "scripts/se58210b8_predictions.py lines 27-38 and e58210b8/predictions.html lines 22-30 were committed to main inside the squash merge of PR #193 (5cb7c69) still carrying '<<<<<<< HEAD', '=======' and '>>>>>>>' markers. The Python file raises SyntaxError on import, so tests/pipeline/test_desk_e58210b8 failed with 'leading zeros in decimal integer literals' and tests/pipeline/test_desk_8a900c04 failed on audit parse_errors 1 != 0. Canonical workflow runs 40025977461 and 40026377356 failed on that commit. Repaired this session under the §0.4 sixty-minute takeover rule (T8AEDE-FIX): the markers were removed resolving to e58210b8's own corrected PR #186 prose, and the two gates now pass locally.",
+   "source_url": "https://github.com/buffedlizard55-lab/OLBG1/commit/5cb7c6922f8fb33544a1aac8039a01a763f845f3",
+   "fixtures": [],
+   "file": "scripts/se58210b8_predictions.py",
+   "line": 27,
+   "repository_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/scripts/se58210b8_predictions.py#L27"
+  },
+  {
+   "id": "F-8A-03",
+   "severity": "high",
+   "status": "needs review",
+   "title": "Root fixture gaa-galway-3532 carries the wrong pairing, date and start time for the Galway football final",
+   "detail": "data/fixtures.json lists id gaa-galway-3532 as 'Moycullen v Salthill-Knocknacarra', 2026-10-24T18:00:00Z, sourced from an OLBG event page. Galway GAA's own fixture release moved the Bon Secours Senior Football Championship final to Sunday 25 October at 4:00pm at Pearse Stadium and names the pairing as Maigh Cuilinn v Salthill-Knocknacarra. The 24 Oct 18:00 slot is a day early, three hours late, and names a club that is not in the final.",
+   "source_url": "https://www.galwaygaa.ie/changes-weekend-football-fixture-schedule/",
+   "fixtures": [],
+   "file": "data/fixtures.json",
+   "line": 4962,
+   "repository_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/fixtures.json#L4962"
+  },
+  {
+   "id": "F-8A-04",
+   "severity": "medium",
+   "status": "needs review",
+   "title": "Peer desk pairs two players who are in opposite halves of the official WTA Osaka draw",
+   "detail": "scripts/se496eaf02_data.py TN05 lists 'Li v Boulter - WTA Japan Open SF'. The official WTA main-draw sheet (wtafiles.wtatennis.com/pdf/draws/2026/405/MDS.pdf) places top seed Ann Li in the upper half and eighth seed Katie Boulter in the lower half, so they can only meet in the final. This desk prices Li v Krueger and Boulter v Siniakova as the two semifinals instead.",
+   "source_url": "https://wtafiles.wtatennis.com/pdf/draws/2026/405/MDS.pdf",
+   "fixtures": [],
+   "file": "scripts/se496eaf02_data.py",
+   "line": 101,
+   "repository_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/scripts/se496eaf02_data.py#L101"
+  },
+  {
+   "id": "F-8A-05",
+   "severity": "medium",
+   "status": "needs review",
+   "title": "Peer desk golf row understates a completed round by seven strokes",
+   "detail": "scripts/se496eaf02_data.py GF02 records 'Denny McCarthy r2 -4'. The official PGA TOUR leaderboard for the Butterfield Bermuda Championship at close of R2 shows McCarthy on -11 (67-64, 131, T8) after a second-round 64. The peer row appears to have captured an in-progress score and never refreshed it.",
+   "source_url": "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/leaderboard",
+   "fixtures": [],
+   "file": "scripts/se496eaf02_data.py",
+   "line": 118,
+   "repository_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/scripts/se496eaf02_data.py#L118"
+  },
+  {
+   "id": "F-8A-06",
+   "severity": "medium",
+   "status": "needs review",
+   "title": "Peer desk cites Wikipedia as the fixture source for a county final",
+   "detail": "data/65331685/fixtures.json line 1556 carries https://en.wikipedia.org/wiki/2026_Kerry_Senior_Football_Championship inside a Kerry SFC fixture record. Wikipedia is not an official governing-body source and cannot support a verified row under this repository's own rule that every row links the league or board itself. Munster GAA's events calendar publishes the same fixture with referee and throw-in time.",
+   "source_url": "https://munster.gaa.ie/event/2026-kerry-county-senior-football-championship-final-dr-crokes-v-kenmare-shamrocks/",
+   "fixtures": [],
+   "file": "data/65331685/fixtures.json",
+   "line": 1556,
+   "repository_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/65331685/fixtures.json#L1556"
+  },
+  {
+   "id": "F-8A-07",
+   "severity": "medium",
+   "status": "needs review",
+   "title": "Root prediction prose still contains the internal vocabulary the brief excludes",
+   "detail": "Seven published prediction strings in data/predictions.json use the words 'model' or 'verified' inside the reader-facing text (lines 265, 360, 393, 542, 724, 786 and 848). The brief forbids both words in output prose. This desk's own 66 write-ups were scanned and contain neither, but the root register is left unedited because it is owned by the canonical integration scope.",
+   "source_url": "https://buffedlizard55-lab.github.io/OLBG1/predictions.html",
+   "fixtures": [],
+   "file": "data/predictions.json",
+   "line": 265,
+   "repository_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/predictions.json#L265"
+  },
+  {
+   "id": "F-8A-08",
+   "severity": "low",
+   "status": "needs review",
+   "title": "COORDINATION.md carries duplicated task rows",
+   "detail": "The shared board repeats task identifiers, so 'the highest free id' is ambiguous for any new session: T1-T7 appear at lines 69-75 and again at 290-296, T63 at 123 and 125, T64 at 129 and 2972, T424375B4 at 142 and 144, T496E at 151 and 160, T65331685 at 153 and 159, and T5821 at 157 and 162. This session used a session-namespaced id (T8AEDE) so it could not collide; the duplication itself is reported, not rewritten.",
+   "source_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/COORDINATION.md",
+   "fixtures": [],
+   "file": "COORDINATION.md",
+   "line": 123,
+   "repository_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/COORDINATION.md#L123"
+  },
+  {
+   "id": "F-8A-09",
+   "severity": "info",
+   "status": "needs review",
+   "title": "PDC and WST pages are partially hidden behind consent walls, so two Round 2 opponent slots stay unconfirmed",
+   "detail": "The PDC article pages returned cookie-consent boilerplate in place of body copy for most fetches, and the WST match centre exposes scheduled ties without published throw-in times for the 24 October semi-finals. Both official pages were read successfully through the search layer, which is how the Round 1 results and the Saturday bracket were confirmed, but the exact Round 2 opponent of Damon Heta could not be established from an official page and is therefore not priced as a High selection.",
+   "source_url": "https://www.pdc.tv/news/2026/october/22/nine-dart-star-woodhouse-sets-up-van-veen-clash-dortmund/",
+   "fixtures": [],
+   "file": null,
+   "line": null,
+   "repository_url": null
+  },
+  {
+   "id": "F-8A-10",
+   "severity": "info",
+   "status": "needs review",
+   "title": "Greyhound markets are desk-originated two-runner matchups, not published six-dog prices",
+   "detail": "GBGB publishes fields, semi-final clocks and prize money but no prices. The five greyhound rows here are two-runner matchups derived from official semi-final times and are labelled as such. No greyhound selection reaches the 70% fair-probability threshold in a six-dog field, so this desk publishes zero High picks for the sport rather than inflating a price.",
+   "source_url": "https://www.gbgb.org.uk/shadow-storm-chases-scurry-gold-cup-history-at-dunstall-park/",
+   "fixtures": [],
+   "file": null,
+   "line": null,
+   "repository_url": null
+  },
+  {
+   "id": "F-8A-11",
+   "severity": "info",
+   "status": "needs review",
+   "title": "High-pick quotas are not met in three sports and the shortfalls are structural",
+   "detail": "Darts carries three High picks (Round 2 opponents unresolved behind the consent wall after Friday's Round 1), cricket three (only two of seven tri-series matches plus one T20I have both participants confirmed and a settled market), and greyhounds none (see F-8A-10). Every other covered sport reaches five. The desk publishes the gap instead of promoting a weaker selection.",
+   "source_url": "https://www.icc-cricket.com/news/pakistan-name-squads-for-home-white-ball-assignments",
+   "fixtures": [],
+   "file": null,
+   "line": null,
+   "repository_url": null
+  },
+  {
+   "id": "F-8A-12",
+   "severity": "low",
+   "status": "needs review",
+   "title": "One volleyball start time and one volleyball date conflict between two official league pages",
+   "detail": "PlusLiga lists the AL-KO Superpuchar Polski men's final as starting at 15:00 while the TAURON Liga page lists 14:45 on the same date and venue; and ChKS Chelm v Asseco Resovia appears on a Saturday 24 October listing on plusliga.pl while the same league site's schedule block shows 25 October 18:00. Both rows publish the earlier of the two times with the conflict recorded.",
+   "source_url": "https://www.tauronliga.pl/spcup/id/19/pagesId/168.html",
+   "fixtures": [
+    "VB-8A-06"
+   ],
+   "file": null,
+   "line": null,
+   "repository_url": null
+  }
+ ]
+}
