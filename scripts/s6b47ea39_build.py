@@ -211,8 +211,14 @@ def main() -> None:
     (SITE / "assets" / "style.css").write_text(CSS, encoding="utf-8")
 
     # ------------------------------------------------------------------ overview
+    FIELDISH = re.compile(r"\bfield\b|remaining|quarter|contingent|traps? [1-6]|bottom-half|points contenders|qualifying winner|\bsession\b", re.I)
+
     def exec_rows(rows, limit=12):
         out = []
+        rows = sorted(
+            [e for e in rows if not FIELDISH.search(e["home"] + " " + e["away"])],
+            key=lambda e: e["start_utc"],
+        )
         for event in rows:
             pick = pick_for(event["id"])
             if pick:
@@ -292,7 +298,7 @@ published and labelled; neither is relabelled to look like the other. <a href="m
                 f'<td class="mono small">{esc(row["start_utc"][5:16].replace("T"," "))}Z</td>'
                 f'<td><strong>{esc(row["match"])}</strong><br><span class="muted small">{esc(row["competition"])}</span></td>'
                 f'<td>{esc(row["sport"])}</td>'
-                f'<td>{esc(row["selection"])}<br><span class="muted small">{esc(row["market"])}</span></td>'
+                f'<td>{esc(row.get("display_selection") or row["selection"])}<br><span class="muted small">{esc(row["market"])}</span></td>'
                 f'<td class="mono">{money(row["american"])}<br><span class="muted small">{pct(row["probability"])}</span></td>'
                 f"<td>{tier_badge(row['tier'])}</td>"
                 f'<td class="small">{esc(", ".join(row["desks"]))}</td>'
@@ -348,7 +354,7 @@ never counted as in-window picks.</div>
 <span class="badge b-gray">{esc(row['start_utc'][5:16].replace('T',' '))}Z</span>
 <span class="badge b-gray">{row['words']} words</span></div>
 <h3>{esc(row['match'])}</h3>
-<p class="small muted">{esc(row['competition'])} · selection <strong>{esc(row['selection'])}</strong> at {money(row['american'])} ({pct(row['probability'])})</p>
+<p class="small muted">{esc(row['competition'])} · selection <strong>{esc(row.get('display_selection') or row['selection'])}</strong> at {money(row['american'])} ({pct(row['probability'])})</p>
 <p class="body">{esc(row['text'])}</p>
 <p class="small">{fact_links}</p>
 <p class="small muted">Facts read from the official page at {esc(row['fact_read_utc'] or 'capture time')} by source desk {esc(row['source_desk'])}; inherited here, not re-fetched.</p>
@@ -707,12 +713,12 @@ side. OLBG does not publish that market; it is a modelling artefact and is treat
                 "<tr>"
                 f'<td class="mono small">{esc(p["start_utc"][5:16].replace("T"," "))}</td>'
                 f'<td><strong>{esc(p["match"])}</strong><br><span class="muted small">{esc(p["market"])}</span></td>'
-                f'<td>{esc(p["selection"])}</td><td class="mono">{money(p["american"])}</td>'
+                f'<td>{esc(p.get("display_selection") or p["selection"])}</td><td class="mono">{money(p["american"])}</td>'
                 f'<td class="mono">{pct(p["probability"])}</td><td>{tier_badge(p["tier"])}</td>'
                 f'<td>{writeup}</td></tr>'
             )
         watch_rows = "".join(
-            f"<tr><td>{esc(w['match'])}</td><td>{esc(w['selection'])}</td><td class='mono'>{money(w['american'])}</td><td class='mono'>{pct(w['probability'])}</td></tr>"
+            f"<tr><td>{esc(w['match'])}</td><td>{esc(w.get('display_selection') or w['selection'])}</td><td class='mono'>{money(w['american'])}</td><td class='mono'>{pct(w['probability'])}</td></tr>"
             for w in sport_watch
         )
         body = f"""

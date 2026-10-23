@@ -105,6 +105,19 @@ def main() -> int:
             seen[gram] = row["pick_id"]
         if not row["official_sources"]:
             errors.append(f"D2 {row['pick_id']}: write-up without an official source")
+        # the write-up must name the selection it is attached to
+        display = str(row.get("display_selection") or row["selection"])
+        low_text = row["text"].lower()
+        total = re.search(r"(over|under)\s+([0-9]+(?:\.[0-9])?)", display.lower())
+        if total:
+            if total.group(1) not in low_text or total.group(2) not in low_text:
+                errors.append(f"D4 {row['pick_id']}: text does not state '{total.group(1)} {total.group(2)}'")
+        else:
+            keys = [w for w in re.findall(r"[A-Za-z][A-Za-z'-]{3,}", display) if w.lower() not in {
+                "over", "under", "goals", "frames", "points", "sets", "winner", "finish", "match", "best", "handicap",
+                "top", "stakes", "beat", "round", "line", "run", "cup", "open"}]
+            if keys and not any(k.lower() in low_text for k in keys):
+                errors.append(f"D4 {row['pick_id']}: text does not name the selection '{display}'")
     if preds["problems"]:
         errors.append(f"D4 builder reported: {preds['problems']}")
 

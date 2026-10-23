@@ -86,6 +86,22 @@ class Desk6B47Tests(unittest.TestCase):
                 seen[gram] = row["pick_id"]
         self.assertFalse(self.preds["problems"])
 
+    def test_each_write_up_names_its_selection(self):
+        picks = {p["pick_id"]: p for p in self.picks["picks"]}
+        for row in self.preds["predictions"]:
+            display = str(picks[row["pick_id"]].get("display_selection") or picks[row["pick_id"]]["selection"]).lower()
+            total = re.search(r"(over|under)\s+([0-9]+(?:\.[0-9])?)", display)
+            if total:
+                self.assertIn(total.group(1), row["text"].lower(), row["pick_id"])
+                self.assertIn(total.group(2), row["text"], row["pick_id"])
+            else:
+                first = re.findall(r"[A-Za-z][A-Za-z'-]{3,}", display)
+                self.assertTrue(first, row["pick_id"])
+                self.assertTrue(
+                    any(token.lower() in row["text"].lower() for token in first[:3]),
+                    f"{row['pick_id']} does not name {display}",
+                )
+
     def test_prediction_and_pick_sets_match(self):
         self.assertEqual({p["pick_id"] for p in self.preds["predictions"]}, {p["pick_id"] for p in self.picks["picks"]})
 
