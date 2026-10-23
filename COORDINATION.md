@@ -6024,3 +6024,18 @@ remaining candidates.
 * **Open items handed to the canonical integration session:** hurling (OLBG 26) excluded from `pipeline/config.py` scope; stale
   `data/current/snapshot.json` with a landing page labelled "Snapshot 21 Oct 2026"; `aussie-rules`/`esports` inside canonical scope but
   outside the brief. All three are published on `/6b47ea39/repo-audit.html` and were not edited here.
+### §78.2 — `T7A9B` follow-up: settlement wording (PR #206)
+
+* **PR:** [#206](https://github.com/buffedlizard55-lab/OLBG1/pull/206) merged `2026-10-23T22:0Z` as `74e9d5a`.
+  CI run `40029825081` (Evidence, model, site and browser gates): **success**, 59s.
+* **What changed:** the High-confidence table described quarter and whole lines imprecisely ("lose by 0 or fewer",
+  "a 8-point win is a push", and an Over 6.25 quarter line explained as an Under). Settlement notes are now generated
+  from the line type: whole lines state the push case, half lines state the clean win condition, quarter lines state
+  the split legs explicitly, and totals read as Over/Under. The page footer count is derived from the pick list rather
+  than hard-coded.
+* **Gates re-run:** `python3 -m unittest discover -s tests/pipeline` → 241 OK; `python3 -m pipeline.build --out _site`
+  → 92 canonical pages; `python3 -m pipeline.validate --site _site` → 0 errors; `python3 scripts/validate.py` → passed.
+* **Note on read-back timing:** the Pages CDN served the previous build of `7a9b24e5/high-confidence.html` for several
+  minutes after the merge; the corrected file is present in `main` at `74e9d5a` and in the freshly built `_site`
+  snapshot, so this is cache lag, not a broken deploy.
+* No code, data or page outside `7a9b24e5/**` and `scripts/s7a9b24e5_build.py` was touched.
