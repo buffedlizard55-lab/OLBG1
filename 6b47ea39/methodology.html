@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Method and limits · OLBG consolidated desk</title>
+<meta name="description" content="Independent, source-linked research desk for the 15 sports in the brief. Not affiliated with OLBG.">
+<link rel="stylesheet" href="assets/style.css">
+</head><body><div class="layout">
+<aside>
+<div class="brand"><span>OLBG<span style="font-weight:400">.</span></span><span><small>CONSOLIDATED DESK</small></span></div>
+<div class="navlabel">WORKSPACE</div><a class="nav" href="index.html">Overview</a>
+<a class="nav" href="picks.html">High-confidence picks</a>
+<a class="nav" href="predictions.html">Predictions</a>
+<a class="nav" href="watchlist.html">Medium watchlist</a>
+<a class="nav" href="matches.html">All matches</a>
+<a class="nav" href="markets.html">Market explorer</a>
+<a class="nav" href="flagged.html">Flagged for review</a>
+<a class="nav" href="repo-audit.html">Repository audit</a>
+<a class="nav" href="reverse-engineering.html">OLBG discovery</a>
+<a class="nav" href="sources.html">Sources</a>
+<a class="nav active" href="methodology.html">Method &amp; limits</a>
+<div class="navlabel">SPORTS · 15</div><a class="nav" href="sports/golf.html">Golf</a>
+<a class="nav" href="sports/volleyball.html">Volleyball</a>
+<a class="nav" href="sports/rugby-union.html">Rugby Union</a>
+<a class="nav" href="sports/cricket.html">Cricket</a>
+<a class="nav" href="sports/snooker.html">Snooker</a>
+<a class="nav" href="sports/darts.html">Darts</a>
+<a class="nav" href="sports/baseball.html">Baseball</a>
+<a class="nav" href="sports/gaelic-sports.html">Gaelic Sports</a>
+<a class="nav" href="sports/greyhounds.html">Greyhounds</a>
+<a class="nav" href="sports/tennis.html">Tennis</a>
+<a class="nav" href="sports/motor-racing.html">Motor Racing</a>
+<a class="nav" href="sports/handball.html">Handball</a>
+<a class="nav" href="sports/ice-hockey.html">Ice Hockey</a>
+<a class="nav" href="sports/basketball.html">Basketball</a>
+<a class="nav" href="sports/rugby-league.html">Rugby League</a>
+<div class="navlabel">BUILD</div>
+<div class="small muted" style="padding:4px 9px">Build 2026-10-23T21:30:00Z<br>Evidence captured 23 Oct 2026, 16:45Z–20:40Z<br>Inherited, not re-read this session.</div>
+</aside>
+<main>
+<header><p class="eyebrow">Rules, arithmetic, and honesty about their limits</p><h1>Method and limits</h1></header>
+
+<p class="lede">What this desk did, what it could not do, and the arithmetic that decides which picks are labelled High.</p>
+<div class="notice red"><strong>Egress limitation, stated first.</strong> This sandbox can reach GitHub, npm and PyPI only. `www.olbg.com`,
+`api-web.nhle.com`, `statsapi.mlb.com`, `www.atptour.com`, `www.pdc.tv` and `buffedlizard55-lab.github.io` all failed at TLS during this
+session. No official page was re-read and no OLBG page was re-harvested. Every fixture and fact therefore carries the URL and capture
+timestamp of the desk that did read it, and is described as inherited.</div>
+<h2>The band arithmetic</h2>
+<div class="panel"><p>American −250 converts to decimal 1.40, and 1 ÷ 1.40 = 0.7143. So the brief's two conditions — implied probability
+above 70%, price between −250 and +10000 — can only both hold between <strong>70.00%</strong> and <strong>71.43%</strong>. That is the whole
+window: 1.43 points wide. It explains why the two freshest desks both produced clusters of probabilities at 0.7045–0.7140, why one of them
+could claim 51 High picks while only 3 of its own lines qualified, and why five genuine high-confidence picks per sport cannot exist inside
+that band. This desk publishes the band for what it is and separates genuinely strong favourites into a second, clearly labelled tier.</p></div>
+<h2>The seven selection rules</h2>
+<div class="wrap"><table><thead><tr><th>Rule</th><th>Test</th><th>Why</th></tr></thead><tbody>
+<tr><td>R1</td><td>Fixture must be upcoming at 21:30Z</td><td>A pick on a match that has started is retrospective, not predictive.</td></tr>
+<tr><td>R2</td><td>No cross-desk directional conflict</td><td>If two books call different winners, neither is trustworthy enough to publish.</td></tr>
+<tr><td>R3</td><td>A recorded fact note must exist</td><td>Without a form, statistics or availability note, a write-up would be invention.</td></tr>
+<tr><td>R4</td><td>Estimated probability above 70%</td><td>The brief's threshold.</td></tr>
+<tr><td>R5</td><td>Estimated probability at or below 88%</td><td>Above that, the price pays nothing and the "pick" is meaningless.</td></tr>
+<tr><td>R6</td><td>Main lines only</td><td>Alternate spreads where the underdog side carries +5.5 at 83% are artefacts of the line, not opinions.</td></tr>
+<tr><td>R7</td><td>One pick per fixture, duplicate bets collapsed</td><td>Two desks pricing the same bet must not look like two opinions.</td></tr>
+</tbody></table></div>
+<h2>How prices were produced and treated</h2>
+<ul class="small">
+<li>Every line is this project's own estimate, not a bookmaker quote, and not a claim about the market.</li>
+<li>Each American price on this site is recomputed from the decimal price rather than copied, so a stale or transposed figure cannot survive.</li>
+<li>Where two desks priced the same bet differently, the freshest observation is used and the older one is shown beside it in the market data.</li>
+<li>Two-sided books were checked to sum to 1.000 by the source desks; that check is inherited, not re-run.</li>
+</ul>
+<h2>What was verified, and what was not</h2>
+<div class="wrap"><table><thead><tr><th>Claim</th><th>Status</th><th>Basis</th></tr></thead><tbody>
+<tr><td>Fixture identity, competition and start time</td><td><span class="badge b-amber">Inherited</span></td><td>Official URL + capture timestamp from the source desk on each row</td></tr>
+<tr><td>Form, statistics and injury notes in predictions</td><td><span class="badge b-amber">Inherited</span></td><td>Fact register in <code>data/8a900c04/desk.json</code>, read 2026-10-23T16:45Z</td></tr>
+<tr><td>Prices and probabilities</td><td><span class="badge b-blue">Our estimates</span></td><td>Recomputed from decimal; arithmetic audited this session</td></tr>
+<tr><td>Cross-desk agreement</td><td><span class="badge b-green">Computed this session</span></td><td>Independent comparison of the three retained desks</td></tr>
+<tr><td>Fresh official re-read of any row</td><td><span class="badge b-red">Not possible</span></td><td>Sandbox egress blocked; disclosed rather than simulated</td></tr>
+</tbody></table></div>
+<h2>Publication rules</h2>
+<p class="small">Every table row carries an official link or is explicitly marked unverified. Blank cells are values no source stated.
+Nothing is inferred to fill a gap. The word "model" and the word "verified" are kept out of prediction text; the internal vocabulary rule is
+enforced by the build gate in <code>scripts/s6b47ea39_predictions.py</code>.</p>
+
+<footer>Independent research project · not affiliated with OLBG · prices are our own estimates, not bookmaker offers · no betting advice ·
+<a href="flagged.html">every irregularity is on the review page</a></footer>
+</main></div></body></html>

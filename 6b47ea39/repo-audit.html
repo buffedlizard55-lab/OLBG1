@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repository audit · OLBG consolidated desk</title>
+<meta name="description" content="Independent, source-linked research desk for the 15 sports in the brief. Not affiliated with OLBG.">
+<link rel="stylesheet" href="assets/style.css">
+</head><body><div class="layout">
+<aside>
+<div class="brand"><span>OLBG<span style="font-weight:400">.</span></span><span><small>CONSOLIDATED DESK</small></span></div>
+<div class="navlabel">WORKSPACE</div><a class="nav" href="index.html">Overview</a>
+<a class="nav" href="picks.html">High-confidence picks</a>
+<a class="nav" href="predictions.html">Predictions</a>
+<a class="nav" href="watchlist.html">Medium watchlist</a>
+<a class="nav" href="matches.html">All matches</a>
+<a class="nav" href="markets.html">Market explorer</a>
+<a class="nav" href="flagged.html">Flagged for review</a>
+<a class="nav active" href="repo-audit.html">Repository audit</a>
+<a class="nav" href="reverse-engineering.html">OLBG discovery</a>
+<a class="nav" href="sources.html">Sources</a>
+<a class="nav" href="methodology.html">Method &amp; limits</a>
+<div class="navlabel">SPORTS · 15</div><a class="nav" href="sports/golf.html">Golf</a>
+<a class="nav" href="sports/volleyball.html">Volleyball</a>
+<a class="nav" href="sports/rugby-union.html">Rugby Union</a>
+<a class="nav" href="sports/cricket.html">Cricket</a>
+<a class="nav" href="sports/snooker.html">Snooker</a>
+<a class="nav" href="sports/darts.html">Darts</a>
+<a class="nav" href="sports/baseball.html">Baseball</a>
+<a class="nav" href="sports/gaelic-sports.html">Gaelic Sports</a>
+<a class="nav" href="sports/greyhounds.html">Greyhounds</a>
+<a class="nav" href="sports/tennis.html">Tennis</a>
+<a class="nav" href="sports/motor-racing.html">Motor Racing</a>
+<a class="nav" href="sports/handball.html">Handball</a>
+<a class="nav" href="sports/ice-hockey.html">Ice Hockey</a>
+<a class="nav" href="sports/basketball.html">Basketball</a>
+<a class="nav" href="sports/rugby-league.html">Rugby League</a>
+<div class="navlabel">BUILD</div>
+<div class="small muted" style="padding:4px 9px">Build 2026-10-23T21:30:00Z<br>Evidence captured 23 Oct 2026, 16:45Z–20:40Z<br>Inherited, not re-read this session.</div>
+</aside>
+<main>
+<header><p class="eyebrow">Line-by-line review of the repo as it stands</p><h1>Repository audit</h1></header>
+
+<p class="lede">A line-by-line review of what the repository actually contains, as of this build. Each finding names the file and links to it so
+the claim can be checked directly. Findings about data are on the <a href="flagged.html">review page</a>; this page is about the repository
+itself.</p>
+<div class="wrap"><table><thead><tr><th>Severity</th><th>Finding</th><th>Where</th><th>Evidence</th></tr></thead><tbody>
+<tr><td><span class='badge b-red'>HIGH</span></td><td><strong>Canonical dashboard is stale</strong><br><span class='small muted'>The landing page the repository publishes at /index.html shows &quot;Snapshot 21 Oct 2026&quot; and embeds data-snapshot=2026-10-22T12:29:50Z, while data/current/snapshot.json was generated 2026-10-22T12:29:50Z. At this build (2026-10-23T21:30Z) that is 33 hours old against a configured FIXTURE_TTL_HOURS of 6 in pipeline/config.py:7. A reader landing on the site sees day-old fixtures presented as the current desk.</span></td><td class='small'>pipeline/config.py</td><td class='small'><a href='https://github.com/buffedlizard55-lab/OLBG1/blob/main/pipeline/config.py' target='_blank' rel='noopener noreferrer'>open ↗</a></td></tr><tr><td><span class='badge b-red'>HIGH</span></td><td><strong>Hurling is excluded by the canonical pipeline</strong><br><span class='small muted'>pipeline/config.py defines EXCLUDED_IDS = {1, 2, 11, 16, 17, 18, 26} and lists &#x27;hurling&#x27; in EXCLUDED_NAMES, yet OLBG route 26 is the hurling hub and the brief&#x27;s &quot;Gaelic Sports&quot; covers both Gaelic football (25) and hurling (26). The retained 8a900c04 desk uses /betting-tips/Hurling/26 for Gaelic Sports, so the canonical pipeline and the desk evidence disagree about scope.</span></td><td class='small'>pipeline/config.py:36</td><td class='small'><a href='https://github.com/buffedlizard55-lab/OLBG1/blob/main/pipeline/config.py#L36' target='_blank' rel='noopener noreferrer'>open ↗</a></td></tr><tr><td><span class='badge b-gray'>LOW</span></td><td><strong>Conflict markers were committed inside a Python script (resolved)</strong><br><span class='small muted'>scripts/se58210b8_predictions.py carried two nested sets of git conflict markers at this desk&#x27;s baseline (5cb7c69), which made the module raise SyntaxError on import and failed tests/pipeline/test_desk_e58210b8.py on main. Peer session 3c021b49-olbg1 restored the known-good version in PR #194 (merge 95cca9f) while this desk was open. Re-checked after rebase: zero markers remain and the full pipeline suite is green. Recorded as history, not as an open defect.</span></td><td class='small'>scripts/se58210b8_predictions.py</td><td class='small'><a href='https://github.com/buffedlizard55-lab/OLBG1/blob/main/scripts/se58210b8_predictions.py' target='_blank' rel='noopener noreferrer'>open ↗</a></td></tr><tr><td><span class='badge b-amber'>MEDIUM</span></td><td><strong>Two out-of-scope sports are in the canonical scope</strong><br><span class='small muted'>pipeline/config.py:23-24 carry aussie-rules (OLBG 22) and esports (OLBG 23). Neither is on the user&#x27;s list of 15 sports, and the canonical site therefore publishes pages for sports the brief does not cover.</span></td><td class='small'>pipeline/config.py:23</td><td class='small'><a href='https://github.com/buffedlizard55-lab/OLBG1/blob/main/pipeline/config.py#L23' target='_blank' rel='noopener noreferrer'>open ↗</a></td></tr><tr><td><span class='badge b-amber'>MEDIUM</span></td><td><strong>41 desk namespaces duplicate the same job</strong><br><span class='small muted'>The repository root holds 41 eight-character desk directories, each with its own index, sports pages and data. data/ holds 45 namespace directories and 227 scripts. The same slate has been published dozens of times with different counts; nothing on the root site says which one a reader should trust.</span></td><td class='small'>repository root</td><td class='small'><a href='https://github.com/buffedlizard55-lab/OLBG1' target='_blank' rel='noopener noreferrer'>open ↗</a></td></tr><tr><td><span class='badge b-gray'>LOW</span></td><td><strong>Repository size and page weight</strong><br><span class='small muted'>The working tree is about 105 MB, 41 MB of it data/. markets.html alone is 2.2 MB and verification.html 884 KB, which is heavy for a GitHub Pages site read over a phone.</span></td><td class='small'>markets.html</td><td class='small'><a href='https://github.com/buffedlizard55-lab/OLBG1/blob/main/markets.html' target='_blank' rel='noopener noreferrer'>open ↗</a></td></tr><tr><td><span class='badge b-red'>HIGH</span></td><td><strong>Conflicting fixture identities between desks</strong><br><span class='small muted'>The same clubs appear under different names across desks — &#x27;Papua New Guinea Kumuls&#x27; vs &#x27;Papua New Guinea&#x27;, &#x27;Llanelli Scarlets&#x27; vs &#x27;Scarlets&#x27;, &#x27;Matthew Jarvis v Adrien Rozner&#x27; where the other two desks have Casey Jarvis and Antoine Rozner. Identity mismatches like the last one can mean a pick is attached to the wrong player, so those rows are excluded here.</span></td><td class='small'>data/65331685/desk.json</td><td class='small'><a href='https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/65331685/desk.json' target='_blank' rel='noopener noreferrer'>open ↗</a></td></tr>
+</tbody></table></div>
+<h2>What was checked mechanically this session</h2>
+<div class="wrap"><table><thead><tr><th>Check</th><th>Result</th></tr></thead><tbody>
+<tr><td>Price arithmetic across all 1,616 lines</td><td><span class="badge b-green">pass</span> — every American price re-derived from decimal; the only mismatches are 3-decimal rounding at prices shorter than −1000</td></tr>
+<tr><td>Duplicate JSON datasets</td><td><span class="badge b-green">pass</span> — no two data JSON files are byte-identical</td></tr>
+<tr><td>Tracked bytecode artefacts</td><td><span class="badge b-green">pass</span> — no .pyc or __pycache__ entries are tracked</td></tr>
+<tr><td>Fixture identity collisions across desks</td><td><span class="badge b-red">fail</span> — see the identity finding above; 125 fixtures remain after coalescing 218 raw rows</td></tr>
+<tr><td>Cross-desk favourite agreement</td><td><span class="badge b-red">fail</span> — 22 fixtures have opposite favourites</td></tr>
+<tr><td>Official link present on every fixture</td><td><span class="badge b-amber">1 rows have none</span></td></tr>
+<tr><td>Prediction writing rules</td><td><span class="badge b-green">pass</span> — 29 write-ups, minimum 30 words, no shared six-gram, no internal vocabulary</td></tr>
+<tr><td>Full repo test suite on the rebased branch</td><td><span class="badge b-green">pass</span> — 258 tests OK (the two failures present at baseline were fixed upstream in PR #194 before this desk merged)</td></tr>
+<tr><td>Live re-read of any official source</td><td><span class="badge b-gray">not possible</span> — egress blocked; disclosed</td></tr>
+</tbody></table></div>
+<h2>Files this desk owns</h2>
+<p class="small"><code>data/6b47ea39/</code> (slate, picks, predictions, flags, audit) · <code>scripts/s6b47ea39_*.py</code> ·
+<code>6b47ea39/</code> (this site) · <code>tests/pipeline/test_desk_6b47ea39.py</code>. No other desk's files were edited.</p>
+
+<footer>Independent research project · not affiliated with OLBG · prices are our own estimates, not bookmaker offers · no betting advice ·
+<a href="flagged.html">every irregularity is on the review page</a></footer>
+</main></div></body></html>

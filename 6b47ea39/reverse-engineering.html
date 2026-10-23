@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OLBG discovery · OLBG consolidated desk</title>
+<meta name="description" content="Independent, source-linked research desk for the 15 sports in the brief. Not affiliated with OLBG.">
+<link rel="stylesheet" href="assets/style.css">
+</head><body><div class="layout">
+<aside>
+<div class="brand"><span>OLBG<span style="font-weight:400">.</span></span><span><small>CONSOLIDATED DESK</small></span></div>
+<div class="navlabel">WORKSPACE</div><a class="nav" href="index.html">Overview</a>
+<a class="nav" href="picks.html">High-confidence picks</a>
+<a class="nav" href="predictions.html">Predictions</a>
+<a class="nav" href="watchlist.html">Medium watchlist</a>
+<a class="nav" href="matches.html">All matches</a>
+<a class="nav" href="markets.html">Market explorer</a>
+<a class="nav" href="flagged.html">Flagged for review</a>
+<a class="nav" href="repo-audit.html">Repository audit</a>
+<a class="nav active" href="reverse-engineering.html">OLBG discovery</a>
+<a class="nav" href="sources.html">Sources</a>
+<a class="nav" href="methodology.html">Method &amp; limits</a>
+<div class="navlabel">SPORTS · 15</div><a class="nav" href="sports/golf.html">Golf</a>
+<a class="nav" href="sports/volleyball.html">Volleyball</a>
+<a class="nav" href="sports/rugby-union.html">Rugby Union</a>
+<a class="nav" href="sports/cricket.html">Cricket</a>
+<a class="nav" href="sports/snooker.html">Snooker</a>
+<a class="nav" href="sports/darts.html">Darts</a>
+<a class="nav" href="sports/baseball.html">Baseball</a>
+<a class="nav" href="sports/gaelic-sports.html">Gaelic Sports</a>
+<a class="nav" href="sports/greyhounds.html">Greyhounds</a>
+<a class="nav" href="sports/tennis.html">Tennis</a>
+<a class="nav" href="sports/motor-racing.html">Motor Racing</a>
+<a class="nav" href="sports/handball.html">Handball</a>
+<a class="nav" href="sports/ice-hockey.html">Ice Hockey</a>
+<a class="nav" href="sports/basketball.html">Basketball</a>
+<a class="nav" href="sports/rugby-league.html">Rugby League</a>
+<div class="navlabel">BUILD</div>
+<div class="small muted" style="padding:4px 9px">Build 2026-10-23T21:30:00Z<br>Evidence captured 23 Oct 2026, 16:45Z–20:40Z<br>Inherited, not re-read this session.</div>
+</aside>
+<main>
+<header><p class="eyebrow">Route structure and market taxonomy</p><h1>OLBG discovery</h1></header>
+
+<p class="lede">How OLBG is laid out, reconstructed from the routes and identifiers recorded by the retained desks. Nothing here was fetched in
+this session; the route structure comes from the URLs stored on the fixtures.</p>
+<div class="notice blue"><strong>Route shape.</strong> Every sport is a numbered hub: <code>/betting-tips/&lt;Sport_Name&gt;/&lt;id&gt;</code>.
+Individual events hang beneath a competition path and end in an event id:
+<code>/betting-tips/Ice_Hockey/NHL/NHL/MTL_Canadiens_@_CHI_Blackhawks/13?event_id=199984</code>. The number in the path is the sport id, not
+the event id; the event id is the query parameter.</div>
+<h2>The 15 hubs in scope</h2>
+<div class="wrap"><table><thead><tr><th>Sport</th><th>OLBG id</th><th>Hub route</th><th>Structure recorded</th></tr></thead><tbody>
+<tr><td><strong>Golf</strong></td><td class='mono'>5</td><td class='small'><a href='https://www.olbg.com/betting-tips/Golf/5' target='_blank' rel='noopener noreferrer'>olbg.com/betting-tips/Golf/5 ↗</a></td><td class='small muted'>Hub returned no tips; outright tournament markets only</td></tr><tr><td><strong>Volleyball</strong></td><td class='mono'>21</td><td class='small'><a href='https://www.olbg.com/betting-tips/Volleyball/21' target='_blank' rel='noopener noreferrer'>olbg.com/betting-tips/Volleyball/21 ↗</a></td><td class='small muted'>Event pages under All_Volleyball/All_Events/&lt;slug&gt;/21?event_id=</td></tr><tr><td><strong>Rugby Union</strong></td><td class='mono'>9</td><td class='small'><a href='https://www.olbg.com/betting-tips/Rugby_Union/9' target='_blank' rel='noopener noreferrer'>olbg.com/betting-tips/Rugby_Union/9 ↗</a></td><td class='small muted'>URC, Top 14, Pro D2 sub-routes</td></tr><tr><td><strong>Cricket</strong></td><td class='mono'>7</td><td class='small'><a href='https://www.olbg.com/betting-tips/Cricket/7' target='_blank' rel='noopener noreferrer'>olbg.com/betting-tips/Cricket/7 ↗</a></td><td class='small muted'>All_Cricket/All_Events sub-route</td></tr><tr><td><strong>Snooker</strong></td><td class='mono'>8</td><td class='small'><a href='https://www.olbg.com/betting-tips/Snooker/8' target='_blank' rel='noopener noreferrer'>olbg.com/betting-tips/Snooker/8 ↗</a></td><td class='small muted'>All_Snooker/All_Events sub-route</td></tr><tr><td><strong>Darts</strong></td><td class='mono'>15</td><td class='small'><a href='https://www.olbg.com/betting-tips/Darts/15' target='_blank' rel='noopener noreferrer'>olbg.com/betting-tips/Darts/15 ↗</a></td><td class='small muted'>All_Darts/All_Events sub-route</td></tr><tr><td><strong>Baseball</strong></td><td class='mono'>12</td><td class='small'><a href='https://www.olbg.com/betting-tips/Baseball/12' target='_blank' rel='noopener noreferrer'>olbg.com/betting-tips/Baseball/12 ↗</a></td><td class='small muted'>MLB sub-route with team-slug event pages</td></tr><tr><td><strong>Gaelic Sports</strong></td><td class='mono'>25</td><td class='small'><a href='https://www.olbg.com/betting-tips/Hurling/26' target='_blank' rel='noopener noreferrer'>olbg.com/betting-tips/Hurling/26 ↗</a></td><td class='small muted'>Hurling sits on 26; football on 25</td></tr><tr><td><strong>Greyhounds</strong></td><td class='mono'>28</td><td class='small'><a href='https://www.olbg.com/betting-tips/Greyhounds/28' target='_blank' rel='noopener noreferrer'>olbg.com/betting-tips/Greyhounds/28 ↗</a></td><td class='small muted'>Race cards, not matches</td></tr><tr><td><strong>Tennis</strong></td><td class='mono'>3</td><td class='small'><a href='https://www.olbg.com/betting-tips/Tennis/3' target='_blank' rel='noopener noreferrer'>olbg.com/betting-tips/Tennis/3 ↗</a></td><td class='small muted'>All_Tennis/All_Events sub-route</td></tr><tr><td><strong>Motor Racing</strong></td><td class='mono'>14</td><td class='small'><a href='https://www.olbg.com/betting-tips/Motor_Racing/14' target='_blank' rel='noopener noreferrer'>olbg.com/betting-tips/Motor_Racing/14 ↗</a></td><td class='small muted'>Race winner, podium, top-6, pole</td></tr><tr><td><strong>Handball</strong></td><td class='mono'>20</td><td class='small'><a href='https://www.olbg.com/betting-tips/Handball/20' target='_blank' rel='noopener noreferrer'>olbg.com/betting-tips/Handball/20 ↗</a></td><td class='small muted'>All_Handball/All_Events sub-route</td></tr><tr><td><strong>Ice Hockey</strong></td><td class='mono'>13</td><td class='small'><a href='https://www.olbg.com/betting-tips/Ice_Hockey/13' target='_blank' rel='noopener noreferrer'>olbg.com/betting-tips/Ice_Hockey/13 ↗</a></td><td class='small muted'>NHL sub-route</td></tr><tr><td><strong>Basketball</strong></td><td class='mono'>4</td><td class='small'><a href='https://www.olbg.com/betting-tips/Basketball/4' target='_blank' rel='noopener noreferrer'>olbg.com/betting-tips/Basketball/4 ↗</a></td><td class='small muted'>NBA and EuroLeague sub-routes</td></tr><tr><td><strong>Rugby League</strong></td><td class='mono'>10</td><td class='small'><a href='https://www.olbg.com/betting-tips/Rugby_League/10' target='_blank' rel='noopener noreferrer'>olbg.com/betting-tips/Rugby_League/10 ↗</a></td><td class='small muted'>NRL and IRL World Cup sub-routes</td></tr>
+</tbody></table></div>
+<h2>Known platform irregularities</h2>
+<ul class="small">
+<li><strong>Hub tip feeds returned "No tips found"</strong> on the golf hub and, at various points on 23 October, on several other hubs, while the
+same event's page still rendered full tip blocks. Discovery had to go through the sport menu and event pages.</li>
+<li><strong>Clock handling.</strong> OLBG renders unlabelled America/New_York times on the hub; one retained desk records a one-hour discrepancy
+between the OLBG clock and the LNH calendar for Nantes v Chambery, so every start time on this site comes from the official source where one exists
+and is flagged where it does not.</li>
+<li><strong>Two-sided markets on multi-runner events.</strong> Several retained rows price a greyhound or a driver against a constructed "Field"
+side. OLBG does not publish that market; it is a modelling artefact and is treated as one here.</li>
+</ul>
+<h2>Markets investigated</h2>
+<div class="wrap"><table><thead><tr><th>Family</th><th>Markets seen in the retained books</th></tr></thead><tbody>
+<tr><td>Result</td><td>Match winner, match result, 80-minute winner, 2-way winner, teammate head-to-head, race winner, pole position</td></tr>
+<tr><td>Line</td><td>Handicap and spread (points, goals, runs, sets, frames, legs, strokes), puck line, run line, alternate lines</td></tr>
+<tr><td>Totals</td><td>Match total (points, goals, runs, games, sets, frames, legs), team totals, first-half and period terms</td></tr>
+<tr><td>Exotic</td><td>Set betting and set score, 1st set winner, first-try and try-scorer markets, top-5/top-6/top-10 finishes, podium</td></tr>
+</tbody></table></div>
+<p class="small muted">The full priced inventory is on the <a href="markets.html">market explorer</a>: 1,616 lines across 15 sports.</p>
+
+<footer>Independent research project · not affiliated with OLBG · prices are our own estimates, not bookmaker offers · no betting advice ·
+<a href="flagged.html">every irregularity is on the review page</a></footer>
+</main></div></body></html>

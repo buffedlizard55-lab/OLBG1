@@ -1,0 +1,1821 @@
+{
+ "desk": "6b47ea39",
+ "task": "T6B47",
+ "generated_utc": "2026-10-23T21:30:00Z",
+ "arithmetic_errors": [
+  {
+   "event": "6B06-026",
+   "selection": "Luke Littler to Win",
+   "stated": -604.2,
+   "recomputed": -606.1
+  },
+  {
+   "event": "6B13-063",
+   "selection": "Boston Bruins +1.5",
+   "stated": -1499.3,
+   "recomputed": -1492.5
+  },
+  {
+   "event": "6B15-071",
+   "selection": "Toa Samoa to Win",
+   "stated": -1078.7,
+   "recomputed": -1075.3
+  },
+  {
+   "event": "6B15-072",
+   "selection": "England to Win",
+   "stated": -11904.8,
+   "recomputed": -12500.0
+  },
+  {
+   "event": "6B15-072",
+   "selection": "England 1st Half Winner (DNB)",
+   "stated": -2288.3,
+   "recomputed": -2272.7
+  },
+  {
+   "event": "6B15-073",
+   "selection": "Australia Jillaroos to Win",
+   "stated": -19607.8,
+   "recomputed": -20000.0
+  },
+  {
+   "event": "6B15-073",
+   "selection": "Australia Jillaroos 1st Half Winner (DNB)",
+   "stated": -3039.5,
+   "recomputed": -3030.3
+  },
+  {
+   "event": "6B15-074",
+   "selection": "New Zealand Kiwis to Win",
+   "stated": -3937.0,
+   "recomputed": -4000.0
+  },
+  {
+   "event": "6B15-074",
+   "selection": "New Zealand Kiwis 1st Half Winner (DNB)",
+   "stated": -1182.0,
+   "recomputed": -1176.5
+  },
+  {
+   "event": "6B15-075",
+   "selection": "Australia Kangaroos to Win",
+   "stated": -5208.3,
+   "recomputed": -5263.2
+  },
+  {
+   "event": "6B15-075",
+   "selection": "Australia Kangaroos 1st Half Winner (DNB)",
+   "stated": -1398.6,
+   "recomputed": -1408.5
+  }
+ ],
+ "bands": {
+  "in_band": {
+   "Golf": 8,
+   "Volleyball": 4,
+   "Rugby Union": 4,
+   "Cricket": 10,
+   "Snooker": 1,
+   "Darts": 5,
+   "Baseball": 5,
+   "Gaelic Sports": 4,
+   "Tennis": 3,
+   "Motor Racing": 5,
+   "Handball": 3,
+   "Ice Hockey": 8,
+   "Basketball": 8,
+   "Rugby League": 6
+  },
+  "above_band_short_of_minus_250": {
+   "Golf": 10,
+   "Volleyball": 13,
+   "Rugby Union": 20,
+   "Cricket": 4,
+   "Snooker": 3,
+   "Darts": 6,
+   "Baseball": 11,
+   "Gaelic Sports": 4,
+   "Greyhounds": 5,
+   "Motor Racing": 3,
+   "Handball": 21,
+   "Ice Hockey": 39,
+   "Basketball": 20,
+   "Rugby League": 32
+  }
+ },
+ "desk_claims": {
+  "8a900c04": {
+   "claimed_high": 59
+  },
+  "496eaf02": {
+   "claimed_high": 51
+  },
+  "496eaf02_recomputed_strict": 3,
+  "65331685": {
+   "claimed_high": 7,
+   "recomputed_strict": 7
+  },
+  "496eaf02_recomputed_above_70": 33
+ },
+ "boundary_clustering": {
+  "lines_between_0.700_and_0.720": 112,
+  "total_lines": 1616
+ },
+ "directional_conflicts": [
+  {
+   "event": "6B01-001",
+   "sport": "Golf",
+   "match": "Corey Conners v Seamus Power",
+   "start_utc": "2026-10-24T11:30:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "Seamus Power to Win",
+     "probability": 0.7092
+    },
+    "65331685": {
+     "selection": "Corey Conners",
+     "probability": 0.52
+    }
+   }
+  },
+  {
+   "event": "6B02-006",
+   "sport": "Volleyball",
+   "match": "PGE GiEK Skra Belchatow v PGE Projekt Warszawa",
+   "start_utc": "2026-10-24T16:00:00Z",
+   "favourites": {
+    "65331685": {
+     "selection": "PGE Projekt Warszawa",
+     "probability": 0.641
+    },
+    "496eaf02": {
+     "selection": "PGE GiEK Skra Be\u0142chat\u00f3w",
+     "probability": 0.5501
+    }
+   }
+  },
+  {
+   "event": "6B02-009",
+   "sport": "Volleyball",
+   "match": "Sir Susa Scai Perugia v Tinet Prata di Pordenone",
+   "start_utc": "2026-10-25T17:00:00Z",
+   "favourites": {
+    "65331685": {
+     "selection": "Tinet Prata di Pordenone",
+     "probability": 0.5714
+    },
+    "496eaf02": {
+     "selection": "Sir Susa Scai Perugia",
+     "probability": 0.5501
+    }
+   }
+  },
+  {
+   "event": "6B03-015",
+   "sport": "Rugby Union",
+   "match": "Leinster Rugby v Munster Rugby",
+   "start_utc": "2026-10-24T17:00:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "Leinster Rugby to Win",
+     "probability": 0.7794
+    },
+    "65331685": {
+     "selection": "Munster Rugby",
+     "probability": 0.5714
+    },
+    "496eaf02": {
+     "selection": "Munster Rugby",
+     "probability": 0.5333
+    }
+   }
+  },
+  {
+   "event": "6B04-017",
+   "sport": "Cricket",
+   "match": "Pakistan v England",
+   "start_utc": "2026-10-25T08:00:00Z",
+   "favourites": {
+    "496eaf02": {
+     "selection": "Pakistan",
+     "probability": 0.7899
+    },
+    "65331685": {
+     "selection": "Pakistan",
+     "probability": 0.7273
+    },
+    "8a900c04": {
+     "selection": "England to Win",
+     "probability": 0.5814
+    }
+   }
+  },
+  {
+   "event": "6B04-020",
+   "sport": "Cricket",
+   "match": "New Zealand A v India A",
+   "start_utc": "2026-10-23T22:00:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "New Zealand A to Win",
+     "probability": 0.646
+    },
+    "496eaf02": {
+     "selection": "India A",
+     "probability": 0.5288
+    }
+   }
+  },
+  {
+   "event": "6B06-028",
+   "sport": "Darts",
+   "match": "Gian van Veen v Luke Woodhouse",
+   "start_utc": "2026-10-24T12:00:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "Gian van Veen to Beat Luke Woodhouse",
+     "probability": 0.7138
+    },
+    "65331685": {
+     "selection": "Luke Woodhouse",
+     "probability": 0.5456
+    },
+    "496eaf02": {
+     "selection": "Gian van Veen",
+     "probability": 0.6215
+    }
+   }
+  },
+  {
+   "event": "6B06-029",
+   "sport": "Darts",
+   "match": "Stephen Bunting v Kim Huybrechts",
+   "start_utc": "2026-10-24T13:00:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "Stephen Bunting to Beat Kim Huybrechts",
+     "probability": 0.7082
+    },
+    "65331685": {
+     "selection": "Kim Huybrechts",
+     "probability": 0.6998
+    },
+    "496eaf02": {
+     "selection": "Stephen Bunting",
+     "probability": 0.6456
+    }
+   }
+  },
+  {
+   "event": "6B07-031",
+   "sport": "Baseball",
+   "match": "Milwaukee Brewers v Tampa Bay Rays",
+   "start_utc": "2026-10-24T00:00:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "Milwaukee Brewers to Win",
+     "probability": 0.5999
+    },
+    "496eaf02": {
+     "selection": "Tampa Bay Rays",
+     "probability": 0.5345
+    },
+    "65331685": {
+     "selection": "Milwaukee Brewers",
+     "probability": 0.5319
+    }
+   }
+  },
+  {
+   "event": "6B07-032",
+   "sport": "Baseball",
+   "match": "Milwaukee Brewers v Tampa Bay Rays",
+   "start_utc": "2026-10-25T00:00:00Z",
+   "favourites": {
+    "496eaf02": {
+     "selection": "Tampa Bay Rays",
+     "probability": 0.5345
+    },
+    "65331685": {
+     "selection": "Milwaukee Brewers",
+     "probability": 0.5319
+    }
+   }
+  },
+  {
+   "event": "6B08-036",
+   "sport": "Gaelic Sports",
+   "match": "Ireland v Scotland",
+   "start_utc": "2026-10-24T17:00:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "Ireland to Win",
+     "probability": 0.8013
+    },
+    "496eaf02": {
+     "selection": "Ireland",
+     "probability": 0.5999
+    },
+    "65331685": {
+     "selection": "not originated",
+     "probability": 0.5
+    }
+   }
+  },
+  {
+   "event": "6B08-037",
+   "sport": "Gaelic Sports",
+   "match": "Ballyhale Shamrocks v Tullaroan",
+   "start_utc": "2026-10-25T12:45:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "Ballyhale Shamrocks to Win",
+     "probability": 0.744
+    },
+    "496eaf02": {
+     "selection": "Shamrocks Ballyhale",
+     "probability": 0.62
+    }
+   }
+  },
+  {
+   "event": "6B08-039",
+   "sport": "Gaelic Sports",
+   "match": "Maigh Cuilinn (Moycullen) v Salthill-Knocknacarra",
+   "start_utc": "2026-10-25T16:00:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "Maigh Cuilinn (Moycullen) to Win",
+     "probability": 0.7194
+    },
+    "496eaf02": {
+     "selection": "Maigh Cuilinn",
+     "probability": 0.5999
+    }
+   }
+  },
+  {
+   "event": "6B09-041",
+   "sport": "Greyhounds",
+   "match": "Grouchos Gregor (Kelly Wilton) v Champion Stakes Final Field (Aayamza Legend / Fortanach Col / Bubbly Holly)",
+   "start_utc": "2026-10-23T20:13:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "Grouchos Gregor (Kelly Wilton) to Win",
+     "probability": 0.7138
+    },
+    "496eaf02": {
+     "selection": "Champion Stakes Final Field",
+     "probability": 0.5501
+    },
+    "65331685": {
+     "selection": "Grouchos Gregor",
+     "probability": 0.4032
+    }
+   }
+  },
+  {
+   "event": "6B12-056",
+   "sport": "Handball",
+   "match": "HC Erlangen v THW Kiel",
+   "start_utc": "2026-10-24T16:00:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "THW Kiel to Win",
+     "probability": 0.8177
+    },
+    "496eaf02": {
+     "selection": "HC Erlangen",
+     "probability": 0.5501
+    },
+    "65331685": {
+     "selection": "not originated",
+     "probability": 0.5
+    }
+   }
+  },
+  {
+   "event": "6B14-066",
+   "sport": "Basketball",
+   "match": "Boston Celtics v New York Knicks",
+   "start_utc": "2026-10-23T23:00:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "Boston Celtics to Win",
+     "probability": 0.7179
+    },
+    "65331685": {
+     "selection": "New York Knicks",
+     "probability": 0.5
+    },
+    "496eaf02": {
+     "selection": "New York Knicks",
+     "probability": 0.5501
+    }
+   }
+  },
+  {
+   "event": "6B14-068",
+   "sport": "Basketball",
+   "match": "Indiana Pacers v Dallas Mavericks",
+   "start_utc": "2026-10-23T23:00:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "Indiana Pacers to Win",
+     "probability": 0.7163
+    },
+    "65331685": {
+     "selection": "Indiana Pacers",
+     "probability": 0.6925
+    },
+    "496eaf02": {
+     "selection": "Dallas Mavericks",
+     "probability": 0.5045
+    }
+   }
+  },
+  {
+   "event": "6B15-071",
+   "sport": "Rugby League",
+   "match": "Papua New Guinea Kumuls v Toa Samoa",
+   "start_utc": "2026-10-24T04:25:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "Toa Samoa to Win",
+     "probability": 0.9149
+    },
+    "65331685": {
+     "selection": "Samoa",
+     "probability": 0.7698
+    },
+    "496eaf02": {
+     "selection": "Toa Samoa",
+     "probability": 0.7199
+    }
+   }
+  },
+  {
+   "event": "6B15-073",
+   "sport": "Rugby League",
+   "match": "Australia (Jillaroos) v England Women",
+   "start_utc": "2026-10-24T09:05:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "Australia Jillaroos to Win",
+     "probability": 0.995
+    },
+    "65331685": {
+     "selection": "Australia Jillaroos",
+     "probability": 0.6566
+    },
+    "496eaf02": {
+     "selection": "England Women",
+     "probability": 0.5501
+    }
+   }
+  },
+  {
+   "event": "6B15-074",
+   "sport": "Rugby League",
+   "match": "New Zealand Kiwis v Cook Islands Aitu",
+   "start_utc": "2026-10-25T05:05:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "New Zealand Kiwis to Win",
+     "probability": 0.9756
+    },
+    "496eaf02": {
+     "selection": "New Zealand Kiwis",
+     "probability": 0.8197
+    },
+    "65331685": {
+     "selection": "New Zealand",
+     "probability": 0.7698
+    }
+   }
+  },
+  {
+   "event": "6B15-075",
+   "sport": "Rugby League",
+   "match": "Australia Kangaroos v Fiji Bati",
+   "start_utc": "2026-10-25T09:05:00Z",
+   "favourites": {
+    "8a900c04": {
+     "selection": "Australia Kangaroos to Win",
+     "probability": 0.9814
+    },
+    "496eaf02": {
+     "selection": "Australia Kangaroos",
+     "probability": 0.8496
+    },
+    "65331685": {
+     "selection": "Australia",
+     "probability": 0.7519
+    }
+   }
+  },
+  {
+   "event": "6B03-085",
+   "sport": "Rugby Union",
+   "match": "Ospreys v Dragons RFC",
+   "start_utc": "2026-10-24T18:00:00Z",
+   "favourites": {
+    "65331685": {
+     "selection": "Dragons RFC",
+     "probability": 0.5714
+    },
+    "496eaf02": {
+     "selection": "Dragons",
+     "probability": 0.5333
+    }
+   }
+  }
+ ],
+ "price_divergence": [
+  {
+   "event": "6B02-006",
+   "sport": "Volleyball",
+   "selection": "PGE Projekt Warszawa",
+   "market": "match winner",
+   "spread_decimal": 0.662,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 1.56,
+     "american": -178.6,
+     "probability": 0.6408,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 2.222,
+     "american": 122.2,
+     "probability": 0.45,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B02-008",
+   "sport": "Volleyball",
+   "selection": "Itas Trentino",
+   "market": "Match Winner",
+   "spread_decimal": 0.182,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 2.0,
+     "american": 100.0,
+     "probability": 0.5,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 1.818,
+     "american": -122.2,
+     "probability": 0.55,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B02-008",
+   "sport": "Volleyball",
+   "selection": "Cisterna Volley",
+   "market": "Match Winner",
+   "spread_decimal": 0.222,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 2.0,
+     "american": 100.0,
+     "probability": 0.5,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 2.222,
+     "american": 122.2,
+     "probability": 0.45,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B02-009",
+   "sport": "Volleyball",
+   "selection": "Tinet Prata di Pordenone",
+   "market": "Match Winner",
+   "spread_decimal": 0.472,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 1.75,
+     "american": -133.3,
+     "probability": 0.5714,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 2.222,
+     "american": 122.2,
+     "probability": 0.45,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B02-009",
+   "sport": "Volleyball",
+   "selection": "Sir Susa Scai Perugia",
+   "market": "Match Winner",
+   "spread_decimal": 0.515,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 2.333,
+     "american": 133.3,
+     "probability": 0.4286,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 1.818,
+     "american": -122.2,
+     "probability": 0.55,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B05-023",
+   "sport": "Snooker",
+   "selection": "Kyren Wilson",
+   "market": "Match Winner",
+   "spread_decimal": 0.635,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 1.833,
+     "american": -120.0,
+     "probability": 0.5455,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 1.198,
+     "american": -504.8,
+     "probability": 0.8346,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B05-023",
+   "sport": "Snooker",
+   "selection": "Sam Craigie",
+   "market": "Match Winner",
+   "spread_decimal": 3.847,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 2.2,
+     "american": 120.0,
+     "probability": 0.4545,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 6.047,
+     "american": 504.7,
+     "probability": 0.1654,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B06-028",
+   "sport": "Darts",
+   "selection": "Luke Woodhouse",
+   "market": "Match Winner",
+   "spread_decimal": 0.809,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 1.833,
+     "american": -120.0,
+     "probability": 0.5455,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 2.642,
+     "american": 164.2,
+     "probability": 0.3785,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B06-028",
+   "sport": "Darts",
+   "selection": "Gian van Veen",
+   "market": "Match Winner",
+   "spread_decimal": 0.591,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 2.2,
+     "american": 120.0,
+     "probability": 0.4545,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 1.609,
+     "american": -164.2,
+     "probability": 0.6215,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B06-029",
+   "sport": "Darts",
+   "selection": "Kim Huybrechts",
+   "market": "Match Winner",
+   "spread_decimal": 1.392,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 1.429,
+     "american": -233.1,
+     "probability": 0.7,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 2.821,
+     "american": 182.1,
+     "probability": 0.3545,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B06-029",
+   "sport": "Darts",
+   "selection": "Stephen Bunting",
+   "market": "Match Winner",
+   "spread_decimal": 1.784,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 3.333,
+     "american": 233.3,
+     "probability": 0.3,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 1.549,
+     "american": -182.1,
+     "probability": 0.6455,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B06-030",
+   "sport": "Darts",
+   "selection": "Gerwyn Price",
+   "market": "Match Winner",
+   "spread_decimal": 0.211,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 1.8,
+     "american": -125.0,
+     "probability": 0.5556,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 1.589,
+     "american": -169.8,
+     "probability": 0.6293,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B06-030",
+   "sport": "Darts",
+   "selection": "Cameron Menzies",
+   "market": "Match Winner",
+   "spread_decimal": 0.448,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 2.25,
+     "american": 125.0,
+     "probability": 0.4444,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 2.698,
+     "american": 169.8,
+     "probability": 0.3707,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B07-031",
+   "sport": "Baseball",
+   "selection": "Tampa Bay Rays +1.5",
+   "market": "Run Line (+/-1.5)",
+   "spread_decimal": 1.24,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 3.033,
+     "american": 203.3,
+     "probability": 0.3297,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "8a900c04",
+     "decimal": 1.793,
+     "american": -126.1,
+     "probability": 0.5576,
+     "captured_utc": "2026-10-23T16:45:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B07-032",
+   "sport": "Baseball",
+   "selection": "Tampa Bay Rays +1.5",
+   "market": "Run Line (+/-1.5)",
+   "spread_decimal": 1.55,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 3.033,
+     "american": 203.3,
+     "probability": 0.3297,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "8a900c04",
+     "decimal": 1.483,
+     "american": -207.1,
+     "probability": 0.6744,
+     "captured_utc": "2026-10-23T16:45:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B07-033",
+   "sport": "Baseball",
+   "selection": "Milwaukee Brewers +1.5",
+   "market": "Run Line (+/-1.5)",
+   "spread_decimal": 0.971,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 2.509,
+     "american": 150.9,
+     "probability": 0.3986,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "8a900c04",
+     "decimal": 1.538,
+     "american": -185.9,
+     "probability": 0.6503,
+     "captured_utc": "2026-10-23T16:45:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B10-049",
+   "sport": "Tennis",
+   "selection": "Elena Rybakina",
+   "market": "Match Winner",
+   "spread_decimal": 0.463,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 1.774,
+     "american": -129.2,
+     "probability": 0.5638,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 1.311,
+     "american": -321.5,
+     "probability": 0.7628,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B10-049",
+   "sport": "Tennis",
+   "selection": "Diana Shnaider",
+   "market": "Match Winner",
+   "spread_decimal": 1.923,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 2.292,
+     "american": 129.2,
+     "probability": 0.4362,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 4.215,
+     "american": 321.5,
+     "probability": 0.2372,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B13-061",
+   "sport": "Ice Hockey",
+   "selection": "Montreal Canadiens +1.5",
+   "market": "Puck Line (+/-1.5)",
+   "spread_decimal": 1.641,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 3.125,
+     "american": 212.5,
+     "probability": 0.32,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "8a900c04",
+     "decimal": 1.484,
+     "american": -206.4,
+     "probability": 0.6737,
+     "captured_utc": "2026-10-23T16:45:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B13-062",
+   "sport": "Ice Hockey",
+   "selection": "Tampa Bay Lightning +1.5",
+   "market": "Puck Line (+/-1.5)",
+   "spread_decimal": 2.928,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 4.387,
+     "american": 338.7,
+     "probability": 0.228,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "8a900c04",
+     "decimal": 1.459,
+     "american": -217.9,
+     "probability": 0.6854,
+     "captured_utc": "2026-10-23T16:45:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B13-063",
+   "sport": "Ice Hockey",
+   "selection": "Boston Bruins -1.5",
+   "market": "Puck Line (+/-1.5)",
+   "spread_decimal": 0.49,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 2.411,
+     "american": 141.1,
+     "probability": 0.4148,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "8a900c04",
+     "decimal": 1.921,
+     "american": -108.6,
+     "probability": 0.5205,
+     "captured_utc": "2026-10-23T16:45:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B13-064",
+   "sport": "Ice Hockey",
+   "selection": "Anaheim Ducks +1.5",
+   "market": "Puck Line (+/-1.5)",
+   "spread_decimal": 2.838,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 4.413,
+     "american": 341.3,
+     "probability": 0.2266,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "8a900c04",
+     "decimal": 1.575,
+     "american": -174.0,
+     "probability": 0.635,
+     "captured_utc": "2026-10-23T16:45:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B13-065",
+   "sport": "Ice Hockey",
+   "selection": "Toronto Maple Leafs +1.5",
+   "market": "Puck Line (+/-1.5)",
+   "spread_decimal": 0.299,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 1.459,
+     "american": -217.9,
+     "probability": 0.6853,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "8a900c04",
+     "decimal": 1.758,
+     "american": -131.8,
+     "probability": 0.5687,
+     "captured_utc": "2026-10-23T16:45:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B14-066",
+   "sport": "Basketball",
+   "selection": "New York Knicks",
+   "market": "Match Winner",
+   "spread_decimal": 0.182,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 2.0,
+     "american": 100.0,
+     "probability": 0.5,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 1.818,
+     "american": -122.2,
+     "probability": 0.55,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B14-066",
+   "sport": "Basketball",
+   "selection": "Boston Celtics",
+   "market": "Match Winner",
+   "spread_decimal": 0.222,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 2.0,
+     "american": 100.0,
+     "probability": 0.5,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 2.222,
+     "american": 122.2,
+     "probability": 0.45,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B14-067",
+   "sport": "Basketball",
+   "selection": "Minnesota Timberwolves",
+   "market": "Match Winner",
+   "spread_decimal": 0.235,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 1.444,
+     "american": -225.2,
+     "probability": 0.6923,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 1.679,
+     "american": -147.2,
+     "probability": 0.5955,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B14-067",
+   "sport": "Basketball",
+   "selection": "Orlando Magic",
+   "market": "Match Winner",
+   "spread_decimal": 0.778,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 3.25,
+     "american": 225.0,
+     "probability": 0.3077,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 2.472,
+     "american": 147.2,
+     "probability": 0.4045,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B14-068",
+   "sport": "Basketball",
+   "selection": "Indiana Pacers",
+   "market": "Match Winner",
+   "spread_decimal": 0.574,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 1.444,
+     "american": -225.2,
+     "probability": 0.6923,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 2.018,
+     "american": 101.8,
+     "probability": 0.4955,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B14-068",
+   "sport": "Basketball",
+   "selection": "Dallas Mavericks",
+   "market": "Match Winner",
+   "spread_decimal": 1.268,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 3.25,
+     "american": 225.0,
+     "probability": 0.3077,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 1.982,
+     "american": -101.8,
+     "probability": 0.5045,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B15-072",
+   "sport": "Rugby League",
+   "selection": "England",
+   "market": "Match Winner",
+   "spread_decimal": 0.163,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 1.266,
+     "american": -375.9,
+     "probability": 0.7896,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 1.429,
+     "american": -233.3,
+     "probability": 0.7,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B15-072",
+   "sport": "Rugby League",
+   "selection": "France",
+   "market": "Match Winner",
+   "spread_decimal": 1.42,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 4.753,
+     "american": 375.3,
+     "probability": 0.2104,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 3.333,
+     "american": 233.3,
+     "probability": 0.3,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B15-073",
+   "sport": "Rugby League",
+   "selection": "Australia Jillaroos",
+   "market": "Match Winner",
+   "spread_decimal": 0.699,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 1.523,
+     "american": -191.2,
+     "probability": 0.6567,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 2.222,
+     "american": 122.2,
+     "probability": 0.45,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B14-101",
+   "sport": "Basketball",
+   "selection": "Toronto Raptors",
+   "market": "Match Winner",
+   "spread_decimal": 0.182,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 2.0,
+     "american": 100.0,
+     "probability": 0.5,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 1.818,
+     "american": -122.2,
+     "probability": 0.55,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B14-101",
+   "sport": "Basketball",
+   "selection": "Washington Wizards",
+   "market": "Match Winner",
+   "spread_decimal": 0.222,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 2.0,
+     "american": 100.0,
+     "probability": 0.5,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 2.222,
+     "american": 122.2,
+     "probability": 0.45,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B14-102",
+   "sport": "Basketball",
+   "selection": "LA Clippers",
+   "market": "Match Winner",
+   "spread_decimal": 0.182,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 2.0,
+     "american": 100.0,
+     "probability": 0.5,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 1.818,
+     "american": -122.2,
+     "probability": 0.55,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B14-102",
+   "sport": "Basketball",
+   "selection": "Los Angeles Lakers",
+   "market": "Match Winner",
+   "spread_decimal": 0.222,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 2.0,
+     "american": 100.0,
+     "probability": 0.5,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 2.222,
+     "american": 122.2,
+     "probability": 0.45,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B14-103",
+   "sport": "Basketball",
+   "selection": "Houston Rockets",
+   "market": "Match Winner",
+   "spread_decimal": 0.235,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 1.444,
+     "american": -225.2,
+     "probability": 0.6923,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 1.679,
+     "american": -147.2,
+     "probability": 0.5955,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  },
+  {
+   "event": "6B14-103",
+   "sport": "Basketball",
+   "selection": "San Antonio Spurs",
+   "market": "Match Winner",
+   "spread_decimal": 0.778,
+   "observations": [
+    {
+     "desk": "65331685",
+     "decimal": 3.25,
+     "american": 225.0,
+     "probability": 0.3077,
+     "captured_utc": "2026-10-23T20:40:00Z"
+    },
+    {
+     "desk": "496eaf02",
+     "decimal": 2.472,
+     "american": 147.2,
+     "probability": 0.4045,
+     "captured_utc": "2026-10-23T20:30:00Z"
+    }
+   ]
+  }
+ ],
+ "stale_upcoming_labels": [
+  {
+   "desk": "496eaf02",
+   "id": "GH01",
+   "start_utc": "2026-10-23T20:13:00Z",
+   "state": "upcoming"
+  }
+ ],
+ "prose_findings": [
+  {
+   "desk": "8a900c04",
+   "id": "GF05",
+   "issue": "repeated 6-gram with GF04: 'genesis championship at woo jeong hills'"
+  },
+  {
+   "desk": "8a900c04",
+   "id": "VB04",
+   "issue": "repeated 6-gram with VB01: 'to a five set 3 2'"
+  },
+  {
+   "desk": "8a900c04",
+   "id": "VB05",
+   "issue": "repeated 6-gram with VB01: 'to win and over 3 5'"
+  },
+  {
+   "desk": "8a900c04",
+   "id": "DA05",
+   "issue": "repeated 6-gram with DA03: 'in saturday's best of nineteen second'"
+  },
+  {
+   "desk": "8a900c04",
+   "id": "BB04",
+   "issue": "repeated 6-gram with BB02: 'on the 60 day injured list'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "TN02",
+   "issue": "repeated 6-gram with TN01: '7 6 5 7 6 5'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "TN05",
+   "issue": "repeated 6-gram with TN01: 'reached the semi finals with a'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "VB04",
+   "issue": "repeated 6-gram with VB01: 'crowd will push the tempo on'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "RU03",
+   "issue": "repeated 6-gram with RU02: 'in urc round 4 with the'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "RU05",
+   "issue": "repeated 6-gram with RU01: 'from one win one draw and'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "RL02",
+   "issue": "repeated 6-gram with RL01: 'rugby league world cup round 2'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "RL03",
+   "issue": "repeated 6-gram with RL02: '2 at hbf park in perth'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "RL04",
+   "issue": "repeated 6-gram with RL01: 'rugby league world cup round 2'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "RL05",
+   "issue": "repeated 6-gram with RL01: 'rugby league world cup round 2'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "CR04",
+   "issue": "repeated 6-gram with CR03: 'table with two wins from three'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "DA03",
+   "issue": "repeated 6-gram with DA02: 'the pdc order of merit with'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "DA04",
+   "issue": "repeated 6-gram with DA03: 'round 2 at dortmund on saturday'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "DA05",
+   "issue": "repeated 6-gram with DA03: 'round 2 at dortmund on saturday'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "BB02",
+   "issue": "repeated 6-gram with BB01: 'tampa bay rays and milwaukee brewers'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "BB03",
+   "issue": "repeated 6-gram with BB02: 'home crowd will push the tempo'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "BB04",
+   "issue": "repeated 6-gram with BB02: 'been the story of the postseason'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "MR03",
+   "issue": "repeated 6-gram with DA02: 'have been the difference in his'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "IH02",
+   "issue": "repeated 6-gram with BB02: 'home crowd will push the tempo'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "IH04",
+   "issue": "repeated 6-gram with BB02: 'home crowd will push the tempo'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "IH05",
+   "issue": "repeated 6-gram with BB02: 'home crowd will push the tempo'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "IH06",
+   "issue": "repeated 6-gram with BB02: 'home crowd will push the tempo'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "BK02",
+   "issue": "repeated 6-gram with BB02: 'home crowd will push the tempo'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "BK03",
+   "issue": "repeated 6-gram with BB02: 'home crowd will push the tempo'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "BK04",
+   "issue": "repeated 6-gram with IH02: 'on friday night with both teams'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "BK05",
+   "issue": "repeated 6-gram with BK01: 'and their home crowd will be'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "BK06",
+   "issue": "repeated 6-gram with BK03: 'the tempo over 219 0 total'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "BK08",
+   "issue": "repeated 6-gram with BK03: 'offense has been scoring freely and'"
+  },
+  {
+   "desk": "496eaf02",
+   "id": "BK09",
+   "issue": "repeated 6-gram with BK07: 'five wins from six and a'"
+  }
+ ],
+ "source_findings": [
+  {
+   "event": "6B04-017",
+   "issue": "non-official host used as evidence: www.cricinfo.com",
+   "url": "https://www.cricinfo.com/series/pakistan-odi-tri-series-2026-27-1550706"
+  },
+  {
+   "event": "6B04-017",
+   "issue": "non-official host used as evidence: www.cricinfo.com",
+   "url": "https://www.cricinfo.com/series/pakistan-odi-tri-series-2026-27-1550706/pakistan-vs-england-4th-match-1550716/live-cricket-score"
+  },
+  {
+   "event": "6B08-090",
+   "issue": "non-official host used as evidence: www.limerickleader.ie",
+   "url": "https://www.limerickleader.ie/sport/gaa/hurling/kilmallock-and-na-piarsaigh-prepare-for-limerick-senior-hurling-final-9294862"
+  },
+  {
+   "event": "6B08-090",
+   "issue": "host not on the official allow-list: www.the42.ie",
+   "url": "https://www.the42.ie/limerick-wexford-hurling-cork-derry-football-7202096-Oct2026"
+  },
+  {
+   "event": "6B01-119",
+   "issue": "no official source recorded"
+  },
+  {
+   "event": "6B08-120",
+   "issue": "non-official host used as evidence: en.wikipedia.org",
+   "url": "https://en.wikipedia.org/wiki/2026_Kerry_Senior_Football_Championship"
+  }
+ ],
+ "single_source_events": [
+  "6B03-011",
+  "6B03-012",
+  "6B03-013",
+  "6B03-014",
+  "6B05-024",
+  "6B05-025",
+  "6B06-027",
+  "6B07-035",
+  "6B08-038",
+  "6B08-040",
+  "6B09-044",
+  "6B09-045",
+  "6B10-046",
+  "6B10-047",
+  "6B10-048",
+  "6B11-051",
+  "6B11-052",
+  "6B11-053",
+  "6B11-054",
+  "6B11-055",
+  "6B12-060",
+  "6B14-070",
+  "6B10-076",
+  "6B10-077",
+  "6B10-078",
+  "6B10-079",
+  "6B02-080",
+  "6B02-081",
+  "6B05-086",
+  "6B05-087",
+  "6B06-088",
+  "6B08-089",
+  "6B08-090",
+  "6B09-091",
+  "6B09-092",
+  "6B11-093",
+  "6B11-094",
+  "6B11-095",
+  "6B11-096",
+  "6B12-097",
+  "6B13-098",
+  "6B13-099",
+  "6B13-100",
+  "6B14-104",
+  "6B14-105",
+  "6B14-106",
+  "6B14-107",
+  "6B13-108",
+  "6B13-109",
+  "6B13-110",
+  "6B14-111",
+  "6B14-112",
+  "6B14-113",
+  "6B14-114",
+  "6B14-115",
+  "6B04-116",
+  "6B04-117",
+  "6B04-118",
+  "6B01-119",
+  "6B08-120",
+  "6B08-121",
+  "6B11-122",
+  "6B11-123",
+  "6B12-124",
+  "6B12-125"
+ ],
+ "sports": [
+  {
+   "sport": "Baseball",
+   "events": 5,
+   "upcoming": 5,
+   "lines": 113,
+   "strict_in_band_lines": 5,
+   "above_band_lines": 11,
+   "desks": 3
+  },
+  {
+   "sport": "Basketball",
+   "events": 17,
+   "upcoming": 16,
+   "lines": 320,
+   "strict_in_band_lines": 8,
+   "above_band_lines": 20,
+   "desks": 3
+  },
+  {
+   "sport": "Cricket",
+   "events": 8,
+   "upcoming": 8,
+   "lines": 71,
+   "strict_in_band_lines": 10,
+   "above_band_lines": 4,
+   "desks": 3
+  },
+  {
+   "sport": "Darts",
+   "events": 6,
+   "upcoming": 4,
+   "lines": 70,
+   "strict_in_band_lines": 5,
+   "above_band_lines": 6,
+   "desks": 3
+  },
+  {
+   "sport": "Gaelic Sports",
+   "events": 9,
+   "upcoming": 9,
+   "lines": 42,
+   "strict_in_band_lines": 4,
+   "above_band_lines": 4,
+   "desks": 3
+  },
+  {
+   "sport": "Golf",
+   "events": 6,
+   "upcoming": 6,
+   "lines": 65,
+   "strict_in_band_lines": 8,
+   "above_band_lines": 10,
+   "desks": 3
+  },
+  {
+   "sport": "Greyhounds",
+   "events": 7,
+   "upcoming": 2,
+   "lines": 40,
+   "strict_in_band_lines": 0,
+   "above_band_lines": 5,
+   "desks": 3
+  },
+  {
+   "sport": "Handball",
+   "events": 8,
+   "upcoming": 5,
+   "lines": 100,
+   "strict_in_band_lines": 3,
+   "above_band_lines": 21,
+   "desks": 3
+  },
+  {
+   "sport": "Ice Hockey",
+   "events": 11,
+   "upcoming": 11,
+   "lines": 190,
+   "strict_in_band_lines": 8,
+   "above_band_lines": 39,
+   "desks": 3
+  },
+  {
+   "sport": "Motor Racing",
+   "events": 11,
+   "upcoming": 10,
+   "lines": 95,
+   "strict_in_band_lines": 5,
+   "above_band_lines": 3,
+   "desks": 3
+  },
+  {
+   "sport": "Rugby League",
+   "events": 5,
+   "upcoming": 5,
+   "lines": 128,
+   "strict_in_band_lines": 6,
+   "above_band_lines": 32,
+   "desks": 3
+  },
+  {
+   "sport": "Rugby Union",
+   "events": 9,
+   "upcoming": 5,
+   "lines": 160,
+   "strict_in_band_lines": 4,
+   "above_band_lines": 20,
+   "desks": 3
+  },
+  {
+   "sport": "Snooker",
+   "events": 7,
+   "upcoming": 3,
+   "lines": 41,
+   "strict_in_band_lines": 1,
+   "above_band_lines": 3,
+   "desks": 3
+  },
+  {
+   "sport": "Tennis",
+   "events": 9,
+   "upcoming": 4,
+   "lines": 86,
+   "strict_in_band_lines": 3,
+   "above_band_lines": 0,
+   "desks": 3
+  },
+  {
+   "sport": "Volleyball",
+   "events": 7,
+   "upcoming": 7,
+   "lines": 95,
+   "strict_in_band_lines": 4,
+   "above_band_lines": 13,
+   "desks": 3
+  }
+ ]
+}
