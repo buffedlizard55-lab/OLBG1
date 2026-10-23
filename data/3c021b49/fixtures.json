@@ -1,0 +1,3172 @@
+{
+  "desk": "3c021b49",
+  "captured_utc": "2026-10-23T22:30:00Z",
+  "fixtures": [
+    {
+      "id": "TN01",
+      "sport": "tennis",
+      "competition": "ATP Almaty 250 (SF)",
+      "participant_a": "Nikoloz Basilashvili",
+      "participant_b": "Stefanos Tsitsipas",
+      "event": "Basilashvili v Tsitsipas — ATP Almaty SF",
+      "start_utc": "2026-10-24T10:00:00Z",
+      "date": null,
+      "venue": "Almaty, Central Court",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "atp-almaty",
+          "name": "ATP Tour — Almaty daily schedule",
+          "url": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "seed",
+        "a": {
+          "rank": 45,
+          "seed": "Q"
+        },
+        "b": {
+          "rank": 12,
+          "seed": 7
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "TN02",
+      "sport": "tennis",
+      "competition": "ATP Almaty 250 (SF)",
+      "participant_a": "Daniil Medvedev",
+      "participant_b": "Alexander Bublik",
+      "event": "Medvedev v Bublik — ATP Almaty SF",
+      "start_utc": "2026-10-24T13:00:00Z",
+      "date": null,
+      "venue": "Almaty, Central Court",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "atp-almaty",
+          "name": "ATP Tour — Almaty daily schedule",
+          "url": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "seed",
+        "a": {
+          "rank": 4,
+          "seed": 1
+        },
+        "b": {
+          "rank": 10,
+          "seed": 3
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "TN03",
+      "sport": "tennis",
+      "competition": "WTA Ningbo Open 500 (SF)",
+      "participant_a": "Elena Rybakina",
+      "participant_b": "Diana Shnaider",
+      "event": "Rybakina v Shnaider — WTA Ningbo Open SF",
+      "start_utc": "2026-10-24T09:30:00Z",
+      "date": null,
+      "venue": "Ningbo",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "wta-ningbo",
+          "name": "WTA — BNB Ningbo Open draw (official PDF)",
+          "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf"
+        }
+      ],
+      "flags": [
+        "start_utc rendered by OLBG discovery (UTC-4); official UTC start not published in fetched WTA draw"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "rank",
+        "a": {
+          "rank": 1
+        },
+        "b": {
+          "rank": 13
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "TN04",
+      "sport": "tennis",
+      "competition": "WTA Ningbo Open 500 (SF)",
+      "participant_a": "Leylah Fernandez",
+      "participant_b": "Marta Kostyuk",
+      "event": "Fernandez v Kostyuk — WTA Ningbo Open SF",
+      "start_utc": null,
+      "date": "2026-10-24",
+      "venue": "Ningbo",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "wta-ningbo",
+          "name": "WTA — BNB Ningbo Open draw (official PDF)",
+          "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf"
+        }
+      ],
+      "flags": [
+        "exact UTC start not published in fetched official draw; date-only entry"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "rank",
+        "a": {
+          "rank": 25
+        },
+        "b": {
+          "rank": 10
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "TN05",
+      "sport": "tennis",
+      "competition": "WTA Japan Open 250 Osaka (SF)",
+      "participant_a": "Ann Li",
+      "participant_b": "Katie Boulter",
+      "event": "Li v Boulter — WTA Japan Open SF",
+      "start_utc": null,
+      "date": "2026-10-24",
+      "venue": "Utsubo Tennis Center, Osaka",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "wta-osaka",
+          "name": "WTA — Kinoshita Group Japan Open draw (official PDF)",
+          "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/405/MDS.pdf"
+        }
+      ],
+      "flags": [
+        "exact UTC start not published in fetched official draw; date-only entry"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "rank",
+        "a": {
+          "rank": 31,
+          "seed": 1
+        },
+        "b": {
+          "rank": 54,
+          "seed": 8
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "GF01",
+      "sport": "golf",
+      "competition": "PGA TOUR — Butterfield Bermuda Championship (outright H2H)",
+      "participant_a": "Corey Conners",
+      "participant_b": "Seamus Power",
+      "event": "Conners v Power — Bermuda Championship outright H2H",
+      "start_utc": null,
+      "date": "2026-10-24",
+      "venue": "Port Royal Golf Course, Bermuda",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "pgatour",
+          "name": "PGA TOUR — Butterfield Bermuda Championship leaderboard",
+          "url": "https://www.pgatour.com/leaderboard"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "outright",
+        "a": {
+          "owgr": 61,
+          "r2": -12,
+          "form": "T1"
+        },
+        "b": {
+          "owgr": 196,
+          "r2": -12,
+          "form": "T1",
+          "bermuda": "won 2022; T-12 2021; T-11 2025"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "GF02",
+      "sport": "golf",
+      "competition": "PGA TOUR — Butterfield Bermuda Championship (outright H2H)",
+      "participant_a": "Denny McCarthy",
+      "participant_b": "Emiliano Grillo",
+      "event": "McCarthy v Grillo — Bermuda Championship outright H2H",
+      "start_utc": null,
+      "date": "2026-10-24",
+      "venue": "Port Royal Golf Course, Bermuda",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "pgatour",
+          "name": "PGA TOUR — Butterfield Bermuda Championship leaderboard",
+          "url": "https://www.pgatour.com/leaderboard"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "outright",
+        "a": {
+          "owgr": 113,
+          "r2": -4
+        },
+        "b": {
+          "owgr": 119,
+          "r2": -7
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "GF03",
+      "sport": "golf",
+      "competition": "LPGA — BMW Ladies Championship (outright H2H)",
+      "participant_a": "Haeran Ryu",
+      "participant_b": "Lauren Coughlin",
+      "event": "Ryu v Coughlin — BMW Ladies Championship outright H2H",
+      "start_utc": null,
+      "date": "2026-10-24",
+      "venue": "Pine Beach Golf Links, Haenam, Korea",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "lpga",
+          "name": "LPGA — BMW Ladies Championship",
+          "url": "https://www.lpga.com/tournaments"
+        }
+      ],
+      "flags": [
+        "Typhoon Champi noted as a factor by Golfweek (not modelled)"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "outright",
+        "a": {
+          "rank": 3,
+          "r2": -10,
+          "form": "2-stroke lead after R2"
+        },
+        "b": {
+          "rank": 19,
+          "r2": -8
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "GF04",
+      "sport": "golf",
+      "competition": "DP World Tour — Genesis Championship (outright H2H)",
+      "participant_a": "Casey Jarvis",
+      "participant_b": "Antoine Rozner",
+      "event": "Jarvis v Rozner — Genesis Championship outright H2H",
+      "start_utc": null,
+      "date": "2026-10-24",
+      "venue": "Cheonan, South Korea",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "europeantour",
+          "name": "DP World Tour — Genesis Championship (Cheonan)",
+          "url": "https://www.europeantour.com/europeantour/schedule"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "outright",
+        "a": {
+          "r2": -11,
+          "form": "T1 after R2"
+        },
+        "b": {
+          "r2": -11,
+          "form": "T1 after R2"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "GF05",
+      "sport": "golf",
+      "competition": "DP World Tour — Genesis Championship (outright H2H)",
+      "participant_a": "Ryan Fox",
+      "participant_b": "Eugenio Chacarra",
+      "event": "Fox v Chacarra — Genesis Championship outright H2H",
+      "start_utc": null,
+      "date": "2026-10-24",
+      "venue": "Cheonan, South Korea",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "europeantour",
+          "name": "DP World Tour — Genesis Championship (Cheonan)",
+          "url": "https://www.europeantour.com/europeantour/schedule"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "outright",
+        "a": {
+          "r2": -5
+        },
+        "b": {
+          "r2": -6,
+          "form": "Race to Dubai #1; won in India last week"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "VB01",
+      "sport": "volleyball",
+      "competition": "TAURON Liga (Round 2)",
+      "participant_a": "PGE GiEK Skra Bełchatów",
+      "participant_b": "PGE Projekt Warszawa",
+      "event": "Skra Bełchatów v Projekt Warszawa",
+      "start_utc": "2026-10-24T17:00:00Z",
+      "date": null,
+      "venue": "Bełchatów",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "tauronliga",
+          "name": "TAURON Liga (PlusLiga) — fixtures & table",
+          "url": "https://www.tauronliga.pl/games/nocookies/1.html"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "team",
+        "a": {
+          "w": 1,
+          "l": 0,
+          "sets": "3-1"
+        },
+        "b": {
+          "w": 1,
+          "l": 0,
+          "sets": "3-1"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "VB02",
+      "sport": "volleyball",
+      "competition": "TAURON Liga (Round 2)",
+      "participant_a": "Podziemia Kredowe ChKS Chełm",
+      "participant_b": "Asseco Resovia Rzeszów",
+      "event": "ChKS Chełm v Resovia Rzeszów",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "date": null,
+      "venue": "Chełm",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "tauronliga",
+          "name": "TAURON Liga (PlusLiga) — fixtures & table",
+          "url": "https://www.tauronliga.pl/games/nocookies/1.html"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "team",
+        "a": {
+          "w": 0,
+          "l": 1,
+          "sets": "2-3"
+        },
+        "b": {
+          "w": 0,
+          "l": 1,
+          "sets": "2-3"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "VB03",
+      "sport": "volleyball",
+      "competition": "SuperLega Credem Banca (Round 2)",
+      "participant_a": "Itas Trentino",
+      "participant_b": "Cisterna Volley",
+      "event": "Trentino v Cisterna Volley",
+      "start_utc": "2026-10-25T16:00:00Z",
+      "date": null,
+      "venue": "BTS Arena, Trento",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "legavolley",
+          "name": "Lega Pallavolo Serie A — SuperLega calendar",
+          "url": "https://www.legavolley.it/calendario/?idCampionato=999"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "team",
+        "a": {
+          "w": 1,
+          "l": 0,
+          "pts": 3
+        },
+        "b": {
+          "w": 1,
+          "l": 0,
+          "pts": 3
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "VB04",
+      "sport": "volleyball",
+      "competition": "SuperLega Credem Banca (Round 2)",
+      "participant_a": "Sir Susa Scai Perugia",
+      "participant_b": "Tinet Prata di Pordenone",
+      "event": "Perugia v Prata di Pordenone",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "date": null,
+      "venue": "Pala Barton Energy, Perugia",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "legavolley",
+          "name": "Lega Pallavolo Serie A — SuperLega calendar",
+          "url": "https://www.legavolley.it/calendario/?idCampionato=999"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "team",
+        "a": {
+          "w": 1,
+          "l": 0,
+          "pts": 2
+        },
+        "b": {
+          "w": 1,
+          "l": 0,
+          "pts": 3
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "VB05",
+      "sport": "volleyball",
+      "competition": "SuperLega Credem Banca (Round 2)",
+      "participant_a": "Vero Volley Monza",
+      "participant_b": "Rana Verona",
+      "event": "Monza v Verona",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "date": null,
+      "venue": "Monza",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "legavolley",
+          "name": "Lega Pallavolo Serie A — SuperLega calendar",
+          "url": "https://www.legavolley.it/calendario/?idCampionato=999"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "team",
+        "a": {
+          "w": 0,
+          "l": 1,
+          "pts": 0
+        },
+        "b": {
+          "w": 0,
+          "l": 1,
+          "pts": 0
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "RU01",
+      "sport": "rugby-union",
+      "competition": "United Rugby Championship (Round 4)",
+      "participant_a": "Leinster Rugby",
+      "participant_b": "Munster Rugby",
+      "event": "Leinster v Munster",
+      "start_utc": "2026-10-24T17:00:00Z",
+      "date": null,
+      "venue": "Aviva Stadium, Dublin",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "urc",
+          "name": "United Rugby Championship — fixtures & table",
+          "url": "https://stats.unitedrugby.com/match-centre/table/"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "team",
+        "a": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "pts": 8,
+          "pf": 0,
+          "pa": 0
+        },
+        "b": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "pts": 9,
+          "pf": 0,
+          "pa": 0
+        },
+        "h2h": "Leinster 65 wins, Munster 46, draws 5 (116 meetings)"
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "RU02",
+      "sport": "rugby-union",
+      "competition": "United Rugby Championship (Round 4)",
+      "participant_a": "DHL Stormers",
+      "participant_b": "Llanelli Scarlets",
+      "event": "Stormers v Scarlets",
+      "start_utc": "2026-10-24T15:00:00Z",
+      "date": null,
+      "venue": "Cape Town Stadium",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "urc",
+          "name": "United Rugby Championship — fixtures & table",
+          "url": "https://stats.unitedrugby.com/match-centre/table/"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "team",
+        "a": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "pts": 11
+        },
+        "b": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "pts": 7
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "RU03",
+      "sport": "rugby-union",
+      "competition": "United Rugby Championship (Round 4)",
+      "participant_a": "Vodacom Bulls",
+      "participant_b": "Ulster Rugby",
+      "event": "Bulls v Ulster",
+      "start_utc": "2026-10-24T10:45:00Z",
+      "date": null,
+      "venue": "Loftus Versfeld, Pretoria",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "urc",
+          "name": "United Rugby Championship — fixtures & table",
+          "url": "https://stats.unitedrugby.com/match-centre/table/"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "team",
+        "a": {
+          "w": 2,
+          "d": 0,
+          "l": 1,
+          "pts": 11,
+          "diff": 72
+        },
+        "b": {
+          "w": 0,
+          "d": 2,
+          "l": 1,
+          "pts": 8,
+          "diff": -5
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "RU04",
+      "sport": "rugby-union",
+      "competition": "United Rugby Championship (Round 4)",
+      "participant_a": "Benetton Rugby",
+      "participant_b": "Glasgow Warriors",
+      "event": "Benetton v Glasgow Warriors",
+      "start_utc": "2026-10-24T14:00:00Z",
+      "date": null,
+      "venue": "Stadio Monigo, Treviso",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "urc",
+          "name": "United Rugby Championship — fixtures & table",
+          "url": "https://stats.unitedrugby.com/match-centre/table/"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "team",
+        "a": {
+          "w": 0,
+          "d": 1,
+          "l": 2,
+          "pts": 5,
+          "diff": -4
+        },
+        "b": {
+          "w": 2,
+          "d": 1,
+          "l": 0,
+          "pts": 13,
+          "diff": 23
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "RU05",
+      "sport": "rugby-union",
+      "competition": "United Rugby Championship (Round 4)",
+      "participant_a": "Ospreys",
+      "participant_b": "Dragons",
+      "event": "Ospreys v Dragons",
+      "start_utc": "2026-10-24T19:00:00Z",
+      "date": null,
+      "venue": "Swansea",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "urc",
+          "name": "United Rugby Championship — fixtures & table",
+          "url": "https://stats.unitedrugby.com/match-centre/table/"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "team",
+        "a": {
+          "w": 1,
+          "d": 0,
+          "l": 2,
+          "pts": 6,
+          "diff": -26
+        },
+        "b": {
+          "w": 1,
+          "d": 1,
+          "l": 1,
+          "pts": 9,
+          "diff": 5
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "RL01",
+      "sport": "rugby-league",
+      "competition": "2026 Rugby League World Cup (Round 2, Pool B)",
+      "participant_a": "Papua New Guinea Kumuls",
+      "participant_b": "Toa Samoa",
+      "event": "PNG Kumuls v Samoa",
+      "start_utc": "2026-10-24T04:25:00Z",
+      "date": null,
+      "venue": "Santos National Football Stadium, Port Moresby",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nrl",
+          "name": "NRL.com — Rugby League World Cup Round 2 draw",
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "pool",
+        "a": {
+          "pos": 3,
+          "p": 0.28
+        },
+        "b": {
+          "pos": 2,
+          "p": 0.72
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "RL02",
+      "sport": "rugby-league",
+      "competition": "2026 Rugby League World Cup (Round 2, Pool B/C)",
+      "participant_a": "England",
+      "participant_b": "France",
+      "event": "England v France",
+      "start_utc": "2026-10-24T06:35:00Z",
+      "date": null,
+      "venue": "HBF Park, Perth",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nrl",
+          "name": "NRL.com — Rugby League World Cup Round 2 draw",
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "pool",
+        "a": {
+          "pos": 4,
+          "p": 0.7
+        },
+        "b": {
+          "pos": 6,
+          "p": 0.3
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "RL03",
+      "sport": "rugby-league",
+      "competition": "2026 Women's Rugby League World Cup (Round 2, Pool A)",
+      "participant_a": "Australia Jillaroos",
+      "participant_b": "England Women",
+      "event": "Australia Jillaroos v England Women",
+      "start_utc": "2026-10-24T09:05:00Z",
+      "date": null,
+      "venue": "HBF Park, Perth",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nrl-women",
+          "name": "NRL.com — Women's RLWC team lists (Round 2)",
+          "url": "https://www.nrl.com/news/2026/10/20/world-cup-team-lists-womens-round-2/"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "pool",
+        "a": {
+          "pos": 2,
+          "r1": "beat Samoa 40-0",
+          "p": 0.45
+        },
+        "b": {
+          "pos": 1,
+          "r1": "beat Wales 70-6",
+          "p": 0.55
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "RL04",
+      "sport": "rugby-league",
+      "competition": "2026 Rugby League World Cup (Round 2, Pool A)",
+      "participant_a": "New Zealand Kiwis",
+      "participant_b": "Cook Islands Aitu",
+      "event": "New Zealand Kiwis v Cook Islands",
+      "start_utc": "2026-10-25T05:05:00Z",
+      "date": null,
+      "venue": "One NZ Stadium, Christchurch",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nrl",
+          "name": "NRL.com — Rugby League World Cup Round 2 draw",
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "pool",
+        "a": {
+          "pos": 3,
+          "p": 0.82
+        },
+        "b": {
+          "pos": 4,
+          "p": 0.18
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "RL05",
+      "sport": "rugby-league",
+      "competition": "2026 Rugby League World Cup (Round 2, Pool A)",
+      "participant_a": "Australia Kangaroos",
+      "participant_b": "Fiji Bati",
+      "event": "Australia Kangaroos v Fiji Bati",
+      "start_utc": "2026-10-25T09:05:00Z",
+      "date": null,
+      "venue": "Suncorp Stadium, Brisbane",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nrl",
+          "name": "NRL.com — Rugby League World Cup Round 2 draw",
+          "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "pool",
+        "a": {
+          "pos": 2,
+          "p": 0.85
+        },
+        "b": {
+          "pos": 1,
+          "p": 0.15
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "CR01",
+      "sport": "cricket",
+      "competition": "New Zealand v India T20Is 2026 — 2nd T20I",
+      "participant_a": "New Zealand",
+      "participant_b": "India",
+      "event": "New Zealand v India — 2nd T20I",
+      "start_utc": "2026-10-24T07:00:00Z",
+      "date": null,
+      "venue": "Hagley Oval, Christchurch",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "icc",
+          "name": "ICC — fixtures (NZ v India T20I)",
+          "url": "https://www.icc-cricket.com/matches/271647/new-zealand-vs-india"
+        },
+        {
+          "id": "nzc",
+          "name": "New Zealand Cricket — scoring.nzc.nz fixtures",
+          "url": "https://scoring.nzc.nz/fixtures"
+        }
+      ],
+      "flags": [
+        "team ratings not re-fetched this session; model input flagged"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "rating",
+        "a": {
+          "rating": 0.5
+        },
+        "b": {
+          "rating": 0.6
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "CR02",
+      "sport": "cricket",
+      "competition": "Pakistan ODI Tri-Series 2026 — 4th Match",
+      "participant_a": "Pakistan",
+      "participant_b": "England",
+      "event": "Pakistan v England — 4th ODI",
+      "start_utc": "2026-10-25T08:00:00Z",
+      "date": null,
+      "venue": "Gaddafi Stadium, Lahore",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "cricinfo",
+          "name": "ESPNcricinfo — Pakistan ODI Tri-Series (ICC official digital home)",
+          "url": "https://www.cricinfo.com/series/pakistan-odi-tri-series-2026-27-1550706"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "series",
+        "a": {
+          "w": 2,
+          "l": 0
+        },
+        "b": {
+          "w": 0,
+          "l": 2
+        },
+        "r1": "Pakistan beat England by 87 runs (Oct 20); England lost to Sri Lanka by 2 wickets (Oct 22)"
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "CR03",
+      "sport": "cricket",
+      "competition": "One-Day Cup 2026-27 — 11th Match",
+      "participant_a": "Tasmanian Tigers",
+      "participant_b": "Victoria",
+      "event": "Tasmania v Victoria",
+      "start_utc": "2026-10-23T23:30:00Z",
+      "date": null,
+      "venue": "Bellerive Oval, Hobart",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "ca",
+          "name": "Cricket Australia — One-Day Cup fixtures",
+          "url": "https://www.cricket.com.au/matches/series/CA:4688/one-day-cup-2026-27"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "series",
+        "a": {
+          "w": 2,
+          "l": 1,
+          "nrr": 2.303
+        },
+        "b": {
+          "w": 1,
+          "l": 2,
+          "nrr": -0.752
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "CR04",
+      "sport": "cricket",
+      "competition": "One-Day Cup 2026-27 — 12th Match",
+      "participant_a": "Western Australia",
+      "participant_b": "New South Wales",
+      "event": "Western Australia v New South Wales",
+      "start_utc": "2026-10-24T06:00:00Z",
+      "date": null,
+      "venue": "WACA Ground, Perth",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "ca",
+          "name": "Cricket Australia — One-Day Cup fixtures",
+          "url": "https://www.cricket.com.au/matches/series/CA:4688/one-day-cup-2026-27"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "series",
+        "a": {
+          "w": 0,
+          "l": 2,
+          "nrr": -2.088
+        },
+        "b": {
+          "w": 2,
+          "l": 1,
+          "nrr": -0.023
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "CR05",
+      "sport": "cricket",
+      "competition": "India A in New Zealand 2026/27 — 1st Four-Day Match",
+      "participant_a": "New Zealand A",
+      "participant_b": "India A",
+      "event": "New Zealand A v India A — 1st Four-Day Test (Day 1)",
+      "start_utc": "2026-10-23T22:00:00Z",
+      "date": null,
+      "venue": "Bert Sutcliffe Oval, Lincoln",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nzc",
+          "name": "New Zealand Cricket — scoring.nzc.nz fixtures",
+          "url": "https://scoring.nzc.nz/fixtures"
+        }
+      ],
+      "flags": [
+        "A-team ratings not re-fetched this session; model input flagged"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "rating",
+        "a": {
+          "rating": 0.45
+        },
+        "b": {
+          "rating": 0.55
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "SN01",
+      "sport": "snooker",
+      "competition": "BetVictor Northern Ireland Open 2026 (SF)",
+      "participant_a": "Kyren Wilson",
+      "participant_b": "Sam Craigie",
+      "event": "Kyren Wilson v Sam Craigie — SF",
+      "start_utc": "2026-10-24T12:00:00Z",
+      "date": null,
+      "venue": "Waterfront Hall, Belfast",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "wst",
+          "name": "World Snooker Tour — Northern Ireland Open matches & rankings",
+          "url": "https://www.wst.tv/matches/"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "prize",
+        "a": {
+          "rank": 9,
+          "prize": 716800
+        },
+        "b": {
+          "rank": 70,
+          "prize": 40000
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "SN02",
+      "sport": "snooker",
+      "competition": "BetVictor Northern Ireland Open 2026 (QF)",
+      "participant_a": "Jak Jones",
+      "participant_b": "Scott Donaldson",
+      "event": "Jak Jones v Scott Donaldson — QF",
+      "start_utc": "2026-10-23T18:00:00Z",
+      "date": null,
+      "venue": "Waterfront Hall, Belfast",
+      "state": "start elapsed",
+      "sources": [
+        {
+          "id": "wst",
+          "name": "World Snooker Tour — Northern Ireland Open matches & rankings",
+          "url": "https://www.wst.tv/matches/"
+        }
+      ],
+      "flags": [
+        "in play at capture time; not priced"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "prize",
+        "a": {
+          "rank": 30,
+          "prize": 200000
+        },
+        "b": {
+          "rank": 64,
+          "prize": 40000
+        }
+      },
+      "priced": false,
+      "price_expires_at": null
+    },
+    {
+      "id": "SN03",
+      "sport": "snooker",
+      "competition": "BetVictor Northern Ireland Open 2026 (QF)",
+      "participant_a": "David Gilbert",
+      "participant_b": "Mark Williams",
+      "event": "David Gilbert v Mark Williams — QF",
+      "start_utc": "2026-10-23T18:00:00Z",
+      "date": null,
+      "venue": "Waterfront Hall, Belfast",
+      "state": "start elapsed",
+      "sources": [
+        {
+          "id": "wst",
+          "name": "World Snooker Tour — Northern Ireland Open matches & rankings",
+          "url": "https://www.wst.tv/matches/"
+        }
+      ],
+      "flags": [
+        "in play at capture time; not priced"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "prize",
+        "a": {
+          "rank": 32,
+          "prize": 180000
+        },
+        "b": {
+          "rank": 8,
+          "prize": 747400
+        }
+      },
+      "priced": false,
+      "price_expires_at": null
+    },
+    {
+      "id": "SN04",
+      "sport": "snooker",
+      "competition": "BetVictor Northern Ireland Open 2026 (QF)",
+      "participant_a": "Anthony McGill",
+      "participant_b": "Kyren Wilson",
+      "event": "Anthony McGill v Kyren Wilson — QF",
+      "start_utc": "2026-10-23T12:00:00Z",
+      "date": null,
+      "venue": "Waterfront Hall, Belfast",
+      "state": "start elapsed",
+      "sources": [
+        {
+          "id": "wst",
+          "name": "World Snooker Tour — Northern Ireland Open matches & rankings",
+          "url": "https://www.wst.tv/matches/"
+        }
+      ],
+      "flags": [
+        "completed at capture time (Wilson won 4-2); elapsed"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "prize",
+        "a": {
+          "rank": 38,
+          "prize": 120000
+        },
+        "b": {
+          "rank": 9,
+          "prize": 716800
+        }
+      },
+      "priced": false,
+      "price_expires_at": null
+    },
+    {
+      "id": "SN05",
+      "sport": "snooker",
+      "competition": "BetVictor Northern Ireland Open 2026 (QF)",
+      "participant_a": "Sam Craigie",
+      "participant_b": "Elliot Slessor",
+      "event": "Sam Craigie v Elliot Slessor — QF",
+      "start_utc": "2026-10-23T12:00:00Z",
+      "date": null,
+      "venue": "Waterfront Hall, Belfast",
+      "state": "start elapsed",
+      "sources": [
+        {
+          "id": "wst",
+          "name": "World Snooker Tour — Northern Ireland Open matches & rankings",
+          "url": "https://www.wst.tv/matches/"
+        }
+      ],
+      "flags": [
+        "completed at capture time (Craigie won 4-2); elapsed"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "prize",
+        "a": {
+          "rank": 70,
+          "prize": 40000
+        },
+        "b": {
+          "rank": 22,
+          "prize": 150000
+        }
+      },
+      "priced": false,
+      "price_expires_at": null
+    },
+    {
+      "id": "DA01",
+      "sport": "darts",
+      "competition": "PDC European Championship 2026 (Round 1)",
+      "participant_a": "Luke Littler",
+      "participant_b": "William O'Connor",
+      "event": "Littler v O'Connor — Round 1",
+      "start_utc": "2026-10-23T19:15:00Z",
+      "date": null,
+      "venue": "Westfalenhalle, Dortmund",
+      "state": "start elapsed",
+      "sources": [
+        {
+          "id": "pdc",
+          "name": "PDC — European Championship hub & Order of Merit",
+          "url": "https://www.pdc.tv/tournament-hub/10870"
+        }
+      ],
+      "flags": [
+        "in play at capture time; not priced"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "merit",
+        "a": {
+          "rank": 1,
+          "prize": 3124
+        },
+        "b": {
+          "rank": 34,
+          "prize": 273.5
+        }
+      },
+      "priced": false,
+      "price_expires_at": null
+    },
+    {
+      "id": "DA02",
+      "sport": "darts",
+      "competition": "PDC European Championship 2026 (Round 2)",
+      "participant_a": "Gian van Veen",
+      "participant_b": "Luke Woodhouse",
+      "event": "van Veen v Woodhouse — Round 2",
+      "start_utc": "2026-10-24T12:00:00Z",
+      "date": null,
+      "venue": "Westfalenhalle, Dortmund",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "pdc",
+          "name": "PDC — European Championship hub & Order of Merit",
+          "url": "https://www.pdc.tv/tournament-hub/10870"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "merit",
+        "a": {
+          "rank": 3,
+          "prize": 1029.75
+        },
+        "b": {
+          "rank": 18,
+          "prize": 511
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "DA03",
+      "sport": "darts",
+      "competition": "PDC European Championship 2026 (Round 2)",
+      "participant_a": "Stephen Bunting",
+      "participant_b": "Kim Huybrechts",
+      "event": "Bunting v Huybrechts — Round 2",
+      "start_utc": "2026-10-24T13:00:00Z",
+      "date": null,
+      "venue": "Westfalenhalle, Dortmund",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "pdc",
+          "name": "PDC — European Championship hub & Order of Merit",
+          "url": "https://www.pdc.tv/tournament-hub/10870"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "merit",
+        "a": {
+          "rank": 13,
+          "prize": 570.75
+        },
+        "b": {
+          "rank": 36,
+          "prize": 245
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "DA04",
+      "sport": "darts",
+      "competition": "PDC European Championship 2026 (Round 2)",
+      "participant_a": "Cameron Menzies",
+      "participant_b": "Gerwyn Price",
+      "event": "Menzies v Price — Round 2",
+      "start_utc": "2026-10-24T14:00:00Z",
+      "date": null,
+      "venue": "Westfalenhalle, Dortmund",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "pdc",
+          "name": "PDC — European Championship hub & Order of Merit",
+          "url": "https://www.pdc.tv/tournament-hub/10870"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "merit",
+        "a": {
+          "rank": 25,
+          "prize": 375.5
+        },
+        "b": {
+          "rank": 4,
+          "prize": 793
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "DA05",
+      "sport": "darts",
+      "competition": "PDC European Championship 2026 (Round 2)",
+      "participant_a": "Ross Smith",
+      "participant_b": "Damon Heta",
+      "event": "Smith v Heta — Round 2",
+      "start_utc": "2026-10-24T12:00:00Z",
+      "date": null,
+      "venue": "Westfalenhalle, Dortmund",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "pdc",
+          "name": "PDC — European Championship hub & Order of Merit",
+          "url": "https://www.pdc.tv/tournament-hub/10870"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "merit",
+        "a": {
+          "rank": 15,
+          "prize": 567.25
+        },
+        "b": {
+          "rank": 21,
+          "prize": 413.25
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "BB01",
+      "sport": "baseball",
+      "competition": "2026 World Series — Game 1",
+      "participant_a": "Tampa Bay Rays",
+      "participant_b": "Milwaukee Brewers",
+      "event": "Rays v Brewers — World Series Game 1",
+      "start_utc": "2026-10-24T00:00:00Z",
+      "date": null,
+      "venue": "American Family Field, Milwaukee",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "mlb",
+          "name": "MLB Stats API — 2026 World Series schedule",
+          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-18&endDate=2026-11-02&hydrate=team,probablePitcher,linescore"
+        },
+        {
+          "id": "mlb-standings",
+          "name": "MLB Stats API — standings",
+          "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "mlb",
+        "a": {
+          "w": 98,
+          "l": 64,
+          "rd": 86,
+          "pp": "Martinez"
+        },
+        "b": {
+          "w": 103,
+          "l": 59,
+          "rd": 214,
+          "pp": "Misiorowski"
+        },
+        "if_necessary": "N"
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "BB02",
+      "sport": "baseball",
+      "competition": "2026 World Series — Game 2",
+      "participant_a": "Tampa Bay Rays",
+      "participant_b": "Milwaukee Brewers",
+      "event": "Rays v Brewers — World Series Game 2",
+      "start_utc": "2026-10-25T00:00:00Z",
+      "date": null,
+      "venue": "American Family Field, Milwaukee",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "mlb",
+          "name": "MLB Stats API — 2026 World Series schedule",
+          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-18&endDate=2026-11-02&hydrate=team,probablePitcher,linescore"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "mlb",
+        "a": {
+          "w": 98,
+          "l": 64,
+          "rd": 86,
+          "pp": "Rasmussen"
+        },
+        "b": {
+          "w": 103,
+          "l": 59,
+          "rd": 214,
+          "pp": "Henderson"
+        },
+        "if_necessary": "N"
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "BB03",
+      "sport": "baseball",
+      "competition": "2026 World Series — Game 3",
+      "participant_a": "Milwaukee Brewers",
+      "participant_b": "Tampa Bay Rays",
+      "event": "Brewers v Rays — World Series Game 3",
+      "start_utc": "2026-10-27T00:00:00Z",
+      "date": null,
+      "venue": "Tropicana Field, St. Petersburg",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "mlb",
+          "name": "MLB Stats API — 2026 World Series schedule",
+          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-18&endDate=2026-11-02&hydrate=team,probablePitcher,linescore"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "mlb",
+        "a": {
+          "w": 103,
+          "l": 59,
+          "rd": 214
+        },
+        "b": {
+          "w": 98,
+          "l": 64,
+          "rd": 86
+        },
+        "if_necessary": "N"
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "BB04",
+      "sport": "baseball",
+      "competition": "2026 World Series — Game 4",
+      "participant_a": "Milwaukee Brewers",
+      "participant_b": "Tampa Bay Rays",
+      "event": "Brewers v Rays — World Series Game 4",
+      "start_utc": "2026-10-28T00:00:00Z",
+      "date": null,
+      "venue": "Tropicana Field, St. Petersburg",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "mlb",
+          "name": "MLB Stats API — 2026 World Series schedule",
+          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-18&endDate=2026-11-02&hydrate=team,probablePitcher,linescore"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "mlb",
+        "a": {
+          "w": 103,
+          "l": 59,
+          "rd": 214
+        },
+        "b": {
+          "w": 98,
+          "l": 64,
+          "rd": 86
+        },
+        "if_necessary": "N"
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "BB05",
+      "sport": "baseball",
+      "competition": "2026 World Series — Game 5",
+      "participant_a": "Milwaukee Brewers",
+      "participant_b": "Tampa Bay Rays",
+      "event": "Brewers v Rays — World Series Game 5 (conditional)",
+      "start_utc": "2026-10-29T00:00:00Z",
+      "date": null,
+      "venue": "Tropicana Field, St. Petersburg",
+      "state": "conditional",
+      "sources": [
+        {
+          "id": "mlb",
+          "name": "MLB Stats API — 2026 World Series schedule",
+          "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-18&endDate=2026-11-02&hydrate=team,probablePitcher,linescore"
+        }
+      ],
+      "flags": [
+        "MLB official ifNecessary=Y — game only happens if the series is tied 2-2; all markets withheld per policy"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "mlb",
+        "a": {
+          "w": 103,
+          "l": 59,
+          "rd": 214
+        },
+        "b": {
+          "w": 98,
+          "l": 64,
+          "rd": 86
+        },
+        "if_necessary": "Y"
+      },
+      "priced": false,
+      "price_expires_at": null
+    },
+    {
+      "id": "GS01",
+      "sport": "gaelic-sports",
+      "competition": "2026 Shinty-Hurling International",
+      "participant_a": "Ireland",
+      "participant_b": "Scotland",
+      "event": "Ireland v Scotland — Hurling-Shinty International",
+      "start_utc": "2026-10-24T18:00:00Z",
+      "date": null,
+      "venue": "SuperValu Páirc Uí Chaoimh, Cork",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "gaa-cork",
+          "name": "Cork GAA — Premier SFC final fixtures",
+          "url": "https://gaacork.ie/fixtures/"
+        },
+        {
+          "id": "munster",
+          "name": "Munster GAA — events calendar (Shinty-Hurling Internationals)",
+          "url": "https://munster.gaa.ie/fixtures/events-calendar/"
+        }
+      ],
+      "flags": [
+        "no official win-rate inputs; confidence Low"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "form",
+        "form_p": 0.6,
+        "a": {
+          "mgr": "Eamon O'Shea",
+          "note": "panel incl. Séamus Harnedy, Mikey Butler (c), Billy Nolan, Darragh Neary"
+        },
+        "b": {
+          "note": "Scotland shinty side; hybrid rules"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "GS02",
+      "sport": "gaelic-sports",
+      "competition": "Kilkenny Senior Hurling Championship Final",
+      "participant_a": "Shamrocks Ballyhale",
+      "participant_b": "Tullaroan",
+      "event": "Ballyhale Shamrocks v Tullaroan — Kilkenny SHC Final",
+      "start_utc": "2026-10-25T12:45:00Z",
+      "date": null,
+      "venue": "UPMC Nowlan Park",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "kilkenny",
+          "name": "Kilkenny GAA — SHC final fixtures",
+          "url": "https://kilkennygaa.ie/fixtures-results/"
+        }
+      ],
+      "flags": [
+        "no official win-rate inputs; confidence Low"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "form",
+        "form_p": 0.62,
+        "a": {
+          "note": "defending champions; 21 titles; won SF 1-18 to 1-16"
+        },
+        "b": {
+          "note": "first final since 1994; 20 titles; won SF 1-20 to 2-14"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "GS03",
+      "sport": "gaelic-sports",
+      "competition": "Cork Premier Senior Football Championship Final",
+      "participant_a": "St Finbarr's",
+      "participant_b": "Nemo Rangers",
+      "event": "St Finbarr's v Nemo Rangers — Cork SFC Final",
+      "start_utc": "2026-10-25T16:00:00Z",
+      "date": null,
+      "venue": "SuperValu Páirc Uí Chaoimh",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "gaa-cork",
+          "name": "Cork GAA — Premier SFC final fixtures",
+          "url": "https://gaacork.ie/fixtures/"
+        }
+      ],
+      "flags": [
+        "no official win-rate inputs; confidence Low"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "form",
+        "form_p": 0.58,
+        "a": {
+          "note": "defending champions; beat Nemo by 1 last year; beat Clonakilty 2-12 to 0-16 in SF"
+        },
+        "b": {
+          "note": "lost last 3 finals; beat Carrigaline 1-15 to 0-16 in SF"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "GS04",
+      "sport": "gaelic-sports",
+      "competition": "Galway Senior Football Championship Final",
+      "participant_a": "Maigh Cuilinn",
+      "participant_b": "Salthill-Knocknacarra",
+      "event": "Maigh Cuilinn v Salthill-Knocknacarra — Galway SFC Final",
+      "start_utc": "2026-10-25T16:00:00Z",
+      "date": null,
+      "venue": "Pearse Stadium, Salthill",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "galway",
+          "name": "Galway GAA — fixtures (SFC final moved to Sunday)",
+          "url": "https://www.galwaygaa.ie/changes-weekend-football-fixture-schedule/"
+        }
+      ],
+      "flags": [
+        "final moved from Saturday to Sunday 4pm by Galway GAA (Storm Boelo weather warning)"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "form",
+        "form_p": 0.6,
+        "a": {
+          "note": "defending champions; won SF 4-26 to 0-8"
+        },
+        "b": {
+          "note": "lost last year's final by 2; won SF 0-15 to 2-7"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "GS05",
+      "sport": "gaelic-sports",
+      "competition": "Limerick Senior Hurling Championship Final",
+      "participant_a": "Kilmallock",
+      "participant_b": "Na Piarsaigh",
+      "event": "Kilmallock v Na Piarsaigh — Limerick SHC Final",
+      "start_utc": "2026-10-25T15:45:00Z",
+      "date": null,
+      "venue": "TUS Gaelic Grounds",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "limerick",
+          "name": "Limerick Leader / The 42 — Limerick SHC final (media cross-check)",
+          "url": "https://www.limerickleader.ie/sport/gaa/hurling/kilmallock-and-na-piarsaigh-prepare-for-limerick-senior-hurling-final-9294862"
+        },
+        {
+          "id": "the42",
+          "name": "The 42 — Limerick hurling decider (media cross-check)",
+          "url": "https://www.the42.ie/limerick-wexford-hurling-cork-derry-football-7202096-Oct2026"
+        }
+      ],
+      "flags": [
+        "fixture verified on media (Limerick Leader / The 42); official Limerick GAA fixtures page returned HTTP 404 this session"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "form",
+        "a": {},
+        "b": {}
+      },
+      "priced": false,
+      "price_expires_at": null
+    },
+    {
+      "id": "GH01",
+      "sport": "greyhounds",
+      "competition": "Premier Greyhound Racing Champion Stakes Final (Category One)",
+      "participant_a": "Grouchos Gregor",
+      "participant_b": "Champion Stakes Final Field",
+      "event": "Champion Stakes Final — Grouchos Gregor v field",
+      "start_utc": "2026-10-23T20:13:00Z",
+      "date": null,
+      "venue": "Romford Greyhound Stadium",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "gbgb",
+          "name": "GBGB — Champion Stakes / Category One schedule",
+          "url": "https://www.gbgb.org.uk/racing/open-races/2025-category-one-schedule/"
+        },
+        {
+          "id": "gbgb-champs",
+          "name": "GBGB — Coral 100 Champion Stakes Final preview",
+          "url": "https://www.gbgb.org.uk/category-one-glory-beckons-in-coral-100-champion-stakes-final/"
+        }
+      ],
+      "flags": [
+        "greyhound win probabilities not published by GBGB; model is form-based and Low confidence"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "form",
+        "form_p": 0.45,
+        "a": {
+          "note": "unbeaten in 3 races over 575m this campaign (fastest semi 35.69s); trap 3"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "GH02",
+      "sport": "greyhounds",
+      "competition": "Romford Friday meeting (Open)",
+      "participant_a": "Scooby Amethyst",
+      "participant_b": "Open field",
+      "event": "Scooby Amethyst — Romford Open",
+      "start_utc": "2026-10-23T19:13:00Z",
+      "date": null,
+      "venue": "Romford Greyhound Stadium",
+      "state": "start elapsed",
+      "sources": [
+        {
+          "id": "gbgb",
+          "name": "GBGB — Champion Stakes / Category One schedule",
+          "url": "https://www.gbgb.org.uk/racing/open-races/2025-category-one-schedule/"
+        }
+      ],
+      "flags": [
+        "in play at capture time; not priced"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "form",
+        "a": {
+          "note": "5 straight wins; trap 1"
+        }
+      },
+      "priced": false,
+      "price_expires_at": null
+    },
+    {
+      "id": "GH03",
+      "sport": "greyhounds",
+      "competition": "Arena Racing Company Scurry Gold Cup (Category One)",
+      "participant_a": "Scurry Gold Cup Field",
+      "participant_b": "Dunstall Park Field",
+      "event": "Scurry Gold Cup — Dunstall Park",
+      "start_utc": null,
+      "date": "2026-10-24",
+      "venue": "Dunstall Park",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "gbgb",
+          "name": "GBGB — Champion Stakes / Category One schedule",
+          "url": "https://www.gbgb.org.uk/racing/open-races/2025-category-one-schedule/"
+        }
+      ],
+      "flags": [
+        "runner details not fetched; no priced market"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "form",
+        "a": {},
+        "b": {}
+      },
+      "priced": false,
+      "price_expires_at": null
+    },
+    {
+      "id": "GH04",
+      "sport": "greyhounds",
+      "competition": "Romford Friday meeting (Open)",
+      "participant_a": "Ontherun Jamie",
+      "participant_b": "Open field",
+      "event": "Ontherun Jamie — Romford Open",
+      "start_utc": "2026-10-23T19:33:00Z",
+      "date": null,
+      "venue": "Romford Greyhound Stadium",
+      "state": "start elapsed",
+      "sources": [
+        {
+          "id": "gbgb",
+          "name": "GBGB — Champion Stakes / Category One schedule",
+          "url": "https://www.gbgb.org.uk/racing/open-races/2025-category-one-schedule/"
+        }
+      ],
+      "flags": [
+        "in play at capture time; not priced"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "form",
+        "a": {}
+      },
+      "priced": false,
+      "price_expires_at": null
+    },
+    {
+      "id": "GH05",
+      "sport": "greyhounds",
+      "competition": "Romford Friday meeting (Open)",
+      "participant_a": "Lavan Jet",
+      "participant_b": "Open field",
+      "event": "Lavan Jet — Romford Open",
+      "start_utc": "2026-10-23T19:53:00Z",
+      "date": null,
+      "venue": "Romford Greyhound Stadium",
+      "state": "start elapsed",
+      "sources": [
+        {
+          "id": "gbgb",
+          "name": "GBGB — Champion Stakes / Category One schedule",
+          "url": "https://www.gbgb.org.uk/racing/open-races/2025-category-one-schedule/"
+        }
+      ],
+      "flags": [
+        "in play at capture time; not priced"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "form",
+        "a": {}
+      },
+      "priced": false,
+      "price_expires_at": null
+    },
+    {
+      "id": "MR01",
+      "sport": "motor-racing",
+      "competition": "2026 United States Grand Prix (Race)",
+      "participant_a": "Kimi Antonelli (Mercedes)",
+      "participant_b": "Field",
+      "event": "US Grand Prix — Race winner market",
+      "start_utc": "2026-10-25T21:00:00Z",
+      "date": null,
+      "venue": "Circuit of The Americas, Austin",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "f1",
+          "name": "Formula 1 — United States Grand Prix schedule",
+          "url": "https://www.formula1.com/en/racing/2026/united-states"
+        },
+        {
+          "id": "f1-standings",
+          "name": "Formula 1 — 2026 Drivers' standings",
+          "url": "https://www.formula1.com/en/results/2026/drivers"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "f1",
+        "standings": {
+          "Antonelli": 340,
+          "Russell": 238,
+          "Hamilton": 229,
+          "Verstappen": 221,
+          "Leclerc": 215,
+          "Norris": 201,
+          "Piastri": 138,
+          "Hadjar": 97,
+          "Lawson": 75,
+          "Gasly": 41,
+          "Lindblad": 38,
+          "Colapinto": 27,
+          "Bearman": 23,
+          "Hülkenberg": 13
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "MR02",
+      "sport": "motor-racing",
+      "competition": "2026 United States Grand Prix (Qualifying)",
+      "participant_a": "Charles Leclerc (Ferrari)",
+      "participant_b": "Field",
+      "event": "US Grand Prix — Pole position (Fastest Qualifier)",
+      "start_utc": "2026-10-24T22:00:00Z",
+      "date": null,
+      "venue": "Circuit of The Americas, Austin",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "f1",
+          "name": "Formula 1 — United States Grand Prix schedule",
+          "url": "https://www.formula1.com/en/racing/2026/united-states"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "f1",
+        "fp1": "Leclerc fastest in FP1 (1:36.052); Verstappen +0.084; Norris +0.245; Russell +0.326; Antonelli +0.481"
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "MR03",
+      "sport": "motor-racing",
+      "competition": "2026 United States Grand Prix (Race)",
+      "participant_a": "Kimi Antonelli (Mercedes)",
+      "participant_b": "Field",
+      "event": "US Grand Prix — Top 6 Finish market",
+      "start_utc": "2026-10-25T21:00:00Z",
+      "date": null,
+      "venue": "Circuit of The Americas, Austin",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "f1",
+          "name": "Formula 1 — United States Grand Prix schedule",
+          "url": "https://www.formula1.com/en/racing/2026/united-states"
+        },
+        {
+          "id": "f1-standings",
+          "name": "Formula 1 — 2026 Drivers' standings",
+          "url": "https://www.formula1.com/en/results/2026/drivers"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "f1",
+        "standings": {
+          "Antonelli": 340,
+          "Russell": 238,
+          "Hamilton": 229,
+          "Verstappen": 221,
+          "Leclerc": 215,
+          "Norris": 201,
+          "Pitastri": 138,
+          "Hadjar": 97,
+          "Lawson": 75,
+          "Gasly": 41,
+          "Lindblad": 38,
+          "Colapinto": 27,
+          "Bearman": 23,
+          "Hülkenberg": 13
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "MR04",
+      "sport": "motor-racing",
+      "competition": "2026 United States Grand Prix (Practice 2)",
+      "participant_a": "US Grand Prix",
+      "participant_b": "FP2 session",
+      "event": "US Grand Prix — Practice 2",
+      "start_utc": "2026-10-23T22:00:00Z",
+      "date": null,
+      "venue": "Circuit of The Americas, Austin",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "f1",
+          "name": "Formula 1 — United States Grand Prix schedule",
+          "url": "https://www.formula1.com/en/racing/2026/united-states"
+        }
+      ],
+      "flags": [
+        "practice session; no supported betting market"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "session"
+      },
+      "priced": false,
+      "price_expires_at": null
+    },
+    {
+      "id": "MR05",
+      "sport": "motor-racing",
+      "competition": "2026 FIA Drivers' Championship (outright)",
+      "participant_a": "Kimi Antonelli",
+      "participant_b": "Field",
+      "event": "Antonelli to win 2026 Drivers' Championship",
+      "start_utc": null,
+      "date": "2026-11-29",
+      "venue": "—",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "f1-standings",
+          "name": "Formula 1 — 2026 Drivers' standings",
+          "url": "https://www.formula1.com/en/results/2026/drivers"
+        }
+      ],
+      "flags": [
+        "outright settled after season end"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "outright",
+        "standings": {
+          "Antonelli": 340,
+          "Russell": 238,
+          "Hamilton": 229,
+          "Verstappen": 221,
+          "Leclerc": 215,
+          "Norris": 201
+        },
+        "note": "Antonelli clinches in Austin if he wins and Russell finishes 9th-or-lower and Hamilton 5th-or-lower"
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "HB01",
+      "sport": "handball",
+      "competition": "Opel Handball-Bundesliga (Round 10)",
+      "participant_a": "HC Erlangen",
+      "participant_b": "THW Kiel",
+      "event": "HC Erlangen v THW Kiel",
+      "start_utc": "2026-10-24T17:00:00Z",
+      "date": null,
+      "venue": "PSD Bank Nürnberg ARENA",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "kiel",
+          "name": "THW Kiel — Bundesliga schedule & Erlangen preview",
+          "url": "https://thw-handball.de/bundesliga/2026/10/thw-kiel-handball-bundesliga-saison-2026-2027-hc-erlangen-vorbericht-auswaertsspiel/"
+        },
+        {
+          "id": "erlangen",
+          "name": "HC Erlangen — fixtures",
+          "url": "https://www.hc-erlangen.de/events"
+        }
+      ],
+      "flags": [
+        "league table not re-fetched; confidence Low"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "form",
+        "form_p": 0.55,
+        "a": {
+          "note": "unbeaten at home this season; beat Melsungen last home game"
+        },
+        "b": {
+          "note": "title contender; THW preview calls it a difficult away game"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "HB02",
+      "sport": "handball",
+      "competition": "Daikin Starligue (J08)",
+      "participant_a": "HBC Nantes",
+      "participant_b": "Chambéry Savoie Mont Blanc",
+      "event": "HBC Nantes v Chambéry",
+      "start_utc": "2026-10-24T18:00:00Z",
+      "date": null,
+      "venue": "H Arena, Nantes",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nantes",
+          "name": "HBC Nantes — calendar (Starligue J08)",
+          "url": "https://hbcnantes.com/equipe-professionnelle/calendrier-et-resultats/"
+        },
+        {
+          "id": "chambery",
+          "name": "Team Chambé — calendar",
+          "url": "https://www.teamchambe.com/equipe-premiere/calendrier-resultats/"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "team",
+        "a": {
+          "w": 4,
+          "l": 1,
+          "pos": 2
+        },
+        "b": {
+          "w": 1,
+          "d": 1,
+          "l": 3,
+          "pos": 13
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "HB03",
+      "sport": "handball",
+      "competition": "Opel Handball-Bundesliga (Round 10)",
+      "participant_a": "HBW Balingen-Weilstetten",
+      "participant_b": "MT Melsungen",
+      "event": "Balingen-Weilstetten v Melsungen",
+      "start_utc": "2026-10-24T19:00:00Z",
+      "date": null,
+      "venue": "Balingen",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "kiel",
+          "name": "THW Kiel — Bundesliga schedule & Erlangen preview",
+          "url": "https://thw-handball.de/bundesliga/2026/10/thw-kiel-handball-bundesliga-saison-2026-2027-hc-erlangen-vorbericht-auswaertsspiel/"
+        }
+      ],
+      "flags": [
+        "league table not re-fetched; confidence Low"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "form",
+        "form_p": 0.6,
+        "a": {},
+        "b": {
+          "note": "title contender"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "HB04",
+      "sport": "handball",
+      "competition": "Opel Handball-Bundesliga (Round 10)",
+      "participant_a": "TSV Hannover-Burgdorf",
+      "participant_b": "TBV Lemgo Lippe",
+      "event": "Hannover-Burgdorf v Lemgo",
+      "start_utc": "2026-10-23T18:00:00Z",
+      "date": null,
+      "venue": "Hannover",
+      "state": "start elapsed",
+      "sources": [
+        {
+          "id": "kiel",
+          "name": "THW Kiel — Bundesliga schedule & Erlangen preview",
+          "url": "https://thw-handball.de/bundesliga/2026/10/thw-kiel-handball-bundesliga-saison-2026-2027-hc-erlangen-vorbericht-auswaertsspiel/"
+        }
+      ],
+      "flags": [
+        "in play at capture time; not priced"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "form",
+        "a": {},
+        "b": {}
+      },
+      "priced": false,
+      "price_expires_at": null
+    },
+    {
+      "id": "HB05",
+      "sport": "handball",
+      "competition": "Daikin Starligue (J08)",
+      "participant_a": "Pays d'Aix UC",
+      "participant_b": "Fenix Toulouse Handball",
+      "event": "Aix-en-Provence v Toulouse",
+      "start_utc": "2026-10-23T18:00:00Z",
+      "date": null,
+      "venue": "Aix-en-Provence",
+      "state": "start elapsed",
+      "sources": [
+        {
+          "id": "nantes",
+          "name": "HBC Nantes — calendar (Starligue J08)",
+          "url": "https://hbcnantes.com/equipe-professionnelle/calendrier-et-resultats/"
+        }
+      ],
+      "flags": [
+        "in play at capture time; not priced"
+      ],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "form",
+        "a": {},
+        "b": {}
+      },
+      "priced": false,
+      "price_expires_at": null
+    },
+    {
+      "id": "IH01",
+      "sport": "ice-hockey",
+      "competition": "NHL 2026-27",
+      "participant_a": "Montreal Canadiens",
+      "participant_b": "Chicago Blackhawks",
+      "event": "Canadiens @ Blackhawks",
+      "start_utc": "2026-10-24T00:00:00Z",
+      "date": null,
+      "venue": "United Center, Chicago",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nhl",
+          "name": "NHL — schedule (api-web.nhle.com)",
+          "url": "https://api-web.nhle.com/v1/schedule/2026-10-23"
+        },
+        {
+          "id": "nhl-standings",
+          "name": "NHL — standings",
+          "url": "https://api-web.nhle.com/v1/standings/2026-10-23"
+        },
+        {
+          "id": "nhl-suzuki",
+          "name": "NHL.com — Suzuki out 2-4 weeks (upper-body)",
+          "url": "https://www.nhl.com/news/montreal-canadiens-nick-suzuki-injury-status-update-october-22-2026"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "nhl",
+        "a": {
+          "ppg": 10,
+          "gp": 9,
+          "l10": "6-4",
+          "adj": -0.06,
+          "adj_note": "Nick Suzuki (captain) out 2-4 weeks, upper-body (NHL.com)"
+        },
+        "b": {
+          "ppg": 9,
+          "gp": 9,
+          "l10": "4-6"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "IH02",
+      "sport": "ice-hockey",
+      "competition": "NHL 2026-27",
+      "participant_a": "Tampa Bay Lightning",
+      "participant_b": "Colorado Avalanche",
+      "event": "Lightning @ Avalanche",
+      "start_utc": "2026-10-24T01:00:00Z",
+      "date": null,
+      "venue": "Ball Arena, Denver",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nhl",
+          "name": "NHL — schedule (api-web.nhle.com)",
+          "url": "https://api-web.nhle.com/v1/schedule/2026-10-23"
+        },
+        {
+          "id": "nhl-standings",
+          "name": "NHL — standings",
+          "url": "https://api-web.nhle.com/v1/standings/2026-10-23"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "nhl",
+        "a": {
+          "ppg": 14,
+          "gp": 9,
+          "l10": "7-3"
+        },
+        "b": {
+          "ppg": 14,
+          "gp": 10,
+          "l10": "7-3"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "IH03",
+      "sport": "ice-hockey",
+      "competition": "NHL 2026-27",
+      "participant_a": "San Jose Sharks",
+      "participant_b": "Boston Bruins",
+      "event": "Sharks @ Bruins",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "date": null,
+      "venue": "TD Garden, Boston",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nhl",
+          "name": "NHL — schedule (api-web.nhle.com)",
+          "url": "https://api-web.nhle.com/v1/schedule/2026-10-23"
+        },
+        {
+          "id": "nhl-standings",
+          "name": "NHL — standings",
+          "url": "https://api-web.nhle.com/v1/standings/2026-10-23"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "nhl",
+        "a": {
+          "ppg": 13,
+          "gp": 11,
+          "l10": "5-4-1"
+        },
+        "b": {
+          "ppg": 17,
+          "gp": 11,
+          "l10": "7-2-1"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "IH04",
+      "sport": "ice-hockey",
+      "competition": "NHL 2026-27",
+      "participant_a": "New York Rangers",
+      "participant_b": "Ottawa Senators",
+      "event": "Rangers @ Senators",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "date": null,
+      "venue": "Canadian Tire Centre, Ottawa",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nhl",
+          "name": "NHL — schedule (api-web.nhle.com)",
+          "url": "https://api-web.nhle.com/v1/schedule/2026-10-23"
+        },
+        {
+          "id": "nhl-standings",
+          "name": "NHL — standings",
+          "url": "https://api-web.nhle.com/v1/standings/2026-10-23"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "nhl",
+        "a": {
+          "ppg": 15,
+          "gp": 12,
+          "l10": "6-3-1"
+        },
+        "b": {
+          "ppg": 14,
+          "gp": 11,
+          "l10": "7-3"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "IH05",
+      "sport": "ice-hockey",
+      "competition": "NHL 2026-27",
+      "participant_a": "Nashville Predators",
+      "participant_b": "Pittsburgh Penguins",
+      "event": "Predators @ Penguins",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "date": null,
+      "venue": "PPG Paints Arena, Pittsburgh",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nhl",
+          "name": "NHL — schedule (api-web.nhle.com)",
+          "url": "https://api-web.nhle.com/v1/schedule/2026-10-23"
+        },
+        {
+          "id": "nhl-standings",
+          "name": "NHL — standings",
+          "url": "https://api-web.nhle.com/v1/standings/2026-10-23"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "nhl",
+        "a": {
+          "ppg": 9,
+          "gp": 9,
+          "l10": "3-3-3"
+        },
+        "b": {
+          "ppg": 9,
+          "gp": 11,
+          "l10": "5-6"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "IH06",
+      "sport": "ice-hockey",
+      "competition": "NHL 2026-27",
+      "participant_a": "Buffalo Sabres",
+      "participant_b": "Washington Capitals",
+      "event": "Sabres @ Capitals",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "date": null,
+      "venue": "Capital One Arena, Washington",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nhl",
+          "name": "NHL — schedule (api-web.nhle.com)",
+          "url": "https://api-web.nhle.com/v1/schedule/2026-10-23"
+        },
+        {
+          "id": "nhl-standings",
+          "name": "NHL — standings",
+          "url": "https://api-web.nhle.com/v1/standings/2026-10-23"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "nhl",
+        "a": {
+          "ppg": 10,
+          "gp": 10,
+          "l10": "4-4-2"
+        },
+        "b": {
+          "ppg": 10,
+          "gp": 9,
+          "l10": "5-4"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "BK01",
+      "sport": "basketball",
+      "competition": "NBA 2026-27",
+      "participant_a": "New York Knicks",
+      "participant_b": "Boston Celtics",
+      "event": "Knicks @ Celtics",
+      "start_utc": "2026-10-23T23:00:00Z",
+      "date": null,
+      "venue": "TD Garden, Boston",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nba-standings",
+          "name": "NBA.com — standings",
+          "url": "https://www.nba.com/standings"
+        },
+        {
+          "id": "nba-notes",
+          "name": "NBA.com — team game notes (Celtics / Spurs / Pacers / Lakers)",
+          "url": "https://www.nba.com/gamenotes/celtics.pdf"
+        },
+        {
+          "id": "nba-news",
+          "name": "NBA.com — Starting 5 (Oct 23)",
+          "url": "https://www.nba.com/news/starting-5-october-23-2026"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "nba",
+        "a": {
+          "w": 0,
+          "l": 1
+        },
+        "b": {
+          "w": 0,
+          "l": 1,
+          "note": "Paul George 38-pt debut; preseason 4-0; lost opener 113-121 at Detroit"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "BK02",
+      "sport": "basketball",
+      "competition": "NBA 2026-27",
+      "participant_a": "Dallas Mavericks",
+      "participant_b": "Indiana Pacers",
+      "event": "Mavericks @ Pacers",
+      "start_utc": "2026-10-23T23:00:00Z",
+      "date": null,
+      "venue": "Gainbridge Fieldhouse, Indianapolis",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nba-standings",
+          "name": "NBA.com — standings",
+          "url": "https://www.nba.com/standings"
+        },
+        {
+          "id": "nba-notes",
+          "name": "NBA.com — team game notes (Celtics / Spurs / Pacers / Lakers)",
+          "url": "https://www.nba.com/gamenotes/celtics.pdf"
+        },
+        {
+          "id": "nba-injury",
+          "name": "NBA official injury report portal",
+          "url": "https://official.nba.com/nba-injury-report-2026-27-season/"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "nba",
+        "a": {
+          "w": 0,
+          "l": 1,
+          "injuries": "Caleb Martin (thumb), Dereck Lively II (foot), Santi Aldama (knee), Tarik Biberovic (heel), Jett Howard (calf) out"
+        },
+        "b": {
+          "w": 1,
+          "l": 0,
+          "note": "Haliburton returned from Achilles; won opener"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "BK03",
+      "sport": "basketball",
+      "competition": "NBA 2026-27",
+      "participant_a": "Minnesota Timberwolves",
+      "participant_b": "Orlando Magic",
+      "event": "Timberwolves @ Magic",
+      "start_utc": "2026-10-23T23:00:00Z",
+      "date": null,
+      "venue": "Kaseya Center, Orlando",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nba-standings",
+          "name": "NBA.com — standings",
+          "url": "https://www.nba.com/standings"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "nba",
+        "a": {
+          "w": 1,
+          "l": 0
+        },
+        "b": {
+          "w": 0,
+          "l": 1
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "BK04",
+      "sport": "basketball",
+      "competition": "NBA 2026-27",
+      "participant_a": "Toronto Raptors",
+      "participant_b": "Washington Wizards",
+      "event": "Raptors @ Wizards",
+      "start_utc": "2026-10-23T23:00:00Z",
+      "date": null,
+      "venue": "Capital One Arena, Washington",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nba-standings",
+          "name": "NBA.com — standings",
+          "url": "https://www.nba.com/standings"
+        },
+        {
+          "id": "nba-news",
+          "name": "NBA.com — Starting 5 (Oct 23)",
+          "url": "https://www.nba.com/news/starting-5-october-23-2026"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "nba",
+        "a": {
+          "w": 1,
+          "l": 0
+        },
+        "b": {
+          "w": 1,
+          "l": 0,
+          "injuries": "AJ Dybantsa (ankle) out"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "BK05",
+      "sport": "basketball",
+      "competition": "NBA 2026-27",
+      "participant_a": "LA Clippers",
+      "participant_b": "Los Angeles Lakers",
+      "event": "Clippers @ Lakers",
+      "start_utc": "2026-10-24T02:00:00Z",
+      "date": null,
+      "venue": "Crypto.com Arena, Los Angeles",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nba-standings",
+          "name": "NBA.com — standings",
+          "url": "https://www.nba.com/standings"
+        },
+        {
+          "id": "nba-notes",
+          "name": "NBA.com — team game notes (Celtics / Spurs / Pacers / Lakers)",
+          "url": "https://www.nba.com/gamenotes/celtics.pdf"
+        },
+        {
+          "id": "nba-injury",
+          "name": "NBA official injury report portal",
+          "url": "https://official.nba.com/nba-injury-report-2026-27-season/"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "nba",
+        "a": {
+          "w": 1,
+          "l": 0,
+          "injuries": "Brandon Ingram (heel), Bradley Beal (knee), Yanic Konan Niederhäuser (Lisfranc), Max Strus (foot), Jordan Miller (shoulder)"
+        },
+        "b": {
+          "w": 1,
+          "l": 0,
+          "injuries": "Collin Sexton (calf), Adou Thiero (knee), Cameron Carr (oblique)"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "BK06",
+      "sport": "basketball",
+      "competition": "NBA 2026-27",
+      "participant_a": "Houston Rockets",
+      "participant_b": "San Antonio Spurs",
+      "event": "Rockets @ Spurs",
+      "start_utc": "2026-10-24T01:30:00Z",
+      "date": null,
+      "venue": "Moody Center, Austin",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "nba-standings",
+          "name": "NBA.com — standings",
+          "url": "https://www.nba.com/standings"
+        },
+        {
+          "id": "nba-notes",
+          "name": "NBA.com — team game notes (Celtics / Spurs / Pacers / Lakers)",
+          "url": "https://www.nba.com/gamenotes/celtics.pdf"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "nba",
+        "a": {
+          "w": 1,
+          "l": 0
+        },
+        "b": {
+          "w": 0,
+          "l": 1,
+          "note": "lost opener 104-116 at OKC"
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "BK07",
+      "sport": "basketball",
+      "competition": "EuroLeague 2026-27 (Round 7)",
+      "participant_a": "Anadolu Efes Istanbul",
+      "participant_b": "Fenerbahce Tarfin Istanbul",
+      "event": "Efes v Fenerbahce",
+      "start_utc": "2026-10-24T17:30:00Z",
+      "date": null,
+      "venue": "Basketball Development Center, Istanbul",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "el",
+          "name": "EuroLeague — standings & Round 7 injury report",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+        },
+        {
+          "id": "el-r7",
+          "name": "EuroLeague — Round 7 injury report",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-el2627/"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "team",
+        "a": {
+          "w": 3,
+          "l": 4,
+          "pf": 581,
+          "pa": 590
+        },
+        "b": {
+          "w": 5,
+          "l": 1,
+          "pf": 501,
+          "pa": 447
+        },
+        "injuries": "Efes: PJ Dozier, Mike James, Isaia Cordinier, Georgios Papagiannis out; Fenerbahce: full roster available"
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "BK08",
+      "sport": "basketball",
+      "competition": "EuroLeague 2026-27 (Round 7)",
+      "participant_a": "Virtus Bologna",
+      "participant_b": "Panathinaikos AKTOR Athens",
+      "event": "Virtus v Panathinaikos",
+      "start_utc": "2026-10-24T18:00:00Z",
+      "date": null,
+      "venue": "Unipol Arena, Bologna",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "el",
+          "name": "EuroLeague — standings & Round 7 injury report",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+        },
+        {
+          "id": "el-r7",
+          "name": "EuroLeague — Round 7 injury report",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-el2627/"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "team",
+        "a": {
+          "w": 4,
+          "l": 3,
+          "pf": 606,
+          "pa": 608
+        },
+        "b": {
+          "w": 6,
+          "l": 1,
+          "pf": 613,
+          "pa": 517
+        }
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "BK09",
+      "sport": "basketball",
+      "competition": "EuroLeague 2026-27 (Round 7)",
+      "participant_a": "FC Bayern Munich",
+      "participant_b": "Olympiacos Piraeus",
+      "event": "Bayern v Olympiacos",
+      "start_utc": "2026-10-24T18:45:00Z",
+      "date": null,
+      "venue": "BMW Park, Munich",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "el",
+          "name": "EuroLeague — standings & Round 7 injury report",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+        },
+        {
+          "id": "el-r7",
+          "name": "EuroLeague — Round 7 injury report",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-el2627/"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "team",
+        "a": {
+          "w": 2,
+          "l": 5,
+          "pf": 612,
+          "pa": 659
+        },
+        "b": {
+          "w": 5,
+          "l": 1,
+          "pf": 564,
+          "pa": 524
+        },
+        "injuries": "Olympiacos: Jean Montero doubtful; Evan Fournier and Tyler Dorsey out"
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    },
+    {
+      "id": "BK10",
+      "sport": "basketball",
+      "competition": "EuroLeague 2026-27 (Round 7)",
+      "participant_a": "Partizan Mozzart Bet Belgrade",
+      "participant_b": "Paris Basketball",
+      "event": "Partizan v Paris Basketball",
+      "start_utc": "2026-10-24T18:30:00Z",
+      "date": null,
+      "venue": "Štark Arena, Belgrade",
+      "state": "upcoming",
+      "sources": [
+        {
+          "id": "el",
+          "name": "EuroLeague — standings & Round 7 injury report",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/standings/"
+        },
+        {
+          "id": "el-r7",
+          "name": "EuroLeague — Round 7 injury report",
+          "url": "https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-el2627/"
+        }
+      ],
+      "flags": [],
+      "observed_after": "2026-10-23T22:30:00Z",
+      "observed_before": "2026-10-23T22:30:00Z",
+      "expires_at": "2026-10-24T04:30:00Z",
+      "inputs": {
+        "kind": "team",
+        "a": {
+          "w": 4,
+          "l": 3,
+          "pf": 541,
+          "pa": 546
+        },
+        "b": {
+          "w": 1,
+          "l": 5,
+          "pf": 504,
+          "pa": 545
+        },
+        "injuries": "Paris: Nadir Hifi (ankle), TJ Warren, Frank Ntilikina out"
+      },
+      "priced": true,
+      "price_expires_at": "2026-10-24T04:30:00Z"
+    }
+  ],
+  "olbg_note": "OLBG hub rows were captured via the search/render layer on 2026-10-23 ~19:30Z. OLBG renders Eastern Daylight Time (UTC-4) to this session; times below are the OLBG-rendered values converted to UTC where the official source confirms them."
+}

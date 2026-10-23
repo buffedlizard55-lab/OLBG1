@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OLBG discovery · 3c021b49</title>
+<link rel="stylesheet" href="assets/style.css"></head>
+<body><header class="topbar"><div class="brand">OLBG15 <span>·</span> Evening Desk</div>
+<nav><a class="nav-link " href="index.html">grid</a><a class="nav-link " href="high-confidence.html">shield</a><a class="nav-link " href="predictions.html">spark</a><a class="nav-link " href="matches.html">list</a><a class="nav-link " href="markets.html">chart</a><a class="nav-link " href="sources.html">link</a><a class="nav-link " href="methodology.html">book</a><a class="nav-link " href="flagged.html">flag</a><a class="nav-link " href="repo-audit.html">code</a></nav><div class="stamp">Captured 2026-10-23 22:30 UTC</div></header>
+<main><h1>OLBG reverse engineering</h1>
+<p>OLBG.com serves server-rendered HTML with no public JSON feed. Routes follow
+<code>/betting-tips/{Sport_Slug}/{sport_id}</code> (case-sensitive slugs; 24 active sport IDs, 7 excluded).
+The 15 sports in scope for this desk:</p>
+<table class="tbl"><thead><tr><th>Sport</th><th>OLBG hub</th></tr></thead><tbody>
+<tr><td>Golf</td><td><a href="https://www.olbg.com/betting-tips/Golf/5" target="_blank">https://www.olbg.com/betting-tips/Golf/5</a></td></tr><tr><td>Volleyball</td><td><a href="https://www.olbg.com/betting-tips/Volleyball/21" target="_blank">https://www.olbg.com/betting-tips/Volleyball/21</a></td></tr><tr><td>Rugby Union</td><td><a href="https://www.olbg.com/betting-tips/Rugby_Union/9" target="_blank">https://www.olbg.com/betting-tips/Rugby_Union/9</a></td></tr><tr><td>Cricket</td><td><a href="https://www.olbg.com/betting-tips/Cricket/7" target="_blank">https://www.olbg.com/betting-tips/Cricket/7</a></td></tr><tr><td>Snooker</td><td><a href="https://www.olbg.com/betting-tips/Snooker/8" target="_blank">https://www.olbg.com/betting-tips/Snooker/8</a></td></tr><tr><td>Darts</td><td><a href="https://www.olbg.com/betting-tips/Darts/15" target="_blank">https://www.olbg.com/betting-tips/Darts/15</a></td></tr><tr><td>Baseball</td><td><a href="https://www.olbg.com/betting-tips/Baseball/12" target="_blank">https://www.olbg.com/betting-tips/Baseball/12</a></td></tr><tr><td>Gaelic Sports</td><td><a href="https://www.olbg.com/betting-tips/Gaelic_Football/25" target="_blank">https://www.olbg.com/betting-tips/Gaelic_Football/25</a></td></tr><tr><td>Greyhounds</td><td><a href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank">https://www.olbg.com/betting-tips/Greyhounds/28</a></td></tr><tr><td>Tennis</td><td><a href="https://www.olbg.com/betting-tips/Tennis/3" target="_blank">https://www.olbg.com/betting-tips/Tennis/3</a></td></tr><tr><td>Motor Racing</td><td><a href="https://www.olbg.com/betting-tips/Motor_Racing/14" target="_blank">https://www.olbg.com/betting-tips/Motor_Racing/14</a></td></tr><tr><td>Handball</td><td><a href="https://www.olbg.com/betting-tips/Handball/20" target="_blank">https://www.olbg.com/betting-tips/Handball/20</a></td></tr><tr><td>Ice Hockey</td><td><a href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank">https://www.olbg.com/betting-tips/Ice_Hockey/13</a></td></tr><tr><td>Basketball</td><td><a href="https://www.olbg.com/betting-tips/Basketball/4" target="_blank">https://www.olbg.com/betting-tips/Basketball/4</a></td></tr><tr><td>Rugby League</td><td><a href="https://www.olbg.com/betting-tips/Rugby_League/10" target="_blank">https://www.olbg.com/betting-tips/Rugby_League/10</a></td></tr>
+</tbody></table>
+<h2>Observed platform quirks</h2>
+<ul>
+<li>OLBG's clock renders Eastern Daylight Time (UTC−4) to this session with no timezone label; cross-checks against official UTC
+feeds are required. Confirmed this session: MLB World Series Game 1 shown as "Today 20:00" = 2026-10-24T00:00Z; ATP Brussels
+Fils v Michelsen "Not Before 18:30" Brussels = 16:30Z.</li>
+<li>OLBG suppresses fixtures with zero open community tips, hiding entire active championships (Rugby League World Cup Round 2
+men's and women's matches were found only on nrl.com, not on OLBG).</li>
+<li>Hub listings cap at 20 rows and truncate ("Load More Tips"), hiding sub-route fixtures.</li>
+<li>Name errors: 'Skanderborg Handbold' vs EHF's 'SAH Aarhus'; Waterford SFC Final date error on Gaelic Football hub.</li>
+<li>Each-way outright markets render 0/0 consensus when only each-way tips exist.</li>
+</ul>
+<p>Tip percentages on OLBG are votes, not probabilities. This desk never uses OLBG to confirm a sporting fact.</p></main>
+<footer class="footer">Independent research. Not affiliated with OLBG. No guaranteed returns. 18+.</footer>
+</body></html>
