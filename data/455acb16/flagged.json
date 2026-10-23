@@ -1,0 +1,1085 @@
+{
+  "count": 97,
+  "flags": [
+    {
+      "id": "F-01",
+      "title": "Partial collection, not the full OLBG event universe",
+      "detail": "All 15 brief categories have source checks. No category is globally complete. Returned hub cards were empty in this retrieval channel; neither live OLBG tip eligibility nor bookmaker availability has been confirmed for these official fixtures.",
+      "source_ids": [
+        "olbg-baseball",
+        "nhl-schedule"
+      ],
+      "fixture_id": null,
+      "severity": "high",
+      "status": "needs review"
+    },
+    {
+      "id": "F-02",
+      "title": "Initial draft claims withdrawn",
+      "detail": "The first draft copied an earlier desk, changed timestamps and asserted fresh verification without actual reads. Its 81-fixture/51-High/51-prediction claims and copied prose are withdrawn. Passing structure checks did not validate those facts. Replacement data use only the retained new observations.",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "fixture_id": null,
+      "severity": "high",
+      "status": "needs review"
+    },
+    {
+      "id": "F-03",
+      "title": "No supported Medium or High tier",
+      "detail": "This version has no measured held-out calibration, complete current availability/form/history checks or confirmed eligible quote. All experimental prices stay Low. The five-per-sport daily High target has a shortfall of 75; no lower threshold or tuned handicap is used to fill it.",
+      "source_ids": [
+        "nhl-standings",
+        "mlb-standings"
+      ],
+      "fixture_id": null,
+      "severity": "high",
+      "status": "needs review"
+    },
+    {
+      "id": "F-04",
+      "title": "Ningbo opponent and availability conflict",
+      "detail": "New official order of play pairs Fernandez with Bouzkova, not Kostyuk. Official draw notes a Kostyuk right-wrist injury. Previously copied Fernandez–Kostyuk data and prediction removed.",
+      "source_ids": [
+        "wta-ningbo-op",
+        "wta-ningbo-draw"
+      ],
+      "fixture_id": null,
+      "severity": "high",
+      "status": "needs review"
+    },
+    {
+      "id": "F-05",
+      "title": "Osaka pairings corrected",
+      "detail": "Official order of play lists Ann Li–Ashlyn Krueger and Katie Boulter–Katerina Siniakova. The older Li–Boulter matchup is not accepted.",
+      "source_ids": [
+        "wta-osaka-op"
+      ],
+      "fixture_id": null,
+      "severity": "high",
+      "status": "needs review"
+    },
+    {
+      "id": "F-06",
+      "title": "Polish volleyball redirect conflict",
+      "detail": "PlusLiga request resolved to TAURON Liga with men's team names. The competition identity conflict is retained, not silently repaired. No rows/prices imported from that response; independently read Italian SuperLega rows are separate.",
+      "source_ids": [
+        "plusliga-redirect",
+        "lega-calendar"
+      ],
+      "fixture_id": null,
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "F-07",
+      "title": "NBA collection failed/partial",
+      "detail": "NBA games page returned a refresh error and the public scoreboard JSON attempt failed HTTP 500. Three pairings from the official newsletter are retained as schedule text only. The other nine Friday games are unknown, not zero. No early-season strength is invented.",
+      "source_ids": [
+        "nba-games-check",
+        "nba-json-check",
+        "nba-news"
+      ],
+      "fixture_id": null,
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "F-08",
+      "title": "Conditional MLB games withheld",
+      "detail": "MLB ifNecessary=Y for World Series Games 5 and 6. Scheduled is not confirmation they will be needed. Every price and selection is withheld; Game 6 is also beyond the exact rolling window.",
+      "source_ids": [
+        "mlb-schedule"
+      ],
+      "fixture_id": null,
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "F-09",
+      "title": "Regular-season MLB inputs are not playoff form",
+      "detail": "Run aggregates retain the 2026 regular-season period and original provider update timestamps. No probable pitcher, bullpen, park, lineup, injury or postseason adjustment has been measured. Four games sharing the same simplified price is a limitation, not four fresh independent analyses.",
+      "source_ids": [
+        "mlb-standings",
+        "mlb-schedule"
+      ],
+      "fixture_id": null,
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "F-10",
+      "title": "Gaelic Sports scope made explicit",
+      "detail": "Fresh OLBG Hurling page explicitly describes Gaelic Sports as Football and Hurling. Both are grouped under the one requested category, with separate competitions. This supersedes the inherited football-only assumption; no hybrid shinty/camogie game or cross-code strength comparison is imported.",
+      "source_ids": [
+        "olbg-hurling",
+        "munster-calendar"
+      ],
+      "fixture_id": null,
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "F-11",
+      "title": "Automatic freshness is not automatic collection",
+      "detail": "This desk is a selected session import. Its browser and rebuild gates withdraw estimates on expiry but do not collect new source facts. The repository's canonical scheduled collectors are separate and partial; this namespace is not falsely labelled continuously updated.",
+      "source_ids": [
+        "nhl-schedule",
+        "mlb-schedule"
+      ],
+      "fixture_id": null,
+      "severity": "high",
+      "status": "needs review"
+    },
+    {
+      "id": "F-12",
+      "title": "No hidden-feed workaround",
+      "detail": "OLBG robots restricts /api/, /storage/app/json_data/* and Python-urllib. Only public pages and competition routes were checked through fetch_page. Empty extraction is not proof of zero matches or a proven zero-tip suppression mechanism.",
+      "source_ids": [
+        "olbg-robots",
+        "olbg-nhl",
+        "olbg-mlb"
+      ],
+      "fixture_id": null,
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "F-13",
+      "title": "Date-only and not-before times",
+      "detail": "Unlabelled, Not Before and switchable display clocks never become invented exact UTC starts. Those fields remain null with source calendar dates and published text shown separately. Such entries cannot generate pre-match estimates.",
+      "source_ids": [
+        "atp-almaty",
+        "nzc-fixtures",
+        "f1-hub"
+      ],
+      "fixture_id": null,
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nhl-2026020166",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "fixture_id": "nhl-2026020166",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nhl-2026020167",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "fixture_id": "nhl-2026020167",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nhl-2026020168",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "fixture_id": "nhl-2026020168",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nhl-2026020169",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "fixture_id": "nhl-2026020169",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nhl-2026020170",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "fixture_id": "nhl-2026020170",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nhl-2026020171",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "fixture_id": "nhl-2026020171",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nhl-2026020172",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "fixture_id": "nhl-2026020172",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nhl-2026020173",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "fixture_id": "nhl-2026020173",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nhl-2026020174",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "fixture_id": "nhl-2026020174",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nhl-2026020175",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "fixture_id": "nhl-2026020175",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nhl-2026020176",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "fixture_id": "nhl-2026020176",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nhl-2026020177",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "fixture_id": "nhl-2026020177",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nhl-2026020178",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "fixture_id": "nhl-2026020178",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nhl-2026020179",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "fixture_id": "nhl-2026020179",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-mlb-849805",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "mlb-schedule"
+      ],
+      "fixture_id": "mlb-849805",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-mlb-849802",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "mlb-schedule"
+      ],
+      "fixture_id": "mlb-849802",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-mlb-849804",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "mlb-schedule"
+      ],
+      "fixture_id": "mlb-849804",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-mlb-849803",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "mlb-schedule"
+      ],
+      "fixture_id": "mlb-849803",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-mlb-849799",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified; Conditional game; no prices",
+      "source_ids": [
+        "mlb-schedule"
+      ],
+      "fixture_id": "mlb-849799",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-mlb-849801",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "OLBG tip eligibility unverified; Available bookmaker quote unverified; Conditional game; no prices",
+      "source_ids": [
+        "mlb-schedule"
+      ],
+      "fixture_id": "mlb-849801",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-atp-almaty-doubles",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "atp-almaty"
+      ],
+      "fixture_id": "atp-almaty-doubles",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-atp-almaty-sf1",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "atp-almaty"
+      ],
+      "fixture_id": "atp-almaty-sf1",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-atp-almaty-sf2",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "atp-almaty"
+      ],
+      "fixture_id": "atp-almaty-sf2",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-atp-brussels-doubles",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "atp-brussels"
+      ],
+      "fixture_id": "atp-brussels-doubles",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-atp-brussels-sf1",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "atp-brussels"
+      ],
+      "fixture_id": "atp-brussels-sf1",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-atp-brussels-sf2",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "atp-brussels"
+      ],
+      "fixture_id": "atp-brussels-sf2",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-wta-ningbo-doubles",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "wta-ningbo-op"
+      ],
+      "fixture_id": "wta-ningbo-doubles",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-wta-ningbo-sf1",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "wta-ningbo-op"
+      ],
+      "fixture_id": "wta-ningbo-sf1",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-wta-ningbo-sf2",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "wta-ningbo-op"
+      ],
+      "fixture_id": "wta-ningbo-sf2",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-wta-osaka-sf1",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "wta-osaka-op"
+      ],
+      "fixture_id": "wta-osaka-sf1",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-wta-osaka-sf2",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "wta-osaka-op"
+      ],
+      "fixture_id": "wta-osaka-sf2",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-wta-osaka-doubles",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "wta-osaka-op"
+      ],
+      "fixture_id": "wta-osaka-doubles",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-pdc-r16-1",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "pdc-hub"
+      ],
+      "fixture_id": "pdc-r16-1",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-pdc-r16-2",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "pdc-hub"
+      ],
+      "fixture_id": "pdc-r16-2",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-pdc-r16-3",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "pdc-hub"
+      ],
+      "fixture_id": "pdc-r16-3",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-pdc-r16-4",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "pdc-hub"
+      ],
+      "fixture_id": "pdc-r16-4",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-pdc-r16-5",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "pdc-hub"
+      ],
+      "fixture_id": "pdc-r16-5",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-pdc-r16-6",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "pdc-hub"
+      ],
+      "fixture_id": "pdc-r16-6",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-pdc-r16-7",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "pdc-hub"
+      ],
+      "fixture_id": "pdc-r16-7",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-pdc-r16-8",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "pdc-hub"
+      ],
+      "fixture_id": "pdc-r16-8",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-wst-61",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "wst-matches"
+      ],
+      "fixture_id": "wst-61",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-wst-62",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Venue unverified; Participants/complete field unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified; Winner of match 59 v winner of match 60; participants not inferred.",
+      "source_ids": [
+        "wst-matches"
+      ],
+      "fixture_id": "wst-62",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-wst-63",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Venue unverified; Participants/complete field unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified; Winner of match 61 v winner of match 62; participants not inferred.",
+      "source_ids": [
+        "wst-matches"
+      ],
+      "fixture_id": "wst-63",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-urc-r4-1",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "urc-calendar"
+      ],
+      "fixture_id": "urc-r4-1",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-urc-r4-2",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "urc-calendar"
+      ],
+      "fixture_id": "urc-r4-2",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-urc-r4-3",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "urc-calendar"
+      ],
+      "fixture_id": "urc-r4-3",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-urc-r4-4",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "urc-calendar"
+      ],
+      "fixture_id": "urc-r4-4",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-urc-r4-5",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "urc-calendar"
+      ],
+      "fixture_id": "urc-r4-5",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nzc-t20-2",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nzc-fixtures"
+      ],
+      "fixture_id": "nzc-t20-2",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nzc-t20-3",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nzc-fixtures"
+      ],
+      "fixture_id": "nzc-t20-3",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nzc-ft-1",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nzc-fixtures"
+      ],
+      "fixture_id": "nzc-ft-1",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nzc-ft-2",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nzc-fixtures"
+      ],
+      "fixture_id": "nzc-ft-2",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nzc-ft-3",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nzc-fixtures"
+      ],
+      "fixture_id": "nzc-ft-3",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-lnh-j8-nantes",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "lnh-calendar"
+      ],
+      "fixture_id": "lnh-j8-nantes",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-lnh-j8-paris",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "lnh-calendar"
+      ],
+      "fixture_id": "lnh-j8-paris",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-lnh-j8-montpellier",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "lnh-calendar"
+      ],
+      "fixture_id": "lnh-j8-montpellier",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-gaa-kerry-final",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "munster-calendar"
+      ],
+      "fixture_id": "gaa-kerry-final",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-gaa-waterford-final",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "munster-calendar"
+      ],
+      "fixture_id": "gaa-waterford-final",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-gaa-cork-final",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "munster-calendar"
+      ],
+      "fixture_id": "gaa-cork-final",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-gaa-limerick-hurling",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "munster-calendar"
+      ],
+      "fixture_id": "gaa-limerick-hurling",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-lega-7",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "lega-calendar"
+      ],
+      "fixture_id": "lega-7",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-lega-8",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "lega-calendar"
+      ],
+      "fixture_id": "lega-8",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-lega-9",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "lega-calendar"
+      ],
+      "fixture_id": "lega-9",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-lega-10",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "lega-calendar"
+      ],
+      "fixture_id": "lega-10",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-lega-11",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "lega-calendar"
+      ],
+      "fixture_id": "lega-11",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-lega-12",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "lega-calendar"
+      ],
+      "fixture_id": "lega-12",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-lega-61",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "lega-calendar"
+      ],
+      "fixture_id": "lega-61",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-pga-bermuda",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Participants/complete field unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "pga-schedule"
+      ],
+      "fixture_id": "pga-bermuda",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-pga-mexico",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Participants/complete field unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "pga-schedule"
+      ],
+      "fixture_id": "pga-mexico",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-gbgb-champion-stakes",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Participants/complete field unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "gbgb-calendar"
+      ],
+      "fixture_id": "gbgb-champion-stakes",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-gbgb-scurry",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Participants/complete field unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "gbgb-calendar"
+      ],
+      "fixture_id": "gbgb-scurry",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-gbgb-oaks",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Participants/complete field unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "gbgb-calendar"
+      ],
+      "fixture_id": "gbgb-oaks",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-f1-usgp-quali",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; Participants/complete field unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "f1-hub"
+      ],
+      "fixture_id": "f1-usgp-quali",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-f1-usgp-race",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; Participants/complete field unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "f1-hub"
+      ],
+      "fixture_id": "f1-usgp-race",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-rl-png-samoa",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nrl-men"
+      ],
+      "fixture_id": "rl-png-samoa",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-rl-eng-france",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nrl-men"
+      ],
+      "fixture_id": "rl-eng-france",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-rl-nz-cook",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nrl-men"
+      ],
+      "fixture_id": "rl-nz-cook",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-rl-aus-fiji",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nrl-men"
+      ],
+      "fixture_id": "rl-aus-fiji",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-rlw-fiji-png",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nrl-women"
+      ],
+      "fixture_id": "rlw-fiji-png",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-rlw-aus-eng",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nrl-women"
+      ],
+      "fixture_id": "rlw-aus-eng",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-rlw-nz-france",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nrl-women"
+      ],
+      "fixture_id": "rlw-nz-france",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nba-0022600008",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nba-news"
+      ],
+      "fixture_id": "nba-0022600008",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nba-0022600009",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nba-news"
+      ],
+      "fixture_id": "nba-0022600009",
+      "severity": "review",
+      "status": "needs review"
+    },
+    {
+      "id": "ROW-nba-0022600097",
+      "title": "Unconfirmed fields / placement gap",
+      "detail": "Exact UTC start unverified; Current official match status unverified; Venue unverified; OLBG tip eligibility unverified; Available bookmaker quote unverified",
+      "source_ids": [
+        "nba-news"
+      ],
+      "fixture_id": "nba-0022600097",
+      "severity": "review",
+      "status": "needs review"
+    }
+  ]
+}
