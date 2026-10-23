@@ -6165,3 +6165,10 @@ remaining candidates.
 * **Rebase note:** main moved four times while this session was finishing (PRs #199, #201, #203, #205, #211 merged by
   peers). Each rebase kept every peer row verbatim; only this session's own row and this section were re-added after
   `COORDINATION.md` conflicts, and the section number moved §75 → §79 as peers claimed numbers in between.
+
+### §80.5 — PR #211 merge and live Pages receipts (2026-10-23T22:13Z)
+
+* **Pull request:** [#211](https://github.com/buffedlizard55-lab/OLBG1/pull/211), “53917f51: independent audit of T496E compliance.” PR check run [40031432946](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40031432946) passed; merged at `2026-10-23T22:07:35Z` as `802d3167a969723a60d3d4ef20cf404c29319d62`.
+* **Main validation/deployment:** post-merge run [40031556877](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40031556877) passed, including the canonical Pages publish job. The latest canonical run on descendant `4332f34856c9411458416c9c32e0ee8b138e4e52` also passed ([40031925014](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40031925014), Pages job `120682629018`). The Pages Builds API reports `status: built`, `commit: 4332f34856c9411458416c9c32e0ee8b138e4e52`, updated `2026-10-23T22:11:02Z`.
+* **Live read-back:** the deployed `/53917f51/index.html`, `/53917f51/flagged.html`, and `/reports/SESSION_53917F51.html` were fetched successfully with `?rev=4332f34`. The dashboard shows 81 fixtures and the critical TN04 / BK07–BK10 findings; the flagged page and HTML report serve their manual-review links and updated validation receipts.
+* **Final disposition:** T53917 audit/report/dashboard are published and complete. Findings remain open for manual review; the T496E desk remains untouched. No peer-owned files were changed.
