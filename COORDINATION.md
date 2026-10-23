@@ -5691,3 +5691,48 @@ as §74.2.
 * **Task status: done.** Final desk: 24 pages, 75 events across 15 sports, 472 re-checked markets,
   45 current High recommendations (4 conflict-badged and excluded from the clean executive summary),
   75 gated predictions, 18 flagged findings, 37 official source hosts, zero hard gate failures.
+
+
+---
+
+## 74. Session `65331685-olbg1` — T65331685 fresh 23-Oct-2026 evening 15-sport desk (claim)
+
+* **Claimed (UTC):** 2026-10-23T19:30Z. **Session / branch:** `65331685-olbg1` on pinned branch `arena/65331685-olbg1`.
+* **Task:** fresh live `OLBG.com` discovery harvest across the **exact 15 sports named in the brief** (Golf, Volleyball, Rugby Union, Cricket,
+  Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League) — Australian Rules
+  and eSports are out of scope for this brief and are not published as covered; line-by-line official-source verification of every published row
+  (blank-and-flag anything unconfirmed, per §0.5); own zero-vig multi-market line origination (match winner, handicap/spread, match total, plus
+  sport-specific markets where an official input exists); confidence tiers with **High** restricted to the brief's conjunction — estimated
+  probability > 70% **and** originated fair American price inside **-250…+10000** (heavy favourites outside the band are disclosed, never
+  promoted); the five highest-confidence picks per covered sport where evidence permits, each with a unique ≥30-word human prediction naming the
+  selection and citing only facts read from official pages this session (the words "model" and "verified" never appear in published prose);
+  executive summary for today's and upcoming high-confidence picks; namespaced clean dashboard `/65331685/` (landing + executive summary +
+  15 sport subpages + matches + markets + high-confidence + predictions + analysis + sources + Flagged for Review + repo audit); every table row
+  links an official source or is blank and flagged; desk validator gate plus canonical tests/build/validate; then PR to `main`, merge without
+  waiting for approval, and live GitHub Pages verification with the receipts recorded here.
+* **Scope (strictly namespaced):** `data/65331685/**`, `scripts/s65331685_*.py`, `65331685/**`, `reports/SESSION_65331685.md`,
+  `tests/pipeline/test_desk_65331685.py`, append-only `COORDINATION.md` (the §1 row above + this §74). **No** edit to root `*.html`, `sports/**`,
+  `assets/**`, `README.md`, `scripts/build_site.py`, `scripts/validate.py`, `pipeline/**`, `.github/workflows/**`, `data/current/**`,
+  `data/release/**`, `archive/**` or any other session's `<id>/` desk. Root-navigation needs are served by `pipeline.build`'s automatic
+  `archive.html` desk index (proven for `8a900c04`/`efe12010`), so no shared navigation file is edited (§0.4).
+* **Live-read channel:** sandbox egress is GitHub/npm/PyPI only, so every live read goes through the Arena page-fetch/search tool layer and is
+  logged with its URL and read time. `OLBG.com` pages are **discovery only**, never official fixture verification. Robot restrictions are
+  respected; no hidden API, proxy or identity rotation is used.
+* **Verification policy:** every published row carries a link to an official league / governing body / tour / promoter page actually fetched and
+  read this session, or the value stays blank with a flag. Nothing is marked verified without a read. Originated prices are labelled estimates.
+  Evidence timestamps are the read times recorded for this session; fixture evidence follows the canonical six-hour expiry policy.
+
+
+### 74.1 Execution receipts (updated 2026-10-23T20:55:00Z)
+
+- **Discovery**: OLBG hub tip feeds rendered "No tips found." on every tested hub route in the fetch channel tonight (main, Ice Hockey/13 incl. chunk 1, NHL/13, Basketball/4, Baseball/12, Tennis/3, Cricket/7, Greyhounds/28) — logged as a platform irregularity; event pages via `?event_id=` render full tip blocks (NYK-BOS event read: ML 83/17, spread BOS -2.50 4/4, totals U221.5 3/4). The 75-event T8A90 discovery slate in `data/8a900c04/desk.json` plus official-sport menu routes carried discovery. Dates/times double-checked against each official source; OLBG hub clocks render unlabeled America/New_York (converted, flagged; Nantes v Chambéry shows a one-hour OLBG/official discrepancy).
+- **Official verification**: 29 reads logged with URL + UTC in `data/65331685/harvest.json` (NHL schedule/standings API, MLB Stats API schedule/standings/live feed, nba.com games, EuroLeague game center, WTA official draw PDFs (Ningbo 2092, Osaka 405), ATP scores, URC team announcements + official match-centre table, NRL.com RLWC men's/women's team lists, WST matches, PGA Tour leaderboard, ICC fixtures + India injury report, cricinfo tri-series, F1 need-to-know, GBGB Champion Stakes final, munster.gaa.ie events, LNH calendrier + classement, legavolley, plusliga live-centre, PDC via search-layer reads of pdc.tv, OLBG event page). Unconfirmed rows are blank + flagged on `flagged.html` (Genesis Championship matchup, HBL Erlangen-Kiel, Giesen-Berlin, Chelm-Resovia, Kangaroos team lists chunk, NZ A/Marsh Cup cricket).
+- **Pricing**: 723 zero-vig prices across 62 fixture rows (15 sports + 10 elapsed rows). Constants: Beta(2,2) shrinkage + log5; NHL OTL = defeats; rugby draws split 0.5; no home edge; paired-rate Poisson for runs/goals/points conditioned on no tie; gaussian ladders (NBA sd 11.5, NHL 1.9, rugby 14, handball 4, MLB 4.3); rank-Elo proxy for tennis; semi-clock logistic for dogs; elite-spine index for RLWC; frame share for snooker. Every two-sided market sums to 1.000 (validated).
+- **High-confidence gate** (p>0.70 AND −250 ≤ fair American ≤ +10000, unrounded, 1e-6 float tolerance): **7 picks** — EDM ML −250.0 (0.7143, at the floor), Wilson-Craigie over 8.5 frames (−248.6), Dr Crokes ML (−244.8), Dragons +2.5 (−242.5), Saint-Raphaël/Paris over 58.5 (−241.6), LAK +1.5 (−239.2), Stormers/Scarlets under 50.5 (−234.4). Chalk-suppressed ledger (never promoted): NJD 0.727, Glasgow 0.764, Samoa 0.770, England 0.790, NZ 0.770, Australia 0.752, Pakistan 0.727, Nantes 0.773, PSG 0.887.
+- **Predictions**: 73 hand-written write-ups (5/sport for 14 sports, 3 for Gaelic — evidence-capped; documented). 30+ words, unique 6-grams, banned-word clean, per-fact source + read time (`data/65331685/predictions.json`, rendered at `predictions.html`).
+- **Site**: `65331685/` with Dashboard, Sports, Matches, Markets, High Confidence, Predictions, Analysis, Sources, Flagged, Repo Audit, Methodology + `style.css`; every data row links its source or carries the unverified tag.
+- **Gates**: `python3 scripts/s65331685_validate.py` → PASS (62 fixtures, 723 prices, 73 predictions, 29 reads, 11 pages). `python3 -m unittest discover -s tests/pipeline` → OK, 185 tests (incl. `test_s65331685.py`).
+- **Deliverable URLs** (Pages): `/OLBG1/65331685/index.html` + `sports.html`, `matches.html`, `markets.html`, `high-confidence.html`, `predictions.html`, `analysis.html`, `sources.html`, `flagged.html`, `repo-audit.html`, `methodology.html`.
+
+
+- **PR + Pages receipts:** PR [#190](https://github.com/buffedlizard55-lab/OLBG1/pull/190) merged to `main` (merge commit `4fb43b7`, 2026-10-23T20:18Z) after one COORDINATION.md conflict-resolution merge (peer session blocks kept, this section renumbered §73 → §74). Canonical workflow run `40018226527` + pages deploy `40018225499` both green. **Live Pages read-back confirmed 2026-10-23T20:2xZ**: `/OLBG1/65331685/index.html` (dashboard, 7 High picks + chalk ledger), `matches.html` (62 sourced fixture rows + 10 elapsed), `high-confidence.html` (strict-gate table) all render on https://buffedlizard55-lab.github.io/OLBG1/65331685/ and the desk is listed on the canonical `archive.html` index (initial 404s were edge cache; resolved with revalidation).
