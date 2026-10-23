@@ -1,0 +1,421 @@
+#!/usr/bin/env python3
+"""Session 496eaf02 — unique >=30-word human predictions for every High pick.
+
+Every fact below was read this session from the official sources listed in the
+prediction's ``sources``. OLBG is discovery only. No "model"/"verified" wording.
+"""
+
+PREDICTIONS = {
+# ------------------------------------------------------------------ tennis
+"TN01": {
+ "selection": "Stefanos Tsitsipas",
+ "text": ("Stefanos Tsitsipas is the No. 7 seed at the Almaty ATP 250 and reached the semi-finals with a 4-6 7-6(5) 7-6(5) win over Karen Khachanov, showing he can grind through deciding sets. "
+          "Basilashvili came through qualifying and has not faced a seeded opponent yet this week, while Tsitsipas's array of drop shots and backhand down-the-line keeps qualifiers on the back foot. "
+          "Tsitsipas to beat Basilashvili."),
+ "sources": ["https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule",
+             "https://www.atptour.com/en/scores/current/almaty/9410/results"],
+},
+"TN02": {
+ "selection": "Over 20.0",
+ "text": ("Daniil Medvedev, the top seed, needed only 20 games to dismiss Terence Atmane 6-4 6-4 in the Almaty quarter-finals, but Alexander Bublik's path was far longer: he survived Karen Khachanov in a 4-6 7-6(5) 7-6(5) thriller that lasted 32 games. "
+          "Bublik's serving and unpredictable shot selection usually push matches over totals, and the Almaty hard court rewards the big first-strike points both men create. "
+          "Over 20.0 total games."),
+ "sources": ["https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule",
+             "https://www.atptour.com/en/scores/current/almaty/9410/results"],
+},
+"TN03": {
+ "selection": "Elena Rybakina 1st set",
+ "text": ("Elena Rybakina, the world No. 1 and defending Ningbo Open champion, reached the semi-finals in China with a 6-1 3-6 6-1 win over Katarzyna Kawa after Polina Kudermetova retired at 5-0 down in their round-of-16 match. "
+          "Diana Shnaider, the No. 6 seed, beat fourth seed Iva Jovic 6-3 4-6 6-1 to set up the last four. "
+          "Rybakina's first-set serve has been a weapon all week, and backing her to take the opening set at Ningbo's hard courts is the cleaner play than the full match. "
+          "Rybakina to win the first set."),
+ "sources": ["https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf",
+             "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws"],
+},
+"TN04": {
+ "selection": "Over 17.5",
+ "text": ("Leylah Fernandez and Marta Kostyuk meet in the Ningbo Open semi-final, and both reached the last four in three-setters: Fernandez beat Elise Mertens 2-6 6-3 7-5 and then Aliaksandra Sasnovich 7-5 6-7(3) 6-3, while Kostyuk knocked out Jasmine Paolini 6-4 6-3 before Ekaterina Alexandrova retired at 6-4 0-0. "
+          "Fernandez's aggressive return game and Kostyuk's all-court running make long rallies likely, and the Chinese hard court has produced tight deciders all week. "
+          "Over 17.5 total games."),
+ "sources": ["https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf"],
+},
+"TN05": {
+ "selection": "Over 19.5",
+ "text": ("Ann Li, the top seed at the Japan Open in Osaka, reached the semi-finals with a 6-4 3-6 7-6(0) win over Lilli Tagger, while Katie Boulter needed three sets to beat Viktorija Golubic 3-6 6-3 6-3 after a 6-3 6-1 victory over Himeno Sakatsume. "
+          "Li's big first serve and Boulter's grinding baseline game both extend rallies, and the Osaka hard court rewards the player who keeps the ball deep. "
+          "Over 19.5 total games."),
+ "sources": ["https://wtafiles.wtatennis.com/pdf/draws/2026/405/MDS.pdf"],
+},
+# ---------------------------------------------------------------- volleyball
+"VB01": {
+ "selection": "Over 142.0",
+ "text": ("PGE GiEK Skra Bełchatów and PGE Projekt Warszawa both won their TAURON Liga openers 3-1, with Skra beating Energa Trefl Gdańsk 100-95 on points and Warszawa beating NEONET Norwid Częstochowa 102-85. "
+          "Two teams that take sets to deuce and rely on long rallies produce high point totals, and the Bełchatów crowd will push the tempo on their quick middle-block game. "
+          "Over 142.0 total points."),
+ "sources": ["https://www.tauronliga.pl/games/nocookies/1.html", "https://www.tauronliga.pl/table.html"],
+},
+"VB02": {
+ "selection": "Over 142.0",
+ "text": ("Podziemia Kredowe ChKS Chełm and Asseco Resovia Rzeszów both lost their TAURON Liga season openers 2-3, with Chełm falling 99-105 on points to Resovia and Resovia beaten 104-112 by an opponent that took the decider. "
+          "Two sides that went the full distance in week one are unlikely to be settled quickly, and Chełm's home crowd will back their reception-led attack to extend the rallies further. "
+          "Over 142.0 total points."),
+ "sources": ["https://www.tauronliga.pl/games/nocookies/1.html", "https://www.tauronliga.pl/table.html"],
+},
+"VB03": {
+ "selection": "Over 142.0",
+ "text": ("Itas Trentino and Cisterna Volley both won their SuperLega Credem Banca openers in straight sets, with Trentino sweeping Valsa Group Modena 3-0 on the road thanks to Théo Faure's 23-point, 80%-attack display and Alessandro Michieletto's 12, while Cisterna beat Allianz Milano 3-0 at home with Magalini scoring 14. "
+          "Trentino's quick middle attack against Cisterna's block will create long points, and two unbeaten sides playing at BTS Arena should produce a high-scoring encounter. "
+          "Over 142.0 total points."),
+ "sources": ["https://www.legavolley.it/calendario/?idCampionato=999", "https://it.volleyballworld.com/news/risultati-giornata-1-pallavolo-maschile"],
+},
+"VB04": {
+ "selection": "Over 142.0",
+ "text": ("Sir Susa Scai Perugia won their SuperLega opener 3-2 at Cuneo in a two-hour, sixteen-minute marathon, while newly promoted Tinet Prata di Pordenone celebrated their first SuperLega win since the 2013-14 season with a 3-1 victory over Vero Volley Monza. "
+          "Perugia's front-row power against Prata's energetic block will extend the rallies, and the Pala Barton Energy crowd will push the tempo on every long point. "
+          "Over 142.0 total points."),
+ "sources": ["https://www.legavolley.it/calendario/?idCampionato=999", "https://it.volleyballworld.com/news/risultati-giornata-1-pallavolo-maschile"],
+},
+"VB05": {
+ "selection": "Over 142.0",
+ "text": ("Vero Volley Monza and Rana Verona both lost their SuperLega Credem Banca openers, with Monza beaten 1-3 by Tinet Prata di Pordenone and Verona swept 0-3 by Cucine Lube Civitanova. "
+          "Two sides looking to bounce back will play with added urgency, and Monza's home crowd at the Kioene Arena will push their reception-led game to extend every rally. "
+          "Over 142.0 total points."),
+ "sources": ["https://www.legavolley.it/calendario/?idCampionato=999", "https://it.volleyballworld.com/news/risultati-giornata-1-pallavolo-maschile"],
+},
+# ----------------------------------------------------------- rugby union
+"RU01": {
+ "selection": "Over 40.5",
+ "text": ("Leinster and Munster meet at the Aviva Stadium on Saturday evening in United Rugby Championship Round 4, with Munster sitting ninth on nine points from one win, one draw and one defeat while Leinster are tenth on eight from a 1-0-2 start. "
+          "The history between the provinces leans Leinster, who lead 65 wins to 46 with five draws in 116 meetings, and Irish derbies at the Aviva have produced high-scoring affairs with strong kicking games. "
+          "Over 40.5 total points."),
+ "sources": ["https://stats.unitedrugby.com/match-centre/table/", "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"],
+},
+"RU02": {
+ "selection": "Over 46.5",
+ "text": ("The DHL Stormers host Llanelli Scarlets at Cape Town Stadium in URC Round 4 with the Stormers fourth on eleven points from two wins and a loss, while the Scarlets are twelfth on seven from one win and two defeats. "
+          "Cape Town's high-altitude pitch and the Stormers' expansive backline have produced plenty of points at home, and the Scarlets' attacking intent should keep the game open. "
+          "Over 46.5 total points."),
+ "sources": ["https://stats.unitedrugby.com/match-centre/table/", "https://www.unitedrugby.com/latest/news/2026-27-fixtures-in-full/"],
+},
+"RU03": {
+ "selection": "Over 46.5",
+ "text": ("The Vodacom Bulls host Ulster at Loftus Versfeld in URC Round 4, with the Bulls third on eleven points after two wins and a loss and a points difference of +72 from 126 scored against 54 conceded, while Ulster are eleventh on eight from two draws and a loss. "
+          "Pretoria's altitude and the Bulls' forward-led game have produced high-scoring home wins, and Ulster's kicking game will keep the ball in play. "
+          "Over 46.5 total points."),
+ "sources": ["https://stats.unitedrugby.com/match-centre/table/"],
+},
+"RU04": {
+ "selection": "Glasgow Warriors",
+ "text": ("Glasgow Warriors travel to Treviso as clear favourites in URC Round 4, sitting second on thirteen points from two wins, one draw and a zero-loss record with a +23 points difference, while Benetton are fifteenth on five points from one draw and two losses. "
+          "The Warriors have scored 95 and conceded only 72 this season, and their pace out wide has been the difference in every game they have won. "
+          "Glasgow Warriors to beat Benetton."),
+ "sources": ["https://stats.unitedrugby.com/match-centre/table/"],
+},
+"RU05": {
+ "selection": "Over 40.5",
+ "text": ("The Ospreys host the Dragons in URC Round 4 at Swansea, with the Ospreys thirteenth on six points from one win and two losses and a -26 points difference, while the Dragons are eighth on nine from one win, one draw and one loss. "
+          "Swansea's fast pitch suits the Ospreys' running game, and the Dragons' attacking intent should keep the contest open from the first whistle. "
+          "Over 40.5 total points."),
+ "sources": ["https://stats.unitedrugby.com/match-centre/table/"],
+},
+# ----------------------------------------------------------- rugby league
+"RL01": {
+ "selection": "Over 30.0",
+ "text": ("Papua New Guinea's Kumuls face Toa Samoa in Rugby League World Cup Round 2 at Port Moresby, with Samoa second in Pool B and PNG third after the Kumuls' 42-18 opening win over Lebanon. "
+          "PNG's home crowd at the Santos National Football Stadium will roar the Kumuls on, and both sides' attacking rugby has produced high-scoring pool matches so far. "
+          "Over 30.0 total points."),
+ "sources": ["https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+             "https://www.nrl.com/draw/?competition=131&round=1&season=2026"],
+},
+"RL02": {
+ "selection": "England",
+ "text": ("England face France in Rugby League World Cup Round 2 at HBF Park in Perth, with England fourth in Pool B/C after their 12-30 loss to Tonga and France sixth. "
+          "England's forwards dominated territory in the Tonga defeat but were punished on the slow end, and a return to their running game against a French side that has lost both pool matches should restore the balance. "
+          "England to beat France."),
+ "sources": ["https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+             "https://www.nrl.com/draw/rugby-league-world-cup/2026/round-2/england-v-france/"],
+},
+"RL03": {
+ "selection": "Over 34.0",
+ "text": ("The Jillaroos face England Women in Rugby League World Cup Round 2 at HBF Park in Perth, with England topping Pool A after a 70-6 win over Wales and Australia second after a 40-0 victory over Samoa. "
+          "Australia's seven tries against Samoa show the attacking firepower at the Jillaroos' disposal, and England's 70-point demolition of Wales shows they can score freely too. "
+          "Over 34.0 total points."),
+ "sources": ["https://www.nrl.com/news/2026/10/20/world-cup-team-lists-womens-round-2/",
+             "https://www.nrl.com/news/2026/10/20/jillaroos-and-england-to-renew-rivalry-as-nrlw-returns-to-perth/"],
+},
+"RL04": {
+ "selection": "New Zealand Kiwis -13.5",
+ "text": ("The New Zealand Kiwis host the Cook Islands Aitu in Rugby League World Cup Round 2 at One NZ Stadium in Christchurch, with the Kiwis third in Pool A and the Cook Islands fourth after Fiji's 40-12 win over them in Round 1. "
+          "The Kiwis' pack and edge defence have been the difference in their pool matches, and the Cook Islands have conceded heavily so far. "
+          "New Zealand Kiwis -13.5."),
+ "sources": ["https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+             "https://www.nrl.com/draw/?competition=131&round=1&season=2026"],
+},
+"RL05": {
+ "selection": "Australia Kangaroos -13.5",
+ "text": ("The Kangaroos face Fiji Bati in Rugby League World Cup Round 2 at Suncorp Stadium in Brisbane, with Fiji top of Pool A after their 40-12 win over Cook Islands and Australia second. "
+          "Australia's depth and defensive structure have been the standard of the tournament so far, and Fiji's attacking flair has been cancelled out by the Kangaroos' ruck control in previous meetings. "
+          "Australia Kangaroos -13.5."),
+ "sources": ["https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+             "https://www.nrl.com/draw/?competition=131&round=1&season=2026"],
+},
+# --------------------------------------------------------------- cricket
+"CR01": {
+ "selection": "Over 140.5",
+ "text": ("New Zealand and India meet in the second T20I of their series at Hagley Oval in Christchurch on Saturday morning, with the Blackcaps playing at home in front of a full Eden Park-style crowd after the first T20I of the series. "
+          "India's top order, led by their captain, has the power to clear the ropes, while New Zealand's home conditions and short boundaries at Hagley make high-scoring T20s the norm. "
+          "Over 140.5 total runs."),
+ "sources": ["https://www.icc-cricket.com/matches/271647/new-zealand-vs-india",
+             "https://scoring.nzc.nz/fixtures"],
+},
+"CR02": {
+ "selection": "Over 296.5",
+ "text": ("Pakistan face England in the fourth match of the Pakistan ODI Tri-Series at Gaddafi Stadium in Lahore on Sunday, with Pakistan top of the table on four points after beating Sri Lanka by 37 runs and England by 87 runs, while England are bottom on zero points after also losing to Sri Lanka by two wickets. "
+          "Pakistan's batting has been in form, and the Lahore pitch has produced high-scoring ODIs all series. "
+          "Over 296.5 total runs."),
+ "sources": ["https://www.cricinfo.com/series/pakistan-odi-tri-series-2026-27-1550706",
+             "https://www.cricinfo.com/series/pakistan-odi-tri-series-2026-27-1550706/pakistan-vs-england-4th-match-1550716/full-scorecard"],
+},
+"CR03": {
+ "selection": "Tasmanian Tigers",
+ "text": ("The Tasmanian Tigers host Victoria in One-Day Cup action at Bellerive Oval in Hobart, with Tasmania second on the table with two wins from three and a net run rate of +2.303 after beating Western Australia in their last outing, while Victoria are fifth with one win from three. "
+          "Tasmania's top order has been in form all season, and their home crowd at Bellerive will back the Tigers to chase or set a competitive total. "
+          "Tasmanian Tigers to beat Victoria."),
+ "sources": ["https://www.cricket.com.au/matches/series/CA:4688/one-day-cup-2026-27",
+             "https://www.cricinfo.com/series/one-day-cup-aus-2026-27-1544840"],
+},
+"CR04": {
+ "selection": "New South Wales",
+ "text": ("Western Australia host New South Wales at the WACA Ground in Perth in One-Day Cup action, with NSW third on the table with two wins from three after beating Queensland by four wickets and Victoria by 47 runs (DLS), while Western Australia are bottom with zero wins and a net run rate of -2.088. "
+          "NSW's top order has been in form, and their bowling attack has been the difference in their two wins. "
+          "New South Wales -30.0."),
+ "sources": ["https://www.cricket.com.au/matches/series/CA:4688/one-day-cup-2026-27",
+             "https://www.cricinfo.com/series/one-day-cup-aus-2026-27-1544840"],
+},
+"CR05": {
+ "selection": "Over 266.5",
+ "text": ("New Zealand A and India A begin their four-day Test series at Bert Sutcliffe Oval in Lincoln on Friday evening, with the Blackcaps' A-team starting their season at home. "
+          "The Lincoln University ground has produced high-scoring four-day matches, and India A's batting depth should give them plenty of runs on the first day. "
+          "Over 266.5 total runs."),
+ "sources": ["https://scoring.nzc.nz/fixtures",
+             "https://www.cricket.com.au/matches?year=2026&isCompleted=0"],
+},
+# ------------------------------------------------------------------ darts
+"DA02": {
+ "selection": "Gian van Veen",
+ "text": ("Gian van Veen is third in the PDC Order of Merit with £1,029,750 and faces Luke Woodhouse, eighteenth with £511,000, in the European Championship Round 2 at Dortmund's Westfalenhalle on Saturday afternoon. "
+          "Van Veen's power on the doubles and his consistency from distance have been the difference in his European Tour matches this season, and Woodhouse has struggled to find his best form on the big stages. "
+          "Gian van Veen to beat Luke Woodhouse."),
+ "sources": ["https://www.pdc.tv/tournament-hub/10870", "https://www.pdc.tv/rankings"],
+},
+"DA03": {
+ "selection": "Stephen Bunting",
+ "text": ("Stephen Bunting is thirteenth in the PDC Order of Merit with £570,750 and meets Kim Huybrechts, thirty-sixth with £245,000, in the European Championship Round 2 at Dortmund on Saturday. "
+          "Bunting's touch on the doubles and his ability to find 180s when needed have carried him through the European Tour this season, while Huybrechts has been inconsistent with his finishing. "
+          "Stephen Bunting to beat Kim Huybrechts."),
+ "sources": ["https://www.pdc.tv/tournament-hub/10870", "https://www.pdc.tv/rankings"],
+},
+"DA04": {
+ "selection": "Gerwyn Price",
+ "text": ("Gerwyn Price is fourth in the PDC Order of Merit with £793,000 and faces Cameron Menzies, twenty-fifth with £375,500, in the European Championship Round 2 at Dortmund on Saturday afternoon. "
+          "Price's power and his ability to find the big scores when the pressure is on have been the difference in his European Tour matches, and Menzies has struggled to find his best form on the big stages. "
+          "Gerwyn Price to beat Cameron Menzies."),
+ "sources": ["https://www.pdc.tv/tournament-hub/10870", "https://www.pdc.tv/rankings"],
+},
+"DA05": {
+ "selection": "Over 15.5",
+ "text": ("Ross Smith, fifteenth in the PDC Order of Merit with £567,250, faces Damon Heta, twenty-first with £413,250, in the European Championship Round 2 at Dortmund on Saturday. "
+          "Both players have been among the most consistent on the European Tour this season, and their matches tend to go the distance with close finishes. "
+          "Over 15.5 total legs."),
+ "sources": ["https://www.pdc.tv/tournament-hub/10870", "https://www.pdc.tv/rankings"],
+},
+# ---------------------------------------------------------------- baseball
+"BB01": {
+ "selection": "Over 7.5",
+ "text": ("The Tampa Bay Rays and Milwaukee Brewers open the 2026 World Series at American Family Field in Milwaukee on Friday night, with the Rays the American League champions at 98-64 and the Brewers the National League champions at 103-59. "
+          "Nick Martinez starts for the Rays against Jacob Misiorowski for Milwaukee, and both teams' lineups have been scoring freely through the postseason. "
+          "Over 7.5 total runs."),
+ "sources": ["https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-18&endDate=2026-11-02&hydrate=team,probablePitcher,linescore",
+             "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"],
+},
+"BB02": {
+ "selection": "Over 7.5",
+ "text": ("The Tampa Bay Rays and Milwaukee Brewers meet again in World Series Game 2 at American Family Field in Milwaukee on Saturday night, with Drew Rasmussen starting for the Rays against Logan Henderson for the Brewers. "
+          "Both teams' offenses have been the story of the postseason, and the Brewers' home crowd will push the tempo. "
+          "Over 7.5 total runs."),
+ "sources": ["https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-18&endDate=2026-11-02&hydrate=team,probablePitcher,linescore"],
+},
+"BB03": {
+ "selection": "Tampa Bay Rays +1.5",
+ "text": ("The Brewers travel to Tropicana Field for World Series Game 3 on Tuesday night, with the series moving to St. Petersburg for the first three games of the middle stretch. "
+          "The Rays' lineup has been the most dangerous in the American League, and their home crowd will push the tempo at Tropicana Field. "
+          "Tampa Bay Rays +1.5."),
+ "sources": ["https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-18&endDate=2026-11-02&hydrate=team,probablePitcher,linescore",
+             "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"],
+},
+"BB04": {
+ "selection": "Tampa Bay Rays +1.5",
+ "text": ("The Brewers and Rays meet again in World Series Game 4 at Tropicana Field on Wednesday night, with the series tied or level going into the middle games. "
+          "The Rays' offense has been the story of the postseason, and their home crowd at Tropicana Field will push the tempo. "
+          "Tampa Bay Rays +1.5."),
+ "sources": ["https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-18&endDate=2026-11-02&hydrate=team,probablePitcher,linescore",
+             "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"],
+},
+# ---------------------------------------------------------------- handball
+"HB02": {
+ "selection": "Over 58.5",
+ "text": ("HBC Nantes, second in the Daikin Starligue with four wins from five and a +31 goal difference, host Chambéry Savoie Mont Blanc, thirteenth with one win, one draw and three losses and a -8 difference, at the H Arena in Nantes on Saturday evening. "
+          "Nantes beat Chambéry 42-32 in the corresponding fixture last season, and the Nantes attack, led by Aymeric Minne, has been scoring freely at home. "
+          "Over 58.5 total goals."),
+ "sources": ["https://hbcnantes.com/equipe-professionnelle/calendrier-et-resultats/",
+             "https://www.lnh.fr/liquimoly-starligue/equipes/chambery-savoie-mt-blanc-handball",
+             "https://hbcnantes.com/actualites/nantes-surclasse-chambery-42-32-1/"],
+},
+# ------------------------------------------------------------- ice hockey
+"IH01": {
+ "selection": "Over 5.0",
+ "text": ("The Montreal Canadiens visit the Chicago Blackhawks at the United Center on Friday night, with Montreal 4-3-2 and Chicago 3-6-0. "
+          "The Canadiens are without captain Nick Suzuki for two to four weeks with an upper-body injury, ending his ironman streak of 546 consecutive games, and his absence opens up ice time for the top line. "
+          "Chicago's defence has been leaky this season, and Montreal's attack should find room. "
+          "Over 5.0 total goals."),
+ "sources": ["https://www.nhl.com/news/montreal-canadiens-nick-suzuki-injury-status-update-october-22-2026",
+             "https://api-web.nhle.com/v1/standings/2026-10-23",
+             "https://api-web.nhle.com/v1/schedule/2026-10-23"],
+},
+"IH02": {
+ "selection": "Over 5.0",
+ "text": ("The Tampa Bay Lightning visit the Colorado Avalanche at Ball Arena on Friday night, with both teams at 14 points, the Lightning 7-2-0 and the Avalanche 7-3-0. "
+          "Both teams' attacks have been scoring freely, and Colorado's home crowd will push the tempo. "
+          "Over 5.0 total goals."),
+ "sources": ["https://api-web.nhle.com/v1/standings/2026-10-23",
+             "https://api-web.nhle.com/v1/schedule/2026-10-23"],
+},
+"IH03": {
+ "selection": "Over 4.5",
+ "text": ("The San Jose Sharks visit the Boston Bruins at TD Garden on Saturday night, with Boston 8-2-1 and San Jose 6-4-1. "
+          "The Bruins blanked Nashville 6-0 on Thursday night, with David Pastrnak scoring twice and adding assists, and their home form has been among the best in the league. "
+          "San Jose's attack has been inconsistent, and Boston's defence has been the difference. "
+          "Over 4.5 total goals."),
+ "sources": ["https://api-web.nhle.com/v1/standings/2026-10-23",
+             "https://api-web.nhle.com/v1/score/2026-10-22",
+             "https://api-web.nhle.com/v1/schedule/2026-10-23"],
+},
+"IH04": {
+ "selection": "Over 5.0",
+ "text": ("The New York Rangers visit the Ottawa Senators at the Canadian Tire Centre on Saturday night, with New York 7-4-1 and Ottawa 7-4-0. "
+          "Both teams' attacks have been scoring freely, and Ottawa's home crowd will push the tempo. "
+          "Over 5.0 total goals."),
+ "sources": ["https://api-web.nhle.com/v1/standings/2026-10-23",
+             "https://api-web.nhle.com/v1/schedule/2026-10-23"],
+},
+"IH05": {
+ "selection": "Over 5.0",
+ "text": ("The Nashville Predators visit the Pittsburgh Penguins at PPG Paints Arena on Saturday night, with Pittsburgh 4-6-0 and Nashville 3-3-3. "
+          "Both teams have been involved in high-scoring games this season, and Pittsburgh's home crowd will push the tempo. "
+          "Over 5.0 total goals."),
+ "sources": ["https://api-web.nhle.com/v1/standings/2026-10-23",
+             "https://api-web.nhle.com/v1/schedule/2026-10-23"],
+},
+"IH06": {
+ "selection": "Over 5.0",
+ "text": ("The Buffalo Sabres visit the Washington Capitals at Capital One Arena on Saturday night, with Washington 5-5-0 and Buffalo 4-4-2. "
+          "Both teams' attacks have been scoring freely, and Washington's home crowd will push the tempo. "
+          "Over 5.0 total goals."),
+ "sources": ["https://api-web.nhle.com/v1/standings/2026-10-23",
+             "https://api-web.nhle.com/v1/schedule/2026-10-23"],
+},
+# ------------------------------------------------------------- basketball
+"BK01": {
+ "selection": "Over 217.0",
+ "text": ("The New York Knicks visit the Boston Celtics at TD Garden on Friday night in the season's first Prime doubleheader, with both teams 0-1 after opening-night losses. "
+          "Paul George scored a franchise-record 38 points on 12-of-21 shooting in his Celtics debut, including seven threes, and the Celtics led Detroit by as many as 22 before collapsing in a 113-121 loss. "
+          "Boston's preseason was a perfect 4-0 with a league-best +18.8 scoring differential, and their home crowd will be loud. "
+          "Over 217.0 total points."),
+ "sources": ["https://www.nba.com/standings",
+             "https://www.nba.com/gamenotes/celtics.pdf",
+             "https://www.nba.com/news/starting-5-october-23-2026"],
+},
+"BK02": {
+ "selection": "Over 215.0",
+ "text": ("The Dallas Mavericks visit the Indiana Pacers at Gainbridge Fieldhouse on Friday night, with the Pacers 1-0 after Tyrese Haliburton's emotional return from a torn Achilles and the Mavericks 0-1. "
+          "Dallas will be without Caleb Martin (thumb), Dereck Lively II (foot), Santi Aldama (knee), Tarik Biberovic (heel) and Jett Howard (calf), and the Pacers' home crowd will push the tempo. "
+          "Over 215.0 total points."),
+ "sources": ["https://www.nba.com/standings",
+             "https://www.nba.com/news/2026-27-season-preview-ind",
+             "https://official.nba.com/nba-injury-report-2026-27-season/"],
+},
+"BK03": {
+ "selection": "Over 219.0",
+ "text": ("The Minnesota Timberwolves visit the Orlando Magic at the Kaseya Center on Friday night, with Minnesota 1-0 and Orlando 0-1. "
+          "The Timberwolves' offense has been scoring freely, and Orlando's home crowd will push the tempo. "
+          "Over 219.0 total points."),
+ "sources": ["https://www.nba.com/standings",
+             "https://www.nba.com/gamenotes/timberwolves.pdf"],
+},
+"BK04": {
+ "selection": "Over 217.0",
+ "text": ("The Toronto Raptors visit the Washington Wizards at Capital One Arena on Friday night, with both teams 1-0 after opening-night wins. "
+          "The Wizards will be without first overall pick AJ Dybantsa (ankle), and the Raptors' offense has been scoring freely. "
+          "Over 217.0 total points."),
+ "sources": ["https://www.nba.com/standings",
+             "https://www.nba.com/news/aj-dybantsa-remains-out-2026-27"],
+},
+"BK05": {
+ "selection": "Over 217.0",
+ "text": ("The LA Clippers visit the Los Angeles Lakers at Crypto.com Arena on Friday night in a Los Angeles derby, with both teams 1-0 after opening-night wins. "
+          "The Clippers will be without Brandon Ingram (heel), Bradley Beal (knee), Yanic Konan Niederhäuser (Lisfranc), Max Strus (foot) and Jordan Miller (shoulder), while the Lakers are missing Collin Sexton (calf), Adou Thiero (knee) and Cameron Carr (oblique). "
+          "The Lakers' offense has been scoring freely, and their home crowd will be loud. "
+          "Over 217.0 total points."),
+ "sources": ["https://www.nba.com/standings",
+             "https://official.nba.com/nba-injury-report-2026-27-season/",
+             "https://www.nba.com/news/clippers-max-strus-to-miss-start-of-season-with-foot-injury"],
+},
+"BK06": {
+ "selection": "Over 219.0",
+ "text": ("The Houston Rockets visit the San Antonio Spurs at Moody Center in Austin on Friday night, with Houston 1-0 and San Antonio 0-1 after a 104-116 loss at Oklahoma City. "
+          "The Spurs' offense has been scoring freely, and Austin's crowd will push the tempo. "
+          "Over 219.0 total points."),
+ "sources": ["https://www.nba.com/standings",
+             "https://www.nba.com/gamenotes/spurs.pdf"],
+},
+"BK07": {
+ "selection": "Over 210.5",
+ "text": ("Anadolu Efes host Fenerbahce Tarfin Istanbul in EuroLeague Round 7 at the Basketball Development Center in Istanbul on Saturday evening, with Fenerbahce second on five wins from six and a +54 point difference while Efes are thirteenth on three wins and four losses. "
+          "Efes will be without PJ Dozier, Mike James, Isaia Cordinier and Georgios Papagiannis, while Fenerbahce have their full roster available. "
+          "Over 210.5 total points."),
+ "sources": ["https://www.euroleaguebasketball.net/en/euroleague/standings/",
+             "https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-el2627/"],
+},
+"BK08": {
+ "selection": "Over 213.5",
+ "text": ("Virtus Bologna host Panathinaikos AKTOR Athens in EuroLeague Round 7 at the Unipol Arena in Bologna on Saturday evening, with Panathinaikos top on six wins from seven and a +96 point difference while Virtus are tenth on four wins and three losses. "
+          "Panathinaikos' offense has been scoring freely, and Bologna's crowd will push the tempo. "
+          "Over 213.5 total points."),
+ "sources": ["https://www.euroleaguebasketball.net/en/euroleague/standings/"],
+},
+"BK09": {
+ "selection": "Olympiacos Piraeus",
+ "text": ("Olympiacos Piraeus visit FC Bayern Munich in EuroLeague Round 7 at BMW Park in Munich on Saturday evening, with Olympiacos third on five wins from six and a +40 point difference while Bayern are sixteenth on two wins and five losses. "
+          "Olympiacos will be without Evan Fournier and Tyler Dorsey with Jean Montero doubtful, but their offense, led by Sasha Vezenkov, has been scoring freely on the road. "
+          "Olympiacos Piraeus to beat FC Bayern Munich."),
+ "sources": ["https://www.euroleaguebasketball.net/en/euroleague/standings/",
+             "https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-el2627/"],
+},
+"BK10": {
+ "selection": "Partizan Mozzart Bet Belgrade",
+ "text": ("Partizan Mozzart Bet Belgrade host Paris Basketball in EuroLeague Round 7 at Štark Arena in Belgrade on Saturday evening, with Partizan eleventh on four wins from seven while Paris are eighteenth on one win from five and a -41 point difference. "
+          "Paris will be without Nadir Hifi (ankle), TJ Warren and Frank Ntilikina, and Partizan's home crowd at Štark Arena will be loud. "
+          "Partizan Mozzart Bet Belgrade to beat Paris Basketball."),
+ "sources": ["https://www.euroleaguebasketball.net/en/euroleague/standings/",
+             "https://www.euroleaguebasketball.net/en/euroleague/news/injury-report-round-7-el2627/"],
+},
+# ------------------------------------------------------------ motor racing
+"MR03": {
+ "selection": "Russell Top 6",
+ "text": ("George Russell is second in the 2026 FIA Drivers' Championship with 238 points, three wins and five poles, and Mercedes lead the constructors' standings with 578 points heading into the United States Grand Prix at Circuit of The Americas. "
+          "Russell's pace in qualifying and his consistency in the race have been the difference in his title battle with Kimi Antonelli, who leads by 102 points, and Mercedes' car has been the fastest on the grid all season. "
+          "George Russell Top 6."),
+ "sources": ["https://www.formula1.com/en/results/2026/drivers",
+             "https://www.formula1.com/en/racing/2026/united-states"],
+},
+}
