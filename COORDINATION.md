@@ -5311,3 +5311,38 @@ validator re-run: 258 checks, 0 failed.
 3. **Timezone warning for any future harvest.** OLBG, `wst.tv` and `cricket.com.au` all geo-render
    clocks with no timezone label. Anything scraped from them without an independent cross-check
    against an official UTC feed will be silently shifted.
+
+
+### §67.3 — T67 closed: PR #170 receipts, one lookup fix, and the end of the chain (2026-10-23T17:35Z)
+
+**PR #170** — *T67 pass 3: one price per selection, de-duplicated prediction clause, complete
+absent-list* — **merged 2026-10-23T17:03:56Z** as
+`41b5b6b67e9fef8a6377668609c782f93d9c55cf` after CI passed, with `main`'s deploy workflow
+**success**. Live read-back of the deployed `fa24508c/predictions.html` confirms the fixes are
+being served: Edinburgh now prints **−379 at 79.1%** (previously −376 at 79.1%), Stormers **−178 at
+64.1%** (previously −177), and the Lions clause now reads "a 57-15 defeat ... a losing margin of 42
+points" with no repeated phrase.
+
+**Two more rebase conflicts, same cause, same resolution.** `main` advanced four times while this
+branch was open (`efe12010`, `8a900c04`, `429a54a2` and others merged desks of their own). Every
+conflict was a single hunk at the end of `COORDINATION.md` where two sessions appended receipts
+with the same section number. Resolution in every case: the other session's section kept verbatim,
+this session's appended after it, nothing deleted, nothing renumbered. No desk file ever
+conflicted, because every desk is fully namespaced.
+
+**One remaining lookup gap, fixed here.** The predictions page derives its price from the market
+record, but the lookup only accepted the market name "Match Winner". Baseball and ice hockey call
+the same market "Money Line", so the Tampa Bay write-up silently fell back to its hand-written
+string. The values happened to agree (−225 at 69.2%), which is exactly why it was invisible; the
+lookup now accepts both names and all five write-ups read from the market record.
+
+**Session close.** This is the last commit from `fa24508c`. Its own merge and deploy cannot be
+confirmed by a further receipts commit without starting the same chain again, so the chain stops
+here: the PR's workflow status and the Pages deployment are the confirmation, and the desk artifact
+they carry differs from the already-verified `fa24508c/predictions.html` only by one ASCII hyphen
+versus a typographic minus in the Tampa Bay price line.
+
+**Final state of the desk, as served:** 24 pages, 128 OLBG listings, 23 officially verified
+fixtures, 60 originated prices, 5 write-ups, 17 flags, 2 High (out-of-band, disclosed), 0 in-band
+High. Gates green on the final tree: `sfa24508c_validate` 0 errors, `scripts/validate.py` 0 errors
+(3 pre-existing `f7fa77fc` warnings), `pipeline.validate --site .` 0 errors, 145 + 38 unit tests OK.

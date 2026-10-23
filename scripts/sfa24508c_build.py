@@ -613,7 +613,7 @@ not High and no prediction was written for them.</p>
         f = FIXTURES[p["fixture_id"]]
         wc = len(p["body"].split())
         mkt = next((m for m in MARKETS if m["fixture_id"] == p["fixture_id"]
-                    and m["market"] == "Match Winner" and p["selection"].startswith(m["selection"])), None)
+                    and m["market"] in ("Match Winner", "Money Line") and p["selection"].startswith(m["selection"])), None)
         price_txt = (f'{mkt["american_display"]} ({mkt["decimal"]:.3f})' if mkt else p["price"])
         prob_txt = (mkt["p"] if mkt else p["probability"])
         preds_html += f"""
