@@ -1,0 +1,930 @@
+{
+ "session": "7a9b24e5-olbg1",
+ "generated_utc": "2026-10-23T21:55Z",
+ "read_window": [
+  "2026-10-23T21:05Z",
+  "2026-10-23T21:55Z"
+ ],
+ "reads": [
+  {
+   "id": "S1",
+   "kind": "official",
+   "name": "MLB Stats API — World Series schedule",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-11-05",
+   "utc": "2026-10-23T21:12Z",
+   "read": "Games 1-7 of the 2026 World Series with UTC start times, venues and the ifNecessary flag."
+  },
+  {
+   "id": "S2",
+   "kind": "official",
+   "name": "MLB Stats API — National League standings 2026",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=104&season=2026&standingsTypes=regularSeason",
+   "utc": "2026-10-23T21:13Z",
+   "read": "Brewers 103-59 (.636), 832 RS / 618 RA, +214, W5; Braves 94-68; Phillies 88-74."
+  },
+  {
+   "id": "S3",
+   "kind": "official",
+   "name": "MLB Stats API — American League standings 2026",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason",
+   "utc": "2026-10-23T21:10Z",
+   "read": "Rays 98-64 (.605), 736 RS / 650 RA, +86, AL-best record."
+  },
+  {
+   "id": "S4",
+   "kind": "official",
+   "name": "MLB Stats API — 2026 postseason results",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-06&endDate=2026-10-23",
+   "utc": "2026-10-23T21:14Z",
+   "read": "ALCS and NLCS game-by-game scores; Brewers swept the NLCS 4-0, Rays won the ALCS 4-2."
+  },
+  {
+   "id": "S5",
+   "kind": "official",
+   "name": "MLB Stats API — probable pitchers",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-29&hydrate=probablePitcher",
+   "utc": "2026-10-23T21:15Z",
+   "read": "Game 1: Nick Martinez (TB) v Jacob Misiorowski (MIL); Game 2: Drew Rasmussen (TB) v Logan Henderson (MIL)."
+  },
+  {
+   "id": "S6",
+   "kind": "official",
+   "name": "NHL API — scoreboard 2026-10-24",
+   "url": "https://api-web.nhle.com/v1/score/2026-10-24",
+   "utc": "2026-10-23T21:20Z",
+   "read": "Nine of the twelve 24 Oct games with UTC start, venue, team records and club leaders."
+  },
+  {
+   "id": "S7",
+   "kind": "official",
+   "name": "NHL API — scoreboard 2026-10-25",
+   "url": "https://api-web.nhle.com/v1/score/2026-10-25",
+   "utc": "2026-10-23T21:21Z",
+   "read": "FLA 5-4-2 @ CHI 3-6-0 and NYI 5-3-2 @ DAL 6-3-1 with records and leaders."
+  },
+  {
+   "id": "S8",
+   "kind": "official",
+   "name": "NHL API — standings 2026-10-23",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-23",
+   "utc": "2026-10-23T21:22Z",
+   "read": "Points, points percentage, home/road splits, L10 and streaks (CAR, EDM, BOS, VGK, SEA, NYR, TBL, UTA, MIN, OTT, TOR, DAL, SJS read in full)."
+  },
+  {
+   "id": "S9",
+   "kind": "official",
+   "name": "NBA.com — schedule 2026-10-23",
+   "url": "https://www.nba.com/schedule?date=2026-10-23",
+   "utc": "2026-10-23T21:25Z",
+   "read": "Twelve games with arena and tip time (7:00 PM ET onwards)."
+  },
+  {
+   "id": "S10",
+   "kind": "official",
+   "name": "NBA.com — 2026-27 standings",
+   "url": "https://www.nba.com/standings",
+   "utc": "2026-10-23T21:27Z",
+   "read": "W-L, home/road, last-10 and streak for all 30 clubs after the opening games."
+  },
+  {
+   "id": "S11",
+   "kind": "official",
+   "name": "NRL.com — Rugby League World Cup 2026 Round 2 draw",
+   "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+   "utc": "2026-10-23T21:30Z",
+   "read": "Round 2 fixtures, venues, published kick-off times, pool positions; Tonga 36-0 Lebanon full time."
+  },
+  {
+   "id": "S12",
+   "kind": "official",
+   "name": "RLWC 2026 official site — results and round 2",
+   "url": "https://www.rlwc2026.com/home",
+   "utc": "2026-10-23T21:33Z",
+   "read": "Round 1: Australia 24-22 New Zealand, Samoa 78-4 France, PNG 42-18 Lebanon, England 12-30 Tonga, Fiji 40-12 Cook Islands."
+  },
+  {
+   "id": "S13",
+   "kind": "official",
+   "name": "United Rugby Championship — match centre, Round 4",
+   "url": "https://stats.unitedrugby.com/match-centre/2026-27/4",
+   "utc": "2026-10-23T21:36Z",
+   "read": "Five Saturday 24 Oct fixtures with venue and published (local) kick-off; Round 3 results shown on the same page."
+  },
+  {
+   "id": "S14",
+   "kind": "official",
+   "name": "ICC — fixtures and results",
+   "url": "https://www.icc-cricket.com/fixtures-results",
+   "utc": "2026-10-23T21:40Z",
+   "read": "Ten upcoming internationals (CWC Challenge League, CWC League 2, bilateral T20I/ODI). Times rendered as 'your time' without a zone."
+  },
+  {
+   "id": "S15",
+   "kind": "official",
+   "name": "DP World Tour — Genesis Championship leaderboard (R3)",
+   "url": "https://www.europeantour.com/dpworld-tour/genesis-championship-2026/leaderboard?round=3",
+   "utc": "2026-10-23T21:44Z",
+   "read": "36-hole scores, Race to Dubai ranking and Round 3 tee times."
+  },
+  {
+   "id": "S16",
+   "kind": "official",
+   "name": "Formula 1 — Mexico City Grand Prix 2026",
+   "url": "https://www.formula1.com/en/racing/2026/mexico",
+   "utc": "2026-10-23T21:46Z",
+   "read": "Weekend schedule (FP1 30 Oct 14:30, Qualifying 31 Oct 17:00, Race 1 Nov 15:00 track time), circuit length 4.304 km, 71 laps."
+  },
+  {
+   "id": "S17",
+   "kind": "official",
+   "name": "Formula 1 — 2026 drivers' standings",
+   "url": "https://www.formula1.com/en/results/2026/drivers",
+   "utc": "2026-10-23T21:48Z",
+   "read": "Driver list only; the points table body did not render in the fetch channel, so no championship points are published."
+  },
+  {
+   "id": "S18",
+   "kind": "discovery",
+   "name": "OLBG — Tennis hub",
+   "url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "utc": "2026-10-23T20:59Z",
+   "read": "Market taxonomy (Win Match, Set Betting, Total Games, 1st Set Winner, Games Won handicap). Tips table rendered 'No tips found.'"
+  },
+  {
+   "id": "S19",
+   "kind": "discovery",
+   "name": "OLBG — Ice Hockey hub",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "utc": "2026-10-23T21:00Z",
+   "read": "Money line, puck line and totals market definitions; tips table rendered 'No tips found.'"
+  },
+  {
+   "id": "S20",
+   "kind": "discovery",
+   "name": "OLBG — Rugby Union hub",
+   "url": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+   "utc": "2026-10-23T21:01Z",
+   "read": "Competition coverage and the site's own five-season favourite/home-win statistics table; tips table rendered 'No tips found.'"
+  },
+  {
+   "id": "S21",
+   "kind": "discovery",
+   "name": "OLBG — robots.txt",
+   "url": "https://www.olbg.com/robots.txt",
+   "utc": "2026-10-23T20:57Z",
+   "read": "Disallows /api/, /sports/, /events.php and the Python-urllib agent; sitemap index listed."
+  },
+  {
+   "id": "S22",
+   "kind": "discovery",
+   "name": "OLBG — betting-tips sitemap",
+   "url": "https://www.olbg.com/sitemap-betting-tips.xml",
+   "utc": "2026-10-23T20:58Z",
+   "read": "Canonical hub slugs and sport IDs (Tennis/3, Golf/5, Cricket/7, Snooker/8, Rugby_Union/9, Rugby_League/10, Baseball/12, Ice_Hockey/13, Motor_Racing/14, Darts/15, Handball/20, Volleyball/21, Gaelic_Football/25, Greyhounds/28)."
+  },
+  {
+   "id": "S23",
+   "kind": "official",
+   "name": "World Snooker Tour — matches",
+   "url": "https://www.wst.tv/matches/",
+   "utc": "2026-10-23T21:05Z",
+   "read": "BetVictor Northern Ireland Open 2026 Round 1 results (18-19 Oct). No upcoming session listing rendered."
+  },
+  {
+   "id": "S24",
+   "kind": "official",
+   "name": "PDC — tournaments",
+   "url": "https://www.pdc.tv/tournaments",
+   "utc": "2026-10-23T21:06Z",
+   "read": "Consent-banner content only; no fixture table rendered in the fetch channel."
+  },
+  {
+   "id": "S25",
+   "kind": "official",
+   "name": "GBGB — racecards",
+   "url": "https://www.gbgb.org.uk/racecards/",
+   "utc": "2026-10-23T21:07Z",
+   "read": "HTTP 404 from the governing body; no racecard index at that path."
+  },
+  {
+   "id": "S26",
+   "kind": "official",
+   "name": "GAA — fixtures and results",
+   "url": "https://www.gaa.ie/fixtures-results/",
+   "utc": "2026-10-23T21:08Z",
+   "read": "Only 24 Oct listing is the Shinty-Hurling International (Ireland v Scotland, 18:00, SuperValu Páirc Uí Chaoimh) — hurling, outside this brief."
+  },
+  {
+   "id": "S27",
+   "kind": "official",
+   "name": "Handball-Bundesliga — Spielplan",
+   "url": "https://www.opel-hbl.de/de/hbl/spielplan",
+   "utc": "2026-10-23T21:09Z",
+   "read": "Fixture grid is bot-protected (reCAPTCHA); no match rows rendered."
+  },
+  {
+   "id": "S28",
+   "kind": "official",
+   "name": "TAURON Liga — games",
+   "url": "https://www.plusliga.pl/games/",
+   "utc": "2026-10-23T21:11Z",
+   "read": "Polish women's league page redirected to tauronliga.pl; rendered 17-18 Oct completed matches only in the first chunk."
+  },
+  {
+   "id": "S29",
+   "kind": "official",
+   "name": "ATP Tour — current scores",
+   "url": "https://www.atptour.com/en/scores/current",
+   "utc": "2026-10-23T21:04Z",
+   "read": "Quarter-final results (Medvedev d. Atmane 6-4 6-4; Bublik d. Khachanov 4-6 7-6(5) 7-6(5); Fils d. Michelsen 6-4 7-6(12); Cobolli d. Nakashima 4-6 6-4 6-4; Van Assche v Musetti in progress)."
+  },
+  {
+   "id": "S30",
+   "kind": "official",
+   "name": "WTA — Ningbo Open draws",
+   "url": "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
+   "utc": "2026-10-23T21:42Z",
+   "read": "Draw body did not render; only tournament notifications were returned."
+  }
+ ],
+ "fixtures": [
+  {
+   "id": "BB01",
+   "sport": "Baseball",
+   "comp": "MLB World Series — Game 1",
+   "home": "Milwaukee Brewers",
+   "away": "Tampa Bay Rays",
+   "start_utc": "2026-10-24T00:00Z",
+   "start_note": null,
+   "venue": "American Family Field, Milwaukee",
+   "src": "S1",
+   "src2": "S5",
+   "rec_home": "103-59 (.636)",
+   "rec_away": "98-64 (.605)",
+   "form": "Brewers: 832 runs scored / 618 allowed (+214), W5 to close the regular season, NLCS won 4-0 over the Dodgers. Rays: 736 scored / 650 allowed (+86), ALCS won 4-2 over Cleveland.",
+   "detail": "Probable pitchers: Jacob Misiorowski (MIL) v Nick Martinez (TB). ifNecessary=N."
+  },
+  {
+   "id": "BB02",
+   "sport": "Baseball",
+   "comp": "MLB World Series — Game 2",
+   "home": "Milwaukee Brewers",
+   "away": "Tampa Bay Rays",
+   "start_utc": "2026-10-25T00:00Z",
+   "start_note": null,
+   "venue": "American Family Field, Milwaukee",
+   "src": "S1",
+   "src2": "S5",
+   "rec_home": "103-59 (.636)",
+   "rec_away": "98-64 (.605)",
+   "form": "Same clubs; Brewers were 55-26 at home in the regular season, Rays 43-38 on the road.",
+   "detail": "Probable pitchers: Logan Henderson (MIL) v Drew Rasmussen (TB). ifNecessary=N."
+  },
+  {
+   "id": "BB03",
+   "sport": "Baseball",
+   "comp": "MLB World Series — Game 3",
+   "home": "Tampa Bay Rays",
+   "away": "Milwaukee Brewers",
+   "start_utc": "2026-10-27T00:00Z",
+   "start_note": null,
+   "venue": "Tropicana Field, St Petersburg",
+   "src": "S1",
+   "src2": "S2",
+   "rec_home": "98-64 (.605)",
+   "rec_away": "103-59 (.636)",
+   "form": "Rays 55-26 at home / Brewers 48-33 on the road in the regular season.",
+   "detail": "Probable pitchers not published at read time. ifNecessary=N."
+  },
+  {
+   "id": "BB04",
+   "sport": "Baseball",
+   "comp": "MLB World Series — Game 4",
+   "home": "Tampa Bay Rays",
+   "away": "Milwaukee Brewers",
+   "start_utc": "2026-10-28T00:00Z",
+   "start_note": null,
+   "venue": "Tropicana Field, St Petersburg",
+   "src": "S1",
+   "src2": "S2",
+   "rec_home": "98-64 (.605)",
+   "rec_away": "103-59 (.636)",
+   "form": "Series score at read time: 0-0 (Game 1 not yet played).",
+   "detail": "ifNecessary=N."
+  },
+  {
+   "id": "BB05",
+   "sport": "Baseball",
+   "comp": "MLB World Series — Game 5 (conditional)",
+   "home": "Tampa Bay Rays",
+   "away": "Milwaukee Brewers",
+   "start_utc": "2026-10-29T00:00Z",
+   "start_note": null,
+   "venue": "Tropicana Field, St Petersburg",
+   "src": "S1",
+   "src2": "S2",
+   "rec_home": "98-64 (.605)",
+   "rec_away": "103-59 (.636)",
+   "form": "Conditional game: official ifNecessary=Y.",
+   "detail": "Withheld from pricing: MLB flags this game as ifNecessary=Y."
+  },
+  {
+   "id": "IH01",
+   "sport": "Ice Hockey",
+   "comp": "NHL regular season",
+   "home": "Philadelphia Flyers",
+   "away": "Anaheim Ducks",
+   "start_utc": "2026-10-24T17:00Z",
+   "start_note": null,
+   "venue": "Xfinity Mobile Arena, Philadelphia",
+   "src": "S6",
+   "src2": "S8",
+   "rec_home": "3-6-3 (.375 pts)",
+   "rec_away": "4-6-0 (.400 pts)",
+   "form": "Flyers have lost six of ten (4-4-2 in L10 per standings) and sit eighth in the Metro; Ducks 4-6-0. Ducks leaders: Beckett Sennecke 5G, Leo Carlsson 9A, Lukas Dostal 3W. Flyers: Matvei Michkov 6G, Trevor Zegras 5A, Dan Vladar 2W.",
+   "detail": "Both clubs on the second half of a back-to-back? Not confirmed — left blank."
+  },
+  {
+   "id": "IH02",
+   "sport": "Ice Hockey",
+   "comp": "NHL regular season",
+   "home": "New Jersey Devils",
+   "away": "Los Angeles Kings",
+   "start_utc": "2026-10-24T19:30Z",
+   "start_note": null,
+   "venue": "Prudential Center, Newark",
+   "src": "S6",
+   "src2": "S8",
+   "rec_home": "6-4-0 (.600 pts)",
+   "rec_away": "2-4-2 (.375 pts)",
+   "form": "Devils 6-4-0 with Jack Hughes on 8 assists and Jake Allen on 4 wins; Kings 2-4-2, Artemi Panarin 6G, Brandt Clarke 5A, Darcy Kuemper 2W.",
+   "detail": null
+  },
+  {
+   "id": "IH03",
+   "sport": "Ice Hockey",
+   "comp": "NHL regular season",
+   "home": "Boston Bruins",
+   "away": "San Jose Sharks",
+   "start_utc": "2026-10-24T23:00Z",
+   "start_note": null,
+   "venue": "TD Garden, Boston",
+   "src": "S6",
+   "src2": "S8",
+   "rec_home": "8-2-1 (.773 pts)",
+   "rec_away": "6-4-1 (.545 pts)",
+   "form": "Bruins 8-2-1, 4-0-0 at home with 21 goals for and 6 against at TD Garden; David Pastrnak 6G 10A, Jeremy Swayman 6W. Sharks 6-4-1 but only one regulation win in 11 games; Macklin Celebrini 5G 9A.",
+   "detail": null
+  },
+  {
+   "id": "IH04",
+   "sport": "Ice Hockey",
+   "comp": "NHL regular season",
+   "home": "Ottawa Senators",
+   "away": "New York Rangers",
+   "start_utc": "2026-10-24T23:00Z",
+   "start_note": null,
+   "venue": "Canadian Tire Centre, Ottawa",
+   "src": "S6",
+   "src2": "S8",
+   "rec_home": "7-4-0 (.636 pts)",
+   "rec_away": "7-4-1 (.625 pts)",
+   "form": "Senators 3-2-0 on the road but 4-2-0 at home; Tim Stutzle 7G 8A, Linus Ullmark 7W. Rangers 1-4-1 away with 8 goals for and 19 against on the road; Alexis Lafreniere 8G, Adam Fox 14A.",
+   "detail": null
+  },
+  {
+   "id": "IH05",
+   "sport": "Ice Hockey",
+   "comp": "NHL regular season",
+   "home": "Dallas Stars",
+   "away": "New York Islanders",
+   "start_utc": "2026-10-25T22:00Z",
+   "start_note": null,
+   "venue": "American Airlines Center, Dallas",
+   "src": "S7",
+   "src2": "S8",
+   "rec_home": "6-3-1 (.650 pts)",
+   "rec_away": "5-3-2 (.600 pts)",
+   "form": "Stars on a four-game winning run (streak W4) with 3-1-1 road form; Mikko Rantanen 5G, Jason Robertson 8A. Islanders 5-3-2; Bo Horvat 5G, Matthew Schaefer 8A.",
+   "detail": null
+  },
+  {
+   "id": "BK01",
+   "sport": "Basketball",
+   "comp": "NBA regular season",
+   "home": "Boston Celtics",
+   "away": "New York Knicks",
+   "start_utc": "2026-10-23T23:00Z",
+   "start_note": null,
+   "venue": "TD Garden, Boston",
+   "src": "S9",
+   "src2": "S10",
+   "rec_home": "0-1",
+   "rec_away": "0-1",
+   "form": "Both clubs opened with a loss (Celtics 0-1 on the road, Knicks 0-1 at home); last-10 columns read 0-1 for each.",
+   "detail": "Two-game sample — the model deliberately shrinks hard toward .500."
+  },
+  {
+   "id": "BK02",
+   "sport": "Basketball",
+   "comp": "NBA regular season",
+   "home": "Charlotte Hornets",
+   "away": "Atlanta Hawks",
+   "start_utc": "2026-10-23T23:00Z",
+   "start_note": null,
+   "venue": "Spectrum Center, Charlotte",
+   "src": "S9",
+   "src2": "S10",
+   "rec_home": "1-0",
+   "rec_away": "1-0",
+   "form": "Hornets won their opener on the road (1-0 away), Hawks won theirs on the road (1-0).",
+   "detail": null
+  },
+  {
+   "id": "BK03",
+   "sport": "Basketball",
+   "comp": "NBA regular season",
+   "home": "Indiana Pacers",
+   "away": "Dallas Mavericks",
+   "start_utc": "2026-10-23T23:00Z",
+   "start_note": null,
+   "venue": "Gainbridge Fieldhouse, Indianapolis",
+   "src": "S9",
+   "src2": "S10",
+   "rec_home": "1-0",
+   "rec_away": "0-1",
+   "form": "Pacers 1-0 after a road win; Mavericks 0-1 after a road loss.",
+   "detail": null
+  },
+  {
+   "id": "BK04",
+   "sport": "Basketball",
+   "comp": "NBA regular season",
+   "home": "Orlando Magic",
+   "away": "Minnesota Timberwolves",
+   "start_utc": "2026-10-23T23:00Z",
+   "start_note": null,
+   "venue": "Kia Center, Orlando",
+   "src": "S9",
+   "src2": "S10",
+   "rec_home": "0-1",
+   "rec_away": "1-0",
+   "form": "Magic lost their opener at home (0-1 home); Timberwolves won on the road (1-0 away).",
+   "detail": null
+  },
+  {
+   "id": "BK05",
+   "sport": "Basketball",
+   "comp": "NBA regular season",
+   "home": "San Antonio Spurs",
+   "away": "Houston Rockets",
+   "start_utc": "2026-10-24T01:30Z",
+   "start_note": null,
+   "venue": "Moody Center, Austin",
+   "src": "S9",
+   "src2": "S10",
+   "rec_home": "0-1",
+   "rec_away": "1-0",
+   "form": "Spurs 0-1 after a road loss; Rockets 1-0 after a home win.",
+   "detail": null
+  },
+  {
+   "id": "RL01",
+   "sport": "Rugby League",
+   "comp": "Rugby League World Cup 2026 — Round 2",
+   "home": "Papua New Guinea",
+   "away": "Samoa",
+   "start_utc": null,
+   "start_note": "Published as '24 OCT | 12:25 AM' with no zone stated; UTC not inferred.",
+   "venue": "Santos National Football Stadium, Port Moresby",
+   "src": "S11",
+   "src2": "S12",
+   "rec_home": "1-0 (42-18 v Lebanon)",
+   "rec_away": "1-0 (78-4 v France)",
+   "form": "PNG beat Lebanon 42-18 in Round 1; Samoa beat France 78-4 in Round 1 and are ranked 2nd in the pool.",
+   "detail": "Kick-off zone unresolved — flagged."
+  },
+  {
+   "id": "RL02",
+   "sport": "Rugby League",
+   "comp": "Rugby League World Cup 2026 — Round 2",
+   "home": "England",
+   "away": "France",
+   "start_utc": null,
+   "start_note": "Published as '24 OCT | 2:35 AM' with no zone stated; UTC not inferred.",
+   "venue": "HBF Park, Perth",
+   "src": "S11",
+   "src2": "S12",
+   "rec_home": "0-1 (12-30 v Tonga)",
+   "rec_away": "0-1 (4-78 v Samoa)",
+   "form": "England lost 12-30 to Tonga in Round 1; France lost 4-78 to Samoa.",
+   "detail": "Kick-off zone unresolved — flagged."
+  },
+  {
+   "id": "RL03",
+   "sport": "Rugby League",
+   "comp": "Rugby League World Cup 2026 — Round 2",
+   "home": "New Zealand",
+   "away": "Cook Islands",
+   "start_utc": null,
+   "start_note": "Published as '25 OCT | 1:05 AM' with no zone stated; UTC not inferred.",
+   "venue": "One NZ Stadium, Christchurch",
+   "src": "S11",
+   "src2": "S12",
+   "rec_home": "0-1 (22-24 v Australia)",
+   "rec_away": "0-1 (12-40 v Fiji)",
+   "form": "New Zealand lost 22-24 to Australia in Round 1; Cook Islands lost 12-40 to Fiji.",
+   "detail": "Kick-off zone unresolved — flagged."
+  },
+  {
+   "id": "RL04",
+   "sport": "Rugby League",
+   "comp": "Rugby League World Cup 2026 — Round 2",
+   "home": "Australia",
+   "away": "Fiji",
+   "start_utc": null,
+   "start_note": "Published as '25 OCT | 5:05 AM' with no zone stated; UTC not inferred.",
+   "venue": "Suncorp Stadium, Brisbane",
+   "src": "S11",
+   "src2": "S12",
+   "rec_home": "1-0 (24-22 v New Zealand)",
+   "rec_away": "1-0 (40-12 v Cook Islands)",
+   "form": "Australia edged New Zealand 24-22 in Round 1; Fiji beat Cook Islands 40-12.",
+   "detail": "Kick-off zone unresolved — flagged."
+  },
+  {
+   "id": "RU01",
+   "sport": "Rugby Union",
+   "comp": "United Rugby Championship — Round 4",
+   "home": "Vodacom Bulls",
+   "away": "Ulster",
+   "start_utc": null,
+   "start_note": "Official page states 'All times shown are Local' (07:45); UTC not inferred.",
+   "venue": "Loftus Versfeld, Pretoria",
+   "src": "S13",
+   "rec_home": "R3: 57-15 v Lions",
+   "rec_away": "R3: 26-26 v Munster",
+   "form": "Bulls beat the Lions 57-15 in Round 3. Ulster drew 26-26 with Munster in Round 3.",
+   "detail": null
+  },
+  {
+   "id": "RU02",
+   "sport": "Rugby Union",
+   "comp": "United Rugby Championship — Round 4",
+   "home": "DHL Stormers",
+   "away": "Scarlets",
+   "start_utc": null,
+   "start_note": "Official page states 'All times shown are Local' (10:00); UTC not inferred.",
+   "venue": "DHL Stadium, Cape Town",
+   "src": "S13",
+   "rec_home": "R3: 39-22 v Sharks",
+   "rec_away": "R3: 27-26 v Benetton",
+   "form": "Stormers beat the Sharks 39-22 in Round 3; Scarlets edged Benetton 27-26.",
+   "detail": null
+  },
+  {
+   "id": "RU03",
+   "sport": "Rugby Union",
+   "comp": "United Rugby Championship — Round 4",
+   "home": "Benetton",
+   "away": "Glasgow Warriors",
+   "start_utc": null,
+   "start_note": "Official page states 'All times shown are Local' (10:00); UTC not inferred.",
+   "venue": "Stadio Monigo, Treviso",
+   "src": "S13",
+   "rec_home": "R3: 26-27 v Scarlets",
+   "rec_away": "R3: 36-19 v Connacht",
+   "form": "Benetton lost 26-27 to Scarlets in Round 3; Glasgow beat Connacht 36-19.",
+   "detail": null
+  },
+  {
+   "id": "RU04",
+   "sport": "Rugby Union",
+   "comp": "United Rugby Championship — Round 4",
+   "home": "Leinster",
+   "away": "Munster",
+   "start_utc": null,
+   "start_note": "Official page states 'All times shown are Local' (13:00); UTC not inferred.",
+   "venue": "Aviva Stadium, Dublin",
+   "src": "S13",
+   "rec_home": "R3: 29-5 v Cardiff",
+   "rec_away": "R3: 26-26 v Ulster",
+   "form": "Leinster beat Cardiff 29-5 in Round 3; Munster drew 26-26 at Ulster.",
+   "detail": null
+  },
+  {
+   "id": "RU05",
+   "sport": "Rugby Union",
+   "comp": "United Rugby Championship — Round 4",
+   "home": "Ospreys",
+   "away": "Dragons",
+   "start_utc": null,
+   "start_note": "Official page states 'All times shown are Local' (14:00); UTC not inferred.",
+   "venue": "St Helen's, Swansea",
+   "src": "S13",
+   "rec_home": "R3: 38-31 v Dragons",
+   "rec_away": "R3: 31-38 v Ospreys",
+   "form": "Round 3 at Rodney Parade: Dragons 31-38 Ospreys, an away win for the visitors. Ospreys have scored 81 points in three rounds; Dragons 88.",
+   "detail": null
+  },
+  {
+   "id": "CR01",
+   "sport": "Cricket",
+   "comp": "ICC CWC Challenge League — List A",
+   "home": "Denmark",
+   "away": "Kuwait",
+   "start_utc": null,
+   "start_note": "ICC renders 'Match starts at 02:45 (Your time)' with no zone; UTC not inferred.",
+   "venue": null,
+   "src": "S14",
+   "rec_home": null,
+   "rec_away": null,
+   "form": null,
+   "detail": "Fixture confirmed by ICC; no team form, venue or ranking read this session — unpriced."
+  },
+  {
+   "id": "CR02",
+   "sport": "Cricket",
+   "comp": "ICC CWC Challenge League — List A",
+   "home": "Qatar",
+   "away": "Kenya",
+   "start_utc": null,
+   "start_note": "ICC renders '02:45 (Your time)' with no zone; UTC not inferred.",
+   "venue": null,
+   "src": "S14",
+   "rec_home": null,
+   "rec_away": null,
+   "form": null,
+   "detail": "Unpriced — no official team form read."
+  },
+  {
+   "id": "CR03",
+   "sport": "Cricket",
+   "comp": "T20 International",
+   "home": "New Zealand",
+   "away": "India",
+   "start_utc": null,
+   "start_note": "ICC renders '03:00 (Your time)' with no zone; UTC not inferred.",
+   "venue": null,
+   "src": "S14",
+   "rec_home": null,
+   "rec_away": null,
+   "form": null,
+   "detail": "Fixture confirmed by ICC; venue and form not read — unpriced."
+  },
+  {
+   "id": "CR04",
+   "sport": "Cricket",
+   "comp": "One Day International",
+   "home": "Namibia",
+   "away": "Ireland",
+   "start_utc": null,
+   "start_note": "ICC renders '03:30 (Your time)' with no zone; UTC not inferred.",
+   "venue": null,
+   "src": "S14",
+   "rec_home": null,
+   "rec_away": null,
+   "form": null,
+   "detail": "Unpriced — no official team form read."
+  },
+  {
+   "id": "CR05",
+   "sport": "Cricket",
+   "comp": "ICC Cricket World Cup League 2 — ODI",
+   "home": "United Arab Emirates",
+   "away": "Netherlands",
+   "start_utc": null,
+   "start_note": "ICC renders '01:30 (Your time)' with no zone; UTC not inferred.",
+   "venue": null,
+   "src": "S14",
+   "rec_home": null,
+   "rec_away": null,
+   "form": null,
+   "detail": "Unpriced — no official team form read."
+  },
+  {
+   "id": "GF01",
+   "sport": "Golf",
+   "comp": "DP World Tour — Genesis Championship, Round 3",
+   "home": "Antoine Rozner",
+   "away": "Casey Jarvis",
+   "start_utc": null,
+   "start_note": "Round 3 tee times 11:50 (local course time, no zone stated).",
+   "venue": "Jack Nicklaus Golf Club Korea",
+   "src": "S15",
+   "rec_home": "-10 (67-65)",
+   "rec_away": "-10 (65-67)",
+   "form": "Co-leaders after 36 holes. Rozner is 59th in the Race to Dubai, Jarvis 1st.",
+   "detail": "Head-to-head only; no stroke-play winner price originated."
+  },
+  {
+   "id": "GF02",
+   "sport": "Golf",
+   "comp": "DP World Tour — Genesis Championship, Round 3",
+   "home": "Martin Couvra",
+   "away": "Ryan Fox",
+   "start_utc": null,
+   "start_note": "Round 3 tee times 11:50 / 11:39 (local course time, no zone stated).",
+   "venue": "Jack Nicklaus Golf Club Korea",
+   "src": "S15",
+   "rec_home": "-7 (69-66)",
+   "rec_away": "-7 (68-67)",
+   "form": "Both -7 after 36 holes. Couvra 21st in the Race to Dubai, Fox 1st.",
+   "detail": null
+  },
+  {
+   "id": "GF03",
+   "sport": "Golf",
+   "comp": "DP World Tour — Genesis Championship, Round 3",
+   "home": "Si Woo Kim",
+   "away": "Rikuya Hoshino",
+   "start_utc": null,
+   "start_note": "Round 3 tee times 11:28 / 11:17 (local course time, no zone stated).",
+   "venue": "Jack Nicklaus Golf Club Korea",
+   "src": "S15",
+   "rec_home": "-6 (67-69)",
+   "rec_away": "-5 (70-67)",
+   "form": "Kim -6 (10th Race to Dubai), Hoshino -5 (14th).",
+   "detail": null
+  },
+  {
+   "id": "GF04",
+   "sport": "Golf",
+   "comp": "DP World Tour — Genesis Championship, Round 3",
+   "home": "Filippo Celli",
+   "away": "Sanghun Shin",
+   "start_utc": null,
+   "start_note": "Round 3 tee times 11:39 (local course time, no zone stated).",
+   "venue": "Jack Nicklaus Golf Club Korea",
+   "src": "S15",
+   "rec_home": "-7 (69-66)",
+   "rec_away": "-7 (66-69)",
+   "form": "Level on -7 after 36 holes; Celli 19th in the Race to Dubai, Shin unranked in the published column.",
+   "detail": null
+  },
+  {
+   "id": "GF05",
+   "sport": "Golf",
+   "comp": "DP World Tour — Genesis Championship, Round 3",
+   "home": "Jorge Campillo",
+   "away": "Adrian Otaegui",
+   "start_utc": null,
+   "start_note": "Round 3 tee times 11:06 / 10:55 (local course time, no zone stated).",
+   "venue": "Jack Nicklaus Golf Club Korea",
+   "src": "S15",
+   "rec_home": "-4 (73-65)",
+   "rec_away": "-4 (70-68)",
+   "form": "Both -4 after 36 holes; Campillo 2nd in the Race to Dubai, Otaegui 5th.",
+   "detail": null
+  },
+  {
+   "id": "MR01",
+   "sport": "Motor Racing",
+   "comp": "Formula 1 — Mexico City GP Qualifying",
+   "home": "F1 qualifying",
+   "away": "Autodromo Hermanos Rodriguez",
+   "start_utc": null,
+   "start_note": "Official schedule: 31 Oct 17:00-18:00 track time (zone not stated).",
+   "venue": "Autodromo Hermanos Rodriguez, Mexico City",
+   "src": "S16",
+   "rec_home": null,
+   "rec_away": null,
+   "form": null,
+   "detail": "Qualifying market withheld: no official championship points table rendered, so no driver strength input."
+  },
+  {
+   "id": "MR02",
+   "sport": "Motor Racing",
+   "comp": "Formula 1 — Mexico City GP Race",
+   "home": "F1 race",
+   "away": "Autodromo Hermanos Rodriguez",
+   "start_utc": null,
+   "start_note": "Official schedule: 1 Nov 15:00 track time (zone not stated), 71 laps.",
+   "venue": "Autodromo Hermanos Rodriguez, Mexico City",
+   "src": "S16",
+   "src2": "S17",
+   "rec_home": null,
+   "rec_away": null,
+   "form": "Circuit 4.304 km, 71 laps, race distance 305.354 km.",
+   "detail": "Race-winner market withheld: drivers' standings body did not render (S17)."
+  }
+ ],
+ "sports": [
+  {
+   "name": "Baseball",
+   "slug": "baseball"
+  },
+  {
+   "name": "Basketball",
+   "slug": "basketball"
+  },
+  {
+   "name": "Cricket",
+   "slug": "cricket"
+  },
+  {
+   "name": "Darts",
+   "slug": "darts"
+  },
+  {
+   "name": "Gaelic Sports",
+   "slug": "gaelic-sports"
+  },
+  {
+   "name": "Golf",
+   "slug": "golf"
+  },
+  {
+   "name": "Greyhounds",
+   "slug": "greyhounds"
+  },
+  {
+   "name": "Handball",
+   "slug": "handball"
+  },
+  {
+   "name": "Ice Hockey",
+   "slug": "ice-hockey"
+  },
+  {
+   "name": "Motor Racing",
+   "slug": "motor-racing"
+  },
+  {
+   "name": "Rugby League",
+   "slug": "rugby-league"
+  },
+  {
+   "name": "Rugby Union",
+   "slug": "rugby-union"
+  },
+  {
+   "name": "Snooker",
+   "slug": "snooker"
+  },
+  {
+   "name": "Tennis",
+   "slug": "tennis"
+  },
+  {
+   "name": "Volleyball",
+   "slug": "volleyball"
+  }
+ ],
+ "gaps": {
+  "Tennis": {
+   "src": "S29",
+   "why": "ATP quarter-finals only; the WTA draw body (S30) and the ATP draw pages did not render, so no upcoming pairing could be confirmed.",
+   "tried": [
+    "https://www.atptour.com/en/scores/current",
+    "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
+    "https://www.wtatennis.com/scores"
+   ]
+  },
+  "Snooker": {
+   "src": "S23",
+   "why": "WST 'Matches' rendered completed Northern Ireland Open Round 1 sessions only; no upcoming session table was returned.",
+   "tried": [
+    "https://www.wst.tv/matches/"
+   ]
+  },
+  "Darts": {
+   "src": "S24",
+   "why": "PDC tournaments page returned consent-banner markup only; no fixture or draw table rendered.",
+   "tried": [
+    "https://www.pdc.tv/tournaments"
+   ]
+  },
+  "Handball": {
+   "src": "S27",
+   "why": "HBL Spielplan is behind a reCAPTCHA; the EHF Champions League match URL returned 404.",
+   "tried": [
+    "https://www.opel-hbl.de/de/hbl/spielplan",
+    "https://ehfcl.eurohandball.com/en/matches/"
+   ]
+  },
+  "Volleyball": {
+   "src": "S28",
+   "why": "LegaVolley agenda is script-rendered; the Polish TAURON Liga page returned 17-18 Oct completed matches in the chunk read.",
+   "tried": [
+    "https://www.legavolley.it/",
+    "https://www.plusliga.pl/games/"
+   ]
+  },
+  "Gaelic Sports": {
+   "src": "S26",
+   "why": "The only 24 Oct GAA listing is the Shinty-Hurling International (hurling, outside this brief); no Gaelic football fixture was published for the window.",
+   "tried": [
+    "https://www.gaa.ie/fixtures-results/",
+    "https://www.gaa.ie/fixtures-results/football"
+   ]
+  },
+  "Greyhounds": {
+   "src": "S25",
+   "why": "GBGB racecard index returned HTTP 404; no official racecard was reachable.",
+   "tried": [
+    "https://www.gbgb.org.uk/racecards/"
+   ]
+  }
+ }
+}

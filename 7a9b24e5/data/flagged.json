@@ -1,0 +1,91 @@
+{
+ "gaps": {
+  "Tennis": {
+   "src": "S29",
+   "why": "ATP quarter-finals only; the WTA draw body (S30) and the ATP draw pages did not render, so no upcoming pairing could be confirmed.",
+   "tried": [
+    "https://www.atptour.com/en/scores/current",
+    "https://www.wtatennis.com/tournaments/2092/ningbo/2026/draws",
+    "https://www.wtatennis.com/scores"
+   ]
+  },
+  "Snooker": {
+   "src": "S23",
+   "why": "WST 'Matches' rendered completed Northern Ireland Open Round 1 sessions only; no upcoming session table was returned.",
+   "tried": [
+    "https://www.wst.tv/matches/"
+   ]
+  },
+  "Darts": {
+   "src": "S24",
+   "why": "PDC tournaments page returned consent-banner markup only; no fixture or draw table rendered.",
+   "tried": [
+    "https://www.pdc.tv/tournaments"
+   ]
+  },
+  "Handball": {
+   "src": "S27",
+   "why": "HBL Spielplan is behind a reCAPTCHA; the EHF Champions League match URL returned 404.",
+   "tried": [
+    "https://www.opel-hbl.de/de/hbl/spielplan",
+    "https://ehfcl.eurohandball.com/en/matches/"
+   ]
+  },
+  "Volleyball": {
+   "src": "S28",
+   "why": "LegaVolley agenda is script-rendered; the Polish TAURON Liga page returned 17-18 Oct completed matches in the chunk read.",
+   "tried": [
+    "https://www.legavolley.it/",
+    "https://www.plusliga.pl/games/"
+   ]
+  },
+  "Gaelic Sports": {
+   "src": "S26",
+   "why": "The only 24 Oct GAA listing is the Shinty-Hurling International (hurling, outside this brief); no Gaelic football fixture was published for the window.",
+   "tried": [
+    "https://www.gaa.ie/fixtures-results/",
+    "https://www.gaa.ie/fixtures-results/football"
+   ]
+  },
+  "Greyhounds": {
+   "src": "S25",
+   "why": "GBGB racecard index returned HTTP 404; no official racecard was reachable.",
+   "tried": [
+    "https://www.gbgb.org.uk/racecards/"
+   ]
+  }
+ },
+ "unresolved_start_times": [
+  "RL01",
+  "RL02",
+  "RL03",
+  "RL04",
+  "RU01",
+  "RU02",
+  "RU03",
+  "RU04",
+  "RU05",
+  "CR01",
+  "CR02",
+  "CR03",
+  "CR04",
+  "CR05",
+  "GF01",
+  "GF02",
+  "GF03",
+  "GF04",
+  "GF05",
+  "MR01",
+  "MR02"
+ ],
+ "withheld": [
+  "BB05"
+ ],
+ "unpriced_sports": [
+  "Basketball",
+  "Cricket",
+  "Golf",
+  "Motor Racing",
+  "Rugby League"
+ ]
+}

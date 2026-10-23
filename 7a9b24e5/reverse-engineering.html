@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OLBG structure · OLBG desk 7a9b24e5</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header><div class="wrap">
+<div class="brand">OLBG research desk <span>session 7a9b24e5 · built 2026-10-23T22:05Z</span></div>
+<nav><a href="index.html">Dashboard</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="high-confidence.html">High confidence</a><a href="predictions.html">Predictions</a><a href="analysis.html">Analysis</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged for review</a><a href="methodology.html">Methodology</a><a href="reverse-engineering.html" class="on">OLBG structure</a><a href="repo-audit.html">Repo audit</a></nav>
+</div></header>
+<main class="wrap">
+
+<h1>OLBG structure — what we could and could not read</h1>
+<h2>Route taxonomy (from the official sitemap, read this session)</h2>
+<p>Hub URLs follow <code>/betting-tips/&lt;Sport_Name&gt;/&lt;sport_id&gt;</code> with underscores, not hyphens:
+Tennis/3, Golf/5, Cricket/7, Snooker/8, Rugby_Union/9, Rugby_League/10, Baseball/12, Ice_Hockey/13,
+Motor_Racing/14, Darts/15, Handball/20, Volleyball/21, Gaelic_Football/25, Greyhounds/28. Hyphenated slugs such as
+<code>/betting-tips/Ice-Hockey/13</code> return 404 — a first-pass trap.</p>
+<h2>Markets described on the hubs</h2>
+<p>The hockey hub documents money line, puck line (−1.5 / +1.5) and totals (usually 5.5, with pushes at whole
+numbers). The tennis hub documents win match, set betting, total games, first-set winner and a games-won handicap.
+The rugby union hub documents match winner and handicap and publishes its own five-season favourite and total-points
+tables. Those definitions shaped the market set originated here.</p>
+<h2>The blocker</h2>
+<p>All seven hub pages read (Tennis, Ice Hockey, Rugby Union and the sitemap-indexed others tested in earlier
+sessions) returned <b>“No tips found.”</b> in the fetched document. The tips table is populated client-side, so the
+events and prices OLBG displays are not in the HTML we can read. That is recorded as a platform irregularity, not
+worked around: no hidden API, proxy or identity rotation was used.</p>
+<h2>robots.txt</h2>
+<p>Read this session. It disallows <code>/api/</code>, <code>/sports/</code>, <code>/events.php</code> and the
+<code>Python-urllib</code> agent, and lists four sitemaps. This desk used only the sitemap and the public hubs, and
+did not touch a disallowed path.</p>
+<h2>Consequence for this release</h2>
+<p>Because the OLBG event list could not be read, the fixture slate comes from governing bodies instead. That is a
+stronger source for a kick-off time and a weaker source for “what OLBG is currently offering”. Both facts are
+stated plainly rather than blurred.</p>
+
+</main>
+<footer class="wrap">
+<p>Independent research desk. Not affiliated with OLBG. Originated prices are estimates, not bookmaker
+quotes. No guaranteed returns. 18+. Evidence expires 2026-10-24T03:55Z (six hours from the read window).</p>
+</footer>
+</body></html>

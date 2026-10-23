@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repository audit · OLBG desk 7a9b24e5</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header><div class="wrap">
+<div class="brand">OLBG research desk <span>session 7a9b24e5 · built 2026-10-23T22:05Z</span></div>
+<nav><a href="index.html">Dashboard</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="high-confidence.html">High confidence</a><a href="predictions.html">Predictions</a><a href="analysis.html">Analysis</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged for review</a><a href="methodology.html">Methodology</a><a href="reverse-engineering.html">OLBG structure</a><a href="repo-audit.html" class="on">Repo audit</a></nav>
+</div></header>
+<main class="wrap">
+
+<h1>Repository audit</h1>
+<p class="lede">Line-by-line structural review of the tree as merged on <code>main</code> before this session added
+anything. Checks were run with git and Python against the tracked file list, so every count below is reproducible.</p>
+<div class="tw"><table class=""><thead><tr><th>ID</th><th>Severity</th><th>Location</th><th>Finding</th><th>How it was checked</th></tr></thead><tbody><tr><td>RA-01</td><td><span class="pill med">low</span></td><td><code>all.html / matches.html</code></td><td>The two root pages are byte-identical (same SHA-256). Duplicate publication of the same table; harmless but inflates the page count claimed in release notes.</td><td>sha256 equality over the two tracked files</td></tr><tr><td>RA-02</td><td><span class="pill low">info</span></td><td><code>a0b04058/audit.html, a0b04058/repo-audit.html</code></td><td>Two further byte-identical page pairs inside a peer desk (audit.html = repo-audit.html, high-confidence.html = picks.html).</td><td>sha256 equality</td></tr><tr><td>RA-03</td><td><span class="pill gap">medium</span></td><td><code>README.md</code>:9</td><td>README headline (&#x27;108 fixture/event listings&#x27;) does not match the current data/fixtures.json, which holds 134 rows in both its &#x27;matches&#x27; and &#x27;fixtures&#x27; arrays. The text is dated 22 Oct, so this is a stale-copy risk rather than a false claim about today.</td><td>data/fixtures.json length read this session</td></tr><tr><td>RA-04</td><td><span class="pill gap">medium</span></td><td><code>data/**/*.json</code></td><td>1,843 identifiers (e.g. rl-wc26-tga-lbn, el-pao-bas-1022) appear in more than one session JSON file with different prices. Any aggregation across desks will double-count events unless it de-duplicates on event id + session.</td><td>recursive scan of 324 tracked JSON files</td></tr><tr><td>RA-05</td><td><span class="pill med">low</span></td><td><code>markets.html</code>:1</td><td>The root markets page is a single 2.24 MB HTML document (next largest 1.06 MB). It renders, but on slow connections it will block; pagination would be safer.</td><td>file size from git ls-files inventory</td></tr><tr><td>RA-06</td><td><span class="pill low">info</span></td><td><code>(whole tree)</code></td><td>Structural checks passed: 0 invalid JSON files (324), 0 tracked .pyc artifacts, 0 missing internal link targets on root pages, 0 missing asset references across all 1,217 HTML files.</td><td>scripts run this session</td></tr><tr><td>RA-08</td><td><span class="pill low">high</span></td><td><code>scripts/se58210b8_predictions.py</code>:27</td><td>The file reached main with unresolved merge-conflict markers (two nested HEAD blocks, two ======= lines and two &gt;&gt;&gt;&gt;&gt;&gt;&gt; lines). Python cannot parse it, so that desk&#x27;s prediction test errored out and the tree-wide parse audit recorded one parse error. Repaired in this session by keeping the newer prose variant from PR #184; the file now compiles and the full suite passes.</td><td>python -m unittest discover -s tests/pipeline before/after the repair</td></tr><tr><td>RA-07</td><td><span class="pill low">info</span></td><td><code>data/fixtures.json</code>:1</td><td>Every one of the 134 fixture rows carries a source field; no row was found without a provenance key. This audit checks presence, not that each URL still resolves.</td><td>key-level scan</td></tr></tbody></table></div>
+<h2>Scope note</h2>
+<p>The audit verifies structure — file inventory, JSON validity, duplicate content, link targets, provenance keys.
+It does <b>not</b> re-certify the claims inside 1,217 HTML pages, and the presence of a source field on a row is not
+proof that the URL still resolves. Both limits are stated rather than papered over.</p>
+
+</main>
+<footer class="wrap">
+<p>Independent research desk. Not affiliated with OLBG. Originated prices are estimates, not bookmaker
+quotes. No guaranteed returns. 18+. Evidence expires 2026-10-24T03:55Z (six hours from the read window).</p>
+</footer>
+</body></html>
