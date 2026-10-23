@@ -811,7 +811,9 @@ official page did, so no injury claim appears anywhere on this site.</li>
                 f"<td>{esc(f['competition'])}</td><td>{esc(f['start_local'])}</td>"
                 f"<td>{esc(f['start_utc'] or '')}</td><td>{esc(f['venue'] or '')}</td>"
                 f"<td><a href='{f['official_url']}'>official</a></td></tr>" for f in fx)
-            fblock = f"""<h2>Verified fixtures</h2><div class="scroll"><table>
+            fblock = f"""<h2>Verified fixtures</h2>
+<p class="note" style="margin:0 0 10px">A blank cell means the publisher did not state that value; it has been left empty rather than filled in. Only rows whose opponent, competition and start were read on the organiser's own site appear here.</p>
+<div class="scroll"><table>
 <thead><tr><th>Fixture</th><th>Competition</th><th>Start (source)</th><th>Start (UTC)</th><th>Venue</th><th>Source</th></tr></thead>
 <tbody>{frows2}</tbody></table></div>"""
         mblock = ""

@@ -5371,3 +5371,18 @@ High. Gates green on the final tree: `sfa24508c_validate` 0 errors, `scripts/val
   6 unverified, 6 elapsed, 10 predictions, 20 flags, 8 repository findings, 25 pages.
 * **Limit stated:** this section ships in its own docs PR, whose merge/deploy it cannot confirm; what is
   confirmed above is that the corrected desk was served by GitHub Pages at the read-back times.
+
+### §67.4 — one clarity fix, and the actual last commit (2026-10-23T17:45Z)
+
+Reading the deployed `sports/basketball.html` showed twelve verified NBA fixtures with an **empty
+Venue column** and no statement of why it was empty. Leaving the cell blank is the correct
+behaviour under the brief, but a reader cannot be expected to know that from an empty cell. Each
+fixtures table now carries one line above it: a blank cell means the publisher did not state that
+value and it was left empty rather than filled in, and only rows whose opponent, competition and
+start were read on the organiser's own site appear at all. Rebuilt, `sfa24508c_validate` 0 errors.
+
+This replaces §67.3's "this is the last commit" claim — which was true when written and stopped
+being true one read-back later, exactly as §67.3 warns about its own chain. What is actually final
+is the desk state, not any particular commit: **24 pages, 128 listings, 23 verified fixtures, 60
+originated prices, 5 write-ups, 17 flags, 2 High published out-of-band, 0 in-band High**, served
+from the deployed Pages host and reproducible with `python3 scripts/sfa24508c_build.py`.
