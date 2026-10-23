@@ -1,0 +1,872 @@
+{
+  "session": "T5B7D",
+  "registered_at": "2026-10-23T21:36:17Z",
+  "evidence_expires_at": "2026-10-24T03:36:17Z",
+  "sports": [
+    "Golf",
+    "Volleyball",
+    "Rugby Union",
+    "Cricket",
+    "Snooker",
+    "Darts",
+    "Baseball",
+    "Gaelic Sports",
+    "Greyhounds",
+    "Tennis",
+    "Motor Racing",
+    "Handball",
+    "Ice Hockey",
+    "Basketball",
+    "Rugby League"
+  ],
+  "count": 20,
+  "fixtures": [
+    {
+      "id": "GF01",
+      "sport": "Golf",
+      "slug": "golf",
+      "competition": "PGA TOUR · Butterfield Bermuda Championship",
+      "event": "Butterfield Bermuda Championship · tournament field",
+      "home": null,
+      "away": null,
+      "date": "2026-10-25",
+      "start_utc": null,
+      "start_local": "Tournament runs 22–25 October; Round 2 was in progress at capture",
+      "start_utc_basis": null,
+      "state": "in_progress",
+      "venue": "Port Royal Golf Course, Southampton, Bermuda",
+      "source_ids": [
+        "pga-tee-times"
+      ],
+      "facts": [
+        "The official page showed Round 2 in progress and the 22–25 October tournament window."
+      ],
+      "availability": [],
+      "inputs": null,
+      "flags": [
+        "No future official head-to-head pairing was established; the tournament row is not a two-player match."
+      ],
+      "market_gaps": [
+        "Outright, head-to-head, round-score and player markets withheld: no supported future pairing or complete current leaderboard was captured."
+      ],
+      "olbg_event_id": null,
+      "olbg_state": "no_open_listing",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "VB01",
+      "sport": "Volleyball",
+      "slug": "volleyball",
+      "competition": "Polish league fixture · match 1104819",
+      "event": "PGE GiEK SKRA Bełchatów v PGE Projekt Warszawa",
+      "home": "PGE GiEK SKRA Bełchatów",
+      "away": "PGE Projekt Warszawa",
+      "date": "2026-10-24",
+      "start_utc": null,
+      "start_local": "Saturday 24 October, 18:00 (league-displayed local time)",
+      "start_utc_basis": null,
+      "state": "upcoming",
+      "venue": null,
+      "source_ids": [
+        "volleyball-fixtures"
+      ],
+      "facts": [
+        "The schedule explicitly displays both clubs, Saturday 24 October at 18:00 and match ID 1104819."
+      ],
+      "availability": [],
+      "inputs": null,
+      "flags": [
+        "A PlusLiga request redirected to tauronliga.pl; the explicit fixture text was retained and the cross-domain routing is flagged.",
+        "The official page did not expose a UTC offset in the captured text; UTC remains blank."
+      ],
+      "market_gaps": [
+        "Winner, set handicap, total sets and exact score withheld: no compatible current team-strength dataset was captured.",
+        "Player props withheld: no official availability and player-statistics package was captured."
+      ],
+      "olbg_event_id": "36964",
+      "olbg_state": "expired",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "RU01",
+      "sport": "Rugby Union",
+      "slug": "rugby-union",
+      "competition": "United Rugby Championship · Round 4",
+      "event": "Leinster Rugby v Munster Rugby",
+      "home": "Leinster Rugby",
+      "away": "Munster Rugby",
+      "date": "2026-10-24",
+      "start_utc": null,
+      "start_local": "Saturday 24 October, KO 18:00 IRE & UK / 19:00 ITA & SA",
+      "start_utc_basis": null,
+      "state": "upcoming",
+      "venue": "Aviva Stadium, Dublin",
+      "source_ids": [
+        "urc-teams"
+      ],
+      "facts": [
+        "Dan Sheehan captains Leinster; Joey Carbery and Jamison Gibson-Park are the named half-backs.",
+        "Tadhg Beirne captains Munster; Charlie O’Shea and Craig Casey are the named half-backs."
+      ],
+      "availability": [
+        "Official starting teams and replacements are published; no injury conclusion is inferred from selection."
+      ],
+      "inputs": null,
+      "flags": [
+        "UTC is not printed by the official article; the two official regional clocks are preserved instead of substituting an OLBG clock."
+      ],
+      "market_gaps": [
+        "Winner, points handicap and total points withheld pending a compatible current table/scoring dataset.",
+        "Try-scorer and player markets withheld; squad publication alone does not supply a scoring baseline."
+      ],
+      "olbg_event_id": "609578",
+      "olbg_state": "expired",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "CR01",
+      "sport": "Cricket",
+      "slug": "cricket",
+      "competition": "India tour of New Zealand · 2nd T20I",
+      "event": "New Zealand v India",
+      "home": "New Zealand",
+      "away": "India",
+      "date": "2026-10-24",
+      "start_utc": null,
+      "start_local": "Saturday 24 October; ICC match list displays 03:00 ‘Your time’ (timezone unresolved)",
+      "start_utc_basis": null,
+      "state": "upcoming",
+      "venue": "Hagley Oval, Christchurch",
+      "source_ids": [
+        "icc-match",
+        "icc-team-news"
+      ],
+      "facts": [
+        "India lead the five-match series 1–0 after chasing 226 with four wickets in hand and two deliveries remaining."
+      ],
+      "availability": [
+        "Ishan Kishan is ruled out with a low-grade right adductor strain; Kumar Kushagra has been added as cover."
+      ],
+      "inputs": null,
+      "flags": [
+        "The ICC page's ‘Your time’ value cannot be converted responsibly without an exposed timezone; UTC remains blank."
+      ],
+      "market_gaps": [
+        "Match winner, innings handicap and match/innings totals withheld: no compatible current team and venue scoring baseline was captured.",
+        "Player props withheld despite team news because no supported player-market baseline was established."
+      ],
+      "olbg_event_id": "188832",
+      "olbg_state": "expired",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "SN01",
+      "sport": "Snooker",
+      "slug": "snooker",
+      "competition": "BetVictor Northern Ireland Open · semi-final",
+      "event": "Kyren Wilson v Sam Craigie",
+      "home": "Kyren Wilson",
+      "away": "Sam Craigie",
+      "date": "2026-10-24",
+      "start_utc": null,
+      "start_local": "24 October; direct official fetch displays 08:00 while the official-domain indexed copy displays 12:00",
+      "start_utc_basis": null,
+      "state": "upcoming",
+      "venue": null,
+      "source_ids": [
+        "wst-match"
+      ],
+      "facts": [
+        "The official match-centre listing identifies a Northern Ireland Open semi-final between Kyren Wilson and Sam Craigie."
+      ],
+      "availability": [],
+      "inputs": null,
+      "flags": [
+        "Official display times conflict (08:00 direct fetch versus 12:00 indexed copy); UTC and a definitive local start remain blank.",
+        "The fetched parent match page carries unrelated 2023 metadata; that metadata was not assigned to this semi-final."
+      ],
+      "market_gaps": [
+        "Match winner, frame handicap and total frames withheld: no current paired player-statistics package was captured.",
+        "Century and highest-break markets withheld: no supported market baseline was established."
+      ],
+      "olbg_event_id": null,
+      "olbg_state": "no_open_listing",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "DA01",
+      "sport": "Darts",
+      "slug": "darts",
+      "competition": "Machineseeker European Championship · Round 2",
+      "event": "Gian van Veen v Luke Woodhouse",
+      "home": "Gian van Veen",
+      "away": "Luke Woodhouse",
+      "date": "2026-10-24",
+      "start_utc": null,
+      "start_local": "Saturday afternoon session, 13:00–17:00 CEST; individual match time not stated",
+      "start_utc_basis": null,
+      "state": "upcoming",
+      "venue": "Westfalenhalle, Dortmund",
+      "source_ids": [
+        "pdc-report"
+      ],
+      "facts": [
+        "Woodhouse won 6–3 against Dirk van Duijvenbode with a nine-dart leg and an average above 99.",
+        "Van Veen won 6–4 against Andrew Gilding with a 99.26 average."
+      ],
+      "availability": [],
+      "inputs": null,
+      "flags": [
+        "The source establishes a four-match afternoon session, not an exact individual start; no precise UTC start is assigned.",
+        "The direct page returned consent text; substantive details come from official-domain search extraction and are labeled accordingly."
+      ],
+      "market_gaps": [
+        "Match winner, leg handicap and total legs withheld: two match averages are insufficient for a calibrated best-of-19 probability.",
+        "180s and highest-checkout markets withheld: no compatible current player distribution was captured."
+      ],
+      "olbg_event_id": "32385",
+      "olbg_state": "expired",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "BB01",
+      "sport": "Baseball",
+      "slug": "baseball",
+      "competition": "2026 World Series · Game 1",
+      "event": "Tampa Bay Rays at Milwaukee Brewers",
+      "home": "Milwaukee Brewers",
+      "away": "Tampa Bay Rays",
+      "date": "2026-10-23",
+      "start_utc": "2026-10-24T00:00:00Z",
+      "start_local": "Official MLB gameDate in UTC",
+      "start_utc_basis": "Official MLB gameDate field",
+      "state": "upcoming",
+      "venue": "American Family Field",
+      "source_ids": [
+        "mlb-schedule",
+        "mlb-al-standings",
+        "mlb-nl-standings"
+      ],
+      "facts": [
+        "MLB status is Pre-Game; probable pitchers are Nick Martinez for Tampa Bay and Jacob Misiorowski for Milwaukee.",
+        "Regular-season totals: Tampa Bay 98–64, 736 runs for/650 against; Milwaukee 103–59, 832 for/618 against."
+      ],
+      "availability": [],
+      "inputs": {
+        "kind": "mlb",
+        "home": {
+          "games": 162,
+          "wins": 103,
+          "losses": 59,
+          "runs_scored": 832,
+          "runs_allowed": 618
+        },
+        "away": {
+          "games": 162,
+          "wins": 98,
+          "losses": 64,
+          "runs_scored": 736,
+          "runs_allowed": 650
+        }
+      },
+      "flags": [
+        "Probable pitchers are named, but no current pitcher-statistics package was captured; the fair-line calculation uses team totals only."
+      ],
+      "market_gaps": [
+        "First-five innings, pitcher props and player props withheld: probable-pitcher names without compatible current statistics are insufficient."
+      ],
+      "olbg_event_id": "160789",
+      "olbg_state": "expired",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "BB02",
+      "sport": "Baseball",
+      "slug": "baseball",
+      "competition": "2026 World Series · Game 2",
+      "event": "Tampa Bay Rays at Milwaukee Brewers · Game 2",
+      "home": "Milwaukee Brewers",
+      "away": "Tampa Bay Rays",
+      "date": "2026-10-24",
+      "start_utc": "2026-10-25T00:00:00Z",
+      "start_local": "Official MLB gameDate in UTC",
+      "start_utc_basis": "Official MLB gameDate field",
+      "state": "upcoming",
+      "venue": "American Family Field",
+      "source_ids": [
+        "mlb-schedule",
+        "mlb-al-standings",
+        "mlb-nl-standings"
+      ],
+      "facts": [
+        "MLB status is Scheduled; probable pitchers are Drew Rasmussen for Tampa Bay and Logan Henderson for Milwaukee.",
+        "The same official regular-season team totals are used; no Game 1 result is assumed."
+      ],
+      "availability": [],
+      "inputs": {
+        "kind": "mlb",
+        "home": {
+          "games": 162,
+          "wins": 103,
+          "losses": 59,
+          "runs_scored": 832,
+          "runs_allowed": 618
+        },
+        "away": {
+          "games": 162,
+          "wins": 98,
+          "losses": 64,
+          "runs_scored": 736,
+          "runs_allowed": 650
+        }
+      },
+      "flags": [
+        "No Game 1 result or current pitcher-statistics package was available at capture; team totals are the only numerical inputs."
+      ],
+      "market_gaps": [
+        "First-five innings, pitcher props and player props withheld pending compatible current pitching statistics and Game 1 availability news."
+      ],
+      "olbg_event_id": null,
+      "olbg_state": "no_open_listing",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "GS01",
+      "sport": "Gaelic Sports",
+      "slug": "gaelic-sports",
+      "competition": "Cork Premier Senior Football Championship · final",
+      "event": "Nemo Rangers v St Finbarrs",
+      "home": "Nemo Rangers",
+      "away": "St Finbarrs",
+      "date": "2026-10-25",
+      "start_utc": null,
+      "start_local": "Sunday 25 October, 16:00 (Cork GAA display)",
+      "start_utc_basis": null,
+      "state": "upcoming",
+      "venue": "SuperValu Páirc Uí Chaoimh",
+      "source_ids": [
+        "cork-fixtures"
+      ],
+      "facts": [
+        "Cork GAA lists the Premier SFC final and referee David Murnane."
+      ],
+      "availability": [],
+      "inputs": null,
+      "flags": [
+        "No UTC offset was exposed in the captured official fixture text; UTC remains blank."
+      ],
+      "market_gaps": [
+        "Winner, points handicap and total points withheld: no compatible current club scoring and availability dataset was captured."
+      ],
+      "olbg_event_id": "3530",
+      "olbg_state": "expired",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "GH01",
+      "sport": "Greyhounds",
+      "slug": "greyhounds",
+      "competition": "GBGB Category One · Dunstall Park finals",
+      "event": "Scurry Gold Cup (270m) and Premier Greyhound Racing Oaks (480m)",
+      "home": null,
+      "away": null,
+      "date": "2026-10-24",
+      "start_utc": null,
+      "start_local": "Saturday 24 October; race times not present in the captured GBGB schedule",
+      "start_utc_basis": null,
+      "state": "upcoming",
+      "venue": "Dunstall Park",
+      "source_ids": [
+        "gbgb-schedule"
+      ],
+      "facts": [
+        "The official schedule lists both Category One events and their distances; winner and winning-time cells are blank."
+      ],
+      "availability": [],
+      "inputs": null,
+      "flags": [
+        "No official final runner list, trap draw or race time was captured; this is an event-level row, not a runner matchup."
+      ],
+      "market_gaps": [
+        "Race winner, forecast/tricast and trap-related markets withheld: runners, traps and current sectional form were not established."
+      ],
+      "olbg_event_id": null,
+      "olbg_state": "no_open_listing",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "TN01",
+      "sport": "Tennis",
+      "slug": "tennis",
+      "competition": "WTA Ningbo Open · singles semi-final",
+      "event": "Elena Rybakina v Diana Shnaider",
+      "home": "Elena Rybakina",
+      "away": "Diana Shnaider",
+      "date": "2026-10-24",
+      "start_utc": null,
+      "start_local": "Saturday 24 October, not before 17:30 on Center Court (official order of play)",
+      "start_utc_basis": null,
+      "state": "upcoming",
+      "venue": "Center Court, Ningbo, China",
+      "source_ids": [
+        "wta-order",
+        "wta-draw"
+      ],
+      "facts": [
+        "The official order of play identifies [1] Rybakina against [6] Shnaider after the preceding semi-final.",
+        "The draw records withdrawals including Iga Świątek and Marta Kostyuk; no inference is made about either semi-finalist's availability."
+      ],
+      "availability": [
+        "Both named semi-finalists remain in the official order of play; no additional health claim is made."
+      ],
+      "inputs": null,
+      "flags": [
+        "The order of play gives a local ‘not before’ time and warns matches may move; no fixed UTC start is assigned.",
+        "Numbers in the draw's seeded-player table are treated as seeds, not substituted for current world rankings."
+      ],
+      "market_gaps": [
+        "Match winner, game/set handicap and total games withheld: no compatible current ranking and surface-performance package was captured.",
+        "Player aces and other props withheld: no supported player-market baseline was established."
+      ],
+      "olbg_event_id": "902163",
+      "olbg_state": "expired",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "MR01",
+      "sport": "Motor Racing",
+      "slug": "motor-racing",
+      "competition": "Formula 1 · United States Grand Prix",
+      "event": "United States Grand Prix · race field",
+      "home": null,
+      "away": null,
+      "date": "2026-10-25",
+      "start_utc": null,
+      "start_local": "Sunday 25 October, 15:00 local; qualifying Saturday 24 October at 16:00 local",
+      "start_utc_basis": null,
+      "state": "upcoming",
+      "venue": "Circuit of The Americas, Austin",
+      "source_ids": [
+        "f1-schedule"
+      ],
+      "facts": [
+        "The official preview says Max Verstappen won in Singapore and Kimi Antonelli leads the championship by 102 points entering Austin."
+      ],
+      "availability": [],
+      "inputs": null,
+      "flags": [
+        "Qualifying had not established a final grid in the captured evidence; local time is preserved without an invented UTC conversion."
+      ],
+      "market_gaps": [
+        "Race winner, podium, head-to-head and qualifying markets withheld: final grid and a compatible current driver-performance package were not captured."
+      ],
+      "olbg_event_id": "913",
+      "olbg_state": "expired",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "HB01",
+      "sport": "Handball",
+      "slug": "handball",
+      "competition": "Handball-Bundesliga · Round 10",
+      "event": "HC Erlangen v THW Kiel",
+      "home": "HC Erlangen",
+      "away": "THW Kiel",
+      "date": "2026-10-24",
+      "start_utc": null,
+      "start_local": "Saturday 24 October, 18:00 in the 22 October club preview",
+      "start_utc_basis": null,
+      "state": "upcoming",
+      "venue": "PSD Bank Arena, Nürnberg",
+      "source_ids": [
+        "kiel-preview"
+      ],
+      "facts": [
+        "Erlangen are unbeaten at home in the preview: 28–28 v Hannover, 29–28 v Bergischer HC and 33–32 v MT Melsungen."
+      ],
+      "availability": [],
+      "inputs": null,
+      "flags": [
+        "Older official schedule snippets displayed 19:00 while the newer 22 October preview says 18:00; the newer preview is shown and the discrepancy retained.",
+        "UTC remains blank because the captured preview does not print an offset."
+      ],
+      "market_gaps": [
+        "Winner (including draw), goal handicap and total goals withheld: a complete paired current table/scoring dataset was not captured.",
+        "Player props withheld: no official match availability and player-statistics package was captured."
+      ],
+      "olbg_event_id": "12091",
+      "olbg_state": "expired",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "IH01",
+      "sport": "Ice Hockey",
+      "slug": "ice-hockey",
+      "competition": "NHL · regular season",
+      "event": "Montréal Canadiens at Chicago Blackhawks",
+      "home": "Chicago Blackhawks",
+      "away": "Montréal Canadiens",
+      "date": "2026-10-23",
+      "start_utc": "2026-10-24T00:00:00Z",
+      "start_local": "Friday 23 October, 8:00 PM ET",
+      "start_utc_basis": "Official NHL startTimeUTC field",
+      "state": "upcoming",
+      "venue": "United Center",
+      "source_ids": [
+        "nhl-schedule-23",
+        "nhl-standings",
+        "nhl-suzuki"
+      ],
+      "facts": [
+        "Official standings: Montréal 4–3–2 with 30 GF/34 GA in nine; Chicago 3–6–0 with 21 GF/36 GA in nine."
+      ],
+      "availability": [
+        "Nick Suzuki is out 2–4 weeks with an upper-body injury; he had 12 points in nine games."
+      ],
+      "inputs": {
+        "kind": "nhl",
+        "home": {
+          "games": 9,
+          "wins": 3,
+          "losses": 6,
+          "ot_losses": 0,
+          "goals_for": 21,
+          "goals_against": 36
+        },
+        "away": {
+          "games": 9,
+          "wins": 4,
+          "losses": 3,
+          "ot_losses": 2,
+          "goals_for": 30,
+          "goals_against": 34
+        }
+      },
+      "flags": [
+        "Starting goalies and complete lineup changes were not captured; fair lines remain experimental and cannot become High picks.",
+        "Suzuki's confirmed absence is disclosed but not assigned an invented numerical adjustment in the team-total calculation."
+      ],
+      "market_gaps": [
+        "Starting-goalie and player props withheld: no compatible current goalie/lineup dataset was captured."
+      ],
+      "olbg_event_id": "199984",
+      "olbg_state": "expired",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "IH02",
+      "sport": "Ice Hockey",
+      "slug": "ice-hockey",
+      "competition": "NHL · regular season",
+      "event": "Tampa Bay Lightning at Colorado Avalanche",
+      "home": "Colorado Avalanche",
+      "away": "Tampa Bay Lightning",
+      "date": "2026-10-23",
+      "start_utc": "2026-10-24T01:00:00Z",
+      "start_local": "Official NHL startTimeUTC in UTC",
+      "start_utc_basis": "Official NHL startTimeUTC field",
+      "state": "upcoming",
+      "venue": "Ball Arena",
+      "source_ids": [
+        "nhl-schedule-23",
+        "nhl-standings"
+      ],
+      "facts": [
+        "Official standings: Tampa Bay 7–2–0 with 31 GF/23 GA in nine; Colorado 5–4–1 with 41 GF/31 GA in ten."
+      ],
+      "availability": [],
+      "inputs": {
+        "kind": "nhl",
+        "home": {
+          "games": 10,
+          "wins": 5,
+          "losses": 4,
+          "ot_losses": 1,
+          "goals_for": 41,
+          "goals_against": 31
+        },
+        "away": {
+          "games": 9,
+          "wins": 7,
+          "losses": 2,
+          "ot_losses": 0,
+          "goals_for": 31,
+          "goals_against": 23
+        }
+      },
+      "flags": [
+        "Starting goalies and complete availability reports were not captured; fair lines remain experimental."
+      ],
+      "market_gaps": [
+        "Starting-goalie and player props withheld: no compatible current goalie/lineup dataset was captured."
+      ],
+      "olbg_event_id": null,
+      "olbg_state": "no_open_listing",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "IH03",
+      "sport": "Ice Hockey",
+      "slug": "ice-hockey",
+      "competition": "NHL · regular season · 24 October schedule",
+      "event": "Anaheim Ducks at Philadelphia Flyers",
+      "home": "Philadelphia Flyers",
+      "away": "Anaheim Ducks",
+      "date": "2026-10-24",
+      "start_utc": "2026-10-24T17:00:00Z",
+      "start_local": "Official NHL startTimeUTC in UTC",
+      "start_utc_basis": "Official NHL startTimeUTC field",
+      "state": "upcoming",
+      "venue": null,
+      "source_ids": [
+        "nhl-schedule-24",
+        "nhl-standings"
+      ],
+      "facts": [
+        "Official standings: Anaheim 4–6–0 with 27 GF/33 GA in ten; Philadelphia 3–6–3 with 20 GF/37 GA in twelve."
+      ],
+      "availability": [],
+      "inputs": {
+        "kind": "nhl",
+        "home": {
+          "games": 12,
+          "wins": 3,
+          "losses": 6,
+          "ot_losses": 3,
+          "goals_for": 20,
+          "goals_against": 37
+        },
+        "away": {
+          "games": 10,
+          "wins": 4,
+          "losses": 6,
+          "ot_losses": 0,
+          "goals_for": 27,
+          "goals_against": 33
+        }
+      },
+      "flags": [
+        "Venue, starting goalies and complete availability were not established in the captured evidence; venue is blank and lines remain experimental."
+      ],
+      "market_gaps": [
+        "Starting-goalie and player props withheld: no compatible current goalie/lineup dataset was captured."
+      ],
+      "olbg_event_id": null,
+      "olbg_state": "no_open_listing",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "IH04",
+      "sport": "Ice Hockey",
+      "slug": "ice-hockey",
+      "competition": "NHL · regular season · 24 October schedule",
+      "event": "Los Angeles Kings at New Jersey Devils",
+      "home": "New Jersey Devils",
+      "away": "Los Angeles Kings",
+      "date": "2026-10-24",
+      "start_utc": "2026-10-24T19:30:00Z",
+      "start_local": "Official NHL startTimeUTC in UTC",
+      "start_utc_basis": "Official NHL startTimeUTC field",
+      "state": "upcoming",
+      "venue": null,
+      "source_ids": [
+        "nhl-schedule-24",
+        "nhl-standings"
+      ],
+      "facts": [
+        "Official standings: Los Angeles 2–4–2 with 20 GF/29 GA in eight; New Jersey 6–4–0 with 33 GF/31 GA in ten."
+      ],
+      "availability": [],
+      "inputs": {
+        "kind": "nhl",
+        "home": {
+          "games": 10,
+          "wins": 6,
+          "losses": 4,
+          "ot_losses": 0,
+          "goals_for": 33,
+          "goals_against": 31
+        },
+        "away": {
+          "games": 8,
+          "wins": 2,
+          "losses": 4,
+          "ot_losses": 2,
+          "goals_for": 20,
+          "goals_against": 29
+        }
+      },
+      "flags": [
+        "Venue, starting goalies and complete availability were not established in the captured evidence; venue is blank and lines remain experimental."
+      ],
+      "market_gaps": [
+        "Starting-goalie and player props withheld: no compatible current goalie/lineup dataset was captured."
+      ],
+      "olbg_event_id": null,
+      "olbg_state": "no_open_listing",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "IH05",
+      "sport": "Ice Hockey",
+      "slug": "ice-hockey",
+      "competition": "NHL · regular season · 24 October schedule",
+      "event": "San Jose Sharks at Boston Bruins",
+      "home": "Boston Bruins",
+      "away": "San Jose Sharks",
+      "date": "2026-10-24",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_local": "Official NHL startTimeUTC in UTC",
+      "start_utc_basis": "Official NHL startTimeUTC field",
+      "state": "upcoming",
+      "venue": null,
+      "source_ids": [
+        "nhl-schedule-24",
+        "nhl-standings"
+      ],
+      "facts": [
+        "Official standings: San Jose 6–4–1 with 33 GF/37 GA in eleven; Boston 8–2–1 with 42 GF/22 GA in eleven."
+      ],
+      "availability": [],
+      "inputs": {
+        "kind": "nhl",
+        "home": {
+          "games": 11,
+          "wins": 8,
+          "losses": 2,
+          "ot_losses": 1,
+          "goals_for": 42,
+          "goals_against": 22
+        },
+        "away": {
+          "games": 11,
+          "wins": 6,
+          "losses": 4,
+          "ot_losses": 1,
+          "goals_for": 33,
+          "goals_against": 37
+        }
+      },
+      "flags": [
+        "Venue, starting goalies and complete availability were not established in the captured evidence; venue is blank and lines remain experimental."
+      ],
+      "market_gaps": [
+        "Starting-goalie and player props withheld: no compatible current goalie/lineup dataset was captured."
+      ],
+      "olbg_event_id": null,
+      "olbg_state": "no_open_listing",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "BK01",
+      "sport": "Basketball",
+      "slug": "basketball",
+      "competition": "NBA · regular season",
+      "event": "New York Knicks at Boston Celtics",
+      "home": "Boston Celtics",
+      "away": "New York Knicks",
+      "date": "2026-10-23",
+      "start_utc": "2026-10-23T23:00:00Z",
+      "start_local": "Friday 23 October, 7:00 PM ET",
+      "start_utc_basis": "Official ET start converted with America/New_York (EDT, UTC−4 on this date)",
+      "state": "upcoming",
+      "venue": "TD Garden, Boston",
+      "source_ids": [
+        "nba-game",
+        "nba-standings-2025",
+        "nba-injury"
+      ],
+      "facts": [
+        "Both teams are 0–1 after opening losses: New York lost 106–100 and Boston lost 121–113.",
+        "Historical context only: official 2025–26 standings were Boston 56–26 and New York 53–29."
+      ],
+      "availability": [
+        "New York lists Jaden Akins, Kevin McCullar Jr. and Tyler Nickel questionable as two-way players; Boston lists Devin Carter out with illness."
+      ],
+      "inputs": null,
+      "flags": [
+        "Current rosters changed materially in the official preview, so last-season records are not promoted into a current moneyline price."
+      ],
+      "market_gaps": [
+        "Winner, spread and total points withheld: one current game per team and major roster changes do not provide a supportable paired scoring baseline.",
+        "Player props withheld: the injury report establishes listed statuses but not a current role/minutes baseline."
+      ],
+      "olbg_event_id": "534842",
+      "olbg_state": "expired",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    },
+    {
+      "id": "RL01",
+      "sport": "Rugby League",
+      "slug": "rugby-league",
+      "competition": "2026 Men's Rugby League World Cup · Round 2",
+      "event": "Papua New Guinea v Samoa",
+      "home": "Papua New Guinea",
+      "away": "Samoa",
+      "date": "2026-10-24",
+      "start_utc": "2026-10-24T04:25:00Z",
+      "start_local": "Saturday 24 October, 3:25 PM AEDT",
+      "start_utc_basis": "Official AEDT start converted at UTC+11",
+      "state": "upcoming",
+      "venue": "Santos National Football Stadium, Port Moresby",
+      "source_ids": [
+        "nrl-teams"
+      ],
+      "facts": [
+        "The NRL page publishes the fixture, venue and official team lists, with a 23 October 7:06 PM update stamp."
+      ],
+      "availability": [
+        "Official team lists are present; no additional injury inference is made from selection."
+      ],
+      "inputs": null,
+      "flags": [],
+      "market_gaps": [
+        "Winner, points handicap and total points withheld: no compatible paired current scoring/strength dataset was captured.",
+        "Try-scorer markets withheld: squad lists alone do not establish a scoring distribution."
+      ],
+      "olbg_event_id": null,
+      "olbg_state": "no_open_listing",
+      "open_olbg_market": false,
+      "registered_at": "2026-10-23T21:36:17Z",
+      "evidence_expires_at": "2026-10-24T03:36:17Z"
+    }
+  ]
+}
