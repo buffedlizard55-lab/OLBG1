@@ -4848,8 +4848,7 @@ already session-namespaced, so no work collided; only the section number did.
 
 Claimed **2026-10-23T16:35Z** as **TED71**, published as **§71** after a section-number collision (see the note above). The task id is session-namespaced
 (`T` + `ED71` from `ed71b937`) so it cannot collide with a concurrent numeric claim, following
-the precedent of `T257E`, `T546F`, `T2988` and `T424375B4`. §61 is the next free section
-(the document tail at claim time).
+the precedent of `T257E`, `T546F`, `T2988` and `T424375B4`.
 
 **Why a new desk rather than a refresh of an existing one.** The canonical evidence policy
 (recorded in the root `README.md`) expires fixture evidence **six hours from its original lower
@@ -4895,3 +4894,119 @@ Root navigation is not edited (§0.4); the canonical `archive.html` auto-lists t
 `index.html` desks, so `/ed71b937/` becomes reachable from the published root without a
 shared-file change.
 
+### 71.1 TED71 completion receipts — desk built, validated, PR opened
+
+Completed **2026-10-23T17:25Z**. Everything below was produced by the five
+scripts named, and every count is read back from the emitted JSON rather than
+restated from memory.
+
+**Pipeline (run in this order, all clean).**
+
+| Script | Output | Result |
+| --- | --- | --- |
+| `scripts/sed71b937_dataset.py` | `data/ed71b937/fixtures.json` | 129 rows · 20 officially sourced · 109 discovery-only · 128 OLBG-listed · 1 official-only · 14 sports with rows · 11 official sources · 16 flags |
+| `scripts/sed71b937_model.py` | `data/ed71b937/lines.json` | 87 selections · 72 priced · 15 unpriced · tiers `{high-in-band 2, out-of-band-short 10, medium 10, low 50, unpriced 15}` |
+| `scripts/sed71b937_predictions.py` | `data/ed71b937/predictions.json` | 2 predictions, 148 and 141 words, prose gate PASS |
+| `scripts/sed71b937_build_site.py` | `ed71b937/*.html` | 25 pages (10 top-level + 15 per-sport) |
+| `scripts/sed71b937_validate.py` | — | **258 checks passed, 0 failed** |
+
+**Repo gates.** `python3 -m unittest discover -s tests/pipeline` → 145 tests OK.
+`python3 -m unittest discover -s tests -p 'test*.py'` → 38 tests OK.
+`python3 -m pipeline.build --out _site` → 85 canonical pages.
+`python3 -m pipeline.validate --site _site` and `python3 scripts/validate.py`
+both failed on first run with `archive.html: broken link ed71b937/index.html`;
+root cause was that `pipeline.build.stage_existing()` stages only files tracked
+by `git ls-files`, so the desk had to be committed before the canonical build
+could see it. Re-run after commit is clean. **Lesson for future desks: commit
+the desk before running the canonical build, or `archive.html` will link a
+path that `_site` does not contain.**
+
+**The two High selections** (both Basketball, both round-7 EuroLeague, both
+inside the stated band, both resting on an officially sourced fixture):
+
+| Row | Fixture | Market | p | Fair |
+| --- | --- | --- | --- | --- |
+| `ED71-017` | Zalgiris Kaunas v LDLC ASVEL Villeurbanne | Zalgiris Kaunas +6.5 | 0.7012 | 1.4262 / −235 |
+| `ED71-019` | Paris Basketball v Valencia Basket | Valencia Basket −4.5 | 0.7107 | 1.4070 / −246 |
+
+Both were re-derived by hand outside the model script and matched to four
+decimal places. The handicap sign bug found earlier (a rung published under the
+inequality it does not settle) stays fixed: all four rungs are published with
+the inequality each actually settles, and the independent arithmetic check is
+what caught it.
+
+**Two inputs were rejected, and both rejections changed a published number.**
+
+* **ED71-F-14 — standings one round stale.** The first EuroLeague table read
+  came from `mediacentre.euroleague.net/.../game19245.pdf`, whose table shows
+  every club on five games played while today's fixtures are round seven. It
+  was discarded before any price was struck. Standings were re-read on
+  `https://www.olympiacosbc.gr/el/` (a club site, official under §0.5) showing
+  six games played. Had the stale table been used, Paris v Valencia would have
+  been offered at **6.5** instead of **4.5** points — a materially different
+  bet on the same fixture.
+* **ED71-F-15 — self-contradictory odds feed.** `api-web.nhle.com` returns an
+  unlabelled odds array mixing decimal and American, in which providers
+  disagree about the favourite for the same game (one had MTL 2.35 / CHI 1.59,
+  another MTL 1.60 / CHI 2.37). Not used as a pricing input anywhere.
+
+**Corroborating find.** The Olympiacos club fixture list gives this desk's
+Olympiacos v Fenerbahce game as **23/10/2026 21:15** local, which is 18:15Z and
+matches the UTC start this desk derived from the OLBG rendering by the +4h
+offset. That is an independent confirmation of ED71-F-01 from a second source.
+
+**Deviation from the claim above.** The claim said reads would be recorded in
+`data/ed71b937/sources.json`. That file was not created; sources are carried
+inline per row (`rows[].official.sources`) and aggregated on the desk's
+`sources.html`, which lists every official URL against the row ids it backs.
+No other deviation.
+
+**The five-per-sport target was not met and is not faked.** Fair decimal is
+`1/p` with no margin, so −250 is 1.400 = p 0.71429. The brief's conjunction
+(p ≥ 0.700 **and** price ≥ −250) is therefore satisfiable only inside the
+1.43-point window p ∈ [0.700, 0.71429]. Two selections land in it. Ten more
+clear 0.700 but are priced shorter than −250; they are published in a
+disclosure ledger and are never promoted, following the T66 precedent. This is
+arithmetic about the stated band, not caution, and it is stated plainly on the
+desk's landing page.
+
+**Coverage gaps published as gaps, not padded.** Golf: the OLBG hub returned
+the literal string `No tips found.` (ED71-F-13). Rugby League: three 2027
+outright props and no fixtures (ED71-F-12). Both pages say so. No invented
+matches.
+
+**Flag register: 16 entries**, all reproduced on `ed71b937/flagged.html` and
+asserted there by the validator (ED71-F-01 … ED71-F-16).
+
+### 71.2 Rebase conflicts resolved (append-only, zero deletions)
+
+`COORDINATION.md` conflicted twice while PR #169 was open, because three other
+sessions merged to `main` in the same window. Both resolutions keep **every**
+upstream line verbatim and append this session's own section after it.
+
+1. **First rebase** onto `77a88ab`. Upstream had added `T2B72` §61/§61.1
+   (`2b72da34-olbg1`), plus §67, §68, §69 and §70 (`fa24508c-olbg1`,
+   `cf2699ba-olbg1`). This session's section was written against §61, which
+   upstream had already taken, so it is published as **§71** and every forward
+   reference in it was renumbered. **Self-inflicted error caught and
+   corrected:** the first renumbering pass used an over-broad string replace
+   that also rewrote `(this row + §61)` to `§71` inside the unrelated `T2AEE`
+   task row at line 141. That row was restored byte-for-byte from
+   `origin/main` and the audit below was re-run. Lesson: renumber only inside
+   your own section, never with a whole-file replace.
+2. **Second rebase** onto `d2de212`, which added `fa24508c`'s §67.1 receipts.
+   Resolved the same way: upstream §67.1 kept verbatim, §71 appended after it.
+
+**Audit run after each resolution.** Every non-empty line of
+`origin/main:COORDINATION.md` was checked for presence in the resolved file:
+
+```
+lines from origin/main absent: 0
+markers left: 0
+rows mentioning §71: ['TED71']
+```
+
+No other session's row or section was edited, reordered, renumbered or
+discarded. This is the sixth numbering collision on this board and the pattern
+is now consistent: the later session renumbers itself and never touches the
+earlier text.
