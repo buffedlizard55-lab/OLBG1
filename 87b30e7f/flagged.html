@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flagged for Review · OLBG 15-Sport Origination Desk (87b30e7f)</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">OLBG 15-Sport Desk <small>Session 87b30e7f · 23 Oct 2026</small></a>
+      <nav class="nav-links" aria-label="Desk navigation"><a href="index.html" class="">Executive Summary</a><a href="picks.html" class="">All 75 Fixtures &amp; Lines</a><a href="predictions.html" class="">75 Daily Predictions</a><a href="flagged.html" class="active">Flagged for Review</a><a href="audit.html" class="">Repo Audit &amp; OLBG</a><a href="methodology.html" class="">Methodology</a><a href="../index.html" class="">Root Desk ↗</a></nav>
+    </div>
+  </header>
+  <main class="wrap">
+    
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Strict Zero-Inference Governance</p>
+        <h1>Flagged for Review — Blank Unconfirmed Fields &amp; Retired Fixtures</h1>
+        <p>Where an official source has not yet confirmed an opponent, probable pitcher, coin-toss XI, or injury filing, we leave the structured value strictly blank (<code>""</code>) and either cap confidence or withhold the fixture completely.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn primary" href="../data/87b30e7f/flagged.json">Raw flagged.json</a>
+      </div>
+    </section>
+
+    <div class="notice"><strong>Zero Hallucination Guarantee:</strong> No live in-play quarter-final decider (e.g., WST Match 60 tied 4–4), unposted MLB World Series Game 3–5 starter, or unsubmitted Saturday NBA injury sheet was guessed or interpolated.</div>
+
+    <div class="section-head"><div><h2>1. Unconfirmed Values Left Blank (8 Items)</h2><p>Every item links directly to the authoritative governing-body endpoint inspected at build time.</p></div></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Flag ID</th><th>Sport</th><th>Fixture / Slate</th><th>Field</th><th>Stored Value</th><th>Status &amp; Verification Note</th><th>Official Source</th></tr></thead>
+        <tbody><tr>
+          <td class="num">FLG-UF-01</td>
+          <td><span class="badge sport">Snooker</span></td>
+          <td><strong>BetVictor Northern Ireland Open Semi-Final 2: Mark Williams vs [BLANK]</strong><br><small class="num" style="color:var(--muted)">Ref: WST-NI-M62 (Withheld)</small></td>
+          <td class="num">opponent_2</td>
+          <td class="blank-cell">"" (Left Blank)</td>
+          <td><span class="badge flag">Unverified — Left Blank</span><br><small style="color:var(--muted)">Mark Williams defeated David Gilbert 6-4 in QF3, but QF4 (Jak Jones vs Scott Donaldson, Match 60) remained tied 4-4 in-play at build cutoff. Opponent 2 is left blank rather than inferred, and 5 confirmed WST Match Centre ties are priced instead.</small></td>
+          <td><a class="src-pill" href="https://www.wst.tv/matches/" target="_blank" rel="noopener noreferrer">WST Official ↗</a></td>
+        </tr><tr>
+          <td class="num">FLG-UF-02</td>
+          <td><span class="badge sport">Baseball</span></td>
+          <td><strong>Milwaukee Brewers @ Tampa Bay Rays (World Series Game 3)</strong><br><small class="num" style="color:var(--muted)">Ref: 87b3-BB-03</small></td>
+          <td class="num">probable_pitchers</td>
+          <td class="blank-cell">"" (Left Blank)</td>
+          <td><span class="badge flag">Unverified — Left Blank</span><br><small style="color:var(--muted)">MLB StatsAPI gamePk=849804 (2026-10-27T00:00:00Z) has not yet published Game 3 probable pitchers. Starter fields are left blank and confidence is capped at Medium.</small></td>
+          <td><a class="src-pill" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-23&amp;endDate=2026-10-31&amp;hydrate=probablePitcher,team,venue" target="_blank" rel="noopener noreferrer">MLB StatsAPI ↗</a></td>
+        </tr><tr>
+          <td class="num">FLG-UF-03</td>
+          <td><span class="badge sport">Baseball</span></td>
+          <td><strong>Milwaukee Brewers @ Tampa Bay Rays (World Series Game 4)</strong><br><small class="num" style="color:var(--muted)">Ref: 87b3-BB-04</small></td>
+          <td class="num">probable_pitchers</td>
+          <td class="blank-cell">"" (Left Blank)</td>
+          <td><span class="badge flag">Unverified — Left Blank</span><br><small style="color:var(--muted)">MLB StatsAPI gamePk=849803 (2026-10-28T00:00:00Z) has not yet published Game 4 probable pitchers. Starter fields are left blank and confidence is capped at Medium.</small></td>
+          <td><a class="src-pill" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-23&amp;endDate=2026-10-31&amp;hydrate=probablePitcher,team,venue" target="_blank" rel="noopener noreferrer">MLB StatsAPI ↗</a></td>
+        </tr><tr>
+          <td class="num">FLG-UF-04</td>
+          <td><span class="badge sport">Baseball</span></td>
+          <td><strong>Milwaukee Brewers @ Tampa Bay Rays (World Series Game 5 — If Necessary)</strong><br><small class="num" style="color:var(--muted)">Ref: 87b3-BB-05</small></td>
+          <td class="num">probable_pitchers / series_continuation</td>
+          <td class="blank-cell">"" (Left Blank)</td>
+          <td><span class="badge flag">Conditional &amp; Blank Starters</span><br><small style="color:var(--muted)">MLB StatsAPI gamePk=849799 carries ifNecessary=&#x27;Y&#x27; and blank probable starters; explicitly disclosed as conditional and capped at Low confidence.</small></td>
+          <td><a class="src-pill" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-23&amp;endDate=2026-10-31&amp;hydrate=probablePitcher,team,venue" target="_blank" rel="noopener noreferrer">MLB StatsAPI ↗</a></td>
+        </tr><tr>
+          <td class="num">FLG-UF-05</td>
+          <td><span class="badge sport">Greyhounds</span></td>
+          <td><strong>21:54 Dunstall Park — PGR Stayers Div 1 (Race 12, 660m)</strong><br><small class="num" style="color:var(--muted)">Ref: 87b3-GH-05</small></td>
+          <td class="num">trap_6_runner</td>
+          <td class="blank-cell">"" (Left Blank)</td>
+          <td><span class="badge flag">Official Vacant Trap — Left Blank</span><br><small style="color:var(--muted)">Official Dunstall Park GBGB Meeting 216 racecard PDF lists Trap 6 as VACANT (5 runners declared in Traps 1-5); Trap 6 cell left blank and 5-dog Plackett-Luce book originated.</small></td>
+          <td><a class="src-pill" href="https://www.dunstallpark-greyhounds.co.uk/DunstallParkGreyhounds/downloads/24-10-2026-evening-racecard.pdf" target="_blank" rel="noopener noreferrer">Dunstall Park PDF ↗</a></td>
+        </tr><tr>
+          <td class="num">FLG-UF-06</td>
+          <td><span class="badge sport">Basketball</span></td>
+          <td><strong>Saturday Oct 24 NBA Slate (MIA@CHA, BKN@CLE, MIL@PHI, SAS@DAL, WAS@CHI, HOU@ATL, NOP@DEN, GSW@PHX)</strong><br><small class="num" style="color:var(--muted)">Ref: NBA-SAT-20261024 (Withheld)</small></td>
+          <td class="num">referee_injury_designations</td>
+          <td class="blank-cell">"" (Left Blank)</td>
+          <td><span class="badge flag">NOT YET SUBMITTED — Left Blank</span><br><small style="color:var(--muted)">Official 2026-10-23 3:45 PM ET NBA Referee Injury Report lists &#x27;NOT YET SUBMITTED&#x27; for all 16 Saturday teams; withheld in favour of Friday &gt;=00:00Z NBA games with filed injury reports.</small></td>
+          <td><a class="src-pill" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-23_03_45PM.pdf" target="_blank" rel="noopener noreferrer">NBA Official PDF ↗</a></td>
+        </tr><tr>
+          <td class="num">FLG-UF-07</td>
+          <td><span class="badge sport">Tennis</span></td>
+          <td><strong>ATP 250 Lyon Semi-Final 2: [1] Flavio Cobolli vs [BLANK]</strong><br><small class="num" style="color:var(--muted)">Ref: ATP-LYON-SF2 (Withheld)</small></td>
+          <td class="num">opponent_2</td>
+          <td class="blank-cell">"" (Left Blank)</td>
+          <td><span class="badge flag">Unverified — Left Blank</span><br><small style="color:var(--muted)">Official Lyon Saturday Order of Play PDF lists &#x27;[1] Cobolli vs Van Assche or [6] Musetti&#x27; pending late Friday night QF4 completion; Opponent 2 left blank and confirmed SF1 (Paul vs Fritz) priced instead.</small></td>
+          <td><a class="src-pill" href="https://www.protennislive.com/posting/2026/496/op.pdf" target="_blank" rel="noopener noreferrer">ATP OOP PDF ↗</a></td>
+        </tr><tr>
+          <td class="num">FLG-UF-08</td>
+          <td><span class="badge sport">Cricket</span></td>
+          <td><strong>WA vs NSW, Pakistan vs England, South Africa vs Australia (3rd Test)</strong><br><small class="num" style="color:var(--muted)">Ref: 87b3-CR-01 / CR-04 / CR-05</small></td>
+          <td class="num">final_toss_playing_xi</td>
+          <td class="blank-cell">"" (Left Blank)</td>
+          <td><span class="badge flag">Confirmed Squads — Toss XI Pending</span><br><small style="color:var(--muted)">Official series squads and injury replacements are confirmed on cricket.com.au &amp; icc-cricket.com, while final 11-player match sheets are only declared at the pre-match coin toss (left blank until toss).</small></td>
+          <td><a class="src-pill" href="https://www.icc-cricket.com/news/pakistan-name-squads-for-home-white-ball-assignments" target="_blank" rel="noopener noreferrer">ICC Official ↗</a></td>
+        </tr></tbody>
+      </table>
+    </div>
+
+    <div class="section-head"><div><h2>2. Retired / Completed Friday Fixtures (6 Groups)</h2><p>Elapsed Friday Oct 23 events removed from active recommendations and absorbed into weekend form ratings.</p></div></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>ID</th><th>Sport</th><th>Completed / Retired Events</th><th>Disposition</th><th>Audit Trail</th><th>Official Source</th></tr></thead>
+        <tbody><tr>
+          <td class="num">FLG-RET-01</td>
+          <td><span class="badge sport">Snooker</span></td>
+          <td><strong>NI Open Quarter-Finals: McGill 1-6 K. Wilson, Craigie 6-2 Slessor, Gilbert 4-6 M. Williams</strong></td>
+          <td><span class="badge low">Retired (Completed Fri 23 Oct)</span></td>
+          <td>Completed on 2026-10-23; results absorbed into Saturday Semi-Final form ratings rather than displayed as upcoming.</td>
+          <td><a class="src-pill" href="https://www.wst.tv/matches/" target="_blank" rel="noopener noreferrer">WST Official ↗</a></td>
+        </tr><tr>
+          <td class="num">FLG-RET-02</td>
+          <td><span class="badge sport">Darts</span></td>
+          <td><strong>PDC European Championship R1 Day 2: Doets 6-3 MvG, Rock 6-1 Dobey, Littler 6-3 O&#x27;Connor, Clayton 6-3 Springer, Ratajski 6-2 Chisnall</strong></td>
+          <td><span class="badge low">Retired (Completed Fri 23 Oct)</span></td>
+          <td>Completed Friday evening in Dortmund; winners promoted into our verified Saturday Oct 24 Round 2 Best-of-19 slate.</td>
+          <td><a class="src-pill" href="https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/" target="_blank" rel="noopener noreferrer">PDC.tv ↗</a></td>
+        </tr><tr>
+          <td class="num">FLG-RET-03</td>
+          <td><span class="badge sport">Rugby League</span></td>
+          <td><strong>RLWC Round 2 Openers: Tonga 36-0 Lebanon (Men) &amp; Samoa 76-0 Wales (Women)</strong></td>
+          <td><span class="badge low">Retired (Completed Fri 23 Oct)</span></td>
+          <td>Already completed prior to build cutoff; replaced with 5 upcoming Sat-Sun Oct 24-25 RLWC Round 2 matches.</td>
+          <td><a class="src-pill" href="https://www.nrl.com/news/2026/10/20/world-cup-team-lists-mens-round-2/" target="_blank" rel="noopener noreferrer">NRL / RLWC ↗</a></td>
+        </tr><tr>
+          <td class="num">FLG-RET-04</td>
+          <td><span class="badge sport">Basketball</span></td>
+          <td><strong>EuroLeague Round 7 (10 games Thu-Fri Oct 22-23) &amp; Early Friday NBA 23:00Z Wave (NYK@BOS, DAL@IND, MIN@ORL, TOR@WAS)</strong></td>
+          <td><span class="badge low">Retired / Pre-Midnight Cutoff</span></td>
+          <td>EuroLeague R7 completed Fri evening and NBA 23:00Z wave starts before our &gt;=2026-10-24T00:00:00Z safety cutoff; NYK@BOS retained strictly as OLBG event_id=534842 benchmark.</td>
+          <td><a class="src-pill" href="https://www.euroleaguebasketball.net/en/euroleague/news/euroleague-regular-season-round-7-game-center-round-7-el2627/" target="_blank" rel="noopener noreferrer">EuroLeague ↗</a></td>
+        </tr><tr>
+          <td class="num">FLG-RET-05</td>
+          <td><span class="badge sport">Rugby Union &amp; Handball</span></td>
+          <td><strong>Friday URC Round 4 (Edinburgh, Sharks, Connacht) &amp; StarLigue J8 Friday Wave (5 matches)</strong></td>
+          <td><span class="badge low">Retired (Completed Fri 23 Oct)</span></td>
+          <td>Completed Friday evening; updated points tables incorporated into Saturday/Sunday URC &amp; StarLigue handicap models.</td>
+          <td><a class="src-pill" href="https://stats.unitedrugby.com/match-centre/table/" target="_blank" rel="noopener noreferrer">URC Stats ↗</a></td>
+        </tr><tr>
+          <td class="num">FLG-RET-06</td>
+          <td><span class="badge sport">Greyhounds</span></td>
+          <td><strong>Romford Friday Champion Stakes Card (2026-10-23 evening)</strong></td>
+          <td><span class="badge low">Retired (Completed Fri 23 Oct)</span></td>
+          <td>Friday evening Romford card elapsed; replaced with 5 Saturday Oct 24 Dunstall Park Open races (including Category One Scurry Gold Cup &amp; Oaks Finals).</td>
+          <td><a class="src-pill" href="https://www.gbgb.org.uk/racing/open-races/2025-category-one-schedule/" target="_blank" rel="noopener noreferrer">GBGB Official ↗</a></td>
+        </tr></tbody>
+      </table>
+    </div>
+    
+    <footer>
+      <span>Independent multi-market line origination &amp; official-source verification across 15 covered OLBG sports. Zero unverified values inferred.</span>
+      <span>Snapshot: 2026-10-23T22:00:00Z · <a href="flagged.html">Flagged for Review</a> · <a href="../reports/SESSION_87B30E7F.html">Technical Report</a></span>
+    </footer>
+  </main>
+</body>
+</html>

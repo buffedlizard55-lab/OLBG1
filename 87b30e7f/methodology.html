@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methodology · OLBG 15-Sport Origination Desk (87b30e7f)</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">OLBG 15-Sport Desk <small>Session 87b30e7f · 23 Oct 2026</small></a>
+      <nav class="nav-links" aria-label="Desk navigation"><a href="index.html" class="">Executive Summary</a><a href="picks.html" class="">All 75 Fixtures &amp; Lines</a><a href="predictions.html" class="">75 Daily Predictions</a><a href="flagged.html" class="">Flagged for Review</a><a href="audit.html" class="">Repo Audit &amp; OLBG</a><a href="methodology.html" class="active">Methodology</a><a href="../index.html" class="">Root Desk ↗</a></nav>
+    </div>
+  </header>
+  <main class="wrap">
+    
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Quantitative Pricing &amp; Confidence Calibration</p>
+        <h1>Line-Origination Methodology &amp; High-Confidence Rules</h1>
+        <p>All 300 markets are originated independently from parametric probability distributions—never scraped or copied from bookmakers.</p>
+      </div>
+    </section>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Sport Group</th><th>Parametric Family</th><th>Specification &amp; Market Consistency</th><th>Reference Feed</th></tr></thead>
+        <tbody><tr>
+          <td><strong>Snooker, Darts, Tennis, Volleyball</strong></td>
+          <td>Exact Negative-Binomial Race-to-K</td>
+          <td>Single-frame/leg/set win probability p_u derived from official tour hold/break, 3-dart average, or point-quotient splits; exact combinatorial score distribution P(K, j) prices Winner, Handicap &amp; Total simultaneously with zero internal arbitrage.</td>
+          <td><a class="src-pill" href="https://www.wst.tv/matches/" target="_blank" rel="noopener noreferrer">WST Official ↗</a></td>
+        </tr><tr>
+          <td><strong>Baseball, Ice Hockey</strong></td>
+          <td>Bivariate Poisson / Skellam</td>
+          <td>Expected run/goal rates (lambda_away, lambda_home) calibrated from 162-game MLB RS/RA + starter splits and 2026-27 NHL home/road GF/GA rates; yields Moneyline, ±1.5 Run/Puck Line, Totals, and F5/1P derivatives.</td>
+          <td><a class="src-pill" href="https://statsapi.mlb.com/api/v1/standings?leagueId=104&amp;season=2026&amp;standingsTypes=regularSeason" target="_blank" rel="noopener noreferrer">MLB StatsAPI ↗</a></td>
+        </tr><tr>
+          <td><strong>Basketball, Rugby Union, Rugby League, Handball, Gaelic Sports</strong></td>
+          <td>Normal Margin &amp; Total Engine</td>
+          <td>Margin M ~ N(mu_margin, sigma_margin) incorporating venue advantage, points/goal differential, and official referee/team-sheet injury adjustments; three-way draw band (±0.5) applied for URC, Handball &amp; 60-min GAA.</td>
+          <td><a class="src-pill" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-23_03_45PM.pdf" target="_blank" rel="noopener noreferrer">NBA Official PDF ↗</a></td>
+        </tr><tr>
+          <td><strong>Golf, Motor Racing, Greyhounds</strong></td>
+          <td>Plackett-Luce / Harville Multi-Runner</td>
+          <td>Normalized field weights across 36-hole leaderboard strokes, FP1/Practice sector pace, or GBGB semi-final sectional clocks &amp; trap seeds; pairwise w_A/(w_A+w_B) prices 2-ball &amp; head-to-head matchups.</td>
+          <td><a class="src-pill" href="https://www.gbgb.org.uk/shadow-storm-chases-scurry-gold-cup-history-at-dunstall-park/" target="_blank" rel="noopener noreferrer">GBGB Official ↗</a></td>
+        </tr></tbody>
+      </table>
+    </div>
+    <div class="pred-card">
+      <h2 style="margin-top:0;font-size:18px">Confidence Grading &amp; Odds-Window Discipline</h2>
+      <ul style="margin:0;padding-left:20px;line-height:1.75">
+        <li><strong>High Confidence (44 of 75 picks):</strong> Requires (a) 100% confirmed participants &amp; official UTC start, (b) BOTH fair American odds and target-book American odds strictly inside <code>[-250, +10000]</code> (<code>1.40 &le; decimal &le; 101.00</code>), AND (c) zero-vig implied probability <code>&le; 70.0%</code> so heavy chalk is never lazily Badged High. Where a match winner is heavy chalk (&lt;-250), we evaluate balanced Handicap or Total derivatives instead or cap the pick at Medium.</li>
+        <li><strong>Medium Confidence (29 of 75 picks):</strong> Assigned where statistical edge is solid but an auxiliary input remains pending (e.g. MLB Games 3–4 probable starters or Cricket pre-toss XI) or variance is elevated.</li>
+        <li><strong>Low Confidence (2 of 75 picks):</strong> Reserved for conditional series games (MLB World Series Game 5 <code>ifNecessary=Y</code>) or wide-open 54-hole senior fields.</li>
+        <li><strong>Weekend DST Transition Audit:</strong> Europe (<code>CEST UTC+2 &rarr; CET UTC+1</code>) and UK/Ireland (<code>BST/IST UTC+1 &rarr; GMT UTC+0</code>) fall back one hour at <code>01:00 UTC</code> on <strong>Sunday 2026-10-25</strong>, while US Austin/Eastern clocks remain on <code>CDT UTC-5</code> / <code>EDT UTC-4</code> until November 1 and New Zealand is on <code>NZDT UTC+13</code>.</li>
+      </ul>
+    </div>
+    
+    <footer>
+      <span>Independent multi-market line origination &amp; official-source verification across 15 covered OLBG sports. Zero unverified values inferred.</span>
+      <span>Snapshot: 2026-10-23T22:00:00Z · <a href="flagged.html">Flagged for Review</a> · <a href="../reports/SESSION_87B30E7F.html">Technical Report</a></span>
+    </footer>
+  </main>
+</body>
+</html>

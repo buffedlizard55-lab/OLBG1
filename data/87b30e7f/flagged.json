@@ -1,0 +1,147 @@
+{
+  "generated_at": "2026-10-23T22:00:00Z",
+  "session_id": "87b30e7f-olbg1",
+  "policy": "Zero inference or hallucination: every unconfirmed value is left blank ('') in structured records and surfaced here with its official governing-body link.",
+  "blank_unconfirmed_count": 8,
+  "retired_quarantined_count": 6,
+  "blank_unconfirmed_items": [
+    {
+      "flag_id": "FLG-UF-01",
+      "fixture_ref": "WST-NI-M62 (Withheld)",
+      "sport": "Snooker",
+      "event": "BetVictor Northern Ireland Open Semi-Final 2: Mark Williams vs [BLANK]",
+      "unconfirmed_field": "opponent_2",
+      "blank_value": "",
+      "status": "Unverified — Left Blank",
+      "reason": "Mark Williams defeated David Gilbert 6-4 in QF3, but QF4 (Jak Jones vs Scott Donaldson, Match 60) remained tied 4-4 in-play at build cutoff. Opponent 2 is left blank rather than inferred, and 5 confirmed WST Match Centre ties are priced instead.",
+      "official_source_url": "https://www.wst.tv/matches/"
+    },
+    {
+      "flag_id": "FLG-UF-02",
+      "fixture_ref": "87b3-BB-03",
+      "sport": "Baseball",
+      "event": "Milwaukee Brewers @ Tampa Bay Rays (World Series Game 3)",
+      "unconfirmed_field": "probable_pitchers",
+      "blank_value": "",
+      "status": "Unverified — Left Blank",
+      "reason": "MLB StatsAPI gamePk=849804 (2026-10-27T00:00:00Z) has not yet published Game 3 probable pitchers. Starter fields are left blank and confidence is capped at Medium.",
+      "official_source_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-31&hydrate=probablePitcher,team,venue"
+    },
+    {
+      "flag_id": "FLG-UF-03",
+      "fixture_ref": "87b3-BB-04",
+      "sport": "Baseball",
+      "event": "Milwaukee Brewers @ Tampa Bay Rays (World Series Game 4)",
+      "unconfirmed_field": "probable_pitchers",
+      "blank_value": "",
+      "status": "Unverified — Left Blank",
+      "reason": "MLB StatsAPI gamePk=849803 (2026-10-28T00:00:00Z) has not yet published Game 4 probable pitchers. Starter fields are left blank and confidence is capped at Medium.",
+      "official_source_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-31&hydrate=probablePitcher,team,venue"
+    },
+    {
+      "flag_id": "FLG-UF-04",
+      "fixture_ref": "87b3-BB-05",
+      "sport": "Baseball",
+      "event": "Milwaukee Brewers @ Tampa Bay Rays (World Series Game 5 — If Necessary)",
+      "unconfirmed_field": "probable_pitchers / series_continuation",
+      "blank_value": "",
+      "status": "Conditional & Blank Starters",
+      "reason": "MLB StatsAPI gamePk=849799 carries ifNecessary='Y' and blank probable starters; explicitly disclosed as conditional and capped at Low confidence.",
+      "official_source_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-31&hydrate=probablePitcher,team,venue"
+    },
+    {
+      "flag_id": "FLG-UF-05",
+      "fixture_ref": "87b3-GH-05",
+      "sport": "Greyhounds",
+      "event": "21:54 Dunstall Park — PGR Stayers Div 1 (Race 12, 660m)",
+      "unconfirmed_field": "trap_6_runner",
+      "blank_value": "",
+      "status": "Official Vacant Trap — Left Blank",
+      "reason": "Official Dunstall Park GBGB Meeting 216 racecard PDF lists Trap 6 as VACANT (5 runners declared in Traps 1-5); Trap 6 cell left blank and 5-dog Plackett-Luce book originated.",
+      "official_source_url": "https://www.dunstallpark-greyhounds.co.uk/DunstallParkGreyhounds/downloads/24-10-2026-evening-racecard.pdf"
+    },
+    {
+      "flag_id": "FLG-UF-06",
+      "fixture_ref": "NBA-SAT-20261024 (Withheld)",
+      "sport": "Basketball",
+      "event": "Saturday Oct 24 NBA Slate (MIA@CHA, BKN@CLE, MIL@PHI, SAS@DAL, WAS@CHI, HOU@ATL, NOP@DEN, GSW@PHX)",
+      "unconfirmed_field": "referee_injury_designations",
+      "blank_value": "",
+      "status": "NOT YET SUBMITTED — Left Blank",
+      "reason": "Official 2026-10-23 3:45 PM ET NBA Referee Injury Report lists 'NOT YET SUBMITTED' for all 16 Saturday teams; withheld in favour of Friday >=00:00Z NBA games with filed injury reports.",
+      "official_source_url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-23_03_45PM.pdf"
+    },
+    {
+      "flag_id": "FLG-UF-07",
+      "fixture_ref": "ATP-LYON-SF2 (Withheld)",
+      "sport": "Tennis",
+      "event": "ATP 250 Lyon Semi-Final 2: [1] Flavio Cobolli vs [BLANK]",
+      "unconfirmed_field": "opponent_2",
+      "blank_value": "",
+      "status": "Unverified — Left Blank",
+      "reason": "Official Lyon Saturday Order of Play PDF lists '[1] Cobolli vs Van Assche or [6] Musetti' pending late Friday night QF4 completion; Opponent 2 left blank and confirmed SF1 (Paul vs Fritz) priced instead.",
+      "official_source_url": "https://www.protennislive.com/posting/2026/496/op.pdf"
+    },
+    {
+      "flag_id": "FLG-UF-08",
+      "fixture_ref": "87b3-CR-01 / CR-04 / CR-05",
+      "sport": "Cricket",
+      "event": "WA vs NSW, Pakistan vs England, South Africa vs Australia (3rd Test)",
+      "unconfirmed_field": "final_toss_playing_xi",
+      "blank_value": "",
+      "status": "Confirmed Squads — Toss XI Pending",
+      "reason": "Official series squads and injury replacements are confirmed on cricket.com.au & icc-cricket.com, while final 11-player match sheets are only declared at the pre-match coin toss (left blank until toss).",
+      "official_source_url": "https://www.icc-cricket.com/news/pakistan-name-squads-for-home-white-ball-assignments"
+    }
+  ],
+  "retired_and_quarantined_items": [
+    {
+      "flag_id": "FLG-RET-01",
+      "sport": "Snooker",
+      "event": "NI Open Quarter-Finals: McGill 1-6 K. Wilson, Craigie 6-2 Slessor, Gilbert 4-6 M. Williams",
+      "status": "Retired (Completed Fri 23 Oct)",
+      "reason": "Completed on 2026-10-23; results absorbed into Saturday Semi-Final form ratings rather than displayed as upcoming.",
+      "official_source_url": "https://www.wst.tv/matches/"
+    },
+    {
+      "flag_id": "FLG-RET-02",
+      "sport": "Darts",
+      "event": "PDC European Championship R1 Day 2: Doets 6-3 MvG, Rock 6-1 Dobey, Littler 6-3 O'Connor, Clayton 6-3 Springer, Ratajski 6-2 Chisnall",
+      "status": "Retired (Completed Fri 23 Oct)",
+      "reason": "Completed Friday evening in Dortmund; winners promoted into our verified Saturday Oct 24 Round 2 Best-of-19 slate.",
+      "official_source_url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/"
+    },
+    {
+      "flag_id": "FLG-RET-03",
+      "sport": "Rugby League",
+      "event": "RLWC Round 2 Openers: Tonga 36-0 Lebanon (Men) & Samoa 76-0 Wales (Women)",
+      "status": "Retired (Completed Fri 23 Oct)",
+      "reason": "Already completed prior to build cutoff; replaced with 5 upcoming Sat-Sun Oct 24-25 RLWC Round 2 matches.",
+      "official_source_url": "https://www.nrl.com/news/2026/10/20/world-cup-team-lists-mens-round-2/"
+    },
+    {
+      "flag_id": "FLG-RET-04",
+      "sport": "Basketball",
+      "event": "EuroLeague Round 7 (10 games Thu-Fri Oct 22-23) & Early Friday NBA 23:00Z Wave (NYK@BOS, DAL@IND, MIN@ORL, TOR@WAS)",
+      "status": "Retired / Pre-Midnight Cutoff",
+      "reason": "EuroLeague R7 completed Fri evening and NBA 23:00Z wave starts before our >=2026-10-24T00:00:00Z safety cutoff; NYK@BOS retained strictly as OLBG event_id=534842 benchmark.",
+      "official_source_url": "https://www.euroleaguebasketball.net/en/euroleague/news/euroleague-regular-season-round-7-game-center-round-7-el2627/"
+    },
+    {
+      "flag_id": "FLG-RET-05",
+      "sport": "Rugby Union & Handball",
+      "event": "Friday URC Round 4 (Edinburgh, Sharks, Connacht) & StarLigue J8 Friday Wave (5 matches)",
+      "status": "Retired (Completed Fri 23 Oct)",
+      "reason": "Completed Friday evening; updated points tables incorporated into Saturday/Sunday URC & StarLigue handicap models.",
+      "official_source_url": "https://stats.unitedrugby.com/match-centre/table/"
+    },
+    {
+      "flag_id": "FLG-RET-06",
+      "sport": "Greyhounds",
+      "event": "Romford Friday Champion Stakes Card (2026-10-23 evening)",
+      "status": "Retired (Completed Fri 23 Oct)",
+      "reason": "Friday evening Romford card elapsed; replaced with 5 Saturday Oct 24 Dunstall Park Open races (including Category One Scurry Gold Cup & Oaks Finals).",
+      "official_source_url": "https://www.gbgb.org.uk/racing/open-races/2025-category-one-schedule/"
+    }
+  ]
+}
