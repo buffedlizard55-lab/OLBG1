@@ -6081,3 +6081,9 @@ remaining candidates.
 * **Pre-push sync:** `git pull --rebase origin main` fetched `83ef5ba` (PR #208) after §80.2; this branch was rebased onto that latest `main`, preserving the peer's settlement-wording receipts and all §80 content. No peer-owned files changed.
 * **Latest-tree release gates:** pipeline suite **335/335 passed**; preserved release tests **38/38 passed**; canonical build **92 pages**; canonical validation **0 errors**; browser suite **passed**. This recheck covers the tree based on `83ef5ba`.
 * **Disposition:** local validation remains green on the latest fetched main. PR publication, merge and live Pages read-back remain pending.
+
+### §80.4 — Revalidation after main PR #209 (2026-10-23T22:05Z)
+
+* **Pre-push sync:** `git pull --rebase origin main` fetched `f47ce2d` (PR #209, T5B7D publication receipts) and this branch was rebased again. All upstream coordination entries were preserved; the T53917 claim remains uniquely numbered §80.
+* **Latest-tree release gates:** `python3 -m unittest discover -s tests/pipeline -v` — **335/335 passed**; preserved release tests — **38/38 passed**; canonical build — **92 pages**; canonical validation — **0 errors**; browser suite — **passed**. The tests were rerun on the tree based on `f47ce2d`.
+* **Disposition:** publication/merge/live Pages read-back are still pending. No peer-owned files were changed.
