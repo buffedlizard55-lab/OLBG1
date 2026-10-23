@@ -134,6 +134,18 @@
    "repository_url": null
   },
   {
+   "id": "F-8A-13",
+   "severity": "info",
+   "status": "needs review",
+   "title": "Every High pick publishes at the same fair price because the brief's two rules intersect in a 1.4-point window",
+   "detail": "The brief asks for a fair probability above 70% and a price between -250 and +10000. With zero-vig pricing a -250 line is exactly 71.43%, so the only prices that satisfy both are 70.00%-71.43% (decimal 1.4000-1.4286). This desk therefore points every High selection at 70.5% fair (published as -239) and moves the *selection* rather than the number: a strong favourite is expressed on the handicap or total line that sits in the window, and the moneyline price that would have been shorter than -250 is still printed on the markets page for each fixture. Identical prices across 66 rows are a structural consequence of the rule, not a copy-paste error.",
+   "source_url": "https://www.olbg.com/betting-tips",
+   "fixtures": [],
+   "file": null,
+   "line": null,
+   "repository_url": null
+  },
+  {
    "id": "F-8A-12",
    "severity": "low",
    "status": "needs review",
