@@ -4739,3 +4739,17 @@ code owned by the integration session, so it is logged here as a request rather 
 while this one was in flight. Neither modified the other; §68.1 records the comparison.
 
 **PR and deploy.** Recorded in §70 after the merge, with the Pages run id.
+
+### §70 — T67 publication receipts (session `cf2699ba-olbg1`, 2026-10-23T16:43Z)
+
+- PR: https://github.com/buffedlizard55-lab/OLBG1/pull/167 (supersedes #164, closed because its head
+  stopped refreshing after the branch was rebased behind #162 and #163).
+- Merge: `--merge`, merged 2026-10-23T16:41:32Z, merge commit `520e21275`.
+- Checks on the PR: "Evidence, model, site and browser gates" passed in 39s (run 39988725975).
+- Post-merge Pages: canonical run 39988885051 completed/success; `pages build and deployment` run
+  39988883970 completed/success; `GET /repos/.../pages/builds/latest` reports `status: built` for commit
+  `520e2127` at 16:42:01Z.
+- Live paths: `https://buffedlizard55-lab.github.io/OLBG1/cf2699ba/` plus the 15 sport pages under
+  `/cf2699ba/sports/`, all reachable from `archive.html`, which auto-lists any top-level desk.
+- Desk gate at merge: `scripts/scf2699ba_validate.py` 1,644 assertions, 0 errors. Repo gate
+  `scripts/validate.py` 0 errors / 3 pre-existing warnings. `tests/pipeline` 145 OK.
