@@ -93,13 +93,14 @@ WRITE_UPS = {
         "Tasmania sit second in the One-Day Cup on ten points and a +2.303 run-rate cushion, while Victoria "
         "are fifth on four points at -0.752 after a 47-run Duckworth-Lewis defeat to New South Wales. Riley "
         "Meredith, Ben McDermott, Caleb Jewell, Mitch Owen and captain Jordan Silk all feature for Tasmania, "
-        "with Matt Short and Todd Murphy back for Victoria. Back Tasmania -0.5 on the run handicap."
+        "with Matt Short and Todd Murphy back for Victoria. Back Tasmanian Tigers -0.5 on the run handicap."
     ),
     "SNO-01": (
-        "Kyren Wilson swept Ben Mertens 4-0 and then dismantled Anthony McGill 6-1 to reach his first ranking "
-        "semi-final in nineteen months. Sam Craigie came through Xiao Guodong 4-3, Xu Si and Elliot Slessor "
-        "to reach the same stage. Both finished Friday's quarter-finals in full health, Craigie clear of the "
-        "cervical spine trouble that once interrupted his career. Back Kyren Wilson to win the best-of-11."
+        "This semi-final is best of 11 frames, three frames longer than either man has played this week. Sam "
+        "Craigie's route to Belfast included a 4-3 finish against Xiao Guodong as well as wins over Xu Si and "
+        "Elliot Slessor, while Kyren Wilson needed only four frames against Ben Mertens and seven against "
+        "Anthony McGill. Both came through Friday in full health, Craigie clear of the cervical spine problem "
+        "that once interrupted his career. Take over 8.5 frames."
     ),
     "DAR-01": (
         "Gerwyn Price dropped only two legs while beating former European champion Rob Cross 6-2 on Thursday "
@@ -153,16 +154,16 @@ WRITE_UPS = {
         "handicap."
     ),
     "HAN-01": (
+        "Paris Saint-Germain have scored 239 goals and conceded 190 across seven StarLigue matches, which is "
+        "just over 61 goals in each of their games. Saint-Raphael are 207 for and 225 against over the same "
+        "seven rounds, a similar combined rate. The LNH calendar puts Sunday's throw-off at 16:00 local, 14:00 "
+        "UTC. Take over 58.5 goals in Saint-Raphael."
+    ),
+    "HAN-02": (
         "HBC Nantes have beaten Montpellier 36-31, Caen 38-31 and Saran 34-31 in the StarLigue, averaging 36 "
         "goals, although they lost 27-33 at Vardar in the Champions League on Wednesday. Chambery edged Aix "
         "34-33 on 18 October. Goalkeeper Christoffer Bonde, pivot Nicolas Tournat, Noam Leopold and Kauldi "
         "Odriozola are all available for Nantes. Back HBC Nantes to cover a 2.5-goal handicap against Chambery."
-    ),
-    "HAN-02": (
-        "Paris Saint-Germain are seven from seven in the StarLigue, 239 goals for and 190 against, while "
-        "Saint-Raphael have lost five of seven at 207 for and 225 against. The LNH calendar lists Sunday's "
-        "throw-off at 16:00 local, which is 14:00 UTC. PSG's separation at the top has come from defensive "
-        "pressure rather than volume. Back Paris Saint-Germain to win by more than 1.5 goals."
     ),
     "ICE-01": (
         "Edmonton are 8-1-1 and scoring 4.70 goals a game, arriving off a 6-5 win over Carolina and a "
@@ -239,6 +240,7 @@ def main() -> None:
                 "start_utc": pick["start_utc"],
                 "competition": pick["competition"],
                 "selection": pick["selection"],
+                "display_selection": pick.get("display_selection") or pick["selection"],
                 "market": pick["market"],
                 "probability": pick["probability"],
                 "decimal": pick["decimal"],

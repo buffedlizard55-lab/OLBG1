@@ -69,6 +69,17 @@ def canonical_bet(event: dict, line: dict) -> str:
     return "OTHER|" + norm(line["market"]) + "|" + norm(re.sub(r"\b(to win|to beat .*|top-?\d+ finish.*|winner)\b", "", low))
 
 
+def display_selection(line: dict) -> str:
+    """A bare 'over' or 'under' is meaningless without its line, so fold the line in."""
+    selection = str(line["selection"]).strip()
+    if selection.lower() in {"over", "under"}:
+        number = re.search(r"([0-9]+(?:\.[0-9])?)", str(line["market"]))
+        unit = re.search(r"(frames|points|goals|runs|games|sets|legs)", str(line["market"]), re.I)
+        if number:
+            return f"{selection.title()} {number.group(1)}" + (f" {unit.group(1)}" if unit else "")
+    return selection
+
+
 def is_alternate_artefact(line: dict) -> bool:
     low = str(line["selection"]).lower()
     if re.search(r"\+\s*[0-9]+(?:\.5)?", low) and line["probability"] > 0.72:
@@ -121,6 +132,7 @@ def main() -> None:
                         "competition": event["competition"],
                         "market": line["market"],
                         "selection": line["selection"],
+                        "display_selection": display_selection(line),
                         "probability": round(1.0 / line["decimal"], 4),
                         "decimal": line["decimal"],
                         "american": line["american"],
@@ -143,6 +155,7 @@ def main() -> None:
                     "venue": event["venue"],
                     "market": line["market"],
                     "selection": line["selection"],
+                    "display_selection": display_selection(line),
                     "bet_key": key,
                     "probability": round(1.0 / line["decimal"], 4),
                     "decimal": line["decimal"],
