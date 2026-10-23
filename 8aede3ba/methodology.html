@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology · 8aede3ba OLBG desk</title>
+<meta name="description" content="Independent OLBG research desk: 15 covered sports, official-source fixtures, originated zero-vig lines and gated high-confidence picks.">
+<link rel="stylesheet" href="assets/desk.css"></head><body>
+<header class="top"><div class="row"><div><h1>OLBG research desk · session 8aede3ba</h1>
+<p>15 covered sports · snapshot 2026-10-23T22:40:00Z · official governing-body sources · not affiliated with OLBG · 18+</p></div>
+<div><p style="text-align:right">Independent project<br>No guaranteed returns</p></div></div></header>
+<nav class="bar"><a href="index.html">Dashboard</a><a href="picks.html">High-confidence picks</a><a href="matches.html">All matches</a><a href="markets.html">Markets</a><a href="predictions.html">Predictions</a><a href="sports.html">Sports</a><a href="flagged.html">Flagged for review</a><a href="repo-audit.html">Repo audit</a><a href="sources.html">Sources</a><a href="methodology.html" class="on">Methodology</a><a href="reverse-engineering.html">OLBG reverse-engineering</a></nav><main><h2>Methodology</h2>
+<p class="lede">What was read, what was calculated, and where the limits are. Nothing on this site is a bookmaker price, a stake recommendation or a guarantee.</p>
+<h3>1. Fixture evidence</h3>
+<p>A row exists only if a league, tour, board, federation or club page published the participants and the date. The start time is converted from the local time printed on
+that page. Where the page printed no time, the row keeps a date-only start, is excluded from High picks, and says so. OLBG is used to find candidate competitions, never to
+confirm one; its clocks are rendered in an unlabelled local time zone and were treated as unreliable throughout.</p>
+<h3>2. Originated prices</h3>
+<p>Prices are zero-vig fair estimates: decimal = 1 ÷ probability, with no margin added and no clipping applied. American prices are derived from the unrounded decimal and
+then rounded to the nearest integer, which is why a 70.5% estimate publishes as −239 rather than a shorter chalk price. Every two-way book sums to 1.0000; every market
+row shows its own fair mass so the arithmetic can be checked on the page.</p>
+<h3>3. The four market families</h3>
+<ul>
+<li><b>Match winner</b> — the headline pick, two-way except where a regulation draw exists (ice hockey 60-minute, handball).</li>
+<li><b>Handicap / spread</b> — inverted from the same win probability over the sport's scoring distribution: Poisson for baseball and hockey goals, Gaussian for basketball,
+rugby, handball, Gaelic games and cricket margins, exact best-of-N combinatorics for frames, sets and legs.</li>
+<li><b>Match total</b> — a line set just off the model's expected total with a hook, so no push is possible.</li>
+<li><b>Sport-specific derivative</b> — first-five-innings total (MLB), 60-minute result (NHL), total centuries (snooker), match 180s (darts), opening-set winner (tennis),
+both-teams-win-a-set (volleyball), first-half leader (basketball/rugby/handball), top-ten finish (golf), podium (motor racing).</li>
+</ul>
+<h3>4. Confidence gate</h3>
+<p><b>High</b> requires both: a fair probability of at least 70% on the selection actually published, and a fair American price inside −250…+10000. Because a zero-vig price
+of −250 is exactly 71.4%, the honest High window is roughly 70.0%–71.4%: anything better than that prices shorter than −250 and is withheld, anything worse is not a 70% pick.
+When a genuine favourite prices shorter than −250 on the moneyline, the desk originates the handicap or total line that puts the same view inside the window rather than
+promoting chalk. <b>Medium</b> is 55–70% inside the window; <b>Low</b> is everything else. Every High pick carries a hand-written prediction of at least 30 words that names
+the selection; no prediction text contains the two internal words the brief excludes.</p>
+<h3>5. What is deliberately absent</h3>
+<p>No bookmaker quotes, no stakes, no expected-value claims, no correct-score or player-prop prices, and no timezones or line-ups that were not printed on an official page.
+Those absences are the reason the High count is smaller than the fixture count, and they are all listed on the Flagged page.</p>
+</main>
+<footer>Independent research. Prices are zero-vig fair estimates originated by this desk, never bookmaker offers or stakes advice.
+Blank cells mean the official source did not publish the value; nothing is inferred. · <a href="methodology.html">Method</a> ·
+<a href="flagged.html">Flagged for review</a> · <a href="https://github.com/buffedlizard55-lab/OLBG1">Repository</a></footer></body></html>
