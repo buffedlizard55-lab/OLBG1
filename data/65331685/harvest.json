@@ -1,0 +1,152 @@
+{
+ "session": "T65331685",
+ "collected_utc": "2026-10-23T20:40:00Z",
+ "read_channel": "Arena fetch/search layer; each read logged with URL and UTC time",
+ "reads": [
+  {
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+   "read_utc": "2026-10-23T19:36:00Z",
+   "takeaway": "NHL game week: MTL@CHI 2026-10-24T00:00Z (id 2026020166, United Center, FUT/OK), TBL@COL 01:00Z (2026020167, Ball Arena); Sat slate incl. ANA@PHI 17:00Z, LAK@NJD 19:30Z, TOR@EDM 23:00Z, VGK@CBJ 23:00Z, CAR@STL 23:00Z (chunks 0 and 2)"
+  },
+  {
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-23",
+   "read_utc": "2026-10-23T19:36:00Z",
+   "takeaway": "NHL standings 2026-10-23T19:29:30Z (chunks 0-6): all 32 team W-L-OTL records incl. EDM 8-1-1, BOS 8-2-1, TBL 7-2-0, CAR 8-2-2, VGK 8-4-0, TOR 6-4-2, COL 5-4-1, MTL 4-3-2, CHI 3-6-0, ANA 4-6-0, PHI 3-6-3, CBJ 3-5-0, LAK 2-4-2, SJS 6-4-1, NJD 6-4-0"
+  },
+  {
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-29&hydrate=team,probablePitcher,linescore",
+   "read_utc": "2026-10-23T19:38:00Z",
+   "takeaway": "World Series schedule: G1 TB@MIL 2026-10-24T00:00Z (gamePk 849805, ifNecessary=N, Martinez v Misiorowski), G2 2026-10-25T00:00Z (849802, Rasmussen v Henderson), G3 MIL@TB 2026-10-27T00:00Z (849804)"
+  },
+  {
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026",
+   "read_utc": "2026-10-23T19:40:00Z",
+   "takeaway": "MLB 2026 standings: Rays 98-64 (RS 736 RA 650, home 55-26 away 43-38); chunk 1-2: Brewers 103-59 (RS 832 RA 618, W5, lastTen 8-2, xWinLoss 103-59)"
+  },
+  {
+   "url": "https://statsapi.mlb.com/api/v1.1/game/849805/feed/live",
+   "read_utc": "2026-10-23T20:05:00Z",
+   "takeaway": "WS G1 feed (Preview/Scheduled, 20:05Z): series 0-0; TB starter Nick Martinez, MIL starter Jacob Misiorowski confirmed"
+  },
+  {
+   "url": "https://www.nba.com/games?date=2026-10-23",
+   "read_utc": "2026-10-23T19:38:00Z",
+   "takeaway": "NBA Friday slate (12 games) with records and season-leader lines: NYK 0-1 @ BOS 0-1 7:00PM ET; MIN 1-0 @ ORL 0-1; DAL 0-1 @ IND 1-0; MEM 1-0 @ GSW 0-1 (Ty Jerome 45/7/6, Stephen Curry 23/2/1); plus CHI@MIL, TOR@WAS, ATL@CHA, DET@MIA, HOU@SAS, NOP@UTA, LAC@LAL, POR@SAC"
+  },
+  {
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/news/game-center-round-7-el2627/",
+   "read_utc": "2026-10-23T19:45:00Z",
+   "takeaway": "EuroLeague Round 7 game center: Zalgiris 105-85 ASVEL (Valanciunas 15/8, Edwards 16); Oly-Fener and Paris-Valencia in progress at read time; Thu: Efes 89-80 Besiktas, Bayern 91-107 Dubai, Maccabi 99-113 Real Madrid, Panathinaikos 85-79 Baskonia, Milan 81-89 Barcelona, Partizan 85-82 Zvezda (OT); Paris 1-5 v Valencia 5-1 with Hifi 20.2 ppg top scorer, Shorts return"
+  },
+  {
+   "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/MDS.pdf",
+   "read_utc": "2026-10-23T20:15:00Z",
+   "takeaway": "WTA Ningbo 500 official draw (released 23 Oct 10:00 PM): SF Rybakina (rank 1) v Shnaider (rank 13); Rybakina path bye, d. Kudermetova 6-1 3-6 6-1, d. Kawa 6-1 3-6 6-1? draw lines: d. Kawa 6-1 3-6 6-1 wait scores 61 36 61; Shnaider d. Kalinina 6-3 4-6 6-1, d. Eala 6-3 6-1? lines 63 46 61 and 75 64, d. Putintseva 7-5 7-6(4); Swiatek withdrawn (left thigh), Kostyuk right wrist injury"
+  },
+  {
+   "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/405/MDS.pdf",
+   "read_utc": "2026-10-23T20:16:00Z",
+   "takeaway": "WTA Osaka 250 official draw: SF Boulter (seed 8, rank 54) v Siniakova; Boulter d. Sakatsume 6-3 6-1, d. Golubic 3-6 6-3 6-3; Siniakova d. Shibahara 6-1 6-2, d. Linette 6-4 6-1, d. Stearns (2) 6-4 0-6 4-0 ret (Stearns foot); withdrawals: Birrell calf, Kartal knee; Day low back"
+  },
+  {
+   "url": "https://www.atptour.com/en/scores/current",
+   "read_utc": "2026-10-23T19:50:00Z",
+   "takeaway": "ATP live: Brussels QF Fils (1) d. Michelsen (5) 6-4 7-6(12); Struff v Bergs (6) live 4-3; Lyon QF Cobolli (1) d. Nakashima (5) 4-6 6-4 6-4, Fritz (2) d. Altmaier 7-6(5) 6-2; Basel QF Medvedev d. Atmane 6-4 6-4, Bublik d. Khachanov"
+  },
+  {
+   "url": "https://www.unitedrugby.com/latest/news/round-4-team-announcements/",
+   "read_utc": "2026-10-23T19:45:00Z",
+   "takeaway": "URC Round 4 team lists (full): Fri Cardiff-Sharks, Connacht-Zebre, Edinburgh-Lions (all 18:45Z); Sat Bulls-Ulster 11:45Z, Stormers-Scarlets 14:00Z, Benetton-Glasgow 14:00Z, Leinster-Munster 17:00Z (Aviva), Ospreys-Dragons 18:00Z; Leinster XV: Keenan, T O'Brien, Osborne, Henshaw, J O'Brien, Carbery, Gibson-Park; Porter, Kelleher, Furlong, McCarthy, Ryan, Baird, van der Flier, Sheehan (capt); Munster XV: B O'Connor, S McCarthy, S O'Brien, Nankivell, Daly, O'Shea, Casey; Wycherley, van der Merwe, Brookes, F Wycherley, Beirne (capt), O'Donoghue, Kendellen, Coombes; Bulls: Pollard, Coetzee (capt); Stormers: Feinberg-Mngomezulu, de Villiers (capt), Roos; Glasgow: Steyn (capt), Tuipulotu, Fagerson, Darge; Ospreys at new St Helen's venue; Scarlets 'impressive start' per Davies"
+  },
+  {
+   "url": "https://stats.unitedrugby.com/match-centre/table/",
+   "read_utc": "2026-10-23T20:35:00Z",
+   "takeaway": "Official URC match-centre table (search read): Glasgow 13 pts (2-1-0, 95-72); Dragons 9 (1-1-1, 88-83); Ospreys 6 (1-0-2, 81-107); Benetton 3-5 pts (0-1-2, 64-68); Bulls 11 (2-0-1, 126-54); Stormers/Munster/Leinster rows partial; cross-checked BBC Sport table (Ulster 0-2-1 88-93 8pts; Scarlets 1-0-2 68-85 7pts; Leinster 75-58 8pts; Munster 72-74 9pts; Stormers 81-54 11pts)"
+  },
+  {
+   "url": "https://www.nrl.com/news/2026/10/20/world-cup-team-lists-mens-round-2/",
+   "read_utc": "2026-10-23T19:45:00Z",
+   "takeaway": "RLWC2026 men's R2 team lists: Tonga 36-0 Lebanon (FT); PNG v Samoa Sat 04:25Z (Samoa: Tabuai-Fidow, To'o, Tago, Crichton, Harris-Tavita, Luai, Molo, Leniu bench; Mariner hamstring out, Fa'alogo in after 4 tries v France; PNG: Biondi-Odo, Rhyse Martin, de Belin); England v France Sat 06:35Z HBF Park Perth (England: Brimson, Young, Farnworth, Williams, Smith, Radley, Thompson, Welsby 18; Knowles injured; France: Lacans, Fages, Garcia); NZ v Cook Islands Sun 05:05Z (Kini, Hughes, Nikorima, Mulitalo v Holmes, Iro)"
+  },
+  {
+   "url": "https://www.nrl.com/news/2026/10/20/world-cup-team-lists-womens-round-2/",
+   "read_utc": "2026-10-23T20:15:00Z",
+   "takeaway": "RLWC women's R2: Samoa 76-0 Wales (FT); Fiji v PNG Sat; Jillaroos v England Sat (Strange ACL out for tournament, Murray in); team lists for Samoa-Wales and Fiji-PNG read"
+  },
+  {
+   "url": "https://www.wst.tv/matches/",
+   "read_utc": "2026-10-23T19:55:00Z",
+   "takeaway": "BetVictor Northern Ireland Open draw/results: QFs Fri: Wilson 6-1 McGill, Craigie 6-2 Slessor (both completed); Jones 2-2 Donaldson and Gilbert 3-1 Williams live at read time; R3: Wilson 4-3 Pang, Craigie 4-2 Selt, Slessor 4-1 Jones, Gilbert 4-2 Cheung, Williams 4-0 O'Donnell, Jones 4-2 Wells, Donaldson 4-2 Brown; SFs scheduled Sat (Wilson v Craigie per OLBG render 12:00Z)"
+  },
+  {
+   "url": "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/leaderboard",
+   "read_utc": "2026-10-23T19:55:00Z",
+   "takeaway": "Butterfield Bermuda Championship R2 in progress, Port Royal, cut line -5: Hirata -13 (65-64), Blanchet -13 (62-67), Power -12 (66-64), Conners -12 (63-67), Cole -12 (65-65), Skinns -11 (68-63), McCarthy -11; published odds column exists (bookmaker-branded) - left blank per repo policy"
+  },
+  {
+   "url": "https://www.icc-cricket.com/fixtures-results",
+   "read_utc": "2026-10-23T19:55:00Z",
+   "takeaway": "ICC fixtures: NZ v IND T20I (match 271647) Sat (07:00Z per OLBG render); Denmark v Kuwait and Qatar v Kenya List A 06:45Z; Namibia v Ireland ODI 07:30Z; Uganda v Mozambique 08:30Z; Gambia v Zambia and Lesotho v Nigeria 12:50Z; Mexico v Argentina T20s 14:00Z and 19:00Z; UAE v Netherlands CWC League 2 05:30Z (tool-clock rendered EDT, converted)"
+  },
+  {
+   "url": "https://www.icc-cricket.com/news/injury-blow-for-india-ahead-of-second-t20i-with-new-zealand",
+   "read_utc": "2026-10-23T20:15:00Z",
+   "takeaway": "India lead 1-0 after chasing 226 in Christchurch (highest T20I chase in India's history; Samson 67, Iyer 42, Dhir 42*); Ishan Kishan OUT 2nd T20I (low-grade right adductor strain), Kumar Kushagra added; 2nd T20I Saturday at Hagley Oval; India squad listed (Iyer c, Abhishek, Samson, Sooryavanshi, Tilak, Axar, Dube, NKR, Dhir, Prince Yadav, Mayank Yadav, Arshdeep, Bhuvneshwar, Varun, Kuldeep)"
+  },
+  {
+   "url": "https://www.cricinfo.com/series/pakistan-odi-tri-series-2026-27-1550706/pakistan-vs-england-4th-match-1550716/live-cricket-score",
+   "read_utc": "2026-10-23T20:38:00Z",
+   "takeaway": "PAK ODI Tri-Series 2026/27 (PAK/ENG/SL, 18-31 Oct): PAK v ENG 4th match Sun 25 Oct 13:00 PKT (08:00Z) Gaddafi Stadium Lahore, D/N; PAK beat SL by 37 runs (Oct 18), PAK 302/9 beat ENG 215 by 87 runs (Oct 20 Rawalpindi); captains Shaheen Afridi v Harry Brook"
+  },
+  {
+   "url": "https://www.formula1.com/en/latest/article/need-to-know-the-most-important-facts-stats-and-trivia-ahead-of-the-2026-united-states-grand-prix.3yCUtnzlXLwOvhVtmsdVRK",
+   "read_utc": "2026-10-23T19:55:00Z",
+   "takeaway": "F1 US GP (Round 18, COTA 5.513km): FP1/FP2 Fri Oct 23, FP3+Qualifying Sat Oct 24, race Sun Oct 25; Antonelli leads standings and can clinch title if he wins with Russell 9th-or-lower and Hamilton 5th-or-lower; Verstappen won Malaysia+Singapore and 4 of last 5 US GPs; Hamilton most wins (6) here; lap record Leclerc 1m36.169 (2019); C2/C3/C4 tyres, likely one-stop"
+  },
+  {
+   "url": "https://www.gbgb.org.uk/category-one-glory-beckons-in-coral-100-champion-stakes-final/",
+   "read_utc": "2026-10-23T20:15:00Z",
+   "takeaway": "Coral 100 Champion Stakes Final Romford Fri night over 575m, \u00a320,000 to winner; Newinn Jolly withdrawn (urine infection); semis: Grouchos Gregor 35.36 (-20) fastest, beat Fortanach Col (Wilton 1-2); Aayamza Legend 35.75 beat Don Cici; Bubbly Holly 35.95 beat Newinn Jolly"
+  },
+  {
+   "url": "https://munster.gaa.ie/fixtures/events-calendar/",
+   "read_utc": "2026-10-23T20:15:00Z",
+   "takeaway": "Munster GAA events: Hurling Shinty International Ireland v Scotland Sat 24 Oct 18:00 local (17:00Z) SuperValu Pairc Ui Chaoimh; Camogie Shinty Intl 16:00 local; Kerry SFC final Dr Crokes v Kenmare Shamrocks Sun 25 Oct 14:00 (post-clock-change WET = 14:00Z) Fitzgerald Stadium; Waterford SFC final Rathgormack v The Nire Sun 14:30"
+  },
+  {
+   "url": "https://www.lnh.fr/daikin-starligue/calendrier",
+   "read_utc": "2026-10-23T20:10:00Z",
+   "takeaway": "LNH Daikin StarLigue J08: Aix-Toulouse, Chartres-Nimes, Limoges-Dunkerque, Selestat-Caen, Tremblay-Cesson live/elapsed Fri; upcoming Nantes-Chambery Sat 24 Oct 19:00 CEST (17:00Z); Saint-Raphael-Paris Sun 25 Oct 16:00 (14:00Z); Montpellier-Saran Sun 17:00 (15:00Z)"
+  },
+  {
+   "url": "https://www.lnh.fr/daikin-starligue/classement",
+   "read_utc": "2026-10-23T20:30:00Z",
+   "takeaway": "LNH standings after 7: Paris 14 pts (7-0-0, 239-190), Nantes 12 (6-1-0, 244-203), Montpellier 10 (4-1-2, 234-205), Nimes 10, Limoges 8, Chambre 6 (2-3-2, 224-231), Saran 6 (3-0-4, 202-216), Saint-Raphael 4 (2-0-5, 207-225)"
+  },
+  {
+   "url": "https://www.legavolley.it/calendario/?idCampionato=999",
+   "read_utc": "2026-10-23T20:10:00Z",
+   "takeaway": "SuperLega clubs confirmed on official league site (Itas Trentino, Cisterna Volley, Sir Susa Scai Perugia, Tinet Prata di Pordenone); fixture rows themselves rendered elsewhere (start times carried from OLBG and flagged)"
+  },
+  {
+   "url": "https://www.plusliga.pl/table.html",
+   "read_utc": "2026-10-23T20:10:00Z",
+   "takeaway": "Polish league live-centre (redirects to tauronliga.pl): recent PlusLiga results read - Skra 3-1 Trefl Gdansk (17 Oct), ZAKSA 0-3 LUK Lublin (18 Oct), Norwid-Resovia 3-2 (17 Oct)"
+  },
+  {
+   "url": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/",
+   "read_utc": "2026-10-23T20:35:00Z",
+   "takeaway": "PDC (search-layer reads of pdc.tv articles): Machineseeker European Championship Westfalenhalle Dortmund 22-25 Oct, \u00a3750,000; Thu R1: Woodhouse 6-3 van Duijvenbode (nine-dart per pdc.tv headline), Bunting 6-5 Noppert, Menzies 6-3 Zonneveld, Price 6-2 Cross, Heta 6-5 Wade, Huybrechts 6-1 Searle, van Veen 6-4 Gilding (record European Tour average that weekend), Smith d. Sedlacek; Fri R1: Littler v O'Connor (19:15Z), Clayton v Springer, Doets v van Gerwen, Nijman v Schindler, Joyce v Wattimena, Ratajski v Chisnall, Aspinall v Reyes, Rock v Dobey; Sat afternoon R2: Smith/Heta v Wade/Heta winner bracket, van Veen v Woodhouse, Menzies/Price winner bracket, Bunting v Huybrechts; Humphries (world #2) absent from final R1 list (replaced by Huybrechts v Searle)"
+  },
+  {
+   "url": "https://www.olbg.com/betting-tips",
+   "read_utc": "2026-10-23T19:35:00Z",
+   "takeaway": "OLBG hub discovery: tip feed renders 'No tips found.' in the fetch channel tonight (platform irregularity); sport menu + editorial retained; event pages via ?event_id= render full tip blocks (see NYK-BOS read)"
+  },
+  {
+   "url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/NY_Knicks_@_BOS_Celtics/4?event_id=534842",
+   "read_utc": "2026-10-23T19:48:00Z",
+   "takeaway": "OLBG event page NYK-BOS: ML BOS 5/6 (83%) v NYK 1/6; pointspread BOS -2.50 4/4; totals U221.5 3/4 v O221.5 1/4; tipster profit rows; tips flagged Expired pre-start when odds gone; OLBG hub times render America/New_York unlabeled (converted, flagged)"
+  }
+ ]
+}

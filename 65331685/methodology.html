@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology — T65331685 Sports Desk</title>
+<meta name="description" content="T65331685 official-source sports desk: zero-vig multi-market pricing, high-confidence picks, full evidence trail.">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><h1>OLBG Sports Desk — Session T65331685</h1>
+<p>Official-source verification + zero-vig multi-market origination · 15 sports · generated 2026-10-23 20:40 UTC · branch arena/65331685-olbg1</p></header>
+<nav><a href="index.html">Dashboard</a><a href="sports.html">Sports</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="high-confidence.html">High Confidence</a><a href="predictions.html">Predictions</a><a href="analysis.html">Analysis</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="repo-audit.html">Repo Audit</a><a href="methodology.html">Methodology</a></nav><main><h2>Methodology</h2>
+<h3>Verification rule</h3>
+<p>Nothing counts as confirmed until the official body's page (or its stats endpoint) has been fetched through the Arena layer in this session and logged with a UTC time in Sources. Third-party trackers are used only as cross-references and the rows they support are marked accordingly. Where an input cannot be confirmed, the cell stays blank and the row is listed under Flagged.</p>
+<h3>Line origination</h3>
+<ul>
+<li><b>Record markets</b>: Beta(2,2) shrinkage on raw win rates (NHL: W/(W+L+OTL); rugby: (W+0.5D)/P), combined with log5, no home edge.</li>
+<li><b>Runs/goals/points</b>: paired per-game rates (attack v defence averages), independent Poisson scores conditioned on no tie for the win market, half-point totals ladders.</li>
+<li><b>Handicaps and spreads</b>: gaussian margins with disclosed sport deviations (NBA 11.5, NHL 1.9, rugby 14, handball 4, MLB 4.3 runs).</li>
+<li><b>Specialist links</b>: rank-Elo proxy for tennis, semi-clock logistic for the dogs, elite-spine index for league internationals, tournament frame share for snooker — each listed in the constants table.</li>
+</ul>
+<h3>Confidence gate</h3>
+<p>High requires an unrounded probability above 0.70 with the fair American price inside −250…+10000. Favourites shorter than the floor are chalk-suppressed and disclosed. Medium covers 0.55–0.70; Low covers the rest.</p>
+<h3>Language policy</h3>
+<p>Prediction write-ups run 30+ words, avoid the banned vocabulary list, and share no repeated 6-gram. Factual clauses name their source; judgment calls read as opinion.</p></main>
+<footer>Built from reads logged in <a href="sources.html">Sources</a>. Quotes/availability/edge left blank per repository policy. Nothing is treated as confirmed without an official-source read recorded with its time.</footer>
+</body></html>
