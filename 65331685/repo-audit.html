@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repo Audit — T65331685 Sports Desk</title>
+<meta name="description" content="T65331685 official-source sports desk: zero-vig multi-market pricing, high-confidence picks, full evidence trail.">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><h1>OLBG Sports Desk — Session T65331685</h1>
+<p>Official-source verification + zero-vig multi-market origination · 15 sports · generated 2026-10-23 20:40 UTC · branch arena/65331685-olbg1</p></header>
+<nav><a href="index.html">Dashboard</a><a href="sports.html">Sports</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="high-confidence.html">High Confidence</a><a href="predictions.html">Predictions</a><a href="analysis.html">Analysis</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="repo-audit.html">Repo Audit</a><a href="methodology.html">Methodology</a></nav><main><h2>Repo audit</h2>
+<table><tr><th>Check</th><th>Result</th></tr>
+<tr><td>Working branch</td><td>arena/65331685-olbg1 (session-scoped; no other branch touched)</td></tr>
+<tr><td>Root shared files</td><td>README.md and COORDINATION.md modified only for claim + receipts (append-only in §73)</td></tr>
+<tr><td>Namespaced outputs</td><td>all generated artifacts under <code>65331685/</code>, <code>data/65331685/</code>, <code>scripts/s65331685_*</code>, <code>tests/pipeline/test_s65331685.py</code></td></tr>
+<tr><td>Shared pipeline</td><td>not modified; this desk stands alone and reuses only the canonical pricing conventions (Beta(2,2)+log5, zero-vig, no home edge)</td></tr>
+<tr><td>Two-sided zero-vig markets</td><td>every market pair sums to 1.000 by construction (checks in <code>scripts/s65331685_validate.py</code>)</td></tr>
+<tr><td>Source link per data row</td><td>fixtures/markets tables carry source links; unlinked rows are listed under Flagged</td></tr>
+<tr><td>Quote policy</td><td>bookmaker quotes, availability and edge left blank even where an odds column existed on a read page (PGA Tour leaderboard)</td></tr>
+<tr><td>Validator</td><td><code>python3 scripts/s65331685_validate.py</code> gates schema, band logic, zero-vig pairs, banned words, 6-gram uniqueness, min-word counts, and source-link presence</td></tr>
+<tr><td>Tests</td><td><code>python3 -m unittest discover -s tests/pipeline</code> includes <code>test_s65331685.py</code></td></tr>
+</table></main>
+<footer>Built from reads logged in <a href="sources.html">Sources</a>. Quotes/availability/edge left blank per repository policy. Nothing is treated as confirmed without an official-source read recorded with its time.</footer>
+</body></html>
