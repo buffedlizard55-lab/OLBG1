@@ -5253,3 +5253,14 @@ validator re-run: 258 checks, 0 failed.
   * **Originated multi-market lines:** **`472` fair lines** (`6–7` markets per event across Match Winner, Spread/Handicap, Calibrated Alt Spread/Total, Match Total, Team Total / Exact Score, 1st-Period/Set/Half Derivatives, and Player/Podium Props).
   * **High-confidence calibration (`-250` to `+10000` / `1.40–101.00` AND `p > 0.70`):** **`59` in-window High picks**, **`13` Medium**, **`3` Low**, and **`28` raw moneyline chalk favorites shorter than `-250` suppressed from High** and re-anchored into calibrated spreads/totals.
   * **Human predictions:** **`75` unique analyst predictions (`5` per covered sport, `>=48` words each, zero forbidden words, zero repeated 7-grams)** with verified player stats, recent scores, and real-time 23 Oct 2026 injury/withdrawal news (`Nick Suzuki` out 2–4 weeks, `Luke Humphries` gastroenteritis withdrawal, `Ishan Kishan` right adductor strain, `Kalyn Ponga` broken arm, `Jasmin Strange` ACL, `Newinn Jolly` urinary infection scratch, `Jimmy Butler III` ACL & `Kristaps Porzingis` out, `Eugenio Chacarra` fractured toe).
+
+### §71.1 — T8A90 (`8a900c04-olbg1`) PR #175 merge & live GitHub Pages deployment receipts (`2026-10-23T17:10Z`)
+
+* **Merged PR:** [#175](https://github.com/buffedlizard55-lab/OLBG1/pull/175) merged into `main` at `2026-10-23T17:06:54Z` as merge commit `1c7d84c06bb6a9d94aa720808235b54b0727d943` (`38` files added/updated, **`0` deleted lines** across the entire repository against `origin/main`).
+* **Post-merge `main` Actions runs (all GREEN):**
+  * `pages build and deployment` — run [`39992409948`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39992409948) (`build` 12s, `deploy` 28s — **SUCCESS**).
+  * `Canonical research checks and Pages` — run [`39992410402`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/39992410402) (`Evidence, model, site and browser gates` 1m15s **SUCCESS**; `Publish canonical GitHub Pages` 10s **SUCCESS**).
+* **Live deployed GitHub Pages HTTP byte read-back (`2026-10-23T17:09Z`):**
+  * `https://buffedlizard55-lab.github.io/OLBG1/archive.html?cb=8a900c04` — auto-indexes `[Preserved 8a900c04 →]` (`8a900c04/index.html`) and `[SESSION 8A900C04 →]` (`reports/SESSION_8A900C04.html`).
+  * `https://buffedlizard55-lab.github.io/OLBG1/8a900c04/index.html` — serves KPI ribbon (`15 / 15` sports, `75` events, `472` market lines, `59` High picks in `-250..+10000`, `28` chalk-suppressed MLs, `12` audit findings) and all 15 sport hubs.
+  * `https://buffedlizard55-lab.github.io/OLBG1/8a900c04/markets.html`, `flagged.html`, `repo-audit.html`, `reports/SESSION_8A900C04.html`, and `data/8a900c04/desk.json` — all HTTP `200`, verified live.
