@@ -227,12 +227,15 @@ def main() -> None:
     FIELDISH = re.compile(r"\bfield\b|remaining|quarter|contingent|traps? [1-6]|bottom-half|points contenders|qualifying winner|\bsession\b", re.I)
 
     def exec_rows(rows, limit=12):
+        """Picks first, in start order; fixtures without a pick collapse to one muted line."""
         out = []
         rows = sorted(
             [e for e in rows if not FIELDISH.search(e["home"] + " " + e["away"])],
             key=lambda e: e["start_utc"],
         )
-        for event in rows:
+        picks_only = [e for e in rows if pick_for(e["id"])]
+        unpicked = [e for e in rows if not pick_for(e["id"])]
+        for event in picks_only:
             pick = pick_for(event["id"])
             if pick:
                 pick_cell = esc(pick["selection"]) + (
@@ -252,6 +255,18 @@ def main() -> None:
                 f"<td>{pick_cell}</td>"
                 f"<td>{sources_cell(event['official_sources'])}</td>"
                 "</tr>"
+            )
+        if unpicked:
+            listed = "; ".join(
+                f"{esc(e['home'])} v {esc(e['away'])} ({esc(e['sport'])}, {esc(e['start_utc'][11:16])}Z)"
+                for e in unpicked[:8]
+            )
+            more = f" and {len(unpicked) - 8} more" if len(unpicked) > 8 else ""
+            out.append(
+                f'<tr><td colspan="6"><span class="muted small">{len(unpicked)} further fixtures on this card carry no pick '
+                f"and are listed on the matches page: {listed}{more}. They failed at least one of rules R1–R7 (elapsed, "
+                f"cross-desk conflict, no recorded fact note, below 70%, above 88%, alternate-line artefact, or a duplicate bet)."
+                "</span></td></tr>"
             )
         return "".join(out[:limit])
 
