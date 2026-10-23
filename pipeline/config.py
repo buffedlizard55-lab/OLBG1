@@ -60,8 +60,10 @@ PUBLISHERS = {
     'www.pgatour.com': 'PGA TOUR', 'www.europeantour.com': 'European Tour',
     'www.lpga.com': 'LPGA', 'www.gbgb.org.uk': 'Greyhound Board of Great Britain',
     'munster.gaa.ie': 'Munster GAA', 'gaacork.ie': 'Cork GAA',
+    'www.galwaygaa.ie': 'Galway GAA',
     'www.waterfordgaa.ie': 'Waterford GAA', 'www.maighcuilinn.com': 'Maigh Cuilinn GAA',
     'www.unitedrugby.com': 'United Rugby Championship', 'stats.unitedrugby.com': 'URC',
+    'www.premrugby.com': 'Premiership Rugby',
 }
 DISCOVERY_HOSTS = {'www.olbg.com', 'olbg.com'}
 
