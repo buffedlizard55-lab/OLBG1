@@ -25,7 +25,7 @@ from __future__ import annotations
 
 import json
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -97,6 +97,7 @@ def main() -> None:
     candidates = []
     watch: list[dict] = []
     dropped = defaultdict(int)
+    dropped_by_sport = defaultdict(Counter)
     for event in slate["events"]:
         seen_bets: set[str] = set()
         for line in event["markets"]:
@@ -108,7 +109,7 @@ def main() -> None:
             if not event["facts"]:
                 reasons.append("R3 no recorded fact note")
             if line["probability"] <= 0.60:
-                reasons.append("R4 below 60%")
+                reasons.append("R4 below 70%")
             if line["probability"] > 0.88:
                 reasons.append("R5 above 88%")
             if FIELDISH.search(event["home"] + " " + event["away"]):
@@ -121,6 +122,7 @@ def main() -> None:
             seen_bets.add(key)
             if reasons:
                 dropped[reasons[0]] += 1
+                dropped_by_sport[event["sport"]][reasons[0]] += 1
                 continue
             if line["probability"] <= 0.70:
                 watch.append(
@@ -194,19 +196,18 @@ def main() -> None:
             row["pick_id"] = f"{CODE[sport]}-{index:02d}"
             picks.append(row)
         if len(top) < 5:
-            shortfalls.append(
-                {
-                    "sport": sport,
-                    "available": len(rows),
-                    "target": 5,
-                    "reason": (
-                        "No further fixture in this sport clears all seven selection rules. "
-                        "Every remaining candidate is either elapsed at build time, carries a cross-desk "
-                        "directional conflict, has no recorded fact note to write from, is below the 70% "
-                        "threshold, is a near-certainty above 88%, or is an alternate-line artefact."
-                    ),
-                }
+            per_sport_drops = dropped_by_sport.get(sport, Counter())
+            drivers = [f"{label} ({count})" for label, count in per_sport_drops.most_common(3) if count]
+            upcoming_here = sum(1 for e in slate["events"] if e["sport"] == sport and e["state"] == "upcoming")
+            conflicted_here = sum(1 for e in slate["events"] if e["sport"] == sport and e["id"] in conflicted)
+            reason = (
+                f"{upcoming_here} fixtures of this sport were still upcoming at 21:30Z and "
+                f"{conflicted_here} of them {'carries' if conflicted_here == 1 else 'carry'} opposite favourites across desks. Of the lines those fixtures "
+                f"offered, the rules removed: " + ", ".join(drivers) + "."
+                if drivers
+                else f"{upcoming_here} fixtures of this sport were still upcoming at 21:30Z."
             )
+            shortfalls.append({"sport": sport, "available": len(rows), "target": 5, "reason": reason})
 
     watch_by_sport: dict[str, list[dict]] = defaultdict(list)
     seen_watch: set[str] = set()
