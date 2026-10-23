@@ -1,0 +1,53 @@
+{
+  "session": "T5B7D",
+  "commands": [
+    {
+      "command": "python3 -m unittest tests.pipeline.test_desk_5b7d3436 -v",
+      "exit_code": 0,
+      "finished_at": "2026-10-23T21:45:56Z",
+      "note": "29 tests passed; includes source separation, arithmetic, expiry, exports, links, fragments and hashes."
+    },
+    {
+      "command": "python3 -m unittest discover -s tests/pipeline -v",
+      "exit_code": 0,
+      "finished_at": "2026-10-23T21:49:42Z",
+      "note": "311 tests passed after the final rebase onto origin/main at 32057dc."
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p 'test*.py' -v",
+      "exit_code": 0,
+      "finished_at": "2026-10-23T21:49:32Z",
+      "note": "38 tests passed."
+    },
+    {
+      "command": "python3 -m pipeline.validate --site .",
+      "exit_code": 0,
+      "finished_at": "2026-10-23T21:49:34Z",
+      "note": "0 errors."
+    },
+    {
+      "command": "python3 scripts/validate.py",
+      "exit_code": 0,
+      "finished_at": "2026-10-23T21:49:55Z",
+      "note": "0 errors and 3 pre-existing warnings in f7fa77fc/flagged.html; 2661 published HTML pages link-checked."
+    },
+    {
+      "command": "python3 -m pipeline.build --out _site",
+      "exit_code": 0,
+      "finished_at": "2026-10-23T21:50:08Z",
+      "note": "92 canonical pages built; namespaced desk and CSV exports present in staged output."
+    },
+    {
+      "command": "python3 -m pipeline.validate --site _site",
+      "exit_code": 0,
+      "finished_at": "2026-10-23T21:50:11Z",
+      "note": "0 errors."
+    },
+    {
+      "command": "SITE_DIR=_site NODE_PATH=/tmp/s5b7d-browser/node_modules node tests/pipeline/browser.cjs",
+      "exit_code": 0,
+      "finished_at": "2026-10-23T21:50:16Z",
+      "note": "Canonical Chromium desktop/mobile, project-subpath, filters, sort, odds toggle, CSV, deep-link, expiry and no-JavaScript checks passed."
+    }
+  ]
+}
