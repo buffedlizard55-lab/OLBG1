@@ -1,0 +1,126 @@
+{
+ "nhl_quotes": {
+  "fx-nhl-mtl-chi": {
+   "source": "src-nhl-schedule",
+   "away": {
+    "name": "Montreal Canadiens",
+    "american": [
+     -170,
+     -170,
+     -162
+    ]
+   },
+   "home": {
+    "name": "Chicago Blackhawks",
+    "american": [
+     138,
+     142,
+     134
+    ]
+   },
+   "excluded": "The same response carries decimal quotes that point the other way (Montreal 2.35, Chicago 1.59); excluded and flagged as F-CF-03."
+  },
+  "fx-nhl-tbl-col": {
+   "source": "src-nhl-schedule",
+   "away": {
+    "name": "Tampa Bay Lightning",
+    "american": [
+     105,
+     106,
+     105
+    ]
+   },
+   "home": {
+    "name": "Colorado Avalanche",
+    "american": [
+     -129,
+     -128,
+     -125
+    ]
+   },
+   "excluded": "Same provider split as the other game; the consistent trio only."
+  }
+ },
+ "mlb": {
+  "fx-mlb-ws-g1": {
+   "away": {
+    "name": "Tampa Bay Rays",
+    "w": 98,
+    "l": 64,
+    "rs": 736,
+    "ra": 650,
+    "source": "src-mlb-standings"
+   },
+   "home": {
+    "name": "Milwaukee Brewers",
+    "w": 103,
+    "l": 59,
+    "rs": 832,
+    "ra": 618,
+    "source": "src-mlb-records-capture"
+   },
+   "games": 162
+  }
+ },
+ "urc": {
+  "source": "src-urc-r4",
+  "results": [
+   [
+    "Glasgow Warriors",
+    36,
+    "Connacht",
+    19,
+    "2026-10-09"
+   ],
+   [
+    "Dragons",
+    31,
+    "Ospreys",
+    38,
+    "2026-10-09"
+   ],
+   [
+    "Bulls",
+    57,
+    "Lions",
+    15,
+    "2026-10-10"
+   ],
+   [
+    "Stormers",
+    39,
+    "Sharks",
+    22,
+    "2026-10-10"
+   ],
+   [
+    "Zebre Parma",
+    12,
+    "Edinburgh",
+    29,
+    "2026-10-10"
+   ],
+   [
+    "Scarlets",
+    27,
+    "Benetton",
+    26,
+    "2026-10-10"
+   ],
+   [
+    "Ulster",
+    26,
+    "Munster",
+    26,
+    "2026-10-10"
+   ],
+   [
+    "Leinster",
+    29,
+    "Cardiff",
+    5,
+    "2026-10-10"
+   ]
+  ]
+ }
+}

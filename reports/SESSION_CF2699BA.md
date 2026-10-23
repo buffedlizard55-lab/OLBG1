@@ -1,109 +1,119 @@
-# Session cf2699ba-olbg1 — 23 October 2026 desk
+# Session cf2699ba-olbg1 — T67, fifteen-sport desk, 23 October 2026
 
-**Task T67.** Fresh 15-sport desk for the sports named in the brief: Golf, Volleyball, Rugby Union,
-Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice
-Hockey, Basketball, Rugby League.
+Snapshot window **2026-10-23T16:20Z – 16:40Z**. One capture, no automatic refresh.
+Deliverable: `cf2699ba/` (24 pages), data in `data/cf2699ba/`, pipeline in `scripts/scf2699ba_*.py`.
 
-**Observation window.** 2026-10-23T16:17Z – 2026-10-23T16:40Z. Single snapshot, no automatic refresh.
+## The brief, and what this desk did with it
 
-## What was done
-
-1. Read all 15 in-scope OLBG sport hubs (`https://www.olbg.com/betting-tips/{Slug}/{id}`) and captured
-   **135 listings** with event id, competition label, printed time string, top pick, market, tip count
-   and tip share (`data/cf2699ba/discovery.json`).
-2. Fetched 16 sources (13 distinct hosts) trying to confirm those listings against governing bodies
-   (`data/cf2699ba/sources.json`).
-3. Confirmed **six fixtures** on official pages: two NHL games, MLB World Series Game 1, and three
-   United Rugby Championship Round 4 matches (`data/cf2699ba/fixtures.json`).
-4. Originated prices for **16 outcomes across those six fixtures** (money line, run line, game total)
-   plus **107 clearly-labelled indicative prices** on discovery-only rows (`data/cf2699ba/lines.json`).
-5. Wrote **seven predictions**, 62–77 words each, every clause source-linked
-   (`data/cf2699ba/predictions.json`).
-6. Published **19 flags** (`data/cf2699ba/flagged.json`) and a 24-page static dashboard in `cf2699ba/`.
-
-## Official sources actually read this session
-
-| ID | Organisation | URL | What it gave |
-|---|---|---|---|
-| src-nhl-schedule | NHL | `api-web.nhle.com/v1/schedule/2026-10-23` | 2 games, start times, venues, states, six per-provider price sets each |
-| src-nhl-standings | NHL | `api-web.nhle.com/v1/standings/2026-10-23` | CAR/EDM/BOS/VGK records only (chunk 0); **none of tonight's clubs** |
-| src-mlb-schedule | MLB | `statsapi.mlb.com/api/v1/schedule?...2026-10-23..25` | WS Game 1 and Game 2, pitchers, `ifNecessary=N`, venue |
-| src-mlb-standings-al | MLB | `statsapi.mlb.com/api/v1/standings?leagueId=103,104...` | Tampa Bay 98-64, splits, RS/RA |
-| src-mlb-standings-nl | MLB | same, `leagueId=104` | **read but unusable** — NL East only in chunk 0 |
-| src-mlb-records-capture | MLB (repo capture) | `data/current/evidence/mlb-records-2026.json` | Milwaukee 103-59, RS 832 / RA 618, captured 2026-10-22 |
-| src-urc-round4 | United Rugby Championship | `stats.unitedrugby.com/match-centre/2026-27/4` | 3 Friday fixtures with local times and venues; eight Round 3 results |
-| src-f1-usgp | Formula 1 | `formula1.com/en/racing/2026/united-states` | US GP session times, COTA 5.513 km / 56 laps / 308.432 km |
-| src-wst-matches | World Snooker Tour | `wst.tv/matches/` | Round 1 results only (18–19 Oct) — today's session not reached |
-| src-cricket-au | Cricket Australia | `cricket.com.au/matches?...` | filter lists only, no fixtures |
-| src-euroleague-gc | Euroleague Basketball | `euroleaguebasketball.net/.../game-center/` | club list only, grid client-rendered |
-| src-pdc | PDC | `pdc.tv/tournament/2026-cazoo-european-championship` | consent wall, no content |
-| src-munster-gaa | Munster GAA | `munster.gaa.ie/fixtures/` | index/navigation only |
-| src-atp-scores | ATP Tour | `atptour.com/en/scores/current` | Brussels/Lyon QFs — different matches from OLBG's rows |
-| src-wta-scores | WTA | `wtatennis.com/scores` | notifications only |
-| src-olbg-hubs | OLBG | 15 hub pages | discovery only, never a fact source |
-
-## Verification performed
-
-* Every fixture's date, start, venue and status was read on the governing body's own page; nothing was
-  copied from OLBG.
-* Every fact attached to a prediction carries a source id that `scripts/scf2699ba_validate.py` resolves
-  against `sources.json`.
-* Tier arithmetic is recomputed from p and the American price on every row, and the validator fails on
-  any mismatch.
-* All 24 pages were re-walked for broken relative links, `<script>` tags, localhost references and the
-  snapshot stamp.
-* `scripts/validate.py` (repo historical gate): 0 errors, 3 pre-existing `f7fa77fc` warnings.
-* `python -m unittest discover -s tests/pipeline`: 145 tests OK. Preserved suite: 38 OK.
-* `python -m pipeline.build --out _site` + `pipeline.validate --site _site`: 85 pages, 0 errors once the
-  desk files are tracked (the first run flagged `archive.html → cf2699ba/index.html` as broken only
-  because the untracked desk had not been staged into `_site`).
-
-## Headline results
-
-| Metric | Value |
+| Requirement | Outcome |
 |---|---|
-| OLBG listings captured | 135 |
-| Fixtures confirmed officially | 6 |
-| Priced outcomes from official input | 16 |
-| Indicative prices (Low only) | 107 |
-| High / Medium / Low | **0 / 1 / 122** |
-| Predictions (≥30 words) | 7 |
-| Flags | 19 (9 high) |
+| Complete updated match list for the fifteen named sports | 134 OLBG listings, all fifteen hubs swept, every row kept and shown |
+| Own betting lines across every discoverable market | 133 prices: 16 from official inputs, 117 indicative; 28 markets examined and withheld with a written reason |
+| Pick a winner per match | Every priced row carries a selection; withheld rows say why they have none |
+| Low / medium / high confidence | 0 High, 1 Medium, 132 Low, graded by a rule the build re-checks |
+| Five high-confidence picks per sport per day | **Not achievable today.** Six fixtures confirmed, none priced in the 70.0–71.4% window the rule allows. Documented, not filled |
+| Unique human prediction of 30+ words per high pick | 7 write-ups, 58–71 words, each clause tied to a source |
+| No "model" or "verified" in published prose | Absent from all 24 pages, checked by the gate |
+| Confirm every row against an official source, link it | 9 sources, each with the timestamp it was read and its limits; 6 fixtures confirmed |
+| Leave unconfirmable values blank and flag them | 129 discovery-only rows, 21 flags, 28 withheld markets |
+| Flag irregularities | 21, with 10 high severity |
+| Clean dashboard plus category subpages | Summary, matches, markets, confidence, predictions, analysis, flagged, sources, method, plus 15 sport pages |
 
-**High = 0 is the finding.** The brief's rule needs p ≥ 0.70 *and* a price no shorter than −250, which
-bounds the eligible band to 70.0 %–71.4 %. The strongest confirmed selection (Edinburgh, ~85 %) prices
-near −567 and is therefore a Medium. Nothing was reclassified to hit a target.
+## Sources read
 
-## Irregularities (full detail on `/cf2699ba/flagged.html`)
+| Publisher | Page | Read | What it gave |
+|---|---|---|---|
+| NHL | `api-web.nhle.com/v1/schedule/2026-10-23` | 16:24Z | Two games, UTC starts, venues, game ids, per-provider quotes |
+| NHL | `api-web.nhle.com/v1/standings/2026-10-23` | 16:26Z | Top of the table only; none of tonight's four clubs |
+| MLB | `statsapi.mlb.com/.../schedule` | 16:27Z | World Series Game 1 (gamePk 849805) and Game 2, probable pitchers |
+| MLB | `statsapi.mlb.com/.../standings?leagueId=103` | 16:29Z | Tampa Bay 98-64, 43-38 away, 736 scored, 650 allowed |
+| MLB capture | repository `data/current/evidence/mlb-records-2026.json` | 2026-10-22 | Milwaukee 103-59, 832 scored, 618 allowed |
+| URC | `stats.unitedrugby.com/match-centre/2026-27/4` | 16:31Z | Three Friday fixtures with local times and venues, eight Round 3 results |
+| Formula 1 | `formula1.com/en/racing/2026/united-states` | 16:33Z | COTA, 5.513 km, 56 laps; practice, qualifying and race times |
+| World Snooker Tour | `wst.tv/matches` | 16:35Z | Round 1 results to 19 October; today's ties not reached |
+| OLBG | fifteen sport hubs | 16:20–16:36Z | Discovery only: names, competitions, printed times, tip shares |
 
-1. **F-CF-01** OLBG prints no timezone and mixes conventions in one capture: a 17:12 Towcester race shown
-   as 12:12 (US Eastern), URC matches at 14:45 which the URC also prints as 14:45 local, and an F1 race at
-   16:00 which is 16:00 at the circuit. Any fixed offset would be wrong for at least one of the three.
-2. **F-CF-02** OLBG shows `20:07` for a game the NHL starts at 20:00 Eastern; every on-the-hour NHL row
-   carries `:07` minutes.
-3. **F-CF-03** The NHL feed's own odds arrays contradict each other: Montreal 2.35 / 1.60 / 2.03 on three
-   providers versus −170 / −170 / −162 on three others, with Chicago 1.59 and +138 simultaneously.
-4. **F-CF-04** OLBG lists 15+ NHL games "today"; the league schedules exactly 2.
-5. **F-CF-05** The URC page names the same clubs two ways (fixtures "Hollywoodbets Sharks", results
-   "Sharks"). A six-entry alias table is published with the code.
-6. **F-CF-06 / 07** Golf returned "No tips found"; Rugby League had only 2027 outrights.
-7. **F-CF-08 to 13** Access barriers: pdc.tv consent wall; WST capture stops before today; EuroLeague
-   client-rendered and the NBA scoreboard endpoint returned HTTP 500; ATP/WTA list different matches;
-   Cricket Australia filters only; Munster GAA index only.
-8. **F-CF-14** Fresh MLB standings returned NL East in chunk 0, so Milwaukee's record comes from the
-   repository's 2026-10-22 canonical capture of the same endpoint.
-9. **F-CF-16** No injury, suspension or team-news data was obtainable anywhere.
-10. **F-CF-19** 107 indicative prices exist and are not evidence; they are permanently Low.
+Blocked or unusable, each recorded as a flag: PDC European Championship (consent wall), EuroLeague game
+centre (client-rendered), NBA scoreboard (HTTP 500), ATP and WTA score pages (different matches), Cricket
+Australia (filters only), Munster GAA (navigation only), NHL standings (top of table only), MLB National
+League standings (American League block returned instead).
 
-## Reproduction
+## Prices
 
-```sh
-python3 scripts/scf2699ba_data.py        # sports, sources, discovery, fixtures
-python3 scripts/scf2699ba_model.py       # originated lines -> data/cf2699ba/lines.json
-python3 scripts/scf2699ba_predictions.py # prose + flags
-python3 scripts/scf2699ba_site.py        # 24 pages -> cf2699ba/
-python3 scripts/scf2699ba_validate.py    # gates, exit non-zero on failure
+**From official inputs, 16 rows on 6 fixtures.**
+
+| Fixture | Market | Selection | p | Fair price | Grade |
+|---|---|---|---|---|---|
+| Montreal at Chicago | Money line | Montreal | 0.600 | −150 | Low |
+| Montreal at Chicago | Money line | Chicago | 0.400 | +150 | Low |
+| Tampa Bay at Colorado | Money line | Tampa Bay | 0.464 | +115 | Low |
+| Tampa Bay at Colorado | Money line | Colorado | 0.536 | −115 | Low |
+| Rays at Brewers | Money line | Milwaukee | 0.561 | −128 | Low |
+| Rays at Brewers | Money line | Tampa Bay | 0.439 | +128 | Low |
+| Rays at Brewers | Run line −1.5 | Milwaukee | 0.406 | +146 | Low |
+| Rays at Brewers | Run line +1.5 | Tampa Bay | 0.594 | −146 | Low |
+| Rays at Brewers | Total 8.5 | Over | 0.511 | −105 | Low |
+| Rays at Brewers | Total 8.5 | Under | 0.489 | +105 | Low |
+| Cardiff v Sharks | Money line | Cardiff | 0.536 | −115 | Low |
+| Cardiff v Sharks | Money line | Sharks | 0.464 | +115 | Low |
+| Connacht v Zebre | Money line | Connacht | 0.585 | −141 | Low |
+| Connacht v Zebre | Money line | Zebre | 0.415 | +141 | Low |
+| Edinburgh v Lions | Money line | Edinburgh | 0.850 | −567 | Medium |
+| Edinburgh v Lions | Money line | Lions | 0.150 | +567 | Low |
+
+Derivations: NHL by two-way de-vig of three mutually consistent provider quotes (the contradictory
+decimal quotes are excluded and named); MLB by independent Poisson on season runs with ties removed and a
+log5 cross-check at 0.533; URC by shrunk single-round margins (0.25) plus a declared three-point home
+prior, normal CDF, capped at 0.85.
+
+**Indicative, 117 rows.** OLBG vote share, halved toward a coin flip, capped at 90%, permanently Low.
+Never counted as evidence.
+
+## Why zero High
+
+A 70% chance is about −233; a −250 price is 71.4%. The two halves of the brief's rule therefore overlap
+only in a 1.4-point window. The strongest confirmed selection today (Edinburgh, about 85%) is far above
+the chance floor and prices at −567, outside the price band. The next best confirmed side is 60.0%.
+Publishing a High would have required re-grading, which the desk does not do; the ledger is instead shown
+as its own table so the reader can see exactly which rows were excluded and why.
+
+## Flags (21, ten high)
+
+1. **F-CF-01** OLBG has no timezone and mixes conventions in one capture: a 17:12 greyhound race shown as
+   12:12 (US Eastern), URC at 14:45 (local), MLB at 20:00 (Eastern), F1 at 16:00 (track local).
+2. **F-CF-02** OLBG prints 20:07 for a game the NHL starts at 20:00; every on-the-hour NHL row carries `:07`.
+3. **F-CF-03** The NHL feed's own quotes contradict each other about which side is favourite.
+4. **F-CF-04** The URC names clubs two ways between its fixture and results blocks.
+5. **F-CF-05** The hub carries several NHL fixtures; the league schedules two, only one of which is listed.
+6. **F-CF-06/07** Golf returns no tips; Rugby League has 2027 outrights only.
+7. **F-CF-08–13** Darts consent wall, snooker list stops before today, EuroLeague client-rendered, NBA
+   HTTP 500, tennis pages list different matches, cricket filters only, Gaelic navigation only.
+8. **F-CF-14** Milwaukee's record comes from the repository's 2026-10-22 capture.
+9. **F-CF-15** NHL standings loaded the top of the table only.
+10. **F-CF-16** No availability data anywhere, so no prediction mentions an injury.
+11. **F-CF-17** Greyhound race names and displayed times disagree; no GBGB card read.
+12. **F-CF-18** 117 indicative prices rest on tip-vote shares, not prices.
+13. **F-CF-19** OLBG's Cardiff v Sharks price direction cannot be checked against a league, which publishes none.
+14. **F-CF-20** An EHF tie with a +11.50 handicap, unconfirmed.
+15. **F-CF-21** The High rule's 70.0–71.4% window, stated as a finding.
+
+## Gates
+
+```
+python3 scripts/scf2699ba_data.py        15 sports / 9 sources / 134 rows / 6 fixtures
+python3 scripts/scf2699ba_model.py       133 prices (16 official, 117 indicative), 28 withheld
+python3 scripts/scf2699ba_predictions.py 7 write-ups (58-71 words), 21 flags
+python3 scripts/scf2699ba_site.py        24 pages
+python3 scripts/scf2699ba_validate.py    1,644 assertions -> VALIDATION PASSED (0 errors)
+python3 scripts/validate.py              Errors 0, Warnings 3 (pre-existing f7fa77fc rows)
+python3 -m unittest discover -s tests/pipeline   145 tests OK
+python3 -m pipeline.build --out _site            includes _site/cf2699ba/
 ```
 
-No edits were made to any pre-existing desk, data file, root page, `pipeline/` module or shared
-navigation. `COORDINATION.md` is append-only.
+## Scope discipline
+
+No pre-existing desk, data file, root page, shared navigation or `pipeline/` module was edited.
+`COORDINATION.md` is append-only (71 added lines, 0 deleted). The desk is reachable at `/cf2699ba/` and is
+auto-listed on `archive.html` by the canonical build; its auto-label ("additional historical namespace;
+not recertified") is wrong for a current desk and is logged as a request for the integration session
+rather than patched here.

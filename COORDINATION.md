@@ -4668,3 +4668,74 @@ difference is the evidence gate: `2b72da34` publishes 37 rows and one literal Hi
 this desk publishes 135 listings, six officially confirmed fixtures, sixteen officially priced outcomes
 and zero High, because the only confirmed selection with p ≥ 70% (Edinburgh, ~85%) prices near −567 and
 falls outside the brief's −250 floor. Both readings are recorded; the user can judge which is more useful.
+
+## 69. Session `cf2699ba-olbg1` — T67 result, superseding the counts in §68 (2026-10-23T19:05Z)
+
+**Status: done.** Desk at `cf2699ba/` (24 pages), data at `data/cf2699ba/`, scripts
+`scripts/scf2699ba_{data,model,predictions,site,validate}.py`, report `reports/SESSION_CF2699BA.md`.
+Counts below replace the provisional figures quoted in §68; §68 is left untouched per the append-only rule.
+
+**Discovered.** 134 OLBG listings across 15 sports, one capture 16:20–16:40Z. Golf returned
+"No tips found" (0 rows); Rugby League carries 2027 outrights only (3 rows). Row counts by sport:
+ice-hockey 14, basketball 14, rugby-union 15, volleyball 14, handball 14, darts 13, cricket 12,
+tennis 9, greyhounds 15, gaelic-sports 5, motor-racing 3, rugby-league 3, snooker 2, baseball 1, golf 0.
+
+**Confirmed on a governing body's own page (6 fixtures).**
+NHL: Montreal at Chicago, game 2026020166, 2026-10-24T00:00Z, United Center; Tampa Bay at Colorado,
+game 2026020167, 2026-10-24T01:00Z, Ball Arena. MLB: World Series Game 1, gamePk 849805, Tampa Bay at
+Milwaukee, 2026-10-24T00:00Z, American Family Field, Martinez against Misiorowski, `ifNecessary=N`.
+URC Round 4, all 14:45 local on 23 October: Cardiff v Hollywoodbets Sharks (Cardiff Arms Park),
+Connacht v Zebre Parma (Dexcom Stadium), Edinburgh v Emirates Lions (Hive Stadium).
+Note that Tampa Bay at Colorado is *not* on the OLBG hub: a confirmed fixture with no listing, the
+mirror image of the usual problem.
+
+**Prices originated.** 133 rows, in two classes that are never mixed.
+- 16 rows on the 6 confirmed fixtures, from named inputs: NHL money lines by two-way de-vig of the three
+  mutually consistent provider quotes in the league feed; the World Series by independent Poisson on
+  official season runs (money line, run line ±1.5, total 8.5); URC money lines from shrunk single-round
+  margins plus a declared home prior.
+- 117 indicative rows from OLBG tip-vote share, halved toward a coin flip, capped at 90%, permanently Low.
+- 28 market rows examined and **withheld** with a written reason: NHL puck line and total (no per-club
+  goal rates in the feed), URC handicap and match total (one confirmed match per club cannot carry a
+  points line), MLB pitcher adjustment (starters named, no season line read), and every handicap, total
+  or set market that exists only as a tip-vote share.
+
+**Grades.** High **0**, Medium **1** (Edinburgh at 0.850, −567), Low **132**. The brief's High rule needs
+p ≥ 70% *and* a price no shorter than −250, which admits only 70.0–71.4%; the strongest confirmed
+selection is far above the chance floor and far below the price floor. The out-of-band ledger is published
+as its own table rather than folded into the grades, and no row was re-graded to fill a target.
+
+**Predictions.** 7, between 58 and 71 words, each stating its selection in plain words and each carrying
+fact/source pairs. Banned words ("model", "verified") are absent from every rendered page, checked
+automatically across all 24 files. No prediction mentions an injury, because no availability source could
+be read (F-CF-16).
+
+**Flags.** 21, of which 10 are high severity. Highlights: OLBG prints no timezone and mixes conventions in
+one capture (F-CF-01); OLBG's minute field is corrupted for on-the-hour NHL starts (F-CF-02); the NHL feed
+carries mutually contradictory price arrays in which the two sets disagree about the favourite (F-CF-03);
+the URC names the same clubs two ways (F-CF-04); the golf hub is empty and the rugby league hub has no
+matches (F-CF-06/07); seven sports are blocked by consent walls, client rendering, an HTTP 500, or pages
+that stop before today (F-CF-08/09/10/11/12/13); Milwaukee's record comes from the repository's 2026-10-22
+capture because today's standings call returned the American League block only (F-CF-14).
+
+**Reproduction and gates.**
+`python3 scripts/scf2699ba_data.py` → `_model.py` → `_predictions.py` → `_site.py` → `_validate.py`.
+The gate runs 1,644 assertions: counts, every source id resolves, every de-vigged price recomputes from p,
+every grade recomputes from p and the American price, the band ledger is complete, predictions are 30+
+words with no banned word and a price that matches the model, flags are unique and sourced, and all 24
+pages are link-walked with no script tag, no localhost reference, no insecure link and the snapshot stamp
+present. Result: **VALIDATION PASSED (0 errors)**.
+Repo-wide `python3 scripts/validate.py`: 0 errors, 3 pre-existing `f7fa77fc` warnings.
+`python3 -m unittest discover -s tests/pipeline`: 145 tests OK (plus 38 in the preserved suite).
+`python3 -m pipeline.build --out _site` + `pipeline.validate --site _site`: 0 errors; `_site/cf2699ba/`
+is staged automatically from the tracked tree.
+
+**Navigation.** No shared file was edited. `pipeline/build.py` auto-lists any top-level directory holding
+an `index.html`, so this desk appears on `archive.html` without a hand edit — but its auto-label reads
+"Additional historical namespace; not recertified", which mislabels a current desk. That label is shared
+code owned by the integration session, so it is logged here as a request rather than edited.
+
+**Parallel desk.** Session `2b72da34-olbg1` published its own 15-sport desk for the same date (PR #162)
+while this one was in flight. Neither modified the other; §68.1 records the comparison.
+
+**PR and deploy.** Recorded in §70 after the merge, with the Pages run id.
