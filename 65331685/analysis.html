@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Analysis — T65331685 Sports Desk</title>
+<meta name="description" content="T65331685 official-source sports desk: zero-vig multi-market pricing, high-confidence picks, full evidence trail.">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><h1>OLBG Sports Desk — Session T65331685</h1>
+<p>Official-source verification + zero-vig multi-market origination · 15 sports · generated 2026-10-23 20:40 UTC · branch arena/65331685-olbg1</p></header>
+<nav><a href="index.html">Dashboard</a><a href="sports.html">Sports</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="high-confidence.html">High Confidence</a><a href="predictions.html">Predictions</a><a href="analysis.html">Analysis</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="repo-audit.html">Repo Audit</a><a href="methodology.html">Methodology</a></nav><main><h2>Analysis</h2>
+<h3>Pricing constants (disclosed)</h3>
+<table><tr><th>Constant</th><th>Value</th></tr><tr><td>shrinkage_prior</td><td>Beta(2,2)</td></tr><tr><td>link</td><td>log5</td></tr><tr><td>home_edge</td><td>none applied</td></tr><tr><td>nhl_loss_convention</td><td>OTL counts as a defeat for win-percentage inputs</td></tr><tr><td>rugby_draw_convention</td><td>draw counts 0.5 win and 0.5 loss in raw rates</td></tr><tr><td>baseball_totals</td><td>paired regular-season run rates; independent Poisson scores conditioned on no tie</td></tr><tr><td>nba_margin_sd_points</td><td>11.5</td></tr><tr><td>nhl_margin_sd_goals</td><td>1.9</td></tr><tr><td>rugby_margin_sd_points</td><td>14.0</td></tr><tr><td>handball_margin_sd_goals</td><td>4.0</td></tr><tr><td>mlb_run_sd</td><td>4.3</td></tr><tr><td>tennis_link</td><td>rank-Elo proxy: Elo(rank)=1500+40*log10(500/rank), logistic 400</td></tr><tr><td>greyhound_link</td><td>semi-final clock logistic, k=1.5 per second</td></tr><tr><td>rlwc_link</td><td>elite-spine representation index (documented 17-4 scale)</td></tr><tr><td>cricket_link</td><td>Beta(2,2)-shrunk series win rate, log5</td></tr><tr><td>volleyball_link</td><td>Beta(2,2)-shrunk set-share win rate, log5</td></tr><tr><td>snooker_link</td><td>Beta(2,2)-shrunk frame share this tournament, log5</td></tr><tr><td>high_band</td><td>p&gt;0.70 AND -250 &lt;= fair american &lt;= +10000 (unrounded decides; 1e-6 float tolerance on band edges)</td></tr><tr><td>read_channel</td><td>Arena fetch/search layer; each read logged with URL and UTC time</td></tr></table>
+<h3>Method in brief</h3>
+<p>Record inputs are shrunk toward .500 with a Beta(2,2) prior and combined with log5; NHL overtime losses count as defeats and rugby draws split 0.5/0.5 (both disclosed). Runs, goals and points come from paired per-game rates with independent Poisson scores conditioned on no tie; fixed half-point ladders keep every two-sided market zero-vig. Handicap and total rungs use gaussian margins with the disclosed sport deviations. Greyhound prices normalize the read semi-final clocks; rugby league prices use the elite-spine representation index; tennis prices use the rank-Elo proxy shown in the constants table.</p>
+<h3>Decision notes</h3>
+<ul>
+<li>The Edmonton Oilers moneyline sits exactly on the −250 floor (p=0.7143) and is included under inclusive band edges; the float tolerance is documented in the constants.</li>
+<li>NBA probabilities barely clear .69 on one-game records; nothing crossed 0.70, so no basketball selection is tagged High tonight.</li>
+<li>Heavy favourites (Glasgow, Samoa, England, New Zealand, Australia, Pakistan, Nantes, Paris) run shorter than −250 and are listed only on the chalk ledger.</li>
+<li>OLBG hub tip feeds rendered "No tips found." in the fetch channel all evening while event pages rendered full tip blocks; the discovery record is preserved and the irregularity is logged under Flagged.</li>
+<li>OLBG hub clocks render America/New_York times without labels; conversions are flagged on affected rows (Nantes kickoff shows a one-hour disagreement with the official LNH calendar).</li>
+</ul>
+<h3>Tier distribution</h3>
+<p class="note">7 High · 173 Medium · 426 Low · 9 chalk-disclosed · 108 other out-of-band.</p></main>
+<footer>Built from reads logged in <a href="sources.html">Sources</a>. Quotes/availability/edge left blank per repository policy. Nothing is treated as confirmed without an official-source read recorded with its time.</footer>
+</body></html>
