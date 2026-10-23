@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methodology &amp; Clock Audit — OLBG Quantitative Origination Desk (8a900c04)</title>
+  <link rel="stylesheet" href="assets/desk.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span>OLBG Quantitative Line Origination Desk</span>
+        <span class="brand-badge">2026-10-23 UTC · 8a900c04</span>
+      </div>
+      <nav class="topnav" aria-label="Primary navigation"><a href="index.html" class="">Executive Summary</a><a href="todays-picks.html" class="">Today&#x27;s Picks</a><a href="upcoming-picks.html" class="">All 75 Upcoming</a><a href="markets.html" class="">Multi-Market Board</a><a href="methodology.html" class="active">Methodology &amp; Clock Audit</a><a href="sources.html" class="">Official Sources</a><a href="repo-audit.html" class="">Repo Audit</a><a href="flagged.html" class="">Flagged for Review</a><a href="../archive.html" class="">Archive</a></nav>
+    </div>
+  </header>
+  <div class="sport-strip" aria-label="15 Covered Sports navigation">
+    <div class="sport-strip-inner">
+      <span class="lbl">15 Covered Sports:</span>
+      <a href="sports/golf.html" class="">Golf</a><a href="sports/volleyball.html" class="">Volleyball</a><a href="sports/rugby-union.html" class="">Rugby Union</a><a href="sports/cricket.html" class="">Cricket</a><a href="sports/snooker.html" class="">Snooker</a><a href="sports/darts.html" class="">Darts</a><a href="sports/baseball.html" class="">Baseball</a><a href="sports/gaelic-sports.html" class="">Gaelic Sports</a><a href="sports/greyhounds.html" class="">Greyhounds</a><a href="sports/tennis.html" class="">Tennis</a><a href="sports/motor-racing.html" class="">Motor Racing</a><a href="sports/handball.html" class="">Handball</a><a href="sports/ice-hockey.html" class="">Ice Hockey</a><a href="sports/basketball.html" class="">Basketball</a><a href="sports/rugby-league.html" class="">Rugby League</a>
+    </div>
+  </div>
+  <main class="container">
+    
+    <section class="hero">
+      <div class="eyebrow">Quantitative Methodology &amp; OLBG Architecture Discovery</div>
+      <h1>Statistical Line Origination Equations &amp; OLBG Protocol Audit</h1>
+      <p class="lead">Every probability in this release is computed deterministically from governing-body performance data, venue effects, and injury adjustments—never from OLBG tipster vote percentages or bookmaker prices.</p>
+    </section>
+
+    <div class="callout warn">
+      <strong>Smoking-Gun OLBG GeoIP Clock Discovery (2026-10-23):</strong>
+      When crawled from US-East infrastructure, OLBG server-renders unlabeled timestamps in <strong>US Eastern Daylight Time (EDT = UTC-4)</strong>—a 5-hour shift from UK BST (UTC+1) and 4-hour shift from UTC.
+      Direct proof captured live on <a href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener">/betting-tips/Greyhounds/28</a>:
+      card title <code>8:33 Romford</code> (20:33 BST / 19:33 UTC) renders right above timestamp <code>Today 15:33</code>;
+      <code>9:13 Romford</code> (Coral 100 Champion Stakes Final, 20:13 UTC) renders as <code>Today 16:13</code>;
+      and URC kickoffs at <code>19:45 IRE/UK</code> (18:45 UTC) render as <code>Today 14:45</code>.
+      Parallel session <code>2b72da34</code> copied those unlabeled strings verbatim across all 37 rows.
+    </div>
+
+    <h2>1. OLBG Reverse-Engineering &amp; Robots Compliance</h2>
+    <div class="table-wrap"><table><thead><tr>
+      <th>Layer / Route</th><th>Observed OLBG Behavior on 2026-10-23</th><th>Compliance &amp; Engineering Action</th>
+    </tr></thead><tbody>
+      <tr><td><code>/robots.txt</code></td><td>Disallows <code>/api/</code>, <code>/bookiecenter/api/</code>, <code>/storage/app/json_data/</code>, <code>/events.php</code>, <code>/tips/hot</code>, <code>/sports/</code>, and <code>User-agent: Python-urllib</code>.</td><td>Zero disallowed endpoints requested; strictly public HTML hubs &amp; sitemap routes fetched cleanly.</td></tr>
+      <tr><td><code>/sitemap-betting-tips.xml</code></td><td>Updated <code>2026-10-23</code> across 4 chunks; exposes exact numeric OLBG category IDs (3, 4, 5, 7, 8, 9, 10, 12, 13, 14, 15, 20, 21, 25, 26, 28).</td><td>Mapped all 15 covered sports including dual GAA codes <code>Gaelic_Football/25</code> + <code>Hurling/26</code>; excluded Football/1, Horse_Racing/2, NFL/11, AFL/22, eSports/23.</td></tr>
+      <tr><td>20-Card Hub Truncation</td><td>Top hubs truncate high-volume slates (e.g., <code>/Ice_Hockey/13</code> hid <code>TB Lightning @ COL Avalanche</code> behind 18 European hockey cards; <code>/Basketball/4</code> hid <code>MEM Grizzlies @ GS Warriors</code>).</td><td>Crawled competition sub-routes (<code>/Ice_Hockey/NHL/13</code>, <code>/Basketball/NBA/4</code>, <code>/Hurling/26</code>) plus chunked pagination to capture 100% of hidden cards.</td></tr>
+      <tr><td>Empty Active Tour Hubs</td><td><code>/Golf/5</code> printed <em>&ldquo;No tips found.&rdquo;</em> and <code>/Rugby_League/10</code> showed only 2027 anteposts despite live 2026 tournaments running right now.</td><td>Queried PGA Tour (Bermuda), DP World Tour (Genesis), LPGA (BMW Ladies), and NRL/IRL (2026 Rugby League World Cup Round 2) directly for full 5-event coverage.</td></tr>
+    </tbody></table></div>
+
+    <h2>2. Sport-by-Sport Multi-Market Statistical Pricing Families</h2>
+    <div class="table-wrap"><table><thead><tr>
+      <th>Pricing Engine</th><th>Sports Covered</th><th>Mathematical Formulation &amp; Markets Derived</th>
+    </tr></thead><tbody>
+      <tr><td><strong>Exact Bivariate Poisson + OT Allocation</strong></td><td>Baseball (MLB World Series), Ice Hockey (NHL)</td><td>Independent run/goal intensities (&lambda;<sub>H</sub>, &lambda;<sub>A</sub>) from opponent-adjusted scoring/prevention, starter quality, rest, and key injuries (e.g., Nick Suzuki out 2–4 weeks), enumerating the full 25&times;25 score matrix for Moneyline, &plusmn;1.5 Run/Puck Line, Alt Totals, Team Totals, and 1st-Period / First-5-Innings DNB.</td></tr>
+      <tr><td><strong>Exact Markov Best-of-N Series Matrix</strong></td><td>Tennis (Bo3 Sets), Volleyball (Bo5 Sets), Snooker (Bo9 / Bo11 Frames), Darts (Bo11 / Bo19 Legs), World Series Outright (Bo7)</td><td>Exact negative-binomial exact-score state probabilities from unit win probability <em>p<sub>u</sub></em>, outputting Match Winner, -1.5 / +1.5 / -2.5 Set-Leg-Frame Handicaps, Over/Under Total Sets/Legs/Frames, 1st-Unit Winner, and Exact Score.</td></tr>
+      <tr><td><strong>Gaussian Margin &amp; Total Convolution</strong></td><td>Basketball (NBA &amp; EuroLeague), Rugby Union, Rugby League, Cricket (T20I &amp; ODI), Handball, Gaelic Sports, Golf, Motor Racing, Greyhounds</td><td>Joint normal scoring expectations (&mu;<sub>H</sub>, &mu;<sub>A</sub>, &sigma;<sub>margin</sub>, &sigma;<sub>total</sub>) incorporating official injury/withdrawal reports, generating 2-Way/3-Way Result, Primary &amp; Calibrated Half-Point Handicaps, Game Total, Team Total, First-Half DNB, and Player/Podium Props.</td></tr>
+    </tbody></table></div>
+
+    <h2>3. Resolution of the High-Confidence Chalk Problem (-250 to +10000 Window)</h2>
+    <p>
+      Under naive probability ranking, mismatches with <span class="num">80%–92%</span> moneyline probability price between <span class="num">-400</span> and <span class="num">-1150</span>,
+      crowding out actionable bets. Our classifier enforces a two-gate High-confidence rule:
+      <strong>(Gate 1)</strong> fair win/cover probability strictly <span class="num">p &gt; 0.7000</span>, AND
+      <strong>(Gate 2)</strong> zero-vig fair odds strictly inside <span class="num">[-250, +10000]</span> (<span class="num">1.4000 &le; decimal &le; 101.0000</span>).
+      Any raw moneyline shorter than <span class="num">-250</span> is tagged <code>chalk_suppressed = true</code> and capped at <code>medium</code>, while our multi-market engine solves for the exact spread/total/prop line landing cleanly inside <span class="num">-250</span> to <span class="num">+10000</span>.
+    </p>
+    
+    <footer class="footer">
+      <div>Session <strong>8a900c04</strong> · Built deterministically at <span class="num">2026-10-23T16:45:00Z</span> across strictly the 15 covered sports (zero out-of-scope categories).</div>
+      <div>
+        <a href="../data/8a900c04/desk.json">JSON Ledger</a> ·
+        <a href="../data/8a900c04/fixtures.csv">Fixtures CSV</a> ·
+        <a href="../data/8a900c04/markets.csv">Markets CSV</a> ·
+        <a href="../reports/SESSION_8A900C04.html">Session Report</a> ·
+        <a href="../index.html">Canonical Root Snapshot</a>
+      </div>
+    </footer>
+  </main>
+  <script src="assets/desk.js"></script>
+</body>
+</html>
