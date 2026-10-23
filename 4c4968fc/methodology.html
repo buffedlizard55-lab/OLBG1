@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology · OLBG Desk 4c4968fc</title>
+<link rel="stylesheet" href="assets/style.css"></head><body>
+<header class="top"><div class="brand">OLBG15 <span>·</span> Multi-Sport Research Desk</div>
+<nav><a class="" href="index.html">Overview</a><a class="" href="high-confidence.html">High picks</a><a class="" href="predictions.html">Predictions</a><a class="" href="matches.html">Matches</a><a class="" href="markets.html">Markets</a><a class="" href="flagged.html">Flagged</a><a class="" href="sources.html">Sources</a><a class="on" href="methodology.html">Method</a><a class="" href="reverse-engineering.html">Reverse-engineering</a><a class="" href="repo-audit.html">Repo audit</a></nav><div class="stamp">Captured 2026-10-23 21:30:00Z</div></header>
+<main>
+<h1>Methodology</h1>
+<h2>1. Discovery</h2>
+<p>OLBG's sport hubs were mapped to the fifteen required categories and used to enumerate candidate events only. OLBG
+tip percentages are votes, not probabilities, and no OLBG number reaches a published price or fact.</p>
+<h2>2. Fixture confirmation</h2>
+<p>Each candidate was re-read from the league, tour, governing body or club page listed on its row: participants,
+competition, venue and start time. Missing values stay blank and are flagged. Times are published in UTC exactly as the
+source listed them; where a source renders venue-local time the conversion is noted in that fixture's flag.</p>
+<h2>3. Pricing</h2>
+<p>Match-level estimates start from published records, tables and rankings. Two-way markets are built as complementary
+pairs: p and 1−p, priced at 1/p with no vig, so both sides sum to 1.000. Spread and total ladders come from a normal
+approximation around the expected margin and total with the sport's own scale and spread, stepped on the natural line
+grid. Set-based sports convert a match probability into a per-set probability by inverting a best-of-three or best-of-five
+set structure, then price set handicaps and totals from that. Matchup sports (golf, motor racing) price head-to-head and a stroke
+or position ladder.</p>
+<h2>4. Confidence</h2>
+<p>High requires both conditions in the brief: a strike rate above 70% and a fair American price inside
+−250…+10000. A 70% chance is about −233, so the band's short end binds; a selection at, say, 74% would price at about
+−285 and is therefore published as Medium rather than relabelled. Medium covers 50–70%. Low is anything below 50%.</p>
+<h2>5. Selection cap</h2>
+<p>Up to five High picks per sport, taken in probability order with one price per market per fixture. Sports whose
+evidence supports fewer qualifying prices publish fewer, and the gap is stated on the sport page and the overview.</p>
+<h2>6. Predictions</h2>
+<p>One hand-written read per High pick, at least thirty words, always naming the event and stating the side. The content
+is drawn from the official page linked on the row: records, standings, recent results, published scoring and reported
+availability. No two reads share a six-word run, and internal jargon is kept off the public pages.</p>
+<h2>7. Limits</h2>
+<p>These are research prices, not market prices. Sports where no official card could be reached — greyhounds in this
+window — publish nothing rather than a guess, and are listed on the flagged page. Team news is only cited where an
+official page stated it; absence of a reported injury is not a claim that a squad is fully fit.</p>
+<h2>8. Where to check the working</h2>
+<p>Every input traces to a page on the <a href="sources.html">sources</a> list, and each fixture row repeats its own link
+for manual review. The gate that produced these numbers is <code>scripts/s4c4968fc_validate.py</code>, which fails the
+build when a price, a pick or a prediction breaks a rule set out on this page.</p>
+</main>
+<footer>Independent research desk. Not affiliated with OLBG. No warranty of outcome; betting carries risk. 18+.</footer>
+</body></html>

@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Session 4c4968fc report</title><style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;max-width:900px;margin:0 auto;padding:32px 22px;line-height:1.6;color:#16202b;background:#fbfcfd}
+h1{font-size:26px;border-bottom:3px solid #0f2537;padding-bottom:8px}h2{font-size:19px;margin-top:30px;color:#0f2537}
+table{border-collapse:collapse;width:100%;margin:12px 0}th,td{border:1px solid #d8e0e8;padding:7px 10px;text-align:left;font-size:14px}
+th{background:#0f2537;color:#fff}code{background:#eef3f8;padding:1px 4px;border-radius:3px;font-size:13px}
+a{color:#2d6fb8}li{margin-bottom:4px}</style></head><body>
+<h1>Session <code>4c4968fc</code> — OLBG fifteen-sport research desk (captured 2026-10-23 21:30 UTC)</h1>
+<p><strong>Live desk:</strong> <a href="../4c4968fc/index.html"><code>../4c4968fc/index.html</code></a></p>
+<p><strong>Data:</strong> <a href="../data/4c4968fc/summary.json"><code>../data/4c4968fc/summary.json</code></a> — fixtures.json · markets.json · picks.json · predictions.json · flagged.json · elapsed.json · sources.json · summary.json · matches.csv · markets.csv · predictions.csv</p>
+<p><strong>Gate:</strong> <code>python3 scripts/s4c4968fc_validate.py</code> (0 failures) · <code>python3 -m pipeline.validate --site .</code> (0 errors) · <code>tests/pipeline/test_desk_4c4968fc.py</code> (17 tests)</p>
+<h2>Scope</h2>
+<p>Exactly the fifteen sports named in the brief: Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts,</p>
+<p>Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League.</p>
+<p>Soccer/football, American football, boxing, UFC/MMA, hurling, cycling, horse racing and specials are excluded.</p>
+<h2>What was built</h2>
+<p>1. <strong>OLBG reverse-engineering.</strong> The fifteen sport hubs were mapped (<code>/betting-tips/&lt;Slug&gt;/&lt;id&gt;</code>, case-sensitive</p>
+<p>   slugs). Both hubs read this session returned &quot;No tips found&quot;, so OLBG supplied the taxonomy only and fixture</p>
+<p>   enumeration ran off the official competition calendars. That is stated on the desk rather than dressed up.</p>
+<p>2. <strong>Official-source reading.</strong> 34 pages, 32 of them official governing-body, league, tour or club pages. Each fixture</p>
+<p>   row republishes the exact facts that page stated and links it for manual review.</p>
+<p>3. <strong>Originated lines.</strong> 15,848 two-sided prices across 43 fixtures. Every pair is complementary and sums to 1.000 at</p>
+<p>   1/p with no margin, no clipping and no bookmaker copy.</p>
+<p>4. <strong>High-confidence picks.</strong> 51 selections in 13 sports, each clearing both conditions of the brief — strike rate above</p>
+<p>   70% and a fair American price inside −250…+10000 — capped at five per sport, each with a unique hand-written</p>
+<p>   prediction of 34–60 words that names the event and states the side.</p>
+<p>5. <strong>Flagged page.</strong> 12 items with the page that failed to yield the value, so a reader can check by hand.</p>
+<h2>Counts (as captured)</h2>
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>Fixtures captured (14 of 15 sports)</td><td>43</td></tr>
+<tr><td>Sports listed</td><td>14 / 15 (greyhounds flagged, not invented)</td></tr>
+<tr><td>Originated prices</td><td>15,848</td></tr>
+<tr><td>High-confidence picks</td><td>51</td></tr>
+<tr><td>Unique predictions</td><td>51</td></tr>
+<tr><td>Sports at the five-pick cap</td><td>6 (basketball, cricket, darts, ice hockey, rugby league, rugby union)</td></tr>
+<tr><td>Sources</td><td>34 (32 official, 2 OLBG taxonomy)</td></tr>
+<tr><td>Flagged items</td><td>12</td></tr>
+<tr><td>Pages published</td><td>25</td></tr>
+</table>
+<p>Per-sport picks: ice hockey 5, basketball 5, rugby union 5, rugby league 5, cricket 5, darts 5, baseball 4,</p>
+<p>tennis 4, Gaelic sports 4, handball 2, volleyball 2, golf 2, motor racing 2, snooker 1, greyhounds 0.</p>
+<p>The five-pick target was not met in eight sports. Each shortfall is disclosed on the sport page; the cap there is</p>
+<p>evidence, not effort — every rung outside the gate is published as Medium or Low in <code>markets.csv</code> rather than promoted.</p>
+<h2>Confidence policy</h2>
+<p>High is a conjunction, not a vibe:</p>
+<ul>
+<li>strike rate <strong>&gt; 0.70</strong>, and</li>
+<li>fair American price <strong>inside −250 … +10000</strong>.</li>
+</ul>
+<p>A 70% chance implies about −233, so the band&#x27;s short end binds and qualifying selections cluster near −250. Anything</p>
+<p>that would price at −285 (about 74%) is published as Medium, not relabelled. Medium covers 50–70%, Low below 50%.</p>
+<p>The arithmetic is in <code>scripts/s4c4968fc_model.py</code> (<code>tier_for</code>, <code>in_band</code>) and the same functions run inside the gate</p>
+<p>script and the test suite, so a build cannot ship a pick that fails either condition.</p>
+<h2>Line-setting method</h2>
+<ul>
+<li>Match-level estimates come from published records, standings and tables — NHL records on the capture stamp, the</li>
+</ul>
+<p>  URC table after Round 3, MLB final standings, the NBA opening-week standings, the WTA/ATP draw seeds and round-one</p>
+<p>  scorelines, the PGA leaderboard, the GBGB-less greyhound gap, and FP1 times at COTA.</p>
+<ul>
+<li>Two-way markets are complementary pairs at 1/p; spreads and totals are normal ladders around the expected margin and</li>
+</ul>
+<p>  total with the sport&#x27;s own scale, stepped on the natural grid (quarter-point for Asian handicaps, half-point for</p>
+<p>  totals, 0.25 for games/points ladders).</p>
+<ul>
+<li>Set sports invert a best-of-three or best-of-five structure into a per-set probability and price set handicaps,</li>
+</ul>
+<p>  set totals and games/points ladders from it.</p>
+<ul>
+<li>Matchup sports (golf, Formula 1) price head-to-head plus a stroke or position ladder.</li>
+</ul>
+<h2>Disclosures and known limits</h2>
+<ul>
+<li><strong>Greyhounds</strong> — GBGB&#x27;s results grid is script-rendered and returned no card; no runner, trap or race was invented.</li>
+<li><strong>Times</strong> — the URC site renders venue-local time; conversions are flagged per fixture. NBA times are ET as published.</li>
+<li><strong>NBA sample</strong> — one or two games per team, so basketball ratings are deliberately near-even and the picks lean on</li>
+</ul>
+<p>  totals rather than sides.</p>
+<ul>
+<li><strong>Snooker</strong> — the second semi-final had no named players at capture, so only one match is priced.</li>
+<li><strong>Darts</strong> — Saturday evening pairings were unpublished at capture; the four afternoon ties are priced.</li>
+<li><strong>Tennis</strong> — ATP ranking positions were not on the fetched schedule pages, so seeds and bracket path are cited instead.</li>
+</ul>
+<h2>Repository review</h2>
+<p><code>4c4968fc/repo-audit.html</code> records six findings from this session&#x27;s line-by-line read of the canonical pipeline</p>
+<p>(<code>pipeline/config.py</code> scope drift, stale root snapshot, the peer desk&#x27;s sub-70% High-B tier, archive ordering with no</p>
+<p>readiness signal, the tolerated f7fa77fc validator warnings, and route tests that can pass with JSON but no HTML).</p>
+<p>Two pre-existing suite failures were confirmed against a clean checkout before this session&#x27;s work was added:</p>
+<p><code>test_desk_8a900c04</code> (audit parse error) and a test module that fails to import on a leading-zero integer literal.</p>
+<p>Both predate this branch and are reported, not touched.</p>
+<h2>Files touched by this session</h2>
+<p><code>scripts/s4c4968fc_{data,model,predictions,build,build_data,validate}.py</code> · <code>data/4c4968fc/<strong></code> · <code>4c4968fc/</strong></code> ·</p>
+<p><code>reports/SESSION_4C4968FC.{md,html}</code> · <code>tests/pipeline/test_desk_4c4968fc.py</code> · <code>COORDINATION.md</code> §75 (claim, receipts).</p>
+<p>No peer desk file was edited.</p>
+</body></html>

@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repository audit · OLBG Desk 4c4968fc</title>
+<link rel="stylesheet" href="assets/style.css"></head><body>
+<header class="top"><div class="brand">OLBG15 <span>·</span> Multi-Sport Research Desk</div>
+<nav><a class="" href="index.html">Overview</a><a class="" href="high-confidence.html">High picks</a><a class="" href="predictions.html">Predictions</a><a class="" href="matches.html">Matches</a><a class="" href="markets.html">Markets</a><a class="" href="flagged.html">Flagged</a><a class="" href="sources.html">Sources</a><a class="" href="methodology.html">Method</a><a class="" href="reverse-engineering.html">Reverse-engineering</a><a class="on" href="repo-audit.html">Repo audit</a></nav><div class="stamp">Captured 2026-10-23 21:30:00Z</div></header>
+<main>
+<h1>Repository audit</h1>
+<p class="lede">This session reviewed the canonical pipeline, the validator, the test suite and the neighbouring desks
+line by line before adding anything. Findings below are structural and current; they are reported, not silently fixed,
+because the affected files belong to shared or peer scope.</p>
+<div class="wrap"><table><thead><tr><th>Ref</th><th>Severity</th><th>File</th><th>Finding and where to recheck</th></tr></thead>
+<tbody><tr><td>A1</td><td><span class="badge b-flag">HIGH</span></td><td><code>pipeline/config.py</code></td><td>Canonical config still carries 17 categories while the brief fixes scope at 15; Aussie Rules and eSports remain enabled and are excluded only by the per-desk filter. Recheck: https://www.olbg.com/betting-tips</td></tr><tr><td>A2</td><td><span class="badge b-md">MEDIUM</span></td><td><code>data/current/snapshot.json</code></td><td>Root snapshot is older than the capture stamp, so the canonical root desk shows stale counts while per-session desks are fresh. Recheck: https://api-web.nhle.com/v1/schedule/2026-10-24</td></tr><tr><td>A3</td><td><span class="badge b-md">MEDIUM</span></td><td><code>496eaf02/methodology.html</code></td><td>The peer desk advertises a 62% fallback tier as High-B, which is below the 70% floor in the brief. This desk publishes no sub-70% High tier; the shortfall is disclosed instead.</td></tr><tr><td>A4</td><td><span class="badge b-md">MEDIUM</span></td><td><code>pipeline/build.py</code></td><td>New desk directories are auto-indexed in archive.html, so a desk can appear in the archive before its own validation passes. Ordering is safe but the archive gives no readiness signal.</td></tr><tr><td>A5</td><td><span class="badge b-md">LOW</span></td><td><code>scripts/validate.py</code></td><td>Legacy session f7fa77fc still raises three warnings for root-absolute hrefs that break under the /OLBG1/ project subpath. Pre-existing and tolerated, but it will fire on every run.</td></tr><tr><td>A6</td><td><span class="badge b-md">LOW</span></td><td><code>tests/pipeline/test_routes.py</code></td><td>Route tests enumerate desks by directory, so a desk with generated JSON but no HTML would pass fixture checks and fail only at page level. This session runs both gates before merging.</td></tr></tbody></table></div>
+<h2>Scope of this session's writes</h2>
+<p><code>scripts/s4c4968fc_*.py</code>, <code>data/4c4968fc/**</code>, <code>4c4968fc/**</code>,
+<code>reports/SESSION_4C4968FC.*</code>, <code>tests/pipeline/test_desk_4c4968fc.py</code> and section 75 of
+<code>COORDINATION.md</code>. No peer desk file was touched.</p>
+</main>
+<footer>Independent research desk. Not affiliated with OLBG. No warranty of outcome; betting carries risk. 18+.</footer>
+</body></html>

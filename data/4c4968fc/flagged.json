@@ -1,0 +1,228 @@
+{
+ "desk": "4c4968fc",
+ "captured_utc": "2026-10-23T21:30:00Z",
+ "items": [
+  {
+   "id": "F-4C-01",
+   "sport": "greyhounds",
+   "item": "No greyhound fixture or runner list could be read from an official source in this window.",
+   "detail": "The GBGB results search returned an empty grid (the runner table is rendered by script), and GBGB publishes no machine-readable card for 24-26 October that this session could reach. No race, trap or runner has been invented.",
+   "sources": [
+    "gbgb"
+   ],
+   "status": "unverified",
+   "source_list": [
+    {
+     "id": "gbgb",
+     "name": "GBGB — results search (runner-level data requires scripted search)",
+     "url": "https://www.gbgb.org.uk/racing/results/"
+    }
+   ]
+  },
+  {
+   "id": "F-4C-02",
+   "sport": "snooker",
+   "item": "Second Northern Ireland Open semi-final has no named players.",
+   "detail": "WST lists match 62 as 'winner of match 59' versus 'winner of match 60'. The quarter-finals of Gilbert v Williams and Jones v Donaldson were still in progress at capture, so only Wilson v Craigie can be priced.",
+   "sources": [
+    "wst"
+   ],
+   "status": "unverified",
+   "source_list": [
+    {
+     "id": "wst",
+     "name": "World Snooker Tour — BetVictor Northern Ireland Open matches",
+     "url": "https://www.wst.tv/matches/"
+    }
+   ]
+  },
+  {
+   "id": "F-4C-03",
+   "sport": "darts",
+   "item": "Saturday evening round-two pairings are unknown.",
+   "detail": "The PDC order of play published on 21 October confirms four afternoon ties only; Friday's round-one results determine the evening session and were not readable on an official page in this window.",
+   "sources": [
+    "pdc-preview",
+    "pdc-r1"
+   ],
+   "status": "unverified",
+   "source_list": [
+    {
+     "id": "pdc-preview",
+     "name": "PDC — 2026 Machineseeker European Championship preview (draw bracket)",
+     "url": "https://www.pdc.tv/news/2026/october/21/2026-machineseeker-european-championship-preview/"
+    },
+    {
+     "id": "pdc-r1",
+     "name": "PDC — Day One results & Saturday round-two order of play",
+     "url": "https://www.pdc.tv/news/2026/october/22/nine-dart-star-woodhouse-sets-up-van-veen-clash-dortmund/"
+    }
+   ]
+  },
+  {
+   "id": "F-4C-04",
+   "sport": "volleyball",
+   "item": "League table and set-level statistics for PlusLiga 2026-27 were not read.",
+   "detail": "The TAURON Liga table page rendered the fixture list instead of a table, so no table position, points or set ratio is published for either volleyball row. Ratings there are desk judgement.",
+   "sources": [
+    "plusliga"
+   ],
+   "status": "unverified",
+   "source_list": [
+    {
+     "id": "plusliga",
+     "name": "TAURON Liga (PlusLiga) — official season fixtures",
+     "url": "https://www.tauronliga.pl/games.html"
+    }
+   ]
+  },
+  {
+   "id": "F-4C-05",
+   "sport": "cricket",
+   "item": "ICC T20I team ranking values did not render.",
+   "detail": "The ICC rankings page loads its table by script; the fetched page contained the empty table shell only. No ranking numbers are published in this desk, and New Zealand v India is rated on desk judgement.",
+   "sources": [
+    "icc"
+   ],
+   "status": "unverified",
+   "source_list": [
+    {
+     "id": "icc",
+     "name": "ICC — match page, New Zealand v India 2nd T20I",
+     "url": "https://www.icc-cricket.com/matches/271647/new-zealand-vs-india"
+    }
+   ]
+  },
+  {
+   "id": "F-4C-06",
+   "sport": "tennis",
+   "item": "ATP singles ranking positions were not available from the fetched schedule pages.",
+   "detail": "The ATP daily schedules publish seedings but not ranking positions. Seeds are used as the only official ordering input here; ranking numbers are left blank rather than filled from memory.",
+   "sources": [
+    "atp-almaty",
+    "atp-brussels"
+   ],
+   "status": "unverified",
+   "source_list": [
+    {
+     "id": "atp-almaty",
+     "name": "ATP Tour — Almaty daily schedule, Sat 24 Oct 2026",
+     "url": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule"
+    },
+    {
+     "id": "atp-brussels",
+     "name": "ATP Tour — Brussels daily schedule, Sat 24 Oct 2026",
+     "url": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule"
+    }
+   ]
+  },
+  {
+   "id": "F-4C-07",
+   "sport": "gaelic-sports",
+   "item": "No official form line for the Cork finals.",
+   "detail": "Cork GAA publishes the fixtures and referees but no results table for the 2026 championships on the fetched page, so both football finals are priced on desk judgement with no form claim in the copy.",
+   "sources": [
+    "cork-gaa"
+   ],
+   "status": "unverified",
+   "source_list": [
+    {
+     "id": "cork-gaa",
+     "name": "Cork GAA — official fixtures (county finals, 25 Oct 2026)",
+     "url": "https://gaacork.ie/fixtures/"
+    }
+   ]
+  },
+  {
+   "id": "F-4C-08",
+   "sport": "handball",
+   "item": "Chambery's 2026-27 results were not read.",
+   "detail": "The HBL league schedule and table pages render by script. Nantes' official club calendar supplied their own results, but no Chambery form is published here.",
+   "sources": [
+    "nantes",
+    "hbl"
+   ],
+   "status": "unverified",
+   "source_list": [
+    {
+     "id": "nantes",
+     "name": "HBC Nantes — official calendar and results 2026-27",
+     "url": "https://hbcnantes.com/equipe-professionnelle/calendrier-et-resultats/"
+    },
+    {
+     "id": "hbl",
+     "name": "Opel Handball-Bundesliga — official schedule page",
+     "url": "https://www.opel-hbl.de/de/hbl/spielplan"
+    }
+   ]
+  },
+  {
+   "id": "F-4C-09",
+   "sport": "motor-racing",
+   "item": "Grid positions and second practice times are unknown.",
+   "detail": "Capture preceded qualifying. Only FP1 is cited; no grid, tyre or long-run claim is made.",
+   "sources": [
+    "f1-us"
+   ],
+   "status": "unverified",
+   "source_list": [
+    {
+     "id": "f1-us",
+     "name": "Formula 1 — 2026 United States Grand Prix (schedule, FP1 classification, circuit)",
+     "url": "https://www.formula1.com/en/racing/2026/united-states"
+    }
+   ]
+  },
+  {
+   "id": "F-4C-10",
+   "sport": "basketball",
+   "item": "NBA sample size is one or two games.",
+   "detail": "The 2026-27 season opened this week. Standings are published and cited, but points-per-game and efficiency rates are not used because no season-to-date statistics were read.",
+   "sources": [
+    "nba-stand"
+   ],
+   "status": "unverified",
+   "source_list": [
+    {
+     "id": "nba-stand",
+     "name": "NBA.com — official 2026-27 standings",
+     "url": "https://www.nba.com/standings"
+    }
+   ]
+  },
+  {
+   "id": "F-4C-11",
+   "sport": "golf",
+   "item": "Only scoreboard data is cited for golf.",
+   "detail": "Strokes-gained, driving distance and putting statistics were not read, and no third-round tee times were published at capture. Matchups are therefore framed as 72-hole tournament matchups from the Round 2 board.",
+   "sources": [
+    "pga"
+   ],
+   "status": "unverified",
+   "source_list": [
+    {
+     "id": "pga",
+     "name": "PGA TOUR — Butterfield Bermuda Championship leaderboard",
+     "url": "https://www.pgatour.com/leaderboard"
+    }
+   ]
+  },
+  {
+   "id": "F-4C-12",
+   "sport": "baseball",
+   "item": "World Series Game 1 was pre-game at publication.",
+   "detail": "Game 1 starts at 2026-10-24T00:00Z, after this desk's capture. It is priced as an upcoming game but also listed on the elapsed register so no reader mistakes it for a later game.",
+   "sources": [
+    "mlb-sched"
+   ],
+   "status": "flagged",
+   "source_list": [
+    {
+     "id": "mlb-sched",
+     "name": "MLB — Stats API 2026 World Series schedule",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-30&hydrate=team,probablePitcher"
+    }
+   ]
+  }
+ ]
+}

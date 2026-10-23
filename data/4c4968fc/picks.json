@@ -1,0 +1,1194 @@
+{
+ "desk": "4c4968fc",
+ "captured_utc": "2026-10-23T21:30:00Z",
+ "high_gate": {
+  "p_floor": 0.7,
+  "band": [
+   -250,
+   10000
+  ],
+  "per_sport_cap": 5
+ },
+ "picks": [
+  {
+   "fixture": "IH02",
+   "sport": "ice-hockey",
+   "market": "Match total",
+   "line": "Over 5 goals",
+   "selection": "Over",
+   "p": 0.710498,
+   "decimal": 1.4075,
+   "american": -245,
+   "american_str": "-245",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "nhl-score"
+   ],
+   "source_urls": [
+    "https://api-web.nhle.com/v1/score/2026-10-24"
+   ],
+   "event": "Los Angeles Kings v New Jersey Devils",
+   "competition": "NHL regular season",
+   "start": "2026-10-24T19:30:00Z"
+  },
+  {
+   "fixture": "IH02",
+   "sport": "ice-hockey",
+   "market": "Handicap",
+   "line": "Los Angeles Kings +2",
+   "selection": "Los Angeles Kings",
+   "p": 0.709526,
+   "decimal": 1.4094,
+   "american": -244,
+   "american_str": "-244",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "nhl-score"
+   ],
+   "source_urls": [
+    "https://api-web.nhle.com/v1/score/2026-10-24"
+   ],
+   "event": "Los Angeles Kings v New Jersey Devils",
+   "competition": "NHL regular season",
+   "start": "2026-10-24T19:30:00Z"
+  },
+  {
+   "fixture": "IH03",
+   "sport": "ice-hockey",
+   "market": "Handicap",
+   "line": "San Jose Sharks +2.25",
+   "selection": "San Jose Sharks",
+   "p": 0.708497,
+   "decimal": 1.4114,
+   "american": -243,
+   "american_str": "-243",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "nhl-score",
+    "nhl-stats",
+    "nhl-stand"
+   ],
+   "source_urls": [
+    "https://api-web.nhle.com/v1/score/2026-10-24",
+    "https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&isGame=false&cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2",
+    "https://api-web.nhle.com/v1/standings/2026-10-24"
+   ],
+   "event": "San Jose Sharks v Boston Bruins",
+   "competition": "NHL regular season",
+   "start": "2026-10-24T23:00:00Z"
+  },
+  {
+   "fixture": "IH03",
+   "sport": "ice-hockey",
+   "market": "Team total",
+   "line": "San Jose Sharks under 3 goals",
+   "selection": "San Jose Sharks under",
+   "p": 0.708399,
+   "decimal": 1.4116,
+   "american": -243,
+   "american_str": "-243",
+   "tier": "High",
+   "note": "desk team-total rung",
+   "source_ids": [
+    "nhl-score",
+    "nhl-stats",
+    "nhl-stand"
+   ],
+   "source_urls": [
+    "https://api-web.nhle.com/v1/score/2026-10-24",
+    "https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&isGame=false&cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2",
+    "https://api-web.nhle.com/v1/standings/2026-10-24"
+   ],
+   "event": "San Jose Sharks v Boston Bruins",
+   "competition": "NHL regular season",
+   "start": "2026-10-24T23:00:00Z"
+  },
+  {
+   "fixture": "IH01",
+   "sport": "ice-hockey",
+   "market": "Match total",
+   "line": "Over 5 goals",
+   "selection": "Over",
+   "p": 0.706069,
+   "decimal": 1.4163,
+   "american": -240,
+   "american_str": "-240",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "nhl-score"
+   ],
+   "source_urls": [
+    "https://api-web.nhle.com/v1/score/2026-10-24"
+   ],
+   "event": "Anaheim Ducks v Philadelphia Flyers",
+   "competition": "NHL regular season",
+   "start": "2026-10-24T17:00:00Z"
+  },
+  {
+   "fixture": "BB01",
+   "sport": "baseball",
+   "market": "Handicap",
+   "line": "Milwaukee Brewers +1",
+   "selection": "Milwaukee Brewers",
+   "p": 0.706069,
+   "decimal": 1.4163,
+   "american": -240,
+   "american_str": "-240",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "mlb-sched",
+    "mlb-stand",
+    "mlb-post"
+   ],
+   "source_urls": [
+    "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-30&hydrate=team,probablePitcher",
+    "https://statsapi.mlb.com/api/v1/standings?leagueId=104&divisionId=205&season=2026&standingsTypes=regularSeason",
+    "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-06&endDate=2026-10-23"
+   ],
+   "event": "Tampa Bay Rays v Milwaukee Brewers",
+   "competition": "MLB World Series, Game 1",
+   "start": "2026-10-24T00:00:00Z"
+  },
+  {
+   "fixture": "BB01",
+   "sport": "baseball",
+   "market": "Team total",
+   "line": "Tampa Bay Rays under 5 runs",
+   "selection": "Tampa Bay Rays under",
+   "p": 0.704505,
+   "decimal": 1.4194,
+   "american": -238,
+   "american_str": "-238",
+   "tier": "High",
+   "note": "desk team-total rung",
+   "source_ids": [
+    "mlb-sched",
+    "mlb-stand",
+    "mlb-post"
+   ],
+   "source_urls": [
+    "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-30&hydrate=team,probablePitcher",
+    "https://statsapi.mlb.com/api/v1/standings?leagueId=104&divisionId=205&season=2026&standingsTypes=regularSeason",
+    "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-06&endDate=2026-10-23"
+   ],
+   "event": "Tampa Bay Rays v Milwaukee Brewers",
+   "competition": "MLB World Series, Game 1",
+   "start": "2026-10-24T00:00:00Z"
+  },
+  {
+   "fixture": "BB02",
+   "sport": "baseball",
+   "market": "Team total",
+   "line": "Tampa Bay Rays under 5 runs",
+   "selection": "Tampa Bay Rays under",
+   "p": 0.704505,
+   "decimal": 1.4194,
+   "american": -238,
+   "american_str": "-238",
+   "tier": "High",
+   "note": "desk team-total rung",
+   "source_ids": [
+    "mlb-sched",
+    "mlb-stand"
+   ],
+   "source_urls": [
+    "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-30&hydrate=team,probablePitcher",
+    "https://statsapi.mlb.com/api/v1/standings?leagueId=104&divisionId=205&season=2026&standingsTypes=regularSeason"
+   ],
+   "event": "Tampa Bay Rays v Milwaukee Brewers",
+   "competition": "MLB World Series, Game 2",
+   "start": "2026-10-25T00:00:00Z"
+  },
+  {
+   "fixture": "BB01",
+   "sport": "baseball",
+   "market": "Match total",
+   "line": "Under 10 runs",
+   "selection": "Under",
+   "p": 0.703099,
+   "decimal": 1.4223,
+   "american": -237,
+   "american_str": "-237",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "mlb-sched",
+    "mlb-stand",
+    "mlb-post"
+   ],
+   "source_urls": [
+    "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-30&hydrate=team,probablePitcher",
+    "https://statsapi.mlb.com/api/v1/standings?leagueId=104&divisionId=205&season=2026&standingsTypes=regularSeason",
+    "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-06&endDate=2026-10-23"
+   ],
+   "event": "Tampa Bay Rays v Milwaukee Brewers",
+   "competition": "MLB World Series, Game 1",
+   "start": "2026-10-24T00:00:00Z"
+  },
+  {
+   "fixture": "BK05",
+   "sport": "basketball",
+   "market": "Handicap",
+   "line": "Atlanta Hawks +7.5",
+   "selection": "Atlanta Hawks",
+   "p": 0.713895,
+   "decimal": 1.4008,
+   "american": -250,
+   "american_str": "-250",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "nba-sched",
+    "nba-stand"
+   ],
+   "source_urls": [
+    "https://www.nba.com/schedule?date=10/24/2026",
+    "https://www.nba.com/standings"
+   ],
+   "event": "Houston Rockets v Atlanta Hawks",
+   "competition": "NBA regular season",
+   "start": "2026-10-25T00:30:00Z"
+  },
+  {
+   "fixture": "BK02",
+   "sport": "basketball",
+   "market": "Match total",
+   "line": "Under 234 points",
+   "selection": "Under",
+   "p": 0.713774,
+   "decimal": 1.401,
+   "american": -249,
+   "american_str": "-249",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "nba-sched",
+    "nba-stand"
+   ],
+   "source_urls": [
+    "https://www.nba.com/schedule?date=10/24/2026",
+    "https://www.nba.com/standings"
+   ],
+   "event": "Brooklyn Nets v Cleveland Cavaliers",
+   "competition": "NBA regular season",
+   "start": "2026-10-24T23:30:00Z"
+  },
+  {
+   "fixture": "BK02",
+   "sport": "basketball",
+   "market": "Handicap",
+   "line": "Cleveland Cavaliers +3.5",
+   "selection": "Cleveland Cavaliers",
+   "p": 0.712806,
+   "decimal": 1.4029,
+   "american": -248,
+   "american_str": "-248",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "nba-sched",
+    "nba-stand"
+   ],
+   "source_urls": [
+    "https://www.nba.com/schedule?date=10/24/2026",
+    "https://www.nba.com/standings"
+   ],
+   "event": "Brooklyn Nets v Cleveland Cavaliers",
+   "competition": "NBA regular season",
+   "start": "2026-10-24T23:30:00Z"
+  },
+  {
+   "fixture": "BK01",
+   "sport": "basketball",
+   "market": "Match total",
+   "line": "Under 231 points",
+   "selection": "Under",
+   "p": 0.71226,
+   "decimal": 1.404,
+   "american": -248,
+   "american_str": "-248",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "nba-sched",
+    "nba-stand"
+   ],
+   "source_urls": [
+    "https://www.nba.com/schedule?date=10/24/2026",
+    "https://www.nba.com/standings"
+   ],
+   "event": "Miami Heat v Charlotte Hornets",
+   "competition": "NBA regular season",
+   "start": "2026-10-24T22:00:00Z"
+  },
+  {
+   "fixture": "BK04",
+   "sport": "basketball",
+   "market": "Match total",
+   "line": "Under 235 points",
+   "selection": "Under",
+   "p": 0.711502,
+   "decimal": 1.4055,
+   "american": -247,
+   "american_str": "-247",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "nba-sched",
+    "nba-stand"
+   ],
+   "source_urls": [
+    "https://www.nba.com/schedule?date=10/24/2026",
+    "https://www.nba.com/standings"
+   ],
+   "event": "San Antonio Spurs v Dallas Mavericks",
+   "competition": "NBA regular season",
+   "start": "2026-10-25T00:00:00Z"
+  },
+  {
+   "fixture": "TN01",
+   "sport": "tennis",
+   "market": "Total games",
+   "line": "Over 21.25 games",
+   "selection": "Over",
+   "p": 0.711287,
+   "decimal": 1.4059,
+   "american": -246,
+   "american_str": "-246",
+   "tier": "High",
+   "note": "desk games ladder",
+   "source_ids": [
+    "atp-almaty"
+   ],
+   "source_urls": [
+    "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule"
+   ],
+   "event": "Nikoloz Basilashvili v Stefanos Tsitsipas",
+   "competition": "ATP Almaty 250, semi-final",
+   "start": "2026-10-24T10:00:00Z"
+  },
+  {
+   "fixture": "TN04",
+   "sport": "tennis",
+   "market": "Total games",
+   "line": "Under 25.75 games",
+   "selection": "Under",
+   "p": 0.708983,
+   "decimal": 1.4105,
+   "american": -244,
+   "american_str": "-244",
+   "tier": "High",
+   "note": "desk games ladder",
+   "source_ids": [
+    "atp-brussels"
+   ],
+   "source_urls": [
+    "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule"
+   ],
+   "event": "Arthur Fils v Jan-Lennard Struff",
+   "competition": "ATP Brussels 250, semi-final",
+   "start": "2026-10-24T16:30:00Z"
+  },
+  {
+   "fixture": "TN02",
+   "sport": "tennis",
+   "market": "Total games",
+   "line": "Under 25.75 games",
+   "selection": "Under",
+   "p": 0.707444,
+   "decimal": 1.4135,
+   "american": -242,
+   "american_str": "-242",
+   "tier": "High",
+   "note": "desk games ladder",
+   "source_ids": [
+    "atp-almaty"
+   ],
+   "source_urls": [
+    "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule"
+   ],
+   "event": "Daniil Medvedev v Alexander Bublik",
+   "competition": "ATP Almaty 250, semi-final",
+   "start": "2026-10-24T13:00:00Z"
+  },
+  {
+   "fixture": "TN03",
+   "sport": "tennis",
+   "market": "Total games",
+   "line": "Under 25.75 games",
+   "selection": "Under",
+   "p": 0.704962,
+   "decimal": 1.4185,
+   "american": -239,
+   "american_str": "-239",
+   "tier": "High",
+   "note": "desk games ladder",
+   "source_ids": [
+    "atp-brussels"
+   ],
+   "source_urls": [
+    "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule"
+   ],
+   "event": "Francisco Cerundolo v Tallon Griekspoor",
+   "competition": "ATP Brussels 250, semi-final",
+   "start": "2026-10-24T14:00:00Z"
+  },
+  {
+   "fixture": "RU02",
+   "sport": "rugby-union",
+   "market": "Handicap",
+   "line": "DHL Stormers -6.5",
+   "selection": "DHL Stormers",
+   "p": 0.71372,
+   "decimal": 1.4011,
+   "american": -249,
+   "american_str": "-249",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "urc-fixtures",
+    "urc-table"
+   ],
+   "source_urls": [
+    "https://stats.unitedrugby.com/match-centre/2026-27/4",
+    "https://stats.unitedrugby.com/match-centre/table/2026-27"
+   ],
+   "event": "DHL Stormers v Scarlets",
+   "competition": "United Rugby Championship, Round 4",
+   "start": "2026-10-24T08:00:00Z"
+  },
+  {
+   "fixture": "RU01",
+   "sport": "rugby-union",
+   "market": "Handicap",
+   "line": "Vodacom Bulls -7.75",
+   "selection": "Vodacom Bulls",
+   "p": 0.712504,
+   "decimal": 1.4035,
+   "american": -248,
+   "american_str": "-248",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "urc-fixtures",
+    "urc-table"
+   ],
+   "source_urls": [
+    "https://stats.unitedrugby.com/match-centre/2026-27/4",
+    "https://stats.unitedrugby.com/match-centre/table/2026-27"
+   ],
+   "event": "Vodacom Bulls v Ulster",
+   "competition": "United Rugby Championship, Round 4",
+   "start": "2026-10-24T05:45:00Z"
+  },
+  {
+   "fixture": "RU04",
+   "sport": "rugby-union",
+   "market": "Handicap",
+   "line": "Munster +14",
+   "selection": "Munster",
+   "p": 0.71226,
+   "decimal": 1.404,
+   "american": -248,
+   "american_str": "-248",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "urc-fixtures",
+    "urc-table"
+   ],
+   "source_urls": [
+    "https://stats.unitedrugby.com/match-centre/2026-27/4",
+    "https://stats.unitedrugby.com/match-centre/table/2026-27"
+   ],
+   "event": "Leinster v Munster",
+   "competition": "United Rugby Championship, Round 4",
+   "start": "2026-10-24T12:00:00Z"
+  },
+  {
+   "fixture": "RU03",
+   "sport": "rugby-union",
+   "market": "Match total",
+   "line": "Under 50.5 points",
+   "selection": "Under",
+   "p": 0.711692,
+   "decimal": 1.4051,
+   "american": -247,
+   "american_str": "-247",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "urc-fixtures",
+    "urc-table"
+   ],
+   "source_urls": [
+    "https://stats.unitedrugby.com/match-centre/2026-27/4",
+    "https://stats.unitedrugby.com/match-centre/table/2026-27"
+   ],
+   "event": "Benetton v Glasgow Warriors",
+   "competition": "United Rugby Championship, Round 4",
+   "start": "2026-10-24T08:00:00Z"
+  },
+  {
+   "fixture": "RU05",
+   "sport": "rugby-union",
+   "market": "Handicap",
+   "line": "Dragons RFC +7.25",
+   "selection": "Dragons RFC",
+   "p": 0.711473,
+   "decimal": 1.4055,
+   "american": -247,
+   "american_str": "-247",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "urc-fixtures",
+    "urc-table"
+   ],
+   "source_urls": [
+    "https://stats.unitedrugby.com/match-centre/2026-27/4",
+    "https://stats.unitedrugby.com/match-centre/table/2026-27"
+   ],
+   "event": "Ospreys v Dragons RFC",
+   "competition": "United Rugby Championship, Round 4",
+   "start": "2026-10-24T13:00:00Z"
+  },
+  {
+   "fixture": "RL03",
+   "sport": "rugby-league",
+   "market": "Match total",
+   "line": "Under 50.75 points",
+   "selection": "Under",
+   "p": 0.713047,
+   "decimal": 1.4024,
+   "american": -248,
+   "american_str": "-248",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "nrl-r2"
+   ],
+   "source_urls": [
+    "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+   ],
+   "event": "New Zealand v Cook Islands",
+   "competition": "Rugby League World Cup, Round 2",
+   "start": "2026-10-25T05:05:00Z"
+  },
+  {
+   "fixture": "RL04",
+   "sport": "rugby-league",
+   "market": "Match total",
+   "line": "Under 51.75 points",
+   "selection": "Under",
+   "p": 0.713047,
+   "decimal": 1.4024,
+   "american": -248,
+   "american_str": "-248",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "nrl-r2"
+   ],
+   "source_urls": [
+    "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+   ],
+   "event": "Australia v Fiji",
+   "competition": "Rugby League World Cup, Round 2",
+   "start": "2026-10-25T09:05:00Z"
+  },
+  {
+   "fixture": "RL02",
+   "sport": "rugby-league",
+   "market": "Match total",
+   "line": "Under 50 points",
+   "selection": "Under",
+   "p": 0.711735,
+   "decimal": 1.405,
+   "american": -247,
+   "american_str": "-247",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "nrl-r2"
+   ],
+   "source_urls": [
+    "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+   ],
+   "event": "England v France",
+   "competition": "Rugby League World Cup, Round 2",
+   "start": "2026-10-24T08:35:00Z"
+  },
+  {
+   "fixture": "RL01",
+   "sport": "rugby-league",
+   "market": "Handicap",
+   "line": "Samoa +7.25",
+   "selection": "Samoa",
+   "p": 0.71162,
+   "decimal": 1.4052,
+   "american": -247,
+   "american_str": "-247",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "nrl-r2"
+   ],
+   "source_urls": [
+    "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+   ],
+   "event": "Papua New Guinea v Samoa",
+   "competition": "Rugby League World Cup, Round 2",
+   "start": "2026-10-24T06:25:00Z"
+  },
+  {
+   "fixture": "RL03",
+   "sport": "rugby-league",
+   "market": "Handicap",
+   "line": "New Zealand -11",
+   "selection": "New Zealand",
+   "p": 0.711457,
+   "decimal": 1.4056,
+   "american": -247,
+   "american_str": "-247",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "nrl-r2"
+   ],
+   "source_urls": [
+    "https://www.nrl.com/draw/?competition=131&round=2&season=2026"
+   ],
+   "event": "New Zealand v Cook Islands",
+   "competition": "Rugby League World Cup, Round 2",
+   "start": "2026-10-25T05:05:00Z"
+  },
+  {
+   "fixture": "CR01",
+   "sport": "cricket",
+   "market": "Match total",
+   "line": "Under 182 runs",
+   "selection": "Under",
+   "p": 0.713396,
+   "decimal": 1.4017,
+   "american": -249,
+   "american_str": "-249",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "nzc",
+    "icc"
+   ],
+   "source_urls": [
+    "https://scoring.nzc.nz/fixtures",
+    "https://www.icc-cricket.com/matches/271647/new-zealand-vs-india"
+   ],
+   "event": "New Zealand v India",
+   "competition": "India in New Zealand, 2nd T20I",
+   "start": "2026-10-24T03:00:00Z"
+  },
+  {
+   "fixture": "CR04",
+   "sport": "cricket",
+   "market": "Match total",
+   "line": "Under 524 runs",
+   "selection": "Under",
+   "p": 0.712866,
+   "decimal": 1.4028,
+   "american": -248,
+   "american_str": "-248",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "nzc"
+   ],
+   "source_urls": [
+    "https://scoring.nzc.nz/fixtures"
+   ],
+   "event": "Wellington Firebirds v Otago Volts",
+   "competition": "Ford Trophy, Round 1",
+   "start": "2026-10-24T04:30:00Z"
+  },
+  {
+   "fixture": "CR02",
+   "sport": "cricket",
+   "market": "Handicap",
+   "line": "Auckland Aces +15",
+   "selection": "Auckland Aces",
+   "p": 0.712661,
+   "decimal": 1.4032,
+   "american": -248,
+   "american_str": "-248",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "nzc"
+   ],
+   "source_urls": [
+    "https://scoring.nzc.nz/fixtures"
+   ],
+   "event": "Auckland Aces v Canterbury",
+   "competition": "Ford Trophy, Round 1",
+   "start": "2026-10-24T04:30:00Z"
+  },
+  {
+   "fixture": "CR02",
+   "sport": "cricket",
+   "market": "Match total",
+   "line": "Under 544 runs",
+   "selection": "Under",
+   "p": 0.71226,
+   "decimal": 1.404,
+   "american": -248,
+   "american_str": "-248",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "nzc"
+   ],
+   "source_urls": [
+    "https://scoring.nzc.nz/fixtures"
+   ],
+   "event": "Auckland Aces v Canterbury",
+   "competition": "Ford Trophy, Round 1",
+   "start": "2026-10-24T04:30:00Z"
+  },
+  {
+   "fixture": "CR03",
+   "sport": "cricket",
+   "market": "Handicap",
+   "line": "Northern Districts +19",
+   "selection": "Northern Districts",
+   "p": 0.711859,
+   "decimal": 1.4048,
+   "american": -247,
+   "american_str": "-247",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "nzc"
+   ],
+   "source_urls": [
+    "https://scoring.nzc.nz/fixtures"
+   ],
+   "event": "Central Stags v Northern Districts",
+   "competition": "Ford Trophy, Round 1",
+   "start": "2026-10-24T04:30:00Z"
+  },
+  {
+   "fixture": "DA04",
+   "sport": "darts",
+   "market": "Team total",
+   "line": "Luke Woodhouse under 9.5 legs",
+   "selection": "Luke Woodhouse under",
+   "p": 0.714196,
+   "decimal": 1.4002,
+   "american": -250,
+   "american_str": "-250",
+   "tier": "High",
+   "note": "desk team-total rung",
+   "source_ids": [
+    "pdc-r1",
+    "pdc-preview"
+   ],
+   "source_urls": [
+    "https://www.pdc.tv/news/2026/october/22/nine-dart-star-woodhouse-sets-up-van-veen-clash-dortmund/",
+    "https://www.pdc.tv/news/2026/october/21/2026-machineseeker-european-championship-preview/"
+   ],
+   "event": "Gian van Veen v Luke Woodhouse",
+   "competition": "European Championship, Round Two",
+   "start": "2026-10-24T11:00:00Z"
+  },
+  {
+   "fixture": "DA02",
+   "sport": "darts",
+   "market": "Handicap",
+   "line": "Kim Huybrechts +3.25",
+   "selection": "Kim Huybrechts",
+   "p": 0.714176,
+   "decimal": 1.4002,
+   "american": -250,
+   "american_str": "-250",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "pdc-r1",
+    "pdc-preview"
+   ],
+   "source_urls": [
+    "https://www.pdc.tv/news/2026/october/22/nine-dart-star-woodhouse-sets-up-van-veen-clash-dortmund/",
+    "https://www.pdc.tv/news/2026/october/21/2026-machineseeker-european-championship-preview/"
+   ],
+   "event": "Stephen Bunting v Kim Huybrechts",
+   "competition": "European Championship, Round Two",
+   "start": "2026-10-24T11:00:00Z"
+  },
+  {
+   "fixture": "DA01",
+   "sport": "darts",
+   "market": "Match total",
+   "line": "Under 19.25 legs",
+   "selection": "Under",
+   "p": 0.713396,
+   "decimal": 1.4017,
+   "american": -249,
+   "american_str": "-249",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "pdc-r1",
+    "pdc-preview"
+   ],
+   "source_urls": [
+    "https://www.pdc.tv/news/2026/october/22/nine-dart-star-woodhouse-sets-up-van-veen-clash-dortmund/",
+    "https://www.pdc.tv/news/2026/october/21/2026-machineseeker-european-championship-preview/"
+   ],
+   "event": "Cameron Menzies v Gerwyn Price",
+   "competition": "European Championship, Round Two",
+   "start": "2026-10-24T11:00:00Z"
+  },
+  {
+   "fixture": "DA04",
+   "sport": "darts",
+   "market": "Handicap",
+   "line": "Luke Woodhouse +3",
+   "selection": "Luke Woodhouse",
+   "p": 0.713112,
+   "decimal": 1.4023,
+   "american": -249,
+   "american_str": "-249",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "pdc-r1",
+    "pdc-preview"
+   ],
+   "source_urls": [
+    "https://www.pdc.tv/news/2026/october/22/nine-dart-star-woodhouse-sets-up-van-veen-clash-dortmund/",
+    "https://www.pdc.tv/news/2026/october/21/2026-machineseeker-european-championship-preview/"
+   ],
+   "event": "Gian van Veen v Luke Woodhouse",
+   "competition": "European Championship, Round Two",
+   "start": "2026-10-24T11:00:00Z"
+  },
+  {
+   "fixture": "DA01",
+   "sport": "darts",
+   "market": "Team total",
+   "line": "Cameron Menzies over 6.75 legs",
+   "selection": "Cameron Menzies over",
+   "p": 0.712591,
+   "decimal": 1.4033,
+   "american": -248,
+   "american_str": "-248",
+   "tier": "High",
+   "note": "desk team-total rung",
+   "source_ids": [
+    "pdc-r1",
+    "pdc-preview"
+   ],
+   "source_urls": [
+    "https://www.pdc.tv/news/2026/october/22/nine-dart-star-woodhouse-sets-up-van-veen-clash-dortmund/",
+    "https://www.pdc.tv/news/2026/october/21/2026-machineseeker-european-championship-preview/"
+   ],
+   "event": "Cameron Menzies v Gerwyn Price",
+   "competition": "European Championship, Round Two",
+   "start": "2026-10-24T11:00:00Z"
+  },
+  {
+   "fixture": "SN01",
+   "sport": "snooker",
+   "market": "Team total",
+   "line": "Kyren Wilson over 4.75 frames",
+   "selection": "Kyren Wilson over",
+   "p": 0.708292,
+   "decimal": 1.4118,
+   "american": -243,
+   "american_str": "-243",
+   "tier": "High",
+   "note": "desk team-total rung",
+   "source_ids": [
+    "wst"
+   ],
+   "source_urls": [
+    "https://www.wst.tv/matches/"
+   ],
+   "event": "Kyren Wilson v Sam Craigie",
+   "competition": "Northern Ireland Open, semi-final",
+   "start": "2026-10-24T12:00:00Z"
+  },
+  {
+   "fixture": "HB01",
+   "sport": "handball",
+   "market": "Handicap",
+   "line": "HBC Nantes -1.25",
+   "selection": "HBC Nantes",
+   "p": 0.713963,
+   "decimal": 1.4006,
+   "american": -250,
+   "american_str": "-250",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "nantes",
+    "hbl"
+   ],
+   "source_urls": [
+    "https://hbcnantes.com/equipe-professionnelle/calendrier-et-resultats/",
+    "https://www.opel-hbl.de/de/hbl/spielplan"
+   ],
+   "event": "HBC Nantes v Chambery Savoie Mont-Blanc",
+   "competition": "Daikin StarLigue, Journee 8",
+   "start": "2026-10-24T17:00:00Z"
+  },
+  {
+   "fixture": "HB01",
+   "sport": "handball",
+   "market": "Match total",
+   "line": "Under 63.75 goals",
+   "selection": "Under",
+   "p": 0.711773,
+   "decimal": 1.4049,
+   "american": -247,
+   "american_str": "-247",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "nantes",
+    "hbl"
+   ],
+   "source_urls": [
+    "https://hbcnantes.com/equipe-professionnelle/calendrier-et-resultats/",
+    "https://www.opel-hbl.de/de/hbl/spielplan"
+   ],
+   "event": "HBC Nantes v Chambery Savoie Mont-Blanc",
+   "competition": "Daikin StarLigue, Journee 8",
+   "start": "2026-10-24T17:00:00Z"
+  },
+  {
+   "fixture": "VB02",
+   "sport": "volleyball",
+   "market": "Total points",
+   "line": "Under 173.5 points",
+   "selection": "Under",
+   "p": 0.712034,
+   "decimal": 1.4044,
+   "american": -247,
+   "american_str": "-247",
+   "tier": "High",
+   "note": "desk points ladder",
+   "source_ids": [
+    "plusliga"
+   ],
+   "source_urls": [
+    "https://www.tauronliga.pl/games.html"
+   ],
+   "event": "Aluron CMC Warta Zawiercie v BOGDANKA LUK Lublin",
+   "competition": "AL-KO Polish Men's Super Cup 2026",
+   "start": "2026-10-25T13:00:00Z"
+  },
+  {
+   "fixture": "VB01",
+   "sport": "volleyball",
+   "market": "Total points",
+   "line": "Under 173.5 points",
+   "selection": "Under",
+   "p": 0.711832,
+   "decimal": 1.4048,
+   "american": -247,
+   "american_str": "-247",
+   "tier": "High",
+   "note": "desk points ladder",
+   "source_ids": [
+    "plusliga"
+   ],
+   "source_urls": [
+    "https://www.tauronliga.pl/games.html"
+   ],
+   "event": "PGE GiEK SKRA Belchatow v PGE Projekt Warszawa",
+   "competition": "PlusLiga, regular season",
+   "start": "2026-10-24T16:00:00Z"
+  },
+  {
+   "fixture": "GF02",
+   "sport": "golf",
+   "market": "Matchup handicap",
+   "line": "Danny Walker +2 strokes",
+   "selection": "Danny Walker",
+   "p": 0.71226,
+   "decimal": 1.404,
+   "american": -248,
+   "american_str": "-248",
+   "tier": "High",
+   "note": "desk matchup handicap",
+   "source_ids": [
+    "pga"
+   ],
+   "source_urls": [
+    "https://www.pgatour.com/leaderboard"
+   ],
+   "event": "Seamus Power v Danny Walker",
+   "competition": "Butterfield Bermuda Championship, Round 3",
+   "start": "2026-10-24T14:00:00Z"
+  },
+  {
+   "fixture": "GF03",
+   "sport": "golf",
+   "market": "Matchup handicap",
+   "line": "Corey Conners +1.5 strokes",
+   "selection": "Corey Conners",
+   "p": 0.700787,
+   "decimal": 1.427,
+   "american": -234,
+   "american_str": "-234",
+   "tier": "High",
+   "note": "desk matchup handicap",
+   "source_ids": [
+    "pga"
+   ],
+   "source_urls": [
+    "https://www.pgatour.com/leaderboard"
+   ],
+   "event": "Corey Conners v Eric Cole",
+   "competition": "Butterfield Bermuda Championship, Round 3",
+   "start": "2026-10-24T14:00:00Z"
+  },
+  {
+   "fixture": "GA01",
+   "sport": "gaelic-sports",
+   "market": "Match total",
+   "line": "Under 33.25 points",
+   "selection": "Under",
+   "p": 0.711692,
+   "decimal": 1.4051,
+   "american": -247,
+   "american_str": "-247",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "cork-gaa"
+   ],
+   "source_urls": [
+    "https://gaacork.ie/fixtures/"
+   ],
+   "event": "Nemo Rangers v St Finbarrs",
+   "competition": "Cork Premier Senior Football Championship final",
+   "start": "2026-10-25T16:00:00Z"
+  },
+  {
+   "fixture": "GA02",
+   "sport": "gaelic-sports",
+   "market": "Handicap",
+   "line": "Canovee +3.25",
+   "selection": "Canovee",
+   "p": 0.705976,
+   "decimal": 1.4165,
+   "american": -240,
+   "american_str": "-240",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "cork-gaa"
+   ],
+   "source_urls": [
+    "https://gaacork.ie/fixtures/"
+   ],
+   "event": "Cobh v Canovee",
+   "competition": "Cork Premier Junior Football Championship final",
+   "start": "2026-10-25T14:00:00Z"
+  },
+  {
+   "fixture": "GA02",
+   "sport": "gaelic-sports",
+   "market": "Match total",
+   "line": "Over 24.75 points",
+   "selection": "Over",
+   "p": 0.705976,
+   "decimal": 1.4165,
+   "american": -240,
+   "american_str": "-240",
+   "tier": "High",
+   "note": "desk total ladder",
+   "source_ids": [
+    "cork-gaa"
+   ],
+   "source_urls": [
+    "https://gaacork.ie/fixtures/"
+   ],
+   "event": "Cobh v Canovee",
+   "competition": "Cork Premier Junior Football Championship final",
+   "start": "2026-10-25T14:00:00Z"
+  },
+  {
+   "fixture": "GA01",
+   "sport": "gaelic-sports",
+   "market": "Handicap",
+   "line": "St Finbarrs +4.5",
+   "selection": "St Finbarrs",
+   "p": 0.704871,
+   "decimal": 1.4187,
+   "american": -239,
+   "american_str": "-239",
+   "tier": "High",
+   "note": "desk handicap ladder",
+   "source_ids": [
+    "cork-gaa"
+   ],
+   "source_urls": [
+    "https://gaacork.ie/fixtures/"
+   ],
+   "event": "Nemo Rangers v St Finbarrs",
+   "competition": "Cork Premier Senior Football Championship final",
+   "start": "2026-10-25T16:00:00Z"
+  },
+  {
+   "fixture": "MR02",
+   "sport": "motor-racing",
+   "market": "Matchup handicap",
+   "line": "George Russell +1 position",
+   "selection": "George Russell",
+   "p": 0.71226,
+   "decimal": 1.404,
+   "american": -248,
+   "american_str": "-248",
+   "tier": "High",
+   "note": "desk matchup handicap",
+   "source_ids": [
+    "f1-us"
+   ],
+   "source_urls": [
+    "https://www.formula1.com/en/racing/2026/united-states"
+   ],
+   "event": "George Russell v Kimi Antonelli",
+   "competition": "Formula 1 United States Grand Prix",
+   "start": "2026-10-25T20:00:00Z"
+  },
+  {
+   "fixture": "MR01",
+   "sport": "motor-racing",
+   "market": "Matchup handicap",
+   "line": "Charles Leclerc +1 position",
+   "selection": "Charles Leclerc",
+   "p": 0.708154,
+   "decimal": 1.4121,
+   "american": -243,
+   "american_str": "-243",
+   "tier": "High",
+   "note": "desk matchup handicap",
+   "source_ids": [
+    "f1-us"
+   ],
+   "source_urls": [
+    "https://www.formula1.com/en/racing/2026/united-states"
+   ],
+   "event": "Charles Leclerc v Lando Norris",
+   "competition": "Formula 1 United States Grand Prix",
+   "start": "2026-10-25T20:00:00Z"
+  }
+ ]
+}
