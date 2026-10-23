@@ -291,6 +291,17 @@ class Desk455ACB16(unittest.TestCase):
         self.assertEqual(json.loads((DATA/"predictions.json").read_text())["predictions"],[])
         self.assertIn("0 of the 75 daily target supported",(SITE/"index.html").read_text())
 
+    def test_executive_rows_actually_follow_the_declared_probability_order(self):
+        text=(SITE/"index.html").read_text()
+        ids=re.findall(r'<tr id="([^"]+)" data-row',text)
+        # The two executive tables are today-in-LA and the upcoming shortlist.
+        today=[fid for fid in ids if self.by_id[fid]["start_utc"] in
+               ("2026-10-24T00:00:00Z","2026-10-24T01:00:00Z")]
+        upcoming=[fid for fid in ids if fid not in today]
+        for group in (today,upcoming):
+            chances=[self.books[fid]["probability"] for fid in group]
+            self.assertEqual(chances,sorted(chances,reverse=True))
+
     def test_exports_do_not_fill_quotes_or_eligibility(self):
         with (DATA/"matches.csv").open(encoding="utf-8-sig") as fh:rows=list(csv.DictReader(fh))
         self.assertEqual(len(rows),len(self.fixtures))
