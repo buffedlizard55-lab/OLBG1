@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Analysis and irregularity proofs &middot; OLBG desk ed71b937</title>
+<style>
+:root{--bg:#0e1116;--panel:#161b22;--line:#262d38;--ink:#e6edf3;--dim:#93a1b1;
+--acc:#58a6ff;--warn:#d29922;--bad:#f85149}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1200px;margin:0 auto;padding:22px 20px 64px}
+header.top{background:var(--panel);border-bottom:1px solid var(--line)}
+header.top .wrap{padding:18px 20px}
+h1{font-size:20px;margin:0 0 4px}
+h2{font-size:17px;margin:34px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3{font-size:15px;margin:24px 0 8px}
+p.lead{color:var(--dim);margin:6px 0 0;max-width:86ch}
+nav{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;margin-top:10px}
+nav a{color:var(--dim)}nav a.on{color:var(--ink);font-weight:600}
+table{border-collapse:collapse;width:100%;margin:10px 0 4px;font-size:13px}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#1b2230;font-weight:600;white-space:nowrap}
+tbody tr:nth-child(even){background:#12171e}
+.scroll{overflow:auto;max-height:80vh;border:1px solid var(--line);border-radius:6px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:16px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px}
+.card .n{font-size:26px;font-weight:700;line-height:1.1}
+.card .l{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
+.pill{display:inline-block;padding:1px 7px;border-radius:999px;font-size:11px;
+border:1px solid var(--line);white-space:nowrap}
+.p-hi{background:#12331c;border-color:#1f6f37;color:#7ee2a0}
+.p-med{background:#3a2d10;border-color:#7a5c14;color:#e3b341}
+.p-lo{background:#2a1f22;border-color:#5d3a41;color:#d3a3ab}
+.p-un{background:#1d2430;border-color:#33405a;color:#9fb3d1}
+.blank{color:#5f6b7a}
+.note{background:#161b22;border-left:3px solid var(--acc);padding:10px 14px;
+border-radius:0 6px 6px 0;margin:14px 0}
+.warn{border-left-color:var(--warn)}.bad{border-left-color:var(--bad)}
+code{background:#1b2230;padding:1px 5px;border-radius:4px;font-size:12.5px}
+pre{background:#1b2230;padding:12px;border-radius:6px;overflow:auto;font-size:12.5px}
+.foot{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);
+color:var(--dim);font-size:12px}
+.pred{background:var(--panel);border:1px solid var(--line);border-radius:8px;
+padding:16px 18px;margin:14px 0}
+.pred blockquote{margin:0 0 12px;font-size:15px;line-height:1.78}
+.srcs{font-size:12px;color:var(--dim)}
+ul.srcs{margin:6px 0}
+details summary{cursor:pointer;color:var(--dim);font-size:13px}
+</style></head><body>
+<header class="top"><div class="wrap">
+<h1>OLBG reverse-engineered desk &mdash; <code>ed71b937</code></h1>
+<p class="lead">15 requested sports &middot; independently originated lines
+&middot; every row traced to an official source or left blank and flagged.
+Data as at 2026-10-23T17:20:00Z.</p>
+<nav><a href="index.html">Dashboard</a> <a href="matches.html">Match list</a> <a href="markets.html">All markets</a> <a href="high-confidence.html">High confidence</a> <a href="predictions.html">Predictions</a> <a href="analysis.html" class="on">Analysis</a> <a href="flagged.html">Flagged for review</a> <a href="sources.html">Sources</a> <a href="methodology.html">Method</a> <a href="sports.html">By sport</a></nav>
+</div></header>
+<div class="wrap">
+<h2 style="margin-top:18px">Analysis and irregularity proofs</h2>
+<p class="lead">The timezone proof, the band arithmetic, the source ledger and the coverage gaps.</p>
+
+<h2>OLBG hub routing</h2>
+<p class="lead">Routes are <code>olbg.com/betting-tips/&lt;Sport&gt;/&lt;id&gt;</code>.
+The sport token is case sensitive in the slug while the numeric id does the
+routing; a hub opened without its id returns a soft 404. The hub listing is
+paginated behind a "Load More Tips" control, so a hub can list more rows than
+it renders on first paint (ED71-F-16).</p>
+
+<h2>The display clock is unlabelled US Eastern</h2>
+<p class="lead">OLBG hub pages render start times in America/New_York EDT (UTC-4) with NO timezone label printed anywhere on the page.</p>
+<p class="lead">Conversion used: <code>utc = rendered_time + 4h</code></p>
+<ul><li>Greyhound race whose event name embeds the UK local clock &#x27;5:12 Towcester&#x27; renders as &#x27;Today 12:12&#x27;. 17:12 BST = 16:12 UTC = 12:12 EDT.</li><li>NHL &#x27;MTL Canadiens @ CHI Blackhawks&#x27; renders &#x27;Today 20:07&#x27;; nhl.com publishes 8 p.m. ET.</li><li>Rugby Union &#x27;Aurillac v Nevers&#x27; renders &#x27;Today 13:30&#x27; = 17:30 UTC = 19:30 CEST, a standard Pro D2 kick-off.</li></ul>
+<div class="note warn"><b>Consequence.</b> A reader who assumes UTC or UK time
+reads every kickoff four hours early. All times published here are converted
+to UTC, and the OLBG-rendered value is kept alongside so the conversion can be
+audited row by row.</div>
+
+<h2>Start times are padded</h2>
+<div class="note warn">OLBG start times carry an unlabelled +5 to +7 minute
+padding (ED71-F-02): NHL Montreal at Chicago renders 20:07 against an official
+<code>startTimeUTC</code> of 00:00:00Z, which is 20:00 ET. OLBG renderings are
+therefore never published as the kickoff; the official time is used and the
+rendering is shown next to it.</div>
+
+<h2>A timezone defect that changes the calendar day</h2>
+<div class="note bad">Four OLBG darts rows render a 24 October date for
+first-round matches that sit in the 23 October evening session once the +4h
+offset is applied (ED71-F-05). Read naively this looks like a reschedule. It
+is the unlabelled clock pushing a late European evening past midnight in the
+display zone. Dates on this desk come from the promoter's session calendar.</div>
+
+<h2>Why the high-confidence band admits so few picks</h2>
+<p class="lead">Fair decimal price is 1/p with no margin.  A price of -250 is decimal 1.400, which corresponds to p = 0.71429.  Therefore the brief&#x27;s conjunction - probability at least 70% AND price no shorter than -250 - can only be satisfied inside the 1.43-point window p in [0.700, 0.71429]. Every selection above 0.71429 is a genuine 70%+ preference but is priced shorter than -250, so it is disclosed in the out-of-band ledger and is not promoted to High.  That is arithmetic, not caution.</p>
+<table><thead><tr><th>Price</th><th>Decimal</th><th>Implied probability</th>
+</tr></thead><tbody>
+<tr><td>-250 (band edge)</td><td>1.4000</td><td>0.71429</td></tr>
+<tr><td>-200</td><td>1.5000</td><td>0.66667</td></tr>
+<tr><td>+10000 (band edge)</td><td>101.0000</td><td>0.00990</td></tr>
+</tbody></table>
+<p class="lead">So the intersection of "at least 70% likely" and "no shorter
+than -250" is only p in [0.7000, 0.71429] &mdash; a 1.43-point window. The
+daily target of five picks per covered sport is not reachable inside it
+without inventing picks, so the shortfall is stated instead of being papered
+over.</p>
+
+<h3>Disclosure ledger &mdash; 0.700+ but priced outside the band</h3>
+<p class="lead">10 selections clear the probability floor but are priced
+shorter than -250. They are published here and are not promoted.</p>
+<div class="scroll"><table><thead><tr><th>Row</th><th>Sport</th><th>Fixture</th><th>Market</th><th>Selection</th><th>Prob</th><th>Fair dec</th><th>Fair US</th><th>Confidence</th><th>Derivation</th><th>Note</th></tr></thead><tbody><tr><td><code>ED71-017</code></td><td>Basketball</td><td>Zalgiris Kaunas v LDLC ASVEL Villeurbanne</td><td>Handicap Zalgiris Kaunas +8.5</td><td>Zalgiris Kaunas</td><td>0.7386</td><td>1.3540</td><td>-282</td><td><span class="pill p-un">OUT OF BAND</span></td><td>Normal margin model; SD is a disclosed model constant, not a sourced fact</td><td></td></tr><tr><td><code>ED71-018</code></td><td>Basketball</td><td>Olympiacos Piraeus v Fenerbahce Tarfin Istanbul</td><td>Handicap Fenerbahce Tarfin Istanbul +8.5</td><td>Fenerbahce Tarfin Istanbul</td><td>0.7264</td><td>1.3767</td><td>-265</td><td><span class="pill p-un">OUT OF BAND</span></td><td>Normal margin model; SD is a disclosed model constant, not a sourced fact</td><td></td></tr><tr><td><code>ED71-019</code></td><td>Basketball</td><td>Paris Basketball v Valencia Basket</td><td>Match winner</td><td>Valencia Basket</td><td>0.7778</td><td>1.2857</td><td>-350</td><td><span class="pill p-un">OUT OF BAND</span></td><td>Beta(2,2) shrinkage + log5 on official W-L, no home-edge term</td><td></td></tr><tr><td><code>ED71-019</code></td><td>Basketball</td><td>Paris Basketball v Valencia Basket</td><td>Handicap Valencia Basket -0.5</td><td>Valencia Basket</td><td>0.7816</td><td>1.2793</td><td>-358</td><td><span class="pill p-un">OUT OF BAND</span></td><td>Normal margin model; SD is a disclosed model constant, not a sourced fact</td><td></td></tr><tr><td><code>ED71-019</code></td><td>Basketball</td><td>Paris Basketball v Valencia Basket</td><td>Handicap Valencia Basket +0.5</td><td>Valencia Basket</td><td>0.7977</td><td>1.2536</td><td>-394</td><td><span class="pill p-un">OUT OF BAND</span></td><td>Normal margin model; SD is a disclosed model constant, not a sourced fact</td><td></td></tr><tr><td><code>ED71-019</code></td><td>Basketball</td><td>Paris Basketball v Valencia Basket</td><td>Handicap Valencia Basket -2.5</td><td>Valencia Basket</td><td>0.7475</td><td>1.3378</td><td>-296</td><td><span class="pill p-un">OUT OF BAND</span></td><td>Normal margin model; SD is a disclosed model constant, not a sourced fact</td><td></td></tr><tr><td><code>ED71-019</code></td><td>Basketball</td><td>Paris Basketball v Valencia Basket</td><td>Handicap Valencia Basket +2.5</td><td>Valencia Basket</td><td>0.8275</td><td>1.2084</td><td>-480</td><td><span class="pill p-un">OUT OF BAND</span></td><td>Normal margin model; SD is a disclosed model constant, not a sourced fact</td><td></td></tr><tr><td><code>ED71-019</code></td><td>Basketball</td><td>Paris Basketball v Valencia Basket</td><td>Handicap Valencia Basket +4.5</td><td>Valencia Basket</td><td>0.8544</td><td>1.1704</td><td>-587</td><td><span class="pill p-un">OUT OF BAND</span></td><td>Normal margin model; SD is a disclosed model constant, not a sourced fact</td><td></td></tr><tr><td><code>ED71-019</code></td><td>Basketball</td><td>Paris Basketball v Valencia Basket</td><td>Handicap Valencia Basket +6.5</td><td>Valencia Basket</td><td>0.8783</td><td>1.1385</td><td>-722</td><td><span class="pill p-un">OUT OF BAND</span></td><td>Normal margin model; SD is a disclosed model constant, not a sourced fact</td><td></td></tr><tr><td><code>ED71-019</code></td><td>Basketball</td><td>Paris Basketball v Valencia Basket</td><td>Handicap Valencia Basket +8.5</td><td>Valencia Basket</td><td>0.8993</td><td>1.1119</td><td>-893</td><td><span class="pill p-un">OUT OF BAND</span></td><td>Normal margin model; SD is a disclosed model constant, not a sourced fact</td><td></td></tr></tbody></table></div>
+
+<h2>Source ledger</h2>
+<p class="lead">11 official pages were read this session and they carry
+20 of 129 rows. The remaining 109 rows are OLBG-listing-only: they
+are real listed events, but no official page was read for them, so their
+competition, kickoff, record and venue cells are empty and they are flagged.</p>
+
+<h2>Coverage gaps</h2>
+<ul><li><b>ED71-F-13</b> (Golf) &mdash; The OLBG Golf hub (sport_id 5) returned the literal string &#x27;No tips found.&#x27; at 2026-10-23T16:18Z, so there is no OLBG golf fixture or tournament listing to verify.  Coverage gap, not a zero-fixture finding.</li><li><b>ED71-F-12</b> (Rugby League) &mdash; The OLBG Rugby League hub listed only three 2027 outright markets and no match fixtures.</li></ul>
+
+<h2>Rejected input: a standings table one round stale</h2>
+<div class="note bad">The first EuroLeague table read this session came from a
+media-centre game kit and showed every club on five games played, while
+today's fixtures are round seven. That table was one round stale. It was
+discarded before any price was struck and the standings were re-read on a club
+site showing six games played. Had the stale table been used, the Paris v
+Valencia handicap would have been offered at 6.5 points instead of 4.5 &mdash;
+a materially different bet on the same fixture. Logged as ED71-F-14.</div>
+
+<h2>Rejected input: a self-contradictory odds feed</h2>
+<div class="note bad">The NHL schedule API returns an unlabelled odds array in
+which decimal and American values are mixed and providers disagree about the
+favourite for the same game: one had Montreal 2.35 and Chicago 1.59 while
+another had Montreal 1.60 and Chicago 2.37. The feed is recorded as an
+irregularity and is not used as a pricing input anywhere on this desk
+(ED71-F-15).</div>
+
+<div class="foot">Session <code>ed71b937-olbg1</code> &middot; task TED71 &middot;
+built 2026-10-23T17:20:00Z. Prices are desk estimates, not a bookmaker offer. A blank cell
+means the value could not be confirmed from an official source and was
+deliberately left empty rather than inferred.</div>
+</div></body></html>

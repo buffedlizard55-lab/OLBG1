@@ -1,0 +1,1675 @@
+{
+ "session": "ed71b937-olbg1",
+ "task": "TED71",
+ "generated_at": "2026-10-23T16:55:00Z",
+ "band": {
+  "min_american": -250,
+  "max_american": 10000,
+  "prob_floor": 0.7,
+  "note": "Fair decimal price is 1/p with no margin.  A price of -250 is decimal 1.400, which corresponds to p = 0.71429.  Therefore the brief's conjunction - probability at least 70% AND price no shorter than -250 - can only be satisfied inside the 1.43-point window p in [0.700, 0.71429]. Every selection above 0.71429 is a genuine 70%+ preference but is priced shorter than -250, so it is disclosed in the out-of-band ledger and is not promoted to High.  That is arithmetic, not caution."
+ },
+ "constants": {
+  "shrinkage_prior": "Beta(2,2)",
+  "link": "log5",
+  "home_edge": "none applied",
+  "el_margin_sd_points": 18.0,
+  "el_handicap_rungs": [
+   0.5,
+   2.5,
+   4.5,
+   6.5,
+   8.5
+  ],
+  "el_total_ladder_offsets": [
+   -4.5,
+   0.0,
+   4.5
+  ]
+ },
+ "selections": [
+  {
+   "fixture_id": "ED71-001",
+   "sport": "Ice Hockey",
+   "match": "Montréal Canadiens v Chicago Blackhawks",
+   "market": "Match winner",
+   "selection": "Montréal Canadiens",
+   "prob": 0.5783,
+   "fair_decimal": 1.7292,
+   "fair_american": -137,
+   "tier": "low",
+   "inputs": {
+    "record_a": "4-3-2",
+    "record_b": "3-6-0",
+    "raw_win_pct_a": 0.4444,
+    "raw_win_pct_b": 0.3333,
+    "shrunk_a": 0.4615,
+    "shrunk_b": 0.3846,
+    "source": [
+     "https://api-web.nhle.com/v1/schedule/2026-10-23",
+     "https://www.nhl.com/news/nhl-on-tap-news-and-notes-october-23-2026"
+    ]
+   },
+   "model": "Beta(2,2) shrinkage + log5, no home-edge term",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-001",
+   "sport": "Ice Hockey",
+   "match": "Montréal Canadiens v Chicago Blackhawks",
+   "market": "Match winner",
+   "selection": "Chicago Blackhawks",
+   "prob": 0.4217,
+   "fair_decimal": 2.3714,
+   "fair_american": 137,
+   "tier": "low",
+   "inputs": {
+    "record_a": "4-3-2",
+    "record_b": "3-6-0",
+    "raw_win_pct_a": 0.4444,
+    "raw_win_pct_b": 0.3333,
+    "shrunk_a": 0.4615,
+    "shrunk_b": 0.3846,
+    "source": [
+     "https://api-web.nhle.com/v1/schedule/2026-10-23",
+     "https://www.nhl.com/news/nhl-on-tap-news-and-notes-october-23-2026"
+    ]
+   },
+   "model": "Beta(2,2) shrinkage + log5, no home-edge term",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-001",
+   "sport": "Ice Hockey",
+   "match": "Montréal Canadiens v Chicago Blackhawks",
+   "market": "Puck line (handicap)",
+   "selection": null,
+   "prob": null,
+   "fair_decimal": null,
+   "fair_american": null,
+   "tier": "unpriced",
+   "inputs": null,
+   "model": null,
+   "note": "No official goals for/against input was read this session for these two clubs, so the margin model has no sourced input and the market is left unpriced."
+  },
+  {
+   "fixture_id": "ED71-001",
+   "sport": "Ice Hockey",
+   "match": "Montréal Canadiens v Chicago Blackhawks",
+   "market": "Game total",
+   "selection": null,
+   "prob": null,
+   "fair_decimal": null,
+   "fair_american": null,
+   "tier": "unpriced",
+   "inputs": null,
+   "model": null,
+   "note": "No official goals for/against input was read this session, so no total is originated."
+  },
+  {
+   "fixture_id": "ED71-002",
+   "sport": "Ice Hockey",
+   "match": "Tampa Bay Lightning v Colorado Avalanche",
+   "market": "Match winner",
+   "selection": "Tampa Bay Lightning",
+   "prob": 0.6923,
+   "fair_decimal": 1.4444,
+   "fair_american": -225,
+   "tier": "medium",
+   "inputs": {
+    "record_a": "7-2-0",
+    "record_b": "5-4-1",
+    "raw_win_pct_a": 0.7778,
+    "raw_win_pct_b": 0.5,
+    "shrunk_a": 0.6923,
+    "shrunk_b": 0.5,
+    "source": [
+     "https://api-web.nhle.com/v1/schedule/2026-10-23",
+     "https://www.nhl.com/news/nhl-on-tap-news-and-notes-october-23-2026"
+    ]
+   },
+   "model": "Beta(2,2) shrinkage + log5, no home-edge term",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-002",
+   "sport": "Ice Hockey",
+   "match": "Tampa Bay Lightning v Colorado Avalanche",
+   "market": "Match winner",
+   "selection": "Colorado Avalanche",
+   "prob": 0.3077,
+   "fair_decimal": 3.25,
+   "fair_american": 225,
+   "tier": "low",
+   "inputs": {
+    "record_a": "7-2-0",
+    "record_b": "5-4-1",
+    "raw_win_pct_a": 0.7778,
+    "raw_win_pct_b": 0.5,
+    "shrunk_a": 0.6923,
+    "shrunk_b": 0.5,
+    "source": [
+     "https://api-web.nhle.com/v1/schedule/2026-10-23",
+     "https://www.nhl.com/news/nhl-on-tap-news-and-notes-october-23-2026"
+    ]
+   },
+   "model": "Beta(2,2) shrinkage + log5, no home-edge term",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-002",
+   "sport": "Ice Hockey",
+   "match": "Tampa Bay Lightning v Colorado Avalanche",
+   "market": "Puck line (handicap)",
+   "selection": null,
+   "prob": null,
+   "fair_decimal": null,
+   "fair_american": null,
+   "tier": "unpriced",
+   "inputs": null,
+   "model": null,
+   "note": "No official goals for/against input was read this session for these two clubs, so the margin model has no sourced input and the market is left unpriced."
+  },
+  {
+   "fixture_id": "ED71-002",
+   "sport": "Ice Hockey",
+   "match": "Tampa Bay Lightning v Colorado Avalanche",
+   "market": "Game total",
+   "selection": null,
+   "prob": null,
+   "fair_decimal": null,
+   "fair_american": null,
+   "tier": "unpriced",
+   "inputs": null,
+   "model": null,
+   "note": "No official goals for/against input was read this session, so no total is originated."
+  },
+  {
+   "fixture_id": "ED71-016",
+   "sport": "Baseball",
+   "match": "Tampa Bay Rays v Milwaukee Brewers",
+   "market": "Match winner",
+   "selection": "Tampa Bay Rays",
+   "prob": 0.4682,
+   "fair_decimal": 2.1361,
+   "fair_american": 114,
+   "tier": "low",
+   "inputs": {
+    "record_a": "98-64",
+    "record_b": "103-59",
+    "raw_win_pct_a": 0.6049,
+    "raw_win_pct_b": 0.6358,
+    "shrunk_a": 0.6024,
+    "shrunk_b": 0.6325,
+    "source": [
+     "https://www.mlb.com/news/2026-mlb-playoff-and-world-series-schedule",
+     "https://www.mlb.com/news/2026-mlb-world-series-faq-schedule-times-teams-and-more"
+    ]
+   },
+   "model": "Beta(2,2) shrinkage + log5, no home-edge term; confidence capped to Low (postseason effects, starting pitchers, ballpark and lineups are not modelled; the disclosed policy caps any World Series game at Low regardless of the record-based number)",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-016",
+   "sport": "Baseball",
+   "match": "Tampa Bay Rays v Milwaukee Brewers",
+   "market": "Match winner",
+   "selection": "Milwaukee Brewers",
+   "prob": 0.5318,
+   "fair_decimal": 1.8802,
+   "fair_american": -114,
+   "tier": "low",
+   "inputs": {
+    "record_a": "98-64",
+    "record_b": "103-59",
+    "raw_win_pct_a": 0.6049,
+    "raw_win_pct_b": 0.6358,
+    "shrunk_a": 0.6024,
+    "shrunk_b": 0.6325,
+    "source": [
+     "https://www.mlb.com/news/2026-mlb-playoff-and-world-series-schedule",
+     "https://www.mlb.com/news/2026-mlb-world-series-faq-schedule-times-teams-and-more"
+    ]
+   },
+   "model": "Beta(2,2) shrinkage + log5, no home-edge term; confidence capped to Low (postseason effects, starting pitchers, ballpark and lineups are not modelled; the disclosed policy caps any World Series game at Low regardless of the record-based number)",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-016",
+   "sport": "Baseball",
+   "match": "Tampa Bay Rays v Milwaukee Brewers",
+   "market": "Run line (handicap)",
+   "selection": null,
+   "prob": null,
+   "fair_decimal": null,
+   "fair_american": null,
+   "tier": "unpriced",
+   "inputs": null,
+   "model": null,
+   "note": "Paired official regular-season run rates were not read this session, so no Poisson score model is run and the market is left unpriced."
+  },
+  {
+   "fixture_id": "ED71-016",
+   "sport": "Baseball",
+   "match": "Tampa Bay Rays v Milwaukee Brewers",
+   "market": "Game total",
+   "selection": null,
+   "prob": null,
+   "fair_decimal": null,
+   "fair_american": null,
+   "tier": "unpriced",
+   "inputs": null,
+   "model": null,
+   "note": "Paired official regular-season run rates were not read this session, so no Poisson score model is run and the market is left unpriced."
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Match winner",
+   "selection": "Zalgiris Kaunas",
+   "prob": 0.5,
+   "fair_decimal": 2.0,
+   "fair_american": 100,
+   "tier": "low",
+   "inputs": {
+    "record_a": "2-4",
+    "record_b": "2-4",
+    "points_for_against_a": [
+     490,
+     517
+    ],
+    "points_for_against_b": [
+     527,
+     572
+    ],
+    "rating_a": -4.5,
+    "rating_b": -7.5,
+    "margin_mu": 3.0,
+    "projected_total": 175.5,
+    "source": [
+     "https://www.olympiacosbc.gr/el/"
+    ]
+   },
+   "model": "Beta(2,2) shrinkage + log5 on official W-L, no home-edge term",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Match winner",
+   "selection": "LDLC ASVEL Villeurbanne",
+   "prob": 0.5,
+   "fair_decimal": 2.0,
+   "fair_american": 100,
+   "tier": "low",
+   "inputs": {
+    "record_a": "2-4",
+    "record_b": "2-4",
+    "points_for_against_a": [
+     490,
+     517
+    ],
+    "points_for_against_b": [
+     527,
+     572
+    ],
+    "rating_a": -4.5,
+    "rating_b": -7.5,
+    "margin_mu": 3.0,
+    "projected_total": 175.5,
+    "source": [
+     "https://www.olympiacosbc.gr/el/"
+    ]
+   },
+   "model": "Beta(2,2) shrinkage + log5 on official W-L, no home-edge term",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap Zalgiris Kaunas -0.5",
+   "selection": "Zalgiris Kaunas",
+   "prob": 0.5552,
+   "fair_decimal": 1.8011,
+   "fair_american": -125,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 0.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap Zalgiris Kaunas +0.5",
+   "selection": "Zalgiris Kaunas",
+   "prob": 0.5771,
+   "fair_decimal": 1.7328,
+   "fair_american": -136,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 0.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap LDLC ASVEL Villeurbanne -0.5",
+   "selection": "LDLC ASVEL Villeurbanne",
+   "prob": 0.4229,
+   "fair_decimal": 2.3645,
+   "fair_american": 136,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 0.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap LDLC ASVEL Villeurbanne +0.5",
+   "selection": "LDLC ASVEL Villeurbanne",
+   "prob": 0.4448,
+   "fair_decimal": 2.2484,
+   "fair_american": 125,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 0.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap Zalgiris Kaunas -2.5",
+   "selection": "Zalgiris Kaunas",
+   "prob": 0.5111,
+   "fair_decimal": 1.9566,
+   "fair_american": -105,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 2.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap Zalgiris Kaunas +2.5",
+   "selection": "Zalgiris Kaunas",
+   "prob": 0.62,
+   "fair_decimal": 1.6128,
+   "fair_american": -163,
+   "tier": "medium",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 2.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap LDLC ASVEL Villeurbanne -2.5",
+   "selection": "LDLC ASVEL Villeurbanne",
+   "prob": 0.38,
+   "fair_decimal": 2.6318,
+   "fair_american": 163,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 2.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap LDLC ASVEL Villeurbanne +2.5",
+   "selection": "LDLC ASVEL Villeurbanne",
+   "prob": 0.4889,
+   "fair_decimal": 2.0453,
+   "fair_american": 105,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 2.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap Zalgiris Kaunas -4.5",
+   "selection": "Zalgiris Kaunas",
+   "prob": 0.4668,
+   "fair_decimal": 2.1423,
+   "fair_american": 114,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 4.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap Zalgiris Kaunas +4.5",
+   "selection": "Zalgiris Kaunas",
+   "prob": 0.6615,
+   "fair_decimal": 1.5116,
+   "fair_american": -195,
+   "tier": "medium",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 4.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap LDLC ASVEL Villeurbanne -4.5",
+   "selection": "LDLC ASVEL Villeurbanne",
+   "prob": 0.3385,
+   "fair_decimal": 2.9545,
+   "fair_american": 195,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 4.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap LDLC ASVEL Villeurbanne +4.5",
+   "selection": "LDLC ASVEL Villeurbanne",
+   "prob": 0.5332,
+   "fair_decimal": 1.8754,
+   "fair_american": -114,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 4.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap Zalgiris Kaunas -6.5",
+   "selection": "Zalgiris Kaunas",
+   "prob": 0.4229,
+   "fair_decimal": 2.3645,
+   "fair_american": 136,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 6.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap Zalgiris Kaunas +6.5",
+   "selection": "Zalgiris Kaunas",
+   "prob": 0.7012,
+   "fair_decimal": 1.4262,
+   "fair_american": -235,
+   "tier": "high-in-band",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 6.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap LDLC ASVEL Villeurbanne -6.5",
+   "selection": "LDLC ASVEL Villeurbanne",
+   "prob": 0.2988,
+   "fair_decimal": 3.3464,
+   "fair_american": 235,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 6.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap LDLC ASVEL Villeurbanne +6.5",
+   "selection": "LDLC ASVEL Villeurbanne",
+   "prob": 0.5771,
+   "fair_decimal": 1.7328,
+   "fair_american": -136,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 6.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap Zalgiris Kaunas -8.5",
+   "selection": "Zalgiris Kaunas",
+   "prob": 0.38,
+   "fair_decimal": 2.6318,
+   "fair_american": 163,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 8.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap Zalgiris Kaunas +8.5",
+   "selection": "Zalgiris Kaunas",
+   "prob": 0.7386,
+   "fair_decimal": 1.354,
+   "fair_american": -282,
+   "tier": "out-of-band-short",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 8.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap LDLC ASVEL Villeurbanne -8.5",
+   "selection": "LDLC ASVEL Villeurbanne",
+   "prob": 0.2614,
+   "fair_decimal": 3.8249,
+   "fair_american": 282,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 8.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Handicap LDLC ASVEL Villeurbanne +8.5",
+   "selection": "LDLC ASVEL Villeurbanne",
+   "prob": 0.62,
+   "fair_decimal": 1.6128,
+   "fair_american": -163,
+   "tier": "medium",
+   "inputs": {
+    "margin_mu": 3.0,
+    "margin_sd": 18.0,
+    "rung": 8.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Match total over 4.5 (line 171.0)",
+   "selection": null,
+   "prob": null,
+   "fair_decimal": null,
+   "fair_american": null,
+   "tier": "unpriced",
+   "inputs": null,
+   "model": null,
+   "note": "Projected total 175.5 is derived from official points for/against, but no official total-variance input was read this session, so no probability is attached.  Published as a line, not a priced selection."
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Match total under 0.0 (line 175.5)",
+   "selection": null,
+   "prob": null,
+   "fair_decimal": null,
+   "fair_american": null,
+   "tier": "unpriced",
+   "inputs": null,
+   "model": null,
+   "note": "Projected total 175.5 is derived from official points for/against, but no official total-variance input was read this session, so no probability is attached.  Published as a line, not a priced selection."
+  },
+  {
+   "fixture_id": "ED71-017",
+   "sport": "Basketball",
+   "match": "Zalgiris Kaunas v LDLC ASVEL Villeurbanne",
+   "market": "Match total under 4.5 (line 180.0)",
+   "selection": null,
+   "prob": null,
+   "fair_decimal": null,
+   "fair_american": null,
+   "tier": "unpriced",
+   "inputs": null,
+   "model": null,
+   "note": "Projected total 175.5 is derived from official points for/against, but no official total-variance input was read this session, so no probability is attached.  Published as a line, not a priced selection."
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Match winner",
+   "selection": "Olympiacos Piraeus",
+   "prob": 0.5,
+   "fair_decimal": 2.0,
+   "fair_american": 100,
+   "tier": "low",
+   "inputs": {
+    "record_a": "5-1",
+    "record_b": "5-1",
+    "points_for_against_a": [
+     564,
+     524
+    ],
+    "points_for_against_b": [
+     501,
+     447
+    ],
+    "rating_a": 6.667,
+    "rating_b": 9.0,
+    "margin_mu": -2.333,
+    "projected_total": 169.67,
+    "source": [
+     "https://www.olympiacosbc.gr/el/"
+    ]
+   },
+   "model": "Beta(2,2) shrinkage + log5 on official W-L, no home-edge term",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Match winner",
+   "selection": "Fenerbahce Tarfin Istanbul",
+   "prob": 0.5,
+   "fair_decimal": 2.0,
+   "fair_american": 100,
+   "tier": "low",
+   "inputs": {
+    "record_a": "5-1",
+    "record_b": "5-1",
+    "points_for_against_a": [
+     564,
+     524
+    ],
+    "points_for_against_b": [
+     501,
+     447
+    ],
+    "rating_a": 6.667,
+    "rating_b": 9.0,
+    "margin_mu": -2.333,
+    "projected_total": 169.67,
+    "source": [
+     "https://www.olympiacosbc.gr/el/"
+    ]
+   },
+   "model": "Beta(2,2) shrinkage + log5 on official W-L, no home-edge term",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Olympiacos Piraeus -0.5",
+   "selection": "Olympiacos Piraeus",
+   "prob": 0.4375,
+   "fair_decimal": 2.2859,
+   "fair_american": 129,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 0.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Olympiacos Piraeus +0.5",
+   "selection": "Olympiacos Piraeus",
+   "prob": 0.4594,
+   "fair_decimal": 2.1766,
+   "fair_american": 118,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 0.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Fenerbahce Tarfin Istanbul -0.5",
+   "selection": "Fenerbahce Tarfin Istanbul",
+   "prob": 0.5406,
+   "fair_decimal": 1.8499,
+   "fair_american": -118,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 0.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Fenerbahce Tarfin Istanbul +0.5",
+   "selection": "Fenerbahce Tarfin Istanbul",
+   "prob": 0.5625,
+   "fair_decimal": 1.7777,
+   "fair_american": -129,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 0.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Olympiacos Piraeus -2.5",
+   "selection": "Olympiacos Piraeus",
+   "prob": 0.3942,
+   "fair_decimal": 2.5371,
+   "fair_american": 154,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 2.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Olympiacos Piraeus +2.5",
+   "selection": "Olympiacos Piraeus",
+   "prob": 0.5037,
+   "fair_decimal": 1.9853,
+   "fair_american": -101,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 2.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Fenerbahce Tarfin Istanbul -2.5",
+   "selection": "Fenerbahce Tarfin Istanbul",
+   "prob": 0.4963,
+   "fair_decimal": 2.0149,
+   "fair_american": 101,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 2.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Fenerbahce Tarfin Istanbul +2.5",
+   "selection": "Fenerbahce Tarfin Istanbul",
+   "prob": 0.6058,
+   "fair_decimal": 1.6506,
+   "fair_american": -154,
+   "tier": "medium",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 2.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Olympiacos Piraeus -4.5",
+   "selection": "Olympiacos Piraeus",
+   "prob": 0.3521,
+   "fair_decimal": 2.84,
+   "fair_american": 184,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 4.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Olympiacos Piraeus +4.5",
+   "selection": "Olympiacos Piraeus",
+   "prob": 0.5479,
+   "fair_decimal": 1.8251,
+   "fair_american": -121,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 4.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Fenerbahce Tarfin Istanbul -4.5",
+   "selection": "Fenerbahce Tarfin Istanbul",
+   "prob": 0.4521,
+   "fair_decimal": 2.2119,
+   "fair_american": 121,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 4.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Fenerbahce Tarfin Istanbul +4.5",
+   "selection": "Fenerbahce Tarfin Istanbul",
+   "prob": 0.6479,
+   "fair_decimal": 1.5435,
+   "fair_american": -184,
+   "tier": "medium",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 4.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Olympiacos Piraeus -6.5",
+   "selection": "Olympiacos Piraeus",
+   "prob": 0.3118,
+   "fair_decimal": 3.2071,
+   "fair_american": 221,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 6.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Olympiacos Piraeus +6.5",
+   "selection": "Olympiacos Piraeus",
+   "prob": 0.5915,
+   "fair_decimal": 1.6905,
+   "fair_american": -145,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 6.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Fenerbahce Tarfin Istanbul -6.5",
+   "selection": "Fenerbahce Tarfin Istanbul",
+   "prob": 0.4085,
+   "fair_decimal": 2.4482,
+   "fair_american": 145,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 6.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Fenerbahce Tarfin Istanbul +6.5",
+   "selection": "Fenerbahce Tarfin Istanbul",
+   "prob": 0.6882,
+   "fair_decimal": 1.4531,
+   "fair_american": -221,
+   "tier": "medium",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 6.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Olympiacos Piraeus -8.5",
+   "selection": "Olympiacos Piraeus",
+   "prob": 0.2736,
+   "fair_decimal": 3.6545,
+   "fair_american": 265,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 8.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Olympiacos Piraeus +8.5",
+   "selection": "Olympiacos Piraeus",
+   "prob": 0.634,
+   "fair_decimal": 1.5772,
+   "fair_american": -173,
+   "tier": "medium",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 8.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Fenerbahce Tarfin Istanbul -8.5",
+   "selection": "Fenerbahce Tarfin Istanbul",
+   "prob": 0.366,
+   "fair_decimal": 2.7326,
+   "fair_american": 173,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 8.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Handicap Fenerbahce Tarfin Istanbul +8.5",
+   "selection": "Fenerbahce Tarfin Istanbul",
+   "prob": 0.7264,
+   "fair_decimal": 1.3767,
+   "fair_american": -265,
+   "tier": "out-of-band-short",
+   "inputs": {
+    "margin_mu": -2.333,
+    "margin_sd": 18.0,
+    "rung": 8.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Match total over 4.5 (line 165.0)",
+   "selection": null,
+   "prob": null,
+   "fair_decimal": null,
+   "fair_american": null,
+   "tier": "unpriced",
+   "inputs": null,
+   "model": null,
+   "note": "Projected total 169.67 is derived from official points for/against, but no official total-variance input was read this session, so no probability is attached.  Published as a line, not a priced selection."
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Match total under 0.0 (line 169.5)",
+   "selection": null,
+   "prob": null,
+   "fair_decimal": null,
+   "fair_american": null,
+   "tier": "unpriced",
+   "inputs": null,
+   "model": null,
+   "note": "Projected total 169.67 is derived from official points for/against, but no official total-variance input was read this session, so no probability is attached.  Published as a line, not a priced selection."
+  },
+  {
+   "fixture_id": "ED71-018",
+   "sport": "Basketball",
+   "match": "Olympiacos Piraeus v Fenerbahce Tarfin Istanbul",
+   "market": "Match total under 4.5 (line 174.0)",
+   "selection": null,
+   "prob": null,
+   "fair_decimal": null,
+   "fair_american": null,
+   "tier": "unpriced",
+   "inputs": null,
+   "model": null,
+   "note": "Projected total 169.67 is derived from official points for/against, but no official total-variance input was read this session, so no probability is attached.  Published as a line, not a priced selection."
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Match winner",
+   "selection": "Paris Basketball",
+   "prob": 0.2222,
+   "fair_decimal": 4.5,
+   "fair_american": 350,
+   "tier": "low",
+   "inputs": {
+    "record_a": "1-5",
+    "record_b": "4-2",
+    "points_for_against_a": [
+     504,
+     545
+    ],
+    "points_for_against_b": [
+     583,
+     537
+    ],
+    "rating_a": -6.833,
+    "rating_b": 7.667,
+    "margin_mu": -14.5,
+    "projected_total": 180.75,
+    "source": [
+     "https://www.olympiacosbc.gr/el/"
+    ]
+   },
+   "model": "Beta(2,2) shrinkage + log5 on official W-L, no home-edge term",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Match winner",
+   "selection": "Valencia Basket",
+   "prob": 0.7778,
+   "fair_decimal": 1.2857,
+   "fair_american": -350,
+   "tier": "out-of-band-short",
+   "inputs": {
+    "record_a": "1-5",
+    "record_b": "4-2",
+    "points_for_against_a": [
+     504,
+     545
+    ],
+    "points_for_against_b": [
+     583,
+     537
+    ],
+    "rating_a": -6.833,
+    "rating_b": 7.667,
+    "margin_mu": -14.5,
+    "projected_total": 180.75,
+    "source": [
+     "https://www.olympiacosbc.gr/el/"
+    ]
+   },
+   "model": "Beta(2,2) shrinkage + log5 on official W-L, no home-edge term",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Paris Basketball -0.5",
+   "selection": "Paris Basketball",
+   "prob": 0.2023,
+   "fair_decimal": 4.9425,
+   "fair_american": 394,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 0.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Paris Basketball +0.5",
+   "selection": "Paris Basketball",
+   "prob": 0.2184,
+   "fair_decimal": 4.5798,
+   "fair_american": 358,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 0.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Valencia Basket -0.5",
+   "selection": "Valencia Basket",
+   "prob": 0.7816,
+   "fair_decimal": 1.2793,
+   "fair_american": -358,
+   "tier": "out-of-band-short",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 0.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Valencia Basket +0.5",
+   "selection": "Valencia Basket",
+   "prob": 0.7977,
+   "fair_decimal": 1.2536,
+   "fair_american": -394,
+   "tier": "out-of-band-short",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 0.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Paris Basketball -2.5",
+   "selection": "Paris Basketball",
+   "prob": 0.1725,
+   "fair_decimal": 5.7981,
+   "fair_american": 480,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 2.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Paris Basketball +2.5",
+   "selection": "Paris Basketball",
+   "prob": 0.2525,
+   "fair_decimal": 3.9605,
+   "fair_american": 296,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 2.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Valencia Basket -2.5",
+   "selection": "Valencia Basket",
+   "prob": 0.7475,
+   "fair_decimal": 1.3378,
+   "fair_american": -296,
+   "tier": "out-of-band-short",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 2.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Valencia Basket +2.5",
+   "selection": "Valencia Basket",
+   "prob": 0.8275,
+   "fair_decimal": 1.2084,
+   "fair_american": -480,
+   "tier": "out-of-band-short",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 2.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Paris Basketball -4.5",
+   "selection": "Paris Basketball",
+   "prob": 0.1456,
+   "fair_decimal": 6.8688,
+   "fair_american": 587,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 4.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Paris Basketball +4.5",
+   "selection": "Paris Basketball",
+   "prob": 0.2893,
+   "fair_decimal": 3.4571,
+   "fair_american": 246,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 4.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Valencia Basket -4.5",
+   "selection": "Valencia Basket",
+   "prob": 0.7107,
+   "fair_decimal": 1.407,
+   "fair_american": -246,
+   "tier": "high-in-band",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 4.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Valencia Basket +4.5",
+   "selection": "Valencia Basket",
+   "prob": 0.8544,
+   "fair_decimal": 1.1704,
+   "fair_american": -587,
+   "tier": "out-of-band-short",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 4.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Paris Basketball -6.5",
+   "selection": "Paris Basketball",
+   "prob": 0.1217,
+   "fair_decimal": 8.2188,
+   "fair_american": 722,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 6.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Paris Basketball +6.5",
+   "selection": "Paris Basketball",
+   "prob": 0.3284,
+   "fair_decimal": 3.0454,
+   "fair_american": 205,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 6.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Valencia Basket -6.5",
+   "selection": "Valencia Basket",
+   "prob": 0.6716,
+   "fair_decimal": 1.4889,
+   "fair_american": -205,
+   "tier": "medium",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 6.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Valencia Basket +6.5",
+   "selection": "Valencia Basket",
+   "prob": 0.8783,
+   "fair_decimal": 1.1385,
+   "fair_american": -722,
+   "tier": "out-of-band-short",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 6.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Paris Basketball -8.5",
+   "selection": "Paris Basketball",
+   "prob": 0.1007,
+   "fair_decimal": 9.934,
+   "fair_american": 893,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 8.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Paris Basketball +8.5",
+   "selection": "Paris Basketball",
+   "prob": 0.3694,
+   "fair_decimal": 2.7068,
+   "fair_american": 171,
+   "tier": "low",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 8.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Valencia Basket -8.5",
+   "selection": "Valencia Basket",
+   "prob": 0.6306,
+   "fair_decimal": 1.5859,
+   "fair_american": -171,
+   "tier": "medium",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 8.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Handicap Valencia Basket +8.5",
+   "selection": "Valencia Basket",
+   "prob": 0.8993,
+   "fair_decimal": 1.1119,
+   "fair_american": -893,
+   "tier": "out-of-band-short",
+   "inputs": {
+    "margin_mu": -14.5,
+    "margin_sd": 18.0,
+    "rung": 8.5
+   },
+   "model": "Normal margin model; SD is a disclosed model constant, not a sourced fact",
+   "note": null
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Match total over 4.5 (line 176.0)",
+   "selection": null,
+   "prob": null,
+   "fair_decimal": null,
+   "fair_american": null,
+   "tier": "unpriced",
+   "inputs": null,
+   "model": null,
+   "note": "Projected total 180.75 is derived from official points for/against, but no official total-variance input was read this session, so no probability is attached.  Published as a line, not a priced selection."
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Match total under 0.0 (line 181.0)",
+   "selection": null,
+   "prob": null,
+   "fair_decimal": null,
+   "fair_american": null,
+   "tier": "unpriced",
+   "inputs": null,
+   "model": null,
+   "note": "Projected total 180.75 is derived from official points for/against, but no official total-variance input was read this session, so no probability is attached.  Published as a line, not a priced selection."
+  },
+  {
+   "fixture_id": "ED71-019",
+   "sport": "Basketball",
+   "match": "Paris Basketball v Valencia Basket",
+   "market": "Match total under 4.5 (line 185.0)",
+   "selection": null,
+   "prob": null,
+   "fair_decimal": null,
+   "fair_american": null,
+   "tier": "unpriced",
+   "inputs": null,
+   "model": null,
+   "note": "Projected total 180.75 is derived from official points for/against, but no official total-variance input was read this session, so no probability is attached.  Published as a line, not a priced selection."
+  }
+ ],
+ "counts": {
+  "selections": 87,
+  "priced": 72,
+  "unpriced": 15,
+  "tiers": {
+   "low": 50,
+   "unpriced": 15,
+   "medium": 10,
+   "high-in-band": 2,
+   "out-of-band-short": 10
+  }
+ }
+}
