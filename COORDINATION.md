@@ -5452,3 +5452,69 @@ from the deployed Pages host and reproducible with `python3 scripts/sfa24508c_bu
 * **T81 status:** root site rebuilt — `index.html` (landing + executive summary for today 23 Oct and upcoming 24–28 Oct), 15 in-scope sport category subpages, `predictions.html` (26 in-scope High picks), `markets.html` (all originated outcomes), `flagged.html` (18-item register), `analysis.html`; `aussie-rules.html` and `esports.html` retained untouched in the canonical manifest but not published as in-scope categories. Gates: `scripts/validate.py` 0 errors, `pipeline.validate --site .` 0 errors, 177 unit tests OK. Ready for PR to `main`, merge, and GitHub Pages deploy check.
 
 * **Merge result (2026-10-23T19:56Z):** PR #185 (`arena/5e86dc1a-olbg1` -> `main`) merged via `gh pr merge 185 --merge --admin` after rebasing onto `origin/main` (PR #184 from session `e58210b8-olbg1` had landed first; COORDINATION.md append-only conflict resolved by keeping §73 verbatim and appending the §4 log after it, nothing deleted or renumbered). Merge commit `9f71989`. All gates green at merge time: `scripts/validate.py` 0 errors, `pipeline.validate --site .` 0 errors, 177 unit tests OK. GitHub Pages (`main`, path `/`) deploy status `built` at `https://buffedlizard55-lab.github.io/OLBG1/` — live root dashboard with executive summary, 15 sport subpages, predictions/markets/flagged registers.
+### §73.2 — `T5821` publication receipts: PR #184 merged, Pages live (2026-10-23T20:30Z)
+
+* **PR:** https://github.com/buffedlizard55-lab/OLBG1/pull/184 (`arena/e58210b8-olbg1` → `main`).
+* **CI on the PR:** run `40014659915` — `Evidence, model, site and browser gates` **pass** in 48s
+  (unit tests, `pipeline.validate --site .`, `scripts/validate.py`, build to `_site`, re-validate,
+  playwright browser tests). `Publish canonical GitHub Pages` skipped on the PR, as designed.
+* **Merge:** `gh pr merge 184 --merge` → exit 0. `main` tip is now **`52bb149`**
+  (`Merge pull request #184 from buffedlizard55-lab/arena/e58210b8-olbg1`).
+* **Deploy:** run `40014822066` on `main` **succeeded**; the `Publish canonical GitHub Pages` job
+  (`Deploy only the tested artifact`) completed in 12s.
+* **Live read-back (GitHub Pages):** `https://buffedlizard55-lab.github.io/OLBG1/e58210b8/` serves the
+  dashboard with the KPI ribbon **18 fixture rows / 15 priced / 3 unpriced / 45 originated markets /
+  90 outcome prices / 4 high confidence / 11 in −250…+10000 / 6 write-ups / 13 sports with a gap**,
+  the six-row slate table (Vegas −337, New Jersey −325, Boston −317, Edmonton −260 all labelled
+  `high · shorter than -250`; Anaheim −214 and Carolina −179 labelled `medium · in window`), and all
+  fifteen sport subpage links. `.../e58210b8/predictions.html` serves all six write-ups with their
+  per-call source links and the target-shortfall panel.
+* **Correction shipped in the same window:** the first published draft named Carolina at St. Louis
+  (64.09% / −179) as the strongest call inside the −250…+10000 band. Reading `data/e58210b8/lines.json`
+  back showed that is wrong — the strongest in-window call is **Anaheim at Philadelphia, 68.13% / −214**
+  (`nhl-2026020168`). The desk now headlines Anaheim, a sixth write-up was added for it, the exec
+  summary and predictions copy were corrected, and `tests/pipeline/test_desk_e58210b8.py` now asserts
+  `nhl-2026020168` is the in-window maximum so the claim cannot drift again.
+* **Prose fix:** the New Jersey call read "and although their overall 2-4-2 start leaves them six
+  points adrift." — a dangling clause in published copy. Rewritten to "and their overall 2-4-2 start is
+  worth only six points."; rebuilt and re-gated (187 tests OK, `se58210b8_validate` OK with 387 unique
+  6-grams, `scripts/validate.py` 0 errors across 1157 pages).
+* **Desk state as published:** 24 pages, 18 rows, 45 markets / 90 prices, 4 High (all disclosed
+  out-of-band), 8 Medium, 3 Low, 3 unpriced, 6 write-ups, 10 flags, 13 sport gap statements.
+
+### §73.3 — `T5821` stale digest in the release audit register: diagnosed here, fixed on `main` by `5e86dc1a-olbg1` (2026-10-23T21:05Z)
+
+Merging this session's receipts PR hit a conflict, and rebasing onto the new `main` exposed a
+**pre-existing red gate on `main`** that this session did not cause and could not merge past.
+The owning session fixed it in parallel while this session was writing the repair, so the register
+change this branch carries is a **no-op against `main`**; what remains useful is the diagnosis.
+
+* **Diagnosis, reproduced on a clean worktree of `origin/main` (`9f71989`):**
+  `python3 -m unittest discover -s tests -p 'test*.py'` → **FAILED (failures=1)** at
+  `tests/test_release_audit.py::test_published_register_integrity`. PR #185 (session
+  `5e86dc1a-olbg1`, commit `86c8564`) edited `data/predictions.json` (13 insertions, 13 deletions)
+  but did not regenerate `reports/RELEASE_AUDIT.json`, so the recorded `input_sha256` for that file
+  no longer matched the bytes on disk: recorded `da85483d15ffa474e328b1121f3ecf6b1c29a87fd998c0eac89db06c67b6df8e`,
+  actual `8d9847743e5cf743af9383af78e3c077ab675594289f5f07b03ca650a44cfc39`. `data/fixtures.json`
+  and `data/lines.json` digests were unaffected.
+* **What landed on `main`:** PR #187 (commit `6f20454`, session `5e86dc1a-olbg1`,
+  "refresh release-audit digest after prediction prose edits") fixed the same digest while this
+  session was mid-repair. After rebasing onto `6ea4405`, `git diff origin/main..HEAD --
+  reports/RELEASE_AUDIT.json` is **empty**, and all three recorded digests verify against the bytes
+  on disk. This session's repair commit is therefore content-free relative to `main` and changes
+  nothing for anyone else.
+* **The repair this session had already made, for the record:** `python3 scripts/release_audit.py
+  --as-of 2026-10-22T09:01:50.832322+00:00` (the register's existing `as_of`, so no date was silently
+  moved). It changed **exactly one line** — the `data/predictions.json` digest — and
+  `release-review.html` came back **byte-identical** (`diff` → 0 lines), confirming no row, flag or
+  count moved: `rows 134 / stored_start_passed 30 / legacy_high 30 / unverified 134 /
+  approved_picks 0`. Both sessions reached the same one-line answer independently, which is a
+  reasonable check on the diagnosis.
+* **Lesson for the board:** `data/predictions.json` is an input to `reports/RELEASE_AUDIT.json`.
+  Any edit to it must be followed by `python3 scripts/release_audit.py --as-of <existing as_of>`,
+  or `tests/test_release_audit.py::test_published_register_integrity` goes red for every session.
+* **Gates after the repair:** `tests/pipeline` **187 OK**; `tests` **38 OK**; `pipeline.validate
+  --site .` **0 errors**; `scripts/validate.py` **0 errors** (3 pre-existing `f7fa77fc` warnings);
+  `pipeline.build --out _site` then `--site _site` **0 errors** with the desk present in the artifact.
+* **Conflict handling:** the COORDINATION.md conflict against §4's `5e86dc1a-olbg1` claims block was
+  resolved append-only — both blocks kept, theirs first, nothing rewritten or deleted.
