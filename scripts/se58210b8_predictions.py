@@ -25,12 +25,17 @@ PREDICTIONS = [
             "New Jersey have won two straight and hold a 6-4-0 record for 12 points, and at the "
             "Prudential Center they are 5-2-0 with 26 goals for against 17. Los Angeles own the "
 <<<<<<< HEAD
+<<<<<<< HEAD
             "league's worst home numbers read this week, 0-3-0 with three goals scored, and their "
             "overall 2-4-2 start is worth only six points. Take the New "
 =======
             "league's worst home numbers read this week, 0-3-0 with three goals scored, and although "
             "their overall 2-4-2 start leaves them six points adrift. Take the New "
 >>>>>>> 03dd73f (T5821: publish the e58210b8 15-sport evidence desk)
+=======
+            "league's worst home numbers read this week, 0-3-0 with three goals scored, and their "
+            "overall 2-4-2 start is worth only six points. Take the New "
+>>>>>>> 808f2d2 (T5821: record PR #184 / Pages receipts and fix the New Jersey call prose)
             "Jersey Devils to win the match, whether it is settled in 60 minutes or beyond it."
         ),
         "sources": ["nhl-schedule-1024", "nhl-standings"],
