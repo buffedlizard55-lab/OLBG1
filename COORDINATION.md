@@ -4543,3 +4543,51 @@ preserved verbatim. Lesson recorded for all sessions: after ANY COORDINATION.md 
 | T2B72 | Fresh 15-sport desk (user list only: Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League — excl. Aus Rules/Esports) OLBG discovery + official verification + originated lines + High predictions + dashboard | in progress | 2b72da34-olbg1 | `data/2b72da34/**`, `scripts/s2b72da34_*.py`, `2b72da34/**`, `reports/SESSION_2B72DA34.md`, append-only COORDINATION.md §61 | 2026-10-23T16:15Z | Namespaced only; no shared/root file edits. High gate: p>=0.70 AND fair American in [-250,+10000]; no quota invention. |
 ### §61.1 — T2B72 done (2026-10-23T16:40Z)
 37 rows, 1 literal High (BOS -2.5, p=.714/-250 boundary, 3-tip sample — disclosed), 5 predictions, 20+ flagged rows. Golf/Rugby League gaps not invented. PR follows.
+
+## 67. Session `fa24508c-olbg1` — T67 23-Oct fresh 15-sport desk (claim)
+
+**Claimed at:** 2026-10-23T16:25Z · **Session ID:** `fa24508c` · **Branch:**
+`arena/fa24508c-olbg1` (repo deviation: sessions are pinned to `arena/<id>-olbg1`; the
+`session-<id>/<task>` convention is superseded here and this is the only branch this session
+writes to).
+
+> **Conflict resolved (rebase onto `99223fa`):** this section and session
+> `2b72da34`'s §61 were both appended at the end of the file and both chose
+> the same label (§61). Neither claim was dropped: `2b72da34` keeps its §61 heading (it merged
+> first as PR #162) and this session is renumbered §67, the next free number after §66. Scopes do not overlap — #162 wrote
+> `2b72da34/**`, `data/2b72da34/**`, `scripts/s2b72da34_*.py`,
+> `reports/SESSION_2B72DA34.md`; this session writes only `fa24508c/**`,
+> `data/fa24508c/**`, `scripts/sfa24508c_*.py`.
+
+**Task:** reverse-engineer the OLBG.com match list for exactly 15 sports — Golf, Volleyball,
+Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing,
+Handball, Ice Hockey, Basketball, Rugby League — originate independent lines across every
+available market, pick a winner with low/medium/high confidence, write ≥30-word High-confidence
+predictions from official sources, publish a dashboard + per-sport subpages + a "Flagged for
+Review" page, and record every source and irregularity.
+
+**Exclusive write scope (claimed):**
+
+* `fa24508c/**` — this desk's pages (9 top-level + `sports/` ×15) and its data directory.
+* `data/fa24508c/**` — `desk.json` only.
+* `scripts/sfa24508c_build.py`, `scripts/sfa24508c_data.py`, `scripts/sfa24508c_validate.py`.
+* `COORDINATION.md` — append-only, this section and later §67.x receipts only.
+
+**Explicitly out of scope — not touched:** `2b72da34/*`, `8f6d7364/*`, `f7fa77fc/*`, any other
+session namespace, root `*.html` (`index.html`, `archive.html`, `matches.html`, `picks.html`,
+`flagged.html`, …), `assets/current-*`, `data/fixtures.json`, `data/lines.json`,
+`data/predictions.json`, `data/current/*`, `pipeline/*`, `tests/*`, `site_templates/*`.
+
+**Note on shared outputs:** per §0.4 the root `index.html`, root navigation, shared table data and
+`data/lines.json` stay with the final integration session. This desk therefore lives entirely
+under `/fa24508c/` and is reachable from the canonical `archive.html` auto-listing (which scans
+top-level directories and picks up `fa24508c/index.html`) — no root file edited, no integration
+request needed. If the final integration session wants a topbar entry, that is a one-line request
+logged here rather than a shared-file edit by this session.
+
+**No duplicate claim:** `grep -n fa24508c COORDINATION.md` returned no hits before this section,
+and the three open PRs (#162 `2b72da34`, #107 `e3d56713`, #63 `26be136b`) carry no `fa24508c`
+paths. Scope does not overlap any active claim.
+
+**Status:** work in progress. Build and local gates already green before this claim was written
+(see §67.1 receipt); claim is committed and pushed on its own first, per §0.2.
