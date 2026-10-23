@@ -165,6 +165,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T5821 | **Independent live 23 Oct 2026 15-sport desk (`e58210b8-olbg1`):** live OLBG.com hub discovery for exactly the 15 brief sports (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League); line-by-line repository review; official governing-body verification of every published row; own multi-market line origination (winner / handicap / totals / sport-specific derivatives) with the strict -250...+10000 high-confidence price window; unique >=30-word human predictions (target 5 per sport per day); clean dashboard at `/e58210b8/` with executive summary, category subpages, Flagged-for-Review page; validator gate; PR -> merge -> live GitHub Pages read-back | in progress | e58210b8-olbg1 | `data/e58210b8/**`, `scripts/se58210b8_*.py`, `e58210b8/**`, `tests/pipeline/test_desk_e58210b8.py`, `reports/SESSION_E58210B8.md`, append-only `COORDINATION.md` (this row + §73) | 2026-10-23T17:55Z | Collision-resistant ID `T5821` / `§73`. Strictly namespaced: no edits to canonical root `*.html`, `sports/**`, `assets/**`, `README.md`, `pipeline/**`, `data/current/**`, `.github/workflows/**`, `scripts/validate.py` or any peer `<id>/` desk. |
 
 | T9965 | Independent end-of-session freshness and provenance audit of the latest 23-Oct 15-sport desk; produce an additive, source-linked report and compact review page that separates structural findings from live facts and flags time-sensitive selections without fabricating replacement fixtures | needs review | 99659729-olbg1 | `data/99659729/**`, `99659729/**`, `scripts/s99659729_*.py`, `reports/SESSION_99659729.md`, `tests/pipeline/test_desk_99659729.py`, append-only `COORDINATION.md` | 2026-10-23T21:26Z | Namespaced, no edits to canonical pages/data or peer desks. Completed 2026-10-23T21:30Z: 81 fixtures / 15 sports / 460 market rows audited; strict gate passes 3/51 inherited High labels; 1 stored upcoming start elapsed, 6 starts within 2h, 9 exact times missing; findings published at `99659729/flagged.html`. No live re-certification possible; the full suite is green after rebasing onto PR #194, which removed inherited conflict markers from a peer-owned file. Pinned branch remains `arena/99659729-olbg1`. |
+| T7A9B | **Fresh live 23 Oct 2026 late-evening desk + final integration (`7a9b24e5-olbg1`):** live `OLBG.com` route/market reverse-engineering for the exact 15 brief sports (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League); official governing-body verification of every published fixture and every fact used in prose; own zero-vig multi-market origination (match winner, handicap/spread ladder, match total ladder + sport-specific markets); High tier restricted to p>0.70 **and** fair American price inside -250..+10000; five unique >=30-word predictions per covered sport; namespaced dashboard `/7a9b24e5/` with executive summary, 15 sport subpages, matches, markets, high-confidence, predictions, analysis, sources, Flagged for Review and repo audit; validator gate; PR to `main`, merge without waiting, live Pages read-back | in progress | 7a9b24e5-olbg1 | `data/7a9b24e5/**`, `scripts/s7a9b24e5_*.py`, `7a9b24e5/**`, `reports/SESSION_7A9B24E5.md`, `tests/pipeline/test_desk_7a9b24e5.py`, append-only `COORDINATION.md` (this row + §75) | 2026-10-23T21:40Z | Strictly namespaced; **no** edit to root `*.html`, `sports/**`, `assets/**`, `README.md`, `pipeline/**`, `.github/workflows/**`, `data/current/**`, `scripts/validate.py` or any peer `<id>/` desk. Live reads go through the Arena page-fetch layer (sandbox egress is GitHub/npm/PyPI only) and are logged with URL + UTC read time in `data/7a9b24e5/sources.json`; OLBG tips tables render client-side (`No tips found.` in fetched DOM) which is recorded as a platform irregularity, and `robots.txt` disallows `/api/`, `/sports/` and `Python-urllib`, which is respected. |
 
 ## 2. Session log
 
@@ -5890,3 +5891,33 @@ remaining candidates.
 * `data/current/snapshot.json` — still the 2026-10-22T12:29:50Z capture while the root landing page labels itself
   "Snapshot 21 Oct 2026". Same owner and same treatment: published, not edited.
 
+---
+
+## 78. Session `7a9b24e5-olbg1` — T7A9B live 23-Oct-2026 late-evening 15-sport desk + final integration (claim)
+
+* **Claimed (UTC):** 2026-10-23T21:40Z. **Session / branch:** `7a9b24e5-olbg1` on pinned branch `arena/7a9b24e5-olbg1` (§0.2).
+* **Task:** fresh live `OLBG.com` reverse-engineering and discovery for the **exact 15 sports named in the brief**
+  (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing,
+  Handball, Ice Hockey, Basketball, Rugby League); official governing-body verification of every published row and every
+  fact used in published prose (blank-and-flag anything unconfirmed, §0.5); own zero-vig multi-market line origination
+  (match winner, handicap/spread ladder, match total ladder plus sport-specific markets where an official input exists);
+  confidence tiers with **High** restricted to the brief's conjunction — estimated probability > 0.70 **and** originated
+  fair American price inside **-250…+10000** (heavy favourites outside the band are disclosed as capped, never promoted);
+  five unique >=30-word human predictions per covered sport where official evidence permits, naming the selection and
+  citing only facts read from official pages this session; executive summary for today's and upcoming picks; namespaced
+  clean dashboard `/7a9b24e5/`; repo line-by-line audit; validator gate; PR to `main`, merge without waiting for approval,
+  and live GitHub Pages read-back, with receipts appended here.
+* **Scope (strictly namespaced):** `data/7a9b24e5/**`, `scripts/s7a9b24e5_*.py`, `7a9b24e5/**`,
+  `reports/SESSION_7A9B24E5.md`, `tests/pipeline/test_desk_7a9b24e5.py`, append-only `COORDINATION.md` (the §1 row above
+  and this §78). **No** edit to root `*.html`, `sports/**`, `assets/**`, `README.md`, `pipeline/**`, `data/current/**`,
+  `data/release/**`, `archive/**`, `.github/workflows/**`, `scripts/validate.py` or any other session's `<id>/` desk.
+  Root navigation is served by `pipeline.build`'s automatic desk index, so no shared navigation file is edited (§0.4).
+* **Live-read channel:** sandbox egress is GitHub/npm/PyPI only, so every live read goes through the Arena page-fetch /
+  search tool layer and is logged with URL and UTC read time in `data/7a9b24e5/sources.json`. `OLBG.com` pages are
+  **discovery and market-taxonomy evidence only**, never official fixture verification. `robots.txt` (fetched this
+  session) disallows `/api/`, `/sports/`, `/events.php` and `Python-urllib`; none is used, and no proxy, identity
+  rotation or hidden endpoint is used.
+* **Verification policy:** every published row carries a link to an official league / governing body / tour / promoter
+  page actually fetched and read this session, or the value stays blank with a flag. Originated prices are labelled
+  estimates. Evidence timestamps are this session's read times; fixture evidence follows the canonical six-hour expiry
+  policy.

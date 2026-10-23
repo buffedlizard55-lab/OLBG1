@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Analysis · OLBG desk 7a9b24e5</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header><div class="wrap">
+<div class="brand">OLBG research desk <span>session 7a9b24e5 · built 2026-10-23T22:05Z</span></div>
+<nav><a href="index.html">Dashboard</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="high-confidence.html">High confidence</a><a href="predictions.html">Predictions</a><a href="analysis.html" class="on">Analysis</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged for review</a><a href="methodology.html">Methodology</a><a href="reverse-engineering.html">OLBG structure</a><a href="repo-audit.html">Repo audit</a></nav>
+</div></header>
+<main class="wrap">
+
+<h1>Analysis and findings</h1>
+<h2>1. The band is a price window, so it cuts from the top</h2>
+<p>−250 is 71.43% and +10000 is 0.01%, so “inside −250…+10000” means a fair price <em>no shorter than −250</em>, or
+a probability at or below 71.43%. Add a 62% floor so that “high confidence” means something, and the promoted window
+is <b>62.00%–71.43%</b>. A 78% favourite is excluded because its price would be about −355. That is the brief's
+instruction — disclose heavier favourites rather than promote them — so 168 outcomes today are printed
+below as capped, and the twenty strongest are shown.</p>
+<div class="tw"><table class=""><thead><tr><th>Selection</th><th>Market</th><th>Probability</th><th>Fair price</th><th>Why it is not promoted</th></tr></thead><tbody><tr><td>Ottawa Senators +2.75</td><td>Handicap (ladder)</td><td>91.54%</td><td>-1082</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>New Jersey Devils +2</td><td>Handicap (ladder)</td><td>91.44%</td><td>-1068</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>Philadelphia Flyers +2.5</td><td>Handicap (ladder)</td><td>91.40%</td><td>-1063</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>Over 3.5</td><td>Match Total (ladder)</td><td>90.93%</td><td>-1002</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>Dallas Stars +2</td><td>Handicap (ladder)</td><td>90.59%</td><td>-962</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>Boston Bruins +1.25</td><td>Handicap (ladder)</td><td>90.51%</td><td>-953</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>Over 3.5</td><td>Match Total (ladder)</td><td>90.24%</td><td>-925</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>Over 4.5</td><td>Match Total (ladder)</td><td>89.93%</td><td>-893</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>Dallas Stars Over 0.75</td><td>Team Total (ladder)</td><td>89.90%</td><td>-890</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>Over 2.5</td><td>Match Total (ladder)</td><td>89.88%</td><td>-889</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>New York Rangers Over 1.25</td><td>Team Total (ladder)</td><td>89.70%</td><td>-870</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>Over 3</td><td>Match Total (ladder)</td><td>89.64%</td><td>-865</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>Philadelphia Flyers Over 1</td><td>Team Total (ladder)</td><td>89.51%</td><td>-853</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>Boston Bruins Over 2</td><td>Team Total (ladder)</td><td>89.51%</td><td>-853</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>Ottawa Senators Over 1</td><td>Team Total (ladder)</td><td>89.51%</td><td>-853</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>Los Angeles Kings Over 2</td><td>Team Total (ladder)</td><td>88.99%</td><td>-808</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>Anaheim Ducks Over 1.75</td><td>Team Total (ladder)</td><td>88.63%</td><td>-779</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>San Jose Sharks Over 1.25</td><td>Team Total (ladder)</td><td>88.63%</td><td>-779</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>New York Islanders Over 1.25</td><td>Team Total (ladder)</td><td>88.63%</td><td>-779</td><td>price shorter than −250: capped, not promoted</td></tr><tr><td>New Jersey Devils Over 2</td><td>Team Total (ladder)</td><td>88.32%</td><td>-756</td><td>price shorter than −250: capped, not promoted</td></tr></tbody></table></div>
+<h2>2. Where the window binds</h2>
+<p>Money-line prices rarely land inside it. Milwaukee's single-game price is 56.8%, comfortably under the 62% floor,
+and no baseball side today prices anywhere near a 62%–71% win probability because a 162-game record separates these
+two clubs by well under a run. The window fills instead wherever a line can be moved a point at a time: the run
+line, the puck line, team totals and rugby handicaps. All fourteen promoted selections are line markets, and each
+one names the side we expect to come out ahead — the Bulls and the Stormers are laid to win by more than their start,
+while Leinster, Ospreys, Benetton and Milwaukee are backed to cover while losing narrowly at worst.</p>
+<h2>3. Four Series games, one underlying estimate</h2>
+<p>World Series games 1–4 pair the same two clubs, so the expected total (8.75 runs) and the expected margin are
+identical across them and four picks are repeats of two ideas. That is disclosed rather than hidden: the run-line
+selections in Games 1 and 2 are the same bet twice, and the totals in Games 3 and 4 are the same bet twice. A reader
+who wants one position per idea should take one of each pair.</p>
+<h2>4. What the desk refused to publish</h2>
+<ul class="notes">
+<li><b>Rugby League World Cup.</b> Round 1 produced five results between ten teams with no shared opponents, so the
+margin inputs cannot rank teams across pools. Pricing Australia v Fiji off those numbers produced an absurd
+“Australia +14.75”, which is exactly the failure mode we are guarding against. No line was published.</li>
+<li><b>Basketball.</b> The NBA season is one or two games old. A 2-0 start is not a strength estimate, so Boston v
+New York and the other four games are listed without prices.</li>
+<li><b>Golf, motor racing, cricket.</b> Fixtures are confirmed but no official input supports a probability: a leaderboard is a scoreboard rather than a strength input; the F1 points table did not render; and the ICC
+fixtures carry no form data in the page read.</li>
+<li><b>Snooker, darts, handball, volleyball, Gaelic sports, greyhounds.</b> No upcoming fixture could be read from an
+official source inside the window. The attempted URLs are on the Flagged page.</li>
+</ul>
+
+</main>
+<footer class="wrap">
+<p>Independent research desk. Not affiliated with OLBG. Originated prices are estimates, not bookmaker
+quotes. No guaranteed returns. 18+. Evidence expires 2026-10-24T03:55Z (six hours from the read window).</p>
+</footer>
+</body></html>

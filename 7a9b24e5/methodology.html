@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology · OLBG desk 7a9b24e5</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header><div class="wrap">
+<div class="brand">OLBG research desk <span>session 7a9b24e5 · built 2026-10-23T22:05Z</span></div>
+<nav><a href="index.html">Dashboard</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="high-confidence.html">High confidence</a><a href="predictions.html">Predictions</a><a href="analysis.html">Analysis</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged for review</a><a href="methodology.html" class="on">Methodology</a><a href="reverse-engineering.html">OLBG structure</a><a href="repo-audit.html">Repo audit</a></nav>
+</div></header>
+<main class="wrap">
+
+<h1>Methodology</h1>
+<h2>Evidence</h2>
+<p>A fixture is published only if an official page printed the two clubs and the competition. A start time is
+published only with an explicit UTC value; “local” and “your time” clocks are reproduced in the row and left out of
+the UTC column. Evidence expires six hours after the read window, at 2026-10-24T03:55Z.</p>
+<h2>Line origination</h2>
+<ul class="notes">
+<li><b>Baseball:</b> expected runs for each side are the mean of that side's scoring rate and the opponent's
+conceding rate (832/618 for Milwaukee, 736/650 for Tampa Bay over 162 games); margin is the difference plus 0.15
+runs of home field. Margin standard deviation 3.2 runs, total 4.5.</li>
+<li><b>Ice hockey:</b> the same construction from goals for and against in the NHL standings read this session;
+home field 0.15 goals, margin standard deviation 1.9, total 2.0, team total 1.45.</li>
+<li><b>Rugby union:</b> half of each club's league-table points difference per game (a 50% shrinkage toward the
+league mean) plus three points of home advantage; margin standard deviation 14.</li>
+<li><b>Not originated:</b> basketball, rugby league, cricket, golf, motor racing. The reasons are on the
+Flagged page.</li>
+</ul>
+<h2>Prices and tiers</h2>
+<p>Fair decimal is 1 ÷ probability with no margin and no clipping; the American column is derived from the same
+unrounded probability. <b>High</b> requires p ≥ 0.62 <em>and</em> a fair American price of −250 or longer, i.e.
+p ≤ 0.7143. Anything above 71.43% would price shorter than −250; those outcomes are <b>capped</b>, published in the
+capped table, never promoted. Picks are the highest
+in-band probability per fixture, then the five strongest per sport.</p>
+<h2>Prediction rules</h2>
+<p>Every promoted pick carries a hand-written piece of at least 30 words that names the selection, cites the
+current form, the recent match history and the relevant statistics actually read, and links those pages. Published
+prose avoids the jargon of automated pricing and never certifies its own output; the arithmetic is disclosed here
+instead, so a reader can redo it.</p>
+<h2>What is deliberately absent</h2>
+<p>No injury claims, no lineup claims, no travel or rest claims, no weather, no referee data. None of those was read
+from an official page in this window, so none appears.</p>
+
+</main>
+<footer class="wrap">
+<p>Independent research desk. Not affiliated with OLBG. Originated prices are estimates, not bookmaker
+quotes. No guaranteed returns. 18+. Evidence expires 2026-10-24T03:55Z (six hours from the read window).</p>
+</footer>
+</body></html>
