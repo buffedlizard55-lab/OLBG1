@@ -80,7 +80,7 @@ P7A9B-014 Rugby Union RU03  Benetton +9.25                 71.01%  -245
 
 ## 6. Repository audit
 
-Eleven findings, eight carried forward from the structural review and one new high-severity repair:
+Eight findings: seven from the structural review, plus one high-severity repair made here.
 
 * **RA-08 (high, fixed here).** `scripts/se58210b8_predictions.py` reached `main` with unresolved merge-conflict
   markers (nested `<<<<<<<`/`=======`/`>>>>>>>`). Python could not parse the file, so `test_desk_e58210b8` errored and

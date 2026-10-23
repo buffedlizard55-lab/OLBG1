@@ -537,7 +537,8 @@ proof that the URL still resolves. Both limits are stated rather than papered ov
 <p class="muted">Attempted: {' · '.join(f'<a href="{esc(u)}" target="_blank" rel="noopener">{esc(u)}</a>' for u in g["tried"])}</p>"""
         body = f"""
 <h1>{esc(s)}</h1>
-<p class="lede">{len(by_sport[s])} fixture(s) read from official sources; {len(sp)} in-band High pick(s).</p>
+<p class="lede">{len(by_sport[s])} fixture{'s' if len(by_sport[s]) != 1 else ''} read from official sources;
+{len(sp)} in-band High pick{'s' if len(sp) != 1 else ''}.</p>
 {''.join([f'<h2>Fixtures</h2>{table(["ID","Fixture","Competition","Start (UTC)","Venue","Home record","Away record","Form read","Official source"], rows)}'] if rows else '')}
 {''.join([f'<h2>High-confidence picks</h2>{table(["Pick","Selection","What has to happen","Probability","Fair price","Detail"], prows)}'] if prows else '<h2>High-confidence picks</h2><p>None today. The strongest opinions here would have priced shorter than −250, and the rest fell under the 62% floor; the short ones are listed on the <a href="../analysis.html">analysis page</a> as capped.</p>')}
 {gap_html}
