@@ -35,9 +35,14 @@ The T496 tests do not catch the TN04 opponent/result error, a fixture time earli
 
 ## Validation boundary
 
+Validation below was run after rebasing this session onto the current `main` snapshot. It checks the audit artifacts and the repository release gates; it does not expand the audit's source-verification scope.
+
 - `python3 -m unittest tests.pipeline.test_desk_53917f51 tests.pipeline.test_desk_496eaf02 -v` — **28/28 passed** (7 audit checks and 21 T496E tests); namespaced HTML local links and fragments resolve.
-- `python3 -m unittest discover -s tests/pipeline -v` — **232 tests run; 1 failure and 1 error** in files outside this claim. The T5821 test errors because `scripts/se58210b8_predictions.py:34` contains a literal merge-conflict marker (`>>>>>>> 03dd73f...`); the 8a900c04 parser-audit test also reports one parse error. T53917 did not change these peer-owned files. A request to the T5821 owner is logged in [`COORDINATION.md §75.1`](../COORDINATION.md).
-- Because the canonical workflow runs the full suite, that existing conflict may block PR CI and Pages deployment until the owning session resolves it. The audit dashboard itself is validated and its findings are published in this namespaced output; no bypass or change to another session's code is made here.
+- `python3 -m unittest discover -s tests/pipeline -v` — **335 tests passed**.
+- `python3 -m unittest discover -s tests -p 'test*.py' -v` — **38 tests passed** (preserved release tests).
+- `python3 -m pipeline.build --out _site` built **92 canonical pages**. `python3 -m pipeline.validate --site _site` reported **0 errors**; the generated release correctly reports no current/upcoming exact fixture or originated market rows from its retained observations.
+- `NODE_PATH="${TMPDIR:-/tmp}/olbg-browser/node_modules" node tests/pipeline/browser.cjs` — **passed** desktop/mobile, project-subpath, filters/reset/sort, odds toggle, CSV, evidence links, expiry, and no-JavaScript checks.
+- The validation results do not convert stale or unsupported T496 fields into verified facts. The audit remains read-only, and no peer-owned files were edited.
 
 ## Line-by-line findings
 

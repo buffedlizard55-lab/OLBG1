@@ -6067,3 +6067,11 @@ remaining candidates.
 * **Historical full-suite result before rebasing:** `python3 -m unittest discover -s tests/pipeline -v` ran 232 tests with two failures: the T5821 prediction module contained a committed conflict marker and the 8a900c04 provenance test reported `parse_errors == 1`. Those failures were not in T53917/T496E-owned files. The previous coordination request to T5821 is superseded for the conflict-marker issue: after fetching `origin/main` at `74e9d5a`, the upstream T5821 file was confirmed clean. Full-suite/build validation must be rerun on the rebased snapshot.
 * **Rebase resolution:** peer rows/sections were retained from updated `main`; this session's §75 claim was assigned §80 because the board already had claims through §79. No peer-owned file was changed.
 * **Read-only boundary:** no T496E fixture/source/site or shared canonical-root files were edited. PR and Pages deployment receipts remain pending.
+
+### §80.2 — Post-rebase validation receipts (2026-10-23T22:03Z)
+
+* **Rebased base:** `origin/main` at `74e9d5a`; the full pipeline suite now passes on the updated tree, including the T5821 tests. The historical pre-rebase failures in §80.1 are not current failures; no peer-owned source was edited.
+* **Tests:** `python3 -m unittest discover -s tests/pipeline -v` — **335/335 passed**; preserved release tests `python3 -m unittest discover -s tests -p 'test*.py' -v` — **38/38 passed**. After updating the report's validation boundary and regenerating its HTML, the focused audit/T496E suite passed again, **28/28**.
+* **Canonical build and validation:** `python3 -m pipeline.build --out _site` built **92 pages**; `python3 -m pipeline.validate --site _site` reported **0 errors**. Retained observations yield 0 current/upcoming exact fixtures and 0 originated markets; this is a disclosed coverage state, not inferred activity.
+* **Browser gate:** Playwright desktop/mobile smoke suite passed project-subpath hosting, filters/reset/sort, odds and CSV, evidence links, expiration, and no-JavaScript coverage. Tool dependencies were installed under the external temporary browser-tools path, not committed.
+* **Disposition:** local release gates are green. PR publication and live GitHub Pages confirmation remain pending; no finding has been silently cleared and no peer-owned files were changed.
