@@ -4018,6 +4018,7 @@ read window; and the coverage strip shows 12 verified ice-hockey fixtures and 6 
 that follows it; no receipt can confirm its own deployment. Everything the desk itself publishes was
 confirmed from the deployed bytes after a successful canonical run.
 | TA0B04 | **Independent live evening desk `a0b04058-olbg1` (22 Oct 2026 ~20:55Z UTC):** fresh OLBG.com reverse-engineering & 17-hub in-scope discovery (excluding soccer/football, boxing, UFC/MMA, American football, hurling, horse racing, cycling, specials); live official-source verification of fixtures, players, current form & match history across covered sports (separating pre-match upcoming fixtures after 20:55Z UTC from elapsed/in-play earlier-day fixtures); line-by-line repo audit with file:line & official-source links; own zero-vig multi-market line origination (match winner, handicap/spread ladders, match & team totals, sport-specific period/set/frame/leg derivatives); dual-lens confidence grading enforcing strict in-window High gate (`p > 0.70` AND fair American price inside `−250…+10000`, plus top-5 per-sport daily high-confidence / highest-confidence research slate & out-of-window chalk audit); unique ≥30-word human predictions citing only verified official facts; clean dashboard `/a0b04058/` (landing + 17 sport category pages + matches + markets + high-confidence + daily top-5 per sport + predictions + analysis + sources + Flagged for Review + repo audit); full validator & browser gates; PR, merge & live GitHub Pages byte read-back | done | a0b04058-olbg1 | `data/a0b04058/**`, `scripts/sa0b04058_*.py`, `a0b04058/**`, `reports/SESSION_A0B04058.md`, `tests/pipeline/test_desk_a0b04058.py`, append-only `COORDINATION.md` (this row + §4 note + §63) | 2026-10-22T20:55Z | **DONE:** 133 fixtures (132 priced / 1 unpriced conditional Game5), 208 markets / 459 outcomes, High 44 / Medium 51 / Low 37, Gate A literal 1 (70.01%–71.43% window), out-of-window strong 15 disclosed, 85 hand-written predictions (5 per sport daily, 34–145 words each, all ≥30 words, unique, non-repetitive), 38 official sources, 27 flags, 3 repo audit findings, 27+ pages at `/a0b04058/`. Gates: 142 pipeline tests OK (95 canonical + 38 preserved + 7 desk + 2 others), `pipeline.validate --site .` 0 errors, `scripts/validate.py` PASSED (0 errors / 3 pre-existing warnings in `f7fa77fc/flagged.html`, 797 pages link-checked), `pipeline.build --out _site` 83 canonical pages with `_site/a0b04058/` present, `pipeline.validate --site _site` 0 errors, `scripts/sa0b04058_validate.py` VALIDATION PASSED (133 fixtures, 85 predictions, 27 flags, 38 sources, 0 errors). Strictly isolated namespace: zero edits to root `*.html`, `sports/**`, `assets/**`, `README.md`, `pipeline/**`, `data/current/**`, `scripts/validate.py`, `.github/workflows/**`, or any peer `<id>/` desk. |
+| TEFE12 | **Live 23 Oct 2026 desk (`/efe12010/`):** fresh OLBG hub reverse-engineering for the 15 brief sports, line-by-line official-source verification of every fixture row, own multi-market line origination (winner / handicap / totals / sport-specific), strict −250…+10000 high-confidence price window, target of up to 5 unique ≥30-word human predictions per sport, clean dashboard + executive summary + Flagged for Review page, validator gate, PR → merge → live Pages byte read-back | in progress | efe12010-olbg1 | `data/efe12010/**`, `scripts/sefe12010_*.py`, `efe12010/**`, `reports/SESSION_EFE12010.md`, `tests/pipeline/test_desk_efe12010.py`, append-only `COORDINATION.md` (§1 row + §67) | 2026-10-23T00:00Z | Claimed as TEFE12 / §67 — next free ids after T66/§66. Every other session's last commit is >60 min old (main tip `26f2bf7`, 2026-10-22T22:31Z), so this session is also its own integration session per §0.2. Stale claims T9/T19/T51/T52/T97DC and open PRs #40/#63/#107 are NOT taken over. Zero edits to shared canonical root pages, `pipeline/**`, `data/current/**`, workflows or peer desks. |
 
 ---
 
@@ -5010,3 +5011,40 @@ No other session's row or section was edited, reordered, renumbered or
 discarded. This is the sixth numbering collision on this board and the pattern
 is now consistent: the later session renumbers itself and never touches the
 earlier text.
+
+---
+
+## 72. Session `efe12010-olbg1` — TEFE12 live 23 Oct 2026 desk (`/efe12010/`)
+
+> Claimed **2026-10-23T00:00Z** as `TEFE12` / `§67`, which was the next free section number at the
+> time (`3ee30bba` held `§66` and `26f2bf7` was the repository tip). **Renumbered to `§72` on
+> rebase**: while this session was working, `fa24508c-olbg1` merged as PR #166 and took `§67`; by the time this branch
+> rebased onto `main`, sections up to `§71` were all taken. Nothing was dropped in the resolution — the whole of upstream's
+> COORDINATION.md is preserved verbatim above and this section was moved to the end.
+> `git diff origin/main --numstat -- COORDINATION.md` reports additions only, zero deletions.
+> The task id `TEFE12` and the file scope are unchanged, and no scope overlaps any other session:
+> this desk writes only `efe12010/**`, `data/efe12010/**`, `scripts/sefe12010_*.py`,
+> `tests/pipeline/test_desk_efe12010.py` and `reports/SESSION_EFE12010.md`.
+
+**Scope (non-overlapping).** `data/efe12010/**`, `scripts/sefe12010_*.py`, `efe12010/**`,
+`reports/SESSION_EFE12010.md`, `tests/pipeline/test_desk_efe12010.py` and append-only additions to
+`COORDINATION.md`. No shared canonical root page, `pipeline/**`, `data/current/**`, workflow file or
+peer `<id>/` desk is modified.
+
+**Brief delta for this session.** The sport list in the 23 Oct brief is 15 sports — Golf, Volleyball,
+Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing,
+Handball, Ice Hockey, Basketball, Rugby League. eSports and Australian Rules, carried by earlier
+desks, are therefore **out of scope here** and are not imported into this desk.
+
+**Method.** (1) Re-read the OLBG hub for each in-scope sport for discovery only; (2) verify every
+fixture row against the governing body / league / tour's own site, blanking and flagging anything that
+cannot be confirmed; (3) originate zero-vigorish lines from officially sourced inputs across winner,
+handicap and total ladders plus sport-specific markets; (4) grade confidence with the −250…+10000 fair
+price window as a hard gate on High; (5) write unique ≥30-word human predictions for the High tier,
+targeting up to five per sport; (6) publish a clean dashboard with an executive summary and a Flagged
+for Review page; (7) run the desk validator plus the repository gates; (8) PR → merge → live Pages
+byte read-back, receipts appended here.
+
+**Progress log (append-only).**
+
+- 2026-10-23T00:00Z — TEFE12 / §67 claim committed and pushed before any implementation work.
