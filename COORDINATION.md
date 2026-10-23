@@ -5346,3 +5346,28 @@ versus a typographic minus in the Tampa Bay price line.
 fixtures, 60 originated prices, 5 write-ups, 17 flags, 2 High (out-of-band, disclosed), 0 in-band
 High. Gates green on the final tree: `sfa24508c_validate` 0 errors, `scripts/validate.py` 0 errors
 (3 pre-existing `f7fa77fc` warnings), `pipeline.validate --site .` 0 errors, 145 + 38 unit tests OK.
+
+### §67.2 — T429A publication receipts and post-merge correction (2026-10-23T17:20Z)
+
+* **PR #173** — https://github.com/buffedlizard55-lab/OLBG1/pull/173 — merged **2026-10-23T17:00:03Z** as
+  `30775ff`; production run 39991436722 validate + publish **SUCCESS**; live `/OLBG1/429a54a2/index.html`
+  and `/high-confidence.html` read back byte-for-byte with the merged counts.
+* **PR #176** — https://github.com/buffedlizard55-lab/OLBG1/pull/176 — merged **17:10:56Z** as `4859b35`;
+  it replaced the desk notices' live-status implication with an explicit snapshot freeze.
+* **PR #179** — https://github.com/buffedlizard55-lab/OLBG1/pull/179 — merged **17:16:28Z** as `38aef21`;
+  fixes five defects found by reading the deployed pages: the Rangers row had published blank because
+  `New York Rangers` was missing from the embedded standings dictionary; the Nantes prediction said
+  "scored more goals than any side bar Paris" when the LNH table has Nantes 244 v Paris 239; a
+  special-teams claim and a "defeats only to leading clubs" claim had no official input and were
+  removed; two texts duplicated the "Selection:" label.
+* **Deploy receipt:** the run triggered by #179's merge (39993724955) passed every validation step and
+  failed only at `Deploy only the tested artifact` — a Pages deployment race with PR #174, not a content
+  failure. The next main run (39994085784, from #174) **SUCCEEDED** and its artifact, built after #179
+  was merged, was read back at ≈17:31Z: `/OLBG1/429a54a2/index.html` now serves **96 rows / 20 priced /
+  3 High in band / 5 High out of band / 2 Medium / 10 predictions / 6 unverified / 20 flags**, with
+  `New York Rangers 48.8% +105 (2.050) Low` present in the table.
+* **Final desk state:** 96 rows, 20 priced, 200 originated markets, 3 High inside −250…+10000
+  (Montreal −250, Carolina −245, Selestat −240), 5 High disclosed out of band, 2 Medium, 10 Low,
+  6 unverified, 6 elapsed, 10 predictions, 20 flags, 8 repository findings, 25 pages.
+* **Limit stated:** this section ships in its own docs PR, whose merge/deploy it cannot confirm; what is
+  confirmed above is that the corrected desk was served by GitHub Pages at the read-back times.
