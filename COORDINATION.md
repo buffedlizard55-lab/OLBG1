@@ -5145,3 +5145,46 @@ link check 0 broken.
 two sports are priced. The five-High-per-sport daily aim is unmet and explicitly reported rather than filled
 with invented probabilities. No root, pipeline, canonical data or other session's desk was edited; the desk is
 reachable from `archive.html` automatically once staged.
+
+
+
+### §67.2 — receipts for the receipts PR, and three numeric consistency fixes (2026-10-23T17:10Z)
+
+**Receipts PR:** https://github.com/buffedlizard55-lab/OLBG1/pull/166 — merged
+**2026-10-23T16:49:10Z** as `d2de212a5c33feaf3a969ea21f1d84ad83e7ee01`, after CI
+`Evidence, model, site and browser gates` passed. Deploy run on `main` **success**
+(`pages build and deployment` + `Publish canonical GitHub Pages`). Live read-back of the deployed
+host confirmed the two cosmetic corrections actually shipped: `high-confidence.html` now reads
+"Edinburgh at 79.1%" in prose and 79.1% in the adjacent table, and the basis column reads "from
+the 2 matches read for Bulls and 2 for Ulster".
+
+**Two further rebase conflicts on `COORDINATION.md`, both resolved the same way:** `cf2699ba`
+merged §68 then §69 while this branch was open. Both are kept verbatim and this session's §67.x
+receipts are appended after them; nothing from any session was deleted or renumbered by this one.
+
+**Three numeric inconsistencies found on a *rendered-page* read (not by any validator), fixed and
+re-gated in the follow-up PR:**
+
+1. **Price/probability mismatch across pages.** `predictions.html` printed its prices from a
+   hand-written string in the data module (−376 for Edinburgh, −177 for Stormers) while
+   `markets.html`, `high-confidence.html` and `desk.json` printed the prices the model actually
+   computed (−379, −178). The predictions page now derives price and probability from the market
+   records themselves, so a reader can no longer find two different prices for one selection.
+2. **Repeated clause in a published prediction.** The Edinburgh write-up said the Lions were
+   "shipping 57 points ... conceding 57 points in that match". Replaced with "a losing margin of 42
+   points", which is the fact and reads like a human wrote it.
+3. **Incomplete list on the summary page.** The "confirmed absent" block named six of the seven
+   discovery-only sports and omitted cricket. Corrected to all seven, with the reason stated once.
+
+Each fix was made in the generator or the data module and the pages rebuilt — no hand edits to
+HTML. Gates after the rebuild: `sfa24508c_validate` 0 errors, `scripts/validate.py` 0 errors,
+`pipeline.validate --site .` 0 errors.
+
+**Why this entry exists:** the same reason §60.2 exists. A desk can pass every structural gate and
+still be wrong on the page. The price mismatch was invisible to 145 pipeline tests, 38 upstream
+tests and this session's own validator, because all of them check the model's numbers against
+themselves, not against the prose a reader actually sees. Reading the deployed page is the only
+gate that catches it.
+
+**Self-referential limit:** this §67.2 entry ships in a third PR whose merge and deploy it cannot
+confirm. What is confirmed is that PR #166 is merged and its artifact was served correctly.

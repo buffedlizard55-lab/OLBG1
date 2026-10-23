@@ -483,7 +483,7 @@ organiser's own site during the window. It does not mean the rest of the sport i
 <ul class="small">
 <li>Golf: the OLBG hub returned "No tips found" — no fixtures to price.</li>
 <li>Rugby league: only 2027 outright markets, no matches.</li>
-<li>Darts, tennis, handball, volleyball, greyhounds, Gaelic: events exist on OLBG, but their governing bodies could not be read, so nothing was priced.</li>
+<li>Cricket, darts, tennis, handball, volleyball, greyhounds and Gaelic games: events exist on OLBG, but the governing body that publishes each one could not be read inside the window, so nothing was priced and every official field on those rows stays blank.</li>
 </ul></div>
 </div>
 """
@@ -612,14 +612,18 @@ not High and no prediction was written for them.</p>
     for p in DATA.PREDICTIONS:
         f = FIXTURES[p["fixture_id"]]
         wc = len(p["body"].split())
+        mkt = next((m for m in MARKETS if m["fixture_id"] == p["fixture_id"]
+                    and m["market"] == "Match Winner" and p["selection"].startswith(m["selection"])), None)
+        price_txt = (f'{mkt["american_display"]} ({mkt["decimal"]:.3f})' if mkt else p["price"])
+        prob_txt = (mkt["p"] if mkt else p["probability"])
         preds_html += f"""
 <div class="pred">
 <div class="meta">{esc(f['sport'])} · {esc(f['competition'])} · {esc(f['home'])} v {esc(f['away'])}
 · {esc(f['start_local'])} · <span class="tag {p['confidence'].lower()}">{p['confidence']}</span></div>
 <h3 style="margin:8px 0 4px;color:#fff;text-transform:none;letter-spacing:0;font-size:16px">{esc(p['selection'])}</h3>
 <blockquote>{esc(p['body'])}</blockquote>
-<div class="meta" style="margin-top:10px">{wc} words · our price {esc(p['price'])} ·
-probability {p['probability']*100:.1f}% ·
+<div class="meta" style="margin-top:10px">{wc} words · our price {esc(price_txt)} ·
+probability {prob_txt*100:.1f}% ·
 evidence <a href="{f['official_url']}">{esc(f['official_url'].split('/')[2])}</a>
 {' · '.join(f"<a href='{u}'>{esc(u.split('/')[2])}</a>" for u in f['extra_urls'])}</div>
 </div>"""
