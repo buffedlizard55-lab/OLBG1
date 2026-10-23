@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'; connect-src 'none'">
+<meta name="description" content="Four findings from reverse-engineering OLBG, and an honest account of what the evidence would not support.">
+<title>Analysis &amp; findings · Desk efe12010</title>
+<link rel="stylesheet" href="assets/style.css">
+<script defer src="assets/app.js"></script>
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="shade" id="shade" hidden></div>
+<aside class="sidebar" id="sidebar" aria-label="Desk navigation">
+  <a class="brand" href="index.html"><span class="mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10m7 10V4m7 16v-7M2 22h20"/></svg></span>
+  <span><strong>OLBG REVERSE DESK</strong><small>session efe12010</small></span></a>
+  <nav><div class="nav-label">Desk</div><a class="nav-link" href="index.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></svg><span>Overview</span></a><a class="nav-link" href="executive-summary.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg><span>Executive summary</span></a><a class="nav-link" href="high-confidence.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 6.4L21 12l-6.4 2.6L12 21l-2.6-6.4L3 12l6.4-2.6z"/></svg><span>High-confidence picks</span></a><a class="nav-link" href="predictions.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5m4 14V9m4 10V3m4 16v-7m4 7V7"/></svg><span>All written calls</span></a><div class="nav-label">Data</div><a class="nav-link" href="matches.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Match ledger</span></a><a class="nav-link" href="markets.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10m7 10V4m7 16v-7M2 22h20"/></svg><span>Market explorer</span></a><a class="nav-link" href="sports.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c-5 5-5 13 0 18M12 3c5 5 5 13 0 18"/></svg><span>Sports index</span></a><a class="nav-link" href="coverage.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 12h18"/></svg><span>Coverage report</span></a><div class="nav-label">Evidence</div><a class="nav-link" href="sources.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-2 2M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l2-2"/></svg><span>Sources &amp; evidence</span></a><a class="nav-link" href="flagged.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4c5-4 9 4 14 0v10c-5 4-9-4-14 0"/></svg><span>Flagged for Review</span></a><a class="nav-link active" href="analysis.html" aria-current="page"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10m7 10V4m7 16v-7M2 22h20"/></svg><span>Analysis &amp; findings</span></a><a class="nav-link" href="reverse-engineering.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5L2 12l6 7M16 5l6 7-6 7M14 3l-4 18"/></svg><span>OLBG reverse-engineering</span></a><a class="nav-link" href="methodology.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v16M3 4c3-1 6-1 9 1 3-2 6-2 9-1v15c-3-1-6-1-9 1-3-2-6-2-9-1z"/></svg><span>Methodology</span></a></nav>
+  <div class="side-foot">
+    <div class="card-note"><strong>Evidence first</strong>
+    <p>Blank means no official source could confirm it. Nothing on this desk is inferred or filled in.</p></div>
+    <a class="back" href="../index.html">&#8592; Project home</a>
+    <a class="back" href="../archive.html">All research desks</a>
+    <p>Independent research · not affiliated with OLBG</p>
+  </div>
+</aside>
+<div class="layout">
+<header class="topbar">
+  <button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  <div class="crumb"><span>Desk efe12010 <span aria-hidden="true">/</span></span><strong>Analysis &amp; findings</strong></div>
+  <div class="top-right"><span class="dot"></span><span>Snapshot 2026-10-23</span>
+  <a href="https://github.com/buffedlizard55-lab/OLBG1" rel="noopener noreferrer" target="_blank">GitHub</a></div>
+</header>
+<main class="main" id="main">
+<header class="head">
+  <div><p class="eyebrow">15-sport reverse-engineering desk</p><h1>Analysis &amp; findings</h1><p class="lede">Four findings from reverse-engineering OLBG, and an honest account of what the evidence would not support.</p></div>
+  <div class="chips"><span class="chip"><b>4</b> findings</span></div>
+</header>
+
+<div class="notice"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10m7 10V4m7 16v-7M2 22h20"/></svg>
+<p>What the reverse-engineering actually produced, where this desk disagrees with the OLBG crowd,
+and what the evidence will not support.</p></div>
+
+<section class="panel"><div class="panel-head"><div><h2>Finding 1 — the crowd and this desk disagree on the United States Grand Prix</h2></div></div>
+<div class="prose">
+<p>OLBG's motor racing hub shows Max Verstappen as the most-tipped driver for Austin, with 13 of 38
+tips. Our own line makes <strong>Kimi Antonelli</strong> the narrow favourite at 30.1% against
+Verstappen's 26.6%, because Antonelli leads the championship on 340 points to Verstappen's 221 while
+Verstappen leads on recent wins, two of the last five against Antonelli's two.</p>
+<p>The two inputs pull in opposite directions and the split weighting lands them almost level. That
+is a genuine disagreement with the crowd rather than an error on either side, and it is the reason
+this desk's published motor racing call is a <em>Verstappen podium</em> at −246 rather than a race
+winner: the podium market is where an in-band price exists without having to resolve the
+disagreement.</p>
+<p><a class="src" href="https://www.formula1.com/en/results/2026/drivers" target="_blank" rel="noopener noreferrer">Official 2026 drivers&#x27; standings <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3L10 14M10 3H4v17h17v-6"/></svg></a>
+<a class="src" href="https://www.formula1.com/en/results/2026/races" target="_blank" rel="noopener noreferrer">Official 2026 race results <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3L10 14M10 3H4v17h17v-6"/></svg></a></p>
+</div></section>
+
+<section class="panel"><div class="panel-head"><div><h2>Finding 2 — a timezone trap that silently corrupts every scraped start time</h2></div></div>
+<div class="prose">
+<p>OLBG prints event clocks with no timezone marker anywhere in the page. The clock is rendered in
+the reader's own zone, which for this session resolved to Eastern Daylight Time. Three independent
+cross-checks settled it: a Towcester greyhound race shown as "Today 12:12" and already expired
+(17:12 BST = 16:12 UTC), World Series Game 1 shown as "Today 20:00" against the MLB Stats API's
+2026-10-24T00:00:00Z, and Fils v Michelsen shown as "Today 12:30" against the ATP's "Not Before
+18:30" Brussels time.</p>
+<p>All three resolve to UTC−4. Two official sites were then found to geo-render the same way:
+<strong>wst.tv</strong> prints the Belfast evening session as "14:00" and
+<strong>cricket.com.au</strong> prints Australian fixtures in Eastern time too. That resolved an
+apparent conflict between the OLBG snooker clock and the World Snooker Tour draw — both are
+Eastern, both mean 18:00 UTC, and the match is in fact the 19:00 BST evening session.</p>
+<p><a class="src" href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener noreferrer">Greyhound hub <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3L10 14M10 3H4v17h17v-6"/></svg></a>
+<a class="src" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-23&amp;endDate=2026-10-26" target="_blank" rel="noopener noreferrer">MLB Stats API <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3L10 14M10 3H4v17h17v-6"/></svg></a>
+<a class="src" href="https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule" target="_blank" rel="noopener noreferrer">ATP Brussels order of play <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3h7v7M21 3L10 14M10 3H4v17h17v-6"/></svg></a></p>
+</div></section>
+
+<section class="panel"><div class="panel-head"><div><h2>Finding 3 — where the edges actually are this week</h2></div></div><div class="prose">
+<p>Nine of the thirteen high-confidence calls are totals, handicaps or derivative markets rather
+than straight winners, and that is not a stylistic choice. In the NHL the records are bunched: only
+Boston (8-2-1) and Tampa Bay (7-2-0) separate themselves far enough for a money line to clear the
+floor. Everywhere else the separation is in the scoring rates, not the win rates — Philadelphia have
+scored 1.67 goals a game, Los Angeles 2.50, and both numbers push their totals below the market's
+usual six and a half.</p>
+<p>The same thing happens in the World Series. Milwaukee finished 103-59 against Tampa Bay's 98-64,
+but the Pythagorean lines (103-59 against 90-72) and the road records (48-33 against 43-38) put the
+sides much closer than the raw gap suggests, so the run line pays better than the money line.</p>
+</div></section>
+
+<section class="panel"><div class="panel-head"><div><h2>Finding 4 — the price cap changes which selection gets published</h2></div></div><div class="prose">
+<p>Three fixtures produced a straight favourite shorter than −250 and were therefore held at Medium
+with the published selection moved to an in-band derivative: New Jersey against Los Angeles,
+Valencia at Paris, and Mark Williams against David Gilbert. In each case the desk prices the
+favourite as the clear winner, but the brief's band stops at −250, so publishing the money line
+would put a selection outside the stated window at the top of the page.</p>
+<p>This is worth stating plainly because it changes the shape of the output: a desk that ignored the
+band would show more "winner" picks and fewer totals, and would look more confident than the
+evidence warrants.</p>
+</div></section>
+
+<section class="panel"><div class="panel-head"><div><h2>OLBG crowd consensus against this desk&#x27;s line</h2><p class="sub">Only fixtures where OLBG published a consensus and this desk was able to originate a price. OLBG is the discovery layer here, not a source of truth.</p></div></div><div class="t-wrap"><table class="lined"><thead><tr><th>Sport</th><th>Fixture</th><th>OLBG market</th><th>OLBG consensus</th><th>Our winner-market favourite</th><th>Tier</th></tr></thead><tbody><tr><td>Ice Hockey</td><td><strong>Montreal Canadiens @ Chicago Blackhawks</strong></td><td>Win Match</td><td>Montreal Canadiens <span class="muted">(3/3 tips)</span></td><td><strong>Montreal Canadiens</strong> 53.8%</td><td><span class="badge hi">High-A</span></td></tr><tr><td>Baseball</td><td><strong>Tampa Bay Rays @ Milwaukee Brewers — World Series Game 1</strong></td><td>Money Line</td><td>Milwaukee Brewers <span class="muted">(25/31 tips)</span></td><td><strong>Milwaukee Brewers</strong> 59.1%</td><td><span class="badge hi">High-B</span></td></tr><tr><td>Baseball</td><td><strong>Tampa Bay Rays @ Milwaukee Brewers — World Series Game 2</strong></td><td>Money Line</td><td>Milwaukee Brewers <span class="muted">(25/31 tips)</span></td><td><strong>Milwaukee Brewers</strong> 59.1%</td><td><span class="badge hi">High-B</span></td></tr><tr><td>Baseball</td><td><strong>Milwaukee Brewers @ Tampa Bay Rays — World Series Game 3</strong></td><td>Money Line</td><td>Milwaukee Brewers <span class="muted">(25/31 tips)</span></td><td><strong>Milwaukee Brewers</strong> 52.1%</td><td><span class="badge md">Medium</span></td></tr><tr><td>Basketball</td><td><strong>Zalgiris Kaunas v LDLC ASVEL Villeurbanne</strong></td><td>Win Match</td><td>Zalgiris Kaunas <span class="muted">(9/16 tips)</span></td><td><strong>Zalgiris Kaunas</strong> 69.1%</td><td><span class="badge hi">High-B</span></td></tr><tr><td>Basketball</td><td><strong>Olympiacos Piraeus v Fenerbahce Tarfin Istanbul</strong></td><td>Win Match</td><td>Olympiacos <span class="muted">(6/10 tips)</span></td><td><strong>Olympiacos Piraeus</strong> 50.6%</td><td><span class="badge md">Medium</span></td></tr><tr><td>Basketball</td><td><strong>Paris Basketball v Valencia Basket</strong></td><td>Win Match</td><td>Valencia Basket <span class="muted">(5/10 tips)</span></td><td><strong>Valencia Basket</strong> 86.2%</td><td><span class="badge md">Medium</span></td></tr><tr><td>Tennis</td><td><strong>Arthur Fils v Alex Michelsen — Quarter-final</strong></td><td>Win Match</td><td>Arthur Fils <span class="muted">(5/10 tips)</span></td><td><strong>Arthur Fils</strong> 65.0%</td><td><span class="badge hi">High-B</span></td></tr><tr><td>Tennis</td><td><strong>Flavio Cobolli v Brandon Nakashima — Quarter-final</strong></td><td>Win Match</td><td>Flavio Cobolli <span class="muted">(5/8 tips)</span></td><td><strong>Flavio Cobolli</strong> 57.4%</td><td><span class="badge hi">High-B</span></td></tr><tr><td>Tennis</td><td><strong>Luca Van Assche v Lorenzo Musetti — Quarter-final</strong></td><td>Win Match</td><td>Luca Van Assche <span class="muted">(3/5 tips)</span></td><td><strong>Lorenzo Musetti</strong> 59.7%</td><td><span class="badge md">Medium</span></td></tr><tr><td>Snooker</td><td><strong>David Gilbert v Mark Williams — Match 59 · Quarter-final (best of 11)</strong></td><td>Win Match</td><td>Mark Williams <span class="muted">(11/15 tips)</span></td><td><strong>Mark Williams</strong> 72.7%</td><td><span class="badge md">Medium</span></td></tr><tr><td>Snooker</td><td><strong>Jak Jones v Scott Donaldson — Match 60 · Quarter-final (best of 11)</strong></td><td>Win Match</td><td>Jak Jones <span class="muted">(11/15 tips)</span></td><td><strong>Scott Donaldson</strong> 65.4%</td><td><span class="badge hi">High-B</span></td></tr><tr><td>Motor Racing</td><td><strong>FORMULA 1 MSC CRUISES UNITED STATES GRAND PRIX 2026</strong></td><td>Win Race</td><td>Max Verstappen <span class="muted">(13/38 tips)</span></td><td><strong>Kimi Antonelli — win the race</strong> 30.1%</td><td><span class="badge hi">High-A</span></td></tr></tbody></table></div></section>
+
+<section class="panel"><div class="panel-head"><div><h2>What the evidence would not support</h2></div></div><div class="prose">
+<p>Cricket is the clearest example. Five fixtures were confirmed in full — match id, both teams,
+UTC start and venue — from Cricket Australia's own matches index, but that index publishes no
+ladder, no squad and no form figures, and no second official source was read inside this session.
+Every cricket market is therefore blank. The fixtures are published because they are confirmed; the
+prices are not, because they would have had to be invented.</p>
+<p>The same logic applies to two tennis matches where the players sit outside the portion of the
+official rankings that was read, to Colorado's goals for and against, and to Jak Jones's
+second-round frame line. In each case the surrounding row is published and the missing cell is left
+empty and listed on the flagged page.</p>
+</div></section>
+
+<footer class="footer">
+  <span>Independent research, not betting advice. 18+ · never stake what you cannot afford to lose.</span>
+  <span>Built 2026-10-23T17:05:00Z · <a href="methodology.html">how this desk works</a> · <a href="flagged.html">flagged items</a></span>
+</footer>
+</main></div></body></html>

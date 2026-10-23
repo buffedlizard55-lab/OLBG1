@@ -1,0 +1,995 @@
+{
+ "desk": "efe12010",
+ "captured_utc": "2026-10-23T16:26:40Z",
+ "note": "Discovery layer only. OLBG is where these events were found; it is never used to confirm a sporting fact. Clock values are as rendered by OLBG, which serves Eastern Daylight Time to this session (UTC-4).",
+ "hubs": {
+  "tennis": "https://www.olbg.com/betting-tips/Tennis/3",
+  "basketball": "https://www.olbg.com/betting-tips/Basketball/4",
+  "ice-hockey": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+  "baseball": "https://www.olbg.com/betting-tips/Baseball/12",
+  "darts": "https://www.olbg.com/betting-tips/Darts/15",
+  "snooker": "https://www.olbg.com/betting-tips/Snooker/8",
+  "golf": "https://www.olbg.com/betting-tips/Golf/5",
+  "rugby-union": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+  "rugby-league": "https://www.olbg.com/betting-tips/Rugby_League/10",
+  "cricket": "https://www.olbg.com/betting-tips/Cricket/7",
+  "handball": "https://www.olbg.com/betting-tips/Handball/20",
+  "volleyball": "https://www.olbg.com/betting-tips/Volleyball/21",
+  "motor-racing": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+  "gaelic": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+  "greyhounds": "https://www.olbg.com/betting-tips/Greyhounds/28"
+ },
+ "timezone_evidence": [
+  {
+   "check": "Greyhound card clock",
+   "detail": "OLBG greyhounds hub showed the Towcester 5:12 race as 'Today 12:12' and already Expired. 17:12 BST is 16:12 UTC, so the rendered 12:12 is UTC-4.",
+   "url": "https://www.olbg.com/betting-tips/Greyhounds/28"
+  },
+  {
+   "check": "MLB World Series Game 1",
+   "detail": "OLBG showed 'Tampa Bay Rays @ Milwaukee Brewers \u2014 Today 20:00'. The MLB Stats API returns gameDate 2026-10-24T00:00:00Z for gamePk 849805. 20:00 + 4h = 00:00Z.",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-26"
+  },
+  {
+   "check": "ATP Brussels order of play",
+   "detail": "atptour.com printed Fils v Michelsen as 'Not Before 18:30' Brussels time (CEST, UTC+2) = 16:30Z; OLBG printed the same match as 'Today 12:30'. 12:30 + 4h = 16:30Z.",
+   "url": "https://www.atptour.com/en/scores/current/brussels/7485/daily-schedule"
+  }
+ ],
+ "rows": [
+  {
+   "sport": "tennis",
+   "comp": "ATP Brussels",
+   "event": "Arthur Fils v Alex Michelsen",
+   "t": "Today 12:30",
+   "tips": "5/10",
+   "market": "Win Match",
+   "consensus": "Arthur Fils"
+  },
+  {
+   "sport": "tennis",
+   "comp": "ATP Lyon",
+   "event": "Flavio Cobolli v Brandon Nakashima",
+   "t": "Today 13:00",
+   "tips": "5/8",
+   "market": "Win Match",
+   "consensus": "Flavio Cobolli"
+  },
+  {
+   "sport": "tennis",
+   "comp": "ATP Brussels",
+   "event": "Jan-Lennard Struff v Zizou Bergs",
+   "t": "Today 14:00",
+   "tips": "5/8",
+   "market": "Win Match",
+   "consensus": "Zizou Bergs"
+  },
+  {
+   "sport": "tennis",
+   "comp": "ATP Lyon",
+   "event": "Luca Van Assche v Lorenzo Musetti",
+   "t": "Today 14:30",
+   "tips": "3/5",
+   "market": "Win Match",
+   "consensus": "Luca Van Assche"
+  },
+  {
+   "sport": "tennis",
+   "comp": "ATP Almaty",
+   "event": "Nikoloz Basilashvili v Stefanos Tsitsipas",
+   "t": "Tomorrow 06:00",
+   "tips": "",
+   "market": "Set Betting",
+   "consensus": "2-1"
+  },
+  {
+   "sport": "tennis",
+   "comp": "WTA",
+   "event": "Ann Li v Ashlyn Krueger",
+   "t": "Today 23:00",
+   "tips": "2/3",
+   "market": "Match Total Games",
+   "consensus": "Over 22.50"
+  },
+  {
+   "sport": "tennis",
+   "comp": "WTA",
+   "event": "Katie Boulter v Katerina Siniakova",
+   "t": "Tomorrow 00:30",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "tennis",
+   "comp": "WTA",
+   "event": "Leylah Fernandez v Marie Bouzkova",
+   "t": "Tomorrow 03:00",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "tennis",
+   "comp": "WTA",
+   "event": "Elena Rybakina v Diana Shnaider",
+   "t": "Tomorrow 05:30",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": "Diana Shnaider"
+  },
+  {
+   "sport": "basketball",
+   "comp": "EuroLeague",
+   "event": "Zalgiris Kaunas v LDLC ASVEL",
+   "t": "Today 13:00",
+   "tips": "9/16",
+   "market": "Win Match",
+   "consensus": "Zalgiris Kaunas"
+  },
+  {
+   "sport": "basketball",
+   "comp": "EuroLeague",
+   "event": "Olympiacos v Fenerbahce",
+   "t": "Today 14:15",
+   "tips": "6/10",
+   "market": "Win Match",
+   "consensus": "Olympiacos"
+  },
+  {
+   "sport": "basketball",
+   "comp": "EuroLeague",
+   "event": "Paris Basketball v Valencia Basket",
+   "t": "Today 14:45",
+   "tips": "5/10",
+   "market": "Win Match",
+   "consensus": "Valencia Basket"
+  },
+  {
+   "sport": "basketball",
+   "comp": "NBA",
+   "event": "Chicago Bulls @ Milwaukee Bucks",
+   "t": "Today 20:00",
+   "tips": "5/5",
+   "market": "Win Match",
+   "consensus": "Milwaukee Bucks"
+  },
+  {
+   "sport": "basketball",
+   "comp": "NBA",
+   "event": "Minnesota Timberwolves @ Orlando Magic",
+   "t": "Today 19:00",
+   "tips": "5/5",
+   "market": "Win Match",
+   "consensus": "Minnesota Timberwolves"
+  },
+  {
+   "sport": "basketball",
+   "comp": "NBA",
+   "event": "Houston Rockets @ San Antonio Spurs",
+   "t": "Today 20:00",
+   "tips": "4/6",
+   "market": "Win Match",
+   "consensus": "Houston Rockets"
+  },
+  {
+   "sport": "basketball",
+   "comp": "NBA",
+   "event": "New York Knicks @ Boston Celtics",
+   "t": "Today 19:30",
+   "tips": "",
+   "market": "Handicap",
+   "consensus": "Boston Celtics -2.50"
+  },
+  {
+   "sport": "basketball",
+   "comp": "NBA",
+   "event": "Toronto Raptors @ Washington Wizards",
+   "t": "Today 19:00",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "basketball",
+   "comp": "NBA",
+   "event": "Dallas Mavericks @ Indiana Pacers",
+   "t": "Today 19:00",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "basketball",
+   "comp": "NBA",
+   "event": "Detroit Pistons @ Miami Heat",
+   "t": "Today 20:00",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "basketball",
+   "comp": "NBA",
+   "event": "Portland Trail Blazers @ Sacramento Kings",
+   "t": "Today 22:00",
+   "tips": "",
+   "market": "Handicap",
+   "consensus": "Portland Trail Blazers -10.50"
+  },
+  {
+   "sport": "basketball",
+   "comp": "NBA",
+   "event": "Atlanta Hawks @ Charlotte Hornets",
+   "t": "Today 19:00",
+   "tips": "",
+   "market": "Handicap",
+   "consensus": "Atlanta Hawks -2.50"
+  },
+  {
+   "sport": "basketball",
+   "comp": "NBA",
+   "event": "New Orleans Pelicans @ Utah Jazz",
+   "t": "Today 21:00",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "basketball",
+   "comp": "NBA",
+   "event": "LA Clippers @ Los Angeles Lakers",
+   "t": "Today 22:30",
+   "tips": "",
+   "market": "Handicap",
+   "consensus": "LA Clippers +9.50"
+  },
+  {
+   "sport": "basketball",
+   "comp": "PLK (Poland)",
+   "event": "GTK Gliwice v Twarde Pierniki Torun",
+   "t": "Today 12:30",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "ice-hockey",
+   "comp": "NHL",
+   "event": "Montreal Canadiens @ Chicago Blackhawks",
+   "t": "Today 20:07",
+   "tips": "3/3",
+   "market": "Win Match",
+   "consensus": "Montreal Canadiens"
+  },
+  {
+   "sport": "ice-hockey",
+   "comp": "DEL (Germany)",
+   "event": "DEL card \u2014 multiple fixtures",
+   "t": "Today 13:30",
+   "tips": "",
+   "market": "Puck Line / Totals",
+   "consensus": ""
+  },
+  {
+   "sport": "ice-hockey",
+   "comp": "Metal Ligaen (Denmark)",
+   "event": "Metal Ligaen card \u2014 multiple fixtures",
+   "t": "Today 13:30",
+   "tips": "",
+   "market": "Puck Line / Totals",
+   "consensus": ""
+  },
+  {
+   "sport": "ice-hockey",
+   "comp": "ICE Hockey League (Austria)",
+   "event": "win2day ICE card \u2014 multiple fixtures",
+   "t": "Today 13:15",
+   "tips": "",
+   "market": "Puck Line / Totals",
+   "consensus": ""
+  },
+  {
+   "sport": "ice-hockey",
+   "comp": "Liiga (Finland)",
+   "event": "Liiga card \u2014 multiple fixtures",
+   "t": "Today 11:30",
+   "tips": "",
+   "market": "Puck Line / Totals",
+   "consensus": ""
+  },
+  {
+   "sport": "ice-hockey",
+   "comp": "National League (Switzerland)",
+   "event": "NL card \u2014 multiple fixtures",
+   "t": "Today 13:45",
+   "tips": "",
+   "market": "Puck Line / Totals",
+   "consensus": ""
+  },
+  {
+   "sport": "baseball",
+   "comp": "MLB World Series",
+   "event": "Tampa Bay Rays @ Milwaukee Brewers",
+   "t": "Today 20:00",
+   "tips": "25/31",
+   "market": "Money Line",
+   "consensus": "Milwaukee Brewers"
+  },
+  {
+   "sport": "darts",
+   "comp": "PDC European Championship",
+   "event": "Jonny Clayton v Niko Springer",
+   "t": "Today 13:00",
+   "tips": "26/31",
+   "market": "Win Match 2-way",
+   "consensus": "Jonny Clayton"
+  },
+  {
+   "sport": "darts",
+   "comp": "PDC European Championship",
+   "event": "Jermaine Wattimena v Ryan Joyce",
+   "t": "Today 13:00",
+   "tips": "",
+   "market": "Win Match 2-way",
+   "consensus": ""
+  },
+  {
+   "sport": "darts",
+   "comp": "PDC European Championship",
+   "event": "Gian van Veen v Ricardo Pietreczko",
+   "t": "Today 13:00",
+   "tips": "",
+   "market": "Win Match 2-way",
+   "consensus": ""
+  },
+  {
+   "sport": "darts",
+   "comp": "PDC European Championship",
+   "event": "Wessel Nijman v Martin Schindler",
+   "t": "Today 13:00",
+   "tips": "18/23",
+   "market": "Win Match 2-way",
+   "consensus": "Wessel Nijman"
+  },
+  {
+   "sport": "darts",
+   "comp": "PDC European Championship",
+   "event": "Krzysztof Ratajski v Dave Chisnall",
+   "t": "Today 13:00",
+   "tips": "",
+   "market": "Win Match 2-way",
+   "consensus": ""
+  },
+  {
+   "sport": "darts",
+   "comp": "PDC European Championship",
+   "event": "Nathan Aspinall v Cristo Reyes",
+   "t": "Today 13:00",
+   "tips": "",
+   "market": "Win Match 2-way",
+   "consensus": ""
+  },
+  {
+   "sport": "darts",
+   "comp": "PDC European Championship",
+   "event": "Luke Littler v Mickey Mansell",
+   "t": "Today 13:00",
+   "tips": "",
+   "market": "Win Match 2-way",
+   "consensus": ""
+  },
+  {
+   "sport": "darts",
+   "comp": "PDC European Championship",
+   "event": "Jelle Klaasen v Michael van Gerwen",
+   "t": "Today 13:00",
+   "tips": "",
+   "market": "Win Match 2-way",
+   "consensus": ""
+  },
+  {
+   "sport": "darts",
+   "comp": "PDC European Championship",
+   "event": "Josh Rock v Chris Dobey",
+   "t": "Today 13:00",
+   "tips": "",
+   "market": "Win Match 2-way",
+   "consensus": ""
+  },
+  {
+   "sport": "darts",
+   "comp": "PDC European Championship",
+   "event": "Outright \u2014 Win Tournament",
+   "t": "25 Oct",
+   "tips": "4/18",
+   "market": "Win Tournament",
+   "consensus": "Gian van Veen"
+  },
+  {
+   "sport": "darts",
+   "comp": "PDC World Championship 2027",
+   "event": "Outright \u2014 Win Tournament",
+   "t": "ante-post",
+   "tips": "23/37",
+   "market": "Win Tournament",
+   "consensus": "Luke Littler"
+  },
+  {
+   "sport": "snooker",
+   "comp": "BetVictor Northern Ireland Open",
+   "event": "Jak Jones v Scott Donaldson",
+   "t": "Today 14:05",
+   "tips": "11/15",
+   "market": "Win Match",
+   "consensus": "Jak Jones"
+  },
+  {
+   "sport": "snooker",
+   "comp": "BetVictor Northern Ireland Open",
+   "event": "David Gilbert v Mark Williams",
+   "t": "Today 14:05",
+   "tips": "11/15",
+   "market": "Win Match",
+   "consensus": "Mark Williams"
+  },
+  {
+   "sport": "golf",
+   "comp": "(all golf hubs)",
+   "event": "No tips found.",
+   "t": "",
+   "tips": "0/0",
+   "market": "",
+   "consensus": ""
+  },
+  {
+   "sport": "rugby-union",
+   "comp": "Pro D2",
+   "event": "Aurillac v Nevers",
+   "t": "Today 14:00",
+   "tips": "14/19",
+   "market": "To Win",
+   "consensus": "Aurillac"
+  },
+  {
+   "sport": "rugby-union",
+   "comp": "Pro D2",
+   "event": "Agen v Nissa",
+   "t": "Today 14:00",
+   "tips": "",
+   "market": "To Win",
+   "consensus": ""
+  },
+  {
+   "sport": "rugby-union",
+   "comp": "Pro D2",
+   "event": "Narbonne v Brive",
+   "t": "Today 14:00",
+   "tips": "",
+   "market": "To Win",
+   "consensus": ""
+  },
+  {
+   "sport": "rugby-union",
+   "comp": "Pro D2",
+   "event": "Soyaux Angouleme v Dax",
+   "t": "Today 14:00",
+   "tips": "",
+   "market": "To Win",
+   "consensus": ""
+  },
+  {
+   "sport": "rugby-union",
+   "comp": "Pro D2",
+   "event": "Valence Romans v Colomiers",
+   "t": "Today 14:00",
+   "tips": "",
+   "market": "To Win",
+   "consensus": ""
+  },
+  {
+   "sport": "rugby-union",
+   "comp": "Pro D2",
+   "event": "Provence v Beziers",
+   "t": "Today 14:00",
+   "tips": "",
+   "market": "To Win",
+   "consensus": ""
+  },
+  {
+   "sport": "rugby-union",
+   "comp": "Pro D2",
+   "event": "Grenoble v Biarritz",
+   "t": "Today 14:00",
+   "tips": "",
+   "market": "To Win",
+   "consensus": ""
+  },
+  {
+   "sport": "rugby-union",
+   "comp": "United Rugby Championship",
+   "event": "Connacht v Zebre",
+   "t": "Today 14:00",
+   "tips": "11/15",
+   "market": "To Win",
+   "consensus": "Connacht"
+  },
+  {
+   "sport": "rugby-union",
+   "comp": "United Rugby Championship",
+   "event": "Edinburgh v Lions",
+   "t": "Today 14:35",
+   "tips": "8/9",
+   "market": "To Win",
+   "consensus": "Edinburgh"
+  },
+  {
+   "sport": "rugby-union",
+   "comp": "United Rugby Championship",
+   "event": "Cardiff v Sharks",
+   "t": "Today 14:35",
+   "tips": "",
+   "market": "To Win",
+   "consensus": ""
+  },
+  {
+   "sport": "rugby-union",
+   "comp": "United Rugby Championship",
+   "event": "Bulls v Ulster",
+   "t": "Tomorrow 09:00",
+   "tips": "",
+   "market": "To Win",
+   "consensus": ""
+  },
+  {
+   "sport": "rugby-union",
+   "comp": "United Rugby Championship",
+   "event": "Stormers v Scarlets",
+   "t": "Tomorrow 11:15",
+   "tips": "",
+   "market": "To Win",
+   "consensus": ""
+  },
+  {
+   "sport": "rugby-union",
+   "comp": "Gallagher Premiership",
+   "event": "Gloucester v Bath",
+   "t": "Today 14:45",
+   "tips": "7/7",
+   "market": "To Win",
+   "consensus": "Bath"
+  },
+  {
+   "sport": "rugby-union",
+   "comp": "Gallagher Premiership",
+   "event": "Newcastle Red Bulls v Sale",
+   "t": "Tomorrow 10:00",
+   "tips": "",
+   "market": "To Win",
+   "consensus": ""
+  },
+  {
+   "sport": "rugby-union",
+   "comp": "Test match",
+   "event": "Japan v Fiji",
+   "t": "Tomorrow 01:50",
+   "tips": "",
+   "market": "To Win",
+   "consensus": ""
+  },
+  {
+   "sport": "rugby-league",
+   "comp": "State of Origin 2027",
+   "event": "Outright \u2014 Series Winner",
+   "t": "ante-post",
+   "tips": "9/12",
+   "market": "Win Tournament",
+   "consensus": "New South Wales"
+  },
+  {
+   "sport": "rugby-league",
+   "comp": "Super League 2027",
+   "event": "Outright \u2014 Grand Final Winner",
+   "t": "ante-post",
+   "tips": "1/3",
+   "market": "Win Tournament",
+   "consensus": "Leeds Rhinos"
+  },
+  {
+   "sport": "rugby-league",
+   "comp": "NRL 2027",
+   "event": "Outright \u2014 Grand Final Winner",
+   "t": "ante-post",
+   "tips": "1/2",
+   "market": "Win Tournament",
+   "consensus": "Penrith Panthers"
+  },
+  {
+   "sport": "cricket",
+   "comp": "One-Day Cup (Australia)",
+   "event": "Tasmania v Victoria",
+   "t": "Today 19:30",
+   "tips": "5/7",
+   "market": "Win Match",
+   "consensus": "Victoria"
+  },
+  {
+   "sport": "cricket",
+   "comp": "New Zealand v India T20I",
+   "event": "New Zealand v India (2nd T20I)",
+   "t": "Tomorrow 03:00",
+   "tips": "4/5",
+   "market": "Win Match",
+   "consensus": "India"
+  },
+  {
+   "sport": "cricket",
+   "comp": "One-Day Cup (Australia)",
+   "event": "Western Australia v New South Wales",
+   "t": "Tomorrow 02:00",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "cricket",
+   "comp": "CSA T20 Challenge",
+   "event": "Lions v Limpopo Impalas",
+   "t": "Today 10:00",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "cricket",
+   "comp": "CSA T20 Challenge",
+   "event": "Eastern Cape Iinyathi v Warriors",
+   "t": "Today 10:00",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "cricket",
+   "comp": "CSA T20 Challenge",
+   "event": "Knights v Mpumalanga Rhinos",
+   "t": "Today 10:00",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "cricket",
+   "comp": "Pakistan ODI Tri-Series",
+   "event": "Pakistan v England",
+   "t": "25 Oct 04:00",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "cricket",
+   "comp": "Vitality Blast 2027",
+   "event": "Outright \u2014 Win Tournament (event 188350)",
+   "t": "ante-post",
+   "tips": "0/0",
+   "market": "Win Tournament (each-way)",
+   "consensus": ""
+  },
+  {
+   "sport": "handball",
+   "comp": "LNH Starligue",
+   "event": "Pays d'Aix v Toulouse",
+   "t": "Today 14:00",
+   "tips": "7/16",
+   "market": "Money Line (3-way)",
+   "consensus": "Toulouse"
+  },
+  {
+   "sport": "handball",
+   "comp": "LNH Starligue",
+   "event": "Limoges v Dunkerque",
+   "t": "Today 14:00",
+   "tips": "",
+   "market": "Money Line (3-way)",
+   "consensus": ""
+  },
+  {
+   "sport": "handball",
+   "comp": "LNH Starligue",
+   "event": "Chartres v Nimes",
+   "t": "Today 14:00",
+   "tips": "",
+   "market": "Money Line (3-way)",
+   "consensus": "Tie"
+  },
+  {
+   "sport": "handball",
+   "comp": "LNH Starligue",
+   "event": "Selestat v Caen",
+   "t": "Today 14:00",
+   "tips": "",
+   "market": "Money Line (3-way)",
+   "consensus": ""
+  },
+  {
+   "sport": "handball",
+   "comp": "LNH Starligue",
+   "event": "Tremblay v Cesson",
+   "t": "Today 14:00",
+   "tips": "",
+   "market": "Money Line (3-way)",
+   "consensus": ""
+  },
+  {
+   "sport": "handball",
+   "comp": "Handball-Bundesliga",
+   "event": "Frisch Auf Goppingen v Eisenach",
+   "t": "Today 13:00",
+   "tips": "",
+   "market": "Money Line (3-way)",
+   "consensus": "Tie"
+  },
+  {
+   "sport": "handball",
+   "comp": "Handball-Bundesliga",
+   "event": "Hannover-Burgdorf v Lemgo",
+   "t": "Today 13:00",
+   "tips": "",
+   "market": "Money Line (3-way)",
+   "consensus": "Tie"
+  },
+  {
+   "sport": "handball",
+   "comp": "Handball-Bundesliga",
+   "event": "Erlangen v THW Kiel",
+   "t": "Today 13:00",
+   "tips": "",
+   "market": "Money Line (3-way)",
+   "consensus": ""
+  },
+  {
+   "sport": "handball",
+   "comp": "Liga ASOBAL",
+   "event": "Bidasoa Irun v Ciudad Real",
+   "t": "Today 14:00",
+   "tips": "",
+   "market": "Money Line (3-way)",
+   "consensus": ""
+  },
+  {
+   "sport": "handball",
+   "comp": "Liga ASOBAL",
+   "event": "Barcelona v Ciudad Encantada",
+   "t": "Today 14:30",
+   "tips": "",
+   "market": "Handicap",
+   "consensus": "Ciudad Encantada +13.50"
+  },
+  {
+   "sport": "handball",
+   "comp": "EHF European League",
+   "event": "GRK Ohrid v Spor Toto",
+   "t": "Today 12:45",
+   "tips": "",
+   "market": "Handicap",
+   "consensus": "GRK Ohrid +11.50"
+  },
+  {
+   "sport": "handball",
+   "comp": "W EHF Euro Qualifiers",
+   "event": "Estonia W v Kosovo W",
+   "t": "Today 12:00",
+   "tips": "",
+   "market": "Money Line (3-way)",
+   "consensus": ""
+  },
+  {
+   "sport": "volleyball",
+   "comp": "Bundesliga (Germany)",
+   "event": "VOLLEY GOATS v Netzhoppers",
+   "t": "Today 13:00",
+   "tips": "6/7",
+   "market": "Win Match",
+   "consensus": "VOLLEY GOATS"
+  },
+  {
+   "sport": "volleyball",
+   "comp": "PlusLiga",
+   "event": "PGE GiEK Skra Belchatow v PGE Projekt Warszawa",
+   "t": "Today 14:30",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "volleyball",
+   "comp": "PlusLiga",
+   "event": "Chelm v Asseco Resovia",
+   "t": "Today 12:00",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "volleyball",
+   "comp": "SuperLega",
+   "event": "Trentino v Cisterna",
+   "t": "Today 14:00",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "volleyball",
+   "comp": "SuperLega",
+   "event": "Perugia v Pordenone",
+   "t": "Today 14:00",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "volleyball",
+   "comp": "Superliga W (Brazil)",
+   "event": "Superliga Feminina card \u2014 4 fixtures",
+   "t": "Today 17:30",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "volleyball",
+   "comp": "AVL (Austria)",
+   "event": "AVL card \u2014 3 fixtures",
+   "t": "Today 13:00",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "motor-racing",
+   "comp": "Formula 1",
+   "event": "United States Grand Prix \u2014 Win Race",
+   "t": "25 Oct 16:00",
+   "tips": "13/38",
+   "market": "Win Race",
+   "consensus": "Max Verstappen"
+  },
+  {
+   "sport": "motor-racing",
+   "comp": "Formula 1",
+   "event": "Drivers' Championship 2026",
+   "t": "ante-post",
+   "tips": "9/33",
+   "market": "Win Tournament",
+   "consensus": "Max Verstappen"
+  },
+  {
+   "sport": "motor-racing",
+   "comp": "Formula 1",
+   "event": "Drivers' Championship 2026 \u2014 Without Kimi Antonelli",
+   "t": "ante-post",
+   "tips": "4/7",
+   "market": "Win Tournament",
+   "consensus": "Max Verstappen"
+  },
+  {
+   "sport": "gaelic",
+   "comp": "Cork SFC",
+   "event": "St Finbarr's v Nemo Rangers",
+   "t": "25 Oct 10:30",
+   "tips": "14/18",
+   "market": "Handicap",
+   "consensus": "Nemo Rangers +1.50"
+  },
+  {
+   "sport": "gaelic",
+   "comp": "Galway SFC",
+   "event": "Moycullen v Salthill-Knocknacarra",
+   "t": "25 Oct 10:30",
+   "tips": "12/24",
+   "market": "Handicap",
+   "consensus": "Moycullen -3.50"
+  },
+  {
+   "sport": "gaelic",
+   "comp": "Cork SFC",
+   "event": "Kanturk v Eire Og",
+   "t": "01 Nov",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "gaelic",
+   "comp": "Munster Club SFC",
+   "event": "Fr Caseys v Kildimo-Pallaskenry",
+   "t": "01 Nov",
+   "tips": "",
+   "market": "Win Match",
+   "consensus": ""
+  },
+  {
+   "sport": "gaelic",
+   "comp": "All-Ireland SFC 2027",
+   "event": "Outright \u2014 Win Tournament",
+   "t": "ante-post",
+   "tips": "5/7",
+   "market": "Win Tournament",
+   "consensus": "Kerry"
+  },
+  {
+   "sport": "greyhounds",
+   "comp": "Towcester",
+   "event": "Graded card (incl. 5:12 \u2014 Expired at read time)",
+   "t": "Today 12:12",
+   "tips": "",
+   "market": "Daily Races",
+   "consensus": ""
+  },
+  {
+   "sport": "greyhounds",
+   "comp": "Kinsley",
+   "event": "Graded card",
+   "t": "Today 12:30",
+   "tips": "",
+   "market": "Daily Races",
+   "consensus": ""
+  },
+  {
+   "sport": "greyhounds",
+   "comp": "Newcastle",
+   "event": "Graded card",
+   "t": "Today 13:00",
+   "tips": "",
+   "market": "Daily Races",
+   "consensus": ""
+  },
+  {
+   "sport": "greyhounds",
+   "comp": "Romford",
+   "event": "Graded card",
+   "t": "Today 13:30",
+   "tips": "",
+   "market": "Daily Races",
+   "consensus": ""
+  },
+  {
+   "sport": "greyhounds",
+   "comp": "Harlow",
+   "event": "Graded card",
+   "t": "Today 14:00",
+   "tips": "",
+   "market": "Daily Races",
+   "consensus": ""
+  },
+  {
+   "sport": "greyhounds",
+   "comp": "Nottingham",
+   "event": "Graded card",
+   "t": "Today 14:30",
+   "tips": "",
+   "market": "Daily Races",
+   "consensus": ""
+  },
+  {
+   "sport": "greyhounds",
+   "comp": "Sheffield",
+   "event": "Graded card",
+   "t": "Today 15:00",
+   "tips": "",
+   "market": "Daily Races",
+   "consensus": ""
+  },
+  {
+   "sport": "greyhounds",
+   "comp": "Sunderland",
+   "event": "Graded card",
+   "t": "Today 15:30",
+   "tips": "",
+   "market": "Daily Races",
+   "consensus": ""
+  }
+ ]
+}
