@@ -51,8 +51,8 @@
   {
    "id": "F05",
    "severity": "medium",
-   "title": "Nearly every in-window selection is priced by one desk only",
-   "detail": "Of 94 in-window lines, 94 are priced by a single desk. Where two desks do price the same bet, the numbers differ by more than the tolerance used here more often than they agree. Every pick on this desk therefore prints the desk that priced it, and no pick is described as market consensus.",
+   "title": "No in-window line is corroborated, and the shared lines mostly disagree",
+   "detail": "All 94 in-window candidate lines are priced by a single desk: the brief's window is populated entirely by non-overlapping single-source estimates. Of the 39 lines that two desks do price, 1 agrees within 0.02 decimal and 38 differ by more than that. Every pick on this desk prints the desk that priced it and none is described as market consensus.",
    "source": "internal provenance count",
    "rows": []
   },
@@ -135,14 +135,14 @@
    "rows": [
     "8a900c04 GF05: repeated 6-gram with GF04: 'genesis championship at woo jeong hills'",
     "8a900c04 VB04: repeated 6-gram with VB01: 'to a five set 3 2'",
-    "8a900c04 VB05: repeated 6-gram with VB01: 'to win and over 3 5'",
+    "8a900c04 VB05: repeated 6-gram with VB01: 'win and over 3 5 sets'",
     "8a900c04 DA05: repeated 6-gram with DA03: 'in saturday's best of nineteen second'",
     "8a900c04 BB04: repeated 6-gram with BB02: 'on the 60 day injured list'",
     "496eaf02 TN02: repeated 6-gram with TN01: '6 7 6 5 7 6'",
     "496eaf02 TN05: repeated 6-gram with TN01: 'reached the semi finals with a'",
     "496eaf02 VB04: repeated 6-gram with VB01: 'crowd will push the tempo on'",
     "496eaf02 RU03: repeated 6-gram with RU02: 'in urc round 4 with the'",
-    "496eaf02 RU05: repeated 6-gram with RU01: 'one win one draw and one'"
+    "496eaf02 RU05: repeated 6-gram with RU01: 'from one win one draw and'"
    ]
   },
   {
