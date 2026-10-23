@@ -1,0 +1,151 @@
+{
+ "session": "cf2699ba-olbg1",
+ "observed": "2026-10-23T16:17Z/2026-10-23T16:40Z",
+ "count": 16,
+ "sources": [
+  {
+   "id": "src-olbg-hubs",
+   "org": "OLBG.com (discovery only — not a source of fact)",
+   "url": "https://www.olbg.com/betting-tips/",
+   "observed": "2026-10-23T16:19Z/2026-10-23T16:37Z",
+   "method": "Arena page-fetch; chunk 0 (server-rendered top list) of each of the 15 in-scope hub pages",
+   "role": "discovery",
+   "note": "Top-list only. 'Load More Tips' pagination is XHR and was not captured. Times carry no timezone label and were proven inconsistent within the same page (see F-CF-01). Tip counts are community votes, not probabilities."
+  },
+  {
+   "id": "src-nhl-schedule",
+   "org": "National Hockey League",
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-23",
+   "observed": "2026-10-23T16:24Z",
+   "method": "Arena page-fetch, chunk 0 (JSON)",
+   "role": "official",
+   "note": "numberOfGames=2: 2026020166 MTL@CHI 2026-10-24T00:00:00Z United Center; 2026020167 TBL@COL 2026-10-24T01:00:00Z Ball Arena. Both gameState=FUT, gameScheduleState=OK. Embedded per-provider odds arrays read verbatim."
+  },
+  {
+   "id": "src-nhl-standings",
+   "org": "National Hockey League",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-23",
+   "observed": "2026-10-23T16:26Z",
+   "method": "Arena page-fetch, chunk 0 (JSON); standingsDateTimeUtc=2026-10-23T16:17:45Z",
+   "role": "official",
+   "note": "Only the clubs appearing in chunk 0 were read (CAR 8-2-2 18pts, EDM 8-1-1 17pts, BOS 8-2-1 17pts, VGK 8-4-0 16pts). None of them play tonight; therefore NO club-level form is available for MTL, CHI, TBL or COL and none is asserted."
+  },
+  {
+   "id": "src-mlb-schedule",
+   "org": "Major League Baseball",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-23&endDate=2026-10-25&hydrate=probablePitcher,team,venue,seriesStatus",
+   "observed": "2026-10-23T16:27Z",
+   "method": "Arena page-fetch, chunk 0 (JSON)",
+   "role": "official",
+   "note": "World Series Game 1 gamePk 849805, TB @ MIL, gameDate 2026-10-24T00:00:00Z, officialDate 2026-10-23, American Family Field, probable pitchers Nick Martinez (TB) and Jacob Misiorowski (MIL), ifNecessary=N, series 1 of 7. Game 2 gamePk 849802 2026-10-25T00:00:00Z, Rasmussen (TB) v Logan Henderson (MIL)."
+  },
+  {
+   "id": "src-mlb-standings-nl",
+   "org": "Major League Baseball",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=104&season=2026&standingsTypes=regularSeason",
+   "observed": "2026-10-23T16:38Z",
+   "method": "Arena page-fetch, chunk 0 (JSON). NL East clubs only in chunk 0.",
+   "role": "official",
+   "note": "Read but NOT usable: the Brewers (NL Central) do not appear in chunk 0, so no fresh Milwaukee record was obtained this session. Recorded for transparency."
+  },
+  {
+   "id": "src-mlb-standings-al",
+   "org": "Major League Baseball",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason",
+   "observed": "2026-10-23T16:29Z",
+   "method": "Arena page-fetch, chunk 0 (JSON)",
+   "role": "official",
+   "note": "Fresh confirmation of Tampa Bay: 98-64 (.605), home 55-26, away 43-38, RS 736 / RA 650, lastTen 5-5, streak L1, division rank 1."
+  },
+  {
+   "id": "src-mlb-records-capture",
+   "org": "Major League Baseball (in-repo canonical capture, 2026-10-22)",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason&fields=records,teamRecords,team,id,name,wins,losses,runsScored,runsAllowed,gamesPlayed,league,id,division",
+   "observed": "2026-10-22T07:17:40Z/2026-10-22T07:30:30Z (captured in data/current/evidence/mlb-records-2026.json)",
+   "method": "Repo canonical evidence file, read this session; original capture by the canonical pipeline",
+   "role": "official-capture",
+   "note": "Milwaukee: 103-59, RS 832 / RA 618, 162 games, 2026 regular season. Used because the live standings endpoint returned NL East in chunk 0 only. Observation is one day old and the season is complete, so the value cannot have changed."
+  },
+  {
+   "id": "src-urc-round4",
+   "org": "United Rugby Championship",
+   "url": "https://stats.unitedrugby.com/match-centre/2026-27/4",
+   "observed": "2026-10-23T16:31Z",
+   "method": "Arena page-fetch, chunk 0",
+   "role": "official",
+   "note": "Round 4, Friday 23 October 2026: Cardiff v Hollywoodbets Sharks 14:45 Cardiff Arms Park; Connacht v Zebre Parma 14:45 Dexcom Stadium; Edinburgh v 10bet Lions 14:45 Hive Stadium. Page states 'All times shown are Local'. Round 3 results also present and used as form."
+  },
+  {
+   "id": "src-f1-usgp",
+   "org": "Formula 1",
+   "url": "https://www.formula1.com/en/racing/2026/united-states",
+   "observed": "2026-10-23T16:30Z",
+   "method": "Arena page-fetch, chunk 0",
+   "role": "official",
+   "note": "United States Grand Prix 2026 at Circuit of The Americas: Practice 1 23 Oct 13:30-14:30, Practice 2 23 Oct 17:00-18:00 (track time), Qualifying 24 Oct 17:00, Race 25 Oct 16:00. Circuit 5.513 km, 56 laps, race distance 308.432 km."
+  },
+  {
+   "id": "src-wst-matches",
+   "org": "World Snooker Tour",
+   "url": "https://www.wst.tv/matches/",
+   "observed": "2026-10-23T16:34Z",
+   "method": "Arena page-fetch, chunk 0",
+   "role": "official",
+   "note": "BetVictor Northern Ireland Open 2026 match list. Chunk 0 covers 18-19 October only; it confirms Round 1 results (Scott Donaldson 4-0 Wu Yize, David Gilbert 4-1 Oliver Sykes) but does NOT reach the 23 October session, so today's two fixtures are NOT verified."
+  },
+  {
+   "id": "src-cricket-au",
+   "org": "Cricket Australia",
+   "url": "https://www.cricket.com.au/matches?year=2026&isCompleted=0",
+   "observed": "2026-10-23T16:35Z",
+   "method": "Arena page-fetch, chunk 0",
+   "role": "official",
+   "note": "Series and team filter lists only; no dated fixture rows in chunk 0. No cricket fixture verified."
+  },
+  {
+   "id": "src-euroleague-gc",
+   "org": "Euroleague Basketball",
+   "url": "https://www.euroleaguebasketball.net/en/euroleague/game-center/",
+   "observed": "2026-10-23T16:28Z",
+   "method": "Arena page-fetch, chunk 0",
+   "role": "official",
+   "note": "Club list only; the fixture grid is client-rendered. No EuroLeague fixture verified."
+  },
+  {
+   "id": "src-pdc",
+   "org": "Professional Darts Corporation",
+   "url": "https://www.pdc.tv/tournament/2026-cazoo-european-championship",
+   "observed": "2026-10-23T16:32Z",
+   "method": "Arena page-fetch, chunk 0",
+   "role": "official",
+   "note": "Consent wall only; no match content returned. No darts fixture verified. Same barrier recorded by session 8f6d7364 on 2026-10-22 (F-8F6D-03)."
+  },
+  {
+   "id": "src-munster-gaa",
+   "org": "Munster GAA",
+   "url": "https://munster.gaa.ie/fixtures/",
+   "observed": "2026-10-23T16:33Z",
+   "method": "Arena page-fetch, chunk 0",
+   "role": "official",
+   "note": "Index page only; fixture detail sits behind club-championship sub-pages that were not fetched. No Gaelic fixture verified this session."
+  },
+  {
+   "id": "src-atp-scores",
+   "org": "ATP Tour",
+   "url": "https://www.atptour.com/en/scores/current",
+   "observed": "2026-10-23T16:29Z",
+   "method": "Arena page-fetch, chunk 0",
+   "role": "official",
+   "note": "Live/current scoreboard shows different matches (Brussels/Lyon quarter-finals) from the nine OLBG tennis rows. No tennis fixture verified; the OLBG rows carry no competition label."
+  },
+  {
+   "id": "src-wta-scores",
+   "org": "WTA",
+   "url": "https://www.wtatennis.com/scores",
+   "observed": "2026-10-23T16:30Z",
+   "method": "Arena page-fetch, chunk 0",
+   "role": "official",
+   "note": "Client-rendered; notification feed only, no match rows. No WTA fixture verified."
+  }
+ ]
+}

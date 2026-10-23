@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Markets · OLBG research desk, 23 Oct 2026</title>
+<meta name="description" content="Source-linked research desk for 15 OLBG sports, 23 October 2026. Six officially confirmed fixtures, originated prices, explicit gaps.">
+<style>
+:root{--ink:#12181f;--muted:#5b6773;--line:#e2e6ea;--bg:#f6f7f9;--card:#fff;
+--accent:#0f5c4d;--accent2:#0b3d66;--high:#8a1c1c;--med:#8a5a00;--low:#3c4a57;
+--hi-bg:#fbecec;--me-bg:#fdf3e0;--lo-bg:#eef1f4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent2)}
+header.top{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+.brandbar{display:flex;align-items:center;gap:14px;padding:12px 0;flex-wrap:wrap}
+.brand{font-weight:700;letter-spacing:.2px;font-size:17px;text-decoration:none;color:var(--ink)}
+.brand span{color:var(--accent)}
+.stamp{margin-left:auto;color:var(--muted);font-size:12.5px}
+nav.main{display:flex;gap:2px;overflow-x:auto;border-top:1px solid var(--line);padding:0}
+nav.main a{padding:11px 12px;font-size:13.5px;text-decoration:none;color:var(--muted);white-space:nowrap;border-bottom:2px solid transparent}
+nav.main a:hover{color:var(--ink)}
+nav.main a.on{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+main{padding:26px 0 60px}
+h1{font-size:27px;line-height:1.2;margin:0 0 6px}
+h2{font-size:19px;margin:34px 0 10px}
+h3{font-size:16px;margin:20px 0 8px}
+.lede{color:var(--muted);margin:0 0 20px;max-width:78ch}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0 8px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.kpi b{display:block;font-size:26px;line-height:1.1}
+.kpi small{color:var(--muted);font-size:12.5px;display:block;margin-top:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:14px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f0f2f4;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);position:sticky;top:0}
+tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#fafbfc}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.chip{display:inline-block;padding:2px 8px;border-radius:99px;font-size:11.5px;font-weight:600;letter-spacing:.02em}
+.chip.high{background:var(--hi-bg);color:var(--high)}
+.chip.medium{background:var(--me-bg);color:var(--med)}
+.chip.low{background:var(--lo-bg);color:var(--low)}
+.chip.ok{background:#e6f4ee;color:var(--accent)}
+.chip.gap{background:#fbecec;color:var(--high)}
+.chip.small{font-size:11px;padding:1px 7px}
+.pill{display:inline-block;padding:1px 6px;border-radius:5px;font-size:11px;background:#eef1f4;color:var(--muted)}
+.note{background:#fff8e6;border:1px solid #f0e0b0;border-radius:10px;padding:14px;margin:16px 0}
+.crit{background:#fbecec;border:1px solid #f0c9c9;border-radius:10px;padding:14px;margin:16px 0}
+.okbox{background:#e9f5f0;border:1px solid #c4e2d6;border-radius:10px;padding:14px;margin:16px 0}
+.blank{color:#9aa5b1}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;word-break:break-all}
+.pred{border-left:3px solid var(--accent);padding-left:14px;margin:16px 0}
+.pred h3{margin:0 0 4px}
+.meta{color:var(--muted);font-size:12.5px}
+.links a{display:inline-block;margin:0 10px 6px 0;font-size:12.5px}
+footer{border-top:1px solid var(--line);background:var(--card);padding:18px 0;color:var(--muted);font-size:12.5px}
+ul.tight{margin:8px 0;padding-left:20px}
+ul.tight li{margin:4px 0}
+.tag{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
+</style></head>
+<body>
+<header class="top"><div class="wrap">
+<div class="brandbar">
+  <a class="brand" href="index.html">OLBG<span>·</span>research desk</a>
+  <span class="pill">session cf2699ba</span>
+  <span class="stamp">Snapshot 23 Oct 2026 · 16:17–16:40 UTC</span>
+</div>
+<nav class="main"><a href="index.html">Summary</a><a href="matches.html">Matches</a><a href="markets.html" class="on">Markets</a><a href="confidence.html">Confidence</a><a href="predictions.html">Predictions</a><a href="analysis.html">Analysis</a><a href="flagged.html">Flagged</a><a href="sources.html">Sources</a><a href="methodology.html">Method</a></nav>
+</div></header>
+<main><div class="wrap">
+<h1>Markets</h1>
+<p class="lede">Eight market families were explicitly considered for every confirmed fixture: money line and
+match winner, handicap, run line, puck line, match total, game total, set and frame scoring, and outrights. A market is only priced when an official
+input supports it. Where it does not, the market is listed as withheld with the reason rather than filled
+with a plausible-looking number.</p>
+<div class="note"><strong>What is priced, and from what.</strong> NHL money lines come from the de-vigged
+median of the three mutually consistent quote providers embedded in the league's own schedule feed. The MLB
+game uses paired official regular-season run rates in an independent-Poisson run model with the draw removed.
+URC match winners come from one verified round of results with a declared shrinkage, a declared three-point
+home advantage and a declared 14-point standard deviation. Nothing else is priced on official input.</div>
+
+<h2>Montreal Canadiens at Chicago Blackhawks</h2>
+<p class="meta">NHL · United Center · official start 2026-10-24T00:00:00Z
+· sources <a href="https://api-web.nhle.com/v1/schedule/2026-10-23" title="National Hockey League">nhl-schedule</a></p>
+<ul class="tight"><li><strong>Official start</strong>: 2026-10-24T00:00:00Z <span class='meta'>[src-nhl-schedule]</span></li><li><strong>Venue</strong>: United Center, Chicago <span class='meta'>[src-nhl-schedule]</span></li><li><strong>Game state</strong>: FUT; gameScheduleState OK <span class='meta'>[src-nhl-schedule]</span></li><li><strong>Quoted prices (provider 8/9/7)</strong>: MTL -170 / -170 / -162; CHI +138 / +142 / +134 <span class='meta'>[src-nhl-schedule]</span></li><li><strong>Contradicting quotes (provider 6/3/10)</strong>: MTL 2.35 / 1.60 / 2.03; CHI 1.59 / 2.37 / 3.15 <span class='meta'>[src-nhl-schedule]</span></li></ul>
+<div class="card"><h4 style='margin:16px 0 6px'>Money line (60 minutes + OT/SO) <span class='pill'>market input</span></h4><div class='tablewrap'><table><thead><tr><th>Selection</th><th>p</th><th>Fair decimal</th><th>American</th><th>Tier</th><th>Note</th></tr></thead><tbody><tr><td><strong>Montreal Canadiens</strong></td><td class='num'>60.0%</td><td class='num'>1.667</td><td class='num'>-150</td><td><span class="chip low">Low</span></td><td class='meta'></td></tr><tr><td><strong>Chicago Blackhawks</strong></td><td class='num'>40.0%</td><td class='num'>2.499</td><td class='num'>+150</td><td><span class="chip low">Low</span></td><td class='meta'></td></tr></tbody></table></div><ul class=tight><li>De-vigged median of the three mutually consistent American-quote providers (8, 9, 7) embedded in the official NHL schedule feed.</li><li>Puck line and game total withheld: the NHL feed supplies no goal-rate input for either club and no official standings rows for them were read.</li></ul></div>
+
+<h2>Tampa Bay Lightning at Colorado Avalanche</h2>
+<p class="meta">NHL · Ball Arena · official start 2026-10-24T01:00:00Z
+· sources <a href="https://api-web.nhle.com/v1/schedule/2026-10-23" title="National Hockey League">nhl-schedule</a></p>
+<ul class="tight"><li><strong>Official start</strong>: 2026-10-24T01:00:00Z <span class='meta'>[src-nhl-schedule]</span></li><li><strong>Venue</strong>: Ball Arena, Denver <span class='meta'>[src-nhl-schedule]</span></li><li><strong>Game state</strong>: FUT; gameScheduleState OK <span class='meta'>[src-nhl-schedule]</span></li><li><strong>Quoted prices (provider 8/9/7)</strong>: TBL +105 / +105 / +106; COL -129 / -125 / -128 <span class='meta'>[src-nhl-schedule]</span></li></ul>
+<div class="card"><h4 style='margin:16px 0 6px'>Money line (60 minutes + OT/SO) <span class='pill'>market input</span></h4><div class='tablewrap'><table><thead><tr><th>Selection</th><th>p</th><th>Fair decimal</th><th>American</th><th>Tier</th><th>Note</th></tr></thead><tbody><tr><td><strong>Tampa Bay Lightning</strong></td><td class='num'>46.4%</td><td class='num'>2.155</td><td class='num'>+115</td><td><span class="chip low">Low</span></td><td class='meta'></td></tr><tr><td><strong>Colorado Avalanche</strong></td><td class='num'>53.6%</td><td class='num'>1.866</td><td class='num'>-115</td><td><span class="chip low">Low</span></td><td class='meta'></td></tr></tbody></table></div><ul class=tight><li>De-vigged median of the three mutually consistent American-quote providers (8, 9, 7) embedded in the official NHL schedule feed.</li><li>Puck line and game total withheld: the NHL feed supplies no goal-rate input for either club and no official standings rows for them were read.</li></ul></div>
+
+<h2>Tampa Bay Rays at Milwaukee Brewers — World Series Game 1</h2>
+<p class="meta">MLB World Series · American Family Field · official start 2026-10-24T00:00:00Z
+· sources <a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-23&amp;endDate=2026-10-25&amp;hydrate=probablePitcher,team,venue,seriesStatus" title="Major League Baseball">mlb-schedule</a> <a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason" title="Major League Baseball">mlb-standings-al</a> <a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason&amp;fields=records,teamRecords,team,id,name,wins,losses,runsScored,runsAllowed,gamesPlayed,league,id,division" title="Major League Baseball (in-repo canonical capture, 2026-10-22)">mlb-records-capture</a></p>
+<ul class="tight"><li><strong>Official date / start</strong>: officialDate 2026-10-23; gameDate 2026-10-24T00:00:00Z <span class='meta'>[src-mlb-schedule]</span></li><li><strong>Series</strong>: World Series Game 1 of 7; isTied true <span class='meta'>[src-mlb-schedule]</span></li><li><strong>ifNecessary</strong>: N (Normal Game) <span class='meta'>[src-mlb-schedule]</span></li><li><strong>Probable pitchers</strong>: TB Nick Martinez; MIL Jacob Misiorowski <span class='meta'>[src-mlb-schedule]</span></li><li><strong>Tampa Bay regular season</strong>: 98-64 (.605); home 55-26; away 43-38; RS 736 RA 650; lastTen 5-5 <span class='meta'>[src-mlb-standings-al]</span></li><li><strong>Milwaukee regular season</strong>: 103-59; RS 832 RA 618 (capture 2026-10-22) <span class='meta'>[src-mlb-records-capture]</span></li></ul>
+<div class="card"><h4 style='margin:16px 0 6px'>Money line (incl. extra innings) <span class='pill'>market input</span></h4><div class='tablewrap'><table><thead><tr><th>Selection</th><th>p</th><th>Fair decimal</th><th>American</th><th>Tier</th><th>Note</th></tr></thead><tbody><tr><td><strong>Tampa Bay Rays</strong></td><td class='num'>43.9%</td><td class='num'>2.276</td><td class='num'>+128</td><td><span class="chip low">Low</span></td><td class='meta'></td></tr><tr><td><strong>Milwaukee Brewers</strong></td><td class='num'>56.1%</td><td class='num'>1.784</td><td class='num'>-128</td><td><span class="chip low">Low</span></td><td class='meta'></td></tr></tbody></table></div><ul class=tight><li>Independent-Poisson run model on paired official regular-season run rates; tie mass removed (no draw in MLB).</li></ul><h4 style='margin:16px 0 6px'>Run line 1.5 <span class='pill'>market input</span></h4><div class='tablewrap'><table><thead><tr><th>Selection</th><th>p</th><th>Fair decimal</th><th>American</th><th>Tier</th><th>Note</th></tr></thead><tbody><tr><td><strong>Tampa Bay Rays +1.5</strong></td><td class='num'>59.4%</td><td class='num'>1.683</td><td class='num'>-146</td><td><span class="chip low">Low</span></td><td class='meta'></td></tr><tr><td><strong>Milwaukee Brewers -1.5</strong></td><td class='num'>40.6%</td><td class='num'>2.463</td><td class='num'>+146</td><td><span class="chip low">Low</span></td><td class='meta'></td></tr></tbody></table></div><ul class=tight><li>Model line, not an available sportsbook offer. log5 cross-check on season win% gives Milwaukee 0.536 on the money line.</li></ul><h4 style='margin:16px 0 6px'>Game total 8.5 <span class='pill'>market input</span></h4><div class='tablewrap'><table><thead><tr><th>Selection</th><th>p</th><th>Fair decimal</th><th>American</th><th>Tier</th><th>Note</th></tr></thead><tbody><tr><td><strong>Over 8.5</strong></td><td class='num'>53.3%</td><td class='num'>1.877</td><td class='num'>-114</td><td><span class="chip low">Low</span></td><td class='meta'></td></tr><tr><td><strong>Under 8.5</strong></td><td class='num'>46.7%</td><td class='num'>2.141</td><td class='num'>+114</td><td><span class="chip low">Low</span></td><td class='meta'></td></tr></tbody></table></div><ul class=tight><li>Centred on the paired run-rate expectation (4.18 + 4.57 = 8.75 runs).</li></ul></div>
+
+<h2>Cardiff Rugby v Hollywoodbets Sharks</h2>
+<p class="meta">United Rugby Championship Round 4 · Cardiff Arms Park · official start 14:45 local (23 Oct 2026) — URC publishes local time only
+· sources <a href="https://stats.unitedrugby.com/match-centre/2026-27/4" title="United Rugby Championship">urc-round4</a></p>
+<ul class="tight"><li><strong>Fixture and local kick-off</strong>: Fri 23 Oct 2026, 14:45, Cardiff Arms Park <span class='meta'>[src-urc-round4]</span></li><li><strong>Round 3 form — Cardiff</strong>: Leinster 29-5 Cardiff (away, 10 Oct) <span class='meta'>[src-urc-round4]</span></li><li><strong>Round 3 form — Sharks</strong>: DHL Stormers 39-22 Hollywoodbets Sharks (away, 10 Oct) <span class='meta'>[src-urc-round4]</span></li></ul>
+<div class="card"><h4 style='margin:16px 0 6px'>Match winner <span class='pill'>market input</span></h4><div class='tablewrap'><table><thead><tr><th>Selection</th><th>p</th><th>Fair decimal</th><th>American</th><th>Tier</th><th>Note</th></tr></thead><tbody><tr><td><strong>Cardiff Rugby</strong></td><td class='num'>53.6%</td><td class='num'>1.867</td><td class='num'>-115</td><td><span class="chip low">Low</span></td><td class='meta'></td></tr><tr><td><strong>Hollywoodbets Sharks</strong></td><td class='num'>46.4%</td><td class='num'>2.153</td><td class='num'>+115</td><td><span class="chip low">Low</span></td><td class='meta'></td></tr></tbody></table></div><ul class=tight><li>Margin-form model: each club&#x27;s verified Round 3 margin shrunk 35% toward zero, plus a declared 3-point home advantage, mapped through a normal with a declared 14-point standard deviation, capped at 85%. Single-round sample.</li></ul><h4 style='margin:16px 0 6px'>Handicap <span class='pill'>market input</span></h4><div class='tablewrap'><table><thead><tr><th>Selection</th><th>p</th><th>Fair decimal</th><th>American</th><th>Tier</th><th>Note</th></tr></thead><tbody><tr><td><strong>Cardiff Rugby -1.0 (fair model line)</strong></td><td class='num'><span class=blank>—</span></td><td class='num'><span class=blank>—</span></td><td class='num'><span class="blank">—</span></td><td><span class="blank">—</span></td><td class='meta'>withheld — one verified round cannot support a scoring-margin line</td></tr><tr><td><strong>Match total (54.5)</strong></td><td class='num'><span class=blank>—</span></td><td class='num'><span class=blank>—</span></td><td class='num'><span class="blank">—</span></td><td><span class="blank">—</span></td><td class='meta'>withheld — no club-level scoring rate was verified; league mean only</td></tr></tbody></table></div></div>
+
+<h2>Connacht Rugby v Zebre Parma</h2>
+<p class="meta">United Rugby Championship Round 4 · Dexcom Stadium · official start 14:45 local (23 Oct 2026) — URC publishes local time only
+· sources <a href="https://stats.unitedrugby.com/match-centre/2026-27/4" title="United Rugby Championship">urc-round4</a></p>
+<ul class="tight"><li><strong>Fixture and local kick-off</strong>: Fri 23 Oct 2026, 14:45, Dexcom Stadium <span class='meta'>[src-urc-round4]</span></li><li><strong>Round 3 form — Connacht</strong>: Glasgow Warriors 36-19 Connacht (away, 9 Oct) <span class='meta'>[src-urc-round4]</span></li><li><strong>Round 3 form — Zebre</strong>: Zebre Parma 12-29 Edinburgh (home, 10 Oct) <span class='meta'>[src-urc-round4]</span></li></ul>
+<div class="card"><h4 style='margin:16px 0 6px'>Match winner <span class='pill'>market input</span></h4><div class='tablewrap'><table><thead><tr><th>Selection</th><th>p</th><th>Fair decimal</th><th>American</th><th>Tier</th><th>Note</th></tr></thead><tbody><tr><td><strong>Connacht Rugby</strong></td><td class='num'>58.5%</td><td class='num'>1.710</td><td class='num'>-141</td><td><span class="chip low">Low</span></td><td class='meta'></td></tr><tr><td><strong>Zebre Parma</strong></td><td class='num'>41.5%</td><td class='num'>2.409</td><td class='num'>+141</td><td><span class="chip low">Low</span></td><td class='meta'></td></tr></tbody></table></div><ul class=tight><li>Margin-form model: each club&#x27;s verified Round 3 margin shrunk 35% toward zero, plus a declared 3-point home advantage, mapped through a normal with a declared 14-point standard deviation, capped at 85%. Single-round sample.</li></ul><h4 style='margin:16px 0 6px'>Handicap <span class='pill'>market input</span></h4><div class='tablewrap'><table><thead><tr><th>Selection</th><th>p</th><th>Fair decimal</th><th>American</th><th>Tier</th><th>Note</th></tr></thead><tbody><tr><td><strong>Connacht Rugby -3.0 (fair model line)</strong></td><td class='num'><span class=blank>—</span></td><td class='num'><span class=blank>—</span></td><td class='num'><span class="blank">—</span></td><td><span class="blank">—</span></td><td class='meta'>withheld — one verified round cannot support a scoring-margin line</td></tr><tr><td><strong>Match total (54.5)</strong></td><td class='num'><span class=blank>—</span></td><td class='num'><span class=blank>—</span></td><td class='num'><span class="blank">—</span></td><td><span class="blank">—</span></td><td class='meta'>withheld — no club-level scoring rate was verified; league mean only</td></tr></tbody></table></div></div>
+
+<h2>Edinburgh Rugby v 10bet Lions</h2>
+<p class="meta">United Rugby Championship Round 4 · Hive Stadium · official start 14:45 local (23 Oct 2026) — URC publishes local time only
+· sources <a href="https://stats.unitedrugby.com/match-centre/2026-27/4" title="United Rugby Championship">urc-round4</a></p>
+<ul class="tight"><li><strong>Fixture and local kick-off</strong>: Fri 23 Oct 2026, 14:45, Hive Stadium <span class='meta'>[src-urc-round4]</span></li><li><strong>Round 3 form — Edinburgh</strong>: Zebre Parma 12-29 Edinburgh (away, 10 Oct) <span class='meta'>[src-urc-round4]</span></li><li><strong>Round 3 form — Lions</strong>: Vodacom Bulls 57-15 10bet Lions (away, 10 Oct) <span class='meta'>[src-urc-round4]</span></li></ul>
+<div class="card"><h4 style='margin:16px 0 6px'>Match winner <span class='pill'>market input</span></h4><div class='tablewrap'><table><thead><tr><th>Selection</th><th>p</th><th>Fair decimal</th><th>American</th><th>Tier</th><th>Note</th></tr></thead><tbody><tr><td><strong>Edinburgh Rugby</strong></td><td class='num'>85.0%</td><td class='num'>1.176</td><td class='num'>-567</td><td><span class="chip medium">Medium</span></td><td class='meta'></td></tr><tr><td><strong>10bet Lions</strong></td><td class='num'>15.0%</td><td class='num'>6.667</td><td class='num'>+567</td><td><span class="chip low">Low</span></td><td class='meta'></td></tr></tbody></table></div><ul class=tight><li>Margin-form model: each club&#x27;s verified Round 3 margin shrunk 35% toward zero, plus a declared 3-point home advantage, mapped through a normal with a declared 14-point standard deviation, capped at 85%. Single-round sample.</li></ul><h4 style='margin:16px 0 6px'>Handicap <span class='pill'>market input</span></h4><div class='tablewrap'><table><thead><tr><th>Selection</th><th>p</th><th>Fair decimal</th><th>American</th><th>Tier</th><th>Note</th></tr></thead><tbody><tr><td><strong>Edinburgh Rugby -18.0 (fair model line)</strong></td><td class='num'><span class=blank>—</span></td><td class='num'><span class=blank>—</span></td><td class='num'><span class="blank">—</span></td><td><span class="blank">—</span></td><td class='meta'>withheld — one verified round cannot support a scoring-margin line</td></tr><tr><td><strong>Match total (54.5)</strong></td><td class='num'><span class=blank>—</span></td><td class='num'><span class=blank>—</span></td><td class='num'><span class="blank">—</span></td><td><span class="blank">—</span></td><td class='meta'>withheld — no club-level scoring rate was verified; league mean only</td></tr></tbody></table></div></div>
+
+
+<h2>Markets we investigated and withheld</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Sport</th><th>Market</th><th>Status</th><th>Reason</th></tr></thead><tbody>
+<tr><td>Ice hockey</td><td>Puck line, game total</td><td><span class="chip gap">withheld</span></td><td>The league feed carries no goal-rate input for either club and no official standings rows for them were read.</td></tr>
+<tr><td>Rugby Union</td><td>Handicap, match total</td><td><span class="chip gap">withheld</span></td><td>One verified round cannot support a scoring-margin line or a club-level total; only a 54.6-point league mean exists.</td></tr>
+<tr><td>Cricket</td><td>All</td><td><span class="chip gap">withheld</span></td><td>No fixture could be tied to a board or tour page; no player or innings data was read.</td></tr>
+<tr><td>Darts</td><td>All</td><td><span class="chip gap">withheld</span></td><td>pdc.tv served a consent wall; no draw, no averages, no match list.</td></tr>
+<tr><td>Snooker</td><td>All</td><td><span class="chip gap">withheld</span></td><td>Today's session sits beyond the first capture of the WST match list.</td></tr>
+<tr><td>Basketball</td><td>All</td><td><span class="chip gap">withheld</span></td><td>EuroLeague game centre is client-rendered; the NBA scoreboard endpoint returned HTTP 500.</td></tr>
+<tr><td>Tennis</td><td>All</td><td><span class="chip gap">withheld</span></td><td>OLBG rows carry no tournament and the tours listed different matches at the same time.</td></tr>
+<tr><td>Gaelic Sports</td><td>All</td><td><span class="chip gap">withheld</span></td><td>Munster GAA index page only; no fixture detail reached.</td></tr>
+<tr><td>Greyhounds</td><td>All</td><td><span class="chip gap">withheld</span></td><td>GBGB publishes meetings, not per-race runners; no runner-level source was read.</td></tr>
+<tr><td>Volleyball, Handball</td><td>All</td><td><span class="chip gap">withheld</span></td><td>No league page was reached; indicative prices only, permanently Low.</td></tr>
+<tr><td>Golf, Rugby League</td><td>All</td><td><span class="chip gap">withheld</span></td><td>No listings: golf returned "No tips found"; rugby league had only 2027 outrights.</td></tr>
+</tbody></table></div>
+</div></main>
+<footer><div class="wrap">
+Independent research desk. Not affiliated with OLBG. No prices here are bookmaker offers and nothing is a
+betting recommendation; 18+. Blank means the value could not be confirmed on an official page and is flagged
+for review rather than filled in.
+</div></footer>
+</body></html>
