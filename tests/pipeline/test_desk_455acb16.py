@@ -154,6 +154,16 @@ class Desk455ACB16(unittest.TestCase):
         r["games_played"]-=r["ot_losses"]
         self.assertFalse(record_ok(r,AT))
 
+    def test_mlb_does_not_invent_an_nhl_overtime_loss_statistic(self):
+        records=[r for r in self.stats if r["competition"]=="MLB"]
+        self.assertTrue(records)
+        for r in records:
+            self.assertNotIn("ot_losses",r)
+            self.assertTrue(record_ok(r,AT))
+            wrong=copy.deepcopy(r);wrong["ot_losses"]=0
+            self.assertFalse(record_ok(wrong,AT))
+        self.assertIn("W-L-OT (NHL) / W-L (MLB)",(SITE/"analysis.html").read_text())
+
     def test_mlb_conditional_and_unknown_necessity_have_no_prices(self):
         self.assertFalse(self.books["mlb-849799"]["markets"])
         self.assertFalse(self.books["mlb-849801"]["markets"])

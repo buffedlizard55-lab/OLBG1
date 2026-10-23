@@ -115,3 +115,10 @@ Full worldwide enumeration, every live available market, verified bookmaker odds
 **Live content independently checked at 22:13 UTC:** the deployed dashboard, summary JSON and Flagged for Review page served the expected corrected content. Live summary: 84 listings, 18 Low books, 38 markets, 76 outcomes, zero Medium/High, six Low notes and 97 flags; source bounds still 21:34:10–21:44:36Z. The live flags page includes the explicit initial-draft withdrawal and WTA corrections. Pages' separate legacy status was building while the tested artifact was already serving; no hosting setting change is claimed.
 
 A small presentation follow-up labels KPIs as-of-build and sorts the two executive tables by estimated chance, with a regression test. It does not re-fetch or restamp any source. Final follow-up receipts are in COORDINATION.md §T455ACB16.
+
+
+## Publication follow-up and final record semantics
+
+[PR #216](https://github.com/buffedlizard55-lab/OLBG1/pull/216) merged at 2026-10-23T22:19:22Z as `26630eb4776a42c5bcbef3ada5e2194e298dab39`. [Production run 40032844369](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40032844369) succeeded, including validation job 120685073687 and Pages deployment 120685616979. Live read-back confirmed the as-of-build label and correctly ranked executive tables.
+
+The final check removes a common-schema MLB `ot_losses: 0` normalization: NHL's OTL category is not an official MLB statistic. It is omitted from accepted MLB inputs and from their W–L display, rather than asserted as a sourced zero. An injected MLB OTL zero is now rejected by validation. NHL's actual OTL fields are preserved. No probability, price, source observation bound or confidence tier changes. This is a projection/display correction over the retained read, explicitly noted in the source ledger—not a newly fetched source. The desk has 33 regression tests; the combined 372-test suite passes at this checkpoint.
