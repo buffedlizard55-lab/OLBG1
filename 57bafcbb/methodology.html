@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desk 57bafcbb - methodology</title>
+<style>
+:root { --ink:#1c2126; --muted:#5b6770; --line:#d7dbe0; --bg:#f4f6f8;
+        --card:#ffffff; --accent:#0b5fff; --ok:#0a7a3e; --warn:#a15c00; }
+* { box-sizing: border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       color:var(--ink); background:var(--bg); line-height:1.5; }
+header.top { background:#0f1a2b; color:#fff; padding:18px 22px; }
+header.top h1 { margin:0; font-size:21px; font-weight:650; letter-spacing:.2px; }
+header.top p { margin:6px 0 0; color:#c6d0dc; font-size:13px; }
+nav.crumbs { background:#12233c; color:#a9bdd4; padding:8px 22px; font-size:12.5px; }
+nav.crumbs a { color:#9fc3ff; text-decoration:none; }
+nav.crumbs a:hover { text-decoration:underline; }
+main { max-width:1180px; margin:0 auto; padding:20px 22px 60px; }
+h1 { font-size:22px; margin:0 0 4px; }
+h2 { font-size:16px; margin:26px 0 8px; font-weight:650; }
+p.lead { color:var(--muted); font-size:14px; margin:0 0 14px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:16px 18px; margin:0 0 16px; }
+table { border-collapse:collapse; width:100%; background:var(--card); font-size:13.5px; }
+th, td { border:1px solid var(--line); padding:7px 9px; text-align:left; vertical-align:top; }
+th { background:#eef1f5; font-weight:650; white-space:nowrap; }
+td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+a { color:var(--accent); text-decoration:none; word-break:break-all; }
+a:hover { text-decoration:underline; }
+.pill { display:inline-block; padding:1px 8px; border-radius:11px; font-size:11.5px; font-weight:650;
+        border:1px solid var(--line); background:#f0f2f5; color:#3b4753; white-space:nowrap; }
+.pill.high { background:#e5f5ec; color:#0a7a3e; border-color:#b9e3cb; }
+.pill.medium { background:#fdf3e3; color:#8a4b00; border-color:#f0dcbc; }
+.pill.low { background:#eef1f5; color:#4a5560; }
+.pill.flagged { background:#fdeaea; color:#9c1f1f; border-color:#f3c8c8; }
+.pill.ok { background:#e5f5ec; color:#0a7a3f; border-color:#b9e3cb; }
+.flag { background:#fff6f0; border:1px solid #f0d2bc; }
+.note { color:var(--muted); font-size:12.5px; }
+pre.quote { background:#fbfcfd; border:1px solid var(--line); border-left:3px solid var(--accent);
+            padding:12px 14px; margin:8px 0 0; font-size:13.5px; white-space:pre-wrap; }
+ul.tight { margin:6px 0 0; padding-left:20px; }
+ul.tight li { margin:3px 0; font-size:13.5px; }
+.big { font-size:30px; font-weight:700; }
+.kpis { display:flex; gap:12px; flex-wrap:wrap; }
+.kpi { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:12px 16px; min-width:120px; }
+.kpi .n { font-size:24px; font-weight:700; }
+.kpi .l { font-size:12px; color:var(--muted); }
+footer.foot { max-width:1180px; margin:0 auto; padding:0 22px 40px; color:var(--muted); font-size:12.5px; }
+</style>
+</head>
+<body>
+<header class="top"><h1>Desk 57bafcbb - methodology</h1><p>How the lines, the confidence labels and the market families are built.</p></header>
+<nav class="crumbs"><a href="../index.html">home</a> / <a href="../picks.html">picks</a></nav>
+<main>
+
+<div class="card">
+<h2 style="margin-top:0">Line origination</h2>
+<p style="margin:0">For every priced fixture the desk reads the official record and form line for both sides
+and writes its own estimate of the probability that the selected side wins. The estimate is then converted
+into an American price with p / (1-p), so the price is the desk's own and no bookmaker odds are read anywhere
+in this pipeline. The two-way book is completed by giving the other side the remainder, which keeps the book
+fair: the sum of the two implied probabilities is exactly 1.</p>
+</div>
+<div class="card">
+<h2 style="margin-top:0">Confidence labels</h2>
+<ul class="tight">
+<li><strong>High</strong> - the originated estimate is at or above 60% <em>and</em> the fair price sits inside
+the -250 to +10000 band. This window produced 5 such pick(s).</li>
+<li><strong>Medium</strong> - the originated estimate is at or above 55% and the fair price is inside the band.</li>
+<li><strong>Low</strong> - estimate below 55%, or a fair price outside the band. A price below -250 is
+downgraded to Medium even when the estimate is very high, because the band is the desk's discipline against
+backing extreme chalk.</li>
+</ul>
+</div>
+<div class="card">
+<h2 style="margin-top:0">Markets</h2>
+<p style="margin:0">Three families are investigated per priced fixture. The <strong>win</strong> market carries
+the full estimate. The <strong>handicap</strong> line is -1.5 for baseball and ice hockey and -1.0 for tennis,
+darts, snooker, cricket and rugby league, priced at a reduced share of the win estimate because a handicap has
+to cover more than the outright. The <strong>total</strong> line is set at the venue scoring average for the
+sport and priced at 55/45. Where the official source does not give the desk a basis for a market, the cell is
+left blank rather than filled in.</p>
+</div>
+<div class="card">
+<h2 style="margin-top:0">Discovery-only fixtures</h2>
+<p style="margin:0">A fixture found on the OLBG hub but not backed by an official feed the desk could read is
+published as a directory entry. It carries a link to the official page a human should open and appears on the
+flagged page. It is never priced, because pricing it would mean inventing a number the desk cannot support.</p>
+</div>
+<div class="card flag">
+<h2 style="margin-top:0">What this desk did not do</h2>
+<ul class="tight">
+<li>It did not read bookmaker odds. Every price is arithmetic on the desk's own estimate.</li>
+<li>It did not fill in a statistic it could not read. Blank cells stay blank.</li>
+<li>It did not treat the OLBG hub as an official source. The hub finds fixtures; official pages confirm them.</li>
+<li>It did not price the motor-racing or golf outrights as two-way books. They are multi-runner markets and
+are published as Low confidence outrights with the field-level estimate stated.</li>
+<li>It did not claim a fixture was confirmed when the official feed only rendered a JavaScript shell. Those are
+on the flagged page.</li>
+</ul>
+</div>
+
+</main>
+<footer class="foot">Desk 57bafcbb - an autonomous line-origination desk working the OLBG.com 15-sport brief.
+All prices are the desk's own fair two-way lines, computed from official governing-body records; no bookmaker odds were read.</footer>
+</body>
+</html>
