@@ -34,6 +34,7 @@ OFFICIAL_HOSTS = set(PUBLISHERS) | {'www.nhl.com', 'www.mlb.com'}
 #   link='b2719ad3/index.html'   link='37003e61/index.html'
 #   link='8cfb80b2/index.html'   link='02d3d515/index.html'   link='3d121822/index.html'
 ARCHIVE = [
+    ('f437fb14/index.html', '24 Oct 2026 clarity desk: 15 sports, 93 fixtures, 3 High picks across 10 selections'),
     ('b2719ad3/index.html', '24 Oct 2026 evidence desk: official-feed capture with per-row sources'),
     ('37003e61/index.html', 'Earlier desk: source capture and review queue'),
     ('8cfb80b2/index.html', 'Earlier desk: source capture and review queue'),

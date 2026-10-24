@@ -6777,6 +6777,64 @@ be read from an official source for any priced match (F-321-11).
   conflict (F-321-01/02), the unreadable official routes for thirteen sports (F-321-03), blank injury fields
   (F-321-11) and the removed book-name attribution (F-321-13). None blocks publication; all are on
   `/321b595c/flagged.html` with evidence links.
+---
+
+## 85. Session `f437fb14-olbg1` — task claim `TF437F` (2026-10-24T17:42Z UTC)
+
+| # | Task | Status | Session | File scope | Started (UTC) | Notes |
+|---|------|--------|---------|------------|---------------|-------|
+| TF437F | **Clarity-first 24 Oct 2026 desk:** live OLBG discovery across the exact 15 brief sports; official governing-body re-verification for each retained row; multi-market line origination (winner, handicap/spread, match total, sport-specific families); strict High gate = originated probability > 70% **and** fair American inside −250…+10000; unique ≥30-word human predictions naming the selection; a dashboard whose landing page leads with a plain-language executive summary and a "where the picks are" block; repo line-by-line audit; Flagged-for-Review register; desk validator + tests; PR → merge → Pages read-back | in progress | f437fb14-olbg1 | `data/f437fb14/**`, `scripts/sf437fb14_*.py`, `f437fb14/**`, `reports/SESSION_F437FB14.{md,html}`, `tests/pipeline/test_desk_f437fb14.py`, append-only additions to `COORDINATION.md` | 2026-10-24T17:42Z | Pinned Arena branch `arena/f437fb14-olbg1` per §0.2. **Touched outside the namespace (one call site, recorded in §85.2):** `pipeline/build.py` `latest_desk()`. **Not touched:** `data/current/**`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `scripts/validate.py`, `.github/workflows/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`, and every peer `<id>/` desk. Base commit `1a203e9`. |
+
+### §85.0 Claim notes
+
+* **Why another desk.** The brief's recurring complaint is comprehension, not data volume: "the sites are too
+  confusing to understand what the matches are and where the picks are", plus "lots of high confidence picks are
+  just >70% market-price favourites" and "focus on −250…+10000". The last several desks either issued **zero**
+  High picks (`3d121822`, `8cfb80b2`, `0c9bc692`) or issued High picks that all landed on one price. This session
+  therefore treats the *presentation contract* (executive summary → pick → selection → price → where to find it) as
+  a first-class deliverable alongside the data.
+* **Single namespaced directory.** All output goes to `/f437fb14/` with machine-readable copies in
+  `data/f437fb14/`. The one shared file touched is the canonical front door in `pipeline/build.py`, because it was
+  sending readers to a 24-hour-old desk with zero High picks; that is recorded and re-validated in §85.2.
+* **Honesty rules carried forward.** OLBG is discovery only. Tip shares are votes, never probabilities. A value that
+  cannot be read from an official page stays blank and is flagged. Nothing is labelled High unless the arithmetic
+  gate passes in both directions.
+
+### §85.1 — `TF437F` result (2026-10-24T18:45Z)
+
+**Status: done.** Desk published at `/f437fb14/` (26 pages); JSON in `data/f437fb14/`.
+
+* **Scope, with one recorded exception.** `scripts/sf437fb14_*.py`, `f437fb14/**`,
+  `data/f437fb14/**`, `tests/pipeline/test_desk_f437fb14.py`, `reports/SESSION_F437FB14.md` and this
+  append-only section. **Exception:** `pipeline/build.py` `latest_desk()` — the front-door band on the
+  canonical landing page was hardcoded to `3d121822/index.html`, a desk that published zero High picks,
+  while the checked-in root HTML was pointing at three different desks at once (a hand-added
+  `8cfb80b2` band, a generated `02d3d515` panel, and a `3d121822` default in code). That is the exact
+  confusion the brief complains about, so the one call site now resolves to `f437fb14/index.html`.
+  No other shared file was touched; `pipeline.validate` was re-run before and after.
+* **Sources read (17:42–18:35Z):** all 15 OLBG hubs (discovery only), MLB Stats API schedule +
+  people + standings, NBA games + standings, NHL schedule + standings, WST matches, formula1.com race
+  hub, WTA scores, Lega Pallavolo, GAA fixtures. Unusable and recorded as such: `stats.nba.com`,
+  `cdn.nba.com` (HTTP 500), `atptour.com` (404), WTA draw (shell), `pdc.tv` (cookie wall),
+  `premiershiprugby.com`, `legavolley.it` (navigation only), `gbgb.org.uk` (no racecard).
+* **Counts:** 93 fixtures/races across 13 of 15 sports · 10 fixtures priced · 40 market outcomes ·
+  10 selections (3 High, 7 Medium) all inside −250…+10000 · 10 unique write-ups (62–78 words, no
+  shared six-gram, no banned vocabulary) · 12 flags (3 high).
+* **Irregularities:** F-F4-01 no availability report readable, so no injury claim appears anywhere;
+  F-F4-02 the brief's >70% condition and its −250 floor intersect in a 1.43-point window (70% is −233,
+  −250 is 71.43%) — the literal conjunction yields 0 of today's 10 picks, reported rather than hidden;
+  F-F4-03 eleven sports priced nothing; F-F4-04 NHL standings payload readable for only 4 of 32 clubs;
+  F-F4-06 greyhound race clock and rendered start five hours apart; F-F4-07 a 4.50 league anchor stands
+  in for Milwaukee's run rate.
+* **Rebase conflict, resolved without losing peer work.** Peer session `b2719ad3-olbg1` had merged a new
+  `latest_desk()` (pointing at `b2719ad3/index.html` with an alternates list) into the same function this
+  session repointed, and had also claimed a `## 84` heading. Resolution: this session's section is
+  renumbered to **§85**, and the front door is rewritten as one generic desk list
+  (`f437fb14` → `b2719ad3` → `02d3d515` → `8cfb80b2` → `3d121822`) that renders whichever desks exist and
+  lists the rest as "Also preserved". Neither side's desk is dropped and no peer data file was touched.
+* **Gates:** `scripts/sf437fb14_validate.py` 887 checks / 0 errors · `tests.pipeline.test_desk_f437fb14`
+  13 OK · `pipeline.validate --site .` 0 errors · `scripts/validate.py` swept 1,584 pages, 0 errors,
+  3 pre-existing `f7fa77fc` warnings.
 
 ---
 
