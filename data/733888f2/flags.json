@@ -1,0 +1,130 @@
+{
+  "items": [
+    {
+      "id": "F-01",
+      "title": "Golf hub served no events",
+      "type": "discovery",
+      "source": "https://www.olbg.com/betting-tips/Golf/5",
+      "detail": "The Golf hub returned \"No tips found\" at 2026-10-24T22:29Z, so no golf market could be listed and no golf pick exists. Nothing is invented to fill the gap."
+    },
+    {
+      "id": "F-02",
+      "title": "Snooker hub served no events",
+      "type": "discovery",
+      "source": "https://www.olbg.com/betting-tips/Snooker/8",
+      "detail": "The Snooker hub returned \"No tips found\" at 2026-10-24T22:31Z."
+    },
+    {
+      "id": "F-03",
+      "title": "Motor Racing hub served no events",
+      "type": "discovery",
+      "source": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+      "detail": "The Motor Racing hub returned \"No tips found\" although its page still prints the 2026 F1 calendar."
+    },
+    {
+      "id": "F-04",
+      "title": "Rugby League has outrights only",
+      "type": "discovery",
+      "source": "https://www.olbg.com/betting-tips/Rugby_League/10",
+      "detail": "The only Rugby League rows are State of Origin 2027, Super League 2027 and NRL 2027 outrights. There is no match market to price in the next 48 hours."
+    },
+    {
+      "id": "F-05",
+      "title": "OLBG lists completed darts matches as upcoming",
+      "type": "upstream data defect",
+      "source": "https://www.pdc.tv/news/2026/october/19/2026-machineseeker-european-championship-schedule-confirmed/",
+      "detail": "OLBG shows \"Ross Smith v Luke Woodhouse\" and \"Price v Bunting\" as tomorrow. The PDC schedule puts them in Saturday's second round, and PDC reports show Smith beat Heta 10-7 and Woodhouse beat van Veen 10-6; Price beat Menzies 10-4 and Bunting beat Huybrechts 10-3. Publishing a pick on either would be publishing on a played match, so both are excluded."
+    },
+    {
+      "id": "F-06",
+      "title": "Handball \"most popular selection\" is the draw",
+      "type": "upstream data defect",
+      "source": "https://www.olbg.com/betting-tips/Handball/20",
+      "detail": "On most handball fixtures OLBG highlights \"Tie\" as the most-tipped selection. That reflects tipster behaviour, not probability, and cannot be converted into a price."
+    },
+    {
+      "id": "F-07",
+      "title": "NHL listing prints one identical start time",
+      "type": "upstream data defect",
+      "source": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+      "detail": "All ten NHL games on the hub carry the same 19:07 start time and no timezone. The NHL feed shows five different start times between 19:00Z and 02:00Z the next day. This desk times every hockey row from the NHL feed and never from OLBG."
+    },
+    {
+      "id": "F-08",
+      "title": "NBA machine-readable data unreachable",
+      "type": "access limitation",
+      "source": "https://www.nba.com/games",
+      "detail": "nba.com/games served a calendar shell (8 games on 24 Oct, 7 on 25 Oct) with no matchup data and the message \"Sorry, something went wrong\". cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json returned HTTP 500 twice and stats.nba.com was unreachable. No official record was read, so all seven NBA games are listed without a price."
+    },
+    {
+      "id": "F-09",
+      "title": "SuperLega page body not retrievable",
+      "type": "access limitation",
+      "source": "https://www.legavolley.it/2026/1a-giornata-and-18-10-2026-regular-season-superlega-stagione-2026-risultati-classifica/",
+      "detail": "The official Lega Pallavolo page opened, but the retrieval layer returned only navigation chrome, so no standings value is published. The five Italian fixtures appear in the table without a price."
+    },
+    {
+      "id": "F-10",
+      "title": "Tennis draw confirmed but form not read",
+      "type": "evidence gap",
+      "source": "https://www.atptour.com/en/news/djokovic-basel-2026-draw-preview",
+      "detail": "The ATP report confirms Djokovic v Humbert and Wawrinka v Lehecka in Basel, and those two rows cite it. No ATP ranking or 2026 match record was read, so all tennis rows are listed without a price."
+    },
+    {
+      "id": "F-11",
+      "title": "Cricket: fixtures confirmed, form not read",
+      "type": "evidence gap",
+      "source": "https://www.ecb.co.uk/news/4562387/pakistan-to-host-sri-lanka-and-england-in-odi-triseries",
+      "detail": "Three tri-series fixtures carry an official date and venue from the ECB. No PCB scorecard, squad or toss was read, so no cricket price is published."
+    },
+    {
+      "id": "F-12",
+      "title": "Gaelic and greyhound inputs missing",
+      "type": "evidence gap",
+      "source": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+      "detail": "No GAA county board fixture page and no GBGB card was read, so none of the four Gaelic fixtures or the single Doncaster race carries a price."
+    },
+    {
+      "id": "F-13",
+      "title": "Zero band-qualifying High picks, and why",
+      "type": "arithmetic disclosure",
+      "source": "https://www.olbg.com/betting-tips",
+      "detail": "A fair price of -250 is 71.43%. Requiring both \"more than 70%\" and \"inside -250 to +10000\" leaves a window from 70.00% to 71.43%. Six of this desk's seven picks sit outside it: five below 70%, and the two strongest (Minnesota at 72.5%, Saracens at 82.1%) above the ceiling. Both are published as \"Strong, outside the requested band\" rather than being relabelled High."
+    },
+    {
+      "id": "F-14",
+      "title": "No injury document was read",
+      "type": "evidence gap",
+      "source": "https://www.nhl.com",
+      "detail": "No NHL, MLB or Premiership Rugby injury/availability report was read this session. The rugby row uses the two named 23s because both clubs published them; no player is described as injured anywhere on this site."
+    },
+    {
+      "id": "F-15",
+      "title": "Repository publishes a fraction of its desks",
+      "type": "repo finding",
+      "source": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/pipeline/build.py",
+      "detail": "The repository holds 75 top-level desks with an index.html, but the canonical publisher registers 16 of them in ARCHIVE. The other 59 are reachable in git and in the repository tree but not on the live site."
+    },
+    {
+      "id": "F-16",
+      "title": "Root README no longer matches the tree",
+      "type": "repo finding",
+      "source": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/README.md",
+      "detail": "README.md describes \"one dashboard, nine top-level pages and fifteen sport pages\" and a 25-page artifact, while the checkout holds 1,856 HTML files and 89 top-level directories."
+    },
+    {
+      "id": "F-17",
+      "title": "Session desks have fragmented the tree",
+      "type": "repo finding",
+      "source": "https://github.com/buffedlizard55-lab/OLBG1",
+      "detail": "89 top-level directories and 97 data directories, one set per session, with no shared index of which desk supersedes which. This desk is namespaced under 733888f2/ for that reason and adds one archive line."
+    },
+    {
+      "id": "F-18",
+      "title": "OLBG clock is not a timezone we can assert",
+      "type": "discovery caveat",
+      "source": "https://www.olbg.com/betting-tips/Tennis/3",
+      "detail": "OLBG prints event times on a geo-adjusted clock (\"Today\", \"Tomorrow\"), with no timezone label. Every time taken from OLBG is reproduced as displayed and is never converted or asserted as UTC."
+    }
+  ]
+}

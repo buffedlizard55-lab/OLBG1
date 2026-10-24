@@ -1,0 +1,36 @@
+{
+  "captured_utc": "2026-10-24T22:30:00Z",
+  "role": "discovery only: event names, market labels and tip counts; never used as a fact source",
+  "hubs": [
+    {"sport":"Golf","olbg_id":5,"url":"https://www.olbg.com/betting-tips/Golf/5","result":"No tips found (hub served no event rows at read time)"},
+    {"sport":"Cricket","olbg_id":7,"url":"https://www.olbg.com/betting-tips/Cricket/7","events":[
+      {"name":"Toronto Kings vs Vancouver Guardians T20","hint":"today 19:00","market":"Win Match"},
+      {"name":"Pakistan vs England One Day Match","hint":"tomorrow 04:00","market":"Win Match"},
+      {"name":"North West Dragons vs Northern Cape Heat T20","hint":"tomorrow 07:00","market":"Win Match"},
+      {"name":"Tuskers vs Western Province T20","hint":"tomorrow 07:00","market":"Win Match"},
+      {"name":"Eastern Storm vs South Africa Emerging T20","hint":"tomorrow 07:00","market":"Win Match"},
+      {"name":"Boland vs Titans T20","hint":"tomorrow 07:00","market":"Win Match"},
+      {"name":"India W vs Zimbabwe W 2nd ODI","hint":"tomorrow 04:30","market":"Top Team1 Batsman"},
+      {"name":"New Zealand vs India 3rd T20 Match","hint":"27 Oct 03:00","market":"Win Match"},
+      {"name":"Namibia vs Ireland 3rd ODI","hint":"27 Oct 03:30","market":"Win Match"},
+      {"name":"South Africa vs Australia","hint":"31 Oct 04:30","market":"Man Of The Match"}
+    ]},
+    {"sport":"Darts","olbg_id":15,"url":"https://www.olbg.com/betting-tips/Darts/15","events":[
+      {"name":"Ross Smith vs Luke Woodhouse","hint":"tomorrow 08:15","market":"Win Match 2-way"},
+      {"name":"Gerwyn Price vs Stephen Bunting","hint":"tomorrow 09:15","market":"Total 180s Over 10.50"},
+      {"name":"European Championship (outright)","hint":"tomorrow 14:00","market":"Win Tournament"}
+    ]},
+    {"sport":"Tennis","olbg_id":3,"url":"https://www.olbg.com/betting-tips/Tennis/3","events":[
+      {"name":"Elena Rybakina vs Leylah Fernandez","hint":"tomorrow 05:00"},
+      {"name":"Daniil Medvedev vs Nikoloz Basilashvili","hint":"tomorrow 06:00"},
+      {"name":"Ashlyn Krueger vs Katerina Siniakova","hint":"tomorrow 00:30"},
+      {"name":"Stan Wawrinka vs Jiri Lehecka","hint":"26 Oct 06:00"},
+      {"name":"Lorenzo Musetti vs Taylor Fritz","hint":"tomorrow 09:30"},
+      {"name":"Novak Djokovic vs Ugo Humbert","hint":"26 Oct 06:00"},
+      {"name":"Taylor Fritz vs Stefanos Tsitsipas","hint":"26 Oct 06:00"},
+      {"name":"Holger Rune vs Quentin Halys","hint":"26 Oct 06:00"},
+      {"name":"Ben Shelton vs Casper Ruud","hint":"26 Oct 06:00"},
+      {"name":"Alejandro Davidovich Fokina vs Zizou Bergs","hint":"26 Oct 06:00"}
+    ],"note":"OLBG serves event times on a GeoIP-adjusted clock; times are recorded as displayed and are not asserted as UTC."}
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "method": "fair two-way prices, decimal = 1/p, no margin added",
+  "model_source": "scripts/s733888f2_model.py",
+  "rows": [
+    {
+      "id": "NHL-1",
+      "winner": {
+        "home": {
+          "p": 0.37636637170177395,
+          "american": 166.0,
+          "decimal": 2.657
+        },
+        "away": {
+          "p": 0.623633628298226,
+          "american": -166.0,
+          "decimal": 1.604
+        }
+      },
+      "handicap": {
+        "line": 0.5,
+        "p_home_covers": 0.28156590902382517,
+        "home_american": 255.0,
+        "away_american": -255.0,
+        "sigma": 1.9,
+        "basis": "structural estimate from the win probability"
+      },
+      "pick": {
+        "side": "away",
+        "selection": "Florida Panthers",
+        "opponent": "Chicago Blackhawks",
+        "market": "Moneyline (match winner)",
+        "p": 0.623633628298226,
+        "american": -166.0,
+        "decimal": 1.604,
+        "implied_pct": 62.4,
+        "tier": "Medium",
+        "in_band": true
+      },
+      "pick_id": "Florida Panthers"
+    },
+    {
+      "id": "NHL-2",
+      "winner": {
+        "home": {
+          "p": 0.5609454503247162,
+          "american": -128.0,
+          "decimal": 1.783
+        },
+        "away": {
+          "p": 0.4390545496752838,
+          "american": 128.0,
+          "decimal": 2.278
+        }
+      },
+      "handicap": {
+        "line": -0.5,
+        "p_home_covers": 0.6614869149967644,
+        "home_american": -195.0,
+        "away_american": 195.0,
+        "sigma": 1.9,
+        "basis": "structural estimate from the win probability"
+      },
+      "pick": {
+        "side": "home",
+        "selection": "Dallas Stars",
+        "opponent": "New York Islanders",
+        "market": "Moneyline (match winner)",
+        "p": 0.5609454503247162,
+        "american": -128.0,
+        "decimal": 1.783,
+        "implied_pct": 56.1,
+        "tier": "Medium",
+        "in_band": true
+      },
+      "pick_id": "Dallas Stars"
+    },
+    {
+      "id": "NHL-3",
+      "winner": {
+        "home": {
+          "p": 0.46879062662624377,
+          "american": 113.0,
+          "decimal": 2.133
+        },
+        "away": {
+          "p": 0.5312093733737562,
+          "american": -113.0,
+          "decimal": 1.882
+        }
+      },
+      "handicap": {
+        "line": 0.0,
+        "p_home_covers": 0.4687906266262437,
+        "home_american": 113.0,
+        "away_american": -113.0,
+        "sigma": 1.9,
+        "basis": "structural estimate from the win probability"
+      },
+      "pick": {
+        "side": "away",
+        "selection": "Montreal Canadiens",
+        "opponent": "Winnipeg Jets",
+        "market": "Moneyline (match winner)",
+        "p": 0.5312093733737562,
+        "american": -113.0,
+        "decimal": 1.882,
+        "implied_pct": 53.1,
+        "tier": "Low",
+        "in_band": true
+      },
+      "pick_id": "Montreal Canadiens"
+    },
+    {
+      "id": "NHL-4",
+      "winner": {
+        "home": {
+          "p": 0.4671104968808874,
+          "american": 114.0,
+          "decimal": 2.141
+        },
+        "away": {
+          "p": 0.5328895031191125,
+          "american": -114.0,
+          "decimal": 1.877
+        }
+      },
+      "handicap": {
+        "line": 0.0,
+        "p_home_covers": 0.46711049688088735,
+        "home_american": 114.0,
+        "away_american": -114.0,
+        "sigma": 1.9,
+        "basis": "structural estimate from the win probability"
+      },
+      "pick": {
+        "side": "away",
+        "selection": "Colorado Avalanche",
+        "opponent": "Nashville Predators",
+        "market": "Moneyline (match winner)",
+        "p": 0.5328895031191125,
+        "american": -114.0,
+        "decimal": 1.877,
+        "implied_pct": 53.3,
+        "tier": "Low",
+        "in_band": true
+      },
+      "pick_id": "Colorado Avalanche"
+    },
+    {
+      "id": "NHL-5",
+      "winner": {
+        "home": {
+          "p": 0.2752968629281496,
+          "american": 263.0,
+          "decimal": 3.632
+        },
+        "away": {
+          "p": 0.7247031370718504,
+          "american": -263.0,
+          "decimal": 1.38
+        }
+      },
+      "handicap": {
+        "line": 1.0,
+        "p_home_covers": 0.1306791545085777,
+        "home_american": 665.0,
+        "away_american": -665.0,
+        "sigma": 1.9,
+        "basis": "structural estimate from the win probability"
+      },
+      "pick": {
+        "side": "away",
+        "selection": "Minnesota Wild",
+        "opponent": "Vancouver Canucks",
+        "market": "Moneyline (match winner)",
+        "p": 0.7247031370718504,
+        "american": -263.0,
+        "decimal": 1.38,
+        "implied_pct": 72.5,
+        "tier": "Strong",
+        "in_band": false
+      },
+      "pick_id": "Minnesota Wild"
+    },
+    {
+      "id": "MLB-1",
+      "winner": {
+        "home": {
+          "p": 0.5821734425670285,
+          "american": -139.0,
+          "decimal": 1.718
+        },
+        "away": {
+          "p": 0.4178265574329715,
+          "american": 139.0,
+          "decimal": 2.393
+        }
+      },
+      "handicap": {
+        "line": -0.5,
+        "p_home_covers": 0.6385237572370386,
+        "home_american": -177.0,
+        "away_american": 177.0,
+        "sigma": 3.4,
+        "basis": "structural estimate from the win probability"
+      },
+      "pick": {
+        "side": "home",
+        "selection": "Milwaukee Brewers",
+        "opponent": "Tampa Bay Rays",
+        "market": "Moneyline (match winner)",
+        "p": 0.5821734425670285,
+        "american": -139.0,
+        "decimal": 1.718,
+        "implied_pct": 58.2,
+        "tier": "Medium",
+        "in_band": true
+      },
+      "pick_id": "Milwaukee Brewers"
+    },
+    {
+      "id": "RU-1",
+      "winner": {
+        "home": {
+          "p": 0.17946151940732685,
+          "american": 457.0,
+          "decimal": 5.572
+        },
+        "away": {
+          "p": 0.8205384805926732,
+          "american": -457.0,
+          "decimal": 1.219
+        }
+      },
+      "handicap": {
+        "line": 11.0,
+        "p_home_covers": 0.03332062783080869,
+        "home_american": 2901.0,
+        "away_american": -2901.0,
+        "sigma": 12.0,
+        "basis": "structural estimate from the win probability"
+      },
+      "pick": {
+        "side": "away",
+        "selection": "Saracens",
+        "opponent": "Harlequins",
+        "market": "Moneyline (match winner)",
+        "p": 0.8205384805926732,
+        "american": -457.0,
+        "decimal": 1.219,
+        "implied_pct": 82.1,
+        "tier": "Strong",
+        "in_band": false
+      },
+      "pick_id": "Saracens"
+    }
+  ]
+}
