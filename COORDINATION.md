@@ -7019,3 +7019,29 @@ Fresh `_site` was rebuilt after removing stale output from the prior canonical g
 - **Deployment:** production run [`40121498689`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40121498689), on descendant `b5bb1c6`, completed successfully including `Publish canonical GitHub Pages`.
 - **Served-content proof:** cache-busted HTTPS reads returned `/23728b2b/index.html` with seven High picks, `/23728b2b/matches.html` with 55 rows, `/23728b2b/flagged.html` with 19 items, the Civitanova High-analysis deep link with its official Lega Volley source, and the root archive link to this desk. Read-back was based on page content, not API status alone.
 - **Receipt and snapshot:** details are in `reports/SESSION_23728B2B.{md,html}` and `data/23728b2b/publication.json`. Publication did not refresh evidence or prices: the cut-off remains `2026-10-24T17:56:39Z`, the desk is not a live tracker, and Ospreys–Dragons is not claimed to be currently upcoming.
+
+### 85.3 — `T580F` final status, 2026-10-24T19:05Z UTC
+
+* **PRs:** [#240](https://github.com/buffedlizard55-lab/OLBG1/pull/240) (desk) merged `bbfb08b`;
+  [#266](https://github.com/buffedlizard55-lab/OLBG1/pull/266) (receipt + F-12) merged `fbe31b9`;
+  [#269](https://github.com/buffedlizard55-lab/OLBG1/pull/269) (sourced NBA availability) merged `b2270c2`.
+  All three merged without waiting, per the brief.
+* **Content upgrade after first merge:** the official NBA injury report (24 Oct 2026, 1:00 PM ET filing,
+  `ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_00PM.pdf`) is now cited as source
+  `nba-injury`, the five basketball rows carry real statuses, and all five write-ups use them. Two games
+  (MIL@PHI away side, SAS@DAL both sides) are still marked *not yet submitted* by the league and therefore
+  stay blank — "unknown" recorded as unknown. F-03 narrowed accordingly; the eight non-basketball priced
+  rows remain blank because no official availability document was read for them.
+* **Gates after the upgrade:** `scripts/s580f43c9_validate.py` 719/719 · `tests.pipeline.test_desk_580f43c9`
+  14 OK · `scripts/validate.py` PASSED · `python3 -m pipeline.validate --site .` 0 errors ·
+  `python3 -m pipeline.build --out /tmp/sitecheck` includes `580f43c9/`.
+* **Pages: still not serving this desk, and this is repository-wide.** `GET /repos/.../pages/builds` shows
+  an intermittent pattern: `built` at `fea24c5` (18:43:47Z), `errored — Page build failed` at `a61ad92`
+  (18:51:39Z), `building` at `014c7ae` (18:52:49Z). Live read-backs at 19:05Z: `/580f43c9/index.html`,
+  `/580f43c9/picks.html` (this session) **and** `/today/index.html` (session `7f1bf9f7`) all return the site 404;
+  `/b2719ad3/index.html` and `/02d3d515/index.html` serve normally. The published tree therefore stops at
+  roughly the 17:40Z commit, i.e. every desk merged after that point is invisible — not a defect in this desk's
+  markup or links. Recorded as F-12 with the API evidence; the fix (Pages settings / build failure) is
+  repository-level and outside this session's write scope.
+* **Re-check:** load `https://buffedlizard55-lab.github.io/OLBG1/580f43c9/index.html` — if it still 404s while
+  `/b2719ad3/` serves, read `/repos/{owner}/{repo}/pages/builds` and take the newest `errored` message.
