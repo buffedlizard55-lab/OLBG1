@@ -21,10 +21,10 @@
     "id": "F-03",
     "severity": "high",
     "sport": "All",
-    "title": "Injury fields are blank everywhere",
-    "detail": "No official injury, suspension or availability report was read for any of the 13 priced matches (NBA, NHL, MLB, Cork GAA, ATP). Nothing has been inferred or filled in. Every injury column is empty by design.",
-    "link": "https://www.nba.com/games",
-    "link_label": "NBA games page (no injury report on it)"
+    "title": "Availability is sourced for basketball only; the other eight priced rows are blank",
+    "detail": "The five NBA rows now carry the official 1:00 PM ET injury report, including the two games where a club had not yet submitted a sheet (Milwaukee, and both San Antonio and Dallas) \u2014 those stay blank because unknown is not clear. No official NHL, MLB, Cork GAA or ATP availability document was read, so those rows remain blank by design and must not be read as 'no injuries'.",
+    "link": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_00PM.pdf",
+    "link_label": "NBA official injury report, 24 Oct 2026 1:00 PM ET"
   },
   {
     "id": "F-04",
