@@ -6264,3 +6264,25 @@ remaining candidates.
 * **#224** — per-sport coverage gaps now report that sport's own numbers (upcoming fixtures, opposite-favourite fixtures, the rules that removed how many lines) instead of one paragraph repeated 15 times; `R4 below 60%` renamed to `R4 below 70%`.
 * Main runs for all three **success**; Pages read-back of `/6b47ea39/picks.html` confirms the per-sport reasons and of `/6b47ea39/index.html` confirms readable selections.
 
+
+---
+
+## T0C9 — Session `0c9bc692-olbg1` claim (2026-10-24 UTC)
+
+| Task | Status | Session | File scope | Started (UTC) | Notes |
+|---|---|---|---|---|---|
+| **T0C9** — Independent 24 Oct evidence-first 15-sport review desk: re-read accessible official sources for the named sports; publish only fields observed in this session; record every unavailable/unsupported fixture as blank with an official recheck link; investigate winner, handicap/spread, total and sport-specific market families without inventing market availability; present any conservative originated estimates as Low unless all requirements are evidenced; create a clear namespaced executive-summary dashboard plus category tables, sources, methodology, and Flagged for Review; run a desk-specific structural validator and preserve a reproducibility report. | needs review | 0c9bc692-olbg1 | `data/0c9bc692/**`, `scripts/s0c9bc692_*.py`, `0c9bc692/**`, `reports/SESSION_0C9BC692.md`, `tests/pipeline/test_desk_0c9bc692.py`, append-only `COORDINATION.md` only | 2026-10-24T00:00:00Z | Build complete; `needs review` only records published coverage/High-pick shortfalls and does not block Pages publication. Pinned Arena branch per §0.2. Strict namespaced scope: no root dashboard, `pipeline/**`, workflows, `data/current/**`, other desk, or shared validator edits. |
+
+### T0C9 — Completion checkpoint (2026-10-24 UTC; publication receipt pending)
+
+**Delivered scope.** Added the isolated `/0c9bc692/` desk: a plain-language executive summary, full retained-match table, market-investigation table, written-analysis view, 15 category pages, OLBG route/map page, source register, methodology, desk audit and Flagged for Review. The reproducible inputs and results are in `data/0c9bc692/`; `reports/SESSION_0C9BC692.md` states the boundary and regeneration commands.
+
+**Direct reads recorded in this session.** Public official pages were read for the 15 requested categories: PGA TOUR, Volleyball World, URC, NZC, WST, PDC, MLB Stats API, GAA, GBGB, ATP Tour, Formula1.com, EHF, NHL API, NBA.com and NRL.com. Exact event facts retained only when named by the official source: 8 NBA schedules, 3 NHL schedules, 1 MLB World Series schedule, 1 WST semi-final, 2 F1 sessions and 2 NRL World Cup fixtures (17 rows). Darts and Gaelic OLBG discoveries are shown but blank/held because their official pages did not confirm the named fixture. Every rendered fixture row links its official manual-review source.
+
+**OLBG observation.** Public OLBG landing and three event pages were read. The desk records observed route syntax, event titles and market labels (Snooker: Win Match/Handicap/Frame; Darts: Win Match/180s/handicap/legs; Gaelic Football: FT Result/Handicap) but treats them as discovery only. No community count was promoted to official sporting evidence, a bookmaker quote, or a price.
+
+**Price/prediction disposition.** The executive list contains **0 High** picks and the source-backed Low research note is Mark Williams to win at a transparent fair display of -150 (60% / 1.67). Its unique 83-word note states the selection and only the WST draw results actually read; it does not use prohibited prediction wording. The remaining 57 market rows are visibly withheld. This deliberately leaves a 75-pick shortfall against the requested five-High-per-sport ambition; it is published as `F-0C9-01`/`F-0C9-02`, not concealed by arbitrary picks.
+
+**Checks.** `python3 scripts/s0c9bc692_build.py`; `python3 scripts/s0c9bc692_validate.py` (**511 checks, 0 errors**); `python3 -m unittest tests.pipeline.test_desk_0c9bc692 -v` (4 passed); whole `tests/pipeline` discovery (**395 passed**); `python3 -m pipeline.build --out _site` (96 canonical pages, desk present); `python3 -m pipeline.validate --site _site` (0 errors); and `python3 scripts/validate.py` (0 errors; 3 pre-existing archived warnings in `f7fa77fc/flagged.html`). A local static-link sweep found 0 broken desk links.
+
+**Open review items, non-blocking.** This is a narrow, time-bounded selection import, not a full worldwide schedule or a proof that an OLBG market is currently placeable. Several queried official routes were not found/consent blocked/stale, all timezone gaps remain literal, and no current lineup, injury or actual price was invented. PR, merge and live Pages read-back receipts will be appended only after they occur.

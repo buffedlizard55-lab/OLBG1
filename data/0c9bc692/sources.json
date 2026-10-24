@@ -1,0 +1,111 @@
+{
+  "session": "0c9bc692-olbg1",
+  "observed_window": "24 Oct 2026, 17:09 UTC (single session)",
+  "sources": [
+    {
+      "id": "pga",
+      "label": "PGA TOUR schedule",
+      "sport": "golf",
+      "url": "https://www.pgatour.com/schedule/2026",
+      "result": "Official 2026 schedule page was read; this desk did not retain a current 24–25 October player field from it."
+    },
+    {
+      "id": "vworld",
+      "label": "Volleyball World competition URL",
+      "sport": "volleyball",
+      "url": "https://en.volleyballworld.com/volleyball/competitions/vnl-2026/",
+      "result": "Official domain returned Page Not Found for the queried VNL 2026 route; no fixture was inferred."
+    },
+    {
+      "id": "urc",
+      "label": "United Rugby Championship fixtures URL",
+      "sport": "rugby-union",
+      "url": "https://www.unitedrugby.com/fixtures",
+      "result": "Official domain returned 404 for the queried fixtures route; no fixture was inferred."
+    },
+    {
+      "id": "nzc",
+      "label": "New Zealand Cricket matches hub",
+      "sport": "cricket",
+      "url": "https://www.nzc.nz/matches/",
+      "result": "The official hub links to fixtures, results and live scorecards but the observed page did not expose an exact upcoming pairing retained here."
+    },
+    {
+      "id": "wst",
+      "label": "World Snooker Tour draw",
+      "sport": "snooker",
+      "url": "https://www.wst.tv/matches/",
+      "result": "The official Northern Ireland Open draw showed Mark Williams v Jak Jones as scheduled at 14:00 on Saturday 24 October and the final at 08:00 Sunday 25 October."
+    },
+    {
+      "id": "pdc",
+      "label": "PDC official calendar",
+      "sport": "darts",
+      "url": "https://www.pdc.tv/calendar/",
+      "result": "The official site presented its consent layer rather than readable fixture content in this retrieval; an OLBG-discovered darts pairing is not confirmed by this source."
+    },
+    {
+      "id": "mlb",
+      "label": "MLB Stats API schedule",
+      "sport": "baseball",
+      "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24",
+      "result": "Game 849802: Tampa Bay Rays at Milwaukee Brewers; 2026-10-25T00:00:00Z; Scheduled; World Series Game 2; American Family Field; ifNecessary=N."
+    },
+    {
+      "id": "gaa",
+      "label": "GAA fixtures and results",
+      "sport": "gaelic-sports",
+      "url": "https://www.gaa.ie/fixtures-results",
+      "result": "Observed page showed Ireland v Scotland as Shinty-Hurling International at 18:00 Saturday 24 October, marked Final. It did not confirm either OLBG Gaelic Football club listing retained for review."
+    },
+    {
+      "id": "gbgb",
+      "label": "Greyhound Board of Great Britain",
+      "sport": "greyhounds",
+      "url": "https://www.gbgb.org.uk/meetings/",
+      "result": "The queried route resolved to a dated 2018 disruption article. It is not used as a contemporary fixture or runner source."
+    },
+    {
+      "id": "atp",
+      "label": "ATP Tour tournaments",
+      "sport": "tennis",
+      "url": "https://www.atptour.com/en/tournaments",
+      "result": "Official calendar page was read. No named 24–25 October head-to-head was retained from the observed response."
+    },
+    {
+      "id": "f1",
+      "label": "Formula 1 United States Grand Prix",
+      "sport": "motor-racing",
+      "url": "https://www.formula1.com/en/racing/2026/united-states",
+      "result": "Official page lists Practice 3 13:30–14:30 and qualifying 17:00–18:00 on 24 October, followed by the race at 16:00 on 25 October. The page labels these Track Time; no timezone conversion is made."
+    },
+    {
+      "id": "ehf",
+      "label": "EHF Champions League matches URL",
+      "sport": "handball",
+      "url": "https://www.eurohandball.com/en/competitions/ehf-champions-league/men/2026-27/matches/",
+      "result": "Official domain returned Error404 for the queried route; no fixture was inferred."
+    },
+    {
+      "id": "nhl",
+      "label": "NHL official schedule API",
+      "sport": "ice-hockey",
+      "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+      "result": "Official schedule exposed ANA–PHI 17:00 UTC (PRE), LAK–NJD 19:30 UTC (FUT), and SJS–BOS 23:00 UTC (FUT), with venues and game IDs."
+    },
+    {
+      "id": "nba",
+      "label": "NBA official schedule",
+      "sport": "basketball",
+      "url": "https://www.nba.com/schedule?date=2026-10-24",
+      "result": "Official Saturday 24 October schedule lists eight games with ET display times and venues; this desk preserves that display timezone rather than converting it."
+    },
+    {
+      "id": "nrl",
+      "label": "NRL / Rugby League World Cup draw",
+      "sport": "rugby-league",
+      "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+      "result": "Official Round 2 page lists New Zealand v Cook Islands, Sunday 25 October kick-off 1:05am at One NZ Stadium, and Australia v Fiji, Sunday 25 October kick-off 5:05am at Suncorp Stadium. The page does not state a timezone next to these times."
+    }
+  ]
+}
