@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Snooker fixtures, independent lines and official sporting evidence">
+  <title>Snooker · Desk 23728b2b</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark">24</span><span>OLBG research desk<small>23728b2b · 24 Oct 2026</small></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" aria-label="Desk navigation"><a href="../index.html">Executive summary</a><a href="../matches.html">All matches</a><a href="../sources.html">Sources</a><a href="../methodology.html">Methodology</a><a href="../flagged.html">Flagged for Review</a><a href="../repository-audit.html">Repository audit</a></nav>
+  </div>
+</header>
+<main id="main" class="page-shell">
+
+<section class="page-heading sport-heading"><p class="eyebrow">0 priced · 0 High · 0 total rows</p><h1>Snooker</h1><p>Williams–Jones was listed, but the official live context prevented an upcoming-match sale.</p><div class="heading-actions"><a class="button button-secondary" href="../matches.html">All sports</a><a href="https://www.olbg.com/betting-tips/Snooker/8" target="_blank" rel="noopener noreferrer">OLBG discovery hub ↗</a></div></section>
+<div class="snapshot-note"><strong>Snapshot:</strong> 2026-10-24T17:56:39Z. Exact blank times and missing availability are not inferred. Prices are independent estimates, not bookmaker quotes.</div>
+<div class="empty-state"><h2>No priced fixture</h2><p>Williams–Jones was not upcoming on the official read. With no settled subsequent final pairing, no new event is manufactured.</p><a class="button button-secondary" href="../flagged.html">Read the coverage flags</a></div>
+
+</main>
+<footer class="site-footer">
+  <div><strong>Research snapshot, not a live odds service.</strong> Prices are independent fair-price estimates, not bookmaker offers. Sporting facts were read at 2026-10-24T17:56:39Z; recheck status, availability and start times before use.</div>
+  <div>18+ · No outcome is guaranteed · <a href="../methodology.html">How lines and confidence work</a> · <a href="../flagged.html">19 disclosed review items</a></div>
+</footer>
+<script>(() => {
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('#site-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  }
+
+  const table = document.querySelector('#match-table');
+  if (!table) return;
+  const sport = document.querySelector('#sport-filter');
+  const confidence = document.querySelector('#confidence-filter');
+  const search = document.querySelector('#match-search');
+  const count = document.querySelector('#filter-count');
+  const empty = document.querySelector('#no-filter-results');
+  const rows = [...table.tBodies[0].rows];
+
+  function applyFilters() {
+    const query = search.value.trim().toLowerCase();
+    let visible = 0;
+    rows.forEach(row => {
+      const sportMatch = sport.value === 'all' || row.dataset.sport === sport.value;
+      const tierMatch = confidence.value === 'all' || row.dataset.confidence === confidence.value;
+      const searchMatch = !query || row.dataset.search.includes(query);
+      const show = sportMatch && tierMatch && searchMatch;
+      row.hidden = !show;
+      if (show) visible += 1;
+    });
+    count.textContent = `${visible} row${visible === 1 ? '' : 's'}`;
+    empty.hidden = visible !== 0;
+  }
+
+  [sport, confidence].forEach(control => control.addEventListener('change', applyFilters));
+  search.addEventListener('input', applyFilters);
+})();
+</script>
+</body>
+</html>

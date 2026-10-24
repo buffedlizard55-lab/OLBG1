@@ -1,0 +1,14 @@
+{
+  "captured_at": "2026-10-24T17:56:39Z",
+  "source_roles": {
+    "OLBG": "discovery only",
+    "official": "sporting evidence"
+  },
+  "price": "independent reciprocal no-margin price; no bookmaker quote",
+  "decimal": "1 / p",
+  "american": "100 * (decimal - 1) if decimal >= 2 else -100 / (decimal - 1)",
+  "high": "p > 0.70 and -250 <= unrounded fair American <= +10000",
+  "medium": "non-High and p >= 0.55, including short-priced candidates outside the High window",
+  "low": "p < 0.55",
+  "prediction_words_minimum": 30
+}
