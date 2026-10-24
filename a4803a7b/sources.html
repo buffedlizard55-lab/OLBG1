@@ -1,0 +1,64 @@
+<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Sources — a4803a7b</title><style>
+:root{--bg:#0f172a;--card:#1e293b;--accent:#38bdf8;--accent2:#22d3ee;--text:#e2e8f0;--muted:#94a3b8;--ok:#22c55e;--warn:#f59e0b;--bad:#ef4444}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text)}
+a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent2)}
+.header{position:sticky;top:0;z-index:20;background:rgba(15,23,42,.9);backdrop-filter:blur(8px);border-bottom:1px solid #334155}
+.header .inner{max-width:1180px;margin:0 auto;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.brand{font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:13px;color:var(--accent)}
+.nav{display:flex;gap:10px;flex-wrap:wrap}
+.nav a{padding:6px 10px;background:#0b1222;border:1px solid #1f2a44;border-radius:999px;font-size:12px}
+.wrap{max-width:1180px;margin:0 auto;padding:18px}
+.hero{background:linear-gradient(135deg,#0ea5e9 0%,#1e3a8a 60%,#0f172a 100%);border:1px solid #334155;border-radius:18px;padding:22px;position:relative;overflow:hidden}
+.kpi{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+.kpi .tile{flex:1 1 140px;background:rgba(255,255,255,.92);color:#0f172a;border-radius:12px;padding:12px;text-align:center}
+.kpi b{font-size:22px;display:block}.kpi span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px}
+.card{background:var(--card);border:1px solid #334155;border-radius:12px;padding:14px}
+.card h3{margin:0 0 8px 0;font-size:14px;letter-spacing:.04em}
+.badge{font-size:11px;padding:3px 8px;border-radius:999px;border:1px solid #334155;background:#0b1222;display:inline-block;margin:2px}
+.bHigh{background:var(--ok);color:#052e16;border-color:#15803d}.bMed{background:var(--warn);color:#422006}.bLow{background:var(--bad);color:#fff}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+th,td{padding:8px 10px;border-bottom:1px solid #334155;text-align:left;vertical-align:top}
+th{background:#0b1222;position:sticky;top:64px;z-index:5;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+tr:hover td{background:#0f1a31}
+.pred{white-space:pre-wrap;line-height:1.45}
+.small{font-size:12px;color:var(--muted)}.mono{font-family:ui-monospace,monospace;font-size:12px}
+.flag{border-left:4px solid var(--warn);padding:10px;background:#1a1400;border-radius:8px;margin:6px 0}
+.notice{border-left:4px solid var(--ok);padding:10px;background:#052e16;border-radius:8px;margin:6px 0}
+.sport-nav{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.sport-nav a{padding:6px 10px;border-radius:999px;background:var(--card);border:1px solid #334155;font-size:12px}
+.filter{margin:10px 0;display:flex;gap:8px;flex-wrap:wrap}
+.filter input, .filter select{padding:8px 10px;border-radius:10px;border:1px solid #334155;background:#0b1222;color:var(--text)}
+footer{margin:30px 0 10px 0;padding:16px;background:var(--card);border:1px solid #334155;border-radius:12px}
+h2{margin:18px 0 8px 0;font-size:18px}h3{font-size:15px}
+</style><body><div class="header"><div class="inner"><div class="brand">OLBG 15-SPORT DESK • a4803a7b • 2026-10-24 22:30 UTC</div><div class="nav"><a href="index.html" style="">Dashboard</a><a href="picks.html" style="">Picks</a><a href="predictions.html" style="">Predictions</a><a href="matches.html" style="">Matches</a><a href="markets.html" style="">Markets</a><a href="flagged.html" style="">Flagged</a><a href="sources.html" style="background:#38bdf8;color:#020617">Sources</a><a href="methodology.html" style="">Methodology</a><a href="reverse-engineering.html" style="">OLBG Reverse Eng.</a><a href="repo-audit.html" style="">Repo Audit</a></div></div></div><div class=wrap><h2>Sources — trusted official verification</h2><table><thead><tr><th>Sport</th><th>OLBG hub visited</th><th>Official URL</th><th>What was verified</th></tr></thead><tbody><tr><td>Baseball</td><td><a href='https://www.olbg.com/sports-betting-tips/Baseball/Baseball_Tips_2-12' target=_blank>OLBG</a></td><td><a href='https://www.mlb.com/standings/regular-season' target=_blank>https://www.mlb.com/standings/regular-season</a></td><td>MLB standings + KBO/NPB official schedules</td></tr>
+<tr><td>Basketball</td><td><a href='https://www.olbg.com/sports-betting-tips/Basketball/Basketball_Tips_2-4' target=_blank>OLBG</a></td><td><a href='https://www.nba.com/standings' target=_blank>https://www.nba.com/standings</a></td><td>NBA standings 2026-27 (2-0 / 0-2 splits) + KBL schedule</td></tr>
+<tr><td>Cricket</td><td><a href='https://www.olbg.com/sports-betting-tips/Cricket/Cricket_Tips_2-7' target=_blank>OLBG</a></td><td><a href='https://www.cricket.co.za/fixtures/' target=_blank>https://www.cricket.co.za/fixtures/</a></td><td>CSA fixtures, PCB match centre, BCCI/CA domestic fixtures</td></tr>
+<tr><td>Darts</td><td><a href='https://www.olbg.com/sports-betting-tips/Darts/Darts_Tips_2-15' target=_blank>OLBG</a></td><td><a href='https://www.pdc.tv/tournaments/pdc-players-championship-2026' target=_blank>https://www.pdc.tv/tournaments/pdc-players-championship-2026</a></td><td>PDC Players Championship hub (consent wall noted)</td></tr>
+<tr><td>Gaelic Sports</td><td><a href='https://www.olbg.com/sports-betting-tips/Gaelic_Sports/Gaelic_Sports_Tips_2-25' target=_blank>OLBG</a></td><td><a href='https://www.gaa.ie/fixtures-results/galway-sfc-2026' target=_blank>https://www.gaa.ie/fixtures-results/galway-sfc-2026</a></td><td>GAA fixtures hub county SFC pages</td></tr>
+<tr><td>Golf</td><td><a href='https://www.olbg.com/sports-betting-tips/Golf/Golf_Tips_2-5' target=_blank>OLBG</a></td><td><a href='https://www.pgatour.com/schedule' target=_blank>https://www.pgatour.com/schedule</a></td><td>PGATOUR.com schedule 2026 fall series + DPWT/LPGA/LIV calendars</td></tr>
+<tr><td>Greyhounds</td><td><a href='https://www.olbg.com/sports-betting-tips/Greyhounds/Greyhounds_Tips_2-28' target=_blank>OLBG</a></td><td><a href='https://www.gbgb.org.uk/racing/results/?raceClass=OR&raceType=race' target=_blank>https://www.gbgb.org.uk/racing/results/?raceClass=OR&raceType=race</a></td><td>GBGB open-races calendar</td></tr>
+<tr><td>Handball</td><td><a href='https://www.olbg.com/sports-betting-tips/Handball/Handball_Tips_2-20' target=_blank>OLBG</a></td><td><a href='https://ehfcl.eurohandball.com/men/2026-27/' target=_blank>https://ehfcl.eurohandball.com/men/2026-27/</a></td><td>EHF Champions League men live tiles 28-29 Oct</td></tr>
+<tr><td>Ice Hockey</td><td><a href='https://www.olbg.com/sports-betting-tips/Ice_Hockey/Ice_Hockey_Tips_2-13' target=_blank>OLBG</a></td><td><a href='https://api-web.nhle.com/v1/schedule/2026-10-24' target=_blank>https://api-web.nhle.com/v1/schedule/2026-10-24</a></td><td>NHL schedule API 2026-10-24 — 12 games, scores, FUT states</td></tr>
+<tr><td>Motor Racing</td><td><a href='https://www.olbg.com/sports-betting-tips/Motor_Racing/Motor_Racing_Tips_2-14' target=_blank>OLBG</a></td><td><a href='https://www.formula1.com/en/racing/2026/united-states' target=_blank>https://www.formula1.com/en/racing/2026/united-states</a></td><td>F1 official US GP Round 18 LIVE + MotoGP/NASCAR/WEC calendars</td></tr>
+<tr><td>Rugby League</td><td><a href='https://www.olbg.com/sports-betting-tips/Rugby_League/Rugby_League_Tips_2-10' target=_blank>OLBG</a></td><td><a href='https://www.nrl.com/draw/?competition=131&round=2&season=2026' target=_blank>https://www.nrl.com/draw/?competition=131&round=2&season=2026</a></td><td>NRL RLWC draw — Tonga 36-0 Lebanon, PNG 6-64 Samoa, England 82-0 France</td></tr>
+<tr><td>Rugby Union</td><td><a href='https://www.olbg.com/sports-betting-tips/Rugby_Union/Rugby_Union_Tips_2-9' target=_blank>OLBG</a></td><td><a href='https://www.usa.rugby/fixtures/' target=_blank>https://www.usa.rugby/fixtures/</a></td><td>USA Rugby fixtures + Premiership/URC/LNR/SANZAAR hubs</td></tr>
+<tr><td>Snooker</td><td><a href='https://www.olbg.com/sports-betting-tips/Snooker/Snooker_Tips_2-8' target=_blank>OLBG</a></td><td><a href='https://www.wst.tv/matches/results/?eventId=21863' target=_blank>https://www.wst.tv/matches/results/?eventId=21863</a></td><td>WST matches — Northern Ireland Open results 18-19 Oct</td></tr>
+<tr><td>Tennis</td><td><a href='https://www.olbg.com/sports-betting-tips/Tennis/Tennis_Tips_2-3' target=_blank>OLBG</a></td><td><a href='https://www.atptour.com/en/scores/current' target=_blank>https://www.atptour.com/en/scores/current</a></td><td>ATPTour scores current — semifinal results Medvedev RET, Basilashvili, Struff, Fritz</td></tr>
+<tr><td>Volleyball</td><td><a href='https://www.olbg.com/sports-betting-tips/Volleyball/Volleyball_Tips_2-21' target=_blank>OLBG</a></td><td><a href='https://www.legavolley.it/calendario/?Anno=2026' target=_blank>https://www.legavolley.it/calendario/?Anno=2026</a></td><td>LegaVolley calendar + PlusLiga/CBV fixtures</td></tr>
+</tbody></table><p class=small>Full source text captured via fetch_page on 2026-10-24 22:30Z; see data/a4803a7b/sources.json for machine-readable list.</p><footer class=small>Session a4803a7b • Generated 2026-10-24T22:30:00Z • Official sources visited 2026-10-24 • Band rule High 1.40-101.00 (−250 to +10000) • Independent originated lines — not bookmaker advice. <a href=https://github.com/buffedlizard55-lab/OLBG1>repo</a></footer></div><script>
+function initFilters(){
+  const q=document.getElementById('q'); const conf=document.getElementById('conf'); const sport=document.getElementById('sport');
+  const rows=document.querySelectorAll('tbody tr');
+  function apply(){
+    const txt=(q?q.value.toLowerCase():''); const cf=conf?conf.value:''; const sp=sport?sport.value:'';
+    rows.forEach(r=>{
+      const hay=r.innerText.toLowerCase(); const c=r.dataset.conf||''; const s=r.dataset.sport||'';
+      const ok = (!txt || hay.includes(txt)) && (!cf || c===cf) && (!sp || s===sp);
+      r.style.display= ok ? '' : 'none';
+    });
+  }
+  if(q) q.addEventListener('input', apply); if(conf) conf.addEventListener('change', apply); if(sport) sport.addEventListener('change', apply);
+}
+document.addEventListener('DOMContentLoaded', initFilters);
+</script></body></html>

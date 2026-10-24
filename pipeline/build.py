@@ -48,6 +48,7 @@ ARCHIVE = [
     ('321b595c/index.html', '24 Oct 2026 fifteen-sport desk: 93 fixtures, 7 originated picks with written predictions, 15 flags'),
     ('c3026353/index.html', '24 Oct 2026 fifteen-sport desk: 107 fixtures, 424 originated zero-vig prices, 73 written predictions, 4 strict-gate High picks'),
     ('99d43605/index.html', '24 Oct 2026 clarity desk (99d43605): 48 tracked entries, 35 graded picks, 1 High at the -250 band edge'),
+    ('a4803a7b/index.html', '24 Oct 2026 organized 15-sport desk (a4803a7b): 75 fixtures across 15 sports, 38 High + 22 Medium inside -250..+10000, line-by-line official verification, executive summary'),
 ]
 
 NAV = [

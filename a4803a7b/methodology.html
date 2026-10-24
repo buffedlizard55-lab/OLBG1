@@ -1,0 +1,53 @@
+<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Methodology — a4803a7b</title><style>
+:root{--bg:#0f172a;--card:#1e293b;--accent:#38bdf8;--accent2:#22d3ee;--text:#e2e8f0;--muted:#94a3b8;--ok:#22c55e;--warn:#f59e0b;--bad:#ef4444}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text)}
+a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent2)}
+.header{position:sticky;top:0;z-index:20;background:rgba(15,23,42,.9);backdrop-filter:blur(8px);border-bottom:1px solid #334155}
+.header .inner{max-width:1180px;margin:0 auto;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.brand{font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:13px;color:var(--accent)}
+.nav{display:flex;gap:10px;flex-wrap:wrap}
+.nav a{padding:6px 10px;background:#0b1222;border:1px solid #1f2a44;border-radius:999px;font-size:12px}
+.wrap{max-width:1180px;margin:0 auto;padding:18px}
+.hero{background:linear-gradient(135deg,#0ea5e9 0%,#1e3a8a 60%,#0f172a 100%);border:1px solid #334155;border-radius:18px;padding:22px;position:relative;overflow:hidden}
+.kpi{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+.kpi .tile{flex:1 1 140px;background:rgba(255,255,255,.92);color:#0f172a;border-radius:12px;padding:12px;text-align:center}
+.kpi b{font-size:22px;display:block}.kpi span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px}
+.card{background:var(--card);border:1px solid #334155;border-radius:12px;padding:14px}
+.card h3{margin:0 0 8px 0;font-size:14px;letter-spacing:.04em}
+.badge{font-size:11px;padding:3px 8px;border-radius:999px;border:1px solid #334155;background:#0b1222;display:inline-block;margin:2px}
+.bHigh{background:var(--ok);color:#052e16;border-color:#15803d}.bMed{background:var(--warn);color:#422006}.bLow{background:var(--bad);color:#fff}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+th,td{padding:8px 10px;border-bottom:1px solid #334155;text-align:left;vertical-align:top}
+th{background:#0b1222;position:sticky;top:64px;z-index:5;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+tr:hover td{background:#0f1a31}
+.pred{white-space:pre-wrap;line-height:1.45}
+.small{font-size:12px;color:var(--muted)}.mono{font-family:ui-monospace,monospace;font-size:12px}
+.flag{border-left:4px solid var(--warn);padding:10px;background:#1a1400;border-radius:8px;margin:6px 0}
+.notice{border-left:4px solid var(--ok);padding:10px;background:#052e16;border-radius:8px;margin:6px 0}
+.sport-nav{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.sport-nav a{padding:6px 10px;border-radius:999px;background:var(--card);border:1px solid #334155;font-size:12px}
+.filter{margin:10px 0;display:flex;gap:8px;flex-wrap:wrap}
+.filter input, .filter select{padding:8px 10px;border-radius:10px;border:1px solid #334155;background:#0b1222;color:var(--text)}
+footer{margin:30px 0 10px 0;padding:16px;background:var(--card);border:1px solid #334155;border-radius:12px}
+h2{margin:18px 0 8px 0;font-size:18px}h3{font-size:15px}
+</style><body><div class="header"><div class="inner"><div class="brand">OLBG 15-SPORT DESK • a4803a7b • 2026-10-24 22:30 UTC</div><div class="nav"><a href="index.html" style="">Dashboard</a><a href="picks.html" style="">Picks</a><a href="predictions.html" style="">Predictions</a><a href="matches.html" style="">Matches</a><a href="markets.html" style="">Markets</a><a href="flagged.html" style="">Flagged</a><a href="sources.html" style="">Sources</a><a href="methodology.html" style="background:#38bdf8;color:#020617">Methodology</a><a href="reverse-engineering.html" style="">OLBG Reverse Eng.</a><a href="repo-audit.html" style="">Repo Audit</a></div></div></div><div class=wrap>
+    <h2>Methodology — originated lines, no bookmaker copy</h2>
+    <div class=notice>All probabilities derived from team-form/venue/injury models (Gaussian for h2h sports, Poisson for totals) using only official results/standings noted above. Band enforcement is hard: decimal 1.40-101.00 maps to American -250 to +10000. High requires p≥60% and in band; Medium p≥55% and in band. No line is copied from OLBG votes or market prices.</div>
+    <ul class=small><li>Inputs: last 10 official results per team, home-court +3-5% adjustment from venue stats, injury downgrade only if listed on official report, travel/rest factor for second night.</li><li>Pricing: clamp p 0.002-0.995, decimal=1/p, american via standard conversion, no chalk suppression (all High naturally inside band).</li><li>Uniqueness: 7-gram de-duplication across all 75 predictions; 48-word minimum; no hedging (banned word list enforced); obvious selection naming every row.</li><li>Verification: fetch_page 2026-10-24 22:30Z for each official URL; screenshot-equivalent text captured; gaps flagged transparently rather than inferred.</li></ul>
+    <p class=small>Code in scripts/sa4803_models.py and scripts/sa4803_slate.py defines slate deterministically.</p><footer class=small>Session a4803a7b • Generated 2026-10-24T22:30:00Z • Official sources visited 2026-10-24 • Band rule High 1.40-101.00 (−250 to +10000) • Independent originated lines — not bookmaker advice. <a href=https://github.com/buffedlizard55-lab/OLBG1>repo</a></footer></div><script>
+function initFilters(){
+  const q=document.getElementById('q'); const conf=document.getElementById('conf'); const sport=document.getElementById('sport');
+  const rows=document.querySelectorAll('tbody tr');
+  function apply(){
+    const txt=(q?q.value.toLowerCase():''); const cf=conf?conf.value:''; const sp=sport?sport.value:'';
+    rows.forEach(r=>{
+      const hay=r.innerText.toLowerCase(); const c=r.dataset.conf||''; const s=r.dataset.sport||'';
+      const ok = (!txt || hay.includes(txt)) && (!cf || c===cf) && (!sp || s===sp);
+      r.style.display= ok ? '' : 'none';
+    });
+  }
+  if(q) q.addEventListener('input', apply); if(conf) conf.addEventListener('change', apply); if(sport) sport.addEventListener('change', apply);
+}
+document.addEventListener('DOMContentLoaded', initFilters);
+</script></body></html>
