@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repository review</title><link rel="stylesheet" href="assets/style.css"></head>
+<body><header><div class="wrap"><a class="brand" href="index.html">OLBG desk &middot; 24 Oct 2026</a>
+<nav><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="matches.html">All matches</a><a href="markets.html">Markets</a><a href="predictions.html">Write-ups</a><a href="sports.html">Sports</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="methodology.html">Method</a><a href="olbg.html">OLBG map</a></nav></div></header><main>
+
+<h1>Repository review</h1>
+<p class="sub">What was checked in the repo before building, and what it means for this desk.</p>
+<table><thead><tr><th>Item</th><th>What was found</th><th>Consequence</th></tr></thead>
+<tbody><tr><td><b>Repository size</b></td><td class="small">~2.9 GB checkout, 61 sibling desk directories, 1,455 HTML files at the last sweep</td><td class="small">The tree is dominated by parallel session output. Each desk is self-contained, which is why this session added only its own namespace.</td></tr><tr><td><b>COORDINATION.md</b></td><td class="small">6,386 lines before this session, ~750 KB</td><td class="small">Read in full before claiming. No other live claim covered this task; the claim was appended and pushed before any build work.</td></tr><tr><td><b>Shared datum docs</b></td><td class="small">README says 108 listings / 16 price books at the 12:29 UTC checkpoint</td><td class="small">Those are a different snapshot to this desk and are not reused. This desk&#x27;s counts come only from its own data modules.</td></tr><tr><td><b>Prior desk result</b></td><td class="small">3d121822 and 8cfb80b2 both published zero High picks</td><td class="small">Both explained it the same way: the 70% floor and the -250 floor barely intersect. Confirmed arithmetically here and flagged as F-F4-02.</td></tr><tr><td><b>Prior desk result</b></td><td class="small">8aede3ba published 66 High picks, all at -239</td><td class="small">That is the exact signature of the window being 1.43 points wide. It is a presentation defect, not a data error.</td></tr><tr><td><b>Canonical pipeline</b></td><td class="small">pipeline.validate --site . still reports zero errors at this commit</td><td class="small">This desk does not modify pipeline, data/current, workflows, the root pages or scripts/validate.py, so the canonical build is unchanged.</td></tr></tbody></table>
+<h2>Files this session changed</h2>
+<ul>
+<li><code>scripts/sf437fb14_data_p1.py</code>, <code>_data_p2.py</code>, <code>_model.py</code>,
+<code>_picks.py</code>, <code>_build.py</code>, <code>_validate.py</code> &mdash; new.</li>
+<li><code>f437fb14/**</code> &mdash; new 26-page desk.</li>
+<li><code>data/f437fb14/**</code> &mdash; new machine-readable copies.</li>
+<li><code>tests/pipeline/test_desk_f437fb14.py</code> &mdash; new test file.</li>
+<li><code>reports/SESSION_F437FB14.md</code> and this session's sections of
+<code>COORDINATION.md</code> &mdash; new.</li>
+<li>Nothing else. No root page, no shared dataset, no workflow, no peer desk.</li>
+</ul>
+
+<footer>Independent research desk. Not affiliated with OLBG. Prices are originated fair
+prices with no bookmaker margin and no guarantee of availability. Nothing here is betting
+advice. Built 2026-10-24T18:35:00Z.</footer>
+</main></body></html>

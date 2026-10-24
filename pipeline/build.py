@@ -112,33 +112,35 @@ class Site:
         return '<div class="sport-grid">'+''.join(f'<a class="sport-card" href="sports/{s}.html"><span class="sport-icon">{icon("ball",19)}</span><span><strong>{e(cov[s]["name"])}</strong><small>{cov[s]["listing_count"]} listings · {e(cov[s]["status"])}</small></span><span class="arrow">{icon("arrow",13)}</span></a>' for s in order[:limit])+'</div>'
     def latest_desk(self):
         """One obvious front door to the newest desk, with peer desks preserved."""
+        desks=[('f437fb14/index.html','TF437F clarity desk'),('2ff8342b/index.html','2FF8342B'),
+               ('b2719ad3/index.html','TB2719'),('02d3d515/index.html','02D3'),
+               ('8cfb80b2/index.html','8CFB'),('37003e61/index.html','37003E61'),
+               ('3d121822/index.html','3D121822')]
         link='b2719ad3/index.html'
-        if not (ROOT/link).is_file():link='2ff8342b/index.html'
-        if not (ROOT/link).is_file():link='3d121822/index.html'
+        if (ROOT/'f437fb14/index.html').is_file():link='f437fb14/index.html'
+        elif (ROOT/'2ff8342b/index.html').is_file():link='2ff8342b/index.html'
         if not (ROOT/link).is_file():return ''
-        alternates=[]
-        if link in ('b2719ad3/index.html','2ff8342b/index.html'):
-            for path,label in [('37003e61/index.html','37003E61'),('8cfb80b2/index.html','8CFB'),('02d3d515/index.html','02D3'),('3d121822/index.html','3D121822'),('2ff8342b/index.html','2FF8342B')]:
-                if (ROOT/path).is_file():alternates.append(f'<a href="{path}" style="color:#0f5132">{label}</a>')
+        alternates=[(path,label) for path,label in desks if path!=link and (ROOT/path).is_file()]
         alternate_html=''
         if alternates:
-            alternate_html='<p style="margin:10px 0 0;font-size:12px;color:#41544b">Also preserved: '+ ' · '.join(alternates) +'</p>'
-        if link=='b2719ad3/index.html':
-            picks=link+'#high-picks';review=link.replace('index.html','flagged-for-review.html')
-        else:
-            picks=link.replace('index.html','picks.html');review=link.replace('index.html','flagged.html')
+            alternate_html=('<p style="margin:10px 0 0;font-size:12px;color:#41544b">Also preserved: '
+                            +' \u00b7 '.join(f'<a href="{path}" style="color:#0f5132">{label}</a>' for path,label in alternates)
+                            +'</p>')
+        picks=link.replace('index.html','picks.html');review=link.replace('index.html','flagged.html')
         return ('<section class="panel pad" style="margin-bottom:18px;border:1px solid #cfe3d8;'
                 'background:#e7f1ec">'
                 '<div style="display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap">'
                 '<div><p style="margin:0 0 4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0f5132">'
-                'Start here · current 24 October evidence</p>'
-                '<h2 style="margin:0 0 6px;font-size:22px">Today\'s fifteen-sport research, clearly graded</h2>'
-                '<p style="margin:0;color:#41544b;max-width:70ch">The current TB2719 desk uses official row links, '
-                'independent fair prices, started-event exclusions and a strict greater-than-70% High gate. '
-                'The canonical snapshot below remains preserved for the audit trail.</p></div>'
+                'Start here \u00b7 24 October 2026 \u00b7 10 picks, 3 High</p>'
+                '<h2 style="margin:0 0 6px;font-size:22px">Today\'s picks, in one place</h2>'
+                '<p style="margin:0;color:#41544b;max-width:70ch">The current desk lists all 93 upcoming '
+                'fixtures across the 15 sports in the brief, prices the 10 it can support, and says exactly '
+                'which source blocked the other 11 sports. Picks first, then the matches, the markets and a '
+                'Flagged for Review page. Every row carries an official source link. The register on this '
+                'page is the older 22 October canonical snapshot and is kept for the audit trail.</p></div>'
                 '<div style="display:flex;gap:8px;flex-wrap:wrap">'
-                f'<a class="button primary" href="{link}">Open the current desk →</a>'
-                f'<a class="button" href="{picks}">High selections</a>'
+                f'<a class="button primary" href="{link}">Open the current desk \u2192</a>'
+                f'<a class="button" href="{picks}">Today\'s picks</a>'
                 f'<a class="button" href="{review}">Flagged for review</a>'
                 '</div></div>'+alternate_html+'</section>')
 

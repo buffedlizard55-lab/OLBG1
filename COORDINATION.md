@@ -6735,3 +6735,33 @@ be read from an official source for any priced match (F-321-11).
 * **Honesty rules carried forward.** OLBG is discovery only. Tip shares are votes, never probabilities. A value that
   cannot be read from an official page stays blank and is flagged. Nothing is labelled High unless the arithmetic
   gate passes in both directions.
+
+### §84.1 — `TF437F` result (2026-10-24T18:45Z)
+
+**Status: done.** Desk published at `/f437fb14/` (26 pages); JSON in `data/f437fb14/`.
+
+* **Scope, with one recorded exception.** `scripts/sf437fb14_*.py`, `f437fb14/**`,
+  `data/f437fb14/**`, `tests/pipeline/test_desk_f437fb14.py`, `reports/SESSION_F437FB14.md` and this
+  append-only section. **Exception:** `pipeline/build.py` `latest_desk()` — the front-door band on the
+  canonical landing page was hardcoded to `3d121822/index.html`, a desk that published zero High picks,
+  while the checked-in root HTML was pointing at three different desks at once (a hand-added
+  `8cfb80b2` band, a generated `02d3d515` panel, and a `3d121822` default in code). That is the exact
+  confusion the brief complains about, so the one call site now resolves to `f437fb14/index.html`.
+  No other shared file was touched; `pipeline.validate` was re-run before and after.
+* **Sources read (17:42–18:35Z):** all 15 OLBG hubs (discovery only), MLB Stats API schedule +
+  people + standings, NBA games + standings, NHL schedule + standings, WST matches, formula1.com race
+  hub, WTA scores, Lega Pallavolo, GAA fixtures. Unusable and recorded as such: `stats.nba.com`,
+  `cdn.nba.com` (HTTP 500), `atptour.com` (404), WTA draw (shell), `pdc.tv` (cookie wall),
+  `premiershiprugby.com`, `legavolley.it` (navigation only), `gbgb.org.uk` (no racecard).
+* **Counts:** 93 fixtures/races across 13 of 15 sports · 10 fixtures priced · 40 market outcomes ·
+  10 selections (3 High, 7 Medium) all inside −250…+10000 · 10 unique write-ups (62–78 words, no
+  shared six-gram, no banned vocabulary) · 12 flags (3 high).
+* **Irregularities:** F-F4-01 no availability report readable, so no injury claim appears anywhere;
+  F-F4-02 the brief's >70% condition and its −250 floor intersect in a 1.43-point window (70% is −233,
+  −250 is 71.43%) — the literal conjunction yields 0 of today's 10 picks, reported rather than hidden;
+  F-F4-03 eleven sports priced nothing; F-F4-04 NHL standings payload readable for only 4 of 32 clubs;
+  F-F4-06 greyhound race clock and rendered start five hours apart; F-F4-07 a 4.50 league anchor stands
+  in for Milwaukee's run rate.
+* **Gates:** `scripts/sf437fb14_validate.py` 887 checks / 0 errors · `tests.pipeline.test_desk_f437fb14`
+  13 OK · `pipeline.validate --site .` 0 errors · `scripts/validate.py` swept 1,584 pages, 0 errors,
+  3 pre-existing `f7fa77fc` warnings.

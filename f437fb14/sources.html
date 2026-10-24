@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sources</title><link rel="stylesheet" href="assets/style.css"></head>
+<body><header><div class="wrap"><a class="brand" href="index.html">OLBG desk &middot; 24 Oct 2026</a>
+<nav><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="matches.html">All matches</a><a href="markets.html">Markets</a><a href="predictions.html">Write-ups</a><a href="sports.html">Sports</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="methodology.html">Method</a><a href="olbg.html">OLBG map</a></nav></div></header><main>
+
+<h1>Sources</h1>
+<p class="sub">Every page that was actually opened this session, what it supplied, and the URL to
+check it by hand. OLBG is listed separately because it is a tipster aggregator and is used only
+for discovery.</p>
+<table><thead><tr><th>Source</th><th>What it supplied</th><th>Link</th></tr></thead>
+<tbody><tr><td>OLBG sport hubs</td><td>Fixture discovery and market labels, all fifteen sports</td><td class="small"><a href="https://www.olbg.com/betting-tips">https://www.olbg.com/betting-tips</a></td></tr><tr><td>MLB Stats API schedule</td><td>World Series Game 2 teams, pitchers, venue, first pitch, ifNecessary flag</td><td class="small"><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;date=2026-10-24&amp;hydrate=probablePitcher,linescore,team">https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;date=2026-10-24&amp;hydrate=probablePitcher,linescore,team</a></td></tr><tr><td>MLB Stats API people</td><td>2026 season pitching lines for Rasmussen and Henderson</td><td class="small"><a href="https://statsapi.mlb.com/api/v1/people?personIds=656876,701656&amp;hydrate=stats(group=[pitching],type=[season],season=2026)">https://statsapi.mlb.com/api/v1/people?personIds=656876,701656&amp;hydrate=stats(group=[pitching],type=[season],season=2026)</a></td></tr><tr><td>MLB Stats API standings</td><td>Tampa Bay 98-64, runs scored and allowed, road split</td><td class="small"><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason">https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason</a></td></tr><tr><td>NBA games</td><td>All eight fixtures, tip times, game ids, per-team season leaders</td><td class="small"><a href="https://www.nba.com/games">https://www.nba.com/games</a></td></tr><tr><td>NBA standings</td><td>2026-27 records, home/road, conference, division, streak for all 30 clubs</td><td class="small"><a href="https://www.nba.com/standings">https://www.nba.com/standings</a></td></tr><tr><td>NHL schedule</td><td>Twelve fixtures, UTC start times, venues, game state, licensed market prices</td><td class="small"><a href="https://api-web.nhle.com/v1/schedule/2026-10-24">https://api-web.nhle.com/v1/schedule/2026-10-24</a></td></tr><tr><td>NHL standings</td><td>Club points, goal differential, last ten for Carolina, Edmonton, Boston, Vegas</td><td class="small"><a href="https://api-web.nhle.com/v1/standings/2026-10-24">https://api-web.nhle.com/v1/standings/2026-10-24</a></td></tr><tr><td>WST matches</td><td>Northern Ireland Open semi-final and final, with UK start times</td><td class="small"><a href="https://www.wst.tv/matches/">https://www.wst.tv/matches/</a></td></tr><tr><td>Formula 1 race hub</td><td>Austin session times, circuit length, laps, FP2 classification</td><td class="small"><a href="https://www.formula1.com/en/racing/2026/united-states">https://www.formula1.com/en/racing/2026/united-states</a></td></tr><tr><td>WTA scores</td><td>Tournament activity: Tokyo and Guangzhou draws released</td><td class="small"><a href="https://www.wtatennis.com/scores">https://www.wtatennis.com/scores</a></td></tr><tr><td>Lega Pallavolo</td><td>Confirmation that the Italian clubs named by OLBG are SuperLega members</td><td class="small"><a href="https://www.legavolley.it/classifica/">https://www.legavolley.it/classifica/</a></td></tr><tr><td>GAA fixtures</td><td>Only the Shinty-Hurling International published on 24 October</td><td class="small"><a href="https://www.gaa.ie/fixtures-results/">https://www.gaa.ie/fixtures-results/</a></td></tr><tr><td>PDC</td><td>Returned a cookie-consent shell with no draw or averages</td><td class="small"><a href="https://www.pdc.tv/tournaments/european-championship">https://www.pdc.tv/tournaments/european-championship</a></td></tr><tr><td>Premiership Rugby</td><td>Fixtures route rendered navigation only</td><td class="small"><a href="https://www.premiershiprugby.com/fixtures">https://www.premiershiprugby.com/fixtures</a></td></tr><tr><td>GBGB</td><td>Greyhound governing-body route; no racecard readable</td><td class="small"><a href="https://www.gbgb.org.uk/">https://www.gbgb.org.uk/</a></td></tr></tbody></table>
+<h2>Attempted and unusable</h2>
+<ul>
+<li>stats.nba.com scoreboard and cdn.nba.com schedule JSON &mdash; no response / HTTP 500.</li>
+<li>atptour.com scores route &mdash; 404 page body.</li>
+<li>wtatennis.com tournament draw &mdash; page shell with no match list.</li>
+<li>pdc.tv &mdash; cookie-consent shell, no draw.</li>
+<li>premiershiprugby.com/fixtures and premrugby.com/fixtures &mdash; navigation only.</li>
+<li>legavolley.it/classifica &mdash; navigation only.</li>
+<li>gaa.ie/fixtures-results &mdash; one hurling fixture, no club football.</li>
+<li>gbgb.org.uk &mdash; no racecard for today.</li>
+</ul>
+
+<footer>Independent research desk. Not affiliated with OLBG. Prices are originated fair
+prices with no bookmaker margin and no guarantee of availability. Nothing here is betting
+advice. Built 2026-10-24T18:35:00Z.</footer>
+</main></body></html>
