@@ -753,7 +753,7 @@ PREDICTIONS = {
    "record is the part that matters here: six wins from eight away games and a 34-23 goal split. St. Louis "
    "were not on the standings page this session, so the Blues are treated as league average rather than "
    "credited or penalised. Even on that cautious view the Hurricanes are the clear side: Carolina to win the "
-   "money line at -250."),
+   "money line at -185."),
  "nhl-sjs-bos": (
    "Boston have allowed 22 goals in eleven games, the tightest defensive record on this board, and at TD "
    "Garden they have conceded six in five while scoring 21. Their overall mark is 8-2-1 and their last ten "
@@ -770,7 +770,7 @@ PREDICTIONS = {
    "Vegas are 8-4-0 with 46 goals for and 36 against, and they have won seven of ten. The concern is "
    "direction: they arrive on a two-game losing streak and are 3-2-0 on the road. Columbus were not readable, "
    "so the Blue Jackets are priced as a league-average home side. That still leaves Vegas the better team on "
-   "the numbers, and the fair price of -185 sits comfortably inside the band: Vegas to win at -185."),
+   "the numbers, and the fair price of -135 sits comfortably inside the band: Vegas to win at -135."),
  "nhl-nyr-ott": (
    "The Rangers are the strangest profile on the board: 6-0-0 at home with 29 goals for and 10 against, but "
    "1-4-1 on the road with eight goals scored and 19 conceded in six games. This is a road game. Ottawa were "

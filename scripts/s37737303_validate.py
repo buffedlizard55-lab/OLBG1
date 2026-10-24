@@ -117,6 +117,13 @@ def main() -> int:
                            for t in (row["home"], row["away"]) for w in t.split()]
             check(any(len(w) > 3 and w in text_low for w in side_tokens),
                   f"{pred['id']}: prediction names one of the sides")
+            # any American price quoted in the prose must be a price this desk actually
+            # publishes for the fixture, or one of the two band constants
+            quoted = {int(t) for t in re.findall(r"(?<![\w.])([+-]\d{3,5})(?![\w.])", pred["text"])}
+            published = {m["fair"] for m in row["markets"]} | {-250, 10000}
+            for q in sorted(quoted):
+                check(any(abs(abs(q) - abs(pub)) <= 5 or abs(q - pub) <= 5 for pub in published),
+                      f"{pred['id']}: quoted price {q:+d} matches a published line")
         tokens = re.findall(r"[a-z0-9']+", low)
         for i in range(len(tokens) - 5):
             gram = " ".join(tokens[i:i + 6])

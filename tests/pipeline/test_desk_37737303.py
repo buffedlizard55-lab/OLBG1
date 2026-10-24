@@ -144,6 +144,19 @@ class TestPredictions(unittest.TestCase):
             sides = [w.strip(".,()").lower() for t in (row["home"], row["away"]) for w in t.split()]
             self.assertTrue(any(len(w) > 3 and w in text for w in sides), pred["id"])
 
+    def test_prices_quoted_in_prose_match_the_published_lines(self):
+        """A write-up that quotes a price the row does not publish is a stale number, not a typo."""
+        rows = {f["id"]: f for f in DeskData.fixtures}
+        for pred in DeskData.predictions:
+            row = rows[pred["id"]]
+            published = {m["fair"] for m in row["markets"]} | {-250, 10000}
+            quoted = {int(t) for t in re.findall(r"(?<![\w.])([+-]\d{3,5})(?![\w.])", pred["text"])}
+            for q in sorted(quoted):
+                self.assertTrue(
+                    any(abs(abs(q) - abs(pub)) <= 5 or abs(q - pub) <= 5 for pub in published),
+                    f"{pred['id']} quotes {q:+d} but publishes {sorted(published)}",
+                )
+
     def test_no_prediction_on_a_fixture_with_no_input_at_all(self):
         for pred in DeskData.predictions:
             self.assertNotEqual(DeskData.row(pred["id"])["evidence"], "none", pred["id"])
