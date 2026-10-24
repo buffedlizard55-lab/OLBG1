@@ -1,0 +1,71 @@
+{
+  "flags": [
+    {
+      "id": "F-01",
+      "severity": "high",
+      "title": "The −250 floor and the >70% rule almost never overlap",
+      "detail": "A fair price of −250 implies a 71.4% chance. Requiring both 'more than 70%' and a price no shorter than −250 leaves an effective band of roughly 70.0%–71.4%. Every genuine short-priced favourite on this slate (Boston at −313, Edmonton at −650 on our numbers) falls outside the requested odds window, so it cannot be published as a High pick under the brief. This desk therefore treats the odds window as the eligibility filter and grades confidence from the evidence, and it publishes the conflict rather than manufacturing in-band High picks.",
+      "sources": [
+        "NHL-SCHED"
+      ]
+    },
+    {
+      "id": "F-02",
+      "severity": "high",
+      "title": "Nine of the fifteen sports carry no price, and three have no fixture at all",
+      "detail": "Twelve sports have at least one row. Only ice hockey, basketball and baseball have the official statistical inputs needed to originate a line, so nine sports are unpriced. Golf's OLBG hub returned 'No tips found.'; the only GAA fixture on 24 October is the shinty-hurling international, which the brief excludes; Rugby League is between seasons and lists futures only. Darts, cricket, handball, volleyball, rugby union and greyhounds are listed on OLBG but their official pages were a consent wall, client-rendered or 404, so those rows are discovery-only. Snooker, tennis and motor racing have officially confirmed fixtures but no readable form or ranking input, so they are priced nowhere and get no prediction.",
+      "sources": [
+        "GAA-FIX",
+        "WST-MATCHES",
+        "ATP-SCORES",
+        "F1-MEXICO"
+      ]
+    },
+    {
+      "id": "F-03",
+      "severity": "medium",
+      "title": "OLBG displays times without a timezone",
+      "detail": "OLBG event times appear as 'Today 15:15', 'Tomorrow 05:00' and so on, with minute offsets that do not map cleanly onto any single zone. No OLBG time is converted or presented as UTC on this desk; official start times are used wherever they exist and are left blank otherwise.",
+      "sources": [
+        "NHL-SCHED"
+      ]
+    },
+    {
+      "id": "F-04",
+      "severity": "medium",
+      "title": "PDC tournament page is behind a consent wall",
+      "detail": "https://www.pdc.tv/tournaments/machineseeker-european-championship returned only cookie-consent text in the fetched body, so the four darts matches listed by OLBG could not be checked against the PDC. They are published as discovery-only.",
+      "sources": []
+    },
+    {
+      "id": "F-05",
+      "severity": "medium",
+      "title": "Two NHL games cannot be priced",
+      "detail": "Columbus, Los Angeles, Calgary and Anaheim were absent from the standings excerpts captured, so Vegas @ Columbus, Los Angeles @ New Jersey and Detroit @ Calgary have only one side's statistical input and no price is originated. Minnesota @ Seattle has both inputs but no official start time in the captured excerpt; its price is marked provisional.",
+      "sources": [
+        "NHL-STAND"
+      ]
+    },
+    {
+      "id": "F-06",
+      "severity": "low",
+      "title": "No injury or availability feed captured",
+      "detail": "None of the official pages read for this desk published a usable injury report for the fixtures priced. Predictions therefore make no availability claims at all; where a lineup fact was not captured it is absent rather than assumed.",
+      "sources": [
+        "NHL-SCHED",
+        "MLB-SCHED"
+      ]
+    },
+    {
+      "id": "F-07",
+      "severity": "low",
+      "title": "MLB series record is a series record, not a season record",
+      "detail": "The MLB StatsAPI leagueRecord inside the World Series schedule shows each club's record in the series (Milwaukee 1-0, Tampa Bay 0-1). Season records used in the write-ups come from the separate regular-season standings feed and are labelled as such.",
+      "sources": [
+        "MLB-SCHED",
+        "MLB-STAND-NL"
+      ]
+    }
+  ],
+  "count": 7
+}
