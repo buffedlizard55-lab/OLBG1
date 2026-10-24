@@ -1,0 +1,152 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology &middot; OLBG research desk 321b595c-olbg1</title>
+<style>
+:root{--ink:#0d1117;--mut:#5a6572;--line:#e3e8ee;--bg:#f6f8fa;--card:#fff;--acc:#0b5fff;--hi:#0a7d3f;--med:#8a5a00;--low:#7a4a8a;--warn:#a3231f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 64px}
+header.top{background:#0d1117;color:#fff;padding:14px 0}
+header.top .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding-bottom:0}
+.brand{font-weight:800;letter-spacing:.02em;font-size:18px;color:#fff}
+.brand small{display:block;font-weight:500;font-size:11px;letter-spacing:.16em;color:#9aa6b2}
+nav.main{display:flex;flex-wrap:wrap;gap:6px}
+nav.main a{color:#c9d4e0;padding:7px 11px;border-radius:7px;font-size:14px;font-weight:600}
+nav.main a:hover{background:#1d2633;text-decoration:none;color:#fff}
+nav.main a.here{background:var(--acc);color:#fff}
+.hero{background:#fff;border-bottom:1px solid var(--line);padding:26px 0 22px}
+h1{font-size:30px;line-height:1.2;margin:0 0 8px;letter-spacing:-.02em}
+h2{font-size:21px;margin:34px 0 10px;letter-spacing:-.01em}
+h3{font-size:16px;margin:22px 0 6px}
+p.lead{font-size:18px;color:#243040;margin:0 0 16px;max-width:70ch}
+p{max-width:80ch}
+ul,ol{max-width:82ch;padding-left:22px}
+li{margin:5px 0}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0 4px}
+.kpi div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi b{display:block;font-size:26px;letter-spacing:-.02em}
+.kpi span{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.07em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:14px 0}
+.jump{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:18px 0}
+.jump a{display:block;background:#fff;border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:10px;padding:13px 15px;color:var(--ink)}
+.jump a:hover{border-color:var(--acc);text-decoration:none}
+.jump b{display:block;font-size:16px;margin-bottom:3px}
+.jump span{font-size:13px;color:var(--mut)}
+table{width:100%;border-collapse:collapse;font-size:14px;background:#fff}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--mut);background:#f0f3f7;position:sticky;top:0}
+tbody tr:hover{background:#fbfcfe}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff;margin:12px 0}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.tag.high{background:#e2f5ea;color:var(--hi)}.tag.medium{background:#fdf0d5;color:var(--med)}
+.tag.low{background:#f2e8f7;color:var(--low)}.tag.none{background:#eef1f4;color:var(--mut)}
+.src{display:inline-block;font-size:11px;padding:2px 7px;border:1px solid var(--line);border-radius:6px;color:var(--mut);margin:1px 2px 1px 0;background:#fff;font-weight:600}
+.src.official{border-color:#bfe0cc;color:#0a6b39;background:#f2fbf6}
+.src.olbg{border-color:#d8e2f0;color:#3b5a86;background:#f6f9fe}
+.pick{background:#fff;border:1px solid var(--line);border-left:5px solid var(--hi);border-radius:12px;padding:16px 18px;margin:14px 0}
+.pick.medium{border-left-color:#d89400}.pick.low{border-left-color:#8e64a8}
+.pick h3{margin:0 0 4px;font-size:17px}
+.pick .meta{font-size:13px;color:var(--mut);margin-bottom:10px}
+.pick p{font-size:15px;margin:8px 0 10px}
+.pick .sel{font-weight:700;color:#0b2b1b;background:#eefaf1;display:inline-block;padding:3px 9px;border-radius:7px;margin-bottom:8px}
+.note{background:#fff8e6;border:1px solid #f0dfae;border-radius:10px;padding:12px 15px;margin:14px 0;font-size:14px}
+.warn{background:#fdeeee;border:1px solid #f3c9c9;border-radius:10px;padding:12px 15px;margin:14px 0;font-size:14px}
+.ok{background:#eefaf1;border:1px solid #c6e8d2;border-radius:10px;padding:12px 15px;margin:14px 0;font-size:14px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding-top:16px;font-size:13px;color:var(--mut)}
+code{background:#eef1f4;padding:1px 5px;border-radius:4px;font-size:13px}
+.small{font-size:13px;color:var(--mut)}
+.nowrap{white-space:nowrap}
+.center{text-align:center}
+</style></head><body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">OLBG research desk<small>SESSION 321b595c-olbg1 &middot; 24 OCT 2026</small></a>
+<nav class="main"><a href="index.html">Today's picks</a><a href="predictions.html">Written predictions</a><a href="matches.html">All matches</a><a href="markets.html">Markets</a><a href="coverage.html">Sports & coverage</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="methodology.html" class="here">Method</a><a href="repo-review.html">Repo review</a></nav></div></header>
+<div class="hero"><div class="wrap"><h1>How the numbers are made</h1>
+<p class="lead">Our prices are our own estimates, built from official inputs and published with the arithmetic shown so
+you can disagree with them precisely.</p></div></div><div class="wrap">
+
+<h2 id="gate">The gate the brief asks for, and why it is nearly empty</h2>
+<div class="card"><p>The brief asks for picks with &ldquo;a greater than 70% chance to win&rdquo; that also
+&ldquo;sit between &minus;250 and +10000 odds&rdquo;. Those two rules are almost mutually exclusive:</p>
+<ul>
+<li>A 70.0% chance is a fair price of <code>&minus;100 &times; 0.70 / 0.30 = &minus;233</code>.</li>
+<li>A &minus;250 price is a chance of <code>250 / 350 = 71.4%</code>.</li>
+<li>So the only probabilities that satisfy both are those between <strong>70.0% and 71.4%</strong> &mdash; a 1.4&#8209;point
+window.</li>
+</ul>
+<p>Today, with 7 priced matches and 31 originated market rows, <strong>0</strong>
+selections land inside that window. The highest probability we can defend is 65.1%.</p>
+<p>We resolved it the only way that keeps the arithmetic honest: we publish our true probability, we label confidence on
+a stated scale (below), and we show you the strict-gate count rather than relabelling a price that breaks your own
+rule.</p></div>
+
+<h2>The confidence scale we used</h2>
+<div class="card"><ul>
+<li><span class="tag high">High</span> our probability 65% or better, and our fair price inside &minus;250&hellip;+10000.</li>
+<li><span class="tag medium">Medium</span> 57.5% to 65%.</li>
+<li><span class="tag low">Low</span> below 57.5%.</li>
+<li><span class="tag none">No line</span> no official input was readable, so no probability was issued.</li>
+</ul>
+<p class="small">This is our own scale, not the market&rsquo;s. It is deliberately not anchored on &ldquo;the market says
+70%&rdquo;, which was the failure mode in earlier desks: a market-implied 70% is just a short price, not evidence.</p></div>
+
+<h2>NHL match-winner line</h2>
+<div class="card"><p>For each club we take games played, points percentage, goals for and goals against from the NHL&rsquo;s
+own club statistics feed. Points percentage is shrunk toward .500 by eight games of prior &mdash; with only ten games
+played, an 8-1-1 start is partly luck &mdash; and goal differential per game is shrunk the same way. The two are combined
+as <code>1.6 &times; points&nbsp;index + 0.12 &times; goal&nbsp;differential</code>, a home-ice term of 0.16 is added on
+the logit scale, and the result is passed through a logistic function. The away probability is simply one minus the home
+probability, because an NHL game cannot end level.</p>
+<p class="small">Calibration check, in public: on the six games where the league publishes partner prices, our line lands
+within 2.1 points of the de-vigged market on four of them, and differs by 5&ndash;6 points on the two where the clubs have
+the fewest games played. That is the expected behaviour of a form model, and it is the reason we are comfortable
+publishing its output &mdash; including the parts where it disagrees.</p></div>
+
+<h2>NHL handicap and total lines</h2>
+<div class="card"><p>We build a Poisson goal distribution for each side from goals for and against per game (geometric
+mean, capped between 1.6 and 4.4 goals), then scale the two rates symmetrically until the moneyline from the Poisson
+model equals the moneyline above. Only then do we read the puck line and the total off that distribution. This guarantees
+the derived markets cannot contradict the winner market, which is the usual failure when totals and moneylines are
+priced independently.</p></div>
+
+<h2>MLB match-winner line</h2>
+<div class="card"><p>Log5 on official splits: the home club&rsquo;s home win percentage against the away club&rsquo;s away
+win percentage. For World Series Game 2 that is Milwaukee&rsquo;s 55-26 home record against Tampa Bay&rsquo;s 43-38 road
+record, giving 65.1%. We do <em>not</em> adjust for the starting pitchers, because neither pitcher&rsquo;s season
+statistics were read from an official source &mdash; naming them without adjusting for them is honest; adjusting from a
+guess would not be.</p></div>
+
+<h2>Best published price and edge</h2>
+<div class="card"><p>Where the league publishes partner prices (the NHL does), we take the longest available price across
+the <strong>two-way</strong> providers and name the book. We exclude Doxxbet, whose two prices sum to about 81% implied:
+that is a three-way 60-minute market, and mixing it in would manufacture a false under-round (flag F-321-10). Edge is our
+probability minus <code>1 / decimal&nbsp;price</code>.</p></div>
+
+<h2>Reproducing all of it</h2>
+<div class="card"><p class="small">The data and the arithmetic are both in the repository and run without network access:
+<code>python3 scripts/s321b595c_data.py</code> rewrites <code>data/321b595c/</code>,
+<code>python3 scripts/s321b595c_build.py</code> rebuilds this site, and
+<code>python3 scripts/s321b595c_validate.py</code> runs the checks listed below. The only non-reproducible part is the
+reading of live pages, which is why every read carries its UTC minute on the
+<a href="sources.html">sources page</a>.</p></div>
+
+<h2>Checks that run before publication</h2>
+<div class="card"><ul class="small">
+<li>Every source id used by a row exists in the source register, and every register entry has a URL and a read time.</li>
+<li>Every priced row carries at least one official source.</li>
+<li>American and decimal prices are recomputed from the stated probability, both ways.</li>
+<li>The confidence label is recomputed from the probability and must match the published label.</li>
+<li>Every prediction is at least 30 words, contains its selection, and shares no eight-word run with any other.</li>
+<li>The words &ldquo;model&rdquo; and &ldquo;verified&rdquo; never appear in a reader-facing prediction.</li>
+<li>Every relative link and fragment on every page resolves, and every external link is absolute https.</li>
+<li>The published JSON must match what the data script produces, so a page cannot drift from its data.</li>
+</ul></div>
+</div>
+<footer><div class="wrap">Independent research. Not affiliated with OLBG. Prices are our own estimates unless labelled as a
+published league price. 18+ &middot; stake only what you can afford to lose.
+Built 2026-10-24T18:15:00Z from 35 reads, 20 of them official.
+<a href="methodology.html">How the numbers are made</a>.</div></footer>
+</body></html>

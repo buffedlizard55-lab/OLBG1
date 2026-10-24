@@ -1,0 +1,139 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for review &middot; OLBG research desk 321b595c-olbg1</title>
+<style>
+:root{--ink:#0d1117;--mut:#5a6572;--line:#e3e8ee;--bg:#f6f8fa;--card:#fff;--acc:#0b5fff;--hi:#0a7d3f;--med:#8a5a00;--low:#7a4a8a;--warn:#a3231f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 64px}
+header.top{background:#0d1117;color:#fff;padding:14px 0}
+header.top .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding-bottom:0}
+.brand{font-weight:800;letter-spacing:.02em;font-size:18px;color:#fff}
+.brand small{display:block;font-weight:500;font-size:11px;letter-spacing:.16em;color:#9aa6b2}
+nav.main{display:flex;flex-wrap:wrap;gap:6px}
+nav.main a{color:#c9d4e0;padding:7px 11px;border-radius:7px;font-size:14px;font-weight:600}
+nav.main a:hover{background:#1d2633;text-decoration:none;color:#fff}
+nav.main a.here{background:var(--acc);color:#fff}
+.hero{background:#fff;border-bottom:1px solid var(--line);padding:26px 0 22px}
+h1{font-size:30px;line-height:1.2;margin:0 0 8px;letter-spacing:-.02em}
+h2{font-size:21px;margin:34px 0 10px;letter-spacing:-.01em}
+h3{font-size:16px;margin:22px 0 6px}
+p.lead{font-size:18px;color:#243040;margin:0 0 16px;max-width:70ch}
+p{max-width:80ch}
+ul,ol{max-width:82ch;padding-left:22px}
+li{margin:5px 0}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0 4px}
+.kpi div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi b{display:block;font-size:26px;letter-spacing:-.02em}
+.kpi span{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.07em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:14px 0}
+.jump{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:18px 0}
+.jump a{display:block;background:#fff;border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:10px;padding:13px 15px;color:var(--ink)}
+.jump a:hover{border-color:var(--acc);text-decoration:none}
+.jump b{display:block;font-size:16px;margin-bottom:3px}
+.jump span{font-size:13px;color:var(--mut)}
+table{width:100%;border-collapse:collapse;font-size:14px;background:#fff}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--mut);background:#f0f3f7;position:sticky;top:0}
+tbody tr:hover{background:#fbfcfe}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff;margin:12px 0}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.tag.high{background:#e2f5ea;color:var(--hi)}.tag.medium{background:#fdf0d5;color:var(--med)}
+.tag.low{background:#f2e8f7;color:var(--low)}.tag.none{background:#eef1f4;color:var(--mut)}
+.src{display:inline-block;font-size:11px;padding:2px 7px;border:1px solid var(--line);border-radius:6px;color:var(--mut);margin:1px 2px 1px 0;background:#fff;font-weight:600}
+.src.official{border-color:#bfe0cc;color:#0a6b39;background:#f2fbf6}
+.src.olbg{border-color:#d8e2f0;color:#3b5a86;background:#f6f9fe}
+.pick{background:#fff;border:1px solid var(--line);border-left:5px solid var(--hi);border-radius:12px;padding:16px 18px;margin:14px 0}
+.pick.medium{border-left-color:#d89400}.pick.low{border-left-color:#8e64a8}
+.pick h3{margin:0 0 4px;font-size:17px}
+.pick .meta{font-size:13px;color:var(--mut);margin-bottom:10px}
+.pick p{font-size:15px;margin:8px 0 10px}
+.pick .sel{font-weight:700;color:#0b2b1b;background:#eefaf1;display:inline-block;padding:3px 9px;border-radius:7px;margin-bottom:8px}
+.note{background:#fff8e6;border:1px solid #f0dfae;border-radius:10px;padding:12px 15px;margin:14px 0;font-size:14px}
+.warn{background:#fdeeee;border:1px solid #f3c9c9;border-radius:10px;padding:12px 15px;margin:14px 0;font-size:14px}
+.ok{background:#eefaf1;border:1px solid #c6e8d2;border-radius:10px;padding:12px 15px;margin:14px 0;font-size:14px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding-top:16px;font-size:13px;color:var(--mut)}
+code{background:#eef1f4;padding:1px 5px;border-radius:4px;font-size:13px}
+.small{font-size:13px;color:var(--mut)}
+.nowrap{white-space:nowrap}
+.center{text-align:center}
+</style></head><body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">OLBG research desk<small>SESSION 321b595c-olbg1 &middot; 24 OCT 2026</small></a>
+<nav class="main"><a href="index.html">Today's picks</a><a href="predictions.html">Written predictions</a><a href="matches.html">All matches</a><a href="markets.html">Markets</a><a href="coverage.html">Sports & coverage</a><a href="flagged.html" class="here">Flagged for review</a><a href="sources.html">Sources</a><a href="methodology.html">Method</a><a href="repo-review.html">Repo review</a></nav></div></header>
+<div class="hero"><div class="wrap"><h1>Flagged for review</h1>
+<p class="lead">Anything unconfirmed, unreadable, withheld or irregular is published here rather than smoothed over.
+Nothing on this page blocks publication; it is the list of things you may want to change or check by hand.</p>
+</div></div><div class="wrap">
+<div class="note">No table row anywhere on this site is filled in from memory. Where an official value was not readable,
+the cell is blank, and the blank is explained here with the URL that was tried.</div>
+<div class="card" id="F-321-01">
+<h3>F-321-01 &mdash; The brief&#x27;s two pick rules cannot both be met outside a 1.4-point window <span class="tag none">high</span></h3>
+<p>The brief asks for selections with a greater than 70 per cent win chance AND a price between -250 and +10000. A 70.0 per cent chance is a fair price of -233; a -250 price is a 71.4 per cent chance. So the two rules together admit only probabilities between 70.0 and 71.4 per cent. On today&#x27;s readable data no selection lands in that band, and we publish that rather than relabel a shorter price as compliant.</p>
+<p class="small">Area: method &middot; Sources: <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a> <a class="src official" href="https://statsapi.mlb.com/api/v1/standings?leagueId=104&amp;season=2026&amp;standingsTypes=regularSeason" target="_blank" rel="noopener noreferrer">statsapi.mlb.com</a></p>
+</div><div class="card" id="F-321-02">
+<h3>F-321-02 &mdash; Zero selections cleared a 70 per cent win probability today <span class="tag none">high</span></h3>
+<p>The highest probability we can support is 65.2 per cent (Milwaukee Brewers, World Series Game 2). The six NHL moneyline probabilities run from 47.5 to 61.8 per cent and match the league&#x27;s own published prices to within about two points on four of six games, which is the expected outcome if the slate genuinely contains no 70 per cent favourite. Nothing has been raised to meet the five-per-sport target.</p>
+<p class="small">Area: coverage &middot; Sources: <a class="src official" href="https://statsapi.mlb.com/api/v1/standings?leagueId=104&amp;season=2026&amp;standingsTypes=regularSeason" target="_blank" rel="noopener noreferrer">statsapi.mlb.com</a> <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a></p>
+</div><div class="card" id="F-321-03">
+<h3>F-321-03 &mdash; Thirteen of the fifteen sports produced no priced pick <span class="tag none">high</span></h3>
+<p>Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Gaelic Sports, Greyhounds, Tennis, Handball and Rugby League have no line issued. For each one the blocking official source is named on the coverage page with the exact URL, so the gap can be checked by hand.</p>
+<p class="small">Area: coverage &middot; Sources: <a class="src olbg" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://www.pdc.tv/calendar/" target="_blank" rel="noopener noreferrer">pdc.tv</a> <a class="src official" href="https://www.unitedrugby.com/fixtures" target="_blank" rel="noopener noreferrer">unitedrugby.com</a> <a class="src official" href="https://www.gbgb.org.uk/racecards" target="_blank" rel="noopener noreferrer">gbgb.org.uk</a></p>
+</div><div class="card" id="F-321-04">
+<h3>F-321-04 &mdash; OLBG hub clock is US Eastern, not the venue&#x27;s local time <span class="tag medium">medium</span></h3>
+<p>The greyhound hub shows the race &#x27;7:58 Doncaster&#x27; with a parallel &#x27;Today 14:58&#x27; column, a five-hour offset from UK track time. The MLB hub shows the World Series game at &#x27;Today 20:00&#x27; where MLB&#x27;s own feed gives 2026-10-25T00:00Z, a four-hour offset. Derived times are therefore never published as start times: where an official source was read the UTC stamp is used, and everywhere else the start is left blank.</p>
+<p class="small">Area: data &middot; Sources: <a class="src olbg" href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-27&amp;hydrate=probablePitcher,linescore,odds" target="_blank" rel="noopener noreferrer">statsapi.mlb.com</a></p>
+</div><div class="card" id="F-321-05">
+<h3>F-321-05 &mdash; OLBG tip percentages are votes, not probabilities <span class="tag medium">medium</span></h3>
+<p>Each hub row shows a number such as &#x27;13/19 Win Tips 68%&#x27;. That is the share of community tips on a selection, not a chance of winning, and it is not used anywhere in this desk as an input.</p>
+<p class="small">Area: method &middot; Sources: <a class="src olbg" href="https://www.olbg.com/betting-tips/Darts/15" target="_blank" rel="noopener noreferrer">OLBG</a></p>
+</div><div class="card" id="F-321-06">
+<h3>F-321-06 &mdash; NBA cannot be priced from a two-game sample <span class="tag none">high</span></h3>
+<p>The 2026-27 NBA season is one or two games old for every club. A probability claim built on that sample would be invention, so the nine basketball fixtures are published with official records and no line.</p>
+<p class="small">Area: data &middot; Sources: <a class="src official" href="https://www.nba.com/standings?Season=2026-27" target="_blank" rel="noopener noreferrer">nba.com</a> <a class="src olbg" href="https://www.olbg.com/betting-tips/Basketball/4" target="_blank" rel="noopener noreferrer">OLBG</a></p>
+</div><div class="card" id="F-321-07">
+<h3>F-321-07 &mdash; Snooker has no placeable pre-match market today <span class="tag medium">medium</span></h3>
+<p>The only snooker market OLBG lists is the Northern Ireland Open semi-final, which WST marks Live Now. The final is 25 October at 08:00 UK against Kyren Wilson, but the opponent is not yet decided, so no line can be issued on it either.</p>
+<p class="small">Area: coverage &middot; Sources: <a class="src olbg" href="https://www.olbg.com/betting-tips/Snooker/8" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://www.wst.tv/matches/" target="_blank" rel="noopener noreferrer">wst.tv</a></p>
+</div><div class="card" id="F-321-08">
+<h3>F-321-08 &mdash; Formula 1 race line withheld until qualifying <span class="tag medium">medium</span></h3>
+<p>The United States Grand Prix is 25 October. Only second practice has been run; the official classification shows Leclerc fastest from Antonelli and Verstappen, which is not a basis for a race-winner probability. Qualifying runs on 24 October and the line should be issued after it.</p>
+<p class="small">Area: coverage &middot; Sources: <a class="src official" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">formula1.com</a> <a class="src olbg" href="https://www.olbg.com/betting-tips/Motor_Racing/14" target="_blank" rel="noopener noreferrer">OLBG</a></p>
+</div><div class="card" id="F-321-09">
+<h3>F-321-09 &mdash; Golf hub empty and PGA TOUR page did not reach October <span class="tag medium">medium</span></h3>
+<p>OLBG renders &#x27;No tips found.&#x27; on the golf hub, so there is no golf market to model. The PGA TOUR schedule page rendered only as far as March 2026 in the readable portion, so the current-week event could not be named.</p>
+<p class="small">Area: coverage &middot; Sources: <a class="src olbg" href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://www.pgatour.com/schedule" target="_blank" rel="noopener noreferrer">pgatour.com</a></p>
+</div><div class="card" id="F-321-10">
+<h3>F-321-10 &mdash; NHL partner prices exclude one provider that quotes a 3-way market <span class="tag low">low</span></h3>
+<p>The league feed carries six providers. Doxxbet&#x27;s two prices sum to about 81 per cent implied, which means it is quoting a 60-minute three-way market; including it would fabricate an under-round. Only the five 2-way providers are used, and the best available price is taken from those five.</p>
+<p class="small">Area: data &middot; Sources: <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a></p>
+</div><div class="card" id="F-321-11">
+<h3>F-321-11 &mdash; No injury designation could be read for any priced match <span class="tag medium">medium</span></h3>
+<p>The brief asks for verified injuries. No official injury report was readable this session for the NHL, MLB or NBA matches listed, so no injury claim appears in any prediction. The absence is stated in the MLB write-up and is a gap, not a clean bill of health.</p>
+<p class="small">Area: data &middot; Sources: <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a> <a class="src official" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-27&amp;hydrate=probablePitcher,linescore,odds" target="_blank" rel="noopener noreferrer">statsapi.mlb.com</a> <a class="src official" href="https://www.nba.com/standings?Season=2026-27" target="_blank" rel="noopener noreferrer">nba.com</a></p>
+</div><div class="card" id="F-321-12">
+<h3>F-321-12 &mdash; Root landing page carried a stale pointer to another desk <span class="tag low">low</span></h3>
+<p>The deployed root index.html pointed visitors to the 8cfb80b2 desk and was stamped 2026-10-22T12:29:50Z, while sixty sibling desk directories exist. This session replaced that one bar with a pointer to this desk. The canonical pipeline pages are otherwise untouched.</p>
+<p class="small">Area: repo &middot; Sources: <a class="src olbg" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a></p>
+</div><div class="card" id="F-321-13">
+<h3>F-321-13 &mdash; The league odds feed identifies books by number, not by name <span class="tag medium">medium</span></h3>
+<p>Each NHL price arrives as {providerId, value} with no publisher name attached. Earlier drafts of this desk attributed provider 3 to Tipsport, 6 to Veikkaus, 7 to FanDuel, 8 to Sportradar and 9 to DraftKings; that mapping was not readable anywhere in the feed, so it has been removed and every quote is now labelled by the number the league publishes. The prices themselves are unchanged and still official.</p>
+<p class="small">Area: data &middot; Sources: <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a></p>
+</div><div class="card" id="F-321-14">
+<h3>F-321-14 &mdash; One NHL game was already in progress when the desk was built <span class="tag low">low</span></h3>
+<p>Anaheim at Philadelphia started at 17:00 UTC and the league feed showed it LIVE with a 0-2 score. A live match is not an upcoming match, so the fixture was removed from the table rather than published with a stale line. The NHL count in this desk is therefore eleven, not the twelve on OLBG&#x27;s hub.</p>
+<p class="small">Area: data &middot; Sources: <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a> <a class="src olbg" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG</a></p>
+</div><div class="card" id="F-321-15">
+<h3>F-321-15 &mdash; The NRL draw does not name the time zone behind its kick-off clock <span class="tag medium">medium</span></h3>
+<p>The Rugby League World Cup page shows New Zealand v Cook Islands at 1:05am and Australia v Fiji at 5:05am on 25 October with no zone stated. Two different zones would move those fixtures by four hours, so the desk publishes the fixtures, the venues and the order of play but leaves the UTC start blank rather than guess.</p>
+<p class="small">Area: data &middot; Sources: <a class="src official" href="https://www.nrl.com/draw/?competition=131&amp;round=2&amp;season=2026" target="_blank" rel="noopener noreferrer">nrl.com</a></p>
+</div>
+</div>
+<footer><div class="wrap">Independent research. Not affiliated with OLBG. Prices are our own estimates unless labelled as a
+published league price. 18+ &middot; stake only what you can afford to lose.
+Built 2026-10-24T18:15:00Z from 35 reads, 20 of them official.
+<a href="methodology.html">How the numbers are made</a>.</div></footer>
+</body></html>

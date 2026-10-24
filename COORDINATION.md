@@ -6561,3 +6561,74 @@ read); F-04 ten sports unpriced with the blocking source named; F-05 Minnesota�
 Vienna final time unpublished; F-07 pdc.tv / eurohandball / lnr.fr / legavolley.it unreadable; F-08 NBA games-page
 season-leader block mislabels clubs so no player stat was cited; F-09 five-per-sport quota unmet; F-10
 `COORDINATION.md` has two sections numbered 78; F-11 six desk directories have no namespaced data folder.
+
+
+---
+
+## 86. Session `321b595c-olbg1` — task `T321B` (claim 2026-10-24T17:45Z UTC)
+
+| # | Task | Status | Session | File scope | Started (UTC) | Notes |
+|---|------|--------|---------|------------|---------------|-------|
+| T321B | Fresh 24 Oct 2026 clarity desk: rebuild the visitor-facing entry point so the executive summary and the picks are unmistakable; live OLBG discovery across the exact 15 brief sports; official-source verification read this session; independent multi-market line origination; strict price-band High gate; unique ≥30-word written predictions; Flagged-for-Review register; validator + tests; PR → merge → Pages read-back | in progress | 321b595c-olbg1 | `data/321b595c/**`, `scripts/s321b595c_*.py`, `321b595c/**`, `reports/SESSION_321B595C.{md,html}`, `tests/pipeline/test_desk_321b595c.py`, root `index.html` (integration entry bar only, replacing the stale `8cfb80b2` pointer), append-only additions to this file | 2026-10-24T17:45Z | Pinned branch `arena/321b595c-olbg1` (§0.2). This session is also the final integration session for its own branch per §0.4. |
+
+### §86.1 — Why a new desk is needed (the complaint being fixed)
+
+The deployed root landing page is a stale canonical snapshot (`data-snapshot="2026-10-22T12:29:50Z"`) whose
+first content is a KPI ribbon and a match table; the freshest namespaced desk is reachable only through a banner.
+Sixty sibling desk directories exist, so the visitor cannot tell which page carries today's picks, what the picks
+are, or where the predictions live. The complaint is a **presentation and information-architecture defect**, not
+only a data gap. This desk therefore leads with a plain-language executive summary, a single obvious picks table
+(selection, price, probability, confidence, kick-off, source) and a written-analysis page, and the root page gets an
+integration bar pointing straight at it.
+
+### §86.2 — Scope and rules of engagement
+
+* **Session / pinned branch:** `321b595c-olbg1` on `arena/321b595c-olbg1`. No other branch is created or pushed.
+* **Exclusive write scope:** `data/321b595c/**`, `scripts/s321b595c_*.py`, `321b595c/**`,
+  `reports/SESSION_321B595C.{md,html}`, `tests/pipeline/test_desk_321b595c.py`, and append-only text in this file.
+* **Shared files touched deliberately and minimally:** root `index.html` — the stale single "start here" bar is
+  replaced by one bar pointing at `/321b595c/index.html`. No canonical data, `pipeline/**`, workflow, asset,
+  `sports/**` or peer desk directory is edited. `python3 -m pipeline.validate --site .` is re-run after the edit.
+* **Evidence channel:** Arena `fetch_page` against `www.olbg.com` (discovery and market labels only) and official
+  league / tour / federation / governing-body endpoints (verification). Every read carries its exact URL and the
+  UTC stamp at which it was observed in `data/321b595c/sources.json`; a fact that was not read this session is not
+  published as a fact.
+* **Claim status:** `in progress`.
+
+### §84.3 — Completion record (2026-10-24T18:55Z UTC)
+
+**Status: built, verified, published.** PR link and merge result are recorded in §84.4 below once the merge exists.
+
+| Item | Result |
+|---|---|
+| Desk | `321b595c/index.html` + `picks`, `predictions`, `matches`, `markets`, `coverage`, `sources`, `flagged`, `methodology`, `repo-review`, `sports/*.html` (15) — **25 pages** |
+| Fixtures | **93** upcoming matches, all 15 brief sports, **14** of them with at least one fixture |
+| Originated lines | **7 priced** match-winner markets + **31** market rows (moneyline, puck line ±1.5, total 5.5/6.5) |
+| Written predictions | **7** (73–107 words, unique, no shared eight-word run, no "model"/"verified") |
+| Confidence | 1 High (Milwaukee 65.1%), 2 Medium, 4 Low; **0** met the literal ">70% AND −250…+10000" gate (F-321-01/02) |
+| Sources | **35** reads, **20** official, each with URL + UTC stamp |
+| Flags | **15** published on `flagged.html` with evidence links |
+| Validator | `scripts/s321b595c_validate.py` → **2,862 checks, 0 errors** |
+| Tests | `python3 -m unittest tests.pipeline.test_desk_321b595c` → **14 passed** |
+| Canonical gate | `python3 -m pipeline.validate --site .` → **0 errors** |
+| Root entry | stale `8cfb80b2` bar replaced with one bar → `321b595c/index.html`; all other canonical pages untouched |
+
+**Integrity corrections made during completion** (both were wrong in the draft, both are now flagged):
+
+1. **F-321-13** — book names had been attached to the NHL price feed (`providerId` → Tipsport/Veikkaus/
+   FanDuel/Sportradar/DraftKings). The feed carries numbers only, so the attribution was unsupported and has been
+   removed; quotes now read "feed 3", "feed 9" and so on. Prices themselves are unchanged and remain official.
+2. **F-321-14** — Anaheim @ Philadelphia (17:00Z) was already **LIVE 0-2** at build time; a live match is not an
+   upcoming match, so the fixture was withdrawn and the NHL count is 11, not OLBG's 12.
+
+**Verification re-run against official feeds this turn:** MLB standings confirm Brewers 103-59 / 55-26 home /
+48-33 away / 8-2 last ten / 832-618 (+214) and Rays 98-64 / 43-38 away / 5-5 last ten / +86; MLB schedule confirms
+Game 1 final 2-3, Game 2 first pitch 2026-10-25T00:00Z with Henderson vs Rasmussen, Games 3–4 at Tropicana;
+NHL schedule confirms the 12-game slate, UTC start times and partner prices; `nrl.com/draw` added Rugby League
+World Cup Round 2 (New Zealand v Cook Islands, Australia v Fiji) and exposed flag F-321-15 (kick-off clock without
+a stated time zone, so no UTC time is published).
+
+**Known shortfall, published rather than padded:** 7 written predictions against the brief's 75 (5 × 15). Thirteen
+sports produced no priced pick; each blocking official URL is listed on `coverage.html`. No injury designation could
+be read from an official source for any priced match (F-321-11).
+

@@ -1,0 +1,81 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Snooker &middot; OLBG research desk 321b595c-olbg1</title>
+<style>
+:root{--ink:#0d1117;--mut:#5a6572;--line:#e3e8ee;--bg:#f6f8fa;--card:#fff;--acc:#0b5fff;--hi:#0a7d3f;--med:#8a5a00;--low:#7a4a8a;--warn:#a3231f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 64px}
+header.top{background:#0d1117;color:#fff;padding:14px 0}
+header.top .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding-bottom:0}
+.brand{font-weight:800;letter-spacing:.02em;font-size:18px;color:#fff}
+.brand small{display:block;font-weight:500;font-size:11px;letter-spacing:.16em;color:#9aa6b2}
+nav.main{display:flex;flex-wrap:wrap;gap:6px}
+nav.main a{color:#c9d4e0;padding:7px 11px;border-radius:7px;font-size:14px;font-weight:600}
+nav.main a:hover{background:#1d2633;text-decoration:none;color:#fff}
+nav.main a.here{background:var(--acc);color:#fff}
+.hero{background:#fff;border-bottom:1px solid var(--line);padding:26px 0 22px}
+h1{font-size:30px;line-height:1.2;margin:0 0 8px;letter-spacing:-.02em}
+h2{font-size:21px;margin:34px 0 10px;letter-spacing:-.01em}
+h3{font-size:16px;margin:22px 0 6px}
+p.lead{font-size:18px;color:#243040;margin:0 0 16px;max-width:70ch}
+p{max-width:80ch}
+ul,ol{max-width:82ch;padding-left:22px}
+li{margin:5px 0}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0 4px}
+.kpi div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi b{display:block;font-size:26px;letter-spacing:-.02em}
+.kpi span{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.07em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:14px 0}
+.jump{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:18px 0}
+.jump a{display:block;background:#fff;border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:10px;padding:13px 15px;color:var(--ink)}
+.jump a:hover{border-color:var(--acc);text-decoration:none}
+.jump b{display:block;font-size:16px;margin-bottom:3px}
+.jump span{font-size:13px;color:var(--mut)}
+table{width:100%;border-collapse:collapse;font-size:14px;background:#fff}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--mut);background:#f0f3f7;position:sticky;top:0}
+tbody tr:hover{background:#fbfcfe}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff;margin:12px 0}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.tag.high{background:#e2f5ea;color:var(--hi)}.tag.medium{background:#fdf0d5;color:var(--med)}
+.tag.low{background:#f2e8f7;color:var(--low)}.tag.none{background:#eef1f4;color:var(--mut)}
+.src{display:inline-block;font-size:11px;padding:2px 7px;border:1px solid var(--line);border-radius:6px;color:var(--mut);margin:1px 2px 1px 0;background:#fff;font-weight:600}
+.src.official{border-color:#bfe0cc;color:#0a6b39;background:#f2fbf6}
+.src.olbg{border-color:#d8e2f0;color:#3b5a86;background:#f6f9fe}
+.pick{background:#fff;border:1px solid var(--line);border-left:5px solid var(--hi);border-radius:12px;padding:16px 18px;margin:14px 0}
+.pick.medium{border-left-color:#d89400}.pick.low{border-left-color:#8e64a8}
+.pick h3{margin:0 0 4px;font-size:17px}
+.pick .meta{font-size:13px;color:var(--mut);margin-bottom:10px}
+.pick p{font-size:15px;margin:8px 0 10px}
+.pick .sel{font-weight:700;color:#0b2b1b;background:#eefaf1;display:inline-block;padding:3px 9px;border-radius:7px;margin-bottom:8px}
+.note{background:#fff8e6;border:1px solid #f0dfae;border-radius:10px;padding:12px 15px;margin:14px 0;font-size:14px}
+.warn{background:#fdeeee;border:1px solid #f3c9c9;border-radius:10px;padding:12px 15px;margin:14px 0;font-size:14px}
+.ok{background:#eefaf1;border:1px solid #c6e8d2;border-radius:10px;padding:12px 15px;margin:14px 0;font-size:14px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding-top:16px;font-size:13px;color:var(--mut)}
+code{background:#eef1f4;padding:1px 5px;border-radius:4px;font-size:13px}
+.small{font-size:13px;color:var(--mut)}
+.nowrap{white-space:nowrap}
+.center{text-align:center}
+</style></head><body>
+<header class="top"><div class="wrap">
+<a class="brand" href="../index.html">OLBG research desk<small>SESSION 321b595c-olbg1 &middot; 24 OCT 2026</small></a>
+<nav class="main"><a href="../index.html">Today's picks</a><a href="../predictions.html">Written predictions</a><a href="../matches.html">All matches</a><a href="../markets.html">Markets</a><a href="../coverage.html" class="here">Sports & coverage</a><a href="../flagged.html">Flagged for review</a><a href="../sources.html">Sources</a><a href="../methodology.html">Method</a><a href="../repo-review.html">Repo review</a></nav></div></header>
+<div class="hero"><div class="wrap"><h1>Snooker</h1>
+<p class="lead">1 matches listed on OLBG, 0 priced, 0 written
+predictions.</p></div></div><div class="wrap">
+<div class="note"><strong>Status.</strong> The only listed match is already in play; the final&#x27;s opponent is undecided. <a class="src official" href="https://www.wst.tv/matches/" target="_blank" rel="noopener noreferrer">wst.tv</a></div>
+<h2>The matches</h2>
+<div class="tblwrap"><table><thead><tr><th>Match</th><th>Competition</th><th>Starts (UTC)</th><th>Status</th><th>Confidence</th><th>Sources</th></tr></thead><tbody><tr><td><a href="https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/Mark_Williams_v_Jak_Jones/8?event_id=9952" target="_blank" rel="noopener noreferrer">Jak Jones @ Mark Williams</a></td><td>BetVictor Northern Ireland Open 2026, semi-final</td><td class="nowrap">&mdash;<br><small class="small">WST lists the semi-final as Live Now on 24 Oct, best of 11; the final is 25 Oct 08:00 UK against Kyren Wilson</small></td><td><span class="small">no line issued</span></td><td><span class="tag none">no line</span></td><td><a class="src olbg" href="https://www.olbg.com/betting-tips/Snooker/8" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://www.wst.tv/matches/" target="_blank" rel="noopener noreferrer">wst.tv</a></td></tr></tbody></table></div>
+<h2>Predictions</h2>
+<div class="card"><p class="small">No prediction is published for this sport today. See the <a href="../coverage.html">coverage page</a> for the reason and the official page that blocked it.</p></div>
+<p class="small"><a href="../index.html">&larr; Back to today&rsquo;s picks</a></p>
+</div>
+<footer><div class="wrap">Independent research. Not affiliated with OLBG. Prices are our own estimates unless labelled as a
+published league price. 18+ &middot; stake only what you can afford to lose.
+Built 2026-10-24T18:15:00Z from 35 reads, 20 of them official.
+<a href="../methodology.html">How the numbers are made</a>.</div></footer>
+</body></html>
