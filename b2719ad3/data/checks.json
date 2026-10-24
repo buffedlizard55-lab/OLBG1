@@ -1,0 +1,2065 @@
+{
+  "desk": "TB2719",
+  "checked_at": "2026-10-24T17:41:08Z",
+  "status": "PASS",
+  "checks_passed": 410,
+  "checks_total": 410,
+  "active_rows": 42,
+  "started_exclusions": 1,
+  "high_predictions": 1,
+  "html_files": 19,
+  "broken_local_links": [],
+  "external_link_validation": "HTTPS syntax and source identity checked; evidence was captured with research tools. No claim of a fresh shell HTTP status sweep.",
+  "checks": [
+    {
+      "name": "exact fifteen-sport scope and order",
+      "passed": true,
+      "detail": "golf, volleyball, rugby-union, cricket, snooker, darts, baseball, gaelic-sports, greyhounds, tennis, motor-racing, handball, ice-hockey, basketball, rugby-league"
+    },
+    {
+      "name": "scope has no duplicate sports",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "observation IDs are unique",
+      "passed": true,
+      "detail": "43 observations"
+    },
+    {
+      "name": "all event sports are in scope",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all event source IDs resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all sources use valid HTTPS URLs",
+      "passed": true,
+      "detail": "54 sources"
+    },
+    {
+      "name": "no localhost source URLs",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "unpriced observations carry review reasons",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Williams-Jones UTC start remains blank",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "greyhound runner-level rows remain unpriced",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "active and started rows partition observations",
+      "passed": true,
+      "detail": "42 active + 1 started"
+    },
+    {
+      "name": "started rows have no active analysis",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all confirmed active starts are future at snapshot",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Anaheim-Philadelphia is excluded after its start",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: rugby-ospreys-dragons-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: rugby-ospreys-dragons-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: rugby-ospreys-dragons-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: rugby-ospreys-dragons-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: rugby-ospreys-dragons-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: rugby-ospreys-dragons-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: rugby-ospreys-dragons-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: rugby-ospreys-dragons-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: rugby-ospreys-dragons-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: rugby-toulon-pau-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: rugby-toulon-pau-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: rugby-toulon-pau-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: rugby-toulon-pau-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: rugby-toulon-pau-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: rugby-toulon-pau-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: rugby-toulon-pau-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: rugby-toulon-pau-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: rugby-toulon-pau-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nhl-2026020169",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nhl-2026020169",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nhl-2026020169",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nhl-2026020169",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nhl-2026020169",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nhl-2026020169",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nhl-2026020169",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nhl-2026020169",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nhl-2026020169",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nba-mia-cha-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nba-mia-cha-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nba-mia-cha-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nba-mia-cha-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nba-mia-cha-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nba-mia-cha-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nba-mia-cha-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nba-mia-cha-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nba-mia-cha-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nhl-2026020170",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nhl-2026020170",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nhl-2026020170",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nhl-2026020170",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nhl-2026020170",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nhl-2026020170",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nhl-2026020170",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nhl-2026020170",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nhl-2026020170",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nhl-2026020171",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nhl-2026020171",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nhl-2026020171",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nhl-2026020171",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nhl-2026020171",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nhl-2026020171",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nhl-2026020171",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nhl-2026020171",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nhl-2026020171",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nhl-2026020172",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nhl-2026020172",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nhl-2026020172",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nhl-2026020172",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nhl-2026020172",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nhl-2026020172",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nhl-2026020172",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nhl-2026020172",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nhl-2026020172",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nhl-2026020173",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nhl-2026020173",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nhl-2026020173",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nhl-2026020173",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nhl-2026020173",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nhl-2026020173",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nhl-2026020173",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nhl-2026020173",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nhl-2026020173",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nhl-2026020174",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nhl-2026020174",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nhl-2026020174",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nhl-2026020174",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nhl-2026020174",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nhl-2026020174",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nhl-2026020174",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nhl-2026020174",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nhl-2026020174",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nhl-2026020175",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nhl-2026020175",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nhl-2026020175",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nhl-2026020175",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nhl-2026020175",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nhl-2026020175",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nhl-2026020175",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nhl-2026020175",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nhl-2026020175",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nhl-2026020176",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nhl-2026020176",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nhl-2026020176",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nhl-2026020176",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nhl-2026020176",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nhl-2026020176",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nhl-2026020176",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nhl-2026020176",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nhl-2026020176",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "High probability strictly above 70%: nhl-2026020176",
+      "passed": true,
+      "detail": "0.71428571"
+    },
+    {
+      "name": "High price in requested band: nhl-2026020176",
+      "passed": true,
+      "detail": "-250"
+    },
+    {
+      "name": "High sample gate: nhl-2026020176",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "High future start gate: nhl-2026020176",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "High availability gate: nhl-2026020176",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "High prediction length: nhl-2026020176",
+      "passed": true,
+      "detail": "76 words"
+    },
+    {
+      "name": "High prediction language: nhl-2026020176",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "High gate internally complete: nhl-2026020176",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nba-bkn-cle-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nba-bkn-cle-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nba-bkn-cle-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nba-bkn-cle-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nba-bkn-cle-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nba-bkn-cle-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nba-bkn-cle-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nba-bkn-cle-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nba-bkn-cle-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nba-mil-phi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nba-mil-phi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nba-mil-phi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nba-mil-phi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nba-mil-phi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nba-mil-phi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nba-mil-phi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nba-mil-phi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nba-mil-phi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: baseball-rays-brewers-849802",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: baseball-rays-brewers-849802",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: baseball-rays-brewers-849802",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: baseball-rays-brewers-849802",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: baseball-rays-brewers-849802",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: baseball-rays-brewers-849802",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: baseball-rays-brewers-849802",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: baseball-rays-brewers-849802",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: baseball-rays-brewers-849802",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nba-sas-dal-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nba-sas-dal-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nba-sas-dal-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nba-sas-dal-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nba-sas-dal-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nba-sas-dal-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nba-sas-dal-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nba-sas-dal-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nba-sas-dal-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nba-was-chi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nba-was-chi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nba-was-chi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nba-was-chi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nba-was-chi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nba-was-chi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nba-was-chi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nba-was-chi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nba-was-chi-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nba-hou-atl-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nba-hou-atl-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nba-hou-atl-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nba-hou-atl-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nba-hou-atl-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nba-hou-atl-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nba-hou-atl-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nba-hou-atl-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nba-hou-atl-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nba-nop-den-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nba-nop-den-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nba-nop-den-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nba-nop-den-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nba-nop-den-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nba-nop-den-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nba-nop-den-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nba-nop-den-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nba-nop-den-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nhl-2026020177",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nhl-2026020177",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nhl-2026020177",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nhl-2026020177",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nhl-2026020177",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nhl-2026020177",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nhl-2026020177",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nhl-2026020177",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nhl-2026020177",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nba-gsw-phx-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nba-gsw-phx-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nba-gsw-phx-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nba-gsw-phx-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nba-gsw-phx-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nba-gsw-phx-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nba-gsw-phx-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nba-gsw-phx-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nba-gsw-phx-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nhl-2026020178",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nhl-2026020178",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nhl-2026020178",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nhl-2026020178",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nhl-2026020178",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: nhl-2026020178",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: nhl-2026020178",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: nhl-2026020178",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: nhl-2026020178",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: nhl-2026020179",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: nhl-2026020179",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: nhl-2026020179",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: nhl-2026020179",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: nhl-2026020179",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "unpriced row has flags: tennis-krueger-siniakova-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: cricket-pakistan-england-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: cricket-pakistan-england-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: cricket-pakistan-england-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: cricket-pakistan-england-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: cricket-pakistan-england-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: cricket-india-zimbabwe-women-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: cricket-india-zimbabwe-women-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: cricket-india-zimbabwe-women-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: cricket-india-zimbabwe-women-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: cricket-india-zimbabwe-women-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: tennis-rybakina-fernandez-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: tennis-rybakina-fernandez-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: tennis-rybakina-fernandez-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: tennis-rybakina-fernandez-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: tennis-rybakina-fernandez-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: tennis-medvedev-basilashvili-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: tennis-medvedev-basilashvili-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: tennis-medvedev-basilashvili-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: tennis-medvedev-basilashvili-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: tennis-medvedev-basilashvili-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "unpriced row has flags: gaelic-caherlistrane-spideal-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "unpriced row has flags: handball-saint-raphael-paris-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "unpriced row has flags: gaelic-moycullen-salthill-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: volley-trentino-cisterna-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: volley-trentino-cisterna-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: volley-trentino-cisterna-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: volley-trentino-cisterna-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: volley-trentino-cisterna-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: volley-trentino-cisterna-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: volley-trentino-cisterna-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: volley-trentino-cisterna-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: volley-trentino-cisterna-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: volley-lube-padova-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: volley-lube-padova-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: volley-lube-padova-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: volley-lube-padova-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: volley-lube-padova-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: volley-lube-padova-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: volley-lube-padova-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: volley-lube-padova-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: volley-lube-padova-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: volley-monza-verona-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: volley-monza-verona-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: volley-monza-verona-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: volley-monza-verona-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: volley-monza-verona-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: volley-monza-verona-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: volley-monza-verona-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: volley-monza-verona-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: volley-monza-verona-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: volley-perugia-pordenone-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: volley-perugia-pordenone-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: volley-perugia-pordenone-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: volley-perugia-pordenone-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: volley-perugia-pordenone-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: volley-perugia-pordenone-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: volley-perugia-pordenone-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: volley-perugia-pordenone-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: volley-perugia-pordenone-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: volley-piacenza-modena-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: volley-piacenza-modena-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: volley-piacenza-modena-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: volley-piacenza-modena-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: volley-piacenza-modena-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: volley-piacenza-modena-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: volley-piacenza-modena-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: volley-piacenza-modena-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: volley-piacenza-modena-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: volley-milano-cuneo-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: volley-milano-cuneo-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: volley-milano-cuneo-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: volley-milano-cuneo-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: volley-milano-cuneo-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: volley-milano-cuneo-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: volley-milano-cuneo-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: volley-milano-cuneo-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: volley-milano-cuneo-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "unpriced row has flags: motor-usa-gp-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: rugby-rochelle-bordeaux-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: rugby-rochelle-bordeaux-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: rugby-rochelle-bordeaux-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: rugby-rochelle-bordeaux-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: rugby-rochelle-bordeaux-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: rugby-rochelle-bordeaux-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: rugby-rochelle-bordeaux-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: rugby-rochelle-bordeaux-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: rugby-rochelle-bordeaux-20261025",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: handball-magdeburg-kriens-20261028",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: handball-magdeburg-kriens-20261028",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: handball-magdeburg-kriens-20261028",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: handball-magdeburg-kriens-20261028",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: handball-magdeburg-kriens-20261028",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over probability range: handball-magdeburg-kriens-20261028",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover probability range: handball-magdeburg-kriens-20261028",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "over fair recalculation: handball-magdeburg-kriens-20261028",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "cover fair recalculation: handball-magdeburg-kriens-20261028",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "unpriced row has flags: greyhounds-oaks-final-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "unpriced row has flags: greyhounds-scurry-final-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probability range: snooker-williams-jones-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "winner probabilities sum to one: snooker-williams-jones-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fair American price recalculation: snooker-williams-jones-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection is strongest winner outcome: snooker-williams-jones-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "selection names an official participant: snooker-williams-jones-20261024",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "High predictions match High rows",
+      "passed": true,
+      "detail": "1 High"
+    },
+    {
+      "name": "no sport exceeds five High selections",
+      "passed": true,
+      "detail": "Counter({'ice-hockey': 1})"
+    },
+    {
+      "name": "High predictions are unique",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "High prediction hashes are unique",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "prediction JSON contains only full analysis",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Edmonton boundary price remains exactly -250",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "New Jersey -267 is not forced into High band",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Vegas exactly 70% is not High",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all fifteen sport subpages exist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required executive and review pages exist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/flagged-for-review.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/index.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/method.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports/baseball.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports/basketball.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports/cricket.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports/darts.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports/gaelic-sports.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports/golf.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports/greyhounds.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports/handball.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports/ice-hockey.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports/motor-racing.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports/rugby-league.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports/rugby-union.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports/snooker.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports/tennis.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports/volleyball.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no serialized null/NaN values: b2719ad3/sports.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "all local HTML/CSS links resolve",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/flagged-for-review.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/flagged-for-review.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/flagged-for-review.html",
+      "passed": true,
+      "detail": "51 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/index.html",
+      "passed": true,
+      "detail": "42 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/index.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/index.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/method.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/method.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/method.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports/baseball.html",
+      "passed": true,
+      "detail": "1 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports/baseball.html",
+      "passed": true,
+      "detail": "1 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports/baseball.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports/basketball.html",
+      "passed": true,
+      "detail": "8 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports/basketball.html",
+      "passed": true,
+      "detail": "8 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports/basketball.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports/cricket.html",
+      "passed": true,
+      "detail": "2 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports/cricket.html",
+      "passed": true,
+      "detail": "2 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports/cricket.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports/darts.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports/darts.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports/darts.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports/gaelic-sports.html",
+      "passed": true,
+      "detail": "2 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports/gaelic-sports.html",
+      "passed": true,
+      "detail": "2 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports/gaelic-sports.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports/golf.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports/golf.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports/golf.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports/greyhounds.html",
+      "passed": true,
+      "detail": "2 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports/greyhounds.html",
+      "passed": true,
+      "detail": "2 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports/greyhounds.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports/handball.html",
+      "passed": true,
+      "detail": "2 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports/handball.html",
+      "passed": true,
+      "detail": "2 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports/handball.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports/ice-hockey.html",
+      "passed": true,
+      "detail": "11 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports/ice-hockey.html",
+      "passed": true,
+      "detail": "11 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports/ice-hockey.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports/motor-racing.html",
+      "passed": true,
+      "detail": "1 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports/motor-racing.html",
+      "passed": true,
+      "detail": "1 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports/motor-racing.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports/rugby-league.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports/rugby-league.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports/rugby-league.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports/rugby-union.html",
+      "passed": true,
+      "detail": "3 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports/rugby-union.html",
+      "passed": true,
+      "detail": "3 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports/rugby-union.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports/snooker.html",
+      "passed": true,
+      "detail": "1 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports/snooker.html",
+      "passed": true,
+      "detail": "1 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports/snooker.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports/tennis.html",
+      "passed": true,
+      "detail": "3 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports/tennis.html",
+      "passed": true,
+      "detail": "3 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports/tennis.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports/volleyball.html",
+      "passed": true,
+      "detail": "6 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports/volleyball.html",
+      "passed": true,
+      "detail": "6 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports/volleyball.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every fixture row has an official link: b2719ad3/sports.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every derivative row has an official link: b2719ad3/sports.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "every review row has a review link: b2719ad3/sports.html",
+      "passed": true,
+      "detail": "0 rows"
+    },
+    {
+      "name": "home page contains every active fixture row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "method page contains every registered source",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "public machine-readable data copied",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

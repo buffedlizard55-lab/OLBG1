@@ -1,0 +1,225 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Picks · OLBG research desk 580f43c9</title>
+<style>
+:root{--bg:#f4f6f9;--surface:#fff;--ink:#0f172a;--muted:#5b6675;--line:#e2e8f0;
+--accent:#0b6b4f;--accent-dark:#08503b;--soft:#e8f7f0;--amber:#b54708;--amber-soft:#fff7e6;
+--red:#b42318;--red-soft:#fef3f2;--blue:#1d4ed8;--blue-soft:#eef4ff;--radius:14px;
+--shadow:0 1px 2px rgba(15,23,42,.06),0 1px 3px rgba(15,23,42,.08)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent-dark);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);
+border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap;min-height:62px}
+.brand{font-weight:800;letter-spacing:-.01em;display:flex;gap:9px;align-items:center;color:var(--ink)}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:var(--accent)}
+.brand small{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--muted);font-weight:600}
+nav.main{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap}
+nav.main a{padding:7px 10px;border-radius:9px;font-size:13.5px;font-weight:600;color:#334155}
+nav.main a:hover{background:#eef2f7;text-decoration:none}
+nav.main a[aria-current=page]{background:var(--soft);color:var(--accent-dark)}
+.hero{padding:30px 0 6px}
+.eyebrow{margin:0 0 8px;font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+color:var(--accent-dark)}
+h1{margin:0;font-size:clamp(27px,3.6vw,38px);line-height:1.12;letter-spacing:-.02em}
+h2{margin:34px 0 10px;font-size:22px;letter-spacing:-.01em}
+h3{margin:20px 0 8px;font-size:17px}
+p.lede{color:var(--muted);font-size:17px;max-width:80ch;margin:12px 0 0}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:20px 0 4px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+padding:13px 15px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:25px;line-height:1.1;letter-spacing:-.02em}
+.kpi span{font-size:12.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+padding:18px;box-shadow:var(--shadow);margin:14px 0}
+.card.tight{padding:14px 16px}
+.starthere{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.starthere a{display:block;background:var(--surface);border:1px solid var(--line);
+border-radius:var(--radius);padding:15px 16px;box-shadow:var(--shadow)}
+.starthere a:hover{border-color:var(--accent);text-decoration:none}
+.starthere b{display:block;color:var(--accent-dark);font-size:15.5px;margin-bottom:3px}
+.starthere span{color:var(--muted);font-size:13.5px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f8fafc;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#475569;
+position:sticky;top:62px}
+tbody tr:hover{background:#fbfdff}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.scroll{display:block;overflow-x:auto;white-space:nowrap}
+table.scroll tbody,table.scroll thead{display:table;width:100%}
+.pick{font-weight:800;color:var(--accent-dark)}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11.5px;font-weight:800;
+letter-spacing:.04em;text-transform:uppercase}
+.badge.hi{background:var(--soft);color:var(--accent-dark)}
+.badge.md{background:var(--blue-soft);color:var(--blue)}
+.badge.lo{background:var(--amber-soft);color:var(--amber)}
+.badge.gap{background:var(--red-soft);color:var(--red)}
+.badge.ok{background:var(--soft);color:var(--accent-dark)}
+.note{background:var(--blue-soft);border:1px solid #cfe0ff;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.warn{background:var(--amber-soft);border:1px solid #f6dfae;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.danger{background:var(--red-soft);border:1px solid #f3c9c5;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.okay{background:var(--soft);border:1px solid #bfe8d5;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pred{border-left:4px solid var(--accent);background:#fcfdfe;padding:12px 15px;border-radius:0 10px 10px 0;
+margin:10px 0;font-size:15px}
+.small{font-size:13px;color:var(--muted)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:22px 0;color:var(--muted);font-size:13px}
+ul.clean{margin:8px 0 0 18px;padding:0}ul.clean li{margin:4px 0}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.starthere,.grid2,.grid3{grid-template-columns:1fr}
+th{position:static}}
+</style></head><body>
+<header class="top"><div class="wrap">
+<div class="brand"><span class="dot"></span><span>OLBG research desk<small>24–25 October 2026 · session 580f43c9</small></span></div>
+<nav class="main"><a href="index.html">Summary</a><a href="picks.html" aria-current=page>Picks</a><a href="predictions.html">Write-ups</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="sports/basketball.html">Sports</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="repo-audit.html">Repo audit</a><a href="methodology.html">Method</a></nav>
+</div></header>
+<main class="wrap">
+<section class="hero"><p class="eyebrow">The picks</p>
+<h1>All 13 selections, with the case and the evidence</h1>
+<p class="lede">Each row names one selection, its market, our fair price and chance, the confidence tier, a
+full written case, and a link to the official page the underlying facts came from. Picks are on the left of
+the case column; the price column is ours, not a bookmaker's.</p></section>
+<div class="warn"><strong>Confidence gate.</strong> High = better than 70% and fair price inside −250…+10000.
+Medium = 60–70%, or above 70% but priced shorter than −250 (excluded by the band rule).
+Low = below 60%, or a sport whose inputs are incomplete. Today: 0 high, 6 medium,
+7 low.</div>
+<table><thead><tr><th>Sport</th><th>Match &amp; start</th><th>Pick &amp; market</th><th class="num">Fair price</th>
+<th>Confidence</th><th>Why (full case)</th><th>Evidence</th></tr></thead><tbody><tr>
+<td><a href="sports/basketball.html">Basketball</a><br><span class="small">NBA</span></td>
+<td><strong>Miami Heat v Charlotte Hornets</strong><br><span class="small">24 Oct 2026 · 22:00 UTC · venue not read</span></td>
+<td><span class="pick">Charlotte Hornets</span><br><span class="small">Match winner (money line)</span></td>
+<td class="num"><strong>-225</strong><br><span class="small">69.2% · dec 1.44</span></td>
+<td><span class="badge md">medium</span><br><span class="small">inside −250…+10000</span></td>
+<td style="min-width:280px">Charlotte host Miami having split their opening two games, while the Heat arrive 0-2 after losing both. The Hornets therefore hold the better early record and the home edge, which is why they are the money-line selection here. Two games is not form, so treat the price as a starting point rather than a settled read on either roster.<div class="small" style="margin-top:6px">59 words</div></td>
+<td><a href="https://www.nba.com/games" rel="noopener">NBA</a><br>
+<span class="small">read 2026-10-24T17:58Z</span></td>
+</tr><tr>
+<td><a href="sports/ice-hockey.html">Ice Hockey</a><br><span class="small">NHL</span></td>
+<td><strong>Toronto Maple Leafs v Edmonton Oilers</strong><br><span class="small">24 Oct 2026 · 23:00 UTC · Rogers Place, Edmonton</span></td>
+<td><span class="pick">Edmonton Oilers</span><br><span class="small">Match winner (money line)</span></td>
+<td class="num"><strong>-306</strong><br><span class="small">75.4% · dec 1.33</span></td>
+<td><span class="badge md">medium</span><br><span class="small">outside the band: price shorter than −250</span></td>
+<td style="min-width:280px">Edmonton are 8-1-1 with 47 goals scored and a three-game winning run, and they host a Toronto team on 14 points from 12 games. The Oilers rate near 75% on the money line, our strongest hockey number of the night, but a fair -306 is shorter than the brief&#x27;s -250 floor. That price ceiling, not the probability, is what caps this row at medium.<div class="small" style="margin-top:6px">64 words</div><div class='small'>Puck line −1.5 Edmonton Oilers: +175 (36.3%); away −1.5 +360 (21.7%); total 7.5: over +119 (45.6%) / under -119 (54.4%)</div></td>
+<td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">NHL</a><br>
+<span class="small">read 2026-10-24T18:02Z</span></td>
+</tr><tr>
+<td><a href="sports/ice-hockey.html">Ice Hockey</a><br><span class="small">NHL</span></td>
+<td><strong>San Jose Sharks v Boston Bruins</strong><br><span class="small">24 Oct 2026 · 23:00 UTC · TD Garden, Boston</span></td>
+<td><span class="pick">Boston Bruins</span><br><span class="small">Match winner (money line)</span></td>
+<td class="num"><strong>-225</strong><br><span class="small">69.2% · dec 1.44</span></td>
+<td><span class="badge md">medium</span><br><span class="small">inside −250…+10000</span></td>
+<td style="min-width:280px">Boston are 8-2-1 with 42 goals for and 22 against, and have won four of five at TD Garden, so the Bruins are the selection against a San Jose side whose 13 points include just one regulation win. The Sharks are a respectable 4-2-1 on the road, which is why our estimate sits just under 70% at a fair price of -225 and the Bruins stay in the medium tier rather than clearing the high bar.<div class="small" style="margin-top:6px">76 words</div><div class='small'>Puck line −1.5 Boston Bruins: +134 (42.7%); away −1.5 +607 (14.1%); total 6.5: over +145 (40.8%) / under -145 (59.2%)</div></td>
+<td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">NHL</a><br>
+<span class="small">read 2026-10-24T18:02Z</span></td>
+</tr><tr>
+<td><a href="sports/basketball.html">Basketball</a><br><span class="small">NBA</span></td>
+<td><strong>Milwaukee Bucks v Philadelphia 76ers</strong><br><span class="small">24 Oct 2026 · 23:30 UTC · venue not read</span></td>
+<td><span class="pick">Philadelphia 76ers</span><br><span class="small">Match winner (money line)</span></td>
+<td class="num"><strong>-375</strong><br><span class="small">78.9% · dec 1.27</span></td>
+<td><span class="badge md">medium</span><br><span class="small">outside the band: price shorter than −250</span></td>
+<td style="min-width:280px">Philadelphia are 2-0 and host a Milwaukee side that has lost both of its opening games, which is why the 76ers are our strongest basketball money-line selection of the night. The price is shorter than the -250 floor set in the brief, so it is published at medium tier even though the estimate is near 79%.<div class="small" style="margin-top:6px">56 words</div></td>
+<td><a href="https://www.nba.com/games" rel="noopener">NBA</a><br>
+<span class="small">read 2026-10-24T17:58Z</span></td>
+</tr><tr>
+<td><a href="sports/basketball.html">Basketball</a><br><span class="small">NBA</span></td>
+<td><strong>San Antonio Spurs v Dallas Mavericks</strong><br><span class="small">25 Oct 2026 · 00:00 UTC · venue not read</span></td>
+<td><span class="pick">Dallas Mavericks</span><br><span class="small">Match winner (money line)</span></td>
+<td class="num"><strong>-225</strong><br><span class="small">69.2% · dec 1.44</span></td>
+<td><span class="badge md">medium</span><br><span class="small">inside −250…+10000</span></td>
+<td style="min-width:280px">San Antonio are 0-2 and visit a Dallas team that has split its first two games. Add the standard home adjustment to those records and the Mavericks come out near 69% on the money line, which is where we price them. Two games per side is a thin base, so the play is medium confidence at best.<div class="small" style="margin-top:6px">57 words</div></td>
+<td><a href="https://www.nba.com/games" rel="noopener">NBA</a><br>
+<span class="small">read 2026-10-24T17:58Z</span></td>
+</tr><tr>
+<td><a href="sports/gaelic-football.html">Gaelic Sports</a><br><span class="small">Cork Premier SFC</span></td>
+<td><strong>Nemo Rangers v St Finbarrs</strong><br><span class="small">Sunday 25 October, 16:00 local (Irish time); UTC conversion not published · SuperValu Pairc Ui Chaoimh, Cork</span></td>
+<td><span class="pick">Nemo Rangers</span><br><span class="small">Match winner</span></td>
+<td class="num"><strong>-178</strong><br><span class="small">64.0% · dec 1.56</span></td>
+<td><span class="badge md">medium</span><br><span class="small">inside −250…+10000</span></td>
+<td style="min-width:280px">Nemo Rangers meet St Finbarrs in the Cork Premier SFC final at SuperValu Pairc Ui Chaoimh. Nemo beat Carrigaline 1-15 to 0-16 in their semi-final and took two of three group games with a 57-43 return; St Finbarrs beat Clonakilty 2-12 to 0-16 but won only one of three group games, scoring 63 and conceding 55. Nemo are the pick at about 64%.<div class="small" style="margin-top:6px">63 words</div></td>
+<td><a href="https://gaacork.ie/" rel="noopener">Cork GAA (county board, official)</a><br>
+<span class="small">read 2026-10-24T18:14Z</span></td>
+</tr><tr>
+<td><a href="sports/ice-hockey.html">Ice Hockey</a><br><span class="small">NHL</span></td>
+<td><strong>New York Rangers v Ottawa Senators</strong><br><span class="small">24 Oct 2026 · 23:00 UTC · Canadian Tire Centre, Ottawa</span></td>
+<td><span class="pick">Ottawa Senators</span><br><span class="small">Match winner (money line)</span></td>
+<td class="num"><strong>-124</strong><br><span class="small">55.3% · dec 1.81</span></td>
+<td><span class="badge lo">low</span><br><span class="small">inside −250…+10000</span></td>
+<td style="min-width:280px">The Rangers&#x27; road split is the decisive number: 1-4-1 away with eight goals scored and 19 conceded. Ottawa are 7-4-0 overall and 4-2-0 at home and are our money-line pick, though a 55% estimate keeps this a low-confidence lean. The overall records are almost identical, so the venue split carries the whole argument.<div class="small" style="margin-top:6px">53 words</div><div class='small'>Puck line −1.5 Ottawa Senators: +360 (21.8%); away −1.5 +237 (29.6%); total 5.5: over +111 (47.5%) / under -111 (52.5%)</div></td>
+<td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">NHL</a><br>
+<span class="small">read 2026-10-24T18:02Z</span></td>
+</tr><tr>
+<td><a href="sports/basketball.html">Basketball</a><br><span class="small">NBA</span></td>
+<td><strong>Brooklyn Nets v Cleveland Cavaliers</strong><br><span class="small">24 Oct 2026 · 23:30 UTC · venue not read</span></td>
+<td><span class="pick">Cleveland Cavaliers</span><br><span class="small">Match winner (money line)</span></td>
+<td class="num"><strong>-135</strong><br><span class="small">57.4% · dec 1.74</span></td>
+<td><span class="badge lo">low</span><br><span class="small">inside −250…+10000</span></td>
+<td style="min-width:280px">Brooklyn and Cleveland both opened with a defeat, so the records say coin flip. The split is situational: the Cavaliers are at home, and our line makes them the clear favourite on the money line. With one game played apiece, nothing here is proven, so the Cavaliers are a low-conviction selection rather than a strong one.<div class="small" style="margin-top:6px">56 words</div></td>
+<td><a href="https://www.nba.com/games" rel="noopener">NBA</a><br>
+<span class="small">read 2026-10-24T17:58Z</span></td>
+</tr><tr>
+<td><a href="sports/baseball.html">Baseball</a><br><span class="small">MLB</span></td>
+<td><strong>Tampa Bay Rays v Milwaukee Brewers</strong><br><span class="small">25 Oct 2026 · 00:00 UTC · American Family Field, Milwaukee</span></td>
+<td><span class="pick">Milwaukee Brewers</span><br><span class="small">Match winner (money line)</span></td>
+<td class="num"><strong>-128</strong><br><span class="small">56.1% · dec 1.78</span></td>
+<td><span class="badge lo">low</span><br><span class="small">inside −250…+10000</span></td>
+<td style="min-width:280px">Milwaukee lead the World Series 1-0 and send Logan Henderson against Drew Rasmussen in Game 2 at American Family Field. The Brewers went 103-59 with a 55-26 home record and an 8-2 last ten, while Tampa Bay were 43-38 on the road and arrive off a Game 1 defeat. Back Milwaukee near 56%; the Rays&#x27; 98 wins keep this low confidence.<div class="small" style="margin-top:6px">61 words</div></td>
+<td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;date=2026-10-24&amp;hydrate=team,linescore,probablePitcher" rel="noopener">MLB</a><br>
+<span class="small">read 2026-10-24T18:06Z</span></td>
+</tr><tr>
+<td><a href="sports/basketball.html">Basketball</a><br><span class="small">NBA</span></td>
+<td><strong>Houston Rockets v Atlanta Hawks</strong><br><span class="small">25 Oct 2026 · 00:30 UTC · venue not read</span></td>
+<td><span class="pick">Atlanta Hawks</span><br><span class="small">Match winner (money line)</span></td>
+<td class="num"><strong>-135</strong><br><span class="small">57.4% · dec 1.74</span></td>
+<td><span class="badge lo">low</span><br><span class="small">inside −250…+10000</span></td>
+<td style="min-width:280px">Houston and Atlanta both arrive 2-0, making this the cleanest basketball test on the card: unbeaten record against unbeaten record. Home court is the only separator our numbers find, and it is worth only a couple of points of probability, so the Hawks are a thin money-line lean rather than a strong side. Two wins apiece proves little, and that is why the selection is graded low.<div class="small" style="margin-top:6px">67 words</div></td>
+<td><a href="https://www.nba.com/games" rel="noopener">NBA</a><br>
+<span class="small">read 2026-10-24T17:58Z</span></td>
+</tr><tr>
+<td><a href="sports/ice-hockey.html">Ice Hockey</a><br><span class="small">NHL</span></td>
+<td><strong>Tampa Bay Lightning v Utah Mammoth</strong><br><span class="small">25 Oct 2026 · 01:00 UTC · Delta Center, Salt Lake City</span></td>
+<td><span class="pick">Tampa Bay Lightning</span><br><span class="small">Match winner (money line)</span></td>
+<td class="num"><strong>-102</strong><br><span class="small">50.5% · dec 1.98</span></td>
+<td><span class="badge lo">low</span><br><span class="small">inside −250…+10000</span></td>
+<td style="min-width:280px">Utah are 7-4-0 and Tampa Bay 7-3-0, so the records are level. The Lightning&#x27;s road form is the soft spot (2-3-0 away, 16 scored, 20 conceded) against a Utah home record of 3-1-0, yet our line still makes Tampa Bay the narrowest of money-line favourites at a fair -102. That is a coin-flip lean, not a conviction play, and it is graded low.<div class="small" style="margin-top:6px">63 words</div><div class='small'>Puck line −1.5 Utah Mammoth: +267 (27.3%); away −1.5 +259 (27.9%); total 6.5: over +101 (49.7%) / under -101 (50.3%)</div></td>
+<td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">NHL</a><br>
+<span class="small">read 2026-10-24T18:02Z</span></td>
+</tr><tr>
+<td><a href="sports/tennis.html">Tennis</a><br><span class="small">ATP Vienna (event 9410)</span></td>
+<td><strong>Nikoloz Basilashvili v Daniil Medvedev</strong><br><span class="small">Sunday 25 October; time not published on the official scores page (flagged F-06) · Wiener Stadthalle, Vienna</span></td>
+<td><span class="pick">Daniil Medvedev</span><br><span class="small">Match winner</span></td>
+<td class="num"><strong>-178</strong><br><span class="small">64.0% · dec 1.56</span></td>
+<td><span class="badge lo">low</span><br><span class="small">inside −250…+10000</span></td>
+<td style="min-width:280px">Daniil Medvedev, the top seed, meets Nikoloz Basilashvili in the Vienna final after advancing when Alexander Bublik retired at 6-3, while Basilashvili came through 6-4 6-7(5) 6-3 against Stefanos Tsitsipas. Medvedev had the shorter semi-final and is the selection at roughly 64%. No ranking or head-to-head feed was read, so this is a low-confidence call.<div class="small" style="margin-top:6px">55 words</div></td>
+<td><a href="https://www.atptour.com/en/scores/current" rel="noopener">ATP Tour</a><br>
+<span class="small">read 2026-10-24T18:08Z</span></td>
+</tr><tr>
+<td><a href="sports/ice-hockey.html">Ice Hockey</a><br><span class="small">NHL</span></td>
+<td><strong>Minnesota Wild v Seattle Kraken</strong><br><span class="small">Start time not read from the official schedule block (flagged F-05) · Climate Pledge Arena, Seattle</span></td>
+<td><span class="pick">Seattle Kraken</span><br><span class="small">Match winner (money line)</span></td>
+<td class="num"><strong>-140</strong><br><span class="small">58.3% · dec 1.72</span></td>
+<td><span class="badge lo">low</span><br><span class="small">inside −250…+10000</span></td>
+<td style="min-width:280px">Seattle are 7-3-1 on a two-game winning run and 3-2-0 at home, while Minnesota have taken two of seven on the road (2-3-2, 17 goals for, 19 against). The Kraken are the money-line pick at around 58% and a fair -140. The start time was not readable in the official schedule block we loaded, so confirm the puck drop before staking anything.<div class="small" style="margin-top:6px">62 words</div><div class='small'>Puck line −1.5 Seattle Kraken: +304 (24.8%); away −1.5 +252 (28.4%); total 6.5: over +149 (40.1%) / under -149 (59.9%)</div></td>
+<td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">NHL</a><br>
+<span class="small">read 2026-10-24T18:02Z</span></td>
+</tr></tbody></table>
+<p class="small">Injury and availability fields are blank for every row: no official injury report was read
+for any of these fixtures. See <a href="flagged.html">Flagged items F-03</a>.</p>
+</main>
+<footer class="wrap"><p><strong>Independent research, not a tipster service.</strong> Prices are our own
+estimates, not bookmaker odds. Nothing here is a guarantee, and no bet is risk-free.
+Built from official league, tour and governing-body sources read on 24 October 2026; every row links to the
+page it came from. Not affiliated with OLBG. 18+. If gambling is causing harm, see
+<a href="https://www.gamcare.org.uk/">GamCare</a> or <a href="https://www.begambleaware.org/">BeGambleAware</a>.</p>
+<p class="small">Repository: <a href="https://github.com/buffedlizard55-lab/OLBG1">github.com/buffedlizard55-lab/OLBG1</a> ·
+Live desk: <a href="https://buffedlizard55-lab.github.io/OLBG1/580f43c9/">buffedlizard55-lab.github.io/OLBG1/580f43c9/</a> ·
+Evidence frozen at 2026-10-24T18:20:00Z</p></footer>
+</body></html>

@@ -1,0 +1,233 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Markets · OLBG research desk 580f43c9</title>
+<style>
+:root{--bg:#f4f6f9;--surface:#fff;--ink:#0f172a;--muted:#5b6675;--line:#e2e8f0;
+--accent:#0b6b4f;--accent-dark:#08503b;--soft:#e8f7f0;--amber:#b54708;--amber-soft:#fff7e6;
+--red:#b42318;--red-soft:#fef3f2;--blue:#1d4ed8;--blue-soft:#eef4ff;--radius:14px;
+--shadow:0 1px 2px rgba(15,23,42,.06),0 1px 3px rgba(15,23,42,.08)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent-dark);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);
+border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap;min-height:62px}
+.brand{font-weight:800;letter-spacing:-.01em;display:flex;gap:9px;align-items:center;color:var(--ink)}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:var(--accent)}
+.brand small{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--muted);font-weight:600}
+nav.main{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap}
+nav.main a{padding:7px 10px;border-radius:9px;font-size:13.5px;font-weight:600;color:#334155}
+nav.main a:hover{background:#eef2f7;text-decoration:none}
+nav.main a[aria-current=page]{background:var(--soft);color:var(--accent-dark)}
+.hero{padding:30px 0 6px}
+.eyebrow{margin:0 0 8px;font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+color:var(--accent-dark)}
+h1{margin:0;font-size:clamp(27px,3.6vw,38px);line-height:1.12;letter-spacing:-.02em}
+h2{margin:34px 0 10px;font-size:22px;letter-spacing:-.01em}
+h3{margin:20px 0 8px;font-size:17px}
+p.lede{color:var(--muted);font-size:17px;max-width:80ch;margin:12px 0 0}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:20px 0 4px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+padding:13px 15px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:25px;line-height:1.1;letter-spacing:-.02em}
+.kpi span{font-size:12.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+padding:18px;box-shadow:var(--shadow);margin:14px 0}
+.card.tight{padding:14px 16px}
+.starthere{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.starthere a{display:block;background:var(--surface);border:1px solid var(--line);
+border-radius:var(--radius);padding:15px 16px;box-shadow:var(--shadow)}
+.starthere a:hover{border-color:var(--accent);text-decoration:none}
+.starthere b{display:block;color:var(--accent-dark);font-size:15.5px;margin-bottom:3px}
+.starthere span{color:var(--muted);font-size:13.5px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f8fafc;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#475569;
+position:sticky;top:62px}
+tbody tr:hover{background:#fbfdff}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.scroll{display:block;overflow-x:auto;white-space:nowrap}
+table.scroll tbody,table.scroll thead{display:table;width:100%}
+.pick{font-weight:800;color:var(--accent-dark)}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11.5px;font-weight:800;
+letter-spacing:.04em;text-transform:uppercase}
+.badge.hi{background:var(--soft);color:var(--accent-dark)}
+.badge.md{background:var(--blue-soft);color:var(--blue)}
+.badge.lo{background:var(--amber-soft);color:var(--amber)}
+.badge.gap{background:var(--red-soft);color:var(--red)}
+.badge.ok{background:var(--soft);color:var(--accent-dark)}
+.note{background:var(--blue-soft);border:1px solid #cfe0ff;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.warn{background:var(--amber-soft);border:1px solid #f6dfae;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.danger{background:var(--red-soft);border:1px solid #f3c9c5;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.okay{background:var(--soft);border:1px solid #bfe8d5;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pred{border-left:4px solid var(--accent);background:#fcfdfe;padding:12px 15px;border-radius:0 10px 10px 0;
+margin:10px 0;font-size:15px}
+.small{font-size:13px;color:var(--muted)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:22px 0;color:var(--muted);font-size:13px}
+ul.clean{margin:8px 0 0 18px;padding:0}ul.clean li{margin:4px 0}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.starthere,.grid2,.grid3{grid-template-columns:1fr}
+th{position:static}}
+</style></head><body>
+<header class="top"><div class="wrap">
+<div class="brand"><span class="dot"></span><span>OLBG research desk<small>24–25 October 2026 · session 580f43c9</small></span></div>
+<nav class="main"><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="predictions.html">Write-ups</a><a href="matches.html">Matches</a><a href="markets.html" aria-current=page>Markets</a><a href="sports/basketball.html">Sports</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="repo-audit.html">Repo audit</a><a href="methodology.html">Method</a></nav>
+</div></header>
+<main class="wrap">
+<section class="hero"><p class="eyebrow">Market coverage</p>
+<h1>Every market family we looked at — priced or withheld, with the reason</h1>
+<p class="lede">Handicaps, totals and derivative markets were investigated for all 13 selections.
+Where a family could not be originated, the missing input is named instead of a number being produced.</p></section>
+<div class="note"><strong>What is actually priced:</strong> match winner on all 13 selections;
+hockey puck lines and totals on the five NHL games (derived from official goals for/against);
+5 of 13 selections carry more than one market.</div>
+<table><thead><tr><th>Sport</th><th>Match</th><th>Market family</th><th>Status</th><th class="num">Our price</th>
+<th>Why</th></tr></thead><tbody><tr><td><a href="sports/basketball.html">Basketball</a></td>
+<td>Miami Heat v Charlotte Hornets</td><td>Match winner</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">-225 (69.2%)</td><td class="small">Two-way market from the originated win probability.</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td>
+<td>Miami Heat v Charlotte Hornets</td><td>Handicap / line</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">No official handicap line is published on the sources we can read; a self-made spread would be a guess dressed as a market.</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td>
+<td>Miami Heat v Charlotte Hornets</td><td>Match total</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">Requires per-team scoring rates at the venue; only win/loss splits were readable for this sport.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>Toronto Maple Leafs v Edmonton Oilers</td><td>Match winner</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">-306 (75.4%)</td><td class="small">Two-way money line from the originated win probability.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>Toronto Maple Leafs v Edmonton Oilers</td><td>Puck line -1.5 / +1.5</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">home −1.5 +175 / away −1.5 +360</td><td class="small">Derived from an independent-Poisson goal model whose rates come from each club&#x27;s official goals for/against per game.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>Toronto Maple Leafs v Edmonton Oilers</td><td>Match total</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">line 7.5 · over +119 / under -119</td><td class="small">Poisson total; the line is ours, not a bookmaker&#x27;s, and is published as a half-goal line.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>Toronto Maple Leafs v Edmonton Oilers</td><td>Correct score / first goalscorer / props</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">No official scorer or line-combination feed was read; pricing them would be invention.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>San Jose Sharks v Boston Bruins</td><td>Match winner</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">-225 (69.2%)</td><td class="small">Two-way money line from the originated win probability.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>San Jose Sharks v Boston Bruins</td><td>Puck line -1.5 / +1.5</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">home −1.5 +134 / away −1.5 +607</td><td class="small">Derived from an independent-Poisson goal model whose rates come from each club&#x27;s official goals for/against per game.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>San Jose Sharks v Boston Bruins</td><td>Match total</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">line 6.5 · over +145 / under -145</td><td class="small">Poisson total; the line is ours, not a bookmaker&#x27;s, and is published as a half-goal line.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>San Jose Sharks v Boston Bruins</td><td>Correct score / first goalscorer / props</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">No official scorer or line-combination feed was read; pricing them would be invention.</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td>
+<td>Milwaukee Bucks v Philadelphia 76ers</td><td>Match winner</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">-375 (78.9%)</td><td class="small">Two-way market from the originated win probability.</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td>
+<td>Milwaukee Bucks v Philadelphia 76ers</td><td>Handicap / line</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">No official handicap line is published on the sources we can read; a self-made spread would be a guess dressed as a market.</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td>
+<td>Milwaukee Bucks v Philadelphia 76ers</td><td>Match total</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">Requires per-team scoring rates at the venue; only win/loss splits were readable for this sport.</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td>
+<td>San Antonio Spurs v Dallas Mavericks</td><td>Match winner</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">-225 (69.2%)</td><td class="small">Two-way market from the originated win probability.</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td>
+<td>San Antonio Spurs v Dallas Mavericks</td><td>Handicap / line</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">No official handicap line is published on the sources we can read; a self-made spread would be a guess dressed as a market.</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td>
+<td>San Antonio Spurs v Dallas Mavericks</td><td>Match total</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">Requires per-team scoring rates at the venue; only win/loss splits were readable for this sport.</td></tr><tr><td><a href="sports/gaelic-football.html">Gaelic Sports</a></td>
+<td>Nemo Rangers v St Finbarrs</td><td>Match winner</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">-178 (64.0%)</td><td class="small">Two-way market from the originated win probability.</td></tr><tr><td><a href="sports/gaelic-football.html">Gaelic Sports</a></td>
+<td>Nemo Rangers v St Finbarrs</td><td>Handicap / total points</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">Cork GAA publishes scorelines but no per-game scoring-rate table or line; any handicap would be invented.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>New York Rangers v Ottawa Senators</td><td>Match winner</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">-124 (55.3%)</td><td class="small">Two-way money line from the originated win probability.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>New York Rangers v Ottawa Senators</td><td>Puck line -1.5 / +1.5</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">home −1.5 +360 / away −1.5 +237</td><td class="small">Derived from an independent-Poisson goal model whose rates come from each club&#x27;s official goals for/against per game.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>New York Rangers v Ottawa Senators</td><td>Match total</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">line 5.5 · over +111 / under -111</td><td class="small">Poisson total; the line is ours, not a bookmaker&#x27;s, and is published as a half-goal line.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>New York Rangers v Ottawa Senators</td><td>Correct score / first goalscorer / props</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">No official scorer or line-combination feed was read; pricing them would be invention.</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td>
+<td>Brooklyn Nets v Cleveland Cavaliers</td><td>Match winner</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">-135 (57.4%)</td><td class="small">Two-way market from the originated win probability.</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td>
+<td>Brooklyn Nets v Cleveland Cavaliers</td><td>Handicap / line</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">No official handicap line is published on the sources we can read; a self-made spread would be a guess dressed as a market.</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td>
+<td>Brooklyn Nets v Cleveland Cavaliers</td><td>Match total</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">Requires per-team scoring rates at the venue; only win/loss splits were readable for this sport.</td></tr><tr><td><a href="sports/baseball.html">Baseball</a></td>
+<td>Tampa Bay Rays v Milwaukee Brewers</td><td>Match winner (money line)</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">-128 (56.1%)</td><td class="small">Two-way market from the originated win probability.</td></tr><tr><td><a href="sports/baseball.html">Baseball</a></td>
+<td>Tampa Bay Rays v Milwaukee Brewers</td><td>Run line -1.5 / +1.5</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">Needs both clubs&#x27; run rates; only the Rays&#x27; runs scored/allowed block was read and the Brewers&#x27; block was truncated.</td></tr><tr><td><a href="sports/baseball.html">Baseball</a></td>
+<td>Tampa Bay Rays v Milwaukee Brewers</td><td>Game total</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">Same missing run-rate input.</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td>
+<td>Houston Rockets v Atlanta Hawks</td><td>Match winner</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">-135 (57.4%)</td><td class="small">Two-way market from the originated win probability.</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td>
+<td>Houston Rockets v Atlanta Hawks</td><td>Handicap / line</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">No official handicap line is published on the sources we can read; a self-made spread would be a guess dressed as a market.</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td>
+<td>Houston Rockets v Atlanta Hawks</td><td>Match total</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">Requires per-team scoring rates at the venue; only win/loss splits were readable for this sport.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>Tampa Bay Lightning v Utah Mammoth</td><td>Match winner</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">-102 (50.5%)</td><td class="small">Two-way money line from the originated win probability.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>Tampa Bay Lightning v Utah Mammoth</td><td>Puck line -1.5 / +1.5</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">home −1.5 +267 / away −1.5 +259</td><td class="small">Derived from an independent-Poisson goal model whose rates come from each club&#x27;s official goals for/against per game.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>Tampa Bay Lightning v Utah Mammoth</td><td>Match total</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">line 6.5 · over +101 / under -101</td><td class="small">Poisson total; the line is ours, not a bookmaker&#x27;s, and is published as a half-goal line.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>Tampa Bay Lightning v Utah Mammoth</td><td>Correct score / first goalscorer / props</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">No official scorer or line-combination feed was read; pricing them would be invention.</td></tr><tr><td><a href="sports/tennis.html">Tennis</a></td>
+<td>Nikoloz Basilashvili v Daniil Medvedev</td><td>Match winner</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">-178 (64.0%)</td><td class="small">Two-way market from the originated win probability.</td></tr><tr><td><a href="sports/tennis.html">Tennis</a></td>
+<td>Nikoloz Basilashvili v Daniil Medvedev</td><td>Total games / set betting</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">Requires serve and return statistics for both players; the official scores page carries no season serve data.</td></tr><tr><td><a href="sports/tennis.html">Tennis</a></td>
+<td>Nikoloz Basilashvili v Daniil Medvedev</td><td>Handicap games</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">Same missing input as total games.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>Minnesota Wild v Seattle Kraken</td><td>Match winner</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">-140 (58.3%)</td><td class="small">Two-way money line from the originated win probability.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>Minnesota Wild v Seattle Kraken</td><td>Puck line -1.5 / +1.5</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">home −1.5 +304 / away −1.5 +252</td><td class="small">Derived from an independent-Poisson goal model whose rates come from each club&#x27;s official goals for/against per game.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>Minnesota Wild v Seattle Kraken</td><td>Match total</td>
+<td><span class="badge ok">priced</span></td>
+<td class="num">line 6.5 · over +149 / under -149</td><td class="small">Poisson total; the line is ours, not a bookmaker&#x27;s, and is published as a half-goal line.</td></tr><tr><td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>Minnesota Wild v Seattle Kraken</td><td>Correct score / first goalscorer / props</td>
+<td><span class="badge gap">withheld</span></td>
+<td class="num">—</td><td class="small">No official scorer or line-combination feed was read; pricing them would be invention.</td></tr></tbody></table>
+</main>
+<footer class="wrap"><p><strong>Independent research, not a tipster service.</strong> Prices are our own
+estimates, not bookmaker odds. Nothing here is a guarantee, and no bet is risk-free.
+Built from official league, tour and governing-body sources read on 24 October 2026; every row links to the
+page it came from. Not affiliated with OLBG. 18+. If gambling is causing harm, see
+<a href="https://www.gamcare.org.uk/">GamCare</a> or <a href="https://www.begambleaware.org/">BeGambleAware</a>.</p>
+<p class="small">Repository: <a href="https://github.com/buffedlizard55-lab/OLBG1">github.com/buffedlizard55-lab/OLBG1</a> ·
+Live desk: <a href="https://buffedlizard55-lab.github.io/OLBG1/580f43c9/">buffedlizard55-lab.github.io/OLBG1/580f43c9/</a> ·
+Evidence frozen at 2026-10-24T18:20:00Z</p></footer>
+</body></html>

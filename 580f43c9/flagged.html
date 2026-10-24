@@ -1,0 +1,134 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for review · OLBG research desk 580f43c9</title>
+<style>
+:root{--bg:#f4f6f9;--surface:#fff;--ink:#0f172a;--muted:#5b6675;--line:#e2e8f0;
+--accent:#0b6b4f;--accent-dark:#08503b;--soft:#e8f7f0;--amber:#b54708;--amber-soft:#fff7e6;
+--red:#b42318;--red-soft:#fef3f2;--blue:#1d4ed8;--blue-soft:#eef4ff;--radius:14px;
+--shadow:0 1px 2px rgba(15,23,42,.06),0 1px 3px rgba(15,23,42,.08)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent-dark);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);
+border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap;min-height:62px}
+.brand{font-weight:800;letter-spacing:-.01em;display:flex;gap:9px;align-items:center;color:var(--ink)}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:var(--accent)}
+.brand small{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--muted);font-weight:600}
+nav.main{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap}
+nav.main a{padding:7px 10px;border-radius:9px;font-size:13.5px;font-weight:600;color:#334155}
+nav.main a:hover{background:#eef2f7;text-decoration:none}
+nav.main a[aria-current=page]{background:var(--soft);color:var(--accent-dark)}
+.hero{padding:30px 0 6px}
+.eyebrow{margin:0 0 8px;font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+color:var(--accent-dark)}
+h1{margin:0;font-size:clamp(27px,3.6vw,38px);line-height:1.12;letter-spacing:-.02em}
+h2{margin:34px 0 10px;font-size:22px;letter-spacing:-.01em}
+h3{margin:20px 0 8px;font-size:17px}
+p.lede{color:var(--muted);font-size:17px;max-width:80ch;margin:12px 0 0}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:20px 0 4px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+padding:13px 15px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:25px;line-height:1.1;letter-spacing:-.02em}
+.kpi span{font-size:12.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+padding:18px;box-shadow:var(--shadow);margin:14px 0}
+.card.tight{padding:14px 16px}
+.starthere{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.starthere a{display:block;background:var(--surface);border:1px solid var(--line);
+border-radius:var(--radius);padding:15px 16px;box-shadow:var(--shadow)}
+.starthere a:hover{border-color:var(--accent);text-decoration:none}
+.starthere b{display:block;color:var(--accent-dark);font-size:15.5px;margin-bottom:3px}
+.starthere span{color:var(--muted);font-size:13.5px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f8fafc;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#475569;
+position:sticky;top:62px}
+tbody tr:hover{background:#fbfdff}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.scroll{display:block;overflow-x:auto;white-space:nowrap}
+table.scroll tbody,table.scroll thead{display:table;width:100%}
+.pick{font-weight:800;color:var(--accent-dark)}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11.5px;font-weight:800;
+letter-spacing:.04em;text-transform:uppercase}
+.badge.hi{background:var(--soft);color:var(--accent-dark)}
+.badge.md{background:var(--blue-soft);color:var(--blue)}
+.badge.lo{background:var(--amber-soft);color:var(--amber)}
+.badge.gap{background:var(--red-soft);color:var(--red)}
+.badge.ok{background:var(--soft);color:var(--accent-dark)}
+.note{background:var(--blue-soft);border:1px solid #cfe0ff;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.warn{background:var(--amber-soft);border:1px solid #f6dfae;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.danger{background:var(--red-soft);border:1px solid #f3c9c5;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.okay{background:var(--soft);border:1px solid #bfe8d5;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pred{border-left:4px solid var(--accent);background:#fcfdfe;padding:12px 15px;border-radius:0 10px 10px 0;
+margin:10px 0;font-size:15px}
+.small{font-size:13px;color:var(--muted)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:22px 0;color:var(--muted);font-size:13px}
+ul.clean{margin:8px 0 0 18px;padding:0}ul.clean li{margin:4px 0}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.starthere,.grid2,.grid3{grid-template-columns:1fr}
+th{position:static}}
+</style></head><body>
+<header class="top"><div class="wrap">
+<div class="brand"><span class="dot"></span><span>OLBG research desk<small>24–25 October 2026 · session 580f43c9</small></span></div>
+<nav class="main"><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="predictions.html">Write-ups</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="sports/basketball.html">Sports</a><a href="sources.html">Sources</a><a href="flagged.html" aria-current=page>Flagged</a><a href="repo-audit.html">Repo audit</a><a href="methodology.html">Method</a></nav>
+</div></header>
+<main class="wrap">
+<section class="hero"><p class="eyebrow">Flagged for review</p>
+<h1>11 irregularities, published rather than buried</h1>
+<p class="lede">These do not block publication, but each one changes how a number on this site should be
+read. Every item links to the page that shows it.</p></section>
+<table><thead><tr><th>ID</th><th>Severity</th><th>Sport</th><th>What is wrong</th><th>Where to look</th></tr>
+</thead><tbody><tr><td class="mono">F-01</td>
+<td><span class="badge gap">high</span></td>
+<td>All</td><td><strong>The High tier is empty because the brief&#x27;s two rules intersect in a 1.4-point window</strong><br><span class="small">The brief defines a high-confidence pick as better than 70% and also requires the fair price to be no shorter than -250. A -250 price is 71.43%, so only selections between 70.00% and 71.43% can satisfy both rules. No selection originated on this card lands in that window, so zero High picks are published rather than one being manufactured to fill the tier.</span></td>
+<td><a href="https://www.olbg.com/betting-tips" rel="noopener">OLBG betting-tips index (discovery)</a></td></tr><tr><td class="mono">F-02</td>
+<td><span class="badge lo">medium</span></td>
+<td>Basketball / Ice Hockey</td><td><strong>Three selections clear 70% but are excluded by the -250 floor</strong><br><span class="small">Philadelphia (78.9%, fair -375) and Edmonton (75.4%, fair -306) both exceed 70% on our numbers, but their fair prices are shorter than -250, which the brief excludes, so they are published at medium tier. No selection landed between 70.00% and 71.43%, the only span that could satisfy both of the brief&#x27;s rules.</span></td>
+<td><a href="https://www.nba.com/games" rel="noopener">NBA games (records used)</a></td></tr><tr><td class="mono">F-03</td>
+<td><span class="badge gap">high</span></td>
+<td>All</td><td><strong>Injury fields are blank everywhere</strong><br><span class="small">No official injury, suspension or availability report was read for any of the 13 priced matches (NBA, NHL, MLB, Cork GAA, ATP). Nothing has been inferred or filled in. Every injury column is empty by design.</span></td>
+<td><a href="https://www.nba.com/games" rel="noopener">NBA games page (no injury report on it)</a></td></tr><tr><td class="mono">F-04</td>
+<td><span class="badge gap">high</span></td>
+<td>15 covered sports</td><td><strong>Ten of the fifteen requested sports carry no priced selection</strong><br><span class="small">Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Greyhounds, Motor Racing, Handball and Rugby League are published as gaps with the exact blocking source on the sports pages and on the Flagged page. The five sports with prices are Basketball, Ice Hockey, Baseball, Gaelic Sports and Tennis.</span></td>
+<td><a href="https://www.olbg.com/betting-tips" rel="noopener">OLBG betting-tips index</a></td></tr><tr><td class="mono">F-05</td>
+<td><span class="badge md">low</span></td>
+<td>Ice Hockey</td><td><strong>Minnesota Wild at Seattle Kraken start time not read</strong><br><span class="small">The official schedule&#x27;s timing block for game 2026020179 was not reached before the read stopped, so the row carries a blank start rather than a guessed one.</span></td>
+<td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">NHL schedule API</a></td></tr><tr><td class="mono">F-06</td>
+<td><span class="badge md">low</span></td>
+<td>Tennis</td><td><strong>Vienna final pairing and start are partly derived</strong><br><span class="small">Both semi-finals are confirmed on the official ATP scores page, so the final pairing follows from them; the start time is not published there. The only time available was OLBG&#x27;s listing (06:00), which is discovery and is not used as a fixture fact.</span></td>
+<td><a href="https://www.atptour.com/en/scores/current" rel="noopener">ATP Tour scores</a></td></tr><tr><td class="mono">F-07</td>
+<td><span class="badge lo">medium</span></td>
+<td>Darts / Handball / Volleyball / Rugby Union</td><td><strong>Four governing-body sites were unreadable from this environment</strong><br><span class="small">pdc.tv (consent wall), ehfcl.eurohandball.com and eurohandball.com (404), legavolley.it (landing page only) and lnr.fr (404) could not supply fixtures, so those sports carry no lines. The dead ends are listed on the sources page rather than skipped silently.</span></td>
+<td><a href="https://www.pdc.tv/tournaments" rel="noopener">PDC tournaments (consent wall)</a></td></tr><tr><td class="mono">F-08</td>
+<td><span class="badge lo">medium</span></td>
+<td>Basketball</td><td><strong>NBA season-leader block on the official games page is not citable</strong><br><span class="small">The games page labels a Milwaukee player under Miami and a Charlotte player under Charlotte with mismatched club codes. Because the labels are internally inconsistent, no player-level statistic from that block is used in any write-up.</span></td>
+<td><a href="https://www.nba.com/games" rel="noopener">NBA games</a></td></tr><tr><td class="mono">F-09</td>
+<td><span class="badge lo">medium</span></td>
+<td>All</td><td><strong>Five-per-sport quota not met</strong><br><span class="small">The desk publishes 13 selections across five sports (Basketball 5, Ice Hockey 5, Baseball 1, Gaelic Sports 1, Tennis 1). Ten sports produced none because no official fixture-and-form source was readable. Nothing was written to reach a quota.</span></td>
+<td><a href="https://www.olbg.com/betting-tips" rel="noopener">OLBG betting-tips index</a></td></tr><tr><td class="mono">F-10</td>
+<td><span class="badge md">low</span></td>
+<td>Repository</td><td><strong>COORDINATION.md contains two sections numbered 78</strong><br><span class="small">Sections by sessions 7a9b24e5-olbg1 and 37003e61-olbg1 are both headed &#x27;## 78.&#x27;, and the second appears after sections 79 and 80. Numbering is not sequential; content is not affected, but cross-references by section number are ambiguous.</span></td>
+<td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/COORDINATION.md" rel="noopener">COORDINATION.md</a></td></tr><tr><td class="mono">F-11</td>
+<td><span class="badge md">low</span></td>
+<td>Repository</td><td><strong>Six desk directories have no namespaced data directory</strong><br><span class="small">2360a617, 6a081cf6, aa4e9dbf, ccb6bde2, ebfbd966 and f7fa77fc publish pages without a matching data/&lt;id&gt;/ folder. Some store JSON as flat suffixed files or under datasets/, so this is a layout inconsistency, not proven data loss.</span></td>
+<td><a href="https://github.com/buffedlizard55-lab/OLBG1" rel="noopener">Repository root</a></td></tr></tbody></table>
+</main>
+<footer class="wrap"><p><strong>Independent research, not a tipster service.</strong> Prices are our own
+estimates, not bookmaker odds. Nothing here is a guarantee, and no bet is risk-free.
+Built from official league, tour and governing-body sources read on 24 October 2026; every row links to the
+page it came from. Not affiliated with OLBG. 18+. If gambling is causing harm, see
+<a href="https://www.gamcare.org.uk/">GamCare</a> or <a href="https://www.begambleaware.org/">BeGambleAware</a>.</p>
+<p class="small">Repository: <a href="https://github.com/buffedlizard55-lab/OLBG1">github.com/buffedlizard55-lab/OLBG1</a> ·
+Live desk: <a href="https://buffedlizard55-lab.github.io/OLBG1/580f43c9/">buffedlizard55-lab.github.io/OLBG1/580f43c9/</a> ·
+Evidence frozen at 2026-10-24T18:20:00Z</p></footer>
+</body></html>

@@ -189,7 +189,8 @@ def event_table(events, show_sport=False):
     rows = []
     for ev in events:
         start = stamp(ev["start"]) if ev["start"] else '<span class="blank">not confirmed</span>'
-        basis = {"official": "official", "derived": "derived (OLBG ET)"}.get(ev["basis"], '<span class="blank">&mdash;</span>')
+        basis = {"official": "official", "derived": "derived (OLBG ET)"}.get(ev["basis"]) or '<span class="blank">&mdash;</span>'
+        basis = basis if basis.startswith("<span") else e(basis)
         sel = "".join(f'<strong>{e(p["selection"])}</strong> {p["american"]:+d} <span class="badge {p["tier"].lower()}">{e(p["tier"])}</span><br>'
                       for p in picked.get(ev["id"], []))
         if not sel:
@@ -230,7 +231,7 @@ the cell is blank and the row is on <a href="flagged.html">Flagged for review</a
 <div class="kpis">
   <div class="kpi"><small>Picks issued</small><b>{len(PICKS)}</b>across {len({p['sport'] for p in PICKS})} sports</div>
   <div class="kpi"><small>High confidence</small><b>0</b>nothing cleared the 70% bar</div>
-  <div class="kpi"><small>Matches listed</small><b>{len(EVENTS)}</b>{len(upcoming)} with a confirmed start</div>
+  <div class="kpi"><small>Matches listed</small><b>{len(EVENTS)}</b>{sum(1 for x in EVENTS if x['basis']=='official')} with an official start</div>
   <div class="kpi"><small>Official sources read</small><b>{sum(1 for s in SOURCES.values() if s['role']=='official')}</b>of {len(SOURCES)} sources</div>
 </div>
 

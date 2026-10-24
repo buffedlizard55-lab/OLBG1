@@ -1,0 +1,101 @@
+[
+  {
+    "id": "F-01",
+    "severity": "high",
+    "sport": "All",
+    "title": "The High tier is empty because the brief's two rules intersect in a 1.4-point window",
+    "detail": "The brief defines a high-confidence pick as better than 70% and also requires the fair price to be no shorter than -250. A -250 price is 71.43%, so only selections between 70.00% and 71.43% can satisfy both rules. No selection originated on this card lands in that window, so zero High picks are published rather than one being manufactured to fill the tier.",
+    "link": "https://www.olbg.com/betting-tips",
+    "link_label": "OLBG betting-tips index (discovery)"
+  },
+  {
+    "id": "F-02",
+    "severity": "medium",
+    "sport": "Basketball / Ice Hockey",
+    "title": "Three selections clear 70% but are excluded by the -250 floor",
+    "detail": "Philadelphia (78.9%, fair -375) and Edmonton (75.4%, fair -306) both exceed 70% on our numbers, but their fair prices are shorter than -250, which the brief excludes, so they are published at medium tier. No selection landed between 70.00% and 71.43%, the only span that could satisfy both of the brief's rules.",
+    "link": "https://www.nba.com/games",
+    "link_label": "NBA games (records used)"
+  },
+  {
+    "id": "F-03",
+    "severity": "high",
+    "sport": "All",
+    "title": "Injury fields are blank everywhere",
+    "detail": "No official injury, suspension or availability report was read for any of the 13 priced matches (NBA, NHL, MLB, Cork GAA, ATP). Nothing has been inferred or filled in. Every injury column is empty by design.",
+    "link": "https://www.nba.com/games",
+    "link_label": "NBA games page (no injury report on it)"
+  },
+  {
+    "id": "F-04",
+    "severity": "high",
+    "sport": "15 covered sports",
+    "title": "Ten of the fifteen requested sports carry no priced selection",
+    "detail": "Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Greyhounds, Motor Racing, Handball and Rugby League are published as gaps with the exact blocking source on the sports pages and on the Flagged page. The five sports with prices are Basketball, Ice Hockey, Baseball, Gaelic Sports and Tennis.",
+    "link": "https://www.olbg.com/betting-tips",
+    "link_label": "OLBG betting-tips index"
+  },
+  {
+    "id": "F-05",
+    "severity": "low",
+    "sport": "Ice Hockey",
+    "title": "Minnesota Wild at Seattle Kraken start time not read",
+    "detail": "The official schedule's timing block for game 2026020179 was not reached before the read stopped, so the row carries a blank start rather than a guessed one.",
+    "link": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+    "link_label": "NHL schedule API"
+  },
+  {
+    "id": "F-06",
+    "severity": "low",
+    "sport": "Tennis",
+    "title": "Vienna final pairing and start are partly derived",
+    "detail": "Both semi-finals are confirmed on the official ATP scores page, so the final pairing follows from them; the start time is not published there. The only time available was OLBG's listing (06:00), which is discovery and is not used as a fixture fact.",
+    "link": "https://www.atptour.com/en/scores/current",
+    "link_label": "ATP Tour scores"
+  },
+  {
+    "id": "F-07",
+    "severity": "medium",
+    "sport": "Darts / Handball / Volleyball / Rugby Union",
+    "title": "Four governing-body sites were unreadable from this environment",
+    "detail": "pdc.tv (consent wall), ehfcl.eurohandball.com and eurohandball.com (404), legavolley.it (landing page only) and lnr.fr (404) could not supply fixtures, so those sports carry no lines. The dead ends are listed on the sources page rather than skipped silently.",
+    "link": "https://www.pdc.tv/tournaments",
+    "link_label": "PDC tournaments (consent wall)"
+  },
+  {
+    "id": "F-08",
+    "severity": "medium",
+    "sport": "Basketball",
+    "title": "NBA season-leader block on the official games page is not citable",
+    "detail": "The games page labels a Milwaukee player under Miami and a Charlotte player under Charlotte with mismatched club codes. Because the labels are internally inconsistent, no player-level statistic from that block is used in any write-up.",
+    "link": "https://www.nba.com/games",
+    "link_label": "NBA games"
+  },
+  {
+    "id": "F-09",
+    "severity": "medium",
+    "sport": "All",
+    "title": "Five-per-sport quota not met",
+    "detail": "The desk publishes 13 selections across five sports (Basketball 5, Ice Hockey 5, Baseball 1, Gaelic Sports 1, Tennis 1). Ten sports produced none because no official fixture-and-form source was readable. Nothing was written to reach a quota.",
+    "link": "https://www.olbg.com/betting-tips",
+    "link_label": "OLBG betting-tips index"
+  },
+  {
+    "id": "F-10",
+    "severity": "low",
+    "sport": "Repository",
+    "title": "COORDINATION.md contains two sections numbered 78",
+    "detail": "Sections by sessions 7a9b24e5-olbg1 and 37003e61-olbg1 are both headed '## 78.', and the second appears after sections 79 and 80. Numbering is not sequential; content is not affected, but cross-references by section number are ambiguous.",
+    "link": "https://github.com/buffedlizard55-lab/OLBG1/blob/main/COORDINATION.md",
+    "link_label": "COORDINATION.md"
+  },
+  {
+    "id": "F-11",
+    "severity": "low",
+    "sport": "Repository",
+    "title": "Six desk directories have no namespaced data directory",
+    "detail": "2360a617, 6a081cf6, aa4e9dbf, ccb6bde2, ebfbd966 and f7fa77fc publish pages without a matching data/<id>/ folder. Some store JSON as flat suffixed files or under datasets/, so this is a layout inconsistency, not proven data loss.",
+    "link": "https://github.com/buffedlizard55-lab/OLBG1",
+    "link_label": "Repository root"
+  }
+]

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repository review · OLBG research desk</title>
+<meta name="description" content="Source-linked match research with originated lines and explicit coverage gaps. Not affiliated with OLBG.">
+<link rel="stylesheet" href="assets/desk.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">OLBG</span><span class="brand-sub">research desk</span></a>
+  <nav class="nav" aria-label="Primary"><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="picks.html">Today's picks</a><a class="nav-link" href="matches.html">Matches</a><a class="nav-link" href="markets.html">Prices</a><a class="nav-link" href="predictions.html">Predictions</a><a class="nav-link" href="sports.html">Sports</a><a class="nav-link" href="flagged.html">Flagged for review</a><a class="nav-link active" href="repo-review.html" aria-current="page">Repo review</a><a class="nav-link" href="sources.html">Sources</a><a class="nav-link" href="methodology.html">Method</a><a class="nav-link" href="olbg.html">OLBG structure</a></nav>
+  <div class="stamp"><span class="live-dot"></span>Snapshot 2026-10-24T18:20:00Z</div>
+</header>
+<main id="main">
+
+<div class="hero small"><p class="eyebrow">Repository review</p><h1>Line-by-line findings in the existing repository</h1>
+<p class="lede">Found while reading the tree before adding this desk. Each finding names the file; the numbers were counted in this session, not recalled.</p></div>
+<section class="panel">
+  <div class="table-wrap"><table class="desk">
+    <tr><th>ID</th><th>File</th><th>Finding</th><th>Severity</th></tr><tr><td class="mono">R-9E01</td><td class="mono">index.html:6</td>
+    <td>The landing page's freshness chip says 'Snapshot 21 Oct 2026' while the body's data-snapshot attribute and data/current/site-manifest.json both say 2026-10-22T12:29:50Z. Two different snapshot dates are shown on one page.</td><td><span class="chip chip-medium">Medium</span></td></tr><tr><td class="mono">R-9E02</td><td class="mono">README.md:8</td>
+    <td>The release summary quotes 108 captured listings and 42 statistical inputs. The manifest confirms 108 listings but records 32 source checks, not 42. The prose and the machine-readable manifest disagree.</td><td><span class="chip chip-medium">Medium</span></td></tr><tr><td class="mono">R-9E03</td><td class="mono">data/*/fixtures.json</td>
+    <td>219 fixture identifiers appear in more than one desk. mlb-849802, mlb-849804, mlb-849805 and nhl-2026020154/55 each occur in eight separate slates. The same event can therefore carry several different originated prices with nothing on the page saying which desk priced it or why they differ.</td><td><span class="chip chip-high">High</span></td></tr><tr><td class="mono">R-9E04</td><td class="mono">data/984d417f/predictions.json</td>
+    <td>Row pdc-ec-03 uses the word 'verified' in published prediction prose, against the brief's instruction that the term stays internal.</td><td><span class="chip chip-low">Low</span></td></tr><tr><td class="mono">R-9E05</td><td class="mono">COORDINATION.md</td>
+    <td>The shared board is 733,636 bytes. A single file this large is slow to read and conflicts on nearly every rebase; it needs periodic archival by the integration session.</td><td><span class="chip chip-low">Low</span></td></tr><tr><td class="mono">R-9E06</td><td class="mono">.github/workflows/current-pages.yml</td>
+    <td>The publish job runs on main only, so a pull request cannot prove the deployed artifact. The PR gate builds and validates _site but never uploads it. This desk adds a local link gate to compensate.</td><td><span class="chip chip-low">Low</span></td></tr>
+  </table></div>
+</section>
+<section class="panel two-col">
+  <div><h2>What we checked</h2>
+  <ul class="tight">
+    <li>Root landing page freshness labels against <span class="mono">data/current/site-manifest.json</span>.</li>
+    <li>README headline counts against the same manifest.</li>
+    <li>Cross-desk fixture identifiers for duplicate pricing of one event.</li>
+    <li>Published prediction prose for the two words the brief keeps internal.</li>
+    <li>Size and merge behaviour of the shared coordination board.</li>
+    <li>The publish workflow's ability to prove a deployment from a pull request.</li>
+  </ul></div>
+  <div><h2>What we did not change</h2>
+  <p>No peer desk, canonical pipeline file, root page or workflow was edited. These are findings for the owner, published rather than silently fixed, because the files belong to other sessions' scopes.</p>
+  <p class="small">Scope for this session: <span class="mono">desk/**</span>, <span class="mono">data/9e041d28/**</span>, <span class="mono">scripts/s9e041d28_*</span>, <span class="mono">tests/pipeline/test_desk_9e041d28.py</span>, and append-only <span class="mono">COORDINATION.md</span>.</p></div>
+</section>
+
+</main>
+<footer class="foot">
+  <p><strong>What this is.</strong> Independently calculated experimental prices, not bookmaker offers. No staking advice, no guaranteed returns. Not affiliated with OLBG.</p>
+  <p><strong>How to read a blank.</strong> A blank cell means the official source did not publish that value and it was not filled in. Every blank is listed on the <a href="flagged.html">Flagged for review</a> page.</p>
+  <p class="mono">Desk session 9e041d28-olbg1 · snapshot 2026-10-24T18:20:00Z · 8 sourced fixtures · 8 picks · 14 flags</p>
+</footer>
+</body>
+</html>
