@@ -39,6 +39,7 @@ ARCHIVE = [
     ('8cfb80b2/index.html', 'Earlier desk: source capture and review queue'),
     ('02d3d515/index.html', 'Earlier desk: source capture and review queue'),
     ('3d121822/index.html', 'Earlier desk: source capture and review queue'),
+    ('2ff8342b/index.html', '24 Oct 2026 desk: fifteen sports, 93 fixtures, 7 originated picks'),
 ]
 
 NAV = [
