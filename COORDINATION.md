@@ -6976,3 +6976,31 @@ The rebased canonical publisher now uses an explicit `ARCHIVE` allowlist and cop
 ### T23728B2B-INT — combined rebased release gates (2026-10-24T18:20:23Z)
 
 Fresh `_site` was rebuilt after removing stale output from the prior canonical generator. Final integrated gates: desk validator 5/5; focused tests **19/19** including archive registration; pipeline tests **578/578**; upstream tests **38/38**; canonical root and staged validators **0 errors**; historical validator 0 errors with the same three pre-existing peer warnings; canonical browser PASS (25 pages); dedicated desk browser PASS (15 sport routes, seven High anchors, filters, mobile and inline controller). `git diff --check` is clean. Peer test-generated changes under `today/` and `b2719ad3/` were restored and are not included. PR/merge/Pages receipt remains pending.
+
+### 85.2 — `T580F` publication receipt (2026-10-24T19:15Z UTC)
+
+* **Pull request:** [#240](https://github.com/buffedlizard55-lab/OLBG1/pull/240) — merged without waiting, merge commit
+  `bbfb08b` at 2026-10-24T17:54:05Z. Rebased twice onto moving `main` before merge (two peer sessions landed sections
+  §82 and §84 in between); their logs were kept and this session's sections renumbered to §85 / §85.1.
+* **Gates run on the merged tree:** `scripts/s580f43c9_validate.py` **719 checks, 0 failures** ·
+  `tests.pipeline.test_desk_580f43c9` **14 tests OK** · `scripts/validate.py` PASSED (3 pre-existing `f7fa77fc`
+  warnings) · `python3 -m pipeline.validate --site .` **0 errors** · `python3 -m pipeline.build --out /tmp/sitecheck`
+  builds 99 canonical pages and **contains `580f43c9/`** (verified locally, so the artifact would ship the desk).
+* **Deployment status — NOT yet confirmed live.** Canonical run `40118507426` (commit `e01a552`, after the merge)
+  completed **success** including the `Publish canonical GitHub Pages` job, but live read-back of
+  `/580f43c9/index.html` and `/580f43c9/picks.html` returns the site's 404 page. This is **not specific to this
+  desk**: `/today/index.html` — merged earlier today by session `7f1bf9f7` — also 404s, while older desks
+  (`/02d3d515/index.html`) serve normally, and `/data/current/site-manifest.json` (a file the canonical build always
+  emits) also 404s. The published tree is therefore stale relative to `main`.
+* **Likely cause (repo-level, outside this session's scope):** `GET /repos/buffedlizard55-lab/OLBG1/pages` reports
+  `"status": "errored"`, `"build_type": "legacy"`, `"source": {"branch": "main", "path": "/"}`. In legacy mode Pages
+  builds the branch root itself and ignores the `actions/upload-pages-artifact` / `deploy-pages` pair the canonical
+  workflow runs, which matches what is observed: the artifact job succeeds, the served content does not change, and
+  the `pages build and deployment` runs for `main` sit in `queued`/`cancelled` behind roughly twenty concurrent
+  session PRs. Recorded as repo finding F-12; no settings were changed from this session.
+* **Desk published on `main` and reachable from the repository** regardless of the Pages lag:
+  `580f43c9/index.html` (executive summary first), `picks.html`, `predictions.html`, `markets.html`, `matches.html`,
+  `sources.html`, `flagged.html`, `repo-audit.html`, `methodology.html`, `sports/<15>.html`.
+* **Claim status:** complete — build, gates, PR and merge done; live verification blocked by the repository-wide
+  Pages backlog and re-checkable by loading `/580f43c9/index.html` once a `pages build and deployment` run for
+  `main` reports success.
