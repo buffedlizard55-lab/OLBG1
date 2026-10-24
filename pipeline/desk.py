@@ -63,6 +63,11 @@ SPORT_INDEX = {s[0]: {'slug': s[0], 'name': s[1], 'olbg_id': s[2],
                       'official_url': s[4]} for s in SPORTS}
 
 SOURCES = [
+    {'id': 'nhl-on-tap-7568',
+     'url': 'https://www.nhl.com/news/nhl-on-tap-news-and-notes-october-24-2026',
+     'publisher': 'NHL', 'observed_at': '2026-10-24T22:36:00Z',
+     'supports': 'Boston and Edmonton preview: records, recent results, named player statistics and John Tavares upper-body injury. Read via page retrieval; not a live status feed.',
+     'role': 'official'},
     {'id': 'nhl-schedule-2410',
      'url': 'https://api-web.nhle.com/v1/schedule/2026-10-24',
      'publisher': 'NHL',
@@ -203,7 +208,7 @@ FIXTURES = [
          market_home=-194, market_away=160),
     dict(id='nhl-2026020170', sport='ice-hockey', a='SJS', b='BOS', home='BOS',
          start_utc='2026-10-24T23:00:00Z', venue='TD Garden', neutral=False,
-         competition='NHL', game_state='FUT', sources=['nhl-schedule-2410'],
+         competition='NHL', game_state='FUT', sources=['nhl-schedule-2410', 'nhl-on-tap-7568'],
          market_home=-192, market_away=160),
     dict(id='nhl-2026020171', sport='ice-hockey', a='NYR', b='OTT', home='OTT',
          start_utc='2026-10-24T23:00:00Z', venue='Canadian Tire Centre', neutral=False,
@@ -227,7 +232,7 @@ FIXTURES = [
          market_home=130, market_away=-155),
     dict(id='nhl-2026020176', sport='ice-hockey', a='TOR', b='EDM', home='EDM',
          start_utc='2026-10-24T23:00:00Z', venue='Rogers Place', neutral=False,
-         competition='NHL', game_state='FUT', sources=['nhl-schedule-2410'],
+         competition='NHL', game_state='FUT', sources=['nhl-schedule-2410', 'nhl-on-tap-7568'],
          market_home=-166, market_away=140),
     dict(id='nhl-2026020177', sport='ice-hockey', a='TBL', b='UTA', home='UTA',
          start_utc='2026-10-25T01:00:00Z', venue='Delta Center', neutral=False,
@@ -487,11 +492,13 @@ def build_desk():
 # write-up names the selection in its first sentence and runs past 30 words.
 PREDICTIONS = {
     'nhl-2026020170': (
-        'The Boston Bruins are the selection against San Jose at TD Garden. Boston sits 8-2-1 with 42 '
-        'goals for and only 22 against, and has taken four of five home games. The Sharks\' 6-4-1 '
-        'record looks respectable until you notice that a single one of their eleven matches was won '
-        'in regulation, five needing overtime or a shootout. Boston averages 3.82 goals a night '
-        'against San Jose\'s 3.00, and the cleaner route to two points runs through the home bench.'),
+        'Boston Bruins to win, including overtime and shootout, is my selection against San Jose. '
+        'Boston enters 8-2-1 after beating Nashville 6-0 on Thursday, with David Pastrnak and Charlie '
+        'McAvoy contributing four points apiece. Pastrnak has 16 points in eleven games, while Macklin '
+        'Celebrini has fourteen in nine for the Sharks. San Jose has won twice consecutively after '
+        'a 1-3-1 stretch, so this is not a one-sided matchup. Boston’s seven-game point streak '
+        'provides the stronger recent foundation; neither starting goalie nor a complete injury list '
+        'is established by the cited preview.'),
     'nhl-2026020171': (
         'Over 5.5 goals is the call when the New York Rangers visit Canadian Tire Centre. The winner '
         'market is a coin flip, with Ottawa at 53%, but the scoring rates are not neutral: the '
@@ -518,11 +525,13 @@ PREDICTIONS = {
         'Blues concede 3.10 a game compared with Carolina\'s 2.75. Two attacks combining for 7.42 '
         'goals a game make 5.5 a low bar, even with St. Louis unbeaten in regulation at home.'),
     'nhl-2026020176': (
-        'The Edmonton Oilers to beat Toronto at Rogers Place is the selection. They are 8-1-1, have '
-        'scored 47 goals in ten games and are 5-0-0 on the road with three straight wins behind '
-        'them. Toronto arrives on a three-game run of its own but has conceded 39 goals across '
-        'twelve games and is 2-1-1 away. Edmonton\'s 4.70 goals per game, and a plus-15 goal '
-        'difference against Toronto\'s plus-four, tilt the matchup towards the home side.'),
+        'Edmonton Oilers to win the match, with overtime and shootout included, is the selection '
+        'against Toronto. Connor McDavid supplied two goals and three assists in Thursday’s 6-5 '
+        'shootout victory over Carolina, taking him to 31 points through ten games. Edmonton’s '
+        '8-1-1 start contrasts with Toronto’s 6-4-2 record. The Maple Leafs remain dangerous '
+        'through Auston Matthews, but John Tavares is week to week with an upper-body injury '
+        'according to the league preview. That combination supports Edmonton, although the '
+        'starting goaltenders and full availability picture remain unresolved.'),
     'nhl-2026020177': (
         'Utah Mammoth to beat Tampa Bay at Delta Center is the pick. Utah is 7-4-0 with 41 goals for '
         'and 36 against, and has won three of four at home. The Lightning are 7-3-0 overall but '
