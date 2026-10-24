@@ -1,0 +1,170 @@
+{
+  "MLB-API-SCHED": {
+    "publisher": "MLB (statsapi.mlb.com)",
+    "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24&hydrate=probablePitcher,linescore,team",
+    "role": "official",
+    "captured": "2026-10-24T17:09:00Z",
+    "confirms": "World Series Game 2, Rays at Brewers, first pitch 2026-10-25T00:00:00Z, American Family Field, probable pitchers Drew Rasmussen (TB) and Logan Henderson (MIL), ifNecessary=N"
+  },
+  "MLB-API-STAND": {
+    "publisher": "MLB (statsapi.mlb.com)",
+    "url": "https://statsapi.mlb.com/api/v1/standings?season=2026&standingsTypes=regularSeason&leagueId=104&fields=records,teamRecords,team,id,name,wins,losses,winningPercentage,pct,division,gamesPlayed",
+    "role": "official",
+    "captured": "2026-10-24T17:22:00Z",
+    "confirms": "Brewers 103-59 (.636), home 55-26, last ten 8-2, night games 68-35"
+  },
+  "MLB-API-STAND-AL": {
+    "publisher": "MLB (statsapi.mlb.com)",
+    "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason&hydrate=team",
+    "role": "official",
+    "captured": "2026-10-24T17:13:00Z",
+    "confirms": "Rays 98-64 (.605), home 55-26, away 43-38, last ten 5-5"
+  },
+  "NHL-API-SCHED": {
+    "publisher": "NHL (api-web.nhle.com)",
+    "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+    "role": "official",
+    "captured": "2026-10-24T17:11:00Z",
+    "confirms": "Official UTC start times and venues for the 24 October slate, including Sharks at Bruins 2026-10-24T23:00:00Z at TD Garden and Rangers at Senators 23:00:00Z"
+  },
+  "NHL-API-STAND": {
+    "publisher": "NHL (api-web.nhle.com)",
+    "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+    "role": "official",
+    "captured": "2026-10-24T17:14:00Z",
+    "confirms": "Bruins 8-2-1, 17 points, .773 points percentage, 42 goals for, 22 against, home record 4-1-0; Hurricanes 8-2-2; Oilers 8-1-1; Golden Knights 8-4-0"
+  },
+  "NBA-INJ": {
+    "publisher": "NBA (official injury report PDF)",
+    "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_12_15PM.pdf",
+    "role": "official",
+    "captured": "2026-10-24T17:16:00Z",
+    "confirms": "Eight NBA games on 24 October with tip-off in ET, plus listed availability: Suns - Mark Williams out (left shoulder surgery), Oso Ighodaro doubtful (right oblique strain), Luke Kennard questionable (left knee tendinopathy); Cavaliers - Khalifa Diop out, Nae'Qwan Tomlin out, Ernest Udeh Jr out; Nets - Tyler Bilodeau out; 76ers - LeBron James questionable, Dean Wade questionable, three out"
+  },
+  "NBA-GAMES": {
+    "publisher": "NBA (nba.com)",
+    "url": "https://www.nba.com/games?date=2026-10-24",
+    "role": "official",
+    "captured": "2026-10-24T17:20:00Z",
+    "confirms": "League calendar shows 8 games on 24 October 2026"
+  },
+  "F1-USGP": {
+    "publisher": "Formula 1 (formula1.com)",
+    "url": "https://www.formula1.com/en/racing/2026/united-states",
+    "role": "official",
+    "captured": "2026-10-24T17:18:00Z",
+    "confirms": "United States Grand Prix weekend schedule (qualifying 24 Oct, race 25 Oct 16:00 track time), Circuit of the Americas 5.513 km and 56 laps, FP2 classification: Leclerc 1:35.291, Antonelli +0.042, Verstappen +0.189, Hamilton +0.615, Russell +0.744; FP1 report names Leclerc fastest ahead of Verstappen and Norris"
+  },
+  "WST-MATCHES": {
+    "publisher": "World Snooker Tour (wst.tv)",
+    "url": "https://www.wst.tv/matches/",
+    "role": "official",
+    "captured": "2026-10-24T17:25:00Z",
+    "confirms": "BetVictor Northern Ireland Open 2026: semi-final Mark Williams v Jak Jones scheduled 14:00 Sat 24 Oct; Kyren Wilson beat Sam Craigie 6-5 to reach the final; final Kyren Wilson v winner of match 62 scheduled 08:00 Sun 25 Oct"
+  },
+  "OLBG-BASKETBALL": {
+    "publisher": "OLBG (discovery only)",
+    "url": "https://www.olbg.com/betting-tips/Basketball/4",
+    "role": "discovery",
+    "captured": "2026-10-24T17:06:00Z",
+    "confirms": "Event names, market type and tip counts for the basketball card; times are rendered in ET"
+  },
+  "OLBG-TENNIS": {
+    "publisher": "OLBG (discovery only)",
+    "url": "https://www.olbg.com/betting-tips/Tennis/3",
+    "role": "discovery",
+    "captured": "2026-10-24T17:05:00Z",
+    "confirms": "Six open tennis events with market type and tip counts"
+  },
+  "OLBG-CRICKET": {
+    "publisher": "OLBG (discovery only)",
+    "url": "https://www.olbg.com/betting-tips/Cricket/7",
+    "role": "discovery",
+    "captured": "2026-10-24T17:07:00Z",
+    "confirms": "Eight open cricket events plus five outright markets"
+  },
+  "OLBG-SNOOKER": {
+    "publisher": "OLBG (discovery only)",
+    "url": "https://www.olbg.com/betting-tips/Snooker/8",
+    "role": "discovery",
+    "captured": "2026-10-24T17:07:00Z",
+    "confirms": "Mark Williams v Jak Jones win-match market open"
+  },
+  "OLBG-RUGBY-UNION": {
+    "publisher": "OLBG (discovery only)",
+    "url": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+    "role": "discovery",
+    "captured": "2026-10-24T17:08:00Z",
+    "confirms": "Five open rugby union match markets plus Six Nations 2027 outright"
+  },
+  "OLBG-RUGBY-LEAGUE": {
+    "publisher": "OLBG (discovery only)",
+    "url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+    "role": "discovery",
+    "captured": "2026-10-24T17:08:00Z",
+    "confirms": "No open match markets at capture; three outright markets only"
+  },
+  "OLBG-BASEBALL": {
+    "publisher": "OLBG (discovery only)",
+    "url": "https://www.olbg.com/betting-tips/Baseball/12",
+    "role": "discovery",
+    "captured": "2026-10-24T17:09:00Z",
+    "confirms": "TB Rays at MIL Brewers money line open"
+  },
+  "OLBG-ICE-HOCKEY": {
+    "publisher": "OLBG (discovery only)",
+    "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+    "role": "discovery",
+    "captured": "2026-10-24T17:10:00Z",
+    "confirms": "Twelve NHL games plus six Swiss NLA games with market types"
+  },
+  "OLBG-MOTOR": {
+    "publisher": "OLBG (discovery only)",
+    "url": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+    "role": "discovery",
+    "captured": "2026-10-24T17:19:00Z",
+    "confirms": "USA Grand Prix win-race market open"
+  },
+  "OLBG-DARTS": {
+    "publisher": "OLBG (discovery only)",
+    "url": "https://www.olbg.com/betting-tips/Darts/15",
+    "role": "discovery",
+    "captured": "2026-10-24T17:10:00Z",
+    "confirms": "Five open match markets plus European Championship outright"
+  },
+  "OLBG-HANDBALL": {
+    "publisher": "OLBG (discovery only)",
+    "url": "https://www.olbg.com/betting-tips/Handball/20",
+    "role": "discovery",
+    "captured": "2026-10-24T17:12:00Z",
+    "confirms": "Fifteen open handball match markets"
+  },
+  "OLBG-VOLLEYBALL": {
+    "publisher": "OLBG (discovery only)",
+    "url": "https://www.olbg.com/betting-tips/Volleyball/21",
+    "role": "discovery",
+    "captured": "2026-10-24T17:12:00Z",
+    "confirms": "Fifteen open volleyball match markets across European and Brazilian leagues"
+  },
+  "OLBG-GAELIC": {
+    "publisher": "OLBG (discovery only)",
+    "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+    "role": "discovery",
+    "captured": "2026-10-24T17:13:00Z",
+    "confirms": "Four open club football events with handicap lines"
+  },
+  "OLBG-GREYHOUNDS": {
+    "publisher": "OLBG (discovery only)",
+    "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+    "role": "discovery",
+    "captured": "2026-10-24T17:13:00Z",
+    "confirms": "Daily race cards at Newcastle, Star Pelaw, Monmore, Doncaster, Dunstall Park and Central Park"
+  },
+  "OLBG-GOLF": {
+    "publisher": "OLBG (discovery only)",
+    "url": "https://www.olbg.com/betting-tips/Golf/5",
+    "role": "discovery",
+    "captured": "2026-10-24T17:17:00Z",
+    "confirms": "Hub returned 'No tips found' at capture; no open golf market to select from"
+  }
+}

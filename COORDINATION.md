@@ -6326,3 +6326,51 @@ remaining candidates.
 * **10 review flags**, including F-3D-09: the brief's 70% floor and −250 band floor overlap by only 1.4 points, so today's strongest call (Philadelphia at 80.0%, −400) and the New Jersey call (63.6%, −175) both fall outside it. **Zero High picks are published**; nothing was relabelled to manufacture one.
 * Repo review published with reproducible counts: 59 sibling dashboards, 1,431 HTML files, a 733 KB coordination board, a canonical snapshot stamped 2026-10-22T12:29:50Z, and no remaining conflict markers.
 * Gates: `scripts/s3d121822_validate.py` 0 errors (25 pages) · 11 new tests OK · canonical build and `pipeline.validate --site _site` re-run after commit.
+
+## 80. Session `8cfb80b2-olbg1` — `T8CFB` fresh 24-Oct-2026 live desk and clarity rebuild (claim 2026-10-24T17:30Z)
+
+**Claim.** Task `T8CFB`, owner `8cfb80b2-olbg1`, claimed before work in this section. File scope is strictly
+non-overlapping with every existing desk: `data/8cfb80b2/**`, `8cfb80b2/**`, `scripts/s8cfb80b2_data.py`,
+`scripts/s8cfb80b2_build.py`, `scripts/s8cfb80b2_validate.py`, `tests/pipeline/test_desk_8cfb80b2.py`,
+`reports/SESSION_8CFB80B2.md`, and this append-only section. Branch `arena/8cfb80b2-olbg1` per §0.2.
+
+**One shared file touched, deliberately and minimally.** Root `index.html` received a single "start here" bar that
+points at `/8cfb80b2/index.html`; no data, layout, styling, navigation or existing content was altered, and
+`python3 -m pipeline.validate --site .` still reports 0 errors afterwards. Nothing else in the canonical root,
+`pipeline/**`, `data/current/**`, `.github/workflows/**` or any peer `<id>/` desk was edited.
+
+**What was built.** A 24-page namespaced dashboard whose landing page leads with the picks, then a "where things
+are" block, then the full slate: `index.html` (executive summary), `picks.html` (six price books with every market
+family examined and withheld), `predictions.html` (six unique 56–71 word write-ups), `matches.html` (all 50
+captured rows), 15 sport pages, `sources.html`, `flagged.html` (10 items), `coverage.html`, `methodology.html`
+and `reverse-engineering.html`. Machine-readable copies in `data/8cfb80b2/`.
+
+**Sources read live (9 official of 25 recorded).** MLB statsapi schedule + standings; NHL api-web schedule +
+standings; the NBA official injury report PDF for 2026-10-24; nba.com games calendar; formula1.com United States
+Grand Prix page; wst.tv match list. OLBG hubs for all fifteen sports were read as discovery only.
+
+**Verification performed.** `scripts/s8cfb80b2_validate.py` runs 1,080 checks with 0 failures: source-id integrity,
+official-source requirement on any priced row, American/fair-price arithmetic from the stated probability, the
+brief's High rule (p > 0.70 **and** −250…+10000) enforced in both directions, ≥30-word predictions, six-gram
+uniqueness across all six write-ups, banned-word scan, every relative link and fragment on 24 pages, and JSON
+freshness against the data module. `tests/pipeline/test_desk_8cfb80b2.py` adds 11 tests (OK). Repo gates:
+`python3 -m pipeline.validate --site .` 0 errors; `python3 scripts/validate.py` swept 1,455 pages with 0 errors and
+3 pre-existing warnings owned by desk `f7fa77fc`.
+
+**Honest result.** **Zero High-confidence picks.** No selection cleared 70% on the facts that were readable, so four
+picks are Medium and two are openly Low; the tier is machine-checked and cannot be inflated to meet the brief's
+five-per-sport quota. Five of fifteen sports produced no selection. Nine sports had no readable official form or
+fixture source in this environment. All of it is published on `coverage.html` and `flagged.html`, not hidden.
+
+**Irregularities flagged (all published with links).** F-8C-01 no High issued; F-8C-02 nine sports unpriced with the
+blocking source named; F-8C-03 OLBG hub times are US Eastern, pinned against the NBA injury report, so hub-derived
+starts are labelled *derived*; F-8C-04 greyhound times displaced five hours between race name and rendered start;
+F-8C-05 golf hub empty; F-8C-06 rugby league fixture markets absent; F-8C-07 San Jose record outside the readable
+standings portion, so the Bruins price is capped at Medium; F-8C-08 four NBA games with no submitted report;
+F-8C-09 snooker final opponent undecided; F-8C-10 OLBG secondary routes return marketing copy or 404 bodies.
+
+**Dead ends recorded.** `stats.nba.com` scoreboard failed; `cdn.nba.com` scoreboard returned HTTP 500; `pdc.tv`
+served a cookie wall; `unitedrugby.com/fixtures` 404; the WTA Osaka route redirected to the 2025 event. Sandbox TLS
+egress does not reach `olbg.com` or governing-body domains directly, so all reads went through the retrieval tool.
+
+**Status.** Build and gates green. PR to `main`, merge and Pages read-back recorded in the follow-up entry below.
