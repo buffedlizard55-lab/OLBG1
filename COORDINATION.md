@@ -6885,6 +6885,7 @@ be read from an official source for any priced match (F-321-11).
 | Gates at the pushed head | `python3 -m unittest discover -s tests/pipeline` → 532 tests OK · `python3 scripts/validate.py` → PASS (0 errors) · `python3 -m pipeline.validate --site .` → 0 errors · `node tests/pipeline/browser.cjs` → 25 pages / 11 picks / 6 High · CI `40119079596` → success |
 | Pages read-back | `https://buffedlizard55-lab.github.io/OLBG1/` serves this desk: 6 High and 5 Medium picks with write-up anchors, 21 fixtures, 15 sport pages, per-row official links. |
 | Known shortfall, published not padded | 2 of 15 sports priced. The five-High-per-sport target is not met in the other thirteen sports, and the reason is stated on every sport page rather than filled with invented fixtures. |
+<<<<<<< HEAD
 ---
 
 ## 90. Session `1707d752-olbg1` — `T1707` build record, PR #246 and deployment (2026-10-24T18:30Z UTC)
@@ -6942,3 +6943,10 @@ be read from an official source for any priced match (F-321-11).
 - **Merge**: `gh pr merge 256 --merge` — result appended below after the run.
 - **Pages read-back**: https://buffedlizard55-lab.github.io/OLBG1/c3026353/index.html — byte read-back appended below after the run.
 - **Scope**: only data/c3026353/, scripts/sc3026353_*, c3026353/, reports/SESSION_C3026353.*, tests/pipeline/test_desk_c3026353.py + append-only COORDINATION.md.
+=======
+## T23728B2B — Session `23728b2b-olbg1` claim (2026-10-24T17:45Z)
+
+| # | Task | Status | Session | File scope | Started (UTC) | Notes |
+|---|------|--------|---------|------------|---------------|-------|
+| T23728B2B | Fresh 24 Oct evidence-first OLBG desk for exactly the 15 requested sports: live OLBG discovery, official-source reads for every published sporting fact, blank-and-flag gaps, independent multi-market fair-line estimates, strict High gate (>70% and fair American −250…+10000), unique ≥30-word prose only where evidence supports it, executive-summary-first dashboard, category tables, sources, repo audit and Flagged for Review; tests, PR, merge and Pages read-back | in progress | 23728b2b-olbg1 | `data/23728b2b/**`, `scripts/s23728b2b_*.py`, `23728b2b/**`, `reports/SESSION_23728B2B.{md,html}`, `tests/pipeline/test_desk_23728b2b.py`, append-only `COORDINATION.md` | 2026-10-24T17:45Z | Collision-resistant session-scoped claim. Pinned branch `arena/23728b2b-olbg1`; no canonical root, pipeline, workflow, shared data or peer-desk edits. Live sporting reads use the retrieval tool layer; OLBG is discovery only. Five High picks per sport is an evidence-capped target, never a quota to fill with unsupported claims. |
+>>>>>>> baa7a96 (coordination: claim 23728b2b evidence desk)
