@@ -677,10 +677,10 @@ def main() -> None:
                 f"<tr><td><strong>{e(f['event'])}</strong><br><span class='muted'>{e(f['league'])}</span></td>"
                 f"<td>{fmt_time(f['start_utc'])}</td>"
                 f"<td>{badge('Official','green') if f['verification']=='official' else badge('OLBG only','amber')}</td>"
-                f"<td class='num'>{('%+d' % picks_by_fx[f['id']]['american']) if f['id'] in picks_by_fx else '—'}</td>"
+                f"<td>{sport_price_cell(f)}</td>"
                 f"<td>{source_links(f['sources'])}</td></tr>" for f in rows)
             table_html = f"""<div class="table-wrap"><table>
-              <thead><tr><th>Match</th><th>Start</th><th>Evidence</th><th class="num">Our price</th><th>Source</th></tr></thead>
+              <thead><tr><th>Match</th><th>Start</th><th>Evidence</th><th>Our selection and price</th><th>Source</th></tr></thead>
               <tbody>{trs}</tbody></table></div>"""
         else:
             table_html = '<div class="panel"><h3>No fixture held for this window</h3><p class="muted">Nothing is listed rather than filling the gap with an unconfirmed match.</p></div>'
@@ -694,6 +694,14 @@ def main() -> None:
         market_html = "".join(
             f"<tr><td>{e(l['market'])}</td><td>{e(l['selection'])}</td><td class='num'>{l['american']:+d}</td><td>{badge(l['tier'])}</td></tr>"
             for l in sp_lines)
+        def sport_price_cell(fx) -> str:
+            pk = picks_by_fx.get(fx["id"])
+            if not pk:
+                return '<span class="muted">No price</span>'
+            if not pk["eligible"]:
+                return f'<span class="muted">{e(pk["selection"])} {pk["american"]:+d} (withheld)</span>'
+            return f'<strong>{e(pk["selection"])}</strong><br><span class="muted">{pk["american"]:+d} · {pk["tier"]}</span>'
+
         hub_url, hub_note = OLBG_HUBS[slug]
         body = f"""
 <div class="stat-strip">
