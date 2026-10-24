@@ -7425,3 +7425,16 @@ Status: **site and data built; local desk validator and new unit test pass; cano
 - Independent line origination: each event has win, handicap, total and other-market lines. High requires our own probability >70% **and** fair American price from -250 through +10000. All 28 high picks satisfy that gate.
 - Local gates already passed: `python scripts/s0239d718_build.py`, `python scripts/s0239d718_validate.py` (0 errors), and `python -m unittest tests.pipeline.test_desk_0239d718 -v` (5 tests OK).
 - Remaining: canonical front-door/ARCHIVE integration, full canonical unit/validation/build/browser gates, PR, merge, GitHub Pages deploy confirmation with served-content read-back, then final PR/merge result receipt.
+
+
+### §94.5 — T0239D718 final publication receipt: PR, merge, Pages and served read-back (2026-10-24T23:33:00Z, append-only)
+
+* **Pull request:** [#295](https://github.com/buffedlizard55-lab/OLBG1/pull/295) opened from `arena/0239d718-olbg1` to `main`. Required PR check `Evidence, model, site and browser gates` passed in run `40142844787` (1m21s). `gh pr merge 295 --merge` exited 0 without waiting; `gh pr view 295` reports `MERGED` at 2026-10-24T23:29:36Z with merge commit `75c6f355925bb1989b1dec20e3f9343b2ee8b5a2`.
+* **Post-merge workflow:** push run `40142954808` on `main` completed `success`: validation job `Evidence, model, site and browser gates` succeeded in 1m49s and `Publish canonical GitHub Pages` succeeded in 12s. GitHub Pages API `pages/builds/latest` reports `status: built` for commit `75c6f355925bb1989b1dec20e3f9343b2ee8b5a2`, created 23:29:37Z and updated 23:30:01Z.
+* **Served-content read-back (live HTML, not just API status):**
+  - `https://buffedlizard55-lab.github.io/OLBG1/index.html` serves the new front-door banner with links to `/0239d718/index.html` and `/0239d718/flagged.html`.
+  - `/0239d718/index.html` serves the executive summary: 15 sports, 75 written picks, 28 strict-gate high picks, 57 matches, 228 originated lines, 50 official sources and 22 review flags. The high table shows exact selections, prices, confidence and official source links.
+  - `/0239d718/picks.html` serves all 75 rows with official source links; `/0239d718/predictions.html` serves the distinct 30-word-plus analyses; `/0239d718/flagged.html` serves 22 review items with official recheck links; `/0239d718/audit.html` serves 120 line-by-line findings with GitHub file:line and official recheck links; `/0239d718/sports/golf.html` serves five picks, the OLBG hub, the official PGA TOUR link and the blank-time flag.
+  - No 404 was observed on the read-back paths.
+* **Irregularities (all flagged, none block merge):** OLBG no-tips hubs, single-race Greyhounds discovery, unlabeled hub times, tip shares treated as non-probabilities, WTA draw shells, CSA pagination drift, Premiership 404, partial USA Rugby page, snooker final opponent blank, short baseball/rugby-league/motor-racing slates, blank Gaelic/CSA/GBGB stats, local-only start times, unusual official NBA roster row, canonical root's older snapshot, and prior repo stale-task rows. All are visible on the live Flagged for Review and Repo Audit pages.
+* **Final claim status:** `done`.
