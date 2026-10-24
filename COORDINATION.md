@@ -7382,3 +7382,19 @@ T7568 integration: moving-main conflicts in coordination and ARCHIVE resolved by
 * **Fix PR.** PR [#293](https://github.com/buffedlizard55-lab/OLBG1/pull/293) gates `40142248930` **pass**, merged **2026-10-24T23:21:02Z**, merge commit **`cb2b2d5`**. Main run **`40142374897`**: gates **pass** (1m22s), *Publish canonical GitHub Pages* **pass** (11s).
 * **Read-back caveat worth recording for the next session:** GitHub Pages served the pre-fix `predictions.html` to the first request after deploy; the same URL with a cache-busting query returned the corrected **−185**. Read-backs should be made with a cache-buster, or the "deployed" conclusion can be wrong in either direction.
 
+### §94.4 — T733888F2 merged (#289), Pages read-back, table-count correction (2026-10-25T00:35Z UTC, append-only)
+
+* **Merged:** PR #289 → `main` `ebf6531`. Required check "Evidence, model, site and browser gates"
+  **pass**; "pages build and deployment" **success**.
+* **Live read-back** (retrieval layer, not API status): `733888f2/picks.html` serves all **11** picks —
+  Saracens -457 Strong, Minnesota -263 Strong, **Cucine Lube Civitanova -246 / 71.1% High (in band)**,
+  Florida -166, Milwaukee -139, Dallas -128 Medium, then five Low — and `733888f2/index.html` shows
+  11 priced matches, 11 picks, 1 High, 2 Strong, 4 sports priced, 59 OLBG events, 19 flags.
+* **Correction in this commit:** the coverage table counted only *unpriced* rows as "listed on OLBG", so
+  priced sports read 0 (Ice Hockey), 2 (Rugby Union), 6 (Volleyball). Now listed = unpriced + priced
+  (Ice Hockey 5, Rugby Union 3, Volleyball 10, Baseball 1), and the closing paragraph is computed from the
+  data instead of a hard-coded "two sports … twelve do not". Capture line now states the real read window
+  (22:28–23:55 UTC) rather than a single stale minute.
+* **Gates:** desk validator 0 errors; `unittest discover -s tests/pipeline` **743 tests OK** (the suite grew
+  as peer desks landed); `pipeline.validate --site .` 0 errors; `scripts/validate.py` PASSED.
+* **Claim status:** `done`. Scope unchanged: no shared root page, workflow or canonical data file edited.

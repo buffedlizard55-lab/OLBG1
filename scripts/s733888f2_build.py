@@ -285,6 +285,7 @@ def coverage(rows):
     cov = []
     for slug_, name, _, _ in D.SPORTS:
         listed = [u for u in D.UNPRICED if u['sport'] == slug_]
+        listed_n = len(listed) + len([r for r in rows if r['sport'] == slug_])
         priced = [r for r in rows if r['sport'] == slug_]
         picks = len(priced)
         high = len([r for r in priced if r['price']['pick']['tier'] == 'High'])
@@ -295,7 +296,7 @@ def coverage(rows):
             status = '<span class="badge medium">Listed, not priced</span>'
         else:
             status = '<span class="badge gap">No market on OLBG</span>'
-        cov.append({'slug': slug_, 'name': name, 'listed': len(listed), 'priced': len(priced),
+        cov.append({'slug': slug_, 'name': name, 'listed': listed_n, 'priced': len(priced),
                     'picks': picks, 'high': high, 'strong': strong, 'status': status,
                     'olbg': D.olbg_url(slug_)})
     return cov
@@ -311,7 +312,7 @@ def index_html(rows, cov):
             ('OLBG events listed', len(D.UNPRICED) + len(rows)),
             ('Flagged items', len(FLAGS))]
     b = ['<h1>Today\'s picks, in one place</h1>',
-         '<p class="lede">Captured 24 October 2026, 23:15 UTC. Every pick below is on a match that '
+         '<p class="lede">Captured 24 October 2026, 22:28-23:55 UTC. Every pick below is on a match that '
          'had not started when the official schedule was read. Each price is originated here from the '
          'official records linked on the row; nothing is copied from a bookmaker or from OLBG tip shares.</p>',
          '<div class="grid">']
@@ -370,10 +371,12 @@ def index_html(rows, cov):
                  f'<td>{c["status"]}</td>'
                  f'<td class="small"><a href="{e(c["olbg"])}">hub</a></td></tr>')
     b.append('</tbody></table></div>')
-    b.append('<p class="small muted">The brief asks for five to ten picks per sport. Two sports carry '
-             'prices tonight, plus one rugby match; twelve do not. The shortfall is the finding, not an '
-             'oversight: <a href="flagged.html">Flagged for review</a> names, sport by sport, the exact '
-             'official input that was missing.</p>')
+    priced_sports = len({r['sport'] for r in rows})
+    silent = len(D.SPORTS) - priced_sports
+    b.append(f'<p class="small muted">The brief asks for five to ten picks per sport. {priced_sports} of the '
+             f'{len(D.SPORTS)} sports carry a price on this edition; {silent} do not, and no row is padded to '
+             f'look complete. The shortfall is the finding: <a href="flagged.html">Flagged for review</a> '
+             f'names, sport by sport, the exact official input that was missing.</p>')
     return page("Today's picks — 24 October 2026", 'index.html', ''.join(b))
 
 
@@ -519,6 +522,7 @@ def sport_pages(rows, cov):
         slug_ = c['slug']
         priced = [r for r in rows if r['sport'] == slug_]
         listed = [u for u in D.UNPRICED if u['sport'] == slug_]
+        listed_n = len(listed) + len([r for r in rows if r['sport'] == slug_])
         b = [f'<h1>{e(c["name"])}</h1>',
              f'<p class="lede">{len(priced)} priced match(es), {len(listed)} OLBG listing(s) without a price. '
              f'<a href="{e(c["olbg"])}">OLBG hub</a></p>']
