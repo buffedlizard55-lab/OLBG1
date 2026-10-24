@@ -1,0 +1,292 @@
+{
+  "generated_at": "2026-10-24T22:40:00Z",
+  "flags": [
+    {
+      "id": "F-001",
+      "category": "Discovery gap",
+      "note": "Golf, Snooker, Motor Racing and Rugby League hubs showed no open match tips; official calendars were used for coverage.",
+      "severity": "review",
+      "official_source_ids": [
+        "pga-board",
+        "wst-home",
+        "f1-usgp",
+        "nrl-draw"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-002",
+      "category": "Partial OLBG coverage",
+      "note": "Greyhounds hub exposed one daily race; official GBGB open-race reports were used for the remaining selections.",
+      "severity": "review",
+      "official_source_ids": [
+        "gbgb-racing",
+        "gbgb-open"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-003",
+      "category": "Time zone",
+      "note": "OLBG hub times have no visible timezone; exact UTC starts were left blank unless an official feed published them.",
+      "severity": "review",
+      "official_source_ids": [
+        "olbg-main",
+        "nhl-schedule",
+        "mlb-schedule"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-004",
+      "category": "Tip share",
+      "note": "OLBG tip percentages are community shares and were never used as probabilities or official facts.",
+      "severity": "review",
+      "official_source_ids": [
+        "olbg-main",
+        "nhl-schedule"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-005",
+      "category": "Source shell",
+      "note": "WTA Tokyo and Guangzhou draws pages were client-side notification shells; WTA rows remain flagged or excluded.",
+      "severity": "review",
+      "official_source_ids": [
+        "wta-tokyo",
+        "wta-guangzhou"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-006",
+      "category": "Index drift",
+      "note": "CSA's official search index exposed 25 Oct T20 fixtures but the live paginated page had moved to later dates.",
+      "severity": "review",
+      "official_source_ids": [
+        "csa-upcoming",
+        "csa-page8"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-007",
+      "category": "404 / redirect",
+      "note": "Premiership fixtures path returned 404; the official match-centre standings page was used instead.",
+      "severity": "review",
+      "official_source_ids": [
+        "prem-standings"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-008",
+      "category": "Partial official page",
+      "note": "USA Rugby confirms an Australia XV October series but not the exact USA v Australia A date, venue or lineup.",
+      "severity": "review",
+      "official_source_ids": [
+        "usa-rugby"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-009",
+      "category": "Availability gap",
+      "note": "NBA's 1:30PM ET injury issue marks several teams NOT YET SUBMITTED; those availability fields stayed blank.",
+      "severity": "review",
+      "official_source_ids": [
+        "nba-injury",
+        "nba-injury-index"
+      ],
+      "file": "data/99d43605/fixtures.json",
+      "line": 415,
+      "repo_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/arena/0239d718-olbg1/data/99d43605/fixtures.json#L415"
+    },
+    {
+      "id": "F-010",
+      "category": "Legacy route",
+      "note": "Earlier session discovery JSON uses /tips/ routes while live hubs resolve to /betting-tips/.",
+      "severity": "review",
+      "official_source_ids": [
+        "olbg-sitemap",
+        "nhl-schedule"
+      ],
+      "file": "data/99d43605/olbg.json",
+      "line": 7,
+      "repo_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/arena/0239d718-olbg1/data/99d43605/olbg.json#L7"
+    },
+    {
+      "id": "F-011",
+      "category": "Stale task board",
+      "note": "COORDINATION.md contains older in-progress and queued rows from completed sessions; this session appended receipts rather than rewriting them.",
+      "severity": "review",
+      "official_source_ids": [
+        "olbg-main",
+        "nba-games"
+      ],
+      "file": "COORDINATION.md",
+      "line": 65,
+      "repo_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/arena/0239d718-olbg1/COORDINATION.md#L65"
+    },
+    {
+      "id": "F-012",
+      "category": "Snooker final opponent",
+      "note": "WST lists Kyren Wilson v Winner of match 62; the second finalist was blank until the semifinal completed.",
+      "severity": "review",
+      "official_source_ids": [
+        "wst-home"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-013",
+      "category": "Short slate",
+      "note": "Baseball has one official MLB game in the window, so five picks are five market families on that one game.",
+      "severity": "review",
+      "official_source_ids": [
+        "mlb-schedule",
+        "mlb-standings"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-014",
+      "category": "Short slate",
+      "note": "Rugby League has two official RLWC fixtures on the NRL draw; five picks span win, handicap and total families.",
+      "severity": "review",
+      "official_source_ids": [
+        "nrl-draw"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-015",
+      "category": "Short slate",
+      "note": "Motor Racing has one official Grand Prix; five picks are driver-market families from the same race.",
+      "severity": "review",
+      "official_source_ids": [
+        "f1-usgp",
+        "f1-qual"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-016",
+      "category": "Blank official stats",
+      "note": "Gaelic county-board fixtures publish dates, venues and referees but no team form or scoring inputs; predictions say so explicitly.",
+      "severity": "review",
+      "official_source_ids": [
+        "cork-gaa",
+        "galway-gaa"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-017",
+      "category": "Blank official stats",
+      "note": "CSA provincial T20 rows have no official form or recent score on the source read; those fields stayed blank.",
+      "severity": "review",
+      "official_source_ids": [
+        "csa-page8"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-018",
+      "category": "Official racecard gap",
+      "note": "GBGB's static open-race and racing pages did not expose the full Sunday racecard, so runner form stayed blank for the daily race.",
+      "severity": "review",
+      "official_source_ids": [
+        "gbgb-racing",
+        "gbgb-open"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-019",
+      "category": "Time blank",
+      "note": "Snooker, darts, handball, volleyball and several rugby pages publish site-local times without a timezone; UTC fields stayed blank.",
+      "severity": "review",
+      "official_source_ids": [
+        "wst-home",
+        "pdpa-ec",
+        "ehfcl-home",
+        "legavolley-cal",
+        "top14"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-020",
+      "category": "Odd-looking official roster",
+      "note": "Prior desk data and the official NBA injury issue both show LeBron James under Philadelphia; it is unusual but retained because the official PDF corroborates it.",
+      "severity": "review",
+      "official_source_ids": [
+        "nba-injury",
+        "nba-injury-index"
+      ],
+      "file": "data/99d43605/fixtures.json",
+      "line": 378,
+      "repo_url": "https://github.com/buffedlizard55-lab/OLBG1/blob/arena/0239d718-olbg1/data/99d43605/fixtures.json#L378"
+    },
+    {
+      "id": "F-021",
+      "category": "Banned internal vocabulary",
+      "note": "Published prediction prose excludes internal build vocabulary; the check is enforced by the desk validator.",
+      "severity": "review",
+      "official_source_ids": [
+        "olbg-main",
+        "nba-injury-index"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    },
+    {
+      "id": "F-022",
+      "category": "Canonical front door",
+      "note": "The canonical root still reports its older 18:00Z snapshot; the new front-door banner links to this namespaced 22:40Z desk without changing canonical counts.",
+      "severity": "review",
+      "official_source_ids": [
+        "olbg-main",
+        "nhl-standings"
+      ],
+      "file": null,
+      "line": null,
+      "repo_url": ""
+    }
+  ]
+}
