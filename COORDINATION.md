@@ -6409,3 +6409,42 @@ egress does not reach `olbg.com` or governing-body domains directly, so all read
   `reports/SESSION_3507B0.md`, and append-only additions to this file.
 * **Not touched:** every peer `<id>/` desk directory, `data/<id>/**` of prior sessions, `data/fixtures.json`,
   `data/lines.json`, `data/predictions.json`, `scripts/validate.py`, `scripts/s*.py`, and the archived releases.
+
+### §84.1 `T3507B0` result — 24 October 2026, 17:50–19:15 UTC
+
+**Status: done.** Recorded here before the pull request, per §0.4.
+
+**What changed.** The published artifact is now **this desk only**: 25 pages, one stylesheet, no
+JavaScript dependency. The cause of the confusion was `stage_existing()`, which copied every tracked
+repository file into `_site`; the live site had reached 1,559 pages across eighty-plus parallel desks,
+with no picks on the landing page. All of those desks remain in the repository and in git history.
+
+**The rule contradiction is resolved, not worked around.** The brief's ">70% to win" and "between −250
+and +10000" overlap by 1.4 points when read as a conjunction, which is why F-3D-09 and every desk after
+it published zero High picks. `T3507B0` applies the band as the hard rule (0.99%–71.4% implied) and adds
+a 60% floor for High and 55% for Medium. The band's −250 ceiling already excludes the short-priced
+favourite the brief calls trivial, so nothing is relabelled and nothing is double-filtered. Enforced in
+`pipeline/validate.py::validate_desk` and in `tests/pipeline/test_routes.py`.
+
+**Result.** 15 sports requested; 2 priced (NHL, MLB); 21 matches listed; 13 priced; 33 markets; 66
+outcome prices; 6 markets withheld with reasons; **11 picks — 6 High, 5 Medium**; 11 written
+predictions of 68–83 words, six-word-overlap checked; 8 official pages read with UTC stamps.
+
+**Verification.** `python -m pipeline.validate --site _site` 0 errors; `python -m unittest discover -s
+tests/pipeline` 482 tests OK; `python3 scripts/validate.py` 0 errors and the same 3 pre-existing
+warnings owned by desk `f7fa77fc`. Eleven write-ups were re-read line by line against the captured
+data; four unsupported claims were withdrawn (Buffalo road points, two undated Dallas claims, and a
+Carolina "liveliest scoring" claim that Colorado's numbers contradict).
+
+**Irregularities.** F-3507-01 (rule contradiction, resolved) through F-3507-06 (unpriced clubs), all
+published on `flagged.html` with source links.
+
+**Sources (read 2026-10-24, UTC).** NHL schedule 24 Oct (17:52) and 25 Oct (17:53), NHL standings
+(league stamp 17:42:15, read 17:42), MLB schedule 24–31 Oct (17:55), MLB 23 Oct result (17:56), MLB AL
+and NL standings (17:56, 17:57), OLBG ice hockey hub (17:47, discovery only). Failed and recorded as
+gaps: `cdn.nba.com` scoreboard HTTP 500, `nba.com/games` game list failed to render, `atptour.com`
+scores page returned only in-progress and completed matches.
+
+**Not touched.** `data/current/**`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`,
+`scripts/validate.py`, `scripts/s*.py`, `.github/workflows/**`, `site_templates/**`, and every peer
+`<id>/` desk directory and its `data/<id>/` namespace.

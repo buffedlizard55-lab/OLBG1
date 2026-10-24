@@ -1,380 +1,798 @@
-"""Canonical static site. All data and links work without JavaScript.
+"""Canonical static dashboard for the 24 October 2026 desk.
 
-Legacy desks remain archives. No browser-side external API requests, proxying,
-missing-input defaults or inherited certification labels.
+The site is deliberately small and linear. It answers three questions in order:
+what do we recommend today, where is it written up, and what is every match we
+looked at. Nothing is rendered from an earlier session's snapshot, and nothing
+is copied into the published artifact that is not part of this desk.
 """
+from __future__ import annotations
+
+import argparse
+import csv
+import html
+import io
+import json
+import posixpath
+import shutil
+import subprocess
+from datetime import datetime, timezone
 from pathlib import Path
-from collections import Counter
-import argparse,csv,html,io,json,math,os,re,shutil,subprocess
-from urllib.parse import urlsplit,urlunsplit
-from .common import load,save,now_utc,parse_time,iso,digest
-from .config import ROOT,CURRENT,SPORT_INDEX,SPORT_MARKETS,MARKET_REQUIREMENTS
+
 from .assemble import assemble
 from .audit import build_audit
-REPO='https://github.com/buffedlizard55-lab/OLBG1'
-LIVE='https://buffedlizard55-lab.github.io/OLBG1/'
-ARCHIVE=Path('archive/root-20261022')
-ICONS={
-'grid':'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
-'list':'<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',
-'chart':'<path d="M4 20V10m7 10V4m7 16v-7M2 22h20"/>',
-'shield':'<path d="M12 3l8 3v6c0 5-8 9-8 9S4 17 4 12V6zM9 12l2 2 4-5"/>',
-'flag':'<path d="M5 21V4c5-4 9 4 14 0v10c-5 4-9-4-14 0"/>',
-'book':'<path d="M12 5v16M3 4c3-1 6-1 9 1 3-2 6-2 9-1v15c-3-1-6-1-9 1-3-2-6-2-9-1z"/>',
-'archive':'<rect x="3" y="3" width="18" height="5" rx="1"/><path d="M5 8v12h14V8M10 12h4"/>',
-'link':'<path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-2 2M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l2-2"/>',
-'external':'<path d="M14 3h7v7M21 3L10 14M10 3H4v17h17v-6"/>',
-'arrow':'<path d="M5 12h14M14 7l5 5-5 5"/>',
-'download':'<path d="M12 3v12M7 10l5 5 5-5M4 16v5h16v-5"/>',
-'clock':'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
-'search':'<circle cx="10" cy="10" r="7"/><path d="M15 15l6 6"/>',
-'menu':'<path d="M3 6h18M3 12h18M3 18h18"/>',
-'alert':'<path d="M12 3L2 21h20zM12 9v5m0 3v.01"/>',
-'ball':'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 5-5 13 0 18M12 3c5 5 5 13 0 18"/>',
-'spark':'<path d="M12 3l2.6 6.4L21 12l-6.4 2.6L12 21l-2.6-6.4L3 12l6.4-2.6z"/>',
-'code':'<path d="M8 5L2 12l6 7M16 5l6 7-6 7M14 3l-4 18"/>'}
-def e(v):return html.escape('' if v is None else str(v),quote=True)
-def icon(name,size=18):return f'<svg width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{ICONS.get(name,ICONS["ball"])}</svg>'
-def badge(text,style='gray'):return f'<span class="badge {e(style)}">{e(text)}</span>'
-def american(n):return f'{n:+d}' if n is not None else ''
-def stamp(v):return parse_time(v).strftime('%d %b %Y · %H:%M UTC') if v else ''
-def ext(url,label):return f'<a class="source-link" href="{e(url)}" target="_blank" rel="noopener noreferrer">{e(label)} {icon("external",11)}</a>'
-def publisher(c):
-    names={'nhl':'NHL','mlb':'MLB','nba':'NBA','euroleague':'EuroLeague','atp':'ATP PDF','wta':'WTA PDF','wst':'WST','lnr':'LNR','irl':'IRL','pcb':'PCB','ehf':'EHF PDF','aflw':'AFLW','pga':'PGA TOUR','f1':'Formula 1','munster':'Munster GAA','pls':'PLS club','riot':'Riot','gbgb':'GBGB','pdc':'PDC','olbg':'OLBG'}
-    return names.get(c['id'].replace('http-','').split('-')[0],urlsplit(c['url']).hostname.replace('www.',''))
-def table(head,rows,cls='source-table'):
-    return '<div class="panel table-wrap"><table class="'+cls+'"><thead><tr>'+''.join('<th>'+h+'</th>' for h in head)+'</tr></thead><tbody>'+''.join('<tr>'+''.join('<td>'+v+'</td>' for v in row)+'</tr>' for row in rows)+'</tbody></table></div>'
-def section(title,sub='',anchor=''):
-    return f'<div class="section-heading"'+(f' id="{anchor}"' if anchor else '')+f'><div><h2>{title}</h2>'+('<p>'+sub+'</p>' if sub else '')+'</div></div>'
+from .common import digest, load, now_utc, parse_time, save
+from .config import PUBLISHERS, ROOT
+from .desk import (FLAGS, MLB_TEAMS, MISSING_CLUBS, SOURCES, SPORT_INDEX, SPORTS,
+                   TEAMS, UNCAPTURED, build_desk)
+
+REPO = 'https://github.com/buffedlizard55-lab/OLBG1'
+LIVE = 'https://buffedlizard55-lab.github.io/OLBG1/'
+OFFICIAL_HOSTS = set(PUBLISHERS) | {'www.nhl.com', 'www.mlb.com'}
+
+NAV = [
+    ('summary', 'index.html', "Today's summary"),
+    ('picks', 'picks.html', 'Picks'),
+    ('predictions', 'predictions.html', 'Written predictions'),
+    ('matches', 'matches.html', 'Every match'),
+    ('sports', 'sports.html', 'Sports'),
+    ('flagged', 'flagged.html', 'Flagged for review'),
+    ('sources', 'sources.html', 'Sources'),
+    ('method', 'methodology.html', 'How this works'),
+    ('reverse', 'reverse-engineering.html', 'Inside OLBG'),
+]
+
+CSS = """
+:root{--ink:#14261f;--muted:#5b6f66;--line:#dfe7e2;--bg:#f6f8f7;--card:#fff;
+--green:#0f6b45;--green-soft:#e7f2ec;--amber:#8a5a00;--amber-soft:#fdf3df;--red:#8e2f2f;--red-soft:#fbeaea}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--green)}
+h1,h2,h3{line-height:1.22;margin:0 0 10px}
+h1{font-size:30px}h2{font-size:21px}h3{font-size:17px}
+p{margin:0 0 12px}
+header.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.toprow{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:12px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700}
+.brand span.mark{width:30px;height:30px;border-radius:9px;background:var(--green);color:#fff;display:grid;place-items:center;font-size:14px}
+.brand small{display:block;font-weight:500;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+nav.main{display:flex;gap:4px;flex-wrap:wrap;padding:0 0 10px}
+nav.main a{padding:6px 11px;border-radius:999px;text-decoration:none;color:var(--muted);font-size:14px;border:1px solid transparent}
+nav.main a.active{background:var(--green-soft);color:var(--green);border-color:#cfe3d8;font-weight:600}
+nav.main a:hover{border-color:var(--line)}
+main{padding:26px 0 60px}
+.lede{font-size:17px;color:var(--muted);max-width:78ch}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:0 0 18px}
+.panel.highlight{border-color:#cfe3d8;background:linear-gradient(180deg,#f2f8f4,#fff)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:0 0 18px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.kpi b{display:block;font-size:26px;line-height:1.1}
+.kpi small{color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:#fbfcfb}
+tbody tr:last-child td{border-bottom:none}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.badge.high{background:var(--green-soft);color:var(--green)}
+.badge.medium{background:var(--amber-soft);color:var(--amber)}
+.badge.low,.badge.blank{background:#eef1ef;color:var(--muted)}
+.badge.gap{background:var(--red-soft);color:var(--red)}
+.num{font-variant-numeric:tabular-nums;font-weight:600}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.pick{font-weight:600}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+.grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:var(--ink);display:block}
+.card:hover{border-color:#bcd6c8}
+.card b{display:block;margin-bottom:3px}
+.card small{color:var(--muted)}
+.article{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin:0 0 16px}
+.article h3{margin-bottom:6px}
+.article .meta{font-size:13px;color:var(--muted);margin-bottom:10px}
+.article p.body{font-size:16px}
+.flag{background:#fff;border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:12px;padding:16px 18px;margin:0 0 14px}
+.flag.resolved-rule{border-left-color:var(--green)}
+.flag.gap,.flag.unverified{border-left-color:var(--red)}
+footer.foot{border-top:1px solid var(--line);padding:18px 0 40px;color:var(--muted);font-size:13px}
+ul.plain{margin:0 0 12px;padding-left:20px}ul.plain li{margin-bottom:6px}
+.notice{background:var(--amber-soft);border:1px solid #ecd9ae;color:#6b4700;border-radius:12px;padding:12px 16px;margin:0 0 18px;font-size:14px}
+code{background:#f0f4f2;padding:1px 5px;border-radius:5px;font-size:13px}
+@media(max-width:820px){.grid2{grid-template-columns:1fr}h1{font-size:25px}}
+"""
+
+
+def e(value):
+    return html.escape('' if value is None else str(value), quote=True)
+
+
+def stamp(value):
+    if not value:
+        return ''
+    return parse_time(value).strftime('%d %b %Y %H:%M UTC')
+
+
+def clock(value):
+    if not value:
+        return ''
+    d = parse_time(value)
+    return f'<span class="num">{d:%H:%M}</span> <span class="muted small">{d:%d %b} UTC</span>'
+
+
+def am(value):
+    return f'{value:+d}' if isinstance(value, int) else ''
+
+
+def link(url, label):
+    return (f'<a href="{e(url)}" target="_blank" rel="noopener noreferrer">{e(label)}'
+            f'<span aria-hidden="true"> &#8599;</span></a>')
+
+
+def confidence_badge(tier):
+    return f'<span class="badge {tier}">{tier}</span>'
+
+
+def source_links(ids, sources):
+    index = {s['id']: s for s in sources}
+    return ' '.join(link(index[i]['url'], index[i]['publisher']) for i in ids if i in index)
+
 
 class Site:
-    def __init__(self,snapshot,audit,out):
-        self.s=snapshot;self.audit=audit;self.out=Path(out)
-        self.c={p.stem:load(p) for p in sorted((CURRENT/'evidence').glob('*.json'))}
-        self.prices={p['fixture_id']:p for p in snapshot['prices']}
-        self.fixture_map={r['id']:r for r in snapshot['fixtures']}
-        self.rows=[r for r in snapshot['fixtures'] if r['in_window']]
-        self.revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
-    def href(self,target,page):return os.path.relpath(self.out/target,(self.out/page).parent).replace(os.sep,'/')
-    def sources(self,row,page,details=True):
-        links=[ext(self.c[s]['url'],publisher(self.c[s])) for s in row['source_ids']]
-        if details:links.append(f'<a class="source-link" href="{self.href("verification.html",page)}#{e(row["id"])}">Field evidence {icon("arrow",11)}</a>')
-        return '<div class="sources-stack">'+''.join(links)+'</div>'
-    def notice(self,text):return f'<div class="notice">{icon("alert",17)}<p>{text}</p></div>'
-    def frame(self,title,page,body,nav='overview',description='',eyebrow='Research workspace',actions=None):
-        r=lambda target:self.href(target,page)
-        menus=[('overview','index.html','grid','Overview',''),('matches','picks.html','list','Match list',str(self.s['counts']['current_listings'])),('markets','markets.html','chart','Market explorer',''),('predictions','predictions.html','spark','High-confidence picks',str(self.s['counts']['high'])),('sports','sports.html','ball','All sports','17')]
-        research=[('review','flagged.html','flag','Flagged for Review',str(len(self.audit['findings']))),('analysis','analysis.html','chart','Analysis & findings',''),('sources','sources.html','link','Sources & evidence',''),('method','methodology.html','book','Methodology',''),('reverse','reverse-engineering.html','code','OLBG discovery','')]
-        def navlinks(items):
-            return ''.join(f'<a class="nav-link {"active" if key==nav else ""}" href="{r(path)}"'+(' aria-current="page"' if key==nav else '')+f'>{icon(sym,17)}<span>{label}</span>'+ (f'<span class="count {"warn-count" if key=="review" else ""}">{count}</span>' if count else '')+'</a>' for key,path,sym,label,count in items)
-        controls=actions if actions is not None else f'<a class="button" href="{r("data/current/matches.csv")}" download>{icon("download",14)} Export data</a>'
-        heading=f'<header class="page-heading"><div><p class="eyebrow">{e(eyebrow)}</p><h1>{e(title)}</h1><p>{description}</p></div><div class="actions">{controls}</div></header>'
-        doc=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Independent source-linked match research. Partial fixtures, experimental fair prices and explicit review flags. Not affiliated with OLBG."><meta name="color-scheme" content="light"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'; connect-src 'none'"><title>{e(title)} · OLBG Research</title><link rel="icon" href="{r('assets/current-mark.svg')}" type="image/svg+xml"><link rel="stylesheet" href="{r('assets/current-style.css')}"><script defer src="{r('assets/current-app.js')}"></script><noscript><style>[data-price-value],[data-conf-value]{{display:none!important}}</style></noscript></head><body data-snapshot="{e(self.s["generated_at"])}"><a class="skip" href="#main">Skip to content</a><div class="sidebar-shade" id="sidebar-shade" hidden></div><aside class="sidebar" id="sidebar" aria-label="Primary navigation"><a class="brand" href="{r('index.html')}"><span class="brand-mark">{icon('chart',24)}</span><span><strong>OLBG<span style="font-weight:400">.</span></strong><small>RESEARCH DESK</small></span></a><nav><div class="nav-label">WORKSPACE</div>{navlinks(menus)}<div class="nav-label">RESEARCH & TRANSPARENCY</div>{navlinks(research)}<div class="nav-label">PROJECT</div>{navlinks([('archive','archive.html','archive','Earlier snapshots','')])}</nav><div class="sidebar-bottom"><div class="status-card"><strong><span class="status-dot"></span> Evidence-first research</strong><p>No default ratings. No invented inputs.<br>Blank means unverified.</p></div><p>Independent project · Not affiliated with OLBG</p></div></aside><div class="layout"><header class="topbar"><button class="mobile-menu" id="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">{icon('menu',21)}</button><div class="crumb"><span class="workspace-label">Research workspace <span aria-hidden="true">/</span></span><strong>{e(title if len(title)<32 else 'Overview')}</strong></div><div class="topbar-right"><span><span class="status-dot"></span><span class="freshness">Partial coverage</span></span><span class="date">{stamp(self.s['generated_at'])}</span><a href="{REPO}" aria-label="View project on GitHub">{icon('code',17)}</a></div></header><main class="main" id="main">{heading}<noscript><div class="notice"><p><strong>Estimates withheld without JavaScript.</strong> Browser-time expiry cannot be checked. Captured fixture rows and official source links remain available; source facts are historical observations, not current live status.</p></div></noscript><div class="notice expiry-alert" id="expiry-alert" role="status" hidden>{icon('clock',17)}<p><strong>Time checks have changed.</strong> Expired or elapsed estimates are withheld. Counts marked — are no longer current. Source facts remain historical observations; check the official status.</p></div>{body}<footer class="footer"><span>Independent research, not betting guarantees. 18+ · Never stake what you cannot afford to lose.</span><span>Built {stamp(self.s['generated_at'])} · <a href="{REPO}/commit/{self.revision}">{self.revision[:7]}</a> · <a href="{r('methodology.html')}">How this works</a></span></footer></main></div></body></html>'''
-        path=self.out/page;path.parent.mkdir(parents=True,exist_ok=True);path.write_text(doc,encoding='utf-8')
-    def kpis(self):
-        c=self.s['counts'];items=[('Source-linked listings',str(c['current_listings']),'list','<span>7-day</span> research window',True),('Categories with listings',f'{c["categories_with_listings"]}<small> / 17</small>','ball','All categories remain partial',True),('Experimental price books',str(c['priced_matches']),'chart',f'{c["originated_markets"]} markets · Low only',True),('High-confidence picks',str(c['high']),'shield','No unsupported selections released',False)]
-        return '<section class="kpis" aria-label="Snapshot summary">'+''.join(f'<div class="kpi"><div class="kpi-label">{label}<span class="kpi-icon">{icon(sym,16)}</span></div><div class="kpi-value"'+(' data-live-kpi' if live else '')+f'>{value}</div><div class="kpi-foot">{foot}</div></div>' for label,value,sym,foot,live in items)+'</section>'
-    def time_cell(self,row):
-        f=row['facts']
-        if f['start_utc']:
-            d=parse_time(f['start_utc']);return f'<span class="time">{d:%d %b}<small>{d:%H:%M} UTC</small></span>'
-        if f['date']:return f'<span class="time">{e(f["date"])}<small>Source date · UTC unverified</small></span>'
-        return ''
-    def match_cell(self,row,page):
-        f=row['facts'];title=e(f['event']) if row['kind']=='event' else (e(f['participant_a'])+' <span class="versus">vs</span> '+e(f['participant_b']) if f['participant_a'] or f['participant_b'] else badge('Pairing unverified','amber'))
-        return f'<div class="match"><a href="{self.href("verification.html",page)}#{e(row["id"])}">{title}</a><small>{e(f["competition"])}</small></div>'
-    def match_table(self,rows,page,compact=False):
-        head='<th aria-sort="ascending"><button class="sort-btn" data-sort="start">Start / date ↕</button></th><th>Match / event</th>'+('' if compact else '<th>Sport</th>')+'<th>Experimental winner</th><th>Fair odds</th>'+('' if compact else '<th>Confidence</th><th>Evidence / status</th><th>Official source</th>')
-        out=f'<div class="table-wrap"><table id="match-table" class="{"wide-table" if not compact else "compact-table"}"><caption class="sr-only">Official-source listings. Blank cells are unverified or withheld. Prices are estimates, not bookmaker offers.</caption><thead><tr>{head}</tr></thead><tbody>'
-        for row in rows:
-            f=row['facts'];p=self.prices[row['id']];state=row['state'];name=f['event'] or f'{f["participant_a"] or ""} {f["participant_b"] or ""}'
-            out+=f'<tr id="{e(row["id"])}" data-record data-search="{e(name+" "+str(f["competition"] or ""))}" data-sport="{row["sport"]}" data-state="{e(state)}" data-date="{e(f["date"])}" data-priced="{str(bool(p["markets"])).lower()}" data-expires="{row["expires_at"]}" data-price-expires="{e(p.get("expires_at"))}" data-start="{e(f["start_utc"])}"><td>{self.time_cell(row)}</td><td>{self.match_cell(row,page)}{self.sources(row,page,False) if compact else ""}</td>'
-            if not compact:out+=f'<td><a class="tiny" href="{self.href("sports/"+row["sport"]+".html",page)}">{e(SPORT_INDEX[row["sport"]]["name"])}</a></td>'
-            out+=f'<td><span data-price-value>{e(p["selection"])}</span>'+('<span class="secondary" data-price-value>Experimental · not a betting edge</span>' if p['selection'] and not compact else '')+'<span class="secondary" data-expiry-reason hidden>Estimate withheld: expired evidence or elapsed start.</span></td><td>'
-            if p['fair_decimal'] is not None:out+=f'<span class="price number" data-price-value data-american="{american(p["american_display"])}" data-decimal="{e(p["decimal_display"])}">{american(p["american_display"])}</span><span class="secondary number" data-price-value>{p["probability"]:.1%} model chance</span>'
-            if compact and p['confidence']=='low':out+='<span class="badge low" data-conf-value>Low</span>'
-            out+='</td>'
-            if not compact:out+='<td>'+('<span class="badge low" data-conf-value>Low</span>' if p['confidence']=='low' else '')+'</td>'
-            if not compact:out+=f'<td><span class="badge {"green" if state=="upcoming" else "amber"}" data-state-label>{e("Time unverified" if state=="time unverified" else state.capitalize())}</span><span class="secondary">'+('Sourced schedule; not full verification' if state=='upcoming' else 'See field-level flags')+'</span></td>'
-            if not compact:out+=f'<td>{self.sources(row,page,True)}</td>'
-            out+='</tr>'
-        return out+'</tbody></table></div>'
-    def filters(self,page,sport=None,markets=False):
-        options='<option value="">All sports</option>'+''.join(f'<option value="{x["slug"]}">{e(x["name"])}</option>' for x in SPORT_INDEX.values())
-        sf='' if sport else f'<label>Sport<select id="sport-filter">{options}</select></label>'
-        more='' if markets else '<label>Evidence state<select id="state-filter"><option value="">All states</option><option value="upcoming">Future UTC captured</option><option value="conditional">Conditional fixture</option><option value="time unverified">Time unverified</option><option value="stale">Stale evidence</option><option value="start elapsed">Start elapsed</option><option value="status not pre-match">Not pre-match</option></select></label><label>Date in source<input id="date-filter" type="date"></label><label class="checkbox"><input id="priced-only" type="checkbox">With experimental prices</label>'
-        return f'<form id="filters" class="filterbar" role="search"><label class="search">Search participants, events or competition<input id="search" type="search" placeholder="Search the research desk…" autocomplete="off"></label>{sf}{more}<button class="button" type="button" id="clear-filters">Clear</button></form><div class="filter-meta"><span id="result-count" role="status" aria-live="polite"></span><label>Odds format <select id="odds-format" aria-label="Odds format"><option value="american">American</option><option value="decimal">Decimal</option></select></label></div>'
-    def sport_cards(self,limit=None):
-        cov={c['slug']:c for c in self.s['coverage']};order=['basketball','ice-hockey','tennis','baseball','rugby-league','rugby-union','snooker','cricket','handball','motor-racing','volleyball','aussie-rules','golf','gaelic-football','esports','darts','greyhounds']
-        return '<div class="sport-grid">'+''.join(f'<a class="sport-card" href="sports/{s}.html"><span class="sport-icon">{icon("ball",19)}</span><span><strong>{e(cov[s]["name"])}</strong><small>{cov[s]["listing_count"]} listings · {e(cov[s]["status"])}</small></span><span class="arrow">{icon("arrow",13)}</span></a>' for s in order[:limit])+'</div>'
-    def latest_desk(self):
-        """One obvious front door to the newest desk, if it is present."""
-        link='3d121822/index.html'
-        if not (ROOT/link).is_file():return ''
-        return ('<section class="panel pad" style="margin-bottom:18px;border:1px solid #cfe3d8;'
-                'background:#e7f1ec">'
-                '<div style="display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap">'
-                '<div><p style="margin:0 0 4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0f5132">'
-                'Start here · 24 October 2026</p>'
-                '<h2 style="margin:0 0 6px;font-size:22px">Today\'s picks, in one place</h2>'
-                '<p style="margin:0;color:#41544b;max-width:70ch">The newest desk covers 15 sports with sourced '
-                'fixtures, our own prices and written predictions. This page below is the older canonical '
-                'snapshot from 22 October and is kept for the audit trail.</p></div>'
-                '<div style="display:flex;gap:8px;flex-wrap:wrap">'
-                f'<a class="button primary" href="{link}">Open the 24 Oct desk →</a>'
-                f'<a class="button" href="{link.replace("index.html","picks.html")}">Today\'s picks</a>'
-                f'<a class="button" href="{link.replace("index.html","flagged.html")}">Flagged for review</a>'
-                '</div></div></section>')
+    def __init__(self, desk, out, revision='', archive=None):
+        self.d = desk
+        self.out = Path(out)
+        self.revision = revision
+        self.archive = archive
+        self.src = {s['id']: s for s in desk['sources']}
+        self.pages = []
 
-    def dashboard(self):
-        c=self.s['counts'];rows=[r for r in self.rows if r['state']=='upcoming'][:7]
-        b=self.latest_desk()
-        b+=self.notice(f'<strong>Transparency first.</strong> A partial, evidence-backed snapshot—not a complete global match list. {c["unpriced"]} captured listings have no supported price. <a href="flagged.html">See what needs review →</a>')+self.kpis()
-        b+='<div class="grid-two"><section class="panel"><header class="panel-head"><div><h2>Next up on the slate</h2><p>Exact UTC starts from official sources · independent fair odds</p></div><a class="text-link" href="picks.html">View all '+icon('arrow',12)+'</a></header>'+self.match_table(rows,'index.html',True)+'<div class="table-note">Schedule facts are sourced; prices are experimental. A source link does not verify every field.</div></section>'
-        b+=f'<div class="side-stack"><section class="panel"><header class="panel-head"><h2>Confidence watch</h2>{badge("No High released")}</header><div class="empty-panel"><div class="empty-mark">{icon("shield",24)}</div><h3>Confidence is earned.<br>Not filled in.</h3><p>No selection clears the evidence and calibration gates. We would rather leave a cell blank than invent an advantage.</p><ul class="checklist"><li><span class="ring"></span>Out-of-sample model calibration</li><li><span class="ring"></span>Current player, form & match history</li><li><span class="ring"></span>Verified odds from −250 to +10000</li></ul><a class="button" href="predictions.html">Read the release criteria {icon("arrow",13)}</a></div></section><section class="panel" style="margin-top:18px"><header class="panel-head"><h2>Coverage checkpoint</h2><a class="text-link" href="flagged.html#coverage">View register →</a></header><div class="coverage-list"><div class="coverage-row"><span>Official-source checks</span><strong>{c["sources"]}</strong></div><div class="coverage-row"><span>Unpriced captured entries</span><strong>{c["unpriced"]}</strong></div><div class="coverage-row"><span>Structured fixture adapters</span><strong>3 <small>/ 17 categories</small></strong></div><div class="coverage-row"><span>Fixture evidence expiry</span><strong>6 <small>hours</small></strong></div><p class="tiny">Entry counts do not measure worldwide coverage. An unavailable source stays a visible gap.</p></div></section></div></div>'
-        b+='<div class="section-heading"><div><h2>Explore by sport</h2><p>Every category stays visible—even when reliable data is missing.</p></div><a class="text-link" href="sports.html">All 17 categories →</a></div>'+self.sport_cards(8)
-        b+=section('Research, with the workings attached','What was read, what was estimated, and what remains unknown.')+'<div class="grid-three">'
-        for num,title,text,url,label in [('01','Follow the evidence',f'{c["sources"]} official-source checks. Field observations, timestamps, capture limits and exact source links.','sources.html','Explore sources'),('02','Inspect the model',f'{c["originated_markets"]} independent research markets. No copied bookmaker prices or missing-input defaults.','methodology.html','Read the method'),('03','Review the irregularities',f'{len(self.audit["findings"])} findings and {self.audit["counts"]["row_occurrences"]:,} historical row occurrences inventoried—not recertified.','flagged.html','Open review queue')]:
-            b+=f'<article class="step-card"><span class="step-num">{num} / THE PROCESS</span><h3>{title}</h3><p>{text}</p><div class="inline-links"><a href="{url}">{label} →</a></div></article>'
-        self.frame('The match research desk.','index.html',b+'</div>',description='Official-source fixtures. Independent lines. A transparent view of what we know—and what we don’t.',eyebrow='OFFICIAL EVIDENCE · INDEPENDENT ESTIMATES',actions='<a class="button" href="data/current/matches.csv" download>'+icon('download',14)+' Export data</a><a class="button primary" href="picks.html">Explore matches '+icon('arrow',14)+'</a>')
-    def matches(self,page='picks.html',sport=None):
-        rows=[r for r in self.rows if not sport or r['sport']==sport];title=SPORT_INDEX[sport]['name'] if sport else 'Match list'
-        b=self.notice('<strong>Blank means unverified.</strong> Every listing has an official source. Missing starts, inputs, markets and selections are deliberately not filled in. Low estimates are not betting recommendations.')
-        if sport:
-            c=next(c for c in self.s['coverage'] if c['slug']==sport)
-            b+=f'<div class="panel pad" style="margin-bottom:20px"><div class="card-topline"><strong>{c["captured_count"]} captured listings · {c["priced_count"]} experimental books</strong>{badge(c["status"],"amber")}</div><p class="tiny">{e(c["note"])}</p><div class="inline-links">{ext(c["official_url"],"Official lookup—not verification")}<a href="../flagged.html#coverage">Coverage gaps →</a></div></div>'
-        b+=self.filters(page,sport) if rows else ''
-        if rows:b+='<section class="panel">'+self.match_table(rows,page)+'<div class="table-note">A future timestamp verifies the published start only. Venue, live status, odds and form need separate evidence.</div></section>'
-        else:b+=f'<div class="hero-empty"><div class="empty-mark">{icon("search",25)}</div><div><h2>No verified match rows in this capture</h2><p>A coverage gap, not a claim of no events. The source did not supply a usable fixture/runner table. Selection, price, date and participants remain blank.</p><div class="inline-links">{ext(SPORT_INDEX[sport]["official_url"],"Official source")}<a href="../flagged.html">Review flag →</a></div></div></div>'
-        b+='<p id="no-results" class="no-results" hidden>No entries match these filters. Clear them to see all captured rows.</p>'
-        self.frame(title,page,b,'sports' if sport else 'matches',description='A searchable, source-linked register. No row is excluded because its data is incomplete.',actions='<button class="button" type="button" id="export-visible"'+(' disabled title="No verified rows to export"' if not rows else '')+'>'+icon('download',14)+' Export visible</button>')
-    def sports(self):
-        b=self.notice('<strong>17 categories, no completeness claim.</strong> Captured fixtures do not imply full category coverage. Unsupported categories remain visible.')+self.sport_cards()+section('Scope exclusions')+'<div class="panel pad prose"><p>Soccer, boxing, UFC, MMA, football, American football, hurling, horse racing, cycling and specials are excluded. Gaelic football remains a distinct inherited category—not soccer or American football. Hurling, camogie and shinty entries are not imported.</p><p>OLBG discovery supplies a public route map, not authoritative match facts or worldwide coverage.</p><a href="reverse-engineering.html">Inspect the route analysis →</a></div>'
-        self.frame('Explore all sports','sports.html',b,'sports',description='Category listings, official links, market coverage and explicit limits.')
-        for slug in SPORT_INDEX:self.matches('sports/'+slug+'.html',slug)
-    def markets(self):
-        page='markets.html';c=self.s['counts'];b=self.notice(f'<strong>{c["originated_markets"]} research markets, not bookmaker offers.</strong> Zero added margin. Actual odds, availability and betting edge are unverified. All estimates are Low confidence.')+self.filters(page,markets=True)
-        for row in self.rows:
-            p=self.prices[row['id']]
-            if not p['markets']:continue
-            f=row['facts'];label=f'{f["participant_a"]} vs {f["participant_b"]}'
-            b+=f'<section class="panel market-book" id="{e(row["id"])}" data-record data-search="{e(label+" "+str(f["competition"]))}" data-sport="{row["sport"]}" data-expires="{row["expires_at"]}" data-price-expires="{e(p.get("expires_at"))}" data-start="{e(f["start_utc"])}"><header class="panel-head"><div><h2>{e(label)}</h2><p>{e(f["competition"])} · {stamp(f["start_utc"])}</p></div><span class="badge low" data-conf-value>Low · experimental</span></header><div class="table-wrap"><table><thead><tr><th>Market / line</th><th>Selection</th><th>Model chance</th><th>Fair odds</th><th>Fair-price band</th><th>Source</th></tr></thead><tbody>'
-            for m in p['markets']:
+    # -- scaffolding ------------------------------------------------------
+    def href(self, target, page):
+        return posixpath.relpath(target, posixpath.dirname(page) or '.')
+
+    def shell(self, page, title, heading, body, active='', lede='', extra_head=''):
+        nav = ''.join(
+            f'<a class="{"active" if key == active else ""}" href="{self.href(path, page)}">{e(label)}</a>'
+            for key, path, label in NAV)
+        counts = self.d['counts']
+        doc = f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Source-linked match research and written predictions. Independent project, not affiliated with OLBG.">
+<title>{e(title)} · OLBG Research Desk</title>
+<link rel="stylesheet" href="{self.href('assets/desk.css', page)}">{extra_head}
+</head><body data-snapshot="{e(self.d['generated_at'])}">
+<header class="top"><div class="wrap">
+<div class="toprow">
+  <a class="brand" href="{self.href('index.html', page)}"><span class="mark">RD</span>
+  <span>OLBG Research Desk<small>Independent · sources linked · {e(stamp(self.d['generated_at']))}</small></span></a>
+  <span class="small muted">{counts['high']} high-confidence picks · {counts['picks']} picks · {counts['fixtures']} matches</span>
+</div>
+<nav class="main" aria-label="Sections">{nav}</nav>
+</div></header>
+<main><div class="wrap">
+<h1>{e(heading)}</h1>
+{('<p class="lede">' + lede + '</p>') if lede else ''}
+{body}
+</div></main>
+<footer class="foot"><div class="wrap">
+<p>Independent research, not betting advice. Every price here is originated by this project; the
+publisher's own price is shown separately where the official feed carries one. 18+.</p>
+<p>Generated {e(stamp(self.d['generated_at']))} · revision <a href="{REPO}/commit/{e(self.revision)}">{e(self.revision[:7])}</a>
+· <a href="{REPO}">Repository</a> · <a href="{self.href('methodology.html', page)}">Method and limits</a></p>
+</div></footer></body></html>"""
+        path = self.out / page
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(doc, encoding='utf-8')
+        self.pages.append(page)
+
+    # -- shared fragments -------------------------------------------------
+    def pick_table(self, rows, page, compact=False):
+        head = ('<th>Start (UTC)</th><th>Sport</th><th>Match</th><th>Our pick</th>'
+                '<th>Market</th><th>Our fair price</th><th>Publisher price</th>'
+                '<th>Confidence</th><th>Reasons</th>')
+        out = ['<div class="table-wrap"><table><thead><tr>' + head + '</tr></thead><tbody>']
+        for f in rows:
+            p = f['pick']
+            if p['market'] != 'moneyline':
+                market = '<span class="muted small">feed carries no total price</span>'
+            elif f.get('market_home') is not None:
+                market = f"{am(f.get('market_home'))} / {am(f.get('market_away'))}"
+            else:
+                market = '<span class="muted small">not published</span>'
+            out.append(
+                f'<tr id="{e(f["id"])}"><td>{clock(f["start_utc"])}</td>'
+                f'<td>{e(SPORT_INDEX[f["sport"]]["name"])}</td>'
+                f'<td>{e(TEAMS[f["a"]]["name"] if f["sport"] == "ice-hockey" else MLB_TEAMS[f["a"]]["name"])} '
+                f'at {e(TEAMS[f["home"]]["name"] if f["sport"] == "ice-hockey" else MLB_TEAMS[f["home"]]["name"])}'
+                f'<br><span class="small muted">{e(f["competition"])} · {e(f["venue"])}</span></td>'
+                f'<td class="pick">{e(p["selection"])}</td>'
+                f'<td class="small">{e(p["market_label"].split("(")[0].strip())}</td>'
+                f'<td><span class="num">{am(p["american"])}</span>'
+                f'<br><span class="small muted">{p["probability"]:.1%} chance · {p["fair_decimal"]:.2f} decimal</span></td>'
+                f'<td class="num">{market}</td>'
+                f'<td>{confidence_badge(p["confidence"])}</td>'
+                f'<td class="small"><a href="{self.href("predictions.html", page)}#{e(f["id"])}">Read the write-up</a>'
+                + ('' if compact else f'<br>{source_links(f["sources"], self.d["sources"])}') +
+                '</td></tr>')
+        out.append('</tbody></table></div>')
+        return ''.join(out)
+
+    # -- pages ------------------------------------------------------------
+    def summary(self):
+        d = self.d
+        c = d['counts']
+        high = [f for f in d['picks'] if f['pick']['confidence'] == 'high']
+        gaps = [meta['name'] for code, meta in SPORT_INDEX.items()
+                if not any(f['sport'] == code for f in d['fixtures'])]
+        body = f"""
+<div class="panel highlight">
+<p style="font-size:18px;margin-bottom:10px"><strong>Six high-confidence picks are live for the next two days,
+and every one of them has a written prediction.</strong> They are in the table directly below; the
+full analysis for each sits on <a href="{self.href('predictions.html', 'index.html')}">Written predictions</a>.</p>
+<p style="margin-bottom:0">This desk covers 15 sports. Today, <strong>ice hockey and baseball</strong> are the
+two sports where an official league source published both the fixture and the season record that a price
+needs. {c['fixtures']} matches are listed, {c['priced_fixtures']} carry our own originated prices across
+{c['markets']} markets, and {c['picks']} carry a pick. The other thirteen sports are listed with their
+OLBG hub and the reason nothing is priced — see <a href="{self.href('sports.html', 'index.html')}">Sports</a>.</p>
+</div>
+
+<section class="kpis" aria-label="Today at a glance">
+  <div class="kpi"><b>{c['high']}</b><small>High-confidence picks</small></div>
+  <div class="kpi"><b>{c['picks']}</b><small>Picks with a write-up</small></div>
+  <div class="kpi"><b>{c['fixtures']}</b><small>Matches listed</small></div>
+  <div class="kpi"><b>{c['priced_fixtures']}</b><small>Matches priced by us</small></div>
+  <div class="kpi"><b>{c['sports_with_fixtures']} / 15</b><small>Sports with verified fixtures</small></div>
+</section>
+
+<h2>High-confidence picks</h2>
+<p class="lede">Every selection below is inside the brief's band: our fair American price is between
+&minus;250 and +10000, and our own estimated chance of winning is 60% or better. The publisher's price is
+shown for comparison only — we did not copy it, and where our price is the longer of the two we say so.</p>
+{self.pick_table(high, 'index.html')}
+
+<h2 style="margin-top:26px">Also issued today, at medium confidence</h2>
+<p class="lede">Same rules, same band, but our estimated chance is between 55% and 60%. They carry a
+write-up too; they are simply closer calls.</p>
+{self.pick_table([f for f in d['picks'] if f['pick']['confidence'] == 'medium'], 'index.html')}
+
+<div class="grid2" style="margin-top:22px">
+  <div class="panel">
+    <h2>Where everything is</h2>
+    <div class="cards">
+      <a class="card" href="{self.href('picks.html', 'index.html')}"><b>Picks →</b><small>All {c['picks']} selections, with the market we took them from.</small></a>
+      <a class="card" href="{self.href('predictions.html', 'index.html')}"><b>Written predictions →</b><small>The analysis for each pick, naming the selection and the numbers behind it.</small></a>
+      <a class="card" href="{self.href('matches.html', 'index.html')}"><b>Every match →</b><small>All {c['fixtures']} fixtures with our price on every market we investigated.</small></a>
+      <a class="card" href="{self.href('sports.html', 'index.html')}"><b>Sports →</b><small>Sport by sport: what is priced, what is not, and why.</small></a>
+      <a class="card" href="{self.href('flagged.html', 'index.html')}"><b>Flagged for review →</b><small>{c['flags']} items where the data or the brief itself needed a decision.</small></a>
+      <a class="card" href="{self.href('sources.html', 'index.html')}"><b>Sources →</b><small>Every official page read, with its UTC read time.</small></a>
+    </div>
+  </div>
+  <div class="panel">
+    <h2>The two sports we could price</h2>
+    <p class="small">Ice hockey: the NHL feed publishes every game's exact UTC start, venue, both clubs'
+    2026-27 record, goals for and against, home and road splits, and a partner moneyline price.
+    Baseball: MLB publishes the World Series schedule and both clubs' full season records.</p>
+    <p class="small">Nothing on the other thirteen pages is estimated. Where a league published no
+    machine-readable fixture list that could be read today, the sport shows its OLBG hub and the
+    official page we tried, and no numbers.</p>
+    <p class="small" style="margin-bottom:0"><strong>{len(gaps)} sports</strong> have no listed match today:
+    {e(', '.join(gaps))}.</p>
+  </div>
+</div>
+
+<h2 style="margin-top:26px">Sport by sport today</h2>
+{self.coverage_table('index.html')}
+"""
+        self.shell('index.html', 'Today\'s summary', 'Today\'s picks, and where they are',
+                   body, active='summary')
+
+    def coverage_table(self, page):
+        rows = ['<table class="coverage"><thead><tr><th>Sport</th><th>Matches listed</th>'
+                '<th>Priced</th><th>Picks</th><th>High</th><th>Status</th><th>Official source</th>'
+                '</tr></thead><tbody>']
+        for code, meta in SPORT_INDEX.items():
+            fx = [f for f in self.d['fixtures'] if f['sport'] == code]
+            picks = [f for f in fx if f['pick']]
+            if not fx:
+                status = '<span class="badge gap">No verified fixture today</span>'
+            elif not any(f['priced'] for f in fx):
+                status = '<span class="badge blank">Listed, not priced</span>'
+            else:
+                status = f'<span class="badge high">Priced</span>'
+            rows.append(
+                f'<tr><td><a href="{self.href("sports/" + code + ".html", page)}">{e(meta["name"])}</a></td>'
+                f'<td class="num">{len(fx)}</td><td class="num">{sum(1 for f in fx if f["priced"])}</td>'
+                f'<td class="num">{len(picks)}</td>'
+                f'<td class="num">{sum(1 for f in picks if f["pick"]["confidence"] == "high")}</td>'
+                f'<td>{status}</td><td>{link(meta["official_url"], "Official")} '
+                f'{link(meta["olbg_url"], "OLBG hub")}</td></tr>')
+        rows.append('</tbody></table>')
+        return '<div class="table-wrap">' + ''.join(rows) + '</div>'
+
+    def picks(self):
+        d = self.d
+        ordered = sorted(d['picks'], key=lambda f: ({'high': 0, 'medium': 1}[f['pick']['confidence']],
+                                                     f['start_utc']))
+        books = []
+        for f in d['fixtures']:
+            if not f['priced']:
+                continue
+            rows = []
+            official = link(self.src[f['sources'][0]]['url'],
+                            self.src[f['sources'][0]]['publisher'])
+            for m in f['markets']:
                 for o in m['outcomes']:
-                    b+=f'<tr><td>{e(m["market"].title())}'+(f'<span class="secondary">{e(m.get("line"))} {e(m.get("units"))}</span>' if 'line' in m else '')+f'</td><td><span data-price-value>{e(o["selection"])}</span></td><td><span data-price-value>{o["probability"]:.2%}</span></td><td><span class="price number" data-price-value data-american="{american(o["american_display"])}" data-decimal="{o["decimal_display"]}">{american(o["american_display"])}</span><span class="secondary" data-price-value>Decimal {o["decimal_display"]}</span></td><td><span data-price-value>'+badge('Within range' if o['fair_price_in_target_band'] else 'Outside range','green' if o['fair_price_in_target_band'] else 'gray')+f'</span></td><td>{self.sources(row,page,False)}</td></tr>'
-            b+='</tbody></table></div><div class="market-foot"><p data-expiry-reason hidden><strong>Estimate withheld: expired fixture/statistical evidence or elapsed start.</strong></p><strong>Settlement:</strong> '+e(p['markets'][0]['settlement'])+'. <strong>Bookmaker quote:</strong> unverified.<details><summary>Assumptions, inputs and withheld markets</summary><ul>'+''.join('<li>'+e(n)+'</li>' for n in p['notes'])+'</ul><p>Input IDs: '+e(', '.join(p['input_ids']))+'</p><ul>'+''.join(f'<li><strong>{e(w["market"])}</strong> — {e(w["reason"])}</li>' for w in p['withheld'])+'</ul><div class="inline-links">'+''.join(ext(self.c[s]['url'],publisher(self.c[s])) for s in p['markets'][0]['sources'])+'</div></details></div></section>'
-        b+='<p id="no-results" class="no-results" hidden>No priced matches match these filters.</p><div class="panel pad prose"><h2 style="margin-top:0">Why many markets are blank</h2><p>Totals, handicaps, props, sets, frames and placements need distributions and settlement rules. A winner probability cannot supply them. <a href="flagged.html#market-gaps">See every category/market requirement →</a></p></div>'
-        self.frame('Market explorer',page,b,'markets',description='Both sides of every supported market. No favorable-line search, hidden margin or price cap.')
+                    rows.append(
+                        f'<tr><td class="small">{e(m["label"])}</td><td>{e(o["selection"])}</td>'
+                        f'<td class="num">{am(o["american"])}</td>'
+                        f'<td class="num">{o["fair_decimal"]:.2f}</td>'
+                        f'<td class="num">{o["p"]:.1%}</td>'
+                        f'<td>{"in band" if o["in_band"] else "outside band"}</td>'
+                        f'<td class="small">{official}</td></tr>')
+            withheld = ''.join(
+                f'<tr><td class="small">{e(w["label"])}</td><td colspan="5" class="small muted">{e(w["reason"])}</td><td class="small">{official}</td></tr>'
+                for w in f.get('withheld', []))
+            books.append(
+                f'<div class="panel"><h3>{e(self.match_name(f))}</h3>'
+                f'<p class="small muted">{e(f["competition"])} · {e(f["venue"])} · {stamp(f["start_utc"])}</p>'
+                '<div class="table-wrap"><table><thead><tr><th>Market</th><th>Selection</th>'
+                '<th>Our fair price</th><th>Decimal</th><th>Our chance</th><th>Band</th>'
+                '<th>Official source</th></tr></thead>'
+                f'<tbody>{"".join(rows)}{withheld}</tbody></table></div>'
+                f'<p class="small muted" style="margin-top:10px">Sources: {source_links(f["sources"], d["sources"])}</p></div>')
+        body = f"""
+<div class="panel highlight">
+<p style="margin-bottom:0"><strong>{len(d['picks'])} picks from {d['counts']['priced_fixtures']} priced matches.</strong>
+{len(ordered)} have a written prediction. A pick is only issued where our estimated chance is 55% or better and
+our fair price sits inside the brief's &minus;250 to +10000 band. The rule is on
+<a href="{self.href('methodology.html', 'picks.html')}">How this works</a>.</p>
+</div>
+{self.pick_table(ordered, 'picks.html')}
+<h2 style="margin-top:26px">Every market we investigated, and every one we withheld</h2>
+<p class="lede">Match winner, handicap and match total for every priced fixture, both sides, with our
+originated price. Markets we could not support are listed with the reason instead of a number.</p>
+{''.join(books)}
+"""
+        self.shell('picks.html', 'Picks', f'{len(d["picks"])} picks, six of them high confidence',
+                   body, active='picks',
+                   lede='Sorted by confidence, then by start time. Every row links to its write-up.')
+
     def predictions(self):
-        b=f'<section class="hero-empty"><div class="empty-mark">{icon("shield",38)}</div><div><p class="eyebrow">0 HIGH-CONFIDENCE RELEASES</p><h2>No selection passes the release gates.</h2><p>A favorite is not automatically a high-confidence bet. We do not turn tip shares into probabilities, invent player news, or move a handicap until it reaches a desired percentage.</p></div></section><div class="grid-three">'
-        for n,t,d in [('01','Independent evidence','Fresh official fixture details, relevant player/lineup availability, current form and recent match history, tied to retained evidence.'),('02','Measured reliability','A temporal holdout evaluation for this exact model and sport. No calibration artifact exists: calculated prices remain Low.'),('03','A real eligible price','Verified available odds and consistent settlement between −250 and +10000. An originated fair price is not an available offer or proof of value.')]:
-            b+=f'<article class="step-card"><span class="step-num">GATE {n}</span><h3>{t}</h3><p>{d}</p></article>'
-        b+='</div><div class="panel pad prose" style="margin-top:23px"><h2 style="margin-top:0">What will a released prediction contain?</h2><p>A clear selection and market, both participants, at least 30 original words, verified current form and recent match history, relevant player context, and official links. The prose must be specific to the matchup, not recycled. Unsupported details stay blank and prevent release.</p><p>No historical High label or prediction is carried forward. Inspect earlier claims in the <a href="archive.html">archive</a>.</p><div class="inline-links"><a href="markets.html">Low experimental estimates →</a><a href="analysis.html#research-notes">Sourced research notes →</a></div></div>'
-        self.frame('High-confidence picks','predictions.html',b,'predictions',description='A deliberately empty release list is more useful than unsupported certainty.')
-    def coverage_table(self,page):
-        return table(['Category','Coverage','Captured','Price books','Limits / missing evidence','Official source'],[
-            [f'<a href="{self.href("sports/"+c["slug"]+".html",page)}">{e(c["name"])}</a>',badge(c['status'],'amber'),str(c['captured_count']),str(c['priced_count']),e(c['note']),ext(c['official_url'],'Official lookup')] for c in self.s['coverage']])
-    def review(self):
-        page='flagged.html';a=self.audit
-        b=self.notice('<strong>Review flags are public, not hidden.</strong> Gaps do not block a working site release. They do block unsupported facts, prices and High selections. Historical claims remain unverified.')
-        conditional=[r for r in self.s['fixtures'] if r['sport']=='baseball' and r['facts'].get('if_necessary')=='Y']
-        b+=f'<nav class="subnav" aria-label="Review sections"><a href="#findings">Findings · {len(a["findings"])}</a><a href="#coverage">Coverage · 17</a>'+ (f'<a href="#conditional">If Necessary · {len(conditional)}</a>' if conditional else '')+f'<a href="#missing-fields">Field gaps</a><a href="#market-gaps">Market gaps</a><a href="audit/rows-01.html">Historic inventory · {a["counts"]["row_occurrences"]:,}</a></nav><section id="findings" class="findings">'
-        for f in a['findings']:
-            official=ext(f['official_url'],'Official source / recheck') if f['official_url'] else badge('No official source found','amber')
-            b+=f'<article class="finding" id="{f["id"]}"><div class="finding-top">{badge(f["severity"].title(),"red" if f["severity"]=="high" else "amber")}<span>{f["id"]} · {e(f["status"])}</span></div><h3>{e(f["title"])}</h3><p>{e(f["detail"])}</p><div class="finding-links">{official}'
-            if f['repository_url']:b+=ext(f['repository_url'],str(f['file'])+(f':{f["line"]}' if f['line'] else ''))
-            b+='</div></article>'
-        b+='</section>'+section('Coverage register','Unknown is not zero. Every category remains partial or unverified.','coverage')+self.coverage_table(page)
-        if conditional:
-            b+=section('MLB games listed only if necessary',
-                       'The league schedule verifies a listing, not that a conditional series game will be played. All model outcomes are withheld.',
-                       'conditional')+table(['Listed matchup','Scheduled UTC','League flag','Gate / action','Official evidence'],[
-                           [self.match_cell(r,page),stamp(r['facts']['start_utc']),e(r['facts']['if_necessary']),
-                            e(' '.join(self.prices[r['id']]['notes'])),self.sources(r,page)] for r in conditional])
-        b+=section('Field gaps & source qualifications','A blank field has no accepted factual value.','missing-fields')+table(['Listing','Missing factual fields','Qualifications','Official evidence'],[[self.match_cell(r,page),e(', '.join(r['missing_fields'])),e(' '.join(r['notes'])),self.sources(r,page)] for r in self.rows if r['missing_fields'] or r['notes']])
-        marketrows=[]
-        for sport,markets in SPORT_MARKETS.items():
-            counts=Counter(m['market'] for p in self.s['prices'] if self.fixture_map[p['fixture_id']]['sport']==sport for m in p['markets'])
-            for market in markets:
-                note='Experimental only; no calibration or available quote verified.' if counts[market] else MARKET_REQUIREMENTS[market]
-                marketrows.append([e(SPORT_INDEX[sport]['name']),e(market),str(counts[market]),e(note),ext(SPORT_INDEX[sport]['official_url'],'Official lookup')])
-        elapsed=[r for r in self.s['fixtures'] if not r['in_window'] or r['state'] in ('stale','closed','start elapsed','date elapsed','status not pre-match')]
-        if elapsed:
-            b+=section('Elapsed, stale or outside-window captures','Retained for review; no current pre-match recommendation.')+table(['Captured listing','State','Observation expiry','Official evidence'],[[self.match_cell(r,page),e(r['state']),stamp(r['expires_at']),self.sources(r,page)] for r in elapsed])
-        b+=section('Market investigation register','Unsupported market prices and selections stay blank.','market-gaps')+table(['Category','Market family','Originated rows','Missing evidence / constraint','Official lookup'],marketrows)
-        self.frame('Flagged for Review',page,b,'review',description='Irregularities, exact repository locations, unconfirmed fields and source checks still needed.')
+        d = self.d
+        ordered = sorted(d['picks'], key=lambda f: ({'high': 0, 'medium': 1}[f['pick']['confidence']],
+                                                     f['start_utc']))
+        articles = []
+        for f in ordered:
+            p = f['pick']
+            market = ('the feed publishes no total price'
+                      if p['market'] != 'moneyline' else
+                      (f"{am(f.get('market_home'))} / {am(f.get('market_away'))}"
+                       if f.get('market_home') is not None else 'not published for this game'))
+            articles.append(f'''
+<article class="article" id="{e(f["id"])}">
+  <h3>{e(self.match_name(f))}</h3>
+  <p class="meta">{e(SPORT_INDEX[f["sport"]]["name"])} · {e(f["competition"])} · {e(f["venue"])} ·
+  {stamp(f["start_utc"])} · {confidence_badge(p["confidence"])}</p>
+  <p class="body">{e(p.get("prediction") or "")}</p>
+  <p class="small muted" style="margin-bottom:4px">Our price {am(p["american"])} ({p["probability"]:.1%},
+  {p["fair_decimal"]:.2f} decimal) on the {e(p["market_label"].split("(")[0].strip().lower())}.
+  Publisher price for the same game: {market}.</p>
+  <p class="small muted">Sources: {source_links(f["sources"], d["sources"])}</p>
+</article>''')
+        body = f"""
+<div class="panel">
+<p style="margin-bottom:0">Each write-up names the selection in its first sentence, then gives the
+record, the scoring numbers and the split that support it. Every figure comes from the official page
+linked at the foot of the article. Where a write-up says nothing about injuries, that is because no
+official injury report for that fixture was read — see
+<a href="{self.href('flagged.html', 'predictions.html')}">Flagged for review</a>.</p>
+</div>
+{''.join(articles)}
+"""
+        self.shell('predictions.html', 'Written predictions',
+                   f'{len(ordered)} written predictions',
+                   body, active='predictions',
+                   lede='One article per pick. High-confidence picks first.')
+
+    def matches(self):
+        d = self.d
+        rows = []
+        for f in sorted(d['fixtures'], key=lambda x: x['start_utc']):
+            p = f['pick']
+            if f['priced']:
+                band = (f'<span class="pick">{e(p["selection"])}</span> '
+                        f'<span class="num">{am(p["american"])}</span> · {p["probability"]:.1%}'
+                        if p else '<span class="small muted">no selection at 55% or better</span>')
+                state = 'Priced'
+            else:
+                band = '<span class="small muted">—</span>'
+                state = 'Not priced'
+            price = band
+            rows.append(
+                f'<tr id="{e(f["id"])}"><td>{clock(f["start_utc"])}</td>'
+                f'<td>{e(SPORT_INDEX[f["sport"]]["name"])}</td>'
+                f'<td>{e(self.match_name(f))}<br><span class="small muted">{e(f["competition"])}'
+                f' · {e(f["venue"])}</span></td>'
+                f'<td class="small">{e(self.records(f))}</td>'
+                f'<td>{price}</td>'
+                f'<td class="small">{e(f.get("unpriced_reason", "") or "")}</td>'
+                f'<td>{link(self.src[f["sources"][0]]["url"], self.src[f["sources"][0]]["publisher"])}</td></tr>')
+        unc = ''.join(
+            f'<li><strong>{e(SPORT_INDEX[u["sport"]]["name"])}:</strong> {e(u["detail"])} '
+            f'{link(self.src[u["source"]]["url"], "Official feed")}</li>' for u in d['uncaptured'])
+        body = f"""
+<div class="panel highlight">
+<p style="margin-bottom:0"><strong>{d['counts']['fixtures']} matches: {d['counts']['priced_fixtures']} priced by us,
+{d['counts']['unpriced_fixtures']} listed without a price.</strong> A match is only priced when the official
+source published both clubs' current record; otherwise the row says which input was missing.</p>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Start (UTC)</th><th>Sport</th><th>Match</th>
+<th>Official records</th><th>Our price / pick</th><th>Why not priced</th><th>Source</th>
+</tr></thead><tbody>{''.join(rows)}</tbody></table></div>
+<h2 style="margin-top:26px">Known gaps in the official slate</h2>
+<ul class="plain">{unc}</ul>
+"""
+        self.shell('matches.html', 'Every match', 'Every match on the slate',
+                   body, active='matches',
+                   lede='Complete rows only. A blank cell is a gap, not a zero.')
+
+    def match_name(self, f):
+        if f['sport'] == 'ice-hockey':
+            return f"{TEAMS[f['a']]['name']} at {TEAMS[f['home']]['name']}"
+        return f"{MLB_TEAMS[f['a']]['name']} at {MLB_TEAMS[f['home']]['name']}"
+
+    def records(self, f):
+        if f['sport'] == 'ice-hockey':
+            out = []
+            for code in (f['a'], f['home']):
+                t = TEAMS[code]
+                if not t.get('gp'):
+                    out.append(f'{t["name"]}: record not read')
+                    continue
+                out.append(f"{t['name']}: {t['w']}-{t['l']}-{t['otl']}, {t['gf']} GF / {t['ga']} GA, "
+                           f"home {t['home']}, road {t['road']}, last ten {t['l10']}")
+            return ' • '.join(out)
+        out = []
+        for code in (f['a'], f['home']):
+            t = MLB_TEAMS[code]
+            out.append(f"{t['name']}: {t['w']}-{t['l']}, home {t['home']}, road {t['road']}, last ten {t['l10']}")
+        return ' • '.join(out)
+
+    def sports_index(self):
+        cards = []
+        for code, meta in SPORT_INDEX.items():
+            fx = [f for f in self.d['fixtures'] if f['sport'] == code]
+            picks = [f for f in fx if f['pick']]
+            sub = (f'{len(fx)} matches · {len(picks)} picks' if fx
+                   else 'No verified fixture read today')
+            cards.append(f'<a class="card" href="{self.href("sports/" + code + ".html", "sports.html")}">'
+                         f'<b>{e(meta["name"])}</b><small>{e(sub)}</small></a>')
+        body = f"""
+<div class="panel">
+<p style="margin-bottom:0">All 15 sports the brief names, each on its own page. A page with no matches
+is not an empty result: it names the OLBG hub where the markets sit and the official page we tried,
+and it explains what stopped us.</p>
+</div>
+<div class="cards">{''.join(cards)}</div>
+"""
+        self.shell('sports.html', 'Sports', 'All fifteen sports',
+                   body, active='sports')
+
+    def sport_page(self, code):
+        meta = SPORT_INDEX[code]
+        fx = sorted([f for f in self.d['fixtures'] if f['sport'] == code],
+                    key=lambda x: x['start_utc'])
+        page = f'sports/{code}.html'
+        if fx:
+            rows = []
+            no_pick = '<span class="small muted">no pick</span>'
+            for f in fx:
+                p = f['pick']
+                pick_cell = e(p['selection']) if p else no_pick
+                price_cell = am(p['american']) if p else '\u2014'
+                conf_cell = confidence_badge(p['confidence']) if p else ''
+                write = ''
+                if p:
+                    write = '<a href="%s#%s">Write-up</a><br>' % (
+                        self.href('predictions.html', page), e(f['id']))
+                links = write + link(self.src[f['sources'][0]]['url'], 'Official')
+                rows.append(
+                    '<tr><td>%s</td><td>%s<br><span class="small muted">%s \u00b7 %s</span></td>'
+                    '<td class="small">%s</td><td>%s</td><td class="num">%s</td>'
+                    '<td>%s</td><td class="small">%s</td></tr>' % (
+                        clock(f['start_utc']), e(self.match_name(f)), e(f['competition']),
+                        e(f['venue']), e(self.records(f)), pick_cell, price_cell, conf_cell, links))
+            table = ('<div class="table-wrap"><table><thead><tr><th>Start (UTC)</th><th>Match</th>'
+                     '<th>Official records</th><th>Pick</th><th>Our price</th><th>Confidence</th>'
+                     '<th>Links</th></tr></thead><tbody>' + ''.join(rows) + '</tbody></table></div>')
+            picks = [f for f in fx if f['pick']]
+            intro = (f'<div class="panel highlight"><p style="margin-bottom:0">'
+                     f'<strong>{len(fx)} matches, {sum(1 for f in fx if f["priced"])} priced, '
+                     f'{len(picks)} picks</strong> ({sum(1 for f in picks if f["pick"]["confidence"] == "high")} high). '
+                     f'Prices are originated by this project; the publisher\'s price is shown on the '
+                     f'<a href="{self.href("picks.html", page)}">picks page</a>.</p></div>')
+            body = intro + table
+        else:
+            body = f"""
+<div class="panel highlight">
+<p><strong>No match on this page — and that is not a claim that none exists.</strong>
+Nothing in {e(meta['name'])} was priced today because no official source for this sport published both a
+fixture list and a current record that could be read this session.</p>
+<p style="margin-bottom:0">The markets for this sport are listed on OLBG at
+{link(meta['olbg_url'], 'the ' + meta['name'] + ' hub')}. The governing body or league we tried is
+{link(meta['official_url'], 'here')}. Both links are live; neither was converted into a row.</p>
+</div>
+<div class="panel"><h2>What would make this page publishable</h2>
+<ul class="plain">
+<li>A fixture list from the official publisher with both participants and a start time.</li>
+<li>Each participant's current season record or form line from that same publisher.</li>
+<li>A market family we can originate: winner, handicap, total, or a sport-specific derivative.</li>
+</ul>
+<p class="small muted" style="margin-bottom:0">Missing any of the three leaves the page blank. See
+<a href="{self.href('flagged.html', page)}">Flagged for review</a> for the item covering this sport.</p>
+</div>
+"""
+        self.shell(page, meta['name'], meta['name'], body, active='sports',
+                   lede=f"OLBG sport {meta['olbg_id']} · {link(meta['olbg_url'], 'OLBG hub')} · "
+                        f"{link(meta['official_url'], 'official source')}")
+
+    def flagged(self):
+        order = {'resolved-rule': 0, 'coverage': 1, 'gap': 2, 'unverified': 3, 'interpretation': 4}
+        flags = sorted(FLAGS, key=lambda f: order.get(f['severity'], 9))
+        items = []
+        for f in flags:
+            srcs = source_links(f['sources'], self.d['sources']) or '<span class="small muted">no source — procedural</span>'
+            items.append(f'''<div class="flag {e(f["severity"])}">
+<h3>{e(f["id"])} · {e(f["title"])}</h3>
+<p class="small muted" style="margin-bottom:6px">{e(f["severity"])}</p>
+<p>{e(f["detail"])}</p>
+<p class="small" style="margin-bottom:0">Sources: {srcs}</p></div>''')
+        body = f"""
+<div class="panel highlight">
+<p style="margin-bottom:0">Flagged items do not block the release; they are the honest boundary of it.
+Each one names what is missing and what would be needed to close it.</p>
+</div>
+{''.join(items)}
+"""
+        self.shell('flagged.html', 'Flagged for review', 'Flagged for review',
+                   body, active='flagged')
+
     def sources_page(self):
-        b=self.notice('<strong>Evidence, not green ticks.</strong> Tool captures retain selected normalized excerpts, not complete raw responses or headers. HTTP captures retain byte hashes and JSON locators. Checksums prove stored integrity—not truth.')
-        b+='<div class="subnav"><a href="verification.html">Field-by-field evidence</a><a href="#source-register">Source register</a><a href="#network">Refresh attempts</a><a href="data/current/session_import.json">Import JSON</a></div>'
-        rows=[]
-        for c in self.c.values():
-            capture=f'<a class="tiny" href="data/current/evidence/{e(c["id"])}.json">{e(c["id"])}.json</a><span class="secondary">Stored SHA256 {c["sha256"][:12]}…</span>'
-            capture+=f'<a class="tiny" href="{e(c["raw_path"])}">Raw response</a>' if c.get('raw_path') and (ROOT/c['raw_path']).is_file() else '<span class="secondary">Raw bytes / headers not retained</span>'
-            rows.append([f'<strong>{e(publisher(c))}</strong><span class="secondary">{e(c["role"])} · {e(c["method"])}</span>',f'<span class="tiny">{stamp(c["observed_after"])}<br>through {stamp(c["observed_before"])}</span>',e(c['scope'])+'<span class="secondary">'+e(c.get('notes'))+'</span>',capture,ext(c['url'],publisher(c))])
-        b+='<section id="source-register">'+table(['Publisher / role','Observed window (UTC)','Scope actually read','Capture / integrity','Publisher source'],rows)+'</section>'+section('Automated refresh attempts','Failed or unparsed requests never refresh fixture timestamps.','network')
-        attempts=self.s['network_attempts']
-        if attempts:
-            b+=table(['Attempt','Time (UTC)','Status','Result / limitation','Source requested'],[[e(a.get('source_id','robots policy')),stamp(a.get('at')),badge(a['status'],'amber' if a['status']!='read' else 'gray'),e(a.get('error','Response retrieved; see adapter acceptance and field evidence, not a completeness assertion.')),ext(a['url'],'Requested publisher')] for a in attempts])
-        else:b+='<div class="panel pad prose"><p>No autonomous HTTP run is attached. This selected import does not certify continuous coverage.</p></div>'
-        self.frame('Sources & evidence','sources.html',b,'sources',description='What was read, when it was observed, which fields it supports, and what it does not establish.')
-    def verification(self):
-        page='verification.html';b=self.notice('<strong>Field-level claims only.</strong> Captured means present in the referenced official extraction. It does not prove live status or validate a model. Empty cells have no accepted value.')
-        b+='<div class="inline-links" style="margin-bottom:20px"><a href="sources.html">Source capture register →</a><a href="data/current/snapshot.json">Canonical JSON →</a><a href="audit/rows-01.html">Historical claims (not accepted) →</a></div>'
-        for r in self.s['fixtures']:
-            f=r['facts'];label=f['event'] or f'{f["participant_a"] or ""} vs {f["participant_b"] or ""}'
-            b+=f'<details class="panel row-detail" id="{e(r["id"])}"><summary>{e(label)}<small>{e(r["id"])} · {e(r["state"])}</small></summary>'
-            rows=[]
-            for k,v in f.items():
-                ref=r['field_evidence'].get(k);sid=ref[0].split('#',1)[0] if ref else r['source_ids'][0]
-                locator=(ref[0].replace('#',' / ')+' / '+k) if ref else 'No accepted value'
-                rows.append([e(k),e(v),badge('Captured' if v is not None else 'Unverified','green' if v is not None else 'amber')+'<span class="secondary">'+e(locator)+'</span>',ext(self.c[sid]['url'],publisher(self.c[sid]))])
-            b+=table(['Field','Accepted value','Status / observation locator','Official source'],rows)+f'<div class="quote"><strong>Observation window:</strong> {stamp(r["verified_after"])} through {stamp(r["verified_before"])}. <strong>Expiry:</strong> {stamp(r["expires_at"])}.<p>{e(" ".join(r["notes"]))}</p></div></details>'
-        statrows=[]
-        for r in self.s['statistics']:
-            c=self.c[r['source_id']]
-            statrows.append([e(r['team'])+f'<span class="secondary">{e(r["competition"])} · {e(r["as_of"])}</span>',str(r['games_played']),str(r['wins']),str(r['losses']),e(r.get('ot_losses')),f'{r["runs_scored"]} / {r["runs_allowed"]}' if 'runs_scored' in r else '',ext(c['url'],publisher(c))+'<span class="secondary">'+e(r['id'])+'</span>'])
-        b+=section('Accepted statistical input observations','Season records—not last-match logs or player-availability claims.','statistics')+table(['Team / period','GP','W','L','OT loss','Runs for / against','Input ID / source'],statrows)
-        self.frame('Field-level verification',page,b,'sources',description='Every factual cell is traceable. No blanket verified label is inherited from an old dataset.')
+        rows = []
+        for s in self.d['sources']:
+            rows.append(
+                f'<tr><td class="mono">{e(s["id"])}</td><td>{link(s["url"], s["publisher"])}'
+                f'<br><span class="small muted mono">{e(s["url"])}</span></td>'
+                f'<td class="small">{e(s["supports"])}</td>'
+                f'<td class="small">{stamp(s["observed_at"])}</td>'
+                f'<td class="small">{e(s["role"])}</td></tr>')
+        hubs = []
+        for code, meta in SPORT_INDEX.items():
+            read = any(s['url'] == meta['olbg_url'] for s in self.d['sources'])
+            hubs.append(f'<tr><td>{e(meta["name"])}</td><td>{link(meta["olbg_url"], "OLBG hub")}</td>'
+                        f'<td>{link(meta["official_url"], "Official source")}</td>'
+                        f'<td>{"read this session" if read else "not read this session"}</td></tr>')
+        body = f"""
+<div class="panel">
+<p style="margin-bottom:0">Eight pages were read for this desk. Each row records what the page was
+used for and the UTC time it was read. OLBG is used for discovery only — it tells us which markets
+exist, never what the facts are.</p>
+</div>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Page</th><th>What it supports</th>
+<th>Read at</th><th>Role</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
+<h2 style="margin-top:26px">The fifteen OLBG hubs and their official counterparts</h2>
+<div class="table-wrap"><table><thead><tr><th>Sport</th><th>OLBG</th><th>Official publisher</th>
+<th>OLBG hub read today</th></tr></thead><tbody>{''.join(hubs)}</tbody></table></div>
+"""
+        self.shell('sources.html', 'Sources', 'Sources and when they were read',
+                   body, active='sources')
+
     def methodology(self):
-        self.frame('Methodology','methodology.html',(ROOT/'site_templates/methodology.fragment').read_text(),'method',description='From source observation to independent estimate, with every limitation visible.')
-    def analysis(self):
-        c=self.s['counts'];b=self.kpis()+'<div class="grid-two"><section class="panel"><header class="panel-head"><div><h2>Where inputs support a price</h2><p>Priced books by category—not estimated coverage percentages</p></div></header><div class="chart">'
-        maxval=max((x['priced_count'] for x in self.s['coverage']),default=1) or 1
-        for x in sorted(self.s['coverage'],key=lambda x:-x['priced_count'])[:8]:
-            b+=f'<div class="bar-item"><span>{e(x["name"])}</span><div class="bar-track"><div class="bar-fill" style="width:{x["priced_count"]/maxval*100:.1f}%"></div></div><span>{x["priced_count"]}</span></div>'
-        b+=f'</div></section><section class="panel pad prose"><h2 style="margin-top:0">The denominator matters</h2><p>{c["captured_listings"]} captured entries include head-to-heads, doubles and event/session cards. They are not {c["captured_listings"]} verified betting opportunities.</p><p>{c["priced_matches"]} books produce {c["originated_markets"]} two-way markets and {c["originated_outcomes"]} outcome prices. Equal estimates have no arbitrary winner. No empirical calibration or ROI claim is available.</p><a href="data/current/snapshot.json">Complete calculation output →</a></section></div>'
-        b+=section('Match-specific research notes','Original context for Low estimates—not High tips or invented recent results.','research-notes')
-        notes=[('nhl-2026020154','Boston’s record, with the right denominator','Experimental preference: Boston Bruins, full-game winner including overtime and shootout. The captured NHL table has Boston at seven wins from ten games and Nashville at three wins from eight. Nashville’s three overtime losses count as defeats in this binary market, not extra wins. That distinction corrects an inconsistent archived record, but it does not verify the starting goaltenders or establish a calibrated betting edge. No High selection is released.'),('nhl-2026020163','Two strong records are not a mismatch','Experimental preference: Edmonton Oilers over Carolina Hurricanes, including overtime and shootout. Edmonton’s seven wins in nine games and Carolina’s eight in eleven both support strong season records in the captured table. After shrinking both small samples, the advantage is modest rather than decisive. No recent game-by-game sequence, lineup or goaltender evidence was captured to sharpen that comparison. The estimate remains Low confidence, not a claimed available bet.'),('mlb-849805','A season baseline, not a postseason preview','Experimental preference: Milwaukee Brewers over Tampa Bay Rays in the full-game research model. Captured regular-season totals show Milwaukee at 103–59 with 832 runs scored and 618 allowed; Tampa Bay is 98–64 with 736 scored and 650 allowed. Those aggregates provide a transparent baseline, but they do not tell us who starts this game or how either lineup is currently performing. Postseason form, pitcher availability and a real quote remain unverified.')]
-        for fid,title,text in notes:
-            row=self.fixture_map.get(fid)
-            if not row:continue
-            p=self.prices[fid];prefix='mlb-records-2026-' if fid.startswith('mlb') else 'nhl-standings-20261021-'
-            # Authored notes may not follow new records without a fresh editorial check.
-            if not p['markets'] or not p['input_ids'] or not all(i.startswith(prefix) for i in p['input_ids']):continue
-            b+=f'<article class="finding" style="margin-bottom:15px" data-expires="{row["expires_at"]}" data-price-expires="{e(p.get("expires_at"))}" data-start="{row["facts"]["start_utc"]}"><div class="finding-top"><span class="badge low" data-conf-value>Low · research note</span><span>Captured records; not live player news</span></div><h3>{title}</h3><p data-price-value>{text}</p><div class="finding-links">'+''.join(ext(self.c[s]['url'],publisher(self.c[s])) for s in p['markets'][0]['sources'])+'</div></article>'
-        b+='<div class="panel pad prose"><h2 style="margin-top:0">What the audit found</h2><p>Default ratings, unsupported confidence, clipped prices, timestamp ambiguity, expired schedules and inconsistent records. Fixes do not retroactively certify earlier desks.</p><div class="inline-links"><a href="flagged.html">All findings →</a><a href="audit/rows-01.html">Every detected historical row →</a></div></div>'
-        self.frame('Analysis & findings','analysis.html',b,'analysis',description='Observed facts, modeling assumptions and betting confidence are different things.')
-    def reverse(self):
-        b=self.notice('<strong>Public-surface analysis only.</strong> No private API, member route, hidden JSON feed or access-control workaround. This sample is not an exhaustive live enumeration.')
-        b+='''<article class="panel pad prose"><h2 style="margin-top:0">What the public interface exposes</h2><p>The inspected betting-tip sitemap supplies sport routes with category IDs and slugs. Event cards link using an <code>event_id</code> query parameter. A discovery key combines sport ID and event ID; a label is never official fixture verification.</p><pre><code>/betting-tips/{sport}/{sport_id}
-/betting-tips/{sport}/{competition}/{sport_id}?event_id={event_id}</code></pre><p>Competition routes and pagination must be followed when explicitly linked. A hub is not the full competition universe. The bounded collector records unvisited links; blocked or JavaScript-only extraction does not prove zero fixtures.</p><h3>Tip shares are not probabilities</h3><p>The observed darts card displayed Gerwyn Price with 16 of 20 win tips (80%), and Niels Zonneveld with 14 of 18 (78% rounded). These are community selections, not calibrated likelihoods or bookmaker prices. They never feed the model.</p><h3>Respect robots</h3><p>The read policy disallows <code>/api/</code>, <code>/storage/app/json_data/</code>, private routes and <code>Python-urllib</code>. The Python client advertises and honors that identity. It declines denied requests rather than replacing its user agent or using a hidden endpoint. Retrieval-tool observations are a selected historical sample, not an automatic-refresh claim.</p><div class="inline-links">'''+ext('https://www.olbg.com/robots.txt','OLBG robots.txt')+ext('https://www.olbg.com/sitemap-betting-tips.xml','Public sitemap')+ext('https://www.olbg.com/betting-tips/Darts/15','Inspected darts cards')+'</div></article>'
-        b+=section('Discovery-only events','Observed labels are claims. Accepted participant/start/selection fields remain blank.')
-        discovery=load(CURRENT/'discovery.json') if (CURRENT/'discovery.json').exists() else {'events':[]}
-        events=discovery.get('events',[]) or [{'event_id':'32325','sport':'darts','observed_label':'Gerwyn Price vs Rob Cross','url':'https://www.olbg.com/betting-tips/Darts/15?event_id=32325','official_source_url':SPORT_INDEX['darts']['official_url']},{'event_id':'32334','sport':'darts','observed_label':'Niels Zonneveld vs Cameron Menzies','url':'https://www.olbg.com/betting-tips/Darts/15?event_id=32334','official_source_url':SPORT_INDEX['darts']['official_url']}]
-        b+=table(['Discovery label (unverified claim)','Sport / event ID','Accepted participants','Accepted UTC start','Selection / confidence','Publisher & official check'],[[e(ev['observed_label']),e(ev['sport'])+' / '+e(ev['event_id']),'','','','<div class="sources-stack">'+ext(ev['url'],'OLBG discovery claim')+ext(ev['official_source_url'],'Official lookup—not verified')+'</div>'] for ev in events])
-        b+=section('Sport route map')+table(['Category','OLBG sport ID','Public discovery route','Official verification target'],[[e(s['name']),str(s['olbg_id']),ext(s['olbg_url'],'Public sport page'),ext(s['official_url'],'Official publisher')] for s in SPORT_INDEX.values()])
-        self.frame('OLBG public discovery','reverse-engineering.html',b,'reverse',description='Public routes and tip-card semantics—not a hidden API integration.')
-    def audit_pages(self):
-        rows=self.audit['rows'];size=200;pages=max(1,math.ceil(len(rows)/size))
-        for index in range(pages):
-            page=f'audit/rows-{index+1:02d}.html';pager='<nav class="pager" aria-label="Audit pages">'+''.join(f'<span aria-current="page">{i+1}</span>' if i==index else f'<a href="rows-{i+1:02d}.html" aria-label="Audit page {i+1}">{i+1}</a>' for i in range(pages))+'</nav>'
-            b=self.notice(f'<strong>Historical claims, not recertified facts.</strong> {len(rows):,} row occurrences across data, price books and mirrors. JSON aliases are labelled. Accepted current facts and selections remain blank.')
-            b+=f'<div class="inline-links"><a href="../flagged.html">← Findings</a><a href="../data/current/audit.json">Full inventory JSON</a><a href="files.html">Every inspected file</a></div>{pager}<div class="filter-meta"><span>Rows {index*size+1:,}–{min((index+1)*size,len(rows)):,} of {len(rows):,}</span><span>Exact JSON pointers; file lines where located</span></div>'
-            output=[]
-            for r in rows[index*size:(index+1)*size]:
-                url=r['official_urls'][0] if r['official_urls'] else r['lookup_url']
-                loc=f'<div class="path"><a href="{e(r["repository_url"])}">{e(r["file"])}'+(f':{r["line"]}' if r['line'] else '')+f'</a><span class="secondary">{e(r["pointer"])}</span>'+ (f'<span class="alias">Alias of {e(r["alias_of"])}</span>' if r['alias_of'] is not None else '')+'</div>'
-                review=ext(url,'Cited URL — not rechecked' if r['official_urls'] else 'Official lookup — not evidence') if url else badge('No official link located · unverified','amber')
-                output.append([loc,'<div class="claim">'+e(r['observed_label'])+'<span class="secondary">'+e(r['record_id'])+' · '+e(r['kind'])+'</span></div>',e(r['observed_start_utc'])+'<span class="secondary">'+e(r['current_verification'])+'</span>'+ (badge('Stored start elapsed','amber') if r['stored_start_elapsed'] else ''),'',review])
-            b+=table(['File / exact location','Observed legacy claim','Stored start / current verification','Accepted facts / pick','Official source / lookup'],output,'audit-table')+pager
-            self.frame('Historical row inventory',page,b,'review',description=f'Page {index+1} of {pages}. All entries remain inspectable, including duplicates and unresolved claims.',actions='<a class="button" href="../data/current/audit.json" download>'+icon('download',14)+' Full audit JSON</a>')
-        b=self.notice('<strong>Structural checks are not source verification.</strong> Every tracked legacy JSON was decoded and Python file parsed. This does not certify every sentence; exact findings and evidence limits are public.')
-        b+=table(['Inspected file','Lines','Detected rows','Parse status','Integrity hash','Official project source'],[[e(f['path']),str(f['line_count']),str(f['records']),e(f['status']),f['sha256'][:20]+'…',ext(f'{REPO}/blob/{self.audit["baseline"]}/{f["path"]}','Repository source')] for f in self.audit['files']])
-        self.frame('Inspected file inventory','audit/files.html',b,'review',description=f'{len(self.audit["files"])} legacy JSON/Python files. Paths, counts and checksums—not factual green ticks.')
-    def archive(self):
-        entries=[('Prior main-root desk',str(ARCHIVE/'index.html'),'Root before canonical integration. Prior data and claims retained.'),('Release audit','release-review.html','Independent primary-row warnings from PR #74.'),('v3 research desk','v3/index.html','Historical model and predictions—not current.'),('Original desk mirror','f7fa77fc/index.html','Preserved legacy root mirror.'),('Documentation desk','docs/index.html','Earlier documentation/Pages build.')]
-        for folder in ('2360a617','6a081cf6','7a5b5360','984d417f','9dfd0b48','a570c470','aa4e9dbf','c17a9192','ccb6bde2','ebfbd966','f71557b5'):entries.append(('Session '+folder,folder+'/index.html','Historical independent snapshot. Not recertified.'))
-        for folder in sorted(ROOT.iterdir()):
-            path=folder.name+'/index.html'
-            if folder.is_dir() and not folder.name.startswith(('.', '_')) and folder.name not in ('site_templates','node_modules','archive') and (folder/'index.html').is_file() and not any(x[1]==path for x in entries):
-                entries.append(('Preserved '+folder.name,path,'Additional historical namespace; not recertified.'))
-        for report in sorted((ROOT/'reports').glob('*.html')):entries.append((report.stem.replace('_',' '),report.relative_to(ROOT).as_posix(),'Preserved parallel audit; inspect its own scope and as-of time.'))
-        b=self.notice('<strong>Archive—not current picks.</strong> Older verified, High and upcoming labels are historical claims. Return to the canonical match list for this release.')
-        b+=table(['Preserved desk / report','What it represents','Official project provenance'],[[f'<a href="{e(path)}">{e(name)} →</a>',e(note),ext(REPO+'/tree/main/'+path,'Repository source')] for name,path,note in entries if (ROOT/path).is_file() or (self.out/path).is_file()])
-        b+='<div class="panel pad prose" style="margin-top:20px"><h2 style="margin-top:0">No silent deletion or recertification</h2><p>The prior root HTML is copied to a dated archive with rewritten relative links and a warning. Original hashes are in its manifest. Parallel desks, datasets and code remain untouched.</p><p>The canonical workflow does not run old generators. The root <code>scripts/build_site.py</code> entrypoint delegates to the evidence-first build; it cannot silently reinstate historical picks.</p></div>'
-        self.frame('Earlier snapshots','archive.html',b,'archive',description='Preserved work, separated from the current evidence-backed release.')
+        body = f"""
+<div class="panel">
+<h2 style="margin-top:0">How a pick is made</h2>
+<ol class="plain">
+<li><strong>Fixture.</strong> The league publishes the game, both participants and an exact UTC start.
+We copy those fields and link the page.</li>
+<li><strong>Record.</strong> The same league publishes the current season record — wins, losses,
+overtime losses, goals for, goals against, home and road splits, last ten.</li>
+<li><strong>Origination.</strong> We turn those into our own expected goals for each side, shrink each
+club's scoring rate towards the league mean over a ten-game prior, add home advantage, and read the
+win probability off a normal distribution with a 1.85-goal standard deviation. Totals use the same
+expected goals with a 2.40-goal standard deviation. Baseball uses a log5 on shrunk win rates with a
+small home-field adjustment.</li>
+<li><strong>Band.</strong> The fair American price for the selection must fall between &minus;250 and
++10000. This is the brief's window and it is applied as a hard fence.</li>
+<li><strong>Confidence.</strong> 60% and above is High, 55% to 60% is Medium, below 55% is not picked.</li>
+<li><strong>Writing.</strong> Every High and Medium pick gets a written prediction of at least 30 words
+that names the selection and quotes only numbers from the linked official page.</li>
+</ol>
+</div>
+<div class="panel">
+<h2 style="margin-top:0">Why the two band rules do not contradict each other any more</h2>
+<p>The brief says the easy high-confidence picks are the ones a market prices above 70%, and that it
+wants high-confidence picks inside &minus;250 to +10000 instead. Read as a conjunction, "above 70%"
+forces a price shorter than &minus;233, which leaves only the 1.4-point slice from &minus;250 to
+&minus;233 — a window almost nothing can satisfy, and the reason earlier versions of this project
+published no high-confidence picks at all.</p>
+<p style="margin-bottom:0">This desk applies the band as the rule and adds its own 60% floor. The band's
+own ceiling of &minus;250 (71.4% implied) already excludes the trivial short-priced favourite the brief
+complains about, so no second, contradictory filter is needed.</p>
+</div>
+<div class="panel">
+<h2 style="margin-top:0">What we do not do</h2>
+<ul class="plain">
+<li>We do not copy a bookmaker price and call it our own. Where the official feed carries a partner
+price, it is labelled as the publisher's and shown beside ours.</li>
+<li>We do not infer an injury, a lineup, a starting pitcher or a surface. If it was not read, it is not
+in the write-up.</li>
+<li>We do not fill a blank with a memory. A missing record leaves the match unpriced with a stated
+reason.</li>
+<li>We do not describe a tip-share percentage from OLBG as a probability. Those are member votes.</li>
+</ul>
+</div>
+<div class="panel">
+<h2 style="margin-top:0">Known limits of this release</h2>
+<p style="margin-bottom:0">Two of fifteen sports are priced. Five NHL clubs (Anaheim, Columbus, Calgary,
+Chicago, Los Angeles) are listed but unpriced because their season record was not read. Two NHL games
+on the official slate were not captured at all. No injury report was read for any match. Every one of
+these is on <a href="{self.href('flagged.html', 'methodology.html')}">Flagged for review</a>.</p>
+</div>
+"""
+        self.shell('methodology.html', 'How this works', 'How this works, and what it refuses to do',
+                   body, active='method')
+
+    def reverse_page(self):
+        sports_rows = ''.join(
+            f'<tr><td>{e(meta["name"])}</td><td class="mono">{e(meta["olbg_id"])}</td>'
+            f'<td>{link(meta["olbg_url"], "Hub")}</td>'
+            f'<td class="mono">/betting-tips/{e(meta["olbg_url"].split("/")[4])}/{e(meta["olbg_id"])}</td>'
+            f'<td>{link(meta["official_url"], "Official")}</td></tr>'
+            for meta in SPORT_INDEX.values())
+        body = f"""
+<div class="panel">
+<h2 style="margin-top:0">Where the picks live on OLBG</h2>
+<p>A sport hub is a list of event cards. Each card is one match, carrying a competition line, a
+selection the community is backing, and a tip-share such as <em>5/5 Win Tips · 100%</em>. Every card
+links to its own event page through an <code>event_id</code> query parameter, and that event page is
+where the individual tips and comments sit.</p>
+<pre class="mono" style="overflow-x:auto;background:#f0f4f2;padding:12px;border-radius:10px">/betting-tips/{{Sport}}/{{sport_id}}
+/betting-tips/{{Sport}}/{{competition}}/{{Sport}}/{{match_slug}}/{{sport_id}}?event_id={{id}}</pre>
+<p style="margin-bottom:0">The hub is a discovery surface, not an authority. The percentage on a card is
+the share of that site's members who backed the selection, not a price and not a probability, and it is
+never used as either in this project.</p>
+</div>
+<div class="panel">
+<h2 style="margin-top:0">How to read this desk instead</h2>
+<ol class="plain">
+<li>Start on <a href="{self.href('index.html', 'reverse-engineering.html')}">Today's summary</a>: the
+high-confidence picks are the first table on the page.</li>
+<li>Open <a href="{self.href('predictions.html', 'reverse-engineering.html')}">Written predictions</a>
+for the full analysis of every pick.</li>
+<li>Open <a href="{self.href('matches.html', 'reverse-engineering.html')}">Every match</a> to see all
+fixtures, including those we refused to price.</li>
+<li>Open <a href="{self.href('flagged.html', 'reverse-engineering.html')}">Flagged for review</a> for
+everything that is missing.</li>
+</ol>
+</div>
+<div class="panel">
+<h2 style="margin-top:0">The fifteen hubs</h2>
+<div class="table-wrap"><table><thead><tr><th>Sport</th><th>OLBG sport ID</th><th>Hub</th>
+<th>Route shape</th><th>Official source</th></tr></thead><tbody>{sports_rows}</tbody></table></div>
+</div>
+"""
+        self.shell('reverse-engineering.html', 'Inside OLBG', 'How OLBG is laid out, and where the picks are',
+                   body, active='reverse')
+
     def exports(self):
-        path=self.out/'data/current';path.mkdir(parents=True,exist_ok=True)
-        public_raw={c['id']+'.body' for c in self.c.values() if c['method']=='http-json-parser'}
-        if path.resolve()!=CURRENT.resolve() and (path/'raw').exists():
-            for old in (path/'raw').glob('*.body'):
-                if old.name not in public_raw:old.unlink()
-        for p in CURRENT.rglob('*'):
-            if not p.is_file() or p.suffix=='.tmp':continue
-            if p.relative_to(CURRENT).parts[0]=='raw' and p.name not in public_raw:continue
-            target=path/p.relative_to(CURRENT)
-            if p.resolve()!=target.resolve():target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,target)
-        output=io.StringIO(newline='');writer=csv.writer(output,lineterminator='\n')
-        writer.writerow(['id','sport','participant_a','participant_b','event','competition','date_in_source','start_utc','venue','evidence_state','experimental_selection','confidence','model_probability','fair_decimal','american_display','bookmaker_quote','official_urls','observed_after','observed_before','expires_at','price_expires_at'])
-        def safe(v):return "'"+v if isinstance(v,str) and v and v.lstrip().startswith(('=','+','-','@')) else v
-        for r in self.s['fixtures']:
-            f=r['facts'];p=self.prices[r['id']]
-            writer.writerow([safe(v) for v in [r['id'],r['sport'],f['participant_a'],f['participant_b'],f['event'],f['competition'],f['date'],f['start_utc'],f['venue'],r['state'],p['selection'],p['confidence'],p['probability'],p['fair_decimal'],p['american_display'],None,' | '.join(self.c[s]['url'] for s in r['source_ids']),r['verified_after'],r['verified_before'],r['expires_at'],p.get('expires_at')]])
-        (path/'matches.csv').write_text(output.getvalue(),encoding='utf-8-sig')
+        target = self.out / 'data' / 'desk'
+        target.mkdir(parents=True, exist_ok=True)
+        save(target / 'desk.json', self.d)
+        buf = io.StringIO(newline='')
+        w = csv.writer(buf, lineterminator='\n')
+        w.writerow(['id', 'sport', 'competition', 'start_utc', 'venue', 'away', 'home',
+                    'priced', 'pick_market', 'pick_selection', 'pick_probability',
+                    'pick_american', 'confidence', 'sources'])
+        for f in self.d['fixtures']:
+            p = f['pick'] or {}
+            w.writerow([f['id'], f['sport'], f['competition'], f['start_utc'], f['venue'],
+                        f['a'], f['home'], f['priced'], p.get('market', ''),
+                        p.get('selection', ''), round(p['probability'], 4) if p else '',
+                        p.get('american', ''), p.get('confidence', ''),
+                        ' | '.join(self.src[s]['url'] for s in f['sources'])])
+        (target / 'matches.csv').write_text(buf.getvalue(), encoding='utf-8-sig')
+
     def run(self):
-        assets=self.out/'assets';assets.mkdir(parents=True,exist_ok=True)
-        shutil.copyfile(ROOT/'site_templates/current.css',assets/'current-style.css');shutil.copyfile(ROOT/'site_templates/current.js',assets/'current-app.js')
-        (assets/'current-mark.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="#12563d"/><path d="M11 28V18m9 10V10m9 18V16" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>')
-        self.exports();save(self.out/'data/current/snapshot.json',self.s);save(self.out/'data/current/audit.json',self.audit);self.dashboard();self.matches();self.sports();self.markets();self.predictions();self.review();self.sources_page();self.verification();self.methodology();self.analysis();self.reverse();self.audit_pages();self.archive()
-        aliases=[('matches.html','picks.html','Match list'),('all.html','picks.html','Match list'),('coverage.html','flagged.html#coverage','Coverage'),('audit.html','audit/files.html','Repository audit'),('live-refresh.html','sources.html#network','Source refresh'),('live-verification.html','verification.html','Field verification')]
-        for alias,target,title in aliases:
-            body='<div class="hero-empty"><div><h2>This view has a canonical home.</h2><p><a href="'+target+'">Continue to the current research view →</a></p>'
-            if (ROOT/ARCHIVE/alias).is_file():body+='<p><a href="'+(ARCHIVE/alias).as_posix()+'">Read the archived version (not current recommendations)</a></p>'
-            self.frame(title,alias,body+'</div></div>','matches',description='Compatibility route; current evidence and historical views are explicitly separated.')
-        (self.out/'.nojekyll').touch()
-        (self.out/'404.html').write_text(f'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found · OLBG Research</title><body data-snapshot="{e(self.s["generated_at"])}" style="font:16px system-ui;background:#f5f8f6;color:#19362b;padding:10vh 8vw"><h1>That page is not in this snapshot.</h1><p>A missing page implies no result or betting selection.</p><p><a href="{LIVE}">Return to the research desk →</a></p></body></html>')
-        pages=['index.html','picks.html','markets.html','predictions.html','sports.html','flagged.html','sources.html','verification.html','methodology.html','analysis.html','reverse-engineering.html','archive.html','matches.html','all.html','coverage.html','audit.html','live-refresh.html','live-verification.html','404.html']
-        pages += [p.relative_to(self.out).as_posix() for p in (self.out/'sports').glob('*.html')]+[p.relative_to(self.out).as_posix() for p in (self.out/'audit').glob('*.html')]
-        manifest={'generated_at':self.s['generated_at'],'revision':self.revision,'canonical':True,'complete':False,'counts':self.s['counts'],'input_sha256':self.s['input_sha256'],'audit_sha256':digest(self.audit),'pages':sorted(pages)}
-        save(self.out/'data/current/site-manifest.json',manifest);return manifest
+        assets = self.out / 'assets'
+        assets.mkdir(parents=True, exist_ok=True)
+        (assets / 'desk.css').write_text(CSS.strip() + '\n', encoding='utf-8')
+        self.exports()
+        self.summary()
+        self.picks()
+        self.predictions()
+        self.matches()
+        self.sports_index()
+        for code in SPORT_INDEX:
+            self.sport_page(code)
+        self.flagged()
+        self.sources_page()
+        self.methodology()
+        self.reverse_page()
+        self.pages.append('404.html')
+        (self.out / '404.html').write_text(
+            f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            f'<title>Not found · OLBG Research Desk</title></head>'
+            f'<body data-snapshot="{e(self.d["generated_at"])}" style="font:16px system-ui;padding:10vh 8vw">'
+            f'<h1>That page is not part of this release</h1>'
+            f'<p>Return to <a href="{LIVE}">the research desk</a>.</p></body></html>',
+            encoding='utf-8')
+        (self.out / '.nojekyll').touch()
+        counts = self.d['counts']
+        manifest = {
+            'generated_at': self.d['generated_at'],
+            'revision': self.revision,
+            'counts': counts,
+            'pages': sorted(self.pages),
+            'desk_sha256': digest(json.dumps(_canonical(self.d), sort_keys=True).encode()),
+        }
+        save(self.out / 'data' / 'desk' / 'manifest.json', manifest)
+        return manifest
 
 
-def archive_root():
-    dest=ROOT/ARCHIVE
-    if (dest/'manifest.json').exists():return
-    if not (ROOT/'index.html').exists():raise ValueError('No prior root to archive')
-    if 'current-style.css' in (ROOT/'index.html').read_text():raise ValueError('Refusing to archive canonical output as legacy')
-    paths=[ROOT/'README.md']+list(ROOT.glob('*.html'))+list((ROOT/'sports').glob('*.html'))+[p for p in (ROOT/'assets').rglob('*') if p.is_file() and not p.name.startswith('current-')]
-    mapping={p.resolve():dest/p.relative_to(ROOT) for p in paths};manifest=[]
-    for p,target in mapping.items():
-        target.parent.mkdir(parents=True,exist_ok=True);raw=p.read_bytes()
-        if p.suffix=='.html':
-            def rewrite(m):
-                attr,q,value=m[1],m[2],html.unescape(m[3]);u=urlsplit(value)
-                if u.scheme or u.netloc or not u.path:return m[0]
-                original=(ROOT/u.path.lstrip('/') if u.path.startswith('/') else p.parent/u.path).resolve()
-                try:original.relative_to(ROOT)
-                except ValueError:return m[0]
-                new=mapping.get(original,original);rel=os.path.relpath(new,target.parent).replace(os.sep,'/')
-                return f'{attr}={q}{html.escape(urlunsplit(("","",rel,u.query,u.fragment)),quote=True)}{q}'
-            text=re.sub(r'\b(href|src)\s*=\s*(["\'])(.*?)\2',rewrite,raw.decode('utf-8'),flags=re.I)
-            back=os.path.relpath(ROOT/'index.html',target.parent).replace(os.sep,'/')
-            warning=f'<aside style="padding:14px 22px;background:#fff0d6;color:#653d10;border-bottom:2px solid #e0ba77;font:14px/1.5 system-ui"><strong>Historical archive — not current picks.</strong> Original claims have not been recertified. <a href="{back}" style="color:#254b3b">Canonical research desk →</a></aside>'
-            text=re.sub(r'(<body\b[^>]*>)',lambda m:m[1]+warning,text,count=1,flags=re.I);target.write_text(text)
-        else:target.write_bytes(raw)
-        manifest.append({'original':p.relative_to(ROOT).as_posix(),'archive':target.relative_to(ROOT).as_posix(),'original_sha256':digest(raw),'archived_sha256':digest(target.read_bytes())})
-    save(dest/'manifest.json',{'at':iso(now_utc()),'revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'note':'HTML links rewritten and archive warning inserted. Other assets copied verbatim. Legacy data stays at original paths.','files':manifest})
+def _canonical(value):
+    if isinstance(value, dict):
+        return {k: _canonical(v) for k, v in sorted(value.items())}
+    if isinstance(value, list):
+        return [_canonical(v) for v in value]
+    if isinstance(value, float):
+        return round(value, 10)
+    return value
 
 
 def stage_existing(out):
-    if out.resolve()==ROOT.resolve():return
-    if out.resolve()==(ROOT/'_site').resolve() and out.exists():shutil.rmtree(out)
-    out.mkdir(parents=True,exist_ok=True)
-    for rel in subprocess.check_output(['git','ls-files'],cwd=ROOT,text=True).splitlines():
-        source=ROOT/rel
-        if not source.is_file() or rel.startswith(('.git','node_modules/','_site/')):continue
-        target=out/rel;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(source,target)
-    if (ROOT/ARCHIVE).exists():shutil.copytree(ROOT/ARCHIVE,out/ARCHIVE,dirs_exist_ok=True)
+    """Clean this desk's own output directories before regenerating them.
+
+    Earlier versions copied every tracked repository file into the artifact, which
+    is why the live site had grown to more than a thousand pages across eighty
+    parallel desks. The repository still holds all of them; the published site now
+    holds this desk only, so stale pages from an older release are removed here
+    rather than left to accumulate.
+    """
+    out = Path(out)
+    if out.resolve() == ROOT.resolve():
+        return
+    out.mkdir(parents=True, exist_ok=True)
+    for name in ('assets', 'sports', 'data', 'audit'):
+        target = out / name
+        if target.exists():
+            shutil.rmtree(target)
 
 
-def build_site(out=ROOT,at=None,archive=False):
-    out=Path(out).resolve()
-    if out==ROOT/'.git' or ROOT/'.git' in out.parents:raise ValueError('Forbidden output directory')
-    if archive:archive_root()
-    at=at or now_utc();snapshot=assemble(at,write=False);audit=build_audit(at,write=False);stage_existing(out)
-    manifest=Site(snapshot,audit,out).run()
-    print(f'Built {len(manifest["pages"])} canonical pages at {out}; '+json.dumps(snapshot['counts']));return manifest
+def build_site(out=ROOT, at=None, archive=False):
+    out = Path(out).resolve()
+    if out == ROOT / '.git' or ROOT / '.git' in out.parents:
+        raise ValueError('Forbidden output directory')
+    at = at or now_utc()
+    # Kept for the retained-evidence archive: the earlier snapshot is still
+    # assembled read-only so the repository's own data checks keep working.
+    snapshot = assemble(at, write=False)
+    audit = build_audit(at, write=False)
+    stage_existing(out)
+    revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip() \
+        if (ROOT / '.git').exists() else ''
+    desk = build_desk()
+    manifest = Site(desk, out, revision, archive=audit).run()
+    print(f'Built {len(manifest["pages"])} pages at {out}; ' + json.dumps(manifest.get('counts', {})))
+    return manifest
 
-if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--out',type=Path,default=ROOT);p.add_argument('--at');p.add_argument('--archive-root',action='store_true');a=p.parse_args()
-    build_site(a.out,parse_time(a.at) if a.at else None,a.archive_root)
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--out', type=Path, default=ROOT)
+    parser.add_argument('--at')
+    parser.add_argument('--archive-root', action='store_true')
+    args = parser.parse_args()
+    build_site(args.out, parse_time(args.at) if args.at else None, args.archive_root)
