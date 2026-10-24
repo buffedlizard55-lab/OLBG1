@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Method · OLBG research desk · 24 Oct 2026</title>
+<meta name="description" content="How every price and confidence level is derived.">
+<link rel="stylesheet" href="assets/desk.css">
+</head><body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html">OLBG research desk <span>· 24 October 2026</span></a>
+  <div class="meta"><span>Independent · not affiliated with OLBG</span><span>Sources read 17:42–18:05 UTC, 24 October 2026</span></div>
+</div></header>
+<nav class="tabs"><div class="wrap"><a href="index.html">Executive summary</a><a href="picks.html">All picks</a><a href="predictions.html">Written predictions</a><a href="matches.html">Every match</a><a href="markets.html">Markets</a><a href="sports/index.html">15 sports</a><a href="coverage.html">Coverage vs brief</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="method.html" aria-current=page>Method</a><a href="repo-review.html">Repo review</a></div></nav>
+<main><div class="wrap">
+<h1>Method</h1>
+<p class="lede">Nothing here is copied from a bookmaker. Every price is derived from the official records named on
+each row, using the constants below, and every pick's probability is printed so you can disagree with it.</p>
+<h2>Pricing</h2>
+<ul class="tight">
+<li><b>Ice hockey.</b> Each club's goals for and against per game are shrunk toward the league rate with an
+eight-game prior. Expected goals for the home side = home scoring rate × away concession rate ÷ league rate × 1.03;
+the away side gets 0.97. A Poisson grid over 0–12 goals gives the result distribution; regulation ties are split
+50/50 between the sides for the money line, ties of one goal do not cover a −1.5 puck line, and the total is read
+straight off the grid at 5.5.</li>
+<li><b>Basketball.</b> Win rates are shrunk toward .500 with a Beta(12,12) prior, converted to logits, and a 0.20
+logit home term is added; the difference is the money line. No handicap and no total are issued, because the NBA
+standings page publishes wins and losses but not points scored or conceded, and a points line cannot be derived
+from a win rate without inventing a margin distribution.</li>
+<li><b>Baseball.</b> log5 on the two 162-game records with a mild prior, plus a 0.16 logit home term (about 54%).
+Extra innings are part of the money line.</li>
+</ul>
+<h2>Prices</h2>
+<p>Fair decimal = 1 ÷ probability, with no margin and no clipping. The American number is derived from the unrounded
+decimal. A price is never rounded toward a more attractive number.</p>
+<h2>Confidence</h2>
+<ul class="tight">
+<li><b>High</b> — our chance is at least 60%, the fair price is inside −250…+10000, every input was captured, and
+both sides have played at least 8 games (hockey), 20 (basketball) or 60 (baseball).</li>
+<li><b>Medium</b> — 53% to 60%, or a stronger chance that misses one of the High conditions. The missed condition
+is printed on the pick.</li>
+<li><b>Low</b> — below 53%.</li>
+</ul>
+<div class="callout warn"><strong>Why the brief's two High tests barely overlap.</strong> A fair price of −250 is
+exactly 71.43%. A selection above 70% is therefore shorter than −233, so “more than 70% <i>and</i> between −250 and
++10000” describes only the sliver from 70.0% to 71.4%. This desk publishes the occupied probability on every pick
+so you can apply either reading yourself. See <a href="flagged.html#F-17-01">F-17-01</a>.</div>
+<h2>What a written prediction must contain</h2>
+<p>At least 30 words, the selection in plain language, both participants, the current record, the recent run, and
+at least one number specific to that match, all drawn from the official source linked beneath it. The shortest here
+is 62 words and no two share a repeated six-word phrase.</p>
+<h2>What is never used</h2>
+<p>OLBG tip percentages are votes, not probabilities, and are never converted into a price. No rating is defaulted
+for a team we could not read. No injury is asserted without an official report.</p>
+<footer>
+  <p><strong>What this is.</strong> Our own prices, originated from official league records, and our own written
+  analysis. Not a bookmaker, not a tipster service, not affiliated with OLBG. No selection is a guarantee.
+  Where an input was missing it is blank and flagged, never filled in.</p>
+  <p class="small">Desk <code>1707d752</code> · built 2026-10-24 · 18+ · Stake only what you can afford to lose.</p>
+</footer>
+</div></main></body></html>
