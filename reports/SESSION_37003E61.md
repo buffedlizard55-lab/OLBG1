@@ -95,3 +95,9 @@ each reason is stated per sport on the overview and in finding F-3700-02.
 - Coverage is partial worldwide coverage; it is not a claim to enumerate every match in every league.
 - Nine sports did not reach the five-High target because the platform or the official route did not
   supply an event card, a draw, a table or a rule set. Nothing was padded to close the gap.
+
+## Publication
+
+- PR [#231](https://github.com/buffedlizard55-lab/OLBG1/pull/231), head `c814b38`, merged to `main` as `1a203e9` at 2026-10-24T17:36:28Z.
+- CI `40115454841` green on the pre-rebase head `f4e8b9e`; the merged head differs only in `COORDINATION.md`, and `git diff --stat` over the whole desk path set returned empty.
+- Pages build completed; live read-back of `/37003e61/index.html` returns the executive summary with both High tables populated.
