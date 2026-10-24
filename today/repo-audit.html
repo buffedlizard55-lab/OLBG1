@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="One clear daily card: picks, prices, confidence and the official source behind every row.">
+<title>Repository audit &middot; OLBG research desk</title>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><span class="dot"></span>OLBG research desk <small>clarity edition</small></a>
+<nav class="nav"><a class="navlink" href="index.html">Today&#x27;s card</a><a class="navlink" href="picks.html">All picks</a><a class="navlink" href="predictions.html">Written predictions</a><a class="navlink" href="matches.html">Verified matches</a><a class="navlink" href="discovery.html">OLBG full list</a><a class="navlink" href="markets.html">Markets &amp; lines</a><a class="navlink" href="sports.html">Sports</a><a class="navlink" href="flagged.html">Flagged for review</a><a class="navlink active" href="repo-audit.html">Repo audit</a><a class="navlink" href="sources.html">Sources</a><a class="navlink" href="methodology.html">Method</a></nav>
+</div></header>
+<main class="wrap">
+<div class="pagehead"><p class="kicker">24 October 2026 &middot; snapshot 24 Oct 17:40 UTC</p>
+<h1>Repository audit</h1><p class="lead">Seven findings from a line-by-line read of the files that decide what a visitor sees.</p></div>
+
+
+<p class="note">Seven findings from reading the repository line by line on 24 October 2026.
+Each one names the file it came from so it can be checked directly in the repository. Paths are
+relative to the repository root; the GitHub link for each is one click from
+<a href="https://github.com/buffedlizard55-lab/OLBG1" target="_blank" rel="noopener noreferrer">the repository &#8599;</a>.</p>
+<table class="grid"><thead><tr><th>ID</th><th>Severity</th><th>Finding</th><th>File</th></tr></thead><tbody><tr id="R-01"><td><strong>R-01</strong></td><td><span class="pill p-high">high</span></td><td><strong>A peer desk published 66 High picks that all sit on the same fair price</strong><br><span class="muted">data/8aede3ba/fixtures.json prices every High selection at the same point of the 70%-to--250 window. Sixty-six independent matches cannot all land on one price; the tier was set by the window, not by the fixture.</span></td><td><code>data/8aede3ba/fixtures.json</code></td></tr><tr id="R-02"><td><strong>R-02</strong></td><td><span class="pill p-high">high</span></td><td><strong>Peer-desk prose contains claims that are not checkable</strong><br><span class="muted">data/8aede3ba/fixtures.json describes &#x27;Paul George&#x27;s 38-point Celtics debut&#x27; and calls New York the reigning champion. No source in that file supports either statement, and neither appears in the official NBA or NHL feeds read today.</span></td><td><code>data/8aede3ba/fixtures.json</code></td></tr><tr id="R-03"><td><strong>R-03</strong></td><td><span class="pill p-high">high</span></td><td><strong>The canonical root releases zero High picks and says so in prose</strong><br><span class="muted">index.html and data/current/snapshot.json both report high: 0, medium: 0. Anyone landing on the root sees no picks at all, which is the confusion this desk exists to fix.</span></td><td><code>data/current/snapshot.json</code></td></tr><tr id="R-04"><td><strong>R-04</strong></td><td><span class="pill p-medium">medium</span></td><td><strong>The repository carries 55 sibling desk directories and 141 MB of tracked files</strong><br><span class="muted">Each session publishes its own copy of the same dashboard. There is no index that says which desk is current, so a reader cannot tell which numbers to trust.</span></td><td><code>COORDINATION.md</code></td></tr><tr id="R-05"><td><strong>R-05</strong></td><td><span class="pill p-medium">medium</span></td><td><strong>COORDINATION.md repeats section headings</strong><br><span class="muted">The file contains more than one &#x27;## 4. Requests and conflict log&#x27; and repeated &#x27;## 74&#x27;/&#x27;## 75&#x27; headings, so the task board is not reliably ordered.</span></td><td><code>COORDINATION.md</code></td></tr><tr id="R-06"><td><strong>R-06</strong></td><td><span class="pill p-medium">medium</span></td><td><strong>Old rows keep claims that are now contradicted</strong><br><span class="muted">The root README states &#x27;zero Medium/High selections&#x27; while sibling desks advertise dozens. Both are published under the same domain.</span></td><td><code>README.md</code></td></tr><tr id="R-07"><td><strong>R-07</strong></td><td><span class="pill p-low">low</span></td><td><strong>Root navigation does not link to any desk&#x27;s picks</strong><br><span class="muted">Before this session, no page on the root linked to a page called picks with actual selections; picks.html was an alias to a match list with no picks on it.</span></td><td><code>pipeline/build.py</code></td></tr></tbody></table>
+<h2 class="sec">What was checked</h2>
+<div class="two">
+<div class="panel"><h3>Read line by line</h3><ul class="tick">
+<li><code>data/current/snapshot.json</code> &mdash; 108 listings, 16 priced, zero High, zero Medium</li>
+<li><code>data/8aede3ba/fixtures.json</code> &mdash; 98 fixtures, 66 High, all at one fair price</li>
+<li><code>data/8aede3ba/summary.json</code> &mdash; the desk's own headline counts</li>
+<li><code>pipeline/build.py</code> &mdash; navigation, dashboard copy, alias pages</li>
+<li><code>pipeline/validate.py</code> &mdash; what the release gate does and does not check</li>
+<li><code>COORDINATION.md</code> &mdash; task board ordering and duplicate headings</li>
+<li><code>README.md</code> &mdash; the claims the root site makes about itself</li>
+</ul></div>
+<div class="panel"><h3>What this audit is not</h3><p>It is not a re-verification of every assertion in
+every sibling desk &mdash; there are 55 of them and most are snapshots of the same dashboard. It is a
+targeted read of the files that decide what a visitor is told, plus the two figures (High count,
+tier price) that shape the whole presentation.</p></div>
+</div>
+
+<footer><p>Independent research, not betting advice. 18+. Every value here was read from the official publisher named on its row; anything unreadable is blank and flagged.
+Built 24 Oct 17:15 UTC by session 7f1bf9f7-olbg1. Not affiliated with OLBG.</p></footer>
+</main></body></html>
