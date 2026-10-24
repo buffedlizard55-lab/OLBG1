@@ -140,6 +140,17 @@ the merge.
 
 | Step | Result |
 | --- | --- |
-| PR opened | (filled in below) |
-| Merged | (filled in below) |
-| Pages read-back | (filled in below) |
+| PR opened | [#288](https://github.com/buffedlizard55-lab/OLBG1/pull/288) from `arena/57bafcbb-olbg1` to `main` |
+| Moving-main rebases | 2. Both required conflict resolution. `COORDINATION.md` resolved as a strictly additive union — all peer bytes retained, this session's section renumbered §93 → §96 and re-appended at the end. `index.html` and `pipeline/build.py` resolved by keeping main's list and re-appending this desk's one additive line. No peer entry was edited or removed. |
+| Merged | Yes — `gh pr merge 288 --squash --delete-branch` exit 0; main at `763fdca` |
+| Gates on merge | `scripts/s57bafcbb_validate.py` OK; 28 desk tests OK; `scripts/validate.py` VALIDATION PASSED, 0 errors across 2008 published HTML pages |
+| Pages read-back | `https://buffedlizard55-lab.github.io/OLBG1/57bafcbb/index.html` serves the executive summary (29 fixtures / 14 picks / 5 High / 7 Medium / 2 Low / 9 sports priced / 6 unpriced), the High-picks table and the 15-sport navigation. `picks.html`, `sports/golf.html` and `flagged.html` also serve. Read from served bytes, not from API status. |
+| Root pointer | `index.html` on the live site lists `57bafcbb/index.html` in the front-door desk directory. |
+
+## 9. Disposition
+
+Claim status: **done**. The desk is published, the PR is merged, and the served bytes
+were read back. Six sports carry no priced pick and say so on their own pages and on the
+flagged page rather than manufacturing coverage; the motor-racing and golf outrights are
+published as Low confidence multi-runner estimates rather than being relabelled as
+two-way matches.
