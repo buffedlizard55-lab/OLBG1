@@ -16,6 +16,11 @@ SOURCES = [
          observed="2026-10-24T17:58Z",
          scope="All eight NBA games on 24 Oct 2026 (five carried here): team records, tip times in US Eastern, "
                "per-game season leaders"),
+    dict(id="nba-injury", publisher="NBA", official=True,
+         url="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_00PM.pdf",
+         observed="2026-10-24T18:40Z",
+         scope="Official NBA injury report for 24 Oct 2026, 1:00 PM ET filing: per-game statuses "
+               "(Out / Questionable / Probable / not yet submitted) for all eight games on the card"),
     dict(id="nhl-schedule", publisher="NHL", official=True,
          url="https://api-web.nhle.com/v1/schedule/2026-10-24",
          observed="2026-10-24T18:02Z",
@@ -128,31 +133,49 @@ MATCHES = [
          start_label="24 Oct · 22:00 UTC (6:00 PM ET on the NBA games page)",
          venue=None, source="nba-games",
          facts=dict(a_record="0-2", b_record="1-1"),
-         injuries=None, injury_note="No official NBA injury report was read for this game; field left blank."),
+         injuries=dict(a="Pelle Larsson probable (left finger sprain)",
+                       b="Christian Anderson probable (left ankle sprain); Kylan Boswell out (right knee "
+                         "surgery); Kon Knueppel out (left hamstring strain); Coby White out (left calf "
+                         "strain); Grant Williams out (right hamstring strain)"),
+         injury_note="NBA official injury report, 24 Oct 2026 1:00 PM ET filing."),
     dict(id="nba-bkn-cle", sport="basketball", comp="NBA", round="Regular season",
          a="Brooklyn Nets", b="Cleveland Cavaliers", start_utc="2026-10-24T23:30:00Z",
          start_label="24 Oct · 23:30 UTC (7:30 PM ET)",
          venue=None, source="nba-games",
          facts=dict(a_record="0-1", b_record="0-1"),
-         injuries=None, injury_note="No official NBA injury report read; blank."),
+         injuries=dict(a="Tyler Bilodeau out (right shoulder sprain)",
+                       b="Khalifa Diop out (left knee injury management); Nae'Qwan Tomlin out (low back "
+                         "stress reaction); Ernest Udeh Jr out (G League two-way)"),
+         injury_note="NBA official injury report, 24 Oct 2026 1:00 PM ET filing."),
     dict(id="nba-mil-phi", sport="basketball", comp="NBA", round="Regular season",
          a="Milwaukee Bucks", b="Philadelphia 76ers", start_utc="2026-10-24T23:30:00Z",
          start_label="24 Oct · 23:30 UTC (7:30 PM ET)",
          venue=None, source="nba-games",
          facts=dict(a_record="0-2", b_record="2-0"),
-         injuries=None, injury_note="No official NBA injury report read; blank."),
+         injuries=dict(a="Team had not yet submitted a report at the 1:00 PM ET filing",
+                       b="Dominick Barlow out (low back stress reaction); Tacko Fall out (left quadriceps "
+                         "strain); Ariel Hukporti out (right Achilles tendon rupture); LeBron James out "
+                         "(low back/sciatica); Dean Wade questionable (left ankle sprain)"),
+         injury_note="NBA official injury report, 24 Oct 2026 1:00 PM ET filing; Milwaukee's sheet was "
+                     "still marked not yet submitted, so their availability is unknown rather than clear."),
     dict(id="nba-sas-dal", sport="basketball", comp="NBA", round="Regular season",
          a="San Antonio Spurs", b="Dallas Mavericks", start_utc="2026-10-25T00:00:00Z",
          start_label="25 Oct · 00:00 UTC (8:00 PM ET on 24 Oct)",
          venue=None, source="nba-games",
          facts=dict(a_record="0-2", b_record="1-1"),
-         injuries=None, injury_note="No official NBA injury report read; blank."),
+         injuries=None,
+         injury_note="NBA official injury report, 24 Oct 2026 1:00 PM ET filing: both San Antonio and "
+                     "Dallas were listed as not yet submitted, so the field stays blank rather than clear."),
     dict(id="nba-hou-atl", sport="basketball", comp="NBA", round="Regular season",
          a="Houston Rockets", b="Atlanta Hawks", start_utc="2026-10-25T00:30:00Z",
          start_label="25 Oct · 00:30 UTC (8:30 PM ET on 24 Oct)",
          venue=None, source="nba-games",
          facts=dict(a_record="2-0", b_record="2-0"),
-         injuries=None, injury_note="No official NBA injury report read; blank."),
+         injuries=dict(a="Steven Adams out (left ankle injury management); Fred VanVleet out (right knee "
+                         "injury management); Reed Sheppard questionable (left knee contusion/bone bruise)",
+                       b="Mouhamed Gueye out (left foot fracture); Henri Veesaar out (right ACL tear); "
+                         "RayJ Dennis, Keshon Gilbert and Jalen Wilson questionable (G League two-way)"),
+         injury_note="NBA official injury report, 24 Oct 2026 1:00 PM ET filing."),
 
     dict(id="nhl-sjs-bos", sport="ice-hockey", comp="NHL", round="Regular season",
          a="San Jose Sharks", b="Boston Bruins", start_utc="2026-10-24T23:00:00Z",
@@ -237,31 +260,36 @@ MATCHES = [
 
 PICKS = [
     dict(match="nba-mia-cha", side="b", market="Match winner (money line)",
-         prose="Charlotte host Miami having split their opening two games, while the Heat arrive 0-2 after "
-               "losing both. The Hornets therefore hold the better early record and the home edge, which is "
-               "why they are the money-line selection here. Two games is not form, so treat the price as a "
-               "starting point rather than a settled read on either roster."),
+         prose="Charlotte host Miami having split their opening two games while the Heat arrive 0-2. The "
+               "Hornets carry a real availability problem though: Boswell, Knueppel, White and Williams are "
+               "all out, with only Anderson probable on that filing, while Miami are "
+               "close to whole. Record and home floor still make Charlotte the selection, but the missing "
+               "rotation is why this is graded low rather than medium."),
     dict(match="nba-bkn-cle", side="b", market="Match winner (money line)",
-         prose="Brooklyn and Cleveland both opened with a defeat, so the records say coin flip. The split is "
-               "situational: the Cavaliers are at home, and our line makes them the clear favourite on the "
-               "money line. With one game played apiece, nothing here is proven, so the Cavaliers are a "
-               "low-conviction selection rather than a strong one."),
+         prose="Brooklyn and Cleveland both opened 0-1, so the bare records say coin flip and only home "
+               "court separates them in our numbers. Cleveland's absences are bench-level (Diop, Tomlin, "
+               "Udeh) against Brooklyn losing Bilodeau, so availability does not shift the argument either "
+               "way. One game apiece means the Cavaliers are a low-conviction home selection, not a strong "
+               "one; the price of -135 reflects exactly that."),
     dict(match="nba-mil-phi", side="b", market="Match winner (money line)",
-         prose="Philadelphia are 2-0 and host a Milwaukee side that has lost both of its opening games, which "
-               "is why the 76ers are our strongest basketball money-line selection of the night. The price "
-               "is shorter than the -250 floor set in the brief, so it is published at medium tier even "
-               "though the estimate is near 79%."),
+         prose="Philadelphia are 2-0 and host a Milwaukee team that has lost both openers, and the official "
+               "1:00 PM ET report lists LeBron James out with low back/sciatica plus Barlow, Fall and "
+               "Hukporti unavailable, with Wade questionable. Milwaukee had not submitted a sheet at that "
+               "filing, so their availability is unknown. That combination makes the 76ers the strongest "
+               "basketball pick here at about 79%, capped at medium because -375 is shorter than the -250 "
+               "floor."),
     dict(match="nba-sas-dal", side="b", market="Match winner (money line)",
-         prose="San Antonio are 0-2 and visit a Dallas team that has split its first two games. Add the "
-               "standard home adjustment to those records and the Mavericks come out near 69% on the money "
-               "line, which is where we price them. Two games per side is a thin base, so the play is medium "
-               "confidence at best."),
+         prose="San Antonio are 0-2 and visit a Dallas side that split its first two games, and the standard "
+               "home adjustment lifts the Mavericks to roughly 69% in our pricing. The availability picture "
+               "cannot sharpen that: both clubs were still marked not yet submitted at the afternoon filing, "
+               "yet submitted, so no injury edge is claimed in either direction. Thin samples and a blank "
+               "training room keep this at medium."),
     dict(match="nba-hou-atl", side="b", market="Match winner (money line)",
-         prose="Houston and Atlanta both arrive 2-0, making this the cleanest basketball test on the card: "
-               "unbeaten record against unbeaten record. Home court is the only separator our numbers find, "
-               "and it is worth only a couple of points of probability, so the Hawks are a thin money-line "
-               "lean rather than a strong side. Two wins apiece proves little, and that is why the selection "
-               "is graded low."),
+         prose="Houston and Atlanta both arrive 2-0, so this is unbeaten record against unbeaten record and "
+               "home court is the only separator our numbers find. Availability tilts it: the official "
+               "report rules out Adams and VanVleet for Houston with Sheppard questionable, while Atlanta "
+               "lose only Gueye and Veesaar plus two-way questionables. That is worth a couple of points, "
+               "making the Hawks a thin lean at -135 rather than a strong side."),
 
     dict(match="nhl-sjs-bos", side="b", market="Match winner (money line)",
          prose="Boston are 8-2-1 with 42 goals for and 22 against, and have won four of five at TD Garden, so "
@@ -419,11 +447,14 @@ FLAGS = [
                 "could satisfy both of the brief's rules.",
          link="https://www.nba.com/games", link_label="NBA games (records used)"),
     dict(id="F-03", severity="high", sport="All",
-         title="Injury fields are blank everywhere",
-         detail="No official injury, suspension or availability report was read for any of the 13 priced "
-                "matches (NBA, NHL, MLB, Cork GAA, ATP). Nothing has been inferred or filled in. Every "
-                "injury column is empty by design.",
-         link="https://www.nba.com/games", link_label="NBA games page (no injury report on it)"),
+         title="Availability is sourced for basketball only; the other eight priced rows are blank",
+         detail="The five NBA rows now carry the official 1:00 PM ET injury report, including the two games "
+                "where a club had not yet submitted a sheet (Milwaukee, and both San Antonio and Dallas) — "
+                "those stay blank because unknown is not clear. No official NHL, MLB, Cork GAA or ATP "
+                "availability document was read, so those rows remain blank by design and must not be read "
+                "as 'no injuries'.",
+         link="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_00PM.pdf",
+         link_label="NBA official injury report, 24 Oct 2026 1:00 PM ET"),
     dict(id="F-04", severity="high", sport="15 covered sports",
          title="Ten of the fifteen requested sports carry no priced selection",
          detail="Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Greyhounds, Motor Racing, Handball "
