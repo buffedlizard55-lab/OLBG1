@@ -55,6 +55,15 @@ register. No overlap with any other claimed task code.
 - `python -m pipeline.validate --site _site` — 0 errors.
 - `python scripts/s99d43605_validate.py` — DESK VALIDATION PASSED.
 
+## Publication receipts
+- PR #273 merged (gates run 40123801235 green incl. browser gates); follow-up PR #275 merged
+  (executive table accuracy + PCB source URL). Main runs green incl. `Publish canonical
+  GitHub Pages` (run 40124604358). Live read-back of
+  https://buffedlizard55-lab.github.io/OLBG1/99d43605/ confirmed the executive summary, the
+  High table (Edmonton -250) and the predictions page bytes.
+- Canonical-publisher note for successors: post-#271 the artifact copies only `ARCHIVE`-registered
+  desks; this desk's registration line lives in `pipeline/build.py`.
+
 ## Notes for the next session
 - High-window honesty: with Beta(2,2)+log5 the (70%, 71.43%] corridor is narrow;
   expect 0-3 Highs per night. Shortfall vs "5 per sport" is recorded on the
