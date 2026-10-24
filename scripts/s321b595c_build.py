@@ -507,7 +507,7 @@ recorded as a failed read, and the sport gets no line rather than a guess.</li>
 # ------------------------------------------------------------------ flags ----
 def build_flags():
     cards = "".join(f'''<div class="card" id="{e(f["id"])}">
-<h3>{e(f["id"])} &mdash; {e(f["title"])} <span class="tag {'low' if f['severity'] == 'low' else ('medium' if f['severity'] == 'medium' else 'none')}">{e(f["severity"])}</span></h3>
+<h3><span class="tag {'low' if f['severity'] == 'low' else ('medium' if f['severity'] == 'medium' else 'none')}">{e(f["severity"]).upper()}</span> {e(f["id"])} &mdash; {e(f["title"])}</h3>
 <p>{e(f["detail"])}</p>
 <p class="small">Area: {e(f["area"])} &middot; Sources: {srcs(f["sources"]) if f["sources"] else "repository itself"}</p>
 </div>''' for f in FLAGS)
@@ -581,7 +581,7 @@ guess would not be.</p></div>
 
 <h2>Best published price and edge</h2>
 <div class="card"><p>Where the league publishes partner prices (the NHL does), we take the longest available price across
-the <strong>two-way</strong> providers and name the book. We exclude Doxxbet, whose two prices sum to about 81% implied:
+the <strong>two-way</strong> quotes. Prices filed under provider id 10 sum to about 81% implied:
 that is a three-way 60-minute market, and mixing it in would manufacture a false under-round (flag F-321-10). Edge is our
 probability minus <code>1 / decimal&nbsp;price</code>.</p></div>
 
