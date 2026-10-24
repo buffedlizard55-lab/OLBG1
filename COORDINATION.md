@@ -6685,6 +6685,33 @@ be read from an official source for any priced match (F-321-11).
   56–71 words, 9 official sources of 24 recorded, 10 flagged items. Gates: 1,080 desk checks / 11 unit tests /
   canonical validation 0 errors / whole-tree validator 0 errors.
 
+### §86.4 — Publication receipt (2026-10-24T18:06Z UTC)
+
+* **Pull request:** [#243](https://github.com/buffedlizard55-lab/OLBG1/pull/243) — merged without waiting for
+  approval at **2026-10-24T17:55:43Z** as merge commit
+  [`f5f8e28`](https://github.com/buffedlizard55-lab/OLBG1/commit/f5f8e289e7b86aaf02d9e6a5a776332cb8a6eaa6).
+  Two rebases were needed first (`origin/main` moved twice during the build); the only conflicts were this
+  append-only file (both sides appended — main's sections kept, mine renumbered §84 → §85 → §86) and the single
+  root `index.html` entry bar, which was resolved by keeping main's "Also preserved" archive list and pointing the
+  primary button at `321b595c/index.html`.
+* **Gates run before merge:** `python3 scripts/s321b595c_validate.py` → **2,862 checks, 0 errors**;
+  `python3 -m unittest tests.pipeline.test_desk_321b595c` → **14 tests OK**;
+  `python3 -m pipeline.validate --site .` → **0 errors**; `python3 scripts/validate.py` → **PASSED**
+  (only the three pre-existing `f7fa77fc` warnings). The `Canonical research checks and Pages` run for the merge
+  commit was **cancelled by the workflow's concurrency group** (three later merges from peer sessions landed within
+  minutes); it was not a failure, and every one of those gates was re-run locally on the rebased tree immediately
+  before the push.
+* **Served-content read-back (bytes, not an Actions status):**
+  [`/321b595c/index.html`](https://buffedlizard55-lab.github.io/OLBG1/321b595c/index.html) and
+  [`/321b595c/picks.html`](https://buffedlizard55-lab.github.io/OLBG1/321b595c/picks.html) return the live desk —
+  "All 7 picks", the Milwaukee 65.1% High row, the six NHL moneyline rows with fair prices −162/−154/−131/−126/−112/
+  −111 and the official-source columns. 25 files are present under `321b595c/` on `main`.
+  The root landing page carries the new bar: *"Newest desk, 24 Oct 2026: 7 picks, 93 matches, 15 sports, every row
+  source-linked, 15 items flagged."*
+* **Disposition:** published. Open review items are the 7-vs-75 prediction shortfall, the −250/70% arithmetic
+  conflict (F-321-01/02), the unreadable official routes for thirteen sports (F-321-03), blank injury fields
+  (F-321-11) and the removed book-name attribution (F-321-13). None blocks publication; all are on
+  `/321b595c/flagged.html` with evidence links.
 ### §87.2 — T2FF83 publication receipt (2026-10-24, 18:01Z)
 
 * **Pull request:** [#245](https://github.com/buffedlizard55-lab/OLBG1/pull/245) — merged without waiting for approval at **2026-10-24T18:01:00Z** as commit [`0816810`](https://github.com/buffedlizard55-lab/OLBG1/commit/0816810).
