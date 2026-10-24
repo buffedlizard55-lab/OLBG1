@@ -113,6 +113,13 @@ bottom of the landing page:
 * https://buffedlizard55-lab.github.io/OLBG1/02d3d515/index.html
 * https://buffedlizard55-lab.github.io/OLBG1/3d121822/index.html
 
+## Archive and session records
+
+Earlier desks (`b2719ad3/`, `37003e61/`, `8cfb80b2/`, `02d3d515/`, `3d121822/`, `2ff8342b/`) stay
+published and are listed at the foot of the landing page. The research paper trail for this release —
+sources with read times, worked price example, withdrawn claims, flagged items — is
+[`reports/SESSION_3507B0.md`](reports/SESSION_3507B0.md).
+
 ## Known gaps
 
 Two NHL games on the official slate were not captured. Five clubs (Anaheim, Columbus, Calgary, Chicago,

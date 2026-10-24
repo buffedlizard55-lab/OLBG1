@@ -815,9 +815,12 @@ def build_site(out=ROOT, at=None, archive=False):
     desk = build_desk()
     # The deployment-evidence step in .github/workflows/current-pages.yml reads this
     # file from the artifact, so the assembled snapshot is written beside the pages.
-    current = out / 'data' / 'current'
-    current.mkdir(parents=True, exist_ok=True)
-    save(current / 'snapshot.json', snapshot)
+    if out != ROOT:
+        current = out / 'data' / 'current'
+        current.mkdir(parents=True, exist_ok=True)
+        save(current / 'snapshot.json', snapshot)
+    # The repository's own data/current is evidence and is never rewritten by a
+    # local build: only the artifact copy is refreshed.
     # Earlier desks listed on the front door are copied in, so their links resolve
     # in the published artifact rather than only in the repository.
     for rel, _label in (ARCHIVE if out != ROOT else ()):
