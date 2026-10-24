@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desk 57bafcbb - sources</title>
+<style>
+:root { --ink:#1c2126; --muted:#5b6770; --line:#d7dbe0; --bg:#f4f6f8;
+        --card:#ffffff; --accent:#0b5fff; --ok:#0a7a3e; --warn:#a15c00; }
+* { box-sizing: border-box; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       color:var(--ink); background:var(--bg); line-height:1.5; }
+header.top { background:#0f1a2b; color:#fff; padding:18px 22px; }
+header.top h1 { margin:0; font-size:21px; font-weight:650; letter-spacing:.2px; }
+header.top p { margin:6px 0 0; color:#c6d0dc; font-size:13px; }
+nav.crumbs { background:#12233c; color:#a9bdd4; padding:8px 22px; font-size:12.5px; }
+nav.crumbs a { color:#9fc3ff; text-decoration:none; }
+nav.crumbs a:hover { text-decoration:underline; }
+main { max-width:1180px; margin:0 auto; padding:20px 22px 60px; }
+h1 { font-size:22px; margin:0 0 4px; }
+h2 { font-size:16px; margin:26px 0 8px; font-weight:650; }
+p.lead { color:var(--muted); font-size:14px; margin:0 0 14px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:16px 18px; margin:0 0 16px; }
+table { border-collapse:collapse; width:100%; background:var(--card); font-size:13.5px; }
+th, td { border:1px solid var(--line); padding:7px 9px; text-align:left; vertical-align:top; }
+th { background:#eef1f5; font-weight:650; white-space:nowrap; }
+td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+a { color:var(--accent); text-decoration:none; word-break:break-all; }
+a:hover { text-decoration:underline; }
+.pill { display:inline-block; padding:1px 8px; border-radius:11px; font-size:11.5px; font-weight:650;
+        border:1px solid var(--line); background:#f0f2f5; color:#3b4753; white-space:nowrap; }
+.pill.high { background:#e5f5ec; color:#0a7a3e; border-color:#b9e3cb; }
+.pill.medium { background:#fdf3e3; color:#8a4b00; border-color:#f0dcbc; }
+.pill.low { background:#eef1f5; color:#4a5560; }
+.pill.flagged { background:#fdeaea; color:#9c1f1f; border-color:#f3c8c8; }
+.pill.ok { background:#e5f5ec; color:#0a7a3f; border-color:#b9e3cb; }
+.flag { background:#fff6f0; border:1px solid #f0d2bc; }
+.note { color:var(--muted); font-size:12.5px; }
+pre.quote { background:#fbfcfd; border:1px solid var(--line); border-left:3px solid var(--accent);
+            padding:12px 14px; margin:8px 0 0; font-size:13.5px; white-space:pre-wrap; }
+ul.tight { margin:6px 0 0; padding-left:20px; }
+ul.tight li { margin:3px 0; font-size:13.5px; }
+.big { font-size:30px; font-weight:700; }
+.kpis { display:flex; gap:12px; flex-wrap:wrap; }
+.kpi { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:12px 16px; min-width:120px; }
+.kpi .n { font-size:24px; font-weight:700; }
+.kpi .l { font-size:12px; color:var(--muted); }
+footer.foot { max-width:1180px; margin:0 auto; padding:0 22px 40px; color:var(--muted); font-size:12.5px; }
+</style>
+</head>
+<body>
+<header class="top"><h1>Desk 57bafcbb - sources</h1><p>Every source the desk used, with its link and its type.</p></header>
+<nav class="crumbs"><a href="../index.html">home</a> / <a href="../picks.html">picks</a></nav>
+<main>
+
+<div class="card">
+<h2 style="margin-top:0">How the desk treats these</h2>
+<p class="note" style="margin:0"><strong>official</strong> means the governing body or league that owns the
+fixture. <strong>discovery</strong> means the OLBG.com betting-tips hub, which is how the desk finds
+fixtures but never how it prices one. <strong>unreadable</strong> means the page is linked for a human because
+it is a JavaScript shell or blocked automated reading in this session.</p>
+</div>
+<table>
+<thead><tr><th>ID</th><th>Name</th><th>URL</th><th>Type</th><th>Used by this desk</th></tr></thead>
+<tbody><tr><td>mlb-schedule</td><td>MLB schedule API</td><td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-27&amp;hydrate=team,linescore,record">https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-27&amp;hydrate=team,linescore,record</a></td><td>official</td><td>yes</td></tr><tr><td>mlb-standings</td><td>MLB standings API</td><td><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason&amp;hydrate=team">https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason&amp;hydrate=team</a></td><td>official</td><td>yes</td></tr><tr><td>nhl-score-oct25</td><td>NHL scoreboard API (25 Oct)</td><td><a href="https://api-web.nhle.com/v1/score/2026-10-25">https://api-web.nhle.com/v1/score/2026-10-25</a></td><td>official</td><td>yes</td></tr><tr><td>nhl-standings</td><td>NHL standings API</td><td><a href="https://api-web.nhle.com/v1/standings/2026-10-25">https://api-web.nhle.com/v1/standings/2026-10-25</a></td><td>official</td><td>yes</td></tr><tr><td>nba-games</td><td>NBA games calendar</td><td><a href="https://www.nba.com/games?date=2026-10-24">https://www.nba.com/games?date=2026-10-24</a></td><td>official</td><td>no</td></tr><tr><td>atp-scores</td><td>ATP Tour live scores</td><td><a href="https://www.atptour.com/en/scores/current">https://www.atptour.com/en/scores/current</a></td><td>official</td><td>yes</td></tr><tr><td>atp-news</td><td>ATP Tour news</td><td><a href="https://www.atptour.com/en/news">https://www.atptour.com/en/news</a></td><td>official</td><td>yes</td></tr><tr><td>f1-usgp</td><td>F1 US Grand Prix event page</td><td><a href="https://www.formula1.com/en/racing/2026/united-states">https://www.formula1.com/en/racing/2026/united-states</a></td><td>official</td><td>yes</td></tr><tr><td>pdpa-ec</td><td>PDPA European Championship 2026</td><td><a href="https://pdpa.co.uk/event/european-championship-2026/">https://pdpa.co.uk/event/european-championship-2026/</a></td><td>official</td><td>yes</td></tr><tr><td>wst-home</td><td>World Snooker Tour</td><td><a href="https://www.wst.tv/">https://www.wst.tv/</a></td><td>official</td><td>yes</td></tr><tr><td>ecb-series</td><td>ECB England v Pakistan / Sri Lanka series</td><td><a href="https://www.ecb.co.uk/news/4594465/how-to-watch-and-follow-the-england-men-v-pakistan-and-sri-lanka">https://www.ecb.co.uk/news/4594465/how-to-watch-and-follow-the-england-men-v-pakistan-and-sri-lanka</a></td><td>official</td><td>yes</td></tr><tr><td>nrl-rlwc</td><td>NRL Rugby League World Cup draw</td><td><a href="https://www.nrl.com/draw/?competition=131&amp;round=2&amp;season=2026">https://www.nrl.com/draw/?competition=131&amp;round=2&amp;season=2026</a></td><td>official</td><td>yes</td></tr><tr><td>urc-r4</td><td>United Rugby Championship Round 4 preview</td><td><a href="https://www.unitedrugby.com/latest/match-preview-2/a-relentless-rivalry-and-a-new-home-for-ospreys-round-4-preview/">https://www.unitedrugby.com/latest/match-preview-2/a-relentless-rivalry-and-a-new-home-for-ospreys-round-4-preview/</a></td><td>official</td><td>yes</td></tr><tr><td>pga-bermuda</td><td>PGA Tour Butterfield Bermuda Championship</td><td><a href="https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/leaderboard">https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/leaderboard</a></td><td>official</td><td>yes</td></tr><tr><td>gaa-home</td><td>GAA.ie fixtures and results</td><td><a href="https://www.gaa.ie/fixtures-results">https://www.gaa.ie/fixtures-results</a></td><td>official</td><td>no</td></tr><tr><td>eurohandball</td><td>EHF official site</td><td><a href="https://www.eurohandball.com/">https://www.eurohandball.com/</a></td><td>official</td><td>no</td></tr><tr><td>gbgb</td><td>GBGB greyhound results and track directory</td><td><a href="https://www.gbgb.org.uk/">https://www.gbgb.org.uk/</a></td><td>official</td><td>no</td></tr><tr><td>top14-lnr</td><td>Top 14 official site</td><td><a href="https://www.top14.lnr.fr/">https://www.top14.lnr.fr/</a></td><td>discovery / unreadable</td><td>no</td></tr><tr><td>premierrugby</td><td>Premiership Rugby official site</td><td><a href="https://www.premierrugby.com/">https://www.premierrugby.com/</a></td><td>discovery / unreadable</td><td>no</td></tr><tr><td>legavolley</td><td>Italian SuperLega official site</td><td><a href="https://www.legavolley.it/">https://www.legavolley.it/</a></td><td>discovery / unreadable</td><td>no</td></tr><tr><td>olbg-golf</td><td>OLBG Golf betting tips</td><td><a href="https://www.olbg.com/betting-tips/Golf/5">https://www.olbg.com/betting-tips/Golf/5</a></td><td>discovery / unreadable</td><td>yes</td></tr><tr><td>olbg-volleyball</td><td>OLBG Volleyball betting tips</td><td><a href="https://www.olbg.com/betting-tips/Volleyball/21">https://www.olbg.com/betting-tips/Volleyball/21</a></td><td>discovery / unreadable</td><td>yes</td></tr><tr><td>olbg-rugby-union</td><td>OLBG Rugby Union betting tips</td><td><a href="https://www.olbg.com/betting-tips/Rugby-Union/9">https://www.olbg.com/betting-tips/Rugby-Union/9</a></td><td>discovery / unreadable</td><td>yes</td></tr><tr><td>olbg-cricket</td><td>OLBG Cricket betting tips</td><td><a href="https://www.olbg.com/betting-tips/Cricket/7">https://www.olbg.com/betting-tips/Cricket/7</a></td><td>discovery / unreadable</td><td>yes</td></tr><tr><td>olbg-snooker</td><td>OLBG Snooker betting tips</td><td><a href="https://www.olbg.com/betting-tips/Snooker/8">https://www.olbg.com/betting-tips/Snooker/8</a></td><td>discovery / unreadable</td><td>yes</td></tr><tr><td>olbg-darts</td><td>OLBG Darts betting tips</td><td><a href="https://www.olbg.com/betting-tips/Darts/15">https://www.olbg.com/betting-tips/Darts/15</a></td><td>discovery / unreadable</td><td>yes</td></tr><tr><td>olbg-baseball</td><td>OLBG Baseball betting tips</td><td><a href="https://www.olbg.com/betting-tips/Baseball/12">https://www.olbg.com/betting-tips/Baseball/12</a></td><td>discovery / unreadable</td><td>yes</td></tr><tr><td>olbg-gaelic</td><td>OLBG Gaelic Football betting tips</td><td><a href="https://www.olbg.com/betting-tips/Gaelic-Football/25">https://www.olbg.com/betting-tips/Gaelic-Football/25</a></td><td>discovery / unreadable</td><td>yes</td></tr><tr><td>olbg-greyhounds</td><td>OLBG Greyhounds betting tips</td><td><a href="https://www.olbg.com/betting-tips/Greyhounds/28">https://www.olbg.com/betting-tips/Greyhounds/28</a></td><td>discovery / unreadable</td><td>yes</td></tr><tr><td>olbg-tennis</td><td>OLBG Tennis betting tips</td><td><a href="https://www.olbg.com/betting-tips/Tennis/3">https://www.olbg.com/betting-tips/Tennis/3</a></td><td>discovery / unreadable</td><td>yes</td></tr><tr><td>olbg-motor-racing</td><td>OLBG Motor Racing betting tips</td><td><a href="https://www.olbg.com/betting-tips/Motor-Racing/14">https://www.olbg.com/betting-tips/Motor-Racing/14</a></td><td>discovery / unreadable</td><td>yes</td></tr><tr><td>olbg-handball</td><td>OLBG Handball betting tips</td><td><a href="https://www.olbg.com/betting-tips/Handball/20">https://www.olbg.com/betting-tips/Handball/20</a></td><td>discovery / unreadable</td><td>yes</td></tr><tr><td>olbg-ice-hockey</td><td>OLBG Ice Hockey betting tips</td><td><a href="https://www.olbg.com/betting-tips/Ice-Hockey/13">https://www.olbg.com/betting-tips/Ice-Hockey/13</a></td><td>discovery / unreadable</td><td>yes</td></tr><tr><td>olbg-basketball</td><td>OLBG Basketball betting tips</td><td><a href="https://www.olbg.com/betting-tips/Basketball/4">https://www.olbg.com/betting-tips/Basketball/4</a></td><td>discovery / unreadable</td><td>yes</td></tr><tr><td>olbg-rugby-league</td><td>OLBG Rugby League betting tips</td><td><a href="https://www.olbg.com/betting-tips/Rugby-League/10">https://www.olbg.com/betting-tips/Rugby-League/10</a></td><td>discovery / unreadable</td><td>yes</td></tr></tbody>
+</table>
+
+</main>
+<footer class="foot">Desk 57bafcbb - an autonomous line-origination desk working the OLBG.com 15-sport brief.
+All prices are the desk's own fair two-way lines, computed from official governing-body records; no bookmaker odds were read.</footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "f-sources-unreadable",
+    "kind": "source",
+    "severity": "flagged",
+    "status": "awaiting-review",
+    "where": "57bafcbb/sources.html",
+    "detail": "Four official fixture feeds could not be read in this session and are linked for manual review: the Italian SuperLega site (legavolley.it) is a JavaScript shell, the NBA games calendar is a JavaScript shell that returned an error, Premiership Rugby (premierrugby.com) rejected automated reading, and the Top 14 site (top14.lnr.fr) is behind a blocking page. Every fixture sourced only from those feeds is published as a directory entry and is not priced.",
+    "source_links": [
+      "https://www.legavolley.it/",
+      "https://www.nba.com/games?date=2026-10-24",
+      "https://www.premierrugby.com/",
+      "https://www.top14.lnr.fr/"
+    ]
+  },
+  {
+    "id": "f-volleyball-no-market",
+    "kind": "sport-coverage",
+    "severity": "flagged",
+    "status": "awaiting-review",
+    "where": "57bafcbb/sports/volleyball.html",
+    "detail": "Volleyball has no priced pick in this window. The official Italian SuperLega feed did not render a fixture list, so the two SuperLiga fixtures on the desk are discovery-only directory entries. No line was originated because no official record could be read.",
+    "source_links": [
+      "https://www.legavolley.it/"
+    ]
+  },
+  {
+    "id": "f-basketball-no-market",
+    "kind": "sport-coverage",
+    "severity": "flagged",
+    "status": "awaiting-review",
+    "where": "57bafcbb/sports/basketball.html",
+    "detail": "Basketball has no priced pick in this window. The NBA games calendar returned a JavaScript shell with an error, so only the game count for 24 Oct (8 games) was readable; the two NBA fixtures on the desk are discovery-only directory entries.",
+    "source_links": [
+      "https://www.nba.com/games?date=2026-10-24"
+    ]
+  },
+  {
+    "id": "f-handball-no-market",
+    "kind": "sport-coverage",
+    "severity": "flagged",
+    "status": "awaiting-review",
+    "where": "57bafcbb/sports/handball.html",
+    "detail": "Handball has no priced pick in this window. The EHF official site carries European Cup and World Championship material only, not the domestic league fixtures that fall on 25 Oct. The two fixtures on the desk are discovery-only directory entries.",
+    "source_links": [
+      "https://www.eurohandball.com/"
+    ]
+  },
+  {
+    "id": "f-gaelic-sports-no-market",
+    "kind": "sport-coverage",
+    "severity": "flagged",
+    "status": "awaiting-review",
+    "where": "57bafcbb/sports/gaelic-sports.html",
+    "detail": "Gaelic Sports has no priced pick in this window. The GAA fixtures page renders only a results list for the current weekend, so the two fixtures on the desk are discovery-only directory entries.",
+    "source_links": [
+      "https://www.gaa.ie/fixtures-results"
+    ]
+  },
+  {
+    "id": "f-greyhounds-no-market",
+    "kind": "sport-coverage",
+    "severity": "flagged",
+    "status": "awaiting-review",
+    "where": "57bafcbb/sports/greyhounds.html",
+    "detail": "Greyhounds has no priced pick in this window. The GBGB results page carries the latest meeting list and track directory but not the per-race card for 25 Oct, so the Doncaster meeting is published as a directory entry.",
+    "source_links": [
+      "https://www.gbgb.org.uk/"
+    ]
+  },
+  {
+    "id": "f-rugby-union-no-market",
+    "kind": "sport-coverage",
+    "severity": "flagged",
+    "status": "awaiting-review",
+    "where": "57bafcbb/sports/rugby-union.html",
+    "detail": "Rugby Union has no priced pick in this window. URC Round 4 was complete by read time, and the Top 14 and Premiership fixture feeds could not be read, so the two upcoming fixtures are discovery-only directory entries.",
+    "source_links": [
+      "https://www.top14.lnr.fr/",
+      "https://www.premierrugby.com/",
+      "https://www.unitedrugby.com/latest/match-preview-2/a-relentless-rivalry-and-a-new-home-for-ospreys-round-4-preview/"
+    ]
+  },
+  {
+    "id": "f-darts-directory-entries",
+    "kind": "fixture-source",
+    "severity": "flagged",
+    "status": "awaiting-review",
+    "where": "57bafcbb/sports/darts.html",
+    "detail": "Two darts quarter-finals (Littler v Clayton and Ratajski v Schindler) are published as directory entries. The PDPA draw was read and confirmed the fixtures, but only the two most prominent quarter-finals were read a second time from the official draw, so the other two are held back from pricing.",
+    "source_links": [
+      "https://pdpa.co.uk/event/european-championship-2026/"
+    ]
+  },
+  {
+    "id": "f-outrights-not-high",
+    "kind": "method",
+    "severity": "info",
+    "status": "noted",
+    "where": "57bafcbb/methodology.html",
+    "detail": "The motor-racing and golf markets are multi-runner outrights. Our estimate is an outright probability, not a two-way match probability, and a multi-runner cannot carry a High label under the desk's banding rule because the fair price is always outside the -250..+10000 band once a single runner is singled out. Both are published as Low confidence outrights.",
+    "source_links": [
+      "https://www.formula1.com/en/racing/2026/united-states",
+      "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/leaderboard"
+    ]
+  }
+]
