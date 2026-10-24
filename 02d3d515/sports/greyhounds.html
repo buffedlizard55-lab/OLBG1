@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Greyhounds · OLBG research desk</title>
+<meta name="description" content="Source-linked match research: our own lines, a clear pick for each match and written analysis.">
+<meta name="color-scheme" content="light">
+<style>
+:root{
+  --bg:#f5f7fa;--surface:#fff;--ink:#101828;--muted:#667085;--line:#e4e7ec;
+  --accent:#0b6b4f;--accent-ink:#08543e;--soft:#ecfdf3;--amber:#b54708;--amber-soft:#fffaeb;
+  --red:#b42318;--red-soft:#fef3f2;--blue:#175cd3;--blue-soft:#eff8ff;--radius:14px;
+  --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent-ink);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.top .wrap{display:flex;align-items:center;gap:18px;min-height:62px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:750;letter-spacing:-.01em;color:var(--ink)}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:11px;letter-spacing:.09em;text-transform:uppercase}
+nav.main{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav.main a{padding:8px 11px;border-radius:9px;color:#344054;font-size:14px;font-weight:600}
+nav.main a:hover{background:#f2f4f7;text-decoration:none}
+nav.main a[aria-current="page"]{background:var(--soft);color:var(--accent-ink)}
+.hero{padding:34px 0 10px}
+.eyebrow{margin:0 0 8px;color:var(--accent-ink);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(28px,4vw,40px);line-height:1.12;letter-spacing:-.02em}
+.lede{color:var(--muted);max-width:74ch;margin:12px 0 0;font-size:17px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:22px 0 6px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:26px;letter-spacing:-.02em;line-height:1.1}
+.kpi span{color:var(--muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.07em}
+section{margin:34px 0}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:12px;flex-wrap:wrap}
+h2{margin:0;font-size:23px;letter-spacing:-.015em}
+h3{margin:0 0 6px;font-size:17px}
+.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px;max-width:80ch}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.pad{padding:18px}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+caption{text-align:left;padding:14px 16px 0;color:var(--muted);font-size:13px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:#fafbfc;color:#475467;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fcfcfd}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pick{font-weight:750}
+.match{font-weight:600}
+.sub{color:var(--muted);font-size:12.5px;display:block}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:750;letter-spacing:.02em;border:1px solid transparent;white-space:nowrap}
+.badge.high{background:var(--soft);color:var(--accent-ink);border-color:#abefc6}
+.badge.medium{background:var(--amber-soft);color:var(--amber);border-color:#fedf89}
+.badge.low{background:#f2f4f7;color:#475467;border-color:#e4e7ec}
+.badge.info{background:var(--blue-soft);color:var(--blue);border-color:#b2ddff}
+.badge.warn{background:var(--red-soft);color:var(--red);border-color:#fecdca}
+.chip{display:inline-block;padding:1px 7px;border-radius:6px;background:#f2f4f7;color:#475467;font-size:11.5px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.card.predict h3{font-size:16px;margin-bottom:2px}
+.card .meta{color:var(--muted);font-size:12.5px;margin-bottom:10px}
+.card p.body{margin:0;font-size:14.5px}
+.pickline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0 10px}
+.pickline b{font-size:15px}
+.facts{display:flex;gap:18px;flex-wrap:wrap;margin:10px 0 0;padding:10px 0 0;border-top:1px dashed var(--line);font-size:12.5px;color:var(--muted)}
+.facts b{color:var(--ink);font-weight:700}
+.notice{display:flex;gap:10px;align-items:flex-start;background:var(--amber-soft);border:1px solid #fedf89;color:#7a2e0e;border-radius:12px;padding:12px 14px;font-size:14px}
+.notice.green{background:var(--soft);border-color:#abefc6;color:#08543e}
+.notice.red{background:var(--red-soft);border-color:#fecdca;color:#7a271a}
+.notice p{margin:0}
+.srclink{font-size:12.5px;font-weight:650;white-space:nowrap}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.tabs a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:13px;font-weight:650;color:#344054}
+.tabs a:hover{background:#f9fafb;text-decoration:none}
+.crumbs{color:var(--muted);font-size:13px;margin:18px 0 0}
+.crumbs a{color:var(--muted)}
+footer{margin:48px 0 40px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px}
+footer p{margin:6px 0}
+.sportgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.sportcard{display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);color:var(--ink)}
+.sportcard:hover{border-color:#abefc6;text-decoration:none}
+.sportcard strong{display:block;font-size:15px}
+.sportcard span{color:var(--muted);font-size:12.5px}
+.empty{color:var(--muted);font-size:14px;font-style:italic}
+@media (max-width:900px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .grid,.grid3,.sportgrid{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  nav.main{width:100%;margin:8px 0 4px}
+  .top .wrap{min-height:0;padding-top:10px;padding-bottom:10px}
+  th,td{padding:9px 10px}
+}
+</style>
+</head><body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../index.html"><span class="dot"></span><span>OLBG research desk<small>24 Oct 2026 · source-linked</small></span></a>
+  <nav class="main" aria-label="Primary"><a href="../index.html">Summary</a><a href="../picks.html">Picks</a><a href="../matches.html">Matches</a><a href="../markets.html">Our lines</a><a href="../predictions.html">Predictions</a><a href="../sports.html" aria-current="page">Sports</a><a href="../sources.html">Sources</a><a href="../methodology.html">Method</a><a href="../flagged.html">Flagged</a><a href="../repo-audit.html">Repo audit</a></nav>
+</div></header>
+<main class="wrap">
+
+<p class="crumbs"><a href="../index.html">Summary</a> / <a href="../sports.html">Sports</a> / Greyhounds</p>
+<div class="hero"><p class="eyebrow">GBGB</p><h1>Greyhounds</h1>
+<p class="lede">0 priced selection(s) from 0 confirmed fixture(s). Picks come first; the fixtures and our lines follow.</p></div>
+<div class="notice red"><p><strong>No confirmed pick today.</strong> The reason is in the flag list below. The fixture may still exist — it is simply not priced without official form.</p></div>
+<section><div class="section-head"><div><h2>Picks</h2><p>Bold text is the bet. Fair price is ours, zero-vig.</p></div></div><p class="empty">No priced selection in this view.</p></section>
+<section><div class="section-head"><div><h2>Confirmed fixtures</h2><p>Start times in UTC, from the official schedule.</p></div></div>
+<p class="empty">No official fixture confirmed for this sport today.</p></section>
+<section><div class="section-head"><div><h2>Our lines</h2><p>Only markets the official inputs support.</p></div></div><p class="empty">No line originated for this sport today.</p></section>
+<section><div class="section-head"><div><h2>What is missing</h2></div></div><div class="notice red"><p><strong>F-03 · Greyhound entries on the hub were expired or unverifiable</strong><br>The greyhound hub lists today&#x27;s graded races, several already marked Expired, and no official GBGB card was read for any of them. Publishing a pick without an official card would be invention, so the sport is carried as a gap. <a href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener noreferrer">OLBG Greyhounds hub (discovery) ↗</a></p></div><div class="notice"><p><strong>F-08 · Start times for US sports come from the OLBG display</strong><br>NHL start times are taken from api-web.nhle.com and MLB&#x27;s from statsapi.mlb.com. NBA start times are converted from the US Eastern times displayed on OLBG (UTC+4 in October); NBA.com confirms eight games on 24 October but its fixture list did not render, so the individual times are flagged as OLBG-sourced. <a href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA games (8 scheduled 24 Oct) ↗</a></p></div><div class="notice"><p><strong>F-09 · Several season records could not be captured</strong><br>NHL standings were read as paginated JSON; clubs beyond the pages read (Los Angeles, New York Rangers, Columbus, Nashville, Pittsburgh) have blank records rather than estimates, and their fixtures carry no line. <a href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL standings ↗</a></p></div><div class="notice"><p><strong>F-10 · Injury and availability fields are blank, not guessed</strong><br>No official injury report was read for any published fixture. Every injury cell on the site is blank and says why, rather than naming a player who may or may not be available. <a href="https://www.nhl.com/info/injury-report" target="_blank" rel="noopener noreferrer">NHL injury report page (not read) ↗</a></p></div><div class="notice red"><p><strong>F-11 · Coverage is short of the five-per-sport target</strong><br>The brief asks for five written predictions per sport per day. This desk publishes 21 priced selections across 8 sports. Sports without a confirmed fixture and confirmed form are carried as gaps rather than filled with invented analysis. The shortfall is listed per sport in the coverage table. <a href="https://www.olbg.com/betting-tips" target="_blank" rel="noopener noreferrer">OLBG all-sports hub (discovery) ↗</a></p></div><div class="notice"><p><strong>F-12 · Some kick-off conversions rely on a published local time</strong><br>Top 14 kick-offs are published in French local time and Cork finals in Irish local time; both are converted to UTC here (CEST = UTC+2, IST = UTC+1). The ATP final time, and the venue for the Pakistan ODI, come from the OLBG listing because the official pages did not publish them; both are marked in the sources table. <a href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Top 14 calendar ↗</a></p></div>
+</section>
+
+<footer>
+  <p><strong>What this site is.</strong> An independent research dashboard. Prices are our own fair (zero-vig) estimates, not bookmaker quotes. A pick is an opinion, not a guarantee. 18+.</p>
+  <p>Data read 2026-10-24T17:45:00Z · <a href="../methodology.html">How the lines are made</a> · <a href="../flagged.html">What could not be confirmed</a> · <a href="https://github.com/buffedlizard55-lab/OLBG1">Repository</a></p>
+  <p>Not affiliated with OLBG, the NBA, the NHL, MLB, the ATP, Formula 1, the LNR, the PGA TOUR or Cork GAA.</p>
+</footer>
+</main></body></html>

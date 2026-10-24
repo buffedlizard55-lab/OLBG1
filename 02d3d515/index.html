@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Executive summary · OLBG research desk</title>
+<meta name="description" content="Today&#x27;s highest-confidence picks, the full card, and coverage across fifteen sports.">
+<meta name="color-scheme" content="light">
+<style>
+:root{
+  --bg:#f5f7fa;--surface:#fff;--ink:#101828;--muted:#667085;--line:#e4e7ec;
+  --accent:#0b6b4f;--accent-ink:#08543e;--soft:#ecfdf3;--amber:#b54708;--amber-soft:#fffaeb;
+  --red:#b42318;--red-soft:#fef3f2;--blue:#175cd3;--blue-soft:#eff8ff;--radius:14px;
+  --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent-ink);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.top .wrap{display:flex;align-items:center;gap:18px;min-height:62px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:750;letter-spacing:-.01em;color:var(--ink)}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:11px;letter-spacing:.09em;text-transform:uppercase}
+nav.main{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav.main a{padding:8px 11px;border-radius:9px;color:#344054;font-size:14px;font-weight:600}
+nav.main a:hover{background:#f2f4f7;text-decoration:none}
+nav.main a[aria-current="page"]{background:var(--soft);color:var(--accent-ink)}
+.hero{padding:34px 0 10px}
+.eyebrow{margin:0 0 8px;color:var(--accent-ink);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(28px,4vw,40px);line-height:1.12;letter-spacing:-.02em}
+.lede{color:var(--muted);max-width:74ch;margin:12px 0 0;font-size:17px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:22px 0 6px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:26px;letter-spacing:-.02em;line-height:1.1}
+.kpi span{color:var(--muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.07em}
+section{margin:34px 0}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:12px;flex-wrap:wrap}
+h2{margin:0;font-size:23px;letter-spacing:-.015em}
+h3{margin:0 0 6px;font-size:17px}
+.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px;max-width:80ch}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.pad{padding:18px}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+caption{text-align:left;padding:14px 16px 0;color:var(--muted);font-size:13px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:#fafbfc;color:#475467;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fcfcfd}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pick{font-weight:750}
+.match{font-weight:600}
+.sub{color:var(--muted);font-size:12.5px;display:block}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:750;letter-spacing:.02em;border:1px solid transparent;white-space:nowrap}
+.badge.high{background:var(--soft);color:var(--accent-ink);border-color:#abefc6}
+.badge.medium{background:var(--amber-soft);color:var(--amber);border-color:#fedf89}
+.badge.low{background:#f2f4f7;color:#475467;border-color:#e4e7ec}
+.badge.info{background:var(--blue-soft);color:var(--blue);border-color:#b2ddff}
+.badge.warn{background:var(--red-soft);color:var(--red);border-color:#fecdca}
+.chip{display:inline-block;padding:1px 7px;border-radius:6px;background:#f2f4f7;color:#475467;font-size:11.5px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.card.predict h3{font-size:16px;margin-bottom:2px}
+.card .meta{color:var(--muted);font-size:12.5px;margin-bottom:10px}
+.card p.body{margin:0;font-size:14.5px}
+.pickline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0 10px}
+.pickline b{font-size:15px}
+.facts{display:flex;gap:18px;flex-wrap:wrap;margin:10px 0 0;padding:10px 0 0;border-top:1px dashed var(--line);font-size:12.5px;color:var(--muted)}
+.facts b{color:var(--ink);font-weight:700}
+.notice{display:flex;gap:10px;align-items:flex-start;background:var(--amber-soft);border:1px solid #fedf89;color:#7a2e0e;border-radius:12px;padding:12px 14px;font-size:14px}
+.notice.green{background:var(--soft);border-color:#abefc6;color:#08543e}
+.notice.red{background:var(--red-soft);border-color:#fecdca;color:#7a271a}
+.notice p{margin:0}
+.srclink{font-size:12.5px;font-weight:650;white-space:nowrap}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.tabs a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:13px;font-weight:650;color:#344054}
+.tabs a:hover{background:#f9fafb;text-decoration:none}
+.crumbs{color:var(--muted);font-size:13px;margin:18px 0 0}
+.crumbs a{color:var(--muted)}
+footer{margin:48px 0 40px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px}
+footer p{margin:6px 0}
+.sportgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.sportcard{display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);color:var(--ink)}
+.sportcard:hover{border-color:#abefc6;text-decoration:none}
+.sportcard strong{display:block;font-size:15px}
+.sportcard span{color:var(--muted);font-size:12.5px}
+.empty{color:var(--muted);font-size:14px;font-style:italic}
+@media (max-width:900px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .grid,.grid3,.sportgrid{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  nav.main{width:100%;margin:8px 0 4px}
+  .top .wrap{min-height:0;padding-top:10px;padding-bottom:10px}
+  th,td{padding:9px 10px}
+}
+</style>
+</head><body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html"><span class="dot"></span><span>OLBG research desk<small>24 Oct 2026 · source-linked</small></span></a>
+  <nav class="main" aria-label="Primary"><a href="index.html" aria-current="page">Summary</a><a href="picks.html">Picks</a><a href="matches.html">Matches</a><a href="markets.html">Our lines</a><a href="predictions.html">Predictions</a><a href="sports.html">Sports</a><a href="sources.html">Sources</a><a href="methodology.html">Method</a><a href="flagged.html">Flagged</a><a href="repo-audit.html">Repo audit</a></nav>
+</div></header>
+<main class="wrap">
+
+<div class="hero">
+  <p class="eyebrow">Executive summary · 24 October 2026</p>
+  <h1>The picks, the match, the reasoning — in that order.</h1>
+  <p class="lede">Every pick below is a match we can price from data published by the sport's own governing body.
+  Each row says what to back, at what price, how likely we think it is, and links the source.
+  If we could not confirm something, it is blank and listed on the <a href="flagged.html">Flagged</a> page.</p>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><b>21</b><span>Priced picks</span></div>
+  <div class="kpi"><b>7</b><span>High confidence</span></div>
+  <div class="kpi"><b>27</b><span>Fixtures tracked</span></div>
+  <div class="kpi"><b>8/15</b><span>Sports with a pick</span></div>
+  <div class="kpi"><b>12</b><span>Flagged items</span></div>
+</div>
+
+<div class="notice green"><p><strong>Read the summary first.</strong> 7 high-confidence picks across
+3 sports, 6 selections starting today and 13 tomorrow.
+The rest of the card sits below; each pick has one written prediction and one official link.</p></div>
+
+<section>
+  <div class="section-head"><div><h2>High-confidence picks</h2>
+  <p>Our strongest tier: a price inside the brief's −250…+10000 window, an estimated win chance of at least 58%,
+  and official form data for <em>both</em> sides of the match. Picks priced shorter than −250 are moved to Medium and labelled, because the brief excludes that range.</p></div>
+  <a class="srclink" href="picks.html">All 21 picks →</a></div>
+  <div class="panel table-wrap"><table><thead><tr><th>Confidence</th><th>Sport</th><th>Match &amp; start</th><th>Pick</th><th class="num">Est. win</th><th>Official source</th></tr></thead><tbody><tr><td><span class="badge high">High</span></td><td><a href="sports/basketball.html">Basketball</a><span class="sub">NBA</span></td><td><span class="match">Miami Heat at Charlotte Hornets</span><span class="sub">24 Oct · 22:00 UTC</span></td><td><span class="pick">Charlotte Hornets</span><span class="sub">Match winner · fair -148</span><div class="sub">Miami arrive 0-2 after dropping both opening games, while Charlotte split their first two and come in off a one-point defeat. The Hornets hold home court and a marginally better early record, and the Heat have yet to show scoring consistency in the young season. Take Charlotte on the money line, with the small sample size noted.</div></td><td class="num"><b>59.6%</b><span class="sub">-148</span></td><td><a class="srclink" href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA ↗</a></td></tr><tr><td><span class="badge high">High</span></td><td><a href="sports/ice-hockey.html">Ice Hockey</a><span class="sub">NHL</span></td><td><span class="match">San Jose Sharks at Boston Bruins</span><span class="sub">24 Oct · 23:00 UTC</span></td><td><span class="pick">Boston Bruins</span><span class="sub">Match winner · fair -242</span><div class="sub">Boston bring an 8-2-1 record and a 42-22 goal difference into a home game they have controlled all month, winning four of five at TD Garden. San Jose are 6-4-1 but have won only one game in regulation and have been outscored 37-33, so their record leans on overtime and the shootout. Back the Bruins to win in regulation or better.</div></td><td class="num"><b>70.8%</b><span class="sub">-242</span></td><td><a class="srclink" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">NHL ↗</a></td></tr><tr><td><span class="badge high">High</span></td><td><a href="sports/ice-hockey.html">Ice Hockey</a><span class="sub">NHL</span></td><td><span class="match">San Jose Sharks at Boston Bruins</span><span class="sub">24 Oct · 23:00 UTC</span></td><td><span class="pick">Under 6.5 goals</span><span class="sub">Match total · fair -158</span><div class="sub">Boston have scored 42 and conceded 22 in 11 games, while San Jose have scored 33 and conceded 37 in the same number, and the two attacks have not been converting at a rate that supports a seven-goal night. The Bruins have allowed only six goals across five home games, and the Sharks have managed just one regulation win all season. Take Under 6.5 goals at TD Garden.</div></td><td class="num"><b>61.2%</b><span class="sub">-158</span></td><td><a class="srclink" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">NHL ↗</a></td></tr><tr><td><span class="badge high">High</span></td><td><a href="sports/basketball.html">Basketball</a><span class="sub">NBA</span></td><td><span class="match">San Antonio Spurs at Dallas Mavericks</span><span class="sub">25 Oct · 00:00 UTC</span></td><td><span class="pick">Dallas Mavericks</span><span class="sub">Match winner · fair -148</span><div class="sub">San Antonio have lost both games and travel to a Dallas team that split its opening pair and won its most recent outing. The Mavericks have home court and the better early record, and the Spurs have yet to get a win on the board. Dallas are the selection, with the caveat that two-game samples are thin.</div></td><td class="num"><b>59.6%</b><span class="sub">-148</span></td><td><a class="srclink" href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA ↗</a></td></tr><tr><td><span class="badge high">High</span></td><td><a href="sports/basketball.html">Basketball</a><span class="sub">NBA</span></td><td><span class="match">New Orleans Pelicans at Denver Nuggets</span><span class="sub">25 Oct · 02:00 UTC</span></td><td><span class="pick">Denver Nuggets</span><span class="sub">Match winner · fair -148</span><div class="sub">New Orleans are 0-2 and now travel to Denver, where the altitude and the Nuggets&#x27; frontcourt make life difficult for a team still searching for its first win. Denver lost their opener but were competitive, and Ball Arena is a genuine home edge. Take the Nuggets on the money line.</div></td><td class="num"><b>59.6%</b><span class="sub">-148</span></td><td><a class="srclink" href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA ↗</a></td></tr><tr><td><span class="badge high">High</span></td><td><a href="sports/basketball.html">Basketball</a><span class="sub">NBA</span></td><td><span class="match">Golden State Warriors at Phoenix Suns</span><span class="sub">25 Oct · 03:00 UTC</span></td><td><span class="pick">Phoenix Suns</span><span class="sub">Match winner · fair -148</span><div class="sub">Golden State have lost both games and are on the road for the third time in a week, while Phoenix dropped their opener and return home with a point to prove. The Suns have the better early defensive numbers of the two and the home floor. Take Phoenix, priced as a marginal favourite rather than a lock.</div></td><td class="num"><b>59.6%</b><span class="sub">-148</span></td><td><a class="srclink" href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA ↗</a></td></tr><tr><td><span class="badge high">High</span></td><td><a href="sports/tennis.html">Tennis</a><span class="sub">ATP Tour</span></td><td><span class="match">Daniil Medvedev v Nikoloz Basilashvili</span><span class="sub">25 Oct · 04:00 UTC</span></td><td><span class="pick">Daniil Medvedev</span><span class="sub">Match winner · fair -178</span><div class="sub">Medvedev advanced when Alexander Bublik retired after losing the first set 6-3, leaving him with far less court time than Basilashvili, who needed 6-4 6-7(5) 6-3 and more than two hours to beat Stefanos Tsitsipas. Freshness and the shorter route through the draw favour the Russian. Back Medvedev to win the final, with the caveat that no head-to-head record was captured.</div></td><td class="num"><b>64.0%</b><span class="sub">-178</span></td><td><a class="srclink" href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener noreferrer">ATP Tour ↗</a></td></tr></tbody></table></div>
+</section>
+
+<section>
+  <div class="section-head"><div><h2>The full card</h2>
+  <p>Every pick we publish, ordered by confidence and then by start time. Today is 24 October UTC; late US games carry a 25 October UTC start.</p></div>
+  <a class="srclink" href="predictions.html">Read all 21 predictions →</a></div>
+  <div class="panel table-wrap"><table><thead><tr><th>Confidence</th><th>Sport</th><th>Match &amp; start</th><th>Pick</th><th class="num">Est. win</th><th>Official source</th></tr></thead><tbody><tr><td><span class="badge high">High</span></td><td><a href="sports/basketball.html">Basketball</a><span class="sub">NBA</span></td><td><span class="match">Miami Heat at Charlotte Hornets</span><span class="sub">24 Oct · 22:00 UTC</span></td><td><span class="pick">Charlotte Hornets</span><span class="sub">Match winner · fair -148</span></td><td class="num"><b>59.6%</b><span class="sub">-148</span></td><td><a class="srclink" href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA ↗</a></td></tr><tr><td><span class="badge high">High</span></td><td><a href="sports/ice-hockey.html">Ice Hockey</a><span class="sub">NHL</span></td><td><span class="match">San Jose Sharks at Boston Bruins</span><span class="sub">24 Oct · 23:00 UTC</span></td><td><span class="pick">Boston Bruins</span><span class="sub">Match winner · fair -242</span></td><td class="num"><b>70.8%</b><span class="sub">-242</span></td><td><a class="srclink" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">NHL ↗</a></td></tr><tr><td><span class="badge high">High</span></td><td><a href="sports/ice-hockey.html">Ice Hockey</a><span class="sub">NHL</span></td><td><span class="match">San Jose Sharks at Boston Bruins</span><span class="sub">24 Oct · 23:00 UTC</span></td><td><span class="pick">Under 6.5 goals</span><span class="sub">Match total · fair -158</span></td><td class="num"><b>61.2%</b><span class="sub">-158</span></td><td><a class="srclink" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">NHL ↗</a></td></tr><tr><td><span class="badge high">High</span></td><td><a href="sports/basketball.html">Basketball</a><span class="sub">NBA</span></td><td><span class="match">San Antonio Spurs at Dallas Mavericks</span><span class="sub">25 Oct · 00:00 UTC</span></td><td><span class="pick">Dallas Mavericks</span><span class="sub">Match winner · fair -148</span></td><td class="num"><b>59.6%</b><span class="sub">-148</span></td><td><a class="srclink" href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA ↗</a></td></tr><tr><td><span class="badge high">High</span></td><td><a href="sports/basketball.html">Basketball</a><span class="sub">NBA</span></td><td><span class="match">New Orleans Pelicans at Denver Nuggets</span><span class="sub">25 Oct · 02:00 UTC</span></td><td><span class="pick">Denver Nuggets</span><span class="sub">Match winner · fair -148</span></td><td class="num"><b>59.6%</b><span class="sub">-148</span></td><td><a class="srclink" href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA ↗</a></td></tr><tr><td><span class="badge high">High</span></td><td><a href="sports/basketball.html">Basketball</a><span class="sub">NBA</span></td><td><span class="match">Golden State Warriors at Phoenix Suns</span><span class="sub">25 Oct · 03:00 UTC</span></td><td><span class="pick">Phoenix Suns</span><span class="sub">Match winner · fair -148</span></td><td class="num"><b>59.6%</b><span class="sub">-148</span></td><td><a class="srclink" href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA ↗</a></td></tr><tr><td><span class="badge high">High</span></td><td><a href="sports/tennis.html">Tennis</a><span class="sub">ATP Tour</span></td><td><span class="match">Daniil Medvedev v Nikoloz Basilashvili</span><span class="sub">25 Oct · 04:00 UTC</span></td><td><span class="pick">Daniil Medvedev</span><span class="sub">Match winner · fair -178</span></td><td class="num"><b>64.0%</b><span class="sub">-178</span></td><td><a class="srclink" href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener noreferrer">ATP Tour ↗</a></td></tr><tr><td><span class="badge medium">Medium</span></td><td><a href="sports/rugby-union.html">Rugby Union</a><span class="sub">Top 14</span></td><td><span class="match">Section Paloise v RC Toulon</span><span class="sub">24 Oct · 19:00 UTC</span></td><td><span class="pick">Section Paloise</span><span class="sub">Match winner · fair -121</span></td><td class="num"><b>54.8%</b><span class="sub">-121</span></td><td><a class="srclink" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Ligue Nationale de Rugby ↗</a></td></tr><tr><td><span class="badge medium">Medium</span></td><td><a href="sports/basketball.html">Basketball</a><span class="sub">NBA</span></td><td><span class="match">Milwaukee Bucks at Philadelphia 76ers</span><span class="sub">24 Oct · 23:30 UTC</span></td><td><span class="pick">Philadelphia 76ers</span><span class="sub">Match winner · fair -395</span></td><td class="num"><b>79.8%</b><span class="sub">-395</span></td><td><a class="srclink" href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA ↗</a></td></tr><tr><td><span class="badge medium">Medium</span></td><td><a href="sports/baseball.html">Baseball</a><span class="sub">MLB World Series</span></td><td><span class="match">Tampa Bay Rays at Milwaukee Brewers</span><span class="sub">25 Oct · 00:00 UTC</span></td><td><span class="pick">Milwaukee Brewers</span><span class="sub">Match winner · fair -135</span></td><td class="num"><b>57.5%</b><span class="sub">-135</span></td><td><a class="srclink" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;date=2026-10-24&amp;hydrate=team,linescore" target="_blank" rel="noopener noreferrer">MLB ↗</a></td></tr><tr><td><span class="badge medium">Medium</span></td><td><a href="sports/cricket.html">Cricket</a><span class="sub">ODI tri-series</span></td><td><span class="match">Pakistan at England</span><span class="sub">25 Oct · 03:00 UTC</span></td><td><span class="pick">Pakistan</span><span class="sub">Match winner · fair -138</span></td><td class="num"><b>58.0%</b><span class="sub">-138</span></td><td><a class="srclink" href="https://www.pcb.com.pk/news-detail/arafat-minhas-6-40-and-59-sink-england-as-pakistan-win-consecutive-games-in-odi-tri-series.html" target="_blank" rel="noopener noreferrer">Pakistan Cricket Board ↗</a></td></tr><tr><td><span class="badge medium">Medium</span></td><td><a href="sports/motor-racing.html">Motor Racing</a><span class="sub">Formula 1</span></td><td><span class="match">United States Grand Prix</span><span class="sub">25 Oct · 21:00 UTC</span></td><td><span class="pick">Max Verstappen</span><span class="sub">Podium finish · fair -163</span></td><td class="num"><b>62.0%</b><span class="sub">-163</span></td><td><a class="srclink" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 ↗</a></td></tr><tr><td><span class="badge medium">Medium</span></td><td><a href="sports/motor-racing.html">Motor Racing</a><span class="sub">Formula 1</span></td><td><span class="match">United States Grand Prix</span><span class="sub">25 Oct · 21:00 UTC</span></td><td><span class="pick">Charles Leclerc</span><span class="sub">Race winner · fair +285</span></td><td class="num"><b>26.0%</b><span class="sub">+285</span></td><td><a class="srclink" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 ↗</a></td></tr><tr><td><span class="badge medium">Medium</span></td><td><a href="sports/golf.html">Golf</a><span class="sub">PGA TOUR</span></td><td><span class="match">Butterfield Bermuda Championship</span><span class="sub">25 Oct · final round (tee times not captured)</span></td><td><span class="pick">Austin Smotherman</span><span class="sub">Outright winner · fair +233</span></td><td class="num"><b>30.0%</b><span class="sub">+233</span></td><td><a class="srclink" href="https://www.pgatour.com/leaderboard" target="_blank" rel="noopener noreferrer">PGA TOUR ↗</a></td></tr><tr><td><span class="badge low">Low</span></td><td><a href="sports/basketball.html">Basketball</a><span class="sub">NBA</span></td><td><span class="match">Brooklyn Nets at Cleveland Cavaliers</span><span class="sub">24 Oct · 23:30 UTC</span></td><td><span class="pick">Cleveland Cavaliers</span><span class="sub">Match winner · fair -125</span></td><td class="num"><b>55.5%</b><span class="sub">-125</span></td><td><a class="srclink" href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA ↗</a></td></tr><tr><td><span class="badge low">Low</span></td><td><a href="sports/basketball.html">Basketball</a><span class="sub">NBA</span></td><td><span class="match">Washington Wizards at Chicago Bulls</span><span class="sub">25 Oct · 00:00 UTC</span></td><td><span class="pick">Chicago Bulls</span><span class="sub">Match winner · fair -123</span></td><td class="num"><b>55.2%</b><span class="sub">-123</span></td><td><a class="srclink" href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA ↗</a></td></tr><tr><td><span class="badge low">Low</span></td><td><a href="sports/baseball.html">Baseball</a><span class="sub">MLB World Series</span></td><td><span class="match">Tampa Bay Rays at Milwaukee Brewers</span><span class="sub">25 Oct · 00:00 UTC</span></td><td><span class="pick">Under 8.5 runs</span><span class="sub">Match total · fair -120</span></td><td class="num"><b>54.5%</b><span class="sub">-120</span></td><td><a class="srclink" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;date=2026-10-24&amp;hydrate=team,linescore" target="_blank" rel="noopener noreferrer">MLB ↗</a></td></tr><tr><td><span class="badge low">Low</span></td><td><a href="sports/basketball.html">Basketball</a><span class="sub">NBA</span></td><td><span class="match">Houston Rockets at Atlanta Hawks</span><span class="sub">25 Oct · 00:30 UTC</span></td><td><span class="pick">Atlanta Hawks</span><span class="sub">Match winner · fair -123</span></td><td class="num"><b>55.2%</b><span class="sub">-123</span></td><td><a class="srclink" href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA ↗</a></td></tr><tr><td><span class="badge low">Low</span></td><td><a href="sports/rugby-union.html">Rugby Union</a><span class="sub">Top 14</span></td><td><span class="match">Union Bordeaux-Begles v Stade Rochelais</span><span class="sub">25 Oct · 19:05 UTC</span></td><td><span class="pick">Union Bordeaux-Begles</span><span class="sub">Match winner · fair -108</span></td><td class="num"><b>52.0%</b><span class="sub">-108</span></td><td><a class="srclink" href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Ligue Nationale de Rugby ↗</a></td></tr><tr><td><span class="badge low">Low</span></td><td><a href="sports/motor-racing.html">Motor Racing</a><span class="sub">Formula 1</span></td><td><span class="match">United States Grand Prix</span><span class="sub">25 Oct · 21:00 UTC</span></td><td><span class="pick">Kimi Antonelli</span><span class="sub">Top 6 finish · fair -178</span></td><td class="num"><b>64.0%</b><span class="sub">-178</span></td><td><a class="srclink" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 ↗</a></td></tr><tr><td><span class="badge low">Low</span></td><td><a href="sports/golf.html">Golf</a><span class="sub">PGA TOUR</span></td><td><span class="match">Butterfield Bermuda Championship</span><span class="sub">25 Oct · final round (tee times not captured)</span></td><td><span class="pick">Seamus Power</span><span class="sub">Top 10 finish · fair -127</span></td><td class="num"><b>56.0%</b><span class="sub">-127</span></td><td><a class="srclink" href="https://www.pgatour.com/leaderboard" target="_blank" rel="noopener noreferrer">PGA TOUR ↗</a></td></tr></tbody></table></div>
+</section>
+
+<section>
+  <div class="section-head"><div><h2>Written predictions</h2>
+  <p>The reasoning behind our best four selections. Each one names the teams, their form, the specific numbers behind the call and the selection itself.</p></div></div>
+  <div class="grid"><article class="card predict">
+  <div class="meta">Basketball · NBA · 24 Oct · 22:00 UTC</div>
+  <h3>Miami Heat at Charlotte Hornets</h3>
+  <div class="pickline"><span class="badge high">High</span>
+    <b>Charlotte Hornets</b><span class="chip">Match winner</span>
+    <span class="chip">fair -148</span><span class="chip">59.6%</span></div>
+  <p class="body">Miami arrive 0-2 after dropping both opening games, while Charlotte split their first two and come in off a one-point defeat. The Hornets hold home court and a marginally better early record, and the Heat have yet to show scoring consistency in the young season. Take Charlotte on the money line, with the small sample size noted.</p>
+  <div class="facts"><span>Source: <a href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA ↗</a></span>
+  <span>Read 2026-10-24T17:22Z</span></div>
+</article><article class="card predict">
+  <div class="meta">Ice Hockey · NHL · 24 Oct · 23:00 UTC</div>
+  <h3>San Jose Sharks at Boston Bruins</h3>
+  <div class="pickline"><span class="badge high">High</span>
+    <b>Boston Bruins</b><span class="chip">Match winner</span>
+    <span class="chip">fair -242</span><span class="chip">70.8%</span></div>
+  <p class="body">Boston bring an 8-2-1 record and a 42-22 goal difference into a home game they have controlled all month, winning four of five at TD Garden. San Jose are 6-4-1 but have won only one game in regulation and have been outscored 37-33, so their record leans on overtime and the shootout. Back the Bruins to win in regulation or better.</p>
+  <div class="facts"><span>Source: <a href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">NHL ↗</a></span>
+  <span>Read 2026-10-24T17:10Z</span></div>
+</article><article class="card predict">
+  <div class="meta">Ice Hockey · NHL · 24 Oct · 23:00 UTC</div>
+  <h3>San Jose Sharks at Boston Bruins</h3>
+  <div class="pickline"><span class="badge high">High</span>
+    <b>Under 6.5 goals</b><span class="chip">Match total</span>
+    <span class="chip">fair -158</span><span class="chip">61.2%</span></div>
+  <p class="body">Boston have scored 42 and conceded 22 in 11 games, while San Jose have scored 33 and conceded 37 in the same number, and the two attacks have not been converting at a rate that supports a seven-goal night. The Bruins have allowed only six goals across five home games, and the Sharks have managed just one regulation win all season. Take Under 6.5 goals at TD Garden.</p>
+  <div class="facts"><span>Source: <a href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">NHL ↗</a></span>
+  <span>Read 2026-10-24T17:10Z</span></div>
+</article><article class="card predict">
+  <div class="meta">Basketball · NBA · 25 Oct · 00:00 UTC</div>
+  <h3>San Antonio Spurs at Dallas Mavericks</h3>
+  <div class="pickline"><span class="badge high">High</span>
+    <b>Dallas Mavericks</b><span class="chip">Match winner</span>
+    <span class="chip">fair -148</span><span class="chip">59.6%</span></div>
+  <p class="body">San Antonio have lost both games and travel to a Dallas team that split its opening pair and won its most recent outing. The Mavericks have home court and the better early record, and the Spurs have yet to get a win on the board. Dallas are the selection, with the caveat that two-game samples are thin.</p>
+  <div class="facts"><span>Source: <a href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA ↗</a></span>
+  <span>Read 2026-10-24T17:22Z</span></div>
+</article></div>
+</section>
+
+<section>
+  <div class="section-head"><div><h2>Coverage by sport</h2>
+  <p>All fifteen sports in the brief are tracked. Eight have a priced pick today; the rest are published as gaps with the reason rather than filled with unsourced analysis.</p></div>
+  <a class="srclink" href="sports.html">Browse the fifteen sport pages →</a></div>
+  <div class="panel table-wrap"><table><thead><tr><th>Sport</th><th class="num">Fixtures</th><th class="num">Picks</th><th>Confidence mix</th><th>Target</th></tr></thead><tbody><tr><td><a href="sports/ice-hockey.html"><b>Ice Hockey</b></a><span class="sub">NHL.com · api-web.nhle.com</span></td><td class="num">5</td><td class="num">2</td><td><span class="badge high">2 high</span> <span class="badge medium">0 medium</span> <span class="badge low">0 low</span></td><td>short of the five-per-day target</td></tr><tr><td><a href="sports/basketball.html"><b>Basketball</b></a><span class="sub">NBA.com</span></td><td class="num">8</td><td class="num">8</td><td><span class="badge high">4 high</span> <span class="badge medium">1 medium</span> <span class="badge low">3 low</span></td><td>5 per day</td></tr><tr><td><a href="sports/baseball.html"><b>Baseball</b></a><span class="sub">MLB.com · statsapi.mlb.com</span></td><td class="num">1</td><td class="num">2</td><td><span class="badge high">0 high</span> <span class="badge medium">1 medium</span> <span class="badge low">1 low</span></td><td>short of the five-per-day target</td></tr><tr><td><a href="sports/cricket.html"><b>Cricket</b></a><span class="sub">Pakistan Cricket Board</span></td><td class="num">1</td><td class="num">1</td><td><span class="badge high">0 high</span> <span class="badge medium">1 medium</span> <span class="badge low">0 low</span></td><td>short of the five-per-day target</td></tr><tr><td><a href="sports/darts.html"><b>Darts</b></a><span class="sub">PDC</span></td><td class="num">0</td><td class="num">0</td><td><span class="badge warn">no confirmed fixture</span></td><td>no line published</td></tr><tr><td><a href="sports/gaelic-football.html"><b>Gaelic Sports</b></a><span class="sub">Cork GAA</span></td><td class="num">2</td><td class="num">0</td><td><span class="badge info">fixtures only</span></td><td>no line published</td></tr><tr><td><a href="sports/golf.html"><b>Golf</b></a><span class="sub">PGA TOUR</span></td><td class="num">1</td><td class="num">2</td><td><span class="badge high">0 high</span> <span class="badge medium">1 medium</span> <span class="badge low">1 low</span></td><td>short of the five-per-day target</td></tr><tr><td><a href="sports/greyhounds.html"><b>Greyhounds</b></a><span class="sub">GBGB</span></td><td class="num">0</td><td class="num">0</td><td><span class="badge warn">no confirmed fixture</span></td><td>no line published</td></tr><tr><td><a href="sports/handball.html"><b>Handball</b></a><span class="sub">EHF Champions League</span></td><td class="num">5</td><td class="num">0</td><td><span class="badge info">fixtures only</span></td><td>no line published</td></tr><tr><td><a href="sports/motor-racing.html"><b>Motor Racing</b></a><span class="sub">Formula 1</span></td><td class="num">1</td><td class="num">3</td><td><span class="badge high">0 high</span> <span class="badge medium">2 medium</span> <span class="badge low">1 low</span></td><td>short of the five-per-day target</td></tr><tr><td><a href="sports/rugby-league.html"><b>Rugby League</b></a><span class="sub">RFL / NRL</span></td><td class="num">0</td><td class="num">0</td><td><span class="badge warn">no confirmed fixture</span></td><td>no line published</td></tr><tr><td><a href="sports/rugby-union.html"><b>Rugby Union</b></a><span class="sub">LNR Top 14</span></td><td class="num">2</td><td class="num">2</td><td><span class="badge high">0 high</span> <span class="badge medium">1 medium</span> <span class="badge low">1 low</span></td><td>short of the five-per-day target</td></tr><tr><td><a href="sports/snooker.html"><b>Snooker</b></a><span class="sub">World Snooker Tour</span></td><td class="num">0</td><td class="num">0</td><td><span class="badge warn">no confirmed fixture</span></td><td>no line published</td></tr><tr><td><a href="sports/tennis.html"><b>Tennis</b></a><span class="sub">ATP Tour</span></td><td class="num">1</td><td class="num">1</td><td><span class="badge high">1 high</span> <span class="badge medium">0 medium</span> <span class="badge low">0 low</span></td><td>short of the five-per-day target</td></tr><tr><td><a href="sports/volleyball.html"><b>Volleyball</b></a><span class="sub">TAURON Liga</span></td><td class="num">0</td><td class="num">0</td><td><span class="badge warn">no confirmed fixture</span></td><td>no line published</td></tr></tbody></table></div>
+</section>
+
+<section>
+  <div class="section-head"><div><h2>How to read a pick</h2></div></div>
+  <div class="grid3">
+    <div class="card"><h3>1 · The selection</h3><p>The bold text in the Pick column is the bet: a team to win, a total to go under, a driver to finish on the podium. The market and our fair price sit underneath it.</p></div>
+    <div class="card"><h3>2 · The confidence</h3><p>High, Medium or Low. High needs three things at once: a fair price inside the requested window, at least a 58% estimated win chance, and official form for both sides.</p></div>
+    <div class="card"><h3>3 · The evidence</h3><p>Every row links the official page the numbers came from, with the UTC time it was read. Where a value is missing, the cell is blank and the row is on the Flagged page.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>What this site is.</strong> An independent research dashboard. Prices are our own fair (zero-vig) estimates, not bookmaker quotes. A pick is an opinion, not a guarantee. 18+.</p>
+  <p>Data read 2026-10-24T17:45:00Z · <a href="methodology.html">How the lines are made</a> · <a href="flagged.html">What could not be confirmed</a> · <a href="https://github.com/buffedlizard55-lab/OLBG1">Repository</a></p>
+  <p>Not affiliated with OLBG, the NBA, the NHL, MLB, the ATP, Formula 1, the LNR, the PGA TOUR or Cork GAA.</p>
+</footer>
+</main></body></html>

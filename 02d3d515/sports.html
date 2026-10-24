@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sports · OLBG research desk</title>
+<meta name="description" content="Source-linked match research: our own lines, a clear pick for each match and written analysis.">
+<meta name="color-scheme" content="light">
+<style>
+:root{
+  --bg:#f5f7fa;--surface:#fff;--ink:#101828;--muted:#667085;--line:#e4e7ec;
+  --accent:#0b6b4f;--accent-ink:#08543e;--soft:#ecfdf3;--amber:#b54708;--amber-soft:#fffaeb;
+  --red:#b42318;--red-soft:#fef3f2;--blue:#175cd3;--blue-soft:#eff8ff;--radius:14px;
+  --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent-ink);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.top .wrap{display:flex;align-items:center;gap:18px;min-height:62px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:750;letter-spacing:-.01em;color:var(--ink)}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:11px;letter-spacing:.09em;text-transform:uppercase}
+nav.main{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav.main a{padding:8px 11px;border-radius:9px;color:#344054;font-size:14px;font-weight:600}
+nav.main a:hover{background:#f2f4f7;text-decoration:none}
+nav.main a[aria-current="page"]{background:var(--soft);color:var(--accent-ink)}
+.hero{padding:34px 0 10px}
+.eyebrow{margin:0 0 8px;color:var(--accent-ink);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(28px,4vw,40px);line-height:1.12;letter-spacing:-.02em}
+.lede{color:var(--muted);max-width:74ch;margin:12px 0 0;font-size:17px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:22px 0 6px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:26px;letter-spacing:-.02em;line-height:1.1}
+.kpi span{color:var(--muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.07em}
+section{margin:34px 0}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:12px;flex-wrap:wrap}
+h2{margin:0;font-size:23px;letter-spacing:-.015em}
+h3{margin:0 0 6px;font-size:17px}
+.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px;max-width:80ch}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.pad{padding:18px}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+caption{text-align:left;padding:14px 16px 0;color:var(--muted);font-size:13px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:#fafbfc;color:#475467;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fcfcfd}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pick{font-weight:750}
+.match{font-weight:600}
+.sub{color:var(--muted);font-size:12.5px;display:block}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:750;letter-spacing:.02em;border:1px solid transparent;white-space:nowrap}
+.badge.high{background:var(--soft);color:var(--accent-ink);border-color:#abefc6}
+.badge.medium{background:var(--amber-soft);color:var(--amber);border-color:#fedf89}
+.badge.low{background:#f2f4f7;color:#475467;border-color:#e4e7ec}
+.badge.info{background:var(--blue-soft);color:var(--blue);border-color:#b2ddff}
+.badge.warn{background:var(--red-soft);color:var(--red);border-color:#fecdca}
+.chip{display:inline-block;padding:1px 7px;border-radius:6px;background:#f2f4f7;color:#475467;font-size:11.5px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.card.predict h3{font-size:16px;margin-bottom:2px}
+.card .meta{color:var(--muted);font-size:12.5px;margin-bottom:10px}
+.card p.body{margin:0;font-size:14.5px}
+.pickline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0 10px}
+.pickline b{font-size:15px}
+.facts{display:flex;gap:18px;flex-wrap:wrap;margin:10px 0 0;padding:10px 0 0;border-top:1px dashed var(--line);font-size:12.5px;color:var(--muted)}
+.facts b{color:var(--ink);font-weight:700}
+.notice{display:flex;gap:10px;align-items:flex-start;background:var(--amber-soft);border:1px solid #fedf89;color:#7a2e0e;border-radius:12px;padding:12px 14px;font-size:14px}
+.notice.green{background:var(--soft);border-color:#abefc6;color:#08543e}
+.notice.red{background:var(--red-soft);border-color:#fecdca;color:#7a271a}
+.notice p{margin:0}
+.srclink{font-size:12.5px;font-weight:650;white-space:nowrap}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.tabs a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:13px;font-weight:650;color:#344054}
+.tabs a:hover{background:#f9fafb;text-decoration:none}
+.crumbs{color:var(--muted);font-size:13px;margin:18px 0 0}
+.crumbs a{color:var(--muted)}
+footer{margin:48px 0 40px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px}
+footer p{margin:6px 0}
+.sportgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.sportcard{display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);color:var(--ink)}
+.sportcard:hover{border-color:#abefc6;text-decoration:none}
+.sportcard strong{display:block;font-size:15px}
+.sportcard span{color:var(--muted);font-size:12.5px}
+.empty{color:var(--muted);font-size:14px;font-style:italic}
+@media (max-width:900px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .grid,.grid3,.sportgrid{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  nav.main{width:100%;margin:8px 0 4px}
+  .top .wrap{min-height:0;padding-top:10px;padding-bottom:10px}
+  th,td{padding:9px 10px}
+}
+</style>
+</head><body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html"><span class="dot"></span><span>OLBG research desk<small>24 Oct 2026 · source-linked</small></span></a>
+  <nav class="main" aria-label="Primary"><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="matches.html">Matches</a><a href="markets.html">Our lines</a><a href="predictions.html">Predictions</a><a href="sports.html" aria-current="page">Sports</a><a href="sources.html">Sources</a><a href="methodology.html">Method</a><a href="flagged.html">Flagged</a><a href="repo-audit.html">Repo audit</a></nav>
+</div></header>
+<main class="wrap">
+
+<div class="hero"><p class="eyebrow">By category</p><h1>Fifteen sports, one page each</h1>
+<p class="lede">Open a sport to see its picks first, then its fixtures, our lines and the reason anything is missing.</p></div>
+<div class="sportgrid"><a class="sportcard" href="sports/ice-hockey.html"><strong>Ice Hockey</strong>
+<span>5 fixture(s) · 2 pick(s) · NHL.com · api-web.nhle.com</span></a><a class="sportcard" href="sports/basketball.html"><strong>Basketball</strong>
+<span>8 fixture(s) · 8 pick(s) · NBA.com</span></a><a class="sportcard" href="sports/baseball.html"><strong>Baseball</strong>
+<span>1 fixture(s) · 2 pick(s) · MLB.com · statsapi.mlb.com</span></a><a class="sportcard" href="sports/cricket.html"><strong>Cricket</strong>
+<span>1 fixture(s) · 1 pick(s) · Pakistan Cricket Board</span></a><a class="sportcard" href="sports/darts.html"><strong>Darts</strong>
+<span>0 fixture(s) · 0 pick(s) · PDC</span></a><a class="sportcard" href="sports/gaelic-football.html"><strong>Gaelic Sports</strong>
+<span>2 fixture(s) · 0 pick(s) · Cork GAA</span></a><a class="sportcard" href="sports/golf.html"><strong>Golf</strong>
+<span>1 fixture(s) · 2 pick(s) · PGA TOUR</span></a><a class="sportcard" href="sports/greyhounds.html"><strong>Greyhounds</strong>
+<span>0 fixture(s) · 0 pick(s) · GBGB</span></a><a class="sportcard" href="sports/handball.html"><strong>Handball</strong>
+<span>5 fixture(s) · 0 pick(s) · EHF Champions League</span></a><a class="sportcard" href="sports/motor-racing.html"><strong>Motor Racing</strong>
+<span>1 fixture(s) · 3 pick(s) · Formula 1</span></a><a class="sportcard" href="sports/rugby-league.html"><strong>Rugby League</strong>
+<span>0 fixture(s) · 0 pick(s) · RFL / NRL</span></a><a class="sportcard" href="sports/rugby-union.html"><strong>Rugby Union</strong>
+<span>2 fixture(s) · 2 pick(s) · LNR Top 14</span></a><a class="sportcard" href="sports/snooker.html"><strong>Snooker</strong>
+<span>0 fixture(s) · 0 pick(s) · World Snooker Tour</span></a><a class="sportcard" href="sports/tennis.html"><strong>Tennis</strong>
+<span>1 fixture(s) · 1 pick(s) · ATP Tour</span></a><a class="sportcard" href="sports/volleyball.html"><strong>Volleyball</strong>
+<span>0 fixture(s) · 0 pick(s) · TAURON Liga</span></a></div>
+<section style="margin-top:24px"><div class="section-head"><div><h2>Coverage at a glance</h2>
+<p>Fixtures confirmed on an official schedule, and how many of them carry a published line.</p></div></div>
+<div class="panel table-wrap"><table><thead><tr><th>Sport</th><th class="num">Fixtures</th><th class="num">Picks</th><th>Confidence mix</th><th>Target</th></tr></thead><tbody><tr><td><a href="sports/ice-hockey.html"><b>Ice Hockey</b></a><span class="sub">NHL.com · api-web.nhle.com</span></td><td class="num">5</td><td class="num">2</td><td><span class="badge high">2 high</span> <span class="badge medium">0 medium</span> <span class="badge low">0 low</span></td><td>short of the five-per-day target</td></tr><tr><td><a href="sports/basketball.html"><b>Basketball</b></a><span class="sub">NBA.com</span></td><td class="num">8</td><td class="num">8</td><td><span class="badge high">4 high</span> <span class="badge medium">1 medium</span> <span class="badge low">3 low</span></td><td>5 per day</td></tr><tr><td><a href="sports/baseball.html"><b>Baseball</b></a><span class="sub">MLB.com · statsapi.mlb.com</span></td><td class="num">1</td><td class="num">2</td><td><span class="badge high">0 high</span> <span class="badge medium">1 medium</span> <span class="badge low">1 low</span></td><td>short of the five-per-day target</td></tr><tr><td><a href="sports/cricket.html"><b>Cricket</b></a><span class="sub">Pakistan Cricket Board</span></td><td class="num">1</td><td class="num">1</td><td><span class="badge high">0 high</span> <span class="badge medium">1 medium</span> <span class="badge low">0 low</span></td><td>short of the five-per-day target</td></tr><tr><td><a href="sports/darts.html"><b>Darts</b></a><span class="sub">PDC</span></td><td class="num">0</td><td class="num">0</td><td><span class="badge warn">no confirmed fixture</span></td><td>no line published</td></tr><tr><td><a href="sports/gaelic-football.html"><b>Gaelic Sports</b></a><span class="sub">Cork GAA</span></td><td class="num">2</td><td class="num">0</td><td><span class="badge info">fixtures only</span></td><td>no line published</td></tr><tr><td><a href="sports/golf.html"><b>Golf</b></a><span class="sub">PGA TOUR</span></td><td class="num">1</td><td class="num">2</td><td><span class="badge high">0 high</span> <span class="badge medium">1 medium</span> <span class="badge low">1 low</span></td><td>short of the five-per-day target</td></tr><tr><td><a href="sports/greyhounds.html"><b>Greyhounds</b></a><span class="sub">GBGB</span></td><td class="num">0</td><td class="num">0</td><td><span class="badge warn">no confirmed fixture</span></td><td>no line published</td></tr><tr><td><a href="sports/handball.html"><b>Handball</b></a><span class="sub">EHF Champions League</span></td><td class="num">5</td><td class="num">0</td><td><span class="badge info">fixtures only</span></td><td>no line published</td></tr><tr><td><a href="sports/motor-racing.html"><b>Motor Racing</b></a><span class="sub">Formula 1</span></td><td class="num">1</td><td class="num">3</td><td><span class="badge high">0 high</span> <span class="badge medium">2 medium</span> <span class="badge low">1 low</span></td><td>short of the five-per-day target</td></tr><tr><td><a href="sports/rugby-league.html"><b>Rugby League</b></a><span class="sub">RFL / NRL</span></td><td class="num">0</td><td class="num">0</td><td><span class="badge warn">no confirmed fixture</span></td><td>no line published</td></tr><tr><td><a href="sports/rugby-union.html"><b>Rugby Union</b></a><span class="sub">LNR Top 14</span></td><td class="num">2</td><td class="num">2</td><td><span class="badge high">0 high</span> <span class="badge medium">1 medium</span> <span class="badge low">1 low</span></td><td>short of the five-per-day target</td></tr><tr><td><a href="sports/snooker.html"><b>Snooker</b></a><span class="sub">World Snooker Tour</span></td><td class="num">0</td><td class="num">0</td><td><span class="badge warn">no confirmed fixture</span></td><td>no line published</td></tr><tr><td><a href="sports/tennis.html"><b>Tennis</b></a><span class="sub">ATP Tour</span></td><td class="num">1</td><td class="num">1</td><td><span class="badge high">1 high</span> <span class="badge medium">0 medium</span> <span class="badge low">0 low</span></td><td>short of the five-per-day target</td></tr><tr><td><a href="sports/volleyball.html"><b>Volleyball</b></a><span class="sub">TAURON Liga</span></td><td class="num">0</td><td class="num">0</td><td><span class="badge warn">no confirmed fixture</span></td><td>no line published</td></tr></tbody></table></div></section>
+
+<footer>
+  <p><strong>What this site is.</strong> An independent research dashboard. Prices are our own fair (zero-vig) estimates, not bookmaker quotes. A pick is an opinion, not a guarantee. 18+.</p>
+  <p>Data read 2026-10-24T17:45:00Z · <a href="methodology.html">How the lines are made</a> · <a href="flagged.html">What could not be confirmed</a> · <a href="https://github.com/buffedlizard55-lab/OLBG1">Repository</a></p>
+  <p>Not affiliated with OLBG, the NBA, the NHL, MLB, the ATP, Formula 1, the LNR, the PGA TOUR or Cork GAA.</p>
+</footer>
+</main></body></html>

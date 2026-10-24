@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repo audit · OLBG research desk</title>
+<meta name="description" content="Source-linked match research: our own lines, a clear pick for each match and written analysis.">
+<meta name="color-scheme" content="light">
+<style>
+:root{
+  --bg:#f5f7fa;--surface:#fff;--ink:#101828;--muted:#667085;--line:#e4e7ec;
+  --accent:#0b6b4f;--accent-ink:#08543e;--soft:#ecfdf3;--amber:#b54708;--amber-soft:#fffaeb;
+  --red:#b42318;--red-soft:#fef3f2;--blue:#175cd3;--blue-soft:#eff8ff;--radius:14px;
+  --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent-ink);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.top .wrap{display:flex;align-items:center;gap:18px;min-height:62px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:750;letter-spacing:-.01em;color:var(--ink)}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:11px;letter-spacing:.09em;text-transform:uppercase}
+nav.main{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav.main a{padding:8px 11px;border-radius:9px;color:#344054;font-size:14px;font-weight:600}
+nav.main a:hover{background:#f2f4f7;text-decoration:none}
+nav.main a[aria-current="page"]{background:var(--soft);color:var(--accent-ink)}
+.hero{padding:34px 0 10px}
+.eyebrow{margin:0 0 8px;color:var(--accent-ink);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(28px,4vw,40px);line-height:1.12;letter-spacing:-.02em}
+.lede{color:var(--muted);max-width:74ch;margin:12px 0 0;font-size:17px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:22px 0 6px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:26px;letter-spacing:-.02em;line-height:1.1}
+.kpi span{color:var(--muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.07em}
+section{margin:34px 0}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:12px;flex-wrap:wrap}
+h2{margin:0;font-size:23px;letter-spacing:-.015em}
+h3{margin:0 0 6px;font-size:17px}
+.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px;max-width:80ch}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.pad{padding:18px}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+caption{text-align:left;padding:14px 16px 0;color:var(--muted);font-size:13px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:#fafbfc;color:#475467;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fcfcfd}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pick{font-weight:750}
+.match{font-weight:600}
+.sub{color:var(--muted);font-size:12.5px;display:block}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:750;letter-spacing:.02em;border:1px solid transparent;white-space:nowrap}
+.badge.high{background:var(--soft);color:var(--accent-ink);border-color:#abefc6}
+.badge.medium{background:var(--amber-soft);color:var(--amber);border-color:#fedf89}
+.badge.low{background:#f2f4f7;color:#475467;border-color:#e4e7ec}
+.badge.info{background:var(--blue-soft);color:var(--blue);border-color:#b2ddff}
+.badge.warn{background:var(--red-soft);color:var(--red);border-color:#fecdca}
+.chip{display:inline-block;padding:1px 7px;border-radius:6px;background:#f2f4f7;color:#475467;font-size:11.5px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.card.predict h3{font-size:16px;margin-bottom:2px}
+.card .meta{color:var(--muted);font-size:12.5px;margin-bottom:10px}
+.card p.body{margin:0;font-size:14.5px}
+.pickline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0 10px}
+.pickline b{font-size:15px}
+.facts{display:flex;gap:18px;flex-wrap:wrap;margin:10px 0 0;padding:10px 0 0;border-top:1px dashed var(--line);font-size:12.5px;color:var(--muted)}
+.facts b{color:var(--ink);font-weight:700}
+.notice{display:flex;gap:10px;align-items:flex-start;background:var(--amber-soft);border:1px solid #fedf89;color:#7a2e0e;border-radius:12px;padding:12px 14px;font-size:14px}
+.notice.green{background:var(--soft);border-color:#abefc6;color:#08543e}
+.notice.red{background:var(--red-soft);border-color:#fecdca;color:#7a271a}
+.notice p{margin:0}
+.srclink{font-size:12.5px;font-weight:650;white-space:nowrap}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.tabs a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:13px;font-weight:650;color:#344054}
+.tabs a:hover{background:#f9fafb;text-decoration:none}
+.crumbs{color:var(--muted);font-size:13px;margin:18px 0 0}
+.crumbs a{color:var(--muted)}
+footer{margin:48px 0 40px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px}
+footer p{margin:6px 0}
+.sportgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.sportcard{display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);color:var(--ink)}
+.sportcard:hover{border-color:#abefc6;text-decoration:none}
+.sportcard strong{display:block;font-size:15px}
+.sportcard span{color:var(--muted);font-size:12.5px}
+.empty{color:var(--muted);font-size:14px;font-style:italic}
+@media (max-width:900px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .grid,.grid3,.sportgrid{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  nav.main{width:100%;margin:8px 0 4px}
+  .top .wrap{min-height:0;padding-top:10px;padding-bottom:10px}
+  th,td{padding:9px 10px}
+}
+</style>
+</head><body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html"><span class="dot"></span><span>OLBG research desk<small>24 Oct 2026 · source-linked</small></span></a>
+  <nav class="main" aria-label="Primary"><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="matches.html">Matches</a><a href="markets.html">Our lines</a><a href="predictions.html">Predictions</a><a href="sports.html">Sports</a><a href="sources.html">Sources</a><a href="methodology.html">Method</a><a href="flagged.html">Flagged</a><a href="repo-audit.html" aria-current="page">Repo audit</a></nav>
+</div></header>
+<main class="wrap">
+
+<div class="hero"><p class="eyebrow">Repository review</p><h1>Repo audit, line by line</h1>
+<p class="lede">Six findings from reading the files this session. Each names the file, the value found and why it matters. Nothing here changes another desk's work.</p></div>
+<div class="panel table-wrap"><table><thead><tr><th>ID</th><th>File</th><th>Finding</th><th>Severity</th></tr></thead><tbody>
+<tr><td>A-01</td><td><code>data/current/snapshot.json</code><br><span class="sub">generated_at 2026-10-22T12:29:50Z</span></td><td>The canonical dashboard is built from a snapshot two days older than this session. Its own page banner says "Snapshot 21 Oct 2026" while the file was generated on 22 Oct.</td><td><span class="badge medium">medium</span></td></tr>
+<tr><td>A-02</td><td><code>data/current/snapshot.json</code><br><span class="sub">counts.low = 16, counts.high = 0</span></td><td>Every priced match in the canonical snapshot is confidence "low"; none is medium or high. A reader looking for "the picks" finds 16 low-tier estimates and no ranking.</td><td><span class="badge warn">high</span></td></tr>
+<tr><td>A-03</td><td><code>data/current/snapshot.json</code><br><span class="sub">counts.unpriced = 92 of 108</span></td><td>92 of 108 fixtures carry no market at all. The match list gives no indication of which 16 are priced unless the reader opens each row.</td><td><span class="badge warn">high</span></td></tr>
+<tr><td>A-04</td><td><code>data/current/snapshot.json</code><br><span class="sub">81 fixtures carry the note "time not confirmed"</span></td><td>Most rows have no confirmed start time, so the site cannot order them by kick-off or say what is on today. That is a direct cause of the confusion reported.</td><td><span class="badge warn">high</span></td></tr>
+<tr><td>A-05</td><td><code>data/current/snapshot.json</code><br><span class="sub">predictions = []</span></td><td>The canonical release ships zero written predictions. The validators enforce that this stays empty, so no desk can add prose to the canonical site without changing the pipeline.</td><td><span class="badge medium">medium</span></td></tr>
+<tr><td>A-06</td><td>repository root<br><span class="sub">56 desk directories, 2,367 tracked files</span></td><td>Fifty-six parallel desks each publish their own navigation and their own idea of "today". Nothing on the root explains which one is current, which is exactly the discoverability problem this session was asked to fix.</td><td><span class="badge medium">medium</span></td></tr>
+</tbody></table></div>
+<section><div class="section-head"><div><h2>Checks performed</h2></div></div>
+<div class="panel pad"><ul style="margin:0;padding-left:18px">
+<li>Read <code>data/current/snapshot.json</code> and recomputed its counts: 108 fixtures, 108 price rows, 0 predictions, 16 low, 0 high, 92 unpriced — all consistent with the stored counts.</li>
+<li>Confirmed no unresolved merge-conflict markers exist in tracked <code>.py</code>, <code>.html</code>, <code>.json</code> or <code>.md</code> files.</li>
+<li>Recorded SHA-256 prefixes for the files reviewed: snapshot <code>01727e89824e193c</code>, README <code>0c6f8b4ad5852171</code>, <code>pipeline/build.py</code> <code>c4c359c8c1e4a5ec</code>, <code>scripts/validate.py</code> <code>889484cab96becb3</code>, root <code>index.html</code> <code>2ba5ea56405f99ff</code>.</li>
+<li>Did not modify any of those files; this desk is namespaced to <code>02d3d515/</code>, <code>data/02d3d515/</code> and <code>scripts/s02d3d515_*</code>.</li>
+</ul></div></section>
+<div class="notice"><p><strong>What this audit is not.</strong> It is a structural read of the canonical release, not a re-certification of every earlier desk. The 56 desk directories were counted, not individually re-checked.</p></div>
+
+<footer>
+  <p><strong>What this site is.</strong> An independent research dashboard. Prices are our own fair (zero-vig) estimates, not bookmaker quotes. A pick is an opinion, not a guarantee. 18+.</p>
+  <p>Data read 2026-10-24T17:45:00Z · <a href="methodology.html">How the lines are made</a> · <a href="flagged.html">What could not be confirmed</a> · <a href="https://github.com/buffedlizard55-lab/OLBG1">Repository</a></p>
+  <p>Not affiliated with OLBG, the NBA, the NHL, MLB, the ATP, Formula 1, the LNR, the PGA TOUR or Cork GAA.</p>
+</footer>
+</main></body></html>
