@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology — TC3026353 Desk</title>
+<link rel="stylesheet" href="assets/desk.css">
+</head><body>
+<header class="site">
+  <h1>TC3026353 — OLBG Reverse-Engineered Fixture Desk</h1>
+  <p class="tag">Session c3026353-olbg1 · snapshot 2026-10-24T18:45:00Z · 15 sports · every row carries its source link · prices are this desk's own lines</p>
+</header>
+<nav class="site"><a href="index.html" class="">Dashboard</a><a href="matches.html" class="">All Matches</a><a href="markets.html" class="">Our Lines</a><a href="high-confidence.html" class="">High Confidence</a><a href="predictions.html" class="">Predictions</a><a href="analysis.html" class="">Analysis</a><a href="sports/darts.html" class="">15 Sport Pages</a><a href="sources.html" class="">Sources</a><a href="flagged.html" class="">Flagged for Review</a><a href="methodology.html" class="active">Methodology</a><a href="reverse-engineering.html" class="">OLBG Reverse-Engineering</a><a href="repo-audit.html" class="">Repo Audit</a></nav>
+<main>
+
+<section class="card">
+  <h2>Methodology</h2>
+  <h3>Discovery</h3>
+  <p>The 15 requested sports map to OLBG hub slugs Tennis/3, Basketball/4, Golf/5, Cricket/7, Snooker/8,
+  Rugby_Union/9, Rugby_League/10, Baseball/12, Ice_Hockey/13, Motor_Racing/14, Darts/15, Handball/20, Volleyball/21,
+  Gaelic_Football/25, Greyhounds/28. Hub cards supply the candidate list only. Hub quirks are documented on the
+  <a href="reverse-engineering.html">reverse-engineering page</a>.</p>
+  <h3>Confirmation</h3>
+  <p>Each fixture/fact is checked against a governing-body page (league, tour, federation, board, club for club
+  championships). Media and betting sites are never treated as sources. Read method and time are logged per source;
+  rows whose official body could not be read carry flags and blank values rather than memory-filled guesses.</p>
+  <h3>Pricing (our own lines)</h3>
+  <p>Winner probabilities come from small documented engines per sport: log5 on source-checked records (NHL, NBA with
+  Beta(2,2) shrinkage for the 2-3 game sample), logistic strength gaps (club/player sports, scale documented per
+  fixture), Gaussian margins (rugby, gaelic, RLWC, cricket run margins), best-of-n frame rates (darts, snooker), and
+  normalised weight fields (golf, motor racing, greyhounds). Fair decimal = 1/p. Handicap and total lines are desk
+  estimates on documented scales. No bookmaker price enters the priced tables; partner odds that appear on official
+  league pages are quoted only as market context on the analysis page, with their official URL.</p>
+  <h3>Confidence gate</h3>
+  <ul>
+    <li><b>High</b> — p &gt; 0.70 AND fair American inside −250…+10000 AND an official source read this session.</li>
+    <li><b>Medium (chalk cap)</b> — p &gt; 0.70 but the fair price is shorter than −250; published with its probability, never promoted.</li>
+    <li><b>Medium / Medium (evidence gap)</b> — 0.55 ≤ p ≤ 0.70 (or in-window p above 70% without a read source).</li>
+    <li><b>Low</b> — below 0.55, or field-market selections at ordinary probabilities.</li>
+  </ul>
+  <h3>The odds-window arithmetic (flag R-C-01)</h3>
+  <p>The brief asks for High picks above 70% whose odds sit between −250 and +10000. Those constraints overlap only
+  in a fair-price band 1.4 American points wide (−250 to −233.33, p from 70.0% to 71.43%). Rather than quietly relax
+  either rule, this desk publishes strict-gate High picks in that band and shows every stronger selection below it as
+  chalk-capped with the probability spelled out.</p>
+  <h3>Time handling</h3>
+  <p>OLBG renders times on an unlabelled UTC−4 edge clock (and occasionally in a different clock again — flag F-C-12).
+  Discovery times were converted (UTC = displayed + 4h) and then checked against official schedules wherever an official
+  page carried a time. Official time always wins; conflicts are listed on the flagged page.</p>
+  <h3>Rebuild &amp; checks</h3>
+  <p><code>python3 scripts/sc3026353_build.py</code> · <code>python3 scripts/sc3026353_validate.py</code> ·
+  <code>python3 -m unittest discover -s tests/pipeline -v</code> · <code>python3 -m pipeline.build --out _site</code> ·
+  <code>python3 -m pipeline.validate --site _site</code></p>
+</section>
+</main>
+<footer class="site">TC3026353 · branch arena/c3026353-olbg1 · built 2026-10-24T18:14:54Z · discovery via olbg.com hub cards, confirmation via governing-body sources only</footer>
+</body></html>

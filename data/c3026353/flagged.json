@@ -1,0 +1,149 @@
+{
+ "generated_utc": "2026-10-24T18:45:00Z",
+ "flags": [
+  {
+   "id": "F-C-01",
+   "severity": "info",
+   "title": "OLBG hub timestamps render on an unlabelled GeoIP clock (OLBG-QUIRK-02)",
+   "detail": "OLBG event cards showed times on an unlabelled edge clock (UTC-4 at capture). All discovery times were converted (UTC = displayed + 4h) and re-checked against official schedules wherever an official page carried a time. Darts/snooker conversions were anchored to the olbg.com homepage countdowns at 17:07Z (Ratajski-Doets 'in 7 minutes', Williams-Jones 'in 57 minutes')."
+  },
+  {
+   "id": "F-C-02",
+   "severity": "review",
+   "title": "pdc.tv direct fetch blocked by consent overlay — facts read via search rendering",
+   "detail": "Direct fetches of pdc.tv pages returned only the CookieYes consent text. The official PDC article bodies (draw, seeds, session times, round-one results) were read via search-index renderings of the same pdc.tv URLs. Recheck the pdc.tv links manually before acting on the quoted scores."
+  },
+  {
+   "id": "F-C-03",
+   "severity": "review",
+   "title": "Darts QF time for Smith v Woodhouse approximated",
+   "detail": "The Sunday quarter-final session time is not printed in the read pdc.tv excerpts; 12:00Z is an approximation from the session structure. Manual check of the order of play recommended."
+  },
+  {
+   "id": "F-C-04",
+   "severity": "review",
+   "title": "Snooker frame formats assumed (best of 11)",
+   "detail": "wst.tv's match listings did not print frame formats in the read body; the pricing engine assumes best of 11 for the NI Open semi-final/final and the International Championship round-two matches. Formats are model inputs, not sourced facts."
+  },
+  {
+   "id": "F-C-05",
+   "severity": "info",
+   "title": "NI Open final opponent TBC",
+   "detail": "The final is Kyren Wilson v winner of Williams/Jones. The desk prices Wilson against a blended composite opponent; replace with a head-to-head line once the semi-final completes."
+  },
+  {
+   "id": "F-C-06",
+   "severity": "review",
+   "title": "International Championship (snooker) start times unlabelled on wst.tv",
+   "detail": "wst.tv listed '21:30 30 Oct' without a timezone. If the page renders China local time (the event is in China), UTC starts are 13:30Z on 30 Oct. Rows carry the displayed time converted under that assumption and are flagged; confirm before publication use."
+  },
+  {
+   "id": "F-C-07",
+   "severity": "review",
+   "title": "F1 session times approximated",
+   "detail": "formula1.com's calendar read confirmed the round and dates (23–25 Oct) but the read body did not print session start times. The qualifying (20:00Z 24 Oct) and race (20:00Z 25 Oct) times come from OLBG's countdown/cards and are flagged approximate."
+  },
+  {
+   "id": "F-C-08",
+   "severity": "info",
+   "title": "ATP Almaty final time: official (ATP) beats OLBG display",
+   "detail": "ATP's daily schedule lists 'Not Before 14:00' Almaty local (= 09:00Z). OLBG's card implied 10:00Z. The official time is used."
+  },
+  {
+   "id": "F-C-09",
+   "severity": "review",
+   "title": "WTA match cards: event identity/order of play not readable this session",
+   "detail": "WTA draws pages render behind JavaScript; only the notifications feed was readable (Guangzhou and Toray Pan Pacific Open draws released 24 Oct). The Krueger/Siniakova and Rybakina/Fernandez cards (25 Oct) and the three 27 Oct cards carry OLBG discovery data only: event name, round and venue are blank/flagged. No player form is asserted anywhere in their write-ups."
+  },
+  {
+   "id": "F-C-10",
+   "severity": "review",
+   "title": "Leylah Fernandez listed twice on the OLBG Tennis hub",
+   "detail": "OLBG card 902207 (Rybakina v Fernandez, 25 Oct) and card 902172 (Fernandez v Sakatsume, 27 Oct). Possibly a final and a next-week first round (or one doubles card mislabelled). Both are listed as discovered; both flagged pending the WTA order of play."
+  },
+  {
+   "id": "F-C-11",
+   "severity": "review",
+   "title": "Official page linked but body not read this session (values blanked)",
+   "detail": "Rows with this flag carry an official governing-body link for manual review, but the page body could not be read in this session (JS walls, 404s, or time budget). Fixture facts come from OLBG discovery only; no form/statistical claims are asserted for these rows and their confidence labels cannot reach High."
+  },
+  {
+   "id": "F-C-12",
+   "severity": "info",
+   "title": "OLBG displayed an incorrect hour for two NBA cards",
+   "detail": "OLBG showed NO@DEN at 22:00 and GS@PHX at 23:00 on its clock (= 02:00Z and 03:00Z) while NBA.com lists 9:00 PM ET (01:00Z) and 10:00 PM ET (02:00Z). Official times used; the OLBG display appears to be mixed-clock rendering (OLBG-QUIRK-02)."
+  },
+  {
+   "id": "F-C-13",
+   "severity": "info",
+   "title": "NHL game missing from the OLBG hub",
+   "detail": "BUF @ WSH (7:00 PM EDT) is on NHL.com's official 12-game slate but not on the OLBG Ice Hockey hub (hub truncation/suppression, OLBG-QUIRK-03/04). Included from the official schedule and marked accordingly."
+  },
+  {
+   "id": "F-C-14",
+   "severity": "review",
+   "title": "World Series game state not read this session",
+   "detail": "mlb.com's schedule page listed the games and probable starters but not the series score. Winner-market probabilities treat the series as level; adjust once the gameday page is read."
+  },
+  {
+   "id": "F-C-15",
+   "severity": "review",
+   "title": "Greyhound racecards: runner form not read this session",
+   "detail": "GBGB's official site was read (tracks and race reports confirmed; race reports include the Doncaster Puppy Derby and Dunstall Park Oaks/Scurry Gold Cup meetings) but its live racecard tables were not retrievable in this session. Runner selections therefore carry the OLBG most-tipped runner as the pick with model field prices only; form figures are blank. 28 race cards appeared on the OLBG hub; five later races are carried here as the pickable set (honest shortfall against any five-per-race expectation)."
+  },
+  {
+   "id": "F-C-16",
+   "severity": "info",
+   "title": "SuperLega club identities confirmed; standings table not rendered",
+   "detail": "legavolley.it confirmed both clubs in the SuperLega Credem Banca 2026-27 team list, but the standings table body did not render in the fetch. Strength inputs remain model estimates."
+  },
+  {
+   "id": "F-C-17",
+   "severity": "info",
+   "title": "Rugby League: OLBG hub listed zero match cards (OLBG-QUIRK-04)",
+   "detail": "The OLBG Rugby League hub showed only three 2027 ante-post outrights (State of Origin, Super League, NRL) during the live 2026 Rugby League World Cup. The five rugby-league fixtures here were supplemented from NRL.com's official round-2 team lists page and the linked official draw (rlwc2026.com). Discovery source recorded as official-supplement."
+  },
+  {
+   "id": "F-C-18",
+   "severity": "review",
+   "title": "RLWC women's fixture start time approximated",
+   "detail": "The NZ W v France W start (03:05Z 25 Oct) is derived from the NRL.com women's team-lists page display ('3:00am') and tournament listings; confirm against the official order of play."
+  },
+  {
+   "id": "F-C-19",
+   "severity": "review",
+   "title": "Fixture not confirmed on an official page this session",
+   "detail": "Rows with this flag were discovered on the OLBG hub only. Their governing-body link is recorded for manual review but the page body was not read this session. No values are asserted beyond the discovered card; confidence cannot reach High. (C01 was re-identified after capture as NCL GT20 Canada, Cricket Canada-sanctioned; its organiser page is linked.)"
+  },
+  {
+   "id": "F-C-20",
+   "severity": "review",
+   "title": "Pakistan v England: PCB fixture page not printed in the read body",
+   "detail": "pcb.com.pk was fetched and read at capture but the page body exposed only domestic/women's modules; the tri-series fixture and series-state facts could not be confirmed on an official page. The row is flagged; the selection leans on model inputs only."
+  },
+  {
+   "id": "F-C-21",
+   "severity": "info",
+   "title": "Golf: OLBG Golf hub showed 'No tips found' (OLBG-QUIRK-04)",
+   "detail": "Zero open tips on the hub suppressed all golf cards. The desk supplements the live PGA Tour event from pgatour.com (official leaderboard read directly). Only one active tour event window was confirmed on an official page this session, so golf's five selections are five players in the Bermuda Championship outright (honest shortfall against five separate tournaments)."
+  },
+  {
+   "id": "F-C-22",
+   "severity": "info",
+   "title": "Galway SFC final date changed by weather",
+   "detail": "The final was moved from Saturday 24 Oct to Sunday 25 Oct 4pm at Pearse Stadium after Met Eireann weather warnings ahead of Storm Boelo. OLBG's card already reflected the Sunday slot."
+  },
+  {
+   "id": "F-C-23",
+   "severity": "review",
+   "title": "Galway intermediate final throw-in time conflict",
+   "detail": "Galway GAA fixture listings show the An Spideal v Caherlistrane intermediate final in the Pearse Stadium double-header; listing sources conflict on 2pm vs 3pm. 14:00Z used; confirm against the county board fixture."
+  },
+  {
+   "id": "R-C-01",
+   "severity": "info",
+   "title": "Arithmetic of the High-confidence odds window (brief-level irregularity)",
+   "detail": "The brief requires High picks to have p > 70% AND to sit between -250 and +10000. Those constraints overlap only in the fair-price band [-250, -233.33] (p between 70.0% and 71.43%), a window about 1.4 American-odds points wide. Selections above 71.43% are necessarily priced shorter than -250 and are therefore published as 'Medium (chalk cap)' with disclosure, never silently promoted to High. This desk treats the window as a hard constraint and reports the consequence."
+  }
+ ]
+}
