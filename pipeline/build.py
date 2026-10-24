@@ -35,6 +35,7 @@ OFFICIAL_HOSTS = set(PUBLISHERS) | {'www.nhl.com', 'www.mlb.com'}
 #   link='8cfb80b2/index.html'   link='02d3d515/index.html'   link='3d121822/index.html'
 ARCHIVE = [
     ('f840c28a/index.html', '24 Oct 2026 clarity desk (f840c28a): 15 sports, 20 fixtures, 16 priced matches, 3 High picks, 10 written predictions, 13 flags'),
+    ('review7568/index.html', 'Flagged for Review: canonical input inconsistencies and bounded NHL editorial update'),
     ('today/index.html', '24 Oct 2026 clarity desk (7f1bf9f7): every pick on one page, official source per row, 60 OLBG listings, 8 flags, 7 repo findings'),
     ('23728b2b/index.html', '24 Oct 2026 executive desk: 15 sports, 55 fixture rows, 7 High picks'),
     ('f437fb14/index.html', '24 Oct 2026 clarity desk: 15 sports, 93 fixtures, 3 High picks across 10 selections'),
