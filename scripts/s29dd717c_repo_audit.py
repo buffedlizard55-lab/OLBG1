@@ -70,7 +70,8 @@ def main():
                 add(findings, rel, number, "Browser-facing localhost URL", line, "blocker")
             if re.search(r"https?://(?:example\.com|example\.org)(?:/|\b)", line, re.I):
                 add(findings, rel, number, "Placeholder external URL", line, "blocker")
-            if rel.startswith(("29dd717c/", "data/29dd717c/", "scripts/s29dd717c_")):
+            if (rel.startswith(("29dd717c/", "data/29dd717c/", "scripts/s29dd717c_"))
+                    and rel not in {"scripts/s29dd717c_repo_audit.py", "data/29dd717c/repo-audit.json", "29dd717c/repository-audit.html"}):
                 if re.search(r"href=[\"']#[\"']", line):
                     add(findings, rel, number, "Empty placeholder link", line, "blocker")
                 if re.search(r"\b(?:TODO|FIXME)\b", line):
