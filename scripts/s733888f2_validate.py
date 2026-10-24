@@ -13,7 +13,8 @@ import s733888f2_build as B         # noqa: E402
 OUT = ROOT / '733888f2'
 BANNED = ('model', 'verified', 'verify', 'algorithm')
 OFFICIAL_HOSTS = ('nhl.com', 'statsapi.mlb.com', 'mlb.com', 'quins.co.uk', 'premrugby.com',
-                  'atptour.com', 'ecb.co.uk', 'pdc.tv', 'legavolley.it')
+                  'atptour.com', 'ecb.co.uk', 'pdc.tv', 'legavolley.it',
+                  'trentinovolley.it')
 EXPECTED = ['index.html', 'picks.html', 'predictions.html', 'matches.html', 'markets.html',
             'sports.html', 'flagged.html', 'sources.html', 'methodology.html',
             'repo-audit.html', 'reverse-engineering.html', 'archive.html']

@@ -11,11 +11,13 @@ Formulas (identical for every row, published on methodology.html):
             logit(p_home) = 1.0 * (s_home - s_away) + 0.20
   rugby     strength = (league points + 1.0) / (games + 2.0)
             logit(p_home) = 0.9 * (s_home - s_away) + 0.10
+  volleyball strength = (league points + 1.0) / (games + 2.0)
+            logit(p_home) = 0.75 * (s_home - s_away) + 0.15
 
 Prices are margin-free: decimal = 1 / p. No vig is added, so two-way books sum
 to 100.0%. A handicap "spread at even money" is derived from the same win
 probability with a published per-sport margin sigma:
-  hockey 1.9 goals, baseball 3.4 runs, rugby 12 points.
+  hockey 1.9 goals, baseball 3.4 runs, rugby 12 points, volleyball 1.8 sets.
 That derivation is an assumption, not a measured distribution, and every row
 that uses it says so.
 
@@ -27,7 +29,7 @@ Tiers:
 """
 import math
 
-SIGMA = {'ice-hockey': 1.9, 'baseball': 3.4, 'rugby-union': 12.0}
+SIGMA = {'ice-hockey': 1.9, 'baseball': 3.4, 'rugby-union': 12.0, 'volleyball': 1.8}
 BAND_LO, BAND_HI = -250.0, 10000.0
 
 
@@ -118,8 +120,15 @@ def model_rugby(inp):
     return logistic(0.9 * (s(inp['home']) - s(inp['away'])) + 0.10)
 
 
+def model_volleyball(inp):
+    # League points per match with the same shrinkage used for rugby, plus home floor.
+    def s(row):
+        return (row['points'] + 1.0) / (row['gp'] + 2.0)
+    return logistic(0.75 * (s(inp['home']) - s(inp['away'])) + 0.15)
+
+
 MODELS = {'ice-hockey': model_hockey, 'baseball': model_baseball,
-          'rugby-union': model_rugby}
+          'rugby-union': model_rugby, 'volleyball': model_volleyball}
 
 
 def price_match(match):
