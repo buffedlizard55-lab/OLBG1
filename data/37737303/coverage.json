@@ -1,0 +1,195 @@
+{
+ "generated_at": "2026-10-24T22:35:13Z",
+ "read_at": "2026-10-24T22:35:00Z",
+ "counts": {
+  "fixtures": 56,
+  "markets": 104,
+  "picks": 56,
+  "predictions": 23,
+  "sports_requested": 15,
+  "sports_with_picks": 12,
+  "sports_without_market": 3,
+  "flags": 17,
+  "high": 2,
+  "medium": 23,
+  "low": 31
+ },
+ "sports": [
+  {
+   "sport": "baseball",
+   "fixtures": 1,
+   "picks": 1,
+   "priced": 5,
+   "high": 0,
+   "medium": 1,
+   "low": 0,
+   "written": 1
+  },
+  {
+   "sport": "basketball",
+   "fixtures": 6,
+   "picks": 6,
+   "priced": 12,
+   "high": 0,
+   "medium": 3,
+   "low": 3,
+   "written": 2
+  },
+  {
+   "sport": "cricket",
+   "fixtures": 6,
+   "picks": 6,
+   "priced": 12,
+   "high": 0,
+   "medium": 5,
+   "low": 1,
+   "written": 3
+  },
+  {
+   "sport": "darts",
+   "fixtures": 3,
+   "picks": 3,
+   "priced": 4,
+   "high": 0,
+   "medium": 0,
+   "low": 3,
+   "written": 1
+  },
+  {
+   "sport": "gaelic-sports",
+   "fixtures": 5,
+   "picks": 5,
+   "priced": 9,
+   "high": 0,
+   "medium": 2,
+   "low": 3,
+   "written": 2
+  },
+  {
+   "sport": "golf",
+   "fixtures": 0,
+   "picks": 0,
+   "priced": 0,
+   "high": 0,
+   "medium": 0,
+   "low": 0,
+   "written": 0
+  },
+  {
+   "sport": "greyhounds",
+   "fixtures": 1,
+   "picks": 1,
+   "priced": 1,
+   "high": 0,
+   "medium": 0,
+   "low": 1,
+   "written": 0
+  },
+  {
+   "sport": "handball",
+   "fixtures": 6,
+   "picks": 6,
+   "priced": 6,
+   "high": 0,
+   "medium": 4,
+   "low": 2,
+   "written": 2
+  },
+  {
+   "sport": "ice-hockey",
+   "fixtures": 8,
+   "picks": 8,
+   "priced": 19,
+   "high": 1,
+   "medium": 2,
+   "low": 5,
+   "written": 6
+  },
+  {
+   "sport": "motor-racing",
+   "fixtures": 0,
+   "picks": 0,
+   "priced": 0,
+   "high": 0,
+   "medium": 0,
+   "low": 0,
+   "written": 0
+  },
+  {
+   "sport": "rugby-league",
+   "fixtures": 3,
+   "picks": 3,
+   "priced": 3,
+   "high": 0,
+   "medium": 0,
+   "low": 3,
+   "written": 1
+  },
+  {
+   "sport": "rugby-union",
+   "fixtures": 4,
+   "picks": 4,
+   "priced": 7,
+   "high": 0,
+   "medium": 1,
+   "low": 3,
+   "written": 1
+  },
+  {
+   "sport": "snooker",
+   "fixtures": 0,
+   "picks": 0,
+   "priced": 0,
+   "high": 0,
+   "medium": 0,
+   "low": 0,
+   "written": 0
+  },
+  {
+   "sport": "tennis",
+   "fixtures": 7,
+   "picks": 7,
+   "priced": 14,
+   "high": 1,
+   "medium": 3,
+   "low": 3,
+   "written": 2
+  },
+  {
+   "sport": "volleyball",
+   "fixtures": 6,
+   "picks": 6,
+   "priced": 12,
+   "high": 0,
+   "medium": 2,
+   "low": 4,
+   "written": 2
+  }
+ ],
+ "no_market": [
+  {
+   "sport": "golf",
+   "label": "Golf",
+   "hub": "https://www.olbg.com/betting-tips/Golf/5",
+   "rule": "Golf is priced per tournament, never per head-to-head, so a 'match' only exists as an outright market.",
+   "finding": "The golf hub returned 'No tips found' at 22:40Z: no tournament carried an open tip. A search of the page's own sports menu also fell back to 'All Sports', which is the same hub-rendering fault recorded in earlier sessions.",
+   "flag": "F-377-01"
+  },
+  {
+   "sport": "snooker",
+   "label": "Snooker",
+   "hub": "https://www.olbg.com/betting-tips/Snooker/8",
+   "rule": "Snooker markets are per match: win match, frame handicap, correct score and tournament outright.",
+   "finding": "The snooker hub returned 'No tips found'. The World Snooker Tour page for the Northern Ireland Open showed round-one results from 18-19 October but did not return the current session, so no upcoming match could be paired with a market.",
+   "flag": "F-377-02"
+  },
+  {
+   "sport": "motor-racing",
+   "label": "Motor Racing",
+   "hub": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+   "rule": "Motor racing is priced per race: pole, race winner, podium, top six and outright championship.",
+   "finding": "The motor racing hub returned 'No tips found'; the page's own 2026 calendar table ends before a round that falls inside this desk's window, so there was no race to price.",
+   "flag": "F-377-03"
+  }
+ ]
+}

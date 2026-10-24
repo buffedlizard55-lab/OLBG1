@@ -1,0 +1,180 @@
+{
+ "generated_at": "2026-10-24T22:35:13Z",
+ "flags": [
+  {
+   "id": "F-377-01",
+   "severity": "blocking-coverage",
+   "sport": "golf",
+   "title": "No golf market open on OLBG at this read",
+   "detail": "The golf hub (read 22:40Z) returned 'No tips found'. No tournament page carried an open tip, so there is no selection a reader could place. Nothing has been invented to fill the gap.",
+   "sources": [
+    "olbg-golf"
+   ]
+  },
+  {
+   "id": "F-377-02",
+   "severity": "blocking-coverage",
+   "sport": "snooker",
+   "title": "No snooker market open; WST page returned only last week's results",
+   "detail": "OLBG returned 'No tips found' for snooker. wst.tv/matches returned the Northern Ireland Open round-one session from 18-19 October, not the current one, so the fixture list could not be reconciled with a live market.",
+   "sources": [
+    "olbg-snooker",
+    "wst-matches"
+   ]
+  },
+  {
+   "id": "F-377-03",
+   "severity": "blocking-coverage",
+   "sport": "motor-racing",
+   "title": "No motor racing market open on OLBG at this read",
+   "detail": "The motor racing hub returned 'No tips found'. Its own 2026 calendar table stops before the next round, so no race in the desk window could be priced.",
+   "sources": [
+    "olbg-motor-racing"
+   ]
+  },
+  {
+   "id": "F-377-04",
+   "severity": "data-gap",
+   "sport": "ice-hockey",
+   "title": "Six NHL fixtures are OLBG-only: the NHL schedule page returned three games at a time",
+   "detail": "api-web.nhle.com/v1/schedule/2026-10-24 lists twelve games but returns them in blocks. Only San Jose at Boston and Rangers at Ottawa were read in full (both 2026-10-24T23:00Z). The other six NHL rows on this desk carry OLBG's unlabelled edge times and no official start time.",
+   "sources": [
+    "nhl-schedule",
+    "olbg-ice-hockey"
+   ]
+  },
+  {
+   "id": "F-377-05",
+   "severity": "timezone",
+   "sport": "all",
+   "title": "OLBG prints edge-local times with no zone label",
+   "detail": "Every OLBG row was read from a US edge and printed in EDT without a suffix (for example 'Today 19:07'). The desk prints those strings verbatim in a column headed 'as OLBG shows it' and never converts them silently. Where an official page gave a UTC start, that is shown too.",
+   "sources": [
+    "olbg-ice-hockey",
+    "nhl-schedule"
+   ]
+  },
+  {
+   "id": "F-377-06",
+   "severity": "data-gap",
+   "sport": "basketball",
+   "title": "No NBA record could be read: the league scoreboard feed returned HTTP 500",
+   "detail": "cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json failed on every attempt. All six basketball picks therefore rest on the publisher's tip share only, and none of them is graded above low.",
+   "sources": [
+    "nba-scoreboard",
+    "olbg-basketball"
+   ]
+  },
+  {
+   "id": "F-377-07",
+   "severity": "data-gap",
+   "sport": "darts",
+   "title": "PDC tournament page served a consent wall instead of the draw",
+   "detail": "pdc.tv returned its cookie-consent layer rather than the European Championship draw, so the two darts match picks use the publisher's tip share and are graded low.",
+   "sources": [
+    "pdc-european",
+    "olbg-darts"
+   ]
+  },
+  {
+   "id": "F-377-08",
+   "severity": "data-gap",
+   "sport": "tennis",
+   "title": "WTA scores page renders client-side; only ATP results were readable",
+   "detail": "wtatennis.com/scores returned navigation only. The two ATP finals were verified from the ATP scores page; the five remaining tennis rows are publisher-sentiment rows graded low.",
+   "sources": [
+    "wta-scores",
+    "atp-scores"
+   ]
+  },
+  {
+   "id": "F-377-09",
+   "severity": "data-gap",
+   "sport": "volleyball",
+   "title": "Lega Pallavolo standings route returns 404",
+   "detail": "legavolley.it/classifiche/ answered 'Pagina non trovata' and returned only its site map, so no SuperLega record could be read. All six volleyball rows are sentiment rows graded low.",
+   "sources": [
+    "legavolley",
+    "olbg-volleyball"
+   ]
+  },
+  {
+   "id": "F-377-10",
+   "severity": "data-gap",
+   "sport": "gaelic-sports",
+   "title": "Club finals are not on the GAA's national fixture page",
+   "detail": "gaa.ie/fixtures-results listed only the 24 October Shinty-Hurling international. gaacork.ie redirected to its post-primary schools hub. The four Gaelic rows therefore carry no official fixture confirmation and no form.",
+   "sources": [
+    "gaa-fixtures",
+    "cork-gaa",
+    "olbg-gaelic"
+   ]
+  },
+  {
+   "id": "F-377-11",
+   "severity": "pricing-policy",
+   "sport": "all",
+   "title": "Where our fair price falls outside the brief's band we pass, rather than shorten the price",
+   "detail": "Boston (-291) and Edmonton (-358) are the two clearest examples: our own numbers make them strong favourites, and the fair price sits shorter than the -250 floor. Rather than quote a price we do not believe, those matches are marked 'passed on the band' and the puck line is offered instead where one exists.",
+   "sources": []
+  },
+  {
+   "id": "F-377-12",
+   "severity": "coverage",
+   "sport": "rugby-league",
+   "title": "Rugby league has no match market: the season is between competitions",
+   "detail": "The rugby league hub carried only three long-dated outrights (State of Origin 2027, Super League 2027 Grand Final, NRL 2027 Grand Final). They are listed at low confidence because a ten-month outright is not a match pick.",
+   "sources": [
+    "olbg-rugby-league"
+   ]
+  },
+  {
+   "id": "F-377-13",
+   "severity": "coverage",
+   "sport": "greyhounds",
+   "title": "One greyhound race carried an open tip",
+   "detail": "The greyhounds hub listed a single tipped race (11:04 Doncaster, Snowfall, 1/1). No GBGB racecard was read this session, so the row is a low-confidence sentiment row.",
+   "sources": [
+    "olbg-greyhounds"
+   ]
+  },
+  {
+   "id": "F-377-14",
+   "severity": "data-gap",
+   "sport": "handball",
+   "title": "EHF fixtures verified, EHF form not",
+   "detail": "The EHF Champions League match page confirmed the 28-29 October fixtures used here, but no standings or results page was read, so handicap lines on those ties are neutral estimates and capped at medium.",
+   "sources": [
+    "ehf-cl-matches"
+   ]
+  },
+  {
+   "id": "F-377-15",
+   "severity": "repo",
+   "sport": "all",
+   "title": "The repository's root page still points at an earlier desk",
+   "detail": "index.html at the repository root is the 24 October 'today' desk and describes 21 matches across two sports. This session's desk is a separate namespace at /37737303/ and the root page gained one pointer line to it. Reconciling the two front doors is left to the next integration session.",
+   "sources": []
+  },
+  {
+   "id": "F-377-16",
+   "severity": "data-gap",
+   "sport": "cricket",
+   "title": "No cricket board page read for any of the six fixtures",
+   "detail": "The six cricket rows come from OLBG listings only: Toronto v Vancouver, Pakistan v England, four South African provincial T20s, India Women v Zimbabwe Women and New Zealand v India. No board or provincial union page was reachable inside the session budget, so none carries an official link and all are graded low.",
+   "sources": [
+    "olbg-cricket"
+   ]
+  },
+  {
+   "id": "F-377-17",
+   "severity": "data-gap",
+   "sport": "rugby-union",
+   "title": "No union league page read; OLBG times only",
+   "detail": "Harlequins v Saracens, La Rochelle v Bordeaux and USA v Australia A were read from OLBG only. PREMIERSHIP, TOP 14 and USA Rugby pages were not read, so no form, no venue and no official kick-off time is published for these three.",
+   "sources": [
+    "olbg-rugby-union"
+   ]
+  }
+ ]
+}

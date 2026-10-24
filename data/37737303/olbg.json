@@ -1,0 +1,182 @@
+{
+ "generated_at": "2026-10-24T22:35:13Z",
+ "read_at": "2026-10-24T22:35:00Z",
+ "no_market": [
+  {
+   "sport": "golf",
+   "label": "Golf",
+   "hub": "https://www.olbg.com/betting-tips/Golf/5",
+   "rule": "Golf is priced per tournament, never per head-to-head, so a 'match' only exists as an outright market.",
+   "finding": "The golf hub returned 'No tips found' at 22:40Z: no tournament carried an open tip. A search of the page's own sports menu also fell back to 'All Sports', which is the same hub-rendering fault recorded in earlier sessions.",
+   "flag": "F-377-01"
+  },
+  {
+   "sport": "snooker",
+   "label": "Snooker",
+   "hub": "https://www.olbg.com/betting-tips/Snooker/8",
+   "rule": "Snooker markets are per match: win match, frame handicap, correct score and tournament outright.",
+   "finding": "The snooker hub returned 'No tips found'. The World Snooker Tour page for the Northern Ireland Open showed round-one results from 18-19 October but did not return the current session, so no upcoming match could be paired with a market.",
+   "flag": "F-377-02"
+  },
+  {
+   "sport": "motor-racing",
+   "label": "Motor Racing",
+   "hub": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+   "rule": "Motor racing is priced per race: pole, race winner, podium, top six and outright championship.",
+   "finding": "The motor racing hub returned 'No tips found'; the page's own 2026 calendar table ends before a round that falls inside this desk's window, so there was no race to price.",
+   "flag": "F-377-03"
+  }
+ ],
+ "hubs": [
+  {
+   "id": "olbg-tennis",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Tennis hub",
+   "url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Fifteen-plus upcoming matches listed with the crowd's most-tipped selection."
+  },
+  {
+   "id": "olbg-basketball",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Basketball hub",
+   "url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Seven NBA games plus three Korean KBL games."
+  },
+  {
+   "id": "olbg-golf",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Golf hub",
+   "url": "https://www.olbg.com/betting-tips/Golf/5",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "'No tips found': no golf market carried an open tip when the hub was read."
+  },
+  {
+   "id": "olbg-cricket",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Cricket hub",
+   "url": "https://www.olbg.com/betting-tips/Cricket/7",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Ten match markets plus four outrights."
+  },
+  {
+   "id": "olbg-snooker",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Snooker hub",
+   "url": "https://www.olbg.com/betting-tips/Snooker/8",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "'No tips found'."
+  },
+  {
+   "id": "olbg-rugby-union",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Rugby Union hub",
+   "url": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Three match markets plus the 2027 Six Nations outright."
+  },
+  {
+   "id": "olbg-rugby-league",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Rugby League hub",
+   "url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Outrights only; no match market open."
+  },
+  {
+   "id": "olbg-baseball",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Baseball hub",
+   "url": "https://www.olbg.com/betting-tips/Baseball/12",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "One game: Rays at Brewers."
+  },
+  {
+   "id": "olbg-ice-hockey",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Ice Hockey hub",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Ten NHL games plus Swiss, German and Austrian club fixtures."
+  },
+  {
+   "id": "olbg-motor-racing",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Motor Racing hub",
+   "url": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "'No tips found'."
+  },
+  {
+   "id": "olbg-darts",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Darts hub",
+   "url": "https://www.olbg.com/betting-tips/Darts/15",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Two match markets plus European Championship and World Championship outrights."
+  },
+  {
+   "id": "olbg-handball",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Handball hub",
+   "url": "https://www.olbg.com/betting-tips/Handball/20",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Fifteen-plus club and international fixtures."
+  },
+  {
+   "id": "olbg-volleyball",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Volleyball hub",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Fifteen-plus club fixtures across Italy, Poland, Turkey, Germany and Brazil."
+  },
+  {
+   "id": "olbg-gaelic",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Gaelic Football hub",
+   "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Four club fixtures plus the 2027 All-Ireland outright."
+  },
+  {
+   "id": "olbg-greyhounds",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Greyhounds hub",
+   "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "One race carried an open tip: 11:04 Doncaster."
+  }
+ ]
+}

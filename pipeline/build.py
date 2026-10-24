@@ -53,6 +53,7 @@ ARCHIVE = [
     ('ff993cb9/index.html', '24 Oct 2026 picks desk (ff993cb9): executive summary first, 80 written picks across 15 sports (3 High), 66 priced matches, 27 tracked no-pick rows, 14 flags'),
     ('29dd717c/index.html', '24 Oct 2026 late-card desk (29dd717c): 32 official fixtures, 32 written selections, 3 High picks, 150 zero-vig outcomes'),
     ('57bafcbb/index.html', '25 Oct 2026 fresh 15-sport desk (57bafcbb): 29 tracked fixtures, 14 graded picks, 5 High, 14 written predictions, 9 flags'),
+    ('37737303/index.html', '24 Oct 2026 fifteen-sport desk (37737303): 56 fixtures, 104 originated lines, 23 written predictions, 2 High picks'),
 ]
 
 NAV = [
