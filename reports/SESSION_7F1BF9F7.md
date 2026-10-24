@@ -95,3 +95,11 @@ write-ups, plus the complete 60-row OLBG inventory for the fifteen requested spo
 published sport by sport with the specific missing input. Four inputs would close most of it: goal
 rates for both sides in hockey and handball, a published total or handicap quote, an official
 availability feed, and an official tennis order of play.
+
+
+## Publication receipts (2026-10-24T18:52Z)
+
+* PR [#229](https://github.com/buffedlizard55-lab/OLBG1/pull/229) merged as `f36fcd8` after CI run `40116135980` passed.
+* PR [#267](https://github.com/buffedlizard55-lab/OLBG1/pull/267) merged as `c7d9c88` after CI run `40121657089` passed. That PR exists because a later commit made the published artifact stage only a whitelisted list of desks, so `today/` had to be registered in `pipeline/build.py`'s `ARCHIVE` before it could be served.
+* Pages build reported `built` for `c7d9c88`; live read-back confirmed `/today/index.html` (5 picks, 0 High, 7 matches, 60 listings), `/today/predictions.html` (five write-ups with official fact blocks) and `/today/repo-audit.html` (R-01…R-07).
+* Root front page lists the desk under earlier desks and links to it.
