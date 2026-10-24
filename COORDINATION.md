@@ -6884,3 +6884,40 @@ be read from an official source for any priced match (F-321-11).
 | Gates at the pushed head | `python3 -m unittest discover -s tests/pipeline` → 532 tests OK · `python3 scripts/validate.py` → PASS (0 errors) · `python3 -m pipeline.validate --site .` → 0 errors · `node tests/pipeline/browser.cjs` → 25 pages / 11 picks / 6 High · CI `40119079596` → success |
 | Pages read-back | `https://buffedlizard55-lab.github.io/OLBG1/` serves this desk: 6 High and 5 Medium picks with write-up anchors, 21 fixtures, 15 sport pages, per-row official links. |
 | Known shortfall, published not padded | 2 of 15 sports priced. The five-High-per-sport target is not met in the other thirteen sports, and the reason is stated on every sport page rather than filled with invented fixtures. |
+---
+
+## 90. Session `1707d752-olbg1` — `T1707` build record, PR #246 and deployment (2026-10-24T18:30Z UTC)
+
+* **Published desk:** [`1707d752/index.html`](../1707d752/index.html) — 26 pages (executive summary, all picks, written
+  predictions, every match, markets, 15 sport pages, coverage vs brief, flagged for review, sources, method, repo
+  review). Machine-readable copies at `data/1707d752/summary.json` and `data/1707d752/picks.json`.
+* **Result:** 15 sports scanned, **100 events listed**, **19 matches priced** from official inputs, **39 market boards**,
+  **19 written predictions** (≥30 words, unique, selection-first), **4 High / 13 Medium / 2 Low**, 12 review flags.
+  League rate used for the hockey grid: **3.152 goals per team per game**.
+* **High picks:** Vegas Golden Knights −175 (63.6%), New Jersey Devils −172 (63.2%), Washington Capitals −155 (60.7%),
+  Edmonton Oilers −154 (60.6%). Boston at 71.6% is priced −252 — two cents outside the brief's window — and is
+  therefore published as Medium with that reason printed on the row (F-17-01 documents the 1.4-point overlap).
+* **Times fixed this session:** every priced match now carries the **official UTC start** from the league feed (NHL
+  schedule API for all twelve games, the NBA game list for all eight, the MLB game feed), converted on the page to US
+  Pacific, US Eastern, UK and Central European time with both date formats. Hub-only listings stay verbatim and
+  unconverted (F-17-02). Anaheim at Philadelphia, already live at 17:00Z, was excluded rather than priced.
+* **Markets withheld, with the missing input named:** NBA handicap and total (the standings page carries wins and
+  losses, not points), MLB run line and total (Milwaukee's runs scored/allowed were outside the retained slice).
+  Calgary at Detroit remains unpriced because the Flames' row was cut off at the read boundary (F-17-07).
+* **Self-correction on the record:** Toronto at Edmonton was capped at Medium earlier in the session on an
+  unconfirmed venue, then confirmed against the league schedule and released as High. Flag F-17-08 was rewritten to
+  describe the correction instead of being deleted.
+* **Gates:** `scripts/s1707d752_validate.py` **1,695 checks / 0 failures**; `tests/pipeline` **493 tests OK** (14 new);
+  `scripts/validate.py` 0 errors with the three pre-existing `f7fa77fc` warnings; `pipeline.validate --site .` and
+  `--site _site` 0 errors. PR run `40119182719` passed the canonical gate job in 1m01s.
+* **Pull request:** [#246](https://github.com/buffedlizard55-lab/OLBG1/pull/246) merged as
+  [`6843243`](https://github.com/buffedlizard55-lab/OLBG1/commit/6843243). Three append-only `COORDINATION.md`
+  conflicts caused by peer merges were resolved by keeping both entries and renumbering this claim from §84 to §88.
+* **Shared-file discipline:** an interim edit that repointed `pipeline/build.py`'s start-here band at this desk was
+  **reverted** during the rebase because peers were editing the same function within the same hour. The final branch
+  touches only `data/1707d752/**`, `scripts/s1707d752_*.py`, `1707d752/**`, `reports/SESSION_1707D752.md`,
+  `tests/pipeline/test_desk_1707d752.py` and this append-only log.
+* **Deployment:** `pipeline/build.py` stages every tracked path into the Pages artifact and a local build of `main`
+  contains `1707d752/` (verified at `/tmp/_site3/1707d752/`). Live publication is queued behind a run of concurrent
+  peer merges: main advanced several times per minute and the Pages deploys were cancelled by concurrency before
+  completing. The desk's URL is therefore pending a settled main, not blocked by a failed gate.
