@@ -108,23 +108,35 @@ class Site:
         cov={c['slug']:c for c in self.s['coverage']};order=['basketball','ice-hockey','tennis','baseball','rugby-league','rugby-union','snooker','cricket','handball','motor-racing','volleyball','aussie-rules','golf','gaelic-football','esports','darts','greyhounds']
         return '<div class="sport-grid">'+''.join(f'<a class="sport-card" href="sports/{s}.html"><span class="sport-icon">{icon("ball",19)}</span><span><strong>{e(cov[s]["name"])}</strong><small>{cov[s]["listing_count"]} listings · {e(cov[s]["status"])}</small></span><span class="arrow">{icon("arrow",13)}</span></a>' for s in order[:limit])+'</div>'
     def latest_desk(self):
-        """One obvious front door to the newest desk, if it is present."""
-        link='3d121822/index.html'
+        """One obvious front door to the newest desk, with peer desks preserved."""
+        link='b2719ad3/index.html'
+        if not (ROOT/link).is_file():link='3d121822/index.html'
         if not (ROOT/link).is_file():return ''
+        alternates=[]
+        if link=='b2719ad3/index.html':
+            for path,label in [('37003e61/index.html','37003E61'),('8cfb80b2/index.html','8CFB'),('02d3d515/index.html','02D3'),('3d121822/index.html','3D121822')]:
+                if (ROOT/path).is_file():alternates.append(f'<a href="{path}" style="color:#0f5132">{label}</a>')
+        alternate_html=''
+        if alternates:
+            alternate_html='<p style="margin:10px 0 0;font-size:12px;color:#41544b">Also preserved: '+ ' · '.join(alternates) +'</p>'
+        if link=='b2719ad3/index.html':
+            picks=link+'#high-picks';review=link.replace('index.html','flagged-for-review.html')
+        else:
+            picks=link.replace('index.html','picks.html');review=link.replace('index.html','flagged.html')
         return ('<section class="panel pad" style="margin-bottom:18px;border:1px solid #cfe3d8;'
                 'background:#e7f1ec">'
                 '<div style="display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap">'
                 '<div><p style="margin:0 0 4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0f5132">'
-                'Start here · 24 October 2026</p>'
-                '<h2 style="margin:0 0 6px;font-size:22px">Today\'s picks, in one place</h2>'
-                '<p style="margin:0;color:#41544b;max-width:70ch">The newest desk covers 15 sports with sourced '
-                'fixtures, our own prices and written predictions. This page below is the older canonical '
-                'snapshot from 22 October and is kept for the audit trail.</p></div>'
+                'Start here · current 24 October evidence</p>'
+                '<h2 style="margin:0 0 6px;font-size:22px">Today\'s fifteen-sport research, clearly graded</h2>'
+                '<p style="margin:0;color:#41544b;max-width:70ch">The current TB2719 desk uses official row links, '
+                'independent fair prices, started-event exclusions and a strict greater-than-70% High gate. '
+                'The canonical snapshot below remains preserved for the audit trail.</p></div>'
                 '<div style="display:flex;gap:8px;flex-wrap:wrap">'
-                f'<a class="button primary" href="{link}">Open the 24 Oct desk →</a>'
-                f'<a class="button" href="{link.replace("index.html","picks.html")}">Today\'s picks</a>'
-                f'<a class="button" href="{link.replace("index.html","flagged.html")}">Flagged for review</a>'
-                '</div></div></section>')
+                f'<a class="button primary" href="{link}">Open the current desk →</a>'
+                f'<a class="button" href="{picks}">High selections</a>'
+                f'<a class="button" href="{review}">Flagged for review</a>'
+                '</div></div>'+alternate_html+'</section>')
 
     def dashboard(self):
         c=self.s['counts'];rows=[r for r in self.rows if r['state']=='upcoming'][:7]

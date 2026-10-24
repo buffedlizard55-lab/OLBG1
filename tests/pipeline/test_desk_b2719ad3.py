@@ -64,6 +64,17 @@ class TestDeskB2719AD3(unittest.TestCase):
         self.assertEqual(report["started_exclusions"], len(prices["started_rows"]))
         self.assertEqual(report["high_predictions"], len(predictions))
 
+    def test_canonical_front_door_preserves_peer_links(self):
+        builder = (ROOT / "pipeline" / "build.py").read_text(encoding="utf-8")
+        root = (ROOT / "index.html").read_text(encoding="utf-8")
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn("link='b2719ad3/index.html'", builder)
+        for peer in ("37003e61/index.html", "8cfb80b2/index.html", "02d3d515/index.html", "3d121822/index.html"):
+            self.assertIn(peer, builder)
+            self.assertIn(peer, root)
+        self.assertIn('href="b2719ad3/index.html"', root)
+        self.assertIn("/OLBG1/b2719ad3/index.html", readme)
+
 
 if __name__ == "__main__":
     unittest.main()
