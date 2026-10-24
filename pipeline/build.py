@@ -113,11 +113,12 @@ class Site:
     def latest_desk(self):
         """One obvious front door to the newest desk, with peer desks preserved."""
         link='b2719ad3/index.html'
+        if not (ROOT/link).is_file():link='2ff8342b/index.html'
         if not (ROOT/link).is_file():link='3d121822/index.html'
         if not (ROOT/link).is_file():return ''
         alternates=[]
-        if link=='b2719ad3/index.html':
-            for path,label in [('37003e61/index.html','37003E61'),('8cfb80b2/index.html','8CFB'),('02d3d515/index.html','02D3'),('3d121822/index.html','3D121822')]:
+        if link in ('b2719ad3/index.html','2ff8342b/index.html'):
+            for path,label in [('37003e61/index.html','37003E61'),('8cfb80b2/index.html','8CFB'),('02d3d515/index.html','02D3'),('3d121822/index.html','3D121822'),('2ff8342b/index.html','2FF8342B')]:
                 if (ROOT/path).is_file():alternates.append(f'<a href="{path}" style="color:#0f5132">{label}</a>')
         alternate_html=''
         if alternates:
