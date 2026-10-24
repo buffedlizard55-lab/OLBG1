@@ -1,0 +1,2966 @@
+{
+ "fixtures": [
+  {
+   "id": "mlb-mil-tb-g2",
+   "sport": "baseball",
+   "sport_name": "Baseball",
+   "comp": "MLB World Series, Game 2",
+   "home": "Milwaukee Brewers",
+   "away": "Tampa Bay Rays",
+   "home_name": "Milwaukee Brewers",
+   "away_name": "Tampa Bay Rays",
+   "olbg_url": "https://www.olbg.com/betting-tips/Baseball/MLB/MLB/TB_Rays_@_MIL_Brewers/12?event_id=160792",
+   "olbg_event_id": 160792,
+   "start_utc": "2026-10-25T00:00:00Z",
+   "start_note": "exact UTC start from MLB's official schedule feed; no official price read",
+   "sources": [
+    "olbg-baseball",
+    "mlb-schedule",
+    "mlb-standings-al",
+    "mlb-standings-nl"
+   ],
+   "facts": [
+    "Brewers lead the series 1-0 going into Game 2",
+    "Milwaukee 103-59 in the 2026 regular season, 55-26 at home, 8-2 in their last ten, plus-214 run differential",
+    "Tampa Bay 98-64, 43-38 on the road, 5-5 in their last ten, plus-86 run differential",
+    "Probable pitchers: Logan Henderson (Milwaukee) and Drew Rasmussen (Tampa Bay)"
+   ],
+   "priced": true,
+   "markets": [
+    {
+     "market": "Match winner (moneyline)",
+     "selection": "Milwaukee Brewers",
+     "prob": 0.6514,
+     "fair": -187,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Tampa Bay Rays",
+     "alt_prob": 0.3486,
+     "alt_fair": 187,
+     "alt_best": null,
+     "alt_best_book": null
+    }
+   ],
+   "selection": "Milwaukee Brewers",
+   "confidence": "High",
+   "prediction": {
+    "selection": "Milwaukee Brewers to win Game 2 of the World Series (moneyline).",
+    "text": "Milwaukee opened the Series with a win and now sends Logan Henderson to the mound at American Family Field, where the Brewers went 55-26 during the regular season. Their 103-59 record was the best in the National League, they scored 832 runs against 618 allowed for a plus-214 differential, and they closed the regular season 8-2 in their last ten, according to MLB's official standings. Tampa Bay finished 98-64 but was a far more ordinary 43-38 on the road. Henderson against Drew Rasmussen is the pitching matchup MLB lists for this game. No injury designation for either club could be read from an official source before publication.",
+    "words": 107
+   },
+   "model": {
+    "p_home": 0.6514,
+    "p_away": 0.3486,
+    "method": "mlb-log5-home-away-v1"
+   },
+   "prob": 0.6514,
+   "fair": -187,
+   "best": null,
+   "best_book": null,
+   "fair_band_ok": true,
+   "edge_pts": null
+  },
+  {
+   "id": "mlb-tb-mil-g3",
+   "sport": "baseball",
+   "sport_name": "Baseball",
+   "comp": "MLB World Series, Game 3",
+   "home": "Tampa Bay Rays",
+   "away": "Milwaukee Brewers",
+   "home_name": "Tampa Bay Rays",
+   "away_name": "Milwaukee Brewers",
+   "olbg_url": "https://www.olbg.com/betting-tips/Baseball/12",
+   "start_utc": "2026-10-27T00:00:00Z",
+   "start_note": "exact UTC start from MLB's official schedule feed",
+   "sources": [
+    "mlb-schedule"
+   ],
+   "facts": [
+    "Probable pitchers: Robert Gasser (Milwaukee), Freddy Peralta (Tampa Bay)"
+   ],
+   "priced": false,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "mlb-tb-mil-g4",
+   "sport": "baseball",
+   "sport_name": "Baseball",
+   "comp": "MLB World Series, Game 4",
+   "home": "Tampa Bay Rays",
+   "away": "Milwaukee Brewers",
+   "home_name": "Tampa Bay Rays",
+   "away_name": "Milwaukee Brewers",
+   "olbg_url": "https://www.olbg.com/betting-tips/Baseball/12",
+   "start_utc": "2026-10-28T00:00:00Z",
+   "start_note": "exact UTC start from MLB's official schedule feed",
+   "sources": [
+    "mlb-schedule"
+   ],
+   "facts": [
+    "Probable pitchers not listed by MLB at the time of reading"
+   ],
+   "priced": false,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nba-536111",
+   "sport": "basketball",
+   "sport_name": "Basketball",
+   "comp": "NBA",
+   "home": "Philadelphia 76ers",
+   "away": "Milwaukee Bucks",
+   "home_name": "Philadelphia 76ers",
+   "away_name": "Milwaukee Bucks",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/MIL_Bucks_@_PHI_76ers/4?event_id=536111",
+   "olbg_event_id": 536111,
+   "start_note": "OLBG hub shows today; no official NBA start time read",
+   "sources": [
+    "olbg-basketball",
+    "nba-standings"
+   ],
+   "facts": [
+    "Philadelphia 76ers 2-0 on the season after 1-2 games",
+    "Milwaukee Bucks 0-2 on the season after 1-2 games"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nba-536112",
+   "sport": "basketball",
+   "sport_name": "Basketball",
+   "comp": "NBA",
+   "home": "Cleveland Cavaliers",
+   "away": "Brooklyn Nets",
+   "home_name": "Cleveland Cavaliers",
+   "away_name": "Brooklyn Nets",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/BKN_Nets_@_CLE_Cavaliers/4?event_id=536112",
+   "olbg_event_id": 536112,
+   "start_note": "OLBG hub shows today; no official NBA start time read",
+   "sources": [
+    "olbg-basketball",
+    "nba-standings"
+   ],
+   "facts": [
+    "Cleveland Cavaliers 0-1 on the season after 1-2 games",
+    "Brooklyn Nets 0-1 on the season after 1-2 games"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nba-536113",
+   "sport": "basketball",
+   "sport_name": "Basketball",
+   "comp": "NBA",
+   "home": "Chicago Bulls",
+   "away": "Washington Wizards",
+   "home_name": "Chicago Bulls",
+   "away_name": "Washington Wizards",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/WAS_Wizards_@_CHI_Bulls/4?event_id=536113",
+   "olbg_event_id": 536113,
+   "start_note": "OLBG hub shows today; no official NBA start time read",
+   "sources": [
+    "olbg-basketball",
+    "nba-standings"
+   ],
+   "facts": [
+    "Chicago Bulls 1-1 on the season after 1-2 games",
+    "Washington Wizards 1-1 on the season after 1-2 games"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nba-536114",
+   "sport": "basketball",
+   "sport_name": "Basketball",
+   "comp": "NBA",
+   "home": "Dallas Mavericks",
+   "away": "San Antonio Spurs",
+   "home_name": "Dallas Mavericks",
+   "away_name": "San Antonio Spurs",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/SA_Spurs_@_DAL_Mavericks/4?event_id=536114",
+   "olbg_event_id": 536114,
+   "start_note": "OLBG hub shows today; no official NBA start time read",
+   "sources": [
+    "olbg-basketball",
+    "nba-standings"
+   ],
+   "facts": [
+    "Dallas Mavericks 1-1 on the season after 1-2 games",
+    "San Antonio Spurs 0-2 on the season after 1-2 games"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nba-536115",
+   "sport": "basketball",
+   "sport_name": "Basketball",
+   "comp": "NBA",
+   "home": "Atlanta Hawks",
+   "away": "Houston Rockets",
+   "home_name": "Atlanta Hawks",
+   "away_name": "Houston Rockets",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/HOU_Rockets_@_ATL_Hawks/4?event_id=536115",
+   "olbg_event_id": 536115,
+   "start_note": "OLBG hub shows today; no official NBA start time read",
+   "sources": [
+    "olbg-basketball",
+    "nba-standings"
+   ],
+   "facts": [
+    "Atlanta Hawks 2-0 on the season after 1-2 games",
+    "Houston Rockets 2-0 on the season after 1-2 games"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nba-536116",
+   "sport": "basketball",
+   "sport_name": "Basketball",
+   "comp": "NBA",
+   "home": "Denver Nuggets",
+   "away": "New Orleans Pelicans",
+   "home_name": "Denver Nuggets",
+   "away_name": "New Orleans Pelicans",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/NO_Pelicans_@_DEN_Nuggets/4?event_id=536116",
+   "olbg_event_id": 536116,
+   "start_note": "OLBG hub shows today; no official NBA start time read",
+   "sources": [
+    "olbg-basketball",
+    "nba-standings"
+   ],
+   "facts": [
+    "Denver Nuggets 0-1 on the season after 1-2 games",
+    "New Orleans Pelicans 0-2 on the season after 1-2 games"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nba-536117",
+   "sport": "basketball",
+   "sport_name": "Basketball",
+   "comp": "NBA",
+   "home": "Charlotte Hornets",
+   "away": "Miami Heat",
+   "home_name": "Charlotte Hornets",
+   "away_name": "Miami Heat",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/MIA_Heat_@_CHA_Hornets/4?event_id=536117",
+   "olbg_event_id": 536117,
+   "start_note": "OLBG hub shows today; no official NBA start time read",
+   "sources": [
+    "olbg-basketball",
+    "nba-standings"
+   ],
+   "facts": [
+    "Charlotte Hornets 1-1 on the season after 1-2 games",
+    "Miami Heat 0-2 on the season after 1-2 games"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nba-536118",
+   "sport": "basketball",
+   "sport_name": "Basketball",
+   "comp": "NBA",
+   "home": "Phoenix Suns",
+   "away": "Golden State Warriors",
+   "home_name": "Phoenix Suns",
+   "away_name": "Golden State Warriors",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/GS_Warriors_@_PHX_Suns/4?event_id=536118",
+   "olbg_event_id": 536118,
+   "start_note": "OLBG hub shows today; no official NBA start time read",
+   "sources": [
+    "olbg-basketball",
+    "nba-standings"
+   ],
+   "facts": [
+    "Phoenix Suns 0-1 on the season after 1-2 games",
+    "Golden State Warriors 0-2 on the season after 1-2 games"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nba-nbb-botafogo",
+   "sport": "basketball",
+   "sport_name": "Basketball",
+   "comp": "Brazil NBB",
+   "home": "Botafogo",
+   "away": "Pato Basquete",
+   "home_name": "Botafogo",
+   "away_name": "Pato Basquete",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/Other/Brazil_NBB/Pato_Basquete_vs_Botafogo/4?event_id=536087",
+   "olbg_event_id": 536087,
+   "start_note": "OLBG hub shows today 18:00 US Eastern",
+   "sources": [
+    "olbg-basketball"
+   ],
+   "facts": [
+    "Fixture pairing and market label read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "cr-188838",
+   "sport": "cricket",
+   "sport_name": "Cricket",
+   "comp": "ODI",
+   "home": "Pakistan",
+   "away": "England",
+   "home_name": "Pakistan",
+   "away_name": "England",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Pakistan_vs_England_One_Day_Match/7?event_id=188838",
+   "olbg_event_id": 188838,
+   "start_note": "OLBG hub time withheld - no official board source read",
+   "sources": [
+    "olbg-cricket"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "cr-188845",
+   "sport": "cricket",
+   "sport_name": "Cricket",
+   "comp": "T20",
+   "home": "Toronto Kings",
+   "away": "Vancouver Guardians",
+   "home_name": "Toronto Kings",
+   "away_name": "Vancouver Guardians",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Toronto_Kings_vs_Vancouver_Guardians_T20/7?event_id=188845",
+   "olbg_event_id": 188845,
+   "start_note": "OLBG hub time withheld - no official board source read",
+   "sources": [
+    "olbg-cricket"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "cr-188847",
+   "sport": "cricket",
+   "sport_name": "Cricket",
+   "comp": "WODI",
+   "home": "India W",
+   "away": "Zimbabwe W",
+   "home_name": "India W",
+   "away_name": "Zimbabwe W",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/India_W_vs_Zimbabwe_W_2nd_ODI/7?event_id=188847",
+   "olbg_event_id": 188847,
+   "start_note": "OLBG hub time withheld - no official board source read",
+   "sources": [
+    "olbg-cricket"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "cr-188848",
+   "sport": "cricket",
+   "sport_name": "Cricket",
+   "comp": "CSA T20",
+   "home": "Eastern Storm",
+   "away": "South Africa Emerging",
+   "home_name": "Eastern Storm",
+   "away_name": "South Africa Emerging",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Eastern_Storm_vs_South_Africa_Emerging_T20/7?event_id=188848",
+   "olbg_event_id": 188848,
+   "start_note": "OLBG hub time withheld - no official board source read",
+   "sources": [
+    "olbg-cricket"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "cr-188849",
+   "sport": "cricket",
+   "sport_name": "Cricket",
+   "comp": "CSA T20",
+   "home": "Boland",
+   "away": "Titans",
+   "home_name": "Boland",
+   "away_name": "Titans",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Boland_vs_Titans_T20/7?event_id=188849",
+   "olbg_event_id": 188849,
+   "start_note": "OLBG hub time withheld - no official board source read",
+   "sources": [
+    "olbg-cricket"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "cr-188850",
+   "sport": "cricket",
+   "sport_name": "Cricket",
+   "comp": "CSA T20",
+   "home": "Tuskers",
+   "away": "Western Province",
+   "home_name": "Tuskers",
+   "away_name": "Western Province",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Tuskers_vs_Western_Province_T20/7?event_id=188850",
+   "olbg_event_id": 188850,
+   "start_note": "OLBG hub time withheld - no official board source read",
+   "sources": [
+    "olbg-cricket"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "cr-188851",
+   "sport": "cricket",
+   "sport_name": "Cricket",
+   "comp": "CSA T20",
+   "home": "North West Dragons",
+   "away": "Northern Cape Heat",
+   "home_name": "North West Dragons",
+   "away_name": "Northern Cape Heat",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/North_West_Dragons_vs_Northern_Cape_Heat_T20/7?event_id=188851",
+   "olbg_event_id": 188851,
+   "start_note": "OLBG hub time withheld - no official board source read",
+   "sources": [
+    "olbg-cricket"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "cr-188852",
+   "sport": "cricket",
+   "sport_name": "Cricket",
+   "comp": "T20I",
+   "home": "New Zealand",
+   "away": "India",
+   "home_name": "New Zealand",
+   "away_name": "India",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/New_Zealand_vs_India_3rd_T20_Match/7?event_id=188852",
+   "olbg_event_id": 188852,
+   "start_note": "OLBG hub time withheld - no official board source read",
+   "sources": [
+    "olbg-cricket"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "da-32397",
+   "sport": "darts",
+   "sport_name": "Darts",
+   "comp": "PDC European Championship",
+   "home": "Nathan Aspinall",
+   "away": "Luke Littler",
+   "home_name": "Nathan Aspinall",
+   "away_name": "Luke Littler",
+   "olbg_url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Nathan_Aspinall_vs_Luke_Littler/15?event_id=32397",
+   "olbg_event_id": 32397,
+   "start_note": "OLBG hub time only; the PDC calendar returned a cookie wall, so no official time or draw was read",
+   "sources": [
+    "olbg-darts",
+    "pdc-calendar"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "da-32398",
+   "sport": "darts",
+   "sport_name": "Darts",
+   "comp": "PDC European Championship",
+   "home": "Martin Schindler",
+   "away": "Jermaine Wattimena",
+   "home_name": "Martin Schindler",
+   "away_name": "Jermaine Wattimena",
+   "olbg_url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Martin_Schindler_vs_Jermaine_Wattimena/15?event_id=32398",
+   "olbg_event_id": 32398,
+   "start_note": "OLBG hub time only; the PDC calendar returned a cookie wall, so no official time or draw was read",
+   "sources": [
+    "olbg-darts",
+    "pdc-calendar"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "da-32400",
+   "sport": "darts",
+   "sport_name": "Darts",
+   "comp": "PDC European Championship",
+   "home": "Jonny Clayton",
+   "away": "Josh Rock",
+   "home_name": "Jonny Clayton",
+   "away_name": "Josh Rock",
+   "olbg_url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Jonny_Clayton_vs_Josh_Rock/15?event_id=32400",
+   "olbg_event_id": 32400,
+   "start_note": "OLBG hub time only; the PDC calendar returned a cookie wall, so no official time or draw was read",
+   "sources": [
+    "olbg-darts",
+    "pdc-calendar"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "da-32407",
+   "sport": "darts",
+   "sport_name": "Darts",
+   "comp": "PDC European Championship",
+   "home": "Gerwyn Price",
+   "away": "Stephen Bunting",
+   "home_name": "Gerwyn Price",
+   "away_name": "Stephen Bunting",
+   "olbg_url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Gerwyn_Price_vs_Stephen_Bunting/15?event_id=32407",
+   "olbg_event_id": 32407,
+   "start_note": "OLBG hub time only; the PDC calendar returned a cookie wall, so no official time or draw was read",
+   "sources": [
+    "olbg-darts",
+    "pdc-calendar"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "ga-3530",
+   "sport": "gaelic",
+   "sport_name": "Gaelic Sports",
+   "comp": "Club championship",
+   "home": "St Finbarrs",
+   "away": "Nemo Rangers",
+   "home_name": "St Finbarrs",
+   "away_name": "Nemo Rangers",
+   "olbg_url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/St_Finbarrs_v_Nemo_Rangers/25?event_id=3530",
+   "olbg_event_id": 3530,
+   "start_note": "OLBG hub time only; no official county board source read",
+   "sources": [
+    "olbg-gaelic"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "ga-3531",
+   "sport": "gaelic",
+   "sport_name": "Gaelic Sports",
+   "comp": "Club championship",
+   "home": "Kanturk",
+   "away": "Eire Og Cor",
+   "home_name": "Kanturk",
+   "away_name": "Eire Og Cor",
+   "olbg_url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/Kanturk_v_Eire_Og_Cor/25?event_id=3531",
+   "olbg_event_id": 3531,
+   "start_note": "OLBG hub time only; no official county board source read",
+   "sources": [
+    "olbg-gaelic"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "ga-3532",
+   "sport": "gaelic",
+   "sport_name": "Gaelic Sports",
+   "comp": "Club championship",
+   "home": "Moycullen",
+   "away": "Salthill-Knocknacarra",
+   "home_name": "Moycullen",
+   "away_name": "Salthill-Knocknacarra",
+   "olbg_url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/Moycullen_v_Salthill-Knocknacarra/25?event_id=3532",
+   "olbg_event_id": 3532,
+   "start_note": "OLBG hub time only; no official county board source read",
+   "sources": [
+    "olbg-gaelic"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "ga-3537",
+   "sport": "gaelic",
+   "sport_name": "Gaelic Sports",
+   "comp": "Club championship",
+   "home": "Fr Caseys",
+   "away": "Kildimo Pallaskenry",
+   "home_name": "Fr Caseys",
+   "away_name": "Kildimo Pallaskenry",
+   "olbg_url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/Fr_Caseys_v_Kildimo_Pallaskenry/25?event_id=3537",
+   "olbg_event_id": 3537,
+   "start_note": "OLBG hub time only; no official county board source read",
+   "sources": [
+    "olbg-gaelic"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "gh-689890",
+   "sport": "greyhounds",
+   "sport_name": "Greyhounds",
+   "comp": "Doncaster (UK)",
+   "home": "7:58 Doncaster",
+   "away": "Lady Gambet",
+   "home_name": "7:58 Doncaster",
+   "away_name": "Lady Gambet",
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/7:58_Doncaster/28?event_id=689890",
+   "olbg_event_id": 689890,
+   "start_note": "Race clock time is the event name; OLBG renders it in US Eastern, five hours behind UK track time",
+   "sources": [
+    "olbg-greyhounds"
+   ],
+   "facts": [
+    "OLBG's most-tipped runner: Lady Gambet",
+    "No GBGB racecard read (official route returned 404)"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "gh-689892",
+   "sport": "greyhounds",
+   "sport_name": "Greyhounds",
+   "comp": "Park (UK)",
+   "home": "9:18 Dunstall Park",
+   "away": "Avarua Lake",
+   "home_name": "9:18 Dunstall Park",
+   "away_name": "Avarua Lake",
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/9:18_Dunstall_Park/28?event_id=689892",
+   "olbg_event_id": 689892,
+   "start_note": "Race clock time is the event name; OLBG renders it in US Eastern, five hours behind UK track time",
+   "sources": [
+    "olbg-greyhounds"
+   ],
+   "facts": [
+    "OLBG's most-tipped runner: Avarua Lake",
+    "No GBGB racecard read (official route returned 404)"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "gh-689963",
+   "sport": "greyhounds",
+   "sport_name": "Greyhounds",
+   "comp": "Park (UK)",
+   "home": "6:50 Central Park",
+   "away": "Clairekeith Mary",
+   "home_name": "6:50 Central Park",
+   "away_name": "Clairekeith Mary",
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/6:50_Central_Park/28?event_id=689963",
+   "olbg_event_id": 689963,
+   "start_note": "Race clock time is the event name; OLBG renders it in US Eastern, five hours behind UK track time",
+   "sources": [
+    "olbg-greyhounds"
+   ],
+   "facts": [
+    "OLBG's most-tipped runner: Clairekeith Mary",
+    "No GBGB racecard read (official route returned 404)"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "gh-689964",
+   "sport": "greyhounds",
+   "sport_name": "Greyhounds",
+   "comp": "Monmore (UK)",
+   "home": "6:54 Monmore",
+   "away": "Son Of Thor",
+   "home_name": "6:54 Monmore",
+   "away_name": "Son Of Thor",
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/6:54_Monmore/28?event_id=689964",
+   "olbg_event_id": 689964,
+   "start_note": "Race clock time is the event name; OLBG renders it in US Eastern, five hours behind UK track time",
+   "sources": [
+    "olbg-greyhounds"
+   ],
+   "facts": [
+    "OLBG's most-tipped runner: Son Of Thor",
+    "No GBGB racecard read (official route returned 404)"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "gh-689965",
+   "sport": "greyhounds",
+   "sport_name": "Greyhounds",
+   "comp": "Doncaster (UK)",
+   "home": "6:46 Doncaster",
+   "away": "Headford Asher",
+   "home_name": "6:46 Doncaster",
+   "away_name": "Headford Asher",
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/6:46_Doncaster/28?event_id=689965",
+   "olbg_event_id": 689965,
+   "start_note": "Race clock time is the event name; OLBG renders it in US Eastern, five hours behind UK track time",
+   "sources": [
+    "olbg-greyhounds"
+   ],
+   "facts": [
+    "OLBG's most-tipped runner: Headford Asher",
+    "No GBGB racecard read (official route returned 404)"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "gh-690013",
+   "sport": "greyhounds",
+   "sport_name": "Greyhounds",
+   "comp": "Monmore (UK)",
+   "home": "8:54 Monmore",
+   "away": "Crossfield Jess",
+   "home_name": "8:54 Monmore",
+   "away_name": "Crossfield Jess",
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/8:54_Monmore/28?event_id=690013",
+   "olbg_event_id": 690013,
+   "start_note": "Race clock time is the event name; OLBG renders it in US Eastern, five hours behind UK track time",
+   "sources": [
+    "olbg-greyhounds"
+   ],
+   "facts": [
+    "OLBG's most-tipped runner: Crossfield Jess",
+    "No GBGB racecard read (official route returned 404)"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "gh-690017",
+   "sport": "greyhounds",
+   "sport_name": "Greyhounds",
+   "comp": "Monmore (UK)",
+   "home": "9:14 Monmore",
+   "away": "Skylars Vision",
+   "home_name": "9:14 Monmore",
+   "away_name": "Skylars Vision",
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/9:14_Monmore/28?event_id=690017",
+   "olbg_event_id": 690017,
+   "start_note": "Race clock time is the event name; OLBG renders it in US Eastern, five hours behind UK track time",
+   "sources": [
+    "olbg-greyhounds"
+   ],
+   "facts": [
+    "OLBG's most-tipped runner: Skylars Vision",
+    "No GBGB racecard read (official route returned 404)"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "gh-690035",
+   "sport": "greyhounds",
+   "sport_name": "Greyhounds",
+   "comp": "Park (UK)",
+   "home": "10:14 Dunstall Park",
+   "away": "Greenwell Gypsy",
+   "home_name": "10:14 Dunstall Park",
+   "away_name": "Greenwell Gypsy",
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/10:14_Dunstall_Park/28?event_id=690035",
+   "olbg_event_id": 690035,
+   "start_note": "Race clock time is the event name; OLBG renders it in US Eastern, five hours behind UK track time",
+   "sources": [
+    "olbg-greyhounds"
+   ],
+   "facts": [
+    "OLBG's most-tipped runner: Greenwell Gypsy",
+    "No GBGB racecard read (official route returned 404)"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "hb-12084",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "comp": "France LNH",
+   "home": "Saint Raphael",
+   "away": "PSG Handball",
+   "home_name": "Saint Raphael",
+   "away_name": "PSG Handball",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Saint_Raphael_vs_PSG_Handball/20?event_id=12084",
+   "olbg_event_id": 12084,
+   "start_note": "OLBG hub time only; no official league or EHF source read",
+   "sources": [
+    "olbg-handball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "hb-12090",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "comp": "Germany HBL",
+   "home": "HBW Balingen Weilstetten",
+   "away": "MT Melsungen",
+   "home_name": "HBW Balingen Weilstetten",
+   "away_name": "MT Melsungen",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/HBW_Balingen_Weilstetten_vs_MT_Melsungen/20?event_id=12090",
+   "olbg_event_id": 12090,
+   "start_note": "OLBG hub time only; no official league or EHF source read",
+   "sources": [
+    "olbg-handball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "hb-12092",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "comp": "Germany HBL",
+   "home": "Rhein Neckar Lowen",
+   "away": "SC Magdeburg",
+   "home_name": "Rhein Neckar Lowen",
+   "away_name": "SC Magdeburg",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Rhein_Neckar_Lowen_vs_SC_Magdeburg/20?event_id=12092",
+   "olbg_event_id": 12092,
+   "start_note": "OLBG hub time only; no official league or EHF source read",
+   "sources": [
+    "olbg-handball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "hb-12102",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "comp": "Liga ASOBAL",
+   "home": "BM Granollers",
+   "away": "Angel Ximenez Puente Genil",
+   "home_name": "BM Granollers",
+   "away_name": "Angel Ximenez Puente Genil",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/BM_Granollers_vs_Angel_Ximenez_Puente_Genil/20?event_id=12102",
+   "olbg_event_id": 12102,
+   "start_note": "OLBG hub time only; no official league or EHF source read",
+   "sources": [
+    "olbg-handball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "hb-12105",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "comp": "Liga ASOBAL",
+   "home": "BM Torrelavega",
+   "away": "BM Proin",
+   "home_name": "BM Torrelavega",
+   "away_name": "BM Proin",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/BM_Torrelavega_vs_BM_Proin/20?event_id=12105",
+   "olbg_event_id": 12105,
+   "start_note": "OLBG hub time only; no official league or EHF source read",
+   "sources": [
+    "olbg-handball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "hb-12126",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "comp": "Women's international",
+   "home": "Luxembourg W",
+   "away": "Great Britain W",
+   "home_name": "Luxembourg W",
+   "away_name": "Great Britain W",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Luxembourg_W_vs_Great_Britain_W/20?event_id=12126",
+   "olbg_event_id": 12126,
+   "start_note": "OLBG hub time only; no official league or EHF source read",
+   "sources": [
+    "olbg-handball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "hb-12128",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "comp": "EHF Champions League",
+   "home": "Fuchse Berlin",
+   "away": "RK Partizan",
+   "home_name": "Fuchse Berlin",
+   "away_name": "RK Partizan",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Fuchse_Berlin_vs_RK_Partizan/20?event_id=12128",
+   "olbg_event_id": 12128,
+   "start_note": "OLBG hub time only; no official league or EHF source read",
+   "sources": [
+    "olbg-handball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "hb-12129",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "comp": "EHF Champions League",
+   "home": "GOG",
+   "away": "Sporting CP",
+   "home_name": "GOG",
+   "away_name": "Sporting CP",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/GOG_vs_Sporting_CP/20?event_id=12129",
+   "olbg_event_id": 12129,
+   "start_note": "OLBG hub time only; no official league or EHF source read",
+   "sources": [
+    "olbg-handball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "hb-12130",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "comp": "EHF Champions League",
+   "home": "HC Vardar",
+   "away": "MT Melsungen",
+   "home_name": "HC Vardar",
+   "away_name": "MT Melsungen",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/HC_Vardar_vs_MT_Melsungen/20?event_id=12130",
+   "olbg_event_id": 12130,
+   "start_note": "OLBG hub time only; no official league or EHF source read",
+   "sources": [
+    "olbg-handball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "hb-12132",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "comp": "EHF Champions League",
+   "home": "KS Kielce",
+   "away": "Kolstad",
+   "home_name": "KS Kielce",
+   "away_name": "Kolstad",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/KS_Kielce_vs_Kolstad/20?event_id=12132",
+   "olbg_event_id": 12132,
+   "start_note": "OLBG hub time only; no official league or EHF source read",
+   "sources": [
+    "olbg-handball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "hb-12136",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "comp": "EHF Champions League",
+   "home": "SC Magdeburg",
+   "away": "HC Kriens Luzern",
+   "home_name": "SC Magdeburg",
+   "away_name": "HC Kriens Luzern",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/SC_Magdeburg_vs_HC_Kriens_Luzern/20?event_id=12136",
+   "olbg_event_id": 12136,
+   "start_note": "OLBG hub time only; no official league or EHF source read",
+   "sources": [
+    "olbg-handball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nhl-njd-lak",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "NHL",
+   "home": "NJD",
+   "away": "LAK",
+   "home_name": "New Jersey Devils",
+   "away_name": "Los Angeles Kings",
+   "home_abbrev": "NJD",
+   "away_abbrev": "LAK",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/LA_Kings_@_NJ_Devils/13?event_id=200000",
+   "olbg_event_id": 200000,
+   "start_utc": "2026-10-24T19:30:00Z",
+   "sources": [
+    "olbg-ice-hockey",
+    "nhl-schedule",
+    "nhl-team-summary"
+   ],
+   "facts": [
+    "NJD 6-4-0 (0.600 points pct), 33 goals for, 31 against in 10 games",
+    "LAK 2-4-2 (0.375 points pct), 20 goals for, 29 against in 8 games",
+    "League partner prices read for the 2-way market: NJD best -192 (feed 9), LAK best +162 (feed 7)"
+   ],
+   "priced": true,
+   "start_note": "exact UTC start from the league's own feed",
+   "model": {
+    "p_home": 0.6058,
+    "p_away": 0.3942,
+    "method": "nhl-logistic-v1",
+    "lam_home": 3.74,
+    "lam_away": 2.56
+   },
+   "markets": [
+    {
+     "market": "Match winner (moneyline)",
+     "selection": "New Jersey Devils",
+     "prob": 0.6058,
+     "fair": -154,
+     "best": -192,
+     "best_book": "feed 9",
+     "alt_selection": "Los Angeles Kings",
+     "alt_prob": 0.3942,
+     "alt_fair": 154,
+     "alt_best": 162,
+     "alt_best_book": "feed 7"
+    },
+    {
+     "market": "Puck line -1.5",
+     "selection": "New Jersey Devils",
+     "prob": 0.4436,
+     "fair": 125,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Los Angeles Kings +1.5",
+     "alt_prob": 0.5564,
+     "alt_fair": -125,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Puck line +1.5",
+     "selection": "New Jersey Devils",
+     "prob": 0.8632,
+     "fair": -631,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Los Angeles Kings -1.5",
+     "alt_prob": 0.1368,
+     "alt_fair": 631,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Match total 5.5 goals",
+     "selection": "Over 5.5",
+     "prob": 0.6009,
+     "fair": -151,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Under 5.5",
+     "alt_prob": 0.3991,
+     "alt_fair": 151,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Match total 6.5 goals",
+     "selection": "Over 6.5",
+     "prob": 0.4414,
+     "fair": 127,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Under 6.5",
+     "alt_prob": 0.5586,
+     "alt_fair": -127,
+     "alt_best": null,
+     "alt_best_book": null
+    }
+   ],
+   "selection": "New Jersey Devils",
+   "confidence": "Medium",
+   "prediction": {
+    "selection": "New Jersey Devils to beat the Los Angeles Kings in regulation or beyond (moneyline).",
+    "text": "New Jersey is 6-4-0 through ten games with a plus-two goal difference and is at home, where the club has been far the steadier side. Los Angeles has played only eight games but arrives at 2-4-2 with 20 goals scored and 29 conceded, the thinnest offensive record on tonight's board. The Devils' 21.9 per cent power play against a Kings penalty kill that has been ordinary is the likeliest route to separation. The best price on the league's own feed is -192, shorter than the -154 we make them, so this is a form call and not a value call: back the Devils to win, but accept that the market has most of the edge already priced in.",
+    "words": 118
+   },
+   "prob": 0.6058,
+   "fair": -154,
+   "best": -192,
+   "best_book": "feed 9",
+   "fair_band_ok": true,
+   "edge_pts": -5.2
+  },
+  {
+   "id": "nhl-bos-sjs",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "NHL",
+   "home": "BOS",
+   "away": "SJS",
+   "home_name": "Boston Bruins",
+   "away_name": "San Jose Sharks",
+   "home_abbrev": "BOS",
+   "away_abbrev": "SJS",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/SJ_Sharks_@_BOS_Bruins/13?event_id=200007",
+   "olbg_event_id": 200007,
+   "start_utc": "2026-10-24T23:00:00Z",
+   "sources": [
+    "olbg-ice-hockey",
+    "nhl-schedule",
+    "nhl-team-summary"
+   ],
+   "facts": [
+    "BOS 8-2-1 (0.773 points pct), 42 goals for, 22 against in 11 games",
+    "SJS 6-4-1 (0.591 points pct), 32 goals for, 36 against in 11 games",
+    "League partner prices read for the 2-way market: BOS best -182 (feed 6), SJS best +160 (feed 9)"
+   ],
+   "priced": true,
+   "start_note": "exact UTC start from the league's own feed",
+   "model": {
+    "p_home": 0.6178,
+    "p_away": 0.3822,
+    "method": "nhl-logistic-v1",
+    "lam_home": 3.61,
+    "lam_away": 2.36
+   },
+   "markets": [
+    {
+     "market": "Match winner (moneyline)",
+     "selection": "Boston Bruins",
+     "prob": 0.6178,
+     "fair": -162,
+     "best": -182,
+     "best_book": "feed 6",
+     "alt_selection": "San Jose Sharks",
+     "alt_prob": 0.3822,
+     "alt_fair": 162,
+     "alt_best": 160,
+     "alt_best_book": "feed 9"
+    },
+    {
+     "market": "Puck line -1.5",
+     "selection": "Boston Bruins",
+     "prob": 0.4511,
+     "fair": 122,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "San Jose Sharks +1.5",
+     "alt_prob": 0.5489,
+     "alt_fair": -122,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Puck line +1.5",
+     "selection": "Boston Bruins",
+     "prob": 0.8752,
+     "fair": -701,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "San Jose Sharks -1.5",
+     "alt_prob": 0.1248,
+     "alt_fair": 701,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Match total 5.5 goals",
+     "selection": "Over 5.5",
+     "prob": 0.5495,
+     "fair": -122,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Under 5.5",
+     "alt_prob": 0.4505,
+     "alt_fair": 122,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Match total 6.5 goals",
+     "selection": "Over 6.5",
+     "prob": 0.3889,
+     "fair": 157,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Under 6.5",
+     "alt_prob": 0.6111,
+     "alt_fair": -157,
+     "alt_best": null,
+     "alt_best_book": null
+    }
+   ],
+   "selection": "Boston Bruins",
+   "confidence": "Medium",
+   "prediction": {
+    "selection": "Boston Bruins to beat the San Jose Sharks (moneyline).",
+    "text": "Boston is 8-2-1 with two shutouts and has conceded only 22 goals in 11 games, the best defensive record of any club on tonight's slate. San Jose is 6-4-1 but has been outscored 36-32 and has won just one game in regulation. The Bruins' 80.6 per cent penalty kill against a Sharks power play converting 25.7 per cent is the matchup that matters most, and Boston's home form has been the foundation of its start. The league feed lists the Bruins at -182 against our -162, which is a fair reflection of the gap and leaves thin margin for a buyer.",
+    "words": 101
+   },
+   "prob": 0.6178,
+   "fair": -162,
+   "best": -182,
+   "best_book": "feed 6",
+   "fair_band_ok": true,
+   "edge_pts": -2.8
+  },
+  {
+   "id": "nhl-cbj-vgk",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "NHL",
+   "home": "CBJ",
+   "away": "VGK",
+   "home_name": "Columbus Blue Jackets",
+   "away_name": "Vegas Golden Knights",
+   "home_abbrev": "CBJ",
+   "away_abbrev": "VGK",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/VGS_Golden_Knights_@_CLB_Blue_Jackets/13?event_id=200001",
+   "olbg_event_id": 200001,
+   "start_utc": "2026-10-24T23:00:00Z",
+   "sources": [
+    "olbg-ice-hockey",
+    "nhl-schedule",
+    "nhl-team-summary"
+   ],
+   "facts": [
+    "CBJ 3-5-0 (0.375 points pct), 19 goals for, 29 against in 8 games",
+    "VGK 8-4-0 (0.667 points pct), 45 goals for, 36 against in 12 games",
+    "League partner prices read for the 2-way market: CBJ best +118 (feed 6), VGK best -132 (feed 3)"
+   ],
+   "priced": true,
+   "start_note": "exact UTC start from the league's own feed",
+   "model": {
+    "p_home": 0.4429,
+    "p_away": 0.5571,
+    "method": "nhl-logistic-v1",
+    "lam_home": 3.16,
+    "lam_away": 3.0
+   },
+   "markets": [
+    {
+     "market": "Match winner (moneyline)",
+     "selection": "Columbus Blue Jackets",
+     "prob": 0.4429,
+     "fair": 126,
+     "best": 118,
+     "best_book": "feed 6",
+     "alt_selection": "Vegas Golden Knights",
+     "alt_prob": 0.5571,
+     "alt_fair": -126,
+     "alt_best": -132,
+     "alt_best_book": "feed 3"
+    },
+    {
+     "market": "Puck line -1.5",
+     "selection": "Columbus Blue Jackets",
+     "prob": 0.289,
+     "fair": 246,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Vegas Golden Knights +1.5",
+     "alt_prob": 0.711,
+     "alt_fair": -246,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Puck line +1.5",
+     "selection": "Columbus Blue Jackets",
+     "prob": 0.7531,
+     "fair": -305,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Vegas Golden Knights -1.5",
+     "alt_prob": 0.2469,
+     "alt_fair": 305,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Match total 5.5 goals",
+     "selection": "Over 5.5",
+     "prob": 0.5809,
+     "fair": -139,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Under 5.5",
+     "alt_prob": 0.4191,
+     "alt_fair": 139,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Match total 6.5 goals",
+     "selection": "Over 6.5",
+     "prob": 0.4206,
+     "fair": 138,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Under 6.5",
+     "alt_prob": 0.5794,
+     "alt_fair": -138,
+     "alt_best": null,
+     "alt_best_book": null
+    }
+   ],
+   "selection": "Vegas Golden Knights",
+   "confidence": "Low",
+   "prediction": {
+    "selection": "Vegas Golden Knights to beat the Columbus Blue Jackets (moneyline).",
+    "text": "Vegas is 8-4-0 with 45 goals for and has won seven of its last ten, while Columbus is 3-5-0 with only 19 goals in eight games and the weakest power play on tonight's card at 8.7 per cent. The Blue Jackets have also lost five of six, and their minus-ten goal difference is the second-worst of any home side playing today. The feed quotes Vegas at -132 where we make them -126, a small disagreement that still favours the visitor.",
+    "words": 80
+   },
+   "prob": 0.5571,
+   "fair": -126,
+   "best": -132,
+   "best_book": "feed 3",
+   "fair_band_ok": true,
+   "edge_pts": -1.2
+  },
+  {
+   "id": "nhl-ott-nyr",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "NHL",
+   "home": "OTT",
+   "away": "NYR",
+   "home_name": "Ottawa Senators",
+   "away_name": "New York Rangers",
+   "home_abbrev": "OTT",
+   "away_abbrev": "NYR",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/NY_Rangers_@_OTT_Senators/13?event_id=200008",
+   "olbg_event_id": 200008,
+   "start_utc": "2026-10-24T23:00:00Z",
+   "sources": [
+    "olbg-ice-hockey",
+    "nhl-schedule",
+    "nhl-team-summary"
+   ],
+   "facts": [
+    "OTT 7-4-0 (0.636 points pct), 29 goals for, 30 against in 11 games",
+    "NYR 7-4-1 (0.625 points pct), 37 goals for, 29 against in 12 games",
+    "League partner prices read for the 2-way market: OTT best -109 (feed 6), NYR best +106 (feed 7)"
+   ],
+   "priced": true,
+   "start_note": "exact UTC start from the league's own feed",
+   "model": {
+    "p_home": 0.5279,
+    "p_away": 0.4721,
+    "method": "nhl-logistic-v1",
+    "lam_home": 3.02,
+    "lam_away": 2.34
+   },
+   "markets": [
+    {
+     "market": "Match winner (moneyline)",
+     "selection": "Ottawa Senators",
+     "prob": 0.5279,
+     "fair": -112,
+     "best": -109,
+     "best_book": "feed 6",
+     "alt_selection": "New York Rangers",
+     "alt_prob": 0.4721,
+     "alt_fair": 112,
+     "alt_best": 106,
+     "alt_best_book": "feed 7"
+    },
+    {
+     "market": "Puck line -1.5",
+     "selection": "Ottawa Senators",
+     "prob": 0.3538,
+     "fair": 183,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "New York Rangers +1.5",
+     "alt_prob": 0.6462,
+     "alt_fair": -183,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Puck line +1.5",
+     "selection": "Ottawa Senators",
+     "prob": 0.833,
+     "fair": -499,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "New York Rangers -1.5",
+     "alt_prob": 0.167,
+     "alt_fair": 499,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Match total 5.5 goals",
+     "selection": "Over 5.5",
+     "prob": 0.4454,
+     "fair": 125,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Under 5.5",
+     "alt_prob": 0.5546,
+     "alt_fair": -125,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Match total 6.5 goals",
+     "selection": "Over 6.5",
+     "prob": 0.2907,
+     "fair": 244,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Under 6.5",
+     "alt_prob": 0.7093,
+     "alt_fair": -244,
+     "alt_best": null,
+     "alt_best_book": null
+    }
+   ],
+   "selection": "Ottawa Senators",
+   "confidence": "Low",
+   "prediction": {
+    "selection": "Ottawa Senators to beat the New York Rangers (moneyline).",
+    "text": "Ottawa is 7-4-0 and has conceded only 30 goals in 11 games, while the Rangers have played 12 games for 15 points and have been outshot in several of them. The Senators' 2-0 record in games decided beyond regulation and their home ice tilt a close matchup. Both sides sit on 14 points, so this is close to a coin flip and the market agrees; the best published price for Ottawa on the league's own list is -109 (feed 6). Our line gives Ottawa 52.8 per cent, so no edge is claimed either way.",
+    "words": 94
+   },
+   "prob": 0.5279,
+   "fair": -112,
+   "best": -109,
+   "best_book": "feed 6",
+   "fair_band_ok": true,
+   "edge_pts": 0.6
+  },
+  {
+   "id": "nhl-pit-nsh",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "NHL",
+   "home": "PIT",
+   "away": "NSH",
+   "home_name": "Pittsburgh Penguins",
+   "away_name": "Nashville Predators",
+   "home_abbrev": "PIT",
+   "away_abbrev": "NSH",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/NSH_Predators_@_PIT_Penguins/13?event_id=200006",
+   "olbg_event_id": 200006,
+   "start_utc": "2026-10-24T23:00:00Z",
+   "sources": [
+    "olbg-ice-hockey",
+    "nhl-schedule",
+    "nhl-team-summary"
+   ],
+   "facts": [
+    "PIT 4-6-1 (0.409 points pct), 36 goals for, 37 against in 11 games",
+    "NSH 3-3-3 (0.500 points pct), 23 goals for, 28 against in 9 games",
+    "League partner prices read for the 2-way market: PIT best +125 (feed 6), NSH best +106 (feed 7)"
+   ],
+   "priced": true,
+   "start_note": "exact UTC start from the league's own feed",
+   "model": {
+    "p_home": 0.5261,
+    "p_away": 0.4739,
+    "method": "nhl-logistic-v1",
+    "lam_home": 3.41,
+    "lam_away": 2.73
+   },
+   "markets": [
+    {
+     "market": "Match winner (moneyline)",
+     "selection": "Pittsburgh Penguins",
+     "prob": 0.5261,
+     "fair": -111,
+     "best": 125,
+     "best_book": "feed 6",
+     "alt_selection": "Nashville Predators",
+     "alt_prob": 0.4739,
+     "alt_fair": 111,
+     "alt_best": 106,
+     "alt_best_book": "feed 7"
+    },
+    {
+     "market": "Puck line -1.5",
+     "selection": "Pittsburgh Penguins",
+     "prob": 0.3637,
+     "fair": 175,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Nashville Predators +1.5",
+     "alt_prob": 0.6363,
+     "alt_fair": -175,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Puck line +1.5",
+     "selection": "Pittsburgh Penguins",
+     "prob": 0.8154,
+     "fair": -442,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Nashville Predators -1.5",
+     "alt_prob": 0.1846,
+     "alt_fair": 442,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Match total 5.5 goals",
+     "selection": "Over 5.5",
+     "prob": 0.5766,
+     "fair": -136,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Under 5.5",
+     "alt_prob": 0.4234,
+     "alt_fair": 136,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Match total 6.5 goals",
+     "selection": "Over 6.5",
+     "prob": 0.4162,
+     "fair": 140,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Under 6.5",
+     "alt_prob": 0.5838,
+     "alt_fair": -140,
+     "alt_best": null,
+     "alt_best_book": null
+    }
+   ],
+   "selection": "Pittsburgh Penguins",
+   "confidence": "Low",
+   "prediction": {
+    "selection": "Pittsburgh Penguins to beat the Nashville Predators (moneyline).",
+    "text": "Nashville has three overtime defeats in nine games and has scored only 23 goals, the lowest total of any club playing tonight. Pittsburgh's own start is poor at 4-6-1, but the Penguins have generated 36 goals and put 30 shots a game on opposing nets, and they are at home. Nashville is only a narrow favourite at +105 on the league's price feed, so a Penguins win at plus money is the largest disagreement between our line and the published market on this slate.",
+    "words": 84
+   },
+   "prob": 0.5261,
+   "fair": -111,
+   "best": 125,
+   "best_book": "feed 6",
+   "fair_band_ok": true,
+   "edge_pts": 8.2
+  },
+  {
+   "id": "nhl-stl-car",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "NHL",
+   "home": "STL",
+   "away": "CAR",
+   "home_name": "St. Louis Blues",
+   "away_name": "Carolina Hurricanes",
+   "home_abbrev": "STL",
+   "away_abbrev": "CAR",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/CAR_Hurricanes_@_STL_Blues/13?event_id=200002",
+   "olbg_event_id": 200002,
+   "start_utc": "2026-10-24T23:00:00Z",
+   "sources": [
+    "olbg-ice-hockey",
+    "nhl-schedule",
+    "nhl-team-summary"
+   ],
+   "facts": [
+    "STL 5-4-1 (0.550 points pct), 35 goals for, 31 against in 10 games",
+    "CAR 8-2-2 (0.750 points pct), 47 goals for, 32 against in 12 games"
+   ],
+   "start_note": "exact UTC start from the league's own feed; no partner price read",
+   "priced": false,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nhl-wsh-buf",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "NHL",
+   "home": "WSH",
+   "away": "BUF",
+   "home_name": "Washington Capitals",
+   "away_name": "Buffalo Sabres",
+   "home_abbrev": "WSH",
+   "away_abbrev": "BUF",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/BUF_Sabres_@_WAS_Capitals/13?event_id=200003",
+   "olbg_event_id": 200003,
+   "start_utc": "2026-10-24T23:00:00Z",
+   "sources": [
+    "olbg-ice-hockey",
+    "nhl-schedule",
+    "nhl-team-summary"
+   ],
+   "facts": [
+    "WSH 5-4-0 (0.556 points pct), 30 goals for, 29 against in 9 games",
+    "BUF 4-4-2 (0.500 points pct), 28 goals for, 36 against in 10 games",
+    "League partner prices read for the 2-way market: WSH best -102 (feed 6), BUF best +105 (feed 9)"
+   ],
+   "priced": true,
+   "start_note": "exact UTC start from the league's own feed",
+   "model": {
+    "p_home": 0.5666,
+    "p_away": 0.4334,
+    "method": "nhl-logistic-v1",
+    "lam_home": 3.72,
+    "lam_away": 2.78
+   },
+   "markets": [
+    {
+     "market": "Match winner (moneyline)",
+     "selection": "Washington Capitals",
+     "prob": 0.5666,
+     "fair": -131,
+     "best": -102,
+     "best_book": "feed 6",
+     "alt_selection": "Buffalo Sabres",
+     "alt_prob": 0.4334,
+     "alt_fair": 131,
+     "alt_best": 105,
+     "alt_best_book": "feed 9"
+    },
+    {
+     "market": "Puck line -1.5",
+     "selection": "Washington Capitals",
+     "prob": 0.4071,
+     "fair": 146,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Buffalo Sabres +1.5",
+     "alt_prob": 0.5929,
+     "alt_fair": -146,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Puck line +1.5",
+     "selection": "Washington Capitals",
+     "prob": 0.8357,
+     "fair": -509,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Buffalo Sabres -1.5",
+     "alt_prob": 0.1643,
+     "alt_fair": 509,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Match total 5.5 goals",
+     "selection": "Over 5.5",
+     "prob": 0.6312,
+     "fair": -171,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Under 5.5",
+     "alt_prob": 0.3688,
+     "alt_fair": 171,
+     "alt_best": null,
+     "alt_best_book": null
+    },
+    {
+     "market": "Match total 6.5 goals",
+     "selection": "Over 6.5",
+     "prob": 0.4738,
+     "fair": 111,
+     "best": null,
+     "best_book": null,
+     "alt_selection": "Under 6.5",
+     "alt_prob": 0.5262,
+     "alt_fair": -111,
+     "alt_best": null,
+     "alt_best_book": null
+    }
+   ],
+   "selection": "Washington Capitals",
+   "confidence": "Low",
+   "prediction": {
+    "selection": "Washington Capitals to beat the Buffalo Sabres (moneyline).",
+    "text": "Washington has squeezed ten points from nine games despite a modest goal difference, and Buffalo has conceded 36 goals in ten, the second-worst rate among tonight's twelve hosts and visitors. The Sabres have also lost both of their overtime decisions, a sign of thin margins late in games. Washington's .556 points percentage is built on five regulation wins in nine, and the club is at home. The feed asks only -102 for Washington while we make them -131, and that gap is the widest value edge on the card: Capitals to win is the bet.",
+    "words": 95
+   },
+   "prob": 0.5666,
+   "fair": -131,
+   "best": -102,
+   "best_book": "feed 6",
+   "fair_band_ok": true,
+   "edge_pts": 6.2
+  },
+  {
+   "id": "nhl-cgy-det",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "NHL",
+   "home": "CGY",
+   "away": "DET",
+   "home_name": "Calgary Flames",
+   "away_name": "Detroit Red Wings",
+   "home_abbrev": "CGY",
+   "away_abbrev": "DET",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/DET_Red_Wings_@_CGY_Flames/13?event_id=200004",
+   "olbg_event_id": 200004,
+   "start_utc": null,
+   "sources": [
+    "olbg-ice-hockey",
+    "nhl-team-summary"
+   ],
+   "facts": [
+    "CGY 3-6-0 (0.333 points pct), 19 goals for, 38 against in 9 games",
+    "DET 4-3-3 (0.550 points pct), 27 goals for, 28 against in 10 games"
+   ],
+   "start_note": "start time not read from an official source this session",
+   "priced": false,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nhl-edm-tor",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "NHL",
+   "home": "EDM",
+   "away": "TOR",
+   "home_name": "Edmonton Oilers",
+   "away_name": "Toronto Maple Leafs",
+   "home_abbrev": "EDM",
+   "away_abbrev": "TOR",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/TOR_Maple_Leafs_@_EDM_Oilers/13?event_id=200010",
+   "olbg_event_id": 200010,
+   "start_utc": null,
+   "sources": [
+    "olbg-ice-hockey",
+    "nhl-team-summary"
+   ],
+   "facts": [
+    "EDM 8-1-1 (0.850 points pct), 46 goals for, 32 against in 10 games",
+    "TOR 6-4-2 (0.583 points pct), 43 goals for, 38 against in 12 games"
+   ],
+   "start_note": "start time not read from an official source this session",
+   "priced": false,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nhl-sea-min",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "NHL",
+   "home": "SEA",
+   "away": "MIN",
+   "home_name": "Seattle Kraken",
+   "away_name": "Minnesota Wild",
+   "home_abbrev": "SEA",
+   "away_abbrev": "MIN",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/MIN_Wild_@_SEA_Kraken/13?event_id=200005",
+   "olbg_event_id": 200005,
+   "start_utc": null,
+   "sources": [
+    "olbg-ice-hockey",
+    "nhl-team-summary"
+   ],
+   "facts": [
+    "SEA 7-3-1 (0.682 points pct), 42 goals for, 37 against in 11 games",
+    "MIN 6-3-2 (0.636 points pct), 32 goals for, 27 against in 11 games"
+   ],
+   "start_note": "start time not read from an official source this session",
+   "priced": false,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nhl-uta-tbl",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "NHL",
+   "home": "UTA",
+   "away": "TBL",
+   "home_name": "Utah Mammoth",
+   "away_name": "Tampa Bay Lightning",
+   "home_abbrev": "UTA",
+   "away_abbrev": "TBL",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/TB_Lightning_@_UTA_Mammoth/13?event_id=200009",
+   "olbg_event_id": 200009,
+   "start_utc": null,
+   "sources": [
+    "olbg-ice-hockey",
+    "nhl-team-summary"
+   ],
+   "facts": [
+    "UTA 7-4-0 (0.636 points pct), 41 goals for, 36 against in 11 games",
+    "TBL 7-3-0 (0.700 points pct), 34 goals for, 29 against in 10 games"
+   ],
+   "start_note": "start time not read from an official source this session",
+   "priced": false,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nla-200019",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "Switzerland NLA",
+   "home": "EHC Biel",
+   "away": "Zug",
+   "home_name": "EHC Biel",
+   "away_name": "Zug",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Switzerland_NLA/EHC_Biel_vs_Zug/13?event_id=200019",
+   "olbg_event_id": 200019,
+   "start_note": "OLBG hub shows today 13:45 US Eastern; no official league source read",
+   "sources": [
+    "olbg-ice-hockey"
+   ],
+   "facts": [
+    "Fixture pairing and market label read from OLBG only; no official club record read this session"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nla-200020",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "Switzerland NLA",
+   "home": "Ambri Piotta",
+   "away": "HC Ajoie",
+   "home_name": "Ambri Piotta",
+   "away_name": "HC Ajoie",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Switzerland_NLA/Ambri_Piotta_vs_HC_Ajoie/13?event_id=200020",
+   "olbg_event_id": 200020,
+   "start_note": "OLBG hub shows today 13:45 US Eastern; no official league source read",
+   "sources": [
+    "olbg-ice-hockey"
+   ],
+   "facts": [
+    "Fixture pairing and market label read from OLBG only; no official club record read this session"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nla-200022",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "Switzerland NLA",
+   "home": "SCL Tigers",
+   "away": "Davos",
+   "home_name": "SCL Tigers",
+   "away_name": "Davos",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Switzerland_NLA/SCL_Tigers_vs_Davos/13?event_id=200022",
+   "olbg_event_id": 200022,
+   "start_note": "OLBG hub shows today 13:45 US Eastern; no official league source read",
+   "sources": [
+    "olbg-ice-hockey"
+   ],
+   "facts": [
+    "Fixture pairing and market label read from OLBG only; no official club record read this session"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nla-200023",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "Switzerland NLA",
+   "home": "Lausanne HC",
+   "away": "Fribourg Gotteron",
+   "home_name": "Lausanne HC",
+   "away_name": "Fribourg Gotteron",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Switzerland_NLA/Lausanne_HC_vs_Fribourg_Gotteron/13?event_id=200023",
+   "olbg_event_id": 200023,
+   "start_note": "OLBG hub shows today 13:45 US Eastern; no official league source read",
+   "sources": [
+    "olbg-ice-hockey"
+   ],
+   "facts": [
+    "Fixture pairing and market label read from OLBG only; no official club record read this session"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "nla-200024",
+   "sport": "ice_hockey",
+   "sport_name": "Ice Hockey",
+   "comp": "Switzerland NLA",
+   "home": "EHC Kloten",
+   "away": "Rapperswil Jona Lakers",
+   "home_name": "EHC Kloten",
+   "away_name": "Rapperswil Jona Lakers",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Switzerland_NLA/EHC_Kloten_vs_Rapperswil_Jona_Lakers/13?event_id=200024",
+   "olbg_event_id": 200024,
+   "start_note": "OLBG hub shows today 13:45 US Eastern; no official league source read",
+   "sources": [
+    "olbg-ice-hockey"
+   ],
+   "facts": [
+    "Fixture pairing and market label read from OLBG only; no official club record read this session"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "f1-us-gp",
+   "sport": "motor_racing",
+   "sport_name": "Motor Racing",
+   "comp": "Formula 1, United States Grand Prix",
+   "home": "Circuit of The Americas",
+   "away": "Win Race market",
+   "home_name": "Circuit of The Americas",
+   "away_name": "Win Race",
+   "olbg_url": "https://www.olbg.com/betting-tips/Motor_Racing/All_Motor_Racing/All_Events/USA_Grand_Prix/14?event_id=913",
+   "olbg_event_id": 913,
+   "start_utc": "2026-10-25T21:00:00Z",
+   "start_note": "F1 publishes the race as 25 Oct 16:00 track time (UTC-5); qualifying 24 Oct 17:00-18:00 track time",
+   "sources": [
+    "olbg-motor-racing",
+    "f1-us-gp"
+   ],
+   "facts": [
+    "Official FP2 classification: Leclerc 1:35.291, Antonelli +0.042, Verstappen +0.189, Hamilton +0.615, Russell +0.744",
+    "Circuit of The Americas: 5.513 km, 56 laps, 308.432 km"
+   ],
+   "priced": false,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "rl-aus-fij",
+   "sport": "rugby_league",
+   "sport_name": "Rugby League",
+   "comp": "Rugby League World Cup 2026, Round 2",
+   "home": "Australia",
+   "away": "Fiji",
+   "home_name": "Australia",
+   "away_name": "Fiji",
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+   "start_utc": null,
+   "start_note": "official draw shows 25 October, kick-off 5:05am; the zone behind that clock is not stated, so no UTC time is published",
+   "sources": [
+    "nrl-draw",
+    "olbg-rugby-league"
+   ],
+   "facts": [
+    "Venue: Suncorp Stadium, Brisbane",
+    "Listed by the NRL draw as not started; the same page shows Papua New Guinea 6-64 Samoa and England 82-0 France complete",
+    "Positions before the match: Fiji 1st, Australia 2nd"
+   ],
+   "priced": false,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "rl-nz-ck",
+   "sport": "rugby_league",
+   "sport_name": "Rugby League",
+   "comp": "Rugby League World Cup 2026, Round 2",
+   "home": "New Zealand",
+   "away": "Cook Islands",
+   "home_name": "New Zealand",
+   "away_name": "Cook Islands",
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+   "start_utc": null,
+   "start_note": "official draw shows 25 October, kick-off 1:05am; the zone behind that clock is not stated, so no UTC time is published",
+   "sources": [
+    "nrl-draw",
+    "olbg-rugby-league"
+   ],
+   "facts": [
+    "Venue: One NZ Stadium, Christchurch",
+    "Listed by the NRL draw as not started; the same page shows Papua New Guinea 6-64 Samoa and England 82-0 France complete",
+    "Positions before the match: New Zealand 3rd, Cook Islands 4th"
+   ],
+   "priced": false,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "ru-609554",
+   "sport": "rugby_union",
+   "sport_name": "Rugby Union",
+   "comp": "Top 14",
+   "home": "La Rochelle",
+   "away": "Bordeaux",
+   "home_name": "La Rochelle",
+   "away_name": "Bordeaux",
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/La_Rochelle_v_Bordeaux/9?event_id=609554",
+   "olbg_event_id": 609554,
+   "start_note": "OLBG hub time withheld - no official competition source read",
+   "sources": [
+    "olbg-rugby-union"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "ru-609555",
+   "sport": "rugby_union",
+   "sport_name": "Rugby Union",
+   "comp": "Top 14",
+   "home": "Toulon",
+   "away": "Pau",
+   "home_name": "Toulon",
+   "away_name": "Pau",
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/Toulon_v_Pau/9?event_id=609555",
+   "olbg_event_id": 609555,
+   "start_note": "OLBG hub time withheld - no official competition source read",
+   "sources": [
+    "olbg-rugby-union"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "ru-609571",
+   "sport": "rugby_union",
+   "sport_name": "Rugby Union",
+   "comp": "Premiership",
+   "home": "Harlequins",
+   "away": "Saracens",
+   "home_name": "Harlequins",
+   "away_name": "Saracens",
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/Harlequins_v_Saracens/9?event_id=609571",
+   "olbg_event_id": 609571,
+   "start_note": "OLBG hub time withheld - no official competition source read",
+   "sources": [
+    "olbg-rugby-union"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "ru-609581",
+   "sport": "rugby_union",
+   "sport_name": "Rugby Union",
+   "comp": "URC",
+   "home": "Ospreys",
+   "away": "Dragons",
+   "home_name": "Ospreys",
+   "away_name": "Dragons",
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/Ospreys_v_Dragons/9?event_id=609581",
+   "olbg_event_id": 609581,
+   "start_note": "OLBG hub time withheld - no official competition source read",
+   "sources": [
+    "olbg-rugby-union"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "ru-609583",
+   "sport": "rugby_union",
+   "sport_name": "Rugby Union",
+   "comp": "International",
+   "home": "USA",
+   "away": "Australia A",
+   "home_name": "USA",
+   "away_name": "Australia A",
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/USA_v_Australia_A/9?event_id=609583",
+   "olbg_event_id": 609583,
+   "start_note": "OLBG hub time withheld - no official competition source read",
+   "sources": [
+    "olbg-rugby-union"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "sn-9952",
+   "sport": "snooker",
+   "sport_name": "Snooker",
+   "comp": "BetVictor Northern Ireland Open 2026, semi-final",
+   "home": "Mark Williams",
+   "away": "Jak Jones",
+   "home_name": "Mark Williams",
+   "away_name": "Jak Jones",
+   "olbg_url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/Mark_Williams_v_Jak_Jones/8?event_id=9952",
+   "olbg_event_id": 9952,
+   "start_note": "WST lists the semi-final as Live Now on 24 Oct, best of 11; the final is 25 Oct 08:00 UK against Kyren Wilson",
+   "sources": [
+    "olbg-snooker",
+    "wst-matches"
+   ],
+   "facts": [
+    "WST marks this semi-final Live Now",
+    "Best of 11 frames",
+    "Final: Kyren Wilson v winner of this match, 25 Oct 08:00"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "te-902171",
+   "sport": "tennis",
+   "sport_name": "Tennis",
+   "comp": "ATP / WTA tour",
+   "home": "Ashlyn Krueger",
+   "away": "Katerina Siniakova",
+   "home_name": "Ashlyn Krueger",
+   "away_name": "Katerina Siniakova",
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Ashlyn_Krueger_vs_Katerina_Siniakova/3?event_id=902171",
+   "olbg_event_id": 902171,
+   "start_note": "OLBG hub time only; ATP and WTA routes returned no readable match schedule",
+   "sources": [
+    "olbg-tennis",
+    "atp-schedule",
+    "wta-scores"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "te-902172",
+   "sport": "tennis",
+   "sport_name": "Tennis",
+   "comp": "ATP / WTA tour",
+   "home": "Leylah Fernandez",
+   "away": "Himeno Sakatsume",
+   "home_name": "Leylah Fernandez",
+   "away_name": "Himeno Sakatsume",
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Leylah_Fernandez_vs_Himeno_Sakatsume/3?event_id=902172",
+   "olbg_event_id": 902172,
+   "start_note": "OLBG hub time only; ATP and WTA routes returned no readable match schedule",
+   "sources": [
+    "olbg-tennis",
+    "atp-schedule",
+    "wta-scores"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "te-902173",
+   "sport": "tennis",
+   "sport_name": "Tennis",
+   "comp": "ATP / WTA tour",
+   "home": "Moyuka Uchijima",
+   "away": "Elise Mertens",
+   "home_name": "Moyuka Uchijima",
+   "away_name": "Elise Mertens",
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Moyuka_Uchijima_vs_Elise_Mertens/3?event_id=902173",
+   "olbg_event_id": 902173,
+   "start_note": "OLBG hub time only; ATP and WTA routes returned no readable match schedule",
+   "sources": [
+    "olbg-tennis",
+    "atp-schedule",
+    "wta-scores"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "te-902175",
+   "sport": "tennis",
+   "sport_name": "Tennis",
+   "comp": "ATP / WTA tour",
+   "home": "Alexandra Eala",
+   "away": "Mika Stojsavljevic",
+   "home_name": "Alexandra Eala",
+   "away_name": "Mika Stojsavljevic",
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Alexandra_Eala_vs_Mika_Stojsavljevic/3?event_id=902175",
+   "olbg_event_id": 902175,
+   "start_note": "OLBG hub time only; ATP and WTA routes returned no readable match schedule",
+   "sources": [
+    "olbg-tennis",
+    "atp-schedule",
+    "wta-scores"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "te-902207",
+   "sport": "tennis",
+   "sport_name": "Tennis",
+   "comp": "ATP / WTA tour",
+   "home": "Elena Rybakina",
+   "away": "Leylah Fernandez",
+   "home_name": "Elena Rybakina",
+   "away_name": "Leylah Fernandez",
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Elena_Rybakina_vs_Leylah_Fernandez/3?event_id=902207",
+   "olbg_event_id": 902207,
+   "start_note": "OLBG hub time only; ATP and WTA routes returned no readable match schedule",
+   "sources": [
+    "olbg-tennis",
+    "atp-schedule",
+    "wta-scores"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "te-902251",
+   "sport": "tennis",
+   "sport_name": "Tennis",
+   "comp": "ATP / WTA tour",
+   "home": "Daniil Medvedev",
+   "away": "Nikoloz Basilashvili",
+   "home_name": "Daniil Medvedev",
+   "away_name": "Nikoloz Basilashvili",
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Daniil_Medvedev_vs_Nikoloz_Basilashvili/3?event_id=902251",
+   "olbg_event_id": 902251,
+   "start_note": "OLBG hub time only; ATP and WTA routes returned no readable match schedule",
+   "sources": [
+    "olbg-tennis",
+    "atp-schedule",
+    "wta-scores"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "vb-36965",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "comp": "Poland PlusLiga",
+   "home": "CHKS Chelm",
+   "away": "Resovia Rzeszow",
+   "home_name": "CHKS Chelm",
+   "away_name": "Resovia Rzeszow",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/CHKS_Chelm_vs_Resovia_Rzeszow/21?event_id=36965",
+   "olbg_event_id": 36965,
+   "start_note": "OLBG hub time withheld - no official league source read",
+   "sources": [
+    "olbg-volleyball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "vb-36994",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "comp": "Italy SuperLega",
+   "home": "Trentino",
+   "away": "Cisterna",
+   "home_name": "Trentino",
+   "away_name": "Cisterna",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Trentino_vs_Cisterna/21?event_id=36994",
+   "olbg_event_id": 36994,
+   "start_note": "OLBG hub time withheld - no official league source read",
+   "sources": [
+    "olbg-volleyball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "vb-36995",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "comp": "Italy SuperLega",
+   "home": "Civitanova",
+   "away": "Padova",
+   "home_name": "Civitanova",
+   "away_name": "Padova",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Civitlanova_vs_Padova/21?event_id=36995",
+   "olbg_event_id": 36995,
+   "start_note": "OLBG hub time withheld - no official league source read",
+   "sources": [
+    "olbg-volleyball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "vb-36997",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "comp": "Italy SuperLega",
+   "home": "Perugia",
+   "away": "Pordenone",
+   "home_name": "Perugia",
+   "away_name": "Pordenone",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Perugia_vs_Pordenone/21?event_id=36997",
+   "olbg_event_id": 36997,
+   "start_note": "OLBG hub time withheld - no official league source read",
+   "sources": [
+    "olbg-volleyball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "vb-37002",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "comp": "Brazil Superliga W",
+   "home": "Mackenzie W",
+   "away": "Osasco W",
+   "home_name": "Mackenzie W",
+   "away_name": "Osasco W",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Mackenzie_W_vs_Osasco_W/21?event_id=37002",
+   "olbg_event_id": 37002,
+   "start_note": "OLBG hub time withheld - no official league source read",
+   "sources": [
+    "olbg-volleyball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "vb-37003",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "comp": "Brazil Superliga W",
+   "home": "Abel-Moda Brusque W",
+   "away": "Praia Clube W",
+   "home_name": "Abel-Moda Brusque W",
+   "away_name": "Praia Clube W",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Abel-Moda_Brusque_W_vs_Praia_Clube_W/21?event_id=37003",
+   "olbg_event_id": 37003,
+   "start_note": "OLBG hub time withheld - no official league source read",
+   "sources": [
+    "olbg-volleyball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "vb-37014",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "comp": "Germany",
+   "home": "Barock Volleys Ludwigsburg",
+   "away": "TV Rottenburg",
+   "home_name": "Barock Volleys Ludwigsburg",
+   "away_name": "TV Rottenburg",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Barock_Volleys_Ludwigsburg_vs_TV_Rottenburg/21?event_id=37014",
+   "olbg_event_id": 37014,
+   "start_note": "OLBG hub time withheld - no official league source read",
+   "sources": [
+    "olbg-volleyball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "vb-37019",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "comp": "Austria W",
+   "home": "UVC Graz W",
+   "away": "Sportunion St Polten W",
+   "home_name": "UVC Graz W",
+   "away_name": "Sportunion St Polten W",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/UVC_Graz_W_vs_Sportunion_St_Polten_W/21?event_id=37019",
+   "olbg_event_id": 37019,
+   "start_note": "OLBG hub time withheld - no official league source read",
+   "sources": [
+    "olbg-volleyball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "vb-37052",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "comp": "France",
+   "home": "Royan",
+   "away": "Tours",
+   "home_name": "Royan",
+   "away_name": "Tours",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Royan_vs_Tours/21?event_id=37052",
+   "olbg_event_id": 37052,
+   "start_note": "OLBG hub time withheld - no official league source read",
+   "sources": [
+    "olbg-volleyball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "vb-37059",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "comp": "Germany W",
+   "home": "ETV Hamburg W",
+   "away": "Munster W",
+   "home_name": "ETV Hamburg W",
+   "away_name": "Munster W",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/ETV_Hamburg_W_vs_Munster_W/21?event_id=37059",
+   "olbg_event_id": 37059,
+   "start_note": "OLBG hub time withheld - no official league source read",
+   "sources": [
+    "olbg-volleyball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "vb-37061",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "comp": "Netherlands W",
+   "home": "Sliedrecht W",
+   "away": "Apollo 8 W",
+   "home_name": "Sliedrecht W",
+   "away_name": "Apollo 8 W",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Sliedrecht_W_vs_Apollo_8_W/21?event_id=37061",
+   "olbg_event_id": 37061,
+   "start_note": "OLBG hub time withheld - no official league source read",
+   "sources": [
+    "olbg-volleyball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "vb-37063",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "comp": "Netherlands W",
+   "home": "VV Utrecht W",
+   "away": "Dynamo Apeldoorn W",
+   "home_name": "VV Utrecht W",
+   "away_name": "Dynamo Apeldoorn W",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/VV_Utrecht_W_vs_Dynamo_Apeldoorn_W/21?event_id=37063",
+   "olbg_event_id": 37063,
+   "start_note": "OLBG hub time withheld - no official league source read",
+   "sources": [
+    "olbg-volleyball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "vb-37069",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "comp": "France W",
+   "home": "Nantes W",
+   "away": "Terville Florange W",
+   "home_name": "Nantes W",
+   "away_name": "Terville Florange W",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Nantes_W_vs_Terville_Florange_W/21?event_id=37069",
+   "olbg_event_id": 37069,
+   "start_note": "OLBG hub time withheld - no official league source read",
+   "sources": [
+    "olbg-volleyball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "vb-37072",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "comp": "Italy A1 W",
+   "home": "Talmassons W",
+   "away": "Chieri W",
+   "home_name": "Talmassons W",
+   "away_name": "Chieri W",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Talmassons_W_vs_Chieri_W/21?event_id=37072",
+   "olbg_event_id": 37072,
+   "start_note": "OLBG hub time withheld - no official league source read",
+   "sources": [
+    "olbg-volleyball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  },
+  {
+   "id": "vb-37078",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "comp": "Poland W",
+   "home": "Mogilno W",
+   "away": "Chemik Police W",
+   "home_name": "Mogilno W",
+   "away_name": "Chemik Police W",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Mogilno_W_vs_Chemik_Police_W/21?event_id=37078",
+   "olbg_event_id": 37078,
+   "start_note": "OLBG hub time withheld - no official league source read",
+   "sources": [
+    "olbg-volleyball"
+   ],
+   "facts": [
+    "Fixture pairing read from OLBG only"
+   ],
+   "priced": false,
+   "start_utc": null,
+   "markets": [],
+   "selection": null,
+   "confidence": null,
+   "prediction": null
+  }
+ ]
+}

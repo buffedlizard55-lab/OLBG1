@@ -1,0 +1,173 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>All picks &middot; OLBG research desk 321b595c-olbg1</title>
+<style>
+:root{--ink:#0d1117;--mut:#5a6572;--line:#e3e8ee;--bg:#f6f8fa;--card:#fff;--acc:#0b5fff;--hi:#0a7d3f;--med:#8a5a00;--low:#7a4a8a;--warn:#a3231f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 64px}
+header.top{background:#0d1117;color:#fff;padding:14px 0}
+header.top .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding-bottom:0}
+.brand{font-weight:800;letter-spacing:.02em;font-size:18px;color:#fff}
+.brand small{display:block;font-weight:500;font-size:11px;letter-spacing:.16em;color:#9aa6b2}
+nav.main{display:flex;flex-wrap:wrap;gap:6px}
+nav.main a{color:#c9d4e0;padding:7px 11px;border-radius:7px;font-size:14px;font-weight:600}
+nav.main a:hover{background:#1d2633;text-decoration:none;color:#fff}
+nav.main a.here{background:var(--acc);color:#fff}
+.hero{background:#fff;border-bottom:1px solid var(--line);padding:26px 0 22px}
+h1{font-size:30px;line-height:1.2;margin:0 0 8px;letter-spacing:-.02em}
+h2{font-size:21px;margin:34px 0 10px;letter-spacing:-.01em}
+h3{font-size:16px;margin:22px 0 6px}
+p.lead{font-size:18px;color:#243040;margin:0 0 16px;max-width:70ch}
+p{max-width:80ch}
+ul,ol{max-width:82ch;padding-left:22px}
+li{margin:5px 0}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0 4px}
+.kpi div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi b{display:block;font-size:26px;letter-spacing:-.02em}
+.kpi span{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.07em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:14px 0}
+.jump{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:18px 0}
+.jump a{display:block;background:#fff;border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:10px;padding:13px 15px;color:var(--ink)}
+.jump a:hover{border-color:var(--acc);text-decoration:none}
+.jump b{display:block;font-size:16px;margin-bottom:3px}
+.jump span{font-size:13px;color:var(--mut)}
+table{width:100%;border-collapse:collapse;font-size:14px;background:#fff}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--mut);background:#f0f3f7;position:sticky;top:0}
+tbody tr:hover{background:#fbfcfe}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff;margin:12px 0}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.tag.high{background:#e2f5ea;color:var(--hi)}.tag.medium{background:#fdf0d5;color:var(--med)}
+.tag.low{background:#f2e8f7;color:var(--low)}.tag.none{background:#eef1f4;color:var(--mut)}
+.src{display:inline-block;font-size:11px;padding:2px 7px;border:1px solid var(--line);border-radius:6px;color:var(--mut);margin:1px 2px 1px 0;background:#fff;font-weight:600}
+.src.official{border-color:#bfe0cc;color:#0a6b39;background:#f2fbf6}
+.src.olbg{border-color:#d8e2f0;color:#3b5a86;background:#f6f9fe}
+.pick{background:#fff;border:1px solid var(--line);border-left:5px solid var(--hi);border-radius:12px;padding:16px 18px;margin:14px 0}
+.pick.medium{border-left-color:#d89400}.pick.low{border-left-color:#8e64a8}
+.pick h3{margin:0 0 4px;font-size:17px}
+.pick .meta{font-size:13px;color:var(--mut);margin-bottom:10px}
+.pick p{font-size:15px;margin:8px 0 10px}
+.pick .sel{font-weight:700;color:#0b2b1b;background:#eefaf1;display:inline-block;padding:3px 9px;border-radius:7px;margin-bottom:8px}
+.note{background:#fff8e6;border:1px solid #f0dfae;border-radius:10px;padding:12px 15px;margin:14px 0;font-size:14px}
+.warn{background:#fdeeee;border:1px solid #f3c9c9;border-radius:10px;padding:12px 15px;margin:14px 0;font-size:14px}
+.ok{background:#eefaf1;border:1px solid #c6e8d2;border-radius:10px;padding:12px 15px;margin:14px 0;font-size:14px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding-top:16px;font-size:13px;color:var(--mut)}
+code{background:#eef1f4;padding:1px 5px;border-radius:4px;font-size:13px}
+.small{font-size:13px;color:var(--mut)}
+.nowrap{white-space:nowrap}
+.center{text-align:center}
+</style></head><body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html">OLBG research desk<small>SESSION 321b595c-olbg1 &middot; 24 OCT 2026</small></a>
+<nav class="main"><a href="index.html" class="here">Today's picks</a><a href="predictions.html">Written predictions</a><a href="matches.html">All matches</a><a href="markets.html">Markets</a><a href="coverage.html">Sports & coverage</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="methodology.html">Method</a><a href="repo-review.html">Repo review</a></nav></div></header>
+<div class="hero"><div class="wrap"><h1>All 7 picks</h1>
+<p class="lead">Each pick names the selection in words, gives our own probability, the fair price that probability
+implies, the best price actually published by an official source where one exists, and the gap between the two.</p>
+</div></div><div class="wrap">
+<div class="note"><strong>How to read &ldquo;edge&rdquo;.</strong> Edge is our probability minus the probability implied
+by the best published price. Positive means the official price is longer than our line thinks it should be. Negative
+means the official price is shorter than our line, so the pick is a match-winner call, not a value call.</div>
+<div class="tblwrap"><table><thead><tr><th>Sport</th><th>Match</th><th>Our pick</th><th class="num">Our chance</th><th class="num">Our fair price</th><th class="num">Best published</th><th class="num">Edge</th><th>Confidence</th><th>Starts (UTC)</th><th>Sources</th></tr></thead><tbody><tr><td>Baseball</td><td><a href="https://www.olbg.com/betting-tips/Baseball/MLB/MLB/TB_Rays_@_MIL_Brewers/12?event_id=160792" target="_blank" rel="noopener noreferrer">Tampa Bay Rays @ Milwaukee Brewers</a><br><small class="small">MLB World Series, Game 2</small></td><td><strong>Milwaukee Brewers</strong></td><td class="num">65.1%</td><td class="num">-187</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td><span class="tag high">High</span></td><td class="nowrap">25 Oct<br><small>00:00 UTC</small></td><td><a class="src olbg" href="https://www.olbg.com/betting-tips/Baseball/12" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-27&amp;hydrate=probablePitcher,linescore,odds" target="_blank" rel="noopener noreferrer">statsapi.mlb.com</a></td></tr><tr><td>Ice Hockey</td><td><a href="https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/SJ_Sharks_@_BOS_Bruins/13?event_id=200007" target="_blank" rel="noopener noreferrer">San Jose Sharks @ Boston Bruins</a><br><small class="small">NHL</small></td><td><strong>Boston Bruins</strong></td><td class="num">61.8%</td><td class="num">-162</td><td class="num">-182</td><td class="num"><span style="color:#a3231f">-2.8</span></td><td><span class="tag medium">Medium</span></td><td class="nowrap">24 Oct<br><small>23:00 UTC</small></td><td><a class="src olbg" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a> <a class="src official" href="https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&amp;isGame=false&amp;sort=%5B%7B%22property%22%3A%22points%22%2C%22direction%22%3A%22DESC%22%7D%5D&amp;cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2" target="_blank" rel="noopener noreferrer">api.nhle.com</a></td></tr><tr><td>Ice Hockey</td><td><a href="https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/LA_Kings_@_NJ_Devils/13?event_id=200000" target="_blank" rel="noopener noreferrer">Los Angeles Kings @ New Jersey Devils</a><br><small class="small">NHL</small></td><td><strong>New Jersey Devils</strong></td><td class="num">60.6%</td><td class="num">-154</td><td class="num">-192</td><td class="num"><span style="color:#a3231f">-5.2</span></td><td><span class="tag medium">Medium</span></td><td class="nowrap">24 Oct<br><small>19:30 UTC</small></td><td><a class="src olbg" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a> <a class="src official" href="https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&amp;isGame=false&amp;sort=%5B%7B%22property%22%3A%22points%22%2C%22direction%22%3A%22DESC%22%7D%5D&amp;cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2" target="_blank" rel="noopener noreferrer">api.nhle.com</a></td></tr><tr><td>Ice Hockey</td><td><a href="https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/BUF_Sabres_@_WAS_Capitals/13?event_id=200003" target="_blank" rel="noopener noreferrer">Buffalo Sabres @ Washington Capitals</a><br><small class="small">NHL</small></td><td><strong>Washington Capitals</strong></td><td class="num">56.7%</td><td class="num">-131</td><td class="num">-102</td><td class="num"><span style="color:#0a7d3f">+6.2</span></td><td><span class="tag low">Low</span></td><td class="nowrap">24 Oct<br><small>23:00 UTC</small></td><td><a class="src olbg" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a> <a class="src official" href="https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&amp;isGame=false&amp;sort=%5B%7B%22property%22%3A%22points%22%2C%22direction%22%3A%22DESC%22%7D%5D&amp;cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2" target="_blank" rel="noopener noreferrer">api.nhle.com</a></td></tr><tr><td>Ice Hockey</td><td><a href="https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/VGS_Golden_Knights_@_CLB_Blue_Jackets/13?event_id=200001" target="_blank" rel="noopener noreferrer">Vegas Golden Knights @ Columbus Blue Jackets</a><br><small class="small">NHL</small></td><td><strong>Vegas Golden Knights</strong></td><td class="num">55.7%</td><td class="num">-126</td><td class="num">-132</td><td class="num"><span style="color:#a3231f">-1.2</span></td><td><span class="tag low">Low</span></td><td class="nowrap">24 Oct<br><small>23:00 UTC</small></td><td><a class="src olbg" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a> <a class="src official" href="https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&amp;isGame=false&amp;sort=%5B%7B%22property%22%3A%22points%22%2C%22direction%22%3A%22DESC%22%7D%5D&amp;cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2" target="_blank" rel="noopener noreferrer">api.nhle.com</a></td></tr><tr><td>Ice Hockey</td><td><a href="https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/NY_Rangers_@_OTT_Senators/13?event_id=200008" target="_blank" rel="noopener noreferrer">New York Rangers @ Ottawa Senators</a><br><small class="small">NHL</small></td><td><strong>Ottawa Senators</strong></td><td class="num">52.8%</td><td class="num">-112</td><td class="num">-109</td><td class="num"><span style="color:#0a7d3f">+0.6</span></td><td><span class="tag low">Low</span></td><td class="nowrap">24 Oct<br><small>23:00 UTC</small></td><td><a class="src olbg" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a> <a class="src official" href="https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&amp;isGame=false&amp;sort=%5B%7B%22property%22%3A%22points%22%2C%22direction%22%3A%22DESC%22%7D%5D&amp;cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2" target="_blank" rel="noopener noreferrer">api.nhle.com</a></td></tr><tr><td>Ice Hockey</td><td><a href="https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/NSH_Predators_@_PIT_Penguins/13?event_id=200006" target="_blank" rel="noopener noreferrer">Nashville Predators @ Pittsburgh Penguins</a><br><small class="small">NHL</small></td><td><strong>Pittsburgh Penguins</strong></td><td class="num">52.6%</td><td class="num">-111</td><td class="num">+125</td><td class="num"><span style="color:#0a7d3f">+8.2</span></td><td><span class="tag low">Low</span></td><td class="nowrap">24 Oct<br><small>23:00 UTC</small></td><td><a class="src olbg" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a> <a class="src official" href="https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&amp;isGame=false&amp;sort=%5B%7B%22property%22%3A%22points%22%2C%22direction%22%3A%22DESC%22%7D%5D&amp;cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2" target="_blank" rel="noopener noreferrer">api.nhle.com</a></td></tr></tbody></table></div>
+<h2>Each pick in detail</h2>
+<div class="card" id="mlb-mil-tb-g2">
+<h3>Tampa Bay Rays @ Milwaukee Brewers &mdash; MLB World Series, Game 2</h3>
+<p class="small">25 Oct<br><small>00:00 UTC</small> &middot; exact UTC start from MLB&#x27;s official schedule feed; no official price read &middot; <span class="tag high">High</span></p>
+<p><strong>Pick: Milwaukee Brewers</strong> &middot; our chance 65.1% &middot; our fair price
+-187 &middot; best published &mdash; (no official price read)
+&middot; edge &mdash;</p>
+<h4>Officially read facts</h4><ul class="small"><li>Brewers lead the series 1-0 going into Game 2</li><li>Milwaukee 103-59 in the 2026 regular season, 55-26 at home, 8-2 in their last ten, plus-214 run differential</li><li>Tampa Bay 98-64, 43-38 on the road, 5-5 in their last ten, plus-86 run differential</li><li>Probable pitchers: Logan Henderson (Milwaukee) and Drew Rasmussen (Tampa Bay)</li></ul>
+<h4>Every market we examined</h4>
+<div class="tblwrap"><table><thead><tr><th>Market</th><th>Selection</th><th class="num">Our chance</th>
+<th class="num">Our fair price</th><th>Other side</th><th class="num">Chance</th><th class="num">Fair price</th>
+</tr></thead><tbody><tr><td>Match winner (moneyline)</td><td>Milwaukee Brewers</td><td class="num">65.1%</td><td class="num">-187</td><td>Tampa Bay Rays</td><td class="num">34.9%</td><td class="num">+187</td></tr></tbody></table></div>
+<p class="small">Sources: <a class="src olbg" href="https://www.olbg.com/betting-tips/Baseball/12" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-27&amp;hydrate=probablePitcher,linescore,odds" target="_blank" rel="noopener noreferrer">statsapi.mlb.com</a></p>
+<p class="small"><a href="https://www.olbg.com/betting-tips/Baseball/MLB/MLB/TB_Rays_@_MIL_Brewers/12?event_id=160792" target="_blank" rel="noopener noreferrer">Open this market on OLBG &rarr;</a></p>
+</div><div class="card" id="nhl-bos-sjs">
+<h3>San Jose Sharks @ Boston Bruins &mdash; NHL</h3>
+<p class="small">24 Oct<br><small>23:00 UTC</small> &middot; exact UTC start from the league&#x27;s own feed &middot; <span class="tag medium">Medium</span></p>
+<p><strong>Pick: Boston Bruins</strong> &middot; our chance 61.8% &middot; our fair price
+-162 &middot; best published -182 (feed 6)
+&middot; edge -2.8 points</p>
+<h4>Officially read facts</h4><ul class="small"><li>BOS 8-2-1 (0.773 points pct), 42 goals for, 22 against in 11 games</li><li>SJS 6-4-1 (0.591 points pct), 32 goals for, 36 against in 11 games</li><li>League partner prices read for the 2-way market: BOS best -182 (feed 6), SJS best +160 (feed 9)</li></ul>
+<h4>Every market we examined</h4>
+<div class="tblwrap"><table><thead><tr><th>Market</th><th>Selection</th><th class="num">Our chance</th>
+<th class="num">Our fair price</th><th>Other side</th><th class="num">Chance</th><th class="num">Fair price</th>
+</tr></thead><tbody><tr><td>Match winner (moneyline)</td><td>Boston Bruins</td><td class="num">61.8%</td><td class="num">-162</td><td>San Jose Sharks</td><td class="num">38.2%</td><td class="num">+162</td></tr><tr><td>Puck line -1.5</td><td>Boston Bruins</td><td class="num">45.1%</td><td class="num">+122</td><td>San Jose Sharks +1.5</td><td class="num">54.9%</td><td class="num">-122</td></tr><tr><td>Puck line +1.5</td><td>Boston Bruins</td><td class="num">87.5%</td><td class="num">-701</td><td>San Jose Sharks -1.5</td><td class="num">12.5%</td><td class="num">+701</td></tr><tr><td>Match total 5.5 goals</td><td>Over 5.5</td><td class="num">54.9%</td><td class="num">-122</td><td>Under 5.5</td><td class="num">45.1%</td><td class="num">+122</td></tr><tr><td>Match total 6.5 goals</td><td>Over 6.5</td><td class="num">38.9%</td><td class="num">+157</td><td>Under 6.5</td><td class="num">61.1%</td><td class="num">-157</td></tr></tbody></table></div>
+<p class="small">Sources: <a class="src olbg" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a> <a class="src official" href="https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&amp;isGame=false&amp;sort=%5B%7B%22property%22%3A%22points%22%2C%22direction%22%3A%22DESC%22%7D%5D&amp;cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2" target="_blank" rel="noopener noreferrer">api.nhle.com</a></p>
+<p class="small"><a href="https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/SJ_Sharks_@_BOS_Bruins/13?event_id=200007" target="_blank" rel="noopener noreferrer">Open this market on OLBG &rarr;</a></p>
+</div><div class="card" id="nhl-njd-lak">
+<h3>Los Angeles Kings @ New Jersey Devils &mdash; NHL</h3>
+<p class="small">24 Oct<br><small>19:30 UTC</small> &middot; exact UTC start from the league&#x27;s own feed &middot; <span class="tag medium">Medium</span></p>
+<p><strong>Pick: New Jersey Devils</strong> &middot; our chance 60.6% &middot; our fair price
+-154 &middot; best published -192 (feed 9)
+&middot; edge -5.2 points</p>
+<h4>Officially read facts</h4><ul class="small"><li>NJD 6-4-0 (0.600 points pct), 33 goals for, 31 against in 10 games</li><li>LAK 2-4-2 (0.375 points pct), 20 goals for, 29 against in 8 games</li><li>League partner prices read for the 2-way market: NJD best -192 (feed 9), LAK best +162 (feed 7)</li></ul>
+<h4>Every market we examined</h4>
+<div class="tblwrap"><table><thead><tr><th>Market</th><th>Selection</th><th class="num">Our chance</th>
+<th class="num">Our fair price</th><th>Other side</th><th class="num">Chance</th><th class="num">Fair price</th>
+</tr></thead><tbody><tr><td>Match winner (moneyline)</td><td>New Jersey Devils</td><td class="num">60.6%</td><td class="num">-154</td><td>Los Angeles Kings</td><td class="num">39.4%</td><td class="num">+154</td></tr><tr><td>Puck line -1.5</td><td>New Jersey Devils</td><td class="num">44.4%</td><td class="num">+125</td><td>Los Angeles Kings +1.5</td><td class="num">55.6%</td><td class="num">-125</td></tr><tr><td>Puck line +1.5</td><td>New Jersey Devils</td><td class="num">86.3%</td><td class="num">-631</td><td>Los Angeles Kings -1.5</td><td class="num">13.7%</td><td class="num">+631</td></tr><tr><td>Match total 5.5 goals</td><td>Over 5.5</td><td class="num">60.1%</td><td class="num">-151</td><td>Under 5.5</td><td class="num">39.9%</td><td class="num">+151</td></tr><tr><td>Match total 6.5 goals</td><td>Over 6.5</td><td class="num">44.1%</td><td class="num">+127</td><td>Under 6.5</td><td class="num">55.9%</td><td class="num">-127</td></tr></tbody></table></div>
+<p class="small">Sources: <a class="src olbg" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a> <a class="src official" href="https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&amp;isGame=false&amp;sort=%5B%7B%22property%22%3A%22points%22%2C%22direction%22%3A%22DESC%22%7D%5D&amp;cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2" target="_blank" rel="noopener noreferrer">api.nhle.com</a></p>
+<p class="small"><a href="https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/LA_Kings_@_NJ_Devils/13?event_id=200000" target="_blank" rel="noopener noreferrer">Open this market on OLBG &rarr;</a></p>
+</div><div class="card" id="nhl-wsh-buf">
+<h3>Buffalo Sabres @ Washington Capitals &mdash; NHL</h3>
+<p class="small">24 Oct<br><small>23:00 UTC</small> &middot; exact UTC start from the league&#x27;s own feed &middot; <span class="tag low">Low</span></p>
+<p><strong>Pick: Washington Capitals</strong> &middot; our chance 56.7% &middot; our fair price
+-131 &middot; best published -102 (feed 6)
+&middot; edge +6.2 points</p>
+<h4>Officially read facts</h4><ul class="small"><li>WSH 5-4-0 (0.556 points pct), 30 goals for, 29 against in 9 games</li><li>BUF 4-4-2 (0.500 points pct), 28 goals for, 36 against in 10 games</li><li>League partner prices read for the 2-way market: WSH best -102 (feed 6), BUF best +105 (feed 9)</li></ul>
+<h4>Every market we examined</h4>
+<div class="tblwrap"><table><thead><tr><th>Market</th><th>Selection</th><th class="num">Our chance</th>
+<th class="num">Our fair price</th><th>Other side</th><th class="num">Chance</th><th class="num">Fair price</th>
+</tr></thead><tbody><tr><td>Match winner (moneyline)</td><td>Washington Capitals</td><td class="num">56.7%</td><td class="num">-131</td><td>Buffalo Sabres</td><td class="num">43.3%</td><td class="num">+131</td></tr><tr><td>Puck line -1.5</td><td>Washington Capitals</td><td class="num">40.7%</td><td class="num">+146</td><td>Buffalo Sabres +1.5</td><td class="num">59.3%</td><td class="num">-146</td></tr><tr><td>Puck line +1.5</td><td>Washington Capitals</td><td class="num">83.6%</td><td class="num">-509</td><td>Buffalo Sabres -1.5</td><td class="num">16.4%</td><td class="num">+509</td></tr><tr><td>Match total 5.5 goals</td><td>Over 5.5</td><td class="num">63.1%</td><td class="num">-171</td><td>Under 5.5</td><td class="num">36.9%</td><td class="num">+171</td></tr><tr><td>Match total 6.5 goals</td><td>Over 6.5</td><td class="num">47.4%</td><td class="num">+111</td><td>Under 6.5</td><td class="num">52.6%</td><td class="num">-111</td></tr></tbody></table></div>
+<p class="small">Sources: <a class="src olbg" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a> <a class="src official" href="https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&amp;isGame=false&amp;sort=%5B%7B%22property%22%3A%22points%22%2C%22direction%22%3A%22DESC%22%7D%5D&amp;cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2" target="_blank" rel="noopener noreferrer">api.nhle.com</a></p>
+<p class="small"><a href="https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/BUF_Sabres_@_WAS_Capitals/13?event_id=200003" target="_blank" rel="noopener noreferrer">Open this market on OLBG &rarr;</a></p>
+</div><div class="card" id="nhl-cbj-vgk">
+<h3>Vegas Golden Knights @ Columbus Blue Jackets &mdash; NHL</h3>
+<p class="small">24 Oct<br><small>23:00 UTC</small> &middot; exact UTC start from the league&#x27;s own feed &middot; <span class="tag low">Low</span></p>
+<p><strong>Pick: Vegas Golden Knights</strong> &middot; our chance 55.7% &middot; our fair price
+-126 &middot; best published -132 (feed 3)
+&middot; edge -1.2 points</p>
+<h4>Officially read facts</h4><ul class="small"><li>CBJ 3-5-0 (0.375 points pct), 19 goals for, 29 against in 8 games</li><li>VGK 8-4-0 (0.667 points pct), 45 goals for, 36 against in 12 games</li><li>League partner prices read for the 2-way market: CBJ best +118 (feed 6), VGK best -132 (feed 3)</li></ul>
+<h4>Every market we examined</h4>
+<div class="tblwrap"><table><thead><tr><th>Market</th><th>Selection</th><th class="num">Our chance</th>
+<th class="num">Our fair price</th><th>Other side</th><th class="num">Chance</th><th class="num">Fair price</th>
+</tr></thead><tbody><tr><td>Match winner (moneyline)</td><td>Columbus Blue Jackets</td><td class="num">44.3%</td><td class="num">+126</td><td>Vegas Golden Knights</td><td class="num">55.7%</td><td class="num">-126</td></tr><tr><td>Puck line -1.5</td><td>Columbus Blue Jackets</td><td class="num">28.9%</td><td class="num">+246</td><td>Vegas Golden Knights +1.5</td><td class="num">71.1%</td><td class="num">-246</td></tr><tr><td>Puck line +1.5</td><td>Columbus Blue Jackets</td><td class="num">75.3%</td><td class="num">-305</td><td>Vegas Golden Knights -1.5</td><td class="num">24.7%</td><td class="num">+305</td></tr><tr><td>Match total 5.5 goals</td><td>Over 5.5</td><td class="num">58.1%</td><td class="num">-139</td><td>Under 5.5</td><td class="num">41.9%</td><td class="num">+139</td></tr><tr><td>Match total 6.5 goals</td><td>Over 6.5</td><td class="num">42.1%</td><td class="num">+138</td><td>Under 6.5</td><td class="num">57.9%</td><td class="num">-138</td></tr></tbody></table></div>
+<p class="small">Sources: <a class="src olbg" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a> <a class="src official" href="https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&amp;isGame=false&amp;sort=%5B%7B%22property%22%3A%22points%22%2C%22direction%22%3A%22DESC%22%7D%5D&amp;cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2" target="_blank" rel="noopener noreferrer">api.nhle.com</a></p>
+<p class="small"><a href="https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/VGS_Golden_Knights_@_CLB_Blue_Jackets/13?event_id=200001" target="_blank" rel="noopener noreferrer">Open this market on OLBG &rarr;</a></p>
+</div><div class="card" id="nhl-ott-nyr">
+<h3>New York Rangers @ Ottawa Senators &mdash; NHL</h3>
+<p class="small">24 Oct<br><small>23:00 UTC</small> &middot; exact UTC start from the league&#x27;s own feed &middot; <span class="tag low">Low</span></p>
+<p><strong>Pick: Ottawa Senators</strong> &middot; our chance 52.8% &middot; our fair price
+-112 &middot; best published -109 (feed 6)
+&middot; edge +0.6 points</p>
+<h4>Officially read facts</h4><ul class="small"><li>OTT 7-4-0 (0.636 points pct), 29 goals for, 30 against in 11 games</li><li>NYR 7-4-1 (0.625 points pct), 37 goals for, 29 against in 12 games</li><li>League partner prices read for the 2-way market: OTT best -109 (feed 6), NYR best +106 (feed 7)</li></ul>
+<h4>Every market we examined</h4>
+<div class="tblwrap"><table><thead><tr><th>Market</th><th>Selection</th><th class="num">Our chance</th>
+<th class="num">Our fair price</th><th>Other side</th><th class="num">Chance</th><th class="num">Fair price</th>
+</tr></thead><tbody><tr><td>Match winner (moneyline)</td><td>Ottawa Senators</td><td class="num">52.8%</td><td class="num">-112</td><td>New York Rangers</td><td class="num">47.2%</td><td class="num">+112</td></tr><tr><td>Puck line -1.5</td><td>Ottawa Senators</td><td class="num">35.4%</td><td class="num">+183</td><td>New York Rangers +1.5</td><td class="num">64.6%</td><td class="num">-183</td></tr><tr><td>Puck line +1.5</td><td>Ottawa Senators</td><td class="num">83.3%</td><td class="num">-499</td><td>New York Rangers -1.5</td><td class="num">16.7%</td><td class="num">+499</td></tr><tr><td>Match total 5.5 goals</td><td>Over 5.5</td><td class="num">44.5%</td><td class="num">+125</td><td>Under 5.5</td><td class="num">55.5%</td><td class="num">-125</td></tr><tr><td>Match total 6.5 goals</td><td>Over 6.5</td><td class="num">29.1%</td><td class="num">+244</td><td>Under 6.5</td><td class="num">70.9%</td><td class="num">-244</td></tr></tbody></table></div>
+<p class="small">Sources: <a class="src olbg" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a> <a class="src official" href="https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&amp;isGame=false&amp;sort=%5B%7B%22property%22%3A%22points%22%2C%22direction%22%3A%22DESC%22%7D%5D&amp;cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2" target="_blank" rel="noopener noreferrer">api.nhle.com</a></p>
+<p class="small"><a href="https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/NY_Rangers_@_OTT_Senators/13?event_id=200008" target="_blank" rel="noopener noreferrer">Open this market on OLBG &rarr;</a></p>
+</div><div class="card" id="nhl-pit-nsh">
+<h3>Nashville Predators @ Pittsburgh Penguins &mdash; NHL</h3>
+<p class="small">24 Oct<br><small>23:00 UTC</small> &middot; exact UTC start from the league&#x27;s own feed &middot; <span class="tag low">Low</span></p>
+<p><strong>Pick: Pittsburgh Penguins</strong> &middot; our chance 52.6% &middot; our fair price
+-111 &middot; best published +125 (feed 6)
+&middot; edge +8.2 points</p>
+<h4>Officially read facts</h4><ul class="small"><li>PIT 4-6-1 (0.409 points pct), 36 goals for, 37 against in 11 games</li><li>NSH 3-3-3 (0.500 points pct), 23 goals for, 28 against in 9 games</li><li>League partner prices read for the 2-way market: PIT best +125 (feed 6), NSH best +106 (feed 7)</li></ul>
+<h4>Every market we examined</h4>
+<div class="tblwrap"><table><thead><tr><th>Market</th><th>Selection</th><th class="num">Our chance</th>
+<th class="num">Our fair price</th><th>Other side</th><th class="num">Chance</th><th class="num">Fair price</th>
+</tr></thead><tbody><tr><td>Match winner (moneyline)</td><td>Pittsburgh Penguins</td><td class="num">52.6%</td><td class="num">-111</td><td>Nashville Predators</td><td class="num">47.4%</td><td class="num">+111</td></tr><tr><td>Puck line -1.5</td><td>Pittsburgh Penguins</td><td class="num">36.4%</td><td class="num">+175</td><td>Nashville Predators +1.5</td><td class="num">63.6%</td><td class="num">-175</td></tr><tr><td>Puck line +1.5</td><td>Pittsburgh Penguins</td><td class="num">81.5%</td><td class="num">-442</td><td>Nashville Predators -1.5</td><td class="num">18.5%</td><td class="num">+442</td></tr><tr><td>Match total 5.5 goals</td><td>Over 5.5</td><td class="num">57.7%</td><td class="num">-136</td><td>Under 5.5</td><td class="num">42.3%</td><td class="num">+136</td></tr><tr><td>Match total 6.5 goals</td><td>Over 6.5</td><td class="num">41.6%</td><td class="num">+140</td><td>Under 6.5</td><td class="num">58.4%</td><td class="num">-140</td></tr></tbody></table></div>
+<p class="small">Sources: <a class="src olbg" href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">OLBG</a> <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">api-web.nhle.com</a> <a class="src official" href="https://api.nhle.com/stats/rest/en/team/summary?isAggregate=false&amp;isGame=false&amp;sort=%5B%7B%22property%22%3A%22points%22%2C%22direction%22%3A%22DESC%22%7D%5D&amp;cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2" target="_blank" rel="noopener noreferrer">api.nhle.com</a></p>
+<p class="small"><a href="https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/NSH_Predators_@_PIT_Penguins/13?event_id=200006" target="_blank" rel="noopener noreferrer">Open this market on OLBG &rarr;</a></p>
+</div>
+</div>
+<footer><div class="wrap">Independent research. Not affiliated with OLBG. Prices are our own estimates unless labelled as a
+published league price. 18+ &middot; stake only what you can afford to lose.
+Built 2026-10-24T18:15:00Z from 35 reads, 20 of them official.
+<a href="methodology.html">How the numbers are made</a>.</div></footer>
+</body></html>

@@ -1,0 +1,169 @@
+{
+ "flags": [
+  {
+   "id": "F-321-01",
+   "title": "The brief's two pick rules cannot both be met outside a 1.4-point window",
+   "severity": "high",
+   "area": "method",
+   "detail": "The brief asks for selections with a greater than 70 per cent win chance AND a price between -250 and +10000. A 70.0 per cent chance is a fair price of -233; a -250 price is a 71.4 per cent chance. So the two rules together admit only probabilities between 70.0 and 71.4 per cent. On today's readable data no selection lands in that band, and we publish that rather than relabel a shorter price as compliant.",
+   "sources": [
+    "nhl-schedule",
+    "mlb-standings-nl"
+   ]
+  },
+  {
+   "id": "F-321-02",
+   "title": "Zero selections cleared a 70 per cent win probability today",
+   "severity": "high",
+   "area": "coverage",
+   "detail": "The highest probability we can support is 65.2 per cent (Milwaukee Brewers, World Series Game 2). The six NHL moneyline probabilities run from 47.5 to 61.8 per cent and match the league's own published prices to within about two points on four of six games, which is the expected outcome if the slate genuinely contains no 70 per cent favourite. Nothing has been raised to meet the five-per-sport target.",
+   "sources": [
+    "mlb-standings-nl",
+    "nhl-schedule"
+   ]
+  },
+  {
+   "id": "F-321-03",
+   "title": "Thirteen of the fifteen sports produced no priced pick",
+   "severity": "high",
+   "area": "coverage",
+   "detail": "Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Gaelic Sports, Greyhounds, Tennis, Handball and Rugby League have no line issued. For each one the blocking official source is named on the coverage page with the exact URL, so the gap can be checked by hand.",
+   "sources": [
+    "olbg-golf",
+    "pdc-calendar",
+    "urc-fixtures",
+    "gbgb"
+   ]
+  },
+  {
+   "id": "F-321-04",
+   "title": "OLBG hub clock is US Eastern, not the venue's local time",
+   "severity": "medium",
+   "area": "data",
+   "detail": "The greyhound hub shows the race '7:58 Doncaster' with a parallel 'Today 14:58' column, a five-hour offset from UK track time. The MLB hub shows the World Series game at 'Today 20:00' where MLB's own feed gives 2026-10-25T00:00Z, a four-hour offset. Derived times are therefore never published as start times: where an official source was read the UTC stamp is used, and everywhere else the start is left blank.",
+   "sources": [
+    "olbg-greyhounds",
+    "olbg-baseball",
+    "mlb-schedule"
+   ]
+  },
+  {
+   "id": "F-321-05",
+   "title": "OLBG tip percentages are votes, not probabilities",
+   "severity": "medium",
+   "area": "method",
+   "detail": "Each hub row shows a number such as '13/19 Win Tips 68%'. That is the share of community tips on a selection, not a chance of winning, and it is not used anywhere in this desk as an input.",
+   "sources": [
+    "olbg-darts"
+   ]
+  },
+  {
+   "id": "F-321-06",
+   "title": "NBA cannot be priced from a two-game sample",
+   "severity": "high",
+   "area": "data",
+   "detail": "The 2026-27 NBA season is one or two games old for every club. A probability claim built on that sample would be invention, so the nine basketball fixtures are published with official records and no line.",
+   "sources": [
+    "nba-standings",
+    "olbg-basketball"
+   ]
+  },
+  {
+   "id": "F-321-07",
+   "title": "Snooker has no placeable pre-match market today",
+   "severity": "medium",
+   "area": "coverage",
+   "detail": "The only snooker market OLBG lists is the Northern Ireland Open semi-final, which WST marks Live Now. The final is 25 October at 08:00 UK against Kyren Wilson, but the opponent is not yet decided, so no line can be issued on it either.",
+   "sources": [
+    "olbg-snooker",
+    "wst-matches"
+   ]
+  },
+  {
+   "id": "F-321-08",
+   "title": "Formula 1 race line withheld until qualifying",
+   "severity": "medium",
+   "area": "coverage",
+   "detail": "The United States Grand Prix is 25 October. Only second practice has been run; the official classification shows Leclerc fastest from Antonelli and Verstappen, which is not a basis for a race-winner probability. Qualifying runs on 24 October and the line should be issued after it.",
+   "sources": [
+    "f1-us-gp",
+    "olbg-motor-racing"
+   ]
+  },
+  {
+   "id": "F-321-09",
+   "title": "Golf hub empty and PGA TOUR page did not reach October",
+   "severity": "medium",
+   "area": "coverage",
+   "detail": "OLBG renders 'No tips found.' on the golf hub, so there is no golf market to model. The PGA TOUR schedule page rendered only as far as March 2026 in the readable portion, so the current-week event could not be named.",
+   "sources": [
+    "olbg-golf",
+    "pga-schedule"
+   ]
+  },
+  {
+   "id": "F-321-10",
+   "title": "NHL partner prices exclude one provider that quotes a 3-way market",
+   "severity": "low",
+   "area": "data",
+   "detail": "The league feed carries six providers. Doxxbet's two prices sum to about 81 per cent implied, which means it is quoting a 60-minute three-way market; including it would fabricate an under-round. Only the five 2-way providers are used, and the best available price is taken from those five.",
+   "sources": [
+    "nhl-schedule"
+   ]
+  },
+  {
+   "id": "F-321-11",
+   "title": "No injury designation could be read for any priced match",
+   "severity": "medium",
+   "area": "data",
+   "detail": "The brief asks for verified injuries. No official injury report was readable this session for the NHL, MLB or NBA matches listed, so no injury claim appears in any prediction. The absence is stated in the MLB write-up and is a gap, not a clean bill of health.",
+   "sources": [
+    "nhl-schedule",
+    "mlb-schedule",
+    "nba-standings"
+   ]
+  },
+  {
+   "id": "F-321-12",
+   "title": "Root landing page carried a stale pointer to another desk",
+   "severity": "low",
+   "area": "repo",
+   "detail": "The deployed root index.html pointed visitors to the 8cfb80b2 desk and was stamped 2026-10-22T12:29:50Z, while sixty sibling desk directories exist. This session replaced that one bar with a pointer to this desk. The canonical pipeline pages are otherwise untouched.",
+   "sources": [
+    "olbg-ice-hockey",
+    "nhl-schedule"
+   ]
+  },
+  {
+   "id": "F-321-13",
+   "title": "The league odds feed identifies books by number, not by name",
+   "severity": "medium",
+   "area": "data",
+   "detail": "Each NHL price arrives as {providerId, value} with no publisher name attached. Earlier drafts of this desk attributed provider 3 to Tipsport, 6 to Veikkaus, 7 to FanDuel, 8 to Sportradar and 9 to DraftKings; that mapping was not readable anywhere in the feed, so it has been removed and every quote is now labelled by the number the league publishes. The prices themselves are unchanged and still official.",
+   "sources": [
+    "nhl-schedule"
+   ]
+  },
+  {
+   "id": "F-321-14",
+   "title": "One NHL game was already in progress when the desk was built",
+   "severity": "low",
+   "area": "data",
+   "detail": "Anaheim at Philadelphia started at 17:00 UTC and the league feed showed it LIVE with a 0-2 score. A live match is not an upcoming match, so the fixture was removed from the table rather than published with a stale line. The NHL count in this desk is therefore eleven, not the twelve on OLBG's hub.",
+   "sources": [
+    "nhl-schedule",
+    "olbg-ice-hockey"
+   ]
+  },
+  {
+   "id": "F-321-15",
+   "title": "The NRL draw does not name the time zone behind its kick-off clock",
+   "severity": "medium",
+   "area": "data",
+   "detail": "The Rugby League World Cup page shows New Zealand v Cook Islands at 1:05am and Australia v Fiji at 5:05am on 25 October with no zone stated. Two different zones would move those fixtures by four hours, so the desk publishes the fixtures, the venues and the order of play but leaves the UTC start blank rather than guess.",
+   "sources": [
+    "nrl-draw"
+   ]
+  }
+ ]
+}
