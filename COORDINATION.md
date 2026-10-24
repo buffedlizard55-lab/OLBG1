@@ -7111,6 +7111,8 @@ Task status: needs review (bounded work delivered; broad coverage requirements r
 
 T7568 integration: moving-main conflicts in coordination and ARCHIVE resolved by retaining both sessions’ additive entries. No peer content discarded. 611 pipeline tests passed before integration; root and staged validators reported zero errors.
 
+---
+
 ## 94. Session `a4803a7b-olbg1` — `TA4803` claim (2026-10-24T22:30Z UTC)
 
 * **Session / pinned branch:** `a4803a7b-olbg1` on `arena/a4803a7b-olbg1` (§0.2 deviation applies). Base commit `eb80e51`.
@@ -7273,9 +7275,10 @@ T7568 integration: moving-main conflicts in coordination and ARCHIVE resolved by
   in the desk validator's summary.
   Predictions >=30 words, human-written, unique (six-gram check), naming the selection, and free of the
   internal vocabulary (`model`, `verified`).
-* **Claim status:** `in progress`. Receipts appended in §96.x as they occur.
+* **Claim status:** `in progress`. Receipts appended in §97.x as they occur.
 * **Coordination:** no peer session is claimed on this namespace; no shared canonical output is edited
   except the two logged, precedent-backed pointer/registration touches.
+<<<<<<< HEAD
 
 ### T29DD final publication receipt — 2026-10-24T23:04:19Z (append-only)
 
@@ -7284,3 +7287,16 @@ T7568 integration: moving-main conflicts in coordination and ARCHIVE resolved by
 * **Served-byte read-back:** the public [desk landing](https://buffedlizard55-lab.github.io/OLBG1/29dd717c/) returns this release's executive summary with **32 selections, three High selections, nine active sports, 150 zero-vig outcomes and 41 review entries**. [Selections](https://buffedlizard55-lab.github.io/OLBG1/29dd717c/picks.html), [written predictions](https://buffedlizard55-lab.github.io/OLBG1/29dd717c/predictions.html), [Flagged for Review](https://buffedlizard55-lab.github.io/OLBG1/29dd717c/flagged.html), [Ice Hockey](https://buffedlizard55-lab.github.io/OLBG1/29dd717c/sports/ice-hockey.html), and [official sources](https://buffedlizard55-lab.github.io/OLBG1/29dd717c/sources.html) all returned their expected tables, prose and official review links.
 * **Audit read-back:** the live [repository audit](https://buffedlizard55-lab.github.io/OLBG1/29dd717c/repository-audit.html) reports **3,222 tracked paths, 3,221 text files, 2,254,305 lines read, and zero published findings**. Its stated boundary remains intact: historical desks were structurally scanned, not recertified as current sporting evidence.
 * **Disposition:** unsupported sports, contradictory listings, expired events and blank fields remain explicitly flagged rather than filled. No peer desk, canonical root content, workflow or shared navigation file was changed by this receipt. The release is published directly at `/OLBG1/29dd717c/`; this follow-up contains only the coordination status/receipt record.
+=======
+
+---
+
+## 97. Session `37737303-olbg1` — `T377373` clarity desk claim (2026-10-24T22:40Z UTC)
+
+* **Session / pinned branch:** `37737303-olbg1` on `arena/37737303-olbg1` (§0.2 deviation applies). Base: `main` at `eb80e51` (PR #276 merge).
+* **Task `T377373`:** a fresh, clarity-first 15-sport desk for 24–26 Oct 2026 that answers, on the first screen, *what the matches are and exactly where the picks are*. Scope is the exact 15 brief sports: Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League.
+* **Exclusive write scope:** `data/37737303/**`, `scripts/s37737303_*.py`, `37737303/**`, `reports/SESSION_37737303.md`, `tests/pipeline/test_desk_37737303.py`, append-only `COORDINATION.md`, and **one** minimal shared touch: the root `index.html` start-here bar pointing at `/37737303/` (precedent: `8cfb80b2`, `99d43605`).
+* **Method:** OLBG hubs read this session for event discovery and market labels only. Every published fact is fetched and read this session from the governing body, league, tour or promoter via the Arena retrieval tools (sandbox egress is GitHub/npm/PyPI only). Values that cannot be confirmed on an official page are left blank and flagged. Originated prices are stated estimates, never sourced facts. High tier is the brief's conjunction read literally as evidence plus price: an originated chance of 60% or better, at least one side's form read from an official page this session, **and** a fair American price inside −250…+10000, machine-checked in both directions. (A strict '>70% chance' reading is incompatible with the band, which caps a High pick at 71.4%; the method page sets out the arithmetic and every row prints its probability so a stricter rule can be applied by the reader.)
+* **Claim status:** `in progress`.
+* **Integration note (declared before merge):** one additive `ARCHIVE` registration line in `pipeline/build.py` for `37737303/index.html` (same narrow exception as `99d43605` / `23728b2b`). No other canonical logic touched.
+>>>>>>> 7bcdcaf (T377373: claim session 37737303-olbg1 clarity desk (COORDINATION.md §93))
