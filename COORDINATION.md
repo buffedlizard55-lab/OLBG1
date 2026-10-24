@@ -181,6 +181,8 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | TB2719 | **Fresh 24 Oct 2026 evidence desk (`b2719ad3-olbg1`):** OLBG discovery limited to the exact 15 requested sports; fresh official-source reads for every retained fixture and every factual prediction claim; blank-and-flag unresolved fields; independent multi-market fair-line estimates; High only when estimated probability is >70% and the unrounded fair American price is inside -250..+10000; unique >=30-word analysis for qualifying picks without quota filling; clean executive-summary dashboard, category pages, markets, sources, methodology and Flagged for Review; repository audit and validation | in progress | b2719ad3-olbg1 | `data/b2719ad3/**`, `scripts/sb2719ad3_*.py`, `b2719ad3/**`, `reports/SESSION_B2719AD3.{md,html}`, `tests/pipeline/test_desk_b2719ad3.py`, append-only `COORDINATION.md` | 2026-10-24T17:10Z | Collision-resistant session ID. No peer desk or canonical output edited by this task. Live sporting reads use the page-fetch/search tool layer; OLBG is discovery only, never official confirmation. |
 | TB2719-INT | **Final integration after TB2719 completes:** replace the stale/confusing canonical 22-Oct presentation with the validated 24-Oct executive dashboard at the root, retain historical desks only as clearly labelled archives, re-check combined data and all local links, run full gates, PR from the pinned Arena branch to `main`, merge, and confirm actual Pages content | in progress | b2719ad3-olbg1 | Final integration only: `pipeline/**`, `site_templates/**`, `data/current/**`, root `*.html`, `sports/**`, `assets/current-*`, `.github/workflows/**`, `README.md`, append-only `COORDINATION.md`; historical namespaces remain untouched | 2026-10-24T17:10Z | Claimed now to prevent overlapping canonical work; implementation starts only after TB2719 is done. Prior canonical/root claims are stale by far more than 60 minutes and no current open PR owns this 24-Oct integration. |
 
+| T57BAFCBB | **Fresh live 24-25 Oct 2026 overnight/weekend desk (`57bafcbb-olbg1`):** live OLBG hub discovery across exactly the 15 requested sports (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League); fresh official-source verification of every published fact (blank-and-flag anything unconfirmed, never inferred); own originated multi-market fair lines; High tier only where originated probability > 0.70 AND fair American price inside -250..+10000; unique >=30-word human predictions naming the selection and citing only session-read official facts; executive-summary-first namespaced dashboard `/57bafcbb/` (picks on top, obvious location, per-sport tables, markets, predictions, sources, coverage, methodology, repo audit, Flagged for Review); desk validator + pipeline gates + build check; PR -> merge without waiting -> GitHub Pages live read-back; receipts appended in §93 | in progress | 57bafcbb-olbg1 | `data/57bafcbb/**`, `scripts/s57bafcbb_*.py`, `57bafcbb/**`, `reports/SESSION_57BAFCBB.md`, `tests/pipeline/test_desk_57bafcbb.py`, append-only `COORDINATION.md`, one-line pointer edit in root `index.html` (logged) | 2026-10-24T22:30Z | Collision-resistant id `T57BAFCBB` / record at §93 (next free above §92). Pinned branch `arena/57bafcbb-olbg1` per §0.2. Zero edits to `pipeline/**` except one additive ARCHIVE registration line (logged); no edits to `data/current/**`, `.github/workflows/**`, `scripts/validate.py`, `README.md`, `sports/**`, `assets/**` or any peer desk. OLBG = discovery only; official sources via Arena retrieval tools (sandbox egress limited), UTC observation stamps recorded per row. |
+
 ## 2. Session log
 
 ### Session `ce5920e3-olbg1`
@@ -7241,3 +7243,36 @@ T7568 integration: moving-main conflicts in coordination and ARCHIVE resolved by
 * **Deploy path (honest account):** the first main run after #282 (`40140100112`) was **cancelled** when peer PR #283 merged on top; the combined main run `40140171939` then **failed** at the historical structural gate — reproduced locally as 40 broken relative nav links in peer desk `a4803a7b/sports/*.html`, zero errors attributable to `ff993cb9`. Peer session `733888f2` repaired those links (`1f95021`, via PR #277), after which main run `40140443917` completed **success / success** (gates + Publish canonical GitHub Pages). No file of any other session was edited by this session at any point.
 * **Pages read-back (served bytes):** `https://buffedlizard55-lab.github.io/OLBG1/ff993cb9/index.html` renders the executive summary (KPIs: 3 High / 80 picks / 93 tracked / 14-of-15 sports / 14 flags), the High table (Montreal +1.5 −239, Lube −1.5 sets −237, Netherlands ML −236, each linked to its written prediction and official source) and the best-pick-per-sport table. `.../ff993cb9/sports/tennis.html` and `.../ff993cb9/flagged.html` (F-FF-01…14) also serve correctly. (One uncached read of the bare index URL briefly returned the previous release's 404 page; a cache-busted read and all sub-pages confirmed the new artifact.)
 * **Disposition of irregularities (none blocked merge):** F-FF-01 greyhound form gap, F-FF-02 one/two-match sports, F-FF-03 Nations Championship unpriced, F-FF-04 snooker finalist pending at snapshot, F-FF-06 handball groups B/D/F, F-FF-07 cricket scorecard-publisher segregation, F-FF-08 LPGA leaderboard, F-FF-09 Japan Series G1 score, F-FF-10 OLBG Basel listing disagrees with the ATP draw, F-FF-11/12 thin early-season form (NBA/NHL truncations), F-FF-13 no injury claims, F-FF-14 GAA semi-final sourcing. All published at `/ff993cb9/flagged.html`.
+
+
+---
+
+## 96. Session `57bafcbb-olbg1` — `T57BAFCBB` claim (2026-10-24T22:30Z UTC)
+* **Renumbered §93 -> §96 at the moving-main rebase:** peer sessions took §93, §94 and §95. Resolution is a strictly additive union -- all peer bytes retained, this session's section re-appended at the end. No peer entry was edited or removed.
+
+
+* **Session / pinned branch:** `57bafcbb-olbg1` on `arena/57bafcbb-olbg1` (§0.2 deviation applies).
+  Base: tip of `main` (`eb80e51`, PR #276 merge of the `99d43605` desk).
+* **Task:** `T57BAFCBB` — fresh live 24–25 Oct 2026 overnight/weekend desk for exactly the 15 brief
+  sports. The user's standing brief applies: matches and picks must be obvious, an executive summary
+  must lead, every pick must be a fully written unique prediction (not a bare winner), and High picks
+  must sit on fair prices inside −250…+10000 rather than any >70% market-price shortcut.
+* **Exclusive write scope:** `data/57bafcbb/**`, `scripts/s57bafcbb_*.py`, `57bafcbb/**`,
+  `reports/SESSION_57BAFCBB.md`, `tests/pipeline/test_desk_57bafcbb.py`, append-only `COORDINATION.md`,
+  and **one** deliberately minimal shared touch: a root `index.html` start-here pointer edit
+  (precedent `8cfb80b2`/`02d3d515`), plus one additive `ARCHIVE` registration line in `pipeline/build.py`
+  (precedent `T23728B2B-INT`). No other canonical/root/pipeline/peer-desk edits.
+* **Method:** OLBG hubs read for event discovery and market labels only; every published fixture and
+  statistic fact fetched and read this session from the governing body, league, tour or promoter via the
+  Arena retrieval tool layer. Anything not confirmed on an official page stays blank and is flagged.
+  Originated prices are margin-free estimates derived from official inputs. The High tier requires an
+  estimate of 60% or better **and** a fair American price inside −250…+10000, machine-checked in both
+  directions -- the repository's canonical desk rule in `pipeline/desk.py`. Where that reading diverges
+  from the brief's stricter >70% gate, the desk states the choice and its reason on its own methodology
+  page rather than silently adopting one; the stricter gate's count is reported alongside the High count
+  in the desk validator's summary.
+  Predictions >=30 words, human-written, unique (six-gram check), naming the selection, and free of the
+  internal vocabulary (`model`, `verified`).
+* **Claim status:** `in progress`. Receipts appended in §96.x as they occur.
+* **Coordination:** no peer session is claimed on this namespace; no shared canonical output is edited
+  except the two logged, precedent-backed pointer/registration touches.
