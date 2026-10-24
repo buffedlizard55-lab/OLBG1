@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Matches · OLBG research desk 99d43605</title>
+<meta name="description" content="Full tracker: 48 entries with states, times and sources."><meta name="color-scheme" content="light">
+<style>
+:root{--bg:#f5f6f8;--card:#ffffff;--ink:#14213d;--muted:#5c667a;--line:#e5e8ef;
+--brand:#0b6b4f;--brand-ink:#054a37;--brand-soft:#e6f4ee;--amber:#92400e;--amber-soft:#fdf3e3;
+--red:#b42318;--red-soft:#fdeceb;--navy:#1d3557;--navy-soft:#e9eef7;--radius:12px;
+--shadow:0 1px 2px rgba(16,24,40,.05),0 1px 3px rgba(16,24,40,.08)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--brand-ink);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);
+border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;min-height:60px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:760;color:var(--ink)}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--brand);display:inline-block}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+nav.main{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap}
+nav.main a{padding:7px 10px;border-radius:8px;color:#39435a;font-size:13.5px;font-weight:600}
+nav.main a:hover{background:#f0f2f7;text-decoration:none}
+nav.main a[aria-current="page"]{background:var(--brand-soft);color:var(--brand-ink)}
+.hero{padding:36px 0 6px}
+.eyebrow{margin:0 0 8px;color:var(--brand-ink);font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-.02em}
+.lede{color:var(--muted);max-width:78ch;margin:12px 0 0;font-size:17px}
+.stamp{margin-top:10px;color:var(--muted);font-size:13px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:24px 0 4px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+padding:14px 16px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:27px;letter-spacing:-.02em;line-height:1.1}
+.kpi span{color:var(--muted);font-size:12px;font-weight:650;text-transform:uppercase;letter-spacing:.06em}
+section{margin:34px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+box-shadow:var(--shadow);overflow:hidden;margin:16px 0}
+.pad{padding:18px 20px}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:10px;flex-wrap:wrap}
+h2{margin:0;font-size:22px;letter-spacing:-.015em}
+h3{margin:0 0 6px;font-size:16px}
+.head p{margin:4px 0 0;color:var(--muted);font-size:14px;max-width:86ch}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+caption{text-align:left;padding:12px 16px 0;color:var(--muted);font-size:13px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:#f7f8fb;color:#4a5568;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafbfc}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pick{font-weight:720}
+.match{font-weight:640}
+.sub{display:block;color:var(--muted);font-size:12.5px}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:720;
+letter-spacing:.02em;border:1px solid transparent;white-space:nowrap}
+.badge.high{background:var(--brand-soft);color:var(--brand-ink);border-color:#9fd6bd}
+.badge.medium{background:var(--amber-soft);color:var(--amber);border-color:#f0cd95}
+.badge.low{background:#eef0f4;color:#4a5568;border-color:#dfe3ea}
+.badge.slate{background:var(--navy-soft);color:var(--navy);border-color:#c3cfe0}
+.badge.red{background:var(--red-soft);color:var(--red);border-color:#f2b8b4}
+.badge.amber{background:var(--amber-soft);color:var(--amber);border-color:#f0cd95}
+.badge.outline{background:#fff;border-color:#cbd5e1;color:#39435a}
+.src-stack{display:flex;flex-direction:column;gap:4px;min-width:190px}
+a.src{display:inline-flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:var(--brand-ink)}
+a.src .arrow{font-size:11px;color:var(--muted)}
+.grid{display:grid;gap:14px}
+.grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+box-shadow:var(--shadow);padding:16px 18px}
+.tile h3 a{color:var(--ink)}
+.mini{font-size:13px;color:var(--muted)}
+.note{background:#fffbea;border:1px solid #f1e1a5;border-radius:var(--radius);padding:14px 18px;margin:16px 0;font-size:14.5px}
+.note.ok{background:var(--brand-soft);border-color:#9fd6bd}
+.note.bad{background:var(--red-soft);border-color:#f2b8b4}
+.markets{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+box-shadow:var(--shadow);margin:16px 0}
+.markets header{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+table.lines td.idx{width:34%;font-weight:620}
+.kind{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+footer.foot{margin-top:48px;border-top:1px solid var(--line);background:#fff}
+.foot .wrap{padding:26px 20px 40px;color:var(--muted);font-size:13px;display:grid;gap:8px}
+.pred{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brand);
+border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;margin:18px 0}
+.pred .who{font-size:18px;font-weight:760;margin-bottom:6px}
+.pred .body{font-size:16px;line-height:1.65}
+.pred .meta{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+ul.ticks{margin:0;padding-left:18px}
+ul.ticks li{margin:6px 0}
+.callout{border:1px solid var(--line);border-radius:var(--radius);background:#fbfcfe;padding:14px 18px;margin:14px 0;font-size:14.5px}
+</style></head><body>
+<header class="top"><div class="wrap">
+<span class="brand"><span class="dot"></span><span>OLBG research desk<small>session 99d43605 · 2026-10-24</small></span></span>
+<nav class="main" aria-label="Desk"><a href="index.html">Executive summary</a><a href="picks.html">Picks</a><a href="predictions.html">Predictions</a><a href="markets.html">Markets</a><a href="matches.html" aria-current="page">Matches</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="methodology.html">Methodology</a><a href="olbg.html">OLBG research</a><a href="sports.html">All 15 sports</a></nav></div></header>
+<main class="wrap">
+<div class="hero"><p class="eyebrow">Tracker</p><h1>Matches &mdash; 48 tracked entries</h1>
+<p class="lede">Everything on the board, including fixtures already in play at read time (kept, unpriced),
+entries awaiting a pairing, and directory-level coverage where a hub was readable but rows were not.</p></div>
+<div class="card"><div class="table-wrap"><table><thead><tr><th>Entry</th><th>Sport / competition</th><th>Stage</th>
+<th>Selection</th><th>Tier</th><th class="num">American</th><th class="num">Decimal</th><th class="num">Share</th>
+<th>Official sources</th></tr></thead><tbody><tr id="nhl-lak-njd">
+<td class="match">Los Angeles Kings<br><span class="mini">v</span> New Jersey Devils
+<span class="sub">Regular season</span></td>
+<td>Ice Hockey<span class="sub">NHL</span></td>
+<td><span class="mini">24 Oct 2026 19:30 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">New Jersey Devils</span><span class="sub">Fair price would be shorter than -250; outside the agreed window, kept Medium.</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-267</td>
+<td class="num">1.375</td>
+<td class="num">72.7%</td>
+<td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="nhl-sjs-bos">
+<td class="match">San Jose Sharks<br><span class="mini">v</span> Boston Bruins
+<span class="sub">Regular season</span></td>
+<td>Ice Hockey<span class="sub">NHL</span></td>
+<td><span class="mini">24 Oct 2026 23:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Boston Bruins</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-175</td>
+<td class="num">1.571</td>
+<td class="num">63.6%</td>
+<td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="nhl-nyr-ott">
+<td class="match">New York Rangers<br><span class="mini">v</span> Ottawa Senators
+<span class="sub">Regular season</span></td>
+<td>Ice Hockey<span class="sub">NHL</span></td>
+<td><span class="mini">24 Oct 2026 23:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Ottawa Senators</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">-117</td>
+<td class="num">1.857</td>
+<td class="num">53.8%</td>
+<td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="nhl-nsh-pit">
+<td class="match">Nashville Predators<br><span class="mini">v</span> Pittsburgh Penguins
+<span class="sub">Regular season</span></td>
+<td>Ice Hockey<span class="sub">NHL</span></td>
+<td><span class="mini">24 Oct 2026 23:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Pittsburgh Penguins</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">-107</td>
+<td class="num">1.938</td>
+<td class="num">51.6%</td>
+<td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="nhl-buf-wsh">
+<td class="match">Buffalo Sabres<br><span class="mini">v</span> Washington Capitals
+<span class="sub">Regular season</span></td>
+<td>Ice Hockey<span class="sub">NHL</span></td>
+<td><span class="mini">24 Oct 2026 23:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Washington Capitals</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-156</td>
+<td class="num">1.643</td>
+<td class="num">60.9%</td>
+<td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="nhl-vgk-cbj">
+<td class="match">Vegas Golden Knights<br><span class="mini">v</span> Columbus Blue Jackets
+<span class="sub">Regular season</span></td>
+<td>Ice Hockey<span class="sub">NHL</span></td>
+<td><span class="mini">24 Oct 2026 23:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Vegas Golden Knights</span><span class="sub">Sits at exactly the 70.00% boundary; the rule wants strictly above, so Medium.</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-233</td>
+<td class="num">1.429</td>
+<td class="num">70.0%</td>
+<td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="nhl-car-stl">
+<td class="match">Carolina Hurricanes<br><span class="mini">v</span> St. Louis Blues
+<span class="sub">Regular season</span></td>
+<td>Ice Hockey<span class="sub">NHL</span></td>
+<td><span class="mini">24 Oct 2026 23:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Carolina Hurricanes</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-167</td>
+<td class="num">1.600</td>
+<td class="num">62.5%</td>
+<td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="nhl-tor-edm">
+<td class="match">Toronto Maple Leafs<br><span class="mini">v</span> Edmonton Oilers
+<span class="sub">Regular season</span></td>
+<td>Ice Hockey<span class="sub">NHL</span></td>
+<td><span class="mini">24 Oct 2026 23:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Edmonton Oilers</span></td>
+<td><span class="badge high">High</span></td>
+<td class="num">-250</td>
+<td class="num">1.400</td>
+<td class="num">71.4%</td>
+<td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="nhl-tbl-uta">
+<td class="match">Tampa Bay Lightning<br><span class="mini">v</span> Utah Mammoth
+<span class="sub">Regular season</span></td>
+<td>Ice Hockey<span class="sub">NHL</span></td>
+<td><span class="mini">25 Oct 2026 01:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Tampa Bay Lightning</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">-120</td>
+<td class="num">1.833</td>
+<td class="num">54.5%</td>
+<td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="nhl-det-cgy">
+<td class="match">Detroit Red Wings<br><span class="mini">v</span> Calgary Flames
+<span class="sub">Regular season</span></td>
+<td>Ice Hockey<span class="sub">NHL</span></td>
+<td><span class="mini">25 Oct 2026 02:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Detroit Red Wings</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">-120</td>
+<td class="num">1.833</td>
+<td class="num">54.5%</td>
+<td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="nhl-min-sea">
+<td class="match">Minnesota Wild<br><span class="mini">v</span> Seattle Kraken
+<span class="sub">Regular season</span></td>
+<td>Ice Hockey<span class="sub">NHL</span></td>
+<td><span class="mini">25 Oct 2026 02:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Seattle Kraken</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">-131</td>
+<td class="num">1.762</td>
+<td class="num">56.8%</td>
+<td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="nhl-ana-phi">
+<td class="match">Anaheim Ducks<br><span class="mini">v</span> Philadelphia Flyers
+<span class="sub">Regular season</span></td>
+<td>Ice Hockey<span class="sub">NHL</span></td>
+<td><span class="mini">24 Oct 2026 17:00 UTC</span><span class="badge red">In play at read</span></td>
+<td><span class="mini">No pick published</span><span class="sub">Already under way (or starting) at the publish read -- no pre-match price.</span></td>
+<td><span class="mini">&mdash;</span></td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="nba-mia-cha">
+<td class="match">Miami Heat<br><span class="mini">v</span> Charlotte Hornets
+<span class="sub">Regular season</span></td>
+<td>Basketball<span class="sub">NBA</span></td>
+<td><span class="mini">24 Oct 2026 22:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Charlotte Hornets</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-200</td>
+<td class="num">1.500</td>
+<td class="num">66.7%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap; total</span></td></tr><tr id="nba-bkn-cle">
+<td class="match">Brooklyn Nets<br><span class="mini">v</span> Cleveland Cavaliers
+<span class="sub">Regular season</span></td>
+<td>Basketball<span class="sub">NBA</span></td>
+<td><span class="mini">24 Oct 2026 23:30 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Cleveland Cavaliers</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">-104</td>
+<td class="num">1.961</td>
+<td class="num">51.0%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap; total</span></td></tr><tr id="nba-mil-phi">
+<td class="match">Milwaukee Bucks<br><span class="mini">v</span> Philadelphia 76ers
+<span class="sub">Regular season</span></td>
+<td>Basketball<span class="sub">NBA</span></td>
+<td><span class="mini">24 Oct 2026 23:30 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Philadelphia 76ers</span><span class="sub">Fair price would be shorter than -250; outside the agreed window, kept Medium.</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-400</td>
+<td class="num">1.250</td>
+<td class="num">80.0%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap; total</span></td></tr><tr id="nba-sas-dal">
+<td class="match">San Antonio Spurs<br><span class="mini">v</span> Dallas Mavericks
+<span class="sub">Regular season</span></td>
+<td>Basketball<span class="sub">NBA</span></td>
+<td><span class="mini">25 Oct 2026 00:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Dallas Mavericks</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-200</td>
+<td class="num">1.500</td>
+<td class="num">66.7%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap; total</span></td></tr><tr id="nba-was-chi">
+<td class="match">Washington Wizards<br><span class="mini">v</span> Chicago Bulls
+<span class="sub">Regular season</span></td>
+<td>Basketball<span class="sub">NBA</span></td>
+<td><span class="mini">25 Oct 2026 00:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Chicago Bulls</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">-104</td>
+<td class="num">1.961</td>
+<td class="num">51.0%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap; total</span></td></tr><tr id="nba-hou-atl">
+<td class="match">Houston Rockets<br><span class="mini">v</span> Atlanta Hawks
+<span class="sub">Regular season</span></td>
+<td>Basketball<span class="sub">NBA</span></td>
+<td><span class="mini">25 Oct 2026 00:30 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Atlanta Hawks</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">-104</td>
+<td class="num">1.961</td>
+<td class="num">51.0%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap; total</span></td></tr><tr id="nba-nop-den">
+<td class="match">New Orleans Pelicans<br><span class="mini">v</span> Denver Nuggets
+<span class="sub">Regular season</span></td>
+<td>Basketball<span class="sub">NBA</span></td>
+<td><span class="mini">25 Oct 2026 01:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Denver Nuggets</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-133</td>
+<td class="num">1.750</td>
+<td class="num">57.1%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap; total</span></td></tr><tr id="nba-gsw-phx">
+<td class="match">Golden State Warriors<br><span class="mini">v</span> Phoenix Suns
+<span class="sub">Regular season</span></td>
+<td>Basketball<span class="sub">NBA</span></td>
+<td><span class="mini">25 Oct 2026 02:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Phoenix Suns</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-133</td>
+<td class="num">1.750</td>
+<td class="num">57.1%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap; total</span></td></tr><tr id="mlb-tb-mil">
+<td class="match">Tampa Bay Rays<br><span class="mini">v</span> Milwaukee Brewers
+<span class="sub">Game 2 (best-of-7, Milwaukee lead 1-0)</span></td>
+<td>Baseball<span class="sub">MLB -- World Series 2026</span></td>
+<td><span class="mini">25 Oct 2026 00:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Milwaukee Brewers</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">-114</td>
+<td class="num">1.880</td>
+<td class="num">53.2%</td>
+<td><div class="src-stack smals"><a class="src" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-25&amp;hydrate=team,linescore,record" target="_blank" rel="noopener noreferrer">MLB (official Stats API)<span class="arrow">&#8599;</span></a><a class="src" href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason&amp;hydrate=team" target="_blank" rel="noopener noreferrer">MLB (official Stats API)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="ten-fonseca-rinderknech">
+<td class="match">Joao Fonseca<br><span class="mini">v</span> Arthur Rinderknech
+<span class="sub">Semifinal</span></td>
+<td>Tennis<span class="sub">ATP 500 Basel</span></td>
+<td><span class="mini">25 Oct 2026 12:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Joao Fonseca</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-200</td>
+<td class="num">1.500</td>
+<td class="num">66.7%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener noreferrer">ATP Tour (official live scores)<span class="arrow">&#8599;</span></a><a class="src" href="https://www.atptour.com/en/news" target="_blank" rel="noopener noreferrer">ATP Tour (official news)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap; total</span></td></tr><tr id="ten-mensik-aliassime">
+<td class="match">Jakub Mensik<br><span class="mini">v</span> Felix Auger-Aliassime
+<span class="sub">Semifinal</span></td>
+<td>Tennis<span class="sub">ATP 500 Basel</span></td>
+<td><span class="mini">25 Oct 2026 14:30 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Jakub Mensik</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">-104</td>
+<td class="num">1.961</td>
+<td class="num">51.0%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener noreferrer">ATP Tour (official live scores)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap; total</span></td></tr><tr id="darts-rock-clayton">
+<td class="match">Josh Rock<br><span class="mini">v</span> Jonny Clayton
+<span class="sub">Second round - afternoon session</span></td>
+<td>Darts<span class="sub">European Championship (PDC)</span></td>
+<td><span class="mini">25 Oct 2026 11:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Josh Rock</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-200</td>
+<td class="num">1.500</td>
+<td class="num">66.7%</td>
+<td><div class="src-stack smals"><a class="src" href="https://pdpa.co.uk/event/european-championship-2026/" target="_blank" rel="noopener noreferrer">PDPA / PDC event listing (official players&#x27; association)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap; total</span></td></tr><tr id="darts-aspinall-doets">
+<td class="match">Nathan Aspinall<br><span class="mini">v</span> Kevin Doets
+<span class="sub">Second round - afternoon session</span></td>
+<td>Darts<span class="sub">European Championship (PDC)</span></td>
+<td><span class="mini">25 Oct 2026 11:30 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Nathan Aspinall</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-140</td>
+<td class="num">1.714</td>
+<td class="num">58.3%</td>
+<td><div class="src-stack smals"><a class="src" href="https://pdpa.co.uk/event/european-championship-2026/" target="_blank" rel="noopener noreferrer">PDPA / PDC event listing (official players&#x27; association)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap; total</span></td></tr><tr id="darts-ratajski-schindler">
+<td class="match">Krzysztof Ratajski<br><span class="mini">v</span> Martin Schindler
+<span class="sub">Second round - afternoon session</span></td>
+<td>Darts<span class="sub">European Championship (PDC)</span></td>
+<td><span class="mini">25 Oct 2026 12:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Krzysztof Ratajski</span><span class="sub">Fair price would be shorter than -250; outside the agreed window, kept Medium.</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-533</td>
+<td class="num">1.188</td>
+<td class="num">84.2%</td>
+<td><div class="src-stack smals"><a class="src" href="https://pdpa.co.uk/event/european-championship-2026/" target="_blank" rel="noopener noreferrer">PDPA / PDC event listing (official players&#x27; association)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap; total</span></td></tr><tr id="darts-littler-wattimena">
+<td class="match">Luke Littler<br><span class="mini">v</span> Jermaine Wattimena
+<span class="sub">Second round - afternoon session</span></td>
+<td>Darts<span class="sub">European Championship (PDC)</span></td>
+<td><span class="mini">25 Oct 2026 12:30 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Luke Littler</span><span class="sub">Fair price would be shorter than -250; outside the agreed window, kept Medium.</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-800</td>
+<td class="num">1.125</td>
+<td class="num">88.9%</td>
+<td><div class="src-stack smals"><a class="src" href="https://pdpa.co.uk/event/european-championship-2026/" target="_blank" rel="noopener noreferrer">PDPA / PDC event listing (official players&#x27; association)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap; total</span></td></tr><tr id="snooker-final">
+<td class="match">Semi-final winner 1<br><span class="mini">v</span> Semi-final winner 2
+<span class="sub">Final (best of 17)</span></td>
+<td>Snooker<span class="sub">Northern Ireland Open (WST)</span></td>
+<td><span class="mini">26 Oct 2026 19:00 UTC</span><span class="badge amber">Awaiting finalists</span></td>
+<td><span class="mini">No pick published</span><span class="sub">Participants not yet known from the official source.</span></td>
+<td><span class="mini">&mdash;</span></td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.wst.tv/" target="_blank" rel="noopener noreferrer">World Snooker Tour (official)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: winner; handicap; total</span></td></tr><tr id="ru-autumn-sco-usa">
+<td class="match">Scotland<br><span class="mini">v</span> USA
+<span class="sub">Round 2</span></td>
+<td>Rugby Union<span class="sub">Autumn Nations Series 2026</span></td>
+<td><span class="mini">01 Nov 2026 17:30 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Scotland</span><span class="sub">Manual override: kept Low -- the ranking anchor did not resolve officially this session.</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">-525</td>
+<td class="num">1.190</td>
+<td class="num">84.0%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.olbg.com/tips/Rugby_Union/25" target="_blank" rel="noopener noreferrer">OLBG rugby hub (discovery)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap</span></td></tr><tr id="ru-toulon-pau">
+<td class="match">Toulon<br><span class="mini">v</span> Pau
+<span class="sub">Round 8</span></td>
+<td>Rugby Union<span class="sub">Top 14 (France)</span></td>
+<td><span class="mini">24 Oct 2026 19:00 UTC</span><span class="badge red">In play at read</span></td>
+<td><span class="mini">No pick published</span><span class="sub">Already under way (or starting) at the publish read -- no pre-match price.</span></td>
+<td><span class="mini">&mdash;</span></td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td><div class="src-stack smals"><a class="src" href="https://top14.lnr.fr/" target="_blank" rel="noopener noreferrer">LNR Top 14 (official)<span class="arrow">&#8599;</span></a><a class="src" href="https://top14.lnr.fr/classement" target="_blank" rel="noopener noreferrer">LNR Top 14 (official table)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="ru-ospreys-dragons">
+<td class="match">Ospreys<br><span class="mini">v</span> Dragons
+<span class="sub">Round 4</span></td>
+<td>Rugby Union<span class="sub">URC 2026-27</span></td>
+<td><span class="mini">24 Oct 2026 18:00 UTC</span><span class="badge red">In play at read</span></td>
+<td><span class="mini">No pick published</span><span class="sub">Already under way (or starting) at the publish read -- no pre-match price.</span></td>
+<td><span class="mini">&mdash;</span></td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.unitedrugby.com/latest/match-preview-2/a-relentless-rivalry-and-a-new-home-for-ospreys-round-4-preview/" target="_blank" rel="noopener noreferrer">BKT United Rugby Championship (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="ru-connacht-edinburgh">
+<td class="match">Connacht<br><span class="mini">v</span> Edinburgh
+<span class="sub">Round 4</span></td>
+<td>Rugby Union<span class="sub">URC 2026-27</span></td>
+<td><span class="mini">25 Oct 2026 15:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Connacht</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">-122</td>
+<td class="num">1.818</td>
+<td class="num">55.0%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.unitedrugby.com/latest/match-preview-2/a-relentless-rivalry-and-a-new-home-for-ospreys-round-4-preview/" target="_blank" rel="noopener noreferrer">BKT United Rugby Championship (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="ru-harlequins-northampton">
+<td class="match">Harlequins<br><span class="mini">v</span> Northampton Saints
+<span class="sub">Round 6</span></td>
+<td>Rugby Union<span class="sub">Premiership (England)</span></td>
+<td><span class="mini">24 Oct 2026 19:30 UTC</span><span class="badge red">Unconfirmed</span></td>
+<td><span class="mini">No pick published</span><span class="sub">Could not be confirmed from an official source this session.</span></td>
+<td><span class="mini">&mdash;</span></td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.olbg.com/tips/Rugby_Union/25" target="_blank" rel="noopener noreferrer">OLBG rugby hub (discovery)<span class="arrow">&#8599;</span></a><a class="src" href="https://www.premiershiprugby.com/fixtures-and-results/" target="_blank" rel="noopener noreferrer">Premiership Rugby (official, blocked)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="ru-usa-ausa">
+<td class="match">USA<br><span class="mini">v</span> Australia A
+<span class="sub">Uncategorised</span></td>
+<td>Rugby Union<span class="sub">U.S. fall tour</span></td>
+<td><span class="mini">24 Oct 2026 00:00 UTC</span><span class="badge red">Unconfirmed</span></td>
+<td><span class="mini">No pick published</span><span class="sub">Could not be confirmed from an official source this session.</span></td>
+<td><span class="mini">&mdash;</span></td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.olbg.com/tips/Rugby_Union/25" target="_blank" rel="noopener noreferrer">OLBG rugby hub (discovery)<span class="arrow">&#8599;</span></a><a class="src" href="https://www.usa.rugby/" target="_blank" rel="noopener noreferrer">USA Rugby (official, no listing)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="rlwc-nz-cook">
+<td class="match">New Zealand<br><span class="mini">v</span> Cook Islands
+<span class="sub">Round 3</span></td>
+<td>Rugby League<span class="sub">Women&#x27;s Rugby League World Cup</span></td>
+<td><span class="mini">25 Oct 2026 21:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">New Zealand</span><span class="sub">Ordinal read from the official round-three pool order; deliberately conservative.</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-144</td>
+<td class="num">1.695</td>
+<td class="num">59.0%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.nrl.com/draw/?competition=131&amp;round=2&amp;season=2026" target="_blank" rel="noopener noreferrer">NRL (official RLWC draw)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="rlwc-aus-fiji">
+<td class="match">Australia<br><span class="mini">v</span> Fiji
+<span class="sub">Round 3</span></td>
+<td>Rugby League<span class="sub">Men&#x27;s Rugby League World Cup</span></td>
+<td><span class="mini">25 Oct 2026 23:30 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Fiji</span><span class="sub">Ordinal read from the official round-three pool order; deliberately conservative.</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">-104</td>
+<td class="num">1.961</td>
+<td class="num">51.0%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.nrl.com/draw/?competition=131&amp;round=2&amp;season=2026" target="_blank" rel="noopener noreferrer">NRL (official RLWC draw)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="cricket-pak-eng-t2">
+<td class="match">Pakistan<br><span class="mini">v</span> England
+<span class="sub">2nd T20I</span></td>
+<td>Cricket<span class="sub">Pakistan v England T20 series 2026</span></td>
+<td><span class="mini">25 Oct 2026 13:30 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Pakistan</span><span class="sub">Fair price would be shorter than -250; outside the agreed window, kept Medium.</span></td>
+<td><span class="badge medium">Medium</span></td>
+<td class="num">-400</td>
+<td class="num">1.250</td>
+<td class="num">80.0%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.pcb.com.pk/404page.html" target="_blank" rel="noopener noreferrer">Pakistan Cricket Board (official)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: handicap; total</span></td></tr><tr id="cricket-nzc-fixtures">
+<td class="match">New Zealand domestic season<br><span class="mini">v</span> (pairing open)
+<span class="sub">Various</span></td>
+<td>Cricket<span class="sub">New Zealand domestic season</span></td>
+<td><span class="mini">&amp;mdash;</span><span class="badge slate">Directory entry</span></td>
+<td><span class="mini">No pick published</span><span class="sub">Official hub readable but no single pairing could be lifted.</span></td>
+<td><span class="mini">&mdash;</span></td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.nzc.nz/" target="_blank" rel="noopener noreferrer">New Zealand Cricket (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="cricket-unverified-slate">
+<td class="match">Other listed competitions<br><span class="mini">v</span> (pairing open)
+<span class="sub">Various</span></td>
+<td>Cricket<span class="sub">Other listed competitions</span></td>
+<td><span class="mini">&amp;mdash;</span><span class="badge slate">Directory entry</span></td>
+<td><span class="mini">No pick published</span><span class="sub">Official hub readable but no single pairing could be lifted.</span></td>
+<td><span class="mini">&mdash;</span></td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.cricket.co.za/tournament/2300/CSA-T20-Challenge-2026-27" target="_blank" rel="noopener noreferrer">Cricket South Africa (official)<span class="arrow">&#8599;</span></a><a class="src" href="https://cricketcanada.org/" target="_blank" rel="noopener noreferrer">Cricket Canada (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="gaa-galway-hurling-final">
+<td class="match">St Thomas&#x27;<br><span class="mini">v</span> Sarsfields
+<span class="sub">Final</span></td>
+<td>Gaelic Sports<span class="sub">Galway SHC -- county final</span></td>
+<td><span class="mini">26 Oct 2026 14:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="mini">No pick published</span></td>
+<td><span class="mini">&mdash;</span></td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.galwaygaa.ie/" target="_blank" rel="noopener noreferrer">Galway GAA (official county board)<span class="arrow">&#8599;</span></a></div><span class=sub>Withheld: winner</span></td></tr><tr id="gaa-cork-double-final">
+<td class="match">Cork Premier SFC &amp; SHC -- county finals<br><span class="mini">v</span> (pairing open)
+<span class="sub">Finals</span></td>
+<td>Gaelic Sports<span class="sub">Cork Premier SFC &amp; SHC -- county finals</span></td>
+<td><span class="mini">&amp;mdash;</span><span class="badge amber">Awaiting finalists</span></td>
+<td><span class="mini">No pick published</span><span class="sub">Participants not yet known from the official source.</span></td>
+<td><span class="mini">&mdash;</span></td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td><div class="src-stack smals"><a class="src" href="https://gaacork.ie/" target="_blank" rel="noopener noreferrer">Cork GAA (official county board)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="gh-card-index">
+<td class="match">GBGB open race cards<br><span class="mini">v</span> (pairing open)
+<span class="sub">Today</span></td>
+<td>Greyhounds<span class="sub">GBGB open race cards</span></td>
+<td><span class="mini">&amp;mdash;</span><span class="badge slate">Directory entry</span></td>
+<td><span class="mini">No pick published</span><span class="sub">Official hub readable but no single pairing could be lifted.</span></td>
+<td><span class="mini">&mdash;</span></td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.gbgb.org.uk/racing/" target="_blank" rel="noopener noreferrer">Greyhound Board of Great Britain (official)<span class="arrow">&#8599;</span></a><a class="src" href="https://www.gbgb.org.uk/racing/results/" target="_blank" rel="noopener noreferrer">GBGB (official results lookup)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="vb-lega-slates">
+<td class="match">Lega Volley (Italy) -- men&#x27;s &amp; women&#x27;s slates<br><span class="mini">v</span> (pairing open)
+<span class="sub">Weekend card</span></td>
+<td>Volleyball<span class="sub">Lega Volley (Italy) -- men&#x27;s &amp; women&#x27;s slates</span></td>
+<td><span class="mini">&amp;mdash;</span><span class="badge slate">Directory entry</span></td>
+<td><span class="mini">No pick published</span><span class="sub">Official hub readable but no single pairing could be lifted.</span></td>
+<td><span class="mini">&mdash;</span></td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.legavolley.it/calendario/?idCampionato=999" target="_blank" rel="noopener noreferrer">Lega Pallavolo Serie A (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="hb-balingen-melsungen">
+<td class="match">HBW Balingen-Weilstetten<br><span class="mini">v</span> MT Melsungen
+<span class="sub">Matchday</span></td>
+<td>Handball<span class="sub">Handball-Bundesliga</span></td>
+<td><span class="mini">24 Oct 2026 18:00 UTC</span><span class="badge red">In play at read</span></td>
+<td><span class="mini">No pick published</span><span class="sub">Already under way (or starting) at the publish read -- no pre-match price.</span></td>
+<td><span class="mini">&mdash;</span></td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td class="num">&mdash;</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.opel-hbl.de/de/team/MT%20Melsungen/feb41b46-3952-11ef-9df6-af5c55c3771d" target="_blank" rel="noopener noreferrer">Opel Handball-Bundesliga (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="hb-gummersbach-melsungen">
+<td class="match">VfL Gummersbach<br><span class="mini">v</span> MT Melsungen
+<span class="sub">Matchday</span></td>
+<td>Handball<span class="sub">Handball-Bundesliga</span></td>
+<td><span class="mini">29 Oct 2026 18:30 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">VfL Gummersbach</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">-122</td>
+<td class="num">1.818</td>
+<td class="num">55.0%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.opel-hbl.de/de/team/MT%20Melsungen/feb41b46-3952-11ef-9df6-af5c55c3771d" target="_blank" rel="noopener noreferrer">Opel Handball-Bundesliga (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="golf-bermuda-r4">
+<td class="match">Christiaan Bezuidenhout<br><span class="mini">v</span> Co-leader (official pairing stated as final two-ball)
+<span class="sub">Final round</span></td>
+<td>Golf<span class="sub">PGA TOUR -- Butterfield Bermuda Championship</span></td>
+<td><span class="mini">25 Oct 2026 14:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Christiaan Bezuidenhout</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">+138</td>
+<td class="num">2.381</td>
+<td class="num">42.0%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/leaderboard" target="_blank" rel="noopener noreferrer">PGA TOUR (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="f1-usgp-quali">
+<td class="match">Max Verstappen<br><span class="mini">v</span> Rest of field
+<span class="sub">Qualifying</span></td>
+<td>Motor Racing<span class="sub">Formula 1 -- United States Grand Prix (Austin)</span></td>
+<td><span class="mini">24 Oct 2026 21:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Max Verstappen</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">-117</td>
+<td class="num">1.852</td>
+<td class="num">54.0%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr id="f1-usgp-race">
+<td class="match">Max Verstappen<br><span class="mini">v</span> Rest of field
+<span class="sub">Grand Prix</span></td>
+<td>Motor Racing<span class="sub">Formula 1 -- United States Grand Prix (Austin)</span></td>
+<td><span class="mini">25 Oct 2026 20:00 UTC</span><span class="badge slate">Upcoming</span></td>
+<td><span class="pick">Max Verstappen</span></td>
+<td><span class="badge low">Low</span></td>
+<td class="num">+117</td>
+<td class="num">2.174</td>
+<td class="num">46.0%</td>
+<td><div class="src-stack smals"><a class="src" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 (official)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></main>
+<footer class="foot"><div class="wrap">
+<div><strong>Independently originated research.</strong> This desk is not affiliated with OLBG. Prices are our own fair lines (no overround included), published as estimates for review alongside their official sources.</div>
+<div>Generated Saturday 24 October 2026, 21:00 UTC from the official reads listed on the sources page. Nothing here is a betting recommendation.</div>
+<div><a href="methodology.html">How pricing works</a> · <a href="flagged.html">Flagged for review</a> · <a href="https://github.com/buffedlizard55-lab/OLBG1">Repository</a></div>
+</div></footer></body></html>
