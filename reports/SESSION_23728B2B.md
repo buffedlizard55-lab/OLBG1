@@ -55,6 +55,15 @@ Every primary prediction is unique and at least 30 words. High prose also passes
 
 The local canonical refresh preserved unavailable-feed gaps and modified only generated canonical artifacts; those two byproducts were restored and are not part of this desk. Pinned browser packages were installed under `/tmp`, matching the workflow, with no production dependency added.
 
-## Publication log
+## Publication log — merged and confirmed live
 
-Pull-request checks, merge and GitHub Pages served-content read-back are pending at this pre-publication revision. This report does not yet claim deployment success; the final publication receipt will be appended after those steps complete.
+| Step | Receipt |
+| --- | --- |
+| Required PR gate | [Run 40121265906](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40121265906) passed on head `a260d07` |
+| Pull request | [#259](https://github.com/buffedlizard55-lab/OLBG1/pull/259) merged at `2026-10-24T18:36:23Z` as `b87bd63` |
+| Production deployment | [Run 40121498689](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40121498689), whose `b5bb1c6` tree contains the merge, completed successfully including `Publish canonical GitHub Pages` |
+| Served-content read-back | At `2026-10-24T18:41:07Z`, cache-busted HTTPS reads returned this desk's executive page, all-match page, review page, High-analysis deep link and root archive entry |
+
+The [live executive dashboard](https://buffedlizard55-lab.github.io/OLBG1/23728b2b/index.html) returned seven High selections with probabilities, reciprocal fair prices, analysis locations and official review links. The [match list](https://buffedlizard55-lab.github.io/OLBG1/23728b2b/matches.html) returned all 55 fixture rows; [Flagged for Review](https://buffedlizard55-lab.github.io/OLBG1/23728b2b/flagged.html) returned all 19 disclosed items. The root archive links to this desk. The machine-readable receipt is [`data/23728b2b/publication.json`](../data/23728b2b/publication.json).
+
+Publication did not refresh the frozen research cut-off. This remains a snapshot, not a live tracker, and Ospreys–Dragons is not represented as currently upcoming after its stated start.
