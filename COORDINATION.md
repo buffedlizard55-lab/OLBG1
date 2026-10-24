@@ -195,6 +195,7 @@ IDs enumerated. Exclusions applied per the brief:
 
 | Excluded (per brief) | OLBG ID |
 |---|---|
+| T99D4 | **Independent live 24–25 Oct 2026 desk `99d43605-olbg1` — clarity-first rebuild:** fresh OLBG discovery read across exactly the 15 brief sports (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League); independent official governing-body/league verification fetched and read this session (blank + flag anything not confirmed); own multi-market line origination (match winner, handicap/spread, match total and sport-specific markets where an official input exists); High tier **only** where originated probability > 0.70 **and** fair American price sits inside −250…+10000 (both directions machine-checked); target five highest-confidence picks per covered sport with unique hand-written ≥30-word predictions naming the selection and citing only session-read official facts (no internal vocabulary); namespaced clean executive-summary-first dashboard `/99d43605/` (picks on top, obvious location block, per-sport tables, markets, predictions, sources, coverage, methodology, repo audit, Flagged for Review); one minimal root start-here pointer update (8cfb80b2 precedent) logged in §92; desk validator + pipeline gates + build check; PR → merge without waiting → GitHub Pages live read-back; receipts appended in §92 | in progress | 99d43605-olbg1 | `data/99d43605/**`, `scripts/s99d43605_*.py`, `99d43605/**`, `reports/SESSION_99D43605.md`, `tests/pipeline/test_desk_99d43605.py`, append-only `COORDINATION.md`, one-line pointer edit in root `index.html` (logged, precedent `8cfb80b2`) | 2026-10-24T18:05Z | Collision-resistant id `T99D4` / record at **§92** (first unused section above §91 on the moving board; renumbered from §84 during rebase). Pinned branch `arena/99d43605-olbg1` per §0.2. Zero edits to `pipeline/**`, `data/current/**`, `.github/workflows/**`, `scripts/validate.py`, `README.md`, `sports/**`, `assets/**` or any peer desk. OLBG = discovery only; official sources via Arena retrieval tools (sandbox egress limited), UTC observation stamps recorded per row. |
 | Football / soccer | 1 |
 | Horse Racing | 2 |
 | American Football | 11 |
@@ -7045,3 +7046,15 @@ Fresh `_site` was rebuilt after removing stale output from the prior canonical g
   repository-level and outside this session's write scope.
 * **Re-check:** load `https://buffedlizard55-lab.github.io/OLBG1/580f43c9/index.html` — if it still 404s while
   `/b2719ad3/` serves, read `/repos/{owner}/{repo}/pages/builds` and take the newest `errored` message.
+
+---
+
+## 92. Session `99d43605-olbg1` — `T99D4` claim (2026-10-24T18:05Z UTC)
+
+* **Session / pinned branch:** `99d43605-olbg1` on `arena/99d43605-olbg1` (§0.2 deviation applies). Base: tip of `main` at PR #235 merge (`c4a90a7`).
+* **Task:** `T99D4` — fresh clarity-first 15-sport desk for 24–25 Oct 2026. The user asked for one thing above all: *the matches and picks must be obvious*, with an executive summary, fully written unique predictions (not bare winners), and High picks focused on fair prices inside −250…+10000 rather than any >70% market-price shortcut.
+* **Exclusive write scope:** `data/99d43605/**`, `scripts/s99d43605_*.py`, `99d43605/**`, `reports/SESSION_99D43605.md`, `tests/pipeline/test_desk_99d43605.py`, append-only `COORDINATION.md`, and **one** deliberately minimal shared touch: the root `index.html` start-here bar re-pointed to `/99d43605/` (precedent set by `8cfb80b2`; logged here; no other root/pipeline/canonical/peer-desk edits).
+* **Method:** OLBG hubs read for event discovery and market labels only; every published fixture/statistic fact fetched and read this session from the governing body, league, tour or promoter (Arena retrieval tools; sandbox egress is GitHub/npm/PyPI only). Anything not confirmed on an official page stays blank and is flagged. Originated prices are margin-free estimates derived from official inputs; High tier requires originated probability > 0.70 **and** fair American price inside −250…+10000, machine-checked in both directions. Predictions ≥30 words, human-written, unique (six-gram check), naming the selection, and free of internal vocabulary.
+* **Claim status:** `in progress`. Receipts (gates, PR, merge, Pages read-back) appended in §92.x after they occur.
+
+>>>>>>> f804415 (T99D4 (99d43605-olbg1): claim §84 — clarity-first 24–25 Oct 15-sport desk)
