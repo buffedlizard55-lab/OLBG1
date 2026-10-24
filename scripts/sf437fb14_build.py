@@ -402,7 +402,7 @@ the full working is one click away.</div>
 <div class="map">
 <a href="picks.html"><b>Picks</b><span>Every selection with price, chance and evidence grade</span></a>
 <a href="matches.html"><b>All matches</b><span>All {len(fixtures)} fixtures, fifteen sports, and what is confirmed for each</span></a>
-<a href="markets.html"><b>Markets</b><span>Money line, handicap and total for each priced match &mdash; and why the rest are withheld</span></a>
+<a href="markets.html"><b>Markets</b><span>Money line and handicap for every priced match, the total where a run rate exists &mdash; and why the rest are withheld</span></a>
 <a href="predictions.html"><b>Write-ups</b><span>The full reasoning for each pick, 30 words or more, with sources</span></a>
 <a href="sports.html"><b>Sports</b><span>One page per sport: fixtures, what we could price, what blocked us</span></a>
 <a href="flagged.html"><b>Flagged</b><span>Twelve things that did not line up, with links to check</span></a>
