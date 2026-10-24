@@ -129,7 +129,7 @@ SOURCES = [
          observed="2026-10-24T19:18Z",
          scope="Home page news/videos show no listing for USA v Australia A tonight; fixture remains OLBG-listed only."),
     dict(id="pcb-news", publisher="Pakistan Cricket Board (official)", official=True,
-         url="https://www.pcb.com.pk/404page.html",
+         url="https://www.pcb.com.pk/news.html",
          observed="2026-10-24T18:35Z",
          scope="PCB news feed (20-24 Oct): ODI tri-series in progress; 'Arafat Minhas 6-40 and 59 sink England as Pakistan win consecutive games in ODI tri-series' (20 Oct) - Pakistan's biggest ODI win over England by runs since 2005; 22 Oct: Sri Lanka chased 430 to beat an England side for whom Harry Brook made a record 114-ball double hundred."),
     dict(id="nzc-news", publisher="New Zealand Cricket (official)", official=True,

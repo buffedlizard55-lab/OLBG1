@@ -286,7 +286,8 @@ def page_index(b):
     order = {"High": 3, "Medium": 2, "Low": 1}
     for fx in picks:
         t = fx["tier"]
-        if order.get(t, 0) > order.get(best_tier.get(fx["sport"], "Low"), 0):
+        cur = best_tier.get(fx["sport"])
+        if cur is None or order.get(t, 0) > order.get(cur, 0):
             best_tier[fx["sport"]] = t
     table = "".join(f'''<tr><td class="match"><a href="sports/{esc(slug)}.html"><strong>{esc(name)}</strong></a></td>
 <td class="num">{per_sport.get(slug, 0)}</td><td class="num">{priced_by_sport.get(slug, 0)}</td>
