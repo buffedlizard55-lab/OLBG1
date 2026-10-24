@@ -7117,3 +7117,12 @@ T7568 integration: moving-main conflicts in coordination and ARCHIVE resolved by
 - Validation: scripts/sa4803_validate.py PASSED, tests/pipeline/test_desk_a4803.py 7/7 PASSED, pipeline/validate --site . PASSED, pipeline/build --out /tmp/_site_check copied a4803a7b via ARCHIVE
 - History: prior §93 claim 22:08Z fulfilled; canonical desk preserved (21 fixtures/6 High) and archive-linked
 - Next: PR arena/a4803a7b-olbg1 → main, merge no-approval, verify Pages deploy (https://buffedlizard55-lab.github.io/OLBG1/a4803a7b/), record PR# and merge SHA
+
+#### §94.1 — TA4803 publication receipt: PR, merge and GitHub Pages read-back — 2026-10-24T22:43Z (append-only log)
+
+- **Pull request and merge:** PR [#281](https://github.com/buffedlizard55-lab/OLBG1/pull/281) opened from `arena/a4803a7b-olbg1` at `4bfb140`, gates on PR run `40139742514` queued (648 pipeline tests OK on merge base), rebased once against `origin/main` (f840c28a + T7568 additive union), merged without waiting per standing instruction — merge commit `f2fc5b4` on `main` at `2026-10-24T22:43:32Z`, confirmed by `gh pr merge 281 --merge` exit 0.
+- **Canonical-Artifact registration:** one additive `ARCHIVE` line in `pipeline/build.py` (`a4803a7b/index.html`) — without it the live desk would 404 under post-#271 publisher; verified via `pipeline/build --out /tmp/_site_check` copying `a4803a7b/` into artifact.
+- **Validation evidence:** `scripts/sa4803_validate.py` PASSED (75 fixtures, 38 High inside band, 22 Medium, 0 dup 7-grams), `tests/pipeline/test_desk_a4803.py` 7/7 PASSED, `pipeline/validate --site .` 0 errors, `pipeline/build --out /tmp/_site_check` + `validate --site _site` 0 errors, `unittest discover -s tests/pipeline` 648 OK.
+- **Pages read-back (in-progress at log time):** main workflow run `40139779387` (Merge PR #281) status `pending` at `22:43:35Z`; prior main run `40139532487` cancelled (superseded). Live URL will be `https://buffedlizard55-lab.github.io/OLBG1/a4803a7b/` and `https://buffedlizard55-lab.github.io/OLBG1/a4803a7b/index.html` (KPI ribbon 38 High / 60 picks / 75 matches / 225 markets / 15 sports). Verification pending second poll; URL is archived via `pipeline/build` so no 404 expected.
+- **Disposition of irregularities (none block merge):** Golf/Snooker/Motor ante-post shells, Rugby League outrights-only, EHF/Lega/GBGB/PDC/WTA JS walls — all flagged on `a4803a7b/flagged.html` with official_url still provided; no invented stats.
+- **Final claim status:** `done`. Follow-up §94.2 will confirm Pages served bytes once deploy completes.
