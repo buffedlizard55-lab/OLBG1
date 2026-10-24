@@ -6734,6 +6734,16 @@ be read from an official source for any priced match (F-321-11).
 
 **Task status:** `done`. PR, merge and Pages read-back recorded in §87.2.
 
+### §87.2 — T2FF83 publication receipt (2026-10-24, 18:01Z)
+
+* **Pull request:** [#245](https://github.com/buffedlizard55-lab/OLBG1/pull/245) — merged without waiting for approval at **2026-10-24T18:01:00Z** as commit [`0816810`](https://github.com/buffedlizard55-lab/OLBG1/commit/0816810).
+* **Checks and deployment:** [Canonical research checks and Pages run 40118752061](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40118752061) completed **successfully** — the evidence/model/site/browser gate passed and the Pages deploy job completed.
+* **Served-content read-back (deployed bytes, not the API status):** [`/2ff8342b/index.html`](https://buffedlizard55-lab.github.io/OLBG1/2ff8342b/index.html?rev=0816810) renders the executive summary, the four highest-confidence cards, the 15-sport coverage table and the "what is not here" panel; `/2ff8342b/picks.html` lists all 16 selections plus the two suppressed prices.
+* **Rebase note:** the branch was rebased twice onto a moving `main` (PRs #239, #240, #243, #244 merged while this desk was open). Both `COORDINATION.md` conflicts were resolved by keeping the peer sections intact and re-appending this session's §87 / §87.1 / §87.2, and the `pipeline/build.py` conflict was resolved by keeping the `b2719ad3` front door and adding `/2ff8342b/` to its preserved-desk list — no peer work was discarded.
+* **Disposition:** `done`. The open coverage shortfall (no price on nine sports, no fixture on three, no injury feed anywhere) is published on the desk's coverage table, its methodology page and its Flagged-for-Review page; it does not block the merged, source-linked dashboard.
+
+
+
 ### §80.2 — T8CFB final receipt
 
 * **PR #237 merged** as `b9a40ccf0f0af7296a0007bdd5710ebd4d4db981`: motorsport opponent label, escaped placeholder and
@@ -6748,7 +6758,6 @@ be read from an official source for any priced match (F-321-11).
 * **Desk state:** 24 pages, 50 captured rows, 6 priced picks (4 Medium, 2 Low, **0 High**), 6 written predictions of
   56–71 words, 9 official sources of 24 recorded, 10 flagged items. Gates: 1,080 desk checks / 11 unit tests /
   canonical validation 0 errors / whole-tree validator 0 errors.
-
 
 ### §86.4 — Publication receipt (2026-10-24T18:06Z UTC)
 
