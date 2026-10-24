@@ -7127,3 +7127,12 @@ T7568 integration: moving-main conflicts in coordination and ARCHIVE resolved by
 * **Exclusive write scope:** `data/ff993cb9/**`, `scripts/sff993cb9_*.py`, `ff993cb9/**`, `reports/SESSION_FF993CB9.md`, `tests/pipeline/test_desk_ff993cb9.py`, append-only `COORDINATION.md`, plus one additive `ARCHIVE` registration line in `pipeline/build.py` (T23728B2B-INT / T99D4 precedent, required for Pages publication). No root, peer-desk, `data/current/**`, workflow or shared-validator edits.
 * **Claim status:** `in progress`. Receipts appended in §95.x.
 * **Conflict note:** first claim commit conflicted only in `COORDINATION.md` (both sides appended at EOF). Resolved by keeping all peer bytes (§93/§94 untouched) and re-appending this claim as §95. Internal cross-references to "§93" in this desk's report/PR text refer to this section as renumbered.
+
+#### §95.1 — TFF99 deliverables + local gates (append-only) — 2026-10-24T23:00Z
+
+* **Status:** `in progress` -> `delivered; PR pending`.
+* **Desk:** `/ff993cb9/` — 26 pages. Executive summary first (High table, best-pick-per-sport table, where-is-everything boxes), then All picks, Written predictions, Every match, Our lines (both sides), 15 sport pages, Flagged for Review (F-FF-01..14), Sources (36 official pages, UTC read times), Method, Inside OLBG (hub + event-route reverse engineering), Repo audit.
+* **Numbers:** 80 written picks (3 High / 67 Medium / 10 Low), 66 priced matches, 27 tracked no-pick rows, 14 flags. Per sport: Golf 5, Volleyball 7, Rugby Union 4, Cricket 7, Snooker 2, Darts 5, Baseball 6, Gaelic 5, Greyhounds 0 (5 meetings tracked, flag F-FF-01), Tennis 7, Motor Racing 7, Handball 5, Ice Hockey 7, Basketball 6, Rugby League 7.
+* **High rule as applied:** High only at probability >=70% AND fair price inside -250..+10000 (=> 70.0-71.4%); heavy favourites re-expressed as handicap/team-total lines inside the window. Highs: IH-03 Montreal +1.5 (-239), CR-02 Netherlands ML (-236), VB-04 Lube -1.5 sets (-237).
+* **Gates (local, all green):** `sff993cb9_validate.py` PASS (incl. zero shared 6-grams across 80 predictions); `unittest discover tests/pipeline` 619 OK (8 new); `scripts/validate.py` PASS; `pipeline.build --out _site` + `pipeline.validate --site _site` 0 errors. One additive `ARCHIVE` line in `pipeline/build.py` as declared in §95.
+* **Report:** `reports/SESSION_FF993CB9.md`. Next: PR -> merge -> Pages read-back, receipts in §95.2.
