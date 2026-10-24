@@ -6422,3 +6422,20 @@ egress does not reach `olbg.com` or governing-body domains directly, so all read
 * **Irregularities published:** Williams–Jones has no guessed UTC start; the two Dunstall Park finals have no guessed race time or runner selection; Ningbo’s official Sunday order of play controls over a contradictory preview; Galway’s latest weather notice controls over an older fixture view; Osaka singles records, Paris scoring and current Formula 1 qualifying/driver inputs are insufficient for prices. ANA–PHI is a started exclusion. No five-per-sport shortage is filled.
 * **Validation:** `scripts/sb2719ad3_check.py` PASS **410/410** (19 HTML pages, zero broken local links); five tests in `tests/pipeline/test_desk_b2719ad3.py` pass. After rebase, full `tests/pipeline` **449 tests OK** and preserved `tests` **38 tests OK**. `git diff --check` clean. External evidence was read with Arena retrieval tools; no shell HTTP success is claimed against sporting hosts.
 * **Integration disposition:** `TB2719` isolated implementation is complete. `TB2719-INT` will preserve all newly merged peer desks and canonical evidence, include `b2719ad3/` in the canonical Pages artifact, add only minimal current-desk navigation, run the combined build/validators, then open/merge the PR and read back served bytes.
+
+### §80.1 — T8CFB publication receipt and presentation follow-up
+
+**PR #227 merged** as `28c78c0` (merge commit; branch `arena/8cfb80b2-olbg1`, commit `ab1bc24`). The PR's gate job
+run `40116334452` passed before merge. Pages publication confirmed by read-back after the canonical run
+`40116891056` completed success at commit `1a203e9`: `/OLBG1/8cfb80b2/index.html`, `picks.html` and the sport pages all
+serve the desk, with live HTML showing the executive summary, the six picks and the 50-row slate. A concurrent session
+(`37003e61-olbg1`, PR #231) merged between my first two merge attempts; the rebase kept both sessions' work in
+`COORDINATION.md` and neither log was discarded. Two `pages build and deployment` runs against my merge commit show
+`errored`/`cancelled` in the legacy branch build path while the canonical artifact deployment succeeded — the same
+legacy-versus-artifact behaviour already documented in the README.
+
+**Presentation follow-up (this commit).** A live read-back exposed three defects that the static checks could not see:
+the motorsport event rendered "Circuit of the Americas vs Round 19"; an empty start-source cell leaked an escaped
+`&lt;span&gt;` fragment into the table; and the KPI read "45 with a confirmed start" when only 22 starts are official
+(the other 23 are OLBG-derived). All three are fixed in `scripts/s8cfb80b2_data.py` and `scripts/s8cfb80b2_build.py`,
+rebuilt, and re-gated at 1,080 checks with 0 failures plus 0 canonical validation errors.

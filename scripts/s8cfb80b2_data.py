@@ -286,7 +286,7 @@ EVENTS = [
          start="2026-10-25T12:00:00Z", basis="official", venue="Waterfront Hall, Belfast",
          olbg="https://www.olbg.com/betting-tips/Snooker/8", market="Win Match", src=["WST-MATCHES"], facts="Final listed at 08:00 on 25 October; the second finalist comes from match 62.", status="upcoming"),
     # Motor racing
-    dict(id="mr-1", sport="motor-racing", comp="Formula 1 United States Grand Prix", home="Circuit of the Americas", away="Round 19",
+    dict(id="mr-1", sport="motor-racing", comp="Formula 1 United States Grand Prix", home="Circuit of the Americas", away="",
          start="2026-10-25T21:00:00Z", basis="official", venue="Circuit of the Americas, Austin",
          olbg="https://www.olbg.com/betting-tips/Motor_Racing/All_Motor_Racing/All_Events/USA_Grand_Prix/14?event_id=913",
          market="Win Race", src=["F1-USGP", "OLBG-MOTOR"],
