@@ -56,13 +56,13 @@ listing disagrees with the ATP draw (F-FF-10) — this desk follows the ATP ever
 - `python scripts/validate.py` — PASS (3 pre-existing f7fa77fc warnings untouched).
 - `python -m pipeline.build --out _site` + `python -m pipeline.validate --site _site` — 0 errors;
   the canonical artifact contains the full `ff993cb9/` folder via one additive `ARCHIVE` line
-  in `pipeline/build.py` (declared in §93 of COORDINATION.md, T99D4 precedent).
+  in `pipeline/build.py` (declared in §95 of COORDINATION.md, T99D4 precedent).
 - Local HTTP smoke test: index and sport pages return 200 with the executive-summary content.
 
 ## Files
 
 `ff993cb9/**` (generated site) · `data/ff993cb9/desk.json` + `picks.csv` · `scripts/sff993cb9_data.py`,
 `scripts/sff993cb9_data2.py`, `scripts/sff993cb9_build.py`, `scripts/sff993cb9_validate.py` ·
-`tests/pipeline/test_desk_ff993cb9.py` · this report · append-only `COORDINATION.md` §93 ·
+`tests/pipeline/test_desk_ff993cb9.py` · this report · append-only `COORDINATION.md` §95 (renumbered from §93 at rebase) ·
 one additive line in `pipeline/build.py` (`ARCHIVE`).
 Rebuild any time with `python3 scripts/sff993cb9_build.py`.
