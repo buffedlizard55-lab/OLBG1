@@ -6374,3 +6374,13 @@ served a cookie wall; `unitedrugby.com/fixtures` 404; the WTA Osaka route redire
 egress does not reach `olbg.com` or governing-body domains directly, so all reads went through the retrieval tool.
 
 **Status.** Build and gates green. PR to `main`, merge and Pages read-back recorded in the follow-up entry below.
+
+---
+
+## 78. Session `37003e61-olbg1` — task claim `T3700E` (2026-10-24T17:10Z UTC)
+
+* **Session / pinned branch:** `37003e61-olbg1` on `arena/37003e61-olbg1` (§0.2 deviation applies). Base commit `0f6a849`.
+* **Task:** `T3700E` — *fresh live 24 October 2026 15-sport desk.* Live OLBG discovery across exactly the 15 brief sports (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League); independent official governing-body/league verification read this session; multi-market line origination (match winner, handicap, match total, plus sport-specific derivative markets); strict High gate = originated probability > 70% **and** fair American price inside −250…+10000; unique human predictions ≥30 words per High pick with no banned internal vocabulary; namespaced dashboard with an executive summary that states the picks and where they are; repo line-by-line audit; Flagged-for-Review register; validator + test gate; PR → merge → GitHub Pages deployment read-back.
+* **Exclusive write scope:** `data/37003e61/**`, `scripts/s37003e61_*.py`, `37003e61/**`, `reports/SESSION_37003E61.{md,html}`, `tests/pipeline/test_desk_37003e61.py`, and append-only additions to `COORDINATION.md`.
+* **Explicitly not touched:** canonical `pipeline/**`, `data/current/**`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `scripts/validate.py`, `.github/workflows/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`, and every peer desk directory.
+* **Claim status:** `in progress`. Live verification channel: Arena `fetch_page` / `web_search` against official league, tour, federation and club endpoints, with exact HTTPS URLs and UTC observation stamps recorded per row; OLBG routes are used for discovery/reverse-engineering only and never as fixture or statistical evidence.
