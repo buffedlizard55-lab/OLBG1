@@ -1,0 +1,19 @@
+{
+  "audit": "29dd717c repository line scan",
+  "snapshot": "2026-10-24T22:45:47Z",
+  "scope": "All 3032 tracked paths inventoried; every readable tracked text file scanned line by line for conflict markers, with deeper release checks on pipeline, workflow, integration and desk files.",
+  "tracked_files": 3032,
+  "text_files_scanned": 3031,
+  "binary_files_skipped": 1,
+  "unreadable_files": 0,
+  "lines_scanned": 2214713,
+  "bytes_read": 135393331,
+  "release_blockers": 0,
+  "findings": [],
+  "limitations": [
+    "Binary files are inventoried but not decoded or line-scanned.",
+    "Historical desks receive structural conflict-marker scanning only; their old sporting facts are not recertified by this audit.",
+    "Current-desk HTML local links and fragments are checked separately by the desk unit tests; official external URLs retain their documented read limitations.",
+    "COORDINATION.md is scanned as a shared board, but historical TODO wording is not treated as a current release defect."
+  ]
+}

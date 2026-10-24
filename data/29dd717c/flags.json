@@ -1,0 +1,550 @@
+{
+  "generated_at": "2026-10-24T22:43:09Z",
+  "flags": [
+    {
+      "id": "F29-001",
+      "sport": "ice-hockey",
+      "severity": "expired",
+      "title": "Seven early NHL listings excluded at publication gate",
+      "detail": "OLBG events 200007/170, 200008/171, 200006/172, 200003/173, 200001/174, 200002/175 and 200010/176 were scheduled to start before this snapshot. They are not presented as upcoming selections.",
+      "source_ids": [
+        "nhl-schedule"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Ice_Hockey/13",
+      "event_ids": "200007; 200008; 200006; 200003; 200001; 200002; 200010"
+    },
+    {
+      "id": "F29-002",
+      "sport": "basketball",
+      "severity": "expired",
+      "title": "Philadelphia and Cleveland NBA listings excluded",
+      "detail": "OLBG events 536111 and 536112 belonged to the 23:30 UTC card, before the publication cutoff. No pick is issued after the scheduled start.",
+      "source_ids": [
+        "nba-injury"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Basketball/4",
+      "event_ids": "536111; 536112"
+    },
+    {
+      "id": "F29-003",
+      "sport": "darts",
+      "severity": "unconfirmed",
+      "title": "Two OLBG semi-final pairings not retained",
+      "detail": "Ross Smith-Luke Woodhouse and Gerwyn Price-Stephen Bunting were discoverable on OLBG, but the readable PDC response did not expose a bracket confirming either pairing. No winner, handicap or total is invented.",
+      "source_ids": [
+        "pdc-finals"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Darts/15",
+      "event_ids": "OLBG semi-final listings; event IDs not preserved"
+    },
+    {
+      "id": "F29-004",
+      "sport": "greyhounds",
+      "severity": "unconfirmed",
+      "title": "Snowfall / Doncaster 11:04 listing unconfirmed",
+      "detail": "GBGB's report supports Returning Storm's 27.49 heat and discusses Saturday semi-finals, not Sunday's 11:04 race or Snowfall. No runner selection is published.",
+      "source_ids": [
+        "gbgb-doncaster"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Greyhounds/28",
+      "event_ids": "OLBG Doncaster listing"
+    },
+    {
+      "id": "F29-005",
+      "sport": "rugby-union",
+      "severity": "unconfirmed",
+      "title": "Harlequins-Saracens listing lacks official fixture confirmation",
+      "detail": "PREM standings support Saracens 2-1/+21/11 points and Harlequins 0-3/-68/two points, but standings do not confirm the OLBG fixture or start. It is excluded despite the useful statistics.",
+      "source_ids": [
+        "prem-table"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Rugby_Union/9",
+      "event_ids": "609571"
+    },
+    {
+      "id": "F29-006",
+      "sport": "handball",
+      "severity": "contradiction",
+      "title": "OLBG Nantes-Limoges pairing conflicts with official schedules",
+      "detail": "LNH pages showed Nantes and Limoges playing different opponents on 24 and 23 October. The Sunday pairing is rejected rather than forced into the card.",
+      "source_ids": [
+        "lnh-calendar",
+        "lnh-table"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Handball/20",
+      "event_ids": "OLBG Nantes-Limoges listing"
+    },
+    {
+      "id": "F29-007",
+      "sport": "handball",
+      "severity": "irregularity",
+      "title": "Repeated OLBG tie leans are not treated as analysis",
+      "detail": "Several handball listings showed unanimous or majority Tie selections, including 12152, 12144, 12149, 12147 and 12081. Those votes are displayed as discovery metadata only; all published prices are independently originated.",
+      "source_ids": [
+        "handbollsligan",
+        "lnh-calendar"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Handball/20",
+      "event_ids": "12152; 12144; 12149; 12147; 12081"
+    },
+    {
+      "id": "F29-008",
+      "sport": "tennis",
+      "severity": "limitation",
+      "title": "WTA pages exposed shells rather than usable match data",
+      "detail": "WTA scores/rankings and tournament pages did not supply a supported upcoming matchup. Only the two ATP finals are retained on the tennis page.",
+      "source_ids": [
+        "wta-scores"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Tennis/3",
+      "event_ids": "WTA discovery listings"
+    },
+    {
+      "id": "F29-009",
+      "sport": "golf",
+      "severity": "no-selection",
+      "title": "No head-to-head golf match listing",
+      "detail": "Golf remains represented as a category, but tournament outrights are not converted into fictional match-winner fixtures. No fresh OLBG match listing supplied a supported selection.",
+      "source_ids": [
+        "pga-schedule"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Golf/5",
+      "event_ids": "—"
+    },
+    {
+      "id": "F29-010",
+      "sport": "snooker",
+      "severity": "no-selection",
+      "title": "No sufficiently supported upcoming snooker fixture",
+      "detail": "Earlier same-day listings reached their start window and no fresh official match listing was retained. The category remains visible with zero picks.",
+      "source_ids": [
+        "wst"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Snooker/8",
+      "event_ids": "—"
+    },
+    {
+      "id": "F29-011",
+      "sport": "motor-racing",
+      "severity": "no-selection",
+      "title": "Outright racing market is not a match",
+      "detail": "OLBG's racing coverage is a field/outright market. Without a supported head-to-head listing and current official availability context, no match-winner selection is manufactured.",
+      "source_ids": [
+        "f1-schedule"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Motor_Racing/14",
+      "event_ids": "—"
+    },
+    {
+      "id": "F29-012",
+      "sport": "rugby-league",
+      "severity": "no-selection",
+      "title": "Rugby league coverage was outright-only",
+      "detail": "No fresh OLBG match market was available to pair with the official NRL draw. The sport stays in the 15-sport audit with zero selections.",
+      "source_ids": [
+        "nrl-draw"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Rugby_League/10",
+      "event_ids": "—"
+    },
+    {
+      "id": "F29-014",
+      "sport": "gaelic-sports",
+      "severity": "unconfirmed",
+      "title": "Kanturk-Éire Óg listing lacks official fixture support",
+      "detail": "OLBG event 3531 was initially considered, but no official county or provincial fixture read confirmed the pairing, competition, date or start. The row is excluded and no price or prediction is published.",
+      "source_ids": [
+        "gaa-preview"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Gaelic_Football/25",
+      "event_ids": "3531"
+    },
+    {
+      "id": "F29-013",
+      "sport": "volleyball",
+      "severity": "scope",
+      "title": "Rottenburg listing outside the confirmed Italian pool",
+      "detail": "OLBG event 37014 remained outside the four Italian fixtures directly confirmed in the Lega calendar. It is not added to fill a quota.",
+      "source_ids": [
+        "lega-calendar"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Volleyball/21",
+      "event_ids": "37014"
+    },
+    {
+      "id": "F29-ROW-NHL-177",
+      "sport": "ice-hockey",
+      "severity": "row-limitation",
+      "title": "Tampa Bay Lightning v Utah Mammoth",
+      "detail": "Starting goaltenders were not confirmed in the readable game-centre response. Both teams to score / player props: No official current player-shot or scoring baseline was read.",
+      "source_ids": [
+        "nhl-177",
+        "nhl-standings"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Ice_Hockey/13",
+      "event_ids": "200009",
+      "fixture_id": "nhl-177"
+    },
+    {
+      "id": "F29-ROW-NHL-182",
+      "sport": "ice-hockey",
+      "severity": "row-limitation",
+      "title": "Montreal Canadiens v Winnipeg Jets",
+      "detail": "An outdoor venue introduces uncertainty not quantified by an official weather input. Player props: No official player market baseline was read.",
+      "source_ids": [
+        "nhl-182",
+        "nhl-standings"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Ice_Hockey/13",
+      "event_ids": "200074",
+      "fixture_id": "nhl-182"
+    },
+    {
+      "id": "F29-ROW-NBA-SAS-DAL",
+      "sport": "basketball",
+      "severity": "row-limitation",
+      "title": "San Antonio Spurs v Dallas Mavericks",
+      "detail": "Dallas availability can change after the 6 PM report. Official venue not captured; field left blank. Game total: No official team points-for/points-against baseline was captured.",
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Basketball/4",
+      "event_ids": "536114",
+      "fixture_id": "nba-sas-dal"
+    },
+    {
+      "id": "F29-ROW-NBA-WAS-CHI",
+      "sport": "basketball",
+      "severity": "row-limitation",
+      "title": "Washington Wizards v Chicago Bulls",
+      "detail": "Official venue not captured; field left blank. Game total: Official current scoring averages were not captured.",
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Basketball/4",
+      "event_ids": "536113",
+      "fixture_id": "nba-was-chi"
+    },
+    {
+      "id": "F29-ROW-NBA-HOU-ATL",
+      "sport": "basketball",
+      "severity": "row-limitation",
+      "title": "Houston Rockets v Atlanta Hawks",
+      "detail": "Official venue not captured; field left blank.",
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Basketball/4",
+      "event_ids": "536115",
+      "fixture_id": "nba-hou-atl"
+    },
+    {
+      "id": "F29-ROW-NBA-NOP-DEN",
+      "sport": "basketball",
+      "severity": "row-limitation",
+      "title": "New Orleans Pelicans v Denver Nuggets",
+      "detail": "Official venue not captured; field left blank. Game total: No official current scoring baseline was read.",
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Basketball/4",
+      "event_ids": "536116",
+      "fixture_id": "nba-nop-den"
+    },
+    {
+      "id": "F29-ROW-NBA-GSW-PHX",
+      "sport": "basketball",
+      "severity": "row-limitation",
+      "title": "Golden State Warriors v Phoenix Suns",
+      "detail": "Golden State availability needs a late report recheck. Official venue not captured; field left blank. Game total: No official current points-for/against table was captured.",
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Basketball/4",
+      "event_ids": "536118",
+      "fixture_id": "nba-gsw-phx"
+    },
+    {
+      "id": "F29-ROW-MLB-849802",
+      "sport": "baseball",
+      "severity": "row-limitation",
+      "title": "Tampa Bay Rays v Milwaukee Brewers",
+      "detail": "Probable pitchers and lineups can change before 00:00 UTC.",
+      "source_ids": [
+        "mlb-schedule",
+        "mlb-rasmussen",
+        "mlb-henderson",
+        "mlb-mil-hitting",
+        "mlb-tb-hitting",
+        "mlb-standings"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Baseball/12",
+      "event_ids": "160792",
+      "fixture_id": "mlb-849802"
+    },
+    {
+      "id": "F29-ROW-VOL-TRE-CIS",
+      "sport": "volleyball",
+      "severity": "row-limitation",
+      "title": "Trentino Itas v Cisterna Volley",
+      "detail": "Official venue not captured; field left blank. Player points: No official current player-points baseline was read.",
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Volleyball/21",
+      "event_ids": "36994",
+      "fixture_id": "vol-tre-cis"
+    },
+    {
+      "id": "F29-ROW-VOL-PER-POR",
+      "sport": "volleyball",
+      "severity": "row-limitation",
+      "title": "Sir Susa Vim Perugia v Pallavolo Pordenone",
+      "detail": "Official venue not captured; field left blank.",
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Volleyball/21",
+      "event_ids": "36997",
+      "fixture_id": "vol-per-por"
+    },
+    {
+      "id": "F29-ROW-VOL-LUB-PAD",
+      "sport": "volleyball",
+      "severity": "row-limitation",
+      "title": "Cucine Lube Civitanova v Sonepar Padova",
+      "detail": "Official venue not captured; field left blank.",
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Volleyball/21",
+      "event_ids": "36995",
+      "fixture_id": "vol-lub-pad"
+    },
+    {
+      "id": "F29-ROW-VOL-MON-VER",
+      "sport": "volleyball",
+      "severity": "row-limitation",
+      "title": "Vero Volley Monza v Rana Verona",
+      "detail": "Official venue not captured; field left blank.",
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Volleyball/21",
+      "event_ids": "36996",
+      "fixture_id": "vol-mon-ver"
+    },
+    {
+      "id": "F29-ROW-CRIC-274145",
+      "sport": "cricket",
+      "severity": "row-limitation",
+      "title": "England v Pakistan",
+      "detail": "ICC rankings and recent team scoring baselines were not readable. Runs handicap: No official recent scoring distribution was captured. Match total: No official recent scoring distribution was captured.",
+      "source_ids": [
+        "icc-pak-eng",
+        "icc-274145"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Cricket/7",
+      "event_ids": "188838",
+      "fixture_id": "cric-274145"
+    },
+    {
+      "id": "F29-ROW-CRIC-270973",
+      "sport": "cricket",
+      "severity": "row-limitation",
+      "title": "Zimbabwe Women v India Women",
+      "detail": "No official recent batting or bowling averages were captured for player props. Top team batter: OLBG's vote is not evidence; no official current player baseline was read. Match total: No official recent scoring distribution was captured.",
+      "source_ids": [
+        "icc-indw-zim",
+        "icc-270973"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Cricket/7",
+      "event_ids": "188847",
+      "fixture_id": "cric-270973"
+    },
+    {
+      "id": "F29-ROW-CRIC-NZ-IND",
+      "sport": "cricket",
+      "severity": "row-limitation",
+      "title": "India v New Zealand",
+      "detail": "Official third-match start time and venue were not exposed; those fields remain blank. Official venue not captured; field left blank. Runs handicap: Only the second-match result, not a scoring distribution, was captured. Match total: Only the second-match result, not a scoring distribution, was captured.",
+      "source_ids": [
+        "icc-ind-nz"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Cricket/7",
+      "event_ids": "188852",
+      "fixture_id": "cric-nz-ind"
+    },
+    {
+      "id": "F29-ROW-CRIC-NAM-IRE",
+      "sport": "cricket",
+      "severity": "row-limitation",
+      "title": "Ireland v Namibia",
+      "detail": "Series score, rankings and current scoring baselines were not captured. Runs handicap: No official recent scoring distribution was captured. Match total: No official recent scoring distribution was captured.",
+      "source_ids": [
+        "ireland-namibia"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Cricket/7",
+      "event_ids": "188854",
+      "fixture_id": "cric-nam-ire"
+    },
+    {
+      "id": "F29-ROW-CRIC-EASTERN",
+      "sport": "cricket",
+      "severity": "row-limitation",
+      "title": "CSA High Performance v Eastern Storm",
+      "detail": "OLBG's South Africa Emerging label differs from CSA's High Performance name; official naming is retained. Current form and scoring baselines were not exposed. Runs handicap: No official recent scoring distribution was captured. Match total: No official recent scoring distribution was captured.",
+      "source_ids": [
+        "csa-eastern"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Cricket/7",
+      "event_ids": "188848",
+      "fixture_id": "cric-eastern"
+    },
+    {
+      "id": "F29-ROW-GAA-3532",
+      "sport": "gaelic-sports",
+      "severity": "row-limitation",
+      "title": "Salthill-Knocknacarra v Moycullen",
+      "detail": "Official venue not captured; field left blank. Total points: No official current scoring-average baseline was captured.",
+      "source_ids": [
+        "galway-change",
+        "gaa-preview"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Gaelic_Football/25",
+      "event_ids": "3532",
+      "fixture_id": "gaa-3532"
+    },
+    {
+      "id": "F29-ROW-GAA-3530",
+      "sport": "gaelic-sports",
+      "severity": "row-limitation",
+      "title": "St Finbarr's v Nemo Rangers",
+      "detail": "Official venue not captured; field left blank.",
+      "source_ids": [
+        "gaa-preview",
+        "cork-final"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Gaelic_Football/25",
+      "event_ids": "3530",
+      "fixture_id": "gaa-3530"
+    },
+    {
+      "id": "F29-ROW-GAA-3537",
+      "sport": "gaelic-sports",
+      "severity": "row-limitation",
+      "title": "Kildimo-Pallaskenry v Fr Casey's",
+      "detail": "Official venue not captured; field left blank. Total points: Winning margins alone do not provide a total-points baseline.",
+      "source_ids": [
+        "munster-calendar",
+        "limerick-results"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Gaelic_Football/25",
+      "event_ids": "3537",
+      "fixture_id": "gaa-3537"
+    },
+    {
+      "id": "F29-ROW-TEN-902253",
+      "sport": "tennis",
+      "severity": "row-limitation",
+      "title": "Taylor Fritz v Lorenzo Musetti",
+      "detail": "Official final start time was not exposed in the readable schedule response. Player ace props: One semi-final ace total is not a sufficient official baseline.",
+      "source_ids": [
+        "atp-lyon-report",
+        "atp-fritz",
+        "atp-musetti"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Tennis/3",
+      "event_ids": "902253",
+      "fixture_id": "ten-902253"
+    },
+    {
+      "id": "F29-ROW-HB-12152",
+      "sport": "handball",
+      "severity": "row-limitation",
+      "title": "Ystad IF v Hammarby IF",
+      "detail": "OLBG's unanimous tie selection is logged as an irregularity, not adopted. Official venue not captured; field left blank. Total goals: The official standings read supplied goal difference, not total-goals averages.",
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Handball/20",
+      "event_ids": "12152",
+      "fixture_id": "hb-12152"
+    },
+    {
+      "id": "F29-ROW-HB-12144",
+      "sport": "handball",
+      "severity": "row-limitation",
+      "title": "Amo HK v Malmö",
+      "detail": "Malmö's current official standings row was not preserved; the fixture remains only because the official schedule confirms the pairing. Official venue not captured; field left blank. Total goals: Comparable team scoring averages were not available.",
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Handball/20",
+      "event_ids": "12144",
+      "fixture_id": "hb-12144"
+    },
+    {
+      "id": "F29-ROW-HB-12148",
+      "sport": "handball",
+      "severity": "row-limitation",
+      "title": "HIF Karlskrona v IFK Kristianstad",
+      "detail": "Official venue not captured; field left blank.",
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Handball/20",
+      "event_ids": "12148",
+      "fixture_id": "hb-12148"
+    },
+    {
+      "id": "F29-ROW-HB-12149",
+      "sport": "handball",
+      "severity": "row-limitation",
+      "title": "Lugi HF v HK Skövde",
+      "detail": "Official venue not captured; field left blank.",
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Handball/20",
+      "event_ids": "12149",
+      "fixture_id": "hb-12149"
+    },
+    {
+      "id": "F29-ROW-HB-12147",
+      "sport": "handball",
+      "severity": "row-limitation",
+      "title": "Alingsås HK v Önnereds HK",
+      "detail": "Official venue not captured; field left blank.",
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Handball/20",
+      "event_ids": "12147",
+      "fixture_id": "hb-12147"
+    },
+    {
+      "id": "F29-ROW-HB-12081",
+      "sport": "handball",
+      "severity": "row-limitation",
+      "title": "Saran v Montpellier",
+      "detail": "Official venue not captured; field left blank.",
+      "source_ids": [
+        "lnh-calendar",
+        "lnh-table"
+      ],
+      "olbg_url": "https://www.olbg.com/tips/Handball/20",
+      "event_ids": "12081",
+      "fixture_id": "hb-12081"
+    }
+  ]
+}

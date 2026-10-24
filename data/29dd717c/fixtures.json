@@ -1,0 +1,4163 @@
+{
+  "generated_at": "2026-10-24T22:43:09Z",
+  "fixtures": [
+    {
+      "id": "nhl-177",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "a": "Tampa Bay Lightning",
+      "b": "Utah Mammoth",
+      "start_utc": "2026-10-25T01:00:00Z",
+      "venue": "Delta Center",
+      "official_id": "2026020177",
+      "olbg_event_id": 200009,
+      "olbg_tip": "Utah Mammoth — 5/9 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Ice_Hockey/13",
+      "source_ids": [
+        "nhl-177",
+        "nhl-standings"
+      ],
+      "facts": [
+        "Tampa Bay 7-3-0; Utah 7-4-0",
+        "Team GAA: Tampa Bay 2.90, Utah 3.27",
+        "Vasilevskiy 5-3-0, 2.78 GAA, .884 save%; Vejmelka 5-3-0, 3.04 GAA, .874 save%"
+      ],
+      "inputs": {
+        "points_pct_a": 0.7,
+        "points_pct_b": 0.636,
+        "gaa_a": 2.9,
+        "gaa_b": 3.27
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.515,
+          "b": 0.485
+        },
+        "spread": {
+          "line_a": 1.5,
+          "sd": 2.15
+        },
+        "total": {
+          "line": 6.5,
+          "mean": 6.17,
+          "kind": "poisson"
+        }
+      },
+      "selection": {
+        "market": "spread",
+        "key": "a_cover",
+        "label": "Tampa Bay Lightning +1.5"
+      },
+      "analysis": "Selection: Tampa Bay Lightning +1.5. Tampa Bay own the stronger points pace and the lower team goals-against average, while the listed goalie comparison also favours Vasilevskiy over Vejmelka. Neither name is treated as a confirmed starter. The puck line gives overtime and one-goal defeat protection in a near coin-flip matchup.",
+      "pricing_note": "Winner from shrunk points share with a 0.04 rating adjustment per GAA goal and 0.025 home edge; spread uses a 2.15-goal normal margin assumption. Total mean is the sum of team GAA, 6.17.",
+      "availability": "Goalie names and statistics are a game-centre comparison, not official starter confirmation.",
+      "flags": [
+        "Starting goaltenders were not confirmed in the readable game-centre response."
+      ],
+      "markets_withheld": [
+        {
+          "market": "Both teams to score / player props",
+          "reason": "No official current player-shot or scoring baseline was read."
+        }
+      ],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Tampa Bay Lightning",
+              "probability": 0.515,
+              "decimal": 1.942,
+              "american": -106
+            },
+            {
+              "label": "Utah Mammoth",
+              "probability": 0.485,
+              "decimal": 2.062,
+              "american": 106
+            }
+          ],
+          "pricing_note": "Winner from shrunk points share with a 0.04 rating adjustment per GAA goal and 0.025 home edge; spread uses a 2.15-goal normal margin assumption. Total mean is the sum of team GAA, 6.17.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Tampa Bay Lightning +1.5",
+              "probability": 0.768916,
+              "decimal": 1.301,
+              "american": -333
+            },
+            {
+              "label": "Utah Mammoth -1.5",
+              "probability": 0.231084,
+              "decimal": 4.327,
+              "american": 333
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 2.15; line from side A +1.5. Push-free half-point lines only.",
+          "overround": 1.0
+        },
+        {
+          "market": "Total",
+          "unit": "match total",
+          "outcomes": [
+            {
+              "label": "Over 6.5",
+              "probability": 0.420982,
+              "decimal": 2.375,
+              "american": 138
+            },
+            {
+              "label": "Under 6.5",
+              "probability": 0.579018,
+              "decimal": 1.727,
+              "american": -138
+            }
+          ],
+          "pricing_note": "Poisson count, mean 6.17; no-vig complementary prices.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "nhl-177",
+        "sport": "ice-hockey",
+        "competition": "NHL",
+        "match": "Tampa Bay Lightning v Utah Mammoth",
+        "start_utc": "2026-10-25T01:00:00Z",
+        "selection": "Tampa Bay Lightning +1.5",
+        "market": "Handicap / spread",
+        "probability": 0.768916,
+        "american": -333,
+        "decimal": 1.301,
+        "confidence": "Medium",
+        "confidence_note": "Fair price is shorter than -250, outside the requested High window.",
+        "match_winner_lean": "Tampa Bay Lightning",
+        "match_winner_probability": 0.515,
+        "match_winner_american": -106,
+        "match_winner_confidence": "Low",
+        "analysis": "Selection: Tampa Bay Lightning +1.5. Tampa Bay own the stronger points pace and the lower team goals-against average, while the listed goalie comparison also favours Vasilevskiy over Vejmelka. Neither name is treated as a confirmed starter. The puck line gives overtime and one-goal defeat protection in a near coin-flip matchup.",
+        "analysis_words": 51,
+        "source_ids": [
+          "nhl-177",
+          "nhl-standings"
+        ],
+        "olbg_event_id": 200009,
+        "olbg_url": "https://www.olbg.com/tips/Ice_Hockey/13"
+      },
+      "review_reasons": "Starting goaltenders were not confirmed in the readable game-centre response. Both teams to score / player props: No official current player-shot or scoring baseline was read."
+    },
+    {
+      "id": "nhl-178",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "a": "Detroit Red Wings",
+      "b": "Calgary Flames",
+      "start_utc": "2026-10-25T02:00:00Z",
+      "venue": "Scotiabank Saddledome",
+      "official_id": "2026020178",
+      "olbg_event_id": 200004,
+      "olbg_tip": "Calgary Flames — 4/6 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Ice_Hockey/13",
+      "source_ids": [
+        "nhl-178",
+        "nhl-standings"
+      ],
+      "facts": [
+        "Detroit 4-3-3; Calgary 3-6-0",
+        "Team GAA: Detroit 2.80, Calgary 4.22",
+        "Tarasov 1.40 GAA/.940 save%; Wolf 4.85 GAA/.834 save%"
+      ],
+      "inputs": {
+        "points_pct_a": 0.55,
+        "points_pct_b": 0.333,
+        "gaa_a": 2.8,
+        "gaa_b": 4.22
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.69,
+          "b": 0.31
+        },
+        "spread": {
+          "line_a": -1.5,
+          "sd": 2.15
+        },
+        "total": {
+          "line": 6.5,
+          "mean": 7.02,
+          "kind": "poisson"
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "a",
+        "label": "Detroit Red Wings moneyline"
+      },
+      "analysis": "Selection: Detroit Red Wings moneyline. Detroit's eleven points from ten games and 2.80 team GAA contrast sharply with Calgary's three wins and 4.22 GAA. The listed Tarasov-Wolf comparison points the same way, but no starter announcement is assumed. Calgary's home ice keeps this below the strongest confidence tier.",
+      "pricing_note": "Winner uses points share, team-GAA adjustment and away disadvantage; margin distribution SD 2.15. Total mean 7.02 is the sum of official team GAA values.",
+      "availability": "No official starting-goalie designation was read; listed goalie statistics are context only.",
+      "flags": [],
+      "markets_withheld": [],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Detroit Red Wings",
+              "probability": 0.69,
+              "decimal": 1.449,
+              "american": -223
+            },
+            {
+              "label": "Calgary Flames",
+              "probability": 0.31,
+              "decimal": 3.226,
+              "american": 223
+            }
+          ],
+          "pricing_note": "Winner uses points share, team-GAA adjustment and away disadvantage; margin distribution SD 2.15. Total mean 7.02 is the sum of official team GAA values.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Detroit Red Wings -1.5",
+              "probability": 0.420027,
+              "decimal": 2.381,
+              "american": 138
+            },
+            {
+              "label": "Calgary Flames +1.5",
+              "probability": 0.579973,
+              "decimal": 1.724,
+              "american": -138
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 2.15; line from side A -1.5. Push-free half-point lines only.",
+          "overround": 1.0
+        },
+        {
+          "market": "Total",
+          "unit": "match total",
+          "outcomes": [
+            {
+              "label": "Over 6.5",
+              "probability": 0.553265,
+              "decimal": 1.807,
+              "american": -124
+            },
+            {
+              "label": "Under 6.5",
+              "probability": 0.446735,
+              "decimal": 2.238,
+              "american": 124
+            }
+          ],
+          "pricing_note": "Poisson count, mean 7.02; no-vig complementary prices.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "nhl-178",
+        "sport": "ice-hockey",
+        "competition": "NHL",
+        "match": "Detroit Red Wings v Calgary Flames",
+        "start_utc": "2026-10-25T02:00:00Z",
+        "selection": "Detroit Red Wings moneyline",
+        "market": "Match winner",
+        "probability": 0.69,
+        "american": -223,
+        "decimal": 1.449,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "Detroit Red Wings",
+        "match_winner_probability": 0.69,
+        "match_winner_american": -223,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: Detroit Red Wings moneyline. Detroit's eleven points from ten games and 2.80 team GAA contrast sharply with Calgary's three wins and 4.22 GAA. The listed Tarasov-Wolf comparison points the same way, but no starter announcement is assumed. Calgary's home ice keeps this below the strongest confidence tier.",
+        "analysis_words": 50,
+        "source_ids": [
+          "nhl-178",
+          "nhl-standings"
+        ],
+        "olbg_event_id": 200004,
+        "olbg_url": "https://www.olbg.com/tips/Ice_Hockey/13"
+      },
+      "review_reasons": ""
+    },
+    {
+      "id": "nhl-179",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "a": "Minnesota Wild",
+      "b": "Seattle Kraken",
+      "start_utc": "2026-10-25T02:00:00Z",
+      "venue": "Climate Pledge Arena",
+      "official_id": "2026020179",
+      "olbg_event_id": 200005,
+      "olbg_tip": "Seattle Kraken — 7/12 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Ice_Hockey/13",
+      "source_ids": [
+        "nhl-179",
+        "nhl-standings"
+      ],
+      "facts": [
+        "Minnesota 6-3-2; Seattle 7-3-1",
+        "Kaprizov has eight points across the last five",
+        "Wallstedt 2.19 GAA/.915 save%; team GAA inputs 2.45 and 3.36"
+      ],
+      "inputs": {
+        "points_pct_a": 0.636,
+        "points_pct_b": 0.682,
+        "gaa_a": 2.45,
+        "gaa_b": 3.36
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.47,
+          "b": 0.53
+        },
+        "spread": {
+          "line_a": 1.5,
+          "sd": 2.15
+        },
+        "total": {
+          "line": 6.5,
+          "mean": 5.82,
+          "kind": "poisson"
+        }
+      },
+      "selection": {
+        "market": "total",
+        "key": "under",
+        "label": "Under 6.5 goals"
+      },
+      "analysis": "Selection: under 6.5 goals. Minnesota's team GAA is substantially lower than Seattle's, and Wallstedt's listed 2.19 GAA and .915 save percentage support a controlled road performance. Kaprizov's eight points in five games preserve real scoring danger, while unconfirmed starters prevent a stronger total position.",
+      "pricing_note": "Winner uses the same points/GAA method as the other NHL rows. Total mean 5.82 combines the two team GAA values; a Poisson count gives the no-vig over/under prices.",
+      "availability": "Wallstedt's statistics do not establish that he starts; no official starter confirmation was read.",
+      "flags": [],
+      "markets_withheld": [],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Minnesota Wild",
+              "probability": 0.47,
+              "decimal": 2.128,
+              "american": 113
+            },
+            {
+              "label": "Seattle Kraken",
+              "probability": 0.53,
+              "decimal": 1.887,
+              "american": -113
+            }
+          ],
+          "pricing_note": "Winner uses the same points/GAA method as the other NHL rows. Total mean 5.82 combines the two team GAA values; a Poisson count gives the no-vig over/under prices.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Minnesota Wild +1.5",
+              "probability": 0.733162,
+              "decimal": 1.364,
+              "american": -275
+            },
+            {
+              "label": "Seattle Kraken -1.5",
+              "probability": 0.266838,
+              "decimal": 3.748,
+              "american": 275
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 2.15; line from side A +1.5. Push-free half-point lines only.",
+          "overround": 1.0
+        },
+        {
+          "market": "Total",
+          "unit": "match total",
+          "outcomes": [
+            {
+              "label": "Over 6.5",
+              "probability": 0.364811,
+              "decimal": 2.741,
+              "american": 174
+            },
+            {
+              "label": "Under 6.5",
+              "probability": 0.635189,
+              "decimal": 1.574,
+              "american": -174
+            }
+          ],
+          "pricing_note": "Poisson count, mean 5.82; no-vig complementary prices.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "nhl-179",
+        "sport": "ice-hockey",
+        "competition": "NHL",
+        "match": "Minnesota Wild v Seattle Kraken",
+        "start_utc": "2026-10-25T02:00:00Z",
+        "selection": "Under 6.5 goals",
+        "market": "Total",
+        "probability": 0.635189,
+        "american": -174,
+        "decimal": 1.574,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "Seattle Kraken",
+        "match_winner_probability": 0.53,
+        "match_winner_american": -113,
+        "match_winner_confidence": "Low",
+        "analysis": "Selection: under 6.5 goals. Minnesota's team GAA is substantially lower than Seattle's, and Wallstedt's listed 2.19 GAA and .915 save percentage support a controlled road performance. Kaprizov's eight points in five games preserve real scoring danger, while unconfirmed starters prevent a stronger total position.",
+        "analysis_words": 46,
+        "source_ids": [
+          "nhl-179",
+          "nhl-standings"
+        ],
+        "olbg_event_id": 200005,
+        "olbg_url": "https://www.olbg.com/tips/Ice_Hockey/13"
+      },
+      "review_reasons": ""
+    },
+    {
+      "id": "nhl-182",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "a": "Montreal Canadiens",
+      "b": "Winnipeg Jets",
+      "start_utc": "2026-10-25T23:00:00Z",
+      "venue": "Princess Auto Stadium, Winnipeg",
+      "official_id": "2026020182",
+      "olbg_event_id": 200074,
+      "olbg_tip": "Over 5.50 — 2/2 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Ice_Hockey/13",
+      "source_ids": [
+        "nhl-182",
+        "nhl-standings"
+      ],
+      "facts": [
+        "Montreal 5-3-2; Winnipeg 4-3-3",
+        "Fowler 4-1-0, 1.94 GAA/.910 save%; Skinner 3-1-3, 2.67 GAA/.912 save%",
+        "Team GAA inputs: Montreal 3.50, Winnipeg 2.90"
+      ],
+      "inputs": {
+        "points_pct_a": 0.6,
+        "points_pct_b": 0.55,
+        "gaa_a": 3.5,
+        "gaa_b": 2.9
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.501,
+          "b": 0.499
+        },
+        "spread": {
+          "line_a": 1.5,
+          "sd": 2.15
+        },
+        "total": {
+          "line": 5.5,
+          "mean": 6.4,
+          "kind": "poisson"
+        }
+      },
+      "selection": {
+        "market": "total",
+        "key": "over",
+        "label": "Over 5.5 goals"
+      },
+      "analysis": "Selection: over 5.5 goals in the Heritage Classic. The combined team-GAA baseline is 6.40, above this line, while both sides bring nearly even points pace. Fowler and Skinner have credible listed numbers, yet neither is treated as a confirmed starter. The outdoor setting adds uncertainty rather than an invented weather adjustment.",
+      "pricing_note": "Total mean 6.40 is 3.50 plus 2.90 team GAA; Poisson probabilities price over/under 5.5. Winner remains almost exactly balanced after points, GAA and venue inputs.",
+      "availability": "No official starting goalies or outdoor-weather adjustment was available in the read.",
+      "flags": [
+        "An outdoor venue introduces uncertainty not quantified by an official weather input."
+      ],
+      "markets_withheld": [
+        {
+          "market": "Player props",
+          "reason": "No official player market baseline was read."
+        }
+      ],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Montreal Canadiens",
+              "probability": 0.501,
+              "decimal": 1.996,
+              "american": -100
+            },
+            {
+              "label": "Winnipeg Jets",
+              "probability": 0.499,
+              "decimal": 2.004,
+              "american": 100
+            }
+          ],
+          "pricing_note": "Total mean 6.40 is 3.50 plus 2.90 team GAA; Poisson probabilities price over/under 5.5. Winner remains almost exactly balanced after points, GAA and venue inputs.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Montreal Canadiens +1.5",
+              "probability": 0.758093,
+              "decimal": 1.319,
+              "american": -313
+            },
+            {
+              "label": "Winnipeg Jets -1.5",
+              "probability": 0.241907,
+              "decimal": 4.134,
+              "american": 313
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 2.15; line from side A +1.5. Push-free half-point lines only.",
+          "overround": 1.0
+        },
+        {
+          "market": "Total",
+          "unit": "match total",
+          "outcomes": [
+            {
+              "label": "Over 5.5",
+              "probability": 0.616256,
+              "decimal": 1.623,
+              "american": -161
+            },
+            {
+              "label": "Under 5.5",
+              "probability": 0.383744,
+              "decimal": 2.606,
+              "american": 161
+            }
+          ],
+          "pricing_note": "Poisson count, mean 6.4; no-vig complementary prices.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "nhl-182",
+        "sport": "ice-hockey",
+        "competition": "NHL",
+        "match": "Montreal Canadiens v Winnipeg Jets",
+        "start_utc": "2026-10-25T23:00:00Z",
+        "selection": "Over 5.5 goals",
+        "market": "Total",
+        "probability": 0.616256,
+        "american": -161,
+        "decimal": 1.623,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "Montreal Canadiens",
+        "match_winner_probability": 0.501,
+        "match_winner_american": -100,
+        "match_winner_confidence": "Low",
+        "analysis": "Selection: over 5.5 goals in the Heritage Classic. The combined team-GAA baseline is 6.40, above this line, while both sides bring nearly even points pace. Fowler and Skinner have credible listed numbers, yet neither is treated as a confirmed starter. The outdoor setting adds uncertainty rather than an invented weather adjustment.",
+        "analysis_words": 53,
+        "source_ids": [
+          "nhl-182",
+          "nhl-standings"
+        ],
+        "olbg_event_id": 200074,
+        "olbg_url": "https://www.olbg.com/tips/Ice_Hockey/13"
+      },
+      "review_reasons": "An outdoor venue introduces uncertainty not quantified by an official weather input. Player props: No official player market baseline was read."
+    },
+    {
+      "id": "nba-sas-dal",
+      "sport": "basketball",
+      "competition": "NBA",
+      "a": "San Antonio Spurs",
+      "b": "Dallas Mavericks",
+      "start_utc": "2026-10-25T00:00:00Z",
+      "venue": "",
+      "official_id": "NBA injury report 24 Oct 6 PM",
+      "olbg_event_id": 536114,
+      "olbg_tip": "San Antonio Spurs — 7/10 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Basketball/4",
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "facts": [
+        "San Antonio 0-2; Dallas 1-1",
+        "Official report lists Dallas availability absences"
+      ],
+      "inputs": {
+        "wins_a": 0,
+        "losses_a": 2,
+        "wins_b": 1,
+        "losses_b": 1
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.46,
+          "b": 0.54
+        },
+        "spread": {
+          "line_a": 2.5,
+          "sd": 12.0
+        }
+      },
+      "selection": {
+        "market": "spread",
+        "key": "a_cover",
+        "label": "San Antonio Spurs +2.5"
+      },
+      "analysis": "Selection: San Antonio Spurs +2.5. Dallas own the only win in this tiny early-season comparison, but the official 6 PM report also lists Mavericks absences. That availability drag narrows the home advantage enough to take the points with San Antonio. No player is upgraded to available without a later official report.",
+      "pricing_note": "Winner uses heavily shrunk winning percentage, home advantage and a documented availability adjustment. Spread assumes a 12-point NBA margin SD. No total is priced without an official scoring baseline.",
+      "availability": "Dallas absences are taken only from the 6 PM official injury report; later status changes remain possible.",
+      "flags": [
+        "Dallas availability can change after the 6 PM report."
+      ],
+      "markets_withheld": [
+        {
+          "market": "Game total",
+          "reason": "No official team points-for/points-against baseline was captured."
+        }
+      ],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "San Antonio Spurs",
+              "probability": 0.46,
+              "decimal": 2.174,
+              "american": 117
+            },
+            {
+              "label": "Dallas Mavericks",
+              "probability": 0.54,
+              "decimal": 1.852,
+              "american": -117
+            }
+          ],
+          "pricing_note": "Winner uses heavily shrunk winning percentage, home advantage and a documented availability adjustment. Spread assumes a 12-point NBA margin SD. No total is priced without an official scoring baseline.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "San Antonio Spurs +2.5",
+              "probability": 0.542962,
+              "decimal": 1.842,
+              "american": -119
+            },
+            {
+              "label": "Dallas Mavericks -2.5",
+              "probability": 0.457038,
+              "decimal": 2.188,
+              "american": 119
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +2.5. Push-free half-point lines only.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "nba-sas-dal",
+        "sport": "basketball",
+        "competition": "NBA",
+        "match": "San Antonio Spurs v Dallas Mavericks",
+        "start_utc": "2026-10-25T00:00:00Z",
+        "selection": "San Antonio Spurs +2.5",
+        "market": "Handicap / spread",
+        "probability": 0.542962,
+        "american": -119,
+        "decimal": 1.842,
+        "confidence": "Low",
+        "confidence_note": "Low confidence: the independent price is close to even or an underdog position.",
+        "match_winner_lean": "Dallas Mavericks",
+        "match_winner_probability": 0.54,
+        "match_winner_american": -117,
+        "match_winner_confidence": "Low",
+        "analysis": "Selection: San Antonio Spurs +2.5. Dallas own the only win in this tiny early-season comparison, but the official 6 PM report also lists Mavericks absences. That availability drag narrows the home advantage enough to take the points with San Antonio. No player is upgraded to available without a later official report.",
+        "analysis_words": 52,
+        "source_ids": [
+          "nba-injury",
+          "nba-standings"
+        ],
+        "olbg_event_id": 536114,
+        "olbg_url": "https://www.olbg.com/tips/Basketball/4"
+      },
+      "review_reasons": "Dallas availability can change after the 6 PM report. Official venue not captured; field left blank. Game total: No official team points-for/points-against baseline was captured."
+    },
+    {
+      "id": "nba-was-chi",
+      "sport": "basketball",
+      "competition": "NBA",
+      "a": "Washington Wizards",
+      "b": "Chicago Bulls",
+      "start_utc": "2026-10-25T00:00:00Z",
+      "venue": "",
+      "official_id": "NBA injury report 24 Oct 6 PM",
+      "olbg_event_id": 536113,
+      "olbg_tip": "Washington Wizards — 3/3 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Basketball/4",
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "facts": [
+        "Washington 1-1; Chicago 1-1",
+        "Both teams have two-game samples"
+      ],
+      "inputs": {
+        "wins_a": 1,
+        "losses_a": 1,
+        "wins_b": 1,
+        "losses_b": 1
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.48,
+          "b": 0.52
+        },
+        "spread": {
+          "line_a": 2.5,
+          "sd": 12.0
+        }
+      },
+      "selection": {
+        "market": "spread",
+        "key": "a_cover",
+        "label": "Washington Wizards +2.5"
+      },
+      "analysis": "Selection: Washington Wizards +2.5. Identical 1-1 records provide no meaningful form separation, so the price starts near a coin flip and allows only a standard home-court lean to Chicago. The official injury report supplies the availability context, but no clean bill of health is inferred for either roster.",
+      "pricing_note": "Equal records are shrunk to 50%, followed by a 0.02 home edge. A 12-point margin SD produces both spread prices; totals remain blank because no official scoring baseline was read.",
+      "availability": "The linked injury report is the availability boundary; unlisted players are not declared fit.",
+      "flags": [],
+      "markets_withheld": [
+        {
+          "market": "Game total",
+          "reason": "Official current scoring averages were not captured."
+        }
+      ],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Washington Wizards",
+              "probability": 0.48,
+              "decimal": 2.083,
+              "american": 108
+            },
+            {
+              "label": "Chicago Bulls",
+              "probability": 0.52,
+              "decimal": 1.923,
+              "american": -108
+            }
+          ],
+          "pricing_note": "Equal records are shrunk to 50%, followed by a 0.02 home edge. A 12-point margin SD produces both spread prices; totals remain blank because no official scoring baseline was read.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Washington Wizards +2.5",
+              "probability": 0.562842,
+              "decimal": 1.777,
+              "american": -129
+            },
+            {
+              "label": "Chicago Bulls -2.5",
+              "probability": 0.437158,
+              "decimal": 2.288,
+              "american": 129
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +2.5. Push-free half-point lines only.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "nba-was-chi",
+        "sport": "basketball",
+        "competition": "NBA",
+        "match": "Washington Wizards v Chicago Bulls",
+        "start_utc": "2026-10-25T00:00:00Z",
+        "selection": "Washington Wizards +2.5",
+        "market": "Handicap / spread",
+        "probability": 0.562842,
+        "american": -129,
+        "decimal": 1.777,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "Chicago Bulls",
+        "match_winner_probability": 0.52,
+        "match_winner_american": -108,
+        "match_winner_confidence": "Low",
+        "analysis": "Selection: Washington Wizards +2.5. Identical 1-1 records provide no meaningful form separation, so the price starts near a coin flip and allows only a standard home-court lean to Chicago. The official injury report supplies the availability context, but no clean bill of health is inferred for either roster.",
+        "analysis_words": 49,
+        "source_ids": [
+          "nba-injury",
+          "nba-standings"
+        ],
+        "olbg_event_id": 536113,
+        "olbg_url": "https://www.olbg.com/tips/Basketball/4"
+      },
+      "review_reasons": "Official venue not captured; field left blank. Game total: Official current scoring averages were not captured."
+    },
+    {
+      "id": "nba-hou-atl",
+      "sport": "basketball",
+      "competition": "NBA",
+      "a": "Houston Rockets",
+      "b": "Atlanta Hawks",
+      "start_utc": "2026-10-25T00:30:00Z",
+      "venue": "",
+      "official_id": "NBA injury report 24 Oct 6 PM",
+      "olbg_event_id": 536115,
+      "olbg_tip": "Atlanta Hawks — 5/6 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Basketball/4",
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "facts": [
+        "Houston 2-0; Atlanta 2-0",
+        "Official report lists Houston availability absences"
+      ],
+      "inputs": {
+        "wins_a": 2,
+        "losses_a": 0,
+        "wins_b": 2,
+        "losses_b": 0
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.44,
+          "b": 0.56
+        },
+        "spread": {
+          "line_a": 2.5,
+          "sd": 12.0
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "b",
+        "label": "Atlanta Hawks moneyline"
+      },
+      "analysis": "Selection: Atlanta Hawks moneyline. Both teams arrive 2-0, so the difference is not a manufactured form gap: home court and Houston's official availability absences create the modest Atlanta lean. The price stays restrained because two games cannot establish a durable pecking order and a subsequent injury report could change the matchup.",
+      "pricing_note": "Equal unbeaten records begin level; home advantage and a conservative official-absence adjustment produce 56% Atlanta. Margin SD is 12 points.",
+      "availability": "Houston absences are supported by the 6 PM report; no later availability is assumed.",
+      "flags": [],
+      "markets_withheld": [],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Houston Rockets",
+              "probability": 0.44,
+              "decimal": 2.273,
+              "american": 127
+            },
+            {
+              "label": "Atlanta Hawks",
+              "probability": 0.56,
+              "decimal": 1.786,
+              "american": -127
+            }
+          ],
+          "pricing_note": "Equal unbeaten records begin level; home advantage and a conservative official-absence adjustment produce 56% Atlanta. Margin SD is 12 points.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Houston Rockets +2.5",
+              "probability": 0.522872,
+              "decimal": 1.913,
+              "american": -110
+            },
+            {
+              "label": "Atlanta Hawks -2.5",
+              "probability": 0.477128,
+              "decimal": 2.096,
+              "american": 110
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +2.5. Push-free half-point lines only.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "nba-hou-atl",
+        "sport": "basketball",
+        "competition": "NBA",
+        "match": "Houston Rockets v Atlanta Hawks",
+        "start_utc": "2026-10-25T00:30:00Z",
+        "selection": "Atlanta Hawks moneyline",
+        "market": "Match winner",
+        "probability": 0.56,
+        "american": -127,
+        "decimal": 1.786,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "Atlanta Hawks",
+        "match_winner_probability": 0.56,
+        "match_winner_american": -127,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: Atlanta Hawks moneyline. Both teams arrive 2-0, so the difference is not a manufactured form gap: home court and Houston's official availability absences create the modest Atlanta lean. The price stays restrained because two games cannot establish a durable pecking order and a subsequent injury report could change the matchup.",
+        "analysis_words": 51,
+        "source_ids": [
+          "nba-injury",
+          "nba-standings"
+        ],
+        "olbg_event_id": 536115,
+        "olbg_url": "https://www.olbg.com/tips/Basketball/4"
+      },
+      "review_reasons": "Official venue not captured; field left blank."
+    },
+    {
+      "id": "nba-nop-den",
+      "sport": "basketball",
+      "competition": "NBA",
+      "a": "New Orleans Pelicans",
+      "b": "Denver Nuggets",
+      "start_utc": "2026-10-25T01:00:00Z",
+      "venue": "",
+      "official_id": "NBA injury report 24 Oct 6 PM",
+      "olbg_event_id": 536116,
+      "olbg_tip": "Denver Nuggets — 8/10 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Basketball/4",
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "facts": [
+        "New Orleans 0-2; Denver 0-1",
+        "Neither team has won this season"
+      ],
+      "inputs": {
+        "wins_a": 0,
+        "losses_a": 2,
+        "wins_b": 0,
+        "losses_b": 1
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.38,
+          "b": 0.62
+        },
+        "spread": {
+          "line_a": 5.5,
+          "sd": 12.0
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "b",
+        "label": "Denver Nuggets moneyline"
+      },
+      "analysis": "Selection: Denver Nuggets moneyline. New Orleans have twice the early losing sample and now move onto the road, but Denver's own 0-1 start argues against an aggressive handicap. The official injury report frames availability without turning silence into fitness news. Home court and the slightly stronger record baseline justify only a medium moneyline position.",
+      "pricing_note": "Heavy shrinkage prevents 0-2 and 0-1 from being treated as true 0% teams; home advantage then separates the sides. Spread uses a 12-point margin SD.",
+      "availability": "Availability is limited to what the official 6 PM report states; no absences are invented for either club.",
+      "flags": [],
+      "markets_withheld": [
+        {
+          "market": "Game total",
+          "reason": "No official current scoring baseline was read."
+        }
+      ],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "New Orleans Pelicans",
+              "probability": 0.38,
+              "decimal": 2.632,
+              "american": 163
+            },
+            {
+              "label": "Denver Nuggets",
+              "probability": 0.62,
+              "decimal": 1.613,
+              "american": -163
+            }
+          ],
+          "pricing_note": "Heavy shrinkage prevents 0-2 and 0-1 from being treated as true 0% teams; home advantage then separates the sides. Spread uses a 12-point margin SD.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "New Orleans Pelicans +5.5",
+              "probability": 0.560743,
+              "decimal": 1.783,
+              "american": -128
+            },
+            {
+              "label": "Denver Nuggets -5.5",
+              "probability": 0.439257,
+              "decimal": 2.277,
+              "american": 128
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +5.5. Push-free half-point lines only.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "nba-nop-den",
+        "sport": "basketball",
+        "competition": "NBA",
+        "match": "New Orleans Pelicans v Denver Nuggets",
+        "start_utc": "2026-10-25T01:00:00Z",
+        "selection": "Denver Nuggets moneyline",
+        "market": "Match winner",
+        "probability": 0.62,
+        "american": -163,
+        "decimal": 1.613,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "Denver Nuggets",
+        "match_winner_probability": 0.62,
+        "match_winner_american": -163,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: Denver Nuggets moneyline. New Orleans have twice the early losing sample and now move onto the road, but Denver's own 0-1 start argues against an aggressive handicap. The official injury report frames availability without turning silence into fitness news. Home court and the slightly stronger record baseline justify only a medium moneyline position.",
+        "analysis_words": 54,
+        "source_ids": [
+          "nba-injury",
+          "nba-standings"
+        ],
+        "olbg_event_id": 536116,
+        "olbg_url": "https://www.olbg.com/tips/Basketball/4"
+      },
+      "review_reasons": "Official venue not captured; field left blank. Game total: No official current scoring baseline was read."
+    },
+    {
+      "id": "nba-gsw-phx",
+      "sport": "basketball",
+      "competition": "NBA",
+      "a": "Golden State Warriors",
+      "b": "Phoenix Suns",
+      "start_utc": "2026-10-25T02:00:00Z",
+      "venue": "",
+      "official_id": "NBA injury report 24 Oct 6 PM",
+      "olbg_event_id": 536118,
+      "olbg_tip": "Golden State Warriors — 3/5 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Basketball/4",
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "facts": [
+        "Golden State 0-2; Phoenix 0-1",
+        "Official report lists Golden State availability absences"
+      ],
+      "inputs": {
+        "wins_a": 0,
+        "losses_a": 2,
+        "wins_b": 0,
+        "losses_b": 1
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.44,
+          "b": 0.56
+        },
+        "spread": {
+          "line_a": 2.5,
+          "sd": 12.0
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "b",
+        "label": "Phoenix Suns moneyline"
+      },
+      "analysis": "Selection: Phoenix Suns moneyline. Golden State's 0-2 start and listed official absences outweigh the public lean toward the visitors, while Phoenix receive a measured home-court benefit. The Warriors still have enough uncertainty in a two-game sample to make the spread unattractive. Later official availability would require a fresh price.",
+      "pricing_note": "Shrunken record comparison, home edge and a conservative availability deduction produce Phoenix 56%; no historical roster reputation is added. Spread SD is 12.",
+      "availability": "Golden State absences come from the 6 PM official report and may be superseded before tip-off.",
+      "flags": [
+        "Golden State availability needs a late report recheck."
+      ],
+      "markets_withheld": [
+        {
+          "market": "Game total",
+          "reason": "No official current points-for/against table was captured."
+        }
+      ],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Golden State Warriors",
+              "probability": 0.44,
+              "decimal": 2.273,
+              "american": 127
+            },
+            {
+              "label": "Phoenix Suns",
+              "probability": 0.56,
+              "decimal": 1.786,
+              "american": -127
+            }
+          ],
+          "pricing_note": "Shrunken record comparison, home edge and a conservative availability deduction produce Phoenix 56%; no historical roster reputation is added. Spread SD is 12.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Golden State Warriors +2.5",
+              "probability": 0.522872,
+              "decimal": 1.913,
+              "american": -110
+            },
+            {
+              "label": "Phoenix Suns -2.5",
+              "probability": 0.477128,
+              "decimal": 2.096,
+              "american": 110
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +2.5. Push-free half-point lines only.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "nba-gsw-phx",
+        "sport": "basketball",
+        "competition": "NBA",
+        "match": "Golden State Warriors v Phoenix Suns",
+        "start_utc": "2026-10-25T02:00:00Z",
+        "selection": "Phoenix Suns moneyline",
+        "market": "Match winner",
+        "probability": 0.56,
+        "american": -127,
+        "decimal": 1.786,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "Phoenix Suns",
+        "match_winner_probability": 0.56,
+        "match_winner_american": -127,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: Phoenix Suns moneyline. Golden State's 0-2 start and listed official absences outweigh the public lean toward the visitors, while Phoenix receive a measured home-court benefit. The Warriors still have enough uncertainty in a two-game sample to make the spread unattractive. Later official availability would require a fresh price.",
+        "analysis_words": 49,
+        "source_ids": [
+          "nba-injury",
+          "nba-standings"
+        ],
+        "olbg_event_id": 536118,
+        "olbg_url": "https://www.olbg.com/tips/Basketball/4"
+      },
+      "review_reasons": "Golden State availability needs a late report recheck. Official venue not captured; field left blank. Game total: No official current points-for/against table was captured."
+    },
+    {
+      "id": "mlb-849802",
+      "sport": "baseball",
+      "competition": "MLB World Series — Game 2",
+      "a": "Tampa Bay Rays",
+      "b": "Milwaukee Brewers",
+      "start_utc": "2026-10-25T00:00:00Z",
+      "venue": "American Family Field",
+      "official_id": "849802",
+      "olbg_event_id": 160792,
+      "olbg_tip": "Tampa Bay moneyline — 13/22 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Baseball/12",
+      "source_ids": [
+        "mlb-schedule",
+        "mlb-rasmussen",
+        "mlb-henderson",
+        "mlb-mil-hitting",
+        "mlb-tb-hitting",
+        "mlb-standings"
+      ],
+      "facts": [
+        "Milwaukee 103-59, 832 runs; Tampa Bay 98-64, 736 runs",
+        "Rasmussen: 16-5, 2.67 ERA, 0.91 WHIP over 172.0 innings",
+        "Henderson: 11-3, 2.47 ERA, 0.84 WHIP over 98.1 innings"
+      ],
+      "inputs": {
+        "mil_runs": 832,
+        "tb_runs": 736,
+        "games": 162,
+        "rasmussen_era": 2.67,
+        "henderson_era": 2.47
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.44,
+          "b": 0.56
+        },
+        "spread": {
+          "line_a": 1.5,
+          "sd": 3.6
+        },
+        "total": {
+          "line": 8.5,
+          "mean": 6.8,
+          "kind": "poisson"
+        }
+      },
+      "selection": {
+        "market": "total",
+        "key": "under",
+        "label": "Under 8.5 runs"
+      },
+      "analysis": "Selection: under 8.5 runs. Rasmussen's 2.67 ERA and 0.91 WHIP meet Henderson's 2.47 ERA and 0.84 WHIP, giving both lineups a difficult starting-pitcher problem. Milwaukee scored 96 more regular-season runs, so the under is not an anti-offence blanket claim. Both pitchers remain probable, not guaranteed, and bullpen usage keeps confidence below certainty.",
+      "pricing_note": "Scoring means blend official runs per game, opponent run prevention and a starter-heavy ERA adjustment; the resulting 6.80-run mean feeds a Poisson total. Winner and +1.5 prices are independent of OLBG's 13/22 lean.",
+      "availability": "MLB lists both pitchers as probable in a Pre-Game schedule response; no later bullpen or lineup announcement was read.",
+      "flags": [
+        "Probable pitchers and lineups can change before 00:00 UTC."
+      ],
+      "markets_withheld": [],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Tampa Bay Rays",
+              "probability": 0.44,
+              "decimal": 2.273,
+              "american": 127
+            },
+            {
+              "label": "Milwaukee Brewers",
+              "probability": 0.56,
+              "decimal": 1.786,
+              "american": -127
+            }
+          ],
+          "pricing_note": "Scoring means blend official runs per game, opponent run prevention and a starter-heavy ERA adjustment; the resulting 6.80-run mean feeds a Poisson total. Winner and +1.5 prices are independent of OLBG's 13/22 lean.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Tampa Bay Rays +1.5",
+              "probability": 0.604764,
+              "decimal": 1.654,
+              "american": -153
+            },
+            {
+              "label": "Milwaukee Brewers -1.5",
+              "probability": 0.395236,
+              "decimal": 2.53,
+              "american": 153
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 3.6; line from side A +1.5. Push-free half-point lines only.",
+          "overround": 1.0
+        },
+        {
+          "market": "Total",
+          "unit": "match total",
+          "outcomes": [
+            {
+              "label": "Over 8.5",
+              "probability": 0.24523,
+              "decimal": 4.078,
+              "american": 308
+            },
+            {
+              "label": "Under 8.5",
+              "probability": 0.75477,
+              "decimal": 1.325,
+              "american": -308
+            }
+          ],
+          "pricing_note": "Poisson count, mean 6.8; no-vig complementary prices.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "mlb-849802",
+        "sport": "baseball",
+        "competition": "MLB World Series — Game 2",
+        "match": "Tampa Bay Rays v Milwaukee Brewers",
+        "start_utc": "2026-10-25T00:00:00Z",
+        "selection": "Under 8.5 runs",
+        "market": "Total",
+        "probability": 0.75477,
+        "american": -308,
+        "decimal": 1.325,
+        "confidence": "Medium",
+        "confidence_note": "Fair price is shorter than -250, outside the requested High window.",
+        "match_winner_lean": "Milwaukee Brewers",
+        "match_winner_probability": 0.56,
+        "match_winner_american": -127,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: under 8.5 runs. Rasmussen's 2.67 ERA and 0.91 WHIP meet Henderson's 2.47 ERA and 0.84 WHIP, giving both lineups a difficult starting-pitcher problem. Milwaukee scored 96 more regular-season runs, so the under is not an anti-offence blanket claim. Both pitchers remain probable, not guaranteed, and bullpen usage keeps confidence below certainty.",
+        "analysis_words": 57,
+        "source_ids": [
+          "mlb-schedule",
+          "mlb-rasmussen",
+          "mlb-henderson",
+          "mlb-mil-hitting",
+          "mlb-tb-hitting",
+          "mlb-standings"
+        ],
+        "olbg_event_id": 160792,
+        "olbg_url": "https://www.olbg.com/tips/Baseball/12"
+      },
+      "review_reasons": "Probable pitchers and lineups can change before 00:00 UTC."
+    },
+    {
+      "id": "vol-tre-cis",
+      "sport": "volleyball",
+      "competition": "Italian SuperLega",
+      "a": "Trentino Itas",
+      "b": "Cisterna Volley",
+      "start_utc": "2026-10-25T16:00:00Z",
+      "venue": "",
+      "official_id": "Lega calendar idCampionato=999",
+      "olbg_event_id": 36994,
+      "olbg_tip": "Cisterna — 6/7 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Volleyball/21",
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "facts": [
+        "Round one: Trentino won 3-0, 75-61 on points",
+        "Round one: Cisterna won 3-0, 79-56 on points"
+      ],
+      "inputs": {
+        "a_sets": 3,
+        "a_points": 75,
+        "a_opp_points": 61,
+        "b_sets": 3,
+        "b_points": 79,
+        "b_opp_points": 56
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.58,
+          "b": 0.42
+        },
+        "spread": {
+          "line_a": -1.5,
+          "sd": 1.25
+        },
+        "total": {
+          "line": 3.5,
+          "over": 0.58,
+          "under": 0.42
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "a",
+        "label": "Trentino Itas match winner"
+      },
+      "analysis": "Selection: Trentino Itas match winner. Both sides opened with straight-set wins, but Cisterna's 79-56 point return was actually more dominant than Trentino's 75-61. Home-court advantage therefore has to do real work in this price. With no official late team-sheet bulletin, Trentino receive only a medium lean rather than a short favourite's billing.",
+      "pricing_note": "Winner blends round-one point quotient, venue advantage and heavy one-match shrinkage. Set handicap uses a 1.25-set margin SD; total-set prices use a conservative best-of-five distribution.",
+      "availability": "No late official availability bulletin accompanied the calendar entry.",
+      "flags": [],
+      "markets_withheld": [
+        {
+          "market": "Player points",
+          "reason": "No official current player-points baseline was read."
+        }
+      ],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Trentino Itas",
+              "probability": 0.58,
+              "decimal": 1.724,
+              "american": -138
+            },
+            {
+              "label": "Cisterna Volley",
+              "probability": 0.42,
+              "decimal": 2.381,
+              "american": 138
+            }
+          ],
+          "pricing_note": "Winner blends round-one point quotient, venue advantage and heavy one-match shrinkage. Set handicap uses a 1.25-set margin SD; total-set prices use a conservative best-of-five distribution.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Trentino Itas -1.5",
+              "probability": 0.159114,
+              "decimal": 6.285,
+              "american": 528
+            },
+            {
+              "label": "Cisterna Volley +1.5",
+              "probability": 0.840886,
+              "decimal": 1.189,
+              "american": -528
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 1.25; line from side A -1.5. Push-free half-point lines only.",
+          "overround": 1.0
+        },
+        {
+          "market": "Total",
+          "unit": "match total",
+          "outcomes": [
+            {
+              "label": "Over 3.5",
+              "probability": 0.58,
+              "decimal": 1.724,
+              "american": -138
+            },
+            {
+              "label": "Under 3.5",
+              "probability": 0.42,
+              "decimal": 2.381,
+              "american": 138
+            }
+          ],
+          "pricing_note": "Explicit best-of-five set distribution stated in the pricing note.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "vol-tre-cis",
+        "sport": "volleyball",
+        "competition": "Italian SuperLega",
+        "match": "Trentino Itas v Cisterna Volley",
+        "start_utc": "2026-10-25T16:00:00Z",
+        "selection": "Trentino Itas match winner",
+        "market": "Match winner",
+        "probability": 0.58,
+        "american": -138,
+        "decimal": 1.724,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "Trentino Itas",
+        "match_winner_probability": 0.58,
+        "match_winner_american": -138,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: Trentino Itas match winner. Both sides opened with straight-set wins, but Cisterna's 79-56 point return was actually more dominant than Trentino's 75-61. Home-court advantage therefore has to do real work in this price. With no official late team-sheet bulletin, Trentino receive only a medium lean rather than a short favourite's billing.",
+        "analysis_words": 52,
+        "source_ids": [
+          "lega-calendar",
+          "lega-table"
+        ],
+        "olbg_event_id": 36994,
+        "olbg_url": "https://www.olbg.com/tips/Volleyball/21"
+      },
+      "review_reasons": "Official venue not captured; field left blank. Player points: No official current player-points baseline was read."
+    },
+    {
+      "id": "vol-per-por",
+      "sport": "volleyball",
+      "competition": "Italian SuperLega",
+      "a": "Sir Susa Vim Perugia",
+      "b": "Pallavolo Pordenone",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "venue": "",
+      "official_id": "Lega calendar idCampionato=999",
+      "olbg_event_id": 36997,
+      "olbg_tip": "Pordenone — 5/6 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Volleyball/21",
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "facts": [
+        "Round one: Perugia won 3-2, 114-95 on points",
+        "Round one: Pordenone won 3-1, 94-91 on points"
+      ],
+      "inputs": {
+        "a_sets": 3,
+        "a_points": 114,
+        "a_opp_points": 95,
+        "b_sets": 3,
+        "b_points": 94,
+        "b_opp_points": 91
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.55,
+          "b": 0.45
+        },
+        "spread": {
+          "line_a": -1.5,
+          "sd": 1.25
+        },
+        "total": {
+          "line": 3.5,
+          "over": 0.66,
+          "under": 0.34
+        }
+      },
+      "selection": {
+        "market": "total",
+        "key": "over",
+        "label": "Over 3.5 sets"
+      },
+      "analysis": "Selection: over 3.5 sets. Perugia needed five sets despite a 114-95 point advantage, while Pordenone opened with a 3-1 win. Those official round-one profiles support resistance from the visitor and at least four sets. One round is not a season trend, and no availability bulletin was read, so the position remains medium.",
+      "pricing_note": "The over-3.5 price blends Perugia's five-set opener, Pordenone's four-set opener and heavy regression toward a standard best-of-five baseline. Match winner still gives Perugia a small home lean.",
+      "availability": "No official late team-sheet update was attached to the fixture.",
+      "flags": [],
+      "markets_withheld": [],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Sir Susa Vim Perugia",
+              "probability": 0.55,
+              "decimal": 1.818,
+              "american": -122
+            },
+            {
+              "label": "Pallavolo Pordenone",
+              "probability": 0.45,
+              "decimal": 2.222,
+              "american": 122
+            }
+          ],
+          "pricing_note": "The over-3.5 price blends Perugia's five-set opener, Pordenone's four-set opener and heavy regression toward a standard best-of-five baseline. Match winner still gives Perugia a small home lean.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Sir Susa Vim Perugia -1.5",
+              "probability": 0.141335,
+              "decimal": 7.075,
+              "american": 608
+            },
+            {
+              "label": "Pallavolo Pordenone +1.5",
+              "probability": 0.858665,
+              "decimal": 1.165,
+              "american": -608
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 1.25; line from side A -1.5. Push-free half-point lines only.",
+          "overround": 1.0
+        },
+        {
+          "market": "Total",
+          "unit": "match total",
+          "outcomes": [
+            {
+              "label": "Over 3.5",
+              "probability": 0.66,
+              "decimal": 1.515,
+              "american": -194
+            },
+            {
+              "label": "Under 3.5",
+              "probability": 0.34,
+              "decimal": 2.941,
+              "american": 194
+            }
+          ],
+          "pricing_note": "Explicit best-of-five set distribution stated in the pricing note.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "vol-per-por",
+        "sport": "volleyball",
+        "competition": "Italian SuperLega",
+        "match": "Sir Susa Vim Perugia v Pallavolo Pordenone",
+        "start_utc": "2026-10-25T17:00:00Z",
+        "selection": "Over 3.5 sets",
+        "market": "Total",
+        "probability": 0.66,
+        "american": -194,
+        "decimal": 1.515,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "Sir Susa Vim Perugia",
+        "match_winner_probability": 0.55,
+        "match_winner_american": -122,
+        "match_winner_confidence": "Low",
+        "analysis": "Selection: over 3.5 sets. Perugia needed five sets despite a 114-95 point advantage, while Pordenone opened with a 3-1 win. Those official round-one profiles support resistance from the visitor and at least four sets. One round is not a season trend, and no availability bulletin was read, so the position remains medium.",
+        "analysis_words": 53,
+        "source_ids": [
+          "lega-calendar",
+          "lega-table"
+        ],
+        "olbg_event_id": 36997,
+        "olbg_url": "https://www.olbg.com/tips/Volleyball/21"
+      },
+      "review_reasons": "Official venue not captured; field left blank."
+    },
+    {
+      "id": "vol-lub-pad",
+      "sport": "volleyball",
+      "competition": "Italian SuperLega",
+      "a": "Cucine Lube Civitanova",
+      "b": "Sonepar Padova",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "venue": "",
+      "official_id": "Lega calendar idCampionato=999",
+      "olbg_event_id": 36995,
+      "olbg_tip": "Padova — 5/5 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Volleyball/21",
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "facts": [
+        "Round one: Lube won 3-0, 78-65 on points",
+        "Round one: Padova lost 0-3, 56-75 on points"
+      ],
+      "inputs": {
+        "a_sets": 3,
+        "a_points": 78,
+        "a_opp_points": 65,
+        "b_sets": 0,
+        "b_points": 56,
+        "b_opp_points": 75
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.72,
+          "b": 0.28
+        },
+        "spread": {
+          "line_a": -1.5,
+          "sd": 1.25
+        },
+        "total": {
+          "line": 3.5,
+          "over": 0.39,
+          "under": 0.61
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "a",
+        "label": "Cucine Lube Civitanova match winner"
+      },
+      "analysis": "Selection: Cucine Lube Civitanova match winner. Lube opened with a 78-65 straight-set victory, whereas Padova lost 56-75 without taking a set. The independent price rejects OLBG's unanimous Padova lean and follows the only official current evidence. One round and no late team-sheet news still argue against making the home side a certainty.",
+      "pricing_note": "Round-one point quotient and set result drive the winner price after shrinkage; home advantage is modest. The resulting fair favourite is shorter than the preferred high-confidence window.",
+      "availability": "No official late availability update was read for either club.",
+      "flags": [],
+      "markets_withheld": [],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Cucine Lube Civitanova",
+              "probability": 0.72,
+              "decimal": 1.389,
+              "american": -257
+            },
+            {
+              "label": "Sonepar Padova",
+              "probability": 0.28,
+              "decimal": 3.571,
+              "american": 257
+            }
+          ],
+          "pricing_note": "Round-one point quotient and set result drive the winner price after shrinkage; home advantage is modest. The resulting fair favourite is shorter than the preferred high-confidence window.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Cucine Lube Civitanova -1.5",
+              "probability": 0.268565,
+              "decimal": 3.723,
+              "american": 272
+            },
+            {
+              "label": "Sonepar Padova +1.5",
+              "probability": 0.731435,
+              "decimal": 1.367,
+              "american": -272
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 1.25; line from side A -1.5. Push-free half-point lines only.",
+          "overround": 1.0
+        },
+        {
+          "market": "Total",
+          "unit": "match total",
+          "outcomes": [
+            {
+              "label": "Over 3.5",
+              "probability": 0.39,
+              "decimal": 2.564,
+              "american": 156
+            },
+            {
+              "label": "Under 3.5",
+              "probability": 0.61,
+              "decimal": 1.639,
+              "american": -156
+            }
+          ],
+          "pricing_note": "Explicit best-of-five set distribution stated in the pricing note.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "vol-lub-pad",
+        "sport": "volleyball",
+        "competition": "Italian SuperLega",
+        "match": "Cucine Lube Civitanova v Sonepar Padova",
+        "start_utc": "2026-10-25T17:00:00Z",
+        "selection": "Cucine Lube Civitanova match winner",
+        "market": "Match winner",
+        "probability": 0.72,
+        "american": -257,
+        "decimal": 1.389,
+        "confidence": "Medium",
+        "confidence_note": "Fair price is shorter than -250, outside the requested High window.",
+        "match_winner_lean": "Cucine Lube Civitanova",
+        "match_winner_probability": 0.72,
+        "match_winner_american": -257,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: Cucine Lube Civitanova match winner. Lube opened with a 78-65 straight-set victory, whereas Padova lost 56-75 without taking a set. The independent price rejects OLBG's unanimous Padova lean and follows the only official current evidence. One round and no late team-sheet news still argue against making the home side a certainty.",
+        "analysis_words": 52,
+        "source_ids": [
+          "lega-calendar",
+          "lega-table"
+        ],
+        "olbg_event_id": 36995,
+        "olbg_url": "https://www.olbg.com/tips/Volleyball/21"
+      },
+      "review_reasons": "Official venue not captured; field left blank."
+    },
+    {
+      "id": "vol-mon-ver",
+      "sport": "volleyball",
+      "competition": "Italian SuperLega",
+      "a": "Vero Volley Monza",
+      "b": "Rana Verona",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "venue": "",
+      "official_id": "Lega calendar idCampionato=999",
+      "olbg_event_id": 36996,
+      "olbg_tip": "Monza — 3/3 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Volleyball/21",
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "facts": [
+        "Round one: Monza lost 1-3, 91-94 on points",
+        "Round one: Verona lost 0-3, 65-78 on points"
+      ],
+      "inputs": {
+        "a_sets": 1,
+        "a_points": 91,
+        "a_opp_points": 94,
+        "b_sets": 0,
+        "b_points": 65,
+        "b_opp_points": 78
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.47,
+          "b": 0.53
+        },
+        "spread": {
+          "line_a": 1.5,
+          "sd": 1.25
+        },
+        "total": {
+          "line": 3.5,
+          "over": 0.55,
+          "under": 0.45
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "b",
+        "label": "Rana Verona match winner"
+      },
+      "analysis": "Selection: Rana Verona match winner. Monza at least took a set and stayed close on points, but Verona's opening 65-78 defeat does not support OLBG's unanimous home lean strongly enough to follow it. Verona receive only a narrow road edge after regression. The lack of an official late availability update reinforces the low grade.",
+      "pricing_note": "Winner prices combine round-one set share and point quotient with heavy shrinkage; venue advantage keeps the teams close. Set and total markets use explicit best-of-five assumptions, not official forecasts.",
+      "availability": "No official late team-sheet bulletin was read.",
+      "flags": [],
+      "markets_withheld": [],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Vero Volley Monza",
+              "probability": 0.47,
+              "decimal": 2.128,
+              "american": 113
+            },
+            {
+              "label": "Rana Verona",
+              "probability": 0.53,
+              "decimal": 1.887,
+              "american": -113
+            }
+          ],
+          "pricing_note": "Winner prices combine round-one set share and point quotient with heavy shrinkage; venue advantage keeps the teams close. Set and total markets use explicit best-of-five assumptions, not official forecasts.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Vero Volley Monza +1.5",
+              "probability": 0.869648,
+              "decimal": 1.15,
+              "american": -667
+            },
+            {
+              "label": "Rana Verona -1.5",
+              "probability": 0.130352,
+              "decimal": 7.672,
+              "american": 667
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 1.25; line from side A +1.5. Push-free half-point lines only.",
+          "overround": 1.0
+        },
+        {
+          "market": "Total",
+          "unit": "match total",
+          "outcomes": [
+            {
+              "label": "Over 3.5",
+              "probability": 0.55,
+              "decimal": 1.818,
+              "american": -122
+            },
+            {
+              "label": "Under 3.5",
+              "probability": 0.45,
+              "decimal": 2.222,
+              "american": 122
+            }
+          ],
+          "pricing_note": "Explicit best-of-five set distribution stated in the pricing note.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "vol-mon-ver",
+        "sport": "volleyball",
+        "competition": "Italian SuperLega",
+        "match": "Vero Volley Monza v Rana Verona",
+        "start_utc": "2026-10-25T17:00:00Z",
+        "selection": "Rana Verona match winner",
+        "market": "Match winner",
+        "probability": 0.53,
+        "american": -113,
+        "decimal": 1.887,
+        "confidence": "Low",
+        "confidence_note": "Low confidence: the independent price is close to even or an underdog position.",
+        "match_winner_lean": "Rana Verona",
+        "match_winner_probability": 0.53,
+        "match_winner_american": -113,
+        "match_winner_confidence": "Low",
+        "analysis": "Selection: Rana Verona match winner. Monza at least took a set and stayed close on points, but Verona's opening 65-78 defeat does not support OLBG's unanimous home lean strongly enough to follow it. Verona receive only a narrow road edge after regression. The lack of an official late availability update reinforces the low grade.",
+        "analysis_words": 54,
+        "source_ids": [
+          "lega-calendar",
+          "lega-table"
+        ],
+        "olbg_event_id": 36996,
+        "olbg_url": "https://www.olbg.com/tips/Volleyball/21"
+      },
+      "review_reasons": "Official venue not captured; field left blank."
+    },
+    {
+      "id": "ru-609554",
+      "sport": "rugby-union",
+      "competition": "French Top 14",
+      "a": "Union Bordeaux-Bègles",
+      "b": "Stade Rochelais",
+      "start_utc": "2026-10-25T20:05:00Z",
+      "venue": "Stade Marcel-Deflandre, La Rochelle",
+      "official_id": "Top 14 Journée 7",
+      "olbg_event_id": 609554,
+      "olbg_tip": "Bordeaux — 3/5 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Rugby_Union/9",
+      "source_ids": [
+        "top14-calendar",
+        "top14-table"
+      ],
+      "facts": [
+        "Bordeaux third: 19 points, 4-2, 215-151, +64",
+        "La Rochelle fourth: 18 points, 4-2, 144-135, +9"
+      ],
+      "inputs": {
+        "a_table_points": 19,
+        "b_table_points": 18,
+        "a_pf": 215,
+        "a_pa": 151,
+        "b_pf": 144,
+        "b_pa": 135
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.55,
+          "b": 0.45
+        },
+        "spread": {
+          "line_a": 2.5,
+          "sd": 12.0
+        },
+        "total": {
+          "line": 42.5,
+          "mean": 43.3,
+          "kind": "normal",
+          "sd": 14.0
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "a",
+        "label": "Union Bordeaux-Bègles match winner"
+      },
+      "analysis": "Selection: Union Bordeaux-Bègles match winner. Both clubs are 4-2, yet Bordeaux's +64 points difference dwarfs La Rochelle's +9 and their attack has produced 215 points against 144. La Rochelle's home venue narrows the gap considerably. No late official availability bulletin was read, so Bordeaux remain a medium selection rather than a runaway handicap choice.",
+      "pricing_note": "Winner blends table points and scoring differential, then applies home advantage. Total mean 43.3 comes from each team's six-game for/against averages; total SD 14 is an analytic assumption.",
+      "availability": "No late official team-sheet or injury bulletin accompanied the readable calendar and standings.",
+      "flags": [],
+      "markets_withheld": [],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Union Bordeaux-Bègles",
+              "probability": 0.55,
+              "decimal": 1.818,
+              "american": -122
+            },
+            {
+              "label": "Stade Rochelais",
+              "probability": 0.45,
+              "decimal": 2.222,
+              "american": 122
+            }
+          ],
+          "pricing_note": "Winner blends table points and scoring differential, then applies home advantage. Total mean 43.3 comes from each team's six-game for/against averages; total SD 14 is an analytic assumption.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Union Bordeaux-Bègles +2.5",
+              "probability": 0.630808,
+              "decimal": 1.585,
+              "american": -171
+            },
+            {
+              "label": "Stade Rochelais -2.5",
+              "probability": 0.369192,
+              "decimal": 2.709,
+              "american": 171
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +2.5. Push-free half-point lines only.",
+          "overround": 1.0
+        },
+        {
+          "market": "Total",
+          "unit": "match total",
+          "outcomes": [
+            {
+              "label": "Over 42.5",
+              "probability": 0.522784,
+              "decimal": 1.913,
+              "american": -110
+            },
+            {
+              "label": "Under 42.5",
+              "probability": 0.477216,
+              "decimal": 2.095,
+              "american": 110
+            }
+          ],
+          "pricing_note": "Normal total, mean 43.3, SD 14; no-vig complementary prices.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "ru-609554",
+        "sport": "rugby-union",
+        "competition": "French Top 14",
+        "match": "Union Bordeaux-Bègles v Stade Rochelais",
+        "start_utc": "2026-10-25T20:05:00Z",
+        "selection": "Union Bordeaux-Bègles match winner",
+        "market": "Match winner",
+        "probability": 0.55,
+        "american": -122,
+        "decimal": 1.818,
+        "confidence": "Low",
+        "confidence_note": "Low confidence: the independent price is close to even or an underdog position.",
+        "match_winner_lean": "Union Bordeaux-Bègles",
+        "match_winner_probability": 0.55,
+        "match_winner_american": -122,
+        "match_winner_confidence": "Low",
+        "analysis": "Selection: Union Bordeaux-Bègles match winner. Both clubs are 4-2, yet Bordeaux's +64 points difference dwarfs La Rochelle's +9 and their attack has produced 215 points against 144. La Rochelle's home venue narrows the gap considerably. No late official availability bulletin was read, so Bordeaux remain a medium selection rather than a runaway handicap choice.",
+        "analysis_words": 54,
+        "source_ids": [
+          "top14-calendar",
+          "top14-table"
+        ],
+        "olbg_event_id": 609554,
+        "olbg_url": "https://www.olbg.com/tips/Rugby_Union/9"
+      },
+      "review_reasons": ""
+    },
+    {
+      "id": "cric-274145",
+      "sport": "cricket",
+      "competition": "Pakistan v England ODI",
+      "a": "England",
+      "b": "Pakistan",
+      "start_utc": "2026-10-25T04:00:00Z",
+      "venue": "Gaddafi Stadium, Lahore",
+      "official_id": "274145",
+      "olbg_event_id": 188838,
+      "olbg_tip": "Pakistan — 9/15 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Cricket/7",
+      "source_ids": [
+        "icc-pak-eng",
+        "icc-274145"
+      ],
+      "facts": [
+        "Official match centre lists 04:00 UTC",
+        "Shaheen Afridi leads Pakistan's ODI squad",
+        "No readable ICC ranking-table values were available"
+      ],
+      "inputs": {},
+      "pricing": {
+        "winner": {
+          "a": 0.46,
+          "b": 0.54
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "b",
+        "label": "Pakistan match winner"
+      },
+      "analysis": "Selection: Pakistan match winner, with low confidence. Home conditions at Gaddafi Stadium and a named ODI squad led by Shaheen Afridi support a narrow lean, but the ICC ranking table did not expose usable values. No recent score or player-availability advantage is invented. This is deliberately close to a coin flip until team sheets arrive.",
+      "pricing_note": "A small home advantage is the only quantitative adjustment; no unread ICC ranking or recent score is inserted. The two-way prices sum to one and carry no margin.",
+      "availability": "The squad announcement is not a final playing eleven; no further availability claims are made.",
+      "flags": [
+        "ICC rankings and recent team scoring baselines were not readable."
+      ],
+      "markets_withheld": [
+        {
+          "market": "Runs handicap",
+          "reason": "No official recent scoring distribution was captured."
+        },
+        {
+          "market": "Match total",
+          "reason": "No official recent scoring distribution was captured."
+        }
+      ],
+      "max_confidence": "Low",
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "England",
+              "probability": 0.46,
+              "decimal": 2.174,
+              "american": 117
+            },
+            {
+              "label": "Pakistan",
+              "probability": 0.54,
+              "decimal": 1.852,
+              "american": -117
+            }
+          ],
+          "pricing_note": "A small home advantage is the only quantitative adjustment; no unread ICC ranking or recent score is inserted. The two-way prices sum to one and carry no margin.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "cric-274145",
+        "sport": "cricket",
+        "competition": "Pakistan v England ODI",
+        "match": "England v Pakistan",
+        "start_utc": "2026-10-25T04:00:00Z",
+        "selection": "Pakistan match winner",
+        "market": "Match winner",
+        "probability": 0.54,
+        "american": -117,
+        "decimal": 1.852,
+        "confidence": "Low",
+        "confidence_note": "Low confidence: the independent price is close to even or an underdog position.",
+        "match_winner_lean": "Pakistan",
+        "match_winner_probability": 0.54,
+        "match_winner_american": -117,
+        "match_winner_confidence": "Low",
+        "analysis": "Selection: Pakistan match winner, with low confidence. Home conditions at Gaddafi Stadium and a named ODI squad led by Shaheen Afridi support a narrow lean, but the ICC ranking table did not expose usable values. No recent score or player-availability advantage is invented. This is deliberately close to a coin flip until team sheets arrive.",
+        "analysis_words": 55,
+        "source_ids": [
+          "icc-pak-eng",
+          "icc-274145"
+        ],
+        "olbg_event_id": 188838,
+        "olbg_url": "https://www.olbg.com/tips/Cricket/7"
+      },
+      "review_reasons": "ICC rankings and recent team scoring baselines were not readable. Runs handicap: No official recent scoring distribution was captured. Match total: No official recent scoring distribution was captured."
+    },
+    {
+      "id": "cric-270973",
+      "sport": "cricket",
+      "competition": "India Women v Zimbabwe Women — 2nd ODI",
+      "a": "Zimbabwe Women",
+      "b": "India Women",
+      "start_utc": "2026-10-25T04:30:00Z",
+      "venue": "Baroda",
+      "official_id": "270973",
+      "olbg_event_id": 188847,
+      "olbg_tip": "Smriti Mandhana top Team 1 batter — 3/5 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Cricket/7",
+      "source_ids": [
+        "icc-indw-zim",
+        "icc-270973"
+      ],
+      "facts": [
+        "Official match centre lists 04:30 UTC",
+        "Renuka Singh is out of the series",
+        "Uncapped Jintimani Kalita was added to India's squad"
+      ],
+      "inputs": {},
+      "pricing": {
+        "winner": {
+          "a": 0.35,
+          "b": 0.65
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "b",
+        "label": "India Women match winner"
+      },
+      "analysis": "Selection: India Women match winner. Home advantage in Baroda supports India, but Renuka Singh's confirmed absence removes a senior bowling option and tempers the price. Jintimani Kalita's call-up adds an uncapped alternative rather than proven replacement production. No individual batter prop is priced from OLBG's Mandhana vote without a current official scoring baseline.",
+      "pricing_note": "The price is a conservative home-strength estimate with an explicit reduction for the confirmed bowling absence; no unread ranking or recent average is inserted. Handicap and totals stay blank.",
+      "availability": "Renuka Singh is officially out; Jintimani Kalita is added. Final playing elevens were not read.",
+      "flags": [
+        "No official recent batting or bowling averages were captured for player props."
+      ],
+      "markets_withheld": [
+        {
+          "market": "Top team batter",
+          "reason": "OLBG's vote is not evidence; no official current player baseline was read."
+        },
+        {
+          "market": "Match total",
+          "reason": "No official recent scoring distribution was captured."
+        }
+      ],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Zimbabwe Women",
+              "probability": 0.35,
+              "decimal": 2.857,
+              "american": 186
+            },
+            {
+              "label": "India Women",
+              "probability": 0.65,
+              "decimal": 1.538,
+              "american": -186
+            }
+          ],
+          "pricing_note": "The price is a conservative home-strength estimate with an explicit reduction for the confirmed bowling absence; no unread ranking or recent average is inserted. Handicap and totals stay blank.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "cric-270973",
+        "sport": "cricket",
+        "competition": "India Women v Zimbabwe Women — 2nd ODI",
+        "match": "Zimbabwe Women v India Women",
+        "start_utc": "2026-10-25T04:30:00Z",
+        "selection": "India Women match winner",
+        "market": "Match winner",
+        "probability": 0.65,
+        "american": -186,
+        "decimal": 1.538,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "India Women",
+        "match_winner_probability": 0.65,
+        "match_winner_american": -186,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: India Women match winner. Home advantage in Baroda supports India, but Renuka Singh's confirmed absence removes a senior bowling option and tempers the price. Jintimani Kalita's call-up adds an uncapped alternative rather than proven replacement production. No individual batter prop is priced from OLBG's Mandhana vote without a current official scoring baseline.",
+        "analysis_words": 53,
+        "source_ids": [
+          "icc-indw-zim",
+          "icc-270973"
+        ],
+        "olbg_event_id": 188847,
+        "olbg_url": "https://www.olbg.com/tips/Cricket/7"
+      },
+      "review_reasons": "No official recent batting or bowling averages were captured for player props. Top team batter: OLBG's vote is not evidence; no official current player baseline was read. Match total: No official recent scoring distribution was captured."
+    },
+    {
+      "id": "cric-nz-ind",
+      "sport": "cricket",
+      "competition": "New Zealand v India — 3rd T20I",
+      "a": "India",
+      "b": "New Zealand",
+      "start_utc": "",
+      "venue": "",
+      "official_id": "Series after match 271647",
+      "olbg_event_id": 188852,
+      "olbg_tip": "India — 3/4 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Cricket/7",
+      "source_ids": [
+        "icc-ind-nz"
+      ],
+      "facts": [
+        "India won the second T20I by four wickets",
+        "India lead the five-match series 2-0"
+      ],
+      "inputs": {
+        "series_wins_a": 2,
+        "series_wins_b": 0
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.82,
+          "b": 0.18
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "a",
+        "label": "India match winner"
+      },
+      "analysis": "Selection: India match winner. Four-wicket success in the second T20I established a 2-0 series lead and supplies the strongest current-form evidence on this cricket card. The price still allows New Zealand a home-series response. The third fixture's official start, venue and final availability were not exposed, so no runs handicap or total is attached.",
+      "pricing_note": "Two series results are shrunk with two neutral matches before conversion to a two-way price. No undocumented ranking is used. The resulting fair price is shorter than the preferred high-confidence band.",
+      "availability": "No third-match team-sheet bulletin was read; the series report is not an availability list.",
+      "flags": [
+        "Official third-match start time and venue were not exposed; those fields remain blank."
+      ],
+      "markets_withheld": [
+        {
+          "market": "Runs handicap",
+          "reason": "Only the second-match result, not a scoring distribution, was captured."
+        },
+        {
+          "market": "Match total",
+          "reason": "Only the second-match result, not a scoring distribution, was captured."
+        }
+      ],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "India",
+              "probability": 0.82,
+              "decimal": 1.22,
+              "american": -456
+            },
+            {
+              "label": "New Zealand",
+              "probability": 0.18,
+              "decimal": 5.556,
+              "american": 456
+            }
+          ],
+          "pricing_note": "Two series results are shrunk with two neutral matches before conversion to a two-way price. No undocumented ranking is used. The resulting fair price is shorter than the preferred high-confidence band.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "cric-nz-ind",
+        "sport": "cricket",
+        "competition": "New Zealand v India — 3rd T20I",
+        "match": "India v New Zealand",
+        "start_utc": "",
+        "selection": "India match winner",
+        "market": "Match winner",
+        "probability": 0.82,
+        "american": -456,
+        "decimal": 1.22,
+        "confidence": "Medium",
+        "confidence_note": "Fair price is shorter than -250, outside the requested High window.",
+        "match_winner_lean": "India",
+        "match_winner_probability": 0.82,
+        "match_winner_american": -456,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: India match winner. Four-wicket success in the second T20I established a 2-0 series lead and supplies the strongest current-form evidence on this cricket card. The price still allows New Zealand a home-series response. The third fixture's official start, venue and final availability were not exposed, so no runs handicap or total is attached.",
+        "analysis_words": 54,
+        "source_ids": [
+          "icc-ind-nz"
+        ],
+        "olbg_event_id": 188852,
+        "olbg_url": "https://www.olbg.com/tips/Cricket/7"
+      },
+      "review_reasons": "Official third-match start time and venue were not exposed; those fields remain blank. Official venue not captured; field left blank. Runs handicap: Only the second-match result, not a scoring distribution, was captured. Match total: Only the second-match result, not a scoring distribution, was captured."
+    },
+    {
+      "id": "cric-nam-ire",
+      "sport": "cricket",
+      "competition": "Namibia v Ireland — 3rd ODI",
+      "a": "Ireland",
+      "b": "Namibia",
+      "start_utc": "2026-10-27T07:30:00Z",
+      "venue": "Windhoek",
+      "official_id": "Cricket Ireland Namibia tour — ODI 3",
+      "olbg_event_id": 188854,
+      "olbg_tip": "Ireland — 1/1 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Cricket/7",
+      "source_ids": [
+        "ireland-namibia"
+      ],
+      "facts": [
+        "Official tour page lists 27 October at 9:30 local / 8:30 Irish time",
+        "Windhoek is the official host city"
+      ],
+      "inputs": {},
+      "pricing": {
+        "winner": {
+          "a": 0.49,
+          "b": 0.51
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "b",
+        "label": "Namibia match winner"
+      },
+      "analysis": "Selection: Namibia match winner, but only as a nominal home-ground lean. The official tour page supports the third ODI and its Windhoek scheduling, not a current series score, rankings gap or availability edge. This price therefore rejects the certainty implied by a single OLBG vote and leaves both sides close to even.",
+      "pricing_note": "Only a 0.01 home adjustment is applied to an even base because no current form or ranking numbers were read. The selection is intentionally low confidence.",
+      "availability": "No final squad availability update was captured on the tour page.",
+      "flags": [
+        "Series score, rankings and current scoring baselines were not captured."
+      ],
+      "markets_withheld": [
+        {
+          "market": "Runs handicap",
+          "reason": "No official recent scoring distribution was captured."
+        },
+        {
+          "market": "Match total",
+          "reason": "No official recent scoring distribution was captured."
+        }
+      ],
+      "max_confidence": "Low",
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Ireland",
+              "probability": 0.49,
+              "decimal": 2.041,
+              "american": 104
+            },
+            {
+              "label": "Namibia",
+              "probability": 0.51,
+              "decimal": 1.961,
+              "american": -104
+            }
+          ],
+          "pricing_note": "Only a 0.01 home adjustment is applied to an even base because no current form or ranking numbers were read. The selection is intentionally low confidence.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "cric-nam-ire",
+        "sport": "cricket",
+        "competition": "Namibia v Ireland — 3rd ODI",
+        "match": "Ireland v Namibia",
+        "start_utc": "2026-10-27T07:30:00Z",
+        "selection": "Namibia match winner",
+        "market": "Match winner",
+        "probability": 0.51,
+        "american": -104,
+        "decimal": 1.961,
+        "confidence": "Low",
+        "confidence_note": "Low confidence: the independent price is close to even or an underdog position.",
+        "match_winner_lean": "Namibia",
+        "match_winner_probability": 0.51,
+        "match_winner_american": -104,
+        "match_winner_confidence": "Low",
+        "analysis": "Selection: Namibia match winner, but only as a nominal home-ground lean. The official tour page supports the third ODI and its Windhoek scheduling, not a current series score, rankings gap or availability edge. This price therefore rejects the certainty implied by a single OLBG vote and leaves both sides close to even.",
+        "analysis_words": 52,
+        "source_ids": [
+          "ireland-namibia"
+        ],
+        "olbg_event_id": 188854,
+        "olbg_url": "https://www.olbg.com/tips/Cricket/7"
+      },
+      "review_reasons": "Series score, rankings and current scoring baselines were not captured. Runs handicap: No official recent scoring distribution was captured. Match total: No official recent scoring distribution was captured."
+    },
+    {
+      "id": "cric-eastern",
+      "sport": "cricket",
+      "competition": "CSA Pro20 Cup",
+      "a": "CSA High Performance",
+      "b": "Eastern Storm",
+      "start_utc": "2026-10-25T11:00:00Z",
+      "venue": "Willowmoore Park",
+      "official_id": "CSA upcoming match — Eastern Storm v High Performance",
+      "olbg_event_id": 188848,
+      "olbg_tip": "Eastern Storm — 5/6 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Cricket/7",
+      "source_ids": [
+        "csa-eastern"
+      ],
+      "facts": [
+        "Official page lists Sunday 13:00 local at Willowmoore Park",
+        "CSA names the visitors CSA High Performance"
+      ],
+      "inputs": {},
+      "pricing": {
+        "winner": {
+          "a": 0.48,
+          "b": 0.52
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "b",
+        "label": "Eastern Storm match winner"
+      },
+      "analysis": "Selection: Eastern Storm match winner, strictly as a low-confidence home lean. Willowmoore Park and the Sunday Pro20 listing are official, but the page exposed no current form table or team sheet. The away side is named CSA High Performance here, not relabelled from OLBG. No winning streak or player form is claimed without evidence.",
+      "pricing_note": "A 0.02 home adjustment to an even base is the entire quantitative case. This avoids importing unread form, rankings or player averages into the price.",
+      "availability": "No team sheets or injury updates were exposed on the official match page.",
+      "flags": [
+        "OLBG's South Africa Emerging label differs from CSA's High Performance name; official naming is retained.",
+        "Current form and scoring baselines were not exposed."
+      ],
+      "markets_withheld": [
+        {
+          "market": "Runs handicap",
+          "reason": "No official recent scoring distribution was captured."
+        },
+        {
+          "market": "Match total",
+          "reason": "No official recent scoring distribution was captured."
+        }
+      ],
+      "max_confidence": "Low",
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "CSA High Performance",
+              "probability": 0.48,
+              "decimal": 2.083,
+              "american": 108
+            },
+            {
+              "label": "Eastern Storm",
+              "probability": 0.52,
+              "decimal": 1.923,
+              "american": -108
+            }
+          ],
+          "pricing_note": "A 0.02 home adjustment to an even base is the entire quantitative case. This avoids importing unread form, rankings or player averages into the price.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "cric-eastern",
+        "sport": "cricket",
+        "competition": "CSA Pro20 Cup",
+        "match": "CSA High Performance v Eastern Storm",
+        "start_utc": "2026-10-25T11:00:00Z",
+        "selection": "Eastern Storm match winner",
+        "market": "Match winner",
+        "probability": 0.52,
+        "american": -108,
+        "decimal": 1.923,
+        "confidence": "Low",
+        "confidence_note": "Low confidence: the independent price is close to even or an underdog position.",
+        "match_winner_lean": "Eastern Storm",
+        "match_winner_probability": 0.52,
+        "match_winner_american": -108,
+        "match_winner_confidence": "Low",
+        "analysis": "Selection: Eastern Storm match winner, strictly as a low-confidence home lean. Willowmoore Park and the Sunday Pro20 listing are official, but the page exposed no current form table or team sheet. The away side is named CSA High Performance here, not relabelled from OLBG. No winning streak or player form is claimed without evidence.",
+        "analysis_words": 54,
+        "source_ids": [
+          "csa-eastern"
+        ],
+        "olbg_event_id": 188848,
+        "olbg_url": "https://www.olbg.com/tips/Cricket/7"
+      },
+      "review_reasons": "OLBG's South Africa Emerging label differs from CSA's High Performance name; official naming is retained. Current form and scoring baselines were not exposed. Runs handicap: No official recent scoring distribution was captured. Match total: No official recent scoring distribution was captured."
+    },
+    {
+      "id": "gaa-3532",
+      "sport": "gaelic-sports",
+      "competition": "Galway senior football final",
+      "a": "Salthill-Knocknacarra",
+      "b": "Moycullen",
+      "start_utc": "2026-10-25T16:00:00Z",
+      "venue": "",
+      "official_id": "Galway SFC final",
+      "olbg_event_id": 3532,
+      "olbg_tip": "Salthill +3.50 — 28/47 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Gaelic_Football/25",
+      "source_ids": [
+        "galway-change",
+        "gaa-preview"
+      ],
+      "facts": [
+        "Official notice moves the final to Sunday 16:00",
+        "Moycullen won last year's final by two points"
+      ],
+      "inputs": {
+        "last_final_margin": 2
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.46,
+          "b": 0.54
+        },
+        "spread": {
+          "line_a": 2.5,
+          "sd": 4.5
+        }
+      },
+      "selection": {
+        "market": "spread",
+        "key": "a_cover",
+        "label": "Salthill-Knocknacarra +2.5"
+      },
+      "analysis": "Selection: Salthill-Knocknacarra +2.5. Last year's two-point Moycullen win suggests a narrower final than a large handicap, and Sunday's rescheduled 16:00 slot is supported by Galway's official notice. Moycullen remain the narrow match-winner lean, but Salthill get protection beyond last season's margin. No late team-sheet news is assumed.",
+      "pricing_note": "Winner is close to even after last year's two-point final and home/neutral adjustments. A 4.5-point margin SD sets the handicap prices; no total is invented without scoring averages.",
+      "availability": "The fixture notice does not provide player availability.",
+      "flags": [],
+      "markets_withheld": [
+        {
+          "market": "Total points",
+          "reason": "No official current scoring-average baseline was captured."
+        }
+      ],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Salthill-Knocknacarra",
+              "probability": 0.46,
+              "decimal": 2.174,
+              "american": 117
+            },
+            {
+              "label": "Moycullen",
+              "probability": 0.54,
+              "decimal": 1.852,
+              "american": -117
+            }
+          ],
+          "pricing_note": "Winner is close to even after last year's two-point final and home/neutral adjustments. A 4.5-point margin SD sets the handicap prices; no total is invented without scoring averages.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Salthill-Knocknacarra +2.5",
+              "probability": 0.675489,
+              "decimal": 1.48,
+              "american": -208
+            },
+            {
+              "label": "Moycullen -2.5",
+              "probability": 0.324511,
+              "decimal": 3.082,
+              "american": 208
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 4.5; line from side A +2.5. Push-free half-point lines only.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "gaa-3532",
+        "sport": "gaelic-sports",
+        "competition": "Galway senior football final",
+        "match": "Salthill-Knocknacarra v Moycullen",
+        "start_utc": "2026-10-25T16:00:00Z",
+        "selection": "Salthill-Knocknacarra +2.5",
+        "market": "Handicap / spread",
+        "probability": 0.675489,
+        "american": -208,
+        "decimal": 1.48,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "Moycullen",
+        "match_winner_probability": 0.54,
+        "match_winner_american": -117,
+        "match_winner_confidence": "Low",
+        "analysis": "Selection: Salthill-Knocknacarra +2.5. Last year's two-point Moycullen win suggests a narrower final than a large handicap, and Sunday's rescheduled 16:00 slot is supported by Galway's official notice. Moycullen remain the narrow match-winner lean, but Salthill get protection beyond last season's margin. No late team-sheet news is assumed.",
+        "analysis_words": 49,
+        "source_ids": [
+          "galway-change",
+          "gaa-preview"
+        ],
+        "olbg_event_id": 3532,
+        "olbg_url": "https://www.olbg.com/tips/Gaelic_Football/25"
+      },
+      "review_reasons": "Official venue not captured; field left blank. Total points: No official current scoring-average baseline was captured."
+    },
+    {
+      "id": "gaa-3530",
+      "sport": "gaelic-sports",
+      "competition": "Cork premier senior football final",
+      "a": "St Finbarr's",
+      "b": "Nemo Rangers",
+      "start_utc": "2026-10-25T16:00:00Z",
+      "venue": "",
+      "official_id": "Cork PSFC final",
+      "olbg_event_id": 3530,
+      "olbg_tip": "Nemo +1.50 — 27/31 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Gaelic_Football/25",
+      "source_ids": [
+        "gaa-preview",
+        "cork-final"
+      ],
+      "facts": [
+        "St Finbarr's won last year's final by one point",
+        "Nemo have lost three straight finals"
+      ],
+      "inputs": {
+        "last_final_margin": 1,
+        "nemo_final_loss_streak": 3
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.51,
+          "b": 0.49
+        },
+        "spread": {
+          "line_a": -2.5,
+          "sd": 4.5
+        }
+      },
+      "selection": {
+        "market": "spread",
+        "key": "b_cover",
+        "label": "Nemo Rangers +2.5"
+      },
+      "analysis": "Selection: Nemo Rangers +2.5. Last season's one-point final is direct recent history for a tight rematch, while Nemo's three consecutive final defeats describe pressure without proving decline. St Finbarr's retain a tiny winner edge, but the extra point beyond OLBG's +1.5 is valuable. No late official team-sheet bulletin was attached to the preview.",
+      "pricing_note": "A near-even winner price and 4.5-point margin SD reflect last year's one-point final. The +2.5 cover probability is calculated from that margin distribution, not copied from OLBG's +1.5 listing.",
+      "availability": "No late official availability update was included in the county event or GAA preview.",
+      "flags": [],
+      "markets_withheld": [],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "St Finbarr's",
+              "probability": 0.51,
+              "decimal": 1.961,
+              "american": -104
+            },
+            {
+              "label": "Nemo Rangers",
+              "probability": 0.49,
+              "decimal": 2.041,
+              "american": 104
+            }
+          ],
+          "pricing_note": "A near-even winner price and 4.5-point margin SD reflect last year's one-point final. The +2.5 cover probability is calculated from that margin distribution, not copied from OLBG's +1.5 listing.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "St Finbarr's -2.5",
+              "probability": 0.297887,
+              "decimal": 3.357,
+              "american": 236
+            },
+            {
+              "label": "Nemo Rangers +2.5",
+              "probability": 0.702113,
+              "decimal": 1.424,
+              "american": -236
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 4.5; line from side A -2.5. Push-free half-point lines only.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "gaa-3530",
+        "sport": "gaelic-sports",
+        "competition": "Cork premier senior football final",
+        "match": "St Finbarr's v Nemo Rangers",
+        "start_utc": "2026-10-25T16:00:00Z",
+        "selection": "Nemo Rangers +2.5",
+        "market": "Handicap / spread",
+        "probability": 0.702113,
+        "american": -236,
+        "decimal": 1.424,
+        "confidence": "High",
+        "confidence_note": "Meets probability, price-window and written-analysis gates.",
+        "match_winner_lean": "St Finbarr's",
+        "match_winner_probability": 0.51,
+        "match_winner_american": -104,
+        "match_winner_confidence": "Low",
+        "analysis": "Selection: Nemo Rangers +2.5. Last season's one-point final is direct recent history for a tight rematch, while Nemo's three consecutive final defeats describe pressure without proving decline. St Finbarr's retain a tiny winner edge, but the extra point beyond OLBG's +1.5 is valuable. No late official team-sheet bulletin was attached to the preview.",
+        "analysis_words": 55,
+        "source_ids": [
+          "gaa-preview",
+          "cork-final"
+        ],
+        "olbg_event_id": 3530,
+        "olbg_url": "https://www.olbg.com/tips/Gaelic_Football/25"
+      },
+      "review_reasons": "Official venue not captured; field left blank."
+    },
+    {
+      "id": "gaa-3537",
+      "sport": "gaelic-sports",
+      "competition": "Munster club football",
+      "a": "Kildimo-Pallaskenry",
+      "b": "Fr Casey's",
+      "start_utc": "2026-11-01T15:30:00Z",
+      "venue": "",
+      "official_id": "Munster club championship calendar",
+      "olbg_event_id": 3537,
+      "olbg_tip": "Fr Casey's — 4/7 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Gaelic_Football/25",
+      "source_ids": [
+        "munster-calendar",
+        "limerick-results"
+      ],
+      "facts": [
+        "Fr Casey's won their semi-final by 12",
+        "Kildimo-Pallaskenry won their semi-final by two and quarter-final by five"
+      ],
+      "inputs": {
+        "a_sf_margin": 2,
+        "a_qf_margin": 5,
+        "b_sf_margin": 12
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.34,
+          "b": 0.66
+        },
+        "spread": {
+          "line_a": 3.5,
+          "sd": 5.0
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "b",
+        "label": "Fr Casey's match winner"
+      },
+      "analysis": "Selection: Fr Casey's match winner. Their twelve-point semi-final victory is the strongest recent margin between these sides, while Kildimo-Pallaskenry progressed by two in the semi-final and five in the quarter-final. The official Munster calendar anchors the 1 November fixture. No team-sheet bulletin was read, so the winner is preferred to a larger spread.",
+      "pricing_note": "Recent official victory margins are heavily shrunk before a neutral-venue winner price. Margin SD is five points; the data do not support a total-points price.",
+      "availability": "No official late player-availability update was found with the calendar or results.",
+      "flags": [],
+      "markets_withheld": [
+        {
+          "market": "Total points",
+          "reason": "Winning margins alone do not provide a total-points baseline."
+        }
+      ],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Kildimo-Pallaskenry",
+              "probability": 0.34,
+              "decimal": 2.941,
+              "american": 194
+            },
+            {
+              "label": "Fr Casey's",
+              "probability": 0.66,
+              "decimal": 1.515,
+              "american": -194
+            }
+          ],
+          "pricing_note": "Recent official victory margins are heavily shrunk before a neutral-venue winner price. Margin SD is five points; the data do not support a total-points price.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Kildimo-Pallaskenry +3.5",
+              "probability": 0.613149,
+              "decimal": 1.631,
+              "american": -158
+            },
+            {
+              "label": "Fr Casey's -3.5",
+              "probability": 0.386851,
+              "decimal": 2.585,
+              "american": 158
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 5; line from side A +3.5. Push-free half-point lines only.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "gaa-3537",
+        "sport": "gaelic-sports",
+        "competition": "Munster club football",
+        "match": "Kildimo-Pallaskenry v Fr Casey's",
+        "start_utc": "2026-11-01T15:30:00Z",
+        "selection": "Fr Casey's match winner",
+        "market": "Match winner",
+        "probability": 0.66,
+        "american": -194,
+        "decimal": 1.515,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "Fr Casey's",
+        "match_winner_probability": 0.66,
+        "match_winner_american": -194,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: Fr Casey's match winner. Their twelve-point semi-final victory is the strongest recent margin between these sides, while Kildimo-Pallaskenry progressed by two in the semi-final and five in the quarter-final. The official Munster calendar anchors the 1 November fixture. No team-sheet bulletin was read, so the winner is preferred to a larger spread.",
+        "analysis_words": 53,
+        "source_ids": [
+          "munster-calendar",
+          "limerick-results"
+        ],
+        "olbg_event_id": 3537,
+        "olbg_url": "https://www.olbg.com/tips/Gaelic_Football/25"
+      },
+      "review_reasons": "Official venue not captured; field left blank. Total points: Winning margins alone do not provide a total-points baseline."
+    },
+    {
+      "id": "gaa-714",
+      "sport": "gaelic-sports",
+      "competition": "Kilkenny senior hurling final",
+      "a": "Tullaroan",
+      "b": "Ballyhale Shamrocks",
+      "start_utc": "2026-10-25T13:40:00Z",
+      "venue": "UPMC Nowlan Park",
+      "official_id": "Kilkenny SHC final",
+      "olbg_event_id": 714,
+      "olbg_tip": "Tullaroan +3.50 — 20/27 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Gaelic_Football/25",
+      "source_ids": [
+        "kilkenny-final",
+        "gaa-preview"
+      ],
+      "facts": [
+        "Tullaroan reach their first final since 1994",
+        "Kilkenny's official preview describes Ballyhale as warm favourites with strong scoring forwards"
+      ],
+      "inputs": {
+        "tullaroan_last_final_year": 1994
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.25,
+          "b": 0.75
+        },
+        "spread": {
+          "line_a": 5.5,
+          "sd": 5.5
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "b",
+        "label": "Ballyhale Shamrocks match winner"
+      },
+      "analysis": "Selection: Ballyhale Shamrocks match winner. Kilkenny's official final preview calls Ballyhale warm favourites and highlights their scoring forwards, while Tullaroan are in a first final since 1994. That long-awaited return makes the underdog story compelling but does not erase the performance gap. No official injury list was read, so the moneyline is safer than an aggressive handicap.",
+      "pricing_note": "Winner uses the official final preview's relative strength assessment with regression for final variance. Handicap uses a 5.5-point margin SD; no total is priced without official scoring averages.",
+      "availability": "No complete official injury list accompanied the county final preview.",
+      "flags": [],
+      "markets_withheld": [],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Tullaroan",
+              "probability": 0.25,
+              "decimal": 4.0,
+              "american": 300
+            },
+            {
+              "label": "Ballyhale Shamrocks",
+              "probability": 0.75,
+              "decimal": 1.333,
+              "american": -300
+            }
+          ],
+          "pricing_note": "Winner uses the official final preview's relative strength assessment with regression for final variance. Handicap uses a 5.5-point margin SD; no total is priced without official scoring averages.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Tullaroan +5.5",
+              "probability": 0.627603,
+              "decimal": 1.593,
+              "american": -169
+            },
+            {
+              "label": "Ballyhale Shamrocks -5.5",
+              "probability": 0.372397,
+              "decimal": 2.685,
+              "american": 169
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 5.5; line from side A +5.5. Push-free half-point lines only.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "gaa-714",
+        "sport": "gaelic-sports",
+        "competition": "Kilkenny senior hurling final",
+        "match": "Tullaroan v Ballyhale Shamrocks",
+        "start_utc": "2026-10-25T13:40:00Z",
+        "selection": "Ballyhale Shamrocks match winner",
+        "market": "Match winner",
+        "probability": 0.75,
+        "american": -300,
+        "decimal": 1.333,
+        "confidence": "Medium",
+        "confidence_note": "Fair price is shorter than -250, outside the requested High window.",
+        "match_winner_lean": "Ballyhale Shamrocks",
+        "match_winner_probability": 0.75,
+        "match_winner_american": -300,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: Ballyhale Shamrocks match winner. Kilkenny's official final preview calls Ballyhale warm favourites and highlights their scoring forwards, while Tullaroan are in a first final since 1994. That long-awaited return makes the underdog story compelling but does not erase the performance gap. No official injury list was read, so the moneyline is safer than an aggressive handicap.",
+        "analysis_words": 57,
+        "source_ids": [
+          "kilkenny-final",
+          "gaa-preview"
+        ],
+        "olbg_event_id": 714,
+        "olbg_url": "https://www.olbg.com/tips/Gaelic_Football/25"
+      },
+      "review_reasons": ""
+    },
+    {
+      "id": "ten-902251",
+      "sport": "tennis",
+      "competition": "ATP Almaty final",
+      "a": "Daniil Medvedev",
+      "b": "Nikoloz Basilashvili",
+      "start_utc": "2026-10-25T10:00:00Z",
+      "venue": "Center Court, Almaty",
+      "official_id": "Almaty 9410 final",
+      "olbg_event_id": 902251,
+      "olbg_tip": "Medvedev — 7/8 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Tennis/3",
+      "source_ids": [
+        "atp-almaty-report",
+        "atp-almaty-schedule",
+        "atp-medvedev",
+        "atp-basilashvili"
+      ],
+      "facts": [
+        "Medvedev rank 5, 45-18, three titles; Basilashvili rank 128, 7-10",
+        "Medvedev has 37 hard-court wins and a 10-1 Almaty record",
+        "Medvedev leads their head-to-head 1-0; Basilashvili won a three-set semi-final"
+      ],
+      "inputs": {
+        "rank_a": 5,
+        "rank_b": 128,
+        "hard_wins_a": 37,
+        "almaty_a": "10-1",
+        "h2h_a": 1
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.84,
+          "b": 0.16
+        },
+        "spread": {
+          "line_a": -2.5,
+          "sd": 5.4
+        },
+        "total": {
+          "line": 21.5,
+          "mean": 21.4,
+          "kind": "normal",
+          "sd": 3.4
+        }
+      },
+      "selection": {
+        "market": "spread",
+        "key": "a_cover",
+        "label": "Daniil Medvedev -2.5 games"
+      },
+      "analysis": "Selection: Daniil Medvedev -2.5 games. His Tour-leading 37 hard-court wins, 10-1 Almaty record and rank-five profile overwhelm Basilashvili's 7-10 season line. Basilashvili needed three sets against Tsitsipas, while Bublik's retirement shortened Medvedev's semi-final; that is workload context, not an injury claim about either finalist. Medvedev also leads their head-to-head 1-0.",
+      "pricing_note": "Ranking, surface wins, tournament history and head-to-head feed an 84% match price. A 5.4-game margin SD converts that strength into the -2.5 cover price; total games use mean 21.4 and SD 3.4.",
+      "availability": "Bublik's retirement affected Medvedev's workload only; no injury is asserted for Medvedev or Basilashvili.",
+      "flags": [],
+      "markets_withheld": [],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Daniil Medvedev",
+              "probability": 0.84,
+              "decimal": 1.19,
+              "american": -525
+            },
+            {
+              "label": "Nikoloz Basilashvili",
+              "probability": 0.16,
+              "decimal": 6.25,
+              "american": 525
+            }
+          ],
+          "pricing_note": "Ranking, surface wins, tournament history and head-to-head feed an 84% match price. A 5.4-game margin SD converts that strength into the -2.5 cover price; total games use mean 21.4 and SD 3.4.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Daniil Medvedev -2.5",
+              "probability": 0.702462,
+              "decimal": 1.424,
+              "american": -236
+            },
+            {
+              "label": "Nikoloz Basilashvili +2.5",
+              "probability": 0.297538,
+              "decimal": 3.361,
+              "american": 236
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 5.4; line from side A -2.5. Push-free half-point lines only.",
+          "overround": 1.0
+        },
+        {
+          "market": "Total",
+          "unit": "match total",
+          "outcomes": [
+            {
+              "label": "Over 21.5",
+              "probability": 0.488268,
+              "decimal": 2.048,
+              "american": 105
+            },
+            {
+              "label": "Under 21.5",
+              "probability": 0.511732,
+              "decimal": 1.954,
+              "american": -105
+            }
+          ],
+          "pricing_note": "Normal total, mean 21.4, SD 3.4; no-vig complementary prices.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "ten-902251",
+        "sport": "tennis",
+        "competition": "ATP Almaty final",
+        "match": "Daniil Medvedev v Nikoloz Basilashvili",
+        "start_utc": "2026-10-25T10:00:00Z",
+        "selection": "Daniil Medvedev -2.5 games",
+        "market": "Handicap / spread",
+        "probability": 0.702462,
+        "american": -236,
+        "decimal": 1.424,
+        "confidence": "High",
+        "confidence_note": "Meets probability, price-window and written-analysis gates.",
+        "match_winner_lean": "Daniil Medvedev",
+        "match_winner_probability": 0.84,
+        "match_winner_american": -525,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: Daniil Medvedev -2.5 games. His Tour-leading 37 hard-court wins, 10-1 Almaty record and rank-five profile overwhelm Basilashvili's 7-10 season line. Basilashvili needed three sets against Tsitsipas, while Bublik's retirement shortened Medvedev's semi-final; that is workload context, not an injury claim about either finalist. Medvedev also leads their head-to-head 1-0.",
+        "analysis_words": 51,
+        "source_ids": [
+          "atp-almaty-report",
+          "atp-almaty-schedule",
+          "atp-medvedev",
+          "atp-basilashvili"
+        ],
+        "olbg_event_id": 902251,
+        "olbg_url": "https://www.olbg.com/tips/Tennis/3"
+      },
+      "review_reasons": ""
+    },
+    {
+      "id": "ten-902253",
+      "sport": "tennis",
+      "competition": "ATP Lyon final",
+      "a": "Taylor Fritz",
+      "b": "Lorenzo Musetti",
+      "start_utc": "",
+      "venue": "Lyon indoor hard",
+      "official_id": "Lyon 496 final",
+      "olbg_event_id": 902253,
+      "olbg_tip": "Fritz — 1/2 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Tennis/3",
+      "source_ids": [
+        "atp-lyon-report",
+        "atp-fritz",
+        "atp-musetti"
+      ],
+      "facts": [
+        "Fritz rank 14, 34-19; Musetti rank 26, 20-12",
+        "Fritz hit 15 aces and saved nine break points in his semi-final",
+        "Musetti saved four match points and won 4-6 6-2 7-5; he leads Fritz 4-3 head-to-head"
+      ],
+      "inputs": {
+        "rank_a": 14,
+        "rank_b": 26,
+        "aces_a_sf": 15,
+        "break_points_saved_a_sf": 9,
+        "h2h_b": 4,
+        "h2h_a": 3
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.56,
+          "b": 0.44
+        },
+        "spread": {
+          "line_a": -1.5,
+          "sd": 5.4
+        },
+        "total": {
+          "line": 22.5,
+          "mean": 22.7,
+          "kind": "normal",
+          "sd": 3.4
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "a",
+        "label": "Taylor Fritz match winner"
+      },
+      "analysis": "Selection: Taylor Fritz match winner. Fifteen aces and nine break points saved show how effectively his serve protected the semi-final, but Musetti's four saved match points and 4-3 head-to-head lead make this a narrow call. Musetti also completed the longer three-set match. No final-day medical bulletin or official start time was read, so confidence stays medium.",
+      "pricing_note": "Fritz receives a small ranking and serve-performance edge, offset by Musetti's head-to-head lead and semi-final resilience. A 5.4-game margin SD and a 22.7-game total mean price secondary markets.",
+      "availability": "No final-day medical bulletin was read; the official Sunday start time remains blank.",
+      "flags": [
+        "Official final start time was not exposed in the readable schedule response."
+      ],
+      "markets_withheld": [
+        {
+          "market": "Player ace props",
+          "reason": "One semi-final ace total is not a sufficient official baseline."
+        }
+      ],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Taylor Fritz",
+              "probability": 0.56,
+              "decimal": 1.786,
+              "american": -127
+            },
+            {
+              "label": "Lorenzo Musetti",
+              "probability": 0.44,
+              "decimal": 2.273,
+              "american": 127
+            }
+          ],
+          "pricing_note": "Fritz receives a small ranking and serve-performance edge, offset by Musetti's head-to-head lead and semi-final resilience. A 5.4-game margin SD and a 22.7-game total mean price secondary markets.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Taylor Fritz -1.5",
+              "probability": 0.449546,
+              "decimal": 2.224,
+              "american": 122
+            },
+            {
+              "label": "Lorenzo Musetti +1.5",
+              "probability": 0.550454,
+              "decimal": 1.817,
+              "american": -122
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 5.4; line from side A -1.5. Push-free half-point lines only.",
+          "overround": 1.0
+        },
+        {
+          "market": "Total",
+          "unit": "match total",
+          "outcomes": [
+            {
+              "label": "Over 22.5",
+              "probability": 0.523454,
+              "decimal": 1.91,
+              "american": -110
+            },
+            {
+              "label": "Under 22.5",
+              "probability": 0.476546,
+              "decimal": 2.098,
+              "american": 110
+            }
+          ],
+          "pricing_note": "Normal total, mean 22.7, SD 3.4; no-vig complementary prices.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "ten-902253",
+        "sport": "tennis",
+        "competition": "ATP Lyon final",
+        "match": "Taylor Fritz v Lorenzo Musetti",
+        "start_utc": "",
+        "selection": "Taylor Fritz match winner",
+        "market": "Match winner",
+        "probability": 0.56,
+        "american": -127,
+        "decimal": 1.786,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "Taylor Fritz",
+        "match_winner_probability": 0.56,
+        "match_winner_american": -127,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: Taylor Fritz match winner. Fifteen aces and nine break points saved show how effectively his serve protected the semi-final, but Musetti's four saved match points and 4-3 head-to-head lead make this a narrow call. Musetti also completed the longer three-set match. No final-day medical bulletin or official start time was read, so confidence stays medium.",
+        "analysis_words": 56,
+        "source_ids": [
+          "atp-lyon-report",
+          "atp-fritz",
+          "atp-musetti"
+        ],
+        "olbg_event_id": 902253,
+        "olbg_url": "https://www.olbg.com/tips/Tennis/3"
+      },
+      "review_reasons": "Official final start time was not exposed in the readable schedule response. Player ace props: One semi-final ace total is not a sufficient official baseline."
+    },
+    {
+      "id": "hb-12152",
+      "sport": "handball",
+      "competition": "Handbollsligan",
+      "a": "Ystad IF",
+      "b": "Hammarby IF",
+      "start_utc": "2026-10-25T13:00:00Z",
+      "venue": "",
+      "official_id": "Handbollsligan 25 Oct",
+      "olbg_event_id": 12152,
+      "olbg_tip": "Tie — 7/7 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Handball/20",
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "facts": [
+        "Ystad: five matches, five points, +12",
+        "Hammarby: eight matches, six points, +8"
+      ],
+      "inputs": {
+        "a_played": 5,
+        "a_points": 5,
+        "a_gd": 12,
+        "b_played": 8,
+        "b_points": 6,
+        "b_gd": 8
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.43,
+          "draw": 0.07,
+          "b": 0.5
+        },
+        "spread": {
+          "line_a": 1.5,
+          "sd": 6.0
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "b",
+        "label": "Hammarby IF match winner"
+      },
+      "analysis": "Selection: Hammarby IF match winner. Ystad's +12 goal difference is better, but Hammarby have accumulated six points across the longer eight-match schedule and receive a narrow overall edge. The repeated OLBG tie vote is treated as an irregularity, not evidence. With no official late team sheet or scoring-total baseline, the three-way winner remains deliberately modest.",
+      "pricing_note": "Played-adjusted points and goal difference are shrunk before a 7% draw allowance. Handicap prices use a six-goal margin SD; no match total is published without goals-for/against data.",
+      "availability": "No official late team-sheet or injury bulletin was exposed on the league page.",
+      "flags": [
+        "OLBG's unanimous tie selection is logged as an irregularity, not adopted."
+      ],
+      "markets_withheld": [
+        {
+          "market": "Total goals",
+          "reason": "The official standings read supplied goal difference, not total-goals averages."
+        }
+      ],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Ystad IF",
+              "probability": 0.43,
+              "decimal": 2.326,
+              "american": 133
+            },
+            {
+              "label": "Draw",
+              "probability": 0.07,
+              "decimal": 14.286,
+              "american": 1329
+            },
+            {
+              "label": "Hammarby IF",
+              "probability": 0.5,
+              "decimal": 2.0,
+              "american": -100
+            }
+          ],
+          "pricing_note": "Played-adjusted points and goal difference are shrunk before a 7% draw allowance. Handicap prices use a six-goal margin SD; no match total is published without goals-for/against data.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Ystad IF +1.5",
+              "probability": 0.561796,
+              "decimal": 1.78,
+              "american": -128
+            },
+            {
+              "label": "Hammarby IF -1.5",
+              "probability": 0.438204,
+              "decimal": 2.282,
+              "american": 128
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 6; line from side A +1.5. Push-free half-point lines only.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "hb-12152",
+        "sport": "handball",
+        "competition": "Handbollsligan",
+        "match": "Ystad IF v Hammarby IF",
+        "start_utc": "2026-10-25T13:00:00Z",
+        "selection": "Hammarby IF match winner",
+        "market": "Match winner",
+        "probability": 0.5,
+        "american": -100,
+        "decimal": 2.0,
+        "confidence": "Low",
+        "confidence_note": "Low confidence: the independent price is close to even or an underdog position.",
+        "match_winner_lean": "Hammarby IF",
+        "match_winner_probability": 0.5,
+        "match_winner_american": -100,
+        "match_winner_confidence": "Low",
+        "analysis": "Selection: Hammarby IF match winner. Ystad's +12 goal difference is better, but Hammarby have accumulated six points across the longer eight-match schedule and receive a narrow overall edge. The repeated OLBG tie vote is treated as an irregularity, not evidence. With no official late team sheet or scoring-total baseline, the three-way winner remains deliberately modest.",
+        "analysis_words": 55,
+        "source_ids": [
+          "handbollsligan"
+        ],
+        "olbg_event_id": 12152,
+        "olbg_url": "https://www.olbg.com/tips/Handball/20"
+      },
+      "review_reasons": "OLBG's unanimous tie selection is logged as an irregularity, not adopted. Official venue not captured; field left blank. Total goals: The official standings read supplied goal difference, not total-goals averages."
+    },
+    {
+      "id": "hb-12144",
+      "sport": "handball",
+      "competition": "Handbollsligan",
+      "a": "Amo HK",
+      "b": "Malmö",
+      "start_utc": "2026-10-25T15:15:00Z",
+      "venue": "",
+      "official_id": "Handbollsligan 25 Oct",
+      "olbg_event_id": 12144,
+      "olbg_tip": "Tie — 4/5 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Handball/20",
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "facts": [
+        "Amo: seven matches, six points, +9",
+        "No current Malmö row was preserved from the official standings read"
+      ],
+      "inputs": {
+        "a_played": 7,
+        "a_points": 6,
+        "a_gd": 9
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.5,
+          "draw": 0.07,
+          "b": 0.43
+        },
+        "spread": {
+          "line_a": -1.5,
+          "sd": 6.0
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "a",
+        "label": "Amo HK match winner"
+      },
+      "analysis": "Selection: Amo HK match winner, with low confidence. Amo's six points and +9 across seven matches are official, but the preserved standings read did not retain a comparable Malmö line. That missing opponent baseline prevents a stronger case and blocks a total price. OLBG's tie-heavy vote is not used as a substitute for handball form or player availability.",
+      "pricing_note": "Only Amo's supported record and a conservative generic home adjustment contribute; the missing Malmö row forces a near-even price and low-confidence cap. Draw allowance is 7%.",
+      "availability": "No official late availability bulletin was read for either team.",
+      "flags": [
+        "Malmö's current official standings row was not preserved; the fixture remains only because the official schedule confirms the pairing."
+      ],
+      "markets_withheld": [
+        {
+          "market": "Total goals",
+          "reason": "Comparable team scoring averages were not available."
+        }
+      ],
+      "max_confidence": "Low",
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Amo HK",
+              "probability": 0.5,
+              "decimal": 2.0,
+              "american": -100
+            },
+            {
+              "label": "Draw",
+              "probability": 0.07,
+              "decimal": 14.286,
+              "american": 1329
+            },
+            {
+              "label": "Malmö",
+              "probability": 0.43,
+              "decimal": 2.326,
+              "american": 133
+            }
+          ],
+          "pricing_note": "Only Amo's supported record and a conservative generic home adjustment contribute; the missing Malmö row forces a near-even price and low-confidence cap. Draw allowance is 7%.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Amo HK -1.5",
+              "probability": 0.438204,
+              "decimal": 2.282,
+              "american": 128
+            },
+            {
+              "label": "Malmö +1.5",
+              "probability": 0.561796,
+              "decimal": 1.78,
+              "american": -128
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 6; line from side A -1.5. Push-free half-point lines only.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "hb-12144",
+        "sport": "handball",
+        "competition": "Handbollsligan",
+        "match": "Amo HK v Malmö",
+        "start_utc": "2026-10-25T15:15:00Z",
+        "selection": "Amo HK match winner",
+        "market": "Match winner",
+        "probability": 0.5,
+        "american": -100,
+        "decimal": 2.0,
+        "confidence": "Low",
+        "confidence_note": "Low confidence: the independent price is close to even or an underdog position.",
+        "match_winner_lean": "Amo HK",
+        "match_winner_probability": 0.5,
+        "match_winner_american": -100,
+        "match_winner_confidence": "Low",
+        "analysis": "Selection: Amo HK match winner, with low confidence. Amo's six points and +9 across seven matches are official, but the preserved standings read did not retain a comparable Malmö line. That missing opponent baseline prevents a stronger case and blocks a total price. OLBG's tie-heavy vote is not used as a substitute for handball form or player availability.",
+        "analysis_words": 58,
+        "source_ids": [
+          "handbollsligan"
+        ],
+        "olbg_event_id": 12144,
+        "olbg_url": "https://www.olbg.com/tips/Handball/20"
+      },
+      "review_reasons": "Malmö's current official standings row was not preserved; the fixture remains only because the official schedule confirms the pairing. Official venue not captured; field left blank. Total goals: Comparable team scoring averages were not available."
+    },
+    {
+      "id": "hb-12148",
+      "sport": "handball",
+      "competition": "Handbollsligan",
+      "a": "HIF Karlskrona",
+      "b": "IFK Kristianstad",
+      "start_utc": "2026-10-25T15:00:00Z",
+      "venue": "",
+      "official_id": "Handbollsligan 25 Oct",
+      "olbg_event_id": 12148,
+      "olbg_tip": "HIF Karlskrona — 2/4 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Handball/20",
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "facts": [
+        "Karlskrona: six matches, six points, -5",
+        "Kristianstad: eight matches, five points, +4"
+      ],
+      "inputs": {
+        "a_played": 6,
+        "a_points": 6,
+        "a_gd": -5,
+        "b_played": 8,
+        "b_points": 5,
+        "b_gd": 4
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.3,
+          "draw": 0.07,
+          "b": 0.63
+        },
+        "spread": {
+          "line_a": 3.5,
+          "sd": 6.0
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "b",
+        "label": "IFK Kristianstad match winner"
+      },
+      "analysis": "Selection: IFK Kristianstad match winner. Karlskrona have one more point but a negative goal difference, while Kristianstad's +4 supplies the stronger efficiency signal after adjusting for games played. The independent price therefore opposes OLBG's home lean. No official late team sheet was exposed, which prevents upgrading the visitor to the highest tier.",
+      "pricing_note": "Goal difference per match and played-adjusted points drive the away lean; draw is 7% and margin SD six goals. Totals remain unsupported by the standings fields.",
+      "availability": "No official late team-sheet or injury bulletin was exposed.",
+      "flags": [],
+      "markets_withheld": [],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "HIF Karlskrona",
+              "probability": 0.3,
+              "decimal": 3.333,
+              "american": 233
+            },
+            {
+              "label": "Draw",
+              "probability": 0.07,
+              "decimal": 14.286,
+              "american": 1329
+            },
+            {
+              "label": "IFK Kristianstad",
+              "probability": 0.63,
+              "decimal": 1.587,
+              "american": -170
+            }
+          ],
+          "pricing_note": "Goal difference per match and played-adjusted points drive the away lean; draw is 7% and margin SD six goals. Totals remain unsupported by the standings fields.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "HIF Karlskrona +3.5",
+              "probability": 0.548883,
+              "decimal": 1.822,
+              "american": -122
+            },
+            {
+              "label": "IFK Kristianstad -3.5",
+              "probability": 0.451117,
+              "decimal": 2.217,
+              "american": 122
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 6; line from side A +3.5. Push-free half-point lines only.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "hb-12148",
+        "sport": "handball",
+        "competition": "Handbollsligan",
+        "match": "HIF Karlskrona v IFK Kristianstad",
+        "start_utc": "2026-10-25T15:00:00Z",
+        "selection": "IFK Kristianstad match winner",
+        "market": "Match winner",
+        "probability": 0.63,
+        "american": -170,
+        "decimal": 1.587,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "IFK Kristianstad",
+        "match_winner_probability": 0.63,
+        "match_winner_american": -170,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: IFK Kristianstad match winner. Karlskrona have one more point but a negative goal difference, while Kristianstad's +4 supplies the stronger efficiency signal after adjusting for games played. The independent price therefore opposes OLBG's home lean. No official late team sheet was exposed, which prevents upgrading the visitor to the highest tier.",
+        "analysis_words": 52,
+        "source_ids": [
+          "handbollsligan"
+        ],
+        "olbg_event_id": 12148,
+        "olbg_url": "https://www.olbg.com/tips/Handball/20"
+      },
+      "review_reasons": "Official venue not captured; field left blank."
+    },
+    {
+      "id": "hb-12149",
+      "sport": "handball",
+      "competition": "Handbollsligan",
+      "a": "Lugi HF",
+      "b": "HK Skövde",
+      "start_utc": "2026-10-25T16:00:00Z",
+      "venue": "",
+      "official_id": "Handbollsligan 25 Oct",
+      "olbg_event_id": 12149,
+      "olbg_tip": "Tie — 2/3 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Handball/20",
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "facts": [
+        "Lugi: four matches, six points, -8",
+        "Skövde: six matches, five points, -5"
+      ],
+      "inputs": {
+        "a_played": 4,
+        "a_points": 6,
+        "a_gd": -8,
+        "b_played": 6,
+        "b_points": 5,
+        "b_gd": -5
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.56,
+          "draw": 0.07,
+          "b": 0.37
+        },
+        "spread": {
+          "line_a": -1.5,
+          "sd": 6.0
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "a",
+        "label": "Lugi HF match winner"
+      },
+      "analysis": "Selection: Lugi HF match winner. Six points from four matches is a stronger return than Skövde's five from six, even though both goal differences are negative. Home advantage reinforces Lugi's played-adjusted edge. The league page did not expose a late injury bulletin or total-goals averages, so this stays a medium three-way selection rather than a large handicap.",
+      "pricing_note": "Points per match receive more weight than raw totals, with goal difference and home advantage secondary. A 7% draw allowance and six-goal margin SD complete the prices.",
+      "availability": "No official late availability bulletin was read.",
+      "flags": [],
+      "markets_withheld": [],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Lugi HF",
+              "probability": 0.56,
+              "decimal": 1.786,
+              "american": -127
+            },
+            {
+              "label": "Draw",
+              "probability": 0.07,
+              "decimal": 14.286,
+              "american": 1329
+            },
+            {
+              "label": "HK Skövde",
+              "probability": 0.37,
+              "decimal": 2.703,
+              "american": 170
+            }
+          ],
+          "pricing_note": "Points per match receive more weight than raw totals, with goal difference and home advantage secondary. A 7% draw allowance and six-goal margin SD complete the prices.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Lugi HF -1.5",
+              "probability": 0.503558,
+              "decimal": 1.986,
+              "american": -101
+            },
+            {
+              "label": "HK Skövde +1.5",
+              "probability": 0.496442,
+              "decimal": 2.014,
+              "american": 101
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 6; line from side A -1.5. Push-free half-point lines only.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "hb-12149",
+        "sport": "handball",
+        "competition": "Handbollsligan",
+        "match": "Lugi HF v HK Skövde",
+        "start_utc": "2026-10-25T16:00:00Z",
+        "selection": "Lugi HF match winner",
+        "market": "Match winner",
+        "probability": 0.56,
+        "american": -127,
+        "decimal": 1.786,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "Lugi HF",
+        "match_winner_probability": 0.56,
+        "match_winner_american": -127,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: Lugi HF match winner. Six points from four matches is a stronger return than Skövde's five from six, even though both goal differences are negative. Home advantage reinforces Lugi's played-adjusted edge. The league page did not expose a late injury bulletin or total-goals averages, so this stays a medium three-way selection rather than a large handicap.",
+        "analysis_words": 57,
+        "source_ids": [
+          "handbollsligan"
+        ],
+        "olbg_event_id": 12149,
+        "olbg_url": "https://www.olbg.com/tips/Handball/20"
+      },
+      "review_reasons": "Official venue not captured; field left blank."
+    },
+    {
+      "id": "hb-12147",
+      "sport": "handball",
+      "competition": "Handbollsligan",
+      "a": "Alingsås HK",
+      "b": "Önnereds HK",
+      "start_utc": "2026-10-25T16:30:00Z",
+      "venue": "",
+      "official_id": "Handbollsligan 25 Oct",
+      "olbg_event_id": 12147,
+      "olbg_tip": "Tie — 2/3 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Handball/20",
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "facts": [
+        "Alingsås: six matches, six points, +7",
+        "Önnereds: four matches, six points, -11"
+      ],
+      "inputs": {
+        "a_played": 6,
+        "a_points": 6,
+        "a_gd": 7,
+        "b_played": 4,
+        "b_points": 6,
+        "b_gd": -11
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.62,
+          "draw": 0.07,
+          "b": 0.31
+        },
+        "spread": {
+          "line_a": -2.5,
+          "sd": 6.0
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "a",
+        "label": "Alingsås HK match winner"
+      },
+      "analysis": "Selection: Alingsås HK match winner. Both clubs have six points, but Alingsås' +7 goal difference contrasts sharply with Önnereds' -11. The visitor's points have come in fewer matches, preventing an exaggerated gap, yet home advantage and defensive differential still favour Alingsås. No official late team sheet or scoring-total baseline was available.",
+      "pricing_note": "Equal raw points are adjusted for matches played and goal difference, followed by home advantage and a 7% draw allowance. Margin SD is six goals.",
+      "availability": "No official late team-sheet or injury bulletin was read.",
+      "flags": [],
+      "markets_withheld": [],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Alingsås HK",
+              "probability": 0.62,
+              "decimal": 1.613,
+              "american": -163
+            },
+            {
+              "label": "Draw",
+              "probability": 0.07,
+              "decimal": 14.286,
+              "american": 1329
+            },
+            {
+              "label": "Önnereds HK",
+              "probability": 0.31,
+              "decimal": 3.226,
+              "american": 223
+            }
+          ],
+          "pricing_note": "Equal raw points are adjusted for matches played and goal difference, followed by home advantage and a 7% draw allowance. Margin SD is six goals.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Alingsås HK -2.5",
+              "probability": 0.505609,
+              "decimal": 1.978,
+              "american": -102
+            },
+            {
+              "label": "Önnereds HK +2.5",
+              "probability": 0.494391,
+              "decimal": 2.023,
+              "american": 102
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 6; line from side A -2.5. Push-free half-point lines only.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "hb-12147",
+        "sport": "handball",
+        "competition": "Handbollsligan",
+        "match": "Alingsås HK v Önnereds HK",
+        "start_utc": "2026-10-25T16:30:00Z",
+        "selection": "Alingsås HK match winner",
+        "market": "Match winner",
+        "probability": 0.62,
+        "american": -163,
+        "decimal": 1.613,
+        "confidence": "Medium",
+        "confidence_note": "Medium confidence; probability or price-window gate limits a higher grade.",
+        "match_winner_lean": "Alingsås HK",
+        "match_winner_probability": 0.62,
+        "match_winner_american": -163,
+        "match_winner_confidence": "Medium",
+        "analysis": "Selection: Alingsås HK match winner. Both clubs have six points, but Alingsås' +7 goal difference contrasts sharply with Önnereds' -11. The visitor's points have come in fewer matches, preventing an exaggerated gap, yet home advantage and defensive differential still favour Alingsås. No official late team sheet or scoring-total baseline was available.",
+        "analysis_words": 51,
+        "source_ids": [
+          "handbollsligan"
+        ],
+        "olbg_event_id": 12147,
+        "olbg_url": "https://www.olbg.com/tips/Handball/20"
+      },
+      "review_reasons": "Official venue not captured; field left blank."
+    },
+    {
+      "id": "hb-12081",
+      "sport": "handball",
+      "competition": "French Starligue",
+      "a": "Saran",
+      "b": "Montpellier",
+      "start_utc": "2026-10-25T16:00:00Z",
+      "venue": "",
+      "official_id": "LNH Starligue 25 Oct",
+      "olbg_event_id": 12081,
+      "olbg_tip": "Tie — 2/2 tip share",
+      "olbg_url": "https://www.olbg.com/tips/Handball/20",
+      "source_ids": [
+        "lnh-calendar",
+        "lnh-table"
+      ],
+      "facts": [
+        "Montpellier fourth: 10 points from seven, +29",
+        "Saran 11th: six points from seven, -14"
+      ],
+      "inputs": {
+        "a_played": 7,
+        "a_points": 6,
+        "a_gd": -14,
+        "b_played": 7,
+        "b_points": 10,
+        "b_gd": 29
+      },
+      "pricing": {
+        "winner": {
+          "a": 0.22,
+          "draw": 0.07,
+          "b": 0.71
+        },
+        "spread": {
+          "line_a": 3.5,
+          "sd": 6.0
+        },
+        "total": {
+          "line": 58.5,
+          "mean": 58.0,
+          "kind": "normal",
+          "sd": 9.0
+        }
+      },
+      "selection": {
+        "market": "winner",
+        "key": "b",
+        "label": "Montpellier match winner"
+      },
+      "analysis": "Selection: Montpellier match winner. Their fourth-place return of ten points and +29 goal difference clearly outclasses Saran's six points and -14 across the same seven-match span. Home court reinforces that official statistical gap. No late official injury bulletin was attached to the calendar, so the position stays on match result rather than expanding into a larger handicap.",
+      "pricing_note": "Equal-game table points and goal difference drive the 71% home price, with a 7% draw allowance. The total uses a 58-goal mean and nine-goal SD as explicit analytic assumptions.",
+      "availability": "No late official injury bulletin accompanied the calendar or standings read.",
+      "flags": [],
+      "markets_withheld": [],
+      "max_confidence": null,
+      "state": "upcoming",
+      "markets": [
+        {
+          "market": "Match winner",
+          "unit": "winner",
+          "outcomes": [
+            {
+              "label": "Saran",
+              "probability": 0.22,
+              "decimal": 4.545,
+              "american": 355
+            },
+            {
+              "label": "Draw",
+              "probability": 0.07,
+              "decimal": 14.286,
+              "american": 1329
+            },
+            {
+              "label": "Montpellier",
+              "probability": 0.71,
+              "decimal": 1.408,
+              "american": -245
+            }
+          ],
+          "pricing_note": "Equal-game table points and goal difference drive the 71% home price, with a 7% draw allowance. The total uses a 58-goal mean and nine-goal SD as explicit analytic assumptions.",
+          "overround": 1.0
+        },
+        {
+          "market": "Handicap / spread",
+          "unit": "points/games/sets as labelled",
+          "outcomes": [
+            {
+              "label": "Saran +3.5",
+              "probability": 0.446669,
+              "decimal": 2.239,
+              "american": 124
+            },
+            {
+              "label": "Montpellier -3.5",
+              "probability": 0.553331,
+              "decimal": 1.807,
+              "american": -124
+            }
+          ],
+          "pricing_note": "Normal winning-margin assumption, SD 6; line from side A +3.5. Push-free half-point lines only.",
+          "overround": 1.0
+        },
+        {
+          "market": "Total",
+          "unit": "match total",
+          "outcomes": [
+            {
+              "label": "Over 58.5",
+              "probability": 0.477848,
+              "decimal": 2.093,
+              "american": 109
+            },
+            {
+              "label": "Under 58.5",
+              "probability": 0.522152,
+              "decimal": 1.915,
+              "american": -109
+            }
+          ],
+          "pricing_note": "Normal total, mean 58, SD 9; no-vig complementary prices.",
+          "overround": 1.0
+        }
+      ],
+      "pick": {
+        "fixture_id": "hb-12081",
+        "sport": "handball",
+        "competition": "French Starligue",
+        "match": "Saran v Montpellier",
+        "start_utc": "2026-10-25T16:00:00Z",
+        "selection": "Montpellier match winner",
+        "market": "Match winner",
+        "probability": 0.71,
+        "american": -245,
+        "decimal": 1.408,
+        "confidence": "High",
+        "confidence_note": "Meets probability, price-window and written-analysis gates.",
+        "match_winner_lean": "Montpellier",
+        "match_winner_probability": 0.71,
+        "match_winner_american": -245,
+        "match_winner_confidence": "High",
+        "analysis": "Selection: Montpellier match winner. Their fourth-place return of ten points and +29 goal difference clearly outclasses Saran's six points and -14 across the same seven-match span. Home court reinforces that official statistical gap. No late official injury bulletin was attached to the calendar, so the position stays on match result rather than expanding into a larger handicap.",
+        "analysis_words": 57,
+        "source_ids": [
+          "lnh-calendar",
+          "lnh-table"
+        ],
+        "olbg_event_id": 12081,
+        "olbg_url": "https://www.olbg.com/tips/Handball/20"
+      },
+      "review_reasons": "Official venue not captured; field left blank."
+    }
+  ]
+}

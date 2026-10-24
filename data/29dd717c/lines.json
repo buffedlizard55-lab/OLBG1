@@ -1,0 +1,2267 @@
+{
+  "generated_at": "2026-10-24T22:43:09Z",
+  "method": "Independent zero-vig fair prices",
+  "lines": [
+    {
+      "fixture_id": "nhl-177",
+      "sport": "ice-hockey",
+      "match": "Tampa Bay Lightning v Utah Mammoth",
+      "market": "Match winner",
+      "selection": "Tampa Bay Lightning",
+      "probability": 0.515,
+      "decimal": 1.942,
+      "american": -106,
+      "source_ids": [
+        "nhl-177",
+        "nhl-standings"
+      ],
+      "pricing_note": "Winner from shrunk points share with a 0.04 rating adjustment per GAA goal and 0.025 home edge; spread uses a 2.15-goal normal margin assumption. Total mean is the sum of team GAA, 6.17."
+    },
+    {
+      "fixture_id": "nhl-177",
+      "sport": "ice-hockey",
+      "match": "Tampa Bay Lightning v Utah Mammoth",
+      "market": "Match winner",
+      "selection": "Utah Mammoth",
+      "probability": 0.485,
+      "decimal": 2.062,
+      "american": 106,
+      "source_ids": [
+        "nhl-177",
+        "nhl-standings"
+      ],
+      "pricing_note": "Winner from shrunk points share with a 0.04 rating adjustment per GAA goal and 0.025 home edge; spread uses a 2.15-goal normal margin assumption. Total mean is the sum of team GAA, 6.17."
+    },
+    {
+      "fixture_id": "nhl-177",
+      "sport": "ice-hockey",
+      "match": "Tampa Bay Lightning v Utah Mammoth",
+      "market": "Handicap / spread",
+      "selection": "Tampa Bay Lightning +1.5",
+      "probability": 0.768916,
+      "decimal": 1.301,
+      "american": -333,
+      "source_ids": [
+        "nhl-177",
+        "nhl-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 2.15; line from side A +1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nhl-177",
+      "sport": "ice-hockey",
+      "match": "Tampa Bay Lightning v Utah Mammoth",
+      "market": "Handicap / spread",
+      "selection": "Utah Mammoth -1.5",
+      "probability": 0.231084,
+      "decimal": 4.327,
+      "american": 333,
+      "source_ids": [
+        "nhl-177",
+        "nhl-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 2.15; line from side A +1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nhl-177",
+      "sport": "ice-hockey",
+      "match": "Tampa Bay Lightning v Utah Mammoth",
+      "market": "Total",
+      "selection": "Over 6.5",
+      "probability": 0.420982,
+      "decimal": 2.375,
+      "american": 138,
+      "source_ids": [
+        "nhl-177",
+        "nhl-standings"
+      ],
+      "pricing_note": "Poisson count, mean 6.17; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "nhl-177",
+      "sport": "ice-hockey",
+      "match": "Tampa Bay Lightning v Utah Mammoth",
+      "market": "Total",
+      "selection": "Under 6.5",
+      "probability": 0.579018,
+      "decimal": 1.727,
+      "american": -138,
+      "source_ids": [
+        "nhl-177",
+        "nhl-standings"
+      ],
+      "pricing_note": "Poisson count, mean 6.17; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "nhl-178",
+      "sport": "ice-hockey",
+      "match": "Detroit Red Wings v Calgary Flames",
+      "market": "Match winner",
+      "selection": "Detroit Red Wings",
+      "probability": 0.69,
+      "decimal": 1.449,
+      "american": -223,
+      "source_ids": [
+        "nhl-178",
+        "nhl-standings"
+      ],
+      "pricing_note": "Winner uses points share, team-GAA adjustment and away disadvantage; margin distribution SD 2.15. Total mean 7.02 is the sum of official team GAA values."
+    },
+    {
+      "fixture_id": "nhl-178",
+      "sport": "ice-hockey",
+      "match": "Detroit Red Wings v Calgary Flames",
+      "market": "Match winner",
+      "selection": "Calgary Flames",
+      "probability": 0.31,
+      "decimal": 3.226,
+      "american": 223,
+      "source_ids": [
+        "nhl-178",
+        "nhl-standings"
+      ],
+      "pricing_note": "Winner uses points share, team-GAA adjustment and away disadvantage; margin distribution SD 2.15. Total mean 7.02 is the sum of official team GAA values."
+    },
+    {
+      "fixture_id": "nhl-178",
+      "sport": "ice-hockey",
+      "match": "Detroit Red Wings v Calgary Flames",
+      "market": "Handicap / spread",
+      "selection": "Detroit Red Wings -1.5",
+      "probability": 0.420027,
+      "decimal": 2.381,
+      "american": 138,
+      "source_ids": [
+        "nhl-178",
+        "nhl-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 2.15; line from side A -1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nhl-178",
+      "sport": "ice-hockey",
+      "match": "Detroit Red Wings v Calgary Flames",
+      "market": "Handicap / spread",
+      "selection": "Calgary Flames +1.5",
+      "probability": 0.579973,
+      "decimal": 1.724,
+      "american": -138,
+      "source_ids": [
+        "nhl-178",
+        "nhl-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 2.15; line from side A -1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nhl-178",
+      "sport": "ice-hockey",
+      "match": "Detroit Red Wings v Calgary Flames",
+      "market": "Total",
+      "selection": "Over 6.5",
+      "probability": 0.553265,
+      "decimal": 1.807,
+      "american": -124,
+      "source_ids": [
+        "nhl-178",
+        "nhl-standings"
+      ],
+      "pricing_note": "Poisson count, mean 7.02; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "nhl-178",
+      "sport": "ice-hockey",
+      "match": "Detroit Red Wings v Calgary Flames",
+      "market": "Total",
+      "selection": "Under 6.5",
+      "probability": 0.446735,
+      "decimal": 2.238,
+      "american": 124,
+      "source_ids": [
+        "nhl-178",
+        "nhl-standings"
+      ],
+      "pricing_note": "Poisson count, mean 7.02; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "nhl-179",
+      "sport": "ice-hockey",
+      "match": "Minnesota Wild v Seattle Kraken",
+      "market": "Match winner",
+      "selection": "Minnesota Wild",
+      "probability": 0.47,
+      "decimal": 2.128,
+      "american": 113,
+      "source_ids": [
+        "nhl-179",
+        "nhl-standings"
+      ],
+      "pricing_note": "Winner uses the same points/GAA method as the other NHL rows. Total mean 5.82 combines the two team GAA values; a Poisson count gives the no-vig over/under prices."
+    },
+    {
+      "fixture_id": "nhl-179",
+      "sport": "ice-hockey",
+      "match": "Minnesota Wild v Seattle Kraken",
+      "market": "Match winner",
+      "selection": "Seattle Kraken",
+      "probability": 0.53,
+      "decimal": 1.887,
+      "american": -113,
+      "source_ids": [
+        "nhl-179",
+        "nhl-standings"
+      ],
+      "pricing_note": "Winner uses the same points/GAA method as the other NHL rows. Total mean 5.82 combines the two team GAA values; a Poisson count gives the no-vig over/under prices."
+    },
+    {
+      "fixture_id": "nhl-179",
+      "sport": "ice-hockey",
+      "match": "Minnesota Wild v Seattle Kraken",
+      "market": "Handicap / spread",
+      "selection": "Minnesota Wild +1.5",
+      "probability": 0.733162,
+      "decimal": 1.364,
+      "american": -275,
+      "source_ids": [
+        "nhl-179",
+        "nhl-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 2.15; line from side A +1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nhl-179",
+      "sport": "ice-hockey",
+      "match": "Minnesota Wild v Seattle Kraken",
+      "market": "Handicap / spread",
+      "selection": "Seattle Kraken -1.5",
+      "probability": 0.266838,
+      "decimal": 3.748,
+      "american": 275,
+      "source_ids": [
+        "nhl-179",
+        "nhl-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 2.15; line from side A +1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nhl-179",
+      "sport": "ice-hockey",
+      "match": "Minnesota Wild v Seattle Kraken",
+      "market": "Total",
+      "selection": "Over 6.5",
+      "probability": 0.364811,
+      "decimal": 2.741,
+      "american": 174,
+      "source_ids": [
+        "nhl-179",
+        "nhl-standings"
+      ],
+      "pricing_note": "Poisson count, mean 5.82; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "nhl-179",
+      "sport": "ice-hockey",
+      "match": "Minnesota Wild v Seattle Kraken",
+      "market": "Total",
+      "selection": "Under 6.5",
+      "probability": 0.635189,
+      "decimal": 1.574,
+      "american": -174,
+      "source_ids": [
+        "nhl-179",
+        "nhl-standings"
+      ],
+      "pricing_note": "Poisson count, mean 5.82; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "nhl-182",
+      "sport": "ice-hockey",
+      "match": "Montreal Canadiens v Winnipeg Jets",
+      "market": "Match winner",
+      "selection": "Montreal Canadiens",
+      "probability": 0.501,
+      "decimal": 1.996,
+      "american": -100,
+      "source_ids": [
+        "nhl-182",
+        "nhl-standings"
+      ],
+      "pricing_note": "Total mean 6.40 is 3.50 plus 2.90 team GAA; Poisson probabilities price over/under 5.5. Winner remains almost exactly balanced after points, GAA and venue inputs."
+    },
+    {
+      "fixture_id": "nhl-182",
+      "sport": "ice-hockey",
+      "match": "Montreal Canadiens v Winnipeg Jets",
+      "market": "Match winner",
+      "selection": "Winnipeg Jets",
+      "probability": 0.499,
+      "decimal": 2.004,
+      "american": 100,
+      "source_ids": [
+        "nhl-182",
+        "nhl-standings"
+      ],
+      "pricing_note": "Total mean 6.40 is 3.50 plus 2.90 team GAA; Poisson probabilities price over/under 5.5. Winner remains almost exactly balanced after points, GAA and venue inputs."
+    },
+    {
+      "fixture_id": "nhl-182",
+      "sport": "ice-hockey",
+      "match": "Montreal Canadiens v Winnipeg Jets",
+      "market": "Handicap / spread",
+      "selection": "Montreal Canadiens +1.5",
+      "probability": 0.758093,
+      "decimal": 1.319,
+      "american": -313,
+      "source_ids": [
+        "nhl-182",
+        "nhl-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 2.15; line from side A +1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nhl-182",
+      "sport": "ice-hockey",
+      "match": "Montreal Canadiens v Winnipeg Jets",
+      "market": "Handicap / spread",
+      "selection": "Winnipeg Jets -1.5",
+      "probability": 0.241907,
+      "decimal": 4.134,
+      "american": 313,
+      "source_ids": [
+        "nhl-182",
+        "nhl-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 2.15; line from side A +1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nhl-182",
+      "sport": "ice-hockey",
+      "match": "Montreal Canadiens v Winnipeg Jets",
+      "market": "Total",
+      "selection": "Over 5.5",
+      "probability": 0.616256,
+      "decimal": 1.623,
+      "american": -161,
+      "source_ids": [
+        "nhl-182",
+        "nhl-standings"
+      ],
+      "pricing_note": "Poisson count, mean 6.4; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "nhl-182",
+      "sport": "ice-hockey",
+      "match": "Montreal Canadiens v Winnipeg Jets",
+      "market": "Total",
+      "selection": "Under 5.5",
+      "probability": 0.383744,
+      "decimal": 2.606,
+      "american": 161,
+      "source_ids": [
+        "nhl-182",
+        "nhl-standings"
+      ],
+      "pricing_note": "Poisson count, mean 6.4; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "nba-sas-dal",
+      "sport": "basketball",
+      "match": "San Antonio Spurs v Dallas Mavericks",
+      "market": "Match winner",
+      "selection": "San Antonio Spurs",
+      "probability": 0.46,
+      "decimal": 2.174,
+      "american": 117,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Winner uses heavily shrunk winning percentage, home advantage and a documented availability adjustment. Spread assumes a 12-point NBA margin SD. No total is priced without an official scoring baseline."
+    },
+    {
+      "fixture_id": "nba-sas-dal",
+      "sport": "basketball",
+      "match": "San Antonio Spurs v Dallas Mavericks",
+      "market": "Match winner",
+      "selection": "Dallas Mavericks",
+      "probability": 0.54,
+      "decimal": 1.852,
+      "american": -117,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Winner uses heavily shrunk winning percentage, home advantage and a documented availability adjustment. Spread assumes a 12-point NBA margin SD. No total is priced without an official scoring baseline."
+    },
+    {
+      "fixture_id": "nba-sas-dal",
+      "sport": "basketball",
+      "match": "San Antonio Spurs v Dallas Mavericks",
+      "market": "Handicap / spread",
+      "selection": "San Antonio Spurs +2.5",
+      "probability": 0.542962,
+      "decimal": 1.842,
+      "american": -119,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nba-sas-dal",
+      "sport": "basketball",
+      "match": "San Antonio Spurs v Dallas Mavericks",
+      "market": "Handicap / spread",
+      "selection": "Dallas Mavericks -2.5",
+      "probability": 0.457038,
+      "decimal": 2.188,
+      "american": 119,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nba-was-chi",
+      "sport": "basketball",
+      "match": "Washington Wizards v Chicago Bulls",
+      "market": "Match winner",
+      "selection": "Washington Wizards",
+      "probability": 0.48,
+      "decimal": 2.083,
+      "american": 108,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Equal records are shrunk to 50%, followed by a 0.02 home edge. A 12-point margin SD produces both spread prices; totals remain blank because no official scoring baseline was read."
+    },
+    {
+      "fixture_id": "nba-was-chi",
+      "sport": "basketball",
+      "match": "Washington Wizards v Chicago Bulls",
+      "market": "Match winner",
+      "selection": "Chicago Bulls",
+      "probability": 0.52,
+      "decimal": 1.923,
+      "american": -108,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Equal records are shrunk to 50%, followed by a 0.02 home edge. A 12-point margin SD produces both spread prices; totals remain blank because no official scoring baseline was read."
+    },
+    {
+      "fixture_id": "nba-was-chi",
+      "sport": "basketball",
+      "match": "Washington Wizards v Chicago Bulls",
+      "market": "Handicap / spread",
+      "selection": "Washington Wizards +2.5",
+      "probability": 0.562842,
+      "decimal": 1.777,
+      "american": -129,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nba-was-chi",
+      "sport": "basketball",
+      "match": "Washington Wizards v Chicago Bulls",
+      "market": "Handicap / spread",
+      "selection": "Chicago Bulls -2.5",
+      "probability": 0.437158,
+      "decimal": 2.288,
+      "american": 129,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nba-hou-atl",
+      "sport": "basketball",
+      "match": "Houston Rockets v Atlanta Hawks",
+      "market": "Match winner",
+      "selection": "Houston Rockets",
+      "probability": 0.44,
+      "decimal": 2.273,
+      "american": 127,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Equal unbeaten records begin level; home advantage and a conservative official-absence adjustment produce 56% Atlanta. Margin SD is 12 points."
+    },
+    {
+      "fixture_id": "nba-hou-atl",
+      "sport": "basketball",
+      "match": "Houston Rockets v Atlanta Hawks",
+      "market": "Match winner",
+      "selection": "Atlanta Hawks",
+      "probability": 0.56,
+      "decimal": 1.786,
+      "american": -127,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Equal unbeaten records begin level; home advantage and a conservative official-absence adjustment produce 56% Atlanta. Margin SD is 12 points."
+    },
+    {
+      "fixture_id": "nba-hou-atl",
+      "sport": "basketball",
+      "match": "Houston Rockets v Atlanta Hawks",
+      "market": "Handicap / spread",
+      "selection": "Houston Rockets +2.5",
+      "probability": 0.522872,
+      "decimal": 1.913,
+      "american": -110,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nba-hou-atl",
+      "sport": "basketball",
+      "match": "Houston Rockets v Atlanta Hawks",
+      "market": "Handicap / spread",
+      "selection": "Atlanta Hawks -2.5",
+      "probability": 0.477128,
+      "decimal": 2.096,
+      "american": 110,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nba-nop-den",
+      "sport": "basketball",
+      "match": "New Orleans Pelicans v Denver Nuggets",
+      "market": "Match winner",
+      "selection": "New Orleans Pelicans",
+      "probability": 0.38,
+      "decimal": 2.632,
+      "american": 163,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Heavy shrinkage prevents 0-2 and 0-1 from being treated as true 0% teams; home advantage then separates the sides. Spread uses a 12-point margin SD."
+    },
+    {
+      "fixture_id": "nba-nop-den",
+      "sport": "basketball",
+      "match": "New Orleans Pelicans v Denver Nuggets",
+      "market": "Match winner",
+      "selection": "Denver Nuggets",
+      "probability": 0.62,
+      "decimal": 1.613,
+      "american": -163,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Heavy shrinkage prevents 0-2 and 0-1 from being treated as true 0% teams; home advantage then separates the sides. Spread uses a 12-point margin SD."
+    },
+    {
+      "fixture_id": "nba-nop-den",
+      "sport": "basketball",
+      "match": "New Orleans Pelicans v Denver Nuggets",
+      "market": "Handicap / spread",
+      "selection": "New Orleans Pelicans +5.5",
+      "probability": 0.560743,
+      "decimal": 1.783,
+      "american": -128,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +5.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nba-nop-den",
+      "sport": "basketball",
+      "match": "New Orleans Pelicans v Denver Nuggets",
+      "market": "Handicap / spread",
+      "selection": "Denver Nuggets -5.5",
+      "probability": 0.439257,
+      "decimal": 2.277,
+      "american": 128,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +5.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nba-gsw-phx",
+      "sport": "basketball",
+      "match": "Golden State Warriors v Phoenix Suns",
+      "market": "Match winner",
+      "selection": "Golden State Warriors",
+      "probability": 0.44,
+      "decimal": 2.273,
+      "american": 127,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Shrunken record comparison, home edge and a conservative availability deduction produce Phoenix 56%; no historical roster reputation is added. Spread SD is 12."
+    },
+    {
+      "fixture_id": "nba-gsw-phx",
+      "sport": "basketball",
+      "match": "Golden State Warriors v Phoenix Suns",
+      "market": "Match winner",
+      "selection": "Phoenix Suns",
+      "probability": 0.56,
+      "decimal": 1.786,
+      "american": -127,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Shrunken record comparison, home edge and a conservative availability deduction produce Phoenix 56%; no historical roster reputation is added. Spread SD is 12."
+    },
+    {
+      "fixture_id": "nba-gsw-phx",
+      "sport": "basketball",
+      "match": "Golden State Warriors v Phoenix Suns",
+      "market": "Handicap / spread",
+      "selection": "Golden State Warriors +2.5",
+      "probability": 0.522872,
+      "decimal": 1.913,
+      "american": -110,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "nba-gsw-phx",
+      "sport": "basketball",
+      "match": "Golden State Warriors v Phoenix Suns",
+      "market": "Handicap / spread",
+      "selection": "Phoenix Suns -2.5",
+      "probability": 0.477128,
+      "decimal": 2.096,
+      "american": 110,
+      "source_ids": [
+        "nba-injury",
+        "nba-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "mlb-849802",
+      "sport": "baseball",
+      "match": "Tampa Bay Rays v Milwaukee Brewers",
+      "market": "Match winner",
+      "selection": "Tampa Bay Rays",
+      "probability": 0.44,
+      "decimal": 2.273,
+      "american": 127,
+      "source_ids": [
+        "mlb-schedule",
+        "mlb-rasmussen",
+        "mlb-henderson",
+        "mlb-mil-hitting",
+        "mlb-tb-hitting",
+        "mlb-standings"
+      ],
+      "pricing_note": "Scoring means blend official runs per game, opponent run prevention and a starter-heavy ERA adjustment; the resulting 6.80-run mean feeds a Poisson total. Winner and +1.5 prices are independent of OLBG's 13/22 lean."
+    },
+    {
+      "fixture_id": "mlb-849802",
+      "sport": "baseball",
+      "match": "Tampa Bay Rays v Milwaukee Brewers",
+      "market": "Match winner",
+      "selection": "Milwaukee Brewers",
+      "probability": 0.56,
+      "decimal": 1.786,
+      "american": -127,
+      "source_ids": [
+        "mlb-schedule",
+        "mlb-rasmussen",
+        "mlb-henderson",
+        "mlb-mil-hitting",
+        "mlb-tb-hitting",
+        "mlb-standings"
+      ],
+      "pricing_note": "Scoring means blend official runs per game, opponent run prevention and a starter-heavy ERA adjustment; the resulting 6.80-run mean feeds a Poisson total. Winner and +1.5 prices are independent of OLBG's 13/22 lean."
+    },
+    {
+      "fixture_id": "mlb-849802",
+      "sport": "baseball",
+      "match": "Tampa Bay Rays v Milwaukee Brewers",
+      "market": "Handicap / spread",
+      "selection": "Tampa Bay Rays +1.5",
+      "probability": 0.604764,
+      "decimal": 1.654,
+      "american": -153,
+      "source_ids": [
+        "mlb-schedule",
+        "mlb-rasmussen",
+        "mlb-henderson",
+        "mlb-mil-hitting",
+        "mlb-tb-hitting",
+        "mlb-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 3.6; line from side A +1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "mlb-849802",
+      "sport": "baseball",
+      "match": "Tampa Bay Rays v Milwaukee Brewers",
+      "market": "Handicap / spread",
+      "selection": "Milwaukee Brewers -1.5",
+      "probability": 0.395236,
+      "decimal": 2.53,
+      "american": 153,
+      "source_ids": [
+        "mlb-schedule",
+        "mlb-rasmussen",
+        "mlb-henderson",
+        "mlb-mil-hitting",
+        "mlb-tb-hitting",
+        "mlb-standings"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 3.6; line from side A +1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "mlb-849802",
+      "sport": "baseball",
+      "match": "Tampa Bay Rays v Milwaukee Brewers",
+      "market": "Total",
+      "selection": "Over 8.5",
+      "probability": 0.24523,
+      "decimal": 4.078,
+      "american": 308,
+      "source_ids": [
+        "mlb-schedule",
+        "mlb-rasmussen",
+        "mlb-henderson",
+        "mlb-mil-hitting",
+        "mlb-tb-hitting",
+        "mlb-standings"
+      ],
+      "pricing_note": "Poisson count, mean 6.8; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "mlb-849802",
+      "sport": "baseball",
+      "match": "Tampa Bay Rays v Milwaukee Brewers",
+      "market": "Total",
+      "selection": "Under 8.5",
+      "probability": 0.75477,
+      "decimal": 1.325,
+      "american": -308,
+      "source_ids": [
+        "mlb-schedule",
+        "mlb-rasmussen",
+        "mlb-henderson",
+        "mlb-mil-hitting",
+        "mlb-tb-hitting",
+        "mlb-standings"
+      ],
+      "pricing_note": "Poisson count, mean 6.8; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "vol-tre-cis",
+      "sport": "volleyball",
+      "match": "Trentino Itas v Cisterna Volley",
+      "market": "Match winner",
+      "selection": "Trentino Itas",
+      "probability": 0.58,
+      "decimal": 1.724,
+      "american": -138,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Winner blends round-one point quotient, venue advantage and heavy one-match shrinkage. Set handicap uses a 1.25-set margin SD; total-set prices use a conservative best-of-five distribution."
+    },
+    {
+      "fixture_id": "vol-tre-cis",
+      "sport": "volleyball",
+      "match": "Trentino Itas v Cisterna Volley",
+      "market": "Match winner",
+      "selection": "Cisterna Volley",
+      "probability": 0.42,
+      "decimal": 2.381,
+      "american": 138,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Winner blends round-one point quotient, venue advantage and heavy one-match shrinkage. Set handicap uses a 1.25-set margin SD; total-set prices use a conservative best-of-five distribution."
+    },
+    {
+      "fixture_id": "vol-tre-cis",
+      "sport": "volleyball",
+      "match": "Trentino Itas v Cisterna Volley",
+      "market": "Handicap / spread",
+      "selection": "Trentino Itas -1.5",
+      "probability": 0.159114,
+      "decimal": 6.285,
+      "american": 528,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 1.25; line from side A -1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "vol-tre-cis",
+      "sport": "volleyball",
+      "match": "Trentino Itas v Cisterna Volley",
+      "market": "Handicap / spread",
+      "selection": "Cisterna Volley +1.5",
+      "probability": 0.840886,
+      "decimal": 1.189,
+      "american": -528,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 1.25; line from side A -1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "vol-tre-cis",
+      "sport": "volleyball",
+      "match": "Trentino Itas v Cisterna Volley",
+      "market": "Total",
+      "selection": "Over 3.5",
+      "probability": 0.58,
+      "decimal": 1.724,
+      "american": -138,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Explicit best-of-five set distribution stated in the pricing note."
+    },
+    {
+      "fixture_id": "vol-tre-cis",
+      "sport": "volleyball",
+      "match": "Trentino Itas v Cisterna Volley",
+      "market": "Total",
+      "selection": "Under 3.5",
+      "probability": 0.42,
+      "decimal": 2.381,
+      "american": 138,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Explicit best-of-five set distribution stated in the pricing note."
+    },
+    {
+      "fixture_id": "vol-per-por",
+      "sport": "volleyball",
+      "match": "Sir Susa Vim Perugia v Pallavolo Pordenone",
+      "market": "Match winner",
+      "selection": "Sir Susa Vim Perugia",
+      "probability": 0.55,
+      "decimal": 1.818,
+      "american": -122,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "The over-3.5 price blends Perugia's five-set opener, Pordenone's four-set opener and heavy regression toward a standard best-of-five baseline. Match winner still gives Perugia a small home lean."
+    },
+    {
+      "fixture_id": "vol-per-por",
+      "sport": "volleyball",
+      "match": "Sir Susa Vim Perugia v Pallavolo Pordenone",
+      "market": "Match winner",
+      "selection": "Pallavolo Pordenone",
+      "probability": 0.45,
+      "decimal": 2.222,
+      "american": 122,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "The over-3.5 price blends Perugia's five-set opener, Pordenone's four-set opener and heavy regression toward a standard best-of-five baseline. Match winner still gives Perugia a small home lean."
+    },
+    {
+      "fixture_id": "vol-per-por",
+      "sport": "volleyball",
+      "match": "Sir Susa Vim Perugia v Pallavolo Pordenone",
+      "market": "Handicap / spread",
+      "selection": "Sir Susa Vim Perugia -1.5",
+      "probability": 0.141335,
+      "decimal": 7.075,
+      "american": 608,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 1.25; line from side A -1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "vol-per-por",
+      "sport": "volleyball",
+      "match": "Sir Susa Vim Perugia v Pallavolo Pordenone",
+      "market": "Handicap / spread",
+      "selection": "Pallavolo Pordenone +1.5",
+      "probability": 0.858665,
+      "decimal": 1.165,
+      "american": -608,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 1.25; line from side A -1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "vol-per-por",
+      "sport": "volleyball",
+      "match": "Sir Susa Vim Perugia v Pallavolo Pordenone",
+      "market": "Total",
+      "selection": "Over 3.5",
+      "probability": 0.66,
+      "decimal": 1.515,
+      "american": -194,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Explicit best-of-five set distribution stated in the pricing note."
+    },
+    {
+      "fixture_id": "vol-per-por",
+      "sport": "volleyball",
+      "match": "Sir Susa Vim Perugia v Pallavolo Pordenone",
+      "market": "Total",
+      "selection": "Under 3.5",
+      "probability": 0.34,
+      "decimal": 2.941,
+      "american": 194,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Explicit best-of-five set distribution stated in the pricing note."
+    },
+    {
+      "fixture_id": "vol-lub-pad",
+      "sport": "volleyball",
+      "match": "Cucine Lube Civitanova v Sonepar Padova",
+      "market": "Match winner",
+      "selection": "Cucine Lube Civitanova",
+      "probability": 0.72,
+      "decimal": 1.389,
+      "american": -257,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Round-one point quotient and set result drive the winner price after shrinkage; home advantage is modest. The resulting fair favourite is shorter than the preferred high-confidence window."
+    },
+    {
+      "fixture_id": "vol-lub-pad",
+      "sport": "volleyball",
+      "match": "Cucine Lube Civitanova v Sonepar Padova",
+      "market": "Match winner",
+      "selection": "Sonepar Padova",
+      "probability": 0.28,
+      "decimal": 3.571,
+      "american": 257,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Round-one point quotient and set result drive the winner price after shrinkage; home advantage is modest. The resulting fair favourite is shorter than the preferred high-confidence window."
+    },
+    {
+      "fixture_id": "vol-lub-pad",
+      "sport": "volleyball",
+      "match": "Cucine Lube Civitanova v Sonepar Padova",
+      "market": "Handicap / spread",
+      "selection": "Cucine Lube Civitanova -1.5",
+      "probability": 0.268565,
+      "decimal": 3.723,
+      "american": 272,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 1.25; line from side A -1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "vol-lub-pad",
+      "sport": "volleyball",
+      "match": "Cucine Lube Civitanova v Sonepar Padova",
+      "market": "Handicap / spread",
+      "selection": "Sonepar Padova +1.5",
+      "probability": 0.731435,
+      "decimal": 1.367,
+      "american": -272,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 1.25; line from side A -1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "vol-lub-pad",
+      "sport": "volleyball",
+      "match": "Cucine Lube Civitanova v Sonepar Padova",
+      "market": "Total",
+      "selection": "Over 3.5",
+      "probability": 0.39,
+      "decimal": 2.564,
+      "american": 156,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Explicit best-of-five set distribution stated in the pricing note."
+    },
+    {
+      "fixture_id": "vol-lub-pad",
+      "sport": "volleyball",
+      "match": "Cucine Lube Civitanova v Sonepar Padova",
+      "market": "Total",
+      "selection": "Under 3.5",
+      "probability": 0.61,
+      "decimal": 1.639,
+      "american": -156,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Explicit best-of-five set distribution stated in the pricing note."
+    },
+    {
+      "fixture_id": "vol-mon-ver",
+      "sport": "volleyball",
+      "match": "Vero Volley Monza v Rana Verona",
+      "market": "Match winner",
+      "selection": "Vero Volley Monza",
+      "probability": 0.47,
+      "decimal": 2.128,
+      "american": 113,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Winner prices combine round-one set share and point quotient with heavy shrinkage; venue advantage keeps the teams close. Set and total markets use explicit best-of-five assumptions, not official forecasts."
+    },
+    {
+      "fixture_id": "vol-mon-ver",
+      "sport": "volleyball",
+      "match": "Vero Volley Monza v Rana Verona",
+      "market": "Match winner",
+      "selection": "Rana Verona",
+      "probability": 0.53,
+      "decimal": 1.887,
+      "american": -113,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Winner prices combine round-one set share and point quotient with heavy shrinkage; venue advantage keeps the teams close. Set and total markets use explicit best-of-five assumptions, not official forecasts."
+    },
+    {
+      "fixture_id": "vol-mon-ver",
+      "sport": "volleyball",
+      "match": "Vero Volley Monza v Rana Verona",
+      "market": "Handicap / spread",
+      "selection": "Vero Volley Monza +1.5",
+      "probability": 0.869648,
+      "decimal": 1.15,
+      "american": -667,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 1.25; line from side A +1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "vol-mon-ver",
+      "sport": "volleyball",
+      "match": "Vero Volley Monza v Rana Verona",
+      "market": "Handicap / spread",
+      "selection": "Rana Verona -1.5",
+      "probability": 0.130352,
+      "decimal": 7.672,
+      "american": 667,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 1.25; line from side A +1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "vol-mon-ver",
+      "sport": "volleyball",
+      "match": "Vero Volley Monza v Rana Verona",
+      "market": "Total",
+      "selection": "Over 3.5",
+      "probability": 0.55,
+      "decimal": 1.818,
+      "american": -122,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Explicit best-of-five set distribution stated in the pricing note."
+    },
+    {
+      "fixture_id": "vol-mon-ver",
+      "sport": "volleyball",
+      "match": "Vero Volley Monza v Rana Verona",
+      "market": "Total",
+      "selection": "Under 3.5",
+      "probability": 0.45,
+      "decimal": 2.222,
+      "american": 122,
+      "source_ids": [
+        "lega-calendar",
+        "lega-table"
+      ],
+      "pricing_note": "Explicit best-of-five set distribution stated in the pricing note."
+    },
+    {
+      "fixture_id": "ru-609554",
+      "sport": "rugby-union",
+      "match": "Union Bordeaux-Bègles v Stade Rochelais",
+      "market": "Match winner",
+      "selection": "Union Bordeaux-Bègles",
+      "probability": 0.55,
+      "decimal": 1.818,
+      "american": -122,
+      "source_ids": [
+        "top14-calendar",
+        "top14-table"
+      ],
+      "pricing_note": "Winner blends table points and scoring differential, then applies home advantage. Total mean 43.3 comes from each team's six-game for/against averages; total SD 14 is an analytic assumption."
+    },
+    {
+      "fixture_id": "ru-609554",
+      "sport": "rugby-union",
+      "match": "Union Bordeaux-Bègles v Stade Rochelais",
+      "market": "Match winner",
+      "selection": "Stade Rochelais",
+      "probability": 0.45,
+      "decimal": 2.222,
+      "american": 122,
+      "source_ids": [
+        "top14-calendar",
+        "top14-table"
+      ],
+      "pricing_note": "Winner blends table points and scoring differential, then applies home advantage. Total mean 43.3 comes from each team's six-game for/against averages; total SD 14 is an analytic assumption."
+    },
+    {
+      "fixture_id": "ru-609554",
+      "sport": "rugby-union",
+      "match": "Union Bordeaux-Bègles v Stade Rochelais",
+      "market": "Handicap / spread",
+      "selection": "Union Bordeaux-Bègles +2.5",
+      "probability": 0.630808,
+      "decimal": 1.585,
+      "american": -171,
+      "source_ids": [
+        "top14-calendar",
+        "top14-table"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "ru-609554",
+      "sport": "rugby-union",
+      "match": "Union Bordeaux-Bègles v Stade Rochelais",
+      "market": "Handicap / spread",
+      "selection": "Stade Rochelais -2.5",
+      "probability": 0.369192,
+      "decimal": 2.709,
+      "american": 171,
+      "source_ids": [
+        "top14-calendar",
+        "top14-table"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 12; line from side A +2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "ru-609554",
+      "sport": "rugby-union",
+      "match": "Union Bordeaux-Bègles v Stade Rochelais",
+      "market": "Total",
+      "selection": "Over 42.5",
+      "probability": 0.522784,
+      "decimal": 1.913,
+      "american": -110,
+      "source_ids": [
+        "top14-calendar",
+        "top14-table"
+      ],
+      "pricing_note": "Normal total, mean 43.3, SD 14; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "ru-609554",
+      "sport": "rugby-union",
+      "match": "Union Bordeaux-Bègles v Stade Rochelais",
+      "market": "Total",
+      "selection": "Under 42.5",
+      "probability": 0.477216,
+      "decimal": 2.095,
+      "american": 110,
+      "source_ids": [
+        "top14-calendar",
+        "top14-table"
+      ],
+      "pricing_note": "Normal total, mean 43.3, SD 14; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "cric-274145",
+      "sport": "cricket",
+      "match": "England v Pakistan",
+      "market": "Match winner",
+      "selection": "England",
+      "probability": 0.46,
+      "decimal": 2.174,
+      "american": 117,
+      "source_ids": [
+        "icc-pak-eng",
+        "icc-274145"
+      ],
+      "pricing_note": "A small home advantage is the only quantitative adjustment; no unread ICC ranking or recent score is inserted. The two-way prices sum to one and carry no margin."
+    },
+    {
+      "fixture_id": "cric-274145",
+      "sport": "cricket",
+      "match": "England v Pakistan",
+      "market": "Match winner",
+      "selection": "Pakistan",
+      "probability": 0.54,
+      "decimal": 1.852,
+      "american": -117,
+      "source_ids": [
+        "icc-pak-eng",
+        "icc-274145"
+      ],
+      "pricing_note": "A small home advantage is the only quantitative adjustment; no unread ICC ranking or recent score is inserted. The two-way prices sum to one and carry no margin."
+    },
+    {
+      "fixture_id": "cric-270973",
+      "sport": "cricket",
+      "match": "Zimbabwe Women v India Women",
+      "market": "Match winner",
+      "selection": "Zimbabwe Women",
+      "probability": 0.35,
+      "decimal": 2.857,
+      "american": 186,
+      "source_ids": [
+        "icc-indw-zim",
+        "icc-270973"
+      ],
+      "pricing_note": "The price is a conservative home-strength estimate with an explicit reduction for the confirmed bowling absence; no unread ranking or recent average is inserted. Handicap and totals stay blank."
+    },
+    {
+      "fixture_id": "cric-270973",
+      "sport": "cricket",
+      "match": "Zimbabwe Women v India Women",
+      "market": "Match winner",
+      "selection": "India Women",
+      "probability": 0.65,
+      "decimal": 1.538,
+      "american": -186,
+      "source_ids": [
+        "icc-indw-zim",
+        "icc-270973"
+      ],
+      "pricing_note": "The price is a conservative home-strength estimate with an explicit reduction for the confirmed bowling absence; no unread ranking or recent average is inserted. Handicap and totals stay blank."
+    },
+    {
+      "fixture_id": "cric-nz-ind",
+      "sport": "cricket",
+      "match": "India v New Zealand",
+      "market": "Match winner",
+      "selection": "India",
+      "probability": 0.82,
+      "decimal": 1.22,
+      "american": -456,
+      "source_ids": [
+        "icc-ind-nz"
+      ],
+      "pricing_note": "Two series results are shrunk with two neutral matches before conversion to a two-way price. No undocumented ranking is used. The resulting fair price is shorter than the preferred high-confidence band."
+    },
+    {
+      "fixture_id": "cric-nz-ind",
+      "sport": "cricket",
+      "match": "India v New Zealand",
+      "market": "Match winner",
+      "selection": "New Zealand",
+      "probability": 0.18,
+      "decimal": 5.556,
+      "american": 456,
+      "source_ids": [
+        "icc-ind-nz"
+      ],
+      "pricing_note": "Two series results are shrunk with two neutral matches before conversion to a two-way price. No undocumented ranking is used. The resulting fair price is shorter than the preferred high-confidence band."
+    },
+    {
+      "fixture_id": "cric-nam-ire",
+      "sport": "cricket",
+      "match": "Ireland v Namibia",
+      "market": "Match winner",
+      "selection": "Ireland",
+      "probability": 0.49,
+      "decimal": 2.041,
+      "american": 104,
+      "source_ids": [
+        "ireland-namibia"
+      ],
+      "pricing_note": "Only a 0.01 home adjustment is applied to an even base because no current form or ranking numbers were read. The selection is intentionally low confidence."
+    },
+    {
+      "fixture_id": "cric-nam-ire",
+      "sport": "cricket",
+      "match": "Ireland v Namibia",
+      "market": "Match winner",
+      "selection": "Namibia",
+      "probability": 0.51,
+      "decimal": 1.961,
+      "american": -104,
+      "source_ids": [
+        "ireland-namibia"
+      ],
+      "pricing_note": "Only a 0.01 home adjustment is applied to an even base because no current form or ranking numbers were read. The selection is intentionally low confidence."
+    },
+    {
+      "fixture_id": "cric-eastern",
+      "sport": "cricket",
+      "match": "CSA High Performance v Eastern Storm",
+      "market": "Match winner",
+      "selection": "CSA High Performance",
+      "probability": 0.48,
+      "decimal": 2.083,
+      "american": 108,
+      "source_ids": [
+        "csa-eastern"
+      ],
+      "pricing_note": "A 0.02 home adjustment to an even base is the entire quantitative case. This avoids importing unread form, rankings or player averages into the price."
+    },
+    {
+      "fixture_id": "cric-eastern",
+      "sport": "cricket",
+      "match": "CSA High Performance v Eastern Storm",
+      "market": "Match winner",
+      "selection": "Eastern Storm",
+      "probability": 0.52,
+      "decimal": 1.923,
+      "american": -108,
+      "source_ids": [
+        "csa-eastern"
+      ],
+      "pricing_note": "A 0.02 home adjustment to an even base is the entire quantitative case. This avoids importing unread form, rankings or player averages into the price."
+    },
+    {
+      "fixture_id": "gaa-3532",
+      "sport": "gaelic-sports",
+      "match": "Salthill-Knocknacarra v Moycullen",
+      "market": "Match winner",
+      "selection": "Salthill-Knocknacarra",
+      "probability": 0.46,
+      "decimal": 2.174,
+      "american": 117,
+      "source_ids": [
+        "galway-change",
+        "gaa-preview"
+      ],
+      "pricing_note": "Winner is close to even after last year's two-point final and home/neutral adjustments. A 4.5-point margin SD sets the handicap prices; no total is invented without scoring averages."
+    },
+    {
+      "fixture_id": "gaa-3532",
+      "sport": "gaelic-sports",
+      "match": "Salthill-Knocknacarra v Moycullen",
+      "market": "Match winner",
+      "selection": "Moycullen",
+      "probability": 0.54,
+      "decimal": 1.852,
+      "american": -117,
+      "source_ids": [
+        "galway-change",
+        "gaa-preview"
+      ],
+      "pricing_note": "Winner is close to even after last year's two-point final and home/neutral adjustments. A 4.5-point margin SD sets the handicap prices; no total is invented without scoring averages."
+    },
+    {
+      "fixture_id": "gaa-3532",
+      "sport": "gaelic-sports",
+      "match": "Salthill-Knocknacarra v Moycullen",
+      "market": "Handicap / spread",
+      "selection": "Salthill-Knocknacarra +2.5",
+      "probability": 0.675489,
+      "decimal": 1.48,
+      "american": -208,
+      "source_ids": [
+        "galway-change",
+        "gaa-preview"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 4.5; line from side A +2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "gaa-3532",
+      "sport": "gaelic-sports",
+      "match": "Salthill-Knocknacarra v Moycullen",
+      "market": "Handicap / spread",
+      "selection": "Moycullen -2.5",
+      "probability": 0.324511,
+      "decimal": 3.082,
+      "american": 208,
+      "source_ids": [
+        "galway-change",
+        "gaa-preview"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 4.5; line from side A +2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "gaa-3530",
+      "sport": "gaelic-sports",
+      "match": "St Finbarr's v Nemo Rangers",
+      "market": "Match winner",
+      "selection": "St Finbarr's",
+      "probability": 0.51,
+      "decimal": 1.961,
+      "american": -104,
+      "source_ids": [
+        "gaa-preview",
+        "cork-final"
+      ],
+      "pricing_note": "A near-even winner price and 4.5-point margin SD reflect last year's one-point final. The +2.5 cover probability is calculated from that margin distribution, not copied from OLBG's +1.5 listing."
+    },
+    {
+      "fixture_id": "gaa-3530",
+      "sport": "gaelic-sports",
+      "match": "St Finbarr's v Nemo Rangers",
+      "market": "Match winner",
+      "selection": "Nemo Rangers",
+      "probability": 0.49,
+      "decimal": 2.041,
+      "american": 104,
+      "source_ids": [
+        "gaa-preview",
+        "cork-final"
+      ],
+      "pricing_note": "A near-even winner price and 4.5-point margin SD reflect last year's one-point final. The +2.5 cover probability is calculated from that margin distribution, not copied from OLBG's +1.5 listing."
+    },
+    {
+      "fixture_id": "gaa-3530",
+      "sport": "gaelic-sports",
+      "match": "St Finbarr's v Nemo Rangers",
+      "market": "Handicap / spread",
+      "selection": "St Finbarr's -2.5",
+      "probability": 0.297887,
+      "decimal": 3.357,
+      "american": 236,
+      "source_ids": [
+        "gaa-preview",
+        "cork-final"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 4.5; line from side A -2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "gaa-3530",
+      "sport": "gaelic-sports",
+      "match": "St Finbarr's v Nemo Rangers",
+      "market": "Handicap / spread",
+      "selection": "Nemo Rangers +2.5",
+      "probability": 0.702113,
+      "decimal": 1.424,
+      "american": -236,
+      "source_ids": [
+        "gaa-preview",
+        "cork-final"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 4.5; line from side A -2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "gaa-3537",
+      "sport": "gaelic-sports",
+      "match": "Kildimo-Pallaskenry v Fr Casey's",
+      "market": "Match winner",
+      "selection": "Kildimo-Pallaskenry",
+      "probability": 0.34,
+      "decimal": 2.941,
+      "american": 194,
+      "source_ids": [
+        "munster-calendar",
+        "limerick-results"
+      ],
+      "pricing_note": "Recent official victory margins are heavily shrunk before a neutral-venue winner price. Margin SD is five points; the data do not support a total-points price."
+    },
+    {
+      "fixture_id": "gaa-3537",
+      "sport": "gaelic-sports",
+      "match": "Kildimo-Pallaskenry v Fr Casey's",
+      "market": "Match winner",
+      "selection": "Fr Casey's",
+      "probability": 0.66,
+      "decimal": 1.515,
+      "american": -194,
+      "source_ids": [
+        "munster-calendar",
+        "limerick-results"
+      ],
+      "pricing_note": "Recent official victory margins are heavily shrunk before a neutral-venue winner price. Margin SD is five points; the data do not support a total-points price."
+    },
+    {
+      "fixture_id": "gaa-3537",
+      "sport": "gaelic-sports",
+      "match": "Kildimo-Pallaskenry v Fr Casey's",
+      "market": "Handicap / spread",
+      "selection": "Kildimo-Pallaskenry +3.5",
+      "probability": 0.613149,
+      "decimal": 1.631,
+      "american": -158,
+      "source_ids": [
+        "munster-calendar",
+        "limerick-results"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 5; line from side A +3.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "gaa-3537",
+      "sport": "gaelic-sports",
+      "match": "Kildimo-Pallaskenry v Fr Casey's",
+      "market": "Handicap / spread",
+      "selection": "Fr Casey's -3.5",
+      "probability": 0.386851,
+      "decimal": 2.585,
+      "american": 158,
+      "source_ids": [
+        "munster-calendar",
+        "limerick-results"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 5; line from side A +3.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "gaa-714",
+      "sport": "gaelic-sports",
+      "match": "Tullaroan v Ballyhale Shamrocks",
+      "market": "Match winner",
+      "selection": "Tullaroan",
+      "probability": 0.25,
+      "decimal": 4.0,
+      "american": 300,
+      "source_ids": [
+        "kilkenny-final",
+        "gaa-preview"
+      ],
+      "pricing_note": "Winner uses the official final preview's relative strength assessment with regression for final variance. Handicap uses a 5.5-point margin SD; no total is priced without official scoring averages."
+    },
+    {
+      "fixture_id": "gaa-714",
+      "sport": "gaelic-sports",
+      "match": "Tullaroan v Ballyhale Shamrocks",
+      "market": "Match winner",
+      "selection": "Ballyhale Shamrocks",
+      "probability": 0.75,
+      "decimal": 1.333,
+      "american": -300,
+      "source_ids": [
+        "kilkenny-final",
+        "gaa-preview"
+      ],
+      "pricing_note": "Winner uses the official final preview's relative strength assessment with regression for final variance. Handicap uses a 5.5-point margin SD; no total is priced without official scoring averages."
+    },
+    {
+      "fixture_id": "gaa-714",
+      "sport": "gaelic-sports",
+      "match": "Tullaroan v Ballyhale Shamrocks",
+      "market": "Handicap / spread",
+      "selection": "Tullaroan +5.5",
+      "probability": 0.627603,
+      "decimal": 1.593,
+      "american": -169,
+      "source_ids": [
+        "kilkenny-final",
+        "gaa-preview"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 5.5; line from side A +5.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "gaa-714",
+      "sport": "gaelic-sports",
+      "match": "Tullaroan v Ballyhale Shamrocks",
+      "market": "Handicap / spread",
+      "selection": "Ballyhale Shamrocks -5.5",
+      "probability": 0.372397,
+      "decimal": 2.685,
+      "american": 169,
+      "source_ids": [
+        "kilkenny-final",
+        "gaa-preview"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 5.5; line from side A +5.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "ten-902251",
+      "sport": "tennis",
+      "match": "Daniil Medvedev v Nikoloz Basilashvili",
+      "market": "Match winner",
+      "selection": "Daniil Medvedev",
+      "probability": 0.84,
+      "decimal": 1.19,
+      "american": -525,
+      "source_ids": [
+        "atp-almaty-report",
+        "atp-almaty-schedule",
+        "atp-medvedev",
+        "atp-basilashvili"
+      ],
+      "pricing_note": "Ranking, surface wins, tournament history and head-to-head feed an 84% match price. A 5.4-game margin SD converts that strength into the -2.5 cover price; total games use mean 21.4 and SD 3.4."
+    },
+    {
+      "fixture_id": "ten-902251",
+      "sport": "tennis",
+      "match": "Daniil Medvedev v Nikoloz Basilashvili",
+      "market": "Match winner",
+      "selection": "Nikoloz Basilashvili",
+      "probability": 0.16,
+      "decimal": 6.25,
+      "american": 525,
+      "source_ids": [
+        "atp-almaty-report",
+        "atp-almaty-schedule",
+        "atp-medvedev",
+        "atp-basilashvili"
+      ],
+      "pricing_note": "Ranking, surface wins, tournament history and head-to-head feed an 84% match price. A 5.4-game margin SD converts that strength into the -2.5 cover price; total games use mean 21.4 and SD 3.4."
+    },
+    {
+      "fixture_id": "ten-902251",
+      "sport": "tennis",
+      "match": "Daniil Medvedev v Nikoloz Basilashvili",
+      "market": "Handicap / spread",
+      "selection": "Daniil Medvedev -2.5",
+      "probability": 0.702462,
+      "decimal": 1.424,
+      "american": -236,
+      "source_ids": [
+        "atp-almaty-report",
+        "atp-almaty-schedule",
+        "atp-medvedev",
+        "atp-basilashvili"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 5.4; line from side A -2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "ten-902251",
+      "sport": "tennis",
+      "match": "Daniil Medvedev v Nikoloz Basilashvili",
+      "market": "Handicap / spread",
+      "selection": "Nikoloz Basilashvili +2.5",
+      "probability": 0.297538,
+      "decimal": 3.361,
+      "american": 236,
+      "source_ids": [
+        "atp-almaty-report",
+        "atp-almaty-schedule",
+        "atp-medvedev",
+        "atp-basilashvili"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 5.4; line from side A -2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "ten-902251",
+      "sport": "tennis",
+      "match": "Daniil Medvedev v Nikoloz Basilashvili",
+      "market": "Total",
+      "selection": "Over 21.5",
+      "probability": 0.488268,
+      "decimal": 2.048,
+      "american": 105,
+      "source_ids": [
+        "atp-almaty-report",
+        "atp-almaty-schedule",
+        "atp-medvedev",
+        "atp-basilashvili"
+      ],
+      "pricing_note": "Normal total, mean 21.4, SD 3.4; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "ten-902251",
+      "sport": "tennis",
+      "match": "Daniil Medvedev v Nikoloz Basilashvili",
+      "market": "Total",
+      "selection": "Under 21.5",
+      "probability": 0.511732,
+      "decimal": 1.954,
+      "american": -105,
+      "source_ids": [
+        "atp-almaty-report",
+        "atp-almaty-schedule",
+        "atp-medvedev",
+        "atp-basilashvili"
+      ],
+      "pricing_note": "Normal total, mean 21.4, SD 3.4; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "ten-902253",
+      "sport": "tennis",
+      "match": "Taylor Fritz v Lorenzo Musetti",
+      "market": "Match winner",
+      "selection": "Taylor Fritz",
+      "probability": 0.56,
+      "decimal": 1.786,
+      "american": -127,
+      "source_ids": [
+        "atp-lyon-report",
+        "atp-fritz",
+        "atp-musetti"
+      ],
+      "pricing_note": "Fritz receives a small ranking and serve-performance edge, offset by Musetti's head-to-head lead and semi-final resilience. A 5.4-game margin SD and a 22.7-game total mean price secondary markets."
+    },
+    {
+      "fixture_id": "ten-902253",
+      "sport": "tennis",
+      "match": "Taylor Fritz v Lorenzo Musetti",
+      "market": "Match winner",
+      "selection": "Lorenzo Musetti",
+      "probability": 0.44,
+      "decimal": 2.273,
+      "american": 127,
+      "source_ids": [
+        "atp-lyon-report",
+        "atp-fritz",
+        "atp-musetti"
+      ],
+      "pricing_note": "Fritz receives a small ranking and serve-performance edge, offset by Musetti's head-to-head lead and semi-final resilience. A 5.4-game margin SD and a 22.7-game total mean price secondary markets."
+    },
+    {
+      "fixture_id": "ten-902253",
+      "sport": "tennis",
+      "match": "Taylor Fritz v Lorenzo Musetti",
+      "market": "Handicap / spread",
+      "selection": "Taylor Fritz -1.5",
+      "probability": 0.449546,
+      "decimal": 2.224,
+      "american": 122,
+      "source_ids": [
+        "atp-lyon-report",
+        "atp-fritz",
+        "atp-musetti"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 5.4; line from side A -1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "ten-902253",
+      "sport": "tennis",
+      "match": "Taylor Fritz v Lorenzo Musetti",
+      "market": "Handicap / spread",
+      "selection": "Lorenzo Musetti +1.5",
+      "probability": 0.550454,
+      "decimal": 1.817,
+      "american": -122,
+      "source_ids": [
+        "atp-lyon-report",
+        "atp-fritz",
+        "atp-musetti"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 5.4; line from side A -1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "ten-902253",
+      "sport": "tennis",
+      "match": "Taylor Fritz v Lorenzo Musetti",
+      "market": "Total",
+      "selection": "Over 22.5",
+      "probability": 0.523454,
+      "decimal": 1.91,
+      "american": -110,
+      "source_ids": [
+        "atp-lyon-report",
+        "atp-fritz",
+        "atp-musetti"
+      ],
+      "pricing_note": "Normal total, mean 22.7, SD 3.4; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "ten-902253",
+      "sport": "tennis",
+      "match": "Taylor Fritz v Lorenzo Musetti",
+      "market": "Total",
+      "selection": "Under 22.5",
+      "probability": 0.476546,
+      "decimal": 2.098,
+      "american": 110,
+      "source_ids": [
+        "atp-lyon-report",
+        "atp-fritz",
+        "atp-musetti"
+      ],
+      "pricing_note": "Normal total, mean 22.7, SD 3.4; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "hb-12152",
+      "sport": "handball",
+      "match": "Ystad IF v Hammarby IF",
+      "market": "Match winner",
+      "selection": "Ystad IF",
+      "probability": 0.43,
+      "decimal": 2.326,
+      "american": 133,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Played-adjusted points and goal difference are shrunk before a 7% draw allowance. Handicap prices use a six-goal margin SD; no match total is published without goals-for/against data."
+    },
+    {
+      "fixture_id": "hb-12152",
+      "sport": "handball",
+      "match": "Ystad IF v Hammarby IF",
+      "market": "Match winner",
+      "selection": "Draw",
+      "probability": 0.07,
+      "decimal": 14.286,
+      "american": 1329,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Played-adjusted points and goal difference are shrunk before a 7% draw allowance. Handicap prices use a six-goal margin SD; no match total is published without goals-for/against data."
+    },
+    {
+      "fixture_id": "hb-12152",
+      "sport": "handball",
+      "match": "Ystad IF v Hammarby IF",
+      "market": "Match winner",
+      "selection": "Hammarby IF",
+      "probability": 0.5,
+      "decimal": 2.0,
+      "american": -100,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Played-adjusted points and goal difference are shrunk before a 7% draw allowance. Handicap prices use a six-goal margin SD; no match total is published without goals-for/against data."
+    },
+    {
+      "fixture_id": "hb-12152",
+      "sport": "handball",
+      "match": "Ystad IF v Hammarby IF",
+      "market": "Handicap / spread",
+      "selection": "Ystad IF +1.5",
+      "probability": 0.561796,
+      "decimal": 1.78,
+      "american": -128,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 6; line from side A +1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "hb-12152",
+      "sport": "handball",
+      "match": "Ystad IF v Hammarby IF",
+      "market": "Handicap / spread",
+      "selection": "Hammarby IF -1.5",
+      "probability": 0.438204,
+      "decimal": 2.282,
+      "american": 128,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 6; line from side A +1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "hb-12144",
+      "sport": "handball",
+      "match": "Amo HK v Malmö",
+      "market": "Match winner",
+      "selection": "Amo HK",
+      "probability": 0.5,
+      "decimal": 2.0,
+      "american": -100,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Only Amo's supported record and a conservative generic home adjustment contribute; the missing Malmö row forces a near-even price and low-confidence cap. Draw allowance is 7%."
+    },
+    {
+      "fixture_id": "hb-12144",
+      "sport": "handball",
+      "match": "Amo HK v Malmö",
+      "market": "Match winner",
+      "selection": "Draw",
+      "probability": 0.07,
+      "decimal": 14.286,
+      "american": 1329,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Only Amo's supported record and a conservative generic home adjustment contribute; the missing Malmö row forces a near-even price and low-confidence cap. Draw allowance is 7%."
+    },
+    {
+      "fixture_id": "hb-12144",
+      "sport": "handball",
+      "match": "Amo HK v Malmö",
+      "market": "Match winner",
+      "selection": "Malmö",
+      "probability": 0.43,
+      "decimal": 2.326,
+      "american": 133,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Only Amo's supported record and a conservative generic home adjustment contribute; the missing Malmö row forces a near-even price and low-confidence cap. Draw allowance is 7%."
+    },
+    {
+      "fixture_id": "hb-12144",
+      "sport": "handball",
+      "match": "Amo HK v Malmö",
+      "market": "Handicap / spread",
+      "selection": "Amo HK -1.5",
+      "probability": 0.438204,
+      "decimal": 2.282,
+      "american": 128,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 6; line from side A -1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "hb-12144",
+      "sport": "handball",
+      "match": "Amo HK v Malmö",
+      "market": "Handicap / spread",
+      "selection": "Malmö +1.5",
+      "probability": 0.561796,
+      "decimal": 1.78,
+      "american": -128,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 6; line from side A -1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "hb-12148",
+      "sport": "handball",
+      "match": "HIF Karlskrona v IFK Kristianstad",
+      "market": "Match winner",
+      "selection": "HIF Karlskrona",
+      "probability": 0.3,
+      "decimal": 3.333,
+      "american": 233,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Goal difference per match and played-adjusted points drive the away lean; draw is 7% and margin SD six goals. Totals remain unsupported by the standings fields."
+    },
+    {
+      "fixture_id": "hb-12148",
+      "sport": "handball",
+      "match": "HIF Karlskrona v IFK Kristianstad",
+      "market": "Match winner",
+      "selection": "Draw",
+      "probability": 0.07,
+      "decimal": 14.286,
+      "american": 1329,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Goal difference per match and played-adjusted points drive the away lean; draw is 7% and margin SD six goals. Totals remain unsupported by the standings fields."
+    },
+    {
+      "fixture_id": "hb-12148",
+      "sport": "handball",
+      "match": "HIF Karlskrona v IFK Kristianstad",
+      "market": "Match winner",
+      "selection": "IFK Kristianstad",
+      "probability": 0.63,
+      "decimal": 1.587,
+      "american": -170,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Goal difference per match and played-adjusted points drive the away lean; draw is 7% and margin SD six goals. Totals remain unsupported by the standings fields."
+    },
+    {
+      "fixture_id": "hb-12148",
+      "sport": "handball",
+      "match": "HIF Karlskrona v IFK Kristianstad",
+      "market": "Handicap / spread",
+      "selection": "HIF Karlskrona +3.5",
+      "probability": 0.548883,
+      "decimal": 1.822,
+      "american": -122,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 6; line from side A +3.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "hb-12148",
+      "sport": "handball",
+      "match": "HIF Karlskrona v IFK Kristianstad",
+      "market": "Handicap / spread",
+      "selection": "IFK Kristianstad -3.5",
+      "probability": 0.451117,
+      "decimal": 2.217,
+      "american": 122,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 6; line from side A +3.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "hb-12149",
+      "sport": "handball",
+      "match": "Lugi HF v HK Skövde",
+      "market": "Match winner",
+      "selection": "Lugi HF",
+      "probability": 0.56,
+      "decimal": 1.786,
+      "american": -127,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Points per match receive more weight than raw totals, with goal difference and home advantage secondary. A 7% draw allowance and six-goal margin SD complete the prices."
+    },
+    {
+      "fixture_id": "hb-12149",
+      "sport": "handball",
+      "match": "Lugi HF v HK Skövde",
+      "market": "Match winner",
+      "selection": "Draw",
+      "probability": 0.07,
+      "decimal": 14.286,
+      "american": 1329,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Points per match receive more weight than raw totals, with goal difference and home advantage secondary. A 7% draw allowance and six-goal margin SD complete the prices."
+    },
+    {
+      "fixture_id": "hb-12149",
+      "sport": "handball",
+      "match": "Lugi HF v HK Skövde",
+      "market": "Match winner",
+      "selection": "HK Skövde",
+      "probability": 0.37,
+      "decimal": 2.703,
+      "american": 170,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Points per match receive more weight than raw totals, with goal difference and home advantage secondary. A 7% draw allowance and six-goal margin SD complete the prices."
+    },
+    {
+      "fixture_id": "hb-12149",
+      "sport": "handball",
+      "match": "Lugi HF v HK Skövde",
+      "market": "Handicap / spread",
+      "selection": "Lugi HF -1.5",
+      "probability": 0.503558,
+      "decimal": 1.986,
+      "american": -101,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 6; line from side A -1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "hb-12149",
+      "sport": "handball",
+      "match": "Lugi HF v HK Skövde",
+      "market": "Handicap / spread",
+      "selection": "HK Skövde +1.5",
+      "probability": 0.496442,
+      "decimal": 2.014,
+      "american": 101,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 6; line from side A -1.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "hb-12147",
+      "sport": "handball",
+      "match": "Alingsås HK v Önnereds HK",
+      "market": "Match winner",
+      "selection": "Alingsås HK",
+      "probability": 0.62,
+      "decimal": 1.613,
+      "american": -163,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Equal raw points are adjusted for matches played and goal difference, followed by home advantage and a 7% draw allowance. Margin SD is six goals."
+    },
+    {
+      "fixture_id": "hb-12147",
+      "sport": "handball",
+      "match": "Alingsås HK v Önnereds HK",
+      "market": "Match winner",
+      "selection": "Draw",
+      "probability": 0.07,
+      "decimal": 14.286,
+      "american": 1329,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Equal raw points are adjusted for matches played and goal difference, followed by home advantage and a 7% draw allowance. Margin SD is six goals."
+    },
+    {
+      "fixture_id": "hb-12147",
+      "sport": "handball",
+      "match": "Alingsås HK v Önnereds HK",
+      "market": "Match winner",
+      "selection": "Önnereds HK",
+      "probability": 0.31,
+      "decimal": 3.226,
+      "american": 223,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Equal raw points are adjusted for matches played and goal difference, followed by home advantage and a 7% draw allowance. Margin SD is six goals."
+    },
+    {
+      "fixture_id": "hb-12147",
+      "sport": "handball",
+      "match": "Alingsås HK v Önnereds HK",
+      "market": "Handicap / spread",
+      "selection": "Alingsås HK -2.5",
+      "probability": 0.505609,
+      "decimal": 1.978,
+      "american": -102,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 6; line from side A -2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "hb-12147",
+      "sport": "handball",
+      "match": "Alingsås HK v Önnereds HK",
+      "market": "Handicap / spread",
+      "selection": "Önnereds HK +2.5",
+      "probability": 0.494391,
+      "decimal": 2.023,
+      "american": 102,
+      "source_ids": [
+        "handbollsligan"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 6; line from side A -2.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "hb-12081",
+      "sport": "handball",
+      "match": "Saran v Montpellier",
+      "market": "Match winner",
+      "selection": "Saran",
+      "probability": 0.22,
+      "decimal": 4.545,
+      "american": 355,
+      "source_ids": [
+        "lnh-calendar",
+        "lnh-table"
+      ],
+      "pricing_note": "Equal-game table points and goal difference drive the 71% home price, with a 7% draw allowance. The total uses a 58-goal mean and nine-goal SD as explicit analytic assumptions."
+    },
+    {
+      "fixture_id": "hb-12081",
+      "sport": "handball",
+      "match": "Saran v Montpellier",
+      "market": "Match winner",
+      "selection": "Draw",
+      "probability": 0.07,
+      "decimal": 14.286,
+      "american": 1329,
+      "source_ids": [
+        "lnh-calendar",
+        "lnh-table"
+      ],
+      "pricing_note": "Equal-game table points and goal difference drive the 71% home price, with a 7% draw allowance. The total uses a 58-goal mean and nine-goal SD as explicit analytic assumptions."
+    },
+    {
+      "fixture_id": "hb-12081",
+      "sport": "handball",
+      "match": "Saran v Montpellier",
+      "market": "Match winner",
+      "selection": "Montpellier",
+      "probability": 0.71,
+      "decimal": 1.408,
+      "american": -245,
+      "source_ids": [
+        "lnh-calendar",
+        "lnh-table"
+      ],
+      "pricing_note": "Equal-game table points and goal difference drive the 71% home price, with a 7% draw allowance. The total uses a 58-goal mean and nine-goal SD as explicit analytic assumptions."
+    },
+    {
+      "fixture_id": "hb-12081",
+      "sport": "handball",
+      "match": "Saran v Montpellier",
+      "market": "Handicap / spread",
+      "selection": "Saran +3.5",
+      "probability": 0.446669,
+      "decimal": 2.239,
+      "american": 124,
+      "source_ids": [
+        "lnh-calendar",
+        "lnh-table"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 6; line from side A +3.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "hb-12081",
+      "sport": "handball",
+      "match": "Saran v Montpellier",
+      "market": "Handicap / spread",
+      "selection": "Montpellier -3.5",
+      "probability": 0.553331,
+      "decimal": 1.807,
+      "american": -124,
+      "source_ids": [
+        "lnh-calendar",
+        "lnh-table"
+      ],
+      "pricing_note": "Normal winning-margin assumption, SD 6; line from side A +3.5. Push-free half-point lines only."
+    },
+    {
+      "fixture_id": "hb-12081",
+      "sport": "handball",
+      "match": "Saran v Montpellier",
+      "market": "Total",
+      "selection": "Over 58.5",
+      "probability": 0.477848,
+      "decimal": 2.093,
+      "american": 109,
+      "source_ids": [
+        "lnh-calendar",
+        "lnh-table"
+      ],
+      "pricing_note": "Normal total, mean 58, SD 9; no-vig complementary prices."
+    },
+    {
+      "fixture_id": "hb-12081",
+      "sport": "handball",
+      "match": "Saran v Montpellier",
+      "market": "Total",
+      "selection": "Under 58.5",
+      "probability": 0.522152,
+      "decimal": 1.915,
+      "american": -109,
+      "source_ids": [
+        "lnh-calendar",
+        "lnh-table"
+      ],
+      "pricing_note": "Normal total, mean 58, SD 9; no-vig complementary prices."
+    }
+  ]
+}
