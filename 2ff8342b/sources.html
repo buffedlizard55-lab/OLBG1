@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sources · OLBG Research Desk · 2026-10-24</title>
+<meta name="description" content="Independent, source-linked OLBG match research. Every row links to an official source; blanks are unverified.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">◇</span>
+      <span><strong>OLBG Research Desk</strong><small>Independent · source-linked</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="picks.html">Today&#x27;s picks</a><a class="nav-link" href="matches.html">All matches</a><a class="nav-link" href="markets.html">Markets</a><a class="nav-link" href="predictions.html">Predictions</a><a class="nav-link" href="sports.html">Sports</a><a class="nav-link" href="flagged.html">Flagged for review</a><a class="nav-link active" href="sources.html">Sources</a><a class="nav-link" href="methodology.html">Method</a><a class="nav-link" href="reverse-engineering.html">OLBG</a><a class="nav-link" href="repo-audit.html">Repo audit</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+  <div class="page-head">
+    <p class="eyebrow">Desk date 2026-10-24 · facts read at 2026-10-24T17:50:00Z</p>
+    <h1>Sources</h1>
+    <p class="lede">Every page this desk read, when it was read, and exactly what it was used for.</p>
+  </div>
+  
+<h2>Official sources</h2>
+<div class="table-wrap"><table class="tall">
+  <thead><tr><th>ID</th><th>Role</th><th>Page</th><th>Read at</th><th>What it said</th><th>Used for</th></tr></thead>
+  <tbody><tr>
+          <td><code>MLB-SCHED</code></td>
+          <td><span class="badge green">Official</span></td>
+          <td><strong>MLB StatsAPI — 2026 World Series schedule (gamePk 849802, 849804, 849803)</strong><br><a class="src" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-27&amp;hydrate=probablePitcher,team,venue,linescore" target="_blank" rel="noopener noreferrer">https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-27&amp;hydrate=probablePitcher,team,venue,linescore ↗</a></td>
+          <td>2026-10-24T17:45:00Z</td>
+          <td class="small">Three scheduled games: WS Game 2 on 2026-10-24 (TB at MIL, 2026-10-25T00:00Z), Game 3 on 2026-10-26 (MIL at TB, 2026-10-27T00:00Z), Game 4 on 2026-10-27. Probable pitchers, venues, series state and ifNecessary=N read directly from the JSON.</td>
+          <td class="small">BB-01, BB-02</td>
+        </tr><tr>
+          <td><code>MLB-STAND-AL</code></td>
+          <td><span class="badge green">Official</span></td>
+          <td><strong>MLB StatsAPI — American League regular-season standings 2026</strong><br><a class="src" href="https://statsapi.mlb.com/api/v1/standings?leagueId=103&amp;season=2026&amp;standingsTypes=regularSeason" target="_blank" rel="noopener noreferrer">https://statsapi.mlb.com/api/v1/standings?leagueId=103&amp;season=2026&amp;standingsTypes=regularSeason ↗</a></td>
+          <td>2026-10-24T17:46:00Z</td>
+          <td class="small">Tampa Bay Rays 98-64 (.605), 55-26 home, 43-38 away, 736 runs scored, 650 allowed, last ten 5-5.</td>
+          <td class="small">BB-01, BB-02</td>
+        </tr><tr>
+          <td><code>MLB-STAND-NL</code></td>
+          <td><span class="badge green">Official</span></td>
+          <td><strong>MLB StatsAPI — National League regular-season standings 2026</strong><br><a class="src" href="https://statsapi.mlb.com/api/v1/standings?leagueId=104&amp;season=2026&amp;standingsTypes=regularSeason" target="_blank" rel="noopener noreferrer">https://statsapi.mlb.com/api/v1/standings?leagueId=104&amp;season=2026&amp;standingsTypes=regularSeason ↗</a></td>
+          <td>2026-10-24T17:47:00Z</td>
+          <td class="small">Milwaukee Brewers 103-59 (.636), 55-26 home, 48-33 away, 832 runs scored, 618 allowed, +214 differential, W5, last ten 8-2.</td>
+          <td class="small">BB-01, BB-02</td>
+        </tr><tr>
+          <td><code>NHL-SCHED</code></td>
+          <td><span class="badge green">Official</span></td>
+          <td><strong>NHL official schedule API — 24 October 2026 (12 games)</strong><br><a class="src" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">https://api-web.nhle.com/v1/schedule/2026-10-24 ↗</a></td>
+          <td>2026-10-24T17:48:00Z</td>
+          <td class="small">Twelve games with start times in UTC, venues, game states and publisher-supplied odds arrays (providerId 3/6/7/8/9/10).</td>
+          <td class="small">IH-01, IH-02, IH-03, IH-04, IH-05, IH-06, IH-07, IH-08, IH-09, IH-10, IH-11, IH-12</td>
+        </tr><tr>
+          <td><code>NHL-STAND</code></td>
+          <td><span class="badge green">Official</span></td>
+          <td><strong>NHL official standings API — 2026-10-24</strong><br><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">https://api-web.nhle.com/v1/standings/2026-10-24 ↗</a></td>
+          <td>2026-10-24T17:49:00Z</td>
+          <td class="small">Games played, points, points percentage, goals for/against, home and road splits, streaks and last-ten records for every club; standingsDateTimeUtc 2026-10-24T17:44:00Z.</td>
+          <td class="small">IH-01, IH-02, IH-03, IH-04, IH-05, IH-06, IH-07, IH-08, IH-10, IH-11, IH-12</td>
+        </tr><tr>
+          <td><code>NBA-REF</code></td>
+          <td><span class="badge green">Official</span></td>
+          <td><strong>NBA Official — referee assignments, 24 October 2026</strong><br><a class="src" href="https://official.nba.com/referee-assignments/" target="_blank" rel="noopener noreferrer">https://official.nba.com/referee-assignments/ ↗</a></td>
+          <td>2026-10-24T17:50:00Z</td>
+          <td class="small">Eight games listed for the date: Miami @ Charlotte, Brooklyn @ Cleveland, Milwaukee @ Philadelphia, Houston @ Atlanta, Washington @ Chicago, San Antonio @ Dallas, New Orleans @ Denver, Golden State @ Phoenix. No tip-off times or season records on the page.</td>
+          <td class="small">BK-01, BK-02, BK-03, BK-04, BK-05, BK-06, BK-07, BK-08</td>
+        </tr><tr>
+          <td><code>NBA-STAND</code></td>
+          <td><span class="badge green">Official</span></td>
+          <td><strong>NBA.com — 2026-27 regular-season standings (read 24 October 2026)</strong><br><a class="src" href="https://www.nba.com/standings" target="_blank" rel="noopener noreferrer">https://www.nba.com/standings ↗</a></td>
+          <td>2026-10-24T17:49:00Z</td>
+          <td class="small">Two games played per club at most. Records, home/road splits, last-ten and streak columns read directly: ATL 2-0 (2-0 road), DET 2-0, PHI 2-0 (1-0 home), TOR 2-0, LAL 2-0, OKC 2-0, HOU 2-0 (1-0 road), POR 2-0, MEM 2-0, MIN 2-0, WAS 1-1, BOS 1-1, CHI 1-1 (1-1 road), CHA 1-1 (0-1 home), IND 1-1, LAC 1-1, UTA 1-1, DAL 1-1 (1-1 road), BKN 0-1, CLE 0-1, DEN 0-1, PHX 0-1, ORL 0-2, MIA 0-2 (0-2 home), NYK 0-2, MIL 0-2, NOP 0-2, SAS 0-2 (0-2 home), GSW 0-2.</td>
+          <td class="small">BK-01, BK-02, BK-03, BK-04, BK-05, BK-06, BK-07, BK-08</td>
+        </tr><tr>
+          <td><code>ATP-SCORES</code></td>
+          <td><span class="badge green">Official</span></td>
+          <td><strong>ATP Tour — current scores, draws and schedules</strong><br><a class="src" href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener noreferrer">https://www.atptour.com/en/scores/current ↗</a></td>
+          <td>2026-10-24T17:51:00Z</td>
+          <td class="small">Semi-final results: Medvedev d. Bublik 6-3 ret.; Basilashvili d. Tsitsipas 6-4 6-7(5) 6-3; Griekspoor d. Cerundolo 2-6 6-3 7-6(4); Musetti d. Cobolli 4-6 6-2 7-5; Fritz d. Paul 6-3 7-5. Lyon final: Fritz v Musetti.</td>
+          <td class="small">TN-01, TN-02</td>
+        </tr><tr>
+          <td><code>ATP-ALMATY</code></td>
+          <td><span class="badge green">Official</span></td>
+          <td><strong>ATP Tour — Almaty Open 2026, Medvedev v Bublik semi-final stats centre</strong><br><a class="src" href="https://www.atptour.com/en/scores/stats-centre/live/2026/9410/MS002" target="_blank" rel="noopener noreferrer">https://www.atptour.com/en/scores/stats-centre/live/2026/9410/MS002 ↗</a></td>
+          <td>2026-10-24T17:52:00Z</td>
+          <td class="small">Tournament identified as the Almaty Open (Almaty 2026); Medvedev won the semi-final 6-3 with Bublik retiring.</td>
+          <td class="small">TN-01</td>
+        </tr><tr>
+          <td><code>ATP-LYON</code></td>
+          <td><span class="badge green">Official</span></td>
+          <td><strong>ATP Tour — Lyon 2026 semi-final report (Fritz v Musetti final)</strong><br><a class="src" href="https://www.atptour.com/en/news/fritz-paul-cobolli-musetti-lyon-2026-sfs" target="_blank" rel="noopener noreferrer">https://www.atptour.com/en/news/fritz-paul-cobolli-musetti-lyon-2026-sfs ↗</a></td>
+          <td>2026-10-24T17:53:00Z</td>
+          <td class="small">Headline and report link state Musetti saved four match points to beat Cobolli and set a Fritz final in Lyon; Fritz beat Paul 6-3 7-5.</td>
+          <td class="small">TN-02</td>
+        </tr><tr>
+          <td><code>WST-MATCHES</code></td>
+          <td><span class="badge green">Official</span></td>
+          <td><strong>World Snooker Tour — matches, BetVictor Northern Ireland Open 2026</strong><br><a class="src" href="https://www.wst.tv/matches/?" target="_blank" rel="noopener noreferrer">https://www.wst.tv/matches/? ↗</a></td>
+          <td>2026-10-24T17:54:00Z</td>
+          <td class="small">Semi-final 62 Mark Williams v Jak Jones listed Live Now at 14:00 Sat 24 Oct; Kyren Wilson 6-5 Sam Craigie in the other semi-final; final scheduled 08:00 Sun 25 Oct, Wilson versus winner of match 62.</td>
+          <td class="small">SN-01</td>
+        </tr><tr>
+          <td><code>GAA-FIX</code></td>
+          <td><span class="badge green">Official</span></td>
+          <td><strong>GAA — fixtures and results, 24 October 2026</strong><br><a class="src" href="https://www.gaa.ie/fixtures-results" target="_blank" rel="noopener noreferrer">https://www.gaa.ie/fixtures-results ↗</a></td>
+          <td>2026-10-24T17:55:00Z</td>
+          <td class="small">Only fixture listed for Saturday 24 October is the Shinty-Hurling International, Ireland v Scotland, 18:00, SuperValu Páirc Uí Chaoimh. No Gaelic football fixture appears.</td>
+          <td class="small">—</td>
+        </tr><tr>
+          <td><code>F1-MEXICO</code></td>
+          <td><span class="badge green">Official</span></td>
+          <td><strong>Formula 1 — Mexico City Grand Prix 2026 race hub</strong><br><a class="src" href="https://www.formula1.com/en/racing/2026/mexico" target="_blank" rel="noopener noreferrer">https://www.formula1.com/en/racing/2026/mexico ↗</a></td>
+          <td>2026-10-24T17:56:00Z</td>
+          <td class="small">Event runs 30 October – 1 November 2026 (practice 30 Oct, qualifying 31 Oct, race 1 Nov 15:00). No race on 24–25 October.</td>
+          <td class="small">MR-01</td>
+        </tr></tbody>
+</table></div>
+<h2>OLBG discovery pages</h2>
+<p class="note">Listing pages only. They identify events; they never certify a fact, a price or a statistic on this site.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Sport</th><th>Page</th><th>What the page returned</th><th>Role</th></tr></thead>
+  <tbody><tr><td><a href='sports/golf.html'>Golf</a></td><td><a class='src' href='https://www.olbg.com/betting-tips/Golf/5' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips/Golf/5 ↗</a></td><td>returned &#x27;No tips found.&#x27; in the fetched listing</td><td><span class="badge amber">Discovery only</span></td></tr><tr><td><a href='sports/volleyball.html'>Volleyball</a></td><td><a class='src' href='https://www.olbg.com/betting-tips/Volleyball/21' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips/Volleyball/21 ↗</a></td><td>13 match listings read</td><td><span class="badge amber">Discovery only</span></td></tr><tr><td><a href='sports/rugby-union.html'>Rugby Union</a></td><td><a class='src' href='https://www.olbg.com/betting-tips/Rugby_Union/9' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips/Rugby_Union/9 ↗</a></td><td>5 match listings read</td><td><span class="badge amber">Discovery only</span></td></tr><tr><td><a href='sports/cricket.html'>Cricket</a></td><td><a class='src' href='https://www.olbg.com/betting-tips/Cricket/7' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips/Cricket/7 ↗</a></td><td>8 match listings read</td><td><span class="badge amber">Discovery only</span></td></tr><tr><td><a href='sports/snooker.html'>Snooker</a></td><td><a class='src' href='https://www.olbg.com/betting-tips/Snooker/8' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips/Snooker/8 ↗</a></td><td>1 live match listing read</td><td><span class="badge amber">Discovery only</span></td></tr><tr><td><a href='sports/darts.html'>Darts</a></td><td><a class='src' href='https://www.olbg.com/betting-tips/Darts/15' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips/Darts/15 ↗</a></td><td>4 match listings read</td><td><span class="badge amber">Discovery only</span></td></tr><tr><td><a href='sports/baseball.html'>Baseball</a></td><td><a class='src' href='https://www.olbg.com/betting-tips/Baseball/12' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips/Baseball/12 ↗</a></td><td>1 match listing read</td><td><span class="badge amber">Discovery only</span></td></tr><tr><td><a href='sports/gaelic-sports.html'>Gaelic Sports</a></td><td><a class='src' href='https://www.olbg.com/betting-tips/Gaelic_Football/25' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips/Gaelic_Football/25 ↗</a></td><td>hub fetched; the only 24 Oct fixture listed was a hurling international, outside the brief</td><td><span class="badge amber">Discovery only</span></td></tr><tr><td><a href='sports/greyhounds.html'>Greyhounds</a></td><td><a class='src' href='https://www.olbg.com/betting-tips/Greyhounds/28' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips/Greyhounds/28 ↗</a></td><td>race listings read (dog names, tracks, times)</td><td><span class="badge amber">Discovery only</span></td></tr><tr><td><a href='sports/tennis.html'>Tennis</a></td><td><a class='src' href='https://www.olbg.com/betting-tips/Tennis/3' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips/Tennis/3 ↗</a></td><td>6 match listings read</td><td><span class="badge amber">Discovery only</span></td></tr><tr><td><a href='sports/motor-racing.html'>Motor Racing</a></td><td><a class='src' href='https://www.olbg.com/betting-tips/Motor_Racing/14' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips/Motor_Racing/14 ↗</a></td><td>Mexico GP weekend listings read</td><td><span class="badge amber">Discovery only</span></td></tr><tr><td><a href='sports/handball.html'>Handball</a></td><td><a class='src' href='https://www.olbg.com/betting-tips/Handball/20' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips/Handball/20 ↗</a></td><td>13 match listings read</td><td><span class="badge amber">Discovery only</span></td></tr><tr><td><a href='sports/ice-hockey.html'>Ice Hockey</a></td><td><a class='src' href='https://www.olbg.com/betting-tips/Ice_Hockey/13' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips/Ice_Hockey/13 ↗</a></td><td>12 NHL listings read</td><td><span class="badge amber">Discovery only</span></td></tr><tr><td><a href='sports/basketball.html'>Basketball</a></td><td><a class='src' href='https://www.olbg.com/betting-tips/Basketball/4' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips/Basketball/4 ↗</a></td><td>8 NBA listings read</td><td><span class="badge amber">Discovery only</span></td></tr><tr><td><a href='sports/rugby-league.html'>Rugby League</a></td><td><a class='src' href='https://www.olbg.com/betting-tips/Rugby_League/10' target='_blank' rel='noopener noreferrer'>https://www.olbg.com/betting-tips/Rugby_League/10 ↗</a></td><td>no current fixtures; futures only</td><td><span class="badge amber">Discovery only</span></td></tr></tbody>
+</table></div>
+
+</main>
+<footer class="footer wrap">
+  <p><strong>What this is.</strong> An independent research notebook that records what official sources published, what we could price from those numbers, and what we could not confirm. Not affiliated with OLBG. No guarantees, no staking advice. 18+.</p>
+  <p><a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review (7)</a> · <a href="sources.html">Sources</a> · <a href="https://github.com/buffedlizard55-lab/OLBG1">Repository</a></p>
+</footer>
+</body>
+</html>
