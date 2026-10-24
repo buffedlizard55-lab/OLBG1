@@ -1,0 +1,384 @@
+[
+  {
+    "id": "PK-01",
+    "event": "nh-1",
+    "sport": "ice-hockey",
+    "selection": "Boston Bruins to win (money line)",
+    "american": -210,
+    "prob": 0.677,
+    "tier": "Medium",
+    "markets": [
+      [
+        "Money Line",
+        "originated",
+        "Boston 67.7% / San Jose 32.3%"
+      ],
+      [
+        "Puck Line -1.5",
+        "withheld",
+        "no goal-spread model inputs read"
+      ],
+      [
+        "Game Total 6.5",
+        "withheld",
+        "no goal-rate inputs read"
+      ]
+    ],
+    "why": "Bruins 8-2-1 (.727 win pct, 17 points) against a Sharks side with no published record; price is a standings-derived estimate, not a bookmaker quote.",
+    "prediction": "Boston Bruins meet the San Jose Sharks on the money line. Boston is 8-2-1 with 17 points and a .727 winning percentage, 4-1-0 at home, per the NHL's own standings page read this session. San Jose's record did not appear in the readable standings portion, so this price leans on Boston's published form alone. The NHL schedule API lists a 23:00 UTC start at TD Garden. Selection: Boston Bruins money line at an estimated -210."
+  },
+  {
+    "id": "PK-02",
+    "event": "nh-5",
+    "sport": "ice-hockey",
+    "selection": "Edmonton Oilers to win (money line)",
+    "american": -180,
+    "prob": 0.643,
+    "tier": "Medium",
+    "markets": [
+      [
+        "Money Line",
+        "originated",
+        "Edmonton 64.3% / Toronto 35.7%"
+      ],
+      [
+        "Puck Line -1.5",
+        "withheld",
+        "no goal-spread model inputs read"
+      ],
+      [
+        "Game Total 6.5",
+        "withheld",
+        "no goal-rate inputs read"
+      ]
+    ],
+    "why": "Oilers 8-2-0 (.800 win pct, 17 points) vs Maple Leafs; Oilers lead the Pacific division in points percentage; price is standings-derived.",
+    "prediction": "Edmonton Oilers face the Toronto Maple Leafs on the money line. The Oilers are 8-2-0 with 17 points and an .800 winning percentage, the best points percentage in the NHL's Pacific division per the official NHL standings. Toronto's record was not in the readable standings portion. Rogers Place hosts a 23:00 UTC start per the NHL schedule API. Selection: Edmonton Oilers money line at an estimated -180."
+  },
+  {
+    "id": "PK-03",
+    "event": "nh-11",
+    "sport": "ice-hockey",
+    "selection": "Carolina Hurricanes to win (money line)",
+    "american": -240,
+    "prob": 0.706,
+    "tier": "High",
+    "markets": [
+      [
+        "Money Line",
+        "originated",
+        "Carolina 70.6% / St. Louis 29.4%"
+      ],
+      [
+        "Puck Line -1.5",
+        "withheld",
+        "no goal-spread model inputs read"
+      ],
+      [
+        "Game Total 6.5",
+        "withheld",
+        "no goal-rate inputs read"
+      ]
+    ],
+    "why": "Carolina Hurricanes 8-2-2 with a win pct above 0.70 on the NHL standings page; OLBG shows 5/5 tips (100%) on Carolina; price inside -250.",
+    "prediction": "Carolina Hurricanes take on the St. Louis Blues on the money line. Carolina is 8-2-2 with a winning percentage above 0.70 on the official NHL standings page read this session, and OLBG tipsters went 5 out of 5 on Carolina. A 23:00 UTC start is listed on the NHL schedule API. Selection: Carolina Hurricanes money line at an estimated -240."
+  },
+  {
+    "id": "PK-04",
+    "event": "bb-1",
+    "sport": "baseball",
+    "selection": "Milwaukee Brewers to win (money line)",
+    "american": -130,
+    "prob": 0.565,
+    "tier": "Low",
+    "markets": [
+      [
+        "Money Line",
+        "originated",
+        "Milwaukee 56.5% / Tampa Bay 43.5%"
+      ],
+      [
+        "Run Line -1.5",
+        "withheld",
+        "needs run-expectation inputs per starting pitcher"
+      ],
+      [
+        "Game Total",
+        "withheld",
+        "ballpark and weather factors were not read"
+      ]
+    ],
+    "why": "World Series Game 2; Brewers lead series 1-0, finished 103-59 (.636); Rays 98-64 (.605); probable pitchers Rasmussen vs Henderson; no full team records reachable today.",
+    "prediction": "Milwaukee Brewers take on the Tampa Bay Rays in World Series Game 2. The Brewers finished 103-59 for a .636 winning percentage and lead the series 1-0, while Tampa Bay went 98-64 overall (.605). Logan Henderson starts for Milwaukee against Drew Rasmussen, with first pitch at 00:00 UTC on 25 October at American Family Field per the official MLB schedule API. Selection: Milwaukee Brewers money line at an estimated -130."
+  },
+  {
+    "id": "PK-05",
+    "event": "bk-2",
+    "sport": "basketball",
+    "selection": "Cleveland Cavaliers to win (money line)",
+    "american": -150,
+    "prob": 0.6,
+    "tier": "Medium",
+    "markets": [
+      [
+        "Money Line",
+        "originated",
+        "Cleveland 60.0% / Brooklyn 40.0%"
+      ],
+      [
+        "Point Spread",
+        "withheld",
+        "no team records or spread rating read"
+      ],
+      [
+        "Game Total",
+        "withheld",
+        "no pace or efficiency inputs were read"
+      ]
+    ],
+    "why": "Cavaliers listed at 2-0 on the NBA calendar page; Nets at 0-1; price is a record-derived estimate only, team records incomplete.",
+    "prediction": "Cleveland Cavaliers meet the Brooklyn Nets on the money line. The NBA's own calendar page lists Cleveland at 2-0 and Brooklyn at 0-1 for the 24 October slate, with tip-off at 7:30 PM ET. Those are the only availability facts read this session; no full team records or injury report entries were reachable, so the price is a slender record-derived edge. Selection: Cleveland Cavaliers money line at an estimated -150."
+  },
+  {
+    "id": "PK-06",
+    "event": "mr-1",
+    "sport": "motor-racing",
+    "selection": "Charles Leclerc to finish on the podium (top 3)",
+    "american": -190,
+    "prob": 0.655,
+    "tier": "Medium",
+    "markets": [
+      [
+        "Podium Finish",
+        "originated",
+        "Leclerc 65.5% / field 34.5%"
+      ],
+      [
+        "Win Race",
+        "originated",
+        "Leclerc 26.7% / field 73.3%"
+      ],
+      [
+        "Fastest Qualifier",
+        "withheld",
+        "qualifying had not started at capture"
+      ]
+    ],
+    "why": "Leclerc fastest in both Friday practice sessions per formula1.com (FP2 1:35.291, FP1 report); COTA 5.513 km, 56 laps; race Sunday 25 Oct 16:00 track time.",
+    "prediction": "Charles Leclerc aims for a podium finish at the United States Grand Prix. Leclerc set the fastest time in second practice, a 1:35.291, with Kimi Antonelli 0.042 seconds back and Max Verstappen 0.189 back, and the official practice one report also had him quickest ahead of Verstappen and Lando Norris, per formula1.com. Across 56 laps of the 5.513 km Circuit of the Americas that pace should keep him in the top three. Selection: Charles Leclerc podium finish at an estimated -190."
+  },
+  {
+    "id": "PK-07",
+    "event": "mr-1",
+    "sport": "motor-racing",
+    "selection": "Max Verstappen to win the United States Grand Prix",
+    "american": 275,
+    "prob": 0.267,
+    "tier": "Low",
+    "markets": [
+      [
+        "Win Race",
+        "originated",
+        "Verstappen 26.7% / field 73.3%"
+      ],
+      [
+        "Podium Finish",
+        "originated",
+        "Verstappen 60.0% / field 40.0%"
+      ]
+    ],
+    "why": "Verstappen was +0.189 off Leclerc's pace in FP2 and race wins are volatile; this is a value opinion recorded alongside the podium pick, not a statement of certainty.",
+    "prediction": "Max Verstappen targets victory at the United States Grand Prix on the Circuit of the Americas. Verstappen was 0.189 seconds off Charles Leclerc's 1:35.291 in second practice, per formula1.com, and the official FP1 report placed him among the leading times. Converting that pace into first place over 56 laps needs pole position and a clean opening lap, so the win is priced at +275 while the shorter podium bet is the primary selection."
+  },
+  {
+    "id": "PK-08",
+    "event": "nh-3",
+    "sport": "ice-hockey",
+    "selection": "Minnesota Wild to win (money line)",
+    "american": -220,
+    "prob": 0.688,
+    "tier": "Medium",
+    "markets": [
+      [
+        "Money Line",
+        "originated",
+        "Minnesota 68.8% / Seattle 31.2%"
+      ],
+      [
+        "Puck Line -1.5",
+        "withheld",
+        "no goal-spread model inputs read"
+      ],
+      [
+        "Game Total 6.5",
+        "withheld",
+        "no goal-rate inputs read"
+      ]
+    ],
+    "why": "OLBG shows 4/4 tips (100%) on Minnesota Wild; price inside -250; no official team record read for either side, so the tier rests on community consensus plus the OLBG listing only.",
+    "prediction": "Minnesota Wild meet the Seattle Kraken. OLBG tipsters went 4 out of 4 on Minnesota for this 23:07 ET game, and the NHL schedule API confirms a 24 October start. Neither club's published team record was read, so this pick rests on the OLBG listing and community consensus instead of a standings fact. Selection: Minnesota Wild moneyline at an estimated -220."
+  },
+  {
+    "id": "PK-09",
+    "event": "nh-8",
+    "sport": "ice-hockey",
+    "selection": "Buffalo Sabres to win (money line)",
+    "american": -200,
+    "prob": 0.667,
+    "tier": "Medium",
+    "markets": [
+      [
+        "Money Line",
+        "originated",
+        "Buffalo 66.7% / Washington 33.3%"
+      ],
+      [
+        "Puck Line -1.5",
+        "withheld",
+        "no goal-spread model inputs read"
+      ],
+      [
+        "Game Total 6.5",
+        "withheld",
+        "no goal-rate inputs read"
+      ]
+    ],
+    "why": "OLBG shows 2/2 tips (100%) on Buffalo Sabres; price inside -250; no official team record read for either side.",
+    "prediction": "Buffalo Sabres play the Washington Capitals. OLBG tipsters went 2 out of 2 on Buffalo for this 19:07 ET game. Published standings facts were not read for either club, so the tier rests on the OLBG listing and unanimous community tip share rather than a published record. Selection: Buffalo Sabres moneyline at an estimated -200."
+  },
+  {
+    "id": "PK-10",
+    "event": "bk-8",
+    "sport": "basketball",
+    "selection": "Phoenix Suns to win (money line)",
+    "american": -175,
+    "prob": 0.636,
+    "tier": "Medium",
+    "markets": [
+      [
+        "Money Line",
+        "originated",
+        "Phoenix 63.6% / Golden State 36.4%"
+      ],
+      [
+        "Point Spread",
+        "withheld",
+        "no team records or spread rating read"
+      ],
+      [
+        "Game Total",
+        "withheld",
+        "no pace or efficiency inputs were read"
+      ]
+    ],
+    "why": "OLBG shows PHX Suns money line, 1/2 tips (50%); no team records read; price is a nominal estimate only.",
+    "prediction": "Phoenix Suns face the Golden State Warriors on the money line. OLBG lists the Suns as the selection at 1 out of 2 tips (50%) for this 23:00 ET game, and the NBA calendar confirms the game on 24 October. No team records or injury facts were read for either side, so this is a nominal estimate with no edge confirmed from an official source. Selection: Phoenix Suns money line at an estimated -175."
+  },
+  {
+    "id": "PK-11",
+    "event": "tn-1",
+    "sport": "tennis",
+    "selection": "Elena Rybakina to win (win match)",
+    "american": -200,
+    "prob": 0.667,
+    "tier": "Medium",
+    "markets": [
+      [
+        "Win Match",
+        "originated",
+        "Rybakina 66.7% / Fernandez 33.3%"
+      ],
+      [
+        "Set Betting 2-0",
+        "withheld",
+        "no set-level pricing inputs read"
+      ],
+      [
+        "Total Games 20.5",
+        "withheld",
+        "no recent match length data read"
+      ]
+    ],
+    "why": "OLBG shows 4/4 tips (100%) on Elena Rybakina; no WTA ranking or head-to-head data read; price is community-consensus derived only.",
+    "prediction": "Elena Rybakina takes on Leylah Fernandez in a WTA match. OLBG tipsters backed Rybakina at 4 out of 4 tips for this tomorrow 05:00 ET match. No WTA ranking, head-to-head or recent form fact for either player appeared in an official source read this session, so this pick leans on the OLBG listing alone. Selection: Elena Rybakina win match at an estimated -200."
+  },
+  {
+    "id": "PK-12",
+    "event": "tn-3",
+    "sport": "tennis",
+    "selection": "Daniil Medvedev to win (win match)",
+    "american": -250,
+    "prob": 0.714,
+    "tier": "High",
+    "markets": [
+      [
+        "Win Match",
+        "originated",
+        "Medvedev 71.4% / Basilashvili 28.6%"
+      ],
+      [
+        "Set Betting 2-0",
+        "withheld",
+        "no set-level pricing inputs read"
+      ],
+      [
+        "Total Games 20.5",
+        "withheld",
+        "no recent match length data read"
+      ]
+    ],
+    "why": "OLBG shows 3/3 tips (100%) on Daniil Medvedev; price at -250 is at the edge of the -250..+10000 window; no ATP ranking or head-to-head data read.",
+    "prediction": "Daniil Medvedev plays Nikoloz Basilashvili in an ATP match. OLBG tipsters went 3 out of 3 on Medvedev for this tomorrow 06:00 ET match, and the estimated price of -250 sits at the edge of the high-confidence window. The ATP Tour rankings page was read this session, but no ATP ranking or recent form fact for either competitor was confirmed from an official source, so the tier rests on community consensus. Selection: Daniil Medvedev win match at an estimated -250."
+  },
+  {
+    "id": "PK-13",
+    "event": "sn-1",
+    "sport": "snooker",
+    "selection": "Jak Jones to win (win match)",
+    "american": -175,
+    "prob": 0.636,
+    "tier": "Medium",
+    "markets": [
+      [
+        "Win Match",
+        "originated",
+        "Jak Jones 63.6% / Mark Williams 36.4%"
+      ],
+      [
+        "Frame Handicap -1.5",
+        "withheld",
+        "no frame-level pricing inputs read"
+      ],
+      [
+        "Total Frames",
+        "withheld",
+        "no format length was read"
+      ]
+    ],
+    "why": "OLBG shows Jak Jones 16/27 tips (59%); WST match list confirms the Northern Ireland Open semi-final but no head-to-head or ranking data read.",
+    "prediction": "Jak Jones takes on Mark Williams in a Northern Ireland Open semi-final. OLBG tipsters back Jones at 16 out of 27 tips (59%), and the World Snooker Tour match list confirms this semi-final is on the 24 October card at 14:05 ET. No head-to-head or ranking fact was confirmed from an official source. Selection: Jak Jones win match at an estimated -175."
+  },
+  {
+    "id": "PK-17",
+    "event": "cr-1",
+    "sport": "cricket",
+    "selection": "Toronto Kings to win (win match)",
+    "american": -200,
+    "prob": 0.667,
+    "tier": "Medium",
+    "markets": [
+      [
+        "Win Match",
+        "originated",
+        "Toronto Kings 66.7% / Vancouver Guardians 33.3%"
+      ],
+      [
+        "Match Total",
+        "withheld",
+        "no run-rate data read"
+      ]
+    ],
+    "why": "OLBG shows Toronto Kings 6/7 tips (86%); no ICC/CSA/PCB official source read; price is community-derived only.",
+    "prediction": "Toronto Kings play the Vancouver Guardians in Global T20 Canada. OLBG tipsters back Toronto Kings at 6 out of 7 tips (86%) for this today 19:00 ET match. The ICC website was read this session, but no official cricket board source confirmed this specific fixture or team form, so this selection rests on community consensus alone. Selection: Toronto Kings win match at an estimated -200."
+  }
+]

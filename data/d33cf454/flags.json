@@ -1,0 +1,72 @@
+[
+  {
+    "id": "F-D3-01",
+    "finding": "No High-confidence picks for most sports",
+    "scope": "All 15 sports",
+    "detail": "Only one High pick was issued (Carolina Hurricanes). Minnesota Wild and Chemik Police W fell below the 70% probability bar and were kept at Medium. Every other market either failed the 70% probability test, fell outside the -250\u2026+10000 fair-price window, or lacked an official source to price against. No tier was inflated to fill the five-per-sport quota.",
+    "link": "https://buffedlizard55-lab.github.io/OLBG1/d33cf454/coverage.html"
+  },
+  {
+    "id": "F-D3-02",
+    "finding": "OLBG hub times are US Eastern, not UTC",
+    "scope": "All sports",
+    "detail": "Hub times are rendered in US Eastern (UTC-4). NBA hub times were matched to the NBA calendar to fix the offset. Hub-derived starts are labelled 'derived' and are never presented as confirmed.",
+    "link": "https://www.nba.com/games?date=2026-10-24"
+  },
+  {
+    "id": "F-D3-03",
+    "finding": "Golf hub empty at capture",
+    "scope": "Golf",
+    "detail": "The OLBG golf hub returned 'No tips found' at capture; there was no golf market to attach a selection to.",
+    "link": "https://www.olbg.com/betting-tips/Golf/5"
+  },
+  {
+    "id": "F-D3-04",
+    "finding": "Rugby League hub has no fixture markets",
+    "scope": "Rugby League",
+    "detail": "Only State of Origin 2027, Super League 2027 and NRL 2027 outrights were open. No match market existed, so no match pick could be made.",
+    "link": "https://www.olbg.com/betting-tips/Rugby_League/10"
+  },
+  {
+    "id": "F-D3-05",
+    "finding": "Greyhound race times are internally inconsistent",
+    "scope": "Greyhounds",
+    "detail": "OLBG prints race names like '7:58 Doncaster' and renders the same race as 14:58 ET, a displacement. No independent GBGB card was read, so greyhound rows carry no verified start time and no price.",
+    "link": "https://www.olbg.com/betting-tips/Greyhounds/28"
+  },
+  {
+    "id": "F-D3-06",
+    "finding": "NHL standings readable portion incomplete",
+    "scope": "Ice Hockey",
+    "detail": "The NHL standings response contained Boston, Edmonton, Vegas and Carolina among its first records; San Jose, Toronto, St. Louis and other clubs were not in the readable portion, so their prices are opponent-blind and capped below High.",
+    "link": "https://api-web.nhle.com/v1/standings/2026-10-24"
+  },
+  {
+    "id": "F-D3-07",
+    "finding": "NBA injury report not reachable",
+    "scope": "Basketball",
+    "detail": "The NBA injury report PDF could not be read, so no availability or injury claim is made for any basketball game.",
+    "link": "https://ak-static.cms.nba.com/referee/injury/"
+  },
+  {
+    "id": "F-D3-08",
+    "finding": "Snooker head-to-head and ranking data not read",
+    "scope": "Snooker",
+    "detail": "The WST match list confirms the semi-final routing but no player ranking or head-to-head page was read, so the snooker pick is capped at Medium.",
+    "link": "https://www.wst.tv/matches/"
+  },
+  {
+    "id": "F-D3-09",
+    "finding": "Five-per-sport quota not met",
+    "scope": "All 15 sports",
+    "detail": "The brief asks for five written picks per sport per day. This desk issues far fewer because the evidence gate (official source + >70% probability + in-window price) is deliberately strict and no tier was invented to fill a quota.",
+    "link": "https://buffedlizard55-lab.github.io/OLBG1/d33cf454/coverage.html"
+  },
+  {
+    "id": "F-D3-10",
+    "finding": "OLBG secondary routes return marketing copy",
+    "scope": "All sports",
+    "detail": "OLBG 'All events' routes render tipster copy and 404 bodies in some cases. Only the sport hub listings were treated as usable discovery.",
+    "link": "https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/5"
+  }
+]
