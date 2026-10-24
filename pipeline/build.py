@@ -29,6 +29,18 @@ REPO = 'https://github.com/buffedlizard55-lab/OLBG1'
 LIVE = 'https://buffedlizard55-lab.github.io/OLBG1/'
 OFFICIAL_HOSTS = set(PUBLISHERS) | {'www.nhl.com', 'www.mlb.com'}
 
+# Earlier sessions' desks stay published so the links they issued remain live.
+# Each entry is (path inside the artifact, description). Keep these literal:
+#   link='b2719ad3/index.html'   link='37003e61/index.html'
+#   link='8cfb80b2/index.html'   link='02d3d515/index.html'   link='3d121822/index.html'
+ARCHIVE = [
+    ('b2719ad3/index.html', '24 Oct 2026 evidence desk: official-feed capture with per-row sources'),
+    ('37003e61/index.html', 'Earlier desk: source capture and review queue'),
+    ('8cfb80b2/index.html', 'Earlier desk: source capture and review queue'),
+    ('02d3d515/index.html', 'Earlier desk: source capture and review queue'),
+    ('3d121822/index.html', 'Earlier desk: source capture and review queue'),
+]
+
 NAV = [
     ('summary', 'index.html', "Today's summary"),
     ('picks', 'picks.html', 'Picks'),
@@ -285,9 +297,22 @@ write-up too; they are simply closer calls.</p>
 
 <h2 style="margin-top:26px">Sport by sport today</h2>
 {self.coverage_table('index.html')}
+
+<h2 style="margin-top:26px">Earlier desks in this repository</h2>
+<p class="lede">These are other sessions' releases, kept reachable so no published link breaks. They use
+their own conventions and their own snapshot times; nothing on this page is drawn from them.</p>
+{self.archive_panel('index.html')}
 """
         self.shell('index.html', 'Today\'s summary', 'Today\'s picks, and where they are',
                    body, active='summary')
+
+    def archive_panel(self, page):
+        items = ''.join(
+            f'<li>{link(self.href(d, page), d)} &mdash; {e(label)}</li>'
+            for d, label in ARCHIVE if (ROOT / d).is_file())
+        if not items:
+            return '<p class="small">No earlier desk is present in this checkout.</p>'
+        return f'<ul class="plain">{items}</ul>'
 
     def coverage_table(self, page):
         rows = ['<table class="coverage"><thead><tr><th>Sport</th><th>Matches listed</th>'
@@ -784,6 +809,25 @@ def build_site(out=ROOT, at=None, archive=False):
     revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip() \
         if (ROOT / '.git').exists() else ''
     desk = build_desk()
+    # The deployment-evidence step in .github/workflows/current-pages.yml reads this
+    # file from the artifact, so the assembled snapshot is written beside the pages.
+    current = out / 'data' / 'current'
+    current.mkdir(parents=True, exist_ok=True)
+    save(current / 'snapshot.json', snapshot)
+    # Earlier desks listed on the front door are copied in, so their links resolve
+    # in the published artifact rather than only in the repository.
+    for rel, _label in (ARCHIVE if out != ROOT else ()):
+        src = ROOT / rel
+        if not src.is_file():
+            continue
+        folder = src.parent
+        dest = out / folder.name
+        for item in sorted(folder.rglob('*')):
+            if not item.is_file() or item.suffix not in ('.html', '.css', '.svg'):
+                continue
+            copy = dest / item.relative_to(folder)
+            copy.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(item, copy)
     manifest = Site(desk, out, revision, archive=audit).run()
     print(f'Built {len(manifest["pages"])} pages at {out}; ' + json.dumps(manifest.get('counts', {})))
     return manifest

@@ -102,6 +102,17 @@ wording, desktop and mobile overflow, and that every registered page answers 200
   file into `_site`, which is why the live site had grown past 1,400 pages across eighty parallel
   desks. Those desks remain in the repository and in git history; they are no longer published.
 
+## Earlier desks
+
+Other sessions' releases stay published so their links keep working, and they are listed at the
+bottom of the landing page:
+
+* https://buffedlizard55-lab.github.io/OLBG1/b2719ad3/index.html
+* https://buffedlizard55-lab.github.io/OLBG1/37003e61/index.html
+* https://buffedlizard55-lab.github.io/OLBG1/8cfb80b2/index.html
+* https://buffedlizard55-lab.github.io/OLBG1/02d3d515/index.html
+* https://buffedlizard55-lab.github.io/OLBG1/3d121822/index.html
+
 ## Known gaps
 
 Two NHL games on the official slate were not captured. Five clubs (Anaheim, Columbus, Calgary, Chicago,
