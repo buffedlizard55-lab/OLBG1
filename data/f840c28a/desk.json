@@ -1,0 +1,5837 @@
+{
+ "desk": "f840c28a",
+ "session": "f840c28a-olbg1",
+ "task": "TF840C",
+ "captured_utc": "2026-10-24T22:55:00Z",
+ "generated_utc": "2026-10-24T22:55:00Z",
+ "fixtures": [
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "away": "TOR",
+   "home": "EDM",
+   "start_utc": "2026-10-24T23:00Z",
+   "olbg_time": "Today 19:07",
+   "priced": true,
+   "source": "nhl-team-summary",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "EDM",
+     "away_sel": "TOR",
+     "home_p": 0.5672847137609923,
+     "away_p": 0.4327152862390076
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "home_sel": "EDM -1.5",
+     "away_sel": "TOR +1.5",
+     "home_p": 0.33036686580409197,
+     "away_p": 0.6696331341959081
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "home_sel": "EDM -1",
+     "away_sel": "TOR +1",
+     "home_p": 0.3904519431163565,
+     "away_p": 0.6095480568836436
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "home_sel": "EDM -2.5",
+     "away_sel": "TOR +2.5",
+     "home_p": 0.2024809015017036,
+     "away_p": 0.7975190984982964
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "home_sel": "EDM -2",
+     "away_sel": "TOR +2",
+     "home_p": 0.23227633565211367,
+     "away_p": 0.7677236643478863
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "home_sel": "Over 4.5",
+     "away_sel": "Under 4.5",
+     "home_p": 0.7875369803474743,
+     "away_p": 0.21246301965252568
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "home_sel": "Over 5.5",
+     "away_sel": "Under 5.5",
+     "home_p": 0.6456158101308338,
+     "away_p": 0.35438418986916614
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "home_sel": "Over 6.5",
+     "away_sel": "Under 6.5",
+     "home_p": 0.4894313532424851,
+     "away_p": 0.5105686467575148
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "home_sel": "Over 7.5",
+     "away_sel": "Under 7.5",
+     "home_p": 0.34210458905800134,
+     "away_p": 0.6578954109419988
+    }
+   ],
+   "pick": {
+    "selection": "Under 7.5",
+    "market": "Match total",
+    "line": "7.5",
+    "p": 0.6578954109419988,
+    "price": -192.30826828530428,
+    "decimal": 1.52,
+    "confidence": "Medium",
+    "game": "TOR @ EDM",
+    "side": "away",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "home"
+   },
+   "home_rec": {
+    "gp": 10,
+    "w": 8,
+    "l": 1,
+    "otl": 1,
+    "pts": 17,
+    "gf": 4.6,
+    "ga": 3.2,
+    "pp": 0.352941,
+    "pk": 0.724138
+   },
+   "away_rec": {
+    "gp": 12,
+    "w": 6,
+    "l": 4,
+    "otl": 2,
+    "pts": 14,
+    "gf": 3.58333,
+    "ga": 3.16666,
+    "pp": 0.285714,
+    "pk": 0.974359
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "EDM",
+     "p": 0.5672847137609923,
+     "price": -131.09883838207094,
+     "decimal": 1.763,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "TOR",
+     "p": 0.4327152862390076,
+     "price": 131.09883838207097,
+     "decimal": 2.311,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "home",
+     "selection": "EDM -1.5",
+     "p": 0.33036686580409197,
+     "price": 202.6937939330155,
+     "decimal": 3.027,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "away",
+     "selection": "TOR +1.5",
+     "p": 0.6696331341959081,
+     "price": -202.69379393301554,
+     "decimal": 1.493,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "home",
+     "selection": "EDM -1",
+     "p": 0.3904519431163565,
+     "price": 156.1134648270902,
+     "decimal": 2.561,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "away",
+     "selection": "TOR +1",
+     "p": 0.6095480568836436,
+     "price": -156.11346482709024,
+     "decimal": 1.641,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "home",
+     "selection": "EDM -2.5",
+     "p": 0.2024809015017036,
+     "price": 393.87373949023356,
+     "decimal": 4.939,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "away",
+     "selection": "TOR +2.5",
+     "p": 0.7975190984982964,
+     "price": -393.8737394902335,
+     "decimal": 1.254,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "home",
+     "selection": "EDM -2",
+     "p": 0.23227633565211367,
+     "price": 330.5216875376087,
+     "decimal": 4.305,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "away",
+     "selection": "TOR +2",
+     "p": 0.7677236643478863,
+     "price": -330.52168753760867,
+     "decimal": 1.303,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "home",
+     "selection": "Over 4.5",
+     "p": 0.7875369803474743,
+     "price": -370.67014374334786,
+     "decimal": 1.27,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "away",
+     "selection": "Under 4.5",
+     "p": 0.21246301965252568,
+     "price": 370.67014374334786,
+     "decimal": 4.707,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "home",
+     "selection": "Over 5.5",
+     "p": 0.6456158101308338,
+     "price": -182.1796311988936,
+     "decimal": 1.549,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "away",
+     "selection": "Under 5.5",
+     "p": 0.35438418986916614,
+     "price": 182.17963119889362,
+     "decimal": 2.822,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "home",
+     "selection": "Over 6.5",
+     "p": 0.4894313532424851,
+     "price": 104.3187452898134,
+     "decimal": 2.043,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "away",
+     "selection": "Under 6.5",
+     "p": 0.5105686467575148,
+     "price": -104.31874528981335,
+     "decimal": 1.959,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "home",
+     "selection": "Over 7.5",
+     "p": 0.34210458905800134,
+     "price": 192.3082682853042,
+     "decimal": 2.923,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "away",
+     "selection": "Under 7.5",
+     "p": 0.6578954109419988,
+     "price": -192.30826828530428,
+     "decimal": 1.52,
+     "band": "in",
+     "tier": "Medium"
+    }
+   ],
+   "withheld": [],
+   "fixture_source": "nhl-schedule",
+   "venue": "Rogers Place",
+   "official_start": "2026-10-24T23:00:00Z",
+   "olbg_printed_time": "Today 19:07",
+   "confirmed": true,
+   "publisher_ml": [
+    130,
+    -155
+   ],
+   "prediction": "Edmonton are scoring 4.60 goals a game, the highest rate in the league, and Toronto have conceded 3.17 while killing 97.4% of penalties. That Toronto kill against an Edmonton power play converting at 35.3% is the one real route to a big number. Strip that out and both goaltending charts point lower, so Under 7.5 at Rogers Place.",
+   "prediction_sources": [
+    "nhl-team-summary",
+    "nhl-schedule"
+   ]
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "away": "SJS",
+   "home": "BOS",
+   "start_utc": "2026-10-24T23:00Z",
+   "olbg_time": "Today 19:07",
+   "priced": true,
+   "source": "nhl-team-summary",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "BOS",
+     "away_sel": "SJS",
+     "home_p": 0.6197032545291337,
+     "away_p": 0.38029674547086634
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "home_sel": "BOS -1.5",
+     "away_sel": "SJS +1.5",
+     "home_p": 0.36568838300806816,
+     "away_p": 0.6343116169919318
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "home_sel": "BOS -1",
+     "away_sel": "SJS +1",
+     "home_p": 0.4377378023701548,
+     "away_p": 0.5622621976298452
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "home_sel": "BOS -2.5",
+     "away_sel": "SJS +2.5",
+     "home_p": 0.22490444159988104,
+     "away_p": 0.7750955584001189
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "home_sel": "BOS -2",
+     "away_sel": "SJS +2",
+     "home_p": 0.261823313635786,
+     "away_p": 0.738176686364214
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "home_sel": "Over 4.5",
+     "away_sel": "Under 4.5",
+     "home_p": 0.7169697119994102,
+     "away_p": 0.2830302880005899
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "home_sel": "Over 5.5",
+     "away_sel": "Under 5.5",
+     "home_p": 0.5567319832943876,
+     "away_p": 0.44326801670561244
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "home_sel": "Over 6.5",
+     "away_sel": "Under 6.5",
+     "home_p": 0.3960763085535839,
+     "away_p": 0.6039236914464161
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "home_sel": "Over 7.5",
+     "away_sel": "Under 7.5",
+     "home_p": 0.258012270639358,
+     "away_p": 0.7419877293606421
+    }
+   ],
+   "pick": {
+    "selection": "BOS",
+    "market": "Moneyline",
+    "line": "",
+    "p": 0.6197032545291337,
+    "price": -162.9525526866776,
+    "decimal": 1.614,
+    "confidence": "Medium",
+    "game": "SJS @ BOS",
+    "side": "home",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "home"
+   },
+   "home_rec": {
+    "gp": 11,
+    "w": 8,
+    "l": 2,
+    "otl": 1,
+    "pts": 17,
+    "gf": 3.81818,
+    "ga": 2.0,
+    "pp": 0.225806,
+    "pk": 0.805556
+   },
+   "away_rec": {
+    "gp": 11,
+    "w": 6,
+    "l": 4,
+    "otl": 1,
+    "pts": 13,
+    "gf": 2.90909,
+    "ga": 3.27272,
+    "pp": 0.257142,
+    "pk": 0.805556
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "BOS",
+     "p": 0.6197032545291337,
+     "price": -162.9525526866776,
+     "decimal": 1.614,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "SJS",
+     "p": 0.38029674547086634,
+     "price": 162.9525526866776,
+     "decimal": 2.63,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "home",
+     "selection": "BOS -1.5",
+     "p": 0.36568838300806816,
+     "price": 173.45686832439986,
+     "decimal": 2.735,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "away",
+     "selection": "SJS +1.5",
+     "p": 0.6343116169919318,
+     "price": -173.45686832439986,
+     "decimal": 1.577,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "home",
+     "selection": "BOS -1",
+     "p": 0.4377378023701548,
+     "price": 128.44725645933397,
+     "decimal": 2.284,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "away",
+     "selection": "SJS +1",
+     "p": 0.5622621976298452,
+     "price": -128.44725645933397,
+     "decimal": 1.779,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "home",
+     "selection": "BOS -2.5",
+     "p": 0.22490444159988104,
+     "price": 344.6332819780687,
+     "decimal": 4.446,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "away",
+     "selection": "SJS +2.5",
+     "p": 0.7750955584001189,
+     "price": -344.6332819780686,
+     "decimal": 1.29,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "home",
+     "selection": "BOS -2",
+     "p": 0.261823313635786,
+     "price": 281.9369582156721,
+     "decimal": 3.819,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "away",
+     "selection": "SJS +2",
+     "p": 0.738176686364214,
+     "price": -281.936958215672,
+     "decimal": 1.355,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "home",
+     "selection": "Over 4.5",
+     "p": 0.7169697119994102,
+     "price": -253.3190765780926,
+     "decimal": 1.395,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "away",
+     "selection": "Under 4.5",
+     "p": 0.2830302880005899,
+     "price": 253.3190765780925,
+     "decimal": 3.533,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "home",
+     "selection": "Over 5.5",
+     "p": 0.5567319832943876,
+     "price": -125.59714716889441,
+     "decimal": 1.796,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "away",
+     "selection": "Under 5.5",
+     "p": 0.44326801670561244,
+     "price": 125.59714716889441,
+     "decimal": 2.256,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "home",
+     "selection": "Over 6.5",
+     "p": 0.3960763085535839,
+     "price": 152.47660069643203,
+     "decimal": 2.525,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "away",
+     "selection": "Under 6.5",
+     "p": 0.6039236914464161,
+     "price": -152.47660069643203,
+     "decimal": 1.656,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "home",
+     "selection": "Over 7.5",
+     "p": 0.258012270639358,
+     "price": 287.57846575358064,
+     "decimal": 3.876,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "away",
+     "selection": "Under 7.5",
+     "p": 0.7419877293606421,
+     "price": -287.57846575358076,
+     "decimal": 1.348,
+     "band": "out",
+     "tier": "outside band"
+    }
+   ],
+   "withheld": [],
+   "fixture_source": "nhl-schedule",
+   "venue": "TD Garden",
+   "official_start": "2026-10-24T23:00:00Z",
+   "olbg_printed_time": "Today 19:07",
+   "confirmed": true,
+   "publisher_ml": [
+    160,
+    -192
+   ],
+   "prediction": null,
+   "prediction_sources": []
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "away": "CAR",
+   "home": "STL",
+   "start_utc": "2026-10-24T23:00Z",
+   "olbg_time": "Today 19:07",
+   "priced": true,
+   "source": "nhl-team-summary",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "STL",
+     "away_sel": "CAR",
+     "home_p": 0.483448070888578,
+     "away_p": 0.516551929111422
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "home_sel": "STL -1.5",
+     "away_sel": "CAR +1.5",
+     "home_p": 0.2554725323542783,
+     "away_p": 0.7445274676457216
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "home_sel": "STL -1",
+     "away_sel": "CAR +1",
+     "home_p": 0.29970634502233584,
+     "away_p": 0.7002936549776642
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "home_sel": "STL -2.5",
+     "away_sel": "CAR +2.5",
+     "home_p": 0.14371244046311576,
+     "away_p": 0.8562875595368842
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "home_sel": "STL -2",
+     "away_sel": "CAR +2",
+     "home_p": 0.16183074797121938,
+     "away_p": 0.8381692520287807
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "home_sel": "Over 4.5",
+     "away_sel": "Under 4.5",
+     "home_p": 0.74216452515873,
+     "away_p": 0.25783547484127
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "home_sel": "Over 5.5",
+     "away_sel": "Under 5.5",
+     "home_p": 0.5875340744390084,
+     "away_p": 0.4124659255609916
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "home_sel": "Over 6.5",
+     "away_sel": "Under 6.5",
+     "home_p": 0.42746138157735,
+     "away_p": 0.57253861842265
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "home_sel": "Over 7.5",
+     "away_sel": "Under 7.5",
+     "home_p": 0.2854272596856103,
+     "away_p": 0.7145727403143897
+    }
+   ],
+   "pick": {
+    "selection": "CAR +1",
+    "market": "Asian handicap",
+    "line": "-1 / +1 (push void)",
+    "p": 0.7002936549776642,
+    "price": -233.65993633717508,
+    "decimal": 1.428,
+    "confidence": "High",
+    "game": "CAR @ STL",
+    "side": "away",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "away"
+   },
+   "home_rec": {
+    "gp": 10,
+    "w": 5,
+    "l": 4,
+    "otl": 1,
+    "pts": 11,
+    "gf": 3.5,
+    "ga": 3.1,
+    "pp": 0.25,
+    "pk": 0.857143
+   },
+   "away_rec": {
+    "gp": 12,
+    "w": 8,
+    "l": 2,
+    "otl": 2,
+    "pts": 18,
+    "gf": 3.91666,
+    "ga": 2.41666,
+    "pp": 0.23913,
+    "pk": 0.833334
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "STL",
+     "p": 0.483448070888578,
+     "price": 106.8474486126295,
+     "decimal": 2.068,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "CAR",
+     "p": 0.516551929111422,
+     "price": -106.8474486126295,
+     "decimal": 1.936,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "home",
+     "selection": "STL -1.5",
+     "p": 0.2554725323542783,
+     "price": 291.4315135113011,
+     "decimal": 3.914,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "away",
+     "selection": "CAR +1.5",
+     "p": 0.7445274676457216,
+     "price": -291.43151351130103,
+     "decimal": 1.343,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "home",
+     "selection": "STL -1",
+     "p": 0.29970634502233584,
+     "price": 233.65993633717508,
+     "decimal": 3.337,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "away",
+     "selection": "CAR +1",
+     "p": 0.7002936549776642,
+     "price": -233.65993633717508,
+     "decimal": 1.428,
+     "band": "in",
+     "tier": "High"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "home",
+     "selection": "STL -2.5",
+     "p": 0.14371244046311576,
+     "price": 595.8339840152203,
+     "decimal": 6.958,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "away",
+     "selection": "CAR +2.5",
+     "p": 0.8562875595368842,
+     "price": -595.83398401522,
+     "decimal": 1.168,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "home",
+     "selection": "STL -2",
+     "p": 0.16183074797121938,
+     "price": 517.9295421521774,
+     "decimal": 6.179,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "away",
+     "selection": "CAR +2",
+     "p": 0.8381692520287807,
+     "price": -517.9295421521776,
+     "decimal": 1.193,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "home",
+     "selection": "Over 4.5",
+     "p": 0.74216452515873,
+     "price": -287.8442253206721,
+     "decimal": 1.347,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "away",
+     "selection": "Under 4.5",
+     "p": 0.25783547484127,
+     "price": 287.8442253206721,
+     "decimal": 3.878,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "home",
+     "selection": "Over 5.5",
+     "p": 0.5875340744390084,
+     "price": -142.4442694605398,
+     "decimal": 1.702,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "away",
+     "selection": "Under 5.5",
+     "p": 0.4124659255609916,
+     "price": 142.4442694605398,
+     "decimal": 2.424,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "home",
+     "selection": "Over 6.5",
+     "p": 0.42746138157735,
+     "price": 133.93926167317363,
+     "decimal": 2.339,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "away",
+     "selection": "Under 6.5",
+     "p": 0.57253861842265,
+     "price": -133.9392616731736,
+     "decimal": 1.747,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "home",
+     "selection": "Over 7.5",
+     "p": 0.2854272596856103,
+     "price": 250.35196046147468,
+     "decimal": 3.504,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "away",
+     "selection": "Under 7.5",
+     "p": 0.7145727403143897,
+     "price": -250.35196046147462,
+     "decimal": 1.399,
+     "band": "out",
+     "tier": "outside band"
+    }
+   ],
+   "withheld": [],
+   "fixture_source": "nhl-schedule",
+   "venue": "Enterprise Center",
+   "official_start": "2026-10-24T23:00:00Z",
+   "olbg_printed_time": "Today 19:07",
+   "confirmed": true,
+   "publisher_ml": [
+    -155,
+    130
+   ],
+   "prediction": "Carolina lead the league with 18 points from twelve games, scoring 3.92 a game and allowing 2.42, and they own an 83.3% penalty kill. St Louis are 5-4-1 and leaking 3.10 a game, which makes a two-goal win against this defence hard to see. Taking the Hurricanes with a one-goal start covers a regulation draw and a single-goal defeat.",
+   "prediction_sources": [
+    "nhl-team-summary",
+    "nhl-schedule"
+   ]
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "away": "VGK",
+   "home": "CBJ",
+   "start_utc": "2026-10-24T23:00Z",
+   "olbg_time": "Today 19:07",
+   "priced": true,
+   "source": "nhl-team-summary",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "CBJ",
+     "away_sel": "VGK",
+     "home_p": 0.4571593077578328,
+     "away_p": 0.5428406922421671
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "home_sel": "CBJ -1.5",
+     "away_sel": "VGK +1.5",
+     "home_p": 0.2351875616248637,
+     "away_p": 0.7648124383751362
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "home_sel": "CBJ -1",
+     "away_sel": "VGK +1",
+     "home_p": 0.2746596891085925,
+     "away_p": 0.7253403108914075
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "home_sel": "CBJ -2.5",
+     "away_sel": "VGK +2.5",
+     "home_p": 0.12926397828589925,
+     "away_p": 0.8707360217141007
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "home_sel": "CBJ -2",
+     "away_sel": "VGK +2",
+     "home_p": 0.14461014993970825,
+     "away_p": 0.8553898500602917
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "home_sel": "Over 4.5",
+     "away_sel": "Under 4.5",
+     "home_p": 0.7375544641525933,
+     "away_p": 0.26244553584740676
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "home_sel": "Over 5.5",
+     "away_sel": "Under 5.5",
+     "home_p": 0.5818243810514341,
+     "away_p": 0.4181756189485659
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "home_sel": "Over 6.5",
+     "away_sel": "Under 6.5",
+     "home_p": 0.4215683924101474,
+     "away_p": 0.5784316075898527
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "home_sel": "Over 7.5",
+     "away_sel": "Under 7.5",
+     "home_p": 0.28021402528628403,
+     "away_p": 0.719785974713716
+    }
+   ],
+   "pick": {
+    "selection": "Over 5.5",
+    "market": "Match total",
+    "line": "5.5",
+    "p": 0.5818243810514341,
+    "price": -139.1339797653283,
+    "decimal": 1.719,
+    "confidence": "Low",
+    "game": "VGK @ CBJ",
+    "side": "home",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "away"
+   },
+   "home_rec": {
+    "gp": 8,
+    "w": 3,
+    "l": 5,
+    "otl": 0,
+    "pts": 6,
+    "gf": 2.375,
+    "ga": 3.625,
+    "pp": 0.086956,
+    "pk": 0.7
+   },
+   "away_rec": {
+    "gp": 12,
+    "w": 8,
+    "l": 4,
+    "otl": 0,
+    "pts": 16,
+    "gf": 3.75,
+    "ga": 3.0,
+    "pp": 0.25,
+    "pk": 0.678572
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "CBJ",
+     "p": 0.4571593077578328,
+     "price": 118.74212840695822,
+     "decimal": 2.187,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "VGK",
+     "p": 0.5428406922421671,
+     "price": -118.7421284069582,
+     "decimal": 1.842,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "home",
+     "selection": "CBJ -1.5",
+     "p": 0.2351875616248637,
+     "price": 325.19255401569734,
+     "decimal": 4.252,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "away",
+     "selection": "VGK +1.5",
+     "p": 0.7648124383751362,
+     "price": -325.1925540156972,
+     "decimal": 1.308,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "home",
+     "selection": "CBJ -1",
+     "p": 0.2746596891085925,
+     "price": 264.08691906901157,
+     "decimal": 3.641,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "away",
+     "selection": "VGK +1",
+     "p": 0.7253403108914075,
+     "price": -264.08691906901157,
+     "decimal": 1.379,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "home",
+     "selection": "CBJ -2.5",
+     "p": 0.12926397828589925,
+     "price": 673.6107253238429,
+     "decimal": 7.736,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "away",
+     "selection": "VGK +2.5",
+     "p": 0.8707360217141007,
+     "price": -673.6107253238426,
+     "decimal": 1.148,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "home",
+     "selection": "CBJ -2",
+     "p": 0.14461014993970825,
+     "price": 591.5143926044791,
+     "decimal": 6.915,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "away",
+     "selection": "VGK +2",
+     "p": 0.8553898500602917,
+     "price": -591.5143926044786,
+     "decimal": 1.169,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "home",
+     "selection": "Over 4.5",
+     "p": 0.7375544641525933,
+     "price": -281.03143830247063,
+     "decimal": 1.356,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "away",
+     "selection": "Under 4.5",
+     "p": 0.26244553584740676,
+     "price": 281.0314383024706,
+     "decimal": 3.81,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "home",
+     "selection": "Over 5.5",
+     "p": 0.5818243810514341,
+     "price": -139.1339797653283,
+     "decimal": 1.719,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "away",
+     "selection": "Under 5.5",
+     "p": 0.4181756189485659,
+     "price": 139.1339797653283,
+     "decimal": 2.391,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "home",
+     "selection": "Over 6.5",
+     "p": 0.4215683924101474,
+     "price": 137.20943457902595,
+     "decimal": 2.372,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "away",
+     "selection": "Under 6.5",
+     "p": 0.5784316075898527,
+     "price": -137.209434579026,
+     "decimal": 1.729,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "home",
+     "selection": "Over 7.5",
+     "p": 0.28021402528628403,
+     "price": 256.87007421499976,
+     "decimal": 3.569,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "away",
+     "selection": "Under 7.5",
+     "p": 0.719785974713716,
+     "price": -256.87007421499976,
+     "decimal": 1.389,
+     "band": "out",
+     "tier": "outside band"
+    }
+   ],
+   "withheld": [],
+   "fixture_source": "nhl-schedule",
+   "venue": "Nationwide Arena",
+   "official_start": "2026-10-24T23:00:00Z",
+   "olbg_printed_time": "Today 19:07",
+   "confirmed": true,
+   "publisher_ml": [
+    -135,
+    114
+   ],
+   "prediction": null,
+   "prediction_sources": []
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "away": "NYR",
+   "home": "OTT",
+   "start_utc": "2026-10-24T23:00Z",
+   "olbg_time": "Today 19:07",
+   "priced": true,
+   "source": "nhl-team-summary",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "OTT",
+     "away_sel": "NYR",
+     "home_p": 0.4970242275783912,
+     "away_p": 0.5029757724216087
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "home_sel": "OTT -1.5",
+     "away_sel": "NYR +1.5",
+     "home_p": 0.25703657122719975,
+     "away_p": 0.7429634287728002
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "home_sel": "OTT -1",
+     "away_sel": "NYR +1",
+     "home_p": 0.30411700748036297,
+     "away_p": 0.695882992519637
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "home_sel": "OTT -2.5",
+     "away_sel": "NYR +2.5",
+     "home_p": 0.14105403040293557,
+     "away_p": 0.8589459695970645
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "home_sel": "OTT -2",
+     "away_sel": "NYR +2",
+     "home_p": 0.15957664684022121,
+     "away_p": 0.8404233531597788
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "home_sel": "Over 4.5",
+     "away_sel": "Under 4.5",
+     "home_p": 0.675276026391698,
+     "away_p": 0.3247239736083021
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "home_sel": "Over 5.5",
+     "away_sel": "Under 5.5",
+     "home_p": 0.507847904878539,
+     "away_p": 0.492152095121461
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "home_sel": "Over 6.5",
+     "away_sel": "Under 6.5",
+     "home_p": 0.3483120698793633,
+     "away_p": 0.6516879301206366
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "home_sel": "Over 7.5",
+     "away_sel": "Under 7.5",
+     "home_p": 0.21801300310614366,
+     "away_p": 0.7819869968938564
+    }
+   ],
+   "pick": {
+    "selection": "NYR +1",
+    "market": "Asian handicap",
+    "line": "-1 / +1 (push void)",
+    "p": 0.695882992519637,
+    "price": -228.82080758491307,
+    "decimal": 1.437,
+    "confidence": "Medium",
+    "game": "NYR @ OTT",
+    "side": "away",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "away"
+   },
+   "home_rec": {
+    "gp": 11,
+    "w": 7,
+    "l": 4,
+    "otl": 0,
+    "pts": 14,
+    "gf": 2.63636,
+    "ga": 2.72727,
+    "pp": 0.122448,
+    "pk": 0.780488
+   },
+   "away_rec": {
+    "gp": 12,
+    "w": 7,
+    "l": 4,
+    "otl": 1,
+    "pts": 15,
+    "gf": 3.08333,
+    "ga": 2.41666,
+    "pp": 0.2,
+    "pk": 0.916667
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "OTT",
+     "p": 0.4970242275783912,
+     "price": 101.19743556007619,
+     "decimal": 2.012,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "NYR",
+     "p": 0.5029757724216087,
+     "price": -101.19743556007616,
+     "decimal": 1.988,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "home",
+     "selection": "OTT -1.5",
+     "p": 0.25703657122719975,
+     "price": 289.04969640140433,
+     "decimal": 3.89,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "away",
+     "selection": "NYR +1.5",
+     "p": 0.7429634287728002,
+     "price": -289.0496964014043,
+     "decimal": 1.346,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "home",
+     "selection": "OTT -1",
+     "p": 0.30411700748036297,
+     "price": 228.82080758491307,
+     "decimal": 3.288,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "away",
+     "selection": "NYR +1",
+     "p": 0.695882992519637,
+     "price": -228.82080758491307,
+     "decimal": 1.437,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "home",
+     "selection": "OTT -2.5",
+     "p": 0.14105403040293557,
+     "price": 608.948193216029,
+     "decimal": 7.089,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "away",
+     "selection": "NYR +2.5",
+     "p": 0.8589459695970645,
+     "price": -608.9481932160293,
+     "decimal": 1.164,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "home",
+     "selection": "OTT -2",
+     "p": 0.15957664684022121,
+     "price": 526.6581105700677,
+     "decimal": 6.267,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "away",
+     "selection": "NYR +2",
+     "p": 0.8404233531597788,
+     "price": -526.6581105700677,
+     "decimal": 1.19,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "home",
+     "selection": "Over 4.5",
+     "p": 0.675276026391698,
+     "price": -207.95385659028958,
+     "decimal": 1.481,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "away",
+     "selection": "Under 4.5",
+     "p": 0.3247239736083021,
+     "price": 207.9538565902895,
+     "decimal": 3.08,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "home",
+     "selection": "Over 5.5",
+     "p": 0.507847904878539,
+     "price": -103.18921933131351,
+     "decimal": 1.969,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "away",
+     "selection": "Under 5.5",
+     "p": 0.492152095121461,
+     "price": 103.18921933131347,
+     "decimal": 2.032,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "home",
+     "selection": "Over 6.5",
+     "p": 0.3483120698793633,
+     "price": 187.09886520623488,
+     "decimal": 2.871,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "away",
+     "selection": "Under 6.5",
+     "p": 0.6516879301206366,
+     "price": -187.09886520623485,
+     "decimal": 1.534,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "home",
+     "selection": "Over 7.5",
+     "p": 0.21801300310614366,
+     "price": 358.6882368264665,
+     "decimal": 4.587,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "away",
+     "selection": "Under 7.5",
+     "p": 0.7819869968938564,
+     "price": -358.6882368264667,
+     "decimal": 1.279,
+     "band": "out",
+     "tier": "outside band"
+    }
+   ],
+   "withheld": [],
+   "fixture_source": "nhl-schedule",
+   "venue": "Canadian Tire Centre",
+   "official_start": "2026-10-24T23:00:00Z",
+   "olbg_printed_time": "Today 19:07",
+   "confirmed": true,
+   "publisher_ml": [
+    105,
+    -125
+   ],
+   "prediction": "The Rangers have conceded 2.42 goals a game across twelve starts and their 91.7% penalty kill is the best defensive number on tonight's board. Ottawa have scored only 2.64 a game and kill at 78.0%, so the visitors should get the power-play looks that separate these teams. A one-goal handicap takes a regulation draw and a one-goal loss out of play.",
+   "prediction_sources": [
+    "nhl-team-summary",
+    "nhl-schedule"
+   ]
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "away": "BUF",
+   "home": "WSH",
+   "start_utc": "2026-10-24T23:00Z",
+   "olbg_time": "Today 19:07",
+   "priced": true,
+   "source": "nhl-team-summary",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "WSH",
+     "away_sel": "BUF",
+     "home_p": 0.5662499626633627,
+     "away_p": 0.43375003733663736
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "home_sel": "WSH -1.5",
+     "away_sel": "BUF +1.5",
+     "home_p": 0.32243504668492884,
+     "away_p": 0.6775649533150712
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "home_sel": "WSH -1",
+     "away_sel": "BUF +1",
+     "home_p": 0.3829126572715014,
+     "away_p": 0.6170873427284985
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "home_sel": "WSH -2.5",
+     "away_sel": "BUF +2.5",
+     "home_p": 0.1930781929052506,
+     "away_p": 0.8069218070947494
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "home_sel": "WSH -2",
+     "away_sel": "BUF +2",
+     "home_p": 0.221822805539988,
+     "away_p": 0.778177194460012
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "home_sel": "Over 4.5",
+     "away_sel": "Under 4.5",
+     "home_p": 0.7427732333347699,
+     "away_p": 0.25722676666523026
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "home_sel": "Over 5.5",
+     "away_sel": "Under 5.5",
+     "home_p": 0.5882879072261731,
+     "away_p": 0.4117120927738269
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "home_sel": "Over 6.5",
+     "away_sel": "Under 6.5",
+     "home_p": 0.42823790783647525,
+     "away_p": 0.5717620921635248
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "home_sel": "Over 7.5",
+     "away_sel": "Under 7.5",
+     "home_p": 0.2861106653529753,
+     "away_p": 0.7138893346470248
+    }
+   ],
+   "pick": {
+    "selection": "Under 7.5",
+    "market": "Match total",
+    "line": "7.5",
+    "p": 0.7138893346470248,
+    "price": -249.51510764769924,
+    "decimal": 1.401,
+    "confidence": "High",
+    "game": "BUF @ WSH",
+    "side": "away",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "home"
+   },
+   "home_rec": {
+    "gp": 9,
+    "w": 5,
+    "l": 4,
+    "otl": 0,
+    "pts": 10,
+    "gf": 3.33333,
+    "ga": 3.22222,
+    "pp": 0.2,
+    "pk": 0.8
+   },
+   "away_rec": {
+    "gp": 10,
+    "w": 4,
+    "l": 4,
+    "otl": 2,
+    "pts": 10,
+    "gf": 2.8,
+    "ga": 3.6,
+    "pp": 0.111111,
+    "pk": 0.666667
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "WSH",
+     "p": 0.5662499626633627,
+     "price": -130.5475305870443,
+     "decimal": 1.766,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "BUF",
+     "p": 0.43375003733663736,
+     "price": 130.54753058704426,
+     "decimal": 2.305,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "home",
+     "selection": "WSH -1.5",
+     "p": 0.32243504668492884,
+     "price": 210.1399833179926,
+     "decimal": 3.101,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "away",
+     "selection": "BUF +1.5",
+     "p": 0.6775649533150712,
+     "price": -210.1399833179926,
+     "decimal": 1.476,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "home",
+     "selection": "WSH -1",
+     "p": 0.3829126572715014,
+     "price": 161.1561621194876,
+     "decimal": 2.612,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "away",
+     "selection": "BUF +1",
+     "p": 0.6170873427284985,
+     "price": -161.1561621194875,
+     "decimal": 1.621,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "home",
+     "selection": "WSH -2.5",
+     "p": 0.1930781929052506,
+     "price": 417.92488056418193,
+     "decimal": 5.179,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "away",
+     "selection": "BUF +2.5",
+     "p": 0.8069218070947494,
+     "price": -417.9248805641819,
+     "decimal": 1.239,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "home",
+     "selection": "WSH -2",
+     "p": 0.221822805539988,
+     "price": 350.8102751498786,
+     "decimal": 4.508,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "away",
+     "selection": "BUF +2",
+     "p": 0.778177194460012,
+     "price": -350.8102751498786,
+     "decimal": 1.285,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "home",
+     "selection": "Over 4.5",
+     "p": 0.7427732333347699,
+     "price": -288.76203008120774,
+     "decimal": 1.346,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "away",
+     "selection": "Under 4.5",
+     "p": 0.25722676666523026,
+     "price": 288.7620300812075,
+     "decimal": 3.888,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "home",
+     "selection": "Over 5.5",
+     "p": 0.5882879072261731,
+     "price": -142.88817781928685,
+     "decimal": 1.7,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "away",
+     "selection": "Under 5.5",
+     "p": 0.4117120927738269,
+     "price": 142.88817781928685,
+     "decimal": 2.429,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "home",
+     "selection": "Over 6.5",
+     "p": 0.42823790783647525,
+     "price": 133.51505826566265,
+     "decimal": 2.335,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "away",
+     "selection": "Under 6.5",
+     "p": 0.5717620921635248,
+     "price": -133.5150582656627,
+     "decimal": 1.749,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "home",
+     "selection": "Over 7.5",
+     "p": 0.2861106653529753,
+     "price": 249.5151076476992,
+     "decimal": 3.495,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "away",
+     "selection": "Under 7.5",
+     "p": 0.7138893346470248,
+     "price": -249.51510764769924,
+     "decimal": 1.401,
+     "band": "in",
+     "tier": "High"
+    }
+   ],
+   "withheld": [],
+   "fixture_source": "nhl-schedule",
+   "venue": "Capital One Arena",
+   "official_start": "2026-10-24T23:00:00Z",
+   "olbg_printed_time": "Today 19:07",
+   "confirmed": true,
+   "publisher_ml": [
+    100,
+    -120
+   ],
+   "prediction": "Washington have allowed 3.22 goals a game across nine starts and own an 80.0% penalty kill, while Buffalo are conceding 3.60 and killing only 66.7% of their shorthanded time. Both numbers point to long, broken sequences rather than a track meet, and the Capitals have scored 3.33 a game without ever looking like a seven-goal side. Under 7.5 goals is the call at Capital One Arena.",
+   "prediction_sources": [
+    "nhl-team-summary",
+    "nhl-schedule"
+   ]
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "away": "NSH",
+   "home": "PIT",
+   "start_utc": "2026-10-24T23:00Z",
+   "olbg_time": "Today 19:07",
+   "priced": true,
+   "source": "nhl-team-summary",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "PIT",
+     "away_sel": "NSH",
+     "home_p": 0.5479575929551241,
+     "away_p": 0.45204240704487586
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "home_sel": "PIT -1.5",
+     "away_sel": "NSH +1.5",
+     "home_p": 0.3045065304437595,
+     "away_p": 0.6954934695562405
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "home_sel": "PIT -1",
+     "away_sel": "NSH +1",
+     "home_p": 0.3614360199224186,
+     "away_p": 0.6385639800775814
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "home_sel": "PIT -2.5",
+     "away_sel": "NSH +2.5",
+     "home_p": 0.17838913261028755,
+     "away_p": 0.8216108673897125
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "home_sel": "PIT -2",
+     "away_sel": "NSH +2",
+     "home_p": 0.2041748701622774,
+     "away_p": 0.7958251298377226
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "home_sel": "Over 4.5",
+     "away_sel": "Under 4.5",
+     "home_p": 0.7259375255719306,
+     "away_p": 0.27406247442806947
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "home_sel": "Over 5.5",
+     "away_sel": "Under 5.5",
+     "home_p": 0.5675870106669535,
+     "away_p": 0.4324129893330465
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "home_sel": "Over 6.5",
+     "away_sel": "Under 6.5",
+     "home_p": 0.40702856362608064,
+     "away_p": 0.5929714363739194
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "home_sel": "Over 7.5",
+     "away_sel": "Under 7.5",
+     "home_p": 0.26748813641092634,
+     "away_p": 0.7325118635890737
+    }
+   ],
+   "pick": {
+    "selection": "Under 6.5",
+    "market": "Match total",
+    "line": "6.5",
+    "p": 0.5929714363739194,
+    "price": -145.68300344608156,
+    "decimal": 1.686,
+    "confidence": "Low",
+    "game": "NSH @ PIT",
+    "side": "away",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "home"
+   },
+   "home_rec": {
+    "gp": 11,
+    "w": 4,
+    "l": 6,
+    "otl": 1,
+    "pts": 9,
+    "gf": 3.27272,
+    "ga": 3.36363,
+    "pp": 0.212121,
+    "pk": 0.833334
+   },
+   "away_rec": {
+    "gp": 9,
+    "w": 3,
+    "l": 3,
+    "otl": 3,
+    "pts": 9,
+    "gf": 2.55555,
+    "ga": 3.11111,
+    "pp": 0.285714,
+    "pk": 0.833334
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "PIT",
+     "p": 0.5479575929551241,
+     "price": -121.21818316499815,
+     "decimal": 1.825,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "NSH",
+     "p": 0.45204240704487586,
+     "price": 121.21818316499815,
+     "decimal": 2.212,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "home",
+     "selection": "PIT -1.5",
+     "p": 0.3045065304437595,
+     "price": 228.40018194115342,
+     "decimal": 3.284,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "away",
+     "selection": "NSH +1.5",
+     "p": 0.6954934695562405,
+     "price": -228.40018194115342,
+     "decimal": 1.438,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "home",
+     "selection": "PIT -1",
+     "p": 0.3614360199224186,
+     "price": 176.6741400634745,
+     "decimal": 2.767,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "away",
+     "selection": "NSH +1",
+     "p": 0.6385639800775814,
+     "price": -176.6741400634745,
+     "decimal": 1.566,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "home",
+     "selection": "PIT -2.5",
+     "p": 0.17838913261028755,
+     "price": 460.5722643344087,
+     "decimal": 5.606,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "away",
+     "selection": "NSH +2.5",
+     "p": 0.8216108673897125,
+     "price": -460.5722643344087,
+     "decimal": 1.217,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "home",
+     "selection": "PIT -2",
+     "p": 0.2041748701622774,
+     "price": 389.77623896868596,
+     "decimal": 4.898,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "away",
+     "selection": "NSH +2",
+     "p": 0.7958251298377226,
+     "price": -389.7762389686859,
+     "decimal": 1.257,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "home",
+     "selection": "Over 4.5",
+     "p": 0.7259375255719306,
+     "price": -264.8803077060667,
+     "decimal": 1.378,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "away",
+     "selection": "Under 4.5",
+     "p": 0.27406247442806947,
+     "price": 264.88030770606656,
+     "decimal": 3.649,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "home",
+     "selection": "Over 5.5",
+     "p": 0.5675870106669535,
+     "price": -131.26039796871027,
+     "decimal": 1.762,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "away",
+     "selection": "Under 5.5",
+     "p": 0.4324129893330465,
+     "price": 131.26039796871027,
+     "decimal": 2.313,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "home",
+     "selection": "Over 6.5",
+     "p": 0.40702856362608064,
+     "price": 145.68300344608156,
+     "decimal": 2.457,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "away",
+     "selection": "Under 6.5",
+     "p": 0.5929714363739194,
+     "price": -145.68300344608156,
+     "decimal": 1.686,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "home",
+     "selection": "Over 7.5",
+     "p": 0.26748813641092634,
+     "price": 273.8483558253061,
+     "decimal": 3.738,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "away",
+     "selection": "Under 7.5",
+     "p": 0.7325118635890737,
+     "price": -273.84835582530616,
+     "decimal": 1.365,
+     "band": "out",
+     "tier": "outside band"
+    }
+   ],
+   "withheld": [],
+   "fixture_source": "nhl-schedule",
+   "venue": "PPG Paints Arena",
+   "official_start": "2026-10-24T23:00:00Z",
+   "olbg_printed_time": "Today 19:07",
+   "confirmed": true,
+   "publisher_ml": [
+    105,
+    -125
+   ],
+   "prediction": null,
+   "prediction_sources": []
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "away": "TBL",
+   "home": "UTA",
+   "start_utc": "2026-10-25T01:00Z",
+   "olbg_time": "Today 22:07",
+   "priced": true,
+   "source": "nhl-team-summary",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "UTA",
+     "away_sel": "TBL",
+     "home_p": 0.5309944663565646,
+     "away_p": 0.4690055336434355
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "home_sel": "UTA -1.5",
+     "away_sel": "TBL +1.5",
+     "home_p": 0.2946499892245817,
+     "away_p": 0.7053500107754183
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "home_sel": "UTA -1",
+     "away_sel": "TBL +1",
+     "home_p": 0.3479222173403545,
+     "away_p": 0.6520777826596456
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "home_sel": "UTA -2.5",
+     "away_sel": "TBL +2.5",
+     "home_p": 0.17289465312664387,
+     "away_p": 0.8271053468733561
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "home_sel": "UTA -2",
+     "away_sel": "TBL +2",
+     "home_p": 0.19691615705029283,
+     "away_p": 0.8030838429497071
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "home_sel": "Over 4.5",
+     "away_sel": "Under 4.5",
+     "home_p": 0.7539009583066137,
+     "away_p": 0.24609904169338628
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "home_sel": "Over 5.5",
+     "away_sel": "Under 5.5",
+     "home_p": 0.6022223524913575,
+     "away_p": 0.39777764750864264
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "home_sel": "Over 6.5",
+     "away_sel": "Under 6.5",
+     "home_p": 0.44277877095791246,
+     "away_p": 0.5572212290420876
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "home_sel": "Over 7.5",
+     "away_sel": "Under 7.5",
+     "home_p": 0.2991164214662524,
+     "away_p": 0.7008835785337476
+    }
+   ],
+   "pick": {
+    "selection": "Under 7.5",
+    "market": "Match total",
+    "line": "7.5",
+    "p": 0.7008835785337476,
+    "price": -234.31798732348244,
+    "decimal": 1.427,
+    "confidence": "High",
+    "game": "TBL @ UTA",
+    "side": "away",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "home"
+   },
+   "home_rec": {
+    "gp": 11,
+    "w": 7,
+    "l": 4,
+    "otl": 0,
+    "pts": 14,
+    "gf": 3.72727,
+    "ga": 3.27272,
+    "pp": 0.384615,
+    "pk": 0.666667
+   },
+   "away_rec": {
+    "gp": 10,
+    "w": 7,
+    "l": 3,
+    "otl": 0,
+    "pts": 14,
+    "gf": 3.4,
+    "ga": 2.9,
+    "pp": 0.135135,
+    "pk": 0.777778
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "UTA",
+     "p": 0.5309944663565646,
+     "price": -113.21710049593074,
+     "decimal": 1.883,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "TBL",
+     "p": 0.4690055336434355,
+     "price": 113.2171004959307,
+     "decimal": 2.132,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "home",
+     "selection": "UTA -1.5",
+     "p": 0.2946499892245817,
+     "price": 239.38572427294463,
+     "decimal": 3.394,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-1.5",
+     "side": "away",
+     "selection": "TBL +1.5",
+     "p": 0.7053500107754183,
+     "price": -239.3857242729446,
+     "decimal": 1.418,
+     "band": "in",
+     "tier": "High"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "home",
+     "selection": "UTA -1",
+     "p": 0.3479222173403545,
+     "price": 187.42056418367534,
+     "decimal": 2.874,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-1 / +1 (push void)",
+     "side": "away",
+     "selection": "TBL +1",
+     "p": 0.6520777826596456,
+     "price": -187.42056418367537,
+     "decimal": 1.534,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "home",
+     "selection": "UTA -2.5",
+     "p": 0.17289465312664387,
+     "price": 478.3868858382268,
+     "decimal": 5.784,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Puck line",
+     "line": "+/-2.5",
+     "side": "away",
+     "selection": "TBL +2.5",
+     "p": 0.8271053468733561,
+     "price": -478.3868858382268,
+     "decimal": 1.209,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "home",
+     "selection": "UTA -2",
+     "p": 0.19691615705029283,
+     "price": 407.8303451476547,
+     "decimal": 5.078,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Asian handicap",
+     "line": "-2 / +2 (push void)",
+     "side": "away",
+     "selection": "TBL +2",
+     "p": 0.8030838429497071,
+     "price": -407.83034514765467,
+     "decimal": 1.245,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "home",
+     "selection": "Over 4.5",
+     "p": 0.7539009583066137,
+     "price": -306.3404689100317,
+     "decimal": 1.326,
+     "band": "out",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "4.5",
+     "side": "away",
+     "selection": "Under 4.5",
+     "p": 0.24609904169338628,
+     "price": 306.34046891003163,
+     "decimal": 4.063,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "home",
+     "selection": "Over 5.5",
+     "p": 0.6022223524913575,
+     "price": -151.39673037517096,
+     "decimal": 1.661,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Match total",
+     "line": "5.5",
+     "side": "away",
+     "selection": "Under 5.5",
+     "p": 0.39777764750864264,
+     "price": 151.39673037517088,
+     "decimal": 2.514,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "home",
+     "selection": "Over 6.5",
+     "p": 0.44277877095791246,
+     "price": 125.84641938379045,
+     "decimal": 2.258,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "6.5",
+     "side": "away",
+     "selection": "Under 6.5",
+     "p": 0.5572212290420876,
+     "price": -125.84641938379049,
+     "decimal": 1.795,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "home",
+     "selection": "Over 7.5",
+     "p": 0.2991164214662524,
+     "price": 234.31798732348244,
+     "decimal": 3.343,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Match total",
+     "line": "7.5",
+     "side": "away",
+     "selection": "Under 7.5",
+     "p": 0.7008835785337476,
+     "price": -234.31798732348244,
+     "decimal": 1.427,
+     "band": "in",
+     "tier": "High"
+    }
+   ],
+   "withheld": [],
+   "fixture_source": "nhl-schedule",
+   "venue": "Delta Center",
+   "official_start": "2026-10-25T01:00:00Z",
+   "olbg_printed_time": "Today 22:07",
+   "confirmed": true,
+   "publisher_ml": [
+    120,
+    -142
+   ],
+   "prediction": "Utah have scored 3.73 goals a game but their 66.7% penalty kill is the leak that keeps totals honest, and Tampa Bay arrive conceding 2.90 a game with a 77.8% kill. The Lightning have allowed 29 goals in ten games, Utah 36 in eleven, and the visitors are on the second half of a long western trip. Under 7.5 goals at Delta Center.",
+   "prediction_sources": [
+    "nhl-team-summary",
+    "nhl-schedule"
+   ]
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "away": "MIN",
+   "home": "SEA",
+   "start_utc": "2026-10-25T03:07Z",
+   "olbg_time": "Today 23:07",
+   "priced": false,
+   "source": "nhl-team-summary",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "markets": [],
+   "pick": null,
+   "home_rec": {
+    "gp": 11,
+    "w": 7,
+    "l": 3,
+    "otl": 1,
+    "pts": 15,
+    "gf": 3.81818,
+    "ga": 3.36363,
+    "pp": 0.25,
+    "pk": 0.6875
+   },
+   "away_rec": {
+    "gp": 11,
+    "w": 6,
+    "l": 3,
+    "otl": 2,
+    "pts": 14,
+    "gf": 2.90909,
+    "ga": 2.45454,
+    "pp": 0.257142,
+    "pk": 0.783784
+   },
+   "outcomes": [],
+   "withheld": [
+    "Fixture not individually confirmed on the league's 24 October slate."
+   ],
+   "fixture_source": null,
+   "venue": null,
+   "official_start": null,
+   "olbg_printed_time": "Today 23:07",
+   "confirmed": false,
+   "publisher_ml": null,
+   "prediction": null,
+   "prediction_sources": []
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "away": "DET",
+   "home": "CGY",
+   "start_utc": "2026-10-25T02:00Z",
+   "olbg_time": "Today 23:07",
+   "priced": false,
+   "source": "nhl-team-summary",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "markets": [],
+   "pick": null,
+   "home_rec": {
+    "gp": 9,
+    "w": 3,
+    "l": 6,
+    "otl": 0,
+    "pts": 6,
+    "gf": 2.11111,
+    "ga": 4.22222,
+    "pp": 0.260869,
+    "pk": 0.83871
+   },
+   "away_rec": {
+    "gp": 11,
+    "w": 4,
+    "l": 4,
+    "otl": 3,
+    "pts": 11,
+    "gf": null,
+    "ga": null,
+    "pp": 0.222222,
+    "pk": 0.694445
+   },
+   "outcomes": [],
+   "withheld": [
+    "Detroit goals-for and goals-against were not visible in the returned page slice, so no rate could be used."
+   ],
+   "fixture_source": "nhl-schedule",
+   "venue": "Scotiabank Saddledome",
+   "official_start": "2026-10-25T02:00:00Z",
+   "olbg_printed_time": "Today 23:07",
+   "confirmed": true,
+   "publisher_ml": [
+    -125,
+    105
+   ],
+   "prediction": null,
+   "prediction_sources": []
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "away": "MTL",
+   "home": "WPG",
+   "start_utc": "2026-10-25T23:07Z",
+   "olbg_time": "Tomorrow 19:07",
+   "priced": false,
+   "source": "nhl-team-summary",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "markets": [],
+   "pick": null,
+   "home_rec": {
+    "gp": 10,
+    "w": 4,
+    "l": 3,
+    "otl": 3,
+    "pts": 11,
+    "gf": 2.6,
+    "ga": 2.9,
+    "pp": 0.222222,
+    "pk": 0.807693
+   },
+   "away_rec": {
+    "gp": 10,
+    "w": 5,
+    "l": 3,
+    "otl": 2,
+    "pts": 12,
+    "gf": 3.2,
+    "ga": 3.5,
+    "pp": 0.125,
+    "pk": 0.809524
+   },
+   "outcomes": [],
+   "withheld": [
+    "Fixture not individually confirmed on the league's 24 October slate."
+   ],
+   "fixture_source": null,
+   "venue": null,
+   "official_start": null,
+   "olbg_printed_time": "Tomorrow 19:07",
+   "confirmed": false,
+   "publisher_ml": null,
+   "prediction": null,
+   "prediction_sources": []
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "away": "MIA",
+   "home": "CHA",
+   "start_utc": "2026-10-24T22:00Z",
+   "olbg_time": "06:00 PM ET",
+   "priced": true,
+   "source": "nba-injury",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "CHA",
+     "away_sel": "MIA",
+     "home_p": 0.5822459279280222,
+     "away_p": 0.4177540720719778
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "home_sel": "CHA -4.5",
+     "away_sel": "MIA +4.5",
+     "home_p": 0.43945247427305384,
+     "away_p": 0.5605475257269461
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "home_sel": "CHA -6.5",
+     "away_sel": "MIA +6.5",
+     "home_p": 0.3773844097342747,
+     "away_p": 0.6226155902657253
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "home_sel": "CHA -9.5",
+     "away_sel": "MIA +9.5",
+     "home_p": 0.29035170950624833,
+     "away_p": 0.7096482904937517
+    }
+   ],
+   "pick": {
+    "selection": "CHA",
+    "market": "Moneyline",
+    "line": "",
+    "p": 0.5822459279280222,
+    "price": -139.37528485125165,
+    "decimal": 1.717,
+    "confidence": "Low",
+    "game": "MIA @ CHA",
+    "side": "home",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "home"
+   },
+   "home_rec": [
+    1,
+    1
+   ],
+   "away_rec": [
+    0,
+    2
+   ],
+   "on_olbg_hub": false,
+   "injuries": {
+    "MIA": [
+     [
+      "Larsson, Pelle",
+      "Probable",
+      "Left Finger Sprain"
+     ]
+    ],
+    "CHA": [
+     [
+      "Anderson, Christian",
+      "Probable",
+      "Left Ankle Sprain"
+     ],
+     [
+      "Boswell, Kylan",
+      "Out",
+      "Right Knee Surgery"
+     ],
+     [
+      "Knueppel, Kon",
+      "Out",
+      "Left Hamstring Strain"
+     ],
+     [
+      "White, Coby",
+      "Out",
+      "Left Calf Strain"
+     ],
+     [
+      "Williams, Grant",
+      "Out",
+      "Right Hamstring Strain"
+     ]
+    ]
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "CHA",
+     "p": 0.5822459279280222,
+     "price": -139.37528485125165,
+     "decimal": 1.717,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "MIA",
+     "p": 0.4177540720719778,
+     "price": 139.37528485125165,
+     "decimal": 2.394,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "home",
+     "selection": "CHA -4.5",
+     "p": 0.43945247427305384,
+     "price": 127.55589251242897,
+     "decimal": 2.276,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "away",
+     "selection": "MIA +4.5",
+     "p": 0.5605475257269461,
+     "price": -127.55589251242895,
+     "decimal": 1.784,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "home",
+     "selection": "CHA -6.5",
+     "p": 0.3773844097342747,
+     "price": 164.98179951422046,
+     "decimal": 2.65,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "away",
+     "selection": "MIA +6.5",
+     "p": 0.6226155902657253,
+     "price": -164.98179951422046,
+     "decimal": 1.606,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "home",
+     "selection": "CHA -9.5",
+     "p": 0.29035170950624833,
+     "price": 244.40988885532295,
+     "decimal": 3.444,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "away",
+     "selection": "MIA +9.5",
+     "p": 0.7096482904937517,
+     "price": -244.40988885532295,
+     "decimal": 1.409,
+     "band": "in",
+     "tier": "High"
+    }
+   ],
+   "withheld": [
+    "Game total: no official NBA scoring figure was read, so no total is originated."
+   ],
+   "fixture_source": "nba-injury",
+   "venue": null,
+   "official_start": "2026-10-24T22:00Z",
+   "olbg_printed_time": null,
+   "confirmed": true,
+   "publisher_ml": null,
+   "prediction": "Charlotte are 1-1 while Miami have opened 0-2. The Hornets' filing is the heavier one: Kylan Boswell, Kon Knueppel, Coby White and Grant Williams are all out, with Christian Anderson probable and Pelle Larsson probable for Miami. Four rotation absences against a winless visitor still leaves home court with Charlotte, but only just.",
+   "prediction_sources": [
+    "nba-standings",
+    "nba-injury"
+   ]
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "away": "BKN",
+   "home": "CLE",
+   "start_utc": "2026-10-24T23:30Z",
+   "olbg_time": "07:30 PM ET",
+   "priced": true,
+   "source": "nba-injury",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "CLE",
+     "away_sel": "BKN",
+     "home_p": 0.5329521673418951,
+     "away_p": 0.4670478326581049
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "home_sel": "CLE -4.5",
+     "away_sel": "BKN +4.5",
+     "home_p": 0.39077218562865834,
+     "away_p": 0.6092278143713417
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "home_sel": "CLE -6.5",
+     "away_sel": "BKN +6.5",
+     "home_p": 0.330944353224526,
+     "away_p": 0.669055646775474
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "home_sel": "CLE -9.5",
+     "away_sel": "BKN +9.5",
+     "home_p": 0.24910558954991158,
+     "away_p": 0.7508944104500884
+    }
+   ],
+   "pick": {
+    "selection": "CLE",
+    "market": "Moneyline",
+    "line": "",
+    "p": 0.5329521673418951,
+    "price": -114.11083192672353,
+    "decimal": 1.876,
+    "confidence": "Low",
+    "game": "BKN @ CLE",
+    "side": "home",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "home"
+   },
+   "home_rec": [
+    0,
+    1
+   ],
+   "away_rec": [
+    0,
+    1
+   ],
+   "on_olbg_hub": true,
+   "injuries": {
+    "BKN": [
+     [
+      "Bilodeau, Tyler",
+      "Out",
+      "Right Shoulder Sprain"
+     ]
+    ],
+    "CLE": [
+     [
+      "Diop, Khalifa",
+      "Out",
+      "Left Knee Injury Management"
+     ],
+     [
+      "Tomlin, Nae'Qwan",
+      "Out",
+      "Low Back Stress Reaction"
+     ],
+     [
+      "Udeh, Jr., Ernest",
+      "Out",
+      "G League - Two-Way"
+     ]
+    ]
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "CLE",
+     "p": 0.5329521673418951,
+     "price": -114.11083192672353,
+     "decimal": 1.876,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "BKN",
+     "p": 0.4670478326581049,
+     "price": 114.11083192672353,
+     "decimal": 2.141,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "home",
+     "selection": "CLE -4.5",
+     "p": 0.39077218562865834,
+     "price": 155.90357675821804,
+     "decimal": 2.559,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "away",
+     "selection": "BKN +4.5",
+     "p": 0.6092278143713417,
+     "price": -155.90357675821804,
+     "decimal": 1.641,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "home",
+     "selection": "CLE -6.5",
+     "p": 0.330944353224526,
+     "price": 202.16560284428232,
+     "decimal": 3.022,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "away",
+     "selection": "BKN +6.5",
+     "p": 0.669055646775474,
+     "price": -202.16560284428232,
+     "decimal": 1.495,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "home",
+     "selection": "CLE -9.5",
+     "p": 0.24910558954991158,
+     "price": 301.4361949110888,
+     "decimal": 4.014,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "away",
+     "selection": "BKN +9.5",
+     "p": 0.7508944104500884,
+     "price": -301.4361949110888,
+     "decimal": 1.332,
+     "band": "out",
+     "tier": "outside band"
+    }
+   ],
+   "withheld": [
+    "Game total: no official NBA scoring figure was read, so no total is originated."
+   ],
+   "fixture_source": "nba-injury",
+   "venue": null,
+   "official_start": "2026-10-24T23:30Z",
+   "olbg_printed_time": null,
+   "confirmed": true,
+   "publisher_ml": null,
+   "prediction": null,
+   "prediction_sources": []
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "away": "MIL",
+   "home": "PHI",
+   "start_utc": "2026-10-24T23:30Z",
+   "olbg_time": "07:30 PM ET",
+   "priced": true,
+   "source": "nba-injury",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "PHI",
+     "away_sel": "MIL",
+     "home_p": 0.6299494592911707,
+     "away_p": 0.37005054070882926
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "home_sel": "PHI -4.5",
+     "away_sel": "MIL +4.5",
+     "home_p": 0.4887192129390174,
+     "away_p": 0.5112807870609826
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "home_sel": "PHI -6.5",
+     "away_sel": "MIL +6.5",
+     "home_p": 0.4253283818035559,
+     "away_p": 0.5746716181964441
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "home_sel": "PHI -9.5",
+     "away_sel": "MIL +9.5",
+     "home_p": 0.33422345378036816,
+     "away_p": 0.6657765462196319
+    }
+   ],
+   "pick": {
+    "selection": "PHI",
+    "market": "Moneyline",
+    "line": "",
+    "p": 0.6299494592911707,
+    "price": -170.2333573366781,
+    "decimal": 1.587,
+    "confidence": "Medium",
+    "game": "MIL @ PHI",
+    "side": "home",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "home"
+   },
+   "home_rec": [
+    2,
+    0
+   ],
+   "away_rec": [
+    0,
+    2
+   ],
+   "on_olbg_hub": true,
+   "injuries": {
+    "MIL": "NOT YET SUBMITTED",
+    "PHI": [
+     [
+      "Barlow, Dominick",
+      "Out",
+      "Low Back Stress Reaction"
+     ],
+     [
+      "Fall, Tacko",
+      "Out",
+      "Left Quadriceps Strain"
+     ],
+     [
+      "Hukporti, Ariel",
+      "Out",
+      "Right Achilles Tendon Rupture / Tear"
+     ],
+     [
+      "James, LeBron",
+      "Out",
+      "Low back/ Sciatica"
+     ],
+     [
+      "Wade, Dean",
+      "Questionable",
+      "Left Ankle Sprain"
+     ]
+    ]
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "PHI",
+     "p": 0.6299494592911707,
+     "price": -170.2333573366781,
+     "decimal": 1.587,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "MIL",
+     "p": 0.37005054070882926,
+     "price": 170.2333573366781,
+     "decimal": 2.702,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "home",
+     "selection": "PHI -4.5",
+     "p": 0.4887192129390174,
+     "price": 104.61646964650446,
+     "decimal": 2.046,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "away",
+     "selection": "MIL +4.5",
+     "p": 0.5112807870609826,
+     "price": -104.61646964650444,
+     "decimal": 1.956,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "home",
+     "selection": "PHI -6.5",
+     "p": 0.4253283818035559,
+     "price": 135.11245493649292,
+     "decimal": 2.351,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "away",
+     "selection": "MIL +6.5",
+     "p": 0.5746716181964441,
+     "price": -135.11245493649292,
+     "decimal": 1.74,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "home",
+     "selection": "PHI -9.5",
+     "p": 0.33422345378036816,
+     "price": 199.20102514922272,
+     "decimal": 2.992,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "away",
+     "selection": "MIL +9.5",
+     "p": 0.6657765462196319,
+     "price": -199.20102514922274,
+     "decimal": 1.502,
+     "band": "in",
+     "tier": "Medium"
+    }
+   ],
+   "withheld": [
+    "Game total: no official NBA scoring figure was read, so no total is originated."
+   ],
+   "fixture_source": "nba-injury",
+   "venue": null,
+   "official_start": "2026-10-24T23:30Z",
+   "olbg_printed_time": null,
+   "confirmed": true,
+   "publisher_ml": null,
+   "prediction": "Philadelphia are 2-0 and Milwaukee 0-2 through the opening week of the season. The league's 1pm filing lists Dominick Barlow, Tacko Fall, Ariel Hukporti and LeBron James out for the 76ers with Dean Wade questionable, and Milwaukee had not submitted a report at all. Home court plus a two-game head start is enough to back Philadelphia.",
+   "prediction_sources": [
+    "nba-standings",
+    "nba-injury"
+   ]
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "away": "SAS",
+   "home": "DAL",
+   "start_utc": "2026-10-25T00:00Z",
+   "olbg_time": "08:00 PM ET",
+   "priced": true,
+   "source": "nba-injury",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "DAL",
+     "away_sel": "SAS",
+     "home_p": 0.5822459279280222,
+     "away_p": 0.4177540720719778
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "home_sel": "DAL -4.5",
+     "away_sel": "SAS +4.5",
+     "home_p": 0.43945247427305384,
+     "away_p": 0.5605475257269461
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "home_sel": "DAL -6.5",
+     "away_sel": "SAS +6.5",
+     "home_p": 0.3773844097342747,
+     "away_p": 0.6226155902657253
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "home_sel": "DAL -9.5",
+     "away_sel": "SAS +9.5",
+     "home_p": 0.29035170950624833,
+     "away_p": 0.7096482904937517
+    }
+   ],
+   "pick": {
+    "selection": "DAL",
+    "market": "Moneyline",
+    "line": "",
+    "p": 0.5822459279280222,
+    "price": -139.37528485125165,
+    "decimal": 1.717,
+    "confidence": "Low",
+    "game": "SAS @ DAL",
+    "side": "home",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "home"
+   },
+   "home_rec": [
+    1,
+    1
+   ],
+   "away_rec": [
+    0,
+    2
+   ],
+   "on_olbg_hub": true,
+   "injuries": {
+    "SAS": "NOT YET SUBMITTED",
+    "DAL": "NOT YET SUBMITTED"
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "DAL",
+     "p": 0.5822459279280222,
+     "price": -139.37528485125165,
+     "decimal": 1.717,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "SAS",
+     "p": 0.4177540720719778,
+     "price": 139.37528485125165,
+     "decimal": 2.394,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "home",
+     "selection": "DAL -4.5",
+     "p": 0.43945247427305384,
+     "price": 127.55589251242897,
+     "decimal": 2.276,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "away",
+     "selection": "SAS +4.5",
+     "p": 0.5605475257269461,
+     "price": -127.55589251242895,
+     "decimal": 1.784,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "home",
+     "selection": "DAL -6.5",
+     "p": 0.3773844097342747,
+     "price": 164.98179951422046,
+     "decimal": 2.65,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "away",
+     "selection": "SAS +6.5",
+     "p": 0.6226155902657253,
+     "price": -164.98179951422046,
+     "decimal": 1.606,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "home",
+     "selection": "DAL -9.5",
+     "p": 0.29035170950624833,
+     "price": 244.40988885532295,
+     "decimal": 3.444,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "away",
+     "selection": "SAS +9.5",
+     "p": 0.7096482904937517,
+     "price": -244.40988885532295,
+     "decimal": 1.409,
+     "band": "in",
+     "tier": "High"
+    }
+   ],
+   "withheld": [
+    "Game total: no official NBA scoring figure was read, so no total is originated."
+   ],
+   "fixture_source": "nba-injury",
+   "venue": null,
+   "official_start": "2026-10-25T00:00Z",
+   "olbg_printed_time": null,
+   "confirmed": true,
+   "publisher_ml": null,
+   "prediction": "Dallas are 1-1 and San Antonio 0-2. Both clubs filed 'NOT YET SUBMITTED' at 1pm, so no availability edge can be claimed for either side and this pick rests purely on record and venue. The Mavericks' home floor in a Texas derby is the difference, and it is thin enough that the selection stays in the low tier at -139.",
+   "prediction_sources": [
+    "nba-standings",
+    "nba-injury"
+   ]
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "away": "WAS",
+   "home": "CHI",
+   "start_utc": "2026-10-25T00:00Z",
+   "olbg_time": "08:00 PM ET",
+   "priced": true,
+   "source": "nba-injury",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "CHI",
+     "away_sel": "WAS",
+     "home_p": 0.5329521673418951,
+     "away_p": 0.4670478326581049
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "home_sel": "CHI -4.5",
+     "away_sel": "WAS +4.5",
+     "home_p": 0.39077218562865834,
+     "away_p": 0.6092278143713417
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "home_sel": "CHI -6.5",
+     "away_sel": "WAS +6.5",
+     "home_p": 0.330944353224526,
+     "away_p": 0.669055646775474
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "home_sel": "CHI -9.5",
+     "away_sel": "WAS +9.5",
+     "home_p": 0.24910558954991158,
+     "away_p": 0.7508944104500884
+    }
+   ],
+   "pick": {
+    "selection": "CHI",
+    "market": "Moneyline",
+    "line": "",
+    "p": 0.5329521673418951,
+    "price": -114.11083192672353,
+    "decimal": 1.876,
+    "confidence": "Low",
+    "game": "WAS @ CHI",
+    "side": "home",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "home"
+   },
+   "home_rec": [
+    1,
+    1
+   ],
+   "away_rec": [
+    1,
+    1
+   ],
+   "on_olbg_hub": true,
+   "injuries": {
+    "WAS": "NOT YET SUBMITTED",
+    "CHI": [
+     [
+      "Claxton, Nic",
+      "Out",
+      "Left Hamstring Strain"
+     ],
+     [
+      "Essengue, Noa",
+      "Probable",
+      "Right Head Contusion"
+     ]
+    ]
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "CHI",
+     "p": 0.5329521673418951,
+     "price": -114.11083192672353,
+     "decimal": 1.876,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "WAS",
+     "p": 0.4670478326581049,
+     "price": 114.11083192672353,
+     "decimal": 2.141,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "home",
+     "selection": "CHI -4.5",
+     "p": 0.39077218562865834,
+     "price": 155.90357675821804,
+     "decimal": 2.559,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "away",
+     "selection": "WAS +4.5",
+     "p": 0.6092278143713417,
+     "price": -155.90357675821804,
+     "decimal": 1.641,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "home",
+     "selection": "CHI -6.5",
+     "p": 0.330944353224526,
+     "price": 202.16560284428232,
+     "decimal": 3.022,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "away",
+     "selection": "WAS +6.5",
+     "p": 0.669055646775474,
+     "price": -202.16560284428232,
+     "decimal": 1.495,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "home",
+     "selection": "CHI -9.5",
+     "p": 0.24910558954991158,
+     "price": 301.4361949110888,
+     "decimal": 4.014,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "away",
+     "selection": "WAS +9.5",
+     "p": 0.7508944104500884,
+     "price": -301.4361949110888,
+     "decimal": 1.332,
+     "band": "out",
+     "tier": "outside band"
+    }
+   ],
+   "withheld": [
+    "Game total: no official NBA scoring figure was read, so no total is originated."
+   ],
+   "fixture_source": "nba-injury",
+   "venue": null,
+   "official_start": "2026-10-25T00:00Z",
+   "olbg_printed_time": null,
+   "confirmed": true,
+   "publisher_ml": null,
+   "prediction": null,
+   "prediction_sources": []
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "away": "HOU",
+   "home": "ATL",
+   "start_utc": "2026-10-25T00:30Z",
+   "olbg_time": "08:30 PM ET",
+   "priced": true,
+   "source": "nba-injury",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "ATL",
+     "away_sel": "HOU",
+     "home_p": 0.5329521673418951,
+     "away_p": 0.4670478326581049
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "home_sel": "ATL -4.5",
+     "away_sel": "HOU +4.5",
+     "home_p": 0.39077218562865834,
+     "away_p": 0.6092278143713417
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "home_sel": "ATL -6.5",
+     "away_sel": "HOU +6.5",
+     "home_p": 0.330944353224526,
+     "away_p": 0.669055646775474
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "home_sel": "ATL -9.5",
+     "away_sel": "HOU +9.5",
+     "home_p": 0.24910558954991158,
+     "away_p": 0.7508944104500884
+    }
+   ],
+   "pick": {
+    "selection": "ATL",
+    "market": "Moneyline",
+    "line": "",
+    "p": 0.5329521673418951,
+    "price": -114.11083192672353,
+    "decimal": 1.876,
+    "confidence": "Low",
+    "game": "HOU @ ATL",
+    "side": "home",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "home"
+   },
+   "home_rec": [
+    2,
+    0
+   ],
+   "away_rec": [
+    2,
+    0
+   ],
+   "on_olbg_hub": true,
+   "injuries": {
+    "HOU": [
+     [
+      "Adams, Steven",
+      "Out",
+      "Left Ankle Injury Management"
+     ],
+     [
+      "Sheppard, Reed",
+      "Questionable",
+      "Left Knee Contusion / Bone Bruise"
+     ],
+     [
+      "VanVleet, Fred",
+      "Out",
+      "Right Knee Injury Management"
+     ]
+    ],
+    "ATL": [
+     [
+      "Dennis, RayJ",
+      "Questionable",
+      "G League - Two-Way"
+     ],
+     [
+      "Gilbert, Keshon",
+      "Questionable",
+      "G League - Two-Way"
+     ],
+     [
+      "Gueye, Mouhamed",
+      "Out",
+      "Left Foot Fracture"
+     ],
+     [
+      "Veesaar, Henri",
+      "Out",
+      "Right ACL Tear"
+     ],
+     [
+      "Wilson, Jalen",
+      "Questionable",
+      "G League - Two-Way"
+     ]
+    ]
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "ATL",
+     "p": 0.5329521673418951,
+     "price": -114.11083192672353,
+     "decimal": 1.876,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "HOU",
+     "p": 0.4670478326581049,
+     "price": 114.11083192672353,
+     "decimal": 2.141,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "home",
+     "selection": "ATL -4.5",
+     "p": 0.39077218562865834,
+     "price": 155.90357675821804,
+     "decimal": 2.559,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "away",
+     "selection": "HOU +4.5",
+     "p": 0.6092278143713417,
+     "price": -155.90357675821804,
+     "decimal": 1.641,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "home",
+     "selection": "ATL -6.5",
+     "p": 0.330944353224526,
+     "price": 202.16560284428232,
+     "decimal": 3.022,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "away",
+     "selection": "HOU +6.5",
+     "p": 0.669055646775474,
+     "price": -202.16560284428232,
+     "decimal": 1.495,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "home",
+     "selection": "ATL -9.5",
+     "p": 0.24910558954991158,
+     "price": 301.4361949110888,
+     "decimal": 4.014,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "away",
+     "selection": "HOU +9.5",
+     "p": 0.7508944104500884,
+     "price": -301.4361949110888,
+     "decimal": 1.332,
+     "band": "out",
+     "tier": "outside band"
+    }
+   ],
+   "withheld": [
+    "Game total: no official NBA scoring figure was read, so no total is originated."
+   ],
+   "fixture_source": "nba-injury",
+   "venue": null,
+   "official_start": "2026-10-25T00:30Z",
+   "olbg_printed_time": null,
+   "confirmed": true,
+   "publisher_ml": null,
+   "prediction": null,
+   "prediction_sources": []
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "away": "NOP",
+   "home": "DEN",
+   "start_utc": "2026-10-25T01:00Z",
+   "olbg_time": "09:00 PM ET",
+   "priced": true,
+   "source": "nba-injury",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "DEN",
+     "away_sel": "NOP",
+     "home_p": 0.556566322719211,
+     "away_p": 0.443433677280789
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "home_sel": "DEN -4.5",
+     "away_sel": "NOP +4.5",
+     "home_p": 0.4138194417256272,
+     "away_p": 0.5861805582743729
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "home_sel": "DEN -6.5",
+     "away_sel": "NOP +6.5",
+     "home_p": 0.35281530153992813,
+     "away_p": 0.6471846984600719
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "home_sel": "DEN -9.5",
+     "away_sel": "NOP +9.5",
+     "home_p": 0.26837641084043473,
+     "away_p": 0.7316235891595653
+    }
+   ],
+   "pick": {
+    "selection": "DEN",
+    "market": "Moneyline",
+    "line": "",
+    "p": 0.556566322719211,
+    "price": -125.51286725270187,
+    "decimal": 1.797,
+    "confidence": "Low",
+    "game": "NOP @ DEN",
+    "side": "home",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "home"
+   },
+   "home_rec": [
+    0,
+    1
+   ],
+   "away_rec": [
+    0,
+    2
+   ],
+   "on_olbg_hub": true,
+   "injuries": {
+    "NOP": "NOT YET SUBMITTED",
+    "DEN": [
+     [
+      "Diallo, Alpha",
+      "Questionable",
+      "Right Wrist Sprain"
+     ],
+     [
+      "Johnson, Cameron",
+      "Out",
+      "Right Ankle Sprain"
+     ],
+     [
+      "Jones, Spencer",
+      "Out",
+      "Bilateral Hamstring Injury Management"
+     ],
+     [
+      "Strawther, Julian",
+      "Out",
+      "Left Knee Sprain"
+     ]
+    ]
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "DEN",
+     "p": 0.556566322719211,
+     "price": -125.51286725270187,
+     "decimal": 1.797,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "NOP",
+     "p": 0.443433677280789,
+     "price": 125.51286725270187,
+     "decimal": 2.255,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "home",
+     "selection": "DEN -4.5",
+     "p": 0.4138194417256272,
+     "price": 141.65128536010772,
+     "decimal": 2.417,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "away",
+     "selection": "NOP +4.5",
+     "p": 0.5861805582743729,
+     "price": -141.65128536010775,
+     "decimal": 1.706,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "home",
+     "selection": "DEN -6.5",
+     "p": 0.35281530153992813,
+     "price": 183.4344189822022,
+     "decimal": 2.834,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "away",
+     "selection": "NOP +6.5",
+     "p": 0.6471846984600719,
+     "price": -183.4344189822022,
+     "decimal": 1.545,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "home",
+     "selection": "DEN -9.5",
+     "p": 0.26837641084043473,
+     "price": 272.6109894936175,
+     "decimal": 3.726,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "away",
+     "selection": "NOP +9.5",
+     "p": 0.7316235891595653,
+     "price": -272.6109894936175,
+     "decimal": 1.367,
+     "band": "out",
+     "tier": "outside band"
+    }
+   ],
+   "withheld": [
+    "Game total: no official NBA scoring figure was read, so no total is originated."
+   ],
+   "fixture_source": "nba-injury",
+   "venue": null,
+   "official_start": "2026-10-25T01:00Z",
+   "olbg_printed_time": null,
+   "confirmed": true,
+   "publisher_ml": null,
+   "prediction": "Denver are 0-1 and New Orleans 0-2. The Nuggets are missing Cameron Johnson, Spencer Jones and Julian Strawther, with Alpha Diallo questionable, while the Pelicans had not filed by 1pm. Three rotation absences cap the confidence, but a winless visitor and the altitude of a home opener make Denver the side to take.",
+   "prediction_sources": [
+    "nba-standings",
+    "nba-injury"
+   ]
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "away": "MEM",
+   "home": "SAC",
+   "start_utc": "2026-10-25T01:00Z",
+   "olbg_time": "09:00 PM ET",
+   "priced": false,
+   "source": "nba-injury",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "markets": [],
+   "pick": null,
+   "home_rec": null,
+   "away_rec": [
+    2,
+    0
+   ],
+   "on_olbg_hub": false,
+   "injuries": {
+    "MEM": "NOT YET SUBMITTED",
+    "SAC": "NOT YET SUBMITTED"
+   },
+   "outcomes": [],
+   "withheld": [
+    "Game total: no official NBA scoring figure was read, so no total is originated."
+   ],
+   "fixture_source": "nba-injury",
+   "venue": null,
+   "official_start": "2026-10-25T01:00Z",
+   "olbg_printed_time": null,
+   "confirmed": true,
+   "publisher_ml": null,
+   "prediction": null,
+   "prediction_sources": []
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "away": "GSW",
+   "home": "PHX",
+   "start_utc": "2026-10-25T02:00Z",
+   "olbg_time": "10:00 PM ET",
+   "priced": true,
+   "source": "nba-injury",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "home_sel": "PHX",
+     "away_sel": "GSW",
+     "home_p": 0.556566322719211,
+     "away_p": 0.443433677280789
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "home_sel": "PHX -4.5",
+     "away_sel": "GSW +4.5",
+     "home_p": 0.4138194417256272,
+     "away_p": 0.5861805582743729
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "home_sel": "PHX -6.5",
+     "away_sel": "GSW +6.5",
+     "home_p": 0.35281530153992813,
+     "away_p": 0.6471846984600719
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "home_sel": "PHX -9.5",
+     "away_sel": "GSW +9.5",
+     "home_p": 0.26837641084043473,
+     "away_p": 0.7316235891595653
+    }
+   ],
+   "pick": {
+    "selection": "PHX",
+    "market": "Moneyline",
+    "line": "",
+    "p": 0.556566322719211,
+    "price": -125.51286725270187,
+    "decimal": 1.797,
+    "confidence": "Low",
+    "game": "GSW @ PHX",
+    "side": "home",
+    "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+    "fav_side": "home"
+   },
+   "home_rec": [
+    0,
+    1
+   ],
+   "away_rec": [
+    0,
+    2
+   ],
+   "on_olbg_hub": true,
+   "injuries": {
+    "GSW": "NOT YET SUBMITTED",
+    "PHX": [
+     [
+      "Ighodaro, Oso",
+      "Doubtful",
+      "Right Oblique Strain"
+     ],
+     [
+      "Kennard, Luke",
+      "Questionable",
+      "Left Knee Tendinopathy"
+     ],
+     [
+      "Williams, Mark",
+      "Out",
+      "Left Shoulder Surgery"
+     ]
+    ]
+   },
+   "outcomes": [
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "home",
+     "selection": "PHX",
+     "p": 0.556566322719211,
+     "price": -125.51286725270187,
+     "decimal": 1.797,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Moneyline",
+     "line": "",
+     "side": "away",
+     "selection": "GSW",
+     "p": 0.443433677280789,
+     "price": 125.51286725270187,
+     "decimal": 2.255,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "home",
+     "selection": "PHX -4.5",
+     "p": 0.4138194417256272,
+     "price": 141.65128536010772,
+     "decimal": 2.417,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "4.5",
+     "side": "away",
+     "selection": "GSW +4.5",
+     "p": 0.5861805582743729,
+     "price": -141.65128536010775,
+     "decimal": 1.706,
+     "band": "in",
+     "tier": "Low"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "home",
+     "selection": "PHX -6.5",
+     "p": 0.35281530153992813,
+     "price": 183.4344189822022,
+     "decimal": 2.834,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "6.5",
+     "side": "away",
+     "selection": "GSW +6.5",
+     "p": 0.6471846984600719,
+     "price": -183.4344189822022,
+     "decimal": 1.545,
+     "band": "in",
+     "tier": "Medium"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "home",
+     "selection": "PHX -9.5",
+     "p": 0.26837641084043473,
+     "price": 272.6109894936175,
+     "decimal": 3.726,
+     "band": "in",
+     "tier": "outside band"
+    },
+    {
+     "market": "Point spread",
+     "line": "9.5",
+     "side": "away",
+     "selection": "GSW +9.5",
+     "p": 0.7316235891595653,
+     "price": -272.6109894936175,
+     "decimal": 1.367,
+     "band": "out",
+     "tier": "outside band"
+    }
+   ],
+   "withheld": [
+    "Game total: no official NBA scoring figure was read, so no total is originated."
+   ],
+   "fixture_source": "nba-injury",
+   "venue": null,
+   "official_start": "2026-10-25T02:00Z",
+   "olbg_printed_time": null,
+   "confirmed": true,
+   "publisher_ml": null,
+   "prediction": "Phoenix are 0-1 and Golden State 0-2. The Suns list Mark Williams out following shoulder surgery, Oso Ighodaro doubtful with an oblique strain and Luke Kennard questionable, while the Warriors did not file before 1pm. Golden State's 0-2 start and a home floor are enough to lean Phoenix, though the frontcourt absences keep it low.",
+   "prediction_sources": [
+    "nba-standings",
+    "nba-injury"
+   ]
+  }
+ ],
+ "picks": [
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "fixture": "BUF @ WSH",
+   "selection": "Under 7.5",
+   "market": "Match total",
+   "line": "7.5",
+   "p": 0.7138893346470248,
+   "price": -249.51510764769924,
+   "decimal": 1.401,
+   "confidence": "High",
+   "game": "BUF @ WSH",
+   "side": "away",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "home",
+   "start_utc": "2026-10-24T23:00Z",
+   "prediction": "Washington have allowed 3.22 goals a game across nine starts and own an 80.0% penalty kill, while Buffalo are conceding 3.60 and killing only 66.7% of their shorthanded time. Both numbers point to long, broken sequences rather than a track meet, and the Capitals have scored 3.33 a game without ever looking like a seven-goal side. Under 7.5 goals is the call at Capital One Arena.",
+   "prediction_sources": [
+    "nhl-team-summary",
+    "nhl-schedule"
+   ],
+   "fixture_source": "nhl-schedule"
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "fixture": "TBL @ UTA",
+   "selection": "Under 7.5",
+   "market": "Match total",
+   "line": "7.5",
+   "p": 0.7008835785337476,
+   "price": -234.31798732348244,
+   "decimal": 1.427,
+   "confidence": "High",
+   "game": "TBL @ UTA",
+   "side": "away",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "home",
+   "start_utc": "2026-10-25T01:00Z",
+   "prediction": "Utah have scored 3.73 goals a game but their 66.7% penalty kill is the leak that keeps totals honest, and Tampa Bay arrive conceding 2.90 a game with a 77.8% kill. The Lightning have allowed 29 goals in ten games, Utah 36 in eleven, and the visitors are on the second half of a long western trip. Under 7.5 goals at Delta Center.",
+   "prediction_sources": [
+    "nhl-team-summary",
+    "nhl-schedule"
+   ],
+   "fixture_source": "nhl-schedule"
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "fixture": "CAR @ STL",
+   "selection": "CAR +1",
+   "market": "Asian handicap",
+   "line": "-1 / +1 (push void)",
+   "p": 0.7002936549776642,
+   "price": -233.65993633717508,
+   "decimal": 1.428,
+   "confidence": "High",
+   "game": "CAR @ STL",
+   "side": "away",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "away",
+   "start_utc": "2026-10-24T23:00Z",
+   "prediction": "Carolina lead the league with 18 points from twelve games, scoring 3.92 a game and allowing 2.42, and they own an 83.3% penalty kill. St Louis are 5-4-1 and leaking 3.10 a game, which makes a two-goal win against this defence hard to see. Taking the Hurricanes with a one-goal start covers a regulation draw and a single-goal defeat.",
+   "prediction_sources": [
+    "nhl-team-summary",
+    "nhl-schedule"
+   ],
+   "fixture_source": "nhl-schedule"
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "fixture": "NYR @ OTT",
+   "selection": "NYR +1",
+   "market": "Asian handicap",
+   "line": "-1 / +1 (push void)",
+   "p": 0.695882992519637,
+   "price": -228.82080758491307,
+   "decimal": 1.437,
+   "confidence": "Medium",
+   "game": "NYR @ OTT",
+   "side": "away",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "away",
+   "start_utc": "2026-10-24T23:00Z",
+   "prediction": "The Rangers have conceded 2.42 goals a game across twelve starts and their 91.7% penalty kill is the best defensive number on tonight's board. Ottawa have scored only 2.64 a game and kill at 78.0%, so the visitors should get the power-play looks that separate these teams. A one-goal handicap takes a regulation draw and a one-goal loss out of play.",
+   "prediction_sources": [
+    "nhl-team-summary",
+    "nhl-schedule"
+   ],
+   "fixture_source": "nhl-schedule"
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "fixture": "TOR @ EDM",
+   "selection": "Under 7.5",
+   "market": "Match total",
+   "line": "7.5",
+   "p": 0.6578954109419988,
+   "price": -192.30826828530428,
+   "decimal": 1.52,
+   "confidence": "Medium",
+   "game": "TOR @ EDM",
+   "side": "away",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "home",
+   "start_utc": "2026-10-24T23:00Z",
+   "prediction": "Edmonton are scoring 4.60 goals a game, the highest rate in the league, and Toronto have conceded 3.17 while killing 97.4% of penalties. That Toronto kill against an Edmonton power play converting at 35.3% is the one real route to a big number. Strip that out and both goaltending charts point lower, so Under 7.5 at Rogers Place.",
+   "prediction_sources": [
+    "nhl-team-summary",
+    "nhl-schedule"
+   ],
+   "fixture_source": "nhl-schedule"
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "fixture": "MIL @ PHI",
+   "selection": "PHI",
+   "market": "Moneyline",
+   "line": "",
+   "p": 0.6299494592911707,
+   "price": -170.2333573366781,
+   "decimal": 1.587,
+   "confidence": "Medium",
+   "game": "MIL @ PHI",
+   "side": "home",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "home",
+   "start_utc": "2026-10-24T23:30Z",
+   "prediction": "Philadelphia are 2-0 and Milwaukee 0-2 through the opening week of the season. The league's 1pm filing lists Dominick Barlow, Tacko Fall, Ariel Hukporti and LeBron James out for the 76ers with Dean Wade questionable, and Milwaukee had not submitted a report at all. Home court plus a two-game head start is enough to back Philadelphia.",
+   "prediction_sources": [
+    "nba-standings",
+    "nba-injury"
+   ],
+   "fixture_source": "nba-injury"
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "fixture": "SJS @ BOS",
+   "selection": "BOS",
+   "market": "Moneyline",
+   "line": "",
+   "p": 0.6197032545291337,
+   "price": -162.9525526866776,
+   "decimal": 1.614,
+   "confidence": "Medium",
+   "game": "SJS @ BOS",
+   "side": "home",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "home",
+   "start_utc": "2026-10-24T23:00Z",
+   "prediction": null,
+   "prediction_sources": [],
+   "fixture_source": "nhl-schedule"
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "fixture": "NSH @ PIT",
+   "selection": "Under 6.5",
+   "market": "Match total",
+   "line": "6.5",
+   "p": 0.5929714363739194,
+   "price": -145.68300344608156,
+   "decimal": 1.686,
+   "confidence": "Low",
+   "game": "NSH @ PIT",
+   "side": "away",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "home",
+   "start_utc": "2026-10-24T23:00Z",
+   "prediction": null,
+   "prediction_sources": [],
+   "fixture_source": "nhl-schedule"
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "fixture": "MIA @ CHA",
+   "selection": "CHA",
+   "market": "Moneyline",
+   "line": "",
+   "p": 0.5822459279280222,
+   "price": -139.37528485125165,
+   "decimal": 1.717,
+   "confidence": "Low",
+   "game": "MIA @ CHA",
+   "side": "home",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "home",
+   "start_utc": "2026-10-24T22:00Z",
+   "prediction": "Charlotte are 1-1 while Miami have opened 0-2. The Hornets' filing is the heavier one: Kylan Boswell, Kon Knueppel, Coby White and Grant Williams are all out, with Christian Anderson probable and Pelle Larsson probable for Miami. Four rotation absences against a winless visitor still leaves home court with Charlotte, but only just.",
+   "prediction_sources": [
+    "nba-standings",
+    "nba-injury"
+   ],
+   "fixture_source": "nba-injury"
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "fixture": "SAS @ DAL",
+   "selection": "DAL",
+   "market": "Moneyline",
+   "line": "",
+   "p": 0.5822459279280222,
+   "price": -139.37528485125165,
+   "decimal": 1.717,
+   "confidence": "Low",
+   "game": "SAS @ DAL",
+   "side": "home",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "home",
+   "start_utc": "2026-10-25T00:00Z",
+   "prediction": "Dallas are 1-1 and San Antonio 0-2. Both clubs filed 'NOT YET SUBMITTED' at 1pm, so no availability edge can be claimed for either side and this pick rests purely on record and venue. The Mavericks' home floor in a Texas derby is the difference, and it is thin enough that the selection stays in the low tier at -139.",
+   "prediction_sources": [
+    "nba-standings",
+    "nba-injury"
+   ],
+   "fixture_source": "nba-injury"
+  },
+  {
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "fixture": "VGK @ CBJ",
+   "selection": "Over 5.5",
+   "market": "Match total",
+   "line": "5.5",
+   "p": 0.5818243810514341,
+   "price": -139.1339797653283,
+   "decimal": 1.719,
+   "confidence": "Low",
+   "game": "VGK @ CBJ",
+   "side": "home",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "away",
+   "start_utc": "2026-10-24T23:00Z",
+   "prediction": null,
+   "prediction_sources": [],
+   "fixture_source": "nhl-schedule"
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "fixture": "GSW @ PHX",
+   "selection": "PHX",
+   "market": "Moneyline",
+   "line": "",
+   "p": 0.556566322719211,
+   "price": -125.51286725270187,
+   "decimal": 1.797,
+   "confidence": "Low",
+   "game": "GSW @ PHX",
+   "side": "home",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "home",
+   "start_utc": "2026-10-25T02:00Z",
+   "prediction": "Phoenix are 0-1 and Golden State 0-2. The Suns list Mark Williams out following shoulder surgery, Oso Ighodaro doubtful with an oblique strain and Luke Kennard questionable, while the Warriors did not file before 1pm. Golden State's 0-2 start and a home floor are enough to lean Phoenix, though the frontcourt absences keep it low.",
+   "prediction_sources": [
+    "nba-standings",
+    "nba-injury"
+   ],
+   "fixture_source": "nba-injury"
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "fixture": "NOP @ DEN",
+   "selection": "DEN",
+   "market": "Moneyline",
+   "line": "",
+   "p": 0.556566322719211,
+   "price": -125.51286725270187,
+   "decimal": 1.797,
+   "confidence": "Low",
+   "game": "NOP @ DEN",
+   "side": "home",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "home",
+   "start_utc": "2026-10-25T01:00Z",
+   "prediction": "Denver are 0-1 and New Orleans 0-2. The Nuggets are missing Cameron Johnson, Spencer Jones and Julian Strawther, with Alpha Diallo questionable, while the Pelicans had not filed by 1pm. Three rotation absences cap the confidence, but a winless visitor and the altitude of a home opener make Denver the side to take.",
+   "prediction_sources": [
+    "nba-standings",
+    "nba-injury"
+   ],
+   "fixture_source": "nba-injury"
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "fixture": "BKN @ CLE",
+   "selection": "CLE",
+   "market": "Moneyline",
+   "line": "",
+   "p": 0.5329521673418951,
+   "price": -114.11083192672353,
+   "decimal": 1.876,
+   "confidence": "Low",
+   "game": "BKN @ CLE",
+   "side": "home",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "home",
+   "start_utc": "2026-10-24T23:30Z",
+   "prediction": null,
+   "prediction_sources": [],
+   "fixture_source": "nba-injury"
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "fixture": "HOU @ ATL",
+   "selection": "ATL",
+   "market": "Moneyline",
+   "line": "",
+   "p": 0.5329521673418951,
+   "price": -114.11083192672353,
+   "decimal": 1.876,
+   "confidence": "Low",
+   "game": "HOU @ ATL",
+   "side": "home",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "home",
+   "start_utc": "2026-10-25T00:30Z",
+   "prediction": null,
+   "prediction_sources": [],
+   "fixture_source": "nba-injury"
+  },
+  {
+   "sport": "basketball",
+   "competition": "NBA",
+   "fixture": "WAS @ CHI",
+   "selection": "CHI",
+   "market": "Moneyline",
+   "line": "",
+   "p": 0.5329521673418951,
+   "price": -114.11083192672353,
+   "decimal": 1.876,
+   "confidence": "Low",
+   "game": "WAS @ CHI",
+   "side": "home",
+   "note": "Highest-probability selection inside the window among the moneyline, the totals ladder and the favoured side's handicap ladder.",
+   "fav_side": "home",
+   "start_utc": "2026-10-25T00:00Z",
+   "prediction": null,
+   "prediction_sources": [],
+   "fixture_source": "nba-injury"
+  }
+ ],
+ "flags": [
+  {
+   "id": "F-01",
+   "area": "OLBG coverage",
+   "severity": "high",
+   "title": "Three covered sports served no matches at all",
+   "detail": "The Golf (sport 5), Snooker (sport 8) and Motor Racing (sport 14) hubs each rendered 'No tips found.' on 24 October. The Snooker 'All Events' sub-route rendered the same message, so there is no OLBG market to price for any of the three.",
+   "sources": [
+    "olbg-golf",
+    "olbg-snooker",
+    "olbg-snooker-events",
+    "olbg-motorracing"
+   ]
+  },
+  {
+   "id": "F-02",
+   "area": "OLBG coverage",
+   "severity": "high",
+   "title": "Rugby League hub carries outrights for 2027 only",
+   "detail": "The Rugby League hub listed State of Origin 2027, the Super League 2027 Grand Final and the NRL 2027 Grand Final. No upcoming fixture of either 2026 competition was listed, so the sport has no match market on the board.",
+   "sources": [
+    "olbg-rugbyleague"
+   ]
+  },
+  {
+   "id": "F-03",
+   "area": "OLBG coverage",
+   "severity": "medium",
+   "title": "Greyhounds hub carried a single race",
+   "detail": "One race, '11:04 Doncaster', was listed with a single tip on Snowfall. No GBGB racecard or form was read, so the race is published as a listing and not priced.",
+   "sources": [
+    "olbg-greyhounds"
+   ]
+  },
+  {
+   "id": "F-04",
+   "area": "OLBG data quality",
+   "severity": "medium",
+   "title": "OLBG start times disagree with the league's own clock",
+   "detail": "OLBG printed 'Today 19:07' for the fixtures the NHL schedules at 23:00Z (19:00 ET), 'Today 22:07' for a 01:00Z start and 'Today 23:07' for a 02:00Z start. The offset is not constant and OLBG prints no timezone, so every published start time on this desk comes from the league feed instead.",
+   "sources": [
+    "olbg-icehockey",
+    "nhl-schedule"
+   ]
+  },
+  {
+   "id": "F-05",
+   "area": "Fixture completeness",
+   "severity": "medium",
+   "title": "One of the league's twelve games could not be individually confirmed",
+   "detail": "The NHL feed reports twelve games on 24 October. Eleven are confirmed individually in the returned slice. The twelfth, which OLBG lists as MIN Wild @ SEA Kraken, was not in the slice, so that row carries no price and no pick. MTL@WPG on 25 October comes from a different schedule date and is also unpriced.",
+   "sources": [
+    "nhl-schedule",
+    "olbg-icehockey"
+   ]
+  },
+  {
+   "id": "F-06",
+   "area": "OLBG data quality",
+   "severity": "medium",
+   "title": "OLBG's basketball hub omits two games the league lists",
+   "detail": "The official NBA injury report for 24 October lists MIA@CHA and MEM@SAC. Neither appeared on the OLBG basketball hub, which stopped after seven games. Both are published here from the league document.",
+   "sources": [
+    "olbg-basketball",
+    "nba-injury"
+   ]
+  },
+  {
+   "id": "F-07",
+   "area": "Naming",
+   "severity": "low",
+   "title": "Club names differ between OLBG and the governing body",
+   "detail": "OLBG bills 'Eastern Storm vs South Africa Emerging'; Cricket South Africa calls the same fixture 'World Sports Betting Eastern Storm vs CSA High Performance'. OLBG also prints 'VGS Golden Knights' where the NHL prints VGK.",
+   "sources": [
+    "olbg-cricket",
+    "csa-home",
+    "olbg-icehockey",
+    "nhl-team-summary"
+   ]
+  },
+  {
+   "id": "F-08",
+   "area": "Withheld market",
+   "severity": "low",
+   "title": "No basketball totals are originated",
+   "detail": "No official NBA scoring figure (team points for or against) was read this session, so a total would have been invented. Every NBA row therefore carries moneyline and spread markets only.",
+   "sources": [
+    "nba-standings"
+   ]
+  },
+  {
+   "id": "F-09",
+   "area": "Missing input",
+   "severity": "low",
+   "title": "Detroit's goals for and against were not in the returned page",
+   "detail": "The NHL team-summary slice that carried Detroit's record cut off before its goals-for and goals-against fields. With no goals rate there is no honest price, so DET@CGY is published with a moneyline and nothing else, and no pick.",
+   "sources": [
+    "nhl-team-summary"
+   ]
+  },
+  {
+   "id": "F-10",
+   "area": "Coverage shortfall",
+   "severity": "high",
+   "title": "Ten of the fifteen sports have no priced match",
+   "detail": "Only ice hockey and basketball reached a priced state. Cricket has six fixtures confirmed on the governing body's own site but no competition record was read, so none is priced. Baseball has one confirmed fixture with both starting pitchers named and no season rate for Milwaukee, so the market is withheld. Tennis, Volleyball, Handball, Rugby Union, Gaelic Sports and Darts were found on OLBG only and are not confirmed by a governing body.",
+   "sources": [
+    "csa-home",
+    "mlb-schedule",
+    "olbg-tennis",
+    "olbg-volleyball",
+    "olbg-handball",
+    "olbg-rugbyunion",
+    "olbg-gaelic",
+    "olbg-darts"
+   ]
+  },
+  {
+   "id": "F-11",
+   "area": "Method",
+   "severity": "medium",
+   "title": "The brief's two High-pick rules barely intersect",
+   "detail": "A selection with a 70% chance has a fair price of about -233; the band's shortest allowed price, -250, implies 71.4%. Requiring both 'more than 70%' and 'inside -250..+10000' therefore leaves a 1.4-point window, and only three of this desk's 88 originated outcomes land in it. The three High picks here are those, plus any other line that lands there after normalisation; nothing was moved into the tier by hand.",
+   "sources": [
+    "nhl-team-summary"
+   ]
+  },
+  {
+   "id": "F-12",
+   "area": "Model input",
+   "severity": "medium",
+   "title": "Basketball records are two games deep",
+   "detail": "Every NBA club has played between one and two games. Records that short carry almost no information, so each is shrunk toward .500 with a ten-win, ten-loss prior before it is used. That is why no basketball pick reaches the medium tier on record alone and none reaches high at all.",
+   "sources": [
+    "nba-standings"
+   ]
+  },
+  {
+   "id": "F-13",
+   "area": "Provenance",
+   "severity": "low",
+   "title": "OLBG tip shares are not probabilities and were not used",
+   "detail": "OLBG prints the share of member tips on each selection (for example '10/12 Win Tips, 83%'). Those are votes, not prices, and no number on this desk is derived from them. They appear on the sport pages labelled as OLBG's own tally so the reader can see the difference.",
+   "sources": [
+    "olbg-icehockey",
+    "olbg-basketball"
+   ]
+  }
+ ],
+ "repo_findings": [
+  {
+   "id": "R-01",
+   "file": "pipeline/build.py:36",
+   "severity": "medium",
+   "title": "Sixteen of ninety session desks are reachable from the published site",
+   "detail": "The repository carries 90 session desk directories at its root. The ARCHIVE allowlist in pipeline/build.py contains 16 entries, so the other 74 desks are tracked but have no published entry point. The root README still promises that earlier desks 'stay published'.",
+   "evidence": "90 directories; 16 ARCHIVE entries"
+  },
+  {
+   "id": "R-02",
+   "file": "README.md:50",
+   "severity": "medium",
+   "title": "The confidence gate differs between the README and the brief",
+   "detail": "README.md defines High as 'originated probability >= 60% and fair American price in [-250, +10000]'. The brief defines high confidence as a selection with more than a 70% chance. Both cannot be true of the same pick, and different desks in this repository have used different thresholds, so the tiers are not comparable across desks.",
+   "evidence": "README.md line 50"
+  },
+  {
+   "id": "R-03",
+   "file": "data/current/audit.json",
+   "severity": "low",
+   "title": "A 10.5 MB generated artefact is tracked",
+   "detail": "data/current/audit.json is 10,473,214 bytes and is committed. The repository tracks 3,032 files for what is a static predictions site; most of that weight is generated JSON that is regenerated by the build rather than read by it.",
+   "evidence": "10,473,214 bytes"
+  },
+  {
+   "id": "R-04",
+   "file": "*.html",
+   "severity": "info",
+   "title": "No broken relative page links in the twenty root pages",
+   "detail": "All twenty root HTML pages were parsed and every relative .html link was resolved against the filesystem. Zero were missing. This is a clean result and is recorded so that the negative finding is explicit.",
+   "evidence": "20 pages, 0 missing targets"
+  },
+  {
+   "id": "R-05",
+   "file": "COORDINATION.md",
+   "severity": "low",
+   "title": "The shared task board is 849 KB and is append-only",
+   "detail": "COORDINATION.md is 849,056 bytes and is edited by every session under an append-only rule. Two different sections were both numbered 74 and two are both numbered 75, so cross-references to a section number are ambiguous. Claims are also still listed as 'in progress' for sessions that finished days ago.",
+   "evidence": "duplicate section numbers 74, 74, 75, 75, 84, 85"
+  },
+  {
+   "id": "R-06",
+   "file": "tests/pipeline",
+   "severity": "info",
+   "title": "The existing test suite is green before this session's changes",
+   "detail": "python3 -m unittest discover -s tests/pipeline passes on the branch head this desk was built from, and scripts/validate.py returns no errors. This desk adds its own test module rather than editing the shared suite.",
+   "evidence": "suite status at branch head"
+  }
+ ],
+ "sports": [
+  {
+   "code": "ice-hockey",
+   "name": "Ice Hockey",
+   "olbg_id": 13,
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "olbg_state": "listed",
+   "olbg_events": 11,
+   "official_name": "National Hockey League",
+   "official_url": "https://api-web.nhle.com/v1/standings/2026-10-24"
+  },
+  {
+   "code": "basketball",
+   "name": "Basketball",
+   "olbg_id": 4,
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "olbg_state": "listed",
+   "olbg_events": 10,
+   "official_name": "NBA",
+   "official_url": "https://www.nba.com/standings?Season=2026-27&GroupBy=conf"
+  },
+  {
+   "code": "baseball",
+   "name": "Baseball",
+   "olbg_id": 12,
+   "olbg_url": "https://www.olbg.com/betting-tips/Baseball/12",
+   "olbg_state": "listed",
+   "olbg_events": 1,
+   "official_name": "Major League Baseball",
+   "official_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24"
+  },
+  {
+   "code": "cricket",
+   "name": "Cricket",
+   "olbg_id": 7,
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/7",
+   "olbg_state": "listed",
+   "olbg_events": 9,
+   "official_name": "Cricket South Africa",
+   "official_url": "https://cricket.co.za/upcoming/"
+  },
+  {
+   "code": "volleyball",
+   "name": "Volleyball",
+   "olbg_id": 21,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "olbg_state": "listed",
+   "olbg_events": 16,
+   "official_name": "Lega Pallavolo Serie A",
+   "official_url": "https://www.legavolley.it/classifica/?IdCampionato=999"
+  },
+  {
+   "code": "handball",
+   "name": "Handball",
+   "olbg_id": 20,
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+   "olbg_state": "listed",
+   "olbg_events": 16,
+   "official_name": "Handball-Bundesliga",
+   "official_url": "https://www.daikin-hbl.de/de/hbl/tabelle"
+  },
+  {
+   "code": "tennis",
+   "name": "Tennis",
+   "olbg_id": 3,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "olbg_state": "listed",
+   "olbg_events": 15,
+   "official_name": "ATP Tour / WTA",
+   "official_url": "https://www.atptour.com/"
+  },
+  {
+   "code": "rugby-union",
+   "name": "Rugby Union",
+   "olbg_id": 9,
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+   "olbg_state": "listed",
+   "olbg_events": 3,
+   "official_name": "Premiership Rugby / LNR",
+   "official_url": "https://www.premrugby.com/fixtures-results"
+  },
+  {
+   "code": "gaelic-sports",
+   "name": "Gaelic Sports",
+   "olbg_id": 25,
+   "olbg_url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+   "olbg_state": "listed",
+   "olbg_events": 4,
+   "official_name": "GAA",
+   "official_url": "https://www.gaa.ie/"
+  },
+  {
+   "code": "darts",
+   "name": "Darts",
+   "olbg_id": 15,
+   "olbg_url": "https://www.olbg.com/betting-tips/Darts/15",
+   "olbg_state": "listed",
+   "olbg_events": 4,
+   "official_name": "PDC",
+   "official_url": "https://www.pdc.tv/"
+  },
+  {
+   "code": "greyhounds",
+   "name": "Greyhounds",
+   "olbg_id": 28,
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+   "olbg_state": "thin",
+   "olbg_events": 1,
+   "official_name": "Greyhound Board of Great Britain",
+   "official_url": "https://www.gbgb.org.uk/"
+  },
+  {
+   "code": "snooker",
+   "name": "Snooker",
+   "olbg_id": 8,
+   "olbg_url": "https://www.olbg.com/betting-tips/Snooker/8",
+   "olbg_state": "no-tips",
+   "olbg_events": 0,
+   "official_name": "World Snooker Tour",
+   "official_url": "https://www.wst.tv/"
+  },
+  {
+   "code": "golf",
+   "name": "Golf",
+   "olbg_id": 5,
+   "olbg_url": "https://www.olbg.com/betting-tips/Golf/5",
+   "olbg_state": "no-tips",
+   "olbg_events": 0,
+   "official_name": "PGA Tour / DP World Tour",
+   "official_url": "https://www.pgatour.com/"
+  },
+  {
+   "code": "motor-racing",
+   "name": "Motor Racing",
+   "olbg_id": 14,
+   "olbg_url": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+   "olbg_state": "no-tips",
+   "olbg_events": 0,
+   "official_name": "Formula 1",
+   "official_url": "https://www.formula1.com/"
+  },
+  {
+   "code": "rugby-league",
+   "name": "Rugby League",
+   "olbg_id": 10,
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+   "olbg_state": "outright-only",
+   "olbg_events": 0,
+   "official_name": "NRL / Super League",
+   "official_url": "https://www.nrl.com/"
+  }
+ ],
+ "sources": [
+  {
+   "id": "olbg-tennis",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Tennis betting tips hub (sport 3)",
+   "url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "read_utc": "2026-10-24T22:26Z"
+  },
+  {
+   "id": "olbg-icehockey",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Ice Hockey betting tips hub (sport 13)",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "read_utc": "2026-10-24T22:26Z"
+  },
+  {
+   "id": "olbg-basketball",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Basketball betting tips hub (sport 4)",
+   "url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "read_utc": "2026-10-24T22:28Z"
+  },
+  {
+   "id": "olbg-baseball",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Baseball betting tips hub (sport 12)",
+   "url": "https://www.olbg.com/betting-tips/Baseball/12",
+   "read_utc": "2026-10-24T22:28Z"
+  },
+  {
+   "id": "olbg-snooker",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Snooker betting tips hub (sport 8) -- rendered 'No tips found.'",
+   "url": "https://www.olbg.com/betting-tips/Snooker/8",
+   "read_utc": "2026-10-24T22:30Z"
+  },
+  {
+   "id": "olbg-snooker-events",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Snooker All Events sub-route -- also 'No tips found.'",
+   "url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/8",
+   "read_utc": "2026-10-24T22:31Z"
+  },
+  {
+   "id": "olbg-darts",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Darts betting tips hub (sport 15)",
+   "url": "https://www.olbg.com/betting-tips/Darts/15",
+   "read_utc": "2026-10-24T22:30Z"
+  },
+  {
+   "id": "olbg-cricket",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Cricket betting tips hub (sport 7)",
+   "url": "https://www.olbg.com/betting-tips/Cricket/7",
+   "read_utc": "2026-10-24T22:31Z"
+  },
+  {
+   "id": "olbg-golf",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Golf betting tips hub (sport 5) -- rendered 'No tips found.'",
+   "url": "https://www.olbg.com/betting-tips/Golf/5",
+   "read_utc": "2026-10-24T22:33Z"
+  },
+  {
+   "id": "olbg-volleyball",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Volleyball betting tips hub (sport 21)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "read_utc": "2026-10-24T22:33Z"
+  },
+  {
+   "id": "olbg-rugbyunion",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Rugby Union betting tips hub (sport 9)",
+   "url": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+   "read_utc": "2026-10-24T22:34Z"
+  },
+  {
+   "id": "olbg-rugbyleague",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Rugby League betting tips hub (sport 10) -- outright markets only",
+   "url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+   "read_utc": "2026-10-24T22:34Z"
+  },
+  {
+   "id": "olbg-handball",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Handball betting tips hub (sport 20)",
+   "url": "https://www.olbg.com/betting-tips/Handball/20",
+   "read_utc": "2026-10-24T22:36Z"
+  },
+  {
+   "id": "olbg-motorracing",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Motor Racing betting tips hub (sport 14) -- rendered 'No tips found.'",
+   "url": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+   "read_utc": "2026-10-24T22:36Z"
+  },
+  {
+   "id": "olbg-gaelic",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Gaelic Football betting tips hub (sport 25)",
+   "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+   "read_utc": "2026-10-24T22:38Z"
+  },
+  {
+   "id": "olbg-greyhounds",
+   "tier": "discovery",
+   "publisher": "OLBG",
+   "title": "Greyhounds betting tips hub (sport 28) -- a single race listed",
+   "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+   "read_utc": "2026-10-24T22:38Z"
+  },
+  {
+   "id": "nhl-team-summary",
+   "tier": "official",
+   "publisher": "NHL",
+   "title": "NHL team summary, season 20262027, game type 2 (all 32 clubs, games played > 0)",
+   "url": "https://api.nhle.com/stats/rest/en/team/summary?cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2%20and%20gamesPlayed%3E0",
+   "read_utc": "2026-10-24T22:41Z"
+  },
+  {
+   "id": "nhl-schedule",
+   "tier": "official",
+   "publisher": "NHL",
+   "title": "NHL schedule for 2026-10-24 (12 games, start times, venues, publisher moneyline)",
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+   "read_utc": "2026-10-24T22:59Z"
+  },
+  {
+   "id": "nhl-standings",
+   "tier": "official",
+   "publisher": "NHL",
+   "title": "NHL standings for 2026-10-24 (standingsDateTimeUtc 2026-10-24T22:25:30Z)",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+   "read_utc": "2026-10-24T22:41Z"
+  },
+  {
+   "id": "mlb-schedule",
+   "tier": "official",
+   "publisher": "MLB",
+   "title": "MLB schedule 2026-10-24 with probable pitchers (World Series Game 2)",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24&hydrate=probablePitcher,linescore,team",
+   "read_utc": "2026-10-24T22:42Z"
+  },
+  {
+   "id": "nba-injury",
+   "tier": "official",
+   "publisher": "NBA",
+   "title": "NBA injury report, 10/24/26 01:00 PM ET filing",
+   "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_00PM.pdf",
+   "read_utc": "2026-10-24T22:43Z"
+  },
+  {
+   "id": "nba-standings",
+   "tier": "official",
+   "publisher": "NBA",
+   "title": "NBA 2026-27 regular season standings (conference view)",
+   "url": "https://www.nba.com/standings?Season=2026-27&GroupBy=conf",
+   "read_utc": "2026-10-24T22:50Z"
+  },
+  {
+   "id": "csa-upcoming",
+   "tier": "official",
+   "publisher": "Cricket South Africa",
+   "title": "CSA fixtures & schedules, upcoming",
+   "url": "https://cricket.co.za/upcoming/",
+   "read_utc": "2026-10-24T22:46Z"
+  },
+  {
+   "id": "csa-home",
+   "tier": "official",
+   "publisher": "Cricket South Africa",
+   "title": "CSA home page 'Up Next' fixture strip",
+   "url": "https://cricket.co.za/fixtures/",
+   "read_utc": "2026-10-24T22:45Z"
+  }
+ ],
+ "discovery_only": {
+  "tennis": [
+   [
+    "Elena Rybakina vs Leylah Fernandez",
+    "Tomorrow 05:00",
+    "88%"
+   ],
+   [
+    "Daniil Medvedev vs Nikoloz Basilashvili",
+    "Tomorrow 06:00",
+    "88%"
+   ],
+   [
+    "Ashlyn Krueger vs Katerina Siniakova",
+    "Tomorrow 00:30",
+    "56%"
+   ],
+   [
+    "Stan Wawrinka vs Jiri Lehecka",
+    "26 Oct 06:00",
+    "67%"
+   ],
+   [
+    "Alexandra Eala vs Mika Stojsavljevic",
+    "26 Oct 22:00",
+    "67%"
+   ],
+   [
+    "Lorenzo Musetti vs Taylor Fritz",
+    "Tomorrow 09:30",
+    "50%"
+   ],
+   [
+    "Novak Djokovic vs Ugo Humbert",
+    "26 Oct 06:00",
+    "100%"
+   ],
+   [
+    "Ben Shelton vs Casper Ruud",
+    "26 Oct 06:00",
+    "100%"
+   ],
+   [
+    "Holger Rune vs Quentin Halys",
+    "26 Oct 06:00",
+    "100%"
+   ],
+   [
+    "Taylor Fritz vs Stefanos Tsitsipas",
+    "26 Oct 06:00",
+    "100%"
+   ]
+  ],
+  "volleyball": [
+   [
+    "Trentino vs Cisterna (SuperLega)",
+    "Tomorrow 12:00",
+    "86%"
+   ],
+   [
+    "Civitanova vs Padova (SuperLega)",
+    "Tomorrow 13:00",
+    "100%"
+   ],
+   [
+    "Perugia vs Pordenone (SuperLega)",
+    "Tomorrow 13:00",
+    "83%"
+   ],
+   [
+    "Monza vs Verona (SuperLega)",
+    "Tomorrow 13:00",
+    "100%"
+   ],
+   [
+    "CHKS Chelm vs Resovia Rzeszow (PlusLiga)",
+    "Tomorrow 13:00",
+    "60%"
+   ],
+   [
+    "Vakifbank W vs Galatasaray W (Turkey)",
+    "Tomorrow 07:00",
+    "57%"
+   ],
+   [
+    "Besiktas W vs Goztepe W (Turkey)",
+    "Tomorrow 06:00",
+    "67%"
+   ],
+   [
+    "Barock Volleys Ludwigsburg vs TV Rottenburg (Germany)",
+    "Tomorrow 12:00",
+    "83%"
+   ],
+   [
+    "Abel-Moda Brusque W vs Praia Clube W (Brazil)",
+    "Today 20:00",
+    "75%"
+   ]
+  ],
+  "handball": [
+   [
+    "Ystads IF HF vs Hammarby IF HF (Sweden)",
+    "Tomorrow 09:00",
+    "draw 100%"
+   ],
+   [
+    "CBM Sporting Alicante vs Ademar Leon (Spain)",
+    "Tomorrow 07:00",
+    "draw 71%"
+   ],
+   [
+    "Saint Raphael vs PSG Handball (France)",
+    "Tomorrow 11:00",
+    "draw 71%"
+   ],
+   [
+    "SC Magdeburg vs HC Kriens Luzern (Europe)",
+    "28 Oct 15:45",
+    "draw 71%"
+   ],
+   [
+    "Rhein-Neckar Lowen vs SC Magdeburg (Germany)",
+    "Tomorrow 10:00",
+    "home 67%"
+   ],
+   [
+    "Fuchse Berlin vs HSG Wetzlar (Germany)",
+    "Tomorrow 11:30",
+    "draw 50%"
+   ],
+   [
+    "KS Kielce vs Kolstad (Europe)",
+    "28 Oct 15:45",
+    "draw 75%"
+   ],
+   [
+    "Bergischer HC vs HC Hamburg (Germany)",
+    "Tomorrow 11:30",
+    "draw 100%"
+   ]
+  ],
+  "rugby-union": [
+   [
+    "USA v Australia A",
+    "Today 19:00",
+    "Australia A 67%"
+   ],
+   [
+    "Harlequins v Saracens (Premiership)",
+    "Tomorrow 11:00",
+    "Harlequins 80%"
+   ],
+   [
+    "La Rochelle v Bordeaux (Top 14)",
+    "Tomorrow 16:05",
+    "Bordeaux 60%"
+   ]
+  ],
+  "gaelic-sports": [
+   [
+    "Moycullen v Salthill-Knocknacarra",
+    "Tomorrow 12:00",
+    "Salthill +3.5, 60%"
+   ],
+   [
+    "St Finbarrs v Nemo Rangers",
+    "Tomorrow 12:00",
+    "Nemo Rangers +1.5, 87%"
+   ],
+   [
+    "Kanturk v Eire Og Cor",
+    "01 Nov 09:00",
+    "Eire Og +0.5, 100%"
+   ],
+   [
+    "Fr Caseys v Kildimo Pallaskenry",
+    "01 Nov 10:30",
+    "Fr Caseys 57%"
+   ]
+  ],
+  "darts": [
+   [
+    "Ross Smith vs Luke Woodhouse",
+    "Tomorrow 08:15",
+    "Ross Smith 100%"
+   ],
+   [
+    "Gerwyn Price vs Stephen Bunting",
+    "Tomorrow 09:15",
+    "Over 10.5 180s"
+   ],
+   [
+    "European Championship (outright)",
+    "Tomorrow 14:00",
+    "Luke Littler 62%"
+   ],
+   [
+    "PDC World Championship 2027 (outright)",
+    "03 Jan 2027",
+    "Luke Littler 61%"
+   ]
+  ],
+  "greyhounds": [
+   [
+    "11:04 Doncaster",
+    "Tomorrow 07:04",
+    "Snowfall 100%"
+   ]
+  ],
+  "cricket": [
+   [
+    "Toronto Kings vs Vancouver Guardians T20",
+    "Today 19:00",
+    "Toronto 90%"
+   ],
+   [
+    "Pakistan vs England One Day Match",
+    "Tomorrow 04:00",
+    "Pakistan 60%"
+   ],
+   [
+    "North West Dragons vs Northern Cape Heat T20",
+    "Tomorrow 07:00",
+    "North West 89%"
+   ],
+   [
+    "Tuskers vs Western Province T20",
+    "Tomorrow 07:00",
+    "Western Province 100%"
+   ],
+   [
+    "Eastern Storm vs South Africa Emerging T20",
+    "Tomorrow 07:00",
+    "Eastern Storm 83%"
+   ],
+   [
+    "Boland vs Titans T20",
+    "Tomorrow 07:00",
+    "Titans 83%"
+   ],
+   [
+    "India W vs Zimbabwe W 2nd ODI",
+    "Tomorrow 04:30",
+    "S Mandhana top bat 60%"
+   ],
+   [
+    "New Zealand vs India 3rd T20",
+    "27 Oct 03:00",
+    "India 75%"
+   ],
+   [
+    "Namibia vs Ireland 3rd ODI",
+    "27 Oct 03:30",
+    "Ireland 100%"
+   ]
+  ],
+  "basketball": [
+   [
+    "MIL Bucks @ PHI 76ers",
+    "Today 19:30",
+    "PHI 57%"
+   ],
+   [
+    "NO Pelicans @ DEN Nuggets",
+    "Today 22:00",
+    "DEN 80%"
+   ],
+   [
+    "BKN Nets @ CLE Cavaliers",
+    "Today 19:30",
+    "CLE 64%"
+   ],
+   [
+    "SA Spurs @ DAL Mavericks",
+    "Today 20:00",
+    "SAS 70%"
+   ],
+   [
+    "HOU Rockets @ ATL Hawks",
+    "Today 20:30",
+    "ATL 83%"
+   ],
+   [
+    "WAS Wizards @ CHI Bulls",
+    "Today 20:00",
+    "WAS 100%"
+   ],
+   [
+    "GS Warriors @ PHX Suns",
+    "Today 23:00",
+    "GSW 60%"
+   ]
+  ],
+  "baseball": [
+   [
+    "TB Rays @ MIL Brewers",
+    "Today 20:00",
+    "TB Rays 59%"
+   ]
+  ],
+  "ice-hockey": [
+   [
+    "TOR Maple Leafs @ EDM Oilers",
+    "Today 19:07",
+    "EDM 79%"
+   ],
+   [
+    "SJ Sharks @ BOS Bruins",
+    "Today 19:07",
+    "BOS 83%"
+   ],
+   [
+    "CAR Hurricanes @ STL Blues",
+    "Today 19:07",
+    "CAR 91%"
+   ],
+   [
+    "VGS Golden Knights @ CLB Blue Jackets",
+    "Today 19:07",
+    "VGK 67%"
+   ],
+   [
+    "MIN Wild @ SEA Kraken",
+    "Today 23:07",
+    "SEA 58%"
+   ],
+   [
+    "NY Rangers @ OTT Senators",
+    "Today 19:07",
+    "NYR 86%"
+   ],
+   [
+    "BUF Sabres @ WAS Capitals",
+    "Today 19:07",
+    "WAS 71%"
+   ],
+   [
+    "TB Lightning @ UTA Mammoth",
+    "Today 22:07",
+    "UTA 56%"
+   ],
+   [
+    "NSH Predators @ PIT Penguins",
+    "Today 19:07",
+    "PIT 80%"
+   ],
+   [
+    "DET Red Wings @ CGY Flames",
+    "Today 23:07",
+    "CGY 67%"
+   ],
+   [
+    "MTL Canadiens @ WPG Jets",
+    "Tomorrow 19:07",
+    "Over 5.5"
+   ]
+  ],
+  "rugby-league": [
+   [
+    "State of Origin 2027 (outright)",
+    "27 May 2027",
+    "New South Wales 75%"
+   ],
+   [
+    "Super League 2027 Grand Final (outright)",
+    "02 Oct 2027",
+    "Leeds Rhinos 33%"
+   ],
+   [
+    "NRL 2027 Grand Final (outright)",
+    "03 Oct 2027",
+    "Penrith Panthers 50%"
+   ]
+  ]
+ },
+ "name_differences": [
+  {
+   "olbg": "Eastern Storm vs South Africa Emerging T20",
+   "official": "World Sports Betting Eastern Storm vs CSA High Performance",
+   "note": "OLBG bills the CSA High Performance XI as 'South Africa Emerging'. The governing body's own fixture list uses 'CSA High Performance'.",
+   "sources": [
+    "olbg-cricket",
+    "csa-home"
+   ]
+  },
+  {
+   "olbg": "VGS Golden Knights",
+   "official": "Vegas Golden Knights",
+   "note": "OLBG's abbreviation for the club differs from the NHL's own 'VGK'.",
+   "sources": [
+    "olbg-icehockey",
+    "nhl-team-summary"
+   ]
+  }
+ ],
+ "mlb": [
+  {
+   "away": "Tampa Bay Rays",
+   "home": "Milwaukee Brewers",
+   "competition": "World Series, Game 2",
+   "start_utc": "2026-10-25T00:00Z",
+   "venue": "American Family Field",
+   "away_pitcher": "Drew Rasmussen",
+   "home_pitcher": "Logan Henderson",
+   "away_series": "0-1",
+   "home_series": "1-0",
+   "series_game": "2 of 7"
+  }
+ ],
+ "cricket": [
+  {
+   "competition": "Hollywoodbets Pro 20",
+   "home": "Fidelity Titans Women",
+   "away": "YesPlay Cobras",
+   "date": "2026-10-25",
+   "local_time": "10:00",
+   "venue": null,
+   "url": "https://cricket.co.za/fixtures/"
+  },
+  {
+   "competition": "Hollywoodbets Pro 20",
+   "home": "Garden Route Badgers Women",
+   "away": "Warriors",
+   "date": "2026-10-25",
+   "local_time": "10:00",
+   "venue": null,
+   "url": "https://cricket.co.za/fixtures/"
+  },
+  {
+   "competition": "Pro20 Cup 2026/27",
+   "home": "World Sports Betting Eastern Storm",
+   "away": "CSA High Performance",
+   "date": "2026-10-25",
+   "local_time": "13:00",
+   "venue": null,
+   "url": "https://cricket.co.za/fixtures/"
+  },
+  {
+   "competition": "Colts: 1-Day Match",
+   "home": "Boland",
+   "away": "Border",
+   "date": "2026-10-25",
+   "local_time": "10:00",
+   "venue": null,
+   "url": "https://cricket.co.za/fixtures/"
+  },
+  {
+   "competition": "CSA Women's Provincial 2026/27",
+   "home": "Northern Cape Women",
+   "away": "Free State Women",
+   "date": "2026-10-25",
+   "local_time": "10:00",
+   "venue": null,
+   "url": "https://cricket.co.za/fixtures/"
+  },
+  {
+   "competition": "CSA Women's Provincial 2026/27",
+   "home": "Limpopo Women",
+   "away": "North West Dragons Women",
+   "date": "2026-10-25",
+   "local_time": "10:00",
+   "venue": null,
+   "url": "https://cricket.co.za/fixtures/"
+  }
+ ],
+ "publisher_ml": {
+  "SJS@BOS": [
+   160,
+   -192
+  ],
+  "NYR@OTT": [
+   105,
+   -125
+  ],
+  "NSH@PIT": [
+   105,
+   -125
+  ],
+  "BUF@WSH": [
+   100,
+   -120
+  ],
+  "VGK@CBJ": [
+   -135,
+   114
+  ],
+  "CAR@STL": [
+   -155,
+   130
+  ],
+  "TOR@EDM": [
+   130,
+   -155
+  ],
+  "TBL@UTA": [
+   120,
+   -142
+  ],
+  "DET@CGY": [
+   -125,
+   105
+  ]
+ },
+ "counts": {
+  "fixtures": 20,
+  "confirmed": 18,
+  "priced": 16,
+  "markets": 104,
+  "outcomes": 208,
+  "picks": 16,
+  "high": 3,
+  "medium": 4,
+  "low": 9,
+  "predictions": 10,
+  "flags": 13,
+  "sources": 24,
+  "sports": 15,
+  "sports_priced": 2
+ }
+}

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repository review · OLBG research desk f840c28a</title>
+<style>
+:root{--ink:#101d2c;--muted:#5b6b7c;--line:#e2e8ef;--bg:#f5f7fa;--card:#fff;
+--brand:#0b5cd5;--brand-soft:#e8f0fd;--high:#0b7a4b;--high-soft:#e2f5ea;
+--med:#8a5a00;--med-soft:#fdf3df;--low:#5b6b7c;--low-soft:#eef1f5;--flag:#a3282d;--flag-soft:#fceaea}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--brand)}
+h1,h2,h3{line-height:1.2;margin:0 0 10px}
+h1{font-size:29px;letter-spacing:-.3px}h2{font-size:20px;margin-top:30px}h3{font-size:16px}
+p{margin:0 0 12px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 18px}
+header.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:9}
+.toprow{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:11px 0;flex-wrap:wrap}
+.brand{font-weight:750;text-decoration:none;color:var(--ink);display:flex;gap:9px;align-items:center}
+.brand .mark{width:28px;height:28px;border-radius:8px;background:var(--brand);color:#fff;display:grid;
+place-items:center;font-size:13px;font-weight:700}
+nav.pages{display:flex;gap:4px;flex-wrap:wrap}
+nav.pages a{text-decoration:none;color:var(--muted);padding:7px 10px;border-radius:8px;font-size:14px;font-weight:600}
+nav.pages a:hover{background:var(--brand-soft);color:var(--brand)}
+nav.pages a.on{background:var(--brand);color:#fff}
+main{padding:26px 0 60px}
+.lede{font-size:17px;color:var(--muted);max-width:820px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0 6px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.kpi b{display:block;font-size:26px;line-height:1.1}
+.kpi span{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:16px 0}
+.callout{border-left:4px solid var(--brand);background:var(--brand-soft);border-radius:0 10px 10px 0;padding:13px 16px;margin:16px 0}
+.callout.warn{border-color:var(--flag);background:var(--flag-soft)}
+.callout b{display:block;margin-bottom:4px}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card);margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f2f5f9;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafbfd}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.b-high{background:var(--high-soft);color:var(--high)}
+.b-med{background:var(--med-soft);color:var(--med)}
+.b-low{background:var(--low-soft);color:var(--low)}
+.b-flag{background:var(--flag-soft);color:var(--flag)}
+.b-info{background:var(--brand-soft);color:var(--brand)}
+.small{font-size:13px;color:var(--muted)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+.pickcell{font-weight:700}
+.pred{border-left:3px solid var(--brand);padding-left:14px;margin:18px 0}
+.pred p{margin:6px 0}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:13.5px;background:#fff}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}h1{font-size:24px}}
+ul.plain{margin:6px 0 0;padding-left:18px}
+ul.plain li{margin-bottom:5px}
+.tag{font-size:12px;color:var(--muted)}
+</style></head>
+<body>
+<header class="top"><div class="wrap toprow">
+<a class="brand" href="index.html"><span class="mark">OL</span> OLBG research desk</a>
+<nav class="pages"><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="predictions.html">Written predictions</a><a href="matches.html">Every match</a><a href="markets.html">Markets</a><a href="sports.html">Sports</a><a href="flagged.html">Flagged</a><a href="sources.html">Sources</a><a href="methodology.html">Method</a><a href="repo-review.html" class="on">Repo review</a></nav>
+</div></header>
+<main><div class="wrap">
+<h1>Repository review</h1>
+<p class="lede">What was checked, what is irregular, and what was left alone</p>
+
+<p>The repository was read before it was edited: a file inventory, a parse of all twenty root pages
+for broken relative links, the size of the published allowlist against the number of desk
+directories, and the state of the existing test suite. The findings below are the irregularities
+worth your attention; the clean results are recorded too, so the absence of a problem is visible.</p>
+<div class="card">
+<div><span class="badge b-med">Medium</span>
+<span class="tag mono">pipeline/build.py:36</span></div>
+<h3 style="margin-top:8px">R-01 — Sixteen of ninety session desks are reachable from the published site</h3>
+<p>The repository carries 90 session desk directories at its root. The ARCHIVE allowlist in pipeline/build.py contains 16 entries, so the other 74 desks are tracked but have no published entry point. The root README still promises that earlier desks &#x27;stay published&#x27;.</p>
+<p class="small">Evidence: 90 directories; 16 ARCHIVE entries</p></div><div class="card">
+<div><span class="badge b-med">Medium</span>
+<span class="tag mono">README.md:50</span></div>
+<h3 style="margin-top:8px">R-02 — The confidence gate differs between the README and the brief</h3>
+<p>README.md defines High as &#x27;originated probability &gt;= 60% and fair American price in [-250, +10000]&#x27;. The brief defines high confidence as a selection with more than a 70% chance. Both cannot be true of the same pick, and different desks in this repository have used different thresholds, so the tiers are not comparable across desks.</p>
+<p class="small">Evidence: README.md line 50</p></div><div class="card">
+<div><span class="badge b-low">Low</span>
+<span class="tag mono">data/current/audit.json</span></div>
+<h3 style="margin-top:8px">R-03 — A 10.5 MB generated artefact is tracked</h3>
+<p>data/current/audit.json is 10,473,214 bytes and is committed. The repository tracks 3,032 files for what is a static predictions site; most of that weight is generated JSON that is regenerated by the build rather than read by it.</p>
+<p class="small">Evidence: 10,473,214 bytes</p></div><div class="card">
+<div><span class="badge b-info">Info</span>
+<span class="tag mono">*.html</span></div>
+<h3 style="margin-top:8px">R-04 — No broken relative page links in the twenty root pages</h3>
+<p>All twenty root HTML pages were parsed and every relative .html link was resolved against the filesystem. Zero were missing. This is a clean result and is recorded so that the negative finding is explicit.</p>
+<p class="small">Evidence: 20 pages, 0 missing targets</p></div><div class="card">
+<div><span class="badge b-low">Low</span>
+<span class="tag mono">COORDINATION.md</span></div>
+<h3 style="margin-top:8px">R-05 — The shared task board is 849 KB and is append-only</h3>
+<p>COORDINATION.md is 849,056 bytes and is edited by every session under an append-only rule. Two different sections were both numbered 74 and two are both numbered 75, so cross-references to a section number are ambiguous. Claims are also still listed as &#x27;in progress&#x27; for sessions that finished days ago.</p>
+<p class="small">Evidence: duplicate section numbers 74, 74, 75, 75, 84, 85</p></div><div class="card">
+<div><span class="badge b-info">Info</span>
+<span class="tag mono">tests/pipeline</span></div>
+<h3 style="margin-top:8px">R-06 — The existing test suite is green before this session&#x27;s changes</h3>
+<p>python3 -m unittest discover -s tests/pipeline passes on the branch head this desk was built from, and scripts/validate.py returns no errors. This desk adds its own test module rather than editing the shared suite.</p>
+<p class="small">Evidence: suite status at branch head</p></div>
+<h2>How this desk avoids adding to the problem</h2>
+<ul class="plain">
+  <li>Its own namespace only: <span class="mono">data/f840c28a/</span>,
+      <span class="mono">scripts/sf840c28a_*.py</span>, <span class="mono">f840c28a/</span>,
+      <span class="mono">reports/SESSION_F840C28A.md</span> and one test module.</li>
+  <li>One additive line in the publisher's allowlist so the desk is reachable, and one changed
+      sentence on the root landing page pointing at it.</li>
+  <li>No generated JSON larger than a few hundred kilobytes.</li>
+</ul>
+
+</div></main>
+<footer><div class="wrap">
+<p><b>Desk f840c28a</b> · session f840c28a-olbg1 · task TF840C · facts captured
+2026-10-24T22:55:00Z. Independent research, not affiliated with OLBG. Prices are our own
+margin-free estimates, not quoted bookmaker odds. No guaranteed returns, no staking advice.
+18+. <a href="flagged.html">Flagged for review</a></p>
+</div></footer>
+</body></html>

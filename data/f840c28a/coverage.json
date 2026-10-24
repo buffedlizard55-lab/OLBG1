@@ -1,0 +1,546 @@
+{
+ "sports": [
+  {
+   "code": "ice-hockey",
+   "name": "Ice Hockey",
+   "olbg_id": 13,
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "olbg_state": "listed",
+   "olbg_events": 11,
+   "official_name": "National Hockey League",
+   "official_url": "https://api-web.nhle.com/v1/standings/2026-10-24"
+  },
+  {
+   "code": "basketball",
+   "name": "Basketball",
+   "olbg_id": 4,
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "olbg_state": "listed",
+   "olbg_events": 10,
+   "official_name": "NBA",
+   "official_url": "https://www.nba.com/standings?Season=2026-27&GroupBy=conf"
+  },
+  {
+   "code": "baseball",
+   "name": "Baseball",
+   "olbg_id": 12,
+   "olbg_url": "https://www.olbg.com/betting-tips/Baseball/12",
+   "olbg_state": "listed",
+   "olbg_events": 1,
+   "official_name": "Major League Baseball",
+   "official_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24"
+  },
+  {
+   "code": "cricket",
+   "name": "Cricket",
+   "olbg_id": 7,
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/7",
+   "olbg_state": "listed",
+   "olbg_events": 9,
+   "official_name": "Cricket South Africa",
+   "official_url": "https://cricket.co.za/upcoming/"
+  },
+  {
+   "code": "volleyball",
+   "name": "Volleyball",
+   "olbg_id": 21,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "olbg_state": "listed",
+   "olbg_events": 16,
+   "official_name": "Lega Pallavolo Serie A",
+   "official_url": "https://www.legavolley.it/classifica/?IdCampionato=999"
+  },
+  {
+   "code": "handball",
+   "name": "Handball",
+   "olbg_id": 20,
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+   "olbg_state": "listed",
+   "olbg_events": 16,
+   "official_name": "Handball-Bundesliga",
+   "official_url": "https://www.daikin-hbl.de/de/hbl/tabelle"
+  },
+  {
+   "code": "tennis",
+   "name": "Tennis",
+   "olbg_id": 3,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "olbg_state": "listed",
+   "olbg_events": 15,
+   "official_name": "ATP Tour / WTA",
+   "official_url": "https://www.atptour.com/"
+  },
+  {
+   "code": "rugby-union",
+   "name": "Rugby Union",
+   "olbg_id": 9,
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+   "olbg_state": "listed",
+   "olbg_events": 3,
+   "official_name": "Premiership Rugby / LNR",
+   "official_url": "https://www.premrugby.com/fixtures-results"
+  },
+  {
+   "code": "gaelic-sports",
+   "name": "Gaelic Sports",
+   "olbg_id": 25,
+   "olbg_url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+   "olbg_state": "listed",
+   "olbg_events": 4,
+   "official_name": "GAA",
+   "official_url": "https://www.gaa.ie/"
+  },
+  {
+   "code": "darts",
+   "name": "Darts",
+   "olbg_id": 15,
+   "olbg_url": "https://www.olbg.com/betting-tips/Darts/15",
+   "olbg_state": "listed",
+   "olbg_events": 4,
+   "official_name": "PDC",
+   "official_url": "https://www.pdc.tv/"
+  },
+  {
+   "code": "greyhounds",
+   "name": "Greyhounds",
+   "olbg_id": 28,
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+   "olbg_state": "thin",
+   "olbg_events": 1,
+   "official_name": "Greyhound Board of Great Britain",
+   "official_url": "https://www.gbgb.org.uk/"
+  },
+  {
+   "code": "snooker",
+   "name": "Snooker",
+   "olbg_id": 8,
+   "olbg_url": "https://www.olbg.com/betting-tips/Snooker/8",
+   "olbg_state": "no-tips",
+   "olbg_events": 0,
+   "official_name": "World Snooker Tour",
+   "official_url": "https://www.wst.tv/"
+  },
+  {
+   "code": "golf",
+   "name": "Golf",
+   "olbg_id": 5,
+   "olbg_url": "https://www.olbg.com/betting-tips/Golf/5",
+   "olbg_state": "no-tips",
+   "olbg_events": 0,
+   "official_name": "PGA Tour / DP World Tour",
+   "official_url": "https://www.pgatour.com/"
+  },
+  {
+   "code": "motor-racing",
+   "name": "Motor Racing",
+   "olbg_id": 14,
+   "olbg_url": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+   "olbg_state": "no-tips",
+   "olbg_events": 0,
+   "official_name": "Formula 1",
+   "official_url": "https://www.formula1.com/"
+  },
+  {
+   "code": "rugby-league",
+   "name": "Rugby League",
+   "olbg_id": 10,
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+   "olbg_state": "outright-only",
+   "olbg_events": 0,
+   "official_name": "NRL / Super League",
+   "official_url": "https://www.nrl.com/"
+  }
+ ],
+ "discovery_only": {
+  "tennis": [
+   [
+    "Elena Rybakina vs Leylah Fernandez",
+    "Tomorrow 05:00",
+    "88%"
+   ],
+   [
+    "Daniil Medvedev vs Nikoloz Basilashvili",
+    "Tomorrow 06:00",
+    "88%"
+   ],
+   [
+    "Ashlyn Krueger vs Katerina Siniakova",
+    "Tomorrow 00:30",
+    "56%"
+   ],
+   [
+    "Stan Wawrinka vs Jiri Lehecka",
+    "26 Oct 06:00",
+    "67%"
+   ],
+   [
+    "Alexandra Eala vs Mika Stojsavljevic",
+    "26 Oct 22:00",
+    "67%"
+   ],
+   [
+    "Lorenzo Musetti vs Taylor Fritz",
+    "Tomorrow 09:30",
+    "50%"
+   ],
+   [
+    "Novak Djokovic vs Ugo Humbert",
+    "26 Oct 06:00",
+    "100%"
+   ],
+   [
+    "Ben Shelton vs Casper Ruud",
+    "26 Oct 06:00",
+    "100%"
+   ],
+   [
+    "Holger Rune vs Quentin Halys",
+    "26 Oct 06:00",
+    "100%"
+   ],
+   [
+    "Taylor Fritz vs Stefanos Tsitsipas",
+    "26 Oct 06:00",
+    "100%"
+   ]
+  ],
+  "volleyball": [
+   [
+    "Trentino vs Cisterna (SuperLega)",
+    "Tomorrow 12:00",
+    "86%"
+   ],
+   [
+    "Civitanova vs Padova (SuperLega)",
+    "Tomorrow 13:00",
+    "100%"
+   ],
+   [
+    "Perugia vs Pordenone (SuperLega)",
+    "Tomorrow 13:00",
+    "83%"
+   ],
+   [
+    "Monza vs Verona (SuperLega)",
+    "Tomorrow 13:00",
+    "100%"
+   ],
+   [
+    "CHKS Chelm vs Resovia Rzeszow (PlusLiga)",
+    "Tomorrow 13:00",
+    "60%"
+   ],
+   [
+    "Vakifbank W vs Galatasaray W (Turkey)",
+    "Tomorrow 07:00",
+    "57%"
+   ],
+   [
+    "Besiktas W vs Goztepe W (Turkey)",
+    "Tomorrow 06:00",
+    "67%"
+   ],
+   [
+    "Barock Volleys Ludwigsburg vs TV Rottenburg (Germany)",
+    "Tomorrow 12:00",
+    "83%"
+   ],
+   [
+    "Abel-Moda Brusque W vs Praia Clube W (Brazil)",
+    "Today 20:00",
+    "75%"
+   ]
+  ],
+  "handball": [
+   [
+    "Ystads IF HF vs Hammarby IF HF (Sweden)",
+    "Tomorrow 09:00",
+    "draw 100%"
+   ],
+   [
+    "CBM Sporting Alicante vs Ademar Leon (Spain)",
+    "Tomorrow 07:00",
+    "draw 71%"
+   ],
+   [
+    "Saint Raphael vs PSG Handball (France)",
+    "Tomorrow 11:00",
+    "draw 71%"
+   ],
+   [
+    "SC Magdeburg vs HC Kriens Luzern (Europe)",
+    "28 Oct 15:45",
+    "draw 71%"
+   ],
+   [
+    "Rhein-Neckar Lowen vs SC Magdeburg (Germany)",
+    "Tomorrow 10:00",
+    "home 67%"
+   ],
+   [
+    "Fuchse Berlin vs HSG Wetzlar (Germany)",
+    "Tomorrow 11:30",
+    "draw 50%"
+   ],
+   [
+    "KS Kielce vs Kolstad (Europe)",
+    "28 Oct 15:45",
+    "draw 75%"
+   ],
+   [
+    "Bergischer HC vs HC Hamburg (Germany)",
+    "Tomorrow 11:30",
+    "draw 100%"
+   ]
+  ],
+  "rugby-union": [
+   [
+    "USA v Australia A",
+    "Today 19:00",
+    "Australia A 67%"
+   ],
+   [
+    "Harlequins v Saracens (Premiership)",
+    "Tomorrow 11:00",
+    "Harlequins 80%"
+   ],
+   [
+    "La Rochelle v Bordeaux (Top 14)",
+    "Tomorrow 16:05",
+    "Bordeaux 60%"
+   ]
+  ],
+  "gaelic-sports": [
+   [
+    "Moycullen v Salthill-Knocknacarra",
+    "Tomorrow 12:00",
+    "Salthill +3.5, 60%"
+   ],
+   [
+    "St Finbarrs v Nemo Rangers",
+    "Tomorrow 12:00",
+    "Nemo Rangers +1.5, 87%"
+   ],
+   [
+    "Kanturk v Eire Og Cor",
+    "01 Nov 09:00",
+    "Eire Og +0.5, 100%"
+   ],
+   [
+    "Fr Caseys v Kildimo Pallaskenry",
+    "01 Nov 10:30",
+    "Fr Caseys 57%"
+   ]
+  ],
+  "darts": [
+   [
+    "Ross Smith vs Luke Woodhouse",
+    "Tomorrow 08:15",
+    "Ross Smith 100%"
+   ],
+   [
+    "Gerwyn Price vs Stephen Bunting",
+    "Tomorrow 09:15",
+    "Over 10.5 180s"
+   ],
+   [
+    "European Championship (outright)",
+    "Tomorrow 14:00",
+    "Luke Littler 62%"
+   ],
+   [
+    "PDC World Championship 2027 (outright)",
+    "03 Jan 2027",
+    "Luke Littler 61%"
+   ]
+  ],
+  "greyhounds": [
+   [
+    "11:04 Doncaster",
+    "Tomorrow 07:04",
+    "Snowfall 100%"
+   ]
+  ],
+  "cricket": [
+   [
+    "Toronto Kings vs Vancouver Guardians T20",
+    "Today 19:00",
+    "Toronto 90%"
+   ],
+   [
+    "Pakistan vs England One Day Match",
+    "Tomorrow 04:00",
+    "Pakistan 60%"
+   ],
+   [
+    "North West Dragons vs Northern Cape Heat T20",
+    "Tomorrow 07:00",
+    "North West 89%"
+   ],
+   [
+    "Tuskers vs Western Province T20",
+    "Tomorrow 07:00",
+    "Western Province 100%"
+   ],
+   [
+    "Eastern Storm vs South Africa Emerging T20",
+    "Tomorrow 07:00",
+    "Eastern Storm 83%"
+   ],
+   [
+    "Boland vs Titans T20",
+    "Tomorrow 07:00",
+    "Titans 83%"
+   ],
+   [
+    "India W vs Zimbabwe W 2nd ODI",
+    "Tomorrow 04:30",
+    "S Mandhana top bat 60%"
+   ],
+   [
+    "New Zealand vs India 3rd T20",
+    "27 Oct 03:00",
+    "India 75%"
+   ],
+   [
+    "Namibia vs Ireland 3rd ODI",
+    "27 Oct 03:30",
+    "Ireland 100%"
+   ]
+  ],
+  "basketball": [
+   [
+    "MIL Bucks @ PHI 76ers",
+    "Today 19:30",
+    "PHI 57%"
+   ],
+   [
+    "NO Pelicans @ DEN Nuggets",
+    "Today 22:00",
+    "DEN 80%"
+   ],
+   [
+    "BKN Nets @ CLE Cavaliers",
+    "Today 19:30",
+    "CLE 64%"
+   ],
+   [
+    "SA Spurs @ DAL Mavericks",
+    "Today 20:00",
+    "SAS 70%"
+   ],
+   [
+    "HOU Rockets @ ATL Hawks",
+    "Today 20:30",
+    "ATL 83%"
+   ],
+   [
+    "WAS Wizards @ CHI Bulls",
+    "Today 20:00",
+    "WAS 100%"
+   ],
+   [
+    "GS Warriors @ PHX Suns",
+    "Today 23:00",
+    "GSW 60%"
+   ]
+  ],
+  "baseball": [
+   [
+    "TB Rays @ MIL Brewers",
+    "Today 20:00",
+    "TB Rays 59%"
+   ]
+  ],
+  "ice-hockey": [
+   [
+    "TOR Maple Leafs @ EDM Oilers",
+    "Today 19:07",
+    "EDM 79%"
+   ],
+   [
+    "SJ Sharks @ BOS Bruins",
+    "Today 19:07",
+    "BOS 83%"
+   ],
+   [
+    "CAR Hurricanes @ STL Blues",
+    "Today 19:07",
+    "CAR 91%"
+   ],
+   [
+    "VGS Golden Knights @ CLB Blue Jackets",
+    "Today 19:07",
+    "VGK 67%"
+   ],
+   [
+    "MIN Wild @ SEA Kraken",
+    "Today 23:07",
+    "SEA 58%"
+   ],
+   [
+    "NY Rangers @ OTT Senators",
+    "Today 19:07",
+    "NYR 86%"
+   ],
+   [
+    "BUF Sabres @ WAS Capitals",
+    "Today 19:07",
+    "WAS 71%"
+   ],
+   [
+    "TB Lightning @ UTA Mammoth",
+    "Today 22:07",
+    "UTA 56%"
+   ],
+   [
+    "NSH Predators @ PIT Penguins",
+    "Today 19:07",
+    "PIT 80%"
+   ],
+   [
+    "DET Red Wings @ CGY Flames",
+    "Today 23:07",
+    "CGY 67%"
+   ],
+   [
+    "MTL Canadiens @ WPG Jets",
+    "Tomorrow 19:07",
+    "Over 5.5"
+   ]
+  ],
+  "rugby-league": [
+   [
+    "State of Origin 2027 (outright)",
+    "27 May 2027",
+    "New South Wales 75%"
+   ],
+   [
+    "Super League 2027 Grand Final (outright)",
+    "02 Oct 2027",
+    "Leeds Rhinos 33%"
+   ],
+   [
+    "NRL 2027 Grand Final (outright)",
+    "03 Oct 2027",
+    "Penrith Panthers 50%"
+   ]
+  ]
+ },
+ "counts": {
+  "fixtures": 20,
+  "confirmed": 18,
+  "priced": 16,
+  "markets": 104,
+  "outcomes": 208,
+  "picks": 16,
+  "high": 3,
+  "medium": 4,
+  "low": 9,
+  "predictions": 10,
+  "flags": 13,
+  "sources": 24,
+  "sports": 15,
+  "sports_priced": 2
+ }
+}
