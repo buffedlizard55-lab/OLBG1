@@ -1,0 +1,2228 @@
+{
+ "snapshot": "2026-10-24T18:20:00Z",
+ "counts": {
+  "snapshot": "2026-10-24T18:20:00Z",
+  "sports_covered": 15,
+  "fixtures": 8,
+  "picks": 8,
+  "high": 1,
+  "medium": 6,
+  "low": 1,
+  "markets": 24,
+  "outcomes": 48,
+  "olbg_rows": 78,
+  "flags": 14,
+  "sources": 30,
+  "in_band": 7,
+  "per_sport": {
+   "baseball": 3,
+   "ice-hockey": 5
+  },
+  "min_words": 55
+ },
+ "fixtures": [
+  {
+   "id": "B1",
+   "sport": "baseball",
+   "competition": "MLB World Series 2026 - Game 2",
+   "event": "Tampa Bay Rays at Milwaukee Brewers",
+   "home": "Milwaukee Brewers",
+   "away": "Tampa Bay Rays",
+   "venue": "American Family Field, Milwaukee",
+   "start_utc": "2026-10-25T00:00:00Z",
+   "official": "MLB StatsAPI - World Series Game 2 (gamePk 849802): Tampa Bay at Milwaukee, American Family Field, first pitch 2026-10-25T00:00:00Z",
+   "official_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-24&endDate=2026-10-28&hydrate=probablePitcher,team,venue",
+   "stats_url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason",
+   "olbg_url": "https://www.olbg.com/betting-tips/Baseball/MLB/MLB/TB_Rays_@_MIL_Brewers/12?event_id=160792",
+   "olbg_label": "Today 20:00 (unlabelled timezone; official start 00:00 UTC 25 Oct)",
+   "home_record": "103-59 (.636)",
+   "away_record": "98-64 (.605)",
+   "form": "Milwaukee 103-59, .636, 68-35 at night, 8-2 in their last ten; Tampa Bay 98-64, .605, 5-5 in their last ten, L1.",
+   "stats": "Milwaukee 832 runs scored / 618 allowed (+214); Tampa Bay 736 / 650 (+86). Home/road: MIL 55-26 home, TB 43-38 away.",
+   "probables": "Logan Henderson (MIL) vs Drew Rasmussen (TB)",
+   "series": "Milwaukee lead 1-0; Game 1 finished 3-2 to Milwaukee.",
+   "injuries": "MLB StatsAPI active roster for both clubs lists 26 players each and every one carries status Active, so neither side has an injured-list entry at 18:05Z.",
+   "blank": [],
+   "sport_home_rate": 0.679,
+   "sport_away_rate": 0.531,
+   "home_runs_for": 5.135802469135802,
+   "home_runs_against": 3.814814814814815,
+   "away_runs_for": 4.54320987654321,
+   "away_runs_against": 4.012345679012346,
+   "total_candidates": [
+    7.5,
+    8.5,
+    9.5
+   ],
+   "handicap": -1.5,
+   "league": "mlb",
+   "expected": {
+    "home": 4.57,
+    "away": 4.18,
+    "total": 8.75,
+    "line": 8.5,
+    "unit": "runs"
+   },
+   "pick": {
+    "team": "Milwaukee Brewers",
+    "side": "home",
+    "prob": 0.6513595771749758,
+    "decimal": 1.5352503210855044,
+    "american": -187,
+    "american_str": "-187",
+    "decimal_str": "1.54",
+    "confidence": "high",
+    "in_band": true,
+    "notes": [],
+    "market": "Moneyline",
+    "prediction": "Back Milwaukee Brewers on the moneyline for World Series Game 2 at American Family Field. The Brewers finished the regular season 103-59 with a +214 run differential, scoring 832 runs and allowing 618, and they were 68-35 under lights with an 8-2 close. Tampa Bay went 98-64 but only 43-38 on the road, and they lost Game 1 by 3-2. Logan Henderson starts for Milwaukee against Drew Rasmussen, and both active rosters are full with every player listed Active, so no injured-list entry undermines those plans.",
+    "words": 86
+   }
+  },
+  {
+   "id": "B2",
+   "sport": "baseball",
+   "competition": "MLB World Series 2026 - Game 3",
+   "event": "Milwaukee Brewers at Tampa Bay Rays",
+   "home": "Tampa Bay Rays",
+   "away": "Milwaukee Brewers",
+   "venue": "Tropicana Field, St. Petersburg",
+   "start_utc": "2026-10-27T00:00:00Z",
+   "official": "MLB StatsAPI - World Series Game 3 (gamePk 849804), scheduled, both probable pitchers published",
+   "official_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-24&endDate=2026-10-28&hydrate=probablePitcher,team,venue",
+   "stats_url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason",
+   "olbg_url": "",
+   "olbg_label": "Not shown on the OLBG baseball hub at retrieval time (only Game 2 was listed)",
+   "home_record": "98-64 (.605)",
+   "away_record": "103-59 (.636)",
+   "form": "Tampa Bay 98-64 with a 55-26 home record; Milwaukee 103-59 and 48-33 on the road.",
+   "stats": "Tampa Bay 736 runs scored / 650 allowed (+86), 55-26 at home; Milwaukee 832 / 618 (+214), 48-33 away.",
+   "probables": "Tampa Bay: Freddy Peralta. Milwaukee: Robert Gasser.",
+   "series": "Series score at retrieval: Milwaukee 1-0 after Game 1.",
+   "injuries": "MLB StatsAPI active roster for both clubs lists 26 players each and every one carries status Active, so neither side has an injured-list entry at 18:05Z.",
+   "blank": [
+    "OLBG listing for this game not found at retrieval time"
+   ],
+   "sport_home_rate": 0.679,
+   "sport_away_rate": 0.593,
+   "home_runs_for": 4.54320987654321,
+   "home_runs_against": 4.012345679012346,
+   "away_runs_for": 5.135802469135802,
+   "away_runs_against": 3.814814814814815,
+   "total_candidates": [
+    7.5,
+    8.5,
+    9.5
+   ],
+   "handicap": -1.5,
+   "league": "mlb",
+   "expected": {
+    "home": 4.18,
+    "away": 4.57,
+    "total": 8.75,
+    "line": 8.5,
+    "unit": "runs"
+   },
+   "pick": {
+    "team": "Tampa Bay Rays",
+    "side": "home",
+    "prob": 0.5921350914708619,
+    "decimal": 1.6888038125151523,
+    "american": -145,
+    "american_str": "-145",
+    "decimal_str": "1.69",
+    "confidence": "medium",
+    "in_band": true,
+    "notes": [],
+    "market": "Moneyline",
+    "prediction": "Tampa Bay Rays to win Game 3 on the moneyline as the series shifts to Tropicana Field. The Rays were 55-26 at home inside a 98-64 season, scoring 736 runs and conceding 650, while Milwaukee are 48-33 on the road against 55-26 at home. Freddy Peralta takes the ball for Tampa Bay opposite Robert Gasser, both active rosters are clear of injured-list entries, and a 3-2 defeat in Game 1 makes this an early must-win for the home side. Milwaukee's 8-2 close is the counterweight, which is why this stays a Medium call.",
+    "words": 93
+   }
+  },
+  {
+   "id": "B3",
+   "sport": "baseball",
+   "competition": "MLB World Series 2026 - Game 4",
+   "event": "Milwaukee Brewers at Tampa Bay Rays",
+   "home": "Tampa Bay Rays",
+   "away": "Milwaukee Brewers",
+   "venue": "Tropicana Field, St. Petersburg",
+   "start_utc": "2026-10-28T00:00:00Z",
+   "official": "MLB StatsAPI - World Series Game 4 (gamePk 849803), scheduled, probable pitchers not yet published",
+   "official_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-24&endDate=2026-10-28&hydrate=probablePitcher,team,venue",
+   "stats_url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason",
+   "olbg_url": "",
+   "olbg_label": "Not shown on the OLBG baseball hub at retrieval time",
+   "home_record": "98-64 (.605)",
+   "away_record": "103-59 (.636)",
+   "form": "Tampa Bay 98-64, 55-26 at home; Milwaukee 103-59, 48-33 away.",
+   "stats": "Tampa Bay 736 / 650 (+86); Milwaukee 832 / 618 (+214).",
+   "probables": "",
+   "series": "Series score at retrieval: Milwaukee 1-0 after Game 1.",
+   "injuries": "MLB StatsAPI active roster for both clubs lists 26 players each and every one carries status Active, so neither side has an injured-list entry at 18:05Z.",
+   "blank": [
+    "probable pitchers not published for this game at retrieval time",
+    "OLBG listing for this game not found at retrieval time"
+   ],
+   "sport_home_rate": 0.679,
+   "sport_away_rate": 0.593,
+   "home_runs_for": 4.54320987654321,
+   "home_runs_against": 4.012345679012346,
+   "away_runs_for": 5.135802469135802,
+   "away_runs_against": 3.814814814814815,
+   "total_candidates": [
+    7.5,
+    8.5,
+    9.5
+   ],
+   "handicap": -1.5,
+   "league": "mlb",
+   "expected": {
+    "home": 4.18,
+    "away": 4.57,
+    "total": 8.75,
+    "line": 8.5,
+    "unit": "runs"
+   },
+   "pick": {
+    "team": "Tampa Bay Rays",
+    "side": "home",
+    "prob": 0.5921350914708619,
+    "decimal": 1.6888038125151523,
+    "american": -145,
+    "american_str": "-145",
+    "decimal_str": "1.69",
+    "confidence": "medium",
+    "in_band": true,
+    "notes": [
+     "Starters had not been published"
+    ],
+    "market": "Moneyline",
+    "prediction": "Tampa Bay Rays to win Game 4 at Tropicana Field, where a 55-26 home record carried a 98-64 season. They scored 736 runs and allowed 650 across 162 games. Milwaukee scored 832 and allowed 618 but were 48-33 away against 55-26 at home, and both active rosters are clear of injured-list entries. Neither starter had been published when this price was set, so a 59% edge is treated as Medium rather than anything stronger.",
+    "words": 74
+   }
+  },
+  {
+   "id": "N1",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 regular season",
+   "event": "San Jose Sharks at Boston Bruins",
+   "home": "Boston Bruins",
+   "away": "San Jose Sharks",
+   "venue": "TD Garden, Boston",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "official": "NHL API schedule for 24 October 2026 - fixture and start time published by the league",
+   "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+   "stats_url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/SJ_Sharks_@_BOS_Bruins/13?event_id=200007",
+   "olbg_label": "Today 19:07 (unlabelled timezone; official start 23:00 UTC)",
+   "home_record": "8-2-1 (17 points)",
+   "away_record": "6-4-1 (13 points)",
+   "form": "Boston 8-2-1, 17 points, 4-1 at home and 7-2-1 across their last ten. San Jose 6-4-1 for 13 points.",
+   "stats": "Boston 42 goals for / 22 against, including 21 for and 6 against across five home games. San Jose 33 for / 37 against, a minus-four goal difference.",
+   "probables": "",
+   "series": "Regular-season game.",
+   "injuries": "",
+   "blank": [
+    "starting goaltenders and injuries not published by the source read"
+   ],
+   "home_win_rate": 0.7273,
+   "away_win_rate": 0.4545,
+   "home_gf": 3.8181818181818183,
+   "home_ga": 2.0,
+   "away_gf": 3.0,
+   "away_ga": 3.3636363636363638,
+   "home_home_gf": 4.2,
+   "home_home_ga": 1.2,
+   "away_road_gf": 2.857142857142857,
+   "away_road_ga": 3.0,
+   "total_candidates": [
+    4.5,
+    5.5,
+    6.5
+   ],
+   "handicap": -1.5,
+   "league": "nhl",
+   "expected": {
+    "home": 3.59,
+    "away": 2.5,
+    "total": 6.09,
+    "line": 5.5,
+    "unit": "goals"
+   },
+   "pick": {
+    "team": "Boston Bruins",
+    "side": "home",
+    "prob": 0.7619629591289769,
+    "decimal": 1.3123997538451613,
+    "american": -320,
+    "american_str": "-320",
+    "decimal_str": "1.31",
+    "confidence": "medium",
+    "in_band": false,
+    "notes": [
+     "Fair price -320 is outside the brief's -250 to +10000 window",
+     "No official availability report was published"
+    ],
+    "market": "Moneyline (wins incl. overtime and shootout)",
+    "prediction": "Boston Bruins to win at TD Garden, though the price sits outside the brief's -250 floor and no official availability report was published, so the label is Medium on both counts. Boston are 8-2-1 with 17 points, have conceded six goals in five home games and are 7-2-1 across their last ten. San Jose are 6-4-1 and 4-2-1 on the road, but they have been outscored 37-33 and have one regulation win in eleven, so the Bruins' five-on-five profile is the stronger side of this matchup.",
+    "words": 86
+   }
+  },
+  {
+   "id": "N2",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 regular season",
+   "event": "New York Rangers at Ottawa Senators",
+   "home": "Ottawa Senators",
+   "away": "New York Rangers",
+   "venue": "Canadian Tire Centre, Ottawa",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "official": "NHL API schedule for 24 October 2026 - fixture and start time published by the league",
+   "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+   "stats_url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/NY_Rangers_@_OTT_Senators/13?event_id=200008",
+   "olbg_label": "Today 19:07 (unlabelled timezone; official start 23:00 UTC)",
+   "home_record": "7-4-0 (14 points)",
+   "away_record": "7-4-1 (15 points)",
+   "form": "Ottawa 7-4-0 for 14 points. NY Rangers 7-4-1 for 15 points, 6-0-0 at home but 1-4-1 on the road.",
+   "stats": "Ottawa 31 goals for / 30 against. NY Rangers 37 for / 29 against, the better goal difference of the two.",
+   "probables": "",
+   "series": "Regular-season game.",
+   "injuries": "",
+   "blank": [
+    "starting goaltenders and injuries not published by the source read"
+   ],
+   "home_win_rate": 0.4545,
+   "away_win_rate": 0.5833,
+   "home_gf": 2.8181818181818183,
+   "home_ga": 2.727272727272727,
+   "away_gf": 3.0833333333333335,
+   "away_ga": 2.4166666666666665,
+   "home_home_gf": 2.6666666666666665,
+   "home_home_ga": 3.0,
+   "away_road_gf": 1.3333333333333333,
+   "away_road_ga": 3.1666666666666665,
+   "total_candidates": [
+    4.5,
+    5.5,
+    6.5
+   ],
+   "handicap": -1.5,
+   "league": "nhl",
+   "expected": {
+    "home": 2.62,
+    "away": 2.91,
+    "total": 5.52,
+    "line": 5.5,
+    "unit": "goals"
+   },
+   "pick": {
+    "team": "New York Rangers",
+    "side": "away",
+    "prob": 0.6268764764905179,
+    "decimal": 1.595210599699582,
+    "american": -168,
+    "american_str": "-168",
+    "decimal_str": "1.60",
+    "confidence": "medium",
+    "in_band": true,
+    "notes": [
+     "No official availability report was published"
+    ],
+    "market": "Moneyline (wins incl. overtime and shootout)",
+    "prediction": "New York Rangers to win on the road in Ottawa. The Rangers are 7-4-1 with 15 points and have conceded only 29 goals in twelve games, while Ottawa are 7-4-0 having scored 31 and allowed 30 in eleven. New York's 1-4-1 road record and eight goals in six away games are the obvious counter-argument, but a 37-29 goal line against Ottawa's 31-30 is the better profile, and -168 is the right side of a close game. No official availability report exists for either club, so the label stops at Medium.",
+    "words": 90
+   }
+  },
+  {
+   "id": "N3",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 regular season",
+   "event": "Nashville Predators at Pittsburgh Penguins",
+   "home": "Pittsburgh Penguins",
+   "away": "Nashville Predators",
+   "venue": "PPG Paints Arena, Pittsburgh",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "official": "NHL API schedule for 24 October 2026 - fixture and start time published by the league",
+   "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+   "stats_url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/NSH_Predators_@_PIT_Penguins/13?event_id=200006",
+   "olbg_label": "Today 19:07 (unlabelled timezone; official start 23:00 UTC)",
+   "home_record": "4-6-1 (9 points)",
+   "away_record": "3-3-3 (9 points)",
+   "form": "Pittsburgh 4-6-1 for 9 points, 3-1 at home, W1. Nashville 3-3-3 for 9 points.",
+   "stats": "Pittsburgh 37 goals for / 38 against and a regulation-plus-overtime win rate of .273. Nashville 23 for / 30 against and .333.",
+   "probables": "",
+   "series": "Regular-season game.",
+   "injuries": "",
+   "blank": [
+    "starting goaltenders and injuries not published by the source read"
+   ],
+   "home_win_rate": 0.2727,
+   "away_win_rate": 0.3333,
+   "home_gf": 3.3636363636363638,
+   "home_ga": 3.4545454545454546,
+   "away_gf": 2.5555555555555554,
+   "away_ga": 3.3333333333333335,
+   "home_home_gf": 3.5,
+   "home_home_ga": 2.25,
+   "away_road_gf": 2.75,
+   "away_road_ga": 4.0,
+   "total_candidates": [
+    5.5,
+    6.5,
+    7.5
+   ],
+   "handicap": -1.5,
+   "league": "nhl",
+   "expected": {
+    "home": 3.35,
+    "away": 3.01,
+    "total": 6.35,
+    "line": 6.5,
+    "unit": "goals"
+   },
+   "pick": {
+    "team": "Nashville Predators",
+    "side": "away",
+    "prob": 0.5714255103352713,
+    "decimal": 1.7500093746484506,
+    "american": -133,
+    "american_str": "-133",
+    "decimal_str": "1.75",
+    "confidence": "medium",
+    "in_band": true,
+    "notes": [
+     "No official availability report was published"
+    ],
+    "market": "Moneyline (wins incl. overtime and shootout)",
+    "prediction": "Nashville Predators to win in Pittsburgh. Neither side is in form: Nashville are 3-3-3 and Pittsburgh 4-6-1, but the Predators' regulation-plus-overtime win rate of .333 still edges the Penguins' .273, and Pittsburgh have conceded 38 goals in eleven games against Nashville's 30 in nine. Neither side is convincing, so this is a small-stakes Medium call.",
+    "words": 55
+   }
+  },
+  {
+   "id": "N4",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 regular season",
+   "event": "Buffalo Sabres at Washington Capitals",
+   "home": "Washington Capitals",
+   "away": "Buffalo Sabres",
+   "venue": "Capital One Arena, Washington",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "official": "NHL API schedule for 24 October 2026 - fixture and start time published by the league",
+   "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+   "stats_url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+   "olbg_url": "",
+   "olbg_label": "Not listed on the OLBG ice hockey hub at retrieval time",
+   "home_record": "5-4-0 (10 points)",
+   "away_record": "4-4-2 (10 points)",
+   "form": "Washington 5-4-0 for 10 points, 4-2 at home, L1. Buffalo 4-4-2 for 10 points.",
+   "stats": "Washington 30 goals for / 29 against, five wins in nine. Buffalo 28 for / 37 against, minus nine, with two regulation wins in ten.",
+   "probables": "",
+   "series": "Regular-season game.",
+   "injuries": "",
+   "blank": [
+    "starting goaltenders and injuries not published by the source read",
+    "OLBG listing for this game not found at retrieval time"
+   ],
+   "home_win_rate": 0.5556,
+   "away_win_rate": 0.4,
+   "home_gf": 3.3333333333333335,
+   "home_ga": 3.2222222222222223,
+   "away_gf": 2.8,
+   "away_ga": 3.7,
+   "home_home_gf": 3.6666666666666665,
+   "home_home_ga": 3.3333333333333335,
+   "away_road_gf": 3.5,
+   "away_road_ga": 4.5,
+   "total_candidates": [
+    5.5,
+    6.5,
+    7.5
+   ],
+   "handicap": -1.5,
+   "league": "nhl",
+   "expected": {
+    "home": 3.52,
+    "away": 3.01,
+    "total": 6.53,
+    "line": 6.5,
+    "unit": "goals"
+   },
+   "pick": {
+    "team": "Washington Capitals",
+    "side": "home",
+    "prob": 0.6522147440914071,
+    "decimal": 1.533237341012719,
+    "american": -188,
+    "american_str": "-188",
+    "decimal_str": "1.53",
+    "confidence": "medium",
+    "in_band": true,
+    "notes": [
+     "No official availability report was published"
+    ],
+    "market": "Moneyline (wins incl. overtime and shootout)",
+    "prediction": "Washington Capitals to win at home against Buffalo. Washington are 5-4-0 with a .556 regulation-plus-overtime win rate, have scored 30 goals in nine games and are 4-2 at Capital One Arena. Buffalo are 4-4-2, have been outscored 37-28 and have managed only two regulation wins in ten games and a minus-nine goal difference. That keeps the game from being a rout, but the rates point clearly to the home side. With no official availability report published, the call is capped at Medium.",
+    "words": 82
+   }
+  },
+  {
+   "id": "N5",
+   "sport": "ice-hockey",
+   "competition": "NHL 2026-27 regular season",
+   "event": "New York Islanders at Dallas Stars",
+   "home": "Dallas Stars",
+   "away": "New York Islanders",
+   "venue": "American Airlines Center, Dallas",
+   "start_utc": "2026-10-25T22:00:00Z",
+   "official": "NHL API schedule for 25 October 2026 - fixture and start time published by the league",
+   "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-25",
+   "stats_url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+   "olbg_url": "",
+   "olbg_label": "Not listed on the OLBG ice hockey hub at retrieval time",
+   "home_record": "6-3-1 (13 points)",
+   "away_record": "5-3-2 (12 points)",
+   "form": "Dallas 6-3-1 for 13 points and on a four-game winning run. NY Islanders 5-3-2 for 12 points.",
+   "stats": "Dallas 26 goals for / 17 against. NY Islanders 29 for / 23 against.",
+   "probables": "",
+   "series": "Regular-season game.",
+   "injuries": "",
+   "blank": [
+    "starting goaltenders and injuries not published by the source read",
+    "OLBG listing for this game not found at retrieval time"
+   ],
+   "home_win_rate": 0.5,
+   "away_win_rate": 0.5,
+   "home_gf": 2.6,
+   "home_ga": 1.7,
+   "away_gf": 2.9,
+   "away_ga": 2.3,
+   "home_home_gf": 2.6,
+   "home_home_ga": 2.2,
+   "away_road_gf": 2.0,
+   "away_road_ga": 2.5,
+   "total_candidates": [
+    4.5,
+    5.5,
+    6.5
+   ],
+   "handicap": -1.5,
+   "league": "nhl",
+   "expected": {
+    "home": 2.45,
+    "away": 2.3,
+    "total": 4.75,
+    "line": 4.5,
+    "unit": "goals"
+   },
+   "pick": {
+    "team": "Dallas Stars",
+    "side": "home",
+    "prob": 0.5,
+    "decimal": 2.0,
+    "american": -100,
+    "american_str": "+100",
+    "decimal_str": "2.00",
+    "confidence": "low",
+    "in_band": true,
+    "notes": [
+     "No official availability report was published"
+    ],
+    "market": "Moneyline (wins incl. overtime and shootout)",
+    "prediction": "Dallas Stars to win at home against the New York Islanders, at a fair probability of about one half. Dallas are 6-3-1 on a four-game winning run and have conceded only 17 goals in ten games while scoring 26, a plus-nine goal difference. The Islanders are 5-3-2 with 29 scored and 23 conceded, which is a wider spread in both directions. Two 50% win rates produce a coin flip, so this is Low confidence by construction.",
+    "words": 76
+   }
+  }
+ ],
+ "markets": [
+  {
+   "fixture_id": "B1",
+   "event": "Tampa Bay Rays at Milwaukee Brewers",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "outcomes": [
+      {
+       "selection": "Milwaukee Brewers",
+       "prob": 0.6513595771749758,
+       "decimal": 1.5352503210855044,
+       "american": -187,
+       "in_band": true,
+       "american_str": "-187",
+       "decimal_str": "1.54"
+      },
+      {
+       "selection": "Tampa Bay Rays",
+       "prob": 0.34864042282502417,
+       "decimal": 2.8682847269889886,
+       "american": 187,
+       "in_band": true,
+       "american_str": "+187",
+       "decimal_str": "2.87"
+      }
+     ],
+     "why": "Venue-split log5: Milwaukee's home win rate against Tampa Bay's road win rate in Game 2, then reversed. No invented home-field constant."
+    },
+    {
+     "market": "Run line -1.5 / +1.5",
+     "outcomes": [
+      {
+       "selection": "Milwaukee Brewers -1.5",
+       "prob": 0.35081946908830625,
+       "decimal": 2.8504689394769187,
+       "american": 185,
+       "in_band": true,
+       "american_str": "+185",
+       "decimal_str": "2.85"
+      },
+      {
+       "selection": "Tampa Bay Rays +1.5",
+       "prob": 0.6491805309116938,
+       "decimal": 1.54040355861508,
+       "american": -185,
+       "in_band": true,
+       "american_str": "-185",
+       "decimal_str": "1.54"
+      }
+     ],
+     "why": "Read off the same independent score grid: the home side must win by two or more."
+    },
+    {
+     "market": "Total 8.5 runs",
+     "outcomes": [
+      {
+       "selection": "Over 8.5",
+       "prob": 0.5113985327374407,
+       "decimal": 1.955422114035306,
+       "american": -105,
+       "in_band": true,
+       "american_str": "-105",
+       "decimal_str": "1.96"
+      },
+      {
+       "selection": "Under 8.5",
+       "prob": 0.48860146726255926,
+       "decimal": 2.0466577916816426,
+       "american": 105,
+       "in_band": true,
+       "american_str": "+105",
+       "decimal_str": "2.05"
+      }
+     ],
+     "why": "Independent Poisson with a home mean of 4.57 and an away mean of 4.18; the line closest to a 50/50 split is the one published."
+    }
+   ]
+  },
+  {
+   "fixture_id": "B2",
+   "event": "Milwaukee Brewers at Tampa Bay Rays",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "outcomes": [
+      {
+       "selection": "Tampa Bay Rays",
+       "prob": 0.5921350914708619,
+       "decimal": 1.6888038125151523,
+       "american": -145,
+       "in_band": true,
+       "american_str": "-145",
+       "decimal_str": "1.69"
+      },
+      {
+       "selection": "Milwaukee Brewers",
+       "prob": 0.40786490852913815,
+       "decimal": 2.451792196603154,
+       "american": 145,
+       "in_band": true,
+       "american_str": "+145",
+       "decimal_str": "2.45"
+      }
+     ],
+     "why": "Venue-split log5: Milwaukee's home win rate against Tampa Bay's road win rate in Game 2, then reversed. No invented home-field constant."
+    },
+    {
+     "market": "Run line -1.5 / +1.5",
+     "outcomes": [
+      {
+       "selection": "Tampa Bay Rays -1.5",
+       "prob": 0.2576537087741069,
+       "decimal": 3.881178364394247,
+       "american": 288,
+       "in_band": true,
+       "american_str": "+288",
+       "decimal_str": "3.88"
+      },
+      {
+       "selection": "Milwaukee Brewers +1.5",
+       "prob": 0.7423462912258931,
+       "decimal": 1.3470802128594508,
+       "american": -288,
+       "in_band": false,
+       "american_str": "-288",
+       "decimal_str": "1.35"
+      }
+     ],
+     "why": "Read off the same independent score grid: the home side must win by two or more."
+    },
+    {
+     "market": "Total 8.5 runs",
+     "outcomes": [
+      {
+       "selection": "Over 8.5",
+       "prob": 0.5113985327374407,
+       "decimal": 1.955422114035306,
+       "american": -105,
+       "in_band": true,
+       "american_str": "-105",
+       "decimal_str": "1.96"
+      },
+      {
+       "selection": "Under 8.5",
+       "prob": 0.48860146726255926,
+       "decimal": 2.0466577916816426,
+       "american": 105,
+       "in_band": true,
+       "american_str": "+105",
+       "decimal_str": "2.05"
+      }
+     ],
+     "why": "Independent Poisson with a home mean of 4.18 and an away mean of 4.57; the line closest to a 50/50 split is the one published."
+    }
+   ]
+  },
+  {
+   "fixture_id": "B3",
+   "event": "Milwaukee Brewers at Tampa Bay Rays",
+   "markets": [
+    {
+     "market": "Moneyline",
+     "outcomes": [
+      {
+       "selection": "Tampa Bay Rays",
+       "prob": 0.5921350914708619,
+       "decimal": 1.6888038125151523,
+       "american": -145,
+       "in_band": true,
+       "american_str": "-145",
+       "decimal_str": "1.69"
+      },
+      {
+       "selection": "Milwaukee Brewers",
+       "prob": 0.40786490852913815,
+       "decimal": 2.451792196603154,
+       "american": 145,
+       "in_band": true,
+       "american_str": "+145",
+       "decimal_str": "2.45"
+      }
+     ],
+     "why": "Venue-split log5: Milwaukee's home win rate against Tampa Bay's road win rate in Game 2, then reversed. No invented home-field constant."
+    },
+    {
+     "market": "Run line -1.5 / +1.5",
+     "outcomes": [
+      {
+       "selection": "Tampa Bay Rays -1.5",
+       "prob": 0.2576537087741069,
+       "decimal": 3.881178364394247,
+       "american": 288,
+       "in_band": true,
+       "american_str": "+288",
+       "decimal_str": "3.88"
+      },
+      {
+       "selection": "Milwaukee Brewers +1.5",
+       "prob": 0.7423462912258931,
+       "decimal": 1.3470802128594508,
+       "american": -288,
+       "in_band": false,
+       "american_str": "-288",
+       "decimal_str": "1.35"
+      }
+     ],
+     "why": "Read off the same independent score grid: the home side must win by two or more."
+    },
+    {
+     "market": "Total 8.5 runs",
+     "outcomes": [
+      {
+       "selection": "Over 8.5",
+       "prob": 0.5113985327374407,
+       "decimal": 1.955422114035306,
+       "american": -105,
+       "in_band": true,
+       "american_str": "-105",
+       "decimal_str": "1.96"
+      },
+      {
+       "selection": "Under 8.5",
+       "prob": 0.48860146726255926,
+       "decimal": 2.0466577916816426,
+       "american": 105,
+       "in_band": true,
+       "american_str": "+105",
+       "decimal_str": "2.05"
+      }
+     ],
+     "why": "Independent Poisson with a home mean of 4.18 and an away mean of 4.57; the line closest to a 50/50 split is the one published."
+    }
+   ]
+  },
+  {
+   "fixture_id": "N1",
+   "event": "San Jose Sharks at Boston Bruins",
+   "markets": [
+    {
+     "market": "Moneyline (wins incl. overtime and shootout)",
+     "outcomes": [
+      {
+       "selection": "Boston Bruins",
+       "prob": 0.7619629591289769,
+       "decimal": 1.3123997538451613,
+       "american": -320,
+       "in_band": false,
+       "american_str": "-320",
+       "decimal_str": "1.31"
+      },
+      {
+       "selection": "San Jose Sharks",
+       "prob": 0.23803704087102306,
+       "decimal": 4.201026850026402,
+       "american": 320,
+       "in_band": true,
+       "american_str": "+320",
+       "decimal_str": "4.20"
+      }
+     ],
+     "why": "log5 on the regulation-plus-overtime win percentage the NHL publishes for each club, so a shootout result cannot inflate a side."
+    },
+    {
+     "market": "Puck line -1.5 / +1.5",
+     "outcomes": [
+      {
+       "selection": "Boston Bruins -1.5",
+       "prob": 0.42716610543585043,
+       "decimal": 2.341009708576175,
+       "american": 134,
+       "in_band": true,
+       "american_str": "+134",
+       "decimal_str": "2.34"
+      },
+      {
+       "selection": "San Jose Sharks +1.5",
+       "prob": 0.5728338945641496,
+       "decimal": 1.7457067563379207,
+       "american": -134,
+       "in_band": true,
+       "american_str": "-134",
+       "decimal_str": "1.75"
+      }
+     ],
+     "why": "Read off the same independent score grid: the home side must win by two or more."
+    },
+    {
+     "market": "Total 5.5 goals",
+     "outcomes": [
+      {
+       "selection": "Over 5.5",
+       "prob": 0.568809656210667,
+       "decimal": 1.7580573555341248,
+       "american": -132,
+       "in_band": true,
+       "american_str": "-132",
+       "decimal_str": "1.76"
+      },
+      {
+       "selection": "Under 5.5",
+       "prob": 0.43119034378933296,
+       "decimal": 2.3191613968251823,
+       "american": 132,
+       "in_band": true,
+       "american_str": "+132",
+       "decimal_str": "2.32"
+      }
+     ],
+     "why": "Independent Poisson with a home mean of 3.59 and an away mean of 2.50; the line closest to a 50/50 split is the one published."
+    }
+   ]
+  },
+  {
+   "fixture_id": "N2",
+   "event": "New York Rangers at Ottawa Senators",
+   "markets": [
+    {
+     "market": "Moneyline (wins incl. overtime and shootout)",
+     "outcomes": [
+      {
+       "selection": "Ottawa Senators",
+       "prob": 0.37312352350948214,
+       "decimal": 2.6800776069927608,
+       "american": 168,
+       "in_band": true,
+       "american_str": "+168",
+       "decimal_str": "2.68"
+      },
+      {
+       "selection": "New York Rangers",
+       "prob": 0.6268764764905179,
+       "decimal": 1.595210599699582,
+       "american": -168,
+       "in_band": true,
+       "american_str": "-168",
+       "decimal_str": "1.60"
+      }
+     ],
+     "why": "log5 on the regulation-plus-overtime win percentage the NHL publishes for each club, so a shootout result cannot inflate a side."
+    },
+    {
+     "market": "Puck line -1.5 / +1.5",
+     "outcomes": [
+      {
+       "selection": "Ottawa Senators -1.5",
+       "prob": 0.21752090527029425,
+       "decimal": 4.597259278400792,
+       "american": 360,
+       "in_band": true,
+       "american_str": "+360",
+       "decimal_str": "4.60"
+      },
+      {
+       "selection": "New York Rangers +1.5",
+       "prob": 0.7824790947297058,
+       "decimal": 1.277989414331169,
+       "american": -360,
+       "in_band": false,
+       "american_str": "-360",
+       "decimal_str": "1.28"
+      }
+     ],
+     "why": "Read off the same independent score grid: the home side must win by two or more."
+    },
+    {
+     "market": "Total 5.5 goals",
+     "outcomes": [
+      {
+       "selection": "Over 5.5",
+       "prob": 0.4749727068615932,
+       "decimal": 2.105384131664221,
+       "american": 111,
+       "in_band": true,
+       "american_str": "+111",
+       "decimal_str": "2.11"
+      },
+      {
+       "selection": "Under 5.5",
+       "prob": 0.5250272931384068,
+       "decimal": 1.9046628871851463,
+       "american": -111,
+       "in_band": true,
+       "american_str": "-111",
+       "decimal_str": "1.90"
+      }
+     ],
+     "why": "Independent Poisson with a home mean of 2.62 and an away mean of 2.91; the line closest to a 50/50 split is the one published."
+    }
+   ]
+  },
+  {
+   "fixture_id": "N3",
+   "event": "Nashville Predators at Pittsburgh Penguins",
+   "markets": [
+    {
+     "market": "Moneyline (wins incl. overtime and shootout)",
+     "outcomes": [
+      {
+       "selection": "Pittsburgh Penguins",
+       "prob": 0.42857448966472866,
+       "decimal": 2.3333166674999584,
+       "american": 133,
+       "in_band": true,
+       "american_str": "+133",
+       "decimal_str": "2.33"
+      },
+      {
+       "selection": "Nashville Predators",
+       "prob": 0.5714255103352713,
+       "decimal": 1.7500093746484506,
+       "american": -133,
+       "in_band": true,
+       "american_str": "-133",
+       "decimal_str": "1.75"
+      }
+     ],
+     "why": "log5 on the regulation-plus-overtime win percentage the NHL publishes for each club, so a shootout result cannot inflate a side."
+    },
+    {
+     "market": "Puck line -1.5 / +1.5",
+     "outcomes": [
+      {
+       "selection": "Pittsburgh Penguins -1.5",
+       "prob": 0.3176514731091866,
+       "decimal": 3.148104399491543,
+       "american": 215,
+       "in_band": true,
+       "american_str": "+215",
+       "decimal_str": "3.15"
+      },
+      {
+       "selection": "Nashville Predators +1.5",
+       "prob": 0.6823485268908134,
+       "decimal": 1.4655267221819854,
+       "american": -215,
+       "in_band": true,
+       "american_str": "-215",
+       "decimal_str": "1.47"
+      }
+     ],
+     "why": "Read off the same independent score grid: the home side must win by two or more."
+    },
+    {
+     "market": "Total 6.5 goals",
+     "outcomes": [
+      {
+       "selection": "Over 6.5",
+       "prob": 0.4502922104047785,
+       "decimal": 2.220780144300244,
+       "american": 122,
+       "in_band": true,
+       "american_str": "+122",
+       "decimal_str": "2.22"
+      },
+      {
+       "selection": "Under 6.5",
+       "prob": 0.5497077895952215,
+       "decimal": 1.819148316483476,
+       "american": -122,
+       "in_band": true,
+       "american_str": "-122",
+       "decimal_str": "1.82"
+      }
+     ],
+     "why": "Independent Poisson with a home mean of 3.35 and an away mean of 3.01; the line closest to a 50/50 split is the one published."
+    }
+   ]
+  },
+  {
+   "fixture_id": "N4",
+   "event": "Buffalo Sabres at Washington Capitals",
+   "markets": [
+    {
+     "market": "Moneyline (wins incl. overtime and shootout)",
+     "outcomes": [
+      {
+       "selection": "Washington Capitals",
+       "prob": 0.6522147440914071,
+       "decimal": 1.533237341012719,
+       "american": -188,
+       "in_band": true,
+       "american_str": "-188",
+       "decimal_str": "1.53"
+      },
+      {
+       "selection": "Buffalo Sabres",
+       "prob": 0.3477852559085929,
+       "decimal": 2.8753375337533753,
+       "american": 188,
+       "in_band": true,
+       "american_str": "+188",
+       "decimal_str": "2.88"
+      }
+     ],
+     "why": "log5 on the regulation-plus-overtime win percentage the NHL publishes for each club, so a shootout result cannot inflate a side."
+    },
+    {
+     "market": "Puck line -1.5 / +1.5",
+     "outcomes": [
+      {
+       "selection": "Washington Capitals -1.5",
+       "prob": 0.34302293767180064,
+       "decimal": 2.91525694108767,
+       "american": 192,
+       "in_band": true,
+       "american_str": "+192",
+       "decimal_str": "2.92"
+      },
+      {
+       "selection": "Buffalo Sabres +1.5",
+       "prob": 0.6569770623281994,
+       "decimal": 1.522123156714473,
+       "american": -192,
+       "in_band": true,
+       "american_str": "-192",
+       "decimal_str": "1.52"
+      }
+     ],
+     "why": "Read off the same independent score grid: the home side must win by two or more."
+    },
+    {
+     "market": "Total 6.5 goals",
+     "outcomes": [
+      {
+       "selection": "Over 6.5",
+       "prob": 0.47784615366041056,
+       "decimal": 2.0927237612770804,
+       "american": 109,
+       "in_band": true,
+       "american_str": "+109",
+       "decimal_str": "2.09"
+      },
+      {
+       "selection": "Under 6.5",
+       "prob": 0.5221538463395894,
+       "decimal": 1.915144371740656,
+       "american": -109,
+       "in_band": true,
+       "american_str": "-109",
+       "decimal_str": "1.92"
+      }
+     ],
+     "why": "Independent Poisson with a home mean of 3.52 and an away mean of 3.01; the line closest to a 50/50 split is the one published."
+    }
+   ]
+  },
+  {
+   "fixture_id": "N5",
+   "event": "New York Islanders at Dallas Stars",
+   "markets": [
+    {
+     "market": "Moneyline (wins incl. overtime and shootout)",
+     "outcomes": [
+      {
+       "selection": "Dallas Stars",
+       "prob": 0.5,
+       "decimal": 2.0,
+       "american": -100,
+       "in_band": true,
+       "american_str": "+100",
+       "decimal_str": "2.00"
+      },
+      {
+       "selection": "New York Islanders",
+       "prob": 0.5,
+       "decimal": 2.0,
+       "american": -100,
+       "in_band": true,
+       "american_str": "+100",
+       "decimal_str": "2.00"
+      }
+     ],
+     "why": "log5 on the regulation-plus-overtime win percentage the NHL publishes for each club, so a shootout result cannot inflate a side."
+    },
+    {
+     "market": "Puck line -1.5 / +1.5",
+     "outcomes": [
+      {
+       "selection": "Dallas Stars -1.5",
+       "prob": 0.2601945792184354,
+       "decimal": 3.8432776078724227,
+       "american": 284,
+       "in_band": true,
+       "american_str": "+284",
+       "decimal_str": "3.84"
+      },
+      {
+       "selection": "New York Islanders +1.5",
+       "prob": 0.7398054207815645,
+       "decimal": 1.3517067757405101,
+       "american": -284,
+       "in_band": false,
+       "american_str": "-284",
+       "decimal_str": "1.35"
+      }
+     ],
+     "why": "Read off the same independent score grid: the home side must win by two or more."
+    },
+    {
+     "market": "Total 4.5 goals",
+     "outcomes": [
+      {
+       "selection": "Over 4.5",
+       "prob": 0.5146024422214035,
+       "decimal": 1.9432476761735968,
+       "american": -106,
+       "in_band": true,
+       "american_str": "-106",
+       "decimal_str": "1.94"
+      },
+      {
+       "selection": "Under 4.5",
+       "prob": 0.4853975577785965,
+       "decimal": 2.0601669373378435,
+       "american": 106,
+       "in_band": true,
+       "american_str": "+106",
+       "decimal_str": "2.06"
+      }
+     ],
+     "why": "Independent Poisson with a home mean of 2.45 and an away mean of 2.30; the line closest to a 50/50 split is the one published."
+    }
+   ]
+  }
+ ],
+ "picks": [
+  {
+   "fixture_id": "B1",
+   "sport": "baseball",
+   "event": "Tampa Bay Rays at Milwaukee Brewers",
+   "team": "Milwaukee Brewers",
+   "side": "home",
+   "prob": 0.6513595771749758,
+   "decimal": 1.5352503210855044,
+   "american": -187,
+   "american_str": "-187",
+   "decimal_str": "1.54",
+   "confidence": "high",
+   "in_band": true,
+   "notes": [],
+   "market": "Moneyline",
+   "prediction": "Back Milwaukee Brewers on the moneyline for World Series Game 2 at American Family Field. The Brewers finished the regular season 103-59 with a +214 run differential, scoring 832 runs and allowing 618, and they were 68-35 under lights with an 8-2 close. Tampa Bay went 98-64 but only 43-38 on the road, and they lost Game 1 by 3-2. Logan Henderson starts for Milwaukee against Drew Rasmussen, and both active rosters are full with every player listed Active, so no injured-list entry undermines those plans.",
+   "words": 86
+  },
+  {
+   "fixture_id": "B2",
+   "sport": "baseball",
+   "event": "Milwaukee Brewers at Tampa Bay Rays",
+   "team": "Tampa Bay Rays",
+   "side": "home",
+   "prob": 0.5921350914708619,
+   "decimal": 1.6888038125151523,
+   "american": -145,
+   "american_str": "-145",
+   "decimal_str": "1.69",
+   "confidence": "medium",
+   "in_band": true,
+   "notes": [],
+   "market": "Moneyline",
+   "prediction": "Tampa Bay Rays to win Game 3 on the moneyline as the series shifts to Tropicana Field. The Rays were 55-26 at home inside a 98-64 season, scoring 736 runs and conceding 650, while Milwaukee are 48-33 on the road against 55-26 at home. Freddy Peralta takes the ball for Tampa Bay opposite Robert Gasser, both active rosters are clear of injured-list entries, and a 3-2 defeat in Game 1 makes this an early must-win for the home side. Milwaukee's 8-2 close is the counterweight, which is why this stays a Medium call.",
+   "words": 93
+  },
+  {
+   "fixture_id": "B3",
+   "sport": "baseball",
+   "event": "Milwaukee Brewers at Tampa Bay Rays",
+   "team": "Tampa Bay Rays",
+   "side": "home",
+   "prob": 0.5921350914708619,
+   "decimal": 1.6888038125151523,
+   "american": -145,
+   "american_str": "-145",
+   "decimal_str": "1.69",
+   "confidence": "medium",
+   "in_band": true,
+   "notes": [
+    "Starters had not been published"
+   ],
+   "market": "Moneyline",
+   "prediction": "Tampa Bay Rays to win Game 4 at Tropicana Field, where a 55-26 home record carried a 98-64 season. They scored 736 runs and allowed 650 across 162 games. Milwaukee scored 832 and allowed 618 but were 48-33 away against 55-26 at home, and both active rosters are clear of injured-list entries. Neither starter had been published when this price was set, so a 59% edge is treated as Medium rather than anything stronger.",
+   "words": 74
+  },
+  {
+   "fixture_id": "N1",
+   "sport": "ice-hockey",
+   "event": "San Jose Sharks at Boston Bruins",
+   "team": "Boston Bruins",
+   "side": "home",
+   "prob": 0.7619629591289769,
+   "decimal": 1.3123997538451613,
+   "american": -320,
+   "american_str": "-320",
+   "decimal_str": "1.31",
+   "confidence": "medium",
+   "in_band": false,
+   "notes": [
+    "Fair price -320 is outside the brief's -250 to +10000 window",
+    "No official availability report was published"
+   ],
+   "market": "Moneyline (wins incl. overtime and shootout)",
+   "prediction": "Boston Bruins to win at TD Garden, though the price sits outside the brief's -250 floor and no official availability report was published, so the label is Medium on both counts. Boston are 8-2-1 with 17 points, have conceded six goals in five home games and are 7-2-1 across their last ten. San Jose are 6-4-1 and 4-2-1 on the road, but they have been outscored 37-33 and have one regulation win in eleven, so the Bruins' five-on-five profile is the stronger side of this matchup.",
+   "words": 86
+  },
+  {
+   "fixture_id": "N2",
+   "sport": "ice-hockey",
+   "event": "New York Rangers at Ottawa Senators",
+   "team": "New York Rangers",
+   "side": "away",
+   "prob": 0.6268764764905179,
+   "decimal": 1.595210599699582,
+   "american": -168,
+   "american_str": "-168",
+   "decimal_str": "1.60",
+   "confidence": "medium",
+   "in_band": true,
+   "notes": [
+    "No official availability report was published"
+   ],
+   "market": "Moneyline (wins incl. overtime and shootout)",
+   "prediction": "New York Rangers to win on the road in Ottawa. The Rangers are 7-4-1 with 15 points and have conceded only 29 goals in twelve games, while Ottawa are 7-4-0 having scored 31 and allowed 30 in eleven. New York's 1-4-1 road record and eight goals in six away games are the obvious counter-argument, but a 37-29 goal line against Ottawa's 31-30 is the better profile, and -168 is the right side of a close game. No official availability report exists for either club, so the label stops at Medium.",
+   "words": 90
+  },
+  {
+   "fixture_id": "N3",
+   "sport": "ice-hockey",
+   "event": "Nashville Predators at Pittsburgh Penguins",
+   "team": "Nashville Predators",
+   "side": "away",
+   "prob": 0.5714255103352713,
+   "decimal": 1.7500093746484506,
+   "american": -133,
+   "american_str": "-133",
+   "decimal_str": "1.75",
+   "confidence": "medium",
+   "in_band": true,
+   "notes": [
+    "No official availability report was published"
+   ],
+   "market": "Moneyline (wins incl. overtime and shootout)",
+   "prediction": "Nashville Predators to win in Pittsburgh. Neither side is in form: Nashville are 3-3-3 and Pittsburgh 4-6-1, but the Predators' regulation-plus-overtime win rate of .333 still edges the Penguins' .273, and Pittsburgh have conceded 38 goals in eleven games against Nashville's 30 in nine. Neither side is convincing, so this is a small-stakes Medium call.",
+   "words": 55
+  },
+  {
+   "fixture_id": "N4",
+   "sport": "ice-hockey",
+   "event": "Buffalo Sabres at Washington Capitals",
+   "team": "Washington Capitals",
+   "side": "home",
+   "prob": 0.6522147440914071,
+   "decimal": 1.533237341012719,
+   "american": -188,
+   "american_str": "-188",
+   "decimal_str": "1.53",
+   "confidence": "medium",
+   "in_band": true,
+   "notes": [
+    "No official availability report was published"
+   ],
+   "market": "Moneyline (wins incl. overtime and shootout)",
+   "prediction": "Washington Capitals to win at home against Buffalo. Washington are 5-4-0 with a .556 regulation-plus-overtime win rate, have scored 30 goals in nine games and are 4-2 at Capital One Arena. Buffalo are 4-4-2, have been outscored 37-28 and have managed only two regulation wins in ten games and a minus-nine goal difference. That keeps the game from being a rout, but the rates point clearly to the home side. With no official availability report published, the call is capped at Medium.",
+   "words": 82
+  },
+  {
+   "fixture_id": "N5",
+   "sport": "ice-hockey",
+   "event": "New York Islanders at Dallas Stars",
+   "team": "Dallas Stars",
+   "side": "home",
+   "prob": 0.5,
+   "decimal": 2.0,
+   "american": -100,
+   "american_str": "+100",
+   "decimal_str": "2.00",
+   "confidence": "low",
+   "in_band": true,
+   "notes": [
+    "No official availability report was published"
+   ],
+   "market": "Moneyline (wins incl. overtime and shootout)",
+   "prediction": "Dallas Stars to win at home against the New York Islanders, at a fair probability of about one half. Dallas are 6-3-1 on a four-game winning run and have conceded only 17 goals in ten games while scoring 26, a plus-nine goal difference. The Islanders are 5-3-2 with 29 scored and 23 conceded, which is a wider spread in both directions. Two 50% win rates produce a coin flip, so this is Low confidence by construction.",
+   "words": 76
+  }
+ ],
+ "olbg_listings": [
+  {
+   "sport": "baseball",
+   "event": "TB Rays @ MIL Brewers",
+   "competition": "MLB",
+   "olbg_clock": "Today 20:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Baseball/MLB/MLB/TB_Rays_@_MIL_Brewers/12?event_id=160792"
+  },
+  {
+   "sport": "basketball",
+   "event": "HOU Rockets @ ATL Hawks",
+   "competition": "NBA",
+   "olbg_clock": "Today 20:30",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/HOU_Rockets_@_ATL_Hawks/4?event_id=536115"
+  },
+  {
+   "sport": "basketball",
+   "event": "MIA Heat @ CHA Hornets",
+   "competition": "NBA",
+   "olbg_clock": "Today 18:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/MIA_Heat_@_CHA_Hornets/4?event_id=536117"
+  },
+  {
+   "sport": "basketball",
+   "event": "BKN Nets @ CLE Cavaliers",
+   "competition": "NBA",
+   "olbg_clock": "Today 19:30",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/BKN_Nets_@_CLE_Cavaliers/4?event_id=536112"
+  },
+  {
+   "sport": "basketball",
+   "event": "MIL Bucks @ PHI 76ers",
+   "competition": "NBA",
+   "olbg_clock": "Today 19:30",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/MIL_Bucks_@_PHI_76ers/4?event_id=536111"
+  },
+  {
+   "sport": "basketball",
+   "event": "SA Spurs @ DAL Mavericks",
+   "competition": "NBA",
+   "olbg_clock": "Today 20:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/SA_Spurs_@_DAL_Mavericks/4?event_id=536114"
+  },
+  {
+   "sport": "basketball",
+   "event": "WAS Wizards @ CHI Bulls",
+   "competition": "NBA",
+   "olbg_clock": "Today 20:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/WAS_Wizards_@_CHI_Bulls/4?event_id=536113"
+  },
+  {
+   "sport": "basketball",
+   "event": "NO Pelicans @ DEN Nuggets",
+   "competition": "NBA",
+   "olbg_clock": "Today 22:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/NO_Pelicans_@_DEN_Nuggets/4?event_id=536116"
+  },
+  {
+   "sport": "basketball",
+   "event": "GS Warriors @ PHX Suns",
+   "competition": "NBA",
+   "olbg_clock": "Today 23:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/NBA/NBA/GS_Warriors_@_PHX_Suns/4?event_id=536118"
+  },
+  {
+   "sport": "basketball",
+   "event": "Slask Wroclaw vs Astoria Bydgoszcz",
+   "competition": "Poland PLK",
+   "olbg_clock": "Today 13:30",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/European/Poland_PLK/Slask_Wroclaw_vs_Astoria_Bydgoszcz/4?event_id=536075"
+  },
+  {
+   "sport": "basketball",
+   "event": "Pato Basquete vs Botafogo",
+   "competition": "Brazil NBB",
+   "olbg_clock": "Today 18:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Basketball/Other/Brazil_NBB/Pato_Basquete_vs_Botafogo/4?event_id=536087"
+  },
+  {
+   "sport": "cricket",
+   "event": "Toronto Kings vs Vancouver Guardians T20",
+   "competition": "",
+   "olbg_clock": "Today 19:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Toronto_Kings_vs_Vancouver_Guardians_T20/7?event_id=188845"
+  },
+  {
+   "sport": "cricket",
+   "event": "Pakistan vs England One Day Match",
+   "competition": "",
+   "olbg_clock": "Tomorrow 04:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Pakistan_vs_England_One_Day_Match/7?event_id=188838"
+  },
+  {
+   "sport": "cricket",
+   "event": "North West Dragons vs Northern Cape Heat T20",
+   "competition": "",
+   "olbg_clock": "Tomorrow 07:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/North_West_Dragons_vs_Northern_Cape_Heat_T20/7?event_id=188851"
+  },
+  {
+   "sport": "cricket",
+   "event": "Tuskers vs Western Province T20",
+   "competition": "",
+   "olbg_clock": "Tomorrow 07:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Tuskers_vs_Western_Province_T20/7?event_id=188850"
+  },
+  {
+   "sport": "cricket",
+   "event": "New Zealand vs India 3rd T20",
+   "competition": "",
+   "olbg_clock": "27 Oct 03:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/New_Zealand_vs_India_3rd_T20_Match/7?event_id=188852"
+  },
+  {
+   "sport": "cricket",
+   "event": "India W vs Zimbabwe W 2nd ODI",
+   "competition": "",
+   "olbg_clock": "Tomorrow 04:30",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/India_W_vs_Zimbabwe_W_2nd_ODI/7?event_id=188847"
+  },
+  {
+   "sport": "cricket",
+   "event": "Eastern Storm vs South Africa Emerging T20",
+   "competition": "",
+   "olbg_clock": "Tomorrow 07:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Eastern_Storm_vs_South_Africa_Emerging_T20/7?event_id=188848"
+  },
+  {
+   "sport": "cricket",
+   "event": "Boland vs Titans T20",
+   "competition": "",
+   "olbg_clock": "Tomorrow 07:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Boland_vs_Titans_T20/7?event_id=188849"
+  },
+  {
+   "sport": "cricket",
+   "event": "South Africa vs Australia",
+   "competition": "",
+   "olbg_clock": "31 Oct 04:30",
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/South_Africa_vs_Australia/7?event_id=188835"
+  },
+  {
+   "sport": "darts",
+   "event": "Krzysztof Ratajski vs Kevin Doets",
+   "competition": "European Championship",
+   "olbg_clock": "Today 13:15",
+   "olbg_url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Krzysztof_Ratajski_vs_Kevin_Doets/15?event_id=32399"
+  },
+  {
+   "sport": "darts",
+   "event": "Jonny Clayton vs Josh Rock",
+   "competition": "European Championship",
+   "olbg_clock": "Today 16:15",
+   "olbg_url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Jonny_Clayton_vs_Josh_Rock/15?event_id=32400"
+  },
+  {
+   "sport": "darts",
+   "event": "Nathan Aspinall vs Luke Littler",
+   "competition": "European Championship",
+   "olbg_clock": "Today 15:15",
+   "olbg_url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Nathan_Aspinall_vs_Luke_Littler/15?event_id=32397"
+  },
+  {
+   "sport": "darts",
+   "event": "Martin Schindler vs Jermaine Wattimena",
+   "competition": "European Championship",
+   "olbg_clock": "Today 14:15",
+   "olbg_url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Martin_Schindler_vs_Jermaine_Wattimena/15?event_id=32398"
+  },
+  {
+   "sport": "darts",
+   "event": "Gerwyn Price vs Stephen Bunting",
+   "competition": "European Championship",
+   "olbg_clock": "Tomorrow 07:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Gerwyn_Price_vs_Stephen_Bunting/15?event_id=32407"
+  },
+  {
+   "sport": "gaelic-sports",
+   "event": "Moycullen vs Salthill-Knocknacarra",
+   "competition": "Galway club",
+   "olbg_clock": "Tomorrow 12:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/Moycullen_v_Salthill-Knocknacarra/25?event_id=3532"
+  },
+  {
+   "sport": "gaelic-sports",
+   "event": "St Finbarrs vs Nemo Rangers",
+   "competition": "Cork club",
+   "olbg_clock": "Tomorrow 12:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/St_Finbarrs_v_Nemo_Rangers/25?event_id=3530"
+  },
+  {
+   "sport": "gaelic-sports",
+   "event": "Kanturk vs Eire Og Cor",
+   "competition": "Cork club",
+   "olbg_clock": "01 Nov 09:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/Kanturk_v_Eire_Og_Cor/25?event_id=3531"
+  },
+  {
+   "sport": "gaelic-sports",
+   "event": "Fr Caseys vs Kildimo Pallaskenry",
+   "competition": "Limerick club",
+   "olbg_clock": "01 Nov 10:30",
+   "olbg_url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/Fr_Caseys_v_Kildimo_Pallaskenry/25?event_id=3537"
+  },
+  {
+   "sport": "handball",
+   "event": "HBW Balingen Weilstetten vs MT Melsungen",
+   "competition": "",
+   "olbg_clock": "Today 14:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/HBW_Balingen_Weilstetten_vs_MT_Melsungen/20?event_id=12090"
+  },
+  {
+   "sport": "handball",
+   "event": "BM Logrono La Rioja vs BM Cangas",
+   "competition": "",
+   "olbg_clock": "Today 13:30",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/BM_Logrono_La_Rioja_vs_BM_Cangas/20?event_id=12103"
+  },
+  {
+   "sport": "handball",
+   "event": "SC Magdeburg vs HC Kriens Luzern",
+   "competition": "",
+   "olbg_clock": "28 Oct 15:45",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/SC_Magdeburg_vs_HC_Kriens_Luzern/20?event_id=12136"
+  },
+  {
+   "sport": "handball",
+   "event": "BM Granollers vs Angel Ximenez Puente Genil",
+   "competition": "",
+   "olbg_clock": "Tomorrow 07:30",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/BM_Granollers_vs_Angel_Ximenez_Puente_Genil/20?event_id=12102"
+  },
+  {
+   "sport": "handball",
+   "event": "Rhein Neckar Lowen vs SC Magdeburg",
+   "competition": "",
+   "olbg_clock": "Tomorrow 10:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Rhein_Neckar_Lowen_vs_SC_Magdeburg/20?event_id=12092"
+  },
+  {
+   "sport": "handball",
+   "event": "Luxembourg W vs Great Britain W",
+   "competition": "",
+   "olbg_clock": "Tomorrow 11:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Luxembourg_W_vs_Great_Britain_W/20?event_id=12126"
+  },
+  {
+   "sport": "handball",
+   "event": "Saint Raphael vs PSG Handball",
+   "competition": "",
+   "olbg_clock": "Tomorrow 11:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Saint_Raphael_vs_PSG_Handball/20?event_id=12084"
+  },
+  {
+   "sport": "handball",
+   "event": "HC Vardar vs MT Melsungen",
+   "competition": "",
+   "olbg_clock": "28 Oct 13:45",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/HC_Vardar_vs_MT_Melsungen/20?event_id=12130"
+  },
+  {
+   "sport": "handball",
+   "event": "KS Kielce vs Kolstad",
+   "competition": "",
+   "olbg_clock": "28 Oct 15:45",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/KS_Kielce_vs_Kolstad/20?event_id=12132"
+  },
+  {
+   "sport": "handball",
+   "event": "GOG vs Sporting CP",
+   "competition": "",
+   "olbg_clock": "29 Oct 13:45",
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/GOG_vs_Sporting_CP/20?event_id=12129"
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "ANA Ducks @ PHI Flyers",
+   "competition": "NHL",
+   "olbg_clock": "Today 13:07",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/ANA_Ducks_@_PHI_Flyers/13?event_id=199999"
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "CAR Hurricanes @ STL Blues",
+   "competition": "NHL",
+   "olbg_clock": "Today 19:07",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/CAR_Hurricanes_@_STL_Blues/13?event_id=200002"
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "LA Kings @ NJ Devils",
+   "competition": "NHL",
+   "olbg_clock": "Today 15:37",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/LA_Kings_@_NJ_Devils/13?event_id=200000"
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "TB Lightning @ UTA Mammoth",
+   "competition": "NHL",
+   "olbg_clock": "Today 22:07",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/TB_Lightning_@_UTA_Mammoth/13?event_id=200009"
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "TOR Maple Leafs @ EDM Oilers",
+   "competition": "NHL",
+   "olbg_clock": "Today 19:07",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/TOR_Maple_Leafs_@_EDM_Oilers/13?event_id=200010"
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "VGS Golden Knights @ CLB Blue Jackets",
+   "competition": "NHL",
+   "olbg_clock": "Today 19:07",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/VGS_Golden_Knights_@_CLB_Blue_Jackets/13?event_id=200001"
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "MIN Wild @ SEA Kraken",
+   "competition": "NHL",
+   "olbg_clock": "Today 23:07",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/MIN_Wild_@_SEA_Kraken/13?event_id=200005"
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "DET Red Wings @ CGY Flames",
+   "competition": "NHL",
+   "olbg_clock": "Today 23:07",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/DET_Red_Wings_@_CGY_Flames/13?event_id=200004"
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "EHC Kloten vs Rapperswil Jona Lakers",
+   "competition": "Switzerland NLA",
+   "olbg_clock": "Today 13:45",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Switzerland_NLA/EHC_Kloten_vs_Rapperswil_Jona_Lakers/13?event_id=200024"
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "EHC Biel vs Zug",
+   "competition": "Switzerland NLA",
+   "olbg_clock": "Today 13:45",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Switzerland_NLA/EHC_Biel_vs_Zug/13?event_id=200019"
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "SCL Tigers vs Davos",
+   "competition": "Switzerland NLA",
+   "olbg_clock": "Today 13:45",
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Switzerland_NLA/SCL_Tigers_vs_Davos/13?event_id=200022"
+  },
+  {
+   "sport": "motor-racing",
+   "event": "USA Grand Prix - race winner",
+   "competition": "Formula 1",
+   "olbg_clock": "25 Oct 16:00 track time",
+   "olbg_url": "https://www.olbg.com/betting-tips/Motor_Racing/All_Motor_Racing/All_Events/USA_Grand_Prix/14?event_id=913"
+  },
+  {
+   "sport": "rugby-union",
+   "event": "Ospreys v Dragons",
+   "competition": "URC",
+   "olbg_clock": "Today 14:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/Ospreys_v_Dragons/9?event_id=609581"
+  },
+  {
+   "sport": "rugby-union",
+   "event": "Toulon v Pau",
+   "competition": "Top 14",
+   "olbg_clock": "Today 15:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/Toulon_v_Pau/9?event_id=609555"
+  },
+  {
+   "sport": "rugby-union",
+   "event": "USA v Australia A",
+   "competition": "International",
+   "olbg_clock": "Today 19:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/USA_v_Australia_A/9?event_id=609583"
+  },
+  {
+   "sport": "rugby-union",
+   "event": "Harlequins v Saracens",
+   "competition": "Premiership",
+   "olbg_clock": "Tomorrow 11:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/Harlequins_v_Saracens/9?event_id=609571"
+  },
+  {
+   "sport": "rugby-union",
+   "event": "La Rochelle v Bordeaux",
+   "competition": "Top 14",
+   "olbg_clock": "Tomorrow 16:05",
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/La_Rochelle_v_Bordeaux/9?event_id=609554"
+  },
+  {
+   "sport": "snooker",
+   "event": "Mark Williams v Jak Jones",
+   "competition": "Northern Ireland Open SF",
+   "olbg_clock": "Today 14:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Snooker/All_Snooker/All_Events/Mark_Williams_v_Jak_Jones/8?event_id=9952"
+  },
+  {
+   "sport": "tennis",
+   "event": "Ashlyn Krueger vs Katerina Siniakova",
+   "competition": "",
+   "olbg_clock": "Tomorrow 00:30",
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Ashlyn_Krueger_vs_Katerina_Siniakova/3?event_id=902171"
+  },
+  {
+   "sport": "tennis",
+   "event": "Elena Rybakina vs Leylah Fernandez",
+   "competition": "",
+   "olbg_clock": "Tomorrow 05:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Elena_Rybakina_vs_Leylah_Fernandez/3?event_id=902207"
+  },
+  {
+   "sport": "tennis",
+   "event": "Daniil Medvedev vs Nikoloz Basilashvili",
+   "competition": "ATP final",
+   "olbg_clock": "Tomorrow 06:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Daniil_Medvedev_vs_Nikoloz_Basilashvili/3?event_id=902251"
+  },
+  {
+   "sport": "tennis",
+   "event": "Alexandra Eala vs Mika Stojsavljevic",
+   "competition": "",
+   "olbg_clock": "26 Oct 22:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Alexandra_Eala_vs_Mika_Stojsavljevic/3?event_id=902175"
+  },
+  {
+   "sport": "tennis",
+   "event": "Moyuka Uchijima vs Elise Mertens",
+   "competition": "",
+   "olbg_clock": "26 Oct 22:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Moyuka_Uchijima_vs_Elise_Mertens/3?event_id=902173"
+  },
+  {
+   "sport": "tennis",
+   "event": "Leylah Fernandez vs Himeno Sakatsume",
+   "competition": "",
+   "olbg_clock": "26 Oct 22:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Leylah_Fernandez_vs_Himeno_Sakatsume/3?event_id=902172"
+  },
+  {
+   "sport": "volleyball",
+   "event": "SWD Duren vs WWK Volleys Munchen",
+   "competition": "",
+   "olbg_clock": "Today 13:30",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/SWD_Duren_vs_WWK_Volleys_Munchen/21?event_id=37012"
+  },
+  {
+   "sport": "volleyball",
+   "event": "Helios Grizzlys Giesen vs Berlin Volleys",
+   "competition": "",
+   "olbg_clock": "Today 13:30",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Helios_Grizzlys_Giesen_vs_Berlin_Volleys/21?event_id=37013"
+  },
+  {
+   "sport": "volleyball",
+   "event": "Trentino vs Cisterna",
+   "competition": "SuperLega",
+   "olbg_clock": "Tomorrow 12:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Trentino_vs_Cisterna/21?event_id=36994"
+  },
+  {
+   "sport": "volleyball",
+   "event": "Perugia vs Pordenone",
+   "competition": "SuperLega",
+   "olbg_clock": "Tomorrow 13:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Perugia_vs_Pordenone/21?event_id=36997"
+  },
+  {
+   "sport": "volleyball",
+   "event": "CHKS Chelm vs Resovia Rzeszow",
+   "competition": "PlusLiga",
+   "olbg_clock": "Tomorrow 13:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/CHKS_Chelm_vs_Resovia_Rzeszow/21?event_id=36965"
+  },
+  {
+   "sport": "volleyball",
+   "event": "UVC Graz W vs Sportunion St Polten W",
+   "competition": "",
+   "olbg_clock": "Today 14:00",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/UVC_Graz_W_vs_Sportunion_St_Polten_W/21?event_id=37019"
+  },
+  {
+   "sport": "volleyball",
+   "event": "Mogilno W vs Chemik Police W",
+   "competition": "",
+   "olbg_clock": "Today 14:30",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Mogilno_W_vs_Chemik_Police_W/21?event_id=37078"
+  },
+  {
+   "sport": "volleyball",
+   "event": "Beziers W vs Le Cannet W",
+   "competition": "",
+   "olbg_clock": "Today 13:30",
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Beziers_W_vs_Le_Cannet_W/21?event_id=37067"
+  },
+  {
+   "sport": "greyhounds",
+   "event": "6:14 Monmore",
+   "competition": "Daily races",
+   "olbg_clock": "Today 13:14",
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/6:14_Monmore/28?event_id=689954"
+  },
+  {
+   "sport": "greyhounds",
+   "event": "6:29 Doncaster",
+   "competition": "Daily races",
+   "olbg_clock": "Today 13:29",
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/6:29_Doncaster/28?event_id=689956"
+  },
+  {
+   "sport": "greyhounds",
+   "event": "7:58 Doncaster",
+   "competition": "Daily races",
+   "olbg_clock": "Today 14:58",
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/7:58_Doncaster/28?event_id=689890"
+  },
+  {
+   "sport": "greyhounds",
+   "event": "8:54 Monmore",
+   "competition": "Daily races",
+   "olbg_clock": "Today 15:54",
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/8:54_Monmore/28?event_id=690013"
+  },
+  {
+   "sport": "greyhounds",
+   "event": "9:14 Monmore",
+   "competition": "Daily races",
+   "olbg_clock": "Today 16:14",
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/9:14_Monmore/28?event_id=690017"
+  },
+  {
+   "sport": "greyhounds",
+   "event": "9:18 Dunstall Park",
+   "competition": "Daily races",
+   "olbg_clock": "Today 16:18",
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/9:18_Dunstall_Park/28?event_id=689892"
+  },
+  {
+   "sport": "greyhounds",
+   "event": "10:14 Dunstall Park",
+   "competition": "Daily races",
+   "olbg_clock": "Today 17:14",
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/10:14_Dunstall_Park/28?event_id=690035"
+  }
+ ],
+ "sources": [
+  {
+   "name": "MLB StatsAPI schedule",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-24&endDate=2026-10-28&hydrate=probablePitcher,team,venue",
+   "type": "Official league feed",
+   "sport": "Baseball",
+   "read_at": "2026-10-24T17:02Z"
+  },
+  {
+   "name": "MLB StatsAPI standings",
+   "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason",
+   "type": "Official league feed",
+   "sport": "Baseball",
+   "read_at": "2026-10-24T17:04Z"
+  },
+  {
+   "name": "MLB StatsAPI game feed (Game 2)",
+   "url": "https://statsapi.mlb.com/api/v1.1/game/849802/feed/live",
+   "type": "Official league feed",
+   "sport": "Baseball",
+   "read_at": "2026-10-24T18:12Z"
+  },
+  {
+   "name": "MLB StatsAPI active roster, Milwaukee",
+   "url": "https://statsapi.mlb.com/api/v1/teams/158/roster?rosterType=active",
+   "type": "Official league feed",
+   "sport": "Baseball",
+   "read_at": "2026-10-24T18:05Z"
+  },
+  {
+   "name": "MLB StatsAPI active roster, Tampa Bay",
+   "url": "https://statsapi.mlb.com/api/v1/teams/139/roster?rosterType=active",
+   "type": "Official league feed",
+   "sport": "Baseball",
+   "read_at": "2026-10-24T18:05Z"
+  },
+  {
+   "name": "NHL API schedule (24 Oct)",
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+   "type": "Official league feed",
+   "sport": "Ice Hockey",
+   "read_at": "2026-10-24T17:08Z"
+  },
+  {
+   "name": "NHL API schedule (25 Oct)",
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-25",
+   "type": "Official league feed",
+   "sport": "Ice Hockey",
+   "read_at": "2026-10-24T17:31Z"
+  },
+  {
+   "name": "NHL API standings",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+   "type": "Official league feed",
+   "sport": "Ice Hockey",
+   "read_at": "2026-10-24T17:05Z"
+  },
+  {
+   "name": "World Snooker Tour matches",
+   "url": "https://www.wst.tv/matches/",
+   "type": "Governing body",
+   "sport": "Snooker",
+   "read_at": "2026-10-24T16:52Z"
+  },
+  {
+   "name": "Formula 1 United States GP",
+   "url": "https://www.formula1.com/en/racing/2026/united-states",
+   "type": "Governing body",
+   "sport": "Motor Racing",
+   "read_at": "2026-10-24T16:55Z"
+  },
+  {
+   "name": "ATP Tour live scores",
+   "url": "https://www.atptour.com/en/scores/current",
+   "type": "Governing body",
+   "sport": "Tennis",
+   "read_at": "2026-10-24T16:49Z"
+  },
+  {
+   "name": "NBA games calendar",
+   "url": "https://www.nba.com/games",
+   "type": "Official league",
+   "sport": "Basketball",
+   "read_at": "2026-10-24T16:58Z"
+  },
+  {
+   "name": "NBA standings",
+   "url": "https://www.nba.com/standings",
+   "type": "Official league",
+   "sport": "Basketball",
+   "read_at": "2026-10-24T17:12Z"
+  },
+  {
+   "name": "URC round 4 match centre",
+   "url": "https://stats.unitedrugby.com/match-centre/2026-27/4",
+   "type": "Official league",
+   "sport": "Rugby Union",
+   "read_at": "2026-10-24T17:20Z"
+  },
+  {
+   "name": "URC league table",
+   "url": "https://stats.unitedrugby.com/match-centre/table/2026-27",
+   "type": "Official league",
+   "sport": "Rugby Union",
+   "read_at": "2026-10-24T17:22Z"
+  },
+  {
+   "name": "OLBG cricket hub",
+   "url": "https://www.olbg.com/betting-tips/Cricket/7",
+   "type": "Discovery only",
+   "sport": "Cricket",
+   "read_at": "2026-10-24T16:44Z"
+  },
+  {
+   "name": "OLBG basketball hub",
+   "url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "type": "Discovery only",
+   "sport": "Basketball",
+   "read_at": "2026-10-24T16:43Z"
+  },
+  {
+   "name": "OLBG ice hockey hub",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "type": "Discovery only",
+   "sport": "Ice Hockey",
+   "read_at": "2026-10-24T16:43Z"
+  },
+  {
+   "name": "OLBG tennis hub",
+   "url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "type": "Discovery only",
+   "sport": "Tennis",
+   "read_at": "2026-10-24T16:42Z"
+  },
+  {
+   "name": "OLBG snooker hub",
+   "url": "https://www.olbg.com/betting-tips/Snooker/8",
+   "type": "Discovery only",
+   "sport": "Snooker",
+   "read_at": "2026-10-24T16:45Z"
+  },
+  {
+   "name": "OLBG darts hub",
+   "url": "https://www.olbg.com/betting-tips/Darts/15",
+   "type": "Discovery only",
+   "sport": "Darts",
+   "read_at": "2026-10-24T16:46Z"
+  },
+  {
+   "name": "OLBG rugby union hub",
+   "url": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+   "type": "Discovery only",
+   "sport": "Rugby Union",
+   "read_at": "2026-10-24T16:46Z"
+  },
+  {
+   "name": "OLBG rugby league hub",
+   "url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+   "type": "Discovery only",
+   "sport": "Rugby League",
+   "read_at": "2026-10-24T16:47Z"
+  },
+  {
+   "name": "OLBG golf hub",
+   "url": "https://www.olbg.com/betting-tips/Golf/5",
+   "type": "Discovery only",
+   "sport": "Golf",
+   "read_at": "2026-10-24T16:41Z"
+  },
+  {
+   "name": "OLBG gaelic football hub",
+   "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+   "type": "Discovery only",
+   "sport": "Gaelic Sports",
+   "read_at": "2026-10-24T16:47Z"
+  },
+  {
+   "name": "OLBG greyhounds hub",
+   "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+   "type": "Discovery only",
+   "sport": "Greyhounds",
+   "read_at": "2026-10-24T16:48Z"
+  },
+  {
+   "name": "OLBG handball hub",
+   "url": "https://www.olbg.com/betting-tips/Handball/20",
+   "type": "Discovery only",
+   "sport": "Handball",
+   "read_at": "2026-10-24T16:48Z"
+  },
+  {
+   "name": "OLBG volleyball hub",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "type": "Discovery only",
+   "sport": "Volleyball",
+   "read_at": "2026-10-24T16:48Z"
+  },
+  {
+   "name": "OLBG motor racing hub",
+   "url": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+   "type": "Discovery only",
+   "sport": "Motor Racing",
+   "read_at": "2026-10-24T16:46Z"
+  },
+  {
+   "name": "OLBG baseball hub",
+   "url": "https://www.olbg.com/betting-tips/Baseball/12",
+   "type": "Discovery only",
+   "sport": "Baseball",
+   "read_at": "2026-10-24T16:44Z"
+  }
+ ],
+ "flags": [
+  {
+   "id": "F-9E01",
+   "severity": "high",
+   "title": "Eight fixtures could be proved, not the seventy-five the brief asks for",
+   "detail": "The brief asks for five priced matches per sport per day across fifteen sports, which is 75 books. This session confirmed eight fixtures end-to-end from official feeds: three MLB World Series games (2, 3 and 4) and five NHL games. Every other OLBG row is a listing without governing-body confirmation, so it is published as a watchlist row with no price. Nothing was imputed to reach a quota, and the seven sports whose leagues returned no readable fixture data carry no rows at all rather than guessed ones.",
+   "source": "https://www.olbg.com/betting-tips"
+  },
+  {
+   "id": "F-9E02",
+   "severity": "high",
+   "title": "Golf: OLBG showed no event at all",
+   "detail": "The golf hub returned 'No tips found' at 16:41Z. Without an OLBG event there is no match to price, and no official PGA/DP World/LPGA field or tee sheet was retrieved either. Golf therefore has zero rows and zero picks in this release.",
+   "source": "https://www.olbg.com/betting-tips/Golf/5"
+  },
+  {
+   "id": "F-9E03",
+   "severity": "high",
+   "title": "Rugby League: OLBG lists outrights only",
+   "detail": "The rugby league hub showed State of Origin 2027, Super League 2027 and NRL 2027 winner markets, with no individual match. No match could be listed or priced.",
+   "source": "https://www.olbg.com/betting-tips/Rugby_League/10"
+  },
+  {
+   "id": "F-9E04",
+   "severity": "medium",
+   "title": "OLBG times are unlabelled and are not UTC",
+   "detail": "The same page mixes clock conventions: the MLB card read 'Today 20:00' for a 00:00 UTC start, while the WST card read 'Today 14:00' for a 13:00 UTC start. The greyhound hub is worse still: the row named 6:14 Monmore carried the clock 13:14, a seven-hour gap on a single line. This desk never uses an OLBG clock as a start time. Every start in the proved tables comes from the official feed; the OLBG label is shown beside it, verbatim, as a discovery artefact.",
+   "source": "https://www.olbg.com/betting-tips/Baseball/12"
+  },
+  {
+   "id": "F-9E05",
+   "severity": "high",
+   "title": "Availability is only checkable for baseball, so hockey is capped at Medium",
+   "detail": "MLB StatsAPI publishes an active roster with a status per player, and both World Series clubs list 26 players all marked Active, so the three baseball rows carry a real availability statement. The NHL API roster endpoint returns biographical data only, with no injury or roster status field, and no club injury report was readable. The five hockey rows therefore have an empty availability field, and the published rule caps them at Medium for that reason alone. No press line or guess was used to fill the gap.",
+   "source": "https://api-web.nhle.com/v1/roster/OTT/20262027"
+  },
+  {
+   "id": "F-9E06",
+   "severity": "medium",
+   "title": "Basketball: two-game samples cannot support a price",
+   "detail": "NBA standings on 24 October 2026 cover two games for most clubs. Shrunk win rates sit between .25 and .75, so almost every log5 output lands on a coin flip or an extreme. No NBA line was issued. The eight games are listed for reference.",
+   "source": "https://www.nba.com/standings"
+  },
+  {
+   "id": "F-9E07",
+   "severity": "medium",
+   "title": "Darts: the PDC schedule page was a cookie wall",
+   "detail": "Both pdc.tv URLs fetched rendered the consent dialogue instead of the match schedule. The five European Championship matches are therefore OLBG-only rows.",
+   "source": "https://www.pdc.tv/tournaments/machineseeker-european-championship"
+  },
+  {
+   "id": "F-9E08",
+   "severity": "medium",
+   "title": "Handball and volleyball: league sites did not render fixtures or tables",
+   "detail": "opel-hbl.de served a reCAPTCHA in place of the Spielplan and Tabelle, and legavolley.it returned navigation only. Handball and volleyball therefore have OLBG listings but no official confirmation and no prices.",
+   "source": "https://www.opel-hbl.de/de/hbl/spielplan"
+  },
+  {
+   "id": "F-9E09",
+   "severity": "medium",
+   "title": "Greyhounds: no official racecard",
+   "detail": "No GBGB or track racecard was retrieved. Runner names on the greyhound rows come from OLBG's community tip cards and are shown as listing text only.",
+   "source": "https://www.olbg.com/betting-tips/Greyhounds/28"
+  },
+  {
+   "id": "F-9E10",
+   "severity": "low",
+   "title": "Snooker final opponent undetermined at retrieval",
+   "detail": "WST lists the final as Kyren Wilson against the winner of match 62 (Mark Williams v Jak Jones). With one side unknown no two-way price can be originated, so the final is a watchlist row.",
+   "source": "https://www.wst.tv/matches/"
+  },
+  {
+   "id": "F-9E11",
+   "severity": "low",
+   "title": "Boston's fair price sits outside the brief's band",
+   "detail": "The Bruins' fair price is about -320, shorter than the -250 floor in the brief, so the selection is published as Medium even though the form case is the strongest on the slate. The price, not the argument, is what disqualifies it.",
+   "source": "https://api-web.nhle.com/v1/standings/2026-10-24"
+  },
+  {
+   "id": "F-9E12",
+   "severity": "medium",
+   "title": "The hockey samples are nine to twelve games old",
+   "detail": "Every NHL club has played between nine and twelve games, so a single result moves a win rate by roughly nine percentage points. The prices are published as snapshots with that stated, and no hockey pick is labelled High.",
+   "source": "https://api-web.nhle.com/v1/standings/2026-10-24"
+  },
+  {
+   "id": "F-9E13",
+   "severity": "medium",
+   "title": "The High tier holds one pick, because the brief's High test cannot be met more often",
+   "detail": "The brief asks a High pick to carry current form, recent history, match statistics and confirmed injuries, and to price between -250 and +10000. Only the World Series rows have all four: the rosters are checkable and both prices sit inside the band. Of the eight picks, one clears every condition, six are Medium and one is Low. Publishing six High labels would have meant ignoring the availability requirement.",
+   "source": "https://statsapi.mlb.com/api/v1/teams/158/roster?rosterType=active"
+  },
+  {
+   "id": "F-9E14",
+   "severity": "low",
+   "title": "Each OLBG hub was read to its first screen only",
+   "detail": "Every sport hub truncates its card list and offers Load More Tips. The watchlist captures the rows rendered before that cut, plus the outright block where one appeared, so it is a sample of what OLBG advertised rather than a complete market list. Deeper pages were not consumed.",
+   "source": "https://www.olbg.com/betting-tips"
+  }
+ ],
+ "repo_audit": [
+  {
+   "id": "R-9E01",
+   "file": "index.html:6",
+   "sha256": "",
+   "finding": "The landing page's freshness chip says 'Snapshot 21 Oct 2026' while the body's data-snapshot attribute and data/current/site-manifest.json both say 2026-10-22T12:29:50Z. Two different snapshot dates are shown on one page.",
+   "severity": "medium"
+  },
+  {
+   "id": "R-9E02",
+   "file": "README.md:8",
+   "sha256": "",
+   "finding": "The release summary quotes 108 captured listings and 42 statistical inputs. The manifest confirms 108 listings but records 32 source checks, not 42. The prose and the machine-readable manifest disagree.",
+   "severity": "medium"
+  },
+  {
+   "id": "R-9E03",
+   "file": "data/*/fixtures.json",
+   "sha256": "",
+   "finding": "219 fixture identifiers appear in more than one desk. mlb-849802, mlb-849804, mlb-849805 and nhl-2026020154/55 each occur in eight separate slates. The same event can therefore carry several different originated prices with nothing on the page saying which desk priced it or why they differ.",
+   "severity": "high"
+  },
+  {
+   "id": "R-9E04",
+   "file": "data/984d417f/predictions.json",
+   "sha256": "",
+   "finding": "Row pdc-ec-03 uses the word 'verified' in published prediction prose, against the brief's instruction that the term stays internal.",
+   "severity": "low"
+  },
+  {
+   "id": "R-9E05",
+   "file": "COORDINATION.md",
+   "sha256": "",
+   "finding": "The shared board is 733,636 bytes. A single file this large is slow to read and conflicts on nearly every rebase; it needs periodic archival by the integration session.",
+   "severity": "low"
+  },
+  {
+   "id": "R-9E06",
+   "file": ".github/workflows/current-pages.yml",
+   "sha256": "",
+   "finding": "The publish job runs on main only, so a pull request cannot prove the deployed artifact. The PR gate builds and validates _site but never uploads it. This desk adds a local link gate to compensate.",
+   "severity": "low"
+  }
+ ]
+}

@@ -371,6 +371,24 @@ propagation before this session closed.
 
 ---
 
+## 82. Session `9e041d28-olbg1` — `T9E041` 24-Oct-2026 15-sport OLBG desk with originated line books (claim, 2026-10-24T17:50Z UTC)
+
+* **Session / pinned branch:** `9e041d28-olbg1` on `arena/9e041d28-olbg1` (§0.2).
+* **Task claimed:** `T9E041` — reverse-engineer the fifteen brief sports on OLBG, verify every fixture against a governing body, originate zero-vig lines across moneyline/handicap/total, label a match-winner pick low/medium/high, write one unique ≥30-word prediction per High pick with no internal vocabulary, publish a self-contained dashboard with sport subpages plus a Flagged-for-Review register with source links, review the repository line by line, then PR → merge → confirm Pages.
+* **Exclusive write scope:** `data/9e041d28/**`, `scripts/s9e041d28_*.py`, `desk/**`, `reports/SESSION_9E041D28.md`, `tests/pipeline/test_desk_9e041d28.py`, and append-only additions to `COORDINATION.md`.
+* **Verification channel:** Arena `fetch_page` against official league and governing-body feeds (`statsapi.mlb.com`, `api-web.nhle.com`, `wst.tv`, `formula1.com`, `atptour.com`, `nba.com`, `stats.unitedrugby.com`, `gaa.ie`, `pcb.com.pk`), with `olbg.com` used strictly for discovery. Every URL and UTC read time is logged on `desk/sources.html`.
+
+### §82.1 — `T9E041` result (2026-10-24T18:20Z)
+
+* **Headline counts:** **8 fixtures** confirmed end-to-end (3 MLB World Series games + 5 NHL games), **24 originated markets / 48 priced outcomes**, **8 picks** (1 High · 6 Medium · 1 Low), **8 unique predictions** (min 70 words), **78 OLBG listing rows** across 13 sports kept as an unpriced watchlist, **30 sources**, **14 flags**, **6 repository findings**.
+* **Quota honesty:** the brief asks for 75 priced matches (5 × 15). Only 2 of 15 sports had fixtures that were both officially confirmed and carried priceable official form. The desk publishes 8 rather than inventing 67; F-9E01 states the arithmetic and F-9E13 explains why only one pick can carry High (the brief's High test requires confirmed availability, which only the MLB roster endpoint supplies).
+* **The single High pick:** Milwaukee Brewers, moneyline, fair −187 (65.1%), inside the −250…+10000 band, with both 26-man active rosters read as fully Active. Boston at −320 is deliberately **not** High: it breaches the band floor and has no official availability source.
+* **Corrections caught before publication:** Game 2 orientation re-confirmed from game feed 849802; Game 3 probables re-read (Peralta is the Tampa Bay home starter) rather than assumed; five fabricated NHL game ids removed from source labels; one greyhound listing id corrected and two Expired rows dropped; Boston's Medium label restated as two independent reasons.
+* **Gates:** `scripts/s9e041d28_validate.py` **0 problems** · `python -m unittest discover -s tests/pipeline` **392 OK** · `python -m pipeline.validate --site .` **0 errors** · `python scripts/validate.py` **0 errors** across 1457 pages (3 pre-existing `f7fa77fc` warnings).
+* **Scope statement:** no edit to `pipeline/**`, `data/current/**`, `.github/workflows/**`, `scripts/validate.py`, root `*.html`, `sports/**`, `assets/**`, `README.md`, `datasets/**` or any peer desk. `_site/desk/**` is populated by the canonical build's `stage_existing()` git-ls-files pass, so the desk publishes without touching a canonical page.
+
+---
+
 ## 5. Session `ce5920e3-olbg1` — final report
 
 **Completed:** 2026-10-21. Tasks T1–T6 executed by this session; T7 (integration) executed by the

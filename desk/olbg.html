@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OLBG structure · OLBG research desk</title>
+<meta name="description" content="Source-linked match research with originated lines and explicit coverage gaps. Not affiliated with OLBG.">
+<link rel="stylesheet" href="assets/desk.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">OLBG</span><span class="brand-sub">research desk</span></a>
+  <nav class="nav" aria-label="Primary"><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="picks.html">Today's picks</a><a class="nav-link" href="matches.html">Matches</a><a class="nav-link" href="markets.html">Prices</a><a class="nav-link" href="predictions.html">Predictions</a><a class="nav-link" href="sports.html">Sports</a><a class="nav-link" href="flagged.html">Flagged for review</a><a class="nav-link" href="repo-review.html">Repo review</a><a class="nav-link" href="sources.html">Sources</a><a class="nav-link" href="methodology.html">Method</a><a class="nav-link active" href="olbg.html" aria-current="page">OLBG structure</a></nav>
+  <div class="stamp"><span class="live-dot"></span>Snapshot 2026-10-24T18:20:00Z</div>
+</header>
+<main id="main">
+
+<div class="hero small"><p class="eyebrow">OLBG structure</p><h1>What the site exposes, and where it misleads</h1>
+<p class="lede">Reverse-engineered from the fifteen public sport hubs on 24 October 2026. OLBG is used for discovery only. It is never treated as an official fixture or statistics source.</p></div>
+<section class="panel">
+  <h2>Routes</h2>
+  <p>Every sport follows <span class="mono">/betting-tips/{Sport_Slug}/{sport_id}</span>. Slugs are case-sensitive; a wrong case returns a soft error with HTTP 200. Event pages add competition and market segments, for example <span class="mono">/betting-tips/Ice_Hockey/NHL/NHL/NY_Rangers_@_OTT_Senators/13?event_id=200008</span>. The <span class="mono">event_id</span> is the stable key and is what this desk records.</p>
+  <div class="table-wrap"><table class="desk"><tr><th>Sport id</th><th>Sport</th><th>Canonical route</th></tr><tr><td class='mono'>12</td><td>Baseball</td><td class='mono'>/Baseball/12</td></tr><tr><td class='mono'>4</td><td>Basketball</td><td class='mono'>/Basketball/4</td></tr><tr><td class='mono'>7</td><td>Cricket</td><td class='mono'>/Cricket/7</td></tr><tr><td class='mono'>15</td><td>Darts</td><td class='mono'>/Darts/15</td></tr><tr><td class='mono'>25</td><td>Gaelic Sports</td><td class='mono'>/Gaelic_Football/25</td></tr><tr><td class='mono'>5</td><td>Golf</td><td class='mono'>/Golf/5</td></tr><tr><td class='mono'>28</td><td>Greyhounds</td><td class='mono'>/Greyhounds/28</td></tr><tr><td class='mono'>20</td><td>Handball</td><td class='mono'>/Handball/20</td></tr><tr><td class='mono'>13</td><td>Ice Hockey</td><td class='mono'>/Ice_Hockey/13</td></tr><tr><td class='mono'>14</td><td>Motor Racing</td><td class='mono'>/Motor_Racing/14</td></tr><tr><td class='mono'>10</td><td>Rugby League</td><td class='mono'>/Rugby_League/10</td></tr><tr><td class='mono'>9</td><td>Rugby Union</td><td class='mono'>/Rugby_Union/9</td></tr><tr><td class='mono'>8</td><td>Snooker</td><td class='mono'>/Snooker/8</td></tr><tr><td class='mono'>3</td><td>Tennis</td><td class='mono'>/Tennis/3</td></tr><tr><td class='mono'>21</td><td>Volleyball</td><td class='mono'>/Volleyball/21</td></tr></table></div>
+</section>
+<section class="panel">
+  <h2>Five behaviours that change what you see</h2>
+  <ol class="steps">
+    <li><strong>Times are unlabelled and inconsistent.</strong> Baseball rendered "Today 20:00" for a 00:00 UTC start; snooker rendered "Today 14:00" for a 13:00 UTC start. Treat every OLBG clock as an advertisement, not a timestamp.</li>
+    <li><strong>Zero-tip fixtures disappear.</strong> OLBG hides events with no open community tips. Rugby League currently shows only 2027 outrights for that reason; it is not evidence that no match exists.</li>
+    <li><strong>Hubs truncate.</strong> The default listing stops at twenty rows before "Load More Tips", so a hub is not a complete slate.</li>
+    <li><strong>Tip percentages are votes.</strong> "15/26 Win Tips · 58%" is a share of community selections, not a probability. This desk does not use it.</li>
+    <li><strong>Golf can be empty.</strong> The golf hub returned "No tips found" even though tours are running, so OLBG emptiness is a fact about OLBG, not about the sport.</li>
+  </ol>
+</section>
+<section class="panel">
+  <h2>What this means for the brief</h2>
+  <p>The brief asks for matches "listed on OLBG" and for those matches to be priced. Those two requirements diverge: OLBG lists many events its own tipsters have not verified, and it hides others entirely. This desk uses OLBG only to enumerate what is advertised, then insists on a governing-body confirmation before any price is attached. That is why the <a href="matches.html">Matches</a> page has two tables and why 78 advertised rows carry no price.</p>
+</section>
+
+</main>
+<footer class="foot">
+  <p><strong>What this is.</strong> Independently calculated experimental prices, not bookmaker offers. No staking advice, no guaranteed returns. Not affiliated with OLBG.</p>
+  <p><strong>How to read a blank.</strong> A blank cell means the official source did not publish that value and it was not filled in. Every blank is listed on the <a href="flagged.html">Flagged for review</a> page.</p>
+  <p class="mono">Desk session 9e041d28-olbg1 · snapshot 2026-10-24T18:20:00Z · 8 sourced fixtures · 8 picks · 14 flags</p>
+</footer>
+</body>
+</html>
