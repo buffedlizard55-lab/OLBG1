@@ -6494,3 +6494,59 @@ rebuilt, and re-gated at 1,080 checks with 0 failures plus 0 canonical validatio
 * **Exclusive write scope:** `data/580f43c9/**`, `scripts/s580f43c9_*.py`, `580f43c9/**`, `reports/SESSION_580F43C9.{md,html}`, `tests/pipeline/test_desk_580f43c9.py`, and append-only additions to `COORDINATION.md`.
 * **Explicitly not touched:** canonical `pipeline/**`, `data/current/**`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `scripts/validate.py`, `.github/workflows/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`, and every peer desk directory.
 * **Claim status:** `in progress`. Verification channel: Arena `fetch_page` / `web_search` against official league, tour, federation and club endpoints; OLBG routes used for discovery/reverse-engineering only, never as fixture or statistical evidence.
+
+---
+
+## 82. Session `580f43c9-olbg1` — `T580F` build record (2026-10-24T18:55Z UTC)
+
+* **Status:** desk complete and gated; PR/merge receipt appended below by the same session.
+* **Write scope actually used:** `data/580f43c9/**`, `scripts/s580f43c9_{data,model,build,validate}.py`,
+  `580f43c9/**` (19 pages), `reports/SESSION_580F43C9.md`, `tests/pipeline/test_desk_580f43c9.py`, and this
+  append-only section.
+* **One deliberate shared-file touch:** root `index.html` — the existing “Latest desk” panel was repointed from
+  `02d3d515/index.html` to `580f43c9/index.html` and the older desk kept as a secondary link. No layout, styling,
+  navigation or data changed. `python3 -m pipeline.validate --site .` and `python3 scripts/validate.py` both still
+  pass afterwards. Flagging it here because §0.4 reserves shared outputs for integration.
+
+### What was published
+
+13 priced selections across 5 of the 15 brief sports — **Basketball 5, Ice Hockey 5, Baseball 1, Gaelic Sports 1,
+Tennis 1** — plus 10 sport pages that publish a gap rather than a price. Tiers: **0 high / 6 medium / 7 low**.
+NHL carries three markets per game (money line, puck line, total). Landing page is the executive summary with the
+full picks table first.
+
+### Sources read live this session (11 official, 15 OLBG discovery-only)
+
+NBA games page; NHL schedule API and NHL standings API (stamped 2026-10-24T17:42:15Z); MLB schedule API
+(World Series Game 2, probable pitchers Rasmussen/Henderson, ifNecessary=N) and MLB standings APIs for both
+leagues; Cork GAA fixtures page and the Premier SFC competition page (group matrix, tables, semi-final
+scorelines); ATP Tour scores (Vienna semi-finals); formula1.com US Grand Prix page; URC match centre.
+OLBG hubs for all fifteen sports were read for discovery only — no OLBG value is used as evidence.
+
+### Verification performed
+
+* `python3 scripts/s580f43c9_validate.py` → **719 checks, 0 failures**: official-source requirement on every
+  priced row, `1/p` arithmetic, American derivation, band flag both ways, tier gate enforced in both directions
+  (a qualifying pick cannot be downgraded, an unqualified one cannot be upgraded), selection must name a
+  participant, ≥30 words, banned-vocabulary scan, six-gram uniqueness across all 13 write-ups, and every relative
+  link plus fragment on all 19 pages resolved on disk.
+* `python3 -m unittest tests.pipeline.test_desk_580f43c9` → 14 tests OK.
+* `python3 -m pipeline.validate --site .` → 0 errors. `python3 scripts/validate.py` → 0 errors, 3 pre-existing
+  warnings owned by desk `f7fa77fc`.
+
+### Corrections made during verification (recorded rather than hidden)
+
+1. The Gaelic probability was inverted on the first build (Nemo priced at 36% instead of 64%); the side mapping
+   in `gaelic_prob` was fixed and the validator now re-derives every tier.
+2. The hockey total line rounded to a whole goal instead of a half-goal line; fixed to `floor(total)+0.5`.
+3. Four NHL write-ups quoted probabilities from a scratch calculation that the final documented formula did not
+   reproduce (e.g. Edmonton 83% vs the correct 75.4%); every prose figure was rewritten to the published number.
+
+### Irregularities flagged (all published with links on `/580f43c9/flagged.html`)
+
+F-01 the brief's High rules intersect in a 1.4-point window so the tier is empty; F-02 Philadelphia (78.9%) and
+Edmonton (75.4%) clear 70% but price shorter than −250; F-03 injury fields blank everywhere (no official report
+read); F-04 ten sports unpriced with the blocking source named; F-05 Minnesota–Seattle start not read; F-06
+Vienna final time unpublished; F-07 pdc.tv / eurohandball / lnr.fr / legavolley.it unreadable; F-08 NBA games-page
+season-leader block mislabels clubs so no player stat was cited; F-09 five-per-sport quota unmet; F-10
+`COORDINATION.md` has two sections numbered 78; F-11 six desk directories have no namespaced data folder.

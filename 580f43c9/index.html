@@ -1,0 +1,278 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Executive summary · OLBG research desk 580f43c9</title>
+<style>
+:root{--bg:#f4f6f9;--surface:#fff;--ink:#0f172a;--muted:#5b6675;--line:#e2e8f0;
+--accent:#0b6b4f;--accent-dark:#08503b;--soft:#e8f7f0;--amber:#b54708;--amber-soft:#fff7e6;
+--red:#b42318;--red-soft:#fef3f2;--blue:#1d4ed8;--blue-soft:#eef4ff;--radius:14px;
+--shadow:0 1px 2px rgba(15,23,42,.06),0 1px 3px rgba(15,23,42,.08)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent-dark);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);
+border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap;min-height:62px}
+.brand{font-weight:800;letter-spacing:-.01em;display:flex;gap:9px;align-items:center;color:var(--ink)}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:var(--accent)}
+.brand small{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--muted);font-weight:600}
+nav.main{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap}
+nav.main a{padding:7px 10px;border-radius:9px;font-size:13.5px;font-weight:600;color:#334155}
+nav.main a:hover{background:#eef2f7;text-decoration:none}
+nav.main a[aria-current=page]{background:var(--soft);color:var(--accent-dark)}
+.hero{padding:30px 0 6px}
+.eyebrow{margin:0 0 8px;font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+color:var(--accent-dark)}
+h1{margin:0;font-size:clamp(27px,3.6vw,38px);line-height:1.12;letter-spacing:-.02em}
+h2{margin:34px 0 10px;font-size:22px;letter-spacing:-.01em}
+h3{margin:20px 0 8px;font-size:17px}
+p.lede{color:var(--muted);font-size:17px;max-width:80ch;margin:12px 0 0}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:20px 0 4px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+padding:13px 15px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:25px;line-height:1.1;letter-spacing:-.02em}
+.kpi span{font-size:12.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+padding:18px;box-shadow:var(--shadow);margin:14px 0}
+.card.tight{padding:14px 16px}
+.starthere{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.starthere a{display:block;background:var(--surface);border:1px solid var(--line);
+border-radius:var(--radius);padding:15px 16px;box-shadow:var(--shadow)}
+.starthere a:hover{border-color:var(--accent);text-decoration:none}
+.starthere b{display:block;color:var(--accent-dark);font-size:15.5px;margin-bottom:3px}
+.starthere span{color:var(--muted);font-size:13.5px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f8fafc;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#475569;
+position:sticky;top:62px}
+tbody tr:hover{background:#fbfdff}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.scroll{display:block;overflow-x:auto;white-space:nowrap}
+table.scroll tbody,table.scroll thead{display:table;width:100%}
+.pick{font-weight:800;color:var(--accent-dark)}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11.5px;font-weight:800;
+letter-spacing:.04em;text-transform:uppercase}
+.badge.hi{background:var(--soft);color:var(--accent-dark)}
+.badge.md{background:var(--blue-soft);color:var(--blue)}
+.badge.lo{background:var(--amber-soft);color:var(--amber)}
+.badge.gap{background:var(--red-soft);color:var(--red)}
+.badge.ok{background:var(--soft);color:var(--accent-dark)}
+.note{background:var(--blue-soft);border:1px solid #cfe0ff;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.warn{background:var(--amber-soft);border:1px solid #f6dfae;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.danger{background:var(--red-soft);border:1px solid #f3c9c5;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.okay{background:var(--soft);border:1px solid #bfe8d5;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pred{border-left:4px solid var(--accent);background:#fcfdfe;padding:12px 15px;border-radius:0 10px 10px 0;
+margin:10px 0;font-size:15px}
+.small{font-size:13px;color:var(--muted)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:22px 0;color:var(--muted);font-size:13px}
+ul.clean{margin:8px 0 0 18px;padding:0}ul.clean li{margin:4px 0}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.starthere,.grid2,.grid3{grid-template-columns:1fr}
+th{position:static}}
+</style></head><body>
+<header class="top"><div class="wrap">
+<div class="brand"><span class="dot"></span><span>OLBG research desk<small>24–25 October 2026 · session 580f43c9</small></span></div>
+<nav class="main"><a href="index.html" aria-current=page>Summary</a><a href="picks.html">Picks</a><a href="predictions.html">Write-ups</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="sports/basketball.html">Sports</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="repo-audit.html">Repo audit</a><a href="methodology.html">Method</a></nav>
+</div></header>
+<main class="wrap">
+<section class="hero">
+<p class="eyebrow">Executive summary · 2026-10-24T18:20:00Z</p>
+<h1>Thirteen priced selections across five sports — and an honest list of the ten sports we could not price</h1>
+<p class="lede">This page is the summary. The picks are the table directly below it, and every pick has a
+full written case on <a href="picks.html">Picks</a> and a longer prediction on
+<a href="predictions.html">Write-ups</a>. Sports we could not price are listed with the exact source that
+blocked them.</p>
+<div class="kpis">
+<div class="kpi"><b>13</b><span>Priced selections</span></div>
+<div class="kpi"><b>5/15</b><span>Sports with a pick</span></div>
+<div class="kpi"><b>0</b><span>High confidence</span></div>
+<div class="kpi"><b>6</b><span>Medium confidence</span></div>
+<div class="kpi"><b>7</b><span>Low confidence</span></div>
+</div></section>
+
+<div class="starthere">
+<a href="picks.html"><b>The picks, in one table →</b><span>Every selection with its odds, confidence and
+official source link. This is the page you want if you only read one.</span></a>
+<a href="predictions.html"><b>The written predictions →</b><span>One original, non-repeating case per
+selection, 55–95 words, naming the pick, the form and the match statistics behind it.</span></a>
+<a href="flagged.html"><b>What is missing and why →</b><span>The ten sports with no line, the blank injury
+fields and the arithmetic that leaves the High tier empty today.</span></a>
+</div>
+
+<div class="danger"><strong>Why there are no High-confidence picks today.</strong> The brief asks for
+selections above 70% <em>and</em> for fair prices no shorter than −250. A −250 price is exactly 71.43%, so
+only selections landing between 70.00% and 71.43% can satisfy both rules. Nothing on this card falls inside
+that 1.4-point window. Selections above 70% but excluded by the −250 floor: Edmonton Oilers (75.4%, fair -306); Philadelphia 76ers (78.9%, fair -375). Each is published at medium tier with the reason printed on its row. See <a href="flagged.html">Flagged for review F-01/F-02</a>.</div>
+
+<h2>Every pick on the card</h2>
+<p class="small">Sorted by confidence, then by start time. “Fair price” is our own no-margin price derived
+from our probability — it is not a bookmaker quote and it is not a promise of availability.</p>
+<table class="scroll"><thead><tr><th>Sport</th><th>Match</th><th>Our pick</th>
+<th>Market</th><th>Confidence</th><th class="num">Fair price / chance</th><th>Start</th><th>Evidence</th>
+</tr></thead><tbody><tr>
+<td><a href="sports/basketball.html">Basketball</a></td>
+<td>Miami Heat v Charlotte Hornets<br><span class="small">NBA · Regular season</span></td>
+<td class="pick">Charlotte Hornets</td>
+<td>Match winner (money line)</td>
+<td><span class="badge md">medium</span></td>
+<td class="num">-225<br><span class="small">69.2% · 1.44</span></td>
+<td>24 Oct 2026 · 22:00 UTC</td>
+<td><a href="https://www.nba.com/games" rel="noopener">official source</a></td>
+</tr><tr>
+<td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>Toronto Maple Leafs v Edmonton Oilers<br><span class="small">NHL · Regular season</span></td>
+<td class="pick">Edmonton Oilers</td>
+<td>Match winner (money line)</td>
+<td><span class="badge md">medium</span></td>
+<td class="num">-306<br><span class="small">75.4% · 1.33</span></td>
+<td>24 Oct 2026 · 23:00 UTC</td>
+<td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">official source</a></td>
+</tr><tr>
+<td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>San Jose Sharks v Boston Bruins<br><span class="small">NHL · Regular season</span></td>
+<td class="pick">Boston Bruins</td>
+<td>Match winner (money line)</td>
+<td><span class="badge md">medium</span></td>
+<td class="num">-225<br><span class="small">69.2% · 1.44</span></td>
+<td>24 Oct 2026 · 23:00 UTC</td>
+<td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">official source</a></td>
+</tr><tr>
+<td><a href="sports/basketball.html">Basketball</a></td>
+<td>Milwaukee Bucks v Philadelphia 76ers<br><span class="small">NBA · Regular season</span></td>
+<td class="pick">Philadelphia 76ers</td>
+<td>Match winner (money line)</td>
+<td><span class="badge md">medium</span></td>
+<td class="num">-375<br><span class="small">78.9% · 1.27</span></td>
+<td>24 Oct 2026 · 23:30 UTC</td>
+<td><a href="https://www.nba.com/games" rel="noopener">official source</a></td>
+</tr><tr>
+<td><a href="sports/basketball.html">Basketball</a></td>
+<td>San Antonio Spurs v Dallas Mavericks<br><span class="small">NBA · Regular season</span></td>
+<td class="pick">Dallas Mavericks</td>
+<td>Match winner (money line)</td>
+<td><span class="badge md">medium</span></td>
+<td class="num">-225<br><span class="small">69.2% · 1.44</span></td>
+<td>25 Oct 2026 · 00:00 UTC</td>
+<td><a href="https://www.nba.com/games" rel="noopener">official source</a></td>
+</tr><tr>
+<td><a href="sports/gaelic-football.html">Gaelic Sports</a></td>
+<td>Nemo Rangers v St Finbarrs<br><span class="small">Cork Premier SFC · Final</span></td>
+<td class="pick">Nemo Rangers</td>
+<td>Match winner</td>
+<td><span class="badge md">medium</span></td>
+<td class="num">-178<br><span class="small">64.0% · 1.56</span></td>
+<td>Sunday 25 October, 16:00 local (Irish time); UTC conversion not published</td>
+<td><a href="https://gaacork.ie/" rel="noopener">official source</a></td>
+</tr><tr>
+<td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>New York Rangers v Ottawa Senators<br><span class="small">NHL · Regular season</span></td>
+<td class="pick">Ottawa Senators</td>
+<td>Match winner (money line)</td>
+<td><span class="badge lo">low</span></td>
+<td class="num">-124<br><span class="small">55.3% · 1.81</span></td>
+<td>24 Oct 2026 · 23:00 UTC</td>
+<td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">official source</a></td>
+</tr><tr>
+<td><a href="sports/basketball.html">Basketball</a></td>
+<td>Brooklyn Nets v Cleveland Cavaliers<br><span class="small">NBA · Regular season</span></td>
+<td class="pick">Cleveland Cavaliers</td>
+<td>Match winner (money line)</td>
+<td><span class="badge lo">low</span></td>
+<td class="num">-135<br><span class="small">57.4% · 1.74</span></td>
+<td>24 Oct 2026 · 23:30 UTC</td>
+<td><a href="https://www.nba.com/games" rel="noopener">official source</a></td>
+</tr><tr>
+<td><a href="sports/baseball.html">Baseball</a></td>
+<td>Tampa Bay Rays v Milwaukee Brewers<br><span class="small">MLB · World Series, Game 2</span></td>
+<td class="pick">Milwaukee Brewers</td>
+<td>Match winner (money line)</td>
+<td><span class="badge lo">low</span></td>
+<td class="num">-128<br><span class="small">56.1% · 1.78</span></td>
+<td>25 Oct 2026 · 00:00 UTC</td>
+<td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;date=2026-10-24&amp;hydrate=team,linescore,probablePitcher" rel="noopener">official source</a></td>
+</tr><tr>
+<td><a href="sports/basketball.html">Basketball</a></td>
+<td>Houston Rockets v Atlanta Hawks<br><span class="small">NBA · Regular season</span></td>
+<td class="pick">Atlanta Hawks</td>
+<td>Match winner (money line)</td>
+<td><span class="badge lo">low</span></td>
+<td class="num">-135<br><span class="small">57.4% · 1.74</span></td>
+<td>25 Oct 2026 · 00:30 UTC</td>
+<td><a href="https://www.nba.com/games" rel="noopener">official source</a></td>
+</tr><tr>
+<td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>Tampa Bay Lightning v Utah Mammoth<br><span class="small">NHL · Regular season</span></td>
+<td class="pick">Tampa Bay Lightning</td>
+<td>Match winner (money line)</td>
+<td><span class="badge lo">low</span></td>
+<td class="num">-102<br><span class="small">50.5% · 1.98</span></td>
+<td>25 Oct 2026 · 01:00 UTC</td>
+<td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">official source</a></td>
+</tr><tr>
+<td><a href="sports/tennis.html">Tennis</a></td>
+<td>Nikoloz Basilashvili v Daniil Medvedev<br><span class="small">ATP Vienna (event 9410) · Final</span></td>
+<td class="pick">Daniil Medvedev</td>
+<td>Match winner</td>
+<td><span class="badge lo">low</span></td>
+<td class="num">-178<br><span class="small">64.0% · 1.56</span></td>
+<td>Sunday 25 October; time not published on the official scores page (flagged F-06)</td>
+<td><a href="https://www.atptour.com/en/scores/current" rel="noopener">official source</a></td>
+</tr><tr>
+<td><a href="sports/ice-hockey.html">Ice Hockey</a></td>
+<td>Minnesota Wild v Seattle Kraken<br><span class="small">NHL · Regular season</span></td>
+<td class="pick">Seattle Kraken</td>
+<td>Match winner (money line)</td>
+<td><span class="badge lo">low</span></td>
+<td class="num">-140<br><span class="small">58.3% · 1.72</span></td>
+<td>Start time not read from the official schedule block (flagged F-05)</td>
+<td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">official source</a></td>
+</tr></tbody></table>
+
+<div class="grid2">
+<div class="card tight"><h3>Today (24 October)</h3>
+<p class="small">6 selections start on 24 October UTC.</p>
+<ul class="clean"><li><strong>Charlotte Hornets</strong> — Miami Heat v Charlotte Hornets · -225</li><li><strong>Edmonton Oilers</strong> — Toronto Maple Leafs v Edmonton Oilers · -306</li><li><strong>Boston Bruins</strong> — San Jose Sharks v Boston Bruins · -225</li><li><strong>Philadelphia 76ers</strong> — Milwaukee Bucks v Philadelphia 76ers · -375</li><li><strong>Ottawa Senators</strong> — New York Rangers v Ottawa Senators · -124</li><li><strong>Cleveland Cavaliers</strong> — Brooklyn Nets v Cleveland Cavaliers · -135</li></ul></div>
+<div class="card tight"><h3>Upcoming (25 October onward)</h3>
+<p class="small">7 selections start later.</p>
+<ul class="clean"><li><strong>Dallas Mavericks</strong> — San Antonio Spurs v Dallas Mavericks · -225</li><li><strong>Nemo Rangers</strong> — Nemo Rangers v St Finbarrs · -178</li><li><strong>Milwaukee Brewers</strong> — Tampa Bay Rays v Milwaukee Brewers · -128</li><li><strong>Atlanta Hawks</strong> — Houston Rockets v Atlanta Hawks · -135</li><li><strong>Tampa Bay Lightning</strong> — Tampa Bay Lightning v Utah Mammoth · -102</li><li><strong>Daniil Medvedev</strong> — Nikoloz Basilashvili v Daniil Medvedev · -178</li><li><strong>Seattle Kraken</strong> — Minnesota Wild v Seattle Kraken · -140</li></ul></div>
+</div>
+
+<h2>Sports we could not price</h2>
+<p class="small">Each row names the source that blocked a line. Nothing is filled in to look complete.</p>
+<table><thead><tr><th>Sport</th><th>Why no line</th><th>Source that blocked it</th></tr></thead><tbody>
+<tr><td><a href="sports/golf.html">Golf</a></td><td>OLBG golf hub returned &quot;No tips found&quot; at 17:50Z, so there is no golf market on the site to originate against.</td><td><a href="https://www.olbg.com/betting-tips/Golf/5" rel="noopener">www.olbg.com/betting-tips/Golf/5</a></td></tr><tr><td><a href="sports/volleyball.html">Volleyball</a></td><td>Fixtures are listed, but neither legavolley.it (SuperLega) nor plusliga.pl served a readable fixture or standings block; tauronliga.pl returned the Polish women&#x27;s site instead.</td><td><a href="https://ww2.legavolley.it/lvc/" rel="noopener">ww2.legavolley.it/lvc/</a></td></tr><tr><td><a href="sports/rugby-union.html">Rugby Union</a></td><td>URC Round 4 was readable for completed matches only; the remaining fixtures did not render, lnr.fr returned 404 and premrugby.com served a JavaScript shell with no fixture rows.</td><td><a href="https://stats.unitedrugby.com/match-centre/2026-27/4" rel="noopener">stats.unitedrugby.com/match-centre/2026-27/4</a></td></tr><tr><td><a href="sports/cricket.html">Cricket</a></td><td>OLBG lists Pakistan v England and several CSA T20 games, but pcb.com.pk&#x27;s fixtures routes returned its 404 page and no other official board schedule was read.</td><td><a href="https://www.pcb.com.pk/404page.html" rel="noopener">www.pcb.com.pk/404page.html</a></td></tr><tr><td><a href="sports/snooker.html">Snooker</a></td><td>The only snooker listing (Mark Williams v Jak Jones, 14:05) had already started at read time, so no future match exists to price.</td><td><a href="https://www.olbg.com/betting-tips/Snooker/8" rel="noopener">www.olbg.com/betting-tips/Snooker/8</a></td></tr><tr><td><a href="sports/darts.html">Darts</a></td><td>pdc.tv served a consent wall with no readable tournament, draw or order of play.</td><td><a href="https://www.pdc.tv/tournaments" rel="noopener">www.pdc.tv/tournaments</a></td></tr><tr><td><a href="sports/greyhounds.html">Greyhounds</a></td><td>Only graded races with single tips are listed; no official runner, trap or result feed was readable, so no runner-level line can be originated.</td><td><a href="https://www.olbg.com/betting-tips/Greyhounds/28" rel="noopener">www.olbg.com/betting-tips/Greyhounds/28</a></td></tr><tr><td><a href="sports/motor-racing.html">Motor Racing</a></td><td>The United States Grand Prix weekend was mid-practice at read time; formula1.com carried no qualifying classification, so no grid-based line could be originated.</td><td><a href="https://www.formula1.com/en/racing/2026/united-states" rel="noopener">www.formula1.com/en/racing/2026/united-states</a></td></tr><tr><td><a href="sports/handball.html">Handball</a></td><td>ehfcl.eurohandball.com/en/matches/ and eurohandball.com/en/matches/ both returned 404; no HBL or LNH fixture/standings block was readable.</td><td><a href="https://ehfcl.eurohandball.com/en/matches/" rel="noopener">ehfcl.eurohandball.com/en/matches/</a></td></tr><tr><td><a href="sports/rugby-league.html">Rugby League</a></td><td>OLBG lists only 2027 outright markets (State of Origin, Super League and NRL Grand Final); no 2026 match market is open, so nothing can be priced.</td><td><a href="https://www.olbg.com/betting-tips/Rugby_League/10" rel="noopener">www.olbg.com/betting-tips/Rugby_League/10</a></td></tr>
+</tbody></table>
+
+<h2>Where everything lives</h2>
+<div class="grid3">
+<div class="card tight"><h3>Picks &amp; write-ups</h3><ul class="clean">
+<li><a href="picks.html">Picks</a> — the table, plus per-pick reasoning and market audit</li>
+<li><a href="predictions.html">Write-ups</a> — the full predictions</li>
+<li><a href="markets.html">Markets</a> — every market family examined, priced or withheld</li></ul></div>
+<div class="card tight"><h3>Evidence</h3><ul class="clean">
+<li><a href="matches.html">Matches</a> — all 13 fixtures with the facts read for them</li>
+<li><a href="sources.html">Sources</a> — 26 sources, 11 of them official</li>
+<li><a href="methodology.html">Method</a> — the formulas and the confidence gate</li></ul></div>
+<div class="card tight"><h3>Review</h3><ul class="clean">
+<li><a href="flagged.html">Flagged for review</a> — 11 items</li>
+<li><a href="repo-audit.html">Repo audit</a> — 7 checks, line by line</li>
+<li><a href="sports/basketball.html">Sport pages</a> — 15 of them, one per brief sport</li></ul></div>
+</div>
+</main>
+<footer class="wrap"><p><strong>Independent research, not a tipster service.</strong> Prices are our own
+estimates, not bookmaker odds. Nothing here is a guarantee, and no bet is risk-free.
+Built from official league, tour and governing-body sources read on 24 October 2026; every row links to the
+page it came from. Not affiliated with OLBG. 18+. If gambling is causing harm, see
+<a href="https://www.gamcare.org.uk/">GamCare</a> or <a href="https://www.begambleaware.org/">BeGambleAware</a>.</p>
+<p class="small">Repository: <a href="https://github.com/buffedlizard55-lab/OLBG1">github.com/buffedlizard55-lab/OLBG1</a> ·
+Live desk: <a href="https://buffedlizard55-lab.github.io/OLBG1/580f43c9/">buffedlizard55-lab.github.io/OLBG1/580f43c9/</a> ·
+Evidence frozen at 2026-10-24T18:20:00Z</p></footer>
+</body></html>
