@@ -547,9 +547,9 @@ FLAGS = [
                    "which is 75 books. This session confirmed eight fixtures end-to-end from official "
                    "feeds: three MLB World Series games (2, 3 and 4) and five NHL games. Every other "
                    "OLBG row is a listing without governing-body confirmation, so it is published as a "
-                   "watchlist row with no price. Nothing was imputed to reach a quota, and the seven "
-                   "sports whose leagues returned no readable fixture data carry no rows at all rather "
-                   "than guessed ones."),
+                   "watchlist row with no price. Nothing was imputed to reach a quota: the sports whose "
+                   "official routes failed carry unpriced listings rather than priced ones, and the two "
+                   "with nothing on offer carry no row at all."),
         "source": "https://www.olbg.com/betting-tips",
     },
     {
@@ -600,7 +600,7 @@ FLAGS = [
         "title": "Basketball: two-game samples cannot support a price",
         "detail": ("NBA standings on 24 October 2026 cover two games for most clubs. Shrunk win "
                    "rates sit between .25 and .75, so almost every log5 output lands on a coin flip "
-                   "or an extreme. No NBA line was issued. The eight games are listed for reference."),
+                   "or an extreme. No NBA line was issued. The ten rows stay as listings for reference."),
         "source": "https://www.nba.com/standings",
     },
     {
