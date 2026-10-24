@@ -26,7 +26,7 @@ official source and anything unconfirmed left blank and flagged.
 | Markets originated | 104 (208 individual prices) |
 | Picks published | 16 — 3 High, 4 Medium, 9 Low |
 | Written predictions | 10 (53–66 words each) |
-| Flagged items | 13 |
+| Flagged items | 13 on the Flagged page, plus 6 repository findings |
 | Sources logged with URL and UTC read time | 24 |
 
 ## 3. The two things worth reading first
@@ -106,9 +106,9 @@ so GitHub Pages will serve the desk, and nothing else.
 
 | Gate | Result |
 | --- | --- |
-| `python3 -m unittest discover -s tests/pipeline` | 671 tests, OK |
+| `python3 -m unittest discover -s tests/pipeline` | 641 tests, OK |
 | `python3 -m unittest tests.pipeline.test_desk_f840c28a` | 30 tests, OK |
-| `python3 scripts/sf840c28a_validate.py` | 1,048/1,048 checks passed |
+| `python3 scripts/sf840c28a_validate.py` | 1,049/1,049 checks passed |
 | `python3 -m pipeline.build --out /tmp/sitecheck` | 25 pages; `f840c28a/` present with 15 sport pages |
 | `python3 -m pipeline.validate --site /tmp/sitecheck` | 0 errors |
 | `python3 -m pipeline.validate --site .` | 0 errors |
