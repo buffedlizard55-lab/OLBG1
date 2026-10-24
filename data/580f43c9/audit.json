@@ -1,0 +1,58 @@
+[
+  {
+    "id": "A-01",
+    "area": "Root navigation",
+    "check": "Every local href in the root index.html resolves on disk",
+    "result": "75 local links, 0 missing",
+    "verdict": "pass",
+    "note": "Checked with a filesystem resolution pass; anchors stripped before testing."
+  },
+  {
+    "id": "A-02",
+    "area": "Canonical data",
+    "check": "count fields equal the length of the list they describe",
+    "result": "data/lines.json count 126 with 126 rows; data/fixtures.json count 134 with 134 rows; data/predictions.json count 30 with 30 rows",
+    "verdict": "pass",
+    "note": "Internal consistency only."
+  },
+  {
+    "id": "A-03",
+    "area": "Canonical data",
+    "check": "Behaviour of the canonical High tier in data/lines.json",
+    "result": "confidence_counts reports 30 high / 30 medium / 66 low",
+    "verdict": "flag",
+    "note": "The canonical file's 30 high rows are not re-verified here. Desk 02d3d515 recorded that some of its high rows sit below 70%; this desk did not re-read every row and makes no claim either way."
+  },
+  {
+    "id": "A-04",
+    "area": "Scope",
+    "check": "/sports contains one page per covered sport",
+    "result": "17 pages for a 15-sport brief",
+    "verdict": "flag",
+    "note": "The extra two are Australian rules and eSports, which the brief does not list."
+  },
+  {
+    "id": "A-05",
+    "area": "Coordination",
+    "check": "Section numbering in COORDINATION.md is unique",
+    "result": "two '## 78.' headings",
+    "verdict": "flag",
+    "note": "See F-10."
+  },
+  {
+    "id": "A-06",
+    "area": "Desk layout",
+    "check": "Every desk directory has a namespaced data folder",
+    "result": "6 of 60 desk directories have none",
+    "verdict": "flag",
+    "note": "See F-11."
+  },
+  {
+    "id": "A-07",
+    "area": "Ignored artefacts",
+    "check": ".gitignore excludes build output and raw responses",
+    "result": "ignores _site/, node_modules/, .output/, .cache/, data/current/raw/, data/release/raw/, *.pyc",
+    "verdict": "pass",
+    "note": "Read directly from .gitignore."
+  }
+]
