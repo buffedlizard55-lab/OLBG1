@@ -71,8 +71,24 @@ precisely what the brief forbids.
 ## Files touched
 
 `scripts/sf437fb14_{data_p1,data_p2,model,picks,build,validate}.py`,
-`f437fb14/**`, `data/f437fb14/**`, `tests/pipeline/test_desk_f437fb14.py`, this report,
-append-only `COORDINATION.md`, and **one** shared file: `pipeline/build.py`'s `latest_desk()`
-front door, repointed from the 24-hour-old `3d121822` desk to this one. That function generates the
-"Start here" band on the canonical landing page, which had been sending readers to a desk with zero
-High picks. Canonical validation was re-run after the change.
+`f437fb14/**` (26 pages), `data/f437fb14/**` (nine files),
+`tests/pipeline/test_desk_f437fb14.py` (13 tests), this report, append-only `COORDINATION.md`
+(§85 and §89), and **one line of a shared file**: an `ARCHIVE` entry in `pipeline/build.py` that
+lists this desk first on the canonical landing page and copies it into the published artifact.
+`link='b2719ad3/index.html'` and every peer desk entry were kept verbatim, because the peer test
+`test_desk_b2719ad3.test_canonical_front_door_preserves_peer_links` asserts them.
+
+## Publication
+
+| Step | Result |
+|---|---|
+| PR [#241](https://github.com/buffedlizard55-lab/OLBG1/pull/241) | **merged** 2026-10-24T18:11:10Z, merge commit `8ec8259` |
+| PR [#255](https://github.com/buffedlizard55-lab/OLBG1/pull/255) | **merged** — COORDINATION §89 receipt |
+| PR [#257](https://github.com/buffedlizard55-lab/OLBG1/pull/257) | **merged** — markets-link wording fix |
+| Gates at merged head | 559 pipeline tests OK · desk validator `pages=26 checks=887 errors=0` · `pipeline.validate` 0 errors on root and `_site` · `scripts/validate.py` PASSED |
+| Pages | `…/OLBG1/f437fb14/index.html` serves the desk; the root page lists it first under "Earlier desks" |
+
+Note for anyone reading the Actions tab: `pull_request` runs stopped being created for this branch
+after `fc89dd6`, and main-branch runs were repeatedly cancelled by peers merging mid-run, so the
+deploy that carries this desk is the artifact from `7a99f4f`/`cadde2f` rather than the run that
+merged #241. The published bytes were read back directly and are the ones described here.
