@@ -1,0 +1,302 @@
+{
+  "generated_at": "2026-10-24T21:00:00Z",
+  "sources": [
+    {
+      "id": "mlb-schedule",
+      "publisher": "MLB (official Stats API)",
+      "official": true,
+      "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-24&endDate=2026-10-25&hydrate=team,linescore,record",
+      "observed": "2026-10-24T18:22Z",
+      "scope": "World Series Game 2 card: gamePk 849802, start 2026-10-25T00:00:00Z, American Family Field, 'World Series Game 2' of a 7-game series, series record Milwaukee 1-0 Tampa Bay, status Scheduled, not if-necessary.",
+      "label": "MLB (official Stats API)"
+    },
+    {
+      "id": "mlb-standings",
+      "publisher": "MLB (official Stats API)",
+      "official": true,
+      "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason&hydrate=team",
+      "observed": "2026-10-24T20:18Z",
+      "scope": "Regular-season records: Tampa Bay 98-64 (.605), +86 run diff, 736 RS / 650 RA, road 43-38, division champions; Milwaukee 103-59 (.636), +214, 832 RS / 618 RA, home 55-26, best record in MLB, division champions.",
+      "label": "MLB (official Stats API)"
+    },
+    {
+      "id": "nhl-score",
+      "publisher": "NHL (official web API)",
+      "official": true,
+      "url": "https://api-web.nhle.com/v1/score/2026-10-24",
+      "observed": "2026-10-24T18:31Z",
+      "scope": "Full 24 Oct slate (12 games, ids 2026020168-2026020179): UTC start times, live states (Anaheim at Philadelphia in progress, PHI 2-0 late 1st), and published partner betting prices for each game.",
+      "label": "NHL (official web API)"
+    },
+    {
+      "id": "nhl-standings",
+      "publisher": "NHL (official web API)",
+      "official": true,
+      "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+      "observed": "2026-10-24T20:05Z",
+      "scope": "2026-27 standings dated 18:00:30Z: games played, W/L/OT rows and goals for/against for every club priced tonight.",
+      "label": "NHL (official web API)"
+    },
+    {
+      "id": "nba-games",
+      "publisher": "NBA (official site)",
+      "official": true,
+      "url": "https://www.nba.com/games?date=2026-10-24",
+      "observed": "2026-10-24T18:41Z",
+      "scope": "Eight 24 Oct fixtures with game ids 0022600104-0022600111, tip times (ET) and current club records; season scoring-leader blocks.",
+      "label": "NBA (official site)"
+    },
+    {
+      "id": "nba-injury",
+      "publisher": "NBA (official injury report PDF)",
+      "official": true,
+      "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf",
+      "observed": "2026-10-24T18:44Z",
+      "scope": "League injury report, 24 Oct 1:30PM ET issue: Out/Questionable statuses. San Antonio, Dallas and Washington had not yet submitted at that issue.",
+      "label": "NBA (official injury report PDF)"
+    },
+    {
+      "id": "nba-injury-index",
+      "publisher": "NBA (officiating site)",
+      "official": true,
+      "url": "https://official.nba.com/nba-injury-report-2026-27-season/",
+      "observed": "2026-10-24T18:46Z",
+      "scope": "Index confirming reports are re-issued at 15-minute intervals; the 1:30PM PDF is the issue read.",
+      "label": "NBA (officiating site)"
+    },
+    {
+      "id": "wst-niopen",
+      "publisher": "World Snooker Tour (official)",
+      "official": true,
+      "url": "https://www.wst.tv/",
+      "observed": "2026-10-24T18:52Z",
+      "scope": "Northern Ireland Open 2026: semi-final Mark Williams v Jak Jones shown 'Live Now' (started 14:00 UK); Kyren Wilson already into Sunday's final (beat Sam Craigie). Final Sunday 08:00 UK.",
+      "label": "World Snooker Tour (official)"
+    },
+    {
+      "id": "pdc-ec",
+      "publisher": "PDPA / PDC event listing (official players' association)",
+      "official": true,
+      "url": "https://pdpa.co.uk/event/european-championship-2026/",
+      "observed": "2026-10-24T19:07Z",
+      "scope": "European Championship, Dortmund 22-25 Oct: Saturday evening Round 2 bracket (Ratajski v Doets, Schindler v Wattimena, Aspinall v Littler, Clayton v Rock; session 19:00 UK), Sunday quarter-finals Price v Bunting and Smith v Woodhouse, full seeded R1 draw, prize fund £750,000.",
+      "label": "PDPA / PDC event listing (official players' association)"
+    },
+    {
+      "id": "pdc-wall",
+      "publisher": "PDC (official site, blocked)",
+      "official": false,
+      "url": "https://www.pdc.tv/tournament/european-championship",
+      "observed": "2026-10-24T18:55Z",
+      "scope": "PDC's own tournament page; unreadable in this environment (cookie-consent wall, no fixture text). Flagged; PDPA listing used instead.",
+      "label": "PDC (official site, blocked)"
+    },
+    {
+      "id": "atp-scores",
+      "publisher": "ATP Tour (official live scores)",
+      "official": true,
+      "url": "https://www.atptour.com/en/scores/current",
+      "observed": "2026-10-24T18:53Z",
+      "scope": "Saturday semi-final results/schedule: Almaty (id 9410) Medvedev d Bublik 6-3 ret., Basilashvili d Tsitsipas 6-4 6-7(5) 6-3; Brussels (id 7485) Griekspoor d Cerundolo 2-6 6-3 7-6(4), Fils-Struff in progress; Lyon (id 496) Fritz d Paul 6-3 7-5, Musetti d Cobolli 4-6 6-2 7-5. H2H panel: Medvedev leads Basilashvili 1-0.",
+      "label": "ATP Tour (official live scores)"
+    },
+    {
+      "id": "atp-news",
+      "publisher": "ATP Tour (official news)",
+      "official": true,
+      "url": "https://www.atptour.com/en/news",
+      "observed": "2026-10-24T18:56Z",
+      "scope": "Confirms Sunday finals: Almaty - Medvedev faces Basilashvili for the trophy; Lyon - Musetti 'sets Fritz final'; Brussels final pending Fils/Struff winner v Griekspoor. Also: Vienna and Basel main draws start next week (Alcaraz v Khachanov; Djokovic/Shelton same Basel half).",
+      "label": "ATP Tour (official news)"
+    },
+    {
+      "id": "wta-shell",
+      "publisher": "WTA (official site, blocked)",
+      "official": false,
+      "url": "https://www.wtatennis.com/tournaments/1056/tokyo/2026/scores",
+      "observed": "2026-10-24T18:59Z",
+      "scope": "WTA scores/news pages render only a client-side notification shell here: Tokyo and Guangzhou draws were released 10-11 hours before our read, but the draw text itself is unreadable. Tokyo Sunday pairing therefore remains OLBG-listed only.",
+      "label": "WTA (official site, blocked)"
+    },
+    {
+      "id": "f1-usgp",
+      "publisher": "Formula 1 (official)",
+      "official": true,
+      "url": "https://www.formula1.com/en/racing/2026/united-states",
+      "observed": "2026-10-24T18:47Z",
+      "scope": "US Grand Prix, Circuit of the Americas: qualifying Sat 17:00-18:00 track time (22:00-23:00 UTC), race Sun 16:00 track (21:00 UTC). FP2: Leclerc 1:35.291, Antonelli +0.042, Verstappen +0.189, Hamilton +0.615, Russell +0.744; FP1 also topped by Leclerc.",
+      "label": "Formula 1 (official)"
+    },
+    {
+      "id": "pga-bermuda",
+      "publisher": "PGA TOUR (official)",
+      "official": true,
+      "url": "https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/leaderboard",
+      "observed": "2026-10-24T18:58Z",
+      "scope": "Butterfield Bermuda Championship, round 3 in progress at read: Austin Smotherman -16 through 13, Seamus Power -15 through 10, Chris Kirk / Ben Silverman / Chandler Blanchet -14. Final round Sunday; event runs 22-25 Oct.",
+      "label": "PGA TOUR (official)"
+    },
+    {
+      "id": "nrl-rlwc",
+      "publisher": "NRL (official RLWC draw)",
+      "official": true,
+      "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+      "observed": "2026-10-24T19:12Z",
+      "scope": "Rugby League World Cup 2026, Round 2: played - Tonga 36-0 Lebanon (Fri), Samoa 64-6 PNG (Sat), England 82-0 France (Sat, HBF Park Perth). Sunday: New Zealand v Cook Islands (One NZ Stadium, Christchurch), Australia v Fiji (Suncorp Stadium, Brisbane); team lists published. Pool footing shown: NZ 3rd, Cook Is 4th; Fiji 1st, Australia 2nd.",
+      "label": "NRL (official RLWC draw)"
+    },
+    {
+      "id": "urc-r4",
+      "publisher": "BKT United Rugby Championship (official)",
+      "official": true,
+      "url": "https://www.unitedrugby.com/latest/match-preview-2/a-relentless-rivalry-and-a-new-home-for-ospreys-round-4-preview/",
+      "observed": "2026-10-24T19:16Z",
+      "scope": "Round 4 preview: Edinburgh only perfect 3-0 start, one point clear of Glasgow; Sat fixtures - Bulls v Ulster 12:45 UK, Stormers v Scarlets 15:00 UK, Benetton v Glasgow 15:00 UK, Leinster v Munster 18:00 UK (shown LIVE), Ospreys v Dragons 19:00 UK at St Helen's (rematch of Ospreys' 38-31 win at Rodney Parade two weeks ago).",
+      "label": "BKT United Rugby Championship (official)"
+    },
+    {
+      "id": "top14",
+      "publisher": "LNR Top 14 (official)",
+      "official": true,
+      "url": "https://top14.lnr.fr/",
+      "observed": "2026-10-24T19:21Z",
+      "scope": "Journee 7: Sat results - Vannes 27-26 Clermont, Bayonne 27-31 Lyon, Castres 16-8 Stade Francais, Racing 92 17-20 Montpellier, Toulouse 38-33 Perpignan; tonight RC Toulon v Section Paloise 21:00 local; Sun Stade Rochelais v Union Bordeaux-Begles 21:05 local.",
+      "label": "LNR Top 14 (official)"
+    },
+    {
+      "id": "top14-table",
+      "publisher": "LNR Top 14 (official table)",
+      "official": true,
+      "url": "https://top14.lnr.fr/classement",
+      "observed": "2026-10-24T19:24Z",
+      "scope": "Table after J6: 1 Toulouse 28 (7p), 2 Section Paloise 22 (6p) V-D-V-V-V, 3 Union Bordeaux-Begles 19 (6p), 4 Stade Rochelais 18 (6p), 5 Lyon 18, 6 Bayonne 18, 7 Montpellier 18, 8 Stade Francais 14 ... 11 RC Toulon, 12 Clermont, 13 Racing 92, 14 Vannes. Confirms next fixtures incl. Toulon v Pau 24 Oct and La Rochelle v UBB 25 Oct.",
+      "label": "LNR Top 14 (official table)"
+    },
+    {
+      "id": "premrugby",
+      "publisher": "Premiership Rugby (official, blocked)",
+      "official": false,
+      "url": "https://www.premiershiprugby.com/fixtures-and-results/",
+      "observed": "2026-10-24T19:19Z",
+      "scope": "Fixtures listing is a JavaScript shell in this environment; no fixture text readable. Harlequins v Saracens stays OLBG-listed only.",
+      "label": "Premiership Rugby (official, blocked)"
+    },
+    {
+      "id": "usa-rugby",
+      "publisher": "USA Rugby (official, no listing)",
+      "official": false,
+      "url": "https://www.usa.rugby/",
+      "observed": "2026-10-24T19:18Z",
+      "scope": "Home page news/videos show no listing for USA v Australia A tonight; fixture remains OLBG-listed only.",
+      "label": "USA Rugby (official, no listing)"
+    },
+    {
+      "id": "pcb-news",
+      "publisher": "Pakistan Cricket Board (official)",
+      "official": true,
+      "url": "https://www.pcb.com.pk/404page.html",
+      "observed": "2026-10-24T18:35Z",
+      "scope": "PCB news feed (20-24 Oct): ODI tri-series in progress; 'Arafat Minhas 6-40 and 59 sink England as Pakistan win consecutive games in ODI tri-series' (20 Oct) - Pakistan's biggest ODI win over England by runs since 2005; 22 Oct: Sri Lanka chased 430 to beat an England side for whom Harry Brook made a record 114-ball double hundred.",
+      "label": "Pakistan Cricket Board (official)"
+    },
+    {
+      "id": "nzc-news",
+      "publisher": "New Zealand Cricket (official)",
+      "official": true,
+      "url": "https://www.nzc.nz/",
+      "observed": "2026-10-24T18:37Z",
+      "scope": "BLACKCAPS v India home summer: five-match T20I series launched in Christchurch 21 Oct (eve of match one); Hagley Oval + Seddon Park T20Is sold out, Eden Park tracking a record crowd; squad news - Adam Milne returns, Rachin Ravindra ruled out; a seven-strong pace attack named.",
+      "label": "New Zealand Cricket (official)"
+    },
+    {
+      "id": "csa-upcoming",
+      "publisher": "Cricket South Africa (official)",
+      "official": true,
+      "url": "https://www.cricket.co.za/tournament/2300/CSA-T20-Challenge-2026-27",
+      "observed": "2026-10-24T18:40Z",
+      "scope": "CSA 'Up Next' lists 24 Oct domestic women's Pro 50 / Colts fixtures but not the OLBG-listed provincial T20 slate; those matches stay OLBG-listed only, flagged.",
+      "label": "Cricket South Africa (official)"
+    },
+    {
+      "id": "cricket-canada",
+      "publisher": "Cricket Canada (official)",
+      "official": true,
+      "url": "https://cricketcanada.org/",
+      "observed": "2026-10-24T19:15Z",
+      "scope": "Home page shows no listing for 'Toronto Kings v Vancouver Guardians'; match remains unverified. OLBG-listed market rejected until a board/ICC listing is found.",
+      "label": "Cricket Canada (official)"
+    },
+    {
+      "id": "gaa-cork",
+      "publisher": "Cork GAA (official county board)",
+      "official": true,
+      "url": "https://gaacork.ie/",
+      "observed": "2026-10-24T19:32Z",
+      "scope": "Fixtures block: Sun 25 Oct at SuperValu Pairc Ui Chaoimh - McCarthy Insurance Group Premier JFC FINAL Cobh v Canovee 14:00 IST, Premier SFC FINAL Nemo Rangers v St Finbarrs 16:00 IST; Sun 1 Nov Senior 'A' FC final Eire Og v Kanturk 14:00. Fri result: Kilshannig 1-23 v St Catherines 2-19 (Premier JHC final).",
+      "label": "Cork GAA (official county board)"
+    },
+    {
+      "id": "gaa-galway",
+      "publisher": "Galway GAA (official county board)",
+      "official": true,
+      "url": "https://www.galwaygaa.ie/",
+      "observed": "2026-10-24T19:30Z",
+      "scope": "Fixtures block: 25 Oct Senior Football Championship - Salthill-Knocknacarra v Cumann Peile Mhaigh Cuilinn (Moycullen); news 23 Oct reports weather-driven changes to this weekend's football/hurling fixture schedule (times to be re-checked).",
+      "label": "Galway GAA (official county board)"
+    },
+    {
+      "id": "gaa-national",
+      "publisher": "GAA (official)",
+      "official": true,
+      "url": "https://www.gaa.ie/fixtures-results",
+      "observed": "2026-10-24T18:39Z",
+      "scope": "Tonight: Shinty-Hurling International, Ireland v Scotland, 18:00 at SuperValu Pairc Ui Chaoimh, Cork (referee Eamonn Furlong). Not an OLBG Gaelic-football market - kept as calendar context only.",
+      "label": "GAA (official)"
+    },
+    {
+      "id": "gbgb-racing",
+      "publisher": "Greyhound Board of Great Britain (official)",
+      "official": true,
+      "url": "https://www.gbgb.org.uk/racing/",
+      "observed": "2026-10-24T18:56Z",
+      "scope": "GBGB race reports 22 Oct: 'Shadow Storm chases Scurry Gold Cup history at Dunstall Park', 'Signet Nayla chases Oaks glory as Hutton targets Dunstall double', 'Returning Storm sets the pace as Doncaster Puppy Derby roars into life'. Live race cards are behind interactive controls; results URL published for manual review.",
+      "label": "Greyhound Board of Great Britain (official)"
+    },
+    {
+      "id": "gbgb-results",
+      "publisher": "GBGB (official results lookup)",
+      "official": true,
+      "url": "https://www.gbgb.org.uk/racing/results/",
+      "observed": "2026-10-24T18:57Z",
+      "scope": "Official results endpoint identified for manual cross-check of tonight's cards; card text not extractable in this environment, so no trap/runner pricing is published.",
+      "label": "GBGB (official results lookup)"
+    },
+    {
+      "id": "hbl-melsungen",
+      "publisher": "Opel Handball-Bundesliga (official)",
+      "official": true,
+      "url": "https://www.opel-hbl.de/de/team/MT%20Melsungen/feb41b46-3952-11ef-9df6-af5c55c3771d",
+      "observed": "2026-10-24T19:40Z",
+      "scope": "MT Melsungen club page: Spieltag 10 - HBW Balingen-Weilstetten v MT Melsungen, Sat 24 Oct 20:00 local, MEY GENERALBAU ARENA; table - Melsungen 5th (9 games, 11:7 pts); recent: 33-26 v Bergischer HC (17 Oct), 28-22 v Hannover-Burgdorf (3 Oct), lost to Rhein-Neckar Lowen late Sept. Balingen are newly promoted.",
+      "label": "Opel Handball-Bundesliga (official)"
+    },
+    {
+      "id": "legavolley",
+      "publisher": "Lega Pallavolo Serie A (official)",
+      "official": true,
+      "url": "https://www.legavolley.it/calendario/?idCampionato=999",
+      "observed": "2026-10-24T19:45Z",
+      "scope": "SuperLega Credem Banca 2026-27 club roster (confirms Itas Trentino, Cisterna, Sir Susa Scai Perugia, Tinet Prata di Pordenone, Cucine Lube Civitanova, Pallavolo Padova all registered). The fixture table itself did not extract in this environment, so Sunday's pairings stay OLBG-listed only.",
+      "label": "Lega Pallavolo Serie A (official)"
+    },
+    {
+      "id": "olbg-ru-autumn",
+      "url": "https://www.olbg.com/tips/Rugby_Union/25",
+      "publisher": "OLBG (discovery)",
+      "official": false,
+      "observed": "2026-10-24T20:35:00Z",
+      "scope": "Rugby union tips hub: listed Premiership (Quins v Saints) and USA v Australia A fixtures; structure research only.",
+      "label": "OLBG rugby hub (discovery)"
+    }
+  ]
+}

@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Markets · OLBG research desk 99d43605</title>
+<meta name="description" content="Every originated market line with its official inputs, per fixture."><meta name="color-scheme" content="light">
+<style>
+:root{--bg:#f5f6f8;--card:#ffffff;--ink:#14213d;--muted:#5c667a;--line:#e5e8ef;
+--brand:#0b6b4f;--brand-ink:#054a37;--brand-soft:#e6f4ee;--amber:#92400e;--amber-soft:#fdf3e3;
+--red:#b42318;--red-soft:#fdeceb;--navy:#1d3557;--navy-soft:#e9eef7;--radius:12px;
+--shadow:0 1px 2px rgba(16,24,40,.05),0 1px 3px rgba(16,24,40,.08)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--brand-ink);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);
+border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;min-height:60px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:760;color:var(--ink)}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--brand);display:inline-block}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+nav.main{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap}
+nav.main a{padding:7px 10px;border-radius:8px;color:#39435a;font-size:13.5px;font-weight:600}
+nav.main a:hover{background:#f0f2f7;text-decoration:none}
+nav.main a[aria-current="page"]{background:var(--brand-soft);color:var(--brand-ink)}
+.hero{padding:36px 0 6px}
+.eyebrow{margin:0 0 8px;color:var(--brand-ink);font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-.02em}
+.lede{color:var(--muted);max-width:78ch;margin:12px 0 0;font-size:17px}
+.stamp{margin-top:10px;color:var(--muted);font-size:13px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:24px 0 4px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+padding:14px 16px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:27px;letter-spacing:-.02em;line-height:1.1}
+.kpi span{color:var(--muted);font-size:12px;font-weight:650;text-transform:uppercase;letter-spacing:.06em}
+section{margin:34px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+box-shadow:var(--shadow);overflow:hidden;margin:16px 0}
+.pad{padding:18px 20px}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:10px;flex-wrap:wrap}
+h2{margin:0;font-size:22px;letter-spacing:-.015em}
+h3{margin:0 0 6px;font-size:16px}
+.head p{margin:4px 0 0;color:var(--muted);font-size:14px;max-width:86ch}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+caption{text-align:left;padding:12px 16px 0;color:var(--muted);font-size:13px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:#f7f8fb;color:#4a5568;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafbfc}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pick{font-weight:720}
+.match{font-weight:640}
+.sub{display:block;color:var(--muted);font-size:12.5px}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:720;
+letter-spacing:.02em;border:1px solid transparent;white-space:nowrap}
+.badge.high{background:var(--brand-soft);color:var(--brand-ink);border-color:#9fd6bd}
+.badge.medium{background:var(--amber-soft);color:var(--amber);border-color:#f0cd95}
+.badge.low{background:#eef0f4;color:#4a5568;border-color:#dfe3ea}
+.badge.slate{background:var(--navy-soft);color:var(--navy);border-color:#c3cfe0}
+.badge.red{background:var(--red-soft);color:var(--red);border-color:#f2b8b4}
+.badge.amber{background:var(--amber-soft);color:var(--amber);border-color:#f0cd95}
+.badge.outline{background:#fff;border-color:#cbd5e1;color:#39435a}
+.src-stack{display:flex;flex-direction:column;gap:4px;min-width:190px}
+a.src{display:inline-flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;color:var(--brand-ink)}
+a.src .arrow{font-size:11px;color:var(--muted)}
+.grid{display:grid;gap:14px}
+.grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+box-shadow:var(--shadow);padding:16px 18px}
+.tile h3 a{color:var(--ink)}
+.mini{font-size:13px;color:var(--muted)}
+.note{background:#fffbea;border:1px solid #f1e1a5;border-radius:var(--radius);padding:14px 18px;margin:16px 0;font-size:14.5px}
+.note.ok{background:var(--brand-soft);border-color:#9fd6bd}
+.note.bad{background:var(--red-soft);border-color:#f2b8b4}
+.markets{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+box-shadow:var(--shadow);margin:16px 0}
+.markets header{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+table.lines td.idx{width:34%;font-weight:620}
+.kind{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+footer.foot{margin-top:48px;border-top:1px solid var(--line);background:#fff}
+.foot .wrap{padding:26px 20px 40px;color:var(--muted);font-size:13px;display:grid;gap:8px}
+.pred{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brand);
+border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;margin:18px 0}
+.pred .who{font-size:18px;font-weight:760;margin-bottom:6px}
+.pred .body{font-size:16px;line-height:1.65}
+.pred .meta{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+ul.ticks{margin:0;padding-left:18px}
+ul.ticks li{margin:6px 0}
+.callout{border:1px solid var(--line);border-radius:var(--radius);background:#fbfcfe;padding:14px 18px;margin:14px 0;font-size:14.5px}
+</style></head><body>
+<header class="top"><div class="wrap">
+<span class="brand"><span class="dot"></span><span>OLBG research desk<small>session 99d43605 · 2026-10-24</small></span></span>
+<nav class="main" aria-label="Desk"><a href="index.html">Executive summary</a><a href="picks.html">Picks</a><a href="predictions.html">Predictions</a><a href="markets.html" aria-current="page">Markets</a><a href="matches.html">Matches</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="methodology.html">Methodology</a><a href="olbg.html">OLBG research</a><a href="sports.html">All 15 sports</a></nav></div></header>
+<main class="wrap">
+<div class="hero"><p class="eyebrow">Originated lines</p><h1>Markets &mdash; every priced book, shown open-book</h1>
+<p class="lede">Match winner, totals and handicap books per fixture, two-way fair with zero margin added.
+Shares are probabilities implied by our own numbers; the official source of every input is linked on each row.</p></div>
+<div class="markets" id="nhl-lak-njd"><header>
+<span class="match">Los Angeles Kings <span class="mini">v</span> New Jersey Devils</span>
+<span class="badge slate">Ice Hockey</span>
+<span class="mini">NHL &middot; 24 Oct 2026 19:30 UTC</span>
+<span class="badge outline">Pick: New Jersey Devils -267 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner (incl. OT/SO)</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Los Angeles Kings</td>
+<td class="num">+267</td><td class="num">3.667</td>
+<td class="num">27.3%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">New Jersey Devils</td>
+<td class="num">-267</td><td class="num">1.375</td>
+<td class="num">72.7%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Total goals O/U 5.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Under 5.5</td>
+<td class="num">+147</td><td class="num">2.472</td>
+<td class="num">40.4%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Over 5.5</td>
+<td class="num">-147</td><td class="num">1.679</td>
+<td class="num">59.6%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Puck line +/-1.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">New Jersey Devils -1.5</td>
+<td class="num">+176</td><td class="num">2.756</td>
+<td class="num">36.3%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Los Angeles Kings +1.5</td>
+<td class="num">-176</td><td class="num">1.569</td>
+<td class="num">63.7%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="nhl-sjs-bos"><header>
+<span class="match">San Jose Sharks <span class="mini">v</span> Boston Bruins</span>
+<span class="badge slate">Ice Hockey</span>
+<span class="mini">NHL &middot; 24 Oct 2026 23:00 UTC</span>
+<span class="badge outline">Pick: Boston Bruins -175 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner (incl. OT/SO)</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">San Jose Sharks</td>
+<td class="num">+175</td><td class="num">2.750</td>
+<td class="num">36.4%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Boston Bruins</td>
+<td class="num">-175</td><td class="num">1.571</td>
+<td class="num">63.6%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Total goals O/U 5.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Under 5.5</td>
+<td class="num">+132</td><td class="num">2.319</td>
+<td class="num">43.1%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Over 5.5</td>
+<td class="num">-132</td><td class="num">1.758</td>
+<td class="num">56.9%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Puck line +/-1.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Boston Bruins -1.5</td>
+<td class="num">+134</td><td class="num">2.341</td>
+<td class="num">42.7%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">San Jose Sharks +1.5</td>
+<td class="num">-134</td><td class="num">1.746</td>
+<td class="num">57.3%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="nhl-nyr-ott"><header>
+<span class="match">New York Rangers <span class="mini">v</span> Ottawa Senators</span>
+<span class="badge slate">Ice Hockey</span>
+<span class="mini">NHL &middot; 24 Oct 2026 23:00 UTC</span>
+<span class="badge outline">Pick: Ottawa Senators -117 (Low)</span>
+</header><div class="pad"><div class="kind">Match winner (incl. OT/SO)</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">New York Rangers</td>
+<td class="num">+117</td><td class="num">2.167</td>
+<td class="num">46.2%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Ottawa Senators</td>
+<td class="num">-117</td><td class="num">1.857</td>
+<td class="num">53.8%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Total goals O/U 5.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Under 5.5</td>
+<td class="num">-111</td><td class="num">1.905</td>
+<td class="num">52.5%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Over 5.5</td>
+<td class="num">+111</td><td class="num">2.105</td>
+<td class="num">47.5%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Puck line +/-1.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Ottawa Senators -1.5</td>
+<td class="num">+360</td><td class="num">4.597</td>
+<td class="num">21.8%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">New York Rangers +1.5</td>
+<td class="num">-360</td><td class="num">1.278</td>
+<td class="num">78.2%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="nhl-nsh-pit"><header>
+<span class="match">Nashville Predators <span class="mini">v</span> Pittsburgh Penguins</span>
+<span class="badge slate">Ice Hockey</span>
+<span class="mini">NHL &middot; 24 Oct 2026 23:00 UTC</span>
+<span class="badge outline">Pick: Pittsburgh Penguins -107 (Low)</span>
+</header><div class="pad"><div class="kind">Match winner (incl. OT/SO)</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Nashville Predators</td>
+<td class="num">+107</td><td class="num">2.067</td>
+<td class="num">48.4%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Pittsburgh Penguins</td>
+<td class="num">-107</td><td class="num">1.938</td>
+<td class="num">51.6%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Total goals O/U 5.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Under 5.5</td>
+<td class="num">+156</td><td class="num">2.560</td>
+<td class="num">39.1%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Over 5.5</td>
+<td class="num">-156</td><td class="num">1.641</td>
+<td class="num">60.9%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Puck line +/-1.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Pittsburgh Penguins -1.5</td>
+<td class="num">+215</td><td class="num">3.148</td>
+<td class="num">31.8%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Nashville Predators +1.5</td>
+<td class="num">-215</td><td class="num">1.466</td>
+<td class="num">68.2%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="nhl-buf-wsh"><header>
+<span class="match">Buffalo Sabres <span class="mini">v</span> Washington Capitals</span>
+<span class="badge slate">Ice Hockey</span>
+<span class="mini">NHL &middot; 24 Oct 2026 23:00 UTC</span>
+<span class="badge outline">Pick: Washington Capitals -156 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner (incl. OT/SO)</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Buffalo Sabres</td>
+<td class="num">+156</td><td class="num">2.556</td>
+<td class="num">39.1%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Washington Capitals</td>
+<td class="num">-156</td><td class="num">1.643</td>
+<td class="num">60.9%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Total goals O/U 5.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Under 5.5</td>
+<td class="num">+174</td><td class="num">2.740</td>
+<td class="num">36.5%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Over 5.5</td>
+<td class="num">-174</td><td class="num">1.575</td>
+<td class="num">63.5%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Puck line +/-1.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Washington Capitals -1.5</td>
+<td class="num">+192</td><td class="num">2.915</td>
+<td class="num">34.3%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Buffalo Sabres +1.5</td>
+<td class="num">-192</td><td class="num">1.522</td>
+<td class="num">65.7%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="nhl-vgk-cbj"><header>
+<span class="match">Vegas Golden Knights <span class="mini">v</span> Columbus Blue Jackets</span>
+<span class="badge slate">Ice Hockey</span>
+<span class="mini">NHL &middot; 24 Oct 2026 23:00 UTC</span>
+<span class="badge outline">Pick: Vegas Golden Knights -233 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner (incl. OT/SO)</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Vegas Golden Knights</td>
+<td class="num">-233</td><td class="num">1.429</td>
+<td class="num">70.0%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Columbus Blue Jackets</td>
+<td class="num">+233</td><td class="num">3.333</td>
+<td class="num">30.0%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Total goals O/U 5.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Under 5.5</td>
+<td class="num">+169</td><td class="num">2.688</td>
+<td class="num">37.2%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Over 5.5</td>
+<td class="num">-169</td><td class="num">1.593</td>
+<td class="num">62.8%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Puck line +/-1.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Columbus Blue Jackets -1.5</td>
+<td class="num">+525</td><td class="num">6.247</td>
+<td class="num">16.0%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Vegas Golden Knights +1.5</td>
+<td class="num">-525</td><td class="num">1.191</td>
+<td class="num">84.0%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="nhl-car-stl"><header>
+<span class="match">Carolina Hurricanes <span class="mini">v</span> St. Louis Blues</span>
+<span class="badge slate">Ice Hockey</span>
+<span class="mini">NHL &middot; 24 Oct 2026 23:00 UTC</span>
+<span class="badge outline">Pick: Carolina Hurricanes -167 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner (incl. OT/SO)</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Carolina Hurricanes</td>
+<td class="num">-167</td><td class="num">1.600</td>
+<td class="num">62.5%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">St. Louis Blues</td>
+<td class="num">+167</td><td class="num">2.667</td>
+<td class="num">37.5%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Total goals O/U 5.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Under 5.5</td>
+<td class="num">+186</td><td class="num">2.857</td>
+<td class="num">35.0%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Over 5.5</td>
+<td class="num">-186</td><td class="num">1.538</td>
+<td class="num">65.0%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Puck line +/-1.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">St. Louis Blues -1.5</td>
+<td class="num">+339</td><td class="num">4.393</td>
+<td class="num">22.8%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Carolina Hurricanes +1.5</td>
+<td class="num">-339</td><td class="num">1.295</td>
+<td class="num">77.2%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="nhl-tor-edm"><header>
+<span class="match">Toronto Maple Leafs <span class="mini">v</span> Edmonton Oilers</span>
+<span class="badge slate">Ice Hockey</span>
+<span class="mini">NHL &middot; 24 Oct 2026 23:00 UTC</span>
+<span class="badge outline">Pick: Edmonton Oilers -250 (High)</span>
+</header><div class="pad"><div class="kind">Match winner (incl. OT/SO)</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Toronto Maple Leafs</td>
+<td class="num">+250</td><td class="num">3.500</td>
+<td class="num">28.6%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Edmonton Oilers</td>
+<td class="num">-250</td><td class="num">1.400</td>
+<td class="num">71.4%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Total goals O/U 5.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Under 5.5</td>
+<td class="num">+290</td><td class="num">3.901</td>
+<td class="num">25.6%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Over 5.5</td>
+<td class="num">-290</td><td class="num">1.345</td>
+<td class="num">74.4%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Puck line +/-1.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Edmonton Oilers -1.5</td>
+<td class="num">+175</td><td class="num">2.755</td>
+<td class="num">36.3%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Toronto Maple Leafs +1.5</td>
+<td class="num">-175</td><td class="num">1.570</td>
+<td class="num">63.7%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="nhl-tbl-uta"><header>
+<span class="match">Tampa Bay Lightning <span class="mini">v</span> Utah Mammoth</span>
+<span class="badge slate">Ice Hockey</span>
+<span class="mini">NHL &middot; 25 Oct 2026 01:00 UTC</span>
+<span class="badge outline">Pick: Tampa Bay Lightning -120 (Low)</span>
+</header><div class="pad"><div class="kind">Match winner (incl. OT/SO)</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Tampa Bay Lightning</td>
+<td class="num">-120</td><td class="num">1.833</td>
+<td class="num">54.5%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Utah Mammoth</td>
+<td class="num">+120</td><td class="num">2.200</td>
+<td class="num">45.5%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Total goals O/U 5.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Under 5.5</td>
+<td class="num">+188</td><td class="num">2.877</td>
+<td class="num">34.8%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Over 5.5</td>
+<td class="num">-188</td><td class="num">1.533</td>
+<td class="num">65.2%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Puck line +/-1.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Utah Mammoth -1.5</td>
+<td class="num">+267</td><td class="num">3.668</td>
+<td class="num">27.3%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Tampa Bay Lightning +1.5</td>
+<td class="num">-267</td><td class="num">1.375</td>
+<td class="num">72.7%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="nhl-det-cgy"><header>
+<span class="match">Detroit Red Wings <span class="mini">v</span> Calgary Flames</span>
+<span class="badge slate">Ice Hockey</span>
+<span class="mini">NHL &middot; 25 Oct 2026 02:00 UTC</span>
+<span class="badge outline">Pick: Detroit Red Wings -120 (Low)</span>
+</header><div class="pad"><div class="kind">Match winner (incl. OT/SO)</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Detroit Red Wings</td>
+<td class="num">-120</td><td class="num">1.833</td>
+<td class="num">54.5%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Calgary Flames</td>
+<td class="num">+120</td><td class="num">2.200</td>
+<td class="num">45.5%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Total goals O/U 5.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Under 5.5</td>
+<td class="num">+130</td><td class="num">2.299</td>
+<td class="num">43.5%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Over 5.5</td>
+<td class="num">-130</td><td class="num">1.770</td>
+<td class="num">56.5%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Puck line +/-1.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Calgary Flames -1.5</td>
+<td class="num">+549</td><td class="num">6.492</td>
+<td class="num">15.4%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Detroit Red Wings +1.5</td>
+<td class="num">-549</td><td class="num">1.182</td>
+<td class="num">84.6%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="nhl-min-sea"><header>
+<span class="match">Minnesota Wild <span class="mini">v</span> Seattle Kraken</span>
+<span class="badge slate">Ice Hockey</span>
+<span class="mini">NHL &middot; 25 Oct 2026 02:00 UTC</span>
+<span class="badge outline">Pick: Seattle Kraken -131 (Low)</span>
+</header><div class="pad"><div class="kind">Match winner (incl. OT/SO)</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Minnesota Wild</td>
+<td class="num">+131</td><td class="num">2.312</td>
+<td class="num">43.2%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Seattle Kraken</td>
+<td class="num">-131</td><td class="num">1.762</td>
+<td class="num">56.8%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Total goals O/U 5.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Under 5.5</td>
+<td class="num">+157</td><td class="num">2.570</td>
+<td class="num">38.9%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Over 5.5</td>
+<td class="num">-157</td><td class="num">1.637</td>
+<td class="num">61.1%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Puck line +/-1.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Seattle Kraken -1.5</td>
+<td class="num">+253</td><td class="num">3.533</td>
+<td class="num">28.3%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Minnesota Wild +1.5</td>
+<td class="num">-253</td><td class="num">1.395</td>
+<td class="num">71.7%</td><td><div class="src-stack smals"><a class="src" href="https://api-web.nhle.com/v1/score/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (official web API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="nba-mia-cha"><header>
+<span class="match">Miami Heat <span class="mini">v</span> Charlotte Hornets</span>
+<span class="badge slate">Basketball</span>
+<span class="mini">NBA &middot; 24 Oct 2026 22:00 UTC</span>
+<span class="badge outline">Pick: Charlotte Hornets -200 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Miami Heat</td>
+<td class="num">+200</td><td class="num">3.000</td>
+<td class="num">33.3%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Charlotte Hornets</td>
+<td class="num">-200</td><td class="num">1.500</td>
+<td class="num">66.7%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">Team points-per-game lines need official scoring inputs, which this session&#x27;s read did not capture.</span><span class="badge amber">Withheld: total</span> <span class="mini">No official team scoring rates captured; the market is left blank rather than guessed.</span></div></div><div class="markets" id="nba-bkn-cle"><header>
+<span class="match">Brooklyn Nets <span class="mini">v</span> Cleveland Cavaliers</span>
+<span class="badge slate">Basketball</span>
+<span class="mini">NBA &middot; 24 Oct 2026 23:30 UTC</span>
+<span class="badge outline">Pick: Cleveland Cavaliers -104 (Low)</span>
+</header><div class="pad"><div class="kind">Match winner</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Brooklyn Nets</td>
+<td class="num">+104</td><td class="num">2.041</td>
+<td class="num">49.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Cleveland Cavaliers</td>
+<td class="num">-104</td><td class="num">1.961</td>
+<td class="num">51.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">No team scoring inputs captured.</span><span class="badge amber">Withheld: total</span> <span class="mini">No team scoring inputs captured.</span></div></div><div class="markets" id="nba-mil-phi"><header>
+<span class="match">Milwaukee Bucks <span class="mini">v</span> Philadelphia 76ers</span>
+<span class="badge slate">Basketball</span>
+<span class="mini">NBA &middot; 24 Oct 2026 23:30 UTC</span>
+<span class="badge outline">Pick: Philadelphia 76ers -400 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Milwaukee Bucks</td>
+<td class="num">+400</td><td class="num">5.000</td>
+<td class="num">20.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Philadelphia 76ers</td>
+<td class="num">-400</td><td class="num">1.250</td>
+<td class="num">80.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">No team scoring inputs captured.</span><span class="badge amber">Withheld: total</span> <span class="mini">No team scoring inputs captured.</span></div></div><div class="markets" id="nba-sas-dal"><header>
+<span class="match">San Antonio Spurs <span class="mini">v</span> Dallas Mavericks</span>
+<span class="badge slate">Basketball</span>
+<span class="mini">NBA &middot; 25 Oct 2026 00:00 UTC</span>
+<span class="badge outline">Pick: Dallas Mavericks -200 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">San Antonio Spurs</td>
+<td class="num">+200</td><td class="num">3.000</td>
+<td class="num">33.3%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Dallas Mavericks</td>
+<td class="num">-200</td><td class="num">1.500</td>
+<td class="num">66.7%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">No team scoring inputs captured.</span><span class="badge amber">Withheld: total</span> <span class="mini">No team scoring inputs captured.</span></div></div><div class="markets" id="nba-was-chi"><header>
+<span class="match">Washington Wizards <span class="mini">v</span> Chicago Bulls</span>
+<span class="badge slate">Basketball</span>
+<span class="mini">NBA &middot; 25 Oct 2026 00:00 UTC</span>
+<span class="badge outline">Pick: Chicago Bulls -104 (Low)</span>
+</header><div class="pad"><div class="kind">Match winner</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Washington Wizards</td>
+<td class="num">+104</td><td class="num">2.041</td>
+<td class="num">49.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Chicago Bulls</td>
+<td class="num">-104</td><td class="num">1.961</td>
+<td class="num">51.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">No team scoring inputs captured.</span><span class="badge amber">Withheld: total</span> <span class="mini">No team scoring inputs captured.</span></div></div><div class="markets" id="nba-hou-atl"><header>
+<span class="match">Houston Rockets <span class="mini">v</span> Atlanta Hawks</span>
+<span class="badge slate">Basketball</span>
+<span class="mini">NBA &middot; 25 Oct 2026 00:30 UTC</span>
+<span class="badge outline">Pick: Atlanta Hawks -104 (Low)</span>
+</header><div class="pad"><div class="kind">Match winner</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Houston Rockets</td>
+<td class="num">+104</td><td class="num">2.041</td>
+<td class="num">49.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Atlanta Hawks</td>
+<td class="num">-104</td><td class="num">1.961</td>
+<td class="num">51.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">No team scoring inputs captured.</span><span class="badge amber">Withheld: total</span> <span class="mini">No team scoring inputs captured.</span></div></div><div class="markets" id="nba-nop-den"><header>
+<span class="match">New Orleans Pelicans <span class="mini">v</span> Denver Nuggets</span>
+<span class="badge slate">Basketball</span>
+<span class="mini">NBA &middot; 25 Oct 2026 01:00 UTC</span>
+<span class="badge outline">Pick: Denver Nuggets -133 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">New Orleans Pelicans</td>
+<td class="num">+133</td><td class="num">2.333</td>
+<td class="num">42.9%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Denver Nuggets</td>
+<td class="num">-133</td><td class="num">1.750</td>
+<td class="num">57.1%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">No team scoring inputs captured.</span><span class="badge amber">Withheld: total</span> <span class="mini">No team scoring inputs captured.</span></div></div><div class="markets" id="nba-gsw-phx"><header>
+<span class="match">Golden State Warriors <span class="mini">v</span> Phoenix Suns</span>
+<span class="badge slate">Basketball</span>
+<span class="mini">NBA &middot; 25 Oct 2026 02:00 UTC</span>
+<span class="badge outline">Pick: Phoenix Suns -133 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Golden State Warriors</td>
+<td class="num">+133</td><td class="num">2.333</td>
+<td class="num">42.9%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Phoenix Suns</td>
+<td class="num">-133</td><td class="num">1.750</td>
+<td class="num">57.1%</td><td><div class="src-stack smals"><a class="src" href="https://www.nba.com/games?date=2026-10-24" target="_blank" rel="noopener noreferrer">NBA (official site)<span class="arrow">&#8599;</span></a><a class="src" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_30PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">No team scoring inputs captured.</span><span class="badge amber">Withheld: total</span> <span class="mini">No team scoring inputs captured.</span></div></div><div class="markets" id="mlb-tb-mil"><header>
+<span class="match">Tampa Bay Rays <span class="mini">v</span> Milwaukee Brewers</span>
+<span class="badge slate">Baseball</span>
+<span class="mini">MLB -- World Series 2026 &middot; 25 Oct 2026 00:00 UTC</span>
+<span class="badge outline">Pick: Milwaukee Brewers -114 (Low)</span>
+</header><div class="pad"><div class="kind">Winner</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Tampa Bay Rays</td>
+<td class="num">+114</td><td class="num">2.136</td>
+<td class="num">46.8%</td><td><div class="src-stack smals"><a class="src" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-25&amp;hydrate=team,linescore,record" target="_blank" rel="noopener noreferrer">MLB (official Stats API)<span class="arrow">&#8599;</span></a><a class="src" href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason&amp;hydrate=team" target="_blank" rel="noopener noreferrer">MLB (official Stats API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Milwaukee Brewers</td>
+<td class="num">-114</td><td class="num">1.880</td>
+<td class="num">53.2%</td><td><div class="src-stack smals"><a class="src" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-25&amp;hydrate=team,linescore,record" target="_blank" rel="noopener noreferrer">MLB (official Stats API)<span class="arrow">&#8599;</span></a><a class="src" href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason&amp;hydrate=team" target="_blank" rel="noopener noreferrer">MLB (official Stats API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Total runs O/U 8.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Under 8.5</td>
+<td class="num">+105</td><td class="num">2.047</td>
+<td class="num">48.9%</td><td><div class="src-stack smals"><a class="src" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-25&amp;hydrate=team,linescore,record" target="_blank" rel="noopener noreferrer">MLB (official Stats API)<span class="arrow">&#8599;</span></a><a class="src" href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason&amp;hydrate=team" target="_blank" rel="noopener noreferrer">MLB (official Stats API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Over 8.5</td>
+<td class="num">-105</td><td class="num">1.955</td>
+<td class="num">51.1%</td><td><div class="src-stack smals"><a class="src" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-25&amp;hydrate=team,linescore,record" target="_blank" rel="noopener noreferrer">MLB (official Stats API)<span class="arrow">&#8599;</span></a><a class="src" href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason&amp;hydrate=team" target="_blank" rel="noopener noreferrer">MLB (official Stats API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class="pad"><div class="kind">Run line +/-1.5</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Milwaukee Brewers -1.5</td>
+<td class="num">+185</td><td class="num">2.850</td>
+<td class="num">35.1%</td><td><div class="src-stack smals"><a class="src" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-25&amp;hydrate=team,linescore,record" target="_blank" rel="noopener noreferrer">MLB (official Stats API)<span class="arrow">&#8599;</span></a><a class="src" href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason&amp;hydrate=team" target="_blank" rel="noopener noreferrer">MLB (official Stats API)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Tampa Bay Rays +1.5</td>
+<td class="num">-185</td><td class="num">1.540</td>
+<td class="num">64.9%</td><td><div class="src-stack smals"><a class="src" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-25&amp;hydrate=team,linescore,record" target="_blank" rel="noopener noreferrer">MLB (official Stats API)<span class="arrow">&#8599;</span></a><a class="src" href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason&amp;hydrate=team" target="_blank" rel="noopener noreferrer">MLB (official Stats API)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="ten-fonseca-rinderknech"><header>
+<span class="match">Joao Fonseca <span class="mini">v</span> Arthur Rinderknech</span>
+<span class="badge slate">Tennis</span>
+<span class="mini">ATP 500 Basel &middot; 25 Oct 2026 12:00 UTC</span>
+<span class="badge outline">Pick: Joao Fonseca -200 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Joao Fonseca</td>
+<td class="num">-200</td><td class="num">1.500</td>
+<td class="num">66.7%</td><td><div class="src-stack smals"><a class="src" href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener noreferrer">ATP Tour (official live scores)<span class="arrow">&#8599;</span></a><a class="src" href="https://www.atptour.com/en/news" target="_blank" rel="noopener noreferrer">ATP Tour (official news)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Arthur Rinderknech</td>
+<td class="num">+200</td><td class="num">3.000</td>
+<td class="num">33.3%</td><td><div class="src-stack smals"><a class="src" href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener noreferrer">ATP Tour (official live scores)<span class="arrow">&#8599;</span></a><a class="src" href="https://www.atptour.com/en/news" target="_blank" rel="noopener noreferrer">ATP Tour (official news)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">Official set/spread ratings could not be read from atptour.com this session.</span><span class="badge amber">Withheld: total</span> <span class="mini">No official serve/return point rates captured; total games left blank.</span></div></div><div class="markets" id="ten-mensik-aliassime"><header>
+<span class="match">Jakub Mensik <span class="mini">v</span> Felix Auger-Aliassime</span>
+<span class="badge slate">Tennis</span>
+<span class="mini">ATP 500 Basel &middot; 25 Oct 2026 14:30 UTC</span>
+<span class="badge outline">Pick: Jakub Mensik -104 (Low)</span>
+</header><div class="pad"><div class="kind">Match winner &middot; estimate</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Jakub Mensik</td>
+<td class="num">-104</td><td class="num">1.961</td>
+<td class="num">51.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener noreferrer">ATP Tour (official live scores)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Felix Auger-Aliassime</td>
+<td class="num">+104</td><td class="num">2.041</td>
+<td class="num">49.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener noreferrer">ATP Tour (official live scores)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">No official spread ratings captured.</span><span class="badge amber">Withheld: total</span> <span class="mini">No official point rates captured.</span></div></div><div class="markets" id="darts-rock-clayton"><header>
+<span class="match">Josh Rock <span class="mini">v</span> Jonny Clayton</span>
+<span class="badge slate">Darts</span>
+<span class="mini">European Championship (PDC) &middot; 25 Oct 2026 11:00 UTC</span>
+<span class="badge outline">Pick: Josh Rock -200 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Josh Rock</td>
+<td class="num">-200</td><td class="num">1.500</td>
+<td class="num">66.7%</td><td><div class="src-stack smals"><a class="src" href="https://pdpa.co.uk/event/european-championship-2026/" target="_blank" rel="noopener noreferrer">PDPA / PDC event listing (official players&#x27; association)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Jonny Clayton</td>
+<td class="num">+200</td><td class="num">3.000</td>
+<td class="num">33.3%</td><td><div class="src-stack smals"><a class="src" href="https://pdpa.co.uk/event/european-championship-2026/" target="_blank" rel="noopener noreferrer">PDPA / PDC event listing (official players&#x27; association)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">Leg-spread needs official 180/three-dart averages not captured this session.</span><span class="badge amber">Withheld: total</span> <span class="mini">Total legs not priced without official leg-rate inputs.</span></div></div><div class="markets" id="darts-aspinall-doets"><header>
+<span class="match">Nathan Aspinall <span class="mini">v</span> Kevin Doets</span>
+<span class="badge slate">Darts</span>
+<span class="mini">European Championship (PDC) &middot; 25 Oct 2026 11:30 UTC</span>
+<span class="badge outline">Pick: Nathan Aspinall -140 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Nathan Aspinall</td>
+<td class="num">-140</td><td class="num">1.714</td>
+<td class="num">58.3%</td><td><div class="src-stack smals"><a class="src" href="https://pdpa.co.uk/event/european-championship-2026/" target="_blank" rel="noopener noreferrer">PDPA / PDC event listing (official players&#x27; association)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Kevin Doets</td>
+<td class="num">+140</td><td class="num">2.400</td>
+<td class="num">41.7%</td><td><div class="src-stack smals"><a class="src" href="https://pdpa.co.uk/event/european-championship-2026/" target="_blank" rel="noopener noreferrer">PDPA / PDC event listing (official players&#x27; association)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">No official scoring averages captured.</span><span class="badge amber">Withheld: total</span> <span class="mini">No official leg rates captured.</span></div></div><div class="markets" id="darts-ratajski-schindler"><header>
+<span class="match">Krzysztof Ratajski <span class="mini">v</span> Martin Schindler</span>
+<span class="badge slate">Darts</span>
+<span class="mini">European Championship (PDC) &middot; 25 Oct 2026 12:00 UTC</span>
+<span class="badge outline">Pick: Krzysztof Ratajski -533 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Krzysztof Ratajski</td>
+<td class="num">-533</td><td class="num">1.188</td>
+<td class="num">84.2%</td><td><div class="src-stack smals"><a class="src" href="https://pdpa.co.uk/event/european-championship-2026/" target="_blank" rel="noopener noreferrer">PDPA / PDC event listing (official players&#x27; association)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Martin Schindler</td>
+<td class="num">+533</td><td class="num">6.333</td>
+<td class="num">15.8%</td><td><div class="src-stack smals"><a class="src" href="https://pdpa.co.uk/event/european-championship-2026/" target="_blank" rel="noopener noreferrer">PDPA / PDC event listing (official players&#x27; association)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">No official scoring averages captured.</span><span class="badge amber">Withheld: total</span> <span class="mini">No official leg rates captured.</span></div></div><div class="markets" id="darts-littler-wattimena"><header>
+<span class="match">Luke Littler <span class="mini">v</span> Jermaine Wattimena</span>
+<span class="badge slate">Darts</span>
+<span class="mini">European Championship (PDC) &middot; 25 Oct 2026 12:30 UTC</span>
+<span class="badge outline">Pick: Luke Littler -800 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Luke Littler</td>
+<td class="num">-800</td><td class="num">1.125</td>
+<td class="num">88.9%</td><td><div class="src-stack smals"><a class="src" href="https://pdpa.co.uk/event/european-championship-2026/" target="_blank" rel="noopener noreferrer">PDPA / PDC event listing (official players&#x27; association)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Jermaine Wattimena</td>
+<td class="num">+800</td><td class="num">9.000</td>
+<td class="num">11.1%</td><td><div class="src-stack smals"><a class="src" href="https://pdpa.co.uk/event/european-championship-2026/" target="_blank" rel="noopener noreferrer">PDPA / PDC event listing (official players&#x27; association)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">No official scoring averages captured.</span><span class="badge amber">Withheld: total</span> <span class="mini">No official leg rates captured.</span></div></div><div class="markets" id="ru-autumn-sco-usa"><header>
+<span class="match">Scotland <span class="mini">v</span> USA</span>
+<span class="badge slate">Rugby Union</span>
+<span class="mini">Autumn Nations Series 2026 &middot; 01 Nov 2026 17:30 UTC</span>
+<span class="badge outline">Pick: Scotland -525 (Low)</span>
+</header><div class="pad"><div class="kind">Match winner &middot; estimate</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Scotland</td>
+<td class="num">-525</td><td class="num">1.190</td>
+<td class="num">84.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.olbg.com/tips/Rugby_Union/25" target="_blank" rel="noopener noreferrer">OLBG rugby hub (discovery)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">USA</td>
+<td class="num">+525</td><td class="num">6.250</td>
+<td class="num">16.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.olbg.com/tips/Rugby_Union/25" target="_blank" rel="noopener noreferrer">OLBG rugby hub (discovery)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">Point-spread needs official world-ranking scores for both sides; the ranking read did not resolve.</span></div></div><div class="markets" id="ru-connacht-edinburgh"><header>
+<span class="match">Connacht <span class="mini">v</span> Edinburgh</span>
+<span class="badge slate">Rugby Union</span>
+<span class="mini">URC 2026-27 &middot; 25 Oct 2026 15:00 UTC</span>
+<span class="badge outline">Pick: Connacht -122 (Low)</span>
+</header><div class="pad"><div class="kind">Match winner &middot; estimate</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Connacht</td>
+<td class="num">-122</td><td class="num">1.818</td>
+<td class="num">55.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.unitedrugby.com/latest/match-preview-2/a-relentless-rivalry-and-a-new-home-for-ospreys-round-4-preview/" target="_blank" rel="noopener noreferrer">BKT United Rugby Championship (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Edinburgh</td>
+<td class="num">+122</td><td class="num">2.222</td>
+<td class="num">45.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.unitedrugby.com/latest/match-preview-2/a-relentless-rivalry-and-a-new-home-for-ospreys-round-4-preview/" target="_blank" rel="noopener noreferrer">BKT United Rugby Championship (official)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="rlwc-nz-cook"><header>
+<span class="match">New Zealand <span class="mini">v</span> Cook Islands</span>
+<span class="badge slate">Rugby League</span>
+<span class="mini">Women&#x27;s Rugby League World Cup &middot; 25 Oct 2026 21:00 UTC</span>
+<span class="badge outline">Pick: New Zealand -144 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner (official pool-order read)</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">New Zealand</td>
+<td class="num">-144</td><td class="num">1.695</td>
+<td class="num">59.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.nrl.com/draw/?competition=131&amp;round=2&amp;season=2026" target="_blank" rel="noopener noreferrer">NRL (official RLWC draw)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Cook Islands</td>
+<td class="num">+144</td><td class="num">2.439</td>
+<td class="num">41.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.nrl.com/draw/?competition=131&amp;round=2&amp;season=2026" target="_blank" rel="noopener noreferrer">NRL (official RLWC draw)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="rlwc-aus-fiji"><header>
+<span class="match">Australia <span class="mini">v</span> Fiji</span>
+<span class="badge slate">Rugby League</span>
+<span class="mini">Men&#x27;s Rugby League World Cup &middot; 25 Oct 2026 23:30 UTC</span>
+<span class="badge outline">Pick: Fiji -104 (Low)</span>
+</header><div class="pad"><div class="kind">Match winner (official pool-order read)</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Australia</td>
+<td class="num">+104</td><td class="num">2.041</td>
+<td class="num">49.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.nrl.com/draw/?competition=131&amp;round=2&amp;season=2026" target="_blank" rel="noopener noreferrer">NRL (official RLWC draw)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Fiji</td>
+<td class="num">-104</td><td class="num">1.961</td>
+<td class="num">51.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.nrl.com/draw/?competition=131&amp;round=2&amp;season=2026" target="_blank" rel="noopener noreferrer">NRL (official RLWC draw)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="cricket-pak-eng-t2"><header>
+<span class="match">Pakistan <span class="mini">v</span> England</span>
+<span class="badge slate">Cricket</span>
+<span class="mini">Pakistan v England T20 series 2026 &middot; 25 Oct 2026 13:30 UTC</span>
+<span class="badge outline">Pick: Pakistan -400 (Medium)</span>
+</header><div class="pad"><div class="kind">Match winner (2-0 series read, shrunk)</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Pakistan</td>
+<td class="num">-400</td><td class="num">1.250</td>
+<td class="num">80.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.pcb.com.pk/404page.html" target="_blank" rel="noopener noreferrer">Pakistan Cricket Board (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">England</td>
+<td class="num">+400</td><td class="num">5.000</td>
+<td class="num">20.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.pcb.com.pk/404page.html" target="_blank" rel="noopener noreferrer">Pakistan Cricket Board (official)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div><div class='pad'><span class="badge amber">Withheld: handicap</span> <span class="mini">No official margin/runs market inputs captured.</span><span class="badge amber">Withheld: total</span> <span class="mini">No innings-rate inputs captured.</span></div></div><div class="markets" id="hb-gummersbach-melsungen"><header>
+<span class="match">VfL Gummersbach <span class="mini">v</span> MT Melsungen</span>
+<span class="badge slate">Handball</span>
+<span class="mini">Handball-Bundesliga &middot; 29 Oct 2026 18:30 UTC</span>
+<span class="badge outline">Pick: VfL Gummersbach -122 (Low)</span>
+</header><div class="pad"><div class="kind">Match winner &middot; estimate</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">VfL Gummersbach</td>
+<td class="num">-122</td><td class="num">1.818</td>
+<td class="num">55.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.opel-hbl.de/de/team/MT%20Melsungen/feb41b46-3952-11ef-9df6-af5c55c3771d" target="_blank" rel="noopener noreferrer">Opel Handball-Bundesliga (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">MT Melsungen</td>
+<td class="num">+212</td><td class="num">3.125</td>
+<td class="num">32.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.opel-hbl.de/de/team/MT%20Melsungen/feb41b46-3952-11ef-9df6-af5c55c3771d" target="_blank" rel="noopener noreferrer">Opel Handball-Bundesliga (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Draw</td>
+<td class="num">+669</td><td class="num">7.692</td>
+<td class="num">13.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.opel-hbl.de/de/team/MT%20Melsungen/feb41b46-3952-11ef-9df6-af5c55c3771d" target="_blank" rel="noopener noreferrer">Opel Handball-Bundesliga (official)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="golf-bermuda-r4"><header>
+<span class="match">Christiaan Bezuidenhout <span class="mini">v</span> Co-leader (official pairing stated as final two-ball)</span>
+<span class="badge slate">Golf</span>
+<span class="mini">PGA TOUR -- Butterfield Bermuda Championship &middot; 25 Oct 2026 14:00 UTC</span>
+<span class="badge outline">Pick: Christiaan Bezuidenhout +138 (Low)</span>
+</header><div class="pad"><div class="kind">Tournament winner (estimate) &middot; estimate</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Christiaan Bezuidenhout</td>
+<td class="num">+138</td><td class="num">2.381</td>
+<td class="num">42.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/leaderboard" target="_blank" rel="noopener noreferrer">PGA TOUR (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Co-leader (field)</td>
+<td class="num">+233</td><td class="num">3.333</td>
+<td class="num">30.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/leaderboard" target="_blank" rel="noopener noreferrer">PGA TOUR (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Steven Fisk</td>
+<td class="num">+525</td><td class="num">6.250</td>
+<td class="num">16.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/leaderboard" target="_blank" rel="noopener noreferrer">PGA TOUR (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Marcus Byrd</td>
+<td class="num">+733</td><td class="num">8.333</td>
+<td class="num">12.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.pgatour.com/tournaments/2026/butterfield-bermuda-championship/R2026528/leaderboard" target="_blank" rel="noopener noreferrer">PGA TOUR (official)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="f1-usgp-quali"><header>
+<span class="match">Max Verstappen <span class="mini">v</span> Rest of field</span>
+<span class="badge slate">Motor Racing</span>
+<span class="mini">Formula 1 -- United States Grand Prix (Austin) &middot; 24 Oct 2026 21:00 UTC</span>
+<span class="badge outline">Pick: Max Verstappen -117 (Low)</span>
+</header><div class="pad"><div class="kind">Pole position (estimate) &middot; estimate</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Max Verstappen</td>
+<td class="num">-117</td><td class="num">1.852</td>
+<td class="num">54.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Lando Norris</td>
+<td class="num">+355</td><td class="num">4.545</td>
+<td class="num">22.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Charles Leclerc</td>
+<td class="num">+614</td><td class="num">7.143</td>
+<td class="num">14.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Oscar Piastri</td>
+<td class="num">+900</td><td class="num">10.000</td>
+<td class="num">10.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 (official)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div><div class="markets" id="f1-usgp-race"><header>
+<span class="match">Max Verstappen <span class="mini">v</span> Rest of field</span>
+<span class="badge slate">Motor Racing</span>
+<span class="mini">Formula 1 -- United States Grand Prix (Austin) &middot; 25 Oct 2026 20:00 UTC</span>
+<span class="badge outline">Pick: Max Verstappen +117 (Low)</span>
+</header><div class="pad"><div class="kind">Race winner (estimate) &middot; estimate</div>
+<div class="table-wrap"><table class="lines"><thead><tr><th>Line</th><th class="num">American</th>
+<th class="num">Decimal</th><th class="num">Share</th><th>Official sources</th></tr></thead><tbody><tr><td class="idx">Max Verstappen</td>
+<td class="num">+117</td><td class="num">2.174</td>
+<td class="num">46.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Lando Norris</td>
+<td class="num">+317</td><td class="num">4.167</td>
+<td class="num">24.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Charles Leclerc</td>
+<td class="num">+525</td><td class="num">6.250</td>
+<td class="num">16.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 (official)<span class="arrow">&#8599;</span></a></div></td></tr><tr><td class="idx">Oscar Piastri</td>
+<td class="num">+614</td><td class="num">7.143</td>
+<td class="num">14.0%</td><td><div class="src-stack smals"><a class="src" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 (official)<span class="arrow">&#8599;</span></a></div></td></tr></tbody></table></div></div></div></main>
+<footer class="foot"><div class="wrap">
+<div><strong>Independently originated research.</strong> This desk is not affiliated with OLBG. Prices are our own fair lines (no overround included), published as estimates for review alongside their official sources.</div>
+<div>Generated Saturday 24 October 2026, 21:00 UTC from the official reads listed on the sources page. Nothing here is a betting recommendation.</div>
+<div><a href="methodology.html">How pricing works</a> · <a href="flagged.html">Flagged for review</a> · <a href="https://github.com/buffedlizard55-lab/OLBG1">Repository</a></div>
+</div></footer></body></html>
