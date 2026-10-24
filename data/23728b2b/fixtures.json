@@ -1,0 +1,1373 @@
+{
+  "captured_at": "2026-10-24T17:56:39Z",
+  "fixtures": [
+    {
+      "id": "vol-civ-pad",
+      "sport": "volleyball",
+      "competition": "SuperLega · round 2",
+      "a": "Cucine Lube Civitanova",
+      "b": "Pallavolo Padova",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "start_label": "",
+      "source": "lega-round2",
+      "extra_sources": [],
+      "facts": [
+        "Civitanova won their opener 3–0 away at Verona.",
+        "Padova lost their home opener 0–3 to Piacenza.",
+        "Official start: 18:00 in Italy on 25 October."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "Opening 3–0 away win",
+        "b": "Opening 0–3 home loss"
+      },
+      "market_note": "Winner, set handicap and exact-set score are priced. A set total is withheld because rally-level data were not captured."
+    },
+    {
+      "id": "vol-pia-mod",
+      "sport": "volleyball",
+      "competition": "SuperLega · round 2",
+      "a": "Gas Sales Bluenergy Piacenza",
+      "b": "Valsa Group Modena",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "start_label": "",
+      "source": "lega-piacenza",
+      "extra_sources": [
+        "lega-round2"
+      ],
+      "facts": [
+        "Piacenza beat Padova 3–0 in round one.",
+        "Modena lost 0–3 to Cisterna in round one.",
+        "Piacenza host at PalabancaSport at 18:00 local."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "Opening 3–0 win",
+        "b": "Opening 0–3 loss"
+      },
+      "market_note": "The ladder covers the result, a 1.5-set handicap and a 3–0 exact score; no unsupported point total is added."
+    },
+    {
+      "id": "vol-tre-cis",
+      "sport": "volleyball",
+      "competition": "SuperLega · round 2",
+      "a": "Itas Trentino",
+      "b": "Cisterna Volley",
+      "start_utc": null,
+      "start_label": "25 Oct · exact official start not captured",
+      "source": "lega-round2",
+      "extra_sources": [],
+      "facts": [
+        "Trentino and Cisterna both won their opening matches 3–0.",
+        "The official round-two article confirms the 25 October card."
+      ],
+      "missing_fields": [
+        "start_utc"
+      ],
+      "flag_ids": [
+        "F-VOL-TIMES"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Both straight-set openers make the total and handicap less robust than the home-win line."
+    },
+    {
+      "id": "vol-per-por",
+      "sport": "volleyball",
+      "competition": "SuperLega · round 2",
+      "a": "Sir Susa Scai Perugia",
+      "b": "Tinet Prata di Pordenone",
+      "start_utc": null,
+      "start_label": "25 Oct · exact official start not captured",
+      "source": "lega-round2",
+      "extra_sources": [],
+      "facts": [
+        "Perugia won their opener 3–2.",
+        "Pordenone won their opener 3–1.",
+        "Both teams therefore played at least four sets in round one."
+      ],
+      "missing_fields": [
+        "start_utc"
+      ],
+      "flag_ids": [
+        "F-VOL-TIMES"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "The primary angle is the set total; winner and set handicap remain secondary research lines."
+    },
+    {
+      "id": "vol-mil-cun",
+      "sport": "volleyball",
+      "competition": "SuperLega · round 2",
+      "a": "Allianz Milano",
+      "b": "Acqua Sant’Anna Cuneo",
+      "start_utc": "2026-10-25T18:00:00Z",
+      "start_label": "",
+      "source": "lega-round2",
+      "extra_sources": [],
+      "facts": [
+        "Milano lost their opener 0–3.",
+        "Cuneo lost their opener 2–3.",
+        "Official start: 19:00 in Italy on 25 October."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "A Cuneo set cushion is preferred to the away result; the over is an alternative, not an accumulator recommendation."
+    },
+    {
+      "id": "ru-osp-dra",
+      "sport": "rugby-union",
+      "competition": "URC · round 4",
+      "a": "Ospreys",
+      "b": "Dragons RFC",
+      "start_utc": "2026-10-24T18:00:00Z",
+      "start_label": "",
+      "source": "urc-teams",
+      "extra_sources": [
+        "urc-table"
+      ],
+      "facts": [
+        "Ospreys won 38–31 at Dragons on 9 October.",
+        "Dragons had nine table points from three matches; Ospreys had six.",
+        "Both matchday squads are named; kick-off is 19:00 UK, 18:00 UTC."
+      ],
+      "missing_fields": [],
+      "flag_ids": [
+        "F-OSPREYS-CUTOFF"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "The recent seven-point derby margin supports a home result more than a large Ospreys handicap; Dragons +7.5 is the alternative."
+    },
+    {
+      "id": "ru-tou-pau",
+      "sport": "rugby-union",
+      "competition": "Top 14 · round 7",
+      "a": "RC Toulon",
+      "b": "Section Paloise",
+      "start_utc": "2026-10-24T19:00:00Z",
+      "start_label": "",
+      "source": "top14-toulon",
+      "extra_sources": [],
+      "facts": [
+        "Toulon are tenth with 12 points; Pau are second with 22.",
+        "Toulon beat Racing 92 29–15 in their latest home league result.",
+        "Official kick-off: 21:00 CEST, 19:00 UTC."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Pau's table position supports a points cushion, while Toulon's home result warns against an aggressive away line."
+    },
+    {
+      "id": "ru-usa-aus",
+      "sport": "rugby-union",
+      "competition": "Australia A tour · non-Test",
+      "a": "USA Eagles",
+      "b": "Australia A",
+      "start_utc": null,
+      "start_label": "24 Oct · Nashville; exact UTC kick-off conflict",
+      "source": "australia-a",
+      "extra_sources": [
+        "usa-schedule",
+        "usa-form"
+      ],
+      "facts": [
+        "Rugby Australia named nine Wallabies in the Australia A matchday 23.",
+        "USA's latest official report ended in a 16–19 loss to Canada.",
+        "Rugby Australia and USA Rugby publish conflicting kick-off times; see Flagged for Review."
+      ],
+      "missing_fields": [
+        "start_utc"
+      ],
+      "flag_ids": [
+        "F-USA-TIME"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Team-strength evidence supports Australia A, but the time conflict and non-Test context rule out High status and a steep handicap."
+    },
+    {
+      "id": "ru-qui-sar",
+      "sport": "rugby-union",
+      "competition": "Gallagher PREM · derby weekend",
+      "a": "Harlequins",
+      "b": "Saracens",
+      "start_utc": "2026-10-25T15:00:00Z",
+      "start_label": "",
+      "source": "quins-saracens",
+      "extra_sources": [],
+      "facts": [
+        "Harlequins won last season's Stoop derby 20–14 and the last two home meetings.",
+        "Marcus Smith scored 22 points on his European return.",
+        "Saracens lost only one of their last four PREM away trips; both teams are named."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Head-to-head and away-form evidence pull in opposite directions, favouring a narrow home result rather than a margin."
+    },
+    {
+      "id": "ru-lr-ubb",
+      "sport": "rugby-union",
+      "competition": "Top 14 · round 7",
+      "a": "Stade Rochelais",
+      "b": "Union Bordeaux-Bègles",
+      "start_utc": "2026-10-25T20:05:00Z",
+      "start_label": "",
+      "source": "top14-rochelle",
+      "extra_sources": [],
+      "facts": [
+        "La Rochelle are fourth with 18 points; Bordeaux are third with 19.",
+        "Official kick-off: 21:05 CET, 20:05 UTC."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "A one-point table gap and home advantage make the +3.5 line preferable to either a confident winner or high total."
+    },
+    {
+      "id": "cr-pak-eng",
+      "sport": "cricket",
+      "competition": "ODI tri-series · match 4",
+      "a": "Pakistan",
+      "b": "England",
+      "start_utc": "2026-10-25T08:00:00Z",
+      "start_label": "",
+      "source": "pcb-third",
+      "extra_sources": [
+        "pcb-england"
+      ],
+      "facts": [
+        "Pakistan beat England by 87 runs on 20 October; Arafat Minhas took 6–40 and scored 59.",
+        "England then lost to Sri Lanka despite scoring 429–4; Harry Brook made 202.",
+        "All matches begin at 13:00 PKT; this fixture is at Gaddafi Stadium, Lahore."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "2–0 in the tri-series; 87-run head-to-head win",
+        "b": "0–2 in the tri-series; 430 conceded in the latest match"
+      },
+      "market_note": "The ladder includes a runs handicap and an Arafat wicket line. No venue total is invented without a fresh Lahore pitch report."
+    },
+    {
+      "id": "cr-indw-zimw",
+      "sport": "cricket",
+      "competition": "Zimbabwe Women in India · 2nd ODI",
+      "a": "India Women",
+      "b": "Zimbabwe Women",
+      "start_utc": "2026-10-25T08:30:00Z",
+      "start_label": "",
+      "source": "bcci-schedule",
+      "extra_sources": [
+        "bcci-first"
+      ],
+      "facts": [
+        "India won the first ODI by nine wickets: Zimbabwe 197 in 49.5 overs, India 200/1 in 27.1.",
+        "Renuka Singh Thakur is ruled out; Jintimani Kalita replaces her.",
+        "Official start: 14:00 IST in Vadodara."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "Nine-wicket first-ODI win with 22.5 overs unused",
+        "b": "197 all out and one wicket taken in the first ODI"
+      },
+      "market_note": "The result and wickets handicap are priced; a match total is withheld without a fresh pitch and weather read."
+    },
+    {
+      "id": "cr-nz-ind",
+      "sport": "cricket",
+      "competition": "India in New Zealand · 3rd T20I",
+      "a": "New Zealand",
+      "b": "India",
+      "start_utc": "2026-10-27T03:00:00Z",
+      "start_label": "",
+      "source": "nzc-fixtures",
+      "extra_sources": [
+        "nzc-results"
+      ],
+      "facts": [
+        "First T20I: New Zealand 225/4, India 230/6 in 19.4 overs.",
+        "Second T20I: New Zealand 180/5, India 181/6 in 19.5 overs.",
+        "Third T20I is at Hnry Stadium, Wellington, at 03:00 UTC on 27 October."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Two successful India chases support the result and match-total angles; the venue change prevents simply projecting the Christchurch scores."
+    },
+    {
+      "id": "da-sch-wat",
+      "sport": "darts",
+      "competition": "European Championship · round 2",
+      "a": "Martin Schindler",
+      "b": "Jermaine Wattimena",
+      "start_utc": null,
+      "start_label": "24 Oct · evening session; individual start not independently captured",
+      "source": "pdc-preview",
+      "extra_sources": [
+        "pdc-day3"
+      ],
+      "facts": [
+        "Wattimena was the 2024 European Championship runner-up.",
+        "Schindler said before the event that he was not in his best phase.",
+        "PDC's Saturday evening session is officially 19:00–23:00 CEST."
+      ],
+      "missing_fields": [
+        "start_utc"
+      ],
+      "flag_ids": [
+        "F-PDC-ACCESS"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Match winner, leg handicap and total legs are reviewed. The direct-page cookie wall keeps exact individual timing out of the dataset."
+    },
+    {
+      "id": "da-asp-lit",
+      "sport": "darts",
+      "competition": "European Championship · round 2",
+      "a": "Nathan Aspinall",
+      "b": "Luke Littler",
+      "start_utc": null,
+      "start_label": "24 Oct · evening session; individual start not independently captured",
+      "source": "pdc-littler",
+      "extra_sources": [
+        "pdc-day3"
+      ],
+      "facts": [
+        "Littler beat William O'Connor 6–3 with a tournament-best 105.05 average.",
+        "Aspinall advanced to the official round-two pairing.",
+        "The match belongs to Saturday's official evening session."
+      ],
+      "missing_fields": [
+        "start_utc"
+      ],
+      "flag_ids": [
+        "F-PDC-ACCESS"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "6–3 opening win and 105.05 average",
+        "b": "Advanced to round two; no comparable average captured"
+      },
+      "market_note": "Littler's winner line is strongest; the leg handicap and total remain lower-confidence derivatives."
+    },
+    {
+      "id": "da-cla-roc",
+      "sport": "darts",
+      "competition": "European Championship · round 2",
+      "a": "Jonny Clayton",
+      "b": "Josh Rock",
+      "start_utc": null,
+      "start_label": "24 Oct · evening session; individual start not independently captured",
+      "source": "pdc-preview",
+      "extra_sources": [
+        "pdc-day3"
+      ],
+      "facts": [
+        "Clayton arrived as Swiss Darts Trophy champion and won his opener 6–3.",
+        "Rock won his opener 6–1.",
+        "The official evening session runs 19:00–23:00 CEST."
+      ],
+      "missing_fields": [
+        "start_utc"
+      ],
+      "flag_ids": [
+        "F-PDC-ACCESS"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Two strong opening wins argue for a narrow winner call and an over-legs alternative, not a heavy favourite."
+    },
+    {
+      "id": "da-pri-bun",
+      "sport": "darts",
+      "competition": "European Championship · quarterfinal listing",
+      "a": "Gerwyn Price",
+      "b": "Stephen Bunting",
+      "start_utc": null,
+      "start_label": "25 Oct · official pairing confirmation outstanding",
+      "source": "pdc-day3",
+      "extra_sources": [],
+      "facts": [
+        "OLBG lists Price–Bunting for 25 October.",
+        "The official page extract still showed Price–Menzies and Bunting–Huybrechts in the afternoon round.",
+        "Official second-round qualification was not captured, so this row is withheld."
+      ],
+      "missing_fields": [
+        "start_utc",
+        "official_pairing"
+      ],
+      "flag_ids": [
+        "F-PRICE-BUNTING"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "No price until the official source confirms both players advanced."
+    },
+    {
+      "id": "bb-tb-mil",
+      "sport": "baseball",
+      "competition": "World Series · Game 2",
+      "a": "Tampa Bay Rays",
+      "b": "Milwaukee Brewers",
+      "start_utc": "2026-10-25T00:00:00Z",
+      "start_label": "",
+      "source": "mlb-schedule",
+      "extra_sources": [
+        "mlb-rasmussen",
+        "mlb-henderson",
+        "mlb-standings"
+      ],
+      "facts": [
+        "Milwaukee won Game 1, 3–2.",
+        "Rasmussen: 2.67 ERA, 0.91 WHIP, 172 innings. Henderson: 2.47 ERA, 0.84 WHIP, 98.1 innings.",
+        "Regular season: Milwaukee 103–59 and 832:618 runs; Tampa Bay 98–64 and 736:650 runs."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "98–64 season; Rasmussen 2.67 ERA",
+        "b": "103–59 season; Henderson 2.47 ERA and Game 1 win"
+      },
+      "market_note": "The main ladder is moneyline, +1.5 runs and 8.5 total. Starting-pitcher evidence makes the total the primary selection."
+    },
+    {
+      "id": "ga-nem-stf",
+      "sport": "gaelic-sports",
+      "competition": "Cork Premier SFC · final",
+      "a": "Nemo Rangers",
+      "b": "St Finbarr’s",
+      "start_utc": "2026-10-25T16:00:00Z",
+      "start_label": "",
+      "source": "cork-final",
+      "extra_sources": [
+        "cork-results"
+      ],
+      "facts": [
+        "Nemo beat Carrigaline 1–15 to 0–16 in the semifinal.",
+        "St Finbarr’s beat Clonakilty 2–12 to 0–16 after scoring 4–23 in the quarterfinal.",
+        "Official final: 16:00 at SuperValu Páirc Uí Chaoimh."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Winner, a 3.5-point alternative and a 35.5-point total are considered; final-specific scoring evidence remains limited."
+    },
+    {
+      "id": "ga-moy-sal",
+      "sport": "gaelic-sports",
+      "competition": "Galway Senior FC · final",
+      "a": "Maigh Cuilinn",
+      "b": "Salthill-Knocknacarra",
+      "start_utc": "2026-10-25T16:00:00Z",
+      "start_label": "",
+      "source": "galway-change",
+      "extra_sources": [
+        "galway-results"
+      ],
+      "facts": [
+        "Salthill won the semifinal replay 3–7 to 1–6 against Corofin.",
+        "Weather warnings moved the final to Sunday at 16:00 in Pearse Stadium.",
+        "A comparable Maigh Cuilinn semifinal score was not captured; no winning margin is priced."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Only a tentative winner and a cautious total appear. The handicap is withheld because one side's current scoreline is missing."
+    },
+    {
+      "id": "ga-eir-kan",
+      "sport": "gaelic-sports",
+      "competition": "Cork Senior A FC · final",
+      "a": "Éire Óg",
+      "b": "Kanturk",
+      "start_utc": "2026-11-01T14:00:00Z",
+      "start_label": "",
+      "source": "cork-fixtures",
+      "extra_sources": [
+        "cork-results"
+      ],
+      "facts": [
+        "Éire Óg advanced 2–16 to 1–16 against Cill na Martra.",
+        "Kanturk beat Carbery Rangers 1–18 to 1–14 in their semifinal.",
+        "Official final: 1 November at 14:00; this supersedes any conflicting discovery date."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Both semifinal scorelines support a points cushion and moderate total more than a confident straight winner."
+    },
+    {
+      "id": "ga-frc-kil",
+      "sport": "gaelic-sports",
+      "competition": "Limerick Senior FC · final",
+      "a": "Fr. Casey’s",
+      "b": "Kildimo/Pallaskenry",
+      "start_utc": "2026-11-01T15:30:00Z",
+      "start_label": "",
+      "source": "limerick-fixtures",
+      "extra_sources": [
+        "limerick-results"
+      ],
+      "facts": [
+        "Fr. Casey’s won their semifinal 3–12 to 1–06 against Monaleen.",
+        "Kildimo/Pallaskenry won 2–16 to 0–20 against Mungret/St Paul’s.",
+        "Official final: 1 November at 15:30 in Mick Neville Park."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Winner, a 2.5-point line and a total are priced with an explicit warning about unequal semifinal match lengths."
+    },
+    {
+      "id": "gr-oaks",
+      "sport": "greyhounds",
+      "competition": "Premier Greyhound Racing Oaks · final",
+      "a": "Six-dog Oaks final",
+      "b": "Dunstall Park",
+      "start_utc": null,
+      "start_label": "24 Oct · final confirmed; exact off time and traps not captured",
+      "source": "gbgb-oaks",
+      "extra_sources": [],
+      "facts": [
+        "Finalists: Signet Nayla, Strike It Skye, Fahrenheit Jess, Holding Hollie, Slingshot Poppy and Ballydoyle Tina.",
+        "Fahrenheit Jess clocked the fastest semifinal, 27.87 (–10); Slingshot Poppy won in 27.90.",
+        "Signet Nayla won her semifinal in 28.35; Strike It Skye finished strongly for second."
+      ],
+      "missing_fields": [
+        "start_utc",
+        "traps"
+      ],
+      "flag_ids": [
+        "F-GREYHOUND-CARD"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Winner and top-two derivatives are priced from official semifinal times. Trap, forecast and exact-time markets stay blank."
+    },
+    {
+      "id": "te-med-bas",
+      "sport": "tennis",
+      "competition": "ATP Almaty · final",
+      "a": "Daniil Medvedev",
+      "b": "Nikoloz Basilashvili",
+      "start_utc": null,
+      "start_label": "25 Oct · official final; exact start not captured",
+      "source": "atp-almaty",
+      "extra_sources": [],
+      "facts": [
+        "Medvedev has a Tour-leading 37 hard-court wins and a 10–1 Almaty record.",
+        "Basilashvili beat Tsitsipas 6–4, 6–7(5), 6–3 for his first final since Doha 2022.",
+        "The official report confirms Sunday's final but does not supply a captured start time."
+      ],
+      "missing_fields": [
+        "start_utc"
+      ],
+      "flag_ids": [
+        "F-TENNIS-TIMES"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "37 hard-court wins and 10–1 at Almaty",
+        "b": "First final since Doha 2022; three-set semifinal"
+      },
+      "market_note": "Winner, straight sets and a 22.5-game total are independently priced; exact start remains blank."
+    },
+    {
+      "id": "te-ryb-fer",
+      "sport": "tennis",
+      "competition": "WTA Ningbo · final",
+      "a": "Elena Rybakina",
+      "b": "Leylah Fernandez",
+      "start_utc": "2026-10-25T09:00:00Z",
+      "start_label": "",
+      "source": "wta-ningbo",
+      "extra_sources": [
+        "wta-ningbo-reaction"
+      ],
+      "facts": [
+        "Rybakina is world number one, leads the head-to-head 3–2 and has lost one set this week.",
+        "Fernandez is world number 30, 11–2 during the Asian Swing, and also won her semifinal 6–3, 7–5.",
+        "The final follows the 14:30 doubles final and is not before 17:00 local; the article's weekday/date typo is flagged."
+      ],
+      "missing_fields": [],
+      "flag_ids": [
+        "F-NINGBO-DATE"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Both semifinal paths support the favourite but not a maximum tier; straight sets and a game total are secondary."
+    },
+    {
+      "id": "te-kru-sin",
+      "sport": "tennis",
+      "competition": "WTA Osaka · final",
+      "a": "Ashlyn Krueger",
+      "b": "Katerina Siniakova",
+      "start_utc": "2026-10-25T04:30:00Z",
+      "start_label": "",
+      "source": "wta-osaka-draw",
+      "extra_sources": [
+        "wta-asian-swing"
+      ],
+      "facts": [
+        "Krueger beat Ann Li 6–4, 6–7(4), 6–3 in the semifinal.",
+        "Siniakova beat Katie Boulter 6–1, 6–4 to reach her first singles final since 2023.",
+        "Official final is not before 13:30 JST on 25 October."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "The winner is nearly a coin flip; a set cushion and game total offer alternatives without forcing a favourite handicap."
+    },
+    {
+      "id": "te-eala-sto",
+      "sport": "tennis",
+      "competition": "WTA Tokyo · round of 32",
+      "a": "Alexandra Eala",
+      "b": "Mika Stojsavljevic",
+      "start_utc": null,
+      "start_label": "26 Oct · draw confirmed; exact start not captured",
+      "source": "wta-tokyo-draw",
+      "extra_sources": [],
+      "facts": [
+        "Eala is the eighth seed and ranked 20 in the official draw.",
+        "Stojsavljevic is listed as a wildcard.",
+        "The official draw confirms the pairing; an order-of-play start was not captured."
+      ],
+      "missing_fields": [
+        "start_utc"
+      ],
+      "flag_ids": [
+        "F-TENNIS-TIMES"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Seed/rank evidence supports the winner and straight-sets derivative, but the missing current-form comparison caps the tier."
+    },
+    {
+      "id": "te-uch-mer",
+      "sport": "tennis",
+      "competition": "WTA Tokyo · round of 32",
+      "a": "Moyuka Uchijima",
+      "b": "Elise Mertens",
+      "start_utc": null,
+      "start_label": "26 Oct · draw confirmed; exact start not captured",
+      "source": "wta-tokyo-draw",
+      "extra_sources": [],
+      "facts": [
+        "Mertens is the fifth seed and ranked 15 in the official draw.",
+        "Uchijima is listed as a home wildcard.",
+        "No exact order-of-play start was captured."
+      ],
+      "missing_fields": [
+        "start_utc"
+      ],
+      "flag_ids": [
+        "F-TENNIS-TIMES"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "The ranking gap supports Mertens, while a straight-sets line and game total are smaller independent derivatives."
+    },
+    {
+      "id": "te-fer-sak",
+      "sport": "tennis",
+      "competition": "WTA Tokyo · round of 32",
+      "a": "Leylah Fernandez",
+      "b": "Himeno Sakatsume",
+      "start_utc": null,
+      "start_label": "26 Oct · draw confirmed; exact start not captured",
+      "source": "wta-tokyo-draw",
+      "extra_sources": [
+        "wta-ningbo"
+      ],
+      "facts": [
+        "Sakatsume is listed as a home wildcard in Tokyo.",
+        "Fernandez arrives after an 11–2 Asian Swing run and the Ningbo final.",
+        "The order-of-play start was not captured."
+      ],
+      "missing_fields": [
+        "start_utc"
+      ],
+      "flag_ids": [
+        "F-TENNIS-TIMES"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Current form supports Fernandez; immediate post-final travel makes the set and game derivatives less confident than the result."
+    },
+    {
+      "id": "mr-usgp",
+      "sport": "motor-racing",
+      "competition": "Formula 1 · United States Grand Prix",
+      "a": "56-lap race at Circuit of the Americas",
+      "b": "Austin",
+      "start_utc": "2026-10-25T20:00:00Z",
+      "start_label": "",
+      "source": "f1-austin",
+      "extra_sources": [
+        "f1-form"
+      ],
+      "facts": [
+        "FP2: Charles Leclerc 1:35.291, Kimi Antonelli +0.042, Max Verstappen +0.189.",
+        "Verstappen arrived after back-to-back wins and had won four of F1's last five Austin races.",
+        "Official race start: 25 October at 20:00 UTC; qualifying had not been completed at the snapshot."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Race winner and podium lines are priced. Pole position is investigated but unpriced because qualifying was still future; practice sessions are not separate matches."
+    },
+    {
+      "id": "hb-mag-kri",
+      "sport": "handball",
+      "competition": "EHF Champions League · group phase",
+      "a": "SC Magdeburg",
+      "b": "HC Kriens-Luzern",
+      "start_utc": null,
+      "start_label": "28 Oct · exact official start not captured",
+      "source": "ehf-standings",
+      "extra_sources": [],
+      "facts": [
+        "Magdeburg are 5–0 with 176:140 goals and a +36 differential.",
+        "Kriens-Luzern are 2–3 with 158:161 goals.",
+        "Official fixture date: 28 October; exact start not captured."
+      ],
+      "missing_fields": [
+        "start_utc"
+      ],
+      "flag_ids": [
+        "F-EHF-TIMES"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Winner, a 3.5-goal handicap and a 59.5 total are derived from the official five-match scoring records."
+    },
+    {
+      "id": "hb-kie-kol",
+      "sport": "handball",
+      "competition": "EHF Champions League · group phase",
+      "a": "Industria Kielce",
+      "b": "Kolstad Håndball",
+      "start_utc": null,
+      "start_label": "28 Oct · exact official start not captured",
+      "source": "ehf-standings",
+      "extra_sources": [],
+      "facts": [
+        "Kielce are 3–2 with 155:153 goals.",
+        "Kolstad are 0–5 with 143:178 goals and a −35 differential.",
+        "Official fixture date: 28 October; exact start not captured."
+      ],
+      "missing_fields": [
+        "start_utc"
+      ],
+      "flag_ids": [
+        "F-EHF-TIMES"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Kielce's modest goal differential limits the handicap even against winless Kolstad; winner and total are separate lines."
+    },
+    {
+      "id": "hb-var-mel",
+      "sport": "handball",
+      "competition": "EHF Champions League · group phase",
+      "a": "HC Vardar 1961",
+      "b": "MT Melsungen",
+      "start_utc": null,
+      "start_label": "28 Oct · exact official start not captured",
+      "source": "ehf-standings",
+      "extra_sources": [],
+      "facts": [
+        "Vardar are 1–4 with 154:158 goals.",
+        "Melsungen are 3–2 with 138:138 goals.",
+        "Official fixture date: 28 October; exact start not captured."
+      ],
+      "missing_fields": [
+        "start_utc"
+      ],
+      "flag_ids": [
+        "F-EHF-TIMES"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Melsungen's record supports the away result, while Vardar's scoring keeps the handicap and total comparatively restrained."
+    },
+    {
+      "id": "hb-gog-spo",
+      "sport": "handball",
+      "competition": "EHF Champions League · group phase",
+      "a": "GOG",
+      "b": "Sporting Clube de Portugal",
+      "start_utc": null,
+      "start_label": "29 Oct · exact official start not captured",
+      "source": "ehf-standings",
+      "extra_sources": [],
+      "facts": [
+        "GOG are 3–1–1 with 178:172 goals.",
+        "Sporting are 4–1–0 with 191:165 goals.",
+        "Official fixture date: 29 October; exact start not captured."
+      ],
+      "missing_fields": [
+        "start_utc"
+      ],
+      "flag_ids": [
+        "F-EHF-TIMES"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "Two high-scoring records support an over alternative, but Sporting's unbeaten status does not justify a large away handicap."
+    },
+    {
+      "id": "hb-fue-par",
+      "sport": "handball",
+      "competition": "EHF Champions League · group phase",
+      "a": "Füchse Berlin",
+      "b": "RK Partizan AdmiralBet",
+      "start_utc": null,
+      "start_label": "29 Oct · exact official start not captured",
+      "source": "ehf-standings",
+      "extra_sources": [],
+      "facts": [
+        "Füchse are 3–2 with 184:172 goals.",
+        "Partizan are 0–1–4 with 148:184 goals and a −36 differential.",
+        "Official fixture date: 29 October; exact start not captured."
+      ],
+      "missing_fields": [
+        "start_utc"
+      ],
+      "flag_ids": [
+        "F-EHF-TIMES"
+      ],
+      "scope": "OLBG-listed",
+      "side_evidence": {},
+      "market_note": "The result, a 3.5-goal line and a 60.5 total reflect both teams' official scoring and conceding rates."
+    },
+    {
+      "id": "hk-lak-njd",
+      "sport": "ice-hockey",
+      "competition": "NHL · regular season",
+      "a": "Los Angeles Kings",
+      "b": "New Jersey Devils",
+      "start_utc": "2026-10-24T19:30:00Z",
+      "start_label": "",
+      "source": "nhl-score",
+      "extra_sources": [],
+      "facts": [
+        "Los Angeles Kings record: 2–4–2. New Jersey Devils record: 6–4–0.",
+        "Jack Hughes has eight assists and Jake Allen four wins for New Jersey.",
+        "Official game state was FUT at the research snapshot."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "2–4–2; Jack Hughes has eight assists and Jake Allen four wins for New Jersey.",
+        "b": "6–4–0; home team listed in the official score feed"
+      },
+      "market_note": "Moneyline and a 1.5-goal puck line are priced. Totals and player props are investigated but left blank because this feed does not supply a common scoring baseline or confirmed goalie/player availability."
+    },
+    {
+      "id": "hk-sjs-bos",
+      "sport": "ice-hockey",
+      "competition": "NHL · regular season",
+      "a": "San Jose Sharks",
+      "b": "Boston Bruins",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_label": "",
+      "source": "nhl-score",
+      "extra_sources": [],
+      "facts": [
+        "San Jose Sharks record: 6–4–1. Boston Bruins record: 8–2–1.",
+        "David Pastrnak has six goals and ten assists; Macklin Celebrini has nine assists for San Jose.",
+        "Official game state was FUT at the research snapshot."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "6–4–1; David Pastrnak has six goals and ten assists; Macklin Celebrini has nine assists for San Jose.",
+        "b": "8–2–1; home team listed in the official score feed"
+      },
+      "market_note": "Moneyline and a 1.5-goal puck line are priced. Totals and player props are investigated but left blank because this feed does not supply a common scoring baseline or confirmed goalie/player availability."
+    },
+    {
+      "id": "hk-nyr-ott",
+      "sport": "ice-hockey",
+      "competition": "NHL · regular season",
+      "a": "New York Rangers",
+      "b": "Ottawa Senators",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_label": "",
+      "source": "nhl-score",
+      "extra_sources": [],
+      "facts": [
+        "New York Rangers record: 7–4–1. Ottawa Senators record: 7–4–0.",
+        "Adam Fox has 14 assists; Linus Ullmark has seven wins for Ottawa.",
+        "Official game state was FUT at the research snapshot."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "7–4–1; Adam Fox has 14 assists; Linus Ullmark has seven wins for Ottawa.",
+        "b": "7–4–0; home team listed in the official score feed"
+      },
+      "market_note": "Moneyline and a 1.5-goal puck line are priced. Totals and player props are investigated but left blank because this feed does not supply a common scoring baseline or confirmed goalie/player availability."
+    },
+    {
+      "id": "hk-nsh-pit",
+      "sport": "ice-hockey",
+      "competition": "NHL · regular season",
+      "a": "Nashville Predators",
+      "b": "Pittsburgh Penguins",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_label": "",
+      "source": "nhl-score",
+      "extra_sources": [],
+      "facts": [
+        "Nashville Predators record: 3–3–3. Pittsburgh Penguins record: 4–6–1.",
+        "Roman Josi has eight assists and Juuse Saros three wins for Nashville.",
+        "Official game state was FUT at the research snapshot."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "3–3–3; Roman Josi has eight assists and Juuse Saros three wins for Nashville.",
+        "b": "4–6–1; home team listed in the official score feed"
+      },
+      "market_note": "Moneyline and a 1.5-goal puck line are priced. Totals and player props are investigated but left blank because this feed does not supply a common scoring baseline or confirmed goalie/player availability."
+    },
+    {
+      "id": "hk-buf-wsh",
+      "sport": "ice-hockey",
+      "competition": "NHL · regular season",
+      "a": "Buffalo Sabres",
+      "b": "Washington Capitals",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_label": "",
+      "source": "nhl-score",
+      "extra_sources": [],
+      "facts": [
+        "Buffalo Sabres record: 4–4–2. Washington Capitals record: 5–4–0.",
+        "Logan Thompson has four wins and Alex Tuch five goals for Washington.",
+        "Official game state was FUT at the research snapshot."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "4–4–2; Logan Thompson has four wins and Alex Tuch five goals for Washington.",
+        "b": "5–4–0; home team listed in the official score feed"
+      },
+      "market_note": "Moneyline and a 1.5-goal puck line are priced. Totals and player props are investigated but left blank because this feed does not supply a common scoring baseline or confirmed goalie/player availability."
+    },
+    {
+      "id": "hk-vgk-cbj",
+      "sport": "ice-hockey",
+      "competition": "NHL · regular season",
+      "a": "Vegas Golden Knights",
+      "b": "Columbus Blue Jackets",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_label": "",
+      "source": "nhl-score",
+      "extra_sources": [],
+      "facts": [
+        "Vegas Golden Knights record: 8–4–0. Columbus Blue Jackets record: 3–5–0.",
+        "Mark Stone has eight goals and Jack Eichel 13 assists for Vegas.",
+        "Official game state was FUT at the research snapshot."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "8–4–0; Mark Stone has eight goals and Jack Eichel 13 assists for Vegas.",
+        "b": "3–5–0; home team listed in the official score feed"
+      },
+      "market_note": "Moneyline and a 1.5-goal puck line are priced. Totals and player props are investigated but left blank because this feed does not supply a common scoring baseline or confirmed goalie/player availability."
+    },
+    {
+      "id": "hk-car-stl",
+      "sport": "ice-hockey",
+      "competition": "NHL · regular season",
+      "a": "Carolina Hurricanes",
+      "b": "St. Louis Blues",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_label": "",
+      "source": "nhl-score",
+      "extra_sources": [],
+      "facts": [
+        "Carolina Hurricanes record: 8–2–2. St. Louis Blues record: 5–4–1.",
+        "Sebastian Aho has seven goals, Jackson Blake ten assists and Pyotr Kochetkov six wins.",
+        "Official game state was FUT at the research snapshot."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "8–2–2; Sebastian Aho has seven goals, Jackson Blake ten assists and Pyotr Kochetkov six wins.",
+        "b": "5–4–1; home team listed in the official score feed"
+      },
+      "market_note": "Moneyline and a 1.5-goal puck line are priced. Totals and player props are investigated but left blank because this feed does not supply a common scoring baseline or confirmed goalie/player availability."
+    },
+    {
+      "id": "hk-tor-edm",
+      "sport": "ice-hockey",
+      "competition": "NHL · regular season",
+      "a": "Toronto Maple Leafs",
+      "b": "Edmonton Oilers",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_label": "",
+      "source": "nhl-score",
+      "extra_sources": [],
+      "facts": [
+        "Toronto Maple Leafs record: 6–4–2. Edmonton Oilers record: 8–1–1.",
+        "Leon Draisaitl has ten goals and Connor McDavid 23 assists for Edmonton.",
+        "Official game state was FUT at the research snapshot."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "6–4–2; Leon Draisaitl has ten goals and Connor McDavid 23 assists for Edmonton.",
+        "b": "8–1–1; home team listed in the official score feed"
+      },
+      "market_note": "Moneyline and a 1.5-goal puck line are priced. Totals and player props are investigated but left blank because this feed does not supply a common scoring baseline or confirmed goalie/player availability."
+    },
+    {
+      "id": "hk-tbl-uta",
+      "sport": "ice-hockey",
+      "competition": "NHL · regular season",
+      "a": "Tampa Bay Lightning",
+      "b": "Utah Mammoth",
+      "start_utc": "2026-10-25T01:00:00Z",
+      "start_label": "",
+      "source": "nhl-score",
+      "extra_sources": [],
+      "facts": [
+        "Tampa Bay Lightning record: 7–3–0. Utah Mammoth record: 7–4–0.",
+        "Nick Schmaltz has seven goals and Mikhail Sergachev ten assists for Utah.",
+        "Official game state was FUT at the research snapshot."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "7–3–0; Nick Schmaltz has seven goals and Mikhail Sergachev ten assists for Utah.",
+        "b": "7–4–0; home team listed in the official score feed"
+      },
+      "market_note": "Moneyline and a 1.5-goal puck line are priced. Totals and player props are investigated but left blank because this feed does not supply a common scoring baseline or confirmed goalie/player availability."
+    },
+    {
+      "id": "hk-det-cgy",
+      "sport": "ice-hockey",
+      "competition": "NHL · regular season",
+      "a": "Detroit Red Wings",
+      "b": "Calgary Flames",
+      "start_utc": "2026-10-25T02:00:00Z",
+      "start_label": "",
+      "source": "nhl-score",
+      "extra_sources": [],
+      "facts": [
+        "Detroit Red Wings record: 4–3–3. Calgary Flames record: 3–6–0.",
+        "Alex DeBrincat has six goals and six assists; John Gibson has three wins for Detroit.",
+        "Official game state was FUT at the research snapshot."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "4–3–3; Alex DeBrincat has six goals and six assists; John Gibson has three wins for Detroit.",
+        "b": "3–6–0; home team listed in the official score feed"
+      },
+      "market_note": "Moneyline and a 1.5-goal puck line are priced. Totals and player props are investigated but left blank because this feed does not supply a common scoring baseline or confirmed goalie/player availability."
+    },
+    {
+      "id": "hk-min-sea",
+      "sport": "ice-hockey",
+      "competition": "NHL · regular season",
+      "a": "Minnesota Wild",
+      "b": "Seattle Kraken",
+      "start_utc": "2026-10-25T02:00:00Z",
+      "start_label": "",
+      "source": "nhl-score",
+      "extra_sources": [],
+      "facts": [
+        "Minnesota Wild record: 6–3–2. Seattle Kraken record: 7–3–1.",
+        "Kirill Kaprizov has eleven goals and Quinn Hughes eleven assists for Minnesota.",
+        "Official game state was FUT at the research snapshot."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "6–3–2; Kirill Kaprizov has eleven goals and Quinn Hughes eleven assists for Minnesota.",
+        "b": "7–3–1; home team listed in the official score feed"
+      },
+      "market_note": "Moneyline and a 1.5-goal puck line are priced. Totals and player props are investigated but left blank because this feed does not supply a common scoring baseline or confirmed goalie/player availability."
+    },
+    {
+      "id": "bk-mia-cha",
+      "sport": "basketball",
+      "competition": "NBA · regular season",
+      "a": "Miami Heat",
+      "b": "Charlotte Hornets",
+      "start_utc": "2026-10-24T22:00:00Z",
+      "start_label": "",
+      "source": "nba-games",
+      "extra_sources": [
+        "nba-standings",
+        "nba-injuries"
+      ],
+      "facts": [
+        "Miami Heat record: 0–2. Charlotte Hornets record: 1–1.",
+        "Giannis Antetokounmpo is listed at 35.5 points per game for Miami; Charlotte's Kon Knueppel, Coby White, Kylan Boswell and Grant Williams are out.",
+        "Availability is from the official 13:45 ET injury report; later updates can change the read."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "0–2; Giannis Antetokounmpo is listed at 35.5 points per game for Miami; Charlotte's Kon Knueppel, Coby White, Kylan Boswell and Grant Williams are out.",
+        "b": "1–1; official home/road split read"
+      },
+      "market_note": "Moneyline and a spread are priced. Game totals and player props are not priced because the season sample is tiny and several availability reports were incomplete."
+    },
+    {
+      "id": "bk-mil-phi",
+      "sport": "basketball",
+      "competition": "NBA · regular season",
+      "a": "Milwaukee Bucks",
+      "b": "Philadelphia 76ers",
+      "start_utc": "2026-10-24T23:30:00Z",
+      "start_label": "",
+      "source": "nba-games",
+      "extra_sources": [
+        "nba-standings",
+        "nba-injuries"
+      ],
+      "facts": [
+        "Milwaukee Bucks record: 0–2. Philadelphia 76ers record: 2–0.",
+        "Tyrese Maxey averages 30.0 points; LeBron James, Dominick Barlow, Tacko Fall and Ariel Hukporti are out, Dean Wade questionable.",
+        "Availability is from the official 13:45 ET injury report; later updates can change the read."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "0–2; Tyrese Maxey averages 30.0 points; LeBron James, Dominick Barlow, Tacko Fall and Ariel Hukporti are out, Dean Wade questionable.",
+        "b": "2–0; official home/road split read"
+      },
+      "market_note": "Moneyline and a spread are priced. Game totals and player props are not priced because the season sample is tiny and several availability reports were incomplete."
+    },
+    {
+      "id": "bk-bkn-cle",
+      "sport": "basketball",
+      "competition": "NBA · regular season",
+      "a": "Brooklyn Nets",
+      "b": "Cleveland Cavaliers",
+      "start_utc": "2026-10-24T23:30:00Z",
+      "start_label": "",
+      "source": "nba-games",
+      "extra_sources": [
+        "nba-standings",
+        "nba-injuries"
+      ],
+      "facts": [
+        "Brooklyn Nets record: 0–1. Cleveland Cavaliers record: 0–1.",
+        "Donovan Mitchell averages 32 points and ten rebounds; Tyler Bilodeau is out for Brooklyn and three Cavaliers are out.",
+        "Availability is from the official 13:45 ET injury report; later updates can change the read."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "0–1; Donovan Mitchell averages 32 points and ten rebounds; Tyler Bilodeau is out for Brooklyn and three Cavaliers are out.",
+        "b": "0–1; official home/road split read"
+      },
+      "market_note": "Moneyline and a spread are priced. Game totals and player props are not priced because the season sample is tiny and several availability reports were incomplete."
+    },
+    {
+      "id": "bk-sas-dal",
+      "sport": "basketball",
+      "competition": "NBA · regular season",
+      "a": "San Antonio Spurs",
+      "b": "Dallas Mavericks",
+      "start_utc": "2026-10-25T00:00:00Z",
+      "start_label": "",
+      "source": "nba-games",
+      "extra_sources": [
+        "nba-standings",
+        "nba-injuries"
+      ],
+      "facts": [
+        "San Antonio Spurs record: 0–2. Dallas Mavericks record: 1–1.",
+        "Cooper Flagg averages 23.0 points and Victor Wembanyama 18.5 with 13.0 rebounds; both injury reports were unsubmitted.",
+        "Availability is from the official 13:45 ET injury report; later updates can change the read."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "0–2; Cooper Flagg averages 23.0 points and Victor Wembanyama 18.5 with 13.0 rebounds; both injury reports were unsubmitted.",
+        "b": "1–1; official home/road split read"
+      },
+      "market_note": "Moneyline and a spread are priced. Game totals and player props are not priced because the season sample is tiny and several availability reports were incomplete."
+    },
+    {
+      "id": "bk-was-chi",
+      "sport": "basketball",
+      "competition": "NBA · regular season",
+      "a": "Washington Wizards",
+      "b": "Chicago Bulls",
+      "start_utc": "2026-10-25T00:00:00Z",
+      "start_label": "",
+      "source": "nba-games",
+      "extra_sources": [
+        "nba-standings",
+        "nba-injuries"
+      ],
+      "facts": [
+        "Washington Wizards record: 1–1. Chicago Bulls record: 1–1.",
+        "Anthony Davis averages 21.5 points and 10.5 rebounds; AJ Dybantsa, Tristan Vukcevic and Jamir Watkins are out for Washington.",
+        "Availability is from the official 13:45 ET injury report; later updates can change the read."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "1–1; Anthony Davis averages 21.5 points and 10.5 rebounds; AJ Dybantsa, Tristan Vukcevic and Jamir Watkins are out for Washington.",
+        "b": "1–1; official home/road split read"
+      },
+      "market_note": "Moneyline and a spread are priced. Game totals and player props are not priced because the season sample is tiny and several availability reports were incomplete."
+    },
+    {
+      "id": "bk-hou-atl",
+      "sport": "basketball",
+      "competition": "NBA · regular season",
+      "a": "Houston Rockets",
+      "b": "Atlanta Hawks",
+      "start_utc": "2026-10-25T00:30:00Z",
+      "start_label": "",
+      "source": "nba-games",
+      "extra_sources": [
+        "nba-standings",
+        "nba-injuries"
+      ],
+      "facts": [
+        "Houston Rockets record: 2–0. Atlanta Hawks record: 2–0.",
+        "Jalen Johnson averages 19.5 points, 10.5 rebounds and 7.0 assists; Fred VanVleet and Steven Adams are out for Houston.",
+        "Availability is from the official 13:45 ET injury report; later updates can change the read."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "2–0; Jalen Johnson averages 19.5 points, 10.5 rebounds and 7.0 assists; Fred VanVleet and Steven Adams are out for Houston.",
+        "b": "2–0; official home/road split read"
+      },
+      "market_note": "Moneyline and a spread are priced. Game totals and player props are not priced because the season sample is tiny and several availability reports were incomplete."
+    },
+    {
+      "id": "bk-nop-den",
+      "sport": "basketball",
+      "competition": "NBA · regular season",
+      "a": "New Orleans Pelicans",
+      "b": "Denver Nuggets",
+      "start_utc": "2026-10-25T01:00:00Z",
+      "start_label": "",
+      "source": "nba-games",
+      "extra_sources": [
+        "nba-standings",
+        "nba-injuries"
+      ],
+      "facts": [
+        "New Orleans Pelicans record: 0–2. Denver Nuggets record: 0–1.",
+        "Aaron Gordon averages 20.0 points; Cameron Johnson, Spencer Jones and Julian Strawther are out, Alpha Diallo questionable.",
+        "Availability is from the official 13:45 ET injury report; later updates can change the read."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "0–2; Aaron Gordon averages 20.0 points; Cameron Johnson, Spencer Jones and Julian Strawther are out, Alpha Diallo questionable.",
+        "b": "0–1; official home/road split read"
+      },
+      "market_note": "Moneyline and a spread are priced. Game totals and player props are not priced because the season sample is tiny and several availability reports were incomplete."
+    },
+    {
+      "id": "bk-gsw-phx",
+      "sport": "basketball",
+      "competition": "NBA · regular season",
+      "a": "Golden State Warriors",
+      "b": "Phoenix Suns",
+      "start_utc": "2026-10-25T02:00:00Z",
+      "start_label": "",
+      "source": "nba-games",
+      "extra_sources": [
+        "nba-standings",
+        "nba-injuries"
+      ],
+      "facts": [
+        "Golden State Warriors record: 0–2. Phoenix Suns record: 0–1.",
+        "Stephen Curry averages 23.5 points and Devin Booker 23.0; Mark Williams is out, Oso Ighodaro doubtful and Luke Kennard questionable.",
+        "Availability is from the official 13:45 ET injury report; later updates can change the read."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "OLBG-listed",
+      "side_evidence": {
+        "a": "0–2; Stephen Curry averages 23.5 points and Devin Booker 23.0; Mark Williams is out, Oso Ighodaro doubtful and Luke Kennard questionable.",
+        "b": "0–1; official home/road split read"
+      },
+      "market_note": "Moneyline and a spread are priced. Game totals and player props are not priced because the season sample is tiny and several availability reports were incomplete."
+    },
+    {
+      "id": "rl-aus-fij",
+      "sport": "rugby-league",
+      "competition": "Rugby League World Cup · pool A",
+      "a": "Australia",
+      "b": "Fiji",
+      "start_utc": "2026-10-25T09:05:00Z",
+      "start_label": "",
+      "source": "nrl-australia-fiji",
+      "extra_sources": [],
+      "facts": [
+        "Official fixture: 25 October at Suncorp Stadium, 19:05 AEST, 09:05 UTC.",
+        "James Tedesco captains Australia; four debutants are named in the starting side.",
+        "OLBG's rugby-league hub showed outrights only, so this is context and carries no price."
+      ],
+      "missing_fields": [],
+      "flag_ids": [],
+      "scope": "Official context only · no OLBG match market",
+      "side_evidence": {},
+      "market_note": "Withheld: there is no current OLBG individual-match market to reverse-engineer, and no independent line is offered for context-only coverage."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "desk": "23728b2b",
+  "validated_at": "2026-10-24T18:14:08Z",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "Official evidence and scope",
+      "status": "PASS",
+      "detail": "15 sports; 63 sources; 55 official-source rows; all starts upcoming at cut-off or explicitly blank/flagged"
+    },
+    {
+      "name": "Independent line arithmetic",
+      "status": "PASS",
+      "detail": "53 primary + 85 alternative lines; reciprocal decimal/American arithmetic and every confidence label pass"
+    },
+    {
+      "name": "Prediction quality and High gate",
+      "status": "PASS",
+      "detail": "53 unique predictions, all at least 30 words; 7 High analyses pass evidence, vocabulary and six-word-phrase checks"
+    },
+    {
+      "name": "Rendered HTML and source links",
+      "status": "PASS",
+      "detail": "21 HTML pages; 57 tables and 203 body rows all carry official links; internal files, anchors and all 55 match rows pass"
+    },
+    {
+      "name": "Structured artifacts",
+      "status": "PASS",
+      "detail": "Nine structured JSON artifacts parse and desk.json exactly matches the source records"
+    }
+  ],
+  "failures": []
+}
