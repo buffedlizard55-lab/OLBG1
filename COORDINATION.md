@@ -6302,3 +6302,27 @@ remaining candidates.
 * **Explicitly not touched:** canonical `pipeline/**`, `data/current/**`, `.github/workflows/**`, `scripts/validate.py`, root `*.html`, `sports/**`, `assets/**`, `README.md`, and every peer `<id>/` desk.
 * **Live channel:** Arena `fetch_page` / `web_search` against `www.olbg.com` (discovery only) and official governing-body / league / tour endpoints (verification). Every read is logged with its exact URL and UTC timestamp in `data/02d3d515/sources.json`.
 * **Starting observation:** `OLBG.com` at 2026-10-24T17:0xZ lists upcoming match markets for Volleyball, Rugby Union, Cricket, Darts, Baseball, Gaelic Football, Tennis, Motor Racing, Handball, Ice Hockey and Basketball; the Golf hub renders `No tips found.`; Snooker shows one already-started match; **Rugby League shows no upcoming match at all** (only 2027 outrights). Those gaps will be published as gaps, not padded.
+
+
+---
+
+## 83. Session `3d121822-olbg1` — `T3D121822` (24 October 2026, 17:05–17:12 UTC)
+
+| # | Task | Status | Session | File scope | Started (UTC) | Notes |
+|---|------|--------|---------|------------|---------------|-------|
+| T3D121822 | Fresh 15-sport OLBG desk: live discovery, official verification, multi-market origination, written predictions, clean dashboard, validator + tests, PR → merge → Pages read-back | done | 3d121822-olbg1 | `data/3d121822/**`, `scripts/s3d121822_*.py`, `3d121822/**`, `tests/pipeline/test_desk_3d121822.py`, `pipeline/build.py` (one landing band only), `README.md` (one link), append-only this file | 2026-10-24T17:05Z | Pinned branch `arena/3d121822-olbg1`; no canonical dataset, workflow or peer desk touched. |
+
+### §83.1 Sources read (UTC 17:05–17:12)
+
+* OLBG discovery, one read per sport: `/betting-tips/{Golf/5, Darts/15, Snooker/8, Basketball/4, Ice_Hockey/13, Baseball/12, Tennis/3, Rugby_Union/9, Cricket/7, Handball/20, Volleyball/21, Gaelic_Football/25, Greyhounds/28, Motor_Racing/14, Rugby_League/10}`. OLBG is used for fixture discovery and market labels only; its tip shares are votes and were never converted into a probability.
+* Official verification: `nba.com/standings` (2026-27 records/streaks, 30 clubs), `api-web.nhle.com/v1/score/2026-10-24` (schedule, club records, published partner prices, exact UTC starts), `api-web.nhle.com/v1/standings/2026-10-24` (standings snapshot 17:05:30Z), `statsapi.mlb.com/api/v1/schedule?...&date=2026-10-24` (World Series Game 2, 00:00Z 25 Oct, `ifNecessary=N`, Milwaukee 1-0).
+* Failed or unreadable: `pdc.tv` returned a cookie-consent shell (no tournament or ranking content); the NBA CDN scoreboard endpoint returned HTTP 500. Both are recorded as gaps, not worked around.
+
+### §83.2 Result, before merge
+
+* **55 fixtures** across all 15 requested sports, each carrying its OLBG discovery link.
+* **9 fixtures priced** (8 NBA, 1 NHL), **36 market prices** issued (moneyline and handicap both ways, margin-free). Game totals withheld for want of a sourced 2026-27 scoring rate.
+* **5 written predictions**, 55–75 words each, unique 8-gram checked, naming the selection and the record gap, and stating which inputs were never captured.
+* **10 review flags**, including F-3D-09: the brief's 70% floor and −250 band floor overlap by only 1.4 points, so today's strongest call (Philadelphia at 80.0%, −400) and the New Jersey call (63.6%, −175) both fall outside it. **Zero High picks are published**; nothing was relabelled to manufacture one.
+* Repo review published with reproducible counts: 59 sibling dashboards, 1,431 HTML files, a 733 KB coordination board, a canonical snapshot stamped 2026-10-22T12:29:50Z, and no remaining conflict markers.
+* Gates: `scripts/s3d121822_validate.py` 0 errors (25 pages) · 11 new tests OK · canonical build and `pipeline.validate --site _site` re-run after commit.

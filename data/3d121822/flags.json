@@ -1,0 +1,86 @@
+{
+ "desk": "3d121822-olbg1",
+ "count": 10,
+ "flags": [
+  {
+   "ref": "F-3D-01",
+   "severity": "high",
+   "scope": "Golf",
+   "title": "No OLBG tips, no fixture",
+   "detail": "The golf hub returned 'No tips found' at 17:01Z. Nothing is listed rather than inventing a tournament.",
+   "source": "olbg-golf"
+  },
+  {
+   "ref": "F-3D-02",
+   "severity": "high",
+   "scope": "Rugby League",
+   "title": "Outright markets only",
+   "detail": "The rugby league hub carried only 2027 futures at 17:11Z. Futures are not upcoming matches.",
+   "source": "olbg-rugbyl"
+  },
+  {
+   "ref": "F-3D-03",
+   "severity": "high",
+   "scope": "Darts",
+   "title": "No official player data captured",
+   "detail": "pdc.tv returned a cookie-consent shell instead of tournament or ranking content, so no three-dart average or ranking input exists. OLBG tip shares are votes, not probabilities, and were not used.",
+   "source": "olbg-darts"
+  },
+  {
+   "ref": "F-3D-04",
+   "severity": "high",
+   "scope": "All sports",
+   "title": "OLBG clock has no timezone",
+   "detail": "OLBG cards print a clock but no timezone. No UTC conversion is attempted; UTC is published only where the league feed supplies it. Four darts cards and one snooker card had passed their listed clock at reading time.",
+   "source": "olbg-darts"
+  },
+  {
+   "ref": "F-3D-05",
+   "severity": "high",
+   "scope": "Ice Hockey",
+   "title": "Four NHL cards unpriced",
+   "detail": "Only LAK@NJD had both club records read. CAR, STL, NYR, OTT, SJ, BOS, TOR and EDM records were not read, so those four cards carry no price.",
+   "source": "nhl-score"
+  },
+  {
+   "ref": "F-3D-06",
+   "severity": "medium",
+   "scope": "Basketball",
+   "title": "Point totals withheld",
+   "detail": "No official 2026-27 team scoring rate exists after one or two games, so no total is issued. Moneyline and pointspread only.",
+   "source": "nba-standings"
+  },
+  {
+   "ref": "F-3D-07",
+   "severity": "medium",
+   "scope": "All priced fixtures",
+   "title": "Injuries not captured",
+   "detail": "No injury, suspension or lineup report was read for any priced fixture. The predictions say so instead of implying a fully fit squad.",
+   "source": "olbg-basketball"
+  },
+  {
+   "ref": "F-3D-08",
+   "severity": "medium",
+   "scope": "Baseball",
+   "title": "World Series Game 2 unpriced",
+   "detail": "MLB confirms the game (00:00Z on 25 Oct, ifNecessary=N, Milwaukee 1-0 up). Starting pitchers and season run rates were not captured, so no run line or total is issued.",
+   "source": "mlb-schedule"
+  },
+  {
+   "ref": "F-3D-09",
+   "severity": "medium",
+   "scope": "Confidence window",
+   "title": "Zero High picks published",
+   "detail": "The brief asks for High picks at >70% probability inside a -250 to +10000 price band. That band's short end is -250 = 71.4%, so High lives in a 1.4-point sliver. Today's strongest selection, New Jersey at about 72.7%, prices at roughly -267 and therefore sits outside the stated window; it is published as Medium with the arithmetic shown, not relabelled.",
+   "source": "nhl-score"
+  },
+  {
+   "ref": "F-3D-10",
+   "severity": "low",
+   "scope": "Handball, Volleyball, Tennis, Cricket, Gaelic, Greyhounds",
+   "title": "Fixtures listed, prices withheld",
+   "detail": "Official tables, rankings and availability were not captured for these six sports in this session. Each sport page names the missing input for every fixture.",
+   "source": "olbg-handball"
+  }
+ ]
+}

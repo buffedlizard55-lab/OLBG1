@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Method · OLBG research desk · 24 Oct 2026</title>
+<meta name="description" content="Independent, source-linked match research for 24 October 2026. Not affiliated with OLBG.">
+<link rel="stylesheet" href="assets/desk.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html">OLBG research desk <span>· 24 October 2026</span></a>
+  <div class="meta"><span>Independent · not affiliated with OLBG</span><span>Data read 17:05–17:12 UTC</span></div>
+</div></header>
+<nav class="tabs"><div class="wrap"><a href="index.html">Overview</a><a href="picks.html">Picks</a><a href="matches.html">Matches</a><a href="predictions.html">Written predictions</a><a href="markets.html">Markets</a><a href="sports/index.html">Sports</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="method.html" aria-current=page>Method</a><a href="repo-review.html">Repo review</a></div></nav>
+<main id="main"><div class="wrap">
+
+<h1>How this desk works</h1>
+<p class="lede">Five steps, in order, for every match. A step that cannot be completed stops the
+chain — it does not get filled in by hand.</p>
+
+<h2>1. Find the matches (OLBG, discovery only)</h2>
+<div class="prose"><p>We read the public OLBG hub for each of the 15 sports you listed:
+golf, volleyball, rugby union, cricket, snooker, darts, baseball, Gaelic sports, greyhounds,
+tennis, motor racing, handball, ice hockey, basketball and rugby league. The hub gives the
+match name, competition where OLBG shows one, a clock with no timezone, the most-tipped outcome and
+the market label. That is all we take from it. Tip shares are votes and are never used as a
+probability.</p></div>
+
+<h2>2. Confirm the fixture (official source)</h2>
+<div class="prose"><p>A fixture is only priced if a league, tour or governing body confirms it.
+Today that was possible for the NBA, the NHL and MLB. For the other twelve sports the card exists
+on OLBG but no official confirmation was read, so the match is listed and left unpriced.</p></div>
+
+<h2>3. Originate our own price</h2>
+<div class="prose"><p>Every price starts from a sourced record and shrink toward .500 with a
+Beta(2,2) prior, so a 2-0 start is not treated as a 100% team. The two shrunken rates are combined
+with log5. No home-field edge and no league-average default is inserted: if a side has no record,
+the fixture is not priced at all.</p>
+<p>Handicap lines come from a normal margin family around that probability, with a disclosed
+spread of 12.5 points for basketball and 2.0 goals for hockey. Those are
+assumptions, and they are stated here rather than hidden. Prices are margin-free:
+decimal&nbsp;=&nbsp;1&nbsp;/&nbsp;probability, with the American equivalent derived from the same
+number.</p></div>
+
+<h2>4. Grade the confidence</h2>
+<div class="prose"><p>High needs a fair chance of at least 70% <em>and</em> a price no shorter than
+−250. Because −250 is 71.4%, that is a 1.4-point window. Medium is 55–70%, or anything stronger
+than −250 (which is outside the stated window). Low is a marginal edge. A price within five points
+of even gets no selection at all — we will not pick a coin toss to fill a quota.</p></div>
+
+<h2>5. Write it up, or leave it blank</h2>
+<div class="prose"><p>Every published pick carries an original analysis of at least 30 words that
+names the selection, both participants, the current record and the specific gap. Where an input is
+missing — injuries, lineups, a ranking, a timezone — the sentence says so. The
+<a href="flagged.html">flagged page</a> collects those gaps with links.</p></div>
+
+<h2>What we did not do</h2>
+<ul class="tight">
+  <li>No tipster percentage was converted into a probability.</li>
+  <li>No value was copied from another desk in this repository without re-reading its source.</li>
+  <li>No clock was converted to UTC unless a league feed supplied one.</li>
+  <li>No pick was published without a written analysis.</li>
+  <li>No sport was padded to five picks when the evidence did not support one.</li>
+</ul>
+
+</div></main>
+<footer><div class="wrap">
+  <span>Every row links an official source. Blank means not confirmed — never guessed.</span>
+  <span>18+ · Research, not betting advice. No returns are promised.</span>
+</div></footer>
+</body></html>
