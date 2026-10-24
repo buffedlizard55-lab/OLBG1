@@ -1,0 +1,197 @@
+[
+ {
+  "id": "F-01",
+  "area": "OLBG coverage",
+  "severity": "high",
+  "title": "Three covered sports served no matches at all",
+  "detail": "The Golf (sport 5), Snooker (sport 8) and Motor Racing (sport 14) hubs each rendered 'No tips found.' on 24 October. The Snooker 'All Events' sub-route rendered the same message, so there is no OLBG market to price for any of the three.",
+  "sources": [
+   "olbg-golf",
+   "olbg-snooker",
+   "olbg-snooker-events",
+   "olbg-motorracing"
+  ]
+ },
+ {
+  "id": "F-02",
+  "area": "OLBG coverage",
+  "severity": "high",
+  "title": "Rugby League hub carries outrights for 2027 only",
+  "detail": "The Rugby League hub listed State of Origin 2027, the Super League 2027 Grand Final and the NRL 2027 Grand Final. No upcoming fixture of either 2026 competition was listed, so the sport has no match market on the board.",
+  "sources": [
+   "olbg-rugbyleague"
+  ]
+ },
+ {
+  "id": "F-03",
+  "area": "OLBG coverage",
+  "severity": "medium",
+  "title": "Greyhounds hub carried a single race",
+  "detail": "One race, '11:04 Doncaster', was listed with a single tip on Snowfall. No GBGB racecard or form was read, so the race is published as a listing and not priced.",
+  "sources": [
+   "olbg-greyhounds"
+  ]
+ },
+ {
+  "id": "F-04",
+  "area": "OLBG data quality",
+  "severity": "medium",
+  "title": "OLBG start times disagree with the league's own clock",
+  "detail": "OLBG printed 'Today 19:07' for the fixtures the NHL schedules at 23:00Z (19:00 ET), 'Today 22:07' for a 01:00Z start and 'Today 23:07' for a 02:00Z start. The offset is not constant and OLBG prints no timezone, so every published start time on this desk comes from the league feed instead.",
+  "sources": [
+   "olbg-icehockey",
+   "nhl-schedule"
+  ]
+ },
+ {
+  "id": "F-05",
+  "area": "Fixture completeness",
+  "severity": "medium",
+  "title": "One of the league's twelve games could not be individually confirmed",
+  "detail": "The NHL feed reports twelve games on 24 October. Eleven are confirmed individually in the returned slice. The twelfth, which OLBG lists as MIN Wild @ SEA Kraken, was not in the slice, so that row carries no price and no pick. MTL@WPG on 25 October comes from a different schedule date and is also unpriced.",
+  "sources": [
+   "nhl-schedule",
+   "olbg-icehockey"
+  ]
+ },
+ {
+  "id": "F-06",
+  "area": "OLBG data quality",
+  "severity": "medium",
+  "title": "OLBG's basketball hub omits two games the league lists",
+  "detail": "The official NBA injury report for 24 October lists MIA@CHA and MEM@SAC. Neither appeared on the OLBG basketball hub, which stopped after seven games. Both are published here from the league document.",
+  "sources": [
+   "olbg-basketball",
+   "nba-injury"
+  ]
+ },
+ {
+  "id": "F-07",
+  "area": "Naming",
+  "severity": "low",
+  "title": "Club names differ between OLBG and the governing body",
+  "detail": "OLBG bills 'Eastern Storm vs South Africa Emerging'; Cricket South Africa calls the same fixture 'World Sports Betting Eastern Storm vs CSA High Performance'. OLBG also prints 'VGS Golden Knights' where the NHL prints VGK.",
+  "sources": [
+   "olbg-cricket",
+   "csa-home",
+   "olbg-icehockey",
+   "nhl-team-summary"
+  ]
+ },
+ {
+  "id": "F-08",
+  "area": "Withheld market",
+  "severity": "low",
+  "title": "No basketball totals are originated",
+  "detail": "No official NBA scoring figure (team points for or against) was read this session, so a total would have been invented. Every NBA row therefore carries moneyline and spread markets only.",
+  "sources": [
+   "nba-standings"
+  ]
+ },
+ {
+  "id": "F-09",
+  "area": "Missing input",
+  "severity": "low",
+  "title": "Detroit's goals for and against were not in the returned page",
+  "detail": "The NHL team-summary slice that carried Detroit's record cut off before its goals-for and goals-against fields. With no goals rate there is no honest price, so DET@CGY is published with a moneyline and nothing else, and no pick.",
+  "sources": [
+   "nhl-team-summary"
+  ]
+ },
+ {
+  "id": "F-10",
+  "area": "Coverage shortfall",
+  "severity": "high",
+  "title": "Ten of the fifteen sports have no priced match",
+  "detail": "Only ice hockey and basketball reached a priced state. Cricket has six fixtures confirmed on the governing body's own site but no competition record was read, so none is priced. Baseball has one confirmed fixture with both starting pitchers named and no season rate for Milwaukee, so the market is withheld. Tennis, Volleyball, Handball, Rugby Union, Gaelic Sports and Darts were found on OLBG only and are not confirmed by a governing body.",
+  "sources": [
+   "csa-home",
+   "mlb-schedule",
+   "olbg-tennis",
+   "olbg-volleyball",
+   "olbg-handball",
+   "olbg-rugbyunion",
+   "olbg-gaelic",
+   "olbg-darts"
+  ]
+ },
+ {
+  "id": "F-11",
+  "area": "Method",
+  "severity": "medium",
+  "title": "The brief's two High-pick rules barely intersect",
+  "detail": "A selection with a 70% chance has a fair price of about -233; the band's shortest allowed price, -250, implies 71.4%. Requiring both 'more than 70%' and 'inside -250..+10000' therefore leaves a 1.4-point window, and only three of this desk's 88 originated outcomes land in it. The three High picks here are those, plus any other line that lands there after normalisation; nothing was moved into the tier by hand.",
+  "sources": [
+   "nhl-team-summary"
+  ]
+ },
+ {
+  "id": "F-12",
+  "area": "Model input",
+  "severity": "medium",
+  "title": "Basketball records are two games deep",
+  "detail": "Every NBA club has played between one and two games. Records that short carry almost no information, so each is shrunk toward .500 with a ten-win, ten-loss prior before it is used. That is why no basketball pick reaches the medium tier on record alone and none reaches high at all.",
+  "sources": [
+   "nba-standings"
+  ]
+ },
+ {
+  "id": "F-13",
+  "area": "Provenance",
+  "severity": "low",
+  "title": "OLBG tip shares are not probabilities and were not used",
+  "detail": "OLBG prints the share of member tips on each selection (for example '10/12 Win Tips, 83%'). Those are votes, not prices, and no number on this desk is derived from them. They appear on the sport pages labelled as OLBG's own tally so the reader can see the difference.",
+  "sources": [
+   "olbg-icehockey",
+   "olbg-basketball"
+  ]
+ },
+ {
+  "id": "R-01",
+  "file": "pipeline/build.py:36",
+  "severity": "medium",
+  "title": "Sixteen of ninety session desks are reachable from the published site",
+  "detail": "The repository carries 90 session desk directories at its root. The ARCHIVE allowlist in pipeline/build.py contains 16 entries, so the other 74 desks are tracked but have no published entry point. The root README still promises that earlier desks 'stay published'.",
+  "evidence": "90 directories; 16 ARCHIVE entries"
+ },
+ {
+  "id": "R-02",
+  "file": "README.md:50",
+  "severity": "medium",
+  "title": "The confidence gate differs between the README and the brief",
+  "detail": "README.md defines High as 'originated probability >= 60% and fair American price in [-250, +10000]'. The brief defines high confidence as a selection with more than a 70% chance. Both cannot be true of the same pick, and different desks in this repository have used different thresholds, so the tiers are not comparable across desks.",
+  "evidence": "README.md line 50"
+ },
+ {
+  "id": "R-03",
+  "file": "data/current/audit.json",
+  "severity": "low",
+  "title": "A 10.5 MB generated artefact is tracked",
+  "detail": "data/current/audit.json is 10,473,214 bytes and is committed. The repository tracks 3,032 files for what is a static predictions site; most of that weight is generated JSON that is regenerated by the build rather than read by it.",
+  "evidence": "10,473,214 bytes"
+ },
+ {
+  "id": "R-04",
+  "file": "*.html",
+  "severity": "info",
+  "title": "No broken relative page links in the twenty root pages",
+  "detail": "All twenty root HTML pages were parsed and every relative .html link was resolved against the filesystem. Zero were missing. This is a clean result and is recorded so that the negative finding is explicit.",
+  "evidence": "20 pages, 0 missing targets"
+ },
+ {
+  "id": "R-05",
+  "file": "COORDINATION.md",
+  "severity": "low",
+  "title": "The shared task board is 849 KB and is append-only",
+  "detail": "COORDINATION.md is 849,056 bytes and is edited by every session under an append-only rule. Two different sections were both numbered 74 and two are both numbered 75, so cross-references to a section number are ambiguous. Claims are also still listed as 'in progress' for sessions that finished days ago.",
+  "evidence": "duplicate section numbers 74, 74, 75, 75, 84, 85"
+ },
+ {
+  "id": "R-06",
+  "file": "tests/pipeline",
+  "severity": "info",
+  "title": "The existing test suite is green before this session's changes",
+  "detail": "python3 -m unittest discover -s tests/pipeline passes on the branch head this desk was built from, and scripts/validate.py returns no errors. This desk adds its own test module rather than editing the shared suite.",
+  "evidence": "suite status at branch head"
+ }
+]

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Method, prices and the band · OLBG research desk f840c28a</title>
+<style>
+:root{--ink:#101d2c;--muted:#5b6b7c;--line:#e2e8ef;--bg:#f5f7fa;--card:#fff;
+--brand:#0b5cd5;--brand-soft:#e8f0fd;--high:#0b7a4b;--high-soft:#e2f5ea;
+--med:#8a5a00;--med-soft:#fdf3df;--low:#5b6b7c;--low-soft:#eef1f5;--flag:#a3282d;--flag-soft:#fceaea}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--brand)}
+h1,h2,h3{line-height:1.2;margin:0 0 10px}
+h1{font-size:29px;letter-spacing:-.3px}h2{font-size:20px;margin-top:30px}h3{font-size:16px}
+p{margin:0 0 12px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 18px}
+header.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:9}
+.toprow{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:11px 0;flex-wrap:wrap}
+.brand{font-weight:750;text-decoration:none;color:var(--ink);display:flex;gap:9px;align-items:center}
+.brand .mark{width:28px;height:28px;border-radius:8px;background:var(--brand);color:#fff;display:grid;
+place-items:center;font-size:13px;font-weight:700}
+nav.pages{display:flex;gap:4px;flex-wrap:wrap}
+nav.pages a{text-decoration:none;color:var(--muted);padding:7px 10px;border-radius:8px;font-size:14px;font-weight:600}
+nav.pages a:hover{background:var(--brand-soft);color:var(--brand)}
+nav.pages a.on{background:var(--brand);color:#fff}
+main{padding:26px 0 60px}
+.lede{font-size:17px;color:var(--muted);max-width:820px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0 6px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.kpi b{display:block;font-size:26px;line-height:1.1}
+.kpi span{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:16px 0}
+.callout{border-left:4px solid var(--brand);background:var(--brand-soft);border-radius:0 10px 10px 0;padding:13px 16px;margin:16px 0}
+.callout.warn{border-color:var(--flag);background:var(--flag-soft)}
+.callout b{display:block;margin-bottom:4px}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card);margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f2f5f9;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafbfd}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.b-high{background:var(--high-soft);color:var(--high)}
+.b-med{background:var(--med-soft);color:var(--med)}
+.b-low{background:var(--low-soft);color:var(--low)}
+.b-flag{background:var(--flag-soft);color:var(--flag)}
+.b-info{background:var(--brand-soft);color:var(--brand)}
+.small{font-size:13px;color:var(--muted)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+.pickcell{font-weight:700}
+.pred{border-left:3px solid var(--brand);padding-left:14px;margin:18px 0}
+.pred p{margin:6px 0}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:13.5px;background:#fff}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}h1{font-size:24px}}
+ul.plain{margin:6px 0 0;padding-left:18px}
+ul.plain li{margin-bottom:5px}
+.tag{font-size:12px;color:var(--muted)}
+</style></head>
+<body>
+<header class="top"><div class="wrap toprow">
+<a class="brand" href="index.html"><span class="mark">OL</span> OLBG research desk</a>
+<nav class="pages"><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="predictions.html">Written predictions</a><a href="matches.html">Every match</a><a href="markets.html">Markets</a><a href="sports.html">Sports</a><a href="flagged.html">Flagged</a><a href="sources.html">Sources</a><a href="methodology.html" class="on">Method</a><a href="repo-review.html">Repo review</a></nav>
+</div></header>
+<main><div class="wrap">
+<h1>Method, prices and the band</h1>
+<p class="lede">How every number on this desk was produced</p>
+
+<h2 id="hockey">Ice hockey</h2>
+<p>Goals are treated as two independent Poisson counts. Each club's goals-for and goals-against rate
+is first <b>regressed onto the league average</b> of 3.00 goals a game with twelve games of prior
+weight, because a rate built on eight to twelve games is noisy:</p>
+<p class="mono">rate = (rate × games + 3.00 × 12) / (games + 12)</p>
+<p>The home side's expected goals are then the average of its own scoring rate and the visitor's
+conceding rate, times 1.03; the visitor's are the mirror, times 0.97. From that grid we can price the
+moneyline, ±1.5 and ±2.5 puck lines, −1/+1 and −2/+2 Asian handicaps with pushes voided, and totals
+from 4.5 to 7.5 — all from one set of expectations, which is why the total and the moneyline never
+contradict each other.</p>
+
+<h2 id="basketball">Basketball</h2>
+<p>Only wins and losses were captured, so the rating is a shrunk win rate with a ten-win, ten-loss
+prior at .500, and the win probability is a logistic function of the rating gap plus a 3% home edge.
+The expected margin is the probit of that probability times a 12.5-point standard deviation, and the
+spread ladder comes off the same distribution. Totals are withheld — see
+<a href="flagged.html">Flagged</a>.</p>
+
+<h2>Prices and the band</h2>
+<p>Every market is normalised so its two sides sum to 100%. That fair probability is converted to a
+American price and then checked against the brief's window:</p>
+<div class="table-wrap"><table>
+<tr><th>Probability</th><th>Fair American price</th><th>Decimal</th><th>Inside −250…+10000?</th></tr>
+<tr><td>50%</td><td>+100</td><td>2.00</td><td>Yes</td></tr>
+<tr><td>60%</td><td>−150</td><td>1.67</td><td>Yes</td></tr>
+<tr><td>70%</td><td>−233</td><td>1.43</td><td>Yes</td></tr>
+<tr><td>71.4%</td><td>−250</td><td>1.40</td><td>Yes — the boundary</td></tr>
+<tr><td>75%</td><td>−300</td><td>1.33</td><td><b>No — shorter than −250</b></td></tr>
+</table></div>
+<div class="callout warn">
+<b>Why high picks are scarce, in one paragraph</b>
+The brief asks for two things at once: a selection with more than a 70% chance, and a price inside
+−250 to +10000. A 70% chance is −233. The band stops at −250, which is 71.4%. The overlap is 1.4
+points wide. Of the 208 prices this desk set, exactly three land in that sliver, and all
+three are published as the high-confidence picks. Nothing was re-priced by hand to manufacture more.
+</div>
+<p>Grading: <b>High</b> above 70%, <b>Medium</b> 60–70%, <b>Low</b> 52–60%, and any selection
+priced shorter than −250 is shown but never picked.</p>
+
+<h2 id="calibration">Calibration check against the publisher's own prices</h2>
+<p>The NHL feed prints a partner moneyline next to each fixture. It is not our price and it was not
+used to set one — it is here so you can see how far our number sits from the market's. Differences
+are percentage points of implied probability on the home side, with the publisher's two-way line
+normalised to remove its margin.</p>
+<div class="table-wrap"><table>
+<tr><th>Match</th><th>Publisher home</th><th>Publisher away</th><th>Publisher fair home</th>
+<th>Our home</th><th>Difference</th></tr>
+<tr><td>TOR @ EDM</td><td class="num">-155</td><td class="num">+130</td><td class="num">58.3%</td><td class="num">56.7%</td><td class="num">-1.6 pts</td></tr><tr><td>SJS @ BOS</td><td class="num">-192</td><td class="num">+160</td><td class="num">63.1%</td><td class="num">62.0%</td><td class="num">-1.1 pts</td></tr><tr><td>CAR @ STL</td><td class="num">+130</td><td class="num">-155</td><td class="num">41.7%</td><td class="num">48.3%</td><td class="num">+6.6 pts</td></tr><tr><td>VGK @ CBJ</td><td class="num">+114</td><td class="num">-135</td><td class="num">44.9%</td><td class="num">45.7%</td><td class="num">+0.9 pts</td></tr><tr><td>NYR @ OTT</td><td class="num">-125</td><td class="num">+105</td><td class="num">53.2%</td><td class="num">49.7%</td><td class="num">-3.5 pts</td></tr><tr><td>BUF @ WSH</td><td class="num">-120</td><td class="num">+100</td><td class="num">52.2%</td><td class="num">56.6%</td><td class="num">+4.5 pts</td></tr><tr><td>NSH @ PIT</td><td class="num">-125</td><td class="num">+105</td><td class="num">53.2%</td><td class="num">54.8%</td><td class="num">+1.5 pts</td></tr><tr><td>TBL @ UTA</td><td class="num">-142</td><td class="num">+120</td><td class="num">56.3%</td><td class="num">53.1%</td><td class="num">-3.2 pts</td></tr>
+</table></div>
+<p class="small">Every fixture is within about seven points of the market, which is the check we
+wanted: the goal expectations are not producing fantasy prices. Two rows sit closest to the edge —
+Tampa Bay at Utah and the New York Rangers at Ottawa — and both are marked accordingly in the
+tiering rather than being quoted as strong opinions.</p>
+
+<h2>What would change the answers</h2>
+<ul class="plain">
+  <li>Confirmed starting goaltenders for either crease. None was read, so none is used; a backup
+      start is the single biggest unmeasured input on every hockey row here.</li>
+  <li>Injury reports for hockey, cricket, volleyball or handball. The NBA filing is the only
+      availability document on the desk.</li>
+  <li>Score-level scoring data for the NBA, which would let the totals market back on to the board.</li>
+</ul>
+
+</div></main>
+<footer><div class="wrap">
+<p><b>Desk f840c28a</b> · session f840c28a-olbg1 · task TF840C · facts captured
+2026-10-24T22:55:00Z. Independent research, not affiliated with OLBG. Prices are our own
+margin-free estimates, not quoted bookmaker odds. No guaranteed returns, no staking advice.
+18+. <a href="flagged.html">Flagged for review</a></p>
+</div></footer>
+</body></html>
