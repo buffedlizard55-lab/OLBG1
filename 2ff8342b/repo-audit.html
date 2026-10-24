@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repo audit · OLBG Research Desk · 2026-10-24</title>
+<meta name="description" content="Independent, source-linked OLBG match research. Every row links to an official source; blanks are unverified.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">◇</span>
+      <span><strong>OLBG Research Desk</strong><small>Independent · source-linked</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="picks.html">Today&#x27;s picks</a><a class="nav-link" href="matches.html">All matches</a><a class="nav-link" href="markets.html">Markets</a><a class="nav-link" href="predictions.html">Predictions</a><a class="nav-link" href="sports.html">Sports</a><a class="nav-link" href="flagged.html">Flagged for review</a><a class="nav-link" href="sources.html">Sources</a><a class="nav-link" href="methodology.html">Method</a><a class="nav-link" href="reverse-engineering.html">OLBG</a><a class="nav-link active" href="repo-audit.html">Repo audit</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+  <div class="page-head">
+    <p class="eyebrow">Desk date 2026-10-24 · facts read at 2026-10-24T17:50:00Z</p>
+    <h1>Repo audit</h1>
+    <p class="lede">Mechanical checks run against the repository and this desk's own data at build time.</p>
+  </div>
+  
+<h2>Scope of this audit</h2>
+<p>This is a structural audit of the repository and of this desk's own output, run at build time. It is not a re-certification of every historical claim in the repository's 80+ previous session folders.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Check</th><th>Result</th><th>Detail</th></tr></thead>
+  <tbody><tr><td><code>python-syntax</code></td><td><span class="badge green">Pass</span></td><td>285 files parsed; failures: none</td></tr><tr><td><code>json-parse</code></td><td><span class="badge green">Pass</span></td><td>403 JSON files under data/; failures: none</td></tr><tr><td><code>conflict-markers-own-scope</code></td><td><span class="badge red">Fail</span></td><td>root HTML and scripts/s2ff8342b_*: hits [&#x27;scripts/s2ff8342b_audit.py&#x27;]</td></tr><tr><td><code>conflict-markers-peer-files</code></td><td><span class="badge green">Pass</span></td><td>pre-existing markers inside other sessions&#x27; scripts (not edited by this session): [&#x27;s0c9bc692_validate.py&#x27;, &#x27;s37003e61_validate.py&#x27;, &#x27;s8aede3ba_build.py&#x27;]</td></tr><tr><td><code>pages-nojekyll</code></td><td><span class="badge green">Pass</span></td><td>root .nojekyll present so Pages serves files verbatim</td></tr><tr><td><code>site-page-count</code></td><td><span class="badge green">Pass</span></td><td>26 HTML pages generated (overview, picks, matches, markets, predictions, 15 sports, flagged, sources, method, reverse, audit)</td></tr><tr><td><code>no-external-assets</code></td><td><span class="badge green">Pass</span></td><td>no remote scripts or stylesheets; hits: none</td></tr><tr><td><code>desk-data-files</code></td><td><span class="badge green">Pass</span></td><td>present: fixtures.json, lines.json, predictions.json, sources.json, flagged.json, summary.json; missing: none</td></tr><tr><td><code>repo-root-unmodified</code></td><td><span class="badge green">Pass</span></td><td>working tree root is /home/user/OLBG1; this session&#x27;s writes are limited to data/2ff8342b, 2ff8342b, scripts/s2ff8342b_*, reports/SESSION_2FF8342B.*, tests/pipeline/test_desk_2ff8342b.py and COORDINATION.md</td></tr></tbody>
+</table></div>
+<h2>What was not audited</h2>
+<p>The repository carries dozens of prior session folders, archives and generated HTML files. Those are historical artefacts owned by other sessions; this session did not edit them and does not certify their contents. Counts here describe this desk's data only.</p>
+
+</main>
+<footer class="footer wrap">
+  <p><strong>What this is.</strong> An independent research notebook that records what official sources published, what we could price from those numbers, and what we could not confirm. Not affiliated with OLBG. No guarantees, no staking advice. 18+.</p>
+  <p><a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review (7)</a> · <a href="sources.html">Sources</a> · <a href="https://github.com/buffedlizard55-lab/OLBG1">Repository</a></p>
+</footer>
+</body>
+</html>

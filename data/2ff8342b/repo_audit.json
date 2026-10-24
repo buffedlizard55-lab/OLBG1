@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-10-24T18:05:00Z",
+  "checks": [
+    {
+      "check": "python-syntax",
+      "ok": true,
+      "detail": "302 files parsed; failures: none"
+    },
+    {
+      "check": "json-parse",
+      "ok": true,
+      "detail": "427 JSON files under data/; failures: none"
+    },
+    {
+      "check": "conflict-markers-own-scope",
+      "ok": false,
+      "detail": "root HTML and scripts/s2ff8342b_*: hits ['scripts/s2ff8342b_audit.py']"
+    },
+    {
+      "check": "conflict-markers-peer-files",
+      "ok": true,
+      "detail": "pre-existing markers inside other sessions' scripts (not edited by this session): ['s0c9bc692_validate.py', 's37003e61_validate.py', 's8aede3ba_build.py']"
+    },
+    {
+      "check": "pages-nojekyll",
+      "ok": true,
+      "detail": "root .nojekyll present so Pages serves files verbatim"
+    },
+    {
+      "check": "site-page-count",
+      "ok": true,
+      "detail": "26 HTML pages generated (overview, picks, matches, markets, predictions, 15 sports, flagged, sources, method, reverse, audit)"
+    },
+    {
+      "check": "no-external-assets",
+      "ok": true,
+      "detail": "no remote scripts or stylesheets; hits: none"
+    },
+    {
+      "check": "desk-data-files",
+      "ok": true,
+      "detail": "present: fixtures.json, lines.json, predictions.json, sources.json, flagged.json, summary.json; missing: none"
+    },
+    {
+      "check": "repo-root-unmodified",
+      "ok": true,
+      "detail": "working tree root is /home/user/OLBG1; this session's writes are limited to data/2ff8342b, 2ff8342b, scripts/s2ff8342b_*, reports/SESSION_2FF8342B.*, tests/pipeline/test_desk_2ff8342b.py and COORDINATION.md"
+    }
+  ],
+  "scope_note": "Structural checks only. Historical session outputs in this repository are not audited or certified here."
+}

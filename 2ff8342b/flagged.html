@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for review · OLBG Research Desk · 2026-10-24</title>
+<meta name="description" content="Independent, source-linked OLBG match research. Every row links to an official source; blanks are unverified.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">◇</span>
+      <span><strong>OLBG Research Desk</strong><small>Independent · source-linked</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="picks.html">Today&#x27;s picks</a><a class="nav-link" href="matches.html">All matches</a><a class="nav-link" href="markets.html">Markets</a><a class="nav-link" href="predictions.html">Predictions</a><a class="nav-link" href="sports.html">Sports</a><a class="nav-link active" href="flagged.html">Flagged for review</a><a class="nav-link" href="sources.html">Sources</a><a class="nav-link" href="methodology.html">Method</a><a class="nav-link" href="reverse-engineering.html">OLBG</a><a class="nav-link" href="repo-audit.html">Repo audit</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+  <div class="page-head">
+    <p class="eyebrow">Desk date 2026-10-24 · facts read at 2026-10-24T17:50:00Z</p>
+    <h1>Flagged for review</h1>
+    <p class="lede">Irregularities, conflicts in the brief, and every value this desk refused to fill in.</p>
+  </div>
+  
+<div class="notice warn"><strong>7 items need a human decision.</strong> They are published here, with sources where one applies, so they do not block the release but are impossible to miss.</div>
+
+        <article class="flag sev-high" id="F-01">
+          <div class="flag-head"><span class="flag-id">F-01</span><span class="badge high">High</span><h3>The −250 floor and the &gt;70% rule almost never overlap</h3></div>
+          <p>A fair price of −250 implies a 71.4% chance. Requiring both &#x27;more than 70%&#x27; and a price no shorter than −250 leaves an effective band of roughly 70.0%–71.4%. Every genuine short-priced favourite on this slate (Boston at −313, Edmonton at −650 on our numbers) falls outside the requested odds window, so it cannot be published as a High pick under the brief. This desk therefore treats the odds window as the eligibility filter and grades confidence from the evidence, and it publishes the conflict rather than manufacturing in-band High picks.</p>
+          <p class="src-line"><a class="src" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">National Hockey League ↗</a></p>
+        </article>
+        <article class="flag sev-high" id="F-02">
+          <div class="flag-head"><span class="flag-id">F-02</span><span class="badge high">High</span><h3>Nine of the fifteen sports carry no price, and three have no fixture at all</h3></div>
+          <p>Twelve sports have at least one row. Only ice hockey, basketball and baseball have the official statistical inputs needed to originate a line, so nine sports are unpriced. Golf&#x27;s OLBG hub returned &#x27;No tips found.&#x27;; the only GAA fixture on 24 October is the shinty-hurling international, which the brief excludes; Rugby League is between seasons and lists futures only. Darts, cricket, handball, volleyball, rugby union and greyhounds are listed on OLBG but their official pages were a consent wall, client-rendered or 404, so those rows are discovery-only. Snooker, tennis and motor racing have officially confirmed fixtures but no readable form or ranking input, so they are priced nowhere and get no prediction.</p>
+          <p class="src-line"><a class="src" href="https://www.gaa.ie/fixtures-results" target="_blank" rel="noopener noreferrer">Gaelic Athletic Association ↗</a> <a class="src" href="https://www.wst.tv/matches/?" target="_blank" rel="noopener noreferrer">World Snooker Tour ↗</a> <a class="src" href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener noreferrer">ATP Tour ↗</a> <a class="src" href="https://www.formula1.com/en/racing/2026/mexico" target="_blank" rel="noopener noreferrer">Formula 1 ↗</a></p>
+        </article>
+        <article class="flag sev-medium" id="F-03">
+          <div class="flag-head"><span class="flag-id">F-03</span><span class="badge medium">Medium</span><h3>OLBG displays times without a timezone</h3></div>
+          <p>OLBG event times appear as &#x27;Today 15:15&#x27;, &#x27;Tomorrow 05:00&#x27; and so on, with minute offsets that do not map cleanly onto any single zone. No OLBG time is converted or presented as UTC on this desk; official start times are used wherever they exist and are left blank otherwise.</p>
+          <p class="src-line"><a class="src" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">National Hockey League ↗</a></p>
+        </article>
+        <article class="flag sev-medium" id="F-04">
+          <div class="flag-head"><span class="flag-id">F-04</span><span class="badge medium">Medium</span><h3>PDC tournament page is behind a consent wall</h3></div>
+          <p>https://www.pdc.tv/tournaments/machineseeker-european-championship returned only cookie-consent text in the fetched body, so the four darts matches listed by OLBG could not be checked against the PDC. They are published as discovery-only.</p>
+          <p class="src-line"><span class="muted">No official source applies to this process finding.</span></p>
+        </article>
+        <article class="flag sev-medium" id="F-05">
+          <div class="flag-head"><span class="flag-id">F-05</span><span class="badge medium">Medium</span><h3>Two NHL games cannot be priced</h3></div>
+          <p>Columbus, Los Angeles, Calgary and Anaheim were absent from the standings excerpts captured, so Vegas @ Columbus, Los Angeles @ New Jersey and Detroit @ Calgary have only one side&#x27;s statistical input and no price is originated. Minnesota @ Seattle has both inputs but no official start time in the captured excerpt; its price is marked provisional.</p>
+          <p class="src-line"><a class="src" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">National Hockey League ↗</a></p>
+        </article>
+        <article class="flag sev-low" id="F-06">
+          <div class="flag-head"><span class="flag-id">F-06</span><span class="badge low">Low</span><h3>No injury or availability feed captured</h3></div>
+          <p>None of the official pages read for this desk published a usable injury report for the fixtures priced. Predictions therefore make no availability claims at all; where a lineup fact was not captured it is absent rather than assumed.</p>
+          <p class="src-line"><a class="src" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">National Hockey League ↗</a> <a class="src" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-27&amp;hydrate=probablePitcher,team,venue,linescore" target="_blank" rel="noopener noreferrer">Major League Baseball ↗</a></p>
+        </article>
+        <article class="flag sev-low" id="F-07">
+          <div class="flag-head"><span class="flag-id">F-07</span><span class="badge low">Low</span><h3>MLB series record is a series record, not a season record</h3></div>
+          <p>The MLB StatsAPI leagueRecord inside the World Series schedule shows each club&#x27;s record in the series (Milwaukee 1-0, Tampa Bay 0-1). Season records used in the write-ups come from the separate regular-season standings feed and are labelled as such.</p>
+          <p class="src-line"><a class="src" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;startDate=2026-10-24&amp;endDate=2026-10-27&amp;hydrate=probablePitcher,team,venue,linescore" target="_blank" rel="noopener noreferrer">Major League Baseball ↗</a></p>
+        </article>
+
+</main>
+<footer class="footer wrap">
+  <p><strong>What this is.</strong> An independent research notebook that records what official sources published, what we could price from those numbers, and what we could not confirm. Not affiliated with OLBG. No guarantees, no staking advice. 18+.</p>
+  <p><a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review (7)</a> · <a href="sources.html">Sources</a> · <a href="https://github.com/buffedlizard55-lab/OLBG1">Repository</a></p>
+</footer>
+</body>
+</html>

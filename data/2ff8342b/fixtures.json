@@ -1,0 +1,1243 @@
+{
+  "desk_date": "2026-10-24",
+  "observed_at": "2026-10-24T17:50:00Z",
+  "count": 54,
+  "fixtures": [
+    {
+      "id": "BB-01",
+      "sport": "baseball",
+      "league": "MLB World Series — Game 2",
+      "event": "Tampa Bay Rays at Milwaukee Brewers",
+      "away": "Tampa Bay Rays",
+      "home": "Milwaukee Brewers",
+      "start_utc": "2026-10-25T00:00:00Z",
+      "venue": "American Family Field, Milwaukee",
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "MLB-SCHED",
+        "MLB-STAND-AL",
+        "MLB-STAND-NL"
+      ],
+      "facts": {
+        "series": "Milwaukee leads 1-0",
+        "away_pitcher": "Drew Rasmussen (TB)",
+        "home_pitcher": "Logan Henderson (MIL)",
+        "away_record": "98-64 (.605), 43-38 away",
+        "home_record": "103-59 (.636), 55-26 home",
+        "away_runs": "736 scored / 650 allowed (162 games)",
+        "home_runs": "832 scored / 618 allowed (+214, MLB best)",
+        "home_form": "W5 entering the series; 8-2 in the last ten",
+        "away_form": "L1; 5-5 in the last ten"
+      },
+      "gaps": [
+        "Injury reports not captured for either roster.",
+        "Bullpen availability for Game 2 not published on the pages fetched."
+      ]
+    },
+    {
+      "id": "BB-02",
+      "sport": "baseball",
+      "league": "MLB World Series — Game 3",
+      "event": "Milwaukee Brewers at Tampa Bay Rays",
+      "away": "Milwaukee Brewers",
+      "home": "Tampa Bay Rays",
+      "start_utc": "2026-10-27T00:00:00Z",
+      "venue": "Tropicana Field, St. Petersburg",
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "MLB-SCHED",
+        "MLB-STAND-AL",
+        "MLB-STAND-NL"
+      ],
+      "facts": {
+        "series": "Game 3 of the best-of-seven",
+        "away_pitcher": "Robert Gasser (MIL)",
+        "home_pitcher": "Freddy Peralta (TB)",
+        "away_record": "103-59 (.636), 48-33 away",
+        "home_record": "98-64 (.605), 55-26 home",
+        "away_runs": "832 scored / 618 allowed",
+        "home_runs": "736 scored / 650 allowed",
+        "home_form": "Tampa Bay finished 63-32 at night",
+        "away_form": "Milwaukee finished 68-35 at night"
+      },
+      "gaps": [
+        "Pitcher workloads after Games 1–2 not published on the pages fetched.",
+        "No injury report captured."
+      ]
+    },
+    {
+      "id": "IH-01",
+      "sport": "ice-hockey",
+      "league": "NHL regular season",
+      "event": "San Jose Sharks at Boston Bruins",
+      "away": "San Jose Sharks",
+      "home": "Boston Bruins",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "venue": "TD Garden, Boston",
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NHL-SCHED",
+        "NHL-STAND"
+      ],
+      "facts": {
+        "away_record": "6-4-1 (13 pts), 33 GF / 37 GA, 4-2-1 away",
+        "home_record": "8-2-1 (17 pts), 42 GF / 22 GA, 4-1-0 home",
+        "away_form": "W2",
+        "home_form": "W1",
+        "market_ref": "Sharks +152 / Bruins -184 (official NHL API odds array)"
+      },
+      "gaps": [
+        "Goaltender starters not published on the schedule page.",
+        "Injury and roster status not captured."
+      ]
+    },
+    {
+      "id": "IH-02",
+      "sport": "ice-hockey",
+      "league": "NHL regular season",
+      "event": "New York Rangers at Ottawa Senators",
+      "away": "New York Rangers",
+      "home": "Ottawa Senators",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "venue": "Canadian Tire Centre, Ottawa",
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NHL-SCHED",
+        "NHL-STAND"
+      ],
+      "facts": {
+        "away_record": "7-4-1 (15 pts), 37 GF / 29 GA, 1-4-1 away",
+        "home_record": "7-3-0 (14 pts), 31 GF / 30 GA, 4-2-0 home",
+        "away_form": "L1; 6-0-0 at home but 1-4-1 on the road",
+        "home_form": "L1",
+        "market_ref": "Rangers +105 / Senators -128"
+      },
+      "gaps": [
+        "Goaltender starters not published on the schedule page.",
+        "Injury and roster status not captured."
+      ]
+    },
+    {
+      "id": "IH-03",
+      "sport": "ice-hockey",
+      "league": "NHL regular season",
+      "event": "Nashville Predators at Pittsburgh Penguins",
+      "away": "Nashville Predators",
+      "home": "Pittsburgh Penguins",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "venue": "PPG Paints Arena, Pittsburgh",
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NHL-SCHED",
+        "NHL-STAND"
+      ],
+      "facts": {
+        "away_record": "3-3-3 (9 pts), 23 GF / 30 GA, 1-1-2 away",
+        "home_record": "4-6-1 (9 pts), 37 GF / 38 GA, 3-1-0 home",
+        "away_form": "L1",
+        "home_form": "W1",
+        "market_ref": "Predators +106 / Penguins -128"
+      },
+      "gaps": [
+        "Goaltender starters not published on the schedule page.",
+        "Injury and roster status not captured."
+      ]
+    },
+    {
+      "id": "IH-04",
+      "sport": "ice-hockey",
+      "league": "NHL regular season",
+      "event": "Buffalo Sabres at Washington Capitals",
+      "away": "Buffalo Sabres",
+      "home": "Washington Capitals",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "venue": "Capital One Arena, Washington",
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NHL-SCHED",
+        "NHL-STAND"
+      ],
+      "facts": {
+        "away_record": "4-4-2 (10 pts), 28 GF / 37 GA, 1-1-2 away",
+        "home_record": "5-4-0 (10 pts), 30 GF / 29 GA, 4-2-0 home",
+        "away_form": "L1",
+        "home_form": "L1",
+        "market_ref": "Sabres +100 / Capitals -120"
+      },
+      "gaps": [
+        "Goaltender starters not published on the schedule page.",
+        "Injury and roster status not captured."
+      ]
+    },
+    {
+      "id": "IH-05",
+      "sport": "ice-hockey",
+      "league": "NHL regular season",
+      "event": "Carolina Hurricanes at St. Louis Blues",
+      "away": "Carolina Hurricanes",
+      "home": "St. Louis Blues",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "venue": "Enterprise Center, St. Louis",
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NHL-SCHED",
+        "NHL-STAND"
+      ],
+      "facts": {
+        "away_record": "8-2-2 (18 pts), 47 GF / 33 GA, 6-1-1 away",
+        "home_record": "5-4-1 (11 pts), 35 GF / 31 GA, 3-0-1 home",
+        "away_form": "8-1-1 in the last ten",
+        "home_form": "W2",
+        "market_ref": "Hurricanes -154 / Blues +128"
+      },
+      "gaps": [
+        "Goaltender starters not published on the schedule page.",
+        "Injury and roster status not captured."
+      ]
+    },
+    {
+      "id": "IH-06",
+      "sport": "ice-hockey",
+      "league": "NHL regular season",
+      "event": "Toronto Maple Leafs at Edmonton Oilers",
+      "away": "Toronto Maple Leafs",
+      "home": "Edmonton Oilers",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "venue": "Rogers Place, Edmonton",
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NHL-SCHED",
+        "NHL-STAND"
+      ],
+      "facts": {
+        "away_record": "6-4-2 (14 pts), 43 GF / 39 GA, 2-1-1 away",
+        "home_record": "8-1-1 (17 pts), 47 GF / 32 GA, 5-0-0 away record",
+        "away_form": "W3",
+        "home_form": "W3; 8-1-1 in the last ten",
+        "market_ref": "Maple Leafs +150 / Oilers -182"
+      },
+      "gaps": [
+        "Goaltender starters not published on the schedule page.",
+        "Injury and roster status not captured."
+      ]
+    },
+    {
+      "id": "IH-07",
+      "sport": "ice-hockey",
+      "league": "NHL regular season",
+      "event": "Tampa Bay Lightning at Utah Mammoth",
+      "away": "Tampa Bay Lightning",
+      "home": "Utah Mammoth",
+      "start_utc": "2026-10-25T01:00:00Z",
+      "venue": "Delta Center, Salt Lake City",
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NHL-SCHED",
+        "NHL-STAND"
+      ],
+      "facts": {
+        "away_record": "7-3-0 (14 pts), 34 GF / 29 GA, 2-3-0 away",
+        "home_record": "7-4-0 (14 pts), 41 GF / 36 GA, 3-1-0 home",
+        "away_form": "L1 but 5-0-0 at home",
+        "home_form": "L1",
+        "market_ref": "Lightning +120 / Mammoth -144"
+      },
+      "gaps": [
+        "Goaltender starters not published on the schedule page.",
+        "Injury and roster status not captured."
+      ]
+    },
+    {
+      "id": "IH-08",
+      "sport": "ice-hockey",
+      "league": "NHL regular season",
+      "event": "Minnesota Wild at Seattle Kraken",
+      "away": "Minnesota Wild",
+      "home": "Seattle Kraken",
+      "start_utc": null,
+      "venue": "Climate Pledge Arena, Seattle",
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NHL-SCHED",
+        "NHL-STAND"
+      ],
+      "facts": {
+        "away_record": "6-3-1 (14 pts), 32 GF / 27 GA, 2-3-2 away",
+        "home_record": "7-3-1 (15 pts), 38 GF / 36 GA, 3-2-1 home",
+        "away_form": "L1",
+        "home_form": "W2",
+        "market_ref": "not captured — the fetched schedule excerpt did not include this game's odds"
+      },
+      "gaps": [
+        "Official start time not captured: the game fell outside the fetched excerpt. Left blank.",
+        "Goaltender starters and injuries not captured."
+      ]
+    },
+    {
+      "id": "IH-09",
+      "sport": "ice-hockey",
+      "league": "NHL regular season",
+      "event": "Vegas Golden Knights at Columbus Blue Jackets",
+      "away": "Vegas Golden Knights",
+      "home": "Columbus Blue Jackets",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "venue": "Nationwide Arena, Columbus",
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NHL-SCHED"
+      ],
+      "facts": {
+        "away_record": "8-4-0 (16 pts), 46 GF / 36 GA",
+        "away_form": "L2",
+        "market_ref": "Golden Knights -138 / Blue Jackets +116"
+      },
+      "gaps": [
+        "Columbus season record not captured (club absent from the standings excerpts read).",
+        "Goaltender starters and injuries not captured."
+      ]
+    },
+    {
+      "id": "IH-10",
+      "sport": "ice-hockey",
+      "league": "NHL regular season",
+      "event": "Los Angeles Kings at New Jersey Devils",
+      "away": "Los Angeles Kings",
+      "home": "New Jersey Devils",
+      "start_utc": "2026-10-24T19:30:00Z",
+      "venue": "Prudential Center, Newark",
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NHL-SCHED",
+        "NHL-STAND"
+      ],
+      "facts": {
+        "home_record": "6-4-0 (12 pts), 33 GF / 31 GA, 5-2-0 home",
+        "home_form": "W2",
+        "market_ref": "Kings +162 / Devils -194"
+      },
+      "gaps": [
+        "Los Angeles season record not captured.",
+        "Goaltenders and injuries not captured."
+      ]
+    },
+    {
+      "id": "IH-11",
+      "sport": "ice-hockey",
+      "league": "NHL regular season",
+      "event": "Detroit Red Wings at Calgary Flames",
+      "away": "Detroit Red Wings",
+      "home": "Calgary Flames",
+      "start_utc": "2026-10-25T02:00:00Z",
+      "venue": "Scotiabank Saddledome, Calgary",
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NHL-SCHED",
+        "NHL-STAND"
+      ],
+      "facts": {
+        "away_record": "4-3-3 (11 pts), 28 GF / 30 GA, 1-0-2 away",
+        "away_form": "W1",
+        "market_ref": "Red Wings -130 / Flames +108"
+      },
+      "gaps": [
+        "Calgary season record not captured.",
+        "Goaltenders and injuries not captured."
+      ]
+    },
+    {
+      "id": "IH-12",
+      "sport": "ice-hockey",
+      "league": "NHL regular season",
+      "event": "Anaheim Ducks at Philadelphia Flyers",
+      "away": "Anaheim Ducks",
+      "home": "Philadelphia Flyers",
+      "start_utc": "2026-10-24T17:00:00Z",
+      "venue": "Xfinity Mobile Arena, Philadelphia",
+      "status": "In progress at capture",
+      "verification": "official",
+      "sources": [
+        "NHL-SCHED",
+        "NHL-STAND"
+      ],
+      "facts": {
+        "home_record": "3-6-1 (9 pts), 20 GF / 37 GA, 2-2-2 home",
+        "home_form": "W3",
+        "market_ref": "no pre-match price captured"
+      },
+      "gaps": [
+        "Game was already live at 17:42Z, so it is not a pre-match selection.",
+        "Anaheim record not captured."
+      ]
+    },
+    {
+      "id": "BK-01",
+      "sport": "basketball",
+      "league": "NBA regular season",
+      "event": "Miami Heat at Charlotte Hornets",
+      "away": "Miami Heat",
+      "home": "Charlotte Hornets",
+      "start_utc": null,
+      "venue": null,
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NBA-REF",
+        "NBA-STAND"
+      ],
+      "facts": {
+        "away_record": "Miami Heat 0-2 (0-2 home, 0-0 road, L2)",
+        "home_record": "Charlotte Hornets 1-1 (0-1 home, 1-0 road, L1)",
+        "referee_crew": "James Williams, Natalie Sago, Simone Jelks"
+      },
+      "gaps": [
+        "Tip-off time not published on the official page fetched; left blank.",
+        "No injury report, tip-off time or market price was captured for this desk."
+      ]
+    },
+    {
+      "id": "BK-02",
+      "sport": "basketball",
+      "league": "NBA regular season",
+      "event": "Brooklyn Nets at Cleveland Cavaliers",
+      "away": "Brooklyn Nets",
+      "home": "Cleveland Cavaliers",
+      "start_utc": null,
+      "venue": null,
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NBA-REF",
+        "NBA-STAND"
+      ],
+      "facts": {
+        "away_record": "Brooklyn Nets 0-1 (0-0 home, 0-1 road, L1)",
+        "home_record": "Cleveland Cavaliers 0-1 (0-0 home, 0-1 road, L1)",
+        "referee_crew": "Courtney Kirkland, Eric Dalen, Suyash Mehta"
+      },
+      "gaps": [
+        "Tip-off time not published on the official page fetched.",
+        "No injury report, tip-off time or market price captured."
+      ]
+    },
+    {
+      "id": "BK-03",
+      "sport": "basketball",
+      "league": "NBA regular season",
+      "event": "Milwaukee Bucks at Philadelphia 76ers",
+      "away": "Milwaukee Bucks",
+      "home": "Philadelphia 76ers",
+      "start_utc": null,
+      "venue": null,
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NBA-REF",
+        "NBA-STAND"
+      ],
+      "facts": {
+        "away_record": "Milwaukee Bucks 0-2 (0-1 home, 0-1 road, L2)",
+        "home_record": "Philadelphia 76ers 2-0 (1-0 home, 1-0 road, W2)",
+        "referee_crew": "Tyler Ford, Dedric Taylor, Robert Hussey"
+      },
+      "gaps": [
+        "Tip-off time not published on the official page fetched.",
+        "No injury report, tip-off time or market price captured."
+      ]
+    },
+    {
+      "id": "BK-04",
+      "sport": "basketball",
+      "league": "NBA regular season",
+      "event": "Houston Rockets at Atlanta Hawks",
+      "away": "Houston Rockets",
+      "home": "Atlanta Hawks",
+      "start_utc": null,
+      "venue": null,
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NBA-REF",
+        "NBA-STAND"
+      ],
+      "facts": {
+        "away_record": "Houston Rockets 2-0 (1-0 home, 1-0 road, W2)",
+        "home_record": "Atlanta Hawks 2-0 (0-0 home, 2-0 road, W2)",
+        "referee_crew": "Nick Buchert, Andy Nagy, CJ Washington"
+      },
+      "gaps": [
+        "Tip-off time not published on the official page fetched.",
+        "No injury report, tip-off time or market price captured."
+      ]
+    },
+    {
+      "id": "BK-05",
+      "sport": "basketball",
+      "league": "NBA regular season",
+      "event": "Washington Wizards at Chicago Bulls",
+      "away": "Washington Wizards",
+      "home": "Chicago Bulls",
+      "start_utc": null,
+      "venue": null,
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NBA-REF",
+        "NBA-STAND"
+      ],
+      "facts": {
+        "away_record": "Washington Wizards 1-1 (1-1 home, 0-0 road, L1)",
+        "home_record": "Chicago Bulls 1-1 (0-0 home, 1-1 road, W1)",
+        "referee_crew": "Justin Van Duyne, Gediminas Petraitis, Matt Kallio"
+      },
+      "gaps": [
+        "Tip-off time not published on the official page fetched.",
+        "No injury report, tip-off time or market price captured."
+      ]
+    },
+    {
+      "id": "BK-06",
+      "sport": "basketball",
+      "league": "NBA regular season",
+      "event": "San Antonio Spurs at Dallas Mavericks",
+      "away": "San Antonio Spurs",
+      "home": "Dallas Mavericks",
+      "start_utc": null,
+      "venue": null,
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NBA-REF",
+        "NBA-STAND"
+      ],
+      "facts": {
+        "away_record": "San Antonio Spurs 0-2 (0-2 home, 0-0 road, L2)",
+        "home_record": "Dallas Mavericks 1-1 (0-0 home, 1-1 road, W1)",
+        "referee_crew": "Karl Lane, Tre Maddox, Phenizee Ransom"
+      },
+      "gaps": [
+        "Tip-off time not published on the official page fetched.",
+        "No injury report, tip-off time or market price captured."
+      ]
+    },
+    {
+      "id": "BK-07",
+      "sport": "basketball",
+      "league": "NBA regular season",
+      "event": "New Orleans Pelicans at Denver Nuggets",
+      "away": "New Orleans Pelicans",
+      "home": "Denver Nuggets",
+      "start_utc": null,
+      "venue": null,
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NBA-REF",
+        "NBA-STAND"
+      ],
+      "facts": {
+        "away_record": "New Orleans Pelicans 0-2 (0-1 home, 0-1 road, L2)",
+        "home_record": "Denver Nuggets 0-1 (0-0 home, 0-1 road, L1)",
+        "referee_crew": "Scott Foster, John Butler, Nate Cearley"
+      },
+      "gaps": [
+        "Tip-off time not published on the official page fetched.",
+        "No injury report, tip-off time or market price captured."
+      ]
+    },
+    {
+      "id": "BK-08",
+      "sport": "basketball",
+      "league": "NBA regular season",
+      "event": "Golden State Warriors at Phoenix Suns",
+      "away": "Golden State Warriors",
+      "home": "Phoenix Suns",
+      "start_utc": null,
+      "venue": null,
+      "status": "Scheduled",
+      "verification": "official",
+      "sources": [
+        "NBA-REF",
+        "NBA-STAND"
+      ],
+      "facts": {
+        "away_record": "Golden State Warriors 0-2 (0-1 home, 0-1 road, L2)",
+        "home_record": "Phoenix Suns 0-1 (0-0 home, 0-1 road, L1)",
+        "referee_crew": "Ray Acosta, Sean Corbin, Derrick Collins"
+      },
+      "gaps": [
+        "Tip-off time not published on the official page fetched.",
+        "No injury report, tip-off time or market price captured."
+      ]
+    },
+    {
+      "id": "TN-01",
+      "sport": "tennis",
+      "league": "ATP Tour — Almaty Open final",
+      "event": "Daniil Medvedev v Nikoloz Basilashvili",
+      "away": "Nikoloz Basilashvili",
+      "home": "Daniil Medvedev",
+      "start_utc": null,
+      "venue": "Almaty, Kazakhstan",
+      "status": "Final — scheduled",
+      "verification": "official",
+      "sources": [
+        "ATP-SCORES",
+        "ATP-ALMATY"
+      ],
+      "facts": {
+        "home_path": "Beat Alexander Bublik 6-3 in the semi-final (Bublik retired).",
+        "away_path": "Beat Stefanos Tsitsipas 6-4 6-7(5) 6-3 in the semi-final.",
+        "other_semi": "Bublik was seeded third; Tsitsipas was seeded seventh.",
+        "ranking_note": "Neither player's current ranking was captured from an official page."
+      },
+      "gaps": [
+        "Official start time not shown on the pages fetched; OLBG displayed 'Tomorrow 05:00' with no timezone, so it is not converted here.",
+        "No head-to-head record or serving statistics captured.",
+        "No price originated: ranking input missing."
+      ]
+    },
+    {
+      "id": "TN-02",
+      "sport": "tennis",
+      "league": "ATP Tour — Lyon final",
+      "event": "Taylor Fritz v Lorenzo Musetti",
+      "away": "Lorenzo Musetti",
+      "home": "Taylor Fritz",
+      "start_utc": null,
+      "venue": "Lyon, France",
+      "status": "Final — scheduled",
+      "verification": "official",
+      "sources": [
+        "ATP-SCORES",
+        "ATP-LYON"
+      ],
+      "facts": {
+        "home_path": "Beat Tommy Paul 6-3 7-5 in the semi-final.",
+        "away_path": "Saved four match points to beat Flavio Cobolli 4-6 6-2 7-5.",
+        "seeding": "Fritz seeded second and Paul fourth in the top half; Musetti seeded sixth, Cobolli first.",
+        "ranking_note": "Current rankings were not captured from an official page."
+      },
+      "gaps": [
+        "Official start time not captured.",
+        "No head-to-head or serve statistics captured.",
+        "No price originated: ranking input missing."
+      ]
+    },
+    {
+      "id": "SN-01",
+      "sport": "snooker",
+      "league": "BetVictor Northern Ireland Open — final",
+      "event": "Kyren Wilson v Mark Williams or Jak Jones",
+      "away": "Mark Williams / Jak Jones",
+      "home": "Kyren Wilson",
+      "start_utc": "2026-10-25T08:00:00Z",
+      "venue": "Belfast (venue not stated on the matches page)",
+      "status": "Final — opponent not yet decided",
+      "verification": "official",
+      "sources": [
+        "WST-MATCHES"
+      ],
+      "facts": {
+        "semi_final": "Kyren Wilson beat Sam Craigie 6-5.",
+        "other_semi": "Mark Williams v Jak Jones was in progress at 17:54Z (0-0).",
+        "schedule": "Final listed 08:00 Sunday 25 October."
+      },
+      "gaps": [
+        "Opponent unresolved at capture, so no selection can be priced.",
+        "The times shown on wst.tv are not timezone-labelled; the 08:00 start is recorded exactly as displayed and treated as unconfirmed."
+      ]
+    },
+    {
+      "id": "DT-01",
+      "sport": "darts",
+      "league": "PDC European Championship (per OLBG listing)",
+      "event": "Nathan Aspinall v Luke Littler",
+      "away": "Nathan Aspinall",
+      "home": "Luke Littler",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Today 15:15; Luke Littler backed by 13 of 19 tips (68%)"
+      },
+      "gaps": [
+        "No official PDC page could be read (the tournament page returned a cookie wall). Fixture and time are OLBG-only and are not certified.",
+        "No statistics, injuries or prices captured."
+      ]
+    },
+    {
+      "id": "DT-02",
+      "sport": "darts",
+      "league": "PDC European Championship (per OLBG listing)",
+      "event": "Jonny Clayton v Josh Rock",
+      "away": "Jonny Clayton",
+      "home": "Josh Rock",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Today 16:15; Jonny Clayton backed by 13 of 19 tips (68%)"
+      },
+      "gaps": [
+        "Official PDC confirmation not obtained.",
+        "No statistics or prices captured."
+      ]
+    },
+    {
+      "id": "DT-03",
+      "sport": "darts",
+      "league": "PDC European Championship (per OLBG listing)",
+      "event": "Martin Schindler v Jermaine Wattimena",
+      "away": "Martin Schindler",
+      "home": "Jermaine Wattimena",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Today 14:15; Jermaine Wattimena backed by 10 of 19 tips (53%)"
+      },
+      "gaps": [
+        "Official PDC confirmation not obtained.",
+        "No statistics or prices captured."
+      ]
+    },
+    {
+      "id": "DT-04",
+      "sport": "darts",
+      "league": "PDC European Championship (per OLBG listing)",
+      "event": "Gerwyn Price v Stephen Bunting",
+      "away": "Gerwyn Price",
+      "home": "Stephen Bunting",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Tomorrow 07:00; Gerwyn Price backed by 2 of 2 tips"
+      },
+      "gaps": [
+        "Official PDC confirmation not obtained.",
+        "No statistics or prices captured."
+      ]
+    },
+    {
+      "id": "CK-01",
+      "sport": "cricket",
+      "league": "T20 (per OLBG listing)",
+      "event": "Toronto Kings v Vancouver Guardians",
+      "away": "Vancouver Guardians",
+      "home": "Toronto Kings",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Today 19:00; Toronto Kings backed by 6 of 7 tips (86%)"
+      },
+      "gaps": [
+        "No official competition page fetched; fixture is OLBG-only.",
+        "No team form or squad data captured."
+      ]
+    },
+    {
+      "id": "CK-02",
+      "sport": "cricket",
+      "league": "ODI (per OLBG listing)",
+      "event": "Pakistan v England",
+      "away": "England",
+      "home": "Pakistan",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Tomorrow 04:00; Pakistan backed by 5 of 10 tips (50%)"
+      },
+      "gaps": [
+        "No official board (PCB/ECB) page fetched.",
+        "No series state, form or availability captured."
+      ]
+    },
+    {
+      "id": "CK-03",
+      "sport": "cricket",
+      "league": "South African domestic T20 (per OLBG listing)",
+      "event": "North West Dragons v Northern Cape Heat",
+      "away": "Northern Cape Heat",
+      "home": "North West Dragons",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Tomorrow 07:00; North West Dragons backed by 5 of 6 tips (83%)"
+      },
+      "gaps": [
+        "No official CSA page fetched.",
+        "No form or availability captured."
+      ]
+    },
+    {
+      "id": "CK-04",
+      "sport": "cricket",
+      "league": "South African domestic T20 (per OLBG listing)",
+      "event": "Tuskers v Western Province",
+      "away": "Western Province",
+      "home": "Tuskers",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Tomorrow 07:00; Western Province backed by 5 of 5 tips (100%)"
+      },
+      "gaps": [
+        "No official CSA page fetched.",
+        "No form or availability captured."
+      ]
+    },
+    {
+      "id": "HB-01",
+      "sport": "handball",
+      "league": "German HBL (per OLBG listing)",
+      "event": "HBW Balingen-Weilstetten v MT Melsungen",
+      "away": "MT Melsungen",
+      "home": "HBW Balingen-Weilstetten",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Today 14:00; market led by 'Tie' with 6 of 11 tips (55%)"
+      },
+      "gaps": [
+        "Official HBL fixture list is rendered client-side and could not be read; OLBG listing only.",
+        "No table position, form or squad data captured."
+      ]
+    },
+    {
+      "id": "HB-02",
+      "sport": "handball",
+      "league": "German HBL (per OLBG listing)",
+      "event": "Rhein-Neckar Löwen v SC Magdeburg",
+      "away": "SC Magdeburg",
+      "home": "Rhein-Neckar Löwen",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Tomorrow 10:00; Rhein-Neckar Löwen backed by 2 of 3 tips"
+      },
+      "gaps": [
+        "Official HBL confirmation not obtained.",
+        "No form data captured."
+      ]
+    },
+    {
+      "id": "HB-03",
+      "sport": "handball",
+      "league": "EHF Champions League (per OLBG listing)",
+      "event": "SC Magdeburg v HC Kriens-Luzern",
+      "away": "HC Kriens-Luzern",
+      "home": "SC Magdeburg",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "28 Oct 15:45; market led by 'Tie' with 3 of 4 tips"
+      },
+      "gaps": [
+        "No EHF page fetched.",
+        "No form data captured."
+      ]
+    },
+    {
+      "id": "HB-04",
+      "sport": "handball",
+      "league": "Liqui Moly Handball-Bundesliga (per OLBG listing)",
+      "event": "Saint-Raphaël v Paris Saint-Germain",
+      "away": "Paris Saint-Germain",
+      "home": "Saint-Raphaël",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Tomorrow 11:00; PSG backed by 2 of 3 tips"
+      },
+      "gaps": [
+        "No official LNH page fetched.",
+        "No form data captured."
+      ]
+    },
+    {
+      "id": "HB-05",
+      "sport": "handball",
+      "league": "Women's international (per OLBG listing)",
+      "event": "Luxembourg W v Great Britain W",
+      "away": "Great Britain W",
+      "home": "Luxembourg W",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Tomorrow 11:00; Great Britain W backed by 2 of 2 tips"
+      },
+      "gaps": [
+        "No official federation page fetched.",
+        "No form data captured."
+      ]
+    },
+    {
+      "id": "VB-01",
+      "sport": "volleyball",
+      "league": "Italian SuperLega (per OLBG listing)",
+      "event": "Trentino v Cisterna",
+      "away": "Cisterna",
+      "home": "Trentino",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Tomorrow 12:00; Cisterna backed by 2 of 2 tips"
+      },
+      "gaps": [
+        "Italian league site returned no readable fixture list; OLBG listing only.",
+        "No form data captured."
+      ]
+    },
+    {
+      "id": "VB-02",
+      "sport": "volleyball",
+      "league": "Italian SuperLega (per OLBG listing)",
+      "event": "Perugia v Pordenone",
+      "away": "Pordenone",
+      "home": "Perugia",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Tomorrow 13:00; Pordenone backed by 2 of 2 tips"
+      },
+      "gaps": [
+        "Official confirmation not obtained.",
+        "No form data captured."
+      ]
+    },
+    {
+      "id": "VB-03",
+      "sport": "volleyball",
+      "league": "Polish PlusLiga (per OLBG listing)",
+      "event": "CHKS Chełm v Resovia Rzeszów",
+      "away": "Resovia Rzeszów",
+      "home": "CHKS Chełm",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Tomorrow 13:00; Resovia backed by 2 of 3 tips"
+      },
+      "gaps": [
+        "Official PlusLiga confirmation not obtained.",
+        "No form data captured."
+      ]
+    },
+    {
+      "id": "VB-04",
+      "sport": "volleyball",
+      "league": "Austrian league (per OLBG listing)",
+      "event": "UVC Graz W v Sportunion St Pölten W",
+      "away": "Sportunion St Pölten W",
+      "home": "UVC Graz W",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Today 14:00; UVC Graz W backed by 5 of 6 tips (83%)"
+      },
+      "gaps": [
+        "Official Austrian federation confirmation not obtained.",
+        "No form data captured."
+      ]
+    },
+    {
+      "id": "VB-05",
+      "sport": "volleyball",
+      "league": "Brazilian Superliga (per OLBG listing)",
+      "event": "Abel-Moda Brusque W v Praia Clube W",
+      "away": "Praia Clube W",
+      "home": "Abel-Moda Brusque W",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Today 20:00; Abel/Moda Brusque backed by 2 of 3 tips"
+      },
+      "gaps": [
+        "Official Brazilian federation confirmation not obtained.",
+        "No form data captured."
+      ]
+    },
+    {
+      "id": "RU-01",
+      "sport": "rugby-union",
+      "league": "United Rugby Championship (per OLBG listing)",
+      "event": "Ospreys v Dragons",
+      "away": "Dragons",
+      "home": "Ospreys",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Today 14:00; Dragons +7.5 backed by 6 of 7 tips (86%)"
+      },
+      "gaps": [
+        "URC fixture pages returned 404; OLBG listing only.",
+        "No table position, form or team news captured."
+      ]
+    },
+    {
+      "id": "RU-02",
+      "sport": "rugby-union",
+      "league": "Top 14 (per OLBG listing)",
+      "event": "Toulon v Pau",
+      "away": "Pau",
+      "home": "Toulon",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Today 15:00; Toulon backed by 4 of 7 tips (57%)"
+      },
+      "gaps": [
+        "No LNR page fetched.",
+        "No form or team news captured."
+      ]
+    },
+    {
+      "id": "RU-03",
+      "sport": "rugby-union",
+      "league": "International (per OLBG listing)",
+      "event": "USA v Australia A",
+      "away": "Australia A",
+      "home": "USA",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Today 19:00; Australia A backed by 1 of 2 tips"
+      },
+      "gaps": [
+        "No World Rugby or union page fetched.",
+        "No form or team news captured."
+      ]
+    },
+    {
+      "id": "RU-04",
+      "sport": "rugby-union",
+      "league": "Gallagher Premiership (per OLBG listing)",
+      "event": "Harlequins v Saracens",
+      "away": "Saracens",
+      "home": "Harlequins",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Tomorrow 11:00; Harlequins backed by 1 of 1 tip"
+      },
+      "gaps": [
+        "Premiership Rugby's fixtures page renders client-side and returned no fixture data; OLBG listing only."
+      ]
+    },
+    {
+      "id": "RU-05",
+      "sport": "rugby-union",
+      "league": "Top 14 (per OLBG listing)",
+      "event": "La Rochelle v Bordeaux",
+      "away": "Bordeaux",
+      "home": "La Rochelle",
+      "start_utc": null,
+      "venue": null,
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Tomorrow 16:05; Bordeaux backed by 1 of 2 tips"
+      },
+      "gaps": [
+        "No LNR page fetched.",
+        "No form or team news captured."
+      ]
+    },
+    {
+      "id": "GH-01",
+      "sport": "greyhounds",
+      "league": "UK graded racing (per OLBG listing)",
+      "event": "7:58 Doncaster",
+      "away": null,
+      "home": "Lady Gambet",
+      "start_utc": null,
+      "venue": "Doncaster",
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Dog: Lady Gambet; 2 of 2 tips"
+      },
+      "gaps": [
+        "No GBGB racecard fetched; trap numbers, grade, distance and going unknown.",
+        "Times are OLBG display values with no timezone."
+      ]
+    },
+    {
+      "id": "GH-02",
+      "sport": "greyhounds",
+      "league": "UK graded racing (per OLBG listing)",
+      "event": "8:54 Monmore",
+      "away": null,
+      "home": "Crossfield Jess",
+      "start_utc": null,
+      "venue": "Monmore",
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Dog: Crossfield Jess; 2 of 3 tips"
+      },
+      "gaps": [
+        "No GBGB racecard fetched; trap numbers, grade, distance and going unknown."
+      ]
+    },
+    {
+      "id": "GH-03",
+      "sport": "greyhounds",
+      "league": "UK graded racing (per OLBG listing)",
+      "event": "9:14 Monmore",
+      "away": null,
+      "home": "Skylars Vision",
+      "start_utc": null,
+      "venue": "Monmore",
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Dog: Skylars Vision; 2 of 2 tips"
+      },
+      "gaps": [
+        "No GBGB racecard fetched; trap numbers, grade, distance and going unknown."
+      ]
+    },
+    {
+      "id": "GH-04",
+      "sport": "greyhounds",
+      "league": "UK graded racing (per OLBG listing)",
+      "event": "9:18 Dunstall Park",
+      "away": null,
+      "home": "Avarua Lake",
+      "start_utc": null,
+      "venue": "Dunstall Park",
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Dog: Avarua Lake; 2 of 4 tips"
+      },
+      "gaps": [
+        "No GBGB racecard fetched; trap numbers, grade, distance and going unknown."
+      ]
+    },
+    {
+      "id": "GH-05",
+      "sport": "greyhounds",
+      "league": "UK graded racing (per OLBG listing)",
+      "event": "10:14 Dunstall Park",
+      "away": null,
+      "home": "Greenwell Gypsy",
+      "start_utc": null,
+      "venue": "Dunstall Park",
+      "status": "Listed on OLBG",
+      "verification": "discovery_only",
+      "sources": [],
+      "facts": {
+        "olbg_listing": "Dog: Greenwell Gypsy; 2 of 3 tips"
+      },
+      "gaps": [
+        "No GBGB racecard fetched; trap numbers, grade, distance and going unknown."
+      ]
+    },
+    {
+      "id": "MR-01",
+      "sport": "motor-racing",
+      "league": "Formula 1 — Mexico City Grand Prix",
+      "event": "Mexico City Grand Prix",
+      "away": null,
+      "home": null,
+      "start_utc": "2026-11-01T15:00:00Z",
+      "venue": "Autódromo Hermanos Rodríguez",
+      "status": "Scheduled (future weekend)",
+      "verification": "official",
+      "sources": [
+        "F1-MEXICO"
+      ],
+      "facts": {
+        "race": "Sunday 1 November 15:00 track time; qualifying 31 October 17:00",
+        "circuit": "4.304 km, 71 laps, race distance 305.354 km",
+        "note": "No Formula 1 or other motor race takes place on 24–25 October per this calendar."
+      },
+      "gaps": [
+        "Entry list, grid and championship standings not captured.",
+        "No outright price originated: driver form and championship data missing."
+      ]
+    }
+  ]
+}
