@@ -496,26 +496,27 @@ PREDICTIONS = {
         'Over 5.5 goals is the call when the New York Rangers visit Canadian Tire Centre. The winner '
         'market is a coin flip, with Ottawa at 53%, but the scoring rates are not neutral: the '
         'Rangers put up 3.08 goals a game and concede 2.42, while Ottawa scores 2.82 and concedes '
-        '2.73. Blend those four rates and the projected total sits near 5.8 against a line of 5.5, '
-        'with both clubs having produced more than 60 goals across their seasons to date.'),
+        '2.73. Blend those four rates and the projected total lands essentially on the line at 5.5, '
+        'so this is the thinnest call on the board; the over still edges it because the Rangers\' '
+        'twelve games have averaged 5.50 goals and Ottawa\'s eleven 5.55.'),
     'nhl-2026020172': (
         'Back the Pittsburgh Penguins at home to Nashville. Pittsburgh is only 4-6-1 overall, yet it '
         'is 3-1-0 at PPG Paints Arena and has scored 37 goals across eleven games. The Predators '
-        'have managed 23 in nine, the thinnest attack on this slate, and hold a 1-1-2 road line. '
-        'Pittsburgh scores 3.36 per game while Nashville scores 2.56, and the visitors concede 3.33 '
-        'on their own travels, so the home side owns the better half of a level matchup.'),
+        'have managed 23 in nine, the lowest scoring rate of any club priced here, and hold a '
+        '1-1-2 road line. Pittsburgh scores 3.36 per game while Nashville scores 2.56, and the '
+        'visitors concede 3.33 a night, so the home side owns the better half of a level matchup.'),
     'nhl-2026020173': (
         'The Washington Capitals are the pick at Capital One Arena against Buffalo. Washington is '
         '5-4-0 and 4-2-0 at home, with 30 goals for and 29 against. The Sabres are 4-4-2 and minus '
-        'nine on the season after scoring 28 and conceding 37, and they have collected three of '
-        'eight available road points at 1-1-2. Buffalo leaks 3.70 goals a game, the widest '
+        'nine on the season after scoring 28 and conceding 37, and they have taken four of a '
+        'possible eight road points at 1-1-2. Buffalo leaks 3.70 goals a game, the widest '
         'defensive hole in this fixture, and Washington has the steadier numbers on home ice.'),
     'nhl-2026020175': (
         'Over 5.5 goals is the play in St. Louis. Carolina\'s twelve games have produced 80 goals, '
         '47 for and 33 against, and the Blues have '
-        'produced 66 across ten. The Hurricanes average 3.92 per game and St. Louis 3.50, while '
-        'neither club keeps opponents below three on average. Two attacks combining for 7.42 goals '
-        'a game make 5.5 a low bar, even with St. Louis unbeaten in regulation at home.'),
+        'produced 66 across ten. The Hurricanes average 3.92 per game and St. Louis 3.50, and the '
+        'Blues concede 3.10 a game compared with Carolina\'s 2.75. Two attacks combining for 7.42 '
+        'goals a game make 5.5 a low bar, even with St. Louis unbeaten in regulation at home.'),
     'nhl-2026020176': (
         'The Edmonton Oilers to beat Toronto at Rogers Place is the selection. They are 8-1-1, have '
         'scored 47 goals in ten games and are 5-0-0 on the road with three straight wins behind '
@@ -532,8 +533,8 @@ PREDICTIONS = {
         'The Dallas Stars at home to the New York Islanders is the selection. They are 6-3-1 and have won '
         'four in a row, conceding just 17 goals in ten games, the tightest defensive record on this '
         'board. New York is 5-3-2 but 1-2-1 on the road, scoring eight goals and conceding ten away '
-        'from home. The Stars have conceded 17 goals in ten games; the Islanders have conceded '
-        '23 across their ten, which is the difference between the two defensive records here.'),
+        'from home. Dallas concedes 1.70 goals a night; New York\'s 23 against across ten works '
+        'out at 2.30, a difference of more than half a goal every game.'),
     'nhl-2026020182': (
         'Play over 5.5 goals at the Heritage Classic in Winnipeg. Montreal\'s ten games have '
         'produced 69 goals, 34 for and 35 against, and the Jets\' have produced 55. The Canadiens '

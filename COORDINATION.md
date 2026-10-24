@@ -6884,3 +6884,13 @@ be read from an official source for any priced match (F-321-11).
 | Gates at the pushed head | `python3 -m unittest discover -s tests/pipeline` → 532 tests OK · `python3 scripts/validate.py` → PASS (0 errors) · `python3 -m pipeline.validate --site .` → 0 errors · `node tests/pipeline/browser.cjs` → 25 pages / 11 picks / 6 High · CI `40119079596` → success |
 | Pages read-back | `https://buffedlizard55-lab.github.io/OLBG1/` serves this desk: 6 High and 5 Medium picks with write-up anchors, 21 fixtures, 15 sport pages, per-row official links. |
 | Known shortfall, published not padded | 2 of 15 sports priced. The five-High-per-sport target is not met in the other thirteen sports, and the reason is stated on every sport page rather than filled with invented fixtures. |
+
+## 84.7 Result: T3507B0 desk merged and live
+
+| Item | Detail |
+| --- | --- |
+| PR | #242 `T3507B0: clarity rebuild + fresh 24-25 Oct picks desk` — merged `2026-10-24T18:08:57Z` |
+| Live | <https://buffedlizard55-lab.github.io/OLBG1/> serves the desk: 6 High + 5 Medium picks, 21 fixtures, 15 sport pages |
+| Pages fix | `pipeline/build.py` now writes `data/current/snapshot.json` into the artifact (the deploy-evidence step reads it), and copies the earlier desks named by `test_desk_b2719ad3` so their URLs still resolve |
+| Gates at the merged head | 532 unit tests OK · `scripts/validate.py` PASS · `pipeline.validate --site .` 0 errors · `browser.cjs` 25 pages / 11 picks / 6 High · CI `40119079596` success |
+| Shortfall, stated not padded | 2 of 15 sports priced; the remaining thirteen carry their OLBG hub plus the reason nothing is priced. No fixture, record, injury or price was invented to reach five High picks per sport |
