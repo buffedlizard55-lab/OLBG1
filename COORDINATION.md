@@ -6277,3 +6277,14 @@ remaining candidates.
 * **Live verification channel:** Arena `fetch_page` / `web_search` tool layer against official governing-body, league, tour, federation, promoter and club endpoints (every read logged with exact HTTPS URL and UTC observation time); `OLBG.com` routes used strictly for discovery/reverse-engineering. Sandbox egress is limited to GitHub/PyPI/npm, so no raw `curl` of third-party sites.
 * **§4 request (append-only, logged instead of editing shared files):** root navigation/index are shared outputs owned by the final integration session; request that integration adds `/c3026353/` to the archive/nav listing after merge (pipeline.build auto-indexes top-level `index.html` desks on `archive.html`).
 * **Status:** in progress as of 2026-10-24T17:08:00Z.
+
+## §83 TC3026353 completion receipts (session c3026353-olbg1)
+
+- **Desk**: `c3026353/` — 15-sport dashboard (landing + exec summary + 15 sport subpages + matches, markets, high-confidence, predictions, analysis, sources, methodology, reverse-engineering, repo-audit, flagged pages).
+- **Data**: `data/c3026353/` — 107 fixtures, 424 own originated prices (decimal=1/p), 73 written predictions, sources.json read log (URL+UTC+method), flagged.json (24 flags incl. R-C-01 odds-window arithmetic disclosure).
+- **Strict High gate**: p>0.70 AND fair American ∈ [−250,+10000] AND official source read this session → 4 High picks (ice hockey: NJD −250 / CAR −247 / DET −245 / BOS −235); stronger picks published "Medium (chalk cap)" with full probabilities, never promoted.
+- **Validation (merge time)**: `scripts/sc3026353_validate.py` → PASSED (0 errors); `python3 -m unittest discover -s tests/pipeline -v` → 401 OK (incl. tests/pipeline/test_desk_c3026353.py); `python3 -m pipeline.build --out _site` + `python3 -m pipeline.validate --site _site` → 0 errors.
+- **PR**: https://github.com/buffedlizard55-lab/OLBG1/pull/256 (branch arena/c3026353-olbg1, commit 8c10bf3 + receipts).
+- **Merge**: `gh pr merge 256 --merge` — result appended below after the run.
+- **Pages read-back**: https://buffedlizard55-lab.github.io/OLBG1/c3026353/index.html — byte read-back appended below after the run.
+- **Scope**: only data/c3026353/, scripts/sc3026353_*, c3026353/, reports/SESSION_C3026353.*, tests/pipeline/test_desk_c3026353.py + append-only COORDINATION.md.
