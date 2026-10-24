@@ -1,6 +1,8 @@
 # OLBG1 · evidence-first research desk
 
-[Latest desk — 24 Oct 2026](https://buffedlizard55-lab.github.io/OLBG1/3d121822/index.html) · [Dashboard](https://buffedlizard55-lab.github.io/OLBG1/) · [Match list](https://buffedlizard55-lab.github.io/OLBG1/picks.html) · [Markets](https://buffedlizard55-lab.github.io/OLBG1/markets.html) · [Flagged for Review](https://buffedlizard55-lab.github.io/OLBG1/flagged.html)
+[Current desk — 24 Oct 2026](https://buffedlizard55-lab.github.io/OLBG1/b2719ad3/index.html) · [High selections](https://buffedlizard55-lab.github.io/OLBG1/b2719ad3/index.html#high-picks) · [15 sports](https://buffedlizard55-lab.github.io/OLBG1/b2719ad3/sports.html) · [Flagged for Review](https://buffedlizard55-lab.github.io/OLBG1/b2719ad3/flagged-for-review.html) · [Canonical dashboard](https://buffedlizard55-lab.github.io/OLBG1/)
+
+The current `b2719ad3/` namespace covers the exact 15 requested sports with official row links, independently originated fair prices, started-event exclusions and public review flags. The canonical 17-category checkpoint below remains preserved for its separate audit trail.
 
 One canonical dashboard, **17 sport pages**, explicit evidence gaps and independently calculated **experimental fair prices**. Not affiliated with OLBG. No guaranteed returns, bookmaker execution or personalized staking advice.
 

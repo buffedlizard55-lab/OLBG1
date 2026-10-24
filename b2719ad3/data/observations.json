@@ -1,0 +1,2186 @@
+{
+  "desk": "TB2719",
+  "date": "2026-10-24",
+  "persisted_at": "2026-10-24T17:34:34Z",
+  "method_version": "tb2719-v1",
+  "scope": [
+    {
+      "slug": "golf",
+      "name": "Golf",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Golf/6"
+      ],
+      "market_location": "No tips were displayed; event and outright pages are the pick locations when offered."
+    },
+    {
+      "slug": "volleyball",
+      "name": "Volleyball",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Volleyball/21"
+      ],
+      "market_location": "Hub cards expose the leading selection; event pages are the location for match, set handicap and total-set markets."
+    },
+    {
+      "slug": "rugby-union",
+      "name": "Rugby Union",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Rugby_Union/9"
+      ],
+      "market_location": "Hub cards expose the leading selection; event pages contain winner, handicap and total-point discussion."
+    },
+    {
+      "slug": "cricket",
+      "name": "Cricket",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Cricket/7"
+      ],
+      "market_location": "Match selections sit beneath fixtures; event pages contain additional match and player-market comments where offered."
+    },
+    {
+      "slug": "snooker",
+      "name": "Snooker",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Snooker/8"
+      ],
+      "market_location": "The hub shows the leading match selection; event pages carry frame and handicap discussion where offered."
+    },
+    {
+      "slug": "darts",
+      "name": "Darts",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Darts/15"
+      ],
+      "market_location": "The hub shows match selections; event pages carry leg and handicap discussion where offered."
+    },
+    {
+      "slug": "baseball",
+      "name": "Baseball",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Baseball/12"
+      ],
+      "market_location": "The hub shows the moneyline selection; event pages are the run-line and total-runs discussion locations."
+    },
+    {
+      "slug": "gaelic-sports",
+      "name": "Gaelic Sports",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Gaelic_Football/25",
+        "https://www.olbg.com/tips/Hurling/26"
+      ],
+      "market_location": "Football and Hurling have separate OLBG routes but one requested desk; fixture cards link to match comments."
+    },
+    {
+      "slug": "greyhounds",
+      "name": "Greyhounds",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Greyhounds/28"
+      ],
+      "market_location": "Race cards and runner-level comments are the pick locations; a complete official runner card is required before pricing."
+    },
+    {
+      "slug": "tennis",
+      "name": "Tennis",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Tennis/3"
+      ],
+      "market_location": "The hub shows match-winner selections; event pages contain set and game-market discussion where offered."
+    },
+    {
+      "slug": "motor-racing",
+      "name": "Motor Racing",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Motor_Racing/14"
+      ],
+      "market_location": "Outright selections sit on the hub and event pages; this desk does not treat practice order as a race-price input."
+    },
+    {
+      "slug": "handball",
+      "name": "Handball",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Handball/20"
+      ],
+      "market_location": "Fixture cards link to winner, handicap and total-goal discussion where offered."
+    },
+    {
+      "slug": "ice-hockey",
+      "name": "Ice Hockey",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Ice_Hockey/13"
+      ],
+      "market_location": "The underscore route is canonical; hub cards lead to moneyline, puck-line and total-goal discussion."
+    },
+    {
+      "slug": "basketball",
+      "name": "Basketball",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Basketball/4"
+      ],
+      "market_location": "The hub shows leading selections; event pages contain moneyline, spread and total-point discussion."
+    },
+    {
+      "slug": "rugby-league",
+      "name": "Rugby League",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Rugby_League/10"
+      ],
+      "market_location": "Only 2027 outrights were captured; no upcoming match-winner inventory was available."
+    }
+  ],
+  "source_registry": {
+    "OLBG_ROBOTS": {
+      "publisher": "OLBG",
+      "url": "https://www.olbg.com/robots.txt",
+      "supports": "Discovery access rules",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "OLBG_SITEMAP": {
+      "publisher": "OLBG",
+      "url": "https://www.olbg.com/sitemap.xml",
+      "supports": "Canonical hub discovery",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "NHL_SCHEDULE": {
+      "publisher": "NHL",
+      "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+      "supports": "Twelve game IDs, UTC starts and scheduled states",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "NHL_STANDINGS": {
+      "publisher": "NHL",
+      "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+      "supports": "Records and goals at 2026-10-24T17:06:30Z",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "NHL_LINEUPS": {
+      "publisher": "NHL",
+      "url": "https://www.nhl.com/news/nhl-lineup-projections-2026-27-season",
+      "supports": "Projected lineups, starters, scratches and injuries for 24 October",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "NHL_ONTAP": {
+      "publisher": "NHL",
+      "url": "https://www.nhl.com/news/nhl-on-tap-devils-host-kings-seek-huge-boost-after-trading-for-hellebuyck",
+      "supports": "24 October schedule and current form notes",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "NHL_EDM": {
+      "publisher": "Edmonton Oilers / NHL",
+      "url": "https://www.nhl.com/oilers/news/pre-game-report-oilers-vs-maple-leafs",
+      "supports": "Edmonton form, Jarry start, Ekholm and Levi availability",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "NHL_TOR": {
+      "publisher": "Toronto Maple Leafs / NHL",
+      "url": "https://www.nhl.com/mapleleafs/news/game-day-oilers-oct-24-2026",
+      "supports": "Toronto-Edmonton records and recent head-to-head history",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "NHL_TOR_RECAP": {
+      "publisher": "Toronto Maple Leafs / NHL",
+      "url": "https://www.nhl.com/mapleleafs/news/recap-leafs-vs-rangers-oct-22-2026",
+      "supports": "Toronto 5-4 win and three-game streak",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "NHL_STATUS": {
+      "publisher": "NHL",
+      "url": "https://www.nhl.com/news/nhl-status-report-news-and-notes-october-23-2026",
+      "supports": "Toronto week-to-week injuries and Tavares travel status",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "NHL_TOR_EDM_LINEUPS": {
+      "publisher": "NHL",
+      "url": "https://www.nhl.com/news/toronto-maple-leafs-edmonton-oilers-game-preview-october-24-2026",
+      "supports": "Toronto at Edmonton projected lineups and injury lists",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "NHL_SEA_FORM": {
+      "publisher": "Seattle Kraken / NHL",
+      "url": "https://www.nhl.com/kraken/news/postgame-instant-analysis-utah-mammoth-seattle-kraken-102226",
+      "supports": "Seattle seven wins, 15 points and 42 goals through eleven games",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "NHL_SEA_PREVIEW": {
+      "publisher": "Seattle Kraken / NHL",
+      "url": "https://www.nhl.com/kraken/news/minnesota-wild-vs-seattle-kraken-game-preview-projected-lines-102426",
+      "supports": "Minnesota at Seattle records and current form",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "NBA_INJURIES": {
+      "publisher": "NBA",
+      "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_00PM.pdf",
+      "supports": "24 October fixtures, ET starts and 13:00 ET availability report",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "NBA_STATS": {
+      "publisher": "NBA",
+      "url": "https://www.nba.com/stats/teams/traditional?Season=2026-27",
+      "supports": "2026-27 team records, points and plus/minus; one- or two-game samples",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "LEGA_ROUND1": {
+      "publisher": "Lega Volley",
+      "url": "https://www.legavolley.it/2026/1a-giornata-and-18-10-2026-regular-season-superlega-stagione-2026-risultati-classifica/",
+      "supports": "All six opening results, set records and 25 October fixtures",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "LNR_TOULON": {
+      "publisher": "LNR / Top 14",
+      "url": "https://top14.lnr.fr/club/toulon",
+      "supports": "Toulon 2-0-4, 130:130 and Pau fixture",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "LNR_PAU": {
+      "publisher": "LNR / Top 14",
+      "url": "https://top14.lnr.fr/club/pau",
+      "supports": "Pau 5-0-1, 239:181 and 24 October 21:00 fixture",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "LNR_ROCHELLE": {
+      "publisher": "LNR / Top 14",
+      "url": "https://top14.lnr.fr/club/la-rochelle",
+      "supports": "La Rochelle 4-0-2, 144:135 and Bordeaux fixture",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "LNR_BORDEAUX": {
+      "publisher": "LNR / Top 14",
+      "url": "https://top14.lnr.fr/club/bordeaux-begles",
+      "supports": "Bordeaux 4-0-2, 215:151 and 25 October 21:05 fixture",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "URC_FIXTURE": {
+      "publisher": "United Rugby Championship",
+      "url": "https://www.unitedrugby.com/latest/news/adjustments-to-2026-27-bkt-united-rugby-championship-fixture-broadcast-for-rounds-2-4-6-15/",
+      "supports": "Ospreys-Dragons moved to 19:00 UK",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "URC_TEAMS": {
+      "publisher": "United Rugby Championship",
+      "url": "https://www.unitedrugby.com/latest/news/round-4-team-announcements/",
+      "supports": "Ospreys and Dragons named lineups",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "URC_TABLE": {
+      "publisher": "United Rugby Championship",
+      "url": "https://stats.unitedrugby.com/match-centre/table/",
+      "supports": "Ospreys 1-0-2, 81:107; Dragons 1-1-1, 88:83",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "PCB_RESULTS": {
+      "publisher": "Pakistan Cricket Board",
+      "url": "https://www.pcb.com.pk/news-detail/sri-lanka-seal-second-highest-chase-in-odi-history-as-brook-s-record-double-ton-goes-in-vain.html",
+      "supports": "Tri-series results and 25 October 13:00 PKT start",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "PCB_PAK_ENG": {
+      "publisher": "Pakistan Cricket Board",
+      "url": "https://www.pcb.com.pk/news-detail/arafat-minhas-6-40-and-59-sink-england-as-pakistan-win-consecutive-games-in-odi-tri-series.html",
+      "supports": "Pakistan 302/9 beat England 215 by 87 runs; Arafat Minhas 59 and 6-40",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "BCCI_SECOND": {
+      "publisher": "BCCI",
+      "url": "https://www.bcci.tv/matches/88d47fe3-ead4-4b91-b0cc-4bda908fb8d7/india-women-vs-zimbabwe-women",
+      "supports": "Second ODI at 2026-10-25T08:30:00Z",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "BCCI_FIRST": {
+      "publisher": "BCCI",
+      "url": "https://www.bcci.tv/matches/023cf7d3-6571-4932-997b-cac801ed0b4a/india-women-vs-zimbabwe-women",
+      "supports": "First ODI: Zimbabwe 197; India 200/1 in 27.1 overs, nine-wicket win",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "BCCI_AVAILABILITY": {
+      "publisher": "BCCI",
+      "url": "https://www.bcci.tv/news/article/jintimani-kalita-replaces-renuka-singh-thakur-in-indias-odi-squad",
+      "supports": "Jintimani Kalita replaces Renuka Singh Thakur in India ODI squad",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "WST_MATCH": {
+      "publisher": "World Snooker Tour",
+      "url": "https://www.wst.tv/match-centre/e6719e69-c712-476e-8081-8e30790868f5",
+      "supports": "Williams-Jones listed without a score; localized clock differs from indexed view",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "WST_WILLIAMS": {
+      "publisher": "World Snooker Tour",
+      "url": "https://www.wst.tv/players/6aaddcbb-345c-474a-9069-e7757e155729",
+      "supports": "Williams 14 wins in 20 matches this season",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "WST_JONES": {
+      "publisher": "World Snooker Tour",
+      "url": "https://www.wst.tv/players/036bc430-6c51-4d63-a366-a6ca218f7f39",
+      "supports": "Jones 19 wins in 27 matches this season",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "WST_WILLIAMS_QF": {
+      "publisher": "World Snooker Tour",
+      "url": "https://www.wst.tv/news/2026/october/23/Vintage-Williams-Beats-Gilbert-With-Ton-Trio",
+      "supports": "Williams recovered from 4-2 down to beat Gilbert 6-4 with three straight centuries",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "MLB_SCHEDULE": {
+      "publisher": "MLB",
+      "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24&teamId=158",
+      "supports": "World Series Game 2 ID 849802 at 2026-10-25T00:00:00Z",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "MLB_STANDINGS": {
+      "publisher": "MLB",
+      "url": "https://www.mlb.com/standings/2026",
+      "supports": "Milwaukee 103-59, 832:618; Tampa Bay 98-64, 736:650 and venue splits",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "MLB_GAME2": {
+      "publisher": "MLB",
+      "url": "https://www.mlb.com/news/rays-brewers-world-series-game-2-starting-lineups-and-pitching-matchup",
+      "supports": "Rasmussen-Henderson pitching matchup and current starter records",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "MLB_GAME1": {
+      "publisher": "MLB",
+      "url": "https://www.mlb.com/gameday/849805/final/box",
+      "supports": "Milwaukee won Game 1, 3-2",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "WTA_NINGBO_OP": {
+      "publisher": "WTA",
+      "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/2092/OP.pdf",
+      "supports": "Sunday final not before 17:00 Ningbo time",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "WTA_NINGBO_REPORT": {
+      "publisher": "WTA",
+      "url": "https://www.wtatennis.com/news/4598225/rybakina-survives-shnaider-test-sets-up-ningbo-final-with-fernandez",
+      "supports": "Rybakina and Fernandez semifinal results and 3-2 head-to-head",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "WTA_NINGBO_PREVIEW": {
+      "publisher": "WTA",
+      "url": "https://www.wtatennis.com/news/4598107/elena-rybakina-vs-leylah-fernandez-everything-to-know-about-the-ningbo-final",
+      "supports": "Current form; contains a contradictory Saturday date that is flagged",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "WTA_RYBAKINA": {
+      "publisher": "WTA",
+      "url": "https://www.wtatennis.com/players/324166/elena-rybakina",
+      "supports": "Rybakina No. 1 and 49-14 profile record",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "WTA_FERNANDEZ": {
+      "publisher": "WTA",
+      "url": "https://www.wtatennis.com/players/326735/leylah-fernandez",
+      "supports": "Fernandez No. 30 and 24-25 profile record",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "WTA_OSAKA_OP": {
+      "publisher": "WTA",
+      "url": "https://wtafiles.wtatennis.com/pdf/draws/2026/405/OP.pdf",
+      "supports": "Krueger-Siniakova Sunday final at 13:30 Osaka time",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "ATP_ALMATY_SCHEDULE": {
+      "publisher": "ATP Tour",
+      "url": "https://www.atptour.com/en/news/almaty-atp-250-2026-history-draw-schedule",
+      "supports": "Sunday singles final not before 15:00 Almaty time",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "ATP_ALMATY_REPORT": {
+      "publisher": "ATP Tour",
+      "url": "https://www.atptour.com/en/news/medvedev-bublik-almaty-2026-saturday",
+      "supports": "Medvedev-Basilashvili final, current form and 1-0 head-to-head",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "ATP_MEDVEDEV": {
+      "publisher": "ATP Tour",
+      "url": "https://www.atptour.com/en/players/daniil-medvedev/mm58/overview",
+      "supports": "Medvedev profile 45-18",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "ATP_BASILASHVILI": {
+      "publisher": "ATP Tour",
+      "url": "https://www.atptour.com/en/players/nikoloz-basilashvili/bg23/overview",
+      "supports": "Basilashvili profile 7-10",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "F1_USA": {
+      "publisher": "Formula 1",
+      "url": "https://www.formula1.com/en/racing/2026/united-states",
+      "supports": "United States GP at 2026-10-25T20:00:00Z and practice-two results",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "EHF_STANDINGS": {
+      "publisher": "European Handball Federation",
+      "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+      "supports": "Magdeburg 5-0-0, 176:140; Kriens-Luzern 2-0-3, 158:161",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "EHF_MAGDEBURG": {
+      "publisher": "European Handball Federation",
+      "url": "https://www.eurohandball.com/en/club/zKttAiKCyYIIy_T_l4gBLQ/sc-magdeburg/",
+      "supports": "Magdeburg-Kriens on 28 October at 20:45 in Magdeburg",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "LNH_HOME": {
+      "publisher": "Ligue Nationale de Handball",
+      "url": "https://www.lnh.fr/daikin-starligue/accueil",
+      "supports": "Saint-Raphaël-Paris on 25 October at 16:00; Paris 14 points from seven",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "GALWAY_CHANGE": {
+      "publisher": "Galway GAA",
+      "url": "https://www.galwaygaa.ie/changes-weekend-football-fixture-schedule/",
+      "supports": "Weather-revised senior and intermediate finals on Sunday",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "GBGB_SCURRY": {
+      "publisher": "Greyhound Board of Great Britain",
+      "url": "https://www.gbgb.org.uk/shadow-storm-chases-scurry-gold-cup-history-at-dunstall-park/",
+      "supports": "Scurry Gold Cup final and semifinal evidence; complete official runner card not captured",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "GBGB_OAKS": {
+      "publisher": "Greyhound Board of Great Britain",
+      "url": "https://www.gbgb.org.uk/signet-nayla-chases-oaks-glory-as-hutton-targets-dunstall-park-double/",
+      "supports": "Oaks final and semifinal evidence; complete official runner card not captured",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    },
+    "PDC_DAY3": {
+      "publisher": "Professional Darts Corporation",
+      "url": "https://www.pdc.tv/tournaments/machineseeker-european-championship",
+      "supports": "Official tournament/session evidence; proposed Price-Bunting pairing not confirmed",
+      "accessed_at": "2026-10-24T17:34:34Z",
+      "access": "Fetched or located through the research tool; shell egress was not relied upon."
+    }
+  },
+  "events": [
+    {
+      "id": "nhl-2026020168",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Philadelphia Flyers",
+      "away": "Anaheim Ducks",
+      "start_utc": "2026-10-24T17:00:00Z",
+      "start_display": "2026-10-24 17:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 12,
+          "wins": 3,
+          "gf": 20,
+          "ga": 37
+        },
+        "away": {
+          "gp": 10,
+          "wins": 4,
+          "gf": 27,
+          "ga": 33
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: PHI 3-6-3 and ANA 4-6-0. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": ""
+    },
+    {
+      "id": "nhl-2026020169",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "New Jersey Devils",
+      "away": "Los Angeles Kings",
+      "start_utc": "2026-10-24T19:30:00Z",
+      "start_display": "2026-10-24 19:30:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS",
+        "NHL_ONTAP"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 10,
+          "wins": 6,
+          "gf": 33,
+          "ga": 31
+        },
+        "away": {
+          "gp": 8,
+          "wins": 2,
+          "gf": 20,
+          "ga": 29
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: NJD 6-4-0 and LAK 2-4-2. Pricing uses games played and wins on the NHL win-percentage basis.",
+        "New Jersey is 4-1-0 in its last five; Los Angeles has two straight wins after an 0-4-2 start.",
+        "New Jersey home scoring is 26:17; Los Angeles road scoring is 17:19."
+      ],
+      "availability": "New Jersey lists no injuries. Los Angeles lists Kevin Fiala and Alex Turcotte injured; Quinton Byfield is questionable. Jake Allen is projected for New Jersey.",
+      "flags": [],
+      "high_prediction": "New Jersey Devils to win is the selection. The Devils are 6-4-0 with 33 goals and have won four of their last five, while Los Angeles is 2-4-2 with 20 goals despite consecutive wins. New Jersey’s 26-17 home scoring record strengthens the case, although Quinton Byfield is questionable for the Kings. Kevin Fiala and Alex Turcotte are injured for Los Angeles; New Jersey lists no injuries, with Jake Allen projected in goal."
+    },
+    {
+      "id": "nhl-2026020170",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Boston Bruins",
+      "away": "San Jose Sharks",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_display": "2026-10-24 23:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 11,
+          "wins": 8,
+          "gf": 42,
+          "ga": 22
+        },
+        "away": {
+          "gp": 11,
+          "wins": 6,
+          "gf": 33,
+          "ga": 37
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: BOS 8-2-1 and SJS 6-4-1. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": ""
+    },
+    {
+      "id": "nhl-2026020171",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Ottawa Senators",
+      "away": "New York Rangers",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_display": "2026-10-24 23:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 11,
+          "wins": 7,
+          "gf": 31,
+          "ga": 30
+        },
+        "away": {
+          "gp": 12,
+          "wins": 7,
+          "gf": 37,
+          "ga": 29
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: OTT 7-4-0 and NYR 7-4-1. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": ""
+    },
+    {
+      "id": "nhl-2026020172",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Pittsburgh Penguins",
+      "away": "Nashville Predators",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_display": "2026-10-24 23:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 11,
+          "wins": 4,
+          "gf": 37,
+          "ga": 38
+        },
+        "away": {
+          "gp": 9,
+          "wins": 3,
+          "gf": 23,
+          "ga": 30
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: PIT 4-6-1 and NSH 3-3-3. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": ""
+    },
+    {
+      "id": "nhl-2026020173",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Washington Capitals",
+      "away": "Buffalo Sabres",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_display": "2026-10-24 23:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 9,
+          "wins": 5,
+          "gf": 30,
+          "ga": 29
+        },
+        "away": {
+          "gp": 10,
+          "wins": 4,
+          "gf": 28,
+          "ga": 37
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: WSH 5-4-0 and BUF 4-4-2. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": ""
+    },
+    {
+      "id": "nhl-2026020174",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Columbus Blue Jackets",
+      "away": "Vegas Golden Knights",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_display": "2026-10-24 23:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 8,
+          "wins": 3,
+          "gf": 20,
+          "ga": 29
+        },
+        "away": {
+          "gp": 12,
+          "wins": 8,
+          "gf": 46,
+          "ga": 36
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: CBJ 3-5-0 and VGK 8-4-0. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": ""
+    },
+    {
+      "id": "nhl-2026020175",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "St. Louis Blues",
+      "away": "Carolina Hurricanes",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_display": "2026-10-24 23:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 10,
+          "wins": 5,
+          "gf": 35,
+          "ga": 31
+        },
+        "away": {
+          "gp": 12,
+          "wins": 8,
+          "gf": 47,
+          "ga": 33
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: STL 5-4-1 and CAR 8-2-2. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": ""
+    },
+    {
+      "id": "nhl-2026020176",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Edmonton Oilers",
+      "away": "Toronto Maple Leafs",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_display": "2026-10-24 23:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_TOR_EDM_LINEUPS",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS",
+        "NHL_ONTAP",
+        "NHL_EDM",
+        "NHL_TOR",
+        "NHL_TOR_RECAP",
+        "NHL_STATUS",
+        "NHL_TOR_EDM_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 10,
+          "wins": 8,
+          "gf": 47,
+          "ga": 32
+        },
+        "away": {
+          "gp": 12,
+          "wins": 6,
+          "gf": 43,
+          "ga": 39
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: EDM 8-1-1 and TOR 6-4-2. Pricing uses games played and wins on the NHL win-percentage basis.",
+        "Edmonton and Toronto each bring a three-game winning streak; Toronto is 4-1-0 across the last five head-to-head meetings.",
+        "Edmonton has 47 goals in ten games; Toronto has 43 scored and 39 conceded in twelve."
+      ],
+      "availability": "Toronto lists John Tavares, Chris Tanev, Nick Blankenburg and Marshall Rifai out. Edmonton lists Mattias Ekholm and Devon Levi unavailable; Tristan Jarry is projected to start.",
+      "flags": [],
+      "high_prediction": "Edmonton Oilers to win is the selection. Edmonton is 8-1-1 with 47 goals in ten games and three consecutive wins; Toronto is 6-4-2 with 43 scored and 39 conceded, also on a three-game streak. Toronto’s 4-1-0 record across the last five meetings is the warning. John Tavares, Chris Tanev, Nick Blankenburg and Marshall Rifai are out for the visitors, while Mattias Ekholm and Devon Levi are unavailable for Edmonton and Tristan Jarry is projected to start."
+    },
+    {
+      "id": "nhl-2026020177",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Utah Mammoth",
+      "away": "Tampa Bay Lightning",
+      "start_utc": "2026-10-25T01:00:00Z",
+      "start_display": "2026-10-25 01:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 11,
+          "wins": 7,
+          "gf": 41,
+          "ga": 36
+        },
+        "away": {
+          "gp": 10,
+          "wins": 7,
+          "gf": 34,
+          "ga": 29
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: UTA 7-4-0 and TBL 7-3-0. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": ""
+    },
+    {
+      "id": "nhl-2026020178",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Calgary Flames",
+      "away": "Detroit Red Wings",
+      "start_utc": "2026-10-25T02:00:00Z",
+      "start_display": "2026-10-25 02:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 9,
+          "wins": 3,
+          "gf": 19,
+          "ga": 38
+        },
+        "away": {
+          "gp": 10,
+          "wins": 4,
+          "gf": 28,
+          "ga": 30
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: CGY 3-6-0 and DET 4-3-3. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": ""
+    },
+    {
+      "id": "nhl-2026020179",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Seattle Kraken",
+      "away": "Minnesota Wild",
+      "start_utc": "2026-10-25T02:00:00Z",
+      "start_display": "2026-10-25 02:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS",
+        "NHL_SEA_FORM",
+        "NHL_SEA_PREVIEW"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 11,
+          "wins": 7,
+          "gf": 42,
+          "ga": null
+        },
+        "away": {
+          "gp": 11,
+          "wins": 6,
+          "gf": 32,
+          "ga": 27
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: SEA 7-3-1 and MIN 6-3-2. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [
+        "Seattle goals against was not present in the captured standings fragment; total and handicap screens remain blank."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "nba-mia-cha-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Charlotte Hornets",
+      "away": "Miami Heat",
+      "start_utc": "2026-10-24T22:00:00Z",
+      "start_display": "2026-10-24 22:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 2,
+          "wins": 1,
+          "gf": 95.5,
+          "ga": 115.5
+        },
+        "away": {
+          "gp": 2,
+          "wins": 0,
+          "gf": 108.5,
+          "ga": 129.5
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "Miami: Pelle Larsson probable. Charlotte: Kylan Boswell, Kon Knueppel, Coby White and Grant Williams out; Christian Anderson probable.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "nba-bkn-cle-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Cleveland Cavaliers",
+      "away": "Brooklyn Nets",
+      "start_utc": "2026-10-24T23:30:00Z",
+      "start_display": "2026-10-24 23:30:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 1,
+          "wins": 0,
+          "gf": 106.0,
+          "ga": 114.0
+        },
+        "away": {
+          "gp": 1,
+          "wins": 0,
+          "gf": 103.0,
+          "ga": 110.0
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "Brooklyn: Tyler Bilodeau out. Cleveland: Khalifa Diop, Nae'Qwan Tomlin and Ernest Udeh Jr. out; Dean Wade questionable.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "nba-mil-phi-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Philadelphia 76ers",
+      "away": "Milwaukee Bucks",
+      "start_utc": "2026-10-24T23:30:00Z",
+      "start_display": "2026-10-24 23:30:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 2,
+          "wins": 2,
+          "gf": 110.0,
+          "ga": 103.0
+        },
+        "away": {
+          "gp": 2,
+          "wins": 0,
+          "gf": 120.5,
+          "ga": 130.0
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "Milwaukee had not submitted at 13:00 ET. Philadelphia lists Dominick Barlow, Tacko Fall, Ariel Hukporti and LeBron James out.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "nba-sas-dal-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Dallas Mavericks",
+      "away": "San Antonio Spurs",
+      "start_utc": "2026-10-25T00:00:00Z",
+      "start_display": "2026-10-25 00:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 2,
+          "wins": 1,
+          "gf": 115.5,
+          "ga": 116.5
+        },
+        "away": {
+          "gp": 2,
+          "wins": 0,
+          "gf": 107.0,
+          "ga": 115.0
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "Both teams were marked NOT YET SUBMITTED in the 13:00 ET report.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "nba-was-chi-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Chicago Bulls",
+      "away": "Washington Wizards",
+      "start_utc": "2026-10-25T00:00:00Z",
+      "start_display": "2026-10-25 00:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 2,
+          "wins": 1,
+          "gf": 112.0,
+          "ga": 130.0
+        },
+        "away": {
+          "gp": 2,
+          "wins": 1,
+          "gf": 115.0,
+          "ga": 114.0
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "Washington had not submitted. Chicago lists Nic Claxton out and Noa Essengue probable.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "nba-hou-atl-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Atlanta Hawks",
+      "away": "Houston Rockets",
+      "start_utc": "2026-10-25T00:30:00Z",
+      "start_display": "2026-10-25 00:30:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 2,
+          "wins": 2,
+          "gf": 130.0,
+          "ga": 103.0
+        },
+        "away": {
+          "gp": 2,
+          "wins": 2,
+          "gf": 121.0,
+          "ga": 110.0
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "Houston: Steven Adams and Fred VanVleet out; Reed Sheppard questionable. Atlanta: Mouhamed Gueye and Henri Veesaar out, with three two-way players questionable.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "nba-nop-den-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Denver Nuggets",
+      "away": "New Orleans Pelicans",
+      "start_utc": "2026-10-25T01:00:00Z",
+      "start_display": "2026-10-25 01:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 1,
+          "wins": 0,
+          "gf": 84.0,
+          "ga": 96.0
+        },
+        "away": {
+          "gp": 2,
+          "wins": 0,
+          "gf": 119.5,
+          "ga": 121.5
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "New Orleans had not submitted. Denver lists Cameron Johnson, Spencer Jones and Julian Strawther out; Alpha Diallo questionable.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "nba-gsw-phx-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Phoenix Suns",
+      "away": "Golden State Warriors",
+      "start_utc": "2026-10-25T02:00:00Z",
+      "start_display": "2026-10-25 02:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 1,
+          "wins": 0,
+          "gf": 83.0,
+          "ga": 124.0
+        },
+        "away": {
+          "gp": 2,
+          "wins": 0,
+          "gf": 106.5,
+          "ga": 119.0
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "Golden State had not submitted. Phoenix lists Mark Williams out, Oso Ighodaro doubtful and Luke Kennard questionable.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "volley-perugia-pordenone-20261025",
+      "sport": "volleyball",
+      "competition": "SuperLega",
+      "home": "Sir Susa Scai Perugia",
+      "away": "Pallavolo Pordenone",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "start_display": "2026-10-25 17:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "LEGA_ROUND1",
+      "evidence_sources": [
+        "LEGA_ROUND1"
+      ],
+      "pricing": {
+        "kind": "volleyball",
+        "home": {
+          "gp": 1,
+          "wins": 1,
+          "gf": null,
+          "ga": null,
+          "sets_won": 3,
+          "sets_lost": 2
+        },
+        "away": {
+          "gp": 1,
+          "wins": 1,
+          "gf": null,
+          "ga": null,
+          "sets_won": 3,
+          "sets_lost": 1
+        }
+      },
+      "notes": [
+        "Every team has played one match. Match records set the winner price; opening set records inform the set handicap and total only."
+      ],
+      "availability": "",
+      "flags": [
+        "One-match samples cap every selection at Low; no availability adjustment is applied."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "volley-trentino-cisterna-20261025",
+      "sport": "volleyball",
+      "competition": "SuperLega",
+      "home": "Itas Trentino",
+      "away": "Cisterna Volley",
+      "start_utc": "2026-10-25T16:00:00Z",
+      "start_display": "2026-10-25 16:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "LEGA_ROUND1",
+      "evidence_sources": [
+        "LEGA_ROUND1"
+      ],
+      "pricing": {
+        "kind": "volleyball",
+        "home": {
+          "gp": 1,
+          "wins": 1,
+          "gf": null,
+          "ga": null,
+          "sets_won": 3,
+          "sets_lost": 0
+        },
+        "away": {
+          "gp": 1,
+          "wins": 1,
+          "gf": null,
+          "ga": null,
+          "sets_won": 3,
+          "sets_lost": 0
+        }
+      },
+      "notes": [
+        "Every team has played one match. Match records set the winner price; opening set records inform the set handicap and total only."
+      ],
+      "availability": "",
+      "flags": [
+        "One-match samples cap every selection at Low; no availability adjustment is applied."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "volley-piacenza-modena-20261025",
+      "sport": "volleyball",
+      "competition": "SuperLega",
+      "home": "Gas Sales Bluenergy Piacenza",
+      "away": "Modena Volley",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "start_display": "2026-10-25 17:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "LEGA_ROUND1",
+      "evidence_sources": [
+        "LEGA_ROUND1"
+      ],
+      "pricing": {
+        "kind": "volleyball",
+        "home": {
+          "gp": 1,
+          "wins": 1,
+          "gf": null,
+          "ga": null,
+          "sets_won": 3,
+          "sets_lost": 0
+        },
+        "away": {
+          "gp": 1,
+          "wins": 0,
+          "gf": null,
+          "ga": null,
+          "sets_won": 0,
+          "sets_lost": 3
+        }
+      },
+      "notes": [
+        "Every team has played one match. Match records set the winner price; opening set records inform the set handicap and total only."
+      ],
+      "availability": "",
+      "flags": [
+        "One-match samples cap every selection at Low; no availability adjustment is applied."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "volley-lube-padova-20261025",
+      "sport": "volleyball",
+      "competition": "SuperLega",
+      "home": "Cucine Lube Civitanova",
+      "away": "Sonepar Padova",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "start_display": "2026-10-25 17:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "LEGA_ROUND1",
+      "evidence_sources": [
+        "LEGA_ROUND1"
+      ],
+      "pricing": {
+        "kind": "volleyball",
+        "home": {
+          "gp": 1,
+          "wins": 1,
+          "gf": null,
+          "ga": null,
+          "sets_won": 3,
+          "sets_lost": 0
+        },
+        "away": {
+          "gp": 1,
+          "wins": 0,
+          "gf": null,
+          "ga": null,
+          "sets_won": 0,
+          "sets_lost": 3
+        }
+      },
+      "notes": [
+        "Every team has played one match. Match records set the winner price; opening set records inform the set handicap and total only."
+      ],
+      "availability": "",
+      "flags": [
+        "One-match samples cap every selection at Low; no availability adjustment is applied."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "volley-monza-verona-20261025",
+      "sport": "volleyball",
+      "competition": "SuperLega",
+      "home": "Vero Volley Monza",
+      "away": "Rana Verona",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "start_display": "2026-10-25 17:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "LEGA_ROUND1",
+      "evidence_sources": [
+        "LEGA_ROUND1"
+      ],
+      "pricing": {
+        "kind": "volleyball",
+        "home": {
+          "gp": 1,
+          "wins": 0,
+          "gf": null,
+          "ga": null,
+          "sets_won": 1,
+          "sets_lost": 3
+        },
+        "away": {
+          "gp": 1,
+          "wins": 0,
+          "gf": null,
+          "ga": null,
+          "sets_won": 0,
+          "sets_lost": 3
+        }
+      },
+      "notes": [
+        "Every team has played one match. Match records set the winner price; opening set records inform the set handicap and total only."
+      ],
+      "availability": "",
+      "flags": [
+        "One-match samples cap every selection at Low; no availability adjustment is applied."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "volley-milano-cuneo-20261025",
+      "sport": "volleyball",
+      "competition": "SuperLega",
+      "home": "Allianz Milano",
+      "away": "Cuneo Volley",
+      "start_utc": "2026-10-25T18:00:00Z",
+      "start_display": "2026-10-25 18:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "LEGA_ROUND1",
+      "evidence_sources": [
+        "LEGA_ROUND1"
+      ],
+      "pricing": {
+        "kind": "volleyball",
+        "home": {
+          "gp": 1,
+          "wins": 0,
+          "gf": null,
+          "ga": null,
+          "sets_won": 0,
+          "sets_lost": 3
+        },
+        "away": {
+          "gp": 1,
+          "wins": 0,
+          "gf": null,
+          "ga": null,
+          "sets_won": 2,
+          "sets_lost": 3
+        }
+      },
+      "notes": [
+        "Every team has played one match. Match records set the winner price; opening set records inform the set handicap and total only."
+      ],
+      "availability": "",
+      "flags": [
+        "One-match samples cap every selection at Low; no availability adjustment is applied."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "rugby-toulon-pau-20261024",
+      "sport": "rugby-union",
+      "competition": "Top 14",
+      "home": "RC Toulon",
+      "away": "Section Paloise",
+      "start_utc": "2026-10-24T19:00:00Z",
+      "start_display": "24 Oct 21:00 Europe/Paris",
+      "not_before": false,
+      "venue": "Toulon",
+      "official_source": "LNR_PAU",
+      "evidence_sources": [
+        "LNR_TOULON",
+        "LNR_PAU"
+      ],
+      "pricing": {
+        "kind": "score3",
+        "home": {
+          "gp": 6,
+          "wins": 2,
+          "gf": 130,
+          "ga": 130
+        },
+        "away": {
+          "gp": 6,
+          "wins": 5,
+          "gf": 239,
+          "ga": 181
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Toulon is 2-0-4 with 130:130; Pau is 5-0-1 with 239:181 and beat Castres 35-26 in its last match."
+      ],
+      "availability": "",
+      "flags": [
+        "Independent scoring approximation; no home, lineup or injury adjustment and no High eligibility."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "rugby-ospreys-dragons-20261024",
+      "sport": "rugby-union",
+      "competition": "United Rugby Championship",
+      "home": "Ospreys",
+      "away": "Dragons RFC",
+      "start_utc": "2026-10-24T18:00:00Z",
+      "start_display": "24 Oct 19:00 UK",
+      "not_before": false,
+      "venue": "St Helen's, Swansea",
+      "official_source": "URC_FIXTURE",
+      "evidence_sources": [
+        "URC_FIXTURE",
+        "URC_TEAMS",
+        "URC_TABLE"
+      ],
+      "pricing": {
+        "kind": "score3",
+        "home": {
+          "gp": 3,
+          "wins": 1,
+          "gf": 81,
+          "ga": 107
+        },
+        "away": {
+          "gp": 3,
+          "wins": 1,
+          "gf": 88,
+          "ga": 83
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Ospreys are 1-0-2 with 81:107; Dragons are 1-1-1 with 88:83. Both starting XVs are officially announced."
+      ],
+      "availability": "Official Round 4 team announcements supply both starting XVs and replacements.",
+      "flags": [
+        "Three-game samples and an independent scoring approximation cap confidence at Low."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "rugby-rochelle-bordeaux-20261025",
+      "sport": "rugby-union",
+      "competition": "Top 14",
+      "home": "Stade Rochelais",
+      "away": "Union Bordeaux-Bègles",
+      "start_utc": "2026-10-25T20:05:00Z",
+      "start_display": "25 Oct 21:05 Europe/Paris",
+      "not_before": false,
+      "venue": "La Rochelle",
+      "official_source": "LNR_BORDEAUX",
+      "evidence_sources": [
+        "LNR_ROCHELLE",
+        "LNR_BORDEAUX"
+      ],
+      "pricing": {
+        "kind": "score3",
+        "home": {
+          "gp": 6,
+          "wins": 4,
+          "gf": 144,
+          "ga": 135
+        },
+        "away": {
+          "gp": 6,
+          "wins": 4,
+          "gf": 215,
+          "ga": 151
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "La Rochelle is 4-0-2 with 144:135; Bordeaux is 4-0-2 with 215:151 and won 23-22 at Clermont in its last match."
+      ],
+      "availability": "",
+      "flags": [
+        "Independent scoring approximation; no home, lineup or injury adjustment and no High eligibility."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "cricket-pakistan-england-20261025",
+      "sport": "cricket",
+      "competition": "ODI tri-series — match 4",
+      "home": "Pakistan",
+      "away": "England",
+      "start_utc": "2026-10-25T08:00:00Z",
+      "start_display": "25 Oct 13:00 PKT",
+      "not_before": false,
+      "venue": "Gaddafi Stadium, Lahore",
+      "official_source": "PCB_RESULTS",
+      "evidence_sources": [
+        "PCB_RESULTS",
+        "PCB_PAK_ENG"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 2,
+          "wins": 2,
+          "gf": null,
+          "ga": null
+        },
+        "away": {
+          "gp": 2,
+          "wins": 0,
+          "gf": null,
+          "ga": null
+        }
+      },
+      "notes": [
+        "Pakistan is 2-0 after beating Sri Lanka by 37 runs and England by 87 runs. England is 0-2 after also losing a record chase to Sri Lanka.",
+        "In the previous meeting Pakistan scored 302/9 and England 215; Arafat Minhas contributed 59 and 6-40."
+      ],
+      "availability": "",
+      "flags": [
+        "Two-match series samples cap confidence at Low. Tie/no-result, run handicap and total runs are not separately priced."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "cricket-india-zimbabwe-women-20261025",
+      "sport": "cricket",
+      "competition": "Women's ODI series — match 2",
+      "home": "India Women",
+      "away": "Zimbabwe Women",
+      "start_utc": "2026-10-25T08:30:00Z",
+      "start_display": "25 Oct 08:30 UTC",
+      "not_before": false,
+      "venue": "BCA Stadium, Vadodara",
+      "official_source": "BCCI_SECOND",
+      "evidence_sources": [
+        "BCCI_SECOND",
+        "BCCI_FIRST",
+        "BCCI_AVAILABILITY"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 1,
+          "wins": 1,
+          "gf": null,
+          "ga": null
+        },
+        "away": {
+          "gp": 1,
+          "wins": 0,
+          "gf": null,
+          "ga": null
+        }
+      },
+      "notes": [
+        "India won the first ODI by nine wickets: Zimbabwe 197 in 49.5 overs, India 200/1 in 27.1. Pratika Rawal made 100 not out and Shafali Verma 64 not out.",
+        "Jintimani Kalita replaces Renuka Singh Thakur, who is building bowling volume at the BCCI Centre of Excellence."
+      ],
+      "availability": "BCCI announced Jintimani Kalita as Renuka Singh Thakur’s replacement for this ODI series.",
+      "flags": [
+        "One-match ODI sample caps confidence at Low. Tie/no-result, run handicap and total runs are not separately priced."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "snooker-williams-jones-20261024",
+      "sport": "snooker",
+      "competition": "Northern Ireland Open — semifinal",
+      "home": "Mark Williams",
+      "away": "Jak Jones",
+      "start_utc": null,
+      "start_display": "24 Oct; WST indexed/localized clocks differ",
+      "not_before": false,
+      "venue": "Belfast, Northern Ireland",
+      "official_source": "WST_MATCH",
+      "evidence_sources": [
+        "WST_MATCH",
+        "WST_WILLIAMS",
+        "WST_JONES",
+        "WST_WILLIAMS_QF"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 20,
+          "wins": 14,
+          "gf": null,
+          "ga": null
+        },
+        "away": {
+          "gp": 27,
+          "wins": 19,
+          "gf": null,
+          "ga": null
+        }
+      },
+      "notes": [
+        "Williams has 14 wins in 20 season matches; Jones has 19 in 27. Williams recovered from 4-2 down to beat David Gilbert 6-4 with three consecutive centuries."
+      ],
+      "availability": "",
+      "flags": [
+        "UTC start is blank because WST indexed and localized pages show different clocks. Refresh match state before any kickoff-time use.",
+        "Frame handicap and total frames are not priced without an official match-format and frame-distribution input."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "baseball-rays-brewers-849802",
+      "sport": "baseball",
+      "competition": "World Series — Game 2",
+      "home": "Milwaukee Brewers",
+      "away": "Tampa Bay Rays",
+      "start_utc": "2026-10-25T00:00:00Z",
+      "start_display": "24 Oct 20:00 ET / 2026-10-25T00:00:00Z",
+      "not_before": false,
+      "venue": "American Family Field",
+      "official_source": "MLB_SCHEDULE",
+      "evidence_sources": [
+        "MLB_SCHEDULE",
+        "MLB_STANDINGS",
+        "MLB_GAME2",
+        "MLB_GAME1"
+      ],
+      "pricing": {
+        "kind": "baseball",
+        "home": {
+          "gp": 162,
+          "wins": 103,
+          "gf": 832,
+          "ga": 618,
+          "home_gp": 81,
+          "home_wins": 55
+        },
+        "away": {
+          "gp": 162,
+          "wins": 98,
+          "gf": 736,
+          "ga": 650,
+          "away_gp": 81,
+          "away_wins": 43
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Milwaukee leads the Series 1-0 after a 3-2 win. Regular season: Milwaukee 103-59 with 832:618; Tampa Bay 98-64 with 736:650.",
+        "Drew Rasmussen faces Logan Henderson. Tampa Bay is 14-1 in Rasmussen’s 15 starts since the All-Star break; Milwaukee is 21-4 in Henderson’s 25 career starts."
+      ],
+      "availability": "Official Game 2 FAQ names Drew Rasmussen and Logan Henderson as starting pitchers.",
+      "flags": [
+        "The winner price averages overall record, Pythagorean and venue-split components equally; starter records are context, not a hidden adjustment."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "tennis-rybakina-fernandez-20261025",
+      "sport": "tennis",
+      "competition": "WTA Ningbo — final",
+      "home": "Elena Rybakina",
+      "away": "Leylah Fernandez",
+      "start_utc": "2026-10-25T09:00:00Z",
+      "start_display": "25 Oct not before 17:00 Asia/Shanghai",
+      "not_before": false,
+      "venue": "",
+      "official_source": "WTA_NINGBO_OP",
+      "evidence_sources": [
+        "WTA_NINGBO_OP",
+        "WTA_NINGBO_REPORT",
+        "WTA_NINGBO_PREVIEW",
+        "WTA_RYBAKINA",
+        "WTA_FERNANDEZ"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 63,
+          "wins": 49,
+          "gf": null,
+          "ga": null
+        },
+        "away": {
+          "gp": 49,
+          "wins": 24,
+          "gf": null,
+          "ga": null
+        }
+      },
+      "notes": [
+        "Rybakina is No. 1 with a 49-14 profile record; Fernandez is No. 30 at 24-25. Rybakina leads their head-to-head 3-2 and has won the last two.",
+        "Both won their semifinals 6-3, 7-5. Fernandez is 11-2 since the start of the Asian Swing."
+      ],
+      "availability": "",
+      "flags": [
+        "Start is not-before, not guaranteed. A WTA preview says Saturday while the dated official order of play says Sunday; the PDF controls and the contradiction is flagged.",
+        "Set/game handicaps and totals are not priced without comparable current distributions."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "tennis-krueger-siniakova-20261025",
+      "sport": "tennis",
+      "competition": "WTA Osaka — final",
+      "home": "Ashlyn Krueger",
+      "away": "Katerina Siniakova",
+      "start_utc": "2026-10-25T04:30:00Z",
+      "start_display": "25 Oct 13:30 Asia/Tokyo",
+      "not_before": false,
+      "venue": "",
+      "official_source": "WTA_OSAKA_OP",
+      "evidence_sources": [
+        "WTA_OSAKA_OP"
+      ],
+      "pricing": null,
+      "notes": [],
+      "availability": "",
+      "flags": [
+        "Comparable current singles W-L records for both finalists were not captured from official evidence; winner, handicap and total remain blank."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "tennis-medvedev-basilashvili-20261025",
+      "sport": "tennis",
+      "competition": "ATP Almaty — final",
+      "home": "Daniil Medvedev",
+      "away": "Nikoloz Basilashvili",
+      "start_utc": "2026-10-25T10:00:00Z",
+      "start_display": "25 Oct not before 15:00 Asia/Almaty",
+      "not_before": false,
+      "venue": "",
+      "official_source": "ATP_ALMATY_SCHEDULE",
+      "evidence_sources": [
+        "ATP_ALMATY_SCHEDULE",
+        "ATP_ALMATY_REPORT",
+        "ATP_MEDVEDEV",
+        "ATP_BASILASHVILI"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 63,
+          "wins": 45,
+          "gf": null,
+          "ga": null
+        },
+        "away": {
+          "gp": 17,
+          "wins": 7,
+          "gf": null,
+          "ga": null
+        }
+      },
+      "notes": [
+        "Profiles display Medvedev 45-18 and Basilashvili 7-10; current Almaty wins are reported separately rather than silently added to those records.",
+        "Medvedev has a Tour-leading 37 hard-court wins and is 10-1 in Almaty. Basilashvili beat Tsitsipas 6-4, 6-7(5), 6-3; Medvedev leads their head-to-head 1-0."
+      ],
+      "availability": "",
+      "flags": [
+        "Start is not-before, not guaranteed. Profile records may lag current-tournament results, so confidence is capped below High.",
+        "Set/game handicaps and totals are not priced without comparable current distributions."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "motor-usa-gp-20261025",
+      "sport": "motor-racing",
+      "competition": "Formula 1 — United States Grand Prix",
+      "home": "Circuit of the Americas",
+      "away": "2026 driver field",
+      "start_utc": "2026-10-25T20:00:00Z",
+      "start_display": "2026-10-25T20:00:00Z",
+      "not_before": false,
+      "venue": "Austin, Texas",
+      "official_source": "F1_USA",
+      "evidence_sources": [
+        "F1_USA"
+      ],
+      "pricing": null,
+      "notes": [
+        "Practice two was led by Charles Leclerc from Kimi Antonelli and Max Verstappen; qualifying had not been completed in the captured evidence."
+      ],
+      "availability": "",
+      "flags": [
+        "No race-winner price: qualifying and a complete comparable current driver dataset were not captured. Practice order is not substituted for race form."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "handball-magdeburg-kriens-20261028",
+      "sport": "handball",
+      "competition": "EHF Champions League — Group F",
+      "home": "SC Magdeburg",
+      "away": "HC Kriens-Luzern",
+      "start_utc": "2026-10-28T19:45:00Z",
+      "start_display": "28 Oct 20:45 Europe/Berlin",
+      "not_before": false,
+      "venue": "Magdeburg, Germany",
+      "official_source": "EHF_MAGDEBURG",
+      "evidence_sources": [
+        "EHF_MAGDEBURG",
+        "EHF_STANDINGS"
+      ],
+      "pricing": {
+        "kind": "score3",
+        "home": {
+          "gp": 5,
+          "wins": 5,
+          "gf": 176,
+          "ga": 140
+        },
+        "away": {
+          "gp": 5,
+          "wins": 2,
+          "gf": 158,
+          "ga": 161
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Magdeburg is 5-0-0 with 176:140; Kriens-Luzern is 2-0-3 with 158:161. Magdeburg won the September away meeting 39-29."
+      ],
+      "availability": "",
+      "flags": [
+        "Independent scoring approximation with a draw outcome; no lineup or injury adjustment and no High eligibility."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "handball-saint-raphael-paris-20261025",
+      "sport": "handball",
+      "competition": "Daikin StarLigue — round 8",
+      "home": "Saint-Raphaël",
+      "away": "Paris Saint-Germain",
+      "start_utc": "2026-10-25T15:00:00Z",
+      "start_display": "25 Oct 16:00 Europe/Paris",
+      "not_before": false,
+      "venue": "",
+      "official_source": "LNH_HOME",
+      "evidence_sources": [
+        "LNH_HOME"
+      ],
+      "pricing": null,
+      "notes": [
+        "Paris has 14 points from seven matches; Saint-Raphaël has four from six with 176:190 in the captured LNH table."
+      ],
+      "availability": "",
+      "flags": [
+        "Paris goals for/against and a complete comparable W-D-L breakdown were not captured; winner, handicap and total remain blank."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "gaelic-moycullen-salthill-20261025",
+      "sport": "gaelic-sports",
+      "competition": "Galway Senior Football Championship — final",
+      "home": "Maigh Cuilinn / Moycullen",
+      "away": "Salthill-Knocknacarra",
+      "start_utc": "2026-10-25T16:00:00Z",
+      "start_display": "25 Oct 16:00 Europe/Dublin",
+      "not_before": false,
+      "venue": "Pearse Stadium",
+      "official_source": "GALWAY_CHANGE",
+      "evidence_sources": [
+        "GALWAY_CHANGE"
+      ],
+      "pricing": null,
+      "notes": [],
+      "availability": "",
+      "flags": [
+        "Weather moved the senior final to Sunday at 16:00. Comparable current team scoring and availability records were not captured; no price or selection."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "gaelic-caherlistrane-spideal-20261025",
+      "sport": "gaelic-sports",
+      "competition": "Galway Intermediate Football Championship — final",
+      "home": "Caherlistrane",
+      "away": "An Spidéal",
+      "start_utc": "2026-10-25T14:00:00Z",
+      "start_display": "25 Oct 14:00 Europe/Dublin",
+      "not_before": false,
+      "venue": "Pearse Stadium",
+      "official_source": "GALWAY_CHANGE",
+      "evidence_sources": [
+        "GALWAY_CHANGE"
+      ],
+      "pricing": null,
+      "notes": [],
+      "availability": "",
+      "flags": [
+        "The latest weather notice says 14:00; an older fixtures view showed 15:00. The notice controls and the conflict remains visible.",
+        "Comparable current team scoring and availability records were not captured; no price or selection."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "greyhounds-scurry-final-20261024",
+      "sport": "greyhounds",
+      "competition": "Arena Racing Company Scurry Gold Cup — final",
+      "home": "Dunstall Park",
+      "away": "Finalist field",
+      "start_utc": null,
+      "start_display": "24 Oct; official race time not captured",
+      "not_before": false,
+      "venue": "Dunstall Park",
+      "official_source": "GBGB_SCURRY",
+      "evidence_sources": [
+        "GBGB_SCURRY"
+      ],
+      "pricing": null,
+      "notes": [
+        "Official semifinal reports name Shadow Storm, Avarua Lake, Roanna Mamba and other qualifiers."
+      ],
+      "availability": "",
+      "flags": [
+        "Complete official final runner card, traps and race time were not captured; no runner selection or price."
+      ],
+      "high_prediction": ""
+    },
+    {
+      "id": "greyhounds-oaks-final-20261024",
+      "sport": "greyhounds",
+      "competition": "Premier Greyhound Racing Oaks — final",
+      "home": "Dunstall Park",
+      "away": "Finalist field",
+      "start_utc": null,
+      "start_display": "24 Oct; official race time not captured",
+      "not_before": false,
+      "venue": "Dunstall Park",
+      "official_source": "GBGB_OAKS",
+      "evidence_sources": [
+        "GBGB_OAKS"
+      ],
+      "pricing": null,
+      "notes": [
+        "Official semifinal reports name Signet Nayla, Fahrenheit Jess and Slingshot Poppy among the qualifiers."
+      ],
+      "availability": "",
+      "flags": [
+        "Complete official final runner card, traps and race time were not captured; no runner selection or price."
+      ],
+      "high_prediction": ""
+    }
+  ],
+  "review_leads": [
+    {
+      "sport": "golf",
+      "item": "No current Golf tips in the captured hub",
+      "reason": "No fixture is invented to fill the requested sport.",
+      "official_source": "OLBG_SITEMAP"
+    },
+    {
+      "sport": "darts",
+      "item": "Price–Bunting and other proposed pairings",
+      "reason": "Official session evidence exists, but the pairing was not confirmed; no match row or price.",
+      "official_source": "PDC_DAY3"
+    },
+    {
+      "sport": "rugby-league",
+      "item": "2027 outright-only OLBG inventory",
+      "reason": "No upcoming match-winner list was captured; no team or price is inferred from outrights.",
+      "official_source": "OLBG_SITEMAP"
+    },
+    {
+      "sport": "rugby-union",
+      "item": "Harlequins–Saracens and other uncorroborated hub leads",
+      "reason": "Searches found historical material rather than a current official fixture; excluded from the match list.",
+      "official_source": "URC_FIXTURE"
+    },
+    {
+      "sport": "gaelic-sports",
+      "item": "Dunloy–Portaferry and Shinrone–Kilcormac-Killoughey",
+      "reason": "Official county/Ulster pages did not substantiate the proposed current pairings; excluded rather than guessed.",
+      "official_source": "GALWAY_CHANGE"
+    },
+    {
+      "sport": "greyhounds",
+      "item": "Runner-level pricing",
+      "reason": "GBGB event schedules and semifinal stories do not replace a complete official final card.",
+      "official_source": "GBGB_SCURRY"
+    }
+  ],
+  "inventory_note": "OLBG supplied discovery routes and market/pick locations only. Official sources control participants, starts, records and availability. Community support is never treated as probability."
+}
