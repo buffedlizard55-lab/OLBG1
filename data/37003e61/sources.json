@@ -1,0 +1,418 @@
+{
+ "sources": {
+  "nhl-schedule": {
+   "name": "NHL \u2014 official schedule, 24 October 2026",
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+   "read_at": "2026-10-24T17:06Z",
+   "status": "read",
+   "what": "Start times (UTC), venues, game states for the 24 October slate."
+  },
+  "nhl-standings": {
+   "name": "NHL \u2014 official standings, 24 October 2026",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+   "read_at": "2026-10-24T17:06Z",
+   "status": "read",
+   "what": "W-L-OTL, points, points percentage, home/road splits, last ten, goals for and against."
+  },
+  "mlb-schedule": {
+   "name": "MLB Stats API \u2014 24 October 2026 schedule",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24&hydrate=team,probablePitcher,linescore",
+   "read_at": "2026-10-24T17:09Z",
+   "status": "read",
+   "what": "World Series Game 2 pairing, 00:00Z start, probable pitchers, series score, ifNecessary=N."
+  },
+  "nba-standings": {
+   "name": "NBA.com \u2014 2026-27 regular-season standings",
+   "url": "https://www.nba.com/standings",
+   "read_at": "2026-10-24T17:12Z",
+   "status": "read",
+   "what": "W-L, home/road, conference and division records, last ten and streak for all 30 teams."
+  },
+  "atp-almaty": {
+   "name": "ATP Tour \u2014 Almaty daily schedule (Day 9)",
+   "url": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule",
+   "read_at": "2026-10-24T17:15Z",
+   "status": "read",
+   "what": "Singles and doubles finals, court order, not-before times, seeds and head-to-head link."
+  },
+  "wst-matches": {
+   "name": "World Snooker Tour \u2014 BetVictor Northern Ireland Open match list",
+   "url": "https://www.wst.tv/matches/",
+   "read_at": "2026-10-24T17:32Z",
+   "status": "read",
+   "what": "Match 62 semi-final Mark Williams v Jak Jones; Match 63 final Kyren Wilson v winner of Match 62; other semi-final finished 6-5 to Wilson."
+  },
+  "lnr-top14": {
+   "name": "LNR \u2014 Top 14 official calendar and results, Journ\u00e9e 7",
+   "url": "https://top14.lnr.fr/calendrier-et-resultats",
+   "read_at": "2026-10-24T17:36Z",
+   "status": "read",
+   "what": "Toulon v Pau 21:00 Saturday, La Rochelle v Bordeaux-B\u00e8gles 21:05 Sunday, six completed results and league positions 1-14."
+  },
+  "prem-rugby": {
+   "name": "Premiership Rugby \u2014 official fixtures and results, Round 4",
+   "url": "https://www.premrugby.com/fixtures-results?competition=gallagher-prem&round=4",
+   "read_at": "2026-10-24T17:37Z",
+   "status": "read",
+   "what": "Round 4 fixtures, form strings, Gloucester 23-5 Bath, Newcastle 17-3 Sale, Leicester 28-7 Northampton, Bristol 10-0 Exeter at 35 minutes."
+  },
+  "nrl-draw": {
+   "name": "NRL.com \u2014 Rugby League World Cup Round 2 draw",
+   "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+   "read_at": "2026-10-24T17:20Z",
+   "status": "read",
+   "what": "Round 2 fixtures and results, venues and table positions for New Zealand, Cook Islands, Australia and Fiji."
+  },
+  "f1-usgp": {
+   "name": "Formula 1 \u2014 2026 United States Grand Prix race hub",
+   "url": "https://www.formula1.com/en/racing/2026/united-states",
+   "read_at": "2026-10-24T17:24Z",
+   "status": "read",
+   "what": "Weekend schedule, FP2 classification (Leclerc 1:35.291), circuit length, lap count and race distance."
+  },
+  "legavolley": {
+   "name": "Lega Pallavolo Serie A \u2014 SuperLega official calendar",
+   "url": "https://www.legavolley.it/calendario/?idCampionato=999",
+   "read_at": "2026-10-24T17:30Z",
+   "status": "read",
+   "what": "Round 2 fixtures on 25 October with local throw-off times, venues, referees and broadcasters."
+  },
+  "csa": {
+   "name": "Cricket South Africa \u2014 official fixture hub",
+   "url": "https://cricket.co.za/",
+   "read_at": "2026-10-24T17:26Z",
+   "status": "read",
+   "what": "Official 24 October fixtures: Colts three-day matches and Hollywoodbets Pro 50. No T20 fixture matching the OLBG card was present."
+  },
+  "gbgb": {
+   "name": "Greyhound Board of Great Britain \u2014 racing hub",
+   "url": "https://www.gbgb.org.uk/racing/",
+   "read_at": "2026-10-24T17:34Z",
+   "status": "read",
+   "what": "Results search and race reports. No forward race card with runners is published on this route."
+  },
+  "gaa": {
+   "name": "GAA \u2014 official fixtures and results",
+   "url": "https://www.gaa.ie/fixtures-results",
+   "read_at": "2026-10-24T17:31Z",
+   "status": "read",
+   "what": "24 October inter-county listing: Shinty-Hurling international, Ireland v Scotland, 18:00, SuperValu P\u00e1irc U\u00ed Chaoimh."
+  },
+  "olbg-basketball": {
+   "name": "OLBG \u2014 Basketball hub (discovery)",
+   "url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "read_at": "2026-10-24T17:14Z",
+   "status": "read",
+   "what": "Event names, start clocks and tip votes only. OLBG publishes no prices, so nothing here is used as a probability."
+  },
+  "olbg-rugby-union": {
+   "name": "OLBG \u2014 Rugby Union hub (discovery)",
+   "url": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+   "read_at": "2026-10-24T17:16Z",
+   "status": "read",
+   "what": "Five match cards plus a 2027 Six Nations outright; used for discovery and for the route map only."
+  },
+  "olbg-cricket": {
+   "name": "OLBG \u2014 Cricket hub (discovery)",
+   "url": "https://www.olbg.com/betting-tips/Cricket/7",
+   "read_at": "2026-10-24T17:20Z",
+   "status": "read",
+   "what": "Nine cards across T20 and ODI competitions; no matching fixture on the official board read."
+  },
+  "olbg-darts": {
+   "name": "OLBG \u2014 Darts hub (discovery)",
+   "url": "https://www.olbg.com/betting-tips/Darts/15",
+   "read_at": "2026-10-24T17:18Z",
+   "status": "read",
+   "what": "Five match cards and two outrights; the PDC hub itself returned a consent shell."
+  },
+  "olbg-handball": {
+   "name": "OLBG \u2014 Handball hub (discovery)",
+   "url": "https://www.olbg.com/betting-tips/Handball/20",
+   "read_at": "2026-10-24T17:27Z",
+   "status": "read",
+   "what": "Thirteen cards across the HBL and Champions League; the official routes returned 404 or reCAPTCHA."
+  },
+  "olbg-gaelic": {
+   "name": "OLBG \u2014 Gaelic Football hub (discovery)",
+   "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+   "read_at": "2026-10-24T17:31Z",
+   "status": "read",
+   "what": "Four club championship cards with handicap lines, plus the 2027 All-Ireland outright."
+  },
+  "olbg-greyhounds": {
+   "name": "OLBG \u2014 Greyhounds hub (discovery)",
+   "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+   "read_at": "2026-10-24T17:34Z",
+   "status": "read",
+   "what": "Daily race cards for Newcastle, Star Pelaw, Central Park, Doncaster, Monmore and Dunstall Park."
+  },
+  "pdc": {
+   "name": "PDC \u2014 European Championship tournament hub",
+   "url": "https://www.pdc.tv/tournament-hub/10870",
+   "read_at": "2026-10-24T17:18Z",
+   "status": "failed",
+   "what": "Fetch returned only a cookie-consent shell on chunks read; no draw or order of play could be read."
+  },
+  "ehf": {
+   "name": "EHF Champions League \u2014 matches",
+   "url": "https://ehfcl.eurohandball.com/en/matches/",
+   "read_at": "2026-10-24T17:29Z",
+   "status": "failed",
+   "what": "Official route returns 404; no handball fixture data read."
+  },
+  "hbl": {
+   "name": "Handball-Bundesliga \u2014 official schedule",
+   "url": "https://www.opel-hbl.de/de/hbl/spielplan",
+   "read_at": "2026-10-24T17:27Z",
+   "status": "failed",
+   "what": "Page body is behind a reCAPTCHA challenge; no fixture table read."
+  },
+  "wst-tournament": {
+   "name": "World Snooker Tour \u2014 Northern Ireland Open tournament page",
+   "url": "https://www.wst.tv/tournaments/betvictor-northern-ireland-open/",
+   "read_at": "2026-10-24T17:33Z",
+   "status": "failed",
+   "what": "Returns a 404 page; the match list route was used instead."
+  }
+ },
+ "access_log": [
+  {
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+   "result": "read",
+   "what": "12-game slate, UTC starts, venues, game states."
+  },
+  {
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+   "result": "read",
+   "what": "Records and splits; read in chunks 0-2 of 8."
+  },
+  {
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24",
+   "result": "read",
+   "what": "World Series Game 2, pitchers, series score."
+  },
+  {
+   "url": "https://www.nba.com/standings",
+   "result": "read",
+   "what": "All 30 team records."
+  },
+  {
+   "url": "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json",
+   "result": "failed",
+   "what": "HTTP 500 twice."
+  },
+  {
+   "url": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule",
+   "result": "read",
+   "what": "Finals order of play, seeds, H2H link."
+  },
+  {
+   "url": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+   "result": "read",
+   "what": "Partial; Machac d. Moutet 64 64."
+  },
+  {
+   "url": "https://www.wst.tv/matches/",
+   "result": "read",
+   "what": "Match 62, Match 63, Wilson 6-5 Craigie."
+  },
+  {
+   "url": "https://www.wst.tv/tournaments/betvictor-northern-ireland-open/",
+   "result": "failed",
+   "what": "404."
+  },
+  {
+   "url": "https://top14.lnr.fr/calendrier-et-resultats",
+   "result": "read",
+   "what": "Journ\u00e9e 7 fixtures, times, positions, six results."
+  },
+  {
+   "url": "https://top14.lnr.fr/calendrier",
+   "result": "failed",
+   "what": "404; correct route is calendrier-et-resultats."
+  },
+  {
+   "url": "https://www.premrugby.com/fixtures-results?competition=gallagher-prem&round=4",
+   "result": "read",
+   "what": "Round 4 fixtures, form strings, results."
+  },
+  {
+   "url": "https://www.premiershiprugby.com/fixtures",
+   "result": "failed",
+   "what": "404."
+  },
+  {
+   "url": "https://www.unitedrugby.com/fixtures",
+   "result": "failed",
+   "what": "404 Page Not Found."
+  },
+  {
+   "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+   "result": "read",
+   "what": "Round 2 fixtures, results, group positions."
+  },
+  {
+   "url": "https://www.formula1.com/en/racing/2026/united-states",
+   "result": "read",
+   "what": "Weekend schedule, FP2 classification, circuit data."
+  },
+  {
+   "url": "https://www.legavolley.it/calendario/?idCampionato=999",
+   "result": "read",
+   "what": "Round 2 fixtures, venues, referees (chunk 4)."
+  },
+  {
+   "url": "https://www.legavolley.it/matchdaily?campionato=-201",
+   "result": "failed",
+   "what": "Navigation shell only; no fixture table."
+  },
+  {
+   "url": "https://cricket.co.za/",
+   "result": "read",
+   "what": "Official 24 October fixtures; no matching T20 card."
+  },
+  {
+   "url": "https://cricket.co.za/fixtures/",
+   "result": "failed",
+   "what": "Page not found; home page used instead."
+  },
+  {
+   "url": "https://www.gbgb.org.uk/racing/",
+   "result": "read",
+   "what": "Results search and race reports; no forward card."
+  },
+  {
+   "url": "https://www.gbgb.org.uk/race-results/",
+   "result": "failed",
+   "what": "404."
+  },
+  {
+   "url": "https://www.gaa.ie/fixtures-results",
+   "result": "read",
+   "what": "24 October Shinty-Hurling only."
+  },
+  {
+   "url": "https://www.pdc.tv/tournament-hub/10870",
+   "result": "failed",
+   "what": "Cookie-consent shell on chunks 0 and 4."
+  },
+  {
+   "url": "https://ehfcl.eurohandball.com/en/matches/",
+   "result": "failed",
+   "what": "404."
+  },
+  {
+   "url": "https://www.eurohandball.com/en/matches/",
+   "result": "failed",
+   "what": "404."
+  },
+  {
+   "url": "https://www.opel-hbl.de/de/hbl/spielplan",
+   "result": "failed",
+   "what": "reCAPTCHA challenge."
+  },
+  {
+   "url": "https://www.daikin-hbl.de/de/hbl/spielplan",
+   "result": "failed",
+   "what": "reCAPTCHA challenge."
+  },
+  {
+   "url": "https://www.olbg.com/betting-tips",
+   "result": "read",
+   "what": "Master tip feed; mixed sports, used for discovery only."
+  }
+ ],
+ "olbg_routes": [
+  {
+   "sport": "Ice Hockey",
+   "sport_id": 13,
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "observed": "17 NHL cards; Money Line and Game Totals markets; 8 further NHL games plus 5 Swiss NLA fixtures surfaced."
+  },
+  {
+   "sport": "Basketball",
+   "sport_id": 4,
+   "url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "observed": "11 cards including 8 NBA games; Money Line and Pointspread; Poland PLK and Brazil NBB also listed."
+  },
+  {
+   "sport": "Baseball",
+   "sport_id": 12,
+   "url": "https://www.olbg.com/betting-tips/Baseball/12",
+   "observed": "One MLB card: Tampa Bay Rays @ Milwaukee Brewers, Money Line."
+  },
+  {
+   "sport": "Tennis",
+   "sport_id": 3,
+   "url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "observed": "7 cards; Win Match only; Medvedev v Basilashvili, Rybakina v Fernandez, Krueger v Siniakova."
+  },
+  {
+   "sport": "Rugby Union",
+   "sport_id": 9,
+   "url": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+   "observed": "5 match cards plus Six Nations 2027 outright; To Win and Win Tournament markets."
+  },
+  {
+   "sport": "Rugby League",
+   "sport_id": 10,
+   "url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+   "observed": "No match-level card surfaced: only State of Origin 2027, Super League 2027 and NRL 2027 outrights."
+  },
+  {
+   "sport": "Cricket",
+   "sport_id": 7,
+   "url": "https://www.olbg.com/betting-tips/Cricket/7",
+   "observed": "9 match cards plus outrights; Win Match, Draw No Bet, Top Team1 Batsman and Outright Winner."
+  },
+  {
+   "sport": "Snooker",
+   "sport_id": 8,
+   "url": "https://www.olbg.com/betting-tips/Snooker/8",
+   "observed": "One match card (Mark Williams v Jak Jones); markets documented as Win Match, Handicap, Frame Betting and Win Tournament."
+  },
+  {
+   "sport": "Darts",
+   "sport_id": 15,
+   "url": "https://www.olbg.com/betting-tips/Darts/15",
+   "observed": "5 match cards plus PDC World Championship 2027 and European Championship outrights; Win Match 2-way and Win Tournament."
+  },
+  {
+   "sport": "Volleyball",
+   "sport_id": 21,
+   "url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "observed": "15 cards across Austria, Germany, Poland, France, Brazil, Italy and the Netherlands; Win Match only."
+  },
+  {
+   "sport": "Handball",
+   "sport_id": 20,
+   "url": "https://www.olbg.com/betting-tips/Handball/20",
+   "observed": "13 cards plus later Champions League ties; Money Line only."
+  },
+  {
+   "sport": "Gaelic Football",
+   "sport_id": 25,
+   "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+   "observed": "4 club match cards plus the 2027 All-Ireland outright; handicap and match-winner selections."
+  },
+  {
+   "sport": "Greyhounds",
+   "sport_id": 28,
+   "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+   "observed": "Daily Races cards for Newcastle, Star Pelaw, Central Park, Doncaster, Monmore and Dunstall Park."
+  },
+  {
+   "sport": "Motor Racing",
+   "sport_id": 14,
+   "url": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+   "observed": "One card: USA Grand Prix, Max Verstappen Win Race at 33% of 55 tips."
+  },
+  {
+   "sport": "Golf",
+   "sport_id": 5,
+   "url": "https://www.olbg.com/betting-tips/Golf/5",
+   "observed": "Rendered 'No tips found' at 17:24Z. Markets documented, but no event card was available to price."
+  }
+ ]
+}

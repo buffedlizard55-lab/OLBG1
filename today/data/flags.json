@@ -1,0 +1,58 @@
+[
+ {
+  "id": "F-7F-01",
+  "severity": "high",
+  "title": "Eight of twelve NHL games on 24 Oct have no published row",
+  "detail": "The NHL schedule feed reports 12 games for 24 Oct 2026. Only the first four carried through in the page segment that was read, so eight games are missing from this desk.",
+  "source": "https://api-web.nhle.com/v1/schedule/2026-10-24"
+ },
+ {
+  "id": "F-7F-02",
+  "severity": "high",
+  "title": "Eleven of fifteen sports carry no priced selection today",
+  "detail": "Basketball, cricket, darts, rugby union, rugby league, snooker, handball, volleyball, golf, Gaelic sports and greyhounds are listed but unpriced. Each row states the specific missing input; no value was filled in to reach a quota.",
+  "source": "https://www.olbg.com/betting-tips"
+ },
+ {
+  "id": "F-7F-03",
+  "severity": "high",
+  "title": "The five-High-picks-per-sport target is not met",
+  "detail": "Zero selections clear the High bar today. The brief's band starts at -250 (71.4% fair) and the High rule starts at 70%, which leaves a 1.4-point window; the verified inputs available this session do not land inside it for any match.",
+  "source": "https://www.olbg.com/betting-tips"
+ },
+ {
+  "id": "F-7F-04",
+  "severity": "medium",
+  "title": "Tennis start time is unconfirmed",
+  "detail": "No official order of play with a start time was published for the Almaty final when read. The 25 Oct 06:00 UK listing comes from OLBG, which is a discovery source and not an official federation.",
+  "source": "https://www.atptour.com/en/scores/current"
+ },
+ {
+  "id": "F-7F-05",
+  "severity": "medium",
+  "title": "NHL odds for Rangers at Senators were not readable",
+  "detail": "The provider price block was truncated in the captured page segment. The price is blank rather than estimated.",
+  "source": "https://api-web.nhle.com/v1/schedule/2026-10-24"
+ },
+ {
+  "id": "F-7F-06",
+  "severity": "medium",
+  "title": "Milwaukee Brewers season totals were not captured",
+  "detail": "The MLB standings response is paginated by league; only American League clubs were in the segment read, so the Brewers' runs scored and allowed are blank.",
+  "source": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+ },
+ {
+  "id": "F-7F-07",
+  "severity": "medium",
+  "title": "Puck-line and run-line prices are our own research lines",
+  "detail": "Boston -1.5 and the Tampa Bay / Milwaukee prices are originated here, not observed sportsbook offers. They are labelled as such everywhere they appear.",
+  "source": "https://api-web.nhle.com/v1/schedule/2026-10-24"
+ },
+ {
+  "id": "F-7F-08",
+  "severity": "low",
+  "title": "OLBG tip shares are votes, not probabilities",
+  "detail": "The discovery table reproduces OLBG's tip counts because that is what the site publishes. A 100% tip share is one tipster out of one and is not a 100% chance of winning.",
+  "source": "https://www.olbg.com/betting-tips/Tennis/3"
+ }
+]

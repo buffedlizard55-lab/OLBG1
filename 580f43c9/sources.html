@@ -1,0 +1,185 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sources · OLBG research desk 580f43c9</title>
+<style>
+:root{--bg:#f4f6f9;--surface:#fff;--ink:#0f172a;--muted:#5b6675;--line:#e2e8f0;
+--accent:#0b6b4f;--accent-dark:#08503b;--soft:#e8f7f0;--amber:#b54708;--amber-soft:#fff7e6;
+--red:#b42318;--red-soft:#fef3f2;--blue:#1d4ed8;--blue-soft:#eef4ff;--radius:14px;
+--shadow:0 1px 2px rgba(15,23,42,.06),0 1px 3px rgba(15,23,42,.08)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent-dark);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);
+border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap;min-height:62px}
+.brand{font-weight:800;letter-spacing:-.01em;display:flex;gap:9px;align-items:center;color:var(--ink)}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:var(--accent)}
+.brand small{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+color:var(--muted);font-weight:600}
+nav.main{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap}
+nav.main a{padding:7px 10px;border-radius:9px;font-size:13.5px;font-weight:600;color:#334155}
+nav.main a:hover{background:#eef2f7;text-decoration:none}
+nav.main a[aria-current=page]{background:var(--soft);color:var(--accent-dark)}
+.hero{padding:30px 0 6px}
+.eyebrow{margin:0 0 8px;font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+color:var(--accent-dark)}
+h1{margin:0;font-size:clamp(27px,3.6vw,38px);line-height:1.12;letter-spacing:-.02em}
+h2{margin:34px 0 10px;font-size:22px;letter-spacing:-.01em}
+h3{margin:20px 0 8px;font-size:17px}
+p.lede{color:var(--muted);font-size:17px;max-width:80ch;margin:12px 0 0}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:20px 0 4px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+padding:13px 15px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:25px;line-height:1.1;letter-spacing:-.02em}
+.kpi span{font-size:12.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+padding:18px;box-shadow:var(--shadow);margin:14px 0}
+.card.tight{padding:14px 16px}
+.starthere{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.starthere a{display:block;background:var(--surface);border:1px solid var(--line);
+border-radius:var(--radius);padding:15px 16px;box-shadow:var(--shadow)}
+.starthere a:hover{border-color:var(--accent);text-decoration:none}
+.starthere b{display:block;color:var(--accent-dark);font-size:15.5px;margin-bottom:3px}
+.starthere span{color:var(--muted);font-size:13.5px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f8fafc;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#475569;
+position:sticky;top:62px}
+tbody tr:hover{background:#fbfdff}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.scroll{display:block;overflow-x:auto;white-space:nowrap}
+table.scroll tbody,table.scroll thead{display:table;width:100%}
+.pick{font-weight:800;color:var(--accent-dark)}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11.5px;font-weight:800;
+letter-spacing:.04em;text-transform:uppercase}
+.badge.hi{background:var(--soft);color:var(--accent-dark)}
+.badge.md{background:var(--blue-soft);color:var(--blue)}
+.badge.lo{background:var(--amber-soft);color:var(--amber)}
+.badge.gap{background:var(--red-soft);color:var(--red)}
+.badge.ok{background:var(--soft);color:var(--accent-dark)}
+.note{background:var(--blue-soft);border:1px solid #cfe0ff;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.warn{background:var(--amber-soft);border:1px solid #f6dfae;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.danger{background:var(--red-soft);border:1px solid #f3c9c5;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.okay{background:var(--soft);border:1px solid #bfe8d5;border-radius:12px;padding:13px 15px;
+font-size:14px;margin:14px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pred{border-left:4px solid var(--accent);background:#fcfdfe;padding:12px 15px;border-radius:0 10px 10px 0;
+margin:10px 0;font-size:15px}
+.small{font-size:13px;color:var(--muted)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:22px 0;color:var(--muted);font-size:13px}
+ul.clean{margin:8px 0 0 18px;padding:0}ul.clean li{margin:4px 0}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.starthere,.grid2,.grid3{grid-template-columns:1fr}
+th{position:static}}
+</style></head><body>
+<header class="top"><div class="wrap">
+<div class="brand"><span class="dot"></span><span>OLBG research desk<small>24–25 October 2026 · session 580f43c9</small></span></div>
+<nav class="main"><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="predictions.html">Write-ups</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="sports/basketball.html">Sports</a><a href="sources.html" aria-current=page>Sources</a><a href="flagged.html">Flagged</a><a href="repo-audit.html">Repo audit</a><a href="methodology.html">Method</a></nav>
+</div></header>
+<main class="wrap">
+<section class="hero"><p class="eyebrow">Evidence register</p>
+<h1>26 sources, 11 of them official</h1>
+<p class="lede">Anything marked “discovery only” is an OLBG page used solely to learn which fixtures and
+markets exist. It is never the source of a record, a time or a statistic. The official sources are the ones
+linked in every price row.</p></section>
+<table><thead><tr><th>ID</th><th>Publisher</th><th>Type</th><th>URL</th><th>Read at (UTC)</th><th>What was taken from it</th></tr>
+</thead><tbody><tr><td class="mono">nba-games</td><td>NBA</td>
+<td><span class="badge ok">official</span></td>
+<td><a href="https://www.nba.com/games" rel="noopener">https://www.nba.com/games</a></td><td class="small">2026-10-24T17:58Z</td>
+<td class="small">All eight NBA games on 24 Oct 2026 (five carried here): team records, tip times in US Eastern, per-game season leaders</td></tr><tr><td class="mono">nhl-schedule</td><td>NHL</td>
+<td><span class="badge ok">official</span></td>
+<td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">https://api-web.nhle.com/v1/schedule/2026-10-24</a></td><td class="small">2026-10-24T18:02Z</td>
+<td class="small">12 games on 24 Oct 2026: game IDs, venues, UTC starts, game states</td></tr><tr><td class="mono">nhl-standings</td><td>NHL</td>
+<td><span class="badge ok">official</span></td>
+<td><a href="https://api-web.nhle.com/v1/standings/2026-10-24" rel="noopener">https://api-web.nhle.com/v1/standings/2026-10-24</a></td><td class="small">2026-10-24T18:05Z</td>
+<td class="small">2026-27 club records, points, L10, home/road splits, goals for/against; standings stamped 2026-10-24T17:42:15Z</td></tr><tr><td class="mono">mlb-schedule</td><td>MLB</td>
+<td><span class="badge ok">official</span></td>
+<td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;date=2026-10-24&amp;hydrate=team,linescore,probablePitcher" rel="noopener">https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;date=2026-10-24&amp;hydrate=team,linescore,probablePitcher</a></td><td class="small">2026-10-24T18:06Z</td>
+<td class="small">World Series Game 2, Tampa Bay Rays at Milwaukee Brewers, 2026-10-25T00:00:00Z, American Family Field, probable pitchers Rasmussen/Henderson, ifNecessary=N</td></tr><tr><td class="mono">mlb-standings-al</td><td>MLB</td>
+<td><span class="badge ok">official</span></td>
+<td><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason" rel="noopener">https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason</a></td><td class="small">2026-10-24T18:10Z</td>
+<td class="small">2026 regular-season records; Tampa Bay Rays 98-64 (.605), home 55-26, away 43-38, L10 5-5, streak L1</td></tr><tr><td class="mono">mlb-standings-nl</td><td>MLB</td>
+<td><span class="badge ok">official</span></td>
+<td><a href="https://statsapi.mlb.com/api/v1/standings?leagueId=104&amp;season=2026&amp;standingsTypes=regularSeason" rel="noopener">https://statsapi.mlb.com/api/v1/standings?leagueId=104&amp;season=2026&amp;standingsTypes=regularSeason</a></td><td class="small">2026-10-24T18:12Z</td>
+<td class="small">2026 regular-season records; Milwaukee Brewers 103-59 (.636), home 55-26, away 48-33, L10 8-2, streak W5</td></tr><tr><td class="mono">cork-gaa-fixtures</td><td>Cork GAA (county board, official)</td>
+<td><span class="badge ok">official</span></td>
+<td><a href="https://gaacork.ie/" rel="noopener">https://gaacork.ie/</a></td><td class="small">2026-10-24T18:14Z</td>
+<td class="small">Cork club fixtures: Sunday 25 Oct McCarthy Insurance Group Premier SFC final Nemo Rangers v St Finbarrs 16:00 SuperValu Pairc Ui Chaoimh (ref David Murnane); Premier JFC final Cobh v Canovee 14:00; Sunday 1 Nov Senior A FC final Eire Og v Kanturk</td></tr><tr><td class="mono">cork-gaa-psfc</td><td>Cork GAA (county board, official)</td>
+<td><span class="badge ok">official</span></td>
+<td><a href="https://gaacork.ie/league/215999/" rel="noopener">https://gaacork.ie/league/215999/</a></td><td class="small">2026-10-24T18:15Z</td>
+<td class="small">Premier SFC group matrix and tables (Nemo Rangers 3 games 2-1, 57-43; St Finbarrs 3 games 1-2, 63-55) and semi-finals of 10 Oct: St Finbarrs 2-12 v Clonakilty 0-16; Carrigaline 0-16 v Nemo Rangers 1-15</td></tr><tr><td class="mono">atp-scores</td><td>ATP Tour</td>
+<td><span class="badge ok">official</span></td>
+<td><a href="https://www.atptour.com/en/scores/current" rel="noopener">https://www.atptour.com/en/scores/current</a></td><td class="small">2026-10-24T18:08Z</td>
+<td class="small">Vienna semi-finals (event 9410): Medvedev (1) beat Bublik (3) 6-3 ret.; Basilashvili beat Tsitsipas (7) 6-4 6-7(5) 6-3. Basel semi-finals (event 7485) also listed</td></tr><tr><td class="mono">olbg-basketball</td><td>OLBG (discovery only)</td>
+<td><span class="badge gap">discovery only</span></td>
+<td><a href="https://www.olbg.com/betting-tips/Basketball/4" rel="noopener">https://www.olbg.com/betting-tips/Basketball/4</a></td><td class="small">2026-10-24T17:46Z</td>
+<td class="small">Which NBA/HBL/general basketball events OLBG lists</td></tr><tr><td class="mono">olbg-ice-hockey</td><td>OLBG (discovery only)</td>
+<td><span class="badge gap">discovery only</span></td>
+<td><a href="https://www.olbg.com/betting-tips/Ice_Hockey/13" rel="noopener">https://www.olbg.com/betting-tips/Ice_Hockey/13</a></td><td class="small">2026-10-24T17:48Z</td>
+<td class="small">Which NHL/Swiss NLA events OLBG lists</td></tr><tr><td class="mono">olbg-baseball</td><td>OLBG (discovery only)</td>
+<td><span class="badge gap">discovery only</span></td>
+<td><a href="https://www.olbg.com/betting-tips/Baseball/12" rel="noopener">https://www.olbg.com/betting-tips/Baseball/12</a></td><td class="small">2026-10-24T17:49Z</td>
+<td class="small">MLB game list (one game: Rays @ Brewers)</td></tr><tr><td class="mono">olbg-gaelic</td><td>OLBG (discovery only)</td>
+<td><span class="badge gap">discovery only</span></td>
+<td><a href="https://www.olbg.com/betting-tips/Gaelic_Football/25" rel="noopener">https://www.olbg.com/betting-tips/Gaelic_Football/25</a></td><td class="small">2026-10-24T17:52Z</td>
+<td class="small">Gaelic football club fixtures listed</td></tr><tr><td class="mono">olbg-tennis</td><td>OLBG (discovery only)</td>
+<td><span class="badge gap">discovery only</span></td>
+<td><a href="https://www.olbg.com/betting-tips/Tennis/3" rel="noopener">https://www.olbg.com/betting-tips/Tennis/3</a></td><td class="small">2026-10-24T17:54Z</td>
+<td class="small">Tennis matches listed, including the Vienna final pairing</td></tr><tr><td class="mono">olbg-golf</td><td>OLBG (discovery only)</td>
+<td><span class="badge gap">discovery only</span></td>
+<td><a href="https://www.olbg.com/betting-tips/Golf/5" rel="noopener">https://www.olbg.com/betting-tips/Golf/5</a></td><td class="small">2026-10-24T17:50Z</td>
+<td class="small">Golf hub returned &quot;No tips found&quot; at read time</td></tr><tr><td class="mono">olbg-snooker</td><td>OLBG (discovery only)</td>
+<td><span class="badge gap">discovery only</span></td>
+<td><a href="https://www.olbg.com/betting-tips/Snooker/8" rel="noopener">https://www.olbg.com/betting-tips/Snooker/8</a></td><td class="small">2026-10-24T17:51Z</td>
+<td class="small">One snooker listing, already started</td></tr><tr><td class="mono">olbg-darts</td><td>OLBG (discovery only)</td>
+<td><span class="badge gap">discovery only</span></td>
+<td><a href="https://www.olbg.com/betting-tips/Darts/15" rel="noopener">https://www.olbg.com/betting-tips/Darts/15</a></td><td class="small">2026-10-24T17:51Z</td>
+<td class="small">European Championship match markets listed</td></tr><tr><td class="mono">olbg-rugby-union</td><td>OLBG (discovery only)</td>
+<td><span class="badge gap">discovery only</span></td>
+<td><a href="https://www.olbg.com/betting-tips/Rugby_Union/9" rel="noopener">https://www.olbg.com/betting-tips/Rugby_Union/9</a></td><td class="small">2026-10-24T17:53Z</td>
+<td class="small">URC / Top 14 / Premiership fixtures listed</td></tr><tr><td class="mono">olbg-rugby-league</td><td>OLBG (discovery only)</td>
+<td><span class="badge gap">discovery only</span></td>
+<td><a href="https://www.olbg.com/betting-tips/Rugby_League/10" rel="noopener">https://www.olbg.com/betting-tips/Rugby_League/10</a></td><td class="small">2026-10-24T17:53Z</td>
+<td class="small">Only 2027 outright markets; no 2026 match market</td></tr><tr><td class="mono">olbg-cricket</td><td>OLBG (discovery only)</td>
+<td><span class="badge gap">discovery only</span></td>
+<td><a href="https://www.olbg.com/betting-tips/Cricket/7" rel="noopener">https://www.olbg.com/betting-tips/Cricket/7</a></td><td class="small">2026-10-24T17:55Z</td>
+<td class="small">International and domestic T20/ODI fixtures listed</td></tr><tr><td class="mono">olbg-greyhounds</td><td>OLBG (discovery only)</td>
+<td><span class="badge gap">discovery only</span></td>
+<td><a href="https://www.olbg.com/betting-tips/Greyhounds/28" rel="noopener">https://www.olbg.com/betting-tips/Greyhounds/28</a></td><td class="small">2026-10-24T17:56Z</td>
+<td class="small">Graded races at Doncaster/Monmore/Dunstall Park etc.</td></tr><tr><td class="mono">olbg-volleyball</td><td>OLBG (discovery only)</td>
+<td><span class="badge gap">discovery only</span></td>
+<td><a href="https://www.olbg.com/betting-tips/Volleyball/21" rel="noopener">https://www.olbg.com/betting-tips/Volleyball/21</a></td><td class="small">2026-10-24T17:56Z</td>
+<td class="small">SuperLega / PlusLiga / Brazil / German fixtures listed</td></tr><tr><td class="mono">olbg-handball</td><td>OLBG (discovery only)</td>
+<td><span class="badge gap">discovery only</span></td>
+<td><a href="https://www.olbg.com/betting-tips/Handball/20" rel="noopener">https://www.olbg.com/betting-tips/Handball/20</a></td><td class="small">2026-10-24T17:57Z</td>
+<td class="small">HBL / LNH / EHF fixtures listed</td></tr><tr><td class="mono">olbg-motor-racing</td><td>OLBG (discovery only)</td>
+<td><span class="badge gap">discovery only</span></td>
+<td><a href="https://www.olbg.com/betting-tips/Motor_Racing/14" rel="noopener">https://www.olbg.com/betting-tips/Motor_Racing/14</a></td><td class="small">2026-10-24T17:57Z</td>
+<td class="small">USA Grand Prix markets listed; no other race</td></tr><tr><td class="mono">f1-us-gp</td><td>Formula 1</td>
+<td><span class="badge ok">official</span></td>
+<td><a href="https://www.formula1.com/en/racing/2026/united-states" rel="noopener">https://www.formula1.com/en/racing/2026/united-states</a></td><td class="small">2026-10-24T18:18Z</td>
+<td class="small">United States Grand Prix weekend at Austin; third practice in progress at read time, no qualifying classification available</td></tr><tr><td class="mono">urc-match-centre</td><td>United Rugby Championship</td>
+<td><span class="badge ok">official</span></td>
+<td><a href="https://stats.unitedrugby.com/match-centre/2026-27/4" rel="noopener">https://stats.unitedrugby.com/match-centre/2026-27/4</a></td><td class="small">2026-10-24T18:20Z</td>
+<td class="small">URC Round 4 fixtures and results (Bulls 34-26 Ulster, Stormers 52-40 Scarlets, Benetton 20-24 Glasgow); remaining Round 4 fixtures were not rendered in the readable block</td></tr></tbody></table>
+<div class="warn"><strong>Dead ends this session.</strong> These were attempted and could not be read, so
+they supply nothing: pdc.tv (consent wall), ehfcl.eurohandball.com and eurohandball.com (404),
+lnr.fr (404), premrugby.com (JavaScript shell, no fixture rows), legavolley.it (landing page only),
+pcb.com.pk fixture routes (site 404 page). They are listed on
+<a href="flagged.html">Flagged for review</a> as F-07.</div>
+</main>
+<footer class="wrap"><p><strong>Independent research, not a tipster service.</strong> Prices are our own
+estimates, not bookmaker odds. Nothing here is a guarantee, and no bet is risk-free.
+Built from official league, tour and governing-body sources read on 24 October 2026; every row links to the
+page it came from. Not affiliated with OLBG. 18+. If gambling is causing harm, see
+<a href="https://www.gamcare.org.uk/">GamCare</a> or <a href="https://www.begambleaware.org/">BeGambleAware</a>.</p>
+<p class="small">Repository: <a href="https://github.com/buffedlizard55-lab/OLBG1">github.com/buffedlizard55-lab/OLBG1</a> ·
+Live desk: <a href="https://buffedlizard55-lab.github.io/OLBG1/580f43c9/">buffedlizard55-lab.github.io/OLBG1/580f43c9/</a> ·
+Evidence frozen at 2026-10-24T18:20:00Z</p></footer>
+</body></html>

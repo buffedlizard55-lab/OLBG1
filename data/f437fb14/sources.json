@@ -1,0 +1,82 @@
+[
+  {
+    "name": "OLBG sport hubs",
+    "supplied": "Fixture discovery and market labels, all fifteen sports",
+    "url": "https://www.olbg.com/betting-tips"
+  },
+  {
+    "name": "MLB Stats API schedule",
+    "supplied": "World Series Game 2 teams, pitchers, venue, first pitch, ifNecessary flag",
+    "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24&hydrate=probablePitcher,linescore,team"
+  },
+  {
+    "name": "MLB Stats API people",
+    "supplied": "2026 season pitching lines for Rasmussen and Henderson",
+    "url": "https://statsapi.mlb.com/api/v1/people?personIds=656876,701656&hydrate=stats(group=[pitching],type=[season],season=2026)"
+  },
+  {
+    "name": "MLB Stats API standings",
+    "supplied": "Tampa Bay 98-64, runs scored and allowed, road split",
+    "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026&standingsTypes=regularSeason"
+  },
+  {
+    "name": "NBA games",
+    "supplied": "All eight fixtures, tip times, game ids, per-team season leaders",
+    "url": "https://www.nba.com/games"
+  },
+  {
+    "name": "NBA standings",
+    "supplied": "2026-27 records, home/road, conference, division, streak for all 30 clubs",
+    "url": "https://www.nba.com/standings"
+  },
+  {
+    "name": "NHL schedule",
+    "supplied": "Twelve fixtures, UTC start times, venues, game state, licensed market prices",
+    "url": "https://api-web.nhle.com/v1/schedule/2026-10-24"
+  },
+  {
+    "name": "NHL standings",
+    "supplied": "Club points, goal differential, last ten for Carolina, Edmonton, Boston, Vegas",
+    "url": "https://api-web.nhle.com/v1/standings/2026-10-24"
+  },
+  {
+    "name": "WST matches",
+    "supplied": "Northern Ireland Open semi-final and final, with UK start times",
+    "url": "https://www.wst.tv/matches/"
+  },
+  {
+    "name": "Formula 1 race hub",
+    "supplied": "Austin session times, circuit length, laps, FP2 classification",
+    "url": "https://www.formula1.com/en/racing/2026/united-states"
+  },
+  {
+    "name": "WTA scores",
+    "supplied": "Tournament activity: Tokyo and Guangzhou draws released",
+    "url": "https://www.wtatennis.com/scores"
+  },
+  {
+    "name": "Lega Pallavolo",
+    "supplied": "Confirmation that the Italian clubs named by OLBG are SuperLega members",
+    "url": "https://www.legavolley.it/classifica/"
+  },
+  {
+    "name": "GAA fixtures",
+    "supplied": "Only the Shinty-Hurling International published on 24 October",
+    "url": "https://www.gaa.ie/fixtures-results/"
+  },
+  {
+    "name": "PDC",
+    "supplied": "Returned a cookie-consent shell with no draw or averages",
+    "url": "https://www.pdc.tv/tournaments/european-championship"
+  },
+  {
+    "name": "Premiership Rugby",
+    "supplied": "Fixtures route rendered navigation only",
+    "url": "https://www.premiershiprugby.com/fixtures"
+  },
+  {
+    "name": "GBGB",
+    "supplied": "Greyhound governing-body route; no racecard readable",
+    "url": "https://www.gbgb.org.uk/"
+  }
+]

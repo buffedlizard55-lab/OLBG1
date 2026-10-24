@@ -1,0 +1,72 @@
+[
+  {
+    "id": "F-8C-01",
+    "finding": "No High-confidence selection was issued",
+    "scope": "basketball, all sports",
+    "detail": "Every price book today is below the 70% threshold the brief sets for High. Two of six picks are explicitly Low. No tier was inflated to fill the quota.",
+    "link": "https://buffedlizard55-lab.github.io/OLBG1/8cfb80b2/methodology.html"
+  },
+  {
+    "id": "F-8C-02",
+    "finding": "Five of fifteen sports produced no selection",
+    "scope": "football codes, golf, greyhounds, tennis, cricket, darts, handball, volleyball, gaelic, rugby union",
+    "detail": "An official fixture or form source could not be read inside this session for these sports. The 2026-10-24 NBA endpoint stats.nba.com returned an error; pdc.tv served a cookie-consent wall instead of content; unitedrugby.com/fixtures returned 404. Nothing was filled in from memory.",
+    "link": "https://buffedlizard55-lab.github.io/OLBG1/8cfb80b2/coverage.html"
+  },
+  {
+    "id": "F-8C-03",
+    "finding": "OLBG hub times are not UTC",
+    "scope": "all sports",
+    "detail": "Hub times are rendered in US Eastern (UTC-4). All eight NBA fixtures on the hub match the ET tip-off times in the NBA injury report, which fixes the offset. Hub-derived start times are labelled 'derived' on every page and are never presented as confirmed.",
+    "link": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_12_15PM.pdf"
+  },
+  {
+    "id": "F-8C-04",
+    "finding": "Greyhound race times are internally inconsistent",
+    "scope": "greyhounds",
+    "detail": "OLBG prints '6:14 Monmore' and renders the same race as 13:14, a five-hour displacement. No independent racecard time was obtained, so greyhound rows carry no start time and no price.",
+    "link": "https://www.olbg.com/betting-tips/Greyhounds/28"
+  },
+  {
+    "id": "F-8C-05",
+    "finding": "Golf hub empty at capture",
+    "scope": "golf",
+    "detail": "The OLBG golf hub returned 'No tips found' at 17:17Z, and the All Events route returned the same. There was no golf market to attach a selection to.",
+    "link": "https://www.olbg.com/betting-tips/Golf/5"
+  },
+  {
+    "id": "F-8C-06",
+    "finding": "Rugby league hub has no fixture markets",
+    "scope": "rugby league",
+    "detail": "Only State of Origin 2027, Super League 2027 and NRL 2027 outrights were open. No match market existed, so no match pick could be made.",
+    "link": "https://www.olbg.com/betting-tips/Rugby_League/10"
+  },
+  {
+    "id": "F-8C-07",
+    "finding": "San Jose record not published on the standings page read",
+    "scope": "ice hockey",
+    "detail": "The NHL standings response that was read contained Boston, Carolina, Edmonton and Vegas among its first records; San Jose was not included in the readable portion. The Bruins price is therefore opponent-blind and capped at Medium.",
+    "link": "https://api-web.nhle.com/v1/standings/2026-10-24"
+  },
+  {
+    "id": "F-8C-08",
+    "finding": "Four NBA games had no submitted injury report",
+    "scope": "basketball",
+    "detail": "Miami/Charlotte, San Antonio/Dallas, Washington/Chicago and Houston/Atlanta were all listed as NOT YET SUBMITTED at 12:15 PM ET. Those games carry no availability claim.",
+    "link": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_12_15PM.pdf"
+  },
+  {
+    "id": "F-8C-09",
+    "finding": "Snooker final opponent undecided",
+    "scope": "snooker",
+    "detail": "Match 63 is listed as Kyren Wilson against the winner of match 62, so the final's second player was unknown at capture. The frame handicap and total frames markets cannot be priced yet.",
+    "link": "https://www.wst.tv/matches/"
+  },
+  {
+    "id": "F-8C-10",
+    "finding": "Secondary routes return marketing copy, not fixtures",
+    "scope": "all sports",
+    "detail": "The OLBG 'All events' routes for golf and the event-level routes render tipster copy and 404 bodies in some cases. Only the sport hub listings were treated as usable discovery.",
+    "link": "https://www.olbg.com/betting-tips/Golf/All_Golf/All_Events/5"
+  }
+]

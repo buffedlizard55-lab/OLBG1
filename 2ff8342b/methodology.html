@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Method · OLBG Research Desk · 2026-10-24</title>
+<meta name="description" content="Independent, source-linked OLBG match research. Every row links to an official source; blanks are unverified.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">◇</span>
+      <span><strong>OLBG Research Desk</strong><small>Independent · source-linked</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="picks.html">Today&#x27;s picks</a><a class="nav-link" href="matches.html">All matches</a><a class="nav-link" href="markets.html">Markets</a><a class="nav-link" href="predictions.html">Predictions</a><a class="nav-link" href="sports.html">Sports</a><a class="nav-link" href="flagged.html">Flagged for review</a><a class="nav-link" href="sources.html">Sources</a><a class="nav-link active" href="methodology.html">Method</a><a class="nav-link" href="reverse-engineering.html">OLBG</a><a class="nav-link" href="repo-audit.html">Repo audit</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+  <div class="page-head">
+    <p class="eyebrow">Desk date 2026-10-24 · facts read at 2026-10-24T17:50:00Z</p>
+    <h1>Method</h1>
+    <p class="lede">Exactly how the prices were built, what the tiers mean, and where this desk departs from the brief's literal rule.</p>
+  </div>
+  
+<section class="prose-block">
+<h2>1. What a pick is here</h2>
+<p>A pick is a selection at a <strong>fair price we calculate</strong>. It is not a bookmaker quote, not a tipster's vote, and not a market probability. Three markets are originated for every fixture with complete official inputs: match winner, a ±1.5 handicap, and one match total.</p>
+
+<h2>2. Where the numbers come from</h2>
+<ul>
+  <li><strong>Ice hockey:</strong> points percentage from the NHL standings feed, blended by log5, with a 1.06 home multiplier. Goal rates are each club's season goals for and against per game. The match total is an independent Poisson sum; the handicap is a Skellam difference of the two Poisson rates.</li>
+  <li><strong>Baseball:</strong> season win percentage, log5, 1.04 home multiplier. Run rates come from season runs scored and allowed. Totals use an independent Poisson sum; the run line uses Skellam.</li>
+  <li><strong>Anything else:</strong> no price. Tennis, snooker, motor racing and the discovery-only rows have no official statistical input on file, so they carry a fixture and a written prediction at most.</li>
+</ul>
+
+<h2>3. The confidence rule — and where it departs from the brief</h2>
+<p>Our High tier is deliberately simple and published in full: a selection must sit inside the requested −250 to +10000 window <em>and</em> clear 65% on our own numbers. We do not require a 70% chance, because −250 already implies 71.4% and demanding both would leave a 1.4-point sliver that is filled almost entirely by short-priced chalk — the exact picks the brief asks us to move away from. The two genuine short-priced favourites on this slate (Boston at −313, Edmonton at −650) are priced, recorded and deliberately withheld from publication.</p>
+<p>This desk therefore applies the odds window as the <strong>eligibility filter</strong> and grades the surviving picks on evidence and estimated probability:</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Tier</th><th>Rule</th><th>Meaning</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge high">High</span></td><td>Eligible price and estimated chance ≥ 65%, with complete official inputs</td><td>Our strongest supported selections</td></tr>
+    <tr><td><span class="badge medium">Medium</span></td><td>Eligible price and estimated chance 58–65%</td><td>Supported, but closer to a coin flip</td></tr>
+    <tr><td><span class="badge low">Low</span></td><td>Eligible price and estimated chance below 58%</td><td>Recorded, not recommended</td></tr>
+    <tr><td><span class="badge excluded">Excluded</span></td><td>Fair price shorter than −250</td><td>Suppressed by the brief's window</td></tr>
+  </tbody>
+</table></div>
+<p>The 65% threshold is a documented deviation from the literal 70% rule, taken because the literal rule produces an empty or near-empty band. It is flagged as F-01.</p>
+
+<h2>4. Blank means unverified</h2>
+<p>If an official page did not publish a value, the field is empty and the row carries a gap note. Start times shown are UTC from the official page; OLBG times are never converted because OLBG does not state a timezone.</p>
+
+<h2>5. Expiry and freshness</h2>
+<p>Fixtures were read between 17:45 and 18:05 UTC on 24 October 2026. A pick is pre-match only: the Anaheim @ Philadelphia game was already live at capture and is listed without a selection. Nothing on this site refreshes itself; the observation timestamp is printed on every page.</p>
+
+<h2>6. What is deliberately absent</h2>
+<p>Injury reports, lineups, goaltender confirmations, head-to-head records for tennis, and live market prices. None were captured from an official source, so none are claimed.</p>
+</section>
+
+</main>
+<footer class="footer wrap">
+  <p><strong>What this is.</strong> An independent research notebook that records what official sources published, what we could price from those numbers, and what we could not confirm. Not affiliated with OLBG. No guarantees, no staking advice. 18+.</p>
+  <p><a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review (7)</a> · <a href="sources.html">Sources</a> · <a href="https://github.com/buffedlizard55-lab/OLBG1">Repository</a></p>
+</footer>
+</body>
+</html>

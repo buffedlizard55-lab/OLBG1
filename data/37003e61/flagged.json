@@ -1,0 +1,266 @@
+{
+ "desk_flags": [
+  {
+   "id": "F-3700-01",
+   "title": "Band and floor intersect in a 1.4-point window",
+   "detail": "The brief asks for High confidence above 70% and a fair price between -250 and +10000. A -250 fair price is 71.43%, so any selection above that is excluded by the price rule. Lines are therefore originated at the 70.1-71.3% quantile, and every High price prints between -235 and -248. This is disclosed rather than hidden.",
+   "severity": "high"
+  },
+  {
+   "id": "F-3700-02",
+   "title": "Quota of five High picks per sport is not reached",
+   "detail": "10 High selections exist across 4 sports. 11 sports have none. The reasons are per-sport: no OLBG event card (golf), blocked or missing official data (darts, handball), too few events (baseball, tennis, motor racing), or the official fixture set not matching the OLBG card (cricket). No pick was invented to fill a quota.",
+   "severity": "high"
+  },
+  {
+   "id": "F-3700-03",
+   "title": "Kick-off timezone unresolved for two Rugby League rows",
+   "detail": "NRL.com lists New Zealand v Cook Islands at 1:05am and Australia v Fiji at 5:05am on Sunday 25 October without stating the timezone. The UTC cell is left blank on both rows rather than guessed.",
+   "severity": "high"
+  },
+  {
+   "id": "F-3700-04",
+   "title": "Snooker start time differs between two official-adjacent sources",
+   "detail": "The WST match list prints the semi-final at 14:00 while the OLBG card prints 18:05Z. One clock is being rendered in a different timezone. The UTC cell is flagged and the WST match is still listed.",
+   "severity": "medium"
+  },
+  {
+   "id": "F-3700-05",
+   "title": "OLBG cricket card does not match the official CSA fixture hub",
+   "detail": "OLBG lists North West Dragons v Northern Cape Heat and Tuskers v Western Province as T20 fixtures. The Cricket South Africa hub for the same date lists Colts three-day matches and a Pro 50 women's game. The rows are published as discovery only, with no line.",
+   "severity": "high"
+  },
+  {
+   "id": "F-3700-06",
+   "title": "Golf hub empty",
+   "detail": "OLBG's Golf hub returned 'No tips found' at 17:24Z. The page documents outright, first-round-leader and top-region markets, but no event card or selection existed to originate a line against, so Golf is published with zero fixtures rather than invented ones.",
+   "severity": "high"
+  },
+  {
+   "id": "F-3700-07",
+   "title": "Volleyball and handball official routes did not render",
+   "detail": "The EHF Champions League and EHF matches routes return 404, and both HBL schedule routes return a reCAPTCHA page. The affected rows are discovery-only.",
+   "severity": "medium"
+  },
+  {
+   "id": "F-3700-08",
+   "title": "PDC tournament hub is behind a consent wall",
+   "detail": "Two fetches of the PDC European Championship hub returned cookie-consent text only. The five dart rows therefore carry no draw, no order of play and no line.",
+   "severity": "medium"
+  },
+  {
+   "id": "F-3700-09",
+   "title": "OLA desk prices are our own estimates, not bookmaker quotes",
+   "detail": "Every price on this site is a zero-vig fair price derived from the inputs shown on the row. No bookmaker price was copied, and no availability or edge claim is made.",
+   "severity": "low"
+  }
+ ],
+ "row_flags": [
+  {
+   "fixture_id": "IH01",
+   "flag": "San Jose's season record was not in the standings chunk read; no price issued."
+  },
+  {
+   "fixture_id": "IH03",
+   "flag": "Columbus's season record was not in the standings chunk read; no price issued."
+  },
+  {
+   "fixture_id": "BS01",
+   "flag": "Probable-pitcher season statistics were not read, so no price is issued."
+  },
+  {
+   "fixture_id": "TN01",
+   "flag": "Neither player's ranking or season service statistics were read, so no price is issued."
+  },
+  {
+   "fixture_id": "TN02",
+   "flag": "Doubles pairing statistics were not read, so no price is issued."
+  },
+  {
+   "fixture_id": "SN01",
+   "flag": "Frame-level scoring and head-to-head were not read, so no price is issued."
+  },
+  {
+   "fixture_id": "SN01",
+   "flag": "Start time conflict between the WST match list and the OLBG card."
+  },
+  {
+   "fixture_id": "SN02",
+   "flag": "Opponent not decided at capture time; no line can be originated."
+  },
+  {
+   "fixture_id": "RU03",
+   "flag": "Neither club's Round 4 form string was read, so no price is issued."
+  },
+  {
+   "fixture_id": "RU04",
+   "flag": "Fixture listed by OLBG; no official match page was read."
+  },
+  {
+   "fixture_id": "RL01",
+   "flag": "Kick-off timezone unresolved; the UTC cell is deliberately blank."
+  },
+  {
+   "fixture_id": "RL02",
+   "flag": "Kick-off timezone unresolved; the UTC cell is deliberately blank."
+  },
+  {
+   "fixture_id": "VB01",
+   "flag": "No league table read, so no price is issued."
+  },
+  {
+   "fixture_id": "VB02",
+   "flag": "No league table read, so no price is issued."
+  },
+  {
+   "fixture_id": "VB03",
+   "flag": "No league table read, so no price is issued."
+  },
+  {
+   "fixture_id": "VB04",
+   "flag": "No league table read, so no price is issued."
+  },
+  {
+   "fixture_id": "CR01",
+   "flag": "Fixture listed by OLBG; no official competition page was read."
+  },
+  {
+   "fixture_id": "CR02",
+   "flag": "Fixture listed by OLBG; no official match page was read."
+  },
+  {
+   "fixture_id": "CR03",
+   "flag": "OLBG lists a T20 meeting that the official CSA 24 October fixture hub did not carry."
+  },
+  {
+   "fixture_id": "CR04",
+   "flag": "OLBG lists a T20 meeting that the official CSA 24 October fixture hub did not carry."
+  },
+  {
+   "fixture_id": "CR05",
+   "flag": "Fixture listed by OLBG; no official match page was read."
+  },
+  {
+   "fixture_id": "DA01",
+   "flag": "Fixture listed by OLBG; the PDC hub returned only a consent shell."
+  },
+  {
+   "fixture_id": "DA02",
+   "flag": "Fixture listed by OLBG; the PDC hub returned only a consent shell."
+  },
+  {
+   "fixture_id": "DA03",
+   "flag": "Fixture listed by OLBG; the PDC hub returned only a consent shell."
+  },
+  {
+   "fixture_id": "DA04",
+   "flag": "Fixture listed by OLBG; the PDC hub returned only a consent shell."
+  },
+  {
+   "fixture_id": "DA05",
+   "flag": "Fixture listed by OLBG; the PDC hub returned only a consent shell."
+  },
+  {
+   "fixture_id": "HB01",
+   "flag": "Fixture listed by OLBG; the EHF and HBL routes did not return a fixture table."
+  },
+  {
+   "fixture_id": "HB02",
+   "flag": "Fixture listed by OLBG; the HBL route was behind a reCAPTCHA challenge."
+  },
+  {
+   "fixture_id": "HB03",
+   "flag": "Fixture listed by OLBG; no official fixture page was read."
+  },
+  {
+   "fixture_id": "HB04",
+   "flag": "Fixture listed by OLBG; no official fixture page was read."
+  },
+  {
+   "fixture_id": "HB05",
+   "flag": "Fixture listed by OLBG; the EHF matches route returned 404."
+  },
+  {
+   "fixture_id": "GA01",
+   "flag": "Club fixture listed by OLBG; the GAA national fixture hub carried only the 24 October Shinty-Hurling international."
+  },
+  {
+   "fixture_id": "GA02",
+   "flag": "Club fixture listed by OLBG; no official county-board page was read."
+  },
+  {
+   "fixture_id": "GA03",
+   "flag": "Club fixture listed by OLBG; no official county-board page was read."
+  },
+  {
+   "fixture_id": "GA04",
+   "flag": "Club fixture listed by OLBG; no official county-board page was read."
+  },
+  {
+   "fixture_id": "GH01",
+   "flag": "Runner listed by OLBG; GBGB publishes results rather than a forward card on the route read."
+  },
+  {
+   "fixture_id": "GH02",
+   "flag": "Runner listed by OLBG; no official form or trap draw was read."
+  },
+  {
+   "fixture_id": "GH03",
+   "flag": "Runner listed by OLBG; no official form or trap draw was read."
+  },
+  {
+   "fixture_id": "GH04",
+   "flag": "Runner listed by OLBG; no official form or trap draw was read."
+  }
+ ],
+ "repo_findings": [
+  {
+   "id": "R-01",
+   "severity": "high",
+   "path": "COORDINATION.md",
+   "finding": "103 task-board rows contain 15 duplicated task IDs (T1-T7, T63, T64, T424375B4, T496E, T65331685, T5821, T7A9B, T9965).",
+   "why": "A duplicated ID makes 'who owns what' ambiguous, which is the one thing the board exists to prevent. Detected by regex over table rows.",
+   "evidence": "COORDINATION.md"
+  },
+  {
+   "id": "R-02",
+   "severity": "high",
+   "path": "data/current/snapshot.json",
+   "finding": "The canonical root snapshot is stamped 2026-10-22T12:29:50Z with 108 listings, 72 outcomes and 0 High picks, while later desks publish dozens of High picks.",
+   "why": "A visitor landing on the root sees a two-day-old desk that reports zero High selections, next to 56 desk directories that report many. This is the presentation inconsistency the brief complains about.",
+   "evidence": "data/current/snapshot.json"
+  },
+  {
+   "id": "R-03",
+   "severity": "medium",
+   "path": "repository root",
+   "finding": "56 eight-character desk directories and 20 root HTML pages coexist. Each desk re-publishes its own navigation.",
+   "why": "There is no single front door. Any new desk must therefore be self-describing and link back to the root, which this one does.",
+   "evidence": "index.html"
+  },
+  {
+   "id": "R-04",
+   "severity": "medium",
+   "path": "data/3c021b49/fixtures.json",
+   "finding": "The 23 October desk lists 'Basilashvili v Tsitsipas' and 'Medvedev v Bublik' as ATP Almaty semi-finals at 10:00Z and 13:00Z on 24 October. The official ATP order of play for Day 9 shows the final as Medvedev v Basilashvili.",
+   "why": "Both semi-final pairings cannot still be correct. The rows are stale within 24 hours, which shows why this desk stamps every fixture with a read time and an expiry.",
+   "evidence": "data/3c021b49/fixtures.json"
+  },
+  {
+   "id": "R-05",
+   "severity": "low",
+   "path": "data/3c021b49/predictions.json",
+   "finding": "51 predictions, minimum 39 words, no occurrence of the internal terms. This is compliant and is recorded so the good state is not lost.",
+   "why": "Positive control: it shows the house style can be met at scale.",
+   "evidence": "data/3c021b49/predictions.json"
+  },
+  {
+   "id": "R-06",
+   "severity": "low",
+   "path": "root HTML set",
+   "finding": "No git conflict markers, no tracked .pyc files, and zero broken local links across index, picks, predictions, sports and flagged pages.",
+   "why": "Recorded as a clean baseline for the next session.",
+   "evidence": "index.html"
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+  "session": "0c9bc692-olbg1",
+  "flags": [
+    {
+      "id": "F-0C9-01",
+      "severity": "High",
+      "topic": "No approved High picks",
+      "detail": "No selection clears the desk's evidence, calibration, context and current-market requirements. The executive summary intentionally contains zero High picks rather than quota-filling.",
+      "source": ""
+    },
+    {
+      "id": "F-0C9-02",
+      "severity": "High",
+      "topic": "Daily five-per-sport target",
+      "detail": "All 15 sports are represented, but the evidence base does not support five separate source-backed High predictions in any category. Shortfall: 75 requested High predictions.",
+      "source": ""
+    },
+    {
+      "id": "F-0C9-03",
+      "severity": "Medium",
+      "topic": "OLBG is discovery, not fixture proof",
+      "detail": "OLBG exposes tip counts and market labels, not an official sporting record or a bookmaker quote. Every OLBG-only event is blank and withheld until an official competition source confirms it.",
+      "source": "https://www.olbg.com/betting-tips"
+    },
+    {
+      "id": "F-0C9-04",
+      "severity": "Medium",
+      "topic": "Darts confirmation blocked",
+      "detail": "The queried PDC page exposed consent content rather than its calendar. Krzysztof Ratajski v Kevin Doets remains unconfirmed and unpriced.",
+      "source": "https://www.pdc.tv/calendar/"
+    },
+    {
+      "id": "F-0C9-05",
+      "severity": "Medium",
+      "topic": "Gaelic club matches not confirmed",
+      "detail": "The GAA page read did not name the two OLBG Gaelic Football club pairings. No outcome, handicap or probability is supplied for them.",
+      "source": "https://www.gaa.ie/fixtures-results"
+    },
+    {
+      "id": "F-0C9-06",
+      "severity": "Medium",
+      "topic": "Timezone omission",
+      "detail": "WST semi-final time, NRL kickoff times, OLBG Today/Tomorrow labels, and F1 Track Time are displayed exactly as read. They are not converted to UTC where the source did not publish a timezone.",
+      "source": ""
+    },
+    {
+      "id": "F-0C9-07",
+      "severity": "Medium",
+      "topic": "Unavailable official fixture routes",
+      "detail": "The queried Volleyball World, URC and EHF competition routes returned a not-found response. No substitute fixture list was guessed.",
+      "source": "https://en.volleyballworld.com/volleyball/competitions/vnl-2026/"
+    },
+    {
+      "id": "F-0C9-08",
+      "severity": "Medium",
+      "topic": "Greyhound source stale",
+      "detail": "The GBGB query resolved to an old 2018 weather story, so this desk retains no current meeting, runner or race market.",
+      "source": "https://www.gbgb.org.uk/meetings/"
+    },
+    {
+      "id": "F-0C9-09",
+      "severity": "Low",
+      "topic": "Snooker estimate is not a quote",
+      "detail": "The −150 Snooker fair display is an own small-sample research estimate. It is neither an OLBG price nor a bookmaker offer and carries a Low label.",
+      "source": "https://www.wst.tv/matches/"
+    }
+  ]
+}

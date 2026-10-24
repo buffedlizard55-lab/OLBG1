@@ -1,0 +1,186 @@
+{
+  "observed_at": "2026-10-24T17:50:00Z",
+  "official_sources": {
+    "MLB-SCHED": {
+      "name": "MLB StatsAPI — 2026 World Series schedule (gamePk 849802, 849804, 849803)",
+      "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-24&endDate=2026-10-27&hydrate=probablePitcher,team,venue,linescore",
+      "publisher": "Major League Baseball (statsapi.mlb.com)",
+      "role": "official",
+      "observed_at": "2026-10-24T17:45:00Z",
+      "observed": "Three scheduled games: WS Game 2 on 2026-10-24 (TB at MIL, 2026-10-25T00:00Z), Game 3 on 2026-10-26 (MIL at TB, 2026-10-27T00:00Z), Game 4 on 2026-10-27. Probable pitchers, venues, series state and ifNecessary=N read directly from the JSON."
+    },
+    "MLB-STAND-AL": {
+      "name": "MLB StatsAPI — American League regular-season standings 2026",
+      "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=103&season=2026&standingsTypes=regularSeason",
+      "publisher": "Major League Baseball (statsapi.mlb.com)",
+      "role": "official",
+      "observed_at": "2026-10-24T17:46:00Z",
+      "observed": "Tampa Bay Rays 98-64 (.605), 55-26 home, 43-38 away, 736 runs scored, 650 allowed, last ten 5-5."
+    },
+    "MLB-STAND-NL": {
+      "name": "MLB StatsAPI — National League regular-season standings 2026",
+      "url": "https://statsapi.mlb.com/api/v1/standings?leagueId=104&season=2026&standingsTypes=regularSeason",
+      "publisher": "Major League Baseball (statsapi.mlb.com)",
+      "role": "official",
+      "observed_at": "2026-10-24T17:47:00Z",
+      "observed": "Milwaukee Brewers 103-59 (.636), 55-26 home, 48-33 away, 832 runs scored, 618 allowed, +214 differential, W5, last ten 8-2."
+    },
+    "NHL-SCHED": {
+      "name": "NHL official schedule API — 24 October 2026 (12 games)",
+      "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+      "publisher": "National Hockey League (api-web.nhle.com)",
+      "role": "official",
+      "observed_at": "2026-10-24T17:48:00Z",
+      "observed": "Twelve games with start times in UTC, venues, game states and publisher-supplied odds arrays (providerId 3/6/7/8/9/10)."
+    },
+    "NHL-STAND": {
+      "name": "NHL official standings API — 2026-10-24",
+      "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+      "publisher": "National Hockey League (api-web.nhle.com)",
+      "role": "official",
+      "observed_at": "2026-10-24T17:49:00Z",
+      "observed": "Games played, points, points percentage, goals for/against, home and road splits, streaks and last-ten records for every club; standingsDateTimeUtc 2026-10-24T17:44:00Z."
+    },
+    "NBA-REF": {
+      "name": "NBA Official — referee assignments, 24 October 2026",
+      "url": "https://official.nba.com/referee-assignments/",
+      "publisher": "NBA Official (official.nba.com)",
+      "role": "official",
+      "observed_at": "2026-10-24T17:50:00Z",
+      "observed": "Eight games listed for the date: Miami @ Charlotte, Brooklyn @ Cleveland, Milwaukee @ Philadelphia, Houston @ Atlanta, Washington @ Chicago, San Antonio @ Dallas, New Orleans @ Denver, Golden State @ Phoenix. No tip-off times or season records on the page."
+    },
+    "NBA-STAND": {
+      "name": "NBA.com — 2026-27 regular-season standings (read 24 October 2026)",
+      "url": "https://www.nba.com/standings",
+      "publisher": "NBA (nba.com)",
+      "role": "official",
+      "observed_at": "2026-10-24T17:49:00Z",
+      "observed": "Two games played per club at most. Records, home/road splits, last-ten and streak columns read directly: ATL 2-0 (2-0 road), DET 2-0, PHI 2-0 (1-0 home), TOR 2-0, LAL 2-0, OKC 2-0, HOU 2-0 (1-0 road), POR 2-0, MEM 2-0, MIN 2-0, WAS 1-1, BOS 1-1, CHI 1-1 (1-1 road), CHA 1-1 (0-1 home), IND 1-1, LAC 1-1, UTA 1-1, DAL 1-1 (1-1 road), BKN 0-1, CLE 0-1, DEN 0-1, PHX 0-1, ORL 0-2, MIA 0-2 (0-2 home), NYK 0-2, MIL 0-2, NOP 0-2, SAS 0-2 (0-2 home), GSW 0-2."
+    },
+    "ATP-SCORES": {
+      "name": "ATP Tour — current scores, draws and schedules",
+      "url": "https://www.atptour.com/en/scores/current",
+      "publisher": "ATP Tour (atptour.com)",
+      "role": "official",
+      "observed_at": "2026-10-24T17:51:00Z",
+      "observed": "Semi-final results: Medvedev d. Bublik 6-3 ret.; Basilashvili d. Tsitsipas 6-4 6-7(5) 6-3; Griekspoor d. Cerundolo 2-6 6-3 7-6(4); Musetti d. Cobolli 4-6 6-2 7-5; Fritz d. Paul 6-3 7-5. Lyon final: Fritz v Musetti."
+    },
+    "ATP-ALMATY": {
+      "name": "ATP Tour — Almaty Open 2026, Medvedev v Bublik semi-final stats centre",
+      "url": "https://www.atptour.com/en/scores/stats-centre/live/2026/9410/MS002",
+      "publisher": "ATP Tour (atptour.com)",
+      "role": "official",
+      "observed_at": "2026-10-24T17:52:00Z",
+      "observed": "Tournament identified as the Almaty Open (Almaty 2026); Medvedev won the semi-final 6-3 with Bublik retiring."
+    },
+    "ATP-LYON": {
+      "name": "ATP Tour — Lyon 2026 semi-final report (Fritz v Musetti final)",
+      "url": "https://www.atptour.com/en/news/fritz-paul-cobolli-musetti-lyon-2026-sfs",
+      "publisher": "ATP Tour (atptour.com)",
+      "role": "official",
+      "observed_at": "2026-10-24T17:53:00Z",
+      "observed": "Headline and report link state Musetti saved four match points to beat Cobolli and set a Fritz final in Lyon; Fritz beat Paul 6-3 7-5."
+    },
+    "WST-MATCHES": {
+      "name": "World Snooker Tour — matches, BetVictor Northern Ireland Open 2026",
+      "url": "https://www.wst.tv/matches/?",
+      "publisher": "World Snooker Tour (wst.tv)",
+      "role": "official",
+      "observed_at": "2026-10-24T17:54:00Z",
+      "observed": "Semi-final 62 Mark Williams v Jak Jones listed Live Now at 14:00 Sat 24 Oct; Kyren Wilson 6-5 Sam Craigie in the other semi-final; final scheduled 08:00 Sun 25 Oct, Wilson versus winner of match 62."
+    },
+    "GAA-FIX": {
+      "name": "GAA — fixtures and results, 24 October 2026",
+      "url": "https://www.gaa.ie/fixtures-results",
+      "publisher": "Gaelic Athletic Association (gaa.ie)",
+      "role": "official",
+      "observed_at": "2026-10-24T17:55:00Z",
+      "observed": "Only fixture listed for Saturday 24 October is the Shinty-Hurling International, Ireland v Scotland, 18:00, SuperValu Páirc Uí Chaoimh. No Gaelic football fixture appears."
+    },
+    "F1-MEXICO": {
+      "name": "Formula 1 — Mexico City Grand Prix 2026 race hub",
+      "url": "https://www.formula1.com/en/racing/2026/mexico",
+      "publisher": "Formula 1 (formula1.com)",
+      "role": "official",
+      "observed_at": "2026-10-24T17:56:00Z",
+      "observed": "Event runs 30 October – 1 November 2026 (practice 30 Oct, qualifying 31 Oct, race 1 Nov 15:00). No race on 24–25 October."
+    }
+  },
+  "olbg_discovery_hubs": {
+    "golf": {
+      "url": "https://www.olbg.com/betting-tips/Golf/5",
+      "note": "returned 'No tips found.' in the fetched listing",
+      "publisher": "OLBG (discovery only)"
+    },
+    "volleyball": {
+      "url": "https://www.olbg.com/betting-tips/Volleyball/21",
+      "note": "13 match listings read",
+      "publisher": "OLBG (discovery only)"
+    },
+    "rugby-union": {
+      "url": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+      "note": "5 match listings read",
+      "publisher": "OLBG (discovery only)"
+    },
+    "cricket": {
+      "url": "https://www.olbg.com/betting-tips/Cricket/7",
+      "note": "8 match listings read",
+      "publisher": "OLBG (discovery only)"
+    },
+    "snooker": {
+      "url": "https://www.olbg.com/betting-tips/Snooker/8",
+      "note": "1 live match listing read",
+      "publisher": "OLBG (discovery only)"
+    },
+    "darts": {
+      "url": "https://www.olbg.com/betting-tips/Darts/15",
+      "note": "4 match listings read",
+      "publisher": "OLBG (discovery only)"
+    },
+    "baseball": {
+      "url": "https://www.olbg.com/betting-tips/Baseball/12",
+      "note": "1 match listing read",
+      "publisher": "OLBG (discovery only)"
+    },
+    "gaelic-sports": {
+      "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+      "note": "hub fetched; the only 24 Oct fixture listed was a hurling international, outside the brief",
+      "publisher": "OLBG (discovery only)"
+    },
+    "greyhounds": {
+      "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+      "note": "race listings read (dog names, tracks, times)",
+      "publisher": "OLBG (discovery only)"
+    },
+    "tennis": {
+      "url": "https://www.olbg.com/betting-tips/Tennis/3",
+      "note": "6 match listings read",
+      "publisher": "OLBG (discovery only)"
+    },
+    "motor-racing": {
+      "url": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+      "note": "Mexico GP weekend listings read",
+      "publisher": "OLBG (discovery only)"
+    },
+    "handball": {
+      "url": "https://www.olbg.com/betting-tips/Handball/20",
+      "note": "13 match listings read",
+      "publisher": "OLBG (discovery only)"
+    },
+    "ice-hockey": {
+      "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+      "note": "12 NHL listings read",
+      "publisher": "OLBG (discovery only)"
+    },
+    "basketball": {
+      "url": "https://www.olbg.com/betting-tips/Basketball/4",
+      "note": "8 NBA listings read",
+      "publisher": "OLBG (discovery only)"
+    },
+    "rugby-league": {
+      "url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+      "note": "no current fixtures; futures only",
+      "publisher": "OLBG (discovery only)"
+    }
+  }
+}

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged · OLBG research desk</title>
+<meta name="description" content="Source-linked match research: our own lines, a clear pick for each match and written analysis.">
+<meta name="color-scheme" content="light">
+<style>
+:root{
+  --bg:#f5f7fa;--surface:#fff;--ink:#101828;--muted:#667085;--line:#e4e7ec;
+  --accent:#0b6b4f;--accent-ink:#08543e;--soft:#ecfdf3;--amber:#b54708;--amber-soft:#fffaeb;
+  --red:#b42318;--red-soft:#fef3f2;--blue:#175cd3;--blue-soft:#eff8ff;--radius:14px;
+  --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent-ink);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.top .wrap{display:flex;align-items:center;gap:18px;min-height:62px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:750;letter-spacing:-.01em;color:var(--ink)}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);display:inline-block}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:11px;letter-spacing:.09em;text-transform:uppercase}
+nav.main{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav.main a{padding:8px 11px;border-radius:9px;color:#344054;font-size:14px;font-weight:600}
+nav.main a:hover{background:#f2f4f7;text-decoration:none}
+nav.main a[aria-current="page"]{background:var(--soft);color:var(--accent-ink)}
+.hero{padding:34px 0 10px}
+.eyebrow{margin:0 0 8px;color:var(--accent-ink);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+h1{margin:0;font-size:clamp(28px,4vw,40px);line-height:1.12;letter-spacing:-.02em}
+.lede{color:var(--muted);max-width:74ch;margin:12px 0 0;font-size:17px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:22px 0 6px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-size:26px;letter-spacing:-.02em;line-height:1.1}
+.kpi span{color:var(--muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.07em}
+section{margin:34px 0}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:12px;flex-wrap:wrap}
+h2{margin:0;font-size:23px;letter-spacing:-.015em}
+h3{margin:0 0 6px;font-size:17px}
+.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px;max-width:80ch}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.pad{padding:18px}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+caption{text-align:left;padding:14px 16px 0;color:var(--muted);font-size:13px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:#fafbfc;color:#475467;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;position:sticky;top:0}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fcfcfd}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pick{font-weight:750}
+.match{font-weight:600}
+.sub{color:var(--muted);font-size:12.5px;display:block}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:750;letter-spacing:.02em;border:1px solid transparent;white-space:nowrap}
+.badge.high{background:var(--soft);color:var(--accent-ink);border-color:#abefc6}
+.badge.medium{background:var(--amber-soft);color:var(--amber);border-color:#fedf89}
+.badge.low{background:#f2f4f7;color:#475467;border-color:#e4e7ec}
+.badge.info{background:var(--blue-soft);color:var(--blue);border-color:#b2ddff}
+.badge.warn{background:var(--red-soft);color:var(--red);border-color:#fecdca}
+.chip{display:inline-block;padding:1px 7px;border-radius:6px;background:#f2f4f7;color:#475467;font-size:11.5px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.card.predict h3{font-size:16px;margin-bottom:2px}
+.card .meta{color:var(--muted);font-size:12.5px;margin-bottom:10px}
+.card p.body{margin:0;font-size:14.5px}
+.pickline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0 10px}
+.pickline b{font-size:15px}
+.facts{display:flex;gap:18px;flex-wrap:wrap;margin:10px 0 0;padding:10px 0 0;border-top:1px dashed var(--line);font-size:12.5px;color:var(--muted)}
+.facts b{color:var(--ink);font-weight:700}
+.notice{display:flex;gap:10px;align-items:flex-start;background:var(--amber-soft);border:1px solid #fedf89;color:#7a2e0e;border-radius:12px;padding:12px 14px;font-size:14px}
+.notice.green{background:var(--soft);border-color:#abefc6;color:#08543e}
+.notice.red{background:var(--red-soft);border-color:#fecdca;color:#7a271a}
+.notice p{margin:0}
+.srclink{font-size:12.5px;font-weight:650;white-space:nowrap}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.tabs a{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:13px;font-weight:650;color:#344054}
+.tabs a:hover{background:#f9fafb;text-decoration:none}
+.crumbs{color:var(--muted);font-size:13px;margin:18px 0 0}
+.crumbs a{color:var(--muted)}
+footer{margin:48px 0 40px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px}
+footer p{margin:6px 0}
+.sportgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.sportcard{display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);color:var(--ink)}
+.sportcard:hover{border-color:#abefc6;text-decoration:none}
+.sportcard strong{display:block;font-size:15px}
+.sportcard span{color:var(--muted);font-size:12.5px}
+.empty{color:var(--muted);font-size:14px;font-style:italic}
+@media (max-width:900px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .grid,.grid3,.sportgrid{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  nav.main{width:100%;margin:8px 0 4px}
+  .top .wrap{min-height:0;padding-top:10px;padding-bottom:10px}
+  th,td{padding:9px 10px}
+}
+</style>
+</head><body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html"><span class="dot"></span><span>OLBG research desk<small>24 Oct 2026 · source-linked</small></span></a>
+  <nav class="main" aria-label="Primary"><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="matches.html">Matches</a><a href="markets.html">Our lines</a><a href="predictions.html">Predictions</a><a href="sports.html">Sports</a><a href="sources.html">Sources</a><a href="methodology.html">Method</a><a href="flagged.html" aria-current="page">Flagged</a><a href="repo-audit.html">Repo audit</a></nav>
+</div></header>
+<main class="wrap">
+
+<div class="hero"><p class="eyebrow">Needs your review</p><h1>Flagged for review</h1>
+<p class="lede">12 items. Everything here is either a value we could not confirm, a sport we could not price, or a limitation of the source site.
+None of it is hidden in a footnote; none of it blocks publication.</p></div>
+<div class="notice red"><p><strong>The one that matters most:</strong> the brief asks for five written predictions per sport each day. We publish
+21 across 8 sports. The remaining sports had no fixture plus official form we could read, and we did not invent the gap away.</p></div>
+<div class="panel table-wrap"><table><thead><tr><th>ID</th><th>Severity</th><th>Sport</th><th>Finding</th><th>Source to check</th></tr></thead><tbody><tr><td><code>F-01</code></td><td><span class="badge warn">high</span></td><td>Rugby League</td><td><span class="match">No upcoming Rugby League match exists on OLBG</span><span class="sub">OLBG&#x27;s Rugby League hub lists only 2027 outright markets (State of Origin, Super League Grand Final, NRL Grand Final). No 2026 match market is open, so no line or pick can be originated. The sport is published as a gap rather than filled.</span></td><td><a href="https://www.olbg.com/betting-tips/Rugby_League/10" target="_blank" rel="noopener noreferrer">OLBG Rugby League hub (discovery) ↗</a></td></tr><tr><td><code>F-02</code></td><td><span class="badge warn">high</span></td><td>Snooker</td><td><span class="match">OLBG&#x27;s only Snooker listing had already started</span><span class="sub">The single Snooker row (Mark Williams v Jak Jones, 14:05) was listed for a start earlier than the read time, and WST&#x27;s official match page shows the Northern Ireland Open as completed on 18-19 October. No future Snooker match could be confirmed, so none is published.</span></td><td><a href="https://www.wst.tv/matches/" target="_blank" rel="noopener noreferrer">World Snooker Tour matches ↗</a></td></tr><tr><td><code>F-03</code></td><td><span class="badge warn">high</span></td><td>Greyhounds</td><td><span class="match">Greyhound entries on the hub were expired or unverifiable</span><span class="sub">The greyhound hub lists today&#x27;s graded races, several already marked Expired, and no official GBGB card was read for any of them. Publishing a pick without an official card would be invention, so the sport is carried as a gap.</span></td><td><a href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener noreferrer">OLBG Greyhounds hub (discovery) ↗</a></td></tr><tr><td><code>F-04</code></td><td><span class="badge medium">medium</span></td><td>Golf</td><td><span class="match">OLBG renders &#x27;No tips found&#x27; on the Golf hub</span><span class="sub">At 17:05Z the Golf hub returned an empty tips table although the PGA TOUR event is live. Golf picks here are built from the official PGA TOUR leaderboard, not from OLBG, and the OLBG gap is recorded.</span></td><td><a href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">OLBG Golf hub (discovery) ↗</a></td></tr><tr><td><code>F-05</code></td><td><span class="badge medium">medium</span></td><td>Darts</td><td><span class="match">PDC pages are cookie-walled to this reader</span><span class="sub">pdc.tv returns a consent wall instead of match content, so the European Championship order of play could not be read from the governing body. Darts is carried as a gap rather than priced from the OLBG listing alone.</span></td><td><a href="https://www.pdc.tv/tournaments" target="_blank" rel="noopener noreferrer">PDC tournaments ↗</a></td></tr><tr><td><code>F-06</code></td><td><span class="badge medium">medium</span></td><td>Tennis</td><td><span class="match">WTA pages did not render match data</span><span class="sub">wtatennis.com returned navigation and notification text with no draw or order of play, so the WTA matches listed by OLBG could not be confirmed. Only the ATP final, whose two semi-finals were read on atptour.com, is priced.</span></td><td><a href="https://www.wtatennis.com/scores" target="_blank" rel="noopener noreferrer">WTA scores ↗</a></td></tr><tr><td><code>F-07</code></td><td><span class="badge medium">medium</span></td><td>Volleyball</td><td><span class="match">No official volleyball fixture matching an OLBG match was read</span><span class="sub">The Italian league site renders results through a script this reader cannot execute, and the Polish league page returned women&#x27;s TAURON Liga results that do not match the OLBG fixtures. Volleyball is carried as a gap.</span></td><td><a href="https://www.tauronliga.pl/games.html" target="_blank" rel="noopener noreferrer">TAURON Liga fixtures ↗</a></td></tr><tr><td><code>F-08</code></td><td><span class="badge low">low</span></td><td>All</td><td><span class="match">Start times for US sports come from the OLBG display</span><span class="sub">NHL start times are taken from api-web.nhle.com and MLB&#x27;s from statsapi.mlb.com. NBA start times are converted from the US Eastern times displayed on OLBG (UTC+4 in October); NBA.com confirms eight games on 24 October but its fixture list did not render, so the individual times are flagged as OLBG-sourced.</span></td><td><a href="https://www.nba.com/games" target="_blank" rel="noopener noreferrer">NBA games (8 scheduled 24 Oct) ↗</a></td></tr><tr><td><code>F-09</code></td><td><span class="badge low">low</span></td><td>All</td><td><span class="match">Several season records could not be captured</span><span class="sub">NHL standings were read as paginated JSON; clubs beyond the pages read (Los Angeles, New York Rangers, Columbus, Nashville, Pittsburgh) have blank records rather than estimates, and their fixtures carry no line.</span></td><td><a href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL standings ↗</a></td></tr><tr><td><code>F-10</code></td><td><span class="badge low">low</span></td><td>All</td><td><span class="match">Injury and availability fields are blank, not guessed</span><span class="sub">No official injury report was read for any published fixture. Every injury cell on the site is blank and says why, rather than naming a player who may or may not be available.</span></td><td><a href="https://www.nhl.com/info/injury-report" target="_blank" rel="noopener noreferrer">NHL injury report page (not read) ↗</a></td></tr><tr><td><code>F-11</code></td><td><span class="badge warn">high</span></td><td>All</td><td><span class="match">Coverage is short of the five-per-sport target</span><span class="sub">The brief asks for five written predictions per sport per day. This desk publishes 21 priced selections across 8 sports. Sports without a confirmed fixture and confirmed form are carried as gaps rather than filled with invented analysis. The shortfall is listed per sport in the coverage table.</span></td><td><a href="https://www.olbg.com/betting-tips" target="_blank" rel="noopener noreferrer">OLBG all-sports hub (discovery) ↗</a></td></tr><tr><td><code>F-12</code></td><td><span class="badge low">low</span></td><td>All</td><td><span class="match">Some kick-off conversions rely on a published local time</span><span class="sub">Top 14 kick-offs are published in French local time and Cork finals in Irish local time; both are converted to UTC here (CEST = UTC+2, IST = UTC+1). The ATP final time, and the venue for the Pakistan ODI, come from the OLBG listing because the official pages did not publish them; both are marked in the sources table.</span></td><td><a href="https://top14.lnr.fr/calendrier-et-resultats" target="_blank" rel="noopener noreferrer">Top 14 calendar ↗</a></td></tr></tbody></table></div>
+<section><div class="section-head"><div><h2>Fixtures we could not confirm</h2><p>These are on the OLBG board but were not published as matches, because no official fixture could be confirmed.</p></div></div>
+<div class="panel table-wrap"><table><thead><tr><th>Sport</th><th>OLBG listing</th><th>Why it is not on the match list</th><th>Discovery link</th></tr></thead><tbody>
+<tr><td>Rugby League</td><td>2027 outrights only</td><td>No 2026 match market is open.</td><td><a href="https://www.olbg.com/betting-tips/Rugby_League/10" target="_blank" rel="noopener">OLBG ↗</a></td></tr>
+<tr><td>Snooker</td><td>Mark Williams v Jak Jones, 14:05</td><td>Start time had passed and WST shows the event completed.</td><td><a href="https://www.olbg.com/betting-tips/Snooker/8" target="_blank" rel="noopener">OLBG ↗</a></td></tr>
+<tr><td>Greyhounds</td><td>Monmore, Doncaster, Central Park cards</td><td>Listings were expired or had no official card to read.</td><td><a href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener">OLBG ↗</a></td></tr>
+<tr><td>Darts</td><td>European Championship matches</td><td>PDC page returned a consent wall; no order of play read.</td><td><a href="https://www.olbg.com/betting-tips/Darts/15" target="_blank" rel="noopener">OLBG ↗</a></td></tr>
+<tr><td>Volleyball</td><td>Italian, Polish, German, Brazilian club matches</td><td>No official fixture matching an OLBG match could be read.</td><td><a href="https://www.olbg.com/betting-tips/Volleyball/21" target="_blank" rel="noopener">OLBG ↗</a></td></tr>
+<tr><td>Tennis</td><td>Kreuger v Siniakova; Eala v Stojsavljevic; Uchijima v Mertens</td><td>WTA draw and order of play did not render; only ATP matches were readable.</td><td><a href="https://www.olbg.com/betting-tips/Tennis/3" target="_blank" rel="noopener">OLBG ↗</a></td><td><a href="https://www.atptour.com/en/scores/current" target="_blank" rel="noopener noreferrer">ATP scores ↗</a></td></tr>
+</tbody></table></div>
+
+<footer>
+  <p><strong>What this site is.</strong> An independent research dashboard. Prices are our own fair (zero-vig) estimates, not bookmaker quotes. A pick is an opinion, not a guarantee. 18+.</p>
+  <p>Data read 2026-10-24T17:45:00Z · <a href="methodology.html">How the lines are made</a> · <a href="flagged.html">What could not be confirmed</a> · <a href="https://github.com/buffedlizard55-lab/OLBG1">Repository</a></p>
+  <p>Not affiliated with OLBG, the NBA, the NHL, MLB, the ATP, Formula 1, the LNR, the PGA TOUR or Cork GAA.</p>
+</footer>
+</main></body></html>

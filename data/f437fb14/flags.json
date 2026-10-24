@@ -1,0 +1,86 @@
+[
+  {
+    "id": "F-F4-01",
+    "sev": "high",
+    "item": "No injury or availability report read for any fixture",
+    "detail": "The brief asks for injuries that can be checked. No official injury report was retrievable this session (the NBA report PDF route and club pages were not read), so no availability claim appears anywhere in the write-ups.",
+    "link": "https://official.nba.com/nba-injury-report-2026-27-season/"
+  },
+  {
+    "id": "F-F4-02",
+    "sev": "high",
+    "item": "The 70% floor and the -250 floor almost do not overlap",
+    "detail": "70% is -233 and 71.43% is -250. Any selection that is both above 70% and no shorter than -250 therefore has to sit in a 1.43-point window, which is why previous desks published every High pick at the same price. This desk grades confidence on evidence and probability instead, and prints both numbers so the reader can disagree.",
+    "link": "https://www.olbg.com/betting-tips"
+  },
+  {
+    "id": "F-F4-03",
+    "sev": "high",
+    "item": "Eleven of fifteen sports carry fixtures but no price",
+    "detail": "Each sport page names the exact source that failed and what it would have supplied. Nothing was priced from memory or from OLBG's tip shares.",
+    "link": null
+  },
+  {
+    "id": "F-F4-04",
+    "sev": "medium",
+    "item": "NHL records were only partly readable",
+    "detail": "The official standings payload returned four clubs (Carolina, Edmonton, Boston, Vegas) inside the readable slice of an eight-part response. None of tonight's games has both clubs in that set, so all twelve NHL fixtures are published unpriced.",
+    "link": "https://api-web.nhle.com/v1/standings/2026-10-24"
+  },
+  {
+    "id": "F-F4-05",
+    "sev": "medium",
+    "item": "OLBG hub times are US Eastern, not official start times",
+    "detail": "Every time taken from an OLBG hub is labelled 'OLBG ET' in the table. NBA and NHL rows use the league's own timestamps instead. Where the two disagree, the league timestamp is published and the OLBG clock is recorded.",
+    "link": "https://www.olbg.com/betting-tips"
+  },
+  {
+    "id": "F-F4-06",
+    "sev": "medium",
+    "item": "Greyhound race clock and rendered start are five hours apart",
+    "detail": "OLBG prints '7:58 Doncaster' beside 'Today 14:58'. Five hours is exactly the BST/ET offset, so the race name keeps UK track time and the column is ET. No greyhound race is priced, so the discrepancy affects presentation only.",
+    "link": "https://www.gbgb.org.uk/"
+  },
+  {
+    "id": "F-F4-07",
+    "sev": "medium",
+    "item": "Milwaukee's regular-season scoring rate was not captured",
+    "detail": "The total in the World Series game uses a 4.50 runs-per-game league anchor for Milwaukee where their own figure should sit. The write-up says so in the text. This is the single assumption in the baseball number and it is why the pick is not graded High.",
+    "link": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24&hydrate=probablePitcher,linescore,team"
+  },
+  {
+    "id": "F-F4-08",
+    "sev": "low",
+    "item": "F1 race time differs between OLBG and the official hub",
+    "detail": "OLBG prints 'Tomorrow 16:00'; the official race hub gives 16:00 track time at Austin, which is 21:00Z. One of the two is a local-clock reading. The official figure is published.",
+    "link": "https://www.formula1.com/en/racing/2026/united-states"
+  },
+  {
+    "id": "F-F4-09",
+    "sev": "low",
+    "item": "Tennis tournament attribution is unconfirmed",
+    "detail": "OLBG files all six tennis matches under 'All Tennis' with no event name. Tokyo is the WTA event whose draw was released shortly before the read, but the draw page returned no match list, so the attribution is not asserted in the table.",
+    "link": "https://www.wtatennis.com/tournaments/1056/tokyo/2026/draws"
+  },
+  {
+    "id": "F-F4-10",
+    "sev": "low",
+    "item": "Rugby League has no upcoming match at all",
+    "detail": "The OLBG Rugby League hub carries only 2027 outrights today. That is consistent with the domestic season being over, but it is a gap in coverage rather than a finding that no rugby league is played.",
+    "link": "https://www.rugby-league.com/"
+  },
+  {
+    "id": "F-F4-11",
+    "sev": "low",
+    "item": "OLBG tip shares are votes, not probabilities",
+    "detail": "The hub prints, for example, '13/19 Win Tips 68%'. That is the share of that site's users who picked a side. It appears nowhere in any price on this desk.",
+    "link": "https://www.olbg.com/betting-tips/Darts/15"
+  },
+  {
+    "id": "F-F4-12",
+    "sev": "low",
+    "item": "Golf hub empty; no tournament added from another list",
+    "detail": "OLBG returned 'No tips found.' for golf. Rather than import a tournament from a secondary source, the sport is published empty with the reason.",
+    "link": "https://www.olbg.com/betting-tips/Golf/5"
+  }
+]

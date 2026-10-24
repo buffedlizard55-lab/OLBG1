@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Method</title><link rel="stylesheet" href="assets/style.css"></head>
+<body><header><div class="wrap"><a class="brand" href="index.html">OLBG desk &middot; 24 Oct 2026</a>
+<nav><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="matches.html">All matches</a><a href="markets.html">Markets</a><a href="predictions.html">Write-ups</a><a href="sports.html">Sports</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="methodology.html">Method</a><a href="olbg.html">OLBG map</a></nav></div></header><main>
+
+<h1>Method</h1>
+<p class="sub">How a number gets onto this desk, and what stops one getting on.</p>
+
+<h2>1. Discovery is not evidence</h2>
+<p>OLBG is a tipster aggregator. Its hubs give us the fixture list and the market names, and its
+"68%" is the share of that site's users who picked a side &mdash; a vote, not a probability. No
+OLBG figure is ever an input to a price here.</p>
+
+<h2>2. Origination</h2>
+<p>Where a governing body supplies the inputs, we build a probability and publish the fair price
+as 1/p with no margin. That means every price on the site can be checked against the chance printed
+beside it: 60% is -150, 67.7% is -209, 41.5% is +141.</p>
+<ul>
+<li><b>NBA.</b> Each club's 2026-27 record is shrunk toward .500 with twelve pseudo-games, because
+two games carry almost no information. The two shrunk rates go through log5 and a home-court term
+of 0.10 in log-odds. A margin and a handicap come from a 12-point standard deviation.</li>
+<li><b>MLB.</b> Expected runs per side blend that club's runs per game with the opposing starter's
+ERA. The total is a Poisson. One club's run rate was not captured and a 4.50 league anchor is used
+in its place &mdash; stated in the write-up, and the reason that pick is not graded High.</li>
+<li><b>Formula 1.</b> A two-driver head-to-head from the practice gap, with a 0.45-second standard
+deviation on race pace.</li>
+</ul>
+
+<h2>3. The price window</h2>
+<p>The brief asks for selections between -250 and +10000. Every pick is checked against that window
+in both directions and the result is printed in the "Window" column. Nothing outside it is published
+as a pick.</p>
+
+<h2>4. Why the confidence scale is not a price scale</h2>
+<p>The brief also asks for picks with more than a 70% chance. Those two rules nearly contradict each
+other: 70% is -233 and -250 is 71.43%, so a selection that satisfies both has to sit inside a
+1.43-point window. A desk that fills a five-a-sport quota under that rule ends up publishing the same
+price five times with different team names, which is what earlier versions of this site did.</p>
+<p>So confidence here is evidence plus probability. High needs four or more match-specific facts,
+a chance of 60% or better, and a price inside the window. The chance is always printed. If you think
+60% is not high enough to be called High, the number is right there and you can overrule the label.</p>
+
+<h2>5. Blank beats wrong</h2>
+<p>Eleven sports produced fixtures and no price, because the governing body page that would have
+supplied the inputs did not return them. Each one is recorded on its sport page with the exact
+source, and again on the Flagged page. A blank cell is a statement about what we know; a guessed
+cell would be a statement about what we assume.</p>
+
+<h2>6. Regeneration</h2>
+<p>Everything on the site is produced by <code>scripts/sf437fb14_build.py</code> from the two data
+modules, so the tables and the JSON in <code>data/f437fb14/</code> cannot drift apart. The validator
+recomputes every price from its probability and re-checks the tier rules.</p>
+
+<footer>Independent research desk. Not affiliated with OLBG. Prices are originated fair
+prices with no bookmaker margin and no guarantee of availability. Nothing here is betting
+advice. Built 2026-10-24T18:35:00Z.</footer>
+</main></body></html>

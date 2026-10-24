@@ -1,0 +1,110 @@
+[
+  {
+    "id": "F-01",
+    "severity": "high",
+    "sport": "Rugby League",
+    "title": "No upcoming Rugby League match exists on OLBG",
+    "detail": "OLBG's Rugby League hub lists only 2027 outright markets (State of Origin, Super League Grand Final, NRL Grand Final). No 2026 match market is open, so no line or pick can be originated. The sport is published as a gap rather than filled.",
+    "link": "https://www.olbg.com/betting-tips/Rugby_League/10",
+    "link_label": "OLBG Rugby League hub (discovery)"
+  },
+  {
+    "id": "F-02",
+    "severity": "high",
+    "sport": "Snooker",
+    "title": "OLBG's only Snooker listing had already started",
+    "detail": "The single Snooker row (Mark Williams v Jak Jones, 14:05) was listed for a start earlier than the read time, and WST's official match page shows the Northern Ireland Open as completed on 18-19 October. No future Snooker match could be confirmed, so none is published.",
+    "link": "https://www.wst.tv/matches/",
+    "link_label": "World Snooker Tour matches"
+  },
+  {
+    "id": "F-03",
+    "severity": "high",
+    "sport": "Greyhounds",
+    "title": "Greyhound entries on the hub were expired or unverifiable",
+    "detail": "The greyhound hub lists today's graded races, several already marked Expired, and no official GBGB card was read for any of them. Publishing a pick without an official card would be invention, so the sport is carried as a gap.",
+    "link": "https://www.olbg.com/betting-tips/Greyhounds/28",
+    "link_label": "OLBG Greyhounds hub (discovery)"
+  },
+  {
+    "id": "F-04",
+    "severity": "medium",
+    "sport": "Golf",
+    "title": "OLBG renders 'No tips found' on the Golf hub",
+    "detail": "At 17:05Z the Golf hub returned an empty tips table although the PGA TOUR event is live. Golf picks here are built from the official PGA TOUR leaderboard, not from OLBG, and the OLBG gap is recorded.",
+    "link": "https://www.olbg.com/betting-tips/Golf/5",
+    "link_label": "OLBG Golf hub (discovery)"
+  },
+  {
+    "id": "F-05",
+    "severity": "medium",
+    "sport": "Darts",
+    "title": "PDC pages are cookie-walled to this reader",
+    "detail": "pdc.tv returns a consent wall instead of match content, so the European Championship order of play could not be read from the governing body. Darts is carried as a gap rather than priced from the OLBG listing alone.",
+    "link": "https://www.pdc.tv/tournaments",
+    "link_label": "PDC tournaments"
+  },
+  {
+    "id": "F-06",
+    "severity": "medium",
+    "sport": "Tennis",
+    "title": "WTA pages did not render match data",
+    "detail": "wtatennis.com returned navigation and notification text with no draw or order of play, so the WTA matches listed by OLBG could not be confirmed. Only the ATP final, whose two semi-finals were read on atptour.com, is priced.",
+    "link": "https://www.wtatennis.com/scores",
+    "link_label": "WTA scores"
+  },
+  {
+    "id": "F-07",
+    "severity": "medium",
+    "sport": "Volleyball",
+    "title": "No official volleyball fixture matching an OLBG match was read",
+    "detail": "The Italian league site renders results through a script this reader cannot execute, and the Polish league page returned women's TAURON Liga results that do not match the OLBG fixtures. Volleyball is carried as a gap.",
+    "link": "https://www.tauronliga.pl/games.html",
+    "link_label": "TAURON Liga fixtures"
+  },
+  {
+    "id": "F-08",
+    "severity": "low",
+    "sport": "All",
+    "title": "Start times for US sports come from the OLBG display",
+    "detail": "NHL start times are taken from api-web.nhle.com and MLB's from statsapi.mlb.com. NBA start times are converted from the US Eastern times displayed on OLBG (UTC+4 in October); NBA.com confirms eight games on 24 October but its fixture list did not render, so the individual times are flagged as OLBG-sourced.",
+    "link": "https://www.nba.com/games",
+    "link_label": "NBA games (8 scheduled 24 Oct)"
+  },
+  {
+    "id": "F-09",
+    "severity": "low",
+    "sport": "All",
+    "title": "Several season records could not be captured",
+    "detail": "NHL standings were read as paginated JSON; clubs beyond the pages read (Los Angeles, New York Rangers, Columbus, Nashville, Pittsburgh) have blank records rather than estimates, and their fixtures carry no line.",
+    "link": "https://api-web.nhle.com/v1/standings/2026-10-24",
+    "link_label": "NHL standings"
+  },
+  {
+    "id": "F-10",
+    "severity": "low",
+    "sport": "All",
+    "title": "Injury and availability fields are blank, not guessed",
+    "detail": "No official injury report was read for any published fixture. Every injury cell on the site is blank and says why, rather than naming a player who may or may not be available.",
+    "link": "https://www.nhl.com/info/injury-report",
+    "link_label": "NHL injury report page (not read)"
+  },
+  {
+    "id": "F-11",
+    "severity": "high",
+    "sport": "All",
+    "title": "Coverage is short of the five-per-sport target",
+    "detail": "The brief asks for five written predictions per sport per day. This desk publishes 21 priced selections across 8 sports. Sports without a confirmed fixture and confirmed form are carried as gaps rather than filled with invented analysis. The shortfall is listed per sport in the coverage table.",
+    "link": "https://www.olbg.com/betting-tips",
+    "link_label": "OLBG all-sports hub (discovery)"
+  },
+  {
+    "id": "F-12",
+    "severity": "low",
+    "sport": "All",
+    "title": "Some kick-off conversions rely on a published local time",
+    "detail": "Top 14 kick-offs are published in French local time and Cork finals in Irish local time; both are converted to UTC here (CEST = UTC+2, IST = UTC+1). The ATP final time, and the venue for the Pakistan ODI, come from the OLBG listing because the official pages did not publish them; both are marked in the sources table.",
+    "link": "https://top14.lnr.fr/calendrier-et-resultats",
+    "link_label": "Top 14 calendar"
+  }
+]

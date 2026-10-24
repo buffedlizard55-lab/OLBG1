@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Session 321b595c report · OLBG research desk</title>
+<style>
+:root{--ink:#101828;--muted:#5b6472;--line:#e4e7ec;--blue:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:#f6f7f9;color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+main{max-width:960px;margin:0 auto;padding:40px 22px 80px}
+h1{font-size:32px;line-height:1.2;margin:0 0 8px}
+h2{font-size:22px;margin:38px 0 10px;padding-top:18px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:24px 0 8px}
+p,li{color:#27303f}
+a{color:var(--blue)}
+code{background:#eef1f5;padding:1px 5px;border-radius:4px;font-size:.9em}
+table{width:100%;border-collapse:collapse;margin:14px 0;background:#fff;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f0f3f8;font-weight:700}
+.back{display:inline-block;margin-bottom:18px;font-weight:600;text-decoration:none}
+</style></head><body><main>
+<a class="back" href="../321b595c/index.html">&larr; Back to the desk</a>
+<h1>Session 321b595c — fifteen-sport desk, 24 October 2026</h1>
+<p><strong>Desk:</strong> <a href="https://buffedlizard55-lab.github.io/OLBG1/321b595c/index.html"><code>/321b595c/index.html</code></a> ·</p>
+<p><strong>Picks:</strong> <a href="https://buffedlizard55-lab.github.io/OLBG1/321b595c/picks.html"><code>/321b595c/picks.html</code></a> ·</p>
+<p><strong>Flags:</strong> <a href="https://buffedlizard55-lab.github.io/OLBG1/321b595c/flagged.html"><code>/321b595c/flagged.html</code></a></p>
+<p><strong>One line:</strong> 93 upcoming fixtures across all fifteen brief sports, seven originated</p>
+<p>match-winner lines with a published probability and fair price, seven written predictions,</p>
+<p>fifteen flags — and an explicit statement that the brief&#x27;s five-high-picks-per-sport target</p>
+<p>cannot be met honestly on a Saturday slate whose true favourites top out near 65%.</p>
+<h2>1. What was built</h2>
+<table><thead><tr><th>Page</th><th>What it holds</th></tr></thead><tbody><tr><td><code>321b595c/index.html</code></td><td>Executive summary: the seven picks in a table above the fold, then the strongest five, the three biggest disagreements with the published market, and a fifteen-sport status table</td></tr><tr><td><code>picks.html</code></td><td>Every pick with probability, fair price, best official price, edge, confidence, start time and source links</td></tr><tr><td><code>predictions.html</code></td><td>The seven written predictions, 73–107 words each, with the selection restated and sources beneath each one</td></tr><tr><td><code>matches.html</code></td><td>All 93 fixtures, including the 86 we refused to price and why</td></tr><tr><td><code>markets.html</code></td><td>31 originated market rows: moneyline, puck line ±1.5, total 5.5/6.5</td></tr><tr><td><code>coverage.html</code></td><td>Sport-by-sport: OLBG count, priced count, predictions vs the 5 target, and the exact URL that blocked the rest</td></tr><tr><td><code>sources.html</code></td><td>35 reads with UTC timestamps, 20 of them official</td></tr><tr><td><code>flagged.html</code></td><td>All 15 flags with evidence links</td></tr><tr><td><code>methodology.html</code></td><td>The formulas, the bands, the 2,862-check validator</td></tr><tr><td><code>repo-review.html</code></td><td>Line-by-line review of the tree: stale root, duplicate clocks, market-implied &quot;confidence&quot;, templated predictions</td></tr><tr><td><code>sports/*.html</code> (15)</td><td>One page per brief sport, including the two that have no matches on OLBG</td></tr></tbody></table>
+<p>Machine-readable: <code>data/321b595c/{summary,sources,fixtures,predictions,flags,coverage}.json</code>.</p>
+<p>Code: <code>scripts/s321b595c_data.py</code>, <code>scripts/s321b595c_build.py</code>,</p>
+<p><code>scripts/s321b595c_validate.py</code>, <code>tests/pipeline/test_desk_321b595c.py</code>.</p>
+<h2>2. The picks as published</h2>
+<table><thead><tr><th>Sport</th><th>Match</th><th>Selection</th><th>Our chance</th><th>Fair</th><th>Best official</th><th>Edge</th><th>Label</th></tr></thead><tbody><tr><td>Baseball</td><td>Rays @ Brewers (WS G2)</td><td>Milwaukee Brewers</td><td>65.1%</td><td>−187</td><td>—</td><td>—</td><td>High</td></tr><tr><td>Ice Hockey</td><td>Sharks @ Bruins</td><td>Boston Bruins</td><td>61.8%</td><td>−162</td><td>−182</td><td>−2.8</td><td>Medium</td></tr><tr><td>Ice Hockey</td><td>Kings @ Devils</td><td>New Jersey Devils</td><td>60.6%</td><td>−154</td><td>−192</td><td>−5.2</td><td>Medium</td></tr><tr><td>Ice Hockey</td><td>Sabres @ Capitals</td><td>Washington Capitals</td><td>56.7%</td><td>−131</td><td>−102</td><td>+6.2</td><td>Low</td></tr><tr><td>Ice Hockey</td><td>Golden Knights @ Blue Jackets</td><td>Vegas Golden Knights</td><td>55.7%</td><td>−126</td><td>−132</td><td>−1.2</td><td>Low</td></tr><tr><td>Ice Hockey</td><td>Rangers @ Senators</td><td>Ottawa Senators</td><td>52.8%</td><td>−112</td><td>−109</td><td>+0.6</td><td>Low</td></tr><tr><td>Ice Hockey</td><td>Predators @ Penguins</td><td>Pittsburgh Penguins</td><td>52.6%</td><td>−111</td><td>+125</td><td>+8.2</td><td>Low</td></tr></tbody></table>
+<p>Confidence bands: <strong>High ≥ 65%</strong>, Medium ≥ 57.5%, else Low; every published fair price sits</p>
+<p>inside −250…+10000. The strict reading of the brief — *greater than 70%* <strong>and</strong> inside the</p>
+<p>band — admits only probabilities between 70.0% and 71.4%, and <strong>zero</strong> selections qualified.</p>
+<p>That is published as flag F-321-01, not papered over.</p>
+<h2>3. Sources read live (all with UTC timestamps on <code>sources.html</code>)</h2>
+<p>Official: <code>api-web.nhle.com/v1/schedule/2026-10-24</code> (12 games, partner prices, UTC starts),</p>
+<p><code>api-web.nhle.com/v1/standings/2026-10-24</code>, <code>api.nhle.com/stats/rest/en/team/summary</code></p>
+<p>(32-club aggregates: points %, GF/GA, PP%, PK%, shots), <code>statsapi.mlb.com</code> schedule</p>
+<p>(World Series G1–G5 with probable pitchers and UTC first pitch), <code>statsapi.mlb.com</code></p>
+<p>standings (Brewers 103-59, 55-26 home, 8-2 last ten, +214; Rays 98-64, 43-38 away, +86),</p>
+<p><code>nba.com/standings</code>, <code>formula1.com/racing/2026/united-states</code>, <code>wst.tv/matches</code>,</p>
+<p><code>nrl.com/draw</code> (RLWC26 Round 2 incl. venues and two completed results).</p>
+<p>Discovery only: the fifteen OLBG sport hubs.</p>
+<p>Blocked, with the URL recorded on <code>coverage.html</code>: <code>unitedrugby.com/fixtures</code> (404),</p>
+<p><code>gbgb.org.uk/racecards</code> (404), <code>pdc.tv/calendar</code> (cookie wall), <code>legavolley.it</code> (video shell),</p>
+<p><code>premrugby.com/fixtures</code> (navigation only), <code>pcb.com.pk</code> (home page only),</p>
+<p><code>wta/atp</code> (shell or notifications only), <code>pgatour.com/schedule</code> (stopped in March).</p>
+<h2>4. Verification performed this session</h2>
+<ul><li>Re-checked every MLB figure in the headline prediction against <code>statsapi.mlb.com</code></li></ul>
+<p>  standings: Brewers 103-59, home 55-26, away 48-33, last ten 8-2, 832 runs scored,</p>
+<p>  618 allowed (+214) — all confirmed; Rays 98-64, away 43-38, last ten 5-5, +86 — confirmed.</p>
+<ul><li>Re-checked the series state: Game 1 finished 2-3 to Milwaukee; Game 2 first pitch</li></ul>
+<p>  <code>2026-10-25T00:00Z</code>, Henderson vs Rasmussen — confirmed.</p>
+<ul><li>Re-checked the NHL slate: 12 games, <code>startTimeUTC</code> for each, partner prices present for</li></ul>
+<p>  seven games; <strong>removed Anaheim @ Philadelphia</strong> because the feed showed it LIVE at 0-2</p>
+<p>  (flag F-321-14).</p>
+<ul><li><strong>Removed the book names</strong> previously attached to NHL price feeds. The feed exposes</li></ul>
+<p>  <code>providerId</code> numbers only; naming them Tipsport/Veikkaus/FanDuel was an unsupported</p>
+<p>  attribution (flag F-321-13). Prices are unchanged; labels now read &quot;feed 3&quot;, &quot;feed 9&quot;, etc.</p>
+<ul><li>Re-ran the desk validator (<code>scripts/s321b595c_validate.py</code>): <strong>2,862 checks, 0 errors</strong> —</li></ul>
+<p>  source-register integrity, official source on every priced row, price↔probability</p>
+<p>  recomputation, confidence-band recomputation, ≥30-word predictions, banned vocabulary</p>
+<p>  (no &quot;model&quot;, no &quot;verified&quot;), no shared eight-word run, zero broken links or fragments.</p>
+<ul><li><code>python3 -m pipeline.validate --site .</code> → <strong>0 errors</strong>; the canonical root page is untouched</li></ul>
+<p>  except for its single &quot;start here&quot; bar, which now points at <code>321b595c/</code>.</p>
+<h2>5. Flags that matter</h2>
+<table><thead><tr><th>Flag</th><th>Severity</th><th>Point</th></tr></thead><tbody><tr><td>F-321-01</td><td>high</td><td>The two pick rules intersect only between 70.0% and 71.4%</td></tr><tr><td>F-321-02</td><td>high</td><td>No selection cleared 70% on today&#x27;s readable data (best 65.1%)</td></tr><tr><td>F-321-03</td><td>high</td><td>Thirteen sports produced no priced pick; each blocker is linked</td></tr><tr><td>F-321-06</td><td>high</td><td>NBA is one or two games old; a line from that sample would be invention</td></tr><tr><td>F-321-13</td><td>medium</td><td>League odds feed identifies books by number, not name — attribution removed</td></tr><tr><td>F-321-15</td><td>medium</td><td>NRL draw does not state the time zone behind its kick-off clock</td></tr></tbody></table>
+<h2>6. Honest gaps</h2>
+<ul><li><strong>Five predictions per sport was not delivered</strong> — 7 were published against a 75 target.</li></ul>
+<p>  Eleven sports had no readable official fixture detail or no placeable market; two have no</p>
+<p>  matches at all (Golf on OLBG, Rugby League on OLBG). Each is named with its blocking URL.</p>
+<ul><li><strong>No injury designation</strong> could be read from an official source for any priced match</li></ul>
+<p>  (F-321-11); the predictions say so rather than invent one.</p>
+<ul><li><strong>No handicap or total price</strong> is published as a pick: the originated puck-line and total</li></ul>
+<p>  rows exist on <code>markets.html</code>, but OLBG carries no placeable price for them, so none is</p>
+<p>  labelled a pick.</p>
+</main></body></html>

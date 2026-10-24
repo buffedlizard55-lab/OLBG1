@@ -1,0 +1,95 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Volleyball &middot; OLBG desk 8cfb80b2</title>
+<meta name="color-scheme" content="light"><style>
+:root{--ink:#101828;--muted:#5b6779;--line:#e3e8ef;--bg:#f7f9fc;--card:#fff;--brand:#0b5fff;--brand-soft:#eaf1ff;
+--ok:#067647;--ok-soft:#ecfdf3;--warn:#b54708;--warn-soft:#fffaeb;--stop:#b42318;--stop-soft:#fef3f2;--radius:14px}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+header.top{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.nav{display:flex;flex-wrap:wrap;gap:4px;align-items:center;padding:10px 0}
+.brand{font-weight:750;margin-right:18px;color:var(--ink);font-size:15px;letter-spacing:-.01em}
+.brand span{color:var(--brand)}
+.nav a.link{padding:6px 10px;border-radius:8px;color:var(--muted);font-size:14px;font-weight:550}
+.nav a.link:hover{background:var(--brand-soft);color:var(--brand);text-decoration:none}
+.nav a.link.active{background:var(--brand-soft);color:var(--brand)}
+main{padding:28px 0 60px}
+h1{font-size:clamp(26px,3.4vw,38px);line-height:1.15;margin:6px 0 10px;letter-spacing:-.02em}
+h2{font-size:21px;margin:38px 0 12px;letter-spacing:-.01em}
+h3{font-size:16px;margin:22px 0 8px}
+p{margin:0 0 12px;color:#344054}
+.eyebrow{text-transform:uppercase;letter-spacing:.09em;font-size:11.5px;font-weight:700;color:var(--brand);margin:0}
+.lede{font-size:17px;color:#344054;max-width:74ch}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:22px 0 6px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.kpi b{display:block;font-size:26px;letter-spacing:-.02em;line-height:1.2}
+.kpi small{color:var(--muted);font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;font-weight:650}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin:14px 0}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.jump{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));margin:16px 0}
+.jump a{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:15px 16px;color:var(--ink)}
+.jump a:hover{border-color:#b6ccff;text-decoration:none;box-shadow:0 2px 10px rgba(11,95,255,.07)}
+.jump b{display:block;font-size:15px}.jump small{color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+.table-wrap{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:auto;margin:12px 0}
+th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);
+padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap;background:#fbfcfe}
+td{padding:12px 14px;border-bottom:1px solid #f1f4f8;vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.pick{display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:start;
+background:var(--card);border:1px solid var(--line);border-left:4px solid var(--brand);
+border-radius:var(--radius);padding:16px 18px;margin:12px 0}
+.pick .rank{font-size:22px;font-weight:750;color:var(--brand);line-height:1}
+.pick h3{margin:0 0 4px;font-size:17px}
+.pick .sel{font-weight:700;color:var(--ink)}
+.pick .meta{color:var(--muted);font-size:13.5px}
+.pick .price{text-align:right}
+.pick .price b{display:block;font-size:20px;font-variant-numeric:tabular-nums}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:700;
+letter-spacing:.03em;text-transform:uppercase}
+.badge.high{background:var(--stop-soft);color:var(--stop)}
+.badge.medium{background:var(--warn-soft);color:var(--warn)}
+.badge.low{background:#eef2f6;color:#475467}
+.badge.ok{background:var(--ok-soft);color:var(--ok)}
+.badge.blank{background:#eef2f6;color:#475467}
+.src{display:inline-block;font-size:12.5px;padding:2px 8px;border:1px solid var(--line);border-radius:999px;
+margin:2px 4px 2px 0;background:#fff;color:#344054}
+.src.official{border-color:#b6ccff;color:var(--brand);background:var(--brand-soft)}
+.src.discovery{color:var(--muted)}
+.blank{color:#98a2b3;font-style:italic}
+.note{background:var(--brand-soft);border:1px solid #cfe0ff;border-radius:var(--radius);padding:14px 16px;margin:16px 0}
+.warn{background:var(--warn-soft);border:1px solid #fedf89;border-radius:var(--radius);padding:14px 16px;margin:16px 0}
+.danger{background:var(--stop-soft);border:1px solid #fecdca;border-radius:var(--radius);padding:14px 16px;margin:16px 0}
+.note p:last-child,.warn p:last-child,.danger p:last-child{margin-bottom:0}
+details{border:1px solid var(--line);border-radius:12px;padding:12px 16px;background:var(--card);margin:10px 0}
+summary{cursor:pointer;font-weight:650}
+.prose{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin:12px 0}
+.prose .txt{font-size:16px;color:#1d2939}
+.prose .ev{font-size:13px;color:var(--muted);margin-bottom:10px}
+footer{border-top:1px solid var(--line);background:var(--card);padding:22px 0;color:var(--muted);font-size:13px}
+.tag{display:inline-block;font-size:11.5px;color:var(--muted);border:1px dashed var(--line);border-radius:999px;padding:1px 8px}
+@media(max-width:640px){.pick{grid-template-columns:1fr}.pick .price{text-align:left}.pick .rank{display:none}}
+</style></head><body>
+<header class="top"><div class="wrap"><div class="nav"><a class="brand" href="../index.html">OLBG<span>.</span> research desk <span style="color:#98a2b3;font-weight:500">/ 8cfb80b2</span></a><a class="link" href="../index.html">Overview</a><a class="link" href="../picks.html">Picks</a><a class="link" href="../predictions.html">Written predictions</a><a class="link active" href="../matches.html">All matches</a><a class="link" href="../sources.html">Sources</a><a class="link" href="../flagged.html">Flagged for review</a><a class="link" href="../coverage.html">Coverage</a><a class="link" href="../methodology.html">Method</a></div></div></header>
+<main><div class="wrap">
+<p class="eyebrow">Volleyball</p><h1>Volleyball: 4 captured rows, 0 picks</h1>
+<p class="lede">Fifteen markets discovered. No official league feed could be read, so no price and no pick.</p>
+<div class="jump"><a href="https://www.olbg.com/betting-tips/Volleyball/21" target="_blank" rel="noopener noreferrer"><b>OLBG hub</b><small>betting-tips/Volleyball/21</small></a>
+<a href="../coverage.html"><b>Coverage</b><small>What is missing for every sport</small></a></div>
+<div class="warn"><p><strong>No pick in this sport today.</strong> The market was listed on OLBG but no official fixture or form source could be read, so no price was issued.</p></div>
+<h2>Rows</h2>
+<div class="table-wrap"><table><thead><tr><th>Start (UTC)</th><th>Match and OLBG market</th><th>Competition</th><th>Start source</th><th>Official source</th><th>Selection</th></tr></thead><tbody><tr><td>10-25 00:00Z</td><td><strong>Abel/Moda Brusque W</strong> vs Praia Clube W<br><a class="src discovery" href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Abel-Moda_Brusque_W_vs_Praia_Clube_W/21?event_id=37003" target="_blank" rel="noopener noreferrer">OLBG &middot; Win Match</a></td><td>Brazilian Superliga (women)</td><td>derived (OLBG ET)</td><td><span class="blank">none &mdash; unverified</span></td><td><span class="blank">no price</span></td></tr><tr><td>10-25 16:00Z</td><td><strong>Trentino</strong> vs Cisterna<br><a class="src discovery" href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Trentino_vs_Cisterna/21?event_id=36994" target="_blank" rel="noopener noreferrer">OLBG &middot; Win Match</a></td><td>Italian SuperLega</td><td>derived (OLBG ET)</td><td><span class="blank">none &mdash; unverified</span></td><td><span class="blank">no price</span></td></tr><tr><td>10-25 17:00Z</td><td><strong>CHKS Chelm</strong> vs Resovia Rzeszow<br><a class="src discovery" href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/CHKS_Chelm_vs_Resovia_Rzeszow/21?event_id=36965" target="_blank" rel="noopener noreferrer">OLBG &middot; Win Match</a></td><td>PlusLiga</td><td>derived (OLBG ET)</td><td><span class="blank">none &mdash; unverified</span></td><td><span class="blank">no price</span></td></tr><tr><td>10-25 17:00Z</td><td><strong>Perugia</strong> vs Pordenone<br><a class="src discovery" href="https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Perugia_vs_Pordenone/21?event_id=36997" target="_blank" rel="noopener noreferrer">OLBG &middot; Win Match</a></td><td>Italian SuperLega</td><td>derived (OLBG ET)</td><td><span class="blank">none &mdash; unverified</span></td><td><span class="blank">no price</span></td></tr></tbody></table></div>
+<h2>Sources used in this sport</h2>
+<div class="card"><a class="src discovery" href="https://www.olbg.com/betting-tips/Volleyball/21" target="_blank" rel="noopener noreferrer">OLBG (discovery only)</a></div>
+
+<footer><div><strong>Capture 2026-10-24T17:15:00Z</strong> &middot; independent research, not betting advice. 18+.
+Prices on this site are our own calculated fair odds, not quoted bookmaker odds.
+<a href="../methodology.html">How prices are produced</a> &middot; <a href="https://www.olbg.com/betting-tips">OLBG</a></div>
+<div style="margin-top:8px">Sports: <a class="tag" style="margin:2px 6px 2px 0" href="../sports/basketball.html">Basketball</a><a class="tag" style="margin:2px 6px 2px 0" href="../sports/volleyball.html">Volleyball</a><a class="tag" style="margin:2px 6px 2px 0" href="../sports/rugby-union.html">Rugby Union</a><a class="tag" style="margin:2px 6px 2px 0" href="../sports/cricket.html">Cricket</a><a class="tag" style="margin:2px 6px 2px 0" href="../sports/snooker.html">Snooker</a><a class="tag" style="margin:2px 6px 2px 0" href="../sports/darts.html">Darts</a><a class="tag" style="margin:2px 6px 2px 0" href="../sports/baseball.html">Baseball</a><a class="tag" style="margin:2px 6px 2px 0" href="../sports/gaelic.html">Gaelic Sports</a><a class="tag" style="margin:2px 6px 2px 0" href="../sports/greyhounds.html">Greyhounds</a><a class="tag" style="margin:2px 6px 2px 0" href="../sports/tennis.html">Tennis</a><a class="tag" style="margin:2px 6px 2px 0" href="../sports/motor-racing.html">Motor Racing</a><a class="tag" style="margin:2px 6px 2px 0" href="../sports/handball.html">Handball</a><a class="tag" style="margin:2px 6px 2px 0" href="../sports/ice-hockey.html">Ice Hockey</a><a class="tag" style="margin:2px 6px 2px 0" href="../sports/rugby-league.html">Rugby League</a><a class="tag" style="margin:2px 6px 2px 0" href="../sports/golf.html">Golf</a></div>
+<div style="margin-top:8px"><a href="https://buffedlizard55-lab.github.io/OLBG1/">Canonical research desk</a> &middot;
+<a href="https://github.com/buffedlizard55-lab/OLBG1">Repository</a></div></footer>
+</div></main></body></html>

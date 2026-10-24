@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OLBG map</title><link rel="stylesheet" href="assets/style.css"></head>
+<body><header><div class="wrap"><a class="brand" href="index.html">OLBG desk &middot; 24 Oct 2026</a>
+<nav><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="matches.html">All matches</a><a href="markets.html">Markets</a><a href="predictions.html">Write-ups</a><a href="sports.html">Sports</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="methodology.html">Method</a><a href="olbg.html">OLBG map</a></nav></div></header><main>
+
+<h1>How OLBG is put together</h1>
+<p class="sub">The route pattern, what the hub pages actually contain, and where the traps are.</p>
+
+<h2>Routes</h2>
+<p>Every sport hub follows <code>/betting-tips/&lt;Sport_Name&gt;/&lt;sport_id&gt;</code> and every
+event follows
+<code>/betting-tips/&lt;Sport&gt;/&lt;Group&gt;/&lt;Competition&gt;/&lt;Home&gt;_vs_&lt;Away&gt;/&lt;sport_id&gt;?event_id=&lt;id&gt;</code>.
+American sports use an <code>@</code> instead of <code>_vs_</code>. The sport id is stable across
+both route shapes.</p>
+<table><thead><tr><th>Sport</th><th>Hub</th><th>Rows captured today</th></tr></thead><tbody><tr><td>Golf</td><td class="small"><a href="https://www.olbg.com/betting-tips/Golf/5">https://www.olbg.com/betting-tips/Golf/5</a></td><td class="num">0</td></tr><tr><td>Volleyball</td><td class="small"><a href="https://www.olbg.com/betting-tips/Volleyball/21">https://www.olbg.com/betting-tips/Volleyball/21</a></td><td class="num">14</td></tr><tr><td>Rugby Union</td><td class="small"><a href="https://www.olbg.com/betting-tips/Rugby_Union/9">https://www.olbg.com/betting-tips/Rugby_Union/9</a></td><td class="num">5</td></tr><tr><td>Cricket</td><td class="small"><a href="https://www.olbg.com/betting-tips/Cricket/7">https://www.olbg.com/betting-tips/Cricket/7</a></td><td class="num">9</td></tr><tr><td>Snooker</td><td class="small"><a href="https://www.olbg.com/betting-tips/Snooker/8">https://www.olbg.com/betting-tips/Snooker/8</a></td><td class="num">2</td></tr><tr><td>Darts</td><td class="small"><a href="https://www.olbg.com/betting-tips/Darts/15">https://www.olbg.com/betting-tips/Darts/15</a></td><td class="num">4</td></tr><tr><td>Baseball</td><td class="small"><a href="https://www.olbg.com/betting-tips/Baseball/12">https://www.olbg.com/betting-tips/Baseball/12</a></td><td class="num">1</td></tr><tr><td>Gaelic Sports</td><td class="small"><a href="https://www.olbg.com/betting-tips/Gaelic_Football/25">https://www.olbg.com/betting-tips/Gaelic_Football/25</a></td><td class="num">4</td></tr><tr><td>Greyhounds</td><td class="small"><a href="https://www.olbg.com/betting-tips/Greyhounds/28">https://www.olbg.com/betting-tips/Greyhounds/28</a></td><td class="num">15</td></tr><tr><td>Tennis</td><td class="small"><a href="https://www.olbg.com/betting-tips/Tennis/3">https://www.olbg.com/betting-tips/Tennis/3</a></td><td class="num">6</td></tr><tr><td>Motor Racing</td><td class="small"><a href="https://www.olbg.com/betting-tips/Motor_Racing/14">https://www.olbg.com/betting-tips/Motor_Racing/14</a></td><td class="num">1</td></tr><tr><td>Handball</td><td class="small"><a href="https://www.olbg.com/betting-tips/Handball/20">https://www.olbg.com/betting-tips/Handball/20</a></td><td class="num">12</td></tr><tr><td>Ice Hockey</td><td class="small"><a href="https://www.olbg.com/betting-tips/Ice_Hockey/13">https://www.olbg.com/betting-tips/Ice_Hockey/13</a></td><td class="num">12</td></tr><tr><td>Basketball</td><td class="small"><a href="https://www.olbg.com/betting-tips/Basketball/4">https://www.olbg.com/betting-tips/Basketball/4</a></td><td class="num">8</td></tr><tr><td>Rugby League</td><td class="small"><a href="https://www.olbg.com/betting-tips/Rugby_League/10">https://www.olbg.com/betting-tips/Rugby_League/10</a></td><td class="num">0</td></tr></tbody></table>
+
+<h2>What a hub row contains</h2>
+<ul>
+<li>The most-tipped selection for the event, not every selection.</li>
+<li>The market name: Money Line, Pointspread, Handicap, Win Match, Win Match 2-way, Set Score,
+Draw No Bet, Top Team1 Batsman, Daily Races, Win Race, Win Tournament.</li>
+<li>A tip count and a share, for example "13/19 Win Tips 68%". That is a vote share.</li>
+<li>A rendered start time that matches US Eastern on every row we could cross-check.</li>
+<li>No odds. The price column is loaded client-side and does not appear in the served page.</li>
+</ul>
+
+<h2>Traps we hit</h2>
+<ul>
+<li>Golf renders "No tips found." with no explanation.</li>
+<li>Rugby League renders outrights for 2027 only.</li>
+<li>Greyhound rows print the UK race clock in the event name and an ET clock in the time column,
+five hours apart.</li>
+<li>Tennis rows carry no tournament tag at all.</li>
+<li>Expired events are still in the DOM; one greyhound row was marked expired while still rendered.</li>
+</ul>
+
+<footer>Independent research desk. Not affiliated with OLBG. Prices are originated fair
+prices with no bookmaker margin and no guarantee of availability. Nothing here is betting
+advice. Built 2026-10-24T18:35:00Z.</footer>
+</main></body></html>

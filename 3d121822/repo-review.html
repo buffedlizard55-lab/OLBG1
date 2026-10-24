@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repository review · OLBG research desk · 24 Oct 2026</title>
+<meta name="description" content="Independent, source-linked match research for 24 October 2026. Not affiliated with OLBG.">
+<link rel="stylesheet" href="assets/desk.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html">OLBG research desk <span>· 24 October 2026</span></a>
+  <div class="meta"><span>Independent · not affiliated with OLBG</span><span>Data read 17:05–17:12 UTC</span></div>
+</div></header>
+<nav class="tabs"><div class="wrap"><a href="index.html">Overview</a><a href="picks.html">Picks</a><a href="matches.html">Matches</a><a href="predictions.html">Written predictions</a><a href="markets.html">Markets</a><a href="sports/index.html">Sports</a><a href="flagged.html">Flagged for review</a><a href="sources.html">Sources</a><a href="method.html">Method</a><a href="repo-review.html" aria-current=page>Repo review</a></div></nav>
+<main id="main"><div class="wrap">
+
+<h1>Repository review</h1>
+<p class="lede">What is actually in this repository, read line by line where it mattered, with the
+numbers checked on 24 October 2026 at 17:11 UTC. These are structural observations, not a
+re-verification of every historical sentence.</p>
+
+<table><thead><tr><th>#</th><th>Observation</th><th>Evidence</th><th>Effect on you</th><th>Repo evidence</th></tr></thead>
+<tbody><tr><td>1</td><td><b>59 separate dashboards</b> each with their own <code>index.html</code></td><td><code>find . -maxdepth 2 -name index.html</code> returns 59 results</td><td>This is why the site felt confusing: there is no single front door.</td><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/archive.html">Bundle of every historical desk</a></td></tr><tr><td>2</td><td><b>The canonical front page is two days stale</b></td><td><code>data/current/snapshot.json</code> is stamped <code>2026-10-22T12:29:50Z</code></td><td>The landing page shows none of this week's work; the new band fixes that.</td><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/current/snapshot.json">Canonical snapshot</a></td></tr><tr><td>3</td><td><b>1,431 HTML files</b> are tracked</td><td>Repository-wide count at commit 0f6a849</td><td>Navigation, not data, is the problem.</td><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/archive.html">Archive index</a></td></tr><tr><td>4</td><td><b>333 KB / 6,266 lines in the coordination board</b></td><td><code>COORDINATION.md</code></td><td>It is the audit trail, not a task list you can read in a minute.</td><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/COORDINATION.md">Coordination board</a></td></tr><tr><td>5</td><td><b>No merge-conflict markers remain</b></td><td><code>grep -rl '^&lt;&lt;&lt;&lt;&lt;&lt;&lt; ' --include='*.py' --include='*.html' --include='*.md' .</code> returns nothing</td><td>The tree is clean at this commit.</td><td><a href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/README.md">Repository readme</a></td></tr><tr><td>6</td><td><b>Golf, darts, greyhounds and rugby league still have no verified price</b></td><td>Repeated in the canonical README and in this session's own discovery</td><td>Today is no different, and it is stated rather than faked.</td><td><a href="flagged.html">Flagged register</a></td></tr><tr><td>7</td><td><b>The −250…+10000 window and the 70% floor overlap by 1.4 points</b></td><td>−250 implies 71.43%; the floor is 70.00%</td><td>It is still the reason High is rare; explained on F-3D-09.</td><td><a href="flagged.html#F-3D-09">Flagged item F-3D-09</a></td></tr><tr><td>8</td><td><b>Historical desks disagree with each other</b></td><td>e.g. <code>data/fixtures.json</code> versus the 22 Oct canonical snapshot</td><td>This desk re-read its own sources instead of inheriting those rows.</td><td><a href="sources.html">Sources read this session</a></td></tr></tbody></table>
+
+<h2>What this desk changed</h2>
+<ul class="tight">
+  <li>Added this dashboard under <code>3d121822/</code> with machine-readable data in
+      <code>data/3d121822/</code>.</li>
+  <li>Added a single landing band on the canonical front page that points here, so the newest work
+      is findable in one click.</li>
+  <li>Added a validator and tests that enforce: every row has a source link, every pick has a
+      written analysis, every analysis is at least 30 words, and no analysis repeats another.</li>
+  <li>Changed no historical desk, no canonical dataset and no workflow.</li>
+</ul>
+
+<h2>How to check this page</h2>
+<p class="small">Each observation is reproducible with the command or file named in the Evidence
+column. Nothing here depends on a private feed or a paid API.</p>
+
+</div></main>
+<footer><div class="wrap">
+  <span>Every row links an official source. Blank means not confirmed — never guessed.</span>
+  <span>18+ · Research, not betting advice. No returns are promised.</span>
+</div></footer>
+</body></html>
