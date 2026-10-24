@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flagged for review · OLBG research desk · 24 Oct 2026</title>
+<meta name="description" content="Unconfirmed values and irregularities, with sources.">
+<link rel="stylesheet" href="assets/desk.css">
+</head><body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html">OLBG research desk <span>· 24 October 2026</span></a>
+  <div class="meta"><span>Independent · not affiliated with OLBG</span><span>Sources read 17:42–18:05 UTC, 24 October 2026</span></div>
+</div></header>
+<nav class="tabs"><div class="wrap"><a href="index.html">Executive summary</a><a href="picks.html">All picks</a><a href="predictions.html">Written predictions</a><a href="matches.html">Every match</a><a href="markets.html">Markets</a><a href="sports/index.html">15 sports</a><a href="coverage.html">Coverage vs brief</a><a href="flagged.html" aria-current=page>Flagged for review</a><a href="sources.html">Sources</a><a href="method.html">Method</a><a href="repo-review.html">Repo review</a></div></nav>
+<main><div class="wrap">
+<h1>Flagged for review</h1><p class='lede'>Everything we could not confirm, could not price, or found irregular on the source site. Each item names the evidence and links to it.</p><article class="pickcard" id="F-17-01" style="border-left-color:#b3822f">
+        <div class="small mut">F-17-01</div><h3>The brief&#x27;s two High-confidence conditions barely overlap</h3>
+        <p>A fair American price of -250 is exactly 71.43%. Any selection above 70% therefore prices shorter than -233, and anything at -250 or shorter sits in a 70.0%-71.4% sliver. Read literally, &#x27;more than 70% and priced between -250 and +10000&#x27; admits a 1.4-point band. This desk publishes the occupied probability for every pick and marks, per row, whether it also clears the literal test.</p>
+        <p class="small">Source: <a href="method.html">this desk's method page</a></p></article><article class="pickcard" id="F-17-02" style="border-left-color:#b3822f">
+        <div class="small mut">F-17-02</div><h3>OLBG does not state the clock its hub times use</h3>
+        <p>Hub rows read &#x27;Today 19:07&#x27; for NHL games the league schedules at 23:00Z, which is consistent with a US Eastern clock. The same hub shows European rugby and volleyball at 14:00-16:00, which would be local European evening time. No OLBG page states the zone, so every OLBG clock is reproduced verbatim and marked as such. League UTC times are published where the league supplied them.</p>
+        <p class="small">Source: <a href="https://www.olbg.com/betting-tips/Ice_Hockey/13" target="_blank" rel="noopener noreferrer">https://www.olbg.com/betting-tips/Ice_Hockey/13</a></p></article><article class="pickcard" id="F-17-03" style="border-left-color:#b3822f">
+        <div class="small mut">F-17-03</div><h3>Only three of fifteen sports could be priced from official inputs</h3>
+        <p>NBA, NHL and MLB publish machine-readable records that were readable this session. PDC returned a consent shell, ATP rankings rendered an empty filter, NZC returned 404, Premiership Rugby served a marketing page, and the club volleyball, handball, Gaelic and greyhound routes we reached carried no competition table. Those sports are listed with discovery links and an official recheck link, and are not priced.</p>
+        <p class="small">Source: <a href="https://www.atptour.com/en/rankings/singles" target="_blank" rel="noopener noreferrer">https://www.atptour.com/en/rankings/singles</a></p></article><article class="pickcard" id="F-17-04" style="border-left-color:#b3822f">
+        <div class="small mut">F-17-04</div><h3>NBA samples are one or two games</h3>
+        <p>Every NBA club had played at most two games when the standings were read, so a raw win rate is meaningless. The basketball price shrinks both records toward .500 with a Beta(6,6) prior, which is why no NBA selection clears 60% and none is labelled High. That is a limit of the evidence, not a shortage of effort.</p>
+        <p class="small">Source: <a href="https://www.nba.com/standings" target="_blank" rel="noopener noreferrer">https://www.nba.com/standings</a></p></article><article class="pickcard" id="F-17-05" style="border-left-color:#b3822f">
+        <div class="small mut">F-17-05</div><h3>No injury report was read for any sport</h3>
+        <p>The brief asks for verifiable injuries. No official injury or availability report was successfully retrieved this session for the NBA, NHL or MLB, so no prediction claims one. Nothing about availability is inferred from absence.</p>
+        <p class="small">Source: <a href="https://www.nba.com/standings" target="_blank" rel="noopener noreferrer">https://www.nba.com/standings</a></p></article><article class="pickcard" id="F-17-06" style="border-left-color:#b3822f">
+        <div class="small mut">F-17-06</div><h3>Basketball handicap and total, and the baseball run line and total, are withheld</h3>
+        <p>Pricing a total needs scoring rates for both sides. The NBA standings page read carries no points data, and Milwaukee&#x27;s season runs scored and allowed were outside the MLB standings slice that was retained. Both totals are withheld rather than estimated. NHL totals are published because that league&#x27;s team summary includes goals for and against.</p>
+        <p class="small">Source: <a href="https://statsapi.mlb.com/api/v1/standings?leagueId=104&amp;season=2026&amp;standingsTypes=regularSeason" target="_blank" rel="noopener noreferrer">https://statsapi.mlb.com/api/v1/standings?leagueId=104&amp;season=2026&amp;standingsTypes=regularSeason</a></p></article><article class="pickcard" id="F-17-07" style="border-left-color:#b3822f">
+        <div class="small mut">F-17-07</div><h3>Calgary could not be priced</h3>
+        <p>The NHL team-summary response was cut at a chunk boundary exactly inside Calgary&#x27;s record: goals for, goals against, games played, wins and losses were all lost, although points, point percentage, power play and shot rates survived. Detroit at Calgary is therefore listed with no price.</p>
+        <p class="small">Source: <a href="https://api.nhle.com/stats/rest/en/team/summary?cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2&amp;limit=40" target="_blank" rel="noopener noreferrer">https://api.nhle.com/stats/rest/en/team/summary?cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2&amp;limit=40</a></p></article><article class="pickcard" id="F-17-08" style="border-left-color:#b3822f">
+        <div class="small mut">F-17-08</div><h3>Toronto at Edmonton home/away: flagged earlier, confirmed this session</h3>
+        <p>The match appears on the OLBG hub as &#x27;TOR Maple Leafs @ EDM Oilers&#x27;. The NHL schedule chunk read this session did not reach that game, so the venue assignment rests on OLBG&#x27;s convention. The pick is capped at Medium for that reason even though the underlying rate comparison is strong.</p>
+        <p class="small">Source: <a href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">https://api-web.nhle.com/v1/schedule/2026-10-24</a></p></article><article class="pickcard" id="F-17-09" style="border-left-color:#b3822f">
+        <div class="small mut">F-17-09</div><h3>The snooker semi-final on the hub is already live</h3>
+        <p>OLBG lists Mark Williams v Jak Jones for today. The World Snooker Tour match list marks the same semi-final Live Now, with the final scheduled for 25 October against Kyren Wilson. A match in progress is not a pre-match selection, and the final&#x27;s second finalist is undecided, so neither is priced.</p>
+        <p class="small">Source: <a href="https://www.wst.tv/matches/" target="_blank" rel="noopener noreferrer">https://www.wst.tv/matches/</a></p></article><article class="pickcard" id="F-17-10" style="border-left-color:#b3822f">
+        <div class="small mut">F-17-10</div><h3>Greyhound race times on the hub do not line up</h3>
+        <p>Race names carry a clock (for example &#x27;7:58 Doncaster&#x27;) that is consistently displaced by about five hours from the &#x27;Today 14:58&#x27; start shown beside it. One race is already marked Expired while later races are not. No GBGB card was captured, so no greyhound race is priced or timed.</p>
+        <p class="small">Source: <a href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener noreferrer">https://www.olbg.com/betting-tips/Greyhounds/28</a></p></article><article class="pickcard" id="F-17-11" style="border-left-color:#b3822f">
+        <div class="small mut">F-17-11</div><h3>Golf hub is empty</h3>
+        <p>The OLBG golf hub rendered &#x27;No tips found.&#x27; with an &#x27;All Sports&#x27; selector, so there is no golf event to list or price today. The official PGA TOUR schedule link is provided for manual review.</p>
+        <p class="small">Source: <a href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener noreferrer">https://www.olbg.com/betting-tips/Golf/5</a></p></article><article class="pickcard" id="F-17-12" style="border-left-color:#b3822f">
+        <div class="small mut">F-17-12</div><h3>Five High picks per sport is not reachable on this evidence</h3>
+        <p>The brief asks for five High selections in each of fifteen sports. Only three sports produced any priceable fixture, and only NHL inputs support a 60%+ call. Picks published: see the executive summary. The shortfall is counted per sport on the coverage page rather than padded with unsupported selections.</p>
+        <p class="small">Source: <a href="https://www.olbg.com/betting-tips" target="_blank" rel="noopener noreferrer">https://www.olbg.com/betting-tips</a></p></article>
+<footer>
+  <p><strong>What this is.</strong> Our own prices, originated from official league records, and our own written
+  analysis. Not a bookmaker, not a tipster service, not affiliated with OLBG. No selection is a guarantee.
+  Where an input was missing it is blank and flagged, never filled in.</p>
+  <p class="small">Desk <code>1707d752</code> · built 2026-10-24 · 18+ · Stake only what you can afford to lose.</p>
+</footer>
+</div></main></body></html>

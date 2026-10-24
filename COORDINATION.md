@@ -6777,3 +6777,13 @@ be read from an official source for any priced match (F-321-11).
   conflict (F-321-01/02), the unreadable official routes for thirteen sports (F-321-03), blank injury fields
   (F-321-11) and the removed book-name attribution (F-321-13). None blocks publication; all are on
   `/321b595c/flagged.html` with evidence links.
+
+---
+
+## 88. Session `1707d752-olbg1` — task `T1707` claim (2026-10-24T17:45Z UTC)
+
+* **Session / pinned branch:** `1707d752-olbg1` on `arena/1707d752-olbg1` (§0.2 deviation applies). Base commit `1a203e9`.
+* **Task `T1707`:** fresh 24 October 2026 15-sport desk with a **clarity-first** dashboard — an executive summary above everything, picks named in plain language with the exact page and anchor where each pick lives, only fully written (≥30-word, unique, analysis-carrying) predictions published. Live OLBG discovery across exactly the 15 brief sports (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League); official governing-body reads; independent multi-market line origination (match winner, handicap, match total and sport-specific families); the brief's High gate (>70% originated probability **and** a selection price inside −250…+10000); validator + tests; PR → merge → Pages read-back.
+* **Exclusive write scope:** `data/1707d752/**`, `scripts/s1707d752_*.py`, `1707d752/**`, `reports/SESSION_1707D752.md`, `tests/pipeline/test_desk_1707d752.py`, and append-only additions to `COORDINATION.md`.
+* **Explicitly not touched:** canonical `pipeline/**`, `data/current/**`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `scripts/validate.py`, `.github/workflows/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`, and every peer `<id>/` desk.
+* **Status:** `in progress`.
