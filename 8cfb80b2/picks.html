@@ -1,0 +1,168 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Picks &middot; OLBG desk 8cfb80b2</title>
+<meta name="color-scheme" content="light"><style>
+:root{--ink:#101828;--muted:#5b6779;--line:#e3e8ef;--bg:#f7f9fc;--card:#fff;--brand:#0b5fff;--brand-soft:#eaf1ff;
+--ok:#067647;--ok-soft:#ecfdf3;--warn:#b54708;--warn-soft:#fffaeb;--stop:#b42318;--stop-soft:#fef3f2;--radius:14px}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+header.top{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.nav{display:flex;flex-wrap:wrap;gap:4px;align-items:center;padding:10px 0}
+.brand{font-weight:750;margin-right:18px;color:var(--ink);font-size:15px;letter-spacing:-.01em}
+.brand span{color:var(--brand)}
+.nav a.link{padding:6px 10px;border-radius:8px;color:var(--muted);font-size:14px;font-weight:550}
+.nav a.link:hover{background:var(--brand-soft);color:var(--brand);text-decoration:none}
+.nav a.link.active{background:var(--brand-soft);color:var(--brand)}
+main{padding:28px 0 60px}
+h1{font-size:clamp(26px,3.4vw,38px);line-height:1.15;margin:6px 0 10px;letter-spacing:-.02em}
+h2{font-size:21px;margin:38px 0 12px;letter-spacing:-.01em}
+h3{font-size:16px;margin:22px 0 8px}
+p{margin:0 0 12px;color:#344054}
+.eyebrow{text-transform:uppercase;letter-spacing:.09em;font-size:11.5px;font-weight:700;color:var(--brand);margin:0}
+.lede{font-size:17px;color:#344054;max-width:74ch}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:22px 0 6px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.kpi b{display:block;font-size:26px;letter-spacing:-.02em;line-height:1.2}
+.kpi small{color:var(--muted);font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;font-weight:650}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin:14px 0}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.jump{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));margin:16px 0}
+.jump a{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:15px 16px;color:var(--ink)}
+.jump a:hover{border-color:#b6ccff;text-decoration:none;box-shadow:0 2px 10px rgba(11,95,255,.07)}
+.jump b{display:block;font-size:15px}.jump small{color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+.table-wrap{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:auto;margin:12px 0}
+th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);
+padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap;background:#fbfcfe}
+td{padding:12px 14px;border-bottom:1px solid #f1f4f8;vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.pick{display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:start;
+background:var(--card);border:1px solid var(--line);border-left:4px solid var(--brand);
+border-radius:var(--radius);padding:16px 18px;margin:12px 0}
+.pick .rank{font-size:22px;font-weight:750;color:var(--brand);line-height:1}
+.pick h3{margin:0 0 4px;font-size:17px}
+.pick .sel{font-weight:700;color:var(--ink)}
+.pick .meta{color:var(--muted);font-size:13.5px}
+.pick .price{text-align:right}
+.pick .price b{display:block;font-size:20px;font-variant-numeric:tabular-nums}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:700;
+letter-spacing:.03em;text-transform:uppercase}
+.badge.high{background:var(--stop-soft);color:var(--stop)}
+.badge.medium{background:var(--warn-soft);color:var(--warn)}
+.badge.low{background:#eef2f6;color:#475467}
+.badge.ok{background:var(--ok-soft);color:var(--ok)}
+.badge.blank{background:#eef2f6;color:#475467}
+.src{display:inline-block;font-size:12.5px;padding:2px 8px;border:1px solid var(--line);border-radius:999px;
+margin:2px 4px 2px 0;background:#fff;color:#344054}
+.src.official{border-color:#b6ccff;color:var(--brand);background:var(--brand-soft)}
+.src.discovery{color:var(--muted)}
+.blank{color:#98a2b3;font-style:italic}
+.note{background:var(--brand-soft);border:1px solid #cfe0ff;border-radius:var(--radius);padding:14px 16px;margin:16px 0}
+.warn{background:var(--warn-soft);border:1px solid #fedf89;border-radius:var(--radius);padding:14px 16px;margin:16px 0}
+.danger{background:var(--stop-soft);border:1px solid #fecdca;border-radius:var(--radius);padding:14px 16px;margin:16px 0}
+.note p:last-child,.warn p:last-child,.danger p:last-child{margin-bottom:0}
+details{border:1px solid var(--line);border-radius:12px;padding:12px 16px;background:var(--card);margin:10px 0}
+summary{cursor:pointer;font-weight:650}
+.prose{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin:12px 0}
+.prose .txt{font-size:16px;color:#1d2939}
+.prose .ev{font-size:13px;color:var(--muted);margin-bottom:10px}
+footer{border-top:1px solid var(--line);background:var(--card);padding:22px 0;color:var(--muted);font-size:13px}
+.tag{display:inline-block;font-size:11.5px;color:var(--muted);border:1px dashed var(--line);border-radius:999px;padding:1px 8px}
+@media(max-width:640px){.pick{grid-template-columns:1fr}.pick .price{text-align:left}.pick .rank{display:none}}
+</style></head><body>
+<header class="top"><div class="wrap"><div class="nav"><a class="brand" href="index.html">OLBG<span>.</span> research desk <span style="color:#98a2b3;font-weight:500">/ 8cfb80b2</span></a><a class="link" href="index.html">Overview</a><a class="link active" href="picks.html">Picks</a><a class="link" href="predictions.html">Written predictions</a><a class="link" href="matches.html">All matches</a><a class="link" href="sources.html">Sources</a><a class="link" href="flagged.html">Flagged for review</a><a class="link" href="coverage.html">Coverage</a><a class="link" href="methodology.html">Method</a></div></div></header>
+<main><div class="wrap">
+<p class="eyebrow">Price books</p><h1>Picks and the markets we examined</h1>
+<p class="lede">Six price books. For each one we list the markets we looked at and either priced or deliberately
+withheld, so an empty market is a decision rather than an omission.</p>
+<div class="note"><p><strong>Tiers.</strong> High requires both a probability above 70% and a fair price inside
+&minus;250 to +10000. Medium is a defensible edge that does not clear that bar. Low is an openly weak opinion kept
+for completeness. Nothing here is a bookmaker quote.</p></div>
+<div class="card">
+<h3 style="margin-top:0">Boston Bruins to win (money line) <span class="badge medium">Medium</span></h3>
+<p class="meta" style="color:var(--muted);margin-bottom:6px">Ice Hockey &middot; NHL regular season
+&middot; 10-24 23:00Z &middot; TD Garden, Boston</p>
+<p><strong>Boston Bruins vs San Jose Sharks</strong> &mdash; fair price
+<strong>-215</strong> (1.466 decimal, 68.2%).
+Id <span class="tag">PK-01</span></p>
+<p>Boston&#x27;s own record is strong and current. The opponent half of the book could not be sourced, so the price is held below the High band on purpose.</p>
+<ul style="margin:6px 0 12px 18px;padding:0;color:#344054"><li><strong>Money Line</strong> &mdash; priced: Boston 68.2% / San Jose 31.8%</li><li><strong>Puck Line -1.5</strong> &mdash; withheld: needs a goals-based model and San Jose&#x27;s own record, which was not on the page read</li><li><strong>Game Total</strong> &mdash; withheld: no goals-per-game inputs for either club were read</li></ul>
+<p style="margin-bottom:4px">Official sources: <a class="src official" href="https://api-web.nhle.com/v1/schedule/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (api-web.nhle.com)</a> <a class="src official" href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener noreferrer">NHL (api-web.nhle.com)</a></p>
+<p style="margin:0"><a href="predictions.html#PK-01">Read the full written prediction &rarr;</a></p>
+</div><div class="card">
+<h3 style="margin-top:0">Charles Leclerc to finish on the podium <span class="badge medium">Medium</span></h3>
+<p class="meta" style="color:var(--muted);margin-bottom:6px">Motor Racing &middot; Formula 1 United States Grand Prix
+&middot; 10-25 21:00Z &middot; Circuit of the Americas, Austin</p>
+<p><strong>Circuit of the Americas vs Round 19</strong> &mdash; fair price
+<strong>-190</strong> (1.527 decimal, 65.5%).
+Id <span class="tag">PK-02</span></p>
+<p>Two practice sessions of evidence is not a race-weekend rating. Podium is the defensible market, not the win.</p>
+<ul style="margin:6px 0 12px 18px;padding:0;color:#344054"><li><strong>Win Race</strong> &mdash; priced: podium 65.5%; race win issued separately as a longer price</li><li><strong>Podium Finish</strong> &mdash; priced: 65.5%</li><li><strong>Top 6 Finish</strong> &mdash; withheld: no reliable midfield ordering was read</li><li><strong>Fastest Qualifier</strong> &mdash; withheld: qualifying had not started at capture</li></ul>
+<p style="margin-bottom:4px">Official sources: <a class="src official" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 (formula1.com)</a></p>
+<p style="margin:0"><a href="predictions.html#PK-02">Read the full written prediction &rarr;</a></p>
+</div><div class="card">
+<h3 style="margin-top:0">Kyren Wilson to win the final <span class="badge medium">Medium</span></h3>
+<p class="meta" style="color:var(--muted);margin-bottom:6px">Snooker &middot; BetVictor Northern Ireland Open 2026 - final
+&middot; 10-25 12:00Z &middot; Waterfront Hall, Belfast</p>
+<p><strong>Kyren Wilson vs Williams or Jones</strong> &mdash; fair price
+<strong>-170</strong> (1.587 decimal, 63.0%).
+Id <span class="tag">PK-04</span></p>
+<p>Wilson&#x27;s route is confirmed on the tour&#x27;s own match list but his opponent is unknown, so the book is held below High.</p>
+<ul style="margin:6px 0 12px 18px;padding:0;color:#344054"><li><strong>Win Match</strong> &mdash; priced: Wilson 63.0% / opponent 37.0%</li><li><strong>Frame Handicap -1.5</strong> &mdash; withheld: the second finalist was not yet decided at capture</li><li><strong>Total Frames</strong> &mdash; withheld: no format length was read for the final</li></ul>
+<p style="margin-bottom:4px">Official sources: <a class="src official" href="https://www.wst.tv/matches/" target="_blank" rel="noopener noreferrer">World Snooker Tour (wst.tv)</a></p>
+<p style="margin:0"><a href="predictions.html#PK-04">Read the full written prediction &rarr;</a></p>
+</div><div class="card">
+<h3 style="margin-top:0">Golden State Warriors to win (money line) <span class="badge medium">Medium</span></h3>
+<p class="meta" style="color:var(--muted);margin-bottom:6px">Basketball &middot; NBA regular season
+&middot; 10-25 02:00Z &middot; Footprint Center, Phoenix</p>
+<p><strong>Phoenix Suns vs Golden State Warriors</strong> &mdash; fair price
+<strong>-160</strong> (1.626 decimal, 61.5%).
+Id <span class="tag">PK-03</span></p>
+<p>The price reflects a documented availability gap, not a power rating. Team records were not reachable today.</p>
+<ul style="margin:6px 0 12px 18px;padding:0;color:#344054"><li><strong>Money Line</strong> &mdash; priced: Golden State 61.5% / Phoenix 38.5%</li><li><strong>Point Spread</strong> &mdash; withheld: no spread rating without season records</li><li><strong>Game Total</strong> &mdash; withheld: no pace or efficiency inputs were read</li></ul>
+<p style="margin-bottom:4px">Official sources: <a class="src official" href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_12_15PM.pdf" target="_blank" rel="noopener noreferrer">NBA (official injury report PDF)</a></p>
+<p style="margin:0"><a href="predictions.html#PK-03">Read the full written prediction &rarr;</a></p>
+</div><div class="card">
+<h3 style="margin-top:0">Milwaukee Brewers to win (money line) <span class="badge low">Low</span></h3>
+<p class="meta" style="color:var(--muted);margin-bottom:6px">Baseball &middot; MLB World Series, Game 2
+&middot; 10-25 00:00Z &middot; American Family Field, Milwaukee</p>
+<p><strong>Milwaukee Brewers vs Tampa Bay Rays</strong> &mdash; fair price
+<strong>-130</strong> (1.770 decimal, 56.5%).
+Id <span class="tag">PK-05</span></p>
+<p>Two good clubs and a 1-0 series lead give only a slender edge; this is openly a Low-confidence price.</p>
+<ul style="margin:6px 0 12px 18px;padding:0;color:#344054"><li><strong>Money Line</strong> &mdash; priced: Milwaukee 56.5% / Tampa Bay 43.5%</li><li><strong>Run Line -1.5</strong> &mdash; withheld: needs run-expectation inputs per starting pitcher</li><li><strong>Game Total</strong> &mdash; withheld: ballpark and weather factors were not read</li></ul>
+<p style="margin-bottom:4px">Official sources: <a class="src official" href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;date=2026-10-24&amp;hydrate=probablePitcher,linescore,team" target="_blank" rel="noopener noreferrer">MLB (statsapi.mlb.com)</a> <a class="src official" href="https://statsapi.mlb.com/api/v1/standings?season=2026&amp;standingsTypes=regularSeason&amp;leagueId=104&amp;fields=records,teamRecords,team,id,name,wins,losses,winningPercentage,pct,division,gamesPlayed" target="_blank" rel="noopener noreferrer">MLB (statsapi.mlb.com)</a> <a class="src official" href="https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&amp;season=2026&amp;standingsTypes=regularSeason&amp;hydrate=team" target="_blank" rel="noopener noreferrer">MLB (statsapi.mlb.com)</a></p>
+<p style="margin:0"><a href="predictions.html#PK-05">Read the full written prediction &rarr;</a></p>
+</div><div class="card">
+<h3 style="margin-top:0">Charles Leclerc to win the United States Grand Prix <span class="badge low">Low</span></h3>
+<p class="meta" style="color:var(--muted);margin-bottom:6px">Motor Racing &middot; Formula 1 United States Grand Prix
+&middot; 10-25 21:00Z &middot; Circuit of the Americas, Austin</p>
+<p><strong>Circuit of the Americas vs Round 19</strong> &mdash; fair price
+<strong>+275</strong> (3.745 decimal, 26.7%).
+Id <span class="tag">PK-06</span></p>
+<p>Race wins are volatile; this is a value opinion recorded alongside the podium pick, not a statement of certainty.</p>
+<ul style="margin:6px 0 12px 18px;padding:0;color:#344054"><li><strong>Win Race</strong> &mdash; priced: 26.7%</li><li><strong>Fastest Qualifier</strong> &mdash; withheld: session not run at capture</li></ul>
+<p style="margin-bottom:4px">Official sources: <a class="src official" href="https://www.formula1.com/en/racing/2026/united-states" target="_blank" rel="noopener noreferrer">Formula 1 (formula1.com)</a></p>
+<p style="margin:0"><a href="predictions.html#PK-06">Read the full written prediction &rarr;</a></p>
+</div>
+<h2>Every market family checked</h2>
+<div class="table-wrap"><table><thead><tr><th>Sport</th><th>Winner</th><th>Handicap / spread</th><th>Total</th><th>Derivative</th></tr></thead><tbody>
+<tr><td>Baseball</td><td>priced</td><td>run line withheld</td><td>withheld</td><td>&mdash;</td></tr>
+<tr><td>Ice hockey</td><td>priced</td><td>puck line withheld</td><td>withheld</td><td>&mdash;</td></tr>
+<tr><td>Basketball</td><td>priced</td><td>spread withheld</td><td>withheld</td><td>&mdash;</td></tr>
+<tr><td>Snooker</td><td>priced</td><td>frame handicap withheld</td><td>total frames withheld</td><td>&mdash;</td></tr>
+<tr><td>Motor racing</td><td>priced</td><td>&mdash;</td><td>&mdash;</td><td>podium priced, top six withheld</td></tr>
+<tr><td>Other ten sports</td><td>not priced</td><td>not priced</td><td>not priced</td><td>not priced</td></tr>
+</tbody></table></div>
+
+<footer><div><strong>Capture 2026-10-24T17:15:00Z</strong> &middot; independent research, not betting advice. 18+.
+Prices on this site are our own calculated fair odds, not quoted bookmaker odds.
+<a href="methodology.html">How prices are produced</a> &middot; <a href="https://www.olbg.com/betting-tips">OLBG</a></div>
+<div style="margin-top:8px">Sports: <a class="tag" style="margin:2px 6px 2px 0" href="sports/basketball.html">Basketball</a><a class="tag" style="margin:2px 6px 2px 0" href="sports/volleyball.html">Volleyball</a><a class="tag" style="margin:2px 6px 2px 0" href="sports/rugby-union.html">Rugby Union</a><a class="tag" style="margin:2px 6px 2px 0" href="sports/cricket.html">Cricket</a><a class="tag" style="margin:2px 6px 2px 0" href="sports/snooker.html">Snooker</a><a class="tag" style="margin:2px 6px 2px 0" href="sports/darts.html">Darts</a><a class="tag" style="margin:2px 6px 2px 0" href="sports/baseball.html">Baseball</a><a class="tag" style="margin:2px 6px 2px 0" href="sports/gaelic.html">Gaelic Sports</a><a class="tag" style="margin:2px 6px 2px 0" href="sports/greyhounds.html">Greyhounds</a><a class="tag" style="margin:2px 6px 2px 0" href="sports/tennis.html">Tennis</a><a class="tag" style="margin:2px 6px 2px 0" href="sports/motor-racing.html">Motor Racing</a><a class="tag" style="margin:2px 6px 2px 0" href="sports/handball.html">Handball</a><a class="tag" style="margin:2px 6px 2px 0" href="sports/ice-hockey.html">Ice Hockey</a><a class="tag" style="margin:2px 6px 2px 0" href="sports/rugby-league.html">Rugby League</a><a class="tag" style="margin:2px 6px 2px 0" href="sports/golf.html">Golf</a></div>
+<div style="margin-top:8px"><a href="https://buffedlizard55-lab.github.io/OLBG1/">Canonical research desk</a> &middot;
+<a href="https://github.com/buffedlizard55-lab/OLBG1">Repository</a></div></footer>
+</div></main></body></html>
