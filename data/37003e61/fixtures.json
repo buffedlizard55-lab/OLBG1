@@ -1,0 +1,2692 @@
+{
+ "desk": "37003e61-olbg1",
+ "captured_utc": "2026-10-24T17:40:00Z",
+ "fixtures": [
+  {
+   "id": "IH01",
+   "sport": "ice-hockey",
+   "sport_name": "Ice Hockey",
+   "competition": "NHL",
+   "home": "San Jose Sharks",
+   "away": "Boston Bruins",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "start_note": "",
+   "venue": "TD Garden, Boston",
+   "status": "official",
+   "facts": {
+    "away_record": "8-2-1, 17 points, .773 points percentage",
+    "away_form": "7-2-1 in the last ten; 4-1-0 at home; one-game win streak",
+    "away_goals": "42 scored, 22 conceded in 11 games",
+    "home_record": "",
+    "availability": ""
+   },
+   "flags": [
+    "San Jose's season record was not in the standings chunk read; no price issued."
+   ],
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "name": "NHL \u2014 official schedule, 24 October 2026",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+     "read_at": "2026-10-24T17:06Z",
+     "status": "read",
+     "what": "Start times (UTC), venues, game states for the 24 October slate."
+    },
+    {
+     "id": "nhl-standings",
+     "name": "NHL \u2014 official standings, 24 October 2026",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+     "read_at": "2026-10-24T17:06Z",
+     "status": "read",
+     "what": "W-L-OTL, points, points percentage, home/road splits, last ten, goals for and against."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "IH02",
+   "sport": "ice-hockey",
+   "sport_name": "Ice Hockey",
+   "competition": "NHL",
+   "home": "Ottawa Senators",
+   "away": "New York Rangers",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "start_note": "",
+   "venue": "Canadian Tire Centre, Ottawa",
+   "status": "official",
+   "facts": {
+    "home_record": "7-4-0, 14 points, .636 points percentage",
+    "away_record": "7-4-1, 15 points, .625 points percentage",
+    "home_form": "6-4-0 in the last ten; 4-2-0 at home; lost last game",
+    "away_form": "6-3-1 in the last ten; 6-0-0 at home but 1-4-1 on the road",
+    "home_goals": "31 scored, 30 conceded in 11 games",
+    "away_goals": "37 scored, 29 conceded in 12 games",
+    "stat": "Ottawa have won two games in the shootout; the Rangers have none.",
+    "availability": ""
+   },
+   "flags": [],
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "name": "NHL \u2014 official schedule, 24 October 2026",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+     "read_at": "2026-10-24T17:06Z",
+     "status": "read",
+     "what": "Start times (UTC), venues, game states for the 24 October slate."
+    },
+    {
+     "id": "nhl-standings",
+     "name": "NHL \u2014 official standings, 24 October 2026",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+     "read_at": "2026-10-24T17:06Z",
+     "status": "read",
+     "what": "W-L-OTL, points, points percentage, home/road splits, last ten, goals for and against."
+    }
+   ],
+   "priced": true,
+   "pick": {
+    "selection": "Ottawa Senators",
+    "probability": 0.544355,
+    "fair_decimal": 1.837,
+    "fair_american": -119,
+    "in_band": true,
+    "confidence": "Low"
+   },
+   "high": null,
+   "markets": [
+    {
+     "key": "winner",
+     "name": "Match Winner",
+     "line": null,
+     "outcomes": [
+      {
+       "selection": "Ottawa Senators",
+       "probability": 0.544355,
+       "fair_decimal": 1.837,
+       "fair_american": -119,
+       "in_band": true,
+       "confidence": "Low"
+      },
+      {
+       "selection": "New York Rangers",
+       "probability": 0.455645,
+       "fair_decimal": 2.1947,
+       "fair_american": 119,
+       "in_band": true
+      }
+     ]
+    },
+    {
+     "key": "handicap",
+     "name": "Handicap",
+     "line": 0.75,
+     "outcomes": [
+      {
+       "selection": "Ottawa Senators +0.75",
+       "probability": 0.697358,
+       "fair_decimal": 1.434,
+       "fair_american": -230,
+       "in_band": true
+      },
+      {
+       "selection": "New York Rangers -0.75",
+       "probability": 0.302642,
+       "fair_decimal": 3.3042,
+       "fair_american": 230,
+       "in_band": true
+      }
+     ]
+    },
+    {
+     "key": "total",
+     "name": "Match Total",
+     "line": 5.5,
+     "outcomes": [
+      {
+       "selection": "Over 5.5",
+       "probability": 0.504533,
+       "fair_decimal": 1.982,
+       "fair_american": -102,
+       "in_band": true
+      },
+      {
+       "selection": "Under 5.5",
+       "probability": 0.495467,
+       "fair_decimal": 2.0183,
+       "fair_american": 102,
+       "in_band": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "IH03",
+   "sport": "ice-hockey",
+   "sport_name": "Ice Hockey",
+   "competition": "NHL",
+   "home": "Columbus Blue Jackets",
+   "away": "Vegas Golden Knights",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "start_note": "",
+   "venue": "Nationwide Arena, Columbus",
+   "status": "official",
+   "facts": {
+    "away_record": "8-4-0, 16 points, .667 points percentage",
+    "away_form": "7-3-0 in the last ten; 3-2-0 on the road; two-game losing streak",
+    "away_goals": "46 scored, 36 conceded in 12 games",
+    "home_record": "",
+    "availability": ""
+   },
+   "flags": [
+    "Columbus's season record was not in the standings chunk read; no price issued."
+   ],
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "name": "NHL \u2014 official schedule, 24 October 2026",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+     "read_at": "2026-10-24T17:06Z",
+     "status": "read",
+     "what": "Start times (UTC), venues, game states for the 24 October slate."
+    },
+    {
+     "id": "nhl-standings",
+     "name": "NHL \u2014 official standings, 24 October 2026",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+     "read_at": "2026-10-24T17:06Z",
+     "status": "read",
+     "what": "W-L-OTL, points, points percentage, home/road splits, last ten, goals for and against."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "IH04",
+   "sport": "ice-hockey",
+   "sport_name": "Ice Hockey",
+   "competition": "NHL",
+   "home": "Utah Mammoth",
+   "away": "Tampa Bay Lightning",
+   "start_utc": "2026-10-25T02:07:00Z",
+   "start_note": "Start time from the NHL schedule as published by OLBG (22:07 ET); NHL date confirmed 24 October.",
+   "venue": "Delta Center, Salt Lake City",
+   "status": "official",
+   "facts": {
+    "home_record": "7-4-0, 14 points, .636 points percentage",
+    "away_record": "7-3-0, 14 points, .700 points percentage",
+    "home_form": "6-4-0 in the last ten; 3-1-0 at home; lost last game",
+    "away_form": "7-3-0 in the last ten; 2-3-0 on the road; lost last game",
+    "home_goals": "41 scored, 36 conceded in 11 games",
+    "away_goals": "34 scored, 29 conceded in 10 games",
+    "stat": "Tampa Bay have the better points percentage but a losing road record.",
+    "availability": ""
+   },
+   "flags": [],
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "name": "NHL \u2014 official schedule, 24 October 2026",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+     "read_at": "2026-10-24T17:06Z",
+     "status": "read",
+     "what": "Start times (UTC), venues, game states for the 24 October slate."
+    },
+    {
+     "id": "nhl-standings",
+     "name": "NHL \u2014 official standings, 24 October 2026",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+     "read_at": "2026-10-24T17:06Z",
+     "status": "read",
+     "what": "W-L-OTL, points, points percentage, home/road splits, last ten, goals for and against."
+    }
+   ],
+   "priced": true,
+   "pick": {
+    "selection": "Tampa Bay Lightning",
+    "probability": 0.538934,
+    "fair_decimal": 1.8555,
+    "fair_american": -117,
+    "in_band": true,
+    "confidence": "Low"
+   },
+   "high": null,
+   "markets": [
+    {
+     "key": "winner",
+     "name": "Match Winner",
+     "line": null,
+     "outcomes": [
+      {
+       "selection": "Utah Mammoth",
+       "probability": 0.461066,
+       "fair_decimal": 2.1689,
+       "fair_american": 117,
+       "in_band": true
+      },
+      {
+       "selection": "Tampa Bay Lightning",
+       "probability": 0.538934,
+       "fair_decimal": 1.8555,
+       "fair_american": -117,
+       "in_band": true,
+       "confidence": "Low"
+      }
+     ]
+    },
+    {
+     "key": "handicap",
+     "name": "Handicap",
+     "line": -0.75,
+     "outcomes": [
+      {
+       "selection": "Utah Mammoth -0.75",
+       "probability": 0.307428,
+       "fair_decimal": 3.2528,
+       "fair_american": 225,
+       "in_band": true
+      },
+      {
+       "selection": "Tampa Bay Lightning +0.75",
+       "probability": 0.692572,
+       "fair_decimal": 1.4439,
+       "fair_american": -225,
+       "in_band": true
+      }
+     ]
+    },
+    {
+     "key": "total",
+     "name": "Match Total",
+     "line": 6.5,
+     "outcomes": [
+      {
+       "selection": "Over 6.5",
+       "probability": 0.529893,
+       "fair_decimal": 1.8872,
+       "fair_american": -113,
+       "in_band": true
+      },
+      {
+       "selection": "Under 6.5",
+       "probability": 0.470107,
+       "fair_decimal": 2.1272,
+       "fair_american": 113,
+       "in_band": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "IH05",
+   "sport": "ice-hockey",
+   "sport_name": "Ice Hockey",
+   "competition": "NHL",
+   "home": "Seattle Kraken",
+   "away": "Minnesota Wild",
+   "start_utc": "2026-10-25T03:07:00Z",
+   "start_note": "Start time from the NHL schedule as published by OLBG (23:07 ET); NHL date confirmed 24 October.",
+   "venue": "Climate Pledge Arena, Seattle",
+   "status": "official",
+   "facts": {
+    "home_record": "7-3-1, 15 points, .682 points percentage",
+    "away_record": "6-3-2, 14 points, .545 points percentage",
+    "home_form": "6-3-1 in the last ten; 3-1-0 at home; two-game win streak",
+    "away_form": "5-3-2 in the last ten; 2-3-2 on the road; lost last game",
+    "home_goals": "38 scored, 36 conceded in 11 games",
+    "away_goals": "32 scored, 27 conceded in 11 games",
+    "stat": "Seattle have won two games in the shootout; Minnesota have none.",
+    "availability": ""
+   },
+   "flags": [],
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "name": "NHL \u2014 official schedule, 24 October 2026",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+     "read_at": "2026-10-24T17:06Z",
+     "status": "read",
+     "what": "Start times (UTC), venues, game states for the 24 October slate."
+    },
+    {
+     "id": "nhl-standings",
+     "name": "NHL \u2014 official standings, 24 October 2026",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+     "read_at": "2026-10-24T17:06Z",
+     "status": "read",
+     "what": "W-L-OTL, points, points percentage, home/road splits, last ten, goals for and against."
+    }
+   ],
+   "priced": true,
+   "pick": {
+    "selection": "Seattle Kraken",
+    "probability": 0.670577,
+    "fair_decimal": 1.4913,
+    "fair_american": -204,
+    "in_band": true,
+    "confidence": "Medium"
+   },
+   "high": null,
+   "markets": [
+    {
+     "key": "winner",
+     "name": "Match Winner",
+     "line": null,
+     "outcomes": [
+      {
+       "selection": "Seattle Kraken",
+       "probability": 0.670577,
+       "fair_decimal": 1.4913,
+       "fair_american": -204,
+       "in_band": true,
+       "confidence": "Medium"
+      },
+      {
+       "selection": "Minnesota Wild",
+       "probability": 0.329423,
+       "fair_decimal": 3.0356,
+       "fair_american": 204,
+       "in_band": true
+      }
+     ]
+    },
+    {
+     "key": "handicap",
+     "name": "Handicap",
+     "line": 0.25,
+     "outcomes": [
+      {
+       "selection": "Seattle Kraken +0.25",
+       "probability": 0.717909,
+       "fair_decimal": 1.3929,
+       "fair_american": -254,
+       "in_band": false
+      },
+      {
+       "selection": "Minnesota Wild -0.25",
+       "probability": 0.282091,
+       "fair_decimal": 3.545,
+       "fair_american": 254,
+       "in_band": true
+      }
+     ]
+    },
+    {
+     "key": "total",
+     "name": "Match Total",
+     "line": 6.0,
+     "outcomes": [
+      {
+       "selection": "Over 6.0",
+       "probability": 0.509066,
+       "fair_decimal": 1.9644,
+       "fair_american": -104,
+       "in_band": true
+      },
+      {
+       "selection": "Under 6.0",
+       "probability": 0.490934,
+       "fair_decimal": 2.0369,
+       "fair_american": 104,
+       "in_band": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "IH06",
+   "sport": "ice-hockey",
+   "sport_name": "Ice Hockey",
+   "competition": "NHL",
+   "home": "Edmonton Oilers",
+   "away": "Toronto Maple Leafs",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "start_note": "",
+   "venue": "Rogers Place, Edmonton",
+   "status": "official",
+   "facts": {
+    "home_record": "8-1-1, 17 points, .850 points percentage",
+    "away_record": "6-4-2, 14 points, .583 points percentage",
+    "home_form": "8-1-1 in the last ten; 5-0-0 on the road overall; three-game win streak",
+    "away_form": "5-3-2 in the last ten; 2-1-1 on the road; three-game win streak",
+    "home_goals": "47 scored, 32 conceded in 10 games",
+    "away_goals": "43 scored, 39 conceded in 12 games",
+    "stat": "Edmonton have scored 4.70 goals per game; Toronto have conceded 3.25 per game.",
+    "availability": ""
+   },
+   "flags": [],
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "name": "NHL \u2014 official schedule, 24 October 2026",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+     "read_at": "2026-10-24T17:06Z",
+     "status": "read",
+     "what": "Start times (UTC), venues, game states for the 24 October slate."
+    },
+    {
+     "id": "nhl-standings",
+     "name": "NHL \u2014 official standings, 24 October 2026",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+     "read_at": "2026-10-24T17:06Z",
+     "status": "read",
+     "what": "W-L-OTL, points, points percentage, home/road splits, last ten, goals for and against."
+    }
+   ],
+   "priced": true,
+   "pick": {
+    "selection": "Edmonton Oilers",
+    "probability": 0.828992,
+    "fair_decimal": 1.2063,
+    "fair_american": -485,
+    "in_band": false,
+    "confidence": "Excluded"
+   },
+   "high": {
+    "selection": "Edmonton Oilers -0.75",
+    "probability": 0.707049,
+    "fair_decimal": 1.4143,
+    "fair_american": -241,
+    "in_band": true,
+    "market": "Handicap",
+    "market_key": "handicap",
+    "line": -0.75
+   },
+   "markets": [
+    {
+     "key": "winner",
+     "name": "Match Winner",
+     "line": null,
+     "outcomes": [
+      {
+       "selection": "Edmonton Oilers",
+       "probability": 0.828992,
+       "fair_decimal": 1.2063,
+       "fair_american": -485,
+       "in_band": false,
+       "confidence": "Excluded"
+      },
+      {
+       "selection": "Toronto Maple Leafs",
+       "probability": 0.171008,
+       "fair_decimal": 5.8477,
+       "fair_american": 485,
+       "in_band": true
+      }
+     ]
+    },
+    {
+     "key": "handicap",
+     "name": "Handicap",
+     "line": -0.75,
+     "outcomes": [
+      {
+       "selection": "Edmonton Oilers -0.75",
+       "probability": 0.707049,
+       "fair_decimal": 1.4143,
+       "fair_american": -241,
+       "in_band": true
+      },
+      {
+       "selection": "Toronto Maple Leafs +0.75",
+       "probability": 0.292951,
+       "fair_decimal": 3.4135,
+       "fair_american": 241,
+       "in_band": true
+      }
+     ]
+    },
+    {
+     "key": "total",
+     "name": "Match Total",
+     "line": 7.5,
+     "outcomes": [
+      {
+       "selection": "Over 7.5",
+       "probability": 0.473424,
+       "fair_decimal": 2.1123,
+       "fair_american": 111,
+       "in_band": true
+      },
+      {
+       "selection": "Under 7.5",
+       "probability": 0.526576,
+       "fair_decimal": 1.8991,
+       "fair_american": -111,
+       "in_band": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BB01",
+   "sport": "basketball",
+   "sport_name": "Basketball",
+   "competition": "NBA",
+   "home": "Atlanta Hawks",
+   "away": "Houston Rockets",
+   "start_utc": "2026-10-25T00:30:00Z",
+   "start_note": "Tip time from the OLBG NBA card (20:30 ET).",
+   "venue": "State Farm Arena, Atlanta",
+   "status": "official",
+   "facts": {
+    "home_record": "2-0 (2-0 conference, 2-0 division, 2-0 on the road)",
+    "away_record": "2-0 (1-0 home, 1-0 road)",
+    "home_form": "W2",
+    "away_form": "W2",
+    "stat": "Both teams are unbeaten; Atlanta's two wins both came on the road.",
+    "availability": ""
+   },
+   "flags": [],
+   "sources": [
+    {
+     "id": "nba-standings",
+     "name": "NBA.com \u2014 2026-27 regular-season standings",
+     "url": "https://www.nba.com/standings",
+     "read_at": "2026-10-24T17:12Z",
+     "status": "read",
+     "what": "W-L, home/road, conference and division records, last ten and streak for all 30 teams."
+    },
+    {
+     "id": "olbg-basketball",
+     "name": "OLBG \u2014 Basketball hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Basketball/4",
+     "read_at": "2026-10-24T17:14Z",
+     "status": "read",
+     "what": "Event names, start clocks and tip votes only. OLBG publishes no prices, so nothing here is used as a probability."
+    }
+   ],
+   "priced": true,
+   "pick": {
+    "selection": "Atlanta Hawks",
+    "probability": 0.582516,
+    "fair_decimal": 1.7167,
+    "fair_american": -140,
+    "in_band": true,
+    "confidence": "Low"
+   },
+   "high": {
+    "selection": "Atlanta Hawks +4.00",
+    "probability": 0.705976,
+    "fair_decimal": 1.4165,
+    "fair_american": -240,
+    "in_band": true,
+    "market": "Handicap",
+    "market_key": "handicap",
+    "line": 4.0
+   },
+   "markets": [
+    {
+     "key": "winner",
+     "name": "Match Winner",
+     "line": null,
+     "outcomes": [
+      {
+       "selection": "Atlanta Hawks",
+       "probability": 0.582516,
+       "fair_decimal": 1.7167,
+       "fair_american": -140,
+       "in_band": true,
+       "confidence": "Low"
+      },
+      {
+       "selection": "Houston Rockets",
+       "probability": 0.417484,
+       "fair_decimal": 2.3953,
+       "fair_american": 140,
+       "in_band": true
+      }
+     ]
+    },
+    {
+     "key": "handicap",
+     "name": "Handicap",
+     "line": 4.0,
+     "outcomes": [
+      {
+       "selection": "Atlanta Hawks +4.00",
+       "probability": 0.705976,
+       "fair_decimal": 1.4165,
+       "fair_american": -240,
+       "in_band": true
+      },
+      {
+       "selection": "Houston Rockets -4.00",
+       "probability": 0.294024,
+       "fair_decimal": 3.4011,
+       "fair_american": 240,
+       "in_band": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BB02",
+   "sport": "basketball",
+   "sport_name": "Basketball",
+   "competition": "NBA",
+   "home": "Charlotte Hornets",
+   "away": "Miami Heat",
+   "start_utc": "2026-10-24T22:00:00Z",
+   "start_note": "Tip time from the OLBG NBA card (18:00 ET).",
+   "venue": "Spectrum Center, Charlotte",
+   "status": "official",
+   "facts": {
+    "home_record": "1-1 (0-1 home, 1-0 road, 1-1 conference)",
+    "away_record": "0-2 (0-2 home, 0-1 conference)",
+    "home_form": "L1",
+    "away_form": "L2",
+    "stat": "Miami have started with two home defeats; Charlotte are 0-1 at home.",
+    "availability": ""
+   },
+   "flags": [],
+   "sources": [
+    {
+     "id": "nba-standings",
+     "name": "NBA.com \u2014 2026-27 regular-season standings",
+     "url": "https://www.nba.com/standings",
+     "read_at": "2026-10-24T17:12Z",
+     "status": "read",
+     "what": "W-L, home/road, conference and division records, last ten and streak for all 30 teams."
+    },
+    {
+     "id": "olbg-basketball",
+     "name": "OLBG \u2014 Basketball hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Basketball/4",
+     "read_at": "2026-10-24T17:14Z",
+     "status": "read",
+     "what": "Event names, start clocks and tip votes only. OLBG publishes no prices, so nothing here is used as a probability."
+    }
+   ],
+   "priced": true,
+   "pick": {
+    "selection": "Charlotte Hornets",
+    "probability": 0.766752,
+    "fair_decimal": 1.3042,
+    "fair_american": -329,
+    "in_band": false,
+    "confidence": "Excluded"
+   },
+   "high": {
+    "selection": "Charlotte Hornets -2.00",
+    "probability": 0.712781,
+    "fair_decimal": 1.403,
+    "fair_american": -248,
+    "in_band": true,
+    "market": "Handicap",
+    "market_key": "handicap",
+    "line": -2.0
+   },
+   "markets": [
+    {
+     "key": "winner",
+     "name": "Match Winner",
+     "line": null,
+     "outcomes": [
+      {
+       "selection": "Charlotte Hornets",
+       "probability": 0.766752,
+       "fair_decimal": 1.3042,
+       "fair_american": -329,
+       "in_band": false,
+       "confidence": "Excluded"
+      },
+      {
+       "selection": "Miami Heat",
+       "probability": 0.233248,
+       "fair_decimal": 4.2873,
+       "fair_american": 329,
+       "in_band": true
+      }
+     ]
+    },
+    {
+     "key": "handicap",
+     "name": "Handicap",
+     "line": -2.0,
+     "outcomes": [
+      {
+       "selection": "Charlotte Hornets -2.00",
+       "probability": 0.712781,
+       "fair_decimal": 1.403,
+       "fair_american": -248,
+       "in_band": true
+      },
+      {
+       "selection": "Miami Heat +2.00",
+       "probability": 0.287219,
+       "fair_decimal": 3.4817,
+       "fair_american": 248,
+       "in_band": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BB03",
+   "sport": "basketball",
+   "sport_name": "Basketball",
+   "competition": "NBA",
+   "home": "Cleveland Cavaliers",
+   "away": "Brooklyn Nets",
+   "start_utc": "2026-10-24T23:30:00Z",
+   "start_note": "Tip time from the OLBG NBA card (19:30 ET).",
+   "venue": "Rocket Mortgage FieldHouse, Cleveland",
+   "status": "official",
+   "facts": {
+    "home_record": "0-1 (0-1 road)",
+    "away_record": "0-1 (0-1 home)",
+    "home_form": "L1",
+    "away_form": "L1",
+    "stat": "Both teams lost their opener; Cleveland's defeat came on the road.",
+    "availability": ""
+   },
+   "flags": [],
+   "sources": [
+    {
+     "id": "nba-standings",
+     "name": "NBA.com \u2014 2026-27 regular-season standings",
+     "url": "https://www.nba.com/standings",
+     "read_at": "2026-10-24T17:12Z",
+     "status": "read",
+     "what": "W-L, home/road, conference and division records, last ten and streak for all 30 teams."
+    },
+    {
+     "id": "olbg-basketball",
+     "name": "OLBG \u2014 Basketball hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Basketball/4",
+     "read_at": "2026-10-24T17:14Z",
+     "status": "read",
+     "what": "Event names, start clocks and tip votes only. OLBG publishes no prices, so nothing here is used as a probability."
+    }
+   ],
+   "priced": true,
+   "pick": {
+    "selection": "Cleveland Cavaliers",
+    "probability": 0.582516,
+    "fair_decimal": 1.7167,
+    "fair_american": -140,
+    "in_band": true,
+    "confidence": "Low"
+   },
+   "high": {
+    "selection": "Cleveland Cavaliers +4.00",
+    "probability": 0.705976,
+    "fair_decimal": 1.4165,
+    "fair_american": -240,
+    "in_band": true,
+    "market": "Handicap",
+    "market_key": "handicap",
+    "line": 4.0
+   },
+   "markets": [
+    {
+     "key": "winner",
+     "name": "Match Winner",
+     "line": null,
+     "outcomes": [
+      {
+       "selection": "Cleveland Cavaliers",
+       "probability": 0.582516,
+       "fair_decimal": 1.7167,
+       "fair_american": -140,
+       "in_band": true,
+       "confidence": "Low"
+      },
+      {
+       "selection": "Brooklyn Nets",
+       "probability": 0.417484,
+       "fair_decimal": 2.3953,
+       "fair_american": 140,
+       "in_band": true
+      }
+     ]
+    },
+    {
+     "key": "handicap",
+     "name": "Handicap",
+     "line": 4.0,
+     "outcomes": [
+      {
+       "selection": "Cleveland Cavaliers +4.00",
+       "probability": 0.705976,
+       "fair_decimal": 1.4165,
+       "fair_american": -240,
+       "in_band": true
+      },
+      {
+       "selection": "Brooklyn Nets -4.00",
+       "probability": 0.294024,
+       "fair_decimal": 3.4011,
+       "fair_american": 240,
+       "in_band": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BB04",
+   "sport": "basketball",
+   "sport_name": "Basketball",
+   "competition": "NBA",
+   "home": "Philadelphia 76ers",
+   "away": "Milwaukee Bucks",
+   "start_utc": "2026-10-24T23:30:00Z",
+   "start_note": "Tip time from the OLBG NBA card (19:30 ET).",
+   "venue": "Wells Fargo Center, Philadelphia",
+   "status": "official",
+   "facts": {
+    "home_record": "2-0 (1-0 home, 1-0 road, 2-0 conference)",
+    "away_record": "0-2 (0-1 home, 0-1 road, 0-2 conference)",
+    "home_form": "W2",
+    "away_form": "L2",
+    "stat": "Philadelphia are unbeaten; Milwaukee have lost both games by conference opponents.",
+    "availability": ""
+   },
+   "flags": [],
+   "sources": [
+    {
+     "id": "nba-standings",
+     "name": "NBA.com \u2014 2026-27 regular-season standings",
+     "url": "https://www.nba.com/standings",
+     "read_at": "2026-10-24T17:12Z",
+     "status": "read",
+     "what": "W-L, home/road, conference and division records, last ten and streak for all 30 teams."
+    },
+    {
+     "id": "olbg-basketball",
+     "name": "OLBG \u2014 Basketball hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Basketball/4",
+     "read_at": "2026-10-24T17:14Z",
+     "status": "read",
+     "what": "Event names, start clocks and tip votes only. OLBG publishes no prices, so nothing here is used as a probability."
+    }
+   ],
+   "priced": true,
+   "pick": {
+    "selection": "Philadelphia 76ers",
+    "probability": 0.893994,
+    "fair_decimal": 1.1186,
+    "fair_american": -843,
+    "in_band": false,
+    "confidence": "Excluded"
+   },
+   "high": {
+    "selection": "Philadelphia 76ers -8.50",
+    "probability": 0.705305,
+    "fair_decimal": 1.4178,
+    "fair_american": -239,
+    "in_band": true,
+    "market": "Handicap",
+    "market_key": "handicap",
+    "line": -8.5
+   },
+   "markets": [
+    {
+     "key": "winner",
+     "name": "Match Winner",
+     "line": null,
+     "outcomes": [
+      {
+       "selection": "Philadelphia 76ers",
+       "probability": 0.893994,
+       "fair_decimal": 1.1186,
+       "fair_american": -843,
+       "in_band": false,
+       "confidence": "Excluded"
+      },
+      {
+       "selection": "Milwaukee Bucks",
+       "probability": 0.106006,
+       "fair_decimal": 9.4335,
+       "fair_american": 843,
+       "in_band": true
+      }
+     ]
+    },
+    {
+     "key": "handicap",
+     "name": "Handicap",
+     "line": -8.5,
+     "outcomes": [
+      {
+       "selection": "Philadelphia 76ers -8.50",
+       "probability": 0.705305,
+       "fair_decimal": 1.4178,
+       "fair_american": -239,
+       "in_band": true
+      },
+      {
+       "selection": "Milwaukee Bucks +8.50",
+       "probability": 0.294695,
+       "fair_decimal": 3.3933,
+       "fair_american": 239,
+       "in_band": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BB05",
+   "sport": "basketball",
+   "sport_name": "Basketball",
+   "competition": "NBA",
+   "home": "Denver Nuggets",
+   "away": "New Orleans Pelicans",
+   "start_utc": "2026-10-25T02:00:00Z",
+   "start_note": "Tip time from the OLBG NBA card (22:00 ET).",
+   "venue": "Ball Arena, Denver",
+   "status": "official",
+   "facts": {
+    "home_record": "0-1 (0-1 road)",
+    "away_record": "0-2 (0-1 home, 0-1 road)",
+    "home_form": "L1",
+    "away_form": "L2",
+    "stat": "New Orleans have lost both games; Denver dropped its opener on the road.",
+    "availability": ""
+   },
+   "flags": [],
+   "sources": [
+    {
+     "id": "nba-standings",
+     "name": "NBA.com \u2014 2026-27 regular-season standings",
+     "url": "https://www.nba.com/standings",
+     "read_at": "2026-10-24T17:12Z",
+     "status": "read",
+     "what": "W-L, home/road, conference and division records, last ten and streak for all 30 teams."
+    },
+    {
+     "id": "olbg-basketball",
+     "name": "OLBG \u2014 Basketball hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Basketball/4",
+     "read_at": "2026-10-24T17:14Z",
+     "status": "read",
+     "what": "Event names, start clocks and tip votes only. OLBG publishes no prices, so nothing here is used as a probability."
+    }
+   ],
+   "priced": true,
+   "pick": {
+    "selection": "Denver Nuggets",
+    "probability": 0.664252,
+    "fair_decimal": 1.5055,
+    "fair_american": -198,
+    "in_band": true,
+    "confidence": "Medium"
+   },
+   "high": {
+    "selection": "Denver Nuggets +1.50",
+    "probability": 0.70853,
+    "fair_decimal": 1.4114,
+    "fair_american": -243,
+    "in_band": true,
+    "market": "Handicap",
+    "market_key": "handicap",
+    "line": 1.5
+   },
+   "markets": [
+    {
+     "key": "winner",
+     "name": "Match Winner",
+     "line": null,
+     "outcomes": [
+      {
+       "selection": "Denver Nuggets",
+       "probability": 0.664252,
+       "fair_decimal": 1.5055,
+       "fair_american": -198,
+       "in_band": true,
+       "confidence": "Medium"
+      },
+      {
+       "selection": "New Orleans Pelicans",
+       "probability": 0.335748,
+       "fair_decimal": 2.9784,
+       "fair_american": 198,
+       "in_band": true
+      }
+     ]
+    },
+    {
+     "key": "handicap",
+     "name": "Handicap",
+     "line": 1.5,
+     "outcomes": [
+      {
+       "selection": "Denver Nuggets +1.50",
+       "probability": 0.70853,
+       "fair_decimal": 1.4114,
+       "fair_american": -243,
+       "in_band": true
+      },
+      {
+       "selection": "New Orleans Pelicans -1.50",
+       "probability": 0.29147,
+       "fair_decimal": 3.4309,
+       "fair_american": 243,
+       "in_band": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "BS01",
+   "sport": "baseball",
+   "sport_name": "Baseball",
+   "competition": "MLB World Series, Game 2",
+   "home": "Milwaukee Brewers",
+   "away": "Tampa Bay Rays",
+   "start_utc": "2026-10-25T00:00:00Z",
+   "start_note": "",
+   "venue": "American Family Field, Milwaukee",
+   "status": "official",
+   "facts": {
+    "home_record": "1-0 in the World Series",
+    "away_record": "0-1 in the World Series",
+    "stat": "Milwaukee lead the series 1-0 after Game 1.",
+    "pitchers": "Tampa Bay: Drew Rasmussen. Milwaukee: Logan Henderson.",
+    "availability": ""
+   },
+   "flags": [
+    "Probable-pitcher season statistics were not read, so no price is issued."
+   ],
+   "sources": [
+    {
+     "id": "mlb-schedule",
+     "name": "MLB Stats API \u2014 24 October 2026 schedule",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24&hydrate=team,probablePitcher,linescore",
+     "read_at": "2026-10-24T17:09Z",
+     "status": "read",
+     "what": "World Series Game 2 pairing, 00:00Z start, probable pitchers, series score, ifNecessary=N."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "TN01",
+   "sport": "tennis",
+   "sport_name": "Tennis",
+   "competition": "ATP Almaty 250 \u2014 final",
+   "home": "Daniil Medvedev",
+   "away": "Nikoloz Basilashvili",
+   "start_utc": "2026-10-25T10:00:00Z",
+   "start_note": "Not before 15:00 local (UTC+5) on the ATP order of play.",
+   "venue": "Almaty, Center Court",
+   "status": "official",
+   "facts": {
+    "home_record": "Seed 1",
+    "away_record": "Qualifier",
+    "stat": "ATP head-to-head shows Medvedev leading 1-0.",
+    "availability": ""
+   },
+   "flags": [
+    "Neither player's ranking or season service statistics were read, so no price is issued."
+   ],
+   "sources": [
+    {
+     "id": "atp-almaty",
+     "name": "ATP Tour \u2014 Almaty daily schedule (Day 9)",
+     "url": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule",
+     "read_at": "2026-10-24T17:15Z",
+     "status": "read",
+     "what": "Singles and doubles finals, court order, not-before times, seeds and head-to-head link."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "TN02",
+   "sport": "tennis",
+   "sport_name": "Tennis",
+   "competition": "ATP Almaty 250 \u2014 doubles final",
+   "home": "L. Miedler / N. Oberleitner",
+   "away": "Y. Bhambri / R. Seggerman",
+   "start_utc": "2026-10-25T07:00:00Z",
+   "start_note": "Starts at 12:00 local (UTC+5) on the ATP order of play.",
+   "venue": "Almaty, Center Court",
+   "status": "official",
+   "facts": {
+    "home_record": "Seeded 1",
+    "away_record": "Seeded 4",
+    "stat": "Top seeds meet the fourth seeds in the doubles final.",
+    "availability": ""
+   },
+   "flags": [
+    "Doubles pairing statistics were not read, so no price is issued."
+   ],
+   "sources": [
+    {
+     "id": "atp-almaty",
+     "name": "ATP Tour \u2014 Almaty daily schedule (Day 9)",
+     "url": "https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule",
+     "read_at": "2026-10-24T17:15Z",
+     "status": "read",
+     "what": "Singles and doubles finals, court order, not-before times, seeds and head-to-head link."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "SN01",
+   "sport": "snooker",
+   "sport_name": "Snooker",
+   "competition": "BetVictor Northern Ireland Open \u2014 semi-final",
+   "home": "Mark Williams",
+   "away": "Jak Jones",
+   "start_utc": "2026-10-24T18:00:00Z",
+   "start_note": "WST lists Match 62 at 14:00 and OLBG at 18:05Z; the two clocks differ, so the time is flagged.",
+   "venue": "Waterfront Hall, Belfast",
+   "status": "official",
+   "facts": {
+    "stat": "Match 62 of the tournament; the other semi-final finished 6-5 to Kyren Wilson.",
+    "availability": ""
+   },
+   "flags": [
+    "Frame-level scoring and head-to-head were not read, so no price is issued.",
+    "Start time conflict between the WST match list and the OLBG card."
+   ],
+   "sources": [
+    {
+     "id": "wst-matches",
+     "name": "World Snooker Tour \u2014 BetVictor Northern Ireland Open match list",
+     "url": "https://www.wst.tv/matches/",
+     "read_at": "2026-10-24T17:32Z",
+     "status": "read",
+     "what": "Match 62 semi-final Mark Williams v Jak Jones; Match 63 final Kyren Wilson v winner of Match 62; other semi-final finished 6-5 to Wilson."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "SN02",
+   "sport": "snooker",
+   "sport_name": "Snooker",
+   "competition": "BetVictor Northern Ireland Open \u2014 final",
+   "home": "Kyren Wilson",
+   "away": "Winner of Match 62",
+   "start_utc": "2026-10-25T12:00:00Z",
+   "start_note": "WST lists the final at 08:00 and OLBG at 12:00Z; the second is used and flagged.",
+   "venue": "Waterfront Hall, Belfast",
+   "status": "official",
+   "facts": {
+    "home_record": "Won his semi-final 6-5",
+    "away_record": "",
+    "stat": "Wilson is already through after a deciding frame.",
+    "availability": ""
+   },
+   "flags": [
+    "Opponent not decided at capture time; no line can be originated."
+   ],
+   "sources": [
+    {
+     "id": "wst-matches",
+     "name": "World Snooker Tour \u2014 BetVictor Northern Ireland Open match list",
+     "url": "https://www.wst.tv/matches/",
+     "read_at": "2026-10-24T17:32Z",
+     "status": "read",
+     "what": "Match 62 semi-final Mark Williams v Jak Jones; Match 63 final Kyren Wilson v winner of Match 62; other semi-final finished 6-5 to Wilson."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "RU01",
+   "sport": "rugby-union",
+   "sport_name": "Rugby Union",
+   "competition": "Top 14 \u2014 Journ\u00e9e 7",
+   "home": "RC Toulon",
+   "away": "Section Paloise",
+   "start_utc": "2026-10-24T19:00:00Z",
+   "start_note": "21:00 local (CEST).",
+   "venue": "Stade Mayol, Toulon",
+   "status": "official",
+   "facts": {
+    "home_record": "11th after six completed Journ\u00e9e 7 matches",
+    "away_record": "2nd",
+    "stat": "Pau sit nine places above Toulon in the official table.",
+    "availability": ""
+   },
+   "flags": [],
+   "sources": [
+    {
+     "id": "lnr-top14",
+     "name": "LNR \u2014 Top 14 official calendar and results, Journ\u00e9e 7",
+     "url": "https://top14.lnr.fr/calendrier-et-resultats",
+     "read_at": "2026-10-24T17:36Z",
+     "status": "read",
+     "what": "Toulon v Pau 21:00 Saturday, La Rochelle v Bordeaux-B\u00e8gles 21:05 Sunday, six completed results and league positions 1-14."
+    }
+   ],
+   "priced": true,
+   "pick": {
+    "selection": "Section Paloise",
+    "probability": 0.665882,
+    "fair_decimal": 1.5018,
+    "fair_american": -199,
+    "in_band": true,
+    "confidence": "Medium"
+   },
+   "high": {
+    "selection": "Section Paloise +1.25",
+    "probability": 0.706162,
+    "fair_decimal": 1.4161,
+    "fair_american": -240,
+    "in_band": true,
+    "market": "Handicap",
+    "market_key": "handicap",
+    "line": -1.25
+   },
+   "markets": [
+    {
+     "key": "winner",
+     "name": "Match Winner",
+     "line": null,
+     "outcomes": [
+      {
+       "selection": "RC Toulon",
+       "probability": 0.334118,
+       "fair_decimal": 2.993,
+       "fair_american": 199,
+       "in_band": true
+      },
+      {
+       "selection": "Section Paloise",
+       "probability": 0.665882,
+       "fair_decimal": 1.5018,
+       "fair_american": -199,
+       "in_band": true,
+       "confidence": "Medium"
+      }
+     ]
+    },
+    {
+     "key": "handicap",
+     "name": "Handicap",
+     "line": -1.25,
+     "outcomes": [
+      {
+       "selection": "RC Toulon -1.25",
+       "probability": 0.293838,
+       "fair_decimal": 3.4032,
+       "fair_american": 240,
+       "in_band": true
+      },
+      {
+       "selection": "Section Paloise +1.25",
+       "probability": 0.706162,
+       "fair_decimal": 1.4161,
+       "fair_american": -240,
+       "in_band": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "RU02",
+   "sport": "rugby-union",
+   "sport_name": "Rugby Union",
+   "competition": "Top 14 \u2014 Journ\u00e9e 7",
+   "home": "Stade Rochelais",
+   "away": "Union Bordeaux-B\u00e8gles",
+   "start_utc": "2026-10-25T20:05:00Z",
+   "start_note": "21:05 local, after France's switch to CET.",
+   "venue": "Stade Marcel-Deflandre, La Rochelle",
+   "status": "official",
+   "facts": {
+    "home_record": "4th",
+    "away_record": "3rd",
+    "stat": "One place and one league position separate the sides.",
+    "availability": ""
+   },
+   "flags": [],
+   "sources": [
+    {
+     "id": "lnr-top14",
+     "name": "LNR \u2014 Top 14 official calendar and results, Journ\u00e9e 7",
+     "url": "https://top14.lnr.fr/calendrier-et-resultats",
+     "read_at": "2026-10-24T17:36Z",
+     "status": "read",
+     "what": "Toulon v Pau 21:00 Saturday, La Rochelle v Bordeaux-B\u00e8gles 21:05 Sunday, six completed results and league positions 1-14."
+    }
+   ],
+   "priced": true,
+   "pick": {
+    "selection": "Stade Rochelais",
+    "probability": 0.577227,
+    "fair_decimal": 1.7324,
+    "fair_american": -137,
+    "in_band": true,
+    "confidence": "Low"
+   },
+   "high": {
+    "selection": "Stade Rochelais +3.75",
+    "probability": 0.703922,
+    "fair_decimal": 1.4206,
+    "fair_american": -238,
+    "in_band": true,
+    "market": "Handicap",
+    "market_key": "handicap",
+    "line": 3.75
+   },
+   "markets": [
+    {
+     "key": "winner",
+     "name": "Match Winner",
+     "line": null,
+     "outcomes": [
+      {
+       "selection": "Stade Rochelais",
+       "probability": 0.577227,
+       "fair_decimal": 1.7324,
+       "fair_american": -137,
+       "in_band": true,
+       "confidence": "Low"
+      },
+      {
+       "selection": "Union Bordeaux-B\u00e8gles",
+       "probability": 0.422773,
+       "fair_decimal": 2.3653,
+       "fair_american": 137,
+       "in_band": true
+      }
+     ]
+    },
+    {
+     "key": "handicap",
+     "name": "Handicap",
+     "line": 3.75,
+     "outcomes": [
+      {
+       "selection": "Stade Rochelais +3.75",
+       "probability": 0.703922,
+       "fair_decimal": 1.4206,
+       "fair_american": -238,
+       "in_band": true
+      },
+      {
+       "selection": "Union Bordeaux-B\u00e8gles -3.75",
+       "probability": 0.296078,
+       "fair_decimal": 3.3775,
+       "fair_american": 238,
+       "in_band": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "RU03",
+   "sport": "rugby-union",
+   "sport_name": "Rugby Union",
+   "competition": "Gallagher Premiership \u2014 Round 4",
+   "home": "Harlequins",
+   "away": "Saracens",
+   "start_utc": "2026-10-25T15:00:00Z",
+   "start_note": "Time from the OLBG card (11:00 ET); the Premiership round page was read but the kick-off clock was not.",
+   "venue": "Twickenham Stoop, London",
+   "status": "official",
+   "facts": {
+    "stat": "Round 4 fixture; Leicester 28-7 Northampton and Gloucester 23-5 Bath were already complete.",
+    "availability": ""
+   },
+   "flags": [
+    "Neither club's Round 4 form string was read, so no price is issued."
+   ],
+   "sources": [
+    {
+     "id": "prem-rugby",
+     "name": "Premiership Rugby \u2014 official fixtures and results, Round 4",
+     "url": "https://www.premrugby.com/fixtures-results?competition=gallagher-prem&round=4",
+     "read_at": "2026-10-24T17:37Z",
+     "status": "read",
+     "what": "Round 4 fixtures, form strings, Gloucester 23-5 Bath, Newcastle 17-3 Sale, Leicester 28-7 Northampton, Bristol 10-0 Exeter at 35 minutes."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "RU04",
+   "sport": "rugby-union",
+   "sport_name": "Rugby Union",
+   "competition": "International",
+   "home": "United States",
+   "away": "Australia A",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "start_note": "Time from the OLBG card only.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Fixture listed by OLBG; no official match page was read."
+   ],
+   "sources": [
+    {
+     "id": "olbg-rugby-union",
+     "name": "OLBG \u2014 Rugby Union hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+     "read_at": "2026-10-24T17:16Z",
+     "status": "read",
+     "what": "Five match cards plus a 2027 Six Nations outright; used for discovery and for the route map only."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "RL01",
+   "sport": "rugby-league",
+   "sport_name": "Rugby League",
+   "competition": "Rugby League World Cup \u2014 Round 2",
+   "home": "New Zealand",
+   "away": "Cook Islands",
+   "start_utc": "",
+   "start_note": "NRL lists Sunday 25 October, kick-off 1:05am; timezone not stated on the page.",
+   "venue": "One NZ Stadium, Christchurch",
+   "status": "official",
+   "facts": {
+    "home_record": "3rd in the group table",
+    "away_record": "4th in the group table",
+    "stat": "New Zealand sit one place above Cook Islands.",
+    "availability": ""
+   },
+   "flags": [
+    "Kick-off timezone unresolved; the UTC cell is deliberately blank."
+   ],
+   "sources": [
+    {
+     "id": "nrl-draw",
+     "name": "NRL.com \u2014 Rugby League World Cup Round 2 draw",
+     "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+     "read_at": "2026-10-24T17:20Z",
+     "status": "read",
+     "what": "Round 2 fixtures and results, venues and table positions for New Zealand, Cook Islands, Australia and Fiji."
+    }
+   ],
+   "priced": true,
+   "pick": {
+    "selection": "New Zealand",
+    "probability": 0.812114,
+    "fair_decimal": 1.2314,
+    "fair_american": -432,
+    "in_band": false,
+    "confidence": "Excluded"
+   },
+   "high": {
+    "selection": "New Zealand -5.00",
+    "probability": 0.701449,
+    "fair_decimal": 1.4256,
+    "fair_american": -235,
+    "in_band": true,
+    "market": "Handicap",
+    "market_key": "handicap",
+    "line": -5.0
+   },
+   "markets": [
+    {
+     "key": "winner",
+     "name": "Match Winner",
+     "line": null,
+     "outcomes": [
+      {
+       "selection": "New Zealand",
+       "probability": 0.812114,
+       "fair_decimal": 1.2314,
+       "fair_american": -432,
+       "in_band": false,
+       "confidence": "Excluded"
+      },
+      {
+       "selection": "Cook Islands",
+       "probability": 0.187886,
+       "fair_decimal": 5.3224,
+       "fair_american": 432,
+       "in_band": true
+      }
+     ]
+    },
+    {
+     "key": "handicap",
+     "name": "Handicap",
+     "line": -5.0,
+     "outcomes": [
+      {
+       "selection": "New Zealand -5.00",
+       "probability": 0.701449,
+       "fair_decimal": 1.4256,
+       "fair_american": -235,
+       "in_band": true
+      },
+      {
+       "selection": "Cook Islands +5.00",
+       "probability": 0.298551,
+       "fair_decimal": 3.3495,
+       "fair_american": 235,
+       "in_band": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "RL02",
+   "sport": "rugby-league",
+   "sport_name": "Rugby League",
+   "competition": "Rugby League World Cup \u2014 Round 2",
+   "home": "Australia",
+   "away": "Fiji",
+   "start_utc": "",
+   "start_note": "NRL lists Sunday 25 October, kick-off 5:05am; timezone not stated on the page.",
+   "venue": "Suncorp Stadium, Brisbane",
+   "status": "official",
+   "facts": {
+    "home_record": "2nd in the group table",
+    "away_record": "1st in the group table",
+    "stat": "Fiji lead the group; Australia are second.",
+    "availability": ""
+   },
+   "flags": [
+    "Kick-off timezone unresolved; the UTC cell is deliberately blank."
+   ],
+   "sources": [
+    {
+     "id": "nrl-draw",
+     "name": "NRL.com \u2014 Rugby League World Cup Round 2 draw",
+     "url": "https://www.nrl.com/draw/?competition=131&round=2&season=2026",
+     "read_at": "2026-10-24T17:20Z",
+     "status": "read",
+     "what": "Round 2 fixtures and results, venues and table positions for New Zealand, Cook Islands, Australia and Fiji."
+    }
+   ],
+   "priced": true,
+   "pick": {
+    "selection": "Fiji",
+    "probability": 0.623348,
+    "fair_decimal": 1.6042,
+    "fair_american": -165,
+    "in_band": true,
+    "confidence": "Medium"
+   },
+   "high": {
+    "selection": "Fiji +3.00",
+    "probability": 0.701449,
+    "fair_decimal": 1.4256,
+    "fair_american": -235,
+    "in_band": true,
+    "market": "Handicap",
+    "market_key": "handicap",
+    "line": -3.0
+   },
+   "markets": [
+    {
+     "key": "winner",
+     "name": "Match Winner",
+     "line": null,
+     "outcomes": [
+      {
+       "selection": "Australia",
+       "probability": 0.376652,
+       "fair_decimal": 2.655,
+       "fair_american": 165,
+       "in_band": true
+      },
+      {
+       "selection": "Fiji",
+       "probability": 0.623348,
+       "fair_decimal": 1.6042,
+       "fair_american": -165,
+       "in_band": true,
+       "confidence": "Medium"
+      }
+     ]
+    },
+    {
+     "key": "handicap",
+     "name": "Handicap",
+     "line": -3.0,
+     "outcomes": [
+      {
+       "selection": "Australia -3.00",
+       "probability": 0.298551,
+       "fair_decimal": 3.3495,
+       "fair_american": 235,
+       "in_band": true
+      },
+      {
+       "selection": "Fiji +3.00",
+       "probability": 0.701449,
+       "fair_decimal": 1.4256,
+       "fair_american": -235,
+       "in_band": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "MR01",
+   "sport": "motor-racing",
+   "sport_name": "Motor Racing",
+   "competition": "Formula 1 \u2014 United States Grand Prix",
+   "home": "United States Grand Prix",
+   "away": "Race",
+   "start_utc": "2026-10-25T20:00:00Z",
+   "start_note": "Race listed at 16:00 in the browser clock; 56 laps over 308.432 km.",
+   "venue": "Circuit of The Americas, Austin",
+   "status": "official",
+   "facts": {
+    "stat": "FP2: Leclerc 1:35.291, Antonelli +0.042, Verstappen +0.189, Hamilton +0.615, Russell +0.744.",
+    "availability": ""
+   },
+   "flags": [],
+   "sources": [
+    {
+     "id": "f1-usgp",
+     "name": "Formula 1 \u2014 2026 United States Grand Prix race hub",
+     "url": "https://www.formula1.com/en/racing/2026/united-states",
+     "read_at": "2026-10-24T17:24Z",
+     "status": "read",
+     "what": "Weekend schedule, FP2 classification (Leclerc 1:35.291), circuit length, lap count and race distance."
+    }
+   ],
+   "priced": true,
+   "pick": {
+    "selection": "Charles Leclerc",
+    "probability": 0.407942,
+    "fair_decimal": 2.4513,
+    "fair_american": 145,
+    "in_band": true,
+    "confidence": "Low"
+   },
+   "high": null,
+   "markets": [
+    {
+     "key": "winner",
+     "name": "Win Race (FP2 pace, five classified drivers)",
+     "line": null,
+     "outcomes": [
+      {
+       "selection": "Charles Leclerc",
+       "probability": 0.407942,
+       "fair_decimal": 2.4513,
+       "fair_american": 145,
+       "in_band": true,
+       "confidence": "Low"
+      },
+      {
+       "selection": "Kimi Antonelli",
+       "probability": 0.344856,
+       "fair_decimal": 2.8998,
+       "fair_american": 190,
+       "in_band": true
+      },
+      {
+       "selection": "Max Verstappen",
+       "probability": 0.191546,
+       "fair_decimal": 5.2207,
+       "fair_american": 422,
+       "in_band": true
+      },
+      {
+       "selection": "Lewis Hamilton",
+       "probability": 0.034853,
+       "fair_decimal": 28.6919,
+       "fair_american": 2769,
+       "in_band": true
+      },
+      {
+       "selection": "George Russell",
+       "probability": 0.020803,
+       "fair_decimal": 48.07,
+       "fair_american": 4707,
+       "in_band": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "VB01",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "competition": "SuperLega \u2014 Round 2",
+   "home": "Gas Sales Bluenergy Piacenza",
+   "away": "Valsa Group Modena",
+   "start_utc": "",
+   "start_note": "18:00 local on Sunday 25 October; UTC withheld because Italy changes clock that morning.",
+   "venue": "PalaBancaSport, Piacenza",
+   "status": "official",
+   "facts": {
+    "stat": "Official round fixture with referee and broadcaster listed.",
+    "availability": ""
+   },
+   "flags": [
+    "No league table read, so no price is issued."
+   ],
+   "sources": [
+    {
+     "id": "legavolley",
+     "name": "Lega Pallavolo Serie A \u2014 SuperLega official calendar",
+     "url": "https://www.legavolley.it/calendario/?idCampionato=999",
+     "read_at": "2026-10-24T17:30Z",
+     "status": "read",
+     "what": "Round 2 fixtures on 25 October with local throw-off times, venues, referees and broadcasters."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "VB02",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "competition": "SuperLega \u2014 Round 2",
+   "home": "Cucine Lube Civitanova",
+   "away": "Pallavolo Padova",
+   "start_utc": "",
+   "start_note": "18:00 local on Sunday 25 October; UTC withheld because Italy changes clock that morning.",
+   "venue": "Eurosuole Forum, Civitanova Marche",
+   "status": "official",
+   "facts": {
+    "stat": "Official round fixture with referee and broadcaster listed.",
+    "availability": ""
+   },
+   "flags": [
+    "No league table read, so no price is issued."
+   ],
+   "sources": [
+    {
+     "id": "legavolley",
+     "name": "Lega Pallavolo Serie A \u2014 SuperLega official calendar",
+     "url": "https://www.legavolley.it/calendario/?idCampionato=999",
+     "read_at": "2026-10-24T17:30Z",
+     "status": "read",
+     "what": "Round 2 fixtures on 25 October with local throw-off times, venues, referees and broadcasters."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "VB03",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "competition": "SuperLega \u2014 Round 2",
+   "home": "Allianz Milano",
+   "away": "Acqua Sant'Anna Cuneo",
+   "start_utc": "",
+   "start_note": "19:00 local on Sunday 25 October; UTC withheld because Italy changes clock that morning.",
+   "venue": "Allianz Cloud, Milan",
+   "status": "official",
+   "facts": {
+    "stat": "Official round fixture with referee and broadcaster listed.",
+    "availability": ""
+   },
+   "flags": [
+    "No league table read, so no price is issued."
+   ],
+   "sources": [
+    {
+     "id": "legavolley",
+     "name": "Lega Pallavolo Serie A \u2014 SuperLega official calendar",
+     "url": "https://www.legavolley.it/calendario/?idCampionato=999",
+     "read_at": "2026-10-24T17:30Z",
+     "status": "read",
+     "what": "Round 2 fixtures on 25 October with local throw-off times, venues, referees and broadcasters."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "VB04",
+   "sport": "volleyball",
+   "sport_name": "Volleyball",
+   "competition": "SuperLega \u2014 Round 2",
+   "home": "Vero Volley Monza",
+   "away": "Rana Verona",
+   "start_utc": "",
+   "start_note": "18:00 local on Sunday 25 October; UTC withheld because Italy changes clock that morning.",
+   "venue": "OpiquadArena, Monza",
+   "status": "official",
+   "facts": {
+    "stat": "Official round fixture with referee and broadcaster listed.",
+    "availability": ""
+   },
+   "flags": [
+    "No league table read, so no price is issued."
+   ],
+   "sources": [
+    {
+     "id": "legavolley",
+     "name": "Lega Pallavolo Serie A \u2014 SuperLega official calendar",
+     "url": "https://www.legavolley.it/calendario/?idCampionato=999",
+     "read_at": "2026-10-24T17:30Z",
+     "status": "read",
+     "what": "Round 2 fixtures on 25 October with local throw-off times, venues, referees and broadcasters."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "CR01",
+   "sport": "cricket",
+   "sport_name": "Cricket",
+   "competition": "Global T20 Canada",
+   "home": "Toronto Kings",
+   "away": "Vancouver Guardians",
+   "start_utc": "2026-10-24T23:00:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Fixture listed by OLBG; no official competition page was read."
+   ],
+   "sources": [
+    {
+     "id": "olbg-cricket",
+     "name": "OLBG \u2014 Cricket hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Cricket/7",
+     "read_at": "2026-10-24T17:20Z",
+     "status": "read",
+     "what": "Nine cards across T20 and ODI competitions; no matching fixture on the official board read."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "CR02",
+   "sport": "cricket",
+   "sport_name": "Cricket",
+   "competition": "ODI series",
+   "home": "Pakistan",
+   "away": "England",
+   "start_utc": "2026-10-25T08:00:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Fixture listed by OLBG; no official match page was read."
+   ],
+   "sources": [
+    {
+     "id": "olbg-cricket",
+     "name": "OLBG \u2014 Cricket hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Cricket/7",
+     "read_at": "2026-10-24T17:20Z",
+     "status": "read",
+     "what": "Nine cards across T20 and ODI competitions; no matching fixture on the official board read."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "CR03",
+   "sport": "cricket",
+   "sport_name": "Cricket",
+   "competition": "CSA T20",
+   "home": "North West Dragons",
+   "away": "Northern Cape Heat",
+   "start_utc": "2026-10-25T11:00:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "OLBG lists a T20 meeting that the official CSA 24 October fixture hub did not carry."
+   ],
+   "sources": [
+    {
+     "id": "olbg-cricket",
+     "name": "OLBG \u2014 Cricket hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Cricket/7",
+     "read_at": "2026-10-24T17:20Z",
+     "status": "read",
+     "what": "Nine cards across T20 and ODI competitions; no matching fixture on the official board read."
+    },
+    {
+     "id": "csa",
+     "name": "Cricket South Africa \u2014 official fixture hub",
+     "url": "https://cricket.co.za/",
+     "read_at": "2026-10-24T17:26Z",
+     "status": "read",
+     "what": "Official 24 October fixtures: Colts three-day matches and Hollywoodbets Pro 50. No T20 fixture matching the OLBG card was present."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "CR04",
+   "sport": "cricket",
+   "sport_name": "Cricket",
+   "competition": "CSA T20",
+   "home": "Tuskers",
+   "away": "Western Province",
+   "start_utc": "2026-10-25T11:00:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "OLBG lists a T20 meeting that the official CSA 24 October fixture hub did not carry."
+   ],
+   "sources": [
+    {
+     "id": "olbg-cricket",
+     "name": "OLBG \u2014 Cricket hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Cricket/7",
+     "read_at": "2026-10-24T17:20Z",
+     "status": "read",
+     "what": "Nine cards across T20 and ODI competitions; no matching fixture on the official board read."
+    },
+    {
+     "id": "csa",
+     "name": "Cricket South Africa \u2014 official fixture hub",
+     "url": "https://cricket.co.za/",
+     "read_at": "2026-10-24T17:26Z",
+     "status": "read",
+     "what": "Official 24 October fixtures: Colts three-day matches and Hollywoodbets Pro 50. No T20 fixture matching the OLBG card was present."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "CR05",
+   "sport": "cricket",
+   "sport_name": "Cricket",
+   "competition": "T20I series",
+   "home": "New Zealand",
+   "away": "India",
+   "start_utc": "2026-10-27T07:00:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Fixture listed by OLBG; no official match page was read."
+   ],
+   "sources": [
+    {
+     "id": "olbg-cricket",
+     "name": "OLBG \u2014 Cricket hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Cricket/7",
+     "read_at": "2026-10-24T17:20Z",
+     "status": "read",
+     "what": "Nine cards across T20 and ODI competitions; no matching fixture on the official board read."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "DA01",
+   "sport": "darts",
+   "sport_name": "Darts",
+   "competition": "PDC European Championship",
+   "home": "Krzysztof Ratajski",
+   "away": "Kevin Doets",
+   "start_utc": "2026-10-24T17:15:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Fixture listed by OLBG; the PDC hub returned only a consent shell."
+   ],
+   "sources": [
+    {
+     "id": "olbg-darts",
+     "name": "OLBG \u2014 Darts hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Darts/15",
+     "read_at": "2026-10-24T17:18Z",
+     "status": "read",
+     "what": "Five match cards and two outrights; the PDC hub itself returned a consent shell."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "DA02",
+   "sport": "darts",
+   "sport_name": "Darts",
+   "competition": "PDC European Championship",
+   "home": "Martin Schindler",
+   "away": "Jermaine Wattimena",
+   "start_utc": "2026-10-24T18:15:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Fixture listed by OLBG; the PDC hub returned only a consent shell."
+   ],
+   "sources": [
+    {
+     "id": "olbg-darts",
+     "name": "OLBG \u2014 Darts hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Darts/15",
+     "read_at": "2026-10-24T17:18Z",
+     "status": "read",
+     "what": "Five match cards and two outrights; the PDC hub itself returned a consent shell."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "DA03",
+   "sport": "darts",
+   "sport_name": "Darts",
+   "competition": "PDC European Championship",
+   "home": "Nathan Aspinall",
+   "away": "Luke Littler",
+   "start_utc": "2026-10-24T19:15:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Fixture listed by OLBG; the PDC hub returned only a consent shell."
+   ],
+   "sources": [
+    {
+     "id": "olbg-darts",
+     "name": "OLBG \u2014 Darts hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Darts/15",
+     "read_at": "2026-10-24T17:18Z",
+     "status": "read",
+     "what": "Five match cards and two outrights; the PDC hub itself returned a consent shell."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "DA04",
+   "sport": "darts",
+   "sport_name": "Darts",
+   "competition": "PDC European Championship",
+   "home": "Jonny Clayton",
+   "away": "Josh Rock",
+   "start_utc": "2026-10-24T20:15:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Fixture listed by OLBG; the PDC hub returned only a consent shell."
+   ],
+   "sources": [
+    {
+     "id": "olbg-darts",
+     "name": "OLBG \u2014 Darts hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Darts/15",
+     "read_at": "2026-10-24T17:18Z",
+     "status": "read",
+     "what": "Five match cards and two outrights; the PDC hub itself returned a consent shell."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "DA05",
+   "sport": "darts",
+   "sport_name": "Darts",
+   "competition": "PDC European Championship",
+   "home": "Gerwyn Price",
+   "away": "Stephen Bunting",
+   "start_utc": "2026-10-25T11:00:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Fixture listed by OLBG; the PDC hub returned only a consent shell."
+   ],
+   "sources": [
+    {
+     "id": "olbg-darts",
+     "name": "OLBG \u2014 Darts hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Darts/15",
+     "read_at": "2026-10-24T17:18Z",
+     "status": "read",
+     "what": "Five match cards and two outrights; the PDC hub itself returned a consent shell."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "HB01",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "competition": "Liga ASOBAL",
+   "home": "BM Granollers",
+   "away": "Angel Ximenez Puente Genil",
+   "start_utc": "2026-10-25T11:30:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Fixture listed by OLBG; the EHF and HBL routes did not return a fixture table."
+   ],
+   "sources": [
+    {
+     "id": "olbg-handball",
+     "name": "OLBG \u2014 Handball hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Handball/20",
+     "read_at": "2026-10-24T17:27Z",
+     "status": "read",
+     "what": "Thirteen cards across the HBL and Champions League; the official routes returned 404 or reCAPTCHA."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "HB02",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "competition": "Handball-Bundesliga",
+   "home": "Rhein-Neckar L\u00f6wen",
+   "away": "SC Magdeburg",
+   "start_utc": "2026-10-25T14:00:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Fixture listed by OLBG; the HBL route was behind a reCAPTCHA challenge."
+   ],
+   "sources": [
+    {
+     "id": "olbg-handball",
+     "name": "OLBG \u2014 Handball hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Handball/20",
+     "read_at": "2026-10-24T17:27Z",
+     "status": "read",
+     "what": "Thirteen cards across the HBL and Champions League; the official routes returned 404 or reCAPTCHA."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "HB03",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "competition": "Liga ASOBAL",
+   "home": "BM Torrelavega",
+   "away": "BM Proin",
+   "start_utc": "2026-10-25T17:00:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Fixture listed by OLBG; no official fixture page was read."
+   ],
+   "sources": [
+    {
+     "id": "olbg-handball",
+     "name": "OLBG \u2014 Handball hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Handball/20",
+     "read_at": "2026-10-24T17:27Z",
+     "status": "read",
+     "what": "Thirteen cards across the HBL and Champions League; the official routes returned 404 or reCAPTCHA."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "HB04",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "competition": "Liqui Moly StarLigue",
+   "home": "Saint-Rapha\u00ebl",
+   "away": "Paris Saint-Germain Handball",
+   "start_utc": "2026-10-25T15:00:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Fixture listed by OLBG; no official fixture page was read."
+   ],
+   "sources": [
+    {
+     "id": "olbg-handball",
+     "name": "OLBG \u2014 Handball hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Handball/20",
+     "read_at": "2026-10-24T17:27Z",
+     "status": "read",
+     "what": "Thirteen cards across the HBL and Champions League; the official routes returned 404 or reCAPTCHA."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "HB05",
+   "sport": "handball",
+   "sport_name": "Handball",
+   "competition": "EHF Champions League",
+   "home": "KS Kielce",
+   "away": "Kolstad",
+   "start_utc": "2026-10-28T17:45:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Fixture listed by OLBG; the EHF matches route returned 404."
+   ],
+   "sources": [
+    {
+     "id": "olbg-handball",
+     "name": "OLBG \u2014 Handball hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Handball/20",
+     "read_at": "2026-10-24T17:27Z",
+     "status": "read",
+     "what": "Thirteen cards across the HBL and Champions League; the official routes returned 404 or reCAPTCHA."
+    },
+    {
+     "id": "ehf",
+     "name": "EHF Champions League \u2014 matches",
+     "url": "https://ehfcl.eurohandball.com/en/matches/",
+     "read_at": "2026-10-24T17:29Z",
+     "status": "failed",
+     "what": "Official route returns 404; no handball fixture data read."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "GA01",
+   "sport": "gaelic-sports",
+   "sport_name": "Gaelic Sports",
+   "competition": "Galway SFC",
+   "home": "Moycullen",
+   "away": "Salthill-Knocknacarra",
+   "start_utc": "2026-10-25T16:00:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Club fixture listed by OLBG; the GAA national fixture hub carried only the 24 October Shinty-Hurling international."
+   ],
+   "sources": [
+    {
+     "id": "olbg-gaelic",
+     "name": "OLBG \u2014 Gaelic Football hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+     "read_at": "2026-10-24T17:31Z",
+     "status": "read",
+     "what": "Four club championship cards with handicap lines, plus the 2027 All-Ireland outright."
+    },
+    {
+     "id": "gaa",
+     "name": "GAA \u2014 official fixtures and results",
+     "url": "https://www.gaa.ie/fixtures-results",
+     "read_at": "2026-10-24T17:31Z",
+     "status": "read",
+     "what": "24 October inter-county listing: Shinty-Hurling international, Ireland v Scotland, 18:00, SuperValu P\u00e1irc U\u00ed Chaoimh."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "GA02",
+   "sport": "gaelic-sports",
+   "sport_name": "Gaelic Sports",
+   "competition": "Cork SFC",
+   "home": "St Finbarr's",
+   "away": "Nemo Rangers",
+   "start_utc": "2026-10-25T16:00:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Club fixture listed by OLBG; no official county-board page was read."
+   ],
+   "sources": [
+    {
+     "id": "olbg-gaelic",
+     "name": "OLBG \u2014 Gaelic Football hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+     "read_at": "2026-10-24T17:31Z",
+     "status": "read",
+     "what": "Four club championship cards with handicap lines, plus the 2027 All-Ireland outright."
+    },
+    {
+     "id": "gaa",
+     "name": "GAA \u2014 official fixtures and results",
+     "url": "https://www.gaa.ie/fixtures-results",
+     "read_at": "2026-10-24T17:31Z",
+     "status": "read",
+     "what": "24 October inter-county listing: Shinty-Hurling international, Ireland v Scotland, 18:00, SuperValu P\u00e1irc U\u00ed Chaoimh."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "GA03",
+   "sport": "gaelic-sports",
+   "sport_name": "Gaelic Sports",
+   "competition": "Cork SFC",
+   "home": "Kanturk",
+   "away": "\u00c9ire \u00d3g",
+   "start_utc": "2026-11-01T14:00:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Club fixture listed by OLBG; no official county-board page was read."
+   ],
+   "sources": [
+    {
+     "id": "olbg-gaelic",
+     "name": "OLBG \u2014 Gaelic Football hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+     "read_at": "2026-10-24T17:31Z",
+     "status": "read",
+     "what": "Four club championship cards with handicap lines, plus the 2027 All-Ireland outright."
+    },
+    {
+     "id": "gaa",
+     "name": "GAA \u2014 official fixtures and results",
+     "url": "https://www.gaa.ie/fixtures-results",
+     "read_at": "2026-10-24T17:31Z",
+     "status": "read",
+     "what": "24 October inter-county listing: Shinty-Hurling international, Ireland v Scotland, 18:00, SuperValu P\u00e1irc U\u00ed Chaoimh."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "GA04",
+   "sport": "gaelic-sports",
+   "sport_name": "Gaelic Sports",
+   "competition": "Limerick SFC",
+   "home": "Fr Caseys",
+   "away": "Kildimo Pallaskenry",
+   "start_utc": "2026-11-01T15:30:00Z",
+   "start_note": "Time from the OLBG card.",
+   "venue": "",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Club fixture listed by OLBG; no official county-board page was read."
+   ],
+   "sources": [
+    {
+     "id": "olbg-gaelic",
+     "name": "OLBG \u2014 Gaelic Football hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+     "read_at": "2026-10-24T17:31Z",
+     "status": "read",
+     "what": "Four club championship cards with handicap lines, plus the 2027 All-Ireland outright."
+    },
+    {
+     "id": "gaa",
+     "name": "GAA \u2014 official fixtures and results",
+     "url": "https://www.gaa.ie/fixtures-results",
+     "read_at": "2026-10-24T17:31Z",
+     "status": "read",
+     "what": "24 October inter-county listing: Shinty-Hurling international, Ireland v Scotland, 18:00, SuperValu P\u00e1irc U\u00ed Chaoimh."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "GH01",
+   "sport": "greyhounds",
+   "sport_name": "Greyhounds",
+   "competition": "Monmore Green",
+   "home": "Crossfield Jess",
+   "away": "Monmore 20:54",
+   "start_utc": "2026-10-24T19:54:00Z",
+   "start_note": "Race time 8:54pm UK, shown as 15:54 ET by OLBG.",
+   "venue": "Monmore Green",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Runner listed by OLBG; GBGB publishes results rather than a forward card on the route read."
+   ],
+   "sources": [
+    {
+     "id": "olbg-greyhounds",
+     "name": "OLBG \u2014 Greyhounds hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+     "read_at": "2026-10-24T17:34Z",
+     "status": "read",
+     "what": "Daily race cards for Newcastle, Star Pelaw, Central Park, Doncaster, Monmore and Dunstall Park."
+    },
+    {
+     "id": "gbgb",
+     "name": "Greyhound Board of Great Britain \u2014 racing hub",
+     "url": "https://www.gbgb.org.uk/racing/",
+     "read_at": "2026-10-24T17:34Z",
+     "status": "read",
+     "what": "Results search and race reports. No forward race card with runners is published on this route."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "GH02",
+   "sport": "greyhounds",
+   "sport_name": "Greyhounds",
+   "competition": "Monmore Green",
+   "home": "Skylars Vision",
+   "away": "Monmore 21:14",
+   "start_utc": "2026-10-24T20:14:00Z",
+   "start_note": "Race time 9:14pm UK, shown as 16:14 ET by OLBG.",
+   "venue": "Monmore Green",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Runner listed by OLBG; no official form or trap draw was read."
+   ],
+   "sources": [
+    {
+     "id": "olbg-greyhounds",
+     "name": "OLBG \u2014 Greyhounds hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+     "read_at": "2026-10-24T17:34Z",
+     "status": "read",
+     "what": "Daily race cards for Newcastle, Star Pelaw, Central Park, Doncaster, Monmore and Dunstall Park."
+    },
+    {
+     "id": "gbgb",
+     "name": "Greyhound Board of Great Britain \u2014 racing hub",
+     "url": "https://www.gbgb.org.uk/racing/",
+     "read_at": "2026-10-24T17:34Z",
+     "status": "read",
+     "what": "Results search and race reports. No forward race card with runners is published on this route."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "GH03",
+   "sport": "greyhounds",
+   "sport_name": "Greyhounds",
+   "competition": "Dunstall Park",
+   "home": "Avarua Lake",
+   "away": "Dunstall Park 21:18",
+   "start_utc": "2026-10-24T20:18:00Z",
+   "start_note": "Race time 9:18pm UK, shown as 16:18 ET by OLBG.",
+   "venue": "Dunstall Park",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Runner listed by OLBG; no official form or trap draw was read."
+   ],
+   "sources": [
+    {
+     "id": "olbg-greyhounds",
+     "name": "OLBG \u2014 Greyhounds hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+     "read_at": "2026-10-24T17:34Z",
+     "status": "read",
+     "what": "Daily race cards for Newcastle, Star Pelaw, Central Park, Doncaster, Monmore and Dunstall Park."
+    },
+    {
+     "id": "gbgb",
+     "name": "Greyhound Board of Great Britain \u2014 racing hub",
+     "url": "https://www.gbgb.org.uk/racing/",
+     "read_at": "2026-10-24T17:34Z",
+     "status": "read",
+     "what": "Results search and race reports. No forward race card with runners is published on this route."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  },
+  {
+   "id": "GH04",
+   "sport": "greyhounds",
+   "sport_name": "Greyhounds",
+   "competition": "Dunstall Park",
+   "home": "Greenwell Gypsy",
+   "away": "Dunstall Park 22:14",
+   "start_utc": "2026-10-24T21:14:00Z",
+   "start_note": "Race time 10:14pm UK, shown as 17:14 ET by OLBG.",
+   "venue": "Dunstall Park",
+   "status": "olbg_only",
+   "facts": {},
+   "flags": [
+    "Runner listed by OLBG; no official form or trap draw was read."
+   ],
+   "sources": [
+    {
+     "id": "olbg-greyhounds",
+     "name": "OLBG \u2014 Greyhounds hub (discovery)",
+     "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+     "read_at": "2026-10-24T17:34Z",
+     "status": "read",
+     "what": "Daily race cards for Newcastle, Star Pelaw, Central Park, Doncaster, Monmore and Dunstall Park."
+    },
+    {
+     "id": "gbgb",
+     "name": "Greyhound Board of Great Britain \u2014 racing hub",
+     "url": "https://www.gbgb.org.uk/racing/",
+     "read_at": "2026-10-24T17:34Z",
+     "status": "read",
+     "what": "Results search and race reports. No forward race card with runners is published on this route."
+    }
+   ],
+   "priced": false,
+   "pick": null,
+   "high": null,
+   "markets": []
+  }
+ ]
+}
