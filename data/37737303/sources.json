@@ -1,0 +1,286 @@
+{
+ "generated_at": "2026-10-24T22:35:13Z",
+ "read_at": "2026-10-24T22:35:00Z",
+ "sources": [
+  {
+   "id": "mlb-statsapi-schedule",
+   "kind": "official",
+   "publisher": "Major League Baseball",
+   "title": "MLB Stats API schedule, 24 October 2026 (World Series Game 2)",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-24&hydrate=probablePitcher,team",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "One game returned: Rays at Brewers, gamePk 849802, first pitch 2026-10-25T00:00Z, American Family Field, probable pitchers Drew Rasmussen (TB) and Logan Henderson (MIL)."
+  },
+  {
+   "id": "nhl-standings",
+   "kind": "official",
+   "publisher": "National Hockey League",
+   "title": "NHL standings for 24 October 2026",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-24",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Club records, home/road splits and last-ten form for every club; read to the end of the page blocks that were returned (Carolina, Edmonton, Boston, Vegas, Seattle, Rangers, Tampa Bay, Utah, Minnesota)."
+  },
+  {
+   "id": "nhl-schedule",
+   "kind": "official",
+   "publisher": "National Hockey League",
+   "title": "NHL schedule for 24 October 2026",
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-24",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Twelve games listed. San Jose at Boston (2026-10-24T23:00Z, TD Garden) and Rangers at Ottawa (2026-10-24T23:00Z, Canadian Tire Centre) were read in full."
+  },
+  {
+   "id": "atp-scores",
+   "kind": "official",
+   "publisher": "ATP Tour",
+   "title": "ATP Tour live scores and completed semi-finals",
+   "url": "https://www.atptour.com/en/scores/current",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Semi-finals read: Medvedev beat Bublik 6-3 0-0 ret.; Basilashvili beat Tsitsipas 6-4 6-7(5) 6-3; Musetti beat Cobolli 4-6 6-2 7-5; Fritz beat Paul 6-3 7-5."
+  },
+  {
+   "id": "ehf-cl-matches",
+   "kind": "official",
+   "publisher": "European Handball Federation",
+   "title": "EHF Champions League men 2026-27 match schedule",
+   "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "28 and 29 October fixtures read, including Magdeburg v Kriens-Luzern and Kielce v Kolstad."
+  },
+  {
+   "id": "gaa-fixtures",
+   "kind": "official",
+   "publisher": "Gaelic Athletic Association",
+   "title": "GAA fixtures and results, October 2026",
+   "url": "https://www.gaa.ie/fixtures-results",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Only the 24 October Shinty-Hurling international was listed; no club football final was published here."
+  },
+  {
+   "id": "wst-matches",
+   "kind": "official",
+   "publisher": "World Snooker Tour",
+   "title": "WST matches — BetVictor Northern Ireland Open 2026",
+   "url": "https://www.wst.tv/matches/",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Round-one results from 18-19 October were readable; the current-day session was not returned."
+  },
+  {
+   "id": "olbg-tennis",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Tennis hub",
+   "url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Fifteen-plus upcoming matches listed with the crowd's most-tipped selection."
+  },
+  {
+   "id": "olbg-basketball",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Basketball hub",
+   "url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Seven NBA games plus three Korean KBL games."
+  },
+  {
+   "id": "olbg-golf",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Golf hub",
+   "url": "https://www.olbg.com/betting-tips/Golf/5",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "'No tips found': no golf market carried an open tip when the hub was read."
+  },
+  {
+   "id": "olbg-cricket",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Cricket hub",
+   "url": "https://www.olbg.com/betting-tips/Cricket/7",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Ten match markets plus four outrights."
+  },
+  {
+   "id": "olbg-snooker",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Snooker hub",
+   "url": "https://www.olbg.com/betting-tips/Snooker/8",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "'No tips found'."
+  },
+  {
+   "id": "olbg-rugby-union",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Rugby Union hub",
+   "url": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Three match markets plus the 2027 Six Nations outright."
+  },
+  {
+   "id": "olbg-rugby-league",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Rugby League hub",
+   "url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Outrights only; no match market open."
+  },
+  {
+   "id": "olbg-baseball",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Baseball hub",
+   "url": "https://www.olbg.com/betting-tips/Baseball/12",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "One game: Rays at Brewers."
+  },
+  {
+   "id": "olbg-ice-hockey",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Ice Hockey hub",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Ten NHL games plus Swiss, German and Austrian club fixtures."
+  },
+  {
+   "id": "olbg-motor-racing",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Motor Racing hub",
+   "url": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "'No tips found'."
+  },
+  {
+   "id": "olbg-darts",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Darts hub",
+   "url": "https://www.olbg.com/betting-tips/Darts/15",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Two match markets plus European Championship and World Championship outrights."
+  },
+  {
+   "id": "olbg-handball",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Handball hub",
+   "url": "https://www.olbg.com/betting-tips/Handball/20",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Fifteen-plus club and international fixtures."
+  },
+  {
+   "id": "olbg-volleyball",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Volleyball hub",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Fifteen-plus club fixtures across Italy, Poland, Turkey, Germany and Brazil."
+  },
+  {
+   "id": "olbg-gaelic",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Gaelic Football hub",
+   "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Four club fixtures plus the 2027 All-Ireland outright."
+  },
+  {
+   "id": "olbg-greyhounds",
+   "kind": "discovery",
+   "publisher": "OLBG",
+   "title": "OLBG Greyhounds hub",
+   "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+   "status": "read",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "One race carried an open tip: 11:04 Doncaster."
+  },
+  {
+   "id": "nba-scoreboard",
+   "kind": "official",
+   "publisher": "National Basketball Association",
+   "title": "NBA today's scoreboard feed",
+   "url": "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json",
+   "status": "blocked",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "HTTP 500 on every attempt; no NBA record could be read."
+  },
+  {
+   "id": "pdc-european",
+   "kind": "official",
+   "publisher": "Professional Darts Corporation",
+   "title": "Machineseeker European Championship",
+   "url": "https://www.pdc.tv/tournaments/machineseeker-european-championship",
+   "status": "blocked",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Cookie-consent wall returned instead of page content."
+  },
+  {
+   "id": "wta-scores",
+   "kind": "official",
+   "publisher": "Women's Tennis Association",
+   "title": "WTA scores",
+   "url": "https://www.wtatennis.com/scores",
+   "status": "blocked",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Navigation shell only; match data is rendered client-side and was not returned."
+  },
+  {
+   "id": "legavolley",
+   "kind": "official",
+   "publisher": "Lega Pallavolo Serie A",
+   "title": "SuperLega standings",
+   "url": "https://www.legavolley.it/classifiche/",
+   "status": "blocked",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "'Pagina non trovata' — the standings route returns 404; only the site map rendered."
+  },
+  {
+   "id": "cork-gaa",
+   "kind": "official",
+   "publisher": "Cork GAA",
+   "title": "Cork GAA fixtures and results",
+   "url": "https://gaacork.ie/corkpps/fixtures-results/",
+   "status": "blocked",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Redirected to the post-primary schools hub; no senior football final listed."
+  },
+  {
+   "id": "euroleague",
+   "kind": "official",
+   "publisher": "EuroLeague Basketball",
+   "title": "EuroLeague 2026-27 schedule feed",
+   "url": "https://api-live.euroleague.net/v1/schedules?seasonCode=E2026&limit=20",
+   "status": "read-partial",
+   "read_at": "2026-10-24T22:35:00Z",
+   "note": "Returned rounds 1-6 as unlabelled rows; no round-7/8 fixture inside the desk window could be read."
+  }
+ ]
+}
