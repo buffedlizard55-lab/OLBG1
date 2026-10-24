@@ -153,8 +153,10 @@ def validate() -> list[str]:
         errors.append("no HTML pages generated")
     for page in pages:
         text = page.read_text(encoding="utf-8")
-        for href in re.findall(r'href="([^"#:]+\.html)(?:#[^"]*)?"', text):
-            target = (page.parent / href).resolve()
+        for href in re.findall(r'(?:href|src)="([^"#:]+)"', text):
+            if not href or href.startswith(("#", "http", "mailto", "data:")):
+                continue
+            target = (page.parent / href.split("#")[0]).resolve()
             if not target.exists():
                 errors.append(f"{page.relative_to(ROOT)}: broken link {href}")
         if "<script" in text:

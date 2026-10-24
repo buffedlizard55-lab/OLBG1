@@ -379,7 +379,7 @@ def main() -> None:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)} · OLBG Research Desk · {DESK_DATE}</title>
 <meta name="description" content="Independent, source-linked OLBG match research. Every row links to an official source; blanks are unverified.">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="{prefix}assets/style.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
