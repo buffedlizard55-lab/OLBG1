@@ -76,6 +76,12 @@ for slug, name, _, _ in SPORTS:
         high=[h for h in HIGH if h["fixture"]["sport"] == slug],
     )
 
+SPORTS_ON_TARGET = [s for s in BY_SPORT if len(BY_SPORT[s]["high"]) >= TARGET_PER_SPORT]
+SHORT = [s for s in BY_SPORT if 0 < len(BY_SPORT[s]["high"]) < TARGET_PER_SPORT]
+ZERO_HIGH = [s for s in BY_SPORT if not BY_SPORT[s]["high"]]
+BELOW_TARGET = [s for s in BY_SPORT if len(BY_SPORT[s]["high"]) < TARGET_PER_SPORT]
+NO_EVENTS = [s for s in BY_SPORT if not BY_SPORT[s]["fixtures"]]
+
 SPORT_REASON = {
     "ice-hockey": "Two NHL rows lack one opponent's record, so they carry no price; four further rows are priced.",
     "basketball": "All five NBA rows are priced from official standings; every High line is a handicap.",
@@ -122,7 +128,7 @@ DESK_FLAGS = [
      "The brief asks for High confidence above 70% and a fair price between -250 and +10000. A -250 fair price is 71.43%, so any selection above that is excluded by the price rule. Lines are therefore originated at the 70.1-71.3% quantile, and every High price prints between -235 and -248. This is disclosed rather than hidden.",
      "high"),
     ("F-3700-02", "Quota of five High picks per sport is not reached",
-     "Ten High selections exist across four sports. Nine sports have none. The reasons are per-sport: no OLBG event card (golf, rugby league match markets), blocked or missing official data (darts, handball), too few events (baseball, tennis), or the official fixture set not matching the OLBG card (cricket). No pick was invented to fill a quota.",
+     f"{len(HIGH)} High selections exist across {len({h['fixture']['sport'] for h in HIGH})} sports. {len(ZERO_HIGH)} sports have none. The reasons are per-sport: no OLBG event card (golf), blocked or missing official data (darts, handball), too few events (baseball, tennis, motor racing), or the official fixture set not matching the OLBG card (cricket). No pick was invented to fill a quota.",
      "high"),
     ("F-3700-03", "Kick-off timezone unresolved for two Rugby League rows",
      "NRL.com lists New Zealand v Cook Islands at 1:05am and Australia v Fiji at 5:05am on Sunday 25 October without stating the timezone. The UTC cell is left blank on both rows rather than guessed.",
@@ -403,7 +409,7 @@ write-up for each selection is on <a style="color:#fff;text-decoration:underline
 </section>
 
 <section class="card"><h2>Where everything lives</h2>
-<p class="sub">Five destinations, in the order most people need them.</p>
+<p class="sub">Six destinations, in the order most people need them.</p>
 <div class="grid">
 <div class="nav-card"><h3>The picks</h3><p>Every High selection and every match-winner call, with price and probability.</p><a href="picks.html">Open picks →</a></div>
 <div class="nav-card"><h3>The write-ups</h3><p>One unique passage per High selection, with the official facts underneath.</p><a href="predictions.html">Open write-ups →</a></div>
@@ -416,7 +422,7 @@ write-up for each selection is on <a style="color:#fff;text-decoration:underline
 <section class="card"><h2>Coverage against the five-per-sport target</h2>
 <p class="sub">The target is five High selections per sport. This table states, per sport, what was found and why a shortfall exists.</p>
 {table([("Sport", ""), ("Fixtures", "num"), ("High", "num"), ("Target", "num"), ("State", ""), ("Reason / note", "")], cov)}
-<div class="note"><strong>Read this before the counts.</strong> Nine sports fall short because the platform or the official route did not provide what a priced pick needs: an event card, a draw, a table or a rule set. The shortfall is published, not padded. Golf has zero events because OLBG itself returned “No tips found”.</div>
+<div class="note"><strong>Read this before the counts.</strong> {len(BELOW_TARGET)} sports fall short of five because the platform or the official route did not provide what a priced pick needs: an event card, a draw, a table or a rule set. {len(ZERO_HIGH)} sports carry no High selection at all. The shortfall is published, not padded. Golf has zero events because OLBG itself returned “No tips found”.</div>
 </section>
 
 <section class="card"><h2>How to read a pick</h2>
