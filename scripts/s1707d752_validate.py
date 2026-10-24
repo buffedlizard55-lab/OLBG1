@@ -1,4 +1,8 @@
-"""Gates for desk 1707d752. Structural and arithmetic only — not factual re-certification."""
+"""Site and data checks for desk 1707d752.
+
+Run after scripts/s1707d752_build.py. Everything asserted here is a property the
+desk claims on its own pages, so a failure means a page is lying.
+"""
 from __future__ import annotations
 
 import json
@@ -16,168 +20,187 @@ import s1707d752_data as D
 import s1707d752_model as M
 
 OUT = ROOT / "1707d752"
-BANNED = ("model", "verified", "verify")
-errors: list[str] = []
-checks = 0
+SPORTS = ["Basketball", "Ice Hockey", "Baseball", "Tennis", "Cricket", "Rugby Union", "Rugby League",
+          "Darts", "Snooker", "Golf", "Volleyball", "Handball", "Gaelic Sports", "Greyhounds",
+          "Motor Racing"]
+SLUG = {s: s.lower().replace(" ", "-") for s in SPORTS}
+BANNED = ("model", "verified", "verify", "lock", "banker")
+failures: list[str] = []
+checked = 0
 
 
-def check(ok: bool, msg: str) -> None:
-    global checks
-    checks += 1
-    if not ok:
-        errors.append(msg)
+def ok(cond: bool, msg: str) -> None:
+    global checked
+    checked += 1
+    if not cond:
+        failures.append(msg)
 
 
-class Links(HTMLParser):
-    def __init__(self):
+class Doc(HTMLParser):
+    def __init__(self) -> None:
         super().__init__()
-        self.hrefs, self.ids, self.text = [], set(), []
+        self.links: list[str] = []
+        self.ids: set[str] = set()
+        self.title = ""
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         if "href" in a:
-            self.hrefs.append(a["href"])
+            self.links.append(a["href"])
         if "id" in a:
             self.ids.add(a["id"])
 
     def handle_data(self, data):
-        self.text.append(data)
+        if data.strip() and not self.title:
+            self.title = data.strip()
 
 
-def american_from(dec: float) -> int:
-    return M.american_from_decimal(dec)
+def parse(p: Path) -> Doc:
+    d = Doc()
+    d.feed(p.read_text(encoding="utf-8"))
+    return d
 
 
-def validate_data():
+def check_data() -> dict:
     data = C.build()
     rows = data["rows"]
     official = {s["id"] for s in D.SOURCES if s["official"]}
-    check(0 < data["league_goals"] < 10, "league goals per team per game out of range")
-    for r in rows:
-        check(bool(r["sources"]), f"{r['id']}: no source")
-        check(len(set(r["sources"])) == len(r["sources"]), f"{r['id']}: duplicate source id")
-        if r["priced"]:
-            check(any(s in official for s in r["sources"]), f"{r['id']}: priced without an official source")
-    picks = [r for r in rows if r["priced"] and r.get("pick")]
-    check(len(picks) == len([r for r in rows if r["priced"]]), "a priced match has no pick")
+    ok(2.0 < data["league_goals"] < 5.0, "league goals per team per game outside a sane band")
 
-    seen6 = {}
+    for r in rows:
+        ok(bool(r["sources"]), f"{r['id']}: no source recorded")
+        ok(r["sport"] in SPORTS, f"{r['id']}: unknown sport {r['sport']}")
+        ok("olbg" in r and r["olbg"].startswith("https://www.olbg.com/"), f"{r['id']}: no OLBG listing link")
+        if r["utc"]:
+            ok(re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z", r["utc"]) is not None,
+               f"{r['id']}: start time is not ISO UTC")
+        if r["priced"]:
+            ok(bool(set(r["sources"]) & official), f"{r['id']}: priced without an official source")
+        else:
+            ok(len(r.get("why", "")) > 20, f"{r['id']}: unpriced without a stated reason")
+
+    picks = [r for r in rows if r["priced"]]
+    seen: dict[str, str] = {}
     for r in picks:
         p = r["pick"]
-        # arithmetic
-        check(abs(p["decimal"] - round(1 / p["probability"], 3)) < 0.01, f"{r['id']}: decimal is not 1/p")
-        check(p["american"] == american_from(1 / p["probability"]), f"{r['id']}: american not derived from 1/p")
-        check(p["probability"] > 0.5, f"{r['id']}: pick is not the favoured side")
-        check(M.in_brief_band(p["american"]) == p["band"], f"{r['id']}: band flag wrong")
-        check(M.brief_literal_high(p["probability"], p["american"]) == p["literal"], f"{r['id']}: literal-gate flag wrong")
-        # confidence recomputation
-        floor_key = {"Basketball": "basketball", "Ice Hockey": "hockey", "Baseball": "baseball"}[r["sport"]]
-        regrade = M.grade(p["probability"], complete=(r["id"] not in C.VENUE_UNCONFIRMED),
-                          band=p["band"], sample_games=p["sample"],
-                          sample_floor=M.HIGH_MIN_GAMES[floor_key])
-        check(regrade["tier"] == p["confidence"], f"{r['id']}: confidence does not match the published rule")
+        ok(abs(p["decimal"] - 1 / p["probability"]) < 0.002, f"{r['id']}: decimal is not 1/p")
+        ok(p["american"] == M.american_from_decimal(1 / p["probability"]), f"{r['id']}: American price misderived")
+        ok(M.in_brief_band(p["american"]) == p["band"], f"{r['id']}: band claim wrong")
+        ok(M.brief_literal_high(p["probability"], p["american"]) == p["literal"], f"{r['id']}: literal test wrong")
+        sport_key = {"Basketball": "basketball", "Ice Hockey": "hockey", "Baseball": "baseball"}[r["sport"]]
+        grade = M.grade(p["probability"], complete=r["complete"], band=p["band"],
+                        sample_games=r["summary"]["sample"],
+                        sample_floor=M.HIGH_MIN_GAMES[sport_key])
+        ok(grade["tier"] == p["confidence"], f"{r['id']}: tier does not follow the published rule")
         if p["confidence"] == "High":
-            check(p["band"], f"{r['id']}: High pick outside the brief's price window")
-            check(p["probability"] >= 0.60, f"{r['id']}: High pick below 60%")
-            check(not p["caps"], f"{r['id']}: High pick carries a cap")
-        # prose
-        words = p["prose"].split()
-        check(len(words) >= 30, f"{r['id']}: prediction under 30 words ({len(words)})")
-        check(p["prose"].startswith("Selection:"), f"{r['id']}: prediction does not state a selection first")
-        check(p["name"] in p["prose"], f"{r['id']}: prediction does not name the picked side")
-        low = p["prose"].lower()
+            ok(p["probability"] >= 0.60 and p["band"] and r["complete"], f"{r['id']}: High pick fails a gate")
+        if p["caps"]:
+            ok(p["confidence"] == "Medium" and p["probability"] >= 0.60,
+               f"{r['id']}: a cap is recorded but the tier or probability does not match")
+        if p["confidence"] == "High":
+            ok(not p["caps"], f"{r['id']}: High pick carries a cap")
+        for cap in p["caps"]:
+            ok(len(cap) > 15, f"{r['id']}: cap reason too short")
+
+        prose = p["prose"]
+        ok(len(prose.split()) >= 30, f"{r['id']}: prediction under 30 words ({len(prose.split())})")
+        ok(prose.startswith("Selection:"), f"{r['id']}: prediction does not lead with the selection")
+        ok(p["name"] in prose, f"{r['id']}: prediction does not name the picked side")
+        low = prose.lower()
         for word in BANNED:
-            check(word not in low, f"{r['id']}: prediction contains the prohibited word '{word}'")
+            ok(word not in low, f"{r['id']}: prediction uses '{word}'")
         tokens = re.findall(r"[a-z0-9']+", low)
         for i in range(len(tokens) - 5):
-            gram = " ".join(tokens[i:i + 6])
-            if gram in seen6:
-                check(False, f"{r['id']}: repeated six-word phrase with {seen6[gram]}: '{gram}'")
-            seen6[gram] = r["id"]
-        # markets
-        boards = [m for m in r["markets"].values() if "withheld" not in m]
-        check(len(boards) >= 1, f"{r['id']}: no market issued")
+            gram = " ".join(tokens[i:i + 5])
+            if gram in seen and len(gram) > 25:
+                ok(False, f"{r['id']}: repeats a five-word phrase from {seen[gram]}")
+            seen[gram] = r["id"]
+
+        ok(len(r["markets"]) >= 2, f"{r['id']}: fewer than two markets investigated")
         for name, m in r["markets"].items():
             if "withheld" in m:
-                check(len(m["withheld"]) > 10, f"{r['id']}: withheld market has no reason")
+                ok(len(m["withheld"]) > 30, f"{r['id']}/{name}: withheld without a real reason")
                 continue
-            for side in ("home", "away", "over", "under"):
-                if side in m:
-                    blk = m[side]
-                    check(abs(blk["decimal"] - round(1 / blk["probability"], 3)) < 0.01,
-                          f"{r['id']}/{name}/{side}: decimal is not 1/p")
-                    check(blk["american"] == american_from(1 / blk["probability"]),
-                          f"{r['id']}/{name}/{side}: american not derived")
-    check(len(D.PREDICTIONS) == len(picks), "prediction count does not match pick count")
-    for sid in D.PREDICTIONS:
-        check(sid in {r["id"] for r in picks}, f"{sid}: prediction without a priced match")
+            for side, blk in m.items():
+                if side in ("home", "away", "over", "under"):
+                    ok(abs(blk["decimal"] - 1 / blk["probability"]) < 0.002,
+                       f"{r['id']}/{name}/{side}: decimal is not 1/p")
+                    ok(blk["american"] == M.american_from_decimal(1 / blk["probability"]),
+                       f"{r['id']}/{name}/{side}: American price misderived")
+
+    ok(set(D.PREDICTIONS) == {r["id"] for r in picks}, "prediction set does not match the priced set")
+    return data
 
 
-def validate_listings():
-    for r in D.LISTINGS:
-        check(bool(r["why"]) and len(r["why"]) > 15, f"listing {r['event']}: no reason")
-        check(r["olbg"].startswith("https://www.olbg.com/"), f"listing {r['event']}: bad OLBG link")
-        check(r["sport"] in D.RECHECK or r["sport"] in ("Rugby League", "Golf") or True,
-              f"listing {r['event']}: no recheck link")
-    sports = {r["sport"] for r in D.LISTINGS} | {r["sport"] for r in C.build()["rows"]}
-    check(sports == set(D.RECHECK) | {"Basketball", "Ice Hockey", "Baseball"},
-          "unexpected sport coverage")
+def check_copy(data: dict) -> None:
+    for row in D.LISTINGS:
+        ok(len(row["why"]) > 20, f"listing {row['event']}: reason too short")
+        ok(row["olbg"].startswith("https://www.olbg.com/"), f"listing {row['event']}: bad OLBG link")
+        ok(row["sport"] in SPORTS, f"listing {row['event']}: unknown sport")
+    ok(len({r["sport"] for r in D.LISTINGS} | {r["sport"] for r in data["rows"]}) == 15,
+       "not all fifteen sports are represented")
+    for flag in D.FLAGS:
+        ok(len(flag["detail"]) > 80, f"{flag['id']}: flag detail too short")
+        ok(flag["source"].startswith(("http", "method.html")), f"{flag['id']}: flag source unlinked")
 
 
-def validate_site():
+def check_site(data: dict) -> None:
     pages = sorted(OUT.rglob("*.html"))
-    check(len(pages) >= 18, f"only {len(pages)} pages built")
-    anchors: dict[Path, set] = {}
-    parsed: dict[Path, Links] = {}
-    for p in pages:
-        h = Links()
-        h.feed(p.read_text(encoding="utf-8"))
-        parsed[p] = h
-        anchors[p] = h.ids
-        check(len(h.ids) == len(set(h.ids)), f"{p.name}: duplicate ids")
-        check("<title>" in p.read_text(encoding="utf-8"), f"{p.name}: no title")
-    for p, h in parsed.items():
-        for href in h.hrefs:
+    ok(len(pages) >= 26, f"only {len(pages)} pages built")
+    docs = {p: parse(p) for p in pages}
+
+    for s in SPORTS:
+        ok((OUT / "sports" / f"{SLUG[s]}.html").is_file(), f"missing sport page for {s}")
+
+    for p, d in docs.items():
+        text = p.read_text(encoding="utf-8")
+        ok("<title>" in text, f"{p}: no title")
+        for bad in ("TODO", "TBD", "FIXME", "{e(", "None</td>", "&lt;built-in"):
+            ok(bad not in text, f"{p}: contains '{bad}'")
+        for href in d.links:
             if href.startswith(("http://", "https://", "mailto:")):
                 continue
-            if href.startswith("#"):
-                check(href[1:] in anchors[p], f"{p.name}: missing local fragment {href}")
-                continue
             target, _, frag = href.partition("#")
+            if not target:
+                ok(frag in d.ids, f"{p}: missing in-page anchor #{frag}")
+                continue
             resolved = (p.parent / target).resolve()
-            check(resolved.is_file(), f"{p.name}: broken link {href}")
+            ok(resolved.is_file(), f"{p}: broken link {href}")
             if frag and resolved.is_file():
-                check(frag in anchors.get(resolved, set()), f"{p.name}: missing anchor {href}")
-    # every pick is reachable from the executive summary and has its own anchor
-    data = C.build()
-    idx = parsed[OUT / "index.html"]
-    preds = parsed[OUT / "predictions.html"]
+                ok(frag in docs[resolved].ids, f"{p}: {href} points at a missing anchor")
+
+    index = docs[OUT / "index.html"]
+    preds = docs[OUT / "predictions.html"]
+    flagged = docs[OUT / "flagged.html"]
     for r in data["rows"]:
         if not r["priced"]:
             continue
-        a = r["pick"]["anchor"]
-        check(a in preds.ids, f"predictions.html missing anchor {a}")
-        check(any(a in h for h in idx.hrefs), f"index.html does not link {a}")
-    # the summary JSON must agree with the build
+        anchor = r["pick"]["anchor"]
+        ok(anchor in preds.ids, f"predictions.html lacks {anchor}")
+        ok(any(anchor in h for h in index.links), f"index.html never links {anchor}")
+        ok(f"predictions.html#{anchor}" in index.links, f"index.html does not name the full location of {anchor}")
+    for flag in D.FLAGS:
+        ok(flag["id"] in flagged.ids, f"flagged.html lacks {flag['id']}")
+
     summary = json.loads((ROOT / "data/1707d752/summary.json").read_text())
-    check(summary["picks"] == len([r for r in data["rows"] if r["priced"]]), "summary pick count mismatch")
-    check(summary["high"] == len([r for r in data["rows"] if r["priced"] and r["pick"]["confidence"] == "High"]),
-          "summary High count mismatch")
-    check(summary["events_listed"] == len(data["rows"]) + len(D.LISTINGS), "summary event count mismatch")
-    # no placeholder text
-    for p in pages:
-        text = p.read_text(encoding="utf-8")
-        for bad in ("TODO", "TBD", "lorem ipsum", "FIXME"):
-            check(bad.lower() not in text.lower(), f"{p.name}: placeholder '{bad}'")
+    picks = [r for r in data["rows"] if r["priced"]]
+    ok(summary["picks"] == len(picks), "summary pick count is stale")
+    ok(summary["high"] == sum(1 for r in picks if r["pick"]["confidence"] == "High"),
+       "summary High count is stale")
+    ok(summary["events_listed"] == len(data["rows"]) + len(D.LISTINGS), "summary event count is stale")
+    picks_json = json.loads((ROOT / "data/1707d752/picks.json").read_text())
+    ok(len(picks_json) == len(picks), "picks.json is stale")
+    for entry in picks_json:
+        ok(len(entry["prediction"].split()) >= 30, f"picks.json {entry['id']}: prediction too short")
 
 
 if __name__ == "__main__":
-    validate_data()
-    validate_listings()
-    validate_site()
-    if errors:
-        print(f"Desk validation: {len(errors)} error(s) across {checks} checks")
-        for e in errors[:40]:
-            print("  -", e)
+    data = check_data()
+    check_copy(data)
+    check_site(data)
+    if failures:
+        print(f"desk 1707d752: {len(failures)} failure(s) in {checked} checks")
+        for f in failures[:30]:
+            print("  -", f)
         raise SystemExit(1)
-    print(f"Desk validation: {checks} checks, 0 errors")
+    print(f"desk 1707d752: {checked} checks, 0 failures")

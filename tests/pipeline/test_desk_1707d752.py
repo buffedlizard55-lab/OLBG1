@@ -40,12 +40,22 @@ class Desk1707(unittest.TestCase):
         self.assertFalse(M.brief_literal_high(0.80, -400))
         self.assertTrue(M.brief_literal_high(0.71, -245))
 
+    def test_sample_floors_are_per_sport(self):
+        self.assertEqual(M.HIGH_MIN_GAMES["hockey"], 8)
+        self.assertEqual(M.HIGH_MIN_GAMES["basketball"], 20)
+        self.assertGreaterEqual(M.HIGH_MIN_GAMES["baseball"], 60)
+
     def test_high_tier_requires_every_condition(self):
-        self.assertEqual(M.grade(0.65, complete=True, band=True, sample_games=20, sample_floor=8)["tier"], "High")
+        g = M.grade(0.65, complete=True, band=True, sample_games=20, sample_floor=8)
+        self.assertEqual(g["tier"], "High")
+        self.assertEqual(g["caps"], [])
         self.assertEqual(M.grade(0.65, complete=True, band=False, sample_games=20, sample_floor=8)["tier"], "Medium")
         self.assertEqual(M.grade(0.65, complete=False, band=True, sample_games=20, sample_floor=8)["tier"], "Medium")
-        self.assertNotEqual(M.grade(0.65, complete=True, band=True, sample_games=2, sample_floor=20)["tier"], "High")
+        thin = M.grade(0.65, complete=True, band=True, sample_games=2, sample_floor=20)
+        self.assertEqual(thin["tier"], "Medium")
+        self.assertTrue(thin["caps"])
         self.assertEqual(M.grade(0.52, complete=True, band=True, sample_games=20, sample_floor=8)["tier"], "Low")
+        self.assertEqual(M.grade(0.40, complete=True, band=True, sample_games=20, sample_floor=8)["tier"], "Low")
 
     def test_every_priced_match_has_an_official_source(self):
         official = {s["id"] for s in D.SOURCES if s["official"]}
@@ -87,6 +97,19 @@ class Desk1707(unittest.TestCase):
         for rel in ("picks.html", "matches.html", "markets.html", "coverage.html",
                     "flagged.html", "sources.html", "method.html", "repo-review.html"):
             self.assertTrue((OUT / rel).is_file(), rel)
+
+    def test_start_times_are_iso_utc_or_declared_missing(self):
+        for r in self.rows:
+            self.assertTrue(r["utc"] is None or re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z", r["utc"]), r["id"])
+        page = (OUT / "matches.html").read_text()
+        self.assertIn("clock unstated", page)
+        self.assertIn("not converted", page)
+
+    def test_no_market_is_issued_without_inputs(self):
+        for r in self.rows:
+            for name, m in r["markets"].items():
+                if "withheld" in m:
+                    self.assertGreater(len(m["withheld"]), 30, f"{r['id']}/{name}")
 
     def test_summary_json_matches_the_build(self):
         summary = json.loads((ROOT / "data/1707d752/summary.json").read_text())

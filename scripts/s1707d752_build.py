@@ -5,6 +5,7 @@ import html
 import json
 import subprocess
 import sys
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -59,6 +60,49 @@ BLOCKERS = {
     "Greyhounds": "No GBGB race card captured; hub clocks do not reconcile.",
     "Motor Racing": "Qualifying had not run; no grid or championship table captured.",
 }
+
+
+ZONES = (("UTC", 0), ("US Pacific", -7), ("US Eastern", -4), ("UK", 1), ("Central Europe", 2))
+ZONE_NOTE = ("US Pacific is PDT (UTC-7), US Eastern is EDT (UTC-4), UK is BST (UTC+1) and Central Europe is "
+             "CEST (UTC+2) on 24-25 October 2026. US zones switch to standard time on 1 November, UK on 25 October.")
+
+
+def _dt(iso: str):
+    return datetime.strptime(iso, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+
+
+def time_stack(r) -> str:
+    """Every zone we can state, from the official UTC start. Never guessed."""
+    if not r.get("utc"):
+        return (f'<div class="small">{e(r["display_time"])}</div>'
+                f'<div class="small mut">as listed by OLBG; the clock is not stated, so nothing is converted</div>')
+    t = _dt(r["utc"])
+    out = [f'<div class="small"><b>{t:%H:%M} UTC</b> · {t:%a %d %b}</div>']
+    for name, off in ZONES[1:]:
+        l = t + timedelta(hours=off)
+        day = "" if l.date() == t.date() else f" <span class='mut'>({l:%a})</span>"
+        out.append(f'<div class="small mut">{name}: {l:%H:%M}{day}</div>')
+    return "".join(out)
+
+
+def short_time(r) -> str:
+    if not r.get("utc"):
+        return f'{e(r["display_time"])} (OLBG listing, clock unstated)'
+    t = _dt(r["utc"])
+    return f'{t:%a %d %b %H:%M} UTC · {t - timedelta(hours=7):%H:%M} PT · {t + timedelta(hours=1):%H:%M} UK'
+
+
+def time_series(rows) -> str:
+    """One horizontal line listing every start time in UTC, for scanning the day."""
+    known = sorted({r["utc"] for r in rows if r.get("utc")})
+    if not known:
+        return ""
+    pts = " · ".join(f"{_dt(u):%H:%M}" for u in known)
+    first, last = _dt(known[0]), _dt(known[-1])
+    return (f'<div class="callout"><strong>Start times, official UTC.</strong> {pts} UTC. '
+            f'In US Pacific that is {first - timedelta(hours=7):%H:%M} to {last - timedelta(hours=7):%H:%M}; '
+            f'in the UK, {first + timedelta(hours=1):%H:%M} to {last + timedelta(hours=1):%H:%M}. '
+            f'Dates: {first:%d %b %Y} ({first:%m/%d/%Y}) onward. {ZONE_NOTE}</div>')
 
 
 def e(v) -> str:
@@ -233,7 +277,7 @@ def build() -> dict:
                  f'<span class="small mut">predictions.html#{p["anchor"]}</span>')
         sport = f'<a href="sports/{SLUG[r["sport"]]}.html">{e(r["sport"])}</a>' if show_sport else ""
         return (f'<tr><td>{i}</td><td>{sport}</td>'
-                f'<td><b>{e(r["home_name"])} v {e(r["away_name"])}</b><br><span class="small mut">{e(r["competition"])} · {e(r["display_time"])}</span></td>'
+                f'<td><b>{e(r["home_name"])} v {e(r["away_name"])}</b><br><span class="small mut">{e(r["competition"])} · {short_time(r)}</span></td>'
                 f'<td><b>{e(p["name"])}</b><br><span class="small mut">money line</span></td>'
                 f'<td>{price_cell(p)}</td><td>{p["probability"]*100:.1f}%</td>'
                 f'<td>{chip(p["confidence"])}</td><td class="small">{where}</td></tr>')
@@ -254,6 +298,8 @@ the price we make it, our chance of it winning, and the page where the full writ
   <div class="kpi"><b>{len(picks)}</b><small>written picks</small></div>
   <div class="kpi"><b>{tiers['High']}</b><small>High confidence</small></div>
 </div>
+
+{time_series(priced)}
 
 <div class="callout">
   <strong>Where everything is.</strong> This page is the executive summary. The ranked pick list is directly
@@ -364,7 +410,8 @@ participant — the two probable pitchers in the World Series — the name is in
         caps = f'<div class="callout warn small">Held out of High: {e("; ".join(p["caps"]))}.</div>' if p["caps"] else ""
         pred_body += f"""
 <article class="pickcard" id="{p['anchor']}">
-  <div class="small mut">{e(r['sport'])} · {e(r['competition'])} · {e(r['display_time'])}</div>
+  <div class="small mut">{e(r['sport'])} · {e(r['competition'])}</div>
+  <div class="small mut">Starts {time_stack(r)}</div>
   <h3>{e(r['home_name'])} v {e(r['away_name'])}</h3>
   <div class="sel">{e(p['name'])} — money line</div>
   <div class="row"><span>Our price <b>{money(p['american'])}</b> ({p['decimal']:.2f})</span>
@@ -373,8 +420,7 @@ participant — the two probable pitchers in the World Series — the name is in
    <span>{'Inside' if p['band'] else 'Outside'} the −250…+10000 window</span></div>
   {caps}
   <div class="prose"><p>{e(p['prose'])}</p>
-  <p class="small mut">Inputs read: {e(r['summary'].get('home_name',''))}
-    {e(r['home_name'])} {e(r['summary']['home_line'])}; {e(r['away_name'])} {e(r['summary']['away_line'])}.
+  <p class="small mut">Inputs read: {e(r['home_name'])} {e(r['summary']['home_line'])}; {e(r['away_name'])} {e(r['summary']['away_line'])}.
     {e(r['summary']['home_detail'])}. {e(r['summary']['away_detail'])}.</p>
   <p class="small">Sources: {src_links(r['sources'])}</p></div>
 </article>"""
@@ -383,20 +429,20 @@ participant — the two probable pitchers in the World Series — the name is in
 
     # ---------------- matches ----------------
     def match_table(sel_rows, sel_listings):
-        head = ("<thead><tr><th>Sport</th><th>Competition</th><th>Match</th><th>Time as shown</th>"
-                "<th>UTC</th><th>Our price</th><th>Pick</th><th>Official source / recheck</th></tr></thead>")
+        head = ("<thead><tr><th>Sport</th><th>Competition</th><th>Match</th><th>Start (UTC and local)</th>"
+                "<th>Our price</th><th>Pick</th><th>Official source / recheck</th></tr></thead>")
         body = ""
         for r in sel_rows:
             if r["priced"]:
                 p = r["pick"]
                 body += (f"<tr><td>{e(r['sport'])}</td><td>{e(r['competition'])}</td>"
-                         f"<td><b>{e(r['home_name'])} v {e(r['away_name'])}</b></td><td>{e(r['display_time'])}</td>"
-                         f"<td>{e(r['utc'] or '—')}</td><td>{price_cell(p)}</td>"
+                         f"<td><b>{e(r['home_name'])} v {e(r['away_name'])}</b><br><span class='small mut'>{e(r['competition'])}</span></td>"
+                         f"<td>{time_stack(r)}</td><td>{price_cell(p)}</td>"
                          f"<td>{e(p['name'])} {chip(p['confidence'])}</td><td class='small'>{src_links(r['sources'])}</td></tr>")
             else:
                 body += (f"<tr><td>{e(r['sport'])}</td><td>{e(r['competition'])}</td>"
-                         f"<td><b>{e(r['home_name'])} v {e(r['away_name'])}</b></td><td>{e(r['display_time'])}</td>"
-                         f"<td>{e(r['utc'] or '—')}</td><td class='mut'>no price</td>"
+                         f"<td><b>{e(r['home_name'])} v {e(r['away_name'])}</b><br><span class='small mut'>{e(r['competition'])}</span></td>"
+                         f"<td>{time_stack(r)}</td><td class='mut'>no price</td>"
                          f"<td class='small mut'>{e(r.get('incomplete_reason',''))}</td>"
                          f"<td class='small'>{src_links(r['sources'])}</td></tr>")
         for r in sel_listings:
@@ -414,9 +460,11 @@ participant — the two probable pitchers in the World Series — the name is in
 <p class="lede">All {len(rows)+len(D.LISTINGS)} events that were listed on the fifteen OLBG hubs we scanned today,
 plus the ones an official body confirmed. Click any match to find its source. Rows without a price say exactly
 which input was missing.</p>
-<div class="callout"><strong>Times.</strong> OLBG does not publish which clock its hub times use. Its clock is
-reproduced exactly as printed and labelled as such; where the league gave a UTC start, both are shown.
-See flag <a href="flagged.html#F-17-02">F-17-02</a>.</div>
+{time_series(priced)}
+<div class="callout"><strong>Times.</strong> Where the league published a UTC start, the row shows it and converts
+it to US Pacific, US Eastern, UK and Central European time. Where only OLBG listed the match, its clock is
+reproduced exactly as printed, labelled "clock unstated", and not converted. See flag
+<a href="flagged.html#F-17-02">F-17-02</a>.</div>
 <h2>Priced by us — {len(priced)} matches</h2>
 {match_table(priced, [])}
 <h2>Listed, not priced — {len(unpriced)+len(D.LISTINGS)} events</h2>
@@ -602,8 +650,15 @@ for a team we could not read. No injury is asserted without an official report.<
     (ROOT / "data/1707d752").mkdir(parents=True, exist_ok=True)
     (ROOT / "data/1707d752/summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     (ROOT / "data/1707d752/picks.json").write_text(json.dumps(
-        [{k: v for k, v in r["pick"].items() if k != "prose"} | {"match": r["id"], "sport": r["sport"],
-                                                                  "home": r["home_name"], "away": r["away_name"]}
+        [{"id": r["id"], "sport": r["sport"], "competition": r["competition"],
+          "home": r["home_name"], "away": r["away_name"], "utc": r["utc"],
+          "selection": r["pick"]["name"], "market": "Money line",
+          "probability": round(r["pick"]["probability"], 4), "decimal": r["pick"]["decimal"],
+          "american": r["pick"]["american"], "confidence": r["pick"]["confidence"],
+          "band": r["pick"]["band"], "caps": r["pick"]["caps"],
+          "prediction": r["pick"]["prose"],
+          "location": f"1707d752/predictions.html#{r['pick']['anchor']}",
+          "sources": r["sources"]}
          for r in picks], indent=2) + "\n")
     return summary
 
@@ -615,9 +670,12 @@ def _table(rows, show_sport=True) -> str:
     for i, r in enumerate(rows):
         p = r["pick"]
         body += (f"<tr><td>{i+1}</td><td><a href='sports/{SLUG[r['sport']]}.html'>{e(r['sport'])}</a></td>"
-                 f"<td><b>{e(r['home_name'])} v {e(r['away_name'])}</b><br><span class='small mut'>{e(r['competition'])} · {e(r['display_time'])}</span></td>"
+                 f"<td><b>{e(r['home_name'])} v {e(r['away_name'])}</b><br><span class='small mut'>{e(r['competition'])} · {short_time(r)}</span></td>"
                  f"<td><b>{e(p['name'])}</b><br><span class='small mut'>money line</span></td>"
-                 f"<td>{price_cell(p)}</td><td>{p['probability']*100:.1f}%</td><td>{chip(p['confidence'])}</td>"
+                 f"<td>{price_cell(p)}</td><td>{p['probability']*100:.1f}%</td>"
+                 f"<td>{chip(p['confidence'])}"
+                 + (f"<br><span class='small mut'>{e(p['caps'][0])}</span>" if p['caps'] else "")
+                 + "</td>"
                  f"<td class='small'><a href='predictions.html#{p['anchor']}'>Read →</a><br>"
                  f"<span class='small mut'>predictions.html#{p['anchor']}</span></td></tr>")
     return f'<div class="table-wrap"><table>{head}<tbody>{body}</tbody></table></div>'
