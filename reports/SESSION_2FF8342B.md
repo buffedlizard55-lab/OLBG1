@@ -8,7 +8,7 @@ Observed at **2026-10-24T17:50:00Z**. Site: `2ff8342b/index.html`. Data: `data/2
 - Originated market rows: **76** across **16** priced fixtures
 - Picks: **16** — High 1, Medium 2, Low 13
 - Suppressed by the −250 floor: **2**
-- Written predictions: **15**
+- Written predictions: **18**
 - Flags: **7**
 
 ## Per sport
@@ -28,7 +28,7 @@ Observed at **2026-10-24T17:50:00Z**. Site: `2ff8342b/index.html`. Data: `data/2
 | Motor Racing | 1 | 1 | 0 | 0 |
 | Handball | 5 | 0 | 0 | 0 |
 | Ice Hockey | 12 | 12 | 8 | 6 |
-| Basketball | 8 | 8 | 8 | 5 |
+| Basketball | 8 | 8 | 8 | 8 |
 | Rugby League | 0 | 0 | 0 | 0 |
 
 ## Sources used

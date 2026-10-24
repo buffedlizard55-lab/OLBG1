@@ -207,7 +207,7 @@ def build_markets() -> tuple[list[dict], list[dict]]:
         pick_am = american_from_probability(pick_p)
         picked.append({
             "fixture_id": fx["id"], "sport": fx["sport"],
-            "selection": home if fav_home else away,
+            "selection": f"{home if fav_home else away} to win",
             "probability": round(pick_p, 4), "decimal": decimal_from_p(pick_p),
             "american": pick_am, "implied_pct": round(100 * pick_p, 1),
             "eligible": WINDOW_LOW <= pick_am <= WINDOW_HIGH,
