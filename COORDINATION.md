@@ -7136,3 +7136,8 @@ T7568 integration: moving-main conflicts in coordination and ARCHIVE resolved by
 * **High rule as applied:** High only at probability >=70% AND fair price inside -250..+10000 (=> 70.0-71.4%); heavy favourites re-expressed as handicap/team-total lines inside the window. Highs: IH-03 Montreal +1.5 (-239), CR-02 Netherlands ML (-236), VB-04 Lube -1.5 sets (-237).
 * **Gates (local, all green):** `sff993cb9_validate.py` PASS (incl. zero shared 6-grams across 80 predictions); `unittest discover tests/pipeline` 619 OK (8 new); `scripts/validate.py` PASS; `pipeline.build --out _site` + `pipeline.validate --site _site` 0 errors. One additive `ARCHIVE` line in `pipeline/build.py` as declared in §95.
 * **Report:** `reports/SESSION_FF993CB9.md`. Next: PR -> merge -> Pages read-back, receipts in §95.2.
+### T7568 publication receipt
+
+PR https://github.com/buffedlizard55-lab/OLBG1/pull/280 merged via `gh pr merge 280 --merge` (exit 0) at 2026-10-24T22:40:00Z, merge commit `38377d28ac93b4d4aa87d1171c162528703a1970`. PR workflow `40139427783` passed all unit, structural, artifact and real-browser gates. Local pipeline suite: 611 tests OK; canonical root/staged validation: zero errors.
+
+At the first production check the main workflow `40139532487` remained pending behind another production refresh, and fetching `/review7568/index.html` returned the site's not-found page. Deployment is therefore NOT yet confirmed. Pages API reports legacy main:/ and errored; no setting was changed and no unrelated session workflow was cancelled. Follow-up status must distinguish merge success from served-content success. Coverage and five-per-sport requirements remain open; this session delivered only the explicitly bounded editorial/review update.
