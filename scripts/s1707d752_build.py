@@ -592,8 +592,9 @@ the away side gets 0.97. A Poisson grid over 0–12 goals gives the result distr
 50/50 between the sides for the money line, ties of one goal do not cover a −1.5 puck line, and the total is read
 straight off the grid at 5.5.</li>
 <li><b>Basketball.</b> Win rates are shrunk toward .500 with a Beta(12,12) prior, converted to logits, and a 0.20
-logit home term (about 2.6 points) is added. The handicap line is the margin at which the game is a coin flip, with
-a 12-point margin standard deviation, rounded to the nearest half point.</li>
+logit home term is added; the difference is the money line. No handicap and no total are issued, because the NBA
+standings page publishes wins and losses but not points scored or conceded, and a points line cannot be derived
+from a win rate without inventing a margin distribution.</li>
 <li><b>Baseball.</b> log5 on the two 162-game records with a mild prior, plus a 0.16 logit home term (about 54%).
 Extra innings are part of the money line.</li>
 </ul>

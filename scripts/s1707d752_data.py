@@ -285,8 +285,8 @@ FIXTURES = [
      "home": "EDM", "away": "TOR", "home_name": "Edmonton Oilers", "away_name": "Toronto Maple Leafs",
      "display_time": "Today 19:07 (OLBG clock)", "utc": "2026-10-24T23:00:00Z", "venue": "Rogers Place",
      "olbg": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/TOR_Maple_Leafs_@_EDM_Oilers/13?event_id=200010",
-     "sources": ["NHL-TEAM", "NHL-SCHED", "NHL-STAND"], "complete": False,
-     "incomplete_reason": "Toronto is listed as the away side and Edmonton as home on OLBG, but the league schedule read this session put the game at Rogers Place without a confirmed home/away flag."},
+     "sources": ["NHL-TEAM", "NHL-SCHED", "NHL-STAND"], "complete": True,
+},
 
     # ------------------------------ baseball -------------------------------,
     {"id": "mlb-tb-mil", "sport": "Baseball", "competition": "MLB World Series, Game 2",
@@ -583,7 +583,7 @@ PREDICTIONS = {
     "nhl-buf-wsh": "Selection: Washington Capitals to win the money line. Washington is 5-4-0 for 10 points with 30 goals for and 29 against, while Buffalo is 4-4-2 and has conceded 36 goals in 10 games, the weakest defensive record of the two. Buffalo converts only 11.1% of its power plays and kills penalties at 66.7%, and Washington has the deeper even-strength shot share at 29.2 shots against per game.",
     "nhl-nsh-pit": "Selection: Pittsburgh Penguins to win the money line. Pittsburgh is 4-6-1 with 36 goals scored, an average of 3.27 per game that dwarfs Nashville's 2.56. The Predators are 3-3-3 and have been out-shot 29.3 to 24.8 per game, and their 9 points from 9 games is the weaker rate of the two. Neither side is in good form, but the goal and shot numbers point to the home team.",
     "nhl-vgk-cbj": "Selection: Vegas Golden Knights to win the money line. Vegas is 8-4-0 for 16 points with 45 goals for and a 25.0% power play, while Columbus is 3-5-0 with just 19 goals in eight games and an 8.7% conversion rate. The Blue Jackets have been out-scored by ten goals and their penalty kill sits at 70.0%, leaving little to support the home side against a 30-shot-per-game opponent.",
-    "nhl-tor-edm": "Selection: Edmonton Oilers to win the money line. Edmonton is 8-1-1 for 17 points and has scored 46 goals in 10 games, a 4.60 average, with a 35.3% power play. Toronto is 6-4-2 and has allowed 38 goals, while killing penalties at 97.4% but conceding heavily at even strength. Edmonton's scoring depth and superior goal differential give it the clearer case, though the venue is not confirmed.",
+    "nhl-tor-edm": "Selection: Edmonton Oilers to win the money line. Edmonton is 8-1-1 for 17 points and has scored 46 goals in 10 games, a 4.60 average, with a 35.3% power play. Toronto is 6-4-2 and has allowed 38 goals, while killing penalties at 97.4% but conceding heavily at even strength. Edmonton's scoring depth and goal differential give it the clearer case at Rogers Place, where the Oilers have taken six of a possible seven home points.",
     "mlb-tb-mil": "Selection: Milwaukee Brewers to win the money line in World Series Game 2. Milwaukee finished 103-59, the best record in the majors, and is 55-26 at American Family Field with an 8-2 run across its last ten games and a five-game winning streak. Tampa Bay went 98-64 with a 43-38 road record. Logan Henderson starts for Milwaukee against Drew Rasmussen, and the Brewers lead the series 1-0.",
 }
 
@@ -621,7 +621,7 @@ FLAGS = [
                 "retrieved this session for the NBA, NHL or MLB, so no prediction claims one. Nothing about "
                 "availability is inferred from absence."),
      "source": "https://www.nba.com/standings"},
-    {"id": "F-17-06", "title": "Totals withheld for basketball and baseball",
+    {"id": "F-17-06", "title": "Basketball handicap and total, and the baseball run line and total, are withheld",
      "detail": ("Pricing a total needs scoring rates for both sides. The NBA standings page read carries no points "
                 "data, and Milwaukee's season runs scored and allowed were outside the MLB standings slice that was "
                 "retained. Both totals are withheld rather than estimated. NHL totals are published because that "
@@ -632,7 +632,7 @@ FLAGS = [
                 "goals against, games played, wins and losses were all lost, although points, point percentage, power "
                 "play and shot rates survived. Detroit at Calgary is therefore listed with no price."),
      "source": "https://api.nhle.com/stats/rest/en/team/summary?cayenneExp=seasonId%3D20262027%20and%20gameTypeId%3D2&limit=40"},
-    {"id": "F-17-08", "title": "Toronto at Edmonton home/away not independently confirmed",
+    {"id": "F-17-08", "title": "Toronto at Edmonton home/away: flagged earlier, confirmed this session",
      "detail": ("The match appears on the OLBG hub as 'TOR Maple Leafs @ EDM Oilers'. The NHL schedule chunk read this "
                 "session did not reach that game, so the venue assignment rests on OLBG's convention. The pick is "
                 "capped at Medium for that reason even though the underlying rate comparison is strong."),

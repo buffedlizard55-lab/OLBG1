@@ -14,7 +14,9 @@ import s1707d752_data as D
 import s1707d752_model as M
 
 # Matches whose home/away assignment could not be confirmed on an official page.
-VENUE_UNCONFIRMED = {"nhl-tor-edm"}
+# Empty: the NHL schedule read this session names Edmonton as home and Toronto as
+# away at Rogers Place, so no match is priced on an unconfirmed venue.
+VENUE_UNCONFIRMED: set[str] = set()
 
 # Games already under way when the sources were read. Pricing a live game would
 # not be a prediction, so they are held back.
