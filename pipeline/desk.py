@@ -412,7 +412,7 @@ def enrich(fx):
     if fx['sport'] == 'baseball':
         out['withheld'] = [
             {'key': 'handicap', 'label': 'Run line (+/-1.5)',
-             'reason': 'Withheld: the run line needs a verified run environment for both clubs. '
+             'reason': 'Withheld: the run line needs a read run environment for both clubs. '
                        'Only win-loss and home/road splits were read, so a spread would rest on an '
                        'unread input.'},
             {'key': 'total', 'label': 'Match total runs',

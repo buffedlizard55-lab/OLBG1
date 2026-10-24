@@ -262,7 +262,7 @@ OLBG hub and the reason nothing is priced — see <a href="{self.href('sports.ht
   <div class="kpi"><b>{c['picks']}</b><small>Picks with a write-up</small></div>
   <div class="kpi"><b>{c['fixtures']}</b><small>Matches listed</small></div>
   <div class="kpi"><b>{c['priced_fixtures']}</b><small>Matches priced by us</small></div>
-  <div class="kpi"><b>{c['sports_with_fixtures']} / 15</b><small>Sports with verified fixtures</small></div>
+  <div class="kpi"><b>{c['sports_with_fixtures']} / 15</b><small>Sports with official fixtures</small></div>
 </section>
 
 <h2>High-confidence picks</h2>
@@ -328,7 +328,7 @@ their own conventions and their own snapshot times; nothing on this page is draw
             fx = [f for f in self.d['fixtures'] if f['sport'] == code]
             picks = [f for f in fx if f['pick']]
             if not fx:
-                status = '<span class="badge gap">No verified fixture today</span>'
+                status = '<span class="badge gap">No official fixture captured today</span>'
             elif not any(f['priced'] for f in fx):
                 status = '<span class="badge blank">Listed, not priced</span>'
             else:
@@ -498,7 +498,7 @@ source published both clubs' current record; otherwise the row says which input 
             fx = [f for f in self.d['fixtures'] if f['sport'] == code]
             picks = [f for f in fx if f['pick']]
             sub = (f'{len(fx)} matches · {len(picks)} picks' if fx
-                   else 'No verified fixture read today')
+                   else 'No official fixture captured today')
             cards.append(f'<a class="card" href="{self.href("sports/" + code + ".html", "sports.html")}">'
                          f'<b>{e(meta["name"])}</b><small>{e(sub)}</small></a>')
         body = f"""
@@ -578,7 +578,7 @@ fixture list and a current record that could be read this session.</p>
             srcs = source_links(f['sources'], self.d['sources']) or '<span class="small muted">no source — procedural</span>'
             items.append(f'''<div class="flag {e(f["severity"])}">
 <h3>{e(f["id"])} · {e(f["title"])}</h3>
-<p class="small muted" style="margin-bottom:6px">{e(f["severity"])}</p>
+<p class="small muted" style="margin-bottom:6px">{e("unconfirmed" if f["severity"] == "unverified" else f["severity"])}</p>
 <p>{e(f["detail"])}</p>
 <p class="small" style="margin-bottom:0">Sources: {srcs}</p></div>''')
         body = f"""
