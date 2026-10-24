@@ -7374,6 +7374,14 @@ T7568 integration: moving-main conflicts in coordination and ARCHIVE resolved by
   tests OK**; `pipeline.validate --site .` 0 errors; `scripts/validate.py` PASSED (same 3 pre-existing
   f7fa77fc warnings). No shared root page, workflow or canonical data file touched.
 
+#### §97.2 -- T377373 follow-ups: receipts merged, and two stale prices caught on live read-back -- 2026-10-24T23:25Z (append-only log)
+
+* **Receipts PR.** PR [#291](https://github.com/buffedlizard55-lab/OLBG1/pull/291) (COORDINATION §97.1 + report receipts, no site or data change) gates `40142004638` **pass**, merged **2026-10-24T23:17:20Z**, merge commit **`5e36280`**.
+* **Defect found on live read-back, not in the gates.** Reading the served `predictions.html` showed two write-ups quoting a price their own row no longer publishes: `nhl-car-stl` closed on **−250** while the row prints **−185** (p = 65.0%), and `nhl-vgk-cbj` said **−185** while the row prints **−135** (p = 57.9%). Both were leftovers from earlier revisions of the model — the data was right, the prose had gone stale.
+* **Fix and new gate.** Prose now quotes the published line, and two guards stop it recurring: the desk validator requires every American price quoted inside a prediction to match a line published for that fixture (band constants −250 and +10000 excepted), and the same rule is the 19th unit test. Validator is now **2 562 checks** (was 2 549), 19 tests OK.
+* **Fix PR.** PR [#293](https://github.com/buffedlizard55-lab/OLBG1/pull/293) gates `40142248930` **pass**, merged **2026-10-24T23:21:02Z**, merge commit **`cb2b2d5`**. Main run **`40142374897`**: gates **pass** (1m22s), *Publish canonical GitHub Pages* **pass** (11s).
+* **Read-back caveat worth recording for the next session:** GitHub Pages served the pre-fix `predictions.html` to the first request after deploy; the same URL with a cache-busting query returned the corrected **−185**. Read-backs should be made with a cache-buster, or the "deployed" conclusion can be wrong in either direction.
+
 ### §94.4 — T733888F2 merged (#289), Pages read-back, table-count correction (2026-10-25T00:35Z UTC, append-only)
 
 * **Merged:** PR #289 → `main` `ebf6531`. Required check "Evidence, model, site and browser gates"
