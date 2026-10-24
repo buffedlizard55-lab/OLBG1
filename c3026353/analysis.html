@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analysis — TC3026353 Desk</title>
+<link rel="stylesheet" href="assets/desk.css">
+</head><body>
+<header class="site">
+  <h1>TC3026353 — OLBG Reverse-Engineered Fixture Desk</h1>
+  <p class="tag">Session c3026353-olbg1 · snapshot 2026-10-24T18:45:00Z · 15 sports · every row carries its source link · prices are this desk's own lines</p>
+</header>
+<nav class="site"><a href="index.html" class="">Dashboard</a><a href="matches.html" class="">All Matches</a><a href="markets.html" class="">Our Lines</a><a href="high-confidence.html" class="">High Confidence</a><a href="predictions.html" class="">Predictions</a><a href="analysis.html" class="active">Analysis</a><a href="sports/darts.html" class="">15 Sport Pages</a><a href="sources.html" class="">Sources</a><a href="flagged.html" class="">Flagged for Review</a><a href="methodology.html" class="">Methodology</a><a href="reverse-engineering.html" class="">OLBG Reverse-Engineering</a><a href="repo-audit.html" class="">Repo Audit</a></nav>
+<main>
+
+<section class="card">
+  <h2>Analysis notes</h2>
+  <h3>Where the desk line and the OLBG tip-share disagree</h3>
+  <p>The OLBG cards carry most-tipped percentages (discovery data only). Where our own line leans the other way,
+  both numbers are shown — the divergence is part of the picture and is never resolved by simply adopting the crowd.</p>
+  <table><thead><tr><th>Fixture</th><th>Match</th><th>Desk input note</th><th>OLBG most-tipped (discovery)</th></tr></thead>
+  <tbody><tr><td><code>D01</code></td><td>Krzysztof Ratajski v Kevin Doets</td><td class="small">Ratajski seed (3) + R1 6-2; Doets seed (14) + R1 6-3 over M. van Gerwen</td><td class="small">Kevin Doets 16/22 (73%)</td></tr><tr><td><code>B08</code></td><td>New Orleans Pelicans v Denver Nuggets</td><td class="small">Beta(2,2)-shrunk records: Pelicans 0-2, Nuggets 0-1</td><td class="small">New Orleans Pelicans 1/2 (50%)</td></tr><tr><td><code>B09</code></td><td>Golden State Warriors v Phoenix Suns</td><td class="small">Beta(2,2)-shrunk records: Warriors 0-2, Suns 0-1</td><td class="small">Phoenix Suns -9.5 1/1 (100%)</td></tr><tr><td><code>H05</code></td><td>Nashville Predators v Pittsburgh Penguins</td><td class="small">NHL.com P%: Predators .500, Penguins .409; market quotes: NSH +105 / PIT -125 (market disagrees with records — divergence noted)</td><td class="small">Pittsburgh Penguins 2/3 (67%)</td></tr><tr><td><code>H12</code></td><td>Minnesota Wild v Seattle Kraken</td><td class="small">NHL.com P%: Wild .636, Kraken .682; market quotes: MIN -155 / SEA +130 (market prices MIN despite lower P% — divergence noted)</td><td class="small">Minnesota Wild 2/3 (67%)</td></tr><tr><td><code>BB01</code></td><td>Tampa Bay Rays v Milwaukee Brewers</td><td class="small">Starter records read on mlb.com (Rasmussen 2-0 this postseason, Henderson 0-0); home term -0.3 because first-listed Rays are the road side (Brewers host); series state not printed in the read excerpt — F-C-14</td><td class="small">Milwaukee Brewers 6/11 (65%)</td></tr><tr><td><code>RU01</code></td><td>Ospreys v Dragons</td><td class="small">Margin inputs assumed — no URC table read this session; not source-confirmed inputs</td><td class="small">Dragons 3/6 (67%)</td></tr></tbody></table>
+  <h3>Form lines actually used (all source-checked)</h3>
+  <ul>
+    <li><b>Ice hockey</b> — NHL.com standings records, points percentages, goal differences, streaks and the league's own published moneyline board (Boston +20 goal difference; Edmonton 8-1-1 and 5-0-0 at home; Calgary −19).</li>
+    <li><b>Basketball</b> — NBA.com standings (2-3 games played): Philadelphia 2-0 hosting winless 0-2 Milwaukee; unbeaten Houston at unbeaten Atlanta; Dallas and Phoenix against winless opposition.</li>
+    <li><b>Darts</b> — PDC round-one results and seeds (Littler the world number one per pdc.tv; Woodhouse the nine-dart hero; top seed Ross Smith still standing).</li>
+    <li><b>Snooker</b> — WST news desk (Williams' three centuries against Gilbert; Wilson past Craigie in the semi).</li>
+    <li><b>Baseball</b> — MLB.com probable starters (Rasmussen 2-0 this postseason against Henderson 0-0; Peralta 2-0 in Game 5).</li>
+    <li><b>Motor racing</b> — formula1.com's official 2026 results (Antonelli four wins: China, Japan, Miami, Canada).</li>
+    <li><b>Golf</b> — PGA Tour's live Bermuda Championship board (Smotherman −16 thru 10 of round three).</li>
+    <li><b>Gaelic</b> — club/count-board results (Moycullen 4-26 to 0-8 in the semi; Cork semi-final scores; the Storm Boelo date change).</li>
+    <li><b>Rugby league</b> — NRL.com official team lists and late mail (squad names, injury withdrawals, round-two results 82-0 and 64-6).</li>
+  </ul>
+  <h3>Nothing asserted where sources were thin</h3>
+  <p>Tennis rows outside the Almaty final, volleyball/handball/rugby-union rows beyond club identity, and all greyhound
+  runner form are published with blank stat columns and flags instead of guesses. The predictions in those columns state
+  the gap in plain words.</p>
+</section>
+</main>
+<footer class="site">TC3026353 · branch arena/c3026353-olbg1 · built 2026-10-24T18:14:54Z · discovery via olbg.com hub cards, confirmation via governing-body sources only</footer>
+</body></html>
