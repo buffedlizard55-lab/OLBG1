@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagged for review · OLBG research desk</title>
+<meta name="description" content="Source-linked match research with originated lines and explicit coverage gaps. Not affiliated with OLBG.">
+<link rel="stylesheet" href="assets/desk.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">OLBG</span><span class="brand-sub">research desk</span></a>
+  <nav class="nav" aria-label="Primary"><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="picks.html">Today's picks</a><a class="nav-link" href="matches.html">Matches</a><a class="nav-link" href="markets.html">Prices</a><a class="nav-link" href="predictions.html">Predictions</a><a class="nav-link" href="sports.html">Sports</a><a class="nav-link active" href="flagged.html" aria-current="page">Flagged for review</a><a class="nav-link" href="repo-review.html">Repo review</a><a class="nav-link" href="sources.html">Sources</a><a class="nav-link" href="methodology.html">Method</a><a class="nav-link" href="olbg.html">OLBG structure</a></nav>
+  <div class="stamp"><span class="live-dot"></span>Snapshot 2026-10-24T18:20:00Z</div>
+</header>
+<main id="main">
+
+<div class="hero small">
+  <p class="eyebrow">Flagged for review</p>
+  <h1>14 irregularities, each with the URL that produced it</h1>
+  <p class="lede">Nothing here blocks publication. Each item is either a value we refused to invent or a source that failed to render. Open the source link and check the claim yourself.</p>
+</div>
+<section class="panel"><article class="flag" id="F-9E01">
+        <div class="flag-head"><span class="chip chip-high">High</span><span class="mono">F-9E01</span></div>
+        <h3>Eight fixtures could be proved, not the seventy-five the brief asks for</h3><p>The brief asks for five priced matches per sport per day across fifteen sports, which is 75 books. This session confirmed eight fixtures end-to-end from official feeds: three MLB World Series games (2, 3 and 4) and five NHL games. Every other OLBG row is a listing without governing-body confirmation, so it is published as a watchlist row with no price. Nothing was imputed to reach a quota, and the seven sports whose leagues returned no readable fixture data carry no rows at all rather than guessed ones.</p>
+        <p class="src-line">Source checked: <a href="https://www.olbg.com/betting-tips" target="_blank" rel="noopener">https://www.olbg.com/betting-tips</a></p></article><article class="flag" id="F-9E02">
+        <div class="flag-head"><span class="chip chip-high">High</span><span class="mono">F-9E02</span></div>
+        <h3>Golf: OLBG showed no event at all</h3><p>The golf hub returned 'No tips found' at 16:41Z. Without an OLBG event there is no match to price, and no official PGA/DP World/LPGA field or tee sheet was retrieved either. Golf therefore has zero rows and zero picks in this release.</p>
+        <p class="src-line">Source checked: <a href="https://www.olbg.com/betting-tips/Golf/5" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Golf/5</a></p></article><article class="flag" id="F-9E03">
+        <div class="flag-head"><span class="chip chip-high">High</span><span class="mono">F-9E03</span></div>
+        <h3>Rugby League: OLBG lists outrights only</h3><p>The rugby league hub showed State of Origin 2027, Super League 2027 and NRL 2027 winner markets, with no individual match. No match could be listed or priced.</p>
+        <p class="src-line">Source checked: <a href="https://www.olbg.com/betting-tips/Rugby_League/10" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Rugby_League/10</a></p></article><article class="flag" id="F-9E05">
+        <div class="flag-head"><span class="chip chip-high">High</span><span class="mono">F-9E05</span></div>
+        <h3>Availability is only checkable for baseball, so hockey is capped at Medium</h3><p>MLB StatsAPI publishes an active roster with a status per player, and both World Series clubs list 26 players all marked Active, so the three baseball rows carry a real availability statement. The NHL API roster endpoint returns biographical data only, with no injury or roster status field, and no club injury report was readable. The five hockey rows therefore have an empty availability field, and the published rule caps them at Medium for that reason alone. No press line or guess was used to fill the gap.</p>
+        <p class="src-line">Source checked: <a href="https://api-web.nhle.com/v1/roster/OTT/20262027" target="_blank" rel="noopener">https://api-web.nhle.com/v1/roster/OTT/20262027</a></p></article><article class="flag" id="F-9E04">
+        <div class="flag-head"><span class="chip chip-medium">Medium</span><span class="mono">F-9E04</span></div>
+        <h3>OLBG times are unlabelled and are not UTC</h3><p>The same page mixes clock conventions: the MLB card read 'Today 20:00' for a 00:00 UTC start, while the WST card read 'Today 14:00' for a 13:00 UTC start. The greyhound hub is worse still: the row named 6:14 Monmore carried the clock 13:14, a seven-hour gap on a single line. This desk never uses an OLBG clock as a start time. Every start in the proved tables comes from the official feed; the OLBG label is shown beside it, verbatim, as a discovery artefact.</p>
+        <p class="src-line">Source checked: <a href="https://www.olbg.com/betting-tips/Baseball/12" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Baseball/12</a></p></article><article class="flag" id="F-9E06">
+        <div class="flag-head"><span class="chip chip-medium">Medium</span><span class="mono">F-9E06</span></div>
+        <h3>Basketball: two-game samples cannot support a price</h3><p>NBA standings on 24 October 2026 cover two games for most clubs. Shrunk win rates sit between .25 and .75, so almost every log5 output lands on a coin flip or an extreme. No NBA line was issued. The eight games are listed for reference.</p>
+        <p class="src-line">Source checked: <a href="https://www.nba.com/standings" target="_blank" rel="noopener">https://www.nba.com/standings</a></p></article><article class="flag" id="F-9E07">
+        <div class="flag-head"><span class="chip chip-medium">Medium</span><span class="mono">F-9E07</span></div>
+        <h3>Darts: the PDC schedule page was a cookie wall</h3><p>Both pdc.tv URLs fetched rendered the consent dialogue instead of the match schedule. The five European Championship matches are therefore OLBG-only rows.</p>
+        <p class="src-line">Source checked: <a href="https://www.pdc.tv/tournaments/machineseeker-european-championship" target="_blank" rel="noopener">https://www.pdc.tv/tournaments/machineseeker-european-championship</a></p></article><article class="flag" id="F-9E08">
+        <div class="flag-head"><span class="chip chip-medium">Medium</span><span class="mono">F-9E08</span></div>
+        <h3>Handball and volleyball: league sites did not render fixtures or tables</h3><p>opel-hbl.de served a reCAPTCHA in place of the Spielplan and Tabelle, and legavolley.it returned navigation only. Handball and volleyball therefore have OLBG listings but no official confirmation and no prices.</p>
+        <p class="src-line">Source checked: <a href="https://www.opel-hbl.de/de/hbl/spielplan" target="_blank" rel="noopener">https://www.opel-hbl.de/de/hbl/spielplan</a></p></article><article class="flag" id="F-9E09">
+        <div class="flag-head"><span class="chip chip-medium">Medium</span><span class="mono">F-9E09</span></div>
+        <h3>Greyhounds: no official racecard</h3><p>No GBGB or track racecard was retrieved. Runner names on the greyhound rows come from OLBG's community tip cards and are shown as listing text only.</p>
+        <p class="src-line">Source checked: <a href="https://www.olbg.com/betting-tips/Greyhounds/28" target="_blank" rel="noopener">https://www.olbg.com/betting-tips/Greyhounds/28</a></p></article><article class="flag" id="F-9E12">
+        <div class="flag-head"><span class="chip chip-medium">Medium</span><span class="mono">F-9E12</span></div>
+        <h3>The hockey samples are nine to twelve games old</h3><p>Every NHL club has played between nine and twelve games, so a single result moves a win rate by roughly nine percentage points. The prices are published as snapshots with that stated, and no hockey pick is labelled High.</p>
+        <p class="src-line">Source checked: <a href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener">https://api-web.nhle.com/v1/standings/2026-10-24</a></p></article><article class="flag" id="F-9E13">
+        <div class="flag-head"><span class="chip chip-medium">Medium</span><span class="mono">F-9E13</span></div>
+        <h3>The High tier holds one pick, because the brief's High test cannot be met more often</h3><p>The brief asks a High pick to carry current form, recent history, match statistics and confirmed injuries, and to price between -250 and +10000. Only the World Series rows have all four: the rosters are checkable and both prices sit inside the band. Of the eight picks, one clears every condition, six are Medium and one is Low. Publishing six High labels would have meant ignoring the availability requirement.</p>
+        <p class="src-line">Source checked: <a href="https://statsapi.mlb.com/api/v1/teams/158/roster?rosterType=active" target="_blank" rel="noopener">https://statsapi.mlb.com/api/v1/teams/158/roster?rosterType=active</a></p></article><article class="flag" id="F-9E10">
+        <div class="flag-head"><span class="chip chip-low">Low</span><span class="mono">F-9E10</span></div>
+        <h3>Snooker final opponent undetermined at retrieval</h3><p>WST lists the final as Kyren Wilson against the winner of match 62 (Mark Williams v Jak Jones). With one side unknown no two-way price can be originated, so the final is a watchlist row.</p>
+        <p class="src-line">Source checked: <a href="https://www.wst.tv/matches/" target="_blank" rel="noopener">https://www.wst.tv/matches/</a></p></article><article class="flag" id="F-9E11">
+        <div class="flag-head"><span class="chip chip-low">Low</span><span class="mono">F-9E11</span></div>
+        <h3>Boston's fair price sits outside the brief's band</h3><p>The Bruins' fair price is about -320, shorter than the -250 floor in the brief, so the selection is published as Medium even though the form case is the strongest on the slate. The price, not the argument, is what disqualifies it.</p>
+        <p class="src-line">Source checked: <a href="https://api-web.nhle.com/v1/standings/2026-10-24" target="_blank" rel="noopener">https://api-web.nhle.com/v1/standings/2026-10-24</a></p></article><article class="flag" id="F-9E14">
+        <div class="flag-head"><span class="chip chip-low">Low</span><span class="mono">F-9E14</span></div>
+        <h3>Each OLBG hub was read to its first screen only</h3><p>Every sport hub truncates its card list and offers Load More Tips. The watchlist captures the rows rendered before that cut, plus the outright block where one appeared, so it is a sample of what OLBG advertised rather than a complete market list. Deeper pages were not consumed.</p>
+        <p class="src-line">Source checked: <a href="https://www.olbg.com/betting-tips" target="_blank" rel="noopener">https://www.olbg.com/betting-tips</a></p></article></section>
+
+</main>
+<footer class="foot">
+  <p><strong>What this is.</strong> Independently calculated experimental prices, not bookmaker offers. No staking advice, no guaranteed returns. Not affiliated with OLBG.</p>
+  <p><strong>How to read a blank.</strong> A blank cell means the official source did not publish that value and it was not filled in. Every blank is listed on the <a href="flagged.html">Flagged for review</a> page.</p>
+  <p class="mono">Desk session 9e041d28-olbg1 · snapshot 2026-10-24T18:20:00Z · 8 sourced fixtures · 8 picks · 14 flags</p>
+</footer>
+</body>
+</html>

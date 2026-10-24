@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method · OLBG research desk</title>
+<meta name="description" content="Source-linked match research with originated lines and explicit coverage gaps. Not affiliated with OLBG.">
+<link rel="stylesheet" href="assets/desk.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">OLBG</span><span class="brand-sub">research desk</span></a>
+  <nav class="nav" aria-label="Primary"><a class="nav-link" href="index.html">Overview</a><a class="nav-link" href="picks.html">Today's picks</a><a class="nav-link" href="matches.html">Matches</a><a class="nav-link" href="markets.html">Prices</a><a class="nav-link" href="predictions.html">Predictions</a><a class="nav-link" href="sports.html">Sports</a><a class="nav-link" href="flagged.html">Flagged for review</a><a class="nav-link" href="repo-review.html">Repo review</a><a class="nav-link" href="sources.html">Sources</a><a class="nav-link active" href="methodology.html" aria-current="page">Method</a><a class="nav-link" href="olbg.html">OLBG structure</a></nav>
+  <div class="stamp"><span class="live-dot"></span>Snapshot 2026-10-24T18:20:00Z</div>
+</header>
+<main id="main">
+
+<div class="hero small"><p class="eyebrow">Method</p><h1>How a line is made, and what the confidence label means</h1>
+<p class="lede">Five rules, applied to every row. If an input is missing the market is withheld rather than guessed.</p></div>
+<section class="panel">
+  <h2>1. Inputs</h2>
+  <p>Only values published by a governing body or league feed. Win rates, goals/runs for and against, home and road splits, and (for baseball) the published probable pitchers. No injury assumption, no line-up guess, no travel or rest adjustment unless the source states it.</p>
+
+  <h2>2. Moneyline</h2>
+  <p><strong>Baseball</strong> uses venue-split log5: the home team's home win rate against the away team's away win rate. Log5 is <span class="mono">p = a(1−b) / [a(1−b) + b(1−a)]</span>, so the venue effect is carried by the inputs rather than an invented constant.</p>
+  <p><strong>Ice hockey</strong> uses log5 on regulation-plus-overtime win rate (wins ÷ games). Shootout results are excluded because they are close to a coin toss; using points percentage would overstate a team, since an overtime loss still earns a point.</p>
+
+  <h2>3. Totals and handicaps</h2>
+  <p>Independent Poisson counts with means built from each side's scoring rate and the opponent's conceding rate: <span class="mono">λ_home = (home scored/game + away conceded/game) / 2</span> and the mirror for the away side. The published total is the half-line closest to a 50/50 split. Handicaps are read off the same score grid. Baseball's tie probability is redistributed across the two winners, which is why the baseball moneyline comes from log5 and the run line from the grid.</p>
+
+  <h2>4. Price</h2>
+  <p>Fair decimal is <span class="mono">1 ÷ p</span> with no margin. American odds are derived from the same decimal. These are estimates: no bookmaker is quoted, no availability is implied, and no stake is suggested.</p>
+
+  <h2>5. Confidence</h2>
+  <ul class="tight">
+    <li><span class="chip chip-high">High</span> complete official inputs, no unresolved conflict, fair probability at least 62%, and a price inside −250 to +10000.</li>
+    <li><span class="chip chip-medium">Medium</span> complete inputs at 55–62%, or a stronger probability whose price falls outside the brief's band.</li>
+    <li><span class="chip chip-low">Low</span> incomplete inputs or a probability below 55%.</li>
+  </ul>
+  <p>This is deliberately not "the favourite is short". A −400 favourite does not become High by being likely; it becomes excluded by the band and, if it is our pick at all, Medium.</p>
+
+  <h2>6. Expiry</h2>
+  <p>A price is valid only before its fixture starts. This build is stamped 2026-10-24T18:20:00Z; anything already started at that stamp is excluded from the pick tables. The desk is a snapshot, not a live feed.</p>
+
+  <h2>7. What is never done</h2>
+  <ul class="tight">
+    <li>No value is inferred from a team name, a league table position or a tip percentage.</li>
+    <li>OLBG tip shares are votes, not probabilities, and are not used in any calculation.</li>
+    <li>No blank is filled to make a table look complete.</li>
+  </ul>
+</section>
+
+</main>
+<footer class="foot">
+  <p><strong>What this is.</strong> Independently calculated experimental prices, not bookmaker offers. No staking advice, no guaranteed returns. Not affiliated with OLBG.</p>
+  <p><strong>How to read a blank.</strong> A blank cell means the official source did not publish that value and it was not filled in. Every blank is listed on the <a href="flagged.html">Flagged for review</a> page.</p>
+  <p class="mono">Desk session 9e041d28-olbg1 · snapshot 2026-10-24T18:20:00Z · 8 sourced fixtures · 8 picks · 14 flags</p>
+</footer>
+</body>
+</html>
