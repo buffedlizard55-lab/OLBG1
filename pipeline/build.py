@@ -34,6 +34,7 @@ OFFICIAL_HOSTS = set(PUBLISHERS) | {'www.nhl.com', 'www.mlb.com'}
 #   link='b2719ad3/index.html'   link='37003e61/index.html'
 #   link='8cfb80b2/index.html'   link='02d3d515/index.html'   link='3d121822/index.html'
 ARCHIVE = [
+    ('0239d718/index.html', '24 Oct 2026 clarity desk (0239d718): 15 sports, 57 matches, 75 written picks, 28 strict-gate High picks, 228 originated lines, 50 official sources, 22 flags'),
     ('f840c28a/index.html', '24 Oct 2026 clarity desk (f840c28a): 15 sports, 20 fixtures, 16 priced matches, 3 High picks, 10 written predictions, 13 flags'),
     ('review7568/index.html', 'Flagged for Review: canonical input inconsistencies and bounded NHL editorial update'),
     ('today/index.html', '24 Oct 2026 clarity desk (7f1bf9f7): every pick on one page, official source per row, 60 OLBG listings, 8 flags, 7 repo findings'),
@@ -255,6 +256,14 @@ publisher's own price is shown separately where the official feed carries one. 1
         gaps = [meta['name'] for code, meta in SPORT_INDEX.items()
                 if not any(f['sport'] == code for f in d['fixtures'])]
         body = f"""
+<div class="panel highlight">
+<p style="font-size:18px;margin-bottom:10px"><strong>Latest 15-sport clarity desk is live.</strong>
+It covers all 15 requested sports with 75 written selections, 28 strict-gate high-confidence picks,
+228 independently originated lines, 50 official source reads and an explicit review queue.</p>
+<p style="margin-bottom:0"><a href="{self.href('0239d718/index.html', 'index.html')}"><strong>Open the 15-sport desk →</strong></a>
+&nbsp;·&nbsp;<a href="{self.href('0239d718/flagged.html', 'index.html')}">Flagged for review →</a></p>
+</div>
+
 <div class="panel highlight">
 <p style="font-size:18px;margin-bottom:10px"><strong>Six high-confidence picks are live for the next two days,
 and every one of them has a written prediction.</strong> They are in the table directly below; the

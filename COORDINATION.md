@@ -4,7 +4,7 @@
 working on what. It exists so that multiple agent sessions can work on this repository at the
 same time without duplicating work or overwriting each other.
 
-Last updated: **2026-10-24T22:26:00Z** (UTC) (T0239D718 claimed: fresh 24–25 Oct clarity desk and final integration `0239d718-olbg1`)
+Last updated: **2026-10-24T23:25:00Z** (UTC) (T0239D718: 15-sport desk built, canonical front door registered, all local gates green; PR/merge/Pages read-back pending)
 
 ---
 
@@ -7413,7 +7413,7 @@ T7568 integration: moving-main conflicts in coordination and ARCHIVE resolved by
 
 
 
-## §93.1 — T0239D718 source, construction and local gate receipt (2026-10-24T23:19:00Z)
+### §94.2 — T0239D718 source, construction and local gate receipt (2026-10-24T23:19:00Z)
 
 Status: **site and data built; local desk validator and new unit test pass; canonical gates, PR, merge and Pages read-back still pending.**
 
