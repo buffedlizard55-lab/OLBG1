@@ -6713,3 +6713,25 @@ be read from an official source for any priced match (F-321-11).
   conflict (F-321-01/02), the unreadable official routes for thirteen sports (F-321-03), blank injury fields
   (F-321-11) and the removed book-name attribution (F-321-13). None blocks publication; all are on
   `/321b595c/flagged.html` with evidence links.
+---
+
+## 85. Session `f437fb14-olbg1` — task claim `TF437F` (2026-10-24T17:42Z UTC)
+
+| # | Task | Status | Session | File scope | Started (UTC) | Notes |
+|---|------|--------|---------|------------|---------------|-------|
+| TF437F | **Clarity-first 24 Oct 2026 desk:** live OLBG discovery across the exact 15 brief sports; official governing-body re-verification for each retained row; multi-market line origination (winner, handicap/spread, match total, sport-specific families); strict High gate = originated probability > 70% **and** fair American inside −250…+10000; unique ≥30-word human predictions naming the selection; a dashboard whose landing page leads with a plain-language executive summary and a "where the picks are" block; repo line-by-line audit; Flagged-for-Review register; desk validator + tests; PR → merge → Pages read-back | in progress | f437fb14-olbg1 | `data/f437fb14/**`, `scripts/sf437fb14_*.py`, `f437fb14/**`, `reports/SESSION_F437FB14.{md,html}`, `tests/pipeline/test_desk_f437fb14.py`, append-only additions to `COORDINATION.md` | 2026-10-24T17:42Z | Pinned Arena branch `arena/f437fb14-olbg1` per §0.2. **Touched outside the namespace (one call site, recorded in §85.2):** `pipeline/build.py` `latest_desk()`. **Not touched:** `data/current/**`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `scripts/validate.py`, `.github/workflows/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`, and every peer `<id>/` desk. Base commit `1a203e9`. |
+
+### §85.0 Claim notes
+
+* **Why another desk.** The brief's recurring complaint is comprehension, not data volume: "the sites are too
+  confusing to understand what the matches are and where the picks are", plus "lots of high confidence picks are
+  just >70% market-price favourites" and "focus on −250…+10000". The last several desks either issued **zero**
+  High picks (`3d121822`, `8cfb80b2`, `0c9bc692`) or issued High picks that all landed on one price. This session
+  therefore treats the *presentation contract* (executive summary → pick → selection → price → where to find it) as
+  a first-class deliverable alongside the data.
+* **Single namespaced directory.** All output goes to `/f437fb14/` with machine-readable copies in
+  `data/f437fb14/`. The one shared file touched is the canonical front door in `pipeline/build.py`, because it was
+  sending readers to a 24-hour-old desk with zero High picks; that is recorded and re-validated in §85.2.
+* **Honesty rules carried forward.** OLBG is discovery only. Tip shares are votes, never probabilities. A value that
+  cannot be read from an official page stays blank and is flagged. Nothing is labelled High unless the arithmetic
+  gate passes in both directions.
