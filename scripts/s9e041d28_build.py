@@ -356,7 +356,7 @@ def page_index() -> str:
       <li><strong>Darts</strong> — PDC schedule sat behind a consent wall.</li>
       <li><strong>Handball, Volleyball</strong> — league sites served reCAPTCHA or navigation only.</li>
       <li><strong>Basketball</strong> — two-game samples; no honest line exists yet.</li>
-      <li><strong>Injuries</strong> — no official report retrieved for any fixture.</li>
+      <li><strong>Ice hockey availability</strong> — the NHL roster feed carries no injury status, so only the baseball rows clear the availability gate.</li>
     </ul>
     <p class="small">All of it is on <a href="flagged.html">Flagged for review</a> with the exact URL that failed.</p>
   </div>
@@ -708,8 +708,8 @@ def page_method() -> str:
 
   <h2>5. Confidence</h2>
   <ul class="tight">
-    <li><span class="chip chip-high">High</span> complete official inputs, no unresolved conflict, fair probability at least 62%, and a price inside −250 to +10000.</li>
-    <li><span class="chip chip-medium">Medium</span> complete inputs at 55–62%, or a stronger probability whose price falls outside the brief's band.</li>
+    <li><span class="chip chip-high">High</span> complete official inputs, an official availability check, no unresolved conflict, a fair probability of at least 62%, and a price inside −250 to +10000.</li>
+    <li><span class="chip chip-medium">Medium</span> complete inputs at 55–62%, or a stronger probability whose price falls outside the brief's band, or a complete price with no official availability report.</li>
     <li><span class="chip chip-low">Low</span> incomplete inputs or a probability below 55%.</li>
   </ul>
   <p>This is deliberately not "the favourite is short". A −400 favourite does not become High by being likely; it becomes excluded by the band and, if it is our pick at all, Medium.</p>

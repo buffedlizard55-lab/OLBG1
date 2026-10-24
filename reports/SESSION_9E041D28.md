@@ -173,3 +173,22 @@ Untouched: `pipeline/**`, `data/current/**`, `.github/workflows/**`, `scripts/va
 `*.html`, `sports/**`, `assets/**`, `README.md`, `datasets/**`, and every peer desk. The desk's pages
 are staged into `_site/desk/**` by the canonical build's `stage_existing()` pass, so they publish
 without a canonical-file edit.
+
+## 11. Publication receipts
+
+| Item | Value |
+| --- | --- |
+| Pull request | [#234](https://github.com/buffedlizard55-lab/OLBG1/pull/234) |
+| PR gate | run [40117470581](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40117470581) — pass (1m09s) |
+| Merged | 2026-10-24T17:47:30Z · merge commit `d27b12b` |
+| Main gate + deploy | run [40117732096](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40117732096) — validate **success**, publish **success** |
+| Live | `https://buffedlizard55-lab.github.io/OLBG1/desk/index.html` |
+
+Live read-back confirmed the KPI ribbon (8 fixtures · 1 High · 6 Medium · 24 markets · 78 OLBG
+listings · 14 flags) and the pick table rendering Milwaukee at −187 / 65.1% / High with a working
+`statsapi.mlb.com` link.
+
+One post-publication correction was made: the dashboard's blocked-work callout still said no
+availability report had been retrieved for any fixture, which F-9E05 contradicts (both MLB rosters
+were read and fully Active). It now names the hockey-only gap, and the method page states the
+availability gate in the High and Medium definitions. No selection, price or label changed.
