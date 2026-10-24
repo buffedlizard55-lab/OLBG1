@@ -6264,3 +6264,11 @@ remaining candidates.
 * **#224** — per-sport coverage gaps now report that sport's own numbers (upcoming fixtures, opposite-favourite fixtures, the rules that removed how many lines) instead of one paragraph repeated 15 times; `R4 below 60%` renamed to `R4 below 70%`.
 * Main runs for all three **success**; Pages read-back of `/6b47ea39/picks.html` confirms the per-sport reasons and of `/6b47ea39/index.html` confirms readable selections.
 
+
+---
+
+## T0C9 — Session `0c9bc692-olbg1` claim (2026-10-24 UTC)
+
+| Task | Status | Session | File scope | Started (UTC) | Notes |
+|---|---|---|---|---|---|
+| **T0C9** — Independent 24 Oct evidence-first 15-sport review desk: re-read accessible official sources for the named sports; publish only fields observed in this session; record every unavailable/unsupported fixture as blank with an official recheck link; investigate winner, handicap/spread, total and sport-specific market families without inventing market availability; present any conservative originated estimates as Low unless all requirements are evidenced; create a clear namespaced executive-summary dashboard plus category tables, sources, methodology, and Flagged for Review; run a desk-specific structural validator and preserve a reproducibility report. | in progress | 0c9bc692-olbg1 | `data/0c9bc692/**`, `scripts/s0c9bc692_*.py`, `0c9bc692/**`, `reports/SESSION_0C9BC692.md`, `tests/pipeline/test_desk_0c9bc692.py`, append-only `COORDINATION.md` only | 2026-10-24T00:00:00Z | Pinned Arena branch per §0.2. Strict namespaced scope: no root dashboard, `pipeline/**`, workflows, `data/current/**`, other desk, or shared validator edits. This is intentionally not a claim of five High picks per sport: quotas never override source availability, current OLBG-market eligibility, or factual evidence. |
