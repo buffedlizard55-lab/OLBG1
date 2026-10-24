@@ -7297,3 +7297,44 @@ T7568 integration: moving-main conflicts in coordination and ARCHIVE resolved by
 * **Method:** OLBG hubs read this session for event discovery and market labels only. Every published fact is fetched and read this session from the governing body, league, tour or promoter via the Arena retrieval tools (sandbox egress is GitHub/npm/PyPI only). Values that cannot be confirmed on an official page are left blank and flagged. Originated prices are stated estimates, never sourced facts. High tier is the brief's conjunction read literally as evidence plus price: an originated chance of 60% or better, at least one side's form read from an official page this session, **and** a fair American price inside −250…+10000, machine-checked in both directions. (A strict '>70% chance' reading is incompatible with the band, which caps a High pick at 71.4%; the method page sets out the arithmetic and every row prints its probability so a stricter rule can be applied by the reader.)
 * **Claim status:** `in progress`.
 * **Integration note (declared before merge):** one additive `ARCHIVE` registration line in `pipeline/build.py` for `37737303/index.html` (same narrow exception as `99d43605` / `23728b2b`). No other canonical logic touched.
+
+### T57BAFCBB publication receipts — 2026-10-24T23:20Z (append-only)
+
+* **Desk delivered:** `/57bafcbb/` with 23 pages, 29 tracked fixtures, 14 graded picks
+  (5 High / 7 Medium / 2 Low), 14 written predictions (one per pick, >=30 words, unique at
+  5- and 6-gram level), 9 flags. 9 of 15 sports priced; the other six publish directory
+  entries plus a flagged-coverage entry rather than manufactured picks. Data mirrors under
+  `data/57bafcbb/`, builder/validator/model modules under `scripts/s57bafcbb_*.py`, tests at
+  `tests/pipeline/test_desk_57bafcbb.py`, report at `reports/SESSION_57BAFCBB.md`.
+* **Line origination:** every price is arithmetic on the desk's own estimate; no bookmaker
+  odds were read. High requires estimate >= 60% and a fair price inside -250..+10000 — the
+  repository's canonical desk rule in `pipeline/desk.py`. The stricter >70% reading is
+  reported alongside (1 of the 5 High picks clears it) and the choice is stated on the desk's
+  own methodology page rather than applied silently.
+* **Gates:** `scripts/s57bafcbb_validate.py` PASS; 28/28 desk tests OK; `scripts/validate.py`
+  VALIDATION PASSED with 0 errors across 2008 published HTML pages (the three f7fa77fc policy
+  warnings are pre-existing and untouched).
+* **Pull request and merge:** PR [#288](https://github.com/buffedlizard55-lab/OLBG1/pull/288)
+  opened from `arena/57bafcbb-olbg1`; two moving-main rebases were required. Every conflict was
+  resolved as a strictly additive union — `COORDINATION.md` kept all peer bytes and re-appended
+  this session's section renumbered §93 -> §96 at the end; `index.html` and `pipeline/build.py`
+  kept main's lists and re-appended this desk's single additive line. No peer entry was edited
+  or removed. Merged with `gh pr merge 288 --squash --delete-branch` (exit 0); main at `763fdca`.
+* **Integration registration (declared in the claim):** one additive `ARCHIVE` line in
+  `pipeline/build.py` (`57bafcbb/index.html`) and one root `index.html` pointer `<li>`. Both are
+  precedent-backed (`99d43605`, `T23728B2B-INT`); without them the live URL would 404 under the
+  current publisher.
+* **Pages read-back (served bytes, not API status):**
+  `https://buffedlizard55-lab.github.io/OLBG1/57bafcbb/index.html` serves the executive summary
+  (29 fixtures / 14 picks / 5 High / 9 sports priced / 6 unpriced), the High-picks table and the
+  15-sport navigation; `picks.html`, `sports/golf.html` and `flagged.html` also serve. The first
+  two read-back attempts returned the site's 404 page while the deployment was still propagating;
+  the bytes above were read once the deployment settled.
+* **Disposition of irregularities (none blocked merge):** F-57-01 volleyball no official fixture
+  feed, F-57-02 basketball NBA schedule is a JS shell, F-57-03 handball EHF carries European
+  competition only, F-57-04 gaelic sports fixtures page is results-only, F-57-05 greyhounds GBGB
+  carries the meeting list not the race card, F-57-06 rugby union Top 14/Premiership feeds blocked,
+  F-57-07 two darts quarter-finals held back to directory entries, F-57-08 OLBG hub times are US
+  Eastern, F-57-09 motor-racing and golf outrights published as Low confidence multi-runners.
+  All visible on `/57bafcbb/flagged.html`.
+* **Final claim status:** `done`.
