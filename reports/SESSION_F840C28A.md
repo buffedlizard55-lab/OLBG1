@@ -112,7 +112,7 @@ so GitHub Pages will serve the desk, and nothing else.
 | `python3 -m pipeline.build --out /tmp/sitecheck` | 25 pages; `f840c28a/` present with 15 sport pages |
 | `python3 -m pipeline.validate --site /tmp/sitecheck` | 0 errors |
 | `python3 -m pipeline.validate --site .` | 0 errors |
-| `python3 scripts/validate.py` | PASSED (three pre-existing `f7fa77fc` warnings untouched) |
+| `python3 scripts/validate.py` | PASSED at the merge commit (three pre-existing `f7fa77fc` warnings untouched). After later peer merges it now reports 40 errors, all of them inside `a4803a7b/` — see §10 |
 
 ## 9. Honest limits
 
@@ -124,3 +124,25 @@ so GitHub Pages will serve the desk, and nothing else.
 * One of the league's twelve hockey games (MIN @ SEA per OLBG) could not be individually confirmed in
   the returned schedule slice, and MTL @ WPG on 25 October comes from a different schedule date.
   Both are published with no price and no pick.
+
+## 10. After the merge
+
+* **The desk is live and current.** Served bytes were read back from
+  `https://buffedlizard55-lab.github.io/OLBG1/f840c28a/index.html`,
+  `.../sports/ice-hockey.html` and `.../flagged.html` after the merge; the last of those shows the
+  post-merge wording ("A further 6 findings…"), so the deployment is this session's work and not a
+  stale cache.
+* **Current re-run at `main` `c789632` + this note:** `python3 scripts/validate.py` → PASSED, `python3 scripts/sf840c28a_validate.py` → 1,049/1,049, `python3 -m unittest discover -s tests/pipeline` → 678 tests OK.
+* **Repository CI went red after this merge, from another desk** (since repaired upstream — see below). `python3 scripts/validate.py` — the
+  workflow's *Historical structural gate* — now exits non-zero on `main`. Every one of its 40 errors
+  is a broken relative navigation link under `a4803a7b/sports/*.html`, which is the
+  `a4803a7b-olbg1` session's desk (committed 22:40 UTC, claimed 22:30 UTC and still active). None of
+  the errors is in `f840c28a/`. The same failure class this desk hit on its cricket page — subpages
+  need `../` — so the fix is a link prefix, not a data problem. It was reported to the owner in
+  `COORDINATION.md` §93.2 rather than edited here, because that directory is another session's write
+  scope.
+* **Legacy Pages build records show `errored` while the site is fine.** `gh api .../pages/builds`
+  reports `Page build failed` for several commits from 22:37 onward, including this session's and a
+  peer's, but the deployment that actually serves the site is the Actions job *Publish canonical
+  GitHub Pages*, which completed successfully, and the served bytes are correct. The two records
+  disagree because the repository builds Pages through Actions rather than the legacy builder.
