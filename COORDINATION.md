@@ -6651,3 +6651,21 @@ be read from an official source for any priced match (F-321-11).
 * **Explicitly not touched:** `pipeline/**` except the one-line start-here band described in §87.2, `data/current/**`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `scripts/validate.py`, `.github/workflows/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`, and every peer `<id>/` desk.
 * **Live channel:** Arena `fetch_page` for `www.olbg.com` (discovery only) and for official league/tour/federation endpoints (verification). Every read is stamped with its URL and UTC observation time in `data/2ff8342b/sources.json`.
 * **Claim status:** `in progress`.
+
+### §84.1 — T2FF83 result (24 October 2026, 17:52–18:05Z)
+
+**Delivered.** Namespaced desk `/2ff8342b/` — 26 pages: executive summary (KPIs, four highest-confidence pick cards, coverage table, "what is not here"), `picks.html` (16 published selections plus the 2 suppressed short prices), `matches.html` (all 54 rows with facts, gaps and an official link), `markets.html` (76 originated prices plus a 41-row market-family register naming what blocked every withheld family), `predictions.html` (15 write-ups), 15 sport subpages, `flagged.html`, `sources.html`, `methodology.html`, `reverse-engineering.html` and `repo-audit.html`. Machine-readable copies in `data/2ff8342b/`.
+
+**Counts.** 54 fixtures (26 confirmed on an official page, 28 OLBG-listing only) across 12 of the 15 sports · 76 market rows · 16 published picks (1 High, 2 Medium, 13 Low) + 2 deliberately suppressed at −313 and −650 · 15 predictions, 70–103 words, unique · 7 flags · 7 sports with no price and 3 with no fixture.
+
+**Sources read this session (all stamped in `data/2ff8342b/sources.json`).** OLBG hubs for all 15 sports (discovery only) · `statsapi.mlb.com` schedule + both league standings · `api-web.nhle.com` standings and 24 Oct schedule · `official.nba.com/referee-assignments/` (8-game slate) · `nba.com/standings` (2026-27 records and home/road splits) · `atptour.com` current scores and the Almaty stats-centre page · `wst.tv/matches` · `gaa.ie/fixtures-results` · `formula1.com/en/racing/2026/mexico`.
+
+**Prices.** Own numbers only. Ice hockey and baseball: log5 on points/win percentage with a home multiplier, Poisson totals and Skellam ±1.5 handicaps. Basketball: win percentage shrunk 20 games toward .500 before log5, moneyline only, because no official scoring rate was readable. Every price is fair (no margin), and the Confidence tier is published next to it.
+
+**Gates.** `python3 -m scripts.s2ff8342b_validate` → `OK — all desk gates pass` (source allow-list, price and tier arithmetic, prediction length/uniqueness/prohibited wording, every local asset and link, no script tags). `python3 -m unittest tests.pipeline.test_desk_2ff8342b` → OK. Full discovery: `tests/pipeline` 484 tests OK, `tests` OK. `python3 -m pipeline.build --out _site` → 97 canonical pages with the desk staged; `python3 -m pipeline.validate --site _site` and `--site .` → 0 errors; `python3 scripts/validate.py` → passed (2 pre-existing warnings owned by desk `f7fa77fc`).
+
+**One shared-file edit, deliberate and minimal.** `pipeline/build.py`'s `latest_desk()` band now opens `/2ff8342b/index.html` and keeps a secondary button to the earlier `3d121822` desk. No canonical data, root HTML, workflow, `scripts/validate.py` or peer desk was touched.
+
+**Published irregularities.** The −250 floor and a >70% requirement overlap only between 70.0% and 71.4% (F-01); nine sports carry no price and three have no fixture (F-02); OLBG shows no timezone (F-03); PDC behind a consent wall (F-04); two NHL games lack an opponent's standings row (F-05); no injury feed was readable for any priced fixture (F-06); the MLB schedule's leagueRecord is a series record, not a season record (F-07).
+
+**Task status:** `done`. PR, merge and Pages read-back recorded in §84.2.
