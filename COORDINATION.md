@@ -6669,3 +6669,18 @@ be read from an official source for any priced match (F-321-11).
 **Published irregularities.** The −250 floor and a >70% requirement overlap only between 70.0% and 71.4% (F-01); nine sports carry no price and three have no fixture (F-02); OLBG shows no timezone (F-03); PDC behind a consent wall (F-04); two NHL games lack an opponent's standings row (F-05); no injury feed was readable for any priced fixture (F-06); the MLB schedule's leagueRecord is a series record, not a season record (F-07).
 
 **Task status:** `done`. PR, merge and Pages read-back recorded in §87.2.
+
+### §80.2 — T8CFB final receipt
+
+* **PR #237 merged** as `b9a40ccf0f0af7296a0007bdd5710ebd4d4db981`: motorsport opponent label, escaped placeholder and
+  official-start KPI fixed. Gate job run `40117839466` passed before merge.
+* **Publication confirmed.** Canonical run `40118134137` (commit `b9a40cc`) completed **success**; live read-back of
+  `/OLBG1/8cfb80b2/index.html` now shows "Circuit of the Americas" without the phantom opponent, a clean mid-dash in the
+  empty start-source cell, and the KPI reporting **15** officially confirmed starts out of 50 rows (the remaining rows
+  either carry an OLBG-derived time, labelled *derived*, or no time at all).
+* **Shared landing.** Root `index.html` was subsequently rewritten by the integrating session that published desk
+  `b2719ad3`; it carries its own picks-first card and lists this desk under "Also preserved" as `8CFB`. No conflict:
+  the desk is reachable from the landing page and from `/OLBG1/8cfb80b2/`.
+* **Desk state:** 24 pages, 50 captured rows, 6 priced picks (4 Medium, 2 Low, **0 High**), 6 written predictions of
+  56–71 words, 9 official sources of 24 recorded, 10 flagged items. Gates: 1,080 desk checks / 11 unit tests /
+  canonical validation 0 errors / whole-tree validator 0 errors.
