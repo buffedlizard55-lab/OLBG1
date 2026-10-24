@@ -123,3 +123,13 @@ python3 -m pipeline.validate --site /tmp/_site733                 ->  0 errors
 `reports/SESSION_733888F2.md`, append-only `COORDINATION.md`, and one additive `ARCHIVE`
 registration line for `733888f2/index.html` in `pipeline/build.py` (declared in the claim before the
 edit, per the T23728B2B-INT / T99D4 precedent).
+
+## Volleyball addition (23:55Z)
+
+* Official input: `trentinovolley.it` round-one report (credited to Lega Pallavolo Serie A) — six results,
+  all twelve clubs, team top stats. `legavolley.it` calendar paths returned 404 and its league page
+  returned navigation chrome only; that is now flag F-09, and the OLBG-sourced kick-off times are F-19.
+* Four SuperLega matches priced (VB-1..VB-4) with hand-written write-ups; total is now **11 priced
+  matches, 11 picks, 1 High, 2 Strong, 3 Medium, 5 Low, 48 unpriced listings, 19 flags**.
+* The one High pick is Cucine Lube Civitanova at a fair **-246 (71.1%)** — inside the -250..+10000 band,
+  which is exactly the band-edge window the brief asks for.

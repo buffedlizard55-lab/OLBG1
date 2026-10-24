@@ -58,10 +58,10 @@
     },
     {
       "id": "F-09",
-      "title": "SuperLega page body not retrievable",
-      "type": "access limitation",
-      "source": "https://www.legavolley.it/2026/1a-giornata-and-18-10-2026-regular-season-superlega-stagione-2026-risultati-classifica/",
-      "detail": "The official Lega Pallavolo page opened, but the retrieval layer returned only navigation chrome, so no standings value is published. The five Italian fixtures appear in the table without a price."
+      "title": "SuperLega table read from a club page, not the league page",
+      "type": "evidence route",
+      "source": "https://www.trentinovolley.it/it/news-superlega/superlega-i-numeri-della-prima-giornata-di-regular-season/",
+      "detail": "legavolley.it returned navigation chrome only on two attempts, so the round-one table used for the four Italian prices comes from Trentino Volley's official match report, which credits the figures to Lega Pallavolo Serie A and lists all six results and all twelve clubs. The league page itself was not read."
     },
     {
       "id": "F-10",
@@ -125,6 +125,13 @@
       "type": "discovery caveat",
       "source": "https://www.olbg.com/betting-tips/Tennis/3",
       "detail": "OLBG prints event times on a geo-adjusted clock (\"Today\", \"Tomorrow\"), with no timezone label. Every time taken from OLBG is reproduced as displayed and is never converted or asserted as UTC."
+    },
+    {
+      "id": "F-19",
+      "title": "SuperLega round-two fixtures and times come from the OLBG listing",
+      "type": "evidence gap",
+      "source": "https://www.legavolley.it/calendario/",
+      "detail": "The four Italian fixtures priced here are the ones OLBG prints. legavolley.it answered 404 on the calendar paths tried and its round-two page does not exist until the matches finish, so kick-off times are shown as listed and flagged, never asserted. Team names, round-one scorelines and the table come from the official club report."
     }
   ]
 }

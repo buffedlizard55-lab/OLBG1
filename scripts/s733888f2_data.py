@@ -137,6 +137,10 @@ SOURCES = [
          '2026-10-24T22:48:00Z',
          'Official round-one page for SuperLega 2026/27 (opened; only the site chrome was readable '
          'through the retrieval layer before the page body, so no table values are published).'),
+    _src('trentino-superlega', 'Trentino Volley (official club page, table credited to Lega Pallavolo Serie A)',
+         'https://www.trentinovolley.it/it/news-superlega/superlega-i-numeri-della-prima-giornata-di-regular-season/',
+         'fact', '2026-10-24T23:40:00Z',
+         'Round-one scorelines, team top stats and the full SuperLega table after one match.'),
 ]
 SOURCE_INDEX = {s['id']: s for s in SOURCES}
 
@@ -231,7 +235,53 @@ MATCHES = [
              'Harlequins name Marcus Smith at fly-half for his 200th appearance; Saracens start '
              'Fergus Burke at 10 with Maro Itoje captaining.',
              'Referee Hamish Smales; the club notes Quins have won the last two meetings at The Stoop.']),
+    # ---------------- Volleyball --------------------------------------------------
+    m(id='VB-1', sport='volleyball', comp='SuperLega', start='2026-10-25T17:00:00Z',
+      start_label='Sun 25 Oct, 17:00 UTC (listed time, unconfirmed)',
+      venue='Eurosuole Forum, Civitanova Marche',
+      home='Cucine Lube Civitanova', away='Pallavolo Padova',
+      official='https://www.trentinovolley.it/it/news-superlega/superlega-i-numeri-della-prima-giornata-di-regular-season/',
+      inputs={'home': {'points': 3, 'gp': 1, 'form': 'W'},
+              'away': {'points': 0, 'gp': 1, 'form': 'L'}},
+      facts=['Civitanova won 3-0 at Verona in round one (20-25, 19-25, 26-28); Padova lost 0-3 at home '
+             'to Piacenza and did not pass 21 in any set.',
+             'Aleksandar Nikolov served five aces in that Verona match, the joint highest single-match '
+             'service count published for round one.',
+             'The round-one table has Civitanova on 3 points and Padova on 0.']),
+    m(id='VB-2', sport='volleyball', comp='SuperLega', start='2026-10-25T16:00:00Z',
+      start_label='Sun 25 Oct, 16:00 UTC (listed time, unconfirmed)',
+      venue='ilT quotidiano Arena, Trento',
+      home='Itas Trentino', away='Cisterna Volley',
+      official='https://www.trentinovolley.it/it/news-superlega/superlega-i-numeri-della-prima-giornata-di-regular-season/',
+      inputs={'home': {'points': 3, 'gp': 1, 'form': 'W'},
+              'away': {'points': 3, 'gp': 1, 'form': 'W'}},
+      facts=['Trentino won 3-0 at Modena (21-25, 23-25, 17-25) with Theo Faure scoring 23 points.',
+             'Cisterna beat Milano 3-0, took the first set 29-27 and posted 13 blocks, with Shikun Peng '
+             'on eight of them.',
+             'Both clubs are on 3 points after one round.']),
+    m(id='VB-3', sport='volleyball', comp='SuperLega', start='2026-10-25T16:00:00Z',
+      start_label='Sun 25 Oct, 16:00 UTC (listed time, unconfirmed)',
+      venue='PalaBarton, Perugia',
+      home='Sir Susa Scai Perugia', away='Tinet Prata di Pordenone',
+      official='https://www.trentinovolley.it/it/news-superlega/superlega-i-numeri-della-prima-giornata-di-regular-season/',
+      inputs={'home': {'points': 2, 'gp': 1, 'form': 'W'},
+              'away': {'points': 3, 'gp': 1, 'form': 'W'}},
+      facts=['Perugia, the reigning champions, needed five sets to beat Cuneo 3-2 and took 2 points.',
+             'Prata marked their return to the top division with a 3-1 win over Monza; Wout D\'Heer '
+             'scored 18 points from the middle.',
+             'Prata share the round-one high of 13 blocks; Perugia top the serving count with 12 aces.']),
+    m(id='VB-4', sport='volleyball', comp='SuperLega', start='2026-10-25T16:00:00Z',
+      start_label='Sun 25 Oct, 16:00 UTC (listed time, unconfirmed)',
+      venue='Opiquad Arena, Monza',
+      home='Vero Volley Monza', away='Rana Verona',
+      official='https://www.trentinovolley.it/it/news-superlega/superlega-i-numeri-della-prima-giornata-di-regular-season/',
+      inputs={'home': {'points': 0, 'gp': 1, 'form': 'L'},
+              'away': {'points': 0, 'gp': 1, 'form': 'L'}},
+      facts=['Monza lost 1-3 at Prata, taking the second set 25-19.',
+             'Verona were beaten 0-3 at home by Civitanova and did not win a set.',
+             'Both clubs sit on 0 points after one round.']),
 ]
+
 
 # --------------------------------------------------------------------------
 # Listed-but-not-priced rows: discovered on OLBG, no official input read.
@@ -304,15 +354,6 @@ UNPRICED = [
       'No official NBA record or availability input read.'),
     u('basketball', 'NBA', 'Golden State Warriors @ Phoenix Suns', 'OLBG: "Today 23:00"',
       'No official NBA record or availability input read.'),
-    u('volleyball', 'SuperLega', 'Itas Trentino v Cisterna', 'OLBG: "Tomorrow 12:00"',
-      'The official SuperLega round-one page was opened but only site chrome was retrievable, so no '
-      'table line is published for either side.', 'https://www.legavolley.it/2026/1a-giornata-and-18-10-2026-regular-season-superlega-stagione-2026-risultati-classifica/'),
-    u('volleyball', 'SuperLega', 'Cucine Lube Civitanova v Pallavolo Padova', 'OLBG: "Tomorrow 13:00"',
-      'No official table line read.'),
-    u('volleyball', 'SuperLega', 'Sir Susa Scai Perugia v Tinet Prata di Pordenone', 'OLBG: "Tomorrow 13:00"',
-      'No official table line read.'),
-    u('volleyball', 'SuperLega', 'Vero Volley Monza v Rana Verona', 'OLBG: "Tomorrow 13:00"',
-      'No official table line read.'),
     u('volleyball', 'SuperLega', 'CHKS Chelm v Resovia Rzeszow', 'OLBG: "Tomorrow 13:00"',
       'Polish PlusLiga page not read this session.'),
     u('volleyball', 'Bundesliga', 'Barock Volleys Ludwigsburg v TV Rottenburg', 'OLBG: "Tomorrow 12:00"',

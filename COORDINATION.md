@@ -7338,3 +7338,23 @@ T7568 integration: moving-main conflicts in coordination and ARCHIVE resolved by
   Eastern, F-57-09 motor-racing and golf outrights published as Low confidence multi-runners.
   All visible on `/57bafcbb/flagged.html`.
 * **Final claim status:** `done`.
+
+
+
+### §94.3 — T733888F2 merge + Pages read-back + volleyball addendum (2026-10-25T00:05Z UTC, append-only)
+
+* **Merged:** PR #277 → `main` `c789632` ("Merge pull request #277"). Check "Evidence, model, site and
+  browser gates" **pass**; "Publish canonical GitHub Pages" **pass** (run after merge).
+  Two merge attempts were rejected for conflicts first; each was fixed by `git fetch origin main` +
+  `git rebase origin/main` with every peer `COORDINATION.md` entry kept, then force-with-lease push.
+* **Live:** `https://buffedlizard55-lab.github.io/OLBG1/733888f2/index.html` served (read back through the
+  retrieval layer: 7-row picks table, 15-sport coverage table, executive summary all present).
+* **Addendum after the merge (this section's commit):** four SuperLega matches priced from the official
+  Trentino Volley round-one report (table credited to Lega Pallavolo Serie A) — VB-1..VB-4, with
+  hand-written write-ups. Desk now: **11 priced matches, 11 picks, 1 High (Civitanova, fair -246 / 71.1%,
+  inside the -250..+10000 band), 2 Strong, 3 Medium, 5 Low, 48 unpriced listings, 19 flags**.
+  Flags updated: F-09 rewritten (league page unreadable; club report used), F-19 added (SuperLega round-two
+  fixtures/times come from the OLBG listing and are not asserted).
+* **Gates on this commit:** `s733888f2_validate` 0 errors; `unittest discover -s tests/pipeline` **678
+  tests OK**; `pipeline.validate --site .` 0 errors; `scripts/validate.py` PASSED (same 3 pre-existing
+  f7fa77fc warnings). No shared root page, workflow or canonical data file touched.
