@@ -1,0 +1,284 @@
+{
+  "generated_at": "2026-10-24T22:40:00Z",
+  "sitemap": "https://www.olbg.com/sitemap-betting-tips.xml",
+  "route_pattern": "/betting-tips/{Slug}/{id}",
+  "event_pattern": "/betting-tips/{Sport}/All_{Sport}/All_Events/{Event}/{id}?event_id={n}",
+  "sports": [
+    {
+      "slug": "golf",
+      "name": "Golf",
+      "id": 5,
+      "category": "Precision & cue",
+      "hub": "https://www.olbg.com/betting-tips/Golf/5",
+      "status": "No tips found",
+      "markets": [
+        "Tournament Outright Winner",
+        "First Round Leader",
+        "Top regional player",
+        "Team event markets"
+      ],
+      "note": "Hub exposed market documentation but no open tournament tip."
+    },
+    {
+      "slug": "volleyball",
+      "name": "Volleyball",
+      "id": 21,
+      "category": "Field & court",
+      "hub": "https://www.olbg.com/betting-tips/Volleyball/21",
+      "status": "Open Win Match tips",
+      "markets": [
+        "Win Match"
+      ],
+      "note": "More than twenty Win Match cards; event_id links and Load More Tips pagination."
+    },
+    {
+      "slug": "rugby-union",
+      "name": "Rugby Union",
+      "id": 9,
+      "category": "Field & court",
+      "hub": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+      "status": "Three open match markets",
+      "markets": [
+        "To Win",
+        "Handicap",
+        "Win Tournament"
+      ],
+      "note": "Show Expired Events toggle and Load More Tips; several rows are long-dated outrights."
+    },
+    {
+      "slug": "cricket",
+      "name": "Cricket",
+      "id": 7,
+      "category": "Field & court",
+      "hub": "https://www.olbg.com/betting-tips/Cricket/7",
+      "status": "Open match and player markets",
+      "markets": [
+        "Win Match",
+        "Top Team1 Batsman",
+        "Man Of The Match",
+        "Outright Winner"
+      ],
+      "note": "Load More Tips separates near-term games from long-dated tournament markets."
+    },
+    {
+      "slug": "snooker",
+      "name": "Snooker",
+      "id": 8,
+      "category": "Precision & cue",
+      "hub": "https://www.olbg.com/betting-tips/Snooker/8",
+      "status": "No tips found",
+      "markets": [
+        "Win Match",
+        "Handicap Betting",
+        "Frame Betting",
+        "Win Tournament"
+      ],
+      "note": "Hub published market definitions and historical frame statistics but no open tip."
+    },
+    {
+      "slug": "darts",
+      "name": "Darts",
+      "id": 15,
+      "category": "Precision & cue",
+      "hub": "https://www.olbg.com/betting-tips/Darts/15",
+      "status": "Open match and outright tips",
+      "markets": [
+        "Win Match 2-way",
+        "Total 180s",
+        "Win Tournament"
+      ],
+      "note": "Load More Tips hides additional outrights; event pages expose all markets."
+    },
+    {
+      "slug": "baseball",
+      "name": "Baseball",
+      "id": 12,
+      "category": "Field & court",
+      "hub": "https://www.olbg.com/betting-tips/Baseball/12",
+      "status": "One open MLB market",
+      "markets": [
+        "Money Line",
+        "Run Line",
+        "Game Totals",
+        "Ante-post"
+      ],
+      "note": "Only one active event; Show Expired Events and Load More Tips controls present."
+    },
+    {
+      "slug": "gaelic",
+      "name": "Gaelic Sports",
+      "id": 25,
+      "category": "Field & court",
+      "hub": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+      "status": "Four open match markets",
+      "markets": [
+        "Handicap",
+        "Match winner",
+        "Draw",
+        "Win Tournament"
+      ],
+      "note": "Handicap selections sometimes have a blank market label in the hub markup."
+    },
+    {
+      "slug": "greyhounds",
+      "name": "Greyhounds",
+      "id": 28,
+      "category": "Race & speed",
+      "hub": "https://www.olbg.com/betting-tips/Greyhounds/28",
+      "status": "One open daily race",
+      "markets": [
+        "Daily Races",
+        "Win",
+        "Trap/forecast"
+      ],
+      "note": "Race title uses track-local time while the row time is an unlabeled GeoIP-shifted time."
+    },
+    {
+      "slug": "tennis",
+      "name": "Tennis",
+      "id": 3,
+      "category": "Field & court",
+      "hub": "https://www.olbg.com/betting-tips/Tennis/3",
+      "status": "Many open match markets",
+      "markets": [
+        "Win Match",
+        "Set handicap",
+        "Total games"
+      ],
+      "note": "Hub lists finals and next-week main draws; times are unlabeled."
+    },
+    {
+      "slug": "motor-racing",
+      "name": "Motor Racing",
+      "id": 14,
+      "category": "Race & speed",
+      "hub": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+      "status": "No tips found",
+      "markets": [
+        "Fastest Qualifier",
+        "Win Race",
+        "Podium Finish",
+        "Top 6 Finish",
+        "Points Finish",
+        "Fastest Lap",
+        "Win Tournament"
+      ],
+      "note": "Hub documents all F1 market families and calendar links but has no open tip."
+    },
+    {
+      "slug": "handball",
+      "name": "Handball",
+      "id": 20,
+      "category": "Field & court",
+      "hub": "https://www.olbg.com/betting-tips/Handball/20",
+      "status": "Many open 3-way markets",
+      "markets": [
+        "Money Line",
+        "Handicap",
+        "Game Totals"
+      ],
+      "note": "Tie is a valid Money Line outcome; many most-tipped rows were Tie."
+    },
+    {
+      "slug": "ice-hockey",
+      "name": "Ice Hockey",
+      "id": 13,
+      "category": "Field & court",
+      "hub": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+      "status": "Many open NHL/NLA/DEL markets",
+      "markets": [
+        "Money Line",
+        "Game Totals",
+        "Puck line / handicap"
+      ],
+      "note": "/11 redirected to /13; hub times were unlabeled and split by GeoIP."
+    },
+    {
+      "slug": "basketball",
+      "name": "Basketball",
+      "id": 4,
+      "category": "Field & court",
+      "hub": "https://www.olbg.com/betting-tips/Basketball/4",
+      "status": "Open NBA and KBL markets",
+      "markets": [
+        "Money Line",
+        "Pointspread",
+        "Game Totals"
+      ],
+      "note": "NBA rows use @ notation and unlabeled times; KBL rows appear after Load More Tips."
+    },
+    {
+      "slug": "rugby-league",
+      "name": "Rugby League",
+      "id": 10,
+      "category": "Field & court",
+      "hub": "https://www.olbg.com/betting-tips/Rugby_League/10",
+      "status": "Only futures on hub",
+      "markets": [
+        "Win Tournament",
+        "Grand Final Winner",
+        "Match winner",
+        "Handicap"
+      ],
+      "note": "No active RLWC match tips were displayed; official NRL draw still lists Sunday games."
+    }
+  ],
+  "quirks": [
+    [
+      "Canonical route",
+      "/betting-tips/{Slug}/{id}",
+      "Sitemap uses escaped underscores; /11 for ice hockey redirects to /13.",
+      "olbg-sitemap",
+      "nhl-schedule"
+    ],
+    [
+      "Event route",
+      "/betting-tips/{Sport}/All_{Sport}/All_Events/{Event}/{id}?event_id={n}",
+      "Event IDs are numeric and independent of sport ID.",
+      "olbg-main",
+      "pga-board"
+    ],
+    [
+      "Pagination",
+      "Load More Tips",
+      "The first hub chunk is not the complete event set; hidden zero-tip fixtures also exist.",
+      "olbg-main",
+      "pdpa-ec"
+    ],
+    [
+      "Expired rows",
+      "Show Expired Events",
+      "Expired events can be enabled on some hubs; default hides already-started matches.",
+      "olbg-main",
+      "prem-standings"
+    ],
+    [
+      "Time display",
+      "Today / Tomorrow / dd Mmm",
+      "Times have no visible timezone and differ from race titles or official UTC feeds.",
+      "olbg-main",
+      "mlb-schedule"
+    ],
+    [
+      "Tip percentage",
+      "6/8 Win Tips = 75%",
+      "This is community tip share, not an official probability and not used as an input to our prices.",
+      "olbg-main",
+      "nhl-standings"
+    ],
+    [
+      "Market labels",
+      "Money Line / To Win / Win Match",
+      "Labels differ by sport; some handicap rows have a blank label in hub markup.",
+      "olbg-main",
+      "legavolley-cal"
+    ],
+    [
+      "Case sensitivity",
+      "Gaelic_Football/25",
+      "Slug and ID both matter; wrong ID can return a different sport or redirect.",
+      "olbg-sitemap",
+      "wta-tokyo"
+    ]
+  ]
+}

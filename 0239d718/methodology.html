@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Independent OLBG discovery and official-source research desk. Not affiliated with OLBG.">
+<title>Method · 0239d718 OLBG Clarity Desk</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head><body data-snapshot="2026-10-24T22:40:00Z">
+<header><div class="wrap"><div class="top">
+<a class="brand" href="index.html"><span class="mark">15</span><span>OLBG Clarity Desk<small>Session 0239d718 · 24 Oct 2026 22:40 UTC</small></span></a>
+<span class="snapshot">15 sports · 75 picks · 28 high · 22 flags</span>
+</div><nav aria-label="Desk sections"><a class="" href="index.html">Dashboard</a><a class="" href="picks.html">Picks</a><a class="" href="predictions.html">Predictions</a><a class="" href="matches.html">Matches</a><a class="" href="markets.html">Originated lines</a><a class="" href="sports.html">Sports</a><a class="" href="categories.html">Categories</a><a class="" href="sources.html">Official sources</a><a class="" href="flagged.html">Flagged for review</a><a class="" href="audit.html">Repo audit</a><a class="" href="reverse-engineering.html">Inside OLBG</a><a class="active" href="methodology.html">Method</a></nav></div></header>
+<main><div class="wrap"><h1>Method</h1><p class="lede">Independent line origination, source-first facts and the strict high-confidence gate.</p>
+<div class="panel"><h2>Evidence order</h2><p>1. OLBG sitemap, all-sports hub and 15 sport hubs are read to locate events, event IDs, market families and tip labels. 2. Only upcoming events are kept. 3. Each fact is checked against an official league, governing body, tour, promoter or club page. 4. If an official page does not publish the value, the field is blank and the gap is flagged. 5. Our own line is then produced from the remaining official inputs.</p></div>
+<div class="panel"><h2>How the price is made</h2><p>A deterministic evidence score uses official standings, seedings, recent official results and scoring rates. The score is translated into a 0–1 chance. The fair American price is the reciprocal of that chance: for chances above 50%, price = -100 × p/(1-p); below 50%, price = +100 × (1-p)/p. OLBG prices, tip percentages and bookmaker quotes are not inputs.</p></div>
+<div class="panel"><h2>Strict high-confidence gate</h2><p><strong>High</strong> means our own chance is greater than 70% <em>and</em> the fair American price is from -250 through +10000. A short market-price favorite alone does not qualify. <strong>Medium</strong> is 62%–70%; <strong>low</strong> is below 62%. All 75 written picks carry their chance, price, confidence and exact selection.</p></div>
+<div class="panel"><h2>Blank-and-flag rule</h2><p>Exact UTC times, recent results, team statistics and availability are left blank when the official source read does not publish them. Predictions say when a field is blank; the <a href="flagged.html">review page</a> groups those gaps. No value is inferred from OLBG's unlabeled times or tip shares.</p></div>
+<div class="panel"><h2>Publication checks</h2><p>Every table row has an official source link. Predictions are at least 30 words, name the selection, avoid internal build vocabulary, and share no repeated 25-word passage. Internal links, fragments, source hosts, confidence tiers and price arithmetic are checked by <code>scripts/s0239d718_validate.py</code> and its unit test before merge.</p></div>
+</div></main>
+<footer><div class="wrap">Independent research project. OLBG is used only to discover events and market families; every published fact links to an official source. Gamble responsibly; 18+.</div></footer>
+</body></html>
