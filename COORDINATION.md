@@ -6497,7 +6497,9 @@ rebuilt, and re-gated at 1,080 checks with 0 failures plus 0 canonical validatio
 
 ---
 
-## 82. Session `580f43c9-olbg1` — `T580F` build record (2026-10-24T18:55Z UTC)
+## 85.1 Session `580f43c9-olbg1` — `T580F` build record (2026-10-24T18:55Z UTC)
+
+*(Renumbered from §82 on rebase: §82 was already taken by session 9e041d28.)*
 
 * **Status:** desk complete and gated; PR/merge receipt appended below by the same session.
 * **Write scope actually used:** `data/580f43c9/**`, `scripts/s580f43c9_{data,model,build,validate}.py`,
