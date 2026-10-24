@@ -323,7 +323,7 @@ PICKS = [
         "prediction": (
             "Daniil Medvedev is the selection to win the Almaty final against Nikoloz Basilashvili. "
             "Medvedev, the top seed, reached the final by beating third seed Alexander Bublik 6-3 before the match ended in retirement, "
-            "while Basilashvili needed three sets and nearly two and a half hours to remove seventh seed Stefanos Tsitsipas 6-4 6-7(5) 6-3. "
+            "while Basilashvili needed three sets to remove seventh seed Stefanos Tsitsipas 6-4 6-7(5) 6-3. "
             "That extra workload, plus the gap between a seeded top seed and an unseeded opponent, is why the top seed is taken here."
         ),
     },
@@ -356,7 +356,7 @@ PICKS = [
         "prediction": (
             "Tampa Bay Rays are the selection to level the World Series in Game 2 at American Family Field. "
             "The Rays won 98 regular-season games and scored 736 runs while allowing 650, a per-game rate of 4.54 against 4.01, "
-            "yet they lost Game 1 by a single run, 3-2, after Milwaukee scored in the late innings. "
+            "yet they lost Game 1 by a single run, 3-2, in Milwaukee. "
             "A one-run defeat on the road is not evidence of a mismatch, and the Rays' run prevention remains the strongest verifiable number in this series."
         ),
     },

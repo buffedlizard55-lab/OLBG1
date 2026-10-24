@@ -64,6 +64,12 @@ def source_link(key, label=None):
             f'{e(label or s["publisher"])} &#8599;</a>')
 
 
+def match_label(fx):
+    if fx["sport"] == "motor-racing":
+        return f'{fx["a"]} ({fx["b"]})'
+    return f'{fx["a"]} vs {fx["b"]}'
+
+
 def pick_cell(fx, href):
     p = prediction_for(fx["id"])
     if not p:
@@ -137,7 +143,7 @@ def tier_badge(t):
 
 def pick_row(p, with_prediction=True):
     fx = next(f for f in D.FIXTURES if f["id"] == p["fixture"])
-    match = f'{e(fx["a"])} vs {e(fx["b"])}'
+    match = e(match_label(fx))
     link = f'<a href="predictions.html#{e(p["fixture"])}">read the write-up</a>' if with_prediction else ""
     start = e(stamp(fx["start_utc"]) or "start unconfirmed")
     return (
@@ -179,7 +185,7 @@ def index():
     <li><b>{len(high)}</b><span>High confidence</span></li>
     <li><b>{len(med)}</b><span>Medium</span></li>
     <li><b>{len(low)}</b><span>Low</span></li>
-    <li><b>{len(upcoming)}</b><span>matches with an official link</span></li>
+    <li><b>{len(D.FIXTURES)}</b><span>matches with an official link</span></li>
     <li><b>{len(D.DISCOVERY)}</b><span>OLBG listings inventoried</span></li>
   </ul>
 </section>
@@ -251,7 +257,7 @@ def predictions_page():
         cards.append(f"""
 <article class="pred" id="{e(p['fixture'])}">
 <header><div><p class="kicker">{e(dict((s[0], s[1]) for s in D.SPORTS).get(fx['sport'], fx['sport']))} &middot; {e(fx['competition'])}</p>
-<h2>{e(fx['a'])} vs {e(fx['b'])}</h2></div><div class="pickbox"><span class="muted">The pick</span><strong>{e(p['selection'])}</strong>
+<h2>{e(match_label(fx))}</h2></div><div class="pickbox"><span class="muted">The pick</span><strong>{e(p['selection'])}</strong>
 {tier_badge(p['confidence'])} <span class="price">{decimal(p['prob'])} ({e(american(p['prob']))})</span></div></header>
 <p class="prose">{e(p['prediction'])}</p>
 <div class="facts"><h3>Official facts used</h3><ul>{facts}</ul>
@@ -273,7 +279,7 @@ def matches_page():
         facts = "; ".join(f"{k}: {v}" for k, v in fx["facts"].items() if v) or NO_INPUT
         rows.append(
             "<tr>"
-            f'<td><strong>{e(fx["a"])} vs {e(fx["b"])}</strong><br><span class="muted">{e(fx["competition"])}</span></td>'
+            f'<td><strong>{e(match_label(fx))}</strong><br><span class="muted">{e(fx["competition"])}</span></td>'
             f'<td>{e(stamp(fx["start_utc"]) or "unconfirmed")}<br><span class="muted">{e(st)}</span></td>'
             f'<td>{e(fx["venue"] or "unconfirmed")}</td>'
             f"<td class=\"small\">{facts}</td>"
@@ -341,7 +347,7 @@ def markets_page():
         fx = next(f for f in D.FIXTURES if f["id"] == m["fixture"])
         rows.append(
             "<tr>"
-            f'<td><strong>{e(m["selection"])}</strong><br><span class="muted">{e(fx["a"])} vs {e(fx["b"])}</span></td>'
+            f'<td><strong>{e(m["selection"])}</strong><br><span class="muted">{e(match_label(fx))}</span></td>'
             f'<td>{e(m["market"])}</td>'
             f'<td class="num">{pct(m["prob"])}</td>'
             f'<td class="num">{decimal(m["prob"])}</td>'

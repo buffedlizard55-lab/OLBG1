@@ -66,7 +66,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 
 | # | Task | Status | Session | File scope | Started (UTC) | Notes |
 |---|------|--------|---------|------------|---------------|-------|
-| T7F1B | **Clarity rebuild + final integration (`7f1bf9f7-olbg1`, 24 Oct 2026):** one clean, obvious picks desk at `/today/` (executive summary first, picks and their location unmistakable), fresh live OLBG discovery across the exact 15 requested sports, own originated multi-market lines, `-250…+10000` High band with ≥70% probability, unique ≥30-word predictions written from official-source facts, line-by-line repo audit with source links, Flagged for Review page, canonical root banner pointing at the desk, validator + tests green, PR → merge → Pages read-back | in progress | 7f1bf9f7-olbg1 | `data/today/**`, `scripts/today_*.py`, `today/**`, `reports/SESSION_7F1BF9F7.{md}`, `tests/pipeline/test_today_desk.py`, append-only `COORDINATION.md`, surgical banner/nav hunk in `pipeline/build.py` | 2026-10-24T17:15Z | Pinned Arena branch `arena/7f1bf9f7-olbg1`. No peer desk, shared canonical data or peer workflow edits. Final integration for main. |
+| T7F1B | **Clarity rebuild + final integration (`7f1bf9f7-olbg1`, 24 Oct 2026):** one clean, obvious picks desk at `/today/` (executive summary first, picks and their location unmistakable), fresh live OLBG discovery across the exact 15 requested sports, own originated multi-market lines, `-250…+10000` High band with ≥70% probability, unique ≥30-word predictions written from official-source facts, line-by-line repo audit with source links, Flagged for Review page, canonical root banner pointing at the desk, validator + tests green, PR → merge → Pages read-back | done | 7f1bf9f7-olbg1 | `data/today/**`, `scripts/today_*.py`, `today/**`, `reports/SESSION_7F1BF9F7.{md}`, `tests/pipeline/test_today_desk.py`, append-only `COORDINATION.md`, surgical banner/nav hunk in `pipeline/build.py` | 2026-10-24T17:15Z | Pinned Arena branch `arena/7f1bf9f7-olbg1`. No peer desk, shared canonical data or peer workflow edits. Final integration for main. |
 | T3C021B | **Fresh live 23 Oct 2026 night desk (`3c021b49-olbg1`):** live OLBG discovery across the exact 15 requested sports; fresh official governing-body verification; independent multi-market line origination; strict −250…+10000 High gate; unique ≥30-word human predictions; namespaced dashboard, repo audit, sources and Flagged for Review; validator gate; PR → merge → GitHub Pages deployment read-back | done | 3c021b49-olbg1 | `data/3c021b49/**`, `scripts/s3c021b49_*.py`, `3c021b49/**`, `reports/SESSION_3C021B49.{md,html}`, `tests/pipeline/test_desk_3c021b49.py`, append-only `COORDINATION.md` | 2026-10-23T22:00Z | Pinned Arena branch `arena/3c021b49-olbg1`; strictly isolated namespace; no shared canonical root/pipeline/data-current/workflow edits. |
 | T1 | Reverse-engineer OLBG sport taxonomy and match coverage | done | ce5920e3-olbg1 | `data/olbg_taxonomy.json`, `reverse-engineering.html` | 2026-10-21T05:20Z | 22 OLBG sports enumerated with IDs; 17 in scope |
 | T2 | Harvest + verify fixtures for in-scope sports | done | ce5920e3-olbg1 | `data/fixtures.json` | 2026-10-21T05:35Z | Official-source verification per row (initial 50 rows) |
@@ -6451,3 +6451,37 @@ rebuilt, and re-gated at 1,080 checks with 0 failures plus 0 canonical validatio
 * **Design disclosure:** the brief's two High gates intersect in a 1.4-point window (a −250 fair price is 71.43%), so High prices print between −235 and −248 by construction. Filed as F-3700-01 on `/37003e61/flagged.html`.
 * **Repo findings raised, not fixed (out of scope):** 15 duplicated task IDs across 103 board rows; `data/current/snapshot.json` stamped 2026-10-22T12:29:50Z reporting `high: 0` behind a root that is two days stale; `data/3c021b49/fixtures.json` still lists two ATP Almaty semi-finals for 24 Oct although the official order of play has the final as Medvedev–Basilashvili.
 * **Claim status:** complete. No peer file, root page, `pipeline/**`, workflow or canonical dataset was modified.
+
+## 82. Session `7f1bf9f7-olbg1` — `T7F1B` clarity desk at `/today/` + final integration (2026-10-24T18:05Z)
+
+* **Session / pinned branch:** `7f1bf9f7-olbg1` on `arena/7f1bf9f7-olbg1` (§0.2).
+* **Why this session exists:** the reviewer's standing complaint is not a data-hunting complaint, it is
+  a wayfinding one — "the sites are too confusing to understand what the matches are and where the
+  picks are". Fifty-five sibling desks each publish their own dashboard, the canonical root publishes
+  `high: 0` / `medium: 0`, and no root page links to anything called a pick. That is the problem this
+  session fixed first.
+* **Exclusive write scope:** `data/today/**` (none used), `scripts/today_*.py`, `today/**`,
+  `reports/SESSION_7F1BF9F7.md`, `tests/pipeline/test_today_desk.py`, append-only `COORDINATION.md`,
+  one surgical hunkset in `pipeline/build.py` (nav entry + banner), one pointer line in `README.md`.
+* **Delivered:** 26-page desk at `/today/` (executive summary first, picks as the first table, "where
+  the picks are" stated in words), 7 matches with official links, 13 originated prices across
+  match-winner / puck-line / series / race markets, 5 picks each with a unique written prediction,
+  **60 OLBG listings across the exact fifteen requested sports**, 8 flags, 7 repository findings,
+  9 official sources and 15 discovery sources all timestamped.
+* **High picks issued: 0.** The brief's band floor (-250 = 71.43%) and its High threshold (70%) leave
+  a 1.43-point window; no verified input today lands inside it. The shortfall is stated on the front
+  page, in the methodology (worked through arithmetically) and in flag `F-7F-03`. No number was moved
+  to manufacture a High pick.
+* **Sources read (all official, timestamps in `reports/SESSION_7F1BF9F7.md`):** NHL schedule and
+  standings, NHL club stats, MLB Game 1 and Game 2 schedules and standings, Formula 1 US GP page, ATP
+  scores. Two official routes failed and are recorded rather than routed around: `cdn.nba.com`
+  (HTTP 500) and `data.nba.com` (AccessDenied) left basketball with no team input; `pdc.tv` returned a
+  consent wall so no darts match could be confirmed.
+* **Gates (all green before the PR):** `scripts/today_validate.py` PASS (26 pages, internal links,
+  fragments, official-source hosts, tier arithmetic, banned vocabulary) · `tests/pipeline/test_today_desk.py`
+  14 OK · `python -m unittest discover -s tests/pipeline` OK · `python -m unittest discover -s tests`
+  OK · `scripts/validate.py` PASSED (3 pre-existing `f7fa77fc` warnings) · `pipeline.build --out _site`
+  then `pipeline.validate --site _site` **0 errors**.
+* **Root wiring:** `pipeline/build.py` now emits a "Today's picks (clear view)" nav entry with the live
+  pick count and a banner above the page heading on every canonical page. This is the only change to
+  shared canonical code; it adds markup and does not alter any existing figure.
