@@ -440,7 +440,7 @@ def main() -> None:
           <div class="pick-meta">
             <span><strong>{p['american']:+d}</strong><small>our fair price</small></span>
             <span><strong>{p['implied_pct']}%</strong><small>implied chance</small></span>
-            <span><strong>{fmt_time(fx['start_utc']).replace('<span class="muted">not captured</span>','TBC')}</strong><small>start</small></span>
+            <span><strong>{fmt_time(fx['start_utc']) if fx['start_utc'] else 'not published'}</strong><small>start (UTC)</small></span>
           </div>
           <p class="why">{e(reason)}</p>
           <a class="more" href="predictions.html#{e(p['fixture_id'])}">Read the full prediction →</a>
