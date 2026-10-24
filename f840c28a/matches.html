@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Every match, priced or not · OLBG research desk f840c28a</title>
+<style>
+:root{--ink:#101d2c;--muted:#5b6b7c;--line:#e2e8ef;--bg:#f5f7fa;--card:#fff;
+--brand:#0b5cd5;--brand-soft:#e8f0fd;--high:#0b7a4b;--high-soft:#e2f5ea;
+--med:#8a5a00;--med-soft:#fdf3df;--low:#5b6b7c;--low-soft:#eef1f5;--flag:#a3282d;--flag-soft:#fceaea}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--brand)}
+h1,h2,h3{line-height:1.2;margin:0 0 10px}
+h1{font-size:29px;letter-spacing:-.3px}h2{font-size:20px;margin-top:30px}h3{font-size:16px}
+p{margin:0 0 12px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 18px}
+header.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:9}
+.toprow{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:11px 0;flex-wrap:wrap}
+.brand{font-weight:750;text-decoration:none;color:var(--ink);display:flex;gap:9px;align-items:center}
+.brand .mark{width:28px;height:28px;border-radius:8px;background:var(--brand);color:#fff;display:grid;
+place-items:center;font-size:13px;font-weight:700}
+nav.pages{display:flex;gap:4px;flex-wrap:wrap}
+nav.pages a{text-decoration:none;color:var(--muted);padding:7px 10px;border-radius:8px;font-size:14px;font-weight:600}
+nav.pages a:hover{background:var(--brand-soft);color:var(--brand)}
+nav.pages a.on{background:var(--brand);color:#fff}
+main{padding:26px 0 60px}
+.lede{font-size:17px;color:var(--muted);max-width:820px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0 6px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.kpi b{display:block;font-size:26px;line-height:1.1}
+.kpi span{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:16px 0}
+.callout{border-left:4px solid var(--brand);background:var(--brand-soft);border-radius:0 10px 10px 0;padding:13px 16px;margin:16px 0}
+.callout.warn{border-color:var(--flag);background:var(--flag-soft)}
+.callout b{display:block;margin-bottom:4px}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card);margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f2f5f9;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafbfd}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.b-high{background:var(--high-soft);color:var(--high)}
+.b-med{background:var(--med-soft);color:var(--med)}
+.b-low{background:var(--low-soft);color:var(--low)}
+.b-flag{background:var(--flag-soft);color:var(--flag)}
+.b-info{background:var(--brand-soft);color:var(--brand)}
+.small{font-size:13px;color:var(--muted)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+.pickcell{font-weight:700}
+.pred{border-left:3px solid var(--brand);padding-left:14px;margin:18px 0}
+.pred p{margin:6px 0}
+footer{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:13.5px;background:#fff}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}h1{font-size:24px}}
+ul.plain{margin:6px 0 0;padding-left:18px}
+ul.plain li{margin-bottom:5px}
+.tag{font-size:12px;color:var(--muted)}
+</style></head>
+<body>
+<header class="top"><div class="wrap toprow">
+<a class="brand" href="index.html"><span class="mark">OL</span> OLBG research desk</a>
+<nav class="pages"><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="predictions.html">Written predictions</a><a href="matches.html" class="on">Every match</a><a href="markets.html">Markets</a><a href="sports.html">Sports</a><a href="flagged.html">Flagged</a><a href="sources.html">Sources</a><a href="methodology.html">Method</a><a href="repo-review.html">Repo review</a></nav>
+</div></header>
+<main><div class="wrap">
+<h1>Every match, priced or not</h1>
+<p class="lede">One row per fixture · the reason a blank is blank</p>
+
+<p>Every fixture on the desk, whether or not it carries a price, with the source that confirms it.
+Rows that could not be confirmed by the league are marked and carry no price.</p>
+<h2>Ice hockey and basketball</h2>
+<div class="table-wrap"><table>
+<tr><th>Competition</th><th>Match</th><th>Start (UTC)</th><th>State</th><th>Pick</th><th>Fixture source</th></tr>
+<tr><td>NHL</td><td><b>TOR @ EDM</b><div class="small">Rogers Place</div></td><td class="small">2026-10-24T23:00:00Z</td><td><span class="badge b-high">Priced</span></td><td>Under 7.5 <span class="badge b-high">Medium</span></td><td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">NHL</a></td></tr><tr><td>NHL</td><td><b>SJS @ BOS</b><div class="small">TD Garden</div></td><td class="small">2026-10-24T23:00:00Z</td><td><span class="badge b-high">Priced</span></td><td>BOS <span class="badge b-high">Medium</span></td><td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">NHL</a></td></tr><tr><td>NHL</td><td><b>CAR @ STL</b><div class="small">Enterprise Center</div></td><td class="small">2026-10-24T23:00:00Z</td><td><span class="badge b-high">Priced</span></td><td>CAR +1 <span class="badge b-high">High</span></td><td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">NHL</a></td></tr><tr><td>NHL</td><td><b>VGK @ CBJ</b><div class="small">Nationwide Arena</div></td><td class="small">2026-10-24T23:00:00Z</td><td><span class="badge b-high">Priced</span></td><td>Over 5.5 <span class="badge b-high">Low</span></td><td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">NHL</a></td></tr><tr><td>NHL</td><td><b>NYR @ OTT</b><div class="small">Canadian Tire Centre</div></td><td class="small">2026-10-24T23:00:00Z</td><td><span class="badge b-high">Priced</span></td><td>NYR +1 <span class="badge b-high">Medium</span></td><td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">NHL</a></td></tr><tr><td>NHL</td><td><b>BUF @ WSH</b><div class="small">Capital One Arena</div></td><td class="small">2026-10-24T23:00:00Z</td><td><span class="badge b-high">Priced</span></td><td>Under 7.5 <span class="badge b-high">High</span></td><td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">NHL</a></td></tr><tr><td>NHL</td><td><b>NSH @ PIT</b><div class="small">PPG Paints Arena</div></td><td class="small">2026-10-24T23:00:00Z</td><td><span class="badge b-high">Priced</span></td><td>Under 6.5 <span class="badge b-high">Low</span></td><td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">NHL</a></td></tr><tr><td>NHL</td><td><b>TBL @ UTA</b><div class="small">Delta Center</div></td><td class="small">2026-10-25T01:00:00Z</td><td><span class="badge b-high">Priced</span></td><td>Under 7.5 <span class="badge b-high">High</span></td><td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">NHL</a></td></tr><tr><td>NHL</td><td><b>MIN @ SEA</b></td><td class="small">2026-10-25T03:07Z</td><td><span class="badge b-flag">Not confirmed by league</span></td><td>— </td><td>—</td></tr><tr><td>NHL</td><td><b>DET @ CGY</b><div class="small">Scotiabank Saddledome</div></td><td class="small">2026-10-25T02:00:00Z</td><td><span class="badge b-med">Listed, not priced</span></td><td>— </td><td><a href="https://api-web.nhle.com/v1/schedule/2026-10-24" rel="noopener">NHL</a></td></tr><tr><td>NHL</td><td><b>MTL @ WPG</b></td><td class="small">2026-10-25T23:07Z</td><td><span class="badge b-flag">Not confirmed by league</span></td><td>— </td><td>—</td></tr><tr><td>NBA</td><td><b>MIA @ CHA</b></td><td class="small">2026-10-24T22:00Z</td><td><span class="badge b-high">Priced</span></td><td>CHA <span class="badge b-high">Low</span></td><td><a href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_00PM.pdf" rel="noopener">NBA</a></td></tr><tr><td>NBA</td><td><b>BKN @ CLE</b></td><td class="small">2026-10-24T23:30Z</td><td><span class="badge b-high">Priced</span></td><td>CLE <span class="badge b-high">Low</span></td><td><a href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_00PM.pdf" rel="noopener">NBA</a></td></tr><tr><td>NBA</td><td><b>MIL @ PHI</b></td><td class="small">2026-10-24T23:30Z</td><td><span class="badge b-high">Priced</span></td><td>PHI <span class="badge b-high">Medium</span></td><td><a href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_00PM.pdf" rel="noopener">NBA</a></td></tr><tr><td>NBA</td><td><b>SAS @ DAL</b></td><td class="small">2026-10-25T00:00Z</td><td><span class="badge b-high">Priced</span></td><td>DAL <span class="badge b-high">Low</span></td><td><a href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_00PM.pdf" rel="noopener">NBA</a></td></tr><tr><td>NBA</td><td><b>WAS @ CHI</b></td><td class="small">2026-10-25T00:00Z</td><td><span class="badge b-high">Priced</span></td><td>CHI <span class="badge b-high">Low</span></td><td><a href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_00PM.pdf" rel="noopener">NBA</a></td></tr><tr><td>NBA</td><td><b>HOU @ ATL</b></td><td class="small">2026-10-25T00:30Z</td><td><span class="badge b-high">Priced</span></td><td>ATL <span class="badge b-high">Low</span></td><td><a href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_00PM.pdf" rel="noopener">NBA</a></td></tr><tr><td>NBA</td><td><b>NOP @ DEN</b></td><td class="small">2026-10-25T01:00Z</td><td><span class="badge b-high">Priced</span></td><td>DEN <span class="badge b-high">Low</span></td><td><a href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_00PM.pdf" rel="noopener">NBA</a></td></tr><tr><td>NBA</td><td><b>MEM @ SAC</b></td><td class="small">2026-10-25T01:00Z</td><td><span class="badge b-med">Listed, not priced</span></td><td>— </td><td><a href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_00PM.pdf" rel="noopener">NBA</a></td></tr><tr><td>NBA</td><td><b>GSW @ PHX</b></td><td class="small">2026-10-25T02:00Z</td><td><span class="badge b-high">Priced</span></td><td>PHX <span class="badge b-high">Low</span></td><td><a href="https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-10-24_01_00PM.pdf" rel="noopener">NBA</a></td></tr>
+</table></div>
+
+<h2>Cricket — confirmed on the governing body, not priced</h2>
+<div class="table-wrap"><table>
+<tr><th>Competition</th><th>Fixture</th><th>Start</th><th>State</th><th>Source</th></tr>
+<tr><td>Hollywoodbets Pro 20</td><td><b>Fidelity Titans Women v YesPlay Cobras</b></td><td class="small">2026-10-25 10:00 local</td><td><span class="badge b-med">Listed, not priced</span></td><td><a href="https://cricket.co.za/fixtures/" rel="noopener">Cricket South Africa</a></td></tr><tr><td>Hollywoodbets Pro 20</td><td><b>Garden Route Badgers Women v Warriors</b></td><td class="small">2026-10-25 10:00 local</td><td><span class="badge b-med">Listed, not priced</span></td><td><a href="https://cricket.co.za/fixtures/" rel="noopener">Cricket South Africa</a></td></tr><tr><td>Pro20 Cup 2026/27</td><td><b>World Sports Betting Eastern Storm v CSA High Performance</b></td><td class="small">2026-10-25 13:00 local</td><td><span class="badge b-med">Listed, not priced</span></td><td><a href="https://cricket.co.za/fixtures/" rel="noopener">Cricket South Africa</a></td></tr><tr><td>Colts: 1-Day Match</td><td><b>Boland v Border</b></td><td class="small">2026-10-25 10:00 local</td><td><span class="badge b-med">Listed, not priced</span></td><td><a href="https://cricket.co.za/fixtures/" rel="noopener">Cricket South Africa</a></td></tr><tr><td>CSA Women&#x27;s Provincial 2026/27</td><td><b>Northern Cape Women v Free State Women</b></td><td class="small">2026-10-25 10:00 local</td><td><span class="badge b-med">Listed, not priced</span></td><td><a href="https://cricket.co.za/fixtures/" rel="noopener">Cricket South Africa</a></td></tr><tr><td>CSA Women&#x27;s Provincial 2026/27</td><td><b>Limpopo Women v North West Dragons Women</b></td><td class="small">2026-10-25 10:00 local</td><td><span class="badge b-med">Listed, not priced</span></td><td><a href="https://cricket.co.za/fixtures/" rel="noopener">Cricket South Africa</a></td></tr>
+</table></div>
+
+<h2>Baseball — one game, market withheld</h2>
+<div class="table-wrap"><table>
+<tr><th>Competition</th><th>Match</th><th>Start (UTC)</th><th>Pitchers</th><th>Series</th>
+<th>State</th><th>Source</th></tr>
+<tr><td>World Series, Game 2</td>
+<td><b>Tampa Bay Rays @ Milwaukee Brewers</b><div class="small">American Family Field</div></td>
+<td class="small">2026-10-25T00:00Z</td>
+<td class="small">Drew Rasmussen (Tampa Bay Rays 0-1)<br>
+Logan Henderson (Milwaukee Brewers 1-0)</td>
+<td class="small">Game 2 of 7</td>
+<td><span class="badge b-med">Listed, not priced</span></td>
+<td><a href="https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;date=2026-10-24&amp;hydrate=probablePitcher,linescore,team" rel="noopener">MLB</a></td></tr>
+</table></div>
+
+<h2>Fixtures found on OLBG only</h2>
+<p>These came from OLBG's own hub listings. No governing body page was read for them this session,
+so they are published as a board listing with no price and no pick. The full list is on each
+<a href="sports.html">sport page</a>.</p>
+
+</div></main>
+<footer><div class="wrap">
+<p><b>Desk f840c28a</b> · session f840c28a-olbg1 · task TF840C · facts captured
+2026-10-24T22:55:00Z. Independent research, not affiliated with OLBG. Prices are our own
+margin-free estimates, not quoted bookmaker odds. No guaranteed returns, no staking advice.
+18+. <a href="flagged.html">Flagged for review</a></p>
+</div></footer>
+</body></html>
