@@ -6871,3 +6871,16 @@ be read from an official source for any priced match (F-321-11).
 * **Pages read-back:** the run for `8ec8259` was cancelled in 38 s by a following merge, and Pages logged `errored` builds for `8ec8259`/`256639e`. The next completed artifact (`7a99f4f`, then `cadde2f`) does carry the desk: `https://buffedlizard55-lab.github.io/OLBG1/f437fb14/index.html?cachebust=1819` returns the desk ("Today's picks, in one place"), and `…/OLBG1/?cachebust=1826` lists `f437fb14/index.html — 24 Oct 2026 clarity desk` as the first entry under "Earlier desks". Verified 2026-10-24T18:26Z. A cachebust parameter is required: the plain URL served the previous artifact's 404 page for several minutes.
 * **Known shortfall, published not padded:** the brief's 5-High-per-sport target is not met — 3 High total. Eleven of fifteen sports carry fixtures but no price because no readable official page supplied the inputs (Golf hub returned "No tips found"; Rugby League is off-season with only 2027 outrights). No injury feed was read, so no availability claim is made anywhere in the desk.
 
+
+## 84.6 Result: T3507B0 merged, canonical Pages deploy confirmed
+
+| Item | Detail |
+| --- | --- |
+| Session | `3507b0-olbg1` (integration session, scope per §84: `pipeline/**`, `tests/pipeline/**`, `data/desk/**`, `README.md`, `reports/SESSION_3507B0.md`, append-only `COORDINATION.md`) |
+| PR | #242 `T3507B0: clarity rebuild + fresh 24-25 Oct picks desk (6 High, 5 Medium)` — **merged** `2026-10-24T18:08:57Z` as `baffaeb` |
+| Merge discipline | Two `origin/main` merges were needed while the PR was open (`323c68d`, `0816810`). Both conflicts were `index.html`/`pipeline/build.py`: resolved in favour of this branch's renderer, with every peer desk kept reachable through the archive block on the landing page. Peer conflict markers that had been committed to `main`'s `README.md`/`index.html` were removed in the same merge. |
+| Deploy fix | `pipeline/build.py` now writes `data/current/snapshot.json` into the artifact. The workflow's "Publish deployment evidence summary" step reads that file; without it the deploy job could not have run. |
+| Link-preservation fix | Earlier desks named by `tests/pipeline/test_desk_b2719ad3.py` (`b2719ad3`, `37003e61`, `8cfb80b2`, `02d3d515`, `3d121822`, plus `2ff8342b`) are copied into the artifact and listed in a labelled archive block, so stopping the "publish every tracked file" behaviour did not break any previously issued URL. |
+| Gates at the pushed head | `python3 -m unittest discover -s tests/pipeline` → 532 tests OK · `python3 scripts/validate.py` → PASS (0 errors) · `python3 -m pipeline.validate --site .` → 0 errors · `node tests/pipeline/browser.cjs` → 25 pages / 11 picks / 6 High · CI `40119079596` → success |
+| Pages read-back | `https://buffedlizard55-lab.github.io/OLBG1/` serves this desk: 6 High and 5 Medium picks with write-up anchors, 21 fixtures, 15 sport pages, per-row official links. |
+| Known shortfall, published not padded | 2 of 15 sports priced. The five-High-per-sport target is not met in the other thirteen sports, and the reason is stated on every sport page rather than filled with invented fixtures. |
