@@ -6736,7 +6736,7 @@ be read from an official source for any priced match (F-321-11).
   cannot be read from an official page stays blank and is flagged. Nothing is labelled High unless the arithmetic
   gate passes in both directions.
 
-### §84.1 — `TF437F` result (2026-10-24T18:45Z)
+### §85.1 — `TF437F` result (2026-10-24T18:45Z)
 
 **Status: done.** Desk published at `/f437fb14/` (26 pages); JSON in `data/f437fb14/`.
 
@@ -6762,6 +6762,12 @@ be read from an official source for any priced match (F-321-11).
   F-F4-03 eleven sports priced nothing; F-F4-04 NHL standings payload readable for only 4 of 32 clubs;
   F-F4-06 greyhound race clock and rendered start five hours apart; F-F4-07 a 4.50 league anchor stands
   in for Milwaukee's run rate.
+* **Rebase conflict, resolved without losing peer work.** Peer session `b2719ad3-olbg1` had merged a new
+  `latest_desk()` (pointing at `b2719ad3/index.html` with an alternates list) into the same function this
+  session repointed, and had also claimed a `## 84` heading. Resolution: this session's section is
+  renumbered to **§85**, and the front door is rewritten as one generic desk list
+  (`f437fb14` → `b2719ad3` → `02d3d515` → `8cfb80b2` → `3d121822`) that renders whichever desks exist and
+  lists the rest as "Also preserved". Neither side's desk is dropped and no peer data file was touched.
 * **Gates:** `scripts/sf437fb14_validate.py` 887 checks / 0 errors · `tests.pipeline.test_desk_f437fb14`
   13 OK · `pipeline.validate --site .` 0 errors · `scripts/validate.py` swept 1,584 pages, 0 errors,
   3 pre-existing `f7fa77fc` warnings.
