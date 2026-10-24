@@ -1,0 +1,3235 @@
+{
+  "desk": "TB2719",
+  "as_of": "2026-10-24T17:34:34Z",
+  "method_version": "tb2719-v1",
+  "active_rows": [
+    {
+      "id": "rugby-ospreys-dragons-20261024",
+      "sport": "rugby-union",
+      "competition": "United Rugby Championship",
+      "home": "Ospreys",
+      "away": "Dragons RFC",
+      "start_utc": "2026-10-24T18:00:00Z",
+      "start_display": "24 Oct 19:00 UK",
+      "not_before": false,
+      "venue": "St Helen's, Swansea",
+      "official_source": "URC_FIXTURE",
+      "evidence_sources": [
+        "URC_FIXTURE",
+        "URC_TEAMS",
+        "URC_TABLE"
+      ],
+      "pricing": {
+        "kind": "score3",
+        "home": {
+          "gp": 3,
+          "wins": 1,
+          "gf": 81,
+          "ga": 107
+        },
+        "away": {
+          "gp": 3,
+          "wins": 1,
+          "gf": 88,
+          "ga": 83
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Ospreys are 1-0-2 with 81:107; Dragons are 1-1-1 with 88:83. Both starting XVs are officially announced."
+      ],
+      "availability": "Official Round 4 team announcements supply both starting XVs and replacements.",
+      "flags": [
+        "Three-game samples and an independent scoring approximation cap confidence at Low."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Independent Poisson scoring approximation with draw",
+        "probabilities": {
+          "home": 0.23162927647503342,
+          "draw": 0.04141033642867594,
+          "away": 0.7269603870962906
+        },
+        "selection_side": "away",
+        "selection": "Dragons RFC",
+        "market": "Three-way winner",
+        "probability": 0.7269603870962906,
+        "fair_american": -266,
+        "fair_decimal": 1.375590771863534,
+        "grade": "Low",
+        "minimum_sample": 3,
+        "high_gate": {
+          "probability_above_70": true,
+          "fair_price_in_band": false,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "fair_price_in_band",
+          "minimum_six_games_each",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 27.333,
+          "expected_away_score": 32.5,
+          "expected_total": 59.833,
+          "total_line": 60.0,
+          "over_probability": 0.4571662324312209,
+          "over_fair_american": 119,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.19397281285524298,
+          "home_cover_fair_american": 416
+        }
+      }
+    },
+    {
+      "id": "rugby-toulon-pau-20261024",
+      "sport": "rugby-union",
+      "competition": "Top 14",
+      "home": "RC Toulon",
+      "away": "Section Paloise",
+      "start_utc": "2026-10-24T19:00:00Z",
+      "start_display": "24 Oct 21:00 Europe/Paris",
+      "not_before": false,
+      "venue": "Toulon",
+      "official_source": "LNR_PAU",
+      "evidence_sources": [
+        "LNR_TOULON",
+        "LNR_PAU"
+      ],
+      "pricing": {
+        "kind": "score3",
+        "home": {
+          "gp": 6,
+          "wins": 2,
+          "gf": 130,
+          "ga": 130
+        },
+        "away": {
+          "gp": 6,
+          "wins": 5,
+          "gf": 239,
+          "ga": 181
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Toulon is 2-0-4 with 130:130; Pau is 5-0-1 with 239:181 and beat Castres 35-26 in its last match."
+      ],
+      "availability": "",
+      "flags": [
+        "Independent scoring approximation; no home, lineup or injury adjustment and no High eligibility."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Independent Poisson scoring approximation with draw",
+        "probabilities": {
+          "home": 0.23904462512513444,
+          "draw": 0.04328383763118149,
+          "away": 0.717671537243684
+        },
+        "selection_side": "away",
+        "selection": "Section Paloise",
+        "market": "Three-way winner",
+        "probability": 0.717671537243684,
+        "fair_american": -254,
+        "fair_decimal": 1.393395095255745,
+        "grade": "Medium",
+        "minimum_sample": 6,
+        "high_gate": {
+          "probability_above_70": true,
+          "fair_price_in_band": false,
+          "minimum_six_games_each": true,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": false,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "fair_price_in_band",
+          "prediction_30_words",
+          "availability_context"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 25.917,
+          "expected_away_score": 30.75,
+          "expected_total": 56.667,
+          "total_line": 56.5,
+          "over_probability": 0.4999815074775393,
+          "over_fair_american": 100,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.1996613237839137,
+          "home_cover_fair_american": 401
+        }
+      }
+    },
+    {
+      "id": "nhl-2026020169",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "New Jersey Devils",
+      "away": "Los Angeles Kings",
+      "start_utc": "2026-10-24T19:30:00Z",
+      "start_display": "2026-10-24 19:30:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS",
+        "NHL_ONTAP"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 10,
+          "wins": 6,
+          "gf": 33,
+          "ga": 31
+        },
+        "away": {
+          "gp": 8,
+          "wins": 2,
+          "gf": 20,
+          "ga": 29
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: NJD 6-4-0 and LAK 2-4-2. Pricing uses games played and wins on the NHL win-percentage basis.",
+        "New Jersey is 4-1-0 in its last five; Los Angeles has two straight wins after an 0-4-2 start.",
+        "New Jersey home scoring is 26:17; Los Angeles road scoring is 17:19."
+      ],
+      "availability": "New Jersey lists no injuries. Los Angeles lists Kevin Fiala and Alex Turcotte injured; Quinton Byfield is questionable. Jake Allen is projected for New Jersey.",
+      "flags": [],
+      "high_prediction": "New Jersey Devils to win is the selection. The Devils are 6-4-0 with 33 goals and have won four of their last five, while Los Angeles is 2-4-2 with 20 goals despite consecutive wins. New Jersey’s 26-17 home scoring record strengthens the case, although Quinton Byfield is questionable for the Kings. Kevin Fiala and Alex Turcotte are injured for Los Angeles; New Jersey lists no injuries, with Jake Allen projected in goal.",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.7272727272727273,
+          "away": 0.2727272727272727
+        },
+        "selection_side": "home",
+        "selection": "New Jersey Devils",
+        "market": "Moneyline",
+        "probability": 0.7272727272727273,
+        "fair_american": -267,
+        "fair_decimal": 1.375,
+        "grade": "Medium",
+        "minimum_sample": 8,
+        "high_gate": {
+          "probability_above_70": true,
+          "fair_price_in_band": false,
+          "minimum_six_games_each": true,
+          "prediction_30_words": true,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "fair_price_in_band"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 3.462,
+          "expected_away_score": 2.8,
+          "expected_total": 6.262,
+          "total_line": 6.5,
+          "over_probability": 0.43578194111338303,
+          "over_fair_american": 129,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.3628397560175283,
+          "home_cover_fair_american": 176
+        }
+      }
+    },
+    {
+      "id": "nba-mia-cha-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Charlotte Hornets",
+      "away": "Miami Heat",
+      "start_utc": "2026-10-24T22:00:00Z",
+      "start_display": "2026-10-24 22:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 2,
+          "wins": 1,
+          "gf": 95.5,
+          "ga": 115.5
+        },
+        "away": {
+          "gp": 2,
+          "wins": 0,
+          "gf": 108.5,
+          "ga": 129.5
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "Miami: Pelle Larsson probable. Charlotte: Kylan Boswell, Kon Knueppel, Coby White and Grant Williams out; Christian Anderson probable.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.6666666666666667,
+          "away": 0.33333333333333326
+        },
+        "selection_side": "home",
+        "selection": "Charlotte Hornets",
+        "market": "Match winner",
+        "probability": 0.6666666666666667,
+        "fair_american": -200,
+        "fair_decimal": 1.4999999999999998,
+        "grade": "Low",
+        "minimum_sample": 2,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "minimum_six_games_each",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 56.25,
+          "expected_away_score": 56.0,
+          "expected_total": 112.25,
+          "total_line": 112.5,
+          "over_probability": 0.48431388825179345,
+          "over_fair_american": 106,
+          "home_handicap": -4.5,
+          "home_cover_probability": 0.3439363132353141,
+          "home_cover_fair_american": 191
+        }
+      }
+    },
+    {
+      "id": "nhl-2026020170",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Boston Bruins",
+      "away": "San Jose Sharks",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_display": "2026-10-24 23:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 11,
+          "wins": 8,
+          "gf": 42,
+          "ga": 22
+        },
+        "away": {
+          "gp": 11,
+          "wins": 6,
+          "gf": 33,
+          "ga": 37
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: BOS 8-2-1 and SJS 6-4-1. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.6363636363636364,
+          "away": 0.36363636363636365
+        },
+        "selection_side": "home",
+        "selection": "Boston Bruins",
+        "market": "Moneyline",
+        "probability": 0.6363636363636364,
+        "fair_american": -175,
+        "fair_decimal": 1.5714285714285714,
+        "grade": "Medium",
+        "minimum_sample": 11,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": true,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 3.591,
+          "expected_away_score": 2.5,
+          "expected_total": 6.091,
+          "total_line": 6.0,
+          "over_probability": 0.4082959949850343,
+          "over_fair_american": 145,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.42716610543586225,
+          "home_cover_fair_american": 134
+        }
+      }
+    },
+    {
+      "id": "nhl-2026020171",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Ottawa Senators",
+      "away": "New York Rangers",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_display": "2026-10-24 23:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 11,
+          "wins": 7,
+          "gf": 31,
+          "ga": 30
+        },
+        "away": {
+          "gp": 12,
+          "wins": 7,
+          "gf": 37,
+          "ga": 29
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: OTT 7-4-0 and NYR 7-4-1. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.5384615384615384,
+          "away": 0.46153846153846156
+        },
+        "selection_side": "home",
+        "selection": "Ottawa Senators",
+        "market": "Moneyline",
+        "probability": 0.5384615384615384,
+        "fair_american": -117,
+        "fair_decimal": 1.8571428571428572,
+        "grade": "Low",
+        "minimum_sample": 11,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": true,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 2.617,
+          "expected_away_score": 2.905,
+          "expected_total": 5.523,
+          "total_line": 5.5,
+          "over_probability": 0.47497270686159443,
+          "over_fair_american": 111,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.2175209052702942,
+          "home_cover_fair_american": 360
+        }
+      }
+    },
+    {
+      "id": "nhl-2026020172",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Pittsburgh Penguins",
+      "away": "Nashville Predators",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_display": "2026-10-24 23:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 11,
+          "wins": 4,
+          "gf": 37,
+          "ga": 38
+        },
+        "away": {
+          "gp": 9,
+          "wins": 3,
+          "gf": 23,
+          "ga": 30
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: PIT 4-6-1 and NSH 3-3-3. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.5161290322580645,
+          "away": 0.4838709677419355
+        },
+        "selection_side": "home",
+        "selection": "Pittsburgh Penguins",
+        "market": "Moneyline",
+        "probability": 0.5161290322580645,
+        "fair_american": -107,
+        "fair_decimal": 1.9375,
+        "grade": "Low",
+        "minimum_sample": 9,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": true,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 3.348,
+          "expected_away_score": 3.005,
+          "expected_total": 6.354,
+          "total_line": 6.5,
+          "over_probability": 0.45029221040478096,
+          "over_fair_american": 122,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.3176514731091894,
+          "home_cover_fair_american": 215
+        }
+      }
+    },
+    {
+      "id": "nhl-2026020173",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Washington Capitals",
+      "away": "Buffalo Sabres",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_display": "2026-10-24 23:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 9,
+          "wins": 5,
+          "gf": 30,
+          "ga": 29
+        },
+        "away": {
+          "gp": 10,
+          "wins": 4,
+          "gf": 28,
+          "ga": 37
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: WSH 5-4-0 and BUF 4-4-2. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.608695652173913,
+          "away": 0.39130434782608703
+        },
+        "selection_side": "home",
+        "selection": "Washington Capitals",
+        "market": "Moneyline",
+        "probability": 0.608695652173913,
+        "fair_american": -156,
+        "fair_decimal": 1.642857142857143,
+        "grade": "Medium",
+        "minimum_sample": 9,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": true,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 3.517,
+          "expected_away_score": 3.011,
+          "expected_total": 6.528,
+          "total_line": 6.5,
+          "over_probability": 0.47784615366041755,
+          "over_fair_american": 109,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.343022937671809,
+          "home_cover_fair_american": 192
+        }
+      }
+    },
+    {
+      "id": "nhl-2026020174",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Columbus Blue Jackets",
+      "away": "Vegas Golden Knights",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_display": "2026-10-24 23:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 8,
+          "wins": 3,
+          "gf": 20,
+          "ga": 29
+        },
+        "away": {
+          "gp": 12,
+          "wins": 8,
+          "gf": 46,
+          "ga": 36
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: CBJ 3-5-0 and VGK 8-4-0. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.30000000000000004,
+          "away": 0.7
+        },
+        "selection_side": "away",
+        "selection": "Vegas Golden Knights",
+        "market": "Moneyline",
+        "probability": 0.7,
+        "fair_american": -233,
+        "fair_decimal": 1.4285714285714286,
+        "grade": "Medium",
+        "minimum_sample": 8,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": true,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 2.75,
+          "expected_away_score": 3.729,
+          "expected_total": 6.479,
+          "total_line": 6.5,
+          "over_probability": 0.47019288639189033,
+          "over_fair_american": 113,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.1600761137067667,
+          "home_cover_fair_american": 525
+        }
+      }
+    },
+    {
+      "id": "nhl-2026020175",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "St. Louis Blues",
+      "away": "Carolina Hurricanes",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_display": "2026-10-24 23:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 10,
+          "wins": 5,
+          "gf": 35,
+          "ga": 31
+        },
+        "away": {
+          "gp": 12,
+          "wins": 8,
+          "gf": 47,
+          "ga": 33
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: STL 5-4-1 and CAR 8-2-2. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.375,
+          "away": 0.625
+        },
+        "selection_side": "away",
+        "selection": "Carolina Hurricanes",
+        "market": "Moneyline",
+        "probability": 0.625,
+        "fair_american": -167,
+        "fair_decimal": 1.6,
+        "grade": "Medium",
+        "minimum_sample": 10,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": true,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 3.125,
+          "expected_away_score": 3.508,
+          "expected_total": 6.633,
+          "total_line": 6.5,
+          "over_probability": 0.4943581136137464,
+          "over_fair_american": 102,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.22765359488613793,
+          "home_cover_fair_american": 339
+        }
+      }
+    },
+    {
+      "id": "nhl-2026020176",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Edmonton Oilers",
+      "away": "Toronto Maple Leafs",
+      "start_utc": "2026-10-24T23:00:00Z",
+      "start_display": "2026-10-24 23:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_TOR_EDM_LINEUPS",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS",
+        "NHL_ONTAP",
+        "NHL_EDM",
+        "NHL_TOR",
+        "NHL_TOR_RECAP",
+        "NHL_STATUS",
+        "NHL_TOR_EDM_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 10,
+          "wins": 8,
+          "gf": 47,
+          "ga": 32
+        },
+        "away": {
+          "gp": 12,
+          "wins": 6,
+          "gf": 43,
+          "ga": 39
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: EDM 8-1-1 and TOR 6-4-2. Pricing uses games played and wins on the NHL win-percentage basis.",
+        "Edmonton and Toronto each bring a three-game winning streak; Toronto is 4-1-0 across the last five head-to-head meetings.",
+        "Edmonton has 47 goals in ten games; Toronto has 43 scored and 39 conceded in twelve."
+      ],
+      "availability": "Toronto lists John Tavares, Chris Tanev, Nick Blankenburg and Marshall Rifai out. Edmonton lists Mattias Ekholm and Devon Levi unavailable; Tristan Jarry is projected to start.",
+      "flags": [],
+      "high_prediction": "Edmonton Oilers to win is the selection. Edmonton is 8-1-1 with 47 goals in ten games and three consecutive wins; Toronto is 6-4-2 with 43 scored and 39 conceded, also on a three-game streak. Toronto’s 4-1-0 record across the last five meetings is the warning. John Tavares, Chris Tanev, Nick Blankenburg and Marshall Rifai are out for the visitors, while Mattias Ekholm and Devon Levi are unavailable for Edmonton and Tristan Jarry is projected to start.",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.7142857142857143,
+          "away": 0.2857142857142857
+        },
+        "selection_side": "home",
+        "selection": "Edmonton Oilers",
+        "market": "Moneyline",
+        "probability": 0.7142857142857143,
+        "fair_american": -250,
+        "fair_decimal": 1.4,
+        "grade": "High",
+        "minimum_sample": 10,
+        "high_gate": {
+          "probability_above_70": true,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": true,
+          "prediction_30_words": true,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [],
+        "prediction": "Edmonton Oilers to win is the selection. Edmonton is 8-1-1 with 47 goals in ten games and three consecutive wins; Toronto is 6-4-2 with 43 scored and 39 conceded, also on a three-game streak. Toronto’s 4-1-0 record across the last five meetings is the warning. John Tavares, Chris Tanev, Nick Blankenburg and Marshall Rifai are out for the visitors, while Mattias Ekholm and Devon Levi are unavailable for Edmonton and Tristan Jarry is projected to start.",
+        "prediction_words": 76,
+        "derivative": {
+          "expected_home_score": 3.975,
+          "expected_away_score": 3.392,
+          "expected_total": 7.367,
+          "total_line": 7.5,
+          "over_probability": 0.4557505453967958,
+          "over_fair_american": 119,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.3630361974021502,
+          "home_cover_fair_american": 175
+        }
+      }
+    },
+    {
+      "id": "nba-bkn-cle-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Cleveland Cavaliers",
+      "away": "Brooklyn Nets",
+      "start_utc": "2026-10-24T23:30:00Z",
+      "start_display": "2026-10-24 23:30:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 1,
+          "wins": 0,
+          "gf": 106.0,
+          "ga": 114.0
+        },
+        "away": {
+          "gp": 1,
+          "wins": 0,
+          "gf": 103.0,
+          "ga": 110.0
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "Brooklyn: Tyler Bilodeau out. Cleveland: Khalifa Diop, Nae'Qwan Tomlin and Ernest Udeh Jr. out; Dean Wade questionable.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.5,
+          "away": 0.5
+        },
+        "selection_side": "home",
+        "selection": "Cleveland Cavaliers",
+        "market": "Match winner",
+        "probability": 0.5,
+        "fair_american": -100,
+        "fair_decimal": 2.0,
+        "grade": "Low",
+        "minimum_sample": 1,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "minimum_six_games_each",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 108.0,
+          "expected_away_score": 108.5,
+          "expected_total": 216.5,
+          "total_line": 216.5,
+          "over_probability": 0.49547875456800416,
+          "over_fair_american": 102,
+          "home_handicap": -4.5,
+          "home_cover_probability": 0.36691118907481135,
+          "home_cover_fair_american": 173
+        }
+      }
+    },
+    {
+      "id": "nba-mil-phi-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Philadelphia 76ers",
+      "away": "Milwaukee Bucks",
+      "start_utc": "2026-10-24T23:30:00Z",
+      "start_display": "2026-10-24 23:30:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 2,
+          "wins": 2,
+          "gf": 110.0,
+          "ga": 103.0
+        },
+        "away": {
+          "gp": 2,
+          "wins": 0,
+          "gf": 120.5,
+          "ga": 130.0
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "Milwaukee had not submitted at 13:00 ET. Philadelphia lists Dominick Barlow, Tacko Fall, Ariel Hukporti and LeBron James out.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.8,
+          "away": 0.19999999999999996
+        },
+        "selection_side": "home",
+        "selection": "Philadelphia 76ers",
+        "market": "Match winner",
+        "probability": 0.8,
+        "fair_american": -400,
+        "fair_decimal": 1.25,
+        "grade": "Low",
+        "minimum_sample": 2,
+        "high_gate": {
+          "probability_above_70": true,
+          "fair_price_in_band": false,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "fair_price_in_band",
+          "minimum_six_games_each",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 60.0,
+          "expected_away_score": 55.875,
+          "expected_total": 115.875,
+          "total_line": 116.0,
+          "over_probability": 0.4707065942466062,
+          "over_fair_american": 112,
+          "home_handicap": -4.5,
+          "home_cover_probability": 0.48586432483393793,
+          "home_cover_fair_american": 106
+        }
+      }
+    },
+    {
+      "id": "baseball-rays-brewers-849802",
+      "sport": "baseball",
+      "competition": "World Series — Game 2",
+      "home": "Milwaukee Brewers",
+      "away": "Tampa Bay Rays",
+      "start_utc": "2026-10-25T00:00:00Z",
+      "start_display": "24 Oct 20:00 ET / 2026-10-25T00:00:00Z",
+      "not_before": false,
+      "venue": "American Family Field",
+      "official_source": "MLB_SCHEDULE",
+      "evidence_sources": [
+        "MLB_SCHEDULE",
+        "MLB_STANDINGS",
+        "MLB_GAME2",
+        "MLB_GAME1"
+      ],
+      "pricing": {
+        "kind": "baseball",
+        "home": {
+          "gp": 162,
+          "wins": 103,
+          "gf": 832,
+          "ga": 618,
+          "home_gp": 81,
+          "home_wins": 55
+        },
+        "away": {
+          "gp": 162,
+          "wins": 98,
+          "gf": 736,
+          "ga": 650,
+          "away_gp": 81,
+          "away_wins": 43
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Milwaukee leads the Series 1-0 after a 3-2 win. Regular season: Milwaukee 103-59 with 832:618; Tampa Bay 98-64 with 736:650.",
+        "Drew Rasmussen faces Logan Henderson. Tampa Bay is 14-1 in Rasmussen’s 15 starts since the All-Star break; Milwaukee is 21-4 in Henderson’s 25 career starts."
+      ],
+      "availability": "Official Game 2 FAQ names Drew Rasmussen and Logan Henderson as starting pitchers.",
+      "flags": [
+        "The winner price averages overall record, Pythagorean and venue-split components equally; starter records are context, not a hidden adjustment."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Equal blend of overall, Pythagorean and venue-split differentials",
+        "probabilities": {
+          "home": 0.5425304928795542,
+          "away": 0.45746950712044576
+        },
+        "selection_side": "home",
+        "selection": "Milwaukee Brewers",
+        "market": "Moneyline",
+        "probability": 0.5425304928795542,
+        "fair_american": -119,
+        "fair_decimal": 1.843214368822597,
+        "grade": "Low",
+        "minimum_sample": 162,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": true,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 4.574,
+          "expected_away_score": 4.179,
+          "expected_total": 8.753,
+          "total_line": 9.0,
+          "over_probability": 0.3800967018043621,
+          "over_fair_american": 163,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.3508194690910233,
+          "home_cover_fair_american": 185
+        }
+      }
+    },
+    {
+      "id": "nba-sas-dal-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Dallas Mavericks",
+      "away": "San Antonio Spurs",
+      "start_utc": "2026-10-25T00:00:00Z",
+      "start_display": "2026-10-25 00:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 2,
+          "wins": 1,
+          "gf": 115.5,
+          "ga": 116.5
+        },
+        "away": {
+          "gp": 2,
+          "wins": 0,
+          "gf": 107.0,
+          "ga": 115.0
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "Both teams were marked NOT YET SUBMITTED in the 13:00 ET report.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.6666666666666667,
+          "away": 0.33333333333333326
+        },
+        "selection_side": "home",
+        "selection": "Dallas Mavericks",
+        "market": "Match winner",
+        "probability": 0.6666666666666667,
+        "fair_american": -200,
+        "fair_decimal": 1.4999999999999998,
+        "grade": "Low",
+        "minimum_sample": 2,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "minimum_six_games_each",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 57.625,
+          "expected_away_score": 55.875,
+          "expected_total": 113.5,
+          "total_line": 113.5,
+          "over_probability": 0.4937526506867219,
+          "over_fair_american": 103,
+          "home_handicap": -4.5,
+          "home_cover_probability": 0.3979223575381656,
+          "home_cover_fair_american": 151
+        }
+      }
+    },
+    {
+      "id": "nba-was-chi-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Chicago Bulls",
+      "away": "Washington Wizards",
+      "start_utc": "2026-10-25T00:00:00Z",
+      "start_display": "2026-10-25 00:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 2,
+          "wins": 1,
+          "gf": 112.0,
+          "ga": 130.0
+        },
+        "away": {
+          "gp": 2,
+          "wins": 1,
+          "gf": 115.0,
+          "ga": 114.0
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "Washington had not submitted. Chicago lists Nic Claxton out and Noa Essengue probable.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.5,
+          "away": 0.5
+        },
+        "selection_side": "home",
+        "selection": "Chicago Bulls",
+        "market": "Match winner",
+        "probability": 0.5,
+        "fair_american": -100,
+        "fair_decimal": 2.0,
+        "grade": "Low",
+        "minimum_sample": 2,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "minimum_six_games_each",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 56.5,
+          "expected_away_score": 61.25,
+          "expected_total": 117.75,
+          "total_line": 118.0,
+          "over_probability": 0.46636863893387515,
+          "over_fair_american": 114,
+          "home_handicap": -4.5,
+          "home_cover_probability": 0.19675850694345587,
+          "home_cover_fair_american": 408
+        }
+      }
+    },
+    {
+      "id": "nba-hou-atl-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Atlanta Hawks",
+      "away": "Houston Rockets",
+      "start_utc": "2026-10-25T00:30:00Z",
+      "start_display": "2026-10-25 00:30:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 2,
+          "wins": 2,
+          "gf": 130.0,
+          "ga": 103.0
+        },
+        "away": {
+          "gp": 2,
+          "wins": 2,
+          "gf": 121.0,
+          "ga": 110.0
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "Houston: Steven Adams and Fred VanVleet out; Reed Sheppard questionable. Atlanta: Mouhamed Gueye and Henri Veesaar out, with three two-way players questionable.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.5,
+          "away": 0.5
+        },
+        "selection_side": "home",
+        "selection": "Atlanta Hawks",
+        "market": "Match winner",
+        "probability": 0.5,
+        "fair_american": -100,
+        "fair_decimal": 2.0,
+        "grade": "Low",
+        "minimum_sample": 2,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "minimum_six_games_each",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 60.0,
+          "expected_away_score": 56.0,
+          "expected_total": 116.0,
+          "total_line": 116.0,
+          "over_probability": 0.4753332729032693,
+          "over_fair_american": 110,
+          "home_handicap": -4.5,
+          "home_cover_probability": 0.48124626203511905,
+          "home_cover_fair_american": 108
+        }
+      }
+    },
+    {
+      "id": "nba-nop-den-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Denver Nuggets",
+      "away": "New Orleans Pelicans",
+      "start_utc": "2026-10-25T01:00:00Z",
+      "start_display": "2026-10-25 01:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 1,
+          "wins": 0,
+          "gf": 84.0,
+          "ga": 96.0
+        },
+        "away": {
+          "gp": 2,
+          "wins": 0,
+          "gf": 119.5,
+          "ga": 121.5
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "New Orleans had not submitted. Denver lists Cameron Johnson, Spencer Jones and Julian Strawther out; Alpha Diallo questionable.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.5714285714285715,
+          "away": 0.4285714285714285
+        },
+        "selection_side": "home",
+        "selection": "Denver Nuggets",
+        "market": "Match winner",
+        "probability": 0.5714285714285715,
+        "fair_american": -133,
+        "fair_decimal": 1.7499999999999998,
+        "grade": "Low",
+        "minimum_sample": 1,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "minimum_six_games_each",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 72.375,
+          "expected_away_score": 77.875,
+          "expected_total": 150.25,
+          "total_line": 150.5,
+          "over_probability": 0.48644110796443674,
+          "over_fair_american": 106,
+          "home_handicap": -4.5,
+          "home_cover_probability": 0.20713370557013713,
+          "home_cover_fair_american": 383
+        }
+      }
+    },
+    {
+      "id": "nhl-2026020177",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Utah Mammoth",
+      "away": "Tampa Bay Lightning",
+      "start_utc": "2026-10-25T01:00:00Z",
+      "start_display": "2026-10-25 01:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 11,
+          "wins": 7,
+          "gf": 41,
+          "ga": 36
+        },
+        "away": {
+          "gp": 10,
+          "wins": 7,
+          "gf": 34,
+          "ga": 29
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: UTA 7-4-0 and TBL 7-3-0. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.4545454545454545,
+          "away": 0.5454545454545455
+        },
+        "selection_side": "away",
+        "selection": "Tampa Bay Lightning",
+        "market": "Moneyline",
+        "probability": 0.5454545454545455,
+        "fair_american": -120,
+        "fair_decimal": 1.833333333333333,
+        "grade": "Low",
+        "minimum_sample": 10,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": true,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 3.314,
+          "expected_away_score": 3.336,
+          "expected_total": 6.65,
+          "total_line": 6.5,
+          "over_probability": 0.4969507337186455,
+          "over_fair_american": 101,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.2726038384062393,
+          "home_cover_fair_american": 267
+        }
+      }
+    },
+    {
+      "id": "nba-gsw-phx-20261024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "home": "Phoenix Suns",
+      "away": "Golden State Warriors",
+      "start_utc": "2026-10-25T02:00:00Z",
+      "start_display": "2026-10-25 02:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NBA_INJURIES",
+      "evidence_sources": [
+        "NBA_INJURIES",
+        "NBA_STATS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 1,
+          "wins": 0,
+          "gf": 83.0,
+          "ga": 124.0
+        },
+        "away": {
+          "gp": 2,
+          "wins": 0,
+          "gf": 106.5,
+          "ga": 119.0
+        },
+        "handicap": 4.5
+      },
+      "notes": [
+        "NBA scoring samples contain only one or two games per team; prices are exploratory and cannot be High."
+      ],
+      "availability": "Golden State had not submitted. Phoenix lists Mark Williams out, Oso Ighodaro doubtful and Luke Kennard questionable.",
+      "flags": [
+        "One- or two-game scoring sample and incomplete submissions in the official 13:00 ET injury report cap confidence at Low."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.5714285714285715,
+          "away": 0.4285714285714285
+        },
+        "selection_side": "home",
+        "selection": "Phoenix Suns",
+        "market": "Match winner",
+        "probability": 0.5714285714285715,
+        "fair_american": -133,
+        "fair_decimal": 1.7499999999999998,
+        "grade": "Low",
+        "minimum_sample": 1,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "minimum_six_games_each",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 71.25,
+          "expected_away_score": 88.625,
+          "expected_total": 159.875,
+          "total_line": 160.0,
+          "over_probability": 0.4750504003192734,
+          "over_fair_american": 111,
+          "home_handicap": -4.5,
+          "home_cover_probability": 0.04151433836333263,
+          "home_cover_fair_american": 2309
+        }
+      }
+    },
+    {
+      "id": "nhl-2026020178",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Calgary Flames",
+      "away": "Detroit Red Wings",
+      "start_utc": "2026-10-25T02:00:00Z",
+      "start_display": "2026-10-25 02:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 9,
+          "wins": 3,
+          "gf": 19,
+          "ga": 38
+        },
+        "away": {
+          "gp": 10,
+          "wins": 4,
+          "gf": 28,
+          "ga": 30
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: CGY 3-6-0 and DET 4-3-3. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.45454545454545453,
+          "away": 0.5454545454545454
+        },
+        "selection_side": "away",
+        "selection": "Detroit Red Wings",
+        "market": "Moneyline",
+        "probability": 0.5454545454545454,
+        "fair_american": -120,
+        "fair_decimal": 1.8333333333333335,
+        "grade": "Low",
+        "minimum_sample": 9,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": true,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 2.556,
+          "expected_away_score": 3.511,
+          "expected_total": 6.067,
+          "total_line": 6.0,
+          "over_probability": 0.4044041124303755,
+          "over_fair_american": 147,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.15402898375343474,
+          "home_cover_fair_american": 549
+        }
+      }
+    },
+    {
+      "id": "nhl-2026020179",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Seattle Kraken",
+      "away": "Minnesota Wild",
+      "start_utc": "2026-10-25T02:00:00Z",
+      "start_display": "2026-10-25 02:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS",
+        "NHL_SEA_FORM",
+        "NHL_SEA_PREVIEW"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 11,
+          "wins": 7,
+          "gf": 42,
+          "ga": null
+        },
+        "away": {
+          "gp": 11,
+          "wins": 6,
+          "gf": 32,
+          "ga": 27
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: SEA 7-3-1 and MIN 6-3-2. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [
+        "Seattle goals against was not present in the captured standings fragment; total and handicap screens remain blank."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.5675675675675675,
+          "away": 0.43243243243243246
+        },
+        "selection_side": "home",
+        "selection": "Seattle Kraken",
+        "market": "Moneyline",
+        "probability": 0.5675675675675675,
+        "fair_american": -131,
+        "fair_decimal": 1.761904761904762,
+        "grade": "Medium",
+        "minimum_sample": 11,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": true,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": null
+      }
+    },
+    {
+      "id": "tennis-krueger-siniakova-20261025",
+      "sport": "tennis",
+      "competition": "WTA Osaka — final",
+      "home": "Ashlyn Krueger",
+      "away": "Katerina Siniakova",
+      "start_utc": "2026-10-25T04:30:00Z",
+      "start_display": "25 Oct 13:30 Asia/Tokyo",
+      "not_before": false,
+      "venue": "",
+      "official_source": "WTA_OSAKA_OP",
+      "evidence_sources": [
+        "WTA_OSAKA_OP"
+      ],
+      "pricing": null,
+      "notes": [],
+      "availability": "",
+      "flags": [
+        "Comparable current singles W-L records for both finalists were not captured from official evidence; winner, handicap and total remain blank."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": null
+    },
+    {
+      "id": "cricket-pakistan-england-20261025",
+      "sport": "cricket",
+      "competition": "ODI tri-series — match 4",
+      "home": "Pakistan",
+      "away": "England",
+      "start_utc": "2026-10-25T08:00:00Z",
+      "start_display": "25 Oct 13:00 PKT",
+      "not_before": false,
+      "venue": "Gaddafi Stadium, Lahore",
+      "official_source": "PCB_RESULTS",
+      "evidence_sources": [
+        "PCB_RESULTS",
+        "PCB_PAK_ENG"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 2,
+          "wins": 2,
+          "gf": null,
+          "ga": null
+        },
+        "away": {
+          "gp": 2,
+          "wins": 0,
+          "gf": null,
+          "ga": null
+        }
+      },
+      "notes": [
+        "Pakistan is 2-0 after beating Sri Lanka by 37 runs and England by 87 runs. England is 0-2 after also losing a record chase to Sri Lanka.",
+        "In the previous meeting Pakistan scored 302/9 and England 215; Arafat Minhas contributed 59 and 6-40."
+      ],
+      "availability": "",
+      "flags": [
+        "Two-match series samples cap confidence at Low. Tie/no-result, run handicap and total runs are not separately priced."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.8,
+          "away": 0.19999999999999996
+        },
+        "selection_side": "home",
+        "selection": "Pakistan",
+        "market": "Match winner",
+        "probability": 0.8,
+        "fair_american": -400,
+        "fair_decimal": 1.25,
+        "grade": "Low",
+        "minimum_sample": 2,
+        "high_gate": {
+          "probability_above_70": true,
+          "fair_price_in_band": false,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": false,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "fair_price_in_band",
+          "minimum_six_games_each",
+          "prediction_30_words",
+          "availability_context"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": null
+      }
+    },
+    {
+      "id": "cricket-india-zimbabwe-women-20261025",
+      "sport": "cricket",
+      "competition": "Women's ODI series — match 2",
+      "home": "India Women",
+      "away": "Zimbabwe Women",
+      "start_utc": "2026-10-25T08:30:00Z",
+      "start_display": "25 Oct 08:30 UTC",
+      "not_before": false,
+      "venue": "BCA Stadium, Vadodara",
+      "official_source": "BCCI_SECOND",
+      "evidence_sources": [
+        "BCCI_SECOND",
+        "BCCI_FIRST",
+        "BCCI_AVAILABILITY"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 1,
+          "wins": 1,
+          "gf": null,
+          "ga": null
+        },
+        "away": {
+          "gp": 1,
+          "wins": 0,
+          "gf": null,
+          "ga": null
+        }
+      },
+      "notes": [
+        "India won the first ODI by nine wickets: Zimbabwe 197 in 49.5 overs, India 200/1 in 27.1. Pratika Rawal made 100 not out and Shafali Verma 64 not out.",
+        "Jintimani Kalita replaces Renuka Singh Thakur, who is building bowling volume at the BCCI Centre of Excellence."
+      ],
+      "availability": "BCCI announced Jintimani Kalita as Renuka Singh Thakur’s replacement for this ODI series.",
+      "flags": [
+        "One-match ODI sample caps confidence at Low. Tie/no-result, run handicap and total runs are not separately priced."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.6923076923076923,
+          "away": 0.3076923076923077
+        },
+        "selection_side": "home",
+        "selection": "India Women",
+        "market": "Match winner",
+        "probability": 0.6923076923076923,
+        "fair_american": -225,
+        "fair_decimal": 1.4444444444444444,
+        "grade": "Low",
+        "minimum_sample": 1,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": true,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "minimum_six_games_each",
+          "prediction_30_words"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": null
+      }
+    },
+    {
+      "id": "tennis-rybakina-fernandez-20261025",
+      "sport": "tennis",
+      "competition": "WTA Ningbo — final",
+      "home": "Elena Rybakina",
+      "away": "Leylah Fernandez",
+      "start_utc": "2026-10-25T09:00:00Z",
+      "start_display": "25 Oct not before 17:00 Asia/Shanghai",
+      "not_before": false,
+      "venue": "",
+      "official_source": "WTA_NINGBO_OP",
+      "evidence_sources": [
+        "WTA_NINGBO_OP",
+        "WTA_NINGBO_REPORT",
+        "WTA_NINGBO_PREVIEW",
+        "WTA_RYBAKINA",
+        "WTA_FERNANDEZ"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 63,
+          "wins": 49,
+          "gf": null,
+          "ga": null
+        },
+        "away": {
+          "gp": 49,
+          "wins": 24,
+          "gf": null,
+          "ga": null
+        }
+      },
+      "notes": [
+        "Rybakina is No. 1 with a 49-14 profile record; Fernandez is No. 30 at 24-25. Rybakina leads their head-to-head 3-2 and has won the last two.",
+        "Both won their semifinals 6-3, 7-5. Fernandez is 11-2 since the start of the Asian Swing."
+      ],
+      "availability": "",
+      "flags": [
+        "Start is not-before, not guaranteed. A WTA preview says Saturday while the dated official order of play says Sunday; the PDF controls and the contradiction is flagged.",
+        "Set/game handicaps and totals are not priced without comparable current distributions."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.7679866146123814,
+          "away": 0.23201338538761862
+        },
+        "selection_side": "home",
+        "selection": "Elena Rybakina",
+        "market": "Match winner",
+        "probability": 0.7679866146123814,
+        "fair_american": -331,
+        "fair_decimal": 1.302106027596224,
+        "grade": "Medium",
+        "minimum_sample": 49,
+        "high_gate": {
+          "probability_above_70": true,
+          "fair_price_in_band": false,
+          "minimum_six_games_each": true,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": false,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "fair_price_in_band",
+          "prediction_30_words",
+          "availability_context"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": null
+      }
+    },
+    {
+      "id": "tennis-medvedev-basilashvili-20261025",
+      "sport": "tennis",
+      "competition": "ATP Almaty — final",
+      "home": "Daniil Medvedev",
+      "away": "Nikoloz Basilashvili",
+      "start_utc": "2026-10-25T10:00:00Z",
+      "start_display": "25 Oct not before 15:00 Asia/Almaty",
+      "not_before": false,
+      "venue": "",
+      "official_source": "ATP_ALMATY_SCHEDULE",
+      "evidence_sources": [
+        "ATP_ALMATY_SCHEDULE",
+        "ATP_ALMATY_REPORT",
+        "ATP_MEDVEDEV",
+        "ATP_BASILASHVILI"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 63,
+          "wins": 45,
+          "gf": null,
+          "ga": null
+        },
+        "away": {
+          "gp": 17,
+          "wins": 7,
+          "gf": null,
+          "ga": null
+        }
+      },
+      "notes": [
+        "Profiles display Medvedev 45-18 and Basilashvili 7-10; current Almaty wins are reported separately rather than silently added to those records.",
+        "Medvedev has a Tour-leading 37 hard-court wins and is 10-1 in Almaty. Basilashvili beat Tsitsipas 6-4, 6-7(5), 6-3; Medvedev leads their head-to-head 1-0."
+      ],
+      "availability": "",
+      "flags": [
+        "Start is not-before, not guaranteed. Profile records may lag current-tournament results, so confidence is capped below High.",
+        "Set/game handicaps and totals are not priced without comparable current distributions."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.7580645161290323,
+          "away": 0.24193548387096775
+        },
+        "selection_side": "home",
+        "selection": "Daniil Medvedev",
+        "market": "Match winner",
+        "probability": 0.7580645161290323,
+        "fair_american": -313,
+        "fair_decimal": 1.3191489361702127,
+        "grade": "Medium",
+        "minimum_sample": 17,
+        "high_gate": {
+          "probability_above_70": true,
+          "fair_price_in_band": false,
+          "minimum_six_games_each": true,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": false,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "fair_price_in_band",
+          "prediction_30_words",
+          "availability_context"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": null
+      }
+    },
+    {
+      "id": "gaelic-caherlistrane-spideal-20261025",
+      "sport": "gaelic-sports",
+      "competition": "Galway Intermediate Football Championship — final",
+      "home": "Caherlistrane",
+      "away": "An Spidéal",
+      "start_utc": "2026-10-25T14:00:00Z",
+      "start_display": "25 Oct 14:00 Europe/Dublin",
+      "not_before": false,
+      "venue": "Pearse Stadium",
+      "official_source": "GALWAY_CHANGE",
+      "evidence_sources": [
+        "GALWAY_CHANGE"
+      ],
+      "pricing": null,
+      "notes": [],
+      "availability": "",
+      "flags": [
+        "The latest weather notice says 14:00; an older fixtures view showed 15:00. The notice controls and the conflict remains visible.",
+        "Comparable current team scoring and availability records were not captured; no price or selection."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": null
+    },
+    {
+      "id": "handball-saint-raphael-paris-20261025",
+      "sport": "handball",
+      "competition": "Daikin StarLigue — round 8",
+      "home": "Saint-Raphaël",
+      "away": "Paris Saint-Germain",
+      "start_utc": "2026-10-25T15:00:00Z",
+      "start_display": "25 Oct 16:00 Europe/Paris",
+      "not_before": false,
+      "venue": "",
+      "official_source": "LNH_HOME",
+      "evidence_sources": [
+        "LNH_HOME"
+      ],
+      "pricing": null,
+      "notes": [
+        "Paris has 14 points from seven matches; Saint-Raphaël has four from six with 176:190 in the captured LNH table."
+      ],
+      "availability": "",
+      "flags": [
+        "Paris goals for/against and a complete comparable W-D-L breakdown were not captured; winner, handicap and total remain blank."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": null
+    },
+    {
+      "id": "gaelic-moycullen-salthill-20261025",
+      "sport": "gaelic-sports",
+      "competition": "Galway Senior Football Championship — final",
+      "home": "Maigh Cuilinn / Moycullen",
+      "away": "Salthill-Knocknacarra",
+      "start_utc": "2026-10-25T16:00:00Z",
+      "start_display": "25 Oct 16:00 Europe/Dublin",
+      "not_before": false,
+      "venue": "Pearse Stadium",
+      "official_source": "GALWAY_CHANGE",
+      "evidence_sources": [
+        "GALWAY_CHANGE"
+      ],
+      "pricing": null,
+      "notes": [],
+      "availability": "",
+      "flags": [
+        "Weather moved the senior final to Sunday at 16:00. Comparable current team scoring and availability records were not captured; no price or selection."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": null
+    },
+    {
+      "id": "volley-trentino-cisterna-20261025",
+      "sport": "volleyball",
+      "competition": "SuperLega",
+      "home": "Itas Trentino",
+      "away": "Cisterna Volley",
+      "start_utc": "2026-10-25T16:00:00Z",
+      "start_display": "2026-10-25 16:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "LEGA_ROUND1",
+      "evidence_sources": [
+        "LEGA_ROUND1"
+      ],
+      "pricing": {
+        "kind": "volleyball",
+        "home": {
+          "gp": 1,
+          "wins": 1,
+          "gf": null,
+          "ga": null,
+          "sets_won": 3,
+          "sets_lost": 0
+        },
+        "away": {
+          "gp": 1,
+          "wins": 1,
+          "gf": null,
+          "ga": null,
+          "sets_won": 3,
+          "sets_lost": 0
+        }
+      },
+      "notes": [
+        "Every team has played one match. Match records set the winner price; opening set records inform the set handicap and total only."
+      ],
+      "availability": "",
+      "flags": [
+        "One-match samples cap every selection at Low; no availability adjustment is applied."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 match records; separate set screen",
+        "probabilities": {
+          "home": 0.5,
+          "away": 0.5
+        },
+        "selection_side": "home",
+        "selection": "Itas Trentino",
+        "market": "Match winner",
+        "probability": 0.5,
+        "fair_american": -100,
+        "fair_decimal": 2.0,
+        "grade": "Low",
+        "minimum_sample": 1,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": false,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "minimum_six_games_each",
+          "prediction_30_words",
+          "availability_context"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": null,
+          "expected_away_score": null,
+          "expected_total": 4.125,
+          "total_line": 4.5,
+          "over_probability": 0.375,
+          "over_fair_american": 167,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.3125,
+          "home_cover_fair_american": 220,
+          "set_win_probability": 0.5
+        }
+      }
+    },
+    {
+      "id": "volley-lube-padova-20261025",
+      "sport": "volleyball",
+      "competition": "SuperLega",
+      "home": "Cucine Lube Civitanova",
+      "away": "Sonepar Padova",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "start_display": "2026-10-25 17:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "LEGA_ROUND1",
+      "evidence_sources": [
+        "LEGA_ROUND1"
+      ],
+      "pricing": {
+        "kind": "volleyball",
+        "home": {
+          "gp": 1,
+          "wins": 1,
+          "gf": null,
+          "ga": null,
+          "sets_won": 3,
+          "sets_lost": 0
+        },
+        "away": {
+          "gp": 1,
+          "wins": 0,
+          "gf": null,
+          "ga": null,
+          "sets_won": 0,
+          "sets_lost": 3
+        }
+      },
+      "notes": [
+        "Every team has played one match. Match records set the winner price; opening set records inform the set handicap and total only."
+      ],
+      "availability": "",
+      "flags": [
+        "One-match samples cap every selection at Low; no availability adjustment is applied."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 match records; separate set screen",
+        "probabilities": {
+          "home": 0.6923076923076923,
+          "away": 0.3076923076923077
+        },
+        "selection_side": "home",
+        "selection": "Cucine Lube Civitanova",
+        "market": "Match winner",
+        "probability": 0.6923076923076923,
+        "fair_american": -225,
+        "fair_decimal": 1.4444444444444444,
+        "grade": "Low",
+        "minimum_sample": 1,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": false,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "minimum_six_games_each",
+          "prediction_30_words",
+          "availability_context"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": null,
+          "expected_away_score": null,
+          "expected_total": 3.184,
+          "total_line": 4.5,
+          "over_probability": 0.018390584403922373,
+          "over_fair_american": 5338,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.9808311682091929,
+          "home_cover_fair_american": -5117,
+          "set_win_probability": 0.9411764705882353
+        }
+      }
+    },
+    {
+      "id": "volley-monza-verona-20261025",
+      "sport": "volleyball",
+      "competition": "SuperLega",
+      "home": "Vero Volley Monza",
+      "away": "Rana Verona",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "start_display": "2026-10-25 17:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "LEGA_ROUND1",
+      "evidence_sources": [
+        "LEGA_ROUND1"
+      ],
+      "pricing": {
+        "kind": "volleyball",
+        "home": {
+          "gp": 1,
+          "wins": 0,
+          "gf": null,
+          "ga": null,
+          "sets_won": 1,
+          "sets_lost": 3
+        },
+        "away": {
+          "gp": 1,
+          "wins": 0,
+          "gf": null,
+          "ga": null,
+          "sets_won": 0,
+          "sets_lost": 3
+        }
+      },
+      "notes": [
+        "Every team has played one match. Match records set the winner price; opening set records inform the set handicap and total only."
+      ],
+      "availability": "",
+      "flags": [
+        "One-match samples cap every selection at Low; no availability adjustment is applied."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 match records; separate set screen",
+        "probabilities": {
+          "home": 0.5,
+          "away": 0.5
+        },
+        "selection_side": "home",
+        "selection": "Vero Volley Monza",
+        "market": "Match winner",
+        "probability": 0.5,
+        "fair_american": -100,
+        "fair_decimal": 2.0,
+        "grade": "Low",
+        "minimum_sample": 1,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": false,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "minimum_six_games_each",
+          "prediction_30_words",
+          "availability_context"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": null,
+          "expected_away_score": null,
+          "expected_total": 3.963,
+          "total_line": 4.5,
+          "over_probability": 0.29629629629629634,
+          "over_fair_american": 237,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.5925925925925924,
+          "home_cover_fair_american": -145,
+          "set_win_probability": 0.6666666666666666
+        }
+      }
+    },
+    {
+      "id": "volley-perugia-pordenone-20261025",
+      "sport": "volleyball",
+      "competition": "SuperLega",
+      "home": "Sir Susa Scai Perugia",
+      "away": "Pallavolo Pordenone",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "start_display": "2026-10-25 17:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "LEGA_ROUND1",
+      "evidence_sources": [
+        "LEGA_ROUND1"
+      ],
+      "pricing": {
+        "kind": "volleyball",
+        "home": {
+          "gp": 1,
+          "wins": 1,
+          "gf": null,
+          "ga": null,
+          "sets_won": 3,
+          "sets_lost": 2
+        },
+        "away": {
+          "gp": 1,
+          "wins": 1,
+          "gf": null,
+          "ga": null,
+          "sets_won": 3,
+          "sets_lost": 1
+        }
+      },
+      "notes": [
+        "Every team has played one match. Match records set the winner price; opening set records inform the set handicap and total only."
+      ],
+      "availability": "",
+      "flags": [
+        "One-match samples cap every selection at Low; no availability adjustment is applied."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 match records; separate set screen",
+        "probabilities": {
+          "home": 0.5,
+          "away": 0.5
+        },
+        "selection_side": "home",
+        "selection": "Sir Susa Scai Perugia",
+        "market": "Match winner",
+        "probability": 0.5,
+        "fair_american": -100,
+        "fair_decimal": 2.0,
+        "grade": "Low",
+        "minimum_sample": 1,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": false,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "minimum_six_games_each",
+          "prediction_30_words",
+          "availability_context"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": null,
+          "expected_away_score": null,
+          "expected_total": 4.066,
+          "total_line": 4.5,
+          "over_probability": 0.34559999999999996,
+          "over_fair_american": 189,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.17920000000000008,
+          "home_cover_fair_american": 458,
+          "set_win_probability": 0.4000000000000001
+        }
+      }
+    },
+    {
+      "id": "volley-piacenza-modena-20261025",
+      "sport": "volleyball",
+      "competition": "SuperLega",
+      "home": "Gas Sales Bluenergy Piacenza",
+      "away": "Modena Volley",
+      "start_utc": "2026-10-25T17:00:00Z",
+      "start_display": "2026-10-25 17:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "LEGA_ROUND1",
+      "evidence_sources": [
+        "LEGA_ROUND1"
+      ],
+      "pricing": {
+        "kind": "volleyball",
+        "home": {
+          "gp": 1,
+          "wins": 1,
+          "gf": null,
+          "ga": null,
+          "sets_won": 3,
+          "sets_lost": 0
+        },
+        "away": {
+          "gp": 1,
+          "wins": 0,
+          "gf": null,
+          "ga": null,
+          "sets_won": 0,
+          "sets_lost": 3
+        }
+      },
+      "notes": [
+        "Every team has played one match. Match records set the winner price; opening set records inform the set handicap and total only."
+      ],
+      "availability": "",
+      "flags": [
+        "One-match samples cap every selection at Low; no availability adjustment is applied."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 match records; separate set screen",
+        "probabilities": {
+          "home": 0.6923076923076923,
+          "away": 0.3076923076923077
+        },
+        "selection_side": "home",
+        "selection": "Gas Sales Bluenergy Piacenza",
+        "market": "Match winner",
+        "probability": 0.6923076923076923,
+        "fair_american": -225,
+        "fair_decimal": 1.4444444444444444,
+        "grade": "Low",
+        "minimum_sample": 1,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": false,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "minimum_six_games_each",
+          "prediction_30_words",
+          "availability_context"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": null,
+          "expected_away_score": null,
+          "expected_total": 3.184,
+          "total_line": 4.5,
+          "over_probability": 0.018390584403922373,
+          "over_fair_american": 5338,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.9808311682091929,
+          "home_cover_fair_american": -5117,
+          "set_win_probability": 0.9411764705882353
+        }
+      }
+    },
+    {
+      "id": "volley-milano-cuneo-20261025",
+      "sport": "volleyball",
+      "competition": "SuperLega",
+      "home": "Allianz Milano",
+      "away": "Cuneo Volley",
+      "start_utc": "2026-10-25T18:00:00Z",
+      "start_display": "2026-10-25 18:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "LEGA_ROUND1",
+      "evidence_sources": [
+        "LEGA_ROUND1"
+      ],
+      "pricing": {
+        "kind": "volleyball",
+        "home": {
+          "gp": 1,
+          "wins": 0,
+          "gf": null,
+          "ga": null,
+          "sets_won": 0,
+          "sets_lost": 3
+        },
+        "away": {
+          "gp": 1,
+          "wins": 0,
+          "gf": null,
+          "ga": null,
+          "sets_won": 2,
+          "sets_lost": 3
+        }
+      },
+      "notes": [
+        "Every team has played one match. Match records set the winner price; opening set records inform the set handicap and total only."
+      ],
+      "availability": "",
+      "flags": [
+        "One-match samples cap every selection at Low; no availability adjustment is applied."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 match records; separate set screen",
+        "probabilities": {
+          "home": 0.5,
+          "away": 0.5
+        },
+        "selection_side": "home",
+        "selection": "Allianz Milano",
+        "market": "Match winner",
+        "probability": 0.5,
+        "fair_american": -100,
+        "fair_decimal": 2.0,
+        "grade": "Low",
+        "minimum_sample": 1,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": false,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "minimum_six_games_each",
+          "prediction_30_words",
+          "availability_context"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": null,
+          "expected_away_score": null,
+          "expected_total": 3.773,
+          "total_line": 4.5,
+          "over_probability": 0.2109375,
+          "over_fair_american": 374,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.05078125,
+          "home_cover_fair_american": 1869,
+          "set_win_probability": 0.25
+        }
+      }
+    },
+    {
+      "id": "motor-usa-gp-20261025",
+      "sport": "motor-racing",
+      "competition": "Formula 1 — United States Grand Prix",
+      "home": "Circuit of the Americas",
+      "away": "2026 driver field",
+      "start_utc": "2026-10-25T20:00:00Z",
+      "start_display": "2026-10-25T20:00:00Z",
+      "not_before": false,
+      "venue": "Austin, Texas",
+      "official_source": "F1_USA",
+      "evidence_sources": [
+        "F1_USA"
+      ],
+      "pricing": null,
+      "notes": [
+        "Practice two was led by Charles Leclerc from Kimi Antonelli and Max Verstappen; qualifying had not been completed in the captured evidence."
+      ],
+      "availability": "",
+      "flags": [
+        "No race-winner price: qualifying and a complete comparable current driver dataset were not captured. Practice order is not substituted for race form."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": null
+    },
+    {
+      "id": "rugby-rochelle-bordeaux-20261025",
+      "sport": "rugby-union",
+      "competition": "Top 14",
+      "home": "Stade Rochelais",
+      "away": "Union Bordeaux-Bègles",
+      "start_utc": "2026-10-25T20:05:00Z",
+      "start_display": "25 Oct 21:05 Europe/Paris",
+      "not_before": false,
+      "venue": "La Rochelle",
+      "official_source": "LNR_BORDEAUX",
+      "evidence_sources": [
+        "LNR_ROCHELLE",
+        "LNR_BORDEAUX"
+      ],
+      "pricing": {
+        "kind": "score3",
+        "home": {
+          "gp": 6,
+          "wins": 4,
+          "gf": 144,
+          "ga": 135
+        },
+        "away": {
+          "gp": 6,
+          "wins": 4,
+          "gf": 215,
+          "ga": 151
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "La Rochelle is 4-0-2 with 144:135; Bordeaux is 4-0-2 with 215:151 and won 23-22 at Clermont in its last match."
+      ],
+      "availability": "",
+      "flags": [
+        "Independent scoring approximation; no home, lineup or injury adjustment and no High eligibility."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Independent Poisson scoring approximation with draw",
+        "probabilities": {
+          "home": 0.24376219738713703,
+          "draw": 0.044927752849908485,
+          "away": 0.7113100497629544
+        },
+        "selection_side": "away",
+        "selection": "Union Bordeaux-Bègles",
+        "market": "Three-way winner",
+        "probability": 0.7113100497629544,
+        "fair_american": -246,
+        "fair_decimal": 1.405856701073255,
+        "grade": "Medium",
+        "minimum_sample": 6,
+        "high_gate": {
+          "probability_above_70": true,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": true,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": false,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "prediction_30_words",
+          "availability_context"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 24.583,
+          "expected_away_score": 29.167,
+          "expected_total": 53.75,
+          "total_line": 54.0,
+          "over_probability": 0.45034397613763294,
+          "over_fair_american": 122,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.2029021896321128,
+          "home_cover_fair_american": 393
+        }
+      }
+    },
+    {
+      "id": "handball-magdeburg-kriens-20261028",
+      "sport": "handball",
+      "competition": "EHF Champions League — Group F",
+      "home": "SC Magdeburg",
+      "away": "HC Kriens-Luzern",
+      "start_utc": "2026-10-28T19:45:00Z",
+      "start_display": "28 Oct 20:45 Europe/Berlin",
+      "not_before": false,
+      "venue": "Magdeburg, Germany",
+      "official_source": "EHF_MAGDEBURG",
+      "evidence_sources": [
+        "EHF_MAGDEBURG",
+        "EHF_STANDINGS"
+      ],
+      "pricing": {
+        "kind": "score3",
+        "home": {
+          "gp": 5,
+          "wins": 5,
+          "gf": 176,
+          "ga": 140
+        },
+        "away": {
+          "gp": 5,
+          "wins": 2,
+          "gf": 158,
+          "ga": 161
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Magdeburg is 5-0-0 with 176:140; Kriens-Luzern is 2-0-3 with 158:161. Magdeburg won the September away meeting 39-29."
+      ],
+      "availability": "",
+      "flags": [
+        "Independent scoring approximation with a draw outcome; no lineup or injury adjustment and no High eligibility."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Independent Poisson scoring approximation with draw",
+        "probabilities": {
+          "home": 0.6651961332947455,
+          "draw": 0.04453844340504844,
+          "away": 0.290265423300206
+        },
+        "selection_side": "home",
+        "selection": "SC Magdeburg",
+        "market": "Three-way winner",
+        "probability": 0.6651961332947455,
+        "fair_american": -199,
+        "fair_decimal": 1.5033160145519133,
+        "grade": "Medium",
+        "minimum_sample": 5,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": false,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": false,
+          "confirmed_future_start": true
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "minimum_six_games_each",
+          "prediction_30_words",
+          "availability_context"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": {
+          "expected_home_score": 33.7,
+          "expected_away_score": 29.8,
+          "expected_total": 63.5,
+          "total_line": 63.5,
+          "over_probability": 0.4916411205590267,
+          "over_fair_american": 103,
+          "home_handicap": -1.5,
+          "home_cover_probability": 0.6182079866279651,
+          "home_cover_fair_american": -162
+        }
+      }
+    },
+    {
+      "id": "greyhounds-oaks-final-20261024",
+      "sport": "greyhounds",
+      "competition": "Premier Greyhound Racing Oaks — final",
+      "home": "Dunstall Park",
+      "away": "Finalist field",
+      "start_utc": null,
+      "start_display": "24 Oct; official race time not captured",
+      "not_before": false,
+      "venue": "Dunstall Park",
+      "official_source": "GBGB_OAKS",
+      "evidence_sources": [
+        "GBGB_OAKS"
+      ],
+      "pricing": null,
+      "notes": [
+        "Official semifinal reports name Signet Nayla, Fahrenheit Jess and Slingshot Poppy among the qualifiers."
+      ],
+      "availability": "",
+      "flags": [
+        "Complete official final runner card, traps and race time were not captured; no runner selection or price."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": null
+    },
+    {
+      "id": "greyhounds-scurry-final-20261024",
+      "sport": "greyhounds",
+      "competition": "Arena Racing Company Scurry Gold Cup — final",
+      "home": "Dunstall Park",
+      "away": "Finalist field",
+      "start_utc": null,
+      "start_display": "24 Oct; official race time not captured",
+      "not_before": false,
+      "venue": "Dunstall Park",
+      "official_source": "GBGB_SCURRY",
+      "evidence_sources": [
+        "GBGB_SCURRY"
+      ],
+      "pricing": null,
+      "notes": [
+        "Official semifinal reports name Shadow Storm, Avarua Lake, Roanna Mamba and other qualifiers."
+      ],
+      "availability": "",
+      "flags": [
+        "Complete official final runner card, traps and race time were not captured; no runner selection or price."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": null
+    },
+    {
+      "id": "snooker-williams-jones-20261024",
+      "sport": "snooker",
+      "competition": "Northern Ireland Open — semifinal",
+      "home": "Mark Williams",
+      "away": "Jak Jones",
+      "start_utc": null,
+      "start_display": "24 Oct; WST indexed/localized clocks differ",
+      "not_before": false,
+      "venue": "Belfast, Northern Ireland",
+      "official_source": "WST_MATCH",
+      "evidence_sources": [
+        "WST_MATCH",
+        "WST_WILLIAMS",
+        "WST_JONES",
+        "WST_WILLIAMS_QF"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 20,
+          "wins": 14,
+          "gf": null,
+          "ga": null
+        },
+        "away": {
+          "gp": 27,
+          "wins": 19,
+          "gf": null,
+          "ga": null
+        }
+      },
+      "notes": [
+        "Williams has 14 wins in 20 season matches; Jones has 19 in 27. Williams recovered from 4-2 down to beat David Gilbert 6-4 with three consecutive centuries."
+      ],
+      "availability": "",
+      "flags": [
+        "UTC start is blank because WST indexed and localized pages show different clocks. Refresh match state before any kickoff-time use.",
+        "Frame handicap and total frames are not priced without an official match-format and frame-distribution input."
+      ],
+      "high_prediction": "",
+      "started_at_snapshot": false,
+      "analysis": {
+        "method": "Beta(2,2)-shrunk log5 on official W-L records",
+        "probabilities": {
+          "home": 0.4878048780487805,
+          "away": 0.5121951219512195
+        },
+        "selection_side": "away",
+        "selection": "Jak Jones",
+        "market": "Match winner",
+        "probability": 0.5121951219512195,
+        "fair_american": -105,
+        "fair_decimal": 1.9523809523809523,
+        "grade": "Low",
+        "minimum_sample": 20,
+        "high_gate": {
+          "probability_above_70": false,
+          "fair_price_in_band": true,
+          "minimum_six_games_each": true,
+          "prediction_30_words": false,
+          "prediction_language": true,
+          "availability_context": false,
+          "confirmed_future_start": false
+        },
+        "high_gate_failures": [
+          "probability_above_70",
+          "prediction_30_words",
+          "availability_context",
+          "confirmed_future_start"
+        ],
+        "prediction": "",
+        "prediction_words": 0,
+        "derivative": null
+      }
+    }
+  ],
+  "started_rows": [
+    {
+      "id": "nhl-2026020168",
+      "sport": "ice-hockey",
+      "competition": "NHL",
+      "home": "Philadelphia Flyers",
+      "away": "Anaheim Ducks",
+      "start_utc": "2026-10-24T17:00:00Z",
+      "start_display": "2026-10-24 17:00:00 UTC",
+      "not_before": false,
+      "venue": "",
+      "official_source": "NHL_SCHEDULE",
+      "evidence_sources": [
+        "NHL_SCHEDULE",
+        "NHL_STANDINGS",
+        "NHL_LINEUPS"
+      ],
+      "pricing": {
+        "kind": "log5",
+        "home": {
+          "gp": 12,
+          "wins": 3,
+          "gf": 20,
+          "ga": 37
+        },
+        "away": {
+          "gp": 10,
+          "wins": 4,
+          "gf": 27,
+          "ga": 33
+        },
+        "handicap": 1.5
+      },
+      "notes": [
+        "Official W-L-OTL records: PHI 3-6-3 and ANA 4-6-0. Pricing uses games played and wins on the NHL win-percentage basis."
+      ],
+      "availability": "Official projected lineups and injury lists are linked for this fixture.",
+      "flags": [],
+      "high_prediction": "",
+      "started_at_snapshot": true,
+      "analysis": null,
+      "exclusion": "Start passed at snapshot"
+    }
+  ],
+  "high_prediction_ids": [
+    "nhl-2026020176"
+  ],
+  "scope": [
+    {
+      "slug": "golf",
+      "name": "Golf",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Golf/6"
+      ],
+      "market_location": "No tips were displayed; event and outright pages are the pick locations when offered."
+    },
+    {
+      "slug": "volleyball",
+      "name": "Volleyball",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Volleyball/21"
+      ],
+      "market_location": "Hub cards expose the leading selection; event pages are the location for match, set handicap and total-set markets."
+    },
+    {
+      "slug": "rugby-union",
+      "name": "Rugby Union",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Rugby_Union/9"
+      ],
+      "market_location": "Hub cards expose the leading selection; event pages contain winner, handicap and total-point discussion."
+    },
+    {
+      "slug": "cricket",
+      "name": "Cricket",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Cricket/7"
+      ],
+      "market_location": "Match selections sit beneath fixtures; event pages contain additional match and player-market comments where offered."
+    },
+    {
+      "slug": "snooker",
+      "name": "Snooker",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Snooker/8"
+      ],
+      "market_location": "The hub shows the leading match selection; event pages carry frame and handicap discussion where offered."
+    },
+    {
+      "slug": "darts",
+      "name": "Darts",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Darts/15"
+      ],
+      "market_location": "The hub shows match selections; event pages carry leg and handicap discussion where offered."
+    },
+    {
+      "slug": "baseball",
+      "name": "Baseball",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Baseball/12"
+      ],
+      "market_location": "The hub shows the moneyline selection; event pages are the run-line and total-runs discussion locations."
+    },
+    {
+      "slug": "gaelic-sports",
+      "name": "Gaelic Sports",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Gaelic_Football/25",
+        "https://www.olbg.com/tips/Hurling/26"
+      ],
+      "market_location": "Football and Hurling have separate OLBG routes but one requested desk; fixture cards link to match comments."
+    },
+    {
+      "slug": "greyhounds",
+      "name": "Greyhounds",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Greyhounds/28"
+      ],
+      "market_location": "Race cards and runner-level comments are the pick locations; a complete official runner card is required before pricing."
+    },
+    {
+      "slug": "tennis",
+      "name": "Tennis",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Tennis/3"
+      ],
+      "market_location": "The hub shows match-winner selections; event pages contain set and game-market discussion where offered."
+    },
+    {
+      "slug": "motor-racing",
+      "name": "Motor Racing",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Motor_Racing/14"
+      ],
+      "market_location": "Outright selections sit on the hub and event pages; this desk does not treat practice order as a race-price input."
+    },
+    {
+      "slug": "handball",
+      "name": "Handball",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Handball/20"
+      ],
+      "market_location": "Fixture cards link to winner, handicap and total-goal discussion where offered."
+    },
+    {
+      "slug": "ice-hockey",
+      "name": "Ice Hockey",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Ice_Hockey/13"
+      ],
+      "market_location": "The underscore route is canonical; hub cards lead to moneyline, puck-line and total-goal discussion."
+    },
+    {
+      "slug": "basketball",
+      "name": "Basketball",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Basketball/4"
+      ],
+      "market_location": "The hub shows leading selections; event pages contain moneyline, spread and total-point discussion."
+    },
+    {
+      "slug": "rugby-league",
+      "name": "Rugby League",
+      "olbg_urls": [
+        "https://www.olbg.com/tips/Rugby_League/10"
+      ],
+      "market_location": "Only 2027 outrights were captured; no upcoming match-winner inventory was available."
+    }
+  ]
+}
