@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inside OLBG</title><style>
+:root{--ink:#101c2c;--muted:#5a6b80;--line:#e2e8f0;--bg:#f7f9fc;--card:#fff;
+--blue:#1d4ed8;--blue-soft:#e8efff;--green:#0f6b45;--green-soft:#e6f4ec;
+--amber:#8a5a00;--amber-soft:#fdf3df;--red:#8e2f2f;--red-soft:#fbeaea;--grey-soft:#eef2f7}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+header{background:var(--ink);color:#fff}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding-top:12px;padding-bottom:12px}
+.brand{font-weight:700;font-size:17px;color:#fff}
+.brand span{color:#9db4d8;font-weight:400;font-size:13px;display:block}
+nav{display:flex;flex-wrap:wrap;gap:4px;margin-left:auto}
+nav a{color:#d7e2f3;padding:6px 10px;border-radius:8px;font-size:14px}
+nav a:hover{background:#22314a;text-decoration:none}
+nav a.on{background:#2f4160}
+main{padding:28px 0 56px}
+h1{font-size:30px;line-height:1.2;margin:0 0 6px}
+h2{font-size:21px;margin:34px 0 10px}
+h3{font-size:17px;margin:22px 0 8px}
+p.lede{font-size:17px;color:var(--muted);margin:0 0 18px;max-width:78ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:14px 0}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin:16px 0}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.kpi b{display:block;font-size:26px;line-height:1.1}
+.kpi span{color:var(--muted);font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--grey-soft);font-size:12.5px;text-transform:uppercase;letter-spacing:.03em;color:#41536b}
+tbody tr:hover{background:#fbfdff}
+.table-wrap{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:12px}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.high{background:var(--green-soft);color:var(--green)}
+.strong{background:var(--blue-soft);color:var(--blue)}
+.medium{background:var(--amber-soft);color:var(--amber)}
+.low{background:var(--grey-soft);color:#41536b}
+.gap{background:var(--red-soft);color:var(--red)}
+.pick{font-weight:700}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.small a{word-break:break-all}
+ul.plain{padding-left:18px;margin:8px 0}
+ul.plain li{margin:4px 0}
+.note{background:var(--amber-soft);border:1px solid #f0d9a8;color:#6b4600;border-radius:10px;padding:12px 14px;margin:14px 0}
+.ok{background:var(--green-soft);border:1px solid #b9e0cb;color:#0b4f33;border-radius:10px;padding:12px 14px;margin:14px 0}
+.pred{background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:10px;padding:14px 16px;margin:12px 0}
+.pred h4{margin:0 0 6px;font-size:15px}
+.pred p{margin:0 0 8px}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:22px 0}
+code{background:#eef2f7;padding:1px 5px;border-radius:4px;font-size:13px}
+</style></head><body><header><div class="wrap"><div class="brand">OLBG research desk<span>15-sport desk &middot; captured 2026-10-24</span></div><nav><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="predictions.html">Write-ups</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="sports.html">Sports</a><a href="flagged.html">Flagged</a><a href="sources.html">Sources</a><a href="methodology.html">Method</a><a href="repo-audit.html">Repo audit</a><a href="reverse-engineering.html" class="on">OLBG</a><a href="archive.html">All desks</a></nav></div></header><main><div class="wrap"><h1>Inside OLBG</h1><p class="lede">How the hub pages behave, read live at 2026-10-24T22:28-22:44Z, and what that means for anyone trying to find out what the matches are.</p><h2>Route pattern</h2><p>Each sport hub is <code>https://www.olbg.com/betting-tips/&lt;Sport&gt;/&lt;sport_id&gt;</code>, and each event carries its own route of the form <code>/betting-tips/&lt;Sport&gt;/&lt;Group&gt;/&lt;Competition&gt;/&lt;Home&gt;_vs_&lt;Away&gt;/&lt;sport_id&gt;?event_id=&lt;n&gt;</code>. The hub shows only one selection per event &mdash; the most-tipped outcome &mdash; with a tip count and a percentage of tips, never a price history.</p><h2>The five things that make it confusing</h2><ul class="plain"><li>The tip percentage is a share of member votes. It is not a probability and it is not odds.</li><li>Times are printed on a geo-adjusted clock ("Today", "Tomorrow") with no timezone, and NHL games all print the same 19:07.</li><li>Finished matches can still be listed as upcoming: both darts ties offered on the hub had already been played on the PDC's own schedule (F-05).</li><li>Handball's most popular selection is "Tie" on most fixtures (F-06).</li><li>Four hubs served no events at all tonight: Golf, Snooker, Motor Racing and Rugby League (the last has outrights only).</li></ul><h2>What this desk takes from OLBG, and what it refuses</h2><p>OLBG is used for one thing: naming the events and the markets that exist. Every number published here comes from the league, tour, club or governing body, linked on the row. Tip shares never enter a price.</p><h2>Route inventory by sport</h2><div class="table-wrap"><table><thead><tr><th>Sport</th><th>Hub</th><th>Events served</th><th>Outcome</th></tr></thead><tbody><tr><td>Golf</td><td class="small"><a href="https://www.olbg.com/betting-tips/Golf/5">https://www.olbg.com/betting-tips/Golf/5</a></td><td class="num">0</td><td>no events served</td></tr><tr><td>Volleyball</td><td class="small"><a href="https://www.olbg.com/betting-tips/Volleyball/21">https://www.olbg.com/betting-tips/Volleyball/21</a></td><td class="num">10</td><td>listed, unpriced</td></tr><tr><td>Rugby Union</td><td class="small"><a href="https://www.olbg.com/betting-tips/Rugby_Union/9">https://www.olbg.com/betting-tips/Rugby_Union/9</a></td><td class="num">3</td><td>priced</td></tr><tr><td>Cricket</td><td class="small"><a href="https://www.olbg.com/betting-tips/Cricket/7">https://www.olbg.com/betting-tips/Cricket/7</a></td><td class="num">11</td><td>listed, unpriced</td></tr><tr><td>Snooker</td><td class="small"><a href="https://www.olbg.com/betting-tips/Snooker/8">https://www.olbg.com/betting-tips/Snooker/8</a></td><td class="num">0</td><td>no events served</td></tr><tr><td>Darts</td><td class="small"><a href="https://www.olbg.com/betting-tips/Darts/15">https://www.olbg.com/betting-tips/Darts/15</a></td><td class="num">2</td><td>listed, unpriced</td></tr><tr><td>Baseball</td><td class="small"><a href="https://www.olbg.com/betting-tips/Baseball/12">https://www.olbg.com/betting-tips/Baseball/12</a></td><td class="num">1</td><td>priced</td></tr><tr><td>Gaelic Sports</td><td class="small"><a href="https://www.olbg.com/betting-tips/Gaelic_Football/25">https://www.olbg.com/betting-tips/Gaelic_Football/25</a></td><td class="num">4</td><td>listed, unpriced</td></tr><tr><td>Greyhounds</td><td class="small"><a href="https://www.olbg.com/betting-tips/Greyhounds/28">https://www.olbg.com/betting-tips/Greyhounds/28</a></td><td class="num">1</td><td>listed, unpriced</td></tr><tr><td>Tennis</td><td class="small"><a href="https://www.olbg.com/betting-tips/Tennis/3">https://www.olbg.com/betting-tips/Tennis/3</a></td><td class="num">8</td><td>listed, unpriced</td></tr><tr><td>Motor Racing</td><td class="small"><a href="https://www.olbg.com/betting-tips/Motor_Racing/14">https://www.olbg.com/betting-tips/Motor_Racing/14</a></td><td class="num">0</td><td>no events served</td></tr><tr><td>Handball</td><td class="small"><a href="https://www.olbg.com/betting-tips/Handball/20">https://www.olbg.com/betting-tips/Handball/20</a></td><td class="num">7</td><td>listed, unpriced</td></tr><tr><td>Ice Hockey</td><td class="small"><a href="https://www.olbg.com/betting-tips/Ice_Hockey/13">https://www.olbg.com/betting-tips/Ice_Hockey/13</a></td><td class="num">5</td><td>priced</td></tr><tr><td>Basketball</td><td class="small"><a href="https://www.olbg.com/betting-tips/Basketball/4">https://www.olbg.com/betting-tips/Basketball/4</a></td><td class="num">7</td><td>listed, unpriced</td></tr><tr><td>Rugby League</td><td class="small"><a href="https://www.olbg.com/betting-tips/Rugby_League/10">https://www.olbg.com/betting-tips/Rugby_League/10</a></td><td class="num">0</td><td>no events served</td></tr></tbody></table></div></div></main><footer><div class="wrap">Independent research. Not affiliated with OLBG. Prices on this site are this desk's own margin-free estimates, not quotes from any bookmaker. No staking advice. Every published number carries a link to the official page it came from.</div></footer></body></html>

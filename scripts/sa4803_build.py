@@ -241,7 +241,7 @@ function initFilters(){
 document.addEventListener('DOMContentLoaded', initFilters);
 """
 
-def render_header(title, active=""):
+def render_header(title, active="", prefix=""):
     nav_links = [
         ("Dashboard", f"index.html"),
         ("Picks", f"picks.html"),
@@ -254,7 +254,7 @@ def render_header(title, active=""):
         ("OLBG Reverse Eng.", f"reverse-engineering.html"),
         ("Repo Audit", f"repo-audit.html"),
     ]
-    nav = "".join(f'<a href="{h}" style="{"background:#38bdf8;color:#020617" if h==active else ""}">{label}</a>' for label,h in nav_links)
+    nav = "".join(f'<a href="{prefix}{h}" style="{"background:#38bdf8;color:#020617" if h==active else ""}">{label}</a>' for label,h in nav_links)
     return f'<div class="header"><div class="inner"><div class="brand">OLBG 15-SPORT DESK • {SESSION_ID} • 2026-10-24 22:30 UTC</div><div class="nav">{nav}</div></div></div>'
 
 def render_kpi(desk, high, medium, low):
@@ -333,7 +333,8 @@ def build_pages(desk, high, medium, low, sports):
 
     # common head
     def page(title, body, active=""):
-        return f"""<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>{title} — {SESSION_ID}</title><style>{CSS}</style><body>{render_header(title, active)}<div class=wrap>{body}<footer class=small>Session {SESSION_ID} • Generated {GENERATED_AT} • Official sources visited 2026-10-24 • Band rule High 1.40-101.00 (−250 to +10000) • Independent originated lines — not bookmaker advice. <a href=https://github.com/buffedlizard55-lab/OLBG1>repo</a></footer></div><script>{JS_FILTER}</script></body></html>"""
+        prefix = "../" if active.startswith("sports/") else ""
+        return f"""<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>{title} — {SESSION_ID}</title><style>{CSS}</style><body>{render_header(title, active, prefix)}<div class=wrap>{body}<footer class=small>Session {SESSION_ID} • Generated {GENERATED_AT} • Official sources visited 2026-10-24 • Band rule High 1.40-101.00 (−250 to +10000) • Independent originated lines — not bookmaker advice. <a href=https://github.com/buffedlizard55-lab/OLBG1>repo</a></footer></div><script>{JS_FILTER}</script></body></html>"""
 
     # Index
     kpi = render_kpi(desk, high, medium, low)
