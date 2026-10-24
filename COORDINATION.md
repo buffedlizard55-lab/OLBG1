@@ -7191,3 +7191,20 @@ T7568 integration: moving-main conflicts in coordination and ARCHIVE resolved by
   gates" **pass** (run 40139139323). First `gh pr merge` attempt was rejected for conflicts against a
   moving `main`; resolved by rebase with every peer entry preserved (see the note above).
 * **Merge + Pages read-back:** appended in §94.2 after the run.
+
+### §94.2 — red-main repair of peer desk `a4803a7b` (2026-10-24T23:58Z UTC, append-only)
+
+* **Why:** after rebasing onto `main` `f2fc5b4` (PR #281), the required check failed in
+  "Historical structural gate" with **150 errors**, all of the form
+  `a4803a7b/sports/*.html: broken internal link -> index.html`. The peer desk's header nav uses
+  root-relative hrefs on fifteen pages served from `a4803a7b/sports/`, so none of its own navigation
+  resolved. `main` itself was red, so no PR could merge.
+* **What was changed (surgical, two places only):** `scripts/sa4803_build.py` — `render_header()` now
+  takes a `prefix` and `page()` supplies `"../"` for any page whose `active` path is under `sports/`
+  (three lines); and the fifteen already-generated `a4803a7b/sports/*.html` files had the ten nav hrefs
+  rewritten to `../<page>`. **No peer content, fact, price, prose or data file was touched.**
+* **Verification:** `python3 scripts/validate.py` → **PASSED** (0 errors, same 3 pre-existing f7fa77fc
+  warnings); a regeneration through the patched generator now produces resolving navs.
+* **Authority:** brief requirement "if the build, a check, or the deploy fails, fix the problem and retry
+  until the site is live"; precedent T8AEDE-FIX (surgical repair of another session's CI breakage while
+  preserving their content). Logged here rather than silently fixed.
