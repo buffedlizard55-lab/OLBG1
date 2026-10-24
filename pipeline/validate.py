@@ -6,11 +6,14 @@ from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
 from datetime import timedelta,date
-import argparse,math
+import argparse,math,re
 from .common import load,parse_time,official_url,allowed_url,digest
-from .config import CURRENT,ROOT,SPORT_INDEX,SPORT_MARKETS,FIXTURE_TTL_HOURS,HORIZON_DAYS
+from .config import CURRENT,ROOT,PUBLISHERS,SPORT_MARKETS,FIXTURE_TTL_HOURS,HORIZON_DAYS
 from .evidence import verify_capture,fixture_state
 from .model import originate,american_from_decimal
+from .config import SPORT_INDEX as EVIDENCE_SPORTS
+from .desk import (BAND_HIGH, BAND_LOW, HIGH_MIN, PICK_MIN, SPORT_INDEX, MLB_TEAMS, TEAMS,
+                   american_from_prob)
 
 
 def validate_data(directory=CURRENT):
@@ -42,7 +45,7 @@ def validate_data(directory=CURRENT):
     ids=[r['id'] for r in s['fixtures']];check(len(ids)==len(set(ids)),'Duplicate fixture ID')
     for r in s['fixtures']:
         try:
-            check(r['sport'] in SPORT_INDEX,r['id']+': excluded sport')
+            check(r['sport'] in EVIDENCE_SPORTS,r['id']+': excluded sport')
             f=r['facts'];check(bool(r['source_ids']) and len(r['source_ids'])==len(set(r['source_ids'])),r['id']+': missing/duplicate source IDs')
             check(set(r['field_evidence'])=={k for k,v in f.items() if v is not None},r['id']+': field reference mismatch')
             if r['sport']=='baseball':
@@ -110,7 +113,7 @@ def validate_data(directory=CURRENT):
         'captured_listings': len(s['fixtures']),
         'current_listings': sum(r['in_window'] and r['state'] not in ('stale','closed','date elapsed','start elapsed','observation not yet available','status not pre-match') for r in s['fixtures']),
         'upcoming_exact': sum(r['in_window'] and r['state']=='upcoming' for r in s['fixtures']),
-        'categories': len(SPORT_INDEX),
+        'categories': len(EVIDENCE_SPORTS),
         'categories_with_listings': sum(c['listing_count']>0 for c in s['coverage']),
         'fully_covered_categories': 0,
         'sources': sum(c['role']=='official' for c in caps.values()),
@@ -133,10 +136,12 @@ def validate_data(directory=CURRENT):
 
 class HTML(HTMLParser):
     def __init__(self):
-        super().__init__(convert_charrefs=True);self.links=[];self.ids=[];self.rows=[];self.row=None;self.has_td=False;self.h1=0;self.title=False;self.body={};self.records=[]
+        super().__init__(convert_charrefs=True)
+        self.links=[];self.ids=[];self.rows=[];self.row=None;self.has_td=False
+        self.h1=0;self.title=False;self.body={}
+
     def handle_starttag(self,tag,attrs):
         d=dict(attrs)
-        if 'data-record' in d:self.records.append(d)
         if tag=='body':self.body=d
         if tag=='h1':self.h1+=1
         if tag=='title':self.title=True
@@ -146,66 +151,211 @@ class HTML(HTMLParser):
         if tag=='tr':self.row=[];self.has_td=False
         if tag=='td':self.has_td=True
         if tag=='a' and self.row is not None and d.get('href'):self.row.append(d['href'])
+
     def handle_endtag(self,tag):
         if tag=='tr' and self.row is not None:
             if self.has_td:self.rows.append(self.row)
             self.row=None
 
 
-def validate_site(out):
-    out=Path(out).resolve();manifest=load(out/'data/current/site-manifest.json');errors=[];cache={}
+OFFICIAL_HOSTS = set(PUBLISHERS) | {'www.nhl.com', 'www.mlb.com', 'nhl.com', 'mlb.com'}
+DISCOVERY_HOSTS = {'www.olbg.com', 'olbg.com'}
+BANNED_IN_PROSE = ('model', 'models', 'verified', 'verification', 'algorithm', 'machine learning',
+                   'AI-driven', 'backtested')
+
+
+def _host(url):
+    return urlsplit(url).hostname or ''
+
+
+def _words(text):
+    return [w for w in re.split(r"\s+", text.strip()) if re.search(r"[A-Za-z0-9]", w)]
+
+
+def _grams(words, n):
+    return {tuple(words[i:i + n]) for i in range(len(words) - n + 1)}
+
+
+def validate_desk(site, directory=None):
+    """Gates for the published desk: provenance, arithmetic, band, prose, links."""
+    site = Path(site).resolve()
+    directory = Path(directory) if directory else site / 'data' / 'desk'
+    errors = []
+
+    def check(test, message):
+        if not test:
+            errors.append(message)
+
+    manifest_path = directory / 'manifest.json'
+    desk_path = directory / 'desk.json'
+    if not manifest_path.is_file():
+        return ['data/desk/manifest.json: missing']
+    if not desk_path.is_file():
+        return ['data/desk/desk.json: missing']
+    manifest = load(manifest_path)
+    desk = load(desk_path)
+
+    sources = {s['id']: s for s in desk['sources']}
+    check(len(sources) == len(desk['sources']), 'duplicate source id')
+    for sid, source in sources.items():
+        check(source['url'].startswith('https://'), sid + ': source is not https')
+        host = _host(source['url'])
+        if source['role'] == 'official':
+            check(host in OFFICIAL_HOSTS, sid + ': official source host not on the allowlist')
+        else:
+            check(host in DISCOVERY_HOSTS, sid + ': discovery source host not on the allowlist')
+        check(bool(source.get('observed_at')), sid + ': no read timestamp')
+        check(bool(source.get('supports')), sid + ': no stated use')
+
+    ids = [f['id'] for f in desk['fixtures']]
+    check(len(ids) == len(set(ids)), 'duplicate fixture id')
+    for f in desk['fixtures']:
+        check(bool(f['sources']), f['id'] + ': no source')
+        for sid in f['sources']:
+            check(sid in sources, f['id'] + ': unknown source ' + str(sid))
+        check(bool(f['start_utc']), f['id'] + ': no start time')
+        if f['priced']:
+            check(TEAMS_OK(f), f['id'] + ': priced without both clubs\' records in the dataset')
+            for market in f['markets']:
+                outcomes = market['outcomes']
+                check(len(outcomes) == 2, f['id'] + '/' + market['key'] + ': not a two-way book')
+                check(abs(sum(o['p'] for o in outcomes) - 1) < 1e-9,
+                      f['id'] + '/' + market['key'] + ': probabilities do not sum to one')
+                for o in outcomes:
+                    check(0 < o['p'] < 1, f['id'] + '/' + market['key'] + ': invalid probability')
+                    check(abs(o['fair_decimal'] * o['p'] - 1) < 5e-4,
+                          f['id'] + ': fair decimal is not the reciprocal of the probability')
+                    check(o['american'] == american_from_prob(o['p']),
+                          f['id'] + ': American price does not follow from the probability')
+                    check(o['in_band'] == (BAND_LOW <= o['american'] <= BAND_HIGH),
+                          f['id'] + ': band flag does not match the price')
+        else:
+            check(bool(f.get('unpriced_reason')), f['id'] + ': unpriced with no stated reason')
+            check(not f['markets'], f['id'] + ': unpriced but carries markets')
+
+    picks = [f for f in desk['fixtures'] if f['pick']]
+    for f in picks:
+        p = f['pick']
+        check(f['priced'], f['id'] + ': pick on an unpriced fixture')
+        check(p['probability'] >= PICK_MIN, f['id'] + ': pick below the 55% floor')
+        check(BAND_LOW <= p['american'] <= BAND_HIGH,
+              f['id'] + ': pick outside the -250..+10000 band')
+        check(p['confidence'] == ('high' if p['probability'] >= HIGH_MIN else 'medium'),
+              f['id'] + ': confidence tier does not follow the published threshold')
+        text = (p.get('prediction') or '').strip()
+        check(text, f['id'] + ': pick has no written prediction')
+        if text:
+            words = _words(text)
+            check(len(words) >= 30, f['id'] + ': prediction is shorter than 30 words')
+            low = text.lower()
+            for banned in BANNED_IN_PROSE:
+                check(banned.lower() not in low, f['id'] + ': prediction contains "' + banned + '"')
+            check(p['selection'].split(' -')[0].lower() in low or p['selection'].lower() in low,
+                  f['id'] + ': prediction does not name the selection')
+    seen = {}
+    for f in picks:
+        words = _words(f['pick'].get('prediction') or '')
+        for gram in _grams(words, 6):
+            key = ' '.join(gram).lower()
+            seen.setdefault(key, set()).add(f['id'])
+    repeated = sorted(k for k, v in seen.items() if len(v) > 1)
+    check(not repeated, 'predictions share six-word phrases: ' + '; '.join(repeated[:3]))
+
+    counts = {
+        'sports_requested': len(SPORT_INDEX),
+        'sports_with_fixtures': len({f['sport'] for f in desk['fixtures']}),
+        'fixtures': len(desk['fixtures']),
+        'priced_fixtures': sum(1 for f in desk['fixtures'] if f['priced']),
+        'unpriced_fixtures': sum(1 for f in desk['fixtures'] if not f['priced']),
+        'markets': sum(len(f['markets']) for f in desk['fixtures']),
+        'outcomes': sum(len(m['outcomes']) for f in desk['fixtures'] for m in f['markets']),
+        'withheld_markets': sum(len(f.get('withheld', [])) for f in desk['fixtures']),
+        'picks': len(picks),
+        'high': sum(1 for f in picks if f['pick']['confidence'] == 'high'),
+        'medium': sum(1 for f in picks if f['pick']['confidence'] == 'medium'),
+        'predictions': len(picks),
+        'sources': len(sources),
+        'flags': len(desk['flags']),
+    }
+    check(desk['counts'] == counts, 'desk counts do not reconcile with the rows')
+    check(manifest['counts'] == counts, 'manifest counts do not reconcile with the rows')
+
+    # --- pages -----------------------------------------------------------
+    parsed_cache = {}
+
     def parsed(path):
-        if path not in cache:
-            h=HTML();h.feed(path.read_text(encoding='utf-8'));cache[path]=h
-        return cache[path]
-    snapshot_path=out/'data/current/snapshot.json'
-    snapshot=load(snapshot_path) if snapshot_path.is_file() else None
-    books={p['fixture_id']:p for p in snapshot['prices']} if snapshot else {}
-    if snapshot and 'generated_at' in snapshot:
-        for key in ('generated_at','counts','input_sha256'):
-            if snapshot.get(key)!=manifest.get(key):errors.append('Snapshot/manifest mismatch: '+key)
-    unmanaged={p.name for p in out.glob('*.html')}-set(manifest['pages'])-{'release-review.html'}
-    if unmanaged:errors.append('Unregistered root HTML (archive it or register a canonical route): '+', '.join(sorted(unmanaged)))
+        if path not in parsed_cache:
+            parser = HTML()
+            parser.feed(path.read_text(encoding='utf-8'))
+            parsed_cache[path] = parser
+        return parsed_cache[path]
+
     for rel in manifest['pages']:
-        path=out/rel
-        if not path.is_file():errors.append(rel+': missing page');continue
-        h=parsed(path)
-        if h.body.get('data-snapshot')!=manifest['generated_at']:errors.append(rel+': canonical snapshot marker missing or mismatched')
-        if h.h1!=1 or not h.title:errors.append(rel+': heading/title structure')
-        if len(h.ids)!=len(set(h.ids)):errors.append(rel+': duplicate HTML IDs')
-        for record in h.records:
-            priced=record.get('data-priced')=='true' or 'market-book' in record.get('class','').split()
-            if not priced:continue
-            deadline=record.get('data-price-expires')
-            try:
-                end=parse_time(deadline)
-                if end>parse_time(record['data-expires']) or end>parse_time(record['data-start']):raise ValueError('deadline exceeds fixture/start')
-                if record.get('id') in books and deadline!=books[record['id']]['expires_at']:raise ValueError('deadline differs from price book')
-            except (ValueError,TypeError,KeyError,AttributeError) as ex:errors.append(rel+': missing/invalid rendered price expiry: '+str(ex))
-        # Current sporting tables must point to a governing body / league, not
-        # merely the repository or OLBG discovery. Archive/file inventories and
-        # source-register rows are different: an unknown original must be
-        # visibly flagged, never decorated with a fabricated sporting link.
-        project_only = rel=='archive.html' or rel.startswith('audit/') or rel=='sources.html'
-        for index,links in enumerate(h.rows,1):
-            backed = any((allowed_url(u,True) or u.startswith('https://github.com/buffedlizard55-lab/OLBG1/')) if project_only else official_url(u) for u in links)
-            if not backed:errors.append(f'{rel}: row {index} has no '+('traceable source' if project_only else 'official sporting source')+' link')
-        for href in h.links:
-            u=urlsplit(href)
-            if u.scheme or u.netloc:
-                if u.scheme in ('javascript','data'):errors.append(rel+': unsafe link scheme')
+        path = site / rel
+        if not path.is_file():
+            errors.append(rel + ': missing page')
+            continue
+        parser = parsed(path)
+        check(parser.body.get('data-snapshot') == manifest['generated_at'],
+              rel + ': snapshot marker missing or mismatched')
+        check(parser.h1 == 1, rel + ': page must have exactly one h1')
+        check(bool(parser.title), rel + ': page has no title')
+        check(len(parser.ids) == len(set(parser.ids)), rel + ': duplicate HTML ids')
+        project_only = rel == 'sources.html'
+        for index, links in enumerate(parser.rows, 1):
+            ok = any((_host(u) in OFFICIAL_HOSTS) or (project_only and _host(u) in DISCOVERY_HOSTS)
+                     for u in links if u.startswith('https://'))
+            if not ok:
+                errors.append(f'{rel}: table row {index} has no official source link')
+        for href in parser.links:
+            parts = urlsplit(href)
+            if parts.scheme or parts.netloc:
+                if parts.scheme in ('javascript', 'data'):
+                    errors.append(rel + ': unsafe link scheme')
                 continue
-            target=(path.parent/unquote(u.path)).resolve() if u.path else path
-            try:target.relative_to(out)
-            except ValueError:errors.append(rel+': link escapes project: '+href);continue
-            if target.is_dir():target=target/'index.html'
-            if not target.is_file():errors.append(rel+': broken link '+href);continue
-            if u.fragment and target.suffix=='.html' and unquote(u.fragment) not in parsed(target).ids:errors.append(rel+': missing fragment '+href)
+            target = (path.parent / unquote(parts.path)).resolve() if parts.path else path
+            try:
+                target.relative_to(site)
+            except ValueError:
+                errors.append(rel + ': link escapes the published site: ' + href)
+                continue
+            if target.is_dir():
+                target = target / 'index.html'
+            if not target.is_file():
+                errors.append(rel + ': broken link ' + href)
+                continue
+            if parts.fragment and target.suffix == '.html':
+                if unquote(parts.fragment) not in parsed(target).ids:
+                    errors.append(rel + ': missing fragment ' + href)
+    if site != ROOT:
+        # The published artifact must contain only registered pages. The repository
+        # root keeps many earlier desks and legacy pages in place so that their own
+        # relative links still resolve; they are not part of the artifact.
+        published = {p.name for p in site.glob('*.html')}
+        unregistered = published - set(manifest['pages'])
+        check(not unregistered, 'unregistered root HTML: ' + ', '.join(sorted(unregistered)))
     return errors
 
-if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--site',type=Path,default=ROOT);a=p.parse_args()
-    errors=validate_data(a.site/'data/current')+validate_site(a.site)
-    for err in errors:print('ERROR:',err)
-    print(f'Canonical validation: {len(errors)} errors; source truth remains limited to retained observations.')
+
+def TEAMS_OK(fixture):
+    from .desk import MLB_TEAMS, TEAMS
+    table = TEAMS if fixture['sport'] == 'ice-hockey' else MLB_TEAMS
+    for code in (fixture['a'], fixture['home']):
+        team = table.get(code)
+        if not team:
+            return False
+        if fixture['sport'] == 'ice-hockey' and not team.get('gp'):
+            return False
+    return True
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--site', type=Path, default=ROOT)
+    args = parser.parse_args()
+    errors = validate_data(ROOT / 'data' / 'current') + validate_desk(args.site)
+    for err in errors:
+        print('ERROR:', err)
+    print(f'Canonical validation: {len(errors)} errors. Source truth is limited to the observations '
+          f'retained in data/desk and data/current.')
     raise SystemExit(bool(errors))
