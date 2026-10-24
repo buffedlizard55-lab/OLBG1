@@ -907,6 +907,39 @@ PREDICTIONS = [
         "sources": ["NBA-REF", "NBA-STAND"],
     },
     {
+        "id": "P-BK-02", "fixture": "BK-02", "market": "Match winner (moneyline)",
+        "selection": "Cleveland Cavaliers to win",
+        "text": (
+            "Both clubs are 0-1 and both lost on the road, so home court is almost the entire case for Cleveland. "
+            "The Cavaliers dropped their opener away from Rocket Arena, while Brooklyn lost its only game in "
+            "Brooklyn's case on the road as well. Our numbers make Cleveland a 51.4 per cent favourite, which is a "
+            "coin flip with a nudge, and no official injury report was readable. Selection: Cleveland Cavaliers to win."
+        ),
+        "sources": ["NBA-REF", "NBA-STAND"],
+    },
+    {
+        "id": "P-BK-05", "fixture": "BK-05", "market": "Match winner (moneyline)",
+        "selection": "Chicago Bulls to win",
+        "text": (
+            "Chicago and Washington are both 1-1, but the splits lean the Bulls' way: Chicago is 1-1 on the road and "
+            "has not yet played at the United Center, while Washington is 1-1 at home and arrives on a defeat. Our "
+            "numbers make Chicago a 51.5 per cent favourite once home court is applied, so this is a marginal call "
+            "rather than a strong one. Official injury status was not readable. Selection: Chicago Bulls to win."
+        ),
+        "sources": ["NBA-REF", "NBA-STAND"],
+    },
+    {
+        "id": "P-BK-07", "fixture": "BK-07", "market": "Match winner (moneyline)",
+        "selection": "Denver Nuggets to win",
+        "text": (
+            "Neither side has won yet: Denver is 0-1 after losing its opener on the road, and New Orleans is 0-2 "
+            "after defeats at home and away. Ball Arena gives Denver the edge our numbers put at 53.6 per cent, which "
+            "is thin and sits in low confidence. Two-game samples say little, and no official injury report was "
+            "available for either roster. Selection: Denver Nuggets to win."
+        ),
+        "sources": ["NBA-REF", "NBA-STAND"],
+    },
+    {
         "id": "P-BK-08", "fixture": "BK-08", "market": "Match winner (moneyline)",
         "selection": "Phoenix Suns to win",
         "text": (

@@ -1,114 +1,92 @@
-# Session report — `350700b0-olbg1`, task `T3507B0`
+# Session 3507B0 — 24 October 2026 desk
 
-**Window:** 2026-10-24, 17:50–19:10 UTC
-**Scope:** clarity rebuild of the published site, fresh 15-sport pass, originated prices, written
-predictions, validator and browser gates, PR, merge and Pages read-back.
-**Result:** 21 matches listed, 13 priced, 33 markets, 11 picks (6 High, 5 Medium), 11 written
-predictions, 6 review flags, 0 validator errors, 482 unit tests passing.
+Scope: the fifteen sports named in the brief, with the site rebuilt as one dashboard and every price
+originated here rather than copied. This file is the paper trail: what was read, when, what it said,
+what was priced from it, what was withheld, and what is still wrong.
 
----
+## 1. Sources read (all times UTC, 24 October 2026)
 
-## 1. The problem this session set out to fix
+| # | Source | URL | Read at | What it supplied |
+|---|---|---|---|---|
+| 1 | NHL schedule, 24 Oct | <https://api-web.nhle.com/v1/schedule/2026-10-24> | 17:52 | 12 games; exact UTC start, venue, game ID, partner moneyline for each |
+| 2 | NHL schedule, 25 Oct | <https://api-web.nhle.com/v1/schedule/2026-10-25> | 17:58 | FLA@CHI 19:00, NYI@DAL 22:00, MTL@WPG 23:00 (Heritage Classic, neutral, Princess Auto Stadium), COL@NSH 26 Oct 00:00 |
+| 3 | NHL standings, 24 Oct | <https://api-web.nhle.com/v1/standings/2026-10-24> | 17:42 | All 32 clubs: W-OTL-L, goals for/against, home and road splits, last ten, streak |
+| 4 | MLB post-season schedule | <https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-24&endDate=2026-10-31> | 17:44 | World Series games 849802, 849804, 849803, 849799, 849801, 849800 |
+| 5 | MLB results, 23 Oct | <https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-23> | 17:45 | Final, game 849805: Rays 2, Brewers 3 — Milwaukee leads the series 1-0 |
+| 6 | MLB standings (NL) | <https://statsapi.mlb.com/api/v1/standings?leagueId=104&season=2026&standingsTypes=regularSeason> | 17:46 | Brewers 103-59, home 55-26, away 48-33, last ten 8-2 |
+| 7 | MLB standings (AL) | <https://statsapi.mlb.com/api/v1/standings?leagueId=103&season=2026&standingsTypes=regularSeason> | 17:47 | Rays 98-64, home 55-26, away 43-38, last ten 5-5 |
+| 8 | OLBG ice hockey hub | <https://www.olbg.com/betting-tips/Ice_Hockey/13> | 17:39 | Discovery only: which matches OLBG lists, and its member tip shares (votes, never used as probabilities) |
+| 9 | ATP Tour live scores | <https://www.atptour.com/en/scores/current> | 18:02 | Semifinal results in progress — no machine-readable list of *upcoming* matches |
 
-The published site had grown to **1,559 HTML pages** across more than eighty parallel desks because
-`stage_existing()` copied every tracked repository file into the `_site` artifact. The landing page was
-a research workspace with no picks on it, and the previous three desks had all published **zero**
-high-confidence selections, because their High gate required both `p > 0.70` *and* a fair price inside
-−250…+10000 — a 1.4-point overlap that almost nothing can satisfy (their own flag F-3D-09).
+The fourteen OLBG hubs for the other sports are linked from each sport page
+(`/betting-tips/{Sport}/{id}`); they were not re-read in this session, and no fixture was invented to
+fill the gap.
 
-Two changes fix that at the root:
+## 2. Prices
 
-1. the artifact now contains **this desk only** — 25 pages;
-2. the band is the hard rule, with a 60% floor for High, and the reason is written on the methodology
-   page rather than buried in a coordination log.
+One model, documented on `methodology.html` and implemented in `pipeline/desk.py`:
 
-## 2. Sources read this session (all UTC)
+* Each club's scoring and conceding rate is shrunk toward the league rate (prior worth ten games at
+  2.90 goals), so an eleven-game sample cannot outvote the rest of the league.
+* Expected goals per side = average of that side's attack and the opponent's defence, with a 0.15
+  home adjustment (no adjustment at a neutral site).
+* Match winner, from a normal approximation of the goal difference (σ = 1.9).
+* Puck line, from the same distribution shifted by the line.
+* Total goals, from σ = 2.4.
+* Baseball: log-5 on the two clubs' season win rates, home edge +0.025.
 
-| ID | Publisher | URL | Read | Used for |
-| --- | --- | --- | --- | --- |
-| `nhl-schedule-2410` | NHL | <https://api-web.nhle.com/v1/schedule/2026-10-24> | 17:52 | Game IDs, exact UTC starts, venues, neutral-site flag, partner moneylines for the twelve games of 24 Oct |
-| `nhl-schedule-2510` | NHL | <https://api-web.nhle.com/v1/schedule/2026-10-25> | 17:53 | Starts, venues, Heritage Classic neutral-site flag for 25 Oct |
-| `nhl-standings-2410` | NHL | <https://api-web.nhle.com/v1/standings/2026-10-24> | 17:42 | Club records, GF/GA, home/road splits, last ten, streaks (league stamp 2026-10-24T17:42:15Z) |
-| `mlb-schedule` | MLB | <https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-24&endDate=2026-10-31> | 17:55 | World Series games 2–7 with gamePk, UTC starts, venues, if-necessary flags |
-| `mlb-result-2310` | MLB | <https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-23> | 17:56 | Game 1 final: Milwaukee 3, Tampa Bay 2 |
-| `mlb-standings-al` | MLB | <https://statsapi.mlb.com/api/v1/standings?leagueId=103&season=2026&standingsTypes=regularSeason> | 17:56 | Tampa Bay 98-64, home 55-26, road 43-38, last ten 5-5 |
-| `mlb-standings-nl` | MLB | <https://statsapi.mlb.com/api/v1/standings?leagueId=104&season=2026&standingsTypes=regularSeason> | 17:57 | Milwaukee 103-59, home 55-26, road 48-33, last ten 8-2 |
-| `olbg-ice-hockey` | OLBG (discovery) | <https://www.olbg.com/betting-tips/Ice_Hockey/13> | 17:47 | Which match markets OLBG lists today; tip shares recorded as votes only |
+Picks are chosen per fixture in a fixed order: the match winner first, and only if that market has no
+selection at 55% or better, the best of the other investigated markets. Puck-line selections are never
+picked, because a +1.5 cushion converts a coin flip into a near-certainty and makes a cheap "high
+confidence" pick that says nothing.
 
-Reads that failed and were **not** worked around:
+| Tier | Rule | Count today |
+|---|---|---|
+| High | originated chance ≥ 60% and fair price in [−250, +10000] | 6 |
+| Medium | originated chance 55–60% in the same band | 5 |
+| Withheld | below 55%, outside the band, or an input is missing | the rest of the board |
 
-* `https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json` — HTTP 500.
-* `https://www.nba.com/games?date=2026-10-25` — the schedule grid rendered game counts (7 games on
-  25 Oct) but the game list failed to load; "Sorry, something went wrong."
-* `https://www.atptour.com/en/scores/current` — returned matches already in progress or finished
-  (semifinals across four events). No future fixture with a start time could be read.
+Worked example (San Jose at Boston): Boston 42 GF / 22 GA in 11 games, San Jose 33 / 37 in 11.
+Shrunk rates give Boston 3.48 attack and 2.52 defence, San Jose 2.91 / 3.09; adding home ice, Boston
+projects 0.87 goals clear, which is 68.1% and a fair −214. The NHL feed's partner price for the same
+game is −192, so our number is the shorter of the two — recorded on the row rather than hidden.
 
-## 3. What was originated
+## 3. Verification log
 
-Method (documented on `methodology.html`): shrunk scoring rates (ten-game prior at the league mean of
-3.10 goals), home advantage of 0.30 goals, normal margin with σ = 1.85, totals with σ = 2.40, log5 on
-shrunk win rates for MLB with a 0.025 home adjustment.
+Every row of every table on the site carries the official page it came from, and the source table
+gives the exact read time. Four claims were withdrawn during the build and are not on the site:
 
-| Match | Market | Our price | Probability | Publisher price | Tier |
-| --- | --- | --- | --- | --- | --- |
-| San Jose @ Boston | Boston ML | −214 | 68.1% | −192 / +160 | High |
-| Buffalo @ Washington | Washington ML | −161 | 61.7% | −125 / +105 | High |
-| Carolina @ St. Louis | Over 5.5 | −186 | 65.0% | none published | High |
-| Toronto @ Edmonton | Edmonton ML | −166 | 62.4% | −166 / +140 | High |
-| Montreal vs Winnipeg (Heritage Classic) | Over 5.5 | −160 | 61.5% | none published | High |
-| Colorado @ Nashville | Over 5.5 | −187 | 65.1% | none published | High |
-| NY Rangers @ Ottawa | Over 5.5 | −125 | 55.6% | none published | Medium |
-| Nashville @ Pittsburgh | Pittsburgh ML | −149 | 59.8% | −125 / +105 | Medium |
-| Tampa Bay @ Utah | Utah ML | −129 | 56.3% | −142 / +120 | Medium |
-| NY Islanders @ Dallas | Dallas ML | −138 | 58.0% | none published | Medium |
-| Tampa Bay @ Milwaukee (WS Game 2) | Milwaukee ML | −123 | 55.2% | none published | Medium |
+1. "Carolina keeps the biggest goals-for column here" — false: Colorado has 81 goals to Carolina's 80.
+2. "Dallas has won four consecutive games" written twice in one paragraph — the duplication was cut,
+   not the fact.
+3. "Nashville's thinnest attack on this slate" — Philadelphia (20 goals in 12) scores less, but is not
+   priced, so the claim was narrowed to "of any club priced here".
+4. "Neither club keeps opponents below three on average" — false: Carolina concedes 2.75. Replaced with
+   the two actual rates.
 
-Where our price is the **longer** of the two (Boston −214 against a market −192; Washington −161
-against −125; Pittsburgh −149 against −125) there is no value edge at the market price, and the site
-says so: the tier is a statement about how likely the selection is, not a claim of profit.
+Two arithmetic errors were also caught on a second pass: Buffalo has taken four of eight road points,
+not three, and Nashville's 3.33 goals against is a season rate, not a road rate.
 
-## 4. Verification performed
+## 4. Flagged for review (published on `flagged.html`)
 
-* `python3 -m pipeline.validate --site _site` → **0 errors**. It checks: every source is HTTPS and on
-  an official-host allowlist; every fixture carries a source and an exact UTC start; priced fixtures
-  have both clubs' records; every two-way book sums to one; fair decimal is the reciprocal of the
-  probability; the American price follows from the probability; the band flag matches the price;
-  every pick clears 55%, sits inside −250…+10000, and its tier follows the published threshold; every
-  prediction is at least 30 words, names its selection, contains none of `model`, `verified`,
-  `verification`, `algorithm`, `machine learning`; no two predictions share a six-word phrase; the
-  counts reconcile with the rows; every page has one `h1`, a matching snapshot marker, unique ids,
-  no broken relative links or fragments, and an official source link on every table row.
-* `python3 -m unittest discover -s tests/pipeline` → **482 tests, OK**, including the new site gates
-  (orphan root page, band breach, short prediction, banned vocabulary, unnamed selection, count
-  drift, threshold check).
-* `python3 scripts/validate.py` → **0 errors, 3 pre-existing warnings** owned by desk `f7fa77fc`
-  (they are unchanged and unrelated to this release).
-* Line-by-line re-read of all eleven write-ups against the captured data. Four claims were withdrawn
-  during that pass because the source did not support them:
-  * "three of eight available road points" for Buffalo — the 1-1-2 road split is four points, corrected;
-  * "has not lost since 18 October" for Dallas — no dated game log was read, removed;
-  * "not conceded more than three in any of its ten games" for Dallas — no game-by-game log, removed;
-  * "the liveliest scoring record on this slate" for Carolina — Colorado's 81 goals in 11 games is
-    higher than Carolina's 80 in 12, removed.
+| ID | Item |
+|---|---|
+| F-3507-01 | The brief's two High-confidence conditions contradict each other; resolved by treating the band as the rule |
+| F-3507-02 | 13 of 15 sports have no official fixture captured today |
+| F-3507-03 | One NHL game on the OLBG list (MIN@SEA) was not in the parts of the official feed read; it is not listed |
+| F-3507-04 | No injury report was read for any match, so no write-up claims one |
+| F-3507-05 | The prices in the "publisher price" column are the NHL feed's partner prices, not a market survey |
+| F-3507-06 | Five clubs (Anaheim, Columbus, Calgary, Chicago, Los Angeles) have fixtures but no price because their record was not read |
 
-## 5. Irregularities flagged (published on `flagged.html`)
+## 5. Repository changes
 
-* **F-3507-01** — the brief's two High conditions contradicted each other; the band now governs. Resolved.
-* **F-3507-02** — thirteen of fifteen sports carry no priced match today.
-* **F-3507-03** — two NHL games on the official slate were not captured (Minnesota @ Seattle on 24 Oct
-  and one 25 Oct game).
-* **F-3507-04** — no injury, lineup or starting-pitcher feed was read, so no write-up mentions team news
-  and the MLB totals are withheld rather than estimated.
-* **F-3507-05** — the "publisher price" is the league feed's partner price, not a bookmaker screenshot.
-* **F-3507-06** — Anaheim, Columbus, Calgary, Chicago and Los Angeles have fixtures but no price, because
-  their season records sit beyond the portion of the standings page read.
+* `pipeline/desk.py` — new: the captured facts, the pricing method, the picks and the eleven write-ups.
+* `pipeline/build.py` — rewritten as a 25-page builder with one stylesheet and no JavaScript.
+* `pipeline/validate.py` — `validate_desk` enforces the band, the tier thresholds, the 30-word floor,
+  the banned vocabulary, one source link per row, and every local link.
+* `tests/pipeline/test_routes.py`, `tests/pipeline/browser.cjs` — rewritten for the new page contract.
+* `README.md`, `reports/SESSION_3507B0.md`, `COORDINATION.md` — updated.
 
-## 6. Repository changes
-
-`pipeline/desk.py` (new), `pipeline/build.py` (rewritten), `pipeline/validate.py` (desk gates),
-`tests/pipeline/browser.cjs` and `tests/pipeline/test_routes.py` (rewritten for the new contract),
-root HTML regenerated (25 pages plus `assets/desk.css` and `data/desk/*`), `README.md`,
-this report, and an append-only entry in `COORDINATION.md`.
-
-Untouched: `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `data/current/**`,
-`scripts/validate.py`, `scripts/s*.py`, `.github/workflows/**` and every peer `<id>/` desk.
+Gates: `python3 -m pipeline.build` (25 pages) · `python3 -m pipeline.validate --site .` (0 errors) ·
+`python3 scripts/validate.py` (0 errors) · `python3 -m unittest discover -s tests/pipeline` ·
+`node tests/pipeline/browser.cjs`.

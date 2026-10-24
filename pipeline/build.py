@@ -34,6 +34,7 @@ OFFICIAL_HOSTS = set(PUBLISHERS) | {'www.nhl.com', 'www.mlb.com'}
 #   link='b2719ad3/index.html'   link='37003e61/index.html'
 #   link='8cfb80b2/index.html'   link='02d3d515/index.html'   link='3d121822/index.html'
 ARCHIVE = [
+    ('23728b2b/index.html', '24 Oct 2026 executive desk: 15 sports, 55 fixture rows, 7 High picks'),
     ('f437fb14/index.html', '24 Oct 2026 clarity desk: 15 sports, 93 fixtures, 3 High picks across 10 selections'),
     ('b2719ad3/index.html', '24 Oct 2026 evidence desk: official-feed capture with per-row sources'),
     ('37003e61/index.html', 'Earlier desk: source capture and review queue'),
@@ -815,9 +816,12 @@ def build_site(out=ROOT, at=None, archive=False):
     desk = build_desk()
     # The deployment-evidence step in .github/workflows/current-pages.yml reads this
     # file from the artifact, so the assembled snapshot is written beside the pages.
-    current = out / 'data' / 'current'
-    current.mkdir(parents=True, exist_ok=True)
-    save(current / 'snapshot.json', snapshot)
+    if out != ROOT:
+        current = out / 'data' / 'current'
+        current.mkdir(parents=True, exist_ok=True)
+        save(current / 'snapshot.json', snapshot)
+    # The repository's own data/current is evidence and is never rewritten by a
+    # local build: only the artifact copy is refreshed.
     # Earlier desks listed on the front door are copied in, so their links resolve
     # in the published artifact rather than only in the repository.
     for rel, _label in (ARCHIVE if out != ROOT else ()):

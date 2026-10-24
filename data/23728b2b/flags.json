@@ -1,0 +1,176 @@
+{
+  "captured_at": "2026-10-24T17:56:39Z",
+  "flags": [
+    {
+      "id": "F-COVERAGE",
+      "severity": "Coverage",
+      "area": "All sports",
+      "issue": "Five strongest matches per sport is an evidence-capped aim, not a filled quota.",
+      "impact": "Golf, Snooker and Rugby League have no priced pick; several sports have fewer than five supported fixtures.",
+      "action": "Read each sport's shortfall note; do not substitute unsupported events.",
+      "source": "olbg-golf"
+    },
+    {
+      "id": "F-GOLF",
+      "severity": "No market",
+      "area": "Golf",
+      "issue": "The fresh OLBG golf hub says no tips found; official golf context is already in progress.",
+      "impact": "No upcoming OLBG match and no independent line.",
+      "action": "Revisit when a future matchup is listed and officially readable.",
+      "source": "olbg-golf"
+    },
+    {
+      "id": "F-SNOOKER",
+      "severity": "Excluded",
+      "area": "Snooker",
+      "issue": "Williams–Jones was live/completed-context on the official read, and a subsequent final opponent was not settled.",
+      "impact": "The listed match is not sold as upcoming and no final is invented.",
+      "action": "Check WST live status before any later update.",
+      "source": "wst-live"
+    },
+    {
+      "id": "F-RL",
+      "severity": "Withheld",
+      "area": "Rugby League",
+      "issue": "OLBG currently exposes outrights but no individual-match market.",
+      "impact": "Australia–Fiji appears only as official context with blank selection and price.",
+      "action": "Use the NRL team link for manual review; do not treat context as a pick.",
+      "source": "nrl-australia-fiji"
+    },
+    {
+      "id": "F-NHL-LIVE",
+      "severity": "Excluded",
+      "area": "Ice Hockey",
+      "issue": "Anaheim–Philadelphia was LIVE in the official NHL score feed.",
+      "impact": "It is excluded; the other 11 NHL games were FUT at the snapshot.",
+      "action": "Recheck game state before relying on any NHL row.",
+      "source": "nhl-score"
+    },
+    {
+      "id": "F-DARTS-LIVE",
+      "severity": "Excluded",
+      "area": "Darts",
+      "issue": "Ratajski–Doets disappeared from the later OLBG read as the evening session progressed.",
+      "impact": "It is not presented as upcoming.",
+      "action": "Use PDC's live tournament page for the result rather than this snapshot.",
+      "source": "olbg-darts"
+    },
+    {
+      "id": "F-PDC-ACCESS",
+      "severity": "Evidence limit",
+      "area": "Darts",
+      "issue": "Direct PDC HTML extraction returned cookie material; official page extracts supplied pairings and results.",
+      "impact": "Three evening rows have session-level timing only, with exact start fields blank.",
+      "action": "Open the official PDC links manually for exact order of play.",
+      "source": "pdc-day3"
+    },
+    {
+      "id": "F-PRICE-BUNTING",
+      "severity": "Withheld",
+      "area": "Darts",
+      "issue": "OLBG lists Price–Bunting, but the official read still showed their afternoon second-round ties.",
+      "impact": "No start, probability or price is published for that quarterfinal listing.",
+      "action": "Confirm both official second-round results before pricing.",
+      "source": "pdc-day3"
+    },
+    {
+      "id": "F-USA-TIME",
+      "severity": "Conflict",
+      "area": "Rugby Union",
+      "issue": "Rugby Australia's 09:00 AEDT line implies 22:00 UTC; USA Rugby's 18:00 CT schedule implies 23:00 UTC.",
+      "impact": "USA–Australia A start_utc is blank and the selection cannot be High.",
+      "action": "Confirm the current match centre and broadcaster before use.",
+      "source": "australia-a"
+    },
+    {
+      "id": "F-OSPREYS-CUTOFF",
+      "severity": "Timing",
+      "area": "Rugby Union",
+      "issue": "Ospreys–Dragons starts at 18:00 UTC, shortly after the 17:56:39 research cut-off.",
+      "impact": "It was upcoming at capture but may be live when this page is read.",
+      "action": "Check the official live status before treating the analysis as pre-match.",
+      "source": "urc-teams"
+    },
+    {
+      "id": "F-NINGBO-DATE",
+      "severity": "Source typo",
+      "area": "Tennis",
+      "issue": "The WTA preview says 'Saturday, Oct. 24' despite following Saturday's semifinals and the tournament listing a 25 October final.",
+      "impact": "The dashboard uses 25 October at 09:00 UTC from the final date and not-before 17:00 local time, with the conflict disclosed.",
+      "action": "Recheck the WTA order of play for a corrected schedule.",
+      "source": "wta-ningbo"
+    },
+    {
+      "id": "F-TENNIS-TIMES",
+      "severity": "Blank fields",
+      "area": "Tennis",
+      "issue": "Exact starts were not captured for the ATP final or three Tokyo first-round matches.",
+      "impact": "Those start_utc values remain blank; dates and official pairings are still shown.",
+      "action": "Use ATP/WTA order-of-play pages for manual timing confirmation.",
+      "source": "wta-tokyo-draw"
+    },
+    {
+      "id": "F-GREYHOUND-CARD",
+      "severity": "Blank fields",
+      "area": "Greyhounds",
+      "issue": "The official Oaks article names six finalists but does not provide a captured final off time or trap draw.",
+      "impact": "No trap or forecast line and no exact UTC start are invented.",
+      "action": "Obtain the official runner-level racecard before expanding markets.",
+      "source": "gbgb-oaks"
+    },
+    {
+      "id": "F-CSA",
+      "severity": "Withheld",
+      "area": "Cricket",
+      "issue": "CSA's current upcoming pagination no longer substantiates the OLBG Boland–Titans or Tuskers–Western Province card; Western Province/Cobras naming also differs.",
+      "impact": "Those fixtures, their exact times and all associated prices are withheld.",
+      "action": "Locate exact current CSA match centres and resolve the team identity before publication.",
+      "source": "csa-upcoming"
+    },
+    {
+      "id": "F-UNSUPPORTED",
+      "severity": "Excluded",
+      "area": "Cricket / Basketball / Ice Hockey",
+      "issue": "Toronto Kings–Vancouver Guardians, Pato–Botafogo and the Swiss NLA listings lacked a current official read in this session.",
+      "impact": "No match rows or prices are manufactured for them.",
+      "action": "Research the relevant governing bodies before adding coverage.",
+      "source": "olbg-basketball"
+    },
+    {
+      "id": "F-NBA-AVAILABILITY",
+      "severity": "Incomplete",
+      "area": "Basketball",
+      "issue": "At 13:45 ET, San Antonio, Dallas, New Orleans and Golden State had not submitted reports.",
+      "impact": "Those selections remain Medium and no player prop or total is priced.",
+      "action": "Read the next official injury report before acting on the analysis.",
+      "source": "nba-injuries"
+    },
+    {
+      "id": "F-VOL-TIMES",
+      "severity": "Blank fields",
+      "area": "Volleyball",
+      "issue": "Exact official starts were not captured for Trentino–Cisterna or Perugia–Pordenone.",
+      "impact": "Their start_utc fields are blank while the official 25 October round remains visible.",
+      "action": "Check Lega's agenda for exact starts.",
+      "source": "lega-round2"
+    },
+    {
+      "id": "F-EHF-TIMES",
+      "severity": "Blank fields",
+      "area": "Handball",
+      "issue": "The EHF page confirms dates, fixtures and standings but exact start times were not captured.",
+      "impact": "All five EHF rows retain blank start_utc values.",
+      "action": "Open the official match pages for tip-off times.",
+      "source": "ehf-standings"
+    },
+    {
+      "id": "F-MARKET-GAPS",
+      "severity": "Market limit",
+      "area": "NHL / NBA / other sports",
+      "issue": "Official feeds did not provide a complete common basis for every total, player prop or availability field.",
+      "impact": "Those markets are recorded as investigated but unpriced rather than filled with assumptions.",
+      "action": "Consult the per-match market note and official review link.",
+      "source": "nhl-score"
+    }
+  ]
+}

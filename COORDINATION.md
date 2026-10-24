@@ -6741,6 +6741,7 @@ be read from an official source for any priced match (F-321-11).
 * **Checks and deployment:** [Canonical research checks and Pages run 40118752061](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40118752061) completed **successfully** — the evidence/model/site/browser gate passed and the Pages deploy job completed.
 * **Served-content read-back (deployed bytes, not the API status):** [`/2ff8342b/index.html`](https://buffedlizard55-lab.github.io/OLBG1/2ff8342b/index.html?rev=0816810) renders the executive summary, the four highest-confidence cards, the 15-sport coverage table and the "what is not here" panel; `/2ff8342b/picks.html` lists all 16 selections plus the two suppressed prices.
 * **Rebase note:** the branch was rebased twice onto a moving `main` (PRs #239, #240, #243, #244 merged while this desk was open). Both `COORDINATION.md` conflicts were resolved by keeping the peer sections intact and re-appending this session's §87 / §87.1 / §87.2, and the `pipeline/build.py` conflict was resolved by keeping the `b2719ad3` front door and adding `/2ff8342b/` to its preserved-desk list — no peer work was discarded.
+* **Follow-ups merged:** [#249](https://github.com/buffedlizard55-lab/OLBG1/pull/249) (merge `7a99f4f`) labels unpublished NBA start times and records this receipt; [#254](https://github.com/buffedlizard55-lab/OLBG1/pull/254) (merge `983d98c`) corrects the landing-page archive label for this desk from a copy-pasted peer description to its real counts; [#264](https://github.com/buffedlizard55-lab/OLBG1/pull/264) (merge `dbce719`) gives every one of the 16 published picks its own write-up (18 predictions total) and one consistent selection wording. Main run [`40121118057`](https://github.com/buffedlizard55-lab/OLBG1/actions/runs/40121118057) / `40121118144` deployed the final desk; live `/2ff8342b/picks.html` read-back confirms all 16 rows carry a prediction link.
 * **Disposition:** `done`. The open coverage shortfall (no price on nine sports, no fixture on three, no injury feed anywhere) is published on the desk's coverage table, its methodology page and its Flagged-for-Review page; it does not block the merged, source-linked dashboard.
 
 
@@ -6885,6 +6886,17 @@ be read from an official source for any priced match (F-321-11).
 | Gates at the pushed head | `python3 -m unittest discover -s tests/pipeline` → 532 tests OK · `python3 scripts/validate.py` → PASS (0 errors) · `python3 -m pipeline.validate --site .` → 0 errors · `node tests/pipeline/browser.cjs` → 25 pages / 11 picks / 6 High · CI `40119079596` → success |
 | Pages read-back | `https://buffedlizard55-lab.github.io/OLBG1/` serves this desk: 6 High and 5 Medium picks with write-up anchors, 21 fixtures, 15 sport pages, per-row official links. |
 | Known shortfall, published not padded | 2 of 15 sports priced. The five-High-per-sport target is not met in the other thirteen sports, and the reason is stated on every sport page rather than filled with invented fixtures. |
+
+## 84.7 Result: T3507B0 desk merged and live
+
+| Item | Detail |
+| --- | --- |
+| PR | #242 `T3507B0: clarity rebuild + fresh 24-25 Oct picks desk` — merged `2026-10-24T18:08:57Z` |
+| Live | <https://buffedlizard55-lab.github.io/OLBG1/> serves the desk: 6 High + 5 Medium picks, 21 fixtures, 15 sport pages |
+| Pages fix | `pipeline/build.py` now writes `data/current/snapshot.json` into the artifact (the deploy-evidence step reads it), and copies the earlier desks named by `test_desk_b2719ad3` so their URLs still resolve |
+| Gates at the merged head | 532 unit tests OK · `scripts/validate.py` PASS · `pipeline.validate --site .` 0 errors · `browser.cjs` 25 pages / 11 picks / 6 High · CI `40119079596` success |
+| Shortfall, stated not padded | 2 of 15 sports priced; the remaining thirteen carry their OLBG hub plus the reason nothing is priced. No fixture, record, injury or price was invented to reach five High picks per sport |
+
 ---
 
 ## 90. Session `1707d752-olbg1` — `T1707` build record, PR #246 and deployment (2026-10-24T18:30Z UTC)
@@ -6942,6 +6954,56 @@ be read from an official source for any priced match (F-321-11).
 - **Merge**: `gh pr merge 256 --merge` — result appended below after the run.
 - **Pages read-back**: https://buffedlizard55-lab.github.io/OLBG1/c3026353/index.html — byte read-back appended below after the run.
 - **Scope**: only data/c3026353/, scripts/sc3026353_*, c3026353/, reports/SESSION_C3026353.*, tests/pipeline/test_desk_c3026353.py + append-only COORDINATION.md.
+## T23728B2B — Session `23728b2b-olbg1` claim (2026-10-24T17:45Z)
+
+| # | Task | Status | Session | File scope | Started (UTC) | Notes |
+|---|------|--------|---------|------------|---------------|-------|
+| T23728B2B | Fresh 24 Oct evidence-first OLBG desk for exactly the 15 requested sports: live OLBG discovery, official-source reads for every published sporting fact, blank-and-flag gaps, independent multi-market fair-line estimates, strict High gate (>70% and fair American −250…+10000), unique ≥30-word prose only where evidence supports it, executive-summary-first dashboard, category tables, sources, repo audit and Flagged for Review; tests, PR, merge and Pages read-back | in progress | 23728b2b-olbg1 | `data/23728b2b/**`, `scripts/s23728b2b_*.py`, `23728b2b/**`, `reports/SESSION_23728B2B.{md,html}`, `tests/pipeline/test_desk_23728b2b.py`, append-only `COORDINATION.md` | 2026-10-24T17:45Z | Collision-resistant session-scoped claim. Pinned branch `arena/23728b2b-olbg1`; no canonical root, pipeline, workflow, shared data or peer-desk edits. Live sporting reads use the retrieval tool layer; OLBG is discovery only. Five High picks per sport is an evidence-capped target, never a quota to fill with unsupported claims. |
+
+### T23728B2B — 24 Oct 2026 desk build and local gates (2026-10-24T18:13:48Z)
+
+- **Scope retained:** only `23728b2b/`, `data/23728b2b/`, `scripts/s23728b2b_*`, `tests/pipeline/test_desk_23728b2b.py`, `reports/SESSION_23728B2B.*` and this entry. Canonical generators/config and peer desks are not edited.
+- **Research cut:** `2026-10-24T17:56:39Z`. Built exactly 15 requested sport pages, 55 official-source fixture rows (53 priced, one withheld, one official-context only), 138 independent lines (53 primary and 85 alternatives), seven High selections and 19 review flags. Sources register: 48 official and 15 OLBG discovery-only records.
+- **Source ledger:** full URLs, publishers, roles, observation time and access limitations are in `data/23728b2b/sources.json` and `23728b2b/sources.html`. Official evidence includes NHL/NBA/MLB, ATP/WTA/WST, F1, PGA, EHF, TOP 14, URC/PREM clubs, PDC, Lega Volley, GAA county boards, GBGB, PCB/BCCI/NZC, Rugby Australia/USA Rugby and NRL. OLBG is discovery only.
+- **Irregularities retained:** United States GP corrected from Mexico; live ANA–PHI and removed Ratajski–Doets excluded; Price–Bunting withheld; CSA and other unsupported discoveries excluded; USA–Australia A time conflict and Ningbo date inconsistency disclosed; exact Tokyo/ATP/EHF/two volleyball/greyhound times and traps remain blank; Ospreys row is explicitly sensitive to its 18:00Z start. See `23728b2b/flagged.html`.
+- **Local gates passed:** desk validator 5/5 (57 tables, 203 body rows with official links); focused tests 18/18; pipeline tests 500/500; upstream tests 38/38; canonical root 0 errors; historical validator 0 errors with three pre-existing peer warnings; staged canonical build/validator 97 pages and 0 errors; canonical browser PASS; dedicated desk browser PASS across 15 sport routes, seven High anchors, filters, empty state, audit and mobile behavior. Exact commands and limits are in `reports/SESSION_23728B2B.md`.
+- **Publication:** PR, merge and Pages served-content read-back are pending and are not claimed yet.
+
+### T23728B2B-INT — narrow Pages registration exception (2026-10-24T18:18:48Z)
+
+The rebased canonical publisher now uses an explicit `ARCHIVE` allowlist and copies only HTML/CSS/SVG from registered desks. **Separately claimed integration scope:** one `('23728b2b/index.html', …)` registration line in `pipeline/build.py`, with no other canonical logic, data, workflow or peer-desk edit. The desk controller is inlined at the end of each generated HTML page so no broader JavaScript copying is introduced; report and JSON audit links point to their GitHub source files rather than unserved companions. A focused registration test protects the route. This narrow exception supplements the earlier no-canonical-edits claim; all other scope limits remain unchanged.
+
+### T23728B2B-INT — combined rebased release gates (2026-10-24T18:20:23Z)
+
+Fresh `_site` was rebuilt after removing stale output from the prior canonical generator. Final integrated gates: desk validator 5/5; focused tests **19/19** including archive registration; pipeline tests **578/578**; upstream tests **38/38**; canonical root and staged validators **0 errors**; historical validator 0 errors with the same three pre-existing peer warnings; canonical browser PASS (25 pages); dedicated desk browser PASS (15 sport routes, seven High anchors, filters, mobile and inline controller). `git diff --check` is clean. Peer test-generated changes under `today/` and `b2719ad3/` were restored and are not included. PR/merge/Pages receipt remains pending.
+
+### 85.2 — `T580F` publication receipt (2026-10-24T19:15Z UTC)
+
+* **Pull request:** [#240](https://github.com/buffedlizard55-lab/OLBG1/pull/240) — merged without waiting, merge commit
+  `bbfb08b` at 2026-10-24T17:54:05Z. Rebased twice onto moving `main` before merge (two peer sessions landed sections
+  §82 and §84 in between); their logs were kept and this session's sections renumbered to §85 / §85.1.
+* **Gates run on the merged tree:** `scripts/s580f43c9_validate.py` **719 checks, 0 failures** ·
+  `tests.pipeline.test_desk_580f43c9` **14 tests OK** · `scripts/validate.py` PASSED (3 pre-existing `f7fa77fc`
+  warnings) · `python3 -m pipeline.validate --site .` **0 errors** · `python3 -m pipeline.build --out /tmp/sitecheck`
+  builds 99 canonical pages and **contains `580f43c9/`** (verified locally, so the artifact would ship the desk).
+* **Deployment status — NOT yet confirmed live.** Canonical run `40118507426` (commit `e01a552`, after the merge)
+  completed **success** including the `Publish canonical GitHub Pages` job, but live read-back of
+  `/580f43c9/index.html` and `/580f43c9/picks.html` returns the site's 404 page. This is **not specific to this
+  desk**: `/today/index.html` — merged earlier today by session `7f1bf9f7` — also 404s, while older desks
+  (`/02d3d515/index.html`) serve normally, and `/data/current/site-manifest.json` (a file the canonical build always
+  emits) also 404s. The published tree is therefore stale relative to `main`.
+* **Likely cause (repo-level, outside this session's scope):** `GET /repos/buffedlizard55-lab/OLBG1/pages` reports
+  `"status": "errored"`, `"build_type": "legacy"`, `"source": {"branch": "main", "path": "/"}`. In legacy mode Pages
+  builds the branch root itself and ignores the `actions/upload-pages-artifact` / `deploy-pages` pair the canonical
+  workflow runs, which matches what is observed: the artifact job succeeds, the served content does not change, and
+  the `pages build and deployment` runs for `main` sit in `queued`/`cancelled` behind roughly twenty concurrent
+  session PRs. Recorded as repo finding F-12; no settings were changed from this session.
+* **Desk published on `main` and reachable from the repository** regardless of the Pages lag:
+  `580f43c9/index.html` (executive summary first), `picks.html`, `predictions.html`, `markets.html`, `matches.html`,
+  `sources.html`, `flagged.html`, `repo-audit.html`, `methodology.html`, `sports/<15>.html`.
+* **Claim status:** complete — build, gates, PR and merge done; live verification blocked by the repository-wide
+  Pages backlog and re-checkable by loading `/580f43c9/index.html` once a `pages build and deployment` run for
+  `main` reports success.
 
 ### §91.2 — PR, merge and GitHub Pages receipts (2026-10-24)
 
