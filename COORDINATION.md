@@ -7117,3 +7117,13 @@ T7568 integration: moving-main conflicts in coordination and ARCHIVE resolved by
 - Validation: scripts/sa4803_validate.py PASSED, tests/pipeline/test_desk_a4803.py 7/7 PASSED, pipeline/validate --site . PASSED, pipeline/build --out /tmp/_site_check copied a4803a7b via ARCHIVE
 - History: prior §93 claim 22:08Z fulfilled; canonical desk preserved (21 fixtures/6 High) and archive-linked
 - Next: PR arena/a4803a7b-olbg1 → main, merge no-approval, verify Pages deploy (https://buffedlizard55-lab.github.io/OLBG1/a4803a7b/), record PR# and merge SHA
+
+---
+
+## 95. Session `ff993cb9-olbg1` — `TFF99` claim (2026-10-24T22:25Z UTC; renumbered §93→§95 at rebase because peer desks took §93/§94)
+
+* **Session / pinned branch:** `ff993cb9-olbg1` on `arena/ff993cb9-olbg1` (§0.2 deviation applies). Base: `eb80e51` (PR #276 merge), rebased onto PR #281 merge.
+* **Task:** `TFF99` — fresh clarity-first 15-sport desk for upcoming matches from 24 Oct 2026. Executive summary first; picks obvious and clearly located; aim 5–10 fully written unique ≥30-word predictions per sport (never manufacture picks where official evidence is absent — blank + flag instead); own originated multi-market lines (winner, handicap/spread, totals, sport-specific where inputs exist); confidence Low/Medium/High with High restricted to fair American price in −250…+10000 and originated probability ≥70% (near-misses disclosed, never promoted); OLBG for discovery only, every fact from an official governing-body/league/tour source read this session with URL + UTC read time.
+* **Exclusive write scope:** `data/ff993cb9/**`, `scripts/sff993cb9_*.py`, `ff993cb9/**`, `reports/SESSION_FF993CB9.md`, `tests/pipeline/test_desk_ff993cb9.py`, append-only `COORDINATION.md`, plus one additive `ARCHIVE` registration line in `pipeline/build.py` (T23728B2B-INT / T99D4 precedent, required for Pages publication). No root, peer-desk, `data/current/**`, workflow or shared-validator edits.
+* **Claim status:** `in progress`. Receipts appended in §95.x.
+* **Conflict note:** first claim commit conflicted only in `COORDINATION.md` (both sides appended at EOF). Resolved by keeping all peer bytes (§93/§94 untouched) and re-appending this claim as §95. Internal cross-references to "§93" in this desk's report/PR text refer to this section as renumbered.
