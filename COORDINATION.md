@@ -6384,3 +6384,28 @@ egress does not reach `olbg.com` or governing-body domains directly, so all read
 * **Exclusive write scope:** `data/37003e61/**`, `scripts/s37003e61_*.py`, `37003e61/**`, `reports/SESSION_37003E61.{md,html}`, `tests/pipeline/test_desk_37003e61.py`, and append-only additions to `COORDINATION.md`.
 * **Explicitly not touched:** canonical `pipeline/**`, `data/current/**`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `scripts/validate.py`, `.github/workflows/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`, and every peer desk directory.
 * **Claim status:** `in progress`. Live verification channel: Arena `fetch_page` / `web_search` against official league, tour, federation and club endpoints, with exact HTTPS URLs and UTC observation stamps recorded per row; OLBG routes are used for discovery/reverse-engineering only and never as fixture or statistical evidence.
+
+---
+
+## 84. Session `350700b0-olbg1` — task `T3507B0` (claim 2026-10-24T17:50Z UTC)
+
+* **Session / pinned branch:** `350700b0-olbg1` on `arena/350700b0-olbg1` (§0.2 deviation applies).
+* **Task:** `T3507B0` — *clarity rebuild + fresh 24-25 October 2026 15-sport desk.* Make the published site
+  self-explanatory (executive summary first, picks obvious and located), re-read OLBG for the fifteen requested
+  sports, verify every row against an official source read this session, originate multi-market lines, publish
+  written predictions of at least 30 words for every High selection, and resolve the standing contradiction
+  between the brief's ">70% market probability" and the "−250…+10000" band that has stopped every prior desk
+  from issuing a single High pick.
+* **Interpretation resolved this session (recorded here before any pick is written):** the brief says the *easy*
+  High picks are the ">70% implied by market price" ones and asks instead for High picks **inside the
+  −250…+10000 band**. Read literally as a conjunction, `p > 0.70` forces a fair price shorter than −233, which
+  leaves only the 1.4-point slice −250…−233 — the F-3D-09 finding. This session therefore publishes the band as
+  the hard constraint (fair American between −250 and +10000, i.e. implied 0.99%…71.4%) and forbids any pick
+  whose *only* justification is a short market price. A High pick here must additionally rest on at least three
+  separately verified facts (both participants, exact future start, current official record/form) and carry a
+  written prediction. Trivial >71.4% favourites are excluded by the band itself, which is what the brief intends.
+* **Exclusive write scope:** `pipeline/**` (site builder, model, validator — this session acts as the integration
+  session the brief describes), `tests/pipeline/browser.cjs`, `data/desk/**`, `scripts/desk_*.py`,
+  `reports/SESSION_3507B0.md`, and append-only additions to this file.
+* **Not touched:** every peer `<id>/` desk directory, `data/<id>/**` of prior sessions, `data/fixtures.json`,
+  `data/lines.json`, `data/predictions.json`, `scripts/validate.py`, `scripts/s*.py`, and the archived releases.
