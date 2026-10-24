@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OLBG Reverse-Engineering — TC3026353 Desk</title>
+<link rel="stylesheet" href="assets/desk.css">
+</head><body>
+<header class="site">
+  <h1>TC3026353 — OLBG Reverse-Engineered Fixture Desk</h1>
+  <p class="tag">Session c3026353-olbg1 · snapshot 2026-10-24T18:45:00Z · 15 sports · every row carries its source link · prices are this desk's own lines</p>
+</header>
+<nav class="site"><a href="index.html" class="">Dashboard</a><a href="matches.html" class="">All Matches</a><a href="markets.html" class="">Our Lines</a><a href="high-confidence.html" class="">High Confidence</a><a href="predictions.html" class="">Predictions</a><a href="analysis.html" class="">Analysis</a><a href="sports/darts.html" class="">15 Sport Pages</a><a href="sources.html" class="">Sources</a><a href="flagged.html" class="">Flagged for Review</a><a href="methodology.html" class="">Methodology</a><a href="reverse-engineering.html" class="active">OLBG Reverse-Engineering</a><a href="repo-audit.html" class="">Repo Audit</a></nav>
+<main>
+
+<section class="card">
+  <h2>OLBG.com reverse-engineering notes</h2>
+  <h3>Site shape</h3>
+  <ul>
+    <li>Hub pages: <code>olbg.com/betting-tips/&lt;Sport_Slug&gt;/&lt;id&gt;</code> — slug routing is case-sensitive (OLBG-QUIRK-01).</li>
+    <li>Event cards: <code>/betting-tips/&lt;Sport&gt;/&lt;Tour&gt;/&lt;Event&gt;/&lt;Name&gt;/&lt;market_id&gt;?event_id=&lt;id&gt;</code> — stable numeric event_id used as our discovery key.</li>
+    <li>Markets named on cards include: Win Match (2-way), Win Match, Money Line, Pointspread, Game Totals, Win Race,
+    Fastest Qualifier, Win Tournament, To Win, Win Match (cricket), Daily Races, Win Tournament/Grand Final Winner.</li>
+    <li>Cards show a most-tipped name with a share percentage — these are tipster votes, not prices or probabilities;
+    they are discovery context only on this desk.</li>
+  </ul>
+  <h3>Quirks encountered in this capture (registry OLBG-QUIRK-01…05)</h3>
+  <ul>
+    <li><b>QUIRK-02 (GeoIP clock split)</b>: hub timestamps rendered on an unlabelled America/New_York edge clock at
+    capture; two NBA cards additionally rendered one hour off (flag F-C-12). Cross-checks: homepage countdowns anchored
+    the darts/snooker conversions exactly.</li>
+    <li><b>QUIRK-03 (20-event truncation)</b>: hub pages cap around 20 rows (e.g. Handball truncated mid-card, EHF CL
+    fixtures reachable only through market tabs; Greyhounds showed 28 race cards across paginated chunks).</li>
+    <li><b>QUIRK-04 (zero-tip suppression)</b>: the Golf hub displayed "No tips found" and the Rugby League hub showed
+    only 2027 ante-post outrights during the live 2026 Rugby League World Cup — both sports needed official-source
+    supplementation (flags F-C-17, F-C-21).</li>
+    <li><b>QUIRK-05 (schedule/naming drift)</b>: Galway's SFC final date moved for Storm Boelo and OLBG's cards already
+    showed the new slot; OLBG also lists names like "SC Bern (Kriens)" and "A.Ximenez" that differ from governing-body
+    naming — our rows keep the official name and cite the OLBG card alongside.</li>
+    <li><b>Leylah Fernandez double-listing</b> on one Tennis hub render (flag F-C-10) — one card may be doubles or the
+    hub may be early; both are listed and flagged rather than silently dropped.</li>
+  </ul>
+  <h3>What we deliberately did not take from OLBG</h3>
+  <p>Fixture facts, venues, forms, injuries and prices. OLBG here is a map of what is out there; the desk builds the
+  house from governing-body material only.</p>
+</section>
+</main>
+<footer class="site">TC3026353 · branch arena/c3026353-olbg1 · built 2026-10-24T18:14:54Z · discovery via olbg.com hub cards, confirmation via governing-body sources only</footer>
+</body></html>

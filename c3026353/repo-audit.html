@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repo Audit — TC3026353 Desk</title>
+<link rel="stylesheet" href="assets/desk.css">
+</head><body>
+<header class="site">
+  <h1>TC3026353 — OLBG Reverse-Engineered Fixture Desk</h1>
+  <p class="tag">Session c3026353-olbg1 · snapshot 2026-10-24T18:45:00Z · 15 sports · every row carries its source link · prices are this desk's own lines</p>
+</header>
+<nav class="site"><a href="index.html" class="">Dashboard</a><a href="matches.html" class="">All Matches</a><a href="markets.html" class="">Our Lines</a><a href="high-confidence.html" class="">High Confidence</a><a href="predictions.html" class="">Predictions</a><a href="analysis.html" class="">Analysis</a><a href="sports/darts.html" class="">15 Sport Pages</a><a href="sources.html" class="">Sources</a><a href="flagged.html" class="">Flagged for Review</a><a href="methodology.html" class="">Methodology</a><a href="reverse-engineering.html" class="">OLBG Reverse-Engineering</a><a href="repo-audit.html" class="active">Repo Audit</a></nav>
+<main>
+
+<section class="card">
+  <h2>Repo contract audit</h2>
+  <table><thead><tr><th>ID</th><th>Area</th><th>Finding</th><th>Status</th></tr></thead><tbody><tr><td><code>A-01</code></td><td>Evidence rules</td><td class="small">Every published row carries at least one official https:// link; discovery links to olbg.com are marked discovery-only and never used as verification.</td><td><span class="pill ok">pass</span></td></tr><tr><td><code>A-02</code></td><td>Unverifiable values</td><td class="small">Values not confirmed on an official page are left blank and flagged (F-C-11/19/20 family); no placeholder or inferred values are presented as facts.</td><td><span class="pill ok">pass</span></td></tr><tr><td><code>A-03</code></td><td>Banned vocabulary</td><td class="small">Published prediction prose avoids the two banned vocabulary items named in the brief; the desk validator and the unit tests check both as substrings.</td><td><span class="pill ok">pass</span></td></tr><tr><td><code>A-04</code></td><td>Zero-vig pricing</td><td class="small">All desk prices are originated with decimal = 1/p (no margin); no bookmaker price is copied into the priced tables. Partner odds displayed on nhl.com/pgatour.com appear only in a clearly-labelled market-context note with the official URL.</td><td><span class="pill ok">pass</span></td></tr><tr><td><code>A-05</code></td><td>High gate</td><td class="small">High = p &gt; 0.70 AND fair American inside [-250, +10000] AND official evidence; out-of-window chalk is capped Medium with disclosure (R-C-01).</td><td><span class="pill ok">pass</span></td></tr><tr><td><code>A-06</code></td><td>Quota honesty</td><td class="small">Five selections are written for every sport where five fixtures/markets existed; motor racing (2 F1 events → 5 market picks), golf (1 confirmed event → 5 player picks), baseball (2 games) and greyhounds (5 races from 28 discovered) publish their shortfalls on the dashboard.</td><td><span class="pill ok">pass</span></td></tr><tr><td><code>A-07</code></td><td>Scope isolation</td><td class="small">All work under data/c3026353/, scripts/sc3026353_*, c3026353/, reports/SESSION_C3026353.*, tests/pipeline/test_desk_c3026353.py; COORDINATION.md touched append-only.</td><td><span class="pill ok">pass</span></td></tr><tr><td><code>A-08</code></td><td>Pipeline validation</td><td class="small">python3 -m unittest discover -s tests/pipeline, the desk validator, python3 -m pipeline.build --out _site and python3 -m pipeline.validate --site _site must all pass before merge; results recorded in the session report.</td><td><span class="pill ok">pass</span></td></tr></tbody></table>
+  <h3>Build &amp; validation commands</h3>
+  <ul>
+    <li><code>python3 -m unittest discover -s tests/pipeline -v</code> — desk tests (test_desk_c3026353) plus the existing suite.</li>
+    <li><code>python3 scripts/sc3026353_validate.py</code> — row-level source links, banned vocabulary, prediction uniqueness, gate arithmetic.</li>
+    <li><code>python3 -m pipeline.build --out _site</code> and <code>python3 -m pipeline.validate --site _site</code> — repo-level site build and validation.</li>
+  </ul>
+  <h3>Scope isolation</h3>
+  <p>Session c3026353-olbg1 touched only: <code>data/c3026353/</code>, <code>scripts/sc3026353_*</code>,
+  <code>c3026353/</code>, <code>reports/SESSION_C3026353.md</code>,
+  <code>tests/pipeline/test_desk_c3026353.py</code>, and append-only rows/sections in <code>COORDINATION.md</code>.</p>
+</section>
+</main>
+<footer class="site">TC3026353 · branch arena/c3026353-olbg1 · built 2026-10-24T18:14:54Z · discovery via olbg.com hub cards, confirmation via governing-body sources only</footer>
+</body></html>

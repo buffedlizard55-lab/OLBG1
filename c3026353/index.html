@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard — TC3026353 Desk</title>
+<link rel="stylesheet" href="assets/desk.css">
+</head><body>
+<header class="site">
+  <h1>TC3026353 — OLBG Reverse-Engineered Fixture Desk</h1>
+  <p class="tag">Session c3026353-olbg1 · snapshot 2026-10-24T18:45:00Z · 15 sports · every row carries its source link · prices are this desk's own lines</p>
+</header>
+<nav class="site"><a href="index.html" class="active">Dashboard</a><a href="matches.html" class="">All Matches</a><a href="markets.html" class="">Our Lines</a><a href="high-confidence.html" class="">High Confidence</a><a href="predictions.html" class="">Predictions</a><a href="analysis.html" class="">Analysis</a><a href="sports/darts.html" class="">15 Sport Pages</a><a href="sources.html" class="">Sources</a><a href="flagged.html" class="">Flagged for Review</a><a href="methodology.html" class="">Methodology</a><a href="reverse-engineering.html" class="">OLBG Reverse-Engineering</a><a href="repo-audit.html" class="">Repo Audit</a></nav>
+<main>
+
+<section class="card">
+  <h2>Executive summary</h2>
+  <p class="lead">This is a fully autonomous snapshot taken 2026-10-24T17:07:00Z–2026-10-24T18:45:00Z.
+  Discovery ran through the OLBG sport hubs; every published fact was then checked against a governing-body page
+  (fetches logged on the <a href="sources.html">Sources</a> page). All prices on this site are this desk's own
+  zero-vig lines (fair decimal = 1/p) — no bookmaker price is copied into our tables. The
+  <a href="flagged.html">Flagged for Review</a> page lists every irregularity, blank value and unlabelled timestamp.</p>
+  <div class="kpis">
+    <div class="kpi"><div class="n">107</div><div class="l">fixtures listed</div></div>
+    <div class="kpi"><div class="n">204</div><div class="l">distinct markets priced</div></div>
+    <div class="kpi"><div class="n">73</div><div class="l">written predictions</div></div>
+    <div class="kpi"><div class="n">4</div><div class="l">High-confidence picks</div></div>
+    <div class="kpi"><div class="n">16</div><div class="l">chalk-capped (out of window)</div></div>
+    <div class="kpi"><div class="n">24</div><div class="l">flags raised</div></div>
+  </div>
+  <div class="callout"><b>How to read the confidence labels.</b> High means three things held at once:
+  the desk's own probability is above 70%, the fair price lands inside the brief's −250…+10000 band, and the fixture
+  rests on an official page read this session. Anything above 71.43% is necessarily priced shorter than −250, so it is
+  published as "Medium (chalk cap)" with its probability shown in full — see <a href="methodology.html">Methodology</a>
+  and flag R-C-01 for the arithmetic.</div>
+  <h3>Highest-confidence selections in this window</h3>
+  <table><thead><tr><th>Tier</th><th>Sport</th><th>Selection</th><th>Match</th><th class="num">p</th><th class="num">Fair dec</th><th class="num">Fair US</th><th>Start</th><th>Official source</th></tr></thead>
+  <tbody><tr><td><span class="pill high">High</span></td><td>Ice Hockey</td><td>New Jersey Devils to win</td><td>Los Angeles Kings v New Jersey Devils</td><td class="num">0.714</td><td class="num">1.40</td><td class="num">-250</td><td>2026-10-24T19:30:00Z</td><td class="src"><a href="https://www.nhl.com/schedule/2026-10-24">NHL.com official schedule 24 Oct</a> <span class="meta">[read]</span><br><a href="https://www.nhl.com/standings">NHL.com official standings</a> <span class="meta">[read]</span></td></tr><tr><td><span class="pill high">High</span></td><td>Ice Hockey</td><td>Carolina Hurricanes to win</td><td>Carolina Hurricanes v St. Louis Blues</td><td class="num">0.711</td><td class="num">1.41</td><td class="num">-245</td><td>2026-10-24T23:00:00Z</td><td class="src"><a href="https://www.nhl.com/schedule/2026-10-24">NHL.com official schedule 24 Oct</a> <span class="meta">[read]</span><br><a href="https://www.nhl.com/standings">NHL.com official standings</a> <span class="meta">[read]</span></td></tr><tr><td><span class="pill high">High</span></td><td>Ice Hockey</td><td>Detroit Red Wings to win</td><td>Detroit Red Wings v Calgary Flames</td><td class="num">0.710</td><td class="num">1.41</td><td class="num">-245</td><td>2026-10-25T02:00:00Z</td><td class="src"><a href="https://www.nhl.com/schedule/2026-10-24">NHL.com official schedule 24 Oct</a> <span class="meta">[read]</span><br><a href="https://www.nhl.com/standings">NHL.com official standings</a> <span class="meta">[read]</span></td></tr><tr><td><span class="pill high">High</span></td><td>Ice Hockey</td><td>Boston Bruins to win</td><td>San Jose Sharks v Boston Bruins</td><td class="num">0.702</td><td class="num">1.42</td><td class="num">-236</td><td>2026-10-24T23:00:00Z</td><td class="src"><a href="https://www.nhl.com/schedule/2026-10-24">NHL.com official schedule 24 Oct</a> <span class="meta">[read]</span><br><a href="https://www.nhl.com/standings">NHL.com official standings</a> <span class="meta">[read]</span></td></tr><tr><td><span class="pill med">Medium (chalk cap)</span></td><td>Rugby League</td><td>New Zealand to win</td><td>New Zealand v Cook Islands</td><td class="num">0.901</td><td class="num">1.11</td><td class="num">-907</td><td>2026-10-25T05:05:00Z</td><td class="src"><a href="https://www.nrl.com/news/2026/10/20/world-cup-team-lists-mens-round-2/">NRL.com official RLWC 2026 round-2 team lists &amp; late mail</a> <span class="meta">[read]</span><br><a href="https://www.rlwc2026.com/">Rugby League World Cup 2026 official tournament site</a> <span class="meta">[linked]</span></td></tr><tr><td><span class="pill med">Medium (chalk cap)</span></td><td>Rugby League</td><td>New Zealand Women to win</td><td>New Zealand Women v France Women</td><td class="num">0.874</td><td class="num">1.15</td><td class="num">-690</td><td>2026-10-25T03:05:00Z</td><td class="src"><a href="https://www.nrl.com/news/2026/10/20/world-cup-team-lists-mens-round-2/">NRL.com official RLWC 2026 round-2 team lists &amp; late mail</a> <span class="meta">[read]</span><br><a href="https://www.rlwc2026.com/">Rugby League World Cup 2026 official tournament site</a> <span class="meta">[linked]</span></td></tr><tr><td><span class="pill med">Medium (chalk cap)</span></td><td>Motor Racing</td><td>Charles Leclerc to score points</td><td>Field v Field</td><td class="num">0.850</td><td class="num">1.18</td><td class="num">-567</td><td>2026-10-25T20:00:00Z</td><td class="src"><a href="https://www.formula1.com/en/racing/2026">Formula 1 official 2026 race calendar</a> <span class="meta">[read]</span></td></tr><tr><td><span class="pill med">Medium (chalk cap)</span></td><td>Tennis</td><td>Daniil Medvedev to win</td><td>Daniil Medvedev v Nikoloz Basilashvili</td><td class="num">0.832</td><td class="num">1.20</td><td class="num">-495</td><td>2026-10-25T09:00:00Z</td><td class="src"><a href="https://www.atptour.com/en/scores/current/almaty/9410/daily-schedule">ATP Tour official Almaty daily schedule</a> <span class="meta">[read]</span></td></tr><tr><td><span class="pill med">Medium (chalk cap)</span></td><td>Rugby League</td><td>England to win</td><td>England v Papua New Guinea</td><td class="num">0.823</td><td class="num">1.21</td><td class="num">-466</td><td>2026-10-30T08:05:00Z</td><td class="src"><a href="https://www.nrl.com/news/2026/10/20/world-cup-team-lists-mens-round-2/">NRL.com official RLWC 2026 round-2 team lists &amp; late mail</a> <span class="meta">[read]</span><br><a href="https://www.rlwc2026.com/">Rugby League World Cup 2026 official tournament site</a> <span class="meta">[linked]</span></td></tr><tr><td><span class="pill med">Medium (chalk cap)</span></td><td>Rugby League</td><td>Australia to win</td><td>Australia v Fiji</td><td class="num">0.822</td><td class="num">1.22</td><td class="num">-462</td><td>2026-10-25T09:05:00Z</td><td class="src"><a href="https://www.nrl.com/news/2026/10/20/world-cup-team-lists-mens-round-2/">NRL.com official RLWC 2026 round-2 team lists &amp; late mail</a> <span class="meta">[read]</span><br><a href="https://www.rlwc2026.com/">Rugby League World Cup 2026 official tournament site</a> <span class="meta">[linked]</span></td></tr><tr><td><span class="pill med">Medium (chalk cap)</span></td><td>Ice Hockey</td><td>Edmonton Oilers to win</td><td>Toronto Maple Leafs v Edmonton Oilers</td><td class="num">0.802</td><td class="num">1.25</td><td class="num">-405</td><td>2026-10-24T23:00:00Z</td><td class="src"><a href="https://www.nhl.com/schedule/2026-10-24">NHL.com official schedule 24 Oct</a> <span class="meta">[read]</span><br><a href="https://www.nhl.com/standings">NHL.com official standings</a> <span class="meta">[read]</span></td></tr><tr><td><span class="pill med">Medium (chalk cap)</span></td><td>Basketball</td><td>Philadelphia 76ers to win</td><td>Milwaukee Bucks v Philadelphia 76ers</td><td class="num">0.800</td><td class="num">1.25</td><td class="num">-401</td><td>2026-10-24T23:30:00Z</td><td class="src"><a href="https://www.nba.com/schedule?date=2026-10-24">NBA.com official schedule 24 Oct</a> <span class="meta">[read]</span><br><a href="https://www.nba.com/standings">NBA.com official standings</a> <span class="meta">[read]</span></td></tr></tbody></table>
+  <p class="meta">Every selection above links its governing-body source; discovery cards are on the match rows in
+  <a href="matches.html">All Matches</a>.</p>
+</section>
+<section class="card">
+  <h2>Per-sport snapshot</h2>
+  <table><thead><tr><th>Sport</th><th>Fixtures</th><th>Written predictions</th><th>High</th></tr></thead><tbody><tr><td><a href="sports/golf.html">Golf</a></td><td class="num">1</td><td class="num">5</td><td class="num">0</td></tr><tr><td><a href="sports/volleyball.html">Volleyball</a></td><td class="num">15</td><td class="num">5</td><td class="num">0</td></tr><tr><td><a href="sports/rugby_union.html">Rugby Union</a></td><td class="num">5</td><td class="num">5</td><td class="num">0</td></tr><tr><td><a href="sports/cricket.html">Cricket</a></td><td class="num">8</td><td class="num">5</td><td class="num">0</td></tr><tr><td><a href="sports/snooker.html">Snooker</a></td><td class="num">5</td><td class="num">5</td><td class="num">0</td></tr><tr><td><a href="sports/darts.html">Darts</a></td><td class="num">6</td><td class="num">5</td><td class="num">0</td></tr><tr><td><a href="sports/baseball.html">Baseball</a></td><td class="num">2</td><td class="num">2</td><td class="num">0</td></tr><tr><td><a href="sports/gaelic.html">Gaelic Sports</a></td><td class="num">5</td><td class="num">5</td><td class="num">0</td></tr><tr><td><a href="sports/greyhounds.html">Greyhounds</a></td><td class="num">5</td><td class="num">5</td><td class="num">0</td></tr><tr><td><a href="sports/tennis.html">Tennis</a></td><td class="num">6</td><td class="num">5</td><td class="num">0</td></tr><tr><td><a href="sports/motor_racing.html">Motor Racing</a></td><td class="num">2</td><td class="num">5</td><td class="num">0</td></tr><tr><td><a href="sports/handball.html">Handball</a></td><td class="num">15</td><td class="num">5</td><td class="num">0</td></tr><tr><td><a href="sports/ice_hockey.html">Ice Hockey</a></td><td class="num">17</td><td class="num">6</td><td class="num">4</td></tr><tr><td><a href="sports/basketball.html">Basketball</a></td><td class="num">10</td><td class="num">5</td><td class="num">0</td></tr><tr><td><a href="sports/rugby_league.html">Rugby League</a></td><td class="num">5</td><td class="num">5</td><td class="num">0</td></tr></tbody></table>
+  <h3>Quota honesty (aim: 5 written predictions per sport)</h3>
+  <ul><li><b>Baseball</b>: 2 written predictions against the 5-per-sport aim — published shortfall (see the sport page for the reason).</li></ul>
+  <h3>Immediate flags worth knowing</h3>
+  <ul>
+    <li>OLBG hub timestamps render on an unlabelled UTC−4 edge clock (F-C-01); every time on this desk was converted and cross-checked against official schedules where possible.</li>
+    <li>The OLBG Golf hub showed "No tips found" and the Rugby League hub listed only 2027 ante-post outrights during a live World Cup (F-C-17, F-C-21, OLBG-QUIRK-04) — both sports were supplemented from official pages and flagged.</li>
+    <li>Several rows are published with blank form/stat columns on purpose: the official page body could not be read this session and the brief forbids filling gaps from memory (F-C-11/19/20 family).</li>
+    <li>Starts before roughly 18:30Z on 24 Oct had already begun at publication; those rows are marked "elapsed-at-capture" and excluded from picks.</li>
+  </ul>
+</section>
+<section class="card">
+  <h2>Desk map</h2>
+  <div class="toc">
+    <a href="matches.html">All Matches — the full discovered/supplemented fixture list</a>
+    <a href="markets.html">Our Lines — winner, handicap and total prices (decimal = 1/p)</a>
+    <a href="high-confidence.html">High Confidence — the strict gate plus chalk-capped standouts</a>
+    <a href="predictions.html">Predictions — every written analysis</a>
+    <a href="analysis.html">Analysis — divergences, form notes, per-sport commentary</a>
+    <a href="sources.html">Sources — what was fetched, when, and how it was read</a>
+    <a href="flagged.html">Flagged for Review — irregularities and manual-review links</a>
+    <a href="methodology.html">Methodology — engines, pricing and the odds-window arithmetic</a>
+    <a href="reverse-engineering.html">OLBG Reverse-Engineering — hub structure and quirks</a>
+    <a href="repo-audit.html">Repo Audit — contract checks and build results</a>
+  </div>
+</section>
+</main>
+<footer class="site">TC3026353 · branch arena/c3026353-olbg1 · built 2026-10-24T18:14:54Z · discovery via olbg.com hub cards, confirmation via governing-body sources only</footer>
+</body></html>

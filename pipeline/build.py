@@ -42,6 +42,7 @@ ARCHIVE = [
     ('3d121822/index.html', 'Earlier desk: source capture and review queue'),
     ('2ff8342b/index.html', '24 Oct 2026 desk: 54 fixtures across 12 sports, 76 market prices, 16 picks and 15 predictions'),
     ('321b595c/index.html', '24 Oct 2026 fifteen-sport desk: 93 fixtures, 7 originated picks with written predictions, 15 flags'),
+    ('c3026353/index.html', '24 Oct 2026 fifteen-sport desk: 107 fixtures, 424 originated zero-vig prices, 73 written predictions, 4 strict-gate High picks'),
 ]
 
 NAV = [
