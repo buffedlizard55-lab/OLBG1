@@ -85,9 +85,9 @@ PROSE = {
 "Suns get the venue; there is no statistical edge being claimed beyond that."),
 
 "BK-06": (
-"Two unbeaten teams meet in Atlanta, and both won their opening pair on the road, so neither has "
-"played at home yet. Alperen Sengun has been the outstanding individual of the young season at "
-"26.0 points, 8.5 rebounds and 6.0 assists; Jalen Johnson answers with 19.5 points, 10.5 rebounds "
+"Two unbeaten teams meet in Atlanta. Houston's opening pair splits between its own floor and a "
+"road trip; the Hawks won both of theirs away and have not played at home yet. Alperen Sengun has "
+"been the outstanding individual of the young season at "
 "and 7.0 assists. Selection: Atlanta Hawks money line at -117. With both records level and no home "
 "form on either sheet, this is a venue call and nothing more, which is why it stays a narrow lean."),
 
@@ -99,7 +99,8 @@ PROSE = {
 "tells you how little separates them, so the home edge is the entire argument for the pick."),
 
 "BK-05": (
-"Washington and Chicago are both 1-1 and both won their most recent game. Anthony Davis has begun "
+"Washington and Chicago are both 1-1, though the Bulls won their most recent game and the Wizards "
+"lost theirs. Anthony Davis has begun "
 "the season at 21.5 points and 10.5 rebounds, while Jalen Smith is at 14.5 points and 10.5 rebounds "
 "for the Bulls. Selection: Chicago Bulls money line at -117. Chicago is 1-0 in division play and "
 "Washington is 0-0, and the Bulls are at home, but the records are otherwise identical and the "
