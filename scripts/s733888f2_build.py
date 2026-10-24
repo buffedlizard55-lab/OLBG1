@@ -51,10 +51,11 @@ FLAGS = [
      'message "Sorry, something went wrong". cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json '
      'returned HTTP 500 twice and stats.nba.com was unreachable. No official record was read, so all seven '
      'NBA games are listed without a price.'),
-    ('F-09', 'SuperLega page body not retrievable', 'access limitation',
-     'https://www.legavolley.it/2026/1a-giornata-and-18-10-2026-regular-season-superlega-stagione-2026-risultati-classifica/',
-     'The official Lega Pallavolo page opened, but the retrieval layer returned only navigation chrome, so '
-     'no standings value is published. The five Italian fixtures appear in the table without a price.'),
+    ('F-09', 'SuperLega table read from a club page, not the league page', 'evidence route',
+     'https://www.trentinovolley.it/it/news-superlega/superlega-i-numeri-della-prima-giornata-di-regular-season/',
+     'legavolley.it returned navigation chrome only on two attempts, so the round-one table used for the four '
+     'Italian prices comes from Trentino Volley\'s official match report, which credits the figures to Lega '
+     'Pallavolo Serie A and lists all six results and all twelve clubs. The league page itself was not read.'),
     ('F-10', 'Tennis draw confirmed but form not read', 'evidence gap',
      'https://www.atptour.com/en/news/djokovic-basel-2026-draw-preview',
      'The ATP report confirms Djokovic v Humbert and Wawrinka v Lehecka in Basel, and those two rows cite it. '
@@ -95,6 +96,12 @@ FLAGS = [
      'https://www.olbg.com/betting-tips/Tennis/3',
      'OLBG prints event times on a geo-adjusted clock ("Today", "Tomorrow"), with no timezone label. Every '
      'time taken from OLBG is reproduced as displayed and is never converted or asserted as UTC.'),
+    ('F-19', 'SuperLega round-two fixtures and times come from the OLBG listing', 'evidence gap',
+     'https://www.legavolley.it/calendario/',
+     'The four Italian fixtures priced here are the ones OLBG prints. legavolley.it answered 404 on the '
+     'calendar paths tried and its round-two page does not exist until the matches finish, so kick-off '
+     'times are shown as listed and flagged, never asserted. Team names, round-one scorelines and the '
+     'table come from the official club report.'),
 ]
 
 # --------------------------------------------------------------------------
@@ -131,6 +138,26 @@ PREDICTIONS = {
         'World Series 1-0 after game one. Logan Henderson is the home probable pitcher against Tampa Bay\'s '
         'Drew Rasmussen, and the Rays\' 98-64 season was six wins lighter. Home field and the stronger season '
         'record make Milwaukee the side to take at American Family Field.'),
+    'VB-1': (
+        'Cucine Lube Civitanova moneyline. Civitanova opened the season with a 3-0 win at Verona, and '
+        'Aleksandar Nikolov served five aces in it, the joint highest count published for round one. '
+        'Padova were beaten 0-3 at home by Piacenza and did not reach 22 points in any set. The '
+        'round-one table reads Civitanova 3, Padova 0.'),
+    'VB-2': (
+        'Itas Trentino moneyline, and only on home floor. Trentino won 3-0 at Modena with Theo Faure '
+        'scoring 23 points, the best single-match haul of the round. Cisterna answered with a 3-0 win '
+        'over Milano, a 29-27 opening set and 13 blocks, eight of them from Shikun Peng. Both clubs sit '
+        'on 3 points, so the venue carries this price.'),
+    'VB-3': (
+        'Tinet Prata di Pordenone moneyline. Prata marked their return to the top division with a 3-1 win '
+        'over Monza, Wout D\'Heer scoring 18 points from the middle. Perugia, the reigning champions, '
+        'needed five sets to see off Cuneo and collected 2 points. One round is a thin base, so this '
+        'carries a Low grade and no more.'),
+    'VB-4': (
+        'Vero Volley Monza moneyline, home floor only. Both clubs are on 0 points after one round: Monza '
+        'lost 1-3 at Prata but took the second set 25-19, while Verona were swept 0-3 at home by '
+        'Civitanova and won no set at all. With so little separating them the price is close to a coin '
+        'flip, and the grade says so.'),
     'RU-1': (
         'Saracens to win at the Twickenham Stoop. The official Gallagher PREM table has Saracens on 11 points '
         'from three rounds with a +21 points difference and a W-L-W sequence, against Harlequins\' 2 points, '
@@ -299,7 +326,7 @@ def index_html(rows, cov):
         n_high = len([p for p in strong if p['tier'] == 'High'])
         n_str = len([p for p in strong if p['tier'] == 'Strong'])
         if n_high:
-            tail = (f'{n_high} of them are High: probability above 70% and a fair price inside the '
+            tail = (f'{n_high} of them {"is" if n_high == 1 else "are"} High: probability above 70% and a fair price inside the '
                     f'-250 to +10000 band. The other {n_str} are above the band\'s ceiling and are '
                     f'labelled Strong (see F-13).')
         else:
@@ -313,7 +340,7 @@ def index_html(rows, cov):
              f'list. <a href="picks.html">Picks</a> repeats it with the market detail, '
              f'<a href="predictions.html">Write-ups</a> holds one written analysis per pick, and '
              f'<a href="matches.html">Matches</a> shows every fixture including the ones we could not price. '
-             f'{len(D.UNPRICED)} OLBG listings across 12 sports have no price because no official input was '
+             f'{len(D.UNPRICED)} OLBG listings across {len({u["sport"] for u in D.UNPRICED})} sports have no price because no official input was '
              f'read; they are shown as blanks, never guessed.</div>')
 
     b.append('<div class="table-wrap"><table><thead><tr><th>Sport</th><th>Match (start, UTC)</th>'
