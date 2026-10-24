@@ -1,0 +1,100 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repo audit · OLBG 15-sport desk · 24 October 2026</title>
+<style>
+:root{--ink:#132019;--muted:#5d6f65;--line:#dfe6e1;--bg:#f5f7f5;--card:#fff;
+--green:#0d6b45;--green-soft:#e6f2ec;--amber:#8a5300;--amber-soft:#fdf2de;--red:#8f2f2f;--red-soft:#fbeaea;--blue:#1d4f8a;--blue-soft:#e8eff8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--green)}
+h1,h2,h3{line-height:1.2;margin:0 0 10px}
+h1{font-size:31px;letter-spacing:-.4px}h2{font-size:22px}h3{font-size:17px}
+p{margin:0 0 12px}
+.small{font-size:13px}.muted{color:var(--muted)}
+header.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:9}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.toprow{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:11px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700}
+.brand .mark{width:30px;height:30px;border-radius:9px;background:var(--green);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800}
+.brand small{display:block;font-weight:500;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+nav.main{display:flex;gap:4px;flex-wrap:wrap;padding:0 0 9px}
+nav.main a{padding:6px 11px;border-radius:999px;text-decoration:none;color:var(--muted);font-size:14px;border:1px solid transparent}
+nav.main a.active{background:var(--green-soft);color:var(--green);border-color:#cbe1d6;font-weight:600}
+nav.main a:hover{border-color:var(--line)}
+.hero{background:linear-gradient(180deg,#fff,#fbfdfb);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:20px 0}
+.hero h1{margin-bottom:6px}
+.hero .kicker{font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--green);font-weight:700;margin-bottom:8px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0 4px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.kpi b{display:block;font-size:24px;line-height:1.1}
+.kpi small{color:var(--muted);font-size:12px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:18px 0}
+.panel h2{margin-top:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.card{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;text-decoration:none;color:var(--ink)}
+.card b{display:block;margin-bottom:4px;color:var(--green)}
+.card small{color:var(--muted)}
+.card:hover{border-color:#bcd6c8}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f3f7f4;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafcfb}
+.pick{font-weight:700}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.badge.high{background:var(--green-soft);color:var(--green)}
+.badge.medium{background:var(--blue-soft);color:var(--blue)}
+.badge.low{background:#eef0ef;color:#5d6f65}
+.badge.flag{background:var(--amber-soft);color:var(--amber)}
+.badge.pass{background:var(--red-soft);color:var(--red)}
+.num{font-variant-numeric:tabular-nums;font-weight:600}
+.tagt{display:inline-block;font-size:11px;padding:2px 7px;border-radius:6px;background:#eef2f0;color:#41564b;margin:1px 3px 1px 0}
+.lede{font-size:16.5px;color:#31463b}
+.jump{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 18px}
+.jump a{font-size:13px;padding:5px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;background:#fff;color:#33463c}
+article.pred{border:1px solid var(--line);background:#fff;border-radius:14px;padding:18px 20px;margin:16px 0}
+article.pred h3{margin-bottom:4px}
+.predmeta{font-size:13px;color:var(--muted);margin-bottom:10px}
+.predbody{font-size:16px}
+.facts{margin:12px 0 0;padding:12px 14px;background:#f7faf8;border:1px dashed var(--line);border-radius:10px}
+.facts li{margin:4px 0}
+footer{border-top:1px solid var(--line);margin-top:34px;padding:20px 0 40px;color:var(--muted);font-size:13px}
+.note{border-left:4px solid var(--green);background:var(--green-soft);padding:12px 16px;border-radius:0 10px 10px 0;margin:14px 0}
+.warn{border-left:4px solid var(--amber);background:var(--amber-soft);padding:12px 16px;border-radius:0 10px 10px 0;margin:14px 0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.srclink{white-space:nowrap}
+.crumb{font-size:13px;color:var(--muted);margin:16px 0 0}
+.crumb a{text-decoration:none}
+</style></head><body>
+<header class="top"><div class="wrap">
+<div class="toprow"><a class="brand" href="index.html"><span class="mark">OL</span>
+<span>OLBG 15-sport desk<small>Session 37737303 · 24 Oct 2026</small></span></a>
+<span class="small muted">Sources read 22:35–23:10Z · UTC</span></div>
+<nav class="main"><a class="" href="index.html">Summary</a><a class="" href="picks.html">Picks</a><a class="" href="predictions.html">Write-ups</a><a class="" href="matches.html">Matches</a><a class="" href="markets.html">Markets</a><a class="" href="sports.html">Sports</a><a class="" href="flagged.html">Review queue</a><a class="" href="sources.html">Sources</a><a class="" href="methodology.html">Method</a><a class="" href="olbg.html">OLBG</a><a class="active" href="repo-audit.html">Repo audit</a></nav></div></header><main class="wrap"><div class="crumb"><a href="index.html">Summary</a> / Repo audit</div>
+<h1 style="margin-top:10px">Line-by-line look at this repository</h1>
+<p class="lede">The checks below were run against the working tree this session, not copied from an earlier
+report. Each row states the check, the result and what it means.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Area</th><th>Check</th><th>Result</th><th>Detail</th></tr></thead>
+<tbody><tr><td>Git hygiene</td><td>Compiled .pyc artefacts tracked in git</td><td><span class="badge high">ok</span></td><td class="small">None tracked; .gitignore already covers them.</td></tr><tr><td>Links</td><td>Root HTML files with a broken local .html link</td><td><span class="badge high">ok</span></td><td class="small">None found across the root pages.</td></tr><tr><td>Data</td><td>Root data/*.json files that fail to parse</td><td><span class="badge high">ok</span></td><td class="small">All 23 files parse.</td></tr><tr><td>Structure</td><td>Session desk directories at the repository root</td><td><span class="badge flag">flag</span></td><td class="small">71 desks; each keeps its own namespace so old links stay live.</td></tr><tr><td>Links</td><td>This desk&#x27;s own internal links</td><td><span class="badge high">ok</span></td><td class="small">None broken.</td></tr><tr><td>Content</td><td>Root pages still narrating the 21 October snapshot</td><td><span class="badge flag">flag</span></td><td class="small">4 pages: analysis.html, markets.html, release-review.html, verification.html</td></tr><tr><td>Performance</td><td>Heaviest root HTML pages</td><td><span class="badge flag">flag</span></td><td class="small">markets.html (2187 KB), verification.html (883 KB), release-review.html (90 KB)</td></tr><tr><td>Data</td><td>Largest committed JSON files</td><td><span class="badge flag">flag</span></td><td class="small">data/market_expansion-ccb6bde2.json (2441 KB), data/lines.json (885 KB), data/fixtures.json (431 KB)</td></tr></tbody></table></div>
+<div class="panel"><h2>What a reviewer should look at first</h2>
+<ol>
+<li><strong>Two front doors.</strong> The repository root <code>index.html</code> is the earlier "today" desk, and
+this desk lives at <code>/37737303/</code>. The root page gained one pointer line; merging the two front doors is
+left to the next integration pass.</li>
+<li><strong>Namespaced desks accumulate.</strong> 71 session directories now sit at the
+repository root. Each is preserved so old links keep working, but the root listing is becoming long, and a
+reader arriving cold has no obvious single entry point.</li>
+<li><strong>Stale snapshots in prose.</strong> 4 root pages still narrate the 21 October
+snapshot. They are preserved as-is because they belong to other sessions, but a reader can land on one and think
+it is current.</li>
+</ol></div></main><footer><div class="wrap">
+<p><strong>What this page is.</strong> Our own prices, our own picks and our own write-ups for the fifteen sports
+the brief names. OLBG is used to find which events carry a live market and to see what its crowd is backing;
+it is never treated as an official source. Every factual claim links to the governing body, league, tour or
+promoter page it came from. Values we could not confirm are blank and listed on the
+<a href="flagged.html">review queue</a>.</p>
+<p class="small">Prices are estimates, not quotes, and a pick is an opinion, not a guarantee. 18+. If gambling
+stops being fun, GambleAware and GamCare offer free support.</p>
+</div></footer></body></html>
