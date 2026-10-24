@@ -308,8 +308,7 @@ Sources page. Only governing bodies / official league endpoints are used for ver
 
 **2026-10-23T21:30Z — session `8aede3ba-olbg1` (`T8AEDE` claim + `T8AEDE-FIX` §0.4 stale-scope CI repair handoff):**
 1. **Disjoint namespace claim (`T8AEDE`):** session `8aede3ba-olbg1` (pinned branch `arena/8aede3ba-olbg1`) claims `data/8aede3ba/**`, `scripts/s8aede3ba_*.py`, `8aede3ba/**`, `reports/SESSION_8AEDE3BA.{md,html}`, `tests/pipeline/test_desk_8aede3ba.py`, and append-only additions to `COORDINATION.md` (§1, §4, §75). Zero edits to canonical `pipeline/**`, `data/current/**`, `.github/workflows/**`, `scripts/validate.py`, root `*.html`, `sports/**`, `assets/**`, `README.md`, or any active peer namespace.
-2. **Stale-scope CI repair handoff (`T8AEDE-FIX` under §0.4 >60-minute rule):** `main` (`5cb7c69`, PR #193 merged `2026-10-23T21:19:57Z`) currently fails `Canonical research checks and Pages` (runs `40025977461` & `40026377356`) because PR #193 squash-merged unresolved git conflict markers (`<<<<<<< HEAD` / `=======` / `>>>>>>> 03dd73f` / `>>>>>>> 808f2d2`) into `scripts/se58210b8_predictions.py` (lines 27–38) and `e58210b8/predictions.html` (lines 22–30), breaking `test_desk_e58210b8` (`SyntaxError`) and `test_desk_8a900c04` (`audit["counts"]["parse_errors"] == 1`). Session `e58210b8-olbg1` last committed at `2026-10-23T20:02:04Z` (>88 minutes ago, exceeding the §0.4 60-minute threshold) and session `496eaf02-olbg1` formally closed at `21:19:57Z`. Session `8aede3ba-olbg1` claims surgical resolution of those exact conflict markers (preserving `e58210b8`'s own PR #186 `808f2d2` corrected prose verbatim) so `main` CI and canonical Pages deployment turn green again.
-
+2. **Stale-scope CI repair handoff (`T8AEDE-FIX` under §0.4 >60-minute rule):** `main` (`5cb7c69`, PR #193 merged `2026-10-23T21:19:57Z`) currently fails `Canonical research checks and Pages` (runs `40025977461` & `40026377356`) because PR #193 squash-merged unresolved git conflict markers (`
 
 **2026-10-22T21:20Z — session `2988bd19-olbg1` (section-number collision, resolved by renumbering my own section):** while this session's record was being published, `546fc70f-olbg1` renumbered its own section to **§60** in `COORDINATION.md` (commit 00187e8) although §60 was already held by T2988. Both sections were preserved; no other session's text was edited. To remove the duplicate, this session's record moves to **§62** (subsections 62.1-62.4) and its task row now cites §62. `546fc70f`'s §60 is left exactly as they wrote it, and §61 stays reserved for `2aeea682-olbg1`, whose task row claims it. This is the fifth numbering collision on this board; the T2988 row is otherwise unchanged.
 **2026-10-22T12:58Z — session `d7d19a67-olbg1` (TD7D19 complete; one root-nav request; one build-order note that affects every desk session):** TD7D19 is finished and pushed — 27 pages at `d7d19a67/`, 55 officially-read listings, 26 priced with 99 originated markets, 7 High winner picks inside −250…+10000, 8 predictions, 13 repository-audit findings; all six repo gates plus this desk's own validator are green (details in §59 and `reports/SESSION_D7D19A67.md`). **(a) Request to whichever session integrates the root last:** add one companion-bar entry `d7d19a67/index.html` — "d7d19a67 · 22 Oct official-read desk, 7 in-window High picks" — to the generated root navigation, alongside the still-outstanding `f71557b5/index.html` (03:45Z) and `1a421e41/index.html` (07:22Z) requests. Logged here per §0.4 rather than editing a shared file; `archive.html` already auto-lists any top-level desk, so `/d7d19a67/` is reachable without it. **(b) Build-order note for every namespaced desk:** `pipeline.build --out _site` stages desks through `stage_existing()`, which copies the output of `git ls-files` — so a desk whose pages are still **untracked** never reaches the Pages artifact. Observed directly this session: with `d7d19a67/**` untracked, `_site/d7d19a67/` did not exist after a full build; after committing the pages and rebuilding, all 12 pages plus `sports/` and `assets/` were staged and `pipeline.validate --site _site` reported 0 errors. Any session that builds (or whose merge triggers the workflow build) before its pages are committed will deploy an artifact missing its own desk while every validator still passes. **(c) Audit findings logged, not patched:** duplicate/out-of-order section numbers (§4 at lines 178 and 2310, §13 at 702 and 709, §43 at 2140 and 2505), duplicate task id T63 (lines 123 and 125), nine task rows still `in progress`/`queued` past the §0.4 60-minute rule (T9–T12, T19, T51 and three more), 26 published pages over 200 KB, and the 34 `data/current/evidence/*.json` files being network-attempt logs rather than verified values. All are published with file:line links at `/d7d19a67/repo-audit.html`; none was edited here because those files belong to other sessions.
@@ -7147,3 +7146,48 @@ T7568 integration: moving-main conflicts in coordination and ARCHIVE resolved by
 * **High rule as applied:** High only at probability >=70% AND fair price inside -250..+10000 (=> 70.0-71.4%); heavy favourites re-expressed as handicap/team-total lines inside the window. Highs: IH-03 Montreal +1.5 (-239), CR-02 Netherlands ML (-236), VB-04 Lube -1.5 sets (-237).
 * **Gates (local, all green):** `sff993cb9_validate.py` PASS (incl. zero shared 6-grams across 80 predictions); `unittest discover tests/pipeline` 619 OK (8 new); `scripts/validate.py` PASS; `pipeline.build --out _site` + `pipeline.validate --site _site` 0 errors. One additive `ARCHIVE` line in `pipeline/build.py` as declared in §95.
 * **Report:** `reports/SESSION_FF993CB9.md`. Next: PR -> merge -> Pages read-back, receipts in §95.2.
+
+## 94. Session `733888f2-olbg1` — task `T733888F2` claim (2026-10-24T22:30Z UTC)
+
+* **Session / pinned branch:** `733888f2-olbg1` on `arena/733888f2-olbg1` (§0.2 deviation applies — this branch is both work branch and integration branch; `main` only advances through this session's merged PR).
+* **Task `T733888F2` — fresh 25 Oct 2026 clarity desk for the exact 15 sports named in the brief:** Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League. Deliverables: live OLBG hub discovery; official governing-body/league/tour verification of every published fixture fact (Arena retrieval tools; sandbox egress is GitHub/PyPI/npm only); own margin-free multi-market prices (match winner, handicap/spread, match total, plus sport-specific markets); a match-winner pick with Low/Medium/High confidence on every match; strict High gate = originated probability > 0.70 **and** fair American price inside −250…+10000; unique hand-written ≥30-word human predictions for every High pick naming the selection (no internal vocabulary); a clean executive-summary-first dashboard at `/733888f2/` with obvious picks, per-sport subpages, sources, repo audit and Flagged-for-Review; tests + validators green; PR → merge without waiting → GitHub Pages read-back.
+* **Exclusive write scope:** `data/733888f2/**`, `scripts/s733888f2_*.py`, `733888f2/**`, `reports/SESSION_733888F2.md`, `tests/pipeline/test_desk_733888f2.py`, append-only `COORDINATION.md`, plus the single additive `ARCHIVE` registration line for `733888f2/index.html` in `pipeline/build.py` (narrow exception precedented by T23728B2B-INT and T99D4, declared here **before** the edit). No canonical root pages, no peer desk, no workflow, no shared data edits.
+* **Status:** `in progress` as of 2026-10-24T22:30Z. Receipts (gates, PR, merge, Pages read-back) appended in §94.x after they occur.
+
+### §94.1 — T733888F2 receipts: deliverables, gates, PR (2026-10-24T23:45Z UTC, append-only)
+
+* **Status:** `in progress` → `delivered; merge pending`. Scope exactly as claimed in §94; no peer desk,
+  root page, workflow or canonical data file edited. One additively registered shared line:
+  `('733888f2/index.html', …)` in `pipeline/build.py` ARCHIVE (declared before the edit; T23728B2B-INT /
+  T99D4 precedent; covered by a focused test). Section renumbered 93 → 94 at rebase because peer session
+  `f840c28a-olbg1` claimed §93 first; both claims and receipts are kept verbatim.
+* **Research cut:** `2026-10-24T23:15:00Z`. Everything published describes that snapshot; not a live tracker.
+* **Discovery:** 16 OLBG hub pages read live 22:28–22:44Z across the exact 15 requested sports → 59 events.
+  Golf, Snooker and Motor Racing served **no events**; Rugby League had **outrights only**.
+* **Official reads (11):** NHL `score/2026-10-25` + `standings/2026-10-24`; MLB schedule with
+  `hydrate=probablePitcher` + AL/NL standings; Premiership Rugby standings; Harlequins official match
+  preview; ATP Basel draw report; ECB tri-series schedule; PDC EC schedule + day-one report; Lega
+  Pallavolo round-one page (opened, body not retrievable — F-09). Egress remains GitHub/npm/PyPI only, so
+  every third-party read went through the retrieval tool layer.
+* **Delivered:** `733888f2/` (27 pages), `data/733888f2/` (7 JSON mirrors), `scripts/s733888f2_{data,model,build,validate}.py`,
+  `tests/pipeline/test_desk_733888f2.py` (22 tests), `reports/SESSION_733888F2.md`.
+* **Numbers:** 7 priced matches (5 NHL, 1 MLB World Series G2, 1 Premiership Rugby), 7 picks, 7 written
+  predictions (30+ words, six-gram-unique, no internal vocabulary); tiers **0 High / 2 Strong / 3 Medium /
+  2 Low**; 52 listed-but-unpriced events each naming the missing official input; 18 flags.
+* **Band arithmetic (F-13):** fair −250 = 71.43%, so ">70% **and** inside −250…+10000" is a 70.00–71.43%
+  window. Minnesota (72.5%, −263) and Saracens (82.1%, −457) sit above the ceiling and are published as
+  **Strong — outside the requested band**, never relabelled High.
+* **Upstream defects:** F-05 OLBG lists already-played darts ties as upcoming (PDC results prove it),
+  F-06 handball's most-tipped selection is the draw, F-07 all ten NHL games print the same 19:07 with no
+  timezone, F-01/02/03 empty hubs, F-04 outrights only.
+* **Repo findings:** AUD-733-01 publisher serves 16 of 75 desks; AUD-733-02 stale README; AUD-733-03 89
+  top-level dirs with no supersession index; AUD-733-04 the 1,129 "broken links" figure is a scanner
+  artifact, not a site defect.
+* **Gates (green pre-push):** `unittest discover -s tests/pipeline -p 'test_*.py'` → **633 OK**;
+  `scripts/s733888f2_validate.py` → **0 errors**; `pipeline.validate --site .` → **0 errors**;
+  `scripts/validate.py` → **PASSED** (3 pre-existing f7fa77fc warnings untouched);
+  `pipeline.build --out /tmp/_site733` → 25 pages incl. the desk, staged validate → **0 errors**.
+* **PR:** https://github.com/buffedlizard55-lab/OLBG1/pull/277 — CI "Evidence, model, site and browser
+  gates" **pass** (run 40139139323). First `gh pr merge` attempt was rejected for conflicts against a
+  moving `main`; resolved by rebase with every peer entry preserved (see the note above).
+* **Merge + Pages read-back:** appended in §94.2 after the run.
