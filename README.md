@@ -1,6 +1,6 @@
 # OLBG1 · evidence-first research desk
 
-[Dashboard](https://buffedlizard55-lab.github.io/OLBG1/) · [Match list](https://buffedlizard55-lab.github.io/OLBG1/picks.html) · [Markets](https://buffedlizard55-lab.github.io/OLBG1/markets.html) · [Flagged for Review](https://buffedlizard55-lab.github.io/OLBG1/flagged.html)
+[Latest desk — 24 Oct 2026](https://buffedlizard55-lab.github.io/OLBG1/3d121822/index.html) · [Dashboard](https://buffedlizard55-lab.github.io/OLBG1/) · [Match list](https://buffedlizard55-lab.github.io/OLBG1/picks.html) · [Markets](https://buffedlizard55-lab.github.io/OLBG1/markets.html) · [Flagged for Review](https://buffedlizard55-lab.github.io/OLBG1/flagged.html)
 
 One canonical dashboard, **17 sport pages**, explicit evidence gaps and independently calculated **experimental fair prices**. Not affiliated with OLBG. No guaranteed returns, bookmaker execution or personalized staking advice.
 

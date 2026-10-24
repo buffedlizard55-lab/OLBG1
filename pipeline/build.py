@@ -107,9 +107,29 @@ class Site:
     def sport_cards(self,limit=None):
         cov={c['slug']:c for c in self.s['coverage']};order=['basketball','ice-hockey','tennis','baseball','rugby-league','rugby-union','snooker','cricket','handball','motor-racing','volleyball','aussie-rules','golf','gaelic-football','esports','darts','greyhounds']
         return '<div class="sport-grid">'+''.join(f'<a class="sport-card" href="sports/{s}.html"><span class="sport-icon">{icon("ball",19)}</span><span><strong>{e(cov[s]["name"])}</strong><small>{cov[s]["listing_count"]} listings · {e(cov[s]["status"])}</small></span><span class="arrow">{icon("arrow",13)}</span></a>' for s in order[:limit])+'</div>'
+    def latest_desk(self):
+        """One obvious front door to the newest desk, if it is present."""
+        link='3d121822/index.html'
+        if not (ROOT/link).is_file():return ''
+        return ('<section class="panel pad" style="margin-bottom:18px;border:1px solid #cfe3d8;'
+                'background:#e7f1ec">'
+                '<div style="display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap">'
+                '<div><p style="margin:0 0 4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0f5132">'
+                'Start here · 24 October 2026</p>'
+                '<h2 style="margin:0 0 6px;font-size:22px">Today\'s picks, in one place</h2>'
+                '<p style="margin:0;color:#41544b;max-width:70ch">The newest desk covers 15 sports with sourced '
+                'fixtures, our own prices and written predictions. This page below is the older canonical '
+                'snapshot from 22 October and is kept for the audit trail.</p></div>'
+                '<div style="display:flex;gap:8px;flex-wrap:wrap">'
+                f'<a class="button primary" href="{link}">Open the 24 Oct desk →</a>'
+                f'<a class="button" href="{link.replace("index.html","picks.html")}">Today\'s picks</a>'
+                f'<a class="button" href="{link.replace("index.html","flagged.html")}">Flagged for review</a>'
+                '</div></div></section>')
+
     def dashboard(self):
         c=self.s['counts'];rows=[r for r in self.rows if r['state']=='upcoming'][:7]
-        b=self.notice(f'<strong>Transparency first.</strong> A partial, evidence-backed snapshot—not a complete global match list. {c["unpriced"]} captured listings have no supported price. <a href="flagged.html">See what needs review →</a>')+self.kpis()
+        b=self.latest_desk()
+        b+=self.notice(f'<strong>Transparency first.</strong> A partial, evidence-backed snapshot—not a complete global match list. {c["unpriced"]} captured listings have no supported price. <a href="flagged.html">See what needs review →</a>')+self.kpis()
         b+='<div class="grid-two"><section class="panel"><header class="panel-head"><div><h2>Next up on the slate</h2><p>Exact UTC starts from official sources · independent fair odds</p></div><a class="text-link" href="picks.html">View all '+icon('arrow',12)+'</a></header>'+self.match_table(rows,'index.html',True)+'<div class="table-note">Schedule facts are sourced; prices are experimental. A source link does not verify every field.</div></section>'
         b+=f'<div class="side-stack"><section class="panel"><header class="panel-head"><h2>Confidence watch</h2>{badge("No High released")}</header><div class="empty-panel"><div class="empty-mark">{icon("shield",24)}</div><h3>Confidence is earned.<br>Not filled in.</h3><p>No selection clears the evidence and calibration gates. We would rather leave a cell blank than invent an advantage.</p><ul class="checklist"><li><span class="ring"></span>Out-of-sample model calibration</li><li><span class="ring"></span>Current player, form & match history</li><li><span class="ring"></span>Verified odds from −250 to +10000</li></ul><a class="button" href="predictions.html">Read the release criteria {icon("arrow",13)}</a></div></section><section class="panel" style="margin-top:18px"><header class="panel-head"><h2>Coverage checkpoint</h2><a class="text-link" href="flagged.html#coverage">View register →</a></header><div class="coverage-list"><div class="coverage-row"><span>Official-source checks</span><strong>{c["sources"]}</strong></div><div class="coverage-row"><span>Unpriced captured entries</span><strong>{c["unpriced"]}</strong></div><div class="coverage-row"><span>Structured fixture adapters</span><strong>3 <small>/ 17 categories</small></strong></div><div class="coverage-row"><span>Fixture evidence expiry</span><strong>6 <small>hours</small></strong></div><p class="tiny">Entry counts do not measure worldwide coverage. An unavailable source stays a visible gap.</p></div></section></div></div>'
         b+='<div class="section-heading"><div><h2>Explore by sport</h2><p>Every category stays visible—even when reliable data is missing.</p></div><a class="text-link" href="sports.html">All 17 categories →</a></div>'+self.sport_cards(8)
