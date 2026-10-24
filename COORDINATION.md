@@ -6485,3 +6485,12 @@ rebuilt, and re-gated at 1,080 checks with 0 failures plus 0 canonical validatio
 * **Root wiring:** `pipeline/build.py` now emits a "Today's picks (clear view)" nav entry with the live
   pick count and a banner above the page heading on every canonical page. This is the only change to
   shared canonical code; it adds markup and does not alter any existing figure.
+---
+
+## 85. Session `580f43c9-olbg1` — task claim `T580F` (2026-10-24T18:05Z UTC)
+
+* **Session / pinned branch:** `580f43c9-olbg1` on `arena/580f43c9-olbg1` (§0.2 deviation applies). Base commit `c4a90a7`.
+* **Task:** `T580F` — *clarity-first 24–25 October 2026 15-sport desk.* Live OLBG discovery across exactly the 15 brief sports (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League); official governing-body/league verification read this session with URL + observation stamp per row; independent multi-market line origination (match winner, handicap, match total and sport-specific derivative markets); High gate = originated probability > 70% **and** fair American inside −250…+10000; **five fully written, unique, ≥30-word human predictions per covered sport** (selection, both participants, current form, recent results, match-specific statistics and any officially verifiable injury), no banned internal vocabulary; namespaced dashboard whose landing page leads with an executive summary stating the picks and exactly where they live; line-by-line repo audit; Flagged-for-Review register; validator + test gate; PR → merge → GitHub Pages read-back.
+* **Exclusive write scope:** `data/580f43c9/**`, `scripts/s580f43c9_*.py`, `580f43c9/**`, `reports/SESSION_580F43C9.{md,html}`, `tests/pipeline/test_desk_580f43c9.py`, and append-only additions to `COORDINATION.md`.
+* **Explicitly not touched:** canonical `pipeline/**`, `data/current/**`, `data/fixtures.json`, `data/lines.json`, `data/predictions.json`, `scripts/validate.py`, `.github/workflows/**`, root `*.html`, `sports/**`, `assets/**`, `README.md`, and every peer desk directory.
+* **Claim status:** `in progress`. Verification channel: Arena `fetch_page` / `web_search` against official league, tour, federation and club endpoints; OLBG routes used for discovery/reverse-engineering only, never as fixture or statistical evidence.
