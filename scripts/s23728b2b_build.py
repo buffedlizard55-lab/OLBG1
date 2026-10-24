@@ -61,6 +61,9 @@ def official_sources_for(fixture: dict) -> list[dict]:
 
 
 def page(title: str, body: str, *, prefix="", description="Source-linked sports research") -> str:
+    # The canonical archive publisher retains HTML/CSS/SVG only. Inline the desk's
+    # small dependency-free controller so its filters work in that artifact too.
+    inline_js = (SITE / "app.js").read_text()
     nav = [
         ("index.html", "Executive summary"),
         ("matches.html", "All matches"),
@@ -78,7 +81,6 @@ def page(title: str, body: str, *, prefix="", description="Source-linked sports 
   <meta name="description" content="{e(description)}">
   <title>{e(title)} · Desk 23728b2b</title>
   <link rel="stylesheet" href="{prefix}style.css">
-  <script defer src="{prefix}app.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -96,6 +98,7 @@ def page(title: str, body: str, *, prefix="", description="Source-linked sports 
   <div><strong>Research snapshot, not a live odds service.</strong> Prices are independent fair-price estimates, not bookmaker offers. Sporting facts were read at {e(OBSERVED)}; recheck status, availability and start times before use.</div>
   <div>18+ · No outcome is guaranteed · <a href="{prefix}methodology.html">How lines and confidence work</a> · <a href="{prefix}flagged.html">{len(FLAGS)} disclosed review items</a></div>
 </footer>
+<script>{inline_js}</script>
 </body>
 </html>'''
 
@@ -354,14 +357,14 @@ def build_audit(desk: dict) -> str:
         status = "Validation record pending"
     summary = desk["summary"]
     body = f'''
-<section class="page-heading"><p class="eyebrow">Repository audit</p><h1>Scope, provenance and validation</h1><p>{e(status)}. This page concerns only desk 23728b2b; the canonical root dashboard and peer namespaces are not rewritten by the desk builder.</p></section>
+<section class="page-heading"><p class="eyebrow">Repository audit</p><h1>Scope, provenance and validation</h1><p>{e(status)}. This page concerns desk 23728b2b. Canonical integration is limited to one separately claimed archive-registration line; no canonical data, pricing or validation logic is changed.</p></section>
 <section class="metric-strip audit-metrics"><div><strong>{summary["fixture_rows"]}</strong><span>source-linked rows</span></div><div><strong>{summary["total_lines"]}</strong><span>arithmetic-checked lines</span></div><div><strong>{summary["high_picks"]}</strong><span>High gate checks</span></div><div><strong>{summary["flags"]}</strong><span>disclosed flags</span></div></section>
 <div class="audit-grid">
-<section class="audit-panel"><h2>Owned paths</h2><ul><li><code>data/23728b2b/</code> — evidence, fixtures, lines, predictions, flags and validation record</li><li><code>23728b2b/</code> — standalone Pages dashboard and all 15 sport pages</li><li><code>scripts/s23728b2b_*</code> — data, shared arithmetic, builder and validator</li><li><code>tests/pipeline/test_desk_23728b2b.py</code> — preserved desk tests</li><li><code>reports/SESSION_23728B2B.*</code> — session report and served-content checks</li><li><code>COORDINATION.md</code> — scoped claim and final desk entry only</li></ul></section>
+<section class="audit-panel"><h2>Owned paths</h2><ul><li><code>data/23728b2b/</code> — evidence, fixtures, lines, predictions, flags and validation record</li><li><code>23728b2b/</code> — standalone Pages dashboard and all 15 sport pages</li><li><code>scripts/s23728b2b_*</code> — data, shared arithmetic, builder and validator</li><li><code>tests/pipeline/test_desk_23728b2b.py</code> — preserved desk tests</li><li><code>reports/SESSION_23728B2B.*</code> — session report and served-content checks</li><li><code>pipeline/build.py</code> — one archive-registration line only, separately claimed for Pages inclusion</li><li><code>COORDINATION.md</code> — scoped claim and final desk entry only</li></ul></section>
 <section class="audit-panel"><h2>Data checks</h2><ul class="check-list">{check_items}</ul></section>
 </div>
 <section class="section-block"><h2>Publication controls</h2><div class="method-grid compact"><article><h3>Source completeness</h3><p>Every fixture references an official source. Every match and ladder table row repeats that review path. Discovery sources are labeled separately.</p></article><article><h3>High-pick integrity</h3><p>Probability, unrounded price window, both-side evidence, 30-word minimum, unique prose and direct executive-to-match anchors are checked.</p></article><article><h3>Blank-field policy</h3><p>Missing start fields must be attached to a disclosed flag. Withheld rows cannot carry a selection, probability or price.</p></article><article><h3>Deployment proof</h3><p>Final acceptance requires the canonical pipeline and browser gates, then a GitHub Pages read-back of served HTML rather than relying only on API status.</p></article></div></section>
-<p class="report-links"><a class="button button-secondary" href="../reports/SESSION_23728B2B.html">Open session report</a> <a class="button button-secondary" href="../data/23728b2b/desk.json">Open structured desk JSON</a></p>
+<p class="report-links"><a class="button button-secondary" href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/reports/SESSION_23728B2B.html">Open session report</a> <a class="button button-secondary" href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/23728b2b/desk.json">Open structured desk JSON</a></p>
 '''
     return page("Repository audit", body)
 

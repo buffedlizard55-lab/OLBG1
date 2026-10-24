@@ -6,7 +6,6 @@
   <meta name="description" content="Ice Hockey fixtures, independent lines and official sporting evidence">
   <title>Ice Hockey · Desk 23728b2b</title>
   <link rel="stylesheet" href="../style.css">
-  <script defer src="../app.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -171,5 +170,43 @@
   <div><strong>Research snapshot, not a live odds service.</strong> Prices are independent fair-price estimates, not bookmaker offers. Sporting facts were read at 2026-10-24T17:56:39Z; recheck status, availability and start times before use.</div>
   <div>18+ · No outcome is guaranteed · <a href="../methodology.html">How lines and confidence work</a> · <a href="../flagged.html">19 disclosed review items</a></div>
 </footer>
+<script>(() => {
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('#site-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  }
+
+  const table = document.querySelector('#match-table');
+  if (!table) return;
+  const sport = document.querySelector('#sport-filter');
+  const confidence = document.querySelector('#confidence-filter');
+  const search = document.querySelector('#match-search');
+  const count = document.querySelector('#filter-count');
+  const empty = document.querySelector('#no-filter-results');
+  const rows = [...table.tBodies[0].rows];
+
+  function applyFilters() {
+    const query = search.value.trim().toLowerCase();
+    let visible = 0;
+    rows.forEach(row => {
+      const sportMatch = sport.value === 'all' || row.dataset.sport === sport.value;
+      const tierMatch = confidence.value === 'all' || row.dataset.confidence === confidence.value;
+      const searchMatch = !query || row.dataset.search.includes(query);
+      const show = sportMatch && tierMatch && searchMatch;
+      row.hidden = !show;
+      if (show) visible += 1;
+    });
+    count.textContent = `${visible} row${visible === 1 ? '' : 's'}`;
+    empty.hidden = visible !== 0;
+  }
+
+  [sport, confidence].forEach(control => control.addEventListener('change', applyFilters));
+  search.addEventListener('input', applyFilters);
+})();
+</script>
 </body>
 </html>

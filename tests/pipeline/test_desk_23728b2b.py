@@ -110,6 +110,10 @@ class TestDeskRecords(unittest.TestCase):
         self.assertEqual(len(list((root / "23728b2b" / "sports").glob("*.html"))), 15)
         self.assertTrue((root / "data" / "23728b2b" / "desk.json").is_file())
 
+    def test_canonical_archive_registration(self):
+        from pipeline.build import ARCHIVE
+        self.assertIn("23728b2b/index.html", [path for path, _label in ARCHIVE])
+
 
 if __name__ == "__main__":
     unittest.main()

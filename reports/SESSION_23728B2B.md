@@ -35,7 +35,8 @@ Every primary prediction is unique and at least 30 words. High prose also passes
 - `23728b2b/`: executive dashboard, full match list, 15 sport pages, sources, methodology, Flagged for Review, repository audit, CSS and JavaScript.
 - `data/23728b2b/`: structured evidence, fixtures, lines, predictions, flags, methodology, summary and validation record.
 - `scripts/s23728b2b_*`: source records, shared arithmetic, builder and validator.
-- `tests/pipeline/test_desk_23728b2b.py`: focused arithmetic, confidence, provenance and content tests.
+- `tests/pipeline/test_desk_23728b2b.py`: focused arithmetic, confidence, provenance, content and archive-registration tests.
+- `pipeline/build.py`: one separately claimed `ARCHIVE` registration line; no other canonical logic changed. Desk JavaScript is inlined for archive-safe deployment.
 
 ## Local gate log — passed
 
@@ -43,12 +44,12 @@ Every primary prediction is unique and at least 30 words. High prose also passes
 | --- | --- |
 | Desk build | 21 HTML pages plus structured JSON; 55 fixture rows and 138 lines |
 | Desk validator | 5/5 groups passed; 57 tables and 203 body rows have official links |
-| Focused desk unit tests | 18/18 passed with `unittest` |
-| Preserved pipeline tests | 500/500 passed |
+| Focused desk unit tests | 19/19 passed with `unittest`, including canonical archive registration |
+| Preserved pipeline tests | 578/578 passed |
 | Upstream audit tests | 38/38 passed |
 | Canonical root validator | 0 errors |
 | Historical structural validator | 0 errors; three pre-existing warnings in `f7fa77fc/flagged.html` only |
-| Canonical staged build and validator | 97 canonical pages; 0 errors after desk files were tracked in the index |
+| Canonical staged build and validator | 25 canonical pages; 0 errors; desk HTML/CSS and inline controller present |
 | Canonical browser gate | Desktop/mobile, project prefix, filters, downloads, deep links, expiry and no-JS behavior passed |
 | Dedicated desk browser gate | 15 sport routes, seven High anchors, 55-row filters, empty state, audit, mobile navigation/overflow and local resources passed |
 
