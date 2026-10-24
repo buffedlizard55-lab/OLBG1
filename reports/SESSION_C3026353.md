@@ -93,10 +93,17 @@ shortfalls displayed on the dashboard and sport pages.
 
 ## 7. End-to-end receipts
 
-- PR: *(filled in COORDINATION.md receipts after the run)*
-- Merge: `gh pr merge --merge` on the PR above.
-- Pages: https://buffedlizard55-lab.github.io/OLBG1/c3026353/index.html — live byte read-back recorded in
-  COORDINATION.md receipts.
+- **PR:** https://github.com/buffedlizard55-lab/OLBG1/pull/256 — merged via `gh pr merge 256 --merge` on 2026-10-24
+  (after two append-only rebases over moving main; no peer COORDINATION text lost).
+- **CI:** `Canonical research checks and Pages` green on main through run `40121118144`; pre-merge gates on the
+  pushed tree: desk validator PASSED, 569 unit tests OK, `pipeline.validate --site _site` 0 errors on a clean artifact.
+- **Pages:** `pages build and deployment` run `40121499028` completed success. Live byte read-back of
+  https://buffedlizard55-lab.github.io/OLBG1/c3026353/index.html confirmed the executive summary and KPI row
+  (107 fixtures · 204 distinct markets · 73 predictions · 4 High · 16 chalk-capped · 24 flags), and
+  `/OLBG1/c3026353/high-confidence.html` confirmed the 4 strict-gate Highs and the chalk disclosure table.
+- **Integration note:** one additive `ARCHIVE` entry in `pipeline/build.py` registered the desk in the canonical
+  artifact front door (the same publish step T321B used, commit `048631f`); without it the new clarity pipeline's
+  Pages artifact would omit `/OLBG1/c3026353/`. No other shared file was changed.
 
 ## 8. Scope isolation
 
