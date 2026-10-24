@@ -140,7 +140,7 @@ NHL = {
     "VAN": (12, 2, 9, 1, 5, .208, 35, 56), "VGK": (12, 8, 4, 0, 16, .667, 45, 36),
     "WPG": (10, 4, 3, 3, 11, .550, 26, 29), "WSH": (9, 5, 4, 0, 10, .556, 30, 29),
 }
-# Provider prices read from nhl-schedule. 10 (Doxxbet) is excluded: its two prices sum
+# Provider prices read from nhl-schedule. Provider id 10 is excluded: its two prices sum
 # to ~81% implied, i.e. it quotes a 3-way 60-minute market and mixing it in would be wrong.
 PROVIDERS = {3: "feed 3", 6: "feed 6", 7: "feed 7", 8: "feed 8", 9: "feed 9"}
 NHL_PRICES = {
@@ -800,7 +800,7 @@ FLAGS = sorted([
      "in that band, and we publish that rather than relabel a shorter price as compliant.",
      ["nhl-schedule", "mlb-standings-nl"]),
     ("F-321-02", "Zero selections cleared a 70 per cent win probability today", "high", "coverage",
-     "The highest probability we can support is 65.2 per cent (Milwaukee Brewers, World Series Game 2). The six NHL "
+     "The highest probability we can support is 65.1 per cent (Milwaukee Brewers, World Series Game 2). The six NHL "
      "moneyline probabilities run from 47.5 to 61.8 per cent and match the league's own published prices to within "
      "about two points on four of six games, which is the expected outcome if the slate genuinely contains no 70 per "
      "cent favourite. Nothing has been raised to meet the five-per-sport target.",
@@ -839,9 +839,9 @@ FLAGS = sorted([
      "page rendered only as far as March 2026 in the readable portion, so the current-week event could not be named.",
      ["olbg-golf", "pga-schedule"]),
     ("F-321-10", "NHL partner prices exclude one provider that quotes a 3-way market", "low", "data",
-     "The league feed carries six providers. Doxxbet's two prices sum to about 81 per cent implied, which means it "
-     "is quoting a 60-minute three-way market; including it would fabricate an under-round. Only the five 2-way "
-     "providers are used, and the best available price is taken from those five.",
+     "The league feed carries six provider ids. The prices filed under id 10 sum to about 81 per cent implied, which "
+     "means that quote is a 60-minute three-way market; including it would fabricate an under-round. Only the five 2-way "
+     "quotes are used, and the best available price is taken from those five.",
      ["nhl-schedule"]),
     ("F-321-11", "No injury designation could be read for any priced match", "medium", "data",
      "The brief asks for verified injuries. No official injury report was readable this session for the NHL, MLB or "

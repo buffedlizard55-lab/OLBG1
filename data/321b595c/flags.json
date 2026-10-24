@@ -16,7 +16,7 @@
    "title": "Zero selections cleared a 70 per cent win probability today",
    "severity": "high",
    "area": "coverage",
-   "detail": "The highest probability we can support is 65.2 per cent (Milwaukee Brewers, World Series Game 2). The six NHL moneyline probabilities run from 47.5 to 61.8 per cent and match the league's own published prices to within about two points on four of six games, which is the expected outcome if the slate genuinely contains no 70 per cent favourite. Nothing has been raised to meet the five-per-sport target.",
+   "detail": "The highest probability we can support is 65.1 per cent (Milwaukee Brewers, World Series Game 2). The six NHL moneyline probabilities run from 47.5 to 61.8 per cent and match the league's own published prices to within about two points on four of six games, which is the expected outcome if the slate genuinely contains no 70 per cent favourite. Nothing has been raised to meet the five-per-sport target.",
    "sources": [
     "mlb-standings-nl",
     "nhl-schedule"
@@ -106,7 +106,7 @@
    "title": "NHL partner prices exclude one provider that quotes a 3-way market",
    "severity": "low",
    "area": "data",
-   "detail": "The league feed carries six providers. Doxxbet's two prices sum to about 81 per cent implied, which means it is quoting a 60-minute three-way market; including it would fabricate an under-round. Only the five 2-way providers are used, and the best available price is taken from those five.",
+   "detail": "The league feed carries six provider ids. The prices filed under id 10 sum to about 81 per cent implied, which means that quote is a 60-minute three-way market; including it would fabricate an under-round. Only the five 2-way quotes are used, and the best available price is taken from those five.",
    "sources": [
     "nhl-schedule"
    ]
