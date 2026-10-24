@@ -5,8 +5,9 @@ plain language, every pick carrying the exact page and anchor where its full wri
 label that the underlying evidence cannot carry.
 
 * **Branch:** `arena/1707d752-olbg1` (base `1a203e9`).
-* **Published:** `1707d752/index.html` (also deployed, since `pipeline/build.py` copies every namespaced desk into
-  the Pages artifact).
+* **Published:** `1707d752/index.html` (deployed, since `pipeline/build.py` copies every namespaced desk into the
+  Pages artifact and `archive.html` auto-lists it). The homepage "start here" banner is hard-coded to a peer desk
+  and was deliberately left alone — see disclosures.
 * **Rebuild:** `python3 scripts/s1707d752_build.py && python3 scripts/s1707d752_validate.py`.
 * **Source read window:** 17:42–18:05 UTC, 24 October 2026.
 
@@ -104,9 +105,10 @@ rather than priced.
 
 ## Disclosures
 
-* This session changed **one line** of `pipeline/build.py`: `latest_desk()` now points at `1707d752/index.html`
-  instead of `3d121822/index.html`, so the deployed homepage surfaces today's desk. Nothing else in
-  `pipeline/**`, `data/current/**`, the workflows, the root pages or any peer desk was touched.
+* An earlier draft of this session repointed `pipeline/build.py`'s `latest_desk()` banner at this desk. That change
+  was dropped during the rebase onto `main` because three peer sessions were merging into the same function in the
+  same hour; the file is left exactly as `main` has it. Nothing in `pipeline/**`, `data/current/**`, the workflows,
+  the root pages or any peer desk was touched in the final branch.
 * `Venue` for Toronto at Edmonton was flagged earlier in the session as unconfirmed and then confirmed against the
   league schedule; the flag was rewritten rather than deleted so the correction stays visible.
 * No injury, availability or lineup claim appears anywhere: no official injury report was read (flag **F-17-05**).
