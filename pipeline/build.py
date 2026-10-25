@@ -259,7 +259,7 @@ publisher's own price is shown separately where the official feed carries one. 1
         body = f"""
 <div class="panel highlight">
 <p style="font-size:18px;margin-bottom:10px"><strong>25 October 2026 desk is live.</strong>
-Fresh reads of the official NHL, MLB, NBA and Formula 1 pages for the thirty-first of this run.
+Fresh reads of the official NHL, MLB, NBA and Formula 1 pages taken on 25 October 2026.
 Nine fixtures priced across seventeen originated markets, three graded picks (two High, one Medium)
 and three written predictions, alongside 82 OLBG match markets and 13 outrights recorded across the
 fifteen brief sports. All fifteen sports are published, including the twelve with no priced match and
