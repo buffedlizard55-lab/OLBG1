@@ -4,7 +4,7 @@
 working on what. It exists so that multiple agent sessions can work on this repository at the
 same time without duplicating work or overwriting each other.
 
-Last updated: **2026-10-24T23:25:00Z** (UTC) (T0239D718: 15-sport desk built, canonical front door registered, all local gates green; PR/merge/Pages read-back pending)
+Last updated: **2026-10-25T03:15:00Z** (UTC) (T0239D718: 15-sport desk built, canonical front door registered, all local gates green; PR/merge/Pages read-back pending)
 
 ---
 
@@ -66,6 +66,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 
 | # | Task | Status | Session | File scope | Started (UTC) | Notes |
 |---|------|--------|---------|------------|---------------|-------|
+| TA394F91E | **Fresh 25 Oct 2026 fifteen-sport desk and final integration (`a394f91e-olbg1`):** live OLBG discovery for the exact 15 brief sports; fresh official governing-body/league/tour reads; independent win/handicap/total line origination; -250..+10000 High band; unique >=30-word human predictions built only from official published facts; line-by-line repo audit with source links; Flagged for Review page; canonical front-door integration; validator + tests + build green; PR -> merge -> GitHub Pages read-back | in progress | a394f91e-olbg1 | `data/a394f91e/**`, `scripts/sa394f91e_*.py`, `a394f91e/**`, `reports/SESSION_A394F91E.md`, `tests/pipeline/test_desk_a394f91e.py`, append-only `COORDINATION.md`; final integration only: `pipeline/build.py` front-door/ARCHIVE hunk and its committed `index.html` mirror | 2026-10-25T03:15:00Z | Pinned Arena branch `arena/a394f91e-olbg1` per §0.2. Unique namespace; no peer desk, canonical `data/current`, workflow or other session scope edits. Five-per-sport remains an evidence-capped aim, never a quota. |
 | T0239D718 | **Fresh 24–25 Oct 2026 clarity desk and final integration (`0239d718-olbg1`):** reverse-engineer OLBG discovery for the exact 15 brief sports; re-read governing-body/league/tour sources line by line; blank-and-flag unconfirmed fields; originate independent winner/handicap/total prices; apply a strict >70% and −250…+10000 High gate; write unique ≥30-word human predictions; publish a clean namespaced executive-summary dashboard with 15 sport/category pages, tables, audit, sources and Flagged for Review; run validators/tests/build; PR → merge → Pages read-back | done | 0239d718-olbg1 | `data/0239d718/**`, `scripts/s0239d718_*.py`, `0239d718/**`, `reports/SESSION_0239D718.md`, `tests/pipeline/test_desk_0239d718.py`, append-only `COORDINATION.md`; final integration only: one `ARCHIVE` row plus the canonical front-door banner in `pipeline/build.py` and its committed `index.html` mirror | 2026-10-24T22:26:00Z | Pinned Arena branch `arena/0239d718-olbg1` per §0.2. Unique session namespace; no peer desk, canonical data, workflow or other session scope edits. Five-per-sport is an evidence-capped aim, never a quota. |
 | T7F1B | **Clarity rebuild + final integration (`7f1bf9f7-olbg1`, 24 Oct 2026):** one clean, obvious picks desk at `/today/` (executive summary first, picks and their location unmistakable), fresh live OLBG discovery across the exact 15 requested sports, own originated multi-market lines, `-250…+10000` High band with ≥70% probability, unique ≥30-word predictions written from official-source facts, line-by-line repo audit with source links, Flagged for Review page, canonical root banner pointing at the desk, validator + tests green, PR → merge → Pages read-back | done | 7f1bf9f7-olbg1 | `data/today/**`, `scripts/today_*.py`, `today/**`, `reports/SESSION_7F1BF9F7.{md}`, `tests/pipeline/test_today_desk.py`, append-only `COORDINATION.md`, surgical banner/nav hunk in `pipeline/build.py` | 2026-10-24T17:15Z | Pinned Arena branch `arena/7f1bf9f7-olbg1`. No peer desk, shared canonical data or peer workflow edits. Final integration for main. |
 | T3C021B | **Fresh live 23 Oct 2026 night desk (`3c021b49-olbg1`):** live OLBG discovery across the exact 15 requested sports; fresh official governing-body verification; independent multi-market line origination; strict −250…+10000 High gate; unique ≥30-word human predictions; namespaced dashboard, repo audit, sources and Flagged for Review; validator gate; PR → merge → GitHub Pages deployment read-back | done | 3c021b49-olbg1 | `data/3c021b49/**`, `scripts/s3c021b49_*.py`, `3c021b49/**`, `reports/SESSION_3C021B49.{md,html}`, `tests/pipeline/test_desk_3c021b49.py`, append-only `COORDINATION.md` | 2026-10-23T22:00Z | Pinned Arena branch `arena/3c021b49-olbg1`; strictly isolated namespace; no shared canonical root/pipeline/data-current/workflow edits. |
@@ -7438,3 +7439,22 @@ Status: **site and data built; local desk validator and new unit test pass; cano
   - No 404 was observed on the read-back paths.
 * **Irregularities (all flagged, none block merge):** OLBG no-tips hubs, single-race Greyhounds discovery, unlabeled hub times, tip shares treated as non-probabilities, WTA draw shells, CSA pagination drift, Premiership 404, partial USA Rugby page, snooker final opponent blank, short baseball/rugby-league/motor-racing slates, blank Gaelic/CSA/GBGB stats, local-only start times, unusual official NBA roster row, canonical root's older snapshot, and prior repo stale-task rows. All are visible on the live Flagged for Review and Repo Audit pages.
 * **Final claim status:** `done`.
+
+---
+
+## 95. Session `a394f91e-olbg1` — `TA394F91E` claim (2026-10-25T03:15:00Z UTC)
+
+* **Session / pinned branch:** `a394f91e-olbg1` on `arena/a394f91e-olbg1` (§0.2 deviation applies). Base: `31654d812b70a1cf8f1bdcf7cab5b9b6775e1e32`, the tip of `main` after PR #296.
+* **Task:** a fresh **25 October 2026** fifteen-sport desk. Live OLBG discovery for exactly the fifteen sports named in the brief
+  (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball,
+  Ice Hockey, Basketball, Rugby League), fresh reads of official league / governing body / tour pages, independent origination of
+  win, handicap and match-total lines, a High/Medium/Low grade, and a unique >=30-word written prediction for every High pick.
+* **Exclusive namespace:** `data/a394f91e/**`, `scripts/sa394f91e_*.py`, `a394f91e/**`, `reports/SESSION_A394F91E.md`,
+  `tests/pipeline/test_desk_a394f91e.py`, plus append-only entries in this file.
+* **Final-integration shared scope:** the `ARCHIVE` registration and the generated canonical front-door banner in `pipeline/build.py`,
+  and the committed `index.html` mirror that the canonical build emits. Nothing else in `pipeline/**`, canonical `data/current/**`,
+  peer workflows, `README.md` or `scripts/validate.py` is edited.
+* **Method:** OLBG is discovery and market-location evidence only. Every fixture, record, form line and statistic published here is
+  fetched and read **this session** from the official publisher, with the exact URL and UTC read time retained in `data/a394f91e/sources.json`.
+  Anything an official page did not publish is left blank and published on `a394f91e/flagged.html` rather than filled in.
+* **Status:** `in progress`.
