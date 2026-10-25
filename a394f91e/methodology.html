@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Method · OLBG research desk</title>
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+<header class="top"><div class="wide">
+<a class="brand" href="index.html">OLBG research desk<span>25 October 2026</span></a>
+<nav><a class="" href="index.html">Summary</a><a class="" href="picks.html">Picks</a><a class="" href="predictions.html">Write-ups</a><a class="" href="matches.html">Matches &amp; markets</a><a class="" href="sports.html">Sports</a><a class="" href="discovery.html">OLBG feed</a><a class="" href="sources.html">Sources</a><a class="on" href="methodology.html">Method</a><a class="" href="audit.html">Repo audit</a><a class="" href="flagged.html">Flagged for review</a></nav>
+</div></header>
+<main class="wide">
+<h1>Method</h1>
+<p class="lead">How a price is made, and what the grade means.</p>
+
+<h2>Where a price comes from</h2>
+<p>A match is priced only when an official publisher prints both a current-season figure for each
+side and the fixture itself. Nothing else is allowed in. Tip shares, bookmaker prices and earlier
+sessions' numbers are excluded by construction.</p>
+
+<h2>Ice hockey</h2>
+<p>Goals for and goals against per game are pulled toward the league mean with a ten-game prior.
+The league mean itself is not an assumption: it is 3.1506 goals per team per game, computed from
+the 32-club goals-for column and the 352 team-games in the NHL standings table as published on
+24 October.</p>
+<pre>att(i) = (GF(i) + Lg × 10) / (GP(i) + 10)
+def(i) = (GA(i) + Lg × 10) / (GP(i) + 10)
+exp_goals(home) = att(home) × def(away) / Lg + 0.09
+exp_goals(away) = att(away) × def(home) / Lg − 0.09
+P(home win)     = Φ( (exp(home) − exp(away)) / 1.85 )
+P(home −1.5)    = 1 − Φ( (1.5 − margin) / 1.85 )
+P(over L)       = 1 − Φ( (L − total) / 2.40 )</pre>
+<p>The 0.18-goal home advantage is a stated assumption, split evenly. The two sigmas are stated
+assumptions. Everything else in the equations is read from the official table. Overtime and
+shootout results are folded into the win probability and are not modelled separately.</p>
+
+<h2>Basketball</h2>
+<p>Win-loss record pulled toward .500 with a twenty-game prior, combined log-5, then shifted by a
++0.22 home-court term in logit space. With two or three games played this deliberately produces a
+price close to a league-average home-court number, which is why no NBA pick is issued. No spread
+and no total is published: no official scoring or pace figure was captured, so either would be an
+invented number.</p>
+
+<h2>The confidence gate</h2>
+<pre>High    : P ≥ 0.60  and  fair price in [-250, +10000]
+Medium  : P ≥ 0.55  and  fair price in [-250, +10000]
+No pick : anything else</pre>
+<p>The brief asks for high-confidence picks inside −250 to +10000 and warns that the easy ones —
+market favourites with more than a 70% chance — are not wanted. Read as a conjunction those two
+instructions leave a 1.4-point window between −250 and −233. This desk applies the band as the
+hard rule and sets its own floor inside it. The band's own ceiling of −250 is 71.4% implied, so a
+merely short-priced favourite is already excluded by the band and no second, contradictory filter
+is needed.</p>
+
+<h2>What the grade is not</h2>
+<p>The grade describes the strength of our own originated price, not a claim about the result. A
+High pick at 61.7% loses 38.3% of the time. Nothing here is a staking instruction.</p>
+
+<h2>Reproducibility</h2>
+<p>The build reads no clock. Every timestamp is a captured constant, so rebuilding the same commit
+produces the same bytes. Run <code>python3 scripts/sa394f91e_build.py</code> then
+<code>python3 scripts/sa394f91e_validate.py</code>.</p>
+
+</main>
+<footer class="wide"><p>Independent research. Not affiliated with OLBG. No guaranteed returns and no
+staking advice. Every figure on this site is either quoted from the official source linked on the
+same row or published as our own originated estimate and labelled as such.</p></footer>
+</body></html>
