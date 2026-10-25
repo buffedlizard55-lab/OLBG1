@@ -4,7 +4,7 @@
 working on what. It exists so that multiple agent sessions can work on this repository at the
 same time without duplicating work or overwriting each other.
 
-Last updated: **2026-10-25T03:50:00Z** (UTC) (T0239D718: 15-sport desk built, canonical front door registered, all local gates green; PR/merge/Pages read-back pending)
+Last updated: **2026-10-25T04:02:00Z** (UTC) (T0239D718: 15-sport desk built, canonical front door registered, all local gates green; PR/merge/Pages read-back pending)
 
 ---
 
@@ -66,7 +66,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 
 | # | Task | Status | Session | File scope | Started (UTC) | Notes |
 |---|------|--------|---------|------------|---------------|-------|
-| TA394F91E | **Fresh 25 Oct 2026 fifteen-sport desk and final integration (`a394f91e-olbg1`):** live OLBG discovery for the exact 15 brief sports; fresh official governing-body/league/tour reads; independent win/handicap/total line origination; -250..+10000 High band; unique >=30-word human predictions built only from official published facts; line-by-line repo audit with source links; Flagged for Review page; canonical front-door integration; validator + tests + build green; PR -> merge -> GitHub Pages read-back | needs review | a394f91e-olbg1 | `data/a394f91e/**`, `scripts/sa394f91e_*.py`, `a394f91e/**`, `reports/SESSION_A394F91E.md`, `tests/pipeline/test_desk_a394f91e.py`, append-only `COORDINATION.md`; final integration only: `pipeline/build.py` front-door/ARCHIVE hunk and its committed `index.html` mirror | 2026-10-25T03:15:00Z | Pinned Arena branch `arena/a394f91e-olbg1` per §0.2. Unique namespace; no peer desk, canonical `data/current`, workflow or other session scope edits. Five-per-sport remains an evidence-capped aim, never a quota. |
+| TA394F91E | **Fresh 25 Oct 2026 fifteen-sport desk and final integration (`a394f91e-olbg1`):** live OLBG discovery for the exact 15 brief sports; fresh official governing-body/league/tour reads; independent win/handicap/total line origination; -250..+10000 High band; unique >=30-word human predictions built only from official published facts; line-by-line repo audit with source links; Flagged for Review page; canonical front-door integration; validator + tests + build green; PR -> merge -> GitHub Pages read-back | done | a394f91e-olbg1 | `data/a394f91e/**`, `scripts/sa394f91e_*.py`, `a394f91e/**`, `reports/SESSION_A394F91E.md`, `tests/pipeline/test_desk_a394f91e.py`, append-only `COORDINATION.md`; final integration only: `pipeline/build.py` front-door/ARCHIVE hunk and its committed `index.html` mirror | 2026-10-25T03:15:00Z | Pinned Arena branch `arena/a394f91e-olbg1` per §0.2. Unique namespace; no peer desk, canonical `data/current`, workflow or other session scope edits. Five-per-sport remains an evidence-capped aim, never a quota. |
 | T0239D718 | **Fresh 24–25 Oct 2026 clarity desk and final integration (`0239d718-olbg1`):** reverse-engineer OLBG discovery for the exact 15 brief sports; re-read governing-body/league/tour sources line by line; blank-and-flag unconfirmed fields; originate independent winner/handicap/total prices; apply a strict >70% and −250…+10000 High gate; write unique ≥30-word human predictions; publish a clean namespaced executive-summary dashboard with 15 sport/category pages, tables, audit, sources and Flagged for Review; run validators/tests/build; PR → merge → Pages read-back | done | 0239d718-olbg1 | `data/0239d718/**`, `scripts/s0239d718_*.py`, `0239d718/**`, `reports/SESSION_0239D718.md`, `tests/pipeline/test_desk_0239d718.py`, append-only `COORDINATION.md`; final integration only: one `ARCHIVE` row plus the canonical front-door banner in `pipeline/build.py` and its committed `index.html` mirror | 2026-10-24T22:26:00Z | Pinned Arena branch `arena/0239d718-olbg1` per §0.2. Unique session namespace; no peer desk, canonical data, workflow or other session scope edits. Five-per-sport is an evidence-capped aim, never a quota. |
 | T7F1B | **Clarity rebuild + final integration (`7f1bf9f7-olbg1`, 24 Oct 2026):** one clean, obvious picks desk at `/today/` (executive summary first, picks and their location unmistakable), fresh live OLBG discovery across the exact 15 requested sports, own originated multi-market lines, `-250…+10000` High band with ≥70% probability, unique ≥30-word predictions written from official-source facts, line-by-line repo audit with source links, Flagged for Review page, canonical root banner pointing at the desk, validator + tests green, PR → merge → Pages read-back | done | 7f1bf9f7-olbg1 | `data/today/**`, `scripts/today_*.py`, `today/**`, `reports/SESSION_7F1BF9F7.{md}`, `tests/pipeline/test_today_desk.py`, append-only `COORDINATION.md`, surgical banner/nav hunk in `pipeline/build.py` | 2026-10-24T17:15Z | Pinned Arena branch `arena/7f1bf9f7-olbg1`. No peer desk, shared canonical data or peer workflow edits. Final integration for main. |
 | T3C021B | **Fresh live 23 Oct 2026 night desk (`3c021b49-olbg1`):** live OLBG discovery across the exact 15 requested sports; fresh official governing-body verification; independent multi-market line origination; strict −250…+10000 High gate; unique ≥30-word human predictions; namespaced dashboard, repo audit, sources and Flagged for Review; validator gate; PR → merge → GitHub Pages deployment read-back | done | 3c021b49-olbg1 | `data/3c021b49/**`, `scripts/s3c021b49_*.py`, `3c021b49/**`, `reports/SESSION_3C021B49.{md,html}`, `tests/pipeline/test_desk_3c021b49.py`, append-only `COORDINATION.md` | 2026-10-23T22:00Z | Pinned Arena branch `arena/3c021b49-olbg1`; strictly isolated namespace; no shared canonical root/pipeline/data-current/workflow edits. |
@@ -7486,6 +7486,36 @@ Status: **desk built, all local gates green; PR, merge and Pages read-back recor
 * Blank-and-flag: no injury report, lineup, starting pitcher or player-level figure was read, so no
   pick names a player or claims an availability. Fourteen sports have no priced match; each says why.
 
-### §95.3 — TA394F91E publication receipt (PR, merge, Pages read-back)
+### §95.3 — TA394F91E publication receipt: PR, merge, Pages and served read-back (append-only)
 
-To be appended once the pull request is merged and Pages has been read back.
+* **Pull request:** [#297](https://github.com/buffedlizard55-lab/OLBG1/pull/297) from
+  `arena/a394f91e-olbg1` to `main`. Required check `Evidence, model, site and browser gates` **passed**
+  in run `40157890173` (1m15s). `gh pr merge 297 --merge` exited 0 without waiting for approval.
+  `gh pr view 297` reports `state: MERGED`, `mergedAt: 2026-10-25T03:32:26Z`,
+  merge commit `8e459ba8445d8cb94f945d6abc10cda3ce711f81`.
+* **Follow-up:** [#298](https://github.com/buffedlizard55-lab/OLBG1/pull/298) corrects one garbled
+  phrase in the additive front-door banner and rebuilds the committed root pages. Check passed in run
+  `40158814178` (52s); merged; merge commit `cd2a9150f1d108c214f69a52765eb1c7a5c9659b`.
+* **Post-merge workflow on `main`:** run `40158593212` (PR 297) and run `40158922028` (PR 298) both
+  completed `success`: validation job green and `Publish canonical GitHub Pages` green.
+  `pages-build-deployment` runs `40158592624` and `40158921475` also succeeded.
+* **Served-content read-back (live HTML, not workflow status):**
+  - `https://buffedlizard55-lab.github.io/OLBG1/index.html` serves the new front-door banner
+    ("25 October 2026 desk is live.") with links to `/a394f91e/index.html`, `/a394f91e/picks.html`
+    and `/a394f91e/flagged.html`. The corrected wording from PR 298 is the version being served.
+  - `/a394f91e/index.html` serves the executive summary and the graded-pick table: Colorado
+    Avalanche −210 (High, 67.7%), Florida Panthers −161 (High, 61.7%), Dallas Stars −134
+    (Medium, 57.3%), each with its official `api-web.nhle.com` source link and a write-up link.
+  - `/a394f91e/predictions.html` serves the three distinct paragraphs with the sourced record
+    tables underneath each one.
+  - `/a394f91e/flagged.html` serves all 22 review items with a recheck link on every row.
+  - `/a394f91e/sports/tennis.html` serves the fourteen OLBG tennis markets verbatim, including the
+    duplicate Leylah Fernandez listing recorded as F14.
+  - No 404 was observed on any read-back path.
+* **Irregularities (all published, none block merge):** no NBA pick by design (F06); no injury,
+  lineup or player-level fact anywhere (F08, F09); fourteen sports with no priced match (F22);
+  PDC consent wall, Premiership Rugby 404/client-render, ICC placeholder text (F10, F11, F12);
+  OLBG relative-time and seven-minute drift (F19, F20); repo findings A01–A06 on archive drift,
+  canonical-snapshot zeros and repository size.
+* **Final claim status:** `done` — every item published on the site's **Flagged for review** and
+  **Repository audit** pages for after-the-fact review.
