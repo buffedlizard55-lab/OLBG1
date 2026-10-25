@@ -34,6 +34,7 @@ OFFICIAL_HOSTS = set(PUBLISHERS) | {'www.nhl.com', 'www.mlb.com'}
 #   link='b2719ad3/index.html'   link='37003e61/index.html'
 #   link='8cfb80b2/index.html'   link='02d3d515/index.html'   link='3d121822/index.html'
 ARCHIVE = [
+    ('a394f91e/index.html', '25 Oct 2026 fifteen-sport desk (a394f91e): 9 official fixtures priced across 17 originated markets, 3 graded picks (2 High, 1 Medium), 3 written predictions, 82 OLBG markets and 13 outrights recorded, 29 sources, 22 flags, 10 repo findings'),
     ('0239d718/index.html', '24 Oct 2026 clarity desk (0239d718): 15 sports, 57 matches, 75 written picks, 28 strict-gate High picks, 228 originated lines, 50 official sources, 22 flags'),
     ('f840c28a/index.html', '24 Oct 2026 clarity desk (f840c28a): 15 sports, 20 fixtures, 16 priced matches, 3 High picks, 10 written predictions, 13 flags'),
     ('review7568/index.html', 'Flagged for Review: canonical input inconsistencies and bounded NHL editorial update'),
@@ -257,7 +258,19 @@ publisher's own price is shown separately where the official feed carries one. 1
                 if not any(f['sport'] == code for f in d['fixtures'])]
         body = f"""
 <div class="panel highlight">
-<p style="font-size:18px;margin-bottom:10px"><strong>Latest 15-sport clarity desk is live.</strong>
+<p style="font-size:18px;margin-bottom:10px"><strong>25 October 2026 desk is live.</strong>
+Fresh reads of the official NHL, MLB, NBA and Formula 1 pages for the thirty-first of this run.
+Nine fixtures priced across seventeen originated markets, three graded picks (two High, one Medium)
+and three written predictions, alongside 82 OLBG match markets and 13 outrights recorded across the
+fifteen brief sports. All fifteen sports are published, including the twelve with no priced match and
+the reason for each gap.</p>
+<p style="margin-bottom:0"><a href="{self.href('a394f91e/index.html', 'index.html')}"><strong>Open the 25 October desk →</strong></a>
+&nbsp;·&nbsp;<a href="{self.href('a394f91e/picks.html', 'index.html')}">Picks →</a>
+&nbsp;·&nbsp;<a href="{self.href('a394f91e/flagged.html', 'index.html')}">Flagged for review →</a></p>
+</div>
+
+<div class="panel highlight">
+<p style="font-size:18px;margin-bottom:10px"><strong>24 October 15-sport clarity desk.</strong>
 It covers all 15 requested sports with 75 written selections, 28 strict-gate high-confidence picks,
 228 independently originated lines, 50 official source reads and an explicit review queue.</p>
 <p style="margin-bottom:0"><a href="{self.href('0239d718/index.html', 'index.html')}"><strong>Open the 15-sport desk →</strong></a>

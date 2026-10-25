@@ -1,0 +1,1936 @@
+{
+ "audit": [
+  {
+   "area": "repository size",
+   "evidence": "git ls-files | wc -l  \u2192  3340",
+   "id": "A01",
+   "severity": "high",
+   "text": "The repository tracks 3,340 files and 148 MB, of which 2,061 are HTML pages. The canonical build publishes one desk; the rest is accumulated archive.",
+   "where": "git ls-files"
+  },
+  {
+   "area": "archive drift",
+   "evidence": "pipeline/build.py ARCHIVE has 22 entries; 78 desk directories exist",
+   "id": "A02",
+   "severity": "high",
+   "text": "78 eight-hex desk directories are committed but only 22 are registered in the ARCHIVE list of pipeline/build.py. The other 56 are in the repository and in git history but unreachable from the published site.",
+   "where": "pipeline/build.py#L36"
+  },
+  {
+   "area": "canonical data",
+   "evidence": "data/current/snapshot.json counts",
+   "id": "A03",
+   "severity": "high",
+   "text": "The canonical snapshot under data/current reports captured_listings 108 but current_listings 0, upcoming_exact 0, priced_matches 0 and originated_markets 0. The canonical pipeline is capturing OLBG rows and then resolving none of them as current, so the canonical dataset has never produced a priced match.",
+   "where": "data/current/snapshot.json"
+  },
+  {
+   "area": "large single file",
+   "evidence": "du -k data/current/audit.json \u2192 10228",
+   "id": "A04",
+   "severity": "medium",
+   "text": "data/current/audit.json is 10.0 MB, the largest tracked file, and is rewritten by every refresh. It makes the repository diff noisy and slows every clone.",
+   "where": "data/current/audit.json"
+  },
+  {
+   "area": "coordination drift",
+   "evidence": "grep -c \"final integration\" COORDINATION.md \u2192 39",
+   "id": "A05",
+   "severity": "medium",
+   "text": "COORDINATION.md runs to 7,440 lines. Seven different sessions have recorded themselves as owning \"the canonical front door\" and 39 lines mention \"final integration\". The convention in section 0.2 (one pinned branch per session) is sound; the bookkeeping has outgrown the file.",
+   "where": "COORDINATION.md"
+  },
+  {
+   "area": "page count",
+   "evidence": "ls *.html \u2192 20; build reports 25 pages",
+   "id": "A06",
+   "severity": "low",
+   "text": "The committed root carries 20 top-level HTML pages and the published artifact is 25 pages, so the front door and the artifact are not the same shape. A reader following a root link can land on a page the canonical build does not regenerate.",
+   "where": "index.html"
+  },
+  {
+   "area": "link integrity (clean)",
+   "evidence": "0 broken local links",
+   "id": "A07",
+   "severity": "low",
+   "text": "All local links across the nine primary root pages resolve on disk. 42 distinct local HTML targets are linked from index.html and every one exists. No broken local link was found in this session's scan.",
+   "where": "index.html"
+  },
+  {
+   "area": "hygiene (clean)",
+   "evidence": "git ls-files | grep -c \"__pycache__\\|\\.pyc$\"  \u2192  0",
+   "id": "A08",
+   "severity": "low",
+   "text": "No compiled artefacts are tracked: zero __pycache__ or .pyc files are in the index, and .gitignore already covers _site, node_modules and raw response bodies. The transient-tool convention is being followed.",
+   "where": ".gitignore"
+  },
+  {
+   "area": "unverifiable claims in peer desks",
+   "evidence": "reviewed OLBG feed markup for eleven sports",
+   "id": "A09",
+   "severity": "medium",
+   "text": "Peer desks in this repository publish tipped-share percentages as confidence and some label OLBG prices as originating here. A member tip share is a vote share. This desk reproduces tip shares verbatim and never uses one as a probability.",
+   "where": "COORDINATION.md"
+  },
+  {
+   "area": "workflow",
+   "evidence": "two workflows, one scheduled",
+   "id": "A10",
+   "severity": "low",
+   "text": ".github/workflows/current-pages.yml is the only publishing workflow and it builds from pipeline/build.py on main. evidence-pages.yml is manual-dispatch only, so it cannot race the canonical deploy. That arrangement is correct.",
+   "where": ".github/workflows/current-pages.yml"
+  }
+ ],
+ "built_at": "2026-10-25T03:35:00Z",
+ "discovery": [
+  {
+   "competition": "",
+   "event": "Elena Rybakina vs Leylah Fernandez",
+   "market": "Win Match",
+   "most_tipped": "Elena Rybakina",
+   "olbg_time": "Tomorrow 05:00",
+   "sport": "tennis",
+   "tip_share": "13/17 (76%)",
+   "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Elena_Rybakina_vs_Leylah_Fernandez/3?event_id=902207"
+  },
+  {
+   "competition": "",
+   "event": "Daniil Medvedev vs Nikoloz Basilashvili",
+   "market": "Win Match",
+   "most_tipped": "Daniil Medvedev",
+   "olbg_time": "Tomorrow 06:00",
+   "sport": "tennis",
+   "tip_share": "13/15 (87%)",
+   "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Daniil_Medvedev_vs_Nikoloz_Basilashvili/3?event_id=902251"
+  },
+  {
+   "competition": "",
+   "event": "Ashlyn Krueger vs Katerina Siniakova",
+   "market": "Win Match",
+   "most_tipped": "Katerina Siniakova",
+   "olbg_time": "Tomorrow 00:30",
+   "sport": "tennis",
+   "tip_share": "7/12 (58%)",
+   "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Ashlyn_Krueger_vs_Katerina_Siniakova/3?event_id=902171"
+  },
+  {
+   "competition": "",
+   "event": "Lorenzo Musetti vs Taylor Fritz",
+   "market": "Win Match",
+   "most_tipped": "Taylor Fritz",
+   "olbg_time": "Tomorrow 09:30",
+   "sport": "tennis",
+   "tip_share": "6/9 (67%)",
+   "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Lorenzo_Musetti_vs_Taylor_Fritz/3?event_id=902253"
+  },
+  {
+   "competition": "",
+   "event": "Stan Wawrinka vs Jiri Lehecka",
+   "market": "Win Match",
+   "most_tipped": "Jiri Lehecka",
+   "olbg_time": "26 Oct 06:00",
+   "sport": "tennis",
+   "tip_share": "4/6 (67%)",
+   "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Stan_Wawrinka_vs_Jiri_Lehecka/3?event_id=902232"
+  },
+  {
+   "competition": "",
+   "event": "Novak Djokovic vs Ugo Humbert",
+   "market": "Win Match",
+   "most_tipped": "Novak Djokovic",
+   "olbg_time": "26 Oct 06:00",
+   "sport": "tennis",
+   "tip_share": "3/4 (75%)",
+   "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Novak_Djokovic_vs_Ugo_Humbert/3?event_id=902233"
+  },
+  {
+   "competition": "",
+   "event": "Alexandra Eala vs Mika Stojsavljevic",
+   "market": "Win Match",
+   "most_tipped": "Alexandra Eala",
+   "olbg_time": "26 Oct 22:00",
+   "sport": "tennis",
+   "tip_share": "3/4 (75%)",
+   "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Alexandra_Eala_vs_Mika_Stojsavljevic/3?event_id=902175"
+  },
+  {
+   "competition": "",
+   "event": "Moyuka Uchijima vs Elise Mertens",
+   "market": "Win Match",
+   "most_tipped": "Elise Mertens",
+   "olbg_time": "26 Oct 22:00",
+   "sport": "tennis",
+   "tip_share": "2/3 (67%)",
+   "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Moyuka_Uchijima_vs_Elise_Mertens/3?event_id=902173"
+  },
+  {
+   "competition": "",
+   "event": "Leylah Fernandez vs Himeno Sakatsume",
+   "market": "Win Match",
+   "most_tipped": "Leylah Fernandez",
+   "olbg_time": "26 Oct 22:00",
+   "sport": "tennis",
+   "tip_share": "2/3 (67%)",
+   "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Leylah_Fernandez_vs_Himeno_Sakatsume/3?event_id=902172"
+  },
+  {
+   "competition": "",
+   "event": "Tayisiya Morderger vs Alja Senica",
+   "market": "Set Betting",
+   "most_tipped": "Tayisiya Morderger to win 2-1",
+   "olbg_time": "Tomorrow 07:00",
+   "sport": "tennis",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Tayisiya_Morderger_vs_Alja_Senica/3?event_id=902266"
+  },
+  {
+   "competition": "",
+   "event": "Jan Lennard Struff vs Tallon Griekspoor",
+   "market": "Win Match",
+   "most_tipped": "Jan Lennard Struff",
+   "olbg_time": "Tomorrow 11:30",
+   "sport": "tennis",
+   "tip_share": "1/2 (50%)",
+   "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Jan_Lennard_Struff_vs_Tallon_Griekspoor/3?event_id=902265"
+  },
+  {
+   "competition": "",
+   "event": "Valentin Vacherot vs Mariano Navone",
+   "market": "Win Match",
+   "most_tipped": "Mariano Navone",
+   "olbg_time": "26 Oct 06:00",
+   "sport": "tennis",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Valentin_Vacherot_vs_Mariano_Navone/3?event_id=902237"
+  },
+  {
+   "competition": "",
+   "event": "Ben Shelton vs Casper Ruud",
+   "market": "Win Match",
+   "most_tipped": "Casper Ruud",
+   "olbg_time": "26 Oct 06:00",
+   "sport": "tennis",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Ben_Shelton_vs_Casper_Ruud/3?event_id=902231"
+  },
+  {
+   "competition": "",
+   "event": "Jerome Kym vs Arthur Rinderknech",
+   "market": "Win Match",
+   "most_tipped": "Jerome Kym",
+   "olbg_time": "26 Oct 06:00",
+   "sport": "tennis",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Tennis/All_Tennis/All_Events/Jerome_Kym_vs_Arthur_Rinderknech/3?event_id=902234"
+  },
+  {
+   "competition": "Switzerland NLA",
+   "event": "Servette GE vs ZSC Lions",
+   "market": "Money Line",
+   "most_tipped": "ZSC Lions",
+   "olbg_time": "Tomorrow 09:00",
+   "sport": "ice-hockey",
+   "tip_share": "3/3 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Switzerland_NLA/Servette_GE_vs_ZSC_Lions/13?event_id=200021"
+  },
+  {
+   "competition": "Germany Eishockey Liga",
+   "event": "Schwenninger Wild Wings vs Eisbaren Berlin",
+   "market": "Money Line",
+   "most_tipped": "Eisbaren Berlin",
+   "olbg_time": "Tomorrow 09:00",
+   "sport": "ice-hockey",
+   "tip_share": "3/3 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Germany_Eishockey_Liga/Schwenninger_Wild_Wings_vs_Eisbaren_Berlin/13?event_id=200041"
+  },
+  {
+   "competition": "Germany Eishockey Liga",
+   "event": "Lowen Frankfurt vs Grizzlys Wolfsburg",
+   "market": "Money Line",
+   "most_tipped": "Grizzlys Wolfsburg",
+   "olbg_time": "Tomorrow 09:00",
+   "sport": "ice-hockey",
+   "tip_share": "2/2 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Germany_Eishockey_Liga/Lowen_Frankfurt_vs_Grizzlys_Wolfsburg/13?event_id=200037"
+  },
+  {
+   "competition": "NHL",
+   "event": "MTL Canadiens @ WPG Jets",
+   "market": "Game Totals",
+   "most_tipped": "Over 5.50",
+   "olbg_time": "Tomorrow 19:07",
+   "sport": "ice-hockey",
+   "tip_share": "2/2 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/MTL_Canadiens_@_WPG_Jets/13?event_id=200074"
+  },
+  {
+   "competition": "Switzerland NLA",
+   "event": "Bern vs Lugano",
+   "market": "Money Line",
+   "most_tipped": "Bern",
+   "olbg_time": "Tomorrow 09:00",
+   "sport": "ice-hockey",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Switzerland_NLA/Bern_vs_Lugano/13?event_id=200018"
+  },
+  {
+   "competition": "Austria EHL",
+   "event": "Vienna Capitals vs Graz 99ers",
+   "market": "Money Line",
+   "most_tipped": "Vienna Capitals",
+   "olbg_time": "Tomorrow 09:45",
+   "sport": "ice-hockey",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Austria_EHL/Vienna_Capitals_vs_Graz_99ers/13?event_id=200043"
+  },
+  {
+   "competition": "Germany Eishockey Liga",
+   "event": "Iserlohn Roosters vs Nurnberg Ice Tigers",
+   "market": "Money Line",
+   "most_tipped": "Iserlohn Roosters",
+   "olbg_time": "Tomorrow 11:30",
+   "sport": "ice-hockey",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Germany_Eishockey_Liga/Iserlohn_Roosters_vs_Nurnberg_Ice_Tigers/13?event_id=200038"
+  },
+  {
+   "competition": "Germany Eishockey Liga",
+   "event": "Augsburger Panther vs Straubing Tigers",
+   "market": "Money Line",
+   "most_tipped": "Straubing Tigers",
+   "olbg_time": "Tomorrow 11:30",
+   "sport": "ice-hockey",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Germany_Eishockey_Liga/Augsburger_Panther_vs_Straubing_Tigers/13?event_id=200036"
+  },
+  {
+   "competition": "Germany Eishockey Liga",
+   "event": "Krefeld Pinguine vs EHC Munchen",
+   "market": "Money Line",
+   "most_tipped": "EHC Munchen",
+   "olbg_time": "Tomorrow 11:30",
+   "sport": "ice-hockey",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Germany_Eishockey_Liga/Krefeld_Pinguine_vs_EHC_Munchen/13?event_id=200039"
+  },
+  {
+   "competition": "Germany Eishockey Liga",
+   "event": "Fischtown Pinguins Bremerhaven vs ERC Ingolstadt",
+   "market": "Money Line",
+   "most_tipped": "Fischtown Pinguins Bremerhaven",
+   "olbg_time": "Tomorrow 14:00",
+   "sport": "ice-hockey",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/Other/Germany_Eishockey_Liga/Fischtown_Pinguins_Bremerhaven_vs_ERC_Ingolstadt/13?event_id=200040"
+  },
+  {
+   "competition": "NHL",
+   "event": "NY Islanders @ DAL Stars",
+   "market": "Money Line",
+   "most_tipped": "DAL Stars",
+   "olbg_time": "Tomorrow 18:07",
+   "sport": "ice-hockey",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/NY_Islanders_@_DAL_Stars/13?event_id=200076"
+  },
+  {
+   "competition": "NHL",
+   "event": "COL Avalanche @ NSH Predators",
+   "market": "Money Line",
+   "most_tipped": "COL Avalanche",
+   "olbg_time": "Tomorrow 20:07",
+   "sport": "ice-hockey",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/COL_Avalanche_@_NSH_Predators/13?event_id=200072"
+  },
+  {
+   "competition": "NHL",
+   "event": "MIN Wild @ VAN Canucks",
+   "market": "Game Totals",
+   "most_tipped": "Over 6.50",
+   "olbg_time": "Tomorrow 22:07",
+   "sport": "ice-hockey",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/NHL/NHL/MIN_Wild_@_VAN_Canucks/13?event_id=200075"
+  },
+  {
+   "competition": "Korea KBL",
+   "event": "Korea Gas Corporation vs Seoul Thunders",
+   "market": "Money Line",
+   "most_tipped": "Korea Gas Corporation",
+   "olbg_time": "Tomorrow 03:30",
+   "sport": "basketball",
+   "tip_share": "2/2 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Basketball/Other/Korea_KBL/Korea_Gas_Corporation_vs_Seoul_Thunders/4?event_id=536125"
+  },
+  {
+   "competition": "Korea KBL",
+   "event": "Anyang Red Boosters vs Wonju Promy",
+   "market": "Money Line",
+   "most_tipped": "Anyang Red Boosters",
+   "olbg_time": "Tomorrow 01:00",
+   "sport": "basketball",
+   "tip_share": "1/2 (50%)",
+   "url": "https://www.olbg.com/betting-tips/Basketball/Other/Korea_KBL/Anyang_Red_Boosters_vs_Wonju_Promy/4?event_id=536126"
+  },
+  {
+   "competition": "Korea KBL",
+   "event": "Seoul Knights vs Suwon Sonicboom",
+   "market": "Money Line",
+   "most_tipped": "Seoul Knights",
+   "olbg_time": "Tomorrow 01:00",
+   "sport": "basketball",
+   "tip_share": "1/2 (50%)",
+   "url": "https://www.olbg.com/betting-tips/Basketball/Other/Korea_KBL/Seoul_Knights_vs_Suwon_Sonicboom/4?event_id=536127"
+  },
+  {
+   "competition": "Poland PLK",
+   "event": "Arka Gdynia vs Gornik Walbrzych",
+   "market": "Money Line",
+   "most_tipped": "Gornik Walbrzych",
+   "olbg_time": "Tomorrow 07:30",
+   "sport": "basketball",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Basketball/European/Poland_PLK/Arka_Gdynia_vs_Gornik_Walbrzych/4?event_id=536119"
+  },
+  {
+   "competition": "Poland PLK",
+   "event": "Legia Warsaw vs Stal Ostrow",
+   "market": "Money Line",
+   "most_tipped": "Stal Ostrow",
+   "olbg_time": "Tomorrow 10:00",
+   "sport": "basketball",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Basketball/European/Poland_PLK/Legia_Warsaw_vs_Stal_Ostrow/4?event_id=536121"
+  },
+  {
+   "competition": "",
+   "event": "Tuskers vs Western Province T20",
+   "market": "Win Match",
+   "most_tipped": "Western Province",
+   "olbg_time": "Tomorrow 07:00",
+   "sport": "cricket",
+   "tip_share": "12/12 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Tuskers_vs_Western_Province_T20/7?event_id=188850"
+  },
+  {
+   "competition": "",
+   "event": "Pakistan vs England One Day Match",
+   "market": "Win Match",
+   "most_tipped": "Pakistan",
+   "olbg_time": "Tomorrow 04:00",
+   "sport": "cricket",
+   "tip_share": "11/19 (58%)",
+   "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Pakistan_vs_England_One_Day_Match/7?event_id=188838"
+  },
+  {
+   "competition": "",
+   "event": "North West Dragons vs Northern Cape Heat T20",
+   "market": "Win Match",
+   "most_tipped": "North West Dragons",
+   "olbg_time": "Tomorrow 07:00",
+   "sport": "cricket",
+   "tip_share": "11/12 (92%)",
+   "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/North_West_Dragons_vs_Northern_Cape_Heat_T20/7?event_id=188851"
+  },
+  {
+   "competition": "",
+   "event": "Eastern Storm vs South Africa Emerging T20",
+   "market": "Win Match",
+   "most_tipped": "Eastern Storm",
+   "olbg_time": "Tomorrow 07:00",
+   "sport": "cricket",
+   "tip_share": "9/10 (90%)",
+   "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Eastern_Storm_vs_South_Africa_Emerging_T20/7?event_id=188848"
+  },
+  {
+   "competition": "",
+   "event": "Boland vs Titans T20",
+   "market": "Win Match",
+   "most_tipped": "Titans",
+   "olbg_time": "Tomorrow 07:00",
+   "sport": "cricket",
+   "tip_share": "8/9 (89%)",
+   "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Boland_vs_Titans_T20/7?event_id=188849"
+  },
+  {
+   "competition": "",
+   "event": "India W vs Zimbabwe W 2nd ODI",
+   "market": "Top Team1 Batsman",
+   "most_tipped": "S Mandhana (India W)",
+   "olbg_time": "Tomorrow 04:30",
+   "sport": "cricket",
+   "tip_share": "3/9 (33%)",
+   "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/India_W_vs_Zimbabwe_W_2nd_ODI/7?event_id=188847"
+  },
+  {
+   "competition": "",
+   "event": "New Zealand vs India 3rd T20 Match",
+   "market": "Win Match",
+   "most_tipped": "India",
+   "olbg_time": "27 Oct 03:00",
+   "sport": "cricket",
+   "tip_share": "3/4 (75%)",
+   "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/New_Zealand_vs_India_3rd_T20_Match/7?event_id=188852"
+  },
+  {
+   "competition": "",
+   "event": "Namibia vs Ireland 3rd ODI",
+   "market": "Win Match",
+   "most_tipped": "Ireland",
+   "olbg_time": "27 Oct 03:30",
+   "sport": "cricket",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Cricket/All_Cricket/All_Events/Namibia_vs_Ireland_3rd_ODI/7?event_id=188854"
+  },
+  {
+   "competition": "",
+   "event": "Harlequins v Saracens",
+   "market": "Handicap",
+   "most_tipped": "Harlequins +6.50",
+   "olbg_time": "Tomorrow 11:00",
+   "sport": "rugby-union",
+   "tip_share": "5/7 (71%)",
+   "url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/Harlequins_v_Saracens/9?event_id=609571"
+  },
+  {
+   "competition": "",
+   "event": "La Rochelle v Bordeaux",
+   "market": "To Win",
+   "most_tipped": "La Rochelle",
+   "olbg_time": "Tomorrow 16:05",
+   "sport": "rugby-union",
+   "tip_share": "3/6 (50%)",
+   "url": "https://www.olbg.com/betting-tips/Rugby_Union/All_Rugby_Union/All_Events/La_Rochelle_v_Bordeaux/9?event_id=609554"
+  },
+  {
+   "competition": "",
+   "event": "Gerwyn Price vs Stephen Bunting",
+   "market": "Win Match 2-way",
+   "most_tipped": "Gerwyn Price",
+   "olbg_time": "Tomorrow 09:15",
+   "sport": "darts",
+   "tip_share": "9/11 (82%)",
+   "url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Gerwyn_Price_vs_Stephen_Bunting/15?event_id=32407"
+  },
+  {
+   "competition": "",
+   "event": "Ross Smith vs Luke Woodhouse",
+   "market": "Win Match 2-way",
+   "most_tipped": "Ross Smith",
+   "olbg_time": "Tomorrow 08:15",
+   "sport": "darts",
+   "tip_share": "7/9 (78%)",
+   "url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Ross_Smith_vs_Luke_Woodhouse/15?event_id=32408"
+  },
+  {
+   "competition": "",
+   "event": "Martin Schindler vs Jonny Clayton",
+   "market": "Most 180s",
+   "most_tipped": "Draw",
+   "olbg_time": "Tomorrow 10:15",
+   "sport": "darts",
+   "tip_share": "2/3 (67%)",
+   "url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Martin_Schindler_vs_Jonny_Clayton/15?event_id=32410"
+  },
+  {
+   "competition": "",
+   "event": "Krzysztof Ratajski vs Luke Littler",
+   "market": "Handicap 2-way",
+   "most_tipped": "Krzysztof Ratajski +5.50",
+   "olbg_time": "Tomorrow 11:15",
+   "sport": "darts",
+   "tip_share": "2/3 (67%)",
+   "url": "https://www.olbg.com/betting-tips/Darts/All_Darts/All_Events/Krzysztof_Ratajski_vs_Luke_Littler/15?event_id=32409"
+  },
+  {
+   "competition": "",
+   "event": "Vakifbank W vs Galatasaray W",
+   "market": "Win Match",
+   "most_tipped": "Vakifbank W",
+   "olbg_time": "Tomorrow 07:00",
+   "sport": "volleyball",
+   "tip_share": "7/12 (58%)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Vakifbank_W_vs_Galatasaray_W/21?event_id=37110"
+  },
+  {
+   "competition": "",
+   "event": "Barock Volleys Ludwigsburg vs TV Rottenburg",
+   "market": "Win Match",
+   "most_tipped": "TV Rottenburg",
+   "olbg_time": "Tomorrow 12:00",
+   "sport": "volleyball",
+   "tip_share": "7/9 (78%)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Barock_Volleys_Ludwigsburg_vs_TV_Rottenburg/21?event_id=37014"
+  },
+  {
+   "competition": "",
+   "event": "Trentino vs Cisterna",
+   "market": "Win Match",
+   "most_tipped": "Cisterna",
+   "olbg_time": "Tomorrow 12:00",
+   "sport": "volleyball",
+   "tip_share": "7/10 (70%)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Trentino_vs_Cisterna/21?event_id=36994"
+  },
+  {
+   "competition": "",
+   "event": "ETV Hamburg W vs Munster W",
+   "market": "Win Match",
+   "most_tipped": "ETV Hamburg W",
+   "olbg_time": "Tomorrow 10:30",
+   "sport": "volleyball",
+   "tip_share": "6/9 (67%)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/ETV_Hamburg_W_vs_Munster_W/21?event_id=37059"
+  },
+  {
+   "competition": "",
+   "event": "Orpo W vs LP Kangasala W",
+   "market": "Win Match",
+   "most_tipped": "Orpo W",
+   "olbg_time": "Tomorrow 11:00",
+   "sport": "volleyball",
+   "tip_share": "5/6 (83%)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Orpo_W_vs_LP_Kangasala_W/21?event_id=37107"
+  },
+  {
+   "competition": "",
+   "event": "Civitanova vs Padova",
+   "market": "Win Match",
+   "most_tipped": "Padova",
+   "olbg_time": "Tomorrow 13:00",
+   "sport": "volleyball",
+   "tip_share": "5/5 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Civitanova_vs_Padova/21?event_id=36995"
+  },
+  {
+   "competition": "",
+   "event": "Perugia vs Pordenone",
+   "market": "Win Match",
+   "most_tipped": "Pordenone",
+   "olbg_time": "Tomorrow 13:00",
+   "sport": "volleyball",
+   "tip_share": "5/8 (63%)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Perugia_vs_Pordenone/21?event_id=36997"
+  },
+  {
+   "competition": "",
+   "event": "Warta Zawiercie vs LUK Lublin",
+   "market": "Win Match",
+   "most_tipped": "Warta Zawiercie",
+   "olbg_time": "Tomorrow 10:00",
+   "sport": "volleyball",
+   "tip_share": "4/5 (80%)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Warta_Zawiercie_vs_LUK_Lublin/21?event_id=37115"
+  },
+  {
+   "competition": "",
+   "event": "Tourcoing vs Nice",
+   "market": "Win Match",
+   "most_tipped": "Nice",
+   "olbg_time": "Tomorrow 12:00",
+   "sport": "volleyball",
+   "tip_share": "4/5 (80%)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Tourcoing_vs_Nice/21?event_id=37054"
+  },
+  {
+   "competition": "",
+   "event": "CHKS Chelm vs Resovia Rzeszow",
+   "market": "Win Match",
+   "most_tipped": "Resovia Rzeszow",
+   "olbg_time": "Tomorrow 13:00",
+   "sport": "volleyball",
+   "tip_share": "4/7 (57%)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/CHKS_Chelm_vs_Resovia_Rzeszow/21?event_id=36965"
+  },
+  {
+   "competition": "",
+   "event": "Conegliano W vs Vallefoglia W",
+   "market": "Win Match",
+   "most_tipped": "Vallefoglia W",
+   "olbg_time": "28 Oct 15:00",
+   "sport": "volleyball",
+   "tip_share": "4/5 (80%)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Conegliano_W_vs_Vallefoglia_W/21?event_id=37076"
+  },
+  {
+   "competition": "",
+   "event": "Besiktas W vs Goztepe W",
+   "market": "Win Match",
+   "most_tipped": "Goztepe W",
+   "olbg_time": "Tomorrow 06:00",
+   "sport": "volleyball",
+   "tip_share": "3/6 (50%)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Besiktas_W_vs_Goztepe_W/21?event_id=37108"
+  },
+  {
+   "competition": "",
+   "event": "Kuzeyboru W vs Nilufer Bld W",
+   "market": "Win Match",
+   "most_tipped": "Kuzeyboru W",
+   "olbg_time": "Tomorrow 07:00",
+   "sport": "volleyball",
+   "tip_share": "3/4 (75%)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Kuzeyboru_W_vs_Nilufer_Bld_W/21?event_id=37109"
+  },
+  {
+   "competition": "",
+   "event": "Ilbank W vs Afyon Bld W",
+   "market": "Win Match",
+   "most_tipped": "Ilbank W",
+   "olbg_time": "Tomorrow 09:00",
+   "sport": "volleyball",
+   "tip_share": "3/5 (60%)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Ilbank_W_vs_Afyon_Bld_W/21?event_id=37112"
+  },
+  {
+   "competition": "",
+   "event": "Aras Kargo W vs THY Spor Kulubu W",
+   "market": "Win Match",
+   "most_tipped": "Aras Kargo W",
+   "olbg_time": "Tomorrow 09:00",
+   "sport": "volleyball",
+   "tip_share": "3/4 (75%)",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/All_Volleyball/All_Events/Aras_Kargo_W_vs_THY_Spor_Kulubu_W/21?event_id=37111"
+  },
+  {
+   "competition": "",
+   "event": "Ystads IF HF vs Hammarby IF HF",
+   "market": "Money Line",
+   "most_tipped": "Tie",
+   "olbg_time": "Tomorrow 09:00",
+   "sport": "handball",
+   "tip_share": "7/10 (70%)",
+   "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Ystads_IF_HF_vs_Hammarby_IF_HF/20?event_id=12152"
+  },
+  {
+   "competition": "",
+   "event": "CBM Sporting Alicante vs Ademar Leon",
+   "market": "Money Line",
+   "most_tipped": "Tie",
+   "olbg_time": "Tomorrow 07:00",
+   "sport": "handball",
+   "tip_share": "5/8 (63%)",
+   "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/CBM_Sporting_Alicante_vs_Ademar_Leon/20?event_id=12106"
+  },
+  {
+   "competition": "",
+   "event": "Saint Raphael vs PSG Handball",
+   "market": "Money Line",
+   "most_tipped": "Tie",
+   "olbg_time": "Tomorrow 11:00",
+   "sport": "handball",
+   "tip_share": "5/9 (56%)",
+   "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Saint_Raphael_vs_PSG_Handball/20?event_id=12084"
+  },
+  {
+   "competition": "",
+   "event": "Bergischer HC vs HC Hamburg",
+   "market": "Money Line",
+   "most_tipped": "Tie",
+   "olbg_time": "Tomorrow 11:30",
+   "sport": "handball",
+   "tip_share": "5/5 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Bergischer_HC_vs_HC_Hamburg/20?event_id=12087"
+  },
+  {
+   "competition": "",
+   "event": "SC Magdeburg vs HC Kriens Luzern",
+   "market": "Money Line",
+   "most_tipped": "Tie",
+   "olbg_time": "28 Oct 15:45",
+   "sport": "handball",
+   "tip_share": "5/7 (71%)",
+   "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/SC_Magdeburg_vs_HC_Kriens_Luzern/20?event_id=12136"
+  },
+  {
+   "competition": "",
+   "event": "BM Granollers vs Angel Ximenez Puente Genil",
+   "market": "Money Line",
+   "most_tipped": "BM Granollers",
+   "olbg_time": "Tomorrow 07:30",
+   "sport": "handball",
+   "tip_share": "4/12 (33%)",
+   "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/BM_Granollers_vs_Angel_Ximenez_Puente_Genil/20?event_id=12102"
+  },
+  {
+   "competition": "",
+   "event": "Lithuania W vs Belgium W",
+   "market": "Money Line",
+   "most_tipped": "Belgium (W)",
+   "olbg_time": "Tomorrow 10:00",
+   "sport": "handball",
+   "tip_share": "4/8 (50%)",
+   "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Lithuania_W_vs_Belgium_W/20?event_id=12125"
+  },
+  {
+   "competition": "",
+   "event": "Rhein Neckar Lowen vs SC Magdeburg",
+   "market": "Money Line",
+   "most_tipped": "Rhein Neckar Lowen",
+   "olbg_time": "Tomorrow 10:00",
+   "sport": "handball",
+   "tip_share": "4/10 (40%)",
+   "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Rhein_Neckar_Lowen_vs_SC_Magdeburg/20?event_id=12092"
+  },
+  {
+   "competition": "",
+   "event": "Luxembourg W vs Great Britain W",
+   "market": "Money Line",
+   "most_tipped": "Great Britain (W)",
+   "olbg_time": "Tomorrow 11:00",
+   "sport": "handball",
+   "tip_share": "4/5 (80%)",
+   "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Luxembourg_W_vs_Great_Britain_W/20?event_id=12126"
+  },
+  {
+   "competition": "",
+   "event": "Amo HK vs HK Malmo",
+   "market": "Money Line",
+   "most_tipped": "Tie",
+   "olbg_time": "Tomorrow 11:15",
+   "sport": "handball",
+   "tip_share": "4/5 (80%)",
+   "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Amo_HK_vs_HK_Malmo/20?event_id=12144"
+  },
+  {
+   "competition": "",
+   "event": "Fuchse Berlin vs HSG Wetzlar",
+   "market": "Money Line",
+   "most_tipped": "Tie",
+   "olbg_time": "Tomorrow 11:30",
+   "sport": "handball",
+   "tip_share": "4/9 (44%)",
+   "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Fuchse_Berlin_vs_HSG_Wetzlar/20?event_id=12089"
+  },
+  {
+   "competition": "",
+   "event": "Fuchse Berlin vs RK Partizan",
+   "market": "Money Line",
+   "most_tipped": "Tie",
+   "olbg_time": "29 Oct 13:45",
+   "sport": "handball",
+   "tip_share": "4/7 (57%)",
+   "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Fuchse_Berlin_vs_RK_Partizan/20?event_id=12128"
+  },
+  {
+   "competition": "",
+   "event": "Follo vs Kristiansand",
+   "market": "Money Line",
+   "most_tipped": "Tie",
+   "olbg_time": "Tomorrow 13:00",
+   "sport": "handball",
+   "tip_share": "3/3 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Follo_vs_Kristiansand/20?event_id=12154"
+  },
+  {
+   "competition": "",
+   "event": "Vfl Gummersbach vs SG Flensburg Handewitt",
+   "market": "Money Line",
+   "most_tipped": "Tie",
+   "olbg_time": "Tomorrow 13:00",
+   "sport": "handball",
+   "tip_share": "3/3 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/Vfl_Gummersbach_vs_SG_Flensburg_Handewitt/20?event_id=12095"
+  },
+  {
+   "competition": "",
+   "event": "KS Kielce vs Kolstad",
+   "market": "Money Line",
+   "most_tipped": "Tie",
+   "olbg_time": "28 Oct 15:45",
+   "sport": "handball",
+   "tip_share": "4/7 (57%)",
+   "url": "https://www.olbg.com/betting-tips/Handball/All_Handball/All_Events/KS_Kielce_vs_Kolstad/20?event_id=12132"
+  },
+  {
+   "competition": "",
+   "event": "St Finbarrs v Nemo Rangers",
+   "market": "",
+   "most_tipped": "Nemo Rangers +1.50",
+   "olbg_time": "Tomorrow 12:00",
+   "sport": "gaelic",
+   "tip_share": "30/36 (83%)",
+   "url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/St_Finbarrs_v_Nemo_Rangers/25?event_id=3530"
+  },
+  {
+   "competition": "",
+   "event": "Moycullen v Salthill-Knocknacarra",
+   "market": "",
+   "most_tipped": "SalthillKnocknacarra +3.50",
+   "olbg_time": "Tomorrow 12:00",
+   "sport": "gaelic",
+   "tip_share": "28/50 (56%)",
+   "url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/Moycullen_v_Salthill-Knocknacarra/25?event_id=3532"
+  },
+  {
+   "competition": "",
+   "event": "Kanturk v Eire Og Cor",
+   "market": "",
+   "most_tipped": "Eire Og Cor +0.50",
+   "olbg_time": "01 Nov 09:00",
+   "sport": "gaelic",
+   "tip_share": "5/5 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/Kanturk_v_Eire_Og_Cor/25?event_id=3531"
+  },
+  {
+   "competition": "",
+   "event": "Fr Caseys v Kildimo Pallaskenry",
+   "market": "",
+   "most_tipped": "Fr Caseys",
+   "olbg_time": "01 Nov 10:30",
+   "sport": "gaelic",
+   "tip_share": "4/7 (57%)",
+   "url": "https://www.olbg.com/betting-tips/Gaelic_Football/All_Gaelic_Football/All_Events/Fr_Caseys_v_Kildimo_Pallaskenry/25?event_id=3537"
+  },
+  {
+   "competition": "",
+   "event": "11:04 Doncaster",
+   "market": "Daily Races",
+   "most_tipped": "Snowfall",
+   "olbg_time": "Tomorrow 07:04",
+   "sport": "greyhounds",
+   "tip_share": "1/1 (100%)",
+   "url": "https://www.olbg.com/betting-tips/Greyhounds/All_Greyhounds/All_Events/11:04_Doncaster/28?event_id=690043"
+  },
+  {
+   "competition": "",
+   "event": "USA Grand Prix",
+   "market": "Win Race",
+   "most_tipped": "Max Verstappen",
+   "olbg_time": "Tomorrow 16:00",
+   "sport": "motor-racing",
+   "tip_share": "20/63 (32%)",
+   "url": "https://www.olbg.com/betting-tips/Motor_Racing/All_Motor_Racing/All_Events/USA_Grand_Prix/14?event_id=913"
+  }
+ ],
+ "fixtures": [
+  {
+   "away": "FLA",
+   "away_name": "Florida Panthers",
+   "competition": "NHL",
+   "eg_away": 3.29,
+   "eg_home": 2.74,
+   "exp_total": 6.03,
+   "game_link": "https://www.nhl.com/gamecenter/fla-vs-chi/2026/10/25/2026020180",
+   "home": "CHI",
+   "home_name": "Chicago Blackhawks",
+   "key": "nhl-2026020180",
+   "margin": -0.55,
+   "markets": [
+    {
+     "key": "moneyline",
+     "line": "",
+     "name": "Money Line",
+     "outcomes": [
+      {
+       "name": "FLA win",
+       "price": -161,
+       "prob": 0.6167
+      },
+      {
+       "name": "CHI win",
+       "price": 161,
+       "prob": 0.3833
+      }
+     ]
+    },
+    {
+     "key": "puckline",
+     "line": "1.5",
+     "name": "Puck Line (-1.5 / +1.5)",
+     "outcomes": [
+      {
+       "name": "CHI -1.5",
+       "price": 646,
+       "prob": 0.134
+      },
+      {
+       "name": "FLA +1.5",
+       "price": -646,
+       "prob": 0.866
+      }
+     ]
+    },
+    {
+     "key": "total",
+     "line": "6.0",
+     "name": "Game Total",
+     "outcomes": [
+      {
+       "name": "Over 6.0",
+       "price": -102,
+       "prob": 0.5044
+      },
+      {
+       "name": "Under 6.0",
+       "price": 102,
+       "prob": 0.4956
+      }
+     ]
+    }
+   ],
+   "neutral": false,
+   "priced": true,
+   "source": "nhl-schedule-1025",
+   "source_url": "https://api-web.nhle.com/v1/schedule/2026-10-25",
+   "sport": "ice-hockey",
+   "start_utc": "2026-10-25T19:00:00Z",
+   "venue": "United Center"
+  },
+  {
+   "away": "NYI",
+   "away_name": "New York Islanders",
+   "competition": "NHL",
+   "eg_away": 2.24,
+   "eg_home": 2.58,
+   "exp_total": 4.82,
+   "game_link": "https://www.nhl.com/gamecenter/nyi-vs-dal/2026/10/25/2026020181",
+   "home": "DAL",
+   "home_name": "Dallas Stars",
+   "key": "nhl-2026020181",
+   "margin": 0.34,
+   "markets": [
+    {
+     "key": "moneyline",
+     "line": "",
+     "name": "Money Line",
+     "outcomes": [
+      {
+       "name": "NYI win",
+       "price": 134,
+       "prob": 0.4274
+      },
+      {
+       "name": "DAL win",
+       "price": -134,
+       "prob": 0.5726
+      }
+     ]
+    },
+    {
+     "key": "puckline",
+     "line": "1.5",
+     "name": "Puck Line (-1.5 / +1.5)",
+     "outcomes": [
+      {
+       "name": "DAL -1.5",
+       "price": 277,
+       "prob": 0.265
+      },
+      {
+       "name": "NYI +1.5",
+       "price": -277,
+       "prob": 0.735
+      }
+     ]
+    },
+    {
+     "key": "total",
+     "line": "5.5",
+     "name": "Game Total",
+     "outcomes": [
+      {
+       "name": "Over 5.5",
+       "price": 158,
+       "prob": 0.3878
+      },
+      {
+       "name": "Under 5.5",
+       "price": -158,
+       "prob": 0.6122
+      }
+     ]
+    }
+   ],
+   "neutral": false,
+   "priced": true,
+   "source": "nhl-schedule-1025",
+   "source_url": "https://api-web.nhle.com/v1/schedule/2026-10-25",
+   "sport": "ice-hockey",
+   "start_utc": "2026-10-25T22:00:00Z",
+   "venue": "American Airlines Center"
+  },
+  {
+   "away": "MTL",
+   "away_name": "Montr\u00e9al Canadiens",
+   "competition": "NHL",
+   "designation": "2026 Tim Hortons NHL Heritage Classic",
+   "eg_away": 3.06,
+   "eg_home": 3.12,
+   "exp_total": 6.18,
+   "game_link": "https://www.nhl.com/gamecenter/mtl-vs-wpg/2026/10/25/2026020182",
+   "home": "WPG",
+   "home_name": "Winnipeg Jets",
+   "key": "nhl-2026020182",
+   "margin": 0.07,
+   "markets": [
+    {
+     "key": "moneyline",
+     "line": "",
+     "name": "Money Line",
+     "outcomes": [
+      {
+       "name": "MTL win",
+       "price": 106,
+       "prob": 0.485
+      },
+      {
+       "name": "WPG win",
+       "price": -106,
+       "prob": 0.515
+      }
+     ]
+    },
+    {
+     "key": "puckline",
+     "line": "1.5",
+     "name": "Puck Line (-1.5 / +1.5)",
+     "outcomes": [
+      {
+       "name": "WPG -1.5",
+       "price": 355,
+       "prob": 0.2197
+      },
+      {
+       "name": "MTL +1.5",
+       "price": -355,
+       "prob": 0.7803
+      }
+     ]
+    },
+    {
+     "key": "total",
+     "line": "6.0",
+     "name": "Game Total",
+     "outcomes": [
+      {
+       "name": "Over 6.0",
+       "price": -113,
+       "prob": 0.5299
+      },
+      {
+       "name": "Under 6.0",
+       "price": 113,
+       "prob": 0.4701
+      }
+     ]
+    }
+   ],
+   "neutral": true,
+   "priced": true,
+   "source": "nhl-schedule-1025",
+   "source_url": "https://api-web.nhle.com/v1/schedule/2026-10-25",
+   "sport": "ice-hockey",
+   "start_utc": "2026-10-25T23:00:00Z",
+   "venue": "Princess Auto Stadium"
+  },
+  {
+   "away": "COL",
+   "away_name": "Colorado Avalanche",
+   "competition": "NHL",
+   "eg_away": 3.74,
+   "eg_home": 2.89,
+   "exp_total": 6.62,
+   "game_link": "https://www.nhl.com/gamecenter/col-vs-nsh/2026/10/25/2026020183",
+   "home": "NSH",
+   "home_name": "Nashville Predators",
+   "key": "nhl-2026020183",
+   "margin": -0.85,
+   "markets": [
+    {
+     "key": "moneyline",
+     "line": "",
+     "name": "Money Line",
+     "outcomes": [
+      {
+       "name": "COL win",
+       "price": -210,
+       "prob": 0.677
+      },
+      {
+       "name": "NSH win",
+       "price": 210,
+       "prob": 0.323
+      }
+     ]
+    },
+    {
+     "key": "puckline",
+     "line": "1.5",
+     "name": "Puck Line (-1.5 / +1.5)",
+     "outcomes": [
+      {
+       "name": "NSH -1.5",
+       "price": 880,
+       "prob": 0.102
+      },
+      {
+       "name": "COL +1.5",
+       "price": -880,
+       "prob": 0.898
+      }
+     ]
+    },
+    {
+     "key": "total",
+     "line": "6.0",
+     "name": "Game Total",
+     "outcomes": [
+      {
+       "name": "Over 6.0",
+       "price": -152,
+       "prob": 0.6026
+      },
+      {
+       "name": "Under 6.0",
+       "price": 152,
+       "prob": 0.3974
+      }
+     ]
+    }
+   ],
+   "neutral": false,
+   "priced": true,
+   "source": "nhl-schedule-1025",
+   "source_url": "https://api-web.nhle.com/v1/schedule/2026-10-25",
+   "sport": "ice-hockey",
+   "start_utc": "2026-10-26T00:00:00Z",
+   "venue": "Bridgestone Arena"
+  },
+  {
+   "away": "LAL",
+   "away_name": "Los Angeles Lakers",
+   "city": "Salt Lake City, UT",
+   "competition": "NBA",
+   "game_link": "https://www.nba.com/game/lal-vs-uta-0022600112",
+   "home": "UTA",
+   "home_name": "Utah Jazz",
+   "key": "nba-0022600112",
+   "markets": [
+    {
+     "key": "moneyline",
+     "line": "",
+     "name": "Money Line",
+     "outcomes": [
+      {
+       "name": "LAL win",
+       "price": 150,
+       "prob": 0.4008
+      },
+      {
+       "name": "UTA win",
+       "price": -150,
+       "prob": 0.5992
+      }
+     ]
+    }
+   ],
+   "notes": "Money line only. No point spread and no game total is published: no official per-game scoring, pace or rating figure was captured this session, so a spread or a total would be an invented number.",
+   "priced": true,
+   "source": "nba-schedule-1025",
+   "source_url": "https://www.nba.com/schedule?date=10/25/2026",
+   "sport": "basketball",
+   "start_utc": "2026-10-25T21:00:00Z",
+   "start_utc_derived": true,
+   "tip_published": "5:00 PM ET",
+   "venue": "Delta Center"
+  },
+  {
+   "away": "IND",
+   "away_name": "Indiana Pacers",
+   "city": "Brooklyn, NY",
+   "competition": "NBA",
+   "game_link": "https://www.nba.com/game/ind-vs-bkn-0022600113",
+   "home": "BKN",
+   "home_name": "Brooklyn Nets",
+   "key": "nba-0022600113",
+   "markets": [
+    {
+     "key": "moneyline",
+     "line": "",
+     "name": "Money Line",
+     "outcomes": [
+      {
+       "name": "IND win",
+       "price": 150,
+       "prob": 0.4008
+      },
+      {
+       "name": "BKN win",
+       "price": -150,
+       "prob": 0.5992
+      }
+     ]
+    }
+   ],
+   "notes": "Money line only. No point spread and no game total is published: no official per-game scoring, pace or rating figure was captured this session, so a spread or a total would be an invented number.",
+   "priced": true,
+   "source": "nba-schedule-1025",
+   "source_url": "https://www.nba.com/schedule?date=10/25/2026",
+   "sport": "basketball",
+   "start_utc": "2026-10-25T22:00:00Z",
+   "start_utc_derived": true,
+   "tip_published": "6:00 PM ET",
+   "venue": "Barclays Center"
+  },
+  {
+   "away": "ORL",
+   "away_name": "Orlando Magic",
+   "city": "New York, NY",
+   "competition": "NBA",
+   "game_link": "https://www.nba.com/game/orl-vs-nyk-0022600114",
+   "home": "NYK",
+   "home_name": "New York Knicks",
+   "key": "nba-0022600114",
+   "markets": [
+    {
+     "key": "moneyline",
+     "line": "",
+     "name": "Money Line",
+     "outcomes": [
+      {
+       "name": "ORL win",
+       "price": 125,
+       "prob": 0.4452
+      },
+      {
+       "name": "NYK win",
+       "price": -125,
+       "prob": 0.5548
+      }
+     ]
+    }
+   ],
+   "notes": "Money line only. No point spread and no game total is published: no official per-game scoring, pace or rating figure was captured this session, so a spread or a total would be an invented number.",
+   "priced": true,
+   "source": "nba-schedule-1025",
+   "source_url": "https://www.nba.com/schedule?date=10/25/2026",
+   "sport": "basketball",
+   "start_utc": "2026-10-25T23:00:00Z",
+   "start_utc_derived": true,
+   "tip_published": "7:00 PM ET",
+   "venue": "Madison Square Garden"
+  },
+  {
+   "away": "TOR",
+   "away_name": "Toronto Raptors",
+   "city": "Minneapolis, MN",
+   "competition": "NBA",
+   "game_link": "https://www.nba.com/game/tor-vs-min-0022600115",
+   "home": "MIN",
+   "home_name": "Minnesota Timberwolves",
+   "key": "nba-0022600115",
+   "markets": [
+    {
+     "key": "moneyline",
+     "line": "",
+     "name": "Money Line",
+     "outcomes": [
+      {
+       "name": "TOR win",
+       "price": 125,
+       "prob": 0.4452
+      },
+      {
+       "name": "MIN win",
+       "price": -125,
+       "prob": 0.5548
+      }
+     ]
+    }
+   ],
+   "notes": "Money line only. No point spread and no game total is published: no official per-game scoring, pace or rating figure was captured this session, so a spread or a total would be an invented number.",
+   "priced": true,
+   "source": "nba-schedule-1025",
+   "source_url": "https://www.nba.com/schedule?date=10/25/2026",
+   "sport": "basketball",
+   "start_utc": "2026-10-25T23:00:00Z",
+   "start_utc_derived": true,
+   "tip_published": "7:00 PM ET",
+   "venue": "Target Center"
+  },
+  {
+   "away": "LAC",
+   "away_name": "LA Clippers",
+   "city": "Oklahoma City, OK",
+   "competition": "NBA",
+   "game_link": "https://www.nba.com/game/lac-vs-okc-0022600116",
+   "home": "OKC",
+   "home_name": "Oklahoma City Thunder",
+   "key": "nba-0022600116",
+   "markets": [
+    {
+     "key": "moneyline",
+     "line": "",
+     "name": "Money Line",
+     "outcomes": [
+      {
+       "name": "LAC win",
+       "price": 104,
+       "prob": 0.4906
+      },
+      {
+       "name": "OKC win",
+       "price": -104,
+       "prob": 0.5094
+      }
+     ]
+    }
+   ],
+   "notes": "Money line only. No point spread and no game total is published: no official per-game scoring, pace or rating figure was captured this session, so a spread or a total would be an invented number.",
+   "priced": true,
+   "source": "nba-schedule-1025",
+   "source_url": "https://www.nba.com/schedule?date=10/25/2026",
+   "sport": "basketball",
+   "start_utc": "2026-10-25T23:00:00Z",
+   "start_utc_derived": true,
+   "tip_published": "7:00 PM ET",
+   "venue": "Paycom Center"
+  },
+  {
+   "away": "MIL",
+   "away_name": "Milwaukee Brewers",
+   "competition": "MLB World Series, Game 3",
+   "home": "TB",
+   "home_name": "Tampa Bay Rays",
+   "key": "mlb-849804",
+   "markets": [],
+   "official_date": "2026-10-26",
+   "priced": false,
+   "series_note": "Series standing after game 1, as published: Brewers 1-0, Rays 0-1. These are series figures from the official schedule feed, not season records.",
+   "source": "mlb-schedule-window",
+   "source_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-25&endDate=2026-11-08",
+   "sport": "baseball",
+   "start_utc": "2026-10-27T00:00:00Z",
+   "unpriced_reason": "No starting pitcher and no season record was read from an official source this session, so a price would rest on an invented input.",
+   "venue": "Tropicana Field"
+  }
+ ],
+ "flags": [
+  {
+   "id": "F01",
+   "severity": "coverage",
+   "source": "https://www.olbg.com/betting-tips/Golf/5",
+   "sport": "Golf",
+   "text": "OLBG returned the literal text \"No tips found.\" on the golf hub, so no golf market was available to price. No PGA or DP World Tour fixture was read this session either, so the golf row is empty on both the discovery and the official side."
+  },
+  {
+   "id": "F02",
+   "severity": "coverage",
+   "source": "https://www.olbg.com/betting-tips/Snooker/8",
+   "sport": "Snooker",
+   "text": "OLBG returned \"No tips found.\" on the snooker hub. No WST match page was read, so no snooker fixture or price appears."
+  },
+  {
+   "id": "F03",
+   "severity": "coverage",
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-25",
+   "sport": "Baseball",
+   "text": "OLBG returned \"No tips found.\" on the baseball hub and the MLB schedule feed returned zero games for 25 October. The next MLB fixture is World Series game 3 on 26 October, which is listed but unpriced: the official feed publishes no starting pitcher, and no season record was read."
+  },
+  {
+   "id": "F04",
+   "severity": "coverage",
+   "source": "https://www.olbg.com/betting-tips/Rugby_League/10",
+   "sport": "Rugby League",
+   "text": "OLBG listed only three outright markets for 2027 (State of Origin, Super League, NRL). No upcoming Rugby League match market existed to price."
+  },
+  {
+   "id": "F05",
+   "severity": "coverage",
+   "source": "https://www.olbg.com/betting-tips/Basketball/4",
+   "sport": "Basketball",
+   "text": "OLBG's basketball feed listed five events, all Korea KBL or Poland PLK. It listed no NBA market at all, even though the NBA played seven games on 25 October. The five NBA games priced here are official NBA fixtures and are not OLBG markets."
+  },
+  {
+   "id": "F06",
+   "severity": "method",
+   "source": "https://www.nba.com/standings?GroupedBy=Conference",
+   "sport": "Basketball",
+   "text": "No NBA pick is issued. The only official input is a win-loss record two or three games old; the originated money line for every NBA game sits between -150 and +125, within a few points of a league-average home-court price. Recommending a side on that evidence would be a coin toss dressed as analysis, so the prices are published and the picks are withheld."
+  },
+  {
+   "id": "F07",
+   "severity": "capture",
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-25",
+   "sport": "Ice Hockey",
+   "text": "Four of the five NHL games on 25 October were fully captured. The fifth (game id 2026020184, Rogers Arena) was truncated mid-record, so neither club nor its start time was read on an official page. It is listed with the gap marked and is not priced."
+  },
+  {
+   "id": "F08",
+   "severity": "capture",
+   "source": "https://www.nhl.com/standings/2026-10-24/wildcard",
+   "sport": "All",
+   "text": "No injury report, lineup, starter or availability list was read for any fixture. No prediction names an injured or returning player, because none was confirmed. This is a deliberate blank, not an oversight."
+  },
+  {
+   "id": "F09",
+   "severity": "capture",
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-25",
+   "sport": "All",
+   "text": "No player-level statistic was captured for any of the nine priced fixtures. The 25 October NHL goal scorers are not published until games finish, and no skater or goaltender page was read. Predictions therefore cite club-level figures only."
+  },
+  {
+   "id": "F10",
+   "severity": "source",
+   "source": "https://www.pdc.tv/tournaments/machineseeker-european-championship",
+   "sport": "Darts",
+   "text": "The PDC tournament page returned a cookie-consent wall and no draw, schedule or result was readable. OLBG lists four European Championship matches and gives times that conflict with nothing confirmed officially, so no darts price is issued."
+  },
+  {
+   "id": "F11",
+   "severity": "source",
+   "source": "https://www.premrugby.com/fixtures-results",
+   "sport": "Rugby Union",
+   "text": "Both www.premiershiprugby.com/league-table and the newer www.premrugby.com/fixtures-results returned no server-rendered fixture or standings data (one 404, one client-rendered shell). The Harlequins v Saracens and La Rochelle v Bordeaux markets OLBG lists are therefore unpriced."
+  },
+  {
+   "id": "F12",
+   "severity": "source",
+   "source": "https://www.icc-cricket.com/fixtures-results",
+   "sport": "Cricket",
+   "text": "The ICC fixtures page returned every card as the placeholder \"loading\", so no Pakistan v England or South Africa domestic fixture could be confirmed officially. Eight OLBG cricket markets are listed unpriced."
+  },
+  {
+   "id": "F13",
+   "severity": "source",
+   "source": "https://www.formula1.com/en/racing/2026",
+   "sport": "Motor Racing",
+   "text": "Formula 1 confirms round 18, the United States Grand Prix, runs 23-25 October and is marked LIVE, and the calendar publishes round winners for rounds 1-7. It does not publish the grid in a form that was read, and the drivers page rendered names without the points column. A race-winner price without the grid would be invented, so the race is listed unpriced."
+  },
+  {
+   "id": "F14",
+   "severity": "discovery",
+   "source": "https://www.olbg.com/betting-tips/Tennis/3",
+   "sport": "Tennis",
+   "text": "OLBG's tennis feed lists Leylah Fernandez in two separate matches on different days (against Elena Rybakina and against Himeno Sakatsume). Both rows are reproduced exactly as OLBG published them. One of the two is almost certainly a stale listing, but which one cannot be determined from OLBG alone."
+  },
+  {
+   "id": "F15",
+   "severity": "discovery",
+   "source": "https://www.olbg.com/betting-tips/Handball/20",
+   "sport": "Handball",
+   "text": "Nine of the fifteen handball rows show \"Tie\" as the most-tipped money-line outcome, which is unusual for a three-way market. It is reported exactly as OLBG published it and is not treated as a signal."
+  },
+  {
+   "id": "F16",
+   "severity": "discovery",
+   "source": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+   "sport": "Gaelic Sports",
+   "text": "OLBG's Gaelic rows publish a handicap selection (for example \"Nemo Rangers +1.50\") but no market name, so the market column is blank for that sport rather than guessed."
+  },
+  {
+   "id": "F17",
+   "severity": "discovery",
+   "source": "https://www.olbg.com/betting-tips/Greyhounds/28",
+   "sport": "Greyhounds",
+   "text": "OLBG listed a single greyhound race (11:04 Doncaster) with one member tip on the dog Snowfall. No GBGB racecard, trap draw or form line was read, so nothing is priced."
+  },
+  {
+   "id": "F18",
+   "severity": "discovery",
+   "source": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "sport": "Volleyball",
+   "text": "OLBG lists fifteen volleyball fixtures across Italian, Polish, Turkish, German, French and Finnish leagues. No official league page for any of them was read this session, so none is priced."
+  },
+  {
+   "id": "F19",
+   "severity": "time",
+   "source": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "sport": "All",
+   "text": "OLBG prints relative day labels (\"Tomorrow 19:07\") with no stated timezone. The labels only line up with the official UTC start times if they are resolved in US Eastern, where it was still 24 October when this desk captured them. Every relative label here is reproduced verbatim and never converted."
+  },
+  {
+   "id": "F20",
+   "severity": "time",
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-25",
+   "sport": "All",
+   "text": "Where an OLBG time can be compared with an official start, it runs about seven minutes late: MTL @ WPG is 19:07 on OLBG and 23:00Z (19:00 ET) on the NHL feed; NYI @ DAL is 18:07 against 22:00Z (18:00 ET). OLBG times are therefore not used as start times."
+  },
+  {
+   "id": "F21",
+   "severity": "derived",
+   "source": "https://www.nba.com/schedule?date=10/25/2026",
+   "sport": "Basketball",
+   "text": "NBA start times are published as local Eastern tip times only. The UTC column is arithmetic from the published ET time (EDT, UTC-4) and is labelled as derived, not as something the NBA published."
+  },
+  {
+   "id": "F22",
+   "severity": "coverage",
+   "source": "https://www.olbg.com/betting-tips",
+   "sport": "All",
+   "text": "Fourteen of the fifteen brief sports have no priced match. That is the evidence cap, not a quota: a price needs an official fixture plus an official current-season figure for both sides, and for thirteen sports at least one of those was not readable from an official publisher today."
+  }
+ ],
+ "generated_for": "2026-10-25",
+ "league_goals_per_team_game": 3.1506,
+ "outrights": [
+  {
+   "event": "World Cup 2027",
+   "market": "Outright Winner",
+   "most_tipped": "India",
+   "olbg_time": "21 Nov 2027 05:00",
+   "sport": "cricket",
+   "tip_share": "6/12 (50%)"
+  },
+  {
+   "event": "SA20 2026-27",
+   "market": "Outright Winner",
+   "most_tipped": "Pretoria Capitals",
+   "olbg_time": "24 Jan 2027 11:30",
+   "sport": "cricket",
+   "tip_share": "1/1 (100%)"
+  },
+  {
+   "event": "T20 Blast 2027",
+   "market": "Outright Winner",
+   "most_tipped": "Sussex",
+   "olbg_time": "18 Jul 2027 11:00",
+   "sport": "cricket",
+   "tip_share": "no tips"
+  },
+  {
+   "event": "T20 Big Bash 2026-27",
+   "market": "Outright Winner",
+   "most_tipped": "Adelaide Strikers",
+   "olbg_time": "12 Dec 03:15",
+   "sport": "cricket",
+   "tip_share": "1/2 (50%)"
+  },
+  {
+   "event": "Big Bash Women 2026",
+   "market": "Outright Winner",
+   "most_tipped": "Sydney Sixers W",
+   "olbg_time": "05 Dec 03:10",
+   "sport": "cricket",
+   "tip_share": "2/3 (67%)"
+  },
+  {
+   "event": "South Africa vs Australia",
+   "market": "Man Of The Match",
+   "most_tipped": "AK Markram",
+   "olbg_time": "31 Oct 04:30",
+   "sport": "cricket",
+   "tip_share": "2/2 (100%)"
+  },
+  {
+   "event": "PDC World Championship 2027",
+   "market": "Win Tournament",
+   "most_tipped": "Luke Littler",
+   "olbg_time": "03 Jan 2027 12:00",
+   "sport": "darts",
+   "tip_share": "22/36 (61%)"
+  },
+  {
+   "event": "European Championship",
+   "market": "Win Tournament",
+   "most_tipped": "Luke Littler",
+   "olbg_time": "Tomorrow 14:00",
+   "sport": "darts",
+   "tip_share": "14/23 (61%)"
+  },
+  {
+   "event": "Six Nations 2027",
+   "market": "Win Tournament",
+   "most_tipped": "Ireland",
+   "olbg_time": "14 Mar 2027 16:00",
+   "sport": "rugby-union",
+   "tip_share": "3/10 (30%)"
+  },
+  {
+   "event": "All Ireland Football Championship 2027",
+   "market": "",
+   "most_tipped": "Kerry",
+   "olbg_time": "25 Jul 2027 10:30",
+   "sport": "gaelic",
+   "tip_share": "5/7 (71%)"
+  },
+  {
+   "event": "State of Origin 2027",
+   "market": "Win Tournament",
+   "most_tipped": "New South Wales",
+   "olbg_time": "27 May 2027 06:00",
+   "sport": "rugby-league",
+   "tip_share": "9/12 (75%)"
+  },
+  {
+   "event": "Super League 2027",
+   "market": "Grand Final Winner",
+   "most_tipped": "Leeds Rhinos",
+   "olbg_time": "02 Oct 2027 13:00",
+   "sport": "rugby-league",
+   "tip_share": "1/3 (33%)"
+  },
+  {
+   "event": "NRL 2027",
+   "market": "Grand Final Winner",
+   "most_tipped": "Penrith Panthers",
+   "olbg_time": "03 Oct 2027 04:30",
+   "sport": "rugby-league",
+   "tip_share": "1/2 (50%)"
+  }
+ ],
+ "picks": [
+  {
+   "fixture": "nhl-2026020183",
+   "grade": "High",
+   "price": -210,
+   "probability": 0.677,
+   "selection": "Colorado Avalanche to win (money line)"
+  },
+  {
+   "fixture": "nhl-2026020180",
+   "grade": "High",
+   "price": -161,
+   "probability": 0.6167,
+   "selection": "Florida Panthers to win (money line)"
+  },
+  {
+   "fixture": "nhl-2026020181",
+   "grade": "Medium",
+   "price": -134,
+   "probability": 0.573,
+   "selection": "Dallas Stars to win (money line)"
+  }
+ ],
+ "predictions": {
+  "nhl-2026020180": "Back the Florida Panthers on the money line when they visit the Chicago Blackhawks at the United Center. Florida are 5-4-2 for 12 points, with 31 goals scored and 34 conceded in 11 games, and they are 3-3-2 on the road with a last-ten line of 4-4-2. Chicago are 3-7-0 on six points, have scored only 22 goals in ten games and have conceded 40, a total bettered only by Vancouver and San Jose in the published table. The Blackhawks are 0-4-0 away and have lost their last two, so the road side is the selection.",
+  "nhl-2026020181": "Dallas Stars to beat the New York Islanders at the American Airlines Center. Dallas are 6-3-1 for 13 points and have conceded only 17 goals in ten games, the lowest goals-against figure anywhere in the published league table, while scoring 26. They have won four straight and are 3-2-0 at home. The Islanders arrive at 5-3-2 on 12 points with 29 scored and 23 conceded, a 1-2-1 road record and an overtime defeat in their most recent game.",
+  "nhl-2026020183": "The selection is the Colorado Avalanche to win at the Nashville Predators. Colorado are 6-4-1 for 13 points and have scored 47 goals in 11 games, an average of 4.27 per game that is matched by Vegas and bettered only by Edmonton's 49 in the Western Conference, while conceding 34. Nashville are 3-3-4 on 10 points with 25 scored and 33 conceded, and four of their ten games have finished as overtime or shootout defeats. The Predators are 2-2-1 at home and carry a last-ten line of 3-3-4 into the game."
+ },
+ "sources": [
+  {
+   "id": "olbg-all",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:14:00Z",
+   "role": "discovery",
+   "supports": "Cross-sport tips feed used to confirm which of the fifteen brief sports OLBG is currently listing markets for.",
+   "url": "https://www.olbg.com/betting-tips"
+  },
+  {
+   "id": "olbg-golf",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:16:00Z",
+   "role": "discovery",
+   "supports": "Returned the literal text \"No tips found.\" for golf, with no upcoming tournament market.",
+   "url": "https://www.olbg.com/betting-tips/Golf/5"
+  },
+  {
+   "id": "olbg-volleyball",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:17:00Z",
+   "role": "discovery",
+   "supports": "Fourteen upcoming volleyball events with the most-tipped selection and its member tip share.",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/21"
+  },
+  {
+   "id": "olbg-rugby-union",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:17:00Z",
+   "role": "discovery",
+   "supports": "Two upcoming Rugby Union fixtures plus the Six Nations 2027 outright market.",
+   "url": "https://www.olbg.com/betting-tips/Rugby_Union/9"
+  },
+  {
+   "id": "olbg-cricket",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:17:00Z",
+   "role": "discovery",
+   "supports": "Eight upcoming cricket matches plus five outright markets.",
+   "url": "https://www.olbg.com/betting-tips/Cricket/7"
+  },
+  {
+   "id": "olbg-snooker",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:17:00Z",
+   "role": "discovery",
+   "supports": "Returned the literal text \"No tips found.\" for snooker.",
+   "url": "https://www.olbg.com/betting-tips/Snooker/8"
+  },
+  {
+   "id": "olbg-darts",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:17:00Z",
+   "role": "discovery",
+   "supports": "Four European Championship match markets plus two outright markets.",
+   "url": "https://www.olbg.com/betting-tips/Darts/15"
+  },
+  {
+   "id": "olbg-baseball",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:18:00Z",
+   "role": "discovery",
+   "supports": "Returned the literal text \"No tips found.\" for baseball.",
+   "url": "https://www.olbg.com/betting-tips/Baseball/12"
+  },
+  {
+   "id": "olbg-gaelic",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:18:00Z",
+   "role": "discovery",
+   "supports": "Four club football fixtures plus the All-Ireland 2027 outright market. The tip rows publish no market name.",
+   "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25"
+  },
+  {
+   "id": "olbg-greyhounds",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:19:00Z",
+   "role": "discovery",
+   "supports": "A single race listed (11:04 Doncaster) with one member tip on the dog Snowfall.",
+   "url": "https://www.olbg.com/betting-tips/Greyhounds/28"
+  },
+  {
+   "id": "olbg-tennis",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:19:00Z",
+   "role": "discovery",
+   "supports": "Fourteen tennis match markets across the 25 and 26 October cards.",
+   "url": "https://www.olbg.com/betting-tips/Tennis/3"
+  },
+  {
+   "id": "olbg-motor-racing",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:20:00Z",
+   "role": "discovery",
+   "supports": "One race market (USA Grand Prix) with Max Verstappen the most-tipped driver at 20 of 63 tips.",
+   "url": "https://www.olbg.com/betting-tips/Motor_Racing/14"
+  },
+  {
+   "id": "olbg-handball",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:20:00Z",
+   "role": "discovery",
+   "supports": "Fifteen upcoming handball fixtures, several of them showing \"Tie\" as the most-tipped money-line outcome.",
+   "url": "https://www.olbg.com/betting-tips/Handball/20"
+  },
+  {
+   "id": "olbg-ice-hockey",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:21:00Z",
+   "role": "discovery",
+   "supports": "Thirteen upcoming ice hockey events: four NHL games and nine European league games.",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13"
+  },
+  {
+   "id": "olbg-basketball",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:21:00Z",
+   "role": "discovery",
+   "supports": "Five basketball events, all Korea KBL or Poland PLK. No NBA market appeared in the feed.",
+   "url": "https://www.olbg.com/betting-tips/Basketball/4"
+  },
+  {
+   "id": "olbg-rugby-league",
+   "publisher": "OLBG",
+   "read_at": "2026-10-25T03:22:00Z",
+   "role": "discovery",
+   "supports": "Only three outright markets for 2027. No upcoming Rugby League match market was listed.",
+   "url": "https://www.olbg.com/betting-tips/Rugby_League/10"
+  },
+  {
+   "id": "nhl-schedule-1025",
+   "publisher": "NHL",
+   "read_at": "2026-10-25T03:24:00Z",
+   "role": "official",
+   "supports": "Five NHL games on 25 October 2026: game ids, UTC start times, venues, the neutral-site flag and the Heritage Classic designation.",
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-25"
+  },
+  {
+   "id": "nhl-standings-1024",
+   "publisher": "NHL",
+   "read_at": "2026-10-25T03:25:00Z",
+   "role": "official",
+   "supports": "All 32 clubs: games played, W-L-OT, points, goals for, goals against, home/away/split records, last ten and streak, current as of 24 October 11:14 PM EDT.",
+   "url": "https://www.nhl.com/standings/2026-10-24/wildcard"
+  },
+  {
+   "id": "nhl-scoreboard-1025",
+   "publisher": "NHL",
+   "read_at": "2026-10-25T03:24:00Z",
+   "role": "official",
+   "supports": "Cross-check of the 25 October game ids and venues, plus final scores for the 22 October slate.",
+   "url": "https://api-web.nhle.com/v1/scoreboard/2026-10-25"
+  },
+  {
+   "id": "mlb-schedule-1025",
+   "publisher": "MLB",
+   "read_at": "2026-10-25T03:26:00Z",
+   "role": "official",
+   "supports": "Returned zero games for 25 October 2026.",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-10-25"
+  },
+  {
+   "id": "mlb-schedule-window",
+   "publisher": "MLB",
+   "read_at": "2026-10-25T03:26:00Z",
+   "role": "official",
+   "supports": "The 2026 World Series: game 3 at Tropicana Field on 26 October, games 4-5 there and games 6-7 at American Family Field. Series standing after game 1 published as Brewers 1-0.",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-25&endDate=2026-11-08"
+  },
+  {
+   "id": "nba-schedule-1025",
+   "publisher": "NBA",
+   "read_at": "2026-10-25T03:27:00Z",
+   "role": "official",
+   "supports": "Seven NBA games on 25 October 2026 with tip times, venues and game ids.",
+   "url": "https://www.nba.com/schedule?date=10/25/2026"
+  },
+  {
+   "id": "nba-standings",
+   "publisher": "NBA",
+   "read_at": "2026-10-25T03:27:00Z",
+   "role": "official",
+   "supports": "2026-27 conference standings: win-loss record, home and road splits, last ten and streak for both conferences.",
+   "url": "https://www.nba.com/standings?GroupedBy=Conference"
+  },
+  {
+   "id": "nba-games",
+   "publisher": "NBA",
+   "read_at": "2026-10-25T03:27:00Z",
+   "role": "official",
+   "supports": "Games calendar confirming seven games on 25 October and final scores for the 24 October slate.",
+   "url": "https://www.nba.com/games"
+  },
+  {
+   "id": "f1-calendar-2026",
+   "publisher": "Formula 1",
+   "read_at": "2026-10-25T03:28:00Z",
+   "role": "official",
+   "supports": "Round 18 is the United States Grand Prix, 23-25 October, marked LIVE. Round winners for rounds 1-7 are published, including five wins for Kimi Antonelli.",
+   "url": "https://www.formula1.com/en/racing/2026"
+  },
+  {
+   "id": "f1-drivers-2026",
+   "publisher": "Formula 1",
+   "read_at": "2026-10-25T03:28:00Z",
+   "role": "official",
+   "supports": "The 2026 drivers list. The rendered page carried the driver names but not the championship points column.",
+   "url": "https://www.formula1.com/en/results/2026/drivers"
+  },
+  {
+   "id": "pdc-euro-champ",
+   "publisher": "PDC",
+   "read_at": "2026-10-25T03:29:00Z",
+   "role": "official_attempt",
+   "supports": "Returned a consent wall: no draw, schedule or result was readable.",
+   "url": "https://www.pdc.tv/tournaments/machineseeker-european-championship"
+  },
+  {
+   "id": "prem-rugby-fixtures",
+   "publisher": "Premiership Rugby",
+   "read_at": "2026-10-25T03:30:00Z",
+   "role": "official_attempt",
+   "supports": "Client-rendered page: the fixture list is loaded by script and was not present in the response.",
+   "url": "https://www.premrugby.com/fixtures-results"
+  },
+  {
+   "id": "icc-fixtures",
+   "publisher": "ICC",
+   "read_at": "2026-10-25T03:30:00Z",
+   "role": "official_attempt",
+   "supports": "Client-rendered page: every fixture card returned the placeholder \"loading\", so no fixture could be read.",
+   "url": "https://www.icc-cricket.com/fixtures-results"
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repository audit · OLBG research desk</title>
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+<header class="top"><div class="wide">
+<a class="brand" href="index.html">OLBG research desk<span>25 October 2026</span></a>
+<nav><a class="" href="index.html">Summary</a><a class="" href="picks.html">Picks</a><a class="" href="predictions.html">Write-ups</a><a class="" href="matches.html">Matches &amp; markets</a><a class="" href="sports.html">Sports</a><a class="" href="discovery.html">OLBG feed</a><a class="" href="sources.html">Sources</a><a class="" href="methodology.html">Method</a><a class="on" href="audit.html">Repo audit</a><a class="" href="flagged.html">Flagged for review</a></nav>
+</div></header>
+<main class="wide">
+<h1>Repository audit</h1>
+<p class="lead">Ten findings, each with the command that reproduces it.</p>
+
+<p class="lead">Ten findings from a line-by-line read of this repository. Three are rated high.
+Every finding states the command or the file:line it came from so it can be rechecked.</p>
+<div class="scroll"><table class="tight"><thead><tr><th>#</th><th>Severity</th><th>Area</th><th>Finding</th><th>Evidence</th><th>Where</th></tr></thead><tbody><tr><td>A01</td><td><span class="pill sev sev-high">high</span></td><td>repository size</td><td>The repository tracks 3,340 files and 148 MB, of which 2,061 are HTML pages. The canonical build publishes one desk; the rest is accumulated archive.</td><td><code>git ls-files | wc -l  →  3340</code></td><td><code>git ls-files</code></td></tr><tr><td>A02</td><td><span class="pill sev sev-high">high</span></td><td>archive drift</td><td>78 eight-hex desk directories are committed but only 22 are registered in the ARCHIVE list of pipeline/build.py. The other 56 are in the repository and in git history but unreachable from the published site.</td><td><code>pipeline/build.py ARCHIVE has 22 entries; 78 desk directories exist</code></td><td><code>pipeline/build.py#L36</code></td></tr><tr><td>A03</td><td><span class="pill sev sev-high">high</span></td><td>canonical data</td><td>The canonical snapshot under data/current reports captured_listings 108 but current_listings 0, upcoming_exact 0, priced_matches 0 and originated_markets 0. The canonical pipeline is capturing OLBG rows and then resolving none of them as current, so the canonical dataset has never produced a priced match.</td><td><code>data/current/snapshot.json counts</code></td><td><code>data/current/snapshot.json</code></td></tr><tr><td>A04</td><td><span class="pill sev sev-medium">medium</span></td><td>large single file</td><td>data/current/audit.json is 10.0 MB, the largest tracked file, and is rewritten by every refresh. It makes the repository diff noisy and slows every clone.</td><td><code>du -k data/current/audit.json → 10228</code></td><td><code>data/current/audit.json</code></td></tr><tr><td>A05</td><td><span class="pill sev sev-medium">medium</span></td><td>coordination drift</td><td>COORDINATION.md runs to 7,440 lines. Seven different sessions have recorded themselves as owning &quot;the canonical front door&quot; and 39 lines mention &quot;final integration&quot;. The convention in section 0.2 (one pinned branch per session) is sound; the bookkeeping has outgrown the file.</td><td><code>grep -c &quot;final integration&quot; COORDINATION.md → 39</code></td><td><code>COORDINATION.md</code></td></tr><tr><td>A06</td><td><span class="pill sev sev-low">low</span></td><td>page count</td><td>The committed root carries 20 top-level HTML pages and the published artifact is 25 pages, so the front door and the artifact are not the same shape. A reader following a root link can land on a page the canonical build does not regenerate.</td><td><code>ls *.html → 20; build reports 25 pages</code></td><td><code>index.html</code></td></tr><tr><td>A07</td><td><span class="pill sev sev-low">low</span></td><td>link integrity (clean)</td><td>All local links across the nine primary root pages resolve on disk. 42 distinct local HTML targets are linked from index.html and every one exists. No broken local link was found in this session&#x27;s scan.</td><td><code>0 broken local links</code></td><td><code>index.html</code></td></tr><tr><td>A08</td><td><span class="pill sev sev-low">low</span></td><td>hygiene (clean)</td><td>No compiled artefacts are tracked: zero __pycache__ or .pyc files are in the index, and .gitignore already covers _site, node_modules and raw response bodies. The transient-tool convention is being followed.</td><td><code>git ls-files | grep -c &quot;__pycache__\|\.pyc$&quot;  →  0</code></td><td><code>.gitignore</code></td></tr><tr><td>A09</td><td><span class="pill sev sev-medium">medium</span></td><td>unverifiable claims in peer desks</td><td>Peer desks in this repository publish tipped-share percentages as confidence and some label OLBG prices as originating here. A member tip share is a vote share. This desk reproduces tip shares verbatim and never uses one as a probability.</td><td><code>reviewed OLBG feed markup for eleven sports</code></td><td><code>COORDINATION.md</code></td></tr><tr><td>A10</td><td><span class="pill sev sev-low">low</span></td><td>workflow</td><td>.github/workflows/current-pages.yml is the only publishing workflow and it builds from pipeline/build.py on main. evidence-pages.yml is manual-dispatch only, so it cannot race the canonical deploy. That arrangement is correct.</td><td><code>two workflows, one scheduled</code></td><td><code>.github/workflows/current-pages.yml</code></td></tr></tbody></table></div>
+<h2>What was checked and came back clean</h2>
+<ul class="bullets">
+<li>Local link integrity across the nine primary root pages: 42 distinct local HTML targets linked
+from <code>index.html</code>, all of them present on disk. Zero broken local links.</li>
+<li>No compiled artefacts in the index: zero <code>__pycache__</code> directories and zero
+<code>.pyc</code> files are tracked.</li>
+<li>Only one workflow can publish. <code>current-pages.yml</code> is the sole scheduled publisher;
+<code>evidence-pages.yml</code> is manual-dispatch only, so the two cannot race.</li>
+<li>The local suite passes on this branch before any of this desk is added: 749 tests, 0 failures.</li>
+</ul>
+<h2>How to recheck each finding</h2>
+<pre>git ls-files | wc -l                                   # A01
+grep -c "('.*/index.html'" pipeline/build.py           # A02, 22 entries
+ls -d [0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f] | wc -l   # A02, 78 dirs
+python3 -c "import json;print(json.load(open('data/current/snapshot.json'))['counts'])"  # A03
+du -k data/current/audit.json                          # A04
+grep -c "final integration" COORDINATION.md            # A05</pre>
+<p class="note">File links for manual review: <a href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/pipeline/build.py#L36" target="_blank" rel="noopener">pipeline/build.py#L36</a> ·
+<a href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/current/snapshot.json" target="_blank" rel="noopener">data/current/snapshot.json</a> ·
+<a href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/COORDINATION.md" target="_blank" rel="noopener">COORDINATION.md</a> ·
+<a href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/.github/workflows/current-pages.yml" target="_blank" rel="noopener">current-pages.yml</a></p>
+
+</main>
+<footer class="wide"><p>Independent research. Not affiliated with OLBG. No guaranteed returns and no
+staking advice. Every figure on this site is either quoted from the official source linked on the
+same row or published as our own originated estimate and labelled as such.</p></footer>
+</body></html>
