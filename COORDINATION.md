@@ -7543,3 +7543,43 @@ read-back.
 prices and predictions. `103ea76b/**` holds the published desk. Nothing outside those paths is
 written except the single append above, this section, and — as final integration — one `ARCHIVE`
 row plus the front-door banner hunk in `pipeline/build.py` with its committed `index.html` mirror.
+
+### 98.2 Publication receipt — 103ea76b desk, 26 October 2026
+
+Session `103ea76b-olbg1`, branch `arena/103ea76b-olbg1`, base `90646c82d7bd75d70a8769367d8a76ddb43d9705`.
+Task T103EA76B closed; scope released.
+
+| Item | Value |
+| --- | --- |
+| Pull request | https://github.com/buffedlizard55-lab/OLBG1/pull/300 |
+| Merged | 2026-10-26T04:56:00Z (`--merge`, no approval requested per §0.1) |
+| Merge commit | `c5f67c9191e9ef1b23b56d67c2de954b1570beee` |
+| PR checks | run `40271444354` job `121404929957`, conclusion `success` (1m21s) |
+| Main run | `40271579323` — "Evidence, model, site and browser gates" and "Publish canonical GitHub Pages" both `success` |
+| Live desk | https://buffedlizard55-lab.github.io/OLBG1/103ea76b/index.html |
+| Live pages | `picks.html`, `predictions.html`, `matches.html`, `markets.html`, `sports.html`, 15 × `sports/<sport>.html`, `sources.html`, `flagged.html`, `audit.html`, `methodology.html` — 25 pages |
+| Read-back (UTC) | 2026-10-26T04:58Z — index returns 24 picks / 16 High / 8 Medium / 33 priced fixtures / 20 flagged / 15 sports captured; flagged page returns 20 items (9 High, 9 Medium, 2 Low) |
+
+**Published content.** 33 fixtures priced across 81 originated markets and 162 outcome prices:
+NHL 3, MLB 3, NBA 9, EuroLeague 6, EHF Champions League 12. 24 graded picks (16 High, 8 Medium,
+0 Low), 24 written predictions of 54–80 words, 26 sources (11 official, 15 OLBG hubs), 93 withheld
+markets, 26 OLBG listings recorded without a price, 20 flags, 6 repository audit findings.
+All fifteen brief sports are published; the eleven with no priced match each state the reason.
+
+**Gates run before merge.** `scripts/s103ea76b_data.py` (33/33 priced), `scripts/s103ea76b_build.py`
+(25 pages), `scripts/s103ea76b_validate.py` (0 errors, 0 warnings), `python -m pipeline.validate --site .`
+(0 errors), `python scripts/validate.py` (0 errors, 3 pre-existing warnings), `python -m pipeline.build
+--out _site` + `python -m pipeline.validate --site _site` (0 errors), both unittest suites OK.
+
+**Disclosed deviations from `pipeline.validate.validate_desk`** (documented in
+`reports/SESSION_103EA76B.md`): blank `start_utc` is permitted only when `start_time_status` and
+`start_time_note` say why and flag F06 is present (nine NBA rows and six EuroLeague rows: `cdn.nba.com`
+returned HTTP 500 and the EuroLeague feed publishes dates, not times); and both clubs' records are read
+from the fixture instead of the NHL/MLB-only `TEAMS_OK` tables, because this desk also prices NBA,
+EuroLeague and EHF fixtures. All arithmetic, band, prose, link and count gates are unchanged.
+
+**Open follow-ups for any later session** (not this scope, all on the live Flagged page): official NBA
+start times, EuroLeague and EHF tip-off times, a second ranked side for each tennis match, official
+cricket/volleyball/GAA club data, F1 qualifying and race results, probable pitchers, and an availability
+report for each league. Flag F18 records that no bookmaker price was read, so every price here is
+originated rather than quoted.
